@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/eleenterpriserestaurant"
 )
 
-// Alibabaeleenterpriserestaurantcheckaddress 检查地址是否在餐厅配送范围内
+// AlibabaEleEnterpriseRestaurantCheckaddress 检查地址是否在餐厅配送范围内
 // alibaba.ele.enterprise.restaurant.checkaddress
 //
 // 检查地址是否在餐厅配送范围内
-func Alibabaeleenterpriserestaurantcheckaddress(clt *core.SDKClient, req *eleenterpriserestaurant.AlibabaeleenterpriserestaurantcheckaddressAPIRequest, session string) (*eleenterpriserestaurant.AlibabaeleenterpriserestaurantcheckaddressAPIResponse, error) {
-	var resp eleenterpriserestaurant.AlibabaeleenterpriserestaurantcheckaddressAPIResponse
+func AlibabaEleEnterpriseRestaurantCheckaddress(clt *core.SDKClient, req *eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest, session string) (*eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantCheckaddressAPIResponse, error) {
+	var resp eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantCheckaddressAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

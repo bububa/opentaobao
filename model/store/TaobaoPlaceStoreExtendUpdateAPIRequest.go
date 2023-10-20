@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoplacestoreextendupdateAPIRequest 商户门店拓展信息更新接口 API请求
+// TaobaoPlaceStoreExtendUpdateAPIRequest 商户门店拓展信息更新接口 API请求
 // taobao.place.store.extend.update
 //
 // 更新商户门店拓展信息（tags、attribute、bizAtrribute）更新接口
-type TaobaoplacestoreextendupdateAPIRequest struct {
+type TaobaoPlaceStoreExtendUpdateAPIRequest struct {
 	model.Params
 	// 更新数据
 	_paramUpdateStoreExtendDTO *UpdateStoreExtendDto
 }
 
-// NewTaobaoplacestoreextendupdateRequest 初始化TaobaoplacestoreextendupdateAPIRequest对象
-func NewTaobaoplacestoreextendupdateRequest() *TaobaoplacestoreextendupdateAPIRequest {
-	return &TaobaoplacestoreextendupdateAPIRequest{
+// NewTaobaoPlaceStoreExtendUpdateRequest 初始化TaobaoPlaceStoreExtendUpdateAPIRequest对象
+func NewTaobaoPlaceStoreExtendUpdateRequest() *TaobaoPlaceStoreExtendUpdateAPIRequest {
+	return &TaobaoPlaceStoreExtendUpdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoplacestoreextendupdateAPIRequest) GetApiMethodName() string {
+func (r TaobaoPlaceStoreExtendUpdateAPIRequest) GetApiMethodName() string {
 	return "taobao.place.store.extend.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoplacestoreextendupdateAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoPlaceStoreExtendUpdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoplacestoreextendupdateAPIRequest) GetRawParams() model.Params {
+func (r TaobaoPlaceStoreExtendUpdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamUpdateStoreExtendDTO is ParamUpdateStoreExtendDTO Setter
 // 更新数据
-func (r *TaobaoplacestoreextendupdateAPIRequest) SetParamUpdateStoreExtendDTO(_paramUpdateStoreExtendDTO *UpdateStoreExtendDto) error {
+func (r *TaobaoPlaceStoreExtendUpdateAPIRequest) SetParamUpdateStoreExtendDTO(_paramUpdateStoreExtendDTO *UpdateStoreExtendDto) error {
 	r._paramUpdateStoreExtendDTO = _paramUpdateStoreExtendDTO
 	r.Set("param_update_store_extend_d_t_o", _paramUpdateStoreExtendDTO)
 	return nil
 }
 
 // GetParamUpdateStoreExtendDTO ParamUpdateStoreExtendDTO Getter
-func (r TaobaoplacestoreextendupdateAPIRequest) GetParamUpdateStoreExtendDTO() *UpdateStoreExtendDto {
+func (r TaobaoPlaceStoreExtendUpdateAPIRequest) GetParamUpdateStoreExtendDTO() *UpdateStoreExtendDto {
 	return r._paramUpdateStoreExtendDTO
 }

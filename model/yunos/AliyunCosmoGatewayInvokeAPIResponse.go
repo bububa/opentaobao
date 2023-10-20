@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliyuncosmogatewayinvokeAPIResponse alios cosmo服务调用 API返回值
+// AliyunCosmoGatewayInvokeAPIResponse alios cosmo服务调用 API返回值
 // aliyun.cosmo.gateway.invoke
 //
 // AliOS cosmo服务分发平台对外调用接口
-type AliyuncosmogatewayinvokeAPIResponse struct {
+type AliyunCosmoGatewayInvokeAPIResponse struct {
 	model.CommonResponse
-	AliyuncosmogatewayinvokeAPIResponseModel
+	AliyunCosmoGatewayInvokeAPIResponseModel
 }
 
-// AliyuncosmogatewayinvokeAPIResponseModel is alios cosmo服务调用 成功返回结果
-type AliyuncosmogatewayinvokeAPIResponseModel struct {
+// AliyunCosmoGatewayInvokeAPIResponseModel is alios cosmo服务调用 成功返回结果
+type AliyunCosmoGatewayInvokeAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliyun_cosmo_gateway_invoke_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

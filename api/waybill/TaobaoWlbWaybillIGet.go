@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/waybill"
 )
 
-// Taobaowlbwaybilliget 获取物流服务商电子面单号v1.0
+// TaobaoWlbWaybillIGet 获取物流服务商电子面单号v1.0
 // taobao.wlb.waybill.i.get
 //
 // 商家根据订单信息，实时、批量获取指定物流服务商的电子面单号。
-func Taobaowlbwaybilliget(clt *core.SDKClient, req *waybill.TaobaowlbwaybilligetAPIRequest, session string) (*waybill.TaobaowlbwaybilligetAPIResponse, error) {
-	var resp waybill.TaobaowlbwaybilligetAPIResponse
+func TaobaoWlbWaybillIGet(clt *core.SDKClient, req *waybill.TaobaoWlbWaybillIGetAPIRequest, session string) (*waybill.TaobaoWlbWaybillIGetAPIResponse, error) {
+	var resp waybill.TaobaoWlbWaybillIGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

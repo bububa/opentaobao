@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallnrtbrandinfoqueryAPIResponse 品牌数据查询 API返回值
+// TmallNrtBrandinfoQueryAPIResponse 品牌数据查询 API返回值
 // tmall.nrt.brandinfo.query
 //
 // 商家获取自己旗舰店授权的品牌id列表
-type TmallnrtbrandinfoqueryAPIResponse struct {
+type TmallNrtBrandinfoQueryAPIResponse struct {
 	model.CommonResponse
-	TmallnrtbrandinfoqueryAPIResponseModel
+	TmallNrtBrandinfoQueryAPIResponseModel
 }
 
-// TmallnrtbrandinfoqueryAPIResponseModel is 品牌数据查询 成功返回结果
-type TmallnrtbrandinfoqueryAPIResponseModel struct {
+// TmallNrtBrandinfoQueryAPIResponseModel is 品牌数据查询 成功返回结果
+type TmallNrtBrandinfoQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_nrt_brandinfo_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

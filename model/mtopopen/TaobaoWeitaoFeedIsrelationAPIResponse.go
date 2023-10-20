@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoweitaofeedisrelationAPIResponse 是否关注 API返回值
+// TaobaoWeitaoFeedIsrelationAPIResponse 是否关注 API返回值
 // taobao.weitao.feed.isrelation
 //
 // 判断用户是否关注对应的公共账号
-type TaobaoweitaofeedisrelationAPIResponse struct {
+type TaobaoWeitaoFeedIsrelationAPIResponse struct {
 	model.CommonResponse
-	TaobaoweitaofeedisrelationAPIResponseModel
+	TaobaoWeitaoFeedIsrelationAPIResponseModel
 }
 
-// TaobaoweitaofeedisrelationAPIResponseModel is 是否关注 成功返回结果
-type TaobaoweitaofeedisrelationAPIResponseModel struct {
+// TaobaoWeitaoFeedIsrelationAPIResponseModel is 是否关注 成功返回结果
+type TaobaoWeitaoFeedIsrelationAPIResponseModel struct {
 	XMLName xml.Name `xml:"weitao_feed_isrelation_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

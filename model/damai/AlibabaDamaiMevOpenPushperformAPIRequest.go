@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabadamaimevopenpushperformAPIRequest 大麦换验平台-第三方对外开放-场次接口pushPerform API请求
+// AlibabaDamaiMevOpenPushperformAPIRequest 大麦换验平台-第三方对外开放-场次接口pushPerform API请求
 // alibaba.damai.mev.open.pushperform
 //
 // pushPerform
-type AlibabadamaimevopenpushperformAPIRequest struct {
+type AlibabaDamaiMevOpenPushperformAPIRequest struct {
 	model.Params
 	// 入参pushPerformParam
 	_pushPerformParam *ThirdPerformPushOpenParam
 }
 
-// NewAlibabadamaimevopenpushperformRequest 初始化AlibabadamaimevopenpushperformAPIRequest对象
-func NewAlibabadamaimevopenpushperformRequest() *AlibabadamaimevopenpushperformAPIRequest {
-	return &AlibabadamaimevopenpushperformAPIRequest{
+// NewAlibabaDamaiMevOpenPushperformRequest 初始化AlibabaDamaiMevOpenPushperformAPIRequest对象
+func NewAlibabaDamaiMevOpenPushperformRequest() *AlibabaDamaiMevOpenPushperformAPIRequest {
+	return &AlibabaDamaiMevOpenPushperformAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabadamaimevopenpushperformAPIRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMevOpenPushperformAPIRequest) GetApiMethodName() string {
 	return "alibaba.damai.mev.open.pushperform"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabadamaimevopenpushperformAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaDamaiMevOpenPushperformAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabadamaimevopenpushperformAPIRequest) GetRawParams() model.Params {
+func (r AlibabaDamaiMevOpenPushperformAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPushPerformParam is PushPerformParam Setter
 // 入参pushPerformParam
-func (r *AlibabadamaimevopenpushperformAPIRequest) SetPushPerformParam(_pushPerformParam *ThirdPerformPushOpenParam) error {
+func (r *AlibabaDamaiMevOpenPushperformAPIRequest) SetPushPerformParam(_pushPerformParam *ThirdPerformPushOpenParam) error {
 	r._pushPerformParam = _pushPerformParam
 	r.Set("push_perform_param", _pushPerformParam)
 	return nil
 }
 
 // GetPushPerformParam PushPerformParam Getter
-func (r AlibabadamaimevopenpushperformAPIRequest) GetPushPerformParam() *ThirdPerformPushOpenParam {
+func (r AlibabaDamaiMevOpenPushperformAPIRequest) GetPushPerformParam() *ThirdPerformPushOpenParam {
 	return r._pushPerformParam
 }

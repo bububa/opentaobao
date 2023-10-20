@@ -1,7 +1,7 @@
 package scs
 
-// TaobaoonebpdkxaccountaccountfreezeResultDto 结构体
-type TaobaoonebpdkxaccountaccountfreezeResultDto struct {
+// TaobaoOnebpDkxAccountAccountFreezeResultDto 结构体
+type TaobaoOnebpDkxAccountAccountFreezeResultDto struct {
 	// 返回消息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 结果总数

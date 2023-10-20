@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdkbmcouponqueryData 结构体
-type AlibabawdkbmcouponqueryData struct {
+// AlibabaWdkBmCouponQueryData 结构体
+type AlibabaWdkBmCouponQueryData struct {
 	// 补差商品列表
 	PaymentItemDOList []PaymentItemDo `json:"payment_item_d_o_list,omitempty" xml:"payment_item_d_o_list>payment_item_do,omitempty"`
 	// 券名称

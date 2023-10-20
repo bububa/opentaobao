@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaologisticsdeliverylinebatchdeleteAPIResponse 线路能力删除 API返回值
+// TaobaoLogisticsDeliveryLineBatchDeleteAPIResponse 线路能力删除 API返回值
 // taobao.logistics.delivery.line.batch.delete
 //
 // 线路能力删除
-type TaobaologisticsdeliverylinebatchdeleteAPIResponse struct {
+type TaobaoLogisticsDeliveryLineBatchDeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaologisticsdeliverylinebatchdeleteAPIResponseModel
+	TaobaoLogisticsDeliveryLineBatchDeleteAPIResponseModel
 }
 
-// TaobaologisticsdeliverylinebatchdeleteAPIResponseModel is 线路能力删除 成功返回结果
-type TaobaologisticsdeliverylinebatchdeleteAPIResponseModel struct {
+// TaobaoLogisticsDeliveryLineBatchDeleteAPIResponseModel is 线路能力删除 成功返回结果
+type TaobaoLogisticsDeliveryLineBatchDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_delivery_line_batch_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

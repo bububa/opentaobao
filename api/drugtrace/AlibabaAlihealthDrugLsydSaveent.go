@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// Alibabaalihealthdruglsydsaveent 零售药店往来单位新增
+// AlibabaAlihealthDrugLsydSaveent 零售药店往来单位新增
 // alibaba.alihealth.drug.lsyd.saveent
 //
 // 新增往来单位企业记录
-func Alibabaalihealthdruglsydsaveent(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdruglsydsaveentAPIRequest, session string) (*drugtrace.AlibabaalihealthdruglsydsaveentAPIResponse, error) {
-	var resp drugtrace.AlibabaalihealthdruglsydsaveentAPIResponse
+func AlibabaAlihealthDrugLsydSaveent(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugLsydSaveentAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugLsydSaveentAPIResponse, error) {
+	var resp drugtrace.AlibabaAlihealthDrugLsydSaveentAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

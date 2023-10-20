@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhotelbnbpromoaddAPIResponse 自促活动申请接口 API返回值
+// TaobaoXhotelBnbpromoAddAPIResponse 自促活动申请接口 API返回值
 // taobao.xhotel.bnbpromo.add
 //
 // 自促活动申请接口
-type TaobaoxhotelbnbpromoaddAPIResponse struct {
+type TaobaoXhotelBnbpromoAddAPIResponse struct {
 	model.CommonResponse
-	TaobaoxhotelbnbpromoaddAPIResponseModel
+	TaobaoXhotelBnbpromoAddAPIResponseModel
 }
 
-// TaobaoxhotelbnbpromoaddAPIResponseModel is 自促活动申请接口 成功返回结果
-type TaobaoxhotelbnbpromoaddAPIResponseModel struct {
+// TaobaoXhotelBnbpromoAddAPIResponseModel is 自促活动申请接口 成功返回结果
+type TaobaoXhotelBnbpromoAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_bnbpromo_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

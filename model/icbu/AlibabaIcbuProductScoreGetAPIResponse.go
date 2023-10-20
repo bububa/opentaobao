@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaicbuproductscoregetAPIResponse 产品质量分查询 API返回值
+// AlibabaIcbuProductScoreGetAPIResponse 产品质量分查询 API返回值
 // alibaba.icbu.product.score.get
 //
 // 产品质量分查询
-type AlibabaicbuproductscoregetAPIResponse struct {
+type AlibabaIcbuProductScoreGetAPIResponse struct {
 	model.CommonResponse
-	AlibabaicbuproductscoregetAPIResponseModel
+	AlibabaIcbuProductScoreGetAPIResponseModel
 }
 
-// AlibabaicbuproductscoregetAPIResponseModel is 产品质量分查询 成功返回结果
-type AlibabaicbuproductscoregetAPIResponseModel struct {
+// AlibabaIcbuProductScoreGetAPIResponseModel is 产品质量分查询 成功返回结果
+type AlibabaIcbuProductScoreGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_icbu_product_score_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

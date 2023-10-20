@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabawdkumshandlingget 加工单-回流单（新接口）
+// AlibabaWdkUmsHandlingGet 加工单-回流单（新接口）
 // alibaba.wdk.ums.handling.get
 //
 // 加工单-回流单（新接口）
-func Alibabawdkumshandlingget(clt *core.SDKClient, req *wdk.AlibabawdkumshandlinggetAPIRequest, session string) (*wdk.AlibabawdkumshandlinggetAPIResponse, error) {
-	var resp wdk.AlibabawdkumshandlinggetAPIResponse
+func AlibabaWdkUmsHandlingGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsHandlingGetAPIRequest, session string) (*wdk.AlibabaWdkUmsHandlingGetAPIResponse, error) {
+	var resp wdk.AlibabaWdkUmsHandlingGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

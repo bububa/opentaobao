@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobanamadpcitemselectpropAPIResponse 获取子属性 API返回值
+// TaobaoBanamadpcItemSelectPropAPIResponse 获取子属性 API返回值
 // taobao.banamadpc.item.select.prop
 //
 // 巴拿马供应商通过此接口获取子属性
-type TaobaobanamadpcitemselectpropAPIResponse struct {
+type TaobaoBanamadpcItemSelectPropAPIResponse struct {
 	model.CommonResponse
-	TaobaobanamadpcitemselectpropAPIResponseModel
+	TaobaoBanamadpcItemSelectPropAPIResponseModel
 }
 
-// TaobaobanamadpcitemselectpropAPIResponseModel is 获取子属性 成功返回结果
-type TaobaobanamadpcitemselectpropAPIResponseModel struct {
+// TaobaoBanamadpcItemSelectPropAPIResponseModel is 获取子属性 成功返回结果
+type TaobaoBanamadpcItemSelectPropAPIResponseModel struct {
 	XMLName xml.Name `xml:"banamadpc_item_select_prop_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 无
-	ApiResult *TaobaobanamadpcitemselectpropApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
+	ApiResult *TaobaoBanamadpcItemSelectPropApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
 }

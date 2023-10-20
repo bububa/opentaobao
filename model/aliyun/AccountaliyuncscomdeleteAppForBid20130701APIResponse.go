@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AccountaliyuncscomdeleteAppForBid20130701APIResponse 运营商删除用户的appkey API返回值
+// AccountAliyuncsComDeleteAppForBid20130701APIResponse 运营商删除用户的appkey API返回值
 // account.aliyuncs.com.DeleteAppForBid.2013-07-01
 //
 // 删除用户的appkey，会校验调用的用户是否为当前运营商所创建的。
-type AccountaliyuncscomdeleteAppForBid20130701APIResponse struct {
+type AccountAliyuncsComDeleteAppForBid20130701APIResponse struct {
 	model.CommonResponse
-	AccountaliyuncscomdeleteAppForBid20130701APIResponseModel
+	AccountAliyuncsComDeleteAppForBid20130701APIResponseModel
 }
 
-// AccountaliyuncscomdeleteAppForBid20130701APIResponseModel is 运营商删除用户的appkey 成功返回结果
-type AccountaliyuncscomdeleteAppForBid20130701APIResponseModel struct {
+// AccountAliyuncsComDeleteAppForBid20130701APIResponseModel is 运营商删除用户的appkey 成功返回结果
+type AccountAliyuncsComDeleteAppForBid20130701APIResponseModel struct {
 	XMLName xml.Name `xml:"account_aliyuncs_com_DeleteAppForBid_2013-07-01_response"`
 	// 用户删除的appkey
 	AppKey string `json:"AppKey,omitempty" xml:"AppKey,omitempty"`

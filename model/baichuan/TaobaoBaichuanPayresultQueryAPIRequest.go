@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobaichuanpayresultqueryAPIRequest 百川支付完成回调 API请求
+// TaobaoBaichuanPayresultQueryAPIRequest 百川支付完成回调 API请求
 // taobao.baichuan.payresult.query
 //
 // 百川支付完成回调
-type TaobaobaichuanpayresultqueryAPIRequest struct {
+type TaobaoBaichuanPayresultQueryAPIRequest struct {
 	model.Params
 	// name
 	_name string
 }
 
-// NewTaobaobaichuanpayresultqueryRequest 初始化TaobaobaichuanpayresultqueryAPIRequest对象
-func NewTaobaobaichuanpayresultqueryRequest() *TaobaobaichuanpayresultqueryAPIRequest {
-	return &TaobaobaichuanpayresultqueryAPIRequest{
+// NewTaobaoBaichuanPayresultQueryRequest 初始化TaobaoBaichuanPayresultQueryAPIRequest对象
+func NewTaobaoBaichuanPayresultQueryRequest() *TaobaoBaichuanPayresultQueryAPIRequest {
+	return &TaobaoBaichuanPayresultQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaobaichuanpayresultqueryAPIRequest) GetApiMethodName() string {
+func (r TaobaoBaichuanPayresultQueryAPIRequest) GetApiMethodName() string {
 	return "taobao.baichuan.payresult.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaobaichuanpayresultqueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoBaichuanPayresultQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaobaichuanpayresultqueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoBaichuanPayresultQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetName is Name Setter
 // name
-func (r *TaobaobaichuanpayresultqueryAPIRequest) SetName(_name string) error {
+func (r *TaobaoBaichuanPayresultQueryAPIRequest) SetName(_name string) error {
 	r._name = _name
 	r.Set("name", _name)
 	return nil
 }
 
 // GetName Name Getter
-func (r TaobaobaichuanpayresultqueryAPIRequest) GetName() string {
+func (r TaobaoBaichuanPayresultQueryAPIRequest) GetName() string {
 	return r._name
 }

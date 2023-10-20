@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotmcmessagesproduceAPIResponse 批量发送消息 API返回值
+// TaobaoTmcMessagesProduceAPIResponse 批量发送消息 API返回值
 // taobao.tmc.messages.produce
 //
 // 批量发送消息
-type TaobaotmcmessagesproduceAPIResponse struct {
+type TaobaoTmcMessagesProduceAPIResponse struct {
 	model.CommonResponse
-	TaobaotmcmessagesproduceAPIResponseModel
+	TaobaoTmcMessagesProduceAPIResponseModel
 }
 
-// TaobaotmcmessagesproduceAPIResponseModel is 批量发送消息 成功返回结果
-type TaobaotmcmessagesproduceAPIResponseModel struct {
+// TaobaoTmcMessagesProduceAPIResponseModel is 批量发送消息 成功返回结果
+type TaobaoTmcMessagesProduceAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmc_messages_produce_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

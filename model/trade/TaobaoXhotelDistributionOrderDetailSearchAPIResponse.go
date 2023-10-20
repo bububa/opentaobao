@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhoteldistributionorderdetailsearchAPIResponse 分销渠道订单详情查询 API返回值
+// TaobaoXhotelDistributionOrderDetailSearchAPIResponse 分销渠道订单详情查询 API返回值
 // taobao.xhotel.distribution.order.detail.search
 //
 // 该接口用于提供酒店分销渠道的订单详情查询
-type TaobaoxhoteldistributionorderdetailsearchAPIResponse struct {
+type TaobaoXhotelDistributionOrderDetailSearchAPIResponse struct {
 	model.CommonResponse
-	TaobaoxhoteldistributionorderdetailsearchAPIResponseModel
+	TaobaoXhotelDistributionOrderDetailSearchAPIResponseModel
 }
 
-// TaobaoxhoteldistributionorderdetailsearchAPIResponseModel is 分销渠道订单详情查询 成功返回结果
-type TaobaoxhoteldistributionorderdetailsearchAPIResponseModel struct {
+// TaobaoXhotelDistributionOrderDetailSearchAPIResponseModel is 分销渠道订单详情查询 成功返回结果
+type TaobaoXhotelDistributionOrderDetailSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_distribution_order_detail_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

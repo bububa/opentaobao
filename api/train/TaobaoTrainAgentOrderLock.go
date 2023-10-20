@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/train"
 )
 
-// Taobaotrainagentorderlock 锁单
+// TaobaoTrainAgentOrderLock 锁单
 // taobao.train.agent.order.lock
 //
 // 锁单
-func Taobaotrainagentorderlock(clt *core.SDKClient, req *train.TaobaotrainagentorderlockAPIRequest, session string) (*train.TaobaotrainagentorderlockAPIResponse, error) {
-	var resp train.TaobaotrainagentorderlockAPIResponse
+func TaobaoTrainAgentOrderLock(clt *core.SDKClient, req *train.TaobaoTrainAgentOrderLockAPIRequest, session string) (*train.TaobaoTrainAgentOrderLockAPIResponse, error) {
+	var resp train.TaobaoTrainAgentOrderLockAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/shenjing"
 )
 
-// Alibabaibshenjingvisitorpaduploadface 访客PAD上传人脸
+// AlibabaIbShenjingVisitorPadUploadface 访客PAD上传人脸
 // alibaba.ib.shenjing.visitor.pad.uploadface
 //
 // 访客PAD端上传人脸。
-func Alibabaibshenjingvisitorpaduploadface(clt *core.SDKClient, req *shenjing.AlibabaibshenjingvisitorpaduploadfaceAPIRequest, session string) (*shenjing.AlibabaibshenjingvisitorpaduploadfaceAPIResponse, error) {
-	var resp shenjing.AlibabaibshenjingvisitorpaduploadfaceAPIResponse
+func AlibabaIbShenjingVisitorPadUploadface(clt *core.SDKClient, req *shenjing.AlibabaIbShenjingVisitorPadUploadfaceAPIRequest, session string) (*shenjing.AlibabaIbShenjingVisitorPadUploadfaceAPIResponse, error) {
+	var resp shenjing.AlibabaIbShenjingVisitorPadUploadfaceAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

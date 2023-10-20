@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaisassetstagabortAPIResponse 基础设施资产标签废弃 API返回值
+// AlibabaAisAssetsTagAbortAPIResponse 基础设施资产标签废弃 API返回值
 // alibaba.ais.assets.tag.abort
 //
 // 提供浪潮，英业达等厂商供应阿里巴巴基础设施资产的标签QR code未使用的废弃
-type AlibabaaisassetstagabortAPIResponse struct {
+type AlibabaAisAssetsTagAbortAPIResponse struct {
 	model.CommonResponse
-	AlibabaaisassetstagabortAPIResponseModel
+	AlibabaAisAssetsTagAbortAPIResponseModel
 }
 
-// AlibabaaisassetstagabortAPIResponseModel is 基础设施资产标签废弃 成功返回结果
-type AlibabaaisassetstagabortAPIResponseModel struct {
+// AlibabaAisAssetsTagAbortAPIResponseModel is 基础设施资产标签废弃 成功返回结果
+type AlibabaAisAssetsTagAbortAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ais_assets_tag_abort_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

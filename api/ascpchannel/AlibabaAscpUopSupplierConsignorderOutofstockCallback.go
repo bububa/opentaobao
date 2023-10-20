@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascpchannel"
 )
 
-// Alibabaascpuopsupplierconsignorderoutofstockcallback 履约单纬度的仓缺货回告服务
+// AlibabaAscpUopSupplierConsignorderOutofstockCallback 履约单纬度的仓缺货回告服务
 // alibaba.ascp.uop.supplier.consignorder.outofstock.callback
 //
 // 商家仓履约单纬度的仓缺货回告接口
-func Alibabaascpuopsupplierconsignorderoutofstockcallback(clt *core.SDKClient, req *ascpchannel.AlibabaascpuopsupplierconsignorderoutofstockcallbackAPIRequest, session string) (*ascpchannel.AlibabaascpuopsupplierconsignorderoutofstockcallbackAPIResponse, error) {
-	var resp ascpchannel.AlibabaascpuopsupplierconsignorderoutofstockcallbackAPIResponse
+func AlibabaAscpUopSupplierConsignorderOutofstockCallback(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest, session string) (*ascpchannel.AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIResponse, error) {
+	var resp ascpchannel.AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

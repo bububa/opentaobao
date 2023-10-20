@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabataxinvoicesyncledgerAPIRequest 同步底账数据 API请求
+// AlibabaTaxInvoiceSyncLedgerAPIRequest 同步底账数据 API请求
 // alibaba.tax.invoice.sync.ledger
 //
 // 接收第三方服务（如：票易通）同步过来的底账发票数据
-type AlibabataxinvoicesyncledgerAPIRequest struct {
+type AlibabaTaxInvoiceSyncLedgerAPIRequest struct {
 	model.Params
 	// 参数
 	_paramSyncLedgerInvoiceRequest *SyncLedgerInvoiceRequest
 }
 
-// NewAlibabataxinvoicesyncledgerRequest 初始化AlibabataxinvoicesyncledgerAPIRequest对象
-func NewAlibabataxinvoicesyncledgerRequest() *AlibabataxinvoicesyncledgerAPIRequest {
-	return &AlibabataxinvoicesyncledgerAPIRequest{
+// NewAlibabaTaxInvoiceSyncLedgerRequest 初始化AlibabaTaxInvoiceSyncLedgerAPIRequest对象
+func NewAlibabaTaxInvoiceSyncLedgerRequest() *AlibabaTaxInvoiceSyncLedgerAPIRequest {
+	return &AlibabaTaxInvoiceSyncLedgerAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabataxinvoicesyncledgerAPIRequest) GetApiMethodName() string {
+func (r AlibabaTaxInvoiceSyncLedgerAPIRequest) GetApiMethodName() string {
 	return "alibaba.tax.invoice.sync.ledger"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabataxinvoicesyncledgerAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaTaxInvoiceSyncLedgerAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabataxinvoicesyncledgerAPIRequest) GetRawParams() model.Params {
+func (r AlibabaTaxInvoiceSyncLedgerAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamSyncLedgerInvoiceRequest is ParamSyncLedgerInvoiceRequest Setter
 // 参数
-func (r *AlibabataxinvoicesyncledgerAPIRequest) SetParamSyncLedgerInvoiceRequest(_paramSyncLedgerInvoiceRequest *SyncLedgerInvoiceRequest) error {
+func (r *AlibabaTaxInvoiceSyncLedgerAPIRequest) SetParamSyncLedgerInvoiceRequest(_paramSyncLedgerInvoiceRequest *SyncLedgerInvoiceRequest) error {
 	r._paramSyncLedgerInvoiceRequest = _paramSyncLedgerInvoiceRequest
 	r.Set("param_sync_ledger_invoice_request", _paramSyncLedgerInvoiceRequest)
 	return nil
 }
 
 // GetParamSyncLedgerInvoiceRequest ParamSyncLedgerInvoiceRequest Getter
-func (r AlibabataxinvoicesyncledgerAPIRequest) GetParamSyncLedgerInvoiceRequest() *SyncLedgerInvoiceRequest {
+func (r AlibabaTaxInvoiceSyncLedgerAPIRequest) GetParamSyncLedgerInvoiceRequest() *SyncLedgerInvoiceRequest {
 	return r._paramSyncLedgerInvoiceRequest
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlbwmsinventoryprofitlossgetAPIResponse 通过订单列表批量获取库存损益单信息 API返回值
+// TaobaoWlbWmsInventoryProfitlossGetAPIResponse 通过订单列表批量获取库存损益单信息 API返回值
 // taobao.wlb.wms.inventory.profitloss.get
 //
 // 通过订单列表批量获取库存损益单信息
-type TaobaowlbwmsinventoryprofitlossgetAPIResponse struct {
+type TaobaoWlbWmsInventoryProfitlossGetAPIResponse struct {
 	model.CommonResponse
-	TaobaowlbwmsinventoryprofitlossgetAPIResponseModel
+	TaobaoWlbWmsInventoryProfitlossGetAPIResponseModel
 }
 
-// TaobaowlbwmsinventoryprofitlossgetAPIResponseModel is 通过订单列表批量获取库存损益单信息 成功返回结果
-type TaobaowlbwmsinventoryprofitlossgetAPIResponseModel struct {
+// TaobaoWlbWmsInventoryProfitlossGetAPIResponseModel is 通过订单列表批量获取库存损益单信息 成功返回结果
+type TaobaoWlbWmsInventoryProfitlossGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_wms_inventory_profitloss_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

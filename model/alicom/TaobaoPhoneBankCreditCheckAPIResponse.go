@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaophonebankcreditcheckAPIResponse 虚拟话费任务银行信用卡办理检查 API返回值
+// TaobaoPhoneBankCreditCheckAPIResponse 虚拟话费任务银行信用卡办理检查 API返回值
 // taobao.phone.bank.credit.check
 //
 // 虚拟话费任务银行信用卡办理检查
-type TaobaophonebankcreditcheckAPIResponse struct {
+type TaobaoPhoneBankCreditCheckAPIResponse struct {
 	model.CommonResponse
-	TaobaophonebankcreditcheckAPIResponseModel
+	TaobaoPhoneBankCreditCheckAPIResponseModel
 }
 
-// TaobaophonebankcreditcheckAPIResponseModel is 虚拟话费任务银行信用卡办理检查 成功返回结果
-type TaobaophonebankcreditcheckAPIResponseModel struct {
+// TaobaoPhoneBankCreditCheckAPIResponseModel is 虚拟话费任务银行信用卡办理检查 成功返回结果
+type TaobaoPhoneBankCreditCheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"phone_bank_credit_check_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

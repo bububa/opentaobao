@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripmerchantgalaxymembertokenResponse 结构体
-type AlitripmerchantgalaxymembertokenResponse struct {
+// AlitripMerchantGalaxyMemberTokenResponse 结构体
+type AlitripMerchantGalaxyMemberTokenResponse struct {
 	// 错误代码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// token

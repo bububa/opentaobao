@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripbtripcorpopapplyapproveAPIResponse 【商旅】更新审批单状态 API返回值
+// AlitripBtripCorpopApplyApproveAPIResponse 【商旅】更新审批单状态 API返回值
 // alitrip.btrip.corpop.apply.approve
 //
 // 【商旅】更新审批单状态
-type AlitripbtripcorpopapplyapproveAPIResponse struct {
+type AlitripBtripCorpopApplyApproveAPIResponse struct {
 	model.CommonResponse
-	AlitripbtripcorpopapplyapproveAPIResponseModel
+	AlitripBtripCorpopApplyApproveAPIResponseModel
 }
 
-// AlitripbtripcorpopapplyapproveAPIResponseModel is 【商旅】更新审批单状态 成功返回结果
-type AlitripbtripcorpopapplyapproveAPIResponseModel struct {
+// AlitripBtripCorpopApplyApproveAPIResponseModel is 【商旅】更新审批单状态 成功返回结果
+type AlitripBtripCorpopApplyApproveAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_corpop_apply_approve_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkbmstockpublishAPIResponse 品牌营销涉及到的商品的库存同步接口 API返回值
+// AlibabaWdkBmStockPublishAPIResponse 品牌营销涉及到的商品的库存同步接口 API返回值
 // alibaba.wdk.bm.stock.publish
 //
 // 用于操作sku的库存
-type AlibabawdkbmstockpublishAPIResponse struct {
+type AlibabaWdkBmStockPublishAPIResponse struct {
 	model.CommonResponse
-	AlibabawdkbmstockpublishAPIResponseModel
+	AlibabaWdkBmStockPublishAPIResponseModel
 }
 
-// AlibabawdkbmstockpublishAPIResponseModel is 品牌营销涉及到的商品的库存同步接口 成功返回结果
-type AlibabawdkbmstockpublishAPIResponseModel struct {
+// AlibabaWdkBmStockPublishAPIResponseModel is 品牌营销涉及到的商品的库存同步接口 成功返回结果
+type AlibabaWdkBmStockPublishAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_bm_stock_publish_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

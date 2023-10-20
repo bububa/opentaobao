@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotrainagentorderlockAPIRequest 锁单 API请求
+// TaobaoTrainAgentOrderLockAPIRequest 锁单 API请求
 // taobao.train.agent.order.lock
 //
 // 锁单
-type TaobaotrainagentorderlockAPIRequest struct {
+type TaobaoTrainAgentOrderLockAPIRequest struct {
 	model.Params
 	// 入参
 	_param *LockOrderRq
 }
 
-// NewTaobaotrainagentorderlockRequest 初始化TaobaotrainagentorderlockAPIRequest对象
-func NewTaobaotrainagentorderlockRequest() *TaobaotrainagentorderlockAPIRequest {
-	return &TaobaotrainagentorderlockAPIRequest{
+// NewTaobaoTrainAgentOrderLockRequest 初始化TaobaoTrainAgentOrderLockAPIRequest对象
+func NewTaobaoTrainAgentOrderLockRequest() *TaobaoTrainAgentOrderLockAPIRequest {
+	return &TaobaoTrainAgentOrderLockAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaotrainagentorderlockAPIRequest) GetApiMethodName() string {
+func (r TaobaoTrainAgentOrderLockAPIRequest) GetApiMethodName() string {
 	return "taobao.train.agent.order.lock"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaotrainagentorderlockAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoTrainAgentOrderLockAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaotrainagentorderlockAPIRequest) GetRawParams() model.Params {
+func (r TaobaoTrainAgentOrderLockAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 入参
-func (r *TaobaotrainagentorderlockAPIRequest) SetParam(_param *LockOrderRq) error {
+func (r *TaobaoTrainAgentOrderLockAPIRequest) SetParam(_param *LockOrderRq) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r TaobaotrainagentorderlockAPIRequest) GetParam() *LockOrderRq {
+func (r TaobaoTrainAgentOrderLockAPIRequest) GetParam() *LockOrderRq {
 	return r._param
 }

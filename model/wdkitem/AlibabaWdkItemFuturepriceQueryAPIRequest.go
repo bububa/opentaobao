@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkitemfuturepricequeryAPIRequest 单个商品未来价查询接口 API请求
+// AlibabaWdkItemFuturepriceQueryAPIRequest 单个商品未来价查询接口 API请求
 // alibaba.wdk.item.futureprice.query
 //
 // 查询单个商品未来价，融合了未来基础售价+未来促销价
-type AlibabawdkitemfuturepricequeryAPIRequest struct {
+type AlibabaWdkItemFuturepriceQueryAPIRequest struct {
 	model.Params
 	// 商品编码
 	_skuCode string
@@ -24,91 +24,91 @@ type AlibabawdkitemfuturepricequeryAPIRequest struct {
 	_shopId int64
 }
 
-// NewAlibabawdkitemfuturepricequeryRequest 初始化AlibabawdkitemfuturepricequeryAPIRequest对象
-func NewAlibabawdkitemfuturepricequeryRequest() *AlibabawdkitemfuturepricequeryAPIRequest {
-	return &AlibabawdkitemfuturepricequeryAPIRequest{
+// NewAlibabaWdkItemFuturepriceQueryRequest 初始化AlibabaWdkItemFuturepriceQueryAPIRequest对象
+func NewAlibabaWdkItemFuturepriceQueryRequest() *AlibabaWdkItemFuturepriceQueryAPIRequest {
+	return &AlibabaWdkItemFuturepriceQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabawdkitemfuturepricequeryAPIRequest) GetApiMethodName() string {
+func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.item.futureprice.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabawdkitemfuturepricequeryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabawdkitemfuturepricequeryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSkuCode is SkuCode Setter
 // 商品编码
-func (r *AlibabawdkitemfuturepricequeryAPIRequest) SetSkuCode(_skuCode string) error {
+func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetSkuCode(_skuCode string) error {
 	r._skuCode = _skuCode
 	r.Set("sku_code", _skuCode)
 	return nil
 }
 
 // GetSkuCode SkuCode Getter
-func (r AlibabawdkitemfuturepricequeryAPIRequest) GetSkuCode() string {
+func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetSkuCode() string {
 	return r._skuCode
 }
 
 // SetOrderChannelCode is OrderChannelCode Setter
 // 渠道
-func (r *AlibabawdkitemfuturepricequeryAPIRequest) SetOrderChannelCode(_orderChannelCode string) error {
+func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetOrderChannelCode(_orderChannelCode string) error {
 	r._orderChannelCode = _orderChannelCode
 	r.Set("order_channel_code", _orderChannelCode)
 	return nil
 }
 
 // GetOrderChannelCode OrderChannelCode Getter
-func (r AlibabawdkitemfuturepricequeryAPIRequest) GetOrderChannelCode() string {
+func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetOrderChannelCode() string {
 	return r._orderChannelCode
 }
 
 // SetStartTime is StartTime Setter
 // 开始时间
-func (r *AlibabawdkitemfuturepricequeryAPIRequest) SetStartTime(_startTime string) error {
+func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
 	r.Set("start_time", _startTime)
 	return nil
 }
 
 // GetStartTime StartTime Getter
-func (r AlibabawdkitemfuturepricequeryAPIRequest) GetStartTime() string {
+func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
 // SetEndTime is EndTime Setter
 // 结束时间，结束时间-开始时间不能超过48小时
-func (r *AlibabawdkitemfuturepricequeryAPIRequest) SetEndTime(_endTime string) error {
+func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
 	r.Set("end_time", _endTime)
 	return nil
 }
 
 // GetEndTime EndTime Getter
-func (r AlibabawdkitemfuturepricequeryAPIRequest) GetEndTime() string {
+func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
 // SetShopId is ShopId Setter
 // 渠道店id
-func (r *AlibabawdkitemfuturepricequeryAPIRequest) SetShopId(_shopId int64) error {
+func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetShopId(_shopId int64) error {
 	r._shopId = _shopId
 	r.Set("shop_id", _shopId)
 	return nil
 }
 
 // GetShopId ShopId Getter
-func (r AlibabawdkitemfuturepricequeryAPIRequest) GetShopId() int64 {
+func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetShopId() int64 {
 	return r._shopId
 }

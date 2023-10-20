@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallservicecenterreservecondupdateAPIRequest 主动预约条件更新 API请求
+// TmallServicecenterReservecondUpdateAPIRequest 主动预约条件更新 API请求
 // tmall.servicecenter.reservecond.update
 //
 // 1、设置主动预约开通条件
-type TmallservicecenterreservecondupdateAPIRequest struct {
+type TmallServicecenterReservecondUpdateAPIRequest struct {
 	model.Params
 	// 主动预约开通条件
 	_rocList []ReserveOpenConditionDto
 }
 
-// NewTmallservicecenterreservecondupdateRequest 初始化TmallservicecenterreservecondupdateAPIRequest对象
-func NewTmallservicecenterreservecondupdateRequest() *TmallservicecenterreservecondupdateAPIRequest {
-	return &TmallservicecenterreservecondupdateAPIRequest{
+// NewTmallServicecenterReservecondUpdateRequest 初始化TmallServicecenterReservecondUpdateAPIRequest对象
+func NewTmallServicecenterReservecondUpdateRequest() *TmallServicecenterReservecondUpdateAPIRequest {
+	return &TmallServicecenterReservecondUpdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallservicecenterreservecondupdateAPIRequest) GetApiMethodName() string {
+func (r TmallServicecenterReservecondUpdateAPIRequest) GetApiMethodName() string {
 	return "tmall.servicecenter.reservecond.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallservicecenterreservecondupdateAPIRequest) GetApiParams(params url.Values) {
+func (r TmallServicecenterReservecondUpdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallservicecenterreservecondupdateAPIRequest) GetRawParams() model.Params {
+func (r TmallServicecenterReservecondUpdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRocList is RocList Setter
 // 主动预约开通条件
-func (r *TmallservicecenterreservecondupdateAPIRequest) SetRocList(_rocList []ReserveOpenConditionDto) error {
+func (r *TmallServicecenterReservecondUpdateAPIRequest) SetRocList(_rocList []ReserveOpenConditionDto) error {
 	r._rocList = _rocList
 	r.Set("roc_list", _rocList)
 	return nil
 }
 
 // GetRocList RocList Getter
-func (r TmallservicecenterreservecondupdateAPIRequest) GetRocList() []ReserveOpenConditionDto {
+func (r TmallServicecenterReservecondUpdateAPIRequest) GetRocList() []ReserveOpenConditionDto {
 	return r._rocList
 }

@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihousenewhomeprojecttradeorderResult 结构体
-type AlibabaalihousenewhomeprojecttradeorderResult struct {
+// AlibabaAlihouseNewhomeProjectTradeOrderResult 结构体
+type AlibabaAlihouseNewhomeProjectTradeOrderResult struct {
 	// 成功的楼盘Id
 	Data []string `json:"data,omitempty" xml:"data>string,omitempty"`
 	// message

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabafundplatformcardordermakesuccessAPIResponse 通知制卡成功 API返回值
+// AlibabaFundplatformCardorderMakeSuccessAPIResponse 通知制卡成功 API返回值
 // alibaba.fundplatform.cardorder.make.success
 //
 // 当外部业务方调用资金平台异步制卡接口后，资金平台制卡成功后通知异步通知业务方
-type AlibabafundplatformcardordermakesuccessAPIResponse struct {
+type AlibabaFundplatformCardorderMakeSuccessAPIResponse struct {
 	model.CommonResponse
-	AlibabafundplatformcardordermakesuccessAPIResponseModel
+	AlibabaFundplatformCardorderMakeSuccessAPIResponseModel
 }
 
-// AlibabafundplatformcardordermakesuccessAPIResponseModel is 通知制卡成功 成功返回结果
-type AlibabafundplatformcardordermakesuccessAPIResponseModel struct {
+// AlibabaFundplatformCardorderMakeSuccessAPIResponseModel is 通知制卡成功 成功返回结果
+type AlibabaFundplatformCardorderMakeSuccessAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_fundplatform_cardorder_make_success_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

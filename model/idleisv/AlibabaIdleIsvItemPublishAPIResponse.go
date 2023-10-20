@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaidleisvitempublishAPIResponse 服务商闲鱼商品发布 API返回值
+// AlibabaIdleIsvItemPublishAPIResponse 服务商闲鱼商品发布 API返回值
 // alibaba.idle.isv.item.publish
 //
 // 服务商ISV闲鱼商品发布
-type AlibabaidleisvitempublishAPIResponse struct {
+type AlibabaIdleIsvItemPublishAPIResponse struct {
 	model.CommonResponse
-	AlibabaidleisvitempublishAPIResponseModel
+	AlibabaIdleIsvItemPublishAPIResponseModel
 }
 
-// AlibabaidleisvitempublishAPIResponseModel is 服务商闲鱼商品发布 成功返回结果
-type AlibabaidleisvitempublishAPIResponseModel struct {
+// AlibabaIdleIsvItemPublishAPIResponseModel is 服务商闲鱼商品发布 成功返回结果
+type AlibabaIdleIsvItemPublishAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_isv_item_publish_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

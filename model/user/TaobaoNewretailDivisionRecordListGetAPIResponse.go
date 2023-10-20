@@ -6,22 +6,22 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaonewretaildivisionrecordlistgetAPIResponse 导购分佣明细列表 API返回值
+// TaobaoNewretailDivisionRecordListGetAPIResponse 导购分佣明细列表 API返回值
 // taobao.newretail.division.record.list.get
 //
 // 提供分页查询导购分佣明细的能力
-type TaobaonewretaildivisionrecordlistgetAPIResponse struct {
+type TaobaoNewretailDivisionRecordListGetAPIResponse struct {
 	model.CommonResponse
-	TaobaonewretaildivisionrecordlistgetAPIResponseModel
+	TaobaoNewretailDivisionRecordListGetAPIResponseModel
 }
 
-// TaobaonewretaildivisionrecordlistgetAPIResponseModel is 导购分佣明细列表 成功返回结果
-type TaobaonewretaildivisionrecordlistgetAPIResponseModel struct {
+// TaobaoNewretailDivisionRecordListGetAPIResponseModel is 导购分佣明细列表 成功返回结果
+type TaobaoNewretailDivisionRecordListGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"newretail_division_record_list_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 数据列表
-	DataList []TaobaonewretaildivisionrecordlistgetT `json:"data_list,omitempty" xml:"data_list>taobaonewretaildivisionrecordlistget_t,omitempty"`
+	DataList []TaobaoNewretailDivisionRecordListGetT `json:"data_list,omitempty" xml:"data_list>taobao_newretail_division_record_list_get_t,omitempty"`
 	// 返回代码
 	ResCode string `json:"res_code,omitempty" xml:"res_code,omitempty"`
 	// 具体返回讯息

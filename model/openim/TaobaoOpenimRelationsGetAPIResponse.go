@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoopenimrelationsgetAPIResponse 获取openim账号的聊天关系 API返回值
+// TaobaoOpenimRelationsGetAPIResponse 获取openim账号的聊天关系 API返回值
 // taobao.openim.relations.get
 //
 // 获取openim账号的聊天关系
-type TaobaoopenimrelationsgetAPIResponse struct {
+type TaobaoOpenimRelationsGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoopenimrelationsgetAPIResponseModel
+	TaobaoOpenimRelationsGetAPIResponseModel
 }
 
-// TaobaoopenimrelationsgetAPIResponseModel is 获取openim账号的聊天关系 成功返回结果
-type TaobaoopenimrelationsgetAPIResponseModel struct {
+// TaobaoOpenimRelationsGetAPIResponseModel is 获取openim账号的聊天关系 成功返回结果
+type TaobaoOpenimRelationsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"openim_relations_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

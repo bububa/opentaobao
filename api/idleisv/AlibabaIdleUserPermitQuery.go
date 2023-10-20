@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/idleisv"
 )
 
-// Alibabaidleuserpermitquery 查询服务商与卖家之间的订单消息绑定关系
+// AlibabaIdleUserPermitQuery 查询服务商与卖家之间的订单消息绑定关系
 // alibaba.idle.user.permit.query
 //
 // 查询服务商与卖家之间的订单消息绑定关系
-func Alibabaidleuserpermitquery(clt *core.SDKClient, req *idleisv.AlibabaidleuserpermitqueryAPIRequest, session string) (*idleisv.AlibabaidleuserpermitqueryAPIResponse, error) {
-	var resp idleisv.AlibabaidleuserpermitqueryAPIResponse
+func AlibabaIdleUserPermitQuery(clt *core.SDKClient, req *idleisv.AlibabaIdleUserPermitQueryAPIRequest, session string) (*idleisv.AlibabaIdleUserPermitQueryAPIResponse, error) {
+	var resp idleisv.AlibabaIdleUserPermitQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

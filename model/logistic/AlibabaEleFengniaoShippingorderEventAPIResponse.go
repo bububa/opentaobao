@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaelefengniaoshippingordereventAPIResponse 查询运单事件信息 API返回值
+// AlibabaEleFengniaoShippingorderEventAPIResponse 查询运单事件信息 API返回值
 // alibaba.ele.fengniao.shippingorder.event
 //
 // 查询运单事件信息
-type AlibabaelefengniaoshippingordereventAPIResponse struct {
+type AlibabaEleFengniaoShippingorderEventAPIResponse struct {
 	model.CommonResponse
-	AlibabaelefengniaoshippingordereventAPIResponseModel
+	AlibabaEleFengniaoShippingorderEventAPIResponseModel
 }
 
-// AlibabaelefengniaoshippingordereventAPIResponseModel is 查询运单事件信息 成功返回结果
-type AlibabaelefengniaoshippingordereventAPIResponseModel struct {
+// AlibabaEleFengniaoShippingorderEventAPIResponseModel is 查询运单事件信息 成功返回结果
+type AlibabaEleFengniaoShippingorderEventAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ele_fengniao_shippingorder_event_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

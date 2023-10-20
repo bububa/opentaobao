@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabawdkfulfillwarehouseworkordersealbox 仓封箱回告
+// AlibabaWdkFulfillWarehouseWorkOrderSealbox 仓封箱回告
 // alibaba.wdk.fulfill.warehouse.work.order.sealbox
 //
 // 仓封箱回告箱与包裹的关系
-func Alibabawdkfulfillwarehouseworkordersealbox(clt *core.SDKClient, req *wdk.AlibabawdkfulfillwarehouseworkordersealboxAPIRequest, session string) (*wdk.AlibabawdkfulfillwarehouseworkordersealboxAPIResponse, error) {
-	var resp wdk.AlibabawdkfulfillwarehouseworkordersealboxAPIResponse
+func AlibabaWdkFulfillWarehouseWorkOrderSealbox(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest, session string) (*wdk.AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIResponse, error) {
+	var resp wdk.AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

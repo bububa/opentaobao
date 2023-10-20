@@ -9,5 +9,5 @@ type EntryOrderConfirmRequest struct {
 	// 入库单信息
 	EntryOrder *EntryOrder `json:"entryOrder,omitempty" xml:"entryOrder,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoqimenentryorderconfirmMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoQimenEntryorderConfirmMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

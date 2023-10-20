@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaologisticsexpressordertmsupdateAPIResponse 服务商修改上门取退时间接口 API返回值
+// TaobaoLogisticsExpressOrderTmsUpdateAPIResponse 服务商修改上门取退时间接口 API返回值
 // taobao.logistics.express.order.tms.update
 //
 // 服务商修改上门取退时间接口
-type TaobaologisticsexpressordertmsupdateAPIResponse struct {
+type TaobaoLogisticsExpressOrderTmsUpdateAPIResponse struct {
 	model.CommonResponse
-	TaobaologisticsexpressordertmsupdateAPIResponseModel
+	TaobaoLogisticsExpressOrderTmsUpdateAPIResponseModel
 }
 
-// TaobaologisticsexpressordertmsupdateAPIResponseModel is 服务商修改上门取退时间接口 成功返回结果
-type TaobaologisticsexpressordertmsupdateAPIResponseModel struct {
+// TaobaoLogisticsExpressOrderTmsUpdateAPIResponseModel is 服务商修改上门取退时间接口 成功返回结果
+type TaobaoLogisticsExpressOrderTmsUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_express_order_tms_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

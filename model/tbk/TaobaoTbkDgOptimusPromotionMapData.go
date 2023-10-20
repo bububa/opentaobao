@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaotbkdgoptimuspromotionMapData 结构体
-type TaobaotbkdgoptimuspromotionMapData struct {
+// TaobaoTbkDgOptimusPromotionMapData 结构体
+type TaobaoTbkDgOptimusPromotionMapData struct {
 	// 权益信息
 	PromotionList []PromotionList `json:"promotion_list,omitempty" xml:"promotion_list>promotion_list,omitempty"`
 	// 权益类型。1 有价券（需要购买的店铺券或单品券） 2 公开券（直接领取的店铺券或单品券） 3 妈妈券（妈妈渠道领取的店铺券或单品券） 4.品类券 （跨店可用券，可与1，2，3叠加）

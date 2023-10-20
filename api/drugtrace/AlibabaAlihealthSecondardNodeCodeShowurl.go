@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// Alibabaalihealthsecondardnodecodeshowurl 查询码信息url
+// AlibabaAlihealthSecondardNodeCodeShowurl 查询码信息url
 // alibaba.alihealth.secondard.node.code.showurl
 //
 // 二级节点查询码信息url
-func Alibabaalihealthsecondardnodecodeshowurl(clt *core.SDKClient, req *drugtrace.AlibabaalihealthsecondardnodecodeshowurlAPIRequest, session string) (*drugtrace.AlibabaalihealthsecondardnodecodeshowurlAPIResponse, error) {
-	var resp drugtrace.AlibabaalihealthsecondardnodecodeshowurlAPIResponse
+func AlibabaAlihealthSecondardNodeCodeShowurl(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthSecondardNodeCodeShowurlAPIRequest, session string) (*drugtrace.AlibabaAlihealthSecondardNodeCodeShowurlAPIResponse, error) {
+	var resp drugtrace.AlibabaAlihealthSecondardNodeCodeShowurlAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

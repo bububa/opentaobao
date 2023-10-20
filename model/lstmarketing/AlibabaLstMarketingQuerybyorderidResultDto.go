@@ -1,7 +1,7 @@
 package lstmarketing
 
-// AlibabalstmarketingquerybyorderidResultDto 结构体
-type AlibabalstmarketingquerybyorderidResultDto struct {
+// AlibabaLstMarketingQuerybyorderidResultDto 结构体
+type AlibabaLstMarketingQuerybyorderidResultDto struct {
 	// 错误信息
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

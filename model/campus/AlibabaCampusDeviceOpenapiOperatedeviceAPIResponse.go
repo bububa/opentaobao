@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabacampusdeviceopenapioperatedeviceAPIResponse 根据uuid操作设备 API返回值
+// AlibabaCampusDeviceOpenapiOperatedeviceAPIResponse 根据uuid操作设备 API返回值
 // alibaba.campus.device.openapi.operatedevice
 //
 // 根据uuid操作设备
-type AlibabacampusdeviceopenapioperatedeviceAPIResponse struct {
+type AlibabaCampusDeviceOpenapiOperatedeviceAPIResponse struct {
 	model.CommonResponse
-	AlibabacampusdeviceopenapioperatedeviceAPIResponseModel
+	AlibabaCampusDeviceOpenapiOperatedeviceAPIResponseModel
 }
 
-// AlibabacampusdeviceopenapioperatedeviceAPIResponseModel is 根据uuid操作设备 成功返回结果
-type AlibabacampusdeviceopenapioperatedeviceAPIResponseModel struct {
+// AlibabaCampusDeviceOpenapiOperatedeviceAPIResponseModel is 根据uuid操作设备 成功返回结果
+type AlibabaCampusDeviceOpenapiOperatedeviceAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_campus_device_openapi_operatedevice_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

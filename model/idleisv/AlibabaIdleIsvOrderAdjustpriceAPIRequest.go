@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaidleisvorderadjustpriceAPIRequest 闲鱼服务商订单价格修改接口 API请求
+// AlibabaIdleIsvOrderAdjustpriceAPIRequest 闲鱼服务商订单价格修改接口 API请求
 // alibaba.idle.isv.order.adjustprice
 //
 // 闲鱼用户通过授权的服务商修改订单价格和邮费
-type AlibabaidleisvorderadjustpriceAPIRequest struct {
+type AlibabaIdleIsvOrderAdjustpriceAPIRequest struct {
 	model.Params
 	// 输入参数
 	_paramAdjustOrderPrice *IsvAdjustOrderPriceDto
 }
 
-// NewAlibabaidleisvorderadjustpriceRequest 初始化AlibabaidleisvorderadjustpriceAPIRequest对象
-func NewAlibabaidleisvorderadjustpriceRequest() *AlibabaidleisvorderadjustpriceAPIRequest {
-	return &AlibabaidleisvorderadjustpriceAPIRequest{
+// NewAlibabaIdleIsvOrderAdjustpriceRequest 初始化AlibabaIdleIsvOrderAdjustpriceAPIRequest对象
+func NewAlibabaIdleIsvOrderAdjustpriceRequest() *AlibabaIdleIsvOrderAdjustpriceAPIRequest {
+	return &AlibabaIdleIsvOrderAdjustpriceAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaidleisvorderadjustpriceAPIRequest) GetApiMethodName() string {
+func (r AlibabaIdleIsvOrderAdjustpriceAPIRequest) GetApiMethodName() string {
 	return "alibaba.idle.isv.order.adjustprice"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaidleisvorderadjustpriceAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaIdleIsvOrderAdjustpriceAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaidleisvorderadjustpriceAPIRequest) GetRawParams() model.Params {
+func (r AlibabaIdleIsvOrderAdjustpriceAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamAdjustOrderPrice is ParamAdjustOrderPrice Setter
 // 输入参数
-func (r *AlibabaidleisvorderadjustpriceAPIRequest) SetParamAdjustOrderPrice(_paramAdjustOrderPrice *IsvAdjustOrderPriceDto) error {
+func (r *AlibabaIdleIsvOrderAdjustpriceAPIRequest) SetParamAdjustOrderPrice(_paramAdjustOrderPrice *IsvAdjustOrderPriceDto) error {
 	r._paramAdjustOrderPrice = _paramAdjustOrderPrice
 	r.Set("param_adjust_order_price", _paramAdjustOrderPrice)
 	return nil
 }
 
 // GetParamAdjustOrderPrice ParamAdjustOrderPrice Getter
-func (r AlibabaidleisvorderadjustpriceAPIRequest) GetParamAdjustOrderPrice() *IsvAdjustOrderPriceDto {
+func (r AlibabaIdleIsvOrderAdjustpriceAPIRequest) GetParamAdjustOrderPrice() *IsvAdjustOrderPriceDto {
 	return r._paramAdjustOrderPrice
 }

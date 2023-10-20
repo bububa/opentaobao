@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkfulfilldmsdeliveryworkordercallbackAPIResponse 末端配配送作业回传 API返回值
+// AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse 末端配配送作业回传 API返回值
 // alibaba.wdk.fulfill.dms.delivery.work.order.callback
 //
 // 末端配配送作业回传。
-type AlibabawdkfulfilldmsdeliveryworkordercallbackAPIResponse struct {
+type AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse struct {
 	model.CommonResponse
-	AlibabawdkfulfilldmsdeliveryworkordercallbackAPIResponseModel
+	AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponseModel
 }
 
-// AlibabawdkfulfilldmsdeliveryworkordercallbackAPIResponseModel is 末端配配送作业回传 成功返回结果
-type AlibabawdkfulfilldmsdeliveryworkordercallbackAPIResponseModel struct {
+// AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponseModel is 末端配配送作业回传 成功返回结果
+type AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_fulfill_dms_delivery_work_order_callback_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

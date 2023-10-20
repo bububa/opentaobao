@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/refund"
 )
 
-// Taobaordcaligeniusidentificationcaseresultupdate 鉴定工单结果同步
+// TaobaoRdcAligeniusIdentificationCaseResultUpdate 鉴定工单结果同步
 // taobao.rdc.aligenius.identification.case.result.update
 //
 // 同步鉴定工单结果信息
-func Taobaordcaligeniusidentificationcaseresultupdate(clt *core.SDKClient, req *refund.TaobaordcaligeniusidentificationcaseresultupdateAPIRequest, session string) (*refund.TaobaordcaligeniusidentificationcaseresultupdateAPIResponse, error) {
-	var resp refund.TaobaordcaligeniusidentificationcaseresultupdateAPIResponse
+func TaobaoRdcAligeniusIdentificationCaseResultUpdate(clt *core.SDKClient, req *refund.TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest, session string) (*refund.TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIResponse, error) {
+	var resp refund.TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

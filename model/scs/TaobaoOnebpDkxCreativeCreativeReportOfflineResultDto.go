@@ -1,7 +1,7 @@
 package scs
 
-// TaobaoonebpdkxcreativecreativereportofflineResultDto 结构体
-type TaobaoonebpdkxcreativecreativereportofflineResultDto struct {
+// TaobaoOnebpDkxCreativeCreativeReportOfflineResultDto 结构体
+type TaobaoOnebpDkxCreativeCreativeReportOfflineResultDto struct {
 	// 返回结果
 	CreativeBindResultTopDTOList []CreativeBindResultTopDto `json:"creative_bind_result_top_d_t_o_list,omitempty" xml:"creative_bind_result_top_d_t_o_list>creative_bind_result_top_dto,omitempty"`
 	// 返回消息

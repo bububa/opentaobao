@@ -6,48 +6,48 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoqimenreceiverinfoqueryAPIRequest OAID 收件人信息解密接口 API请求
+// TaobaoQimenReceiverinfoQueryAPIRequest OAID 收件人信息解密接口 API请求
 // taobao.qimen.receiverinfo.query
 //
 // WMS 调用该接口，通过 OAID 查询解密后的收件人信息
-type TaobaoqimenreceiverinfoqueryAPIRequest struct {
+type TaobaoQimenReceiverinfoQueryAPIRequest struct {
 	model.Params
 	//
-	_request *TaobaoqimenreceiverinfoqueryRequest
+	_request *TaobaoQimenReceiverinfoQueryRequest
 }
 
-// NewTaobaoqimenreceiverinfoqueryRequest 初始化TaobaoqimenreceiverinfoqueryAPIRequest对象
-func NewTaobaoqimenreceiverinfoqueryRequest() *TaobaoqimenreceiverinfoqueryAPIRequest {
-	return &TaobaoqimenreceiverinfoqueryAPIRequest{
+// NewTaobaoQimenReceiverinfoQueryRequest 初始化TaobaoQimenReceiverinfoQueryAPIRequest对象
+func NewTaobaoQimenReceiverinfoQueryRequest() *TaobaoQimenReceiverinfoQueryAPIRequest {
+	return &TaobaoQimenReceiverinfoQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoqimenreceiverinfoqueryAPIRequest) GetApiMethodName() string {
+func (r TaobaoQimenReceiverinfoQueryAPIRequest) GetApiMethodName() string {
 	return "taobao.qimen.receiverinfo.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoqimenreceiverinfoqueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoQimenReceiverinfoQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoqimenreceiverinfoqueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoQimenReceiverinfoQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRequest is Request Setter
-func (r *TaobaoqimenreceiverinfoqueryAPIRequest) SetRequest(_request *TaobaoqimenreceiverinfoqueryRequest) error {
+func (r *TaobaoQimenReceiverinfoQueryAPIRequest) SetRequest(_request *TaobaoQimenReceiverinfoQueryRequest) error {
 	r._request = _request
 	r.Set("request", _request)
 	return nil
 }
 
 // GetRequest Request Getter
-func (r TaobaoqimenreceiverinfoqueryAPIRequest) GetRequest() *TaobaoqimenreceiverinfoqueryRequest {
+func (r TaobaoQimenReceiverinfoQueryAPIRequest) GetRequest() *TaobaoQimenReceiverinfoQueryRequest {
 	return r._request
 }

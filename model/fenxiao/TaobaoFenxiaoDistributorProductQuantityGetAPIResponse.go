@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaofenxiaodistributorproductquantitygetAPIResponse 分销商查询产品库存 API返回值
+// TaobaoFenxiaoDistributorProductQuantityGetAPIResponse 分销商查询产品库存 API返回值
 // taobao.fenxiao.distributor.product.quantity.get
 //
 // 分销商查询产品库存
-type TaobaofenxiaodistributorproductquantitygetAPIResponse struct {
+type TaobaoFenxiaoDistributorProductQuantityGetAPIResponse struct {
 	model.CommonResponse
-	TaobaofenxiaodistributorproductquantitygetAPIResponseModel
+	TaobaoFenxiaoDistributorProductQuantityGetAPIResponseModel
 }
 
-// TaobaofenxiaodistributorproductquantitygetAPIResponseModel is 分销商查询产品库存 成功返回结果
-type TaobaofenxiaodistributorproductquantitygetAPIResponseModel struct {
+// TaobaoFenxiaoDistributorProductQuantityGetAPIResponseModel is 分销商查询产品库存 成功返回结果
+type TaobaoFenxiaoDistributorProductQuantityGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_distributor_product_quantity_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

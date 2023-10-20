@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbahourreportcampaigngetAPIResponse 计划维度小时报表获取 API返回值
+// TaobaoSimbaHourReportCampaignGetAPIResponse 计划维度小时报表获取 API返回值
 // taobao.simba.hour.report.campaign.get
 //
 // 计划维度小时报表获取
-type TaobaosimbahourreportcampaigngetAPIResponse struct {
+type TaobaoSimbaHourReportCampaignGetAPIResponse struct {
 	model.CommonResponse
-	TaobaosimbahourreportcampaigngetAPIResponseModel
+	TaobaoSimbaHourReportCampaignGetAPIResponseModel
 }
 
-// TaobaosimbahourreportcampaigngetAPIResponseModel is 计划维度小时报表获取 成功返回结果
-type TaobaosimbahourreportcampaigngetAPIResponseModel struct {
+// TaobaoSimbaHourReportCampaignGetAPIResponseModel is 计划维度小时报表获取 成功返回结果
+type TaobaoSimbaHourReportCampaignGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_hour_report_campaign_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package alihealth2
 
-// AlibabaalihealthdentalitembindMtopResult 结构体
-type AlibabaalihealthdentalitembindMtopResult struct {
+// AlibabaAlihealthDentalItemBindMtopResult 结构体
+type AlibabaAlihealthDentalItemBindMtopResult struct {
 	// model
 	StoreItemRelVoList []StoreItemRelVo `json:"store_item_rel_vo_list,omitempty" xml:"store_item_rel_vo_list>store_item_rel_vo,omitempty"`
 	// 200

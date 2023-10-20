@@ -1,7 +1,7 @@
 package tmallgenie
 
-// TaobaoailabaicloudtopmemoalarmdeleteResult 结构体
-type TaobaoailabaicloudtopmemoalarmdeleteResult struct {
+// TaobaoAilabAicloudTopMemoAlarmDeleteResult 结构体
+type TaobaoAilabAicloudTopMemoAlarmDeleteResult struct {
 	// 附加信息，典型应用场景是对失败调用进行简述，方便调用方定位问题
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 调用返回码

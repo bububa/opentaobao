@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalinkdeviceunbindAPIResponse 解绑设备 API返回值
+// AlibabaAlinkDeviceUnbindAPIResponse 解绑设备 API返回值
 // alibaba.alink.device.unbind
 //
 // 阿里智能解绑设备
-type AlibabaalinkdeviceunbindAPIResponse struct {
+type AlibabaAlinkDeviceUnbindAPIResponse struct {
 	model.CommonResponse
-	AlibabaalinkdeviceunbindAPIResponseModel
+	AlibabaAlinkDeviceUnbindAPIResponseModel
 }
 
-// AlibabaalinkdeviceunbindAPIResponseModel is 解绑设备 成功返回结果
-type AlibabaalinkdeviceunbindAPIResponseModel struct {
+// AlibabaAlinkDeviceUnbindAPIResponseModel is 解绑设备 成功返回结果
+type AlibabaAlinkDeviceUnbindAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alink_device_unbind_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

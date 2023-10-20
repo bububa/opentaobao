@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
 
-// Taobaovasservicevalidate 增值服务订购服务验证
+// TaobaoVasServiceValidate 增值服务订购服务验证
 // taobao.vas.service.validate
 //
 // 增值服务订购服务验证
-func Taobaovasservicevalidate(clt *core.SDKClient, req *servicecenter.TaobaovasservicevalidateAPIRequest, session string) (*servicecenter.TaobaovasservicevalidateAPIResponse, error) {
-	var resp servicecenter.TaobaovasservicevalidateAPIResponse
+func TaobaoVasServiceValidate(clt *core.SDKClient, req *servicecenter.TaobaoVasServiceValidateAPIRequest, session string) (*servicecenter.TaobaoVasServiceValidateAPIResponse, error) {
+	var resp servicecenter.TaobaoVasServiceValidateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

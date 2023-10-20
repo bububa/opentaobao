@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdkitem"
 )
 
-// Alibabawdkitemcategoryquery 类目查询接口
+// AlibabaWdkItemCategoryQuery 类目查询接口
 // alibaba.wdk.item.category.query
 //
 // 类目查询接口
-func Alibabawdkitemcategoryquery(clt *core.SDKClient, req *wdkitem.AlibabawdkitemcategoryqueryAPIRequest, session string) (*wdkitem.AlibabawdkitemcategoryqueryAPIResponse, error) {
-	var resp wdkitem.AlibabawdkitemcategoryqueryAPIResponse
+func AlibabaWdkItemCategoryQuery(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemCategoryQueryAPIRequest, session string) (*wdkitem.AlibabaWdkItemCategoryQueryAPIResponse, error) {
+	var resp wdkitem.AlibabaWdkItemCategoryQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

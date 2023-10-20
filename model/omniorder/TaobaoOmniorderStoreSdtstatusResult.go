@@ -1,7 +1,7 @@
 package omniorder
 
-// TaobaoomniorderstoresdtstatusResult 结构体
-type TaobaoomniorderstoresdtstatusResult struct {
+// TaobaoOmniorderStoreSdtstatusResult 结构体
+type TaobaoOmniorderStoreSdtstatusResult struct {
 	// 异常信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 异常码 0  正常，否则异常

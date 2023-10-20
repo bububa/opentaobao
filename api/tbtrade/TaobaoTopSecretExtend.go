@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbtrade"
 )
 
-// Taobaotopsecretextend 虚拟号延期
+// TaobaoTopSecretExtend 虚拟号延期
 // taobao.top.secret.extend
 //
 // 虚拟号延期
-func Taobaotopsecretextend(clt *core.SDKClient, req *tbtrade.TaobaotopsecretextendAPIRequest, session string) (*tbtrade.TaobaotopsecretextendAPIResponse, error) {
-	var resp tbtrade.TaobaotopsecretextendAPIResponse
+func TaobaoTopSecretExtend(clt *core.SDKClient, req *tbtrade.TaobaoTopSecretExtendAPIRequest, session string) (*tbtrade.TaobaoTopSecretExtendAPIResponse, error) {
+	var resp tbtrade.TaobaoTopSecretExtendAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

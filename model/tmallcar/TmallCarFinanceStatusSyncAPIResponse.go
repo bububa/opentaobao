@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallcarfinancestatussyncAPIResponse 汽车金融状态同步 API返回值
+// TmallCarFinanceStatusSyncAPIResponse 汽车金融状态同步 API返回值
 // tmall.car.finance.status.sync
 //
 // 汽车金融状态同步
-type TmallcarfinancestatussyncAPIResponse struct {
+type TmallCarFinanceStatusSyncAPIResponse struct {
 	model.CommonResponse
-	TmallcarfinancestatussyncAPIResponseModel
+	TmallCarFinanceStatusSyncAPIResponseModel
 }
 
-// TmallcarfinancestatussyncAPIResponseModel is 汽车金融状态同步 成功返回结果
-type TmallcarfinancestatussyncAPIResponseModel struct {
+// TmallCarFinanceStatusSyncAPIResponseModel is 汽车金融状态同步 成功返回结果
+type TmallCarFinanceStatusSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_car_finance_status_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

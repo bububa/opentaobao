@@ -1,7 +1,7 @@
 package viapi
 
-// AliyunviapigoodstechrecognizefurniturespuData 结构体
-type AliyunviapigoodstechrecognizefurniturespuData struct {
+// AliyunViapiGoodstechRecognizeFurniturespuData 结构体
+type AliyunViapiGoodstechRecognizeFurniturespuData struct {
 	// 预测的类目中文名称
 	Predprobability string `json:"predprobability,omitempty" xml:"predprobability,omitempty"`
 	// 预测的类目名称ID

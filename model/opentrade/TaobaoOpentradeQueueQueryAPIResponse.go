@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoopentradequeuequeryAPIResponse 尖货交易排队信息查询 API返回值
+// TaobaoOpentradeQueueQueryAPIResponse 尖货交易排队信息查询 API返回值
 // taobao.opentrade.queue.query
 //
 // 尖货交易排队信息查询
-type TaobaoopentradequeuequeryAPIResponse struct {
+type TaobaoOpentradeQueueQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaoopentradequeuequeryAPIResponseModel
+	TaobaoOpentradeQueueQueryAPIResponseModel
 }
 
-// TaobaoopentradequeuequeryAPIResponseModel is 尖货交易排队信息查询 成功返回结果
-type TaobaoopentradequeuequeryAPIResponseModel struct {
+// TaobaoOpentradeQueueQueryAPIResponseModel is 尖货交易排队信息查询 成功返回结果
+type TaobaoOpentradeQueueQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"opentrade_queue_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

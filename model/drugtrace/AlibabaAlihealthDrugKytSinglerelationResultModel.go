@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaalihealthdrugkytsinglerelationResultModel 结构体
-type AlibabaalihealthdrugkytsinglerelationResultModel struct {
+// AlibabaAlihealthDrugKytSinglerelationResultModel 结构体
+type AlibabaAlihealthDrugKytSinglerelationResultModel struct {
 	// model
 	ModelList []CodeRelationDto `json:"model_list,omitempty" xml:"model_list>code_relation_dto,omitempty"`
 	// msgCode

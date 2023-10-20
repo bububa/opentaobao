@@ -1,7 +1,7 @@
 package trade
 
-// TaobaolifereservationtradeconsumenoticeResult 结构体
-type TaobaolifereservationtradeconsumenoticeResult struct {
+// TaobaoLifeReservationTradeConsumeNoticeResult 结构体
+type TaobaoLifeReservationTradeConsumeNoticeResult struct {
 	// traceId
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 错误

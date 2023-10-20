@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthtracecodesellerproductsearchAPIRequest 查询商品api API请求
+// AlibabaAlihealthTracecodesellerProductSearchAPIRequest 查询商品api API请求
 // alibaba.alihealth.tracecodeseller.product.search
 //
 // 查询商品api
-type AlibabaalihealthtracecodesellerproductsearchAPIRequest struct {
+type AlibabaAlihealthTracecodesellerProductSearchAPIRequest struct {
 	model.Params
 	// 身份认证
 	_skeyCode string
@@ -22,78 +22,78 @@ type AlibabaalihealthtracecodesellerproductsearchAPIRequest struct {
 	_pageSize int64
 }
 
-// NewAlibabaalihealthtracecodesellerproductsearchRequest 初始化AlibabaalihealthtracecodesellerproductsearchAPIRequest对象
-func NewAlibabaalihealthtracecodesellerproductsearchRequest() *AlibabaalihealthtracecodesellerproductsearchAPIRequest {
-	return &AlibabaalihealthtracecodesellerproductsearchAPIRequest{
+// NewAlibabaAlihealthTracecodesellerProductSearchRequest 初始化AlibabaAlihealthTracecodesellerProductSearchAPIRequest对象
+func NewAlibabaAlihealthTracecodesellerProductSearchRequest() *AlibabaAlihealthTracecodesellerProductSearchAPIRequest {
+	return &AlibabaAlihealthTracecodesellerProductSearchAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihealthtracecodesellerproductsearchAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthTracecodesellerProductSearchAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.tracecodeseller.product.search"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihealthtracecodesellerproductsearchAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihealthTracecodesellerProductSearchAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihealthtracecodesellerproductsearchAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihealthTracecodesellerProductSearchAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSkeyCode is SkeyCode Setter
 // 身份认证
-func (r *AlibabaalihealthtracecodesellerproductsearchAPIRequest) SetSkeyCode(_skeyCode string) error {
+func (r *AlibabaAlihealthTracecodesellerProductSearchAPIRequest) SetSkeyCode(_skeyCode string) error {
 	r._skeyCode = _skeyCode
 	r.Set("skey_code", _skeyCode)
 	return nil
 }
 
 // GetSkeyCode SkeyCode Getter
-func (r AlibabaalihealthtracecodesellerproductsearchAPIRequest) GetSkeyCode() string {
+func (r AlibabaAlihealthTracecodesellerProductSearchAPIRequest) GetSkeyCode() string {
 	return r._skeyCode
 }
 
 // SetEntInfoId is EntInfoId Setter
 // 商家id
-func (r *AlibabaalihealthtracecodesellerproductsearchAPIRequest) SetEntInfoId(_entInfoId int64) error {
+func (r *AlibabaAlihealthTracecodesellerProductSearchAPIRequest) SetEntInfoId(_entInfoId int64) error {
 	r._entInfoId = _entInfoId
 	r.Set("ent_info_id", _entInfoId)
 	return nil
 }
 
 // GetEntInfoId EntInfoId Getter
-func (r AlibabaalihealthtracecodesellerproductsearchAPIRequest) GetEntInfoId() int64 {
+func (r AlibabaAlihealthTracecodesellerProductSearchAPIRequest) GetEntInfoId() int64 {
 	return r._entInfoId
 }
 
 // SetPage is Page Setter
 // 页数
-func (r *AlibabaalihealthtracecodesellerproductsearchAPIRequest) SetPage(_page int64) error {
+func (r *AlibabaAlihealthTracecodesellerProductSearchAPIRequest) SetPage(_page int64) error {
 	r._page = _page
 	r.Set("page", _page)
 	return nil
 }
 
 // GetPage Page Getter
-func (r AlibabaalihealthtracecodesellerproductsearchAPIRequest) GetPage() int64 {
+func (r AlibabaAlihealthTracecodesellerProductSearchAPIRequest) GetPage() int64 {
 	return r._page
 }
 
 // SetPageSize is PageSize Setter
 // 每页条数
-func (r *AlibabaalihealthtracecodesellerproductsearchAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *AlibabaAlihealthTracecodesellerProductSearchAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r AlibabaalihealthtracecodesellerproductsearchAPIRequest) GetPageSize() int64 {
+func (r AlibabaAlihealthTracecodesellerProductSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

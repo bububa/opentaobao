@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallservicecenterworkcardlogisticsorderupdateAPIResponse 物流工单履约状态更新 API返回值
+// TmallServicecenterWorkcardLogisticsorderUpdateAPIResponse 物流工单履约状态更新 API返回值
 // tmall.servicecenter.workcard.logisticsorder.update
 //
 // 天猫寄送类服务对接外部物流服务商回传物流状态信息
-type TmallservicecenterworkcardlogisticsorderupdateAPIResponse struct {
+type TmallServicecenterWorkcardLogisticsorderUpdateAPIResponse struct {
 	model.CommonResponse
-	TmallservicecenterworkcardlogisticsorderupdateAPIResponseModel
+	TmallServicecenterWorkcardLogisticsorderUpdateAPIResponseModel
 }
 
-// TmallservicecenterworkcardlogisticsorderupdateAPIResponseModel is 物流工单履约状态更新 成功返回结果
-type TmallservicecenterworkcardlogisticsorderupdateAPIResponseModel struct {
+// TmallServicecenterWorkcardLogisticsorderUpdateAPIResponseModel is 物流工单履约状态更新 成功返回结果
+type TmallServicecenterWorkcardLogisticsorderUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_workcard_logisticsorder_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

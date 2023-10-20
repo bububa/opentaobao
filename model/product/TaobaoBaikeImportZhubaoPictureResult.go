@@ -1,7 +1,7 @@
 package product
 
-// TaobaobaikeimportzhubaopictureResult 结构体
-type TaobaobaikeimportzhubaopictureResult struct {
+// TaobaoBaikeImportZhubaoPictureResult 结构体
+type TaobaoBaikeImportZhubaoPictureResult struct {
 	// messageCode
 	MessageCode string `json:"message_code,omitempty" xml:"message_code,omitempty"`
 	// message

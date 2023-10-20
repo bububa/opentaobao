@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalsccrmcustomervoucherlistAPIRequest 获取顾客优惠券列表 API请求
+// AlibabaAlscCrmCustomerVoucherListAPIRequest 获取顾客优惠券列表 API请求
 // alibaba.alsc.crm.customer.voucher.list
 //
 // 获取顾客优惠券列表
-type AlibabaalsccrmcustomervoucherlistAPIRequest struct {
+type AlibabaAlscCrmCustomerVoucherListAPIRequest struct {
 	model.Params
 	// 获取顾客优惠券列表
 	_customerVoucherFullOpenReq *CustomerVoucherFullOpenReq
 }
 
-// NewAlibabaalsccrmcustomervoucherlistRequest 初始化AlibabaalsccrmcustomervoucherlistAPIRequest对象
-func NewAlibabaalsccrmcustomervoucherlistRequest() *AlibabaalsccrmcustomervoucherlistAPIRequest {
-	return &AlibabaalsccrmcustomervoucherlistAPIRequest{
+// NewAlibabaAlscCrmCustomerVoucherListRequest 初始化AlibabaAlscCrmCustomerVoucherListAPIRequest对象
+func NewAlibabaAlscCrmCustomerVoucherListRequest() *AlibabaAlscCrmCustomerVoucherListAPIRequest {
+	return &AlibabaAlscCrmCustomerVoucherListAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalsccrmcustomervoucherlistAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmCustomerVoucherListAPIRequest) GetApiMethodName() string {
 	return "alibaba.alsc.crm.customer.voucher.list"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalsccrmcustomervoucherlistAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlscCrmCustomerVoucherListAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalsccrmcustomervoucherlistAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlscCrmCustomerVoucherListAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCustomerVoucherFullOpenReq is CustomerVoucherFullOpenReq Setter
 // 获取顾客优惠券列表
-func (r *AlibabaalsccrmcustomervoucherlistAPIRequest) SetCustomerVoucherFullOpenReq(_customerVoucherFullOpenReq *CustomerVoucherFullOpenReq) error {
+func (r *AlibabaAlscCrmCustomerVoucherListAPIRequest) SetCustomerVoucherFullOpenReq(_customerVoucherFullOpenReq *CustomerVoucherFullOpenReq) error {
 	r._customerVoucherFullOpenReq = _customerVoucherFullOpenReq
 	r.Set("customer_voucher_full_open_req", _customerVoucherFullOpenReq)
 	return nil
 }
 
 // GetCustomerVoucherFullOpenReq CustomerVoucherFullOpenReq Getter
-func (r AlibabaalsccrmcustomervoucherlistAPIRequest) GetCustomerVoucherFullOpenReq() *CustomerVoucherFullOpenReq {
+func (r AlibabaAlscCrmCustomerVoucherListAPIRequest) GetCustomerVoucherFullOpenReq() *CustomerVoucherFullOpenReq {
 	return r._customerVoucherFullOpenReq
 }

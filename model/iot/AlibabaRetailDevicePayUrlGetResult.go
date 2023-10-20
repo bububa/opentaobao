@@ -1,7 +1,7 @@
 package iot
 
-// AlibabaretaildevicepayUrlgetResult 结构体
-type AlibabaretaildevicepayUrlgetResult struct {
+// AlibabaRetailDevicePayUrlGetResult 结构体
+type AlibabaRetailDevicePayUrlGetResult struct {
 	// errorInfos
 	ErrorInfos []ErrorInfo `json:"error_infos,omitempty" xml:"error_infos>error_info,omitempty"`
 	// module

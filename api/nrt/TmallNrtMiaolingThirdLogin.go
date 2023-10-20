@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/nrt"
 )
 
-// Tmallnrtmiaolingthirdlogin 喵零第三方免登
+// TmallNrtMiaolingThirdLogin 喵零第三方免登
 // tmall.nrt.miaoling.third.login
 //
 // 喵零第三方免登
-func Tmallnrtmiaolingthirdlogin(clt *core.SDKClient, req *nrt.TmallnrtmiaolingthirdloginAPIRequest, session string) (*nrt.TmallnrtmiaolingthirdloginAPIResponse, error) {
-	var resp nrt.TmallnrtmiaolingthirdloginAPIResponse
+func TmallNrtMiaolingThirdLogin(clt *core.SDKClient, req *nrt.TmallNrtMiaolingThirdLoginAPIRequest, session string) (*nrt.TmallNrtMiaolingThirdLoginAPIResponse, error) {
+	var resp nrt.TmallNrtMiaolingThirdLoginAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

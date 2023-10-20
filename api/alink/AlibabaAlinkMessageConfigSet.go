@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alink"
 )
 
-// Alibabaalinkmessageconfigset 消息提醒开关
+// AlibabaAlinkMessageConfigSet 消息提醒开关
 // alibaba.alink.message.config.set
 //
 // 阿里智能消息开关
-func Alibabaalinkmessageconfigset(clt *core.SDKClient, req *alink.AlibabaalinkmessageconfigsetAPIRequest, session string) (*alink.AlibabaalinkmessageconfigsetAPIResponse, error) {
-	var resp alink.AlibabaalinkmessageconfigsetAPIResponse
+func AlibabaAlinkMessageConfigSet(clt *core.SDKClient, req *alink.AlibabaAlinkMessageConfigSetAPIRequest, session string) (*alink.AlibabaAlinkMessageConfigSetAPIResponse, error) {
+	var resp alink.AlibabaAlinkMessageConfigSetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

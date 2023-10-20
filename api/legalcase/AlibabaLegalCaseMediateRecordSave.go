@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/legalcase"
 )
 
-// Alibabalegalcasemediaterecordsave 新增调解结果
+// AlibabaLegalCaseMediateRecordSave 新增调解结果
 // alibaba.legal.case.mediate.record.save
 //
 // 增加调解沟通记录
-func Alibabalegalcasemediaterecordsave(clt *core.SDKClient, req *legalcase.AlibabalegalcasemediaterecordsaveAPIRequest, session string) (*legalcase.AlibabalegalcasemediaterecordsaveAPIResponse, error) {
-	var resp legalcase.AlibabalegalcasemediaterecordsaveAPIResponse
+func AlibabaLegalCaseMediateRecordSave(clt *core.SDKClient, req *legalcase.AlibabaLegalCaseMediateRecordSaveAPIRequest, session string) (*legalcase.AlibabaLegalCaseMediateRecordSaveAPIResponse, error) {
+	var resp legalcase.AlibabaLegalCaseMediateRecordSaveAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// OdpsaliyuncscomdescribeOdpsService20141215APIResponse 查询ODPS服务 API返回值
+// OdpsAliyuncsComDescribeOdpsService20141215APIResponse 查询ODPS服务 API返回值
 // odps.aliyuncs.com.DescribeOdpsService.2014-12-15
 //
 // 查询ODPS服务
-type OdpsaliyuncscomdescribeOdpsService20141215APIResponse struct {
+type OdpsAliyuncsComDescribeOdpsService20141215APIResponse struct {
 	model.CommonResponse
-	OdpsaliyuncscomdescribeOdpsService20141215APIResponseModel
+	OdpsAliyuncsComDescribeOdpsService20141215APIResponseModel
 }
 
-// OdpsaliyuncscomdescribeOdpsService20141215APIResponseModel is 查询ODPS服务 成功返回结果
-type OdpsaliyuncscomdescribeOdpsService20141215APIResponseModel struct {
+// OdpsAliyuncsComDescribeOdpsService20141215APIResponseModel is 查询ODPS服务 成功返回结果
+type OdpsAliyuncsComDescribeOdpsService20141215APIResponseModel struct {
 	XMLName xml.Name `xml:"odps_aliyuncs_com_DescribeOdpsService_2014-12-15_response"`
 	// 请求ID
 	RequestId string `json:"RequestId,omitempty" xml:"RequestId,omitempty"`

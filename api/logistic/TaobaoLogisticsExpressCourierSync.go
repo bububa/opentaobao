@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-// Taobaologisticsexpresscouriersync 快递公司同步小件员信息
+// TaobaoLogisticsExpressCourierSync 快递公司同步小件员信息
 // taobao.logistics.express.courier.sync
 //
 // 快递公司同步小件员信息
-func Taobaologisticsexpresscouriersync(clt *core.SDKClient, req *logistic.TaobaologisticsexpresscouriersyncAPIRequest, session string) (*logistic.TaobaologisticsexpresscouriersyncAPIResponse, error) {
-	var resp logistic.TaobaologisticsexpresscouriersyncAPIResponse
+func TaobaoLogisticsExpressCourierSync(clt *core.SDKClient, req *logistic.TaobaoLogisticsExpressCourierSyncAPIRequest, session string) (*logistic.TaobaoLogisticsExpressCourierSyncAPIResponse, error) {
+	var resp logistic.TaobaoLogisticsExpressCourierSyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

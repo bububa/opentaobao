@@ -1,5 +1,5 @@
 package qimen
 
-// TaobaoqimenordercancelMap 结构体
-type TaobaoqimenordercancelMap struct {
+// TaobaoQimenOrderCancelMap 结构体
+type TaobaoQimenOrderCancelMap struct {
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// Alibabacampusguardcontrollerofflinedata 点位离线数据拉取
+// AlibabaCampusGuardControllerOfflinedata 点位离线数据拉取
 // alibaba.campus.guard.controller.offlinedata
 //
 // 点位离线数据拉取
-func Alibabacampusguardcontrollerofflinedata(clt *core.SDKClient, req *campus.AlibabacampusguardcontrollerofflinedataAPIRequest, session string) (*campus.AlibabacampusguardcontrollerofflinedataAPIResponse, error) {
-	var resp campus.AlibabacampusguardcontrollerofflinedataAPIResponse
+func AlibabaCampusGuardControllerOfflinedata(clt *core.SDKClient, req *campus.AlibabaCampusGuardControllerOfflinedataAPIRequest, session string) (*campus.AlibabaCampusGuardControllerOfflinedataAPIResponse, error) {
+	var resp campus.AlibabaCampusGuardControllerOfflinedataAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

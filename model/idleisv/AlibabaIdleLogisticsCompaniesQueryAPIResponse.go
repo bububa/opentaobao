@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaidlelogisticscompaniesqueryAPIResponse 快递公司列表查询 API返回值
+// AlibabaIdleLogisticsCompaniesQueryAPIResponse 快递公司列表查询 API返回值
 // alibaba.idle.logistics.companies.query
 //
 // 支持发货的快递公司列表查询
-type AlibabaidlelogisticscompaniesqueryAPIResponse struct {
+type AlibabaIdleLogisticsCompaniesQueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaidlelogisticscompaniesqueryAPIResponseModel
+	AlibabaIdleLogisticsCompaniesQueryAPIResponseModel
 }
 
-// AlibabaidlelogisticscompaniesqueryAPIResponseModel is 快递公司列表查询 成功返回结果
-type AlibabaidlelogisticscompaniesqueryAPIResponseModel struct {
+// AlibabaIdleLogisticsCompaniesQueryAPIResponseModel is 快递公司列表查询 成功返回结果
+type AlibabaIdleLogisticsCompaniesQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_logistics_companies_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

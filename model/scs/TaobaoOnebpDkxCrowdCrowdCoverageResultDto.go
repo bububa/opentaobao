@@ -1,7 +1,7 @@
 package scs
 
-// TaobaoonebpdkxcrowdcrowdcoverageResultDto 结构体
-type TaobaoonebpdkxcrowdcrowdcoverageResultDto struct {
+// TaobaoOnebpDkxCrowdCrowdCoverageResultDto 结构体
+type TaobaoOnebpDkxCrowdCrowdCoverageResultDto struct {
 	// 返回消息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 返回结果

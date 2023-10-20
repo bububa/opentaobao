@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripmerchantgalaxyvouchergenerateschemelinkResponse 结构体
-type AlitripmerchantgalaxyvouchergenerateschemelinkResponse struct {
+// AlitripMerchantGalaxyVoucherGenerateSchemeLinkResponse 结构体
+type AlitripMerchantGalaxyVoucherGenerateSchemeLinkResponse struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 内容

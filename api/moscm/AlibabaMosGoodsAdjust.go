@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/moscm"
 )
 
-// Alibabamosgoodsadjust 调整库存
+// AlibabaMosGoodsAdjust 调整库存
 // alibaba.mos.goods.adjust
 //
 // 库存调整接口
-func Alibabamosgoodsadjust(clt *core.SDKClient, req *moscm.AlibabamosgoodsadjustAPIRequest, session string) (*moscm.AlibabamosgoodsadjustAPIResponse, error) {
-	var resp moscm.AlibabamosgoodsadjustAPIResponse
+func AlibabaMosGoodsAdjust(clt *core.SDKClient, req *moscm.AlibabaMosGoodsAdjustAPIRequest, session string) (*moscm.AlibabaMosGoodsAdjustAPIResponse, error) {
+	var resp moscm.AlibabaMosGoodsAdjustAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

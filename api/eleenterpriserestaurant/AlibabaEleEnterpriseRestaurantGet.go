@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/eleenterpriserestaurant"
 )
 
-// Alibabaeleenterpriserestaurantget 查询餐厅信息
+// AlibabaEleEnterpriseRestaurantGet 查询餐厅信息
 // alibaba.ele.enterprise.restaurant.get
 //
 // 查询餐厅信息
-func Alibabaeleenterpriserestaurantget(clt *core.SDKClient, req *eleenterpriserestaurant.AlibabaeleenterpriserestaurantgetAPIRequest, session string) (*eleenterpriserestaurant.AlibabaeleenterpriserestaurantgetAPIResponse, error) {
-	var resp eleenterpriserestaurant.AlibabaeleenterpriserestaurantgetAPIResponse
+func AlibabaEleEnterpriseRestaurantGet(clt *core.SDKClient, req *eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantGetAPIRequest, session string) (*eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantGetAPIResponse, error) {
+	var resp eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

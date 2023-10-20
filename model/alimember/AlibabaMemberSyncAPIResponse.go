@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamembersyncAPIResponse 会员信息同步 API返回值
+// AlibabaMemberSyncAPIResponse 会员信息同步 API返回值
 // alibaba.member.sync
 //
 // 会员信息同步
-type AlibabamembersyncAPIResponse struct {
+type AlibabaMemberSyncAPIResponse struct {
 	model.CommonResponse
-	AlibabamembersyncAPIResponseModel
+	AlibabaMemberSyncAPIResponseModel
 }
 
-// AlibabamembersyncAPIResponseModel is 会员信息同步 成功返回结果
-type AlibabamembersyncAPIResponseModel struct {
+// AlibabaMemberSyncAPIResponseModel is 会员信息同步 成功返回结果
+type AlibabaMemberSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_member_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
-	Result *AlibabamembersyncResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaMemberSyncResult `json:"result,omitempty" xml:"result,omitempty"`
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaibshenjingvisitorpaduploadfaceAPIResponse 访客PAD上传人脸 API返回值
+// AlibabaIbShenjingVisitorPadUploadfaceAPIResponse 访客PAD上传人脸 API返回值
 // alibaba.ib.shenjing.visitor.pad.uploadface
 //
 // 访客PAD端上传人脸。
-type AlibabaibshenjingvisitorpaduploadfaceAPIResponse struct {
+type AlibabaIbShenjingVisitorPadUploadfaceAPIResponse struct {
 	model.CommonResponse
-	AlibabaibshenjingvisitorpaduploadfaceAPIResponseModel
+	AlibabaIbShenjingVisitorPadUploadfaceAPIResponseModel
 }
 
-// AlibabaibshenjingvisitorpaduploadfaceAPIResponseModel is 访客PAD上传人脸 成功返回结果
-type AlibabaibshenjingvisitorpaduploadfaceAPIResponseModel struct {
+// AlibabaIbShenjingVisitorPadUploadfaceAPIResponseModel is 访客PAD上传人脸 成功返回结果
+type AlibabaIbShenjingVisitorPadUploadfaceAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ib_shenjing_visitor_pad_uploadface_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

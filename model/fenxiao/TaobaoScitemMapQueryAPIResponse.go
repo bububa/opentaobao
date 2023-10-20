@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoscitemmapqueryAPIResponse 查找IC商品或分销商品与后端商品的关联信息 API返回值
+// TaobaoScitemMapQueryAPIResponse 查找IC商品或分销商品与后端商品的关联信息 API返回值
 // taobao.scitem.map.query
 //
 // 查找IC商品或分销商品与后端商品的关联信息。skuId如果不传就查找该itemId下所有的sku
-type TaobaoscitemmapqueryAPIResponse struct {
+type TaobaoScitemMapQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaoscitemmapqueryAPIResponseModel
+	TaobaoScitemMapQueryAPIResponseModel
 }
 
-// TaobaoscitemmapqueryAPIResponseModel is 查找IC商品或分销商品与后端商品的关联信息 成功返回结果
-type TaobaoscitemmapqueryAPIResponseModel struct {
+// TaobaoScitemMapQueryAPIResponseModel is 查找IC商品或分销商品与后端商品的关联信息 成功返回结果
+type TaobaoScitemMapQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"scitem_map_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

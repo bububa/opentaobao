@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/topoaid"
 )
 
-// Taobaocrmhistoryouidget 根据buyerNick获取ouid
+// TaobaoCrmHistoryOuidGet 根据buyerNick获取ouid
 // taobao.crm.history.ouid.get
 //
 // 根据buyerNick获取ouid
-func Taobaocrmhistoryouidget(clt *core.SDKClient, req *topoaid.TaobaocrmhistoryouidgetAPIRequest, session string) (*topoaid.TaobaocrmhistoryouidgetAPIResponse, error) {
-	var resp topoaid.TaobaocrmhistoryouidgetAPIResponse
+func TaobaoCrmHistoryOuidGet(clt *core.SDKClient, req *topoaid.TaobaoCrmHistoryOuidGetAPIRequest, session string) (*topoaid.TaobaoCrmHistoryOuidGetAPIResponse, error) {
+	var resp topoaid.TaobaoCrmHistoryOuidGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaominiappwidgettemplateinstancequeryAPIRequest 小部件实例化版本查询 API请求
+// TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest 小部件实例化版本查询 API请求
 // taobao.miniapp.widget.template.instance.query
 //
 // 小部件实例化版本查询
-type TaobaominiappwidgettemplateinstancequeryAPIRequest struct {
+type TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest struct {
 	model.Params
 	// 入参
 	_param0 *MiniAppInstantiateAppOpenQuery
 }
 
-// NewTaobaominiappwidgettemplateinstancequeryRequest 初始化TaobaominiappwidgettemplateinstancequeryAPIRequest对象
-func NewTaobaominiappwidgettemplateinstancequeryRequest() *TaobaominiappwidgettemplateinstancequeryAPIRequest {
-	return &TaobaominiappwidgettemplateinstancequeryAPIRequest{
+// NewTaobaoMiniappWidgetTemplateInstanceQueryRequest 初始化TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest对象
+func NewTaobaoMiniappWidgetTemplateInstanceQueryRequest() *TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest {
+	return &TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaominiappwidgettemplateinstancequeryAPIRequest) GetApiMethodName() string {
+func (r TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest) GetApiMethodName() string {
 	return "taobao.miniapp.widget.template.instance.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaominiappwidgettemplateinstancequeryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaominiappwidgettemplateinstancequeryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam0 is Param0 Setter
 // 入参
-func (r *TaobaominiappwidgettemplateinstancequeryAPIRequest) SetParam0(_param0 *MiniAppInstantiateAppOpenQuery) error {
+func (r *TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest) SetParam0(_param0 *MiniAppInstantiateAppOpenQuery) error {
 	r._param0 = _param0
 	r.Set("param0", _param0)
 	return nil
 }
 
 // GetParam0 Param0 Getter
-func (r TaobaominiappwidgettemplateinstancequeryAPIRequest) GetParam0() *MiniAppInstantiateAppOpenQuery {
+func (r TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest) GetParam0() *MiniAppInstantiateAppOpenQuery {
 	return r._param0
 }

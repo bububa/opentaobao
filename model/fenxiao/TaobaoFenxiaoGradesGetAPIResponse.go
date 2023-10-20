@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaofenxiaogradesgetAPIResponse 分销商等级查询 API返回值
+// TaobaoFenxiaoGradesGetAPIResponse 分销商等级查询 API返回值
 // taobao.fenxiao.grades.get
 //
 // 根据供应商ID，查询他的分销商等级信息
-type TaobaofenxiaogradesgetAPIResponse struct {
+type TaobaoFenxiaoGradesGetAPIResponse struct {
 	model.CommonResponse
-	TaobaofenxiaogradesgetAPIResponseModel
+	TaobaoFenxiaoGradesGetAPIResponseModel
 }
 
-// TaobaofenxiaogradesgetAPIResponseModel is 分销商等级查询 成功返回结果
-type TaobaofenxiaogradesgetAPIResponseModel struct {
+// TaobaoFenxiaoGradesGetAPIResponseModel is 分销商等级查询 成功返回结果
+type TaobaoFenxiaoGradesGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_grades_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

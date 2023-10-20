@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthdoctorincomeupdateAPIResponse 医蝶谷医生收入打款情况回调 API返回值
+// AlibabaAlihealthDoctorIncomeUpdateAPIResponse 医蝶谷医生收入打款情况回调 API返回值
 // alibaba.alihealth.doctor.income.update
 //
 // 医蝶谷医生收入打款情况回调
-type AlibabaalihealthdoctorincomeupdateAPIResponse struct {
+type AlibabaAlihealthDoctorIncomeUpdateAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthdoctorincomeupdateAPIResponseModel
+	AlibabaAlihealthDoctorIncomeUpdateAPIResponseModel
 }
 
-// AlibabaalihealthdoctorincomeupdateAPIResponseModel is 医蝶谷医生收入打款情况回调 成功返回结果
-type AlibabaalihealthdoctorincomeupdateAPIResponseModel struct {
+// AlibabaAlihealthDoctorIncomeUpdateAPIResponseModel is 医蝶谷医生收入打款情况回调 成功返回结果
+type AlibabaAlihealthDoctorIncomeUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_doctor_income_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

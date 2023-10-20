@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlbwmscainiaobillqueryAPIResponse 查询单据列表 API返回值
+// TaobaoWlbWmsCainiaoBillQueryAPIResponse 查询单据列表 API返回值
 // taobao.wlb.wms.cainiao.bill.query
 //
 // 查询单据列表
-type TaobaowlbwmscainiaobillqueryAPIResponse struct {
+type TaobaoWlbWmsCainiaoBillQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaowlbwmscainiaobillqueryAPIResponseModel
+	TaobaoWlbWmsCainiaoBillQueryAPIResponseModel
 }
 
-// TaobaowlbwmscainiaobillqueryAPIResponseModel is 查询单据列表 成功返回结果
-type TaobaowlbwmscainiaobillqueryAPIResponseModel struct {
+// TaobaoWlbWmsCainiaoBillQueryAPIResponseModel is 查询单据列表 成功返回结果
+type TaobaoWlbWmsCainiaoBillQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_wms_cainiao_bill_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

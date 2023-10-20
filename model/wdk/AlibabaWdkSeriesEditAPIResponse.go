@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkserieseditAPIResponse 系列品变更-更新系列 API返回值
+// AlibabaWdkSeriesEditAPIResponse 系列品变更-更新系列 API返回值
 // alibaba.wdk.series.edit
 //
 // 系列品变更-更新系列
-type AlibabawdkserieseditAPIResponse struct {
+type AlibabaWdkSeriesEditAPIResponse struct {
 	model.CommonResponse
-	AlibabawdkserieseditAPIResponseModel
+	AlibabaWdkSeriesEditAPIResponseModel
 }
 
-// AlibabawdkserieseditAPIResponseModel is 系列品变更-更新系列 成功返回结果
-type AlibabawdkserieseditAPIResponseModel struct {
+// AlibabaWdkSeriesEditAPIResponseModel is 系列品变更-更新系列 成功返回结果
+type AlibabaWdkSeriesEditAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_series_edit_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 调用结果
-	ApiResult *AlibabawdkserieseditApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
+	ApiResult *AlibabaWdkSeriesEditApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
 }

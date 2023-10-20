@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitrippolicyspecialcompressionuploadAPIResponse 大批量上传特殊类型的单程/往返政策 API返回值
+// AlitripPolicySpecialCompressionUploadAPIResponse 大批量上传特殊类型的单程/往返政策 API返回值
 // alitrip.policy.special.compression.upload
 //
 // 大批量上传特殊类型的单程/往返政策
-type AlitrippolicyspecialcompressionuploadAPIResponse struct {
+type AlitripPolicySpecialCompressionUploadAPIResponse struct {
 	model.CommonResponse
-	AlitrippolicyspecialcompressionuploadAPIResponseModel
+	AlitripPolicySpecialCompressionUploadAPIResponseModel
 }
 
-// AlitrippolicyspecialcompressionuploadAPIResponseModel is 大批量上传特殊类型的单程/往返政策 成功返回结果
-type AlitrippolicyspecialcompressionuploadAPIResponseModel struct {
+// AlitripPolicySpecialCompressionUploadAPIResponseModel is 大批量上传特殊类型的单程/往返政策 成功返回结果
+type AlitripPolicySpecialCompressionUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_policy_special_compression_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

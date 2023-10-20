@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripbtripopencostcenterqueryAPIRequest 查询成本中心 API请求
+// AlitripBtripOpenCostCenterQueryAPIRequest 查询成本中心 API请求
 // alitrip.btrip.open.cost.center.query
 //
 // 查询成本中心
-type AlitripbtripopencostcenterqueryAPIRequest struct {
+type AlitripBtripOpenCostCenterQueryAPIRequest struct {
 	model.Params
 	// 入参对象
 	_rq *OpenCostCenterQueryRq
 }
 
-// NewAlitripbtripopencostcenterqueryRequest 初始化AlitripbtripopencostcenterqueryAPIRequest对象
-func NewAlitripbtripopencostcenterqueryRequest() *AlitripbtripopencostcenterqueryAPIRequest {
-	return &AlitripbtripopencostcenterqueryAPIRequest{
+// NewAlitripBtripOpenCostCenterQueryRequest 初始化AlitripBtripOpenCostCenterQueryAPIRequest对象
+func NewAlitripBtripOpenCostCenterQueryRequest() *AlitripBtripOpenCostCenterQueryAPIRequest {
+	return &AlitripBtripOpenCostCenterQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripbtripopencostcenterqueryAPIRequest) GetApiMethodName() string {
+func (r AlitripBtripOpenCostCenterQueryAPIRequest) GetApiMethodName() string {
 	return "alitrip.btrip.open.cost.center.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripbtripopencostcenterqueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripBtripOpenCostCenterQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripbtripopencostcenterqueryAPIRequest) GetRawParams() model.Params {
+func (r AlitripBtripOpenCostCenterQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRq is Rq Setter
 // 入参对象
-func (r *AlitripbtripopencostcenterqueryAPIRequest) SetRq(_rq *OpenCostCenterQueryRq) error {
+func (r *AlitripBtripOpenCostCenterQueryAPIRequest) SetRq(_rq *OpenCostCenterQueryRq) error {
 	r._rq = _rq
 	r.Set("rq", _rq)
 	return nil
 }
 
 // GetRq Rq Getter
-func (r AlitripbtripopencostcenterqueryAPIRequest) GetRq() *OpenCostCenterQueryRq {
+func (r AlitripBtripOpenCostCenterQueryAPIRequest) GetRq() *OpenCostCenterQueryRq {
 	return r._rq
 }

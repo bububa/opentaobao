@@ -1,7 +1,7 @@
 package ascpchannel
 
-// AlibabaascpindustrywaybillpreacceptData 结构体
-type AlibabaascpindustrywaybillpreacceptData struct {
+// AlibabaAscpIndustryWaybillPreAcceptData 结构体
+type AlibabaAscpIndustryWaybillPreAcceptData struct {
 	// 运单号
 	ExpressNo string `json:"express_no,omitempty" xml:"express_no,omitempty"`
 	// 物流品牌

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaailabstmallgenieauthdevicelistAPIRequest 获取用户设备列表 API请求
+// AlibabaAilabsTmallgenieAuthDeviceListAPIRequest 获取用户设备列表 API请求
 // alibaba.ailabs.tmallgenie.auth.device.list
 //
 // 通过此接口获取用户绑定的设备信息列表
-type AlibabaailabstmallgenieauthdevicelistAPIRequest struct {
+type AlibabaAilabsTmallgenieAuthDeviceListAPIRequest struct {
 	model.Params
 	// 客户id
 	_clientId string
@@ -18,52 +18,52 @@ type AlibabaailabstmallgenieauthdevicelistAPIRequest struct {
 	_userOpenId string
 }
 
-// NewAlibabaailabstmallgenieauthdevicelistRequest 初始化AlibabaailabstmallgenieauthdevicelistAPIRequest对象
-func NewAlibabaailabstmallgenieauthdevicelistRequest() *AlibabaailabstmallgenieauthdevicelistAPIRequest {
-	return &AlibabaailabstmallgenieauthdevicelistAPIRequest{
+// NewAlibabaAilabsTmallgenieAuthDeviceListRequest 初始化AlibabaAilabsTmallgenieAuthDeviceListAPIRequest对象
+func NewAlibabaAilabsTmallgenieAuthDeviceListRequest() *AlibabaAilabsTmallgenieAuthDeviceListAPIRequest {
+	return &AlibabaAilabsTmallgenieAuthDeviceListAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaailabstmallgenieauthdevicelistAPIRequest) GetApiMethodName() string {
+func (r AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) GetApiMethodName() string {
 	return "alibaba.ailabs.tmallgenie.auth.device.list"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaailabstmallgenieauthdevicelistAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaailabstmallgenieauthdevicelistAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetClientId is ClientId Setter
 // 客户id
-func (r *AlibabaailabstmallgenieauthdevicelistAPIRequest) SetClientId(_clientId string) error {
+func (r *AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) SetClientId(_clientId string) error {
 	r._clientId = _clientId
 	r.Set("client_id", _clientId)
 	return nil
 }
 
 // GetClientId ClientId Getter
-func (r AlibabaailabstmallgenieauthdevicelistAPIRequest) GetClientId() string {
+func (r AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) GetClientId() string {
 	return r._clientId
 }
 
 // SetUserOpenId is UserOpenId Setter
 // 用户开放id
-func (r *AlibabaailabstmallgenieauthdevicelistAPIRequest) SetUserOpenId(_userOpenId string) error {
+func (r *AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) SetUserOpenId(_userOpenId string) error {
 	r._userOpenId = _userOpenId
 	r.Set("user_open_id", _userOpenId)
 	return nil
 }
 
 // GetUserOpenId UserOpenId Getter
-func (r AlibabaailabstmallgenieauthdevicelistAPIRequest) GetUserOpenId() string {
+func (r AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) GetUserOpenId() string {
 	return r._userOpenId
 }

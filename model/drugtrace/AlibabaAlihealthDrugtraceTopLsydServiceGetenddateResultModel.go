@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaalihealthdrugtracetoplsydservicegetenddateResultModel 结构体
-type AlibabaalihealthdrugtracetoplsydservicegetenddateResultModel struct {
+// AlibabaAlihealthDrugtraceTopLsydServiceGetenddateResultModel 结构体
+type AlibabaAlihealthDrugtraceTopLsydServiceGetenddateResultModel struct {
 	// 服务截止时间
 	EndDate string `json:"end_date,omitempty" xml:"end_date,omitempty"`
 	// 接口调用失败具体信息

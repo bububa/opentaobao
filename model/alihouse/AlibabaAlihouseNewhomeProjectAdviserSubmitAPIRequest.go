@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihousenewhomeprojectadvisersubmitAPIRequest 提交楼盘顾问 API请求
+// AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest 提交楼盘顾问 API请求
 // alibaba.alihouse.newhome.project.adviser.submit
 //
 // 提交楼盘顾问
-type AlibabaalihousenewhomeprojectadvisersubmitAPIRequest struct {
+type AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest struct {
 	model.Params
 	// 顾问列表
 	_advisers []ProjectAdviserDto
 }
 
-// NewAlibabaalihousenewhomeprojectadvisersubmitRequest 初始化AlibabaalihousenewhomeprojectadvisersubmitAPIRequest对象
-func NewAlibabaalihousenewhomeprojectadvisersubmitRequest() *AlibabaalihousenewhomeprojectadvisersubmitAPIRequest {
-	return &AlibabaalihousenewhomeprojectadvisersubmitAPIRequest{
+// NewAlibabaAlihouseNewhomeProjectAdviserSubmitRequest 初始化AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest对象
+func NewAlibabaAlihouseNewhomeProjectAdviserSubmitRequest() *AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest {
+	return &AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihousenewhomeprojectadvisersubmitAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.newhome.project.adviser.submit"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihousenewhomeprojectadvisersubmitAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihousenewhomeprojectadvisersubmitAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAdvisers is Advisers Setter
 // 顾问列表
-func (r *AlibabaalihousenewhomeprojectadvisersubmitAPIRequest) SetAdvisers(_advisers []ProjectAdviserDto) error {
+func (r *AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest) SetAdvisers(_advisers []ProjectAdviserDto) error {
 	r._advisers = _advisers
 	r.Set("advisers", _advisers)
 	return nil
 }
 
 // GetAdvisers Advisers Getter
-func (r AlibabaalihousenewhomeprojectadvisersubmitAPIRequest) GetAdvisers() []ProjectAdviserDto {
+func (r AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest) GetAdvisers() []ProjectAdviserDto {
 	return r._advisers
 }

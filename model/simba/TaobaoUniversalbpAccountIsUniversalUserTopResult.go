@@ -1,7 +1,7 @@
 package simba
 
-// TaobaouniversalbpaccountisuniversaluserTopResult 结构体
-type TaobaouniversalbpaccountisuniversaluserTopResult struct {
+// TaobaoUniversalbpAccountIsUniversalUserTopResult 结构体
+type TaobaoUniversalbpAccountIsUniversalUserTopResult struct {
 	// 请求系统信息
 	Info *TopInfo `json:"info,omitempty" xml:"info,omitempty"`
 	// 结果集

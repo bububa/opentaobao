@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// WdkrexoutresourcelistcheckAPIResponse ReX应用中心资源更新检测-外部 API返回值
+// WdkRexoutResourceListCheckAPIResponse ReX应用中心资源更新检测-外部 API返回值
 // wdk.rexout.resource.list.check
 //
 // ReX应用中心资源更新检测-外部
-type WdkrexoutresourcelistcheckAPIResponse struct {
+type WdkRexoutResourceListCheckAPIResponse struct {
 	model.CommonResponse
-	WdkrexoutresourcelistcheckAPIResponseModel
+	WdkRexoutResourceListCheckAPIResponseModel
 }
 
-// WdkrexoutresourcelistcheckAPIResponseModel is ReX应用中心资源更新检测-外部 成功返回结果
-type WdkrexoutresourcelistcheckAPIResponseModel struct {
+// WdkRexoutResourceListCheckAPIResponseModel is ReX应用中心资源更新检测-外部 成功返回结果
+type WdkRexoutResourceListCheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"wdk_rexout_resource_list_check_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

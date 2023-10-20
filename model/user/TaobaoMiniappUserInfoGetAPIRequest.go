@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaominiappuserInfogetAPIRequest 用户开放信息获取 API请求
+// TaobaoMiniappUserInfoGetAPIRequest 用户开放信息获取 API请求
 // taobao.miniapp.userInfo.get
 //
 // 获取用户的 openId，snsNick（如果用户设置过的话），和加密头像链接
-type TaobaominiappuserInfogetAPIRequest struct {
+type TaobaoMiniappUserInfoGetAPIRequest struct {
 	model.Params
 }
 
-// NewTaobaominiappuserInfogetRequest 初始化TaobaominiappuserInfogetAPIRequest对象
-func NewTaobaominiappuserInfogetRequest() *TaobaominiappuserInfogetAPIRequest {
-	return &TaobaominiappuserInfogetAPIRequest{
+// NewTaobaoMiniappUserInfoGetRequest 初始化TaobaoMiniappUserInfoGetAPIRequest对象
+func NewTaobaoMiniappUserInfoGetRequest() *TaobaoMiniappUserInfoGetAPIRequest {
+	return &TaobaoMiniappUserInfoGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaominiappuserInfogetAPIRequest) GetApiMethodName() string {
+func (r TaobaoMiniappUserInfoGetAPIRequest) GetApiMethodName() string {
 	return "taobao.miniapp.userInfo.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaominiappuserInfogetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoMiniappUserInfoGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaominiappuserInfogetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoMiniappUserInfoGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihousenewhomeprojectpresalepermitdeleteResult 结构体
-type AlibabaalihousenewhomeprojectpresalepermitdeleteResult struct {
+// AlibabaAlihouseNewhomeProjectPresalepermitDeleteResult 结构体
+type AlibabaAlihouseNewhomeProjectPresalepermitDeleteResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// code

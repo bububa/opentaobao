@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaodegoperationshowtoprecordsAPIRequest 活动中奖记录 API请求
+// TaobaoDegoperationShowTopRecordsAPIRequest 活动中奖记录 API请求
 // taobao.degoperation.show.top.records
 //
 // 活动中奖记录
-type TaobaodegoperationshowtoprecordsAPIRequest struct {
+type TaobaoDegoperationShowTopRecordsAPIRequest struct {
 	model.Params
 	// 活动后台配置
 	_degAppKey string
@@ -20,65 +20,65 @@ type TaobaodegoperationshowtoprecordsAPIRequest struct {
 	_topN int64
 }
 
-// NewTaobaodegoperationshowtoprecordsRequest 初始化TaobaodegoperationshowtoprecordsAPIRequest对象
-func NewTaobaodegoperationshowtoprecordsRequest() *TaobaodegoperationshowtoprecordsAPIRequest {
-	return &TaobaodegoperationshowtoprecordsAPIRequest{
+// NewTaobaoDegoperationShowTopRecordsRequest 初始化TaobaoDegoperationShowTopRecordsAPIRequest对象
+func NewTaobaoDegoperationShowTopRecordsRequest() *TaobaoDegoperationShowTopRecordsAPIRequest {
+	return &TaobaoDegoperationShowTopRecordsAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaodegoperationshowtoprecordsAPIRequest) GetApiMethodName() string {
+func (r TaobaoDegoperationShowTopRecordsAPIRequest) GetApiMethodName() string {
 	return "taobao.degoperation.show.top.records"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaodegoperationshowtoprecordsAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoDegoperationShowTopRecordsAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaodegoperationshowtoprecordsAPIRequest) GetRawParams() model.Params {
+func (r TaobaoDegoperationShowTopRecordsAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDegAppKey is DegAppKey Setter
 // 活动后台配置
-func (r *TaobaodegoperationshowtoprecordsAPIRequest) SetDegAppKey(_degAppKey string) error {
+func (r *TaobaoDegoperationShowTopRecordsAPIRequest) SetDegAppKey(_degAppKey string) error {
 	r._degAppKey = _degAppKey
 	r.Set("deg_app_key", _degAppKey)
 	return nil
 }
 
 // GetDegAppKey DegAppKey Getter
-func (r TaobaodegoperationshowtoprecordsAPIRequest) GetDegAppKey() string {
+func (r TaobaoDegoperationShowTopRecordsAPIRequest) GetDegAppKey() string {
 	return r._degAppKey
 }
 
 // SetDegEventKey is DegEventKey Setter
 // 活动后台配置
-func (r *TaobaodegoperationshowtoprecordsAPIRequest) SetDegEventKey(_degEventKey string) error {
+func (r *TaobaoDegoperationShowTopRecordsAPIRequest) SetDegEventKey(_degEventKey string) error {
 	r._degEventKey = _degEventKey
 	r.Set("deg_event_key", _degEventKey)
 	return nil
 }
 
 // GetDegEventKey DegEventKey Getter
-func (r TaobaodegoperationshowtoprecordsAPIRequest) GetDegEventKey() string {
+func (r TaobaoDegoperationShowTopRecordsAPIRequest) GetDegEventKey() string {
 	return r._degEventKey
 }
 
 // SetTopN is TopN Setter
 // 返回数
-func (r *TaobaodegoperationshowtoprecordsAPIRequest) SetTopN(_topN int64) error {
+func (r *TaobaoDegoperationShowTopRecordsAPIRequest) SetTopN(_topN int64) error {
 	r._topN = _topN
 	r.Set("top_n", _topN)
 	return nil
 }
 
 // GetTopN TopN Getter
-func (r TaobaodegoperationshowtoprecordsAPIRequest) GetTopN() int64 {
+func (r TaobaoDegoperationShowTopRecordsAPIRequest) GetTopN() int64 {
 	return r._topN
 }

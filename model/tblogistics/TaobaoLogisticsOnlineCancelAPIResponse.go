@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaologisticsonlinecancelAPIResponse 取消物流订单接口 API返回值
+// TaobaoLogisticsOnlineCancelAPIResponse 取消物流订单接口 API返回值
 // taobao.logistics.online.cancel
 //
 // 调此接口取消发货的订单，重新选择物流公司发货。前提是物流公司未揽收货物。对未发货和已经被物流公司揽收的物流订单，是不能取消的。
-type TaobaologisticsonlinecancelAPIResponse struct {
+type TaobaoLogisticsOnlineCancelAPIResponse struct {
 	model.CommonResponse
-	TaobaologisticsonlinecancelAPIResponseModel
+	TaobaoLogisticsOnlineCancelAPIResponseModel
 }
 
-// TaobaologisticsonlinecancelAPIResponseModel is 取消物流订单接口 成功返回结果
-type TaobaologisticsonlinecancelAPIResponseModel struct {
+// TaobaoLogisticsOnlineCancelAPIResponseModel is 取消物流订单接口 成功返回结果
+type TaobaoLogisticsOnlineCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_online_cancel_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

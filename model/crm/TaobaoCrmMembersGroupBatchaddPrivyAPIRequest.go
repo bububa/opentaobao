@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaocrmmembersgroupbatchaddprivyAPIRequest 一批会员添加分组(隐私号版） API请求
+// TaobaoCrmMembersGroupBatchaddPrivyAPIRequest 一批会员添加分组(隐私号版） API请求
 // taobao.crm.members.group.batchadd.privy
 //
 // 为一批会员添加分组，接口返回添加是否成功,如至少有一个会员的分组添加成功，接口就返回成功，否则返回失败，如果当前会员已经拥有当前分组，则直接跳过
-type TaobaocrmmembersgroupbatchaddprivyAPIRequest struct {
+type TaobaoCrmMembersGroupBatchaddPrivyAPIRequest struct {
 	model.Params
 	// 分组id
 	_groupIds []int64
@@ -18,52 +18,52 @@ type TaobaocrmmembersgroupbatchaddprivyAPIRequest struct {
 	_ouids []string
 }
 
-// NewTaobaocrmmembersgroupbatchaddprivyRequest 初始化TaobaocrmmembersgroupbatchaddprivyAPIRequest对象
-func NewTaobaocrmmembersgroupbatchaddprivyRequest() *TaobaocrmmembersgroupbatchaddprivyAPIRequest {
-	return &TaobaocrmmembersgroupbatchaddprivyAPIRequest{
+// NewTaobaoCrmMembersGroupBatchaddPrivyRequest 初始化TaobaoCrmMembersGroupBatchaddPrivyAPIRequest对象
+func NewTaobaoCrmMembersGroupBatchaddPrivyRequest() *TaobaoCrmMembersGroupBatchaddPrivyAPIRequest {
+	return &TaobaoCrmMembersGroupBatchaddPrivyAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaocrmmembersgroupbatchaddprivyAPIRequest) GetApiMethodName() string {
+func (r TaobaoCrmMembersGroupBatchaddPrivyAPIRequest) GetApiMethodName() string {
 	return "taobao.crm.members.group.batchadd.privy"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaocrmmembersgroupbatchaddprivyAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoCrmMembersGroupBatchaddPrivyAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaocrmmembersgroupbatchaddprivyAPIRequest) GetRawParams() model.Params {
+func (r TaobaoCrmMembersGroupBatchaddPrivyAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetGroupIds is GroupIds Setter
 // 分组id
-func (r *TaobaocrmmembersgroupbatchaddprivyAPIRequest) SetGroupIds(_groupIds []int64) error {
+func (r *TaobaoCrmMembersGroupBatchaddPrivyAPIRequest) SetGroupIds(_groupIds []int64) error {
 	r._groupIds = _groupIds
 	r.Set("group_ids", _groupIds)
 	return nil
 }
 
 // GetGroupIds GroupIds Getter
-func (r TaobaocrmmembersgroupbatchaddprivyAPIRequest) GetGroupIds() []int64 {
+func (r TaobaoCrmMembersGroupBatchaddPrivyAPIRequest) GetGroupIds() []int64 {
 	return r._groupIds
 }
 
 // SetOuids is Ouids Setter
 // ouid列表
-func (r *TaobaocrmmembersgroupbatchaddprivyAPIRequest) SetOuids(_ouids []string) error {
+func (r *TaobaoCrmMembersGroupBatchaddPrivyAPIRequest) SetOuids(_ouids []string) error {
 	r._ouids = _ouids
 	r.Set("ouids", _ouids)
 	return nil
 }
 
 // GetOuids Ouids Getter
-func (r TaobaocrmmembersgroupbatchaddprivyAPIRequest) GetOuids() []string {
+func (r TaobaoCrmMembersGroupBatchaddPrivyAPIRequest) GetOuids() []string {
 	return r._ouids
 }

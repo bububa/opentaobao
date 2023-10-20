@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabacampusspacefloorgetbyidAPIResponse 根据id获取楼层 API返回值
+// AlibabaCampusSpaceFloorGetbyidAPIResponse 根据id获取楼层 API返回值
 // alibaba.campus.space.floor.getbyid
 //
 // 根据id获取楼层
-type AlibabacampusspacefloorgetbyidAPIResponse struct {
+type AlibabaCampusSpaceFloorGetbyidAPIResponse struct {
 	model.CommonResponse
-	AlibabacampusspacefloorgetbyidAPIResponseModel
+	AlibabaCampusSpaceFloorGetbyidAPIResponseModel
 }
 
-// AlibabacampusspacefloorgetbyidAPIResponseModel is 根据id获取楼层 成功返回结果
-type AlibabacampusspacefloorgetbyidAPIResponseModel struct {
+// AlibabaCampusSpaceFloorGetbyidAPIResponseModel is 根据id获取楼层 成功返回结果
+type AlibabaCampusSpaceFloorGetbyidAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_campus_space_floor_getbyid_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

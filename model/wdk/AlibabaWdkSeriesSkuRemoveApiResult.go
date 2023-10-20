@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdkseriesskuremoveApiResult 结构体
-type AlibabawdkseriesskuremoveApiResult struct {
+// AlibabaWdkSeriesSkuRemoveApiResult 结构体
+type AlibabaWdkSeriesSkuRemoveApiResult struct {
 	// 错误码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误详情

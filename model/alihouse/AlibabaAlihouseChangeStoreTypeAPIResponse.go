@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihousechangestoretypeAPIResponse 融合店迁移门店 API返回值
+// AlibabaAlihouseChangeStoreTypeAPIResponse 融合店迁移门店 API返回值
 // alibaba.alihouse.change.store.type
 //
 // 融合店迁移门店
-type AlibabaalihousechangestoretypeAPIResponse struct {
+type AlibabaAlihouseChangeStoreTypeAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihousechangestoretypeAPIResponseModel
+	AlibabaAlihouseChangeStoreTypeAPIResponseModel
 }
 
-// AlibabaalihousechangestoretypeAPIResponseModel is 融合店迁移门店 成功返回结果
-type AlibabaalihousechangestoretypeAPIResponseModel struct {
+// AlibabaAlihouseChangeStoreTypeAPIResponseModel is 融合店迁移门店 成功返回结果
+type AlibabaAlihouseChangeStoreTypeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_change_store_type_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

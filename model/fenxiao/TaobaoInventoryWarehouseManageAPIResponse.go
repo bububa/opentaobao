@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoinventorywarehousemanageAPIResponse 创建商家仓或者更新商家仓信息 API返回值
+// TaobaoInventoryWarehouseManageAPIResponse 创建商家仓或者更新商家仓信息 API返回值
 // taobao.inventory.warehouse.manage
 //
 // 创建商家仓或者更新商家仓信息
-type TaobaoinventorywarehousemanageAPIResponse struct {
+type TaobaoInventoryWarehouseManageAPIResponse struct {
 	model.CommonResponse
-	TaobaoinventorywarehousemanageAPIResponseModel
+	TaobaoInventoryWarehouseManageAPIResponseModel
 }
 
-// TaobaoinventorywarehousemanageAPIResponseModel is 创建商家仓或者更新商家仓信息 成功返回结果
-type TaobaoinventorywarehousemanageAPIResponseModel struct {
+// TaobaoInventoryWarehouseManageAPIResponseModel is 创建商家仓或者更新商家仓信息 成功返回结果
+type TaobaoInventoryWarehouseManageAPIResponseModel struct {
 	XMLName xml.Name `xml:"inventory_warehouse_manage_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *TaobaoinventorywarehousemanageResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TaobaoInventoryWarehouseManageResult `json:"result,omitempty" xml:"result,omitempty"`
 }

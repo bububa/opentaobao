@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aetask"
 )
 
-// Aliexpressinteractivetaskcomplete 任务完成接口
+// AliexpressInteractiveTaskComplete 任务完成接口
 // aliexpress.interactive.task.complete
 //
 // 用户完成任务
-func Aliexpressinteractivetaskcomplete(clt *core.SDKClient, req *aetask.AliexpressinteractivetaskcompleteAPIRequest, session string) (*aetask.AliexpressinteractivetaskcompleteAPIResponse, error) {
-	var resp aetask.AliexpressinteractivetaskcompleteAPIResponse
+func AliexpressInteractiveTaskComplete(clt *core.SDKClient, req *aetask.AliexpressInteractiveTaskCompleteAPIRequest, session string) (*aetask.AliexpressInteractiveTaskCompleteAPIResponse, error) {
+	var resp aetask.AliexpressInteractiveTaskCompleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallnrfulfillcancelreasonqueryAPIRequest 查询取消履约的原因列表 API请求
+// TmallNrFulfillCancelReasonQueryAPIRequest 查询取消履约的原因列表 API请求
 // tmall.nr.fulfill.cancel.reason.query
 //
 // 新零售门店业务查询取消上门揽件的原因列表
-type TmallnrfulfillcancelreasonqueryAPIRequest struct {
+type TmallNrFulfillCancelReasonQueryAPIRequest struct {
 	model.Params
 	// 商家的sellerID
 	_sellerId int64
@@ -18,52 +18,52 @@ type TmallnrfulfillcancelreasonqueryAPIRequest struct {
 	_mainOrderId int64
 }
 
-// NewTmallnrfulfillcancelreasonqueryRequest 初始化TmallnrfulfillcancelreasonqueryAPIRequest对象
-func NewTmallnrfulfillcancelreasonqueryRequest() *TmallnrfulfillcancelreasonqueryAPIRequest {
-	return &TmallnrfulfillcancelreasonqueryAPIRequest{
+// NewTmallNrFulfillCancelReasonQueryRequest 初始化TmallNrFulfillCancelReasonQueryAPIRequest对象
+func NewTmallNrFulfillCancelReasonQueryRequest() *TmallNrFulfillCancelReasonQueryAPIRequest {
+	return &TmallNrFulfillCancelReasonQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallnrfulfillcancelreasonqueryAPIRequest) GetApiMethodName() string {
+func (r TmallNrFulfillCancelReasonQueryAPIRequest) GetApiMethodName() string {
 	return "tmall.nr.fulfill.cancel.reason.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallnrfulfillcancelreasonqueryAPIRequest) GetApiParams(params url.Values) {
+func (r TmallNrFulfillCancelReasonQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallnrfulfillcancelreasonqueryAPIRequest) GetRawParams() model.Params {
+func (r TmallNrFulfillCancelReasonQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSellerId is SellerId Setter
 // 商家的sellerID
-func (r *TmallnrfulfillcancelreasonqueryAPIRequest) SetSellerId(_sellerId int64) error {
+func (r *TmallNrFulfillCancelReasonQueryAPIRequest) SetSellerId(_sellerId int64) error {
 	r._sellerId = _sellerId
 	r.Set("seller_id", _sellerId)
 	return nil
 }
 
 // GetSellerId SellerId Getter
-func (r TmallnrfulfillcancelreasonqueryAPIRequest) GetSellerId() int64 {
+func (r TmallNrFulfillCancelReasonQueryAPIRequest) GetSellerId() int64 {
 	return r._sellerId
 }
 
 // SetMainOrderId is MainOrderId Setter
 // 淘宝交易的主订单号
-func (r *TmallnrfulfillcancelreasonqueryAPIRequest) SetMainOrderId(_mainOrderId int64) error {
+func (r *TmallNrFulfillCancelReasonQueryAPIRequest) SetMainOrderId(_mainOrderId int64) error {
 	r._mainOrderId = _mainOrderId
 	r.Set("main_order_id", _mainOrderId)
 	return nil
 }
 
 // GetMainOrderId MainOrderId Getter
-func (r TmallnrfulfillcancelreasonqueryAPIRequest) GetMainOrderId() int64 {
+func (r TmallNrFulfillCancelReasonQueryAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
 }

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabadchainaoxiangconsignordergiftreverseAPIRequest 赠品绑赠回滚 API请求
+// AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest 赠品绑赠回滚 API请求
 // alibaba.dchain.aoxiang.consignorder.gift.reverse
 //
 // 赠品绑赠回滚
-type AlibabadchainaoxiangconsignordergiftreverseAPIRequest struct {
+type AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest struct {
 	model.Params
 	// 赠品绑赠回滚入参
 	_reverseConsignorderGiftRequest *ReverseConsignOrderGiftRequest
 }
 
-// NewAlibabadchainaoxiangconsignordergiftreverseRequest 初始化AlibabadchainaoxiangconsignordergiftreverseAPIRequest对象
-func NewAlibabadchainaoxiangconsignordergiftreverseRequest() *AlibabadchainaoxiangconsignordergiftreverseAPIRequest {
-	return &AlibabadchainaoxiangconsignordergiftreverseAPIRequest{
+// NewAlibabaDchainAoxiangConsignorderGiftReverseRequest 初始化AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest对象
+func NewAlibabaDchainAoxiangConsignorderGiftReverseRequest() *AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest {
+	return &AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabadchainaoxiangconsignordergiftreverseAPIRequest) GetApiMethodName() string {
+func (r AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest) GetApiMethodName() string {
 	return "alibaba.dchain.aoxiang.consignorder.gift.reverse"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabadchainaoxiangconsignordergiftreverseAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabadchainaoxiangconsignordergiftreverseAPIRequest) GetRawParams() model.Params {
+func (r AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetReverseConsignorderGiftRequest is ReverseConsignorderGiftRequest Setter
 // 赠品绑赠回滚入参
-func (r *AlibabadchainaoxiangconsignordergiftreverseAPIRequest) SetReverseConsignorderGiftRequest(_reverseConsignorderGiftRequest *ReverseConsignOrderGiftRequest) error {
+func (r *AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest) SetReverseConsignorderGiftRequest(_reverseConsignorderGiftRequest *ReverseConsignOrderGiftRequest) error {
 	r._reverseConsignorderGiftRequest = _reverseConsignorderGiftRequest
 	r.Set("reverse_consignorder_gift_request", _reverseConsignorderGiftRequest)
 	return nil
 }
 
 // GetReverseConsignorderGiftRequest ReverseConsignorderGiftRequest Getter
-func (r AlibabadchainaoxiangconsignordergiftreverseAPIRequest) GetReverseConsignorderGiftRequest() *ReverseConsignOrderGiftRequest {
+func (r AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest) GetReverseConsignorderGiftRequest() *ReverseConsignOrderGiftRequest {
 	return r._reverseConsignorderGiftRequest
 }

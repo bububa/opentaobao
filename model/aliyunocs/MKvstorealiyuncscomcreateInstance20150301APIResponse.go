@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// MKvstorealiyuncscomcreateInstance20150301APIResponse 创建OCS实例 API返回值
+// MKvstoreAliyuncsComCreateInstance20150301APIResponse 创建OCS实例 API返回值
 // m-kvstore.aliyuncs.com.CreateInstance.2015-03-01
 //
 // 创建OCS实例
-type MKvstorealiyuncscomcreateInstance20150301APIResponse struct {
+type MKvstoreAliyuncsComCreateInstance20150301APIResponse struct {
 	model.CommonResponse
-	MKvstorealiyuncscomcreateInstance20150301APIResponseModel
+	MKvstoreAliyuncsComCreateInstance20150301APIResponseModel
 }
 
-// MKvstorealiyuncscomcreateInstance20150301APIResponseModel is 创建OCS实例 成功返回结果
-type MKvstorealiyuncscomcreateInstance20150301APIResponseModel struct {
+// MKvstoreAliyuncsComCreateInstance20150301APIResponseModel is 创建OCS实例 成功返回结果
+type MKvstoreAliyuncsComCreateInstance20150301APIResponseModel struct {
 	XMLName xml.Name `xml:"m-kvstore_aliyuncs_com_CreateInstance_2015-03-01_response"`
 	// OCS例ID;&lt;br/&gt;16位字符串(全局唯一)
 	InstanceId string `json:"InstanceId,omitempty" xml:"InstanceId,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaominiapptemplateinstantiateAPIResponse 构建实例化应用 API返回值
+// TaobaoMiniappTemplateInstantiateAPIResponse 构建实例化应用 API返回值
 // taobao.miniapp.template.instantiate
 //
 // 实例化saas化的小程序
-type TaobaominiapptemplateinstantiateAPIResponse struct {
+type TaobaoMiniappTemplateInstantiateAPIResponse struct {
 	model.CommonResponse
-	TaobaominiapptemplateinstantiateAPIResponseModel
+	TaobaoMiniappTemplateInstantiateAPIResponseModel
 }
 
-// TaobaominiapptemplateinstantiateAPIResponseModel is 构建实例化应用 成功返回结果
-type TaobaominiapptemplateinstantiateAPIResponseModel struct {
+// TaobaoMiniappTemplateInstantiateAPIResponseModel is 构建实例化应用 成功返回结果
+type TaobaoMiniappTemplateInstantiateAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_template_instantiate_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/flight"
 )
 
-// Alitripagentflightsellrefunddetail 销售退票单详情
+// AlitripAgentFlightSellRefundDetail 销售退票单详情
 // alitrip.agent.flight.sell.refund.detail
 //
 // 销售退票单详情
-func Alitripagentflightsellrefunddetail(clt *core.SDKClient, req *flight.AlitripagentflightsellrefunddetailAPIRequest, session string) (*flight.AlitripagentflightsellrefunddetailAPIResponse, error) {
-	var resp flight.AlitripagentflightsellrefunddetailAPIResponse
+func AlitripAgentFlightSellRefundDetail(clt *core.SDKClient, req *flight.AlitripAgentFlightSellRefundDetailAPIRequest, session string) (*flight.AlitripAgentFlightSellRefundDetailAPIResponse, error) {
+	var resp flight.AlitripAgentFlightSellRefundDetailAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

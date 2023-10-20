@@ -1,7 +1,7 @@
 package mos
 
-// AlibabamjmoscarnivalreceivecouponResultDo 结构体
-type AlibabamjmoscarnivalreceivecouponResultDo struct {
+// AlibabaMjMoscarnivalReceivecouponResultDo 结构体
+type AlibabaMjMoscarnivalReceivecouponResultDo struct {
 	// 标题
 	Titles []string `json:"titles,omitempty" xml:"titles>string,omitempty"`
 	// 调用链id

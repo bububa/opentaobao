@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/lstbm"
 )
 
-// Alibabalstbmstoreadd 导入品牌商自有门店
+// AlibabaLstBmStoreAdd 导入品牌商自有门店
 // alibaba.lst.bm.store.add
 //
 // 导入品牌商自有门店
-func Alibabalstbmstoreadd(clt *core.SDKClient, req *lstbm.AlibabalstbmstoreaddAPIRequest, session string) (*lstbm.AlibabalstbmstoreaddAPIResponse, error) {
-	var resp lstbm.AlibabalstbmstoreaddAPIResponse
+func AlibabaLstBmStoreAdd(clt *core.SDKClient, req *lstbm.AlibabaLstBmStoreAddAPIRequest, session string) (*lstbm.AlibabaLstBmStoreAddAPIResponse, error) {
+	var resp lstbm.AlibabaLstBmStoreAddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

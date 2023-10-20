@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkmarketingopenheartbeatAPIResponse 心跳服务【10s一次】 API返回值
+// AlibabaWdkMarketingOpenHeartbeatAPIResponse 心跳服务【10s一次】 API返回值
 // alibaba.wdk.marketing.open.heartbeat
 //
 // 商家数据同步心跳服务
-type AlibabawdkmarketingopenheartbeatAPIResponse struct {
+type AlibabaWdkMarketingOpenHeartbeatAPIResponse struct {
 	model.CommonResponse
-	AlibabawdkmarketingopenheartbeatAPIResponseModel
+	AlibabaWdkMarketingOpenHeartbeatAPIResponseModel
 }
 
-// AlibabawdkmarketingopenheartbeatAPIResponseModel is 心跳服务【10s一次】 成功返回结果
-type AlibabawdkmarketingopenheartbeatAPIResponseModel struct {
+// AlibabaWdkMarketingOpenHeartbeatAPIResponseModel is 心跳服务【10s一次】 成功返回结果
+type AlibabaWdkMarketingOpenHeartbeatAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_marketing_open_heartbeat_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

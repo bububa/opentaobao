@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripbtripsupplychainhotelsearchAPIRequest 【商旅】酒店订单查询 API请求
+// AlitripBtripSupplychainHotelSearchAPIRequest 【商旅】酒店订单查询 API请求
 // alitrip.btrip.supplychain.hotel.search
 //
 // 【商旅】酒店订单查询
-type AlitripbtripsupplychainhotelsearchAPIRequest struct {
+type AlitripBtripSupplychainHotelSearchAPIRequest struct {
 	model.Params
 	// 入参
 	_rq *OpenApiSearchRq
 }
 
-// NewAlitripbtripsupplychainhotelsearchRequest 初始化AlitripbtripsupplychainhotelsearchAPIRequest对象
-func NewAlitripbtripsupplychainhotelsearchRequest() *AlitripbtripsupplychainhotelsearchAPIRequest {
-	return &AlitripbtripsupplychainhotelsearchAPIRequest{
+// NewAlitripBtripSupplychainHotelSearchRequest 初始化AlitripBtripSupplychainHotelSearchAPIRequest对象
+func NewAlitripBtripSupplychainHotelSearchRequest() *AlitripBtripSupplychainHotelSearchAPIRequest {
+	return &AlitripBtripSupplychainHotelSearchAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripbtripsupplychainhotelsearchAPIRequest) GetApiMethodName() string {
+func (r AlitripBtripSupplychainHotelSearchAPIRequest) GetApiMethodName() string {
 	return "alitrip.btrip.supplychain.hotel.search"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripbtripsupplychainhotelsearchAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripBtripSupplychainHotelSearchAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripbtripsupplychainhotelsearchAPIRequest) GetRawParams() model.Params {
+func (r AlitripBtripSupplychainHotelSearchAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRq is Rq Setter
 // 入参
-func (r *AlitripbtripsupplychainhotelsearchAPIRequest) SetRq(_rq *OpenApiSearchRq) error {
+func (r *AlitripBtripSupplychainHotelSearchAPIRequest) SetRq(_rq *OpenApiSearchRq) error {
 	r._rq = _rq
 	r.Set("rq", _rq)
 	return nil
 }
 
 // GetRq Rq Getter
-func (r AlitripbtripsupplychainhotelsearchAPIRequest) GetRq() *OpenApiSearchRq {
+func (r AlitripBtripSupplychainHotelSearchAPIRequest) GetRq() *OpenApiSearchRq {
 	return r._rq
 }

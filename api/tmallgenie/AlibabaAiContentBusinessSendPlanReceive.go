@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallgenie"
 )
 
-// Alibabaaicontentbusinesssendplanreceive 天猫精灵商业化采销发放计划领取
+// AlibabaAiContentBusinessSendPlanReceive 天猫精灵商业化采销发放计划领取
 // alibaba.ai.content.business.send.plan.receive
 //
 // 天猫精灵商业化采销发放计划领取
-func Alibabaaicontentbusinesssendplanreceive(clt *core.SDKClient, req *tmallgenie.AlibabaaicontentbusinesssendplanreceiveAPIRequest, session string) (*tmallgenie.AlibabaaicontentbusinesssendplanreceiveAPIResponse, error) {
-	var resp tmallgenie.AlibabaaicontentbusinesssendplanreceiveAPIResponse
+func AlibabaAiContentBusinessSendPlanReceive(clt *core.SDKClient, req *tmallgenie.AlibabaAiContentBusinessSendPlanReceiveAPIRequest, session string) (*tmallgenie.AlibabaAiContentBusinessSendPlanReceiveAPIResponse, error) {
+	var resp tmallgenie.AlibabaAiContentBusinessSendPlanReceiveAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

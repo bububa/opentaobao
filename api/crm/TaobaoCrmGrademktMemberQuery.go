@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/crm"
 )
 
-// Taobaocrmgrademktmemberquery 会员等级营销-会员关系查询
+// TaobaoCrmGrademktMemberQuery 会员等级营销-会员关系查询
 // taobao.crm.grademkt.member.query
 //
 // 商家通过该接口查询线上店铺会员。
-func Taobaocrmgrademktmemberquery(clt *core.SDKClient, req *crm.TaobaocrmgrademktmemberqueryAPIRequest, session string) (*crm.TaobaocrmgrademktmemberqueryAPIResponse, error) {
-	var resp crm.TaobaocrmgrademktmemberqueryAPIResponse
+func TaobaoCrmGrademktMemberQuery(clt *core.SDKClient, req *crm.TaobaoCrmGrademktMemberQueryAPIRequest, session string) (*crm.TaobaoCrmGrademktMemberQueryAPIResponse, error) {
+	var resp crm.TaobaoCrmGrademktMemberQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

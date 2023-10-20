@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fundplatform"
 )
 
-// Alibabafundplatformaccountqueryinfo 查询账户信息
+// AlibabaFundplatformAccountQueryInfo 查询账户信息
 // alibaba.fundplatform.account.query.info
 //
 // 外部查询资金平台用户账户信息
-func Alibabafundplatformaccountqueryinfo(clt *core.SDKClient, req *fundplatform.AlibabafundplatformaccountqueryinfoAPIRequest, session string) (*fundplatform.AlibabafundplatformaccountqueryinfoAPIResponse, error) {
-	var resp fundplatform.AlibabafundplatformaccountqueryinfoAPIResponse
+func AlibabaFundplatformAccountQueryInfo(clt *core.SDKClient, req *fundplatform.AlibabaFundplatformAccountQueryInfoAPIRequest, session string) (*fundplatform.AlibabaFundplatformAccountQueryInfoAPIResponse, error) {
+	var resp fundplatform.AlibabaFundplatformAccountQueryInfoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

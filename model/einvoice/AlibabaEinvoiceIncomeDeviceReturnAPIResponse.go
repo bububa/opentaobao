@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaeinvoiceincomedevicereturnAPIResponse 服务商回传客户端设备列表 API返回值
+// AlibabaEinvoiceIncomeDeviceReturnAPIResponse 服务商回传客户端设备列表 API返回值
 // alibaba.einvoice.income.device.return
 //
 // 服务商回传客户端agent所处环境的设备列表，比如扫描仪
-type AlibabaeinvoiceincomedevicereturnAPIResponse struct {
+type AlibabaEinvoiceIncomeDeviceReturnAPIResponse struct {
 	model.CommonResponse
-	AlibabaeinvoiceincomedevicereturnAPIResponseModel
+	AlibabaEinvoiceIncomeDeviceReturnAPIResponseModel
 }
 
-// AlibabaeinvoiceincomedevicereturnAPIResponseModel is 服务商回传客户端设备列表 成功返回结果
-type AlibabaeinvoiceincomedevicereturnAPIResponseModel struct {
+// AlibabaEinvoiceIncomeDeviceReturnAPIResponseModel is 服务商回传客户端设备列表 成功返回结果
+type AlibabaEinvoiceIncomeDeviceReturnAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_income_device_return_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

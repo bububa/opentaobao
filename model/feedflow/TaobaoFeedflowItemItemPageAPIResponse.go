@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaofeedflowitemitempageAPIResponse 信息流查看商品列表 API返回值
+// TaobaoFeedflowItemItemPageAPIResponse 信息流查看商品列表 API返回值
 // taobao.feedflow.item.item.page
 //
 // 信息流查看商品列表
-type TaobaofeedflowitemitempageAPIResponse struct {
+type TaobaoFeedflowItemItemPageAPIResponse struct {
 	model.CommonResponse
-	TaobaofeedflowitemitempageAPIResponseModel
+	TaobaoFeedflowItemItemPageAPIResponseModel
 }
 
-// TaobaofeedflowitemitempageAPIResponseModel is 信息流查看商品列表 成功返回结果
-type TaobaofeedflowitemitempageAPIResponseModel struct {
+// TaobaoFeedflowItemItemPageAPIResponseModel is 信息流查看商品列表 成功返回结果
+type TaobaoFeedflowItemItemPageAPIResponseModel struct {
 	XMLName xml.Name `xml:"feedflow_item_item_page_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果对象
-	Result *TaobaofeedflowitemitempageResultDto `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TaobaoFeedflowItemItemPageResultDto `json:"result,omitempty" xml:"result,omitempty"`
 }

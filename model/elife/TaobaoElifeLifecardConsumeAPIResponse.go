@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoelifelifecardconsumeAPIResponse 品牌惠卡券核销 API返回值
+// TaobaoElifeLifecardConsumeAPIResponse 品牌惠卡券核销 API返回值
 // taobao.elife.lifecard.consume
 //
 // 用户线上购买生活汇品牌惠虚拟消费卡，线下购物时，商家码枪核销，涉及用户虚拟卡余额扣减操作
-type TaobaoelifelifecardconsumeAPIResponse struct {
+type TaobaoElifeLifecardConsumeAPIResponse struct {
 	model.CommonResponse
-	TaobaoelifelifecardconsumeAPIResponseModel
+	TaobaoElifeLifecardConsumeAPIResponseModel
 }
 
-// TaobaoelifelifecardconsumeAPIResponseModel is 品牌惠卡券核销 成功返回结果
-type TaobaoelifelifecardconsumeAPIResponseModel struct {
+// TaobaoElifeLifecardConsumeAPIResponseModel is 品牌惠卡券核销 成功返回结果
+type TaobaoElifeLifecardConsumeAPIResponseModel struct {
 	XMLName xml.Name `xml:"elife_lifecard_consume_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// Alibabascbpadcampaignfindrealcost 批量查询计划消耗数据
+// AlibabaScbpAdCampaignFindRealCost 批量查询计划消耗数据
 // alibaba.scbp.ad.campaign.find.real.cost
 //
 // 批量查询计划消耗数据
-func Alibabascbpadcampaignfindrealcost(clt *core.SDKClient, req *scbp.AlibabascbpadcampaignfindrealcostAPIRequest, session string) (*scbp.AlibabascbpadcampaignfindrealcostAPIResponse, error) {
-	var resp scbp.AlibabascbpadcampaignfindrealcostAPIResponse
+func AlibabaScbpAdCampaignFindRealCost(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignFindRealCostAPIRequest, session string) (*scbp.AlibabaScbpAdCampaignFindRealCostAPIResponse, error) {
+	var resp scbp.AlibabaScbpAdCampaignFindRealCostAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

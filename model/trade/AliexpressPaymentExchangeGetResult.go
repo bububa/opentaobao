@@ -1,9 +1,9 @@
 package trade
 
-// AliexpresspaymentexchangegetResult 结构体
-type AliexpresspaymentexchangegetResult struct {
+// AliexpressPaymentExchangeGetResult 结构体
+type AliexpressPaymentExchangeGetResult struct {
 	// 返汇率相关数据
-	Module *AliexpresspaymentexchangegetModule `json:"module,omitempty" xml:"module,omitempty"`
+	Module *AliexpressPaymentExchangeGetModule `json:"module,omitempty" xml:"module,omitempty"`
 	// 错误信息
 	ErrorCode *ErrorCode `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 是否不成功

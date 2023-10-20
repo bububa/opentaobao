@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaopromotionmisctoolcheckAPIResponse UMP工具检测 API返回值
+// TaobaoPromotionmiscToolCheckAPIResponse UMP工具检测 API返回值
 // taobao.promotionmisc.tool.check
 //
 // UMP工具检测。ISV通过该接口检测（通过taobao.ump.tool.add）创建的UMP工具（tool）是否符合规范，如果不符合，则返回错误信息和对应的解决方案的；工具检测通过后才可以提交工具审核邮件，提交工具审核时，需提供该接口的返回值。
-type TaobaopromotionmisctoolcheckAPIResponse struct {
+type TaobaoPromotionmiscToolCheckAPIResponse struct {
 	model.CommonResponse
-	TaobaopromotionmisctoolcheckAPIResponseModel
+	TaobaoPromotionmiscToolCheckAPIResponseModel
 }
 
-// TaobaopromotionmisctoolcheckAPIResponseModel is UMP工具检测 成功返回结果
-type TaobaopromotionmisctoolcheckAPIResponseModel struct {
+// TaobaoPromotionmiscToolCheckAPIResponseModel is UMP工具检测 成功返回结果
+type TaobaoPromotionmiscToolCheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotionmisc_tool_check_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

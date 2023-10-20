@@ -1,7 +1,7 @@
 package openmall
 
-// TaobaoopenmallitemsqueryResultDo 结构体
-type TaobaoopenmallitemsqueryResultDo struct {
+// TaobaoOpenmallItemsQueryResultDo 结构体
+type TaobaoOpenmallItemsQueryResultDo struct {
 	// 商品列表
 	ItemList []TopItemVo `json:"item_list,omitempty" xml:"item_list>top_item_vo,omitempty"`
 	// 错误码

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmalltxcsfinanceverifystatementbillAPIRequest 供应商核销单录入 API请求
+// TmallTxcsFinanceVerifyStatementBillAPIRequest 供应商核销单录入 API请求
 // tmall.txcs.finance.verify.statement.bill
 //
 // 供应商核销单录入
-type TmalltxcsfinanceverifystatementbillAPIRequest struct {
+type TmallTxcsFinanceVerifyStatementBillAPIRequest struct {
 	model.Params
 	// 门店ID
 	_ouCode string
@@ -18,52 +18,52 @@ type TmalltxcsfinanceverifystatementbillAPIRequest struct {
 	_verificationBillDTO *VerificationBillDto
 }
 
-// NewTmalltxcsfinanceverifystatementbillRequest 初始化TmalltxcsfinanceverifystatementbillAPIRequest对象
-func NewTmalltxcsfinanceverifystatementbillRequest() *TmalltxcsfinanceverifystatementbillAPIRequest {
-	return &TmalltxcsfinanceverifystatementbillAPIRequest{
+// NewTmallTxcsFinanceVerifyStatementBillRequest 初始化TmallTxcsFinanceVerifyStatementBillAPIRequest对象
+func NewTmallTxcsFinanceVerifyStatementBillRequest() *TmallTxcsFinanceVerifyStatementBillAPIRequest {
+	return &TmallTxcsFinanceVerifyStatementBillAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmalltxcsfinanceverifystatementbillAPIRequest) GetApiMethodName() string {
+func (r TmallTxcsFinanceVerifyStatementBillAPIRequest) GetApiMethodName() string {
 	return "tmall.txcs.finance.verify.statement.bill"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmalltxcsfinanceverifystatementbillAPIRequest) GetApiParams(params url.Values) {
+func (r TmallTxcsFinanceVerifyStatementBillAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmalltxcsfinanceverifystatementbillAPIRequest) GetRawParams() model.Params {
+func (r TmallTxcsFinanceVerifyStatementBillAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOuCode is OuCode Setter
 // 门店ID
-func (r *TmalltxcsfinanceverifystatementbillAPIRequest) SetOuCode(_ouCode string) error {
+func (r *TmallTxcsFinanceVerifyStatementBillAPIRequest) SetOuCode(_ouCode string) error {
 	r._ouCode = _ouCode
 	r.Set("ou_code", _ouCode)
 	return nil
 }
 
 // GetOuCode OuCode Getter
-func (r TmalltxcsfinanceverifystatementbillAPIRequest) GetOuCode() string {
+func (r TmallTxcsFinanceVerifyStatementBillAPIRequest) GetOuCode() string {
 	return r._ouCode
 }
 
 // SetVerificationBillDTO is VerificationBillDTO Setter
 // 核销单内容
-func (r *TmalltxcsfinanceverifystatementbillAPIRequest) SetVerificationBillDTO(_verificationBillDTO *VerificationBillDto) error {
+func (r *TmallTxcsFinanceVerifyStatementBillAPIRequest) SetVerificationBillDTO(_verificationBillDTO *VerificationBillDto) error {
 	r._verificationBillDTO = _verificationBillDTO
 	r.Set("verification_bill_d_t_o", _verificationBillDTO)
 	return nil
 }
 
 // GetVerificationBillDTO VerificationBillDTO Getter
-func (r TmalltxcsfinanceverifystatementbillAPIRequest) GetVerificationBillDTO() *VerificationBillDto {
+func (r TmallTxcsFinanceVerifyStatementBillAPIRequest) GetVerificationBillDTO() *VerificationBillDto {
 	return r._verificationBillDTO
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/interact"
 )
 
-// Alibabainteractsensorglue 视频播放
+// AlibabaInteractSensorGlue 视频播放
 // alibaba.interact.sensor.glue
 //
 // 视频播放
-func Alibabainteractsensorglue(clt *core.SDKClient, req *interact.AlibabainteractsensorglueAPIRequest, session string) (*interact.AlibabainteractsensorglueAPIResponse, error) {
-	var resp interact.AlibabainteractsensorglueAPIResponse
+func AlibabaInteractSensorGlue(clt *core.SDKClient, req *interact.AlibabaInteractSensorGlueAPIRequest, session string) (*interact.AlibabaInteractSensorGlueAPIResponse, error) {
+	var resp interact.AlibabaInteractSensorGlueAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

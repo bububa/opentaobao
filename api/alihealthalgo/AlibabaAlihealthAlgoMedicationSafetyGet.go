@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealthalgo"
 )
 
-// Alibabaalihealthalgomedicationsafetyget 合理用药api
+// AlibabaAlihealthAlgoMedicationSafetyGet 合理用药api
 // alibaba.alihealth.algo.medication.safety.get
 //
 // 合理用药规则引擎服务
-func Alibabaalihealthalgomedicationsafetyget(clt *core.SDKClient, req *alihealthalgo.AlibabaalihealthalgomedicationsafetygetAPIRequest, session string) (*alihealthalgo.AlibabaalihealthalgomedicationsafetygetAPIResponse, error) {
-	var resp alihealthalgo.AlibabaalihealthalgomedicationsafetygetAPIResponse
+func AlibabaAlihealthAlgoMedicationSafetyGet(clt *core.SDKClient, req *alihealthalgo.AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest, session string) (*alihealthalgo.AlibabaAlihealthAlgoMedicationSafetyGetAPIResponse, error) {
+	var resp alihealthalgo.AlibabaAlihealthAlgoMedicationSafetyGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/icbu"
 )
 
-// Alibabaicbucategoryschemalevelget (新)层级属性获取
+// AlibabaIcbuCategorySchemaLevelGet (新)层级属性获取
 // alibaba.icbu.category.schema.level.get
 //
 // 将表单中层级属性的子属性返回
-func Alibabaicbucategoryschemalevelget(clt *core.SDKClient, req *icbu.AlibabaicbucategoryschemalevelgetAPIRequest, session string) (*icbu.AlibabaicbucategoryschemalevelgetAPIResponse, error) {
-	var resp icbu.AlibabaicbucategoryschemalevelgetAPIResponse
+func AlibabaIcbuCategorySchemaLevelGet(clt *core.SDKClient, req *icbu.AlibabaIcbuCategorySchemaLevelGetAPIRequest, session string) (*icbu.AlibabaIcbuCategorySchemaLevelGetAPIResponse, error) {
+	var resp icbu.AlibabaIcbuCategorySchemaLevelGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

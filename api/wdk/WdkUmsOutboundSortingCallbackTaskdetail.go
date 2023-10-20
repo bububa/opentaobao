@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Wdkumsoutboundsortingcallbacktaskdetail dps分货，明细回传
+// WdkUmsOutboundSortingCallbackTaskdetail dps分货，明细回传
 // wdk.ums.outbound.sorting.callback.taskdetail
 //
 // dps分货-分货明细回传
-func Wdkumsoutboundsortingcallbacktaskdetail(clt *core.SDKClient, req *wdk.WdkumsoutboundsortingcallbacktaskdetailAPIRequest, session string) (*wdk.WdkumsoutboundsortingcallbacktaskdetailAPIResponse, error) {
-	var resp wdk.WdkumsoutboundsortingcallbacktaskdetailAPIResponse
+func WdkUmsOutboundSortingCallbackTaskdetail(clt *core.SDKClient, req *wdk.WdkUmsOutboundSortingCallbackTaskdetailAPIRequest, session string) (*wdk.WdkUmsOutboundSortingCallbackTaskdetailAPIResponse, error) {
+	var resp wdk.WdkUmsOutboundSortingCallbackTaskdetailAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

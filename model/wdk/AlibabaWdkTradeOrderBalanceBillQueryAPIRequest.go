@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdktradeorderbalancebillqueryAPIRequest 分页拉取订单数据 API请求
+// AlibabaWdkTradeOrderBalanceBillQueryAPIRequest 分页拉取订单数据 API请求
 // alibaba.wdk.trade.order.balance.bill.query
 //
 // 提供接口供外部调用，分页拉取订单数据
-type AlibabawdktradeorderbalancebillqueryAPIRequest struct {
+type AlibabaWdkTradeOrderBalanceBillQueryAPIRequest struct {
 	model.Params
 	// 入参
 	_orderBalanceBillRequest *OrderBalanceBillRequest
 }
 
-// NewAlibabawdktradeorderbalancebillqueryRequest 初始化AlibabawdktradeorderbalancebillqueryAPIRequest对象
-func NewAlibabawdktradeorderbalancebillqueryRequest() *AlibabawdktradeorderbalancebillqueryAPIRequest {
-	return &AlibabawdktradeorderbalancebillqueryAPIRequest{
+// NewAlibabaWdkTradeOrderBalanceBillQueryRequest 初始化AlibabaWdkTradeOrderBalanceBillQueryAPIRequest对象
+func NewAlibabaWdkTradeOrderBalanceBillQueryRequest() *AlibabaWdkTradeOrderBalanceBillQueryAPIRequest {
+	return &AlibabaWdkTradeOrderBalanceBillQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabawdktradeorderbalancebillqueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaWdkTradeOrderBalanceBillQueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.trade.order.balance.bill.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabawdktradeorderbalancebillqueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaWdkTradeOrderBalanceBillQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabawdktradeorderbalancebillqueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaWdkTradeOrderBalanceBillQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOrderBalanceBillRequest is OrderBalanceBillRequest Setter
 // 入参
-func (r *AlibabawdktradeorderbalancebillqueryAPIRequest) SetOrderBalanceBillRequest(_orderBalanceBillRequest *OrderBalanceBillRequest) error {
+func (r *AlibabaWdkTradeOrderBalanceBillQueryAPIRequest) SetOrderBalanceBillRequest(_orderBalanceBillRequest *OrderBalanceBillRequest) error {
 	r._orderBalanceBillRequest = _orderBalanceBillRequest
 	r.Set("order_balance_bill_request", _orderBalanceBillRequest)
 	return nil
 }
 
 // GetOrderBalanceBillRequest OrderBalanceBillRequest Getter
-func (r AlibabawdktradeorderbalancebillqueryAPIRequest) GetOrderBalanceBillRequest() *OrderBalanceBillRequest {
+func (r AlibabaWdkTradeOrderBalanceBillQueryAPIRequest) GetOrderBalanceBillRequest() *OrderBalanceBillRequest {
 	return r._orderBalanceBillRequest
 }

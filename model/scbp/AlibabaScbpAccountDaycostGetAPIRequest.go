@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabascbpaccountdaycostgetAPIRequest 查询今日消耗 API请求
+// AlibabaScbpAccountDaycostGetAPIRequest 查询今日消耗 API请求
 // alibaba.scbp.account.daycost.get
 //
 // 查询今日消耗
-type AlibabascbpaccountdaycostgetAPIRequest struct {
+type AlibabaScbpAccountDaycostGetAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabascbpaccountdaycostgetRequest 初始化AlibabascbpaccountdaycostgetAPIRequest对象
-func NewAlibabascbpaccountdaycostgetRequest() *AlibabascbpaccountdaycostgetAPIRequest {
-	return &AlibabascbpaccountdaycostgetAPIRequest{
+// NewAlibabaScbpAccountDaycostGetRequest 初始化AlibabaScbpAccountDaycostGetAPIRequest对象
+func NewAlibabaScbpAccountDaycostGetRequest() *AlibabaScbpAccountDaycostGetAPIRequest {
+	return &AlibabaScbpAccountDaycostGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabascbpaccountdaycostgetAPIRequest) GetApiMethodName() string {
+func (r AlibabaScbpAccountDaycostGetAPIRequest) GetApiMethodName() string {
 	return "alibaba.scbp.account.daycost.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabascbpaccountdaycostgetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaScbpAccountDaycostGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabascbpaccountdaycostgetAPIRequest) GetRawParams() model.Params {
+func (r AlibabaScbpAccountDaycostGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

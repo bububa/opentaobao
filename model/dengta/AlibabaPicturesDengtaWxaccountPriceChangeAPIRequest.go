@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabapicturesdengtawxaccountpricechangeAPIRequest 微信公众号价格变化通知 API请求
+// AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest 微信公众号价格变化通知 API请求
 // alibaba.pictures.dengta.wxaccount.price.change
 //
 // 微信公众号推广价格变更通知接口
-type AlibabapicturesdengtawxaccountpricechangeAPIRequest struct {
+type AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest struct {
 	model.Params
 	// id
 	_accountId string
@@ -36,169 +36,169 @@ type AlibabapicturesdengtawxaccountpricechangeAPIRequest struct {
 	_id int64
 }
 
-// NewAlibabapicturesdengtawxaccountpricechangeRequest 初始化AlibabapicturesdengtawxaccountpricechangeAPIRequest对象
-func NewAlibabapicturesdengtawxaccountpricechangeRequest() *AlibabapicturesdengtawxaccountpricechangeAPIRequest {
-	return &AlibabapicturesdengtawxaccountpricechangeAPIRequest{
+// NewAlibabaPicturesDengtaWxaccountPriceChangeRequest 初始化AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest对象
+func NewAlibabaPicturesDengtaWxaccountPriceChangeRequest() *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest {
+	return &AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabapicturesdengtawxaccountpricechangeAPIRequest) GetApiMethodName() string {
+func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetApiMethodName() string {
 	return "alibaba.pictures.dengta.wxaccount.price.change"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabapicturesdengtawxaccountpricechangeAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabapicturesdengtawxaccountpricechangeAPIRequest) GetRawParams() model.Params {
+func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAccountId is AccountId Setter
 // id
-func (r *AlibabapicturesdengtawxaccountpricechangeAPIRequest) SetAccountId(_accountId string) error {
+func (r *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) SetAccountId(_accountId string) error {
 	r._accountId = _accountId
 	r.Set("account_id", _accountId)
 	return nil
 }
 
 // GetAccountId AccountId Getter
-func (r AlibabapicturesdengtawxaccountpricechangeAPIRequest) GetAccountId() string {
+func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetAccountId() string {
 	return r._accountId
 }
 
 // SetChangeTime is ChangeTime Setter
 // 变更时间
-func (r *AlibabapicturesdengtawxaccountpricechangeAPIRequest) SetChangeTime(_changeTime string) error {
+func (r *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) SetChangeTime(_changeTime string) error {
 	r._changeTime = _changeTime
 	r.Set("change_time", _changeTime)
 	return nil
 }
 
 // GetChangeTime ChangeTime Getter
-func (r AlibabapicturesdengtawxaccountpricechangeAPIRequest) GetChangeTime() string {
+func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetChangeTime() string {
 	return r._changeTime
 }
 
 // SetSingle is Single Setter
 // 单图文
-func (r *AlibabapicturesdengtawxaccountpricechangeAPIRequest) SetSingle(_single string) error {
+func (r *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) SetSingle(_single string) error {
 	r._single = _single
 	r.Set("single", _single)
 	return nil
 }
 
 // GetSingle Single Getter
-func (r AlibabapicturesdengtawxaccountpricechangeAPIRequest) GetSingle() string {
+func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetSingle() string {
 	return r._single
 }
 
 // SetOther is Other Setter
 // 多图文第三条及以后
-func (r *AlibabapicturesdengtawxaccountpricechangeAPIRequest) SetOther(_other string) error {
+func (r *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) SetOther(_other string) error {
 	r._other = _other
 	r.Set("other", _other)
 	return nil
 }
 
 // GetOther Other Getter
-func (r AlibabapicturesdengtawxaccountpricechangeAPIRequest) GetOther() string {
+func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetOther() string {
 	return r._other
 }
 
 // SetSecond is Second Setter
 // 多图文第二条
-func (r *AlibabapicturesdengtawxaccountpricechangeAPIRequest) SetSecond(_second string) error {
+func (r *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) SetSecond(_second string) error {
 	r._second = _second
 	r.Set("second", _second)
 	return nil
 }
 
 // GetSecond Second Getter
-func (r AlibabapicturesdengtawxaccountpricechangeAPIRequest) GetSecond() string {
+func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetSecond() string {
 	return r._second
 }
 
 // SetFirst is First Setter
 // 多图文第一条
-func (r *AlibabapicturesdengtawxaccountpricechangeAPIRequest) SetFirst(_first string) error {
+func (r *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) SetFirst(_first string) error {
 	r._first = _first
 	r.Set("first", _first)
 	return nil
 }
 
 // GetFirst First Getter
-func (r AlibabapicturesdengtawxaccountpricechangeAPIRequest) GetFirst() string {
+func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetFirst() string {
 	return r._first
 }
 
 // SetFirstAli is FirstAli Setter
 // 多图文第一条 折后价
-func (r *AlibabapicturesdengtawxaccountpricechangeAPIRequest) SetFirstAli(_firstAli string) error {
+func (r *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) SetFirstAli(_firstAli string) error {
 	r._firstAli = _firstAli
 	r.Set("first_ali", _firstAli)
 	return nil
 }
 
 // GetFirstAli FirstAli Getter
-func (r AlibabapicturesdengtawxaccountpricechangeAPIRequest) GetFirstAli() string {
+func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetFirstAli() string {
 	return r._firstAli
 }
 
 // SetSecondAli is SecondAli Setter
 // 多图文第二条 折后价
-func (r *AlibabapicturesdengtawxaccountpricechangeAPIRequest) SetSecondAli(_secondAli string) error {
+func (r *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) SetSecondAli(_secondAli string) error {
 	r._secondAli = _secondAli
 	r.Set("second_ali", _secondAli)
 	return nil
 }
 
 // GetSecondAli SecondAli Getter
-func (r AlibabapicturesdengtawxaccountpricechangeAPIRequest) GetSecondAli() string {
+func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetSecondAli() string {
 	return r._secondAli
 }
 
 // SetSingleAli is SingleAli Setter
 // 单图文 折后价
-func (r *AlibabapicturesdengtawxaccountpricechangeAPIRequest) SetSingleAli(_singleAli string) error {
+func (r *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) SetSingleAli(_singleAli string) error {
 	r._singleAli = _singleAli
 	r.Set("single_ali", _singleAli)
 	return nil
 }
 
 // GetSingleAli SingleAli Getter
-func (r AlibabapicturesdengtawxaccountpricechangeAPIRequest) GetSingleAli() string {
+func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetSingleAli() string {
 	return r._singleAli
 }
 
 // SetOtherAli is OtherAli Setter
 // 多图文第三条及以后 折后价
-func (r *AlibabapicturesdengtawxaccountpricechangeAPIRequest) SetOtherAli(_otherAli string) error {
+func (r *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) SetOtherAli(_otherAli string) error {
 	r._otherAli = _otherAli
 	r.Set("other_ali", _otherAli)
 	return nil
 }
 
 // GetOtherAli OtherAli Getter
-func (r AlibabapicturesdengtawxaccountpricechangeAPIRequest) GetOtherAli() string {
+func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetOtherAli() string {
 	return r._otherAli
 }
 
 // SetId is Id Setter
 // 账号id
-func (r *AlibabapicturesdengtawxaccountpricechangeAPIRequest) SetId(_id int64) error {
+func (r *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) SetId(_id int64) error {
 	r._id = _id
 	r.Set("id", _id)
 	return nil
 }
 
 // GetId Id Getter
-func (r AlibabapicturesdengtawxaccountpricechangeAPIRequest) GetId() int64 {
+func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetId() int64 {
 	return r._id
 }

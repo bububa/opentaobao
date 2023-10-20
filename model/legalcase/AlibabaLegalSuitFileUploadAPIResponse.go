@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabalegalsuitfileuploadAPIResponse 诉讼文件上传接口 API返回值
+// AlibabaLegalSuitFileUploadAPIResponse 诉讼文件上传接口 API返回值
 // alibaba.legal.suit.file.upload
 //
 // 上传文件接口
-type AlibabalegalsuitfileuploadAPIResponse struct {
+type AlibabaLegalSuitFileUploadAPIResponse struct {
 	model.CommonResponse
-	AlibabalegalsuitfileuploadAPIResponseModel
+	AlibabaLegalSuitFileUploadAPIResponseModel
 }
 
-// AlibabalegalsuitfileuploadAPIResponseModel is 诉讼文件上传接口 成功返回结果
-type AlibabalegalsuitfileuploadAPIResponseModel struct {
+// AlibabaLegalSuitFileUploadAPIResponseModel is 诉讼文件上传接口 成功返回结果
+type AlibabaLegalSuitFileUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_legal_suit_file_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

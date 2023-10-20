@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotmcqueuegetAPIResponse 获取消息队列积压情况 API返回值
+// TaobaoTmcQueueGetAPIResponse 获取消息队列积压情况 API返回值
 // taobao.tmc.queue.get
 //
 // 根据appkey和groupName获取消息队列积压情况
-type TaobaotmcqueuegetAPIResponse struct {
+type TaobaoTmcQueueGetAPIResponse struct {
 	model.CommonResponse
-	TaobaotmcqueuegetAPIResponseModel
+	TaobaoTmcQueueGetAPIResponseModel
 }
 
-// TaobaotmcqueuegetAPIResponseModel is 获取消息队列积压情况 成功返回结果
-type TaobaotmcqueuegetAPIResponseModel struct {
+// TaobaoTmcQueueGetAPIResponseModel is 获取消息队列积压情况 成功返回结果
+type TaobaoTmcQueueGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmc_queue_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

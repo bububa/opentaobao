@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabadchainisvwmsorderprocessreportAPIRequest 仓作业信息同步 API请求
+// AlibabaDchainIsvWmsOrderprocessReportAPIRequest 仓作业信息同步 API请求
 // alibaba.dchain.isv.wms.orderprocess.report
 //
 // 仓作业信息同步
-type AlibabadchainisvwmsorderprocessreportAPIRequest struct {
+type AlibabaDchainIsvWmsOrderprocessReportAPIRequest struct {
 	model.Params
 	// 请求入参
 	_orderProcessReportRequest *WmsOrderProcessReportRequest
 }
 
-// NewAlibabadchainisvwmsorderprocessreportRequest 初始化AlibabadchainisvwmsorderprocessreportAPIRequest对象
-func NewAlibabadchainisvwmsorderprocessreportRequest() *AlibabadchainisvwmsorderprocessreportAPIRequest {
-	return &AlibabadchainisvwmsorderprocessreportAPIRequest{
+// NewAlibabaDchainIsvWmsOrderprocessReportRequest 初始化AlibabaDchainIsvWmsOrderprocessReportAPIRequest对象
+func NewAlibabaDchainIsvWmsOrderprocessReportRequest() *AlibabaDchainIsvWmsOrderprocessReportAPIRequest {
+	return &AlibabaDchainIsvWmsOrderprocessReportAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabadchainisvwmsorderprocessreportAPIRequest) GetApiMethodName() string {
+func (r AlibabaDchainIsvWmsOrderprocessReportAPIRequest) GetApiMethodName() string {
 	return "alibaba.dchain.isv.wms.orderprocess.report"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabadchainisvwmsorderprocessreportAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaDchainIsvWmsOrderprocessReportAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabadchainisvwmsorderprocessreportAPIRequest) GetRawParams() model.Params {
+func (r AlibabaDchainIsvWmsOrderprocessReportAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOrderProcessReportRequest is OrderProcessReportRequest Setter
 // 请求入参
-func (r *AlibabadchainisvwmsorderprocessreportAPIRequest) SetOrderProcessReportRequest(_orderProcessReportRequest *WmsOrderProcessReportRequest) error {
+func (r *AlibabaDchainIsvWmsOrderprocessReportAPIRequest) SetOrderProcessReportRequest(_orderProcessReportRequest *WmsOrderProcessReportRequest) error {
 	r._orderProcessReportRequest = _orderProcessReportRequest
 	r.Set("order_process_report_request", _orderProcessReportRequest)
 	return nil
 }
 
 // GetOrderProcessReportRequest OrderProcessReportRequest Getter
-func (r AlibabadchainisvwmsorderprocessreportAPIRequest) GetOrderProcessReportRequest() *WmsOrderProcessReportRequest {
+func (r AlibabaDchainIsvWmsOrderprocessReportAPIRequest) GetOrderProcessReportRequest() *WmsOrderProcessReportRequest {
 	return r._orderProcessReportRequest
 }

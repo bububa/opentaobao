@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripbtripapplygetAPIResponse 获取单个审批单 API返回值
+// AlitripBtripApplyGetAPIResponse 获取单个审批单 API返回值
 // alitrip.btrip.apply.get
 //
 // 获取单个审批单的详情数据
-type AlitripbtripapplygetAPIResponse struct {
+type AlitripBtripApplyGetAPIResponse struct {
 	model.CommonResponse
-	AlitripbtripapplygetAPIResponseModel
+	AlitripBtripApplyGetAPIResponseModel
 }
 
-// AlitripbtripapplygetAPIResponseModel is 获取单个审批单 成功返回结果
-type AlitripbtripapplygetAPIResponseModel struct {
+// AlitripBtripApplyGetAPIResponseModel is 获取单个审批单 成功返回结果
+type AlitripBtripApplyGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_apply_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabahtorderhotelsyncconfigAPIResponse 同步配置信息 API返回值
+// AlibabaHtorderHotelSyncConfigAPIResponse 同步配置信息 API返回值
 // alibaba.htorder.hotel.sync.config
 //
 // 同步配置信息
-type AlibabahtorderhotelsyncconfigAPIResponse struct {
+type AlibabaHtorderHotelSyncConfigAPIResponse struct {
 	model.CommonResponse
-	AlibabahtorderhotelsyncconfigAPIResponseModel
+	AlibabaHtorderHotelSyncConfigAPIResponseModel
 }
 
-// AlibabahtorderhotelsyncconfigAPIResponseModel is 同步配置信息 成功返回结果
-type AlibabahtorderhotelsyncconfigAPIResponseModel struct {
+// AlibabaHtorderHotelSyncConfigAPIResponseModel is 同步配置信息 成功返回结果
+type AlibabaHtorderHotelSyncConfigAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_htorder_hotel_sync_config_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

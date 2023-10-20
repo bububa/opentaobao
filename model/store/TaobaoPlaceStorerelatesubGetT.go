@@ -1,7 +1,7 @@
 package store
 
-// TaobaoplacestorerelatesubgetT 结构体
-type TaobaoplacestorerelatesubgetT struct {
+// TaobaoPlaceStorerelatesubGetT 结构体
+type TaobaoPlaceStorerelatesubGetT struct {
 	// 门店名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 门店分名称

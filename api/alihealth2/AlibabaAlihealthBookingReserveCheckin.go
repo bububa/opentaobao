@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealth2"
 )
 
-// Alibabaalihealthbookingreservecheckin 确认到店
+// AlibabaAlihealthBookingReserveCheckin 确认到店
 // alibaba.alihealth.booking.reserve.checkin
 //
 // 消费医疗统一预约平台，ISV 确认到店
-func Alibabaalihealthbookingreservecheckin(clt *core.SDKClient, req *alihealth2.AlibabaalihealthbookingreservecheckinAPIRequest, session string) (*alihealth2.AlibabaalihealthbookingreservecheckinAPIResponse, error) {
-	var resp alihealth2.AlibabaalihealthbookingreservecheckinAPIResponse
+func AlibabaAlihealthBookingReserveCheckin(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthBookingReserveCheckinAPIRequest, session string) (*alihealth2.AlibabaAlihealthBookingReserveCheckinAPIResponse, error) {
+	var resp alihealth2.AlibabaAlihealthBookingReserveCheckinAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

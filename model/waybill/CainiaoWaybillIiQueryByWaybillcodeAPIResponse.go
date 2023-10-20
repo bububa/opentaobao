@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaowaybilliiquerybywaybillcodeAPIResponse 通过面单号查询面单打印报文 API返回值
+// CainiaoWaybillIiQueryByWaybillcodeAPIResponse 通过面单号查询面单打印报文 API返回值
 // cainiao.waybill.ii.query.by.waybillcode
 //
 // 通过面单号查询面单的打印报文
-type CainiaowaybilliiquerybywaybillcodeAPIResponse struct {
+type CainiaoWaybillIiQueryByWaybillcodeAPIResponse struct {
 	model.CommonResponse
-	CainiaowaybilliiquerybywaybillcodeAPIResponseModel
+	CainiaoWaybillIiQueryByWaybillcodeAPIResponseModel
 }
 
-// CainiaowaybilliiquerybywaybillcodeAPIResponseModel is 通过面单号查询面单打印报文 成功返回结果
-type CainiaowaybilliiquerybywaybillcodeAPIResponseModel struct {
+// CainiaoWaybillIiQueryByWaybillcodeAPIResponseModel is 通过面单号查询面单打印报文 成功返回结果
+type CainiaoWaybillIiQueryByWaybillcodeAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_waybill_ii_query_by_waybillcode_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

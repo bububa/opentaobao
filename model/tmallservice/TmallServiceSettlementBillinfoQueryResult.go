@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallservicesettlementbillinfoqueryResult 结构体
-type TmallservicesettlementbillinfoqueryResult struct {
+// TmallServiceSettlementBillinfoQueryResult 结构体
+type TmallServiceSettlementBillinfoQueryResult struct {
 	// 错误信息
 	DisplayMsg string `json:"display_msg,omitempty" xml:"display_msg,omitempty"`
 	// 错误码

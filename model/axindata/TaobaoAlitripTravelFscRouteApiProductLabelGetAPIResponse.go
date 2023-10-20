@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoalitriptravelfscrouteapiproductlabelgetAPIResponse 获取线路主题 API返回值
+// TaobaoAlitripTravelFscRouteApiProductLabelGetAPIResponse 获取线路主题 API返回值
 // taobao.alitrip.travel.fsc.route.api.product.label.get
 //
 // 获取线路主题
-type TaobaoalitriptravelfscrouteapiproductlabelgetAPIResponse struct {
+type TaobaoAlitripTravelFscRouteApiProductLabelGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoalitriptravelfscrouteapiproductlabelgetAPIResponseModel
+	TaobaoAlitripTravelFscRouteApiProductLabelGetAPIResponseModel
 }
 
-// TaobaoalitriptravelfscrouteapiproductlabelgetAPIResponseModel is 获取线路主题 成功返回结果
-type TaobaoalitriptravelfscrouteapiproductlabelgetAPIResponseModel struct {
+// TaobaoAlitripTravelFscRouteApiProductLabelGetAPIResponseModel is 获取线路主题 成功返回结果
+type TaobaoAlitripTravelFscRouteApiProductLabelGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_fsc_route_api_product_label_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 通用返回结果
-	TopResult *TaobaoalitriptravelfscrouteapiproductlabelgetTopResult `json:"top_result,omitempty" xml:"top_result,omitempty"`
+	TopResult *TaobaoAlitripTravelFscRouteApiProductLabelGetTopResult `json:"top_result,omitempty" xml:"top_result,omitempty"`
 }

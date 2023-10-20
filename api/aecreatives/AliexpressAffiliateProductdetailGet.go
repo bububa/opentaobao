@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aecreatives"
 )
 
-// Aliexpressaffiliateproductdetailget 联盟商品详情获取接口
+// AliexpressAffiliateProductdetailGet 联盟商品详情获取接口
 // aliexpress.affiliate.productdetail.get
 //
 // 联盟推广商品搜索接口，用于搜索联盟推广商品数据
-func Aliexpressaffiliateproductdetailget(clt *core.SDKClient, req *aecreatives.AliexpressaffiliateproductdetailgetAPIRequest, session string) (*aecreatives.AliexpressaffiliateproductdetailgetAPIResponse, error) {
-	var resp aecreatives.AliexpressaffiliateproductdetailgetAPIResponse
+func AliexpressAffiliateProductdetailGet(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateProductdetailGetAPIRequest, session string) (*aecreatives.AliexpressAffiliateProductdetailGetAPIResponse, error) {
+	var resp aecreatives.AliexpressAffiliateProductdetailGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

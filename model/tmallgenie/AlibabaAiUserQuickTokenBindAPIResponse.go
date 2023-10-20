@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaiuserquicktokenbindAPIResponse 人工智能实验室精灵用户绑定第三方Token接口 API返回值
+// AlibabaAiUserQuickTokenBindAPIResponse 人工智能实验室精灵用户绑定第三方Token接口 API返回值
 // alibaba.ai.user.quick.token.bind
 //
 // 人工智能实验室精灵用户绑定第三方Token接口
-type AlibabaaiuserquicktokenbindAPIResponse struct {
+type AlibabaAiUserQuickTokenBindAPIResponse struct {
 	model.CommonResponse
-	AlibabaaiuserquicktokenbindAPIResponseModel
+	AlibabaAiUserQuickTokenBindAPIResponseModel
 }
 
-// AlibabaaiuserquicktokenbindAPIResponseModel is 人工智能实验室精灵用户绑定第三方Token接口 成功返回结果
-type AlibabaaiuserquicktokenbindAPIResponseModel struct {
+// AlibabaAiUserQuickTokenBindAPIResponseModel is 人工智能实验室精灵用户绑定第三方Token接口 成功返回结果
+type AlibabaAiUserQuickTokenBindAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ai_user_quick_token_bind_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

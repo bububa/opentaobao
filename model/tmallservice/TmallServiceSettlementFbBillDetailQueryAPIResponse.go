@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallservicesettlementfbbilldetailqueryAPIResponse 服务商工单结算对账查询-流水查询 API返回值
+// TmallServiceSettlementFbBillDetailQueryAPIResponse 服务商工单结算对账查询-流水查询 API返回值
 // tmall.service.settlement.fb.bill.detail.query
 //
 // 服务商工单结算对账查询-流水查询，用于查询服务工单费用流水，含服务费、退款、分成、提现等。
-type TmallservicesettlementfbbilldetailqueryAPIResponse struct {
+type TmallServiceSettlementFbBillDetailQueryAPIResponse struct {
 	model.CommonResponse
-	TmallservicesettlementfbbilldetailqueryAPIResponseModel
+	TmallServiceSettlementFbBillDetailQueryAPIResponseModel
 }
 
-// TmallservicesettlementfbbilldetailqueryAPIResponseModel is 服务商工单结算对账查询-流水查询 成功返回结果
-type TmallservicesettlementfbbilldetailqueryAPIResponseModel struct {
+// TmallServiceSettlementFbBillDetailQueryAPIResponseModel is 服务商工单结算对账查询-流水查询 成功返回结果
+type TmallServiceSettlementFbBillDetailQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_service_settlement_fb_bill_detail_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

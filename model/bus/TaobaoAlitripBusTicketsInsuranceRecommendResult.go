@@ -1,7 +1,7 @@
 package bus
 
-// TaobaoalitripbusticketsinsurancerecommendResult 结构体
-type TaobaoalitripbusticketsinsurancerecommendResult struct {
+// TaobaoAlitripBusTicketsInsuranceRecommendResult 结构体
+type TaobaoAlitripBusTicketsInsuranceRecommendResult struct {
 	// 扩展预留
 	BizExtMap string `json:"biz_ext_map,omitempty" xml:"biz_ext_map,omitempty"`
 	// msgInfo

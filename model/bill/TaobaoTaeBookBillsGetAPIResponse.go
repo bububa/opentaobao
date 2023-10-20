@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotaebookbillsgetAPIResponse tae查询虚拟账户明细数据 API返回值
+// TaobaoTaeBookBillsGetAPIResponse tae查询虚拟账户明细数据 API返回值
 // taobao.tae.book.bills.get
 //
 // tae查询虚拟账户明细数据
-type TaobaotaebookbillsgetAPIResponse struct {
+type TaobaoTaeBookBillsGetAPIResponse struct {
 	model.CommonResponse
-	TaobaotaebookbillsgetAPIResponseModel
+	TaobaoTaeBookBillsGetAPIResponseModel
 }
 
-// TaobaotaebookbillsgetAPIResponseModel is tae查询虚拟账户明细数据 成功返回结果
-type TaobaotaebookbillsgetAPIResponseModel struct {
+// TaobaoTaeBookBillsGetAPIResponseModel is tae查询虚拟账户明细数据 成功返回结果
+type TaobaoTaeBookBillsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tae_book_bills_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

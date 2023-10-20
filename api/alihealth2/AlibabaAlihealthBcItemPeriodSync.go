@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealth2"
 )
 
-// Alibabaalihealthbcitemperiodsync 代销品效期同步
+// AlibabaAlihealthBcItemPeriodSync 代销品效期同步
 // alibaba.alihealth.bc.item.period.sync
 //
 // 代销品效期同步
-func Alibabaalihealthbcitemperiodsync(clt *core.SDKClient, req *alihealth2.AlibabaalihealthbcitemperiodsyncAPIRequest, session string) (*alihealth2.AlibabaalihealthbcitemperiodsyncAPIResponse, error) {
-	var resp alihealth2.AlibabaalihealthbcitemperiodsyncAPIResponse
+func AlibabaAlihealthBcItemPeriodSync(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthBcItemPeriodSyncAPIRequest, session string) (*alihealth2.AlibabaAlihealthBcItemPeriodSyncAPIResponse, error) {
+	var resp alihealth2.AlibabaAlihealthBcItemPeriodSyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

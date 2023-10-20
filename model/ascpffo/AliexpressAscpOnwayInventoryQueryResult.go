@@ -1,7 +1,7 @@
 package ascpffo
 
-// AliexpressascponwayinventoryqueryResult 结构体
-type AliexpressascponwayinventoryqueryResult struct {
+// AliexpressAscpOnwayInventoryQueryResult 结构体
+type AliexpressAscpOnwayInventoryQueryResult struct {
 	// 出参列表
 	DataList []ErpOnWayInventoryDto `json:"data_list,omitempty" xml:"data_list>erp_on_way_inventory_dto,omitempty"`
 	// 错误码

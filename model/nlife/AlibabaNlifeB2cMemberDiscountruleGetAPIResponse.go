@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// Alibabanlifeb2cmemberdiscountrulegetAPIResponse 会员抵扣规则 API返回值
+// AlibabaNlifeB2cMemberDiscountruleGetAPIResponse 会员抵扣规则 API返回值
 // alibaba.nlife.b2c.member.discountrule.get
 //
 // 获取企业会员抵扣规则
-type Alibabanlifeb2cmemberdiscountrulegetAPIResponse struct {
+type AlibabaNlifeB2cMemberDiscountruleGetAPIResponse struct {
 	model.CommonResponse
-	Alibabanlifeb2cmemberdiscountrulegetAPIResponseModel
+	AlibabaNlifeB2cMemberDiscountruleGetAPIResponseModel
 }
 
-// Alibabanlifeb2cmemberdiscountrulegetAPIResponseModel is 会员抵扣规则 成功返回结果
-type Alibabanlifeb2cmemberdiscountrulegetAPIResponseModel struct {
+// AlibabaNlifeB2cMemberDiscountruleGetAPIResponseModel is 会员抵扣规则 成功返回结果
+type AlibabaNlifeB2cMemberDiscountruleGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_nlife_b2c_member_discountrule_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

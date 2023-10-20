@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallservicecenterworkcardevaluateResult 结构体
-type TmallservicecenterworkcardevaluateResult struct {
+// TmallServicecenterWorkcardEvaluateResult 结构体
+type TmallServicecenterWorkcardEvaluateResult struct {
 	// 错误信息
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 错误码

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaokaolascitemaddAPIRequest 考拉货品新增接口 API请求
+// TaobaoKaolaScitemAddAPIRequest 考拉货品新增接口 API请求
 // taobao.kaola.scitem.add
 //
 // 考拉货品新增接口
-type TaobaokaolascitemaddAPIRequest struct {
+type TaobaoKaolaScitemAddAPIRequest struct {
 	model.Params
 	// 待新增的货品
 	_cnsku *CnskuDto
@@ -18,52 +18,52 @@ type TaobaokaolascitemaddAPIRequest struct {
 	_option *AddCnskuOption
 }
 
-// NewTaobaokaolascitemaddRequest 初始化TaobaokaolascitemaddAPIRequest对象
-func NewTaobaokaolascitemaddRequest() *TaobaokaolascitemaddAPIRequest {
-	return &TaobaokaolascitemaddAPIRequest{
+// NewTaobaoKaolaScitemAddRequest 初始化TaobaoKaolaScitemAddAPIRequest对象
+func NewTaobaoKaolaScitemAddRequest() *TaobaoKaolaScitemAddAPIRequest {
+	return &TaobaoKaolaScitemAddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaokaolascitemaddAPIRequest) GetApiMethodName() string {
+func (r TaobaoKaolaScitemAddAPIRequest) GetApiMethodName() string {
 	return "taobao.kaola.scitem.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaokaolascitemaddAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoKaolaScitemAddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaokaolascitemaddAPIRequest) GetRawParams() model.Params {
+func (r TaobaoKaolaScitemAddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCnsku is Cnsku Setter
 // 待新增的货品
-func (r *TaobaokaolascitemaddAPIRequest) SetCnsku(_cnsku *CnskuDto) error {
+func (r *TaobaoKaolaScitemAddAPIRequest) SetCnsku(_cnsku *CnskuDto) error {
 	r._cnsku = _cnsku
 	r.Set("cnsku", _cnsku)
 	return nil
 }
 
 // GetCnsku Cnsku Getter
-func (r TaobaokaolascitemaddAPIRequest) GetCnsku() *CnskuDto {
+func (r TaobaoKaolaScitemAddAPIRequest) GetCnsku() *CnskuDto {
 	return r._cnsku
 }
 
 // SetOption is Option Setter
 // 新增选项
-func (r *TaobaokaolascitemaddAPIRequest) SetOption(_option *AddCnskuOption) error {
+func (r *TaobaoKaolaScitemAddAPIRequest) SetOption(_option *AddCnskuOption) error {
 	r._option = _option
 	r.Set("option", _option)
 	return nil
 }
 
 // GetOption Option Getter
-func (r TaobaokaolascitemaddAPIRequest) GetOption() *AddCnskuOption {
+func (r TaobaoKaolaScitemAddAPIRequest) GetOption() *AddCnskuOption {
 	return r._option
 }

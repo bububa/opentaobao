@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibababaichuantaopasswordqueryAPIRequest 查询解析淘口令 API请求
+// AlibabaBaichuanTaopasswordQueryAPIRequest 查询解析淘口令 API请求
 // alibaba.baichuan.taopassword.query
 //
 // 查询，解析淘口令
-type AlibababaichuantaopasswordqueryAPIRequest struct {
+type AlibabaBaichuanTaopasswordQueryAPIRequest struct {
 	model.Params
 	// 淘口令
 	_passwordContent string
 }
 
-// NewAlibababaichuantaopasswordqueryRequest 初始化AlibababaichuantaopasswordqueryAPIRequest对象
-func NewAlibababaichuantaopasswordqueryRequest() *AlibababaichuantaopasswordqueryAPIRequest {
-	return &AlibababaichuantaopasswordqueryAPIRequest{
+// NewAlibabaBaichuanTaopasswordQueryRequest 初始化AlibabaBaichuanTaopasswordQueryAPIRequest对象
+func NewAlibabaBaichuanTaopasswordQueryRequest() *AlibabaBaichuanTaopasswordQueryAPIRequest {
+	return &AlibabaBaichuanTaopasswordQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibababaichuantaopasswordqueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaBaichuanTaopasswordQueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.baichuan.taopassword.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibababaichuantaopasswordqueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaBaichuanTaopasswordQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibababaichuantaopasswordqueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaBaichuanTaopasswordQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPasswordContent is PasswordContent Setter
 // 淘口令
-func (r *AlibababaichuantaopasswordqueryAPIRequest) SetPasswordContent(_passwordContent string) error {
+func (r *AlibabaBaichuanTaopasswordQueryAPIRequest) SetPasswordContent(_passwordContent string) error {
 	r._passwordContent = _passwordContent
 	r.Set("password_content", _passwordContent)
 	return nil
 }
 
 // GetPasswordContent PasswordContent Getter
-func (r AlibababaichuantaopasswordqueryAPIRequest) GetPasswordContent() string {
+func (r AlibabaBaichuanTaopasswordQueryAPIRequest) GetPasswordContent() string {
 	return r._passwordContent
 }

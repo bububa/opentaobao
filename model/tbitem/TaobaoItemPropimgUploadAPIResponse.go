@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoitempropimguploadAPIResponse 添加或修改属性图片 API返回值
+// TaobaoItemPropimgUploadAPIResponse 添加或修改属性图片 API返回值
 // taobao.item.propimg.upload
 //
 // 添加一张商品属性图片到num_iid指定的商品中 &lt;br/&gt;传入的num_iid所对应的商品必须属于当前会话的用户 &lt;br/&gt;图片的属性必须要是颜色的属性，这个在前台显示的时候需要和sku进行关联的 &lt;br/&gt;商品属性图片只有享有服务的卖家（如：淘宝大卖家、订购了淘宝多图服务的卖家）才能上传 &lt;br/&gt;商品属性图片有数量和大小上的限制，最多不能超过24张（每个颜色属性都有一张）。
-type TaobaoitempropimguploadAPIResponse struct {
+type TaobaoItemPropimgUploadAPIResponse struct {
 	model.CommonResponse
-	TaobaoitempropimguploadAPIResponseModel
+	TaobaoItemPropimgUploadAPIResponseModel
 }
 
-// TaobaoitempropimguploadAPIResponseModel is 添加或修改属性图片 成功返回结果
-type TaobaoitempropimguploadAPIResponseModel struct {
+// TaobaoItemPropimgUploadAPIResponseModel is 添加或修改属性图片 成功返回结果
+type TaobaoItemPropimgUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"item_propimg_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlborderjzwithinsconsignAPIRequest 家装发货接口 API请求
+// TaobaoWlbOrderJzwithinsConsignAPIRequest 家装发货接口 API请求
 // taobao.wlb.order.jzwithins.consign
 //
 // 为支持家装类目的商家，对绑定家装物流服务的订单可以在商家的ERP中发货、批量发货，因此开发带安装服务商的发货接口
-type TaobaowlborderjzwithinsconsignAPIRequest struct {
+type TaobaoWlbOrderJzwithinsConsignAPIRequest struct {
 	model.Params
 	// 淘宝交易订单号
 	_tid int64
@@ -22,78 +22,78 @@ type TaobaowlborderjzwithinsconsignAPIRequest struct {
 	_jzConsignArgs *JzConsignArgsNew
 }
 
-// NewTaobaowlborderjzwithinsconsignRequest 初始化TaobaowlborderjzwithinsconsignAPIRequest对象
-func NewTaobaowlborderjzwithinsconsignRequest() *TaobaowlborderjzwithinsconsignAPIRequest {
-	return &TaobaowlborderjzwithinsconsignAPIRequest{
+// NewTaobaoWlbOrderJzwithinsConsignRequest 初始化TaobaoWlbOrderJzwithinsConsignAPIRequest对象
+func NewTaobaoWlbOrderJzwithinsConsignRequest() *TaobaoWlbOrderJzwithinsConsignAPIRequest {
+	return &TaobaoWlbOrderJzwithinsConsignAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaowlborderjzwithinsconsignAPIRequest) GetApiMethodName() string {
+func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetApiMethodName() string {
 	return "taobao.wlb.order.jzwithins.consign"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaowlborderjzwithinsconsignAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaowlborderjzwithinsconsignAPIRequest) GetRawParams() model.Params {
+func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTid is Tid Setter
 // 淘宝交易订单号
-func (r *TaobaowlborderjzwithinsconsignAPIRequest) SetTid(_tid int64) error {
+func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
 	r.Set("tid", _tid)
 	return nil
 }
 
 // GetTid Tid Getter
-func (r TaobaowlborderjzwithinsconsignAPIRequest) GetTid() int64 {
+func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
 // SetTmsPartner is TmsPartner Setter
 // 物流服务商信息
-func (r *TaobaowlborderjzwithinsconsignAPIRequest) SetTmsPartner(_tmsPartner *JzPartnerNew) error {
+func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) SetTmsPartner(_tmsPartner *JzPartnerNew) error {
 	r._tmsPartner = _tmsPartner
 	r.Set("tms_partner", _tmsPartner)
 	return nil
 }
 
 // GetTmsPartner TmsPartner Getter
-func (r TaobaowlborderjzwithinsconsignAPIRequest) GetTmsPartner() *JzPartnerNew {
+func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetTmsPartner() *JzPartnerNew {
 	return r._tmsPartner
 }
 
 // SetInsPartner is InsPartner Setter
 // 物流服务商信息
-func (r *TaobaowlborderjzwithinsconsignAPIRequest) SetInsPartner(_insPartner *JzPartnerNew) error {
+func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) SetInsPartner(_insPartner *JzPartnerNew) error {
 	r._insPartner = _insPartner
 	r.Set("ins_partner", _insPartner)
 	return nil
 }
 
 // GetInsPartner InsPartner Getter
-func (r TaobaowlborderjzwithinsconsignAPIRequest) GetInsPartner() *JzPartnerNew {
+func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetInsPartner() *JzPartnerNew {
 	return r._insPartner
 }
 
 // SetJzConsignArgs is JzConsignArgs Setter
 // 家装物流发货参数
-func (r *TaobaowlborderjzwithinsconsignAPIRequest) SetJzConsignArgs(_jzConsignArgs *JzConsignArgsNew) error {
+func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) SetJzConsignArgs(_jzConsignArgs *JzConsignArgsNew) error {
 	r._jzConsignArgs = _jzConsignArgs
 	r.Set("jz_consign_args", _jzConsignArgs)
 	return nil
 }
 
 // GetJzConsignArgs JzConsignArgs Getter
-func (r TaobaowlborderjzwithinsconsignAPIRequest) GetJzConsignArgs() *JzConsignArgsNew {
+func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetJzConsignArgs() *JzConsignArgsNew {
 	return r._jzConsignArgs
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabahealthvaccinpovupdateAPIResponse 新增/变更接种点信息 API返回值
+// AlibabaHealthVaccinPovUpdateAPIResponse 新增/变更接种点信息 API返回值
 // alibaba.health.vaccin.pov.update
 //
 // ISV 将疫苗的接种点信息同步到免疫规划中心，提醒用户接种时可提供接种点详情。
-type AlibabahealthvaccinpovupdateAPIResponse struct {
+type AlibabaHealthVaccinPovUpdateAPIResponse struct {
 	model.CommonResponse
-	AlibabahealthvaccinpovupdateAPIResponseModel
+	AlibabaHealthVaccinPovUpdateAPIResponseModel
 }
 
-// AlibabahealthvaccinpovupdateAPIResponseModel is 新增/变更接种点信息 成功返回结果
-type AlibabahealthvaccinpovupdateAPIResponseModel struct {
+// AlibabaHealthVaccinPovUpdateAPIResponseModel is 新增/变更接种点信息 成功返回结果
+type AlibabaHealthVaccinPovUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_health_vaccin_pov_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

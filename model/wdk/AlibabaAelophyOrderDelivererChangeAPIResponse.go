@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaelophyorderdelivererchangeAPIResponse 配送员信息变更接口 API返回值
+// AlibabaAelophyOrderDelivererChangeAPIResponse 配送员信息变更接口 API返回值
 // alibaba.aelophy.order.deliverer.change
 //
 // 配送员信息变更接口
-type AlibabaaelophyorderdelivererchangeAPIResponse struct {
+type AlibabaAelophyOrderDelivererChangeAPIResponse struct {
 	model.CommonResponse
-	AlibabaaelophyorderdelivererchangeAPIResponseModel
+	AlibabaAelophyOrderDelivererChangeAPIResponseModel
 }
 
-// AlibabaaelophyorderdelivererchangeAPIResponseModel is 配送员信息变更接口 成功返回结果
-type AlibabaaelophyorderdelivererchangeAPIResponseModel struct {
+// AlibabaAelophyOrderDelivererChangeAPIResponseModel is 配送员信息变更接口 成功返回结果
+type AlibabaAelophyOrderDelivererChangeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_aelophy_order_deliverer_change_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkmarketingexpirepromotiondeleteAPIResponse 短保优惠删除 API返回值
+// AlibabaWdkMarketingExpirePromotionDeleteAPIResponse 短保优惠删除 API返回值
 // alibaba.wdk.marketing.expire.promotion.delete
 //
 // 短保优惠删除
-type AlibabawdkmarketingexpirepromotiondeleteAPIResponse struct {
+type AlibabaWdkMarketingExpirePromotionDeleteAPIResponse struct {
 	model.CommonResponse
-	AlibabawdkmarketingexpirepromotiondeleteAPIResponseModel
+	AlibabaWdkMarketingExpirePromotionDeleteAPIResponseModel
 }
 
-// AlibabawdkmarketingexpirepromotiondeleteAPIResponseModel is 短保优惠删除 成功返回结果
-type AlibabawdkmarketingexpirepromotiondeleteAPIResponseModel struct {
+// AlibabaWdkMarketingExpirePromotionDeleteAPIResponseModel is 短保优惠删除 成功返回结果
+type AlibabaWdkMarketingExpirePromotionDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_marketing_expire_promotion_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

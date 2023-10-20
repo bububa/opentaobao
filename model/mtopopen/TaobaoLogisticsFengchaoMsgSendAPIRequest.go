@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaologisticsfengchaomsgsendAPIRequest 丰巢走淘宝发包裹状态通知接口 API请求
+// TaobaoLogisticsFengchaoMsgSendAPIRequest 丰巢走淘宝发包裹状态通知接口 API请求
 // taobao.logistics.fengchao.msg.send
 //
 // 丰巢走淘宝发包裹状态通知接口
-type TaobaologisticsfengchaomsgsendAPIRequest struct {
+type TaobaoLogisticsFengchaoMsgSendAPIRequest struct {
 	model.Params
 	// 请求对象
 	_msgSendRequest *MsgSendRequest
 }
 
-// NewTaobaologisticsfengchaomsgsendRequest 初始化TaobaologisticsfengchaomsgsendAPIRequest对象
-func NewTaobaologisticsfengchaomsgsendRequest() *TaobaologisticsfengchaomsgsendAPIRequest {
-	return &TaobaologisticsfengchaomsgsendAPIRequest{
+// NewTaobaoLogisticsFengchaoMsgSendRequest 初始化TaobaoLogisticsFengchaoMsgSendAPIRequest对象
+func NewTaobaoLogisticsFengchaoMsgSendRequest() *TaobaoLogisticsFengchaoMsgSendAPIRequest {
+	return &TaobaoLogisticsFengchaoMsgSendAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaologisticsfengchaomsgsendAPIRequest) GetApiMethodName() string {
+func (r TaobaoLogisticsFengchaoMsgSendAPIRequest) GetApiMethodName() string {
 	return "taobao.logistics.fengchao.msg.send"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaologisticsfengchaomsgsendAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoLogisticsFengchaoMsgSendAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaologisticsfengchaomsgsendAPIRequest) GetRawParams() model.Params {
+func (r TaobaoLogisticsFengchaoMsgSendAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMsgSendRequest is MsgSendRequest Setter
 // 请求对象
-func (r *TaobaologisticsfengchaomsgsendAPIRequest) SetMsgSendRequest(_msgSendRequest *MsgSendRequest) error {
+func (r *TaobaoLogisticsFengchaoMsgSendAPIRequest) SetMsgSendRequest(_msgSendRequest *MsgSendRequest) error {
 	r._msgSendRequest = _msgSendRequest
 	r.Set("msg_send_request", _msgSendRequest)
 	return nil
 }
 
 // GetMsgSendRequest MsgSendRequest Getter
-func (r TaobaologisticsfengchaomsgsendAPIRequest) GetMsgSendRequest() *MsgSendRequest {
+func (r TaobaoLogisticsFengchaoMsgSendAPIRequest) GetMsgSendRequest() *MsgSendRequest {
 	return r._msgSendRequest
 }

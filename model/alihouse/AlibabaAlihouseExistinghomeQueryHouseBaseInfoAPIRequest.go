@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihouseexistinghomequeryhousebaseinfoAPIRequest 查询房源基本信息 API请求
+// AlibabaAlihouseExistinghomeQueryHouseBaseInfoAPIRequest 查询房源基本信息 API请求
 // alibaba.alihouse.existinghome.query.house.base.info
 //
 // 查询房源基本信息
-type AlibabaalihouseexistinghomequeryhousebaseinfoAPIRequest struct {
+type AlibabaAlihouseExistinghomeQueryHouseBaseInfoAPIRequest struct {
 	model.Params
 	// 1
 	_communityOuterId string
@@ -18,52 +18,52 @@ type AlibabaalihouseexistinghomequeryhousebaseinfoAPIRequest struct {
 	_outerId string
 }
 
-// NewAlibabaalihouseexistinghomequeryhousebaseinfoRequest 初始化AlibabaalihouseexistinghomequeryhousebaseinfoAPIRequest对象
-func NewAlibabaalihouseexistinghomequeryhousebaseinfoRequest() *AlibabaalihouseexistinghomequeryhousebaseinfoAPIRequest {
-	return &AlibabaalihouseexistinghomequeryhousebaseinfoAPIRequest{
+// NewAlibabaAlihouseExistinghomeQueryHouseBaseInfoRequest 初始化AlibabaAlihouseExistinghomeQueryHouseBaseInfoAPIRequest对象
+func NewAlibabaAlihouseExistinghomeQueryHouseBaseInfoRequest() *AlibabaAlihouseExistinghomeQueryHouseBaseInfoAPIRequest {
+	return &AlibabaAlihouseExistinghomeQueryHouseBaseInfoAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihouseexistinghomequeryhousebaseinfoAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseExistinghomeQueryHouseBaseInfoAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.existinghome.query.house.base.info"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihouseexistinghomequeryhousebaseinfoAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihouseExistinghomeQueryHouseBaseInfoAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihouseexistinghomequeryhousebaseinfoAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihouseExistinghomeQueryHouseBaseInfoAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCommunityOuterId is CommunityOuterId Setter
 // 1
-func (r *AlibabaalihouseexistinghomequeryhousebaseinfoAPIRequest) SetCommunityOuterId(_communityOuterId string) error {
+func (r *AlibabaAlihouseExistinghomeQueryHouseBaseInfoAPIRequest) SetCommunityOuterId(_communityOuterId string) error {
 	r._communityOuterId = _communityOuterId
 	r.Set("community_outer_id", _communityOuterId)
 	return nil
 }
 
 // GetCommunityOuterId CommunityOuterId Getter
-func (r AlibabaalihouseexistinghomequeryhousebaseinfoAPIRequest) GetCommunityOuterId() string {
+func (r AlibabaAlihouseExistinghomeQueryHouseBaseInfoAPIRequest) GetCommunityOuterId() string {
 	return r._communityOuterId
 }
 
 // SetOuterId is OuterId Setter
 // 1
-func (r *AlibabaalihouseexistinghomequeryhousebaseinfoAPIRequest) SetOuterId(_outerId string) error {
+func (r *AlibabaAlihouseExistinghomeQueryHouseBaseInfoAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
 	r.Set("outer_id", _outerId)
 	return nil
 }
 
 // GetOuterId OuterId Getter
-func (r AlibabaalihouseexistinghomequeryhousebaseinfoAPIRequest) GetOuterId() string {
+func (r AlibabaAlihouseExistinghomeQueryHouseBaseInfoAPIRequest) GetOuterId() string {
 	return r._outerId
 }

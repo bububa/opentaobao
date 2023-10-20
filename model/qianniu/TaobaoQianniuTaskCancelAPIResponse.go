@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoqianniutaskcancelAPIResponse 取消轻任务 API返回值
+// TaobaoQianniuTaskCancelAPIResponse 取消轻任务 API返回值
 // taobao.qianniu.task.cancel
 //
 // 由任务发起者调用
-type TaobaoqianniutaskcancelAPIResponse struct {
+type TaobaoQianniuTaskCancelAPIResponse struct {
 	model.CommonResponse
-	TaobaoqianniutaskcancelAPIResponseModel
+	TaobaoQianniuTaskCancelAPIResponseModel
 }
 
-// TaobaoqianniutaskcancelAPIResponseModel is 取消轻任务 成功返回结果
-type TaobaoqianniutaskcancelAPIResponseModel struct {
+// TaobaoQianniuTaskCancelAPIResponseModel is 取消轻任务 成功返回结果
+type TaobaoQianniuTaskCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"qianniu_task_cancel_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

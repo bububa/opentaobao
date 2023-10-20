@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabatianmaouopcancelAPIResponse 阿里巴巴.天猫. 履约订单. 取消 API返回值
+// AlibabaTianmaoUopCancelAPIResponse 阿里巴巴.天猫. 履约订单. 取消 API返回值
 // alibaba.tianmao.uop.cancel
 //
 // 阿里巴巴.天猫. 履约订单. 取消
-type AlibabatianmaouopcancelAPIResponse struct {
+type AlibabaTianmaoUopCancelAPIResponse struct {
 	model.CommonResponse
-	AlibabatianmaouopcancelAPIResponseModel
+	AlibabaTianmaoUopCancelAPIResponseModel
 }
 
-// AlibabatianmaouopcancelAPIResponseModel is 阿里巴巴.天猫. 履约订单. 取消 成功返回结果
-type AlibabatianmaouopcancelAPIResponseModel struct {
+// AlibabaTianmaoUopCancelAPIResponseModel is 阿里巴巴.天猫. 履约订单. 取消 成功返回结果
+type AlibabaTianmaoUopCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tianmao_uop_cancel_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

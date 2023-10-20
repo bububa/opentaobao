@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabalstvendinggoodssaveAPIResponse 自动售卖机商品回传 API返回值
+// AlibabaLstVendingGoodsSaveAPIResponse 自动售卖机商品回传 API返回值
 // alibaba.lst.vending.goods.save
 //
 // 零售通自动售卖机商品数据回流。
-type AlibabalstvendinggoodssaveAPIResponse struct {
+type AlibabaLstVendingGoodsSaveAPIResponse struct {
 	model.CommonResponse
-	AlibabalstvendinggoodssaveAPIResponseModel
+	AlibabaLstVendingGoodsSaveAPIResponseModel
 }
 
-// AlibabalstvendinggoodssaveAPIResponseModel is 自动售卖机商品回传 成功返回结果
-type AlibabalstvendinggoodssaveAPIResponseModel struct {
+// AlibabaLstVendingGoodsSaveAPIResponseModel is 自动售卖机商品回传 成功返回结果
+type AlibabaLstVendingGoodsSaveAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lst_vending_goods_save_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

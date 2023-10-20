@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoalimeusertokenadvancegetAPIResponse 获取用户免登录令牌v2 API返回值
+// TaobaoAlimeUserTokenAdvanceGetAPIResponse 获取用户免登录令牌v2 API返回值
 // taobao.alime.user.token.advance.get
 //
 // 根据第三账号信息获取用户的免登录令牌
-type TaobaoalimeusertokenadvancegetAPIResponse struct {
+type TaobaoAlimeUserTokenAdvanceGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoalimeusertokenadvancegetAPIResponseModel
+	TaobaoAlimeUserTokenAdvanceGetAPIResponseModel
 }
 
-// TaobaoalimeusertokenadvancegetAPIResponseModel is 获取用户免登录令牌v2 成功返回结果
-type TaobaoalimeusertokenadvancegetAPIResponseModel struct {
+// TaobaoAlimeUserTokenAdvanceGetAPIResponseModel is 获取用户免登录令牌v2 成功返回结果
+type TaobaoAlimeUserTokenAdvanceGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alime_user_token_advance_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

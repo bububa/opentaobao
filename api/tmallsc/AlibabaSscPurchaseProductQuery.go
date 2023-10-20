@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
 
-// Alibabasscpurchaseproductquery 查询已采购的服务产品
+// AlibabaSscPurchaseProductQuery 查询已采购的服务产品
 // alibaba.ssc.purchase.product.query
 //
 // 查询已采购的服务产品
-func Alibabasscpurchaseproductquery(clt *core.SDKClient, req *tmallsc.AlibabasscpurchaseproductqueryAPIRequest, session string) (*tmallsc.AlibabasscpurchaseproductqueryAPIResponse, error) {
-	var resp tmallsc.AlibabasscpurchaseproductqueryAPIResponse
+func AlibabaSscPurchaseProductQuery(clt *core.SDKClient, req *tmallsc.AlibabaSscPurchaseProductQueryAPIRequest, session string) (*tmallsc.AlibabaSscPurchaseProductQueryAPIResponse, error) {
+	var resp tmallsc.AlibabaSscPurchaseProductQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

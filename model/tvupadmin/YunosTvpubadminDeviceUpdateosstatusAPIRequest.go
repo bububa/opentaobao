@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunostvpubadmindeviceupdateosstatusAPIRequest 更新系统版本审核状态 API请求
+// YunosTvpubadminDeviceUpdateosstatusAPIRequest 更新系统版本审核状态 API请求
 // yunos.tvpubadmin.device.updateosstatus
 //
 // 更新系统版本审核状态
-type YunostvpubadmindeviceupdateosstatusAPIRequest struct {
+type YunosTvpubadminDeviceUpdateosstatusAPIRequest struct {
 	model.Params
 	// 审核状态
 	_status string
@@ -22,78 +22,78 @@ type YunostvpubadmindeviceupdateosstatusAPIRequest struct {
 	_license int64
 }
 
-// NewYunostvpubadmindeviceupdateosstatusRequest 初始化YunostvpubadmindeviceupdateosstatusAPIRequest对象
-func NewYunostvpubadmindeviceupdateosstatusRequest() *YunostvpubadmindeviceupdateosstatusAPIRequest {
-	return &YunostvpubadmindeviceupdateosstatusAPIRequest{
+// NewYunosTvpubadminDeviceUpdateosstatusRequest 初始化YunosTvpubadminDeviceUpdateosstatusAPIRequest对象
+func NewYunosTvpubadminDeviceUpdateosstatusRequest() *YunosTvpubadminDeviceUpdateosstatusAPIRequest {
+	return &YunosTvpubadminDeviceUpdateosstatusAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YunostvpubadmindeviceupdateosstatusAPIRequest) GetApiMethodName() string {
+func (r YunosTvpubadminDeviceUpdateosstatusAPIRequest) GetApiMethodName() string {
 	return "yunos.tvpubadmin.device.updateosstatus"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunostvpubadmindeviceupdateosstatusAPIRequest) GetApiParams(params url.Values) {
+func (r YunosTvpubadminDeviceUpdateosstatusAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YunostvpubadmindeviceupdateosstatusAPIRequest) GetRawParams() model.Params {
+func (r YunosTvpubadminDeviceUpdateosstatusAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetStatus is Status Setter
 // 审核状态
-func (r *YunostvpubadmindeviceupdateosstatusAPIRequest) SetStatus(_status string) error {
+func (r *YunosTvpubadminDeviceUpdateosstatusAPIRequest) SetStatus(_status string) error {
 	r._status = _status
 	r.Set("status", _status)
 	return nil
 }
 
 // GetStatus Status Getter
-func (r YunostvpubadmindeviceupdateosstatusAPIRequest) GetStatus() string {
+func (r YunosTvpubadminDeviceUpdateosstatusAPIRequest) GetStatus() string {
 	return r._status
 }
 
 // SetAuditComment is AuditComment Setter
 // 审核意见
-func (r *YunostvpubadmindeviceupdateosstatusAPIRequest) SetAuditComment(_auditComment string) error {
+func (r *YunosTvpubadminDeviceUpdateosstatusAPIRequest) SetAuditComment(_auditComment string) error {
 	r._auditComment = _auditComment
 	r.Set("audit_comment", _auditComment)
 	return nil
 }
 
 // GetAuditComment AuditComment Getter
-func (r YunostvpubadmindeviceupdateosstatusAPIRequest) GetAuditComment() string {
+func (r YunosTvpubadminDeviceUpdateosstatusAPIRequest) GetAuditComment() string {
 	return r._auditComment
 }
 
 // SetVersionId is VersionId Setter
 // 升级ID
-func (r *YunostvpubadmindeviceupdateosstatusAPIRequest) SetVersionId(_versionId int64) error {
+func (r *YunosTvpubadminDeviceUpdateosstatusAPIRequest) SetVersionId(_versionId int64) error {
 	r._versionId = _versionId
 	r.Set("version_id", _versionId)
 	return nil
 }
 
 // GetVersionId VersionId Getter
-func (r YunostvpubadmindeviceupdateosstatusAPIRequest) GetVersionId() int64 {
+func (r YunosTvpubadminDeviceUpdateosstatusAPIRequest) GetVersionId() int64 {
 	return r._versionId
 }
 
 // SetLicense is License Setter
 // 牌照方
-func (r *YunostvpubadmindeviceupdateosstatusAPIRequest) SetLicense(_license int64) error {
+func (r *YunosTvpubadminDeviceUpdateosstatusAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
 	r.Set("license", _license)
 	return nil
 }
 
 // GetLicense License Getter
-func (r YunostvpubadmindeviceupdateosstatusAPIRequest) GetLicense() int64 {
+func (r YunosTvpubadminDeviceUpdateosstatusAPIRequest) GetLicense() int64 {
 	return r._license
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaeleenterpriseemployeebatchupdateAPIResponse 批量新增更新员工 API返回值
+// AlibabaEleEnterpriseEmployeeBatchupdateAPIResponse 批量新增更新员工 API返回值
 // alibaba.ele.enterprise.employee.batchupdate
 //
 // 批量新增更新员工
-type AlibabaeleenterpriseemployeebatchupdateAPIResponse struct {
+type AlibabaEleEnterpriseEmployeeBatchupdateAPIResponse struct {
 	model.CommonResponse
-	AlibabaeleenterpriseemployeebatchupdateAPIResponseModel
+	AlibabaEleEnterpriseEmployeeBatchupdateAPIResponseModel
 }
 
-// AlibabaeleenterpriseemployeebatchupdateAPIResponseModel is 批量新增更新员工 成功返回结果
-type AlibabaeleenterpriseemployeebatchupdateAPIResponseModel struct {
+// AlibabaEleEnterpriseEmployeeBatchupdateAPIResponseModel is 批量新增更新员工 成功返回结果
+type AlibabaEleEnterpriseEmployeeBatchupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ele_enterprise_employee_batchupdate_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package flight
 
-// TaobaoalitripflightchangegetResultDo 结构体
-type TaobaoalitripflightchangegetResultDo struct {
+// TaobaoAlitripFlightchangeGetResultDo 结构体
+type TaobaoAlitripFlightchangeGetResultDo struct {
 	// results
 	Results []string `json:"results,omitempty" xml:"results>string,omitempty"`
 	// errMsg

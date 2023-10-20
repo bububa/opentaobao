@@ -1,7 +1,7 @@
 package simba
 
-// TaobaouniversalbpbidwordfindlistTopResult 结构体
-type TaobaouniversalbpbidwordfindlistTopResult struct {
+// TaobaoUniversalbpBidwordFindlistTopResult 结构体
+type TaobaoUniversalbpBidwordFindlistTopResult struct {
 	// 请求系统信息
 	Info *TopInfo `json:"info,omitempty" xml:"info,omitempty"`
 	// 结果集

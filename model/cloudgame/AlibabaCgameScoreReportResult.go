@@ -1,7 +1,7 @@
 package cloudgame
 
-// AlibabacgamescorereportResult 结构体
-type AlibabacgamescorereportResult struct {
+// AlibabaCgameScoreReportResult 结构体
+type AlibabaCgameScoreReportResult struct {
 	// 结果码
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 结果消息

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaofeedflowitemcrowdaddAPIRequest 单品单元下，新增定向人群 API请求
+// TaobaoFeedflowItemCrowdAddAPIRequest 单品单元下，新增定向人群 API请求
 // taobao.feedflow.item.crowd.add
 //
 // 单品单元下，新增定向人群
-type TaobaofeedflowitemcrowdaddAPIRequest struct {
+type TaobaoFeedflowItemCrowdAddAPIRequest struct {
 	model.Params
 	// 人群列表
 	_crowds []CrowdDto
@@ -18,52 +18,52 @@ type TaobaofeedflowitemcrowdaddAPIRequest struct {
 	_adgroupId int64
 }
 
-// NewTaobaofeedflowitemcrowdaddRequest 初始化TaobaofeedflowitemcrowdaddAPIRequest对象
-func NewTaobaofeedflowitemcrowdaddRequest() *TaobaofeedflowitemcrowdaddAPIRequest {
-	return &TaobaofeedflowitemcrowdaddAPIRequest{
+// NewTaobaoFeedflowItemCrowdAddRequest 初始化TaobaoFeedflowItemCrowdAddAPIRequest对象
+func NewTaobaoFeedflowItemCrowdAddRequest() *TaobaoFeedflowItemCrowdAddAPIRequest {
+	return &TaobaoFeedflowItemCrowdAddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaofeedflowitemcrowdaddAPIRequest) GetApiMethodName() string {
+func (r TaobaoFeedflowItemCrowdAddAPIRequest) GetApiMethodName() string {
 	return "taobao.feedflow.item.crowd.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaofeedflowitemcrowdaddAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoFeedflowItemCrowdAddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaofeedflowitemcrowdaddAPIRequest) GetRawParams() model.Params {
+func (r TaobaoFeedflowItemCrowdAddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCrowds is Crowds Setter
 // 人群列表
-func (r *TaobaofeedflowitemcrowdaddAPIRequest) SetCrowds(_crowds []CrowdDto) error {
+func (r *TaobaoFeedflowItemCrowdAddAPIRequest) SetCrowds(_crowds []CrowdDto) error {
 	r._crowds = _crowds
 	r.Set("crowds", _crowds)
 	return nil
 }
 
 // GetCrowds Crowds Getter
-func (r TaobaofeedflowitemcrowdaddAPIRequest) GetCrowds() []CrowdDto {
+func (r TaobaoFeedflowItemCrowdAddAPIRequest) GetCrowds() []CrowdDto {
 	return r._crowds
 }
 
 // SetAdgroupId is AdgroupId Setter
 // 单元id
-func (r *TaobaofeedflowitemcrowdaddAPIRequest) SetAdgroupId(_adgroupId int64) error {
+func (r *TaobaoFeedflowItemCrowdAddAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
 	r.Set("adgroup_id", _adgroupId)
 	return nil
 }
 
 // GetAdgroupId AdgroupId Getter
-func (r TaobaofeedflowitemcrowdaddAPIRequest) GetAdgroupId() int64 {
+func (r TaobaoFeedflowItemCrowdAddAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }

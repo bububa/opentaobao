@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoailabaicloudtopmusicsearchAPIResponse 对外音乐搜索服务 API返回值
+// TaobaoAilabAicloudTopMusicSearchAPIResponse 对外音乐搜索服务 API返回值
 // taobao.ailab.aicloud.top.music.search
 //
 // 供厂商获取音乐列表
-type TaobaoailabaicloudtopmusicsearchAPIResponse struct {
+type TaobaoAilabAicloudTopMusicSearchAPIResponse struct {
 	model.CommonResponse
-	TaobaoailabaicloudtopmusicsearchAPIResponseModel
+	TaobaoAilabAicloudTopMusicSearchAPIResponseModel
 }
 
-// TaobaoailabaicloudtopmusicsearchAPIResponseModel is 对外音乐搜索服务 成功返回结果
-type TaobaoailabaicloudtopmusicsearchAPIResponseModel struct {
+// TaobaoAilabAicloudTopMusicSearchAPIResponseModel is 对外音乐搜索服务 成功返回结果
+type TaobaoAilabAicloudTopMusicSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_music_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

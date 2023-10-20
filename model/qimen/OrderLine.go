@@ -3,7 +3,7 @@ package qimen
 // OrderLine 结构体
 type OrderLine struct {
 	// 批次列表
-	Batchs []TaobaoqimendeliveryorderbatchconfirmBatch `json:"batchs,omitempty" xml:"batchs>taobaoqimendeliveryorderbatchconfirm_batch,omitempty"`
+	Batchs []TaobaoQimenDeliveryorderBatchconfirmBatch `json:"batchs,omitempty" xml:"batchs>taobao_qimen_deliveryorder_batchconfirm_batch,omitempty"`
 	// 单据行号
 	OrderLineNo string `json:"orderLineNo,omitempty" xml:"orderLineNo,omitempty"`
 	// 平台交易订单编码
@@ -119,5 +119,5 @@ type OrderLine struct {
 	// snList
 	SnList *SnList `json:"snList,omitempty" xml:"snList,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoqimenstockoutcreateMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoQimenStockoutCreateMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

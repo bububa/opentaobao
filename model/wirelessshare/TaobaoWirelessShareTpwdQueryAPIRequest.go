@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowirelesssharetpwdqueryAPIRequest 查询解析淘口令 API请求
+// TaobaoWirelessShareTpwdQueryAPIRequest 查询解析淘口令 API请求
 // taobao.wireless.share.tpwd.query
 //
 // 查询解析淘口令
-type TaobaowirelesssharetpwdqueryAPIRequest struct {
+type TaobaoWirelessShareTpwdQueryAPIRequest struct {
 	model.Params
 	// 淘口令
 	_passwordContent string
 }
 
-// NewTaobaowirelesssharetpwdqueryRequest 初始化TaobaowirelesssharetpwdqueryAPIRequest对象
-func NewTaobaowirelesssharetpwdqueryRequest() *TaobaowirelesssharetpwdqueryAPIRequest {
-	return &TaobaowirelesssharetpwdqueryAPIRequest{
+// NewTaobaoWirelessShareTpwdQueryRequest 初始化TaobaoWirelessShareTpwdQueryAPIRequest对象
+func NewTaobaoWirelessShareTpwdQueryRequest() *TaobaoWirelessShareTpwdQueryAPIRequest {
+	return &TaobaoWirelessShareTpwdQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaowirelesssharetpwdqueryAPIRequest) GetApiMethodName() string {
+func (r TaobaoWirelessShareTpwdQueryAPIRequest) GetApiMethodName() string {
 	return "taobao.wireless.share.tpwd.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaowirelesssharetpwdqueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoWirelessShareTpwdQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaowirelesssharetpwdqueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoWirelessShareTpwdQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPasswordContent is PasswordContent Setter
 // 淘口令
-func (r *TaobaowirelesssharetpwdqueryAPIRequest) SetPasswordContent(_passwordContent string) error {
+func (r *TaobaoWirelessShareTpwdQueryAPIRequest) SetPasswordContent(_passwordContent string) error {
 	r._passwordContent = _passwordContent
 	r.Set("password_content", _passwordContent)
 	return nil
 }
 
 // GetPasswordContent PasswordContent Getter
-func (r TaobaowirelesssharetpwdqueryAPIRequest) GetPasswordContent() string {
+func (r TaobaoWirelessShareTpwdQueryAPIRequest) GetPasswordContent() string {
 	return r._passwordContent
 }

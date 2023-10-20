@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/car"
 )
 
-// Taobaoalitripcarordercomplete 服务完成API
+// TaobaoAlitripCarOrderComplete 服务完成API
 // taobao.alitrip.car.order.complete
 //
 // 用来接收服务商订单流程完成信息
-func Taobaoalitripcarordercomplete(clt *core.SDKClient, req *car.TaobaoalitripcarordercompleteAPIRequest, session string) (*car.TaobaoalitripcarordercompleteAPIResponse, error) {
-	var resp car.TaobaoalitripcarordercompleteAPIResponse
+func TaobaoAlitripCarOrderComplete(clt *core.SDKClient, req *car.TaobaoAlitripCarOrderCompleteAPIRequest, session string) (*car.TaobaoAlitripCarOrderCompleteAPIResponse, error) {
+	var resp car.TaobaoAlitripCarOrderCompleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabavideoqueryAPIRequest 查询视频信息 API请求
+// AlibabaVideoQueryAPIRequest 查询视频信息 API请求
 // alibaba.video.query
 //
 // 查询视频信息
-type AlibabavideoqueryAPIRequest struct {
+type AlibabaVideoQueryAPIRequest struct {
 	model.Params
 	// 视频id
 	_videoId int64
 }
 
-// NewAlibabavideoqueryRequest 初始化AlibabavideoqueryAPIRequest对象
-func NewAlibabavideoqueryRequest() *AlibabavideoqueryAPIRequest {
-	return &AlibabavideoqueryAPIRequest{
+// NewAlibabaVideoQueryRequest 初始化AlibabaVideoQueryAPIRequest对象
+func NewAlibabaVideoQueryRequest() *AlibabaVideoQueryAPIRequest {
+	return &AlibabaVideoQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabavideoqueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaVideoQueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.video.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabavideoqueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaVideoQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabavideoqueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaVideoQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetVideoId is VideoId Setter
 // 视频id
-func (r *AlibabavideoqueryAPIRequest) SetVideoId(_videoId int64) error {
+func (r *AlibabaVideoQueryAPIRequest) SetVideoId(_videoId int64) error {
 	r._videoId = _videoId
 	r.Set("video_id", _videoId)
 	return nil
 }
 
 // GetVideoId VideoId Getter
-func (r AlibabavideoqueryAPIRequest) GetVideoId() int64 {
+func (r AlibabaVideoQueryAPIRequest) GetVideoId() int64 {
 	return r._videoId
 }

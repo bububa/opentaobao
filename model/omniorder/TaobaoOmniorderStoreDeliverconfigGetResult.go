@@ -1,7 +1,7 @@
 package omniorder
 
-// TaobaoomniorderstoredeliverconfiggetResult 结构体
-type TaobaoomniorderstoredeliverconfiggetResult struct {
+// TaobaoOmniorderStoreDeliverconfigGetResult 结构体
+type TaobaoOmniorderStoreDeliverconfigGetResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// code

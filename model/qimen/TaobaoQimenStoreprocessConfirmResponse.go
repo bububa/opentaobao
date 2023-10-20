@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimenstoreprocessconfirmResponse 结构体
-type TaobaoqimenstoreprocessconfirmResponse struct {
+// TaobaoQimenStoreprocessConfirmResponse 结构体
+type TaobaoQimenStoreprocessConfirmResponse struct {
 	// 响应结果:success|failure
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 	// 响应码

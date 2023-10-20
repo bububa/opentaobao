@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaominiappdistributionitemsbindAPIRequest 【已废弃】小程序投放-商品绑定/解绑 API请求
+// TaobaoMiniappDistributionItemsBindAPIRequest 【已废弃】小程序投放-商品绑定/解绑 API请求
 // taobao.miniapp.distribution.items.bind
 //
 // 【已废弃，请使用 taobao.miniapp.distribution.order.items.bind 接口】提供给使用了投放插件的服务商，可以调用该API实现帮助商家更新已创建的投放单中的绑定商品信息。
-type TaobaominiappdistributionitemsbindAPIRequest struct {
+type TaobaoMiniappDistributionItemsBindAPIRequest struct {
 	model.Params
 	// 商品id列表
 	_targetEntityList []string
@@ -20,65 +20,65 @@ type TaobaominiappdistributionitemsbindAPIRequest struct {
 	_addBind bool
 }
 
-// NewTaobaominiappdistributionitemsbindRequest 初始化TaobaominiappdistributionitemsbindAPIRequest对象
-func NewTaobaominiappdistributionitemsbindRequest() *TaobaominiappdistributionitemsbindAPIRequest {
-	return &TaobaominiappdistributionitemsbindAPIRequest{
+// NewTaobaoMiniappDistributionItemsBindRequest 初始化TaobaoMiniappDistributionItemsBindAPIRequest对象
+func NewTaobaoMiniappDistributionItemsBindRequest() *TaobaoMiniappDistributionItemsBindAPIRequest {
+	return &TaobaoMiniappDistributionItemsBindAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaominiappdistributionitemsbindAPIRequest) GetApiMethodName() string {
+func (r TaobaoMiniappDistributionItemsBindAPIRequest) GetApiMethodName() string {
 	return "taobao.miniapp.distribution.items.bind"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaominiappdistributionitemsbindAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoMiniappDistributionItemsBindAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaominiappdistributionitemsbindAPIRequest) GetRawParams() model.Params {
+func (r TaobaoMiniappDistributionItemsBindAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTargetEntityList is TargetEntityList Setter
 // 商品id列表
-func (r *TaobaominiappdistributionitemsbindAPIRequest) SetTargetEntityList(_targetEntityList []string) error {
+func (r *TaobaoMiniappDistributionItemsBindAPIRequest) SetTargetEntityList(_targetEntityList []string) error {
 	r._targetEntityList = _targetEntityList
 	r.Set("target_entity_list", _targetEntityList)
 	return nil
 }
 
 // GetTargetEntityList TargetEntityList Getter
-func (r TaobaominiappdistributionitemsbindAPIRequest) GetTargetEntityList() []string {
+func (r TaobaoMiniappDistributionItemsBindAPIRequest) GetTargetEntityList() []string {
 	return r._targetEntityList
 }
 
 // SetUrl is Url Setter
 // 投放的商家应用完整链接
-func (r *TaobaominiappdistributionitemsbindAPIRequest) SetUrl(_url string) error {
+func (r *TaobaoMiniappDistributionItemsBindAPIRequest) SetUrl(_url string) error {
 	r._url = _url
 	r.Set("url", _url)
 	return nil
 }
 
 // GetUrl Url Getter
-func (r TaobaominiappdistributionitemsbindAPIRequest) GetUrl() string {
+func (r TaobaoMiniappDistributionItemsBindAPIRequest) GetUrl() string {
 	return r._url
 }
 
 // SetAddBind is AddBind Setter
 // true表示新增绑定，false表示解绑
-func (r *TaobaominiappdistributionitemsbindAPIRequest) SetAddBind(_addBind bool) error {
+func (r *TaobaoMiniappDistributionItemsBindAPIRequest) SetAddBind(_addBind bool) error {
 	r._addBind = _addBind
 	r.Set("add_bind", _addBind)
 	return nil
 }
 
 // GetAddBind AddBind Getter
-func (r TaobaominiappdistributionitemsbindAPIRequest) GetAddBind() bool {
+func (r TaobaoMiniappDistributionItemsBindAPIRequest) GetAddBind() bool {
 	return r._addBind
 }

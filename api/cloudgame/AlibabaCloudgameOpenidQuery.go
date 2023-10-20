@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cloudgame"
 )
 
-// Alibabacloudgameopenidquery 咖哒用户ID查询
+// AlibabaCloudgameOpenidQuery 咖哒用户ID查询
 // alibaba.cloudgame.openid.query
 //
 // 云游戏业务需要提供查询用户信息的TOP能力
-func Alibabacloudgameopenidquery(clt *core.SDKClient, req *cloudgame.AlibabacloudgameopenidqueryAPIRequest, session string) (*cloudgame.AlibabacloudgameopenidqueryAPIResponse, error) {
-	var resp cloudgame.AlibabacloudgameopenidqueryAPIResponse
+func AlibabaCloudgameOpenidQuery(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameOpenidQueryAPIRequest, session string) (*cloudgame.AlibabaCloudgameOpenidQueryAPIResponse, error) {
+	var resp cloudgame.AlibabaCloudgameOpenidQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

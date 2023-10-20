@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlbitemmapgetAPIResponse 根据物流宝商品ID查询商品映射关系 API返回值
+// TaobaoWlbItemMapGetAPIResponse 根据物流宝商品ID查询商品映射关系 API返回值
 // taobao.wlb.item.map.get
 //
 // 根据物流宝商品ID查询商品映射关系
-type TaobaowlbitemmapgetAPIResponse struct {
+type TaobaoWlbItemMapGetAPIResponse struct {
 	model.CommonResponse
-	TaobaowlbitemmapgetAPIResponseModel
+	TaobaoWlbItemMapGetAPIResponseModel
 }
 
-// TaobaowlbitemmapgetAPIResponseModel is 根据物流宝商品ID查询商品映射关系 成功返回结果
-type TaobaowlbitemmapgetAPIResponseModel struct {
+// TaobaoWlbItemMapGetAPIResponseModel is 根据物流宝商品ID查询商品映射关系 成功返回结果
+type TaobaoWlbItemMapGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_item_map_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

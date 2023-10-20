@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabadchainaoxiangdeliverydecisionqueryAPIResponse 查询黑白名单快递 API返回值
+// AlibabaDchainAoxiangDeliveryDecisionQueryAPIResponse 查询黑白名单快递 API返回值
 // alibaba.dchain.aoxiang.delivery.decision.query
 //
 // 查询黑白名单快递
-type AlibabadchainaoxiangdeliverydecisionqueryAPIResponse struct {
+type AlibabaDchainAoxiangDeliveryDecisionQueryAPIResponse struct {
 	model.CommonResponse
-	AlibabadchainaoxiangdeliverydecisionqueryAPIResponseModel
+	AlibabaDchainAoxiangDeliveryDecisionQueryAPIResponseModel
 }
 
-// AlibabadchainaoxiangdeliverydecisionqueryAPIResponseModel is 查询黑白名单快递 成功返回结果
-type AlibabadchainaoxiangdeliverydecisionqueryAPIResponseModel struct {
+// AlibabaDchainAoxiangDeliveryDecisionQueryAPIResponseModel is 查询黑白名单快递 成功返回结果
+type AlibabaDchainAoxiangDeliveryDecisionQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_dchain_aoxiang_delivery_decision_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

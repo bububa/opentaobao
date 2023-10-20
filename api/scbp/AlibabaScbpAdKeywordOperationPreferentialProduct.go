@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// Alibabascbpadkeywordoperationpreferentialproduct 操作优推品
+// AlibabaScbpAdKeywordOperationPreferentialProduct 操作优推品
 // alibaba.scbp.ad.keyword.operation.preferential.product
 //
 // 操作优推品
-func Alibabascbpadkeywordoperationpreferentialproduct(clt *core.SDKClient, req *scbp.AlibabascbpadkeywordoperationpreferentialproductAPIRequest, session string) (*scbp.AlibabascbpadkeywordoperationpreferentialproductAPIResponse, error) {
-	var resp scbp.AlibabascbpadkeywordoperationpreferentialproductAPIResponse
+func AlibabaScbpAdKeywordOperationPreferentialProduct(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordOperationPreferentialProductAPIRequest, session string) (*scbp.AlibabaScbpAdKeywordOperationPreferentialProductAPIResponse, error) {
+	var resp scbp.AlibabaScbpAdKeywordOperationPreferentialProductAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

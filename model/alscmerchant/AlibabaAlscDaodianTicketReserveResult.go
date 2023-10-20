@@ -1,7 +1,7 @@
 package alscmerchant
 
-// AlibabaalscdaodianticketreserveResult 结构体
-type AlibabaalscdaodianticketreserveResult struct {
+// AlibabaAlscDaodianTicketReserveResult 结构体
+type AlibabaAlscDaodianTicketReserveResult struct {
 	// 错误码，success=false时有效
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误文案，success=false时有效

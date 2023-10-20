@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaailabsiotbusinessrecipegetdetailAPIResponse 获取食谱详情 API返回值
+// AlibabaAilabsIotBusinessRecipeGetdetailAPIResponse 获取食谱详情 API返回值
 // alibaba.ailabs.iot.business.recipe.getdetail
 //
 // 获取食谱详情接口，获取ISV自己的食谱详情数据
-type AlibabaailabsiotbusinessrecipegetdetailAPIResponse struct {
+type AlibabaAilabsIotBusinessRecipeGetdetailAPIResponse struct {
 	model.CommonResponse
-	AlibabaailabsiotbusinessrecipegetdetailAPIResponseModel
+	AlibabaAilabsIotBusinessRecipeGetdetailAPIResponseModel
 }
 
-// AlibabaailabsiotbusinessrecipegetdetailAPIResponseModel is 获取食谱详情 成功返回结果
-type AlibabaailabsiotbusinessrecipegetdetailAPIResponseModel struct {
+// AlibabaAilabsIotBusinessRecipeGetdetailAPIResponseModel is 获取食谱详情 成功返回结果
+type AlibabaAilabsIotBusinessRecipeGetdetailAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_iot_business_recipe_getdetail_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

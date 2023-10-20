@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthtracecodeplatformcodeentscanAPIRequest 药品商家扫码 API请求
+// AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest 药品商家扫码 API请求
 // alibaba.alihealth.tracecodeplatform.code.entscan
 //
 // 药品商家扫描药品监管码，只有该商家的药才返回
-type AlibabaalihealthtracecodeplatformcodeentscanAPIRequest struct {
+type AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest struct {
 	model.Params
 	// 药监码
 	_code string
@@ -18,52 +18,52 @@ type AlibabaalihealthtracecodeplatformcodeentscanAPIRequest struct {
 	_serviceFlag string
 }
 
-// NewAlibabaalihealthtracecodeplatformcodeentscanRequest 初始化AlibabaalihealthtracecodeplatformcodeentscanAPIRequest对象
-func NewAlibabaalihealthtracecodeplatformcodeentscanRequest() *AlibabaalihealthtracecodeplatformcodeentscanAPIRequest {
-	return &AlibabaalihealthtracecodeplatformcodeentscanAPIRequest{
+// NewAlibabaAlihealthTracecodeplatformCodeEntscanRequest 初始化AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest对象
+func NewAlibabaAlihealthTracecodeplatformCodeEntscanRequest() *AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest {
+	return &AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihealthtracecodeplatformcodeentscanAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.tracecodeplatform.code.entscan"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihealthtracecodeplatformcodeentscanAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihealthtracecodeplatformcodeentscanAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCode is Code Setter
 // 药监码
-func (r *AlibabaalihealthtracecodeplatformcodeentscanAPIRequest) SetCode(_code string) error {
+func (r *AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) SetCode(_code string) error {
 	r._code = _code
 	r.Set("code", _code)
 	return nil
 }
 
 // GetCode Code Getter
-func (r AlibabaalihealthtracecodeplatformcodeentscanAPIRequest) GetCode() string {
+func (r AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) GetCode() string {
 	return r._code
 }
 
 // SetServiceFlag is ServiceFlag Setter
 // 不同企业有不同的标识
-func (r *AlibabaalihealthtracecodeplatformcodeentscanAPIRequest) SetServiceFlag(_serviceFlag string) error {
+func (r *AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) SetServiceFlag(_serviceFlag string) error {
 	r._serviceFlag = _serviceFlag
 	r.Set("service_flag", _serviceFlag)
 	return nil
 }
 
 // GetServiceFlag ServiceFlag Getter
-func (r AlibabaalihealthtracecodeplatformcodeentscanAPIRequest) GetServiceFlag() string {
+func (r AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) GetServiceFlag() string {
 	return r._serviceFlag
 }

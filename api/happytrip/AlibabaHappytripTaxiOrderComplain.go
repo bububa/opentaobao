@@ -5,7 +5,7 @@ import (
 	"github.com/bububa/opentaobao/model/happytrip"
 )
 
-// Alibabahappytriptaxiordercomplain 用户投诉
+// AlibabaHappytripTaxiOrderComplain 用户投诉
 // alibaba.happytrip.taxi.order.complain
 //
 // 一个订单只能投诉一次，不可重复投诉
@@ -25,8 +25,8 @@ import (
 // 11	骚扰乘客；
 // 12	危险驾驶；
 // 13	不是订单显示车辆或司机；
-func Alibabahappytriptaxiordercomplain(clt *core.SDKClient, req *happytrip.AlibabahappytriptaxiordercomplainAPIRequest, session string) (*happytrip.AlibabahappytriptaxiordercomplainAPIResponse, error) {
-	var resp happytrip.AlibabahappytriptaxiordercomplainAPIResponse
+func AlibabaHappytripTaxiOrderComplain(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiOrderComplainAPIRequest, session string) (*happytrip.AlibabaHappytripTaxiOrderComplainAPIResponse, error) {
+	var resp happytrip.AlibabaHappytripTaxiOrderComplainAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

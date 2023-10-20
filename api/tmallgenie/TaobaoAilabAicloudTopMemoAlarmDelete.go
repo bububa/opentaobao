@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallgenie"
 )
 
-// Taobaoailabaicloudtopmemoalarmdelete 天猫精灵闹钟删除
+// TaobaoAilabAicloudTopMemoAlarmDelete 天猫精灵闹钟删除
 // taobao.ailab.aicloud.top.memo.alarm.delete
 //
 // 天猫精灵闹钟删除
-func Taobaoailabaicloudtopmemoalarmdelete(clt *core.SDKClient, req *tmallgenie.TaobaoailabaicloudtopmemoalarmdeleteAPIRequest, session string) (*tmallgenie.TaobaoailabaicloudtopmemoalarmdeleteAPIResponse, error) {
-	var resp tmallgenie.TaobaoailabaicloudtopmemoalarmdeleteAPIResponse
+func TaobaoAilabAicloudTopMemoAlarmDelete(clt *core.SDKClient, req *tmallgenie.TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest, session string) (*tmallgenie.TaobaoAilabAicloudTopMemoAlarmDeleteAPIResponse, error) {
+	var resp tmallgenie.TaobaoAilabAicloudTopMemoAlarmDeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

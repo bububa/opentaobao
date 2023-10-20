@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoalitriptotoroauxproductpushAPIResponse 廉航辅营产品投放 API返回值
+// TaobaoAlitripTotoroAuxproductPushAPIResponse 廉航辅营产品投放 API返回值
 // taobao.alitrip.totoro.auxproduct.push
 //
 // 廉航辅营产品投放接口
-type TaobaoalitriptotoroauxproductpushAPIResponse struct {
+type TaobaoAlitripTotoroAuxproductPushAPIResponse struct {
 	model.CommonResponse
-	TaobaoalitriptotoroauxproductpushAPIResponseModel
+	TaobaoAlitripTotoroAuxproductPushAPIResponseModel
 }
 
-// TaobaoalitriptotoroauxproductpushAPIResponseModel is 廉航辅营产品投放 成功返回结果
-type TaobaoalitriptotoroauxproductpushAPIResponseModel struct {
+// TaobaoAlitripTotoroAuxproductPushAPIResponseModel is 廉航辅营产品投放 成功返回结果
+type TaobaoAlitripTotoroAuxproductPushAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_totoro_auxproduct_push_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

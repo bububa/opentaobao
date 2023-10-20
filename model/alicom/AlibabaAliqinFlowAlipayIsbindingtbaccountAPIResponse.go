@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaliqinflowalipayisbindingtbaccountAPIResponse 判断支付宝用户是否绑定淘宝账号 API返回值
+// AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse 判断支付宝用户是否绑定淘宝账号 API返回值
 // alibaba.aliqin.flow.alipay.isbindingtbaccount
 //
 // 判断支付宝用户是否绑定淘宝账号
-type AlibabaaliqinflowalipayisbindingtbaccountAPIResponse struct {
+type AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse struct {
 	model.CommonResponse
-	AlibabaaliqinflowalipayisbindingtbaccountAPIResponseModel
+	AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponseModel
 }
 
-// AlibabaaliqinflowalipayisbindingtbaccountAPIResponseModel is 判断支付宝用户是否绑定淘宝账号 成功返回结果
-type AlibabaaliqinflowalipayisbindingtbaccountAPIResponseModel struct {
+// AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponseModel is 判断支付宝用户是否绑定淘宝账号 成功返回结果
+type AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_aliqin_flow_alipay_isbindingtbaccount_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

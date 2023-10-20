@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlbinventorydetailgetAPIRequest 查询库存详情 API请求
+// TaobaoWlbInventoryDetailGetAPIRequest 查询库存详情 API请求
 // taobao.wlb.inventory.detail.get
 //
 // 查询库存详情，通过商品ID获取发送请求的卖家的库存详情
-type TaobaowlbinventorydetailgetAPIRequest struct {
+type TaobaoWlbInventoryDetailGetAPIRequest struct {
 	model.Params
 	// 库存类型列表，值包括：<br/>VENDIBLE--可销售库存<br/>FREEZE--冻结库存<br/>ONWAY--在途库存<br/>DEFECT--残次品库存<br/>ENGINE_DAMAGE--机损<br/>BOX_DAMAGE--箱损<br/>EXPIRATION--过保
 	_inventoryTypeList []string
@@ -20,65 +20,65 @@ type TaobaowlbinventorydetailgetAPIRequest struct {
 	_itemId int64
 }
 
-// NewTaobaowlbinventorydetailgetRequest 初始化TaobaowlbinventorydetailgetAPIRequest对象
-func NewTaobaowlbinventorydetailgetRequest() *TaobaowlbinventorydetailgetAPIRequest {
-	return &TaobaowlbinventorydetailgetAPIRequest{
+// NewTaobaoWlbInventoryDetailGetRequest 初始化TaobaoWlbInventoryDetailGetAPIRequest对象
+func NewTaobaoWlbInventoryDetailGetRequest() *TaobaoWlbInventoryDetailGetAPIRequest {
+	return &TaobaoWlbInventoryDetailGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaowlbinventorydetailgetAPIRequest) GetApiMethodName() string {
+func (r TaobaoWlbInventoryDetailGetAPIRequest) GetApiMethodName() string {
 	return "taobao.wlb.inventory.detail.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaowlbinventorydetailgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoWlbInventoryDetailGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaowlbinventorydetailgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoWlbInventoryDetailGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetInventoryTypeList is InventoryTypeList Setter
 // 库存类型列表，值包括：&lt;br/&gt;VENDIBLE--可销售库存&lt;br/&gt;FREEZE--冻结库存&lt;br/&gt;ONWAY--在途库存&lt;br/&gt;DEFECT--残次品库存&lt;br/&gt;ENGINE_DAMAGE--机损&lt;br/&gt;BOX_DAMAGE--箱损&lt;br/&gt;EXPIRATION--过保
-func (r *TaobaowlbinventorydetailgetAPIRequest) SetInventoryTypeList(_inventoryTypeList []string) error {
+func (r *TaobaoWlbInventoryDetailGetAPIRequest) SetInventoryTypeList(_inventoryTypeList []string) error {
 	r._inventoryTypeList = _inventoryTypeList
 	r.Set("inventory_type_list", _inventoryTypeList)
 	return nil
 }
 
 // GetInventoryTypeList InventoryTypeList Getter
-func (r TaobaowlbinventorydetailgetAPIRequest) GetInventoryTypeList() []string {
+func (r TaobaoWlbInventoryDetailGetAPIRequest) GetInventoryTypeList() []string {
 	return r._inventoryTypeList
 }
 
 // SetStoreCode is StoreCode Setter
 // 仓库编码
-func (r *TaobaowlbinventorydetailgetAPIRequest) SetStoreCode(_storeCode string) error {
+func (r *TaobaoWlbInventoryDetailGetAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
 	r.Set("store_code", _storeCode)
 	return nil
 }
 
 // GetStoreCode StoreCode Getter
-func (r TaobaowlbinventorydetailgetAPIRequest) GetStoreCode() string {
+func (r TaobaoWlbInventoryDetailGetAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }
 
 // SetItemId is ItemId Setter
 // 商品ID
-func (r *TaobaowlbinventorydetailgetAPIRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoWlbInventoryDetailGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
 	r.Set("item_id", _itemId)
 	return nil
 }
 
 // GetItemId ItemId Getter
-func (r TaobaowlbinventorydetailgetAPIRequest) GetItemId() int64 {
+func (r TaobaoWlbInventoryDetailGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

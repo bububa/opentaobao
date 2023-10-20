@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/legalcase"
 )
 
-// Alibabalegalcasecommonenumdata 获取通用枚举值接口
+// AlibabaLegalCaseCommonEnumdata 获取通用枚举值接口
 // alibaba.legal.case.common.enumdata
 //
 // 获取通用枚举值接口
-func Alibabalegalcasecommonenumdata(clt *core.SDKClient, req *legalcase.AlibabalegalcasecommonenumdataAPIRequest, session string) (*legalcase.AlibabalegalcasecommonenumdataAPIResponse, error) {
-	var resp legalcase.AlibabalegalcasecommonenumdataAPIResponse
+func AlibabaLegalCaseCommonEnumdata(clt *core.SDKClient, req *legalcase.AlibabaLegalCaseCommonEnumdataAPIRequest, session string) (*legalcase.AlibabaLegalCaseCommonEnumdataAPIResponse, error) {
+	var resp legalcase.AlibabaLegalCaseCommonEnumdataAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

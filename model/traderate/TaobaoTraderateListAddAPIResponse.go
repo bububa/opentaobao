@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotraderatelistaddAPIResponse 针对父子订单新增批量评价 API返回值
+// TaobaoTraderateListAddAPIResponse 针对父子订单新增批量评价 API返回值
 // taobao.traderate.list.add
 //
 // 针对父子订单新增批量评价(&lt;font color=&#34;red&#34;&gt;注：在评价之前需要对订单成功的时间进行判定（end_time）,如果超过15天，不用再通过该接口进行评价&lt;/font&gt;)
-type TaobaotraderatelistaddAPIResponse struct {
+type TaobaoTraderateListAddAPIResponse struct {
 	model.CommonResponse
-	TaobaotraderatelistaddAPIResponseModel
+	TaobaoTraderateListAddAPIResponseModel
 }
 
-// TaobaotraderatelistaddAPIResponseModel is 针对父子订单新增批量评价 成功返回结果
-type TaobaotraderatelistaddAPIResponseModel struct {
+// TaobaoTraderateListAddAPIResponseModel is 针对父子订单新增批量评价 成功返回结果
+type TaobaoTraderateListAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"traderate_list_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

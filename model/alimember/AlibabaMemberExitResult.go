@@ -1,7 +1,7 @@
 package alimember
 
-// AlibabamemberexitResult 结构体
-type AlibabamemberexitResult struct {
+// AlibabaMemberExitResult 结构体
+type AlibabaMemberExitResult struct {
 	// code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// message

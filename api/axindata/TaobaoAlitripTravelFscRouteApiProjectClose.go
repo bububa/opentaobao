@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/axindata"
 )
 
-// Taobaoalitriptravelfscrouteapiprojectclose 关闭团期
+// TaobaoAlitripTravelFscRouteApiProjectClose 关闭团期
 // taobao.alitrip.travel.fsc.route.api.project.close
 //
 // 关闭团期
-func Taobaoalitriptravelfscrouteapiprojectclose(clt *core.SDKClient, req *axindata.TaobaoalitriptravelfscrouteapiprojectcloseAPIRequest, session string) (*axindata.TaobaoalitriptravelfscrouteapiprojectcloseAPIResponse, error) {
-	var resp axindata.TaobaoalitriptravelfscrouteapiprojectcloseAPIResponse
+func TaobaoAlitripTravelFscRouteApiProjectClose(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiProjectCloseAPIRequest, session string) (*axindata.TaobaoAlitripTravelFscRouteApiProjectCloseAPIResponse, error) {
+	var resp axindata.TaobaoAlitripTravelFscRouteApiProjectCloseAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

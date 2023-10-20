@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripmerchantgalaxyderbymembervouchercardshowqrcodeResponse 结构体
-type AlitripmerchantgalaxyderbymembervouchercardshowqrcodeResponse struct {
+// AlitripMerchantGalaxyDerbyMemberVoucherCardShowQrcodeResponse 结构体
+type AlitripMerchantGalaxyDerbyMemberVoucherCardShowQrcodeResponse struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 500

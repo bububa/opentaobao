@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosappstoreopenreportadAPIResponse 外投广告上报接口 API返回值
+// YunosAppstoreOpenReportadAPIResponse 外投广告上报接口 API返回值
 // yunos.appstore.open.reportad
 //
 // 外投广告回流上报接口
-type YunosappstoreopenreportadAPIResponse struct {
+type YunosAppstoreOpenReportadAPIResponse struct {
 	model.CommonResponse
-	YunosappstoreopenreportadAPIResponseModel
+	YunosAppstoreOpenReportadAPIResponseModel
 }
 
-// YunosappstoreopenreportadAPIResponseModel is 外投广告上报接口 成功返回结果
-type YunosappstoreopenreportadAPIResponseModel struct {
+// YunosAppstoreOpenReportadAPIResponseModel is 外投广告上报接口 成功返回结果
+type YunosAppstoreOpenReportadAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_appstore_open_reportad_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

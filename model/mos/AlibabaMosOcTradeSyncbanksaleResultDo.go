@@ -1,7 +1,7 @@
 package mos
 
-// AlibabamosoctradesyncbanksaleResultDo 结构体
-type AlibabamosoctradesyncbanksaleResultDo struct {
+// AlibabaMosOcTradeSyncbanksaleResultDo 结构体
+type AlibabaMosOcTradeSyncbanksaleResultDo struct {
 	// errMsg
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// errCode

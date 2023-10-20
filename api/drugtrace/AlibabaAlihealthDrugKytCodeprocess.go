@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// Alibabaalihealthdrugkytcodeprocess 关联关系处理查询
+// AlibabaAlihealthDrugKytCodeprocess 关联关系处理查询
 // alibaba.alihealth.drug.kyt.codeprocess
 //
 // 关联关系处理查询
-func Alibabaalihealthdrugkytcodeprocess(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugkytcodeprocessAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugkytcodeprocessAPIResponse, error) {
-	var resp drugtrace.AlibabaalihealthdrugkytcodeprocessAPIResponse
+func AlibabaAlihealthDrugKytCodeprocess(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytCodeprocessAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytCodeprocessAPIResponse, error) {
+	var resp drugtrace.AlibabaAlihealthDrugKytCodeprocessAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

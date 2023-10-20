@@ -1,7 +1,7 @@
 package tblogistics
 
-// AlibabaascplogisticsinstantsonlinedeliveryordergetTopResult 结构体
-type AlibabaascplogisticsinstantsonlinedeliveryordergetTopResult struct {
+// AlibabaAscpLogisticsInstantsonlineDeliveryorderGetTopResult 结构体
+type AlibabaAscpLogisticsInstantsonlineDeliveryorderGetTopResult struct {
 	// 数据
 	Data *GetDeliveryOrderTopResponse `json:"data,omitempty" xml:"data,omitempty"`
 	// 执行结果

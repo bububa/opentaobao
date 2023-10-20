@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripcarinvoiceconfirmAPIResponse 发票确认接口 API返回值
+// AlitripCarInvoiceConfirmAPIResponse 发票确认接口 API返回值
 // alitrip.car.invoice.confirm
 //
 // 飞猪发票回调接口
-type AlitripcarinvoiceconfirmAPIResponse struct {
+type AlitripCarInvoiceConfirmAPIResponse struct {
 	model.CommonResponse
-	AlitripcarinvoiceconfirmAPIResponseModel
+	AlitripCarInvoiceConfirmAPIResponseModel
 }
 
-// AlitripcarinvoiceconfirmAPIResponseModel is 发票确认接口 成功返回结果
-type AlitripcarinvoiceconfirmAPIResponseModel struct {
+// AlitripCarInvoiceConfirmAPIResponseModel is 发票确认接口 成功返回结果
+type AlitripCarInvoiceConfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_car_invoice_confirm_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

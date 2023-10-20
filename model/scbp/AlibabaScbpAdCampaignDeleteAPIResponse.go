@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabascbpadcampaigndeleteAPIResponse 删除计划 API返回值
+// AlibabaScbpAdCampaignDeleteAPIResponse 删除计划 API返回值
 // alibaba.scbp.ad.campaign.delete
 //
 // 删除计划
-type AlibabascbpadcampaigndeleteAPIResponse struct {
+type AlibabaScbpAdCampaignDeleteAPIResponse struct {
 	model.CommonResponse
-	AlibabascbpadcampaigndeleteAPIResponseModel
+	AlibabaScbpAdCampaignDeleteAPIResponseModel
 }
 
-// AlibabascbpadcampaigndeleteAPIResponseModel is 删除计划 成功返回结果
-type AlibabascbpadcampaigndeleteAPIResponseModel struct {
+// AlibabaScbpAdCampaignDeleteAPIResponseModel is 删除计划 成功返回结果
+type AlibabaScbpAdCampaignDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_ad_campaign_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

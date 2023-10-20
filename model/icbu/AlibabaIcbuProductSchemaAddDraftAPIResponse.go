@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaicbuproductschemaadddraftAPIResponse （新）ICBU商品发布草稿 API返回值
+// AlibabaIcbuProductSchemaAddDraftAPIResponse （新）ICBU商品发布草稿 API返回值
 // alibaba.icbu.product.schema.add.draft
 //
 // 提供发布ICBU商品草稿的入口
-type AlibabaicbuproductschemaadddraftAPIResponse struct {
+type AlibabaIcbuProductSchemaAddDraftAPIResponse struct {
 	model.CommonResponse
-	AlibabaicbuproductschemaadddraftAPIResponseModel
+	AlibabaIcbuProductSchemaAddDraftAPIResponseModel
 }
 
-// AlibabaicbuproductschemaadddraftAPIResponseModel is （新）ICBU商品发布草稿 成功返回结果
-type AlibabaicbuproductschemaadddraftAPIResponseModel struct {
+// AlibabaIcbuProductSchemaAddDraftAPIResponseModel is （新）ICBU商品发布草稿 成功返回结果
+type AlibabaIcbuProductSchemaAddDraftAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_icbu_product_schema_add_draft_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

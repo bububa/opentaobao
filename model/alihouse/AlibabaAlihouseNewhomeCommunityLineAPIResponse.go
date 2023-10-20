@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihousenewhomecommunitylineAPIResponse 小区上下架 API返回值
+// AlibabaAlihouseNewhomeCommunityLineAPIResponse 小区上下架 API返回值
 // alibaba.alihouse.newhome.community.line
 //
 // 小区上下架
-type AlibabaalihousenewhomecommunitylineAPIResponse struct {
+type AlibabaAlihouseNewhomeCommunityLineAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihousenewhomecommunitylineAPIResponseModel
+	AlibabaAlihouseNewhomeCommunityLineAPIResponseModel
 }
 
-// AlibabaalihousenewhomecommunitylineAPIResponseModel is 小区上下架 成功返回结果
-type AlibabaalihousenewhomecommunitylineAPIResponseModel struct {
+// AlibabaAlihouseNewhomeCommunityLineAPIResponseModel is 小区上下架 成功返回结果
+type AlibabaAlihouseNewhomeCommunityLineAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_newhome_community_line_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
-	Result *AlibabaalihousenewhomecommunitylineResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaAlihouseNewhomeCommunityLineResult `json:"result,omitempty" xml:"result,omitempty"`
 }

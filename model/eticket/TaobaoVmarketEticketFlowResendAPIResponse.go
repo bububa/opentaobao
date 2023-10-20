@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaovmarketeticketflowresendAPIResponse 业务重新触发发码短信 API返回值
+// TaobaoVmarketEticketFlowResendAPIResponse 业务重新触发发码短信 API返回值
 // taobao.vmarket.eticket.flow.resend
 //
 // 业务重新触发发码短信
-type TaobaovmarketeticketflowresendAPIResponse struct {
+type TaobaoVmarketEticketFlowResendAPIResponse struct {
 	model.CommonResponse
-	TaobaovmarketeticketflowresendAPIResponseModel
+	TaobaoVmarketEticketFlowResendAPIResponseModel
 }
 
-// TaobaovmarketeticketflowresendAPIResponseModel is 业务重新触发发码短信 成功返回结果
-type TaobaovmarketeticketflowresendAPIResponseModel struct {
+// TaobaoVmarketEticketFlowResendAPIResponseModel is 业务重新触发发码短信 成功返回结果
+type TaobaoVmarketEticketFlowResendAPIResponseModel struct {
 	XMLName xml.Name `xml:"vmarket_eticket_flow_resend_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamoziaclroleremoveAPIResponse 删除角色 API返回值
+// AlibabaMoziAclRoleRemoveAPIResponse 删除角色 API返回值
 // alibaba.mozi.acl.role.remove
 //
 // 根据传入的角色code、租户id，删除租户内对应的角色
-type AlibabamoziaclroleremoveAPIResponse struct {
+type AlibabaMoziAclRoleRemoveAPIResponse struct {
 	model.CommonResponse
-	AlibabamoziaclroleremoveAPIResponseModel
+	AlibabaMoziAclRoleRemoveAPIResponseModel
 }
 
-// AlibabamoziaclroleremoveAPIResponseModel is 删除角色 成功返回结果
-type AlibabamoziaclroleremoveAPIResponseModel struct {
+// AlibabaMoziAclRoleRemoveAPIResponseModel is 删除角色 成功返回结果
+type AlibabaMoziAclRoleRemoveAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mozi_acl_role_remove_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

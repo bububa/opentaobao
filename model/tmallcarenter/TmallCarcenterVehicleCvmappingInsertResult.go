@@ -1,7 +1,7 @@
 package tmallcarenter
 
-// TmallcarcentervehiclecvmappinginsertResult 结构体
-type TmallcarcentervehiclecvmappinginsertResult struct {
+// TmallCarcenterVehicleCvmappingInsertResult 结构体
+type TmallCarcenterVehicleCvmappingInsertResult struct {
 	// msgCode
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msgInfo

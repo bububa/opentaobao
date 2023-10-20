@@ -1,7 +1,7 @@
 package normalvisa
 
-// TaobaoalitriptravelnormalvisagetcompanyResultSet 结构体
-type TaobaoalitriptravelnormalvisagetcompanyResultSet struct {
+// TaobaoAlitripTravelNormalvisaGetcompanyResultSet 结构体
+type TaobaoAlitripTravelNormalvisaGetcompanyResultSet struct {
 	// 结果
 	Results []LogisticsCompanyInfo `json:"results,omitempty" xml:"results>logistics_company_info,omitempty"`
 	// 异常

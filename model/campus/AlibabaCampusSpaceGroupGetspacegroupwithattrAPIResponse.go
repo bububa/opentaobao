@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabacampusspacegroupgetspacegroupwithattrAPIResponse 空间分组id查业务属性实例 API返回值
+// AlibabaCampusSpaceGroupGetspacegroupwithattrAPIResponse 空间分组id查业务属性实例 API返回值
 // alibaba.campus.space.group.getspacegroupwithattr
 //
 // 空间分组id查业务属性实例
-type AlibabacampusspacegroupgetspacegroupwithattrAPIResponse struct {
+type AlibabaCampusSpaceGroupGetspacegroupwithattrAPIResponse struct {
 	model.CommonResponse
-	AlibabacampusspacegroupgetspacegroupwithattrAPIResponseModel
+	AlibabaCampusSpaceGroupGetspacegroupwithattrAPIResponseModel
 }
 
-// AlibabacampusspacegroupgetspacegroupwithattrAPIResponseModel is 空间分组id查业务属性实例 成功返回结果
-type AlibabacampusspacegroupgetspacegroupwithattrAPIResponseModel struct {
+// AlibabaCampusSpaceGroupGetspacegroupwithattrAPIResponseModel is 空间分组id查业务属性实例 成功返回结果
+type AlibabaCampusSpaceGroupGetspacegroupwithattrAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_campus_space_group_getspacegroupwithattr_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ju"
 )
 
-// Alibabajhscommunitywechatlogin 聚划算用增淘外社群登录
+// AlibabaJhsCommunityWechatLogin 聚划算用增淘外社群登录
 // alibaba.jhs.community.wechat.login
 //
 // 聚划算用增淘外社群登录
-func Alibabajhscommunitywechatlogin(clt *core.SDKClient, req *ju.AlibabajhscommunitywechatloginAPIRequest, session string) (*ju.AlibabajhscommunitywechatloginAPIResponse, error) {
-	var resp ju.AlibabajhscommunitywechatloginAPIResponse
+func AlibabaJhsCommunityWechatLogin(clt *core.SDKClient, req *ju.AlibabaJhsCommunityWechatLoginAPIRequest, session string) (*ju.AlibabaJhsCommunityWechatLoginAPIResponse, error) {
+	var resp ju.AlibabaJhsCommunityWechatLoginAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

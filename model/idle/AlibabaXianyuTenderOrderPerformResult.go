@@ -1,7 +1,7 @@
 package idle
 
-// AlibabaxianyutenderorderperformResult 结构体
-type AlibabaxianyutenderorderperformResult struct {
+// AlibabaXianyuTenderOrderPerformResult 结构体
+type AlibabaXianyuTenderOrderPerformResult struct {
 	// 错误信息
 	ErrCodeInfo string `json:"err_code_info,omitempty" xml:"err_code_info,omitempty"`
 	// 错误码

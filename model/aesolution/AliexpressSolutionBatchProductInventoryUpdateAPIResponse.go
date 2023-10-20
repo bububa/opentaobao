@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpresssolutionbatchproductinventoryupdateAPIResponse aliexpress.solution.batch.product.inventory.update API返回值
+// AliexpressSolutionBatchProductInventoryUpdateAPIResponse aliexpress.solution.batch.product.inventory.update API返回值
 // aliexpress.solution.batch.product.inventory.update
 //
 // batch product inventory update API for oversea sellers. Sellers could update multiple skus among multiple products in a single call. Maximum 20 products could be updated at the same time and maximum 200 skus could be updated within one product.
-type AliexpresssolutionbatchproductinventoryupdateAPIResponse struct {
+type AliexpressSolutionBatchProductInventoryUpdateAPIResponse struct {
 	model.CommonResponse
-	AliexpresssolutionbatchproductinventoryupdateAPIResponseModel
+	AliexpressSolutionBatchProductInventoryUpdateAPIResponseModel
 }
 
-// AliexpresssolutionbatchproductinventoryupdateAPIResponseModel is aliexpress.solution.batch.product.inventory.update 成功返回结果
-type AliexpresssolutionbatchproductinventoryupdateAPIResponseModel struct {
+// AliexpressSolutionBatchProductInventoryUpdateAPIResponseModel is aliexpress.solution.batch.product.inventory.update 成功返回结果
+type AliexpressSolutionBatchProductInventoryUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_solution_batch_product_inventory_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

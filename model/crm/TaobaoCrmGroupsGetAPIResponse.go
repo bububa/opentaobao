@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaocrmgroupsgetAPIResponse 查询卖家的分组 API返回值
+// TaobaoCrmGroupsGetAPIResponse 查询卖家的分组 API返回值
 // taobao.crm.groups.get
 //
 // 查询卖家的分组，返回查询到的分组列表，分页返回分组
-type TaobaocrmgroupsgetAPIResponse struct {
+type TaobaoCrmGroupsGetAPIResponse struct {
 	model.CommonResponse
-	TaobaocrmgroupsgetAPIResponseModel
+	TaobaoCrmGroupsGetAPIResponseModel
 }
 
-// TaobaocrmgroupsgetAPIResponseModel is 查询卖家的分组 成功返回结果
-type TaobaocrmgroupsgetAPIResponseModel struct {
+// TaobaoCrmGroupsGetAPIResponseModel is 查询卖家的分组 成功返回结果
+type TaobaoCrmGroupsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"crm_groups_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

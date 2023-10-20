@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaordsdbgetdbAPIRequest rds获取RDS的DB API请求
+// TaobaoRdsDbGetdbAPIRequest rds获取RDS的DB API请求
 // taobao.rds.db.getdb
 //
 // rds获取RDS的DB
-type TaobaordsdbgetdbAPIRequest struct {
+type TaobaoRdsDbGetdbAPIRequest struct {
 	model.Params
 	// 账户名
 	_accountName string
@@ -18,52 +18,52 @@ type TaobaordsdbgetdbAPIRequest struct {
 	_instanceName string
 }
 
-// NewTaobaordsdbgetdbRequest 初始化TaobaordsdbgetdbAPIRequest对象
-func NewTaobaordsdbgetdbRequest() *TaobaordsdbgetdbAPIRequest {
-	return &TaobaordsdbgetdbAPIRequest{
+// NewTaobaoRdsDbGetdbRequest 初始化TaobaoRdsDbGetdbAPIRequest对象
+func NewTaobaoRdsDbGetdbRequest() *TaobaoRdsDbGetdbAPIRequest {
+	return &TaobaoRdsDbGetdbAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaordsdbgetdbAPIRequest) GetApiMethodName() string {
+func (r TaobaoRdsDbGetdbAPIRequest) GetApiMethodName() string {
 	return "taobao.rds.db.getdb"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaordsdbgetdbAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoRdsDbGetdbAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaordsdbgetdbAPIRequest) GetRawParams() model.Params {
+func (r TaobaoRdsDbGetdbAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAccountName is AccountName Setter
 // 账户名
-func (r *TaobaordsdbgetdbAPIRequest) SetAccountName(_accountName string) error {
+func (r *TaobaoRdsDbGetdbAPIRequest) SetAccountName(_accountName string) error {
 	r._accountName = _accountName
 	r.Set("account_name", _accountName)
 	return nil
 }
 
 // GetAccountName AccountName Getter
-func (r TaobaordsdbgetdbAPIRequest) GetAccountName() string {
+func (r TaobaoRdsDbGetdbAPIRequest) GetAccountName() string {
 	return r._accountName
 }
 
 // SetInstanceName is InstanceName Setter
 // 实例名
-func (r *TaobaordsdbgetdbAPIRequest) SetInstanceName(_instanceName string) error {
+func (r *TaobaoRdsDbGetdbAPIRequest) SetInstanceName(_instanceName string) error {
 	r._instanceName = _instanceName
 	r.Set("instance_name", _instanceName)
 	return nil
 }
 
 // GetInstanceName InstanceName Getter
-func (r TaobaordsdbgetdbAPIRequest) GetInstanceName() string {
+func (r TaobaoRdsDbGetdbAPIRequest) GetInstanceName() string {
 	return r._instanceName
 }

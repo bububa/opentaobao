@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaalihealthdrugcodecodecheckmedicalinsuranceResultModel 结构体
-type AlibabaalihealthdrugcodecodecheckmedicalinsuranceResultModel struct {
+// AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel 结构体
+type AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel struct {
 	// 成功失败编码
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 成功失败描述

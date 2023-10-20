@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/idleisv"
 )
 
-// Alibabaidleisvpvquery 查询pv属性
+// AlibabaIdleIsvPvQuery 查询pv属性
 // alibaba.idle.isv.pv.query
 //
 // 查询pv属性
-func Alibabaidleisvpvquery(clt *core.SDKClient, req *idleisv.AlibabaidleisvpvqueryAPIRequest, session string) (*idleisv.AlibabaidleisvpvqueryAPIResponse, error) {
-	var resp idleisv.AlibabaidleisvpvqueryAPIResponse
+func AlibabaIdleIsvPvQuery(clt *core.SDKClient, req *idleisv.AlibabaIdleIsvPvQueryAPIRequest, session string) (*idleisv.AlibabaIdleIsvPvQueryAPIResponse, error) {
+	var resp idleisv.AlibabaIdleIsvPvQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

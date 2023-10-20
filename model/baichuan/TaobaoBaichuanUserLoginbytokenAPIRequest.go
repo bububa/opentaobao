@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobaichuanuserloginbytokenAPIRequest 百川手淘信任登录 API请求
+// TaobaoBaichuanUserLoginbytokenAPIRequest 百川手淘信任登录 API请求
 // taobao.baichuan.user.loginbytoken
 //
 // 百川手淘信任登录
-type TaobaobaichuanuserloginbytokenAPIRequest struct {
+type TaobaoBaichuanUserLoginbytokenAPIRequest struct {
 	model.Params
 	// name
 	_name string
 }
 
-// NewTaobaobaichuanuserloginbytokenRequest 初始化TaobaobaichuanuserloginbytokenAPIRequest对象
-func NewTaobaobaichuanuserloginbytokenRequest() *TaobaobaichuanuserloginbytokenAPIRequest {
-	return &TaobaobaichuanuserloginbytokenAPIRequest{
+// NewTaobaoBaichuanUserLoginbytokenRequest 初始化TaobaoBaichuanUserLoginbytokenAPIRequest对象
+func NewTaobaoBaichuanUserLoginbytokenRequest() *TaobaoBaichuanUserLoginbytokenAPIRequest {
+	return &TaobaoBaichuanUserLoginbytokenAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaobaichuanuserloginbytokenAPIRequest) GetApiMethodName() string {
+func (r TaobaoBaichuanUserLoginbytokenAPIRequest) GetApiMethodName() string {
 	return "taobao.baichuan.user.loginbytoken"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaobaichuanuserloginbytokenAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoBaichuanUserLoginbytokenAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaobaichuanuserloginbytokenAPIRequest) GetRawParams() model.Params {
+func (r TaobaoBaichuanUserLoginbytokenAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetName is Name Setter
 // name
-func (r *TaobaobaichuanuserloginbytokenAPIRequest) SetName(_name string) error {
+func (r *TaobaoBaichuanUserLoginbytokenAPIRequest) SetName(_name string) error {
 	r._name = _name
 	r.Set("name", _name)
 	return nil
 }
 
 // GetName Name Getter
-func (r TaobaobaichuanuserloginbytokenAPIRequest) GetName() string {
+func (r TaobaoBaichuanUserLoginbytokenAPIRequest) GetName() string {
 	return r._name
 }

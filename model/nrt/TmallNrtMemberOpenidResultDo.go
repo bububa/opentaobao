@@ -1,7 +1,7 @@
 package nrt
 
-// TmallnrtmemberopenidResultDo 结构体
-type TmallnrtmemberopenidResultDo struct {
+// TmallNrtMemberOpenidResultDo 结构体
+type TmallNrtMemberOpenidResultDo struct {
 	// 错误码
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 错误信息

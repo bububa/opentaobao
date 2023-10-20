@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthalgomedicationsafetygetAPIResponse 合理用药api API返回值
+// AlibabaAlihealthAlgoMedicationSafetyGetAPIResponse 合理用药api API返回值
 // alibaba.alihealth.algo.medication.safety.get
 //
 // 合理用药规则引擎服务
-type AlibabaalihealthalgomedicationsafetygetAPIResponse struct {
+type AlibabaAlihealthAlgoMedicationSafetyGetAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthalgomedicationsafetygetAPIResponseModel
+	AlibabaAlihealthAlgoMedicationSafetyGetAPIResponseModel
 }
 
-// AlibabaalihealthalgomedicationsafetygetAPIResponseModel is 合理用药api 成功返回结果
-type AlibabaalihealthalgomedicationsafetygetAPIResponseModel struct {
+// AlibabaAlihealthAlgoMedicationSafetyGetAPIResponseModel is 合理用药api 成功返回结果
+type AlibabaAlihealthAlgoMedicationSafetyGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_algo_medication_safety_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

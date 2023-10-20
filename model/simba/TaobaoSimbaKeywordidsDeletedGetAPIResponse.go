@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbakeywordidsdeletedgetAPIResponse 获取删除的词ID API返回值
+// TaobaoSimbaKeywordidsDeletedGetAPIResponse 获取删除的词ID API返回值
 // taobao.simba.keywordids.deleted.get
 //
 // 获取删除的词ID
-type TaobaosimbakeywordidsdeletedgetAPIResponse struct {
+type TaobaoSimbaKeywordidsDeletedGetAPIResponse struct {
 	model.CommonResponse
-	TaobaosimbakeywordidsdeletedgetAPIResponseModel
+	TaobaoSimbaKeywordidsDeletedGetAPIResponseModel
 }
 
-// TaobaosimbakeywordidsdeletedgetAPIResponseModel is 获取删除的词ID 成功返回结果
-type TaobaosimbakeywordidsdeletedgetAPIResponseModel struct {
+// TaobaoSimbaKeywordidsDeletedGetAPIResponseModel is 获取删除的词ID 成功返回结果
+type TaobaoSimbaKeywordidsDeletedGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_keywordids_deleted_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

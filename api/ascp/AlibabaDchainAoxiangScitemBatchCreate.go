@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// Alibabadchainaoxiangscitembatchcreate 新建货品
+// AlibabaDchainAoxiangScitemBatchCreate 新建货品
 // alibaba.dchain.aoxiang.scitem.batch.create
 //
 // 新建货品
-func Alibabadchainaoxiangscitembatchcreate(clt *core.SDKClient, req *ascp.AlibabadchainaoxiangscitembatchcreateAPIRequest, session string) (*ascp.AlibabadchainaoxiangscitembatchcreateAPIResponse, error) {
-	var resp ascp.AlibabadchainaoxiangscitembatchcreateAPIResponse
+func AlibabaDchainAoxiangScitemBatchCreate(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangScitemBatchCreateAPIRequest, session string) (*ascp.AlibabaDchainAoxiangScitemBatchCreateAPIResponse, error) {
+	var resp ascp.AlibabaDchainAoxiangScitemBatchCreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

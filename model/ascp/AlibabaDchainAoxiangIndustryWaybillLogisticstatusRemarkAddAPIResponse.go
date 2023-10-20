@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabadchainaoxiangindustrywaybilllogisticstatusremarkaddAPIResponse 客服增加备注 API返回值
+// AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIResponse 客服增加备注 API返回值
 // alibaba.dchain.aoxiang.industry.waybill.logisticstatus.remark.add
 //
 // 客服增加备注
-type AlibabadchainaoxiangindustrywaybilllogisticstatusremarkaddAPIResponse struct {
+type AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIResponse struct {
 	model.CommonResponse
-	AlibabadchainaoxiangindustrywaybilllogisticstatusremarkaddAPIResponseModel
+	AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIResponseModel
 }
 
-// AlibabadchainaoxiangindustrywaybilllogisticstatusremarkaddAPIResponseModel is 客服增加备注 成功返回结果
-type AlibabadchainaoxiangindustrywaybilllogisticstatusremarkaddAPIResponseModel struct {
+// AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIResponseModel is 客服增加备注 成功返回结果
+type AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_dchain_aoxiang_industry_waybill_logisticstatus_remark_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabasecurityjaqappriskdetailbatchgetAPIRequest 应用风险详细信息批量查询接口 API请求
+// AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest 应用风险详细信息批量查询接口 API请求
 // alibaba.security.jaq.app.riskdetailbatch.get
 //
 // 用户通过alibaba.security.jaq.app.risk.scanbatch接口提交应用进行风险批量扫描后，用此接口批量获取风险详细信息,包含漏洞列表、恶意代码列表、仿冒应用列表等信息
-type AlibabasecurityjaqappriskdetailbatchgetAPIRequest struct {
+type AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest struct {
 	model.Params
 	// 任务唯一标识
 	_itemId string
@@ -18,52 +18,52 @@ type AlibabasecurityjaqappriskdetailbatchgetAPIRequest struct {
 	_locale *Locale
 }
 
-// NewAlibabasecurityjaqappriskdetailbatchgetRequest 初始化AlibabasecurityjaqappriskdetailbatchgetAPIRequest对象
-func NewAlibabasecurityjaqappriskdetailbatchgetRequest() *AlibabasecurityjaqappriskdetailbatchgetAPIRequest {
-	return &AlibabasecurityjaqappriskdetailbatchgetAPIRequest{
+// NewAlibabaSecurityJaqAppRiskdetailbatchGetRequest 初始化AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest对象
+func NewAlibabaSecurityJaqAppRiskdetailbatchGetRequest() *AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest {
+	return &AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabasecurityjaqappriskdetailbatchgetAPIRequest) GetApiMethodName() string {
+func (r AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest) GetApiMethodName() string {
 	return "alibaba.security.jaq.app.riskdetailbatch.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabasecurityjaqappriskdetailbatchgetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabasecurityjaqappriskdetailbatchgetAPIRequest) GetRawParams() model.Params {
+func (r AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetItemId is ItemId Setter
 // 任务唯一标识
-func (r *AlibabasecurityjaqappriskdetailbatchgetAPIRequest) SetItemId(_itemId string) error {
+func (r *AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest) SetItemId(_itemId string) error {
 	r._itemId = _itemId
 	r.Set("item_id", _itemId)
 	return nil
 }
 
 // GetItemId ItemId Getter
-func (r AlibabasecurityjaqappriskdetailbatchgetAPIRequest) GetItemId() string {
+func (r AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest) GetItemId() string {
 	return r._itemId
 }
 
 // SetLocale is Locale Setter
 // 本地化语言信息,用于指定返回结果内容所使用的语言(默认为zh_CN,目前仅支持zh_CN)
-func (r *AlibabasecurityjaqappriskdetailbatchgetAPIRequest) SetLocale(_locale *Locale) error {
+func (r *AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest) SetLocale(_locale *Locale) error {
 	r._locale = _locale
 	r.Set("locale", _locale)
 	return nil
 }
 
 // GetLocale Locale Getter
-func (r AlibabasecurityjaqappriskdetailbatchgetAPIRequest) GetLocale() *Locale {
+func (r AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest) GetLocale() *Locale {
 	return r._locale
 }

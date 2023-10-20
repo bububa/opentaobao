@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimendeliveryorderconfirmBatch 结构体
-type TaobaoqimendeliveryorderconfirmBatch struct {
+// TaobaoQimenDeliveryorderConfirmBatch 结构体
+type TaobaoQimenDeliveryorderConfirmBatch struct {
 	// 批次编号
 	BatchCode string `json:"batchCode,omitempty" xml:"batchCode,omitempty"`
 	// 生产日期(YYYY-MM-DD)

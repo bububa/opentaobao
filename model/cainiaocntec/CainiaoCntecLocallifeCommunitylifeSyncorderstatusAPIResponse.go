@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaocnteclocallifecommunitylifesyncorderstatusAPIResponse 订单状态推送 API返回值
+// CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse 订单状态推送 API返回值
 // cainiao.cntec.locallife.communitylife.syncorderstatus
 //
 // 订单状态推送
-type CainiaocnteclocallifecommunitylifesyncorderstatusAPIResponse struct {
+type CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse struct {
 	model.CommonResponse
-	CainiaocnteclocallifecommunitylifesyncorderstatusAPIResponseModel
+	CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponseModel
 }
 
-// CainiaocnteclocallifecommunitylifesyncorderstatusAPIResponseModel is 订单状态推送 成功返回结果
-type CainiaocnteclocallifecommunitylifesyncorderstatusAPIResponseModel struct {
+// CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponseModel is 订单状态推送 成功返回结果
+type CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_cntec_locallife_communitylife_syncorderstatus_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

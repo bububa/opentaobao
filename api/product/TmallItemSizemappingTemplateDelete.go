@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-// Tmallitemsizemappingtemplatedelete 删除天猫商品尺码表模板
+// TmallItemSizemappingTemplateDelete 删除天猫商品尺码表模板
 // tmall.item.sizemapping.template.delete
 //
 // 删除天猫商品尺码表模板
-func Tmallitemsizemappingtemplatedelete(clt *core.SDKClient, req *product.TmallitemsizemappingtemplatedeleteAPIRequest, session string) (*product.TmallitemsizemappingtemplatedeleteAPIResponse, error) {
-	var resp product.TmallitemsizemappingtemplatedeleteAPIResponse
+func TmallItemSizemappingTemplateDelete(clt *core.SDKClient, req *product.TmallItemSizemappingTemplateDeleteAPIRequest, session string) (*product.TmallItemSizemappingTemplateDeleteAPIResponse, error) {
+	var resp product.TmallItemSizemappingTemplateDeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

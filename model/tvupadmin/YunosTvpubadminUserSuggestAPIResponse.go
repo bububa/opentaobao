@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunostvpubadminusersuggestAPIResponse 获取关联账户列表 API返回值
+// YunosTvpubadminUserSuggestAPIResponse 获取关联账户列表 API返回值
 // yunos.tvpubadmin.user.suggest
 //
 // 获取关联账户列表
-type YunostvpubadminusersuggestAPIResponse struct {
+type YunosTvpubadminUserSuggestAPIResponse struct {
 	model.CommonResponse
-	YunostvpubadminusersuggestAPIResponseModel
+	YunosTvpubadminUserSuggestAPIResponseModel
 }
 
-// YunostvpubadminusersuggestAPIResponseModel is 获取关联账户列表 成功返回结果
-type YunostvpubadminusersuggestAPIResponseModel struct {
+// YunosTvpubadminUserSuggestAPIResponseModel is 获取关联账户列表 成功返回结果
+type YunosTvpubadminUserSuggestAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvpubadmin_user_suggest_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

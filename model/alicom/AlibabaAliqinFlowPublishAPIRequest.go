@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaliqinflowpublishAPIRequest 流量发放(用户id) API请求
+// AlibabaAliqinFlowPublishAPIRequest 流量发放(用户id) API请求
 // alibaba.aliqin.flow.publish
 //
 // 阿里通信流量下发功能，允许用户补发
-type AlibabaaliqinflowpublishAPIRequest struct {
+type AlibabaAliqinFlowPublishAPIRequest struct {
 	model.Params
 	// 用户id
 	_userId string
@@ -24,91 +24,91 @@ type AlibabaaliqinflowpublishAPIRequest struct {
 	_always string
 }
 
-// NewAlibabaaliqinflowpublishRequest 初始化AlibabaaliqinflowpublishAPIRequest对象
-func NewAlibabaaliqinflowpublishRequest() *AlibabaaliqinflowpublishAPIRequest {
-	return &AlibabaaliqinflowpublishAPIRequest{
+// NewAlibabaAliqinFlowPublishRequest 初始化AlibabaAliqinFlowPublishAPIRequest对象
+func NewAlibabaAliqinFlowPublishRequest() *AlibabaAliqinFlowPublishAPIRequest {
+	return &AlibabaAliqinFlowPublishAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaaliqinflowpublishAPIRequest) GetApiMethodName() string {
+func (r AlibabaAliqinFlowPublishAPIRequest) GetApiMethodName() string {
 	return "alibaba.aliqin.flow.publish"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaaliqinflowpublishAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAliqinFlowPublishAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaaliqinflowpublishAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAliqinFlowPublishAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetUserId is UserId Setter
 // 用户id
-func (r *AlibabaaliqinflowpublishAPIRequest) SetUserId(_userId string) error {
+func (r *AlibabaAliqinFlowPublishAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
 	r.Set("user_id", _userId)
 	return nil
 }
 
 // GetUserId UserId Getter
-func (r AlibabaaliqinflowpublishAPIRequest) GetUserId() string {
+func (r AlibabaAliqinFlowPublishAPIRequest) GetUserId() string {
 	return r._userId
 }
 
 // SetFlow is Flow Setter
 // 流量
-func (r *AlibabaaliqinflowpublishAPIRequest) SetFlow(_flow string) error {
+func (r *AlibabaAliqinFlowPublishAPIRequest) SetFlow(_flow string) error {
 	r._flow = _flow
 	r.Set("flow", _flow)
 	return nil
 }
 
 // GetFlow Flow Getter
-func (r AlibabaaliqinflowpublishAPIRequest) GetFlow() string {
+func (r AlibabaAliqinFlowPublishAPIRequest) GetFlow() string {
 	return r._flow
 }
 
 // SetReason is Reason Setter
 // 原因
-func (r *AlibabaaliqinflowpublishAPIRequest) SetReason(_reason string) error {
+func (r *AlibabaAliqinFlowPublishAPIRequest) SetReason(_reason string) error {
 	r._reason = _reason
 	r.Set("reason", _reason)
 	return nil
 }
 
 // GetReason Reason Getter
-func (r AlibabaaliqinflowpublishAPIRequest) GetReason() string {
+func (r AlibabaAliqinFlowPublishAPIRequest) GetReason() string {
 	return r._reason
 }
 
 // SetSerial is Serial Setter
 // 唯一流水号（字母+数字）
-func (r *AlibabaaliqinflowpublishAPIRequest) SetSerial(_serial string) error {
+func (r *AlibabaAliqinFlowPublishAPIRequest) SetSerial(_serial string) error {
 	r._serial = _serial
 	r.Set("serial", _serial)
 	return nil
 }
 
 // GetSerial Serial Getter
-func (r AlibabaaliqinflowpublishAPIRequest) GetSerial() string {
+func (r AlibabaAliqinFlowPublishAPIRequest) GetSerial() string {
 	return r._serial
 }
 
 // SetAlways is Always Setter
 // 设置true为始终发送成功
-func (r *AlibabaaliqinflowpublishAPIRequest) SetAlways(_always string) error {
+func (r *AlibabaAliqinFlowPublishAPIRequest) SetAlways(_always string) error {
 	r._always = _always
 	r.Set("always", _always)
 	return nil
 }
 
 // GetAlways Always Getter
-func (r AlibabaaliqinflowpublishAPIRequest) GetAlways() string {
+func (r AlibabaAliqinFlowPublishAPIRequest) GetAlways() string {
 	return r._always
 }

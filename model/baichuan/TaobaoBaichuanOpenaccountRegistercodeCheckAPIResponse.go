@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobaichuanopenaccountregistercodecheckAPIResponse 百川检查注册验证码 API返回值
+// TaobaoBaichuanOpenaccountRegistercodeCheckAPIResponse 百川检查注册验证码 API返回值
 // taobao.baichuan.openaccount.registercode.check
 //
 // 百川检查注册验证码
-type TaobaobaichuanopenaccountregistercodecheckAPIResponse struct {
+type TaobaoBaichuanOpenaccountRegistercodeCheckAPIResponse struct {
 	model.CommonResponse
-	TaobaobaichuanopenaccountregistercodecheckAPIResponseModel
+	TaobaoBaichuanOpenaccountRegistercodeCheckAPIResponseModel
 }
 
-// TaobaobaichuanopenaccountregistercodecheckAPIResponseModel is 百川检查注册验证码 成功返回结果
-type TaobaobaichuanopenaccountregistercodecheckAPIResponseModel struct {
+// TaobaoBaichuanOpenaccountRegistercodeCheckAPIResponseModel is 百川检查注册验证码 成功返回结果
+type TaobaoBaichuanOpenaccountRegistercodeCheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"baichuan_openaccount_registercode_check_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

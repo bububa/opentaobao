@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabajymsteamrefundauditAPIResponse 交易猫steam逆向单审核 API返回值
+// AlibabaJymSteamRefundAuditAPIResponse 交易猫steam逆向单审核 API返回值
 // alibaba.jym.steam.refund.audit
 //
 // 交易猫steam逆向单审核
-type AlibabajymsteamrefundauditAPIResponse struct {
+type AlibabaJymSteamRefundAuditAPIResponse struct {
 	model.CommonResponse
-	AlibabajymsteamrefundauditAPIResponseModel
+	AlibabaJymSteamRefundAuditAPIResponseModel
 }
 
-// AlibabajymsteamrefundauditAPIResponseModel is 交易猫steam逆向单审核 成功返回结果
-type AlibabajymsteamrefundauditAPIResponseModel struct {
+// AlibabaJymSteamRefundAuditAPIResponseModel is 交易猫steam逆向单审核 成功返回结果
+type AlibabaJymSteamRefundAuditAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_steam_refund_audit_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

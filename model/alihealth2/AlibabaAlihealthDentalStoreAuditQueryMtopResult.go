@@ -1,7 +1,7 @@
 package alihealth2
 
-// AlibabaalihealthdentalstoreauditqueryMtopResult 结构体
-type AlibabaalihealthdentalstoreauditqueryMtopResult struct {
+// AlibabaAlihealthDentalStoreAuditQueryMtopResult 结构体
+type AlibabaAlihealthDentalStoreAuditQueryMtopResult struct {
 	// model
 	StoreAuditVoList []StoreAuditVo `json:"store_audit_vo_list,omitempty" xml:"store_audit_vo_list>store_audit_vo,omitempty"`
 	// msg_code

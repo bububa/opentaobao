@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/security"
 )
 
-// Alibabasecurityjaqresourcefetch 获取资源文件
+// AlibabaSecurityJaqResourceFetch 获取资源文件
 // alibaba.security.jaq.resource.fetch
 //
 // 在前向化验证流程中提供资源文件服务
-func Alibabasecurityjaqresourcefetch(clt *core.SDKClient, req *security.AlibabasecurityjaqresourcefetchAPIRequest, session string) (*security.AlibabasecurityjaqresourcefetchAPIResponse, error) {
-	var resp security.AlibabasecurityjaqresourcefetchAPIResponse
+func AlibabaSecurityJaqResourceFetch(clt *core.SDKClient, req *security.AlibabaSecurityJaqResourceFetchAPIRequest, session string) (*security.AlibabaSecurityJaqResourceFetchAPIResponse, error) {
+	var resp security.AlibabaSecurityJaqResourceFetchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

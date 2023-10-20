@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-// Aliexpresslocallogisticsshippingmethodquery query shipping method
+// AliexpressLocalLogisticsShippingMethodQuery query shipping method
 // aliexpress.local.logistics.shipping.method.query
 //
 // query shipping method
-func Aliexpresslocallogisticsshippingmethodquery(clt *core.SDKClient, req *logistic.AliexpresslocallogisticsshippingmethodqueryAPIRequest, session string) (*logistic.AliexpresslocallogisticsshippingmethodqueryAPIResponse, error) {
-	var resp logistic.AliexpresslocallogisticsshippingmethodqueryAPIResponse
+func AliexpressLocalLogisticsShippingMethodQuery(clt *core.SDKClient, req *logistic.AliexpressLocalLogisticsShippingMethodQueryAPIRequest, session string) (*logistic.AliexpressLocalLogisticsShippingMethodQueryAPIResponse, error) {
+	var resp logistic.AliexpressLocalLogisticsShippingMethodQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

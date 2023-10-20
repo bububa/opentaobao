@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaologisticsexpressorderpaytmsqueryAPIResponse 上门取退运费支付状态查询接口 API返回值
+// TaobaoLogisticsExpressOrderPayTmsQueryAPIResponse 上门取退运费支付状态查询接口 API返回值
 // taobao.logistics.express.order.pay.tms.query
 //
 // 上门取退运费支付状态查询接口
-type TaobaologisticsexpressorderpaytmsqueryAPIResponse struct {
+type TaobaoLogisticsExpressOrderPayTmsQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaologisticsexpressorderpaytmsqueryAPIResponseModel
+	TaobaoLogisticsExpressOrderPayTmsQueryAPIResponseModel
 }
 
-// TaobaologisticsexpressorderpaytmsqueryAPIResponseModel is 上门取退运费支付状态查询接口 成功返回结果
-type TaobaologisticsexpressorderpaytmsqueryAPIResponseModel struct {
+// TaobaoLogisticsExpressOrderPayTmsQueryAPIResponseModel is 上门取退运费支付状态查询接口 成功返回结果
+type TaobaoLogisticsExpressOrderPayTmsQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_express_order_pay_tms_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

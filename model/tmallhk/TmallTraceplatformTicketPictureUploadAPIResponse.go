@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmalltraceplatformticketpictureuploadAPIResponse 上传小票图片 API返回值
+// TmallTraceplatformTicketPictureUploadAPIResponse 上传小票图片 API返回值
 // tmall.traceplatform.ticket.picture.upload
 //
 // uploadPicture
-type TmalltraceplatformticketpictureuploadAPIResponse struct {
+type TmallTraceplatformTicketPictureUploadAPIResponse struct {
 	model.CommonResponse
-	TmalltraceplatformticketpictureuploadAPIResponseModel
+	TmallTraceplatformTicketPictureUploadAPIResponseModel
 }
 
-// TmalltraceplatformticketpictureuploadAPIResponseModel is 上传小票图片 成功返回结果
-type TmalltraceplatformticketpictureuploadAPIResponseModel struct {
+// TmallTraceplatformTicketPictureUploadAPIResponseModel is 上传小票图片 成功返回结果
+type TmallTraceplatformTicketPictureUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_traceplatform_ticket_picture_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

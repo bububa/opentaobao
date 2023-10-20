@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimencombineitemsynchronizeBatch 结构体
-type TaobaoqimencombineitemsynchronizeBatch struct {
+// TaobaoQimenCombineitemSynchronizeBatch 结构体
+type TaobaoQimenCombineitemSynchronizeBatch struct {
 	// test
 	BatchCode string `json:"batchCode,omitempty" xml:"batchCode,omitempty"`
 	// test

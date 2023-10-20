@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmalltxcsfinanceinvoiceinputAPIResponse 供应商发票录入 API返回值
+// TmallTxcsFinanceInvoiceInputAPIResponse 供应商发票录入 API返回值
 // tmall.txcs.finance.invoice.input
 //
 // 提供天猫超市外部合作商家财务：供应商发票录入
-type TmalltxcsfinanceinvoiceinputAPIResponse struct {
+type TmallTxcsFinanceInvoiceInputAPIResponse struct {
 	model.CommonResponse
-	TmalltxcsfinanceinvoiceinputAPIResponseModel
+	TmallTxcsFinanceInvoiceInputAPIResponseModel
 }
 
-// TmalltxcsfinanceinvoiceinputAPIResponseModel is 供应商发票录入 成功返回结果
-type TmalltxcsfinanceinvoiceinputAPIResponseModel struct {
+// TmallTxcsFinanceInvoiceInputAPIResponseModel is 供应商发票录入 成功返回结果
+type TmallTxcsFinanceInvoiceInputAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_txcs_finance_invoice_input_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

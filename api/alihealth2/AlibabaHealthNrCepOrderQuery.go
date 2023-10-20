@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealth2"
 )
 
-// Alibabahealthnrceporderquery 订单详情查询接口
+// AlibabaHealthNrCepOrderQuery 订单详情查询接口
 // alibaba.health.nr.cep.order.query
 //
 // 订单详情查询接口
-func Alibabahealthnrceporderquery(clt *core.SDKClient, req *alihealth2.AlibabahealthnrceporderqueryAPIRequest, session string) (*alihealth2.AlibabahealthnrceporderqueryAPIResponse, error) {
-	var resp alihealth2.AlibabahealthnrceporderqueryAPIResponse
+func AlibabaHealthNrCepOrderQuery(clt *core.SDKClient, req *alihealth2.AlibabaHealthNrCepOrderQueryAPIRequest, session string) (*alihealth2.AlibabaHealthNrCepOrderQueryAPIResponse, error) {
+	var resp alihealth2.AlibabaHealthNrCepOrderQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

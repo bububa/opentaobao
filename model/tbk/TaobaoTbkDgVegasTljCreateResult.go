@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaotbkdgvegastljcreateResult 结构体
-type TaobaotbkdgvegastljcreateResult struct {
+// TaobaoTbkDgVegasTljCreateResult 结构体
+type TaobaoTbkDgVegasTljCreateResult struct {
 	// msgCode
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msgInfo

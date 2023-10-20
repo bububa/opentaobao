@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhotelcommoninvoiceremoveAPIResponse 常用发票信息删除接口 API返回值
+// TaobaoXhotelCommoninvoiceRemoveAPIResponse 常用发票信息删除接口 API返回值
 // taobao.xhotel.commoninvoice.remove
 //
 // 常用发票信息删除接口
-type TaobaoxhotelcommoninvoiceremoveAPIResponse struct {
+type TaobaoXhotelCommoninvoiceRemoveAPIResponse struct {
 	model.CommonResponse
-	TaobaoxhotelcommoninvoiceremoveAPIResponseModel
+	TaobaoXhotelCommoninvoiceRemoveAPIResponseModel
 }
 
-// TaobaoxhotelcommoninvoiceremoveAPIResponseModel is 常用发票信息删除接口 成功返回结果
-type TaobaoxhotelcommoninvoiceremoveAPIResponseModel struct {
+// TaobaoXhotelCommoninvoiceRemoveAPIResponseModel is 常用发票信息删除接口 成功返回结果
+type TaobaoXhotelCommoninvoiceRemoveAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_commoninvoice_remove_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

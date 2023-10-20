@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthtracecodesellercodesinglecodereplaceAPIResponse 非药单码替换 API返回值
+// AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIResponse 非药单码替换 API返回值
 // alibaba.alihealth.tracecodeseller.code.single.codereplace
 //
 // 提供非药追溯码单码替换功能
-type AlibabaalihealthtracecodesellercodesinglecodereplaceAPIResponse struct {
+type AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthtracecodesellercodesinglecodereplaceAPIResponseModel
+	AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIResponseModel
 }
 
-// AlibabaalihealthtracecodesellercodesinglecodereplaceAPIResponseModel is 非药单码替换 成功返回结果
-type AlibabaalihealthtracecodesellercodesinglecodereplaceAPIResponseModel struct {
+// AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIResponseModel is 非药单码替换 成功返回结果
+type AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_tracecodeseller_code_single_codereplace_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

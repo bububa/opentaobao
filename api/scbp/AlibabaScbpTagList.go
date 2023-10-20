@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// Alibabascbptaglist 查询所有分组
+// AlibabaScbpTagList 查询所有分组
 // alibaba.scbp.tag.list
 //
 // 查询所有分组
-func Alibabascbptaglist(clt *core.SDKClient, req *scbp.AlibabascbptaglistAPIRequest, session string) (*scbp.AlibabascbptaglistAPIResponse, error) {
-	var resp scbp.AlibabascbptaglistAPIResponse
+func AlibabaScbpTagList(clt *core.SDKClient, req *scbp.AlibabaScbpTagListAPIRequest, session string) (*scbp.AlibabaScbpTagListAPIResponse, error) {
+	var resp scbp.AlibabaScbpTagListAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

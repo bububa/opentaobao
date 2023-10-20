@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaofeedflowitemcreativedeleteResultDto 结构体
-type TaobaofeedflowitemcreativedeleteResultDto struct {
+// TaobaoFeedflowItemCreativeDeleteResultDto 结构体
+type TaobaoFeedflowItemCreativeDeleteResultDto struct {
 	// 错误信息
 	ErrorList []ErrorInfoDto `json:"error_list,omitempty" xml:"error_list>error_info_dto,omitempty"`
 	// 消息

@@ -1,7 +1,7 @@
 package icbulogistics
 
-// AlibabaonetouchlogisticsexpressaddresscitylistResult 结构体
-type AlibabaonetouchlogisticsexpressaddresscitylistResult struct {
+// AlibabaOnetouchLogisticsExpressAddressCityListResult 结构体
+type AlibabaOnetouchLogisticsExpressAddressCityListResult struct {
 	// 列表对象
 	Values []RegionEntity `json:"values,omitempty" xml:"values>region_entity,omitempty"`
 	// 返回结果描述

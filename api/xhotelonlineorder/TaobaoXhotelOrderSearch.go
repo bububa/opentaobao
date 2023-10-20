@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelonlineorder"
 )
 
-// Taobaoxhotelordersearch 酒店产品库订单查询
+// TaobaoXhotelOrderSearch 酒店产品库订单查询
 // taobao.xhotel.order.search
 //
 // 酒店产品库订单查询功能，查询90天内的订单
-func Taobaoxhotelordersearch(clt *core.SDKClient, req *xhotelonlineorder.TaobaoxhotelordersearchAPIRequest, session string) (*xhotelonlineorder.TaobaoxhotelordersearchAPIResponse, error) {
-	var resp xhotelonlineorder.TaobaoxhotelordersearchAPIResponse
+func TaobaoXhotelOrderSearch(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelOrderSearchAPIRequest, session string) (*xhotelonlineorder.TaobaoXhotelOrderSearchAPIResponse, error) {
+	var resp xhotelonlineorder.TaobaoXhotelOrderSearchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

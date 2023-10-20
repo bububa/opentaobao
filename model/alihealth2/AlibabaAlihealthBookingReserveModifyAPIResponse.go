@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthbookingreservemodifyAPIResponse 修改预约 API返回值
+// AlibabaAlihealthBookingReserveModifyAPIResponse 修改预约 API返回值
 // alibaba.alihealth.booking.reserve.modify
 //
 // 消费医疗统一预约平台，取消预约
-type AlibabaalihealthbookingreservemodifyAPIResponse struct {
+type AlibabaAlihealthBookingReserveModifyAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthbookingreservemodifyAPIResponseModel
+	AlibabaAlihealthBookingReserveModifyAPIResponseModel
 }
 
-// AlibabaalihealthbookingreservemodifyAPIResponseModel is 修改预约 成功返回结果
-type AlibabaalihealthbookingreservemodifyAPIResponseModel struct {
+// AlibabaAlihealthBookingReserveModifyAPIResponseModel is 修改预约 成功返回结果
+type AlibabaAlihealthBookingReserveModifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_booking_reserve_modify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

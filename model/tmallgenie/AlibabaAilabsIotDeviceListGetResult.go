@@ -1,7 +1,7 @@
 package tmallgenie
 
-// AlibabaailabsiotdevicelistgetResult 结构体
-type AlibabaailabsiotdevicelistgetResult struct {
+// AlibabaAilabsIotDeviceListGetResult 结构体
+type AlibabaAilabsIotDeviceListGetResult struct {
 	// 返回值list
 	RetValues []RetValue `json:"ret_values,omitempty" xml:"ret_values>ret_value,omitempty"`
 	// message

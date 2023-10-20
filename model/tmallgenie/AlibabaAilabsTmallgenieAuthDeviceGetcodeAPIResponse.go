@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaailabstmallgenieauthdevicegetcodeAPIResponse 获取authcode API返回值
+// AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIResponse 获取authcode API返回值
 // alibaba.ailabs.tmallgenie.auth.device.getcode
 //
 // 获取绑定的authcode
-type AlibabaailabstmallgenieauthdevicegetcodeAPIResponse struct {
+type AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIResponse struct {
 	model.CommonResponse
-	AlibabaailabstmallgenieauthdevicegetcodeAPIResponseModel
+	AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIResponseModel
 }
 
-// AlibabaailabstmallgenieauthdevicegetcodeAPIResponseModel is 获取authcode 成功返回结果
-type AlibabaailabstmallgenieauthdevicegetcodeAPIResponseModel struct {
+// AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIResponseModel is 获取authcode 成功返回结果
+type AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_tmallgenie_auth_device_getcode_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

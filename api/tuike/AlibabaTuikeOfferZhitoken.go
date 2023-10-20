@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tuike"
 )
 
-// Alibabatuikeofferzhitoken 生成阿里口令
+// AlibabaTuikeOfferZhitoken 生成阿里口令
 // alibaba.tuike.offer.zhitoken
 //
 // 推荐链接生产吱口令
-func Alibabatuikeofferzhitoken(clt *core.SDKClient, req *tuike.AlibabatuikeofferzhitokenAPIRequest, session string) (*tuike.AlibabatuikeofferzhitokenAPIResponse, error) {
-	var resp tuike.AlibabatuikeofferzhitokenAPIResponse
+func AlibabaTuikeOfferZhitoken(clt *core.SDKClient, req *tuike.AlibabaTuikeOfferZhitokenAPIRequest, session string) (*tuike.AlibabaTuikeOfferZhitokenAPIResponse, error) {
+	var resp tuike.AlibabaTuikeOfferZhitokenAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

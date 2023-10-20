@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// Alibabaalihouseexistinghomestoreextendssync 门店扩展信息变更
+// AlibabaAlihouseExistinghomeStoreExtendsSync 门店扩展信息变更
 // alibaba.alihouse.existinghome.store.extends.sync
 //
 // 门店扩展信息变更
-func Alibabaalihouseexistinghomestoreextendssync(clt *core.SDKClient, req *alihouse.AlibabaalihouseexistinghomestoreextendssyncAPIRequest, session string) (*alihouse.AlibabaalihouseexistinghomestoreextendssyncAPIResponse, error) {
-	var resp alihouse.AlibabaalihouseexistinghomestoreextendssyncAPIResponse
+func AlibabaAlihouseExistinghomeStoreExtendsSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeStoreExtendsSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse, error) {
+	var resp alihouse.AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

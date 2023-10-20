@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabascbpeffectkeywordlistAPIResponse 关键词报表 API返回值
+// AlibabaScbpEffectKeywordListAPIResponse 关键词报表 API返回值
 // alibaba.scbp.effect.keyword.list
 //
 // 关键词报表
-type AlibabascbpeffectkeywordlistAPIResponse struct {
+type AlibabaScbpEffectKeywordListAPIResponse struct {
 	model.CommonResponse
-	AlibabascbpeffectkeywordlistAPIResponseModel
+	AlibabaScbpEffectKeywordListAPIResponseModel
 }
 
-// AlibabascbpeffectkeywordlistAPIResponseModel is 关键词报表 成功返回结果
-type AlibabascbpeffectkeywordlistAPIResponseModel struct {
+// AlibabaScbpEffectKeywordListAPIResponseModel is 关键词报表 成功返回结果
+type AlibabaScbpEffectKeywordListAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_effect_keyword_list_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

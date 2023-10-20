@@ -1,7 +1,7 @@
 package idle
 
-// AlibabaidleconsignmentiiordergetResult 结构体
-type AlibabaidleconsignmentiiordergetResult struct {
+// AlibabaIdleConsignmentiiOrderGetResult 结构体
+type AlibabaIdleConsignmentiiOrderGetResult struct {
 	// 错误编码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误信息

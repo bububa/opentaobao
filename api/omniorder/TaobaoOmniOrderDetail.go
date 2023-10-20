@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/omniorder"
 )
 
-// Taobaoomniorderdetail 全渠道订单详情
+// TaobaoOmniOrderDetail 全渠道订单详情
 // taobao.omni.order.detail
 //
 // 全渠道订单详情
-func Taobaoomniorderdetail(clt *core.SDKClient, req *omniorder.TaobaoomniorderdetailAPIRequest, session string) (*omniorder.TaobaoomniorderdetailAPIResponse, error) {
-	var resp omniorder.TaobaoomniorderdetailAPIResponse
+func TaobaoOmniOrderDetail(clt *core.SDKClient, req *omniorder.TaobaoOmniOrderDetailAPIRequest, session string) (*omniorder.TaobaoOmniOrderDetailAPIResponse, error) {
+	var resp omniorder.TaobaoOmniOrderDetailAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-// Cainiaocntecitemchangemessage 商品变更消息
+// CainiaoCntecItemChangeMessage 商品变更消息
 // cainiao.cntec.item.change.message
 //
 // 供货商商品信息变更消息
-func Cainiaocntecitemchangemessage(clt *core.SDKClient, req *product.CainiaocntecitemchangemessageAPIRequest, session string) (*product.CainiaocntecitemchangemessageAPIResponse, error) {
-	var resp product.CainiaocntecitemchangemessageAPIResponse
+func CainiaoCntecItemChangeMessage(clt *core.SDKClient, req *product.CainiaoCntecItemChangeMessageAPIRequest, session string) (*product.CainiaoCntecItemChangeMessageAPIResponse, error) {
+	var resp product.CainiaoCntecItemChangeMessageAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

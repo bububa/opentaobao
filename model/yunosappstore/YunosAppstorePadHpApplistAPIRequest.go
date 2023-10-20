@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosappstorepadhpapplistAPIRequest 查询HpPad appList API请求
+// YunosAppstorePadHpApplistAPIRequest 查询HpPad appList API请求
 // yunos.appstore.pad.hp.applist
 //
 // 提供hp pad应用群数据
-type YunosappstorepadhpapplistAPIRequest struct {
+type YunosAppstorePadHpApplistAPIRequest struct {
 	model.Params
 	// 获取的应用群code
 	_code string
 }
 
-// NewYunosappstorepadhpapplistRequest 初始化YunosappstorepadhpapplistAPIRequest对象
-func NewYunosappstorepadhpapplistRequest() *YunosappstorepadhpapplistAPIRequest {
-	return &YunosappstorepadhpapplistAPIRequest{
+// NewYunosAppstorePadHpApplistRequest 初始化YunosAppstorePadHpApplistAPIRequest对象
+func NewYunosAppstorePadHpApplistRequest() *YunosAppstorePadHpApplistAPIRequest {
+	return &YunosAppstorePadHpApplistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YunosappstorepadhpapplistAPIRequest) GetApiMethodName() string {
+func (r YunosAppstorePadHpApplistAPIRequest) GetApiMethodName() string {
 	return "yunos.appstore.pad.hp.applist"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunosappstorepadhpapplistAPIRequest) GetApiParams(params url.Values) {
+func (r YunosAppstorePadHpApplistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YunosappstorepadhpapplistAPIRequest) GetRawParams() model.Params {
+func (r YunosAppstorePadHpApplistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCode is Code Setter
 // 获取的应用群code
-func (r *YunosappstorepadhpapplistAPIRequest) SetCode(_code string) error {
+func (r *YunosAppstorePadHpApplistAPIRequest) SetCode(_code string) error {
 	r._code = _code
 	r.Set("code", _code)
 	return nil
 }
 
 // GetCode Code Getter
-func (r YunosappstorepadhpapplistAPIRequest) GetCode() string {
+func (r YunosAppstorePadHpApplistAPIRequest) GetCode() string {
 	return r._code
 }

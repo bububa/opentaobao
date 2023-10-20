@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhotelquotaupdateAPIResponse 库存更新接口 API返回值
+// TaobaoXhotelQuotaUpdateAPIResponse 库存更新接口 API返回值
 // taobao.xhotel.quota.update
 //
 // 库存更新接口
-type TaobaoxhotelquotaupdateAPIResponse struct {
+type TaobaoXhotelQuotaUpdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoxhotelquotaupdateAPIResponseModel
+	TaobaoXhotelQuotaUpdateAPIResponseModel
 }
 
-// TaobaoxhotelquotaupdateAPIResponseModel is 库存更新接口 成功返回结果
-type TaobaoxhotelquotaupdateAPIResponseModel struct {
+// TaobaoXhotelQuotaUpdateAPIResponseModel is 库存更新接口 成功返回结果
+type TaobaoXhotelQuotaUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_quota_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

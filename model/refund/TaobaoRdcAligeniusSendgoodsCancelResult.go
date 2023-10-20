@@ -1,7 +1,7 @@
 package refund
 
-// TaobaordcaligeniussendgoodscancelResult 结构体
-type TaobaordcaligeniussendgoodscancelResult struct {
+// TaobaoRdcAligeniusSendgoodsCancelResult 结构体
+type TaobaoRdcAligeniusSendgoodsCancelResult struct {
 	// 异常信息
 	ErrorInfo string `json:"error_info,omitempty" xml:"error_info,omitempty"`
 	// 异常编码

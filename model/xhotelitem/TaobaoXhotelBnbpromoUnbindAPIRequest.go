@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhotelbnbpromounbindAPIRequest 自促活动解绑接口 API请求
+// TaobaoXhotelBnbpromoUnbindAPIRequest 自促活动解绑接口 API请求
 // taobao.xhotel.bnbpromo.unbind
 //
 // 自促活动解绑接口
-type TaobaoxhotelbnbpromounbindAPIRequest struct {
+type TaobaoXhotelBnbpromoUnbindAPIRequest struct {
 	model.Params
 	// 营销活动code
 	_activityCode string
@@ -18,52 +18,52 @@ type TaobaoxhotelbnbpromounbindAPIRequest struct {
 	_rateInfos *PromoRateInfo
 }
 
-// NewTaobaoxhotelbnbpromounbindRequest 初始化TaobaoxhotelbnbpromounbindAPIRequest对象
-func NewTaobaoxhotelbnbpromounbindRequest() *TaobaoxhotelbnbpromounbindAPIRequest {
-	return &TaobaoxhotelbnbpromounbindAPIRequest{
+// NewTaobaoXhotelBnbpromoUnbindRequest 初始化TaobaoXhotelBnbpromoUnbindAPIRequest对象
+func NewTaobaoXhotelBnbpromoUnbindRequest() *TaobaoXhotelBnbpromoUnbindAPIRequest {
+	return &TaobaoXhotelBnbpromoUnbindAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoxhotelbnbpromounbindAPIRequest) GetApiMethodName() string {
+func (r TaobaoXhotelBnbpromoUnbindAPIRequest) GetApiMethodName() string {
 	return "taobao.xhotel.bnbpromo.unbind"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoxhotelbnbpromounbindAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoXhotelBnbpromoUnbindAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoxhotelbnbpromounbindAPIRequest) GetRawParams() model.Params {
+func (r TaobaoXhotelBnbpromoUnbindAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetActivityCode is ActivityCode Setter
 // 营销活动code
-func (r *TaobaoxhotelbnbpromounbindAPIRequest) SetActivityCode(_activityCode string) error {
+func (r *TaobaoXhotelBnbpromoUnbindAPIRequest) SetActivityCode(_activityCode string) error {
 	r._activityCode = _activityCode
 	r.Set("activity_code", _activityCode)
 	return nil
 }
 
 // GetActivityCode ActivityCode Getter
-func (r TaobaoxhotelbnbpromounbindAPIRequest) GetActivityCode() string {
+func (r TaobaoXhotelBnbpromoUnbindAPIRequest) GetActivityCode() string {
 	return r._activityCode
 }
 
 // SetRateInfos is RateInfos Setter
 // 营销
-func (r *TaobaoxhotelbnbpromounbindAPIRequest) SetRateInfos(_rateInfos *PromoRateInfo) error {
+func (r *TaobaoXhotelBnbpromoUnbindAPIRequest) SetRateInfos(_rateInfos *PromoRateInfo) error {
 	r._rateInfos = _rateInfos
 	r.Set("rate_infos", _rateInfos)
 	return nil
 }
 
 // GetRateInfos RateInfos Getter
-func (r TaobaoxhotelbnbpromounbindAPIRequest) GetRateInfos() *PromoRateInfo {
+func (r TaobaoXhotelBnbpromoUnbindAPIRequest) GetRateInfos() *PromoRateInfo {
 	return r._rateInfos
 }

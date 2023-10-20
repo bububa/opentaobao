@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
 
-// Tmallservicecenterworkcardlogisticsinfocreate 创建服务履约物流单
+// TmallServicecenterWorkcardLogisticsinfoCreate 创建服务履约物流单
 // tmall.servicecenter.workcard.logisticsinfo.create
 //
 // 创建服务履约物流单
-func Tmallservicecenterworkcardlogisticsinfocreate(clt *core.SDKClient, req *tmallsc.TmallservicecenterworkcardlogisticsinfocreateAPIRequest, session string) (*tmallsc.TmallservicecenterworkcardlogisticsinfocreateAPIResponse, error) {
-	var resp tmallsc.TmallservicecenterworkcardlogisticsinfocreateAPIResponse
+func TmallServicecenterWorkcardLogisticsinfoCreate(clt *core.SDKClient, req *tmallsc.TmallServicecenterWorkcardLogisticsinfoCreateAPIRequest, session string) (*tmallsc.TmallServicecenterWorkcardLogisticsinfoCreateAPIResponse, error) {
+	var resp tmallsc.TmallServicecenterWorkcardLogisticsinfoCreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

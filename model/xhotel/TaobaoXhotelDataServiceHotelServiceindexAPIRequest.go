@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhoteldataservicehotelserviceindexAPIRequest 酒店服务指数 API请求
+// TaobaoXhotelDataServiceHotelServiceindexAPIRequest 酒店服务指数 API请求
 // taobao.xhotel.data.service.hotel.serviceindex
 //
 // 酒店服务指数
-type TaobaoxhoteldataservicehotelserviceindexAPIRequest struct {
+type TaobaoXhotelDataServiceHotelServiceindexAPIRequest struct {
 	model.Params
 	// 渠道商名称
 	_vendor string
@@ -28,117 +28,117 @@ type TaobaoxhoteldataservicehotelserviceindexAPIRequest struct {
 	_pageSize int64
 }
 
-// NewTaobaoxhoteldataservicehotelserviceindexRequest 初始化TaobaoxhoteldataservicehotelserviceindexAPIRequest对象
-func NewTaobaoxhoteldataservicehotelserviceindexRequest() *TaobaoxhoteldataservicehotelserviceindexAPIRequest {
-	return &TaobaoxhoteldataservicehotelserviceindexAPIRequest{
+// NewTaobaoXhotelDataServiceHotelServiceindexRequest 初始化TaobaoXhotelDataServiceHotelServiceindexAPIRequest对象
+func NewTaobaoXhotelDataServiceHotelServiceindexRequest() *TaobaoXhotelDataServiceHotelServiceindexAPIRequest {
+	return &TaobaoXhotelDataServiceHotelServiceindexAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoxhoteldataservicehotelserviceindexAPIRequest) GetApiMethodName() string {
+func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetApiMethodName() string {
 	return "taobao.xhotel.data.service.hotel.serviceindex"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoxhoteldataservicehotelserviceindexAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoxhoteldataservicehotelserviceindexAPIRequest) GetRawParams() model.Params {
+func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetVendor is Vendor Setter
 // 渠道商名称
-func (r *TaobaoxhoteldataservicehotelserviceindexAPIRequest) SetVendor(_vendor string) error {
+func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
 	r.Set("vendor", _vendor)
 	return nil
 }
 
 // GetVendor Vendor Getter
-func (r TaobaoxhoteldataservicehotelserviceindexAPIRequest) GetVendor() string {
+func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
 // SetReportEndDate is ReportEndDate Setter
 // 查询时间段结束
-func (r *TaobaoxhoteldataservicehotelserviceindexAPIRequest) SetReportEndDate(_reportEndDate string) error {
+func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetReportEndDate(_reportEndDate string) error {
 	r._reportEndDate = _reportEndDate
 	r.Set("report_end_date", _reportEndDate)
 	return nil
 }
 
 // GetReportEndDate ReportEndDate Getter
-func (r TaobaoxhoteldataservicehotelserviceindexAPIRequest) GetReportEndDate() string {
+func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetReportEndDate() string {
 	return r._reportEndDate
 }
 
 // SetReportStartDate is ReportStartDate Setter
 // 查询时间段开始
-func (r *TaobaoxhoteldataservicehotelserviceindexAPIRequest) SetReportStartDate(_reportStartDate string) error {
+func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetReportStartDate(_reportStartDate string) error {
 	r._reportStartDate = _reportStartDate
 	r.Set("report_start_date", _reportStartDate)
 	return nil
 }
 
 // GetReportStartDate ReportStartDate Getter
-func (r TaobaoxhoteldataservicehotelserviceindexAPIRequest) GetReportStartDate() string {
+func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetReportStartDate() string {
 	return r._reportStartDate
 }
 
 // SetSupplier is Supplier Setter
 // 供应商名称
-func (r *TaobaoxhoteldataservicehotelserviceindexAPIRequest) SetSupplier(_supplier string) error {
+func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetSupplier(_supplier string) error {
 	r._supplier = _supplier
 	r.Set("supplier", _supplier)
 	return nil
 }
 
 // GetSupplier Supplier Getter
-func (r TaobaoxhoteldataservicehotelserviceindexAPIRequest) GetSupplier() string {
+func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetSupplier() string {
 	return r._supplier
 }
 
 // SetHid is Hid Setter
 // 酒店id
-func (r *TaobaoxhoteldataservicehotelserviceindexAPIRequest) SetHid(_hid int64) error {
+func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetHid(_hid int64) error {
 	r._hid = _hid
 	r.Set("hid", _hid)
 	return nil
 }
 
 // GetHid Hid Getter
-func (r TaobaoxhoteldataservicehotelserviceindexAPIRequest) GetHid() int64 {
+func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetHid() int64 {
 	return r._hid
 }
 
 // SetStartRow is StartRow Setter
 // 1
-func (r *TaobaoxhoteldataservicehotelserviceindexAPIRequest) SetStartRow(_startRow int64) error {
+func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetStartRow(_startRow int64) error {
 	r._startRow = _startRow
 	r.Set("start_row", _startRow)
 	return nil
 }
 
 // GetStartRow StartRow Getter
-func (r TaobaoxhoteldataservicehotelserviceindexAPIRequest) GetStartRow() int64 {
+func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetStartRow() int64 {
 	return r._startRow
 }
 
 // SetPageSize is PageSize Setter
 // 10
-func (r *TaobaoxhoteldataservicehotelserviceindexAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r TaobaoxhoteldataservicehotelserviceindexAPIRequest) GetPageSize() int64 {
+func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

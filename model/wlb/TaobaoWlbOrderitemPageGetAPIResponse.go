@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlborderitempagegetAPIResponse 分页查询物流宝订单商品详情 API返回值
+// TaobaoWlbOrderitemPageGetAPIResponse 分页查询物流宝订单商品详情 API返回值
 // taobao.wlb.orderitem.page.get
 //
 // 分页查询物流宝订单商品详情
-type TaobaowlborderitempagegetAPIResponse struct {
+type TaobaoWlbOrderitemPageGetAPIResponse struct {
 	model.CommonResponse
-	TaobaowlborderitempagegetAPIResponseModel
+	TaobaoWlbOrderitemPageGetAPIResponseModel
 }
 
-// TaobaowlborderitempagegetAPIResponseModel is 分页查询物流宝订单商品详情 成功返回结果
-type TaobaowlborderitempagegetAPIResponseModel struct {
+// TaobaoWlbOrderitemPageGetAPIResponseModel is 分页查询物流宝订单商品详情 成功返回结果
+type TaobaoWlbOrderitemPageGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_orderitem_page_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

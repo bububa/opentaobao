@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tanx"
 )
 
-// Taobaotanxcreativeget 获取单个审核创意状态
+// TaobaoTanxCreativeGet 获取单个审核创意状态
 // taobao.tanx.creative.get
 //
 // 获取单个审核创意状态
-func Taobaotanxcreativeget(clt *core.SDKClient, req *tanx.TaobaotanxcreativegetAPIRequest, session string) (*tanx.TaobaotanxcreativegetAPIResponse, error) {
-	var resp tanx.TaobaotanxcreativegetAPIResponse
+func TaobaoTanxCreativeGet(clt *core.SDKClient, req *tanx.TaobaoTanxCreativeGetAPIRequest, session string) (*tanx.TaobaoTanxCreativeGetAPIResponse, error) {
+	var resp tanx.TaobaoTanxCreativeGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoailabaicloudtopmessagesendAPIResponse 发送留言 API返回值
+// TaobaoAilabAicloudTopMessageSendAPIResponse 发送留言 API返回值
 // taobao.ailab.aicloud.top.message.send
 //
 // 供准入的外部用户实现发送留言功能，APP端发送，设备端读取
-type TaobaoailabaicloudtopmessagesendAPIResponse struct {
+type TaobaoAilabAicloudTopMessageSendAPIResponse struct {
 	model.CommonResponse
-	TaobaoailabaicloudtopmessagesendAPIResponseModel
+	TaobaoAilabAicloudTopMessageSendAPIResponseModel
 }
 
-// TaobaoailabaicloudtopmessagesendAPIResponseModel is 发送留言 成功返回结果
-type TaobaoailabaicloudtopmessagesendAPIResponseModel struct {
+// TaobaoAilabAicloudTopMessageSendAPIResponseModel is 发送留言 成功返回结果
+type TaobaoAilabAicloudTopMessageSendAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_message_send_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

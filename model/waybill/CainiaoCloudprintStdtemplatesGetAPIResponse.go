@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaocloudprintstdtemplatesgetAPIResponse 获取所有的菜鸟标准电子面单模板 API返回值
+// CainiaoCloudprintStdtemplatesGetAPIResponse 获取所有的菜鸟标准电子面单模板 API返回值
 // cainiao.cloudprint.stdtemplates.get
 //
 // 获取菜鸟标准电子面单模板
-type CainiaocloudprintstdtemplatesgetAPIResponse struct {
+type CainiaoCloudprintStdtemplatesGetAPIResponse struct {
 	model.CommonResponse
-	CainiaocloudprintstdtemplatesgetAPIResponseModel
+	CainiaoCloudprintStdtemplatesGetAPIResponseModel
 }
 
-// CainiaocloudprintstdtemplatesgetAPIResponseModel is 获取所有的菜鸟标准电子面单模板 成功返回结果
-type CainiaocloudprintstdtemplatesgetAPIResponseModel struct {
+// CainiaoCloudprintStdtemplatesGetAPIResponseModel is 获取所有的菜鸟标准电子面单模板 成功返回结果
+type CainiaoCloudprintStdtemplatesGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_cloudprint_stdtemplates_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

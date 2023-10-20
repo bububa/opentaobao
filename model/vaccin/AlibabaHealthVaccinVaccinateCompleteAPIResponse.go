@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabahealthvaccinvaccinatecompleteAPIResponse 接种完成反馈接口 API返回值
+// AlibabaHealthVaccinVaccinateCompleteAPIResponse 接种完成反馈接口 API返回值
 // alibaba.health.vaccin.vaccinate.complete
 //
 // ISV 将用户完成接种的疫苗同步给免疫规划中心
-type AlibabahealthvaccinvaccinatecompleteAPIResponse struct {
+type AlibabaHealthVaccinVaccinateCompleteAPIResponse struct {
 	model.CommonResponse
-	AlibabahealthvaccinvaccinatecompleteAPIResponseModel
+	AlibabaHealthVaccinVaccinateCompleteAPIResponseModel
 }
 
-// AlibabahealthvaccinvaccinatecompleteAPIResponseModel is 接种完成反馈接口 成功返回结果
-type AlibabahealthvaccinvaccinatecompleteAPIResponseModel struct {
+// AlibabaHealthVaccinVaccinateCompleteAPIResponseModel is 接种完成反馈接口 成功返回结果
+type AlibabaHealthVaccinVaccinateCompleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_health_vaccin_vaccinate_complete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamjocofflinemaxticketnogetAPIResponse pos机获取线下最大小票号 API返回值
+// AlibabaMjOcOfflineMaxticketnoGetAPIResponse pos机获取线下最大小票号 API返回值
 // alibaba.mj.oc.offline.maxticketno.get
 //
 // 给pos机提供线下最大小票号查询
-type AlibabamjocofflinemaxticketnogetAPIResponse struct {
+type AlibabaMjOcOfflineMaxticketnoGetAPIResponse struct {
 	model.CommonResponse
-	AlibabamjocofflinemaxticketnogetAPIResponseModel
+	AlibabaMjOcOfflineMaxticketnoGetAPIResponseModel
 }
 
-// AlibabamjocofflinemaxticketnogetAPIResponseModel is pos机获取线下最大小票号 成功返回结果
-type AlibabamjocofflinemaxticketnogetAPIResponseModel struct {
+// AlibabaMjOcOfflineMaxticketnoGetAPIResponseModel is pos机获取线下最大小票号 成功返回结果
+type AlibabaMjOcOfflineMaxticketnoGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mj_oc_offline_maxticketno_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/eticket"
 )
 
-// Taobaovmarketeticketflowconsume 无交易类凭证核销
+// TaobaoVmarketEticketFlowConsume 无交易类凭证核销
 // taobao.vmarket.eticket.flow.consume
 //
 // 无交易类凭证核销
-func Taobaovmarketeticketflowconsume(clt *core.SDKClient, req *eticket.TaobaovmarketeticketflowconsumeAPIRequest, session string) (*eticket.TaobaovmarketeticketflowconsumeAPIResponse, error) {
-	var resp eticket.TaobaovmarketeticketflowconsumeAPIResponse
+func TaobaoVmarketEticketFlowConsume(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketFlowConsumeAPIRequest, session string) (*eticket.TaobaoVmarketEticketFlowConsumeAPIResponse, error) {
+	var resp eticket.TaobaoVmarketEticketFlowConsumeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

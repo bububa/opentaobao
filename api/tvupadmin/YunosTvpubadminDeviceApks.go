@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-// Yunostvpubadmindeviceapks 获取停开服apk列表
+// YunosTvpubadminDeviceApks 获取停开服apk列表
 // yunos.tvpubadmin.device.apks
 //
 // 获取停开服apk列表
-func Yunostvpubadmindeviceapks(clt *core.SDKClient, req *tvupadmin.YunostvpubadmindeviceapksAPIRequest, session string) (*tvupadmin.YunostvpubadmindeviceapksAPIResponse, error) {
-	var resp tvupadmin.YunostvpubadmindeviceapksAPIResponse
+func YunosTvpubadminDeviceApks(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceApksAPIRequest, session string) (*tvupadmin.YunosTvpubadminDeviceApksAPIResponse, error) {
+	var resp tvupadmin.YunosTvpubadminDeviceApksAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

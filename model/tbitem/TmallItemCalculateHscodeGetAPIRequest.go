@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallitemcalculatehscodegetAPIRequest 算法获取hscode API请求
+// TmallItemCalculateHscodeGetAPIRequest 算法获取hscode API请求
 // tmall.item.calculate.hscode.get
 //
 // 算法获取hscode
-type TmallitemcalculatehscodegetAPIRequest struct {
+type TmallItemCalculateHscodeGetAPIRequest struct {
 	model.Params
 	// 商品id
 	_itemId int64
 }
 
-// NewTmallitemcalculatehscodegetRequest 初始化TmallitemcalculatehscodegetAPIRequest对象
-func NewTmallitemcalculatehscodegetRequest() *TmallitemcalculatehscodegetAPIRequest {
-	return &TmallitemcalculatehscodegetAPIRequest{
+// NewTmallItemCalculateHscodeGetRequest 初始化TmallItemCalculateHscodeGetAPIRequest对象
+func NewTmallItemCalculateHscodeGetRequest() *TmallItemCalculateHscodeGetAPIRequest {
+	return &TmallItemCalculateHscodeGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallitemcalculatehscodegetAPIRequest) GetApiMethodName() string {
+func (r TmallItemCalculateHscodeGetAPIRequest) GetApiMethodName() string {
 	return "tmall.item.calculate.hscode.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallitemcalculatehscodegetAPIRequest) GetApiParams(params url.Values) {
+func (r TmallItemCalculateHscodeGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallitemcalculatehscodegetAPIRequest) GetRawParams() model.Params {
+func (r TmallItemCalculateHscodeGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetItemId is ItemId Setter
 // 商品id
-func (r *TmallitemcalculatehscodegetAPIRequest) SetItemId(_itemId int64) error {
+func (r *TmallItemCalculateHscodeGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
 	r.Set("item_id", _itemId)
 	return nil
 }
 
 // GetItemId ItemId Getter
-func (r TmallitemcalculatehscodegetAPIRequest) GetItemId() int64 {
+func (r TmallItemCalculateHscodeGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

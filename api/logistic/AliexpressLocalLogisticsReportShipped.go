@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-// Aliexpresslocallogisticsreportshipped report as shipped
+// AliexpressLocalLogisticsReportShipped report as shipped
 // aliexpress.local.logistics.report.shipped
 //
 // report as shipped
-func Aliexpresslocallogisticsreportshipped(clt *core.SDKClient, req *logistic.AliexpresslocallogisticsreportshippedAPIRequest, session string) (*logistic.AliexpresslocallogisticsreportshippedAPIResponse, error) {
-	var resp logistic.AliexpresslocallogisticsreportshippedAPIResponse
+func AliexpressLocalLogisticsReportShipped(clt *core.SDKClient, req *logistic.AliexpressLocalLogisticsReportShippedAPIRequest, session string) (*logistic.AliexpressLocalLogisticsReportShippedAPIResponse, error) {
+	var resp logistic.AliexpressLocalLogisticsReportShippedAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

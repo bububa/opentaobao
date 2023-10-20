@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallnrtstallsynchronizeAPIResponse 摊位信息同步 API返回值
+// TmallNrtStallSynchronizeAPIResponse 摊位信息同步 API返回值
 // tmall.nrt.stall.synchronize
 //
 // 摊位信息同步
-type TmallnrtstallsynchronizeAPIResponse struct {
+type TmallNrtStallSynchronizeAPIResponse struct {
 	model.CommonResponse
-	TmallnrtstallsynchronizeAPIResponseModel
+	TmallNrtStallSynchronizeAPIResponseModel
 }
 
-// TmallnrtstallsynchronizeAPIResponseModel is 摊位信息同步 成功返回结果
-type TmallnrtstallsynchronizeAPIResponseModel struct {
+// TmallNrtStallSynchronizeAPIResponseModel is 摊位信息同步 成功返回结果
+type TmallNrtStallSynchronizeAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_nrt_stall_synchronize_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cainiaolocker"
 )
 
-// Cainiaoendpointlockertopordernoticesendquery 查询订单是否由裹裹发送消息
+// CainiaoEndpointLockerTopOrderNoticesendQuery 查询订单是否由裹裹发送消息
 // cainiao.endpoint.locker.top.order.noticesend.query
 //
 // 合作公司查询消息发送的接口，判断是否裹裹发送消息
-func Cainiaoendpointlockertopordernoticesendquery(clt *core.SDKClient, req *cainiaolocker.CainiaoendpointlockertopordernoticesendqueryAPIRequest, session string) (*cainiaolocker.CainiaoendpointlockertopordernoticesendqueryAPIResponse, error) {
-	var resp cainiaolocker.CainiaoendpointlockertopordernoticesendqueryAPIResponse
+func CainiaoEndpointLockerTopOrderNoticesendQuery(clt *core.SDKClient, req *cainiaolocker.CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest, session string) (*cainiaolocker.CainiaoEndpointLockerTopOrderNoticesendQueryAPIResponse, error) {
+	var resp cainiaolocker.CainiaoEndpointLockerTopOrderNoticesendQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

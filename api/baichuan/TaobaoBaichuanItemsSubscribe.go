@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/baichuan"
 )
 
-// Taobaobaichuanitemssubscribe 百川批量商品订阅
+// TaobaoBaichuanItemsSubscribe 百川批量商品订阅
 // taobao.baichuan.items.subscribe
 //
 // 百川批量添加订阅的商品
-func Taobaobaichuanitemssubscribe(clt *core.SDKClient, req *baichuan.TaobaobaichuanitemssubscribeAPIRequest, session string) (*baichuan.TaobaobaichuanitemssubscribeAPIResponse, error) {
-	var resp baichuan.TaobaobaichuanitemssubscribeAPIResponse
+func TaobaoBaichuanItemsSubscribe(clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemsSubscribeAPIRequest, session string) (*baichuan.TaobaoBaichuanItemsSubscribeAPIResponse, error) {
+	var resp baichuan.TaobaoBaichuanItemsSubscribeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

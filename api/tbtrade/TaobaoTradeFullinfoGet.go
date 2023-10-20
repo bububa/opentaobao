@@ -5,7 +5,7 @@ import (
 	"github.com/bububa/opentaobao/model/tbtrade"
 )
 
-// Taobaotradefullinfoget 获取单笔交易的详细信息
+// TaobaoTradeFullinfoGet 获取单笔交易的详细信息
 // taobao.trade.fullinfo.get
 //
 // 获取单笔交易的详细信息
@@ -14,8 +14,8 @@ import (
 // &lt;br/&gt;3. 获取红包金额使用字段：tmall_coupon_fee（天猫商家订单使用的红包金额）
 // &lt;br/&gt;4. 请按需获取字段，减少TOP系统的压力
 // &lt;br/&gt;&lt;strong&gt;&lt;a href=&#34;https://console.open.taobao.com/dingWeb.htm?from=tradeapi&#34; target=&#34;_blank&#34;&gt;点击查看更多交易API说明&lt;/a&gt;&lt;/strong&gt;
-func Taobaotradefullinfoget(clt *core.SDKClient, req *tbtrade.TaobaotradefullinfogetAPIRequest, session string) (*tbtrade.TaobaotradefullinfogetAPIResponse, error) {
-	var resp tbtrade.TaobaotradefullinfogetAPIResponse
+func TaobaoTradeFullinfoGet(clt *core.SDKClient, req *tbtrade.TaobaoTradeFullinfoGetAPIRequest, session string) (*tbtrade.TaobaoTradeFullinfoGetAPIResponse, error) {
+	var resp tbtrade.TaobaoTradeFullinfoGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

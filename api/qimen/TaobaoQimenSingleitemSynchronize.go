@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/qimen"
 )
 
-// Taobaoqimensingleitemsynchronize 商品同步接口
+// TaobaoQimenSingleitemSynchronize 商品同步接口
 // taobao.qimen.singleitem.synchronize
 //
 // taobao.qimen.singleitem.synchronize
-func Taobaoqimensingleitemsynchronize(clt *core.SDKClient, req *qimen.TaobaoqimensingleitemsynchronizeAPIRequest, session string) (*qimen.TaobaoqimensingleitemsynchronizeAPIResponse, error) {
-	var resp qimen.TaobaoqimensingleitemsynchronizeAPIResponse
+func TaobaoQimenSingleitemSynchronize(clt *core.SDKClient, req *qimen.TaobaoQimenSingleitemSynchronizeAPIRequest, session string) (*qimen.TaobaoQimenSingleitemSynchronizeAPIResponse, error) {
+	var resp qimen.TaobaoQimenSingleitemSynchronizeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

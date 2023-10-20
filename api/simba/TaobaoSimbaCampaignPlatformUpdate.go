@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// Taobaosimbacampaignplatformupdate 更新一个推广计划的平台设置
+// TaobaoSimbaCampaignPlatformUpdate 更新一个推广计划的平台设置
 // taobao.simba.campaign.platform.update
 //
 // 更新一个推广计划的平台设置
-func Taobaosimbacampaignplatformupdate(clt *core.SDKClient, req *simba.TaobaosimbacampaignplatformupdateAPIRequest, session string) (*simba.TaobaosimbacampaignplatformupdateAPIResponse, error) {
-	var resp simba.TaobaosimbacampaignplatformupdateAPIResponse
+func TaobaoSimbaCampaignPlatformUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignPlatformUpdateAPIRequest, session string) (*simba.TaobaoSimbaCampaignPlatformUpdateAPIResponse, error) {
+	var resp simba.TaobaoSimbaCampaignPlatformUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

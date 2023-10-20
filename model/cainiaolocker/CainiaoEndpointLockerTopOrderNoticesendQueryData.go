@@ -1,7 +1,7 @@
 package cainiaolocker
 
-// CainiaoendpointlockertopordernoticesendqueryData 结构体
-type CainiaoendpointlockertopordernoticesendqueryData struct {
+// CainiaoEndpointLockerTopOrderNoticesendQueryData 结构体
+type CainiaoEndpointLockerTopOrderNoticesendQueryData struct {
 	// 用于返回淘系包裹脱密手机号用作数据核对
 	GetterPhone string `json:"getter_phone,omitempty" xml:"getter_phone,omitempty"`
 	// 快递公司名称

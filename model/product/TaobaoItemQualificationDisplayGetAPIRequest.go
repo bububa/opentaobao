@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoitemqualificationdisplaygetAPIRequest 资质采集配置异步获取接口 API请求
+// TaobaoItemQualificationDisplayGetAPIRequest 资质采集配置异步获取接口 API请求
 // taobao.item.qualification.display.get
 //
 // 根据类目，商品，属性等参与动态获得资质采集配置
-type TaobaoitemqualificationdisplaygetAPIRequest struct {
+type TaobaoItemQualificationDisplayGetAPIRequest struct {
 	model.Params
 	// 参数列表，为key和value都是string的map的转化的json格式
 	_param string
@@ -20,65 +20,65 @@ type TaobaoitemqualificationdisplaygetAPIRequest struct {
 	_categoryId int64
 }
 
-// NewTaobaoitemqualificationdisplaygetRequest 初始化TaobaoitemqualificationdisplaygetAPIRequest对象
-func NewTaobaoitemqualificationdisplaygetRequest() *TaobaoitemqualificationdisplaygetAPIRequest {
-	return &TaobaoitemqualificationdisplaygetAPIRequest{
+// NewTaobaoItemQualificationDisplayGetRequest 初始化TaobaoItemQualificationDisplayGetAPIRequest对象
+func NewTaobaoItemQualificationDisplayGetRequest() *TaobaoItemQualificationDisplayGetAPIRequest {
+	return &TaobaoItemQualificationDisplayGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoitemqualificationdisplaygetAPIRequest) GetApiMethodName() string {
+func (r TaobaoItemQualificationDisplayGetAPIRequest) GetApiMethodName() string {
 	return "taobao.item.qualification.display.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoitemqualificationdisplaygetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoItemQualificationDisplayGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoitemqualificationdisplaygetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoItemQualificationDisplayGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 参数列表，为key和value都是string的map的转化的json格式
-func (r *TaobaoitemqualificationdisplaygetAPIRequest) SetParam(_param string) error {
+func (r *TaobaoItemQualificationDisplayGetAPIRequest) SetParam(_param string) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r TaobaoitemqualificationdisplaygetAPIRequest) GetParam() string {
+func (r TaobaoItemQualificationDisplayGetAPIRequest) GetParam() string {
 	return r._param
 }
 
 // SetItemId is ItemId Setter
 // 商品id
-func (r *TaobaoitemqualificationdisplaygetAPIRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoItemQualificationDisplayGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
 	r.Set("item_id", _itemId)
 	return nil
 }
 
 // GetItemId ItemId Getter
-func (r TaobaoitemqualificationdisplaygetAPIRequest) GetItemId() int64 {
+func (r TaobaoItemQualificationDisplayGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
 // SetCategoryId is CategoryId Setter
 // 类目id
-func (r *TaobaoitemqualificationdisplaygetAPIRequest) SetCategoryId(_categoryId int64) error {
+func (r *TaobaoItemQualificationDisplayGetAPIRequest) SetCategoryId(_categoryId int64) error {
 	r._categoryId = _categoryId
 	r.Set("category_id", _categoryId)
 	return nil
 }
 
 // GetCategoryId CategoryId Getter
-func (r TaobaoitemqualificationdisplaygetAPIRequest) GetCategoryId() int64 {
+func (r TaobaoItemQualificationDisplayGetAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalsccrmopenpointoperateAPIResponse 积分操作接口 API返回值
+// AlibabaAlscCrmOpenPointOperateAPIResponse 积分操作接口 API返回值
 // alibaba.alsc.crm.open.point.operate
 //
 // 同步积分接口
-type AlibabaalsccrmopenpointoperateAPIResponse struct {
+type AlibabaAlscCrmOpenPointOperateAPIResponse struct {
 	model.CommonResponse
-	AlibabaalsccrmopenpointoperateAPIResponseModel
+	AlibabaAlscCrmOpenPointOperateAPIResponseModel
 }
 
-// AlibabaalsccrmopenpointoperateAPIResponseModel is 积分操作接口 成功返回结果
-type AlibabaalsccrmopenpointoperateAPIResponseModel struct {
+// AlibabaAlscCrmOpenPointOperateAPIResponseModel is 积分操作接口 成功返回结果
+type AlibabaAlscCrmOpenPointOperateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_open_point_operate_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaorecycleorderfulfillsyncAPIResponse 同步回收单最终履约方式 API返回值
+// TaobaoRecycleOrderFulfillSyncAPIResponse 同步回收单最终履约方式 API返回值
 // taobao.recycle.order.fulfill.sync
 //
 // 同步回收单最终履约方式
-type TaobaorecycleorderfulfillsyncAPIResponse struct {
+type TaobaoRecycleOrderFulfillSyncAPIResponse struct {
 	model.CommonResponse
-	TaobaorecycleorderfulfillsyncAPIResponseModel
+	TaobaoRecycleOrderFulfillSyncAPIResponseModel
 }
 
-// TaobaorecycleorderfulfillsyncAPIResponseModel is 同步回收单最终履约方式 成功返回结果
-type TaobaorecycleorderfulfillsyncAPIResponseModel struct {
+// TaobaoRecycleOrderFulfillSyncAPIResponseModel is 同步回收单最终履约方式 成功返回结果
+type TaobaoRecycleOrderFulfillSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"recycle_order_fulfill_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

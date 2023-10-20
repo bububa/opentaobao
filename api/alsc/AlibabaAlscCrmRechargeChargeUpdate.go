@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// Alibabaalsccrmrechargechargeupdate 储值充值
+// AlibabaAlscCrmRechargeChargeUpdate 储值充值
 // alibaba.alsc.crm.recharge.charge.update
 //
 // 顾客储值账户充值
-func Alibabaalsccrmrechargechargeupdate(clt *core.SDKClient, req *alsc.AlibabaalsccrmrechargechargeupdateAPIRequest, session string) (*alsc.AlibabaalsccrmrechargechargeupdateAPIResponse, error) {
-	var resp alsc.AlibabaalsccrmrechargechargeupdateAPIResponse
+func AlibabaAlscCrmRechargeChargeUpdate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRechargeChargeUpdateAPIRequest, session string) (*alsc.AlibabaAlscCrmRechargeChargeUpdateAPIResponse, error) {
+	var resp alsc.AlibabaAlscCrmRechargeChargeUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/iot"
 )
 
-// Alibabaailabsaligeniealbumssearch 查询专辑
+// AlibabaAilabsAligenieAlbumsSearch 查询专辑
 // alibaba.ailabs.aligenie.albums.search
 //
 // 搜索类目下的专辑信息
-func Alibabaailabsaligeniealbumssearch(clt *core.SDKClient, req *iot.AlibabaailabsaligeniealbumssearchAPIRequest, session string) (*iot.AlibabaailabsaligeniealbumssearchAPIResponse, error) {
-	var resp iot.AlibabaailabsaligeniealbumssearchAPIResponse
+func AlibabaAilabsAligenieAlbumsSearch(clt *core.SDKClient, req *iot.AlibabaAilabsAligenieAlbumsSearchAPIRequest, session string) (*iot.AlibabaAilabsAligenieAlbumsSearchAPIResponse, error) {
+	var resp iot.AlibabaAilabsAligenieAlbumsSearchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

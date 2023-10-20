@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabainteractsensorclipbroadAPIResponse Weex页面设置或读取剪切板 API返回值
+// AlibabaInteractSensorClipbroadAPIResponse Weex页面设置或读取剪切板 API返回值
 // alibaba.interact.sensor.clipbroad
 //
 // Weex页面设置或读取剪切板
-type AlibabainteractsensorclipbroadAPIResponse struct {
+type AlibabaInteractSensorClipbroadAPIResponse struct {
 	model.CommonResponse
-	AlibabainteractsensorclipbroadAPIResponseModel
+	AlibabaInteractSensorClipbroadAPIResponseModel
 }
 
-// AlibabainteractsensorclipbroadAPIResponseModel is Weex页面设置或读取剪切板 成功返回结果
-type AlibabainteractsensorclipbroadAPIResponseModel struct {
+// AlibabaInteractSensorClipbroadAPIResponseModel is Weex页面设置或读取剪切板 成功返回结果
+type AlibabaInteractSensorClipbroadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_sensor_clipbroad_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

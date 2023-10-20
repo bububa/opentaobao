@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallitemsetscombineseditAPIResponse 普通商品转套装商品&套装商品编辑接口 API返回值
+// TmallItemSetscombinesEditAPIResponse 普通商品转套装商品&套装商品编辑接口 API返回值
 // tmall.item.setscombines.edit
 //
 // 普通商品转套装商品&amp;套装商品编辑接口
-type TmallitemsetscombineseditAPIResponse struct {
+type TmallItemSetscombinesEditAPIResponse struct {
 	model.CommonResponse
-	TmallitemsetscombineseditAPIResponseModel
+	TmallItemSetscombinesEditAPIResponseModel
 }
 
-// TmallitemsetscombineseditAPIResponseModel is 普通商品转套装商品&套装商品编辑接口 成功返回结果
-type TmallitemsetscombineseditAPIResponseModel struct {
+// TmallItemSetscombinesEditAPIResponseModel is 普通商品转套装商品&套装商品编辑接口 成功返回结果
+type TmallItemSetscombinesEditAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_item_setscombines_edit_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

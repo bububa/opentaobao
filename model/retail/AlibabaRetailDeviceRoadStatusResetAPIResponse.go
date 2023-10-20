@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaretaildeviceroadstatusresetAPIResponse 贩卖机货道解锁 API返回值
+// AlibabaRetailDeviceRoadStatusResetAPIResponse 贩卖机货道解锁 API返回值
 // alibaba.retail.device.road.status.reset
 //
 // 贩卖机货道解锁
-type AlibabaretaildeviceroadstatusresetAPIResponse struct {
+type AlibabaRetailDeviceRoadStatusResetAPIResponse struct {
 	model.CommonResponse
-	AlibabaretaildeviceroadstatusresetAPIResponseModel
+	AlibabaRetailDeviceRoadStatusResetAPIResponseModel
 }
 
-// AlibabaretaildeviceroadstatusresetAPIResponseModel is 贩卖机货道解锁 成功返回结果
-type AlibabaretaildeviceroadstatusresetAPIResponseModel struct {
+// AlibabaRetailDeviceRoadStatusResetAPIResponseModel is 贩卖机货道解锁 成功返回结果
+type AlibabaRetailDeviceRoadStatusResetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_retail_device_road_status_reset_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

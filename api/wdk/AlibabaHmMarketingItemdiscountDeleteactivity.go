@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabahmmarketingitemdiscountdeleteactivity 删除商品特价活动
+// AlibabaHmMarketingItemdiscountDeleteactivity 删除商品特价活动
 // alibaba.hm.marketing.itemdiscount.deleteactivity
 //
 // 删除商品特价活动
-func Alibabahmmarketingitemdiscountdeleteactivity(clt *core.SDKClient, req *wdk.AlibabahmmarketingitemdiscountdeleteactivityAPIRequest, session string) (*wdk.AlibabahmmarketingitemdiscountdeleteactivityAPIResponse, error) {
-	var resp wdk.AlibabahmmarketingitemdiscountdeleteactivityAPIResponse
+func AlibabaHmMarketingItemdiscountDeleteactivity(clt *core.SDKClient, req *wdk.AlibabaHmMarketingItemdiscountDeleteactivityAPIRequest, session string) (*wdk.AlibabaHmMarketingItemdiscountDeleteactivityAPIResponse, error) {
+	var resp wdk.AlibabaHmMarketingItemdiscountDeleteactivityAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

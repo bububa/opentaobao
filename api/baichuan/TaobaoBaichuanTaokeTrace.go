@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/baichuan"
 )
 
-// Taobaobaichuantaoketrace 百川淘客打点
+// TaobaoBaichuanTaokeTrace 百川淘客打点
 // taobao.baichuan.taoke.trace
 //
 // 百川淘客打点
-func Taobaobaichuantaoketrace(clt *core.SDKClient, req *baichuan.TaobaobaichuantaoketraceAPIRequest, session string) (*baichuan.TaobaobaichuantaoketraceAPIResponse, error) {
-	var resp baichuan.TaobaobaichuantaoketraceAPIResponse
+func TaobaoBaichuanTaokeTrace(clt *core.SDKClient, req *baichuan.TaobaoBaichuanTaokeTraceAPIRequest, session string) (*baichuan.TaobaoBaichuanTaokeTraceAPIResponse, error) {
+	var resp baichuan.TaobaoBaichuanTaokeTraceAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

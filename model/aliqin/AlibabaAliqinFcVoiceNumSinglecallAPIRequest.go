@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaliqinfcvoicenumsinglecallAPIRequest 语音通知 API请求
+// AlibabaAliqinFcVoiceNumSinglecallAPIRequest 语音通知 API请求
 // alibaba.aliqin.fc.voice.num.singlecall
 //
 // 向指定手机号码发起单向呼叫，播放指定的语音文件内容。使用前需要在阿里大于管理中心添加去电显示号码与语音文件。
-type AlibabaaliqinfcvoicenumsinglecallAPIRequest struct {
+type AlibabaAliqinFcVoiceNumSinglecallAPIRequest struct {
 	model.Params
 	// 被叫号码，支持国内手机号与固话号码,格式如下057188773344,13911112222,4001112222,95500
 	_calledNum string
@@ -22,78 +22,78 @@ type AlibabaaliqinfcvoicenumsinglecallAPIRequest struct {
 	_extend string
 }
 
-// NewAlibabaaliqinfcvoicenumsinglecallRequest 初始化AlibabaaliqinfcvoicenumsinglecallAPIRequest对象
-func NewAlibabaaliqinfcvoicenumsinglecallRequest() *AlibabaaliqinfcvoicenumsinglecallAPIRequest {
-	return &AlibabaaliqinfcvoicenumsinglecallAPIRequest{
+// NewAlibabaAliqinFcVoiceNumSinglecallRequest 初始化AlibabaAliqinFcVoiceNumSinglecallAPIRequest对象
+func NewAlibabaAliqinFcVoiceNumSinglecallRequest() *AlibabaAliqinFcVoiceNumSinglecallAPIRequest {
+	return &AlibabaAliqinFcVoiceNumSinglecallAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaaliqinfcvoicenumsinglecallAPIRequest) GetApiMethodName() string {
+func (r AlibabaAliqinFcVoiceNumSinglecallAPIRequest) GetApiMethodName() string {
 	return "alibaba.aliqin.fc.voice.num.singlecall"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaaliqinfcvoicenumsinglecallAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAliqinFcVoiceNumSinglecallAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaaliqinfcvoicenumsinglecallAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAliqinFcVoiceNumSinglecallAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCalledNum is CalledNum Setter
 // 被叫号码，支持国内手机号与固话号码,格式如下057188773344,13911112222,4001112222,95500
-func (r *AlibabaaliqinfcvoicenumsinglecallAPIRequest) SetCalledNum(_calledNum string) error {
+func (r *AlibabaAliqinFcVoiceNumSinglecallAPIRequest) SetCalledNum(_calledNum string) error {
 	r._calledNum = _calledNum
 	r.Set("called_num", _calledNum)
 	return nil
 }
 
 // GetCalledNum CalledNum Getter
-func (r AlibabaaliqinfcvoicenumsinglecallAPIRequest) GetCalledNum() string {
+func (r AlibabaAliqinFcVoiceNumSinglecallAPIRequest) GetCalledNum() string {
 	return r._calledNum
 }
 
 // SetCalledShowNum is CalledShowNum Setter
 // 被叫号显，传入的显示号码必须是阿里大于“管理中心-号码管理”中申请通过的号码
-func (r *AlibabaaliqinfcvoicenumsinglecallAPIRequest) SetCalledShowNum(_calledShowNum string) error {
+func (r *AlibabaAliqinFcVoiceNumSinglecallAPIRequest) SetCalledShowNum(_calledShowNum string) error {
 	r._calledShowNum = _calledShowNum
 	r.Set("called_show_num", _calledShowNum)
 	return nil
 }
 
 // GetCalledShowNum CalledShowNum Getter
-func (r AlibabaaliqinfcvoicenumsinglecallAPIRequest) GetCalledShowNum() string {
+func (r AlibabaAliqinFcVoiceNumSinglecallAPIRequest) GetCalledShowNum() string {
 	return r._calledShowNum
 }
 
 // SetVoiceCode is VoiceCode Setter
 // 语音文件ID，传入的语音文件必须是在阿里大于“管理中心-语音文件管理”中的可用语音文件
-func (r *AlibabaaliqinfcvoicenumsinglecallAPIRequest) SetVoiceCode(_voiceCode string) error {
+func (r *AlibabaAliqinFcVoiceNumSinglecallAPIRequest) SetVoiceCode(_voiceCode string) error {
 	r._voiceCode = _voiceCode
 	r.Set("voice_code", _voiceCode)
 	return nil
 }
 
 // GetVoiceCode VoiceCode Getter
-func (r AlibabaaliqinfcvoicenumsinglecallAPIRequest) GetVoiceCode() string {
+func (r AlibabaAliqinFcVoiceNumSinglecallAPIRequest) GetVoiceCode() string {
 	return r._voiceCode
 }
 
 // SetExtend is Extend Setter
 // 公共回传参数，在“消息返回”中会透传回该参数；举例：用户可以传入自己下级的会员ID，在消息返回时，该会员ID会包含在内，用户可以根据该会员ID识别是哪位会员使用了你的应用
-func (r *AlibabaaliqinfcvoicenumsinglecallAPIRequest) SetExtend(_extend string) error {
+func (r *AlibabaAliqinFcVoiceNumSinglecallAPIRequest) SetExtend(_extend string) error {
 	r._extend = _extend
 	r.Set("extend", _extend)
 	return nil
 }
 
 // GetExtend Extend Getter
-func (r AlibabaaliqinfcvoicenumsinglecallAPIRequest) GetExtend() string {
+func (r AlibabaAliqinFcVoiceNumSinglecallAPIRequest) GetExtend() string {
 	return r._extend
 }

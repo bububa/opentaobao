@@ -1,7 +1,7 @@
 package lstvending
 
-// AlibabalstvendingequipmentqueryResultDto 结构体
-type AlibabalstvendingequipmentqueryResultDto struct {
+// AlibabaLstVendingEquipmentQueryResultDto 结构体
+type AlibabaLstVendingEquipmentQueryResultDto struct {
 	// 设备信息列表
 	ModuleList []OpenEquipmentDto `json:"module_list,omitempty" xml:"module_list>open_equipment_dto,omitempty"`
 	// 错误信息

@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallservicecenterworkcardassignworkerResult 结构体
-type TmallservicecenterworkcardassignworkerResult struct {
+// TmallServicecenterWorkcardAssignworkerResult 结构体
+type TmallServicecenterWorkcardAssignworkerResult struct {
 	// 用于对外展示的信息
 	DisplayMsg string `json:"display_msg,omitempty" xml:"display_msg,omitempty"`
 	// 消息代码

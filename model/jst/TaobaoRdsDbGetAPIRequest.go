@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaordsdbgetAPIRequest 查询rds下的数据库 API请求
+// TaobaoRdsDbGetAPIRequest 查询rds下的数据库 API请求
 // taobao.rds.db.get
 //
 // 查询rds实例下的数据库
-type TaobaordsdbgetAPIRequest struct {
+type TaobaoRdsDbGetAPIRequest struct {
 	model.Params
 	// rds的实例名
 	_instanceName string
@@ -18,52 +18,52 @@ type TaobaordsdbgetAPIRequest struct {
 	_dbStatus int64
 }
 
-// NewTaobaordsdbgetRequest 初始化TaobaordsdbgetAPIRequest对象
-func NewTaobaordsdbgetRequest() *TaobaordsdbgetAPIRequest {
-	return &TaobaordsdbgetAPIRequest{
+// NewTaobaoRdsDbGetRequest 初始化TaobaoRdsDbGetAPIRequest对象
+func NewTaobaoRdsDbGetRequest() *TaobaoRdsDbGetAPIRequest {
+	return &TaobaoRdsDbGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaordsdbgetAPIRequest) GetApiMethodName() string {
+func (r TaobaoRdsDbGetAPIRequest) GetApiMethodName() string {
 	return "taobao.rds.db.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaordsdbgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoRdsDbGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaordsdbgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoRdsDbGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetInstanceName is InstanceName Setter
 // rds的实例名
-func (r *TaobaordsdbgetAPIRequest) SetInstanceName(_instanceName string) error {
+func (r *TaobaoRdsDbGetAPIRequest) SetInstanceName(_instanceName string) error {
 	r._instanceName = _instanceName
 	r.Set("instance_name", _instanceName)
 	return nil
 }
 
 // GetInstanceName InstanceName Getter
-func (r TaobaordsdbgetAPIRequest) GetInstanceName() string {
+func (r TaobaoRdsDbGetAPIRequest) GetInstanceName() string {
 	return r._instanceName
 }
 
 // SetDbStatus is DbStatus Setter
 // 数据库状态，默认值1
-func (r *TaobaordsdbgetAPIRequest) SetDbStatus(_dbStatus int64) error {
+func (r *TaobaoRdsDbGetAPIRequest) SetDbStatus(_dbStatus int64) error {
 	r._dbStatus = _dbStatus
 	r.Set("db_status", _dbStatus)
 	return nil
 }
 
 // GetDbStatus DbStatus Getter
-func (r TaobaordsdbgetAPIRequest) GetDbStatus() int64 {
+func (r TaobaoRdsDbGetAPIRequest) GetDbStatus() int64 {
 	return r._dbStatus
 }

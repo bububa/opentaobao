@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/interact"
 )
 
-// Alibabainteractsensorpopwindow popwindow
+// AlibabaInteractSensorPopwindow popwindow
 // alibaba.interact.sensor.popwindow
 //
 // popwindow
-func Alibabainteractsensorpopwindow(clt *core.SDKClient, req *interact.AlibabainteractsensorpopwindowAPIRequest, session string) (*interact.AlibabainteractsensorpopwindowAPIResponse, error) {
-	var resp interact.AlibabainteractsensorpopwindowAPIResponse
+func AlibabaInteractSensorPopwindow(clt *core.SDKClient, req *interact.AlibabaInteractSensorPopwindowAPIRequest, session string) (*interact.AlibabaInteractSensorPopwindowAPIResponse, error) {
+	var resp interact.AlibabaInteractSensorPopwindowAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

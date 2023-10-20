@@ -1,7 +1,7 @@
 package logistic
 
-// TaobaordcaligeniuslogisticspackagesnoticeResult 结构体
-type TaobaordcaligeniuslogisticspackagesnoticeResult struct {
+// TaobaoRdcAligeniusLogisticsPackagesNoticeResult 结构体
+type TaobaoRdcAligeniusLogisticsPackagesNoticeResult struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 异常信息

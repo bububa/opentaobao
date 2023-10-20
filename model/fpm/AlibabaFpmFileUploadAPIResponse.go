@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabafpmfileuploadAPIResponse 结算单文件上传 API返回值
+// AlibabaFpmFileUploadAPIResponse 结算单文件上传 API返回值
 // alibaba.fpm.file.upload
 //
 // 结算单文件上传
-type AlibabafpmfileuploadAPIResponse struct {
+type AlibabaFpmFileUploadAPIResponse struct {
 	model.CommonResponse
-	AlibabafpmfileuploadAPIResponseModel
+	AlibabaFpmFileUploadAPIResponseModel
 }
 
-// AlibabafpmfileuploadAPIResponseModel is 结算单文件上传 成功返回结果
-type AlibabafpmfileuploadAPIResponseModel struct {
+// AlibabaFpmFileUploadAPIResponseModel is 结算单文件上传 成功返回结果
+type AlibabaFpmFileUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_fpm_file_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *AlibabafpmfileuploadResultModel `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaFpmFileUploadResultModel `json:"result,omitempty" xml:"result,omitempty"`
 }

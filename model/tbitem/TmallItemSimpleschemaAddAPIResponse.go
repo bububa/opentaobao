@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallitemsimpleschemaaddAPIResponse 天猫简化发布商品 API返回值
+// TmallItemSimpleschemaAddAPIResponse 天猫简化发布商品 API返回值
 // tmall.item.simpleschema.add
 //
 // 天猫简化版schema发布商品。
-type TmallitemsimpleschemaaddAPIResponse struct {
+type TmallItemSimpleschemaAddAPIResponse struct {
 	model.CommonResponse
-	TmallitemsimpleschemaaddAPIResponseModel
+	TmallItemSimpleschemaAddAPIResponseModel
 }
 
-// TmallitemsimpleschemaaddAPIResponseModel is 天猫简化发布商品 成功返回结果
-type TmallitemsimpleschemaaddAPIResponseModel struct {
+// TmallItemSimpleschemaAddAPIResponseModel is 天猫简化发布商品 成功返回结果
+type TmallItemSimpleschemaAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_item_simpleschema_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

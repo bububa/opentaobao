@@ -1,7 +1,7 @@
 package tmallgenie
 
-// AlibabaailabstmallgenieauthdevicevalidauthcodeResult 结构体
-type AlibabaailabstmallgenieauthdevicevalidauthcodeResult struct {
+// AlibabaAilabsTmallgenieAuthDeviceValidauthcodeResult 结构体
+type AlibabaAilabsTmallgenieAuthDeviceValidauthcodeResult struct {
 	// uuid
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
 	// message

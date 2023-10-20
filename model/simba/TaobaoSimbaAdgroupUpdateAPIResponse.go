@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbaadgroupupdateAPIResponse 更新一个推广组的信息 API返回值
+// TaobaoSimbaAdgroupUpdateAPIResponse 更新一个推广组的信息 API返回值
 // taobao.simba.adgroup.update
 //
 // 更新一个推广组的信息，可以设置默认出价、是否上线、非搜索出价、非搜索是否使用默认出价
-type TaobaosimbaadgroupupdateAPIResponse struct {
+type TaobaoSimbaAdgroupUpdateAPIResponse struct {
 	model.CommonResponse
-	TaobaosimbaadgroupupdateAPIResponseModel
+	TaobaoSimbaAdgroupUpdateAPIResponseModel
 }
 
-// TaobaosimbaadgroupupdateAPIResponseModel is 更新一个推广组的信息 成功返回结果
-type TaobaosimbaadgroupupdateAPIResponseModel struct {
+// TaobaoSimbaAdgroupUpdateAPIResponseModel is 更新一个推广组的信息 成功返回结果
+type TaobaoSimbaAdgroupUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_adgroup_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

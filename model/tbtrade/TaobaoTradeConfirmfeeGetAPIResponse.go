@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotradeconfirmfeegetAPIResponse 获取交易确认收货费用 API返回值
+// TaobaoTradeConfirmfeeGetAPIResponse 获取交易确认收货费用 API返回值
 // taobao.trade.confirmfee.get
 //
 // 获取交易确认收货费用，可以获取主订单或子订单的确认收货费用
-type TaobaotradeconfirmfeegetAPIResponse struct {
+type TaobaoTradeConfirmfeeGetAPIResponse struct {
 	model.CommonResponse
-	TaobaotradeconfirmfeegetAPIResponseModel
+	TaobaoTradeConfirmfeeGetAPIResponseModel
 }
 
-// TaobaotradeconfirmfeegetAPIResponseModel is 获取交易确认收货费用 成功返回结果
-type TaobaotradeconfirmfeegetAPIResponseModel struct {
+// TaobaoTradeConfirmfeeGetAPIResponseModel is 获取交易确认收货费用 成功返回结果
+type TaobaoTradeConfirmfeeGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"trade_confirmfee_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

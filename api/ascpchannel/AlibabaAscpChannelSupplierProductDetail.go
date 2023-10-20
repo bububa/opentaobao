@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascpchannel"
 )
 
-// Alibabaascpchannelsupplierproductdetail 供应链渠道中心分销品详情查询(供应商专用)
+// AlibabaAscpChannelSupplierProductDetail 供应链渠道中心分销品详情查询(供应商专用)
 // alibaba.ascp.channel.supplier.product.detail
 //
 // 供应链渠道中心分销品详情查询(供应商专用)
-func Alibabaascpchannelsupplierproductdetail(clt *core.SDKClient, req *ascpchannel.AlibabaascpchannelsupplierproductdetailAPIRequest, session string) (*ascpchannel.AlibabaascpchannelsupplierproductdetailAPIResponse, error) {
-	var resp ascpchannel.AlibabaascpchannelsupplierproductdetailAPIResponse
+func AlibabaAscpChannelSupplierProductDetail(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelSupplierProductDetailAPIRequest, session string) (*ascpchannel.AlibabaAscpChannelSupplierProductDetailAPIResponse, error) {
+	var resp ascpchannel.AlibabaAscpChannelSupplierProductDetailAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-// Alibabagpuschemaupdate 产品更新接口
+// AlibabaGpuSchemaUpdate 产品更新接口
 // alibaba.gpu.schema.update
 //
 // 产品更新接口
-func Alibabagpuschemaupdate(clt *core.SDKClient, req *product.AlibabagpuschemaupdateAPIRequest, session string) (*product.AlibabagpuschemaupdateAPIResponse, error) {
-	var resp product.AlibabagpuschemaupdateAPIResponse
+func AlibabaGpuSchemaUpdate(clt *core.SDKClient, req *product.AlibabaGpuSchemaUpdateAPIRequest, session string) (*product.AlibabaGpuSchemaUpdateAPIResponse, error) {
+	var resp product.AlibabaGpuSchemaUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

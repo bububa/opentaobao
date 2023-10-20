@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallcar"
 )
 
-// Tmallcarleasestatussynchronize 天猫开新车租后状态同步
+// TmallCarLeaseStatussynchronize 天猫开新车租后状态同步
 // tmall.car.lease.statussynchronize
 //
 // 天猫开新车租后状态同步
-func Tmallcarleasestatussynchronize(clt *core.SDKClient, req *tmallcar.TmallcarleasestatussynchronizeAPIRequest, session string) (*tmallcar.TmallcarleasestatussynchronizeAPIResponse, error) {
-	var resp tmallcar.TmallcarleasestatussynchronizeAPIResponse
+func TmallCarLeaseStatussynchronize(clt *core.SDKClient, req *tmallcar.TmallCarLeaseStatussynchronizeAPIRequest, session string) (*tmallcar.TmallCarLeaseStatussynchronizeAPIResponse, error) {
+	var resp tmallcar.TmallCarLeaseStatussynchronizeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

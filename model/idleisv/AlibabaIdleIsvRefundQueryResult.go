@@ -1,7 +1,7 @@
 package idleisv
 
-// AlibabaidleisvrefundqueryResult 结构体
-type AlibabaidleisvrefundqueryResult struct {
+// AlibabaIdleIsvRefundQueryResult 结构体
+type AlibabaIdleIsvRefundQueryResult struct {
 	// 退款信息
 	Module *AppraiseIsvRefundDto `json:"module,omitempty" xml:"module,omitempty"`
 	// 是否成功

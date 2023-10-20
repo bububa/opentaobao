@@ -1,7 +1,7 @@
 package ascpchannel
 
-// AlibabaascppurchasepricecreateRequest 结构体
-type AlibabaascppurchasepricecreateRequest struct {
+// AlibabaAscpPurchasePriceCreateRequest 结构体
+type AlibabaAscpPurchasePriceCreateRequest struct {
 	// 供应链仓code
 	StoreCodeSets []string `json:"store_code_sets,omitempty" xml:"store_code_sets>string,omitempty"`
 	// 二级供应商id

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaojstinteractivepointdecreaseAPIResponse 互动积分扣减接口 API返回值
+// TaobaoJstInteractivePointDecreaseAPIResponse 互动积分扣减接口 API返回值
 // taobao.jst.interactive.point.decrease
 //
 // 扣减用户的互动积分
-type TaobaojstinteractivepointdecreaseAPIResponse struct {
+type TaobaoJstInteractivePointDecreaseAPIResponse struct {
 	model.CommonResponse
-	TaobaojstinteractivepointdecreaseAPIResponseModel
+	TaobaoJstInteractivePointDecreaseAPIResponseModel
 }
 
-// TaobaojstinteractivepointdecreaseAPIResponseModel is 互动积分扣减接口 成功返回结果
-type TaobaojstinteractivepointdecreaseAPIResponseModel struct {
+// TaobaoJstInteractivePointDecreaseAPIResponseModel is 互动积分扣减接口 成功返回结果
+type TaobaoJstInteractivePointDecreaseAPIResponseModel struct {
 	XMLName xml.Name `xml:"jst_interactive_point_decrease_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

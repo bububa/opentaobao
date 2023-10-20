@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cloudgame"
 )
 
-// Alibabacloudgameinteractivegameplayerstop 用户停止游戏
+// AlibabaCloudgameInteractiveGamePlayerStop 用户停止游戏
 // alibaba.cloudgame.interactive.game.player.stop
 //
 // 用户停止游戏
-func Alibabacloudgameinteractivegameplayerstop(clt *core.SDKClient, req *cloudgame.AlibabacloudgameinteractivegameplayerstopAPIRequest, session string) (*cloudgame.AlibabacloudgameinteractivegameplayerstopAPIResponse, error) {
-	var resp cloudgame.AlibabacloudgameinteractivegameplayerstopAPIResponse
+func AlibabaCloudgameInteractiveGamePlayerStop(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGamePlayerStopAPIRequest, session string) (*cloudgame.AlibabaCloudgameInteractiveGamePlayerStopAPIResponse, error) {
+	var resp cloudgame.AlibabaCloudgameInteractiveGamePlayerStopAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkorderfinancebillqueryAPIResponse 资金合规商家账单 API返回值
+// AlibabaWdkOrderFinanceBillQueryAPIResponse 资金合规商家账单 API返回值
 // alibaba.wdk.order.finance.bill.query
 //
 // 拉取资金合规商家账单
-type AlibabawdkorderfinancebillqueryAPIResponse struct {
+type AlibabaWdkOrderFinanceBillQueryAPIResponse struct {
 	model.CommonResponse
-	AlibabawdkorderfinancebillqueryAPIResponseModel
+	AlibabaWdkOrderFinanceBillQueryAPIResponseModel
 }
 
-// AlibabawdkorderfinancebillqueryAPIResponseModel is 资金合规商家账单 成功返回结果
-type AlibabawdkorderfinancebillqueryAPIResponseModel struct {
+// AlibabaWdkOrderFinanceBillQueryAPIResponseModel is 资金合规商家账单 成功返回结果
+type AlibabaWdkOrderFinanceBillQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_order_finance_bill_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaominiappextdeliverysellchannelconfigsqueryAPIRequest 查询商家配置的信息 API请求
+// TaobaoMiniappExtDeliverySellChannelConfigsQueryAPIRequest 查询商家配置的信息 API请求
 // taobao.miniapp.ext.delivery.sell.channel.configs.query
 //
 // 查询商家配置的信息
-type TaobaominiappextdeliverysellchannelconfigsqueryAPIRequest struct {
+type TaobaoMiniappExtDeliverySellChannelConfigsQueryAPIRequest struct {
 	model.Params
 	// 入参
 	_req *SellerChannelQueryRequest
 }
 
-// NewTaobaominiappextdeliverysellchannelconfigsqueryRequest 初始化TaobaominiappextdeliverysellchannelconfigsqueryAPIRequest对象
-func NewTaobaominiappextdeliverysellchannelconfigsqueryRequest() *TaobaominiappextdeliverysellchannelconfigsqueryAPIRequest {
-	return &TaobaominiappextdeliverysellchannelconfigsqueryAPIRequest{
+// NewTaobaoMiniappExtDeliverySellChannelConfigsQueryRequest 初始化TaobaoMiniappExtDeliverySellChannelConfigsQueryAPIRequest对象
+func NewTaobaoMiniappExtDeliverySellChannelConfigsQueryRequest() *TaobaoMiniappExtDeliverySellChannelConfigsQueryAPIRequest {
+	return &TaobaoMiniappExtDeliverySellChannelConfigsQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaominiappextdeliverysellchannelconfigsqueryAPIRequest) GetApiMethodName() string {
+func (r TaobaoMiniappExtDeliverySellChannelConfigsQueryAPIRequest) GetApiMethodName() string {
 	return "taobao.miniapp.ext.delivery.sell.channel.configs.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaominiappextdeliverysellchannelconfigsqueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoMiniappExtDeliverySellChannelConfigsQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaominiappextdeliverysellchannelconfigsqueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoMiniappExtDeliverySellChannelConfigsQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetReq is Req Setter
 // 入参
-func (r *TaobaominiappextdeliverysellchannelconfigsqueryAPIRequest) SetReq(_req *SellerChannelQueryRequest) error {
+func (r *TaobaoMiniappExtDeliverySellChannelConfigsQueryAPIRequest) SetReq(_req *SellerChannelQueryRequest) error {
 	r._req = _req
 	r.Set("req", _req)
 	return nil
 }
 
 // GetReq Req Getter
-func (r TaobaominiappextdeliverysellchannelconfigsqueryAPIRequest) GetReq() *SellerChannelQueryRequest {
+func (r TaobaoMiniappExtDeliverySellChannelConfigsQueryAPIRequest) GetReq() *SellerChannelQueryRequest {
 	return r._req
 }

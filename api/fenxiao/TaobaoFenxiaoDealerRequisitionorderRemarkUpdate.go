@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-// Taobaofenxiaodealerrequisitionorderremarkupdate 修改经销采购单备注
+// TaobaoFenxiaoDealerRequisitionorderRemarkUpdate 修改经销采购单备注
 // taobao.fenxiao.dealer.requisitionorder.remark.update
 //
 // 供应商修改经销采购单备注
-func Taobaofenxiaodealerrequisitionorderremarkupdate(clt *core.SDKClient, req *fenxiao.TaobaofenxiaodealerrequisitionorderremarkupdateAPIRequest, session string) (*fenxiao.TaobaofenxiaodealerrequisitionorderremarkupdateAPIResponse, error) {
-	var resp fenxiao.TaobaofenxiaodealerrequisitionorderremarkupdateAPIResponse
+func TaobaoFenxiaoDealerRequisitionorderRemarkUpdate(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest, session string) (*fenxiao.TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIResponse, error) {
+	var resp fenxiao.TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

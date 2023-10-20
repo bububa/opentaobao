@@ -17,5 +17,5 @@ type Invoice struct {
 	// 税号
 	TaxNumber string `json:"tax_number,omitempty" xml:"tax_number,omitempty"`
 	// 发货详情
-	Detail *AlibabadchainaoxiangwmsdeliveryorderconfirmDetail `json:"detail,omitempty" xml:"detail,omitempty"`
+	Detail *AlibabaDchainAoxiangWmsDeliveryorderConfirmDetail `json:"detail,omitempty" xml:"detail,omitempty"`
 }

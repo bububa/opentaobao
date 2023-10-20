@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaojstsmssignnamemodifyAPIResponse 淘宝短信签名修改 API返回值
+// TaobaoJstSmsSignnameModifyAPIResponse 淘宝短信签名修改 API返回值
 // taobao.jst.sms.signname.modify
 //
 // 淘宝短信签名修改，只能修改还未被审核的签名。
-type TaobaojstsmssignnamemodifyAPIResponse struct {
+type TaobaoJstSmsSignnameModifyAPIResponse struct {
 	model.CommonResponse
-	TaobaojstsmssignnamemodifyAPIResponseModel
+	TaobaoJstSmsSignnameModifyAPIResponseModel
 }
 
-// TaobaojstsmssignnamemodifyAPIResponseModel is 淘宝短信签名修改 成功返回结果
-type TaobaojstsmssignnamemodifyAPIResponseModel struct {
+// TaobaoJstSmsSignnameModifyAPIResponseModel is 淘宝短信签名修改 成功返回结果
+type TaobaoJstSmsSignnameModifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"jst_sms_signname_modify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package ascpchannel
 
-// AlibabaascpglobalsupplieritemlistinfoqueryData 结构体
-type AlibabaascpglobalsupplieritemlistinfoqueryData struct {
+// AlibabaAscpGlobalSupplierItemListInfoQueryData 结构体
+type AlibabaAscpGlobalSupplierItemListInfoQueryData struct {
 	// 返回货品list
 	PageData []PageData `json:"page_data,omitempty" xml:"page_data>page_data,omitempty"`
 	// 每页条数，最大不超过200

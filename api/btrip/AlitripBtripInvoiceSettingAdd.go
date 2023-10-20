@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// Alitripbtripinvoicesettingadd 发票设置
+// AlitripBtripInvoiceSettingAdd 发票设置
 // alitrip.btrip.invoice.setting.add
 //
 // 发票设置
-func Alitripbtripinvoicesettingadd(clt *core.SDKClient, req *btrip.AlitripbtripinvoicesettingaddAPIRequest, session string) (*btrip.AlitripbtripinvoicesettingaddAPIResponse, error) {
-	var resp btrip.AlitripbtripinvoicesettingaddAPIResponse
+func AlitripBtripInvoiceSettingAdd(clt *core.SDKClient, req *btrip.AlitripBtripInvoiceSettingAddAPIRequest, session string) (*btrip.AlitripBtripInvoiceSettingAddAPIResponse, error) {
+	var resp btrip.AlitripBtripInvoiceSettingAddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripmerchantgalaxyactivitygoodsqueryAPIResponse 营销抽奖-用户奖品查询 API返回值
+// AlitripMerchantGalaxyActivityGoodsQueryAPIResponse 营销抽奖-用户奖品查询 API返回值
 // alitrip.merchant.galaxy.activity.goods.query
 //
 // 星河产品-提供营销抽奖奖品查询服务
-type AlitripmerchantgalaxyactivitygoodsqueryAPIResponse struct {
+type AlitripMerchantGalaxyActivityGoodsQueryAPIResponse struct {
 	model.CommonResponse
-	AlitripmerchantgalaxyactivitygoodsqueryAPIResponseModel
+	AlitripMerchantGalaxyActivityGoodsQueryAPIResponseModel
 }
 
-// AlitripmerchantgalaxyactivitygoodsqueryAPIResponseModel is 营销抽奖-用户奖品查询 成功返回结果
-type AlitripmerchantgalaxyactivitygoodsqueryAPIResponseModel struct {
+// AlitripMerchantGalaxyActivityGoodsQueryAPIResponseModel is 营销抽奖-用户奖品查询 成功返回结果
+type AlitripMerchantGalaxyActivityGoodsQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_merchant_galaxy_activity_goods_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 默认描述
-	Result *AlitripmerchantgalaxyactivitygoodsqueryResponse `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlitripMerchantGalaxyActivityGoodsQueryResponse `json:"result,omitempty" xml:"result,omitempty"`
 }

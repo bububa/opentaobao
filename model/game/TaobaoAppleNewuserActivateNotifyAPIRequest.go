@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoapplenewuseractivatenotifyAPIRequest 新用户激活通知接口 API请求
+// TaobaoAppleNewuserActivateNotifyAPIRequest 新用户激活通知接口 API请求
 // taobao.apple.newuser.activate.notify
 //
 // 资和信主动通知激活结果
-type TaobaoapplenewuseractivatenotifyAPIRequest struct {
+type TaobaoAppleNewuserActivateNotifyAPIRequest struct {
 	model.Params
 	// 结果对应值，00位成功，其他为失败
 	_resultCode string
@@ -20,65 +20,65 @@ type TaobaoapplenewuseractivatenotifyAPIRequest struct {
 	_mainData *AppleTopActivateNotifyDo
 }
 
-// NewTaobaoapplenewuseractivatenotifyRequest 初始化TaobaoapplenewuseractivatenotifyAPIRequest对象
-func NewTaobaoapplenewuseractivatenotifyRequest() *TaobaoapplenewuseractivatenotifyAPIRequest {
-	return &TaobaoapplenewuseractivatenotifyAPIRequest{
+// NewTaobaoAppleNewuserActivateNotifyRequest 初始化TaobaoAppleNewuserActivateNotifyAPIRequest对象
+func NewTaobaoAppleNewuserActivateNotifyRequest() *TaobaoAppleNewuserActivateNotifyAPIRequest {
+	return &TaobaoAppleNewuserActivateNotifyAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoapplenewuseractivatenotifyAPIRequest) GetApiMethodName() string {
+func (r TaobaoAppleNewuserActivateNotifyAPIRequest) GetApiMethodName() string {
 	return "taobao.apple.newuser.activate.notify"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoapplenewuseractivatenotifyAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoAppleNewuserActivateNotifyAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoapplenewuseractivatenotifyAPIRequest) GetRawParams() model.Params {
+func (r TaobaoAppleNewuserActivateNotifyAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetResultCode is ResultCode Setter
 // 结果对应值，00位成功，其他为失败
-func (r *TaobaoapplenewuseractivatenotifyAPIRequest) SetResultCode(_resultCode string) error {
+func (r *TaobaoAppleNewuserActivateNotifyAPIRequest) SetResultCode(_resultCode string) error {
 	r._resultCode = _resultCode
 	r.Set("result_code", _resultCode)
 	return nil
 }
 
 // GetResultCode ResultCode Getter
-func (r TaobaoapplenewuseractivatenotifyAPIRequest) GetResultCode() string {
+func (r TaobaoAppleNewuserActivateNotifyAPIRequest) GetResultCode() string {
 	return r._resultCode
 }
 
 // SetResultMsg is ResultMsg Setter
 // 处理结果中文描述
-func (r *TaobaoapplenewuseractivatenotifyAPIRequest) SetResultMsg(_resultMsg string) error {
+func (r *TaobaoAppleNewuserActivateNotifyAPIRequest) SetResultMsg(_resultMsg string) error {
 	r._resultMsg = _resultMsg
 	r.Set("result_msg", _resultMsg)
 	return nil
 }
 
 // GetResultMsg ResultMsg Getter
-func (r TaobaoapplenewuseractivatenotifyAPIRequest) GetResultMsg() string {
+func (r TaobaoAppleNewuserActivateNotifyAPIRequest) GetResultMsg() string {
 	return r._resultMsg
 }
 
 // SetMainData is MainData Setter
 // 主业务参数
-func (r *TaobaoapplenewuseractivatenotifyAPIRequest) SetMainData(_mainData *AppleTopActivateNotifyDo) error {
+func (r *TaobaoAppleNewuserActivateNotifyAPIRequest) SetMainData(_mainData *AppleTopActivateNotifyDo) error {
 	r._mainData = _mainData
 	r.Set("main_data", _mainData)
 	return nil
 }
 
 // GetMainData MainData Getter
-func (r TaobaoapplenewuseractivatenotifyAPIRequest) GetMainData() *AppleTopActivateNotifyDo {
+func (r TaobaoAppleNewuserActivateNotifyAPIRequest) GetMainData() *AppleTopActivateNotifyDo {
 	return r._mainData
 }

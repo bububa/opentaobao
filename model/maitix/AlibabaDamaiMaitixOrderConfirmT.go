@@ -1,7 +1,7 @@
 package maitix
 
-// AlibabadamaimaitixorderconfirmT 结构体
-type AlibabadamaimaitixorderconfirmT struct {
+// AlibabaDamaiMaitixOrderConfirmT 结构体
+type AlibabaDamaiMaitixOrderConfirmT struct {
 	// 订单id
 	OrderId string `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 支付状态：0:失败,1:成功

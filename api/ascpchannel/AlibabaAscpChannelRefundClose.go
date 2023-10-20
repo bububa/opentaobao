@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascpchannel"
 )
 
-// Alibabaascpchannelrefundclose 渠道退款单关闭
+// AlibabaAscpChannelRefundClose 渠道退款单关闭
 // alibaba.ascp.channel.refund.close
 //
 // 渠道退款单关闭
-func Alibabaascpchannelrefundclose(clt *core.SDKClient, req *ascpchannel.AlibabaascpchannelrefundcloseAPIRequest, session string) (*ascpchannel.AlibabaascpchannelrefundcloseAPIResponse, error) {
-	var resp ascpchannel.AlibabaascpchannelrefundcloseAPIResponse
+func AlibabaAscpChannelRefundClose(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelRefundCloseAPIRequest, session string) (*ascpchannel.AlibabaAscpChannelRefundCloseAPIResponse, error) {
+	var resp ascpchannel.AlibabaAscpChannelRefundCloseAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

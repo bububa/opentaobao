@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobusordersetAPIResponse 汽车票下单接口 API返回值
+// TaobaoBusOrderSetAPIResponse 汽车票下单接口 API返回值
 // taobao.bus.order.set
 //
 // 提供给汽车票商家进行下单
-type TaobaobusordersetAPIResponse struct {
+type TaobaoBusOrderSetAPIResponse struct {
 	model.CommonResponse
-	TaobaobusordersetAPIResponseModel
+	TaobaoBusOrderSetAPIResponseModel
 }
 
-// TaobaobusordersetAPIResponseModel is 汽车票下单接口 成功返回结果
-type TaobaobusordersetAPIResponseModel struct {
+// TaobaoBusOrderSetAPIResponseModel is 汽车票下单接口 成功返回结果
+type TaobaoBusOrderSetAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_order_set_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

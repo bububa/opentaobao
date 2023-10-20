@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthalipaypfmdietrecordAPIRequest 用户每日摄入卡路里总量回传接口 API请求
+// AlibabaAlihealthAlipaypfmDietRecordAPIRequest 用户每日摄入卡路里总量回传接口 API请求
 // alibaba.alihealth.alipaypfm.diet.record
 //
 // 用户每日摄入卡路里总量回传接口
-type AlibabaalihealthalipaypfmdietrecordAPIRequest struct {
+type AlibabaAlihealthAlipaypfmDietRecordAPIRequest struct {
 	model.Params
 	// 记录日期，format：yyyy-MM-dd
 	_date string
@@ -20,65 +20,65 @@ type AlibabaalihealthalipaypfmdietrecordAPIRequest struct {
 	_energy int64
 }
 
-// NewAlibabaalihealthalipaypfmdietrecordRequest 初始化AlibabaalihealthalipaypfmdietrecordAPIRequest对象
-func NewAlibabaalihealthalipaypfmdietrecordRequest() *AlibabaalihealthalipaypfmdietrecordAPIRequest {
-	return &AlibabaalihealthalipaypfmdietrecordAPIRequest{
+// NewAlibabaAlihealthAlipaypfmDietRecordRequest 初始化AlibabaAlihealthAlipaypfmDietRecordAPIRequest对象
+func NewAlibabaAlihealthAlipaypfmDietRecordRequest() *AlibabaAlihealthAlipaypfmDietRecordAPIRequest {
+	return &AlibabaAlihealthAlipaypfmDietRecordAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihealthalipaypfmdietrecordAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthAlipaypfmDietRecordAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.alipaypfm.diet.record"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihealthalipaypfmdietrecordAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihealthAlipaypfmDietRecordAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihealthalipaypfmdietrecordAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihealthAlipaypfmDietRecordAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDate is Date Setter
 // 记录日期，format：yyyy-MM-dd
-func (r *AlibabaalihealthalipaypfmdietrecordAPIRequest) SetDate(_date string) error {
+func (r *AlibabaAlihealthAlipaypfmDietRecordAPIRequest) SetDate(_date string) error {
 	r._date = _date
 	r.Set("date", _date)
 	return nil
 }
 
 // GetDate Date Getter
-func (r AlibabaalihealthalipaypfmdietrecordAPIRequest) GetDate() string {
+func (r AlibabaAlihealthAlipaypfmDietRecordAPIRequest) GetDate() string {
 	return r._date
 }
 
 // SetUserId is UserId Setter
 // 用户健康ID
-func (r *AlibabaalihealthalipaypfmdietrecordAPIRequest) SetUserId(_userId int64) error {
+func (r *AlibabaAlihealthAlipaypfmDietRecordAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
 	r.Set("user_id", _userId)
 	return nil
 }
 
 // GetUserId UserId Getter
-func (r AlibabaalihealthalipaypfmdietrecordAPIRequest) GetUserId() int64 {
+func (r AlibabaAlihealthAlipaypfmDietRecordAPIRequest) GetUserId() int64 {
 	return r._userId
 }
 
 // SetEnergy is Energy Setter
 // 累积摄入卡路里
-func (r *AlibabaalihealthalipaypfmdietrecordAPIRequest) SetEnergy(_energy int64) error {
+func (r *AlibabaAlihealthAlipaypfmDietRecordAPIRequest) SetEnergy(_energy int64) error {
 	r._energy = _energy
 	r.Set("energy", _energy)
 	return nil
 }
 
 // GetEnergy Energy Getter
-func (r AlibabaalihealthalipaypfmdietrecordAPIRequest) GetEnergy() int64 {
+func (r AlibabaAlihealthAlipaypfmDietRecordAPIRequest) GetEnergy() int64 {
 	return r._energy
 }

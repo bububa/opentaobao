@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// Alibabacampusspacefloorgetbyid 根据id获取楼层
+// AlibabaCampusSpaceFloorGetbyid 根据id获取楼层
 // alibaba.campus.space.floor.getbyid
 //
 // 根据id获取楼层
-func Alibabacampusspacefloorgetbyid(clt *core.SDKClient, req *campus.AlibabacampusspacefloorgetbyidAPIRequest, session string) (*campus.AlibabacampusspacefloorgetbyidAPIResponse, error) {
-	var resp campus.AlibabacampusspacefloorgetbyidAPIResponse
+func AlibabaCampusSpaceFloorGetbyid(clt *core.SDKClient, req *campus.AlibabaCampusSpaceFloorGetbyidAPIRequest, session string) (*campus.AlibabaCampusSpaceFloorGetbyidAPIResponse, error) {
+	var resp campus.AlibabaCampusSpaceFloorGetbyidAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

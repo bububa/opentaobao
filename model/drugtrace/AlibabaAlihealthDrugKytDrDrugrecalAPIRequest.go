@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthdrugkytdrdrugrecalAPIRequest 疫苗药品召回 API请求
+// AlibabaAlihealthDrugKytDrDrugrecalAPIRequest 疫苗药品召回 API请求
 // alibaba.alihealth.drug.kyt.dr.drugrecal
 //
 // 生产企业发布的召回信息，按照批次进行召回，收货和发货环节的单据处理中调用接口进行查询；
-type AlibabaalihealthdrugkytdrdrugrecalAPIRequest struct {
+type AlibabaAlihealthDrugKytDrDrugrecalAPIRequest struct {
 	model.Params
 	// 调用企业ID
 	_refEntId string
@@ -20,65 +20,65 @@ type AlibabaalihealthdrugkytdrdrugrecalAPIRequest struct {
 	_recallEndTime string
 }
 
-// NewAlibabaalihealthdrugkytdrdrugrecalRequest 初始化AlibabaalihealthdrugkytdrdrugrecalAPIRequest对象
-func NewAlibabaalihealthdrugkytdrdrugrecalRequest() *AlibabaalihealthdrugkytdrdrugrecalAPIRequest {
-	return &AlibabaalihealthdrugkytdrdrugrecalAPIRequest{
+// NewAlibabaAlihealthDrugKytDrDrugrecalRequest 初始化AlibabaAlihealthDrugKytDrDrugrecalAPIRequest对象
+func NewAlibabaAlihealthDrugKytDrDrugrecalRequest() *AlibabaAlihealthDrugKytDrDrugrecalAPIRequest {
+	return &AlibabaAlihealthDrugKytDrDrugrecalAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihealthdrugkytdrdrugrecalAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugKytDrDrugrecalAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.drug.kyt.dr.drugrecal"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihealthdrugkytdrdrugrecalAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihealthDrugKytDrDrugrecalAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihealthdrugkytdrdrugrecalAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihealthDrugKytDrDrugrecalAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRefEntId is RefEntId Setter
 // 调用企业ID
-func (r *AlibabaalihealthdrugkytdrdrugrecalAPIRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaAlihealthDrugKytDrDrugrecalAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
 	r.Set("ref_ent_id", _refEntId)
 	return nil
 }
 
 // GetRefEntId RefEntId Getter
-func (r AlibabaalihealthdrugkytdrdrugrecalAPIRequest) GetRefEntId() string {
+func (r AlibabaAlihealthDrugKytDrDrugrecalAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
 // SetRecallBeginTime is RecallBeginTime Setter
 // 召回开始时间
-func (r *AlibabaalihealthdrugkytdrdrugrecalAPIRequest) SetRecallBeginTime(_recallBeginTime string) error {
+func (r *AlibabaAlihealthDrugKytDrDrugrecalAPIRequest) SetRecallBeginTime(_recallBeginTime string) error {
 	r._recallBeginTime = _recallBeginTime
 	r.Set("recall_begin_time", _recallBeginTime)
 	return nil
 }
 
 // GetRecallBeginTime RecallBeginTime Getter
-func (r AlibabaalihealthdrugkytdrdrugrecalAPIRequest) GetRecallBeginTime() string {
+func (r AlibabaAlihealthDrugKytDrDrugrecalAPIRequest) GetRecallBeginTime() string {
 	return r._recallBeginTime
 }
 
 // SetRecallEndTime is RecallEndTime Setter
 // 召回结束时间
-func (r *AlibabaalihealthdrugkytdrdrugrecalAPIRequest) SetRecallEndTime(_recallEndTime string) error {
+func (r *AlibabaAlihealthDrugKytDrDrugrecalAPIRequest) SetRecallEndTime(_recallEndTime string) error {
 	r._recallEndTime = _recallEndTime
 	r.Set("recall_end_time", _recallEndTime)
 	return nil
 }
 
 // GetRecallEndTime RecallEndTime Getter
-func (r AlibabaalihealthdrugkytdrdrugrecalAPIRequest) GetRecallEndTime() string {
+func (r AlibabaAlihealthDrugKytDrDrugrecalAPIRequest) GetRecallEndTime() string {
 	return r._recallEndTime
 }

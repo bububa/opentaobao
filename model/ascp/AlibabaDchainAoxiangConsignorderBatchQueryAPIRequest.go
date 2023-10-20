@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabadchainaoxiangconsignorderbatchqueryAPIRequest 发货单批量查询 API请求
+// AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest 发货单批量查询 API请求
 // alibaba.dchain.aoxiang.consignorder.batch.query
 //
 // 发货单批量查询
-type AlibabadchainaoxiangconsignorderbatchqueryAPIRequest struct {
+type AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest struct {
 	model.Params
 	// 批量查询发货单入参
 	_batchQueryConsignorderRequest *BatchQueryConsignorderRequest
 }
 
-// NewAlibabadchainaoxiangconsignorderbatchqueryRequest 初始化AlibabadchainaoxiangconsignorderbatchqueryAPIRequest对象
-func NewAlibabadchainaoxiangconsignorderbatchqueryRequest() *AlibabadchainaoxiangconsignorderbatchqueryAPIRequest {
-	return &AlibabadchainaoxiangconsignorderbatchqueryAPIRequest{
+// NewAlibabaDchainAoxiangConsignorderBatchQueryRequest 初始化AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest对象
+func NewAlibabaDchainAoxiangConsignorderBatchQueryRequest() *AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest {
+	return &AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabadchainaoxiangconsignorderbatchqueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.dchain.aoxiang.consignorder.batch.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabadchainaoxiangconsignorderbatchqueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabadchainaoxiangconsignorderbatchqueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetBatchQueryConsignorderRequest is BatchQueryConsignorderRequest Setter
 // 批量查询发货单入参
-func (r *AlibabadchainaoxiangconsignorderbatchqueryAPIRequest) SetBatchQueryConsignorderRequest(_batchQueryConsignorderRequest *BatchQueryConsignorderRequest) error {
+func (r *AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest) SetBatchQueryConsignorderRequest(_batchQueryConsignorderRequest *BatchQueryConsignorderRequest) error {
 	r._batchQueryConsignorderRequest = _batchQueryConsignorderRequest
 	r.Set("batch_query_consignorder_request", _batchQueryConsignorderRequest)
 	return nil
 }
 
 // GetBatchQueryConsignorderRequest BatchQueryConsignorderRequest Getter
-func (r AlibabadchainaoxiangconsignorderbatchqueryAPIRequest) GetBatchQueryConsignorderRequest() *BatchQueryConsignorderRequest {
+func (r AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest) GetBatchQueryConsignorderRequest() *BatchQueryConsignorderRequest {
 	return r._batchQueryConsignorderRequest
 }

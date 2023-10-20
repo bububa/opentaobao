@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaofenxiaodealerrequisitionorderagreeAPIRequest 供应商/分销商通过采购申请/经销采购单申请 API请求
+// TaobaoFenxiaoDealerRequisitionorderAgreeAPIRequest 供应商/分销商通过采购申请/经销采购单申请 API请求
 // taobao.fenxiao.dealer.requisitionorder.agree
 //
 // 供应商或分销商通过采购申请/经销采购单审核
-type TaobaofenxiaodealerrequisitionorderagreeAPIRequest struct {
+type TaobaoFenxiaoDealerRequisitionorderAgreeAPIRequest struct {
 	model.Params
 	// 采购申请/经销采购单编号
 	_dealerOrderId int64
 }
 
-// NewTaobaofenxiaodealerrequisitionorderagreeRequest 初始化TaobaofenxiaodealerrequisitionorderagreeAPIRequest对象
-func NewTaobaofenxiaodealerrequisitionorderagreeRequest() *TaobaofenxiaodealerrequisitionorderagreeAPIRequest {
-	return &TaobaofenxiaodealerrequisitionorderagreeAPIRequest{
+// NewTaobaoFenxiaoDealerRequisitionorderAgreeRequest 初始化TaobaoFenxiaoDealerRequisitionorderAgreeAPIRequest对象
+func NewTaobaoFenxiaoDealerRequisitionorderAgreeRequest() *TaobaoFenxiaoDealerRequisitionorderAgreeAPIRequest {
+	return &TaobaoFenxiaoDealerRequisitionorderAgreeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaofenxiaodealerrequisitionorderagreeAPIRequest) GetApiMethodName() string {
+func (r TaobaoFenxiaoDealerRequisitionorderAgreeAPIRequest) GetApiMethodName() string {
 	return "taobao.fenxiao.dealer.requisitionorder.agree"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaofenxiaodealerrequisitionorderagreeAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoFenxiaoDealerRequisitionorderAgreeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaofenxiaodealerrequisitionorderagreeAPIRequest) GetRawParams() model.Params {
+func (r TaobaoFenxiaoDealerRequisitionorderAgreeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDealerOrderId is DealerOrderId Setter
 // 采购申请/经销采购单编号
-func (r *TaobaofenxiaodealerrequisitionorderagreeAPIRequest) SetDealerOrderId(_dealerOrderId int64) error {
+func (r *TaobaoFenxiaoDealerRequisitionorderAgreeAPIRequest) SetDealerOrderId(_dealerOrderId int64) error {
 	r._dealerOrderId = _dealerOrderId
 	r.Set("dealer_order_id", _dealerOrderId)
 	return nil
 }
 
 // GetDealerOrderId DealerOrderId Getter
-func (r TaobaofenxiaodealerrequisitionorderagreeAPIRequest) GetDealerOrderId() int64 {
+func (r TaobaoFenxiaoDealerRequisitionorderAgreeAPIRequest) GetDealerOrderId() int64 {
 	return r._dealerOrderId
 }

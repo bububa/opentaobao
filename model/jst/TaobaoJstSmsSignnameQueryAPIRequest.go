@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaojstsmssignnamequeryAPIRequest 淘宝短信签名查询 API请求
+// TaobaoJstSmsSignnameQueryAPIRequest 淘宝短信签名查询 API请求
 // taobao.jst.sms.signname.query
 //
 // 淘宝短信签名查询
-type TaobaojstsmssignnamequeryAPIRequest struct {
+type TaobaoJstSmsSignnameQueryAPIRequest struct {
 	model.Params
 	// 签名查询的入参
 	_querySmsSignRequest *TopQuerySmsSignRequest
 }
 
-// NewTaobaojstsmssignnamequeryRequest 初始化TaobaojstsmssignnamequeryAPIRequest对象
-func NewTaobaojstsmssignnamequeryRequest() *TaobaojstsmssignnamequeryAPIRequest {
-	return &TaobaojstsmssignnamequeryAPIRequest{
+// NewTaobaoJstSmsSignnameQueryRequest 初始化TaobaoJstSmsSignnameQueryAPIRequest对象
+func NewTaobaoJstSmsSignnameQueryRequest() *TaobaoJstSmsSignnameQueryAPIRequest {
+	return &TaobaoJstSmsSignnameQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaojstsmssignnamequeryAPIRequest) GetApiMethodName() string {
+func (r TaobaoJstSmsSignnameQueryAPIRequest) GetApiMethodName() string {
 	return "taobao.jst.sms.signname.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaojstsmssignnamequeryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoJstSmsSignnameQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaojstsmssignnamequeryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoJstSmsSignnameQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQuerySmsSignRequest is QuerySmsSignRequest Setter
 // 签名查询的入参
-func (r *TaobaojstsmssignnamequeryAPIRequest) SetQuerySmsSignRequest(_querySmsSignRequest *TopQuerySmsSignRequest) error {
+func (r *TaobaoJstSmsSignnameQueryAPIRequest) SetQuerySmsSignRequest(_querySmsSignRequest *TopQuerySmsSignRequest) error {
 	r._querySmsSignRequest = _querySmsSignRequest
 	r.Set("query_sms_sign_request", _querySmsSignRequest)
 	return nil
 }
 
 // GetQuerySmsSignRequest QuerySmsSignRequest Getter
-func (r TaobaojstsmssignnamequeryAPIRequest) GetQuerySmsSignRequest() *TopQuerySmsSignRequest {
+func (r TaobaoJstSmsSignnameQueryAPIRequest) GetQuerySmsSignRequest() *TopQuerySmsSignRequest {
 	return r._querySmsSignRequest
 }

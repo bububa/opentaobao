@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitriptraveltradessearchAPIResponse 飞猪度假-订单列表搜索接口 API返回值
+// AlitripTravelTradesSearchAPIResponse 飞猪度假-订单列表搜索接口 API返回值
 // alitrip.travel.trades.search
 //
 // 订单列表搜索接口：以订单创建、结束时间、订单状态为搜索条件，搜索过滤出满足条件的卖家订单列表。
-type AlitriptraveltradessearchAPIResponse struct {
+type AlitripTravelTradesSearchAPIResponse struct {
 	model.CommonResponse
-	AlitriptraveltradessearchAPIResponseModel
+	AlitripTravelTradesSearchAPIResponseModel
 }
 
-// AlitriptraveltradessearchAPIResponseModel is 飞猪度假-订单列表搜索接口 成功返回结果
-type AlitriptraveltradessearchAPIResponseModel struct {
+// AlitripTravelTradesSearchAPIResponseModel is 飞猪度假-订单列表搜索接口 成功返回结果
+type AlitripTravelTradesSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_trades_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

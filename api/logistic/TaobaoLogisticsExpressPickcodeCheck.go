@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-// Taobaologisticsexpresspickcodecheck 快递公司取货码校验
+// TaobaoLogisticsExpressPickcodeCheck 快递公司取货码校验
 // taobao.logistics.express.pickcode.check
 //
 // 快递公司取货码校验
-func Taobaologisticsexpresspickcodecheck(clt *core.SDKClient, req *logistic.TaobaologisticsexpresspickcodecheckAPIRequest, session string) (*logistic.TaobaologisticsexpresspickcodecheckAPIResponse, error) {
-	var resp logistic.TaobaologisticsexpresspickcodecheckAPIResponse
+func TaobaoLogisticsExpressPickcodeCheck(clt *core.SDKClient, req *logistic.TaobaoLogisticsExpressPickcodeCheckAPIRequest, session string) (*logistic.TaobaoLogisticsExpressPickcodeCheckAPIResponse, error) {
+	var resp logistic.TaobaoLogisticsExpressPickcodeCheckAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

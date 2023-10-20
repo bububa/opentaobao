@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaojstinteractivepointqueryAPIRequest 互动积分查询接口 API请求
+// TaobaoJstInteractivePointQueryAPIRequest 互动积分查询接口 API请求
 // taobao.jst.interactive.point.query
 //
 // 查询用户的互动积分
-type TaobaojstinteractivepointqueryAPIRequest struct {
+type TaobaoJstInteractivePointQueryAPIRequest struct {
 	model.Params
 }
 
-// NewTaobaojstinteractivepointqueryRequest 初始化TaobaojstinteractivepointqueryAPIRequest对象
-func NewTaobaojstinteractivepointqueryRequest() *TaobaojstinteractivepointqueryAPIRequest {
-	return &TaobaojstinteractivepointqueryAPIRequest{
+// NewTaobaoJstInteractivePointQueryRequest 初始化TaobaoJstInteractivePointQueryAPIRequest对象
+func NewTaobaoJstInteractivePointQueryRequest() *TaobaoJstInteractivePointQueryAPIRequest {
+	return &TaobaoJstInteractivePointQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaojstinteractivepointqueryAPIRequest) GetApiMethodName() string {
+func (r TaobaoJstInteractivePointQueryAPIRequest) GetApiMethodName() string {
 	return "taobao.jst.interactive.point.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaojstinteractivepointqueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoJstInteractivePointQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaojstinteractivepointqueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoJstInteractivePointQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaorefundmessagesgetAPIResponse 查询退款留言/凭证列表 API返回值
+// TaobaoRefundMessagesGetAPIResponse 查询退款留言/凭证列表 API返回值
 // taobao.refund.messages.get
 //
 // 查询退款留言/凭证列表
-type TaobaorefundmessagesgetAPIResponse struct {
+type TaobaoRefundMessagesGetAPIResponse struct {
 	model.CommonResponse
-	TaobaorefundmessagesgetAPIResponseModel
+	TaobaoRefundMessagesGetAPIResponseModel
 }
 
-// TaobaorefundmessagesgetAPIResponseModel is 查询退款留言/凭证列表 成功返回结果
-type TaobaorefundmessagesgetAPIResponseModel struct {
+// TaobaoRefundMessagesGetAPIResponseModel is 查询退款留言/凭证列表 成功返回结果
+type TaobaoRefundMessagesGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"refund_messages_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

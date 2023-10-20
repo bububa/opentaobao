@@ -1,7 +1,7 @@
 package nrt
 
-// TmallnrtstoreitemfromonlineitemResultDto 结构体
-type TmallnrtstoreitemfromonlineitemResultDto struct {
+// TmallNrtStoreItemFromOnlineItemResultDto 结构体
+type TmallNrtStoreItemFromOnlineItemResultDto struct {
 	// 商品集合
 	ItemIds []int64 `json:"item_ids,omitempty" xml:"item_ids>int64,omitempty"`
 	// 接口执行错误码

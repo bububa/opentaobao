@@ -1,7 +1,7 @@
 package tuike
 
-// AlibabatuikeofferzhitokenResult 结构体
-type AlibabatuikeofferzhitokenResult struct {
+// AlibabaTuikeOfferZhitokenResult 结构体
+type AlibabaTuikeOfferZhitokenResult struct {
 	// headers
 	Headers string `json:"headers,omitempty" xml:"headers,omitempty"`
 	// model

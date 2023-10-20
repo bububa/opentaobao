@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamozibucaccountpageallAPIResponse 查询租户内内所有账号 API返回值
+// AlibabaMoziBucAccountPageallAPIResponse 查询租户内内所有账号 API返回值
 // alibaba.mozi.buc.account.pageall
 //
 // 查询租户内内所有账号
-type AlibabamozibucaccountpageallAPIResponse struct {
+type AlibabaMoziBucAccountPageallAPIResponse struct {
 	model.CommonResponse
-	AlibabamozibucaccountpageallAPIResponseModel
+	AlibabaMoziBucAccountPageallAPIResponseModel
 }
 
-// AlibabamozibucaccountpageallAPIResponseModel is 查询租户内内所有账号 成功返回结果
-type AlibabamozibucaccountpageallAPIResponseModel struct {
+// AlibabaMoziBucAccountPageallAPIResponseModel is 查询租户内内所有账号 成功返回结果
+type AlibabaMoziBucAccountPageallAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mozi_buc_account_pageall_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

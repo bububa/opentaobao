@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoomniorderdtdconsumeAPIResponse 门店自送对码进行核销 API返回值
+// TaobaoOmniorderDtdConsumeAPIResponse 门店自送对码进行核销 API返回值
 // taobao.omniorder.dtd.consume
 //
 // 该接口根据传入的码及订单信息，如果码与订单一致，则对门店自送服务进行核销。
-type TaobaoomniorderdtdconsumeAPIResponse struct {
+type TaobaoOmniorderDtdConsumeAPIResponse struct {
 	model.CommonResponse
-	TaobaoomniorderdtdconsumeAPIResponseModel
+	TaobaoOmniorderDtdConsumeAPIResponseModel
 }
 
-// TaobaoomniorderdtdconsumeAPIResponseModel is 门店自送对码进行核销 成功返回结果
-type TaobaoomniorderdtdconsumeAPIResponseModel struct {
+// TaobaoOmniorderDtdConsumeAPIResponseModel is 门店自送对码进行核销 成功返回结果
+type TaobaoOmniorderDtdConsumeAPIResponseModel struct {
 	XMLName xml.Name `xml:"omniorder_dtd_consume_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

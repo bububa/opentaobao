@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbarptadgroupbasegetAPIRequest 推广组基础报表数据对象 API请求
+// TaobaoSimbaRptAdgroupbaseGetAPIRequest 推广组基础报表数据对象 API请求
 // taobao.simba.rpt.adgroupbase.get
 //
 // 推广组基础报表数据对象
-type TaobaosimbarptadgroupbasegetAPIRequest struct {
+type TaobaoSimbaRptAdgroupbaseGetAPIRequest struct {
 	model.Params
 	// 权限校验参数
 	_subwayToken string
@@ -34,156 +34,156 @@ type TaobaosimbarptadgroupbasegetAPIRequest struct {
 	_pageSize int64
 }
 
-// NewTaobaosimbarptadgroupbasegetRequest 初始化TaobaosimbarptadgroupbasegetAPIRequest对象
-func NewTaobaosimbarptadgroupbasegetRequest() *TaobaosimbarptadgroupbasegetAPIRequest {
-	return &TaobaosimbarptadgroupbasegetAPIRequest{
+// NewTaobaoSimbaRptAdgroupbaseGetRequest 初始化TaobaoSimbaRptAdgroupbaseGetAPIRequest对象
+func NewTaobaoSimbaRptAdgroupbaseGetRequest() *TaobaoSimbaRptAdgroupbaseGetAPIRequest {
+	return &TaobaoSimbaRptAdgroupbaseGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaosimbarptadgroupbasegetAPIRequest) GetApiMethodName() string {
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetApiMethodName() string {
 	return "taobao.simba.rpt.adgroupbase.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaosimbarptadgroupbasegetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaosimbarptadgroupbasegetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSubwayToken is SubwayToken Setter
 // 权限校验参数
-func (r *TaobaosimbarptadgroupbasegetAPIRequest) SetSubwayToken(_subwayToken string) error {
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetSubwayToken(_subwayToken string) error {
 	r._subwayToken = _subwayToken
 	r.Set("subway_token", _subwayToken)
 	return nil
 }
 
 // GetSubwayToken SubwayToken Getter
-func (r TaobaosimbarptadgroupbasegetAPIRequest) GetSubwayToken() string {
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetSubwayToken() string {
 	return r._subwayToken
 }
 
 // SetNick is Nick Setter
 // 昵称
-func (r *TaobaosimbarptadgroupbasegetAPIRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
 	r.Set("nick", _nick)
 	return nil
 }
 
 // GetNick Nick Getter
-func (r TaobaosimbarptadgroupbasegetAPIRequest) GetNick() string {
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
 // SetStartTime is StartTime Setter
 // 开始时间，格式yyyy-mm-dd
-func (r *TaobaosimbarptadgroupbasegetAPIRequest) SetStartTime(_startTime string) error {
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
 	r.Set("start_time", _startTime)
 	return nil
 }
 
 // GetStartTime StartTime Getter
-func (r TaobaosimbarptadgroupbasegetAPIRequest) GetStartTime() string {
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
 // SetEndTime is EndTime Setter
 // 结束时间，格式yyyy-mm-dd
-func (r *TaobaosimbarptadgroupbasegetAPIRequest) SetEndTime(_endTime string) error {
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
 	r.Set("end_time", _endTime)
 	return nil
 }
 
 // GetEndTime EndTime Getter
-func (r TaobaosimbarptadgroupbasegetAPIRequest) GetEndTime() string {
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
 // SetSearchType is SearchType Setter
 // 报表类型（搜索：SEARCH,类目出价：CAT,&lt;br/&gt;定向投放：NOSEARCH）可以一次取多个例如：SEARCH,CAT
-func (r *TaobaosimbarptadgroupbasegetAPIRequest) SetSearchType(_searchType string) error {
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetSearchType(_searchType string) error {
 	r._searchType = _searchType
 	r.Set("search_type", _searchType)
 	return nil
 }
 
 // GetSearchType SearchType Getter
-func (r TaobaosimbarptadgroupbasegetAPIRequest) GetSearchType() string {
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetSearchType() string {
 	return r._searchType
 }
 
 // SetSource is Source Setter
 // 数据来源（PC站内：1，PC站外：2，无线站内：4，无线站外 : 5）可多选，以逗号分隔
-func (r *TaobaosimbarptadgroupbasegetAPIRequest) SetSource(_source string) error {
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetSource(_source string) error {
 	r._source = _source
 	r.Set("source", _source)
 	return nil
 }
 
 // GetSource Source Getter
-func (r TaobaosimbarptadgroupbasegetAPIRequest) GetSource() string {
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetSource() string {
 	return r._source
 }
 
 // SetCampaignId is CampaignId Setter
 // 推广计划id
-func (r *TaobaosimbarptadgroupbasegetAPIRequest) SetCampaignId(_campaignId int64) error {
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
 	r.Set("campaign_id", _campaignId)
 	return nil
 }
 
 // GetCampaignId CampaignId Getter
-func (r TaobaosimbarptadgroupbasegetAPIRequest) GetCampaignId() int64 {
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
 // SetAdgroupId is AdgroupId Setter
 // 推广组id
-func (r *TaobaosimbarptadgroupbasegetAPIRequest) SetAdgroupId(_adgroupId int64) error {
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
 	r.Set("adgroup_id", _adgroupId)
 	return nil
 }
 
 // GetAdgroupId AdgroupId Getter
-func (r TaobaosimbarptadgroupbasegetAPIRequest) GetAdgroupId() int64 {
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }
 
 // SetPageNo is PageNo Setter
 // 页码
-func (r *TaobaosimbarptadgroupbasegetAPIRequest) SetPageNo(_pageNo int64) error {
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
 	r.Set("page_no", _pageNo)
 	return nil
 }
 
 // GetPageNo PageNo Getter
-func (r TaobaosimbarptadgroupbasegetAPIRequest) GetPageNo() int64 {
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
 // SetPageSize is PageSize Setter
 // 每页大小
-func (r *TaobaosimbarptadgroupbasegetAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r TaobaosimbarptadgroupbasegetAPIRequest) GetPageSize() int64 {
+func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

@@ -1,7 +1,7 @@
 package alihealth2
 
-// AlibabaalihealthtracecodesellerchannelsearchResult 结构体
-type AlibabaalihealthtracecodesellerchannelsearchResult struct {
+// AlibabaAlihealthTracecodesellerChannelSearchResult 结构体
+type AlibabaAlihealthTracecodesellerChannelSearchResult struct {
 	// 区县
 	AreaDesc string `json:"area_desc,omitempty" xml:"area_desc,omitempty"`
 	// cityDesc

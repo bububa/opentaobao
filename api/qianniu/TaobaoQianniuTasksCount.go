@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/qianniu"
 )
 
-// Taobaoqianniutaskscount 任务查询条数接口
+// TaobaoQianniuTasksCount 任务查询条数接口
 // taobao.qianniu.tasks.count
 //
 // 任务查询条数接口
-func Taobaoqianniutaskscount(clt *core.SDKClient, req *qianniu.TaobaoqianniutaskscountAPIRequest, session string) (*qianniu.TaobaoqianniutaskscountAPIResponse, error) {
-	var resp qianniu.TaobaoqianniutaskscountAPIResponse
+func TaobaoQianniuTasksCount(clt *core.SDKClient, req *qianniu.TaobaoQianniuTasksCountAPIRequest, session string) (*qianniu.TaobaoQianniuTasksCountAPIResponse, error) {
+	var resp qianniu.TaobaoQianniuTasksCountAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tanx"
 )
 
-// Taobaotanxauditdepositcreativeadd dsp托管创意新增接口
+// TaobaoTanxAuditDepositcreativeAdd dsp托管创意新增接口
 // taobao.tanx.audit.depositcreative.add
 //
 // dsp托管创意新增接口
-func Taobaotanxauditdepositcreativeadd(clt *core.SDKClient, req *tanx.TaobaotanxauditdepositcreativeaddAPIRequest, session string) (*tanx.TaobaotanxauditdepositcreativeaddAPIResponse, error) {
-	var resp tanx.TaobaotanxauditdepositcreativeaddAPIResponse
+func TaobaoTanxAuditDepositcreativeAdd(clt *core.SDKClient, req *tanx.TaobaoTanxAuditDepositcreativeAddAPIRequest, session string) (*tanx.TaobaoTanxAuditDepositcreativeAddAPIResponse, error) {
+	var resp tanx.TaobaoTanxAuditDepositcreativeAddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

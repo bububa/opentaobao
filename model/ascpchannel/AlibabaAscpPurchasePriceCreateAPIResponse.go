@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaascppurchasepricecreateAPIResponse ascp采购价写入接口 API返回值
+// AlibabaAscpPurchasePriceCreateAPIResponse ascp采购价写入接口 API返回值
 // alibaba.ascp.purchase.price.create
 //
 // 供应链平台采购价创建或修改接口
-type AlibabaascppurchasepricecreateAPIResponse struct {
+type AlibabaAscpPurchasePriceCreateAPIResponse struct {
 	model.CommonResponse
-	AlibabaascppurchasepricecreateAPIResponseModel
+	AlibabaAscpPurchasePriceCreateAPIResponseModel
 }
 
-// AlibabaascppurchasepricecreateAPIResponseModel is ascp采购价写入接口 成功返回结果
-type AlibabaascppurchasepricecreateAPIResponseModel struct {
+// AlibabaAscpPurchasePriceCreateAPIResponseModel is ascp采购价写入接口 成功返回结果
+type AlibabaAscpPurchasePriceCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ascp_purchase_price_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

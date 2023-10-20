@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaofenxiaoproductcatupdateAPIResponse 修改产品线 API返回值
+// TaobaoFenxiaoProductcatUpdateAPIResponse 修改产品线 API返回值
 // taobao.fenxiao.productcat.update
 //
 // 修改产品线
-type TaobaofenxiaoproductcatupdateAPIResponse struct {
+type TaobaoFenxiaoProductcatUpdateAPIResponse struct {
 	model.CommonResponse
-	TaobaofenxiaoproductcatupdateAPIResponseModel
+	TaobaoFenxiaoProductcatUpdateAPIResponseModel
 }
 
-// TaobaofenxiaoproductcatupdateAPIResponseModel is 修改产品线 成功返回结果
-type TaobaofenxiaoproductcatupdateAPIResponseModel struct {
+// TaobaoFenxiaoProductcatUpdateAPIResponseModel is 修改产品线 成功返回结果
+type TaobaoFenxiaoProductcatUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_productcat_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

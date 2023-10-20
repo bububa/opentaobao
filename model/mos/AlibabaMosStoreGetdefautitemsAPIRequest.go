@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamosstoregetdefautitemsAPIRequest 获取默认状态下商品列表 API请求
+// AlibabaMosStoreGetdefautitemsAPIRequest 获取默认状态下商品列表 API请求
 // alibaba.mos.store.getdefautitems
 //
 // 获取默认状态下商品列表
-type AlibabamosstoregetdefautitemsAPIRequest struct {
+type AlibabaMosStoreGetdefautitemsAPIRequest struct {
 	model.Params
 	// 屏编号
 	_screenNo string
@@ -20,65 +20,65 @@ type AlibabamosstoregetdefautitemsAPIRequest struct {
 	_limitCount int64
 }
 
-// NewAlibabamosstoregetdefautitemsRequest 初始化AlibabamosstoregetdefautitemsAPIRequest对象
-func NewAlibabamosstoregetdefautitemsRequest() *AlibabamosstoregetdefautitemsAPIRequest {
-	return &AlibabamosstoregetdefautitemsAPIRequest{
+// NewAlibabaMosStoreGetdefautitemsRequest 初始化AlibabaMosStoreGetdefautitemsAPIRequest对象
+func NewAlibabaMosStoreGetdefautitemsRequest() *AlibabaMosStoreGetdefautitemsAPIRequest {
+	return &AlibabaMosStoreGetdefautitemsAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabamosstoregetdefautitemsAPIRequest) GetApiMethodName() string {
+func (r AlibabaMosStoreGetdefautitemsAPIRequest) GetApiMethodName() string {
 	return "alibaba.mos.store.getdefautitems"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabamosstoregetdefautitemsAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaMosStoreGetdefautitemsAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabamosstoregetdefautitemsAPIRequest) GetRawParams() model.Params {
+func (r AlibabaMosStoreGetdefautitemsAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetScreenNo is ScreenNo Setter
 // 屏编号
-func (r *AlibabamosstoregetdefautitemsAPIRequest) SetScreenNo(_screenNo string) error {
+func (r *AlibabaMosStoreGetdefautitemsAPIRequest) SetScreenNo(_screenNo string) error {
 	r._screenNo = _screenNo
 	r.Set("screen_no", _screenNo)
 	return nil
 }
 
 // GetScreenNo ScreenNo Getter
-func (r AlibabamosstoregetdefautitemsAPIRequest) GetScreenNo() string {
+func (r AlibabaMosStoreGetdefautitemsAPIRequest) GetScreenNo() string {
 	return r._screenNo
 }
 
 // SetStart is Start Setter
 // 分页查询开始index
-func (r *AlibabamosstoregetdefautitemsAPIRequest) SetStart(_start int64) error {
+func (r *AlibabaMosStoreGetdefautitemsAPIRequest) SetStart(_start int64) error {
 	r._start = _start
 	r.Set("start", _start)
 	return nil
 }
 
 // GetStart Start Getter
-func (r AlibabamosstoregetdefautitemsAPIRequest) GetStart() int64 {
+func (r AlibabaMosStoreGetdefautitemsAPIRequest) GetStart() int64 {
 	return r._start
 }
 
 // SetLimitCount is LimitCount Setter
 // 分页查询每页记录数
-func (r *AlibabamosstoregetdefautitemsAPIRequest) SetLimitCount(_limitCount int64) error {
+func (r *AlibabaMosStoreGetdefautitemsAPIRequest) SetLimitCount(_limitCount int64) error {
 	r._limitCount = _limitCount
 	r.Set("limit_count", _limitCount)
 	return nil
 }
 
 // GetLimitCount LimitCount Getter
-func (r AlibabamosstoregetdefautitemsAPIRequest) GetLimitCount() int64 {
+func (r AlibabaMosStoreGetdefautitemsAPIRequest) GetLimitCount() int64 {
 	return r._limitCount
 }

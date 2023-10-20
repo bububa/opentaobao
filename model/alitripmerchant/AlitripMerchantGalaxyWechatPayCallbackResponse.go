@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripmerchantgalaxywechatpaycallbackResponse 结构体
-type AlitripmerchantgalaxywechatpaycallbackResponse struct {
+// AlitripMerchantGalaxyWechatPayCallbackResponse 结构体
+type AlitripMerchantGalaxyWechatPayCallbackResponse struct {
 	// 1
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 1

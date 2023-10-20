@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoailabaicloudtophotwordsupdateAPIResponse 更新热词 API返回值
+// TaobaoAilabAicloudTopHotwordsUpdateAPIResponse 更新热词 API返回值
 // taobao.ailab.aicloud.top.hotwords.update
 //
 // 更新ASR热词
-type TaobaoailabaicloudtophotwordsupdateAPIResponse struct {
+type TaobaoAilabAicloudTopHotwordsUpdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoailabaicloudtophotwordsupdateAPIResponseModel
+	TaobaoAilabAicloudTopHotwordsUpdateAPIResponseModel
 }
 
-// TaobaoailabaicloudtophotwordsupdateAPIResponseModel is 更新热词 成功返回结果
-type TaobaoailabaicloudtophotwordsupdateAPIResponseModel struct {
+// TaobaoAilabAicloudTopHotwordsUpdateAPIResponseModel is 更新热词 成功返回结果
+type TaobaoAilabAicloudTopHotwordsUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_hotwords_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

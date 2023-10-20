@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotrainagenthandleticketconfirmvtwoAPIRequest 代理商出票中v2--增加鉴权校验 API请求
+// TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest 代理商出票中v2--增加鉴权校验 API请求
 // taobao.train.agent.handleticket.confirm.vtwo
 //
 // 代理商出票中
-type TaobaotrainagenthandleticketconfirmvtwoAPIRequest struct {
+type TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest struct {
 	model.Params
 	// 扩展参数
 	_extendParams string
@@ -20,65 +20,65 @@ type TaobaotrainagenthandleticketconfirmvtwoAPIRequest struct {
 	_sellerId int64
 }
 
-// NewTaobaotrainagenthandleticketconfirmvtwoRequest 初始化TaobaotrainagenthandleticketconfirmvtwoAPIRequest对象
-func NewTaobaotrainagenthandleticketconfirmvtwoRequest() *TaobaotrainagenthandleticketconfirmvtwoAPIRequest {
-	return &TaobaotrainagenthandleticketconfirmvtwoAPIRequest{
+// NewTaobaoTrainAgentHandleticketConfirmVtwoRequest 初始化TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest对象
+func NewTaobaoTrainAgentHandleticketConfirmVtwoRequest() *TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest {
+	return &TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaotrainagenthandleticketconfirmvtwoAPIRequest) GetApiMethodName() string {
+func (r TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) GetApiMethodName() string {
 	return "taobao.train.agent.handleticket.confirm.vtwo"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaotrainagenthandleticketconfirmvtwoAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaotrainagenthandleticketconfirmvtwoAPIRequest) GetRawParams() model.Params {
+func (r TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetExtendParams is ExtendParams Setter
 // 扩展参数
-func (r *TaobaotrainagenthandleticketconfirmvtwoAPIRequest) SetExtendParams(_extendParams string) error {
+func (r *TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) SetExtendParams(_extendParams string) error {
 	r._extendParams = _extendParams
 	r.Set("extend_params", _extendParams)
 	return nil
 }
 
 // GetExtendParams ExtendParams Getter
-func (r TaobaotrainagenthandleticketconfirmvtwoAPIRequest) GetExtendParams() string {
+func (r TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) GetExtendParams() string {
 	return r._extendParams
 }
 
 // SetMainOrderId is MainOrderId Setter
 // 主站id
-func (r *TaobaotrainagenthandleticketconfirmvtwoAPIRequest) SetMainOrderId(_mainOrderId int64) error {
+func (r *TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) SetMainOrderId(_mainOrderId int64) error {
 	r._mainOrderId = _mainOrderId
 	r.Set("main_order_id", _mainOrderId)
 	return nil
 }
 
 // GetMainOrderId MainOrderId Getter
-func (r TaobaotrainagenthandleticketconfirmvtwoAPIRequest) GetMainOrderId() int64 {
+func (r TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
 }
 
 // SetSellerId is SellerId Setter
 // 代理商id
-func (r *TaobaotrainagenthandleticketconfirmvtwoAPIRequest) SetSellerId(_sellerId int64) error {
+func (r *TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) SetSellerId(_sellerId int64) error {
 	r._sellerId = _sellerId
 	r.Set("seller_id", _sellerId)
 	return nil
 }
 
 // GetSellerId SellerId Getter
-func (r TaobaotrainagenthandleticketconfirmvtwoAPIRequest) GetSellerId() int64 {
+func (r TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) GetSellerId() int64 {
 	return r._sellerId
 }

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaservicecenterfulfiltaskbuyeraddresschangeAPIRequest 修改消费者服务地址 API请求
+// AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest 修改消费者服务地址 API请求
 // alibaba.servicecenter.fulfiltask.buyeraddress.change
 //
 // 当消费者反馈自己的服务地址错误时，可以电话联系服务商修改为正确地址，服务商只能修改派给自己的单子
-type AlibabaservicecenterfulfiltaskbuyeraddresschangeAPIRequest struct {
+type AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest struct {
 	model.Params
 	// 详细地址
 	_addressDetail string
@@ -20,65 +20,65 @@ type AlibabaservicecenterfulfiltaskbuyeraddresschangeAPIRequest struct {
 	_location int64
 }
 
-// NewAlibabaservicecenterfulfiltaskbuyeraddresschangeRequest 初始化AlibabaservicecenterfulfiltaskbuyeraddresschangeAPIRequest对象
-func NewAlibabaservicecenterfulfiltaskbuyeraddresschangeRequest() *AlibabaservicecenterfulfiltaskbuyeraddresschangeAPIRequest {
-	return &AlibabaservicecenterfulfiltaskbuyeraddresschangeAPIRequest{
+// NewAlibabaServicecenterFulfiltaskBuyeraddressChangeRequest 初始化AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest对象
+func NewAlibabaServicecenterFulfiltaskBuyeraddressChangeRequest() *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest {
+	return &AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaservicecenterfulfiltaskbuyeraddresschangeAPIRequest) GetApiMethodName() string {
+func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetApiMethodName() string {
 	return "alibaba.servicecenter.fulfiltask.buyeraddress.change"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaservicecenterfulfiltaskbuyeraddresschangeAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaservicecenterfulfiltaskbuyeraddresschangeAPIRequest) GetRawParams() model.Params {
+func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAddressDetail is AddressDetail Setter
 // 详细地址
-func (r *AlibabaservicecenterfulfiltaskbuyeraddresschangeAPIRequest) SetAddressDetail(_addressDetail string) error {
+func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) SetAddressDetail(_addressDetail string) error {
 	r._addressDetail = _addressDetail
 	r.Set("address_detail", _addressDetail)
 	return nil
 }
 
 // GetAddressDetail AddressDetail Getter
-func (r AlibabaservicecenterfulfiltaskbuyeraddresschangeAPIRequest) GetAddressDetail() string {
+func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetAddressDetail() string {
 	return r._addressDetail
 }
 
 // SetFulfilTaskId is FulfilTaskId Setter
 // 核销单id
-func (r *AlibabaservicecenterfulfiltaskbuyeraddresschangeAPIRequest) SetFulfilTaskId(_fulfilTaskId int64) error {
+func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) SetFulfilTaskId(_fulfilTaskId int64) error {
 	r._fulfilTaskId = _fulfilTaskId
 	r.Set("fulfil_task_id", _fulfilTaskId)
 	return nil
 }
 
 // GetFulfilTaskId FulfilTaskId Getter
-func (r AlibabaservicecenterfulfiltaskbuyeraddresschangeAPIRequest) GetFulfilTaskId() int64 {
+func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetFulfilTaskId() int64 {
 	return r._fulfilTaskId
 }
 
 // SetLocation is Location Setter
 // 地址编码
-func (r *AlibabaservicecenterfulfiltaskbuyeraddresschangeAPIRequest) SetLocation(_location int64) error {
+func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) SetLocation(_location int64) error {
 	r._location = _location
 	r.Set("location", _location)
 	return nil
 }
 
 // GetLocation Location Getter
-func (r AlibabaservicecenterfulfiltaskbuyeraddresschangeAPIRequest) GetLocation() int64 {
+func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetLocation() int64 {
 	return r._location
 }

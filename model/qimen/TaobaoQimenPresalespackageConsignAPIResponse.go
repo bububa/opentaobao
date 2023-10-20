@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoqimenpresalespackageconsignAPIResponse 预售预包尾款推单发货 API返回值
+// TaobaoQimenPresalespackageConsignAPIResponse 预售预包尾款推单发货 API返回值
 // taobao.qimen.presalespackage.consign
 //
 // 预售预包尾款推单发货
-type TaobaoqimenpresalespackageconsignAPIResponse struct {
+type TaobaoQimenPresalespackageConsignAPIResponse struct {
 	model.CommonResponse
-	TaobaoqimenpresalespackageconsignAPIResponseModel
+	TaobaoQimenPresalespackageConsignAPIResponseModel
 }
 
-// TaobaoqimenpresalespackageconsignAPIResponseModel is 预售预包尾款推单发货 成功返回结果
-type TaobaoqimenpresalespackageconsignAPIResponseModel struct {
+// TaobaoQimenPresalespackageConsignAPIResponseModel is 预售预包尾款推单发货 成功返回结果
+type TaobaoQimenPresalespackageConsignAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_presalespackage_consign_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package aliqin
 
-// AlibabaaliqinfciotuseroscontrolResult 结构体
-type AlibabaaliqinfciotuseroscontrolResult struct {
+// AlibabaAliqinFcIotUseroscontrolResult 结构体
+type AlibabaAliqinFcIotUseroscontrolResult struct {
 	// 停开结果描述
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// 停开结果编码

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabahealthvaccinnoticeordercreateAPIResponse 支付宝医疗健康疫苗预约创建 API返回值
+// AlibabaHealthVaccinNoticeOrderCreateAPIResponse 支付宝医疗健康疫苗预约创建 API返回值
 // alibaba.health.vaccin.notice.order.create
 //
 // 支付宝医疗健康疫苗预约创建
-type AlibabahealthvaccinnoticeordercreateAPIResponse struct {
+type AlibabaHealthVaccinNoticeOrderCreateAPIResponse struct {
 	model.CommonResponse
-	AlibabahealthvaccinnoticeordercreateAPIResponseModel
+	AlibabaHealthVaccinNoticeOrderCreateAPIResponseModel
 }
 
-// AlibabahealthvaccinnoticeordercreateAPIResponseModel is 支付宝医疗健康疫苗预约创建 成功返回结果
-type AlibabahealthvaccinnoticeordercreateAPIResponseModel struct {
+// AlibabaHealthVaccinNoticeOrderCreateAPIResponseModel is 支付宝医疗健康疫苗预约创建 成功返回结果
+type AlibabaHealthVaccinNoticeOrderCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_health_vaccin_notice_order_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

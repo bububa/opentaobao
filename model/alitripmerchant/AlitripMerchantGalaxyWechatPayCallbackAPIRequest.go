@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripmerchantgalaxywechatpaycallbackAPIRequest 微信支付回调 API请求
+// AlitripMerchantGalaxyWechatPayCallbackAPIRequest 微信支付回调 API请求
 // alitrip.merchant.galaxy.wechat.pay.callback
 //
 // 微信支付回调
-type AlitripmerchantgalaxywechatpaycallbackAPIRequest struct {
+type AlitripMerchantGalaxyWechatPayCallbackAPIRequest struct {
 	model.Params
 	// 1
 	_tenantKey string
@@ -18,52 +18,52 @@ type AlitripmerchantgalaxywechatpaycallbackAPIRequest struct {
 	_callBackJson string
 }
 
-// NewAlitripmerchantgalaxywechatpaycallbackRequest 初始化AlitripmerchantgalaxywechatpaycallbackAPIRequest对象
-func NewAlitripmerchantgalaxywechatpaycallbackRequest() *AlitripmerchantgalaxywechatpaycallbackAPIRequest {
-	return &AlitripmerchantgalaxywechatpaycallbackAPIRequest{
+// NewAlitripMerchantGalaxyWechatPayCallbackRequest 初始化AlitripMerchantGalaxyWechatPayCallbackAPIRequest对象
+func NewAlitripMerchantGalaxyWechatPayCallbackRequest() *AlitripMerchantGalaxyWechatPayCallbackAPIRequest {
+	return &AlitripMerchantGalaxyWechatPayCallbackAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripmerchantgalaxywechatpaycallbackAPIRequest) GetApiMethodName() string {
+func (r AlitripMerchantGalaxyWechatPayCallbackAPIRequest) GetApiMethodName() string {
 	return "alitrip.merchant.galaxy.wechat.pay.callback"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripmerchantgalaxywechatpaycallbackAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripMerchantGalaxyWechatPayCallbackAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripmerchantgalaxywechatpaycallbackAPIRequest) GetRawParams() model.Params {
+func (r AlitripMerchantGalaxyWechatPayCallbackAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTenantKey is TenantKey Setter
 // 1
-func (r *AlitripmerchantgalaxywechatpaycallbackAPIRequest) SetTenantKey(_tenantKey string) error {
+func (r *AlitripMerchantGalaxyWechatPayCallbackAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
 	r.Set("tenant_key", _tenantKey)
 	return nil
 }
 
 // GetTenantKey TenantKey Getter
-func (r AlitripmerchantgalaxywechatpaycallbackAPIRequest) GetTenantKey() string {
+func (r AlitripMerchantGalaxyWechatPayCallbackAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }
 
 // SetCallBackJson is CallBackJson Setter
 // 回调参数
-func (r *AlitripmerchantgalaxywechatpaycallbackAPIRequest) SetCallBackJson(_callBackJson string) error {
+func (r *AlitripMerchantGalaxyWechatPayCallbackAPIRequest) SetCallBackJson(_callBackJson string) error {
 	r._callBackJson = _callBackJson
 	r.Set("call_back_json", _callBackJson)
 	return nil
 }
 
 // GetCallBackJson CallBackJson Getter
-func (r AlitripmerchantgalaxywechatpaycallbackAPIRequest) GetCallBackJson() string {
+func (r AlitripMerchantGalaxyWechatPayCallbackAPIRequest) GetCallBackJson() string {
 	return r._callBackJson
 }

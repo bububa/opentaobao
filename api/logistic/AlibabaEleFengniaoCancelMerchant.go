@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-// Alibabaelefengniaocancelmerchant 商户取消
+// AlibabaEleFengniaoCancelMerchant 商户取消
 // alibaba.ele.fengniao.cancel.merchant
 //
 // 商户取消配送
-func Alibabaelefengniaocancelmerchant(clt *core.SDKClient, req *logistic.AlibabaelefengniaocancelmerchantAPIRequest, session string) (*logistic.AlibabaelefengniaocancelmerchantAPIResponse, error) {
-	var resp logistic.AlibabaelefengniaocancelmerchantAPIResponse
+func AlibabaEleFengniaoCancelMerchant(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoCancelMerchantAPIRequest, session string) (*logistic.AlibabaEleFengniaoCancelMerchantAPIResponse, error) {
+	var resp logistic.AlibabaEleFengniaoCancelMerchantAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// Taobaouniversalbpcampaignfindpage 查询计划分页列表
+// TaobaoUniversalbpCampaignFindpage 查询计划分页列表
 // taobao.universalbp.campaign.findpage
 //
 // 分页查询场景内的计划列表
-func Taobaouniversalbpcampaignfindpage(clt *core.SDKClient, req *simba.TaobaouniversalbpcampaignfindpageAPIRequest, session string) (*simba.TaobaouniversalbpcampaignfindpageAPIResponse, error) {
-	var resp simba.TaobaouniversalbpcampaignfindpageAPIResponse
+func TaobaoUniversalbpCampaignFindpage(clt *core.SDKClient, req *simba.TaobaoUniversalbpCampaignFindpageAPIRequest, session string) (*simba.TaobaoUniversalbpCampaignFindpageAPIResponse, error) {
+	var resp simba.TaobaoUniversalbpCampaignFindpageAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

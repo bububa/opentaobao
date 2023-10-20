@@ -1,7 +1,7 @@
 package viapi
 
-// AliyunviapifacebodydetectfaceData 结构体
-type AliyunviapifacebodydetectfaceData struct {
+// AliyunViapiFacebodyDetectfaceData 结构体
+type AliyunViapiFacebodyDetectfaceData struct {
 	// 返回人脸概率, 0-1之间，如有多个人脸，则依次顺延。如有两个人脸则返回[face_prob1, face_prob2]
 	FaceProbabilityList []int64 `json:"face_probability_list,omitempty" xml:"face_probability_list>int64,omitempty"`
 	// 返回人脸矩形框，分别是[left, top, width, height], 如有多个人脸，则依次顺延，返回矩形框。如有两个人脸则返回[left1, top1, width1, height1, left2, top2, width2, height2]

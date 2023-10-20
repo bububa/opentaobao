@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/qimen"
 )
 
-// Taobaoqimenstockoutcreate 出库单创建接口
+// TaobaoQimenStockoutCreate 出库单创建接口
 // taobao.qimen.stockout.create
 //
 // taobao.qimen.returnorder.create
-func Taobaoqimenstockoutcreate(clt *core.SDKClient, req *qimen.TaobaoqimenstockoutcreateAPIRequest, session string) (*qimen.TaobaoqimenstockoutcreateAPIResponse, error) {
-	var resp qimen.TaobaoqimenstockoutcreateAPIResponse
+func TaobaoQimenStockoutCreate(clt *core.SDKClient, req *qimen.TaobaoQimenStockoutCreateAPIRequest, session string) (*qimen.TaobaoQimenStockoutCreateAPIResponse, error) {
+	var resp qimen.TaobaoQimenStockoutCreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

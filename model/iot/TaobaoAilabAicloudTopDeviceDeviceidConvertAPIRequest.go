@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoailabaicloudtopdevicedeviceidconvertAPIRequest 开放设备id转换内部设备id API请求
+// TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest 开放设备id转换内部设备id API请求
 // taobao.ailab.aicloud.top.device.deviceid.convert
 //
 // 将开放设备id转换为内部设备id
-type TaobaoailabaicloudtopdevicedeviceidconvertAPIRequest struct {
+type TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest struct {
 	model.Params
 	// 设备openId
 	_deviceOpenId string
@@ -18,52 +18,52 @@ type TaobaoailabaicloudtopdevicedeviceidconvertAPIRequest struct {
 	_skillId string
 }
 
-// NewTaobaoailabaicloudtopdevicedeviceidconvertRequest 初始化TaobaoailabaicloudtopdevicedeviceidconvertAPIRequest对象
-func NewTaobaoailabaicloudtopdevicedeviceidconvertRequest() *TaobaoailabaicloudtopdevicedeviceidconvertAPIRequest {
-	return &TaobaoailabaicloudtopdevicedeviceidconvertAPIRequest{
+// NewTaobaoAilabAicloudTopDeviceDeviceidConvertRequest 初始化TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest对象
+func NewTaobaoAilabAicloudTopDeviceDeviceidConvertRequest() *TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest {
+	return &TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoailabaicloudtopdevicedeviceidconvertAPIRequest) GetApiMethodName() string {
+func (r TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest) GetApiMethodName() string {
 	return "taobao.ailab.aicloud.top.device.deviceid.convert"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoailabaicloudtopdevicedeviceidconvertAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoailabaicloudtopdevicedeviceidconvertAPIRequest) GetRawParams() model.Params {
+func (r TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDeviceOpenId is DeviceOpenId Setter
 // 设备openId
-func (r *TaobaoailabaicloudtopdevicedeviceidconvertAPIRequest) SetDeviceOpenId(_deviceOpenId string) error {
+func (r *TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest) SetDeviceOpenId(_deviceOpenId string) error {
 	r._deviceOpenId = _deviceOpenId
 	r.Set("device_open_id", _deviceOpenId)
 	return nil
 }
 
 // GetDeviceOpenId DeviceOpenId Getter
-func (r TaobaoailabaicloudtopdevicedeviceidconvertAPIRequest) GetDeviceOpenId() string {
+func (r TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest) GetDeviceOpenId() string {
 	return r._deviceOpenId
 }
 
 // SetSkillId is SkillId Setter
 // 技能id
-func (r *TaobaoailabaicloudtopdevicedeviceidconvertAPIRequest) SetSkillId(_skillId string) error {
+func (r *TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest) SetSkillId(_skillId string) error {
 	r._skillId = _skillId
 	r.Set("skill_id", _skillId)
 	return nil
 }
 
 // GetSkillId SkillId Getter
-func (r TaobaoailabaicloudtopdevicedeviceidconvertAPIRequest) GetSkillId() string {
+func (r TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest) GetSkillId() string {
 	return r._skillId
 }

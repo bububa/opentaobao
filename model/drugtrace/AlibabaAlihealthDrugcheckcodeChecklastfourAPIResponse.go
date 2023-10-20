@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthdrugcheckcodechecklastfourAPIResponse 校验追溯码的后4位是否正确 API返回值
+// AlibabaAlihealthDrugcheckcodeChecklastfourAPIResponse 校验追溯码的后4位是否正确 API返回值
 // alibaba.alihealth.drugcheckcode.checklastfour
 //
 // 校验追溯码的后4位是否正确
-type AlibabaalihealthdrugcheckcodechecklastfourAPIResponse struct {
+type AlibabaAlihealthDrugcheckcodeChecklastfourAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthdrugcheckcodechecklastfourAPIResponseModel
+	AlibabaAlihealthDrugcheckcodeChecklastfourAPIResponseModel
 }
 
-// AlibabaalihealthdrugcheckcodechecklastfourAPIResponseModel is 校验追溯码的后4位是否正确 成功返回结果
-type AlibabaalihealthdrugcheckcodechecklastfourAPIResponseModel struct {
+// AlibabaAlihealthDrugcheckcodeChecklastfourAPIResponseModel is 校验追溯码的后4位是否正确 成功返回结果
+type AlibabaAlihealthDrugcheckcodeChecklastfourAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drugcheckcode_checklastfour_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

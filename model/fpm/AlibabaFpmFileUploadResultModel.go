@@ -1,7 +1,7 @@
 package fpm
 
-// AlibabafpmfileuploadResultModel 结构体
-type AlibabafpmfileuploadResultModel struct {
+// AlibabaFpmFileUploadResultModel 结构体
+type AlibabaFpmFileUploadResultModel struct {
 	// 错误编码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错信信息

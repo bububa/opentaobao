@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallcar"
 )
 
-// Tmallaliautoorderqrcode 根据商品id列表获取可扫描下单二维码
+// TmallAliautoOrderQrcode 根据商品id列表获取可扫描下单二维码
 // tmall.aliauto.order.qrcode
 //
 // 根据商品id列表获取可扫描下单二维码
-func Tmallaliautoorderqrcode(clt *core.SDKClient, req *tmallcar.TmallaliautoorderqrcodeAPIRequest, session string) (*tmallcar.TmallaliautoorderqrcodeAPIResponse, error) {
-	var resp tmallcar.TmallaliautoorderqrcodeAPIResponse
+func TmallAliautoOrderQrcode(clt *core.SDKClient, req *tmallcar.TmallAliautoOrderQrcodeAPIRequest, session string) (*tmallcar.TmallAliautoOrderQrcodeAPIResponse, error) {
+	var resp tmallcar.TmallAliautoOrderQrcodeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

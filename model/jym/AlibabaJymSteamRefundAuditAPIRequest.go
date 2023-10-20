@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabajymsteamrefundauditAPIRequest 交易猫steam逆向单审核 API请求
+// AlibabaJymSteamRefundAuditAPIRequest 交易猫steam逆向单审核 API请求
 // alibaba.jym.steam.refund.audit
 //
 // 交易猫steam逆向单审核
-type AlibabajymsteamrefundauditAPIRequest struct {
+type AlibabaJymSteamRefundAuditAPIRequest struct {
 	model.Params
 	// 入参object
 	_auditRefundOrderDto *AuditRefundOrderDto
 }
 
-// NewAlibabajymsteamrefundauditRequest 初始化AlibabajymsteamrefundauditAPIRequest对象
-func NewAlibabajymsteamrefundauditRequest() *AlibabajymsteamrefundauditAPIRequest {
-	return &AlibabajymsteamrefundauditAPIRequest{
+// NewAlibabaJymSteamRefundAuditRequest 初始化AlibabaJymSteamRefundAuditAPIRequest对象
+func NewAlibabaJymSteamRefundAuditRequest() *AlibabaJymSteamRefundAuditAPIRequest {
+	return &AlibabaJymSteamRefundAuditAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabajymsteamrefundauditAPIRequest) GetApiMethodName() string {
+func (r AlibabaJymSteamRefundAuditAPIRequest) GetApiMethodName() string {
 	return "alibaba.jym.steam.refund.audit"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabajymsteamrefundauditAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaJymSteamRefundAuditAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabajymsteamrefundauditAPIRequest) GetRawParams() model.Params {
+func (r AlibabaJymSteamRefundAuditAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAuditRefundOrderDto is AuditRefundOrderDto Setter
 // 入参object
-func (r *AlibabajymsteamrefundauditAPIRequest) SetAuditRefundOrderDto(_auditRefundOrderDto *AuditRefundOrderDto) error {
+func (r *AlibabaJymSteamRefundAuditAPIRequest) SetAuditRefundOrderDto(_auditRefundOrderDto *AuditRefundOrderDto) error {
 	r._auditRefundOrderDto = _auditRefundOrderDto
 	r.Set("audit_refund_order_dto", _auditRefundOrderDto)
 	return nil
 }
 
 // GetAuditRefundOrderDto AuditRefundOrderDto Getter
-func (r AlibabajymsteamrefundauditAPIRequest) GetAuditRefundOrderDto() *AuditRefundOrderDto {
+func (r AlibabaJymSteamRefundAuditAPIRequest) GetAuditRefundOrderDto() *AuditRefundOrderDto {
 	return r._auditRefundOrderDto
 }

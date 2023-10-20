@@ -1,7 +1,7 @@
 package alihealth2
 
-// AlibabaalihealthdentalitemlistMtopResult 结构体
-type AlibabaalihealthdentalitemlistMtopResult struct {
+// AlibabaAlihealthDentalItemListMtopResult 结构体
+type AlibabaAlihealthDentalItemListMtopResult struct {
 	// model
 	Goods []NormalGoodsVo `json:"goods,omitempty" xml:"goods>normal_goods_vo,omitempty"`
 	// 200

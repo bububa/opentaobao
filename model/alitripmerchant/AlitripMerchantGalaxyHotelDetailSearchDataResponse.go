@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripmerchantgalaxyhoteldetailsearchdataResponse 结构体
-type AlitripmerchantgalaxyhoteldetailsearchdataResponse struct {
+// AlitripMerchantGalaxyHotelDetailSearchDataResponse 结构体
+type AlitripMerchantGalaxyHotelDetailSearchDataResponse struct {
 	// 错误编码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误编码

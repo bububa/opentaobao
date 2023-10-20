@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoalitripsellerrefundfillfeeAPIResponse 机票代理商】回填手续费 API返回值
+// TaobaoAlitripSellerRefundFillfeeAPIResponse 机票代理商】回填手续费 API返回值
 // taobao.alitrip.seller.refund.fillfee
 //
 // 回填手续费
-type TaobaoalitripsellerrefundfillfeeAPIResponse struct {
+type TaobaoAlitripSellerRefundFillfeeAPIResponse struct {
 	model.CommonResponse
-	TaobaoalitripsellerrefundfillfeeAPIResponseModel
+	TaobaoAlitripSellerRefundFillfeeAPIResponseModel
 }
 
-// TaobaoalitripsellerrefundfillfeeAPIResponseModel is 机票代理商】回填手续费 成功返回结果
-type TaobaoalitripsellerrefundfillfeeAPIResponseModel struct {
+// TaobaoAlitripSellerRefundFillfeeAPIResponseModel is 机票代理商】回填手续费 成功返回结果
+type TaobaoAlitripSellerRefundFillfeeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_seller_refund_fillfee_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

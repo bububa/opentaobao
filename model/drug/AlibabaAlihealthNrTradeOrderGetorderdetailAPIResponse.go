@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthnrtradeordergetorderdetailAPIResponse 根据订单id获取单条订单详情 API返回值
+// AlibabaAlihealthNrTradeOrderGetorderdetailAPIResponse 根据订单id获取单条订单详情 API返回值
 // alibaba.alihealth.nr.trade.order.getorderdetail
 //
 // 阿里健康O2O，获取订单详情，修复组合商品价格精度问题
-type AlibabaalihealthnrtradeordergetorderdetailAPIResponse struct {
+type AlibabaAlihealthNrTradeOrderGetorderdetailAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthnrtradeordergetorderdetailAPIResponseModel
+	AlibabaAlihealthNrTradeOrderGetorderdetailAPIResponseModel
 }
 
-// AlibabaalihealthnrtradeordergetorderdetailAPIResponseModel is 根据订单id获取单条订单详情 成功返回结果
-type AlibabaalihealthnrtradeordergetorderdetailAPIResponseModel struct {
+// AlibabaAlihealthNrTradeOrderGetorderdetailAPIResponseModel is 根据订单id获取单条订单详情 成功返回结果
+type AlibabaAlihealthNrTradeOrderGetorderdetailAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_nr_trade_order_getorderdetail_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

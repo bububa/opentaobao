@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotvpaypartnerorderqueryAPIRequest 商户查询订单 API请求
+// TaobaoTvpayPartnerOrderQueryAPIRequest 商户查询订单 API请求
 // taobao.tvpay.partner.order.query
 //
 // 给商户提供的查询订单状态的API
-type TaobaotvpaypartnerorderqueryAPIRequest struct {
+type TaobaoTvpayPartnerOrderQueryAPIRequest struct {
 	model.Params
 	// 商户订单号
 	_orderNo string
 }
 
-// NewTaobaotvpaypartnerorderqueryRequest 初始化TaobaotvpaypartnerorderqueryAPIRequest对象
-func NewTaobaotvpaypartnerorderqueryRequest() *TaobaotvpaypartnerorderqueryAPIRequest {
-	return &TaobaotvpaypartnerorderqueryAPIRequest{
+// NewTaobaoTvpayPartnerOrderQueryRequest 初始化TaobaoTvpayPartnerOrderQueryAPIRequest对象
+func NewTaobaoTvpayPartnerOrderQueryRequest() *TaobaoTvpayPartnerOrderQueryAPIRequest {
+	return &TaobaoTvpayPartnerOrderQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaotvpaypartnerorderqueryAPIRequest) GetApiMethodName() string {
+func (r TaobaoTvpayPartnerOrderQueryAPIRequest) GetApiMethodName() string {
 	return "taobao.tvpay.partner.order.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaotvpaypartnerorderqueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoTvpayPartnerOrderQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaotvpaypartnerorderqueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoTvpayPartnerOrderQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOrderNo is OrderNo Setter
 // 商户订单号
-func (r *TaobaotvpaypartnerorderqueryAPIRequest) SetOrderNo(_orderNo string) error {
+func (r *TaobaoTvpayPartnerOrderQueryAPIRequest) SetOrderNo(_orderNo string) error {
 	r._orderNo = _orderNo
 	r.Set("order_no", _orderNo)
 	return nil
 }
 
 // GetOrderNo OrderNo Getter
-func (r TaobaotvpaypartnerorderqueryAPIRequest) GetOrderNo() string {
+func (r TaobaoTvpayPartnerOrderQueryAPIRequest) GetOrderNo() string {
 	return r._orderNo
 }

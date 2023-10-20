@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alicom"
 )
 
-// Alibabatianjisupplierorderquery 查询供应商订单
+// AlibabaTianjiSupplierOrderQuery 查询供应商订单
 // alibaba.tianji.supplier.order.query
 //
 // 查询供应商订单
-func Alibabatianjisupplierorderquery(clt *core.SDKClient, req *alicom.AlibabatianjisupplierorderqueryAPIRequest, session string) (*alicom.AlibabatianjisupplierorderqueryAPIResponse, error) {
-	var resp alicom.AlibabatianjisupplierorderqueryAPIResponse
+func AlibabaTianjiSupplierOrderQuery(clt *core.SDKClient, req *alicom.AlibabaTianjiSupplierOrderQueryAPIRequest, session string) (*alicom.AlibabaTianjiSupplierOrderQueryAPIResponse, error) {
+	var resp alicom.AlibabaTianjiSupplierOrderQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

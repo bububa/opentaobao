@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoopenimtribejoinAPIResponse OPENIM群主动加入 API返回值
+// TaobaoOpenimTribeJoinAPIResponse OPENIM群主动加入 API返回值
 // taobao.openim.tribe.join
 //
 // OPENIM群主动加入
-type TaobaoopenimtribejoinAPIResponse struct {
+type TaobaoOpenimTribeJoinAPIResponse struct {
 	model.CommonResponse
-	TaobaoopenimtribejoinAPIResponseModel
+	TaobaoOpenimTribeJoinAPIResponseModel
 }
 
-// TaobaoopenimtribejoinAPIResponseModel is OPENIM群主动加入 成功返回结果
-type TaobaoopenimtribejoinAPIResponseModel struct {
+// TaobaoOpenimTribeJoinAPIResponseModel is OPENIM群主动加入 成功返回结果
+type TaobaoOpenimTribeJoinAPIResponseModel struct {
 	XMLName xml.Name `xml:"openim_tribe_join_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

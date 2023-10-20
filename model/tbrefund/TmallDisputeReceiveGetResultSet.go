@@ -1,7 +1,7 @@
 package tbrefund
 
-// TmalldisputereceivegetResultSet 结构体
-type TmalldisputereceivegetResultSet struct {
+// TmallDisputeReceiveGetResultSet 结构体
+type TmallDisputeReceiveGetResultSet struct {
 	// results
 	Results []Dispute `json:"results,omitempty" xml:"results>dispute,omitempty"`
 	// 错误码

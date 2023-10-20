@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoopenmallrefundgetAPIResponse 获取OpenMall退款单详情 API返回值
+// TaobaoOpenmallRefundGetAPIResponse 获取OpenMall退款单详情 API返回值
 // taobao.openmall.refund.get
 //
 // 获取OpenMall退款单详情
-type TaobaoopenmallrefundgetAPIResponse struct {
+type TaobaoOpenmallRefundGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoopenmallrefundgetAPIResponseModel
+	TaobaoOpenmallRefundGetAPIResponseModel
 }
 
-// TaobaoopenmallrefundgetAPIResponseModel is 获取OpenMall退款单详情 成功返回结果
-type TaobaoopenmallrefundgetAPIResponseModel struct {
+// TaobaoOpenmallRefundGetAPIResponseModel is 获取OpenMall退款单详情 成功返回结果
+type TaobaoOpenmallRefundGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"openmall_refund_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

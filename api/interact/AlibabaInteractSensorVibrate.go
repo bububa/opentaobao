@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/interact"
 )
 
-// Alibabainteractsensorvibrate 客户端震动
+// AlibabaInteractSensorVibrate 客户端震动
 // alibaba.interact.sensor.vibrate
 //
 // 客户端震动
-func Alibabainteractsensorvibrate(clt *core.SDKClient, req *interact.AlibabainteractsensorvibrateAPIRequest, session string) (*interact.AlibabainteractsensorvibrateAPIResponse, error) {
-	var resp interact.AlibabainteractsensorvibrateAPIResponse
+func AlibabaInteractSensorVibrate(clt *core.SDKClient, req *interact.AlibabaInteractSensorVibrateAPIRequest, session string) (*interact.AlibabaInteractSensorVibrateAPIResponse, error) {
+	var resp interact.AlibabaInteractSensorVibrateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/jst"
 )
 
-// Taobaojstsmstemplatemodify 淘宝短信模板修改
+// TaobaoJstSmsTemplateModify 淘宝短信模板修改
 // taobao.jst.sms.template.modify
 //
 // 淘宝短信模板修改
-func Taobaojstsmstemplatemodify(clt *core.SDKClient, req *jst.TaobaojstsmstemplatemodifyAPIRequest, session string) (*jst.TaobaojstsmstemplatemodifyAPIResponse, error) {
-	var resp jst.TaobaojstsmstemplatemodifyAPIResponse
+func TaobaoJstSmsTemplateModify(clt *core.SDKClient, req *jst.TaobaoJstSmsTemplateModifyAPIRequest, session string) (*jst.TaobaoJstSmsTemplateModifyAPIResponse, error) {
+	var resp jst.TaobaoJstSmsTemplateModifyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaeleenterpriseordernewgetstatusAPIResponse 订单状态查询接口 API返回值
+// AlibabaEleEnterpriseOrdernewGetstatusAPIResponse 订单状态查询接口 API返回值
 // alibaba.ele.enterprise.ordernew.getstatus
 //
 // 订单状态查询接口
-type AlibabaeleenterpriseordernewgetstatusAPIResponse struct {
+type AlibabaEleEnterpriseOrdernewGetstatusAPIResponse struct {
 	model.CommonResponse
-	AlibabaeleenterpriseordernewgetstatusAPIResponseModel
+	AlibabaEleEnterpriseOrdernewGetstatusAPIResponseModel
 }
 
-// AlibabaeleenterpriseordernewgetstatusAPIResponseModel is 订单状态查询接口 成功返回结果
-type AlibabaeleenterpriseordernewgetstatusAPIResponseModel struct {
+// AlibabaEleEnterpriseOrdernewGetstatusAPIResponseModel is 订单状态查询接口 成功返回结果
+type AlibabaEleEnterpriseOrdernewGetstatusAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ele_enterprise_ordernew_getstatus_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

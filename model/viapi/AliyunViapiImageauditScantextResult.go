@@ -1,9 +1,9 @@
 package viapi
 
-// AliyunviapiimageauditscantextResult 结构体
-type AliyunviapiimageauditscantextResult struct {
+// AliyunViapiImageauditScantextResult 结构体
+type AliyunViapiImageauditScantextResult struct {
 	// 单个文本的检测结果
-	Details []AliyunviapiimageauditscantextDetail `json:"details,omitempty" xml:"details>aliyunviapiimageauditscantext_detail,omitempty"`
+	Details []AliyunViapiImageauditScantextDetail `json:"details,omitempty" xml:"details>aliyun_viapi_imageaudit_scantext_detail,omitempty"`
 	// 建议用户执行的操作，取值范围：  pass：文本正常 review：需要人工审核 block：文本违规，可以直接删除或者做限制处理
 	Suggestion string `json:"suggestion,omitempty" xml:"suggestion,omitempty"`
 	// 检测结果的分类

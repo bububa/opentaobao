@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-// Yunososupdatemodelsearch 机型检索
+// YunosOsupdateModelSearch 机型检索
 // yunos.osupdate.model.search
 //
 // 机型检索
-func Yunososupdatemodelsearch(clt *core.SDKClient, req *tvupadmin.YunososupdatemodelsearchAPIRequest, session string) (*tvupadmin.YunososupdatemodelsearchAPIResponse, error) {
-	var resp tvupadmin.YunososupdatemodelsearchAPIResponse
+func YunosOsupdateModelSearch(clt *core.SDKClient, req *tvupadmin.YunosOsupdateModelSearchAPIRequest, session string) (*tvupadmin.YunosOsupdateModelSearchAPIResponse, error) {
+	var resp tvupadmin.YunosOsupdateModelSearchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

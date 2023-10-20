@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhotelcommoninvoiceupdateAPIResponse 常用发票信息更新接口 API返回值
+// TaobaoXhotelCommoninvoiceUpdateAPIResponse 常用发票信息更新接口 API返回值
 // taobao.xhotel.commoninvoice.update
 //
 // 常用发票信息更新接口(根据用户id,发票抬头和发票属性或发票id进行更新,没有则添加)
-type TaobaoxhotelcommoninvoiceupdateAPIResponse struct {
+type TaobaoXhotelCommoninvoiceUpdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoxhotelcommoninvoiceupdateAPIResponseModel
+	TaobaoXhotelCommoninvoiceUpdateAPIResponseModel
 }
 
-// TaobaoxhotelcommoninvoiceupdateAPIResponseModel is 常用发票信息更新接口 成功返回结果
-type TaobaoxhotelcommoninvoiceupdateAPIResponseModel struct {
+// TaobaoXhotelCommoninvoiceUpdateAPIResponseModel is 常用发票信息更新接口 成功返回结果
+type TaobaoXhotelCommoninvoiceUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_commoninvoice_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

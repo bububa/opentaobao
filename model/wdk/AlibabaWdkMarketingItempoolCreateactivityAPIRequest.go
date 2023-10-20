@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkmarketingitempoolcreateactivityAPIRequest 添加商品池活动 API请求
+// AlibabaWdkMarketingItempoolCreateactivityAPIRequest 添加商品池活动 API请求
 // alibaba.wdk.marketing.itempool.createactivity
 //
 // 添加商品池活动
-type AlibabawdkmarketingitempoolcreateactivityAPIRequest struct {
+type AlibabaWdkMarketingItempoolCreateactivityAPIRequest struct {
 	model.Params
 	// 创建活动请求入参
 	_param *ItemPoolActivity
 }
 
-// NewAlibabawdkmarketingitempoolcreateactivityRequest 初始化AlibabawdkmarketingitempoolcreateactivityAPIRequest对象
-func NewAlibabawdkmarketingitempoolcreateactivityRequest() *AlibabawdkmarketingitempoolcreateactivityAPIRequest {
-	return &AlibabawdkmarketingitempoolcreateactivityAPIRequest{
+// NewAlibabaWdkMarketingItempoolCreateactivityRequest 初始化AlibabaWdkMarketingItempoolCreateactivityAPIRequest对象
+func NewAlibabaWdkMarketingItempoolCreateactivityRequest() *AlibabaWdkMarketingItempoolCreateactivityAPIRequest {
+	return &AlibabaWdkMarketingItempoolCreateactivityAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabawdkmarketingitempoolcreateactivityAPIRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingItempoolCreateactivityAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.marketing.itempool.createactivity"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabawdkmarketingitempoolcreateactivityAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaWdkMarketingItempoolCreateactivityAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabawdkmarketingitempoolcreateactivityAPIRequest) GetRawParams() model.Params {
+func (r AlibabaWdkMarketingItempoolCreateactivityAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 创建活动请求入参
-func (r *AlibabawdkmarketingitempoolcreateactivityAPIRequest) SetParam(_param *ItemPoolActivity) error {
+func (r *AlibabaWdkMarketingItempoolCreateactivityAPIRequest) SetParam(_param *ItemPoolActivity) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlibabawdkmarketingitempoolcreateactivityAPIRequest) GetParam() *ItemPoolActivity {
+func (r AlibabaWdkMarketingItempoolCreateactivityAPIRequest) GetParam() *ItemPoolActivity {
 	return r._param
 }

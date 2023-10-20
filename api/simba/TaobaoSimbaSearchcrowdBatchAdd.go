@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// Taobaosimbasearchcrowdbatchadd 推广单元增加搜索人群
+// TaobaoSimbaSearchcrowdBatchAdd 推广单元增加搜索人群
 // taobao.simba.searchcrowd.batch.add
 //
 // 推广单元新增搜索人群
-func Taobaosimbasearchcrowdbatchadd(clt *core.SDKClient, req *simba.TaobaosimbasearchcrowdbatchaddAPIRequest, session string) (*simba.TaobaosimbasearchcrowdbatchaddAPIResponse, error) {
-	var resp simba.TaobaosimbasearchcrowdbatchaddAPIResponse
+func TaobaoSimbaSearchcrowdBatchAdd(clt *core.SDKClient, req *simba.TaobaoSimbaSearchcrowdBatchAddAPIRequest, session string) (*simba.TaobaoSimbaSearchcrowdBatchAddAPIResponse, error) {
+	var resp simba.TaobaoSimbaSearchcrowdBatchAddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

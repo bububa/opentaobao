@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabagpuaddschemagetAPIResponse 获取产品发布规则接口 API返回值
+// AlibabaGpuAddSchemaGetAPIResponse 获取产品发布规则接口 API返回值
 // alibaba.gpu.add.schema.get
 //
 // 获取产品发布规则接口
-type AlibabagpuaddschemagetAPIResponse struct {
+type AlibabaGpuAddSchemaGetAPIResponse struct {
 	model.CommonResponse
-	AlibabagpuaddschemagetAPIResponseModel
+	AlibabaGpuAddSchemaGetAPIResponseModel
 }
 
-// AlibabagpuaddschemagetAPIResponseModel is 获取产品发布规则接口 成功返回结果
-type AlibabagpuaddschemagetAPIResponseModel struct {
+// AlibabaGpuAddSchemaGetAPIResponseModel is 获取产品发布规则接口 成功返回结果
+type AlibabaGpuAddSchemaGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_gpu_add_schema_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

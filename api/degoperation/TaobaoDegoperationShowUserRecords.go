@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/degoperation"
 )
 
-// Taobaodegoperationshowuserrecords 用户中奖记录
+// TaobaoDegoperationShowUserRecords 用户中奖记录
 // taobao.degoperation.show.user.records
 //
 // 用户中奖记录
-func Taobaodegoperationshowuserrecords(clt *core.SDKClient, req *degoperation.TaobaodegoperationshowuserrecordsAPIRequest, session string) (*degoperation.TaobaodegoperationshowuserrecordsAPIResponse, error) {
-	var resp degoperation.TaobaodegoperationshowuserrecordsAPIResponse
+func TaobaoDegoperationShowUserRecords(clt *core.SDKClient, req *degoperation.TaobaoDegoperationShowUserRecordsAPIRequest, session string) (*degoperation.TaobaoDegoperationShowUserRecordsAPIResponse, error) {
+	var resp degoperation.TaobaoDegoperationShowUserRecordsAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,48 +6,48 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoqimendeliveryorderbatchcreateAPIRequest 发货单创建批量接口 API请求
+// TaobaoQimenDeliveryorderBatchcreateAPIRequest 发货单创建批量接口 API请求
 // taobao.qimen.deliveryorder.batchcreate
 //
 // taobao.qimen.deliveryorder.batchcreate
-type TaobaoqimendeliveryorderbatchcreateAPIRequest struct {
+type TaobaoQimenDeliveryorderBatchcreateAPIRequest struct {
 	model.Params
 	//
 	_request *DeliveryOrderBatchCreateRequest
 }
 
-// NewTaobaoqimendeliveryorderbatchcreateRequest 初始化TaobaoqimendeliveryorderbatchcreateAPIRequest对象
-func NewTaobaoqimendeliveryorderbatchcreateRequest() *TaobaoqimendeliveryorderbatchcreateAPIRequest {
-	return &TaobaoqimendeliveryorderbatchcreateAPIRequest{
+// NewTaobaoQimenDeliveryorderBatchcreateRequest 初始化TaobaoQimenDeliveryorderBatchcreateAPIRequest对象
+func NewTaobaoQimenDeliveryorderBatchcreateRequest() *TaobaoQimenDeliveryorderBatchcreateAPIRequest {
+	return &TaobaoQimenDeliveryorderBatchcreateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoqimendeliveryorderbatchcreateAPIRequest) GetApiMethodName() string {
+func (r TaobaoQimenDeliveryorderBatchcreateAPIRequest) GetApiMethodName() string {
 	return "taobao.qimen.deliveryorder.batchcreate"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoqimendeliveryorderbatchcreateAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoQimenDeliveryorderBatchcreateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoqimendeliveryorderbatchcreateAPIRequest) GetRawParams() model.Params {
+func (r TaobaoQimenDeliveryorderBatchcreateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRequest is Request Setter
-func (r *TaobaoqimendeliveryorderbatchcreateAPIRequest) SetRequest(_request *DeliveryOrderBatchCreateRequest) error {
+func (r *TaobaoQimenDeliveryorderBatchcreateAPIRequest) SetRequest(_request *DeliveryOrderBatchCreateRequest) error {
 	r._request = _request
 	r.Set("request", _request)
 	return nil
 }
 
 // GetRequest Request Getter
-func (r TaobaoqimendeliveryorderbatchcreateAPIRequest) GetRequest() *DeliveryOrderBatchCreateRequest {
+func (r TaobaoQimenDeliveryorderBatchcreateAPIRequest) GetRequest() *DeliveryOrderBatchCreateRequest {
 	return r._request
 }

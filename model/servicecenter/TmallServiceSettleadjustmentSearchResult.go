@@ -1,7 +1,7 @@
 package servicecenter
 
-// TmallservicesettleadjustmentsearchResult 结构体
-type TmallservicesettleadjustmentsearchResult struct {
+// TmallServiceSettleadjustmentSearchResult 结构体
+type TmallServiceSettleadjustmentSearchResult struct {
 	// dataModule
 	SettleAdjustmentList []SettleAdjustmentResponse `json:"settle_adjustment_list,omitempty" xml:"settle_adjustment_list>settle_adjustment_response,omitempty"`
 	// errorMessage

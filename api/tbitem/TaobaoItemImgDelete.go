@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbitem"
 )
 
-// Taobaoitemimgdelete 删除商品图片
+// TaobaoItemImgDelete 删除商品图片
 // taobao.item.img.delete
 //
 // 删除商品图片
-func Taobaoitemimgdelete(clt *core.SDKClient, req *tbitem.TaobaoitemimgdeleteAPIRequest, session string) (*tbitem.TaobaoitemimgdeleteAPIResponse, error) {
-	var resp tbitem.TaobaoitemimgdeleteAPIResponse
+func TaobaoItemImgDelete(clt *core.SDKClient, req *tbitem.TaobaoItemImgDeleteAPIRequest, session string) (*tbitem.TaobaoItemImgDeleteAPIResponse, error) {
+	var resp tbitem.TaobaoItemImgDeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

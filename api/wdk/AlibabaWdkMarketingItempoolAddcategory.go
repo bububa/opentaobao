@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabawdkmarketingitempooladdcategory 增加商品池里面的类目
+// AlibabaWdkMarketingItempoolAddcategory 增加商品池里面的类目
 // alibaba.wdk.marketing.itempool.addcategory
 //
 // 增加商品池里面的类目
-func Alibabawdkmarketingitempooladdcategory(clt *core.SDKClient, req *wdk.AlibabawdkmarketingitempooladdcategoryAPIRequest, session string) (*wdk.AlibabawdkmarketingitempooladdcategoryAPIResponse, error) {
-	var resp wdk.AlibabawdkmarketingitempooladdcategoryAPIResponse
+func AlibabaWdkMarketingItempoolAddcategory(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolAddcategoryAPIRequest, session string) (*wdk.AlibabaWdkMarketingItempoolAddcategoryAPIResponse, error) {
+	var resp wdk.AlibabaWdkMarketingItempoolAddcategoryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

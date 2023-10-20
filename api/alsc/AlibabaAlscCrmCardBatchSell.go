@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// Alibabaalsccrmcardbatchsell 批量开卡（售卡）
+// AlibabaAlscCrmCardBatchSell 批量开卡（售卡）
 // alibaba.alsc.crm.card.batch.sell
 //
 // 批量开卡（售卡）
-func Alibabaalsccrmcardbatchsell(clt *core.SDKClient, req *alsc.AlibabaalsccrmcardbatchsellAPIRequest, session string) (*alsc.AlibabaalsccrmcardbatchsellAPIResponse, error) {
-	var resp alsc.AlibabaalsccrmcardbatchsellAPIResponse
+func AlibabaAlscCrmCardBatchSell(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCardBatchSellAPIRequest, session string) (*alsc.AlibabaAlscCrmCardBatchSellAPIResponse, error) {
+	var resp alsc.AlibabaAlscCrmCardBatchSellAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

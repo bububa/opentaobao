@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/youkuott"
 )
 
-// Youkumediaapivideosnapshotget 根据视频ID查询视频缩微图
+// YoukuMediaapiVideoSnapshotGet 根据视频ID查询视频缩微图
 // youku.mediaapi.video.snapshot.get
 //
 // 根据视频ID查询视频缩微图
-func Youkumediaapivideosnapshotget(clt *core.SDKClient, req *youkuott.YoukumediaapivideosnapshotgetAPIRequest, session string) (*youkuott.YoukumediaapivideosnapshotgetAPIResponse, error) {
-	var resp youkuott.YoukumediaapivideosnapshotgetAPIResponse
+func YoukuMediaapiVideoSnapshotGet(clt *core.SDKClient, req *youkuott.YoukuMediaapiVideoSnapshotGetAPIRequest, session string) (*youkuott.YoukuMediaapiVideoSnapshotGetAPIResponse, error) {
+	var resp youkuott.YoukuMediaapiVideoSnapshotGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

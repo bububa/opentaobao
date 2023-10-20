@@ -1,7 +1,7 @@
 package lstwarehouse
 
-// AlibabalstbranddatasharestockdataqueryResult 结构体
-type AlibabalstbranddatasharestockdataqueryResult struct {
+// AlibabaLstBranddatashareStockdataQueryResult 结构体
+type AlibabaLstBranddatashareStockdataQueryResult struct {
 	// 返回内容
 	ContentList []Content `json:"content_list,omitempty" xml:"content_list>content,omitempty"`
 	// 错误描述

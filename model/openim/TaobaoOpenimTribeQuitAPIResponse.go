@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoopenimtribequitAPIResponse OPENIM群成员退出 API返回值
+// TaobaoOpenimTribeQuitAPIResponse OPENIM群成员退出 API返回值
 // taobao.openim.tribe.quit
 //
 // OPENIM群成员退出
-type TaobaoopenimtribequitAPIResponse struct {
+type TaobaoOpenimTribeQuitAPIResponse struct {
 	model.CommonResponse
-	TaobaoopenimtribequitAPIResponseModel
+	TaobaoOpenimTribeQuitAPIResponseModel
 }
 
-// TaobaoopenimtribequitAPIResponseModel is OPENIM群成员退出 成功返回结果
-type TaobaoopenimtribequitAPIResponseModel struct {
+// TaobaoOpenimTribeQuitAPIResponseModel is OPENIM群成员退出 成功返回结果
+type TaobaoOpenimTribeQuitAPIResponseModel struct {
 	XMLName xml.Name `xml:"openim_tribe_quit_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

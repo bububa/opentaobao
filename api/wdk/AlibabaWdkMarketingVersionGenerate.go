@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabawdkmarketingversiongenerate 生成发布使用的版本号
+// AlibabaWdkMarketingVersionGenerate 生成发布使用的版本号
 // alibaba.wdk.marketing.version.generate
 //
 // 生成发布使用的版本号
-func Alibabawdkmarketingversiongenerate(clt *core.SDKClient, req *wdk.AlibabawdkmarketingversiongenerateAPIRequest, session string) (*wdk.AlibabawdkmarketingversiongenerateAPIResponse, error) {
-	var resp wdk.AlibabawdkmarketingversiongenerateAPIResponse
+func AlibabaWdkMarketingVersionGenerate(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingVersionGenerateAPIRequest, session string) (*wdk.AlibabaWdkMarketingVersionGenerateAPIResponse, error) {
+	var resp wdk.AlibabaWdkMarketingVersionGenerateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

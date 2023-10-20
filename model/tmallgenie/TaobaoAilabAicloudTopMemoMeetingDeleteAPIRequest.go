@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoailabaicloudtopmemomeetingdeleteAPIRequest 天猫精灵会议删除 API请求
+// TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest 天猫精灵会议删除 API请求
 // taobao.ailab.aicloud.top.memo.meeting.delete
 //
 // 天猫精灵会议删除
-type TaobaoailabaicloudtopmemomeetingdeleteAPIRequest struct {
+type TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest struct {
 	model.Params
 	// schema
 	_schema string
@@ -24,91 +24,91 @@ type TaobaoailabaicloudtopmemomeetingdeleteAPIRequest struct {
 	_memoId int64
 }
 
-// NewTaobaoailabaicloudtopmemomeetingdeleteRequest 初始化TaobaoailabaicloudtopmemomeetingdeleteAPIRequest对象
-func NewTaobaoailabaicloudtopmemomeetingdeleteRequest() *TaobaoailabaicloudtopmemomeetingdeleteAPIRequest {
-	return &TaobaoailabaicloudtopmemomeetingdeleteAPIRequest{
+// NewTaobaoAilabAicloudTopMemoMeetingDeleteRequest 初始化TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest对象
+func NewTaobaoAilabAicloudTopMemoMeetingDeleteRequest() *TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest {
+	return &TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoailabaicloudtopmemomeetingdeleteAPIRequest) GetApiMethodName() string {
+func (r TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest) GetApiMethodName() string {
 	return "taobao.ailab.aicloud.top.memo.meeting.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoailabaicloudtopmemomeetingdeleteAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoailabaicloudtopmemomeetingdeleteAPIRequest) GetRawParams() model.Params {
+func (r TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSchema is Schema Setter
 // schema
-func (r *TaobaoailabaicloudtopmemomeetingdeleteAPIRequest) SetSchema(_schema string) error {
+func (r *TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
 	r.Set("schema", _schema)
 	return nil
 }
 
 // GetSchema Schema Getter
-func (r TaobaoailabaicloudtopmemomeetingdeleteAPIRequest) GetSchema() string {
+func (r TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest) GetSchema() string {
 	return r._schema
 }
 
 // SetUserId is UserId Setter
 // 企业用户ID
-func (r *TaobaoailabaicloudtopmemomeetingdeleteAPIRequest) SetUserId(_userId string) error {
+func (r *TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
 	r.Set("user_id", _userId)
 	return nil
 }
 
 // GetUserId UserId Getter
-func (r TaobaoailabaicloudtopmemomeetingdeleteAPIRequest) GetUserId() string {
+func (r TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest) GetUserId() string {
 	return r._userId
 }
 
 // SetUtdId is UtdId Setter
 // 手持设备ID
-func (r *TaobaoailabaicloudtopmemomeetingdeleteAPIRequest) SetUtdId(_utdId string) error {
+func (r *TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest) SetUtdId(_utdId string) error {
 	r._utdId = _utdId
 	r.Set("utd_id", _utdId)
 	return nil
 }
 
 // GetUtdId UtdId Getter
-func (r TaobaoailabaicloudtopmemomeetingdeleteAPIRequest) GetUtdId() string {
+func (r TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest) GetUtdId() string {
 	return r._utdId
 }
 
 // SetExt is Ext Setter
 // 扩展信息json段，用于存放APP类型，APP版本等等信息。
-func (r *TaobaoailabaicloudtopmemomeetingdeleteAPIRequest) SetExt(_ext string) error {
+func (r *TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
 	r.Set("ext", _ext)
 	return nil
 }
 
 // GetExt Ext Getter
-func (r TaobaoailabaicloudtopmemomeetingdeleteAPIRequest) GetExt() string {
+func (r TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest) GetExt() string {
 	return r._ext
 }
 
 // SetMemoId is MemoId Setter
 // 会议ID
-func (r *TaobaoailabaicloudtopmemomeetingdeleteAPIRequest) SetMemoId(_memoId int64) error {
+func (r *TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest) SetMemoId(_memoId int64) error {
 	r._memoId = _memoId
 	r.Set("memo_id", _memoId)
 	return nil
 }
 
 // GetMemoId MemoId Getter
-func (r TaobaoailabaicloudtopmemomeetingdeleteAPIRequest) GetMemoId() int64 {
+func (r TaobaoAilabAicloudTopMemoMeetingDeleteAPIRequest) GetMemoId() int64 {
 	return r._memoId
 }

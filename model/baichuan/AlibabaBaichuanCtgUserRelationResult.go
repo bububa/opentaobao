@@ -1,7 +1,7 @@
 package baichuan
 
-// AlibababaichuanctguserrelationResult 结构体
-type AlibababaichuanctguserrelationResult struct {
+// AlibabaBaichuanCtgUserRelationResult 结构体
+type AlibabaBaichuanCtgUserRelationResult struct {
 	// 错误信息
 	ErrorDetail string `json:"error_detail,omitempty" xml:"error_detail,omitempty"`
 	// 返回结果，数值型，1：代表已绑定达人身份，2代表未绑定达人身份

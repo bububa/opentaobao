@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihousenewhomeactivitycustomersaveResult 结构体
-type AlibabaalihousenewhomeactivitycustomersaveResult struct {
+// AlibabaAlihouseNewhomeActivityCustomerSaveResult 结构体
+type AlibabaAlihouseNewhomeActivityCustomerSaveResult struct {
 	// 处理失败客户集合
 	Data []ActivityCustomerErrHandlerResultDto `json:"data,omitempty" xml:"data>activity_customer_err_handler_result_dto,omitempty"`
 	// code

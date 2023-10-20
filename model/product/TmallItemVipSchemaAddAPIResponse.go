@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallitemvipschemaaddAPIResponse 大商家商品发布接口 API返回值
+// TmallItemVipSchemaAddAPIResponse 大商家商品发布接口 API返回值
 // tmall.item.vip.schema.add
 //
 // 大商家商品发布接口
-type TmallitemvipschemaaddAPIResponse struct {
+type TmallItemVipSchemaAddAPIResponse struct {
 	model.CommonResponse
-	TmallitemvipschemaaddAPIResponseModel
+	TmallItemVipSchemaAddAPIResponseModel
 }
 
-// TmallitemvipschemaaddAPIResponseModel is 大商家商品发布接口 成功返回结果
-type TmallitemvipschemaaddAPIResponseModel struct {
+// TmallItemVipSchemaAddAPIResponseModel is 大商家商品发布接口 成功返回结果
+type TmallItemVipSchemaAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_item_vip_schema_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

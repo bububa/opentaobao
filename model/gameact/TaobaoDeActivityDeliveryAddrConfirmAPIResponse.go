@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaodeactivitydeliveryaddrconfirmAPIResponse 用户收件地址确认 API返回值
+// TaobaoDeActivityDeliveryAddrConfirmAPIResponse 用户收件地址确认 API返回值
 // taobao.de.activity.delivery.addr.confirm
 //
 // 用户收件地址确认
-type TaobaodeactivitydeliveryaddrconfirmAPIResponse struct {
+type TaobaoDeActivityDeliveryAddrConfirmAPIResponse struct {
 	model.CommonResponse
-	TaobaodeactivitydeliveryaddrconfirmAPIResponseModel
+	TaobaoDeActivityDeliveryAddrConfirmAPIResponseModel
 }
 
-// TaobaodeactivitydeliveryaddrconfirmAPIResponseModel is 用户收件地址确认 成功返回结果
-type TaobaodeactivitydeliveryaddrconfirmAPIResponseModel struct {
+// TaobaoDeActivityDeliveryAddrConfirmAPIResponseModel is 用户收件地址确认 成功返回结果
+type TaobaoDeActivityDeliveryAddrConfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"de_activity_delivery_addr_confirm_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

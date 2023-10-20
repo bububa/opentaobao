@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallmsfreceiveAPIResponse 签收接口 API返回值
+// TmallMsfReceiveAPIResponse 签收接口 API返回值
 // tmall.msf.receive
 //
 // 签收接口
-type TmallmsfreceiveAPIResponse struct {
+type TmallMsfReceiveAPIResponse struct {
 	model.CommonResponse
-	TmallmsfreceiveAPIResponseModel
+	TmallMsfReceiveAPIResponseModel
 }
 
-// TmallmsfreceiveAPIResponseModel is 签收接口 成功返回结果
-type TmallmsfreceiveAPIResponseModel struct {
+// TmallMsfReceiveAPIResponseModel is 签收接口 成功返回结果
+type TmallMsfReceiveAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_msf_receive_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

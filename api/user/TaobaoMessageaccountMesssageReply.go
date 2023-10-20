@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/user"
 )
 
-// Taobaomessageaccountmesssagereply 消息号下行回复接口
+// TaobaoMessageaccountMesssageReply 消息号下行回复接口
 // taobao.messageaccount.messsage.reply
 //
 // 外部 isv 调用该进口来进行消息号消息的回复
-func Taobaomessageaccountmesssagereply(clt *core.SDKClient, req *user.TaobaomessageaccountmesssagereplyAPIRequest, session string) (*user.TaobaomessageaccountmesssagereplyAPIResponse, error) {
-	var resp user.TaobaomessageaccountmesssagereplyAPIResponse
+func TaobaoMessageaccountMesssageReply(clt *core.SDKClient, req *user.TaobaoMessageaccountMesssageReplyAPIRequest, session string) (*user.TaobaoMessageaccountMesssageReplyAPIResponse, error) {
+	var resp user.TaobaoMessageaccountMesssageReplyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

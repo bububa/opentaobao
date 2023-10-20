@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/flightuppc"
 )
 
-// Alitripflightexternalalipayencrypt 支付宝小程序明文加密
+// AlitripFlightExternalAlipayEncrypt 支付宝小程序明文加密
 // alitrip.flight.external.alipay.encrypt
 //
 // 支付宝小程序明文加密
-func Alitripflightexternalalipayencrypt(clt *core.SDKClient, req *flightuppc.AlitripflightexternalalipayencryptAPIRequest, session string) (*flightuppc.AlitripflightexternalalipayencryptAPIResponse, error) {
-	var resp flightuppc.AlitripflightexternalalipayencryptAPIResponse
+func AlitripFlightExternalAlipayEncrypt(clt *core.SDKClient, req *flightuppc.AlitripFlightExternalAlipayEncryptAPIRequest, session string) (*flightuppc.AlitripFlightExternalAlipayEncryptAPIResponse, error) {
+	var resp flightuppc.AlitripFlightExternalAlipayEncryptAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

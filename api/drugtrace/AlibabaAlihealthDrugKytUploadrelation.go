@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// Alibabaalihealthdrugkytuploadrelation 关联关系上传
+// AlibabaAlihealthDrugKytUploadrelation 关联关系上传
 // alibaba.alihealth.drug.kyt.uploadrelation
 //
 // 关联关系上传
-func Alibabaalihealthdrugkytuploadrelation(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugkytuploadrelationAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugkytuploadrelationAPIResponse, error) {
-	var resp drugtrace.AlibabaalihealthdrugkytuploadrelationAPIResponse
+func AlibabaAlihealthDrugKytUploadrelation(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytUploadrelationAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytUploadrelationAPIResponse, error) {
+	var resp drugtrace.AlibabaAlihealthDrugKytUploadrelationAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

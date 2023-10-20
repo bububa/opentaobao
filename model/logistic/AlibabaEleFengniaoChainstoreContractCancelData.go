@@ -1,7 +1,7 @@
 package logistic
 
-// AlibabaelefengniaochainstorecontractcancelData 结构体
-type AlibabaelefengniaochainstorecontractcancelData struct {
+// AlibabaEleFengniaoChainstoreContractCancelData 结构体
+type AlibabaEleFengniaoChainstoreContractCancelData struct {
 	// 门店code
 	ChainstoreCodes []string `json:"chainstore_codes,omitempty" xml:"chainstore_codes>string,omitempty"`
 	// appid

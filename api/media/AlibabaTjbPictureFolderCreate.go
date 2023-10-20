@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/media"
 )
 
-// Alibabatjbpicturefoldercreate 淘特图片空间创建文件夹
+// AlibabaTjbPictureFolderCreate 淘特图片空间创建文件夹
 // alibaba.tjb.picture.folder.create
 //
 // 淘特图片空间创建文件夹
-func Alibabatjbpicturefoldercreate(clt *core.SDKClient, req *media.AlibabatjbpicturefoldercreateAPIRequest, session string) (*media.AlibabatjbpicturefoldercreateAPIResponse, error) {
-	var resp media.AlibabatjbpicturefoldercreateAPIResponse
+func AlibabaTjbPictureFolderCreate(clt *core.SDKClient, req *media.AlibabaTjbPictureFolderCreateAPIRequest, session string) (*media.AlibabaTjbPictureFolderCreateAPIResponse, error) {
+	var resp media.AlibabaTjbPictureFolderCreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

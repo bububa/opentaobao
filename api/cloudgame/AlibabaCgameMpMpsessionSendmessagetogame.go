@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cloudgame"
 )
 
-// Alibabacgamempmpsessionsendmessagetogame 发送消息给游戏
+// AlibabaCgameMpMpsessionSendmessagetogame 发送消息给游戏
 // alibaba.cgame.mp.mpsession.sendmessagetogame
 //
 // 发送消息给游戏
-func Alibabacgamempmpsessionsendmessagetogame(clt *core.SDKClient, req *cloudgame.AlibabacgamempmpsessionsendmessagetogameAPIRequest, session string) (*cloudgame.AlibabacgamempmpsessionsendmessagetogameAPIResponse, error) {
-	var resp cloudgame.AlibabacgamempmpsessionsendmessagetogameAPIResponse
+func AlibabaCgameMpMpsessionSendmessagetogame(clt *core.SDKClient, req *cloudgame.AlibabaCgameMpMpsessionSendmessagetogameAPIRequest, session string) (*cloudgame.AlibabaCgameMpMpsessionSendmessagetogameAPIResponse, error) {
+	var resp cloudgame.AlibabaCgameMpMpsessionSendmessagetogameAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

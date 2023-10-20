@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// Taobaosimbakeywordsrecommendget 取得一个推广组的推荐关键词列表
+// TaobaoSimbaKeywordsRecommendGet 取得一个推广组的推荐关键词列表
 // taobao.simba.keywords.recommend.get
 //
 // 取得一个推广组的推荐关键词列表
-func Taobaosimbakeywordsrecommendget(clt *core.SDKClient, req *simba.TaobaosimbakeywordsrecommendgetAPIRequest, session string) (*simba.TaobaosimbakeywordsrecommendgetAPIResponse, error) {
-	var resp simba.TaobaosimbakeywordsrecommendgetAPIResponse
+func TaobaoSimbaKeywordsRecommendGet(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordsRecommendGetAPIRequest, session string) (*simba.TaobaoSimbaKeywordsRecommendGetAPIResponse, error) {
+	var resp simba.TaobaoSimbaKeywordsRecommendGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

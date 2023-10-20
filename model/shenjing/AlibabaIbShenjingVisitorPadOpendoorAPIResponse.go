@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaibshenjingvisitorpadopendoorAPIResponse 访客发起开门 API返回值
+// AlibabaIbShenjingVisitorPadOpendoorAPIResponse 访客发起开门 API返回值
 // alibaba.ib.shenjing.visitor.pad.opendoor
 //
 // 访客PAD端录入完人脸后，可以点击开门按钮开门。
-type AlibabaibshenjingvisitorpadopendoorAPIResponse struct {
+type AlibabaIbShenjingVisitorPadOpendoorAPIResponse struct {
 	model.CommonResponse
-	AlibabaibshenjingvisitorpadopendoorAPIResponseModel
+	AlibabaIbShenjingVisitorPadOpendoorAPIResponseModel
 }
 
-// AlibabaibshenjingvisitorpadopendoorAPIResponseModel is 访客发起开门 成功返回结果
-type AlibabaibshenjingvisitorpadopendoorAPIResponseModel struct {
+// AlibabaIbShenjingVisitorPadOpendoorAPIResponseModel is 访客发起开门 成功返回结果
+type AlibabaIbShenjingVisitorPadOpendoorAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ib_shenjing_visitor_pad_opendoor_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

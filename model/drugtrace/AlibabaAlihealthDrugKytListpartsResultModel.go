@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaalihealthdrugkytlistpartsResultModel 结构体
-type AlibabaalihealthdrugkytlistpartsResultModel struct {
+// AlibabaAlihealthDrugKytListpartsResultModel 结构体
+type AlibabaAlihealthDrugKytListpartsResultModel struct {
 	// 返回码
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 返回值

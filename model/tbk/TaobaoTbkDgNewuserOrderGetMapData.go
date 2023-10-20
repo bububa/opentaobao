@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaotbkdgnewuserordergetMapData 结构体
-type TaobaotbkdgnewuserordergetMapData struct {
+// TaobaoTbkDgNewuserOrderGetMapData 结构体
+type TaobaoTbkDgNewuserOrderGetMapData struct {
 	// 复购订单，仅适用于手淘拉新
 	Orders []OrderData `json:"orders,omitempty" xml:"orders>order_data,omitempty"`
 	// 新注册时间，仅淘宝拉新适用

@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihousenewhomeprojectdynamicdeleteResult 结构体
-type AlibabaalihousenewhomeprojectdynamicdeleteResult struct {
+// AlibabaAlihouseNewhomeProjectDynamicDeleteResult 结构体
+type AlibabaAlihouseNewhomeProjectDynamicDeleteResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// code

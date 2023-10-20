@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabainteractsensoropenwindowAPIResponse 客户端打开新页面 API返回值
+// AlibabaInteractSensorOpenwindowAPIResponse 客户端打开新页面 API返回值
 // alibaba.interact.sensor.openwindow
 //
 // 客户端打开新页面
-type AlibabainteractsensoropenwindowAPIResponse struct {
+type AlibabaInteractSensorOpenwindowAPIResponse struct {
 	model.CommonResponse
-	AlibabainteractsensoropenwindowAPIResponseModel
+	AlibabaInteractSensorOpenwindowAPIResponseModel
 }
 
-// AlibabainteractsensoropenwindowAPIResponseModel is 客户端打开新页面 成功返回结果
-type AlibabainteractsensoropenwindowAPIResponseModel struct {
+// AlibabaInteractSensorOpenwindowAPIResponseModel is 客户端打开新页面 成功返回结果
+type AlibabaInteractSensorOpenwindowAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_sensor_openwindow_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

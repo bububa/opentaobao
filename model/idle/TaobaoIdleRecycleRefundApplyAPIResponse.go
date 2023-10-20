@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoidlerecyclerefundapplyAPIResponse 闲鱼回收交易退款申请V2 API返回值
+// TaobaoIdleRecycleRefundApplyAPIResponse 闲鱼回收交易退款申请V2 API返回值
 // taobao.idle.recycle.refund.apply
 //
 // 回收商买家申请退款
-type TaobaoidlerecyclerefundapplyAPIResponse struct {
+type TaobaoIdleRecycleRefundApplyAPIResponse struct {
 	model.CommonResponse
-	TaobaoidlerecyclerefundapplyAPIResponseModel
+	TaobaoIdleRecycleRefundApplyAPIResponseModel
 }
 
-// TaobaoidlerecyclerefundapplyAPIResponseModel is 闲鱼回收交易退款申请V2 成功返回结果
-type TaobaoidlerecyclerefundapplyAPIResponseModel struct {
+// TaobaoIdleRecycleRefundApplyAPIResponseModel is 闲鱼回收交易退款申请V2 成功返回结果
+type TaobaoIdleRecycleRefundApplyAPIResponseModel struct {
 	XMLName xml.Name `xml:"idle_recycle_refund_apply_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

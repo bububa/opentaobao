@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobustvmqueryordergetAPIRequest 线下自助机查询订单信息 API请求
+// TaobaoBusTvmqueryorderGetAPIRequest 线下自助机查询订单信息 API请求
 // taobao.bus.tvmqueryorder.get
 //
 // 查询订单详情
-type TaobaobustvmqueryordergetAPIRequest struct {
+type TaobaoBusTvmqueryorderGetAPIRequest struct {
 	model.Params
 	// 阿里订单标编号
 	_alitripOrderId string
 }
 
-// NewTaobaobustvmqueryordergetRequest 初始化TaobaobustvmqueryordergetAPIRequest对象
-func NewTaobaobustvmqueryordergetRequest() *TaobaobustvmqueryordergetAPIRequest {
-	return &TaobaobustvmqueryordergetAPIRequest{
+// NewTaobaoBusTvmqueryorderGetRequest 初始化TaobaoBusTvmqueryorderGetAPIRequest对象
+func NewTaobaoBusTvmqueryorderGetRequest() *TaobaoBusTvmqueryorderGetAPIRequest {
+	return &TaobaoBusTvmqueryorderGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaobustvmqueryordergetAPIRequest) GetApiMethodName() string {
+func (r TaobaoBusTvmqueryorderGetAPIRequest) GetApiMethodName() string {
 	return "taobao.bus.tvmqueryorder.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaobustvmqueryordergetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoBusTvmqueryorderGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaobustvmqueryordergetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoBusTvmqueryorderGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAlitripOrderId is AlitripOrderId Setter
 // 阿里订单标编号
-func (r *TaobaobustvmqueryordergetAPIRequest) SetAlitripOrderId(_alitripOrderId string) error {
+func (r *TaobaoBusTvmqueryorderGetAPIRequest) SetAlitripOrderId(_alitripOrderId string) error {
 	r._alitripOrderId = _alitripOrderId
 	r.Set("alitrip_order_id", _alitripOrderId)
 	return nil
 }
 
 // GetAlitripOrderId AlitripOrderId Getter
-func (r TaobaobustvmqueryordergetAPIRequest) GetAlitripOrderId() string {
+func (r TaobaoBusTvmqueryorderGetAPIRequest) GetAlitripOrderId() string {
 	return r._alitripOrderId
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobusbusnumbersetAPIResponse 商家汽车票车次更新通知接口 API返回值
+// TaobaoBusBusnumberSetAPIResponse 商家汽车票车次更新通知接口 API返回值
 // taobao.bus.busnumber.set
 //
 // 商家汽车票车次更新后，调用该接口通知平台。
-type TaobaobusbusnumbersetAPIResponse struct {
+type TaobaoBusBusnumberSetAPIResponse struct {
 	model.CommonResponse
-	TaobaobusbusnumbersetAPIResponseModel
+	TaobaoBusBusnumberSetAPIResponseModel
 }
 
-// TaobaobusbusnumbersetAPIResponseModel is 商家汽车票车次更新通知接口 成功返回结果
-type TaobaobusbusnumbersetAPIResponseModel struct {
+// TaobaoBusBusnumberSetAPIResponseModel is 商家汽车票车次更新通知接口 成功返回结果
+type TaobaoBusBusnumberSetAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_busnumber_set_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

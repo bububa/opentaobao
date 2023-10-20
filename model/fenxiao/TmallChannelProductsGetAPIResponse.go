@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallchannelproductsgetAPIResponse 查询供应商的产品数据 API返回值
+// TmallChannelProductsGetAPIResponse 查询供应商的产品数据 API返回值
 // tmall.channel.products.get
 //
 // 查询供应商的产品数据。
@@ -18,13 +18,13 @@ import (
 // * 入参fields仅对传入pids生效（只有按ID查询时，才能查询额外的数据）
 // * 查询结果按照产品发布时间倒序，即时间近的数据在前。
 // * 传入channel 渠道，会只返回相应渠道的产品
-type TmallchannelproductsgetAPIResponse struct {
+type TmallChannelProductsGetAPIResponse struct {
 	model.CommonResponse
-	TmallchannelproductsgetAPIResponseModel
+	TmallChannelProductsGetAPIResponseModel
 }
 
-// TmallchannelproductsgetAPIResponseModel is 查询供应商的产品数据 成功返回结果
-type TmallchannelproductsgetAPIResponseModel struct {
+// TmallChannelProductsGetAPIResponseModel is 查询供应商的产品数据 成功返回结果
+type TmallChannelProductsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_channel_products_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

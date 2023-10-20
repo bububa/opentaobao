@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabacampusdeviceopenapigettemplatelistAPIRequest 查询设备模板 API请求
+// AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest 查询设备模板 API请求
 // alibaba.campus.device.openapi.gettemplatelist
 //
 // 查询设备模板信息
-type AlibabacampusdeviceopenapigettemplatelistAPIRequest struct {
+type AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest struct {
 	model.Params
 	// 设备模板查询对象
 	_query *TemplateApiQuery
 }
 
-// NewAlibabacampusdeviceopenapigettemplatelistRequest 初始化AlibabacampusdeviceopenapigettemplatelistAPIRequest对象
-func NewAlibabacampusdeviceopenapigettemplatelistRequest() *AlibabacampusdeviceopenapigettemplatelistAPIRequest {
-	return &AlibabacampusdeviceopenapigettemplatelistAPIRequest{
+// NewAlibabaCampusDeviceOpenapiGettemplatelistRequest 初始化AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest对象
+func NewAlibabaCampusDeviceOpenapiGettemplatelistRequest() *AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest {
+	return &AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabacampusdeviceopenapigettemplatelistAPIRequest) GetApiMethodName() string {
+func (r AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest) GetApiMethodName() string {
 	return "alibaba.campus.device.openapi.gettemplatelist"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabacampusdeviceopenapigettemplatelistAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabacampusdeviceopenapigettemplatelistAPIRequest) GetRawParams() model.Params {
+func (r AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQuery is Query Setter
 // 设备模板查询对象
-func (r *AlibabacampusdeviceopenapigettemplatelistAPIRequest) SetQuery(_query *TemplateApiQuery) error {
+func (r *AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest) SetQuery(_query *TemplateApiQuery) error {
 	r._query = _query
 	r.Set("query", _query)
 	return nil
 }
 
 // GetQuery Query Getter
-func (r AlibabacampusdeviceopenapigettemplatelistAPIRequest) GetQuery() *TemplateApiQuery {
+func (r AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest) GetQuery() *TemplateApiQuery {
 	return r._query
 }

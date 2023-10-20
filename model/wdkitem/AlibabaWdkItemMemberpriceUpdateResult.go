@@ -1,7 +1,7 @@
 package wdkitem
 
-// AlibabawdkitemmemberpriceupdateResult 结构体
-type AlibabawdkitemmemberpriceupdateResult struct {
+// AlibabaWdkItemMemberpriceUpdateResult 结构体
+type AlibabaWdkItemMemberpriceUpdateResult struct {
 	// code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// errorCode

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tuanhotel"
 )
 
-// Taobaoxhotelcomboreview 套餐审核接口
+// TaobaoXhotelComboReview 套餐审核接口
 // taobao.xhotel.combo.review
 //
 // 套餐审核接口
-func Taobaoxhotelcomboreview(clt *core.SDKClient, req *tuanhotel.TaobaoxhotelcomboreviewAPIRequest, session string) (*tuanhotel.TaobaoxhotelcomboreviewAPIResponse, error) {
-	var resp tuanhotel.TaobaoxhotelcomboreviewAPIResponse
+func TaobaoXhotelComboReview(clt *core.SDKClient, req *tuanhotel.TaobaoXhotelComboReviewAPIRequest, session string) (*tuanhotel.TaobaoXhotelComboReviewAPIResponse, error) {
+	var resp tuanhotel.TaobaoXhotelComboReviewAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

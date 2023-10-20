@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosubwayaccountofflinefindAPIResponse 获取账户历史多日汇总报表 API返回值
+// TaobaoSubwayAccountOfflineFindAPIResponse 获取账户历史多日汇总报表 API返回值
 // taobao.subway.account.offline.find
 //
 // 获取账户历史报表
-type TaobaosubwayaccountofflinefindAPIResponse struct {
+type TaobaoSubwayAccountOfflineFindAPIResponse struct {
 	model.CommonResponse
-	TaobaosubwayaccountofflinefindAPIResponseModel
+	TaobaoSubwayAccountOfflineFindAPIResponseModel
 }
 
-// TaobaosubwayaccountofflinefindAPIResponseModel is 获取账户历史多日汇总报表 成功返回结果
-type TaobaosubwayaccountofflinefindAPIResponseModel struct {
+// TaobaoSubwayAccountOfflineFindAPIResponseModel is 获取账户历史多日汇总报表 成功返回结果
+type TaobaoSubwayAccountOfflineFindAPIResponseModel struct {
 	XMLName xml.Name `xml:"subway_account_offline_find_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

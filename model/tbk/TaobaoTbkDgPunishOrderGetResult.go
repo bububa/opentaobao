@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaotbkdgpunishordergetResult 结构体
-type TaobaotbkdgpunishordergetResult struct {
+// TaobaoTbkDgPunishOrderGetResult 结构体
+type TaobaoTbkDgPunishOrderGetResult struct {
 	// 淘宝联盟unionid（该字段不再支持）
 	UnionId string `json:"union_id,omitempty" xml:"union_id,omitempty"`
 	// 处罚状态。0 冻结，1 解冻

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalisportspassportpartersynccardAPIResponse 阿里体育-卡信息同步接口 API返回值
+// AlibabaAlisportsPassportParterSynccardAPIResponse 阿里体育-卡信息同步接口 API返回值
 // alibaba.alisports.passport.parter.synccard
 //
 // 运享通修改卡号的时候，通知更新到阿里体育和支付宝卡包中
-type AlibabaalisportspassportpartersynccardAPIResponse struct {
+type AlibabaAlisportsPassportParterSynccardAPIResponse struct {
 	model.CommonResponse
-	AlibabaalisportspassportpartersynccardAPIResponseModel
+	AlibabaAlisportsPassportParterSynccardAPIResponseModel
 }
 
-// AlibabaalisportspassportpartersynccardAPIResponseModel is 阿里体育-卡信息同步接口 成功返回结果
-type AlibabaalisportspassportpartersynccardAPIResponseModel struct {
+// AlibabaAlisportsPassportParterSynccardAPIResponseModel is 阿里体育-卡信息同步接口 成功返回结果
+type AlibabaAlisportsPassportParterSynccardAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alisports_passport_parter_synccard_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

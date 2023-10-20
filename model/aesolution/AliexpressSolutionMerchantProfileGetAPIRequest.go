@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpresssolutionmerchantprofilegetAPIRequest aliexpress.solution.merchant.profile.get API请求
+// AliexpressSolutionMerchantProfileGetAPIRequest aliexpress.solution.merchant.profile.get API请求
 // aliexpress.solution.merchant.profile.get
 //
 // API for oversea sellers to obtain the normal information, e.g. store id, registration country code.
-type AliexpresssolutionmerchantprofilegetAPIRequest struct {
+type AliexpressSolutionMerchantProfileGetAPIRequest struct {
 	model.Params
 }
 
-// NewAliexpresssolutionmerchantprofilegetRequest 初始化AliexpresssolutionmerchantprofilegetAPIRequest对象
-func NewAliexpresssolutionmerchantprofilegetRequest() *AliexpresssolutionmerchantprofilegetAPIRequest {
-	return &AliexpresssolutionmerchantprofilegetAPIRequest{
+// NewAliexpressSolutionMerchantProfileGetRequest 初始化AliexpressSolutionMerchantProfileGetAPIRequest对象
+func NewAliexpressSolutionMerchantProfileGetRequest() *AliexpressSolutionMerchantProfileGetAPIRequest {
+	return &AliexpressSolutionMerchantProfileGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AliexpresssolutionmerchantprofilegetAPIRequest) GetApiMethodName() string {
+func (r AliexpressSolutionMerchantProfileGetAPIRequest) GetApiMethodName() string {
 	return "aliexpress.solution.merchant.profile.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpresssolutionmerchantprofilegetAPIRequest) GetApiParams(params url.Values) {
+func (r AliexpressSolutionMerchantProfileGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AliexpresssolutionmerchantprofilegetAPIRequest) GetRawParams() model.Params {
+func (r AliexpressSolutionMerchantProfileGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaiuserquickregisterAPIResponse 精灵用户注册申请 API返回值
+// AlibabaAiUserQuickRegisterAPIResponse 精灵用户注册申请 API返回值
 // alibaba.ai.user.quick.register
 //
 // 人工智能实验室精灵用户注册申请接口，开放给Iot厂商做厂商会员数据上报
-type AlibabaaiuserquickregisterAPIResponse struct {
+type AlibabaAiUserQuickRegisterAPIResponse struct {
 	model.CommonResponse
-	AlibabaaiuserquickregisterAPIResponseModel
+	AlibabaAiUserQuickRegisterAPIResponseModel
 }
 
-// AlibabaaiuserquickregisterAPIResponseModel is 精灵用户注册申请 成功返回结果
-type AlibabaaiuserquickregisterAPIResponseModel struct {
+// AlibabaAiUserQuickRegisterAPIResponseModel is 精灵用户注册申请 成功返回结果
+type AlibabaAiUserQuickRegisterAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ai_user_quick_register_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

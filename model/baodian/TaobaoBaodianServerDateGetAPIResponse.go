@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobaodianserverdategetAPIResponse 服务器时间获取 API返回值
+// TaobaoBaodianServerDateGetAPIResponse 服务器时间获取 API返回值
 // taobao.baodian.server.date.get
 //
 // 获取服务器时间
-type TaobaobaodianserverdategetAPIResponse struct {
+type TaobaoBaodianServerDateGetAPIResponse struct {
 	model.CommonResponse
-	TaobaobaodianserverdategetAPIResponseModel
+	TaobaoBaodianServerDateGetAPIResponseModel
 }
 
-// TaobaobaodianserverdategetAPIResponseModel is 服务器时间获取 成功返回结果
-type TaobaobaodianserverdategetAPIResponseModel struct {
+// TaobaoBaodianServerDateGetAPIResponseModel is 服务器时间获取 成功返回结果
+type TaobaoBaodianServerDateGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"baodian_server_date_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

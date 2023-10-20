@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alitripreceipt"
 )
 
-// Alitripreceiptissueresultnotify 飞猪发票开票结果通知
+// AlitripReceiptIssueresultNotify 飞猪发票开票结果通知
 // alitrip.receipt.issueresult.notify
 //
 // 飞猪发票开票结果通知
-func Alitripreceiptissueresultnotify(clt *core.SDKClient, req *alitripreceipt.AlitripreceiptissueresultnotifyAPIRequest, session string) (*alitripreceipt.AlitripreceiptissueresultnotifyAPIResponse, error) {
-	var resp alitripreceipt.AlitripreceiptissueresultnotifyAPIResponse
+func AlitripReceiptIssueresultNotify(clt *core.SDKClient, req *alitripreceipt.AlitripReceiptIssueresultNotifyAPIRequest, session string) (*alitripreceipt.AlitripReceiptIssueresultNotifyAPIResponse, error) {
+	var resp alitripreceipt.AlitripReceiptIssueresultNotifyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

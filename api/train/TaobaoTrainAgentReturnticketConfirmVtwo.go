@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/train"
 )
 
-// Taobaotrainagentreturnticketconfirmvtwo 退票通知
+// TaobaoTrainAgentReturnticketConfirmVtwo 退票通知
 // taobao.train.agent.returnticket.confirm.vtwo
 //
 // 火车票代理商接口——退票通知回调
-func Taobaotrainagentreturnticketconfirmvtwo(clt *core.SDKClient, req *train.TaobaotrainagentreturnticketconfirmvtwoAPIRequest, session string) (*train.TaobaotrainagentreturnticketconfirmvtwoAPIResponse, error) {
-	var resp train.TaobaotrainagentreturnticketconfirmvtwoAPIResponse
+func TaobaoTrainAgentReturnticketConfirmVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentReturnticketConfirmVtwoAPIRequest, session string) (*train.TaobaoTrainAgentReturnticketConfirmVtwoAPIResponse, error) {
+	var resp train.TaobaoTrainAgentReturnticketConfirmVtwoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

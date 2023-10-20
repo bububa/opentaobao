@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbacampaignaddAPIResponse 创建一个推广计划 API返回值
+// TaobaoSimbaCampaignAddAPIResponse 创建一个推广计划 API返回值
 // taobao.simba.campaign.add
 //
 // 创建一个推广计划
-type TaobaosimbacampaignaddAPIResponse struct {
+type TaobaoSimbaCampaignAddAPIResponse struct {
 	model.CommonResponse
-	TaobaosimbacampaignaddAPIResponseModel
+	TaobaoSimbaCampaignAddAPIResponseModel
 }
 
-// TaobaosimbacampaignaddAPIResponseModel is 创建一个推广计划 成功返回结果
-type TaobaosimbacampaignaddAPIResponseModel struct {
+// TaobaoSimbaCampaignAddAPIResponseModel is 创建一个推广计划 成功返回结果
+type TaobaoSimbaCampaignAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_campaign_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

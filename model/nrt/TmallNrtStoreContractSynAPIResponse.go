@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallnrtstorecontractsynAPIResponse 喵零合同同步 API返回值
+// TmallNrtStoreContractSynAPIResponse 喵零合同同步 API返回值
 // tmall.nrt.store.contract.syn
 //
 // 喵零合同同步
-type TmallnrtstorecontractsynAPIResponse struct {
+type TmallNrtStoreContractSynAPIResponse struct {
 	model.CommonResponse
-	TmallnrtstorecontractsynAPIResponseModel
+	TmallNrtStoreContractSynAPIResponseModel
 }
 
-// TmallnrtstorecontractsynAPIResponseModel is 喵零合同同步 成功返回结果
-type TmallnrtstorecontractsynAPIResponseModel struct {
+// TmallNrtStoreContractSynAPIResponseModel is 喵零合同同步 成功返回结果
+type TmallNrtStoreContractSynAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_nrt_store_contract_syn_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

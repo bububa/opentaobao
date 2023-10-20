@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotopeventsubscriptionqueryAPIResponse 三方事件订阅查询 API返回值
+// TaobaoTopEventSubscriptionQueryAPIResponse 三方事件订阅查询 API返回值
 // taobao.top.event.subscription.query
 //
 // 三方事件订阅查询
-type TaobaotopeventsubscriptionqueryAPIResponse struct {
+type TaobaoTopEventSubscriptionQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaotopeventsubscriptionqueryAPIResponseModel
+	TaobaoTopEventSubscriptionQueryAPIResponseModel
 }
 
-// TaobaotopeventsubscriptionqueryAPIResponseModel is 三方事件订阅查询 成功返回结果
-type TaobaotopeventsubscriptionqueryAPIResponseModel struct {
+// TaobaoTopEventSubscriptionQueryAPIResponseModel is 三方事件订阅查询 成功返回结果
+type TaobaoTopEventSubscriptionQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"top_event_subscription_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

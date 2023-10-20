@@ -1,7 +1,7 @@
 package alilabs
 
-// AlibabaailabstvsdevicelistData 结构体
-type AlibabaailabstvsdevicelistData struct {
+// AlibabaAilabsTvsDeviceListData 结构体
+type AlibabaAilabsTvsDeviceListData struct {
 	// 设备名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 设备激活时间

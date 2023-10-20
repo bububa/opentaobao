@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaotbkscucrowdcreateRpcResult 结构体
-type TaobaotbkscucrowdcreateRpcResult struct {
+// TaobaoTbkScUcrowdCreateRpcResult 结构体
+type TaobaoTbkScUcrowdCreateRpcResult struct {
 	// 人群标签id
 	UcrowdId int64 `json:"ucrowd_id,omitempty" xml:"ucrowd_id,omitempty"`
 }

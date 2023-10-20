@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoscitemgetAPIResponse 根据id查询商品 API返回值
+// TaobaoScitemGetAPIResponse 根据id查询商品 API返回值
 // taobao.scitem.get
 //
 // 根据id查询商品
-type TaobaoscitemgetAPIResponse struct {
+type TaobaoScitemGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoscitemgetAPIResponseModel
+	TaobaoScitemGetAPIResponseModel
 }
 
-// TaobaoscitemgetAPIResponseModel is 根据id查询商品 成功返回结果
-type TaobaoscitemgetAPIResponseModel struct {
+// TaobaoScitemGetAPIResponseModel is 根据id查询商品 成功返回结果
+type TaobaoScitemGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"scitem_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

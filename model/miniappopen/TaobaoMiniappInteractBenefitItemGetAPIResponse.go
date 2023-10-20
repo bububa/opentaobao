@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaominiappinteractbenefititemgetAPIResponse 读取实物权益奖池对应绑定的专属下单商品 API返回值
+// TaobaoMiniappInteractBenefitItemGetAPIResponse 读取实物权益奖池对应绑定的专属下单商品 API返回值
 // taobao.miniapp.interact.benefit.item.get
 //
 // 读取实物权益奖池对应绑定的专属下单商品
-type TaobaominiappinteractbenefititemgetAPIResponse struct {
+type TaobaoMiniappInteractBenefitItemGetAPIResponse struct {
 	model.CommonResponse
-	TaobaominiappinteractbenefititemgetAPIResponseModel
+	TaobaoMiniappInteractBenefitItemGetAPIResponseModel
 }
 
-// TaobaominiappinteractbenefititemgetAPIResponseModel is 读取实物权益奖池对应绑定的专属下单商品 成功返回结果
-type TaobaominiappinteractbenefititemgetAPIResponseModel struct {
+// TaobaoMiniappInteractBenefitItemGetAPIResponseModel is 读取实物权益奖池对应绑定的专属下单商品 成功返回结果
+type TaobaoMiniappInteractBenefitItemGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_interact_benefit_item_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

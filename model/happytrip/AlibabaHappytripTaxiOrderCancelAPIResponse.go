@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabahappytriptaxiordercancelAPIResponse 取消叫车 API返回值
+// AlibabaHappytripTaxiOrderCancelAPIResponse 取消叫车 API返回值
 // alibaba.happytrip.taxi.order.cancel
 //
 // 取消叫车订单,行程中的订单不能取消
-type AlibabahappytriptaxiordercancelAPIResponse struct {
+type AlibabaHappytripTaxiOrderCancelAPIResponse struct {
 	model.CommonResponse
-	AlibabahappytriptaxiordercancelAPIResponseModel
+	AlibabaHappytripTaxiOrderCancelAPIResponseModel
 }
 
-// AlibabahappytriptaxiordercancelAPIResponseModel is 取消叫车 成功返回结果
-type AlibabahappytriptaxiordercancelAPIResponseModel struct {
+// AlibabaHappytripTaxiOrderCancelAPIResponseModel is 取消叫车 成功返回结果
+type AlibabaHappytripTaxiOrderCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_happytrip_taxi_order_cancel_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

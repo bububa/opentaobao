@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkmarketingfullrangecreateactivityAPIRequest 创建全场活动 API请求
+// AlibabaWdkMarketingFullrangeCreateactivityAPIRequest 创建全场活动 API请求
 // alibaba.wdk.marketing.fullrange.createactivity
 //
 // 创建全场活动
-type AlibabawdkmarketingfullrangecreateactivityAPIRequest struct {
+type AlibabaWdkMarketingFullrangeCreateactivityAPIRequest struct {
 	model.Params
 	// 创建活动请求入参
 	_param *FullRangeActivity
 }
 
-// NewAlibabawdkmarketingfullrangecreateactivityRequest 初始化AlibabawdkmarketingfullrangecreateactivityAPIRequest对象
-func NewAlibabawdkmarketingfullrangecreateactivityRequest() *AlibabawdkmarketingfullrangecreateactivityAPIRequest {
-	return &AlibabawdkmarketingfullrangecreateactivityAPIRequest{
+// NewAlibabaWdkMarketingFullrangeCreateactivityRequest 初始化AlibabaWdkMarketingFullrangeCreateactivityAPIRequest对象
+func NewAlibabaWdkMarketingFullrangeCreateactivityRequest() *AlibabaWdkMarketingFullrangeCreateactivityAPIRequest {
+	return &AlibabaWdkMarketingFullrangeCreateactivityAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabawdkmarketingfullrangecreateactivityAPIRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingFullrangeCreateactivityAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.marketing.fullrange.createactivity"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabawdkmarketingfullrangecreateactivityAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaWdkMarketingFullrangeCreateactivityAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabawdkmarketingfullrangecreateactivityAPIRequest) GetRawParams() model.Params {
+func (r AlibabaWdkMarketingFullrangeCreateactivityAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 创建活动请求入参
-func (r *AlibabawdkmarketingfullrangecreateactivityAPIRequest) SetParam(_param *FullRangeActivity) error {
+func (r *AlibabaWdkMarketingFullrangeCreateactivityAPIRequest) SetParam(_param *FullRangeActivity) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlibabawdkmarketingfullrangecreateactivityAPIRequest) GetParam() *FullRangeActivity {
+func (r AlibabaWdkMarketingFullrangeCreateactivityAPIRequest) GetParam() *FullRangeActivity {
 	return r._param
 }

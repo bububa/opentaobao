@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaologisticsexpresspickcodecheckAPIRequest 快递公司取货码校验 API请求
+// TaobaoLogisticsExpressPickcodeCheckAPIRequest 快递公司取货码校验 API请求
 // taobao.logistics.express.pickcode.check
 //
 // 快递公司取货码校验
-type TaobaologisticsexpresspickcodecheckAPIRequest struct {
+type TaobaoLogisticsExpressPickcodeCheckAPIRequest struct {
 	model.Params
 	// 取件码校验参数
 	_tmsPickCodeRequest *TmsPickCodeRequest
 }
 
-// NewTaobaologisticsexpresspickcodecheckRequest 初始化TaobaologisticsexpresspickcodecheckAPIRequest对象
-func NewTaobaologisticsexpresspickcodecheckRequest() *TaobaologisticsexpresspickcodecheckAPIRequest {
-	return &TaobaologisticsexpresspickcodecheckAPIRequest{
+// NewTaobaoLogisticsExpressPickcodeCheckRequest 初始化TaobaoLogisticsExpressPickcodeCheckAPIRequest对象
+func NewTaobaoLogisticsExpressPickcodeCheckRequest() *TaobaoLogisticsExpressPickcodeCheckAPIRequest {
+	return &TaobaoLogisticsExpressPickcodeCheckAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaologisticsexpresspickcodecheckAPIRequest) GetApiMethodName() string {
+func (r TaobaoLogisticsExpressPickcodeCheckAPIRequest) GetApiMethodName() string {
 	return "taobao.logistics.express.pickcode.check"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaologisticsexpresspickcodecheckAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoLogisticsExpressPickcodeCheckAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaologisticsexpresspickcodecheckAPIRequest) GetRawParams() model.Params {
+func (r TaobaoLogisticsExpressPickcodeCheckAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTmsPickCodeRequest is TmsPickCodeRequest Setter
 // 取件码校验参数
-func (r *TaobaologisticsexpresspickcodecheckAPIRequest) SetTmsPickCodeRequest(_tmsPickCodeRequest *TmsPickCodeRequest) error {
+func (r *TaobaoLogisticsExpressPickcodeCheckAPIRequest) SetTmsPickCodeRequest(_tmsPickCodeRequest *TmsPickCodeRequest) error {
 	r._tmsPickCodeRequest = _tmsPickCodeRequest
 	r.Set("tms_pick_code_request", _tmsPickCodeRequest)
 	return nil
 }
 
 // GetTmsPickCodeRequest TmsPickCodeRequest Getter
-func (r TaobaologisticsexpresspickcodecheckAPIRequest) GetTmsPickCodeRequest() *TmsPickCodeRequest {
+func (r TaobaoLogisticsExpressPickcodeCheckAPIRequest) GetTmsPickCodeRequest() *TmsPickCodeRequest {
 	return r._tmsPickCodeRequest
 }

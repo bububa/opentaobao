@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamozibucaccountlistaccountidsAPIResponse 根据一批账号ID查询账号列表 API返回值
+// AlibabaMoziBucAccountListAccountidsAPIResponse 根据一批账号ID查询账号列表 API返回值
 // alibaba.mozi.buc.account.list.accountids
 //
 // 根据一批账号ID查询账号列表
-type AlibabamozibucaccountlistaccountidsAPIResponse struct {
+type AlibabaMoziBucAccountListAccountidsAPIResponse struct {
 	model.CommonResponse
-	AlibabamozibucaccountlistaccountidsAPIResponseModel
+	AlibabaMoziBucAccountListAccountidsAPIResponseModel
 }
 
-// AlibabamozibucaccountlistaccountidsAPIResponseModel is 根据一批账号ID查询账号列表 成功返回结果
-type AlibabamozibucaccountlistaccountidsAPIResponseModel struct {
+// AlibabaMoziBucAccountListAccountidsAPIResponseModel is 根据一批账号ID查询账号列表 成功返回结果
+type AlibabaMoziBucAccountListAccountidsAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mozi_buc_account_list_accountids_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

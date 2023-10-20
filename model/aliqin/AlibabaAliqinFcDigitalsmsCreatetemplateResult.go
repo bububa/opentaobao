@@ -1,7 +1,7 @@
 package aliqin
 
-// AlibabaaliqinfcdigitalsmscreatetemplateResult 结构体
-type AlibabaaliqinfcdigitalsmscreatetemplateResult struct {
+// AlibabaAliqinFcDigitalsmsCreatetemplateResult 结构体
+type AlibabaAliqinFcDigitalsmsCreatetemplateResult struct {
 	// 错误码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 返回信息描述

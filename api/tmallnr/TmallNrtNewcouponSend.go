@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallnr"
 )
 
-// Tmallnrtnewcouponsend 券发放接口
+// TmallNrtNewcouponSend 券发放接口
 // tmall.nrt.newcoupon.send
 //
 // 券发放接口
-func Tmallnrtnewcouponsend(clt *core.SDKClient, req *tmallnr.TmallnrtnewcouponsendAPIRequest, session string) (*tmallnr.TmallnrtnewcouponsendAPIResponse, error) {
-	var resp tmallnr.TmallnrtnewcouponsendAPIResponse
+func TmallNrtNewcouponSend(clt *core.SDKClient, req *tmallnr.TmallNrtNewcouponSendAPIRequest, session string) (*tmallnr.TmallNrtNewcouponSendAPIResponse, error) {
+	var resp tmallnr.TmallNrtNewcouponSendAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

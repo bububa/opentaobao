@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// WdkrexoutdeviceiotregisteridAPIResponse 通过设备ID获取三元组-外部 API返回值
+// WdkRexoutDeviceIotRegisteridAPIResponse 通过设备ID获取三元组-外部 API返回值
 // wdk.rexout.device.iot.registerid
 //
 // 通过设备ID获取三元组-外部
-type WdkrexoutdeviceiotregisteridAPIResponse struct {
+type WdkRexoutDeviceIotRegisteridAPIResponse struct {
 	model.CommonResponse
-	WdkrexoutdeviceiotregisteridAPIResponseModel
+	WdkRexoutDeviceIotRegisteridAPIResponseModel
 }
 
-// WdkrexoutdeviceiotregisteridAPIResponseModel is 通过设备ID获取三元组-外部 成功返回结果
-type WdkrexoutdeviceiotregisteridAPIResponseModel struct {
+// WdkRexoutDeviceIotRegisteridAPIResponseModel is 通过设备ID获取三元组-外部 成功返回结果
+type WdkRexoutDeviceIotRegisteridAPIResponseModel struct {
 	XMLName xml.Name `xml:"wdk_rexout_device_iot_registerid_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoreachablebatchjudgeAPIResponse 是否派送可达判定批量查询接口 API返回值
+// CainiaoReachableBatchjudgeAPIResponse 是否派送可达判定批量查询接口 API返回值
 // cainiao.reachable.batchjudge
 //
 // 提供给商家在发货之前做截单处理，输入物流商编码和收发货地址进行可达判定，目前支持国内主流的物流服务商, 支持快运和快递两种类型
-type CainiaoreachablebatchjudgeAPIResponse struct {
+type CainiaoReachableBatchjudgeAPIResponse struct {
 	model.CommonResponse
-	CainiaoreachablebatchjudgeAPIResponseModel
+	CainiaoReachableBatchjudgeAPIResponseModel
 }
 
-// CainiaoreachablebatchjudgeAPIResponseModel is 是否派送可达判定批量查询接口 成功返回结果
-type CainiaoreachablebatchjudgeAPIResponseModel struct {
+// CainiaoReachableBatchjudgeAPIResponseModel is 是否派送可达判定批量查询接口 成功返回结果
+type CainiaoReachableBatchjudgeAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_reachable_batchjudge_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package util
 
-// AlibabaretaildevicetradeshipResult 结构体
-type AlibabaretaildevicetradeshipResult struct {
+// AlibabaRetailDeviceTradeShipResult 结构体
+type AlibabaRetailDeviceTradeShipResult struct {
 	// errorInfos
 	ErrorInfos []ErrorInfo `json:"error_infos,omitempty" xml:"error_infos>error_info,omitempty"`
 	// success

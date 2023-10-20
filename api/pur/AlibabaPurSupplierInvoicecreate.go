@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/pur"
 )
 
-// Alibabapursupplierinvoicecreate preInvoice创建
+// AlibabaPurSupplierInvoicecreate preInvoice创建
 // alibaba.pur.supplier.invoicecreate
 //
 // preInvoice创建
-func Alibabapursupplierinvoicecreate(clt *core.SDKClient, req *pur.AlibabapursupplierinvoicecreateAPIRequest, session string) (*pur.AlibabapursupplierinvoicecreateAPIResponse, error) {
-	var resp pur.AlibabapursupplierinvoicecreateAPIResponse
+func AlibabaPurSupplierInvoicecreate(clt *core.SDKClient, req *pur.AlibabaPurSupplierInvoicecreateAPIRequest, session string) (*pur.AlibabaPurSupplierInvoicecreateAPIResponse, error) {
+	var resp pur.AlibabaPurSupplierInvoicecreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

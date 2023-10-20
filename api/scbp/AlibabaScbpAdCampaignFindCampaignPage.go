@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// Alibabascbpadcampaignfindcampaignpage 分页查询计划
+// AlibabaScbpAdCampaignFindCampaignPage 分页查询计划
 // alibaba.scbp.ad.campaign.find.campaign.page
 //
 // 分页查询计划
-func Alibabascbpadcampaignfindcampaignpage(clt *core.SDKClient, req *scbp.AlibabascbpadcampaignfindcampaignpageAPIRequest, session string) (*scbp.AlibabascbpadcampaignfindcampaignpageAPIResponse, error) {
-	var resp scbp.AlibabascbpadcampaignfindcampaignpageAPIResponse
+func AlibabaScbpAdCampaignFindCampaignPage(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignFindCampaignPageAPIRequest, session string) (*scbp.AlibabaScbpAdCampaignFindCampaignPageAPIResponse, error) {
+	var resp scbp.AlibabaScbpAdCampaignFindCampaignPageAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

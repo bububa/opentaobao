@@ -1,7 +1,7 @@
 package xhotelitem
 
-// TaobaoxhotelservicetimegetResultSet 结构体
-type TaobaoxhotelservicetimegetResultSet struct {
+// TaobaoXhotelServicetimeGetResultSet 结构体
+type TaobaoXhotelServicetimeGetResultSet struct {
 	// firstResult
 	FirstResults []ServiceTimeDataDo `json:"first_results,omitempty" xml:"first_results>service_time_data_do,omitempty"`
 	// results

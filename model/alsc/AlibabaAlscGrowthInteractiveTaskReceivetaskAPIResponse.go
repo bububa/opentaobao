@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalscgrowthinteractivetaskreceivetaskAPIResponse 领取任务 API返回值
+// AlibabaAlscGrowthInteractiveTaskReceivetaskAPIResponse 领取任务 API返回值
 // alibaba.alsc.growth.interactive.task.receivetask
 //
 // 领取任务
-type AlibabaalscgrowthinteractivetaskreceivetaskAPIResponse struct {
+type AlibabaAlscGrowthInteractiveTaskReceivetaskAPIResponse struct {
 	model.CommonResponse
-	AlibabaalscgrowthinteractivetaskreceivetaskAPIResponseModel
+	AlibabaAlscGrowthInteractiveTaskReceivetaskAPIResponseModel
 }
 
-// AlibabaalscgrowthinteractivetaskreceivetaskAPIResponseModel is 领取任务 成功返回结果
-type AlibabaalscgrowthinteractivetaskreceivetaskAPIResponseModel struct {
+// AlibabaAlscGrowthInteractiveTaskReceivetaskAPIResponseModel is 领取任务 成功返回结果
+type AlibabaAlscGrowthInteractiveTaskReceivetaskAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_growth_interactive_task_receivetask_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabawdkumsshiftget 移库单获取
+// AlibabaWdkUmsShiftGet 移库单获取
 // alibaba.wdk.ums.shift.get
 //
 // 移库单获取
-func Alibabawdkumsshiftget(clt *core.SDKClient, req *wdk.AlibabawdkumsshiftgetAPIRequest, session string) (*wdk.AlibabawdkumsshiftgetAPIResponse, error) {
-	var resp wdk.AlibabawdkumsshiftgetAPIResponse
+func AlibabaWdkUmsShiftGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsShiftGetAPIRequest, session string) (*wdk.AlibabaWdkUmsShiftGetAPIResponse, error) {
+	var resp wdk.AlibabaWdkUmsShiftGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

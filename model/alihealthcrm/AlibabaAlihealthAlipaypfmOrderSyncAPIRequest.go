@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthalipaypfmordersyncAPIRequest 订单数据回传接口 API请求
+// AlibabaAlihealthAlipaypfmOrderSyncAPIRequest 订单数据回传接口 API请求
 // alibaba.alihealth.alipaypfm.order.sync
 //
 // 订单数据回传接口，各个isv通过我们渠道产生订单需要回传进行统计
-type AlibabaalihealthalipaypfmordersyncAPIRequest struct {
+type AlibabaAlihealthAlipaypfmOrderSyncAPIRequest struct {
 	model.Params
 	// 订单id
 	_orderId string
@@ -24,91 +24,91 @@ type AlibabaalihealthalipaypfmordersyncAPIRequest struct {
 	_userId int64
 }
 
-// NewAlibabaalihealthalipaypfmordersyncRequest 初始化AlibabaalihealthalipaypfmordersyncAPIRequest对象
-func NewAlibabaalihealthalipaypfmordersyncRequest() *AlibabaalihealthalipaypfmordersyncAPIRequest {
-	return &AlibabaalihealthalipaypfmordersyncAPIRequest{
+// NewAlibabaAlihealthAlipaypfmOrderSyncRequest 初始化AlibabaAlihealthAlipaypfmOrderSyncAPIRequest对象
+func NewAlibabaAlihealthAlipaypfmOrderSyncRequest() *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest {
+	return &AlibabaAlihealthAlipaypfmOrderSyncAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihealthalipaypfmordersyncAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.alipaypfm.order.sync"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihealthalipaypfmordersyncAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihealthalipaypfmordersyncAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOrderId is OrderId Setter
 // 订单id
-func (r *AlibabaalihealthalipaypfmordersyncAPIRequest) SetOrderId(_orderId string) error {
+func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
 	r.Set("order_id", _orderId)
 	return nil
 }
 
 // GetOrderId OrderId Getter
-func (r AlibabaalihealthalipaypfmordersyncAPIRequest) GetOrderId() string {
+func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
 // SetOrderPrice is OrderPrice Setter
 // 订单价格
-func (r *AlibabaalihealthalipaypfmordersyncAPIRequest) SetOrderPrice(_orderPrice string) error {
+func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetOrderPrice(_orderPrice string) error {
 	r._orderPrice = _orderPrice
 	r.Set("order_price", _orderPrice)
 	return nil
 }
 
 // GetOrderPrice OrderPrice Getter
-func (r AlibabaalihealthalipaypfmordersyncAPIRequest) GetOrderPrice() string {
+func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetOrderPrice() string {
 	return r._orderPrice
 }
 
 // SetOrderStatus is OrderStatus Setter
 // 订单状态
-func (r *AlibabaalihealthalipaypfmordersyncAPIRequest) SetOrderStatus(_orderStatus string) error {
+func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetOrderStatus(_orderStatus string) error {
 	r._orderStatus = _orderStatus
 	r.Set("order_status", _orderStatus)
 	return nil
 }
 
 // GetOrderStatus OrderStatus Getter
-func (r AlibabaalihealthalipaypfmordersyncAPIRequest) GetOrderStatus() string {
+func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetOrderStatus() string {
 	return r._orderStatus
 }
 
 // SetExtParam is ExtParam Setter
 // 扩展参数
-func (r *AlibabaalihealthalipaypfmordersyncAPIRequest) SetExtParam(_extParam string) error {
+func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetExtParam(_extParam string) error {
 	r._extParam = _extParam
 	r.Set("ext_param", _extParam)
 	return nil
 }
 
 // GetExtParam ExtParam Getter
-func (r AlibabaalihealthalipaypfmordersyncAPIRequest) GetExtParam() string {
+func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetExtParam() string {
 	return r._extParam
 }
 
 // SetUserId is UserId Setter
 // user_id
-func (r *AlibabaalihealthalipaypfmordersyncAPIRequest) SetUserId(_userId int64) error {
+func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
 	r.Set("user_id", _userId)
 	return nil
 }
 
 // GetUserId UserId Getter
-func (r AlibabaalihealthalipaypfmordersyncAPIRequest) GetUserId() int64 {
+func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetUserId() int64 {
 	return r._userId
 }

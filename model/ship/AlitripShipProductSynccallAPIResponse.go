@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripshipproductsynccallAPIResponse 全量同步回调 API返回值
+// AlitripShipProductSynccallAPIResponse 全量同步回调 API返回值
 // alitrip.ship.product.synccall
 //
 // 全量同步接口
-type AlitripshipproductsynccallAPIResponse struct {
+type AlitripShipProductSynccallAPIResponse struct {
 	model.CommonResponse
-	AlitripshipproductsynccallAPIResponseModel
+	AlitripShipProductSynccallAPIResponseModel
 }
 
-// AlitripshipproductsynccallAPIResponseModel is 全量同步回调 成功返回结果
-type AlitripshipproductsynccallAPIResponseModel struct {
+// AlitripShipProductSynccallAPIResponseModel is 全量同步回调 成功返回结果
+type AlitripShipProductSynccallAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_ship_product_synccall_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

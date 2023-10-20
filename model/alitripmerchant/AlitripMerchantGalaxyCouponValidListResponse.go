@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripmerchantgalaxycouponvalidlistResponse 结构体
-type AlitripmerchantgalaxycouponvalidlistResponse struct {
+// AlitripMerchantGalaxyCouponValidListResponse 结构体
+type AlitripMerchantGalaxyCouponValidListResponse struct {
 	// 状态码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

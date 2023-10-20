@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaeinvoicedeviceorderupdateAPIRequest 回传/更新设备订购单 API请求
+// AlibabaEinvoiceDeviceOrderUpdateAPIRequest 回传/更新设备订购单 API请求
 // alibaba.einvoice.device.order.update
 //
 // 更新设备订购单，同步税控设备信息
-type AlibabaeinvoicedeviceorderupdateAPIRequest struct {
+type AlibabaEinvoiceDeviceOrderUpdateAPIRequest struct {
 	model.Params
 	// 订购单工单事件：  deploy_finish: 设备就绪，部署完成  isv_reject: 服务商驳回订购单
 	_action string
@@ -24,91 +24,91 @@ type AlibabaeinvoicedeviceorderupdateAPIRequest struct {
 	_payeeRegisterNo string
 }
 
-// NewAlibabaeinvoicedeviceorderupdateRequest 初始化AlibabaeinvoicedeviceorderupdateAPIRequest对象
-func NewAlibabaeinvoicedeviceorderupdateRequest() *AlibabaeinvoicedeviceorderupdateAPIRequest {
-	return &AlibabaeinvoicedeviceorderupdateAPIRequest{
+// NewAlibabaEinvoiceDeviceOrderUpdateRequest 初始化AlibabaEinvoiceDeviceOrderUpdateAPIRequest对象
+func NewAlibabaEinvoiceDeviceOrderUpdateRequest() *AlibabaEinvoiceDeviceOrderUpdateAPIRequest {
+	return &AlibabaEinvoiceDeviceOrderUpdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaeinvoicedeviceorderupdateAPIRequest) GetApiMethodName() string {
+func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetApiMethodName() string {
 	return "alibaba.einvoice.device.order.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaeinvoicedeviceorderupdateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaeinvoicedeviceorderupdateAPIRequest) GetRawParams() model.Params {
+func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAction is Action Setter
 // 订购单工单事件：  deploy_finish: 设备就绪，部署完成  isv_reject: 服务商驳回订购单
-func (r *AlibabaeinvoicedeviceorderupdateAPIRequest) SetAction(_action string) error {
+func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetAction(_action string) error {
 	r._action = _action
 	r.Set("action", _action)
 	return nil
 }
 
 // GetAction Action Getter
-func (r AlibabaeinvoicedeviceorderupdateAPIRequest) GetAction() string {
+func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetAction() string {
 	return r._action
 }
 
 // SetDeviceId is DeviceId Setter
 // 税控设备ID
-func (r *AlibabaeinvoicedeviceorderupdateAPIRequest) SetDeviceId(_deviceId string) error {
+func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
 	r.Set("device_id", _deviceId)
 	return nil
 }
 
 // GetDeviceId DeviceId Getter
-func (r AlibabaeinvoicedeviceorderupdateAPIRequest) GetDeviceId() string {
+func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
 // SetExtJson is ExtJson Setter
 // 拓展字段。  ①当action=deploy_finish时，拓展字段中必须包含：  serv_start_time: 服务有效周期-起始时间  serv_end_time: 服务有效周期-结束时间  时间格式：yyyy-MM-dd HH:mm:ss  ②当action=isv_reject时，拓展字段中必须包含：  message: 驳回原因
-func (r *AlibabaeinvoicedeviceorderupdateAPIRequest) SetExtJson(_extJson string) error {
+func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetExtJson(_extJson string) error {
 	r._extJson = _extJson
 	r.Set("ext_json", _extJson)
 	return nil
 }
 
 // GetExtJson ExtJson Getter
-func (r AlibabaeinvoicedeviceorderupdateAPIRequest) GetExtJson() string {
+func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetExtJson() string {
 	return r._extJson
 }
 
 // SetFlowId is FlowId Setter
 // 订购开通单ID
-func (r *AlibabaeinvoicedeviceorderupdateAPIRequest) SetFlowId(_flowId string) error {
+func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetFlowId(_flowId string) error {
 	r._flowId = _flowId
 	r.Set("flow_id", _flowId)
 	return nil
 }
 
 // GetFlowId FlowId Getter
-func (r AlibabaeinvoicedeviceorderupdateAPIRequest) GetFlowId() string {
+func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetFlowId() string {
 	return r._flowId
 }
 
 // SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 税号
-func (r *AlibabaeinvoicedeviceorderupdateAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
 	r.Set("payee_register_no", _payeeRegisterNo)
 	return nil
 }
 
 // GetPayeeRegisterNo PayeeRegisterNo Getter
-func (r AlibabaeinvoicedeviceorderupdateAPIRequest) GetPayeeRegisterNo() string {
+func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }

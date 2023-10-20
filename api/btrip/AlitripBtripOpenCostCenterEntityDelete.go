@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// Alitripbtripopencostcenterentitydelete 删除成本中心人员信息
+// AlitripBtripOpenCostCenterEntityDelete 删除成本中心人员信息
 // alitrip.btrip.open.cost.center.entity.delete
 //
 // 删除成本中心人员信息
-func Alitripbtripopencostcenterentitydelete(clt *core.SDKClient, req *btrip.AlitripbtripopencostcenterentitydeleteAPIRequest, session string) (*btrip.AlitripbtripopencostcenterentitydeleteAPIResponse, error) {
-	var resp btrip.AlitripbtripopencostcenterentitydeleteAPIResponse
+func AlitripBtripOpenCostCenterEntityDelete(clt *core.SDKClient, req *btrip.AlitripBtripOpenCostCenterEntityDeleteAPIRequest, session string) (*btrip.AlitripBtripOpenCostCenterEntityDeleteAPIResponse, error) {
+	var resp btrip.AlitripBtripOpenCostCenterEntityDeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

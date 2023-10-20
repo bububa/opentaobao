@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihouseexistinghomebrokerpointssyncResult 结构体
-type AlibabaalihouseexistinghomebrokerpointssyncResult struct {
+// AlibabaAlihouseExistinghomeBrokerPointsSyncResult 结构体
+type AlibabaAlihouseExistinghomeBrokerPointsSyncResult struct {
 	// 操作结果
 	Data []BrokerPointResultDto `json:"data,omitempty" xml:"data>broker_point_result_dto,omitempty"`
 	// code

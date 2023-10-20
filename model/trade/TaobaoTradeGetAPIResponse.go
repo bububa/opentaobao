@@ -6,18 +6,18 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotradegetAPIResponse 获取单笔交易的部分信息(性能高) API返回值
+// TaobaoTradeGetAPIResponse 获取单笔交易的部分信息(性能高) API返回值
 // taobao.trade.get
 //
 // 获取单笔交易的部分信息
 // &lt;br/&gt;&lt;a href=&#34;https://console.open.taobao.com/dingWeb.htm?from=tradeapi&#34; target=&#34;_blank&#34;&gt;点击查看更多交易API说明&lt;/a&gt;
-type TaobaotradegetAPIResponse struct {
+type TaobaoTradeGetAPIResponse struct {
 	model.CommonResponse
-	TaobaotradegetAPIResponseModel
+	TaobaoTradeGetAPIResponseModel
 }
 
-// TaobaotradegetAPIResponseModel is 获取单笔交易的部分信息(性能高) 成功返回结果
-type TaobaotradegetAPIResponseModel struct {
+// TaobaoTradeGetAPIResponseModel is 获取单笔交易的部分信息(性能高) 成功返回结果
+type TaobaoTradeGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"trade_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

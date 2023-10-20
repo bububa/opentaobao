@@ -13,5 +13,5 @@ type SnReportRequest struct {
 	// 发货单信息
 	DeliveryOrder *DeliveryOrder `json:"deliveryOrder,omitempty" xml:"deliveryOrder,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoqimensnreportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoQimenSnReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

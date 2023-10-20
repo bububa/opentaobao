@@ -1,7 +1,7 @@
 package homeai
 
-// TaobaohomeaialgpredictResult 结构体
-type TaobaohomeaialgpredictResult struct {
+// TaobaoHomeaiAlgPredictResult 结构体
+type TaobaoHomeaiAlgPredictResult struct {
 	// code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// errormsg

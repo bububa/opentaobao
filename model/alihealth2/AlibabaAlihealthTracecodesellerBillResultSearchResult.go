@@ -1,7 +1,7 @@
 package alihealth2
 
-// AlibabaalihealthtracecodesellerbillresultsearchResult 结构体
-type AlibabaalihealthtracecodesellerbillresultsearchResult struct {
+// AlibabaAlihealthTracecodesellerBillResultSearchResult 结构体
+type AlibabaAlihealthTracecodesellerBillResultSearchResult struct {
 	// 单据编号
 	BillCode string `json:"bill_code,omitempty" xml:"bill_code,omitempty"`
 	// 单据处理时间

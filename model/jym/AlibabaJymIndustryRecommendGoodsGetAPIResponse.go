@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabajymindustryrecommendgoodsgetAPIResponse 获取交易猫推荐商品 API返回值
+// AlibabaJymIndustryRecommendGoodsGetAPIResponse 获取交易猫推荐商品 API返回值
 // alibaba.jym.industry.recommend.goods.get
 //
 // 获取交易猫推荐商品
-type AlibabajymindustryrecommendgoodsgetAPIResponse struct {
+type AlibabaJymIndustryRecommendGoodsGetAPIResponse struct {
 	model.CommonResponse
-	AlibabajymindustryrecommendgoodsgetAPIResponseModel
+	AlibabaJymIndustryRecommendGoodsGetAPIResponseModel
 }
 
-// AlibabajymindustryrecommendgoodsgetAPIResponseModel is 获取交易猫推荐商品 成功返回结果
-type AlibabajymindustryrecommendgoodsgetAPIResponseModel struct {
+// AlibabaJymIndustryRecommendGoodsGetAPIResponseModel is 获取交易猫推荐商品 成功返回结果
+type AlibabaJymIndustryRecommendGoodsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_industry_recommend_goods_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabawdkpurchaseprice rt回传采购价
+// AlibabaWdkPurchasePrice rt回传采购价
 // alibaba.wdk.purchase.price
 //
 // 猫超共享库存项目-rt回传采购价
-func Alibabawdkpurchaseprice(clt *core.SDKClient, req *wdk.AlibabawdkpurchasepriceAPIRequest, session string) (*wdk.AlibabawdkpurchasepriceAPIResponse, error) {
-	var resp wdk.AlibabawdkpurchasepriceAPIResponse
+func AlibabaWdkPurchasePrice(clt *core.SDKClient, req *wdk.AlibabaWdkPurchasePriceAPIRequest, session string) (*wdk.AlibabaWdkPurchasePriceAPIResponse, error) {
+	var resp wdk.AlibabaWdkPurchasePriceAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabatmallgeniescpplancurrentpogetAPIResponse 11-同步本周的po单（从W-1周到W+4周） API返回值
+// AlibabaTmallgenieScpPlanCurrentPoGetAPIResponse 11-同步本周的po单（从W-1周到W+4周） API返回值
 // alibaba.tmallgenie.scp.plan.current.po.get
 //
 // 11-同步本周的po单（从W-1周到W+4周）
-type AlibabatmallgeniescpplancurrentpogetAPIResponse struct {
+type AlibabaTmallgenieScpPlanCurrentPoGetAPIResponse struct {
 	model.CommonResponse
-	AlibabatmallgeniescpplancurrentpogetAPIResponseModel
+	AlibabaTmallgenieScpPlanCurrentPoGetAPIResponseModel
 }
 
-// AlibabatmallgeniescpplancurrentpogetAPIResponseModel is 11-同步本周的po单（从W-1周到W+4周） 成功返回结果
-type AlibabatmallgeniescpplancurrentpogetAPIResponseModel struct {
+// AlibabaTmallgenieScpPlanCurrentPoGetAPIResponseModel is 11-同步本周的po单（从W-1周到W+4周） 成功返回结果
+type AlibabaTmallgenieScpPlanCurrentPoGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tmallgenie_scp_plan_current_po_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

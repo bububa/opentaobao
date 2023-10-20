@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/iot"
 )
 
-// Taobaoailabaicloudtopdevicecontrollamp 台灯控制
+// TaobaoAilabAicloudTopDeviceControlLamp 台灯控制
 // taobao.ailab.aicloud.top.device.control.lamp
 //
 // 台灯控制
-func Taobaoailabaicloudtopdevicecontrollamp(clt *core.SDKClient, req *iot.TaobaoailabaicloudtopdevicecontrollampAPIRequest, session string) (*iot.TaobaoailabaicloudtopdevicecontrollampAPIResponse, error) {
-	var resp iot.TaobaoailabaicloudtopdevicecontrollampAPIResponse
+func TaobaoAilabAicloudTopDeviceControlLamp(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceControlLampAPIRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceControlLampAPIResponse, error) {
+	var resp iot.TaobaoAilabAicloudTopDeviceControlLampAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

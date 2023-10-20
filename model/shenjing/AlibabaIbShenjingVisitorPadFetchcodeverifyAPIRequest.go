@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaibshenjingvisitorpadfetchcodeverifyAPIRequest 访客通过PAD提交访客码 API请求
+// AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest 访客通过PAD提交访客码 API请求
 // alibaba.ib.shenjing.visitor.pad.fetchcodeverify
 //
 // 访客通过PAD提交访客码，录脸进入园区。
-type AlibabaibshenjingvisitorpadfetchcodeverifyAPIRequest struct {
+type AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest struct {
 	model.Params
 	// 终端ID
 	_termId string
@@ -18,52 +18,52 @@ type AlibabaibshenjingvisitorpadfetchcodeverifyAPIRequest struct {
 	_visitorCode int64
 }
 
-// NewAlibabaibshenjingvisitorpadfetchcodeverifyRequest 初始化AlibabaibshenjingvisitorpadfetchcodeverifyAPIRequest对象
-func NewAlibabaibshenjingvisitorpadfetchcodeverifyRequest() *AlibabaibshenjingvisitorpadfetchcodeverifyAPIRequest {
-	return &AlibabaibshenjingvisitorpadfetchcodeverifyAPIRequest{
+// NewAlibabaIbShenjingVisitorPadFetchcodeverifyRequest 初始化AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest对象
+func NewAlibabaIbShenjingVisitorPadFetchcodeverifyRequest() *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest {
+	return &AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaibshenjingvisitorpadfetchcodeverifyAPIRequest) GetApiMethodName() string {
+func (r AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) GetApiMethodName() string {
 	return "alibaba.ib.shenjing.visitor.pad.fetchcodeverify"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaibshenjingvisitorpadfetchcodeverifyAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaibshenjingvisitorpadfetchcodeverifyAPIRequest) GetRawParams() model.Params {
+func (r AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTermId is TermId Setter
 // 终端ID
-func (r *AlibabaibshenjingvisitorpadfetchcodeverifyAPIRequest) SetTermId(_termId string) error {
+func (r *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) SetTermId(_termId string) error {
 	r._termId = _termId
 	r.Set("term_id", _termId)
 	return nil
 }
 
 // GetTermId TermId Getter
-func (r AlibabaibshenjingvisitorpadfetchcodeverifyAPIRequest) GetTermId() string {
+func (r AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) GetTermId() string {
 	return r._termId
 }
 
 // SetVisitorCode is VisitorCode Setter
 // 访客码
-func (r *AlibabaibshenjingvisitorpadfetchcodeverifyAPIRequest) SetVisitorCode(_visitorCode int64) error {
+func (r *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) SetVisitorCode(_visitorCode int64) error {
 	r._visitorCode = _visitorCode
 	r.Set("visitor_code", _visitorCode)
 	return nil
 }
 
 // GetVisitorCode VisitorCode Getter
-func (r AlibabaibshenjingvisitorpadfetchcodeverifyAPIRequest) GetVisitorCode() int64 {
+func (r AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) GetVisitorCode() int64 {
 	return r._visitorCode
 }

@@ -1,7 +1,7 @@
 package tmallsc
 
-// TmallservicecenteranomalyrecoursehomedecorationquestioncodequeryResult 结构体
-type TmallservicecenteranomalyrecoursehomedecorationquestioncodequeryResult struct {
+// TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult 结构体
+type TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult struct {
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 错误码

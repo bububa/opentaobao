@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotvpayorderpartnerpayAPIResponse tv支付第三方支付订单 API返回值
+// TaobaoTvpayOrderPartnerpayAPIResponse tv支付第三方支付订单 API返回值
 // taobao.tvpay.order.partnerpay
 //
 // tv支付第三方发起并支付订单（使用设备授权）
-type TaobaotvpayorderpartnerpayAPIResponse struct {
+type TaobaoTvpayOrderPartnerpayAPIResponse struct {
 	model.CommonResponse
-	TaobaotvpayorderpartnerpayAPIResponseModel
+	TaobaoTvpayOrderPartnerpayAPIResponseModel
 }
 
-// TaobaotvpayorderpartnerpayAPIResponseModel is tv支付第三方支付订单 成功返回结果
-type TaobaotvpayorderpartnerpayAPIResponseModel struct {
+// TaobaoTvpayOrderPartnerpayAPIResponseModel is tv支付第三方支付订单 成功返回结果
+type TaobaoTvpayOrderPartnerpayAPIResponseModel struct {
 	XMLName xml.Name `xml:"tvpay_order_partnerpay_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

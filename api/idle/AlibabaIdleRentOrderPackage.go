@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/idle"
 )
 
-// Alibabaidlerentorderpackage 确认揽收商品
+// AlibabaIdleRentOrderPackage 确认揽收商品
 // alibaba.idle.rent.order.package
 //
 // 确认揽收
-func Alibabaidlerentorderpackage(clt *core.SDKClient, req *idle.AlibabaidlerentorderpackageAPIRequest, session string) (*idle.AlibabaidlerentorderpackageAPIResponse, error) {
-	var resp idle.AlibabaidlerentorderpackageAPIResponse
+func AlibabaIdleRentOrderPackage(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderPackageAPIRequest, session string) (*idle.AlibabaIdleRentOrderPackageAPIResponse, error) {
+	var resp idle.AlibabaIdleRentOrderPackageAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

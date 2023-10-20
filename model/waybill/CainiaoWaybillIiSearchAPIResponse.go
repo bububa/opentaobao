@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaowaybilliisearchAPIResponse 查询面单服务订购及面单使用情况 API返回值
+// CainiaoWaybillIiSearchAPIResponse 查询面单服务订购及面单使用情况 API返回值
 // cainiao.waybill.ii.search
 //
 // 获取发货地&amp;CP开通状态&amp;账户的使用情况
-type CainiaowaybilliisearchAPIResponse struct {
+type CainiaoWaybillIiSearchAPIResponse struct {
 	model.CommonResponse
-	CainiaowaybilliisearchAPIResponseModel
+	CainiaoWaybillIiSearchAPIResponseModel
 }
 
-// CainiaowaybilliisearchAPIResponseModel is 查询面单服务订购及面单使用情况 成功返回结果
-type CainiaowaybilliisearchAPIResponseModel struct {
+// CainiaoWaybillIiSearchAPIResponseModel is 查询面单服务订购及面单使用情况 成功返回结果
+type CainiaoWaybillIiSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_waybill_ii_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

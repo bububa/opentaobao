@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// Alibabaalihousenewhomeactivitydepositbind 销售活动绑定预存金商品id
+// AlibabaAlihouseNewhomeActivityDepositBind 销售活动绑定预存金商品id
 // alibaba.alihouse.newhome.activity.deposit.bind
 //
 // 销售活动绑定预存金商品id
-func Alibabaalihousenewhomeactivitydepositbind(clt *core.SDKClient, req *alihouse.AlibabaalihousenewhomeactivitydepositbindAPIRequest, session string) (*alihouse.AlibabaalihousenewhomeactivitydepositbindAPIResponse, error) {
-	var resp alihouse.AlibabaalihousenewhomeactivitydepositbindAPIResponse
+func AlibabaAlihouseNewhomeActivityDepositBind(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeActivityDepositBindAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeActivityDepositBindAPIResponse, error) {
+	var resp alihouse.AlibabaAlihouseNewhomeActivityDepositBindAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaitesleslinfogeteslinfoAPIResponse 厂测查询价签当前信息 API返回值
+// AlibabaItEslEslinfoGeteslinfoAPIResponse 厂测查询价签当前信息 API返回值
 // alibaba.it.esl.eslinfo.geteslinfo
 //
 // 工厂对生产出的电子价签进行全流程功能测试，查询价签当前上报的信息
-type AlibabaitesleslinfogeteslinfoAPIResponse struct {
+type AlibabaItEslEslinfoGeteslinfoAPIResponse struct {
 	model.CommonResponse
-	AlibabaitesleslinfogeteslinfoAPIResponseModel
+	AlibabaItEslEslinfoGeteslinfoAPIResponseModel
 }
 
-// AlibabaitesleslinfogeteslinfoAPIResponseModel is 厂测查询价签当前信息 成功返回结果
-type AlibabaitesleslinfogeteslinfoAPIResponseModel struct {
+// AlibabaItEslEslinfoGeteslinfoAPIResponseModel is 厂测查询价签当前信息 成功返回结果
+type AlibabaItEslEslinfoGeteslinfoAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_it_esl_eslinfo_geteslinfo_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

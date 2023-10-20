@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitriptuanhotelitemskudeleteAPIResponse 酒店团购套餐商品SKU删除 API返回值
+// AlitripTuanHotelItemSkuDeleteAPIResponse 酒店团购套餐商品SKU删除 API返回值
 // alitrip.tuan.hotel.item.sku.delete
 //
 // 商户对发布的宝贝套餐价格库存信息进行删除
-type AlitriptuanhotelitemskudeleteAPIResponse struct {
+type AlitripTuanHotelItemSkuDeleteAPIResponse struct {
 	model.CommonResponse
-	AlitriptuanhotelitemskudeleteAPIResponseModel
+	AlitripTuanHotelItemSkuDeleteAPIResponseModel
 }
 
-// AlitriptuanhotelitemskudeleteAPIResponseModel is 酒店团购套餐商品SKU删除 成功返回结果
-type AlitriptuanhotelitemskudeleteAPIResponseModel struct {
+// AlitripTuanHotelItemSkuDeleteAPIResponseModel is 酒店团购套餐商品SKU删除 成功返回结果
+type AlitripTuanHotelItemSkuDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_tuan_hotel_item_sku_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

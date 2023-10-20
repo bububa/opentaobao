@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaomembercouriercpresignAPIResponse cp清理离职用户信息 API返回值
+// CainiaoMemberCourierCpresignAPIResponse cp清理离职用户信息 API返回值
 // cainiao.member.courier.cpresign
 //
 // CP清理内部离职的用户信息
-type CainiaomembercouriercpresignAPIResponse struct {
+type CainiaoMemberCourierCpresignAPIResponse struct {
 	model.CommonResponse
-	CainiaomembercouriercpresignAPIResponseModel
+	CainiaoMemberCourierCpresignAPIResponseModel
 }
 
-// CainiaomembercouriercpresignAPIResponseModel is cp清理离职用户信息 成功返回结果
-type CainiaomembercouriercpresignAPIResponseModel struct {
+// CainiaoMemberCourierCpresignAPIResponseModel is cp清理离职用户信息 成功返回结果
+type CainiaoMemberCourierCpresignAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_member_courier_cpresign_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

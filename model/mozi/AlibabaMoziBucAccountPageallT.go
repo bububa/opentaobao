@@ -1,7 +1,7 @@
 package mozi
 
-// AlibabamozibucaccountpageallT 结构体
-type AlibabamozibucaccountpageallT struct {
+// AlibabaMoziBucAccountPageallT 结构体
+type AlibabaMoziBucAccountPageallT struct {
 	// 账号名
 	Account string `json:"account,omitempty" xml:"account,omitempty"`
 	// 账号平台

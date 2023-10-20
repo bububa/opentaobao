@@ -1,7 +1,7 @@
 package singletreasure
 
-// TaobaosingletreasureactivityitembatchaddResultDto 结构体
-type TaobaosingletreasureactivityitembatchaddResultDto struct {
+// TaobaoSingletreasureActivityItemBatchaddResultDto 结构体
+type TaobaoSingletreasureActivityItemBatchaddResultDto struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// data

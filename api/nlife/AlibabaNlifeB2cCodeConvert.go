@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/nlife"
 )
 
-// Alibabanlifeb2ccodeconvert b2c转码
+// AlibabaNlifeB2cCodeConvert b2c转码
 // alibaba.nlife.b2c.code.convert
 //
 // 将商品的URL转码，ISV将该码写入RFID
-func Alibabanlifeb2ccodeconvert(clt *core.SDKClient, req *nlife.Alibabanlifeb2ccodeconvertAPIRequest, session string) (*nlife.Alibabanlifeb2ccodeconvertAPIResponse, error) {
-	var resp nlife.Alibabanlifeb2ccodeconvertAPIResponse
+func AlibabaNlifeB2cCodeConvert(clt *core.SDKClient, req *nlife.AlibabaNlifeB2cCodeConvertAPIRequest, session string) (*nlife.AlibabaNlifeB2cCodeConvertAPIResponse, error) {
+	var resp nlife.AlibabaNlifeB2cCodeConvertAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotoppackageauthinfogetAPIResponse 淘宝末端包裹信息获取 API返回值
+// TaobaoTopPackageAuthInfoGetAPIResponse 淘宝末端包裹信息获取 API返回值
 // taobao.top.package.auth.info.get
 //
 // 淘宝末端包裹信息获取
-type TaobaotoppackageauthinfogetAPIResponse struct {
+type TaobaoTopPackageAuthInfoGetAPIResponse struct {
 	model.CommonResponse
-	TaobaotoppackageauthinfogetAPIResponseModel
+	TaobaoTopPackageAuthInfoGetAPIResponseModel
 }
 
-// TaobaotoppackageauthinfogetAPIResponseModel is 淘宝末端包裹信息获取 成功返回结果
-type TaobaotoppackageauthinfogetAPIResponseModel struct {
+// TaobaoTopPackageAuthInfoGetAPIResponseModel is 淘宝末端包裹信息获取 成功返回结果
+type TaobaoTopPackageAuthInfoGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"top_package_auth_info_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

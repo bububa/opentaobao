@@ -1,5 +1,5 @@
 package qimen
 
-// TaobaoqimenentryordercreateMap 结构体
-type TaobaoqimenentryordercreateMap struct {
+// TaobaoQimenEntryorderCreateMap 结构体
+type TaobaoQimenEntryorderCreateMap struct {
 }

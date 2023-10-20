@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaailabuserauthorizedqueryAPIRequest 查询授权状态接口 API请求
+// AlibabaAilabUserAuthorizedQueryAPIRequest 查询授权状态接口 API请求
 // alibaba.ailab.user.authorized.query
 //
 // 查询三方用户授权状态
-type AlibabaailabuserauthorizedqueryAPIRequest struct {
+type AlibabaAilabUserAuthorizedQueryAPIRequest struct {
 	model.Params
 	// 开放平台申请的schema
 	_schemaKey string
@@ -18,52 +18,52 @@ type AlibabaailabuserauthorizedqueryAPIRequest struct {
 	_merchantUserId string
 }
 
-// NewAlibabaailabuserauthorizedqueryRequest 初始化AlibabaailabuserauthorizedqueryAPIRequest对象
-func NewAlibabaailabuserauthorizedqueryRequest() *AlibabaailabuserauthorizedqueryAPIRequest {
-	return &AlibabaailabuserauthorizedqueryAPIRequest{
+// NewAlibabaAilabUserAuthorizedQueryRequest 初始化AlibabaAilabUserAuthorizedQueryAPIRequest对象
+func NewAlibabaAilabUserAuthorizedQueryRequest() *AlibabaAilabUserAuthorizedQueryAPIRequest {
+	return &AlibabaAilabUserAuthorizedQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaailabuserauthorizedqueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaAilabUserAuthorizedQueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.ailab.user.authorized.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaailabuserauthorizedqueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAilabUserAuthorizedQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaailabuserauthorizedqueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAilabUserAuthorizedQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSchemaKey is SchemaKey Setter
 // 开放平台申请的schema
-func (r *AlibabaailabuserauthorizedqueryAPIRequest) SetSchemaKey(_schemaKey string) error {
+func (r *AlibabaAilabUserAuthorizedQueryAPIRequest) SetSchemaKey(_schemaKey string) error {
 	r._schemaKey = _schemaKey
 	r.Set("schema_key", _schemaKey)
 	return nil
 }
 
 // GetSchemaKey SchemaKey Getter
-func (r AlibabaailabuserauthorizedqueryAPIRequest) GetSchemaKey() string {
+func (r AlibabaAilabUserAuthorizedQueryAPIRequest) GetSchemaKey() string {
 	return r._schemaKey
 }
 
 // SetMerchantUserId is MerchantUserId Setter
 // 三方用户的唯一ID
-func (r *AlibabaailabuserauthorizedqueryAPIRequest) SetMerchantUserId(_merchantUserId string) error {
+func (r *AlibabaAilabUserAuthorizedQueryAPIRequest) SetMerchantUserId(_merchantUserId string) error {
 	r._merchantUserId = _merchantUserId
 	r.Set("merchant_user_id", _merchantUserId)
 	return nil
 }
 
 // GetMerchantUserId MerchantUserId Getter
-func (r AlibabaailabuserauthorizedqueryAPIRequest) GetMerchantUserId() string {
+func (r AlibabaAilabUserAuthorizedQueryAPIRequest) GetMerchantUserId() string {
 	return r._merchantUserId
 }

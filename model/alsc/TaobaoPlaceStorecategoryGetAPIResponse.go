@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoplacestorecategorygetAPIResponse 获取门店类目信息 API返回值
+// TaobaoPlaceStorecategoryGetAPIResponse 获取门店类目信息 API返回值
 // taobao.place.storecategory.get
 //
 // 获取门店类目信息
-type TaobaoplacestorecategorygetAPIResponse struct {
+type TaobaoPlaceStorecategoryGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoplacestorecategorygetAPIResponseModel
+	TaobaoPlaceStorecategoryGetAPIResponseModel
 }
 
-// TaobaoplacestorecategorygetAPIResponseModel is 获取门店类目信息 成功返回结果
-type TaobaoplacestorecategorygetAPIResponseModel struct {
+// TaobaoPlaceStorecategoryGetAPIResponseModel is 获取门店类目信息 成功返回结果
+type TaobaoPlaceStorecategoryGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"place_storecategory_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

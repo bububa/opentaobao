@@ -1,7 +1,7 @@
 package logistic
 
-// AlibabaelefengniaoservicepackagequeryResult 结构体
-type AlibabaelefengniaoservicepackagequeryResult struct {
+// AlibabaEleFengniaoServicePackageQueryResult 结构体
+type AlibabaEleFengniaoServicePackageQueryResult struct {
 	// servicePackageCodes
 	ServicePackageCodes []ServicePackage `json:"service_package_codes,omitempty" xml:"service_package_codes>service_package,omitempty"`
 	// 门店code

@@ -5,7 +5,7 @@ type CollectionResult struct {
 	// 菜单内容
 	Contents []TreeNode `json:"contents,omitempty" xml:"contents>tree_node,omitempty"`
 	// content
-	ContentList []AlibabacampuscoreappgetappusagesT `json:"content_list,omitempty" xml:"content_list>alibabacampuscoreappgetappusages_t,omitempty"`
+	ContentList []AlibabaCampusCoreAppGetappusagesT `json:"content_list,omitempty" xml:"content_list>alibaba_campus_core_app_getappusages_t,omitempty"`
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误描述

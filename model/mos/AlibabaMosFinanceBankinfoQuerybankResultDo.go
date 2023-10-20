@@ -1,7 +1,7 @@
 package mos
 
-// AlibabamosfinancebankinfoquerybankResultDo 结构体
-type AlibabamosfinancebankinfoquerybankResultDo struct {
+// AlibabaMosFinanceBankinfoQuerybankResultDo 结构体
+type AlibabaMosFinanceBankinfoQuerybankResultDo struct {
 	// 扩展
 	Extra string `json:"extra,omitempty" xml:"extra,omitempty"`
 	// 全链路追踪id

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbarptcampaignbasegetAPIResponse 推广计划报表基础数据对象 API返回值
+// TaobaoSimbaRptCampaignbaseGetAPIResponse 推广计划报表基础数据对象 API返回值
 // taobao.simba.rpt.campaignbase.get
 //
 // 推广计划报表基础数据对象
-type TaobaosimbarptcampaignbasegetAPIResponse struct {
+type TaobaoSimbaRptCampaignbaseGetAPIResponse struct {
 	model.CommonResponse
-	TaobaosimbarptcampaignbasegetAPIResponseModel
+	TaobaoSimbaRptCampaignbaseGetAPIResponseModel
 }
 
-// TaobaosimbarptcampaignbasegetAPIResponseModel is 推广计划报表基础数据对象 成功返回结果
-type TaobaosimbarptcampaignbasegetAPIResponseModel struct {
+// TaobaoSimbaRptCampaignbaseGetAPIResponseModel is 推广计划报表基础数据对象 成功返回结果
+type TaobaoSimbaRptCampaignbaseGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_rpt_campaignbase_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

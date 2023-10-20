@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/iot"
 )
 
-// Taobaoailabaicloudtoplikeadd 增加收藏
+// TaobaoAilabAicloudTopLikeAdd 增加收藏
 // taobao.ailab.aicloud.top.like.add
 //
 // 将制定内容加入收藏
-func Taobaoailabaicloudtoplikeadd(clt *core.SDKClient, req *iot.TaobaoailabaicloudtoplikeaddAPIRequest, session string) (*iot.TaobaoailabaicloudtoplikeaddAPIResponse, error) {
-	var resp iot.TaobaoailabaicloudtoplikeaddAPIResponse
+func TaobaoAilabAicloudTopLikeAdd(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopLikeAddAPIRequest, session string) (*iot.TaobaoAilabAicloudTopLikeAddAPIResponse, error) {
+	var resp iot.TaobaoAilabAicloudTopLikeAddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

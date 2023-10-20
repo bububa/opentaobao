@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabawdkreversereversedetail 退款详情
+// AlibabaWdkReverseReversedetail 退款详情
 // alibaba.wdk.reverse.reversedetail
 //
 // 退款详情
-func Alibabawdkreversereversedetail(clt *core.SDKClient, req *wdk.AlibabawdkreversereversedetailAPIRequest, session string) (*wdk.AlibabawdkreversereversedetailAPIResponse, error) {
-	var resp wdk.AlibabawdkreversereversedetailAPIResponse
+func AlibabaWdkReverseReversedetail(clt *core.SDKClient, req *wdk.AlibabaWdkReverseReversedetailAPIRequest, session string) (*wdk.AlibabaWdkReverseReversedetailAPIResponse, error) {
+	var resp wdk.AlibabaWdkReverseReversedetailAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

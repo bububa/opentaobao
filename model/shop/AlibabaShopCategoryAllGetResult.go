@@ -1,7 +1,7 @@
 package shop
 
-// AlibabashopcategoryallgetResult 结构体
-type AlibabashopcategoryallgetResult struct {
+// AlibabaShopCategoryAllGetResult 结构体
+type AlibabaShopCategoryAllGetResult struct {
 	// 分类对象
 	ModuleList []OpenCategoryDto `json:"module_list,omitempty" xml:"module_list>open_category_dto,omitempty"`
 	// 返回错误信息

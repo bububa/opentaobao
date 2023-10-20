@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/util"
 )
 
-// Taobaotimeget 获取淘宝系统当前时间
+// TaobaoTimeGet 获取淘宝系统当前时间
 // taobao.time.get
 //
 // 获取淘宝系统当前时间
-func Taobaotimeget(clt *core.SDKClient, req *util.TaobaotimegetAPIRequest, session string) (*util.TaobaotimegetAPIResponse, error) {
-	var resp util.TaobaotimegetAPIResponse
+func TaobaoTimeGet(clt *core.SDKClient, req *util.TaobaoTimeGetAPIRequest, session string) (*util.TaobaoTimeGetAPIResponse, error) {
+	var resp util.TaobaoTimeGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

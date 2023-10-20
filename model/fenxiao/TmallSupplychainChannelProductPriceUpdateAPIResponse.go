@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallsupplychainchannelproductpriceupdateAPIResponse 渠道价格更新接口 API返回值
+// TmallSupplychainChannelProductPriceUpdateAPIResponse 渠道价格更新接口 API返回值
 // tmall.supplychain.channel.product.price.update
 //
 // 更新渠道产品价格
-type TmallsupplychainchannelproductpriceupdateAPIResponse struct {
+type TmallSupplychainChannelProductPriceUpdateAPIResponse struct {
 	model.CommonResponse
-	TmallsupplychainchannelproductpriceupdateAPIResponseModel
+	TmallSupplychainChannelProductPriceUpdateAPIResponseModel
 }
 
-// TmallsupplychainchannelproductpriceupdateAPIResponseModel is 渠道价格更新接口 成功返回结果
-type TmallsupplychainchannelproductpriceupdateAPIResponseModel struct {
+// TmallSupplychainChannelProductPriceUpdateAPIResponseModel is 渠道价格更新接口 成功返回结果
+type TmallSupplychainChannelProductPriceUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_supplychain_channel_product_price_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

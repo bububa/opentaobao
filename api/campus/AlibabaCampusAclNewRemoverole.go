@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// Alibabacampusaclnewremoverole 删除角色
+// AlibabaCampusAclNewRemoverole 删除角色
 // alibaba.campus.acl.new.removerole
 //
 // 删除角色
-func Alibabacampusaclnewremoverole(clt *core.SDKClient, req *campus.AlibabacampusaclnewremoveroleAPIRequest, session string) (*campus.AlibabacampusaclnewremoveroleAPIResponse, error) {
-	var resp campus.AlibabacampusaclnewremoveroleAPIResponse
+func AlibabaCampusAclNewRemoverole(clt *core.SDKClient, req *campus.AlibabaCampusAclNewRemoveroleAPIRequest, session string) (*campus.AlibabaCampusAclNewRemoveroleAPIResponse, error) {
+	var resp campus.AlibabaCampusAclNewRemoveroleAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

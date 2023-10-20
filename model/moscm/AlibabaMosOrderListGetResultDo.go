@@ -1,7 +1,7 @@
 package moscm
 
-// AlibabamosorderlistgetResultDo 结构体
-type AlibabamosorderlistgetResultDo struct {
+// AlibabaMosOrderListGetResultDo 结构体
+type AlibabaMosOrderListGetResultDo struct {
 	// 消息
 	SubMsg string `json:"sub_msg,omitempty" xml:"sub_msg,omitempty"`
 	// 状态码

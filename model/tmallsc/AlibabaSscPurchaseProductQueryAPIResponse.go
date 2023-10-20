@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabasscpurchaseproductqueryAPIResponse 查询已采购的服务产品 API返回值
+// AlibabaSscPurchaseProductQueryAPIResponse 查询已采购的服务产品 API返回值
 // alibaba.ssc.purchase.product.query
 //
 // 查询已采购的服务产品
-type AlibabasscpurchaseproductqueryAPIResponse struct {
+type AlibabaSscPurchaseProductQueryAPIResponse struct {
 	model.CommonResponse
-	AlibabasscpurchaseproductqueryAPIResponseModel
+	AlibabaSscPurchaseProductQueryAPIResponseModel
 }
 
-// AlibabasscpurchaseproductqueryAPIResponseModel is 查询已采购的服务产品 成功返回结果
-type AlibabasscpurchaseproductqueryAPIResponseModel struct {
+// AlibabaSscPurchaseProductQueryAPIResponseModel is 查询已采购的服务产品 成功返回结果
+type AlibabaSscPurchaseProductQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ssc_purchase_product_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

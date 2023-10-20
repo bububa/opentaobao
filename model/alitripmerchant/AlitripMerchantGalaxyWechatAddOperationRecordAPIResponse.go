@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripmerchantgalaxywechataddoperationrecordAPIResponse 用户领取会员卡记录接口 API返回值
+// AlitripMerchantGalaxyWechatAddOperationRecordAPIResponse 用户领取会员卡记录接口 API返回值
 // alitrip.merchant.galaxy.wechat.add.operation.record
 //
 // 用户领取会员卡记录接口
-type AlitripmerchantgalaxywechataddoperationrecordAPIResponse struct {
+type AlitripMerchantGalaxyWechatAddOperationRecordAPIResponse struct {
 	model.CommonResponse
-	AlitripmerchantgalaxywechataddoperationrecordAPIResponseModel
+	AlitripMerchantGalaxyWechatAddOperationRecordAPIResponseModel
 }
 
-// AlitripmerchantgalaxywechataddoperationrecordAPIResponseModel is 用户领取会员卡记录接口 成功返回结果
-type AlitripmerchantgalaxywechataddoperationrecordAPIResponseModel struct {
+// AlitripMerchantGalaxyWechatAddOperationRecordAPIResponseModel is 用户领取会员卡记录接口 成功返回结果
+type AlitripMerchantGalaxyWechatAddOperationRecordAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_merchant_galaxy_wechat_add_operation_record_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回对象
-	Result *AlitripmerchantgalaxywechataddoperationrecordResponse `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlitripMerchantGalaxyWechatAddOperationRecordResponse `json:"result,omitempty" xml:"result,omitempty"`
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpresssocialitempromotionAPIResponse 获取推广链接 API返回值
+// AliexpressSocialItemPromotionAPIResponse 获取推广链接 API返回值
 // aliexpress.social.item.promotion
 //
 // 获取商品社交推广链接
-type AliexpresssocialitempromotionAPIResponse struct {
+type AliexpressSocialItemPromotionAPIResponse struct {
 	model.CommonResponse
-	AliexpresssocialitempromotionAPIResponseModel
+	AliexpressSocialItemPromotionAPIResponseModel
 }
 
-// AliexpresssocialitempromotionAPIResponseModel is 获取推广链接 成功返回结果
-type AliexpresssocialitempromotionAPIResponseModel struct {
+// AliexpressSocialItemPromotionAPIResponseModel is 获取推广链接 成功返回结果
+type AliexpressSocialItemPromotionAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_social_item_promotion_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

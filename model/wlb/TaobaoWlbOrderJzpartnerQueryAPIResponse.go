@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlborderjzpartnerqueryAPIResponse 查询家装服务商列表 API返回值
+// TaobaoWlbOrderJzpartnerQueryAPIResponse 查询家装服务商列表 API返回值
 // taobao.wlb.order.jzpartner.query
 //
 // 为支持家装类目的商家，对绑定家装物流服务的订单可以在商家的ERP中发货、批量发货，因此开发根据服务类型查询所有的服务商列表的接口
-type TaobaowlborderjzpartnerqueryAPIResponse struct {
+type TaobaoWlbOrderJzpartnerQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaowlborderjzpartnerqueryAPIResponseModel
+	TaobaoWlbOrderJzpartnerQueryAPIResponseModel
 }
 
-// TaobaowlborderjzpartnerqueryAPIResponseModel is 查询家装服务商列表 成功返回结果
-type TaobaowlborderjzpartnerqueryAPIResponseModel struct {
+// TaobaoWlbOrderJzpartnerQueryAPIResponseModel is 查询家装服务商列表 成功返回结果
+type TaobaoWlbOrderJzpartnerQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_order_jzpartner_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

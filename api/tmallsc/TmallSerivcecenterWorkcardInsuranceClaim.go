@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
 
-// Tmallserivcecenterworkcardinsuranceclaim 保险理赔回传工单记录
+// TmallSerivcecenterWorkcardInsuranceClaim 保险理赔回传工单记录
 // tmall.serivcecenter.workcard.insurance.claim
 //
 // 保险理赔回传工单记录
-func Tmallserivcecenterworkcardinsuranceclaim(clt *core.SDKClient, req *tmallsc.TmallserivcecenterworkcardinsuranceclaimAPIRequest, session string) (*tmallsc.TmallserivcecenterworkcardinsuranceclaimAPIResponse, error) {
-	var resp tmallsc.TmallserivcecenterworkcardinsuranceclaimAPIResponse
+func TmallSerivcecenterWorkcardInsuranceClaim(clt *core.SDKClient, req *tmallsc.TmallSerivcecenterWorkcardInsuranceClaimAPIRequest, session string) (*tmallsc.TmallSerivcecenterWorkcardInsuranceClaimAPIResponse, error) {
+	var resp tmallsc.TmallSerivcecenterWorkcardInsuranceClaimAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

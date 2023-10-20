@@ -6,22 +6,22 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibababaichuanctgcontentgetAPIResponse 百川内容平台内容获取 API返回值
+// AlibabaBaichuanCtgContentGetAPIResponse 百川内容平台内容获取 API返回值
 // alibaba.baichuan.ctg.content.get
 //
 // 百川内容平台内容获取
-type AlibababaichuanctgcontentgetAPIResponse struct {
+type AlibabaBaichuanCtgContentGetAPIResponse struct {
 	model.CommonResponse
-	AlibababaichuanctgcontentgetAPIResponseModel
+	AlibabaBaichuanCtgContentGetAPIResponseModel
 }
 
-// AlibababaichuanctgcontentgetAPIResponseModel is 百川内容平台内容获取 成功返回结果
-type AlibababaichuanctgcontentgetAPIResponseModel struct {
+// AlibabaBaichuanCtgContentGetAPIResponseModel is 百川内容平台内容获取 成功返回结果
+type AlibabaBaichuanCtgContentGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_baichuan_ctg_content_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// data
-	DataList []AlibababaichuanctgcontentgetData `json:"data_list,omitempty" xml:"data_list>alibababaichuanctgcontentget_data,omitempty"`
+	DataList []AlibabaBaichuanCtgContentGetData `json:"data_list,omitempty" xml:"data_list>alibaba_baichuan_ctg_content_get_data,omitempty"`
 	// errorMessage
 	ErrMessage string `json:"err_message,omitempty" xml:"err_message,omitempty"`
 	// errorCode

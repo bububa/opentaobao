@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaomarketingpromotionkfcAPIResponse 定向优惠活动名称与描述违禁词检查 API返回值
+// TaobaoMarketingPromotionKfcAPIResponse 定向优惠活动名称与描述违禁词检查 API返回值
 // taobao.marketing.promotion.kfc
 //
 // 活动名称与描述违禁词检查
-type TaobaomarketingpromotionkfcAPIResponse struct {
+type TaobaoMarketingPromotionKfcAPIResponse struct {
 	model.CommonResponse
-	TaobaomarketingpromotionkfcAPIResponseModel
+	TaobaoMarketingPromotionKfcAPIResponseModel
 }
 
-// TaobaomarketingpromotionkfcAPIResponseModel is 定向优惠活动名称与描述违禁词检查 成功返回结果
-type TaobaomarketingpromotionkfcAPIResponseModel struct {
+// TaobaoMarketingPromotionKfcAPIResponseModel is 定向优惠活动名称与描述违禁词检查 成功返回结果
+type TaobaoMarketingPromotionKfcAPIResponseModel struct {
 	XMLName xml.Name `xml:"marketing_promotion_kfc_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

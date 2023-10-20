@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabapurmediastatisticsAPIRequest 新媒体统计信息 API请求
+// AlibabaPurMediaStatisticsAPIRequest 新媒体统计信息 API请求
 // alibaba.pur.media.statistics
 //
 // 清博同步新媒体的统计信息给到采购平台
-type AlibabapurmediastatisticsAPIRequest struct {
+type AlibabaPurMediaStatisticsAPIRequest struct {
 	model.Params
 	// 新媒体统计对象
 	_mediaStatisticsDTO []MediaStatisticsDto
 }
 
-// NewAlibabapurmediastatisticsRequest 初始化AlibabapurmediastatisticsAPIRequest对象
-func NewAlibabapurmediastatisticsRequest() *AlibabapurmediastatisticsAPIRequest {
-	return &AlibabapurmediastatisticsAPIRequest{
+// NewAlibabaPurMediaStatisticsRequest 初始化AlibabaPurMediaStatisticsAPIRequest对象
+func NewAlibabaPurMediaStatisticsRequest() *AlibabaPurMediaStatisticsAPIRequest {
+	return &AlibabaPurMediaStatisticsAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabapurmediastatisticsAPIRequest) GetApiMethodName() string {
+func (r AlibabaPurMediaStatisticsAPIRequest) GetApiMethodName() string {
 	return "alibaba.pur.media.statistics"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabapurmediastatisticsAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaPurMediaStatisticsAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabapurmediastatisticsAPIRequest) GetRawParams() model.Params {
+func (r AlibabaPurMediaStatisticsAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMediaStatisticsDTO is MediaStatisticsDTO Setter
 // 新媒体统计对象
-func (r *AlibabapurmediastatisticsAPIRequest) SetMediaStatisticsDTO(_mediaStatisticsDTO []MediaStatisticsDto) error {
+func (r *AlibabaPurMediaStatisticsAPIRequest) SetMediaStatisticsDTO(_mediaStatisticsDTO []MediaStatisticsDto) error {
 	r._mediaStatisticsDTO = _mediaStatisticsDTO
 	r.Set("media_statistics_d_t_o", _mediaStatisticsDTO)
 	return nil
 }
 
 // GetMediaStatisticsDTO MediaStatisticsDTO Getter
-func (r AlibabapurmediastatisticsAPIRequest) GetMediaStatisticsDTO() []MediaStatisticsDto {
+func (r AlibabaPurMediaStatisticsAPIRequest) GetMediaStatisticsDTO() []MediaStatisticsDto {
 	return r._mediaStatisticsDTO
 }

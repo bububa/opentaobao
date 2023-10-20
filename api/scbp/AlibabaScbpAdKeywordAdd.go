@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// Alibabascbpadkeywordadd 外贸直通车加词
+// AlibabaScbpAdKeywordAdd 外贸直通车加词
 // alibaba.scbp.ad.keyword.add
 //
 // 外贸直通车加词服务
-func Alibabascbpadkeywordadd(clt *core.SDKClient, req *scbp.AlibabascbpadkeywordaddAPIRequest, session string) (*scbp.AlibabascbpadkeywordaddAPIResponse, error) {
-	var resp scbp.AlibabascbpadkeywordaddAPIResponse
+func AlibabaScbpAdKeywordAdd(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordAddAPIRequest, session string) (*scbp.AlibabaScbpAdKeywordAddAPIResponse, error) {
+	var resp scbp.AlibabaScbpAdKeywordAddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

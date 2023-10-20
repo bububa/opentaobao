@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripmerchantgalaxywechatdatalotteryqueryAPIRequest 抽奖用户名单查询接口 API请求
+// AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest 抽奖用户名单查询接口 API请求
 // alitrip.merchant.galaxy.wechat.data.lottery.query
 //
 // 抽奖用户名单查询接口
-type AlitripmerchantgalaxywechatdatalotteryqueryAPIRequest struct {
+type AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest struct {
 	model.Params
 	// 租户标识
 	_tenantKey string
@@ -18,52 +18,52 @@ type AlitripmerchantgalaxywechatdatalotteryqueryAPIRequest struct {
 	_queryLotteryDataDTO *QueryLotteryDataDto
 }
 
-// NewAlitripmerchantgalaxywechatdatalotteryqueryRequest 初始化AlitripmerchantgalaxywechatdatalotteryqueryAPIRequest对象
-func NewAlitripmerchantgalaxywechatdatalotteryqueryRequest() *AlitripmerchantgalaxywechatdatalotteryqueryAPIRequest {
-	return &AlitripmerchantgalaxywechatdatalotteryqueryAPIRequest{
+// NewAlitripMerchantGalaxyWechatDataLotteryQueryRequest 初始化AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest对象
+func NewAlitripMerchantGalaxyWechatDataLotteryQueryRequest() *AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest {
+	return &AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripmerchantgalaxywechatdatalotteryqueryAPIRequest) GetApiMethodName() string {
+func (r AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest) GetApiMethodName() string {
 	return "alitrip.merchant.galaxy.wechat.data.lottery.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripmerchantgalaxywechatdatalotteryqueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripmerchantgalaxywechatdatalotteryqueryAPIRequest) GetRawParams() model.Params {
+func (r AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTenantKey is TenantKey Setter
 // 租户标识
-func (r *AlitripmerchantgalaxywechatdatalotteryqueryAPIRequest) SetTenantKey(_tenantKey string) error {
+func (r *AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
 	r.Set("tenant_key", _tenantKey)
 	return nil
 }
 
 // GetTenantKey TenantKey Getter
-func (r AlitripmerchantgalaxywechatdatalotteryqueryAPIRequest) GetTenantKey() string {
+func (r AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }
 
 // SetQueryLotteryDataDTO is QueryLotteryDataDTO Setter
 // 查询抽奖用户数据入参
-func (r *AlitripmerchantgalaxywechatdatalotteryqueryAPIRequest) SetQueryLotteryDataDTO(_queryLotteryDataDTO *QueryLotteryDataDto) error {
+func (r *AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest) SetQueryLotteryDataDTO(_queryLotteryDataDTO *QueryLotteryDataDto) error {
 	r._queryLotteryDataDTO = _queryLotteryDataDTO
 	r.Set("query_lottery_data_d_t_o", _queryLotteryDataDTO)
 	return nil
 }
 
 // GetQueryLotteryDataDTO QueryLotteryDataDTO Getter
-func (r AlitripmerchantgalaxywechatdatalotteryqueryAPIRequest) GetQueryLotteryDataDTO() *QueryLotteryDataDto {
+func (r AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest) GetQueryLotteryDataDTO() *QueryLotteryDataDto {
 	return r._queryLotteryDataDTO
 }

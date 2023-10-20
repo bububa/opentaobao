@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/flight"
 )
 
-// Alitrippolicydomfarecompare 比价工具
+// AlitripPolicyDomfareCompare 比价工具
 // alitrip.policy.domfare.compare
 //
 // 比价工具
-func Alitrippolicydomfarecompare(clt *core.SDKClient, req *flight.AlitrippolicydomfarecompareAPIRequest, session string) (*flight.AlitrippolicydomfarecompareAPIResponse, error) {
-	var resp flight.AlitrippolicydomfarecompareAPIResponse
+func AlitripPolicyDomfareCompare(clt *core.SDKClient, req *flight.AlitripPolicyDomfareCompareAPIRequest, session string) (*flight.AlitripPolicyDomfareCompareAPIResponse, error) {
+	var resp flight.AlitripPolicyDomfareCompareAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

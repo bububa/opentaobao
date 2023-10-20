@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaofeedflowitemadgroupadzonepageResultDto 结构体
-type TaobaofeedflowitemadgroupadzonepageResultDto struct {
+// TaobaoFeedflowItemAdgroupAdzonePageResultDto 结构体
+type TaobaoFeedflowItemAdgroupAdzonePageResultDto struct {
 	// 广告位列表
 	AdzoneBindList []AdzoneBindDto `json:"adzone_bind_list,omitempty" xml:"adzone_bind_list>adzone_bind_dto,omitempty"`
 	// 返回消息

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallservicecenteranomalyrecoursecloseAPIResponse 服务投诉问题单关单 API返回值
+// TmallServicecenterAnomalyrecourseCloseAPIResponse 服务投诉问题单关单 API返回值
 // tmall.servicecenter.anomalyrecourse.close
 //
 // 提供给服务商在投诉单完结时调用，关闭投诉问题工单。
-type TmallservicecenteranomalyrecoursecloseAPIResponse struct {
+type TmallServicecenterAnomalyrecourseCloseAPIResponse struct {
 	model.CommonResponse
-	TmallservicecenteranomalyrecoursecloseAPIResponseModel
+	TmallServicecenterAnomalyrecourseCloseAPIResponseModel
 }
 
-// TmallservicecenteranomalyrecoursecloseAPIResponseModel is 服务投诉问题单关单 成功返回结果
-type TmallservicecenteranomalyrecoursecloseAPIResponseModel struct {
+// TmallServicecenterAnomalyrecourseCloseAPIResponseModel is 服务投诉问题单关单 成功返回结果
+type TmallServicecenterAnomalyrecourseCloseAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_anomalyrecourse_close_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

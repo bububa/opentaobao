@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaouniversalbpaccountgetbalanceAPIResponse 获取账户余额，现金余额 API返回值
+// TaobaoUniversalbpAccountGetBalanceAPIResponse 获取账户余额，现金余额 API返回值
 // taobao.universalbp.account.get.balance
 //
 // 获取账户实时现金余额
-type TaobaouniversalbpaccountgetbalanceAPIResponse struct {
+type TaobaoUniversalbpAccountGetBalanceAPIResponse struct {
 	model.CommonResponse
-	TaobaouniversalbpaccountgetbalanceAPIResponseModel
+	TaobaoUniversalbpAccountGetBalanceAPIResponseModel
 }
 
-// TaobaouniversalbpaccountgetbalanceAPIResponseModel is 获取账户余额，现金余额 成功返回结果
-type TaobaouniversalbpaccountgetbalanceAPIResponseModel struct {
+// TaobaoUniversalbpAccountGetBalanceAPIResponseModel is 获取账户余额，现金余额 成功返回结果
+type TaobaoUniversalbpAccountGetBalanceAPIResponseModel struct {
 	XMLName xml.Name `xml:"universalbp_account_get_balance_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
-	Result *TaobaouniversalbpaccountgetbalanceTopResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TaobaoUniversalbpAccountGetBalanceTopResult `json:"result,omitempty" xml:"result,omitempty"`
 }

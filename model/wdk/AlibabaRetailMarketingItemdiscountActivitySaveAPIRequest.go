@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaretailmarketingitemdiscountactivitysaveAPIRequest 【同城零售】单品活动保存 API请求
+// AlibabaRetailMarketingItemdiscountActivitySaveAPIRequest 【同城零售】单品活动保存 API请求
 // alibaba.retail.marketing.itemdiscount.activity.save
 //
 // 【同城零售】单品活动保存
-type AlibabaretailmarketingitemdiscountactivitysaveAPIRequest struct {
+type AlibabaRetailMarketingItemdiscountActivitySaveAPIRequest struct {
 	model.Params
 	// 保存活动参数
 	_param *ItemDiscountActivityOperateRequest
 }
 
-// NewAlibabaretailmarketingitemdiscountactivitysaveRequest 初始化AlibabaretailmarketingitemdiscountactivitysaveAPIRequest对象
-func NewAlibabaretailmarketingitemdiscountactivitysaveRequest() *AlibabaretailmarketingitemdiscountactivitysaveAPIRequest {
-	return &AlibabaretailmarketingitemdiscountactivitysaveAPIRequest{
+// NewAlibabaRetailMarketingItemdiscountActivitySaveRequest 初始化AlibabaRetailMarketingItemdiscountActivitySaveAPIRequest对象
+func NewAlibabaRetailMarketingItemdiscountActivitySaveRequest() *AlibabaRetailMarketingItemdiscountActivitySaveAPIRequest {
+	return &AlibabaRetailMarketingItemdiscountActivitySaveAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaretailmarketingitemdiscountactivitysaveAPIRequest) GetApiMethodName() string {
+func (r AlibabaRetailMarketingItemdiscountActivitySaveAPIRequest) GetApiMethodName() string {
 	return "alibaba.retail.marketing.itemdiscount.activity.save"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaretailmarketingitemdiscountactivitysaveAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaRetailMarketingItemdiscountActivitySaveAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaretailmarketingitemdiscountactivitysaveAPIRequest) GetRawParams() model.Params {
+func (r AlibabaRetailMarketingItemdiscountActivitySaveAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 保存活动参数
-func (r *AlibabaretailmarketingitemdiscountactivitysaveAPIRequest) SetParam(_param *ItemDiscountActivityOperateRequest) error {
+func (r *AlibabaRetailMarketingItemdiscountActivitySaveAPIRequest) SetParam(_param *ItemDiscountActivityOperateRequest) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlibabaretailmarketingitemdiscountactivitysaveAPIRequest) GetParam() *ItemDiscountActivityOperateRequest {
+func (r AlibabaRetailMarketingItemdiscountActivitySaveAPIRequest) GetParam() *ItemDiscountActivityOperateRequest {
 	return r._param
 }

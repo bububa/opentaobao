@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbuser"
 )
 
-// Taobaouseropenuidgetbynick 根据买家nick获取买家openuid
+// TaobaoUserOpenuidGetbynick 根据买家nick获取买家openuid
 // taobao.user.openuid.getbynick
 //
 // 根据买家nick获取买家openuid，最大查询30个
-func Taobaouseropenuidgetbynick(clt *core.SDKClient, req *tbuser.TaobaouseropenuidgetbynickAPIRequest, session string) (*tbuser.TaobaouseropenuidgetbynickAPIResponse, error) {
-	var resp tbuser.TaobaouseropenuidgetbynickAPIResponse
+func TaobaoUserOpenuidGetbynick(clt *core.SDKClient, req *tbuser.TaobaoUserOpenuidGetbynickAPIRequest, session string) (*tbuser.TaobaoUserOpenuidGetbynickAPIResponse, error) {
+	var resp tbuser.TaobaoUserOpenuidGetbynickAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

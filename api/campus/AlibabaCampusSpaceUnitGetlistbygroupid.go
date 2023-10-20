@@ -5,14 +5,14 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// Alibabacampusspaceunitgetlistbygroupid 根据分组ID查询相应的空间单元
+// AlibabaCampusSpaceUnitGetlistbygroupid 根据分组ID查询相应的空间单元
 // alibaba.campus.space.unit.getlistbygroupid
 //
 // 根据分组ID查询相应的空间单元
 // HSF接口名称：com.alibaba.campus.api.space.service.top.SpaceUnitApiTopService
 // HSF方法名称：getListByGroupId
-func Alibabacampusspaceunitgetlistbygroupid(clt *core.SDKClient, req *campus.AlibabacampusspaceunitgetlistbygroupidAPIRequest, session string) (*campus.AlibabacampusspaceunitgetlistbygroupidAPIResponse, error) {
-	var resp campus.AlibabacampusspaceunitgetlistbygroupidAPIResponse
+func AlibabaCampusSpaceUnitGetlistbygroupid(clt *core.SDKClient, req *campus.AlibabaCampusSpaceUnitGetlistbygroupidAPIRequest, session string) (*campus.AlibabaCampusSpaceUnitGetlistbygroupidAPIResponse, error) {
+	var resp campus.AlibabaCampusSpaceUnitGetlistbygroupidAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,9 +1,9 @@
 package taotv
 
-// TaobaotaotvcarouselchannelallResult 结构体
-type TaobaotaotvcarouselchannelallResult struct {
+// TaobaoTaotvCarouselChannelAllResult 结构体
+type TaobaoTaotvCarouselChannelAllResult struct {
 	// 频道列表
-	ModelList []TaobaotaotvcarouselchannelallModel `json:"model_list,omitempty" xml:"model_list>taobaotaotvcarouselchannelall_model,omitempty"`
+	ModelList []TaobaoTaotvCarouselChannelAllModel `json:"model_list,omitempty" xml:"model_list>taobao_taotv_carousel_channel_all_model,omitempty"`
 	// msgCode
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msgInfo

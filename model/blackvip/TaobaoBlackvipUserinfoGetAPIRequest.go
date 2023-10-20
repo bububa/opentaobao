@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoblackvipuserinfogetAPIRequest 88VIP用户信息查询 API请求
+// TaobaoBlackvipUserinfoGetAPIRequest 88VIP用户信息查询 API请求
 // taobao.blackvip.userinfo.get
 //
 // 查询88VIP用户信息，比如用户是否是88VIP，88VIP的失效时间等
-type TaobaoblackvipuserinfogetAPIRequest struct {
+type TaobaoBlackvipUserinfoGetAPIRequest struct {
 	model.Params
 }
 
-// NewTaobaoblackvipuserinfogetRequest 初始化TaobaoblackvipuserinfogetAPIRequest对象
-func NewTaobaoblackvipuserinfogetRequest() *TaobaoblackvipuserinfogetAPIRequest {
-	return &TaobaoblackvipuserinfogetAPIRequest{
+// NewTaobaoBlackvipUserinfoGetRequest 初始化TaobaoBlackvipUserinfoGetAPIRequest对象
+func NewTaobaoBlackvipUserinfoGetRequest() *TaobaoBlackvipUserinfoGetAPIRequest {
+	return &TaobaoBlackvipUserinfoGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoblackvipuserinfogetAPIRequest) GetApiMethodName() string {
+func (r TaobaoBlackvipUserinfoGetAPIRequest) GetApiMethodName() string {
 	return "taobao.blackvip.userinfo.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoblackvipuserinfogetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoBlackvipUserinfoGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoblackvipuserinfogetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoBlackvipUserinfoGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

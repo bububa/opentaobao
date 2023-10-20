@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoalitriptraveltradememoaddAPIResponse 添加一笔交易备注 API返回值
+// TaobaoAlitripTravelTradeMemoAddAPIResponse 添加一笔交易备注 API返回值
 // taobao.alitrip.travel.trade.memo.add
 //
 // 对一笔交易添加备注
-type TaobaoalitriptraveltradememoaddAPIResponse struct {
+type TaobaoAlitripTravelTradeMemoAddAPIResponse struct {
 	model.CommonResponse
-	TaobaoalitriptraveltradememoaddAPIResponseModel
+	TaobaoAlitripTravelTradeMemoAddAPIResponseModel
 }
 
-// TaobaoalitriptraveltradememoaddAPIResponseModel is 添加一笔交易备注 成功返回结果
-type TaobaoalitriptraveltradememoaddAPIResponseModel struct {
+// TaobaoAlitripTravelTradeMemoAddAPIResponseModel is 添加一笔交易备注 成功返回结果
+type TaobaoAlitripTravelTradeMemoAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_trade_memo_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

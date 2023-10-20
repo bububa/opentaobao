@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdkelemebilldetailgetApiResult 结构体
-type AlibabawdkelemebilldetailgetApiResult struct {
+// AlibabaWdkElemeBillDetailGetApiResult 结构体
+type AlibabaWdkElemeBillDetailGetApiResult struct {
 	// 错误描述
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 错误编码

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaobmsorderconsignconfirmAPIRequest BMS出库通知 API请求
+// CainiaoBmsOrderConsignConfirmAPIRequest BMS出库通知 API请求
 // cainiao.bms.order.consign.confirm
 //
 // BMS出库后，通知ISV
-type CainiaobmsorderconsignconfirmAPIRequest struct {
+type CainiaoBmsOrderConsignConfirmAPIRequest struct {
 	model.Params
 	// 通知消息主体
 	_content *BmsConsignOrderConfirm
 }
 
-// NewCainiaobmsorderconsignconfirmRequest 初始化CainiaobmsorderconsignconfirmAPIRequest对象
-func NewCainiaobmsorderconsignconfirmRequest() *CainiaobmsorderconsignconfirmAPIRequest {
-	return &CainiaobmsorderconsignconfirmAPIRequest{
+// NewCainiaoBmsOrderConsignConfirmRequest 初始化CainiaoBmsOrderConsignConfirmAPIRequest对象
+func NewCainiaoBmsOrderConsignConfirmRequest() *CainiaoBmsOrderConsignConfirmAPIRequest {
+	return &CainiaoBmsOrderConsignConfirmAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r CainiaobmsorderconsignconfirmAPIRequest) GetApiMethodName() string {
+func (r CainiaoBmsOrderConsignConfirmAPIRequest) GetApiMethodName() string {
 	return "cainiao.bms.order.consign.confirm"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaobmsorderconsignconfirmAPIRequest) GetApiParams(params url.Values) {
+func (r CainiaoBmsOrderConsignConfirmAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r CainiaobmsorderconsignconfirmAPIRequest) GetRawParams() model.Params {
+func (r CainiaoBmsOrderConsignConfirmAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetContent is Content Setter
 // 通知消息主体
-func (r *CainiaobmsorderconsignconfirmAPIRequest) SetContent(_content *BmsConsignOrderConfirm) error {
+func (r *CainiaoBmsOrderConsignConfirmAPIRequest) SetContent(_content *BmsConsignOrderConfirm) error {
 	r._content = _content
 	r.Set("content", _content)
 	return nil
 }
 
 // GetContent Content Getter
-func (r CainiaobmsorderconsignconfirmAPIRequest) GetContent() *BmsConsignOrderConfirm {
+func (r CainiaoBmsOrderConsignConfirmAPIRequest) GetContent() *BmsConsignOrderConfirm {
 	return r._content
 }

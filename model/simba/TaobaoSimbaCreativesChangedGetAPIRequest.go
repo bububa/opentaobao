@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbacreativeschangedgetAPIRequest 分页获取修改过的广告创意ID和修改时间 API请求
+// TaobaoSimbaCreativesChangedGetAPIRequest 分页获取修改过的广告创意ID和修改时间 API请求
 // taobao.simba.creatives.changed.get
 //
 // 分页获取修改过的广告创意ID和修改时间
-type TaobaosimbacreativeschangedgetAPIRequest struct {
+type TaobaoSimbaCreativesChangedGetAPIRequest struct {
 	model.Params
 	// 主人昵称
 	_nick string
@@ -22,78 +22,78 @@ type TaobaosimbacreativeschangedgetAPIRequest struct {
 	_pageNo int64
 }
 
-// NewTaobaosimbacreativeschangedgetRequest 初始化TaobaosimbacreativeschangedgetAPIRequest对象
-func NewTaobaosimbacreativeschangedgetRequest() *TaobaosimbacreativeschangedgetAPIRequest {
-	return &TaobaosimbacreativeschangedgetAPIRequest{
+// NewTaobaoSimbaCreativesChangedGetRequest 初始化TaobaoSimbaCreativesChangedGetAPIRequest对象
+func NewTaobaoSimbaCreativesChangedGetRequest() *TaobaoSimbaCreativesChangedGetAPIRequest {
+	return &TaobaoSimbaCreativesChangedGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaosimbacreativeschangedgetAPIRequest) GetApiMethodName() string {
+func (r TaobaoSimbaCreativesChangedGetAPIRequest) GetApiMethodName() string {
 	return "taobao.simba.creatives.changed.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaosimbacreativeschangedgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoSimbaCreativesChangedGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaosimbacreativeschangedgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoSimbaCreativesChangedGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetNick is Nick Setter
 // 主人昵称
-func (r *TaobaosimbacreativeschangedgetAPIRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaCreativesChangedGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
 	r.Set("nick", _nick)
 	return nil
 }
 
 // GetNick Nick Getter
-func (r TaobaosimbacreativeschangedgetAPIRequest) GetNick() string {
+func (r TaobaoSimbaCreativesChangedGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
 // SetStartTime is StartTime Setter
 // 得到此时间点之后的数据，不能大于一个月
-func (r *TaobaosimbacreativeschangedgetAPIRequest) SetStartTime(_startTime string) error {
+func (r *TaobaoSimbaCreativesChangedGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
 	r.Set("start_time", _startTime)
 	return nil
 }
 
 // GetStartTime StartTime Getter
-func (r TaobaosimbacreativeschangedgetAPIRequest) GetStartTime() string {
+func (r TaobaoSimbaCreativesChangedGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
 // SetPageSize is PageSize Setter
 // 返回的每页数据量大小,默认200最大1000
-func (r *TaobaosimbacreativeschangedgetAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoSimbaCreativesChangedGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r TaobaosimbacreativeschangedgetAPIRequest) GetPageSize() int64 {
+func (r TaobaoSimbaCreativesChangedGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
 // SetPageNo is PageNo Setter
 // 返回的第几页数据，默认为1
-func (r *TaobaosimbacreativeschangedgetAPIRequest) SetPageNo(_pageNo int64) error {
+func (r *TaobaoSimbaCreativesChangedGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
 	r.Set("page_no", _pageNo)
 	return nil
 }
 
 // GetPageNo PageNo Getter
-func (r TaobaosimbacreativeschangedgetAPIRequest) GetPageNo() int64 {
+func (r TaobaoSimbaCreativesChangedGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

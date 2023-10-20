@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// Alibabaalihealthdrugkytgetentlicense 获取企业资质
+// AlibabaAlihealthDrugKytGetentlicense 获取企业资质
 // alibaba.alihealth.drug.kyt.getentlicense
 //
 // 获取企业的资质信息。
-func Alibabaalihealthdrugkytgetentlicense(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugkytgetentlicenseAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugkytgetentlicenseAPIResponse, error) {
-	var resp drugtrace.AlibabaalihealthdrugkytgetentlicenseAPIResponse
+func AlibabaAlihealthDrugKytGetentlicense(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytGetentlicenseAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytGetentlicenseAPIResponse, error) {
+	var resp drugtrace.AlibabaAlihealthDrugKytGetentlicenseAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

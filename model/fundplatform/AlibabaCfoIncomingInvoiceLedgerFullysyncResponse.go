@@ -1,7 +1,7 @@
 package fundplatform
 
-// AlibabacfoincominginvoiceledgerfullysyncResponse 结构体
-type AlibabacfoincominginvoiceledgerfullysyncResponse struct {
+// AlibabaCfoIncomingInvoiceLedgerFullysyncResponse 结构体
+type AlibabaCfoIncomingInvoiceLedgerFullysyncResponse struct {
 	// 响应码
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
 	// 响应消息

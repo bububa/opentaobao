@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoantifraudriskusergetAPIResponse 反欺诈用户风险查询 API返回值
+// TaobaoAntifraudRiskuserGetAPIResponse 反欺诈用户风险查询 API返回值
 // taobao.antifraud.riskuser.get
 //
 // 根据用户基础信息，核实平台上的用户是否存在欺诈风险
-type TaobaoantifraudriskusergetAPIResponse struct {
+type TaobaoAntifraudRiskuserGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoantifraudriskusergetAPIResponseModel
+	TaobaoAntifraudRiskuserGetAPIResponseModel
 }
 
-// TaobaoantifraudriskusergetAPIResponseModel is 反欺诈用户风险查询 成功返回结果
-type TaobaoantifraudriskusergetAPIResponseModel struct {
+// TaobaoAntifraudRiskuserGetAPIResponseModel is 反欺诈用户风险查询 成功返回结果
+type TaobaoAntifraudRiskuserGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"antifraud_riskuser_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

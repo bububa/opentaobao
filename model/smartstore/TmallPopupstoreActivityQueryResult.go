@@ -1,7 +1,7 @@
 package smartstore
 
-// TmallpopupstoreactivityqueryResult 结构体
-type TmallpopupstoreactivityqueryResult struct {
+// TmallPopupstoreActivityQueryResult 结构体
+type TmallPopupstoreActivityQueryResult struct {
 	// 活动结束时间
 	ActivityEndTime string `json:"activity_end_time,omitempty" xml:"activity_end_time,omitempty"`
 	// 活动名称

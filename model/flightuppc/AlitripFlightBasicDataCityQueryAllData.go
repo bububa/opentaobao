@@ -1,7 +1,7 @@
 package flightuppc
 
-// AlitripflightbasicdatacityqueryAllData 结构体
-type AlitripflightbasicdatacityqueryAllData struct {
+// AlitripFlightBasicDataCityQueryAllData 结构体
+type AlitripFlightBasicDataCityQueryAllData struct {
 	// 航空大区
 	AirZone string `json:"air_zone,omitempty" xml:"air_zone,omitempty"`
 	// 城市对应国家

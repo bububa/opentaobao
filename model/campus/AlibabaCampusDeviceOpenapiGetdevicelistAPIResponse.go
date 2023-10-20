@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabacampusdeviceopenapigetdevicelistAPIResponse 多条件查询设备分组 API返回值
+// AlibabaCampusDeviceOpenapiGetdevicelistAPIResponse 多条件查询设备分组 API返回值
 // alibaba.campus.device.openapi.getdevicelist
 //
 // 多条件查询设备分组
-type AlibabacampusdeviceopenapigetdevicelistAPIResponse struct {
+type AlibabaCampusDeviceOpenapiGetdevicelistAPIResponse struct {
 	model.CommonResponse
-	AlibabacampusdeviceopenapigetdevicelistAPIResponseModel
+	AlibabaCampusDeviceOpenapiGetdevicelistAPIResponseModel
 }
 
-// AlibabacampusdeviceopenapigetdevicelistAPIResponseModel is 多条件查询设备分组 成功返回结果
-type AlibabacampusdeviceopenapigetdevicelistAPIResponseModel struct {
+// AlibabaCampusDeviceOpenapiGetdevicelistAPIResponseModel is 多条件查询设备分组 成功返回结果
+type AlibabaCampusDeviceOpenapiGetdevicelistAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_campus_device_openapi_getdevicelist_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

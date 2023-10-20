@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimenorderqueryResponse 结构体
-type TaobaoqimenorderqueryResponse struct {
+// TaobaoQimenOrderQueryResponse 结构体
+type TaobaoQimenOrderQueryResponse struct {
 	// success|failure，必填
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 	// 响应码

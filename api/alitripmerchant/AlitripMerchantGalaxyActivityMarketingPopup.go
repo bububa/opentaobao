@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
 
-// Alitripmerchantgalaxyactivitymarketingpopup 营销弹屏
+// AlitripMerchantGalaxyActivityMarketingPopup 营销弹屏
 // alitrip.merchant.galaxy.activity.marketing.popup
 //
 // 星河=活动营销弹屏
-func Alitripmerchantgalaxyactivitymarketingpopup(clt *core.SDKClient, req *alitripmerchant.AlitripmerchantgalaxyactivitymarketingpopupAPIRequest, session string) (*alitripmerchant.AlitripmerchantgalaxyactivitymarketingpopupAPIResponse, error) {
-	var resp alitripmerchant.AlitripmerchantgalaxyactivitymarketingpopupAPIResponse
+func AlitripMerchantGalaxyActivityMarketingPopup(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyActivityMarketingPopupAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyActivityMarketingPopupAPIResponse, error) {
+	var resp alitripmerchant.AlitripMerchantGalaxyActivityMarketingPopupAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

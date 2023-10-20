@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaasrdataservicepromotionrulewriteAPIRequest 业务优惠规则写入 API请求
+// AlibabaAsrDataservicePromotionruleWriteAPIRequest 业务优惠规则写入 API请求
 // alibaba.asr.dataservice.promotionrule.write
 //
 // 星巴克优惠规则写入
-type AlibabaasrdataservicepromotionrulewriteAPIRequest struct {
+type AlibabaAsrDataservicePromotionruleWriteAPIRequest struct {
 	model.Params
 	// 入参对象
 	_poskeyPromotionRuleDto *PosKeyPromotionRuleDto
 }
 
-// NewAlibabaasrdataservicepromotionrulewriteRequest 初始化AlibabaasrdataservicepromotionrulewriteAPIRequest对象
-func NewAlibabaasrdataservicepromotionrulewriteRequest() *AlibabaasrdataservicepromotionrulewriteAPIRequest {
-	return &AlibabaasrdataservicepromotionrulewriteAPIRequest{
+// NewAlibabaAsrDataservicePromotionruleWriteRequest 初始化AlibabaAsrDataservicePromotionruleWriteAPIRequest对象
+func NewAlibabaAsrDataservicePromotionruleWriteRequest() *AlibabaAsrDataservicePromotionruleWriteAPIRequest {
+	return &AlibabaAsrDataservicePromotionruleWriteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaasrdataservicepromotionrulewriteAPIRequest) GetApiMethodName() string {
+func (r AlibabaAsrDataservicePromotionruleWriteAPIRequest) GetApiMethodName() string {
 	return "alibaba.asr.dataservice.promotionrule.write"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaasrdataservicepromotionrulewriteAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAsrDataservicePromotionruleWriteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaasrdataservicepromotionrulewriteAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAsrDataservicePromotionruleWriteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPoskeyPromotionRuleDto is PoskeyPromotionRuleDto Setter
 // 入参对象
-func (r *AlibabaasrdataservicepromotionrulewriteAPIRequest) SetPoskeyPromotionRuleDto(_poskeyPromotionRuleDto *PosKeyPromotionRuleDto) error {
+func (r *AlibabaAsrDataservicePromotionruleWriteAPIRequest) SetPoskeyPromotionRuleDto(_poskeyPromotionRuleDto *PosKeyPromotionRuleDto) error {
 	r._poskeyPromotionRuleDto = _poskeyPromotionRuleDto
 	r.Set("poskey_promotion_rule_dto", _poskeyPromotionRuleDto)
 	return nil
 }
 
 // GetPoskeyPromotionRuleDto PoskeyPromotionRuleDto Getter
-func (r AlibabaasrdataservicepromotionrulewriteAPIRequest) GetPoskeyPromotionRuleDto() *PosKeyPromotionRuleDto {
+func (r AlibabaAsrDataservicePromotionruleWriteAPIRequest) GetPoskeyPromotionRuleDto() *PosKeyPromotionRuleDto {
 	return r._poskeyPromotionRuleDto
 }

@@ -1,7 +1,7 @@
 package tmallchannel
 
-// TaobaochanneltradeprepayofflinereduceResultTopDo 结构体
-type TaobaochanneltradeprepayofflinereduceResultTopDo struct {
+// TaobaoChannelTradePrepayOfflineReduceResultTopDo 结构体
+type TaobaoChannelTradePrepayOfflineReduceResultTopDo struct {
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

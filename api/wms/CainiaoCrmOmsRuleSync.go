@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wms"
 )
 
-// Cainiaocrmomsrulesync 商家ERP订单处理规则同步
+// CainiaoCrmOmsRuleSync 商家ERP订单处理规则同步
 // cainiao.crm.oms.rule.sync
 //
 // 将商家ERP订单处理规则同步到菜鸟CRM系统
-func Cainiaocrmomsrulesync(clt *core.SDKClient, req *wms.CainiaocrmomsrulesyncAPIRequest, session string) (*wms.CainiaocrmomsrulesyncAPIResponse, error) {
-	var resp wms.CainiaocrmomsrulesyncAPIResponse
+func CainiaoCrmOmsRuleSync(clt *core.SDKClient, req *wms.CainiaoCrmOmsRuleSyncAPIRequest, session string) (*wms.CainiaoCrmOmsRuleSyncAPIResponse, error) {
+	var resp wms.CainiaoCrmOmsRuleSyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

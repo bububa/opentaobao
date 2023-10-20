@@ -1,7 +1,7 @@
 package wdk
 
-// TaobaowdkiotdeviceadminmqtttokengetHmResult 结构体
-type TaobaowdkiotdeviceadminmqtttokengetHmResult struct {
+// TaobaoWdkIotDeviceadminMqttTokenGetHmResult 结构体
+type TaobaoWdkIotDeviceadminMqttTokenGetHmResult struct {
 	// msgCode
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msgInfo

@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibababenefitdrawAPIRequest 抽奖接口 API请求
+// AlibabaBenefitDrawAPIRequest 抽奖接口 API请求
 // alibaba.benefit.draw
 //
 // 功能：抽奖功能，供小程序抽奖调用
@@ -16,7 +16,7 @@ import (
 // appkey验证通过的，才会进入抽奖流程，否则直接失败。
 // 因为appkey是系统参数，并且程序内部可以验证appkey和业务身份appName的关系
 // 是否一致，所以可以保证参数appName的合法性，没有越权。
-type AlibababenefitdrawAPIRequest struct {
+type AlibabaBenefitDrawAPIRequest struct {
 	model.Params
 	// 奖池唯一标识，奖池创建时即生成
 	_ename string
@@ -26,65 +26,65 @@ type AlibababenefitdrawAPIRequest struct {
 	_ip string
 }
 
-// NewAlibababenefitdrawRequest 初始化AlibababenefitdrawAPIRequest对象
-func NewAlibababenefitdrawRequest() *AlibababenefitdrawAPIRequest {
-	return &AlibababenefitdrawAPIRequest{
+// NewAlibabaBenefitDrawRequest 初始化AlibabaBenefitDrawAPIRequest对象
+func NewAlibabaBenefitDrawRequest() *AlibabaBenefitDrawAPIRequest {
+	return &AlibabaBenefitDrawAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibababenefitdrawAPIRequest) GetApiMethodName() string {
+func (r AlibabaBenefitDrawAPIRequest) GetApiMethodName() string {
 	return "alibaba.benefit.draw"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibababenefitdrawAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaBenefitDrawAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibababenefitdrawAPIRequest) GetRawParams() model.Params {
+func (r AlibabaBenefitDrawAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetEname is Ename Setter
 // 奖池唯一标识，奖池创建时即生成
-func (r *AlibababenefitdrawAPIRequest) SetEname(_ename string) error {
+func (r *AlibabaBenefitDrawAPIRequest) SetEname(_ename string) error {
 	r._ename = _ename
 	r.Set("ename", _ename)
 	return nil
 }
 
 // GetEname Ename Getter
-func (r AlibababenefitdrawAPIRequest) GetEname() string {
+func (r AlibabaBenefitDrawAPIRequest) GetEname() string {
 	return r._ename
 }
 
 // SetAppName is AppName Setter
 // 调用方AppName：规定为promotioncenter-${appId}
-func (r *AlibababenefitdrawAPIRequest) SetAppName(_appName string) error {
+func (r *AlibabaBenefitDrawAPIRequest) SetAppName(_appName string) error {
 	r._appName = _appName
 	r.Set("app_name", _appName)
 	return nil
 }
 
 // GetAppName AppName Getter
-func (r AlibababenefitdrawAPIRequest) GetAppName() string {
+func (r AlibabaBenefitDrawAPIRequest) GetAppName() string {
 	return r._appName
 }
 
 // SetIp is Ip Setter
 // 调用方应用ip，非必填
-func (r *AlibababenefitdrawAPIRequest) SetIp(_ip string) error {
+func (r *AlibabaBenefitDrawAPIRequest) SetIp(_ip string) error {
 	r._ip = _ip
 	r.Set("ip", _ip)
 	return nil
 }
 
 // GetIp Ip Getter
-func (r AlibababenefitdrawAPIRequest) GetIp() string {
+func (r AlibabaBenefitDrawAPIRequest) GetIp() string {
 	return r._ip
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/baichuan"
 )
 
-// Taobaobaichuanpayresultquery 百川支付完成回调
+// TaobaoBaichuanPayresultQuery 百川支付完成回调
 // taobao.baichuan.payresult.query
 //
 // 百川支付完成回调
-func Taobaobaichuanpayresultquery(clt *core.SDKClient, req *baichuan.TaobaobaichuanpayresultqueryAPIRequest, session string) (*baichuan.TaobaobaichuanpayresultqueryAPIResponse, error) {
-	var resp baichuan.TaobaobaichuanpayresultqueryAPIResponse
+func TaobaoBaichuanPayresultQuery(clt *core.SDKClient, req *baichuan.TaobaoBaichuanPayresultQueryAPIRequest, session string) (*baichuan.TaobaoBaichuanPayresultQueryAPIResponse, error) {
+	var resp baichuan.TaobaoBaichuanPayresultQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

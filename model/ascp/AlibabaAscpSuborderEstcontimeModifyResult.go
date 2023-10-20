@@ -1,7 +1,7 @@
 package ascp
 
-// AlibabaascpsuborderestcontimemodifyResult 结构体
-type AlibabaascpsuborderestcontimemodifyResult struct {
+// AlibabaAscpSuborderEstcontimeModifyResult 结构体
+type AlibabaAscpSuborderEstcontimeModifyResult struct {
 	// 对用户展示的错误信息
 	DisplayMsg string `json:"display_msg,omitempty" xml:"display_msg,omitempty"`
 	// 错误代码

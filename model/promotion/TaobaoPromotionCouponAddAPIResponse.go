@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaopromotioncouponaddAPIResponse 创建店铺优惠券接口 API返回值
+// TaobaoPromotionCouponAddAPIResponse 创建店铺优惠券接口 API返回值
 // taobao.promotion.coupon.add
 //
 // 创建店铺优惠券。有效期内的店铺优惠券总数量不超过50张
-type TaobaopromotioncouponaddAPIResponse struct {
+type TaobaoPromotionCouponAddAPIResponse struct {
 	model.CommonResponse
-	TaobaopromotioncouponaddAPIResponseModel
+	TaobaoPromotionCouponAddAPIResponseModel
 }
 
-// TaobaopromotioncouponaddAPIResponseModel is 创建店铺优惠券接口 成功返回结果
-type TaobaopromotioncouponaddAPIResponseModel struct {
+// TaobaoPromotionCouponAddAPIResponseModel is 创建店铺优惠券接口 成功返回结果
+type TaobaoPromotionCouponAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotion_coupon_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

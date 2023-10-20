@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaliyunaicloudiotvisionsaasctccjiangsucloudwatcherstatusupdateAPIResponse 天猫精灵 IoT 视频 SaaS 服务-江苏电信-云回看开通状态更新 API返回值
+// AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIResponse 天猫精灵 IoT 视频 SaaS 服务-江苏电信-云回看开通状态更新 API返回值
 // alibaba.aliyun.aicloud.iot.vision.saas.ctcc.jiangsu.cloud.watcher.status.update
 //
 // 天猫精灵 IoT 视频 SaaS 服务-江苏电信-云回看开通状态更新
-type AlibabaaliyunaicloudiotvisionsaasctccjiangsucloudwatcherstatusupdateAPIResponse struct {
+type AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIResponse struct {
 	model.CommonResponse
-	AlibabaaliyunaicloudiotvisionsaasctccjiangsucloudwatcherstatusupdateAPIResponseModel
+	AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIResponseModel
 }
 
-// AlibabaaliyunaicloudiotvisionsaasctccjiangsucloudwatcherstatusupdateAPIResponseModel is 天猫精灵 IoT 视频 SaaS 服务-江苏电信-云回看开通状态更新 成功返回结果
-type AlibabaaliyunaicloudiotvisionsaasctccjiangsucloudwatcherstatusupdateAPIResponseModel struct {
+// AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIResponseModel is 天猫精灵 IoT 视频 SaaS 服务-江苏电信-云回看开通状态更新 成功返回结果
+type AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_aliyun_aicloud_iot_vision_saas_ctcc_jiangsu_cloud_watcher_status_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

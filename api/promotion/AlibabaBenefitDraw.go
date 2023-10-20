@@ -5,7 +5,7 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-// Alibababenefitdraw 抽奖接口
+// AlibabaBenefitDraw 抽奖接口
 // alibaba.benefit.draw
 //
 // 功能：抽奖功能，供小程序抽奖调用
@@ -15,8 +15,8 @@ import (
 // appkey验证通过的，才会进入抽奖流程，否则直接失败。
 // 因为appkey是系统参数，并且程序内部可以验证appkey和业务身份appName的关系
 // 是否一致，所以可以保证参数appName的合法性，没有越权。
-func Alibababenefitdraw(clt *core.SDKClient, req *promotion.AlibababenefitdrawAPIRequest, session string) (*promotion.AlibababenefitdrawAPIResponse, error) {
-	var resp promotion.AlibababenefitdrawAPIResponse
+func AlibabaBenefitDraw(clt *core.SDKClient, req *promotion.AlibabaBenefitDrawAPIRequest, session string) (*promotion.AlibabaBenefitDrawAPIResponse, error) {
+	var resp promotion.AlibabaBenefitDrawAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

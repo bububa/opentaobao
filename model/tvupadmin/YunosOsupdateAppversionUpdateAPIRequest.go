@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunososupdateappversionupdateAPIRequest 应用升级任务更新 API请求
+// YunosOsupdateAppversionUpdateAPIRequest 应用升级任务更新 API请求
 // yunos.osupdate.appversion.update
 //
 // 应用升级任务更新
-type YunososupdateappversionupdateAPIRequest struct {
+type YunosOsupdateAppversionUpdateAPIRequest struct {
 	model.Params
 	// 应用版本升级信息
 	_appVersion *TvAppVersion
 }
 
-// NewYunososupdateappversionupdateRequest 初始化YunososupdateappversionupdateAPIRequest对象
-func NewYunososupdateappversionupdateRequest() *YunososupdateappversionupdateAPIRequest {
-	return &YunososupdateappversionupdateAPIRequest{
+// NewYunosOsupdateAppversionUpdateRequest 初始化YunosOsupdateAppversionUpdateAPIRequest对象
+func NewYunosOsupdateAppversionUpdateRequest() *YunosOsupdateAppversionUpdateAPIRequest {
+	return &YunosOsupdateAppversionUpdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YunososupdateappversionupdateAPIRequest) GetApiMethodName() string {
+func (r YunosOsupdateAppversionUpdateAPIRequest) GetApiMethodName() string {
 	return "yunos.osupdate.appversion.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunososupdateappversionupdateAPIRequest) GetApiParams(params url.Values) {
+func (r YunosOsupdateAppversionUpdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YunososupdateappversionupdateAPIRequest) GetRawParams() model.Params {
+func (r YunosOsupdateAppversionUpdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAppVersion is AppVersion Setter
 // 应用版本升级信息
-func (r *YunososupdateappversionupdateAPIRequest) SetAppVersion(_appVersion *TvAppVersion) error {
+func (r *YunosOsupdateAppversionUpdateAPIRequest) SetAppVersion(_appVersion *TvAppVersion) error {
 	r._appVersion = _appVersion
 	r.Set("app_version", _appVersion)
 	return nil
 }
 
 // GetAppVersion AppVersion Getter
-func (r YunososupdateappversionupdateAPIRequest) GetAppVersion() *TvAppVersion {
+func (r YunosOsupdateAppversionUpdateAPIRequest) GetAppVersion() *TvAppVersion {
 	return r._appVersion
 }

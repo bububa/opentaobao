@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaascpcnskuaddAPIResponse 货品创建 API返回值
+// AlibabaAscpCnskuAddAPIResponse 货品创建 API返回值
 // alibaba.ascp.cnsku.add
 //
 // 供应链中台货品创建接口
-type AlibabaascpcnskuaddAPIResponse struct {
+type AlibabaAscpCnskuAddAPIResponse struct {
 	model.CommonResponse
-	AlibabaascpcnskuaddAPIResponseModel
+	AlibabaAscpCnskuAddAPIResponseModel
 }
 
-// AlibabaascpcnskuaddAPIResponseModel is 货品创建 成功返回结果
-type AlibabaascpcnskuaddAPIResponseModel struct {
+// AlibabaAscpCnskuAddAPIResponseModel is 货品创建 成功返回结果
+type AlibabaAscpCnskuAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ascp_cnsku_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

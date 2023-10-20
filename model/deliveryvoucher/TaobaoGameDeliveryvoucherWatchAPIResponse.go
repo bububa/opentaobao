@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaogamedeliveryvoucherwatchAPIResponse 监控预约数据 API返回值
+// TaobaoGameDeliveryvoucherWatchAPIResponse 监控预约数据 API返回值
 // taobao.game.deliveryvoucher.watch
 //
 // 监控预约数据
-type TaobaogamedeliveryvoucherwatchAPIResponse struct {
+type TaobaoGameDeliveryvoucherWatchAPIResponse struct {
 	model.CommonResponse
-	TaobaogamedeliveryvoucherwatchAPIResponseModel
+	TaobaoGameDeliveryvoucherWatchAPIResponseModel
 }
 
-// TaobaogamedeliveryvoucherwatchAPIResponseModel is 监控预约数据 成功返回结果
-type TaobaogamedeliveryvoucherwatchAPIResponseModel struct {
+// TaobaoGameDeliveryvoucherWatchAPIResponseModel is 监控预约数据 成功返回结果
+type TaobaoGameDeliveryvoucherWatchAPIResponseModel struct {
 	XMLName xml.Name `xml:"game_deliveryvoucher_watch_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

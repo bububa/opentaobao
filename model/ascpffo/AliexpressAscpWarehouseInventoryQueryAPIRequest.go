@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressascpwarehouseinventoryqueryAPIRequest AliExpress在仓库存查询API API请求
+// AliexpressAscpWarehouseInventoryQueryAPIRequest AliExpress在仓库存查询API API请求
 // aliexpress.ascp.warehouse.inventory.query
 //
 // AliExpress在仓库存查询查询API
-type AliexpressascpwarehouseinventoryqueryAPIRequest struct {
+type AliexpressAscpWarehouseInventoryQueryAPIRequest struct {
 	model.Params
 	// 查询DTO
 	_warehouseInventoryQueryDto *WarehouseInventoryQueryDto
 }
 
-// NewAliexpressascpwarehouseinventoryqueryRequest 初始化AliexpressascpwarehouseinventoryqueryAPIRequest对象
-func NewAliexpressascpwarehouseinventoryqueryRequest() *AliexpressascpwarehouseinventoryqueryAPIRequest {
-	return &AliexpressascpwarehouseinventoryqueryAPIRequest{
+// NewAliexpressAscpWarehouseInventoryQueryRequest 初始化AliexpressAscpWarehouseInventoryQueryAPIRequest对象
+func NewAliexpressAscpWarehouseInventoryQueryRequest() *AliexpressAscpWarehouseInventoryQueryAPIRequest {
+	return &AliexpressAscpWarehouseInventoryQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AliexpressascpwarehouseinventoryqueryAPIRequest) GetApiMethodName() string {
+func (r AliexpressAscpWarehouseInventoryQueryAPIRequest) GetApiMethodName() string {
 	return "aliexpress.ascp.warehouse.inventory.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpressascpwarehouseinventoryqueryAPIRequest) GetApiParams(params url.Values) {
+func (r AliexpressAscpWarehouseInventoryQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AliexpressascpwarehouseinventoryqueryAPIRequest) GetRawParams() model.Params {
+func (r AliexpressAscpWarehouseInventoryQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetWarehouseInventoryQueryDto is WarehouseInventoryQueryDto Setter
 // 查询DTO
-func (r *AliexpressascpwarehouseinventoryqueryAPIRequest) SetWarehouseInventoryQueryDto(_warehouseInventoryQueryDto *WarehouseInventoryQueryDto) error {
+func (r *AliexpressAscpWarehouseInventoryQueryAPIRequest) SetWarehouseInventoryQueryDto(_warehouseInventoryQueryDto *WarehouseInventoryQueryDto) error {
 	r._warehouseInventoryQueryDto = _warehouseInventoryQueryDto
 	r.Set("warehouse_inventory_query_dto", _warehouseInventoryQueryDto)
 	return nil
 }
 
 // GetWarehouseInventoryQueryDto WarehouseInventoryQueryDto Getter
-func (r AliexpressascpwarehouseinventoryqueryAPIRequest) GetWarehouseInventoryQueryDto() *WarehouseInventoryQueryDto {
+func (r AliexpressAscpWarehouseInventoryQueryAPIRequest) GetWarehouseInventoryQueryDto() *WarehouseInventoryQueryDto {
 	return r._warehouseInventoryQueryDto
 }

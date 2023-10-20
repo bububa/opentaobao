@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaovmarketeticketauthbeforeconsumeAPIResponse 核销放行的查询接口 API返回值
+// TaobaoVmarketEticketAuthBeforeconsumeAPIResponse 核销放行的查询接口 API返回值
 // taobao.vmarket.eticket.auth.beforeconsume
 //
 // 针对O2O电子凭证核销放行业务，为满足码商能够核销淘宝码而开放的核销查询接口
-type TaobaovmarketeticketauthbeforeconsumeAPIResponse struct {
+type TaobaoVmarketEticketAuthBeforeconsumeAPIResponse struct {
 	model.CommonResponse
-	TaobaovmarketeticketauthbeforeconsumeAPIResponseModel
+	TaobaoVmarketEticketAuthBeforeconsumeAPIResponseModel
 }
 
-// TaobaovmarketeticketauthbeforeconsumeAPIResponseModel is 核销放行的查询接口 成功返回结果
-type TaobaovmarketeticketauthbeforeconsumeAPIResponseModel struct {
+// TaobaoVmarketEticketAuthBeforeconsumeAPIResponseModel is 核销放行的查询接口 成功返回结果
+type TaobaoVmarketEticketAuthBeforeconsumeAPIResponseModel struct {
 	XMLName xml.Name `xml:"vmarket_eticket_auth_beforeconsume_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

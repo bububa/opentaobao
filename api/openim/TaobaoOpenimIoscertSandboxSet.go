@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/openim"
 )
 
-// Taobaoopenimioscertsandboxset 设置开发环境证书
+// TaobaoOpenimIoscertSandboxSet 设置开发环境证书
 // taobao.openim.ioscert.sandbox.set
 //
 // 设置开发环境证书
-func Taobaoopenimioscertsandboxset(clt *core.SDKClient, req *openim.TaobaoopenimioscertsandboxsetAPIRequest, session string) (*openim.TaobaoopenimioscertsandboxsetAPIResponse, error) {
-	var resp openim.TaobaoopenimioscertsandboxsetAPIResponse
+func TaobaoOpenimIoscertSandboxSet(clt *core.SDKClient, req *openim.TaobaoOpenimIoscertSandboxSetAPIRequest, session string) (*openim.TaobaoOpenimIoscertSandboxSetAPIResponse, error) {
+	var resp openim.TaobaoOpenimIoscertSandboxSetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

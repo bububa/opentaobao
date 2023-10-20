@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaojstsmsmessageshorturlcreateAPIResponse 聚石塔营销效果短链生成 API返回值
+// TaobaoJstSmsMessageShorturlCreateAPIResponse 聚石塔营销效果短链生成 API返回值
 // taobao.jst.sms.message.shorturl.create
 //
 // 聚石塔生成淘短链接口
-type TaobaojstsmsmessageshorturlcreateAPIResponse struct {
+type TaobaoJstSmsMessageShorturlCreateAPIResponse struct {
 	model.CommonResponse
-	TaobaojstsmsmessageshorturlcreateAPIResponseModel
+	TaobaoJstSmsMessageShorturlCreateAPIResponseModel
 }
 
-// TaobaojstsmsmessageshorturlcreateAPIResponseModel is 聚石塔营销效果短链生成 成功返回结果
-type TaobaojstsmsmessageshorturlcreateAPIResponseModel struct {
+// TaobaoJstSmsMessageShorturlCreateAPIResponseModel is 聚石塔营销效果短链生成 成功返回结果
+type TaobaoJstSmsMessageShorturlCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"jst_sms_message_shorturl_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

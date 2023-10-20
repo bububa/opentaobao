@@ -1,7 +1,7 @@
 package ihome
 
-// TaobaoihomeadvancepicuploadApiResult 结构体
-type TaobaoihomeadvancepicuploadApiResult struct {
+// TaobaoIhomeAdvancepicUploadApiResult 结构体
+type TaobaoIhomeAdvancepicUploadApiResult struct {
 	// 错误信息
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

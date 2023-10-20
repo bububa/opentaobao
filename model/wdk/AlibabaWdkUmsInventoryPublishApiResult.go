@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdkumsinventorypublishApiResult 结构体
-type AlibabawdkumsinventorypublishApiResult struct {
+// AlibabaWdkUmsInventoryPublishApiResult 结构体
+type AlibabaWdkUmsInventoryPublishApiResult struct {
 	// 调用服务返回结果对象
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// 调用服务返回错误码

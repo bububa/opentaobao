@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaouniversalbpreportquerycrowdAPIRequest 人群报表查询 API请求
+// TaobaoUniversalbpReportQueryCrowdAPIRequest 人群报表查询 API请求
 // taobao.universalbp.report.query.crowd
 //
 // 人群报表查询
-type TaobaouniversalbpreportquerycrowdAPIRequest struct {
+type TaobaoUniversalbpReportQueryCrowdAPIRequest struct {
 	model.Params
 	// topServiceContext
 	_topServiceContext *TopServiceContext
@@ -18,52 +18,52 @@ type TaobaouniversalbpreportquerycrowdAPIRequest struct {
 	_topCrowdReportQueryVO *TopCrowdReportQueryVo
 }
 
-// NewTaobaouniversalbpreportquerycrowdRequest 初始化TaobaouniversalbpreportquerycrowdAPIRequest对象
-func NewTaobaouniversalbpreportquerycrowdRequest() *TaobaouniversalbpreportquerycrowdAPIRequest {
-	return &TaobaouniversalbpreportquerycrowdAPIRequest{
+// NewTaobaoUniversalbpReportQueryCrowdRequest 初始化TaobaoUniversalbpReportQueryCrowdAPIRequest对象
+func NewTaobaoUniversalbpReportQueryCrowdRequest() *TaobaoUniversalbpReportQueryCrowdAPIRequest {
+	return &TaobaoUniversalbpReportQueryCrowdAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaouniversalbpreportquerycrowdAPIRequest) GetApiMethodName() string {
+func (r TaobaoUniversalbpReportQueryCrowdAPIRequest) GetApiMethodName() string {
 	return "taobao.universalbp.report.query.crowd"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaouniversalbpreportquerycrowdAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoUniversalbpReportQueryCrowdAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaouniversalbpreportquerycrowdAPIRequest) GetRawParams() model.Params {
+func (r TaobaoUniversalbpReportQueryCrowdAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopServiceContext is TopServiceContext Setter
 // topServiceContext
-func (r *TaobaouniversalbpreportquerycrowdAPIRequest) SetTopServiceContext(_topServiceContext *TopServiceContext) error {
+func (r *TaobaoUniversalbpReportQueryCrowdAPIRequest) SetTopServiceContext(_topServiceContext *TopServiceContext) error {
 	r._topServiceContext = _topServiceContext
 	r.Set("top_service_context", _topServiceContext)
 	return nil
 }
 
 // GetTopServiceContext TopServiceContext Getter
-func (r TaobaouniversalbpreportquerycrowdAPIRequest) GetTopServiceContext() *TopServiceContext {
+func (r TaobaoUniversalbpReportQueryCrowdAPIRequest) GetTopServiceContext() *TopServiceContext {
 	return r._topServiceContext
 }
 
 // SetTopCrowdReportQueryVO is TopCrowdReportQueryVO Setter
 // topCrowdReportQueryVO
-func (r *TaobaouniversalbpreportquerycrowdAPIRequest) SetTopCrowdReportQueryVO(_topCrowdReportQueryVO *TopCrowdReportQueryVo) error {
+func (r *TaobaoUniversalbpReportQueryCrowdAPIRequest) SetTopCrowdReportQueryVO(_topCrowdReportQueryVO *TopCrowdReportQueryVo) error {
 	r._topCrowdReportQueryVO = _topCrowdReportQueryVO
 	r.Set("top_crowd_report_query_v_o", _topCrowdReportQueryVO)
 	return nil
 }
 
 // GetTopCrowdReportQueryVO TopCrowdReportQueryVO Getter
-func (r TaobaouniversalbpreportquerycrowdAPIRequest) GetTopCrowdReportQueryVO() *TopCrowdReportQueryVo {
+func (r TaobaoUniversalbpReportQueryCrowdAPIRequest) GetTopCrowdReportQueryVO() *TopCrowdReportQueryVo {
 	return r._topCrowdReportQueryVO
 }

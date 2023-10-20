@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/zqs"
 )
 
-// Alibabazqsfulfillcomplete 周期购履约完成接口
+// AlibabaZqsFulfillComplete 周期购履约完成接口
 // alibaba.zqs.fulfill.complete
 //
 // 周期购履约完成接口
-func Alibabazqsfulfillcomplete(clt *core.SDKClient, req *zqs.AlibabazqsfulfillcompleteAPIRequest, session string) (*zqs.AlibabazqsfulfillcompleteAPIResponse, error) {
-	var resp zqs.AlibabazqsfulfillcompleteAPIResponse
+func AlibabaZqsFulfillComplete(clt *core.SDKClient, req *zqs.AlibabaZqsFulfillCompleteAPIRequest, session string) (*zqs.AlibabaZqsFulfillCompleteAPIResponse, error) {
+	var resp zqs.AlibabaZqsFulfillCompleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

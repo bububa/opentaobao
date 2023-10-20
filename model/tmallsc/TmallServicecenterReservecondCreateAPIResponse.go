@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallservicecenterreservecondcreateAPIResponse 创建主动预约开通条件 API返回值
+// TmallServicecenterReservecondCreateAPIResponse 创建主动预约开通条件 API返回值
 // tmall.servicecenter.reservecond.create
 //
 // 1、设置主动预约开通条件
-type TmallservicecenterreservecondcreateAPIResponse struct {
+type TmallServicecenterReservecondCreateAPIResponse struct {
 	model.CommonResponse
-	TmallservicecenterreservecondcreateAPIResponseModel
+	TmallServicecenterReservecondCreateAPIResponseModel
 }
 
-// TmallservicecenterreservecondcreateAPIResponseModel is 创建主动预约开通条件 成功返回结果
-type TmallservicecenterreservecondcreateAPIResponseModel struct {
+// TmallServicecenterReservecondCreateAPIResponseModel is 创建主动预约开通条件 成功返回结果
+type TmallServicecenterReservecondCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_reservecond_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

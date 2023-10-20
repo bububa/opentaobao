@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/seaking"
 )
 
-// Alibabaseakingtaskreport 跳转任务发布成功商品ID回传
+// AlibabaSeakingTaskReport 跳转任务发布成功商品ID回传
 // alibaba.seaking.task.report
 //
 // 跳转任务发布成功商品ID回传
-func Alibabaseakingtaskreport(clt *core.SDKClient, req *seaking.AlibabaseakingtaskreportAPIRequest, session string) (*seaking.AlibabaseakingtaskreportAPIResponse, error) {
-	var resp seaking.AlibabaseakingtaskreportAPIResponse
+func AlibabaSeakingTaskReport(clt *core.SDKClient, req *seaking.AlibabaSeakingTaskReportAPIRequest, session string) (*seaking.AlibabaSeakingTaskReportAPIResponse, error) {
+	var resp seaking.AlibabaSeakingTaskReportAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

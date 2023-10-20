@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoumpactivitygetAPIResponse 查询营销活动 API返回值
+// TaobaoUmpActivityGetAPIResponse 查询营销活动 API返回值
 // taobao.ump.activity.get
 //
 // 查询营销活动
-type TaobaoumpactivitygetAPIResponse struct {
+type TaobaoUmpActivityGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoumpactivitygetAPIResponseModel
+	TaobaoUmpActivityGetAPIResponseModel
 }
 
-// TaobaoumpactivitygetAPIResponseModel is 查询营销活动 成功返回结果
-type TaobaoumpactivitygetAPIResponseModel struct {
+// TaobaoUmpActivityGetAPIResponseModel is 查询营销活动 成功返回结果
+type TaobaoUmpActivityGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"ump_activity_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

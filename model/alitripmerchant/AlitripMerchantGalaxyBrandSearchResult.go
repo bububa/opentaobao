@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripmerchantgalaxybrandsearchResult 结构体
-type AlitripmerchantgalaxybrandsearchResult struct {
+// AlitripMerchantGalaxyBrandSearchResult 结构体
+type AlitripMerchantGalaxyBrandSearchResult struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

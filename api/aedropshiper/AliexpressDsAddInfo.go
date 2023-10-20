@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aedropshiper"
 )
 
-// Aliexpressdsaddinfo 上报DS信息
+// AliexpressDsAddInfo 上报DS信息
 // aliexpress.ds.add.info
 //
 // ISV用户上报下游DS信息
-func Aliexpressdsaddinfo(clt *core.SDKClient, req *aedropshiper.AliexpressdsaddinfoAPIRequest, session string) (*aedropshiper.AliexpressdsaddinfoAPIResponse, error) {
-	var resp aedropshiper.AliexpressdsaddinfoAPIResponse
+func AliexpressDsAddInfo(clt *core.SDKClient, req *aedropshiper.AliexpressDsAddInfoAPIRequest, session string) (*aedropshiper.AliexpressDsAddInfoAPIResponse, error) {
+	var resp aedropshiper.AliexpressDsAddInfoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

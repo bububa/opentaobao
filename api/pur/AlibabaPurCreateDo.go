@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/pur"
 )
 
-// Alibabapurcreatedo top创建DO/RT接口
+// AlibabaPurCreateDo top创建DO/RT接口
 // alibaba.pur.create.do
 //
 // 创建发货单,先创建DO，异步创建RT
-func Alibabapurcreatedo(clt *core.SDKClient, req *pur.AlibabapurcreatedoAPIRequest, session string) (*pur.AlibabapurcreatedoAPIResponse, error) {
-	var resp pur.AlibabapurcreatedoAPIResponse
+func AlibabaPurCreateDo(clt *core.SDKClient, req *pur.AlibabaPurCreateDoAPIRequest, session string) (*pur.AlibabaPurCreateDoAPIResponse, error) {
+	var resp pur.AlibabaPurCreateDoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

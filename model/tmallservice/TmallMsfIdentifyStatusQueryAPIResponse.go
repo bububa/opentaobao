@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallmsfidentifystatusqueryAPIResponse 喵师傅定案核销状态查询 API返回值
+// TmallMsfIdentifyStatusQueryAPIResponse 喵师傅定案核销状态查询 API返回值
 // tmall.msf.identify.status.query
 //
 // 喵师傅定案核销状态查询，供服务商erp系统调用
-type TmallmsfidentifystatusqueryAPIResponse struct {
+type TmallMsfIdentifyStatusQueryAPIResponse struct {
 	model.CommonResponse
-	TmallmsfidentifystatusqueryAPIResponseModel
+	TmallMsfIdentifyStatusQueryAPIResponseModel
 }
 
-// TmallmsfidentifystatusqueryAPIResponseModel is 喵师傅定案核销状态查询 成功返回结果
-type TmallmsfidentifystatusqueryAPIResponseModel struct {
+// TmallMsfIdentifyStatusQueryAPIResponseModel is 喵师傅定案核销状态查询 成功返回结果
+type TmallMsfIdentifyStatusQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_msf_identify_status_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

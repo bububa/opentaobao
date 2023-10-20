@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabainteractactivityaddcommentAPIResponse 微淘评论接口 API返回值
+// AlibabaInteractActivityAddcommentAPIResponse 微淘评论接口 API返回值
 // alibaba.interact.activity.addcomment
 //
 // 发表评论，并返回楼层
-type AlibabainteractactivityaddcommentAPIResponse struct {
+type AlibabaInteractActivityAddcommentAPIResponse struct {
 	model.CommonResponse
-	AlibabainteractactivityaddcommentAPIResponseModel
+	AlibabaInteractActivityAddcommentAPIResponseModel
 }
 
-// AlibabainteractactivityaddcommentAPIResponseModel is 微淘评论接口 成功返回结果
-type AlibabainteractactivityaddcommentAPIResponseModel struct {
+// AlibabaInteractActivityAddcommentAPIResponseModel is 微淘评论接口 成功返回结果
+type AlibabaInteractActivityAddcommentAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_activity_addcomment_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

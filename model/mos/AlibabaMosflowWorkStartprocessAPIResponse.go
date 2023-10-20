@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamosflowworkstartprocessAPIResponse 发起流程 API返回值
+// AlibabaMosflowWorkStartprocessAPIResponse 发起流程 API返回值
 // alibaba.mosflow.work.startprocess
 //
 // 业务发起流程审批
-type AlibabamosflowworkstartprocessAPIResponse struct {
+type AlibabaMosflowWorkStartprocessAPIResponse struct {
 	model.CommonResponse
-	AlibabamosflowworkstartprocessAPIResponseModel
+	AlibabaMosflowWorkStartprocessAPIResponseModel
 }
 
-// AlibabamosflowworkstartprocessAPIResponseModel is 发起流程 成功返回结果
-type AlibabamosflowworkstartprocessAPIResponseModel struct {
+// AlibabaMosflowWorkStartprocessAPIResponseModel is 发起流程 成功返回结果
+type AlibabaMosflowWorkStartprocessAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mosflow_work_startprocess_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

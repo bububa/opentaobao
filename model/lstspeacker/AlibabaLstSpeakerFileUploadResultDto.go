@@ -1,7 +1,7 @@
 package lstspeacker
 
-// AlibabalstspeakerfileuploadResultDto 结构体
-type AlibabalstspeakerfileuploadResultDto struct {
+// AlibabaLstSpeakerFileUploadResultDto 结构体
+type AlibabaLstSpeakerFileUploadResultDto struct {
 	// 错误码
 	ErroMessage string `json:"erro_message,omitempty" xml:"erro_message,omitempty"`
 	// 错误码

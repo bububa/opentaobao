@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
 
-// Taobaoxhotelrateplanget 价格计划rateplan查询
+// TaobaoXhotelRateplanGet 价格计划rateplan查询
 // taobao.xhotel.rateplan.get
 //
 // 酒店产品库rateplan查询
-func Taobaoxhotelrateplanget(clt *core.SDKClient, req *xhotelitem.TaobaoxhotelrateplangetAPIRequest, session string) (*xhotelitem.TaobaoxhotelrateplangetAPIResponse, error) {
-	var resp xhotelitem.TaobaoxhotelrateplangetAPIResponse
+func TaobaoXhotelRateplanGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRateplanGetAPIRequest, session string) (*xhotelitem.TaobaoXhotelRateplanGetAPIResponse, error) {
+	var resp xhotelitem.TaobaoXhotelRateplanGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

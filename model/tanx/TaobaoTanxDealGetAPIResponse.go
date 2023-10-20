@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotanxdealgetAPIResponse 对外部dsp提供交易id查询接口 API返回值
+// TaobaoTanxDealGetAPIResponse 对外部dsp提供交易id查询接口 API返回值
 // taobao.tanx.deal.get
 //
 // 对外部dsp提供交易id查询接口
-type TaobaotanxdealgetAPIResponse struct {
+type TaobaoTanxDealGetAPIResponse struct {
 	model.CommonResponse
-	TaobaotanxdealgetAPIResponseModel
+	TaobaoTanxDealGetAPIResponseModel
 }
 
-// TaobaotanxdealgetAPIResponseModel is 对外部dsp提供交易id查询接口 成功返回结果
-type TaobaotanxdealgetAPIResponseModel struct {
+// TaobaoTanxDealGetAPIResponseModel is 对外部dsp提供交易id查询接口 成功返回结果
+type TaobaoTanxDealGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tanx_deal_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

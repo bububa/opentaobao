@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// Alibabaalihealthdrugkytscqylistcodefullinfodtomedicaldevice 医疗器械的码查询信息接口
+// AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldevice 医疗器械的码查询信息接口
 // alibaba.alihealth.drug.kyt.scqy.listcodefullinfodtomedicaldevice
 //
 // 医疗器械的码查询信息接口
-func Alibabaalihealthdrugkytscqylistcodefullinfodtomedicaldevice(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugkytscqylistcodefullinfodtomedicaldeviceAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugkytscqylistcodefullinfodtomedicaldeviceAPIResponse, error) {
-	var resp drugtrace.AlibabaalihealthdrugkytscqylistcodefullinfodtomedicaldeviceAPIResponse
+func AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldevice(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIResponse, error) {
+	var resp drugtrace.AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

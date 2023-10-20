@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallnr"
 )
 
-// Alibabalsycrmcustomerappoint ISV直播间预约
+// AlibabaLsyCrmCustomerAppoint ISV直播间预约
 // alibaba.lsy.crm.customer.appoint
 //
 // ISV直播间预约
-func Alibabalsycrmcustomerappoint(clt *core.SDKClient, req *tmallnr.AlibabalsycrmcustomerappointAPIRequest, session string) (*tmallnr.AlibabalsycrmcustomerappointAPIResponse, error) {
-	var resp tmallnr.AlibabalsycrmcustomerappointAPIResponse
+func AlibabaLsyCrmCustomerAppoint(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmCustomerAppointAPIRequest, session string) (*tmallnr.AlibabaLsyCrmCustomerAppointAPIResponse, error) {
+	var resp tmallnr.AlibabaLsyCrmCustomerAppointAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

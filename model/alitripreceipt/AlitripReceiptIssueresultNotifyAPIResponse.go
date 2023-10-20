@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripreceiptissueresultnotifyAPIResponse 飞猪发票开票结果通知 API返回值
+// AlitripReceiptIssueresultNotifyAPIResponse 飞猪发票开票结果通知 API返回值
 // alitrip.receipt.issueresult.notify
 //
 // 飞猪发票开票结果通知
-type AlitripreceiptissueresultnotifyAPIResponse struct {
+type AlitripReceiptIssueresultNotifyAPIResponse struct {
 	model.CommonResponse
-	AlitripreceiptissueresultnotifyAPIResponseModel
+	AlitripReceiptIssueresultNotifyAPIResponseModel
 }
 
-// AlitripreceiptissueresultnotifyAPIResponseModel is 飞猪发票开票结果通知 成功返回结果
-type AlitripreceiptissueresultnotifyAPIResponseModel struct {
+// AlitripReceiptIssueresultNotifyAPIResponseModel is 飞猪发票开票结果通知 成功返回结果
+type AlitripReceiptIssueresultNotifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_receipt_issueresult_notify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

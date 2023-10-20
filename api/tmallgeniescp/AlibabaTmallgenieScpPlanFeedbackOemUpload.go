@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallgeniescp"
 )
 
-// Alibabatmallgeniescpplanfeedbackoemupload 14-供应商反馈（OEM）同步接口
+// AlibabaTmallgenieScpPlanFeedbackOemUpload 14-供应商反馈（OEM）同步接口
 // alibaba.tmallgenie.scp.plan.feedback.oem.upload
 //
 // 供应商反馈（OEM）同步接口
-func Alibabatmallgeniescpplanfeedbackoemupload(clt *core.SDKClient, req *tmallgeniescp.AlibabatmallgeniescpplanfeedbackoemuploadAPIRequest, session string) (*tmallgeniescp.AlibabatmallgeniescpplanfeedbackoemuploadAPIResponse, error) {
-	var resp tmallgeniescp.AlibabatmallgeniescpplanfeedbackoemuploadAPIResponse
+func AlibabaTmallgenieScpPlanFeedbackOemUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanFeedbackOemUploadAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanFeedbackOemUploadAPIResponse, error) {
+	var resp tmallgeniescp.AlibabaTmallgenieScpPlanFeedbackOemUploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

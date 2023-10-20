@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhotelorderalipayfacesettleAPIResponse 信用住订单结账接口 API返回值
+// TaobaoXhotelOrderAlipayfaceSettleAPIResponse 信用住订单结账接口 API返回值
 // taobao.xhotel.order.alipayface.settle
 //
 // 用于离店付订单在客人离店后，发起结账以及扣款等后续动作
-type TaobaoxhotelorderalipayfacesettleAPIResponse struct {
+type TaobaoXhotelOrderAlipayfaceSettleAPIResponse struct {
 	model.CommonResponse
-	TaobaoxhotelorderalipayfacesettleAPIResponseModel
+	TaobaoXhotelOrderAlipayfaceSettleAPIResponseModel
 }
 
-// TaobaoxhotelorderalipayfacesettleAPIResponseModel is 信用住订单结账接口 成功返回结果
-type TaobaoxhotelorderalipayfacesettleAPIResponseModel struct {
+// TaobaoXhotelOrderAlipayfaceSettleAPIResponseModel is 信用住订单结账接口 成功返回结果
+type TaobaoXhotelOrderAlipayfaceSettleAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_alipayface_settle_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

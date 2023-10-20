@@ -1,7 +1,7 @@
 package promotion
 
-// AlibabalafitesellerbenefitlistResult 结构体
-type AlibabalafitesellerbenefitlistResult struct {
+// AlibabaLafiteSellerBenefitListResult 结构体
+type AlibabaLafiteSellerBenefitListResult struct {
 	// 错误信息
 	Msg string `json:"msg,omitempty" xml:"msg,omitempty"`
 	// 错误码

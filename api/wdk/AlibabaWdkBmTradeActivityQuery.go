@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabawdkbmtradeactivityquery 品牌营销的订单活动信息查询
+// AlibabaWdkBmTradeActivityQuery 品牌营销的订单活动信息查询
 // alibaba.wdk.bm.trade.activity.query
 //
 // 品牌营销的订单活动信息查询
-func Alibabawdkbmtradeactivityquery(clt *core.SDKClient, req *wdk.AlibabawdkbmtradeactivityqueryAPIRequest, session string) (*wdk.AlibabawdkbmtradeactivityqueryAPIResponse, error) {
-	var resp wdk.AlibabawdkbmtradeactivityqueryAPIResponse
+func AlibabaWdkBmTradeActivityQuery(clt *core.SDKClient, req *wdk.AlibabaWdkBmTradeActivityQueryAPIRequest, session string) (*wdk.AlibabaWdkBmTradeActivityQueryAPIResponse, error) {
+	var resp wdk.AlibabaWdkBmTradeActivityQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

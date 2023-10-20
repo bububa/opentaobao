@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/qimen"
 )
 
-// Taobaoqimenchannelinventoryquery 渠道库存查询接口
+// TaobaoQimenChannelinventoryQuery 渠道库存查询接口
 // taobao.qimen.channelinventory.query
 //
 // 渠道库存查询
-func Taobaoqimenchannelinventoryquery(clt *core.SDKClient, req *qimen.TaobaoqimenchannelinventoryqueryAPIRequest, session string) (*qimen.TaobaoqimenchannelinventoryqueryAPIResponse, error) {
-	var resp qimen.TaobaoqimenchannelinventoryqueryAPIResponse
+func TaobaoQimenChannelinventoryQuery(clt *core.SDKClient, req *qimen.TaobaoQimenChannelinventoryQueryAPIRequest, session string) (*qimen.TaobaoQimenChannelinventoryQueryAPIResponse, error) {
+	var resp qimen.TaobaoQimenChannelinventoryQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

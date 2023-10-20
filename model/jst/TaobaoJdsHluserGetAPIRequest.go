@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaojdshlusergetAPIRequest 订单全链路用户信息获取 API请求
+// TaobaoJdsHluserGetAPIRequest 订单全链路用户信息获取 API请求
 // taobao.jds.hluser.get
 //
 // 订单全链路用户信息获取
-type TaobaojdshlusergetAPIRequest struct {
+type TaobaoJdsHluserGetAPIRequest struct {
 	model.Params
 }
 
-// NewTaobaojdshlusergetRequest 初始化TaobaojdshlusergetAPIRequest对象
-func NewTaobaojdshlusergetRequest() *TaobaojdshlusergetAPIRequest {
-	return &TaobaojdshlusergetAPIRequest{
+// NewTaobaoJdsHluserGetRequest 初始化TaobaoJdsHluserGetAPIRequest对象
+func NewTaobaoJdsHluserGetRequest() *TaobaoJdsHluserGetAPIRequest {
+	return &TaobaoJdsHluserGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaojdshlusergetAPIRequest) GetApiMethodName() string {
+func (r TaobaoJdsHluserGetAPIRequest) GetApiMethodName() string {
 	return "taobao.jds.hluser.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaojdshlusergetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoJdsHluserGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaojdshlusergetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoJdsHluserGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/jym"
 )
 
-// Alibabajymsteamshadowuserget 获取影子标识
+// AlibabaJymSteamShadowuserGet 获取影子标识
 // alibaba.jym.steam.shadowuser.get
 //
 // 交易猫Steam类目获取影子ID
-func Alibabajymsteamshadowuserget(clt *core.SDKClient, req *jym.AlibabajymsteamshadowusergetAPIRequest, session string) (*jym.AlibabajymsteamshadowusergetAPIResponse, error) {
-	var resp jym.AlibabajymsteamshadowusergetAPIResponse
+func AlibabaJymSteamShadowuserGet(clt *core.SDKClient, req *jym.AlibabaJymSteamShadowuserGetAPIRequest, session string) (*jym.AlibabaJymSteamShadowuserGetAPIResponse, error) {
+	var resp jym.AlibabaJymSteamShadowuserGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

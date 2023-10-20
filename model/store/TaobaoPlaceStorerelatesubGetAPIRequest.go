@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoplacestorerelatesubgetAPIRequest 门店和子门店关系查找 API请求
+// TaobaoPlaceStorerelatesubGetAPIRequest 门店和子门店关系查找 API请求
 // taobao.place.storerelatesub.get
 //
 // 门店和子门店关系查找
-type TaobaoplacestorerelatesubgetAPIRequest struct {
+type TaobaoPlaceStorerelatesubGetAPIRequest struct {
 	model.Params
 	// 查询语句
 	_query string
@@ -22,78 +22,78 @@ type TaobaoplacestorerelatesubgetAPIRequest struct {
 	_pageSize int64
 }
 
-// NewTaobaoplacestorerelatesubgetRequest 初始化TaobaoplacestorerelatesubgetAPIRequest对象
-func NewTaobaoplacestorerelatesubgetRequest() *TaobaoplacestorerelatesubgetAPIRequest {
-	return &TaobaoplacestorerelatesubgetAPIRequest{
+// NewTaobaoPlaceStorerelatesubGetRequest 初始化TaobaoPlaceStorerelatesubGetAPIRequest对象
+func NewTaobaoPlaceStorerelatesubGetRequest() *TaobaoPlaceStorerelatesubGetAPIRequest {
+	return &TaobaoPlaceStorerelatesubGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoplacestorerelatesubgetAPIRequest) GetApiMethodName() string {
+func (r TaobaoPlaceStorerelatesubGetAPIRequest) GetApiMethodName() string {
 	return "taobao.place.storerelatesub.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoplacestorerelatesubgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoPlaceStorerelatesubGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoplacestorerelatesubgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoPlaceStorerelatesubGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQuery is Query Setter
 // 查询语句
-func (r *TaobaoplacestorerelatesubgetAPIRequest) SetQuery(_query string) error {
+func (r *TaobaoPlaceStorerelatesubGetAPIRequest) SetQuery(_query string) error {
 	r._query = _query
 	r.Set("query", _query)
 	return nil
 }
 
 // GetQuery Query Getter
-func (r TaobaoplacestorerelatesubgetAPIRequest) GetQuery() string {
+func (r TaobaoPlaceStorerelatesubGetAPIRequest) GetQuery() string {
 	return r._query
 }
 
 // SetStoreId is StoreId Setter
 // 门店Id
-func (r *TaobaoplacestorerelatesubgetAPIRequest) SetStoreId(_storeId int64) error {
+func (r *TaobaoPlaceStorerelatesubGetAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
 	r.Set("store_id", _storeId)
 	return nil
 }
 
 // GetStoreId StoreId Getter
-func (r TaobaoplacestorerelatesubgetAPIRequest) GetStoreId() int64 {
+func (r TaobaoPlaceStorerelatesubGetAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
 // SetPageNo is PageNo Setter
 // 第几页
-func (r *TaobaoplacestorerelatesubgetAPIRequest) SetPageNo(_pageNo int64) error {
+func (r *TaobaoPlaceStorerelatesubGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
 	r.Set("page_no", _pageNo)
 	return nil
 }
 
 // GetPageNo PageNo Getter
-func (r TaobaoplacestorerelatesubgetAPIRequest) GetPageNo() int64 {
+func (r TaobaoPlaceStorerelatesubGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
 // SetPageSize is PageSize Setter
 // 页大小
-func (r *TaobaoplacestorerelatesubgetAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoPlaceStorerelatesubGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r TaobaoplacestorerelatesubgetAPIRequest) GetPageSize() int64 {
+func (r TaobaoPlaceStorerelatesubGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

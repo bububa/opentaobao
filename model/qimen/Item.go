@@ -3,7 +3,7 @@ package qimen
 // Item 结构体
 type Item struct {
 	// test
-	Batchs []TaobaoqimencombineitemsynchronizeBatch `json:"batchs,omitempty" xml:"batchs>taobaoqimencombineitemsynchronize_batch,omitempty"`
+	Batchs []TaobaoQimenCombineitemSynchronizeBatch `json:"batchs,omitempty" xml:"batchs>taobao_qimen_combineitem_synchronize_batch,omitempty"`
 	// 商品编码
 	ItemCode string `json:"itemCode,omitempty" xml:"itemCode,omitempty"`
 	// 后端商品编码

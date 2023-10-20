@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaservicecenterfulfiltaskqueryAPIResponse 核销单查询 API返回值
+// AlibabaServicecenterFulfiltaskQueryAPIResponse 核销单查询 API返回值
 // alibaba.servicecenter.fulfiltask.query
 //
 // 当系统生成核销单之后，需要派单到服务商，服务商根据核销里的服务信息和用户信息，给消费者提供服务
-type AlibabaservicecenterfulfiltaskqueryAPIResponse struct {
+type AlibabaServicecenterFulfiltaskQueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaservicecenterfulfiltaskqueryAPIResponseModel
+	AlibabaServicecenterFulfiltaskQueryAPIResponseModel
 }
 
-// AlibabaservicecenterfulfiltaskqueryAPIResponseModel is 核销单查询 成功返回结果
-type AlibabaservicecenterfulfiltaskqueryAPIResponseModel struct {
+// AlibabaServicecenterFulfiltaskQueryAPIResponseModel is 核销单查询 成功返回结果
+type AlibabaServicecenterFulfiltaskQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_servicecenter_fulfiltask_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package tmallservice
 
-// AlibabasscsupplyplatformserviceinventoryqueryResult 结构体
-type AlibabasscsupplyplatformserviceinventoryqueryResult struct {
+// AlibabaSscSupplyplatformServiceInventoryQueryResult 结构体
+type AlibabaSscSupplyplatformServiceInventoryQueryResult struct {
 	// json字符串。key是时间片，格式为yyyy-MM-dd或yyyy-MM-dd HH:mm-HH:mm，value是当前库存值
 	Value string `json:"value,omitempty" xml:"value,omitempty"`
 	// 错误码

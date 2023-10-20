@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthbcfuturestockoutboundAPIResponse 供应商期货出库 API返回值
+// AlibabaAlihealthBcFutureStockOutboundAPIResponse 供应商期货出库 API返回值
 // alibaba.alihealth.bc.future.stock.outbound
 //
 // 供应商期货出库
-type AlibabaalihealthbcfuturestockoutboundAPIResponse struct {
+type AlibabaAlihealthBcFutureStockOutboundAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthbcfuturestockoutboundAPIResponseModel
+	AlibabaAlihealthBcFutureStockOutboundAPIResponseModel
 }
 
-// AlibabaalihealthbcfuturestockoutboundAPIResponseModel is 供应商期货出库 成功返回结果
-type AlibabaalihealthbcfuturestockoutboundAPIResponseModel struct {
+// AlibabaAlihealthBcFutureStockOutboundAPIResponseModel is 供应商期货出库 成功返回结果
+type AlibabaAlihealthBcFutureStockOutboundAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_bc_future_stock_outbound_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

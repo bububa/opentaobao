@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mos"
 )
 
-// Alibabamjmemberbindmember 绑定会员
+// AlibabaMjMemberBindmember 绑定会员
 // alibaba.mj.member.bindmember
 //
 // 用于绑定喵街数字化会员
-func Alibabamjmemberbindmember(clt *core.SDKClient, req *mos.AlibabamjmemberbindmemberAPIRequest, session string) (*mos.AlibabamjmemberbindmemberAPIResponse, error) {
-	var resp mos.AlibabamjmemberbindmemberAPIResponse
+func AlibabaMjMemberBindmember(clt *core.SDKClient, req *mos.AlibabaMjMemberBindmemberAPIRequest, session string) (*mos.AlibabaMjMemberBindmemberAPIResponse, error) {
+	var resp mos.AlibabaMjMemberBindmemberAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

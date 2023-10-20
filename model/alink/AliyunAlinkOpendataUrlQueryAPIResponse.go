@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliyunalinkopendataurlqueryAPIResponse 开放数据授权访问URL查询 API返回值
+// AliyunAlinkOpendataUrlQueryAPIResponse 开放数据授权访问URL查询 API返回值
 // aliyun.alink.opendata.url.query
 //
 // 厂商数据授权访问URL查询
-type AliyunalinkopendataurlqueryAPIResponse struct {
+type AliyunAlinkOpendataUrlQueryAPIResponse struct {
 	model.CommonResponse
-	AliyunalinkopendataurlqueryAPIResponseModel
+	AliyunAlinkOpendataUrlQueryAPIResponseModel
 }
 
-// AliyunalinkopendataurlqueryAPIResponseModel is 开放数据授权访问URL查询 成功返回结果
-type AliyunalinkopendataurlqueryAPIResponseModel struct {
+// AliyunAlinkOpendataUrlQueryAPIResponseModel is 开放数据授权访问URL查询 成功返回结果
+type AliyunAlinkOpendataUrlQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliyun_alink_opendata_url_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

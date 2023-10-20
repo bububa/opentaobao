@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitriphotelhstdfpoilocationgetAPIResponse 根据平台城市id分页查询poi location API返回值
+// AlitripHotelHstdfPoilocationGetAPIResponse 根据平台城市id分页查询poi location API返回值
 // alitrip.hotel.hstdf.poilocation.get
 //
 // 根据平台城市id分页查询poi location
-type AlitriphotelhstdfpoilocationgetAPIResponse struct {
+type AlitripHotelHstdfPoilocationGetAPIResponse struct {
 	model.CommonResponse
-	AlitriphotelhstdfpoilocationgetAPIResponseModel
+	AlitripHotelHstdfPoilocationGetAPIResponseModel
 }
 
-// AlitriphotelhstdfpoilocationgetAPIResponseModel is 根据平台城市id分页查询poi location 成功返回结果
-type AlitriphotelhstdfpoilocationgetAPIResponseModel struct {
+// AlitripHotelHstdfPoilocationGetAPIResponseModel is 根据平台城市id分页查询poi location 成功返回结果
+type AlitripHotelHstdfPoilocationGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_hotel_hstdf_poilocation_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

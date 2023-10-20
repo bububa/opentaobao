@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoomniorderstorerefusedAPIResponse Pos端门店拒单 API返回值
+// TaobaoOmniorderStoreRefusedAPIResponse Pos端门店拒单 API返回值
 // taobao.omniorder.store.refused
 //
 // ISV Pos端门店拒单，通知星盘
-type TaobaoomniorderstorerefusedAPIResponse struct {
+type TaobaoOmniorderStoreRefusedAPIResponse struct {
 	model.CommonResponse
-	TaobaoomniorderstorerefusedAPIResponseModel
+	TaobaoOmniorderStoreRefusedAPIResponseModel
 }
 
-// TaobaoomniorderstorerefusedAPIResponseModel is Pos端门店拒单 成功返回结果
-type TaobaoomniorderstorerefusedAPIResponseModel struct {
+// TaobaoOmniorderStoreRefusedAPIResponseModel is Pos端门店拒单 成功返回结果
+type TaobaoOmniorderStoreRefusedAPIResponseModel struct {
 	XMLName xml.Name `xml:"omniorder_store_refused_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliyunindustrytttmitemssyncAPIResponse 天天特卖商品信息同步 API返回值
+// AliyunIndustryTttmItemsSyncAPIResponse 天天特卖商品信息同步 API返回值
 // aliyun.industry.tttm.items.sync
 //
 // 天天特卖商品信息同步
-type AliyunindustrytttmitemssyncAPIResponse struct {
+type AliyunIndustryTttmItemsSyncAPIResponse struct {
 	model.CommonResponse
-	AliyunindustrytttmitemssyncAPIResponseModel
+	AliyunIndustryTttmItemsSyncAPIResponseModel
 }
 
-// AliyunindustrytttmitemssyncAPIResponseModel is 天天特卖商品信息同步 成功返回结果
-type AliyunindustrytttmitemssyncAPIResponseModel struct {
+// AliyunIndustryTttmItemsSyncAPIResponseModel is 天天特卖商品信息同步 成功返回结果
+type AliyunIndustryTttmItemsSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliyun_industry_tttm_items_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

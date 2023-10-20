@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/car"
 )
 
-// Taobaoalitripdomesticrentcarstatusupdate 航旅国内租车订单状态更新
+// TaobaoAlitripDomesticRentCarStatusUpdate 航旅国内租车订单状态更新
 // taobao.alitrip.domestic.rent.car.status.update
 //
 // 航旅国内租车订单状态更新
-func Taobaoalitripdomesticrentcarstatusupdate(clt *core.SDKClient, req *car.TaobaoalitripdomesticrentcarstatusupdateAPIRequest, session string) (*car.TaobaoalitripdomesticrentcarstatusupdateAPIResponse, error) {
-	var resp car.TaobaoalitripdomesticrentcarstatusupdateAPIResponse
+func TaobaoAlitripDomesticRentCarStatusUpdate(clt *core.SDKClient, req *car.TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest, session string) (*car.TaobaoAlitripDomesticRentCarStatusUpdateAPIResponse, error) {
+	var resp car.TaobaoAlitripDomesticRentCarStatusUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

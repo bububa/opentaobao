@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaauthcertgetAPIRequest 获取证书数据 API请求
+// AlibabaAuthCertGetAPIRequest 获取证书数据 API请求
 // alibaba.auth.cert.get
 //
 // 获取证书数据
-type AlibabaauthcertgetAPIRequest struct {
+type AlibabaAuthCertGetAPIRequest struct {
 	model.Params
 	// 认证商
 	_provider string
@@ -18,52 +18,52 @@ type AlibabaauthcertgetAPIRequest struct {
 	_receiveInfo string
 }
 
-// NewAlibabaauthcertgetRequest 初始化AlibabaauthcertgetAPIRequest对象
-func NewAlibabaauthcertgetRequest() *AlibabaauthcertgetAPIRequest {
-	return &AlibabaauthcertgetAPIRequest{
+// NewAlibabaAuthCertGetRequest 初始化AlibabaAuthCertGetAPIRequest对象
+func NewAlibabaAuthCertGetRequest() *AlibabaAuthCertGetAPIRequest {
+	return &AlibabaAuthCertGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaauthcertgetAPIRequest) GetApiMethodName() string {
+func (r AlibabaAuthCertGetAPIRequest) GetApiMethodName() string {
 	return "alibaba.auth.cert.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaauthcertgetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAuthCertGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaauthcertgetAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAuthCertGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetProvider is Provider Setter
 // 认证商
-func (r *AlibabaauthcertgetAPIRequest) SetProvider(_provider string) error {
+func (r *AlibabaAuthCertGetAPIRequest) SetProvider(_provider string) error {
 	r._provider = _provider
 	r.Set("provider", _provider)
 	return nil
 }
 
 // GetProvider Provider Getter
-func (r AlibabaauthcertgetAPIRequest) GetProvider() string {
+func (r AlibabaAuthCertGetAPIRequest) GetProvider() string {
 	return r._provider
 }
 
 // SetReceiveInfo is ReceiveInfo Setter
 // 证书数据
-func (r *AlibabaauthcertgetAPIRequest) SetReceiveInfo(_receiveInfo string) error {
+func (r *AlibabaAuthCertGetAPIRequest) SetReceiveInfo(_receiveInfo string) error {
 	r._receiveInfo = _receiveInfo
 	r.Set("receive_info", _receiveInfo)
 	return nil
 }
 
 // GetReceiveInfo ReceiveInfo Getter
-func (r AlibabaauthcertgetAPIRequest) GetReceiveInfo() string {
+func (r AlibabaAuthCertGetAPIRequest) GetReceiveInfo() string {
 	return r._receiveInfo
 }

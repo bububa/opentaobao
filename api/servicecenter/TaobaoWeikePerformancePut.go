@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
 
-// Taobaoweikeperformanceput 提交客服绩效接口
+// TaobaoWeikePerformancePut 提交客服绩效接口
 // taobao.weike.performance.put
 //
 // 提交客服绩效接口
-func Taobaoweikeperformanceput(clt *core.SDKClient, req *servicecenter.TaobaoweikeperformanceputAPIRequest, session string) (*servicecenter.TaobaoweikeperformanceputAPIResponse, error) {
-	var resp servicecenter.TaobaoweikeperformanceputAPIResponse
+func TaobaoWeikePerformancePut(clt *core.SDKClient, req *servicecenter.TaobaoWeikePerformancePutAPIRequest, session string) (*servicecenter.TaobaoWeikePerformancePutAPIResponse, error) {
+	var resp servicecenter.TaobaoWeikePerformancePutAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

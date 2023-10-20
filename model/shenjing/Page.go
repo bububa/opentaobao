@@ -3,7 +3,7 @@ package shenjing
 // Page 结构体
 type Page struct {
 	// 活动列表
-	Items []AlibabashenjingcoreactivitygetappshowlistT `json:"items,omitempty" xml:"items>alibabashenjingcoreactivitygetappshowlist_t,omitempty"`
+	Items []AlibabaShenjingCoreActivityGetappshowlistT `json:"items,omitempty" xml:"items>alibaba_shenjing_core_activity_getappshowlist_t,omitempty"`
 	// 分页总数
 	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 	// 一页行数

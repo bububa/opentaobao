@@ -1,7 +1,7 @@
 package taotv
 
-// TaobaotaotvvideoplaylistgetModel 结构体
-type TaobaotaotvvideoplaylistgetModel struct {
+// TaobaoTaotvVideoPlaylistGetModel 结构体
+type TaobaoTaotvVideoPlaylistGetModel struct {
 	// 视频图片
 	PicUrl string `json:"pic_url,omitempty" xml:"pic_url,omitempty"`
 	// 视频ID

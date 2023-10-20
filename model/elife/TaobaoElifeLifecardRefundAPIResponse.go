@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoelifelifecardrefundAPIResponse 品牌惠卡券冲正退还 API返回值
+// TaobaoElifeLifecardRefundAPIResponse 品牌惠卡券冲正退还 API返回值
 // taobao.elife.lifecard.refund
 //
 // 淘宝生活汇消费卡虚拟卡，线下冲正退货接口
-type TaobaoelifelifecardrefundAPIResponse struct {
+type TaobaoElifeLifecardRefundAPIResponse struct {
 	model.CommonResponse
-	TaobaoelifelifecardrefundAPIResponseModel
+	TaobaoElifeLifecardRefundAPIResponseModel
 }
 
-// TaobaoelifelifecardrefundAPIResponseModel is 品牌惠卡券冲正退还 成功返回结果
-type TaobaoelifelifecardrefundAPIResponseModel struct {
+// TaobaoElifeLifecardRefundAPIResponseModel is 品牌惠卡券冲正退还 成功返回结果
+type TaobaoElifeLifecardRefundAPIResponseModel struct {
 	XMLName xml.Name `xml:"elife_lifecard_refund_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

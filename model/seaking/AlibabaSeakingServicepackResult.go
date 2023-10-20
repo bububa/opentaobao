@@ -1,7 +1,7 @@
 package seaking
 
-// AlibabaseakingservicepackResult 结构体
-type AlibabaseakingservicepackResult struct {
+// AlibabaSeakingServicepackResult 结构体
+type AlibabaSeakingServicepackResult struct {
 	// 到期时间
 	ValidateTo string `json:"validate_to,omitempty" xml:"validate_to,omitempty"`
 	// 权限包名称

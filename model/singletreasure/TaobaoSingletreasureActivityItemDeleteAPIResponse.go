@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosingletreasureactivityitemdeleteAPIResponse 删除单品优惠接口 API返回值
+// TaobaoSingletreasureActivityItemDeleteAPIResponse 删除单品优惠接口 API返回值
 // taobao.singletreasure.activity.item.delete
 //
 // 删除单品优惠接口
-type TaobaosingletreasureactivityitemdeleteAPIResponse struct {
+type TaobaoSingletreasureActivityItemDeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaosingletreasureactivityitemdeleteAPIResponseModel
+	TaobaoSingletreasureActivityItemDeleteAPIResponseModel
 }
 
-// TaobaosingletreasureactivityitemdeleteAPIResponseModel is 删除单品优惠接口 成功返回结果
-type TaobaosingletreasureactivityitemdeleteAPIResponseModel struct {
+// TaobaoSingletreasureActivityItemDeleteAPIResponseModel is 删除单品优惠接口 成功返回结果
+type TaobaoSingletreasureActivityItemDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"singletreasure_activity_item_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *TaobaosingletreasureactivityitemdeleteResultDto `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TaobaoSingletreasureActivityItemDeleteResultDto `json:"result,omitempty" xml:"result,omitempty"`
 }

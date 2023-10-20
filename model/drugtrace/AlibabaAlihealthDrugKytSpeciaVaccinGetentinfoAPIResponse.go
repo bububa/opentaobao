@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthdrugkytspeciavaccingetentinfoAPIResponse 通过企业名得到唯一标识(ref_ent_id)及企业ID(ent_id) API返回值
+// AlibabaAlihealthDrugKytSpeciaVaccinGetentinfoAPIResponse 通过企业名得到唯一标识(ref_ent_id)及企业ID(ent_id) API返回值
 // alibaba.alihealth.drug.kyt.specia.vaccin.getentinfo
 //
 // 根据企业名称查询企业唯一标识（ref_ent_id）及企业ID(ent_id)
-type AlibabaalihealthdrugkytspeciavaccingetentinfoAPIResponse struct {
+type AlibabaAlihealthDrugKytSpeciaVaccinGetentinfoAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthdrugkytspeciavaccingetentinfoAPIResponseModel
+	AlibabaAlihealthDrugKytSpeciaVaccinGetentinfoAPIResponseModel
 }
 
-// AlibabaalihealthdrugkytspeciavaccingetentinfoAPIResponseModel is 通过企业名得到唯一标识(ref_ent_id)及企业ID(ent_id) 成功返回结果
-type AlibabaalihealthdrugkytspeciavaccingetentinfoAPIResponseModel struct {
+// AlibabaAlihealthDrugKytSpeciaVaccinGetentinfoAPIResponseModel is 通过企业名得到唯一标识(ref_ent_id)及企业ID(ent_id) 成功返回结果
+type AlibabaAlihealthDrugKytSpeciaVaccinGetentinfoAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_kyt_specia_vaccin_getentinfo_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 监控宝推送网站监控信息，返回结果
-	Result *AlibabaalihealthdrugkytspeciavaccingetentinfoResultModel `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaAlihealthDrugKytSpeciaVaccinGetentinfoResultModel `json:"result,omitempty" xml:"result,omitempty"`
 }

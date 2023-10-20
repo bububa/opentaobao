@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdkitemcurrentpricequeryModel 结构体
-type AlibabawdkitemcurrentpricequeryModel struct {
+// AlibabaWdkItemCurrentpriceQueryModel 结构体
+type AlibabaWdkItemCurrentpriceQueryModel struct {
 	// 单品促销，finalPrice对应的促销活动
 	ItemPromotionList []PromotionInfoDto `json:"item_promotion_list,omitempty" xml:"item_promotion_list>promotion_info_dto,omitempty"`
 	// 商品池促销

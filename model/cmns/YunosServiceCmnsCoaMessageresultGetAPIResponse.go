@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosservicecmnscoamessageresultgetAPIResponse CMNS消息发送到达查询 API返回值
+// YunosServiceCmnsCoaMessageresultGetAPIResponse CMNS消息发送到达查询 API返回值
 // yunos.service.cmns.coa.messageresult.get
 //
 // CMNS消息发送到达查询,根据消息ID查询，仅能查询该appKey所发送的消息
-type YunosservicecmnscoamessageresultgetAPIResponse struct {
+type YunosServiceCmnsCoaMessageresultGetAPIResponse struct {
 	model.CommonResponse
-	YunosservicecmnscoamessageresultgetAPIResponseModel
+	YunosServiceCmnsCoaMessageresultGetAPIResponseModel
 }
 
-// YunosservicecmnscoamessageresultgetAPIResponseModel is CMNS消息发送到达查询 成功返回结果
-type YunosservicecmnscoamessageresultgetAPIResponseModel struct {
+// YunosServiceCmnsCoaMessageresultGetAPIResponseModel is CMNS消息发送到达查询 成功返回结果
+type YunosServiceCmnsCoaMessageresultGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_service_cmns_coa_messageresult_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

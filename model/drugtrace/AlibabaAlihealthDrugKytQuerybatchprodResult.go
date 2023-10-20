@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaalihealthdrugkytquerybatchprodResult 结构体
-type AlibabaalihealthdrugkytquerybatchprodResult struct {
+// AlibabaAlihealthDrugKytQuerybatchprodResult 结构体
+type AlibabaAlihealthDrugKytQuerybatchprodResult struct {
 	// 批次产品信息DTO
 	Models []BatchProductInfoDto `json:"models,omitempty" xml:"models>batch_product_info_dto,omitempty"`
 	// msgInfo

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthmedicalbasehosstatussyncAPIRequest 挂号医院上下线 API请求
+// AlibabaAlihealthMedicalbaseHosStatusSyncAPIRequest 挂号医院上下线 API请求
 // alibaba.alihealth.medicalbase.hos.status.sync
 //
 // 挂号医院上下线
-type AlibabaalihealthmedicalbasehosstatussyncAPIRequest struct {
+type AlibabaAlihealthMedicalbaseHosStatusSyncAPIRequest struct {
 	model.Params
 	// 服务商医院编码
 	_isvHosCode string
@@ -20,65 +20,65 @@ type AlibabaalihealthmedicalbasehosstatussyncAPIRequest struct {
 	_status string
 }
 
-// NewAlibabaalihealthmedicalbasehosstatussyncRequest 初始化AlibabaalihealthmedicalbasehosstatussyncAPIRequest对象
-func NewAlibabaalihealthmedicalbasehosstatussyncRequest() *AlibabaalihealthmedicalbasehosstatussyncAPIRequest {
-	return &AlibabaalihealthmedicalbasehosstatussyncAPIRequest{
+// NewAlibabaAlihealthMedicalbaseHosStatusSyncRequest 初始化AlibabaAlihealthMedicalbaseHosStatusSyncAPIRequest对象
+func NewAlibabaAlihealthMedicalbaseHosStatusSyncRequest() *AlibabaAlihealthMedicalbaseHosStatusSyncAPIRequest {
+	return &AlibabaAlihealthMedicalbaseHosStatusSyncAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihealthmedicalbasehosstatussyncAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthMedicalbaseHosStatusSyncAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.medicalbase.hos.status.sync"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihealthmedicalbasehosstatussyncAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihealthMedicalbaseHosStatusSyncAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihealthmedicalbasehosstatussyncAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihealthMedicalbaseHosStatusSyncAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetIsvHosCode is IsvHosCode Setter
 // 服务商医院编码
-func (r *AlibabaalihealthmedicalbasehosstatussyncAPIRequest) SetIsvHosCode(_isvHosCode string) error {
+func (r *AlibabaAlihealthMedicalbaseHosStatusSyncAPIRequest) SetIsvHosCode(_isvHosCode string) error {
 	r._isvHosCode = _isvHosCode
 	r.Set("isv_hos_code", _isvHosCode)
 	return nil
 }
 
 // GetIsvHosCode IsvHosCode Getter
-func (r AlibabaalihealthmedicalbasehosstatussyncAPIRequest) GetIsvHosCode() string {
+func (r AlibabaAlihealthMedicalbaseHosStatusSyncAPIRequest) GetIsvHosCode() string {
 	return r._isvHosCode
 }
 
 // SetFunctionCode is FunctionCode Setter
 // 服务项可空  默认 100001 预约挂号服务项
-func (r *AlibabaalihealthmedicalbasehosstatussyncAPIRequest) SetFunctionCode(_functionCode string) error {
+func (r *AlibabaAlihealthMedicalbaseHosStatusSyncAPIRequest) SetFunctionCode(_functionCode string) error {
 	r._functionCode = _functionCode
 	r.Set("function_code", _functionCode)
 	return nil
 }
 
 // GetFunctionCode FunctionCode Getter
-func (r AlibabaalihealthmedicalbasehosstatussyncAPIRequest) GetFunctionCode() string {
+func (r AlibabaAlihealthMedicalbaseHosStatusSyncAPIRequest) GetFunctionCode() string {
 	return r._functionCode
 }
 
 // SetStatus is Status Setter
 // normal 正常  maintaining 维护中
-func (r *AlibabaalihealthmedicalbasehosstatussyncAPIRequest) SetStatus(_status string) error {
+func (r *AlibabaAlihealthMedicalbaseHosStatusSyncAPIRequest) SetStatus(_status string) error {
 	r._status = _status
 	r.Set("status", _status)
 	return nil
 }
 
 // GetStatus Status Getter
-func (r AlibabaalihealthmedicalbasehosstatussyncAPIRequest) GetStatus() string {
+func (r AlibabaAlihealthMedicalbaseHosStatusSyncAPIRequest) GetStatus() string {
 	return r._status
 }

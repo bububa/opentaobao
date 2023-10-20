@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimenreceiverinfoqueryResponse 结构体
-type TaobaoqimenreceiverinfoqueryResponse struct {
+// TaobaoQimenReceiverinfoQueryResponse 结构体
+type TaobaoQimenReceiverinfoQueryResponse struct {
 	// success|failure，必填
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 	// 响应码

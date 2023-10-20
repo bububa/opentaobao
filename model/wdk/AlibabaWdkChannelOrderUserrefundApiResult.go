@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdkchannelorderuserrefundApiResult 结构体
-type AlibabawdkchannelorderuserrefundApiResult struct {
+// AlibabaWdkChannelOrderUserrefundApiResult 结构体
+type AlibabaWdkChannelOrderUserrefundApiResult struct {
 	// 错误信息
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 是否成功

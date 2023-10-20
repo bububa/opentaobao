@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabahmmarketingitembuygiftqueryitemsData 结构体
-type AlibabahmmarketingitembuygiftqueryitemsData struct {
+// AlibabaHmMarketingItembuygiftQueryitemsData 结构体
+type AlibabaHmMarketingItembuygiftQueryitemsData struct {
 	// 赠品的名称
 	GiftSkuName string `json:"gift_sku_name,omitempty" xml:"gift_sku_name,omitempty"`
 	// 赠品的skuCode，如果和主商品的skuCode相同，则为买A赠A；如果不同，则为买A赠B

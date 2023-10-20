@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabacharitycharitytimeuserqueryusercharityaccountAPIRequest 查询用户公益账户 API请求
+// AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest 查询用户公益账户 API请求
 // alibaba.charity.charitytime.user.queryusercharityaccount
 //
 // 查询用户公益账户
-type AlibabacharitycharitytimeuserqueryusercharityaccountAPIRequest struct {
+type AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest struct {
 	model.Params
 	// 请求对象
 	_queryCharityTimeTopApiHsfRequest *QueryCharityTimeTopApiHsfRequest
 }
 
-// NewAlibabacharitycharitytimeuserqueryusercharityaccountRequest 初始化AlibabacharitycharitytimeuserqueryusercharityaccountAPIRequest对象
-func NewAlibabacharitycharitytimeuserqueryusercharityaccountRequest() *AlibabacharitycharitytimeuserqueryusercharityaccountAPIRequest {
-	return &AlibabacharitycharitytimeuserqueryusercharityaccountAPIRequest{
+// NewAlibabaCharityCharitytimeUserQueryusercharityaccountRequest 初始化AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest对象
+func NewAlibabaCharityCharitytimeUserQueryusercharityaccountRequest() *AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest {
+	return &AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabacharitycharitytimeuserqueryusercharityaccountAPIRequest) GetApiMethodName() string {
+func (r AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest) GetApiMethodName() string {
 	return "alibaba.charity.charitytime.user.queryusercharityaccount"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabacharitycharitytimeuserqueryusercharityaccountAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabacharitycharitytimeuserqueryusercharityaccountAPIRequest) GetRawParams() model.Params {
+func (r AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQueryCharityTimeTopApiHsfRequest is QueryCharityTimeTopApiHsfRequest Setter
 // 请求对象
-func (r *AlibabacharitycharitytimeuserqueryusercharityaccountAPIRequest) SetQueryCharityTimeTopApiHsfRequest(_queryCharityTimeTopApiHsfRequest *QueryCharityTimeTopApiHsfRequest) error {
+func (r *AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest) SetQueryCharityTimeTopApiHsfRequest(_queryCharityTimeTopApiHsfRequest *QueryCharityTimeTopApiHsfRequest) error {
 	r._queryCharityTimeTopApiHsfRequest = _queryCharityTimeTopApiHsfRequest
 	r.Set("query_charity_time_top_api_hsf_request", _queryCharityTimeTopApiHsfRequest)
 	return nil
 }
 
 // GetQueryCharityTimeTopApiHsfRequest QueryCharityTimeTopApiHsfRequest Getter
-func (r AlibabacharitycharitytimeuserqueryusercharityaccountAPIRequest) GetQueryCharityTimeTopApiHsfRequest() *QueryCharityTimeTopApiHsfRequest {
+func (r AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest) GetQueryCharityTimeTopApiHsfRequest() *QueryCharityTimeTopApiHsfRequest {
 	return r._queryCharityTimeTopApiHsfRequest
 }

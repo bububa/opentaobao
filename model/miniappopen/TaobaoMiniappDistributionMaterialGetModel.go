@@ -1,7 +1,7 @@
 package miniappopen
 
-// TaobaominiappdistributionmaterialgetModel 结构体
-type TaobaominiappdistributionmaterialgetModel struct {
+// TaobaoMiniappDistributionMaterialGetModel 结构体
+type TaobaoMiniappDistributionMaterialGetModel struct {
 	// 素材名字
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 场景卡片对应的动态表单内容

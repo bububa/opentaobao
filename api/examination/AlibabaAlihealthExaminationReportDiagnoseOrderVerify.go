@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/examination"
 )
 
-// Alibabaalihealthexaminationreportdiagnoseorderverify 报告解读令牌校验
+// AlibabaAlihealthExaminationReportDiagnoseOrderVerify 报告解读令牌校验
 // alibaba.alihealth.examination.report.diagnose.order.verify
 //
 // 报告解读令牌校验
-func Alibabaalihealthexaminationreportdiagnoseorderverify(clt *core.SDKClient, req *examination.AlibabaalihealthexaminationreportdiagnoseorderverifyAPIRequest, session string) (*examination.AlibabaalihealthexaminationreportdiagnoseorderverifyAPIResponse, error) {
-	var resp examination.AlibabaalihealthexaminationreportdiagnoseorderverifyAPIResponse
+func AlibabaAlihealthExaminationReportDiagnoseOrderVerify(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIRequest, session string) (*examination.AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIResponse, error) {
+	var resp examination.AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

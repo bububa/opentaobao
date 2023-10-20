@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimentransferordercreateStruct 结构体
-type TaobaoqimentransferordercreateStruct struct {
+// TaobaoQimenTransferorderCreateStruct 结构体
+type TaobaoQimenTransferorderCreateStruct struct {
 	// 项目集
 	TransferItems []TransferItems `json:"transferItems,omitempty" xml:"transferItems>transfer_items,omitempty"`
 	// 外部ERP订单号,HZ1234,string(50),必填,
@@ -29,5 +29,5 @@ type TaobaoqimentransferordercreateStruct struct {
 	// 预计入库时间,0,string(50),,
 	ExpectInStoreTime string `json:"expectInStoreTime,omitempty" xml:"expectInStoreTime,omitempty"`
 	// 调拨单信息
-	TransferExecuteInfo *TaobaoqimentransferordercreateStruct `json:"transferExecuteInfo,omitempty" xml:"transferExecuteInfo,omitempty"`
+	TransferExecuteInfo *TaobaoQimenTransferorderCreateStruct `json:"transferExecuteInfo,omitempty" xml:"transferExecuteInfo,omitempty"`
 }

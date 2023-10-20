@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabadamaimevopenwithdrawticketAPIRequest 大麦换验平台-第三方对外开放-票单接口withdrawTicket API请求
+// AlibabaDamaiMevOpenWithdrawticketAPIRequest 大麦换验平台-第三方对外开放-票单接口withdrawTicket API请求
 // alibaba.damai.mev.open.withdrawticket
 //
 // 开放接口退票
-type AlibabadamaimevopenwithdrawticketAPIRequest struct {
+type AlibabaDamaiMevOpenWithdrawticketAPIRequest struct {
 	model.Params
 	// 入参ticketIdOpenParam
 	_ticketIdOpenParam *TicketIdOpenParam
 }
 
-// NewAlibabadamaimevopenwithdrawticketRequest 初始化AlibabadamaimevopenwithdrawticketAPIRequest对象
-func NewAlibabadamaimevopenwithdrawticketRequest() *AlibabadamaimevopenwithdrawticketAPIRequest {
-	return &AlibabadamaimevopenwithdrawticketAPIRequest{
+// NewAlibabaDamaiMevOpenWithdrawticketRequest 初始化AlibabaDamaiMevOpenWithdrawticketAPIRequest对象
+func NewAlibabaDamaiMevOpenWithdrawticketRequest() *AlibabaDamaiMevOpenWithdrawticketAPIRequest {
+	return &AlibabaDamaiMevOpenWithdrawticketAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabadamaimevopenwithdrawticketAPIRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMevOpenWithdrawticketAPIRequest) GetApiMethodName() string {
 	return "alibaba.damai.mev.open.withdrawticket"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabadamaimevopenwithdrawticketAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaDamaiMevOpenWithdrawticketAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabadamaimevopenwithdrawticketAPIRequest) GetRawParams() model.Params {
+func (r AlibabaDamaiMevOpenWithdrawticketAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTicketIdOpenParam is TicketIdOpenParam Setter
 // 入参ticketIdOpenParam
-func (r *AlibabadamaimevopenwithdrawticketAPIRequest) SetTicketIdOpenParam(_ticketIdOpenParam *TicketIdOpenParam) error {
+func (r *AlibabaDamaiMevOpenWithdrawticketAPIRequest) SetTicketIdOpenParam(_ticketIdOpenParam *TicketIdOpenParam) error {
 	r._ticketIdOpenParam = _ticketIdOpenParam
 	r.Set("ticket_id_open_param", _ticketIdOpenParam)
 	return nil
 }
 
 // GetTicketIdOpenParam TicketIdOpenParam Getter
-func (r AlibabadamaimevopenwithdrawticketAPIRequest) GetTicketIdOpenParam() *TicketIdOpenParam {
+func (r AlibabaDamaiMevOpenWithdrawticketAPIRequest) GetTicketIdOpenParam() *TicketIdOpenParam {
 	return r._ticketIdOpenParam
 }

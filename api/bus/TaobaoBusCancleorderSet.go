@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/bus"
 )
 
-// Taobaobuscancleorderset 取消订单
+// TaobaoBusCancleorderSet 取消订单
 // taobao.bus.cancleorder.set
 //
 // 取消订单
-func Taobaobuscancleorderset(clt *core.SDKClient, req *bus.TaobaobuscancleordersetAPIRequest, session string) (*bus.TaobaobuscancleordersetAPIResponse, error) {
-	var resp bus.TaobaobuscancleordersetAPIResponse
+func TaobaoBusCancleorderSet(clt *core.SDKClient, req *bus.TaobaoBusCancleorderSetAPIRequest, session string) (*bus.TaobaoBusCancleorderSetAPIResponse, error) {
+	var resp bus.TaobaoBusCancleorderSetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

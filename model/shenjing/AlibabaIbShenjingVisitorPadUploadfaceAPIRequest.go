@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaibshenjingvisitorpaduploadfaceAPIRequest 访客PAD上传人脸 API请求
+// AlibabaIbShenjingVisitorPadUploadfaceAPIRequest 访客PAD上传人脸 API请求
 // alibaba.ib.shenjing.visitor.pad.uploadface
 //
 // 访客PAD端上传人脸。
-type AlibabaibshenjingvisitorpaduploadfaceAPIRequest struct {
+type AlibabaIbShenjingVisitorPadUploadfaceAPIRequest struct {
 	model.Params
 	// 访客ID
 	_id string
@@ -18,52 +18,52 @@ type AlibabaibshenjingvisitorpaduploadfaceAPIRequest struct {
 	_image string
 }
 
-// NewAlibabaibshenjingvisitorpaduploadfaceRequest 初始化AlibabaibshenjingvisitorpaduploadfaceAPIRequest对象
-func NewAlibabaibshenjingvisitorpaduploadfaceRequest() *AlibabaibshenjingvisitorpaduploadfaceAPIRequest {
-	return &AlibabaibshenjingvisitorpaduploadfaceAPIRequest{
+// NewAlibabaIbShenjingVisitorPadUploadfaceRequest 初始化AlibabaIbShenjingVisitorPadUploadfaceAPIRequest对象
+func NewAlibabaIbShenjingVisitorPadUploadfaceRequest() *AlibabaIbShenjingVisitorPadUploadfaceAPIRequest {
+	return &AlibabaIbShenjingVisitorPadUploadfaceAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaibshenjingvisitorpaduploadfaceAPIRequest) GetApiMethodName() string {
+func (r AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) GetApiMethodName() string {
 	return "alibaba.ib.shenjing.visitor.pad.uploadface"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaibshenjingvisitorpaduploadfaceAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaibshenjingvisitorpaduploadfaceAPIRequest) GetRawParams() model.Params {
+func (r AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetId is Id Setter
 // 访客ID
-func (r *AlibabaibshenjingvisitorpaduploadfaceAPIRequest) SetId(_id string) error {
+func (r *AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) SetId(_id string) error {
 	r._id = _id
 	r.Set("id", _id)
 	return nil
 }
 
 // GetId Id Getter
-func (r AlibabaibshenjingvisitorpaduploadfaceAPIRequest) GetId() string {
+func (r AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) GetId() string {
 	return r._id
 }
 
 // SetImage is Image Setter
 // 图片URL
-func (r *AlibabaibshenjingvisitorpaduploadfaceAPIRequest) SetImage(_image string) error {
+func (r *AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) SetImage(_image string) error {
 	r._image = _image
 	r.Set("image", _image)
 	return nil
 }
 
 // GetImage Image Getter
-func (r AlibabaibshenjingvisitorpaduploadfaceAPIRequest) GetImage() string {
+func (r AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) GetImage() string {
 	return r._image
 }

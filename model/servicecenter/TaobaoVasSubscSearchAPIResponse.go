@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaovassubscsearchAPIResponse 订购记录导出 API返回值
+// TaobaoVasSubscSearchAPIResponse 订购记录导出 API返回值
 // taobao.vas.subsc.search
 //
 // 用于ISV查询自己名下的应用及收费项目的订购记录
-type TaobaovassubscsearchAPIResponse struct {
+type TaobaoVasSubscSearchAPIResponse struct {
 	model.CommonResponse
-	TaobaovassubscsearchAPIResponseModel
+	TaobaoVasSubscSearchAPIResponseModel
 }
 
-// TaobaovassubscsearchAPIResponseModel is 订购记录导出 成功返回结果
-type TaobaovassubscsearchAPIResponseModel struct {
+// TaobaoVasSubscSearchAPIResponseModel is 订购记录导出 成功返回结果
+type TaobaoVasSubscSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"vas_subsc_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

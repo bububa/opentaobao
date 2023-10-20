@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlbwmsreturnbillgetAPIResponse 获取销退收货信息 API返回值
+// TaobaoWlbWmsReturnBillGetAPIResponse 获取销退收货信息 API返回值
 // taobao.wlb.wms.return.bill.get
 //
 // 通过订单号获取单个销退单收货信息。
-type TaobaowlbwmsreturnbillgetAPIResponse struct {
+type TaobaoWlbWmsReturnBillGetAPIResponse struct {
 	model.CommonResponse
-	TaobaowlbwmsreturnbillgetAPIResponseModel
+	TaobaoWlbWmsReturnBillGetAPIResponseModel
 }
 
-// TaobaowlbwmsreturnbillgetAPIResponseModel is 获取销退收货信息 成功返回结果
-type TaobaowlbwmsreturnbillgetAPIResponseModel struct {
+// TaobaoWlbWmsReturnBillGetAPIResponseModel is 获取销退收货信息 成功返回结果
+type TaobaoWlbWmsReturnBillGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_wms_return_bill_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabafundplatformcardtemplatenewAPIResponse 新增实体卡模板 API返回值
+// AlibabaFundplatformCardTemplateNewAPIResponse 新增实体卡模板 API返回值
 // alibaba.fundplatform.card.template.new
 //
 // 该接口由制卡商实现，当新增一个实体卡模板的时候，需要调用该接口，通知制卡商同步新增卡模板信息。
-type AlibabafundplatformcardtemplatenewAPIResponse struct {
+type AlibabaFundplatformCardTemplateNewAPIResponse struct {
 	model.CommonResponse
-	AlibabafundplatformcardtemplatenewAPIResponseModel
+	AlibabaFundplatformCardTemplateNewAPIResponseModel
 }
 
-// AlibabafundplatformcardtemplatenewAPIResponseModel is 新增实体卡模板 成功返回结果
-type AlibabafundplatformcardtemplatenewAPIResponseModel struct {
+// AlibabaFundplatformCardTemplateNewAPIResponseModel is 新增实体卡模板 成功返回结果
+type AlibabaFundplatformCardTemplateNewAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_fundplatform_card_template_new_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

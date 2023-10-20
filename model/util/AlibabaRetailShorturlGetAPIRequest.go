@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaretailshorturlgetAPIRequest 短链接获取 API请求
+// AlibabaRetailShorturlGetAPIRequest 短链接获取 API请求
 // alibaba.retail.shorturl.get
 //
 // 短链接获取
-type AlibabaretailshorturlgetAPIRequest struct {
+type AlibabaRetailShorturlGetAPIRequest struct {
 	model.Params
 	// 源url
 	_sourceUrl string
@@ -18,52 +18,52 @@ type AlibabaretailshorturlgetAPIRequest struct {
 	_options *ShortUrlOption
 }
 
-// NewAlibabaretailshorturlgetRequest 初始化AlibabaretailshorturlgetAPIRequest对象
-func NewAlibabaretailshorturlgetRequest() *AlibabaretailshorturlgetAPIRequest {
-	return &AlibabaretailshorturlgetAPIRequest{
+// NewAlibabaRetailShorturlGetRequest 初始化AlibabaRetailShorturlGetAPIRequest对象
+func NewAlibabaRetailShorturlGetRequest() *AlibabaRetailShorturlGetAPIRequest {
+	return &AlibabaRetailShorturlGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaretailshorturlgetAPIRequest) GetApiMethodName() string {
+func (r AlibabaRetailShorturlGetAPIRequest) GetApiMethodName() string {
 	return "alibaba.retail.shorturl.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaretailshorturlgetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaRetailShorturlGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaretailshorturlgetAPIRequest) GetRawParams() model.Params {
+func (r AlibabaRetailShorturlGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSourceUrl is SourceUrl Setter
 // 源url
-func (r *AlibabaretailshorturlgetAPIRequest) SetSourceUrl(_sourceUrl string) error {
+func (r *AlibabaRetailShorturlGetAPIRequest) SetSourceUrl(_sourceUrl string) error {
 	r._sourceUrl = _sourceUrl
 	r.Set("source_url", _sourceUrl)
 	return nil
 }
 
 // GetSourceUrl SourceUrl Getter
-func (r AlibabaretailshorturlgetAPIRequest) GetSourceUrl() string {
+func (r AlibabaRetailShorturlGetAPIRequest) GetSourceUrl() string {
 	return r._sourceUrl
 }
 
 // SetOptions is Options Setter
 // 系统自动生成
-func (r *AlibabaretailshorturlgetAPIRequest) SetOptions(_options *ShortUrlOption) error {
+func (r *AlibabaRetailShorturlGetAPIRequest) SetOptions(_options *ShortUrlOption) error {
 	r._options = _options
 	r.Set("options", _options)
 	return nil
 }
 
 // GetOptions Options Getter
-func (r AlibabaretailshorturlgetAPIRequest) GetOptions() *ShortUrlOption {
+func (r AlibabaRetailShorturlGetAPIRequest) GetOptions() *ShortUrlOption {
 	return r._options
 }

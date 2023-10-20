@@ -5,7 +5,7 @@ type MultiResultDto struct {
 	// 执行成功结果集
 	ModuleList []VendingCargoSpaceDto `json:"module_list,omitempty" xml:"module_list>vending_cargo_space_dto,omitempty"`
 	// 执行失败结果集
-	ErrorList []AlibabalstvendingcargospacesaveResultDto `json:"error_list,omitempty" xml:"error_list>alibabalstvendingcargospacesave_result_dto,omitempty"`
+	ErrorList []AlibabaLstVendingCargospaceSaveResultDto `json:"error_list,omitempty" xml:"error_list>alibaba_lst_vending_cargospace_save_result_dto,omitempty"`
 	// 错误信息
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

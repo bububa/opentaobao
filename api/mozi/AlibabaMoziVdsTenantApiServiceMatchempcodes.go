@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mozi"
 )
 
-// Alibabamozivdstenantapiservicematchempcodes 校验组-员工是否匹配
+// AlibabaMoziVdsTenantApiServiceMatchempcodes 校验组-员工是否匹配
 // alibaba.mozi.vds.tenant.api.service.matchempcodes
 //
 // 校验组-员工是否匹配
-func Alibabamozivdstenantapiservicematchempcodes(clt *core.SDKClient, req *mozi.AlibabamozivdstenantapiservicematchempcodesAPIRequest, session string) (*mozi.AlibabamozivdstenantapiservicematchempcodesAPIResponse, error) {
-	var resp mozi.AlibabamozivdstenantapiservicematchempcodesAPIResponse
+func AlibabaMoziVdsTenantApiServiceMatchempcodes(clt *core.SDKClient, req *mozi.AlibabaMoziVdsTenantApiServiceMatchempcodesAPIRequest, session string) (*mozi.AlibabaMoziVdsTenantApiServiceMatchempcodesAPIResponse, error) {
+	var resp mozi.AlibabaMoziVdsTenantApiServiceMatchempcodesAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

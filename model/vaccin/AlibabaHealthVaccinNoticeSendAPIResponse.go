@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabahealthvaccinnoticesendAPIResponse 发送消息提醒 API返回值
+// AlibabaHealthVaccinNoticeSendAPIResponse 发送消息提醒 API返回值
 // alibaba.health.vaccin.notice.send
 //
 // ISV 通过免疫规划中心给用户发送短信或者支付宝 PUSH 提醒。
-type AlibabahealthvaccinnoticesendAPIResponse struct {
+type AlibabaHealthVaccinNoticeSendAPIResponse struct {
 	model.CommonResponse
-	AlibabahealthvaccinnoticesendAPIResponseModel
+	AlibabaHealthVaccinNoticeSendAPIResponseModel
 }
 
-// AlibabahealthvaccinnoticesendAPIResponseModel is 发送消息提醒 成功返回结果
-type AlibabahealthvaccinnoticesendAPIResponseModel struct {
+// AlibabaHealthVaccinNoticeSendAPIResponseModel is 发送消息提醒 成功返回结果
+type AlibabaHealthVaccinNoticeSendAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_health_vaccin_notice_send_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

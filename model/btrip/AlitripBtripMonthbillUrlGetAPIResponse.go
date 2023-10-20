@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripbtripmonthbillurlgetAPIResponse 月账单数据查询 API返回值
+// AlitripBtripMonthbillUrlGetAPIResponse 月账单数据查询 API返回值
 // alitrip.btrip.monthbill.url.get
 //
 // 月账单数据查询
-type AlitripbtripmonthbillurlgetAPIResponse struct {
+type AlitripBtripMonthbillUrlGetAPIResponse struct {
 	model.CommonResponse
-	AlitripbtripmonthbillurlgetAPIResponseModel
+	AlitripBtripMonthbillUrlGetAPIResponseModel
 }
 
-// AlitripbtripmonthbillurlgetAPIResponseModel is 月账单数据查询 成功返回结果
-type AlitripbtripmonthbillurlgetAPIResponseModel struct {
+// AlitripBtripMonthbillUrlGetAPIResponseModel is 月账单数据查询 成功返回结果
+type AlitripBtripMonthbillUrlGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_monthbill_url_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

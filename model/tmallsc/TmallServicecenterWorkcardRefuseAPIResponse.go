@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallservicecenterworkcardrefuseAPIResponse 买家拒收 API返回值
+// TmallServicecenterWorkcardRefuseAPIResponse 买家拒收 API返回值
 // tmall.servicecenter.workcard.refuse
 //
 // 买家拒收通知接口
-type TmallservicecenterworkcardrefuseAPIResponse struct {
+type TmallServicecenterWorkcardRefuseAPIResponse struct {
 	model.CommonResponse
-	TmallservicecenterworkcardrefuseAPIResponseModel
+	TmallServicecenterWorkcardRefuseAPIResponseModel
 }
 
-// TmallservicecenterworkcardrefuseAPIResponseModel is 买家拒收 成功返回结果
-type TmallservicecenterworkcardrefuseAPIResponseModel struct {
+// TmallServicecenterWorkcardRefuseAPIResponseModel is 买家拒收 成功返回结果
+type TmallServicecenterWorkcardRefuseAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_workcard_refuse_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

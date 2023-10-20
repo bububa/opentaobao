@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotaotvcarouselplaylistgetAPIRequest 根据频道ID获取频道下节目单以及当前播放 API请求
+// TaobaoTaotvCarouselPlaylistGetAPIRequest 根据频道ID获取频道下节目单以及当前播放 API请求
 // taobao.taotv.carousel.playlist.get
 //
 // 根据频道ID获取频道下节目单以及当前播放，包括所有视频源的视频
-type TaobaotaotvcarouselplaylistgetAPIRequest struct {
+type TaobaoTaotvCarouselPlaylistGetAPIRequest struct {
 	model.Params
 	// 设备信息
 	_systemInfo string
@@ -18,52 +18,52 @@ type TaobaotaotvcarouselplaylistgetAPIRequest struct {
 	_channelId int64
 }
 
-// NewTaobaotaotvcarouselplaylistgetRequest 初始化TaobaotaotvcarouselplaylistgetAPIRequest对象
-func NewTaobaotaotvcarouselplaylistgetRequest() *TaobaotaotvcarouselplaylistgetAPIRequest {
-	return &TaobaotaotvcarouselplaylistgetAPIRequest{
+// NewTaobaoTaotvCarouselPlaylistGetRequest 初始化TaobaoTaotvCarouselPlaylistGetAPIRequest对象
+func NewTaobaoTaotvCarouselPlaylistGetRequest() *TaobaoTaotvCarouselPlaylistGetAPIRequest {
+	return &TaobaoTaotvCarouselPlaylistGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaotaotvcarouselplaylistgetAPIRequest) GetApiMethodName() string {
+func (r TaobaoTaotvCarouselPlaylistGetAPIRequest) GetApiMethodName() string {
 	return "taobao.taotv.carousel.playlist.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaotaotvcarouselplaylistgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoTaotvCarouselPlaylistGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaotaotvcarouselplaylistgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoTaotvCarouselPlaylistGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSystemInfo is SystemInfo Setter
 // 设备信息
-func (r *TaobaotaotvcarouselplaylistgetAPIRequest) SetSystemInfo(_systemInfo string) error {
+func (r *TaobaoTaotvCarouselPlaylistGetAPIRequest) SetSystemInfo(_systemInfo string) error {
 	r._systemInfo = _systemInfo
 	r.Set("system_info", _systemInfo)
 	return nil
 }
 
 // GetSystemInfo SystemInfo Getter
-func (r TaobaotaotvcarouselplaylistgetAPIRequest) GetSystemInfo() string {
+func (r TaobaoTaotvCarouselPlaylistGetAPIRequest) GetSystemInfo() string {
 	return r._systemInfo
 }
 
 // SetChannelId is ChannelId Setter
 // 频道ID
-func (r *TaobaotaotvcarouselplaylistgetAPIRequest) SetChannelId(_channelId int64) error {
+func (r *TaobaoTaotvCarouselPlaylistGetAPIRequest) SetChannelId(_channelId int64) error {
 	r._channelId = _channelId
 	r.Set("channel_id", _channelId)
 	return nil
 }
 
 // GetChannelId ChannelId Getter
-func (r TaobaotaotvcarouselplaylistgetAPIRequest) GetChannelId() int64 {
+func (r TaobaoTaotvCarouselPlaylistGetAPIRequest) GetChannelId() int64 {
 	return r._channelId
 }

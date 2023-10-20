@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitriptuanhoteliteminfogetAPIResponse 宝贝信息查询接口 API返回值
+// AlitripTuanHotelItemInfoGetAPIResponse 宝贝信息查询接口 API返回值
 // alitrip.tuan.hotel.item.info.get
 //
 // 商家查询发布的宝贝详情信息
-type AlitriptuanhoteliteminfogetAPIResponse struct {
+type AlitripTuanHotelItemInfoGetAPIResponse struct {
 	model.CommonResponse
-	AlitriptuanhoteliteminfogetAPIResponseModel
+	AlitripTuanHotelItemInfoGetAPIResponseModel
 }
 
-// AlitriptuanhoteliteminfogetAPIResponseModel is 宝贝信息查询接口 成功返回结果
-type AlitriptuanhoteliteminfogetAPIResponseModel struct {
+// AlitripTuanHotelItemInfoGetAPIResponseModel is 宝贝信息查询接口 成功返回结果
+type AlitripTuanHotelItemInfoGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_tuan_hotel_item_info_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

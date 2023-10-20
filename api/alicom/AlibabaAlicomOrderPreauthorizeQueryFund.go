@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alicom"
 )
 
-// Alibabaalicomorderpreauthorizequeryfund 资金流水查询
+// AlibabaAlicomOrderPreauthorizeQueryFund 资金流水查询
 // alibaba.alicom.order.preauthorize.query.fund
 //
 // 预授权-资金流水查询
-func Alibabaalicomorderpreauthorizequeryfund(clt *core.SDKClient, req *alicom.AlibabaalicomorderpreauthorizequeryfundAPIRequest, session string) (*alicom.AlibabaalicomorderpreauthorizequeryfundAPIResponse, error) {
-	var resp alicom.AlibabaalicomorderpreauthorizequeryfundAPIResponse
+func AlibabaAlicomOrderPreauthorizeQueryFund(clt *core.SDKClient, req *alicom.AlibabaAlicomOrderPreauthorizeQueryFundAPIRequest, session string) (*alicom.AlibabaAlicomOrderPreauthorizeQueryFundAPIResponse, error) {
+	var resp alicom.AlibabaAlicomOrderPreauthorizeQueryFundAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

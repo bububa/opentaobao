@@ -1,7 +1,7 @@
 package einvoice
 
-// AlibabaeinvoicebilleinvoicelistResultSet 结构体
-type AlibabaeinvoicebilleinvoicelistResultSet struct {
+// AlibabaEinvoiceBillEinvoiceListResultSet 结构体
+type AlibabaEinvoiceBillEinvoiceListResultSet struct {
 	// 返回结果具体信息
 	ResultList []ResultList `json:"result_list,omitempty" xml:"result_list>result_list,omitempty"`
 	// 错误信息

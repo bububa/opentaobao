@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-// Tmallservicecenterworkcardcollect 工单揽件
+// TmallServicecenterWorkcardCollect 工单揽件
 // tmall.servicecenter.workcard.collect
 //
 // 服务工单揽件接口
-func Tmallservicecenterworkcardcollect(clt *core.SDKClient, req *tmallservice.TmallservicecenterworkcardcollectAPIRequest, session string) (*tmallservice.TmallservicecenterworkcardcollectAPIResponse, error) {
-	var resp tmallservice.TmallservicecenterworkcardcollectAPIResponse
+func TmallServicecenterWorkcardCollect(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardCollectAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardCollectAPIResponse, error) {
+	var resp tmallservice.TmallServicecenterWorkcardCollectAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

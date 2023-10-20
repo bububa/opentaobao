@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-// Tmallitemvipschemaupdate 大商家商品编辑接口
+// TmallItemVipSchemaUpdate 大商家商品编辑接口
 // tmall.item.vip.schema.update
 //
 // 大商家编辑商品
-func Tmallitemvipschemaupdate(clt *core.SDKClient, req *product.TmallitemvipschemaupdateAPIRequest, session string) (*product.TmallitemvipschemaupdateAPIResponse, error) {
-	var resp product.TmallitemvipschemaupdateAPIResponse
+func TmallItemVipSchemaUpdate(clt *core.SDKClient, req *product.TmallItemVipSchemaUpdateAPIRequest, session string) (*product.TmallItemVipSchemaUpdateAPIResponse, error) {
+	var resp product.TmallItemVipSchemaUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

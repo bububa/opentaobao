@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthdrugcodedrugfactoryblindfiledellogAPIResponse 接收盲底文件删除日志 API返回值
+// AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIResponse 接收盲底文件删除日志 API返回值
 // alibaba.alihealth.drugcode.drugfactory.blindfiledellog
 //
 // 临床用药试验-接收盲底文件删除日志
-type AlibabaalihealthdrugcodedrugfactoryblindfiledellogAPIResponse struct {
+type AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthdrugcodedrugfactoryblindfiledellogAPIResponseModel
+	AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIResponseModel
 }
 
-// AlibabaalihealthdrugcodedrugfactoryblindfiledellogAPIResponseModel is 接收盲底文件删除日志 成功返回结果
-type AlibabaalihealthdrugcodedrugfactoryblindfiledellogAPIResponseModel struct {
+// AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIResponseModel is 接收盲底文件删除日志 成功返回结果
+type AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drugcode_drugfactory_blindfiledellog_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

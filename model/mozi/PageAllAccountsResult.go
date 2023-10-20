@@ -3,7 +3,7 @@ package mozi
 // PageAllAccountsResult 结构体
 type PageAllAccountsResult struct {
 	// 返回的数据
-	DataList []AlibabamozibucaccountpageallT `json:"data_list,omitempty" xml:"data_list>alibabamozibucaccountpageall_t,omitempty"`
+	DataList []AlibabaMoziBucAccountPageallT `json:"data_list,omitempty" xml:"data_list>alibaba_mozi_buc_account_pageall_t,omitempty"`
 	// 请求的序列化
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回的状态消息

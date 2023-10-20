@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaicbuannexuploadAPIResponse 上传附件获取附件files_str API返回值
+// AlibabaIcbuAnnexUploadAPIResponse 上传附件获取附件files_str API返回值
 // alibaba.icbu.annex.upload
 //
 // 上传附件获取附件files_str
-type AlibabaicbuannexuploadAPIResponse struct {
+type AlibabaIcbuAnnexUploadAPIResponse struct {
 	model.CommonResponse
-	AlibabaicbuannexuploadAPIResponseModel
+	AlibabaIcbuAnnexUploadAPIResponseModel
 }
 
-// AlibabaicbuannexuploadAPIResponseModel is 上传附件获取附件files_str 成功返回结果
-type AlibabaicbuannexuploadAPIResponseModel struct {
+// AlibabaIcbuAnnexUploadAPIResponseModel is 上传附件获取附件files_str 成功返回结果
+type AlibabaIcbuAnnexUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_icbu_annex_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

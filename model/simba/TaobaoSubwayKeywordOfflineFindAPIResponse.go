@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosubwaykeywordofflinefindAPIResponse 查询关键词离线多日汇总报表 API返回值
+// TaobaoSubwayKeywordOfflineFindAPIResponse 查询关键词离线多日汇总报表 API返回值
 // taobao.subway.keyword.offline.find
 //
 // 获取关键词离线报表
-type TaobaosubwaykeywordofflinefindAPIResponse struct {
+type TaobaoSubwayKeywordOfflineFindAPIResponse struct {
 	model.CommonResponse
-	TaobaosubwaykeywordofflinefindAPIResponseModel
+	TaobaoSubwayKeywordOfflineFindAPIResponseModel
 }
 
-// TaobaosubwaykeywordofflinefindAPIResponseModel is 查询关键词离线多日汇总报表 成功返回结果
-type TaobaosubwaykeywordofflinefindAPIResponseModel struct {
+// TaobaoSubwayKeywordOfflineFindAPIResponseModel is 查询关键词离线多日汇总报表 成功返回结果
+type TaobaoSubwayKeywordOfflineFindAPIResponseModel struct {
 	XMLName xml.Name `xml:"subway_keyword_offline_find_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

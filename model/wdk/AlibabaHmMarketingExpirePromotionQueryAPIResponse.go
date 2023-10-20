@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabahmmarketingexpirepromotionqueryAPIResponse 短保优惠查询 API返回值
+// AlibabaHmMarketingExpirePromotionQueryAPIResponse 短保优惠查询 API返回值
 // alibaba.hm.marketing.expire.promotion.query
 //
 // 短保优惠查询
-type AlibabahmmarketingexpirepromotionqueryAPIResponse struct {
+type AlibabaHmMarketingExpirePromotionQueryAPIResponse struct {
 	model.CommonResponse
-	AlibabahmmarketingexpirepromotionqueryAPIResponseModel
+	AlibabaHmMarketingExpirePromotionQueryAPIResponseModel
 }
 
-// AlibabahmmarketingexpirepromotionqueryAPIResponseModel is 短保优惠查询 成功返回结果
-type AlibabahmmarketingexpirepromotionqueryAPIResponseModel struct {
+// AlibabaHmMarketingExpirePromotionQueryAPIResponseModel is 短保优惠查询 成功返回结果
+type AlibabaHmMarketingExpirePromotionQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_hm_marketing_expire_promotion_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

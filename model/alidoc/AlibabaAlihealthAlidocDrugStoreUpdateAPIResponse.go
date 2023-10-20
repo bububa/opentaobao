@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthalidocdrugstoreupdateAPIResponse 更新药店 API返回值
+// AlibabaAlihealthAlidocDrugStoreUpdateAPIResponse 更新药店 API返回值
 // alibaba.alihealth.alidoc.drug.store.update
 //
 // 药店信息更新接口
-type AlibabaalihealthalidocdrugstoreupdateAPIResponse struct {
+type AlibabaAlihealthAlidocDrugStoreUpdateAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthalidocdrugstoreupdateAPIResponseModel
+	AlibabaAlihealthAlidocDrugStoreUpdateAPIResponseModel
 }
 
-// AlibabaalihealthalidocdrugstoreupdateAPIResponseModel is 更新药店 成功返回结果
-type AlibabaalihealthalidocdrugstoreupdateAPIResponseModel struct {
+// AlibabaAlihealthAlidocDrugStoreUpdateAPIResponseModel is 更新药店 成功返回结果
+type AlibabaAlihealthAlidocDrugStoreUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_alidoc_drug_store_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

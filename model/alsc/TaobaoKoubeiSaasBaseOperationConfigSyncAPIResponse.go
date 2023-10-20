@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaokoubeisaasbaseoperationconfigsyncAPIResponse 商家基础经营设置信息同步 API返回值
+// TaobaoKoubeiSaasBaseOperationConfigSyncAPIResponse 商家基础经营设置信息同步 API返回值
 // taobao.koubei.saas.base.operation.config.sync
 //
 // ISV接入口碑SAAS后, 经营设置数据同步到口碑SAAS
-type TaobaokoubeisaasbaseoperationconfigsyncAPIResponse struct {
+type TaobaoKoubeiSaasBaseOperationConfigSyncAPIResponse struct {
 	model.CommonResponse
-	TaobaokoubeisaasbaseoperationconfigsyncAPIResponseModel
+	TaobaoKoubeiSaasBaseOperationConfigSyncAPIResponseModel
 }
 
-// TaobaokoubeisaasbaseoperationconfigsyncAPIResponseModel is 商家基础经营设置信息同步 成功返回结果
-type TaobaokoubeisaasbaseoperationconfigsyncAPIResponseModel struct {
+// TaobaoKoubeiSaasBaseOperationConfigSyncAPIResponseModel is 商家基础经营设置信息同步 成功返回结果
+type TaobaoKoubeiSaasBaseOperationConfigSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"koubei_saas_base_operation_config_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

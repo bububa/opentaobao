@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaalihealthdrugtracetopyljgqueryupbilldetailResultModel 结构体
-type AlibabaalihealthdrugtracetopyljgqueryupbilldetailResultModel struct {
+// AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailResultModel 结构体
+type AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailResultModel struct {
 	// 消息码
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 消息

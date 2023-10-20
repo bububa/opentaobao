@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamoziaclroleaddpermissionsAPIResponse 角色添加功能权限 API返回值
+// AlibabaMoziAclRoleAddPermissionsAPIResponse 角色添加功能权限 API返回值
 // alibaba.mozi.acl.role.add.permissions
 //
 // 往角色中添加一批功能权限
-type AlibabamoziaclroleaddpermissionsAPIResponse struct {
+type AlibabaMoziAclRoleAddPermissionsAPIResponse struct {
 	model.CommonResponse
-	AlibabamoziaclroleaddpermissionsAPIResponseModel
+	AlibabaMoziAclRoleAddPermissionsAPIResponseModel
 }
 
-// AlibabamoziaclroleaddpermissionsAPIResponseModel is 角色添加功能权限 成功返回结果
-type AlibabamoziaclroleaddpermissionsAPIResponseModel struct {
+// AlibabaMoziAclRoleAddPermissionsAPIResponseModel is 角色添加功能权限 成功返回结果
+type AlibabaMoziAclRoleAddPermissionsAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mozi_acl_role_add_permissions_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

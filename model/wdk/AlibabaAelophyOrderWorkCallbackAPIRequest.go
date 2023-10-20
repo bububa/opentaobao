@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaelophyorderworkcallbackAPIRequest 仓配作业结果回传接口 API请求
+// AlibabaAelophyOrderWorkCallbackAPIRequest 仓配作业结果回传接口 API请求
 // alibaba.aelophy.order.work.callback
 //
 // 仓配作业结果回传接口
-type AlibabaaelophyorderworkcallbackAPIRequest struct {
+type AlibabaAelophyOrderWorkCallbackAPIRequest struct {
 	model.Params
 	// 仓配作业结果回传请求
 	_workCallbackRequest *WorkCallbackRequest
 }
 
-// NewAlibabaaelophyorderworkcallbackRequest 初始化AlibabaaelophyorderworkcallbackAPIRequest对象
-func NewAlibabaaelophyorderworkcallbackRequest() *AlibabaaelophyorderworkcallbackAPIRequest {
-	return &AlibabaaelophyorderworkcallbackAPIRequest{
+// NewAlibabaAelophyOrderWorkCallbackRequest 初始化AlibabaAelophyOrderWorkCallbackAPIRequest对象
+func NewAlibabaAelophyOrderWorkCallbackRequest() *AlibabaAelophyOrderWorkCallbackAPIRequest {
+	return &AlibabaAelophyOrderWorkCallbackAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaaelophyorderworkcallbackAPIRequest) GetApiMethodName() string {
+func (r AlibabaAelophyOrderWorkCallbackAPIRequest) GetApiMethodName() string {
 	return "alibaba.aelophy.order.work.callback"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaaelophyorderworkcallbackAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAelophyOrderWorkCallbackAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaaelophyorderworkcallbackAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAelophyOrderWorkCallbackAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetWorkCallbackRequest is WorkCallbackRequest Setter
 // 仓配作业结果回传请求
-func (r *AlibabaaelophyorderworkcallbackAPIRequest) SetWorkCallbackRequest(_workCallbackRequest *WorkCallbackRequest) error {
+func (r *AlibabaAelophyOrderWorkCallbackAPIRequest) SetWorkCallbackRequest(_workCallbackRequest *WorkCallbackRequest) error {
 	r._workCallbackRequest = _workCallbackRequest
 	r.Set("work_callback_request", _workCallbackRequest)
 	return nil
 }
 
 // GetWorkCallbackRequest WorkCallbackRequest Getter
-func (r AlibabaaelophyorderworkcallbackAPIRequest) GetWorkCallbackRequest() *WorkCallbackRequest {
+func (r AlibabaAelophyOrderWorkCallbackAPIRequest) GetWorkCallbackRequest() *WorkCallbackRequest {
 	return r._workCallbackRequest
 }

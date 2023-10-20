@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// Alibabascbpadgroupcountadgroup 统计adgroup数量
+// AlibabaScbpAdGroupCountAdGroup 统计adgroup数量
 // alibaba.scbp.ad.group.count.ad.group
 //
 // 统计adgroup数量
-func Alibabascbpadgroupcountadgroup(clt *core.SDKClient, req *scbp.AlibabascbpadgroupcountadgroupAPIRequest, session string) (*scbp.AlibabascbpadgroupcountadgroupAPIResponse, error) {
-	var resp scbp.AlibabascbpadgroupcountadgroupAPIResponse
+func AlibabaScbpAdGroupCountAdGroup(clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupCountAdGroupAPIRequest, session string) (*scbp.AlibabaScbpAdGroupCountAdGroupAPIResponse, error) {
+	var resp scbp.AlibabaScbpAdGroupCountAdGroupAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

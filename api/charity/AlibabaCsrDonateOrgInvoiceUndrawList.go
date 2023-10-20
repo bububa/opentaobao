@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/charity"
 )
 
-// Alibabacsrdonateorginvoiceundrawlist 获取机构待开票列表
+// AlibabaCsrDonateOrgInvoiceUndrawList 获取机构待开票列表
 // alibaba.csr.donate.org.invoice.undraw.list
 //
 // 获取机构待开票列表
-func Alibabacsrdonateorginvoiceundrawlist(clt *core.SDKClient, req *charity.AlibabacsrdonateorginvoiceundrawlistAPIRequest, session string) (*charity.AlibabacsrdonateorginvoiceundrawlistAPIResponse, error) {
-	var resp charity.AlibabacsrdonateorginvoiceundrawlistAPIResponse
+func AlibabaCsrDonateOrgInvoiceUndrawList(clt *core.SDKClient, req *charity.AlibabaCsrDonateOrgInvoiceUndrawListAPIRequest, session string) (*charity.AlibabaCsrDonateOrgInvoiceUndrawListAPIResponse, error) {
+	var resp charity.AlibabaCsrDonateOrgInvoiceUndrawListAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

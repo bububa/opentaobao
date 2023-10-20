@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabalegalstandpointdeleteAPIResponse 删除关联口径 API返回值
+// AlibabaLegalStandpointDeleteAPIResponse 删除关联口径 API返回值
 // alibaba.legal.standpoint.delete
 //
 // 删除关联口径
-type AlibabalegalstandpointdeleteAPIResponse struct {
+type AlibabaLegalStandpointDeleteAPIResponse struct {
 	model.CommonResponse
-	AlibabalegalstandpointdeleteAPIResponseModel
+	AlibabaLegalStandpointDeleteAPIResponseModel
 }
 
-// AlibabalegalstandpointdeleteAPIResponseModel is 删除关联口径 成功返回结果
-type AlibabalegalstandpointdeleteAPIResponseModel struct {
+// AlibabaLegalStandpointDeleteAPIResponseModel is 删除关联口径 成功返回结果
+type AlibabaLegalStandpointDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_legal_standpoint_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

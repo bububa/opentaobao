@@ -1,9 +1,9 @@
 package aliqin
 
-// AlibabaaliqinfciotqrycardResult 结构体
-type AlibabaaliqinfciotqrycardResult struct {
+// AlibabaAliqinFcIotQrycardResult 结构体
+type AlibabaAliqinFcIotQrycardResult struct {
 	// model
-	Models []AlibabaaliqinfciotqrycardModel `json:"models,omitempty" xml:"models>alibabaaliqinfciotqrycard_model,omitempty"`
+	Models []AlibabaAliqinFcIotQrycardModel `json:"models,omitempty" xml:"models>alibaba_aliqin_fc_iot_qrycard_model,omitempty"`
 	// code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// true返回成功，false返回失败

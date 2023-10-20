@@ -1,7 +1,7 @@
 package mos
 
-// AlibabamjmoscarnivalreceiveencryptResultDo 结构体
-type AlibabamjmoscarnivalreceiveencryptResultDo struct {
+// AlibabaMjMoscarnivalReceiveencryptResultDo 结构体
+type AlibabaMjMoscarnivalReceiveencryptResultDo struct {
 	// 调用链id
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 错误信息
@@ -11,7 +11,7 @@ type AlibabamjmoscarnivalreceiveencryptResultDo struct {
 	// 总行数
 	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 	// 券结果
-	Data *AlibabamjmoscarnivalreceiveencryptData `json:"data,omitempty" xml:"data,omitempty"`
+	Data *AlibabaMjMoscarnivalReceiveencryptData `json:"data,omitempty" xml:"data,omitempty"`
 	// 错误码
 	ErrCode int64 `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 调用是否成功

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// Alibabanlifeb2ctradegetAPIResponse 零售+平台查询订单 API返回值
+// AlibabaNlifeB2cTradeGetAPIResponse 零售+平台查询订单 API返回值
 // alibaba.nlife.b2c.trade.get
 //
 // 查询零售+平台创建出来的订单详情
-type Alibabanlifeb2ctradegetAPIResponse struct {
+type AlibabaNlifeB2cTradeGetAPIResponse struct {
 	model.CommonResponse
-	Alibabanlifeb2ctradegetAPIResponseModel
+	AlibabaNlifeB2cTradeGetAPIResponseModel
 }
 
-// Alibabanlifeb2ctradegetAPIResponseModel is 零售+平台查询订单 成功返回结果
-type Alibabanlifeb2ctradegetAPIResponseModel struct {
+// AlibabaNlifeB2cTradeGetAPIResponseModel is 零售+平台查询订单 成功返回结果
+type AlibabaNlifeB2cTradeGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_nlife_b2c_trade_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,9 +1,9 @@
 package alihealth2
 
-// TaobaotradedrugordersgetResult 结构体
-type TaobaotradedrugordersgetResult struct {
+// TaobaoTradeDrugOrdersGetResult 结构体
+type TaobaoTradeDrugOrdersGetResult struct {
 	// 订单列表
-	ResultList []TaobaotradedrugordersgetResult `json:"result_list,omitempty" xml:"result_list>taobaotradedrugordersget_result,omitempty"`
+	ResultList []TaobaoTradeDrugOrdersGetResult `json:"result_list,omitempty" xml:"result_list>taobao_trade_drug_orders_get_result,omitempty"`
 	// 下单列表
 	GoodsList []OrderGoods `json:"goods_list,omitempty" xml:"goods_list>order_goods,omitempty"`
 	// 送达时间要求_起始

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabawdkbmpaiyangstatdataquery 派样统计数据查询
+// AlibabaWdkBmPaiyangStatDataQuery 派样统计数据查询
 // alibaba.wdk.bm.paiyang.stat.data.query
 //
 // 派样统计数据查询
-func Alibabawdkbmpaiyangstatdataquery(clt *core.SDKClient, req *wdk.AlibabawdkbmpaiyangstatdataqueryAPIRequest, session string) (*wdk.AlibabawdkbmpaiyangstatdataqueryAPIResponse, error) {
-	var resp wdk.AlibabawdkbmpaiyangstatdataqueryAPIResponse
+func AlibabaWdkBmPaiyangStatDataQuery(clt *core.SDKClient, req *wdk.AlibabaWdkBmPaiyangStatDataQueryAPIRequest, session string) (*wdk.AlibabaWdkBmPaiyangStatDataQueryAPIResponse, error) {
+	var resp wdk.AlibabaWdkBmPaiyangStatDataQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

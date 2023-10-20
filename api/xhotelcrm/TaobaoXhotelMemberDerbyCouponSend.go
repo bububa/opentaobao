@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelcrm"
 )
 
-// Taobaoxhotelmemberderbycouponsend 发券
+// TaobaoXhotelMemberDerbyCouponSend 发券
 // taobao.xhotel.member.derby.coupon.send
 //
 // 发券
-func Taobaoxhotelmemberderbycouponsend(clt *core.SDKClient, req *xhotelcrm.TaobaoxhotelmemberderbycouponsendAPIRequest, session string) (*xhotelcrm.TaobaoxhotelmemberderbycouponsendAPIResponse, error) {
-	var resp xhotelcrm.TaobaoxhotelmemberderbycouponsendAPIResponse
+func TaobaoXhotelMemberDerbyCouponSend(clt *core.SDKClient, req *xhotelcrm.TaobaoXhotelMemberDerbyCouponSendAPIRequest, session string) (*xhotelcrm.TaobaoXhotelMemberDerbyCouponSendAPIResponse, error) {
+	var resp xhotelcrm.TaobaoXhotelMemberDerbyCouponSendAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabascbpadtargettaglistrecommendtagAPIRequest 给计划推荐标签 API请求
+// AlibabaScbpAdTargetTagListRecommendTagAPIRequest 给计划推荐标签 API请求
 // alibaba.scbp.ad.target.tag.list.recommend.tag
 //
 // 给计划推荐标签
-type AlibabascbpadtargettaglistrecommendtagAPIRequest struct {
+type AlibabaScbpAdTargetTagListRecommendTagAPIRequest struct {
 	model.Params
 	// 用户信息
 	_topContext *TopContextDto
@@ -20,65 +20,65 @@ type AlibabascbpadtargettaglistrecommendtagAPIRequest struct {
 	_recommendQuery *TargetTagRecommendQueryDto
 }
 
-// NewAlibabascbpadtargettaglistrecommendtagRequest 初始化AlibabascbpadtargettaglistrecommendtagAPIRequest对象
-func NewAlibabascbpadtargettaglistrecommendtagRequest() *AlibabascbpadtargettaglistrecommendtagAPIRequest {
-	return &AlibabascbpadtargettaglistrecommendtagAPIRequest{
+// NewAlibabaScbpAdTargetTagListRecommendTagRequest 初始化AlibabaScbpAdTargetTagListRecommendTagAPIRequest对象
+func NewAlibabaScbpAdTargetTagListRecommendTagRequest() *AlibabaScbpAdTargetTagListRecommendTagAPIRequest {
+	return &AlibabaScbpAdTargetTagListRecommendTagAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabascbpadtargettaglistrecommendtagAPIRequest) GetApiMethodName() string {
+func (r AlibabaScbpAdTargetTagListRecommendTagAPIRequest) GetApiMethodName() string {
 	return "alibaba.scbp.ad.target.tag.list.recommend.tag"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabascbpadtargettaglistrecommendtagAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaScbpAdTargetTagListRecommendTagAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabascbpadtargettaglistrecommendtagAPIRequest) GetRawParams() model.Params {
+func (r AlibabaScbpAdTargetTagListRecommendTagAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopContext is TopContext Setter
 // 用户信息
-func (r *AlibabascbpadtargettaglistrecommendtagAPIRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdTargetTagListRecommendTagAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
 	r.Set("top_context", _topContext)
 	return nil
 }
 
 // GetTopContext TopContext Getter
-func (r AlibabascbpadtargettaglistrecommendtagAPIRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdTargetTagListRecommendTagAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }
 
 // SetCampaignId is CampaignId Setter
 // 计划ID
-func (r *AlibabascbpadtargettaglistrecommendtagAPIRequest) SetCampaignId(_campaignId int64) error {
+func (r *AlibabaScbpAdTargetTagListRecommendTagAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
 	r.Set("campaign_id", _campaignId)
 	return nil
 }
 
 // GetCampaignId CampaignId Getter
-func (r AlibabascbpadtargettaglistrecommendtagAPIRequest) GetCampaignId() int64 {
+func (r AlibabaScbpAdTargetTagListRecommendTagAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
 // SetRecommendQuery is RecommendQuery Setter
 // 推荐实体类
-func (r *AlibabascbpadtargettaglistrecommendtagAPIRequest) SetRecommendQuery(_recommendQuery *TargetTagRecommendQueryDto) error {
+func (r *AlibabaScbpAdTargetTagListRecommendTagAPIRequest) SetRecommendQuery(_recommendQuery *TargetTagRecommendQueryDto) error {
 	r._recommendQuery = _recommendQuery
 	r.Set("recommend_query", _recommendQuery)
 	return nil
 }
 
 // GetRecommendQuery RecommendQuery Getter
-func (r AlibabascbpadtargettaglistrecommendtagAPIRequest) GetRecommendQuery() *TargetTagRecommendQueryDto {
+func (r AlibabaScbpAdTargetTagListRecommendTagAPIRequest) GetRecommendQuery() *TargetTagRecommendQueryDto {
 	return r._recommendQuery
 }

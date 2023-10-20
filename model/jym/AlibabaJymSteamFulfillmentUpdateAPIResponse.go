@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabajymsteamfulfillmentupdateAPIResponse 交易猫Steam类目发履约态变更 API返回值
+// AlibabaJymSteamFulfillmentUpdateAPIResponse 交易猫Steam类目发履约态变更 API返回值
 // alibaba.jym.steam.fulfillment.update
 //
 // 交易猫Steam类目发履约态变更
-type AlibabajymsteamfulfillmentupdateAPIResponse struct {
+type AlibabaJymSteamFulfillmentUpdateAPIResponse struct {
 	model.CommonResponse
-	AlibabajymsteamfulfillmentupdateAPIResponseModel
+	AlibabaJymSteamFulfillmentUpdateAPIResponseModel
 }
 
-// AlibabajymsteamfulfillmentupdateAPIResponseModel is 交易猫Steam类目发履约态变更 成功返回结果
-type AlibabajymsteamfulfillmentupdateAPIResponseModel struct {
+// AlibabaJymSteamFulfillmentUpdateAPIResponseModel is 交易猫Steam类目发履约态变更 成功返回结果
+type AlibabaJymSteamFulfillmentUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_steam_fulfillment_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

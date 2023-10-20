@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimenreturnorderconfirmBatch 结构体
-type TaobaoqimenreturnorderconfirmBatch struct {
+// TaobaoQimenReturnorderConfirmBatch 结构体
+type TaobaoQimenReturnorderConfirmBatch struct {
 	// 备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 批次编号

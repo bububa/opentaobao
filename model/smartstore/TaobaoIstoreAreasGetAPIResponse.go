@@ -6,18 +6,18 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoistoreareasgetAPIResponse 智慧门店区域编码查询 API返回值
+// TaobaoIstoreAreasGetAPIResponse 智慧门店区域编码查询 API返回值
 // taobao.istore.areas.get
 //
 // 查询标准地址区域代码信息。可以直接参考最新的行政区域代码：
 // &lt;a href=&#34;http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/index.html&#34;&gt;http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/index.html&lt;/a&gt;
-type TaobaoistoreareasgetAPIResponse struct {
+type TaobaoIstoreAreasGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoistoreareasgetAPIResponseModel
+	TaobaoIstoreAreasGetAPIResponseModel
 }
 
-// TaobaoistoreareasgetAPIResponseModel is 智慧门店区域编码查询 成功返回结果
-type TaobaoistoreareasgetAPIResponseModel struct {
+// TaobaoIstoreAreasGetAPIResponseModel is 智慧门店区域编码查询 成功返回结果
+type TaobaoIstoreAreasGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"istore_areas_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

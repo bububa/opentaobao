@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabastandpointhistorykeygetAPIResponse 查询历史数据 API返回值
+// AlibabaStandpointHistorykeyGetAPIResponse 查询历史数据 API返回值
 // alibaba.standpoint.historykey.get
 //
 // 查询历史数据
-type AlibabastandpointhistorykeygetAPIResponse struct {
+type AlibabaStandpointHistorykeyGetAPIResponse struct {
 	model.CommonResponse
-	AlibabastandpointhistorykeygetAPIResponseModel
+	AlibabaStandpointHistorykeyGetAPIResponseModel
 }
 
-// AlibabastandpointhistorykeygetAPIResponseModel is 查询历史数据 成功返回结果
-type AlibabastandpointhistorykeygetAPIResponseModel struct {
+// AlibabaStandpointHistorykeyGetAPIResponseModel is 查询历史数据 成功返回结果
+type AlibabaStandpointHistorykeyGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_standpoint_historykey_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

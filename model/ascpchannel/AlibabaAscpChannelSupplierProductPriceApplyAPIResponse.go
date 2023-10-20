@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaascpchannelsupplierproductpriceapplyAPIResponse 供应商设置渠道产品价格 API返回值
+// AlibabaAscpChannelSupplierProductPriceApplyAPIResponse 供应商设置渠道产品价格 API返回值
 // alibaba.ascp.channel.supplier.product.price.apply
 //
 // 供应商设置渠道产品价格
-type AlibabaascpchannelsupplierproductpriceapplyAPIResponse struct {
+type AlibabaAscpChannelSupplierProductPriceApplyAPIResponse struct {
 	model.CommonResponse
-	AlibabaascpchannelsupplierproductpriceapplyAPIResponseModel
+	AlibabaAscpChannelSupplierProductPriceApplyAPIResponseModel
 }
 
-// AlibabaascpchannelsupplierproductpriceapplyAPIResponseModel is 供应商设置渠道产品价格 成功返回结果
-type AlibabaascpchannelsupplierproductpriceapplyAPIResponseModel struct {
+// AlibabaAscpChannelSupplierProductPriceApplyAPIResponseModel is 供应商设置渠道产品价格 成功返回结果
+type AlibabaAscpChannelSupplierProductPriceApplyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ascp_channel_supplier_product_price_apply_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

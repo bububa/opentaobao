@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wlb"
 )
 
-// Taobaowlbitemmapget 根据物流宝商品ID查询商品映射关系
+// TaobaoWlbItemMapGet 根据物流宝商品ID查询商品映射关系
 // taobao.wlb.item.map.get
 //
 // 根据物流宝商品ID查询商品映射关系
-func Taobaowlbitemmapget(clt *core.SDKClient, req *wlb.TaobaowlbitemmapgetAPIRequest, session string) (*wlb.TaobaowlbitemmapgetAPIResponse, error) {
-	var resp wlb.TaobaowlbitemmapgetAPIResponse
+func TaobaoWlbItemMapGet(clt *core.SDKClient, req *wlb.TaobaoWlbItemMapGetAPIRequest, session string) (*wlb.TaobaoWlbItemMapGetAPIResponse, error) {
+	var resp wlb.TaobaoWlbItemMapGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

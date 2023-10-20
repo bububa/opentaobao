@@ -14,19 +14,14 @@ builds:
     goos:
       - linux
       - darwin
+      - windows
   - main: ./metadata/generator
     id: "generator"
     binary: generator
     goos:
       - linux
       - darwin
-archives:
-  - replacements:
-      darwin: Darwin
-      linux: Linux
-      windows: Windows
-      386: i386
-      amd64: x86_64
+      - windows
 checksum:
   name_template: 'checksums.txt'
 snapshot:

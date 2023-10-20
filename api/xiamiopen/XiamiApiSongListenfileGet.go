@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xiamiopen"
 )
 
-// Xiamiapisonglistenfileget 获取歌曲试听文件
+// XiamiApiSongListenfileGet 获取歌曲试听文件
 // xiami.api.song.listenfile.get
 //
 // 获取歌曲试听文件
-func Xiamiapisonglistenfileget(clt *core.SDKClient, req *xiamiopen.XiamiapisonglistenfilegetAPIRequest, session string) (*xiamiopen.XiamiapisonglistenfilegetAPIResponse, error) {
-	var resp xiamiopen.XiamiapisonglistenfilegetAPIResponse
+func XiamiApiSongListenfileGet(clt *core.SDKClient, req *xiamiopen.XiamiApiSongListenfileGetAPIRequest, session string) (*xiamiopen.XiamiApiSongListenfileGetAPIResponse, error) {
+	var resp xiamiopen.XiamiApiSongListenfileGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

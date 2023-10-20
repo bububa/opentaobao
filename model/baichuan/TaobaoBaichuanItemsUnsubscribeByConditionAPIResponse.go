@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobaichuanitemsunsubscribebyconditionAPIResponse 根据条件删除订阅关系 API返回值
+// TaobaoBaichuanItemsUnsubscribeByConditionAPIResponse 根据条件删除订阅关系 API返回值
 // taobao.baichuan.items.unsubscribe.by.condition
 //
 // 根据条件删除订阅关系
-type TaobaobaichuanitemsunsubscribebyconditionAPIResponse struct {
+type TaobaoBaichuanItemsUnsubscribeByConditionAPIResponse struct {
 	model.CommonResponse
-	TaobaobaichuanitemsunsubscribebyconditionAPIResponseModel
+	TaobaoBaichuanItemsUnsubscribeByConditionAPIResponseModel
 }
 
-// TaobaobaichuanitemsunsubscribebyconditionAPIResponseModel is 根据条件删除订阅关系 成功返回结果
-type TaobaobaichuanitemsunsubscribebyconditionAPIResponseModel struct {
+// TaobaoBaichuanItemsUnsubscribeByConditionAPIResponseModel is 根据条件删除订阅关系 成功返回结果
+type TaobaoBaichuanItemsUnsubscribeByConditionAPIResponseModel struct {
 	XMLName xml.Name `xml:"baichuan_items_unsubscribe_by_condition_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
-	Result *TaobaobaichuanitemsunsubscribebyconditionResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TaobaoBaichuanItemsUnsubscribeByConditionResult `json:"result,omitempty" xml:"result,omitempty"`
 }

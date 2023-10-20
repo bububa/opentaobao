@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabahmmarketingitempoolstairadditem 商品池阶梯商品添加
+// AlibabaHmMarketingItempoolStairAdditem 商品池阶梯商品添加
 // alibaba.hm.marketing.itempool.stair.additem
 //
 // 添加商品池阶梯商品
-func Alibabahmmarketingitempoolstairadditem(clt *core.SDKClient, req *wdk.AlibabahmmarketingitempoolstairadditemAPIRequest, session string) (*wdk.AlibabahmmarketingitempoolstairadditemAPIResponse, error) {
-	var resp wdk.AlibabahmmarketingitempoolstairadditemAPIResponse
+func AlibabaHmMarketingItempoolStairAdditem(clt *core.SDKClient, req *wdk.AlibabaHmMarketingItempoolStairAdditemAPIRequest, session string) (*wdk.AlibabaHmMarketingItempoolStairAdditemAPIResponse, error) {
+	var resp wdk.AlibabaHmMarketingItempoolStairAdditemAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

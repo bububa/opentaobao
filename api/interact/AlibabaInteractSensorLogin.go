@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/interact"
 )
 
-// Alibabainteractsensorlogin 获取登陆页面
+// AlibabaInteractSensorLogin 获取登陆页面
 // alibaba.interact.sensor.login
 //
 // 获取登陆页面
-func Alibabainteractsensorlogin(clt *core.SDKClient, req *interact.AlibabainteractsensorloginAPIRequest, session string) (*interact.AlibabainteractsensorloginAPIResponse, error) {
-	var resp interact.AlibabainteractsensorloginAPIResponse
+func AlibabaInteractSensorLogin(clt *core.SDKClient, req *interact.AlibabaInteractSensorLoginAPIRequest, session string) (*interact.AlibabaInteractSensorLoginAPIResponse, error) {
+	var resp interact.AlibabaInteractSensorLoginAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

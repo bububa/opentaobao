@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalsccrmpointcalAPIResponse 计算积分可以抵扣的金额 API返回值
+// AlibabaAlscCrmPointCalAPIResponse 计算积分可以抵扣的金额 API返回值
 // alibaba.alsc.crm.point.cal
 //
 // 计算积分可以抵扣的金额
@@ -14,13 +14,13 @@ import (
 // 如抵扣规则为100积分抵扣50元，则输入消费120积分的话，回返回消费100积分抵扣50元
 //
 //	这里为纯计算逻辑，不会校验用户是否有足够的可用积分进行抵扣
-type AlibabaalsccrmpointcalAPIResponse struct {
+type AlibabaAlscCrmPointCalAPIResponse struct {
 	model.CommonResponse
-	AlibabaalsccrmpointcalAPIResponseModel
+	AlibabaAlscCrmPointCalAPIResponseModel
 }
 
-// AlibabaalsccrmpointcalAPIResponseModel is 计算积分可以抵扣的金额 成功返回结果
-type AlibabaalsccrmpointcalAPIResponseModel struct {
+// AlibabaAlscCrmPointCalAPIResponseModel is 计算积分可以抵扣的金额 成功返回结果
+type AlibabaAlscCrmPointCalAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_point_cal_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabatmallgeniescpplansaleforcastpmmonthuploadAPIResponse 24-销售月预测数量（产管）回传-月度 API返回值
+// AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIResponse 24-销售月预测数量（产管）回传-月度 API返回值
 // alibaba.tmallgenie.scp.plan.saleforcast.pm.month.upload
 //
 // 销售月预测数量（产管）回传-月度
-type AlibabatmallgeniescpplansaleforcastpmmonthuploadAPIResponse struct {
+type AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIResponse struct {
 	model.CommonResponse
-	AlibabatmallgeniescpplansaleforcastpmmonthuploadAPIResponseModel
+	AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIResponseModel
 }
 
-// AlibabatmallgeniescpplansaleforcastpmmonthuploadAPIResponseModel is 24-销售月预测数量（产管）回传-月度 成功返回结果
-type AlibabatmallgeniescpplansaleforcastpmmonthuploadAPIResponseModel struct {
+// AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIResponseModel is 24-销售月预测数量（产管）回传-月度 成功返回结果
+type AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tmallgenie_scp_plan_saleforcast_pm_month_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

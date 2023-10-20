@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabapricepromotioncreateAPIResponse 营销档期活动创建 API返回值
+// AlibabaPricePromotionCreateAPIResponse 营销档期活动创建 API返回值
 // alibaba.price.promotion.create
 //
 // 大润发-盒马帮提供新增创建营销活动
-type AlibabapricepromotioncreateAPIResponse struct {
+type AlibabaPricePromotionCreateAPIResponse struct {
 	model.CommonResponse
-	AlibabapricepromotioncreateAPIResponseModel
+	AlibabaPricePromotionCreateAPIResponseModel
 }
 
-// AlibabapricepromotioncreateAPIResponseModel is 营销档期活动创建 成功返回结果
-type AlibabapricepromotioncreateAPIResponseModel struct {
+// AlibabaPricePromotionCreateAPIResponseModel is 营销档期活动创建 成功返回结果
+type AlibabaPricePromotionCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_price_promotion_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

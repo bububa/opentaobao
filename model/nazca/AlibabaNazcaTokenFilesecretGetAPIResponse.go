@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabanazcatokenfilesecretgetAPIResponse 获取文件秘钥 API返回值
+// AlibabaNazcaTokenFilesecretGetAPIResponse 获取文件秘钥 API返回值
 // alibaba.nazca.token.filesecret.get
 //
 // 获取文件秘钥
-type AlibabanazcatokenfilesecretgetAPIResponse struct {
+type AlibabaNazcaTokenFilesecretGetAPIResponse struct {
 	model.CommonResponse
-	AlibabanazcatokenfilesecretgetAPIResponseModel
+	AlibabaNazcaTokenFilesecretGetAPIResponseModel
 }
 
-// AlibabanazcatokenfilesecretgetAPIResponseModel is 获取文件秘钥 成功返回结果
-type AlibabanazcatokenfilesecretgetAPIResponseModel struct {
+// AlibabaNazcaTokenFilesecretGetAPIResponseModel is 获取文件秘钥 成功返回结果
+type AlibabaNazcaTokenFilesecretGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_nazca_token_filesecret_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

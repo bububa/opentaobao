@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaologisticswmspackageentryorderpullAPIResponse 包裹入库单拉单 API返回值
+// TaobaoLogisticsWmsPackageentryorderPullAPIResponse 包裹入库单拉单 API返回值
 // taobao.logistics.wms.packageentryorder.pull
 //
 // 包裹入库单拉单
-type TaobaologisticswmspackageentryorderpullAPIResponse struct {
+type TaobaoLogisticsWmsPackageentryorderPullAPIResponse struct {
 	model.CommonResponse
-	TaobaologisticswmspackageentryorderpullAPIResponseModel
+	TaobaoLogisticsWmsPackageentryorderPullAPIResponseModel
 }
 
-// TaobaologisticswmspackageentryorderpullAPIResponseModel is 包裹入库单拉单 成功返回结果
-type TaobaologisticswmspackageentryorderpullAPIResponseModel struct {
+// TaobaoLogisticsWmsPackageentryorderPullAPIResponseModel is 包裹入库单拉单 成功返回结果
+type TaobaoLogisticsWmsPackageentryorderPullAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_wms_packageentryorder_pull_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

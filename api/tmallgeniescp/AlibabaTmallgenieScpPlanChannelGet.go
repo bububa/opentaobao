@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallgeniescp"
 )
 
-// Alibabatmallgeniescpplanchannelget 5-IBP同步渠道接口
+// AlibabaTmallgenieScpPlanChannelGet 5-IBP同步渠道接口
 // alibaba.tmallgenie.scp.plan.channel.get
 //
 // IBP同步渠道接口
-func Alibabatmallgeniescpplanchannelget(clt *core.SDKClient, req *tmallgeniescp.AlibabatmallgeniescpplanchannelgetAPIRequest, session string) (*tmallgeniescp.AlibabatmallgeniescpplanchannelgetAPIResponse, error) {
-	var resp tmallgeniescp.AlibabatmallgeniescpplanchannelgetAPIResponse
+func AlibabaTmallgenieScpPlanChannelGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanChannelGetAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanChannelGetAPIResponse, error) {
+	var resp tmallgeniescp.AlibabaTmallgenieScpPlanChannelGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

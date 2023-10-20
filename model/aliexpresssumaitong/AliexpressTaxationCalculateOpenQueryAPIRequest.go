@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpresstaxationcalculateopenqueryAPIRequest 关务所需的申报清关字段 API请求
+// AliexpressTaxationCalculateOpenQueryAPIRequest 关务所需的申报清关字段 API请求
 // aliexpress.taxation.calculate.open.query
 //
 // 关务所需的申报清关字段
-type AliexpresstaxationcalculateopenqueryAPIRequest struct {
+type AliexpressTaxationCalculateOpenQueryAPIRequest struct {
 	model.Params
 	// 主订单id
 	_orderId string
 }
 
-// NewAliexpresstaxationcalculateopenqueryRequest 初始化AliexpresstaxationcalculateopenqueryAPIRequest对象
-func NewAliexpresstaxationcalculateopenqueryRequest() *AliexpresstaxationcalculateopenqueryAPIRequest {
-	return &AliexpresstaxationcalculateopenqueryAPIRequest{
+// NewAliexpressTaxationCalculateOpenQueryRequest 初始化AliexpressTaxationCalculateOpenQueryAPIRequest对象
+func NewAliexpressTaxationCalculateOpenQueryRequest() *AliexpressTaxationCalculateOpenQueryAPIRequest {
+	return &AliexpressTaxationCalculateOpenQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AliexpresstaxationcalculateopenqueryAPIRequest) GetApiMethodName() string {
+func (r AliexpressTaxationCalculateOpenQueryAPIRequest) GetApiMethodName() string {
 	return "aliexpress.taxation.calculate.open.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpresstaxationcalculateopenqueryAPIRequest) GetApiParams(params url.Values) {
+func (r AliexpressTaxationCalculateOpenQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AliexpresstaxationcalculateopenqueryAPIRequest) GetRawParams() model.Params {
+func (r AliexpressTaxationCalculateOpenQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOrderId is OrderId Setter
 // 主订单id
-func (r *AliexpresstaxationcalculateopenqueryAPIRequest) SetOrderId(_orderId string) error {
+func (r *AliexpressTaxationCalculateOpenQueryAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
 	r.Set("order_id", _orderId)
 	return nil
 }
 
 // GetOrderId OrderId Getter
-func (r AliexpresstaxationcalculateopenqueryAPIRequest) GetOrderId() string {
+func (r AliexpressTaxationCalculateOpenQueryAPIRequest) GetOrderId() string {
 	return r._orderId
 }

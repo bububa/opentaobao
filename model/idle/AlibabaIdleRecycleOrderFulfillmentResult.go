@@ -1,7 +1,7 @@
 package idle
 
-// AlibabaidlerecycleorderfulfillmentResult 结构体
-type AlibabaidlerecycleorderfulfillmentResult struct {
+// AlibabaIdleRecycleOrderFulfillmentResult 结构体
+type AlibabaIdleRecycleOrderFulfillmentResult struct {
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

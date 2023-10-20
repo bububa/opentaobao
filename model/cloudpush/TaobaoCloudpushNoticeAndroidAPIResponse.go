@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaocloudpushnoticeandroidAPIResponse 百川云推送发送通知给android API返回值
+// TaobaoCloudpushNoticeAndroidAPIResponse 百川云推送发送通知给android API返回值
 // taobao.cloudpush.notice.android
 //
 // 百川云推送发送通知给android
-type TaobaocloudpushnoticeandroidAPIResponse struct {
+type TaobaoCloudpushNoticeAndroidAPIResponse struct {
 	model.CommonResponse
-	TaobaocloudpushnoticeandroidAPIResponseModel
+	TaobaoCloudpushNoticeAndroidAPIResponseModel
 }
 
-// TaobaocloudpushnoticeandroidAPIResponseModel is 百川云推送发送通知给android 成功返回结果
-type TaobaocloudpushnoticeandroidAPIResponseModel struct {
+// TaobaoCloudpushNoticeAndroidAPIResponseModel is 百川云推送发送通知给android 成功返回结果
+type TaobaoCloudpushNoticeAndroidAPIResponseModel struct {
 	XMLName xml.Name `xml:"cloudpush_notice_android_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

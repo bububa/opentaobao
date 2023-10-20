@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cainiaohandover"
 )
 
-// Cainiaoglobalhandoversavedraft 创建交接单草稿
+// CainiaoGlobalHandoverSavedraft 创建交接单草稿
 // cainiao.global.handover.savedraft
 //
 // 提供给ISV通过该接口创建交接单草稿
-func Cainiaoglobalhandoversavedraft(clt *core.SDKClient, req *cainiaohandover.CainiaoglobalhandoversavedraftAPIRequest, session string) (*cainiaohandover.CainiaoglobalhandoversavedraftAPIResponse, error) {
-	var resp cainiaohandover.CainiaoglobalhandoversavedraftAPIResponse
+func CainiaoGlobalHandoverSavedraft(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverSavedraftAPIRequest, session string) (*cainiaohandover.CainiaoGlobalHandoverSavedraftAPIResponse, error) {
+	var resp cainiaohandover.CainiaoGlobalHandoverSavedraftAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

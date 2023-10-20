@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/lstpos"
 )
 
-// Alibabalstposopengoodsgetgoodsbybarcode ISV条码库查询接口
+// AlibabaLstPosOpenGoodsGetgoodsbybarcode ISV条码库查询接口
 // alibaba.lst.pos.open.goods.getgoodsbybarcode
 //
 // ISV条码库查询接口
-func Alibabalstposopengoodsgetgoodsbybarcode(clt *core.SDKClient, req *lstpos.AlibabalstposopengoodsgetgoodsbybarcodeAPIRequest, session string) (*lstpos.AlibabalstposopengoodsgetgoodsbybarcodeAPIResponse, error) {
-	var resp lstpos.AlibabalstposopengoodsgetgoodsbybarcodeAPIResponse
+func AlibabaLstPosOpenGoodsGetgoodsbybarcode(clt *core.SDKClient, req *lstpos.AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest, session string) (*lstpos.AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIResponse, error) {
+	var resp lstpos.AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

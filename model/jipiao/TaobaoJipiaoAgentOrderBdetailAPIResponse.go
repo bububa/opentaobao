@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaojipiaoagentorderbdetailAPIResponse 【机票代理商订单】采购订单详情 API返回值
+// TaobaoJipiaoAgentOrderBdetailAPIResponse 【机票代理商订单】采购订单详情 API返回值
 // taobao.jipiao.agent.order.bdetail
 //
 // 根据淘宝系统订单号获取订单详情信息
-type TaobaojipiaoagentorderbdetailAPIResponse struct {
+type TaobaoJipiaoAgentOrderBdetailAPIResponse struct {
 	model.CommonResponse
-	TaobaojipiaoagentorderbdetailAPIResponseModel
+	TaobaoJipiaoAgentOrderBdetailAPIResponseModel
 }
 
-// TaobaojipiaoagentorderbdetailAPIResponseModel is 【机票代理商订单】采购订单详情 成功返回结果
-type TaobaojipiaoagentorderbdetailAPIResponseModel struct {
+// TaobaoJipiaoAgentOrderBdetailAPIResponseModel is 【机票代理商订单】采购订单详情 成功返回结果
+type TaobaoJipiaoAgentOrderBdetailAPIResponseModel struct {
 	XMLName xml.Name `xml:"jipiao_agent_order_bdetail_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

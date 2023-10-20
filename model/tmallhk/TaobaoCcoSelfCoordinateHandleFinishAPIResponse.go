@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoccoselfcoordinatehandlefinishAPIResponse 天猫国际直购供应商处理完结回复通知 API返回值
+// TaobaoCcoSelfCoordinateHandleFinishAPIResponse 天猫国际直购供应商处理完结回复通知 API返回值
 // taobao.cco.self.coordinate.handle.finish
 //
 // 天猫国际直购供应商处理完结回复通知
-type TaobaoccoselfcoordinatehandlefinishAPIResponse struct {
+type TaobaoCcoSelfCoordinateHandleFinishAPIResponse struct {
 	model.CommonResponse
-	TaobaoccoselfcoordinatehandlefinishAPIResponseModel
+	TaobaoCcoSelfCoordinateHandleFinishAPIResponseModel
 }
 
-// TaobaoccoselfcoordinatehandlefinishAPIResponseModel is 天猫国际直购供应商处理完结回复通知 成功返回结果
-type TaobaoccoselfcoordinatehandlefinishAPIResponseModel struct {
+// TaobaoCcoSelfCoordinateHandleFinishAPIResponseModel is 天猫国际直购供应商处理完结回复通知 成功返回结果
+type TaobaoCcoSelfCoordinateHandleFinishAPIResponseModel struct {
 	XMLName xml.Name `xml:"cco_self_coordinate_handle_finish_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

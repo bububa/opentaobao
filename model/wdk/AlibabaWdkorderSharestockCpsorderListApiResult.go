@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdkordersharestockcpsorderlistApiResult 结构体
-type AlibabawdkordersharestockcpsorderlistApiResult struct {
+// AlibabaWdkorderSharestockCpsorderListApiResult 结构体
+type AlibabaWdkorderSharestockCpsorderListApiResult struct {
 	// 调用接口返回对象
 	Model []CpsOrderResponse `json:"model,omitempty" xml:"model>cps_order_response,omitempty"`
 	// 调用接口返回错误信息

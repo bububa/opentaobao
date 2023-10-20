@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabatmallgeniescpplanskusupplierquoteuploadAPIResponse 标准供应商配额同步 API返回值
+// AlibabaTmallgenieScpPlanSkuSupplierQuoteUploadAPIResponse 标准供应商配额同步 API返回值
 // alibaba.tmallgenie.scp.plan.sku.supplier.quote.upload
 //
 // 标准供应商配额同步
-type AlibabatmallgeniescpplanskusupplierquoteuploadAPIResponse struct {
+type AlibabaTmallgenieScpPlanSkuSupplierQuoteUploadAPIResponse struct {
 	model.CommonResponse
-	AlibabatmallgeniescpplanskusupplierquoteuploadAPIResponseModel
+	AlibabaTmallgenieScpPlanSkuSupplierQuoteUploadAPIResponseModel
 }
 
-// AlibabatmallgeniescpplanskusupplierquoteuploadAPIResponseModel is 标准供应商配额同步 成功返回结果
-type AlibabatmallgeniescpplanskusupplierquoteuploadAPIResponseModel struct {
+// AlibabaTmallgenieScpPlanSkuSupplierQuoteUploadAPIResponseModel is 标准供应商配额同步 成功返回结果
+type AlibabaTmallgenieScpPlanSkuSupplierQuoteUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tmallgenie_scp_plan_sku_supplier_quote_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

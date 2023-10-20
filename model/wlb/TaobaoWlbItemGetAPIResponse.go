@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlbitemgetAPIResponse 根据商品ID获取商品信息 API返回值
+// TaobaoWlbItemGetAPIResponse 根据商品ID获取商品信息 API返回值
 // taobao.wlb.item.get
 //
 // 根据商品ID获取商品信息,除了获取商品信息外还可获取商品属性信息和库存信息。
-type TaobaowlbitemgetAPIResponse struct {
+type TaobaoWlbItemGetAPIResponse struct {
 	model.CommonResponse
-	TaobaowlbitemgetAPIResponseModel
+	TaobaoWlbItemGetAPIResponseModel
 }
 
-// TaobaowlbitemgetAPIResponseModel is 根据商品ID获取商品信息 成功返回结果
-type TaobaowlbitemgetAPIResponseModel struct {
+// TaobaoWlbItemGetAPIResponseModel is 根据商品ID获取商品信息 成功返回结果
+type TaobaoWlbItemGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_item_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

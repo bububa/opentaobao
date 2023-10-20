@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaotbkcoupongetMapData 结构体
-type TaobaotbkcoupongetMapData struct {
+// TaobaoTbkCouponGetMapData 结构体
+type TaobaoTbkCouponGetMapData struct {
 	// 优惠券门槛金额
 	CouponStartFee string `json:"coupon_start_fee,omitempty" xml:"coupon_start_fee,omitempty"`
 	// 优惠券结束时间

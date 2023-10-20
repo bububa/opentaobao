@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaxwarehouseinboundcallbackAPIResponse 翱象入库回传 API返回值
+// AlibabaAxWarehouseInboundCallbackAPIResponse 翱象入库回传 API返回值
 // alibaba.ax.warehouse.inbound.callback
 //
 // 翱象入库回传
-type AlibabaaxwarehouseinboundcallbackAPIResponse struct {
+type AlibabaAxWarehouseInboundCallbackAPIResponse struct {
 	model.CommonResponse
-	AlibabaaxwarehouseinboundcallbackAPIResponseModel
+	AlibabaAxWarehouseInboundCallbackAPIResponseModel
 }
 
-// AlibabaaxwarehouseinboundcallbackAPIResponseModel is 翱象入库回传 成功返回结果
-type AlibabaaxwarehouseinboundcallbackAPIResponseModel struct {
+// AlibabaAxWarehouseInboundCallbackAPIResponseModel is 翱象入库回传 成功返回结果
+type AlibabaAxWarehouseInboundCallbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ax_warehouse_inbound_callback_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

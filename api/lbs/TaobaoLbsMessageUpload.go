@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/lbs"
 )
 
-// Taobaolbsmessageupload lbs数据采集
+// TaobaoLbsMessageUpload lbs数据采集
 // taobao.lbs.message.upload
 //
 // lbs数据采集
-func Taobaolbsmessageupload(clt *core.SDKClient, req *lbs.TaobaolbsmessageuploadAPIRequest, session string) (*lbs.TaobaolbsmessageuploadAPIResponse, error) {
-	var resp lbs.TaobaolbsmessageuploadAPIResponse
+func TaobaoLbsMessageUpload(clt *core.SDKClient, req *lbs.TaobaoLbsMessageUploadAPIRequest, session string) (*lbs.TaobaoLbsMessageUploadAPIResponse, error) {
+	var resp lbs.TaobaoLbsMessageUploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package moscm
 
-// AlibabamosdeliverysendResultDo 结构体
-type AlibabamosdeliverysendResultDo struct {
+// AlibabaMosDeliverySendResultDo 结构体
+type AlibabaMosDeliverySendResultDo struct {
 	// 异常信息
 	SubMsg string `json:"sub_msg,omitempty" xml:"sub_msg,omitempty"`
 	// 编码

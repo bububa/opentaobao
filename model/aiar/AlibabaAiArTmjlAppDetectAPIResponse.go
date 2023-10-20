@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaiartmjlappdetectAPIResponse 天猫精灵扫一扫入口的服务 API返回值
+// AlibabaAiArTmjlAppDetectAPIResponse 天猫精灵扫一扫入口的服务 API返回值
 // alibaba.ai.ar.tmjl.app.detect
 //
 // 天猫精灵扫一扫入口的图像检测服务
-type AlibabaaiartmjlappdetectAPIResponse struct {
+type AlibabaAiArTmjlAppDetectAPIResponse struct {
 	model.CommonResponse
-	AlibabaaiartmjlappdetectAPIResponseModel
+	AlibabaAiArTmjlAppDetectAPIResponseModel
 }
 
-// AlibabaaiartmjlappdetectAPIResponseModel is 天猫精灵扫一扫入口的服务 成功返回结果
-type AlibabaaiartmjlappdetectAPIResponseModel struct {
+// AlibabaAiArTmjlAppDetectAPIResponseModel is 天猫精灵扫一扫入口的服务 成功返回结果
+type AlibabaAiArTmjlAppDetectAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ai_ar_tmjl_app_detect_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

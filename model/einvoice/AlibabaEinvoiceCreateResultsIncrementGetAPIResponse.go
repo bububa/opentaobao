@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaeinvoicecreateresultsincrementgetAPIResponse ERP增量开票结果获取 API返回值
+// AlibabaEinvoiceCreateResultsIncrementGetAPIResponse ERP增量开票结果获取 API返回值
 // alibaba.einvoice.create.results.increment.get
 //
 // 增量开票结果获取
-type AlibabaeinvoicecreateresultsincrementgetAPIResponse struct {
+type AlibabaEinvoiceCreateResultsIncrementGetAPIResponse struct {
 	model.CommonResponse
-	AlibabaeinvoicecreateresultsincrementgetAPIResponseModel
+	AlibabaEinvoiceCreateResultsIncrementGetAPIResponseModel
 }
 
-// AlibabaeinvoicecreateresultsincrementgetAPIResponseModel is ERP增量开票结果获取 成功返回结果
-type AlibabaeinvoicecreateresultsincrementgetAPIResponseModel struct {
+// AlibabaEinvoiceCreateResultsIncrementGetAPIResponseModel is ERP增量开票结果获取 成功返回结果
+type AlibabaEinvoiceCreateResultsIncrementGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_create_results_increment_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package icbuseller
 
-// AlibabasellervendorserviceprocessResultDto 结构体
-type AlibabasellervendorserviceprocessResultDto struct {
+// AlibabaSellerVendorServiceProcessResultDto 结构体
+type AlibabaSellerVendorServiceProcessResultDto struct {
 	// 返回集合
 	List []VendorMerchantRecordBaseDto `json:"list,omitempty" xml:"list>vendor_merchant_record_base_dto,omitempty"`
 	// 异常说明

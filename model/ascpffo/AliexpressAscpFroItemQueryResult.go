@@ -1,9 +1,9 @@
 package ascpffo
 
-// AliexpressascpfroitemqueryResult 结构体
-type AliexpressascpfroitemqueryResult struct {
+// AliexpressAscpFroItemQueryResult 结构体
+type AliexpressAscpFroItemQueryResult struct {
 	// dto
-	DataList []AliexpressascpfroitemqueryData `json:"data_list,omitempty" xml:"data_list>aliexpressascpfroitemquery_data,omitempty"`
+	DataList []AliexpressAscpFroItemQueryData `json:"data_list,omitempty" xml:"data_list>aliexpress_ascp_fro_item_query_data,omitempty"`
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

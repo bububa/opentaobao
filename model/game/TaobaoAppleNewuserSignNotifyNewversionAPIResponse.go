@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoapplenewusersignnotifynewversionAPIResponse 新用户签约结果通知接口v2 API返回值
+// TaobaoAppleNewuserSignNotifyNewversionAPIResponse 新用户签约结果通知接口v2 API返回值
 // taobao.apple.newuser.sign.notify.newversion
 //
 // 资和信主动通知签约结果
-type TaobaoapplenewusersignnotifynewversionAPIResponse struct {
+type TaobaoAppleNewuserSignNotifyNewversionAPIResponse struct {
 	model.CommonResponse
-	TaobaoapplenewusersignnotifynewversionAPIResponseModel
+	TaobaoAppleNewuserSignNotifyNewversionAPIResponseModel
 }
 
-// TaobaoapplenewusersignnotifynewversionAPIResponseModel is 新用户签约结果通知接口v2 成功返回结果
-type TaobaoapplenewusersignnotifynewversionAPIResponseModel struct {
+// TaobaoAppleNewuserSignNotifyNewversionAPIResponseModel is 新用户签约结果通知接口v2 成功返回结果
+type TaobaoAppleNewuserSignNotifyNewversionAPIResponseModel struct {
 	XMLName xml.Name `xml:"apple_newuser_sign_notify_newversion_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

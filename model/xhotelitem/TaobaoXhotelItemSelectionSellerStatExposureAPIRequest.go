@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhotelitemselectionsellerstatexposureAPIRequest 选品曝光趋势 API请求
+// TaobaoXhotelItemSelectionSellerStatExposureAPIRequest 选品曝光趋势 API请求
 // taobao.xhotel.item.selection.seller.stat.exposure
 //
 // 用于提供给商家获取选品曝光趋势
-type TaobaoxhotelitemselectionsellerstatexposureAPIRequest struct {
+type TaobaoXhotelItemSelectionSellerStatExposureAPIRequest struct {
 	model.Params
 	// 日期 默认为昨天
 	_date string
@@ -24,91 +24,91 @@ type TaobaoxhotelitemselectionsellerstatexposureAPIRequest struct {
 	_outHid string
 }
 
-// NewTaobaoxhotelitemselectionsellerstatexposureRequest 初始化TaobaoxhotelitemselectionsellerstatexposureAPIRequest对象
-func NewTaobaoxhotelitemselectionsellerstatexposureRequest() *TaobaoxhotelitemselectionsellerstatexposureAPIRequest {
-	return &TaobaoxhotelitemselectionsellerstatexposureAPIRequest{
+// NewTaobaoXhotelItemSelectionSellerStatExposureRequest 初始化TaobaoXhotelItemSelectionSellerStatExposureAPIRequest对象
+func NewTaobaoXhotelItemSelectionSellerStatExposureRequest() *TaobaoXhotelItemSelectionSellerStatExposureAPIRequest {
+	return &TaobaoXhotelItemSelectionSellerStatExposureAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoxhotelitemselectionsellerstatexposureAPIRequest) GetApiMethodName() string {
+func (r TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) GetApiMethodName() string {
 	return "taobao.xhotel.item.selection.seller.stat.exposure"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoxhotelitemselectionsellerstatexposureAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoxhotelitemselectionsellerstatexposureAPIRequest) GetRawParams() model.Params {
+func (r TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDate is Date Setter
 // 日期 默认为昨天
-func (r *TaobaoxhotelitemselectionsellerstatexposureAPIRequest) SetDate(_date string) error {
+func (r *TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) SetDate(_date string) error {
 	r._date = _date
 	r.Set("date", _date)
 	return nil
 }
 
 // GetDate Date Getter
-func (r TaobaoxhotelitemselectionsellerstatexposureAPIRequest) GetDate() string {
+func (r TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) GetDate() string {
 	return r._date
 }
 
 // SetHid is Hid Setter
 // hid  默认为all
-func (r *TaobaoxhotelitemselectionsellerstatexposureAPIRequest) SetHid(_hid string) error {
+func (r *TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) SetHid(_hid string) error {
 	r._hid = _hid
 	r.Set("hid", _hid)
 	return nil
 }
 
 // GetHid Hid Getter
-func (r TaobaoxhotelitemselectionsellerstatexposureAPIRequest) GetHid() string {
+func (r TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) GetHid() string {
 	return r._hid
 }
 
 // SetVendor is Vendor Setter
 // 默认为all
-func (r *TaobaoxhotelitemselectionsellerstatexposureAPIRequest) SetVendor(_vendor string) error {
+func (r *TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
 	r.Set("vendor", _vendor)
 	return nil
 }
 
 // GetVendor Vendor Getter
-func (r TaobaoxhotelitemselectionsellerstatexposureAPIRequest) GetVendor() string {
+func (r TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
 // SetSupplier is Supplier Setter
 // 默认为all
-func (r *TaobaoxhotelitemselectionsellerstatexposureAPIRequest) SetSupplier(_supplier string) error {
+func (r *TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) SetSupplier(_supplier string) error {
 	r._supplier = _supplier
 	r.Set("supplier", _supplier)
 	return nil
 }
 
 // GetSupplier Supplier Getter
-func (r TaobaoxhotelitemselectionsellerstatexposureAPIRequest) GetSupplier() string {
+func (r TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) GetSupplier() string {
 	return r._supplier
 }
 
 // SetOutHid is OutHid Setter
 // 酒店编码
-func (r *TaobaoxhotelitemselectionsellerstatexposureAPIRequest) SetOutHid(_outHid string) error {
+func (r *TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) SetOutHid(_outHid string) error {
 	r._outHid = _outHid
 	r.Set("out_hid", _outHid)
 	return nil
 }
 
 // GetOutHid OutHid Getter
-func (r TaobaoxhotelitemselectionsellerstatexposureAPIRequest) GetOutHid() string {
+func (r TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) GetOutHid() string {
 	return r._outHid
 }

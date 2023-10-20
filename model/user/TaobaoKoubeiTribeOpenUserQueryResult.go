@@ -1,7 +1,7 @@
 package user
 
-// TaobaokoubeitribeopenuserqueryResult 结构体
-type TaobaokoubeitribeopenuserqueryResult struct {
+// TaobaoKoubeiTribeOpenUserQueryResult 结构体
+type TaobaoKoubeiTribeOpenUserQueryResult struct {
 	// traceId
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 错误信息

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpresslogisticsabnormalorderqueryAPIResponse 异常订单查询 API返回值
+// AliexpressLogisticsAbnormalorderQueryAPIResponse 异常订单查询 API返回值
 // aliexpress.logistics.abnormalorder.query
 //
 // 异常订单查询
-type AliexpresslogisticsabnormalorderqueryAPIResponse struct {
+type AliexpressLogisticsAbnormalorderQueryAPIResponse struct {
 	model.CommonResponse
-	AliexpresslogisticsabnormalorderqueryAPIResponseModel
+	AliexpressLogisticsAbnormalorderQueryAPIResponseModel
 }
 
-// AliexpresslogisticsabnormalorderqueryAPIResponseModel is 异常订单查询 成功返回结果
-type AliexpresslogisticsabnormalorderqueryAPIResponseModel struct {
+// AliexpressLogisticsAbnormalorderQueryAPIResponseModel is 异常订单查询 成功返回结果
+type AliexpressLogisticsAbnormalorderQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_logistics_abnormalorder_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

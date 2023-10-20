@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbitem"
 )
 
-// Tmallproductupdateschemaget 产品更新规则获取接口
+// TmallProductUpdateSchemaGet 产品更新规则获取接口
 // tmall.product.update.schema.get
 //
 // 获取用户更新产品的规则
-func Tmallproductupdateschemaget(clt *core.SDKClient, req *tbitem.TmallproductupdateschemagetAPIRequest, session string) (*tbitem.TmallproductupdateschemagetAPIResponse, error) {
-	var resp tbitem.TmallproductupdateschemagetAPIResponse
+func TmallProductUpdateSchemaGet(clt *core.SDKClient, req *tbitem.TmallProductUpdateSchemaGetAPIRequest, session string) (*tbitem.TmallProductUpdateSchemaGetAPIResponse, error) {
+	var resp tbitem.TmallProductUpdateSchemaGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

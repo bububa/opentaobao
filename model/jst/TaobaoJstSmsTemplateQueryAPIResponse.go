@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaojstsmstemplatequeryAPIResponse 淘宝短信模板查询 API返回值
+// TaobaoJstSmsTemplateQueryAPIResponse 淘宝短信模板查询 API返回值
 // taobao.jst.sms.template.query
 //
 // 淘宝短信模板查询
-type TaobaojstsmstemplatequeryAPIResponse struct {
+type TaobaoJstSmsTemplateQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaojstsmstemplatequeryAPIResponseModel
+	TaobaoJstSmsTemplateQueryAPIResponseModel
 }
 
-// TaobaojstsmstemplatequeryAPIResponseModel is 淘宝短信模板查询 成功返回结果
-type TaobaojstsmstemplatequeryAPIResponseModel struct {
+// TaobaoJstSmsTemplateQueryAPIResponseModel is 淘宝短信模板查询 成功返回结果
+type TaobaoJstSmsTemplateQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"jst_sms_template_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -3,7 +3,7 @@ package wdk
 // BmResult 结构体
 type BmResult struct {
 	// 结果数据
-	DataList []AlibabawdkbmcouponqueryData `json:"data_list,omitempty" xml:"data_list>alibabawdkbmcouponquery_data,omitempty"`
+	DataList []AlibabaWdkBmCouponQueryData `json:"data_list,omitempty" xml:"data_list>alibaba_wdk_bm_coupon_query_data,omitempty"`
 	// 详细结果
 	PublishResults []SkuStockPublishResult `json:"publish_results,omitempty" xml:"publish_results>sku_stock_publish_result,omitempty"`
 	// 错误码，当失败返回错误码

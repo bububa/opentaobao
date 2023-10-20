@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaojstinteractivetaskqueryAPIResponse 互动任务列表查询接口 API返回值
+// TaobaoJstInteractiveTaskQueryAPIResponse 互动任务列表查询接口 API返回值
 // taobao.jst.interactive.task.query
 //
 // 查询用户的互动任务列表
-type TaobaojstinteractivetaskqueryAPIResponse struct {
+type TaobaoJstInteractiveTaskQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaojstinteractivetaskqueryAPIResponseModel
+	TaobaoJstInteractiveTaskQueryAPIResponseModel
 }
 
-// TaobaojstinteractivetaskqueryAPIResponseModel is 互动任务列表查询接口 成功返回结果
-type TaobaojstinteractivetaskqueryAPIResponseModel struct {
+// TaobaoJstInteractiveTaskQueryAPIResponseModel is 互动任务列表查询接口 成功返回结果
+type TaobaoJstInteractiveTaskQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"jst_interactive_task_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

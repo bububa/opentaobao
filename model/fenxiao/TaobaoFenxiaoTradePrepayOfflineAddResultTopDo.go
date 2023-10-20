@@ -1,7 +1,7 @@
 package fenxiao
 
-// TaobaofenxiaotradeprepayofflineaddResultTopDo 结构体
-type TaobaofenxiaotradeprepayofflineaddResultTopDo struct {
+// TaobaoFenxiaoTradePrepayOfflineAddResultTopDo 结构体
+type TaobaoFenxiaoTradePrepayOfflineAddResultTopDo struct {
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

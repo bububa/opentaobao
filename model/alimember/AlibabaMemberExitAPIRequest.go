@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamemberexitAPIRequest 退会 API请求
+// AlibabaMemberExitAPIRequest 退会 API请求
 // alibaba.member.exit
 //
 // 商家会员解绑
-type AlibabamemberexitAPIRequest struct {
+type AlibabaMemberExitAPIRequest struct {
 	model.Params
 	// 退会对象
 	_exitMember *ExitMemberDto
 }
 
-// NewAlibabamemberexitRequest 初始化AlibabamemberexitAPIRequest对象
-func NewAlibabamemberexitRequest() *AlibabamemberexitAPIRequest {
-	return &AlibabamemberexitAPIRequest{
+// NewAlibabaMemberExitRequest 初始化AlibabaMemberExitAPIRequest对象
+func NewAlibabaMemberExitRequest() *AlibabaMemberExitAPIRequest {
+	return &AlibabaMemberExitAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabamemberexitAPIRequest) GetApiMethodName() string {
+func (r AlibabaMemberExitAPIRequest) GetApiMethodName() string {
 	return "alibaba.member.exit"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabamemberexitAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaMemberExitAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabamemberexitAPIRequest) GetRawParams() model.Params {
+func (r AlibabaMemberExitAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetExitMember is ExitMember Setter
 // 退会对象
-func (r *AlibabamemberexitAPIRequest) SetExitMember(_exitMember *ExitMemberDto) error {
+func (r *AlibabaMemberExitAPIRequest) SetExitMember(_exitMember *ExitMemberDto) error {
 	r._exitMember = _exitMember
 	r.Set("exit_member", _exitMember)
 	return nil
 }
 
 // GetExitMember ExitMember Getter
-func (r AlibabamemberexitAPIRequest) GetExitMember() *ExitMemberDto {
+func (r AlibabaMemberExitAPIRequest) GetExitMember() *ExitMemberDto {
 	return r._exitMember
 }

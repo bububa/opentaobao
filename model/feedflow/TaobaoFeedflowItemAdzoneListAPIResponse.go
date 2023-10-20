@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaofeedflowitemadzonelistAPIResponse 批量查询可用广告位列表 API返回值
+// TaobaoFeedflowItemAdzoneListAPIResponse 批量查询可用广告位列表 API返回值
 // taobao.feedflow.item.adzone.list
 //
 // 批量查询可用广告位列表
-type TaobaofeedflowitemadzonelistAPIResponse struct {
+type TaobaoFeedflowItemAdzoneListAPIResponse struct {
 	model.CommonResponse
-	TaobaofeedflowitemadzonelistAPIResponseModel
+	TaobaoFeedflowItemAdzoneListAPIResponseModel
 }
 
-// TaobaofeedflowitemadzonelistAPIResponseModel is 批量查询可用广告位列表 成功返回结果
-type TaobaofeedflowitemadzonelistAPIResponseModel struct {
+// TaobaoFeedflowItemAdzoneListAPIResponseModel is 批量查询可用广告位列表 成功返回结果
+type TaobaoFeedflowItemAdzoneListAPIResponseModel struct {
 	XMLName xml.Name `xml:"feedflow_item_adzone_list_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果对象
-	Result *TaobaofeedflowitemadzonelistResultDto `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TaobaoFeedflowItemAdzoneListResultDto `json:"result,omitempty" xml:"result,omitempty"`
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/icbu"
 )
 
-// Alibabaicbucategoryget 商品发布类目获取
+// AlibabaIcbuCategoryGet 商品发布类目获取
 // alibaba.icbu.category.get
 //
 // 获取商品发布类目
-func Alibabaicbucategoryget(clt *core.SDKClient, req *icbu.AlibabaicbucategorygetAPIRequest, session string) (*icbu.AlibabaicbucategorygetAPIResponse, error) {
-	var resp icbu.AlibabaicbucategorygetAPIResponse
+func AlibabaIcbuCategoryGet(clt *core.SDKClient, req *icbu.AlibabaIcbuCategoryGetAPIRequest, session string) (*icbu.AlibabaIcbuCategoryGetAPIResponse, error) {
+	var resp icbu.AlibabaIcbuCategoryGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

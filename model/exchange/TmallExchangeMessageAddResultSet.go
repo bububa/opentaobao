@@ -1,7 +1,7 @@
 package exchange
 
-// TmallexchangemessageaddResultSet 结构体
-type TmallexchangemessageaddResultSet struct {
+// TmallExchangeMessageAddResultSet 结构体
+type TmallExchangeMessageAddResultSet struct {
 	// 留言信息
 	Results []RefundMessage `json:"results,omitempty" xml:"results>refund_message,omitempty"`
 	// 异常信息

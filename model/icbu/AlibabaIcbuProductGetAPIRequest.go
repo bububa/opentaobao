@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaicbuproductgetAPIRequest 获得单个商品详情 API请求
+// AlibabaIcbuProductGetAPIRequest 获得单个商品详情 API请求
 // alibaba.icbu.product.get
 //
 // 获取商品详情
-type AlibabaicbuproductgetAPIRequest struct {
+type AlibabaIcbuProductGetAPIRequest struct {
 	model.Params
 	// 商品语种，目前只支持ENGLISH
 	_language string
@@ -18,52 +18,52 @@ type AlibabaicbuproductgetAPIRequest struct {
 	_productId string
 }
 
-// NewAlibabaicbuproductgetRequest 初始化AlibabaicbuproductgetAPIRequest对象
-func NewAlibabaicbuproductgetRequest() *AlibabaicbuproductgetAPIRequest {
-	return &AlibabaicbuproductgetAPIRequest{
+// NewAlibabaIcbuProductGetRequest 初始化AlibabaIcbuProductGetAPIRequest对象
+func NewAlibabaIcbuProductGetRequest() *AlibabaIcbuProductGetAPIRequest {
+	return &AlibabaIcbuProductGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaicbuproductgetAPIRequest) GetApiMethodName() string {
+func (r AlibabaIcbuProductGetAPIRequest) GetApiMethodName() string {
 	return "alibaba.icbu.product.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaicbuproductgetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaIcbuProductGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaicbuproductgetAPIRequest) GetRawParams() model.Params {
+func (r AlibabaIcbuProductGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetLanguage is Language Setter
 // 商品语种，目前只支持ENGLISH
-func (r *AlibabaicbuproductgetAPIRequest) SetLanguage(_language string) error {
+func (r *AlibabaIcbuProductGetAPIRequest) SetLanguage(_language string) error {
 	r._language = _language
 	r.Set("language", _language)
 	return nil
 }
 
 // GetLanguage Language Getter
-func (r AlibabaicbuproductgetAPIRequest) GetLanguage() string {
+func (r AlibabaIcbuProductGetAPIRequest) GetLanguage() string {
 	return r._language
 }
 
 // SetProductId is ProductId Setter
 // 混淆后的商品ID
-func (r *AlibabaicbuproductgetAPIRequest) SetProductId(_productId string) error {
+func (r *AlibabaIcbuProductGetAPIRequest) SetProductId(_productId string) error {
 	r._productId = _productId
 	r.Set("product_id", _productId)
 	return nil
 }
 
 // GetProductId ProductId Getter
-func (r AlibabaicbuproductgetAPIRequest) GetProductId() string {
+func (r AlibabaIcbuProductGetAPIRequest) GetProductId() string {
 	return r._productId
 }

@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdktradeorderbalancebillqueryApiResult 结构体
-type AlibabawdktradeorderbalancebillqueryApiResult struct {
+// AlibabaWdkTradeOrderBalanceBillQueryApiResult 结构体
+type AlibabaWdkTradeOrderBalanceBillQueryApiResult struct {
 	// 错误码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误信息

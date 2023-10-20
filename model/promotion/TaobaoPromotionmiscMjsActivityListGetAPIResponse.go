@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaopromotionmiscmjsactivitylistgetAPIResponse 查询满就送活动列表 API返回值
+// TaobaoPromotionmiscMjsActivityListGetAPIResponse 查询满就送活动列表 API返回值
 // taobao.promotionmisc.mjs.activity.list.get
 //
 // 查询满就送活动列表。注意，该接口的返回值中，只包含活动的主要信息，如activity_id，name，description，start_time，end_time，type，participate_range。优惠的详细信息，请通过taobao.promotionmisc.mjs.activity.get获取。
-type TaobaopromotionmiscmjsactivitylistgetAPIResponse struct {
+type TaobaoPromotionmiscMjsActivityListGetAPIResponse struct {
 	model.CommonResponse
-	TaobaopromotionmiscmjsactivitylistgetAPIResponseModel
+	TaobaoPromotionmiscMjsActivityListGetAPIResponseModel
 }
 
-// TaobaopromotionmiscmjsactivitylistgetAPIResponseModel is 查询满就送活动列表 成功返回结果
-type TaobaopromotionmiscmjsactivitylistgetAPIResponseModel struct {
+// TaobaoPromotionmiscMjsActivityListGetAPIResponseModel is 查询满就送活动列表 成功返回结果
+type TaobaoPromotionmiscMjsActivityListGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotionmisc_mjs_activity_list_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

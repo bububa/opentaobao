@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabalegalcasestandpointfeedbackAPIResponse 新增或更新 反馈口径(采纳口径/不采纳口径) API返回值
+// AlibabaLegalCaseStandpointFeedbackAPIResponse 新增或更新 反馈口径(采纳口径/不采纳口径) API返回值
 // alibaba.legal.case.standpoint.feedback
 //
 // 新增或更新 反馈口径(采纳口径/不采纳口径)
-type AlibabalegalcasestandpointfeedbackAPIResponse struct {
+type AlibabaLegalCaseStandpointFeedbackAPIResponse struct {
 	model.CommonResponse
-	AlibabalegalcasestandpointfeedbackAPIResponseModel
+	AlibabaLegalCaseStandpointFeedbackAPIResponseModel
 }
 
-// AlibabalegalcasestandpointfeedbackAPIResponseModel is 新增或更新 反馈口径(采纳口径/不采纳口径) 成功返回结果
-type AlibabalegalcasestandpointfeedbackAPIResponseModel struct {
+// AlibabaLegalCaseStandpointFeedbackAPIResponseModel is 新增或更新 反馈口径(采纳口径/不采纳口径) 成功返回结果
+type AlibabaLegalCaseStandpointFeedbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_legal_case_standpoint_feedback_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

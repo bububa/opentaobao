@@ -17,5 +17,5 @@ type OrderPendingRequest struct {
 	// 挂起/恢复原因
 	Reason string `json:"reason,omitempty" xml:"reason,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoqimenorderpendingMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoQimenOrderPendingMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

@@ -1,7 +1,7 @@
 package smartstore
 
-// TmallpopupstoreitemdiscountpriceResultDto 结构体
-type TmallpopupstoreitemdiscountpriceResultDto struct {
+// TmallPopupstoreItemDiscountPriceResultDto 结构体
+type TmallPopupstoreItemDiscountPriceResultDto struct {
 	// 错误码code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 错误msg

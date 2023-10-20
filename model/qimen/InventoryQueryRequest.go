@@ -7,5 +7,5 @@ type InventoryQueryRequest struct {
 	// 备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoqimeninventoryqueryMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoQimenInventoryQueryMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

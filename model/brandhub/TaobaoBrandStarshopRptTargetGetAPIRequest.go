@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobrandstarshoprpttargetgetAPIRequest 明星店铺定向维度报表 API请求
+// TaobaoBrandStarshopRptTargetGetAPIRequest 明星店铺定向维度报表 API请求
 // taobao.brand.starshop.rpt.target.get
 //
 // 获取明星店铺定向维度分日报表数据，只能查询近90天内的数据，包括展现量，点击量等
-type TaobaobrandstarshoprpttargetgetAPIRequest struct {
+type TaobaoBrandStarshopRptTargetGetAPIRequest struct {
 	model.Params
 	// 流量类型 1: PC站内, 2: PC站外 , 4: 无线站内, 5: 无线站外,支持多种一起查询,如1,2,4,5
 	_trafficType string
@@ -26,104 +26,104 @@ type TaobaobrandstarshoprpttargetgetAPIRequest struct {
 	_effect string
 }
 
-// NewTaobaobrandstarshoprpttargetgetRequest 初始化TaobaobrandstarshoprpttargetgetAPIRequest对象
-func NewTaobaobrandstarshoprpttargetgetRequest() *TaobaobrandstarshoprpttargetgetAPIRequest {
-	return &TaobaobrandstarshoprpttargetgetAPIRequest{
+// NewTaobaoBrandStarshopRptTargetGetRequest 初始化TaobaoBrandStarshopRptTargetGetAPIRequest对象
+func NewTaobaoBrandStarshopRptTargetGetRequest() *TaobaoBrandStarshopRptTargetGetAPIRequest {
+	return &TaobaoBrandStarshopRptTargetGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaobrandstarshoprpttargetgetAPIRequest) GetApiMethodName() string {
+func (r TaobaoBrandStarshopRptTargetGetAPIRequest) GetApiMethodName() string {
 	return "taobao.brand.starshop.rpt.target.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaobrandstarshoprpttargetgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoBrandStarshopRptTargetGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaobrandstarshoprpttargetgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoBrandStarshopRptTargetGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTrafficType is TrafficType Setter
 // 流量类型 1: PC站内, 2: PC站外 , 4: 无线站内, 5: 无线站外,支持多种一起查询,如1,2,4,5
-func (r *TaobaobrandstarshoprpttargetgetAPIRequest) SetTrafficType(_trafficType string) error {
+func (r *TaobaoBrandStarshopRptTargetGetAPIRequest) SetTrafficType(_trafficType string) error {
 	r._trafficType = _trafficType
 	r.Set("traffic_type", _trafficType)
 	return nil
 }
 
 // GetTrafficType TrafficType Getter
-func (r TaobaobrandstarshoprpttargetgetAPIRequest) GetTrafficType() string {
+func (r TaobaoBrandStarshopRptTargetGetAPIRequest) GetTrafficType() string {
 	return r._trafficType
 }
 
 // SetStartDate is StartDate Setter
 // 开始日期(最多查询1个月的数据)
-func (r *TaobaobrandstarshoprpttargetgetAPIRequest) SetStartDate(_startDate string) error {
+func (r *TaobaoBrandStarshopRptTargetGetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
 	r.Set("start_date", _startDate)
 	return nil
 }
 
 // GetStartDate StartDate Getter
-func (r TaobaobrandstarshoprpttargetgetAPIRequest) GetStartDate() string {
+func (r TaobaoBrandStarshopRptTargetGetAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
 // SetEndDate is EndDate Setter
 // 截至日期(最晚到昨天)
-func (r *TaobaobrandstarshoprpttargetgetAPIRequest) SetEndDate(_endDate string) error {
+func (r *TaobaoBrandStarshopRptTargetGetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
 	r.Set("end_date", _endDate)
 	return nil
 }
 
 // GetEndDate EndDate Getter
-func (r TaobaobrandstarshoprpttargetgetAPIRequest) GetEndDate() string {
+func (r TaobaoBrandStarshopRptTargetGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
 // SetPageIndex is PageIndex Setter
 // 当前页数
-func (r *TaobaobrandstarshoprpttargetgetAPIRequest) SetPageIndex(_pageIndex string) error {
+func (r *TaobaoBrandStarshopRptTargetGetAPIRequest) SetPageIndex(_pageIndex string) error {
 	r._pageIndex = _pageIndex
 	r.Set("page_index", _pageIndex)
 	return nil
 }
 
 // GetPageIndex PageIndex Getter
-func (r TaobaobrandstarshoprpttargetgetAPIRequest) GetPageIndex() string {
+func (r TaobaoBrandStarshopRptTargetGetAPIRequest) GetPageIndex() string {
 	return r._pageIndex
 }
 
 // SetPageSize is PageSize Setter
 // 每页条数
-func (r *TaobaobrandstarshoprpttargetgetAPIRequest) SetPageSize(_pageSize string) error {
+func (r *TaobaoBrandStarshopRptTargetGetAPIRequest) SetPageSize(_pageSize string) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r TaobaobrandstarshoprpttargetgetAPIRequest) GetPageSize() string {
+func (r TaobaoBrandStarshopRptTargetGetAPIRequest) GetPageSize() string {
 	return r._pageSize
 }
 
 // SetEffect is Effect Setter
 // 转化周期,默认15, 3,7,15
-func (r *TaobaobrandstarshoprpttargetgetAPIRequest) SetEffect(_effect string) error {
+func (r *TaobaoBrandStarshopRptTargetGetAPIRequest) SetEffect(_effect string) error {
 	r._effect = _effect
 	r.Set("effect", _effect)
 	return nil
 }
 
 // GetEffect Effect Getter
-func (r TaobaobrandstarshoprpttargetgetAPIRequest) GetEffect() string {
+func (r TaobaoBrandStarshopRptTargetGetAPIRequest) GetEffect() string {
 	return r._effect
 }

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabadamaimaitixprojectdistributionquerybypageAPIRequest 分销项目分页查询项目列表服务 API请求
+// AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest 分销项目分页查询项目列表服务 API请求
 // alibaba.damai.maitix.project.distribution.querybypage
 //
 // 分销项目分页查询项目列表服务
-type AlibabadamaimaitixprojectdistributionquerybypageAPIRequest struct {
+type AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest struct {
 	model.Params
 	// 入参param
 	_param *ProjectPageParam
 }
 
-// NewAlibabadamaimaitixprojectdistributionquerybypageRequest 初始化AlibabadamaimaitixprojectdistributionquerybypageAPIRequest对象
-func NewAlibabadamaimaitixprojectdistributionquerybypageRequest() *AlibabadamaimaitixprojectdistributionquerybypageAPIRequest {
-	return &AlibabadamaimaitixprojectdistributionquerybypageAPIRequest{
+// NewAlibabaDamaiMaitixProjectDistributionQuerybypageRequest 初始化AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest对象
+func NewAlibabaDamaiMaitixProjectDistributionQuerybypageRequest() *AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest {
+	return &AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabadamaimaitixprojectdistributionquerybypageAPIRequest) GetApiMethodName() string {
+func (r AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest) GetApiMethodName() string {
 	return "alibaba.damai.maitix.project.distribution.querybypage"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabadamaimaitixprojectdistributionquerybypageAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabadamaimaitixprojectdistributionquerybypageAPIRequest) GetRawParams() model.Params {
+func (r AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 入参param
-func (r *AlibabadamaimaitixprojectdistributionquerybypageAPIRequest) SetParam(_param *ProjectPageParam) error {
+func (r *AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest) SetParam(_param *ProjectPageParam) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlibabadamaimaitixprojectdistributionquerybypageAPIRequest) GetParam() *ProjectPageParam {
+func (r AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest) GetParam() *ProjectPageParam {
 	return r._param
 }

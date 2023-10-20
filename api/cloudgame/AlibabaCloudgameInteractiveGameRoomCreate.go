@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cloudgame"
 )
 
-// Alibabacloudgameinteractivegameroomcreate 建游戏房间
+// AlibabaCloudgameInteractiveGameRoomCreate 建游戏房间
 // alibaba.cloudgame.interactive.game.room.create
 //
 // 建游戏房间
-func Alibabacloudgameinteractivegameroomcreate(clt *core.SDKClient, req *cloudgame.AlibabacloudgameinteractivegameroomcreateAPIRequest, session string) (*cloudgame.AlibabacloudgameinteractivegameroomcreateAPIResponse, error) {
-	var resp cloudgame.AlibabacloudgameinteractivegameroomcreateAPIResponse
+func AlibabaCloudgameInteractiveGameRoomCreate(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGameRoomCreateAPIRequest, session string) (*cloudgame.AlibabaCloudgameInteractiveGameRoomCreateAPIResponse, error) {
+	var resp cloudgame.AlibabaCloudgameInteractiveGameRoomCreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

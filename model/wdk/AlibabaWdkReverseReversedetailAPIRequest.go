@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkreversereversedetailAPIRequest 退款详情 API请求
+// AlibabaWdkReverseReversedetailAPIRequest 退款详情 API请求
 // alibaba.wdk.reverse.reversedetail
 //
 // 退款详情
-type AlibabawdkreversereversedetailAPIRequest struct {
+type AlibabaWdkReverseReversedetailAPIRequest struct {
 	model.Params
 	// 退款单id
 	_reverseId string
 }
 
-// NewAlibabawdkreversereversedetailRequest 初始化AlibabawdkreversereversedetailAPIRequest对象
-func NewAlibabawdkreversereversedetailRequest() *AlibabawdkreversereversedetailAPIRequest {
-	return &AlibabawdkreversereversedetailAPIRequest{
+// NewAlibabaWdkReverseReversedetailRequest 初始化AlibabaWdkReverseReversedetailAPIRequest对象
+func NewAlibabaWdkReverseReversedetailRequest() *AlibabaWdkReverseReversedetailAPIRequest {
+	return &AlibabaWdkReverseReversedetailAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabawdkreversereversedetailAPIRequest) GetApiMethodName() string {
+func (r AlibabaWdkReverseReversedetailAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.reverse.reversedetail"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabawdkreversereversedetailAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaWdkReverseReversedetailAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabawdkreversereversedetailAPIRequest) GetRawParams() model.Params {
+func (r AlibabaWdkReverseReversedetailAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetReverseId is ReverseId Setter
 // 退款单id
-func (r *AlibabawdkreversereversedetailAPIRequest) SetReverseId(_reverseId string) error {
+func (r *AlibabaWdkReverseReversedetailAPIRequest) SetReverseId(_reverseId string) error {
 	r._reverseId = _reverseId
 	r.Set("reverse_id", _reverseId)
 	return nil
 }
 
 // GetReverseId ReverseId Getter
-func (r AlibabawdkreversereversedetailAPIRequest) GetReverseId() string {
+func (r AlibabaWdkReverseReversedetailAPIRequest) GetReverseId() string {
 	return r._reverseId
 }

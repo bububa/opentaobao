@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunostvpubadminmanagedialogdeleteAPIResponse 删除全局弹窗 API返回值
+// YunosTvpubadminManageDialogDeleteAPIResponse 删除全局弹窗 API返回值
 // yunos.tvpubadmin.manage.dialog.delete
 //
 // 删除全局弹窗
-type YunostvpubadminmanagedialogdeleteAPIResponse struct {
+type YunosTvpubadminManageDialogDeleteAPIResponse struct {
 	model.CommonResponse
-	YunostvpubadminmanagedialogdeleteAPIResponseModel
+	YunosTvpubadminManageDialogDeleteAPIResponseModel
 }
 
-// YunostvpubadminmanagedialogdeleteAPIResponseModel is 删除全局弹窗 成功返回结果
-type YunostvpubadminmanagedialogdeleteAPIResponseModel struct {
+// YunosTvpubadminManageDialogDeleteAPIResponseModel is 删除全局弹窗 成功返回结果
+type YunosTvpubadminManageDialogDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvpubadmin_manage_dialog_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *YunostvpubadminmanagedialogdeleteTopResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *YunosTvpubadminManageDialogDeleteTopResult `json:"result,omitempty" xml:"result,omitempty"`
 }

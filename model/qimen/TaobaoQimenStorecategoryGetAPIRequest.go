@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoqimenstorecategorygetAPIRequest 门店类目获取接口 API请求
+// TaobaoQimenStorecategoryGetAPIRequest 门店类目获取接口 API请求
 // taobao.qimen.storecategory.get
 //
 // 商家在ERP中调用该接口，获取门店类目
-type TaobaoqimenstorecategorygetAPIRequest struct {
+type TaobaoQimenStorecategoryGetAPIRequest struct {
 	model.Params
 	// 备注
 	_remark string
 }
 
-// NewTaobaoqimenstorecategorygetRequest 初始化TaobaoqimenstorecategorygetAPIRequest对象
-func NewTaobaoqimenstorecategorygetRequest() *TaobaoqimenstorecategorygetAPIRequest {
-	return &TaobaoqimenstorecategorygetAPIRequest{
+// NewTaobaoQimenStorecategoryGetRequest 初始化TaobaoQimenStorecategoryGetAPIRequest对象
+func NewTaobaoQimenStorecategoryGetRequest() *TaobaoQimenStorecategoryGetAPIRequest {
+	return &TaobaoQimenStorecategoryGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoqimenstorecategorygetAPIRequest) GetApiMethodName() string {
+func (r TaobaoQimenStorecategoryGetAPIRequest) GetApiMethodName() string {
 	return "taobao.qimen.storecategory.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoqimenstorecategorygetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoQimenStorecategoryGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoqimenstorecategorygetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoQimenStorecategoryGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRemark is Remark Setter
 // 备注
-func (r *TaobaoqimenstorecategorygetAPIRequest) SetRemark(_remark string) error {
+func (r *TaobaoQimenStorecategoryGetAPIRequest) SetRemark(_remark string) error {
 	r._remark = _remark
 	r.Set("remark", _remark)
 	return nil
 }
 
 // GetRemark Remark Getter
-func (r TaobaoqimenstorecategorygetAPIRequest) GetRemark() string {
+func (r TaobaoQimenStorecategoryGetAPIRequest) GetRemark() string {
 	return r._remark
 }

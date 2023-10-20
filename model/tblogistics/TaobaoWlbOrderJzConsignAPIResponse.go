@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlborderjzconsignAPIResponse 家装发货接口 API返回值
+// TaobaoWlbOrderJzConsignAPIResponse 家装发货接口 API返回值
 // taobao.wlb.order.jz.consign
 //
 // 家装类订单使用该接口发货
-type TaobaowlborderjzconsignAPIResponse struct {
+type TaobaoWlbOrderJzConsignAPIResponse struct {
 	model.CommonResponse
-	TaobaowlborderjzconsignAPIResponseModel
+	TaobaoWlbOrderJzConsignAPIResponseModel
 }
 
-// TaobaowlborderjzconsignAPIResponseModel is 家装发货接口 成功返回结果
-type TaobaowlborderjzconsignAPIResponseModel struct {
+// TaobaoWlbOrderJzConsignAPIResponseModel is 家装发货接口 成功返回结果
+type TaobaoWlbOrderJzConsignAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_order_jz_consign_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

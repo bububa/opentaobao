@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cloudgame"
 )
 
-// Alibabacgamempmpprojectinitnewproject 创建新的mpproject
+// AlibabaCgameMpMpprojectInitnewproject 创建新的mpproject
 // alibaba.cgame.mp.mpproject.initnewproject
 //
 // 发送消息给游戏
-func Alibabacgamempmpprojectinitnewproject(clt *core.SDKClient, req *cloudgame.AlibabacgamempmpprojectinitnewprojectAPIRequest, session string) (*cloudgame.AlibabacgamempmpprojectinitnewprojectAPIResponse, error) {
-	var resp cloudgame.AlibabacgamempmpprojectinitnewprojectAPIResponse
+func AlibabaCgameMpMpprojectInitnewproject(clt *core.SDKClient, req *cloudgame.AlibabaCgameMpMpprojectInitnewprojectAPIRequest, session string) (*cloudgame.AlibabaCgameMpMpprojectInitnewprojectAPIResponse, error) {
+	var resp cloudgame.AlibabaCgameMpMpprojectInitnewprojectAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

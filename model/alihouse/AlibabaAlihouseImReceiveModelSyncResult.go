@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihouseimreceivemodelsyncResult 结构体
-type AlibabaalihouseimreceivemodelsyncResult struct {
+// AlibabaAlihouseImReceiveModelSyncResult 结构体
+type AlibabaAlihouseImReceiveModelSyncResult struct {
 	// aaa
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// aaa

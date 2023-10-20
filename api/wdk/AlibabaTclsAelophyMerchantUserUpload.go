@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabatclsaelophymerchantuserupload 商家会员数据上传
+// AlibabaTclsAelophyMerchantUserUpload 商家会员数据上传
 // alibaba.tcls.aelophy.merchant.user.upload
 //
 // 商家会员数据上传
-func Alibabatclsaelophymerchantuserupload(clt *core.SDKClient, req *wdk.AlibabatclsaelophymerchantuseruploadAPIRequest, session string) (*wdk.AlibabatclsaelophymerchantuseruploadAPIResponse, error) {
-	var resp wdk.AlibabatclsaelophymerchantuseruploadAPIResponse
+func AlibabaTclsAelophyMerchantUserUpload(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantUserUploadAPIRequest, session string) (*wdk.AlibabaTclsAelophyMerchantUserUploadAPIResponse, error) {
+	var resp wdk.AlibabaTclsAelophyMerchantUserUploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

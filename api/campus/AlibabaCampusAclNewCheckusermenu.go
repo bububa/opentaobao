@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// Alibabacampusaclnewcheckusermenu 校验用户是否有菜单权限
+// AlibabaCampusAclNewCheckusermenu 校验用户是否有菜单权限
 // alibaba.campus.acl.new.checkusermenu
 //
 // 校验用户是否有菜单权限
-func Alibabacampusaclnewcheckusermenu(clt *core.SDKClient, req *campus.AlibabacampusaclnewcheckusermenuAPIRequest, session string) (*campus.AlibabacampusaclnewcheckusermenuAPIResponse, error) {
-	var resp campus.AlibabacampusaclnewcheckusermenuAPIResponse
+func AlibabaCampusAclNewCheckusermenu(clt *core.SDKClient, req *campus.AlibabaCampusAclNewCheckusermenuAPIRequest, session string) (*campus.AlibabaCampusAclNewCheckusermenuAPIResponse, error) {
+	var resp campus.AlibabaCampusAclNewCheckusermenuAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

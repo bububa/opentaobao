@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-// Taobaoregionwarehousequery 查询仓库覆盖范围
+// TaobaoRegionWarehouseQuery 查询仓库覆盖范围
 // taobao.region.warehouse.query
 //
 // 查询仓库覆盖范围
-func Taobaoregionwarehousequery(clt *core.SDKClient, req *fenxiao.TaobaoregionwarehousequeryAPIRequest, session string) (*fenxiao.TaobaoregionwarehousequeryAPIResponse, error) {
-	var resp fenxiao.TaobaoregionwarehousequeryAPIResponse
+func TaobaoRegionWarehouseQuery(clt *core.SDKClient, req *fenxiao.TaobaoRegionWarehouseQueryAPIRequest, session string) (*fenxiao.TaobaoRegionWarehouseQueryAPIResponse, error) {
+	var resp fenxiao.TaobaoRegionWarehouseQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

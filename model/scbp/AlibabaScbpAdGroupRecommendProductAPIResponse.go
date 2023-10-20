@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabascbpadgrouprecommendproductAPIResponse 推品 API返回值
+// AlibabaScbpAdGroupRecommendProductAPIResponse 推品 API返回值
 // alibaba.scbp.ad.group.recommend.product
 //
 // 推品
-type AlibabascbpadgrouprecommendproductAPIResponse struct {
+type AlibabaScbpAdGroupRecommendProductAPIResponse struct {
 	model.CommonResponse
-	AlibabascbpadgrouprecommendproductAPIResponseModel
+	AlibabaScbpAdGroupRecommendProductAPIResponseModel
 }
 
-// AlibabascbpadgrouprecommendproductAPIResponseModel is 推品 成功返回结果
-type AlibabascbpadgrouprecommendproductAPIResponseModel struct {
+// AlibabaScbpAdGroupRecommendProductAPIResponseModel is 推品 成功返回结果
+type AlibabaScbpAdGroupRecommendProductAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_ad_group_recommend_product_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

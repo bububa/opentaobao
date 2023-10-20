@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunostvpubadmindeviceyksskillsAPIRequest 根据设备id获取技能列表 API请求
+// YunosTvpubadminDeviceYksSkillsAPIRequest 根据设备id获取技能列表 API请求
 // yunos.tvpubadmin.device.yks.skills
 //
 // 根据设备id获取技能列表
-type YunostvpubadmindeviceyksskillsAPIRequest struct {
+type YunosTvpubadminDeviceYksSkillsAPIRequest struct {
 	model.Params
 	// 技能id
 	_skillId int64
@@ -24,91 +24,91 @@ type YunostvpubadmindeviceyksskillsAPIRequest struct {
 	_pageSize int64
 }
 
-// NewYunostvpubadmindeviceyksskillsRequest 初始化YunostvpubadmindeviceyksskillsAPIRequest对象
-func NewYunostvpubadmindeviceyksskillsRequest() *YunostvpubadmindeviceyksskillsAPIRequest {
-	return &YunostvpubadmindeviceyksskillsAPIRequest{
+// NewYunosTvpubadminDeviceYksSkillsRequest 初始化YunosTvpubadminDeviceYksSkillsAPIRequest对象
+func NewYunosTvpubadminDeviceYksSkillsRequest() *YunosTvpubadminDeviceYksSkillsAPIRequest {
+	return &YunosTvpubadminDeviceYksSkillsAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YunostvpubadmindeviceyksskillsAPIRequest) GetApiMethodName() string {
+func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetApiMethodName() string {
 	return "yunos.tvpubadmin.device.yks.skills"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunostvpubadmindeviceyksskillsAPIRequest) GetApiParams(params url.Values) {
+func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YunostvpubadmindeviceyksskillsAPIRequest) GetRawParams() model.Params {
+func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSkillId is SkillId Setter
 // 技能id
-func (r *YunostvpubadmindeviceyksskillsAPIRequest) SetSkillId(_skillId int64) error {
+func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetSkillId(_skillId int64) error {
 	r._skillId = _skillId
 	r.Set("skill_id", _skillId)
 	return nil
 }
 
 // GetSkillId SkillId Getter
-func (r YunostvpubadmindeviceyksskillsAPIRequest) GetSkillId() int64 {
+func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetSkillId() int64 {
 	return r._skillId
 }
 
 // SetBotId is BotId Setter
 // 设备id
-func (r *YunostvpubadmindeviceyksskillsAPIRequest) SetBotId(_botId int64) error {
+func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetBotId(_botId int64) error {
 	r._botId = _botId
 	r.Set("bot_id", _botId)
 	return nil
 }
 
 // GetBotId BotId Getter
-func (r YunostvpubadmindeviceyksskillsAPIRequest) GetBotId() int64 {
+func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetBotId() int64 {
 	return r._botId
 }
 
 // SetDeletToken is DeletToken Setter
 // 1234
-func (r *YunostvpubadmindeviceyksskillsAPIRequest) SetDeletToken(_deletToken int64) error {
+func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetDeletToken(_deletToken int64) error {
 	r._deletToken = _deletToken
 	r.Set("delet_token", _deletToken)
 	return nil
 }
 
 // GetDeletToken DeletToken Getter
-func (r YunostvpubadmindeviceyksskillsAPIRequest) GetDeletToken() int64 {
+func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetDeletToken() int64 {
 	return r._deletToken
 }
 
 // SetPageIndex is PageIndex Setter
 // 当前页
-func (r *YunostvpubadmindeviceyksskillsAPIRequest) SetPageIndex(_pageIndex int64) error {
+func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
 	r.Set("page_index", _pageIndex)
 	return nil
 }
 
 // GetPageIndex PageIndex Getter
-func (r YunostvpubadmindeviceyksskillsAPIRequest) GetPageIndex() int64 {
+func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }
 
 // SetPageSize is PageSize Setter
 // 分页单位
-func (r *YunostvpubadmindeviceyksskillsAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r YunostvpubadmindeviceyksskillsAPIRequest) GetPageSize() int64 {
+func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Taobaowdkequipmentconveyorsystemeventget 获取悬挂链系统事件
+// TaobaoWdkEquipmentConveyorSystemeventGet 获取悬挂链系统事件
 // taobao.wdk.equipment.conveyor.systemevent.get
 //
 // 五道口悬挂链系统事件查询
-func Taobaowdkequipmentconveyorsystemeventget(clt *core.SDKClient, req *wdk.TaobaowdkequipmentconveyorsystemeventgetAPIRequest, session string) (*wdk.TaobaowdkequipmentconveyorsystemeventgetAPIResponse, error) {
-	var resp wdk.TaobaowdkequipmentconveyorsystemeventgetAPIResponse
+func TaobaoWdkEquipmentConveyorSystemeventGet(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorSystemeventGetAPIRequest, session string) (*wdk.TaobaoWdkEquipmentConveyorSystemeventGetAPIResponse, error) {
+	var resp wdk.TaobaoWdkEquipmentConveyorSystemeventGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

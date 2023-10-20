@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// Alibabaalscgrowthinteractivetaskreceivetask 领取任务
+// AlibabaAlscGrowthInteractiveTaskReceivetask 领取任务
 // alibaba.alsc.growth.interactive.task.receivetask
 //
 // 领取任务
-func Alibabaalscgrowthinteractivetaskreceivetask(clt *core.SDKClient, req *alsc.AlibabaalscgrowthinteractivetaskreceivetaskAPIRequest, session string) (*alsc.AlibabaalscgrowthinteractivetaskreceivetaskAPIResponse, error) {
-	var resp alsc.AlibabaalscgrowthinteractivetaskreceivetaskAPIResponse
+func AlibabaAlscGrowthInteractiveTaskReceivetask(clt *core.SDKClient, req *alsc.AlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest, session string) (*alsc.AlibabaAlscGrowthInteractiveTaskReceivetaskAPIResponse, error) {
+	var resp alsc.AlibabaAlscGrowthInteractiveTaskReceivetaskAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

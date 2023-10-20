@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
 
-// Taobaoxhotelservicetimeupdate 飞猪酒店多维度服务时间维护接口
+// TaobaoXhotelServicetimeUpdate 飞猪酒店多维度服务时间维护接口
 // taobao.xhotel.servicetime.update
 //
 // 飞猪酒店多维度服务时间维护，支持卖家维度，supplier维度，酒店维度
-func Taobaoxhotelservicetimeupdate(clt *core.SDKClient, req *xhotelitem.TaobaoxhotelservicetimeupdateAPIRequest, session string) (*xhotelitem.TaobaoxhotelservicetimeupdateAPIResponse, error) {
-	var resp xhotelitem.TaobaoxhotelservicetimeupdateAPIResponse
+func TaobaoXhotelServicetimeUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelServicetimeUpdateAPIRequest, session string) (*xhotelitem.TaobaoXhotelServicetimeUpdateAPIResponse, error) {
+	var resp xhotelitem.TaobaoXhotelServicetimeUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

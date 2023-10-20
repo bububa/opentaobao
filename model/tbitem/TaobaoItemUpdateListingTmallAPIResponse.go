@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoitemupdatelistingtmallAPIResponse taobao.item.update.listing天猫分流 API返回值
+// TaobaoItemUpdateListingTmallAPIResponse taobao.item.update.listing天猫分流 API返回值
 // taobao.item.update.listing.tmall
 //
 // * 单个商品上架&lt;br/&gt;* 输入的num_iid必须属于当前会话用户
-type TaobaoitemupdatelistingtmallAPIResponse struct {
+type TaobaoItemUpdateListingTmallAPIResponse struct {
 	model.CommonResponse
-	TaobaoitemupdatelistingtmallAPIResponseModel
+	TaobaoItemUpdateListingTmallAPIResponseModel
 }
 
-// TaobaoitemupdatelistingtmallAPIResponseModel is taobao.item.update.listing天猫分流 成功返回结果
-type TaobaoitemupdatelistingtmallAPIResponseModel struct {
+// TaobaoItemUpdateListingTmallAPIResponseModel is taobao.item.update.listing天猫分流 成功返回结果
+type TaobaoItemUpdateListingTmallAPIResponseModel struct {
 	XMLName xml.Name `xml:"item_update_listing_tmall_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

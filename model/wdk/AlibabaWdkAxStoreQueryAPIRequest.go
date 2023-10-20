@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkaxstorequeryAPIRequest 翱象经营店查询接口 API请求
+// AlibabaWdkAxStoreQueryAPIRequest 翱象经营店查询接口 API请求
 // alibaba.wdk.ax.store.query
 //
 // 翱象经营店查询接口
-type AlibabawdkaxstorequeryAPIRequest struct {
+type AlibabaWdkAxStoreQueryAPIRequest struct {
 	model.Params
 	// 查询入参
 	_queryRequest *AxStoreQueryRequest
 }
 
-// NewAlibabawdkaxstorequeryRequest 初始化AlibabawdkaxstorequeryAPIRequest对象
-func NewAlibabawdkaxstorequeryRequest() *AlibabawdkaxstorequeryAPIRequest {
-	return &AlibabawdkaxstorequeryAPIRequest{
+// NewAlibabaWdkAxStoreQueryRequest 初始化AlibabaWdkAxStoreQueryAPIRequest对象
+func NewAlibabaWdkAxStoreQueryRequest() *AlibabaWdkAxStoreQueryAPIRequest {
+	return &AlibabaWdkAxStoreQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabawdkaxstorequeryAPIRequest) GetApiMethodName() string {
+func (r AlibabaWdkAxStoreQueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.ax.store.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabawdkaxstorequeryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaWdkAxStoreQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabawdkaxstorequeryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaWdkAxStoreQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQueryRequest is QueryRequest Setter
 // 查询入参
-func (r *AlibabawdkaxstorequeryAPIRequest) SetQueryRequest(_queryRequest *AxStoreQueryRequest) error {
+func (r *AlibabaWdkAxStoreQueryAPIRequest) SetQueryRequest(_queryRequest *AxStoreQueryRequest) error {
 	r._queryRequest = _queryRequest
 	r.Set("query_request", _queryRequest)
 	return nil
 }
 
 // GetQueryRequest QueryRequest Getter
-func (r AlibabawdkaxstorequeryAPIRequest) GetQueryRequest() *AxStoreQueryRequest {
+func (r AlibabaWdkAxStoreQueryAPIRequest) GetQueryRequest() *AxStoreQueryRequest {
 	return r._queryRequest
 }

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkcoupontemplateupdateAPIRequest 优惠券模版修改 API请求
+// AlibabaWdkCouponTemplateUpdateAPIRequest 优惠券模版修改 API请求
 // alibaba.wdk.coupon.template.update
 //
 // 优惠券模版修改
-type AlibabawdkcoupontemplateupdateAPIRequest struct {
+type AlibabaWdkCouponTemplateUpdateAPIRequest struct {
 	model.Params
 	// 请求
 	_paramCouponTemplateOperateRequest *CouponTemplateOperateRequest
 }
 
-// NewAlibabawdkcoupontemplateupdateRequest 初始化AlibabawdkcoupontemplateupdateAPIRequest对象
-func NewAlibabawdkcoupontemplateupdateRequest() *AlibabawdkcoupontemplateupdateAPIRequest {
-	return &AlibabawdkcoupontemplateupdateAPIRequest{
+// NewAlibabaWdkCouponTemplateUpdateRequest 初始化AlibabaWdkCouponTemplateUpdateAPIRequest对象
+func NewAlibabaWdkCouponTemplateUpdateRequest() *AlibabaWdkCouponTemplateUpdateAPIRequest {
+	return &AlibabaWdkCouponTemplateUpdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabawdkcoupontemplateupdateAPIRequest) GetApiMethodName() string {
+func (r AlibabaWdkCouponTemplateUpdateAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.coupon.template.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabawdkcoupontemplateupdateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaWdkCouponTemplateUpdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabawdkcoupontemplateupdateAPIRequest) GetRawParams() model.Params {
+func (r AlibabaWdkCouponTemplateUpdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamCouponTemplateOperateRequest is ParamCouponTemplateOperateRequest Setter
 // 请求
-func (r *AlibabawdkcoupontemplateupdateAPIRequest) SetParamCouponTemplateOperateRequest(_paramCouponTemplateOperateRequest *CouponTemplateOperateRequest) error {
+func (r *AlibabaWdkCouponTemplateUpdateAPIRequest) SetParamCouponTemplateOperateRequest(_paramCouponTemplateOperateRequest *CouponTemplateOperateRequest) error {
 	r._paramCouponTemplateOperateRequest = _paramCouponTemplateOperateRequest
 	r.Set("param_coupon_template_operate_request", _paramCouponTemplateOperateRequest)
 	return nil
 }
 
 // GetParamCouponTemplateOperateRequest ParamCouponTemplateOperateRequest Getter
-func (r AlibabawdkcoupontemplateupdateAPIRequest) GetParamCouponTemplateOperateRequest() *CouponTemplateOperateRequest {
+func (r AlibabaWdkCouponTemplateUpdateAPIRequest) GetParamCouponTemplateOperateRequest() *CouponTemplateOperateRequest {
 	return r._paramCouponTemplateOperateRequest
 }

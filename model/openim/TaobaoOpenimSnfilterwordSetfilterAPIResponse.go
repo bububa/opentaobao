@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoopenimsnfilterwordsetfilterAPIResponse 关键词过滤 API返回值
+// TaobaoOpenimSnfilterwordSetfilterAPIResponse 关键词过滤 API返回值
 // taobao.openim.snfilterword.setfilter
 //
 // 设置openim关键词过滤
-type TaobaoopenimsnfilterwordsetfilterAPIResponse struct {
+type TaobaoOpenimSnfilterwordSetfilterAPIResponse struct {
 	model.CommonResponse
-	TaobaoopenimsnfilterwordsetfilterAPIResponseModel
+	TaobaoOpenimSnfilterwordSetfilterAPIResponseModel
 }
 
-// TaobaoopenimsnfilterwordsetfilterAPIResponseModel is 关键词过滤 成功返回结果
-type TaobaoopenimsnfilterwordsetfilterAPIResponseModel struct {
+// TaobaoOpenimSnfilterwordSetfilterAPIResponseModel is 关键词过滤 成功返回结果
+type TaobaoOpenimSnfilterwordSetfilterAPIResponseModel struct {
 	XMLName xml.Name `xml:"openim_snfilterword_setfilter_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

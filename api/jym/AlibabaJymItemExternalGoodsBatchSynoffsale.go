@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/jym"
 )
 
-// Alibabajymitemexternalgoodsbatchsynoffsale 同步下架接口
+// AlibabaJymItemExternalGoodsBatchSynoffsale 同步下架接口
 // alibaba.jym.item.external.goods.batch.synoffsale
 //
 // 同步下架接口
-func Alibabajymitemexternalgoodsbatchsynoffsale(clt *core.SDKClient, req *jym.AlibabajymitemexternalgoodsbatchsynoffsaleAPIRequest, session string) (*jym.AlibabajymitemexternalgoodsbatchsynoffsaleAPIResponse, error) {
-	var resp jym.AlibabajymitemexternalgoodsbatchsynoffsaleAPIResponse
+func AlibabaJymItemExternalGoodsBatchSynoffsale(clt *core.SDKClient, req *jym.AlibabaJymItemExternalGoodsBatchSynoffsaleAPIRequest, session string) (*jym.AlibabaJymItemExternalGoodsBatchSynoffsaleAPIResponse, error) {
+	var resp jym.AlibabaJymItemExternalGoodsBatchSynoffsaleAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

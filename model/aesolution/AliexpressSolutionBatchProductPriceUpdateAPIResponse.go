@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpresssolutionbatchproductpriceupdateAPIResponse aliexpress.solution.batch.product.price.update API返回值
+// AliexpressSolutionBatchProductPriceUpdateAPIResponse aliexpress.solution.batch.product.price.update API返回值
 // aliexpress.solution.batch.product.price.update
 //
 // batch product price update operation for oversea sellers
-type AliexpresssolutionbatchproductpriceupdateAPIResponse struct {
+type AliexpressSolutionBatchProductPriceUpdateAPIResponse struct {
 	model.CommonResponse
-	AliexpresssolutionbatchproductpriceupdateAPIResponseModel
+	AliexpressSolutionBatchProductPriceUpdateAPIResponseModel
 }
 
-// AliexpresssolutionbatchproductpriceupdateAPIResponseModel is aliexpress.solution.batch.product.price.update 成功返回结果
-type AliexpresssolutionbatchproductpriceupdateAPIResponseModel struct {
+// AliexpressSolutionBatchProductPriceUpdateAPIResponseModel is aliexpress.solution.batch.product.price.update 成功返回结果
+type AliexpressSolutionBatchProductPriceUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_solution_batch_product_price_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

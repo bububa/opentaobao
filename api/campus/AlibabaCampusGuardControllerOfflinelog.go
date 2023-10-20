@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// Alibabacampusguardcontrollerofflinelog 门禁控制器离线日志同步
+// AlibabaCampusGuardControllerOfflinelog 门禁控制器离线日志同步
 // alibaba.campus.guard.controller.offlinelog
 //
 // 门禁控制器离线日志同步
-func Alibabacampusguardcontrollerofflinelog(clt *core.SDKClient, req *campus.AlibabacampusguardcontrollerofflinelogAPIRequest, session string) (*campus.AlibabacampusguardcontrollerofflinelogAPIResponse, error) {
-	var resp campus.AlibabacampusguardcontrollerofflinelogAPIResponse
+func AlibabaCampusGuardControllerOfflinelog(clt *core.SDKClient, req *campus.AlibabaCampusGuardControllerOfflinelogAPIRequest, session string) (*campus.AlibabaCampusGuardControllerOfflinelogAPIResponse, error) {
+	var resp campus.AlibabaCampusGuardControllerOfflinelogAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

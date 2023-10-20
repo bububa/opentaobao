@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihousenewhomelayoutecodeupdateAPIRequest 新房户型变更E码 API请求
+// AlibabaAlihouseNewhomeLayoutEcodeUpdateAPIRequest 新房户型变更E码 API请求
 // alibaba.alihouse.newhome.layout.ecode.update
 //
 // 新房户型变更E码
-type AlibabaalihousenewhomelayoutecodeupdateAPIRequest struct {
+type AlibabaAlihouseNewhomeLayoutEcodeUpdateAPIRequest struct {
 	model.Params
 	// 数据
 	_layout *UpdateProjectLayoutEcodeDto
 }
 
-// NewAlibabaalihousenewhomelayoutecodeupdateRequest 初始化AlibabaalihousenewhomelayoutecodeupdateAPIRequest对象
-func NewAlibabaalihousenewhomelayoutecodeupdateRequest() *AlibabaalihousenewhomelayoutecodeupdateAPIRequest {
-	return &AlibabaalihousenewhomelayoutecodeupdateAPIRequest{
+// NewAlibabaAlihouseNewhomeLayoutEcodeUpdateRequest 初始化AlibabaAlihouseNewhomeLayoutEcodeUpdateAPIRequest对象
+func NewAlibabaAlihouseNewhomeLayoutEcodeUpdateRequest() *AlibabaAlihouseNewhomeLayoutEcodeUpdateAPIRequest {
+	return &AlibabaAlihouseNewhomeLayoutEcodeUpdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihousenewhomelayoutecodeupdateAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseNewhomeLayoutEcodeUpdateAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.newhome.layout.ecode.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihousenewhomelayoutecodeupdateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihouseNewhomeLayoutEcodeUpdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihousenewhomelayoutecodeupdateAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihouseNewhomeLayoutEcodeUpdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetLayout is Layout Setter
 // 数据
-func (r *AlibabaalihousenewhomelayoutecodeupdateAPIRequest) SetLayout(_layout *UpdateProjectLayoutEcodeDto) error {
+func (r *AlibabaAlihouseNewhomeLayoutEcodeUpdateAPIRequest) SetLayout(_layout *UpdateProjectLayoutEcodeDto) error {
 	r._layout = _layout
 	r.Set("layout", _layout)
 	return nil
 }
 
 // GetLayout Layout Getter
-func (r AlibabaalihousenewhomelayoutecodeupdateAPIRequest) GetLayout() *UpdateProjectLayoutEcodeDto {
+func (r AlibabaAlihouseNewhomeLayoutEcodeUpdateAPIRequest) GetLayout() *UpdateProjectLayoutEcodeDto {
 	return r._layout
 }

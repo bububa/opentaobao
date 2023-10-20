@@ -11,5 +11,5 @@ type ItemsSynchronizeRequest struct {
 	// 货主编码
 	OwnerCode string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoqimenitemssynchronizeMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoQimenItemsSynchronizeMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

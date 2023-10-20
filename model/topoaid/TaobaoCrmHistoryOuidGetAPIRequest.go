@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaocrmhistoryouidgetAPIRequest 根据buyerNick获取ouid API请求
+// TaobaoCrmHistoryOuidGetAPIRequest 根据buyerNick获取ouid API请求
 // taobao.crm.history.ouid.get
 //
 // 根据buyerNick获取ouid
-type TaobaocrmhistoryouidgetAPIRequest struct {
+type TaobaoCrmHistoryOuidGetAPIRequest struct {
 	model.Params
 	// 买家淘宝Nick
 	_buyerNick string
 }
 
-// NewTaobaocrmhistoryouidgetRequest 初始化TaobaocrmhistoryouidgetAPIRequest对象
-func NewTaobaocrmhistoryouidgetRequest() *TaobaocrmhistoryouidgetAPIRequest {
-	return &TaobaocrmhistoryouidgetAPIRequest{
+// NewTaobaoCrmHistoryOuidGetRequest 初始化TaobaoCrmHistoryOuidGetAPIRequest对象
+func NewTaobaoCrmHistoryOuidGetRequest() *TaobaoCrmHistoryOuidGetAPIRequest {
+	return &TaobaoCrmHistoryOuidGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaocrmhistoryouidgetAPIRequest) GetApiMethodName() string {
+func (r TaobaoCrmHistoryOuidGetAPIRequest) GetApiMethodName() string {
 	return "taobao.crm.history.ouid.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaocrmhistoryouidgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoCrmHistoryOuidGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaocrmhistoryouidgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoCrmHistoryOuidGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetBuyerNick is BuyerNick Setter
 // 买家淘宝Nick
-func (r *TaobaocrmhistoryouidgetAPIRequest) SetBuyerNick(_buyerNick string) error {
+func (r *TaobaoCrmHistoryOuidGetAPIRequest) SetBuyerNick(_buyerNick string) error {
 	r._buyerNick = _buyerNick
 	r.Set("buyer_nick", _buyerNick)
 	return nil
 }
 
 // GetBuyerNick BuyerNick Getter
-func (r TaobaocrmhistoryouidgetAPIRequest) GetBuyerNick() string {
+func (r TaobaoCrmHistoryOuidGetAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
 }

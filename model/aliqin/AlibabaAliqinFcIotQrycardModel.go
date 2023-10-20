@@ -1,7 +1,7 @@
 package aliqin
 
-// AlibabaaliqinfciotqrycardModel 结构体
-type AlibabaaliqinfciotqrycardModel struct {
+// AlibabaAliqinFcIotQrycardModel 结构体
+type AlibabaAliqinFcIotQrycardModel struct {
 	// 流量类型(6700001:上网流量)
 	ResourceType string `json:"resource_type,omitempty" xml:"resource_type,omitempty"`
 	// 资源名称

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaliqinfcvoicegetdetailAPIResponse 获取呼叫详情 API返回值
+// AlibabaAliqinFcVoiceGetdetailAPIResponse 获取呼叫详情 API返回值
 // alibaba.aliqin.fc.voice.getdetail
 //
 // 通过呼叫id获取呼叫相关的数据
-type AlibabaaliqinfcvoicegetdetailAPIResponse struct {
+type AlibabaAliqinFcVoiceGetdetailAPIResponse struct {
 	model.CommonResponse
-	AlibabaaliqinfcvoicegetdetailAPIResponseModel
+	AlibabaAliqinFcVoiceGetdetailAPIResponseModel
 }
 
-// AlibabaaliqinfcvoicegetdetailAPIResponseModel is 获取呼叫详情 成功返回结果
-type AlibabaaliqinfcvoicegetdetailAPIResponseModel struct {
+// AlibabaAliqinFcVoiceGetdetailAPIResponseModel is 获取呼叫详情 成功返回结果
+type AlibabaAliqinFcVoiceGetdetailAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_aliqin_fc_voice_getdetail_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

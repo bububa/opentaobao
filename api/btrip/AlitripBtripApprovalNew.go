@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// Alitripbtripapprovalnew 新建审批单
+// AlitripBtripApprovalNew 新建审批单
 // alitrip.btrip.approval.new
 //
 // 用户新建审批单
-func Alitripbtripapprovalnew(clt *core.SDKClient, req *btrip.AlitripbtripapprovalnewAPIRequest, session string) (*btrip.AlitripbtripapprovalnewAPIResponse, error) {
-	var resp btrip.AlitripbtripapprovalnewAPIResponse
+func AlitripBtripApprovalNew(clt *core.SDKClient, req *btrip.AlitripBtripApprovalNewAPIRequest, session string) (*btrip.AlitripBtripApprovalNewAPIResponse, error) {
+	var resp btrip.AlitripBtripApprovalNewAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

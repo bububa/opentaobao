@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-// Tmallsupplychainchannelproductpriceget 渠道价格查询接口
+// TmallSupplychainChannelProductPriceGet 渠道价格查询接口
 // tmall.supplychain.channel.product.price.get
 //
 // 渠道价格查询接口
-func Tmallsupplychainchannelproductpriceget(clt *core.SDKClient, req *fenxiao.TmallsupplychainchannelproductpricegetAPIRequest, session string) (*fenxiao.TmallsupplychainchannelproductpricegetAPIResponse, error) {
-	var resp fenxiao.TmallsupplychainchannelproductpricegetAPIResponse
+func TmallSupplychainChannelProductPriceGet(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductPriceGetAPIRequest, session string) (*fenxiao.TmallSupplychainChannelProductPriceGetAPIResponse, error) {
+	var resp fenxiao.TmallSupplychainChannelProductPriceGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobusagentmultiplerefundconfirmAPIResponse 综合交通多次退款接口 API返回值
+// TaobaoBusAgentMultipleRefundConfirmAPIResponse 综合交通多次退款接口 API返回值
 // taobao.bus.agent.multiple.refund.confirm
 //
 // 此接口支持多次按照单客进行多次退款操作，只进行退款操作。
-type TaobaobusagentmultiplerefundconfirmAPIResponse struct {
+type TaobaoBusAgentMultipleRefundConfirmAPIResponse struct {
 	model.CommonResponse
-	TaobaobusagentmultiplerefundconfirmAPIResponseModel
+	TaobaoBusAgentMultipleRefundConfirmAPIResponseModel
 }
 
-// TaobaobusagentmultiplerefundconfirmAPIResponseModel is 综合交通多次退款接口 成功返回结果
-type TaobaobusagentmultiplerefundconfirmAPIResponseModel struct {
+// TaobaoBusAgentMultipleRefundConfirmAPIResponseModel is 综合交通多次退款接口 成功返回结果
+type TaobaoBusAgentMultipleRefundConfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_agent_multiple_refund_confirm_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

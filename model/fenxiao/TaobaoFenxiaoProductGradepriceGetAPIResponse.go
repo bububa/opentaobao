@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaofenxiaoproductgradepricegetAPIResponse 等级折扣查询 API返回值
+// TaobaoFenxiaoProductGradepriceGetAPIResponse 等级折扣查询 API返回值
 // taobao.fenxiao.product.gradeprice.get
 //
 // 等级折扣查询
-type TaobaofenxiaoproductgradepricegetAPIResponse struct {
+type TaobaoFenxiaoProductGradepriceGetAPIResponse struct {
 	model.CommonResponse
-	TaobaofenxiaoproductgradepricegetAPIResponseModel
+	TaobaoFenxiaoProductGradepriceGetAPIResponseModel
 }
 
-// TaobaofenxiaoproductgradepricegetAPIResponseModel is 等级折扣查询 成功返回结果
-type TaobaofenxiaoproductgradepricegetAPIResponseModel struct {
+// TaobaoFenxiaoProductGradepriceGetAPIResponseModel is 等级折扣查询 成功返回结果
+type TaobaoFenxiaoProductGradepriceGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_product_gradeprice_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

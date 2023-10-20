@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunososupdateappversionqueryAPIRequest 分页获取桌面升级任务 API请求
+// YunosOsupdateAppversionQueryAPIRequest 分页获取桌面升级任务 API请求
 // yunos.osupdate.appversion.query
 //
 // 分页获取桌面升级任务
-type YunososupdateappversionqueryAPIRequest struct {
+type YunosOsupdateAppversionQueryAPIRequest struct {
 	model.Params
 	// 应用ID
 	_appId int64
@@ -20,65 +20,65 @@ type YunososupdateappversionqueryAPIRequest struct {
 	_size int64
 }
 
-// NewYunososupdateappversionqueryRequest 初始化YunososupdateappversionqueryAPIRequest对象
-func NewYunososupdateappversionqueryRequest() *YunososupdateappversionqueryAPIRequest {
-	return &YunososupdateappversionqueryAPIRequest{
+// NewYunosOsupdateAppversionQueryRequest 初始化YunosOsupdateAppversionQueryAPIRequest对象
+func NewYunosOsupdateAppversionQueryRequest() *YunosOsupdateAppversionQueryAPIRequest {
+	return &YunosOsupdateAppversionQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YunososupdateappversionqueryAPIRequest) GetApiMethodName() string {
+func (r YunosOsupdateAppversionQueryAPIRequest) GetApiMethodName() string {
 	return "yunos.osupdate.appversion.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunososupdateappversionqueryAPIRequest) GetApiParams(params url.Values) {
+func (r YunosOsupdateAppversionQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YunososupdateappversionqueryAPIRequest) GetRawParams() model.Params {
+func (r YunosOsupdateAppversionQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAppId is AppId Setter
 // 应用ID
-func (r *YunososupdateappversionqueryAPIRequest) SetAppId(_appId int64) error {
+func (r *YunosOsupdateAppversionQueryAPIRequest) SetAppId(_appId int64) error {
 	r._appId = _appId
 	r.Set("app_id", _appId)
 	return nil
 }
 
 // GetAppId AppId Getter
-func (r YunososupdateappversionqueryAPIRequest) GetAppId() int64 {
+func (r YunosOsupdateAppversionQueryAPIRequest) GetAppId() int64 {
 	return r._appId
 }
 
 // SetPage is Page Setter
 // 页码值
-func (r *YunososupdateappversionqueryAPIRequest) SetPage(_page int64) error {
+func (r *YunosOsupdateAppversionQueryAPIRequest) SetPage(_page int64) error {
 	r._page = _page
 	r.Set("page", _page)
 	return nil
 }
 
 // GetPage Page Getter
-func (r YunososupdateappversionqueryAPIRequest) GetPage() int64 {
+func (r YunosOsupdateAppversionQueryAPIRequest) GetPage() int64 {
 	return r._page
 }
 
 // SetSize is Size Setter
 // 页大小
-func (r *YunososupdateappversionqueryAPIRequest) SetSize(_size int64) error {
+func (r *YunosOsupdateAppversionQueryAPIRequest) SetSize(_size int64) error {
 	r._size = _size
 	r.Set("size", _size)
 	return nil
 }
 
 // GetSize Size Getter
-func (r YunososupdateappversionqueryAPIRequest) GetSize() int64 {
+func (r YunosOsupdateAppversionQueryAPIRequest) GetSize() int64 {
 	return r._size
 }

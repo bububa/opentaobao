@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-// Taobaopromotionmisccommonitemdetaildelete 删除通用单品优惠详情
+// TaobaoPromotionmiscCommonItemDetailDelete 删除通用单品优惠详情
 // taobao.promotionmisc.common.item.detail.delete
 //
 // 删除通用单品优惠详情。
-func Taobaopromotionmisccommonitemdetaildelete(clt *core.SDKClient, req *promotion.TaobaopromotionmisccommonitemdetaildeleteAPIRequest, session string) (*promotion.TaobaopromotionmisccommonitemdetaildeleteAPIResponse, error) {
-	var resp promotion.TaobaopromotionmisccommonitemdetaildeleteAPIResponse
+func TaobaoPromotionmiscCommonItemDetailDelete(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest, session string) (*promotion.TaobaoPromotionmiscCommonItemDetailDeleteAPIResponse, error) {
+	var resp promotion.TaobaoPromotionmiscCommonItemDetailDeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

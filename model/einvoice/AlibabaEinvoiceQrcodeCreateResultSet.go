@@ -1,7 +1,7 @@
 package einvoice
 
-// AlibabaeinvoiceqrcodecreateResultSet 结构体
-type AlibabaeinvoiceqrcodecreateResultSet struct {
+// AlibabaEinvoiceQrcodeCreateResultSet 结构体
+type AlibabaEinvoiceQrcodeCreateResultSet struct {
 	// errorMessage
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// result

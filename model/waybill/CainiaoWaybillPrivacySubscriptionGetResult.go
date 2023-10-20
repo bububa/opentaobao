@@ -1,7 +1,7 @@
 package waybill
 
-// CainiaowaybillprivacysubscriptiongetResult 结构体
-type CainiaowaybillprivacysubscriptiongetResult struct {
+// CainiaoWaybillPrivacySubscriptionGetResult 结构体
+type CainiaoWaybillPrivacySubscriptionGetResult struct {
 	// 错误code列表
 	ErrorCodeList []string `json:"error_code_list,omitempty" xml:"error_code_list>string,omitempty"`
 	// 错误列表

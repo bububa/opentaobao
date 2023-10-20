@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabatclsaelophymerchantidmixApiResult 结构体
-type AlibabatclsaelophymerchantidmixApiResult struct {
+// AlibabaTclsAelophyMerchantIdMixApiResult 结构体
+type AlibabaTclsAelophyMerchantIdMixApiResult struct {
 	// 错误码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误信息

@@ -1,7 +1,7 @@
 package iotticket
 
-// CainiaoiotticketspmaintainvtwocreateResultDto 结构体
-type CainiaoiotticketspmaintainvtwocreateResultDto struct {
+// CainiaoIotTicketSpMaintainVtwoCreateResultDto 结构体
+type CainiaoIotTicketSpMaintainVtwoCreateResultDto struct {
 	// 异常描述
 	ErrorDesc string `json:"error_desc,omitempty" xml:"error_desc,omitempty"`
 	// 错误码

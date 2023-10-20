@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mtopopen"
 )
 
-// Alibabainteractmediaartwork 原图相关鉴权接口
+// AlibabaInteractMediaArtwork 原图相关鉴权接口
 // alibaba.interact.media.artwork
 //
 // 拍摄并上传原图相关鉴权接口
-func Alibabainteractmediaartwork(clt *core.SDKClient, req *mtopopen.AlibabainteractmediaartworkAPIRequest, session string) (*mtopopen.AlibabainteractmediaartworkAPIResponse, error) {
-	var resp mtopopen.AlibabainteractmediaartworkAPIResponse
+func AlibabaInteractMediaArtwork(clt *core.SDKClient, req *mtopopen.AlibabaInteractMediaArtworkAPIRequest, session string) (*mtopopen.AlibabaInteractMediaArtworkAPIResponse, error) {
+	var resp mtopopen.AlibabaInteractMediaArtworkAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

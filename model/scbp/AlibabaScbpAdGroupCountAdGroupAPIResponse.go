@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabascbpadgroupcountadgroupAPIResponse 统计adgroup数量 API返回值
+// AlibabaScbpAdGroupCountAdGroupAPIResponse 统计adgroup数量 API返回值
 // alibaba.scbp.ad.group.count.ad.group
 //
 // 统计adgroup数量
-type AlibabascbpadgroupcountadgroupAPIResponse struct {
+type AlibabaScbpAdGroupCountAdGroupAPIResponse struct {
 	model.CommonResponse
-	AlibabascbpadgroupcountadgroupAPIResponseModel
+	AlibabaScbpAdGroupCountAdGroupAPIResponseModel
 }
 
-// AlibabascbpadgroupcountadgroupAPIResponseModel is 统计adgroup数量 成功返回结果
-type AlibabascbpadgroupcountadgroupAPIResponseModel struct {
+// AlibabaScbpAdGroupCountAdGroupAPIResponseModel is 统计adgroup数量 成功返回结果
+type AlibabaScbpAdGroupCountAdGroupAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_ad_group_count_ad_group_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

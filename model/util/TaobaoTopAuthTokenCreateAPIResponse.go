@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotopauthtokencreateAPIResponse 获取Access Token API返回值
+// TaobaoTopAuthTokenCreateAPIResponse 获取Access Token API返回值
 // taobao.top.auth.token.create
 //
 // 用户通过code换获取access_token，https only
-type TaobaotopauthtokencreateAPIResponse struct {
+type TaobaoTopAuthTokenCreateAPIResponse struct {
 	model.CommonResponse
-	TaobaotopauthtokencreateAPIResponseModel
+	TaobaoTopAuthTokenCreateAPIResponseModel
 }
 
-// TaobaotopauthtokencreateAPIResponseModel is 获取Access Token 成功返回结果
-type TaobaotopauthtokencreateAPIResponseModel struct {
+// TaobaoTopAuthTokenCreateAPIResponseModel is 获取Access Token 成功返回结果
+type TaobaoTopAuthTokenCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"top_auth_token_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

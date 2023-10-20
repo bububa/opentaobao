@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripbtripinvoicesettingdeleteAPIResponse 发票删除 API返回值
+// AlitripBtripInvoiceSettingDeleteAPIResponse 发票删除 API返回值
 // alitrip.btrip.invoice.setting.delete
 //
 // 发票删除
-type AlitripbtripinvoicesettingdeleteAPIResponse struct {
+type AlitripBtripInvoiceSettingDeleteAPIResponse struct {
 	model.CommonResponse
-	AlitripbtripinvoicesettingdeleteAPIResponseModel
+	AlitripBtripInvoiceSettingDeleteAPIResponseModel
 }
 
-// AlitripbtripinvoicesettingdeleteAPIResponseModel is 发票删除 成功返回结果
-type AlitripbtripinvoicesettingdeleteAPIResponseModel struct {
+// AlitripBtripInvoiceSettingDeleteAPIResponseModel is 发票删除 成功返回结果
+type AlitripBtripInvoiceSettingDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_invoice_setting_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

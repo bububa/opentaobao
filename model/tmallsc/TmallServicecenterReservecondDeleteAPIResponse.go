@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallservicecenterreserveconddeleteAPIResponse 删除主动预约开通条件 API返回值
+// TmallServicecenterReservecondDeleteAPIResponse 删除主动预约开通条件 API返回值
 // tmall.servicecenter.reservecond.delete
 //
 // 删除主动预约开通条件
-type TmallservicecenterreserveconddeleteAPIResponse struct {
+type TmallServicecenterReservecondDeleteAPIResponse struct {
 	model.CommonResponse
-	TmallservicecenterreserveconddeleteAPIResponseModel
+	TmallServicecenterReservecondDeleteAPIResponseModel
 }
 
-// TmallservicecenterreserveconddeleteAPIResponseModel is 删除主动预约开通条件 成功返回结果
-type TmallservicecenterreserveconddeleteAPIResponseModel struct {
+// TmallServicecenterReservecondDeleteAPIResponseModel is 删除主动预约开通条件 成功返回结果
+type TmallServicecenterReservecondDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_reservecond_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

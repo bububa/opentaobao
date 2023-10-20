@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-// Tmallitemskustatusupdate 商品sku状态更新
+// TmallItemSkuStatusUpdate 商品sku状态更新
 // tmall.item.sku.status.update
 //
 // 商品sku上下架状态更新
-func Tmallitemskustatusupdate(clt *core.SDKClient, req *product.TmallitemskustatusupdateAPIRequest, session string) (*product.TmallitemskustatusupdateAPIResponse, error) {
-	var resp product.TmallitemskustatusupdateAPIResponse
+func TmallItemSkuStatusUpdate(clt *core.SDKClient, req *product.TmallItemSkuStatusUpdateAPIRequest, session string) (*product.TmallItemSkuStatusUpdateAPIResponse, error) {
+	var resp product.TmallItemSkuStatusUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

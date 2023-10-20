@@ -1,7 +1,7 @@
 package nrt
 
-// TmallnrtcoupontemplatesynResult 结构体
-type TmallnrtcoupontemplatesynResult struct {
+// TmallNrtCouponTemplateSynResult 结构体
+type TmallNrtCouponTemplateSynResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 错误码

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/iot"
 )
 
-// Alibabaailabsiotbusinessrecipegetdetail 获取食谱详情
+// AlibabaAilabsIotBusinessRecipeGetdetail 获取食谱详情
 // alibaba.ailabs.iot.business.recipe.getdetail
 //
 // 获取食谱详情接口，获取ISV自己的食谱详情数据
-func Alibabaailabsiotbusinessrecipegetdetail(clt *core.SDKClient, req *iot.AlibabaailabsiotbusinessrecipegetdetailAPIRequest, session string) (*iot.AlibabaailabsiotbusinessrecipegetdetailAPIResponse, error) {
-	var resp iot.AlibabaailabsiotbusinessrecipegetdetailAPIResponse
+func AlibabaAilabsIotBusinessRecipeGetdetail(clt *core.SDKClient, req *iot.AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest, session string) (*iot.AlibabaAilabsIotBusinessRecipeGetdetailAPIResponse, error) {
+	var resp iot.AlibabaAilabsIotBusinessRecipeGetdetailAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

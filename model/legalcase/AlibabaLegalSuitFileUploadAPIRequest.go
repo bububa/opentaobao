@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabalegalsuitfileuploadAPIRequest 诉讼文件上传接口 API请求
+// AlibabaLegalSuitFileUploadAPIRequest 诉讼文件上传接口 API请求
 // alibaba.legal.suit.file.upload
 //
 // 上传文件接口
-type AlibabalegalsuitfileuploadAPIRequest struct {
+type AlibabaLegalSuitFileUploadAPIRequest struct {
 	model.Params
 	// 文件名称
 	_fileName string
@@ -24,91 +24,91 @@ type AlibabalegalsuitfileuploadAPIRequest struct {
 	_fileSize int64
 }
 
-// NewAlibabalegalsuitfileuploadRequest 初始化AlibabalegalsuitfileuploadAPIRequest对象
-func NewAlibabalegalsuitfileuploadRequest() *AlibabalegalsuitfileuploadAPIRequest {
-	return &AlibabalegalsuitfileuploadAPIRequest{
+// NewAlibabaLegalSuitFileUploadRequest 初始化AlibabaLegalSuitFileUploadAPIRequest对象
+func NewAlibabaLegalSuitFileUploadRequest() *AlibabaLegalSuitFileUploadAPIRequest {
+	return &AlibabaLegalSuitFileUploadAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabalegalsuitfileuploadAPIRequest) GetApiMethodName() string {
+func (r AlibabaLegalSuitFileUploadAPIRequest) GetApiMethodName() string {
 	return "alibaba.legal.suit.file.upload"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabalegalsuitfileuploadAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaLegalSuitFileUploadAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabalegalsuitfileuploadAPIRequest) GetRawParams() model.Params {
+func (r AlibabaLegalSuitFileUploadAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetFileName is FileName Setter
 // 文件名称
-func (r *AlibabalegalsuitfileuploadAPIRequest) SetFileName(_fileName string) error {
+func (r *AlibabaLegalSuitFileUploadAPIRequest) SetFileName(_fileName string) error {
 	r._fileName = _fileName
 	r.Set("file_name", _fileName)
 	return nil
 }
 
 // GetFileName FileName Getter
-func (r AlibabalegalsuitfileuploadAPIRequest) GetFileName() string {
+func (r AlibabaLegalSuitFileUploadAPIRequest) GetFileName() string {
 	return r._fileName
 }
 
 // SetSignature is Signature Setter
 // 签名
-func (r *AlibabalegalsuitfileuploadAPIRequest) SetSignature(_signature string) error {
+func (r *AlibabaLegalSuitFileUploadAPIRequest) SetSignature(_signature string) error {
 	r._signature = _signature
 	r.Set("signature", _signature)
 	return nil
 }
 
 // GetSignature Signature Getter
-func (r AlibabalegalsuitfileuploadAPIRequest) GetSignature() string {
+func (r AlibabaLegalSuitFileUploadAPIRequest) GetSignature() string {
 	return r._signature
 }
 
 // SetFile is File Setter
 // 文件
-func (r *AlibabalegalsuitfileuploadAPIRequest) SetFile(_file *model.File) error {
+func (r *AlibabaLegalSuitFileUploadAPIRequest) SetFile(_file *model.File) error {
 	r._file = _file
 	r.Set("file", _file)
 	return nil
 }
 
 // GetFile File Getter
-func (r AlibabalegalsuitfileuploadAPIRequest) GetFile() *model.File {
+func (r AlibabaLegalSuitFileUploadAPIRequest) GetFile() *model.File {
 	return r._file
 }
 
 // SetTimeStamp is TimeStamp Setter
 // 时间搓
-func (r *AlibabalegalsuitfileuploadAPIRequest) SetTimeStamp(_timeStamp int64) error {
+func (r *AlibabaLegalSuitFileUploadAPIRequest) SetTimeStamp(_timeStamp int64) error {
 	r._timeStamp = _timeStamp
 	r.Set("time_stamp", _timeStamp)
 	return nil
 }
 
 // GetTimeStamp TimeStamp Getter
-func (r AlibabalegalsuitfileuploadAPIRequest) GetTimeStamp() int64 {
+func (r AlibabaLegalSuitFileUploadAPIRequest) GetTimeStamp() int64 {
 	return r._timeStamp
 }
 
 // SetFileSize is FileSize Setter
 // 文件大小
-func (r *AlibabalegalsuitfileuploadAPIRequest) SetFileSize(_fileSize int64) error {
+func (r *AlibabaLegalSuitFileUploadAPIRequest) SetFileSize(_fileSize int64) error {
 	r._fileSize = _fileSize
 	r.Set("file_size", _fileSize)
 	return nil
 }
 
 // GetFileSize FileSize Getter
-func (r AlibabalegalsuitfileuploadAPIRequest) GetFileSize() int64 {
+func (r AlibabaLegalSuitFileUploadAPIRequest) GetFileSize() int64 {
 	return r._fileSize
 }

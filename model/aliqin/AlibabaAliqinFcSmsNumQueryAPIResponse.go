@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaliqinfcsmsnumqueryAPIResponse 短信发送记录查询 API返回值
+// AlibabaAliqinFcSmsNumQueryAPIResponse 短信发送记录查询 API返回值
 // alibaba.aliqin.fc.sms.num.query
 //
 // 短信发送记录查询。
-type AlibabaaliqinfcsmsnumqueryAPIResponse struct {
+type AlibabaAliqinFcSmsNumQueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaaliqinfcsmsnumqueryAPIResponseModel
+	AlibabaAliqinFcSmsNumQueryAPIResponseModel
 }
 
-// AlibabaaliqinfcsmsnumqueryAPIResponseModel is 短信发送记录查询 成功返回结果
-type AlibabaaliqinfcsmsnumqueryAPIResponseModel struct {
+// AlibabaAliqinFcSmsNumQueryAPIResponseModel is 短信发送记录查询 成功返回结果
+type AlibabaAliqinFcSmsNumQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_aliqin_fc_sms_num_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

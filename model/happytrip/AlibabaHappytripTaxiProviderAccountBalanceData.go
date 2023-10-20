@@ -1,7 +1,7 @@
 package happytrip
 
-// AlibabahappytriptaxiprovideraccountbalanceData 结构体
-type AlibabahappytriptaxiprovideraccountbalanceData struct {
+// AlibabaHappytripTaxiProviderAccountBalanceData 结构体
+type AlibabaHappytripTaxiProviderAccountBalanceData struct {
 	// 管理员列表
 	Management []Managers `json:"management,omitempty" xml:"management>managers,omitempty"`
 	// 可用额度(单位：分)（余额+信用额度）表示可以支撑使用的金额

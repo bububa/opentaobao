@@ -1,7 +1,7 @@
 package mos
 
-// AlibabamosstoregetcloudshelfversionResultDo 结构体
-type AlibabamosstoregetcloudshelfversionResultDo struct {
+// AlibabaMosStoreGetcloudshelfversionResultDo 结构体
+type AlibabaMosStoreGetcloudshelfversionResultDo struct {
 	// errMsg
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// data

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkbmstockpublishAPIRequest 品牌营销涉及到的商品的库存同步接口 API请求
+// AlibabaWdkBmStockPublishAPIRequest 品牌营销涉及到的商品的库存同步接口 API请求
 // alibaba.wdk.bm.stock.publish
 //
 // 用于操作sku的库存
-type AlibabawdkbmstockpublishAPIRequest struct {
+type AlibabaWdkBmStockPublishAPIRequest struct {
 	model.Params
 	// 批量入参
 	_skuStockPublishParamList []SkuStockPublishParamDo
 }
 
-// NewAlibabawdkbmstockpublishRequest 初始化AlibabawdkbmstockpublishAPIRequest对象
-func NewAlibabawdkbmstockpublishRequest() *AlibabawdkbmstockpublishAPIRequest {
-	return &AlibabawdkbmstockpublishAPIRequest{
+// NewAlibabaWdkBmStockPublishRequest 初始化AlibabaWdkBmStockPublishAPIRequest对象
+func NewAlibabaWdkBmStockPublishRequest() *AlibabaWdkBmStockPublishAPIRequest {
+	return &AlibabaWdkBmStockPublishAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabawdkbmstockpublishAPIRequest) GetApiMethodName() string {
+func (r AlibabaWdkBmStockPublishAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.bm.stock.publish"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabawdkbmstockpublishAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaWdkBmStockPublishAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabawdkbmstockpublishAPIRequest) GetRawParams() model.Params {
+func (r AlibabaWdkBmStockPublishAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSkuStockPublishParamList is SkuStockPublishParamList Setter
 // 批量入参
-func (r *AlibabawdkbmstockpublishAPIRequest) SetSkuStockPublishParamList(_skuStockPublishParamList []SkuStockPublishParamDo) error {
+func (r *AlibabaWdkBmStockPublishAPIRequest) SetSkuStockPublishParamList(_skuStockPublishParamList []SkuStockPublishParamDo) error {
 	r._skuStockPublishParamList = _skuStockPublishParamList
 	r.Set("sku_stock_publish_param_list", _skuStockPublishParamList)
 	return nil
 }
 
 // GetSkuStockPublishParamList SkuStockPublishParamList Getter
-func (r AlibabawdkbmstockpublishAPIRequest) GetSkuStockPublishParamList() []SkuStockPublishParamDo {
+func (r AlibabaWdkBmStockPublishAPIRequest) GetSkuStockPublishParamList() []SkuStockPublishParamDo {
 	return r._skuStockPublishParamList
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaominiappcloudstorerelationaddAPIResponse 云存储添加 API返回值
+// TaobaoMiniappCloudStoreRelationAddAPIResponse 云存储添加 API返回值
 // taobao.miniapp.cloud.store.relation.add
 //
 // 用于用户上传文件之后回写云存储的关联关系
-type TaobaominiappcloudstorerelationaddAPIResponse struct {
+type TaobaoMiniappCloudStoreRelationAddAPIResponse struct {
 	model.CommonResponse
-	TaobaominiappcloudstorerelationaddAPIResponseModel
+	TaobaoMiniappCloudStoreRelationAddAPIResponseModel
 }
 
-// TaobaominiappcloudstorerelationaddAPIResponseModel is 云存储添加 成功返回结果
-type TaobaominiappcloudstorerelationaddAPIResponseModel struct {
+// TaobaoMiniappCloudStoreRelationAddAPIResponseModel is 云存储添加 成功返回结果
+type TaobaoMiniappCloudStoreRelationAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_cloud_store_relation_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

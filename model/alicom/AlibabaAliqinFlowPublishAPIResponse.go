@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaliqinflowpublishAPIResponse 流量发放(用户id) API返回值
+// AlibabaAliqinFlowPublishAPIResponse 流量发放(用户id) API返回值
 // alibaba.aliqin.flow.publish
 //
 // 阿里通信流量下发功能，允许用户补发
-type AlibabaaliqinflowpublishAPIResponse struct {
+type AlibabaAliqinFlowPublishAPIResponse struct {
 	model.CommonResponse
-	AlibabaaliqinflowpublishAPIResponseModel
+	AlibabaAliqinFlowPublishAPIResponseModel
 }
 
-// AlibabaaliqinflowpublishAPIResponseModel is 流量发放(用户id) 成功返回结果
-type AlibabaaliqinflowpublishAPIResponseModel struct {
+// AlibabaAliqinFlowPublishAPIResponseModel is 流量发放(用户id) 成功返回结果
+type AlibabaAliqinFlowPublishAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_aliqin_flow_publish_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

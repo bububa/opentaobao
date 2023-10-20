@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cloudgame"
 )
 
-// Alibabacloudgameinteractivegameplayerkickout 踢人
+// AlibabaCloudgameInteractiveGamePlayerKickout 踢人
 // alibaba.cloudgame.interactive.game.player.kickout
 //
 // 踢人
-func Alibabacloudgameinteractivegameplayerkickout(clt *core.SDKClient, req *cloudgame.AlibabacloudgameinteractivegameplayerkickoutAPIRequest, session string) (*cloudgame.AlibabacloudgameinteractivegameplayerkickoutAPIResponse, error) {
-	var resp cloudgame.AlibabacloudgameinteractivegameplayerkickoutAPIResponse
+func AlibabaCloudgameInteractiveGamePlayerKickout(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGamePlayerKickoutAPIRequest, session string) (*cloudgame.AlibabaCloudgameInteractiveGamePlayerKickoutAPIResponse, error) {
+	var resp cloudgame.AlibabaCloudgameInteractiveGamePlayerKickoutAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

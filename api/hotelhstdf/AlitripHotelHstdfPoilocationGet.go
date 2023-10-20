@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/hotelhstdf"
 )
 
-// Alitriphotelhstdfpoilocationget 根据平台城市id分页查询poi location
+// AlitripHotelHstdfPoilocationGet 根据平台城市id分页查询poi location
 // alitrip.hotel.hstdf.poilocation.get
 //
 // 根据平台城市id分页查询poi location
-func Alitriphotelhstdfpoilocationget(clt *core.SDKClient, req *hotelhstdf.AlitriphotelhstdfpoilocationgetAPIRequest, session string) (*hotelhstdf.AlitriphotelhstdfpoilocationgetAPIResponse, error) {
-	var resp hotelhstdf.AlitriphotelhstdfpoilocationgetAPIResponse
+func AlitripHotelHstdfPoilocationGet(clt *core.SDKClient, req *hotelhstdf.AlitripHotelHstdfPoilocationGetAPIRequest, session string) (*hotelhstdf.AlitripHotelHstdfPoilocationGetAPIResponse, error) {
+	var resp hotelhstdf.AlitripHotelHstdfPoilocationGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

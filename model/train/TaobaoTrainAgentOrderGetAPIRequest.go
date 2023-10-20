@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotrainagentordergetAPIRequest 代理商获取订单信息回调API API请求
+// TaobaoTrainAgentOrderGetAPIRequest 代理商获取订单信息回调API API请求
 // taobao.train.agent.order.get
 //
 // 代理商获取订单信息回调API
-type TaobaotrainagentordergetAPIRequest struct {
+type TaobaoTrainAgentOrderGetAPIRequest struct {
 	model.Params
 	// 淘宝的主订单号
 	_mainOrderId int64
@@ -18,52 +18,52 @@ type TaobaotrainagentordergetAPIRequest struct {
 	_agentId int64
 }
 
-// NewTaobaotrainagentordergetRequest 初始化TaobaotrainagentordergetAPIRequest对象
-func NewTaobaotrainagentordergetRequest() *TaobaotrainagentordergetAPIRequest {
-	return &TaobaotrainagentordergetAPIRequest{
+// NewTaobaoTrainAgentOrderGetRequest 初始化TaobaoTrainAgentOrderGetAPIRequest对象
+func NewTaobaoTrainAgentOrderGetRequest() *TaobaoTrainAgentOrderGetAPIRequest {
+	return &TaobaoTrainAgentOrderGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaotrainagentordergetAPIRequest) GetApiMethodName() string {
+func (r TaobaoTrainAgentOrderGetAPIRequest) GetApiMethodName() string {
 	return "taobao.train.agent.order.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaotrainagentordergetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoTrainAgentOrderGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaotrainagentordergetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoTrainAgentOrderGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMainOrderId is MainOrderId Setter
 // 淘宝的主订单号
-func (r *TaobaotrainagentordergetAPIRequest) SetMainOrderId(_mainOrderId int64) error {
+func (r *TaobaoTrainAgentOrderGetAPIRequest) SetMainOrderId(_mainOrderId int64) error {
 	r._mainOrderId = _mainOrderId
 	r.Set("main_order_id", _mainOrderId)
 	return nil
 }
 
 // GetMainOrderId MainOrderId Getter
-func (r TaobaotrainagentordergetAPIRequest) GetMainOrderId() int64 {
+func (r TaobaoTrainAgentOrderGetAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
 }
 
 // SetAgentId is AgentId Setter
 // 代理商id
-func (r *TaobaotrainagentordergetAPIRequest) SetAgentId(_agentId int64) error {
+func (r *TaobaoTrainAgentOrderGetAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
 	r.Set("agent_id", _agentId)
 	return nil
 }
 
 // GetAgentId AgentId Getter
-func (r TaobaotrainagentordergetAPIRequest) GetAgentId() int64 {
+func (r TaobaoTrainAgentOrderGetAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }

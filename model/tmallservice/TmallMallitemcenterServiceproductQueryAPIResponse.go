@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallmallitemcenterserviceproductqueryAPIResponse 天猫服务商服务产品查询 API返回值
+// TmallMallitemcenterServiceproductQueryAPIResponse 天猫服务商服务产品查询 API返回值
 // tmall.mallitemcenter.serviceproduct.query
 //
 // 查询天猫服务的服务商发布的服务产品
-type TmallmallitemcenterserviceproductqueryAPIResponse struct {
+type TmallMallitemcenterServiceproductQueryAPIResponse struct {
 	model.CommonResponse
-	TmallmallitemcenterserviceproductqueryAPIResponseModel
+	TmallMallitemcenterServiceproductQueryAPIResponseModel
 }
 
-// TmallmallitemcenterserviceproductqueryAPIResponseModel is 天猫服务商服务产品查询 成功返回结果
-type TmallmallitemcenterserviceproductqueryAPIResponseModel struct {
+// TmallMallitemcenterServiceproductQueryAPIResponseModel is 天猫服务商服务产品查询 成功返回结果
+type TmallMallitemcenterServiceproductQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_mallitemcenter_serviceproduct_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
-	Result *TmallmallitemcenterserviceproductqueryResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TmallMallitemcenterServiceproductQueryResult `json:"result,omitempty" xml:"result,omitempty"`
 }

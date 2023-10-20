@@ -1,7 +1,7 @@
 package store
 
-// TaobaoplacestoreextendupdateResultDo 结构体
-type TaobaoplacestoreextendupdateResultDo struct {
+// TaobaoPlaceStoreExtendUpdateResultDo 结构体
+type TaobaoPlaceStoreExtendUpdateResultDo struct {
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 完整错误信息

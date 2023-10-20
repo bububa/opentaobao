@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallcarleaseriskcallbackAPIRequest 整车租赁风控模型回调 API请求
+// TmallCarLeaseRiskcallbackAPIRequest 整车租赁风控模型回调 API请求
 // tmall.car.lease.riskcallback
 //
 // 租赁公司回调风控结果
-type TmallcarleaseriskcallbackAPIRequest struct {
+type TmallCarLeaseRiskcallbackAPIRequest struct {
 	model.Params
 	// 授信结果
 	_creditInfo *CreditInfoTopDto
 }
 
-// NewTmallcarleaseriskcallbackRequest 初始化TmallcarleaseriskcallbackAPIRequest对象
-func NewTmallcarleaseriskcallbackRequest() *TmallcarleaseriskcallbackAPIRequest {
-	return &TmallcarleaseriskcallbackAPIRequest{
+// NewTmallCarLeaseRiskcallbackRequest 初始化TmallCarLeaseRiskcallbackAPIRequest对象
+func NewTmallCarLeaseRiskcallbackRequest() *TmallCarLeaseRiskcallbackAPIRequest {
+	return &TmallCarLeaseRiskcallbackAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallcarleaseriskcallbackAPIRequest) GetApiMethodName() string {
+func (r TmallCarLeaseRiskcallbackAPIRequest) GetApiMethodName() string {
 	return "tmall.car.lease.riskcallback"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallcarleaseriskcallbackAPIRequest) GetApiParams(params url.Values) {
+func (r TmallCarLeaseRiskcallbackAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallcarleaseriskcallbackAPIRequest) GetRawParams() model.Params {
+func (r TmallCarLeaseRiskcallbackAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCreditInfo is CreditInfo Setter
 // 授信结果
-func (r *TmallcarleaseriskcallbackAPIRequest) SetCreditInfo(_creditInfo *CreditInfoTopDto) error {
+func (r *TmallCarLeaseRiskcallbackAPIRequest) SetCreditInfo(_creditInfo *CreditInfoTopDto) error {
 	r._creditInfo = _creditInfo
 	r.Set("credit_info", _creditInfo)
 	return nil
 }
 
 // GetCreditInfo CreditInfo Getter
-func (r TmallcarleaseriskcallbackAPIRequest) GetCreditInfo() *CreditInfoTopDto {
+func (r TmallCarLeaseRiskcallbackAPIRequest) GetCreditInfo() *CreditInfoTopDto {
 	return r._creditInfo
 }

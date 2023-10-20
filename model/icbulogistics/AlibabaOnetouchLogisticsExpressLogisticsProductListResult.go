@@ -1,7 +1,7 @@
 package icbulogistics
 
-// AlibabaonetouchlogisticsexpresslogisticsproductlistResult 结构体
-type AlibabaonetouchlogisticsexpresslogisticsproductlistResult struct {
+// AlibabaOnetouchLogisticsExpressLogisticsProductListResult 结构体
+type AlibabaOnetouchLogisticsExpressLogisticsProductListResult struct {
 	// 列表对象
 	Values []LogisticsProductDto `json:"values,omitempty" xml:"values>logistics_product_dto,omitempty"`
 	// 错误信息提示

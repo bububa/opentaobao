@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhotelroomtypeupdateAPIResponse 房型更新接口（ID不存在自动新增） API返回值
+// TaobaoXhotelRoomtypeUpdateAPIResponse 房型更新接口（ID不存在自动新增） API返回值
 // taobao.xhotel.roomtype.update
 //
 // 酒店房型更新或添加
-type TaobaoxhotelroomtypeupdateAPIResponse struct {
+type TaobaoXhotelRoomtypeUpdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoxhotelroomtypeupdateAPIResponseModel
+	TaobaoXhotelRoomtypeUpdateAPIResponseModel
 }
 
-// TaobaoxhotelroomtypeupdateAPIResponseModel is 房型更新接口（ID不存在自动新增） 成功返回结果
-type TaobaoxhotelroomtypeupdateAPIResponseModel struct {
+// TaobaoXhotelRoomtypeUpdateAPIResponseModel is 房型更新接口（ID不存在自动新增） 成功返回结果
+type TaobaoXhotelRoomtypeUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_roomtype_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

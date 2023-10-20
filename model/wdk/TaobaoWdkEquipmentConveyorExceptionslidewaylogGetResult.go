@@ -1,7 +1,7 @@
 package wdk
 
-// TaobaowdkequipmentconveyorexceptionslidewayloggetResult 结构体
-type TaobaowdkequipmentconveyorexceptionslidewayloggetResult struct {
+// TaobaoWdkEquipmentConveyorExceptionslidewaylogGetResult 结构体
+type TaobaoWdkEquipmentConveyorExceptionslidewaylogGetResult struct {
 	// 返回的数据
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// 返回值与返回的信息

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaailabusertokengetAPIResponse 三方账号获取 token API返回值
+// AlibabaAilabUserTokenGetAPIResponse 三方账号获取 token API返回值
 // alibaba.ailab.user.token.get
 //
 // inside 设备的三方 app，通过 extId、schema 生成 token
-type AlibabaailabusertokengetAPIResponse struct {
+type AlibabaAilabUserTokenGetAPIResponse struct {
 	model.CommonResponse
-	AlibabaailabusertokengetAPIResponseModel
+	AlibabaAilabUserTokenGetAPIResponseModel
 }
 
-// AlibabaailabusertokengetAPIResponseModel is 三方账号获取 token 成功返回结果
-type AlibabaailabusertokengetAPIResponseModel struct {
+// AlibabaAilabUserTokenGetAPIResponseModel is 三方账号获取 token 成功返回结果
+type AlibabaAilabUserTokenGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailab_user_token_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

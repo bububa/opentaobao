@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoauctionzcupdatevrstatusAPIRequest 如视VR更新活跃状态 API请求
+// TaobaoAuctionZcUpdateVrStatusAPIRequest 如视VR更新活跃状态 API请求
 // taobao.auction.zc.update.vr.status
 //
 // 如视VR更新活跃状态
-type TaobaoauctionzcupdatevrstatusAPIRequest struct {
+type TaobaoAuctionZcUpdateVrStatusAPIRequest struct {
 	model.Params
 	// VR信息
 	_message string
 }
 
-// NewTaobaoauctionzcupdatevrstatusRequest 初始化TaobaoauctionzcupdatevrstatusAPIRequest对象
-func NewTaobaoauctionzcupdatevrstatusRequest() *TaobaoauctionzcupdatevrstatusAPIRequest {
-	return &TaobaoauctionzcupdatevrstatusAPIRequest{
+// NewTaobaoAuctionZcUpdateVrStatusRequest 初始化TaobaoAuctionZcUpdateVrStatusAPIRequest对象
+func NewTaobaoAuctionZcUpdateVrStatusRequest() *TaobaoAuctionZcUpdateVrStatusAPIRequest {
+	return &TaobaoAuctionZcUpdateVrStatusAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoauctionzcupdatevrstatusAPIRequest) GetApiMethodName() string {
+func (r TaobaoAuctionZcUpdateVrStatusAPIRequest) GetApiMethodName() string {
 	return "taobao.auction.zc.update.vr.status"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoauctionzcupdatevrstatusAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoAuctionZcUpdateVrStatusAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoauctionzcupdatevrstatusAPIRequest) GetRawParams() model.Params {
+func (r TaobaoAuctionZcUpdateVrStatusAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMessage is Message Setter
 // VR信息
-func (r *TaobaoauctionzcupdatevrstatusAPIRequest) SetMessage(_message string) error {
+func (r *TaobaoAuctionZcUpdateVrStatusAPIRequest) SetMessage(_message string) error {
 	r._message = _message
 	r.Set("message", _message)
 	return nil
 }
 
 // GetMessage Message Getter
-func (r TaobaoauctionzcupdatevrstatusAPIRequest) GetMessage() string {
+func (r TaobaoAuctionZcUpdateVrStatusAPIRequest) GetMessage() string {
 	return r._message
 }

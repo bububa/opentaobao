@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaouniversalbpaccountgetbalanceAPIRequest 获取账户余额，现金余额 API请求
+// TaobaoUniversalbpAccountGetBalanceAPIRequest 获取账户余额，现金余额 API请求
 // taobao.universalbp.account.get.balance
 //
 // 获取账户实时现金余额
-type TaobaouniversalbpaccountgetbalanceAPIRequest struct {
+type TaobaoUniversalbpAccountGetBalanceAPIRequest struct {
 	model.Params
 	// topServiceContext
 	_topServiceContext *TopServiceContext
 }
 
-// NewTaobaouniversalbpaccountgetbalanceRequest 初始化TaobaouniversalbpaccountgetbalanceAPIRequest对象
-func NewTaobaouniversalbpaccountgetbalanceRequest() *TaobaouniversalbpaccountgetbalanceAPIRequest {
-	return &TaobaouniversalbpaccountgetbalanceAPIRequest{
+// NewTaobaoUniversalbpAccountGetBalanceRequest 初始化TaobaoUniversalbpAccountGetBalanceAPIRequest对象
+func NewTaobaoUniversalbpAccountGetBalanceRequest() *TaobaoUniversalbpAccountGetBalanceAPIRequest {
+	return &TaobaoUniversalbpAccountGetBalanceAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaouniversalbpaccountgetbalanceAPIRequest) GetApiMethodName() string {
+func (r TaobaoUniversalbpAccountGetBalanceAPIRequest) GetApiMethodName() string {
 	return "taobao.universalbp.account.get.balance"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaouniversalbpaccountgetbalanceAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoUniversalbpAccountGetBalanceAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaouniversalbpaccountgetbalanceAPIRequest) GetRawParams() model.Params {
+func (r TaobaoUniversalbpAccountGetBalanceAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopServiceContext is TopServiceContext Setter
 // topServiceContext
-func (r *TaobaouniversalbpaccountgetbalanceAPIRequest) SetTopServiceContext(_topServiceContext *TopServiceContext) error {
+func (r *TaobaoUniversalbpAccountGetBalanceAPIRequest) SetTopServiceContext(_topServiceContext *TopServiceContext) error {
 	r._topServiceContext = _topServiceContext
 	r.Set("top_service_context", _topServiceContext)
 	return nil
 }
 
 // GetTopServiceContext TopServiceContext Getter
-func (r TaobaouniversalbpaccountgetbalanceAPIRequest) GetTopServiceContext() *TopServiceContext {
+func (r TaobaoUniversalbpAccountGetBalanceAPIRequest) GetTopServiceContext() *TopServiceContext {
 	return r._topServiceContext
 }

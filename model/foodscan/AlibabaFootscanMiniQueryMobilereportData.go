@@ -1,7 +1,7 @@
 package foodscan
 
-// AlibabafootscanminiquerymobilereportData 结构体
-type AlibabafootscanminiquerymobilereportData struct {
+// AlibabaFootscanMiniQueryMobilereportData 结构体
+type AlibabaFootscanMiniQueryMobilereportData struct {
 	// 右脚趾围
 	RightZhiwei string `json:"right_zhiwei,omitempty" xml:"right_zhiwei,omitempty"`
 	// 右脚跗围

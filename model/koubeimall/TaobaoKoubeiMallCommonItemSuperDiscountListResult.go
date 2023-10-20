@@ -1,7 +1,7 @@
 package koubeimall
 
-// TaobaokoubeimallcommonitemsuperdiscountlistResult 结构体
-type TaobaokoubeimallcommonitemsuperdiscountlistResult struct {
+// TaobaoKoubeiMallCommonItemSuperDiscountListResult 结构体
+type TaobaoKoubeiMallCommonItemSuperDiscountListResult struct {
 	// API请求全链路追踪ID
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 超值特惠商品模型

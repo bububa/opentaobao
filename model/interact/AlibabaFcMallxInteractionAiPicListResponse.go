@@ -1,7 +1,7 @@
 package interact
 
-// AlibabafcmallxinteractionaipiclistResponse 结构体
-type AlibabafcmallxinteractionaipiclistResponse struct {
+// AlibabaFcMallxInteractionAiPicListResponse 结构体
+type AlibabaFcMallxInteractionAiPicListResponse struct {
 	// 结果code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 结果信息

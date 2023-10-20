@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaouniversalbpwordpackagesuggestdefaultlistAPIRequest 建议默认关键词包 API请求
+// TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest 建议默认关键词包 API请求
 // taobao.universalbp.wordpackage.suggestdefaultlist
 //
 // 入参推广信息，出参建议的默认关键词包
-type TaobaouniversalbpwordpackagesuggestdefaultlistAPIRequest struct {
+type TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest struct {
 	model.Params
 	// topServiceContext
 	_topServiceContext *TopServiceContext
@@ -18,52 +18,52 @@ type TaobaouniversalbpwordpackagesuggestdefaultlistAPIRequest struct {
 	_wordPackageDefaultQueryVO *WordPackageDefaultQueryVo
 }
 
-// NewTaobaouniversalbpwordpackagesuggestdefaultlistRequest 初始化TaobaouniversalbpwordpackagesuggestdefaultlistAPIRequest对象
-func NewTaobaouniversalbpwordpackagesuggestdefaultlistRequest() *TaobaouniversalbpwordpackagesuggestdefaultlistAPIRequest {
-	return &TaobaouniversalbpwordpackagesuggestdefaultlistAPIRequest{
+// NewTaobaoUniversalbpWordpackageSuggestdefaultlistRequest 初始化TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest对象
+func NewTaobaoUniversalbpWordpackageSuggestdefaultlistRequest() *TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest {
+	return &TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaouniversalbpwordpackagesuggestdefaultlistAPIRequest) GetApiMethodName() string {
+func (r TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest) GetApiMethodName() string {
 	return "taobao.universalbp.wordpackage.suggestdefaultlist"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaouniversalbpwordpackagesuggestdefaultlistAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaouniversalbpwordpackagesuggestdefaultlistAPIRequest) GetRawParams() model.Params {
+func (r TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopServiceContext is TopServiceContext Setter
 // topServiceContext
-func (r *TaobaouniversalbpwordpackagesuggestdefaultlistAPIRequest) SetTopServiceContext(_topServiceContext *TopServiceContext) error {
+func (r *TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest) SetTopServiceContext(_topServiceContext *TopServiceContext) error {
 	r._topServiceContext = _topServiceContext
 	r.Set("top_service_context", _topServiceContext)
 	return nil
 }
 
 // GetTopServiceContext TopServiceContext Getter
-func (r TaobaouniversalbpwordpackagesuggestdefaultlistAPIRequest) GetTopServiceContext() *TopServiceContext {
+func (r TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest) GetTopServiceContext() *TopServiceContext {
 	return r._topServiceContext
 }
 
 // SetWordPackageDefaultQueryVO is WordPackageDefaultQueryVO Setter
 // wordPackageDefaultQueryVO
-func (r *TaobaouniversalbpwordpackagesuggestdefaultlistAPIRequest) SetWordPackageDefaultQueryVO(_wordPackageDefaultQueryVO *WordPackageDefaultQueryVo) error {
+func (r *TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest) SetWordPackageDefaultQueryVO(_wordPackageDefaultQueryVO *WordPackageDefaultQueryVo) error {
 	r._wordPackageDefaultQueryVO = _wordPackageDefaultQueryVO
 	r.Set("word_package_default_query_v_o", _wordPackageDefaultQueryVO)
 	return nil
 }
 
 // GetWordPackageDefaultQueryVO WordPackageDefaultQueryVO Getter
-func (r TaobaouniversalbpwordpackagesuggestdefaultlistAPIRequest) GetWordPackageDefaultQueryVO() *WordPackageDefaultQueryVo {
+func (r TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest) GetWordPackageDefaultQueryVO() *WordPackageDefaultQueryVo {
 	return r._wordPackageDefaultQueryVO
 }

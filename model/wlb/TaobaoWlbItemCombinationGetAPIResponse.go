@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlbitemcombinationgetAPIResponse 根据商品id查询商品组合关系 API返回值
+// TaobaoWlbItemCombinationGetAPIResponse 根据商品id查询商品组合关系 API返回值
 // taobao.wlb.item.combination.get
 //
 // 根据商品id查询商品组合关系
-type TaobaowlbitemcombinationgetAPIResponse struct {
+type TaobaoWlbItemCombinationGetAPIResponse struct {
 	model.CommonResponse
-	TaobaowlbitemcombinationgetAPIResponseModel
+	TaobaoWlbItemCombinationGetAPIResponseModel
 }
 
-// TaobaowlbitemcombinationgetAPIResponseModel is 根据商品id查询商品组合关系 成功返回结果
-type TaobaowlbitemcombinationgetAPIResponseModel struct {
+// TaobaoWlbItemCombinationGetAPIResponseModel is 根据商品id查询商品组合关系 成功返回结果
+type TaobaoWlbItemCombinationGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_item_combination_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

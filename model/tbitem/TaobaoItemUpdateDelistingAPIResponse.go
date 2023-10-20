@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoitemupdatedelistingAPIResponse 商品下架 API返回值
+// TaobaoItemUpdateDelistingAPIResponse 商品下架 API返回值
 // taobao.item.update.delisting
 //
 // * 单个商品下架&lt;br/&gt;    * 输入的num_iid必须属于当前会话用户
-type TaobaoitemupdatedelistingAPIResponse struct {
+type TaobaoItemUpdateDelistingAPIResponse struct {
 	model.CommonResponse
-	TaobaoitemupdatedelistingAPIResponseModel
+	TaobaoItemUpdateDelistingAPIResponseModel
 }
 
-// TaobaoitemupdatedelistingAPIResponseModel is 商品下架 成功返回结果
-type TaobaoitemupdatedelistingAPIResponseModel struct {
+// TaobaoItemUpdateDelistingAPIResponseModel is 商品下架 成功返回结果
+type TaobaoItemUpdateDelistingAPIResponseModel struct {
 	XMLName xml.Name `xml:"item_update_delisting_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

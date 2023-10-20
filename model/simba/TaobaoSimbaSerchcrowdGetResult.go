@@ -1,7 +1,7 @@
 package simba
 
-// TaobaosimbaserchcrowdgetResult 结构体
-type TaobaosimbaserchcrowdgetResult struct {
+// TaobaoSimbaSerchcrowdGetResult 结构体
+type TaobaoSimbaSerchcrowdGetResult struct {
 	// 出价方式1:溢价;0:出价
 	PriceMode int64 `json:"price_mode,omitempty" xml:"price_mode,omitempty"`
 	// 返回的溢价比例,乘的关系,discount=121,代表溢价21%

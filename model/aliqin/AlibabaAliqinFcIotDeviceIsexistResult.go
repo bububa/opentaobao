@@ -1,7 +1,7 @@
 package aliqin
 
-// AlibabaaliqinfciotdeviceisexistResult 结构体
-type AlibabaaliqinfciotdeviceisexistResult struct {
+// AlibabaAliqinFcIotDeviceIsexistResult 结构体
+type AlibabaAliqinFcIotDeviceIsexistResult struct {
 	// code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 返回描述

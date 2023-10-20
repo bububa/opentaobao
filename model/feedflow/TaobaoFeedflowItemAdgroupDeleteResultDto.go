@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaofeedflowitemadgroupdeleteResultDto 结构体
-type TaobaofeedflowitemadgroupdeleteResultDto struct {
+// TaobaoFeedflowItemAdgroupDeleteResultDto 结构体
+type TaobaoFeedflowItemAdgroupDeleteResultDto struct {
 	// 信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 删除结果

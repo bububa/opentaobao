@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunososupdateappversioninfoAPIResponse 获取应用升级详情 API返回值
+// YunosOsupdateAppversionInfoAPIResponse 获取应用升级详情 API返回值
 // yunos.osupdate.appversion.info
 //
 // 获取应用升级详情
-type YunososupdateappversioninfoAPIResponse struct {
+type YunosOsupdateAppversionInfoAPIResponse struct {
 	model.CommonResponse
-	YunososupdateappversioninfoAPIResponseModel
+	YunosOsupdateAppversionInfoAPIResponseModel
 }
 
-// YunososupdateappversioninfoAPIResponseModel is 获取应用升级详情 成功返回结果
-type YunososupdateappversioninfoAPIResponseModel struct {
+// YunosOsupdateAppversionInfoAPIResponseModel is 获取应用升级详情 成功返回结果
+type YunosOsupdateAppversionInfoAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_osupdate_appversion_info_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

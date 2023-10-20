@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// Alibabascbpadgrouprecommendproduct 推品
+// AlibabaScbpAdGroupRecommendProduct 推品
 // alibaba.scbp.ad.group.recommend.product
 //
 // 推品
-func Alibabascbpadgrouprecommendproduct(clt *core.SDKClient, req *scbp.AlibabascbpadgrouprecommendproductAPIRequest, session string) (*scbp.AlibabascbpadgrouprecommendproductAPIResponse, error) {
-	var resp scbp.AlibabascbpadgrouprecommendproductAPIResponse
+func AlibabaScbpAdGroupRecommendProduct(clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupRecommendProductAPIRequest, session string) (*scbp.AlibabaScbpAdGroupRecommendProductAPIResponse, error) {
+	var resp scbp.AlibabaScbpAdGroupRecommendProductAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

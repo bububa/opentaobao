@@ -1,7 +1,7 @@
 package alilabs
 
-// AlibabaailabstmallgenieauthdeviceunbindResult 结构体
-type AlibabaailabstmallgenieauthdeviceunbindResult struct {
+// AlibabaAilabsTmallgenieAuthDeviceUnbindResult 结构体
+type AlibabaAilabsTmallgenieAuthDeviceUnbindResult struct {
 	// 系统自动生成
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
 	// 系统自动生成

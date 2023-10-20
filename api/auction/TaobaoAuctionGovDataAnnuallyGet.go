@@ -5,7 +5,7 @@ import (
 	"github.com/bububa/opentaobao/model/auction"
 )
 
-// Taobaoauctiongovdataannuallyget 按年统计法院拍卖数据
+// TaobaoAuctionGovDataAnnuallyGet 按年统计法院拍卖数据
 // taobao.auction.gov.data.annually.get
 //
 // 按月统计法院拍卖数据 包含：
@@ -14,8 +14,8 @@ import (
 // 在线标的：在线标的件数、意向用户数、网拍围观人次
 //
 // 最长6年，年起始时间2017年
-func Taobaoauctiongovdataannuallyget(clt *core.SDKClient, req *auction.TaobaoauctiongovdataannuallygetAPIRequest, session string) (*auction.TaobaoauctiongovdataannuallygetAPIResponse, error) {
-	var resp auction.TaobaoauctiongovdataannuallygetAPIResponse
+func TaobaoAuctionGovDataAnnuallyGet(clt *core.SDKClient, req *auction.TaobaoAuctionGovDataAnnuallyGetAPIRequest, session string) (*auction.TaobaoAuctionGovDataAnnuallyGetAPIResponse, error) {
+	var resp auction.TaobaoAuctionGovDataAnnuallyGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

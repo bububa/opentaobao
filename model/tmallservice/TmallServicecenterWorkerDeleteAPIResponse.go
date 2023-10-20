@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallservicecenterworkerdeleteAPIResponse 删除工人 API返回值
+// TmallServicecenterWorkerDeleteAPIResponse 删除工人 API返回值
 // tmall.servicecenter.worker.delete
 //
 // 删除工人信息。该接口为多个业务公用，部分字段可忽略。对于电器预约安装业务，同一个服务商，通过工人姓名+手机号+biz_type 保证唯一性。工人已存在才可以删除。
@@ -25,13 +25,13 @@ import (
 // 11000, category_id 无效
 // 11001, biz_type 无效
 // 20001,已查询到最后一页
-type TmallservicecenterworkerdeleteAPIResponse struct {
+type TmallServicecenterWorkerDeleteAPIResponse struct {
 	model.CommonResponse
-	TmallservicecenterworkerdeleteAPIResponseModel
+	TmallServicecenterWorkerDeleteAPIResponseModel
 }
 
-// TmallservicecenterworkerdeleteAPIResponseModel is 删除工人 成功返回结果
-type TmallservicecenterworkerdeleteAPIResponseModel struct {
+// TmallServicecenterWorkerDeleteAPIResponseModel is 删除工人 成功返回结果
+type TmallServicecenterWorkerDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_worker_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascpchannel"
 )
 
-// Alibabaascpuopsupplierconsignordercancelfeedback 商家仓wms取消发货反馈回告服务
+// AlibabaAscpUopSupplierConsignorderCancelFeedback 商家仓wms取消发货反馈回告服务
 // alibaba.ascp.uop.supplier.consignorder.cancel.feedback
 //
 // 履约单纬度通知商家仓wms取消发货结果反馈回告服务
-func Alibabaascpuopsupplierconsignordercancelfeedback(clt *core.SDKClient, req *ascpchannel.AlibabaascpuopsupplierconsignordercancelfeedbackAPIRequest, session string) (*ascpchannel.AlibabaascpuopsupplierconsignordercancelfeedbackAPIResponse, error) {
-	var resp ascpchannel.AlibabaascpuopsupplierconsignordercancelfeedbackAPIResponse
+func AlibabaAscpUopSupplierConsignorderCancelFeedback(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest, session string) (*ascpchannel.AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIResponse, error) {
+	var resp ascpchannel.AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallnr"
 )
 
-// Tmallnrfulfilllogisticssync 同城配物流信息回传
+// TmallNrFulfillLogisticsSync 同城配物流信息回传
 // tmall.nr.fulfill.logistics.sync
 //
 // 同城配业务物流信息回传，通过接口将物流信息同步给天猫
-func Tmallnrfulfilllogisticssync(clt *core.SDKClient, req *tmallnr.TmallnrfulfilllogisticssyncAPIRequest, session string) (*tmallnr.TmallnrfulfilllogisticssyncAPIResponse, error) {
-	var resp tmallnr.TmallnrfulfilllogisticssyncAPIResponse
+func TmallNrFulfillLogisticsSync(clt *core.SDKClient, req *tmallnr.TmallNrFulfillLogisticsSyncAPIRequest, session string) (*tmallnr.TmallNrFulfillLogisticsSyncAPIResponse, error) {
+	var resp tmallnr.TmallNrFulfillLogisticsSyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

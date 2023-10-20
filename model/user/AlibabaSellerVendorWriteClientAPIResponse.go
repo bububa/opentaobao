@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabasellervendorwriteclientAPIResponse 客户动态回写 API返回值
+// AlibabaSellerVendorWriteClientAPIResponse 客户动态回写 API返回值
 // alibaba.seller.vendor.write.client
 //
 // 客户动态开放API接口，外部服务商回写数据
-type AlibabasellervendorwriteclientAPIResponse struct {
+type AlibabaSellerVendorWriteClientAPIResponse struct {
 	model.CommonResponse
-	AlibabasellervendorwriteclientAPIResponseModel
+	AlibabaSellerVendorWriteClientAPIResponseModel
 }
 
-// AlibabasellervendorwriteclientAPIResponseModel is 客户动态回写 成功返回结果
-type AlibabasellervendorwriteclientAPIResponseModel struct {
+// AlibabaSellerVendorWriteClientAPIResponseModel is 客户动态回写 成功返回结果
+type AlibabaSellerVendorWriteClientAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_seller_vendor_write_client_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

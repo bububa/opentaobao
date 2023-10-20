@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabainteractactivityapplyAPIResponse ISV报名官方活动(中心化流量) API返回值
+// AlibabaInteractActivityApplyAPIResponse ISV报名官方活动(中心化流量) API返回值
 // alibaba.interact.activity.apply
 //
 // 支持商家将使用isv创建的活动所对应的权益信息同步到手淘，供过滤是否在中心化流量入口透出
-type AlibabainteractactivityapplyAPIResponse struct {
+type AlibabaInteractActivityApplyAPIResponse struct {
 	model.CommonResponse
-	AlibabainteractactivityapplyAPIResponseModel
+	AlibabaInteractActivityApplyAPIResponseModel
 }
 
-// AlibabainteractactivityapplyAPIResponseModel is ISV报名官方活动(中心化流量) 成功返回结果
-type AlibabainteractactivityapplyAPIResponseModel struct {
+// AlibabaInteractActivityApplyAPIResponseModel is ISV报名官方活动(中心化流量) 成功返回结果
+type AlibabaInteractActivityApplyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_activity_apply_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

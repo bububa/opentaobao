@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/user"
 )
 
-// Alibababenefitsend 发奖接口
+// AlibabaBenefitSend 发奖接口
 // alibaba.benefit.send
 //
 // 发奖接口
-func Alibababenefitsend(clt *core.SDKClient, req *user.AlibababenefitsendAPIRequest, session string) (*user.AlibababenefitsendAPIResponse, error) {
-	var resp user.AlibababenefitsendAPIResponse
+func AlibabaBenefitSend(clt *core.SDKClient, req *user.AlibabaBenefitSendAPIRequest, session string) (*user.AlibabaBenefitSendAPIResponse, error) {
+	var resp user.AlibabaBenefitSendAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

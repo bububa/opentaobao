@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/degoperation"
 )
 
-// Taobaodegoperationdoluckydraw 激励抽奖
+// TaobaoDegoperationDoLuckydraw 激励抽奖
 // taobao.degoperation.do.luckydraw
 //
 // 激励平台抽奖接口。用户可以通过接口完成抽奖功能
-func Taobaodegoperationdoluckydraw(clt *core.SDKClient, req *degoperation.TaobaodegoperationdoluckydrawAPIRequest, session string) (*degoperation.TaobaodegoperationdoluckydrawAPIResponse, error) {
-	var resp degoperation.TaobaodegoperationdoluckydrawAPIResponse
+func TaobaoDegoperationDoLuckydraw(clt *core.SDKClient, req *degoperation.TaobaoDegoperationDoLuckydrawAPIRequest, session string) (*degoperation.TaobaoDegoperationDoLuckydrawAPIResponse, error) {
+	var resp degoperation.TaobaoDegoperationDoLuckydrawAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

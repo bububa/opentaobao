@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// Alitripbtipcostcenterquery 查询外部成本中心
+// AlitripBtipCostCenterQuery 查询外部成本中心
 // alitrip.btip.cost.center.query
 //
 // 查询外部成本中心
-func Alitripbtipcostcenterquery(clt *core.SDKClient, req *btrip.AlitripbtipcostcenterqueryAPIRequest, session string) (*btrip.AlitripbtipcostcenterqueryAPIResponse, error) {
-	var resp btrip.AlitripbtipcostcenterqueryAPIResponse
+func AlitripBtipCostCenterQuery(clt *core.SDKClient, req *btrip.AlitripBtipCostCenterQueryAPIRequest, session string) (*btrip.AlitripBtipCostCenterQueryAPIResponse, error) {
+	var resp btrip.AlitripBtipCostCenterQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

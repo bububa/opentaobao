@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaominiappcloudmongoupdateAPIResponse 更新MongoDB中的数据 API返回值
+// TaobaoMiniappCloudMongoUpdateAPIResponse 更新MongoDB中的数据 API返回值
 // taobao.miniapp.cloud.mongo.update
 //
 // 更新MongoDB中的数据
-type TaobaominiappcloudmongoupdateAPIResponse struct {
+type TaobaoMiniappCloudMongoUpdateAPIResponse struct {
 	model.CommonResponse
-	TaobaominiappcloudmongoupdateAPIResponseModel
+	TaobaoMiniappCloudMongoUpdateAPIResponseModel
 }
 
-// TaobaominiappcloudmongoupdateAPIResponseModel is 更新MongoDB中的数据 成功返回结果
-type TaobaominiappcloudmongoupdateAPIResponseModel struct {
+// TaobaoMiniappCloudMongoUpdateAPIResponseModel is 更新MongoDB中的数据 成功返回结果
+type TaobaoMiniappCloudMongoUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_cloud_mongo_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotanxqualificationsolidfindAPIResponse 客户固态共享资质 API返回值
+// TaobaoTanxQualificationSolidFindAPIResponse 客户固态共享资质 API返回值
 // taobao.tanx.qualification.solid.find
 //
 // 接口会返回该广告主下的所有审核通过并且可被共享的资质，这些资质在过期之前可以不需要再次上传。
-type TaobaotanxqualificationsolidfindAPIResponse struct {
+type TaobaoTanxQualificationSolidFindAPIResponse struct {
 	model.CommonResponse
-	TaobaotanxqualificationsolidfindAPIResponseModel
+	TaobaoTanxQualificationSolidFindAPIResponseModel
 }
 
-// TaobaotanxqualificationsolidfindAPIResponseModel is 客户固态共享资质 成功返回结果
-type TaobaotanxqualificationsolidfindAPIResponseModel struct {
+// TaobaoTanxQualificationSolidFindAPIResponseModel is 客户固态共享资质 成功返回结果
+type TaobaoTanxQualificationSolidFindAPIResponseModel struct {
 	XMLName xml.Name `xml:"tanx_qualification_solid_find_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

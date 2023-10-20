@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripflightinsuranceproductsearchAPIResponse 搜索保险产品 API返回值
+// AlitripFlightInsuranceProductSearchAPIResponse 搜索保险产品 API返回值
 // alitrip.flight.insurance.product.search
 //
 // 搜索保险产品
-type AlitripflightinsuranceproductsearchAPIResponse struct {
+type AlitripFlightInsuranceProductSearchAPIResponse struct {
 	model.CommonResponse
-	AlitripflightinsuranceproductsearchAPIResponseModel
+	AlitripFlightInsuranceProductSearchAPIResponseModel
 }
 
-// AlitripflightinsuranceproductsearchAPIResponseModel is 搜索保险产品 成功返回结果
-type AlitripflightinsuranceproductsearchAPIResponseModel struct {
+// AlitripFlightInsuranceProductSearchAPIResponseModel is 搜索保险产品 成功返回结果
+type AlitripFlightInsuranceProductSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_flight_insurance_product_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

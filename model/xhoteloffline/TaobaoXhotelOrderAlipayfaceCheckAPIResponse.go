@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhotelorderalipayfacecheckAPIResponse 线下信用住买家资格校验接口 API返回值
+// TaobaoXhotelOrderAlipayfaceCheckAPIResponse 线下信用住买家资格校验接口 API返回值
 // taobao.xhotel.order.alipayface.check
 //
 // 接口用于校验买家是否具有使用酒店信用住的资格
-type TaobaoxhotelorderalipayfacecheckAPIResponse struct {
+type TaobaoXhotelOrderAlipayfaceCheckAPIResponse struct {
 	model.CommonResponse
-	TaobaoxhotelorderalipayfacecheckAPIResponseModel
+	TaobaoXhotelOrderAlipayfaceCheckAPIResponseModel
 }
 
-// TaobaoxhotelorderalipayfacecheckAPIResponseModel is 线下信用住买家资格校验接口 成功返回结果
-type TaobaoxhotelorderalipayfacecheckAPIResponseModel struct {
+// TaobaoXhotelOrderAlipayfaceCheckAPIResponseModel is 线下信用住买家资格校验接口 成功返回结果
+type TaobaoXhotelOrderAlipayfaceCheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_alipayface_check_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

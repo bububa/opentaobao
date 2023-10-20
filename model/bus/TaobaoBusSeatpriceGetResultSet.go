@@ -1,7 +1,7 @@
 package bus
 
-// TaobaobusseatpricegetResultSet 结构体
-type TaobaobusseatpricegetResultSet struct {
+// TaobaoBusSeatpriceGetResultSet 结构体
+type TaobaoBusSeatpriceGetResultSet struct {
 	// 错误代码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误描述

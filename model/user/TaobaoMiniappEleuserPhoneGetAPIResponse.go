@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaominiappeleuserphonegetAPIResponse 获取饿了么用户信息 API返回值
+// TaobaoMiniappEleuserPhoneGetAPIResponse 获取饿了么用户信息 API返回值
 // taobao.miniapp.eleuser.phone.get
 //
 // 获取饿了么用户信息
-type TaobaominiappeleuserphonegetAPIResponse struct {
+type TaobaoMiniappEleuserPhoneGetAPIResponse struct {
 	model.CommonResponse
-	TaobaominiappeleuserphonegetAPIResponseModel
+	TaobaoMiniappEleuserPhoneGetAPIResponseModel
 }
 
-// TaobaominiappeleuserphonegetAPIResponseModel is 获取饿了么用户信息 成功返回结果
-type TaobaominiappeleuserphonegetAPIResponseModel struct {
+// TaobaoMiniappEleuserPhoneGetAPIResponseModel is 获取饿了么用户信息 成功返回结果
+type TaobaoMiniappEleuserPhoneGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_eleuser_phone_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliyunaliospaytradequeryAPIResponse 查询支付结果接口 API返回值
+// AliyunAliosPayTradeQueryAPIResponse 查询支付结果接口 API返回值
 // aliyun.alios.pay.trade.query
 //
 // 商户用来查询支付结果接口
-type AliyunaliospaytradequeryAPIResponse struct {
+type AliyunAliosPayTradeQueryAPIResponse struct {
 	model.CommonResponse
-	AliyunaliospaytradequeryAPIResponseModel
+	AliyunAliosPayTradeQueryAPIResponseModel
 }
 
-// AliyunaliospaytradequeryAPIResponseModel is 查询支付结果接口 成功返回结果
-type AliyunaliospaytradequeryAPIResponseModel struct {
+// AliyunAliosPayTradeQueryAPIResponseModel is 查询支付结果接口 成功返回结果
+type AliyunAliosPayTradeQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliyun_alios_pay_trade_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

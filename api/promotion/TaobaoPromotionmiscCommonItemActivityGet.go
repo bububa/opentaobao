@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-// Taobaopromotionmisccommonitemactivityget 查询通用单品优惠活动
+// TaobaoPromotionmiscCommonItemActivityGet 查询通用单品优惠活动
 // taobao.promotionmisc.common.item.activity.get
 //
 // 查询通用单品优惠活动。
-func Taobaopromotionmisccommonitemactivityget(clt *core.SDKClient, req *promotion.TaobaopromotionmisccommonitemactivitygetAPIRequest, session string) (*promotion.TaobaopromotionmisccommonitemactivitygetAPIResponse, error) {
-	var resp promotion.TaobaopromotionmisccommonitemactivitygetAPIResponse
+func TaobaoPromotionmiscCommonItemActivityGet(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscCommonItemActivityGetAPIRequest, session string) (*promotion.TaobaoPromotionmiscCommonItemActivityGetAPIResponse, error) {
+	var resp promotion.TaobaoPromotionmiscCommonItemActivityGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

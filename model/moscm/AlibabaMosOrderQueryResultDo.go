@@ -1,7 +1,7 @@
 package moscm
 
-// AlibabamosorderqueryResultDo 结构体
-type AlibabamosorderqueryResultDo struct {
+// AlibabaMosOrderQueryResultDo 结构体
+type AlibabaMosOrderQueryResultDo struct {
 	// 异常信息
 	SubMsg string `json:"sub_msg,omitempty" xml:"sub_msg,omitempty"`
 	// 等于200代表成功

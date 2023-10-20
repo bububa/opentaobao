@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wlbimports"
 )
 
-// Taobaowlbimportsorderget 物流订单获取
+// TaobaoWlbImportsOrderGet 物流订单获取
 // taobao.wlb.imports.order.get
 //
 // 一般进口物流订单获取
-func Taobaowlbimportsorderget(clt *core.SDKClient, req *wlbimports.TaobaowlbimportsordergetAPIRequest, session string) (*wlbimports.TaobaowlbimportsordergetAPIResponse, error) {
-	var resp wlbimports.TaobaowlbimportsordergetAPIResponse
+func TaobaoWlbImportsOrderGet(clt *core.SDKClient, req *wlbimports.TaobaoWlbImportsOrderGetAPIRequest, session string) (*wlbimports.TaobaoWlbImportsOrderGetAPIResponse, error) {
+	var resp wlbimports.TaobaoWlbImportsOrderGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

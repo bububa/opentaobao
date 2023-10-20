@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fpm"
 )
 
-// Alibabacfoincominginvoicepytimageupload 票易通发票影像上传
+// AlibabaCfoIncomingInvoicePytImageUpload 票易通发票影像上传
 // alibaba.cfo.incoming.invoice.pyt.image.upload
 //
 // 票易通发票影像上传
-func Alibabacfoincominginvoicepytimageupload(clt *core.SDKClient, req *fpm.AlibabacfoincominginvoicepytimageuploadAPIRequest, session string) (*fpm.AlibabacfoincominginvoicepytimageuploadAPIResponse, error) {
-	var resp fpm.AlibabacfoincominginvoicepytimageuploadAPIResponse
+func AlibabaCfoIncomingInvoicePytImageUpload(clt *core.SDKClient, req *fpm.AlibabaCfoIncomingInvoicePytImageUploadAPIRequest, session string) (*fpm.AlibabaCfoIncomingInvoicePytImageUploadAPIResponse, error) {
+	var resp fpm.AlibabaCfoIncomingInvoicePytImageUploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

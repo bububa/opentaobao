@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabajymitemexternalgoodsbatchsynoffsaleAPIResponse 同步下架接口 API返回值
+// AlibabaJymItemExternalGoodsBatchSynoffsaleAPIResponse 同步下架接口 API返回值
 // alibaba.jym.item.external.goods.batch.synoffsale
 //
 // 同步下架接口
-type AlibabajymitemexternalgoodsbatchsynoffsaleAPIResponse struct {
+type AlibabaJymItemExternalGoodsBatchSynoffsaleAPIResponse struct {
 	model.CommonResponse
-	AlibabajymitemexternalgoodsbatchsynoffsaleAPIResponseModel
+	AlibabaJymItemExternalGoodsBatchSynoffsaleAPIResponseModel
 }
 
-// AlibabajymitemexternalgoodsbatchsynoffsaleAPIResponseModel is 同步下架接口 成功返回结果
-type AlibabajymitemexternalgoodsbatchsynoffsaleAPIResponseModel struct {
+// AlibabaJymItemExternalGoodsBatchSynoffsaleAPIResponseModel is 同步下架接口 成功返回结果
+type AlibabaJymItemExternalGoodsBatchSynoffsaleAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_item_external_goods_batch_synoffsale_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

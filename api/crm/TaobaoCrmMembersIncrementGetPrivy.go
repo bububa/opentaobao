@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/crm"
 )
 
-// Taobaocrmmembersincrementgetprivy 增量获取卖家会员
+// TaobaoCrmMembersIncrementGetPrivy 增量获取卖家会员
 // taobao.crm.members.increment.get.privy
 //
 // 增量获取会员列表，接口返回符合查询条件的所有会员。任何状态更改都会返回,最大允许100
-func Taobaocrmmembersincrementgetprivy(clt *core.SDKClient, req *crm.TaobaocrmmembersincrementgetprivyAPIRequest, session string) (*crm.TaobaocrmmembersincrementgetprivyAPIResponse, error) {
-	var resp crm.TaobaocrmmembersincrementgetprivyAPIResponse
+func TaobaoCrmMembersIncrementGetPrivy(clt *core.SDKClient, req *crm.TaobaoCrmMembersIncrementGetPrivyAPIRequest, session string) (*crm.TaobaoCrmMembersIncrementGetPrivyAPIResponse, error) {
+	var resp crm.TaobaoCrmMembersIncrementGetPrivyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

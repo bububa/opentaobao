@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimensuppliersynchronizeRequest 结构体
-type TaobaoqimensuppliersynchronizeRequest struct {
+// TaobaoQimenSupplierSynchronizeRequest 结构体
+type TaobaoQimenSupplierSynchronizeRequest struct {
 	// add|update, 必填
 	ActionType string `json:"actionType,omitempty" xml:"actionType,omitempty"`
 	// 供应商编码 string (50), 必填

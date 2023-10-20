@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallnrtpaymerchantfundstypemodifyAPIResponse 修改摊位分账类型 API返回值
+// TmallNrtPayMerchantFundstypeModifyAPIResponse 修改摊位分账类型 API返回值
 // tmall.nrt.pay.merchant.fundstype.modify
 //
 // 修改摊位分账类型
-type TmallnrtpaymerchantfundstypemodifyAPIResponse struct {
+type TmallNrtPayMerchantFundstypeModifyAPIResponse struct {
 	model.CommonResponse
-	TmallnrtpaymerchantfundstypemodifyAPIResponseModel
+	TmallNrtPayMerchantFundstypeModifyAPIResponseModel
 }
 
-// TmallnrtpaymerchantfundstypemodifyAPIResponseModel is 修改摊位分账类型 成功返回结果
-type TmallnrtpaymerchantfundstypemodifyAPIResponseModel struct {
+// TmallNrtPayMerchantFundstypeModifyAPIResponseModel is 修改摊位分账类型 成功返回结果
+type TmallNrtPayMerchantFundstypeModifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_nrt_pay_merchant_fundstype_modify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

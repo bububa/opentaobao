@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaservicecenterworkcardserviceprogressupdateAPIResponse 更新服务进度 API返回值
+// AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponse 更新服务进度 API返回值
 // alibaba.servicecenter.workcard.serviceprogress.update
 //
 // 提供给外部合作服务商更新服务进度的接口
-type AlibabaservicecenterworkcardserviceprogressupdateAPIResponse struct {
+type AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponse struct {
 	model.CommonResponse
-	AlibabaservicecenterworkcardserviceprogressupdateAPIResponseModel
+	AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponseModel
 }
 
-// AlibabaservicecenterworkcardserviceprogressupdateAPIResponseModel is 更新服务进度 成功返回结果
-type AlibabaservicecenterworkcardserviceprogressupdateAPIResponseModel struct {
+// AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponseModel is 更新服务进度 成功返回结果
+type AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_servicecenter_workcard_serviceprogress_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

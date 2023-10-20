@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallcar"
 )
 
-// Tmallaliautofulfillmentdeliverysyn 交付状态及物流信息同步
+// TmallAliautoFulfillmentDeliverySyn 交付状态及物流信息同步
 // tmall.aliauto.fulfillment.delivery.syn
 //
 // 交付状态及物流信息同步
-func Tmallaliautofulfillmentdeliverysyn(clt *core.SDKClient, req *tmallcar.TmallaliautofulfillmentdeliverysynAPIRequest, session string) (*tmallcar.TmallaliautofulfillmentdeliverysynAPIResponse, error) {
-	var resp tmallcar.TmallaliautofulfillmentdeliverysynAPIResponse
+func TmallAliautoFulfillmentDeliverySyn(clt *core.SDKClient, req *tmallcar.TmallAliautoFulfillmentDeliverySynAPIRequest, session string) (*tmallcar.TmallAliautoFulfillmentDeliverySynAPIResponse, error) {
+	var resp tmallcar.TmallAliautoFulfillmentDeliverySynAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

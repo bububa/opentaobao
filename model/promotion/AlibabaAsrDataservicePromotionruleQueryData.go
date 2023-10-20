@@ -1,7 +1,7 @@
 package promotion
 
-// AlibabaasrdataservicepromotionrulequeryData 结构体
-type AlibabaasrdataservicepromotionrulequeryData struct {
+// AlibabaAsrDataservicePromotionruleQueryData 结构体
+type AlibabaAsrDataservicePromotionruleQueryData struct {
 	// 兑换详情列表
 	DetailList []Detaillist `json:"detail_list,omitempty" xml:"detail_list>detaillist,omitempty"`
 	// 名称

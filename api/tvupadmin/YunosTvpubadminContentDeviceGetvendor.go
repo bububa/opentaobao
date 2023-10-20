@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-// Yunostvpubadmincontentdevicegetvendor 查询设备Vendor信息
+// YunosTvpubadminContentDeviceGetvendor 查询设备Vendor信息
 // yunos.tvpubadmin.content.device.getvendor
 //
 // 查询设备Vendor信息
-func Yunostvpubadmincontentdevicegetvendor(clt *core.SDKClient, req *tvupadmin.YunostvpubadmincontentdevicegetvendorAPIRequest, session string) (*tvupadmin.YunostvpubadmincontentdevicegetvendorAPIResponse, error) {
-	var resp tvupadmin.YunostvpubadmincontentdevicegetvendorAPIResponse
+func YunosTvpubadminContentDeviceGetvendor(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentDeviceGetvendorAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentDeviceGetvendorAPIResponse, error) {
+	var resp tvupadmin.YunosTvpubadminContentDeviceGetvendorAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

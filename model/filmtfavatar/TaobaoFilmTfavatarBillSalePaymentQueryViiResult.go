@@ -1,7 +1,7 @@
 package filmtfavatar
 
-// TaobaofilmtfavatarbillsalepaymentqueryviiResult 结构体
-type TaobaofilmtfavatarbillsalepaymentqueryviiResult struct {
+// TaobaoFilmTfavatarBillSalePaymentQueryViiResult 结构体
+type TaobaoFilmTfavatarBillSalePaymentQueryViiResult struct {
 	// 错误信息
 	ReturnMessage string `json:"return_message,omitempty" xml:"return_message,omitempty"`
 	// 错误码

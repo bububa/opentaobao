@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitriptransferorderdetailAPIRequest 接送订单详情接口 API请求
+// AlitripTransferOrderDetailAPIRequest 接送订单详情接口 API请求
 // alitrip.transfer.order.detail
 //
 // 接送订单详情接口
-type AlitriptransferorderdetailAPIRequest struct {
+type AlitripTransferOrderDetailAPIRequest struct {
 	model.Params
 	// 飞猪平台订单id
 	_orderId string
@@ -18,52 +18,52 @@ type AlitriptransferorderdetailAPIRequest struct {
 	_providerId string
 }
 
-// NewAlitriptransferorderdetailRequest 初始化AlitriptransferorderdetailAPIRequest对象
-func NewAlitriptransferorderdetailRequest() *AlitriptransferorderdetailAPIRequest {
-	return &AlitriptransferorderdetailAPIRequest{
+// NewAlitripTransferOrderDetailRequest 初始化AlitripTransferOrderDetailAPIRequest对象
+func NewAlitripTransferOrderDetailRequest() *AlitripTransferOrderDetailAPIRequest {
+	return &AlitripTransferOrderDetailAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitriptransferorderdetailAPIRequest) GetApiMethodName() string {
+func (r AlitripTransferOrderDetailAPIRequest) GetApiMethodName() string {
 	return "alitrip.transfer.order.detail"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitriptransferorderdetailAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripTransferOrderDetailAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitriptransferorderdetailAPIRequest) GetRawParams() model.Params {
+func (r AlitripTransferOrderDetailAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOrderId is OrderId Setter
 // 飞猪平台订单id
-func (r *AlitriptransferorderdetailAPIRequest) SetOrderId(_orderId string) error {
+func (r *AlitripTransferOrderDetailAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
 	r.Set("order_id", _orderId)
 	return nil
 }
 
 // GetOrderId OrderId Getter
-func (r AlitriptransferorderdetailAPIRequest) GetOrderId() string {
+func (r AlitripTransferOrderDetailAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
 // SetProviderId is ProviderId Setter
 // 分配的服务商Id
-func (r *AlitriptransferorderdetailAPIRequest) SetProviderId(_providerId string) error {
+func (r *AlitripTransferOrderDetailAPIRequest) SetProviderId(_providerId string) error {
 	r._providerId = _providerId
 	r.Set("provider_id", _providerId)
 	return nil
 }
 
 // GetProviderId ProviderId Getter
-func (r AlitriptransferorderdetailAPIRequest) GetProviderId() string {
+func (r AlitripTransferOrderDetailAPIRequest) GetProviderId() string {
 	return r._providerId
 }

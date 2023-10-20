@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobaodiandepositgetAPIRequest 宝点用户帐户查询（已迁移） API请求
+// TaobaoBaodianDepositGetAPIRequest 宝点用户帐户查询（已迁移） API请求
 // taobao.baodian.deposit.get
 //
 // 查询用户宝点帐户信息及当前宝点价格
-type TaobaobaodiandepositgetAPIRequest struct {
+type TaobaoBaodianDepositGetAPIRequest struct {
 	model.Params
 }
 
-// NewTaobaobaodiandepositgetRequest 初始化TaobaobaodiandepositgetAPIRequest对象
-func NewTaobaobaodiandepositgetRequest() *TaobaobaodiandepositgetAPIRequest {
-	return &TaobaobaodiandepositgetAPIRequest{
+// NewTaobaoBaodianDepositGetRequest 初始化TaobaoBaodianDepositGetAPIRequest对象
+func NewTaobaoBaodianDepositGetRequest() *TaobaoBaodianDepositGetAPIRequest {
+	return &TaobaoBaodianDepositGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaobaodiandepositgetAPIRequest) GetApiMethodName() string {
+func (r TaobaoBaodianDepositGetAPIRequest) GetApiMethodName() string {
 	return "taobao.baodian.deposit.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaobaodiandepositgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoBaodianDepositGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaobaodiandepositgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoBaodianDepositGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

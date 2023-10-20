@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabainteractisvlotteryisvdrawAPIResponse 天猫奖池鉴权接口 API返回值
+// AlibabaInteractIsvlotteryIsvdrawAPIResponse 天猫奖池鉴权接口 API返回值
 // alibaba.interact.isvlottery.isvdraw
 //
 // 鉴权接口，为tida.isvdraw接口鉴权
-type AlibabainteractisvlotteryisvdrawAPIResponse struct {
+type AlibabaInteractIsvlotteryIsvdrawAPIResponse struct {
 	model.CommonResponse
-	AlibabainteractisvlotteryisvdrawAPIResponseModel
+	AlibabaInteractIsvlotteryIsvdrawAPIResponseModel
 }
 
-// AlibabainteractisvlotteryisvdrawAPIResponseModel is 天猫奖池鉴权接口 成功返回结果
-type AlibabainteractisvlotteryisvdrawAPIResponseModel struct {
+// AlibabaInteractIsvlotteryIsvdrawAPIResponseModel is 天猫奖池鉴权接口 成功返回结果
+type AlibabaInteractIsvlotteryIsvdrawAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_isvlottery_isvdraw_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

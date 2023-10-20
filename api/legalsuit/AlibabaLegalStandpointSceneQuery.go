@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/legalsuit"
 )
 
-// Alibabalegalstandpointscenequery 查询场景
+// AlibabaLegalStandpointSceneQuery 查询场景
 // alibaba.legal.standpoint.scene.query
 //
 // 查询场景
-func Alibabalegalstandpointscenequery(clt *core.SDKClient, req *legalsuit.AlibabalegalstandpointscenequeryAPIRequest, session string) (*legalsuit.AlibabalegalstandpointscenequeryAPIResponse, error) {
-	var resp legalsuit.AlibabalegalstandpointscenequeryAPIResponse
+func AlibabaLegalStandpointSceneQuery(clt *core.SDKClient, req *legalsuit.AlibabaLegalStandpointSceneQueryAPIRequest, session string) (*legalsuit.AlibabaLegalStandpointSceneQueryAPIResponse, error) {
+	var resp legalsuit.AlibabaLegalStandpointSceneQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

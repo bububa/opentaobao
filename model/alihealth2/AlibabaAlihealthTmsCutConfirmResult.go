@@ -1,7 +1,7 @@
 package alihealth2
 
-// AlibabaalihealthtmscutconfirmResult 结构体
-type AlibabaalihealthtmscutconfirmResult struct {
+// AlibabaAlihealthTmsCutConfirmResult 结构体
+type AlibabaAlihealthTmsCutConfirmResult struct {
 	// 结果
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// 错误编码

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbtrade"
 )
 
-// Taobaotradeinvoiceamountget 获取订单应开票金额
+// TaobaoTradeInvoiceAmountGet 获取订单应开票金额
 // taobao.trade.invoice.amount.get
 //
 // 订单应开票金额计算
-func Taobaotradeinvoiceamountget(clt *core.SDKClient, req *tbtrade.TaobaotradeinvoiceamountgetAPIRequest, session string) (*tbtrade.TaobaotradeinvoiceamountgetAPIResponse, error) {
-	var resp tbtrade.TaobaotradeinvoiceamountgetAPIResponse
+func TaobaoTradeInvoiceAmountGet(clt *core.SDKClient, req *tbtrade.TaobaoTradeInvoiceAmountGetAPIRequest, session string) (*tbtrade.TaobaoTradeInvoiceAmountGetAPIResponse, error) {
+	var resp tbtrade.TaobaoTradeInvoiceAmountGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// Alibabaalsccrmrulequerydishrule 查询品牌下的入会菜品规则
+// AlibabaAlscCrmRuleQuerydishrule 查询品牌下的入会菜品规则
 // alibaba.alsc.crm.rule.querydishrule
 //
 // 查询品牌下的入会菜品规则
-func Alibabaalsccrmrulequerydishrule(clt *core.SDKClient, req *alsc.AlibabaalsccrmrulequerydishruleAPIRequest, session string) (*alsc.AlibabaalsccrmrulequerydishruleAPIResponse, error) {
-	var resp alsc.AlibabaalsccrmrulequerydishruleAPIResponse
+func AlibabaAlscCrmRuleQuerydishrule(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRuleQuerydishruleAPIRequest, session string) (*alsc.AlibabaAlscCrmRuleQuerydishruleAPIResponse, error) {
+	var resp alsc.AlibabaAlscCrmRuleQuerydishruleAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

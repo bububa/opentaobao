@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihousenewhomeprojectkanamequeryResult 结构体
-type AlibabaalihousenewhomeprojectkanamequeryResult struct {
+// AlibabaAlihouseNewhomeProjectKanameQueryResult 结构体
+type AlibabaAlihouseNewhomeProjectKanameQueryResult struct {
 	// 返回对象
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// message

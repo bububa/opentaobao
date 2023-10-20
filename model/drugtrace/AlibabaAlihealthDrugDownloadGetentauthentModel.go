@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaalihealthdrugdownloadgetentauthentModel 结构体
-type AlibabaalihealthdrugdownloadgetentauthentModel struct {
+// AlibabaAlihealthDrugDownloadGetentauthentModel 结构体
+type AlibabaAlihealthDrugDownloadGetentauthentModel struct {
 	// 企业ID
 	AuthRefEntId string `json:"auth_ref_ent_id,omitempty" xml:"auth_ref_ent_id,omitempty"`
 	// 企业名称

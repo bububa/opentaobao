@@ -1,7 +1,7 @@
 package icbuseller
 
-// AlibabasellercouponauthverifyResultDto 结构体
-type AlibabasellercouponauthverifyResultDto struct {
+// AlibabaSellerCouponAuthVerifyResultDto 结构体
+type AlibabaSellerCouponAuthVerifyResultDto struct {
 	// 验证失败结果
 	ExecDescription string `json:"exec_description,omitempty" xml:"exec_description,omitempty"`
 	// 返回码

@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaailabstvsdevicelistAPIRequest 获取TVS设备列表 API请求
+// AlibabaAilabsTvsDeviceListAPIRequest 获取TVS设备列表 API请求
 // alibaba.ailabs.tvs.device.list
 //
 // 获取用户所绑定的TVS设备列表
-type AlibabaailabstvsdevicelistAPIRequest struct {
+type AlibabaAilabsTvsDeviceListAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaailabstvsdevicelistRequest 初始化AlibabaailabstvsdevicelistAPIRequest对象
-func NewAlibabaailabstvsdevicelistRequest() *AlibabaailabstvsdevicelistAPIRequest {
-	return &AlibabaailabstvsdevicelistAPIRequest{
+// NewAlibabaAilabsTvsDeviceListRequest 初始化AlibabaAilabsTvsDeviceListAPIRequest对象
+func NewAlibabaAilabsTvsDeviceListRequest() *AlibabaAilabsTvsDeviceListAPIRequest {
+	return &AlibabaAilabsTvsDeviceListAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaailabstvsdevicelistAPIRequest) GetApiMethodName() string {
+func (r AlibabaAilabsTvsDeviceListAPIRequest) GetApiMethodName() string {
 	return "alibaba.ailabs.tvs.device.list"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaailabstvsdevicelistAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAilabsTvsDeviceListAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaailabstvsdevicelistAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAilabsTvsDeviceListAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

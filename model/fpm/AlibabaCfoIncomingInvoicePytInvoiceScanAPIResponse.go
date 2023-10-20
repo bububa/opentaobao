@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabacfoincominginvoicepytinvoicescanAPIResponse 票易通发票ocr信息同步 API返回值
+// AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponse 票易通发票ocr信息同步 API返回值
 // alibaba.cfo.incoming.invoice.pyt.invoice.scan
 //
 // 票易通发票ocr信息同步
-type AlibabacfoincominginvoicepytinvoicescanAPIResponse struct {
+type AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponse struct {
 	model.CommonResponse
-	AlibabacfoincominginvoicepytinvoicescanAPIResponseModel
+	AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponseModel
 }
 
-// AlibabacfoincominginvoicepytinvoicescanAPIResponseModel is 票易通发票ocr信息同步 成功返回结果
-type AlibabacfoincominginvoicepytinvoicescanAPIResponseModel struct {
+// AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponseModel is 票易通发票ocr信息同步 成功返回结果
+type AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_cfo_incoming_invoice_pyt_invoice_scan_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

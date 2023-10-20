@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallproductspecsgetAPIResponse 获取产品的规格信息 API返回值
+// TmallProductSpecsGetAPIResponse 获取产品的规格信息 API返回值
 // tmall.product.specs.get
 //
 // 按product_id或品牌下载产品规格，返回一组的产品规格信息。
-type TmallproductspecsgetAPIResponse struct {
+type TmallProductSpecsGetAPIResponse struct {
 	model.CommonResponse
-	TmallproductspecsgetAPIResponseModel
+	TmallProductSpecsGetAPIResponseModel
 }
 
-// TmallproductspecsgetAPIResponseModel is 获取产品的规格信息 成功返回结果
-type TmallproductspecsgetAPIResponseModel struct {
+// TmallProductSpecsGetAPIResponseModel is 获取产品的规格信息 成功返回结果
+type TmallProductSpecsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_product_specs_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

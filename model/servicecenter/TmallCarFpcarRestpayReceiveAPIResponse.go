@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallcarfpcarrestpayreceiveAPIResponse 门店线下已收尾款 API返回值
+// TmallCarFpcarRestpayReceiveAPIResponse 门店线下已收尾款 API返回值
 // tmall.car.fpcar.restpay.receive
 //
 // 提供给外部(大搜或其它合作方)的接口-门店线下已收尾款(不执行分佣)
-type TmallcarfpcarrestpayreceiveAPIResponse struct {
+type TmallCarFpcarRestpayReceiveAPIResponse struct {
 	model.CommonResponse
-	TmallcarfpcarrestpayreceiveAPIResponseModel
+	TmallCarFpcarRestpayReceiveAPIResponseModel
 }
 
-// TmallcarfpcarrestpayreceiveAPIResponseModel is 门店线下已收尾款 成功返回结果
-type TmallcarfpcarrestpayreceiveAPIResponseModel struct {
+// TmallCarFpcarRestpayReceiveAPIResponseModel is 门店线下已收尾款 成功返回结果
+type TmallCarFpcarRestpayReceiveAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_car_fpcar_restpay_receive_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

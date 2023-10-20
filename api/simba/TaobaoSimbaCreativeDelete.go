@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// Taobaosimbacreativedelete 删除创意
+// TaobaoSimbaCreativeDelete 删除创意
 // taobao.simba.creative.delete
 //
 // 删除一个创意
-func Taobaosimbacreativedelete(clt *core.SDKClient, req *simba.TaobaosimbacreativedeleteAPIRequest, session string) (*simba.TaobaosimbacreativedeleteAPIResponse, error) {
-	var resp simba.TaobaosimbacreativedeleteAPIResponse
+func TaobaoSimbaCreativeDelete(clt *core.SDKClient, req *simba.TaobaoSimbaCreativeDeleteAPIRequest, session string) (*simba.TaobaoSimbaCreativeDeleteAPIResponse, error) {
+	var resp simba.TaobaoSimbaCreativeDeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

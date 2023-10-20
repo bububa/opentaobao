@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthdrugkytsearchbillAPIRequest 通过时间段批量查询入出库单信息 API请求
+// AlibabaAlihealthDrugKytSearchbillAPIRequest 通过时间段批量查询入出库单信息 API请求
 // alibaba.alihealth.drug.kyt.searchbill
 //
 // 通过时间段批量查询入出库单信息
-type AlibabaalihealthdrugkytsearchbillAPIRequest struct {
+type AlibabaAlihealthDrugKytSearchbillAPIRequest struct {
 	model.Params
 	// 企业标识
 	_refEntId string
@@ -36,169 +36,169 @@ type AlibabaalihealthdrugkytsearchbillAPIRequest struct {
 	_pageSize int64
 }
 
-// NewAlibabaalihealthdrugkytsearchbillRequest 初始化AlibabaalihealthdrugkytsearchbillAPIRequest对象
-func NewAlibabaalihealthdrugkytsearchbillRequest() *AlibabaalihealthdrugkytsearchbillAPIRequest {
-	return &AlibabaalihealthdrugkytsearchbillAPIRequest{
+// NewAlibabaAlihealthDrugKytSearchbillRequest 初始化AlibabaAlihealthDrugKytSearchbillAPIRequest对象
+func NewAlibabaAlihealthDrugKytSearchbillRequest() *AlibabaAlihealthDrugKytSearchbillAPIRequest {
+	return &AlibabaAlihealthDrugKytSearchbillAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihealthdrugkytsearchbillAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.drug.kyt.searchbill"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihealthdrugkytsearchbillAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihealthdrugkytsearchbillAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRefEntId is RefEntId Setter
 // 企业标识
-func (r *AlibabaalihealthdrugkytsearchbillAPIRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaAlihealthDrugKytSearchbillAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
 	r.Set("ref_ent_id", _refEntId)
 	return nil
 }
 
 // GetRefEntId RefEntId Getter
-func (r AlibabaalihealthdrugkytsearchbillAPIRequest) GetRefEntId() string {
+func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
 // SetAuthRefUserId is AuthRefUserId Setter
 // 货主
-func (r *AlibabaalihealthdrugkytsearchbillAPIRequest) SetAuthRefUserId(_authRefUserId string) error {
+func (r *AlibabaAlihealthDrugKytSearchbillAPIRequest) SetAuthRefUserId(_authRefUserId string) error {
 	r._authRefUserId = _authRefUserId
 	r.Set("auth_ref_user_id", _authRefUserId)
 	return nil
 }
 
 // GetAuthRefUserId AuthRefUserId Getter
-func (r AlibabaalihealthdrugkytsearchbillAPIRequest) GetAuthRefUserId() string {
+func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetAuthRefUserId() string {
 	return r._authRefUserId
 }
 
 // SetBeginDate is BeginDate Setter
 // 开始日期
-func (r *AlibabaalihealthdrugkytsearchbillAPIRequest) SetBeginDate(_beginDate string) error {
+func (r *AlibabaAlihealthDrugKytSearchbillAPIRequest) SetBeginDate(_beginDate string) error {
 	r._beginDate = _beginDate
 	r.Set("begin_date", _beginDate)
 	return nil
 }
 
 // GetBeginDate BeginDate Getter
-func (r AlibabaalihealthdrugkytsearchbillAPIRequest) GetBeginDate() string {
+func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetBeginDate() string {
 	return r._beginDate
 }
 
 // SetEndDate is EndDate Setter
 // 结束日期
-func (r *AlibabaalihealthdrugkytsearchbillAPIRequest) SetEndDate(_endDate string) error {
+func (r *AlibabaAlihealthDrugKytSearchbillAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
 	r.Set("end_date", _endDate)
 	return nil
 }
 
 // GetEndDate EndDate Getter
-func (r AlibabaalihealthdrugkytsearchbillAPIRequest) GetEndDate() string {
+func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
 // SetPartnerIdSend is PartnerIdSend Setter
 // 发货企业
-func (r *AlibabaalihealthdrugkytsearchbillAPIRequest) SetPartnerIdSend(_partnerIdSend string) error {
+func (r *AlibabaAlihealthDrugKytSearchbillAPIRequest) SetPartnerIdSend(_partnerIdSend string) error {
 	r._partnerIdSend = _partnerIdSend
 	r.Set("partner_id_send", _partnerIdSend)
 	return nil
 }
 
 // GetPartnerIdSend PartnerIdSend Getter
-func (r AlibabaalihealthdrugkytsearchbillAPIRequest) GetPartnerIdSend() string {
+func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetPartnerIdSend() string {
 	return r._partnerIdSend
 }
 
 // SetPartnerIdRecv is PartnerIdRecv Setter
 // 收货企业
-func (r *AlibabaalihealthdrugkytsearchbillAPIRequest) SetPartnerIdRecv(_partnerIdRecv string) error {
+func (r *AlibabaAlihealthDrugKytSearchbillAPIRequest) SetPartnerIdRecv(_partnerIdRecv string) error {
 	r._partnerIdRecv = _partnerIdRecv
 	r.Set("partner_id_recv", _partnerIdRecv)
 	return nil
 }
 
 // GetPartnerIdRecv PartnerIdRecv Getter
-func (r AlibabaalihealthdrugkytsearchbillAPIRequest) GetPartnerIdRecv() string {
+func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetPartnerIdRecv() string {
 	return r._partnerIdRecv
 }
 
 // SetAgentRefUserId is AgentRefUserId Setter
 // 代理企业
-func (r *AlibabaalihealthdrugkytsearchbillAPIRequest) SetAgentRefUserId(_agentRefUserId string) error {
+func (r *AlibabaAlihealthDrugKytSearchbillAPIRequest) SetAgentRefUserId(_agentRefUserId string) error {
 	r._agentRefUserId = _agentRefUserId
 	r.Set("agent_ref_user_id", _agentRefUserId)
 	return nil
 }
 
 // GetAgentRefUserId AgentRefUserId Getter
-func (r AlibabaalihealthdrugkytsearchbillAPIRequest) GetAgentRefUserId() string {
+func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetAgentRefUserId() string {
 	return r._agentRefUserId
 }
 
 // SetBillCode is BillCode Setter
 // 单据号码
-func (r *AlibabaalihealthdrugkytsearchbillAPIRequest) SetBillCode(_billCode string) error {
+func (r *AlibabaAlihealthDrugKytSearchbillAPIRequest) SetBillCode(_billCode string) error {
 	r._billCode = _billCode
 	r.Set("bill_code", _billCode)
 	return nil
 }
 
 // GetBillCode BillCode Getter
-func (r AlibabaalihealthdrugkytsearchbillAPIRequest) GetBillCode() string {
+func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
 // SetBillType is BillType Setter
 // 单据类型  A : 所有  AI :入库    AO:出库
-func (r *AlibabaalihealthdrugkytsearchbillAPIRequest) SetBillType(_billType string) error {
+func (r *AlibabaAlihealthDrugKytSearchbillAPIRequest) SetBillType(_billType string) error {
 	r._billType = _billType
 	r.Set("bill_type", _billType)
 	return nil
 }
 
 // GetBillType BillType Getter
-func (r AlibabaalihealthdrugkytsearchbillAPIRequest) GetBillType() string {
+func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetBillType() string {
 	return r._billType
 }
 
 // SetCurPage is CurPage Setter
 // 当前页
-func (r *AlibabaalihealthdrugkytsearchbillAPIRequest) SetCurPage(_curPage int64) error {
+func (r *AlibabaAlihealthDrugKytSearchbillAPIRequest) SetCurPage(_curPage int64) error {
 	r._curPage = _curPage
 	r.Set("cur_page", _curPage)
 	return nil
 }
 
 // GetCurPage CurPage Getter
-func (r AlibabaalihealthdrugkytsearchbillAPIRequest) GetCurPage() int64 {
+func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetCurPage() int64 {
 	return r._curPage
 }
 
 // SetPageSize is PageSize Setter
 // 页大小
-func (r *AlibabaalihealthdrugkytsearchbillAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *AlibabaAlihealthDrugKytSearchbillAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r AlibabaalihealthdrugkytsearchbillAPIRequest) GetPageSize() int64 {
+func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

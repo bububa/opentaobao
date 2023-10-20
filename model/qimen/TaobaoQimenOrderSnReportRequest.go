@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimenordersnreportRequest 结构体
-type TaobaoqimenordersnreportRequest struct {
+// TaobaoQimenOrderSnReportRequest 结构体
+type TaobaoQimenOrderSnReportRequest struct {
 	// 总页数
 	TotalPage int64 `json:"totalPage,omitempty" xml:"totalPage,omitempty"`
 	// 当前页(从1开始)
@@ -13,5 +13,5 @@ type TaobaoqimenordersnreportRequest struct {
 	// 商品列表
 	Items *Items `json:"items,omitempty" xml:"items,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoqimenordersnreportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoQimenOrderSnReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

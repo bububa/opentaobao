@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbainsightcatsforecastnewgetAPIRequest 获取词的相关类目预测数据 API请求
+// TaobaoSimbaInsightCatsforecastnewGetAPIRequest 获取词的相关类目预测数据 API请求
 // taobao.simba.insight.catsforecastnew.get
 //
 // 根据给定的词，预测这些词的相关类目
-type TaobaosimbainsightcatsforecastnewgetAPIRequest struct {
+type TaobaoSimbaInsightCatsforecastnewGetAPIRequest struct {
 	model.Params
 	// 需要查询的词列表
 	_bidwordList []string
 }
 
-// NewTaobaosimbainsightcatsforecastnewgetRequest 初始化TaobaosimbainsightcatsforecastnewgetAPIRequest对象
-func NewTaobaosimbainsightcatsforecastnewgetRequest() *TaobaosimbainsightcatsforecastnewgetAPIRequest {
-	return &TaobaosimbainsightcatsforecastnewgetAPIRequest{
+// NewTaobaoSimbaInsightCatsforecastnewGetRequest 初始化TaobaoSimbaInsightCatsforecastnewGetAPIRequest对象
+func NewTaobaoSimbaInsightCatsforecastnewGetRequest() *TaobaoSimbaInsightCatsforecastnewGetAPIRequest {
+	return &TaobaoSimbaInsightCatsforecastnewGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaosimbainsightcatsforecastnewgetAPIRequest) GetApiMethodName() string {
+func (r TaobaoSimbaInsightCatsforecastnewGetAPIRequest) GetApiMethodName() string {
 	return "taobao.simba.insight.catsforecastnew.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaosimbainsightcatsforecastnewgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoSimbaInsightCatsforecastnewGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaosimbainsightcatsforecastnewgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoSimbaInsightCatsforecastnewGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetBidwordList is BidwordList Setter
 // 需要查询的词列表
-func (r *TaobaosimbainsightcatsforecastnewgetAPIRequest) SetBidwordList(_bidwordList []string) error {
+func (r *TaobaoSimbaInsightCatsforecastnewGetAPIRequest) SetBidwordList(_bidwordList []string) error {
 	r._bidwordList = _bidwordList
 	r.Set("bidword_list", _bidwordList)
 	return nil
 }
 
 // GetBidwordList BidwordList Getter
-func (r TaobaosimbainsightcatsforecastnewgetAPIRequest) GetBidwordList() []string {
+func (r TaobaoSimbaInsightCatsforecastnewGetAPIRequest) GetBidwordList() []string {
 	return r._bidwordList
 }

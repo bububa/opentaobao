@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaopaimainftorderinfoqueryAPIResponse 查询订单类型 API返回值
+// TaobaoPaimaiNftOrderinfoQueryAPIResponse 查询订单类型 API返回值
 // taobao.paimai.nft.orderinfo.query
 //
 // 查询订单类型
-type TaobaopaimainftorderinfoqueryAPIResponse struct {
+type TaobaoPaimaiNftOrderinfoQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaopaimainftorderinfoqueryAPIResponseModel
+	TaobaoPaimaiNftOrderinfoQueryAPIResponseModel
 }
 
-// TaobaopaimainftorderinfoqueryAPIResponseModel is 查询订单类型 成功返回结果
-type TaobaopaimainftorderinfoqueryAPIResponseModel struct {
+// TaobaoPaimaiNftOrderinfoQueryAPIResponseModel is 查询订单类型 成功返回结果
+type TaobaoPaimaiNftOrderinfoQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"paimai_nft_orderinfo_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

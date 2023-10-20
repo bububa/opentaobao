@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdkmembercardgetApiResult 结构体
-type AlibabawdkmembercardgetApiResult struct {
+// AlibabaWdkMemberCardGetApiResult 结构体
+type AlibabaWdkMemberCardGetApiResult struct {
 	// 错误消息
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 错误结果码

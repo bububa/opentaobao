@@ -1,7 +1,7 @@
 package nrt
 
-// AlibabaretaildevicevendingregisterResultDo 结构体
-type AlibabaretaildevicevendingregisterResultDo struct {
+// AlibabaRetailDeviceVendingRegisterResultDo 结构体
+type AlibabaRetailDeviceVendingRegisterResultDo struct {
 	// 错误码
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 测试

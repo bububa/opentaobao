@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdkscmlrporderpredictApiResult 结构体
-type AlibabawdkscmlrporderpredictApiResult struct {
+// AlibabaWdkScmLrpOrderPredictApiResult 结构体
+type AlibabaWdkScmLrpOrderPredictApiResult struct {
 	// 单量预测结果列表
 	PredictList []OrderPredict `json:"predict_list,omitempty" xml:"predict_list>order_predict,omitempty"`
 	// 错误编码

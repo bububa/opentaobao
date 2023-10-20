@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthexaminationserviceareacheckAPIResponse 体检机构对接_上门检测服务范围查询 API返回值
+// AlibabaAlihealthExaminationServiceareaCheckAPIResponse 体检机构对接_上门检测服务范围查询 API返回值
 // alibaba.alihealth.examination.servicearea.check
 //
 // 体检机构对接_上门检测服务范围查询
-type AlibabaalihealthexaminationserviceareacheckAPIResponse struct {
+type AlibabaAlihealthExaminationServiceareaCheckAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthexaminationserviceareacheckAPIResponseModel
+	AlibabaAlihealthExaminationServiceareaCheckAPIResponseModel
 }
 
-// AlibabaalihealthexaminationserviceareacheckAPIResponseModel is 体检机构对接_上门检测服务范围查询 成功返回结果
-type AlibabaalihealthexaminationserviceareacheckAPIResponseModel struct {
+// AlibabaAlihealthExaminationServiceareaCheckAPIResponseModel is 体检机构对接_上门检测服务范围查询 成功返回结果
+type AlibabaAlihealthExaminationServiceareaCheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_examination_servicearea_check_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package promotion
 
-// AlibababenefitqueryResult 结构体
-type AlibababenefitqueryResult struct {
+// AlibabaBenefitQueryResult 结构体
+type AlibabaBenefitQueryResult struct {
 	// datas
 	Datas []OrightDto `json:"datas,omitempty" xml:"datas>oright_dto,omitempty"`
 	// msg

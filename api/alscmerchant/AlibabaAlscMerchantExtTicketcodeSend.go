@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alscmerchant"
 )
 
-// Alibabaalscmerchantextticketcodesend 异步发码
+// AlibabaAlscMerchantExtTicketcodeSend 异步发码
 // alibaba.alsc.merchant.ext.ticketcode.send
 //
 // 外部券异步发码
-func Alibabaalscmerchantextticketcodesend(clt *core.SDKClient, req *alscmerchant.AlibabaalscmerchantextticketcodesendAPIRequest, session string) (*alscmerchant.AlibabaalscmerchantextticketcodesendAPIResponse, error) {
-	var resp alscmerchant.AlibabaalscmerchantextticketcodesendAPIResponse
+func AlibabaAlscMerchantExtTicketcodeSend(clt *core.SDKClient, req *alscmerchant.AlibabaAlscMerchantExtTicketcodeSendAPIRequest, session string) (*alscmerchant.AlibabaAlscMerchantExtTicketcodeSendAPIResponse, error) {
+	var resp alscmerchant.AlibabaAlscMerchantExtTicketcodeSendAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

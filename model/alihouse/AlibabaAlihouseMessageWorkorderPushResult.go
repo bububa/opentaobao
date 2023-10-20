@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihousemessageworkorderpushResult 结构体
-type AlibabaalihousemessageworkorderpushResult struct {
+// AlibabaAlihouseMessageWorkorderPushResult 结构体
+type AlibabaAlihouseMessageWorkorderPushResult struct {
 	// 错误信息
 	Msg string `json:"msg,omitempty" xml:"msg,omitempty"`
 	// 错误码

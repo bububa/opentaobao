@@ -1,7 +1,7 @@
 package taotv
 
-// TaobaotaotvvideoplaylistpageData 结构体
-type TaobaotaotvvideoplaylistpageData struct {
+// TaobaoTaotvVideoPlaylistPageData 结构体
+type TaobaoTaotvVideoPlaylistPageData struct {
 	// 创建时间
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
 	// 创建时间

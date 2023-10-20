@@ -1,7 +1,7 @@
 package youkuott
 
-// YoukutvoperatormediapagequeryData 结构体
-type YoukutvoperatormediapagequeryData struct {
+// YoukuTvoperatorMediaPageQueryData 结构体
+type YoukuTvoperatorMediaPageQueryData struct {
 	// 分类列表
 	GenreList []string `json:"genre_list,omitempty" xml:"genre_list>string,omitempty"`
 	// 导演

@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthdrugkytsearchstatusAPIResponse 单据处理状态查询 API返回值
+// AlibabaAlihealthDrugKytSearchstatusAPIResponse 单据处理状态查询 API返回值
 // alibaba.alihealth.drug.kyt.searchstatus
 //
 // 单据处理状态查询
-type AlibabaalihealthdrugkytsearchstatusAPIResponse struct {
+type AlibabaAlihealthDrugKytSearchstatusAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthdrugkytsearchstatusAPIResponseModel
+	AlibabaAlihealthDrugKytSearchstatusAPIResponseModel
 }
 
-// AlibabaalihealthdrugkytsearchstatusAPIResponseModel is 单据处理状态查询 成功返回结果
-type AlibabaalihealthdrugkytsearchstatusAPIResponseModel struct {
+// AlibabaAlihealthDrugKytSearchstatusAPIResponseModel is 单据处理状态查询 成功返回结果
+type AlibabaAlihealthDrugKytSearchstatusAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_kyt_searchstatus_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 监控宝推送网站监控信息，返回结果
-	Result *AlibabaalihealthdrugkytsearchstatusResultModel `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaAlihealthDrugKytSearchstatusResultModel `json:"result,omitempty" xml:"result,omitempty"`
 }

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// WdkumsoutboundsortingcallbackforpulltaskAPIRequest dps分货-任务拉取确定接口 API请求
+// WdkUmsOutboundSortingCallbackforpulltaskAPIRequest dps分货-任务拉取确定接口 API请求
 // wdk.ums.outbound.sorting.callbackforpulltask
 //
 // dps分货-任务拉取确定接口
-type WdkumsoutboundsortingcallbackforpulltaskAPIRequest struct {
+type WdkUmsOutboundSortingCallbackforpulltaskAPIRequest struct {
 	model.Params
 	// 入参
 	_param0 *DpsCallBackForPullTaskMtopRequest
 }
 
-// NewWdkumsoutboundsortingcallbackforpulltaskRequest 初始化WdkumsoutboundsortingcallbackforpulltaskAPIRequest对象
-func NewWdkumsoutboundsortingcallbackforpulltaskRequest() *WdkumsoutboundsortingcallbackforpulltaskAPIRequest {
-	return &WdkumsoutboundsortingcallbackforpulltaskAPIRequest{
+// NewWdkUmsOutboundSortingCallbackforpulltaskRequest 初始化WdkUmsOutboundSortingCallbackforpulltaskAPIRequest对象
+func NewWdkUmsOutboundSortingCallbackforpulltaskRequest() *WdkUmsOutboundSortingCallbackforpulltaskAPIRequest {
+	return &WdkUmsOutboundSortingCallbackforpulltaskAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r WdkumsoutboundsortingcallbackforpulltaskAPIRequest) GetApiMethodName() string {
+func (r WdkUmsOutboundSortingCallbackforpulltaskAPIRequest) GetApiMethodName() string {
 	return "wdk.ums.outbound.sorting.callbackforpulltask"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r WdkumsoutboundsortingcallbackforpulltaskAPIRequest) GetApiParams(params url.Values) {
+func (r WdkUmsOutboundSortingCallbackforpulltaskAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r WdkumsoutboundsortingcallbackforpulltaskAPIRequest) GetRawParams() model.Params {
+func (r WdkUmsOutboundSortingCallbackforpulltaskAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam0 is Param0 Setter
 // 入参
-func (r *WdkumsoutboundsortingcallbackforpulltaskAPIRequest) SetParam0(_param0 *DpsCallBackForPullTaskMtopRequest) error {
+func (r *WdkUmsOutboundSortingCallbackforpulltaskAPIRequest) SetParam0(_param0 *DpsCallBackForPullTaskMtopRequest) error {
 	r._param0 = _param0
 	r.Set("param0", _param0)
 	return nil
 }
 
 // GetParam0 Param0 Getter
-func (r WdkumsoutboundsortingcallbackforpulltaskAPIRequest) GetParam0() *DpsCallBackForPullTaskMtopRequest {
+func (r WdkUmsOutboundSortingCallbackforpulltaskAPIRequest) GetParam0() *DpsCallBackForPullTaskMtopRequest {
 	return r._param0
 }

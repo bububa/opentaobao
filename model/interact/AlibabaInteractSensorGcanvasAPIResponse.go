@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabainteractsensorgcanvasAPIResponse gcanvas API返回值
+// AlibabaInteractSensorGcanvasAPIResponse gcanvas API返回值
 // alibaba.interact.sensor.gcanvas
 //
 // gcanvas 功能
-type AlibabainteractsensorgcanvasAPIResponse struct {
+type AlibabaInteractSensorGcanvasAPIResponse struct {
 	model.CommonResponse
-	AlibabainteractsensorgcanvasAPIResponseModel
+	AlibabaInteractSensorGcanvasAPIResponseModel
 }
 
-// AlibabainteractsensorgcanvasAPIResponseModel is gcanvas 成功返回结果
-type AlibabainteractsensorgcanvasAPIResponseModel struct {
+// AlibabaInteractSensorGcanvasAPIResponseModel is gcanvas 成功返回结果
+type AlibabaInteractSensorGcanvasAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_sensor_gcanvas_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

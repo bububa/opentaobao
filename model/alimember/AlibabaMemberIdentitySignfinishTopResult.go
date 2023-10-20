@@ -1,7 +1,7 @@
 package alimember
 
-// AlibabamemberidentitysignfinishTopResult 结构体
-type AlibabamemberidentitysignfinishTopResult struct {
+// AlibabaMemberIdentitySignfinishTopResult 结构体
+type AlibabaMemberIdentitySignfinishTopResult struct {
 	// code，返回码
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// message，返回信息

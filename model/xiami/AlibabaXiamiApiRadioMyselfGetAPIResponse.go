@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaxiamiapiradiomyselfgetAPIResponse 我的电台 API返回值
+// AlibabaXiamiApiRadioMyselfGetAPIResponse 我的电台 API返回值
 // alibaba.xiami.api.radio.myself.get
 //
 // 我的电台
-type AlibabaxiamiapiradiomyselfgetAPIResponse struct {
+type AlibabaXiamiApiRadioMyselfGetAPIResponse struct {
 	model.CommonResponse
-	AlibabaxiamiapiradiomyselfgetAPIResponseModel
+	AlibabaXiamiApiRadioMyselfGetAPIResponseModel
 }
 
-// AlibabaxiamiapiradiomyselfgetAPIResponseModel is 我的电台 成功返回结果
-type AlibabaxiamiapiradiomyselfgetAPIResponseModel struct {
+// AlibabaXiamiApiRadioMyselfGetAPIResponseModel is 我的电台 成功返回结果
+type AlibabaXiamiApiRadioMyselfGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_xiami_api_radio_myself_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// Alibabaalihousenewhomeshopcityconfigdetailsubmit 城市配置信息接口
+// AlibabaAlihouseNewhomeShopcityconfigDetailSubmit 城市配置信息接口
 // alibaba.alihouse.newhome.shopcityconfig.detail.submit
 //
 // 上传城市配置信息
-func Alibabaalihousenewhomeshopcityconfigdetailsubmit(clt *core.SDKClient, req *alihouse.AlibabaalihousenewhomeshopcityconfigdetailsubmitAPIRequest, session string) (*alihouse.AlibabaalihousenewhomeshopcityconfigdetailsubmitAPIResponse, error) {
-	var resp alihouse.AlibabaalihousenewhomeshopcityconfigdetailsubmitAPIResponse
+func AlibabaAlihouseNewhomeShopcityconfigDetailSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeShopcityconfigDetailSubmitAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeShopcityconfigDetailSubmitAPIResponse, error) {
+	var resp alihouse.AlibabaAlihouseNewhomeShopcityconfigDetailSubmitAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

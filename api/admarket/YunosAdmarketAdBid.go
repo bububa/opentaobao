@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/admarket"
 )
 
-// Yunosadmarketadbid 广告竞价服务
+// YunosAdmarketAdBid 广告竞价服务
 // yunos.admarket.ad.bid
 //
 // 广告竞价服务
-func Yunosadmarketadbid(clt *core.SDKClient, req *admarket.YunosadmarketadbidAPIRequest, session string) (*admarket.YunosadmarketadbidAPIResponse, error) {
-	var resp admarket.YunosadmarketadbidAPIResponse
+func YunosAdmarketAdBid(clt *core.SDKClient, req *admarket.YunosAdmarketAdBidAPIRequest, session string) (*admarket.YunosAdmarketAdBidAPIResponse, error) {
+	var resp admarket.YunosAdmarketAdBidAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

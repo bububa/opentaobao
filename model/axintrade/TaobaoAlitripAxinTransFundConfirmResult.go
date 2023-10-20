@@ -1,7 +1,7 @@
 package axintrade
 
-// TaobaoalitripaxintransfundconfirmResult 结构体
-type TaobaoalitripaxintransfundconfirmResult struct {
+// TaobaoAlitripAxinTransFundConfirmResult 结构体
+type TaobaoAlitripAxinTransFundConfirmResult struct {
 	// 描述信息
 	InfoMsg string `json:"info_msg,omitempty" xml:"info_msg,omitempty"`
 	// 错误码

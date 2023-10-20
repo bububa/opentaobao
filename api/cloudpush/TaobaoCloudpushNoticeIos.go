@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cloudpush"
 )
 
-// Taobaocloudpushnoticeios 推送通知给ios设备
+// TaobaoCloudpushNoticeIos 推送通知给ios设备
 // taobao.cloudpush.notice.ios
 //
 // 推送通知给ios设备
-func Taobaocloudpushnoticeios(clt *core.SDKClient, req *cloudpush.TaobaocloudpushnoticeiosAPIRequest, session string) (*cloudpush.TaobaocloudpushnoticeiosAPIResponse, error) {
-	var resp cloudpush.TaobaocloudpushnoticeiosAPIResponse
+func TaobaoCloudpushNoticeIos(clt *core.SDKClient, req *cloudpush.TaobaoCloudpushNoticeIosAPIRequest, session string) (*cloudpush.TaobaoCloudpushNoticeIosAPIResponse, error) {
+	var resp cloudpush.TaobaoCloudpushNoticeIosAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

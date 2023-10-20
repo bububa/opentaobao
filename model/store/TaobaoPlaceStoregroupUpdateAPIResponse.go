@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoplacestoregroupupdateAPIResponse 门店库修改基本信息 API返回值
+// TaobaoPlaceStoregroupUpdateAPIResponse 门店库修改基本信息 API返回值
 // taobao.place.storegroup.update
 //
 // 门店库修改基本信息
-type TaobaoplacestoregroupupdateAPIResponse struct {
+type TaobaoPlaceStoregroupUpdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoplacestoregroupupdateAPIResponseModel
+	TaobaoPlaceStoregroupUpdateAPIResponseModel
 }
 
-// TaobaoplacestoregroupupdateAPIResponseModel is 门店库修改基本信息 成功返回结果
-type TaobaoplacestoregroupupdateAPIResponseModel struct {
+// TaobaoPlaceStoregroupUpdateAPIResponseModel is 门店库修改基本信息 成功返回结果
+type TaobaoPlaceStoregroupUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"place_storegroup_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

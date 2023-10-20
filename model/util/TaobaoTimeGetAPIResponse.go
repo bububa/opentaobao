@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotimegetAPIResponse 获取淘宝系统当前时间 API返回值
+// TaobaoTimeGetAPIResponse 获取淘宝系统当前时间 API返回值
 // taobao.time.get
 //
 // 获取淘宝系统当前时间
-type TaobaotimegetAPIResponse struct {
+type TaobaoTimeGetAPIResponse struct {
 	model.CommonResponse
-	TaobaotimegetAPIResponseModel
+	TaobaoTimeGetAPIResponseModel
 }
 
-// TaobaotimegetAPIResponseModel is 获取淘宝系统当前时间 成功返回结果
-type TaobaotimegetAPIResponseModel struct {
+// TaobaoTimeGetAPIResponseModel is 获取淘宝系统当前时间 成功返回结果
+type TaobaoTimeGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"time_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

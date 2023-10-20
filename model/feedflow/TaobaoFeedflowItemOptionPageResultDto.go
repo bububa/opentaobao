@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaofeedflowitemoptionpageResultDto 结构体
-type TaobaofeedflowitemoptionpageResultDto struct {
+// TaobaoFeedflowItemOptionPageResultDto 结构体
+type TaobaoFeedflowItemOptionPageResultDto struct {
 	// 标签信息
 	Labels []LabelDto `json:"labels,omitempty" xml:"labels>label_dto,omitempty"`
 	// 成功

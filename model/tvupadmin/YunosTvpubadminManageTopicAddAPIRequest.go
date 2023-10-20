@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunostvpubadminmanagetopicaddAPIRequest 新增专题 API请求
+// YunosTvpubadminManageTopicAddAPIRequest 新增专题 API请求
 // yunos.tvpubadmin.manage.topic.add
 //
 // 专题新增
-type YunostvpubadminmanagetopicaddAPIRequest struct {
+type YunosTvpubadminManageTopicAddAPIRequest struct {
 	model.Params
 	// 新增topic的json信息
 	_topicJson string
 }
 
-// NewYunostvpubadminmanagetopicaddRequest 初始化YunostvpubadminmanagetopicaddAPIRequest对象
-func NewYunostvpubadminmanagetopicaddRequest() *YunostvpubadminmanagetopicaddAPIRequest {
-	return &YunostvpubadminmanagetopicaddAPIRequest{
+// NewYunosTvpubadminManageTopicAddRequest 初始化YunosTvpubadminManageTopicAddAPIRequest对象
+func NewYunosTvpubadminManageTopicAddRequest() *YunosTvpubadminManageTopicAddAPIRequest {
+	return &YunosTvpubadminManageTopicAddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YunostvpubadminmanagetopicaddAPIRequest) GetApiMethodName() string {
+func (r YunosTvpubadminManageTopicAddAPIRequest) GetApiMethodName() string {
 	return "yunos.tvpubadmin.manage.topic.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunostvpubadminmanagetopicaddAPIRequest) GetApiParams(params url.Values) {
+func (r YunosTvpubadminManageTopicAddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YunostvpubadminmanagetopicaddAPIRequest) GetRawParams() model.Params {
+func (r YunosTvpubadminManageTopicAddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopicJson is TopicJson Setter
 // 新增topic的json信息
-func (r *YunostvpubadminmanagetopicaddAPIRequest) SetTopicJson(_topicJson string) error {
+func (r *YunosTvpubadminManageTopicAddAPIRequest) SetTopicJson(_topicJson string) error {
 	r._topicJson = _topicJson
 	r.Set("topic_json", _topicJson)
 	return nil
 }
 
 // GetTopicJson TopicJson Getter
-func (r YunostvpubadminmanagetopicaddAPIRequest) GetTopicJson() string {
+func (r YunosTvpubadminManageTopicAddAPIRequest) GetTopicJson() string {
 	return r._topicJson
 }

@@ -1,7 +1,7 @@
 package icbulogistics
 
-// AlibabaonetouchlogisticsexpressaddressdivisionlistResult 结构体
-type AlibabaonetouchlogisticsexpressaddressdivisionlistResult struct {
+// AlibabaOnetouchLogisticsExpressAddressDivisionListResult 结构体
+type AlibabaOnetouchLogisticsExpressAddressDivisionListResult struct {
 	// 返回结果描述
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 列表对象

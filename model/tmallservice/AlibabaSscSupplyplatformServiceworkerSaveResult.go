@@ -1,7 +1,7 @@
 package tmallservice
 
-// AlibabasscsupplyplatformserviceworkersaveResult 结构体
-type AlibabasscsupplyplatformserviceworkersaveResult struct {
+// AlibabaSscSupplyplatformServiceworkerSaveResult 结构体
+type AlibabaSscSupplyplatformServiceworkerSaveResult struct {
 	// 错误代码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 展示信息

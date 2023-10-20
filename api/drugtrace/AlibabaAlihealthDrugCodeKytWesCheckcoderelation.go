@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// Alibabaalihealthdrugcodekytwescheckcoderelation 检查输入的码之间是否有上下级关系
+// AlibabaAlihealthDrugCodeKytWesCheckcoderelation 检查输入的码之间是否有上下级关系
 // alibaba.alihealth.drug.code.kyt.wes.checkcoderelation
 //
 // 检查输入的码之间是否有上下级关系
-func Alibabaalihealthdrugcodekytwescheckcoderelation(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugcodekytwescheckcoderelationAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugcodekytwescheckcoderelationAPIResponse, error) {
-	var resp drugtrace.AlibabaalihealthdrugcodekytwescheckcoderelationAPIResponse
+func AlibabaAlihealthDrugCodeKytWesCheckcoderelation(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse, error) {
+	var resp drugtrace.AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

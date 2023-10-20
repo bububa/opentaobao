@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoeticketmerchantmadelayAPIResponse 凭证延期 API返回值
+// TaobaoEticketMerchantMaDelayAPIResponse 凭证延期 API返回值
 // taobao.eticket.merchant.ma.delay
 //
 // 订单延期
-type TaobaoeticketmerchantmadelayAPIResponse struct {
+type TaobaoEticketMerchantMaDelayAPIResponse struct {
 	model.CommonResponse
-	TaobaoeticketmerchantmadelayAPIResponseModel
+	TaobaoEticketMerchantMaDelayAPIResponseModel
 }
 
-// TaobaoeticketmerchantmadelayAPIResponseModel is 凭证延期 成功返回结果
-type TaobaoeticketmerchantmadelayAPIResponseModel struct {
+// TaobaoEticketMerchantMaDelayAPIResponseModel is 凭证延期 成功返回结果
+type TaobaoEticketMerchantMaDelayAPIResponseModel struct {
 	XMLName xml.Name `xml:"eticket_merchant_ma_delay_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

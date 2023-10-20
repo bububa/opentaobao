@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/pur"
 )
 
-// Alibabapurproductsync 同步产品
+// AlibabaPurProductSync 同步产品
 // alibaba.pur.product.sync
 //
 // 同步产品
-func Alibabapurproductsync(clt *core.SDKClient, req *pur.AlibabapurproductsyncAPIRequest, session string) (*pur.AlibabapurproductsyncAPIResponse, error) {
-	var resp pur.AlibabapurproductsyncAPIResponse
+func AlibabaPurProductSync(clt *core.SDKClient, req *pur.AlibabaPurProductSyncAPIRequest, session string) (*pur.AlibabaPurProductSyncAPIResponse, error) {
+	var resp pur.AlibabaPurProductSyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

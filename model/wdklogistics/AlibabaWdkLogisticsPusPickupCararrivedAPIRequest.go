@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdklogisticspuspickupcararrivedAPIRequest 自提业务-车辆到达上报车牌号 API请求
+// AlibabaWdkLogisticsPusPickupCararrivedAPIRequest 自提业务-车辆到达上报车牌号 API请求
 // alibaba.wdk.logistics.pus.pickup.cararrived
 //
 // 自提业务-汽车自提,车辆到达上报车牌号
-type AlibabawdklogisticspuspickupcararrivedAPIRequest struct {
+type AlibabaWdkLogisticsPusPickupCararrivedAPIRequest struct {
 	model.Params
 	// 自提点
 	_stationCode string
@@ -18,52 +18,52 @@ type AlibabawdklogisticspuspickupcararrivedAPIRequest struct {
 	_carNum string
 }
 
-// NewAlibabawdklogisticspuspickupcararrivedRequest 初始化AlibabawdklogisticspuspickupcararrivedAPIRequest对象
-func NewAlibabawdklogisticspuspickupcararrivedRequest() *AlibabawdklogisticspuspickupcararrivedAPIRequest {
-	return &AlibabawdklogisticspuspickupcararrivedAPIRequest{
+// NewAlibabaWdkLogisticsPusPickupCararrivedRequest 初始化AlibabaWdkLogisticsPusPickupCararrivedAPIRequest对象
+func NewAlibabaWdkLogisticsPusPickupCararrivedRequest() *AlibabaWdkLogisticsPusPickupCararrivedAPIRequest {
+	return &AlibabaWdkLogisticsPusPickupCararrivedAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabawdklogisticspuspickupcararrivedAPIRequest) GetApiMethodName() string {
+func (r AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.logistics.pus.pickup.cararrived"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabawdklogisticspuspickupcararrivedAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabawdklogisticspuspickupcararrivedAPIRequest) GetRawParams() model.Params {
+func (r AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetStationCode is StationCode Setter
 // 自提点
-func (r *AlibabawdklogisticspuspickupcararrivedAPIRequest) SetStationCode(_stationCode string) error {
+func (r *AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) SetStationCode(_stationCode string) error {
 	r._stationCode = _stationCode
 	r.Set("station_code", _stationCode)
 	return nil
 }
 
 // GetStationCode StationCode Getter
-func (r AlibabawdklogisticspuspickupcararrivedAPIRequest) GetStationCode() string {
+func (r AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) GetStationCode() string {
 	return r._stationCode
 }
 
 // SetCarNum is CarNum Setter
 // 车牌号
-func (r *AlibabawdklogisticspuspickupcararrivedAPIRequest) SetCarNum(_carNum string) error {
+func (r *AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) SetCarNum(_carNum string) error {
 	r._carNum = _carNum
 	r.Set("car_num", _carNum)
 	return nil
 }
 
 // GetCarNum CarNum Getter
-func (r AlibabawdklogisticspuspickupcararrivedAPIRequest) GetCarNum() string {
+func (r AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) GetCarNum() string {
 	return r._carNum
 }

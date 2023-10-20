@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallnr"
 )
 
-// Tmallnrtcoupontemplatequery 查询券模版
+// TmallNrtCouponTemplateQuery 查询券模版
 // tmall.nrt.coupon.template.query
 //
 // 查询券模版
-func Tmallnrtcoupontemplatequery(clt *core.SDKClient, req *tmallnr.TmallnrtcoupontemplatequeryAPIRequest, session string) (*tmallnr.TmallnrtcoupontemplatequeryAPIResponse, error) {
-	var resp tmallnr.TmallnrtcoupontemplatequeryAPIResponse
+func TmallNrtCouponTemplateQuery(clt *core.SDKClient, req *tmallnr.TmallNrtCouponTemplateQueryAPIRequest, session string) (*tmallnr.TmallNrtCouponTemplateQueryAPIResponse, error) {
+	var resp tmallnr.TmallNrtCouponTemplateQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

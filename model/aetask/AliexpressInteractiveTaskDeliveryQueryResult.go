@@ -1,7 +1,7 @@
 package aetask
 
-// AliexpressinteractivetaskdeliveryqueryResult 结构体
-type AliexpressinteractivetaskdeliveryqueryResult struct {
+// AliexpressInteractiveTaskDeliveryQueryResult 结构体
+type AliexpressInteractiveTaskDeliveryQueryResult struct {
 	// 物料集合
 	Materials []Materials `json:"materials,omitempty" xml:"materials>materials,omitempty"`
 	// 响应时间戳

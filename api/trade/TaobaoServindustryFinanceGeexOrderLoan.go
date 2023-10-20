@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/trade"
 )
 
-// Taobaoservindustryfinancegeexorderloan 即科放款信息回调api
+// TaobaoServindustryFinanceGeexOrderLoan 即科放款信息回调api
 // taobao.servindustry.finance.geex.order.loan
 //
 // 即科放款信息api
-func Taobaoservindustryfinancegeexorderloan(clt *core.SDKClient, req *trade.TaobaoservindustryfinancegeexorderloanAPIRequest, session string) (*trade.TaobaoservindustryfinancegeexorderloanAPIResponse, error) {
-	var resp trade.TaobaoservindustryfinancegeexorderloanAPIResponse
+func TaobaoServindustryFinanceGeexOrderLoan(clt *core.SDKClient, req *trade.TaobaoServindustryFinanceGeexOrderLoanAPIRequest, session string) (*trade.TaobaoServindustryFinanceGeexOrderLoanAPIResponse, error) {
+	var resp trade.TaobaoServindustryFinanceGeexOrderLoanAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

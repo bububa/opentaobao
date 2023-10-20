@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripmerchantgalaxytriggereventResponse 结构体
-type AlitripmerchantgalaxytriggereventResponse struct {
+// AlitripMerchantGalaxyTriggerEventResponse 结构体
+type AlitripMerchantGalaxyTriggerEventResponse struct {
 	// 状态码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 状态信息

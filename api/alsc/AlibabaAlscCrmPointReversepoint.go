@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// Alibabaalsccrmpointreversepoint 积分消费回退
+// AlibabaAlscCrmPointReversepoint 积分消费回退
 // alibaba.alsc.crm.point.reversepoint
 //
 // 积分消费回退
-func Alibabaalsccrmpointreversepoint(clt *core.SDKClient, req *alsc.AlibabaalsccrmpointreversepointAPIRequest, session string) (*alsc.AlibabaalsccrmpointreversepointAPIResponse, error) {
-	var resp alsc.AlibabaalsccrmpointreversepointAPIResponse
+func AlibabaAlscCrmPointReversepoint(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointReversepointAPIRequest, session string) (*alsc.AlibabaAlscCrmPointReversepointAPIResponse, error) {
+	var resp alsc.AlibabaAlscCrmPointReversepointAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabajymindustrytaskswitchsaveAPIResponse 行业信息系统开关 API返回值
+// AlibabaJymIndustryTaskswitchSaveAPIResponse 行业信息系统开关 API返回值
 // alibaba.jym.industry.taskswitch.save
 //
 // VMOS回调交易猫行业信息系统
-type AlibabajymindustrytaskswitchsaveAPIResponse struct {
+type AlibabaJymIndustryTaskswitchSaveAPIResponse struct {
 	model.CommonResponse
-	AlibabajymindustrytaskswitchsaveAPIResponseModel
+	AlibabaJymIndustryTaskswitchSaveAPIResponseModel
 }
 
-// AlibabajymindustrytaskswitchsaveAPIResponseModel is 行业信息系统开关 成功返回结果
-type AlibabajymindustrytaskswitchsaveAPIResponseModel struct {
+// AlibabaJymIndustryTaskswitchSaveAPIResponseModel is 行业信息系统开关 成功返回结果
+type AlibabaJymIndustryTaskswitchSaveAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_industry_taskswitch_save_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

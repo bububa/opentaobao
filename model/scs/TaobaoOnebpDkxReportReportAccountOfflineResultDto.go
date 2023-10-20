@@ -1,7 +1,7 @@
 package scs
 
-// TaobaoonebpdkxreportreportaccountofflineResultDto 结构体
-type TaobaoonebpdkxreportreportaccountofflineResultDto struct {
+// TaobaoOnebpDkxReportReportAccountOfflineResultDto 结构体
+type TaobaoOnebpDkxReportReportAccountOfflineResultDto struct {
 	// 返回结果
 	ReportResultTopDTOList []ReportResultTopDto `json:"report_result_top_d_t_o_list,omitempty" xml:"report_result_top_d_t_o_list>report_result_top_dto,omitempty"`
 	// 返回消息

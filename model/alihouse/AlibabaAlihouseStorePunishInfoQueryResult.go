@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihousestorepunishinfoqueryResult 结构体
-type AlibabaalihousestorepunishinfoqueryResult struct {
+// AlibabaAlihouseStorePunishInfoQueryResult 结构体
+type AlibabaAlihouseStorePunishInfoQueryResult struct {
 	// dto
 	Data []StorePunishDto `json:"data,omitempty" xml:"data>store_punish_dto,omitempty"`
 	// code

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalscmerchantextticketcodeuseAPIResponse 外部核销服务 API返回值
+// AlibabaAlscMerchantExtTicketcodeUseAPIResponse 外部核销服务 API返回值
 // alibaba.alsc.merchant.ext.ticketcode.use
 //
 // 外部核销服务
-type AlibabaalscmerchantextticketcodeuseAPIResponse struct {
+type AlibabaAlscMerchantExtTicketcodeUseAPIResponse struct {
 	model.CommonResponse
-	AlibabaalscmerchantextticketcodeuseAPIResponseModel
+	AlibabaAlscMerchantExtTicketcodeUseAPIResponseModel
 }
 
-// AlibabaalscmerchantextticketcodeuseAPIResponseModel is 外部核销服务 成功返回结果
-type AlibabaalscmerchantextticketcodeuseAPIResponseModel struct {
+// AlibabaAlscMerchantExtTicketcodeUseAPIResponseModel is 外部核销服务 成功返回结果
+type AlibabaAlscMerchantExtTicketcodeUseAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_merchant_ext_ticketcode_use_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

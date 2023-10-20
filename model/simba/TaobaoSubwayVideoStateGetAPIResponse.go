@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosubwayvideostategetAPIResponse 获取视频状态 API返回值
+// TaobaoSubwayVideoStateGetAPIResponse 获取视频状态 API返回值
 // taobao.subway.video.state.get
 //
 // 获取已上传视频的状态
-type TaobaosubwayvideostategetAPIResponse struct {
+type TaobaoSubwayVideoStateGetAPIResponse struct {
 	model.CommonResponse
-	TaobaosubwayvideostategetAPIResponseModel
+	TaobaoSubwayVideoStateGetAPIResponseModel
 }
 
-// TaobaosubwayvideostategetAPIResponseModel is 获取视频状态 成功返回结果
-type TaobaosubwayvideostategetAPIResponseModel struct {
+// TaobaoSubwayVideoStateGetAPIResponseModel is 获取视频状态 成功返回结果
+type TaobaoSubwayVideoStateGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"subway_video_state_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

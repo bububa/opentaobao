@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaascpchanneldistributorproductdetailAPIResponse 获取供应链渠道中心品的详情接口（淘外分销商专用） API返回值
+// AlibabaAscpChannelDistributorProductDetailAPIResponse 获取供应链渠道中心品的详情接口（淘外分销商专用） API返回值
 // alibaba.ascp.channel.distributor.product.detail
 //
 // 此api为淘外分销的品批量查询标准api，淘外分销商专用
-type AlibabaascpchanneldistributorproductdetailAPIResponse struct {
+type AlibabaAscpChannelDistributorProductDetailAPIResponse struct {
 	model.CommonResponse
-	AlibabaascpchanneldistributorproductdetailAPIResponseModel
+	AlibabaAscpChannelDistributorProductDetailAPIResponseModel
 }
 
-// AlibabaascpchanneldistributorproductdetailAPIResponseModel is 获取供应链渠道中心品的详情接口（淘外分销商专用） 成功返回结果
-type AlibabaascpchanneldistributorproductdetailAPIResponseModel struct {
+// AlibabaAscpChannelDistributorProductDetailAPIResponseModel is 获取供应链渠道中心品的详情接口（淘外分销商专用） 成功返回结果
+type AlibabaAscpChannelDistributorProductDetailAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ascp_channel_distributor_product_detail_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

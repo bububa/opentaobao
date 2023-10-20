@@ -1,7 +1,7 @@
 package yunosminiapp
 
-// YunosminiappdatatunnelcallResult 结构体
-type YunosminiappdatatunnelcallResult struct {
+// YunosMiniappDatatunnelCallResult 结构体
+type YunosMiniappDatatunnelCallResult struct {
 	// cp对应的code
 	CpCode string `json:"cp_code,omitempty" xml:"cp_code,omitempty"`
 	// 结果详细内容

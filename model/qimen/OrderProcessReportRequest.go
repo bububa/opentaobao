@@ -9,5 +9,5 @@ type OrderProcessReportRequest struct {
 	// 订单处理信息
 	Process *Process `json:"process,omitempty" xml:"process,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoqimenorderprocessreportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoQimenOrderprocessReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

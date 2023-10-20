@@ -1,7 +1,7 @@
 package flight
 
-// AlitripagentflightsellmodifybackfillResultDto 结构体
-type AlitripagentflightsellmodifybackfillResultDto struct {
+// AlitripAgentFlightSellModifyBackfillResultDto 结构体
+type AlitripAgentFlightSellModifyBackfillResultDto struct {
 	// 错误码:000:系统异常, 001:请求参数不合法, 002:权限不足, 003:操作失败, 004:流量管控
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

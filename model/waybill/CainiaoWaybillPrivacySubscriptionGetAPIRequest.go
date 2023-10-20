@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaowaybillprivacysubscriptiongetAPIRequest 隐私面单商家订购查询 API请求
+// CainiaoWaybillPrivacySubscriptionGetAPIRequest 隐私面单商家订购查询 API请求
 // cainiao.waybill.privacy.subscription.get
 //
 // ISV查询商家是否订购隐私面单
-type CainiaowaybillprivacysubscriptiongetAPIRequest struct {
+type CainiaoWaybillPrivacySubscriptionGetAPIRequest struct {
 	model.Params
 }
 
-// NewCainiaowaybillprivacysubscriptiongetRequest 初始化CainiaowaybillprivacysubscriptiongetAPIRequest对象
-func NewCainiaowaybillprivacysubscriptiongetRequest() *CainiaowaybillprivacysubscriptiongetAPIRequest {
-	return &CainiaowaybillprivacysubscriptiongetAPIRequest{
+// NewCainiaoWaybillPrivacySubscriptionGetRequest 初始化CainiaoWaybillPrivacySubscriptionGetAPIRequest对象
+func NewCainiaoWaybillPrivacySubscriptionGetRequest() *CainiaoWaybillPrivacySubscriptionGetAPIRequest {
+	return &CainiaoWaybillPrivacySubscriptionGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r CainiaowaybillprivacysubscriptiongetAPIRequest) GetApiMethodName() string {
+func (r CainiaoWaybillPrivacySubscriptionGetAPIRequest) GetApiMethodName() string {
 	return "cainiao.waybill.privacy.subscription.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaowaybillprivacysubscriptiongetAPIRequest) GetApiParams(params url.Values) {
+func (r CainiaoWaybillPrivacySubscriptionGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r CainiaowaybillprivacysubscriptiongetAPIRequest) GetRawParams() model.Params {
+func (r CainiaoWaybillPrivacySubscriptionGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// Alibabaalihealthdrugcodelistentparbyrefentid 根据企业id获取往来单位
+// AlibabaAlihealthDrugcodeListentparbyrefentid 根据企业id获取往来单位
 // alibaba.alihealth.drugcode.listentparbyrefentid
 //
 // 根据企业id获取往来单位
-func Alibabaalihealthdrugcodelistentparbyrefentid(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugcodelistentparbyrefentidAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugcodelistentparbyrefentidAPIResponse, error) {
-	var resp drugtrace.AlibabaalihealthdrugcodelistentparbyrefentidAPIResponse
+func AlibabaAlihealthDrugcodeListentparbyrefentid(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcodeListentparbyrefentidAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugcodeListentparbyrefentidAPIResponse, error) {
+	var resp drugtrace.AlibabaAlihealthDrugcodeListentparbyrefentidAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

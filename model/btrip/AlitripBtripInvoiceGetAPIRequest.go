@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripbtripinvoicegetAPIRequest 获取用户可用发票列表 API请求
+// AlitripBtripInvoiceGetAPIRequest 获取用户可用发票列表 API请求
 // alitrip.btrip.invoice.get
 //
 // 差旅申请用户获取可用发票列表
-type AlitripbtripinvoicegetAPIRequest struct {
+type AlitripBtripInvoiceGetAPIRequest struct {
 	model.Params
 	// 企业id
 	_corpId string
@@ -18,52 +18,52 @@ type AlitripbtripinvoicegetAPIRequest struct {
 	_userId string
 }
 
-// NewAlitripbtripinvoicegetRequest 初始化AlitripbtripinvoicegetAPIRequest对象
-func NewAlitripbtripinvoicegetRequest() *AlitripbtripinvoicegetAPIRequest {
-	return &AlitripbtripinvoicegetAPIRequest{
+// NewAlitripBtripInvoiceGetRequest 初始化AlitripBtripInvoiceGetAPIRequest对象
+func NewAlitripBtripInvoiceGetRequest() *AlitripBtripInvoiceGetAPIRequest {
+	return &AlitripBtripInvoiceGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripbtripinvoicegetAPIRequest) GetApiMethodName() string {
+func (r AlitripBtripInvoiceGetAPIRequest) GetApiMethodName() string {
 	return "alitrip.btrip.invoice.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripbtripinvoicegetAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripBtripInvoiceGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripbtripinvoicegetAPIRequest) GetRawParams() model.Params {
+func (r AlitripBtripInvoiceGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCorpId is CorpId Setter
 // 企业id
-func (r *AlitripbtripinvoicegetAPIRequest) SetCorpId(_corpId string) error {
+func (r *AlitripBtripInvoiceGetAPIRequest) SetCorpId(_corpId string) error {
 	r._corpId = _corpId
 	r.Set("corp_id", _corpId)
 	return nil
 }
 
 // GetCorpId CorpId Getter
-func (r AlitripbtripinvoicegetAPIRequest) GetCorpId() string {
+func (r AlitripBtripInvoiceGetAPIRequest) GetCorpId() string {
 	return r._corpId
 }
 
 // SetUserId is UserId Setter
 // 用户id
-func (r *AlitripbtripinvoicegetAPIRequest) SetUserId(_userId string) error {
+func (r *AlitripBtripInvoiceGetAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
 	r.Set("user_id", _userId)
 	return nil
 }
 
 // GetUserId UserId Getter
-func (r AlitripbtripinvoicegetAPIRequest) GetUserId() string {
+func (r AlitripBtripInvoiceGetAPIRequest) GetUserId() string {
 	return r._userId
 }

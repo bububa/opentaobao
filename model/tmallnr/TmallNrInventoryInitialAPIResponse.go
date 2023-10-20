@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallnrinventoryinitialAPIResponse 门店库存初始化前后端商品绑定 API返回值
+// TmallNrInventoryInitialAPIResponse 门店库存初始化前后端商品绑定 API返回值
 // tmall.nr.inventory.initial
 //
 // 用于门店业务的商品的初始化，前端商品和后端商品绑定，走后端库存模式
-type TmallnrinventoryinitialAPIResponse struct {
+type TmallNrInventoryInitialAPIResponse struct {
 	model.CommonResponse
-	TmallnrinventoryinitialAPIResponseModel
+	TmallNrInventoryInitialAPIResponseModel
 }
 
-// TmallnrinventoryinitialAPIResponseModel is 门店库存初始化前后端商品绑定 成功返回结果
-type TmallnrinventoryinitialAPIResponseModel struct {
+// TmallNrInventoryInitialAPIResponseModel is 门店库存初始化前后端商品绑定 成功返回结果
+type TmallNrInventoryInitialAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_nr_inventory_initial_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

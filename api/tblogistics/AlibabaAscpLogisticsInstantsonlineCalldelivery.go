@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tblogistics"
 )
 
-// Alibabaascplogisticsinstantsonlinecalldelivery 同城配送在线下单正式下单呼叫运力
+// AlibabaAscpLogisticsInstantsonlineCalldelivery 同城配送在线下单正式下单呼叫运力
 // alibaba.ascp.logistics.instantsonline.calldelivery
 //
 // 同城配送在线下单正式下单呼叫运力
-func Alibabaascplogisticsinstantsonlinecalldelivery(clt *core.SDKClient, req *tblogistics.AlibabaascplogisticsinstantsonlinecalldeliveryAPIRequest, session string) (*tblogistics.AlibabaascplogisticsinstantsonlinecalldeliveryAPIResponse, error) {
-	var resp tblogistics.AlibabaascplogisticsinstantsonlinecalldeliveryAPIResponse
+func AlibabaAscpLogisticsInstantsonlineCalldelivery(clt *core.SDKClient, req *tblogistics.AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest, session string) (*tblogistics.AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIResponse, error) {
+	var resp tblogistics.AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

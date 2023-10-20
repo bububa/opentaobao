@@ -1,7 +1,7 @@
 package shop
 
-// AlibabashopcategorygetResult 结构体
-type AlibabashopcategorygetResult struct {
+// AlibabaShopCategoryGetResult 结构体
+type AlibabaShopCategoryGetResult struct {
 	// 返回错误信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 分类总数

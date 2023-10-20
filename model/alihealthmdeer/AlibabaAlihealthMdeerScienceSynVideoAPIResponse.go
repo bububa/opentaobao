@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthmdeersciencesynVideoAPIResponse 视频同步【保存/更新】 API返回值
+// AlibabaAlihealthMdeerScienceSynVideoAPIResponse 视频同步【保存/更新】 API返回值
 // alibaba.alihealth.mdeer.science.synVideo
 //
 // 视频同步【保存/更新】
-type AlibabaalihealthmdeersciencesynVideoAPIResponse struct {
+type AlibabaAlihealthMdeerScienceSynVideoAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthmdeersciencesynVideoAPIResponseModel
+	AlibabaAlihealthMdeerScienceSynVideoAPIResponseModel
 }
 
-// AlibabaalihealthmdeersciencesynVideoAPIResponseModel is 视频同步【保存/更新】 成功返回结果
-type AlibabaalihealthmdeersciencesynVideoAPIResponseModel struct {
+// AlibabaAlihealthMdeerScienceSynVideoAPIResponseModel is 视频同步【保存/更新】 成功返回结果
+type AlibabaAlihealthMdeerScienceSynVideoAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_mdeer_science_synVideo_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

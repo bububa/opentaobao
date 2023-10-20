@@ -1,7 +1,7 @@
 package tmallcar
 
-// TmallaliautometareceiveResult 结构体
-type TmallaliautometareceiveResult struct {
+// TmallAliautoMetaReceiveResult 结构体
+type TmallAliautoMetaReceiveResult struct {
 	// data
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// 错误信息

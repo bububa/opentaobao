@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wlb"
 )
 
-// Taobaowlbwmsinventorylackupload 缺货通知
+// TaobaoWlbWmsInventoryLackUpload 缺货通知
 // taobao.wlb.wms.inventory.lack.upload
 //
 // 缺货通知
-func Taobaowlbwmsinventorylackupload(clt *core.SDKClient, req *wlb.TaobaowlbwmsinventorylackuploadAPIRequest, session string) (*wlb.TaobaowlbwmsinventorylackuploadAPIResponse, error) {
-	var resp wlb.TaobaowlbwmsinventorylackuploadAPIResponse
+func TaobaoWlbWmsInventoryLackUpload(clt *core.SDKClient, req *wlb.TaobaoWlbWmsInventoryLackUploadAPIRequest, session string) (*wlb.TaobaoWlbWmsInventoryLackUploadAPIResponse, error) {
+	var resp wlb.TaobaoWlbWmsInventoryLackUploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

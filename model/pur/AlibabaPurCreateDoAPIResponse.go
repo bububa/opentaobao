@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabapurcreatedoAPIResponse top创建DO/RT接口 API返回值
+// AlibabaPurCreateDoAPIResponse top创建DO/RT接口 API返回值
 // alibaba.pur.create.do
 //
 // 创建发货单,先创建DO，异步创建RT
-type AlibabapurcreatedoAPIResponse struct {
+type AlibabaPurCreateDoAPIResponse struct {
 	model.CommonResponse
-	AlibabapurcreatedoAPIResponseModel
+	AlibabaPurCreateDoAPIResponseModel
 }
 
-// AlibabapurcreatedoAPIResponseModel is top创建DO/RT接口 成功返回结果
-type AlibabapurcreatedoAPIResponseModel struct {
+// AlibabaPurCreateDoAPIResponseModel is top创建DO/RT接口 成功返回结果
+type AlibabaPurCreateDoAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_pur_create_do_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

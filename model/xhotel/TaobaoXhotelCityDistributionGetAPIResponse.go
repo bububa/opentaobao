@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhotelcitydistributiongetAPIResponse 酒店城市数据获取接口-分销场景使用 API返回值
+// TaobaoXhotelCityDistributionGetAPIResponse 酒店城市数据获取接口-分销场景使用 API返回值
 // taobao.xhotel.city.distribution.get
 //
 // 引流API，对外提供酒店城市数据
-type TaobaoxhotelcitydistributiongetAPIResponse struct {
+type TaobaoXhotelCityDistributionGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoxhotelcitydistributiongetAPIResponseModel
+	TaobaoXhotelCityDistributionGetAPIResponseModel
 }
 
-// TaobaoxhotelcitydistributiongetAPIResponseModel is 酒店城市数据获取接口-分销场景使用 成功返回结果
-type TaobaoxhotelcitydistributiongetAPIResponseModel struct {
+// TaobaoXhotelCityDistributionGetAPIResponseModel is 酒店城市数据获取接口-分销场景使用 成功返回结果
+type TaobaoXhotelCityDistributionGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_city_distribution_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package happytrip
 
-// AlibabahtorderhotelsyncbookingResultDto 结构体
-type AlibabahtorderhotelsyncbookingResultDto struct {
+// AlibabaHtorderHotelSyncBookingResultDto 结构体
+type AlibabaHtorderHotelSyncBookingResultDto struct {
 	// 错误码
 	ErrNo string `json:"err_no,omitempty" xml:"err_no,omitempty"`
 	// 错误信息

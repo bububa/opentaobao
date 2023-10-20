@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalsccrmrulequerydishruleAPIResponse 查询品牌下的入会菜品规则 API返回值
+// AlibabaAlscCrmRuleQuerydishruleAPIResponse 查询品牌下的入会菜品规则 API返回值
 // alibaba.alsc.crm.rule.querydishrule
 //
 // 查询品牌下的入会菜品规则
-type AlibabaalsccrmrulequerydishruleAPIResponse struct {
+type AlibabaAlscCrmRuleQuerydishruleAPIResponse struct {
 	model.CommonResponse
-	AlibabaalsccrmrulequerydishruleAPIResponseModel
+	AlibabaAlscCrmRuleQuerydishruleAPIResponseModel
 }
 
-// AlibabaalsccrmrulequerydishruleAPIResponseModel is 查询品牌下的入会菜品规则 成功返回结果
-type AlibabaalsccrmrulequerydishruleAPIResponseModel struct {
+// AlibabaAlscCrmRuleQuerydishruleAPIResponseModel is 查询品牌下的入会菜品规则 成功返回结果
+type AlibabaAlscCrmRuleQuerydishruleAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_rule_querydishrule_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

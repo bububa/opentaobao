@@ -1,7 +1,7 @@
 package omniorder
 
-// TaobaoomnidealeroderslistData 结构体
-type TaobaoomnidealeroderslistData struct {
+// TaobaoOmniDealerOdersListData 结构体
+type TaobaoOmniDealerOdersListData struct {
 	// 外部系统订单id
 	OutOrderId string `json:"out_order_id,omitempty" xml:"out_order_id,omitempty"`
 	// 卖家id

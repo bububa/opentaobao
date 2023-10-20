@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-// Alibabasscsupplyplatformserviceworkeravailableworker 查询可用工人
+// AlibabaSscSupplyplatformServiceworkerAvailableworker 查询可用工人
 // alibaba.ssc.supplyplatform.serviceworker.availableworker
 //
 // 可用工人查询
-func Alibabasscsupplyplatformserviceworkeravailableworker(clt *core.SDKClient, req *tmallservice.AlibabasscsupplyplatformserviceworkeravailableworkerAPIRequest, session string) (*tmallservice.AlibabasscsupplyplatformserviceworkeravailableworkerAPIResponse, error) {
-	var resp tmallservice.AlibabasscsupplyplatformserviceworkeravailableworkerAPIResponse
+func AlibabaSscSupplyplatformServiceworkerAvailableworker(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIResponse, error) {
+	var resp tmallservice.AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

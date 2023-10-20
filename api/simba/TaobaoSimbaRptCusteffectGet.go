@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// Taobaosimbarptcusteffectget 用户账户报表效果数据查询（只有汇总数据，无分类数据）
+// TaobaoSimbaRptCusteffectGet 用户账户报表效果数据查询（只有汇总数据，无分类数据）
 // taobao.simba.rpt.custeffect.get
 //
 // 用户账户报表效果数据查询（只有汇总数据，无分类数据）
-func Taobaosimbarptcusteffectget(clt *core.SDKClient, req *simba.TaobaosimbarptcusteffectgetAPIRequest, session string) (*simba.TaobaosimbarptcusteffectgetAPIResponse, error) {
-	var resp simba.TaobaosimbarptcusteffectgetAPIResponse
+func TaobaoSimbaRptCusteffectGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptCusteffectGetAPIRequest, session string) (*simba.TaobaoSimbaRptCusteffectGetAPIResponse, error) {
+	var resp simba.TaobaoSimbaRptCusteffectGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

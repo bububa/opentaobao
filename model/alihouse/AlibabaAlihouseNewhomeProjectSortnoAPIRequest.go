@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihousenewhomeprojectsortnoAPIRequest 新房排序值同步 API请求
+// AlibabaAlihouseNewhomeProjectSortnoAPIRequest 新房排序值同步 API请求
 // alibaba.alihouse.newhome.project.sortno
 //
 // 新房排序值同步
-type AlibabaalihousenewhomeprojectsortnoAPIRequest struct {
+type AlibabaAlihouseNewhomeProjectSortnoAPIRequest struct {
 	model.Params
 	// 排序值请求对象
 	_updateSortNoDto *UpdateSortNoDto
 }
 
-// NewAlibabaalihousenewhomeprojectsortnoRequest 初始化AlibabaalihousenewhomeprojectsortnoAPIRequest对象
-func NewAlibabaalihousenewhomeprojectsortnoRequest() *AlibabaalihousenewhomeprojectsortnoAPIRequest {
-	return &AlibabaalihousenewhomeprojectsortnoAPIRequest{
+// NewAlibabaAlihouseNewhomeProjectSortnoRequest 初始化AlibabaAlihouseNewhomeProjectSortnoAPIRequest对象
+func NewAlibabaAlihouseNewhomeProjectSortnoRequest() *AlibabaAlihouseNewhomeProjectSortnoAPIRequest {
+	return &AlibabaAlihouseNewhomeProjectSortnoAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihousenewhomeprojectsortnoAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseNewhomeProjectSortnoAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.newhome.project.sortno"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihousenewhomeprojectsortnoAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihouseNewhomeProjectSortnoAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihousenewhomeprojectsortnoAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihouseNewhomeProjectSortnoAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetUpdateSortNoDto is UpdateSortNoDto Setter
 // 排序值请求对象
-func (r *AlibabaalihousenewhomeprojectsortnoAPIRequest) SetUpdateSortNoDto(_updateSortNoDto *UpdateSortNoDto) error {
+func (r *AlibabaAlihouseNewhomeProjectSortnoAPIRequest) SetUpdateSortNoDto(_updateSortNoDto *UpdateSortNoDto) error {
 	r._updateSortNoDto = _updateSortNoDto
 	r.Set("update_sort_no_dto", _updateSortNoDto)
 	return nil
 }
 
 // GetUpdateSortNoDto UpdateSortNoDto Getter
-func (r AlibabaalihousenewhomeprojectsortnoAPIRequest) GetUpdateSortNoDto() *UpdateSortNoDto {
+func (r AlibabaAlihouseNewhomeProjectSortnoAPIRequest) GetUpdateSortNoDto() *UpdateSortNoDto {
 	return r._updateSortNoDto
 }

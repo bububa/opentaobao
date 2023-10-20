@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drug"
 )
 
-// Alibabahealthnrlogisticsdeliverynoupdate 上传订单同城快递单号
+// AlibabaHealthNrLogisticsDeliverynoUpdate 上传订单同城快递单号
 // alibaba.health.nr.logistics.deliveryno.update
 //
 // 上传订单同城快递单号
-func Alibabahealthnrlogisticsdeliverynoupdate(clt *core.SDKClient, req *drug.AlibabahealthnrlogisticsdeliverynoupdateAPIRequest, session string) (*drug.AlibabahealthnrlogisticsdeliverynoupdateAPIResponse, error) {
-	var resp drug.AlibabahealthnrlogisticsdeliverynoupdateAPIResponse
+func AlibabaHealthNrLogisticsDeliverynoUpdate(clt *core.SDKClient, req *drug.AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest, session string) (*drug.AlibabaHealthNrLogisticsDeliverynoUpdateAPIResponse, error) {
+	var resp drug.AlibabaHealthNrLogisticsDeliverynoUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

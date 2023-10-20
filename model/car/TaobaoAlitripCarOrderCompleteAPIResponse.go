@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoalitripcarordercompleteAPIResponse 服务完成API API返回值
+// TaobaoAlitripCarOrderCompleteAPIResponse 服务完成API API返回值
 // taobao.alitrip.car.order.complete
 //
 // 用来接收服务商订单流程完成信息
-type TaobaoalitripcarordercompleteAPIResponse struct {
+type TaobaoAlitripCarOrderCompleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoalitripcarordercompleteAPIResponseModel
+	TaobaoAlitripCarOrderCompleteAPIResponseModel
 }
 
-// TaobaoalitripcarordercompleteAPIResponseModel is 服务完成API 成功返回结果
-type TaobaoalitripcarordercompleteAPIResponseModel struct {
+// TaobaoAlitripCarOrderCompleteAPIResponseModel is 服务完成API 成功返回结果
+type TaobaoAlitripCarOrderCompleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_car_order_complete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

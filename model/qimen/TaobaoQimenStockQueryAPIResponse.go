@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoqimenstockqueryAPIResponse 库存查询接口（多条件） API返回值
+// TaobaoQimenStockQueryAPIResponse 库存查询接口（多条件） API返回值
 // taobao.qimen.stock.query
 //
 // ERP调用奇门的接口,查询商品的库存量
-type TaobaoqimenstockqueryAPIResponse struct {
+type TaobaoQimenStockQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaoqimenstockqueryAPIResponseModel
+	TaobaoQimenStockQueryAPIResponseModel
 }
 
-// TaobaoqimenstockqueryAPIResponseModel is 库存查询接口（多条件） 成功返回结果
-type TaobaoqimenstockqueryAPIResponseModel struct {
+// TaobaoQimenStockQueryAPIResponseModel is 库存查询接口（多条件） 成功返回结果
+type TaobaoQimenStockQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_stock_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoqianniutaskincreaseAPIResponse 增加任务接收人接口 API返回值
+// TaobaoQianniuTaskIncreaseAPIResponse 增加任务接收人接口 API返回值
 // taobao.qianniu.task.increase
 //
 // 根据任务元id增加任务接收人
-type TaobaoqianniutaskincreaseAPIResponse struct {
+type TaobaoQianniuTaskIncreaseAPIResponse struct {
 	model.CommonResponse
-	TaobaoqianniutaskincreaseAPIResponseModel
+	TaobaoQianniuTaskIncreaseAPIResponseModel
 }
 
-// TaobaoqianniutaskincreaseAPIResponseModel is 增加任务接收人接口 成功返回结果
-type TaobaoqianniutaskincreaseAPIResponseModel struct {
+// TaobaoQianniuTaskIncreaseAPIResponseModel is 增加任务接收人接口 成功返回结果
+type TaobaoQianniuTaskIncreaseAPIResponseModel struct {
 	XMLName xml.Name `xml:"qianniu_task_increase_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

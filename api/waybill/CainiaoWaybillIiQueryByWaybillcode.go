@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/waybill"
 )
 
-// Cainiaowaybilliiquerybywaybillcode 通过面单号查询面单打印报文
+// CainiaoWaybillIiQueryByWaybillcode 通过面单号查询面单打印报文
 // cainiao.waybill.ii.query.by.waybillcode
 //
 // 通过面单号查询面单的打印报文
-func Cainiaowaybilliiquerybywaybillcode(clt *core.SDKClient, req *waybill.CainiaowaybilliiquerybywaybillcodeAPIRequest, session string) (*waybill.CainiaowaybilliiquerybywaybillcodeAPIResponse, error) {
-	var resp waybill.CainiaowaybilliiquerybywaybillcodeAPIResponse
+func CainiaoWaybillIiQueryByWaybillcode(clt *core.SDKClient, req *waybill.CainiaoWaybillIiQueryByWaybillcodeAPIRequest, session string) (*waybill.CainiaoWaybillIiQueryByWaybillcodeAPIResponse, error) {
+	var resp waybill.CainiaoWaybillIiQueryByWaybillcodeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

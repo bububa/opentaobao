@@ -25,5 +25,5 @@ type StoreProcessConfirmRequest struct {
 	// 实际作业总数量
 	ActualQty int64 `json:"actualQty,omitempty" xml:"actualQty,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoqimenstoreprocessconfirmMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoQimenStoreprocessConfirmMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

@@ -1,7 +1,7 @@
 package xhotelonlineorder
 
-// TaobaoxhotelpmsguestbillgetvtwoResultSet 结构体
-type TaobaoxhotelpmsguestbillgetvtwoResultSet struct {
+// TaobaoXhotelPmsGuestbillGetVtwoResultSet 结构体
+type TaobaoXhotelPmsGuestbillGetVtwoResultSet struct {
 	// 账单列表中涉及到的金额费用单位均为分
 	Results []OrderBillInfo `json:"results,omitempty" xml:"results>order_bill_info,omitempty"`
 	// 错误描述

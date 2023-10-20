@@ -1,7 +1,7 @@
 package xhotelonlineorder
 
-// TaobaoxhotelorderfuturefacescanputResultSet 结构体
-type TaobaoxhotelorderfuturefacescanputResultSet struct {
+// TaobaoXhotelOrderFutureFacescanPutResultSet 结构体
+type TaobaoXhotelOrderFutureFacescanPutResultSet struct {
 	// 错误描述
 	Errormsg string `json:"errormsg,omitempty" xml:"errormsg,omitempty"`
 	// 错误码

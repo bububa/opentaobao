@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascpffo"
 )
 
-// Aliexpressascppoitemquery AliExpress采购单明细查询API
+// AliexpressAscpPoItemQuery AliExpress采购单明细查询API
 // aliexpress.ascp.po.item.query
 //
 // AE 供应链仓发 采购单明细查询
-func Aliexpressascppoitemquery(clt *core.SDKClient, req *ascpffo.AliexpressascppoitemqueryAPIRequest, session string) (*ascpffo.AliexpressascppoitemqueryAPIResponse, error) {
-	var resp ascpffo.AliexpressascppoitemqueryAPIResponse
+func AliexpressAscpPoItemQuery(clt *core.SDKClient, req *ascpffo.AliexpressAscpPoItemQueryAPIRequest, session string) (*ascpffo.AliexpressAscpPoItemQueryAPIResponse, error) {
+	var resp ascpffo.AliexpressAscpPoItemQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/train"
 )
 
-// Taobaotrainagentchangeorderdetailqueryvtwo 火车票代理商接口-查询跑腿改签订单详情-含鉴权校验
+// TaobaoTrainAgentChangeorderdetailQueryVtwo 火车票代理商接口-查询跑腿改签订单详情-含鉴权校验
 // taobao.train.agent.changeorderdetail.query.vtwo
 //
 // 火车票代理商接口-查询跑腿改签订单详情-含鉴权校验
-func Taobaotrainagentchangeorderdetailqueryvtwo(clt *core.SDKClient, req *train.TaobaotrainagentchangeorderdetailqueryvtwoAPIRequest, session string) (*train.TaobaotrainagentchangeorderdetailqueryvtwoAPIResponse, error) {
-	var resp train.TaobaotrainagentchangeorderdetailqueryvtwoAPIResponse
+func TaobaoTrainAgentChangeorderdetailQueryVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest, session string) (*train.TaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponse, error) {
+	var resp train.TaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

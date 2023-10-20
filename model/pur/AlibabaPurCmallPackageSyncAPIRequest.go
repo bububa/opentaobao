@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabapurcmallpackagesyncAPIRequest 套餐同步 API请求
+// AlibabaPurCmallPackageSyncAPIRequest 套餐同步 API请求
 // alibaba.pur.cmall.package.sync
 //
 // 套餐同步
-type AlibabapurcmallpackagesyncAPIRequest struct {
+type AlibabaPurCmallPackageSyncAPIRequest struct {
 	model.Params
 	// 套餐对象
 	_accessPackageDto *AccessPackageDto
 }
 
-// NewAlibabapurcmallpackagesyncRequest 初始化AlibabapurcmallpackagesyncAPIRequest对象
-func NewAlibabapurcmallpackagesyncRequest() *AlibabapurcmallpackagesyncAPIRequest {
-	return &AlibabapurcmallpackagesyncAPIRequest{
+// NewAlibabaPurCmallPackageSyncRequest 初始化AlibabaPurCmallPackageSyncAPIRequest对象
+func NewAlibabaPurCmallPackageSyncRequest() *AlibabaPurCmallPackageSyncAPIRequest {
+	return &AlibabaPurCmallPackageSyncAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabapurcmallpackagesyncAPIRequest) GetApiMethodName() string {
+func (r AlibabaPurCmallPackageSyncAPIRequest) GetApiMethodName() string {
 	return "alibaba.pur.cmall.package.sync"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabapurcmallpackagesyncAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaPurCmallPackageSyncAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabapurcmallpackagesyncAPIRequest) GetRawParams() model.Params {
+func (r AlibabaPurCmallPackageSyncAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAccessPackageDto is AccessPackageDto Setter
 // 套餐对象
-func (r *AlibabapurcmallpackagesyncAPIRequest) SetAccessPackageDto(_accessPackageDto *AccessPackageDto) error {
+func (r *AlibabaPurCmallPackageSyncAPIRequest) SetAccessPackageDto(_accessPackageDto *AccessPackageDto) error {
 	r._accessPackageDto = _accessPackageDto
 	r.Set("access_package_dto", _accessPackageDto)
 	return nil
 }
 
 // GetAccessPackageDto AccessPackageDto Getter
-func (r AlibabapurcmallpackagesyncAPIRequest) GetAccessPackageDto() *AccessPackageDto {
+func (r AlibabaPurCmallPackageSyncAPIRequest) GetAccessPackageDto() *AccessPackageDto {
 	return r._accessPackageDto
 }

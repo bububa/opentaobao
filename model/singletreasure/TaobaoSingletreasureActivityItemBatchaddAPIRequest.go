@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosingletreasureactivityitembatchaddAPIRequest 批量添加商品接口 API请求
+// TaobaoSingletreasureActivityItemBatchaddAPIRequest 批量添加商品接口 API请求
 // taobao.singletreasure.activity.item.batchadd
 //
 // 向活动中批量添加商品优惠
-type TaobaosingletreasureactivityitembatchaddAPIRequest struct {
+type TaobaoSingletreasureActivityItemBatchaddAPIRequest struct {
 	model.Params
 	// 系统入参
 	_itemDetailInfo *ItemDetailInfoBatchCreateDto
 }
 
-// NewTaobaosingletreasureactivityitembatchaddRequest 初始化TaobaosingletreasureactivityitembatchaddAPIRequest对象
-func NewTaobaosingletreasureactivityitembatchaddRequest() *TaobaosingletreasureactivityitembatchaddAPIRequest {
-	return &TaobaosingletreasureactivityitembatchaddAPIRequest{
+// NewTaobaoSingletreasureActivityItemBatchaddRequest 初始化TaobaoSingletreasureActivityItemBatchaddAPIRequest对象
+func NewTaobaoSingletreasureActivityItemBatchaddRequest() *TaobaoSingletreasureActivityItemBatchaddAPIRequest {
+	return &TaobaoSingletreasureActivityItemBatchaddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaosingletreasureactivityitembatchaddAPIRequest) GetApiMethodName() string {
+func (r TaobaoSingletreasureActivityItemBatchaddAPIRequest) GetApiMethodName() string {
 	return "taobao.singletreasure.activity.item.batchadd"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaosingletreasureactivityitembatchaddAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoSingletreasureActivityItemBatchaddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaosingletreasureactivityitembatchaddAPIRequest) GetRawParams() model.Params {
+func (r TaobaoSingletreasureActivityItemBatchaddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetItemDetailInfo is ItemDetailInfo Setter
 // 系统入参
-func (r *TaobaosingletreasureactivityitembatchaddAPIRequest) SetItemDetailInfo(_itemDetailInfo *ItemDetailInfoBatchCreateDto) error {
+func (r *TaobaoSingletreasureActivityItemBatchaddAPIRequest) SetItemDetailInfo(_itemDetailInfo *ItemDetailInfoBatchCreateDto) error {
 	r._itemDetailInfo = _itemDetailInfo
 	r.Set("item_detail_info", _itemDetailInfo)
 	return nil
 }
 
 // GetItemDetailInfo ItemDetailInfo Getter
-func (r TaobaosingletreasureactivityitembatchaddAPIRequest) GetItemDetailInfo() *ItemDetailInfoBatchCreateDto {
+func (r TaobaoSingletreasureActivityItemBatchaddAPIRequest) GetItemDetailInfo() *ItemDetailInfoBatchCreateDto {
 	return r._itemDetailInfo
 }

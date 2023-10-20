@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallservicecenterspserviceordercreateAPIResponse 服务单创建 API返回值
+// TmallServicecenterSpserviceorderCreateAPIResponse 服务单创建 API返回值
 // tmall.servicecenter.spserviceorder.create
 //
 // 服务单创建
-type TmallservicecenterspserviceordercreateAPIResponse struct {
+type TmallServicecenterSpserviceorderCreateAPIResponse struct {
 	model.CommonResponse
-	TmallservicecenterspserviceordercreateAPIResponseModel
+	TmallServicecenterSpserviceorderCreateAPIResponseModel
 }
 
-// TmallservicecenterspserviceordercreateAPIResponseModel is 服务单创建 成功返回结果
-type TmallservicecenterspserviceordercreateAPIResponseModel struct {
+// TmallServicecenterSpserviceorderCreateAPIResponseModel is 服务单创建 成功返回结果
+type TmallServicecenterSpserviceorderCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_spserviceorder_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

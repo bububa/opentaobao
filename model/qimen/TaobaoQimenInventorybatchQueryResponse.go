@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimeninventorybatchqueryResponse 结构体
-type TaobaoqimeninventorybatchqueryResponse struct {
+// TaobaoQimenInventorybatchQueryResponse 结构体
+type TaobaoQimenInventorybatchQueryResponse struct {
 	// success|failure
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 	// 响应码

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabawdkmarketingitempoolexcludeskucode 商品池排除商品【品类优惠使用】
+// AlibabaWdkMarketingItempoolExcludeskucode 商品池排除商品【品类优惠使用】
 // alibaba.wdk.marketing.itempool.excludeskucode
 //
 // 品类优惠新增排除池
-func Alibabawdkmarketingitempoolexcludeskucode(clt *core.SDKClient, req *wdk.AlibabawdkmarketingitempoolexcludeskucodeAPIRequest, session string) (*wdk.AlibabawdkmarketingitempoolexcludeskucodeAPIResponse, error) {
-	var resp wdk.AlibabawdkmarketingitempoolexcludeskucodeAPIResponse
+func AlibabaWdkMarketingItempoolExcludeskucode(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest, session string) (*wdk.AlibabaWdkMarketingItempoolExcludeskucodeAPIResponse, error) {
+	var resp wdk.AlibabaWdkMarketingItempoolExcludeskucodeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

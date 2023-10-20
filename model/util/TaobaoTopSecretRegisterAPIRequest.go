@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotopsecretregisterAPIRequest 注册加密账号 API请求
+// TaobaoTopSecretRegisterAPIRequest 注册加密账号 API请求
 // taobao.top.secret.register
 //
 // 提供给isv注册非淘系账号秘钥，isv依赖sdk自主加、解密
-type TaobaotopsecretregisterAPIRequest struct {
+type TaobaoTopSecretRegisterAPIRequest struct {
 	model.Params
 }
 
-// NewTaobaotopsecretregisterRequest 初始化TaobaotopsecretregisterAPIRequest对象
-func NewTaobaotopsecretregisterRequest() *TaobaotopsecretregisterAPIRequest {
-	return &TaobaotopsecretregisterAPIRequest{
+// NewTaobaoTopSecretRegisterRequest 初始化TaobaoTopSecretRegisterAPIRequest对象
+func NewTaobaoTopSecretRegisterRequest() *TaobaoTopSecretRegisterAPIRequest {
+	return &TaobaoTopSecretRegisterAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaotopsecretregisterAPIRequest) GetApiMethodName() string {
+func (r TaobaoTopSecretRegisterAPIRequest) GetApiMethodName() string {
 	return "taobao.top.secret.register"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaotopsecretregisterAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoTopSecretRegisterAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaotopsecretregisterAPIRequest) GetRawParams() model.Params {
+func (r TaobaoTopSecretRegisterAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

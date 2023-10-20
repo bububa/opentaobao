@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimenorderexceptionreportRequest 结构体
-type TaobaoqimenorderexceptionreportRequest struct {
+// TaobaoQimenOrderexceptionReportRequest 结构体
+type TaobaoQimenOrderexceptionReportRequest struct {
 	// 奇门仓储字段
 	OrderLines []OrderLine `json:"orderLines,omitempty" xml:"orderLines>order_line,omitempty"`
 	// 奇门仓储字段
@@ -27,5 +27,5 @@ type TaobaoqimenorderexceptionreportRequest struct {
 	// 奇门仓储字段
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoqimenorderexceptionreportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoQimenOrderexceptionReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

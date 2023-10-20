@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthoutflowprescriptionhospitalverifyAPIRequest 处方同步至医院返回校验结果 API请求
+// AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest 处方同步至医院返回校验结果 API请求
 // alibaba.alihealth.outflow.prescription.hospital.verify
 //
 // 处方同步至医院返回校验结果
-type AlibabaalihealthoutflowprescriptionhospitalverifyAPIRequest struct {
+type AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest struct {
 	model.Params
 	// 入参对象
 	_updateRequest *PrescriptionOutflowUpdateRequest
 }
 
-// NewAlibabaalihealthoutflowprescriptionhospitalverifyRequest 初始化AlibabaalihealthoutflowprescriptionhospitalverifyAPIRequest对象
-func NewAlibabaalihealthoutflowprescriptionhospitalverifyRequest() *AlibabaalihealthoutflowprescriptionhospitalverifyAPIRequest {
-	return &AlibabaalihealthoutflowprescriptionhospitalverifyAPIRequest{
+// NewAlibabaAlihealthOutflowPrescriptionHospitalVerifyRequest 初始化AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest对象
+func NewAlibabaAlihealthOutflowPrescriptionHospitalVerifyRequest() *AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest {
+	return &AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihealthoutflowprescriptionhospitalverifyAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.outflow.prescription.hospital.verify"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihealthoutflowprescriptionhospitalverifyAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihealthoutflowprescriptionhospitalverifyAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetUpdateRequest is UpdateRequest Setter
 // 入参对象
-func (r *AlibabaalihealthoutflowprescriptionhospitalverifyAPIRequest) SetUpdateRequest(_updateRequest *PrescriptionOutflowUpdateRequest) error {
+func (r *AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest) SetUpdateRequest(_updateRequest *PrescriptionOutflowUpdateRequest) error {
 	r._updateRequest = _updateRequest
 	r.Set("update_request", _updateRequest)
 	return nil
 }
 
 // GetUpdateRequest UpdateRequest Getter
-func (r AlibabaalihealthoutflowprescriptionhospitalverifyAPIRequest) GetUpdateRequest() *PrescriptionOutflowUpdateRequest {
+func (r AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest) GetUpdateRequest() *PrescriptionOutflowUpdateRequest {
 	return r._updateRequest
 }

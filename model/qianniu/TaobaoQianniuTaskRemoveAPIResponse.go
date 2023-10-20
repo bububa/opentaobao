@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoqianniutaskremoveAPIResponse 轻任务删除接口 API返回值
+// TaobaoQianniuTaskRemoveAPIResponse 轻任务删除接口 API返回值
 // taobao.qianniu.task.remove
 //
 // 轻任务删除接口。
-type TaobaoqianniutaskremoveAPIResponse struct {
+type TaobaoQianniuTaskRemoveAPIResponse struct {
 	model.CommonResponse
-	TaobaoqianniutaskremoveAPIResponseModel
+	TaobaoQianniuTaskRemoveAPIResponseModel
 }
 
-// TaobaoqianniutaskremoveAPIResponseModel is 轻任务删除接口 成功返回结果
-type TaobaoqianniutaskremoveAPIResponseModel struct {
+// TaobaoQianniuTaskRemoveAPIResponseModel is 轻任务删除接口 成功返回结果
+type TaobaoQianniuTaskRemoveAPIResponseModel struct {
 	XMLName xml.Name `xml:"qianniu_task_remove_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

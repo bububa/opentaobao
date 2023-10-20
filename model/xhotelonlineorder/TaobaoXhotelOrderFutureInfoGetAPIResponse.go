@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhotelorderfutureinfogetAPIResponse 获取(查询)订单变更信息 API返回值
+// TaobaoXhotelOrderFutureInfoGetAPIResponse 获取(查询)订单变更信息 API返回值
 // taobao.xhotel.order.future.info.get
 //
 // 支持操作类型 1.在线开发票请求 3.在线选房请求 4.自助checkIn请求 13.扫脸入住身份信息请求 10.房态信息查询请求 103.通用任务取消指令
-type TaobaoxhotelorderfutureinfogetAPIResponse struct {
+type TaobaoXhotelOrderFutureInfoGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoxhotelorderfutureinfogetAPIResponseModel
+	TaobaoXhotelOrderFutureInfoGetAPIResponseModel
 }
 
-// TaobaoxhotelorderfutureinfogetAPIResponseModel is 获取(查询)订单变更信息 成功返回结果
-type TaobaoxhotelorderfutureinfogetAPIResponseModel struct {
+// TaobaoXhotelOrderFutureInfoGetAPIResponseModel is 获取(查询)订单变更信息 成功返回结果
+type TaobaoXhotelOrderFutureInfoGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_future_info_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

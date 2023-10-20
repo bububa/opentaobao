@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpresssolutionmerchantprofilegetAPIResponse aliexpress.solution.merchant.profile.get API返回值
+// AliexpressSolutionMerchantProfileGetAPIResponse aliexpress.solution.merchant.profile.get API返回值
 // aliexpress.solution.merchant.profile.get
 //
 // API for oversea sellers to obtain the normal information, e.g. store id, registration country code.
-type AliexpresssolutionmerchantprofilegetAPIResponse struct {
+type AliexpressSolutionMerchantProfileGetAPIResponse struct {
 	model.CommonResponse
-	AliexpresssolutionmerchantprofilegetAPIResponseModel
+	AliexpressSolutionMerchantProfileGetAPIResponseModel
 }
 
-// AliexpresssolutionmerchantprofilegetAPIResponseModel is aliexpress.solution.merchant.profile.get 成功返回结果
-type AliexpresssolutionmerchantprofilegetAPIResponseModel struct {
+// AliexpressSolutionMerchantProfileGetAPIResponseModel is aliexpress.solution.merchant.profile.get 成功返回结果
+type AliexpressSolutionMerchantProfileGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_solution_merchant_profile_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

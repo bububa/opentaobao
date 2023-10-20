@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaocloudprinttemplatesmigrateAPIResponse 云打印模板迁移接口 API返回值
+// CainiaoCloudprintTemplatesMigrateAPIResponse 云打印模板迁移接口 API返回值
 // cainiao.cloudprint.templates.migrate
 //
 // 云打印模板迁移接口
-type CainiaocloudprinttemplatesmigrateAPIResponse struct {
+type CainiaoCloudprintTemplatesMigrateAPIResponse struct {
 	model.CommonResponse
-	CainiaocloudprinttemplatesmigrateAPIResponseModel
+	CainiaoCloudprintTemplatesMigrateAPIResponseModel
 }
 
-// CainiaocloudprinttemplatesmigrateAPIResponseModel is 云打印模板迁移接口 成功返回结果
-type CainiaocloudprinttemplatesmigrateAPIResponseModel struct {
+// CainiaoCloudprintTemplatesMigrateAPIResponseModel is 云打印模板迁移接口 成功返回结果
+type CainiaoCloudprintTemplatesMigrateAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_cloudprint_templates_migrate_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
