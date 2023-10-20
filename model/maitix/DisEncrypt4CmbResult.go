@@ -1,7 +1,7 @@
 package maitix
 
-// DisEncrypt4CmbResult 结构体
-type DisEncrypt4CmbResult struct {
+// DisEncrypt4cmbResult 结构体
+type DisEncrypt4cmbResult struct {
 	// 订单金额
 	Amount string `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 分行号

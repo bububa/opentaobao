@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest 乐税审核结果通知 API请求
+// AlibabaalihealthdoctorleshuiauditresultAPIRequest 乐税审核结果通知 API请求
 // alibaba.alihealth.doctor.leshui.audit.result
 //
 // 乐税审核结果通知
-type AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest struct {
+type AlibabaalihealthdoctorleshuiauditresultAPIRequest struct {
 	model.Params
 	// 入参
 	_param *PayTaxNoticeRequest
 }
 
-// NewAlibabaAlihealthDoctorLeshuiAuditResultRequest 初始化AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest对象
-func NewAlibabaAlihealthDoctorLeshuiAuditResultRequest() *AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest {
-	return &AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest{
+// NewAlibabaalihealthdoctorleshuiauditresultRequest 初始化AlibabaalihealthdoctorleshuiauditresultAPIRequest对象
+func NewAlibabaalihealthdoctorleshuiauditresultRequest() *AlibabaalihealthdoctorleshuiauditresultAPIRequest {
+	return &AlibabaalihealthdoctorleshuiauditresultAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthdoctorleshuiauditresultAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.doctor.leshui.audit.result"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthdoctorleshuiauditresultAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthdoctorleshuiauditresultAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 入参
-func (r *AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest) SetParam(_param *PayTaxNoticeRequest) error {
+func (r *AlibabaalihealthdoctorleshuiauditresultAPIRequest) SetParam(_param *PayTaxNoticeRequest) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest) GetParam() *PayTaxNoticeRequest {
+func (r AlibabaalihealthdoctorleshuiauditresultAPIRequest) GetParam() *PayTaxNoticeRequest {
 	return r._param
 }

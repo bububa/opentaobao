@@ -3,7 +3,7 @@ package xhotelitem
 // HotelXitemDo 结构体
 type HotelXitemDo struct {
 	// 酒+X 图片格式化信息
-	Pictures []HotelXItemPicture `json:"pictures,omitempty" xml:"pictures>hotel_x_item_picture,omitempty"`
+	Pictures []HotelXitemPicture `json:"pictures,omitempty" xml:"pictures>hotel_xitem_picture,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 修改时间

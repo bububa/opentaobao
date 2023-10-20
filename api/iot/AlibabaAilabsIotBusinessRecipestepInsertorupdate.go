@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/iot"
 )
 
-// AlibabaAilabsIotBusinessRecipestepInsertorupdate 插入或更新食谱步骤
+// Alibabaailabsiotbusinessrecipestepinsertorupdate 插入或更新食谱步骤
 // alibaba.ailabs.iot.business.recipestep.insertorupdate
 //
 // 插入或更新食谱步骤
-func AlibabaAilabsIotBusinessRecipestepInsertorupdate(clt *core.SDKClient, req *iot.AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest, session string) (*iot.AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse, error) {
-	var resp iot.AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse
+func Alibabaailabsiotbusinessrecipestepinsertorupdate(clt *core.SDKClient, req *iot.AlibabaailabsiotbusinessrecipestepinsertorupdateAPIRequest, session string) (*iot.AlibabaailabsiotbusinessrecipestepinsertorupdateAPIResponse, error) {
+	var resp iot.AlibabaailabsiotbusinessrecipestepinsertorupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

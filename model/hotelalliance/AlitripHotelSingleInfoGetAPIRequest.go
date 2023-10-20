@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripHotelSingleInfoGetAPIRequest 获取单体酒店信息 API请求
+// AlitriphotelsingleinfogetAPIRequest 获取单体酒店信息 API请求
 // alitrip.hotel.single.info.get
 //
 // 用于给到未来酒店读取与飞猪酒店合作的单体酒店信息，开展单体联盟业务
-type AlitripHotelSingleInfoGetAPIRequest struct {
+type AlitriphotelsingleinfogetAPIRequest struct {
 	model.Params
 	// 查询酒店信息query参数
 	_queryHotelInfoParam *QueryHotelInfoParam
 }
 
-// NewAlitripHotelSingleInfoGetRequest 初始化AlitripHotelSingleInfoGetAPIRequest对象
-func NewAlitripHotelSingleInfoGetRequest() *AlitripHotelSingleInfoGetAPIRequest {
-	return &AlitripHotelSingleInfoGetAPIRequest{
+// NewAlitriphotelsingleinfogetRequest 初始化AlitriphotelsingleinfogetAPIRequest对象
+func NewAlitriphotelsingleinfogetRequest() *AlitriphotelsingleinfogetAPIRequest {
+	return &AlitriphotelsingleinfogetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripHotelSingleInfoGetAPIRequest) GetApiMethodName() string {
+func (r AlitriphotelsingleinfogetAPIRequest) GetApiMethodName() string {
 	return "alitrip.hotel.single.info.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripHotelSingleInfoGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlitriphotelsingleinfogetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripHotelSingleInfoGetAPIRequest) GetRawParams() model.Params {
+func (r AlitriphotelsingleinfogetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQueryHotelInfoParam is QueryHotelInfoParam Setter
 // 查询酒店信息query参数
-func (r *AlitripHotelSingleInfoGetAPIRequest) SetQueryHotelInfoParam(_queryHotelInfoParam *QueryHotelInfoParam) error {
+func (r *AlitriphotelsingleinfogetAPIRequest) SetQueryHotelInfoParam(_queryHotelInfoParam *QueryHotelInfoParam) error {
 	r._queryHotelInfoParam = _queryHotelInfoParam
 	r.Set("query_hotel_info_param", _queryHotelInfoParam)
 	return nil
 }
 
 // GetQueryHotelInfoParam QueryHotelInfoParam Getter
-func (r AlitripHotelSingleInfoGetAPIRequest) GetQueryHotelInfoParam() *QueryHotelInfoParam {
+func (r AlitriphotelsingleinfogetAPIRequest) GetQueryHotelInfoParam() *QueryHotelInfoParam {
 	return r._queryHotelInfoParam
 }

@@ -1,7 +1,7 @@
 package tmallfcbox
 
-// TmallFcboxNotifyResult 结构体
-type TmallFcboxNotifyResult struct {
+// TmallfcboxnotifyResult 结构体
+type TmallfcboxnotifyResult struct {
 	// model
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// message

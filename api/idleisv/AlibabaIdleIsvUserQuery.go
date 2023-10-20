@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/idleisv"
 )
 
-// AlibabaIdleIsvUserQuery 服务商ISV闲鱼用户信息查询
+// Alibabaidleisvuserquery 服务商ISV闲鱼用户信息查询
 // alibaba.idle.isv.user.query
 //
 // 服务商ISV闲鱼用户信息查询
-func AlibabaIdleIsvUserQuery(clt *core.SDKClient, req *idleisv.AlibabaIdleIsvUserQueryAPIRequest, session string) (*idleisv.AlibabaIdleIsvUserQueryAPIResponse, error) {
-	var resp idleisv.AlibabaIdleIsvUserQueryAPIResponse
+func Alibabaidleisvuserquery(clt *core.SDKClient, req *idleisv.AlibabaidleisvuserqueryAPIRequest, session string) (*idleisv.AlibabaidleisvuserqueryAPIResponse, error) {
+	var resp idleisv.AlibabaidleisvuserqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

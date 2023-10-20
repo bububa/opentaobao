@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpEffectProductSingleGetAPIRequest 单个产品的报表 API请求
+// AlibabascbpeffectproductsinglegetAPIRequest 单个产品的报表 API请求
 // alibaba.scbp.effect.product.single.get
 //
 // 单个产品的报表
-type AlibabaScbpEffectProductSingleGetAPIRequest struct {
+type AlibabascbpeffectproductsinglegetAPIRequest struct {
 	model.Params
 	// ProductQuery
 	_p4pProductReportQuery *ProductQuery
 }
 
-// NewAlibabaScbpEffectProductSingleGetRequest 初始化AlibabaScbpEffectProductSingleGetAPIRequest对象
-func NewAlibabaScbpEffectProductSingleGetRequest() *AlibabaScbpEffectProductSingleGetAPIRequest {
-	return &AlibabaScbpEffectProductSingleGetAPIRequest{
+// NewAlibabascbpeffectproductsinglegetRequest 初始化AlibabascbpeffectproductsinglegetAPIRequest对象
+func NewAlibabascbpeffectproductsinglegetRequest() *AlibabascbpeffectproductsinglegetAPIRequest {
+	return &AlibabascbpeffectproductsinglegetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaScbpEffectProductSingleGetAPIRequest) GetApiMethodName() string {
+func (r AlibabascbpeffectproductsinglegetAPIRequest) GetApiMethodName() string {
 	return "alibaba.scbp.effect.product.single.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaScbpEffectProductSingleGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabascbpeffectproductsinglegetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaScbpEffectProductSingleGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabascbpeffectproductsinglegetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetP4pProductReportQuery is P4pProductReportQuery Setter
 // ProductQuery
-func (r *AlibabaScbpEffectProductSingleGetAPIRequest) SetP4pProductReportQuery(_p4pProductReportQuery *ProductQuery) error {
+func (r *AlibabascbpeffectproductsinglegetAPIRequest) SetP4pProductReportQuery(_p4pProductReportQuery *ProductQuery) error {
 	r._p4pProductReportQuery = _p4pProductReportQuery
 	r.Set("p4p_product_report_query", _p4pProductReportQuery)
 	return nil
 }
 
 // GetP4pProductReportQuery P4pProductReportQuery Getter
-func (r AlibabaScbpEffectProductSingleGetAPIRequest) GetP4pProductReportQuery() *ProductQuery {
+func (r AlibabascbpeffectproductsinglegetAPIRequest) GetP4pProductReportQuery() *ProductQuery {
 	return r._p4pProductReportQuery
 }

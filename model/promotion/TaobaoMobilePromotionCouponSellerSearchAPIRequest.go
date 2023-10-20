@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoMobilePromotionCouponSellerSearchAPIRequest 查询绑定卖家优惠券相关信息(手淘专用) API请求
+// TaobaomobilepromotioncouponsellersearchAPIRequest 查询绑定卖家优惠券相关信息(手淘专用) API请求
 // taobao.mobile.promotion.coupon.seller.search
 //
 // 查询绑定卖家相关优惠券信息 如isv 百川 等外部业务方
-type TaobaoMobilePromotionCouponSellerSearchAPIRequest struct {
+type TaobaomobilepromotioncouponsellersearchAPIRequest struct {
 	model.Params
 	// 请求id 排查线索 需保证单次调用唯一
 	_traceId string
@@ -22,78 +22,78 @@ type TaobaoMobilePromotionCouponSellerSearchAPIRequest struct {
 	_currentPage int64
 }
 
-// NewTaobaoMobilePromotionCouponSellerSearchRequest 初始化TaobaoMobilePromotionCouponSellerSearchAPIRequest对象
-func NewTaobaoMobilePromotionCouponSellerSearchRequest() *TaobaoMobilePromotionCouponSellerSearchAPIRequest {
-	return &TaobaoMobilePromotionCouponSellerSearchAPIRequest{
+// NewTaobaomobilepromotioncouponsellersearchRequest 初始化TaobaomobilepromotioncouponsellersearchAPIRequest对象
+func NewTaobaomobilepromotioncouponsellersearchRequest() *TaobaomobilepromotioncouponsellersearchAPIRequest {
+	return &TaobaomobilepromotioncouponsellersearchAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoMobilePromotionCouponSellerSearchAPIRequest) GetApiMethodName() string {
+func (r TaobaomobilepromotioncouponsellersearchAPIRequest) GetApiMethodName() string {
 	return "taobao.mobile.promotion.coupon.seller.search"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoMobilePromotionCouponSellerSearchAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaomobilepromotioncouponsellersearchAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoMobilePromotionCouponSellerSearchAPIRequest) GetRawParams() model.Params {
+func (r TaobaomobilepromotioncouponsellersearchAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTraceId is TraceId Setter
 // 请求id 排查线索 需保证单次调用唯一
-func (r *TaobaoMobilePromotionCouponSellerSearchAPIRequest) SetTraceId(_traceId string) error {
+func (r *TaobaomobilepromotioncouponsellersearchAPIRequest) SetTraceId(_traceId string) error {
 	r._traceId = _traceId
 	r.Set("trace_id", _traceId)
 	return nil
 }
 
 // GetTraceId TraceId Getter
-func (r TaobaoMobilePromotionCouponSellerSearchAPIRequest) GetTraceId() string {
+func (r TaobaomobilepromotioncouponsellersearchAPIRequest) GetTraceId() string {
 	return r._traceId
 }
 
 // SetSpreadIds is SpreadIds Setter
 // 券id集合
-func (r *TaobaoMobilePromotionCouponSellerSearchAPIRequest) SetSpreadIds(_spreadIds string) error {
+func (r *TaobaomobilepromotioncouponsellersearchAPIRequest) SetSpreadIds(_spreadIds string) error {
 	r._spreadIds = _spreadIds
 	r.Set("spread_ids", _spreadIds)
 	return nil
 }
 
 // GetSpreadIds SpreadIds Getter
-func (r TaobaoMobilePromotionCouponSellerSearchAPIRequest) GetSpreadIds() string {
+func (r TaobaomobilepromotioncouponsellersearchAPIRequest) GetSpreadIds() string {
 	return r._spreadIds
 }
 
 // SetPageSize is PageSize Setter
 // 每页数据 最大20左右
-func (r *TaobaoMobilePromotionCouponSellerSearchAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaomobilepromotioncouponsellersearchAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r TaobaoMobilePromotionCouponSellerSearchAPIRequest) GetPageSize() int64 {
+func (r TaobaomobilepromotioncouponsellersearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
 // SetCurrentPage is CurrentPage Setter
 // 当前第几页 从第一页开始
-func (r *TaobaoMobilePromotionCouponSellerSearchAPIRequest) SetCurrentPage(_currentPage int64) error {
+func (r *TaobaomobilepromotioncouponsellersearchAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
 	r.Set("current_page", _currentPage)
 	return nil
 }
 
 // GetCurrentPage CurrentPage Getter
-func (r TaobaoMobilePromotionCouponSellerSearchAPIRequest) GetCurrentPage() int64 {
+func (r TaobaomobilepromotioncouponsellersearchAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }

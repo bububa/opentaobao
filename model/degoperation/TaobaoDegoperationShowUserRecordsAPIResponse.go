@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoDegoperationShowUserRecordsAPIResponse 用户中奖记录 API返回值
+// TaobaodegoperationshowuserrecordsAPIResponse 用户中奖记录 API返回值
 // taobao.degoperation.show.user.records
 //
 // 用户中奖记录
-type TaobaoDegoperationShowUserRecordsAPIResponse struct {
+type TaobaodegoperationshowuserrecordsAPIResponse struct {
 	model.CommonResponse
-	TaobaoDegoperationShowUserRecordsAPIResponseModel
+	TaobaodegoperationshowuserrecordsAPIResponseModel
 }
 
-// TaobaoDegoperationShowUserRecordsAPIResponseModel is 用户中奖记录 成功返回结果
-type TaobaoDegoperationShowUserRecordsAPIResponseModel struct {
+// TaobaodegoperationshowuserrecordsAPIResponseModel is 用户中奖记录 成功返回结果
+type TaobaodegoperationshowuserrecordsAPIResponseModel struct {
 	XMLName xml.Name `xml:"degoperation_show_user_records_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

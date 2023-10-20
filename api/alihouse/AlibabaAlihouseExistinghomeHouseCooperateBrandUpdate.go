@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseExistinghomeHouseCooperateBrandUpdate 租房合作品牌更新接口
+// Alibabaalihouseexistinghomehousecooperatebrandupdate 租房合作品牌更新接口
 // alibaba.alihouse.existinghome.house.cooperate.brand.update
 //
 // 租房合作品牌更新接口
-func AlibabaAlihouseExistinghomeHouseCooperateBrandUpdate(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIResponse
+func Alibabaalihouseexistinghomehousecooperatebrandupdate(clt *core.SDKClient, req *alihouse.AlibabaalihouseexistinghomehousecooperatebrandupdateAPIRequest, session string) (*alihouse.AlibabaalihouseexistinghomehousecooperatebrandupdateAPIResponse, error) {
+	var resp alihouse.AlibabaalihouseexistinghomehousecooperatebrandupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

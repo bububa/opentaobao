@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIdleApprizeOrderFulfillmentAPIResponse 鉴定担保资金订单履约 API返回值
+// AlibabaidleapprizeorderfulfillmentAPIResponse 鉴定担保资金订单履约 API返回值
 // alibaba.idle.apprize.order.fulfillment
 //
 // 服务商针对自己的服务订单进行履约
-type AlibabaIdleApprizeOrderFulfillmentAPIResponse struct {
+type AlibabaidleapprizeorderfulfillmentAPIResponse struct {
 	model.CommonResponse
-	AlibabaIdleApprizeOrderFulfillmentAPIResponseModel
+	AlibabaidleapprizeorderfulfillmentAPIResponseModel
 }
 
-// AlibabaIdleApprizeOrderFulfillmentAPIResponseModel is 鉴定担保资金订单履约 成功返回结果
-type AlibabaIdleApprizeOrderFulfillmentAPIResponseModel struct {
+// AlibabaidleapprizeorderfulfillmentAPIResponseModel is 鉴定担保资金订单履约 成功返回结果
+type AlibabaidleapprizeorderfulfillmentAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_apprize_order_fulfillment_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

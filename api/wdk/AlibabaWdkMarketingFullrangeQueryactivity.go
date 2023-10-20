@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkMarketingFullrangeQueryactivity 全场活动查询活动
+// Alibabawdkmarketingfullrangequeryactivity 全场活动查询活动
 // alibaba.wdk.marketing.fullrange.queryactivity
 //
 // 全场活动查询活动
-func AlibabaWdkMarketingFullrangeQueryactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingFullrangeQueryactivityAPIRequest, session string) (*wdk.AlibabaWdkMarketingFullrangeQueryactivityAPIResponse, error) {
-	var resp wdk.AlibabaWdkMarketingFullrangeQueryactivityAPIResponse
+func Alibabawdkmarketingfullrangequeryactivity(clt *core.SDKClient, req *wdk.AlibabawdkmarketingfullrangequeryactivityAPIRequest, session string) (*wdk.AlibabawdkmarketingfullrangequeryactivityAPIResponse, error) {
+	var resp wdk.AlibabawdkmarketingfullrangequeryactivityAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

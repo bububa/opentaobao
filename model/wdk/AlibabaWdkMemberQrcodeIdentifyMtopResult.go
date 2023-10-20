@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkMemberQrcodeIdentifyMtopResult 结构体
-type AlibabaWdkMemberQrcodeIdentifyMtopResult struct {
+// AlibabawdkmemberqrcodeidentifyMtopResult 结构体
+type AlibabawdkmemberqrcodeidentifyMtopResult struct {
 	// msgCode
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msgInfo

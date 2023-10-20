@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaTxcsBrandmarketingCouponQrcodeGetApiResult 结构体
-type AlibabaTxcsBrandmarketingCouponQrcodeGetApiResult struct {
+// AlibabatxcsbrandmarketingcouponqrcodegetApiResult 结构体
+type AlibabatxcsbrandmarketingcouponqrcodegetApiResult struct {
 	// 错误信息
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 错误编码

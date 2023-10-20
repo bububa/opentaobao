@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDentalStoreInsertorupdateAPIResponse ISV新增/修改口腔门店 API返回值
+// AlibabaalihealthdentalstoreinsertorupdateAPIResponse ISV新增/修改口腔门店 API返回值
 // alibaba.alihealth.dental.store.insertorupdate
 //
 // ISV新增/修改口腔门店
-type AlibabaAlihealthDentalStoreInsertorupdateAPIResponse struct {
+type AlibabaalihealthdentalstoreinsertorupdateAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthDentalStoreInsertorupdateAPIResponseModel
+	AlibabaalihealthdentalstoreinsertorupdateAPIResponseModel
 }
 
-// AlibabaAlihealthDentalStoreInsertorupdateAPIResponseModel is ISV新增/修改口腔门店 成功返回结果
-type AlibabaAlihealthDentalStoreInsertorupdateAPIResponseModel struct {
+// AlibabaalihealthdentalstoreinsertorupdateAPIResponseModel is ISV新增/修改口腔门店 成功返回结果
+type AlibabaalihealthdentalstoreinsertorupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_dental_store_insertorupdate_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果
-	Result *AlibabaAlihealthDentalStoreInsertorupdateMtopResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaalihealthdentalstoreinsertorupdateMtopResult `json:"result,omitempty" xml:"result,omitempty"`
 }

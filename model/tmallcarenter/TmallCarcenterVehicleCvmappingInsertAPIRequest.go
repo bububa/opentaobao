@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallCarcenterVehicleCvmappingInsertAPIRequest EPC车辆版本信息与底盘信息库关系绑定 API请求
+// TmallcarcentervehiclecvmappinginsertAPIRequest EPC车辆版本信息与底盘信息库关系绑定 API请求
 // tmall.carcenter.vehicle.cvmapping.insert
 //
 // EPC车辆版本信息与底盘信息库关系绑定
-type TmallCarcenterVehicleCvmappingInsertAPIRequest struct {
+type TmallcarcentervehiclecvmappinginsertAPIRequest struct {
 	model.Params
 	// 版本ID
 	_supplierVersionCid string
@@ -20,65 +20,65 @@ type TmallCarcenterVehicleCvmappingInsertAPIRequest struct {
 	_status int64
 }
 
-// NewTmallCarcenterVehicleCvmappingInsertRequest 初始化TmallCarcenterVehicleCvmappingInsertAPIRequest对象
-func NewTmallCarcenterVehicleCvmappingInsertRequest() *TmallCarcenterVehicleCvmappingInsertAPIRequest {
-	return &TmallCarcenterVehicleCvmappingInsertAPIRequest{
+// NewTmallcarcentervehiclecvmappinginsertRequest 初始化TmallcarcentervehiclecvmappinginsertAPIRequest对象
+func NewTmallcarcentervehiclecvmappinginsertRequest() *TmallcarcentervehiclecvmappinginsertAPIRequest {
+	return &TmallcarcentervehiclecvmappinginsertAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetApiMethodName() string {
+func (r TmallcarcentervehiclecvmappinginsertAPIRequest) GetApiMethodName() string {
 	return "tmall.carcenter.vehicle.cvmapping.insert"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetApiParams(params url.Values) {
+func (r TmallcarcentervehiclecvmappinginsertAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetRawParams() model.Params {
+func (r TmallcarcentervehiclecvmappinginsertAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSupplierVersionCid is SupplierVersionCid Setter
 // 版本ID
-func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetSupplierVersionCid(_supplierVersionCid string) error {
+func (r *TmallcarcentervehiclecvmappinginsertAPIRequest) SetSupplierVersionCid(_supplierVersionCid string) error {
 	r._supplierVersionCid = _supplierVersionCid
 	r.Set("supplier_version_cid", _supplierVersionCid)
 	return nil
 }
 
 // GetSupplierVersionCid SupplierVersionCid Getter
-func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetSupplierVersionCid() string {
+func (r TmallcarcentervehiclecvmappinginsertAPIRequest) GetSupplierVersionCid() string {
 	return r._supplierVersionCid
 }
 
 // SetSupplierChassisCid is SupplierChassisCid Setter
 // 底盘ID
-func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetSupplierChassisCid(_supplierChassisCid string) error {
+func (r *TmallcarcentervehiclecvmappinginsertAPIRequest) SetSupplierChassisCid(_supplierChassisCid string) error {
 	r._supplierChassisCid = _supplierChassisCid
 	r.Set("supplier_chassis_cid", _supplierChassisCid)
 	return nil
 }
 
 // GetSupplierChassisCid SupplierChassisCid Getter
-func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetSupplierChassisCid() string {
+func (r TmallcarcentervehiclecvmappinginsertAPIRequest) GetSupplierChassisCid() string {
 	return r._supplierChassisCid
 }
 
 // SetStatus is Status Setter
 // 状态
-func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetStatus(_status int64) error {
+func (r *TmallcarcentervehiclecvmappinginsertAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
 	r.Set("status", _status)
 	return nil
 }
 
 // GetStatus Status Getter
-func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetStatus() int64 {
+func (r TmallcarcentervehiclecvmappinginsertAPIRequest) GetStatus() int64 {
 	return r._status
 }

@@ -5,7 +5,7 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// AlibabaAlihealthDrugCodeListCodeMedicalInsurance 根据码获取码信息接口-医保
+// Alibabaalihealthdrugcodelistcodemedicalinsurance 根据码获取码信息接口-医保
 // alibaba.alihealth.drug.code.list.code.medical.insurance
 //
 // 服务描述
@@ -15,8 +15,8 @@ import (
 // 若所传的监管码是非最小包装监管码，且存在药品混包的情况，则此接口不支持。这种
 // 情况下，需要分多次调用该接口。
 // 核查平台优先过滤非8开头的，长度非20位数字的码信息。
-func AlibabaAlihealthDrugCodeListCodeMedicalInsurance(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse
+func Alibabaalihealthdrugcodelistcodemedicalinsurance(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugcodelistcodemedicalinsuranceAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugcodelistcodemedicalinsuranceAPIResponse, error) {
+	var resp drugtrace.AlibabaalihealthdrugcodelistcodemedicalinsuranceAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

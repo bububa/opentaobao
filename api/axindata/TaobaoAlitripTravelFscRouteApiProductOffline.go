@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/axindata"
 )
 
-// TaobaoAlitripTravelFscRouteApiProductOffline 产品下线
+// Taobaoalitriptravelfscrouteapiproductoffline 产品下线
 // taobao.alitrip.travel.fsc.route.api.product.offline
 //
 // 产品下线
-func TaobaoAlitripTravelFscRouteApiProductOffline(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiProductOfflineAPIRequest, session string) (*axindata.TaobaoAlitripTravelFscRouteApiProductOfflineAPIResponse, error) {
-	var resp axindata.TaobaoAlitripTravelFscRouteApiProductOfflineAPIResponse
+func Taobaoalitriptravelfscrouteapiproductoffline(clt *core.SDKClient, req *axindata.TaobaoalitriptravelfscrouteapiproductofflineAPIRequest, session string) (*axindata.TaobaoalitriptravelfscrouteapiproductofflineAPIResponse, error) {
+	var resp axindata.TaobaoalitriptravelfscrouteapiproductofflineAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

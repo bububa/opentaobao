@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoVmarketEticketBeforeconsumeAPIResponse 电子凭证验码前置确认 API返回值
+// TaobaovmarketeticketbeforeconsumeAPIResponse 电子凭证验码前置确认 API返回值
 // taobao.vmarket.eticket.beforeconsume
 //
 // 商家验码之前的调用接口，用来同步到最新的订单状态并判断是否可以进行验码操作
-type TaobaoVmarketEticketBeforeconsumeAPIResponse struct {
+type TaobaovmarketeticketbeforeconsumeAPIResponse struct {
 	model.CommonResponse
-	TaobaoVmarketEticketBeforeconsumeAPIResponseModel
+	TaobaovmarketeticketbeforeconsumeAPIResponseModel
 }
 
-// TaobaoVmarketEticketBeforeconsumeAPIResponseModel is 电子凭证验码前置确认 成功返回结果
-type TaobaoVmarketEticketBeforeconsumeAPIResponseModel struct {
+// TaobaovmarketeticketbeforeconsumeAPIResponseModel is 电子凭证验码前置确认 成功返回结果
+type TaobaovmarketeticketbeforeconsumeAPIResponseModel struct {
 	XMLName xml.Name `xml:"vmarket_eticket_beforeconsume_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

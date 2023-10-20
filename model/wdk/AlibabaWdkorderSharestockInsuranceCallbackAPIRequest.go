@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkorderSharestockInsuranceCallbackAPIRequest 共享库存订单投保后回传保单号 API请求
+// AlibabawdkordersharestockinsurancecallbackAPIRequest 共享库存订单投保后回传保单号 API请求
 // alibaba.wdkorder.sharestock.insurance.callback
 //
 // 共享库存订单投保消息获取
-type AlibabaWdkorderSharestockInsuranceCallbackAPIRequest struct {
+type AlibabawdkordersharestockinsurancecallbackAPIRequest struct {
 	model.Params
 	// 投保单ID
 	_insuranceId string
@@ -18,52 +18,52 @@ type AlibabaWdkorderSharestockInsuranceCallbackAPIRequest struct {
 	_tbSubOrderId int64
 }
 
-// NewAlibabaWdkorderSharestockInsuranceCallbackRequest 初始化AlibabaWdkorderSharestockInsuranceCallbackAPIRequest对象
-func NewAlibabaWdkorderSharestockInsuranceCallbackRequest() *AlibabaWdkorderSharestockInsuranceCallbackAPIRequest {
-	return &AlibabaWdkorderSharestockInsuranceCallbackAPIRequest{
+// NewAlibabawdkordersharestockinsurancecallbackRequest 初始化AlibabawdkordersharestockinsurancecallbackAPIRequest对象
+func NewAlibabawdkordersharestockinsurancecallbackRequest() *AlibabawdkordersharestockinsurancecallbackAPIRequest {
+	return &AlibabawdkordersharestockinsurancecallbackAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkorderSharestockInsuranceCallbackAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkordersharestockinsurancecallbackAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdkorder.sharestock.insurance.callback"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkorderSharestockInsuranceCallbackAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkordersharestockinsurancecallbackAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkorderSharestockInsuranceCallbackAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkordersharestockinsurancecallbackAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetInsuranceId is InsuranceId Setter
 // 投保单ID
-func (r *AlibabaWdkorderSharestockInsuranceCallbackAPIRequest) SetInsuranceId(_insuranceId string) error {
+func (r *AlibabawdkordersharestockinsurancecallbackAPIRequest) SetInsuranceId(_insuranceId string) error {
 	r._insuranceId = _insuranceId
 	r.Set("insurance_id", _insuranceId)
 	return nil
 }
 
 // GetInsuranceId InsuranceId Getter
-func (r AlibabaWdkorderSharestockInsuranceCallbackAPIRequest) GetInsuranceId() string {
+func (r AlibabawdkordersharestockinsurancecallbackAPIRequest) GetInsuranceId() string {
 	return r._insuranceId
 }
 
 // SetTbSubOrderId is TbSubOrderId Setter
 // 淘宝交易子订单ID
-func (r *AlibabaWdkorderSharestockInsuranceCallbackAPIRequest) SetTbSubOrderId(_tbSubOrderId int64) error {
+func (r *AlibabawdkordersharestockinsurancecallbackAPIRequest) SetTbSubOrderId(_tbSubOrderId int64) error {
 	r._tbSubOrderId = _tbSubOrderId
 	r.Set("tb_sub_order_id", _tbSubOrderId)
 	return nil
 }
 
 // GetTbSubOrderId TbSubOrderId Getter
-func (r AlibabaWdkorderSharestockInsuranceCallbackAPIRequest) GetTbSubOrderId() int64 {
+func (r AlibabawdkordersharestockinsurancecallbackAPIRequest) GetTbSubOrderId() int64 {
 	return r._tbSubOrderId
 }

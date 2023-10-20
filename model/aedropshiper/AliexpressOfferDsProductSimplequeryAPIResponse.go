@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressOfferDsProductSimplequeryAPIResponse Dropshipper查询单个商品的简易信息 API返回值
+// AliexpressofferdsproductsimplequeryAPIResponse Dropshipper查询单个商品的简易信息 API返回值
 // aliexpress.offer.ds.product.simplequery
 //
 // 提供给Dropshipper的通过商品ID查找商品简易信息（包括SKU-价格/库存、产品状态等）的接口，只有特定买家可以使用
-type AliexpressOfferDsProductSimplequeryAPIResponse struct {
+type AliexpressofferdsproductsimplequeryAPIResponse struct {
 	model.CommonResponse
-	AliexpressOfferDsProductSimplequeryAPIResponseModel
+	AliexpressofferdsproductsimplequeryAPIResponseModel
 }
 
-// AliexpressOfferDsProductSimplequeryAPIResponseModel is Dropshipper查询单个商品的简易信息 成功返回结果
-type AliexpressOfferDsProductSimplequeryAPIResponseModel struct {
+// AliexpressofferdsproductsimplequeryAPIResponseModel is Dropshipper查询单个商品的简易信息 成功返回结果
+type AliexpressofferdsproductsimplequeryAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_offer_ds_product_simplequery_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

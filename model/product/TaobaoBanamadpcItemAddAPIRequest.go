@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoBanamadpcItemAddAPIRequest 新发商品 API请求
+// TaobaobanamadpcitemaddAPIRequest 新发商品 API请求
 // taobao.banamadpc.item.add
 //
 // 巴拿马供应商通过此接口新发商品
-type TaobaoBanamadpcItemAddAPIRequest struct {
+type TaobaobanamadpcitemaddAPIRequest struct {
 	model.Params
 	// 商品的schema xml
 	_xml string
@@ -18,52 +18,52 @@ type TaobaoBanamadpcItemAddAPIRequest struct {
 	_catId int64
 }
 
-// NewTaobaoBanamadpcItemAddRequest 初始化TaobaoBanamadpcItemAddAPIRequest对象
-func NewTaobaoBanamadpcItemAddRequest() *TaobaoBanamadpcItemAddAPIRequest {
-	return &TaobaoBanamadpcItemAddAPIRequest{
+// NewTaobaobanamadpcitemaddRequest 初始化TaobaobanamadpcitemaddAPIRequest对象
+func NewTaobaobanamadpcitemaddRequest() *TaobaobanamadpcitemaddAPIRequest {
+	return &TaobaobanamadpcitemaddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoBanamadpcItemAddAPIRequest) GetApiMethodName() string {
+func (r TaobaobanamadpcitemaddAPIRequest) GetApiMethodName() string {
 	return "taobao.banamadpc.item.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoBanamadpcItemAddAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaobanamadpcitemaddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoBanamadpcItemAddAPIRequest) GetRawParams() model.Params {
+func (r TaobaobanamadpcitemaddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetXml is Xml Setter
 // 商品的schema xml
-func (r *TaobaoBanamadpcItemAddAPIRequest) SetXml(_xml string) error {
+func (r *TaobaobanamadpcitemaddAPIRequest) SetXml(_xml string) error {
 	r._xml = _xml
 	r.Set("xml", _xml)
 	return nil
 }
 
 // GetXml Xml Getter
-func (r TaobaoBanamadpcItemAddAPIRequest) GetXml() string {
+func (r TaobaobanamadpcitemaddAPIRequest) GetXml() string {
 	return r._xml
 }
 
 // SetCatId is CatId Setter
 // 类目id
-func (r *TaobaoBanamadpcItemAddAPIRequest) SetCatId(_catId int64) error {
+func (r *TaobaobanamadpcitemaddAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
 	r.Set("cat_id", _catId)
 	return nil
 }
 
 // GetCatId CatId Getter
-func (r TaobaoBanamadpcItemAddAPIRequest) GetCatId() int64 {
+func (r TaobaobanamadpcitemaddAPIRequest) GetCatId() int64 {
 	return r._catId
 }

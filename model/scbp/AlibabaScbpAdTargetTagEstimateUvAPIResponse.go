@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpAdTargetTagEstimateUvAPIResponse 标签人群预估 API返回值
+// AlibabascbpadtargettagestimateuvAPIResponse 标签人群预估 API返回值
 // alibaba.scbp.ad.target.tag.estimate.uv
 //
 // 标签人群预估
-type AlibabaScbpAdTargetTagEstimateUvAPIResponse struct {
+type AlibabascbpadtargettagestimateuvAPIResponse struct {
 	model.CommonResponse
-	AlibabaScbpAdTargetTagEstimateUvAPIResponseModel
+	AlibabascbpadtargettagestimateuvAPIResponseModel
 }
 
-// AlibabaScbpAdTargetTagEstimateUvAPIResponseModel is 标签人群预估 成功返回结果
-type AlibabaScbpAdTargetTagEstimateUvAPIResponseModel struct {
+// AlibabascbpadtargettagestimateuvAPIResponseModel is 标签人群预估 成功返回结果
+type AlibabascbpadtargettagestimateuvAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_ad_target_tag_estimate_uv_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

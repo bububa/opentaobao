@@ -1,9 +1,9 @@
 package youkuott
 
-// YoukuTvoperatorMediaPageQueryModel 结构体
-type YoukuTvoperatorMediaPageQueryModel struct {
+// YoukutvoperatormediapagequeryModel 结构体
+type YoukutvoperatormediapagequeryModel struct {
 	// 数据列表
-	DataList []YoukuTvoperatorMediaPageQueryData `json:"data_list,omitempty" xml:"data_list>youku_tvoperator_media_page_query_data,omitempty"`
+	DataList []YoukutvoperatormediapagequeryData `json:"data_list,omitempty" xml:"data_list>youkutvoperatormediapagequery_data,omitempty"`
 	// 总条数
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 页号

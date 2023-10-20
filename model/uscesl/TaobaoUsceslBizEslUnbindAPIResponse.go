@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoUsceslBizEslUnbindAPIResponse 电子价签解绑接口 API返回值
+// TaobaousceslbizeslunbindAPIResponse 电子价签解绑接口 API返回值
 // taobao.uscesl.biz.esl.unbind
 //
 // 电子价签解绑接口
-type TaobaoUsceslBizEslUnbindAPIResponse struct {
+type TaobaousceslbizeslunbindAPIResponse struct {
 	model.CommonResponse
-	TaobaoUsceslBizEslUnbindAPIResponseModel
+	TaobaousceslbizeslunbindAPIResponseModel
 }
 
-// TaobaoUsceslBizEslUnbindAPIResponseModel is 电子价签解绑接口 成功返回结果
-type TaobaoUsceslBizEslUnbindAPIResponseModel struct {
+// TaobaousceslbizeslunbindAPIResponseModel is 电子价签解绑接口 成功返回结果
+type TaobaousceslbizeslunbindAPIResponseModel struct {
 	XMLName xml.Name `xml:"uscesl_biz_esl_unbind_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

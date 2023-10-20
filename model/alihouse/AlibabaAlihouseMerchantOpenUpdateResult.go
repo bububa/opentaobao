@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseMerchantOpenUpdateResult 结构体
-type AlibabaAlihouseMerchantOpenUpdateResult struct {
+// AlibabaalihousemerchantopenupdateResult 结构体
+type AlibabaalihousemerchantopenupdateResult struct {
 	// code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 返回信息

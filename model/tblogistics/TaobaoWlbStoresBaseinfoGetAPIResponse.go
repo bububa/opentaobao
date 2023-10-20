@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWlbStoresBaseinfoGetAPIResponse 商家按照仓的类型获取仓库接口 API返回值
+// TaobaowlbstoresbaseinfogetAPIResponse 商家按照仓的类型获取仓库接口 API返回值
 // taobao.wlb.stores.baseinfo.get
 //
 // 通过USERID和仓库类型，获取商家自有仓库或菜鸟仓库或全部仓库
-type TaobaoWlbStoresBaseinfoGetAPIResponse struct {
+type TaobaowlbstoresbaseinfogetAPIResponse struct {
 	model.CommonResponse
-	TaobaoWlbStoresBaseinfoGetAPIResponseModel
+	TaobaowlbstoresbaseinfogetAPIResponseModel
 }
 
-// TaobaoWlbStoresBaseinfoGetAPIResponseModel is 商家按照仓的类型获取仓库接口 成功返回结果
-type TaobaoWlbStoresBaseinfoGetAPIResponseModel struct {
+// TaobaowlbstoresbaseinfogetAPIResponseModel is 商家按照仓的类型获取仓库接口 成功返回结果
+type TaobaowlbstoresbaseinfogetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_stores_baseinfo_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

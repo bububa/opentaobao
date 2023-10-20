@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripTravelItemNewQueryAPIRequest 【API3.0】新版度假单个商品查询接口 API请求
+// TaobaoalitriptravelitemnewqueryAPIRequest 【API3.0】新版度假单个商品查询接口 API请求
 // taobao.alitrip.travel.item.new.query
 //
 // 新版旅行度假新商品查询接口（单个商品查询）
-type TaobaoAlitripTravelItemNewQueryAPIRequest struct {
+type TaobaoalitriptravelitemnewqueryAPIRequest struct {
 	model.Params
 	// 商品 外部商家编码。itemId和outProductId至少填写一个
 	_outProductId string
@@ -18,52 +18,52 @@ type TaobaoAlitripTravelItemNewQueryAPIRequest struct {
 	_itemId int64
 }
 
-// NewTaobaoAlitripTravelItemNewQueryRequest 初始化TaobaoAlitripTravelItemNewQueryAPIRequest对象
-func NewTaobaoAlitripTravelItemNewQueryRequest() *TaobaoAlitripTravelItemNewQueryAPIRequest {
-	return &TaobaoAlitripTravelItemNewQueryAPIRequest{
+// NewTaobaoalitriptravelitemnewqueryRequest 初始化TaobaoalitriptravelitemnewqueryAPIRequest对象
+func NewTaobaoalitriptravelitemnewqueryRequest() *TaobaoalitriptravelitemnewqueryAPIRequest {
+	return &TaobaoalitriptravelitemnewqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripTravelItemNewQueryAPIRequest) GetApiMethodName() string {
+func (r TaobaoalitriptravelitemnewqueryAPIRequest) GetApiMethodName() string {
 	return "taobao.alitrip.travel.item.new.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripTravelItemNewQueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoalitriptravelitemnewqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoAlitripTravelItemNewQueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoalitriptravelitemnewqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOutProductId is OutProductId Setter
 // 商品 外部商家编码。itemId和outProductId至少填写一个
-func (r *TaobaoAlitripTravelItemNewQueryAPIRequest) SetOutProductId(_outProductId string) error {
+func (r *TaobaoalitriptravelitemnewqueryAPIRequest) SetOutProductId(_outProductId string) error {
 	r._outProductId = _outProductId
 	r.Set("out_product_id", _outProductId)
 	return nil
 }
 
 // GetOutProductId OutProductId Getter
-func (r TaobaoAlitripTravelItemNewQueryAPIRequest) GetOutProductId() string {
+func (r TaobaoalitriptravelitemnewqueryAPIRequest) GetOutProductId() string {
 	return r._outProductId
 }
 
 // SetItemId is ItemId Setter
 // 商品id。itemId和outProductId至少填写一个
-func (r *TaobaoAlitripTravelItemNewQueryAPIRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoalitriptravelitemnewqueryAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
 	r.Set("item_id", _itemId)
 	return nil
 }
 
 // GetItemId ItemId Getter
-func (r TaobaoAlitripTravelItemNewQueryAPIRequest) GetItemId() int64 {
+func (r TaobaoalitriptravelitemnewqueryAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

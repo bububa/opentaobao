@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wms"
 )
 
-// TaobaoWlbWmsStockOutOrderNotify 出库单通知
+// Taobaowlbwmsstockoutordernotify 出库单通知
 // taobao.wlb.wms.stock.out.order.notify
 //
 // 出库单通知
-func TaobaoWlbWmsStockOutOrderNotify(clt *core.SDKClient, req *wms.TaobaoWlbWmsStockOutOrderNotifyAPIRequest, session string) (*wms.TaobaoWlbWmsStockOutOrderNotifyAPIResponse, error) {
-	var resp wms.TaobaoWlbWmsStockOutOrderNotifyAPIResponse
+func Taobaowlbwmsstockoutordernotify(clt *core.SDKClient, req *wms.TaobaowlbwmsstockoutordernotifyAPIRequest, session string) (*wms.TaobaowlbwmsstockoutordernotifyAPIResponse, error) {
+	var resp wms.TaobaowlbwmsstockoutordernotifyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripMerchantGalaxyWechatCardQueryRecordResponse 结构体
-type AlitripMerchantGalaxyWechatCardQueryRecordResponse struct {
+// AlitripmerchantgalaxywechatcardqueryrecordResponse 结构体
+type AlitripmerchantgalaxywechatcardqueryrecordResponse struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 内容

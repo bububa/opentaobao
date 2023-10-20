@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallgenie"
 )
 
-// TaobaoAilabAicloudTopMemoAlarmCreate 天猫精灵闹钟创建
+// Taobaoailabaicloudtopmemoalarmcreate 天猫精灵闹钟创建
 // taobao.ailab.aicloud.top.memo.alarm.create
 //
 // 天猫精灵闹钟创建
-func TaobaoAilabAicloudTopMemoAlarmCreate(clt *core.SDKClient, req *tmallgenie.TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest, session string) (*tmallgenie.TaobaoAilabAicloudTopMemoAlarmCreateAPIResponse, error) {
-	var resp tmallgenie.TaobaoAilabAicloudTopMemoAlarmCreateAPIResponse
+func Taobaoailabaicloudtopmemoalarmcreate(clt *core.SDKClient, req *tmallgenie.TaobaoailabaicloudtopmemoalarmcreateAPIRequest, session string) (*tmallgenie.TaobaoailabaicloudtopmemoalarmcreateAPIResponse, error) {
+	var resp tmallgenie.TaobaoailabaicloudtopmemoalarmcreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

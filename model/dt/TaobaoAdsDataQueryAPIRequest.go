@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAdsDataQueryAPIRequest 导入数据查询 API请求
+// TaobaoadsdataqueryAPIRequest 导入数据查询 API请求
 // taobao.ads.data.query
 //
 // 导入数据查询
-type TaobaoAdsDataQueryAPIRequest struct {
+type TaobaoadsdataqueryAPIRequest struct {
 	model.Params
 	// 查询参数
 	_param0 *TaskDataImportSeqQry
 }
 
-// NewTaobaoAdsDataQueryRequest 初始化TaobaoAdsDataQueryAPIRequest对象
-func NewTaobaoAdsDataQueryRequest() *TaobaoAdsDataQueryAPIRequest {
-	return &TaobaoAdsDataQueryAPIRequest{
+// NewTaobaoadsdataqueryRequest 初始化TaobaoadsdataqueryAPIRequest对象
+func NewTaobaoadsdataqueryRequest() *TaobaoadsdataqueryAPIRequest {
+	return &TaobaoadsdataqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoAdsDataQueryAPIRequest) GetApiMethodName() string {
+func (r TaobaoadsdataqueryAPIRequest) GetApiMethodName() string {
 	return "taobao.ads.data.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAdsDataQueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoadsdataqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoAdsDataQueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoadsdataqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam0 is Param0 Setter
 // 查询参数
-func (r *TaobaoAdsDataQueryAPIRequest) SetParam0(_param0 *TaskDataImportSeqQry) error {
+func (r *TaobaoadsdataqueryAPIRequest) SetParam0(_param0 *TaskDataImportSeqQry) error {
 	r._param0 = _param0
 	r.Set("param0", _param0)
 	return nil
 }
 
 // GetParam0 Param0 Getter
-func (r TaobaoAdsDataQueryAPIRequest) GetParam0() *TaskDataImportSeqQry {
+func (r TaobaoadsdataqueryAPIRequest) GetParam0() *TaskDataImportSeqQry {
 	return r._param0
 }

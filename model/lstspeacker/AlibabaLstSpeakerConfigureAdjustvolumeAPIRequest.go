@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest 音箱音量调节 API请求
+// AlibabalstspeakerconfigureadjustvolumeAPIRequest 音箱音量调节 API请求
 // alibaba.lst.speaker.configure.adjustvolume
 //
 // 音箱音量调节
-type AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest struct {
+type AlibabalstspeakerconfigureadjustvolumeAPIRequest struct {
 	model.Params
 	// 设备编码
 	_deviceCode string
@@ -20,65 +20,65 @@ type AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest struct {
 	_valueType string
 }
 
-// NewAlibabaLstSpeakerConfigureAdjustvolumeRequest 初始化AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest对象
-func NewAlibabaLstSpeakerConfigureAdjustvolumeRequest() *AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest {
-	return &AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest{
+// NewAlibabalstspeakerconfigureadjustvolumeRequest 初始化AlibabalstspeakerconfigureadjustvolumeAPIRequest对象
+func NewAlibabalstspeakerconfigureadjustvolumeRequest() *AlibabalstspeakerconfigureadjustvolumeAPIRequest {
+	return &AlibabalstspeakerconfigureadjustvolumeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) GetApiMethodName() string {
+func (r AlibabalstspeakerconfigureadjustvolumeAPIRequest) GetApiMethodName() string {
 	return "alibaba.lst.speaker.configure.adjustvolume"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabalstspeakerconfigureadjustvolumeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) GetRawParams() model.Params {
+func (r AlibabalstspeakerconfigureadjustvolumeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDeviceCode is DeviceCode Setter
 // 设备编码
-func (r *AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) SetDeviceCode(_deviceCode string) error {
+func (r *AlibabalstspeakerconfigureadjustvolumeAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
 	r.Set("device_code", _deviceCode)
 	return nil
 }
 
 // GetDeviceCode DeviceCode Getter
-func (r AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) GetDeviceCode() string {
+func (r AlibabalstspeakerconfigureadjustvolumeAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
 // SetVolume is Volume Setter
 // 音量直
-func (r *AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) SetVolume(_volume string) error {
+func (r *AlibabalstspeakerconfigureadjustvolumeAPIRequest) SetVolume(_volume string) error {
 	r._volume = _volume
 	r.Set("volume", _volume)
 	return nil
 }
 
 // GetVolume Volume Getter
-func (r AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) GetVolume() string {
+func (r AlibabalstspeakerconfigureadjustvolumeAPIRequest) GetVolume() string {
 	return r._volume
 }
 
 // SetValueType is ValueType Setter
 // 音量类型，val:固定值, percent:百分比
-func (r *AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) SetValueType(_valueType string) error {
+func (r *AlibabalstspeakerconfigureadjustvolumeAPIRequest) SetValueType(_valueType string) error {
 	r._valueType = _valueType
 	r.Set("value_type", _valueType)
 	return nil
 }
 
 // GetValueType ValueType Getter
-func (r AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) GetValueType() string {
+func (r AlibabalstspeakerconfigureadjustvolumeAPIRequest) GetValueType() string {
 	return r._valueType
 }

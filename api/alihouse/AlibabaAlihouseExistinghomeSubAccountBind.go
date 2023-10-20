@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseExistinghomeSubAccountBind 子账号入驻
+// Alibabaalihouseexistinghomesubaccountbind 子账号入驻
 // alibaba.alihouse.existinghome.sub.account.bind
 //
 // 子账号入驻
-func AlibabaAlihouseExistinghomeSubAccountBind(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeSubAccountBindAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeSubAccountBindAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeSubAccountBindAPIResponse
+func Alibabaalihouseexistinghomesubaccountbind(clt *core.SDKClient, req *alihouse.AlibabaalihouseexistinghomesubaccountbindAPIRequest, session string) (*alihouse.AlibabaalihouseexistinghomesubaccountbindAPIResponse, error) {
+	var resp alihouse.AlibabaalihouseexistinghomesubaccountbindAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

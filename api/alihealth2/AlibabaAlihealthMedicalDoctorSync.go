@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealth2"
 )
 
-// AlibabaAlihealthMedicalDoctorSync 阿里健康预约挂号医生同步接口
+// Alibabaalihealthmedicaldoctorsync 阿里健康预约挂号医生同步接口
 // alibaba.alihealth.medical.doctor.sync
 //
 // 阿里健康预约挂号医生同步接口
-func AlibabaAlihealthMedicalDoctorSync(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthMedicalDoctorSyncAPIRequest, session string) (*alihealth2.AlibabaAlihealthMedicalDoctorSyncAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthMedicalDoctorSyncAPIResponse
+func Alibabaalihealthmedicaldoctorsync(clt *core.SDKClient, req *alihealth2.AlibabaalihealthmedicaldoctorsyncAPIRequest, session string) (*alihealth2.AlibabaalihealthmedicaldoctorsyncAPIResponse, error) {
+	var resp alihealth2.AlibabaalihealthmedicaldoctorsyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

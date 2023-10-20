@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponse 天猫精灵 IoT 视频 SaaS 服务-江苏电信-appKeySecret 更新 API返回值
+// AlibabaaliyunaicloudiotvisionsaasctccjiangsukeysecretupdateAPIResponse 天猫精灵 IoT 视频 SaaS 服务-江苏电信-appKeySecret 更新 API返回值
 // alibaba.aliyun.aicloud.iot.vision.saas.ctcc.jiangsu.key.secret.update
 //
 // 天猫精灵 IoT 视频 SaaS 服务-江苏电信-appKeySecret 更新
-type AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponse struct {
+type AlibabaaliyunaicloudiotvisionsaasctccjiangsukeysecretupdateAPIResponse struct {
 	model.CommonResponse
-	AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponseModel
+	AlibabaaliyunaicloudiotvisionsaasctccjiangsukeysecretupdateAPIResponseModel
 }
 
-// AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponseModel is 天猫精灵 IoT 视频 SaaS 服务-江苏电信-appKeySecret 更新 成功返回结果
-type AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponseModel struct {
+// AlibabaaliyunaicloudiotvisionsaasctccjiangsukeysecretupdateAPIResponseModel is 天猫精灵 IoT 视频 SaaS 服务-江苏电信-appKeySecret 更新 成功返回结果
+type AlibabaaliyunaicloudiotvisionsaasctccjiangsukeysecretupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_aliyun_aicloud_iot_vision_saas_ctcc_jiangsu_key_secret_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSingletreasureActivityQueryAPIRequest 查询活动列表接口 API请求
+// TaobaosingletreasureactivityqueryAPIRequest 查询活动列表接口 API请求
 // taobao.singletreasure.activity.query
 //
 // 查询活动列表接口
-type TaobaoSingletreasureActivityQueryAPIRequest struct {
+type TaobaosingletreasureactivityqueryAPIRequest struct {
 	model.Params
 	// 查询对象
 	_query *PageQueryDto
 }
 
-// NewTaobaoSingletreasureActivityQueryRequest 初始化TaobaoSingletreasureActivityQueryAPIRequest对象
-func NewTaobaoSingletreasureActivityQueryRequest() *TaobaoSingletreasureActivityQueryAPIRequest {
-	return &TaobaoSingletreasureActivityQueryAPIRequest{
+// NewTaobaosingletreasureactivityqueryRequest 初始化TaobaosingletreasureactivityqueryAPIRequest对象
+func NewTaobaosingletreasureactivityqueryRequest() *TaobaosingletreasureactivityqueryAPIRequest {
+	return &TaobaosingletreasureactivityqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoSingletreasureActivityQueryAPIRequest) GetApiMethodName() string {
+func (r TaobaosingletreasureactivityqueryAPIRequest) GetApiMethodName() string {
 	return "taobao.singletreasure.activity.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSingletreasureActivityQueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaosingletreasureactivityqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoSingletreasureActivityQueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaosingletreasureactivityqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQuery is Query Setter
 // 查询对象
-func (r *TaobaoSingletreasureActivityQueryAPIRequest) SetQuery(_query *PageQueryDto) error {
+func (r *TaobaosingletreasureactivityqueryAPIRequest) SetQuery(_query *PageQueryDto) error {
 	r._query = _query
 	r.Set("query", _query)
 	return nil
 }
 
 // GetQuery Query Getter
-func (r TaobaoSingletreasureActivityQueryAPIRequest) GetQuery() *PageQueryDto {
+func (r TaobaosingletreasureactivityqueryAPIRequest) GetQuery() *PageQueryDto {
 	return r._query
 }

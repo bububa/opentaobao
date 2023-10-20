@@ -13,9 +13,9 @@ import (
 type TaobaotbkscmembergroupoptionalAPIRequest struct {
 	model.Params
 	// 淘宝数字id
-	_tbnumids string
+	_tbNumIds string
 	// member组id
-	_membergroupid int64
+	_memberGroupId int64
 }
 
 // NewTaobaotbkscmembergroupoptionalRequest 初始化TaobaotbkscmembergroupoptionalAPIRequest对象
@@ -42,28 +42,28 @@ func (r TaobaotbkscmembergroupoptionalAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetTbnumids is Tbnumids Setter
+// SetTbNumIds is TbNumIds Setter
 // 淘宝数字id
-func (r *TaobaotbkscmembergroupoptionalAPIRequest) SetTbnumids(_tbnumids string) error {
-	r._tbnumids = _tbnumids
-	r.Set("tb_num_ids", _tbnumids)
+func (r *TaobaotbkscmembergroupoptionalAPIRequest) SetTbNumIds(_tbNumIds string) error {
+	r._tbNumIds = _tbNumIds
+	r.Set("tb_num_ids", _tbNumIds)
 	return nil
 }
 
-// GetTbnumids Tbnumids Getter
-func (r TaobaotbkscmembergroupoptionalAPIRequest) GetTbnumids() string {
-	return r._tbnumids
+// GetTbNumIds TbNumIds Getter
+func (r TaobaotbkscmembergroupoptionalAPIRequest) GetTbNumIds() string {
+	return r._tbNumIds
 }
 
-// SetMembergroupid is Membergroupid Setter
+// SetMemberGroupId is MemberGroupId Setter
 // member组id
-func (r *TaobaotbkscmembergroupoptionalAPIRequest) SetMembergroupid(_membergroupid int64) error {
-	r._membergroupid = _membergroupid
-	r.Set("member_group_id", _membergroupid)
+func (r *TaobaotbkscmembergroupoptionalAPIRequest) SetMemberGroupId(_memberGroupId int64) error {
+	r._memberGroupId = _memberGroupId
+	r.Set("member_group_id", _memberGroupId)
 	return nil
 }
 
-// GetMembergroupid Membergroupid Getter
-func (r TaobaotbkscmembergroupoptionalAPIRequest) GetMembergroupid() int64 {
-	return r._membergroupid
+// GetMemberGroupId MemberGroupId Getter
+func (r TaobaotbkscmembergroupoptionalAPIRequest) GetMemberGroupId() int64 {
+	return r._memberGroupId
 }

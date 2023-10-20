@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// TaobaoLogisticsExpressAddressBlacklistTmsAsync 上门取退可揽范围黑名单同步/更新
+// Taobaologisticsexpressaddressblacklisttmsasync 上门取退可揽范围黑名单同步/更新
 // taobao.logistics.express.address.blacklist.tms.async
 //
 // 上门取退可揽范围黑名单同步/更新
-func TaobaoLogisticsExpressAddressBlacklistTmsAsync(clt *core.SDKClient, req *ascp.TaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest, session string) (*ascp.TaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIResponse, error) {
-	var resp ascp.TaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIResponse
+func Taobaologisticsexpressaddressblacklisttmsasync(clt *core.SDKClient, req *ascp.TaobaologisticsexpressaddressblacklisttmsasyncAPIRequest, session string) (*ascp.TaobaologisticsexpressaddressblacklisttmsasyncAPIResponse, error) {
+	var resp ascp.TaobaologisticsexpressaddressblacklisttmsasyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// AlibabaScbpAdGroupDeleteForbiddenProduct 删除屏蔽品
+// Alibabascbpadgroupdeleteforbiddenproduct 删除屏蔽品
 // alibaba.scbp.ad.group.delete.forbidden.product
 //
 // 删除屏蔽品
-func AlibabaScbpAdGroupDeleteForbiddenProduct(clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupDeleteForbiddenProductAPIRequest, session string) (*scbp.AlibabaScbpAdGroupDeleteForbiddenProductAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdGroupDeleteForbiddenProductAPIResponse
+func Alibabascbpadgroupdeleteforbiddenproduct(clt *core.SDKClient, req *scbp.AlibabascbpadgroupdeleteforbiddenproductAPIRequest, session string) (*scbp.AlibabascbpadgroupdeleteforbiddenproductAPIResponse, error) {
+	var resp scbp.AlibabascbpadgroupdeleteforbiddenproductAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

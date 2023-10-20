@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-// TaobaoUmpMbbsListGet 通过ids列表获取营销积木块列表
+// Taobaoumpmbbslistget 通过ids列表获取营销积木块列表
 // taobao.ump.mbbs.list.get
 //
 // 通过营销积木id列表来获取营销积木块列表。
-func TaobaoUmpMbbsListGet(clt *core.SDKClient, req *promotion.TaobaoUmpMbbsListGetAPIRequest, session string) (*promotion.TaobaoUmpMbbsListGetAPIResponse, error) {
-	var resp promotion.TaobaoUmpMbbsListGetAPIResponse
+func Taobaoumpmbbslistget(clt *core.SDKClient, req *promotion.TaobaoumpmbbslistgetAPIRequest, session string) (*promotion.TaobaoumpmbbslistgetAPIResponse, error) {
+	var resp promotion.TaobaoumpmbbslistgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

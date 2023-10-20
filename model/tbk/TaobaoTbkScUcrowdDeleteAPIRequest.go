@@ -13,7 +13,7 @@ import (
 type TaobaotbkscucrowddeleteAPIRequest struct {
 	model.Params
 	// 人群标签id
-	_ucrowdid int64
+	_ucrowdId int64
 }
 
 // NewTaobaotbkscucrowddeleteRequest 初始化TaobaotbkscucrowddeleteAPIRequest对象
@@ -40,15 +40,15 @@ func (r TaobaotbkscucrowddeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetUcrowdid is Ucrowdid Setter
+// SetUcrowdId is UcrowdId Setter
 // 人群标签id
-func (r *TaobaotbkscucrowddeleteAPIRequest) SetUcrowdid(_ucrowdid int64) error {
-	r._ucrowdid = _ucrowdid
-	r.Set("ucrowd_id", _ucrowdid)
+func (r *TaobaotbkscucrowddeleteAPIRequest) SetUcrowdId(_ucrowdId int64) error {
+	r._ucrowdId = _ucrowdId
+	r.Set("ucrowd_id", _ucrowdId)
 	return nil
 }
 
-// GetUcrowdid Ucrowdid Getter
-func (r TaobaotbkscucrowddeleteAPIRequest) GetUcrowdid() int64 {
-	return r._ucrowdid
+// GetUcrowdId UcrowdId Getter
+func (r TaobaotbkscucrowddeleteAPIRequest) GetUcrowdId() int64 {
+	return r._ucrowdId
 }

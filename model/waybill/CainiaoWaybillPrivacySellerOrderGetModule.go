@@ -1,7 +1,7 @@
 package waybill
 
-// CainiaoWaybillPrivacySellerOrderGetModule 结构体
-type CainiaoWaybillPrivacySellerOrderGetModule struct {
+// CainiaowaybillprivacysellerordergetModule 结构体
+type CainiaowaybillprivacysellerordergetModule struct {
 	// 商家ID
 	SellerId string `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// 日期

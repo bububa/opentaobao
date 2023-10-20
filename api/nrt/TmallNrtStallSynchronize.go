@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/nrt"
 )
 
-// TmallNrtStallSynchronize 摊位信息同步
+// Tmallnrtstallsynchronize 摊位信息同步
 // tmall.nrt.stall.synchronize
 //
 // 摊位信息同步
-func TmallNrtStallSynchronize(clt *core.SDKClient, req *nrt.TmallNrtStallSynchronizeAPIRequest, session string) (*nrt.TmallNrtStallSynchronizeAPIResponse, error) {
-	var resp nrt.TmallNrtStallSynchronizeAPIResponse
+func Tmallnrtstallsynchronize(clt *core.SDKClient, req *nrt.TmallnrtstallsynchronizeAPIRequest, session string) (*nrt.TmallnrtstallsynchronizeAPIResponse, error) {
+	var resp nrt.TmallnrtstallsynchronizeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

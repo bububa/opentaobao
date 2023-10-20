@@ -1,7 +1,7 @@
 package bus
 
-// B2BTicketInfo 结构体
-type B2BTicketInfo struct {
+// B2bticketInfo 结构体
+type B2bticketInfo struct {
 	// 乘客类型
 	RiderCertType string `json:"rider_cert_type,omitempty" xml:"rider_cert_type,omitempty"`
 	// 乘客姓名

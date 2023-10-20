@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoBusRefundfeeGetAPIResponse 查询退票费用明细 API返回值
+// TaobaobusrefundfeegetAPIResponse 查询退票费用明细 API返回值
 // taobao.bus.refundfee.get
 //
 // 查询退票的费用信息
-type TaobaoBusRefundfeeGetAPIResponse struct {
+type TaobaobusrefundfeegetAPIResponse struct {
 	model.CommonResponse
-	TaobaoBusRefundfeeGetAPIResponseModel
+	TaobaobusrefundfeegetAPIResponseModel
 }
 
-// TaobaoBusRefundfeeGetAPIResponseModel is 查询退票费用明细 成功返回结果
-type TaobaoBusRefundfeeGetAPIResponseModel struct {
+// TaobaobusrefundfeegetAPIResponseModel is 查询退票费用明细 成功返回结果
+type TaobaobusrefundfeegetAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_refundfee_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *B2BQueryRefundFeeRp `json:"result,omitempty" xml:"result,omitempty"`
+	Result *B2bqueryRefundFeeRp `json:"result,omitempty" xml:"result,omitempty"`
 }

@@ -13,7 +13,7 @@ import (
 type TaobaotbkorderrefundgetAPIRequest struct {
 	model.Params
 	// 全量维权订单查询入参
-	_publisherrefundorderqueryoption *PublisherRefundOrderQueryOption
+	_publisherRefundOrderQueryOption *PublisherRefundOrderQueryOption
 }
 
 // NewTaobaotbkorderrefundgetRequest 初始化TaobaotbkorderrefundgetAPIRequest对象
@@ -40,15 +40,15 @@ func (r TaobaotbkorderrefundgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetPublisherrefundorderqueryoption is Publisherrefundorderqueryoption Setter
+// SetPublisherRefundOrderQueryOption is PublisherRefundOrderQueryOption Setter
 // 全量维权订单查询入参
-func (r *TaobaotbkorderrefundgetAPIRequest) SetPublisherrefundorderqueryoption(_publisherrefundorderqueryoption *PublisherRefundOrderQueryOption) error {
-	r._publisherrefundorderqueryoption = _publisherrefundorderqueryoption
-	r.Set("publisher_refund_order_query_option", _publisherrefundorderqueryoption)
+func (r *TaobaotbkorderrefundgetAPIRequest) SetPublisherRefundOrderQueryOption(_publisherRefundOrderQueryOption *PublisherRefundOrderQueryOption) error {
+	r._publisherRefundOrderQueryOption = _publisherRefundOrderQueryOption
+	r.Set("publisher_refund_order_query_option", _publisherRefundOrderQueryOption)
 	return nil
 }
 
-// GetPublisherrefundorderqueryoption Publisherrefundorderqueryoption Getter
-func (r TaobaotbkorderrefundgetAPIRequest) GetPublisherrefundorderqueryoption() *PublisherRefundOrderQueryOption {
-	return r._publisherrefundorderqueryoption
+// GetPublisherRefundOrderQueryOption PublisherRefundOrderQueryOption Getter
+func (r TaobaotbkorderrefundgetAPIRequest) GetPublisherRefundOrderQueryOption() *PublisherRefundOrderQueryOption {
+	return r._publisherRefundOrderQueryOption
 }

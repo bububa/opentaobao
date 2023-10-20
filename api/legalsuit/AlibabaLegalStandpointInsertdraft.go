@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/legalsuit"
 )
 
-// AlibabaLegalStandpointInsertdraft 插入草稿
+// Alibabalegalstandpointinsertdraft 插入草稿
 // alibaba.legal.standpoint.insertdraft
 //
 // 插入草稿
-func AlibabaLegalStandpointInsertdraft(clt *core.SDKClient, req *legalsuit.AlibabaLegalStandpointInsertdraftAPIRequest, session string) (*legalsuit.AlibabaLegalStandpointInsertdraftAPIResponse, error) {
-	var resp legalsuit.AlibabaLegalStandpointInsertdraftAPIResponse
+func Alibabalegalstandpointinsertdraft(clt *core.SDKClient, req *legalsuit.AlibabalegalstandpointinsertdraftAPIRequest, session string) (*legalsuit.AlibabalegalstandpointinsertdraftAPIResponse, error) {
+	var resp legalsuit.AlibabalegalstandpointinsertdraftAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

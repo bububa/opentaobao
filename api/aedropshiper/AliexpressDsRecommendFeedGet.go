@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aedropshiper"
 )
 
-// AliexpressDsRecommendFeedGet 获取推荐商品信息流接口
+// Aliexpressdsrecommendfeedget 获取推荐商品信息流接口
 // aliexpress.ds.recommend.feed.get
 //
 // 获取推荐商品信息流
-func AliexpressDsRecommendFeedGet(clt *core.SDKClient, req *aedropshiper.AliexpressDsRecommendFeedGetAPIRequest, session string) (*aedropshiper.AliexpressDsRecommendFeedGetAPIResponse, error) {
-	var resp aedropshiper.AliexpressDsRecommendFeedGetAPIResponse
+func Aliexpressdsrecommendfeedget(clt *core.SDKClient, req *aedropshiper.AliexpressdsrecommendfeedgetAPIRequest, session string) (*aedropshiper.AliexpressdsrecommendfeedgetAPIResponse, error) {
+	var resp aedropshiper.AliexpressdsrecommendfeedgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

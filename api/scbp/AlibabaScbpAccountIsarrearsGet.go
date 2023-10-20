@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// AlibabaScbpAccountIsarrearsGet 查询关键词推广账户是否欠款
+// Alibabascbpaccountisarrearsget 查询关键词推广账户是否欠款
 // alibaba.scbp.account.isarrears.get
 //
 // 查询关键词推广账户是否欠款
-func AlibabaScbpAccountIsarrearsGet(clt *core.SDKClient, req *scbp.AlibabaScbpAccountIsarrearsGetAPIRequest, session string) (*scbp.AlibabaScbpAccountIsarrearsGetAPIResponse, error) {
-	var resp scbp.AlibabaScbpAccountIsarrearsGetAPIResponse
+func Alibabascbpaccountisarrearsget(clt *core.SDKClient, req *scbp.AlibabascbpaccountisarrearsgetAPIRequest, session string) (*scbp.AlibabascbpaccountisarrearsgetAPIResponse, error) {
+	var resp scbp.AlibabascbpaccountisarrearsgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

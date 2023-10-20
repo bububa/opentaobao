@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/legalsuit"
 )
 
-// AlibabaLegalStandpointCollectionstandpointQuery 查询收藏口径
+// Alibabalegalstandpointcollectionstandpointquery 查询收藏口径
 // alibaba.legal.standpoint.collectionstandpoint.query
 //
 // 查询收藏口径
-func AlibabaLegalStandpointCollectionstandpointQuery(clt *core.SDKClient, req *legalsuit.AlibabaLegalStandpointCollectionstandpointQueryAPIRequest, session string) (*legalsuit.AlibabaLegalStandpointCollectionstandpointQueryAPIResponse, error) {
-	var resp legalsuit.AlibabaLegalStandpointCollectionstandpointQueryAPIResponse
+func Alibabalegalstandpointcollectionstandpointquery(clt *core.SDKClient, req *legalsuit.AlibabalegalstandpointcollectionstandpointqueryAPIRequest, session string) (*legalsuit.AlibabalegalstandpointcollectionstandpointqueryAPIResponse, error) {
+	var resp legalsuit.AlibabalegalstandpointcollectionstandpointqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

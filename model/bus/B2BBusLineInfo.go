@@ -1,7 +1,7 @@
 package bus
 
-// B2BBusLineInfo 结构体
-type B2BBusLineInfo struct {
+// B2bbusLineInfo 结构体
+type B2bbusLineInfo struct {
 	// 出发时间
 	DepTime string `json:"dep_time,omitempty" xml:"dep_time,omitempty"`
 	// 目的地

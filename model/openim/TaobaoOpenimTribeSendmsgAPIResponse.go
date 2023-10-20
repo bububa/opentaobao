@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpenimTribeSendmsgAPIResponse 发送群消息 API返回值
+// TaobaoopenimtribesendmsgAPIResponse 发送群消息 API返回值
 // taobao.openim.tribe.sendmsg
 //
 // 发送群消息，目前支持发送4种类型的群消息，普通文本，图片，语音，自定义消息
-type TaobaoOpenimTribeSendmsgAPIResponse struct {
+type TaobaoopenimtribesendmsgAPIResponse struct {
 	model.CommonResponse
-	TaobaoOpenimTribeSendmsgAPIResponseModel
+	TaobaoopenimtribesendmsgAPIResponseModel
 }
 
-// TaobaoOpenimTribeSendmsgAPIResponseModel is 发送群消息 成功返回结果
-type TaobaoOpenimTribeSendmsgAPIResponseModel struct {
+// TaobaoopenimtribesendmsgAPIResponseModel is 发送群消息 成功返回结果
+type TaobaoopenimtribesendmsgAPIResponseModel struct {
 	XMLName xml.Name `xml:"openim_tribe_sendmsg_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest 批量新增更新员工 API请求
+// AlibabaeleenterpriseemployeebatchupdateAPIRequest 批量新增更新员工 API请求
 // alibaba.ele.enterprise.employee.batchupdate
 //
 // 批量新增更新员工
-type AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest struct {
+type AlibabaeleenterpriseemployeebatchupdateAPIRequest struct {
 	model.Params
 	// 批量员工信息
 	_enterpriseDatas []EmployeeInfoDto
 }
 
-// NewAlibabaEleEnterpriseEmployeeBatchupdateRequest 初始化AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest对象
-func NewAlibabaEleEnterpriseEmployeeBatchupdateRequest() *AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest {
-	return &AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest{
+// NewAlibabaeleenterpriseemployeebatchupdateRequest 初始化AlibabaeleenterpriseemployeebatchupdateAPIRequest对象
+func NewAlibabaeleenterpriseemployeebatchupdateRequest() *AlibabaeleenterpriseemployeebatchupdateAPIRequest {
+	return &AlibabaeleenterpriseemployeebatchupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest) GetApiMethodName() string {
+func (r AlibabaeleenterpriseemployeebatchupdateAPIRequest) GetApiMethodName() string {
 	return "alibaba.ele.enterprise.employee.batchupdate"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaeleenterpriseemployeebatchupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest) GetRawParams() model.Params {
+func (r AlibabaeleenterpriseemployeebatchupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetEnterpriseDatas is EnterpriseDatas Setter
 // 批量员工信息
-func (r *AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest) SetEnterpriseDatas(_enterpriseDatas []EmployeeInfoDto) error {
+func (r *AlibabaeleenterpriseemployeebatchupdateAPIRequest) SetEnterpriseDatas(_enterpriseDatas []EmployeeInfoDto) error {
 	r._enterpriseDatas = _enterpriseDatas
 	r.Set("enterprise_datas", _enterpriseDatas)
 	return nil
 }
 
 // GetEnterpriseDatas EnterpriseDatas Getter
-func (r AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest) GetEnterpriseDatas() []EmployeeInfoDto {
+func (r AlibabaeleenterpriseemployeebatchupdateAPIRequest) GetEnterpriseDatas() []EmployeeInfoDto {
 	return r._enterpriseDatas
 }

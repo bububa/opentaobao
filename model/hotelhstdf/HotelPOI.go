@@ -1,7 +1,7 @@
 package hotelhstdf
 
-// HotelPOI 结构体
-type HotelPOI struct {
+// HotelPoi 结构体
+type HotelPoi struct {
 	// 暂不使用
 	CityName string `json:"city_name,omitempty" xml:"city_name,omitempty"`
 	// 所在国家英文名

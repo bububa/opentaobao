@@ -1,7 +1,7 @@
 package paimai
 
-// Result4Top 结构体
-type Result4Top struct {
+// Result4top 结构体
+type Result4top struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

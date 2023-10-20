@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelRatesIncrementAPIResponse 价格推送接口（批量增量） API返回值
+// TaobaoxhotelratesincrementAPIResponse 价格推送接口（批量增量） API返回值
 // taobao.xhotel.rates.increment
 //
 // Rate库存&amp;价格增量更新接口，用户仅需要更新Rate中发生变化的库存日历&amp;价格日历即可
-type TaobaoXhotelRatesIncrementAPIResponse struct {
+type TaobaoxhotelratesincrementAPIResponse struct {
 	model.CommonResponse
-	TaobaoXhotelRatesIncrementAPIResponseModel
+	TaobaoxhotelratesincrementAPIResponseModel
 }
 
-// TaobaoXhotelRatesIncrementAPIResponseModel is 价格推送接口（批量增量） 成功返回结果
-type TaobaoXhotelRatesIncrementAPIResponseModel struct {
+// TaobaoxhotelratesincrementAPIResponseModel is 价格推送接口（批量增量） 成功返回结果
+type TaobaoxhotelratesincrementAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_rates_increment_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

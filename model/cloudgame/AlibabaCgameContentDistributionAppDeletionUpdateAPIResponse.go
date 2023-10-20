@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCgameContentDistributionAppDeletionUpdateAPIResponse 游戏删除回调 API返回值
+// AlibabacgamecontentdistributionappdeletionupdateAPIResponse 游戏删除回调 API返回值
 // alibaba.cgame.content.distribution.app.deletion.update
 //
 // 游戏删除回调
-type AlibabaCgameContentDistributionAppDeletionUpdateAPIResponse struct {
+type AlibabacgamecontentdistributionappdeletionupdateAPIResponse struct {
 	model.CommonResponse
-	AlibabaCgameContentDistributionAppDeletionUpdateAPIResponseModel
+	AlibabacgamecontentdistributionappdeletionupdateAPIResponseModel
 }
 
-// AlibabaCgameContentDistributionAppDeletionUpdateAPIResponseModel is 游戏删除回调 成功返回结果
-type AlibabaCgameContentDistributionAppDeletionUpdateAPIResponseModel struct {
+// AlibabacgamecontentdistributionappdeletionupdateAPIResponseModel is 游戏删除回调 成功返回结果
+type AlibabacgamecontentdistributionappdeletionupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_cgame_content_distribution_app_deletion_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,9 +1,9 @@
 package hotel
 
-// TaobaoXhotelInfoListGetForHelloResultSet 结构体
-type TaobaoXhotelInfoListGetForHelloResultSet struct {
+// TaobaoxhotelinfolistgetforhelloResultSet 结构体
+type TaobaoxhotelinfolistgetforhelloResultSet struct {
 	// 每个标准酒店及房型信息集合
-	Results []SHotelVo `json:"results,omitempty" xml:"results>s_hotel_vo,omitempty"`
+	Results []ShotelVo `json:"results,omitempty" xml:"results>shotel_vo,omitempty"`
 	// 渠道id
 	ChannelId string `json:"channel_id,omitempty" xml:"channel_id,omitempty"`
 	// errorCode，error=true时有值

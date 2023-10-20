@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaHealthVaccinMatchOnAPIResponse isv自主上下线疫苗，可以选择上线还是下线 API返回值
+// AlibabahealthvaccinmatchonAPIResponse isv自主上下线疫苗，可以选择上线还是下线 API返回值
 // alibaba.health.vaccin.match.on
 //
 // isv自主上下线疫苗，可以选择上线还是下线
-type AlibabaHealthVaccinMatchOnAPIResponse struct {
+type AlibabahealthvaccinmatchonAPIResponse struct {
 	model.CommonResponse
-	AlibabaHealthVaccinMatchOnAPIResponseModel
+	AlibabahealthvaccinmatchonAPIResponseModel
 }
 
-// AlibabaHealthVaccinMatchOnAPIResponseModel is isv自主上下线疫苗，可以选择上线还是下线 成功返回结果
-type AlibabaHealthVaccinMatchOnAPIResponseModel struct {
+// AlibabahealthvaccinmatchonAPIResponseModel is isv自主上下线疫苗，可以选择上线还是下线 成功返回结果
+type AlibabahealthvaccinmatchonAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_health_vaccin_match_on_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

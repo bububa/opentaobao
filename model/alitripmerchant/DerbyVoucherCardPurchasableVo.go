@@ -31,9 +31,9 @@ type DerbyVoucherCardPurchasableVo struct {
 	// 优惠的原因
 	PriceDesc string `json:"price_desc,omitempty" xml:"price_desc,omitempty"`
 	// 权益卡原价
-	Price *BigDecimal `json:"price,omitempty" xml:"price,omitempty"`
+	Price float64 `json:"price,omitempty" xml:"price,omitempty"`
 	// 权益卡售卖价 （为空则选原价）
-	SalePrice *BigDecimal `json:"sale_price,omitempty" xml:"sale_price,omitempty"`
+	SalePrice float64 `json:"sale_price,omitempty" xml:"sale_price,omitempty"`
 	// 权益到期时间搓
 	CountDownTime int64 `json:"count_down_time,omitempty" xml:"count_down_time,omitempty"`
 	// 商品数量

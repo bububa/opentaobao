@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/media"
 )
 
-// AlibabaVideoTokenGet 获取上传token
+// Alibabavideotokenget 获取上传token
 // alibaba.video.token.get
 //
 // 获取上传token
-func AlibabaVideoTokenGet(clt *core.SDKClient, req *media.AlibabaVideoTokenGetAPIRequest, session string) (*media.AlibabaVideoTokenGetAPIResponse, error) {
-	var resp media.AlibabaVideoTokenGetAPIResponse
+func Alibabavideotokenget(clt *core.SDKClient, req *media.AlibabavideotokengetAPIRequest, session string) (*media.AlibabavideotokengetAPIResponse, error) {
+	var resp media.AlibabavideotokengetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

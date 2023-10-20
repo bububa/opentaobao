@@ -3,7 +3,7 @@ package tbk
 // FavoritesInfo 结构体
 type FavoritesInfo struct {
 	// 选品库详细信息
-	Favoriteslist []FavoritesDetail `json:"favorites_list,omitempty" xml:"favorites_list>favorites_detail,omitempty"`
+	FavoritesList []FavoritesDetail `json:"favorites_list,omitempty" xml:"favorites_list>favorites_detail,omitempty"`
 	// 选品库总数量
-	Totalcount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 }

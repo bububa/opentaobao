@@ -1,7 +1,7 @@
 package yunosminiapp
 
-// YunosMiniappActivityCallResult 结构体
-type YunosMiniappActivityCallResult struct {
+// YunosminiappactivitycallResult 结构体
+type YunosminiappactivitycallResult struct {
 	// 返回信息
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// 返回code

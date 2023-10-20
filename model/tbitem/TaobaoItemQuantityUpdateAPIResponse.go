@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoItemQuantityUpdateAPIResponse 宝贝/SKU库存修改 API返回值
+// TaobaoitemquantityupdateAPIResponse 宝贝/SKU库存修改 API返回值
 // taobao.item.quantity.update
 //
 // 提供按照全量或增量形式修改宝贝/SKU库存的功能
-type TaobaoItemQuantityUpdateAPIResponse struct {
+type TaobaoitemquantityupdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoItemQuantityUpdateAPIResponseModel
+	TaobaoitemquantityupdateAPIResponseModel
 }
 
-// TaobaoItemQuantityUpdateAPIResponseModel is 宝贝/SKU库存修改 成功返回结果
-type TaobaoItemQuantityUpdateAPIResponseModel struct {
+// TaobaoitemquantityupdateAPIResponseModel is 宝贝/SKU库存修改 成功返回结果
+type TaobaoitemquantityupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"item_quantity_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTopSecretBillDetailAPIRequest 服务商的商家解密账单详情查询 API请求
+// TaobaotopsecretbilldetailAPIRequest 服务商的商家解密账单详情查询 API请求
 // taobao.top.secret.bill.detail
 //
 // 服务商的商家解密账单详情查询，仅对90天内的账单提供SLA保障。
-type TaobaoTopSecretBillDetailAPIRequest struct {
+type TaobaotopsecretbilldetailAPIRequest struct {
 	model.Params
 	// 卖家账单查询
 	_sellerBillQueryRequest *SellerBillQueryRequest
 }
 
-// NewTaobaoTopSecretBillDetailRequest 初始化TaobaoTopSecretBillDetailAPIRequest对象
-func NewTaobaoTopSecretBillDetailRequest() *TaobaoTopSecretBillDetailAPIRequest {
-	return &TaobaoTopSecretBillDetailAPIRequest{
+// NewTaobaotopsecretbilldetailRequest 初始化TaobaotopsecretbilldetailAPIRequest对象
+func NewTaobaotopsecretbilldetailRequest() *TaobaotopsecretbilldetailAPIRequest {
+	return &TaobaotopsecretbilldetailAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTopSecretBillDetailAPIRequest) GetApiMethodName() string {
+func (r TaobaotopsecretbilldetailAPIRequest) GetApiMethodName() string {
 	return "taobao.top.secret.bill.detail"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTopSecretBillDetailAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotopsecretbilldetailAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTopSecretBillDetailAPIRequest) GetRawParams() model.Params {
+func (r TaobaotopsecretbilldetailAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSellerBillQueryRequest is SellerBillQueryRequest Setter
 // 卖家账单查询
-func (r *TaobaoTopSecretBillDetailAPIRequest) SetSellerBillQueryRequest(_sellerBillQueryRequest *SellerBillQueryRequest) error {
+func (r *TaobaotopsecretbilldetailAPIRequest) SetSellerBillQueryRequest(_sellerBillQueryRequest *SellerBillQueryRequest) error {
 	r._sellerBillQueryRequest = _sellerBillQueryRequest
 	r.Set("seller_bill_query_request", _sellerBillQueryRequest)
 	return nil
 }
 
 // GetSellerBillQueryRequest SellerBillQueryRequest Getter
-func (r TaobaoTopSecretBillDetailAPIRequest) GetSellerBillQueryRequest() *SellerBillQueryRequest {
+func (r TaobaotopsecretbilldetailAPIRequest) GetSellerBillQueryRequest() *SellerBillQueryRequest {
 	return r._sellerBillQueryRequest
 }

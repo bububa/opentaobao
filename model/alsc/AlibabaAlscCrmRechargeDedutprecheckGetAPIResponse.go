@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscCrmRechargeDedutprecheckGetAPIResponse 储值核销预先校验 API返回值
+// AlibabaalsccrmrechargededutprecheckgetAPIResponse 储值核销预先校验 API返回值
 // alibaba.alsc.crm.recharge.dedutprecheck.get
 //
 // 储值核销预先校验接口
-type AlibabaAlscCrmRechargeDedutprecheckGetAPIResponse struct {
+type AlibabaalsccrmrechargededutprecheckgetAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlscCrmRechargeDedutprecheckGetAPIResponseModel
+	AlibabaalsccrmrechargededutprecheckgetAPIResponseModel
 }
 
-// AlibabaAlscCrmRechargeDedutprecheckGetAPIResponseModel is 储值核销预先校验 成功返回结果
-type AlibabaAlscCrmRechargeDedutprecheckGetAPIResponseModel struct {
+// AlibabaalsccrmrechargededutprecheckgetAPIResponseModel is 储值核销预先校验 成功返回结果
+type AlibabaalsccrmrechargededutprecheckgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_recharge_dedutprecheck_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoDegoperationCreateqrcodeAPIResponse 中奖生成二维码 API返回值
+// TaobaodegoperationcreateqrcodeAPIResponse 中奖生成二维码 API返回值
 // taobao.degoperation.createqrcode
 //
 // 用户中奖后，生成二维码图片链接
-type TaobaoDegoperationCreateqrcodeAPIResponse struct {
+type TaobaodegoperationcreateqrcodeAPIResponse struct {
 	model.CommonResponse
-	TaobaoDegoperationCreateqrcodeAPIResponseModel
+	TaobaodegoperationcreateqrcodeAPIResponseModel
 }
 
-// TaobaoDegoperationCreateqrcodeAPIResponseModel is 中奖生成二维码 成功返回结果
-type TaobaoDegoperationCreateqrcodeAPIResponseModel struct {
+// TaobaodegoperationcreateqrcodeAPIResponseModel is 中奖生成二维码 成功返回结果
+type TaobaodegoperationcreateqrcodeAPIResponseModel struct {
 	XMLName xml.Name `xml:"degoperation_createqrcode_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

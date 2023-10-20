@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallProductSchemaGetAPIResponse 产品信息获取schema获取 API返回值
+// TmallproductschemagetAPIResponse 产品信息获取schema获取 API返回值
 // tmall.product.schema.get
 //
 // 产品信息获取接口schema形式返回
-type TmallProductSchemaGetAPIResponse struct {
+type TmallproductschemagetAPIResponse struct {
 	model.CommonResponse
-	TmallProductSchemaGetAPIResponseModel
+	TmallproductschemagetAPIResponseModel
 }
 
-// TmallProductSchemaGetAPIResponseModel is 产品信息获取schema获取 成功返回结果
-type TmallProductSchemaGetAPIResponseModel struct {
+// TmallproductschemagetAPIResponseModel is 产品信息获取schema获取 成功返回结果
+type TmallproductschemagetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_product_schema_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

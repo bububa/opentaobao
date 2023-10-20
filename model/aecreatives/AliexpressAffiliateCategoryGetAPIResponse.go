@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressAffiliateCategoryGetAPIResponse AE流量推广类目信息获取API API返回值
+// AliexpressaffiliatecategorygetAPIResponse AE流量推广类目信息获取API API返回值
 // aliexpress.affiliate.category.get
 //
 // 获取AE流量推广类目的API
-type AliexpressAffiliateCategoryGetAPIResponse struct {
+type AliexpressaffiliatecategorygetAPIResponse struct {
 	model.CommonResponse
-	AliexpressAffiliateCategoryGetAPIResponseModel
+	AliexpressaffiliatecategorygetAPIResponseModel
 }
 
-// AliexpressAffiliateCategoryGetAPIResponseModel is AE流量推广类目信息获取API 成功返回结果
-type AliexpressAffiliateCategoryGetAPIResponseModel struct {
+// AliexpressaffiliatecategorygetAPIResponseModel is AE流量推广类目信息获取API 成功返回结果
+type AliexpressaffiliatecategorygetAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_affiliate_category_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoDrugPriceUpdateAPIRequest 商家更新宝贝价格 API请求
+// TaobaodrugpriceupdateAPIRequest 商家更新宝贝价格 API请求
 // taobao.drug.price.update
 //
 // 商家更新价格
-type TaobaoDrugPriceUpdateAPIRequest struct {
+type TaobaodrugpriceupdateAPIRequest struct {
 	model.Params
 	// 对应的外部店铺ID
 	_outStoreId string
@@ -20,65 +20,65 @@ type TaobaoDrugPriceUpdateAPIRequest struct {
 	_price float64
 }
 
-// NewTaobaoDrugPriceUpdateRequest 初始化TaobaoDrugPriceUpdateAPIRequest对象
-func NewTaobaoDrugPriceUpdateRequest() *TaobaoDrugPriceUpdateAPIRequest {
-	return &TaobaoDrugPriceUpdateAPIRequest{
+// NewTaobaodrugpriceupdateRequest 初始化TaobaodrugpriceupdateAPIRequest对象
+func NewTaobaodrugpriceupdateRequest() *TaobaodrugpriceupdateAPIRequest {
+	return &TaobaodrugpriceupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoDrugPriceUpdateAPIRequest) GetApiMethodName() string {
+func (r TaobaodrugpriceupdateAPIRequest) GetApiMethodName() string {
 	return "taobao.drug.price.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoDrugPriceUpdateAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaodrugpriceupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoDrugPriceUpdateAPIRequest) GetRawParams() model.Params {
+func (r TaobaodrugpriceupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOutStoreId is OutStoreId Setter
 // 对应的外部店铺ID
-func (r *TaobaoDrugPriceUpdateAPIRequest) SetOutStoreId(_outStoreId string) error {
+func (r *TaobaodrugpriceupdateAPIRequest) SetOutStoreId(_outStoreId string) error {
 	r._outStoreId = _outStoreId
 	r.Set("out_store_id", _outStoreId)
 	return nil
 }
 
 // GetOutStoreId OutStoreId Getter
-func (r TaobaoDrugPriceUpdateAPIRequest) GetOutStoreId() string {
+func (r TaobaodrugpriceupdateAPIRequest) GetOutStoreId() string {
 	return r._outStoreId
 }
 
 // SetOutItemId is OutItemId Setter
 // 对应的外部商品编码
-func (r *TaobaoDrugPriceUpdateAPIRequest) SetOutItemId(_outItemId string) error {
+func (r *TaobaodrugpriceupdateAPIRequest) SetOutItemId(_outItemId string) error {
 	r._outItemId = _outItemId
 	r.Set("out_item_id", _outItemId)
 	return nil
 }
 
 // GetOutItemId OutItemId Getter
-func (r TaobaoDrugPriceUpdateAPIRequest) GetOutItemId() string {
+func (r TaobaodrugpriceupdateAPIRequest) GetOutItemId() string {
 	return r._outItemId
 }
 
 // SetPrice is Price Setter
 // 商品价格
-func (r *TaobaoDrugPriceUpdateAPIRequest) SetPrice(_price float64) error {
+func (r *TaobaodrugpriceupdateAPIRequest) SetPrice(_price float64) error {
 	r._price = _price
 	r.Set("price", _price)
 	return nil
 }
 
 // GetPrice Price Getter
-func (r TaobaoDrugPriceUpdateAPIRequest) GetPrice() float64 {
+func (r TaobaodrugpriceupdateAPIRequest) GetPrice() float64 {
 	return r._price
 }

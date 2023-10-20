@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse 阿里体育同步跑步机设备数据 API返回值
+// AlibabaalisportsdatacenterdatasynctreadmillAPIResponse 阿里体育同步跑步机设备数据 API返回值
 // alibaba.alisports.datacenter.datasync.treadmill
 //
 // 合作方向阿里体育同步跑步机设备的数据
-type AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse struct {
+type AlibabaalisportsdatacenterdatasynctreadmillAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponseModel
+	AlibabaalisportsdatacenterdatasynctreadmillAPIResponseModel
 }
 
-// AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponseModel is 阿里体育同步跑步机设备数据 成功返回结果
-type AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponseModel struct {
+// AlibabaalisportsdatacenterdatasynctreadmillAPIResponseModel is 阿里体育同步跑步机设备数据 成功返回结果
+type AlibabaalisportsdatacenterdatasynctreadmillAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alisports_datacenter_datasync_treadmill_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

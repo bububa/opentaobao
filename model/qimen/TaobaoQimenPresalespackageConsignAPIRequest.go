@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenPresalespackageConsignAPIRequest 预售预包尾款推单发货 API请求
+// TaobaoqimenpresalespackageconsignAPIRequest 预售预包尾款推单发货 API请求
 // taobao.qimen.presalespackage.consign
 //
 // 预售预包尾款推单发货
-type TaobaoQimenPresalespackageConsignAPIRequest struct {
+type TaobaoqimenpresalespackageconsignAPIRequest struct {
 	model.Params
 	// 请求
 	_request *PresalesPackageConsignRequest
 }
 
-// NewTaobaoQimenPresalespackageConsignRequest 初始化TaobaoQimenPresalespackageConsignAPIRequest对象
-func NewTaobaoQimenPresalespackageConsignRequest() *TaobaoQimenPresalespackageConsignAPIRequest {
-	return &TaobaoQimenPresalespackageConsignAPIRequest{
+// NewTaobaoqimenpresalespackageconsignRequest 初始化TaobaoqimenpresalespackageconsignAPIRequest对象
+func NewTaobaoqimenpresalespackageconsignRequest() *TaobaoqimenpresalespackageconsignAPIRequest {
+	return &TaobaoqimenpresalespackageconsignAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoQimenPresalespackageConsignAPIRequest) GetApiMethodName() string {
+func (r TaobaoqimenpresalespackageconsignAPIRequest) GetApiMethodName() string {
 	return "taobao.qimen.presalespackage.consign"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoQimenPresalespackageConsignAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoqimenpresalespackageconsignAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoQimenPresalespackageConsignAPIRequest) GetRawParams() model.Params {
+func (r TaobaoqimenpresalespackageconsignAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRequest is Request Setter
 // 请求
-func (r *TaobaoQimenPresalespackageConsignAPIRequest) SetRequest(_request *PresalesPackageConsignRequest) error {
+func (r *TaobaoqimenpresalespackageconsignAPIRequest) SetRequest(_request *PresalesPackageConsignRequest) error {
 	r._request = _request
 	r.Set("request", _request)
 	return nil
 }
 
 // GetRequest Request Getter
-func (r TaobaoQimenPresalespackageConsignAPIRequest) GetRequest() *PresalesPackageConsignRequest {
+func (r TaobaoqimenpresalespackageconsignAPIRequest) GetRequest() *PresalesPackageConsignRequest {
 	return r._request
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoNcwlJhorderQueryAPIResponse 农村物流集货单查询接口 API返回值
+// CainiaoncwljhorderqueryAPIResponse 农村物流集货单查询接口 API返回值
 // cainiao.ncwl.jhorder.query
 //
 // 提供给接入商家，查询农村物流集货单
-type CainiaoNcwlJhorderQueryAPIResponse struct {
+type CainiaoncwljhorderqueryAPIResponse struct {
 	model.CommonResponse
-	CainiaoNcwlJhorderQueryAPIResponseModel
+	CainiaoncwljhorderqueryAPIResponseModel
 }
 
-// CainiaoNcwlJhorderQueryAPIResponseModel is 农村物流集货单查询接口 成功返回结果
-type CainiaoNcwlJhorderQueryAPIResponseModel struct {
+// CainiaoncwljhorderqueryAPIResponseModel is 农村物流集货单查询接口 成功返回结果
+type CainiaoncwljhorderqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_ncwl_jhorder_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressSolutionIssuePartnerRmaStateUpdateAPIResponse aliexpress.solution.issue.partner.rma.state.update API返回值
+// AliexpresssolutionissuepartnerrmastateupdateAPIResponse aliexpress.solution.issue.partner.rma.state.update API返回值
 // aliexpress.solution.issue.partner.rma.state.update
 //
 // Receive changes in state updates for RMAs orders from after sales partners
-type AliexpressSolutionIssuePartnerRmaStateUpdateAPIResponse struct {
+type AliexpresssolutionissuepartnerrmastateupdateAPIResponse struct {
 	model.CommonResponse
-	AliexpressSolutionIssuePartnerRmaStateUpdateAPIResponseModel
+	AliexpresssolutionissuepartnerrmastateupdateAPIResponseModel
 }
 
-// AliexpressSolutionIssuePartnerRmaStateUpdateAPIResponseModel is aliexpress.solution.issue.partner.rma.state.update 成功返回结果
-type AliexpressSolutionIssuePartnerRmaStateUpdateAPIResponseModel struct {
+// AliexpresssolutionissuepartnerrmastateupdateAPIResponseModel is aliexpress.solution.issue.partner.rma.state.update 成功返回结果
+type AliexpresssolutionissuepartnerrmastateupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_solution_issue_partner_rma_state_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

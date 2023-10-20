@@ -1,7 +1,7 @@
 package bus
 
-// B2BQueryRefundFeeRp 结构体
-type B2BQueryRefundFeeRp struct {
+// B2bqueryRefundFeeRp 结构体
+type B2bqueryRefundFeeRp struct {
 	// refundFees
 	RefundFees []string `json:"refund_fees,omitempty" xml:"refund_fees>string,omitempty"`
 	// errorCode

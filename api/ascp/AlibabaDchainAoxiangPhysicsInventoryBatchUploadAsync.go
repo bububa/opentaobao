@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsync 实仓库存同步
+// Alibabadchainaoxiangphysicsinventorybatchuploadasync 实仓库存同步
 // alibaba.dchain.aoxiang.physics.inventory.batch.upload.async
 //
 // 实仓库存同步
-func AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsync(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest, session string) (*ascp.AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIResponse
+func Alibabadchainaoxiangphysicsinventorybatchuploadasync(clt *core.SDKClient, req *ascp.AlibabadchainaoxiangphysicsinventorybatchuploadasyncAPIRequest, session string) (*ascp.AlibabadchainaoxiangphysicsinventorybatchuploadasyncAPIResponse, error) {
+	var resp ascp.AlibabadchainaoxiangphysicsinventorybatchuploadasyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

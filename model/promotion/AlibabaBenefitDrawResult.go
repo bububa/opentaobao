@@ -1,7 +1,7 @@
 package promotion
 
-// AlibabaBenefitDrawResult 结构体
-type AlibabaBenefitDrawResult struct {
+// AlibababenefitdrawResult 结构体
+type AlibababenefitdrawResult struct {
 	// message
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// code

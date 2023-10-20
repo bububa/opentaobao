@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaPricePromotionActivityQueryAPIResponse 查询盒马帮档期活动详情 API返回值
+// AlibabapricepromotionactivityqueryAPIResponse 查询盒马帮档期活动详情 API返回值
 // alibaba.price.promotion.activity.query
 //
 // 查询盒马帮档期活动详情
-type AlibabaPricePromotionActivityQueryAPIResponse struct {
+type AlibabapricepromotionactivityqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaPricePromotionActivityQueryAPIResponseModel
+	AlibabapricepromotionactivityqueryAPIResponseModel
 }
 
-// AlibabaPricePromotionActivityQueryAPIResponseModel is 查询盒马帮档期活动详情 成功返回结果
-type AlibabaPricePromotionActivityQueryAPIResponseModel struct {
+// AlibabapricepromotionactivityqueryAPIResponseModel is 查询盒马帮档期活动详情 成功返回结果
+type AlibabapricepromotionactivityqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_price_promotion_activity_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

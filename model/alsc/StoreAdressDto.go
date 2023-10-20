@@ -15,7 +15,7 @@ type StoreAdressDto struct {
 	// 营业面积
 	BusinessArea string `json:"business_area,omitempty" xml:"business_area,omitempty"`
 	// 维度
-	PosY *BigDecimal `json:"pos_y,omitempty" xml:"pos_y,omitempty"`
+	PosY float64 `json:"pos_y,omitempty" xml:"pos_y,omitempty"`
 	// 经度
-	PosX *BigDecimal `json:"pos_x,omitempty" xml:"pos_x,omitempty"`
+	PosX float64 `json:"pos_x,omitempty" xml:"pos_x,omitempty"`
 }

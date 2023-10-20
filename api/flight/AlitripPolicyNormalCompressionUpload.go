@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/flight"
 )
 
-// AlitripPolicyNormalCompressionUpload 大批量上传普通类型的单程/往返政策
+// Alitrippolicynormalcompressionupload 大批量上传普通类型的单程/往返政策
 // alitrip.policy.normal.compression.upload
 //
 // 大批量上传普通类型的单程/往返政策
-func AlitripPolicyNormalCompressionUpload(clt *core.SDKClient, req *flight.AlitripPolicyNormalCompressionUploadAPIRequest, session string) (*flight.AlitripPolicyNormalCompressionUploadAPIResponse, error) {
-	var resp flight.AlitripPolicyNormalCompressionUploadAPIResponse
+func Alitrippolicynormalcompressionupload(clt *core.SDKClient, req *flight.AlitrippolicynormalcompressionuploadAPIRequest, session string) (*flight.AlitrippolicynormalcompressionuploadAPIResponse, error) {
+	var resp flight.AlitrippolicynormalcompressionuploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

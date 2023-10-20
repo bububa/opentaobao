@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallhk"
 )
 
-// TmallTraceplatformTicketPictureUpload 上传小票图片
+// Tmalltraceplatformticketpictureupload 上传小票图片
 // tmall.traceplatform.ticket.picture.upload
 //
 // uploadPicture
-func TmallTraceplatformTicketPictureUpload(clt *core.SDKClient, req *tmallhk.TmallTraceplatformTicketPictureUploadAPIRequest, session string) (*tmallhk.TmallTraceplatformTicketPictureUploadAPIResponse, error) {
-	var resp tmallhk.TmallTraceplatformTicketPictureUploadAPIResponse
+func Tmalltraceplatformticketpictureupload(clt *core.SDKClient, req *tmallhk.TmalltraceplatformticketpictureuploadAPIRequest, session string) (*tmallhk.TmalltraceplatformticketpictureuploadAPIResponse, error) {
+	var resp tmallhk.TmalltraceplatformticketpictureuploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

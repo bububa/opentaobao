@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLegalCaseCommonEnumdataAPIResponse 获取通用枚举值接口 API返回值
+// AlibabalegalcasecommonenumdataAPIResponse 获取通用枚举值接口 API返回值
 // alibaba.legal.case.common.enumdata
 //
 // 获取通用枚举值接口
-type AlibabaLegalCaseCommonEnumdataAPIResponse struct {
+type AlibabalegalcasecommonenumdataAPIResponse struct {
 	model.CommonResponse
-	AlibabaLegalCaseCommonEnumdataAPIResponseModel
+	AlibabalegalcasecommonenumdataAPIResponseModel
 }
 
-// AlibabaLegalCaseCommonEnumdataAPIResponseModel is 获取通用枚举值接口 成功返回结果
-type AlibabaLegalCaseCommonEnumdataAPIResponseModel struct {
+// AlibabalegalcasecommonenumdataAPIResponseModel is 获取通用枚举值接口 成功返回结果
+type AlibabalegalcasecommonenumdataAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_legal_case_common_enumdata_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

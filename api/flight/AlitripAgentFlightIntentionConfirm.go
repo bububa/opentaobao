@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/flight"
 )
 
-// AlitripAgentFlightIntentionConfirm 意向单确认
+// Alitripagentflightintentionconfirm 意向单确认
 // alitrip.agent.flight.intention.confirm
 //
 // 意向单确认
-func AlitripAgentFlightIntentionConfirm(clt *core.SDKClient, req *flight.AlitripAgentFlightIntentionConfirmAPIRequest, session string) (*flight.AlitripAgentFlightIntentionConfirmAPIResponse, error) {
-	var resp flight.AlitripAgentFlightIntentionConfirmAPIResponse
+func Alitripagentflightintentionconfirm(clt *core.SDKClient, req *flight.AlitripagentflightintentionconfirmAPIRequest, session string) (*flight.AlitripagentflightintentionconfirmAPIResponse, error) {
+	var resp flight.AlitripagentflightintentionconfirmAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

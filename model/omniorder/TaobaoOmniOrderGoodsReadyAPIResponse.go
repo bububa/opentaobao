@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOmniOrderGoodsReadyAPIResponse 备货完成 API返回值
+// TaobaoomniordergoodsreadyAPIResponse 备货完成 API返回值
 // taobao.omni.order.goods.ready
 //
 // 备货完成
-type TaobaoOmniOrderGoodsReadyAPIResponse struct {
+type TaobaoomniordergoodsreadyAPIResponse struct {
 	model.CommonResponse
-	TaobaoOmniOrderGoodsReadyAPIResponseModel
+	TaobaoomniordergoodsreadyAPIResponseModel
 }
 
-// TaobaoOmniOrderGoodsReadyAPIResponseModel is 备货完成 成功返回结果
-type TaobaoOmniOrderGoodsReadyAPIResponseModel struct {
+// TaobaoomniordergoodsreadyAPIResponseModel is 备货完成 成功返回结果
+type TaobaoomniordergoodsreadyAPIResponseModel struct {
 	XMLName xml.Name `xml:"omni_order_goods_ready_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

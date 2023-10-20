@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// AlibabaDchainAoxiangItemmappingUnbundle 商货关联解绑
+// Alibabadchainaoxiangitemmappingunbundle 商货关联解绑
 // alibaba.dchain.aoxiang.itemmapping.unbundle
 //
 // 商货关联解绑
-func AlibabaDchainAoxiangItemmappingUnbundle(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangItemmappingUnbundleAPIRequest, session string) (*ascp.AlibabaDchainAoxiangItemmappingUnbundleAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangItemmappingUnbundleAPIResponse
+func Alibabadchainaoxiangitemmappingunbundle(clt *core.SDKClient, req *ascp.AlibabadchainaoxiangitemmappingunbundleAPIRequest, session string) (*ascp.AlibabadchainaoxiangitemmappingunbundleAPIResponse, error) {
+	var resp ascp.AlibabadchainaoxiangitemmappingunbundleAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosTvpubadminAdmOttAuditAPIRequest 优酷OTT广告素材审核 API请求
+// YunostvpubadminadmottauditAPIRequest 优酷OTT广告素材审核 API请求
 // yunos.tvpubadmin.adm.ott.audit
 //
 // 审核优酷OTT端广告素材
-type YunosTvpubadminAdmOttAuditAPIRequest struct {
+type YunostvpubadminadmottauditAPIRequest struct {
 	model.Params
 	// 广告审核内容，json格式
 	_data string
 }
 
-// NewYunosTvpubadminAdmOttAuditRequest 初始化YunosTvpubadminAdmOttAuditAPIRequest对象
-func NewYunosTvpubadminAdmOttAuditRequest() *YunosTvpubadminAdmOttAuditAPIRequest {
-	return &YunosTvpubadminAdmOttAuditAPIRequest{
+// NewYunostvpubadminadmottauditRequest 初始化YunostvpubadminadmottauditAPIRequest对象
+func NewYunostvpubadminadmottauditRequest() *YunostvpubadminadmottauditAPIRequest {
+	return &YunostvpubadminadmottauditAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminAdmOttAuditAPIRequest) GetApiMethodName() string {
+func (r YunostvpubadminadmottauditAPIRequest) GetApiMethodName() string {
 	return "yunos.tvpubadmin.adm.ott.audit"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminAdmOttAuditAPIRequest) GetApiParams(params url.Values) {
+func (r YunostvpubadminadmottauditAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YunosTvpubadminAdmOttAuditAPIRequest) GetRawParams() model.Params {
+func (r YunostvpubadminadmottauditAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetData is Data Setter
 // 广告审核内容，json格式
-func (r *YunosTvpubadminAdmOttAuditAPIRequest) SetData(_data string) error {
+func (r *YunostvpubadminadmottauditAPIRequest) SetData(_data string) error {
 	r._data = _data
 	r.Set("data", _data)
 	return nil
 }
 
 // GetData Data Getter
-func (r YunosTvpubadminAdmOttAuditAPIRequest) GetData() string {
+func (r YunostvpubadminadmottauditAPIRequest) GetData() string {
 	return r._data
 }

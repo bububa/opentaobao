@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoMiniappDistributionMaterialDeleteAPIRequest 小程序投放 --- 删除投放素材 API请求
+// TaobaominiappdistributionmaterialdeleteAPIRequest 小程序投放 --- 删除投放素材 API请求
 // taobao.miniapp.distribution.material.delete
 //
 // 删除已录入的投放入口素材信息。
-type TaobaoMiniappDistributionMaterialDeleteAPIRequest struct {
+type TaobaominiappdistributionmaterialdeleteAPIRequest struct {
 	model.Params
 	// 投放入口素材信息
 	_materialRequest *MiniAppEntranceMaterialBizOpenDto
 }
 
-// NewTaobaoMiniappDistributionMaterialDeleteRequest 初始化TaobaoMiniappDistributionMaterialDeleteAPIRequest对象
-func NewTaobaoMiniappDistributionMaterialDeleteRequest() *TaobaoMiniappDistributionMaterialDeleteAPIRequest {
-	return &TaobaoMiniappDistributionMaterialDeleteAPIRequest{
+// NewTaobaominiappdistributionmaterialdeleteRequest 初始化TaobaominiappdistributionmaterialdeleteAPIRequest对象
+func NewTaobaominiappdistributionmaterialdeleteRequest() *TaobaominiappdistributionmaterialdeleteAPIRequest {
+	return &TaobaominiappdistributionmaterialdeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoMiniappDistributionMaterialDeleteAPIRequest) GetApiMethodName() string {
+func (r TaobaominiappdistributionmaterialdeleteAPIRequest) GetApiMethodName() string {
 	return "taobao.miniapp.distribution.material.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoMiniappDistributionMaterialDeleteAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaominiappdistributionmaterialdeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoMiniappDistributionMaterialDeleteAPIRequest) GetRawParams() model.Params {
+func (r TaobaominiappdistributionmaterialdeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMaterialRequest is MaterialRequest Setter
 // 投放入口素材信息
-func (r *TaobaoMiniappDistributionMaterialDeleteAPIRequest) SetMaterialRequest(_materialRequest *MiniAppEntranceMaterialBizOpenDto) error {
+func (r *TaobaominiappdistributionmaterialdeleteAPIRequest) SetMaterialRequest(_materialRequest *MiniAppEntranceMaterialBizOpenDto) error {
 	r._materialRequest = _materialRequest
 	r.Set("material_request", _materialRequest)
 	return nil
 }
 
 // GetMaterialRequest MaterialRequest Getter
-func (r TaobaoMiniappDistributionMaterialDeleteAPIRequest) GetMaterialRequest() *MiniAppEntranceMaterialBizOpenDto {
+func (r TaobaominiappdistributionmaterialdeleteAPIRequest) GetMaterialRequest() *MiniAppEntranceMaterialBizOpenDto {
 	return r._materialRequest
 }

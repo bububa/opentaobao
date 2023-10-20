@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
 
-// TmallServicecenterReservecondDelete 删除主动预约开通条件
+// Tmallservicecenterreserveconddelete 删除主动预约开通条件
 // tmall.servicecenter.reservecond.delete
 //
 // 删除主动预约开通条件
-func TmallServicecenterReservecondDelete(clt *core.SDKClient, req *tmallsc.TmallServicecenterReservecondDeleteAPIRequest, session string) (*tmallsc.TmallServicecenterReservecondDeleteAPIResponse, error) {
-	var resp tmallsc.TmallServicecenterReservecondDeleteAPIResponse
+func Tmallservicecenterreserveconddelete(clt *core.SDKClient, req *tmallsc.TmallservicecenterreserveconddeleteAPIRequest, session string) (*tmallsc.TmallservicecenterreserveconddeleteAPIResponse, error) {
+	var resp tmallsc.TmallservicecenterreserveconddeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

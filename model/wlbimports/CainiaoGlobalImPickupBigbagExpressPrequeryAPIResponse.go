@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse 首公里揽收-快递预查询服务 API返回值
+// CainiaoglobalimpickupbigbagexpressprequeryAPIResponse 首公里揽收-快递预查询服务 API返回值
 // cainiao.global.im.pickup.bigbag.express.prequery
 //
 // 快递预查询服务
-type CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse struct {
+type CainiaoglobalimpickupbigbagexpressprequeryAPIResponse struct {
 	model.CommonResponse
-	CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponseModel
+	CainiaoglobalimpickupbigbagexpressprequeryAPIResponseModel
 }
 
-// CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponseModel is 首公里揽收-快递预查询服务 成功返回结果
-type CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponseModel struct {
+// CainiaoglobalimpickupbigbagexpressprequeryAPIResponseModel is 首公里揽收-快递预查询服务 成功返回结果
+type CainiaoglobalimpickupbigbagexpressprequeryAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_global_im_pickup_bigbag_express_prequery_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

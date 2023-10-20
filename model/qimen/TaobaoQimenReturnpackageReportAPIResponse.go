@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenReturnpackageReportAPIResponse 退货包裹状态通知接口 API返回值
+// TaobaoqimenreturnpackagereportAPIResponse 退货包裹状态通知接口 API返回值
 // taobao.qimen.returnpackage.report
 //
 // 退货包裹状态通知接口
-type TaobaoQimenReturnpackageReportAPIResponse struct {
+type TaobaoqimenreturnpackagereportAPIResponse struct {
 	model.CommonResponse
-	TaobaoQimenReturnpackageReportAPIResponseModel
+	TaobaoqimenreturnpackagereportAPIResponseModel
 }
 
-// TaobaoQimenReturnpackageReportAPIResponseModel is 退货包裹状态通知接口 成功返回结果
-type TaobaoQimenReturnpackageReportAPIResponseModel struct {
+// TaobaoqimenreturnpackagereportAPIResponseModel is 退货包裹状态通知接口 成功返回结果
+type TaobaoqimenreturnpackagereportAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_returnpackage_report_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	//
-	Response *TaobaoQimenReturnpackageReportResponse `json:"response,omitempty" xml:"response,omitempty"`
+	Response *TaobaoqimenreturnpackagereportResponse `json:"response,omitempty" xml:"response,omitempty"`
 }

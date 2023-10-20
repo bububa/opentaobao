@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallServicecenterServicestoreUpdateAPIRequest 修改门店信息 API请求
+// TmallservicecenterservicestoreupdateAPIRequest 修改门店信息 API请求
 // tmall.servicecenter.servicestore.update
 //
 // 用于修改门店/网点信息。多个业务共用
-type TmallServicecenterServicestoreUpdateAPIRequest struct {
+type TmallservicecenterservicestoreupdateAPIRequest struct {
 	model.Params
 	// 网点/门店
 	_paramServiceStoreDTO *ServiceStoreDto
 }
 
-// NewTmallServicecenterServicestoreUpdateRequest 初始化TmallServicecenterServicestoreUpdateAPIRequest对象
-func NewTmallServicecenterServicestoreUpdateRequest() *TmallServicecenterServicestoreUpdateAPIRequest {
-	return &TmallServicecenterServicestoreUpdateAPIRequest{
+// NewTmallservicecenterservicestoreupdateRequest 初始化TmallservicecenterservicestoreupdateAPIRequest对象
+func NewTmallservicecenterservicestoreupdateRequest() *TmallservicecenterservicestoreupdateAPIRequest {
+	return &TmallservicecenterservicestoreupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallServicecenterServicestoreUpdateAPIRequest) GetApiMethodName() string {
+func (r TmallservicecenterservicestoreupdateAPIRequest) GetApiMethodName() string {
 	return "tmall.servicecenter.servicestore.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallServicecenterServicestoreUpdateAPIRequest) GetApiParams(params url.Values) {
+func (r TmallservicecenterservicestoreupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallServicecenterServicestoreUpdateAPIRequest) GetRawParams() model.Params {
+func (r TmallservicecenterservicestoreupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamServiceStoreDTO is ParamServiceStoreDTO Setter
 // 网点/门店
-func (r *TmallServicecenterServicestoreUpdateAPIRequest) SetParamServiceStoreDTO(_paramServiceStoreDTO *ServiceStoreDto) error {
+func (r *TmallservicecenterservicestoreupdateAPIRequest) SetParamServiceStoreDTO(_paramServiceStoreDTO *ServiceStoreDto) error {
 	r._paramServiceStoreDTO = _paramServiceStoreDTO
 	r.Set("param_service_store_d_t_o", _paramServiceStoreDTO)
 	return nil
 }
 
 // GetParamServiceStoreDTO ParamServiceStoreDTO Getter
-func (r TmallServicecenterServicestoreUpdateAPIRequest) GetParamServiceStoreDTO() *ServiceStoreDto {
+func (r TmallservicecenterservicestoreupdateAPIRequest) GetParamServiceStoreDTO() *ServiceStoreDto {
 	return r._paramServiceStoreDTO
 }

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest 租房合作品牌更新接口 API请求
+// AlibabaalihouseexistinghomehousecooperatebrandupdateAPIRequest 租房合作品牌更新接口 API请求
 // alibaba.alihouse.existinghome.house.cooperate.brand.update
 //
 // 租房合作品牌更新接口
-type AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest struct {
+type AlibabaalihouseexistinghomehousecooperatebrandupdateAPIRequest struct {
 	model.Params
 	// 实体类
 	_syncUpdateCooperateBrand *SyncUpdateCooperateBrand
 }
 
-// NewAlibabaAlihouseExistinghomeHouseCooperateBrandUpdateRequest 初始化AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest对象
-func NewAlibabaAlihouseExistinghomeHouseCooperateBrandUpdateRequest() *AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest {
-	return &AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest{
+// NewAlibabaalihouseexistinghomehousecooperatebrandupdateRequest 初始化AlibabaalihouseexistinghomehousecooperatebrandupdateAPIRequest对象
+func NewAlibabaalihouseexistinghomehousecooperatebrandupdateRequest() *AlibabaalihouseexistinghomehousecooperatebrandupdateAPIRequest {
+	return &AlibabaalihouseexistinghomehousecooperatebrandupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihouseexistinghomehousecooperatebrandupdateAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.existinghome.house.cooperate.brand.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihouseexistinghomehousecooperatebrandupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihouseexistinghomehousecooperatebrandupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSyncUpdateCooperateBrand is SyncUpdateCooperateBrand Setter
 // 实体类
-func (r *AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest) SetSyncUpdateCooperateBrand(_syncUpdateCooperateBrand *SyncUpdateCooperateBrand) error {
+func (r *AlibabaalihouseexistinghomehousecooperatebrandupdateAPIRequest) SetSyncUpdateCooperateBrand(_syncUpdateCooperateBrand *SyncUpdateCooperateBrand) error {
 	r._syncUpdateCooperateBrand = _syncUpdateCooperateBrand
 	r.Set("sync_update_cooperate_brand", _syncUpdateCooperateBrand)
 	return nil
 }
 
 // GetSyncUpdateCooperateBrand SyncUpdateCooperateBrand Getter
-func (r AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest) GetSyncUpdateCooperateBrand() *SyncUpdateCooperateBrand {
+func (r AlibabaalihouseexistinghomehousecooperatebrandupdateAPIRequest) GetSyncUpdateCooperateBrand() *SyncUpdateCooperateBrand {
 	return r._syncUpdateCooperateBrand
 }

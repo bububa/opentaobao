@@ -1,7 +1,7 @@
 package hotel
 
-// SRoomTypeDailyPrice 结构体
-type SRoomTypeDailyPrice struct {
+// SroomTypeDailyPrice 结构体
+type SroomTypeDailyPrice struct {
 	// 当前标准房型下所有库价集合
 	RoomTypeDailyPriceList []RoomTypeDailyPrice `json:"room_type_daily_price_list,omitempty" xml:"room_type_daily_price_list>room_type_daily_price,omitempty"`
 	// 离店日期

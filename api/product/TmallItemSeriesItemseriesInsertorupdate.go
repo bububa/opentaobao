@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-// TmallItemSeriesItemseriesInsertorupdate 商品系列增删改接口
+// Tmallitemseriesitemseriesinsertorupdate 商品系列增删改接口
 // tmall.item.series.itemseries.insertorupdate
 //
 // 商品系列增删改接口
-func TmallItemSeriesItemseriesInsertorupdate(clt *core.SDKClient, req *product.TmallItemSeriesItemseriesInsertorupdateAPIRequest, session string) (*product.TmallItemSeriesItemseriesInsertorupdateAPIResponse, error) {
-	var resp product.TmallItemSeriesItemseriesInsertorupdateAPIResponse
+func Tmallitemseriesitemseriesinsertorupdate(clt *core.SDKClient, req *product.TmallitemseriesitemseriesinsertorupdateAPIRequest, session string) (*product.TmallitemseriesitemseriesinsertorupdateAPIResponse, error) {
+	var resp product.TmallitemseriesitemseriesinsertorupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

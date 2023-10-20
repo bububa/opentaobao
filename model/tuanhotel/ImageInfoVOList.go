@@ -1,7 +1,7 @@
 package tuanhotel
 
-// ImageInfoVOList 结构体
-type ImageInfoVOList struct {
+// ImageInfoVolist 结构体
+type ImageInfoVolist struct {
 	// 图片ID
 	ImageUid string `json:"image_uid,omitempty" xml:"image_uid,omitempty"`
 	// 图片URL地址

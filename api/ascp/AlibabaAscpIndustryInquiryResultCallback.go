@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// AlibabaAscpIndustryInquiryResultCallback 送货入户并安装服务商询价结果返回
+// Alibabaascpindustryinquiryresultcallback 送货入户并安装服务商询价结果返回
 // alibaba.ascp.industry.inquiry.result.callback
 //
 // 送货入户并安装服务商询价结果返回
-func AlibabaAscpIndustryInquiryResultCallback(clt *core.SDKClient, req *ascp.AlibabaAscpIndustryInquiryResultCallbackAPIRequest, session string) (*ascp.AlibabaAscpIndustryInquiryResultCallbackAPIResponse, error) {
-	var resp ascp.AlibabaAscpIndustryInquiryResultCallbackAPIResponse
+func Alibabaascpindustryinquiryresultcallback(clt *core.SDKClient, req *ascp.AlibabaascpindustryinquiryresultcallbackAPIRequest, session string) (*ascp.AlibabaascpindustryinquiryresultcallbackAPIResponse, error) {
+	var resp ascp.AlibabaascpindustryinquiryresultcallbackAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

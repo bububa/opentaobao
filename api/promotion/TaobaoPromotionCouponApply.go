@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-// TaobaoPromotionCouponApply 优惠券领取
+// Taobaopromotioncouponapply 优惠券领取
 // taobao.promotion.coupon.apply
 //
 // 优惠券领取
-func TaobaoPromotionCouponApply(clt *core.SDKClient, req *promotion.TaobaoPromotionCouponApplyAPIRequest, session string) (*promotion.TaobaoPromotionCouponApplyAPIResponse, error) {
-	var resp promotion.TaobaoPromotionCouponApplyAPIResponse
+func Taobaopromotioncouponapply(clt *core.SDKClient, req *promotion.TaobaopromotioncouponapplyAPIRequest, session string) (*promotion.TaobaopromotioncouponapplyAPIResponse, error) {
+	var resp promotion.TaobaopromotioncouponapplyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -41,7 +41,7 @@ type Campus struct {
 	// 状态，0停用，1启用
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 面积
-	Area *BigDecimal `json:"area,omitempty" xml:"area,omitempty"`
+	Area float64 `json:"area,omitempty" xml:"area,omitempty"`
 	// 排序号
 	OrderNo int64 `json:"order_no,omitempty" xml:"order_no,omitempty"`
 	// 所属公司ID

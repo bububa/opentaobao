@@ -13,11 +13,11 @@ import (
 type TaobaotbkcartcouponexpireuserqueryAPIRequest struct {
 	model.Params
 	// 规则ID，由接口提供方分配
-	_ruleid string
+	_ruleId string
 	// 页码，从0开始
-	_pagenum int64
+	_pageNum int64
 	// 每页大小
-	_pagesize int64
+	_pageSize int64
 }
 
 // NewTaobaotbkcartcouponexpireuserqueryRequest 初始化TaobaotbkcartcouponexpireuserqueryAPIRequest对象
@@ -44,41 +44,41 @@ func (r TaobaotbkcartcouponexpireuserqueryAPIRequest) GetRawParams() model.Param
 	return r.Params
 }
 
-// SetRuleid is Ruleid Setter
+// SetRuleId is RuleId Setter
 // 规则ID，由接口提供方分配
-func (r *TaobaotbkcartcouponexpireuserqueryAPIRequest) SetRuleid(_ruleid string) error {
-	r._ruleid = _ruleid
-	r.Set("rule_id", _ruleid)
+func (r *TaobaotbkcartcouponexpireuserqueryAPIRequest) SetRuleId(_ruleId string) error {
+	r._ruleId = _ruleId
+	r.Set("rule_id", _ruleId)
 	return nil
 }
 
-// GetRuleid Ruleid Getter
-func (r TaobaotbkcartcouponexpireuserqueryAPIRequest) GetRuleid() string {
-	return r._ruleid
+// GetRuleId RuleId Getter
+func (r TaobaotbkcartcouponexpireuserqueryAPIRequest) GetRuleId() string {
+	return r._ruleId
 }
 
-// SetPagenum is Pagenum Setter
+// SetPageNum is PageNum Setter
 // 页码，从0开始
-func (r *TaobaotbkcartcouponexpireuserqueryAPIRequest) SetPagenum(_pagenum int64) error {
-	r._pagenum = _pagenum
-	r.Set("page_num", _pagenum)
+func (r *TaobaotbkcartcouponexpireuserqueryAPIRequest) SetPageNum(_pageNum int64) error {
+	r._pageNum = _pageNum
+	r.Set("page_num", _pageNum)
 	return nil
 }
 
-// GetPagenum Pagenum Getter
-func (r TaobaotbkcartcouponexpireuserqueryAPIRequest) GetPagenum() int64 {
-	return r._pagenum
+// GetPageNum PageNum Getter
+func (r TaobaotbkcartcouponexpireuserqueryAPIRequest) GetPageNum() int64 {
+	return r._pageNum
 }
 
-// SetPagesize is Pagesize Setter
+// SetPageSize is PageSize Setter
 // 每页大小
-func (r *TaobaotbkcartcouponexpireuserqueryAPIRequest) SetPagesize(_pagesize int64) error {
-	r._pagesize = _pagesize
-	r.Set("page_size", _pagesize)
+func (r *TaobaotbkcartcouponexpireuserqueryAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
 	return nil
 }
 
-// GetPagesize Pagesize Getter
-func (r TaobaotbkcartcouponexpireuserqueryAPIRequest) GetPagesize() int64 {
-	return r._pagesize
+// GetPageSize PageSize Getter
+func (r TaobaotbkcartcouponexpireuserqueryAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

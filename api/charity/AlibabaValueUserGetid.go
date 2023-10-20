@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/charity"
 )
 
-// AlibabaValueUserGetid 获取用户userId
+// Alibabavalueusergetid 获取用户userId
 // alibaba.value.user.getid
 //
 // 获取用户userId
-func AlibabaValueUserGetid(clt *core.SDKClient, req *charity.AlibabaValueUserGetidAPIRequest, session string) (*charity.AlibabaValueUserGetidAPIResponse, error) {
-	var resp charity.AlibabaValueUserGetidAPIResponse
+func Alibabavalueusergetid(clt *core.SDKClient, req *charity.AlibabavalueusergetidAPIRequest, session string) (*charity.AlibabavalueusergetidAPIResponse, error) {
+	var resp charity.AlibabavalueusergetidAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

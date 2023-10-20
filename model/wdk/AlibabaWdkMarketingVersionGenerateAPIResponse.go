@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkMarketingVersionGenerateAPIResponse 生成发布使用的版本号 API返回值
+// AlibabawdkmarketingversiongenerateAPIResponse 生成发布使用的版本号 API返回值
 // alibaba.wdk.marketing.version.generate
 //
 // 生成发布使用的版本号
-type AlibabaWdkMarketingVersionGenerateAPIResponse struct {
+type AlibabawdkmarketingversiongenerateAPIResponse struct {
 	model.CommonResponse
-	AlibabaWdkMarketingVersionGenerateAPIResponseModel
+	AlibabawdkmarketingversiongenerateAPIResponseModel
 }
 
-// AlibabaWdkMarketingVersionGenerateAPIResponseModel is 生成发布使用的版本号 成功返回结果
-type AlibabaWdkMarketingVersionGenerateAPIResponseModel struct {
+// AlibabawdkmarketingversiongenerateAPIResponseModel is 生成发布使用的版本号 成功返回结果
+type AlibabawdkmarketingversiongenerateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_marketing_version_generate_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

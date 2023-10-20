@@ -1,7 +1,7 @@
 package omniorder
 
-// TaobaoOmniorderStoreSwitchstatusGetResult 结构体
-type TaobaoOmniorderStoreSwitchstatusGetResult struct {
+// TaobaoomniorderstoreswitchstatusgetResult 结构体
+type TaobaoomniorderstoreswitchstatusgetResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 返回素材id

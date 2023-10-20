@@ -1,7 +1,7 @@
 package globalvirtual
 
-// AlibabaGlobalVirtualSendcodeResponse 结构体
-type AlibabaGlobalVirtualSendcodeResponse struct {
+// AlibabaglobalvirtualsendcodeResponse 结构体
+type AlibabaglobalvirtualsendcodeResponse struct {
 	// error code
 	ErrorCode *ErrorCode `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// request result

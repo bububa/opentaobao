@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEinvoicePaperInvalidAPIResponse 纸票作废接口 API返回值
+// AlibabaeinvoicepaperinvalidAPIResponse 纸票作废接口 API返回值
 // alibaba.einvoice.paper.invalid
 //
 // 作废一张已开具的纸票，开票日期在当月，产生逆向时作废即可，开票日期跨月则冲红蓝票
-type AlibabaEinvoicePaperInvalidAPIResponse struct {
+type AlibabaeinvoicepaperinvalidAPIResponse struct {
 	model.CommonResponse
-	AlibabaEinvoicePaperInvalidAPIResponseModel
+	AlibabaeinvoicepaperinvalidAPIResponseModel
 }
 
-// AlibabaEinvoicePaperInvalidAPIResponseModel is 纸票作废接口 成功返回结果
-type AlibabaEinvoicePaperInvalidAPIResponseModel struct {
+// AlibabaeinvoicepaperinvalidAPIResponseModel is 纸票作废接口 成功返回结果
+type AlibabaeinvoicepaperinvalidAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_paper_invalid_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

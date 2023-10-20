@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallnr"
 )
 
-// TmallNrZqsPlanQuery 周期送配送明细查询
+// Tmallnrzqsplanquery 周期送配送明细查询
 // tmall.nr.zqs.plan.query
 //
 // 周期送配送明细查询
-func TmallNrZqsPlanQuery(clt *core.SDKClient, req *tmallnr.TmallNrZqsPlanQueryAPIRequest, session string) (*tmallnr.TmallNrZqsPlanQueryAPIResponse, error) {
-	var resp tmallnr.TmallNrZqsPlanQueryAPIResponse
+func Tmallnrzqsplanquery(clt *core.SDKClient, req *tmallnr.TmallnrzqsplanqueryAPIRequest, session string) (*tmallnr.TmallnrzqsplanqueryAPIResponse, error) {
+	var resp tmallnr.TmallnrzqsplanqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

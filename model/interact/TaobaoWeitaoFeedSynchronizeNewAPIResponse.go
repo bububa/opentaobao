@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWeitaoFeedSynchronizeNewAPIResponse 推广淘小铺isv 活动到微淘feed API返回值
+// TaobaoweitaofeedsynchronizenewAPIResponse 推广淘小铺isv 活动到微淘feed API返回值
 // taobao.weitao.feed.synchronize.new
 //
 // 推广微淘互动应用活动到微淘
-type TaobaoWeitaoFeedSynchronizeNewAPIResponse struct {
+type TaobaoweitaofeedsynchronizenewAPIResponse struct {
 	model.CommonResponse
-	TaobaoWeitaoFeedSynchronizeNewAPIResponseModel
+	TaobaoweitaofeedsynchronizenewAPIResponseModel
 }
 
-// TaobaoWeitaoFeedSynchronizeNewAPIResponseModel is 推广淘小铺isv 活动到微淘feed 成功返回结果
-type TaobaoWeitaoFeedSynchronizeNewAPIResponseModel struct {
+// TaobaoweitaofeedsynchronizenewAPIResponseModel is 推广淘小铺isv 活动到微淘feed 成功返回结果
+type TaobaoweitaofeedsynchronizenewAPIResponseModel struct {
 	XMLName xml.Name `xml:"weitao_feed_synchronize_new_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

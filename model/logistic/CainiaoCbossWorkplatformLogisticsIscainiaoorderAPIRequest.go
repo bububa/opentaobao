@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest 根据交易单号判断是否为菜鸟发货订单 API请求
+// CainiaocbossworkplatformlogisticsiscainiaoorderAPIRequest 根据交易单号判断是否为菜鸟发货订单 API请求
 // cainiao.cboss.workplatform.logistics.iscainiaoorder
 //
 // 根据交易单号判断是否为菜鸟发货订单
-type CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest struct {
+type CainiaocbossworkplatformlogisticsiscainiaoorderAPIRequest struct {
 	model.Params
 	// 交易单号
 	_tradeId string
 }
 
-// NewCainiaoCbossWorkplatformLogisticsIscainiaoorderRequest 初始化CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest对象
-func NewCainiaoCbossWorkplatformLogisticsIscainiaoorderRequest() *CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest {
-	return &CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest{
+// NewCainiaocbossworkplatformlogisticsiscainiaoorderRequest 初始化CainiaocbossworkplatformlogisticsiscainiaoorderAPIRequest对象
+func NewCainiaocbossworkplatformlogisticsiscainiaoorderRequest() *CainiaocbossworkplatformlogisticsiscainiaoorderAPIRequest {
+	return &CainiaocbossworkplatformlogisticsiscainiaoorderAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest) GetApiMethodName() string {
+func (r CainiaocbossworkplatformlogisticsiscainiaoorderAPIRequest) GetApiMethodName() string {
 	return "cainiao.cboss.workplatform.logistics.iscainiaoorder"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest) GetApiParams(params url.Values) {
+func (r CainiaocbossworkplatformlogisticsiscainiaoorderAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest) GetRawParams() model.Params {
+func (r CainiaocbossworkplatformlogisticsiscainiaoorderAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTradeId is TradeId Setter
 // 交易单号
-func (r *CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest) SetTradeId(_tradeId string) error {
+func (r *CainiaocbossworkplatformlogisticsiscainiaoorderAPIRequest) SetTradeId(_tradeId string) error {
 	r._tradeId = _tradeId
 	r.Set("trade_id", _tradeId)
 	return nil
 }
 
 // GetTradeId TradeId Getter
-func (r CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest) GetTradeId() string {
+func (r CainiaocbossworkplatformlogisticsiscainiaoorderAPIRequest) GetTradeId() string {
 	return r._tradeId
 }

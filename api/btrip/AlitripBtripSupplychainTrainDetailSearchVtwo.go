@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// AlitripBtripSupplychainTrainDetailSearchVtwo 【商旅】火车票订单详情查询
+// Alitripbtripsupplychaintraindetailsearchvtwo 【商旅】火车票订单详情查询
 // alitrip.btrip.supplychain.train.detail.search.vtwo
 //
 // 【商旅】火车票订单详情查询
-func AlitripBtripSupplychainTrainDetailSearchVtwo(clt *core.SDKClient, req *btrip.AlitripBtripSupplychainTrainDetailSearchVtwoAPIRequest, session string) (*btrip.AlitripBtripSupplychainTrainDetailSearchVtwoAPIResponse, error) {
-	var resp btrip.AlitripBtripSupplychainTrainDetailSearchVtwoAPIResponse
+func Alitripbtripsupplychaintraindetailsearchvtwo(clt *core.SDKClient, req *btrip.AlitripbtripsupplychaintraindetailsearchvtwoAPIRequest, session string) (*btrip.AlitripbtripsupplychaintraindetailsearchvtwoAPIResponse, error) {
+	var resp btrip.AlitripbtripsupplychaintraindetailsearchvtwoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

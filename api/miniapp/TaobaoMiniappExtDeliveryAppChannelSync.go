@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/miniapp"
 )
 
-// TaobaoMiniappExtDeliveryAppChannelSync ISV写入应用的渠道信息
+// Taobaominiappextdeliveryappchannelsync ISV写入应用的渠道信息
 // taobao.miniapp.ext.delivery.app.channel.sync
 //
 // ISV写入应用的渠道信息
-func TaobaoMiniappExtDeliveryAppChannelSync(clt *core.SDKClient, req *miniapp.TaobaoMiniappExtDeliveryAppChannelSyncAPIRequest, session string) (*miniapp.TaobaoMiniappExtDeliveryAppChannelSyncAPIResponse, error) {
-	var resp miniapp.TaobaoMiniappExtDeliveryAppChannelSyncAPIResponse
+func Taobaominiappextdeliveryappchannelsync(clt *core.SDKClient, req *miniapp.TaobaominiappextdeliveryappchannelsyncAPIRequest, session string) (*miniapp.TaobaominiappextdeliveryappchannelsyncAPIResponse, error) {
+	var resp miniapp.TaobaominiappextdeliveryappchannelsyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

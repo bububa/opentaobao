@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressAscpInventoryLogQueryAPIResponse AliExpress库存流水查询API API返回值
+// AliexpressascpinventorylogqueryAPIResponse AliExpress库存流水查询API API返回值
 // aliexpress.ascp.inventory.log.query
 //
 // AliExpress库存流水查询API
-type AliexpressAscpInventoryLogQueryAPIResponse struct {
+type AliexpressascpinventorylogqueryAPIResponse struct {
 	model.CommonResponse
-	AliexpressAscpInventoryLogQueryAPIResponseModel
+	AliexpressascpinventorylogqueryAPIResponseModel
 }
 
-// AliexpressAscpInventoryLogQueryAPIResponseModel is AliExpress库存流水查询API 成功返回结果
-type AliexpressAscpInventoryLogQueryAPIResponseModel struct {
+// AliexpressascpinventorylogqueryAPIResponseModel is AliExpress库存流水查询API 成功返回结果
+type AliexpressascpinventorylogqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_ascp_inventory_log_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

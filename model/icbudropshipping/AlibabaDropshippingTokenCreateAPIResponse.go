@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaDropshippingTokenCreateAPIResponse 国际站dropshipping 选品token 创建 API返回值
+// AlibabadropshippingtokencreateAPIResponse 国际站dropshipping 选品token 创建 API返回值
 // alibaba.dropshipping.token.create
 //
 // 国际站dropshipping 选品token 创建，用于让买家有权限访问我们指定的 商品场馆
-type AlibabaDropshippingTokenCreateAPIResponse struct {
+type AlibabadropshippingtokencreateAPIResponse struct {
 	model.CommonResponse
-	AlibabaDropshippingTokenCreateAPIResponseModel
+	AlibabadropshippingtokencreateAPIResponseModel
 }
 
-// AlibabaDropshippingTokenCreateAPIResponseModel is 国际站dropshipping 选品token 创建 成功返回结果
-type AlibabaDropshippingTokenCreateAPIResponseModel struct {
+// AlibabadropshippingtokencreateAPIResponseModel is 国际站dropshipping 选品token 创建 成功返回结果
+type AlibabadropshippingtokencreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_dropshipping_token_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

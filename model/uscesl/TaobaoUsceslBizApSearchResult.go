@@ -1,7 +1,7 @@
 package uscesl
 
-// TaobaoUsceslBizApSearchResult 结构体
-type TaobaoUsceslBizApSearchResult struct {
+// TaobaousceslbizapsearchResult 结构体
+type TaobaousceslbizapsearchResult struct {
 	// 返回对象list
 	TargetList []Target `json:"target_list,omitempty" xml:"target_list>target,omitempty"`
 	// 调用返回编码

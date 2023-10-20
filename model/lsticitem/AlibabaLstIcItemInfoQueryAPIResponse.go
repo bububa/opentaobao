@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLstIcItemInfoQueryAPIResponse 商品信息查询 API返回值
+// AlibabalsticiteminfoqueryAPIResponse 商品信息查询 API返回值
 // alibaba.lst.ic.item.info.query
 //
 // 查询商品信息
-type AlibabaLstIcItemInfoQueryAPIResponse struct {
+type AlibabalsticiteminfoqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaLstIcItemInfoQueryAPIResponseModel
+	AlibabalsticiteminfoqueryAPIResponseModel
 }
 
-// AlibabaLstIcItemInfoQueryAPIResponseModel is 商品信息查询 成功返回结果
-type AlibabaLstIcItemInfoQueryAPIResponseModel struct {
+// AlibabalsticiteminfoqueryAPIResponseModel is 商品信息查询 成功返回结果
+type AlibabalsticiteminfoqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lst_ic_item_info_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

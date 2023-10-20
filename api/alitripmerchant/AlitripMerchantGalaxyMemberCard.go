@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
 
-// AlitripMerchantGalaxyMemberCard 星河-获取会员卡信息
+// Alitripmerchantgalaxymembercard 星河-获取会员卡信息
 // alitrip.merchant.galaxy.member.card
 //
 // 星河=根据会员等级获取会员的权益
-func AlitripMerchantGalaxyMemberCard(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyMemberCardAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyMemberCardAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyMemberCardAPIResponse
+func Alitripmerchantgalaxymembercard(clt *core.SDKClient, req *alitripmerchant.AlitripmerchantgalaxymembercardAPIRequest, session string) (*alitripmerchant.AlitripmerchantgalaxymembercardAPIResponse, error) {
+	var resp alitripmerchant.AlitripmerchantgalaxymembercardAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

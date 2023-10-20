@@ -1,9 +1,9 @@
 package taotv
 
-// TaobaoTaotvVideoPlaylistGetResult 结构体
-type TaobaoTaotvVideoPlaylistGetResult struct {
+// TaobaotaotvvideoplaylistgetResult 结构体
+type TaobaotaotvvideoplaylistgetResult struct {
 	// 数据列表
-	ModelList []TaobaoTaotvVideoPlaylistGetModel `json:"model_list,omitempty" xml:"model_list>taobao_taotv_video_playlist_get_model,omitempty"`
+	ModelList []TaobaotaotvvideoplaylistgetModel `json:"model_list,omitempty" xml:"model_list>taobaotaotvvideoplaylistget_model,omitempty"`
 	// msgCode
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msgInfo

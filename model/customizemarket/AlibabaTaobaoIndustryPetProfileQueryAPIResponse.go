@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaTaobaoIndustryPetProfileQueryAPIResponse 用户宠物列表查询 API返回值
+// AlibabataobaoindustrypetprofilequeryAPIResponse 用户宠物列表查询 API返回值
 // alibaba.taobao.industry.pet.profile.query
 //
 // 用户宠物列表查询
-type AlibabaTaobaoIndustryPetProfileQueryAPIResponse struct {
+type AlibabataobaoindustrypetprofilequeryAPIResponse struct {
 	model.CommonResponse
-	AlibabaTaobaoIndustryPetProfileQueryAPIResponseModel
+	AlibabataobaoindustrypetprofilequeryAPIResponseModel
 }
 
-// AlibabaTaobaoIndustryPetProfileQueryAPIResponseModel is 用户宠物列表查询 成功返回结果
-type AlibabaTaobaoIndustryPetProfileQueryAPIResponseModel struct {
+// AlibabataobaoindustrypetprofilequeryAPIResponseModel is 用户宠物列表查询 成功返回结果
+type AlibabataobaoindustrypetprofilequeryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_taobao_industry_pet_profile_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIdleIsvItemRechargeEditAPIRequest 闲鱼商品直充功能编辑 API请求
+// AlibabaidleisvitemrechargeeditAPIRequest 闲鱼商品直充功能编辑 API请求
 // alibaba.idle.isv.item.recharge.edit
 //
 // 闲鱼商品直充功能编辑
-type AlibabaIdleIsvItemRechargeEditAPIRequest struct {
+type AlibabaidleisvitemrechargeeditAPIRequest struct {
 	model.Params
 	// 商品id
 	_itemId int64
@@ -18,52 +18,52 @@ type AlibabaIdleIsvItemRechargeEditAPIRequest struct {
 	_idleItemApiAutoRechargeDo *IdleItemApiAutoRechargeDo
 }
 
-// NewAlibabaIdleIsvItemRechargeEditRequest 初始化AlibabaIdleIsvItemRechargeEditAPIRequest对象
-func NewAlibabaIdleIsvItemRechargeEditRequest() *AlibabaIdleIsvItemRechargeEditAPIRequest {
-	return &AlibabaIdleIsvItemRechargeEditAPIRequest{
+// NewAlibabaidleisvitemrechargeeditRequest 初始化AlibabaidleisvitemrechargeeditAPIRequest对象
+func NewAlibabaidleisvitemrechargeeditRequest() *AlibabaidleisvitemrechargeeditAPIRequest {
+	return &AlibabaidleisvitemrechargeeditAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaIdleIsvItemRechargeEditAPIRequest) GetApiMethodName() string {
+func (r AlibabaidleisvitemrechargeeditAPIRequest) GetApiMethodName() string {
 	return "alibaba.idle.isv.item.recharge.edit"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIdleIsvItemRechargeEditAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaidleisvitemrechargeeditAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaIdleIsvItemRechargeEditAPIRequest) GetRawParams() model.Params {
+func (r AlibabaidleisvitemrechargeeditAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetItemId is ItemId Setter
 // 商品id
-func (r *AlibabaIdleIsvItemRechargeEditAPIRequest) SetItemId(_itemId int64) error {
+func (r *AlibabaidleisvitemrechargeeditAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
 	r.Set("item_id", _itemId)
 	return nil
 }
 
 // GetItemId ItemId Getter
-func (r AlibabaIdleIsvItemRechargeEditAPIRequest) GetItemId() int64 {
+func (r AlibabaidleisvitemrechargeeditAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
 // SetIdleItemApiAutoRechargeDo is IdleItemApiAutoRechargeDo Setter
 // 直充信息
-func (r *AlibabaIdleIsvItemRechargeEditAPIRequest) SetIdleItemApiAutoRechargeDo(_idleItemApiAutoRechargeDo *IdleItemApiAutoRechargeDo) error {
+func (r *AlibabaidleisvitemrechargeeditAPIRequest) SetIdleItemApiAutoRechargeDo(_idleItemApiAutoRechargeDo *IdleItemApiAutoRechargeDo) error {
 	r._idleItemApiAutoRechargeDo = _idleItemApiAutoRechargeDo
 	r.Set("idle_item_api_auto_recharge_do", _idleItemApiAutoRechargeDo)
 	return nil
 }
 
 // GetIdleItemApiAutoRechargeDo IdleItemApiAutoRechargeDo Getter
-func (r AlibabaIdleIsvItemRechargeEditAPIRequest) GetIdleItemApiAutoRechargeDo() *IdleItemApiAutoRechargeDo {
+func (r AlibabaidleisvitemrechargeeditAPIRequest) GetIdleItemApiAutoRechargeDo() *IdleItemApiAutoRechargeDo {
 	return r._idleItemApiAutoRechargeDo
 }

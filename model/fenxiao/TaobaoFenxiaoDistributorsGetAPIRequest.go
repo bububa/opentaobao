@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoFenxiaoDistributorsGetAPIRequest 获取分销商信息 API请求
+// TaobaofenxiaodistributorsgetAPIRequest 获取分销商信息 API请求
 // taobao.fenxiao.distributors.get
 //
 // 查询和当前登录供应商有合作关系的分销商的信息
-type TaobaoFenxiaoDistributorsGetAPIRequest struct {
+type TaobaofenxiaodistributorsgetAPIRequest struct {
 	model.Params
 	// 分销商用户名列表。多个之间以“,”分隔;最多支持50个分销商用户名。
 	_nicks string
 }
 
-// NewTaobaoFenxiaoDistributorsGetRequest 初始化TaobaoFenxiaoDistributorsGetAPIRequest对象
-func NewTaobaoFenxiaoDistributorsGetRequest() *TaobaoFenxiaoDistributorsGetAPIRequest {
-	return &TaobaoFenxiaoDistributorsGetAPIRequest{
+// NewTaobaofenxiaodistributorsgetRequest 初始化TaobaofenxiaodistributorsgetAPIRequest对象
+func NewTaobaofenxiaodistributorsgetRequest() *TaobaofenxiaodistributorsgetAPIRequest {
+	return &TaobaofenxiaodistributorsgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoFenxiaoDistributorsGetAPIRequest) GetApiMethodName() string {
+func (r TaobaofenxiaodistributorsgetAPIRequest) GetApiMethodName() string {
 	return "taobao.fenxiao.distributors.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoFenxiaoDistributorsGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaofenxiaodistributorsgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoFenxiaoDistributorsGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaofenxiaodistributorsgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetNicks is Nicks Setter
 // 分销商用户名列表。多个之间以“,”分隔;最多支持50个分销商用户名。
-func (r *TaobaoFenxiaoDistributorsGetAPIRequest) SetNicks(_nicks string) error {
+func (r *TaobaofenxiaodistributorsgetAPIRequest) SetNicks(_nicks string) error {
 	r._nicks = _nicks
 	r.Set("nicks", _nicks)
 	return nil
 }
 
 // GetNicks Nicks Getter
-func (r TaobaoFenxiaoDistributorsGetAPIRequest) GetNicks() string {
+func (r TaobaofenxiaodistributorsgetAPIRequest) GetNicks() string {
 	return r._nicks
 }

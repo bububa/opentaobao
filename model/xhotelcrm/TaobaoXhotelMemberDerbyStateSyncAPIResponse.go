@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelMemberDerbyStateSyncAPIResponse 德比侧同步卡、券状态接口 API返回值
+// TaobaoxhotelmemberderbystatesyncAPIResponse 德比侧同步卡、券状态接口 API返回值
 // taobao.xhotel.member.derby.state.sync
 //
 // 德比侧同步卡、券状态接口
-type TaobaoXhotelMemberDerbyStateSyncAPIResponse struct {
+type TaobaoxhotelmemberderbystatesyncAPIResponse struct {
 	model.CommonResponse
-	TaobaoXhotelMemberDerbyStateSyncAPIResponseModel
+	TaobaoxhotelmemberderbystatesyncAPIResponseModel
 }
 
-// TaobaoXhotelMemberDerbyStateSyncAPIResponseModel is 德比侧同步卡、券状态接口 成功返回结果
-type TaobaoXhotelMemberDerbyStateSyncAPIResponseModel struct {
+// TaobaoxhotelmemberderbystatesyncAPIResponseModel is 德比侧同步卡、券状态接口 成功返回结果
+type TaobaoxhotelmemberderbystatesyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_member_derby_state_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

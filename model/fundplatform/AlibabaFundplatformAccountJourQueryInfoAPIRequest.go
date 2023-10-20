@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaFundplatformAccountJourQueryInfoAPIRequest 查询账户流水信息 API请求
+// AlibabafundplatformaccountjourqueryinfoAPIRequest 查询账户流水信息 API请求
 // alibaba.fundplatform.account.jour.query.info
 //
 // 外部查询账户流水信息
-type AlibabaFundplatformAccountJourQueryInfoAPIRequest struct {
+type AlibabafundplatformaccountjourqueryinfoAPIRequest struct {
 	model.Params
 	// 入参对象
 	_paramFundAccountJournalQueryReq *FundAccountJournalQueryReq
 }
 
-// NewAlibabaFundplatformAccountJourQueryInfoRequest 初始化AlibabaFundplatformAccountJourQueryInfoAPIRequest对象
-func NewAlibabaFundplatformAccountJourQueryInfoRequest() *AlibabaFundplatformAccountJourQueryInfoAPIRequest {
-	return &AlibabaFundplatformAccountJourQueryInfoAPIRequest{
+// NewAlibabafundplatformaccountjourqueryinfoRequest 初始化AlibabafundplatformaccountjourqueryinfoAPIRequest对象
+func NewAlibabafundplatformaccountjourqueryinfoRequest() *AlibabafundplatformaccountjourqueryinfoAPIRequest {
+	return &AlibabafundplatformaccountjourqueryinfoAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaFundplatformAccountJourQueryInfoAPIRequest) GetApiMethodName() string {
+func (r AlibabafundplatformaccountjourqueryinfoAPIRequest) GetApiMethodName() string {
 	return "alibaba.fundplatform.account.jour.query.info"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaFundplatformAccountJourQueryInfoAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabafundplatformaccountjourqueryinfoAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaFundplatformAccountJourQueryInfoAPIRequest) GetRawParams() model.Params {
+func (r AlibabafundplatformaccountjourqueryinfoAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamFundAccountJournalQueryReq is ParamFundAccountJournalQueryReq Setter
 // 入参对象
-func (r *AlibabaFundplatformAccountJourQueryInfoAPIRequest) SetParamFundAccountJournalQueryReq(_paramFundAccountJournalQueryReq *FundAccountJournalQueryReq) error {
+func (r *AlibabafundplatformaccountjourqueryinfoAPIRequest) SetParamFundAccountJournalQueryReq(_paramFundAccountJournalQueryReq *FundAccountJournalQueryReq) error {
 	r._paramFundAccountJournalQueryReq = _paramFundAccountJournalQueryReq
 	r.Set("param_fund_account_journal_query_req", _paramFundAccountJournalQueryReq)
 	return nil
 }
 
 // GetParamFundAccountJournalQueryReq ParamFundAccountJournalQueryReq Getter
-func (r AlibabaFundplatformAccountJourQueryInfoAPIRequest) GetParamFundAccountJournalQueryReq() *FundAccountJournalQueryReq {
+func (r AlibabafundplatformaccountjourqueryinfoAPIRequest) GetParamFundAccountJournalQueryReq() *FundAccountJournalQueryReq {
 	return r._paramFundAccountJournalQueryReq
 }

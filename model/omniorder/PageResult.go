@@ -5,7 +5,7 @@ type PageResult struct {
 	// 返回数据
 	OrderList []OrderDto `json:"order_list,omitempty" xml:"order_list>order_dto,omitempty"`
 	// 订单列表
-	Datas []TaobaoOmniDealerOdersListData `json:"datas,omitempty" xml:"datas>taobao_omni_dealer_oders_list_data,omitempty"`
+	Datas []TaobaoomnidealeroderslistData `json:"datas,omitempty" xml:"datas>taobaoomnidealeroderslist_data,omitempty"`
 	// 页码，请求的值
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 状态码，200-成功

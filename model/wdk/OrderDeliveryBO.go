@@ -1,7 +1,7 @@
 package wdk
 
-// OrderDeliveryBO 结构体
-type OrderDeliveryBO struct {
+// OrderDeliveryBo 结构体
+type OrderDeliveryBo struct {
 	// 外部子单号
 	OutSubOrderId string `json:"out_sub_order_id,omitempty" xml:"out_sub_order_id,omitempty"`
 	// 后端商品编码

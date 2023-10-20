@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthBookingReserveModifyAPIRequest 修改预约 API请求
+// AlibabaalihealthbookingreservemodifyAPIRequest 修改预约 API请求
 // alibaba.alihealth.booking.reserve.modify
 //
 // 消费医疗统一预约平台，取消预约
-type AlibabaAlihealthBookingReserveModifyAPIRequest struct {
+type AlibabaalihealthbookingreservemodifyAPIRequest struct {
 	model.Params
 	// modify
 	_modify *IsvReserveRequest
 }
 
-// NewAlibabaAlihealthBookingReserveModifyRequest 初始化AlibabaAlihealthBookingReserveModifyAPIRequest对象
-func NewAlibabaAlihealthBookingReserveModifyRequest() *AlibabaAlihealthBookingReserveModifyAPIRequest {
-	return &AlibabaAlihealthBookingReserveModifyAPIRequest{
+// NewAlibabaalihealthbookingreservemodifyRequest 初始化AlibabaalihealthbookingreservemodifyAPIRequest对象
+func NewAlibabaalihealthbookingreservemodifyRequest() *AlibabaalihealthbookingreservemodifyAPIRequest {
+	return &AlibabaalihealthbookingreservemodifyAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthBookingReserveModifyAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthbookingreservemodifyAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.booking.reserve.modify"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthBookingReserveModifyAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthbookingreservemodifyAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthBookingReserveModifyAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthbookingreservemodifyAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetModify is Modify Setter
 // modify
-func (r *AlibabaAlihealthBookingReserveModifyAPIRequest) SetModify(_modify *IsvReserveRequest) error {
+func (r *AlibabaalihealthbookingreservemodifyAPIRequest) SetModify(_modify *IsvReserveRequest) error {
 	r._modify = _modify
 	r.Set("modify", _modify)
 	return nil
 }
 
 // GetModify Modify Getter
-func (r AlibabaAlihealthBookingReserveModifyAPIRequest) GetModify() *IsvReserveRequest {
+func (r AlibabaalihealthbookingreservemodifyAPIRequest) GetModify() *IsvReserveRequest {
 	return r._modify
 }

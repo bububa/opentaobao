@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaServicecenterFulfiltaskCreateAPIRequest 合单生成核销单 API请求
+// AlibabaservicecenterfulfiltaskcreateAPIRequest 合单生成核销单 API请求
 // alibaba.servicecenter.fulfiltask.create
 //
 // 服务对工单进行合单，合单的结果是生成核销单
-type AlibabaServicecenterFulfiltaskCreateAPIRequest struct {
+type AlibabaservicecenterfulfiltaskcreateAPIRequest struct {
 	model.Params
 	// 工单id列表
 	_workcardIds []int64
@@ -18,52 +18,52 @@ type AlibabaServicecenterFulfiltaskCreateAPIRequest struct {
 	_outerId string
 }
 
-// NewAlibabaServicecenterFulfiltaskCreateRequest 初始化AlibabaServicecenterFulfiltaskCreateAPIRequest对象
-func NewAlibabaServicecenterFulfiltaskCreateRequest() *AlibabaServicecenterFulfiltaskCreateAPIRequest {
-	return &AlibabaServicecenterFulfiltaskCreateAPIRequest{
+// NewAlibabaservicecenterfulfiltaskcreateRequest 初始化AlibabaservicecenterfulfiltaskcreateAPIRequest对象
+func NewAlibabaservicecenterfulfiltaskcreateRequest() *AlibabaservicecenterfulfiltaskcreateAPIRequest {
+	return &AlibabaservicecenterfulfiltaskcreateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaServicecenterFulfiltaskCreateAPIRequest) GetApiMethodName() string {
+func (r AlibabaservicecenterfulfiltaskcreateAPIRequest) GetApiMethodName() string {
 	return "alibaba.servicecenter.fulfiltask.create"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaServicecenterFulfiltaskCreateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaservicecenterfulfiltaskcreateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaServicecenterFulfiltaskCreateAPIRequest) GetRawParams() model.Params {
+func (r AlibabaservicecenterfulfiltaskcreateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetWorkcardIds is WorkcardIds Setter
 // 工单id列表
-func (r *AlibabaServicecenterFulfiltaskCreateAPIRequest) SetWorkcardIds(_workcardIds []int64) error {
+func (r *AlibabaservicecenterfulfiltaskcreateAPIRequest) SetWorkcardIds(_workcardIds []int64) error {
 	r._workcardIds = _workcardIds
 	r.Set("workcard_ids", _workcardIds)
 	return nil
 }
 
 // GetWorkcardIds WorkcardIds Getter
-func (r AlibabaServicecenterFulfiltaskCreateAPIRequest) GetWorkcardIds() []int64 {
+func (r AlibabaservicecenterfulfiltaskcreateAPIRequest) GetWorkcardIds() []int64 {
 	return r._workcardIds
 }
 
 // SetOuterId is OuterId Setter
 // 外部单号
-func (r *AlibabaServicecenterFulfiltaskCreateAPIRequest) SetOuterId(_outerId string) error {
+func (r *AlibabaservicecenterfulfiltaskcreateAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
 	r.Set("outer_id", _outerId)
 	return nil
 }
 
 // GetOuterId OuterId Getter
-func (r AlibabaServicecenterFulfiltaskCreateAPIRequest) GetOuterId() string {
+func (r AlibabaservicecenterfulfiltaskcreateAPIRequest) GetOuterId() string {
 	return r._outerId
 }

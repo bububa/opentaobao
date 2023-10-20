@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscUserCenterInfoQueryAPIResponse 查询授权的用户信息 API返回值
+// AlibabaalscusercenterinfoqueryAPIResponse 查询授权的用户信息 API返回值
 // alibaba.alsc.user.center.info.query
 //
 // 获取授权的饿了么用户信息
-type AlibabaAlscUserCenterInfoQueryAPIResponse struct {
+type AlibabaalscusercenterinfoqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlscUserCenterInfoQueryAPIResponseModel
+	AlibabaalscusercenterinfoqueryAPIResponseModel
 }
 
-// AlibabaAlscUserCenterInfoQueryAPIResponseModel is 查询授权的用户信息 成功返回结果
-type AlibabaAlscUserCenterInfoQueryAPIResponseModel struct {
+// AlibabaalscusercenterinfoqueryAPIResponseModel is 查询授权的用户信息 成功返回结果
+type AlibabaalscusercenterinfoqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_user_center_info_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

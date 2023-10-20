@@ -13,25 +13,25 @@ import (
 type TaobaotbkorderdetailsgetAPIRequest struct {
 	model.Params
 	// 位点，除第一页之外，都需要传递；前端原样返回。
-	_positionindex string
+	_positionIndex string
 	// 订单查询结束时间，订单开始时间至订单结束时间，中间时间段日常要求不超过3个小时，但如618、双11、年货节等大促期间预估时间段不可超过20分钟，超过会提示错误，调用时请务必注意时间段的选择，以保证亲能正常调用！
-	_endtime string
+	_endTime string
 	// 订单查询开始时间
-	_starttime string
+	_startTime string
 	// 查询时间类型，1：按照订单淘客创建时间查询，2:按照订单淘客付款时间查询，3:按照订单淘客结算时间查询，4:按照订单更新时间；
-	_querytype int64
+	_queryType int64
 	// 页大小，默认20，1~100
-	_pagesize int64
+	_pageSize int64
 	// 推广者角色类型,2:二方，3:三方，不传，表示所有角色
-	_membertype int64
+	_memberType int64
 	// 淘客订单状态，11-拍下未付款，12-付款，13-关闭，14-确认收货，3-结算成功;不传，表示所有状态
-	_tkstatus int64
+	_tkStatus int64
 	// 跳转类型，当向前或者向后翻页必须提供,-1: 向前翻页,1：向后翻页
-	_jumptype int64
+	_jumpType int64
 	// 第几页，默认1，1~100
-	_pageno int64
+	_pageNo int64
 	// 筛选订单类型，1:所有订单，2:渠道订单，3:会员运营订单，默认为1
-	_orderscene int64
+	_orderScene int64
 }
 
 // NewTaobaotbkorderdetailsgetRequest 初始化TaobaotbkorderdetailsgetAPIRequest对象
@@ -58,132 +58,132 @@ func (r TaobaotbkorderdetailsgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetPositionindex is Positionindex Setter
+// SetPositionIndex is PositionIndex Setter
 // 位点，除第一页之外，都需要传递；前端原样返回。
-func (r *TaobaotbkorderdetailsgetAPIRequest) SetPositionindex(_positionindex string) error {
-	r._positionindex = _positionindex
-	r.Set("position_index", _positionindex)
+func (r *TaobaotbkorderdetailsgetAPIRequest) SetPositionIndex(_positionIndex string) error {
+	r._positionIndex = _positionIndex
+	r.Set("position_index", _positionIndex)
 	return nil
 }
 
-// GetPositionindex Positionindex Getter
-func (r TaobaotbkorderdetailsgetAPIRequest) GetPositionindex() string {
-	return r._positionindex
+// GetPositionIndex PositionIndex Getter
+func (r TaobaotbkorderdetailsgetAPIRequest) GetPositionIndex() string {
+	return r._positionIndex
 }
 
-// SetEndtime is Endtime Setter
+// SetEndTime is EndTime Setter
 // 订单查询结束时间，订单开始时间至订单结束时间，中间时间段日常要求不超过3个小时，但如618、双11、年货节等大促期间预估时间段不可超过20分钟，超过会提示错误，调用时请务必注意时间段的选择，以保证亲能正常调用！
-func (r *TaobaotbkorderdetailsgetAPIRequest) SetEndtime(_endtime string) error {
-	r._endtime = _endtime
-	r.Set("end_time", _endtime)
+func (r *TaobaotbkorderdetailsgetAPIRequest) SetEndTime(_endTime string) error {
+	r._endTime = _endTime
+	r.Set("end_time", _endTime)
 	return nil
 }
 
-// GetEndtime Endtime Getter
-func (r TaobaotbkorderdetailsgetAPIRequest) GetEndtime() string {
-	return r._endtime
+// GetEndTime EndTime Getter
+func (r TaobaotbkorderdetailsgetAPIRequest) GetEndTime() string {
+	return r._endTime
 }
 
-// SetStarttime is Starttime Setter
+// SetStartTime is StartTime Setter
 // 订单查询开始时间
-func (r *TaobaotbkorderdetailsgetAPIRequest) SetStarttime(_starttime string) error {
-	r._starttime = _starttime
-	r.Set("start_time", _starttime)
+func (r *TaobaotbkorderdetailsgetAPIRequest) SetStartTime(_startTime string) error {
+	r._startTime = _startTime
+	r.Set("start_time", _startTime)
 	return nil
 }
 
-// GetStarttime Starttime Getter
-func (r TaobaotbkorderdetailsgetAPIRequest) GetStarttime() string {
-	return r._starttime
+// GetStartTime StartTime Getter
+func (r TaobaotbkorderdetailsgetAPIRequest) GetStartTime() string {
+	return r._startTime
 }
 
-// SetQuerytype is Querytype Setter
+// SetQueryType is QueryType Setter
 // 查询时间类型，1：按照订单淘客创建时间查询，2:按照订单淘客付款时间查询，3:按照订单淘客结算时间查询，4:按照订单更新时间；
-func (r *TaobaotbkorderdetailsgetAPIRequest) SetQuerytype(_querytype int64) error {
-	r._querytype = _querytype
-	r.Set("query_type", _querytype)
+func (r *TaobaotbkorderdetailsgetAPIRequest) SetQueryType(_queryType int64) error {
+	r._queryType = _queryType
+	r.Set("query_type", _queryType)
 	return nil
 }
 
-// GetQuerytype Querytype Getter
-func (r TaobaotbkorderdetailsgetAPIRequest) GetQuerytype() int64 {
-	return r._querytype
+// GetQueryType QueryType Getter
+func (r TaobaotbkorderdetailsgetAPIRequest) GetQueryType() int64 {
+	return r._queryType
 }
 
-// SetPagesize is Pagesize Setter
+// SetPageSize is PageSize Setter
 // 页大小，默认20，1~100
-func (r *TaobaotbkorderdetailsgetAPIRequest) SetPagesize(_pagesize int64) error {
-	r._pagesize = _pagesize
-	r.Set("page_size", _pagesize)
+func (r *TaobaotbkorderdetailsgetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
 	return nil
 }
 
-// GetPagesize Pagesize Getter
-func (r TaobaotbkorderdetailsgetAPIRequest) GetPagesize() int64 {
-	return r._pagesize
+// GetPageSize PageSize Getter
+func (r TaobaotbkorderdetailsgetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }
 
-// SetMembertype is Membertype Setter
+// SetMemberType is MemberType Setter
 // 推广者角色类型,2:二方，3:三方，不传，表示所有角色
-func (r *TaobaotbkorderdetailsgetAPIRequest) SetMembertype(_membertype int64) error {
-	r._membertype = _membertype
-	r.Set("member_type", _membertype)
+func (r *TaobaotbkorderdetailsgetAPIRequest) SetMemberType(_memberType int64) error {
+	r._memberType = _memberType
+	r.Set("member_type", _memberType)
 	return nil
 }
 
-// GetMembertype Membertype Getter
-func (r TaobaotbkorderdetailsgetAPIRequest) GetMembertype() int64 {
-	return r._membertype
+// GetMemberType MemberType Getter
+func (r TaobaotbkorderdetailsgetAPIRequest) GetMemberType() int64 {
+	return r._memberType
 }
 
-// SetTkstatus is Tkstatus Setter
+// SetTkStatus is TkStatus Setter
 // 淘客订单状态，11-拍下未付款，12-付款，13-关闭，14-确认收货，3-结算成功;不传，表示所有状态
-func (r *TaobaotbkorderdetailsgetAPIRequest) SetTkstatus(_tkstatus int64) error {
-	r._tkstatus = _tkstatus
-	r.Set("tk_status", _tkstatus)
+func (r *TaobaotbkorderdetailsgetAPIRequest) SetTkStatus(_tkStatus int64) error {
+	r._tkStatus = _tkStatus
+	r.Set("tk_status", _tkStatus)
 	return nil
 }
 
-// GetTkstatus Tkstatus Getter
-func (r TaobaotbkorderdetailsgetAPIRequest) GetTkstatus() int64 {
-	return r._tkstatus
+// GetTkStatus TkStatus Getter
+func (r TaobaotbkorderdetailsgetAPIRequest) GetTkStatus() int64 {
+	return r._tkStatus
 }
 
-// SetJumptype is Jumptype Setter
+// SetJumpType is JumpType Setter
 // 跳转类型，当向前或者向后翻页必须提供,-1: 向前翻页,1：向后翻页
-func (r *TaobaotbkorderdetailsgetAPIRequest) SetJumptype(_jumptype int64) error {
-	r._jumptype = _jumptype
-	r.Set("jump_type", _jumptype)
+func (r *TaobaotbkorderdetailsgetAPIRequest) SetJumpType(_jumpType int64) error {
+	r._jumpType = _jumpType
+	r.Set("jump_type", _jumpType)
 	return nil
 }
 
-// GetJumptype Jumptype Getter
-func (r TaobaotbkorderdetailsgetAPIRequest) GetJumptype() int64 {
-	return r._jumptype
+// GetJumpType JumpType Getter
+func (r TaobaotbkorderdetailsgetAPIRequest) GetJumpType() int64 {
+	return r._jumpType
 }
 
-// SetPageno is Pageno Setter
+// SetPageNo is PageNo Setter
 // 第几页，默认1，1~100
-func (r *TaobaotbkorderdetailsgetAPIRequest) SetPageno(_pageno int64) error {
-	r._pageno = _pageno
-	r.Set("page_no", _pageno)
+func (r *TaobaotbkorderdetailsgetAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
 	return nil
 }
 
-// GetPageno Pageno Getter
-func (r TaobaotbkorderdetailsgetAPIRequest) GetPageno() int64 {
-	return r._pageno
+// GetPageNo PageNo Getter
+func (r TaobaotbkorderdetailsgetAPIRequest) GetPageNo() int64 {
+	return r._pageNo
 }
 
-// SetOrderscene is Orderscene Setter
+// SetOrderScene is OrderScene Setter
 // 筛选订单类型，1:所有订单，2:渠道订单，3:会员运营订单，默认为1
-func (r *TaobaotbkorderdetailsgetAPIRequest) SetOrderscene(_orderscene int64) error {
-	r._orderscene = _orderscene
-	r.Set("order_scene", _orderscene)
+func (r *TaobaotbkorderdetailsgetAPIRequest) SetOrderScene(_orderScene int64) error {
+	r._orderScene = _orderScene
+	r.Set("order_scene", _orderScene)
 	return nil
 }
 
-// GetOrderscene Orderscene Getter
-func (r TaobaotbkorderdetailsgetAPIRequest) GetOrderscene() int64 {
-	return r._orderscene
+// GetOrderScene OrderScene Getter
+func (r TaobaotbkorderdetailsgetAPIRequest) GetOrderScene() int64 {
+	return r._orderScene
 }

@@ -1,7 +1,7 @@
 package alihealth2
 
-// AlibabaAlihealthDentalItemUnbindMtopResult 结构体
-type AlibabaAlihealthDentalItemUnbindMtopResult struct {
+// AlibabaalihealthdentalitemunbindMtopResult 结构体
+type AlibabaalihealthdentalitemunbindMtopResult struct {
 	// 200
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 成功

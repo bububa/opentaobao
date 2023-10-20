@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripGrouptourProductUploadAPIResponse 新版跟团游商品维护接口 API返回值
+// AlitripgrouptourproductuploadAPIResponse 新版跟团游商品维护接口 API返回值
 // alitrip.grouptour.product.upload
 //
 // 新版跟团游商品维护接口
-type AlitripGrouptourProductUploadAPIResponse struct {
+type AlitripgrouptourproductuploadAPIResponse struct {
 	model.CommonResponse
-	AlitripGrouptourProductUploadAPIResponseModel
+	AlitripgrouptourproductuploadAPIResponseModel
 }
 
-// AlitripGrouptourProductUploadAPIResponseModel is 新版跟团游商品维护接口 成功返回结果
-type AlitripGrouptourProductUploadAPIResponseModel struct {
+// AlitripgrouptourproductuploadAPIResponseModel is 新版跟团游商品维护接口 成功返回结果
+type AlitripgrouptourproductuploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_grouptour_product_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenOrderCallbackAPIResponse 配送拦截接口 API返回值
+// TaobaoqimenordercallbackAPIResponse 配送拦截接口 API返回值
 // taobao.qimen.order.callback
 //
 // 配送拦截
-type TaobaoQimenOrderCallbackAPIResponse struct {
+type TaobaoqimenordercallbackAPIResponse struct {
 	model.CommonResponse
-	TaobaoQimenOrderCallbackAPIResponseModel
+	TaobaoqimenordercallbackAPIResponseModel
 }
 
-// TaobaoQimenOrderCallbackAPIResponseModel is 配送拦截接口 成功返回结果
-type TaobaoQimenOrderCallbackAPIResponseModel struct {
+// TaobaoqimenordercallbackAPIResponseModel is 配送拦截接口 成功返回结果
+type TaobaoqimenordercallbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_order_callback_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

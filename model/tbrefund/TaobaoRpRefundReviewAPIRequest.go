@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoRpRefundReviewAPIRequest 审核退款单 API请求
+// TaobaorprefundreviewAPIRequest 审核退款单 API请求
 // taobao.rp.refund.review
 //
 // 审核退款单，标志是否可用于批量退款，目前仅支持天猫订单。
-type TaobaoRpRefundReviewAPIRequest struct {
+type TaobaorprefundreviewAPIRequest struct {
 	model.Params
 	// 审核人姓名
 	_operator string
@@ -26,104 +26,104 @@ type TaobaoRpRefundReviewAPIRequest struct {
 	_result bool
 }
 
-// NewTaobaoRpRefundReviewRequest 初始化TaobaoRpRefundReviewAPIRequest对象
-func NewTaobaoRpRefundReviewRequest() *TaobaoRpRefundReviewAPIRequest {
-	return &TaobaoRpRefundReviewAPIRequest{
+// NewTaobaorprefundreviewRequest 初始化TaobaorprefundreviewAPIRequest对象
+func NewTaobaorprefundreviewRequest() *TaobaorprefundreviewAPIRequest {
+	return &TaobaorprefundreviewAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoRpRefundReviewAPIRequest) GetApiMethodName() string {
+func (r TaobaorprefundreviewAPIRequest) GetApiMethodName() string {
 	return "taobao.rp.refund.review"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoRpRefundReviewAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaorprefundreviewAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoRpRefundReviewAPIRequest) GetRawParams() model.Params {
+func (r TaobaorprefundreviewAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOperator is Operator Setter
 // 审核人姓名
-func (r *TaobaoRpRefundReviewAPIRequest) SetOperator(_operator string) error {
+func (r *TaobaorprefundreviewAPIRequest) SetOperator(_operator string) error {
 	r._operator = _operator
 	r.Set("operator", _operator)
 	return nil
 }
 
 // GetOperator Operator Getter
-func (r TaobaoRpRefundReviewAPIRequest) GetOperator() string {
+func (r TaobaorprefundreviewAPIRequest) GetOperator() string {
 	return r._operator
 }
 
 // SetRefundPhase is RefundPhase Setter
 // 退款阶段，可选值：售中：onsale，售后：aftersale
-func (r *TaobaoRpRefundReviewAPIRequest) SetRefundPhase(_refundPhase string) error {
+func (r *TaobaorprefundreviewAPIRequest) SetRefundPhase(_refundPhase string) error {
 	r._refundPhase = _refundPhase
 	r.Set("refund_phase", _refundPhase)
 	return nil
 }
 
 // GetRefundPhase RefundPhase Getter
-func (r TaobaoRpRefundReviewAPIRequest) GetRefundPhase() string {
+func (r TaobaorprefundreviewAPIRequest) GetRefundPhase() string {
 	return r._refundPhase
 }
 
 // SetMessage is Message Setter
 // 审核留言
-func (r *TaobaoRpRefundReviewAPIRequest) SetMessage(_message string) error {
+func (r *TaobaorprefundreviewAPIRequest) SetMessage(_message string) error {
 	r._message = _message
 	r.Set("message", _message)
 	return nil
 }
 
 // GetMessage Message Getter
-func (r TaobaoRpRefundReviewAPIRequest) GetMessage() string {
+func (r TaobaorprefundreviewAPIRequest) GetMessage() string {
 	return r._message
 }
 
 // SetRefundId is RefundId Setter
 // 退款单编号
-func (r *TaobaoRpRefundReviewAPIRequest) SetRefundId(_refundId int64) error {
+func (r *TaobaorprefundreviewAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
 	r.Set("refund_id", _refundId)
 	return nil
 }
 
 // GetRefundId RefundId Getter
-func (r TaobaoRpRefundReviewAPIRequest) GetRefundId() int64 {
+func (r TaobaorprefundreviewAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }
 
 // SetRefundVersion is RefundVersion Setter
 // 退款最后更新时间，以时间戳的方式表示
-func (r *TaobaoRpRefundReviewAPIRequest) SetRefundVersion(_refundVersion int64) error {
+func (r *TaobaorprefundreviewAPIRequest) SetRefundVersion(_refundVersion int64) error {
 	r._refundVersion = _refundVersion
 	r.Set("refund_version", _refundVersion)
 	return nil
 }
 
 // GetRefundVersion RefundVersion Getter
-func (r TaobaoRpRefundReviewAPIRequest) GetRefundVersion() int64 {
+func (r TaobaorprefundreviewAPIRequest) GetRefundVersion() int64 {
 	return r._refundVersion
 }
 
 // SetResult is Result Setter
 // 审核是否可用于批量退款，可选值：true（审核通过），false（审核不通过或反审核）
-func (r *TaobaoRpRefundReviewAPIRequest) SetResult(_result bool) error {
+func (r *TaobaorprefundreviewAPIRequest) SetResult(_result bool) error {
 	r._result = _result
 	r.Set("result", _result)
 	return nil
 }
 
 // GetResult Result Getter
-func (r TaobaoRpRefundReviewAPIRequest) GetResult() bool {
+func (r TaobaorprefundreviewAPIRequest) GetResult() bool {
 	return r._result
 }

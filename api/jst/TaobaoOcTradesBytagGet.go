@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/jst"
 )
 
-// TaobaoOcTradesBytagGet 标签查询订单
+// Taobaooctradesbytagget 标签查询订单
 // taobao.oc.trades.bytag.get
 //
 // 根据标签查询订单编号
-func TaobaoOcTradesBytagGet(clt *core.SDKClient, req *jst.TaobaoOcTradesBytagGetAPIRequest, session string) (*jst.TaobaoOcTradesBytagGetAPIResponse, error) {
-	var resp jst.TaobaoOcTradesBytagGetAPIResponse
+func Taobaooctradesbytagget(clt *core.SDKClient, req *jst.TaobaooctradesbytaggetAPIRequest, session string) (*jst.TaobaooctradesbytaggetAPIResponse, error) {
+	var resp jst.TaobaooctradesbytaggetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

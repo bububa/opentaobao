@@ -1,9 +1,9 @@
 package bus
 
-// B2BBusOrderInfo 结构体
-type B2BBusOrderInfo struct {
+// B2bbusOrderInfo 结构体
+type B2bbusOrderInfo struct {
 	// 票信息
-	BusB2bTicketInfoList []B2BTicketInfo `json:"bus_b2b_ticket_info_list,omitempty" xml:"bus_b2b_ticket_info_list>b2b_ticket_info,omitempty"`
+	BusB2bTicketInfoList []B2bticketInfo `json:"bus_b2b_ticket_info_list,omitempty" xml:"bus_b2b_ticket_info_list>b2bticket_info,omitempty"`
 	// 支付宝交易流水号
 	AlipayTradeId string `json:"alipay_trade_id,omitempty" xml:"alipay_trade_id,omitempty"`
 	// 订单创建时间
@@ -11,11 +11,11 @@ type B2BBusOrderInfo struct {
 	// 出票成功时间
 	IssueTime string `json:"issue_time,omitempty" xml:"issue_time,omitempty"`
 	// 车次对象
-	B2BBusLineInfo *B2BBusLineInfo `json:"b2_b_bus_line_info,omitempty" xml:"b2_b_bus_line_info,omitempty"`
+	B2BBusLineInfo *B2bbusLineInfo `json:"b2_b_bus_line_info,omitempty" xml:"b2_b_bus_line_info,omitempty"`
 	// 取票人信息
-	B2BFetchHolderInfo *B2BFetchHolderInfo `json:"b2_b_fetch_holder_info,omitempty" xml:"b2_b_fetch_holder_info,omitempty"`
+	B2BFetchHolderInfo *B2bfetchHolderInfo `json:"b2_b_fetch_holder_info,omitempty" xml:"b2_b_fetch_holder_info,omitempty"`
 	// 取票信息
-	B2BFetchTicket *B2BFetchTicket `json:"b2_b_fetch_ticket,omitempty" xml:"b2_b_fetch_ticket,omitempty"`
+	B2BFetchTicket *B2bfetchTicket `json:"b2_b_fetch_ticket,omitempty" xml:"b2_b_fetch_ticket,omitempty"`
 	// 阿里订单号
 	MainOrderId int64 `json:"main_order_id,omitempty" xml:"main_order_id,omitempty"`
 	// 订单状态

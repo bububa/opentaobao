@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaoFeedflowItemAdgroupAddResultDto 结构体
-type TaobaoFeedflowItemAdgroupAddResultDto struct {
+// TaobaofeedflowitemadgroupaddResultDto 结构体
+type TaobaofeedflowitemadgroupaddResultDto struct {
 	// 信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 单元id

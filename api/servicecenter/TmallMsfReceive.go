@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
 
-// TmallMsfReceive 签收接口
+// Tmallmsfreceive 签收接口
 // tmall.msf.receive
 //
 // 签收接口
-func TmallMsfReceive(clt *core.SDKClient, req *servicecenter.TmallMsfReceiveAPIRequest, session string) (*servicecenter.TmallMsfReceiveAPIResponse, error) {
-	var resp servicecenter.TmallMsfReceiveAPIResponse
+func Tmallmsfreceive(clt *core.SDKClient, req *servicecenter.TmallmsfreceiveAPIRequest, session string) (*servicecenter.TmallmsfreceiveAPIResponse, error) {
+	var resp servicecenter.TmallmsfreceiveAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

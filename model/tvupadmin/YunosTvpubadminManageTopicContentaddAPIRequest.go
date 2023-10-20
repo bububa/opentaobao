@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosTvpubadminManageTopicContentaddAPIRequest 专题新增内容 API请求
+// YunostvpubadminmanagetopiccontentaddAPIRequest 专题新增内容 API请求
 // yunos.tvpubadmin.manage.topic.contentadd
 //
 // 专题新增内容
-type YunosTvpubadminManageTopicContentaddAPIRequest struct {
+type YunostvpubadminmanagetopiccontentaddAPIRequest struct {
 	model.Params
 	// 新增的专题内容
 	_contentJson string
 }
 
-// NewYunosTvpubadminManageTopicContentaddRequest 初始化YunosTvpubadminManageTopicContentaddAPIRequest对象
-func NewYunosTvpubadminManageTopicContentaddRequest() *YunosTvpubadminManageTopicContentaddAPIRequest {
-	return &YunosTvpubadminManageTopicContentaddAPIRequest{
+// NewYunostvpubadminmanagetopiccontentaddRequest 初始化YunostvpubadminmanagetopiccontentaddAPIRequest对象
+func NewYunostvpubadminmanagetopiccontentaddRequest() *YunostvpubadminmanagetopiccontentaddAPIRequest {
+	return &YunostvpubadminmanagetopiccontentaddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminManageTopicContentaddAPIRequest) GetApiMethodName() string {
+func (r YunostvpubadminmanagetopiccontentaddAPIRequest) GetApiMethodName() string {
 	return "yunos.tvpubadmin.manage.topic.contentadd"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminManageTopicContentaddAPIRequest) GetApiParams(params url.Values) {
+func (r YunostvpubadminmanagetopiccontentaddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YunosTvpubadminManageTopicContentaddAPIRequest) GetRawParams() model.Params {
+func (r YunostvpubadminmanagetopiccontentaddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetContentJson is ContentJson Setter
 // 新增的专题内容
-func (r *YunosTvpubadminManageTopicContentaddAPIRequest) SetContentJson(_contentJson string) error {
+func (r *YunostvpubadminmanagetopiccontentaddAPIRequest) SetContentJson(_contentJson string) error {
 	r._contentJson = _contentJson
 	r.Set("content_json", _contentJson)
 	return nil
 }
 
 // GetContentJson ContentJson Getter
-func (r YunosTvpubadminManageTopicContentaddAPIRequest) GetContentJson() string {
+func (r YunostvpubadminmanagetopiccontentaddAPIRequest) GetContentJson() string {
 	return r._contentJson
 }

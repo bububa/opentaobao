@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkUmsRetrieveBatchConfirm 批量消息确认
+// Alibabawdkumsretrievebatchconfirm 批量消息确认
 // alibaba.wdk.ums.retrieve.batch.confirm
 //
 // 批量消息确认
-func AlibabaWdkUmsRetrieveBatchConfirm(clt *core.SDKClient, req *wdk.AlibabaWdkUmsRetrieveBatchConfirmAPIRequest, session string) (*wdk.AlibabaWdkUmsRetrieveBatchConfirmAPIResponse, error) {
-	var resp wdk.AlibabaWdkUmsRetrieveBatchConfirmAPIResponse
+func Alibabawdkumsretrievebatchconfirm(clt *core.SDKClient, req *wdk.AlibabawdkumsretrievebatchconfirmAPIRequest, session string) (*wdk.AlibabawdkumsretrievebatchconfirmAPIResponse, error) {
+	var resp wdk.AlibabawdkumsretrievebatchconfirmAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

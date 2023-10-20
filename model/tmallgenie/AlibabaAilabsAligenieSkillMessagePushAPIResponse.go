@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAilabsAligenieSkillMessagePushAPIResponse 天猫精灵消息推送标准接口 API返回值
+// AlibabaailabsaligenieskillmessagepushAPIResponse 天猫精灵消息推送标准接口 API返回值
 // alibaba.ailabs.aligenie.skill.message.push
 //
 // 用于AliGenie技能开发者在技能内主动向音响推送消息的标准服务接口，只有订阅过该消息的用户才能收到消息；
-type AlibabaAilabsAligenieSkillMessagePushAPIResponse struct {
+type AlibabaailabsaligenieskillmessagepushAPIResponse struct {
 	model.CommonResponse
-	AlibabaAilabsAligenieSkillMessagePushAPIResponseModel
+	AlibabaailabsaligenieskillmessagepushAPIResponseModel
 }
 
-// AlibabaAilabsAligenieSkillMessagePushAPIResponseModel is 天猫精灵消息推送标准接口 成功返回结果
-type AlibabaAilabsAligenieSkillMessagePushAPIResponseModel struct {
+// AlibabaailabsaligenieskillmessagepushAPIResponseModel is 天猫精灵消息推送标准接口 成功返回结果
+type AlibabaailabsaligenieskillmessagepushAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_aligenie_skill_message_push_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

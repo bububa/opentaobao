@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaHappytripTaxiOrderScoreAPIResponse 订单打分和评价 API返回值
+// AlibabahappytriptaxiorderscoreAPIResponse 订单打分和评价 API返回值
 // alibaba.happytrip.taxi.order.score
 //
 // 对司机进行评分，只有订单结束后，才能进行。
-type AlibabaHappytripTaxiOrderScoreAPIResponse struct {
+type AlibabahappytriptaxiorderscoreAPIResponse struct {
 	model.CommonResponse
-	AlibabaHappytripTaxiOrderScoreAPIResponseModel
+	AlibabahappytriptaxiorderscoreAPIResponseModel
 }
 
-// AlibabaHappytripTaxiOrderScoreAPIResponseModel is 订单打分和评价 成功返回结果
-type AlibabaHappytripTaxiOrderScoreAPIResponseModel struct {
+// AlibabahappytriptaxiorderscoreAPIResponseModel is 订单打分和评价 成功返回结果
+type AlibabahappytriptaxiorderscoreAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_happytrip_taxi_order_score_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

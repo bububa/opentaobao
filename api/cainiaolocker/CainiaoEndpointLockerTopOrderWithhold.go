@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cainiaolocker"
 )
 
-// CainiaoEndpointLockerTopOrderWithhold 代扣支付
+// Cainiaoendpointlockertoporderwithhold 代扣支付
 // cainiao.endpoint.locker.top.order.withhold
 //
 // 提供代扣，允许有一笔欠款。
-func CainiaoEndpointLockerTopOrderWithhold(clt *core.SDKClient, req *cainiaolocker.CainiaoEndpointLockerTopOrderWithholdAPIRequest, session string) (*cainiaolocker.CainiaoEndpointLockerTopOrderWithholdAPIResponse, error) {
-	var resp cainiaolocker.CainiaoEndpointLockerTopOrderWithholdAPIResponse
+func Cainiaoendpointlockertoporderwithhold(clt *core.SDKClient, req *cainiaolocker.CainiaoendpointlockertoporderwithholdAPIRequest, session string) (*cainiaolocker.CainiaoendpointlockertoporderwithholdAPIResponse, error) {
+	var resp cainiaolocker.CainiaoendpointlockertoporderwithholdAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

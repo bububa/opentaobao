@@ -13,9 +13,9 @@ import (
 type TaobaotbkscadzonecreateAPIRequest struct {
 	model.Params
 	// 广告位名称，最大长度64字符
-	_adzonename string
+	_adzoneName string
 	// 网站ID
-	_siteid int64
+	_siteId int64
 }
 
 // NewTaobaotbkscadzonecreateRequest 初始化TaobaotbkscadzonecreateAPIRequest对象
@@ -42,28 +42,28 @@ func (r TaobaotbkscadzonecreateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetAdzonename is Adzonename Setter
+// SetAdzoneName is AdzoneName Setter
 // 广告位名称，最大长度64字符
-func (r *TaobaotbkscadzonecreateAPIRequest) SetAdzonename(_adzonename string) error {
-	r._adzonename = _adzonename
-	r.Set("adzone_name", _adzonename)
+func (r *TaobaotbkscadzonecreateAPIRequest) SetAdzoneName(_adzoneName string) error {
+	r._adzoneName = _adzoneName
+	r.Set("adzone_name", _adzoneName)
 	return nil
 }
 
-// GetAdzonename Adzonename Getter
-func (r TaobaotbkscadzonecreateAPIRequest) GetAdzonename() string {
-	return r._adzonename
+// GetAdzoneName AdzoneName Getter
+func (r TaobaotbkscadzonecreateAPIRequest) GetAdzoneName() string {
+	return r._adzoneName
 }
 
-// SetSiteid is Siteid Setter
+// SetSiteId is SiteId Setter
 // 网站ID
-func (r *TaobaotbkscadzonecreateAPIRequest) SetSiteid(_siteid int64) error {
-	r._siteid = _siteid
-	r.Set("site_id", _siteid)
+func (r *TaobaotbkscadzonecreateAPIRequest) SetSiteId(_siteId int64) error {
+	r._siteId = _siteId
+	r.Set("site_id", _siteId)
 	return nil
 }
 
-// GetSiteid Siteid Getter
-func (r TaobaotbkscadzonecreateAPIRequest) GetSiteid() int64 {
-	return r._siteid
+// GetSiteId SiteId Getter
+func (r TaobaotbkscadzonecreateAPIRequest) GetSiteId() int64 {
+	return r._siteId
 }

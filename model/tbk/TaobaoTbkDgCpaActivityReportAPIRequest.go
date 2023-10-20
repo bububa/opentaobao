@@ -13,19 +13,19 @@ import (
 type TaobaotbkdgcpaactivityreportAPIRequest struct {
 	model.Params
 	// 日期(yyyyMMdd)
-	_bizdate string
+	_bizDate string
 	// 媒体三段式id（如果传入pid则返回pid汇总数据，不传则返回member维度统计数据，pid和relationid不可同时传入）
 	_pid string
 	// CPA活动ID，详见https://www.yuque.com/docs/share/16905f3f-3a22-4e7c-b8c3-4d23791d42f7?#
-	_eventid int64
+	_eventId int64
 	// 分页页数，从1开始
-	_pageno int64
+	_pageNo int64
 	// 数据类型：数据类型:1预估 2结算 （选择1可查询含当天实时预估统计的累计数据，选择2可查询最晚截止昨天结算的累计数据，具体逻辑以活动规则描述为准；）
-	_querytype int64
+	_queryType int64
 	// 分页大小
-	_pagesize int64
+	_pageSize int64
 	// 代理id（如果传入rid则返回rid统计数据，不传则返回member维度统计数据）
-	_relationid int64
+	_relationId int64
 }
 
 // NewTaobaotbkdgcpaactivityreportRequest 初始化TaobaotbkdgcpaactivityreportAPIRequest对象
@@ -52,17 +52,17 @@ func (r TaobaotbkdgcpaactivityreportAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetBizdate is Bizdate Setter
+// SetBizDate is BizDate Setter
 // 日期(yyyyMMdd)
-func (r *TaobaotbkdgcpaactivityreportAPIRequest) SetBizdate(_bizdate string) error {
-	r._bizdate = _bizdate
-	r.Set("biz_date", _bizdate)
+func (r *TaobaotbkdgcpaactivityreportAPIRequest) SetBizDate(_bizDate string) error {
+	r._bizDate = _bizDate
+	r.Set("biz_date", _bizDate)
 	return nil
 }
 
-// GetBizdate Bizdate Getter
-func (r TaobaotbkdgcpaactivityreportAPIRequest) GetBizdate() string {
-	return r._bizdate
+// GetBizDate BizDate Getter
+func (r TaobaotbkdgcpaactivityreportAPIRequest) GetBizDate() string {
+	return r._bizDate
 }
 
 // SetPid is Pid Setter
@@ -78,67 +78,67 @@ func (r TaobaotbkdgcpaactivityreportAPIRequest) GetPid() string {
 	return r._pid
 }
 
-// SetEventid is Eventid Setter
+// SetEventId is EventId Setter
 // CPA活动ID，详见https://www.yuque.com/docs/share/16905f3f-3a22-4e7c-b8c3-4d23791d42f7?#
-func (r *TaobaotbkdgcpaactivityreportAPIRequest) SetEventid(_eventid int64) error {
-	r._eventid = _eventid
-	r.Set("event_id", _eventid)
+func (r *TaobaotbkdgcpaactivityreportAPIRequest) SetEventId(_eventId int64) error {
+	r._eventId = _eventId
+	r.Set("event_id", _eventId)
 	return nil
 }
 
-// GetEventid Eventid Getter
-func (r TaobaotbkdgcpaactivityreportAPIRequest) GetEventid() int64 {
-	return r._eventid
+// GetEventId EventId Getter
+func (r TaobaotbkdgcpaactivityreportAPIRequest) GetEventId() int64 {
+	return r._eventId
 }
 
-// SetPageno is Pageno Setter
+// SetPageNo is PageNo Setter
 // 分页页数，从1开始
-func (r *TaobaotbkdgcpaactivityreportAPIRequest) SetPageno(_pageno int64) error {
-	r._pageno = _pageno
-	r.Set("page_no", _pageno)
+func (r *TaobaotbkdgcpaactivityreportAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
 	return nil
 }
 
-// GetPageno Pageno Getter
-func (r TaobaotbkdgcpaactivityreportAPIRequest) GetPageno() int64 {
-	return r._pageno
+// GetPageNo PageNo Getter
+func (r TaobaotbkdgcpaactivityreportAPIRequest) GetPageNo() int64 {
+	return r._pageNo
 }
 
-// SetQuerytype is Querytype Setter
+// SetQueryType is QueryType Setter
 // 数据类型：数据类型:1预估 2结算 （选择1可查询含当天实时预估统计的累计数据，选择2可查询最晚截止昨天结算的累计数据，具体逻辑以活动规则描述为准；）
-func (r *TaobaotbkdgcpaactivityreportAPIRequest) SetQuerytype(_querytype int64) error {
-	r._querytype = _querytype
-	r.Set("query_type", _querytype)
+func (r *TaobaotbkdgcpaactivityreportAPIRequest) SetQueryType(_queryType int64) error {
+	r._queryType = _queryType
+	r.Set("query_type", _queryType)
 	return nil
 }
 
-// GetQuerytype Querytype Getter
-func (r TaobaotbkdgcpaactivityreportAPIRequest) GetQuerytype() int64 {
-	return r._querytype
+// GetQueryType QueryType Getter
+func (r TaobaotbkdgcpaactivityreportAPIRequest) GetQueryType() int64 {
+	return r._queryType
 }
 
-// SetPagesize is Pagesize Setter
+// SetPageSize is PageSize Setter
 // 分页大小
-func (r *TaobaotbkdgcpaactivityreportAPIRequest) SetPagesize(_pagesize int64) error {
-	r._pagesize = _pagesize
-	r.Set("page_size", _pagesize)
+func (r *TaobaotbkdgcpaactivityreportAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
 	return nil
 }
 
-// GetPagesize Pagesize Getter
-func (r TaobaotbkdgcpaactivityreportAPIRequest) GetPagesize() int64 {
-	return r._pagesize
+// GetPageSize PageSize Getter
+func (r TaobaotbkdgcpaactivityreportAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }
 
-// SetRelationid is Relationid Setter
+// SetRelationId is RelationId Setter
 // 代理id（如果传入rid则返回rid统计数据，不传则返回member维度统计数据）
-func (r *TaobaotbkdgcpaactivityreportAPIRequest) SetRelationid(_relationid int64) error {
-	r._relationid = _relationid
-	r.Set("relation_id", _relationid)
+func (r *TaobaotbkdgcpaactivityreportAPIRequest) SetRelationId(_relationId int64) error {
+	r._relationId = _relationId
+	r.Set("relation_id", _relationId)
 	return nil
 }
 
-// GetRelationid Relationid Getter
-func (r TaobaotbkdgcpaactivityreportAPIRequest) GetRelationid() int64 {
-	return r._relationid
+// GetRelationId RelationId Getter
+func (r TaobaotbkdgcpaactivityreportAPIRequest) GetRelationId() int64 {
+	return r._relationId
 }

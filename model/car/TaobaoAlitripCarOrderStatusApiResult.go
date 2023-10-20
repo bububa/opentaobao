@@ -1,7 +1,7 @@
 package car
 
-// TaobaoAlitripCarOrderStatusApiResult 结构体
-type TaobaoAlitripCarOrderStatusApiResult struct {
+// TaobaoalitripcarorderstatusApiResult 结构体
+type TaobaoalitripcarorderstatusApiResult struct {
 	// 其它数据
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// 错误信息

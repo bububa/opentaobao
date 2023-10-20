@@ -1,7 +1,7 @@
 package trade
 
-// AlibabaLstVasTradeflowSaveResult 结构体
-type AlibabaLstVasTradeflowSaveResult struct {
+// AlibabalstvastradeflowsaveResult 结构体
+type AlibabalstvastradeflowsaveResult struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

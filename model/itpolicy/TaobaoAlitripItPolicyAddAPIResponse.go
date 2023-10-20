@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripItPolicyAddAPIResponse 【国际机票销售规则】单条新增 API返回值
+// TaobaoalitripitpolicyaddAPIResponse 【国际机票销售规则】单条新增 API返回值
 // taobao.alitrip.it.policy.add
 //
 // 销售规则新增，成功返回taobaoId
-type TaobaoAlitripItPolicyAddAPIResponse struct {
+type TaobaoalitripitpolicyaddAPIResponse struct {
 	model.CommonResponse
-	TaobaoAlitripItPolicyAddAPIResponseModel
+	TaobaoalitripitpolicyaddAPIResponseModel
 }
 
-// TaobaoAlitripItPolicyAddAPIResponseModel is 【国际机票销售规则】单条新增 成功返回结果
-type TaobaoAlitripItPolicyAddAPIResponseModel struct {
+// TaobaoalitripitpolicyaddAPIResponseModel is 【国际机票销售规则】单条新增 成功返回结果
+type TaobaoalitripitpolicyaddAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_it_policy_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

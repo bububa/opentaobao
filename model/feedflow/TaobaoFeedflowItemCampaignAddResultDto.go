@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaoFeedflowItemCampaignAddResultDto 结构体
-type TaobaoFeedflowItemCampaignAddResultDto struct {
+// TaobaofeedflowitemcampaignaddResultDto 结构体
+type TaobaofeedflowitemcampaignaddResultDto struct {
 	// 系统自动生成
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 结果

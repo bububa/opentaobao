@@ -25,5 +25,5 @@ type StockQueryRequest struct {
 	// 每页条数(最多100条)
 	PageSize int64 `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoQimenStockQueryMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoqimenstockqueryMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

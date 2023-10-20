@@ -1,7 +1,7 @@
 package omniorder
 
-// TaobaoOmniDealerOdersGetData 结构体
-type TaobaoOmniDealerOdersGetData struct {
+// TaobaoomnidealerodersgetData 结构体
+type TaobaoomnidealerodersgetData struct {
 	// 子订单
 	SubOrders []SubOrders `json:"sub_orders,omitempty" xml:"sub_orders>sub_orders,omitempty"`
 	// 订单创建时间

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/omniorder"
 )
 
-// TaobaoOmniorderStoreSdtquerystation 速店通查询站点信息
+// Taobaoomniorderstoresdtquerystation 速店通查询站点信息
 // taobao.omniorder.store.sdtquerystation
 //
 // 速店通查询站点信息
-func TaobaoOmniorderStoreSdtquerystation(clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreSdtquerystationAPIRequest, session string) (*omniorder.TaobaoOmniorderStoreSdtquerystationAPIResponse, error) {
-	var resp omniorder.TaobaoOmniorderStoreSdtquerystationAPIResponse
+func Taobaoomniorderstoresdtquerystation(clt *core.SDKClient, req *omniorder.TaobaoomniorderstoresdtquerystationAPIRequest, session string) (*omniorder.TaobaoomniorderstoresdtquerystationAPIResponse, error) {
+	var resp omniorder.TaobaoomniorderstoresdtquerystationAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

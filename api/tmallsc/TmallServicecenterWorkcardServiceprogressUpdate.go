@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
 
-// TmallServicecenterWorkcardServiceprogressUpdate 回传工单服务进度
+// Tmallservicecenterworkcardserviceprogressupdate 回传工单服务进度
 // tmall.servicecenter.workcard.serviceprogress.update
 //
 // 回传工单服务进度
-func TmallServicecenterWorkcardServiceprogressUpdate(clt *core.SDKClient, req *tmallsc.TmallServicecenterWorkcardServiceprogressUpdateAPIRequest, session string) (*tmallsc.TmallServicecenterWorkcardServiceprogressUpdateAPIResponse, error) {
-	var resp tmallsc.TmallServicecenterWorkcardServiceprogressUpdateAPIResponse
+func Tmallservicecenterworkcardserviceprogressupdate(clt *core.SDKClient, req *tmallsc.TmallservicecenterworkcardserviceprogressupdateAPIRequest, session string) (*tmallsc.TmallservicecenterworkcardserviceprogressupdateAPIResponse, error) {
+	var resp tmallsc.TmallservicecenterworkcardserviceprogressupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

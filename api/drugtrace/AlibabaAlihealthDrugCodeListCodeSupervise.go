@@ -5,7 +5,7 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// AlibabaAlihealthDrugCodeListCodeSupervise 根据码获取码信息-监管
+// Alibabaalihealthdrugcodelistcodesupervise 根据码获取码信息-监管
 // alibaba.alihealth.drug.code.list.code.supervise
 //
 // 服务描述
@@ -15,8 +15,8 @@ import (
 // 若所传的监管码是非最小包装监管码，且存在药品混包的情况，则此接口不支持。这种
 // 情况下，需要分多次调用该接口。
 // 核查平台优先过滤非8开头的，长度非20位数字的码信息。
-func AlibabaAlihealthDrugCodeListCodeSupervise(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeListCodeSuperviseAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugCodeListCodeSuperviseAPIResponse
+func Alibabaalihealthdrugcodelistcodesupervise(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugcodelistcodesuperviseAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugcodelistcodesuperviseAPIResponse, error) {
+	var resp drugtrace.AlibabaalihealthdrugcodelistcodesuperviseAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

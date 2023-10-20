@@ -1,7 +1,7 @@
 package tmallcar
 
-// XCarSysModelDto 结构体
-type XCarSysModelDto struct {
+// XcarSysModelDto 结构体
+type XcarSysModelDto struct {
 	// 车型最高降幅
 	CarModelMaximumDecline string `json:"car_model_maximum_decline,omitempty" xml:"car_model_maximum_decline,omitempty"`
 	// 燃油费用

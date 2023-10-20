@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/baoxian"
 )
 
-// AlipayBaoxianClaimUploadattachment 资料上传接口
+// Alipaybaoxianclaimuploadattachment 资料上传接口
 // alipay.baoxian.claim.uploadattachment
 //
 // 给合作伙伴上传申请理赔材料
-func AlipayBaoxianClaimUploadattachment(clt *core.SDKClient, req *baoxian.AlipayBaoxianClaimUploadattachmentAPIRequest, session string) (*baoxian.AlipayBaoxianClaimUploadattachmentAPIResponse, error) {
-	var resp baoxian.AlipayBaoxianClaimUploadattachmentAPIResponse
+func Alipaybaoxianclaimuploadattachment(clt *core.SDKClient, req *baoxian.AlipaybaoxianclaimuploadattachmentAPIRequest, session string) (*baoxian.AlipaybaoxianclaimuploadattachmentAPIResponse, error) {
+	var resp baoxian.AlipaybaoxianclaimuploadattachmentAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

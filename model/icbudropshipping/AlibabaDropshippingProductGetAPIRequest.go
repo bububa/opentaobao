@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaDropshippingProductGetAPIRequest 阿里巴巴dropshipping 产品信息获取 API请求
+// AlibabadropshippingproductgetAPIRequest 阿里巴巴dropshipping 产品信息获取 API请求
 // alibaba.dropshipping.product.get
 //
 // 阿里巴巴dropshipping 产品信息获取
-type AlibabaDropshippingProductGetAPIRequest struct {
+type AlibabadropshippingproductgetAPIRequest struct {
 	model.Params
 	// {}
 	_paramDistributionSaleProductRequest *DistributionSaleProductRequest
 }
 
-// NewAlibabaDropshippingProductGetRequest 初始化AlibabaDropshippingProductGetAPIRequest对象
-func NewAlibabaDropshippingProductGetRequest() *AlibabaDropshippingProductGetAPIRequest {
-	return &AlibabaDropshippingProductGetAPIRequest{
+// NewAlibabadropshippingproductgetRequest 初始化AlibabadropshippingproductgetAPIRequest对象
+func NewAlibabadropshippingproductgetRequest() *AlibabadropshippingproductgetAPIRequest {
+	return &AlibabadropshippingproductgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaDropshippingProductGetAPIRequest) GetApiMethodName() string {
+func (r AlibabadropshippingproductgetAPIRequest) GetApiMethodName() string {
 	return "alibaba.dropshipping.product.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaDropshippingProductGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabadropshippingproductgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaDropshippingProductGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabadropshippingproductgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamDistributionSaleProductRequest is ParamDistributionSaleProductRequest Setter
 // {}
-func (r *AlibabaDropshippingProductGetAPIRequest) SetParamDistributionSaleProductRequest(_paramDistributionSaleProductRequest *DistributionSaleProductRequest) error {
+func (r *AlibabadropshippingproductgetAPIRequest) SetParamDistributionSaleProductRequest(_paramDistributionSaleProductRequest *DistributionSaleProductRequest) error {
 	r._paramDistributionSaleProductRequest = _paramDistributionSaleProductRequest
 	r.Set("param_distribution_sale_product_request", _paramDistributionSaleProductRequest)
 	return nil
 }
 
 // GetParamDistributionSaleProductRequest ParamDistributionSaleProductRequest Getter
-func (r AlibabaDropshippingProductGetAPIRequest) GetParamDistributionSaleProductRequest() *DistributionSaleProductRequest {
+func (r AlibabadropshippingproductgetAPIRequest) GetParamDistributionSaleProductRequest() *DistributionSaleProductRequest {
 	return r._paramDistributionSaleProductRequest
 }

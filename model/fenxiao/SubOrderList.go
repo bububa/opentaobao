@@ -87,5 +87,5 @@ type SubOrderList struct {
 	// 二级供应商id
 	SecondarySupplierId int64 `json:"secondary_supplier_id,omitempty" xml:"secondary_supplier_id,omitempty"`
 	// tp单创单时间点的货品采购价
-	TpCreateTimePrice *BigDecimal `json:"tp_create_time_price,omitempty" xml:"tp_create_time_price,omitempty"`
+	TpCreateTimePrice float64 `json:"tp_create_time_price,omitempty" xml:"tp_create_time_price,omitempty"`
 }

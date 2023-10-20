@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// AlibabaScbpAdTargetTagListRecommendTag 给计划推荐标签
+// Alibabascbpadtargettaglistrecommendtag 给计划推荐标签
 // alibaba.scbp.ad.target.tag.list.recommend.tag
 //
 // 给计划推荐标签
-func AlibabaScbpAdTargetTagListRecommendTag(clt *core.SDKClient, req *scbp.AlibabaScbpAdTargetTagListRecommendTagAPIRequest, session string) (*scbp.AlibabaScbpAdTargetTagListRecommendTagAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdTargetTagListRecommendTagAPIResponse
+func Alibabascbpadtargettaglistrecommendtag(clt *core.SDKClient, req *scbp.AlibabascbpadtargettaglistrecommendtagAPIRequest, session string) (*scbp.AlibabascbpadtargettaglistrecommendtagAPIResponse, error) {
+	var resp scbp.AlibabascbpadtargettaglistrecommendtagAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

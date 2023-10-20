@@ -1,7 +1,7 @@
 package guoguo
 
-// CainiaoGuoguoBackupGraborderSubmitmailnoResult 结构体
-type CainiaoGuoguoBackupGraborderSubmitmailnoResult struct {
+// CainiaoguoguobackupgrabordersubmitmailnoResult 结构体
+type CainiaoguoguobackupgrabordersubmitmailnoResult struct {
 	// 1
 	StatusCode string `json:"status_code,omitempty" xml:"status_code,omitempty"`
 	// 返回的状态描述

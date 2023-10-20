@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaAxWarehouseInboundCallback 翱象入库回传
+// Alibabaaxwarehouseinboundcallback 翱象入库回传
 // alibaba.ax.warehouse.inbound.callback
 //
 // 翱象入库回传
-func AlibabaAxWarehouseInboundCallback(clt *core.SDKClient, req *wdk.AlibabaAxWarehouseInboundCallbackAPIRequest, session string) (*wdk.AlibabaAxWarehouseInboundCallbackAPIResponse, error) {
-	var resp wdk.AlibabaAxWarehouseInboundCallbackAPIResponse
+func Alibabaaxwarehouseinboundcallback(clt *core.SDKClient, req *wdk.AlibabaaxwarehouseinboundcallbackAPIRequest, session string) (*wdk.AlibabaaxwarehouseinboundcallbackAPIResponse, error) {
+	var resp wdk.AlibabaaxwarehouseinboundcallbackAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

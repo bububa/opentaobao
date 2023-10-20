@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaTianjiSupplierOrderResultAPIRequest 供应商处理订单接口（订购成功/失败、发货） API请求
+// AlibabatianjisupplierorderresultAPIRequest 供应商处理订单接口（订购成功/失败、发货） API请求
 // alibaba.tianji.supplier.order.result
 //
 // 供应商处理订单接口（订购成功/失败、发货）
-type AlibabaTianjiSupplierOrderResultAPIRequest struct {
+type AlibabatianjisupplierorderresultAPIRequest struct {
 	model.Params
 	// 供应商处理订单结果反馈参数
 	_supplierOrderResultModel *SupplierOrderResultModel
 }
 
-// NewAlibabaTianjiSupplierOrderResultRequest 初始化AlibabaTianjiSupplierOrderResultAPIRequest对象
-func NewAlibabaTianjiSupplierOrderResultRequest() *AlibabaTianjiSupplierOrderResultAPIRequest {
-	return &AlibabaTianjiSupplierOrderResultAPIRequest{
+// NewAlibabatianjisupplierorderresultRequest 初始化AlibabatianjisupplierorderresultAPIRequest对象
+func NewAlibabatianjisupplierorderresultRequest() *AlibabatianjisupplierorderresultAPIRequest {
+	return &AlibabatianjisupplierorderresultAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaTianjiSupplierOrderResultAPIRequest) GetApiMethodName() string {
+func (r AlibabatianjisupplierorderresultAPIRequest) GetApiMethodName() string {
 	return "alibaba.tianji.supplier.order.result"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaTianjiSupplierOrderResultAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabatianjisupplierorderresultAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaTianjiSupplierOrderResultAPIRequest) GetRawParams() model.Params {
+func (r AlibabatianjisupplierorderresultAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSupplierOrderResultModel is SupplierOrderResultModel Setter
 // 供应商处理订单结果反馈参数
-func (r *AlibabaTianjiSupplierOrderResultAPIRequest) SetSupplierOrderResultModel(_supplierOrderResultModel *SupplierOrderResultModel) error {
+func (r *AlibabatianjisupplierorderresultAPIRequest) SetSupplierOrderResultModel(_supplierOrderResultModel *SupplierOrderResultModel) error {
 	r._supplierOrderResultModel = _supplierOrderResultModel
 	r.Set("supplier_order_result_model", _supplierOrderResultModel)
 	return nil
 }
 
 // GetSupplierOrderResultModel SupplierOrderResultModel Getter
-func (r AlibabaTianjiSupplierOrderResultAPIRequest) GetSupplierOrderResultModel() *SupplierOrderResultModel {
+func (r AlibabatianjisupplierorderresultAPIRequest) GetSupplierOrderResultModel() *SupplierOrderResultModel {
 	return r._supplierOrderResultModel
 }

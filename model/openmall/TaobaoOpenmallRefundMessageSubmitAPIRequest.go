@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpenmallRefundMessageSubmitAPIRequest 提交退款单留言 API请求
+// TaobaoopenmallrefundmessagesubmitAPIRequest 提交退款单留言 API请求
 // taobao.openmall.refund.message.submit
 //
 // OpenMall业务提交退款单留言
-type TaobaoOpenmallRefundMessageSubmitAPIRequest struct {
+type TaobaoopenmallrefundmessagesubmitAPIRequest struct {
 	model.Params
 	// 分销者身份
 	_distributor string
@@ -20,65 +20,65 @@ type TaobaoOpenmallRefundMessageSubmitAPIRequest struct {
 	_refundMessage *RefundMessage
 }
 
-// NewTaobaoOpenmallRefundMessageSubmitRequest 初始化TaobaoOpenmallRefundMessageSubmitAPIRequest对象
-func NewTaobaoOpenmallRefundMessageSubmitRequest() *TaobaoOpenmallRefundMessageSubmitAPIRequest {
-	return &TaobaoOpenmallRefundMessageSubmitAPIRequest{
+// NewTaobaoopenmallrefundmessagesubmitRequest 初始化TaobaoopenmallrefundmessagesubmitAPIRequest对象
+func NewTaobaoopenmallrefundmessagesubmitRequest() *TaobaoopenmallrefundmessagesubmitAPIRequest {
+	return &TaobaoopenmallrefundmessagesubmitAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoOpenmallRefundMessageSubmitAPIRequest) GetApiMethodName() string {
+func (r TaobaoopenmallrefundmessagesubmitAPIRequest) GetApiMethodName() string {
 	return "taobao.openmall.refund.message.submit"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOpenmallRefundMessageSubmitAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoopenmallrefundmessagesubmitAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoOpenmallRefundMessageSubmitAPIRequest) GetRawParams() model.Params {
+func (r TaobaoopenmallrefundmessagesubmitAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDistributor is Distributor Setter
 // 分销者身份
-func (r *TaobaoOpenmallRefundMessageSubmitAPIRequest) SetDistributor(_distributor string) error {
+func (r *TaobaoopenmallrefundmessagesubmitAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
 	r.Set("distributor", _distributor)
 	return nil
 }
 
 // GetDistributor Distributor Getter
-func (r TaobaoOpenmallRefundMessageSubmitAPIRequest) GetDistributor() string {
+func (r TaobaoopenmallrefundmessagesubmitAPIRequest) GetDistributor() string {
 	return r._distributor
 }
 
 // SetRefundId is RefundId Setter
 // 退款单ID
-func (r *TaobaoOpenmallRefundMessageSubmitAPIRequest) SetRefundId(_refundId int64) error {
+func (r *TaobaoopenmallrefundmessagesubmitAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
 	r.Set("refund_id", _refundId)
 	return nil
 }
 
 // GetRefundId RefundId Getter
-func (r TaobaoOpenmallRefundMessageSubmitAPIRequest) GetRefundId() int64 {
+func (r TaobaoopenmallrefundmessagesubmitAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }
 
 // SetRefundMessage is RefundMessage Setter
 // 提交留言结构
-func (r *TaobaoOpenmallRefundMessageSubmitAPIRequest) SetRefundMessage(_refundMessage *RefundMessage) error {
+func (r *TaobaoopenmallrefundmessagesubmitAPIRequest) SetRefundMessage(_refundMessage *RefundMessage) error {
 	r._refundMessage = _refundMessage
 	r.Set("refund_message", _refundMessage)
 	return nil
 }
 
 // GetRefundMessage RefundMessage Getter
-func (r TaobaoOpenmallRefundMessageSubmitAPIRequest) GetRefundMessage() *RefundMessage {
+func (r TaobaoopenmallrefundmessagesubmitAPIRequest) GetRefundMessage() *RefundMessage {
 	return r._refundMessage
 }

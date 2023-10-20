@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoLogisticsExpressDeliveryCutNotifyAPIResponse TMS配拦截结果回告 API返回值
+// TaobaologisticsexpressdeliverycutnotifyAPIResponse TMS配拦截结果回告 API返回值
 // taobao.logistics.express.delivery.cut.notify
 //
 // TMS配拦截结果回告
-type TaobaoLogisticsExpressDeliveryCutNotifyAPIResponse struct {
+type TaobaologisticsexpressdeliverycutnotifyAPIResponse struct {
 	model.CommonResponse
-	TaobaoLogisticsExpressDeliveryCutNotifyAPIResponseModel
+	TaobaologisticsexpressdeliverycutnotifyAPIResponseModel
 }
 
-// TaobaoLogisticsExpressDeliveryCutNotifyAPIResponseModel is TMS配拦截结果回告 成功返回结果
-type TaobaoLogisticsExpressDeliveryCutNotifyAPIResponseModel struct {
+// TaobaologisticsexpressdeliverycutnotifyAPIResponseModel is TMS配拦截结果回告 成功返回结果
+type TaobaologisticsexpressdeliverycutnotifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_express_delivery_cut_notify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

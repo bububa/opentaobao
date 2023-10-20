@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealthmedical"
 )
 
-// AlibabaAlihealthMedicalItemPublish 三方入驻-开通服务
+// Alibabaalihealthmedicalitempublish 三方入驻-开通服务
 // alibaba.alihealth.medical.item.publish
 //
 // 三方入驻-开通服务
-func AlibabaAlihealthMedicalItemPublish(clt *core.SDKClient, req *alihealthmedical.AlibabaAlihealthMedicalItemPublishAPIRequest, session string) (*alihealthmedical.AlibabaAlihealthMedicalItemPublishAPIResponse, error) {
-	var resp alihealthmedical.AlibabaAlihealthMedicalItemPublishAPIResponse
+func Alibabaalihealthmedicalitempublish(clt *core.SDKClient, req *alihealthmedical.AlibabaalihealthmedicalitempublishAPIRequest, session string) (*alihealthmedical.AlibabaalihealthmedicalitempublishAPIResponse, error) {
+	var resp alihealthmedical.AlibabaalihealthmedicalitempublishAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

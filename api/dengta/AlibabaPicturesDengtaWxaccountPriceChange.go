@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/dengta"
 )
 
-// AlibabaPicturesDengtaWxaccountPriceChange 微信公众号价格变化通知
+// Alibabapicturesdengtawxaccountpricechange 微信公众号价格变化通知
 // alibaba.pictures.dengta.wxaccount.price.change
 //
 // 微信公众号推广价格变更通知接口
-func AlibabaPicturesDengtaWxaccountPriceChange(clt *core.SDKClient, req *dengta.AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest, session string) (*dengta.AlibabaPicturesDengtaWxaccountPriceChangeAPIResponse, error) {
-	var resp dengta.AlibabaPicturesDengtaWxaccountPriceChangeAPIResponse
+func Alibabapicturesdengtawxaccountpricechange(clt *core.SDKClient, req *dengta.AlibabapicturesdengtawxaccountpricechangeAPIRequest, session string) (*dengta.AlibabapicturesdengtawxaccountpricechangeAPIResponse, error) {
+	var resp dengta.AlibabapicturesdengtawxaccountpricechangeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

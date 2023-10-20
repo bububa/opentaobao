@@ -1,7 +1,7 @@
 package alsc
 
-// AlibabaAlscSaasCodecCodeAttrsQueryResult 结构体
-type AlibabaAlscSaasCodecCodeAttrsQueryResult struct {
+// AlibabaalscsaascodeccodeattrsqueryResult 结构体
+type AlibabaalscsaascodeccodeattrsqueryResult struct {
 	// msgInfo
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// msgCode

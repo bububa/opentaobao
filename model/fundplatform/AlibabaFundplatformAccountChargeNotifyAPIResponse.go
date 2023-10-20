@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaFundplatformAccountChargeNotifyAPIResponse 账户充值成功通知 API返回值
+// AlibabafundplatformaccountchargenotifyAPIResponse 账户充值成功通知 API返回值
 // alibaba.fundplatform.account.charge.notify
 //
 // 通知外部业务方充值成功
-type AlibabaFundplatformAccountChargeNotifyAPIResponse struct {
+type AlibabafundplatformaccountchargenotifyAPIResponse struct {
 	model.CommonResponse
-	AlibabaFundplatformAccountChargeNotifyAPIResponseModel
+	AlibabafundplatformaccountchargenotifyAPIResponseModel
 }
 
-// AlibabaFundplatformAccountChargeNotifyAPIResponseModel is 账户充值成功通知 成功返回结果
-type AlibabaFundplatformAccountChargeNotifyAPIResponseModel struct {
+// AlibabafundplatformaccountchargenotifyAPIResponseModel is 账户充值成功通知 成功返回结果
+type AlibabafundplatformaccountchargenotifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_fundplatform_account_charge_notify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

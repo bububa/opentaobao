@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkLogisticsPusPickupCararrivedAPIResponse 自提业务-车辆到达上报车牌号 API返回值
+// AlibabawdklogisticspuspickupcararrivedAPIResponse 自提业务-车辆到达上报车牌号 API返回值
 // alibaba.wdk.logistics.pus.pickup.cararrived
 //
 // 自提业务-汽车自提,车辆到达上报车牌号
-type AlibabaWdkLogisticsPusPickupCararrivedAPIResponse struct {
+type AlibabawdklogisticspuspickupcararrivedAPIResponse struct {
 	model.CommonResponse
-	AlibabaWdkLogisticsPusPickupCararrivedAPIResponseModel
+	AlibabawdklogisticspuspickupcararrivedAPIResponseModel
 }
 
-// AlibabaWdkLogisticsPusPickupCararrivedAPIResponseModel is 自提业务-车辆到达上报车牌号 成功返回结果
-type AlibabaWdkLogisticsPusPickupCararrivedAPIResponseModel struct {
+// AlibabawdklogisticspuspickupcararrivedAPIResponseModel is 自提业务-车辆到达上报车牌号 成功返回结果
+type AlibabawdklogisticspuspickupcararrivedAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_logistics_pus_pickup_cararrived_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

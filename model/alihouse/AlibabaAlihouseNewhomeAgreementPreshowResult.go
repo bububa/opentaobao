@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseNewhomeAgreementPreshowResult 结构体
-type AlibabaAlihouseNewhomeAgreementPreshowResult struct {
+// AlibabaalihousenewhomeagreementpreshowResult 结构体
+type AlibabaalihousenewhomeagreementpreshowResult struct {
 	// 值
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// 信息

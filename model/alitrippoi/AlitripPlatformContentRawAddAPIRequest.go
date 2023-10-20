@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripPlatformContentRawAddAPIRequest 穷游内容写入接口 API请求
+// AlitripplatformcontentrawaddAPIRequest 穷游内容写入接口 API请求
 // alitrip.platform.content.raw.add
 //
 // 穷游内容写入飞猪接口
-type AlitripPlatformContentRawAddAPIRequest struct {
+type AlitripplatformcontentrawaddAPIRequest struct {
 	model.Params
 	// 写入入参
 	_fliggyContentRequest *FliggyContentRequest
 }
 
-// NewAlitripPlatformContentRawAddRequest 初始化AlitripPlatformContentRawAddAPIRequest对象
-func NewAlitripPlatformContentRawAddRequest() *AlitripPlatformContentRawAddAPIRequest {
-	return &AlitripPlatformContentRawAddAPIRequest{
+// NewAlitripplatformcontentrawaddRequest 初始化AlitripplatformcontentrawaddAPIRequest对象
+func NewAlitripplatformcontentrawaddRequest() *AlitripplatformcontentrawaddAPIRequest {
+	return &AlitripplatformcontentrawaddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripPlatformContentRawAddAPIRequest) GetApiMethodName() string {
+func (r AlitripplatformcontentrawaddAPIRequest) GetApiMethodName() string {
 	return "alitrip.platform.content.raw.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripPlatformContentRawAddAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripplatformcontentrawaddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripPlatformContentRawAddAPIRequest) GetRawParams() model.Params {
+func (r AlitripplatformcontentrawaddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetFliggyContentRequest is FliggyContentRequest Setter
 // 写入入参
-func (r *AlitripPlatformContentRawAddAPIRequest) SetFliggyContentRequest(_fliggyContentRequest *FliggyContentRequest) error {
+func (r *AlitripplatformcontentrawaddAPIRequest) SetFliggyContentRequest(_fliggyContentRequest *FliggyContentRequest) error {
 	r._fliggyContentRequest = _fliggyContentRequest
 	r.Set("fliggy_content_request", _fliggyContentRequest)
 	return nil
 }
 
 // GetFliggyContentRequest FliggyContentRequest Getter
-func (r AlitripPlatformContentRawAddAPIRequest) GetFliggyContentRequest() *FliggyContentRequest {
+func (r AlitripplatformcontentrawaddAPIRequest) GetFliggyContentRequest() *FliggyContentRequest {
 	return r._fliggyContentRequest
 }

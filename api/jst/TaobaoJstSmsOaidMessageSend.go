@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/jst"
 )
 
-// TaobaoJstSmsOaidMessageSend 基于OAID的短信发送接口
+// Taobaojstsmsoaidmessagesend 基于OAID的短信发送接口
 // taobao.jst.sms.oaid.message.send
 //
 // 基于OAID的短信发送接口
-func TaobaoJstSmsOaidMessageSend(clt *core.SDKClient, req *jst.TaobaoJstSmsOaidMessageSendAPIRequest, session string) (*jst.TaobaoJstSmsOaidMessageSendAPIResponse, error) {
-	var resp jst.TaobaoJstSmsOaidMessageSendAPIResponse
+func Taobaojstsmsoaidmessagesend(clt *core.SDKClient, req *jst.TaobaojstsmsoaidmessagesendAPIRequest, session string) (*jst.TaobaojstsmsoaidmessagesendAPIResponse, error) {
+	var resp jst.TaobaojstsmsoaidmessagesendAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

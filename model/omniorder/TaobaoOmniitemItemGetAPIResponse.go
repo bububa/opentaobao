@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOmniitemItemGetAPIResponse 获取全渠道门店商品 API返回值
+// TaobaoomniitemitemgetAPIResponse 获取全渠道门店商品 API返回值
 // taobao.omniitem.item.get
 //
 // 通过门店id/类目id/商品id单个或多个参数组合查询全渠道门店商品信息
-type TaobaoOmniitemItemGetAPIResponse struct {
+type TaobaoomniitemitemgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoOmniitemItemGetAPIResponseModel
+	TaobaoomniitemitemgetAPIResponseModel
 }
 
-// TaobaoOmniitemItemGetAPIResponseModel is 获取全渠道门店商品 成功返回结果
-type TaobaoOmniitemItemGetAPIResponseModel struct {
+// TaobaoomniitemitemgetAPIResponseModel is 获取全渠道门店商品 成功返回结果
+type TaobaoomniitemitemgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"omniitem_item_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

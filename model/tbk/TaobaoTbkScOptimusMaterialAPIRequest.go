@@ -13,27 +13,27 @@ import (
 type TaobaotbkscoptimusmaterialAPIRequest struct {
 	model.Params
 	// 智能匹配-设备号类型：IMEI，或者IDFA，或者UTDID（UTDID不支持MD5加密），或者OAID
-	_devicetype string
+	_deviceType string
 	// 智能匹配-设备号加密类型：MD5，类型为OAID时不传
-	_deviceencrypt string
+	_deviceEncrypt string
 	// 智能匹配-设备号加密后的值（MD5加密需32位小写），类型为OAID时传原始OAID值
-	_devicevalue string
+	_deviceValue string
 	// 内容专用-内容渠道信息
-	_contentsource string
+	_contentSource string
 	// 商品ID，用于相似商品推荐
-	_itemid string
+	_itemId string
 	// 页大小，默认20，1~100
-	_pagesize int64
+	_pageSize int64
 	// 第几页，默认：1
-	_pageno int64
+	_pageNo int64
 	// mm_xxx_xxx_xxx的第3段数字
-	_adzoneid int64
+	_adzoneId int64
 	// 官方提供的物料Id（详细物料id见：https://market.m.taobao.com/app/qn/toutiao-new/index-pc.html#/detail/10628875?_k=gpov9a）
-	_materialid int64
+	_materialId int64
 	// mm_xxx_xxx_xxx的第2段数字
-	_siteid int64
+	_siteId int64
 	// 内容专用-内容详情ID
-	_contentid int64
+	_contentId int64
 }
 
 // NewTaobaotbkscoptimusmaterialRequest 初始化TaobaotbkscoptimusmaterialAPIRequest对象
@@ -60,145 +60,145 @@ func (r TaobaotbkscoptimusmaterialAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetDevicetype is Devicetype Setter
+// SetDeviceType is DeviceType Setter
 // 智能匹配-设备号类型：IMEI，或者IDFA，或者UTDID（UTDID不支持MD5加密），或者OAID
-func (r *TaobaotbkscoptimusmaterialAPIRequest) SetDevicetype(_devicetype string) error {
-	r._devicetype = _devicetype
-	r.Set("device_type", _devicetype)
+func (r *TaobaotbkscoptimusmaterialAPIRequest) SetDeviceType(_deviceType string) error {
+	r._deviceType = _deviceType
+	r.Set("device_type", _deviceType)
 	return nil
 }
 
-// GetDevicetype Devicetype Getter
-func (r TaobaotbkscoptimusmaterialAPIRequest) GetDevicetype() string {
-	return r._devicetype
+// GetDeviceType DeviceType Getter
+func (r TaobaotbkscoptimusmaterialAPIRequest) GetDeviceType() string {
+	return r._deviceType
 }
 
-// SetDeviceencrypt is Deviceencrypt Setter
+// SetDeviceEncrypt is DeviceEncrypt Setter
 // 智能匹配-设备号加密类型：MD5，类型为OAID时不传
-func (r *TaobaotbkscoptimusmaterialAPIRequest) SetDeviceencrypt(_deviceencrypt string) error {
-	r._deviceencrypt = _deviceencrypt
-	r.Set("device_encrypt", _deviceencrypt)
+func (r *TaobaotbkscoptimusmaterialAPIRequest) SetDeviceEncrypt(_deviceEncrypt string) error {
+	r._deviceEncrypt = _deviceEncrypt
+	r.Set("device_encrypt", _deviceEncrypt)
 	return nil
 }
 
-// GetDeviceencrypt Deviceencrypt Getter
-func (r TaobaotbkscoptimusmaterialAPIRequest) GetDeviceencrypt() string {
-	return r._deviceencrypt
+// GetDeviceEncrypt DeviceEncrypt Getter
+func (r TaobaotbkscoptimusmaterialAPIRequest) GetDeviceEncrypt() string {
+	return r._deviceEncrypt
 }
 
-// SetDevicevalue is Devicevalue Setter
+// SetDeviceValue is DeviceValue Setter
 // 智能匹配-设备号加密后的值（MD5加密需32位小写），类型为OAID时传原始OAID值
-func (r *TaobaotbkscoptimusmaterialAPIRequest) SetDevicevalue(_devicevalue string) error {
-	r._devicevalue = _devicevalue
-	r.Set("device_value", _devicevalue)
+func (r *TaobaotbkscoptimusmaterialAPIRequest) SetDeviceValue(_deviceValue string) error {
+	r._deviceValue = _deviceValue
+	r.Set("device_value", _deviceValue)
 	return nil
 }
 
-// GetDevicevalue Devicevalue Getter
-func (r TaobaotbkscoptimusmaterialAPIRequest) GetDevicevalue() string {
-	return r._devicevalue
+// GetDeviceValue DeviceValue Getter
+func (r TaobaotbkscoptimusmaterialAPIRequest) GetDeviceValue() string {
+	return r._deviceValue
 }
 
-// SetContentsource is Contentsource Setter
+// SetContentSource is ContentSource Setter
 // 内容专用-内容渠道信息
-func (r *TaobaotbkscoptimusmaterialAPIRequest) SetContentsource(_contentsource string) error {
-	r._contentsource = _contentsource
-	r.Set("content_source", _contentsource)
+func (r *TaobaotbkscoptimusmaterialAPIRequest) SetContentSource(_contentSource string) error {
+	r._contentSource = _contentSource
+	r.Set("content_source", _contentSource)
 	return nil
 }
 
-// GetContentsource Contentsource Getter
-func (r TaobaotbkscoptimusmaterialAPIRequest) GetContentsource() string {
-	return r._contentsource
+// GetContentSource ContentSource Getter
+func (r TaobaotbkscoptimusmaterialAPIRequest) GetContentSource() string {
+	return r._contentSource
 }
 
-// SetItemid is Itemid Setter
+// SetItemId is ItemId Setter
 // 商品ID，用于相似商品推荐
-func (r *TaobaotbkscoptimusmaterialAPIRequest) SetItemid(_itemid string) error {
-	r._itemid = _itemid
-	r.Set("item_id", _itemid)
+func (r *TaobaotbkscoptimusmaterialAPIRequest) SetItemId(_itemId string) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
 	return nil
 }
 
-// GetItemid Itemid Getter
-func (r TaobaotbkscoptimusmaterialAPIRequest) GetItemid() string {
-	return r._itemid
+// GetItemId ItemId Getter
+func (r TaobaotbkscoptimusmaterialAPIRequest) GetItemId() string {
+	return r._itemId
 }
 
-// SetPagesize is Pagesize Setter
+// SetPageSize is PageSize Setter
 // 页大小，默认20，1~100
-func (r *TaobaotbkscoptimusmaterialAPIRequest) SetPagesize(_pagesize int64) error {
-	r._pagesize = _pagesize
-	r.Set("page_size", _pagesize)
+func (r *TaobaotbkscoptimusmaterialAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
 	return nil
 }
 
-// GetPagesize Pagesize Getter
-func (r TaobaotbkscoptimusmaterialAPIRequest) GetPagesize() int64 {
-	return r._pagesize
+// GetPageSize PageSize Getter
+func (r TaobaotbkscoptimusmaterialAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }
 
-// SetPageno is Pageno Setter
+// SetPageNo is PageNo Setter
 // 第几页，默认：1
-func (r *TaobaotbkscoptimusmaterialAPIRequest) SetPageno(_pageno int64) error {
-	r._pageno = _pageno
-	r.Set("page_no", _pageno)
+func (r *TaobaotbkscoptimusmaterialAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
 	return nil
 }
 
-// GetPageno Pageno Getter
-func (r TaobaotbkscoptimusmaterialAPIRequest) GetPageno() int64 {
-	return r._pageno
+// GetPageNo PageNo Getter
+func (r TaobaotbkscoptimusmaterialAPIRequest) GetPageNo() int64 {
+	return r._pageNo
 }
 
-// SetAdzoneid is Adzoneid Setter
+// SetAdzoneId is AdzoneId Setter
 // mm_xxx_xxx_xxx的第3段数字
-func (r *TaobaotbkscoptimusmaterialAPIRequest) SetAdzoneid(_adzoneid int64) error {
-	r._adzoneid = _adzoneid
-	r.Set("adzone_id", _adzoneid)
+func (r *TaobaotbkscoptimusmaterialAPIRequest) SetAdzoneId(_adzoneId int64) error {
+	r._adzoneId = _adzoneId
+	r.Set("adzone_id", _adzoneId)
 	return nil
 }
 
-// GetAdzoneid Adzoneid Getter
-func (r TaobaotbkscoptimusmaterialAPIRequest) GetAdzoneid() int64 {
-	return r._adzoneid
+// GetAdzoneId AdzoneId Getter
+func (r TaobaotbkscoptimusmaterialAPIRequest) GetAdzoneId() int64 {
+	return r._adzoneId
 }
 
-// SetMaterialid is Materialid Setter
+// SetMaterialId is MaterialId Setter
 // 官方提供的物料Id（详细物料id见：https://market.m.taobao.com/app/qn/toutiao-new/index-pc.html#/detail/10628875?_k=gpov9a）
-func (r *TaobaotbkscoptimusmaterialAPIRequest) SetMaterialid(_materialid int64) error {
-	r._materialid = _materialid
-	r.Set("material_id", _materialid)
+func (r *TaobaotbkscoptimusmaterialAPIRequest) SetMaterialId(_materialId int64) error {
+	r._materialId = _materialId
+	r.Set("material_id", _materialId)
 	return nil
 }
 
-// GetMaterialid Materialid Getter
-func (r TaobaotbkscoptimusmaterialAPIRequest) GetMaterialid() int64 {
-	return r._materialid
+// GetMaterialId MaterialId Getter
+func (r TaobaotbkscoptimusmaterialAPIRequest) GetMaterialId() int64 {
+	return r._materialId
 }
 
-// SetSiteid is Siteid Setter
+// SetSiteId is SiteId Setter
 // mm_xxx_xxx_xxx的第2段数字
-func (r *TaobaotbkscoptimusmaterialAPIRequest) SetSiteid(_siteid int64) error {
-	r._siteid = _siteid
-	r.Set("site_id", _siteid)
+func (r *TaobaotbkscoptimusmaterialAPIRequest) SetSiteId(_siteId int64) error {
+	r._siteId = _siteId
+	r.Set("site_id", _siteId)
 	return nil
 }
 
-// GetSiteid Siteid Getter
-func (r TaobaotbkscoptimusmaterialAPIRequest) GetSiteid() int64 {
-	return r._siteid
+// GetSiteId SiteId Getter
+func (r TaobaotbkscoptimusmaterialAPIRequest) GetSiteId() int64 {
+	return r._siteId
 }
 
-// SetContentid is Contentid Setter
+// SetContentId is ContentId Setter
 // 内容专用-内容详情ID
-func (r *TaobaotbkscoptimusmaterialAPIRequest) SetContentid(_contentid int64) error {
-	r._contentid = _contentid
-	r.Set("content_id", _contentid)
+func (r *TaobaotbkscoptimusmaterialAPIRequest) SetContentId(_contentId int64) error {
+	r._contentId = _contentId
+	r.Set("content_id", _contentId)
 	return nil
 }
 
-// GetContentid Contentid Getter
-func (r TaobaotbkscoptimusmaterialAPIRequest) GetContentid() int64 {
-	return r._contentid
+// GetContentId ContentId Getter
+func (r TaobaotbkscoptimusmaterialAPIRequest) GetContentId() int64 {
+	return r._contentId
 }

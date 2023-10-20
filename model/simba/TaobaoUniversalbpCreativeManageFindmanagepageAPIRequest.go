@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest 创意库查询创意列表 API请求
+// TaobaouniversalbpcreativemanagefindmanagepageAPIRequest 创意库查询创意列表 API请求
 // taobao.universalbp.creative.manage.findmanagepage
 //
 // 创意库查询创意列表
-type TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest struct {
+type TaobaouniversalbpcreativemanagefindmanagepageAPIRequest struct {
 	model.Params
 	// topServiceContext
 	_topServiceContext *TopServiceContext
@@ -18,52 +18,52 @@ type TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest struct {
 	_creativeQueryVO *CreativeQueryVo
 }
 
-// NewTaobaoUniversalbpCreativeManageFindmanagepageRequest 初始化TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest对象
-func NewTaobaoUniversalbpCreativeManageFindmanagepageRequest() *TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest {
-	return &TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest{
+// NewTaobaouniversalbpcreativemanagefindmanagepageRequest 初始化TaobaouniversalbpcreativemanagefindmanagepageAPIRequest对象
+func NewTaobaouniversalbpcreativemanagefindmanagepageRequest() *TaobaouniversalbpcreativemanagefindmanagepageAPIRequest {
+	return &TaobaouniversalbpcreativemanagefindmanagepageAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest) GetApiMethodName() string {
+func (r TaobaouniversalbpcreativemanagefindmanagepageAPIRequest) GetApiMethodName() string {
 	return "taobao.universalbp.creative.manage.findmanagepage"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaouniversalbpcreativemanagefindmanagepageAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest) GetRawParams() model.Params {
+func (r TaobaouniversalbpcreativemanagefindmanagepageAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopServiceContext is TopServiceContext Setter
 // topServiceContext
-func (r *TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest) SetTopServiceContext(_topServiceContext *TopServiceContext) error {
+func (r *TaobaouniversalbpcreativemanagefindmanagepageAPIRequest) SetTopServiceContext(_topServiceContext *TopServiceContext) error {
 	r._topServiceContext = _topServiceContext
 	r.Set("top_service_context", _topServiceContext)
 	return nil
 }
 
 // GetTopServiceContext TopServiceContext Getter
-func (r TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest) GetTopServiceContext() *TopServiceContext {
+func (r TaobaouniversalbpcreativemanagefindmanagepageAPIRequest) GetTopServiceContext() *TopServiceContext {
 	return r._topServiceContext
 }
 
 // SetCreativeQueryVO is CreativeQueryVO Setter
 // creativeQueryVO
-func (r *TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest) SetCreativeQueryVO(_creativeQueryVO *CreativeQueryVo) error {
+func (r *TaobaouniversalbpcreativemanagefindmanagepageAPIRequest) SetCreativeQueryVO(_creativeQueryVO *CreativeQueryVo) error {
 	r._creativeQueryVO = _creativeQueryVO
 	r.Set("creative_query_v_o", _creativeQueryVO)
 	return nil
 }
 
 // GetCreativeQueryVO CreativeQueryVO Getter
-func (r TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest) GetCreativeQueryVO() *CreativeQueryVo {
+func (r TaobaouniversalbpcreativemanagefindmanagepageAPIRequest) GetCreativeQueryVO() *CreativeQueryVo {
 	return r._creativeQueryVO
 }

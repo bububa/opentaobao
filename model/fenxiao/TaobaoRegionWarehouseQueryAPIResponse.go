@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoRegionWarehouseQueryAPIResponse 查询仓库覆盖范围 API返回值
+// TaobaoregionwarehousequeryAPIResponse 查询仓库覆盖范围 API返回值
 // taobao.region.warehouse.query
 //
 // 查询仓库覆盖范围
-type TaobaoRegionWarehouseQueryAPIResponse struct {
+type TaobaoregionwarehousequeryAPIResponse struct {
 	model.CommonResponse
-	TaobaoRegionWarehouseQueryAPIResponseModel
+	TaobaoregionwarehousequeryAPIResponseModel
 }
 
-// TaobaoRegionWarehouseQueryAPIResponseModel is 查询仓库覆盖范围 成功返回结果
-type TaobaoRegionWarehouseQueryAPIResponseModel struct {
+// TaobaoregionwarehousequeryAPIResponseModel is 查询仓库覆盖范围 成功返回结果
+type TaobaoregionwarehousequeryAPIResponseModel struct {
 	XMLName xml.Name `xml:"region_warehouse_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

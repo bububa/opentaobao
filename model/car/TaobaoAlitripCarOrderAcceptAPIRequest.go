@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripCarOrderAcceptAPIRequest 确认接单 API请求
+// TaobaoalitripcarorderacceptAPIRequest 确认接单 API请求
 // taobao.alitrip.car.order.accept
 //
 // 用来接收服务商确认接单信息
-type TaobaoAlitripCarOrderAcceptAPIRequest struct {
+type TaobaoalitripcarorderacceptAPIRequest struct {
 	model.Params
 	// 确认订单请求
 	_paramOrderAccept *OrderAccept
 }
 
-// NewTaobaoAlitripCarOrderAcceptRequest 初始化TaobaoAlitripCarOrderAcceptAPIRequest对象
-func NewTaobaoAlitripCarOrderAcceptRequest() *TaobaoAlitripCarOrderAcceptAPIRequest {
-	return &TaobaoAlitripCarOrderAcceptAPIRequest{
+// NewTaobaoalitripcarorderacceptRequest 初始化TaobaoalitripcarorderacceptAPIRequest对象
+func NewTaobaoalitripcarorderacceptRequest() *TaobaoalitripcarorderacceptAPIRequest {
+	return &TaobaoalitripcarorderacceptAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripCarOrderAcceptAPIRequest) GetApiMethodName() string {
+func (r TaobaoalitripcarorderacceptAPIRequest) GetApiMethodName() string {
 	return "taobao.alitrip.car.order.accept"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripCarOrderAcceptAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoalitripcarorderacceptAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoAlitripCarOrderAcceptAPIRequest) GetRawParams() model.Params {
+func (r TaobaoalitripcarorderacceptAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamOrderAccept is ParamOrderAccept Setter
 // 确认订单请求
-func (r *TaobaoAlitripCarOrderAcceptAPIRequest) SetParamOrderAccept(_paramOrderAccept *OrderAccept) error {
+func (r *TaobaoalitripcarorderacceptAPIRequest) SetParamOrderAccept(_paramOrderAccept *OrderAccept) error {
 	r._paramOrderAccept = _paramOrderAccept
 	r.Set("param_order_accept", _paramOrderAccept)
 	return nil
 }
 
 // GetParamOrderAccept ParamOrderAccept Getter
-func (r TaobaoAlitripCarOrderAcceptAPIRequest) GetParamOrderAccept() *OrderAccept {
+func (r TaobaoalitripcarorderacceptAPIRequest) GetParamOrderAccept() *OrderAccept {
 	return r._paramOrderAccept
 }

@@ -21,7 +21,7 @@ type TaobaotbkscvegassendstatusAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果描述信息
-	Resultmsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
+	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// 返回结果封装对象
 	Data *TaobaotbkscvegassendstatusData `json:"data,omitempty" xml:"data,omitempty"`
 }

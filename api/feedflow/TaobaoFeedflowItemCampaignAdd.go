@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/feedflow"
 )
 
-// TaobaoFeedflowItemCampaignAdd 信息流增加推广计划
+// Taobaofeedflowitemcampaignadd 信息流增加推广计划
 // taobao.feedflow.item.campaign.add
 //
 // 信息流增加推广计划
-func TaobaoFeedflowItemCampaignAdd(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignAddAPIRequest, session string) (*feedflow.TaobaoFeedflowItemCampaignAddAPIResponse, error) {
-	var resp feedflow.TaobaoFeedflowItemCampaignAddAPIResponse
+func Taobaofeedflowitemcampaignadd(clt *core.SDKClient, req *feedflow.TaobaofeedflowitemcampaignaddAPIRequest, session string) (*feedflow.TaobaofeedflowitemcampaignaddAPIResponse, error) {
+	var resp feedflow.TaobaofeedflowitemcampaignaddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

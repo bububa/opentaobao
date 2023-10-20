@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallServicecenterServicestoreCreateResult 结构体
-type TmallServicecenterServicestoreCreateResult struct {
+// TmallservicecenterservicestorecreateResult 结构体
+type TmallservicecenterservicestorecreateResult struct {
 	// 错误码
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 错误信息

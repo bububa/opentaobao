@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAilabTbUserSkillOauthAPIResponse 用户技能 Oauth 授权（淘宝 openId） API返回值
+// AlibabaailabtbuserskilloauthAPIResponse 用户技能 Oauth 授权（淘宝 openId） API返回值
 // alibaba.ailab.tb.user.skill.oauth
 //
 // 定制机厂商，在用户配网完成后，厂商调用此接口，写入特定技能的 Oauth 信息
-type AlibabaAilabTbUserSkillOauthAPIResponse struct {
+type AlibabaailabtbuserskilloauthAPIResponse struct {
 	model.CommonResponse
-	AlibabaAilabTbUserSkillOauthAPIResponseModel
+	AlibabaailabtbuserskilloauthAPIResponseModel
 }
 
-// AlibabaAilabTbUserSkillOauthAPIResponseModel is 用户技能 Oauth 授权（淘宝 openId） 成功返回结果
-type AlibabaAilabTbUserSkillOauthAPIResponseModel struct {
+// AlibabaailabtbuserskilloauthAPIResponseModel is 用户技能 Oauth 授权（淘宝 openId） 成功返回结果
+type AlibabaailabtbuserskilloauthAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailab_tb_user_skill_oauth_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package idle
 
-// AlibabaIdleRentMediaUploadTopResult 结构体
-type AlibabaIdleRentMediaUploadTopResult struct {
+// AlibabaidlerentmediauploadTopResult 结构体
+type AlibabaidlerentmediauploadTopResult struct {
 	// 错误信息
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

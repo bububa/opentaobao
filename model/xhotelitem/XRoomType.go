@@ -1,7 +1,7 @@
 package xhotelitem
 
-// XRoomType 结构体
-type XRoomType struct {
+// XroomType 结构体
+type XroomType struct {
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 修改时间
@@ -49,5 +49,5 @@ type XRoomType struct {
 	// 窗型,0：无窗/1：有窗
 	WindowType int64 `json:"window_type,omitempty" xml:"window_type,omitempty"`
 	// 标准房型信息
-	SRoomtype *SRoomType `json:"s_roomtype,omitempty" xml:"s_roomtype,omitempty"`
+	SRoomtype *SroomType `json:"s_roomtype,omitempty" xml:"s_roomtype,omitempty"`
 }

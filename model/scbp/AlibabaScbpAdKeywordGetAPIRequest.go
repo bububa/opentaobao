@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpAdKeywordGetAPIRequest 外贸直通车查询关键词 API请求
+// AlibabascbpadkeywordgetAPIRequest 外贸直通车查询关键词 API请求
 // alibaba.scbp.ad.keyword.get
 //
 // 外贸直通车查询关键词
-type AlibabaScbpAdKeywordGetAPIRequest struct {
+type AlibabascbpadkeywordgetAPIRequest struct {
 	model.Params
 	// KeywordQuery
 	_queryDto *KeywordQuery
 }
 
-// NewAlibabaScbpAdKeywordGetRequest 初始化AlibabaScbpAdKeywordGetAPIRequest对象
-func NewAlibabaScbpAdKeywordGetRequest() *AlibabaScbpAdKeywordGetAPIRequest {
-	return &AlibabaScbpAdKeywordGetAPIRequest{
+// NewAlibabascbpadkeywordgetRequest 初始化AlibabascbpadkeywordgetAPIRequest对象
+func NewAlibabascbpadkeywordgetRequest() *AlibabascbpadkeywordgetAPIRequest {
+	return &AlibabascbpadkeywordgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdKeywordGetAPIRequest) GetApiMethodName() string {
+func (r AlibabascbpadkeywordgetAPIRequest) GetApiMethodName() string {
 	return "alibaba.scbp.ad.keyword.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdKeywordGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabascbpadkeywordgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaScbpAdKeywordGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabascbpadkeywordgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQueryDto is QueryDto Setter
 // KeywordQuery
-func (r *AlibabaScbpAdKeywordGetAPIRequest) SetQueryDto(_queryDto *KeywordQuery) error {
+func (r *AlibabascbpadkeywordgetAPIRequest) SetQueryDto(_queryDto *KeywordQuery) error {
 	r._queryDto = _queryDto
 	r.Set("query_dto", _queryDto)
 	return nil
 }
 
 // GetQueryDto QueryDto Getter
-func (r AlibabaScbpAdKeywordGetAPIRequest) GetQueryDto() *KeywordQuery {
+func (r AlibabascbpadkeywordgetAPIRequest) GetQueryDto() *KeywordQuery {
 	return r._queryDto
 }

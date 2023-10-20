@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-// TaobaoRegionPriceQuery 区域价格查询
+// Taobaoregionpricequery 区域价格查询
 // taobao.region.price.query
 //
 // 区域价格查询
-func TaobaoRegionPriceQuery(clt *core.SDKClient, req *fenxiao.TaobaoRegionPriceQueryAPIRequest, session string) (*fenxiao.TaobaoRegionPriceQueryAPIResponse, error) {
-	var resp fenxiao.TaobaoRegionPriceQueryAPIResponse
+func Taobaoregionpricequery(clt *core.SDKClient, req *fenxiao.TaobaoregionpricequeryAPIRequest, session string) (*fenxiao.TaobaoregionpricequeryAPIResponse, error) {
+	var resp fenxiao.TaobaoregionpricequeryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

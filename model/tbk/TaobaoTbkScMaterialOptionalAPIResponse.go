@@ -21,9 +21,9 @@ type TaobaotbkscmaterialoptionalAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// resultList
-	Resultlist []TaobaotbkscmaterialoptionalMapData `json:"result_list,omitempty" xml:"result_list>taobaotbkscmaterialoptional_map_data,omitempty"`
+	ResultList []TaobaotbkscmaterialoptionalMapData `json:"result_list,omitempty" xml:"result_list>taobaotbkscmaterialoptional_map_data,omitempty"`
 	// 本地化-lbs唯一分页标示，请在翻页时作为入参透传
-	Pageresultkey string `json:"page_result_key,omitempty" xml:"page_result_key,omitempty"`
+	PageResultKey string `json:"page_result_key,omitempty" xml:"page_result_key,omitempty"`
 	// 搜索到符合条件的结果总数
-	Totalresults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkItemCategoryUpdate 修改类目
+// Alibabawdkitemcategoryupdate 修改类目
 // alibaba.wdk.item.category.update
 //
 // 修改类目
-func AlibabaWdkItemCategoryUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkItemCategoryUpdateAPIRequest, session string) (*wdk.AlibabaWdkItemCategoryUpdateAPIResponse, error) {
-	var resp wdk.AlibabaWdkItemCategoryUpdateAPIResponse
+func Alibabawdkitemcategoryupdate(clt *core.SDKClient, req *wdk.AlibabawdkitemcategoryupdateAPIRequest, session string) (*wdk.AlibabawdkitemcategoryupdateAPIResponse, error) {
+	var resp wdk.AlibabawdkitemcategoryupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

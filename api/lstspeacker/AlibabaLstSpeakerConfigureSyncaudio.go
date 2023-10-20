@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/lstspeacker"
 )
 
-// AlibabaLstSpeakerConfigureSyncaudio 音频同步
+// Alibabalstspeakerconfiguresyncaudio 音频同步
 // alibaba.lst.speaker.configure.syncaudio
 //
 // 音频同步
-func AlibabaLstSpeakerConfigureSyncaudio(clt *core.SDKClient, req *lstspeacker.AlibabaLstSpeakerConfigureSyncaudioAPIRequest, session string) (*lstspeacker.AlibabaLstSpeakerConfigureSyncaudioAPIResponse, error) {
-	var resp lstspeacker.AlibabaLstSpeakerConfigureSyncaudioAPIResponse
+func Alibabalstspeakerconfiguresyncaudio(clt *core.SDKClient, req *lstspeacker.AlibabalstspeakerconfiguresyncaudioAPIRequest, session string) (*lstspeacker.AlibabalstspeakerconfiguresyncaudioAPIResponse, error) {
+	var resp lstspeacker.AlibabalstspeakerconfiguresyncaudioAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package sungari
 
-// TaobaoCloudbridgeCaseinvestExecuteResult 结构体
-type TaobaoCloudbridgeCaseinvestExecuteResult struct {
+// TaobaocloudbridgecaseinvestexecuteResult 结构体
+type TaobaocloudbridgecaseinvestexecuteResult struct {
 	// data值，JSON数据，可转换成对应的结果
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// 说明

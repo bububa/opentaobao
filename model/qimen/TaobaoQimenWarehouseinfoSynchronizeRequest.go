@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoQimenWarehouseinfoSynchronizeRequest 结构体
-type TaobaoQimenWarehouseinfoSynchronizeRequest struct {
+// TaobaoqimenwarehouseinfosynchronizeRequest 结构体
+type TaobaoqimenwarehouseinfosynchronizeRequest struct {
 	// 仓库信息
 	WarehouseInfos []WarehouseInfos `json:"warehouseInfos,omitempty" xml:"warehouseInfos>warehouse_infos,omitempty"`
 	// 货主编码，string（50）

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallSupplychainChannelProductDownshelfAPIRequest 产品下架 API请求
+// TmallsupplychainchannelproductdownshelfAPIRequest 产品下架 API请求
 // tmall.supplychain.channel.product.downshelf
 //
 // 产品下架
-type TmallSupplychainChannelProductDownshelfAPIRequest struct {
+type TmallsupplychainchannelproductdownshelfAPIRequest struct {
 	model.Params
 	// 产品ID
 	_productId int64
 }
 
-// NewTmallSupplychainChannelProductDownshelfRequest 初始化TmallSupplychainChannelProductDownshelfAPIRequest对象
-func NewTmallSupplychainChannelProductDownshelfRequest() *TmallSupplychainChannelProductDownshelfAPIRequest {
-	return &TmallSupplychainChannelProductDownshelfAPIRequest{
+// NewTmallsupplychainchannelproductdownshelfRequest 初始化TmallsupplychainchannelproductdownshelfAPIRequest对象
+func NewTmallsupplychainchannelproductdownshelfRequest() *TmallsupplychainchannelproductdownshelfAPIRequest {
+	return &TmallsupplychainchannelproductdownshelfAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallSupplychainChannelProductDownshelfAPIRequest) GetApiMethodName() string {
+func (r TmallsupplychainchannelproductdownshelfAPIRequest) GetApiMethodName() string {
 	return "tmall.supplychain.channel.product.downshelf"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallSupplychainChannelProductDownshelfAPIRequest) GetApiParams(params url.Values) {
+func (r TmallsupplychainchannelproductdownshelfAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallSupplychainChannelProductDownshelfAPIRequest) GetRawParams() model.Params {
+func (r TmallsupplychainchannelproductdownshelfAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetProductId is ProductId Setter
 // 产品ID
-func (r *TmallSupplychainChannelProductDownshelfAPIRequest) SetProductId(_productId int64) error {
+func (r *TmallsupplychainchannelproductdownshelfAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
 	r.Set("product_id", _productId)
 	return nil
 }
 
 // GetProductId ProductId Getter
-func (r TmallSupplychainChannelProductDownshelfAPIRequest) GetProductId() int64 {
+func (r TmallsupplychainchannelproductdownshelfAPIRequest) GetProductId() int64 {
 	return r._productId
 }

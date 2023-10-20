@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoProductsSearchAPIResponse 搜索产品信息 API返回值
+// TaobaoproductssearchAPIResponse 搜索产品信息 API返回值
 // taobao.products.search
 //
 // 只有天猫商家发布商品时才需要用到，并非商品搜索api，当前暂不提供商品搜索api。&lt;br/&gt;二种方式搜索所有产品信息(二种至少传一种): &lt;br/&gt;
@@ -18,13 +18,13 @@ import (
 //
 //	传入suite_items_str 按规格搜索套装产品。
 //	返回字段增加suite_items_str,is_suite_effecitve支持。
-type TaobaoProductsSearchAPIResponse struct {
+type TaobaoproductssearchAPIResponse struct {
 	model.CommonResponse
-	TaobaoProductsSearchAPIResponseModel
+	TaobaoproductssearchAPIResponseModel
 }
 
-// TaobaoProductsSearchAPIResponseModel is 搜索产品信息 成功返回结果
-type TaobaoProductsSearchAPIResponseModel struct {
+// TaobaoproductssearchAPIResponseModel is 搜索产品信息 成功返回结果
+type TaobaoproductssearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"products_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

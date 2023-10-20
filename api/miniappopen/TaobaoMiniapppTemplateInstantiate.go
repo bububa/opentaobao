@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/miniappopen"
 )
 
-// TaobaoMiniapppTemplateInstantiate （已废弃）构建实例化应用
+// Taobaominiappptemplateinstantiate （已废弃）构建实例化应用
 // taobao.miniappp.template.instantiate
 //
 // 实例化saas化的小程序
-func TaobaoMiniapppTemplateInstantiate(clt *core.SDKClient, req *miniappopen.TaobaoMiniapppTemplateInstantiateAPIRequest, session string) (*miniappopen.TaobaoMiniapppTemplateInstantiateAPIResponse, error) {
-	var resp miniappopen.TaobaoMiniapppTemplateInstantiateAPIResponse
+func Taobaominiappptemplateinstantiate(clt *core.SDKClient, req *miniappopen.TaobaominiappptemplateinstantiateAPIRequest, session string) (*miniappopen.TaobaominiappptemplateinstantiateAPIResponse, error) {
+	var resp miniappopen.TaobaominiappptemplateinstantiateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

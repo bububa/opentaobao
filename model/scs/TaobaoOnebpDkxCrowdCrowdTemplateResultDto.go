@@ -1,7 +1,7 @@
 package scs
 
-// TaobaoOnebpDkxCrowdCrowdTemplateResultDto 结构体
-type TaobaoOnebpDkxCrowdCrowdTemplateResultDto struct {
+// TaobaoonebpdkxcrowdcrowdtemplateResultDto 结构体
+type TaobaoonebpdkxcrowdcrowdtemplateResultDto struct {
 	// 返回结果
 	DmpCrowdTmpResultTopDTOList []DmpCrowdTmpResultTopDto `json:"dmp_crowd_tmp_result_top_d_t_o_list,omitempty" xml:"dmp_crowd_tmp_result_top_d_t_o_list>dmp_crowd_tmp_result_top_dto,omitempty"`
 	// 返回消息

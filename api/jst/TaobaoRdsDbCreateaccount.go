@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/jst"
 )
 
-// TaobaoRdsDbCreateaccount rds创建数据库账户
+// Taobaordsdbcreateaccount rds创建数据库账户
 // taobao.rds.db.createaccount
 //
 // rds创建数据库账户
-func TaobaoRdsDbCreateaccount(clt *core.SDKClient, req *jst.TaobaoRdsDbCreateaccountAPIRequest, session string) (*jst.TaobaoRdsDbCreateaccountAPIResponse, error) {
-	var resp jst.TaobaoRdsDbCreateaccountAPIResponse
+func Taobaordsdbcreateaccount(clt *core.SDKClient, req *jst.TaobaordsdbcreateaccountAPIRequest, session string) (*jst.TaobaordsdbcreateaccountAPIResponse, error) {
+	var resp jst.TaobaordsdbcreateaccountAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

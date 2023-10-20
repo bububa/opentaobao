@@ -1,7 +1,7 @@
 package alihouse
 
-// UpdateProjectLayoutECodeDto 结构体
-type UpdateProjectLayoutECodeDto struct {
+// UpdateProjectLayoutEcodeDto 结构体
+type UpdateProjectLayoutEcodeDto struct {
 	// 楼盘ID
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 外部货ID

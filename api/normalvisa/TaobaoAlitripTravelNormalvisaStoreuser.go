@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/normalvisa"
 )
 
-// TaobaoAlitripTravelNormalvisaStoreuser 代填办理人信息
+// Taobaoalitriptravelnormalvisastoreuser 代填办理人信息
 // taobao.alitrip.travel.normalvisa.storeuser
 //
 // 卖家代填买家填写办理人信息
-func TaobaoAlitripTravelNormalvisaStoreuser(clt *core.SDKClient, req *normalvisa.TaobaoAlitripTravelNormalvisaStoreuserAPIRequest, session string) (*normalvisa.TaobaoAlitripTravelNormalvisaStoreuserAPIResponse, error) {
-	var resp normalvisa.TaobaoAlitripTravelNormalvisaStoreuserAPIResponse
+func Taobaoalitriptravelnormalvisastoreuser(clt *core.SDKClient, req *normalvisa.TaobaoalitriptravelnormalvisastoreuserAPIRequest, session string) (*normalvisa.TaobaoalitriptravelnormalvisastoreuserAPIResponse, error) {
+	var resp normalvisa.TaobaoalitriptravelnormalvisastoreuserAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEleEnterpriseCartcouponGetAPIResponse 获取下单可用的优惠券 API返回值
+// AlibabaeleenterprisecartcoupongetAPIResponse 获取下单可用的优惠券 API返回值
 // alibaba.ele.enterprise.cartcoupon.get
 //
 // 获取下单可用的优惠券
-type AlibabaEleEnterpriseCartcouponGetAPIResponse struct {
+type AlibabaeleenterprisecartcoupongetAPIResponse struct {
 	model.CommonResponse
-	AlibabaEleEnterpriseCartcouponGetAPIResponseModel
+	AlibabaeleenterprisecartcoupongetAPIResponseModel
 }
 
-// AlibabaEleEnterpriseCartcouponGetAPIResponseModel is 获取下单可用的优惠券 成功返回结果
-type AlibabaEleEnterpriseCartcouponGetAPIResponseModel struct {
+// AlibabaeleenterprisecartcoupongetAPIResponseModel is 获取下单可用的优惠券 成功返回结果
+type AlibabaeleenterprisecartcoupongetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ele_enterprise_cartcoupon_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

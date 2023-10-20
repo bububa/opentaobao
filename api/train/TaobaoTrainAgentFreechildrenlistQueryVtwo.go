@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/train"
 )
 
-// TaobaoTrainAgentFreechildrenlistQueryVtwo 免费儿童列表查询
+// Taobaotrainagentfreechildrenlistqueryvtwo 免费儿童列表查询
 // taobao.train.agent.freechildrenlist.query.vtwo
 //
 // 免费儿童列表查询
-func TaobaoTrainAgentFreechildrenlistQueryVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentFreechildrenlistQueryVtwoAPIRequest, session string) (*train.TaobaoTrainAgentFreechildrenlistQueryVtwoAPIResponse, error) {
-	var resp train.TaobaoTrainAgentFreechildrenlistQueryVtwoAPIResponse
+func Taobaotrainagentfreechildrenlistqueryvtwo(clt *core.SDKClient, req *train.TaobaotrainagentfreechildrenlistqueryvtwoAPIRequest, session string) (*train.TaobaotrainagentfreechildrenlistqueryvtwoAPIResponse, error) {
+	var resp train.TaobaotrainagentfreechildrenlistqueryvtwoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

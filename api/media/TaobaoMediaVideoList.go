@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/media"
 )
 
-// TaobaoMediaVideoList 获取商家视频列表
+// Taobaomediavideolist 获取商家视频列表
 // taobao.media.video.list
 //
 // 用于获取授权商家的视频列表
-func TaobaoMediaVideoList(clt *core.SDKClient, req *media.TaobaoMediaVideoListAPIRequest, session string) (*media.TaobaoMediaVideoListAPIResponse, error) {
-	var resp media.TaobaoMediaVideoListAPIResponse
+func Taobaomediavideolist(clt *core.SDKClient, req *media.TaobaomediavideolistAPIRequest, session string) (*media.TaobaomediavideolistAPIResponse, error) {
+	var resp media.TaobaomediavideolistAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/jst"
 )
 
-// TaobaoJstSmsTemplateQuery 淘宝短信模板查询
+// Taobaojstsmstemplatequery 淘宝短信模板查询
 // taobao.jst.sms.template.query
 //
 // 淘宝短信模板查询
-func TaobaoJstSmsTemplateQuery(clt *core.SDKClient, req *jst.TaobaoJstSmsTemplateQueryAPIRequest, session string) (*jst.TaobaoJstSmsTemplateQueryAPIResponse, error) {
-	var resp jst.TaobaoJstSmsTemplateQueryAPIResponse
+func Taobaojstsmstemplatequery(clt *core.SDKClient, req *jst.TaobaojstsmstemplatequeryAPIRequest, session string) (*jst.TaobaojstsmstemplatequeryAPIResponse, error) {
+	var resp jst.TaobaojstsmstemplatequeryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

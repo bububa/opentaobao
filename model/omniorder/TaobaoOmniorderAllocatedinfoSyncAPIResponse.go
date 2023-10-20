@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOmniorderAllocatedinfoSyncAPIResponse 分单结果同步给星盘 API返回值
+// TaobaoomniorderallocatedinfosyncAPIResponse 分单结果同步给星盘 API返回值
 // taobao.omniorder.allocatedinfo.sync
 //
 // ISV分单完成，将分单结果同步给星盘
-type TaobaoOmniorderAllocatedinfoSyncAPIResponse struct {
+type TaobaoomniorderallocatedinfosyncAPIResponse struct {
 	model.CommonResponse
-	TaobaoOmniorderAllocatedinfoSyncAPIResponseModel
+	TaobaoomniorderallocatedinfosyncAPIResponseModel
 }
 
-// TaobaoOmniorderAllocatedinfoSyncAPIResponseModel is 分单结果同步给星盘 成功返回结果
-type TaobaoOmniorderAllocatedinfoSyncAPIResponseModel struct {
+// TaobaoomniorderallocatedinfosyncAPIResponseModel is 分单结果同步给星盘 成功返回结果
+type TaobaoomniorderallocatedinfosyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"omniorder_allocatedinfo_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

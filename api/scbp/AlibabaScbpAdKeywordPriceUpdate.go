@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// AlibabaScbpAdKeywordPriceUpdate 关键词改价
+// Alibabascbpadkeywordpriceupdate 关键词改价
 // alibaba.scbp.ad.keyword.price.update
 //
 // 关键词改价
-func AlibabaScbpAdKeywordPriceUpdate(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordPriceUpdateAPIRequest, session string) (*scbp.AlibabaScbpAdKeywordPriceUpdateAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdKeywordPriceUpdateAPIResponse
+func Alibabascbpadkeywordpriceupdate(clt *core.SDKClient, req *scbp.AlibabascbpadkeywordpriceupdateAPIRequest, session string) (*scbp.AlibabascbpadkeywordpriceupdateAPIResponse, error) {
+	var resp scbp.AlibabascbpadkeywordpriceupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

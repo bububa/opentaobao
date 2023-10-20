@@ -1,7 +1,7 @@
 package flight
 
-// AlitripAgentFlightSellTicketingListT 结构体
-type AlitripAgentFlightSellTicketingListT struct {
+// AlitripagentflightsellticketinglistT 结构体
+type AlitripagentflightsellticketinglistT struct {
 	// 飞猪订单号
 	OrderId string `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 支付时间

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaHmMarketingFullrangeCreateactivity 创建全场活动
+// Alibabahmmarketingfullrangecreateactivity 创建全场活动
 // alibaba.hm.marketing.fullrange.createactivity
 //
 // 创建全场活动
-func AlibabaHmMarketingFullrangeCreateactivity(clt *core.SDKClient, req *wdk.AlibabaHmMarketingFullrangeCreateactivityAPIRequest, session string) (*wdk.AlibabaHmMarketingFullrangeCreateactivityAPIResponse, error) {
-	var resp wdk.AlibabaHmMarketingFullrangeCreateactivityAPIResponse
+func Alibabahmmarketingfullrangecreateactivity(clt *core.SDKClient, req *wdk.AlibabahmmarketingfullrangecreateactivityAPIRequest, session string) (*wdk.AlibabahmmarketingfullrangecreateactivityAPIResponse, error) {
+	var resp wdk.AlibabahmmarketingfullrangecreateactivityAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

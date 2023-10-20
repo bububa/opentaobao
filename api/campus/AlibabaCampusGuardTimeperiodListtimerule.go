@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// AlibabaCampusGuardTimeperiodListtimerule 门禁控制器查询时间规则
+// Alibabacampusguardtimeperiodlisttimerule 门禁控制器查询时间规则
 // alibaba.campus.guard.timeperiod.listtimerule
 //
 // 门禁控制器查询时间规则
-func AlibabaCampusGuardTimeperiodListtimerule(clt *core.SDKClient, req *campus.AlibabaCampusGuardTimeperiodListtimeruleAPIRequest, session string) (*campus.AlibabaCampusGuardTimeperiodListtimeruleAPIResponse, error) {
-	var resp campus.AlibabaCampusGuardTimeperiodListtimeruleAPIResponse
+func Alibabacampusguardtimeperiodlisttimerule(clt *core.SDKClient, req *campus.AlibabacampusguardtimeperiodlisttimeruleAPIRequest, session string) (*campus.AlibabacampusguardtimeperiodlisttimeruleAPIResponse, error) {
+	var resp campus.AlibabacampusguardtimeperiodlisttimeruleAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

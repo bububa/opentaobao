@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripTransferOrderDetailAPIResponse 接送订单详情接口 API返回值
+// AlitriptransferorderdetailAPIResponse 接送订单详情接口 API返回值
 // alitrip.transfer.order.detail
 //
 // 接送订单详情接口
-type AlitripTransferOrderDetailAPIResponse struct {
+type AlitriptransferorderdetailAPIResponse struct {
 	model.CommonResponse
-	AlitripTransferOrderDetailAPIResponseModel
+	AlitriptransferorderdetailAPIResponseModel
 }
 
-// AlitripTransferOrderDetailAPIResponseModel is 接送订单详情接口 成功返回结果
-type AlitripTransferOrderDetailAPIResponseModel struct {
+// AlitriptransferorderdetailAPIResponseModel is 接送订单详情接口 成功返回结果
+type AlitriptransferorderdetailAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_transfer_order_detail_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

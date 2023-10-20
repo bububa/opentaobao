@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest 设置订单支付 API请求
+// AlibabaeleenterpriseordernewpaymentstatusAPIRequest 设置订单支付 API请求
 // alibaba.ele.enterprise.ordernew.paymentstatus
 //
 // 设置订单支付成功
-type AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest struct {
+type AlibabaeleenterpriseordernewpaymentstatusAPIRequest struct {
 	model.Params
 	// 订单id
 	_orderId string
@@ -18,52 +18,52 @@ type AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest struct {
 	_paySerialNumber string
 }
 
-// NewAlibabaEleEnterpriseOrdernewPaymentstatusRequest 初始化AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest对象
-func NewAlibabaEleEnterpriseOrdernewPaymentstatusRequest() *AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest {
-	return &AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest{
+// NewAlibabaeleenterpriseordernewpaymentstatusRequest 初始化AlibabaeleenterpriseordernewpaymentstatusAPIRequest对象
+func NewAlibabaeleenterpriseordernewpaymentstatusRequest() *AlibabaeleenterpriseordernewpaymentstatusAPIRequest {
+	return &AlibabaeleenterpriseordernewpaymentstatusAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) GetApiMethodName() string {
+func (r AlibabaeleenterpriseordernewpaymentstatusAPIRequest) GetApiMethodName() string {
 	return "alibaba.ele.enterprise.ordernew.paymentstatus"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaeleenterpriseordernewpaymentstatusAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) GetRawParams() model.Params {
+func (r AlibabaeleenterpriseordernewpaymentstatusAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOrderId is OrderId Setter
 // 订单id
-func (r *AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) SetOrderId(_orderId string) error {
+func (r *AlibabaeleenterpriseordernewpaymentstatusAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
 	r.Set("order_id", _orderId)
 	return nil
 }
 
 // GetOrderId OrderId Getter
-func (r AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) GetOrderId() string {
+func (r AlibabaeleenterpriseordernewpaymentstatusAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
 // SetPaySerialNumber is PaySerialNumber Setter
 // 支付流水号
-func (r *AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) SetPaySerialNumber(_paySerialNumber string) error {
+func (r *AlibabaeleenterpriseordernewpaymentstatusAPIRequest) SetPaySerialNumber(_paySerialNumber string) error {
 	r._paySerialNumber = _paySerialNumber
 	r.Set("pay_serial_number", _paySerialNumber)
 	return nil
 }
 
 // GetPaySerialNumber PaySerialNumber Getter
-func (r AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) GetPaySerialNumber() string {
+func (r AlibabaeleenterpriseordernewpaymentstatusAPIRequest) GetPaySerialNumber() string {
 	return r._paySerialNumber
 }

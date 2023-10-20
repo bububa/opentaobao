@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse 单明细发薪受理 API返回值
+// AlibabaeinvoicetaxoptsalaryrequestsingleacceptAPIResponse 单明细发薪受理 API返回值
 // alibaba.einvoice.tax.opt.salaryrequest.singleaccept
 //
 // 单明细发薪受理
-type AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse struct {
+type AlibabaeinvoicetaxoptsalaryrequestsingleacceptAPIResponse struct {
 	model.CommonResponse
-	AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponseModel
+	AlibabaeinvoicetaxoptsalaryrequestsingleacceptAPIResponseModel
 }
 
-// AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponseModel is 单明细发薪受理 成功返回结果
-type AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponseModel struct {
+// AlibabaeinvoicetaxoptsalaryrequestsingleacceptAPIResponseModel is 单明细发薪受理 成功返回结果
+type AlibabaeinvoicetaxoptsalaryrequestsingleacceptAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_tax_opt_salaryrequest_singleaccept_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

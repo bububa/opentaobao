@@ -1,7 +1,7 @@
 package flight
 
-// AlitripPolicySpecialUploadResultDto 结构体
-type AlitripPolicySpecialUploadResultDto struct {
+// AlitrippolicyspecialuploadResultDto 结构体
+type AlitrippolicyspecialuploadResultDto struct {
 	// 任务失败错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 任务失败错误原因

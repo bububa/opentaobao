@@ -1,7 +1,7 @@
 package bus
 
-// TaobaoBusLastplaceGetResult 结构体
-type TaobaoBusLastplaceGetResult struct {
+// TaobaobuslastplacegetResult 结构体
+type TaobaobuslastplacegetResult struct {
 	// errCode
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// errMsg

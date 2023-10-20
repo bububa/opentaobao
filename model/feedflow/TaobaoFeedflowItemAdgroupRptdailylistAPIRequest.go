@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoFeedflowItemAdgroupRptdailylistAPIRequest 推广单元分日数据查询 API请求
+// TaobaofeedflowitemadgrouprptdailylistAPIRequest 推广单元分日数据查询 API请求
 // taobao.feedflow.item.adgroup.rptdailylist
 //
 // 推广单元分日数据查询
-type TaobaoFeedflowItemAdgroupRptdailylistAPIRequest struct {
+type TaobaofeedflowitemadgrouprptdailylistAPIRequest struct {
 	model.Params
 	// 查询条件
 	_rptQueryDTO *RptQueryDto
 }
 
-// NewTaobaoFeedflowItemAdgroupRptdailylistRequest 初始化TaobaoFeedflowItemAdgroupRptdailylistAPIRequest对象
-func NewTaobaoFeedflowItemAdgroupRptdailylistRequest() *TaobaoFeedflowItemAdgroupRptdailylistAPIRequest {
-	return &TaobaoFeedflowItemAdgroupRptdailylistAPIRequest{
+// NewTaobaofeedflowitemadgrouprptdailylistRequest 初始化TaobaofeedflowitemadgrouprptdailylistAPIRequest对象
+func NewTaobaofeedflowitemadgrouprptdailylistRequest() *TaobaofeedflowitemadgrouprptdailylistAPIRequest {
+	return &TaobaofeedflowitemadgrouprptdailylistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemAdgroupRptdailylistAPIRequest) GetApiMethodName() string {
+func (r TaobaofeedflowitemadgrouprptdailylistAPIRequest) GetApiMethodName() string {
 	return "taobao.feedflow.item.adgroup.rptdailylist"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemAdgroupRptdailylistAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaofeedflowitemadgrouprptdailylistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoFeedflowItemAdgroupRptdailylistAPIRequest) GetRawParams() model.Params {
+func (r TaobaofeedflowitemadgrouprptdailylistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRptQueryDTO is RptQueryDTO Setter
 // 查询条件
-func (r *TaobaoFeedflowItemAdgroupRptdailylistAPIRequest) SetRptQueryDTO(_rptQueryDTO *RptQueryDto) error {
+func (r *TaobaofeedflowitemadgrouprptdailylistAPIRequest) SetRptQueryDTO(_rptQueryDTO *RptQueryDto) error {
 	r._rptQueryDTO = _rptQueryDTO
 	r.Set("rpt_query_d_t_o", _rptQueryDTO)
 	return nil
 }
 
 // GetRptQueryDTO RptQueryDTO Getter
-func (r TaobaoFeedflowItemAdgroupRptdailylistAPIRequest) GetRptQueryDTO() *RptQueryDto {
+func (r TaobaofeedflowitemadgrouprptdailylistAPIRequest) GetRptQueryDTO() *RptQueryDto {
 	return r._rptQueryDTO
 }

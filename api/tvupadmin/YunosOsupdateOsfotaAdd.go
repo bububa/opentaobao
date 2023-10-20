@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-// YunosOsupdateOsfotaAdd 添加系统升级任务
+// Yunososupdateosfotaadd 添加系统升级任务
 // yunos.osupdate.osfota.add
 //
 // 添加osupdate系统升级任务
-func YunosOsupdateOsfotaAdd(clt *core.SDKClient, req *tvupadmin.YunosOsupdateOsfotaAddAPIRequest, session string) (*tvupadmin.YunosOsupdateOsfotaAddAPIResponse, error) {
-	var resp tvupadmin.YunosOsupdateOsfotaAddAPIResponse
+func Yunososupdateosfotaadd(clt *core.SDKClient, req *tvupadmin.YunososupdateosfotaaddAPIRequest, session string) (*tvupadmin.YunososupdateosfotaaddAPIResponse, error) {
+	var resp tvupadmin.YunososupdateosfotaaddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

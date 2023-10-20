@@ -6,22 +6,22 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthImriskQueryAPIResponse 问诊质控接口 API返回值
+// AlibabaalihealthimriskqueryAPIResponse 问诊质控接口 API返回值
 // alibaba.alihealth.imrisk.query
 //
 // 阿里健康的问诊质控接口
-type AlibabaAlihealthImriskQueryAPIResponse struct {
+type AlibabaalihealthimriskqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthImriskQueryAPIResponseModel
+	AlibabaalihealthimriskqueryAPIResponseModel
 }
 
-// AlibabaAlihealthImriskQueryAPIResponseModel is 问诊质控接口 成功返回结果
-type AlibabaAlihealthImriskQueryAPIResponseModel struct {
+// AlibabaalihealthimriskqueryAPIResponseModel is 问诊质控接口 成功返回结果
+type AlibabaalihealthimriskqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_imrisk_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
-	Data []IMRule `json:"data,omitempty" xml:"data>im_rule,omitempty"`
+	Data []Imrule `json:"data,omitempty" xml:"data>imrule,omitempty"`
 	// 错误码
 	TheErrCode string `json:"the_err_code,omitempty" xml:"the_err_code,omitempty"`
 	// 错误信息

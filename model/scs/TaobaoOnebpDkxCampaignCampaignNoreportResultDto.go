@@ -1,7 +1,7 @@
 package scs
 
-// TaobaoOnebpDkxCampaignCampaignNoreportResultDto 结构体
-type TaobaoOnebpDkxCampaignCampaignNoreportResultDto struct {
+// TaobaoonebpdkxcampaigncampaignnoreportResultDto 结构体
+type TaobaoonebpdkxcampaigncampaignnoreportResultDto struct {
 	// 返回结果
 	CampaignResultTopDTOList []CampaignResultTopDto `json:"campaign_result_top_d_t_o_list,omitempty" xml:"campaign_result_top_d_t_o_list>campaign_result_top_dto,omitempty"`
 	// 返回消息

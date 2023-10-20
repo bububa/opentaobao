@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mozi"
 )
 
-// AlibabaMoziVdsTenantApiServicePagesubadmins 分页查询租户子管理员
+// Alibabamozivdstenantapiservicepagesubadmins 分页查询租户子管理员
 // alibaba.mozi.vds.tenant.api.service.pagesubadmins
 //
 // 分页查询租户子管理员
-func AlibabaMoziVdsTenantApiServicePagesubadmins(clt *core.SDKClient, req *mozi.AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest, session string) (*mozi.AlibabaMoziVdsTenantApiServicePagesubadminsAPIResponse, error) {
-	var resp mozi.AlibabaMoziVdsTenantApiServicePagesubadminsAPIResponse
+func Alibabamozivdstenantapiservicepagesubadmins(clt *core.SDKClient, req *mozi.AlibabamozivdstenantapiservicepagesubadminsAPIRequest, session string) (*mozi.AlibabamozivdstenantapiservicepagesubadminsAPIResponse, error) {
+	var resp mozi.AlibabamozivdstenantapiservicepagesubadminsAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

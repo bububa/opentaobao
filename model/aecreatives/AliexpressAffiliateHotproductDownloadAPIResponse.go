@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressAffiliateHotproductDownloadAPIResponse 联盟营销爆品下载接口 API返回值
+// AliexpressaffiliatehotproductdownloadAPIResponse 联盟营销爆品下载接口 API返回值
 // aliexpress.affiliate.hotproduct.download
 //
 // 查询联盟爆品API
-type AliexpressAffiliateHotproductDownloadAPIResponse struct {
+type AliexpressaffiliatehotproductdownloadAPIResponse struct {
 	model.CommonResponse
-	AliexpressAffiliateHotproductDownloadAPIResponseModel
+	AliexpressaffiliatehotproductdownloadAPIResponseModel
 }
 
-// AliexpressAffiliateHotproductDownloadAPIResponseModel is 联盟营销爆品下载接口 成功返回结果
-type AliexpressAffiliateHotproductDownloadAPIResponseModel struct {
+// AliexpressaffiliatehotproductdownloadAPIResponseModel is 联盟营销爆品下载接口 成功返回结果
+type AliexpressaffiliatehotproductdownloadAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_affiliate_hotproduct_download_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

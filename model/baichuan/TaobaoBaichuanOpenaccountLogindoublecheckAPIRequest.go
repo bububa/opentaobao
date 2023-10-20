@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest 百川登录二次验证 API请求
+// TaobaobaichuanopenaccountlogindoublecheckAPIRequest 百川登录二次验证 API请求
 // taobao.baichuan.openaccount.logindoublecheck
 //
 // 百川登录二次验证
-type TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest struct {
+type TaobaobaichuanopenaccountlogindoublecheckAPIRequest struct {
 	model.Params
 	// name
 	_name string
 }
 
-// NewTaobaoBaichuanOpenaccountLogindoublecheckRequest 初始化TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest对象
-func NewTaobaoBaichuanOpenaccountLogindoublecheckRequest() *TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest {
-	return &TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest{
+// NewTaobaobaichuanopenaccountlogindoublecheckRequest 初始化TaobaobaichuanopenaccountlogindoublecheckAPIRequest对象
+func NewTaobaobaichuanopenaccountlogindoublecheckRequest() *TaobaobaichuanopenaccountlogindoublecheckAPIRequest {
+	return &TaobaobaichuanopenaccountlogindoublecheckAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest) GetApiMethodName() string {
+func (r TaobaobaichuanopenaccountlogindoublecheckAPIRequest) GetApiMethodName() string {
 	return "taobao.baichuan.openaccount.logindoublecheck"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaobaichuanopenaccountlogindoublecheckAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest) GetRawParams() model.Params {
+func (r TaobaobaichuanopenaccountlogindoublecheckAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetName is Name Setter
 // name
-func (r *TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest) SetName(_name string) error {
+func (r *TaobaobaichuanopenaccountlogindoublecheckAPIRequest) SetName(_name string) error {
 	r._name = _name
 	r.Set("name", _name)
 	return nil
 }
 
 // GetName Name Getter
-func (r TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest) GetName() string {
+func (r TaobaobaichuanopenaccountlogindoublecheckAPIRequest) GetName() string {
 	return r._name
 }

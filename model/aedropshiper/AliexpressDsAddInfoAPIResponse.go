@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressDsAddInfoAPIResponse 上报DS信息 API返回值
+// AliexpressdsaddinfoAPIResponse 上报DS信息 API返回值
 // aliexpress.ds.add.info
 //
 // ISV用户上报下游DS信息
-type AliexpressDsAddInfoAPIResponse struct {
+type AliexpressdsaddinfoAPIResponse struct {
 	model.CommonResponse
-	AliexpressDsAddInfoAPIResponseModel
+	AliexpressdsaddinfoAPIResponseModel
 }
 
-// AliexpressDsAddInfoAPIResponseModel is 上报DS信息 成功返回结果
-type AliexpressDsAddInfoAPIResponseModel struct {
+// AliexpressdsaddinfoAPIResponseModel is 上报DS信息 成功返回结果
+type AliexpressdsaddinfoAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_ds_add_info_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

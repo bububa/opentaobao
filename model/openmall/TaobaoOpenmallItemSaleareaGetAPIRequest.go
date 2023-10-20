@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpenmallItemSaleareaGetAPIRequest 查询商品可售区域 API请求
+// TaobaoopenmallitemsaleareagetAPIRequest 查询商品可售区域 API请求
 // taobao.openmall.item.salearea.get
 //
 // 获取openmall商品的可售区域
-type TaobaoOpenmallItemSaleareaGetAPIRequest struct {
+type TaobaoopenmallitemsaleareagetAPIRequest struct {
 	model.Params
 	// 商品SKU
 	_skuIds string
@@ -18,52 +18,52 @@ type TaobaoOpenmallItemSaleareaGetAPIRequest struct {
 	_itemId int64
 }
 
-// NewTaobaoOpenmallItemSaleareaGetRequest 初始化TaobaoOpenmallItemSaleareaGetAPIRequest对象
-func NewTaobaoOpenmallItemSaleareaGetRequest() *TaobaoOpenmallItemSaleareaGetAPIRequest {
-	return &TaobaoOpenmallItemSaleareaGetAPIRequest{
+// NewTaobaoopenmallitemsaleareagetRequest 初始化TaobaoopenmallitemsaleareagetAPIRequest对象
+func NewTaobaoopenmallitemsaleareagetRequest() *TaobaoopenmallitemsaleareagetAPIRequest {
+	return &TaobaoopenmallitemsaleareagetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoOpenmallItemSaleareaGetAPIRequest) GetApiMethodName() string {
+func (r TaobaoopenmallitemsaleareagetAPIRequest) GetApiMethodName() string {
 	return "taobao.openmall.item.salearea.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOpenmallItemSaleareaGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoopenmallitemsaleareagetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoOpenmallItemSaleareaGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoopenmallitemsaleareagetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSkuIds is SkuIds Setter
 // 商品SKU
-func (r *TaobaoOpenmallItemSaleareaGetAPIRequest) SetSkuIds(_skuIds string) error {
+func (r *TaobaoopenmallitemsaleareagetAPIRequest) SetSkuIds(_skuIds string) error {
 	r._skuIds = _skuIds
 	r.Set("sku_ids", _skuIds)
 	return nil
 }
 
 // GetSkuIds SkuIds Getter
-func (r TaobaoOpenmallItemSaleareaGetAPIRequest) GetSkuIds() string {
+func (r TaobaoopenmallitemsaleareagetAPIRequest) GetSkuIds() string {
 	return r._skuIds
 }
 
 // SetItemId is ItemId Setter
 // 商品ID
-func (r *TaobaoOpenmallItemSaleareaGetAPIRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoopenmallitemsaleareagetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
 	r.Set("item_id", _itemId)
 	return nil
 }
 
 // GetItemId ItemId Getter
-func (r TaobaoOpenmallItemSaleareaGetAPIRequest) GetItemId() int64 {
+func (r TaobaoopenmallitemsaleareagetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

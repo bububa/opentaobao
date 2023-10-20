@@ -1,7 +1,7 @@
 package category
 
-// TopPVPairDo 结构体
-type TopPVPairDo struct {
+// TopPvpairDo 结构体
+type TopPvpairDo struct {
 	// 属性项名称
 	PropertyName string `json:"property_name,omitempty" xml:"property_name,omitempty"`
 	// 属性值名称

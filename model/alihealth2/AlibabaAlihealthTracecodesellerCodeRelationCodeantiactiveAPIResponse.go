@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIResponse 解除码的关联关系 API返回值
+// AlibabaalihealthtracecodesellercoderelationcodeantiactiveAPIResponse 解除码的关联关系 API返回值
 // alibaba.alihealth.tracecodeseller.code.relation.codeantiactive
 //
 // 解除码的关联关系
-type AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIResponse struct {
+type AlibabaalihealthtracecodesellercoderelationcodeantiactiveAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIResponseModel
+	AlibabaalihealthtracecodesellercoderelationcodeantiactiveAPIResponseModel
 }
 
-// AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIResponseModel is 解除码的关联关系 成功返回结果
-type AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIResponseModel struct {
+// AlibabaalihealthtracecodesellercoderelationcodeantiactiveAPIResponseModel is 解除码的关联关系 成功返回结果
+type AlibabaalihealthtracecodesellercoderelationcodeantiactiveAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_tracecodeseller_code_relation_codeantiactive_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

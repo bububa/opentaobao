@@ -27,5 +27,5 @@ type InventoryReportRequest struct {
 	// 每页记录的条数
 	PageSize int64 `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoQimenInventoryReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoqimeninventoryreportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/openmall"
 )
 
-// TaobaoOpenmallRefundGet 获取OpenMall退款单详情
+// Taobaoopenmallrefundget 获取OpenMall退款单详情
 // taobao.openmall.refund.get
 //
 // 获取OpenMall退款单详情
-func TaobaoOpenmallRefundGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallRefundGetAPIRequest, session string) (*openmall.TaobaoOpenmallRefundGetAPIResponse, error) {
-	var resp openmall.TaobaoOpenmallRefundGetAPIResponse
+func Taobaoopenmallrefundget(clt *core.SDKClient, req *openmall.TaobaoopenmallrefundgetAPIRequest, session string) (*openmall.TaobaoopenmallrefundgetAPIResponse, error) {
+	var resp openmall.TaobaoopenmallrefundgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

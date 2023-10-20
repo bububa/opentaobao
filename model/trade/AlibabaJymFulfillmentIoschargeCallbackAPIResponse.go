@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaJymFulfillmentIoschargeCallbackAPIResponse 代充充值回调 API返回值
+// AlibabajymfulfillmentioschargecallbackAPIResponse 代充充值回调 API返回值
 // alibaba.jym.fulfillment.ioscharge.callback
 //
 // 代充充值回调
-type AlibabaJymFulfillmentIoschargeCallbackAPIResponse struct {
+type AlibabajymfulfillmentioschargecallbackAPIResponse struct {
 	model.CommonResponse
-	AlibabaJymFulfillmentIoschargeCallbackAPIResponseModel
+	AlibabajymfulfillmentioschargecallbackAPIResponseModel
 }
 
-// AlibabaJymFulfillmentIoschargeCallbackAPIResponseModel is 代充充值回调 成功返回结果
-type AlibabaJymFulfillmentIoschargeCallbackAPIResponseModel struct {
+// AlibabajymfulfillmentioschargecallbackAPIResponseModel is 代充充值回调 成功返回结果
+type AlibabajymfulfillmentioschargecallbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_fulfillment_ioscharge_callback_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

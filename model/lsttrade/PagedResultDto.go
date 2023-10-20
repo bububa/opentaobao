@@ -3,7 +3,7 @@ package lsttrade
 // PagedResultDto 结构体
 type PagedResultDto struct {
 	// 返回实体包装类
-	ContentList []TopOrderChange2BrandownerDto `json:"content_list,omitempty" xml:"content_list>top_order_change2brandowner_dto,omitempty"`
+	ContentList []TopOrderChange2brandownerDto `json:"content_list,omitempty" xml:"content_list>top_order_change2brandowner_dto,omitempty"`
 	// 错误描述
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

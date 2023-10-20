@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallNrNoticeGoodsReadyAPIResponse 同步天猫配送人员信息 API返回值
+// TmallnrnoticegoodsreadyAPIResponse 同步天猫配送人员信息 API返回值
 // tmall.nr.notice.goods.ready
 //
 // 接收商家的配送人员信息，和第三公司信息及提货码
-type TmallNrNoticeGoodsReadyAPIResponse struct {
+type TmallnrnoticegoodsreadyAPIResponse struct {
 	model.CommonResponse
-	TmallNrNoticeGoodsReadyAPIResponseModel
+	TmallnrnoticegoodsreadyAPIResponseModel
 }
 
-// TmallNrNoticeGoodsReadyAPIResponseModel is 同步天猫配送人员信息 成功返回结果
-type TmallNrNoticeGoodsReadyAPIResponseModel struct {
+// TmallnrnoticegoodsreadyAPIResponseModel is 同步天猫配送人员信息 成功返回结果
+type TmallnrnoticegoodsreadyAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_nr_notice_goods_ready_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

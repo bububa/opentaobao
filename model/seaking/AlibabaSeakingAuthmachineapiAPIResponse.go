@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaSeakingAuthmachineapiAPIResponse 机翻Api授权 API返回值
+// AlibabaseakingauthmachineapiAPIResponse 机翻Api授权 API返回值
 // alibaba.seaking.authmachineapi
 //
 // 机翻Api授权
-type AlibabaSeakingAuthmachineapiAPIResponse struct {
+type AlibabaseakingauthmachineapiAPIResponse struct {
 	model.CommonResponse
-	AlibabaSeakingAuthmachineapiAPIResponseModel
+	AlibabaseakingauthmachineapiAPIResponseModel
 }
 
-// AlibabaSeakingAuthmachineapiAPIResponseModel is 机翻Api授权 成功返回结果
-type AlibabaSeakingAuthmachineapiAPIResponseModel struct {
+// AlibabaseakingauthmachineapiAPIResponseModel is 机翻Api授权 成功返回结果
+type AlibabaseakingauthmachineapiAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_seaking_authmachineapi_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

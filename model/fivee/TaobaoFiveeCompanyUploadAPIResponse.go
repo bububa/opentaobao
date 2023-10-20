@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoFiveeCompanyUploadAPIResponse 上传商信息接口 API返回值
+// TaobaofiveecompanyuploadAPIResponse 上传商信息接口 API返回值
 // taobao.fivee.company.upload
 //
 // 资质共享平台上传资质证照
-type TaobaoFiveeCompanyUploadAPIResponse struct {
+type TaobaofiveecompanyuploadAPIResponse struct {
 	model.CommonResponse
-	TaobaoFiveeCompanyUploadAPIResponseModel
+	TaobaofiveecompanyuploadAPIResponseModel
 }
 
-// TaobaoFiveeCompanyUploadAPIResponseModel is 上传商信息接口 成功返回结果
-type TaobaoFiveeCompanyUploadAPIResponseModel struct {
+// TaobaofiveecompanyuploadAPIResponseModel is 上传商信息接口 成功返回结果
+type TaobaofiveecompanyuploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"fivee_company_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

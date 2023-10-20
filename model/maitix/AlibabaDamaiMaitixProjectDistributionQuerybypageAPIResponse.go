@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaDamaiMaitixProjectDistributionQuerybypageAPIResponse 分销项目分页查询项目列表服务 API返回值
+// AlibabadamaimaitixprojectdistributionquerybypageAPIResponse 分销项目分页查询项目列表服务 API返回值
 // alibaba.damai.maitix.project.distribution.querybypage
 //
 // 分销项目分页查询项目列表服务
-type AlibabaDamaiMaitixProjectDistributionQuerybypageAPIResponse struct {
+type AlibabadamaimaitixprojectdistributionquerybypageAPIResponse struct {
 	model.CommonResponse
-	AlibabaDamaiMaitixProjectDistributionQuerybypageAPIResponseModel
+	AlibabadamaimaitixprojectdistributionquerybypageAPIResponseModel
 }
 
-// AlibabaDamaiMaitixProjectDistributionQuerybypageAPIResponseModel is 分销项目分页查询项目列表服务 成功返回结果
-type AlibabaDamaiMaitixProjectDistributionQuerybypageAPIResponseModel struct {
+// AlibabadamaimaitixprojectdistributionquerybypageAPIResponseModel is 分销项目分页查询项目列表服务 成功返回结果
+type AlibabadamaimaitixprojectdistributionquerybypageAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_damai_maitix_project_distribution_querybypage_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

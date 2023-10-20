@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaJymItemPropertyDefQueryAPIResponse 交易猫商品属性定义查询 API返回值
+// AlibabajymitempropertydefqueryAPIResponse 交易猫商品属性定义查询 API返回值
 // alibaba.jym.item.property.def.query
 //
 // 查询商品发布属性定义详情
-type AlibabaJymItemPropertyDefQueryAPIResponse struct {
+type AlibabajymitempropertydefqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaJymItemPropertyDefQueryAPIResponseModel
+	AlibabajymitempropertydefqueryAPIResponseModel
 }
 
-// AlibabaJymItemPropertyDefQueryAPIResponseModel is 交易猫商品属性定义查询 成功返回结果
-type AlibabaJymItemPropertyDefQueryAPIResponseModel struct {
+// AlibabajymitempropertydefqueryAPIResponseModel is 交易猫商品属性定义查询 成功返回结果
+type AlibabajymitempropertydefqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_item_property_def_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

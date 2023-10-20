@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aecreatives"
 )
 
-// AliexpressAffiliateImageSearch 图搜
+// Aliexpressaffiliateimagesearch 图搜
 // aliexpress.affiliate.image.search
 //
 // 图片搜索接口
-func AliexpressAffiliateImageSearch(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateImageSearchAPIRequest, session string) (*aecreatives.AliexpressAffiliateImageSearchAPIResponse, error) {
-	var resp aecreatives.AliexpressAffiliateImageSearchAPIResponse
+func Aliexpressaffiliateimagesearch(clt *core.SDKClient, req *aecreatives.AliexpressaffiliateimagesearchAPIRequest, session string) (*aecreatives.AliexpressaffiliateimagesearchAPIResponse, error) {
+	var resp aecreatives.AliexpressaffiliateimagesearchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

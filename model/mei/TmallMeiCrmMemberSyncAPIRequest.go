@@ -6,13 +6,13 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallMeiCrmMemberSyncAPIRequest 同步推送会员信息 API请求
+// TmallmeicrmmembersyncAPIRequest 同步推送会员信息 API请求
 // tmall.mei.crm.member.sync
 //
 // 品牌方通过该api主动推送会员信息。使用场景包括
 // 1.用户在线上注册后，线下补充信息后，同步到线上。
 // 2.其他情况的主动推送变更。
-type TmallMeiCrmMemberSyncAPIRequest struct {
+type TmallmeicrmmembersyncAPIRequest struct {
 	model.Params
 	// 会员手机号码
 	_mobile string
@@ -36,156 +36,156 @@ type TmallMeiCrmMemberSyncAPIRequest struct {
 	_levelType int64
 }
 
-// NewTmallMeiCrmMemberSyncRequest 初始化TmallMeiCrmMemberSyncAPIRequest对象
-func NewTmallMeiCrmMemberSyncRequest() *TmallMeiCrmMemberSyncAPIRequest {
-	return &TmallMeiCrmMemberSyncAPIRequest{
+// NewTmallmeicrmmembersyncRequest 初始化TmallmeicrmmembersyncAPIRequest对象
+func NewTmallmeicrmmembersyncRequest() *TmallmeicrmmembersyncAPIRequest {
+	return &TmallmeicrmmembersyncAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallMeiCrmMemberSyncAPIRequest) GetApiMethodName() string {
+func (r TmallmeicrmmembersyncAPIRequest) GetApiMethodName() string {
 	return "tmall.mei.crm.member.sync"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallMeiCrmMemberSyncAPIRequest) GetApiParams(params url.Values) {
+func (r TmallmeicrmmembersyncAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallMeiCrmMemberSyncAPIRequest) GetRawParams() model.Params {
+func (r TmallmeicrmmembersyncAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMobile is Mobile Setter
 // 会员手机号码
-func (r *TmallMeiCrmMemberSyncAPIRequest) SetMobile(_mobile string) error {
+func (r *TmallmeicrmmembersyncAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
 	r.Set("mobile", _mobile)
 	return nil
 }
 
 // GetMobile Mobile Getter
-func (r TmallMeiCrmMemberSyncAPIRequest) GetMobile() string {
+func (r TmallmeicrmmembersyncAPIRequest) GetMobile() string {
 	return r._mobile
 }
 
 // SetExtend is Extend Setter
 // 会员拓展信息
-func (r *TmallMeiCrmMemberSyncAPIRequest) SetExtend(_extend string) error {
+func (r *TmallmeicrmmembersyncAPIRequest) SetExtend(_extend string) error {
 	r._extend = _extend
 	r.Set("extend", _extend)
 	return nil
 }
 
 // GetExtend Extend Getter
-func (r TmallMeiCrmMemberSyncAPIRequest) GetExtend() string {
+func (r TmallmeicrmmembersyncAPIRequest) GetExtend() string {
 	return r._extend
 }
 
 // SetLevelPoint is LevelPoint Setter
 // 成长值字段，支持整数或小数(小数位最多两位),当level_type=2时，level_point必传
-func (r *TmallMeiCrmMemberSyncAPIRequest) SetLevelPoint(_levelPoint string) error {
+func (r *TmallmeicrmmembersyncAPIRequest) SetLevelPoint(_levelPoint string) error {
 	r._levelPoint = _levelPoint
 	r.Set("level_point", _levelPoint)
 	return nil
 }
 
 // GetLevelPoint LevelPoint Getter
-func (r TmallMeiCrmMemberSyncAPIRequest) GetLevelPoint() string {
+func (r TmallmeicrmmembersyncAPIRequest) GetLevelPoint() string {
 	return r._levelPoint
 }
 
 // SetMixNick is MixNick Setter
 // 混淆昵称
-func (r *TmallMeiCrmMemberSyncAPIRequest) SetMixNick(_mixNick string) error {
+func (r *TmallmeicrmmembersyncAPIRequest) SetMixNick(_mixNick string) error {
 	r._mixNick = _mixNick
 	r.Set("mix_nick", _mixNick)
 	return nil
 }
 
 // GetMixNick MixNick Getter
-func (r TmallMeiCrmMemberSyncAPIRequest) GetMixNick() string {
+func (r TmallmeicrmmembersyncAPIRequest) GetMixNick() string {
 	return r._mixNick
 }
 
 // SetNick is Nick Setter
 // 昵称
-func (r *TmallMeiCrmMemberSyncAPIRequest) SetNick(_nick string) error {
+func (r *TmallmeicrmmembersyncAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
 	r.Set("nick", _nick)
 	return nil
 }
 
 // GetNick Nick Getter
-func (r TmallMeiCrmMemberSyncAPIRequest) GetNick() string {
+func (r TmallmeicrmmembersyncAPIRequest) GetNick() string {
 	return r._nick
 }
 
 // SetPoint is Point Setter
 // 会员积分
-func (r *TmallMeiCrmMemberSyncAPIRequest) SetPoint(_point int64) error {
+func (r *TmallmeicrmmembersyncAPIRequest) SetPoint(_point int64) error {
 	r._point = _point
 	r.Set("point", _point)
 	return nil
 }
 
 // GetPoint Point Getter
-func (r TmallMeiCrmMemberSyncAPIRequest) GetPoint() int64 {
+func (r TmallmeicrmmembersyncAPIRequest) GetPoint() int64 {
 	return r._point
 }
 
 // SetLevel is Level Setter
 // 会员等级
-func (r *TmallMeiCrmMemberSyncAPIRequest) SetLevel(_level int64) error {
+func (r *TmallmeicrmmembersyncAPIRequest) SetLevel(_level int64) error {
 	r._level = _level
 	r.Set("level", _level)
 	return nil
 }
 
 // GetLevel Level Getter
-func (r TmallMeiCrmMemberSyncAPIRequest) GetLevel() int64 {
+func (r TmallmeicrmmembersyncAPIRequest) GetLevel() int64 {
 	return r._level
 }
 
 // SetVersion is Version Setter
 // 该次同步的版本信息（建议使用时间戳）
-func (r *TmallMeiCrmMemberSyncAPIRequest) SetVersion(_version int64) error {
+func (r *TmallmeicrmmembersyncAPIRequest) SetVersion(_version int64) error {
 	r._version = _version
 	r.Set("version", _version)
 	return nil
 }
 
 // GetVersion Version Getter
-func (r TmallMeiCrmMemberSyncAPIRequest) GetVersion() int64 {
+func (r TmallmeicrmmembersyncAPIRequest) GetVersion() int64 {
 	return r._version
 }
 
 // SetLevelExpireTime is LevelExpireTime Setter
 // 毫秒级别时间戳，可不传，表示会员等级有效期
-func (r *TmallMeiCrmMemberSyncAPIRequest) SetLevelExpireTime(_levelExpireTime int64) error {
+func (r *TmallmeicrmmembersyncAPIRequest) SetLevelExpireTime(_levelExpireTime int64) error {
 	r._levelExpireTime = _levelExpireTime
 	r.Set("level_expire_time", _levelExpireTime)
 	return nil
 }
 
 // GetLevelExpireTime LevelExpireTime Getter
-func (r TmallMeiCrmMemberSyncAPIRequest) GetLevelExpireTime() int64 {
+func (r TmallmeicrmmembersyncAPIRequest) GetLevelExpireTime() int64 {
 	return r._levelExpireTime
 }
 
 // SetLevelType is LevelType Setter
 // 1(表示传统等级模式), 2(成长值等级模式)
-func (r *TmallMeiCrmMemberSyncAPIRequest) SetLevelType(_levelType int64) error {
+func (r *TmallmeicrmmembersyncAPIRequest) SetLevelType(_levelType int64) error {
 	r._levelType = _levelType
 	r.Set("level_type", _levelType)
 	return nil
 }
 
 // GetLevelType LevelType Getter
-func (r TmallMeiCrmMemberSyncAPIRequest) GetLevelType() int64 {
+func (r TmallmeicrmmembersyncAPIRequest) GetLevelType() int64 {
 	return r._levelType
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaInsightCatsforecastnewGetAPIResponse 获取词的相关类目预测数据 API返回值
+// TaobaosimbainsightcatsforecastnewgetAPIResponse 获取词的相关类目预测数据 API返回值
 // taobao.simba.insight.catsforecastnew.get
 //
 // 根据给定的词，预测这些词的相关类目
-type TaobaoSimbaInsightCatsforecastnewGetAPIResponse struct {
+type TaobaosimbainsightcatsforecastnewgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoSimbaInsightCatsforecastnewGetAPIResponseModel
+	TaobaosimbainsightcatsforecastnewgetAPIResponseModel
 }
 
-// TaobaoSimbaInsightCatsforecastnewGetAPIResponseModel is 获取词的相关类目预测数据 成功返回结果
-type TaobaoSimbaInsightCatsforecastnewGetAPIResponseModel struct {
+// TaobaosimbainsightcatsforecastnewgetAPIResponseModel is 获取词的相关类目预测数据 成功返回结果
+type TaobaosimbainsightcatsforecastnewgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_insight_catsforecastnew_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

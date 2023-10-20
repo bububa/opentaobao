@@ -15,9 +15,9 @@ type AccessQuotationDto struct {
 	// 外部商家skuId
 	SourceSkuId string `json:"source_sku_id,omitempty" xml:"source_sku_id,omitempty"`
 	// 协议价
-	UnitPrice *BigDecimal `json:"unit_price,omitempty" xml:"unit_price,omitempty"`
+	UnitPrice float64 `json:"unit_price,omitempty" xml:"unit_price,omitempty"`
 	// 原价
-	OriginUnitPrice *BigDecimal `json:"origin_unit_price,omitempty" xml:"origin_unit_price,omitempty"`
+	OriginUnitPrice float64 `json:"origin_unit_price,omitempty" xml:"origin_unit_price,omitempty"`
 	// 是否阶梯价
 	LadderPrice bool `json:"ladder_price,omitempty" xml:"ladder_price,omitempty"`
 }

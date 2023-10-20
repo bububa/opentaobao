@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaoFeedflowItemAdzoneRptdailylistResultDto 结构体
-type TaobaoFeedflowItemAdzoneRptdailylistResultDto struct {
+// TaobaofeedflowitemadzonerptdailylistResultDto 结构体
+type TaobaofeedflowitemadzonerptdailylistResultDto struct {
 	// 报表信息
 	RptList []RptResultDto `json:"rpt_list,omitempty" xml:"rpt_list>rpt_result_dto,omitempty"`
 	// message

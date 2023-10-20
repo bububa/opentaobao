@@ -1,7 +1,7 @@
 package wdk
 
-// OrderPayInfoBO 结构体
-type OrderPayInfoBO struct {
+// OrderPayInfoBo 结构体
+type OrderPayInfoBo struct {
 	// 买家用户名
 	UserName string `json:"user_name,omitempty" xml:"user_name,omitempty"`
 	// 买家昵称

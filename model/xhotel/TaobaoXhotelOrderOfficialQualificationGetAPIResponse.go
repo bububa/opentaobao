@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelOrderOfficialQualificationGetAPIResponse 官网信用住用户资质校验 API返回值
+// TaobaoxhotelorderofficialqualificationgetAPIResponse 官网信用住用户资质校验 API返回值
 // taobao.xhotel.order.official.qualification.get
 //
 // 官网信用住在下单前对用户进行资质校验，资质校验通过才能进行信用支付
-type TaobaoXhotelOrderOfficialQualificationGetAPIResponse struct {
+type TaobaoxhotelorderofficialqualificationgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoXhotelOrderOfficialQualificationGetAPIResponseModel
+	TaobaoxhotelorderofficialqualificationgetAPIResponseModel
 }
 
-// TaobaoXhotelOrderOfficialQualificationGetAPIResponseModel is 官网信用住用户资质校验 成功返回结果
-type TaobaoXhotelOrderOfficialQualificationGetAPIResponseModel struct {
+// TaobaoxhotelorderofficialqualificationgetAPIResponseModel is 官网信用住用户资质校验 成功返回结果
+type TaobaoxhotelorderofficialqualificationgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_official_qualification_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

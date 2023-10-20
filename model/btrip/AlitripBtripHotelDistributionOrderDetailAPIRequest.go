@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripBtripHotelDistributionOrderDetailAPIRequest 商旅酒店API分销查询订单详情 API请求
+// AlitripbtriphoteldistributionorderdetailAPIRequest 商旅酒店API分销查询订单详情 API请求
 // alitrip.btrip.hotel.distribution.order.detail
 //
 // 商旅酒店API分销查询订单详情
-type AlitripBtripHotelDistributionOrderDetailAPIRequest struct {
+type AlitripbtriphoteldistributionorderdetailAPIRequest struct {
 	model.Params
 	// 订单详情接口入参
 	_paramBtripHotelOrderOperateRq *BtripHotelOrderOperateRq
 }
 
-// NewAlitripBtripHotelDistributionOrderDetailRequest 初始化AlitripBtripHotelDistributionOrderDetailAPIRequest对象
-func NewAlitripBtripHotelDistributionOrderDetailRequest() *AlitripBtripHotelDistributionOrderDetailAPIRequest {
-	return &AlitripBtripHotelDistributionOrderDetailAPIRequest{
+// NewAlitripbtriphoteldistributionorderdetailRequest 初始化AlitripbtriphoteldistributionorderdetailAPIRequest对象
+func NewAlitripbtriphoteldistributionorderdetailRequest() *AlitripbtriphoteldistributionorderdetailAPIRequest {
+	return &AlitripbtriphoteldistributionorderdetailAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripBtripHotelDistributionOrderDetailAPIRequest) GetApiMethodName() string {
+func (r AlitripbtriphoteldistributionorderdetailAPIRequest) GetApiMethodName() string {
 	return "alitrip.btrip.hotel.distribution.order.detail"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripBtripHotelDistributionOrderDetailAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripbtriphoteldistributionorderdetailAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripBtripHotelDistributionOrderDetailAPIRequest) GetRawParams() model.Params {
+func (r AlitripbtriphoteldistributionorderdetailAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamBtripHotelOrderOperateRq is ParamBtripHotelOrderOperateRq Setter
 // 订单详情接口入参
-func (r *AlitripBtripHotelDistributionOrderDetailAPIRequest) SetParamBtripHotelOrderOperateRq(_paramBtripHotelOrderOperateRq *BtripHotelOrderOperateRq) error {
+func (r *AlitripbtriphoteldistributionorderdetailAPIRequest) SetParamBtripHotelOrderOperateRq(_paramBtripHotelOrderOperateRq *BtripHotelOrderOperateRq) error {
 	r._paramBtripHotelOrderOperateRq = _paramBtripHotelOrderOperateRq
 	r.Set("param_btrip_hotel_order_operate_rq", _paramBtripHotelOrderOperateRq)
 	return nil
 }
 
 // GetParamBtripHotelOrderOperateRq ParamBtripHotelOrderOperateRq Getter
-func (r AlitripBtripHotelDistributionOrderDetailAPIRequest) GetParamBtripHotelOrderOperateRq() *BtripHotelOrderOperateRq {
+func (r AlitripbtriphoteldistributionorderdetailAPIRequest) GetParamBtripHotelOrderOperateRq() *BtripHotelOrderOperateRq {
 	return r._paramBtripHotelOrderOperateRq
 }

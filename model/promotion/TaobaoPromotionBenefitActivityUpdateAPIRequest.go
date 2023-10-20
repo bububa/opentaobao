@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoPromotionBenefitActivityUpdateAPIRequest 修改关联的活动权益 API请求
+// TaobaopromotionbenefitactivityupdateAPIRequest 修改关联的活动权益 API请求
 // taobao.promotion.benefit.activity.update
 //
 // 修改卖家活动中关联的对应的权益。
-type TaobaoPromotionBenefitActivityUpdateAPIRequest struct {
+type TaobaopromotionbenefitactivityupdateAPIRequest struct {
 	model.Params
 	// 修改关联的权益的活动请求
 	_updateRequest *UpdateBenefitActivityRequest
 }
 
-// NewTaobaoPromotionBenefitActivityUpdateRequest 初始化TaobaoPromotionBenefitActivityUpdateAPIRequest对象
-func NewTaobaoPromotionBenefitActivityUpdateRequest() *TaobaoPromotionBenefitActivityUpdateAPIRequest {
-	return &TaobaoPromotionBenefitActivityUpdateAPIRequest{
+// NewTaobaopromotionbenefitactivityupdateRequest 初始化TaobaopromotionbenefitactivityupdateAPIRequest对象
+func NewTaobaopromotionbenefitactivityupdateRequest() *TaobaopromotionbenefitactivityupdateAPIRequest {
+	return &TaobaopromotionbenefitactivityupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoPromotionBenefitActivityUpdateAPIRequest) GetApiMethodName() string {
+func (r TaobaopromotionbenefitactivityupdateAPIRequest) GetApiMethodName() string {
 	return "taobao.promotion.benefit.activity.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoPromotionBenefitActivityUpdateAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaopromotionbenefitactivityupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoPromotionBenefitActivityUpdateAPIRequest) GetRawParams() model.Params {
+func (r TaobaopromotionbenefitactivityupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetUpdateRequest is UpdateRequest Setter
 // 修改关联的权益的活动请求
-func (r *TaobaoPromotionBenefitActivityUpdateAPIRequest) SetUpdateRequest(_updateRequest *UpdateBenefitActivityRequest) error {
+func (r *TaobaopromotionbenefitactivityupdateAPIRequest) SetUpdateRequest(_updateRequest *UpdateBenefitActivityRequest) error {
 	r._updateRequest = _updateRequest
 	r.Set("update_request", _updateRequest)
 	return nil
 }
 
 // GetUpdateRequest UpdateRequest Getter
-func (r TaobaoPromotionBenefitActivityUpdateAPIRequest) GetUpdateRequest() *UpdateBenefitActivityRequest {
+func (r TaobaopromotionbenefitactivityupdateAPIRequest) GetUpdateRequest() *UpdateBenefitActivityRequest {
 	return r._updateRequest
 }

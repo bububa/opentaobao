@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaJymItemExternalGoodsBatchDeleteAPIResponse 交易猫外部商家批量删除商品接口 API返回值
+// AlibabajymitemexternalgoodsbatchdeleteAPIResponse 交易猫外部商家批量删除商品接口 API返回值
 // alibaba.jym.item.external.goods.batch.delete
 //
 // 交易猫外部商家批量删除商品接口
-type AlibabaJymItemExternalGoodsBatchDeleteAPIResponse struct {
+type AlibabajymitemexternalgoodsbatchdeleteAPIResponse struct {
 	model.CommonResponse
-	AlibabaJymItemExternalGoodsBatchDeleteAPIResponseModel
+	AlibabajymitemexternalgoodsbatchdeleteAPIResponseModel
 }
 
-// AlibabaJymItemExternalGoodsBatchDeleteAPIResponseModel is 交易猫外部商家批量删除商品接口 成功返回结果
-type AlibabaJymItemExternalGoodsBatchDeleteAPIResponseModel struct {
+// AlibabajymitemexternalgoodsbatchdeleteAPIResponseModel is 交易猫外部商家批量删除商品接口 成功返回结果
+type AlibabajymitemexternalgoodsbatchdeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_item_external_goods_batch_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

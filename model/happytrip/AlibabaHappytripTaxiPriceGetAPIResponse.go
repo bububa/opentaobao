@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaHappytripTaxiPriceGetAPIResponse 获取价格预估信息 API返回值
+// AlibabahappytriptaxipricegetAPIResponse 获取价格预估信息 API返回值
 // alibaba.happytrip.taxi.price.get
 //
 // 打车价格预估
-type AlibabaHappytripTaxiPriceGetAPIResponse struct {
+type AlibabahappytriptaxipricegetAPIResponse struct {
 	model.CommonResponse
-	AlibabaHappytripTaxiPriceGetAPIResponseModel
+	AlibabahappytriptaxipricegetAPIResponseModel
 }
 
-// AlibabaHappytripTaxiPriceGetAPIResponseModel is 获取价格预估信息 成功返回结果
-type AlibabaHappytripTaxiPriceGetAPIResponseModel struct {
+// AlibabahappytriptaxipricegetAPIResponseModel is 获取价格预估信息 成功返回结果
+type AlibabahappytriptaxipricegetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_happytrip_taxi_price_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

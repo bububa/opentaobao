@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMosHrBackgroundReportNotifyAPIResponse 背调公司背调结果通知 API返回值
+// AlibabamoshrbackgroundreportnotifyAPIResponse 背调公司背调结果通知 API返回值
 // alibaba.mos.hr.background.report.notify
 //
 // 背调公司背调结果通知
-type AlibabaMosHrBackgroundReportNotifyAPIResponse struct {
+type AlibabamoshrbackgroundreportnotifyAPIResponse struct {
 	model.CommonResponse
-	AlibabaMosHrBackgroundReportNotifyAPIResponseModel
+	AlibabamoshrbackgroundreportnotifyAPIResponseModel
 }
 
-// AlibabaMosHrBackgroundReportNotifyAPIResponseModel is 背调公司背调结果通知 成功返回结果
-type AlibabaMosHrBackgroundReportNotifyAPIResponseModel struct {
+// AlibabamoshrbackgroundreportnotifyAPIResponseModel is 背调公司背调结果通知 成功返回结果
+type AlibabamoshrbackgroundreportnotifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mos_hr_background_report_notify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

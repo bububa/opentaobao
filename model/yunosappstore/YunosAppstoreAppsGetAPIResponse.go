@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosAppstoreAppsGetAPIResponse 根据包名列表获取应用信息列表 API返回值
+// YunosappstoreappsgetAPIResponse 根据包名列表获取应用信息列表 API返回值
 // yunos.appstore.apps.get
 //
 // 根据包名列表获取应用信息列表
-type YunosAppstoreAppsGetAPIResponse struct {
+type YunosappstoreappsgetAPIResponse struct {
 	model.CommonResponse
-	YunosAppstoreAppsGetAPIResponseModel
+	YunosappstoreappsgetAPIResponseModel
 }
 
-// YunosAppstoreAppsGetAPIResponseModel is 根据包名列表获取应用信息列表 成功返回结果
-type YunosAppstoreAppsGetAPIResponseModel struct {
+// YunosappstoreappsgetAPIResponseModel is 根据包名列表获取应用信息列表 成功返回结果
+type YunosappstoreappsgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_appstore_apps_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

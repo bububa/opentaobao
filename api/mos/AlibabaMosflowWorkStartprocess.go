@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mos"
 )
 
-// AlibabaMosflowWorkStartprocess 发起流程
+// Alibabamosflowworkstartprocess 发起流程
 // alibaba.mosflow.work.startprocess
 //
 // 业务发起流程审批
-func AlibabaMosflowWorkStartprocess(clt *core.SDKClient, req *mos.AlibabaMosflowWorkStartprocessAPIRequest, session string) (*mos.AlibabaMosflowWorkStartprocessAPIResponse, error) {
-	var resp mos.AlibabaMosflowWorkStartprocessAPIResponse
+func Alibabamosflowworkstartprocess(clt *core.SDKClient, req *mos.AlibabamosflowworkstartprocessAPIRequest, session string) (*mos.AlibabamosflowworkstartprocessAPIResponse, error) {
+	var resp mos.AlibabamosflowworkstartprocessAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

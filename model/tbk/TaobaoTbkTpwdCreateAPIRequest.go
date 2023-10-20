@@ -21,7 +21,7 @@ type TaobaotbktpwdcreateAPIRequest struct {
 	// 兼容旧版本api参数，无实际作用
 	_ext string
 	// 兼容旧版本api参数，无实际作用
-	_userid string
+	_userId string
 }
 
 // NewTaobaotbktpwdcreateRequest 初始化TaobaotbktpwdcreateAPIRequest对象
@@ -100,15 +100,15 @@ func (r TaobaotbktpwdcreateAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// SetUserid is Userid Setter
+// SetUserId is UserId Setter
 // 兼容旧版本api参数，无实际作用
-func (r *TaobaotbktpwdcreateAPIRequest) SetUserid(_userid string) error {
-	r._userid = _userid
-	r.Set("user_id", _userid)
+func (r *TaobaotbktpwdcreateAPIRequest) SetUserId(_userId string) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
 	return nil
 }
 
-// GetUserid Userid Getter
-func (r TaobaotbktpwdcreateAPIRequest) GetUserid() string {
-	return r._userid
+// GetUserId UserId Getter
+func (r TaobaotbktpwdcreateAPIRequest) GetUserId() string {
+	return r._userId
 }

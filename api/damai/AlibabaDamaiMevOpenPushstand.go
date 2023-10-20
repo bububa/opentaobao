@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/damai"
 )
 
-// AlibabaDamaiMevOpenPushstand 大麦换验平台-第三方对外开放-看台接口pushStand
+// Alibabadamaimevopenpushstand 大麦换验平台-第三方对外开放-看台接口pushStand
 // alibaba.damai.mev.open.pushstand
 //
 // pushStand
-func AlibabaDamaiMevOpenPushstand(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushstandAPIRequest, session string) (*damai.AlibabaDamaiMevOpenPushstandAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenPushstandAPIResponse
+func Alibabadamaimevopenpushstand(clt *core.SDKClient, req *damai.AlibabadamaimevopenpushstandAPIRequest, session string) (*damai.AlibabadamaimevopenpushstandAPIResponse, error) {
+	var resp damai.AlibabadamaimevopenpushstandAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

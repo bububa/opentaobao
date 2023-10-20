@@ -1,7 +1,7 @@
 package tmallservice
 
-// AlibabaServicecenterFulfiltaskBuyeraddressChangeResult 结构体
-type AlibabaServicecenterFulfiltaskBuyeraddressChangeResult struct {
+// AlibabaservicecenterfulfiltaskbuyeraddresschangeResult 结构体
+type AlibabaservicecenterfulfiltaskbuyeraddresschangeResult struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

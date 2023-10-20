@@ -1,7 +1,7 @@
 package maitix
 
-// AlibabaDamaiMaitixDistributionDeliveryCalculateResult 结构体
-type AlibabaDamaiMaitixDistributionDeliveryCalculateResult struct {
+// AlibabadamaimaitixdistributiondeliverycalculateResult 结构体
+type AlibabadamaimaitixdistributiondeliverycalculateResult struct {
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 错误码

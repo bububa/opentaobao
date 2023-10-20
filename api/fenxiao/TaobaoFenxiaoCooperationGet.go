@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-// TaobaoFenxiaoCooperationGet 供应商或分销商获取合作关系信息
+// Taobaofenxiaocooperationget 供应商或分销商获取合作关系信息
 // taobao.fenxiao.cooperation.get
 //
 // 获取供应商的合作关系信息
-func TaobaoFenxiaoCooperationGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoCooperationGetAPIRequest, session string) (*fenxiao.TaobaoFenxiaoCooperationGetAPIResponse, error) {
-	var resp fenxiao.TaobaoFenxiaoCooperationGetAPIResponse
+func Taobaofenxiaocooperationget(clt *core.SDKClient, req *fenxiao.TaobaofenxiaocooperationgetAPIRequest, session string) (*fenxiao.TaobaofenxiaocooperationgetAPIResponse, error) {
+	var resp fenxiao.TaobaofenxiaocooperationgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

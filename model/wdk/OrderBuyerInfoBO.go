@@ -1,7 +1,7 @@
 package wdk
 
-// OrderBuyerInfoBO 结构体
-type OrderBuyerInfoBO struct {
+// OrderBuyerInfoBo 结构体
+type OrderBuyerInfoBo struct {
 	// 收货人名字
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 收货人电话

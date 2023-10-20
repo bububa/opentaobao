@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlinkMessageHistoryListAPIResponse 查询消息列表 API返回值
+// AlibabaalinkmessagehistorylistAPIResponse 查询消息列表 API返回值
 // alibaba.alink.message.history.list
 //
 // 查询消息列表
-type AlibabaAlinkMessageHistoryListAPIResponse struct {
+type AlibabaalinkmessagehistorylistAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlinkMessageHistoryListAPIResponseModel
+	AlibabaalinkmessagehistorylistAPIResponseModel
 }
 
-// AlibabaAlinkMessageHistoryListAPIResponseModel is 查询消息列表 成功返回结果
-type AlibabaAlinkMessageHistoryListAPIResponseModel struct {
+// AlibabaalinkmessagehistorylistAPIResponseModel is 查询消息列表 成功返回结果
+type AlibabaalinkmessagehistorylistAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alink_message_history_list_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

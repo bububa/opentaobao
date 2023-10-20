@@ -1,7 +1,7 @@
 package ott
 
-// PlayUrlV2Vo 结构体
-type PlayUrlV2Vo struct {
+// PlayUrlV2vo 结构体
+type PlayUrlV2vo struct {
 	// hlsContent
 	HlsContent string `json:"hls_content,omitempty" xml:"hls_content,omitempty"`
 	// hlsContentUrl

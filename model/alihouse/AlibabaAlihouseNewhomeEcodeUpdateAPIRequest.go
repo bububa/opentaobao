@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseNewhomeEcodeUpdateAPIRequest 新房货变更E码 API请求
+// AlibabaalihousenewhomeecodeupdateAPIRequest 新房货变更E码 API请求
 // alibaba.alihouse.newhome.ecode.update
 //
 // 新房货变更E码
-type AlibabaAlihouseNewhomeEcodeUpdateAPIRequest struct {
+type AlibabaalihousenewhomeecodeupdateAPIRequest struct {
 	model.Params
 	// 房源请求体
-	_house *UpdateNewHomeECodeInfoDto
+	_house *UpdateNewHomeEcodeInfoDto
 }
 
-// NewAlibabaAlihouseNewhomeEcodeUpdateRequest 初始化AlibabaAlihouseNewhomeEcodeUpdateAPIRequest对象
-func NewAlibabaAlihouseNewhomeEcodeUpdateRequest() *AlibabaAlihouseNewhomeEcodeUpdateAPIRequest {
-	return &AlibabaAlihouseNewhomeEcodeUpdateAPIRequest{
+// NewAlibabaalihousenewhomeecodeupdateRequest 初始化AlibabaalihousenewhomeecodeupdateAPIRequest对象
+func NewAlibabaalihousenewhomeecodeupdateRequest() *AlibabaalihousenewhomeecodeupdateAPIRequest {
+	return &AlibabaalihousenewhomeecodeupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeEcodeUpdateAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihousenewhomeecodeupdateAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.newhome.ecode.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeEcodeUpdateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihousenewhomeecodeupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihouseNewhomeEcodeUpdateAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihousenewhomeecodeupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetHouse is House Setter
 // 房源请求体
-func (r *AlibabaAlihouseNewhomeEcodeUpdateAPIRequest) SetHouse(_house *UpdateNewHomeECodeInfoDto) error {
+func (r *AlibabaalihousenewhomeecodeupdateAPIRequest) SetHouse(_house *UpdateNewHomeEcodeInfoDto) error {
 	r._house = _house
 	r.Set("house", _house)
 	return nil
 }
 
 // GetHouse House Getter
-func (r AlibabaAlihouseNewhomeEcodeUpdateAPIRequest) GetHouse() *UpdateNewHomeECodeInfoDto {
+func (r AlibabaalihousenewhomeecodeupdateAPIRequest) GetHouse() *UpdateNewHomeEcodeInfoDto {
 	return r._house
 }

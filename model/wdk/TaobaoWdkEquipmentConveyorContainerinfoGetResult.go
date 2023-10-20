@@ -1,7 +1,7 @@
 package wdk
 
-// TaobaoWdkEquipmentConveyorContainerinfoGetResult 结构体
-type TaobaoWdkEquipmentConveyorContainerinfoGetResult struct {
+// TaobaowdkequipmentconveyorcontainerinfogetResult 结构体
+type TaobaowdkequipmentconveyorcontainerinfogetResult struct {
 	// result
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
 	// errorDesc

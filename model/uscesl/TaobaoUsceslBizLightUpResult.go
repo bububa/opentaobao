@@ -1,7 +1,7 @@
 package uscesl
 
-// TaobaoUsceslBizLightUpResult 结构体
-type TaobaoUsceslBizLightUpResult struct {
+// TaobaousceslbizlightupResult 结构体
+type TaobaousceslbizlightupResult struct {
 	// 执行结果true或者false
 	Target string `json:"target,omitempty" xml:"target,omitempty"`
 	// 错误编码

@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaInteractLoginAlipayauthAPIRequest 双11到店互动花呗红包获取token鉴权接口 API请求
+// AlibabainteractloginalipayauthAPIRequest 双11到店互动花呗红包获取token鉴权接口 API请求
 // alibaba.interact.login.alipayauth
 //
 // 双11到店互动花呗红包获取token鉴权接口
-type AlibabaInteractLoginAlipayauthAPIRequest struct {
+type AlibabainteractloginalipayauthAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaInteractLoginAlipayauthRequest 初始化AlibabaInteractLoginAlipayauthAPIRequest对象
-func NewAlibabaInteractLoginAlipayauthRequest() *AlibabaInteractLoginAlipayauthAPIRequest {
-	return &AlibabaInteractLoginAlipayauthAPIRequest{
+// NewAlibabainteractloginalipayauthRequest 初始化AlibabainteractloginalipayauthAPIRequest对象
+func NewAlibabainteractloginalipayauthRequest() *AlibabainteractloginalipayauthAPIRequest {
+	return &AlibabainteractloginalipayauthAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaInteractLoginAlipayauthAPIRequest) GetApiMethodName() string {
+func (r AlibabainteractloginalipayauthAPIRequest) GetApiMethodName() string {
 	return "alibaba.interact.login.alipayauth"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaInteractLoginAlipayauthAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabainteractloginalipayauthAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaInteractLoginAlipayauthAPIRequest) GetRawParams() model.Params {
+func (r AlibabainteractloginalipayauthAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

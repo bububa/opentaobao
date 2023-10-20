@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/eleenterpriseordernew"
 )
 
-// AlibabaEleEnterpriseOrdernewCreate 创建订单
+// Alibabaeleenterpriseordernewcreate 创建订单
 // alibaba.ele.enterprise.ordernew.create
 //
 // 创建订单
-func AlibabaEleEnterpriseOrdernewCreate(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewCreateAPIRequest, session string) (*eleenterpriseordernew.AlibabaEleEnterpriseOrdernewCreateAPIResponse, error) {
-	var resp eleenterpriseordernew.AlibabaEleEnterpriseOrdernewCreateAPIResponse
+func Alibabaeleenterpriseordernewcreate(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaeleenterpriseordernewcreateAPIRequest, session string) (*eleenterpriseordernew.AlibabaeleenterpriseordernewcreateAPIResponse, error) {
+	var resp eleenterpriseordernew.AlibabaeleenterpriseordernewcreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

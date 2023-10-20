@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIResponse 获取虚假注册保护结果 API返回值
+// AlibabasecurityjaqspamregisterpreventionresultfetchnewAPIResponse 获取虚假注册保护结果 API返回值
 // alibaba.security.jaq.spamregisterprevention.result.fetch.new
 //
 // 获取虚假注册保护结果
-type AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIResponse struct {
+type AlibabasecurityjaqspamregisterpreventionresultfetchnewAPIResponse struct {
 	model.CommonResponse
-	AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIResponseModel
+	AlibabasecurityjaqspamregisterpreventionresultfetchnewAPIResponseModel
 }
 
-// AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIResponseModel is 获取虚假注册保护结果 成功返回结果
-type AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIResponseModel struct {
+// AlibabasecurityjaqspamregisterpreventionresultfetchnewAPIResponseModel is 获取虚假注册保护结果 成功返回结果
+type AlibabasecurityjaqspamregisterpreventionresultfetchnewAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_security_jaq_spamregisterprevention_result_fetch_new_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

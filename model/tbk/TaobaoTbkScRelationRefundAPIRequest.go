@@ -13,7 +13,7 @@ import (
 type TaobaotbkscrelationrefundAPIRequest struct {
 	model.Params
 	// 参数option
-	_searchoption *TopApiRefundRptOption
+	_searchOption *TopApiRefundRptOption
 }
 
 // NewTaobaotbkscrelationrefundRequest 初始化TaobaotbkscrelationrefundAPIRequest对象
@@ -40,15 +40,15 @@ func (r TaobaotbkscrelationrefundAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetSearchoption is Searchoption Setter
+// SetSearchOption is SearchOption Setter
 // 参数option
-func (r *TaobaotbkscrelationrefundAPIRequest) SetSearchoption(_searchoption *TopApiRefundRptOption) error {
-	r._searchoption = _searchoption
-	r.Set("search_option", _searchoption)
+func (r *TaobaotbkscrelationrefundAPIRequest) SetSearchOption(_searchOption *TopApiRefundRptOption) error {
+	r._searchOption = _searchOption
+	r.Set("search_option", _searchOption)
 	return nil
 }
 
-// GetSearchoption Searchoption Getter
-func (r TaobaotbkscrelationrefundAPIRequest) GetSearchoption() *TopApiRefundRptOption {
-	return r._searchoption
+// GetSearchOption SearchOption Getter
+func (r TaobaotbkscrelationrefundAPIRequest) GetSearchOption() *TopApiRefundRptOption {
+	return r._searchOption
 }

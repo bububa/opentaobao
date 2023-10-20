@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkMarketingOpenHeartbeat 心跳服务【10s一次】
+// Alibabawdkmarketingopenheartbeat 心跳服务【10s一次】
 // alibaba.wdk.marketing.open.heartbeat
 //
 // 商家数据同步心跳服务
-func AlibabaWdkMarketingOpenHeartbeat(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingOpenHeartbeatAPIRequest, session string) (*wdk.AlibabaWdkMarketingOpenHeartbeatAPIResponse, error) {
-	var resp wdk.AlibabaWdkMarketingOpenHeartbeatAPIResponse
+func Alibabawdkmarketingopenheartbeat(clt *core.SDKClient, req *wdk.AlibabawdkmarketingopenheartbeatAPIRequest, session string) (*wdk.AlibabawdkmarketingopenheartbeatAPIResponse, error) {
+	var resp wdk.AlibabawdkmarketingopenheartbeatAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

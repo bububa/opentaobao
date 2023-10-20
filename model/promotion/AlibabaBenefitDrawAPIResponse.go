@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaBenefitDrawAPIResponse 抽奖接口 API返回值
+// AlibababenefitdrawAPIResponse 抽奖接口 API返回值
 // alibaba.benefit.draw
 //
 // 功能：抽奖功能，供小程序抽奖调用
@@ -16,13 +16,13 @@ import (
 // appkey验证通过的，才会进入抽奖流程，否则直接失败。
 // 因为appkey是系统参数，并且程序内部可以验证appkey和业务身份appName的关系
 // 是否一致，所以可以保证参数appName的合法性，没有越权。
-type AlibabaBenefitDrawAPIResponse struct {
+type AlibababenefitdrawAPIResponse struct {
 	model.CommonResponse
-	AlibabaBenefitDrawAPIResponseModel
+	AlibababenefitdrawAPIResponseModel
 }
 
-// AlibabaBenefitDrawAPIResponseModel is 抽奖接口 成功返回结果
-type AlibabaBenefitDrawAPIResponseModel struct {
+// AlibababenefitdrawAPIResponseModel is 抽奖接口 成功返回结果
+type AlibababenefitdrawAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_benefit_draw_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
@@ -33,5 +33,5 @@ type AlibabaBenefitDrawAPIResponseModel struct {
 	// 扩展信息
 	ExtAttribute string `json:"ext_attribute,omitempty" xml:"ext_attribute,omitempty"`
 	// 接口返回model
-	Result *AlibabaBenefitDrawResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibababenefitdrawResult `json:"result,omitempty" xml:"result,omitempty"`
 }

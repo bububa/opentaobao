@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallDeviceStoreFollowurlGetAPIResponse 获取店铺关注链接 API返回值
+// TmalldevicestorefollowurlgetAPIResponse 获取店铺关注链接 API返回值
 // tmall.device.store.followurl.get
 //
 // 获取智能硬件上的关注店铺的URL
-type TmallDeviceStoreFollowurlGetAPIResponse struct {
+type TmalldevicestorefollowurlgetAPIResponse struct {
 	model.CommonResponse
-	TmallDeviceStoreFollowurlGetAPIResponseModel
+	TmalldevicestorefollowurlgetAPIResponseModel
 }
 
-// TmallDeviceStoreFollowurlGetAPIResponseModel is 获取店铺关注链接 成功返回结果
-type TmallDeviceStoreFollowurlGetAPIResponseModel struct {
+// TmalldevicestorefollowurlgetAPIResponseModel is 获取店铺关注链接 成功返回结果
+type TmalldevicestorefollowurlgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_device_store_followurl_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

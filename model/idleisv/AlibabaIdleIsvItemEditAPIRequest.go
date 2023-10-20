@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIdleIsvItemEditAPIRequest 服务商闲鱼商品编辑 API请求
+// AlibabaidleisvitemeditAPIRequest 服务商闲鱼商品编辑 API请求
 // alibaba.idle.isv.item.edit
 //
 // 服务商ISV闲鱼商品编辑操作
-type AlibabaIdleIsvItemEditAPIRequest struct {
+type AlibabaidleisvitemeditAPIRequest struct {
 	model.Params
 	// 商品数据参数
 	_param *IdleItemApiDo
 }
 
-// NewAlibabaIdleIsvItemEditRequest 初始化AlibabaIdleIsvItemEditAPIRequest对象
-func NewAlibabaIdleIsvItemEditRequest() *AlibabaIdleIsvItemEditAPIRequest {
-	return &AlibabaIdleIsvItemEditAPIRequest{
+// NewAlibabaidleisvitemeditRequest 初始化AlibabaidleisvitemeditAPIRequest对象
+func NewAlibabaidleisvitemeditRequest() *AlibabaidleisvitemeditAPIRequest {
+	return &AlibabaidleisvitemeditAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaIdleIsvItemEditAPIRequest) GetApiMethodName() string {
+func (r AlibabaidleisvitemeditAPIRequest) GetApiMethodName() string {
 	return "alibaba.idle.isv.item.edit"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIdleIsvItemEditAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaidleisvitemeditAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaIdleIsvItemEditAPIRequest) GetRawParams() model.Params {
+func (r AlibabaidleisvitemeditAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 商品数据参数
-func (r *AlibabaIdleIsvItemEditAPIRequest) SetParam(_param *IdleItemApiDo) error {
+func (r *AlibabaidleisvitemeditAPIRequest) SetParam(_param *IdleItemApiDo) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlibabaIdleIsvItemEditAPIRequest) GetParam() *IdleItemApiDo {
+func (r AlibabaidleisvitemeditAPIRequest) GetParam() *IdleItemApiDo {
 	return r._param
 }

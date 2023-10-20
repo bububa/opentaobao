@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse 检查输入的码之间是否有上下级关系 API返回值
+// AlibabaalihealthdrugcodekytwescheckcoderelationAPIResponse 检查输入的码之间是否有上下级关系 API返回值
 // alibaba.alihealth.drug.code.kyt.wes.checkcoderelation
 //
 // 检查输入的码之间是否有上下级关系
-type AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse struct {
+type AlibabaalihealthdrugcodekytwescheckcoderelationAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponseModel
+	AlibabaalihealthdrugcodekytwescheckcoderelationAPIResponseModel
 }
 
-// AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponseModel is 检查输入的码之间是否有上下级关系 成功返回结果
-type AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponseModel struct {
+// AlibabaalihealthdrugcodekytwescheckcoderelationAPIResponseModel is 检查输入的码之间是否有上下级关系 成功返回结果
+type AlibabaalihealthdrugcodekytwescheckcoderelationAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_code_kyt_wes_checkcoderelation_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseNewhomeRegionSyncResult 结构体
-type AlibabaAlihouseNewhomeRegionSyncResult struct {
+// AlibabaalihousenewhomeregionsyncResult 结构体
+type AlibabaalihousenewhomeregionsyncResult struct {
 	// 返回外部ID
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// message

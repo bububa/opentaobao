@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/shop"
 )
 
-// TaobaoMcnShopcatsListGet 店铺类目清单
+// Taobaomcnshopcatslistget 店铺类目清单
 // taobao.mcn.shopcats.list.get
 //
 // 无需授权; 获取前台展示的店铺类目;
-func TaobaoMcnShopcatsListGet(clt *core.SDKClient, req *shop.TaobaoMcnShopcatsListGetAPIRequest, session string) (*shop.TaobaoMcnShopcatsListGetAPIResponse, error) {
-	var resp shop.TaobaoMcnShopcatsListGetAPIResponse
+func Taobaomcnshopcatslistget(clt *core.SDKClient, req *shop.TaobaomcnshopcatslistgetAPIRequest, session string) (*shop.TaobaomcnshopcatslistgetAPIResponse, error) {
+	var resp shop.TaobaomcnshopcatslistgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

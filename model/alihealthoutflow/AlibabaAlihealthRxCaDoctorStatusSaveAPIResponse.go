@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthRxCaDoctorStatusSaveAPIResponse ca认证获取医师认证结果 API返回值
+// AlibabaalihealthrxcadoctorstatussaveAPIResponse ca认证获取医师认证结果 API返回值
 // alibaba.alihealth.rx.ca.doctor.status.save
 //
 // ca认证获取医师认证结果
-type AlibabaAlihealthRxCaDoctorStatusSaveAPIResponse struct {
+type AlibabaalihealthrxcadoctorstatussaveAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthRxCaDoctorStatusSaveAPIResponseModel
+	AlibabaalihealthrxcadoctorstatussaveAPIResponseModel
 }
 
-// AlibabaAlihealthRxCaDoctorStatusSaveAPIResponseModel is ca认证获取医师认证结果 成功返回结果
-type AlibabaAlihealthRxCaDoctorStatusSaveAPIResponseModel struct {
+// AlibabaalihealthrxcadoctorstatussaveAPIResponseModel is ca认证获取医师认证结果 成功返回结果
+type AlibabaalihealthrxcadoctorstatussaveAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_rx_ca_doctor_status_save_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

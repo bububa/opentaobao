@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/car"
 )
 
-// AlitripTravelCrsorderSearch CRS接送机订单列表搜索
+// Alitriptravelcrsordersearch CRS接送机订单列表搜索
 // alitrip.travel.crsorder.search
 //
 // 提供给CRS商家搜索订单列表，仅返回订单号列表
-func AlitripTravelCrsorderSearch(clt *core.SDKClient, req *car.AlitripTravelCrsorderSearchAPIRequest, session string) (*car.AlitripTravelCrsorderSearchAPIResponse, error) {
-	var resp car.AlitripTravelCrsorderSearchAPIResponse
+func Alitriptravelcrsordersearch(clt *core.SDKClient, req *car.AlitriptravelcrsordersearchAPIRequest, session string) (*car.AlitriptravelcrsordersearchAPIResponse, error) {
+	var resp car.AlitriptravelcrsordersearchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

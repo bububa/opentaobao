@@ -1,7 +1,7 @@
 package xhotelitem
 
-// XHotelBaseInfo 结构体
-type XHotelBaseInfo struct {
+// XhotelBaseInfo 结构体
+type XhotelBaseInfo struct {
 	// 房型基础信息
 	RoomTypeList []RoomType `json:"room_type_list,omitempty" xml:"room_type_list>room_type,omitempty"`
 	// 房价基础信息(需要新增rp时绑定酒店)

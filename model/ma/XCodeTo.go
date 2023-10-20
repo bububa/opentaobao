@@ -1,7 +1,7 @@
 package ma
 
-// XCodeTo 结构体
-type XCodeTo struct {
+// XcodeTo 结构体
+type XcodeTo struct {
 	// 二维码图片地址
 	ImgUrl string `json:"img_url,omitempty" xml:"img_url,omitempty"`
 	// 最后修改时间

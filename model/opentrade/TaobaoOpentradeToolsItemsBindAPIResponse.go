@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpentradeToolsItemsBindAPIResponse 交易开放商品绑定 API返回值
+// TaobaoopentradetoolsitemsbindAPIResponse 交易开放商品绑定 API返回值
 // taobao.opentrade.tools.items.bind
 //
 // 交易开放商品绑定
-type TaobaoOpentradeToolsItemsBindAPIResponse struct {
+type TaobaoopentradetoolsitemsbindAPIResponse struct {
 	model.CommonResponse
-	TaobaoOpentradeToolsItemsBindAPIResponseModel
+	TaobaoopentradetoolsitemsbindAPIResponseModel
 }
 
-// TaobaoOpentradeToolsItemsBindAPIResponseModel is 交易开放商品绑定 成功返回结果
-type TaobaoOpentradeToolsItemsBindAPIResponseModel struct {
+// TaobaoopentradetoolsitemsbindAPIResponseModel is 交易开放商品绑定 成功返回结果
+type TaobaoopentradetoolsitemsbindAPIResponseModel struct {
 	XMLName xml.Name `xml:"opentrade_tools_items_bind_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

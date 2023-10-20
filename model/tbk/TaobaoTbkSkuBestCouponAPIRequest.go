@@ -13,9 +13,9 @@ import (
 type TaobaotbkskubestcouponAPIRequest struct {
 	model.Params
 	// 商品对应的skuId
-	_skuid int64
+	_skuId int64
 	// 商品ID
-	_itemid int64
+	_itemId int64
 }
 
 // NewTaobaotbkskubestcouponRequest 初始化TaobaotbkskubestcouponAPIRequest对象
@@ -42,28 +42,28 @@ func (r TaobaotbkskubestcouponAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetSkuid is Skuid Setter
+// SetSkuId is SkuId Setter
 // 商品对应的skuId
-func (r *TaobaotbkskubestcouponAPIRequest) SetSkuid(_skuid int64) error {
-	r._skuid = _skuid
-	r.Set("sku_id", _skuid)
+func (r *TaobaotbkskubestcouponAPIRequest) SetSkuId(_skuId int64) error {
+	r._skuId = _skuId
+	r.Set("sku_id", _skuId)
 	return nil
 }
 
-// GetSkuid Skuid Getter
-func (r TaobaotbkskubestcouponAPIRequest) GetSkuid() int64 {
-	return r._skuid
+// GetSkuId SkuId Getter
+func (r TaobaotbkskubestcouponAPIRequest) GetSkuId() int64 {
+	return r._skuId
 }
 
-// SetItemid is Itemid Setter
+// SetItemId is ItemId Setter
 // 商品ID
-func (r *TaobaotbkskubestcouponAPIRequest) SetItemid(_itemid int64) error {
-	r._itemid = _itemid
-	r.Set("item_id", _itemid)
+func (r *TaobaotbkskubestcouponAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
 	return nil
 }
 
-// GetItemid Itemid Getter
-func (r TaobaotbkskubestcouponAPIRequest) GetItemid() int64 {
-	return r._itemid
+// GetItemId ItemId Getter
+func (r TaobaotbkskubestcouponAPIRequest) GetItemId() int64 {
+	return r._itemId
 }

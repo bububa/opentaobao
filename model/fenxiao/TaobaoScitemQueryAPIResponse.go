@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoScitemQueryAPIResponse 查询后端商品 API返回值
+// TaobaoscitemqueryAPIResponse 查询后端商品 API返回值
 // taobao.scitem.query
 //
 // 查询后端商品
-type TaobaoScitemQueryAPIResponse struct {
+type TaobaoscitemqueryAPIResponse struct {
 	model.CommonResponse
-	TaobaoScitemQueryAPIResponseModel
+	TaobaoscitemqueryAPIResponseModel
 }
 
-// TaobaoScitemQueryAPIResponseModel is 查询后端商品 成功返回结果
-type TaobaoScitemQueryAPIResponseModel struct {
+// TaobaoscitemqueryAPIResponseModel is 查询后端商品 成功返回结果
+type TaobaoscitemqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"scitem_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

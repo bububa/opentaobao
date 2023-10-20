@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoRhinoCrmGatewayAPIResponse crm实体变更回调接口 API返回值
+// TaobaorhinocrmgatewayAPIResponse crm实体变更回调接口 API返回值
 // taobao.rhino.crm.gateway
 //
 // crm实体变更回调接口
-type TaobaoRhinoCrmGatewayAPIResponse struct {
+type TaobaorhinocrmgatewayAPIResponse struct {
 	model.CommonResponse
-	TaobaoRhinoCrmGatewayAPIResponseModel
+	TaobaorhinocrmgatewayAPIResponseModel
 }
 
-// TaobaoRhinoCrmGatewayAPIResponseModel is crm实体变更回调接口 成功返回结果
-type TaobaoRhinoCrmGatewayAPIResponseModel struct {
+// TaobaorhinocrmgatewayAPIResponseModel is crm实体变更回调接口 成功返回结果
+type TaobaorhinocrmgatewayAPIResponseModel struct {
 	XMLName xml.Name `xml:"rhino_crm_gateway_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoBusAgentCityChangeAPIResponse 城市变更 API返回值
+// TaobaobusagentcitychangeAPIResponse 城市变更 API返回值
 // taobao.bus.agent.city.change
 //
 // 代理商通知城市变更，比如可售变为不可售等
-type TaobaoBusAgentCityChangeAPIResponse struct {
+type TaobaobusagentcitychangeAPIResponse struct {
 	model.CommonResponse
-	TaobaoBusAgentCityChangeAPIResponseModel
+	TaobaobusagentcitychangeAPIResponseModel
 }
 
-// TaobaoBusAgentCityChangeAPIResponseModel is 城市变更 成功返回结果
-type TaobaoBusAgentCityChangeAPIResponseModel struct {
+// TaobaobusagentcitychangeAPIResponseModel is 城市变更 成功返回结果
+type TaobaobusagentcitychangeAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_agent_city_change_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

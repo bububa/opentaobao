@@ -1,7 +1,7 @@
 package mos
 
-// AlibabaMjOcBigposBanksaleQueryData 结构体
-type AlibabaMjOcBigposBanksaleQueryData struct {
+// AlibabamjocbigposbanksalequeryData 结构体
+type AlibabamjocbigposbanksalequeryData struct {
 	// 交易时间
 	OperTime string `json:"oper_time,omitempty" xml:"oper_time,omitempty"`
 	// 查询流水号

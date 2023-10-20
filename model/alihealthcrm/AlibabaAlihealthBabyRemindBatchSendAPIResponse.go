@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthBabyRemindBatchSendAPIResponse 批量发送母婴提醒 API返回值
+// AlibabaalihealthbabyremindbatchsendAPIResponse 批量发送母婴提醒 API返回值
 // alibaba.alihealth.baby.remind.batch.send
 //
 // 批量发送母婴提醒
-type AlibabaAlihealthBabyRemindBatchSendAPIResponse struct {
+type AlibabaalihealthbabyremindbatchsendAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthBabyRemindBatchSendAPIResponseModel
+	AlibabaalihealthbabyremindbatchsendAPIResponseModel
 }
 
-// AlibabaAlihealthBabyRemindBatchSendAPIResponseModel is 批量发送母婴提醒 成功返回结果
-type AlibabaAlihealthBabyRemindBatchSendAPIResponseModel struct {
+// AlibabaalihealthbabyremindbatchsendAPIResponseModel is 批量发送母婴提醒 成功返回结果
+type AlibabaalihealthbabyremindbatchsendAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_baby_remind_batch_send_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

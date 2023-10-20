@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/feedflow"
 )
 
-// TaobaoFeedflowItemAdgroupAdd 信息流增加单元
+// Taobaofeedflowitemadgroupadd 信息流增加单元
 // taobao.feedflow.item.adgroup.add
 //
 // 信息流增加单元
-func TaobaoFeedflowItemAdgroupAdd(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupAddAPIRequest, session string) (*feedflow.TaobaoFeedflowItemAdgroupAddAPIResponse, error) {
-	var resp feedflow.TaobaoFeedflowItemAdgroupAddAPIResponse
+func Taobaofeedflowitemadgroupadd(clt *core.SDKClient, req *feedflow.TaobaofeedflowitemadgroupaddAPIRequest, session string) (*feedflow.TaobaofeedflowitemadgroupaddAPIResponse, error) {
+	var resp feedflow.TaobaofeedflowitemadgroupaddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

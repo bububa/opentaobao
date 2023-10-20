@@ -1,7 +1,7 @@
 package kclub
 
-// AlibabaKclubKcGetcategorytreeResult 结构体
-type AlibabaKclubKcGetcategorytreeResult struct {
+// AlibabakclubkcgetcategorytreeResult 结构体
+type AlibabakclubkcgetcategorytreeResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 类目数据 JSONArray

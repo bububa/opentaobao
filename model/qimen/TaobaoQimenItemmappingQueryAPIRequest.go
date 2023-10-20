@@ -6,48 +6,48 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenItemmappingQueryAPIRequest 前后端商品映射查询接口 API请求
+// TaobaoqimenitemmappingqueryAPIRequest 前后端商品映射查询接口 API请求
 // taobao.qimen.itemmapping.query
 //
 // 前后端商品映射查询接口
-type TaobaoQimenItemmappingQueryAPIRequest struct {
+type TaobaoqimenitemmappingqueryAPIRequest struct {
 	model.Params
 	//
-	_request *TaobaoQimenItemmappingQueryRequest
+	_request *TaobaoqimenitemmappingqueryRequest
 }
 
-// NewTaobaoQimenItemmappingQueryRequest 初始化TaobaoQimenItemmappingQueryAPIRequest对象
-func NewTaobaoQimenItemmappingQueryRequest() *TaobaoQimenItemmappingQueryAPIRequest {
-	return &TaobaoQimenItemmappingQueryAPIRequest{
+// NewTaobaoqimenitemmappingqueryRequest 初始化TaobaoqimenitemmappingqueryAPIRequest对象
+func NewTaobaoqimenitemmappingqueryRequest() *TaobaoqimenitemmappingqueryAPIRequest {
+	return &TaobaoqimenitemmappingqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoQimenItemmappingQueryAPIRequest) GetApiMethodName() string {
+func (r TaobaoqimenitemmappingqueryAPIRequest) GetApiMethodName() string {
 	return "taobao.qimen.itemmapping.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoQimenItemmappingQueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoqimenitemmappingqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoQimenItemmappingQueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoqimenitemmappingqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRequest is Request Setter
-func (r *TaobaoQimenItemmappingQueryAPIRequest) SetRequest(_request *TaobaoQimenItemmappingQueryRequest) error {
+func (r *TaobaoqimenitemmappingqueryAPIRequest) SetRequest(_request *TaobaoqimenitemmappingqueryRequest) error {
 	r._request = _request
 	r.Set("request", _request)
 	return nil
 }
 
 // GetRequest Request Getter
-func (r TaobaoQimenItemmappingQueryAPIRequest) GetRequest() *TaobaoQimenItemmappingQueryRequest {
+func (r TaobaoqimenitemmappingqueryAPIRequest) GetRequest() *TaobaoqimenitemmappingqueryRequest {
 	return r._request
 }

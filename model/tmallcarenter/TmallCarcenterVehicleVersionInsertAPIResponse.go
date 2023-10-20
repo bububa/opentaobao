@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallCarcenterVehicleVersionInsertAPIResponse 汽车EPC版本压缩库新增接口 API返回值
+// TmallcarcentervehicleversioninsertAPIResponse 汽车EPC版本压缩库新增接口 API返回值
 // tmall.carcenter.vehicle.version.insert
 //
 // 汽车EPC版本压缩库新增接口
-type TmallCarcenterVehicleVersionInsertAPIResponse struct {
+type TmallcarcentervehicleversioninsertAPIResponse struct {
 	model.CommonResponse
-	TmallCarcenterVehicleVersionInsertAPIResponseModel
+	TmallcarcentervehicleversioninsertAPIResponseModel
 }
 
-// TmallCarcenterVehicleVersionInsertAPIResponseModel is 汽车EPC版本压缩库新增接口 成功返回结果
-type TmallCarcenterVehicleVersionInsertAPIResponseModel struct {
+// TmallcarcentervehicleversioninsertAPIResponseModel is 汽车EPC版本压缩库新增接口 成功返回结果
+type TmallcarcentervehicleversioninsertAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_carcenter_vehicle_version_insert_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *TmallCarcenterVehicleVersionInsertResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TmallcarcentervehicleversioninsertResult `json:"result,omitempty" xml:"result,omitempty"`
 }

@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallServicecenterWorkcardQueryResult 结构体
-type TmallServicecenterWorkcardQueryResult struct {
+// TmallservicecenterworkcardqueryResult 结构体
+type TmallservicecenterworkcardqueryResult struct {
 	// 错误码
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 错误信息

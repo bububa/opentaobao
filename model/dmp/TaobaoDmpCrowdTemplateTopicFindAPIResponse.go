@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoDmpCrowdTemplateTopicFindAPIResponse 平台精选榜单和模版查询接口 API返回值
+// TaobaodmpcrowdtemplatetopicfindAPIResponse 平台精选榜单和模版查询接口 API返回值
 // taobao.dmp.crowd.template.topic.find
 //
 // 查询平台精选榜单和模版信息
-type TaobaoDmpCrowdTemplateTopicFindAPIResponse struct {
+type TaobaodmpcrowdtemplatetopicfindAPIResponse struct {
 	model.CommonResponse
-	TaobaoDmpCrowdTemplateTopicFindAPIResponseModel
+	TaobaodmpcrowdtemplatetopicfindAPIResponseModel
 }
 
-// TaobaoDmpCrowdTemplateTopicFindAPIResponseModel is 平台精选榜单和模版查询接口 成功返回结果
-type TaobaoDmpCrowdTemplateTopicFindAPIResponseModel struct {
+// TaobaodmpcrowdtemplatetopicfindAPIResponseModel is 平台精选榜单和模版查询接口 成功返回结果
+type TaobaodmpcrowdtemplatetopicfindAPIResponseModel struct {
 	XMLName xml.Name `xml:"dmp_crowd_template_topic_find_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

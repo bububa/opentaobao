@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/filmtfavatar"
 )
 
-// TaobaoFilmTfavatarBillSaleRefundQuery 获取影院卖品账单--退款账单
+// Taobaofilmtfavatarbillsalerefundquery 获取影院卖品账单--退款账单
 // taobao.film.tfavatar.bill.sale.refund.query
 //
 // 获取影院卖品账单--退款账单
-func TaobaoFilmTfavatarBillSaleRefundQuery(clt *core.SDKClient, req *filmtfavatar.TaobaoFilmTfavatarBillSaleRefundQueryAPIRequest, session string) (*filmtfavatar.TaobaoFilmTfavatarBillSaleRefundQueryAPIResponse, error) {
-	var resp filmtfavatar.TaobaoFilmTfavatarBillSaleRefundQueryAPIResponse
+func Taobaofilmtfavatarbillsalerefundquery(clt *core.SDKClient, req *filmtfavatar.TaobaofilmtfavatarbillsalerefundqueryAPIRequest, session string) (*filmtfavatar.TaobaofilmtfavatarbillsalerefundqueryAPIResponse, error) {
+	var resp filmtfavatar.TaobaofilmtfavatarbillsalerefundqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

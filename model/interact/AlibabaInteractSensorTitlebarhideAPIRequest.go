@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaInteractSensorTitlebarhideAPIRequest 隐藏titleBar API请求
+// AlibabainteractsensortitlebarhideAPIRequest 隐藏titleBar API请求
 // alibaba.interact.sensor.titlebarhide
 //
 // 隐藏titleBar
-type AlibabaInteractSensorTitlebarhideAPIRequest struct {
+type AlibabainteractsensortitlebarhideAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaInteractSensorTitlebarhideRequest 初始化AlibabaInteractSensorTitlebarhideAPIRequest对象
-func NewAlibabaInteractSensorTitlebarhideRequest() *AlibabaInteractSensorTitlebarhideAPIRequest {
-	return &AlibabaInteractSensorTitlebarhideAPIRequest{
+// NewAlibabainteractsensortitlebarhideRequest 初始化AlibabainteractsensortitlebarhideAPIRequest对象
+func NewAlibabainteractsensortitlebarhideRequest() *AlibabainteractsensortitlebarhideAPIRequest {
+	return &AlibabainteractsensortitlebarhideAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaInteractSensorTitlebarhideAPIRequest) GetApiMethodName() string {
+func (r AlibabainteractsensortitlebarhideAPIRequest) GetApiMethodName() string {
 	return "alibaba.interact.sensor.titlebarhide"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorTitlebarhideAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabainteractsensortitlebarhideAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaInteractSensorTitlebarhideAPIRequest) GetRawParams() model.Params {
+func (r AlibabainteractsensortitlebarhideAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

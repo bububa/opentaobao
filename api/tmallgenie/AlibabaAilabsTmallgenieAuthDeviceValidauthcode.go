@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallgenie"
 )
 
-// AlibabaAilabsTmallgenieAuthDeviceValidauthcode 根据authcode查询绑定结果
+// Alibabaailabstmallgenieauthdevicevalidauthcode 根据authcode查询绑定结果
 // alibaba.ailabs.tmallgenie.auth.device.validauthcode
 //
 // 根据authcode查询绑定结果
-func AlibabaAilabsTmallgenieAuthDeviceValidauthcode(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIRequest, session string) (*tmallgenie.AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIResponse, error) {
-	var resp tmallgenie.AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIResponse
+func Alibabaailabstmallgenieauthdevicevalidauthcode(clt *core.SDKClient, req *tmallgenie.AlibabaailabstmallgenieauthdevicevalidauthcodeAPIRequest, session string) (*tmallgenie.AlibabaailabstmallgenieauthdevicevalidauthcodeAPIResponse, error) {
+	var resp tmallgenie.AlibabaailabstmallgenieauthdevicevalidauthcodeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/util"
 )
 
-// TaobaoAppipGet 获取ISV发起请求服务器IP
+// Taobaoappipget 获取ISV发起请求服务器IP
 // taobao.appip.get
 //
 // 获取ISV发起请求服务器IP
-func TaobaoAppipGet(clt *core.SDKClient, req *util.TaobaoAppipGetAPIRequest, session string) (*util.TaobaoAppipGetAPIResponse, error) {
-	var resp util.TaobaoAppipGetAPIResponse
+func Taobaoappipget(clt *core.SDKClient, req *util.TaobaoappipgetAPIRequest, session string) (*util.TaobaoappipgetAPIResponse, error) {
+	var resp util.TaobaoappipgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

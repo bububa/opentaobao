@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/openim"
 )
 
-// TaobaoOpenimTribeJoin OPENIM群主动加入
+// Taobaoopenimtribejoin OPENIM群主动加入
 // taobao.openim.tribe.join
 //
 // OPENIM群主动加入
-func TaobaoOpenimTribeJoin(clt *core.SDKClient, req *openim.TaobaoOpenimTribeJoinAPIRequest, session string) (*openim.TaobaoOpenimTribeJoinAPIResponse, error) {
-	var resp openim.TaobaoOpenimTribeJoinAPIResponse
+func Taobaoopenimtribejoin(clt *core.SDKClient, req *openim.TaobaoopenimtribejoinAPIRequest, session string) (*openim.TaobaoopenimtribejoinAPIResponse, error) {
+	var resp openim.TaobaoopenimtribejoinAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

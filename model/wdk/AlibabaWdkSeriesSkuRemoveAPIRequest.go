@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkSeriesSkuRemoveAPIRequest 系列品商品变更-移除商品 API请求
+// AlibabawdkseriesskuremoveAPIRequest 系列品商品变更-移除商品 API请求
 // alibaba.wdk.series.sku.remove
 //
 // 系列品商品变更-移除商品
-type AlibabaWdkSeriesSkuRemoveAPIRequest struct {
+type AlibabawdkseriesskuremoveAPIRequest struct {
 	model.Params
 	// 系列品移除商品请求
 	_seriesSkus *SeriesSkuRequest
 }
 
-// NewAlibabaWdkSeriesSkuRemoveRequest 初始化AlibabaWdkSeriesSkuRemoveAPIRequest对象
-func NewAlibabaWdkSeriesSkuRemoveRequest() *AlibabaWdkSeriesSkuRemoveAPIRequest {
-	return &AlibabaWdkSeriesSkuRemoveAPIRequest{
+// NewAlibabawdkseriesskuremoveRequest 初始化AlibabawdkseriesskuremoveAPIRequest对象
+func NewAlibabawdkseriesskuremoveRequest() *AlibabawdkseriesskuremoveAPIRequest {
+	return &AlibabawdkseriesskuremoveAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSeriesSkuRemoveAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkseriesskuremoveAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.series.sku.remove"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSeriesSkuRemoveAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkseriesskuremoveAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkSeriesSkuRemoveAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkseriesskuremoveAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSeriesSkus is SeriesSkus Setter
 // 系列品移除商品请求
-func (r *AlibabaWdkSeriesSkuRemoveAPIRequest) SetSeriesSkus(_seriesSkus *SeriesSkuRequest) error {
+func (r *AlibabawdkseriesskuremoveAPIRequest) SetSeriesSkus(_seriesSkus *SeriesSkuRequest) error {
 	r._seriesSkus = _seriesSkus
 	r.Set("series_skus", _seriesSkus)
 	return nil
 }
 
 // GetSeriesSkus SeriesSkus Getter
-func (r AlibabaWdkSeriesSkuRemoveAPIRequest) GetSeriesSkus() *SeriesSkuRequest {
+func (r AlibabawdkseriesskuremoveAPIRequest) GetSeriesSkus() *SeriesSkuRequest {
 	return r._seriesSkus
 }

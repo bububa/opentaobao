@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wlbimports"
 )
 
-// CainiaoGlobalImPickupAppointmentOrderCancel 首公里揽收-取消预约单
+// Cainiaoglobalimpickupappointmentordercancel 首公里揽收-取消预约单
 // cainiao.global.im.pickup.appointment.order.cancel
 //
 // 首公里揽收-取消预约单创建
-func CainiaoGlobalImPickupAppointmentOrderCancel(clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupAppointmentOrderCancelAPIRequest, session string) (*wlbimports.CainiaoGlobalImPickupAppointmentOrderCancelAPIResponse, error) {
-	var resp wlbimports.CainiaoGlobalImPickupAppointmentOrderCancelAPIResponse
+func Cainiaoglobalimpickupappointmentordercancel(clt *core.SDKClient, req *wlbimports.CainiaoglobalimpickupappointmentordercancelAPIRequest, session string) (*wlbimports.CainiaoglobalimpickupappointmentordercancelAPIResponse, error) {
+	var resp wlbimports.CainiaoglobalimpickupappointmentordercancelAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

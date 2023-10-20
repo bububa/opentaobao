@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpTargetAdPlanProductListGetAPIResponse 定向推广-获取推广计划产品列表 API返回值
+// AlibabascbptargetadplanproductlistgetAPIResponse 定向推广-获取推广计划产品列表 API返回值
 // alibaba.scbp.target.ad.plan.product.list.get
 //
 // 定向推广-获取推广计划产品列表
-type AlibabaScbpTargetAdPlanProductListGetAPIResponse struct {
+type AlibabascbptargetadplanproductlistgetAPIResponse struct {
 	model.CommonResponse
-	AlibabaScbpTargetAdPlanProductListGetAPIResponseModel
+	AlibabascbptargetadplanproductlistgetAPIResponseModel
 }
 
-// AlibabaScbpTargetAdPlanProductListGetAPIResponseModel is 定向推广-获取推广计划产品列表 成功返回结果
-type AlibabaScbpTargetAdPlanProductListGetAPIResponseModel struct {
+// AlibabascbptargetadplanproductlistgetAPIResponseModel is 定向推广-获取推广计划产品列表 成功返回结果
+type AlibabascbptargetadplanproductlistgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_target_ad_plan_product_list_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

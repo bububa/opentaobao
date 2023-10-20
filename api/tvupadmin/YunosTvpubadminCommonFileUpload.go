@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-// YunosTvpubadminCommonFileUpload 文件上传API
+// Yunostvpubadmincommonfileupload 文件上传API
 // yunos.tvpubadmin.common.file.upload
 //
 // 文件上传服务
-func YunosTvpubadminCommonFileUpload(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminCommonFileUploadAPIRequest, session string) (*tvupadmin.YunosTvpubadminCommonFileUploadAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminCommonFileUploadAPIResponse
+func Yunostvpubadmincommonfileupload(clt *core.SDKClient, req *tvupadmin.YunostvpubadmincommonfileuploadAPIRequest, session string) (*tvupadmin.YunostvpubadmincommonfileuploadAPIResponse, error) {
+	var resp tvupadmin.YunostvpubadmincommonfileuploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

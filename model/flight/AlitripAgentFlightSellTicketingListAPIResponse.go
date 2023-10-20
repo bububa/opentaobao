@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripAgentFlightSellTicketingListAPIResponse 销售出票列表 API返回值
+// AlitripagentflightsellticketinglistAPIResponse 销售出票列表 API返回值
 // alitrip.agent.flight.sell.ticketing.list
 //
 // 销售出票列表
-type AlitripAgentFlightSellTicketingListAPIResponse struct {
+type AlitripagentflightsellticketinglistAPIResponse struct {
 	model.CommonResponse
-	AlitripAgentFlightSellTicketingListAPIResponseModel
+	AlitripagentflightsellticketinglistAPIResponseModel
 }
 
-// AlitripAgentFlightSellTicketingListAPIResponseModel is 销售出票列表 成功返回结果
-type AlitripAgentFlightSellTicketingListAPIResponseModel struct {
+// AlitripagentflightsellticketinglistAPIResponseModel is 销售出票列表 成功返回结果
+type AlitripagentflightsellticketinglistAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_agent_flight_sell_ticketing_list_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

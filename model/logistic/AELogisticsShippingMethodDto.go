@@ -1,7 +1,7 @@
 package logistic
 
-// AELogisticsShippingMethodDto 结构体
-type AELogisticsShippingMethodDto struct {
+// AelogisticsShippingMethodDto 结构体
+type AelogisticsShippingMethodDto struct {
 	// Logistics provider Id of the shipping order such as 1-Cainiao, 2-Pegaki, 3-Frenet, 4-Delivery Hub, etc.
 	LogisticsChannelId string `json:"logistics_channel_id,omitempty" xml:"logistics_channel_id,omitempty"`
 	// Logistics provider of the shipping order such as Cainiao, Pegaki, Frenet, Delivery Hub, etc.

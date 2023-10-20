@@ -1,7 +1,7 @@
 package axindata
 
-// TaobaoAlitripTravelAxinPoiSearchResult 结构体
-type TaobaoAlitripTravelAxinPoiSearchResult struct {
+// TaobaoalitriptravelaxinpoisearchResult 结构体
+type TaobaoalitriptravelaxinpoisearchResult struct {
 	// 列表
 	DataList []PoiVo `json:"data_list,omitempty" xml:"data_list>poi_vo,omitempty"`
 	// 错误信息

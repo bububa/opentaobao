@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest 删除通用单品优惠详情 API请求
+// TaobaopromotionmisccommonitemdetaildeleteAPIRequest 删除通用单品优惠详情 API请求
 // taobao.promotionmisc.common.item.detail.delete
 //
 // 删除通用单品优惠详情。
-type TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest struct {
+type TaobaopromotionmisccommonitemdetaildeleteAPIRequest struct {
 	model.Params
 	// 优惠活动ID
 	_activityId int64
@@ -18,52 +18,52 @@ type TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest struct {
 	_detailId int64
 }
 
-// NewTaobaoPromotionmiscCommonItemDetailDeleteRequest 初始化TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest对象
-func NewTaobaoPromotionmiscCommonItemDetailDeleteRequest() *TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest {
-	return &TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest{
+// NewTaobaopromotionmisccommonitemdetaildeleteRequest 初始化TaobaopromotionmisccommonitemdetaildeleteAPIRequest对象
+func NewTaobaopromotionmisccommonitemdetaildeleteRequest() *TaobaopromotionmisccommonitemdetaildeleteAPIRequest {
+	return &TaobaopromotionmisccommonitemdetaildeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) GetApiMethodName() string {
+func (r TaobaopromotionmisccommonitemdetaildeleteAPIRequest) GetApiMethodName() string {
 	return "taobao.promotionmisc.common.item.detail.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaopromotionmisccommonitemdetaildeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) GetRawParams() model.Params {
+func (r TaobaopromotionmisccommonitemdetaildeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetActivityId is ActivityId Setter
 // 优惠活动ID
-func (r *TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) SetActivityId(_activityId int64) error {
+func (r *TaobaopromotionmisccommonitemdetaildeleteAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
 	r.Set("activity_id", _activityId)
 	return nil
 }
 
 // GetActivityId ActivityId Getter
-func (r TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) GetActivityId() int64 {
+func (r TaobaopromotionmisccommonitemdetaildeleteAPIRequest) GetActivityId() int64 {
 	return r._activityId
 }
 
 // SetDetailId is DetailId Setter
 // 优惠详情ID
-func (r *TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) SetDetailId(_detailId int64) error {
+func (r *TaobaopromotionmisccommonitemdetaildeleteAPIRequest) SetDetailId(_detailId int64) error {
 	r._detailId = _detailId
 	r.Set("detail_id", _detailId)
 	return nil
 }
 
 // GetDetailId DetailId Getter
-func (r TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) GetDetailId() int64 {
+func (r TaobaopromotionmisccommonitemdetaildeleteAPIRequest) GetDetailId() int64 {
 	return r._detailId
 }

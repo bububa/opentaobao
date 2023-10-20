@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// AlibabaAlihealthTracecodesellerBillRootcodeGet 获取最外层包装码
+// Alibabaalihealthtracecodesellerbillrootcodeget 获取最外层包装码
 // alibaba.alihealth.tracecodeseller.bill.rootcode.get
 //
 // 获取最外层包装码
-func AlibabaAlihealthTracecodesellerBillRootcodeGet(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest, session string) (*drugtrace.AlibabaAlihealthTracecodesellerBillRootcodeGetAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthTracecodesellerBillRootcodeGetAPIResponse
+func Alibabaalihealthtracecodesellerbillrootcodeget(clt *core.SDKClient, req *drugtrace.AlibabaalihealthtracecodesellerbillrootcodegetAPIRequest, session string) (*drugtrace.AlibabaalihealthtracecodesellerbillrootcodegetAPIResponse, error) {
+	var resp drugtrace.AlibabaalihealthtracecodesellerbillrootcodegetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse 销退单上传 API返回值
+// TaobaordcaligeniuswarehousereverseuploadingAPIResponse 销退单上传 API返回值
 // taobao.rdc.aligenius.warehouse.reverse.uploading
 //
 // 主要用于商家上传仓库销退单信息
-type TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse struct {
+type TaobaordcaligeniuswarehousereverseuploadingAPIResponse struct {
 	model.CommonResponse
-	TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponseModel
+	TaobaordcaligeniuswarehousereverseuploadingAPIResponseModel
 }
 
-// TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponseModel is 销退单上传 成功返回结果
-type TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponseModel struct {
+// TaobaordcaligeniuswarehousereverseuploadingAPIResponseModel is 销退单上传 成功返回结果
+type TaobaordcaligeniuswarehousereverseuploadingAPIResponseModel struct {
 	XMLName xml.Name `xml:"rdc_aligenius_warehouse_reverse_uploading_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

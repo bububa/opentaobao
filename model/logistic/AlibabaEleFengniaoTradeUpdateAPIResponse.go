@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEleFengniaoTradeUpdateAPIResponse 更新蜂鸟扣费状态 API返回值
+// AlibabaelefengniaotradeupdateAPIResponse 更新蜂鸟扣费状态 API返回值
 // alibaba.ele.fengniao.trade.update
 //
 // 汇金扣费成功后，回调该接口更新扣费状态
-type AlibabaEleFengniaoTradeUpdateAPIResponse struct {
+type AlibabaelefengniaotradeupdateAPIResponse struct {
 	model.CommonResponse
-	AlibabaEleFengniaoTradeUpdateAPIResponseModel
+	AlibabaelefengniaotradeupdateAPIResponseModel
 }
 
-// AlibabaEleFengniaoTradeUpdateAPIResponseModel is 更新蜂鸟扣费状态 成功返回结果
-type AlibabaEleFengniaoTradeUpdateAPIResponseModel struct {
+// AlibabaelefengniaotradeupdateAPIResponseModel is 更新蜂鸟扣费状态 成功返回结果
+type AlibabaelefengniaotradeupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ele_fengniao_trade_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

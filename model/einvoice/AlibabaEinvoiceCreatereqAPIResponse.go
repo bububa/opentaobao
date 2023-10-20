@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEinvoiceCreatereqAPIResponse ERP开票请求接口 API返回值
+// AlibabaeinvoicecreatereqAPIResponse ERP开票请求接口 API返回值
 // alibaba.einvoice.createreq
 //
 // ERP发起开票请求
-type AlibabaEinvoiceCreatereqAPIResponse struct {
+type AlibabaeinvoicecreatereqAPIResponse struct {
 	model.CommonResponse
-	AlibabaEinvoiceCreatereqAPIResponseModel
+	AlibabaeinvoicecreatereqAPIResponseModel
 }
 
-// AlibabaEinvoiceCreatereqAPIResponseModel is ERP开票请求接口 成功返回结果
-type AlibabaEinvoiceCreatereqAPIResponseModel struct {
+// AlibabaeinvoicecreatereqAPIResponseModel is ERP开票请求接口 成功返回结果
+type AlibabaeinvoicecreatereqAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_createreq_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

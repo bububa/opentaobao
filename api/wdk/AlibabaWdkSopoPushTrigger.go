@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkSopoPushTrigger 猫超共享库存寄售sopo推送触发
+// Alibabawdksopopushtrigger 猫超共享库存寄售sopo推送触发
 // alibaba.wdk.sopo.push.trigger
 //
 // 猫超共享库存寄售sopo触发推送给商家
-func AlibabaWdkSopoPushTrigger(clt *core.SDKClient, req *wdk.AlibabaWdkSopoPushTriggerAPIRequest, session string) (*wdk.AlibabaWdkSopoPushTriggerAPIResponse, error) {
-	var resp wdk.AlibabaWdkSopoPushTriggerAPIResponse
+func Alibabawdksopopushtrigger(clt *core.SDKClient, req *wdk.AlibabawdksopopushtriggerAPIRequest, session string) (*wdk.AlibabawdksopopushtriggerAPIResponse, error) {
+	var resp wdk.AlibabawdksopopushtriggerAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

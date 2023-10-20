@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripShipReturnNotifyAPIResponse 船票退票退款回填接口 API返回值
+// AlitripshipreturnnotifyAPIResponse 船票退票退款回填接口 API返回值
 // alitrip.ship.return.notify
 //
 // 此接口为接入商调用飞猪接口回填退票状态，飞猪平台给用户进行退票退款。飞猪平台保证数据幂等。
-type AlitripShipReturnNotifyAPIResponse struct {
+type AlitripshipreturnnotifyAPIResponse struct {
 	model.CommonResponse
-	AlitripShipReturnNotifyAPIResponseModel
+	AlitripshipreturnnotifyAPIResponseModel
 }
 
-// AlitripShipReturnNotifyAPIResponseModel is 船票退票退款回填接口 成功返回结果
-type AlitripShipReturnNotifyAPIResponseModel struct {
+// AlitripshipreturnnotifyAPIResponseModel is 船票退票退款回填接口 成功返回结果
+type AlitripshipreturnnotifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_ship_return_notify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

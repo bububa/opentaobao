@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// AlitripBtripCityCarApplyApprove 三方市内用车申请单审批
+// Alitripbtripcitycarapplyapprove 三方市内用车申请单审批
 // alitrip.btrip.city.car.apply.approve
 //
 // 三方市内用车申请单审批
-func AlitripBtripCityCarApplyApprove(clt *core.SDKClient, req *btrip.AlitripBtripCityCarApplyApproveAPIRequest, session string) (*btrip.AlitripBtripCityCarApplyApproveAPIResponse, error) {
-	var resp btrip.AlitripBtripCityCarApplyApproveAPIResponse
+func Alitripbtripcitycarapplyapprove(clt *core.SDKClient, req *btrip.AlitripbtripcitycarapplyapproveAPIRequest, session string) (*btrip.AlitripbtripcitycarapplyapproveAPIResponse, error) {
+	var resp btrip.AlitripbtripcitycarapplyapproveAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

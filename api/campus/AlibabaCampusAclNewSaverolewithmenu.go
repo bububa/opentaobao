@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// AlibabaCampusAclNewSaverolewithmenu 保存角色级联保存角色和权限的关系
+// Alibabacampusaclnewsaverolewithmenu 保存角色级联保存角色和权限的关系
 // alibaba.campus.acl.new.saverolewithmenu
 //
 // 保存角色级联保存角色和权限的关系
-func AlibabaCampusAclNewSaverolewithmenu(clt *core.SDKClient, req *campus.AlibabaCampusAclNewSaverolewithmenuAPIRequest, session string) (*campus.AlibabaCampusAclNewSaverolewithmenuAPIResponse, error) {
-	var resp campus.AlibabaCampusAclNewSaverolewithmenuAPIResponse
+func Alibabacampusaclnewsaverolewithmenu(clt *core.SDKClient, req *campus.AlibabacampusaclnewsaverolewithmenuAPIRequest, session string) (*campus.AlibabacampusaclnewsaverolewithmenuAPIResponse, error) {
+	var resp campus.AlibabacampusaclnewsaverolewithmenuAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

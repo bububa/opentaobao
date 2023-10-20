@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaZqsFulfillCompleteAPIResponse 周期购履约完成接口 API返回值
+// AlibabazqsfulfillcompleteAPIResponse 周期购履约完成接口 API返回值
 // alibaba.zqs.fulfill.complete
 //
 // 周期购履约完成接口
-type AlibabaZqsFulfillCompleteAPIResponse struct {
+type AlibabazqsfulfillcompleteAPIResponse struct {
 	model.CommonResponse
-	AlibabaZqsFulfillCompleteAPIResponseModel
+	AlibabazqsfulfillcompleteAPIResponseModel
 }
 
-// AlibabaZqsFulfillCompleteAPIResponseModel is 周期购履约完成接口 成功返回结果
-type AlibabaZqsFulfillCompleteAPIResponseModel struct {
+// AlibabazqsfulfillcompleteAPIResponseModel is 周期购履约完成接口 成功返回结果
+type AlibabazqsfulfillcompleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_zqs_fulfill_complete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

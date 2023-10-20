@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// AlitripBtripFlightDistributionOrderNewcreate 商旅机票分销-创建订单V2
+// Alitripbtripflightdistributionordernewcreate 商旅机票分销-创建订单V2
 // alitrip.btrip.flight.distribution.order.newcreate
 //
 // 商旅机票分销-创建订单V2
-func AlitripBtripFlightDistributionOrderNewcreate(clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionOrderNewcreateAPIRequest, session string) (*btrip.AlitripBtripFlightDistributionOrderNewcreateAPIResponse, error) {
-	var resp btrip.AlitripBtripFlightDistributionOrderNewcreateAPIResponse
+func Alitripbtripflightdistributionordernewcreate(clt *core.SDKClient, req *btrip.AlitripbtripflightdistributionordernewcreateAPIRequest, session string) (*btrip.AlitripbtripflightdistributionordernewcreateAPIResponse, error) {
+	var resp btrip.AlitripbtripflightdistributionordernewcreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

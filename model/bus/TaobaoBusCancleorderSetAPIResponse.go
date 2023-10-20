@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoBusCancleorderSetAPIResponse 取消订单 API返回值
+// TaobaobuscancleordersetAPIResponse 取消订单 API返回值
 // taobao.bus.cancleorder.set
 //
 // 取消订单
-type TaobaoBusCancleorderSetAPIResponse struct {
+type TaobaobuscancleordersetAPIResponse struct {
 	model.CommonResponse
-	TaobaoBusCancleorderSetAPIResponseModel
+	TaobaobuscancleordersetAPIResponseModel
 }
 
-// TaobaoBusCancleorderSetAPIResponseModel is 取消订单 成功返回结果
-type TaobaoBusCancleorderSetAPIResponseModel struct {
+// TaobaobuscancleordersetAPIResponseModel is 取消订单 成功返回结果
+type TaobaobuscancleordersetAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_cancleorder_set_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

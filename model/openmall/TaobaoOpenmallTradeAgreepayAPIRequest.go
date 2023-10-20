@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpenmallTradeAgreepayAPIRequest openmall订单支付 API请求
+// TaobaoopenmalltradeagreepayAPIRequest openmall订单支付 API请求
 // taobao.openmall.trade.agreepay
 //
 // openmall订单支付
-type TaobaoOpenmallTradeAgreepayAPIRequest struct {
+type TaobaoopenmalltradeagreepayAPIRequest struct {
 	model.Params
 	// 媒体渠道，代表分销者的身份，签约支付宝代扣的渠道商淘宝账号nick
 	_distributor string
@@ -18,52 +18,52 @@ type TaobaoOpenmallTradeAgreepayAPIRequest struct {
 	_tid int64
 }
 
-// NewTaobaoOpenmallTradeAgreepayRequest 初始化TaobaoOpenmallTradeAgreepayAPIRequest对象
-func NewTaobaoOpenmallTradeAgreepayRequest() *TaobaoOpenmallTradeAgreepayAPIRequest {
-	return &TaobaoOpenmallTradeAgreepayAPIRequest{
+// NewTaobaoopenmalltradeagreepayRequest 初始化TaobaoopenmalltradeagreepayAPIRequest对象
+func NewTaobaoopenmalltradeagreepayRequest() *TaobaoopenmalltradeagreepayAPIRequest {
+	return &TaobaoopenmalltradeagreepayAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoOpenmallTradeAgreepayAPIRequest) GetApiMethodName() string {
+func (r TaobaoopenmalltradeagreepayAPIRequest) GetApiMethodName() string {
 	return "taobao.openmall.trade.agreepay"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOpenmallTradeAgreepayAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoopenmalltradeagreepayAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoOpenmallTradeAgreepayAPIRequest) GetRawParams() model.Params {
+func (r TaobaoopenmalltradeagreepayAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDistributor is Distributor Setter
 // 媒体渠道，代表分销者的身份，签约支付宝代扣的渠道商淘宝账号nick
-func (r *TaobaoOpenmallTradeAgreepayAPIRequest) SetDistributor(_distributor string) error {
+func (r *TaobaoopenmalltradeagreepayAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
 	r.Set("distributor", _distributor)
 	return nil
 }
 
 // GetDistributor Distributor Getter
-func (r TaobaoOpenmallTradeAgreepayAPIRequest) GetDistributor() string {
+func (r TaobaoopenmalltradeagreepayAPIRequest) GetDistributor() string {
 	return r._distributor
 }
 
 // SetTid is Tid Setter
 // 淘宝交易单号
-func (r *TaobaoOpenmallTradeAgreepayAPIRequest) SetTid(_tid int64) error {
+func (r *TaobaoopenmalltradeagreepayAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
 	r.Set("tid", _tid)
 	return nil
 }
 
 // GetTid Tid Getter
-func (r TaobaoOpenmallTradeAgreepayAPIRequest) GetTid() int64 {
+func (r TaobaoopenmalltradeagreepayAPIRequest) GetTid() int64 {
 	return r._tid
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alicom"
 )
 
-// AlibabaAliqinTaSmsNumSend 短信发送
+// Alibabaaliqintasmsnumsend 短信发送
 // alibaba.aliqin.ta.sms.num.send
 //
 // 短信发送
-func AlibabaAliqinTaSmsNumSend(clt *core.SDKClient, req *alicom.AlibabaAliqinTaSmsNumSendAPIRequest, session string) (*alicom.AlibabaAliqinTaSmsNumSendAPIResponse, error) {
-	var resp alicom.AlibabaAliqinTaSmsNumSendAPIResponse
+func Alibabaaliqintasmsnumsend(clt *core.SDKClient, req *alicom.AlibabaaliqintasmsnumsendAPIRequest, session string) (*alicom.AlibabaaliqintasmsnumsendAPIResponse, error) {
+	var resp alicom.AlibabaaliqintasmsnumsendAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

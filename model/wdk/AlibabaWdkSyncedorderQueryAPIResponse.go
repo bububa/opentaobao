@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkSyncedorderQueryAPIResponse 五道口查询同步订单 API返回值
+// AlibabawdksyncedorderqueryAPIResponse 五道口查询同步订单 API返回值
 // alibaba.wdk.syncedorder.query
 //
 // 外部商户查询同步到五道口的订单
-type AlibabaWdkSyncedorderQueryAPIResponse struct {
+type AlibabawdksyncedorderqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaWdkSyncedorderQueryAPIResponseModel
+	AlibabawdksyncedorderqueryAPIResponseModel
 }
 
-// AlibabaWdkSyncedorderQueryAPIResponseModel is 五道口查询同步订单 成功返回结果
-type AlibabaWdkSyncedorderQueryAPIResponseModel struct {
+// AlibabawdksyncedorderqueryAPIResponseModel is 五道口查询同步订单 成功返回结果
+type AlibabawdksyncedorderqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_syncedorder_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

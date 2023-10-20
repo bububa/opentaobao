@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tblogistics"
 )
 
-// TaobaoLogisticsOrdersGet 批量查询物流订单
+// Taobaologisticsordersget 批量查询物流订单
 // taobao.logistics.orders.get
 //
 // 批量查询物流订单。
-func TaobaoLogisticsOrdersGet(clt *core.SDKClient, req *tblogistics.TaobaoLogisticsOrdersGetAPIRequest, session string) (*tblogistics.TaobaoLogisticsOrdersGetAPIResponse, error) {
-	var resp tblogistics.TaobaoLogisticsOrdersGetAPIResponse
+func Taobaologisticsordersget(clt *core.SDKClient, req *tblogistics.TaobaologisticsordersgetAPIRequest, session string) (*tblogistics.TaobaologisticsordersgetAPIResponse, error) {
+	var resp tblogistics.TaobaologisticsordersgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

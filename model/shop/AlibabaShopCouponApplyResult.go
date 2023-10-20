@@ -1,7 +1,7 @@
 package shop
 
-// AlibabaShopCouponApplyResult 结构体
-type AlibabaShopCouponApplyResult struct {
+// AlibabashopcouponapplyResult 结构体
+type AlibabashopcouponapplyResult struct {
 	// 错误描述
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

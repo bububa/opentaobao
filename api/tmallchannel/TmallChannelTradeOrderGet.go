@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallchannel"
 )
 
-// TmallChannelTradeOrderGet 通过主采购单号查询采购单
+// Tmallchanneltradeorderget 通过主采购单号查询采购单
 // tmall.channel.trade.order.get
 //
 // 通过主采购单号查询采购单
-func TmallChannelTradeOrderGet(clt *core.SDKClient, req *tmallchannel.TmallChannelTradeOrderGetAPIRequest, session string) (*tmallchannel.TmallChannelTradeOrderGetAPIResponse, error) {
-	var resp tmallchannel.TmallChannelTradeOrderGetAPIResponse
+func Tmallchanneltradeorderget(clt *core.SDKClient, req *tmallchannel.TmallchanneltradeordergetAPIRequest, session string) (*tmallchannel.TmallchanneltradeordergetAPIResponse, error) {
+	var resp tmallchannel.TmallchanneltradeordergetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

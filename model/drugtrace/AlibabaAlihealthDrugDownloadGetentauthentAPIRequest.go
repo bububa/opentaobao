@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDrugDownloadGetentauthentAPIRequest 获取授权企业列表 API请求
+// AlibabaalihealthdrugdownloadgetentauthentAPIRequest 获取授权企业列表 API请求
 // alibaba.alihealth.drug.download.getentauthent
 //
 // D2D数据落地获取授权企业列表
-type AlibabaAlihealthDrugDownloadGetentauthentAPIRequest struct {
+type AlibabaalihealthdrugdownloadgetentauthentAPIRequest struct {
 	model.Params
 	// 授权开始时间
 	_authBeginDate string
@@ -18,52 +18,52 @@ type AlibabaAlihealthDrugDownloadGetentauthentAPIRequest struct {
 	_authEndDate string
 }
 
-// NewAlibabaAlihealthDrugDownloadGetentauthentRequest 初始化AlibabaAlihealthDrugDownloadGetentauthentAPIRequest对象
-func NewAlibabaAlihealthDrugDownloadGetentauthentRequest() *AlibabaAlihealthDrugDownloadGetentauthentAPIRequest {
-	return &AlibabaAlihealthDrugDownloadGetentauthentAPIRequest{
+// NewAlibabaalihealthdrugdownloadgetentauthentRequest 初始化AlibabaalihealthdrugdownloadgetentauthentAPIRequest对象
+func NewAlibabaalihealthdrugdownloadgetentauthentRequest() *AlibabaalihealthdrugdownloadgetentauthentAPIRequest {
+	return &AlibabaalihealthdrugdownloadgetentauthentAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthdrugdownloadgetentauthentAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.drug.download.getentauthent"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthdrugdownloadgetentauthentAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthdrugdownloadgetentauthentAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAuthBeginDate is AuthBeginDate Setter
 // 授权开始时间
-func (r *AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) SetAuthBeginDate(_authBeginDate string) error {
+func (r *AlibabaalihealthdrugdownloadgetentauthentAPIRequest) SetAuthBeginDate(_authBeginDate string) error {
 	r._authBeginDate = _authBeginDate
 	r.Set("auth_begin_date", _authBeginDate)
 	return nil
 }
 
 // GetAuthBeginDate AuthBeginDate Getter
-func (r AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) GetAuthBeginDate() string {
+func (r AlibabaalihealthdrugdownloadgetentauthentAPIRequest) GetAuthBeginDate() string {
 	return r._authBeginDate
 }
 
 // SetAuthEndDate is AuthEndDate Setter
 // 授权结束时间
-func (r *AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) SetAuthEndDate(_authEndDate string) error {
+func (r *AlibabaalihealthdrugdownloadgetentauthentAPIRequest) SetAuthEndDate(_authEndDate string) error {
 	r._authEndDate = _authEndDate
 	r.Set("auth_end_date", _authEndDate)
 	return nil
 }
 
 // GetAuthEndDate AuthEndDate Getter
-func (r AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) GetAuthEndDate() string {
+func (r AlibabaalihealthdrugdownloadgetentauthentAPIRequest) GetAuthEndDate() string {
 	return r._authEndDate
 }

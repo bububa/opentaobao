@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaInsightCatsworddataGetAPIResponse 获取类目下关键词的数据 API返回值
+// TaobaosimbainsightcatsworddatagetAPIResponse 获取类目下关键词的数据 API返回值
 // taobao.simba.insight.catsworddata.get
 //
 // 获取给定词在给定类目下的详细数据
-type TaobaoSimbaInsightCatsworddataGetAPIResponse struct {
+type TaobaosimbainsightcatsworddatagetAPIResponse struct {
 	model.CommonResponse
-	TaobaoSimbaInsightCatsworddataGetAPIResponseModel
+	TaobaosimbainsightcatsworddatagetAPIResponseModel
 }
 
-// TaobaoSimbaInsightCatsworddataGetAPIResponseModel is 获取类目下关键词的数据 成功返回结果
-type TaobaoSimbaInsightCatsworddataGetAPIResponseModel struct {
+// TaobaosimbainsightcatsworddatagetAPIResponseModel is 获取类目下关键词的数据 成功返回结果
+type TaobaosimbainsightcatsworddatagetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_insight_catsworddata_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest 鉴定工单结果同步 API请求
+// TaobaordcaligeniusidentificationcaseresultupdateAPIRequest 鉴定工单结果同步 API请求
 // taobao.rdc.aligenius.identification.case.result.update
 //
 // 同步鉴定工单结果信息
-type TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest struct {
+type TaobaordcaligeniusidentificationcaseresultupdateAPIRequest struct {
 	model.Params
 	// 请求参数
 	_param *SyncIdentifyRefundCaseResultDto
 }
 
-// NewTaobaoRdcAligeniusIdentificationCaseResultUpdateRequest 初始化TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest对象
-func NewTaobaoRdcAligeniusIdentificationCaseResultUpdateRequest() *TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest {
-	return &TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest{
+// NewTaobaordcaligeniusidentificationcaseresultupdateRequest 初始化TaobaordcaligeniusidentificationcaseresultupdateAPIRequest对象
+func NewTaobaordcaligeniusidentificationcaseresultupdateRequest() *TaobaordcaligeniusidentificationcaseresultupdateAPIRequest {
+	return &TaobaordcaligeniusidentificationcaseresultupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest) GetApiMethodName() string {
+func (r TaobaordcaligeniusidentificationcaseresultupdateAPIRequest) GetApiMethodName() string {
 	return "taobao.rdc.aligenius.identification.case.result.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaordcaligeniusidentificationcaseresultupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest) GetRawParams() model.Params {
+func (r TaobaordcaligeniusidentificationcaseresultupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 请求参数
-func (r *TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest) SetParam(_param *SyncIdentifyRefundCaseResultDto) error {
+func (r *TaobaordcaligeniusidentificationcaseresultupdateAPIRequest) SetParam(_param *SyncIdentifyRefundCaseResultDto) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest) GetParam() *SyncIdentifyRefundCaseResultDto {
+func (r TaobaordcaligeniusidentificationcaseresultupdateAPIRequest) GetParam() *SyncIdentifyRefundCaseResultDto {
 	return r._param
 }

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaDchainAoxiangItemDistributionDescribeAPIRequest 分销商品文描 API请求
+// AlibabadchainaoxiangitemdistributiondescribeAPIRequest 分销商品文描 API请求
 // alibaba.dchain.aoxiang.item.distribution.describe
 //
 // 分销商品文描
-type AlibabaDchainAoxiangItemDistributionDescribeAPIRequest struct {
+type AlibabadchainaoxiangitemdistributiondescribeAPIRequest struct {
 	model.Params
 	// 分销文描入参
 	_createItemDistributionRequest *MaterialRequest
 }
 
-// NewAlibabaDchainAoxiangItemDistributionDescribeRequest 初始化AlibabaDchainAoxiangItemDistributionDescribeAPIRequest对象
-func NewAlibabaDchainAoxiangItemDistributionDescribeRequest() *AlibabaDchainAoxiangItemDistributionDescribeAPIRequest {
-	return &AlibabaDchainAoxiangItemDistributionDescribeAPIRequest{
+// NewAlibabadchainaoxiangitemdistributiondescribeRequest 初始化AlibabadchainaoxiangitemdistributiondescribeAPIRequest对象
+func NewAlibabadchainaoxiangitemdistributiondescribeRequest() *AlibabadchainaoxiangitemdistributiondescribeAPIRequest {
+	return &AlibabadchainaoxiangitemdistributiondescribeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaDchainAoxiangItemDistributionDescribeAPIRequest) GetApiMethodName() string {
+func (r AlibabadchainaoxiangitemdistributiondescribeAPIRequest) GetApiMethodName() string {
 	return "alibaba.dchain.aoxiang.item.distribution.describe"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaDchainAoxiangItemDistributionDescribeAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabadchainaoxiangitemdistributiondescribeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaDchainAoxiangItemDistributionDescribeAPIRequest) GetRawParams() model.Params {
+func (r AlibabadchainaoxiangitemdistributiondescribeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCreateItemDistributionRequest is CreateItemDistributionRequest Setter
 // 分销文描入参
-func (r *AlibabaDchainAoxiangItemDistributionDescribeAPIRequest) SetCreateItemDistributionRequest(_createItemDistributionRequest *MaterialRequest) error {
+func (r *AlibabadchainaoxiangitemdistributiondescribeAPIRequest) SetCreateItemDistributionRequest(_createItemDistributionRequest *MaterialRequest) error {
 	r._createItemDistributionRequest = _createItemDistributionRequest
 	r.Set("create_item_distribution_request", _createItemDistributionRequest)
 	return nil
 }
 
 // GetCreateItemDistributionRequest CreateItemDistributionRequest Getter
-func (r AlibabaDchainAoxiangItemDistributionDescribeAPIRequest) GetCreateItemDistributionRequest() *MaterialRequest {
+func (r AlibabadchainaoxiangitemdistributiondescribeAPIRequest) GetCreateItemDistributionRequest() *MaterialRequest {
 	return r._createItemDistributionRequest
 }

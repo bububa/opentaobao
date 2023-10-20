@@ -1,7 +1,7 @@
 package util
 
-// AlibabaRetailShorturlGetResult 结构体
-type AlibabaRetailShorturlGetResult struct {
+// AlibabaretailshorturlgetResult 结构体
+type AlibabaretailshorturlgetResult struct {
 	// errorInfos
 	ErrorInfos []ErrorInfo `json:"error_infos,omitempty" xml:"error_infos>error_info,omitempty"`
 	// module

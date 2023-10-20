@@ -15,9 +15,9 @@ type TaobaotbkcoupongetAPIRequest struct {
 	// 带券ID与商品ID的加密串
 	_me string
 	// 商品ID
-	_itemid string
+	_itemId string
 	// 券ID
-	_activityid string
+	_activityId string
 }
 
 // NewTaobaotbkcoupongetRequest 初始化TaobaotbkcoupongetAPIRequest对象
@@ -57,28 +57,28 @@ func (r TaobaotbkcoupongetAPIRequest) GetMe() string {
 	return r._me
 }
 
-// SetItemid is Itemid Setter
+// SetItemId is ItemId Setter
 // 商品ID
-func (r *TaobaotbkcoupongetAPIRequest) SetItemid(_itemid string) error {
-	r._itemid = _itemid
-	r.Set("item_id", _itemid)
+func (r *TaobaotbkcoupongetAPIRequest) SetItemId(_itemId string) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
 	return nil
 }
 
-// GetItemid Itemid Getter
-func (r TaobaotbkcoupongetAPIRequest) GetItemid() string {
-	return r._itemid
+// GetItemId ItemId Getter
+func (r TaobaotbkcoupongetAPIRequest) GetItemId() string {
+	return r._itemId
 }
 
-// SetActivityid is Activityid Setter
+// SetActivityId is ActivityId Setter
 // 券ID
-func (r *TaobaotbkcoupongetAPIRequest) SetActivityid(_activityid string) error {
-	r._activityid = _activityid
-	r.Set("activity_id", _activityid)
+func (r *TaobaotbkcoupongetAPIRequest) SetActivityId(_activityId string) error {
+	r._activityId = _activityId
+	r.Set("activity_id", _activityId)
 	return nil
 }
 
-// GetActivityid Activityid Getter
-func (r TaobaotbkcoupongetAPIRequest) GetActivityid() string {
-	return r._activityid
+// GetActivityId ActivityId Getter
+func (r TaobaotbkcoupongetAPIRequest) GetActivityId() string {
+	return r._activityId
 }

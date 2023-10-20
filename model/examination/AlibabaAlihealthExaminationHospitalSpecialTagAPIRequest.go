@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest 体检机构获取特色服务标签 API请求
+// AlibabaalihealthexaminationhospitalspecialtagAPIRequest 体检机构获取特色服务标签 API请求
 // alibaba.alihealth.examination.hospital.special.tag
 //
 // 体检机构获取特色服务标签列表
-type AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest struct {
+type AlibabaalihealthexaminationhospitalspecialtagAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaAlihealthExaminationHospitalSpecialTagRequest 初始化AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest对象
-func NewAlibabaAlihealthExaminationHospitalSpecialTagRequest() *AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest {
-	return &AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest{
+// NewAlibabaalihealthexaminationhospitalspecialtagRequest 初始化AlibabaalihealthexaminationhospitalspecialtagAPIRequest对象
+func NewAlibabaalihealthexaminationhospitalspecialtagRequest() *AlibabaalihealthexaminationhospitalspecialtagAPIRequest {
+	return &AlibabaalihealthexaminationhospitalspecialtagAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthexaminationhospitalspecialtagAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.examination.hospital.special.tag"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthexaminationhospitalspecialtagAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthExaminationHospitalSpecialTagAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthexaminationhospitalspecialtagAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

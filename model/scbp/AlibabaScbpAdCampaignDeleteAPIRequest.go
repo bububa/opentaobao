@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpAdCampaignDeleteAPIRequest 删除计划 API请求
+// AlibabascbpadcampaigndeleteAPIRequest 删除计划 API请求
 // alibaba.scbp.ad.campaign.delete
 //
 // 删除计划
-type AlibabaScbpAdCampaignDeleteAPIRequest struct {
+type AlibabascbpadcampaigndeleteAPIRequest struct {
 	model.Params
 	// 用户信息
 	_topContext *TopContextDto
@@ -18,52 +18,52 @@ type AlibabaScbpAdCampaignDeleteAPIRequest struct {
 	_batchOperation *CampaignBatchOperationDto
 }
 
-// NewAlibabaScbpAdCampaignDeleteRequest 初始化AlibabaScbpAdCampaignDeleteAPIRequest对象
-func NewAlibabaScbpAdCampaignDeleteRequest() *AlibabaScbpAdCampaignDeleteAPIRequest {
-	return &AlibabaScbpAdCampaignDeleteAPIRequest{
+// NewAlibabascbpadcampaigndeleteRequest 初始化AlibabascbpadcampaigndeleteAPIRequest对象
+func NewAlibabascbpadcampaigndeleteRequest() *AlibabascbpadcampaigndeleteAPIRequest {
+	return &AlibabascbpadcampaigndeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdCampaignDeleteAPIRequest) GetApiMethodName() string {
+func (r AlibabascbpadcampaigndeleteAPIRequest) GetApiMethodName() string {
 	return "alibaba.scbp.ad.campaign.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdCampaignDeleteAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabascbpadcampaigndeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaScbpAdCampaignDeleteAPIRequest) GetRawParams() model.Params {
+func (r AlibabascbpadcampaigndeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopContext is TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdCampaignDeleteAPIRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabascbpadcampaigndeleteAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
 	r.Set("top_context", _topContext)
 	return nil
 }
 
 // GetTopContext TopContext Getter
-func (r AlibabaScbpAdCampaignDeleteAPIRequest) GetTopContext() *TopContextDto {
+func (r AlibabascbpadcampaigndeleteAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }
 
 // SetBatchOperation is BatchOperation Setter
 // 操作对象
-func (r *AlibabaScbpAdCampaignDeleteAPIRequest) SetBatchOperation(_batchOperation *CampaignBatchOperationDto) error {
+func (r *AlibabascbpadcampaigndeleteAPIRequest) SetBatchOperation(_batchOperation *CampaignBatchOperationDto) error {
 	r._batchOperation = _batchOperation
 	r.Set("batch_operation", _batchOperation)
 	return nil
 }
 
 // GetBatchOperation BatchOperation Getter
-func (r AlibabaScbpAdCampaignDeleteAPIRequest) GetBatchOperation() *CampaignBatchOperationDto {
+func (r AlibabascbpadcampaigndeleteAPIRequest) GetBatchOperation() *CampaignBatchOperationDto {
 	return r._batchOperation
 }

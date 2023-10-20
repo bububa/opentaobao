@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbrefund"
 )
 
-// TaobaoRefundGet 获取单笔退款详情
+// Taobaorefundget 获取单笔退款详情
 // taobao.refund.get
 //
 // 获取单笔退款详情
-func TaobaoRefundGet(clt *core.SDKClient, req *tbrefund.TaobaoRefundGetAPIRequest, session string) (*tbrefund.TaobaoRefundGetAPIResponse, error) {
-	var resp tbrefund.TaobaoRefundGetAPIResponse
+func Taobaorefundget(clt *core.SDKClient, req *tbrefund.TaobaorefundgetAPIRequest, session string) (*tbrefund.TaobaorefundgetAPIResponse, error) {
+	var resp tbrefund.TaobaorefundgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

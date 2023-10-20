@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest 更新团期库存 API请求
+// TaobaoalitriptravelfscrouteapiprojectinventoryupdateAPIRequest 更新团期库存 API请求
 // taobao.alitrip.travel.fsc.route.api.project.inventory.update
 //
 // 更新团期库存
-type TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest struct {
+type TaobaoalitriptravelfscrouteapiprojectinventoryupdateAPIRequest struct {
 	model.Params
 	// fscProjectInventoryUpdateRequest
 	_fscProjectInventoryUpdateRequest *FscProjectInventoryUpdateRequest
 }
 
-// NewTaobaoAlitripTravelFscRouteApiProjectInventoryUpdateRequest 初始化TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest对象
-func NewTaobaoAlitripTravelFscRouteApiProjectInventoryUpdateRequest() *TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest {
-	return &TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest{
+// NewTaobaoalitriptravelfscrouteapiprojectinventoryupdateRequest 初始化TaobaoalitriptravelfscrouteapiprojectinventoryupdateAPIRequest对象
+func NewTaobaoalitriptravelfscrouteapiprojectinventoryupdateRequest() *TaobaoalitriptravelfscrouteapiprojectinventoryupdateAPIRequest {
+	return &TaobaoalitriptravelfscrouteapiprojectinventoryupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest) GetApiMethodName() string {
+func (r TaobaoalitriptravelfscrouteapiprojectinventoryupdateAPIRequest) GetApiMethodName() string {
 	return "taobao.alitrip.travel.fsc.route.api.project.inventory.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoalitriptravelfscrouteapiprojectinventoryupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest) GetRawParams() model.Params {
+func (r TaobaoalitriptravelfscrouteapiprojectinventoryupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetFscProjectInventoryUpdateRequest is FscProjectInventoryUpdateRequest Setter
 // fscProjectInventoryUpdateRequest
-func (r *TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest) SetFscProjectInventoryUpdateRequest(_fscProjectInventoryUpdateRequest *FscProjectInventoryUpdateRequest) error {
+func (r *TaobaoalitriptravelfscrouteapiprojectinventoryupdateAPIRequest) SetFscProjectInventoryUpdateRequest(_fscProjectInventoryUpdateRequest *FscProjectInventoryUpdateRequest) error {
 	r._fscProjectInventoryUpdateRequest = _fscProjectInventoryUpdateRequest
 	r.Set("fsc_project_inventory_update_request", _fscProjectInventoryUpdateRequest)
 	return nil
 }
 
 // GetFscProjectInventoryUpdateRequest FscProjectInventoryUpdateRequest Getter
-func (r TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest) GetFscProjectInventoryUpdateRequest() *FscProjectInventoryUpdateRequest {
+func (r TaobaoalitriptravelfscrouteapiprojectinventoryupdateAPIRequest) GetFscProjectInventoryUpdateRequest() *FscProjectInventoryUpdateRequest {
 	return r._fscProjectInventoryUpdateRequest
 }

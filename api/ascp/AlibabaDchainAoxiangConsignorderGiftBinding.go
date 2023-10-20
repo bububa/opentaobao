@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// AlibabaDchainAoxiangConsignorderGiftBinding 赠品绑赠计算占用
+// Alibabadchainaoxiangconsignordergiftbinding 赠品绑赠计算占用
 // alibaba.dchain.aoxiang.consignorder.gift.binding
 //
 // 赠品绑赠计算占用
-func AlibabaDchainAoxiangConsignorderGiftBinding(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangConsignorderGiftBindingAPIRequest, session string) (*ascp.AlibabaDchainAoxiangConsignorderGiftBindingAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangConsignorderGiftBindingAPIResponse
+func Alibabadchainaoxiangconsignordergiftbinding(clt *core.SDKClient, req *ascp.AlibabadchainaoxiangconsignordergiftbindingAPIRequest, session string) (*ascp.AlibabadchainaoxiangconsignordergiftbindingAPIResponse, error) {
+	var resp ascp.AlibabadchainaoxiangconsignordergiftbindingAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

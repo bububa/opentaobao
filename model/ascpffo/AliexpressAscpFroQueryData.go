@@ -1,7 +1,7 @@
 package ascpffo
 
-// AliexpressAscpFroQueryData 结构体
-type AliexpressAscpFroQueryData struct {
+// AliexpressascpfroqueryData 结构体
+type AliexpressascpfroqueryData struct {
 	// 用户订单号
 	TradeOrderNo string `json:"trade_order_no,omitempty" xml:"trade_order_no,omitempty"`
 	// 履约单号

@@ -13,11 +13,11 @@ import (
 type TaobaotbkscinvitecodegetAPIRequest struct {
 	model.Params
 	// 渠道推广的物料类型
-	_relationapp string
+	_relationApp string
 	// 渠道关系ID
-	_relationid int64
+	_relationId int64
 	// 邀请码类型，1 - 渠道邀请，2 - 渠道裂变，3 -会员邀请
-	_codetype int64
+	_codeType int64
 }
 
 // NewTaobaotbkscinvitecodegetRequest 初始化TaobaotbkscinvitecodegetAPIRequest对象
@@ -44,41 +44,41 @@ func (r TaobaotbkscinvitecodegetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetRelationapp is Relationapp Setter
+// SetRelationApp is RelationApp Setter
 // 渠道推广的物料类型
-func (r *TaobaotbkscinvitecodegetAPIRequest) SetRelationapp(_relationapp string) error {
-	r._relationapp = _relationapp
-	r.Set("relation_app", _relationapp)
+func (r *TaobaotbkscinvitecodegetAPIRequest) SetRelationApp(_relationApp string) error {
+	r._relationApp = _relationApp
+	r.Set("relation_app", _relationApp)
 	return nil
 }
 
-// GetRelationapp Relationapp Getter
-func (r TaobaotbkscinvitecodegetAPIRequest) GetRelationapp() string {
-	return r._relationapp
+// GetRelationApp RelationApp Getter
+func (r TaobaotbkscinvitecodegetAPIRequest) GetRelationApp() string {
+	return r._relationApp
 }
 
-// SetRelationid is Relationid Setter
+// SetRelationId is RelationId Setter
 // 渠道关系ID
-func (r *TaobaotbkscinvitecodegetAPIRequest) SetRelationid(_relationid int64) error {
-	r._relationid = _relationid
-	r.Set("relation_id", _relationid)
+func (r *TaobaotbkscinvitecodegetAPIRequest) SetRelationId(_relationId int64) error {
+	r._relationId = _relationId
+	r.Set("relation_id", _relationId)
 	return nil
 }
 
-// GetRelationid Relationid Getter
-func (r TaobaotbkscinvitecodegetAPIRequest) GetRelationid() int64 {
-	return r._relationid
+// GetRelationId RelationId Getter
+func (r TaobaotbkscinvitecodegetAPIRequest) GetRelationId() int64 {
+	return r._relationId
 }
 
-// SetCodetype is Codetype Setter
+// SetCodeType is CodeType Setter
 // 邀请码类型，1 - 渠道邀请，2 - 渠道裂变，3 -会员邀请
-func (r *TaobaotbkscinvitecodegetAPIRequest) SetCodetype(_codetype int64) error {
-	r._codetype = _codetype
-	r.Set("code_type", _codetype)
+func (r *TaobaotbkscinvitecodegetAPIRequest) SetCodeType(_codeType int64) error {
+	r._codeType = _codeType
+	r.Set("code_type", _codeType)
 	return nil
 }
 
-// GetCodetype Codetype Getter
-func (r TaobaotbkscinvitecodegetAPIRequest) GetCodetype() int64 {
-	return r._codetype
+// GetCodeType CodeType Getter
+func (r TaobaotbkscinvitecodegetAPIRequest) GetCodeType() int64 {
+	return r._codeType
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-// TaobaoFenxiaoDiscountsGet 获取折扣信息
+// Taobaofenxiaodiscountsget 获取折扣信息
 // taobao.fenxiao.discounts.get
 //
 // 查询折扣信息
-func TaobaoFenxiaoDiscountsGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoDiscountsGetAPIRequest, session string) (*fenxiao.TaobaoFenxiaoDiscountsGetAPIResponse, error) {
-	var resp fenxiao.TaobaoFenxiaoDiscountsGetAPIResponse
+func Taobaofenxiaodiscountsget(clt *core.SDKClient, req *fenxiao.TaobaofenxiaodiscountsgetAPIRequest, session string) (*fenxiao.TaobaofenxiaodiscountsgetAPIResponse, error) {
+	var resp fenxiao.TaobaofenxiaodiscountsgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

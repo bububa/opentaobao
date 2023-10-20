@@ -1,7 +1,7 @@
 package wdk
 
-// UniqueDiscountCodeBO 结构体
-type UniqueDiscountCodeBO struct {
+// UniqueDiscountCodeBo 结构体
+type UniqueDiscountCodeBo struct {
 	// 唯一码
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 过期时间

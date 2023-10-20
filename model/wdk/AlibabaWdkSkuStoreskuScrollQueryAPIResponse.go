@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkSkuStoreskuScrollQueryAPIResponse 门店商品批量查询接口 API返回值
+// AlibabawdkskustoreskuscrollqueryAPIResponse 门店商品批量查询接口 API返回值
 // alibaba.wdk.sku.storesku.scroll.query
 //
 // 提供门店商品批量查询接口
-type AlibabaWdkSkuStoreskuScrollQueryAPIResponse struct {
+type AlibabawdkskustoreskuscrollqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaWdkSkuStoreskuScrollQueryAPIResponseModel
+	AlibabawdkskustoreskuscrollqueryAPIResponseModel
 }
 
-// AlibabaWdkSkuStoreskuScrollQueryAPIResponseModel is 门店商品批量查询接口 成功返回结果
-type AlibabaWdkSkuStoreskuScrollQueryAPIResponseModel struct {
+// AlibabawdkskustoreskuscrollqueryAPIResponseModel is 门店商品批量查询接口 成功返回结果
+type AlibabawdkskustoreskuscrollqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_sku_storesku_scroll_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

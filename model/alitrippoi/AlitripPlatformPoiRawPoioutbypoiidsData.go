@@ -1,7 +1,7 @@
 package alitrippoi
 
-// AlitripPlatformPoiRawPoioutbypoiidsData 结构体
-type AlitripPlatformPoiRawPoioutbypoiidsData struct {
+// AlitripplatformpoirawpoioutbypoiidsData 结构体
+type AlitripplatformpoirawpoioutbypoiidsData struct {
 	// poiId
 	SourceId string `json:"source_id,omitempty" xml:"source_id,omitempty"`
 	// 行政区划树名

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/legalcase"
 )
 
-// AlibabaLegalCaseStandpointSavestandpoint 新增反馈口径
+// Alibabalegalcasestandpointsavestandpoint 新增反馈口径
 // alibaba.legal.case.standpoint.savestandpoint
 //
 // 新增反馈口径 ,从外部接受反馈的口径
-func AlibabaLegalCaseStandpointSavestandpoint(clt *core.SDKClient, req *legalcase.AlibabaLegalCaseStandpointSavestandpointAPIRequest, session string) (*legalcase.AlibabaLegalCaseStandpointSavestandpointAPIResponse, error) {
-	var resp legalcase.AlibabaLegalCaseStandpointSavestandpointAPIResponse
+func Alibabalegalcasestandpointsavestandpoint(clt *core.SDKClient, req *legalcase.AlibabalegalcasestandpointsavestandpointAPIRequest, session string) (*legalcase.AlibabalegalcasestandpointsavestandpointAPIResponse, error) {
+	var resp legalcase.AlibabalegalcasestandpointsavestandpointAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaSscSupplyplatformServicestoreSaveAPIRequest 保存网点 API请求
+// AlibabasscsupplyplatformservicestoresaveAPIRequest 保存网点 API请求
 // alibaba.ssc.supplyplatform.servicestore.save
 //
 // 网点创建、修改
-type AlibabaSscSupplyplatformServicestoreSaveAPIRequest struct {
+type AlibabasscsupplyplatformservicestoresaveAPIRequest struct {
 	model.Params
 	// 入参
 	_serviceStoreSaveReq *ServiceStoreSaveForTopReqDto
 }
 
-// NewAlibabaSscSupplyplatformServicestoreSaveRequest 初始化AlibabaSscSupplyplatformServicestoreSaveAPIRequest对象
-func NewAlibabaSscSupplyplatformServicestoreSaveRequest() *AlibabaSscSupplyplatformServicestoreSaveAPIRequest {
-	return &AlibabaSscSupplyplatformServicestoreSaveAPIRequest{
+// NewAlibabasscsupplyplatformservicestoresaveRequest 初始化AlibabasscsupplyplatformservicestoresaveAPIRequest对象
+func NewAlibabasscsupplyplatformservicestoresaveRequest() *AlibabasscsupplyplatformservicestoresaveAPIRequest {
+	return &AlibabasscsupplyplatformservicestoresaveAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaSscSupplyplatformServicestoreSaveAPIRequest) GetApiMethodName() string {
+func (r AlibabasscsupplyplatformservicestoresaveAPIRequest) GetApiMethodName() string {
 	return "alibaba.ssc.supplyplatform.servicestore.save"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaSscSupplyplatformServicestoreSaveAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabasscsupplyplatformservicestoresaveAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaSscSupplyplatformServicestoreSaveAPIRequest) GetRawParams() model.Params {
+func (r AlibabasscsupplyplatformservicestoresaveAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetServiceStoreSaveReq is ServiceStoreSaveReq Setter
 // 入参
-func (r *AlibabaSscSupplyplatformServicestoreSaveAPIRequest) SetServiceStoreSaveReq(_serviceStoreSaveReq *ServiceStoreSaveForTopReqDto) error {
+func (r *AlibabasscsupplyplatformservicestoresaveAPIRequest) SetServiceStoreSaveReq(_serviceStoreSaveReq *ServiceStoreSaveForTopReqDto) error {
 	r._serviceStoreSaveReq = _serviceStoreSaveReq
 	r.Set("service_store_save_req", _serviceStoreSaveReq)
 	return nil
 }
 
 // GetServiceStoreSaveReq ServiceStoreSaveReq Getter
-func (r AlibabaSscSupplyplatformServicestoreSaveAPIRequest) GetServiceStoreSaveReq() *ServiceStoreSaveForTopReqDto {
+func (r AlibabasscsupplyplatformservicestoresaveAPIRequest) GetServiceStoreSaveReq() *ServiceStoreSaveForTopReqDto {
 	return r._serviceStoreSaveReq
 }

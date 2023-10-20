@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWlbImportThreeplOfflineConsignAPIRequest 3PL直邮线下发货 API请求
+// TaobaowlbimportthreeplofflineconsignAPIRequest 3PL直邮线下发货 API请求
 // taobao.wlb.import.threepl.offline.consign
 //
 // 菜鸟认证直邮线下发货
-type TaobaoWlbImportThreeplOfflineConsignAPIRequest struct {
+type TaobaowlbimportthreeplofflineconsignAPIRequest struct {
 	model.Params
 	// 资源code
 	_resCode string
@@ -24,91 +24,91 @@ type TaobaoWlbImportThreeplOfflineConsignAPIRequest struct {
 	_fromId int64
 }
 
-// NewTaobaoWlbImportThreeplOfflineConsignRequest 初始化TaobaoWlbImportThreeplOfflineConsignAPIRequest对象
-func NewTaobaoWlbImportThreeplOfflineConsignRequest() *TaobaoWlbImportThreeplOfflineConsignAPIRequest {
-	return &TaobaoWlbImportThreeplOfflineConsignAPIRequest{
+// NewTaobaowlbimportthreeplofflineconsignRequest 初始化TaobaowlbimportthreeplofflineconsignAPIRequest对象
+func NewTaobaowlbimportthreeplofflineconsignRequest() *TaobaowlbimportthreeplofflineconsignAPIRequest {
+	return &TaobaowlbimportthreeplofflineconsignAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetApiMethodName() string {
+func (r TaobaowlbimportthreeplofflineconsignAPIRequest) GetApiMethodName() string {
 	return "taobao.wlb.import.threepl.offline.consign"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaowlbimportthreeplofflineconsignAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetRawParams() model.Params {
+func (r TaobaowlbimportthreeplofflineconsignAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetResCode is ResCode Setter
 // 资源code
-func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetResCode(_resCode string) error {
+func (r *TaobaowlbimportthreeplofflineconsignAPIRequest) SetResCode(_resCode string) error {
 	r._resCode = _resCode
 	r.Set("res_code", _resCode)
 	return nil
 }
 
 // GetResCode ResCode Getter
-func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetResCode() string {
+func (r TaobaowlbimportthreeplofflineconsignAPIRequest) GetResCode() string {
 	return r._resCode
 }
 
 // SetWaybillNo is WaybillNo Setter
 // 运单号
-func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetWaybillNo(_waybillNo string) error {
+func (r *TaobaowlbimportthreeplofflineconsignAPIRequest) SetWaybillNo(_waybillNo string) error {
 	r._waybillNo = _waybillNo
 	r.Set("waybill_no", _waybillNo)
 	return nil
 }
 
 // GetWaybillNo WaybillNo Getter
-func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetWaybillNo() string {
+func (r TaobaowlbimportthreeplofflineconsignAPIRequest) GetWaybillNo() string {
 	return r._waybillNo
 }
 
 // SetTradeId is TradeId Setter
 // 交易单号
-func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetTradeId(_tradeId int64) error {
+func (r *TaobaowlbimportthreeplofflineconsignAPIRequest) SetTradeId(_tradeId int64) error {
 	r._tradeId = _tradeId
 	r.Set("trade_id", _tradeId)
 	return nil
 }
 
 // GetTradeId TradeId Getter
-func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetTradeId() int64 {
+func (r TaobaowlbimportthreeplofflineconsignAPIRequest) GetTradeId() int64 {
 	return r._tradeId
 }
 
 // SetResId is ResId Setter
 // 资源id
-func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetResId(_resId int64) error {
+func (r *TaobaowlbimportthreeplofflineconsignAPIRequest) SetResId(_resId int64) error {
 	r._resId = _resId
 	r.Set("res_id", _resId)
 	return nil
 }
 
 // GetResId ResId Getter
-func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetResId() int64 {
+func (r TaobaowlbimportthreeplofflineconsignAPIRequest) GetResId() int64 {
 	return r._resId
 }
 
 // SetFromId is FromId Setter
 // 发件人地址库id
-func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetFromId(_fromId int64) error {
+func (r *TaobaowlbimportthreeplofflineconsignAPIRequest) SetFromId(_fromId int64) error {
 	r._fromId = _fromId
 	r.Set("from_id", _fromId)
 	return nil
 }
 
 // GetFromId FromId Getter
-func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetFromId() int64 {
+func (r TaobaowlbimportthreeplofflineconsignAPIRequest) GetFromId() int64 {
 	return r._fromId
 }

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaHealthNrCepOrderQueryAPIRequest 订单详情查询接口 API请求
+// AlibabahealthnrceporderqueryAPIRequest 订单详情查询接口 API请求
 // alibaba.health.nr.cep.order.query
 //
 // 订单详情查询接口
-type AlibabaHealthNrCepOrderQueryAPIRequest struct {
+type AlibabahealthnrceporderqueryAPIRequest struct {
 	model.Params
 	// 订单号
 	_orderId int64
 }
 
-// NewAlibabaHealthNrCepOrderQueryRequest 初始化AlibabaHealthNrCepOrderQueryAPIRequest对象
-func NewAlibabaHealthNrCepOrderQueryRequest() *AlibabaHealthNrCepOrderQueryAPIRequest {
-	return &AlibabaHealthNrCepOrderQueryAPIRequest{
+// NewAlibabahealthnrceporderqueryRequest 初始化AlibabahealthnrceporderqueryAPIRequest对象
+func NewAlibabahealthnrceporderqueryRequest() *AlibabahealthnrceporderqueryAPIRequest {
+	return &AlibabahealthnrceporderqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaHealthNrCepOrderQueryAPIRequest) GetApiMethodName() string {
+func (r AlibabahealthnrceporderqueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.health.nr.cep.order.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaHealthNrCepOrderQueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabahealthnrceporderqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaHealthNrCepOrderQueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabahealthnrceporderqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOrderId is OrderId Setter
 // 订单号
-func (r *AlibabaHealthNrCepOrderQueryAPIRequest) SetOrderId(_orderId int64) error {
+func (r *AlibabahealthnrceporderqueryAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
 	r.Set("order_id", _orderId)
 	return nil
 }
 
 // GetOrderId OrderId Getter
-func (r AlibabaHealthNrCepOrderQueryAPIRequest) GetOrderId() int64 {
+func (r AlibabahealthnrceporderqueryAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }

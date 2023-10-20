@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// TaobaoSubwayCreativeOfflineLayeredfind 获取创意离线报表周期30天
+// Taobaosubwaycreativeofflinelayeredfind 获取创意离线报表周期30天
 // taobao.subway.creative.offline.layeredfind
 //
 // 获取创意离线报表
-func TaobaoSubwayCreativeOfflineLayeredfind(clt *core.SDKClient, req *simba.TaobaoSubwayCreativeOfflineLayeredfindAPIRequest, session string) (*simba.TaobaoSubwayCreativeOfflineLayeredfindAPIResponse, error) {
-	var resp simba.TaobaoSubwayCreativeOfflineLayeredfindAPIResponse
+func Taobaosubwaycreativeofflinelayeredfind(clt *core.SDKClient, req *simba.TaobaosubwaycreativeofflinelayeredfindAPIRequest, session string) (*simba.TaobaosubwaycreativeofflinelayeredfindAPIResponse, error) {
+	var resp simba.TaobaosubwaycreativeofflinelayeredfindAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMoziAclAppGetpermisspkgsAPIResponse 分页获取应用的权限套餐 API返回值
+// AlibabamoziaclappgetpermisspkgsAPIResponse 分页获取应用的权限套餐 API返回值
 // alibaba.mozi.acl.app.getpermisspkgs
 //
 // 分页查询应用下的权限套餐列表
-type AlibabaMoziAclAppGetpermisspkgsAPIResponse struct {
+type AlibabamoziaclappgetpermisspkgsAPIResponse struct {
 	model.CommonResponse
-	AlibabaMoziAclAppGetpermisspkgsAPIResponseModel
+	AlibabamoziaclappgetpermisspkgsAPIResponseModel
 }
 
-// AlibabaMoziAclAppGetpermisspkgsAPIResponseModel is 分页获取应用的权限套餐 成功返回结果
-type AlibabaMoziAclAppGetpermisspkgsAPIResponseModel struct {
+// AlibabamoziaclappgetpermisspkgsAPIResponseModel is 分页获取应用的权限套餐 成功返回结果
+type AlibabamoziaclappgetpermisspkgsAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mozi_acl_app_getpermisspkgs_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMosBrandCoproductGroupUserCountAPIResponse 按照查询条件统计总数 API返回值
+// AlibabamosbrandcoproductgroupusercountAPIResponse 按照查询条件统计总数 API返回值
 // alibaba.mos.brand.coproduct.group.user.count
 //
 // 按照查询条件统计总数
-type AlibabaMosBrandCoproductGroupUserCountAPIResponse struct {
+type AlibabamosbrandcoproductgroupusercountAPIResponse struct {
 	model.CommonResponse
-	AlibabaMosBrandCoproductGroupUserCountAPIResponseModel
+	AlibabamosbrandcoproductgroupusercountAPIResponseModel
 }
 
-// AlibabaMosBrandCoproductGroupUserCountAPIResponseModel is 按照查询条件统计总数 成功返回结果
-type AlibabaMosBrandCoproductGroupUserCountAPIResponseModel struct {
+// AlibabamosbrandcoproductgroupusercountAPIResponseModel is 按照查询条件统计总数 成功返回结果
+type AlibabamosbrandcoproductgroupusercountAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mos_brand_coproduct_group_user_count_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

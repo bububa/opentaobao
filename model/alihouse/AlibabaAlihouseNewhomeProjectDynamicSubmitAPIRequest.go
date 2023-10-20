@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseNewhomeProjectDynamicSubmitAPIRequest 提交楼盘快讯 API请求
+// AlibabaalihousenewhomeprojectdynamicsubmitAPIRequest 提交楼盘快讯 API请求
 // alibaba.alihouse.newhome.project.dynamic.submit
 //
 // 提交楼盘快讯
-type AlibabaAlihouseNewhomeProjectDynamicSubmitAPIRequest struct {
+type AlibabaalihousenewhomeprojectdynamicsubmitAPIRequest struct {
 	model.Params
 	// 楼盘动态列表
 	_projectDynamics []ProjectDynamicDto
 }
 
-// NewAlibabaAlihouseNewhomeProjectDynamicSubmitRequest 初始化AlibabaAlihouseNewhomeProjectDynamicSubmitAPIRequest对象
-func NewAlibabaAlihouseNewhomeProjectDynamicSubmitRequest() *AlibabaAlihouseNewhomeProjectDynamicSubmitAPIRequest {
-	return &AlibabaAlihouseNewhomeProjectDynamicSubmitAPIRequest{
+// NewAlibabaalihousenewhomeprojectdynamicsubmitRequest 初始化AlibabaalihousenewhomeprojectdynamicsubmitAPIRequest对象
+func NewAlibabaalihousenewhomeprojectdynamicsubmitRequest() *AlibabaalihousenewhomeprojectdynamicsubmitAPIRequest {
+	return &AlibabaalihousenewhomeprojectdynamicsubmitAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeProjectDynamicSubmitAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihousenewhomeprojectdynamicsubmitAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.newhome.project.dynamic.submit"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectDynamicSubmitAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihousenewhomeprojectdynamicsubmitAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihouseNewhomeProjectDynamicSubmitAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihousenewhomeprojectdynamicsubmitAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetProjectDynamics is ProjectDynamics Setter
 // 楼盘动态列表
-func (r *AlibabaAlihouseNewhomeProjectDynamicSubmitAPIRequest) SetProjectDynamics(_projectDynamics []ProjectDynamicDto) error {
+func (r *AlibabaalihousenewhomeprojectdynamicsubmitAPIRequest) SetProjectDynamics(_projectDynamics []ProjectDynamicDto) error {
 	r._projectDynamics = _projectDynamics
 	r.Set("project_dynamics", _projectDynamics)
 	return nil
 }
 
 // GetProjectDynamics ProjectDynamics Getter
-func (r AlibabaAlihouseNewhomeProjectDynamicSubmitAPIRequest) GetProjectDynamics() []ProjectDynamicDto {
+func (r AlibabaalihousenewhomeprojectdynamicsubmitAPIRequest) GetProjectDynamics() []ProjectDynamicDto {
 	return r._projectDynamics
 }

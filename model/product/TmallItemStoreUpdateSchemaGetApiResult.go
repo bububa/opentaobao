@@ -1,7 +1,7 @@
 package product
 
-// TmallItemStoreUpdateSchemaGetApiResult 结构体
-type TmallItemStoreUpdateSchemaGetApiResult struct {
+// TmallitemstoreupdateschemagetApiResult 结构体
+type TmallitemstoreupdateschemagetApiResult struct {
 	// 错误信息
 	ErMsg string `json:"er_msg,omitempty" xml:"er_msg,omitempty"`
 	// 错误码

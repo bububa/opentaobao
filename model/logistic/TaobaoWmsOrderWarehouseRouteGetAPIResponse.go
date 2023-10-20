@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWmsOrderWarehouseRouteGetAPIResponse 获取订单仓库路由信息 API返回值
+// TaobaowmsorderwarehouseroutegetAPIResponse 获取订单仓库路由信息 API返回值
 // taobao.wms.order.warehouse.route.get
 //
 // 获取订单仓库路由信息
-type TaobaoWmsOrderWarehouseRouteGetAPIResponse struct {
+type TaobaowmsorderwarehouseroutegetAPIResponse struct {
 	model.CommonResponse
-	TaobaoWmsOrderWarehouseRouteGetAPIResponseModel
+	TaobaowmsorderwarehouseroutegetAPIResponseModel
 }
 
-// TaobaoWmsOrderWarehouseRouteGetAPIResponseModel is 获取订单仓库路由信息 成功返回结果
-type TaobaoWmsOrderWarehouseRouteGetAPIResponseModel struct {
+// TaobaowmsorderwarehouseroutegetAPIResponseModel is 获取订单仓库路由信息 成功返回结果
+type TaobaowmsorderwarehouseroutegetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wms_order_warehouse_route_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

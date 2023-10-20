@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/eleenterpriseordernew"
 )
 
-// AlibabaEleEnterpriseOrdernewGettrackinginfo 订单配送信息跟踪
+// Alibabaeleenterpriseordernewgettrackinginfo 订单配送信息跟踪
 // alibaba.ele.enterprise.ordernew.gettrackinginfo
 //
 // 订单配送信息跟踪
-func AlibabaEleEnterpriseOrdernewGettrackinginfo(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest, session string) (*eleenterpriseordernew.AlibabaEleEnterpriseOrdernewGettrackinginfoAPIResponse, error) {
-	var resp eleenterpriseordernew.AlibabaEleEnterpriseOrdernewGettrackinginfoAPIResponse
+func Alibabaeleenterpriseordernewgettrackinginfo(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaeleenterpriseordernewgettrackinginfoAPIRequest, session string) (*eleenterpriseordernew.AlibabaeleenterpriseordernewgettrackinginfoAPIResponse, error) {
+	var resp eleenterpriseordernew.AlibabaeleenterpriseordernewgettrackinginfoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

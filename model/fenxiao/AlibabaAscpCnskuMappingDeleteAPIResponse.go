@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAscpCnskuMappingDeleteAPIResponse 货品关系解绑 API返回值
+// AlibabaascpcnskumappingdeleteAPIResponse 货品关系解绑 API返回值
 // alibaba.ascp.cnsku.mapping.delete
 //
 // 货品关系解绑
-type AlibabaAscpCnskuMappingDeleteAPIResponse struct {
+type AlibabaascpcnskumappingdeleteAPIResponse struct {
 	model.CommonResponse
-	AlibabaAscpCnskuMappingDeleteAPIResponseModel
+	AlibabaascpcnskumappingdeleteAPIResponseModel
 }
 
-// AlibabaAscpCnskuMappingDeleteAPIResponseModel is 货品关系解绑 成功返回结果
-type AlibabaAscpCnskuMappingDeleteAPIResponseModel struct {
+// AlibabaascpcnskumappingdeleteAPIResponseModel is 货品关系解绑 成功返回结果
+type AlibabaascpcnskumappingdeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ascp_cnsku_mapping_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

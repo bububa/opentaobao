@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkUmsInbound 入库-ERP下发单
+// Alibabawdkumsinbound 入库-ERP下发单
 // alibaba.wdk.ums.inbound
 //
 // 入库-ERP下发单
-func AlibabaWdkUmsInbound(clt *core.SDKClient, req *wdk.AlibabaWdkUmsInboundAPIRequest, session string) (*wdk.AlibabaWdkUmsInboundAPIResponse, error) {
-	var resp wdk.AlibabaWdkUmsInboundAPIResponse
+func Alibabawdkumsinbound(clt *core.SDKClient, req *wdk.AlibabawdkumsinboundAPIRequest, session string) (*wdk.AlibabawdkumsinboundAPIResponse, error) {
+	var resp wdk.AlibabawdkumsinboundAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

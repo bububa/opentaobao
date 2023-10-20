@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealth2"
 )
 
-// TaobaoTradeDrugRefuseorder 阿里健康020拒单
+// Taobaotradedrugrefuseorder 阿里健康020拒单
 // taobao.trade.drug.refuseorder
 //
 // 阿里健康020拒单
-func TaobaoTradeDrugRefuseorder(clt *core.SDKClient, req *alihealth2.TaobaoTradeDrugRefuseorderAPIRequest, session string) (*alihealth2.TaobaoTradeDrugRefuseorderAPIResponse, error) {
-	var resp alihealth2.TaobaoTradeDrugRefuseorderAPIResponse
+func Taobaotradedrugrefuseorder(clt *core.SDKClient, req *alihealth2.TaobaotradedrugrefuseorderAPIRequest, session string) (*alihealth2.TaobaotradedrugrefuseorderAPIResponse, error) {
+	var resp alihealth2.TaobaotradedrugrefuseorderAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

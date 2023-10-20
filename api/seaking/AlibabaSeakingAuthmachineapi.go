@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/seaking"
 )
 
-// AlibabaSeakingAuthmachineapi 机翻Api授权
+// Alibabaseakingauthmachineapi 机翻Api授权
 // alibaba.seaking.authmachineapi
 //
 // 机翻Api授权
-func AlibabaSeakingAuthmachineapi(clt *core.SDKClient, req *seaking.AlibabaSeakingAuthmachineapiAPIRequest, session string) (*seaking.AlibabaSeakingAuthmachineapiAPIResponse, error) {
-	var resp seaking.AlibabaSeakingAuthmachineapiAPIResponse
+func Alibabaseakingauthmachineapi(clt *core.SDKClient, req *seaking.AlibabaseakingauthmachineapiAPIRequest, session string) (*seaking.AlibabaseakingauthmachineapiAPIResponse, error) {
+	var resp seaking.AlibabaseakingauthmachineapiAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

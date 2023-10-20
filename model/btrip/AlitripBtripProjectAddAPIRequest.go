@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripBtripProjectAddAPIRequest 添加项目 API请求
+// AlitripbtripprojectaddAPIRequest 添加项目 API请求
 // alitrip.btrip.project.add
 //
 // 添加项目
-type AlitripBtripProjectAddAPIRequest struct {
+type AlitripbtripprojectaddAPIRequest struct {
 	model.Params
 	// 请求对象
 	_rq *OpenProjectRq
 }
 
-// NewAlitripBtripProjectAddRequest 初始化AlitripBtripProjectAddAPIRequest对象
-func NewAlitripBtripProjectAddRequest() *AlitripBtripProjectAddAPIRequest {
-	return &AlitripBtripProjectAddAPIRequest{
+// NewAlitripbtripprojectaddRequest 初始化AlitripbtripprojectaddAPIRequest对象
+func NewAlitripbtripprojectaddRequest() *AlitripbtripprojectaddAPIRequest {
+	return &AlitripbtripprojectaddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripBtripProjectAddAPIRequest) GetApiMethodName() string {
+func (r AlitripbtripprojectaddAPIRequest) GetApiMethodName() string {
 	return "alitrip.btrip.project.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripBtripProjectAddAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripbtripprojectaddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripBtripProjectAddAPIRequest) GetRawParams() model.Params {
+func (r AlitripbtripprojectaddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRq is Rq Setter
 // 请求对象
-func (r *AlitripBtripProjectAddAPIRequest) SetRq(_rq *OpenProjectRq) error {
+func (r *AlitripbtripprojectaddAPIRequest) SetRq(_rq *OpenProjectRq) error {
 	r._rq = _rq
 	r.Set("rq", _rq)
 	return nil
 }
 
 // GetRq Rq Getter
-func (r AlitripBtripProjectAddAPIRequest) GetRq() *OpenProjectRq {
+func (r AlitripbtripprojectaddAPIRequest) GetRq() *OpenProjectRq {
 	return r._rq
 }

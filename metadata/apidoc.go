@@ -6,13 +6,8 @@ import (
 	"log"
 	"strings"
 
-	"golang.org/x/text/cases"
-	"golang.org/x/text/language"
-
 	"github.com/bububa/opentaobao/metadata/util"
 )
-
-var caser = cases.Title(language.Und, cases.NoLower)
 
 // ApiParamType 淘宝API文档字段类型
 type ApiParamType = string
@@ -90,7 +85,7 @@ func (d ApiDoc) Filename() string {
 
 // Title 获取淘宝API文档对应golang API名
 func (d ApiDoc) Title() string {
-	name := caser.String(strings.ReplaceAll(d.Name, "-", "_"))
+	name := util.UpperCamelCase(strings.ReplaceAll(d.Name, "-", "_"))
 	return strings.TrimSpace(strings.ReplaceAll(name, ".", ""))
 }
 
@@ -150,7 +145,8 @@ type ApiParam struct {
 
 // TplParam 转化为API模版参数结构体
 func (p ApiParam) TplParam(apiName string) TplParam {
-	name := strings.ReplaceAll(caser.String(strings.ReplaceAll(p.Name, "_", ".")), ".", "")
+	// name := strings.ReplaceAll(strings.Title(strings.ReplaceAll(p.Name, "_", ".")), ".", "")
+	name := util.UpperCamelCase(strings.ReplaceAll(p.Name, ".", "_"))
 	param := TplParam{
 		Name:     name,
 		Label:    strings.ToLower(string(name[0])) + name[1:],
@@ -182,7 +178,7 @@ func (p ApiParam) TplParam(apiName string) TplParam {
 	case JSON_PARAM_TYPE:
 		param.Type = "string"
 	default:
-		paramType = caser.String(paramType)
+		paramType = util.UpperCamelCase(paramType)
 		replaceMp := map[string]string{
 			"DTO": "Dto",
 			"DTo": "Dto",

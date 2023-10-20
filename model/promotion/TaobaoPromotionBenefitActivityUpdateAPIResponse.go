@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoPromotionBenefitActivityUpdateAPIResponse 修改关联的活动权益 API返回值
+// TaobaopromotionbenefitactivityupdateAPIResponse 修改关联的活动权益 API返回值
 // taobao.promotion.benefit.activity.update
 //
 // 修改卖家活动中关联的对应的权益。
-type TaobaoPromotionBenefitActivityUpdateAPIResponse struct {
+type TaobaopromotionbenefitactivityupdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoPromotionBenefitActivityUpdateAPIResponseModel
+	TaobaopromotionbenefitactivityupdateAPIResponseModel
 }
 
-// TaobaoPromotionBenefitActivityUpdateAPIResponseModel is 修改关联的活动权益 成功返回结果
-type TaobaoPromotionBenefitActivityUpdateAPIResponseModel struct {
+// TaobaopromotionbenefitactivityupdateAPIResponseModel is 修改关联的活动权益 成功返回结果
+type TaobaopromotionbenefitactivityupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotion_benefit_activity_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

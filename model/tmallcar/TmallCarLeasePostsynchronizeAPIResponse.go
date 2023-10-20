@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallCarLeasePostsynchronizeAPIResponse 天猫开新车租后信息同步 API返回值
+// TmallcarleasepostsynchronizeAPIResponse 天猫开新车租后信息同步 API返回值
 // tmall.car.lease.postsynchronize
 //
 // 商家同步天猫开新车租后方案
-type TmallCarLeasePostsynchronizeAPIResponse struct {
+type TmallcarleasepostsynchronizeAPIResponse struct {
 	model.CommonResponse
-	TmallCarLeasePostsynchronizeAPIResponseModel
+	TmallcarleasepostsynchronizeAPIResponseModel
 }
 
-// TmallCarLeasePostsynchronizeAPIResponseModel is 天猫开新车租后信息同步 成功返回结果
-type TmallCarLeasePostsynchronizeAPIResponseModel struct {
+// TmallcarleasepostsynchronizeAPIResponseModel is 天猫开新车租后信息同步 成功返回结果
+type TmallcarleasepostsynchronizeAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_car_lease_postsynchronize_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/jym"
 )
 
-// TaobaoJymMemberRealnameVerifyWithoutuid 用户实名认证
+// Taobaojymmemberrealnameverifywithoutuid 用户实名认证
 // taobao.jym.member.realname.verify.withoutuid
 //
 // 开放用户实名认证接口使用
-func TaobaoJymMemberRealnameVerifyWithoutuid(clt *core.SDKClient, req *jym.TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest, session string) (*jym.TaobaoJymMemberRealnameVerifyWithoutuidAPIResponse, error) {
-	var resp jym.TaobaoJymMemberRealnameVerifyWithoutuidAPIResponse
+func Taobaojymmemberrealnameverifywithoutuid(clt *core.SDKClient, req *jym.TaobaojymmemberrealnameverifywithoutuidAPIRequest, session string) (*jym.TaobaojymmemberrealnameverifywithoutuidAPIResponse, error) {
+	var resp jym.TaobaojymmemberrealnameverifywithoutuidAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

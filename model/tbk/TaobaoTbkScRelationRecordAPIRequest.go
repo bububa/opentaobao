@@ -13,15 +13,15 @@ import (
 type TaobaotbkscrelationrecordAPIRequest struct {
 	model.Params
 	// 淘宝客自有私域用户自定义标记，如自有私域系统账号标记等
-	_externalid string
+	_externalId string
 	// 会员备案授权后，跳转的目标页地址
-	_redirecturl string
+	_redirectUrl string
 	// 淘宝客其他平台私域用户自定义标记，1-微信、2-微博、3-抖音、4-快手、5-QQ，0-其他
-	_externaltype int64
+	_externalType int64
 	// 授权类型，选2时可用于更新外部用户标记，默认1：1-新绑，2-更新
-	_optype int64
+	_opType int64
 	// 人群标签ID，用户备案授权后会自动添加到该人群
-	_ucrowdid int64
+	_ucrowdId int64
 }
 
 // NewTaobaotbkscrelationrecordRequest 初始化TaobaotbkscrelationrecordAPIRequest对象
@@ -48,67 +48,67 @@ func (r TaobaotbkscrelationrecordAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetExternalid is Externalid Setter
+// SetExternalId is ExternalId Setter
 // 淘宝客自有私域用户自定义标记，如自有私域系统账号标记等
-func (r *TaobaotbkscrelationrecordAPIRequest) SetExternalid(_externalid string) error {
-	r._externalid = _externalid
-	r.Set("external_id", _externalid)
+func (r *TaobaotbkscrelationrecordAPIRequest) SetExternalId(_externalId string) error {
+	r._externalId = _externalId
+	r.Set("external_id", _externalId)
 	return nil
 }
 
-// GetExternalid Externalid Getter
-func (r TaobaotbkscrelationrecordAPIRequest) GetExternalid() string {
-	return r._externalid
+// GetExternalId ExternalId Getter
+func (r TaobaotbkscrelationrecordAPIRequest) GetExternalId() string {
+	return r._externalId
 }
 
-// SetRedirecturl is Redirecturl Setter
+// SetRedirectUrl is RedirectUrl Setter
 // 会员备案授权后，跳转的目标页地址
-func (r *TaobaotbkscrelationrecordAPIRequest) SetRedirecturl(_redirecturl string) error {
-	r._redirecturl = _redirecturl
-	r.Set("redirect_url", _redirecturl)
+func (r *TaobaotbkscrelationrecordAPIRequest) SetRedirectUrl(_redirectUrl string) error {
+	r._redirectUrl = _redirectUrl
+	r.Set("redirect_url", _redirectUrl)
 	return nil
 }
 
-// GetRedirecturl Redirecturl Getter
-func (r TaobaotbkscrelationrecordAPIRequest) GetRedirecturl() string {
-	return r._redirecturl
+// GetRedirectUrl RedirectUrl Getter
+func (r TaobaotbkscrelationrecordAPIRequest) GetRedirectUrl() string {
+	return r._redirectUrl
 }
 
-// SetExternaltype is Externaltype Setter
+// SetExternalType is ExternalType Setter
 // 淘宝客其他平台私域用户自定义标记，1-微信、2-微博、3-抖音、4-快手、5-QQ，0-其他
-func (r *TaobaotbkscrelationrecordAPIRequest) SetExternaltype(_externaltype int64) error {
-	r._externaltype = _externaltype
-	r.Set("external_type", _externaltype)
+func (r *TaobaotbkscrelationrecordAPIRequest) SetExternalType(_externalType int64) error {
+	r._externalType = _externalType
+	r.Set("external_type", _externalType)
 	return nil
 }
 
-// GetExternaltype Externaltype Getter
-func (r TaobaotbkscrelationrecordAPIRequest) GetExternaltype() int64 {
-	return r._externaltype
+// GetExternalType ExternalType Getter
+func (r TaobaotbkscrelationrecordAPIRequest) GetExternalType() int64 {
+	return r._externalType
 }
 
-// SetOptype is Optype Setter
+// SetOpType is OpType Setter
 // 授权类型，选2时可用于更新外部用户标记，默认1：1-新绑，2-更新
-func (r *TaobaotbkscrelationrecordAPIRequest) SetOptype(_optype int64) error {
-	r._optype = _optype
-	r.Set("op_type", _optype)
+func (r *TaobaotbkscrelationrecordAPIRequest) SetOpType(_opType int64) error {
+	r._opType = _opType
+	r.Set("op_type", _opType)
 	return nil
 }
 
-// GetOptype Optype Getter
-func (r TaobaotbkscrelationrecordAPIRequest) GetOptype() int64 {
-	return r._optype
+// GetOpType OpType Getter
+func (r TaobaotbkscrelationrecordAPIRequest) GetOpType() int64 {
+	return r._opType
 }
 
-// SetUcrowdid is Ucrowdid Setter
+// SetUcrowdId is UcrowdId Setter
 // 人群标签ID，用户备案授权后会自动添加到该人群
-func (r *TaobaotbkscrelationrecordAPIRequest) SetUcrowdid(_ucrowdid int64) error {
-	r._ucrowdid = _ucrowdid
-	r.Set("ucrowd_id", _ucrowdid)
+func (r *TaobaotbkscrelationrecordAPIRequest) SetUcrowdId(_ucrowdId int64) error {
+	r._ucrowdId = _ucrowdId
+	r.Set("ucrowd_id", _ucrowdId)
 	return nil
 }
 
-// GetUcrowdid Ucrowdid Getter
-func (r TaobaotbkscrelationrecordAPIRequest) GetUcrowdid() int64 {
-	return r._ucrowdid
+// GetUcrowdId UcrowdId Getter
+func (r TaobaotbkscrelationrecordAPIRequest) GetUcrowdId() int64 {
+	return r._ucrowdId
 }

@@ -3,7 +3,7 @@ package qimen
 // Item 结构体
 type Item struct {
 	// test
-	Batchs []TaobaoQimenCombineitemSynchronizeBatch `json:"batchs,omitempty" xml:"batchs>taobao_qimen_combineitem_synchronize_batch,omitempty"`
+	Batchs []TaobaoqimencombineitemsynchronizeBatch `json:"batchs,omitempty" xml:"batchs>taobaoqimencombineitemsynchronize_batch,omitempty"`
 	// 商品编码
 	ItemCode string `json:"itemCode,omitempty" xml:"itemCode,omitempty"`
 	// 后端商品编码
@@ -15,7 +15,7 @@ type Item struct {
 	// test
 	Sn string `json:"sn,omitempty" xml:"sn,omitempty"`
 	// test
-	IsSNMgmt string `json:"isSNMgmt,omitempty" xml:"isSNMgmt,omitempty"`
+	IsSnmgmt string `json:"isSNMgmt,omitempty" xml:"isSNMgmt,omitempty"`
 	// test
 	BarCode string `json:"barCode,omitempty" xml:"barCode,omitempty"`
 	// test

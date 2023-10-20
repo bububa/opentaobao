@@ -1,5 +1,5 @@
 package qimen
 
-// TaobaoQimenWavenumReportMap 结构体
-type TaobaoQimenWavenumReportMap struct {
+// TaobaoqimenwavenumreportMap 结构体
+type TaobaoqimenwavenumreportMap struct {
 }

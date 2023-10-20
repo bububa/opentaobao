@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alilabs"
 )
 
-// AlibabaAilabUserOpenUidGet access token 获取精灵用户 id
+// Alibabaailabuseropenuidget access token 获取精灵用户 id
 // alibaba.ailab.user.open.uid.get
 //
 // access token 获取精灵用户 id
-func AlibabaAilabUserOpenUidGet(clt *core.SDKClient, req *alilabs.AlibabaAilabUserOpenUidGetAPIRequest, session string) (*alilabs.AlibabaAilabUserOpenUidGetAPIResponse, error) {
-	var resp alilabs.AlibabaAilabUserOpenUidGetAPIResponse
+func Alibabaailabuseropenuidget(clt *core.SDKClient, req *alilabs.AlibabaailabuseropenuidgetAPIRequest, session string) (*alilabs.AlibabaailabuseropenuidgetAPIResponse, error) {
+	var resp alilabs.AlibabaailabuseropenuidgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

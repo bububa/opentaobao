@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripBtripApprovalUpdateAPIRequest 更新审批单 API请求
+// AlitripbtripapprovalupdateAPIRequest 更新审批单 API请求
 // alitrip.btrip.approval.update
 //
 // 更新审批单
-type AlitripBtripApprovalUpdateAPIRequest struct {
+type AlitripbtripapprovalupdateAPIRequest struct {
 	model.Params
 	// 审批请求对象
 	_approveApplyRequest *OpenApproveApplyRq
 }
 
-// NewAlitripBtripApprovalUpdateRequest 初始化AlitripBtripApprovalUpdateAPIRequest对象
-func NewAlitripBtripApprovalUpdateRequest() *AlitripBtripApprovalUpdateAPIRequest {
-	return &AlitripBtripApprovalUpdateAPIRequest{
+// NewAlitripbtripapprovalupdateRequest 初始化AlitripbtripapprovalupdateAPIRequest对象
+func NewAlitripbtripapprovalupdateRequest() *AlitripbtripapprovalupdateAPIRequest {
+	return &AlitripbtripapprovalupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripBtripApprovalUpdateAPIRequest) GetApiMethodName() string {
+func (r AlitripbtripapprovalupdateAPIRequest) GetApiMethodName() string {
 	return "alitrip.btrip.approval.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripBtripApprovalUpdateAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripbtripapprovalupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripBtripApprovalUpdateAPIRequest) GetRawParams() model.Params {
+func (r AlitripbtripapprovalupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetApproveApplyRequest is ApproveApplyRequest Setter
 // 审批请求对象
-func (r *AlitripBtripApprovalUpdateAPIRequest) SetApproveApplyRequest(_approveApplyRequest *OpenApproveApplyRq) error {
+func (r *AlitripbtripapprovalupdateAPIRequest) SetApproveApplyRequest(_approveApplyRequest *OpenApproveApplyRq) error {
 	r._approveApplyRequest = _approveApplyRequest
 	r.Set("approve_apply_request", _approveApplyRequest)
 	return nil
 }
 
 // GetApproveApplyRequest ApproveApplyRequest Getter
-func (r AlitripBtripApprovalUpdateAPIRequest) GetApproveApplyRequest() *OpenApproveApplyRq {
+func (r AlitripbtripapprovalupdateAPIRequest) GetApproveApplyRequest() *OpenApproveApplyRq {
 	return r._approveApplyRequest
 }

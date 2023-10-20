@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMemberPointOperateAPIRequest 积分操作 API请求
+// AlibabamemberpointoperateAPIRequest 积分操作 API请求
 // alibaba.member.point.operate
 //
 // 消费会员积分
-type AlibabaMemberPointOperateAPIRequest struct {
+type AlibabamemberpointoperateAPIRequest struct {
 	model.Params
 	// 请求参数
 	_pointOperateRequest *PointOperateDto
 }
 
-// NewAlibabaMemberPointOperateRequest 初始化AlibabaMemberPointOperateAPIRequest对象
-func NewAlibabaMemberPointOperateRequest() *AlibabaMemberPointOperateAPIRequest {
-	return &AlibabaMemberPointOperateAPIRequest{
+// NewAlibabamemberpointoperateRequest 初始化AlibabamemberpointoperateAPIRequest对象
+func NewAlibabamemberpointoperateRequest() *AlibabamemberpointoperateAPIRequest {
+	return &AlibabamemberpointoperateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaMemberPointOperateAPIRequest) GetApiMethodName() string {
+func (r AlibabamemberpointoperateAPIRequest) GetApiMethodName() string {
 	return "alibaba.member.point.operate"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMemberPointOperateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabamemberpointoperateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaMemberPointOperateAPIRequest) GetRawParams() model.Params {
+func (r AlibabamemberpointoperateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPointOperateRequest is PointOperateRequest Setter
 // 请求参数
-func (r *AlibabaMemberPointOperateAPIRequest) SetPointOperateRequest(_pointOperateRequest *PointOperateDto) error {
+func (r *AlibabamemberpointoperateAPIRequest) SetPointOperateRequest(_pointOperateRequest *PointOperateDto) error {
 	r._pointOperateRequest = _pointOperateRequest
 	r.Set("point_operate_request", _pointOperateRequest)
 	return nil
 }
 
 // GetPointOperateRequest PointOperateRequest Getter
-func (r AlibabaMemberPointOperateAPIRequest) GetPointOperateRequest() *PointOperateDto {
+func (r AlibabamemberpointoperateAPIRequest) GetPointOperateRequest() *PointOperateDto {
 	return r._pointOperateRequest
 }

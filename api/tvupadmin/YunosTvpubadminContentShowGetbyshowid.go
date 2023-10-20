@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-// YunosTvpubadminContentShowGetbyshowid 迎客松根据节目id获取节目元数据
+// Yunostvpubadmincontentshowgetbyshowid 迎客松根据节目id获取节目元数据
 // yunos.tvpubadmin.content.show.getbyshowid
 //
 // 迎客松根据节目id获取节目元数据
-func YunosTvpubadminContentShowGetbyshowid(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentShowGetbyshowidAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentShowGetbyshowidAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminContentShowGetbyshowidAPIResponse
+func Yunostvpubadmincontentshowgetbyshowid(clt *core.SDKClient, req *tvupadmin.YunostvpubadmincontentshowgetbyshowidAPIRequest, session string) (*tvupadmin.YunostvpubadmincontentshowgetbyshowidAPIResponse, error) {
+	var resp tvupadmin.YunostvpubadmincontentshowgetbyshowidAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

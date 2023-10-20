@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaTclsAelophyRefundDisagree saas 售后逆向 商户拒绝用户逆向申请
+// Alibabatclsaelophyrefunddisagree saas 售后逆向 商户拒绝用户逆向申请
 // alibaba.tcls.aelophy.refund.disagree
 //
 // saas 售后逆向 商户拒绝用户逆向申请
-func AlibabaTclsAelophyRefundDisagree(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyRefundDisagreeAPIRequest, session string) (*wdk.AlibabaTclsAelophyRefundDisagreeAPIResponse, error) {
-	var resp wdk.AlibabaTclsAelophyRefundDisagreeAPIResponse
+func Alibabatclsaelophyrefunddisagree(clt *core.SDKClient, req *wdk.AlibabatclsaelophyrefunddisagreeAPIRequest, session string) (*wdk.AlibabatclsaelophyrefunddisagreeAPIResponse, error) {
+	var resp wdk.AlibabatclsaelophyrefunddisagreeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

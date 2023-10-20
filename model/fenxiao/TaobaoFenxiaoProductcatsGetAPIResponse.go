@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoFenxiaoProductcatsGetAPIResponse 查询产品线列表 API返回值
+// TaobaofenxiaoproductcatsgetAPIResponse 查询产品线列表 API返回值
 // taobao.fenxiao.productcats.get
 //
 // 查询供应商的所有产品线数据。根据登陆用户来查询，不需要其他入参
-type TaobaoFenxiaoProductcatsGetAPIResponse struct {
+type TaobaofenxiaoproductcatsgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoFenxiaoProductcatsGetAPIResponseModel
+	TaobaofenxiaoproductcatsgetAPIResponseModel
 }
 
-// TaobaoFenxiaoProductcatsGetAPIResponseModel is 查询产品线列表 成功返回结果
-type TaobaoFenxiaoProductcatsGetAPIResponseModel struct {
+// TaobaofenxiaoproductcatsgetAPIResponseModel is 查询产品线列表 成功返回结果
+type TaobaofenxiaoproductcatsgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_productcats_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

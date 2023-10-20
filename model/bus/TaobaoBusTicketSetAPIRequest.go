@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoBusTicketSetAPIRequest 出票接口 API请求
+// TaobaobusticketsetAPIRequest 出票接口 API请求
 // taobao.bus.ticket.set
 //
 // 提供给汽车票商家出票使用
-type TaobaoBusTicketSetAPIRequest struct {
+type TaobaobusticketsetAPIRequest struct {
 	model.Params
 	// 系统自动生成
-	_ticketParams *B2BBookOrderRq
+	_ticketParams *B2bbookOrderRq
 }
 
-// NewTaobaoBusTicketSetRequest 初始化TaobaoBusTicketSetAPIRequest对象
-func NewTaobaoBusTicketSetRequest() *TaobaoBusTicketSetAPIRequest {
-	return &TaobaoBusTicketSetAPIRequest{
+// NewTaobaobusticketsetRequest 初始化TaobaobusticketsetAPIRequest对象
+func NewTaobaobusticketsetRequest() *TaobaobusticketsetAPIRequest {
+	return &TaobaobusticketsetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoBusTicketSetAPIRequest) GetApiMethodName() string {
+func (r TaobaobusticketsetAPIRequest) GetApiMethodName() string {
 	return "taobao.bus.ticket.set"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoBusTicketSetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaobusticketsetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoBusTicketSetAPIRequest) GetRawParams() model.Params {
+func (r TaobaobusticketsetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTicketParams is TicketParams Setter
 // 系统自动生成
-func (r *TaobaoBusTicketSetAPIRequest) SetTicketParams(_ticketParams *B2BBookOrderRq) error {
+func (r *TaobaobusticketsetAPIRequest) SetTicketParams(_ticketParams *B2bbookOrderRq) error {
 	r._ticketParams = _ticketParams
 	r.Set("ticket_params", _ticketParams)
 	return nil
 }
 
 // GetTicketParams TicketParams Getter
-func (r TaobaoBusTicketSetAPIRequest) GetTicketParams() *B2BBookOrderRq {
+func (r TaobaobusticketsetAPIRequest) GetTicketParams() *B2bbookOrderRq {
 	return r._ticketParams
 }

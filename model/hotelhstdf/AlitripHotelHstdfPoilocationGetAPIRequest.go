@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripHotelHstdfPoilocationGetAPIRequest 根据平台城市id分页查询poi location API请求
+// AlitriphotelhstdfpoilocationgetAPIRequest 根据平台城市id分页查询poi location API请求
 // alitrip.hotel.hstdf.poilocation.get
 //
 // 根据平台城市id分页查询poi location
-type AlitripHotelHstdfPoilocationGetAPIRequest struct {
+type AlitriphotelhstdfpoilocationgetAPIRequest struct {
 	model.Params
 	// 参数封装
 	_paramGetByTrdiDivisionIdParam *GetByTrdiDivisionIdParam
 }
 
-// NewAlitripHotelHstdfPoilocationGetRequest 初始化AlitripHotelHstdfPoilocationGetAPIRequest对象
-func NewAlitripHotelHstdfPoilocationGetRequest() *AlitripHotelHstdfPoilocationGetAPIRequest {
-	return &AlitripHotelHstdfPoilocationGetAPIRequest{
+// NewAlitriphotelhstdfpoilocationgetRequest 初始化AlitriphotelhstdfpoilocationgetAPIRequest对象
+func NewAlitriphotelhstdfpoilocationgetRequest() *AlitriphotelhstdfpoilocationgetAPIRequest {
+	return &AlitriphotelhstdfpoilocationgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripHotelHstdfPoilocationGetAPIRequest) GetApiMethodName() string {
+func (r AlitriphotelhstdfpoilocationgetAPIRequest) GetApiMethodName() string {
 	return "alitrip.hotel.hstdf.poilocation.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripHotelHstdfPoilocationGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlitriphotelhstdfpoilocationgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripHotelHstdfPoilocationGetAPIRequest) GetRawParams() model.Params {
+func (r AlitriphotelhstdfpoilocationgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamGetByTrdiDivisionIdParam is ParamGetByTrdiDivisionIdParam Setter
 // 参数封装
-func (r *AlitripHotelHstdfPoilocationGetAPIRequest) SetParamGetByTrdiDivisionIdParam(_paramGetByTrdiDivisionIdParam *GetByTrdiDivisionIdParam) error {
+func (r *AlitriphotelhstdfpoilocationgetAPIRequest) SetParamGetByTrdiDivisionIdParam(_paramGetByTrdiDivisionIdParam *GetByTrdiDivisionIdParam) error {
 	r._paramGetByTrdiDivisionIdParam = _paramGetByTrdiDivisionIdParam
 	r.Set("param_get_by_trdi_division_id_param", _paramGetByTrdiDivisionIdParam)
 	return nil
 }
 
 // GetParamGetByTrdiDivisionIdParam ParamGetByTrdiDivisionIdParam Getter
-func (r AlitripHotelHstdfPoilocationGetAPIRequest) GetParamGetByTrdiDivisionIdParam() *GetByTrdiDivisionIdParam {
+func (r AlitriphotelhstdfpoilocationgetAPIRequest) GetParamGetByTrdiDivisionIdParam() *GetByTrdiDivisionIdParam {
 	return r._paramGetByTrdiDivisionIdParam
 }

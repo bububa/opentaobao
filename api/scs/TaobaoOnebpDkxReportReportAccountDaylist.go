@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scs"
 )
 
-// TaobaoOnebpDkxReportReportAccountDaylist 获取账户分日报表
+// Taobaoonebpdkxreportreportaccountdaylist 获取账户分日报表
 // taobao.onebp.dkx.report.report.account.daylist
 //
 // 获取账户分日报表
-func TaobaoOnebpDkxReportReportAccountDaylist(clt *core.SDKClient, req *scs.TaobaoOnebpDkxReportReportAccountDaylistAPIRequest, session string) (*scs.TaobaoOnebpDkxReportReportAccountDaylistAPIResponse, error) {
-	var resp scs.TaobaoOnebpDkxReportReportAccountDaylistAPIResponse
+func Taobaoonebpdkxreportreportaccountdaylist(clt *core.SDKClient, req *scs.TaobaoonebpdkxreportreportaccountdaylistAPIRequest, session string) (*scs.TaobaoonebpdkxreportreportaccountdaylistAPIResponse, error) {
+	var resp scs.TaobaoonebpdkxreportreportaccountdaylistAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

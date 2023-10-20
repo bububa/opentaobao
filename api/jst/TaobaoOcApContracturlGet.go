@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/jst"
 )
 
-// TaobaoOcApContracturlGet 按用户获取支付宝代扣协议链接地址
+// Taobaoocapcontracturlget 按用户获取支付宝代扣协议链接地址
 // taobao.oc.ap.contracturl.get
 //
 // 按用户获取支付宝代扣协议链接地址
-func TaobaoOcApContracturlGet(clt *core.SDKClient, req *jst.TaobaoOcApContracturlGetAPIRequest, session string) (*jst.TaobaoOcApContracturlGetAPIResponse, error) {
-	var resp jst.TaobaoOcApContracturlGetAPIResponse
+func Taobaoocapcontracturlget(clt *core.SDKClient, req *jst.TaobaoocapcontracturlgetAPIRequest, session string) (*jst.TaobaoocapcontracturlgetAPIResponse, error) {
+	var resp jst.TaobaoocapcontracturlgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

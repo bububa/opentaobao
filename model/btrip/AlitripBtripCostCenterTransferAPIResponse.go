@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripBtripCostCenterTransferAPIResponse 商旅成本中心转换为外部成本中心 API返回值
+// AlitripbtripcostcentertransferAPIResponse 商旅成本中心转换为外部成本中心 API返回值
 // alitrip.btrip.cost.center.transfer
 //
 // 商旅成本中心转换为外部成本中心
-type AlitripBtripCostCenterTransferAPIResponse struct {
+type AlitripbtripcostcentertransferAPIResponse struct {
 	model.CommonResponse
-	AlitripBtripCostCenterTransferAPIResponseModel
+	AlitripbtripcostcentertransferAPIResponseModel
 }
 
-// AlitripBtripCostCenterTransferAPIResponseModel is 商旅成本中心转换为外部成本中心 成功返回结果
-type AlitripBtripCostCenterTransferAPIResponseModel struct {
+// AlitripbtripcostcentertransferAPIResponseModel is 商旅成本中心转换为外部成本中心 成功返回结果
+type AlitripbtripcostcentertransferAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_cost_center_transfer_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

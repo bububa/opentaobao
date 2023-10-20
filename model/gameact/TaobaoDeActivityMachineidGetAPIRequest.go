@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoDeActivityMachineidGetAPIRequest 获取设备号 API请求
+// TaobaodeactivitymachineidgetAPIRequest 获取设备号 API请求
 // taobao.de.activity.machineid.get
 //
 // 获取机器设备id
-type TaobaoDeActivityMachineidGetAPIRequest struct {
+type TaobaodeactivitymachineidgetAPIRequest struct {
 	model.Params
 }
 
-// NewTaobaoDeActivityMachineidGetRequest 初始化TaobaoDeActivityMachineidGetAPIRequest对象
-func NewTaobaoDeActivityMachineidGetRequest() *TaobaoDeActivityMachineidGetAPIRequest {
-	return &TaobaoDeActivityMachineidGetAPIRequest{
+// NewTaobaodeactivitymachineidgetRequest 初始化TaobaodeactivitymachineidgetAPIRequest对象
+func NewTaobaodeactivitymachineidgetRequest() *TaobaodeactivitymachineidgetAPIRequest {
+	return &TaobaodeactivitymachineidgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoDeActivityMachineidGetAPIRequest) GetApiMethodName() string {
+func (r TaobaodeactivitymachineidgetAPIRequest) GetApiMethodName() string {
 	return "taobao.de.activity.machineid.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoDeActivityMachineidGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaodeactivitymachineidgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoDeActivityMachineidGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaodeactivitymachineidgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

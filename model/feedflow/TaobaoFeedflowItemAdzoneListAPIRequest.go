@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoFeedflowItemAdzoneListAPIRequest 批量查询可用广告位列表 API请求
+// TaobaofeedflowitemadzonelistAPIRequest 批量查询可用广告位列表 API请求
 // taobao.feedflow.item.adzone.list
 //
 // 批量查询可用广告位列表
-type TaobaoFeedflowItemAdzoneListAPIRequest struct {
+type TaobaofeedflowitemadzonelistAPIRequest struct {
 	model.Params
 	// 广告位查询条件
 	_adzoneQuery *AdzoneQueryDto
 }
 
-// NewTaobaoFeedflowItemAdzoneListRequest 初始化TaobaoFeedflowItemAdzoneListAPIRequest对象
-func NewTaobaoFeedflowItemAdzoneListRequest() *TaobaoFeedflowItemAdzoneListAPIRequest {
-	return &TaobaoFeedflowItemAdzoneListAPIRequest{
+// NewTaobaofeedflowitemadzonelistRequest 初始化TaobaofeedflowitemadzonelistAPIRequest对象
+func NewTaobaofeedflowitemadzonelistRequest() *TaobaofeedflowitemadzonelistAPIRequest {
+	return &TaobaofeedflowitemadzonelistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemAdzoneListAPIRequest) GetApiMethodName() string {
+func (r TaobaofeedflowitemadzonelistAPIRequest) GetApiMethodName() string {
 	return "taobao.feedflow.item.adzone.list"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemAdzoneListAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaofeedflowitemadzonelistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoFeedflowItemAdzoneListAPIRequest) GetRawParams() model.Params {
+func (r TaobaofeedflowitemadzonelistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAdzoneQuery is AdzoneQuery Setter
 // 广告位查询条件
-func (r *TaobaoFeedflowItemAdzoneListAPIRequest) SetAdzoneQuery(_adzoneQuery *AdzoneQueryDto) error {
+func (r *TaobaofeedflowitemadzonelistAPIRequest) SetAdzoneQuery(_adzoneQuery *AdzoneQueryDto) error {
 	r._adzoneQuery = _adzoneQuery
 	r.Set("adzone_query", _adzoneQuery)
 	return nil
 }
 
 // GetAdzoneQuery AdzoneQuery Getter
-func (r TaobaoFeedflowItemAdzoneListAPIRequest) GetAdzoneQuery() *AdzoneQueryDto {
+func (r TaobaofeedflowitemadzonelistAPIRequest) GetAdzoneQuery() *AdzoneQueryDto {
 	return r._adzoneQuery
 }

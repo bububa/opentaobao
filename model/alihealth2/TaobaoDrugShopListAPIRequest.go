@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoDrugShopListAPIRequest 查询卖家外卖店列表 API请求
+// TaobaodrugshoplistAPIRequest 查询卖家外卖店列表 API请求
 // taobao.drug.shop.list
 //
 // 查询卖家外卖店列表
-type TaobaoDrugShopListAPIRequest struct {
+type TaobaodrugshoplistAPIRequest struct {
 	model.Params
 	// 查询关键字
 	_keywords string
@@ -22,78 +22,78 @@ type TaobaoDrugShopListAPIRequest struct {
 	_pageSize int64
 }
 
-// NewTaobaoDrugShopListRequest 初始化TaobaoDrugShopListAPIRequest对象
-func NewTaobaoDrugShopListRequest() *TaobaoDrugShopListAPIRequest {
-	return &TaobaoDrugShopListAPIRequest{
+// NewTaobaodrugshoplistRequest 初始化TaobaodrugshoplistAPIRequest对象
+func NewTaobaodrugshoplistRequest() *TaobaodrugshoplistAPIRequest {
+	return &TaobaodrugshoplistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoDrugShopListAPIRequest) GetApiMethodName() string {
+func (r TaobaodrugshoplistAPIRequest) GetApiMethodName() string {
 	return "taobao.drug.shop.list"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoDrugShopListAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaodrugshoplistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoDrugShopListAPIRequest) GetRawParams() model.Params {
+func (r TaobaodrugshoplistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetKeywords is Keywords Setter
 // 查询关键字
-func (r *TaobaoDrugShopListAPIRequest) SetKeywords(_keywords string) error {
+func (r *TaobaodrugshoplistAPIRequest) SetKeywords(_keywords string) error {
 	r._keywords = _keywords
 	r.Set("keywords", _keywords)
 	return nil
 }
 
 // GetKeywords Keywords Getter
-func (r TaobaoDrugShopListAPIRequest) GetKeywords() string {
+func (r TaobaodrugshoplistAPIRequest) GetKeywords() string {
 	return r._keywords
 }
 
 // SetStatus is Status Setter
 // 店铺状态，歇业：0，营业：1，所有：-1
-func (r *TaobaoDrugShopListAPIRequest) SetStatus(_status int64) error {
+func (r *TaobaodrugshoplistAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
 	r.Set("status", _status)
 	return nil
 }
 
 // GetStatus Status Getter
-func (r TaobaoDrugShopListAPIRequest) GetStatus() int64 {
+func (r TaobaodrugshoplistAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
 // SetPage is Page Setter
 // 页码
-func (r *TaobaoDrugShopListAPIRequest) SetPage(_page int64) error {
+func (r *TaobaodrugshoplistAPIRequest) SetPage(_page int64) error {
 	r._page = _page
 	r.Set("page", _page)
 	return nil
 }
 
 // GetPage Page Getter
-func (r TaobaoDrugShopListAPIRequest) GetPage() int64 {
+func (r TaobaodrugshoplistAPIRequest) GetPage() int64 {
 	return r._page
 }
 
 // SetPageSize is PageSize Setter
 // 每页条数
-func (r *TaobaoDrugShopListAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaodrugshoplistAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r TaobaoDrugShopListAPIRequest) GetPageSize() int64 {
+func (r TaobaodrugshoplistAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

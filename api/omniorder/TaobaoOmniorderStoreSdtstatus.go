@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/omniorder"
 )
 
-// TaobaoOmniorderStoreSdtstatus 菜鸟裹裹运单状态查询
+// Taobaoomniorderstoresdtstatus 菜鸟裹裹运单状态查询
 // taobao.omniorder.store.sdtstatus
 //
 // 提供给商家查询运力单的状态。
-func TaobaoOmniorderStoreSdtstatus(clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreSdtstatusAPIRequest, session string) (*omniorder.TaobaoOmniorderStoreSdtstatusAPIResponse, error) {
-	var resp omniorder.TaobaoOmniorderStoreSdtstatusAPIResponse
+func Taobaoomniorderstoresdtstatus(clt *core.SDKClient, req *omniorder.TaobaoomniorderstoresdtstatusAPIRequest, session string) (*omniorder.TaobaoomniorderstoresdtstatusAPIResponse, error) {
+	var resp omniorder.TaobaoomniorderstoresdtstatusAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

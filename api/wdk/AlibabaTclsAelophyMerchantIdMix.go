@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaTclsAelophyMerchantIdMix 商家用户id混淆
+// Alibabatclsaelophymerchantidmix 商家用户id混淆
 // alibaba.tcls.aelophy.merchant.id.mix
 //
 // 商家用户id混淆
-func AlibabaTclsAelophyMerchantIdMix(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantIdMixAPIRequest, session string) (*wdk.AlibabaTclsAelophyMerchantIdMixAPIResponse, error) {
-	var resp wdk.AlibabaTclsAelophyMerchantIdMixAPIResponse
+func Alibabatclsaelophymerchantidmix(clt *core.SDKClient, req *wdk.AlibabatclsaelophymerchantidmixAPIRequest, session string) (*wdk.AlibabatclsaelophymerchantidmixAPIResponse, error) {
+	var resp wdk.AlibabatclsaelophymerchantidmixAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

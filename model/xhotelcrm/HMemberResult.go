@@ -1,7 +1,7 @@
 package xhotelcrm
 
-// HMemberResult 结构体
-type HMemberResult struct {
+// HmemberResult 结构体
+type HmemberResult struct {
 	// 错误码
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 信息

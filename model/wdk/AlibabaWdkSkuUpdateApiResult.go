@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkSkuUpdateApiResult 结构体
-type AlibabaWdkSkuUpdateApiResult struct {
+// AlibabawdkskuupdateApiResult 结构体
+type AlibabawdkskuupdateApiResult struct {
 	// sku编码
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// sku商品操作错误信息

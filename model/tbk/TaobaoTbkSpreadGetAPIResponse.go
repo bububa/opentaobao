@@ -24,5 +24,5 @@ type TaobaotbkspreadgetAPIResponseModel struct {
 	// 传播形式对象列表
 	Results []TbkSpread `json:"results,omitempty" xml:"results>tbk_spread,omitempty"`
 	// totalResults
-	Totalresults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 }

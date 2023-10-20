@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseNewhomeProjectBuildingAPIRequest 楼栋同步 API请求
+// AlibabaalihousenewhomeprojectbuildingAPIRequest 楼栋同步 API请求
 // alibaba.alihouse.newhome.project.building
 //
 // 楼栋同步
-type AlibabaAlihouseNewhomeProjectBuildingAPIRequest struct {
+type AlibabaalihousenewhomeprojectbuildingAPIRequest struct {
 	model.Params
 	// 楼栋请求实体
 	_buildingDto *BuildingDto
 }
 
-// NewAlibabaAlihouseNewhomeProjectBuildingRequest 初始化AlibabaAlihouseNewhomeProjectBuildingAPIRequest对象
-func NewAlibabaAlihouseNewhomeProjectBuildingRequest() *AlibabaAlihouseNewhomeProjectBuildingAPIRequest {
-	return &AlibabaAlihouseNewhomeProjectBuildingAPIRequest{
+// NewAlibabaalihousenewhomeprojectbuildingRequest 初始化AlibabaalihousenewhomeprojectbuildingAPIRequest对象
+func NewAlibabaalihousenewhomeprojectbuildingRequest() *AlibabaalihousenewhomeprojectbuildingAPIRequest {
+	return &AlibabaalihousenewhomeprojectbuildingAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeProjectBuildingAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihousenewhomeprojectbuildingAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.newhome.project.building"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectBuildingAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihousenewhomeprojectbuildingAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihouseNewhomeProjectBuildingAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihousenewhomeprojectbuildingAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetBuildingDto is BuildingDto Setter
 // 楼栋请求实体
-func (r *AlibabaAlihouseNewhomeProjectBuildingAPIRequest) SetBuildingDto(_buildingDto *BuildingDto) error {
+func (r *AlibabaalihousenewhomeprojectbuildingAPIRequest) SetBuildingDto(_buildingDto *BuildingDto) error {
 	r._buildingDto = _buildingDto
 	r.Set("building_dto", _buildingDto)
 	return nil
 }
 
 // GetBuildingDto BuildingDto Getter
-func (r AlibabaAlihouseNewhomeProjectBuildingAPIRequest) GetBuildingDto() *BuildingDto {
+func (r AlibabaalihousenewhomeprojectbuildingAPIRequest) GetBuildingDto() *BuildingDto {
 	return r._buildingDto
 }

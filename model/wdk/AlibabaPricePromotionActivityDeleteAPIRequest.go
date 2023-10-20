@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaPricePromotionActivityDeleteAPIRequest 删除档期活动 API请求
+// AlibabapricepromotionactivitydeleteAPIRequest 删除档期活动 API请求
 // alibaba.price.promotion.activity.delete
 //
 // 删除盒马帮档期活动
-type AlibabaPricePromotionActivityDeleteAPIRequest struct {
+type AlibabapricepromotionactivitydeleteAPIRequest struct {
 	model.Params
 	// 外部主键
 	_outerPromotionCode string
@@ -18,52 +18,52 @@ type AlibabaPricePromotionActivityDeleteAPIRequest struct {
 	_ouCode string
 }
 
-// NewAlibabaPricePromotionActivityDeleteRequest 初始化AlibabaPricePromotionActivityDeleteAPIRequest对象
-func NewAlibabaPricePromotionActivityDeleteRequest() *AlibabaPricePromotionActivityDeleteAPIRequest {
-	return &AlibabaPricePromotionActivityDeleteAPIRequest{
+// NewAlibabapricepromotionactivitydeleteRequest 初始化AlibabapricepromotionactivitydeleteAPIRequest对象
+func NewAlibabapricepromotionactivitydeleteRequest() *AlibabapricepromotionactivitydeleteAPIRequest {
+	return &AlibabapricepromotionactivitydeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaPricePromotionActivityDeleteAPIRequest) GetApiMethodName() string {
+func (r AlibabapricepromotionactivitydeleteAPIRequest) GetApiMethodName() string {
 	return "alibaba.price.promotion.activity.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaPricePromotionActivityDeleteAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabapricepromotionactivitydeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaPricePromotionActivityDeleteAPIRequest) GetRawParams() model.Params {
+func (r AlibabapricepromotionactivitydeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOuterPromotionCode is OuterPromotionCode Setter
 // 外部主键
-func (r *AlibabaPricePromotionActivityDeleteAPIRequest) SetOuterPromotionCode(_outerPromotionCode string) error {
+func (r *AlibabapricepromotionactivitydeleteAPIRequest) SetOuterPromotionCode(_outerPromotionCode string) error {
 	r._outerPromotionCode = _outerPromotionCode
 	r.Set("outer_promotion_code", _outerPromotionCode)
 	return nil
 }
 
 // GetOuterPromotionCode OuterPromotionCode Getter
-func (r AlibabaPricePromotionActivityDeleteAPIRequest) GetOuterPromotionCode() string {
+func (r AlibabapricepromotionactivitydeleteAPIRequest) GetOuterPromotionCode() string {
 	return r._outerPromotionCode
 }
 
 // SetOuCode is OuCode Setter
 // 经营店OU
-func (r *AlibabaPricePromotionActivityDeleteAPIRequest) SetOuCode(_ouCode string) error {
+func (r *AlibabapricepromotionactivitydeleteAPIRequest) SetOuCode(_ouCode string) error {
 	r._ouCode = _ouCode
 	r.Set("ou_code", _ouCode)
 	return nil
 }
 
 // GetOuCode OuCode Getter
-func (r AlibabaPricePromotionActivityDeleteAPIRequest) GetOuCode() string {
+func (r AlibabapricepromotionactivitydeleteAPIRequest) GetOuCode() string {
 	return r._ouCode
 }

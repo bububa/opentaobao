@@ -1,7 +1,7 @@
 package xhotelitem
 
-// TaobaoXhotelBnbpromoGetResultSet 结构体
-type TaobaoXhotelBnbpromoGetResultSet struct {
+// TaobaoxhotelbnbpromogetResultSet 结构体
+type TaobaoxhotelbnbpromogetResultSet struct {
 	// 错误code
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误码

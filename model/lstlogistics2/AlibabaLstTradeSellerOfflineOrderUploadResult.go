@@ -1,7 +1,7 @@
 package lstlogistics2
 
-// AlibabaLstTradeSellerOfflineOrderUploadResult 结构体
-type AlibabaLstTradeSellerOfflineOrderUploadResult struct {
+// AlibabalsttradesellerofflineorderuploadResult 结构体
+type AlibabalsttradesellerofflineorderuploadResult struct {
 	// 系统自动生成
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

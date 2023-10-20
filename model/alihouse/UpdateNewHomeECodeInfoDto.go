@@ -1,7 +1,7 @@
 package alihouse
 
-// UpdateNewHomeECodeInfoDto 结构体
-type UpdateNewHomeECodeInfoDto struct {
+// UpdateNewHomeEcodeInfoDto 结构体
+type UpdateNewHomeEcodeInfoDto struct {
 	// 外部小区id
 	CommunityOuterId string `json:"community_outer_id,omitempty" xml:"community_outer_id,omitempty"`
 	// 房源E码

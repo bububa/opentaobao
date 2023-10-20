@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse 设备音量 API返回值
+// TaobaoailabaicloudtopdevicecontrolvolumeAPIResponse 设备音量 API返回值
 // taobao.ailab.aicloud.top.device.control.volume
 //
 // 设备音量
-type TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse struct {
+type TaobaoailabaicloudtopdevicecontrolvolumeAPIResponse struct {
 	model.CommonResponse
-	TaobaoAilabAicloudTopDeviceControlVolumeAPIResponseModel
+	TaobaoailabaicloudtopdevicecontrolvolumeAPIResponseModel
 }
 
-// TaobaoAilabAicloudTopDeviceControlVolumeAPIResponseModel is 设备音量 成功返回结果
-type TaobaoAilabAicloudTopDeviceControlVolumeAPIResponseModel struct {
+// TaobaoailabaicloudtopdevicecontrolvolumeAPIResponseModel is 设备音量 成功返回结果
+type TaobaoailabaicloudtopdevicecontrolvolumeAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_device_control_volume_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

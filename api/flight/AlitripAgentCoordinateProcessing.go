@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/flight"
 )
 
-// AlitripAgentCoordinateProcessing 慧飞商家协同单处理完成接口
+// Alitripagentcoordinateprocessing 慧飞商家协同单处理完成接口
 // alitrip.agent.coordinate.processing
 //
 // 慧飞商家协同单处理完成接口
-func AlitripAgentCoordinateProcessing(clt *core.SDKClient, req *flight.AlitripAgentCoordinateProcessingAPIRequest, session string) (*flight.AlitripAgentCoordinateProcessingAPIResponse, error) {
-	var resp flight.AlitripAgentCoordinateProcessingAPIResponse
+func Alitripagentcoordinateprocessing(clt *core.SDKClient, req *flight.AlitripagentcoordinateprocessingAPIRequest, session string) (*flight.AlitripagentcoordinateprocessingAPIResponse, error) {
+	var resp flight.AlitripagentcoordinateprocessingAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

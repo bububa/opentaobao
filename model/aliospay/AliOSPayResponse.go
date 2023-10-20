@@ -1,7 +1,7 @@
 package aliospay
 
-// AliOSPayResponse 结构体
-type AliOSPayResponse struct {
+// AliOspayResponse 结构体
+type AliOspayResponse struct {
 	// 请求唯一id，不可重复，服务端会根据此参数防重放
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 错误信息

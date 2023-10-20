@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaDamaiMaitixProjectDistributionQuerylistAPIRequest 分销项目列表查询（已过时，不推荐使用） API请求
+// AlibabadamaimaitixprojectdistributionquerylistAPIRequest 分销项目列表查询（已过时，不推荐使用） API请求
 // alibaba.damai.maitix.project.distribution.querylist
 //
 // 分销项目列表查询接口（已过时，不推荐使用）
-type AlibabaDamaiMaitixProjectDistributionQuerylistAPIRequest struct {
+type AlibabadamaimaitixprojectdistributionquerylistAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaDamaiMaitixProjectDistributionQuerylistRequest 初始化AlibabaDamaiMaitixProjectDistributionQuerylistAPIRequest对象
-func NewAlibabaDamaiMaitixProjectDistributionQuerylistRequest() *AlibabaDamaiMaitixProjectDistributionQuerylistAPIRequest {
-	return &AlibabaDamaiMaitixProjectDistributionQuerylistAPIRequest{
+// NewAlibabadamaimaitixprojectdistributionquerylistRequest 初始化AlibabadamaimaitixprojectdistributionquerylistAPIRequest对象
+func NewAlibabadamaimaitixprojectdistributionquerylistRequest() *AlibabadamaimaitixprojectdistributionquerylistAPIRequest {
+	return &AlibabadamaimaitixprojectdistributionquerylistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMaitixProjectDistributionQuerylistAPIRequest) GetApiMethodName() string {
+func (r AlibabadamaimaitixprojectdistributionquerylistAPIRequest) GetApiMethodName() string {
 	return "alibaba.damai.maitix.project.distribution.querylist"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMaitixProjectDistributionQuerylistAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabadamaimaitixprojectdistributionquerylistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaDamaiMaitixProjectDistributionQuerylistAPIRequest) GetRawParams() model.Params {
+func (r AlibabadamaimaitixprojectdistributionquerylistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

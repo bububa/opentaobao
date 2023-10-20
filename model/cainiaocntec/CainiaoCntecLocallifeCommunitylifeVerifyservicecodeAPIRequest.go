@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest 验证码验证 API请求
+// CainiaocnteclocallifecommunitylifeverifyservicecodeAPIRequest 验证码验证 API请求
 // cainiao.cntec.locallife.communitylife.verifyservicecode
 //
 // 验证码验证
-type CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest struct {
+type CainiaocnteclocallifecommunitylifeverifyservicecodeAPIRequest struct {
 	model.Params
 	// 订单id
 	_orderNo string
@@ -20,65 +20,65 @@ type CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest struct {
 	_serviceCode string
 }
 
-// NewCainiaoCntecLocallifeCommunitylifeVerifyservicecodeRequest 初始化CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest对象
-func NewCainiaoCntecLocallifeCommunitylifeVerifyservicecodeRequest() *CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest {
-	return &CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest{
+// NewCainiaocnteclocallifecommunitylifeverifyservicecodeRequest 初始化CainiaocnteclocallifecommunitylifeverifyservicecodeAPIRequest对象
+func NewCainiaocnteclocallifecommunitylifeverifyservicecodeRequest() *CainiaocnteclocallifecommunitylifeverifyservicecodeAPIRequest {
+	return &CainiaocnteclocallifecommunitylifeverifyservicecodeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest) GetApiMethodName() string {
+func (r CainiaocnteclocallifecommunitylifeverifyservicecodeAPIRequest) GetApiMethodName() string {
 	return "cainiao.cntec.locallife.communitylife.verifyservicecode"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest) GetApiParams(params url.Values) {
+func (r CainiaocnteclocallifecommunitylifeverifyservicecodeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest) GetRawParams() model.Params {
+func (r CainiaocnteclocallifecommunitylifeverifyservicecodeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOrderNo is OrderNo Setter
 // 订单id
-func (r *CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest) SetOrderNo(_orderNo string) error {
+func (r *CainiaocnteclocallifecommunitylifeverifyservicecodeAPIRequest) SetOrderNo(_orderNo string) error {
 	r._orderNo = _orderNo
 	r.Set("order_no", _orderNo)
 	return nil
 }
 
 // GetOrderNo OrderNo Getter
-func (r CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest) GetOrderNo() string {
+func (r CainiaocnteclocallifecommunitylifeverifyservicecodeAPIRequest) GetOrderNo() string {
 	return r._orderNo
 }
 
 // SetFeature is Feature Setter
 // 扩展信息Json格式
-func (r *CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest) SetFeature(_feature string) error {
+func (r *CainiaocnteclocallifecommunitylifeverifyservicecodeAPIRequest) SetFeature(_feature string) error {
 	r._feature = _feature
 	r.Set("feature", _feature)
 	return nil
 }
 
 // GetFeature Feature Getter
-func (r CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest) GetFeature() string {
+func (r CainiaocnteclocallifecommunitylifeverifyservicecodeAPIRequest) GetFeature() string {
 	return r._feature
 }
 
 // SetServiceCode is ServiceCode Setter
 // 服务码
-func (r *CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest) SetServiceCode(_serviceCode string) error {
+func (r *CainiaocnteclocallifecommunitylifeverifyservicecodeAPIRequest) SetServiceCode(_serviceCode string) error {
 	r._serviceCode = _serviceCode
 	r.Set("service_code", _serviceCode)
 	return nil
 }
 
 // GetServiceCode ServiceCode Getter
-func (r CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest) GetServiceCode() string {
+func (r CainiaocnteclocallifecommunitylifeverifyservicecodeAPIRequest) GetServiceCode() string {
 	return r._serviceCode
 }

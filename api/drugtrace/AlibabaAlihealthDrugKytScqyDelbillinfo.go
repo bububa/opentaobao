@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// AlibabaAlihealthDrugKytScqyDelbillinfo 根据单据号删除单据
+// Alibabaalihealthdrugkytscqydelbillinfo 根据单据号删除单据
 // alibaba.alihealth.drug.kyt.scqy.delbillinfo
 //
 // 根据单据号删除单据
-func AlibabaAlihealthDrugKytScqyDelbillinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytScqyDelbillinfoAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytScqyDelbillinfoAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytScqyDelbillinfoAPIResponse
+func Alibabaalihealthdrugkytscqydelbillinfo(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugkytscqydelbillinfoAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugkytscqydelbillinfoAPIResponse, error) {
+	var resp drugtrace.AlibabaalihealthdrugkytscqydelbillinfoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

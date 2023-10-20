@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest 奶粉溯源-同步数据 API请求
+// AlibabaalihealthtracecodesellermilktracetosourceadddataAPIRequest 奶粉溯源-同步数据 API请求
 // alibaba.alihealth.tracecodeseller.milk.trace.tosource.add.data
 //
 // 奶粉溯源-同步数据
-type AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest struct {
+type AlibabaalihealthtracecodesellermilktracetosourceadddataAPIRequest struct {
 	model.Params
 	// 奶粉品牌ID
 	_entId string
@@ -18,52 +18,52 @@ type AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest struct {
 	_jsonStr string
 }
 
-// NewAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataRequest 初始化AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest对象
-func NewAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataRequest() *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest {
-	return &AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest{
+// NewAlibabaalihealthtracecodesellermilktracetosourceadddataRequest 初始化AlibabaalihealthtracecodesellermilktracetosourceadddataAPIRequest对象
+func NewAlibabaalihealthtracecodesellermilktracetosourceadddataRequest() *AlibabaalihealthtracecodesellermilktracetosourceadddataAPIRequest {
+	return &AlibabaalihealthtracecodesellermilktracetosourceadddataAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthtracecodesellermilktracetosourceadddataAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.tracecodeseller.milk.trace.tosource.add.data"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthtracecodesellermilktracetosourceadddataAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthtracecodesellermilktracetosourceadddataAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetEntId is EntId Setter
 // 奶粉品牌ID
-func (r *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) SetEntId(_entId string) error {
+func (r *AlibabaalihealthtracecodesellermilktracetosourceadddataAPIRequest) SetEntId(_entId string) error {
 	r._entId = _entId
 	r.Set("ent_id", _entId)
 	return nil
 }
 
 // GetEntId EntId Getter
-func (r AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) GetEntId() string {
+func (r AlibabaalihealthtracecodesellermilktracetosourceadddataAPIRequest) GetEntId() string {
 	return r._entId
 }
 
 // SetJsonStr is JsonStr Setter
 // 奶粉数据
-func (r *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) SetJsonStr(_jsonStr string) error {
+func (r *AlibabaalihealthtracecodesellermilktracetosourceadddataAPIRequest) SetJsonStr(_jsonStr string) error {
 	r._jsonStr = _jsonStr
 	r.Set("json_str", _jsonStr)
 	return nil
 }
 
 // GetJsonStr JsonStr Getter
-func (r AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) GetJsonStr() string {
+func (r AlibabaalihealthtracecodesellermilktracetosourceadddataAPIRequest) GetJsonStr() string {
 	return r._jsonStr
 }

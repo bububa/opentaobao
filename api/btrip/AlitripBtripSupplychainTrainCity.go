@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// AlitripBtripSupplychainTrainCity 火车站数据查询
+// Alitripbtripsupplychaintraincity 火车站数据查询
 // alitrip.btrip.supplychain.train.city
 //
 // 火车站数据查询
-func AlitripBtripSupplychainTrainCity(clt *core.SDKClient, req *btrip.AlitripBtripSupplychainTrainCityAPIRequest, session string) (*btrip.AlitripBtripSupplychainTrainCityAPIResponse, error) {
-	var resp btrip.AlitripBtripSupplychainTrainCityAPIResponse
+func Alitripbtripsupplychaintraincity(clt *core.SDKClient, req *btrip.AlitripbtripsupplychaintraincityAPIRequest, session string) (*btrip.AlitripbtripsupplychaintraincityAPIResponse, error) {
+	var resp btrip.AlitripbtripsupplychaintraincityAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

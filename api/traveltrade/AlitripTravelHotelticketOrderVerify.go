@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/traveltrade"
 )
 
-// AlitripTravelHotelticketOrderVerify 订单核销通知
+// Alitriptravelhotelticketorderverify 订单核销通知
 // alitrip.travel.hotelticket.order.verify
 //
 // 订单核销通知
-func AlitripTravelHotelticketOrderVerify(clt *core.SDKClient, req *traveltrade.AlitripTravelHotelticketOrderVerifyAPIRequest, session string) (*traveltrade.AlitripTravelHotelticketOrderVerifyAPIResponse, error) {
-	var resp traveltrade.AlitripTravelHotelticketOrderVerifyAPIResponse
+func Alitriptravelhotelticketorderverify(clt *core.SDKClient, req *traveltrade.AlitriptravelhotelticketorderverifyAPIRequest, session string) (*traveltrade.AlitriptravelhotelticketorderverifyAPIResponse, error) {
+	var resp traveltrade.AlitriptravelhotelticketorderverifyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

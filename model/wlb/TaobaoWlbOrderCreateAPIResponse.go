@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWlbOrderCreateAPIResponse 创建物流宝订单 API返回值
+// TaobaowlbordercreateAPIResponse 创建物流宝订单 API返回值
 // taobao.wlb.order.create
 //
 // 创建物流宝订单，由外部ISV或者ERP，Elink，淘宝交易产生
-type TaobaoWlbOrderCreateAPIResponse struct {
+type TaobaowlbordercreateAPIResponse struct {
 	model.CommonResponse
-	TaobaoWlbOrderCreateAPIResponseModel
+	TaobaowlbordercreateAPIResponseModel
 }
 
-// TaobaoWlbOrderCreateAPIResponseModel is 创建物流宝订单 成功返回结果
-type TaobaoWlbOrderCreateAPIResponseModel struct {
+// TaobaowlbordercreateAPIResponseModel is 创建物流宝订单 成功返回结果
+type TaobaowlbordercreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_order_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

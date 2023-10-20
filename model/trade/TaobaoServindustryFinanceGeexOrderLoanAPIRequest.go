@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoServindustryFinanceGeexOrderLoanAPIRequest 即科放款信息回调api API请求
+// TaobaoservindustryfinancegeexorderloanAPIRequest 即科放款信息回调api API请求
 // taobao.servindustry.finance.geex.order.loan
 //
 // 即科放款信息api
-type TaobaoServindustryFinanceGeexOrderLoanAPIRequest struct {
+type TaobaoservindustryfinancegeexorderloanAPIRequest struct {
 	model.Params
 	// 金额单位
 	_priceUnit string
@@ -28,117 +28,117 @@ type TaobaoServindustryFinanceGeexOrderLoanAPIRequest struct {
 	_loanPrice int64
 }
 
-// NewTaobaoServindustryFinanceGeexOrderLoanRequest 初始化TaobaoServindustryFinanceGeexOrderLoanAPIRequest对象
-func NewTaobaoServindustryFinanceGeexOrderLoanRequest() *TaobaoServindustryFinanceGeexOrderLoanAPIRequest {
-	return &TaobaoServindustryFinanceGeexOrderLoanAPIRequest{
+// NewTaobaoservindustryfinancegeexorderloanRequest 初始化TaobaoservindustryfinancegeexorderloanAPIRequest对象
+func NewTaobaoservindustryfinancegeexorderloanRequest() *TaobaoservindustryfinancegeexorderloanAPIRequest {
+	return &TaobaoservindustryfinancegeexorderloanAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoServindustryFinanceGeexOrderLoanAPIRequest) GetApiMethodName() string {
+func (r TaobaoservindustryfinancegeexorderloanAPIRequest) GetApiMethodName() string {
 	return "taobao.servindustry.finance.geex.order.loan"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoServindustryFinanceGeexOrderLoanAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoservindustryfinancegeexorderloanAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoServindustryFinanceGeexOrderLoanAPIRequest) GetRawParams() model.Params {
+func (r TaobaoservindustryfinancegeexorderloanAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPriceUnit is PriceUnit Setter
 // 金额单位
-func (r *TaobaoServindustryFinanceGeexOrderLoanAPIRequest) SetPriceUnit(_priceUnit string) error {
+func (r *TaobaoservindustryfinancegeexorderloanAPIRequest) SetPriceUnit(_priceUnit string) error {
 	r._priceUnit = _priceUnit
 	r.Set("price_unit", _priceUnit)
 	return nil
 }
 
 // GetPriceUnit PriceUnit Getter
-func (r TaobaoServindustryFinanceGeexOrderLoanAPIRequest) GetPriceUnit() string {
+func (r TaobaoservindustryfinancegeexorderloanAPIRequest) GetPriceUnit() string {
 	return r._priceUnit
 }
 
 // SetAlscOrderId is AlscOrderId Setter
 // 本地订单号
-func (r *TaobaoServindustryFinanceGeexOrderLoanAPIRequest) SetAlscOrderId(_alscOrderId string) error {
+func (r *TaobaoservindustryfinancegeexorderloanAPIRequest) SetAlscOrderId(_alscOrderId string) error {
 	r._alscOrderId = _alscOrderId
 	r.Set("alsc_order_id", _alscOrderId)
 	return nil
 }
 
 // GetAlscOrderId AlscOrderId Getter
-func (r TaobaoServindustryFinanceGeexOrderLoanAPIRequest) GetAlscOrderId() string {
+func (r TaobaoservindustryfinancegeexorderloanAPIRequest) GetAlscOrderId() string {
 	return r._alscOrderId
 }
 
 // SetLoanStatus is LoanStatus Setter
 // 放款状态
-func (r *TaobaoServindustryFinanceGeexOrderLoanAPIRequest) SetLoanStatus(_loanStatus string) error {
+func (r *TaobaoservindustryfinancegeexorderloanAPIRequest) SetLoanStatus(_loanStatus string) error {
 	r._loanStatus = _loanStatus
 	r.Set("loan_status", _loanStatus)
 	return nil
 }
 
 // GetLoanStatus LoanStatus Getter
-func (r TaobaoServindustryFinanceGeexOrderLoanAPIRequest) GetLoanStatus() string {
+func (r TaobaoservindustryfinancegeexorderloanAPIRequest) GetLoanStatus() string {
 	return r._loanStatus
 }
 
 // SetLoanFlowId is LoanFlowId Setter
 // 放款流水
-func (r *TaobaoServindustryFinanceGeexOrderLoanAPIRequest) SetLoanFlowId(_loanFlowId string) error {
+func (r *TaobaoservindustryfinancegeexorderloanAPIRequest) SetLoanFlowId(_loanFlowId string) error {
 	r._loanFlowId = _loanFlowId
 	r.Set("loan_flow_id", _loanFlowId)
 	return nil
 }
 
 // GetLoanFlowId LoanFlowId Getter
-func (r TaobaoServindustryFinanceGeexOrderLoanAPIRequest) GetLoanFlowId() string {
+func (r TaobaoservindustryfinancegeexorderloanAPIRequest) GetLoanFlowId() string {
 	return r._loanFlowId
 }
 
 // SetUpdateTime is UpdateTime Setter
 // 更新时间
-func (r *TaobaoServindustryFinanceGeexOrderLoanAPIRequest) SetUpdateTime(_updateTime int64) error {
+func (r *TaobaoservindustryfinancegeexorderloanAPIRequest) SetUpdateTime(_updateTime int64) error {
 	r._updateTime = _updateTime
 	r.Set("update_time", _updateTime)
 	return nil
 }
 
 // GetUpdateTime UpdateTime Getter
-func (r TaobaoServindustryFinanceGeexOrderLoanAPIRequest) GetUpdateTime() int64 {
+func (r TaobaoservindustryfinancegeexorderloanAPIRequest) GetUpdateTime() int64 {
 	return r._updateTime
 }
 
 // SetLoanTime is LoanTime Setter
 // 放款时间
-func (r *TaobaoServindustryFinanceGeexOrderLoanAPIRequest) SetLoanTime(_loanTime int64) error {
+func (r *TaobaoservindustryfinancegeexorderloanAPIRequest) SetLoanTime(_loanTime int64) error {
 	r._loanTime = _loanTime
 	r.Set("loan_time", _loanTime)
 	return nil
 }
 
 // GetLoanTime LoanTime Getter
-func (r TaobaoServindustryFinanceGeexOrderLoanAPIRequest) GetLoanTime() int64 {
+func (r TaobaoservindustryfinancegeexorderloanAPIRequest) GetLoanTime() int64 {
 	return r._loanTime
 }
 
 // SetLoanPrice is LoanPrice Setter
 // 放款金额
-func (r *TaobaoServindustryFinanceGeexOrderLoanAPIRequest) SetLoanPrice(_loanPrice int64) error {
+func (r *TaobaoservindustryfinancegeexorderloanAPIRequest) SetLoanPrice(_loanPrice int64) error {
 	r._loanPrice = _loanPrice
 	r.Set("loan_price", _loanPrice)
 	return nil
 }
 
 // GetLoanPrice LoanPrice Getter
-func (r TaobaoServindustryFinanceGeexOrderLoanAPIRequest) GetLoanPrice() int64 {
+func (r TaobaoservindustryfinancegeexorderloanAPIRequest) GetLoanPrice() int64 {
 	return r._loanPrice
 }

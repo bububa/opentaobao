@@ -87,7 +87,7 @@ type FirstResult struct {
 	// 酒店状态：0: 正常;-2:停售；-1：删除
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 淘宝标准酒店信息
-	SHotel *SHotel `json:"s_hotel,omitempty" xml:"s_hotel,omitempty"`
+	SHotel *Shotel `json:"s_hotel,omitempty" xml:"s_hotel,omitempty"`
 	// hotel匹配状态: 0：待系统匹配 1：已系统匹配，匹配成功，待卖家确认 2：已系统匹配，匹配失败，待人工匹配 3：已人工匹配，匹配成功，待卖家确认 4：已人工匹配，匹配失败 5：卖家已确认，确认&amp;ldquo;YES&amp;rdquo; 6：卖家已确认，确认&amp;ldquo;NO&amp;rdquo; 7:已系统匹配，但是匹配重复，待人工确认
 	MatchStatus int64 `json:"match_status,omitempty" xml:"match_status,omitempty"`
 	// 0:国内;1:国外

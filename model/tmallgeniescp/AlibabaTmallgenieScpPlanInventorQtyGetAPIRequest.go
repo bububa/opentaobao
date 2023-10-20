@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest 10-同步库存现有量 API请求
+// AlibabatmallgeniescpplaninventorqtygetAPIRequest 10-同步库存现有量 API请求
 // alibaba.tmallgenie.scp.plan.inventor.qty.get
 //
 // 同步库存现有量
-type AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest struct {
+type AlibabatmallgeniescpplaninventorqtygetAPIRequest struct {
 	model.Params
 	// 扩展参数
 	_requestExtendJson string
 }
 
-// NewAlibabaTmallgenieScpPlanInventorQtyGetRequest 初始化AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest对象
-func NewAlibabaTmallgenieScpPlanInventorQtyGetRequest() *AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest {
-	return &AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest{
+// NewAlibabatmallgeniescpplaninventorqtygetRequest 初始化AlibabatmallgeniescpplaninventorqtygetAPIRequest对象
+func NewAlibabatmallgeniescpplaninventorqtygetRequest() *AlibabatmallgeniescpplaninventorqtygetAPIRequest {
+	return &AlibabatmallgeniescpplaninventorqtygetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest) GetApiMethodName() string {
+func (r AlibabatmallgeniescpplaninventorqtygetAPIRequest) GetApiMethodName() string {
 	return "alibaba.tmallgenie.scp.plan.inventor.qty.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabatmallgeniescpplaninventorqtygetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabatmallgeniescpplaninventorqtygetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRequestExtendJson is RequestExtendJson Setter
 // 扩展参数
-func (r *AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest) SetRequestExtendJson(_requestExtendJson string) error {
+func (r *AlibabatmallgeniescpplaninventorqtygetAPIRequest) SetRequestExtendJson(_requestExtendJson string) error {
 	r._requestExtendJson = _requestExtendJson
 	r.Set("request_extend_json", _requestExtendJson)
 	return nil
 }
 
 // GetRequestExtendJson RequestExtendJson Getter
-func (r AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest) GetRequestExtendJson() string {
+func (r AlibabatmallgeniescpplaninventorqtygetAPIRequest) GetRequestExtendJson() string {
 	return r._requestExtendJson
 }

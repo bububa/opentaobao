@@ -1,7 +1,7 @@
 package mos
 
-// AlibabaMjMoscarnivalReceiveencryptData 结构体
-type AlibabaMjMoscarnivalReceiveencryptData struct {
+// AlibabamjmoscarnivalreceiveencryptData 结构体
+type AlibabamjmoscarnivalreceiveencryptData struct {
 	// 权益列表
 	RightsList []RightsList `json:"rights_list,omitempty" xml:"rights_list>rights_list,omitempty"`
 	// 奖品类型

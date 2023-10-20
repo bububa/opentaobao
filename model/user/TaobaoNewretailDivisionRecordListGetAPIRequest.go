@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoNewretailDivisionRecordListGetAPIRequest 导购分佣明细列表 API请求
+// TaobaonewretaildivisionrecordlistgetAPIRequest 导购分佣明细列表 API请求
 // taobao.newretail.division.record.list.get
 //
 // 提供分页查询导购分佣明细的能力
-type TaobaoNewretailDivisionRecordListGetAPIRequest struct {
+type TaobaonewretaildivisionrecordlistgetAPIRequest struct {
 	model.Params
 	// 入参
 	_param *TopDivisionRecordReqDto
 }
 
-// NewTaobaoNewretailDivisionRecordListGetRequest 初始化TaobaoNewretailDivisionRecordListGetAPIRequest对象
-func NewTaobaoNewretailDivisionRecordListGetRequest() *TaobaoNewretailDivisionRecordListGetAPIRequest {
-	return &TaobaoNewretailDivisionRecordListGetAPIRequest{
+// NewTaobaonewretaildivisionrecordlistgetRequest 初始化TaobaonewretaildivisionrecordlistgetAPIRequest对象
+func NewTaobaonewretaildivisionrecordlistgetRequest() *TaobaonewretaildivisionrecordlistgetAPIRequest {
+	return &TaobaonewretaildivisionrecordlistgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoNewretailDivisionRecordListGetAPIRequest) GetApiMethodName() string {
+func (r TaobaonewretaildivisionrecordlistgetAPIRequest) GetApiMethodName() string {
 	return "taobao.newretail.division.record.list.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoNewretailDivisionRecordListGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaonewretaildivisionrecordlistgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoNewretailDivisionRecordListGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaonewretaildivisionrecordlistgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 入参
-func (r *TaobaoNewretailDivisionRecordListGetAPIRequest) SetParam(_param *TopDivisionRecordReqDto) error {
+func (r *TaobaonewretaildivisionrecordlistgetAPIRequest) SetParam(_param *TopDivisionRecordReqDto) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r TaobaoNewretailDivisionRecordListGetAPIRequest) GetParam() *TopDivisionRecordReqDto {
+func (r TaobaonewretaildivisionrecordlistgetAPIRequest) GetParam() *TopDivisionRecordReqDto {
 	return r._param
 }

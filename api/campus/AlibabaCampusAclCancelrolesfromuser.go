@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// AlibabaCampusAclCancelrolesfromuser 撤销用户授予的角色
+// Alibabacampusaclcancelrolesfromuser 撤销用户授予的角色
 // alibaba.campus.acl.cancelrolesfromuser
 //
 // 撤销用户授予的角色
-func AlibabaCampusAclCancelrolesfromuser(clt *core.SDKClient, req *campus.AlibabaCampusAclCancelrolesfromuserAPIRequest, session string) (*campus.AlibabaCampusAclCancelrolesfromuserAPIResponse, error) {
-	var resp campus.AlibabaCampusAclCancelrolesfromuserAPIResponse
+func Alibabacampusaclcancelrolesfromuser(clt *core.SDKClient, req *campus.AlibabacampusaclcancelrolesfromuserAPIRequest, session string) (*campus.AlibabacampusaclcancelrolesfromuserAPIResponse, error) {
+	var resp campus.AlibabacampusaclcancelrolesfromuserAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

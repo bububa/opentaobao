@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// AlitripBtripHotelDistributionSearchLowPrice 商旅酒店api分销-酒店最低价
+// Alitripbtriphoteldistributionsearchlowprice 商旅酒店api分销-酒店最低价
 // alitrip.btrip.hotel.distribution.search.low.price
 //
 // 商旅酒店api分销-酒店最低价
-func AlitripBtripHotelDistributionSearchLowPrice(clt *core.SDKClient, req *btrip.AlitripBtripHotelDistributionSearchLowPriceAPIRequest, session string) (*btrip.AlitripBtripHotelDistributionSearchLowPriceAPIResponse, error) {
-	var resp btrip.AlitripBtripHotelDistributionSearchLowPriceAPIResponse
+func Alitripbtriphoteldistributionsearchlowprice(clt *core.SDKClient, req *btrip.AlitripbtriphoteldistributionsearchlowpriceAPIRequest, session string) (*btrip.AlitripbtriphoteldistributionsearchlowpriceAPIResponse, error) {
+	var resp btrip.AlitripbtriphoteldistributionsearchlowpriceAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

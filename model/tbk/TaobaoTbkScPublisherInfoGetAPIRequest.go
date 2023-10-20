@@ -13,21 +13,21 @@ import (
 type TaobaotbkscpublisherinfogetAPIRequest struct {
 	model.Params
 	// 备案的场景：common（通用备案），etao（一淘备案），minietao（一淘小程序备案），offlineShop（线下门店备案），offlinePerson（线下个人备案）。如不填默认common。查询会员信息只需填写common即可
-	_relationapp string
+	_relationApp string
 	// 会员独占 - 会员运营ID
-	_specialid string
+	_specialId string
 	// 淘宝客外部用户标记，如自身系统账户ID；微信ID等
-	_externalid string
+	_externalId string
 	// 渠道独占 - 渠道关系ID
-	_relationid int64
+	_relationId int64
 	// 第几页，下标从0开始
-	_pageno int64
+	_pageNo int64
 	// 每页大小
-	_pagesize int64
+	_pageSize int64
 	// 类型，必选 1:渠道信息；2:会员信息
-	_infotype int64
+	_infoType int64
 	// 1-微信、2-微博、3-抖音、4-快手、5-QQ，0-其他；默认为0
-	_externaltype int64
+	_externalType int64
 }
 
 // NewTaobaotbkscpublisherinfogetRequest 初始化TaobaotbkscpublisherinfogetAPIRequest对象
@@ -54,106 +54,106 @@ func (r TaobaotbkscpublisherinfogetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetRelationapp is Relationapp Setter
+// SetRelationApp is RelationApp Setter
 // 备案的场景：common（通用备案），etao（一淘备案），minietao（一淘小程序备案），offlineShop（线下门店备案），offlinePerson（线下个人备案）。如不填默认common。查询会员信息只需填写common即可
-func (r *TaobaotbkscpublisherinfogetAPIRequest) SetRelationapp(_relationapp string) error {
-	r._relationapp = _relationapp
-	r.Set("relation_app", _relationapp)
+func (r *TaobaotbkscpublisherinfogetAPIRequest) SetRelationApp(_relationApp string) error {
+	r._relationApp = _relationApp
+	r.Set("relation_app", _relationApp)
 	return nil
 }
 
-// GetRelationapp Relationapp Getter
-func (r TaobaotbkscpublisherinfogetAPIRequest) GetRelationapp() string {
-	return r._relationapp
+// GetRelationApp RelationApp Getter
+func (r TaobaotbkscpublisherinfogetAPIRequest) GetRelationApp() string {
+	return r._relationApp
 }
 
-// SetSpecialid is Specialid Setter
+// SetSpecialId is SpecialId Setter
 // 会员独占 - 会员运营ID
-func (r *TaobaotbkscpublisherinfogetAPIRequest) SetSpecialid(_specialid string) error {
-	r._specialid = _specialid
-	r.Set("special_id", _specialid)
+func (r *TaobaotbkscpublisherinfogetAPIRequest) SetSpecialId(_specialId string) error {
+	r._specialId = _specialId
+	r.Set("special_id", _specialId)
 	return nil
 }
 
-// GetSpecialid Specialid Getter
-func (r TaobaotbkscpublisherinfogetAPIRequest) GetSpecialid() string {
-	return r._specialid
+// GetSpecialId SpecialId Getter
+func (r TaobaotbkscpublisherinfogetAPIRequest) GetSpecialId() string {
+	return r._specialId
 }
 
-// SetExternalid is Externalid Setter
+// SetExternalId is ExternalId Setter
 // 淘宝客外部用户标记，如自身系统账户ID；微信ID等
-func (r *TaobaotbkscpublisherinfogetAPIRequest) SetExternalid(_externalid string) error {
-	r._externalid = _externalid
-	r.Set("external_id", _externalid)
+func (r *TaobaotbkscpublisherinfogetAPIRequest) SetExternalId(_externalId string) error {
+	r._externalId = _externalId
+	r.Set("external_id", _externalId)
 	return nil
 }
 
-// GetExternalid Externalid Getter
-func (r TaobaotbkscpublisherinfogetAPIRequest) GetExternalid() string {
-	return r._externalid
+// GetExternalId ExternalId Getter
+func (r TaobaotbkscpublisherinfogetAPIRequest) GetExternalId() string {
+	return r._externalId
 }
 
-// SetRelationid is Relationid Setter
+// SetRelationId is RelationId Setter
 // 渠道独占 - 渠道关系ID
-func (r *TaobaotbkscpublisherinfogetAPIRequest) SetRelationid(_relationid int64) error {
-	r._relationid = _relationid
-	r.Set("relation_id", _relationid)
+func (r *TaobaotbkscpublisherinfogetAPIRequest) SetRelationId(_relationId int64) error {
+	r._relationId = _relationId
+	r.Set("relation_id", _relationId)
 	return nil
 }
 
-// GetRelationid Relationid Getter
-func (r TaobaotbkscpublisherinfogetAPIRequest) GetRelationid() int64 {
-	return r._relationid
+// GetRelationId RelationId Getter
+func (r TaobaotbkscpublisherinfogetAPIRequest) GetRelationId() int64 {
+	return r._relationId
 }
 
-// SetPageno is Pageno Setter
+// SetPageNo is PageNo Setter
 // 第几页，下标从0开始
-func (r *TaobaotbkscpublisherinfogetAPIRequest) SetPageno(_pageno int64) error {
-	r._pageno = _pageno
-	r.Set("page_no", _pageno)
+func (r *TaobaotbkscpublisherinfogetAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
 	return nil
 }
 
-// GetPageno Pageno Getter
-func (r TaobaotbkscpublisherinfogetAPIRequest) GetPageno() int64 {
-	return r._pageno
+// GetPageNo PageNo Getter
+func (r TaobaotbkscpublisherinfogetAPIRequest) GetPageNo() int64 {
+	return r._pageNo
 }
 
-// SetPagesize is Pagesize Setter
+// SetPageSize is PageSize Setter
 // 每页大小
-func (r *TaobaotbkscpublisherinfogetAPIRequest) SetPagesize(_pagesize int64) error {
-	r._pagesize = _pagesize
-	r.Set("page_size", _pagesize)
+func (r *TaobaotbkscpublisherinfogetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
 	return nil
 }
 
-// GetPagesize Pagesize Getter
-func (r TaobaotbkscpublisherinfogetAPIRequest) GetPagesize() int64 {
-	return r._pagesize
+// GetPageSize PageSize Getter
+func (r TaobaotbkscpublisherinfogetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }
 
-// SetInfotype is Infotype Setter
+// SetInfoType is InfoType Setter
 // 类型，必选 1:渠道信息；2:会员信息
-func (r *TaobaotbkscpublisherinfogetAPIRequest) SetInfotype(_infotype int64) error {
-	r._infotype = _infotype
-	r.Set("info_type", _infotype)
+func (r *TaobaotbkscpublisherinfogetAPIRequest) SetInfoType(_infoType int64) error {
+	r._infoType = _infoType
+	r.Set("info_type", _infoType)
 	return nil
 }
 
-// GetInfotype Infotype Getter
-func (r TaobaotbkscpublisherinfogetAPIRequest) GetInfotype() int64 {
-	return r._infotype
+// GetInfoType InfoType Getter
+func (r TaobaotbkscpublisherinfogetAPIRequest) GetInfoType() int64 {
+	return r._infoType
 }
 
-// SetExternaltype is Externaltype Setter
+// SetExternalType is ExternalType Setter
 // 1-微信、2-微博、3-抖音、4-快手、5-QQ，0-其他；默认为0
-func (r *TaobaotbkscpublisherinfogetAPIRequest) SetExternaltype(_externaltype int64) error {
-	r._externaltype = _externaltype
-	r.Set("external_type", _externaltype)
+func (r *TaobaotbkscpublisherinfogetAPIRequest) SetExternalType(_externalType int64) error {
+	r._externalType = _externalType
+	r.Set("external_type", _externalType)
 	return nil
 }
 
-// GetExternaltype Externaltype Getter
-func (r TaobaotbkscpublisherinfogetAPIRequest) GetExternaltype() int64 {
-	return r._externaltype
+// GetExternalType ExternalType Getter
+func (r TaobaotbkscpublisherinfogetAPIRequest) GetExternalType() int64 {
+	return r._externalType
 }

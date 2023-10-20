@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alisports"
 )
 
-// AlibabaAlisportsPassportAccountDelrelation 阿里体育会员系统--取消三方关联接口
+// Alibabaalisportspassportaccountdelrelation 阿里体育会员系统--取消三方关联接口
 // alibaba.alisports.passport.account.delrelation
 //
 // 阿里体育会员系统--取消三方关联接口
-func AlibabaAlisportsPassportAccountDelrelation(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountDelrelationAPIRequest, session string) (*alisports.AlibabaAlisportsPassportAccountDelrelationAPIResponse, error) {
-	var resp alisports.AlibabaAlisportsPassportAccountDelrelationAPIResponse
+func Alibabaalisportspassportaccountdelrelation(clt *core.SDKClient, req *alisports.AlibabaalisportspassportaccountdelrelationAPIRequest, session string) (*alisports.AlibabaalisportspassportaccountdelrelationAPIResponse, error) {
+	var resp alisports.AlibabaalisportspassportaccountdelrelationAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

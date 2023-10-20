@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripTravelFscRouteApiProjectOpenAPIRequest 打开团期 API请求
+// TaobaoalitriptravelfscrouteapiprojectopenAPIRequest 打开团期 API请求
 // taobao.alitrip.travel.fsc.route.api.project.open
 //
 // 打开团期
-type TaobaoAlitripTravelFscRouteApiProjectOpenAPIRequest struct {
+type TaobaoalitriptravelfscrouteapiprojectopenAPIRequest struct {
 	model.Params
 	// fscProjectOpenRequest
 	_fscProjectOpenRequest *FscProjectOpenRequest
 }
 
-// NewTaobaoAlitripTravelFscRouteApiProjectOpenRequest 初始化TaobaoAlitripTravelFscRouteApiProjectOpenAPIRequest对象
-func NewTaobaoAlitripTravelFscRouteApiProjectOpenRequest() *TaobaoAlitripTravelFscRouteApiProjectOpenAPIRequest {
-	return &TaobaoAlitripTravelFscRouteApiProjectOpenAPIRequest{
+// NewTaobaoalitriptravelfscrouteapiprojectopenRequest 初始化TaobaoalitriptravelfscrouteapiprojectopenAPIRequest对象
+func NewTaobaoalitriptravelfscrouteapiprojectopenRequest() *TaobaoalitriptravelfscrouteapiprojectopenAPIRequest {
+	return &TaobaoalitriptravelfscrouteapiprojectopenAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripTravelFscRouteApiProjectOpenAPIRequest) GetApiMethodName() string {
+func (r TaobaoalitriptravelfscrouteapiprojectopenAPIRequest) GetApiMethodName() string {
 	return "taobao.alitrip.travel.fsc.route.api.project.open"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripTravelFscRouteApiProjectOpenAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoalitriptravelfscrouteapiprojectopenAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoAlitripTravelFscRouteApiProjectOpenAPIRequest) GetRawParams() model.Params {
+func (r TaobaoalitriptravelfscrouteapiprojectopenAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetFscProjectOpenRequest is FscProjectOpenRequest Setter
 // fscProjectOpenRequest
-func (r *TaobaoAlitripTravelFscRouteApiProjectOpenAPIRequest) SetFscProjectOpenRequest(_fscProjectOpenRequest *FscProjectOpenRequest) error {
+func (r *TaobaoalitriptravelfscrouteapiprojectopenAPIRequest) SetFscProjectOpenRequest(_fscProjectOpenRequest *FscProjectOpenRequest) error {
 	r._fscProjectOpenRequest = _fscProjectOpenRequest
 	r.Set("fsc_project_open_request", _fscProjectOpenRequest)
 	return nil
 }
 
 // GetFscProjectOpenRequest FscProjectOpenRequest Getter
-func (r TaobaoAlitripTravelFscRouteApiProjectOpenAPIRequest) GetFscProjectOpenRequest() *FscProjectOpenRequest {
+func (r TaobaoalitriptravelfscrouteapiprojectopenAPIRequest) GetFscProjectOpenRequest() *FscProjectOpenRequest {
 	return r._fscProjectOpenRequest
 }

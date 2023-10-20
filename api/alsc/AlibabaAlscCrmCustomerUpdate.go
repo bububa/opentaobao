@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// AlibabaAlscCrmCustomerUpdate 更新顾客信息
+// Alibabaalsccrmcustomerupdate 更新顾客信息
 // alibaba.alsc.crm.customer.update
 //
 // 更新顾客信息
-func AlibabaAlscCrmCustomerUpdate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCustomerUpdateAPIRequest, session string) (*alsc.AlibabaAlscCrmCustomerUpdateAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmCustomerUpdateAPIResponse
+func Alibabaalsccrmcustomerupdate(clt *core.SDKClient, req *alsc.AlibabaalsccrmcustomerupdateAPIRequest, session string) (*alsc.AlibabaalsccrmcustomerupdateAPIResponse, error) {
+	var resp alsc.AlibabaalsccrmcustomerupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaSecurityJaqRpGetverifytokenAPIResponse 聚安全实人认证获取认证会话token API返回值
+// AlibabasecurityjaqrpgetverifytokenAPIResponse 聚安全实人认证获取认证会话token API返回值
 // alibaba.security.jaq.rp.getverifytoken
 //
 // 聚安全实人认证获取认证会话token
-type AlibabaSecurityJaqRpGetverifytokenAPIResponse struct {
+type AlibabasecurityjaqrpgetverifytokenAPIResponse struct {
 	model.CommonResponse
-	AlibabaSecurityJaqRpGetverifytokenAPIResponseModel
+	AlibabasecurityjaqrpgetverifytokenAPIResponseModel
 }
 
-// AlibabaSecurityJaqRpGetverifytokenAPIResponseModel is 聚安全实人认证获取认证会话token 成功返回结果
-type AlibabaSecurityJaqRpGetverifytokenAPIResponseModel struct {
+// AlibabasecurityjaqrpgetverifytokenAPIResponseModel is 聚安全实人认证获取认证会话token 成功返回结果
+type AlibabasecurityjaqrpgetverifytokenAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_security_jaq_rp_getverifytoken_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

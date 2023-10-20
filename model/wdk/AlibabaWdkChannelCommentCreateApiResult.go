@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkChannelCommentCreateApiResult 结构体
-type AlibabaWdkChannelCommentCreateApiResult struct {
+// AlibabawdkchannelcommentcreateApiResult 结构体
+type AlibabawdkchannelcommentcreateApiResult struct {
 	// 错误信息
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 是否成功

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallServicecenterWorkerTaglistGetAPIRequest 获取工人标签 API请求
+// TmallservicecenterworkertaglistgetAPIRequest 获取工人标签 API请求
 // tmall.servicecenter.worker.taglist.get
 //
 // 服务商获取对应工人的标签
-type TmallServicecenterWorkerTaglistGetAPIRequest struct {
+type TmallservicecenterworkertaglistgetAPIRequest struct {
 	model.Params
 	// 工人注册勤鸽时的身份证
 	_idNumber string
@@ -18,52 +18,52 @@ type TmallServicecenterWorkerTaglistGetAPIRequest struct {
 	_mobile string
 }
 
-// NewTmallServicecenterWorkerTaglistGetRequest 初始化TmallServicecenterWorkerTaglistGetAPIRequest对象
-func NewTmallServicecenterWorkerTaglistGetRequest() *TmallServicecenterWorkerTaglistGetAPIRequest {
-	return &TmallServicecenterWorkerTaglistGetAPIRequest{
+// NewTmallservicecenterworkertaglistgetRequest 初始化TmallservicecenterworkertaglistgetAPIRequest对象
+func NewTmallservicecenterworkertaglistgetRequest() *TmallservicecenterworkertaglistgetAPIRequest {
+	return &TmallservicecenterworkertaglistgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallServicecenterWorkerTaglistGetAPIRequest) GetApiMethodName() string {
+func (r TmallservicecenterworkertaglistgetAPIRequest) GetApiMethodName() string {
 	return "tmall.servicecenter.worker.taglist.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallServicecenterWorkerTaglistGetAPIRequest) GetApiParams(params url.Values) {
+func (r TmallservicecenterworkertaglistgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallServicecenterWorkerTaglistGetAPIRequest) GetRawParams() model.Params {
+func (r TmallservicecenterworkertaglistgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetIdNumber is IdNumber Setter
 // 工人注册勤鸽时的身份证
-func (r *TmallServicecenterWorkerTaglistGetAPIRequest) SetIdNumber(_idNumber string) error {
+func (r *TmallservicecenterworkertaglistgetAPIRequest) SetIdNumber(_idNumber string) error {
 	r._idNumber = _idNumber
 	r.Set("id_number", _idNumber)
 	return nil
 }
 
 // GetIdNumber IdNumber Getter
-func (r TmallServicecenterWorkerTaglistGetAPIRequest) GetIdNumber() string {
+func (r TmallservicecenterworkertaglistgetAPIRequest) GetIdNumber() string {
 	return r._idNumber
 }
 
 // SetMobile is Mobile Setter
 // 工人注册勤鸽时的手机号码
-func (r *TmallServicecenterWorkerTaglistGetAPIRequest) SetMobile(_mobile string) error {
+func (r *TmallservicecenterworkertaglistgetAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
 	r.Set("mobile", _mobile)
 	return nil
 }
 
 // GetMobile Mobile Getter
-func (r TmallServicecenterWorkerTaglistGetAPIRequest) GetMobile() string {
+func (r TmallservicecenterworkertaglistgetAPIRequest) GetMobile() string {
 	return r._mobile
 }

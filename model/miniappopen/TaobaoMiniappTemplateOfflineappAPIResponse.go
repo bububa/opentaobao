@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoMiniappTemplateOfflineappAPIResponse 下线实例化应用 API返回值
+// TaobaominiapptemplateofflineappAPIResponse 下线实例化应用 API返回值
 // taobao.miniapp.template.offlineapp
 //
 // 对指定的实例化小程序进行下线,需要指定clients和app_version
-type TaobaoMiniappTemplateOfflineappAPIResponse struct {
+type TaobaominiapptemplateofflineappAPIResponse struct {
 	model.CommonResponse
-	TaobaoMiniappTemplateOfflineappAPIResponseModel
+	TaobaominiapptemplateofflineappAPIResponseModel
 }
 
-// TaobaoMiniappTemplateOfflineappAPIResponseModel is 下线实例化应用 成功返回结果
-type TaobaoMiniappTemplateOfflineappAPIResponseModel struct {
+// TaobaominiapptemplateofflineappAPIResponseModel is 下线实例化应用 成功返回结果
+type TaobaominiapptemplateofflineappAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_template_offlineapp_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

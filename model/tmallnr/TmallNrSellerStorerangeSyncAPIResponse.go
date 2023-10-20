@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallNrSellerStorerangeSyncAPIResponse 同步商户中心服务范围 API返回值
+// TmallnrsellerstorerangesyncAPIResponse 同步商户中心服务范围 API返回值
 // tmall.nr.seller.storerange.sync
 //
 // 同步商户中心服务范围
-type TmallNrSellerStorerangeSyncAPIResponse struct {
+type TmallnrsellerstorerangesyncAPIResponse struct {
 	model.CommonResponse
-	TmallNrSellerStorerangeSyncAPIResponseModel
+	TmallnrsellerstorerangesyncAPIResponseModel
 }
 
-// TmallNrSellerStorerangeSyncAPIResponseModel is 同步商户中心服务范围 成功返回结果
-type TmallNrSellerStorerangeSyncAPIResponseModel struct {
+// TmallnrsellerstorerangesyncAPIResponseModel is 同步商户中心服务范围 成功返回结果
+type TmallnrsellerstorerangesyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_nr_seller_storerange_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

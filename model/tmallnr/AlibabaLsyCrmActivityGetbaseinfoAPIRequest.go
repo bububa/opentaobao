@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLsyCrmActivityGetbaseinfoAPIRequest ISV查询活动 API请求
+// AlibabalsycrmactivitygetbaseinfoAPIRequest ISV查询活动 API请求
 // alibaba.lsy.crm.activity.getbaseinfo
 //
 // ISV查询活动
-type AlibabaLsyCrmActivityGetbaseinfoAPIRequest struct {
+type AlibabalsycrmactivitygetbaseinfoAPIRequest struct {
 	model.Params
 	// 入参
 	_nrtQueryActivityReq *NrtQueryActivityReq
 }
 
-// NewAlibabaLsyCrmActivityGetbaseinfoRequest 初始化AlibabaLsyCrmActivityGetbaseinfoAPIRequest对象
-func NewAlibabaLsyCrmActivityGetbaseinfoRequest() *AlibabaLsyCrmActivityGetbaseinfoAPIRequest {
-	return &AlibabaLsyCrmActivityGetbaseinfoAPIRequest{
+// NewAlibabalsycrmactivitygetbaseinfoRequest 初始化AlibabalsycrmactivitygetbaseinfoAPIRequest对象
+func NewAlibabalsycrmactivitygetbaseinfoRequest() *AlibabalsycrmactivitygetbaseinfoAPIRequest {
+	return &AlibabalsycrmactivitygetbaseinfoAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaLsyCrmActivityGetbaseinfoAPIRequest) GetApiMethodName() string {
+func (r AlibabalsycrmactivitygetbaseinfoAPIRequest) GetApiMethodName() string {
 	return "alibaba.lsy.crm.activity.getbaseinfo"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaLsyCrmActivityGetbaseinfoAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabalsycrmactivitygetbaseinfoAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaLsyCrmActivityGetbaseinfoAPIRequest) GetRawParams() model.Params {
+func (r AlibabalsycrmactivitygetbaseinfoAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetNrtQueryActivityReq is NrtQueryActivityReq Setter
 // 入参
-func (r *AlibabaLsyCrmActivityGetbaseinfoAPIRequest) SetNrtQueryActivityReq(_nrtQueryActivityReq *NrtQueryActivityReq) error {
+func (r *AlibabalsycrmactivitygetbaseinfoAPIRequest) SetNrtQueryActivityReq(_nrtQueryActivityReq *NrtQueryActivityReq) error {
 	r._nrtQueryActivityReq = _nrtQueryActivityReq
 	r.Set("nrt_query_activity_req", _nrtQueryActivityReq)
 	return nil
 }
 
 // GetNrtQueryActivityReq NrtQueryActivityReq Getter
-func (r AlibabaLsyCrmActivityGetbaseinfoAPIRequest) GetNrtQueryActivityReq() *NrtQueryActivityReq {
+func (r AlibabalsycrmactivitygetbaseinfoAPIRequest) GetNrtQueryActivityReq() *NrtQueryActivityReq {
 	return r._nrtQueryActivityReq
 }

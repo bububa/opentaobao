@@ -67,9 +67,9 @@ type ServiceStoreDto struct {
 	// 标准地址编码
 	AddressCode int64 `json:"address_code,omitempty" xml:"address_code,omitempty"`
 	// 纬度
-	Latitude *BigDecimal `json:"latitude,omitempty" xml:"latitude,omitempty"`
+	Latitude float64 `json:"latitude,omitempty" xml:"latitude,omitempty"`
 	// 经度
-	Longitude *BigDecimal `json:"longitude,omitempty" xml:"longitude,omitempty"`
+	Longitude float64 `json:"longitude,omitempty" xml:"longitude,omitempty"`
 	// 门店类型
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 门店id

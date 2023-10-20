@@ -1,7 +1,7 @@
 package wdkitem
 
-// AlibabaWdkItemCategoryQueryResult 结构体
-type AlibabaWdkItemCategoryQueryResult struct {
+// AlibabawdkitemcategoryqueryResult 结构体
+type AlibabawdkitemcategoryqueryResult struct {
 	// code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// errorCode

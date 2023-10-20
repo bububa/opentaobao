@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/uscesl"
 )
 
-// TaobaoUsceslBizEslBind 电子价签绑定接口
+// Taobaousceslbizeslbind 电子价签绑定接口
 // taobao.uscesl.biz.esl.bind
 //
 // 电子价签商品绑定接口
-func TaobaoUsceslBizEslBind(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizEslBindAPIRequest, session string) (*uscesl.TaobaoUsceslBizEslBindAPIResponse, error) {
-	var resp uscesl.TaobaoUsceslBizEslBindAPIResponse
+func Taobaousceslbizeslbind(clt *core.SDKClient, req *uscesl.TaobaousceslbizeslbindAPIRequest, session string) (*uscesl.TaobaousceslbizeslbindAPIResponse, error) {
+	var resp uscesl.TaobaousceslbizeslbindAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

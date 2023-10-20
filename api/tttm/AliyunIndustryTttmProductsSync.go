@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tttm"
 )
 
-// AliyunIndustryTttmProductsSync 天天特卖货品信息同步
+// Aliyunindustrytttmproductssync 天天特卖货品信息同步
 // aliyun.industry.tttm.products.sync
 //
 // 天天特卖货品信息同步
-func AliyunIndustryTttmProductsSync(clt *core.SDKClient, req *tttm.AliyunIndustryTttmProductsSyncAPIRequest, session string) (*tttm.AliyunIndustryTttmProductsSyncAPIResponse, error) {
-	var resp tttm.AliyunIndustryTttmProductsSyncAPIResponse
+func Aliyunindustrytttmproductssync(clt *core.SDKClient, req *tttm.AliyunindustrytttmproductssyncAPIRequest, session string) (*tttm.AliyunindustrytttmproductssyncAPIResponse, error) {
+	var resp tttm.AliyunindustrytttmproductssyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

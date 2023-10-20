@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaJymItemExternalGoodsBatchtaskQueryAPIResponse 交易猫外部商家查询商品批量任务接口 API返回值
+// AlibabajymitemexternalgoodsbatchtaskqueryAPIResponse 交易猫外部商家查询商品批量任务接口 API返回值
 // alibaba.jym.item.external.goods.batchtask.query
 //
 // 供外部B端商家接入，请求查询商品批量任务，返回商品批量任务查询结果
-type AlibabaJymItemExternalGoodsBatchtaskQueryAPIResponse struct {
+type AlibabajymitemexternalgoodsbatchtaskqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaJymItemExternalGoodsBatchtaskQueryAPIResponseModel
+	AlibabajymitemexternalgoodsbatchtaskqueryAPIResponseModel
 }
 
-// AlibabaJymItemExternalGoodsBatchtaskQueryAPIResponseModel is 交易猫外部商家查询商品批量任务接口 成功返回结果
-type AlibabaJymItemExternalGoodsBatchtaskQueryAPIResponseModel struct {
+// AlibabajymitemexternalgoodsbatchtaskqueryAPIResponseModel is 交易猫外部商家查询商品批量任务接口 成功返回结果
+type AlibabajymitemexternalgoodsbatchtaskqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_item_external_goods_batchtask_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/user"
 )
 
-// AlibabaAilabsUserSpeechGuide 引导语推荐接口
+// Alibabaailabsuserspeechguide 引导语推荐接口
 // alibaba.ailabs.user.speech.guide
 //
 // 根据用户的语音query，返回相应的引导语推荐
-func AlibabaAilabsUserSpeechGuide(clt *core.SDKClient, req *user.AlibabaAilabsUserSpeechGuideAPIRequest, session string) (*user.AlibabaAilabsUserSpeechGuideAPIResponse, error) {
-	var resp user.AlibabaAilabsUserSpeechGuideAPIResponse
+func Alibabaailabsuserspeechguide(clt *core.SDKClient, req *user.AlibabaailabsuserspeechguideAPIRequest, session string) (*user.AlibabaailabsuserspeechguideAPIResponse, error) {
+	var resp user.AlibabaailabsuserspeechguideAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

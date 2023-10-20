@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscCrmPointExtrachargeAPIRequest 积分补录 API请求
+// AlibabaalsccrmpointextrachargeAPIRequest 积分补录 API请求
 // alibaba.alsc.crm.point.extracharge
 //
 // 积分补录
-type AlibabaAlscCrmPointExtrachargeAPIRequest struct {
+type AlibabaalsccrmpointextrachargeAPIRequest struct {
 	model.Params
 	// 入参
 	_paramExtraChargePointOpenReq *ExtraChargePointOpenReq
 }
 
-// NewAlibabaAlscCrmPointExtrachargeRequest 初始化AlibabaAlscCrmPointExtrachargeAPIRequest对象
-func NewAlibabaAlscCrmPointExtrachargeRequest() *AlibabaAlscCrmPointExtrachargeAPIRequest {
-	return &AlibabaAlscCrmPointExtrachargeAPIRequest{
+// NewAlibabaalsccrmpointextrachargeRequest 初始化AlibabaalsccrmpointextrachargeAPIRequest对象
+func NewAlibabaalsccrmpointextrachargeRequest() *AlibabaalsccrmpointextrachargeAPIRequest {
+	return &AlibabaalsccrmpointextrachargeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmPointExtrachargeAPIRequest) GetApiMethodName() string {
+func (r AlibabaalsccrmpointextrachargeAPIRequest) GetApiMethodName() string {
 	return "alibaba.alsc.crm.point.extracharge"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmPointExtrachargeAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalsccrmpointextrachargeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlscCrmPointExtrachargeAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalsccrmpointextrachargeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamExtraChargePointOpenReq is ParamExtraChargePointOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmPointExtrachargeAPIRequest) SetParamExtraChargePointOpenReq(_paramExtraChargePointOpenReq *ExtraChargePointOpenReq) error {
+func (r *AlibabaalsccrmpointextrachargeAPIRequest) SetParamExtraChargePointOpenReq(_paramExtraChargePointOpenReq *ExtraChargePointOpenReq) error {
 	r._paramExtraChargePointOpenReq = _paramExtraChargePointOpenReq
 	r.Set("param_extra_charge_point_open_req", _paramExtraChargePointOpenReq)
 	return nil
 }
 
 // GetParamExtraChargePointOpenReq ParamExtraChargePointOpenReq Getter
-func (r AlibabaAlscCrmPointExtrachargeAPIRequest) GetParamExtraChargePointOpenReq() *ExtraChargePointOpenReq {
+func (r AlibabaalsccrmpointextrachargeAPIRequest) GetParamExtraChargePointOpenReq() *ExtraChargePointOpenReq {
 	return r._paramExtraChargePointOpenReq
 }

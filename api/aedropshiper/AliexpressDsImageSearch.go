@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aedropshiper"
 )
 
-// AliexpressDsImageSearch 图片搜索
+// Aliexpressdsimagesearch 图片搜索
 // aliexpress.ds.image.search
 //
 // 图片搜索
-func AliexpressDsImageSearch(clt *core.SDKClient, req *aedropshiper.AliexpressDsImageSearchAPIRequest, session string) (*aedropshiper.AliexpressDsImageSearchAPIResponse, error) {
-	var resp aedropshiper.AliexpressDsImageSearchAPIResponse
+func Aliexpressdsimagesearch(clt *core.SDKClient, req *aedropshiper.AliexpressdsimagesearchAPIRequest, session string) (*aedropshiper.AliexpressdsimagesearchAPIResponse, error) {
+	var resp aedropshiper.AliexpressdsimagesearchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

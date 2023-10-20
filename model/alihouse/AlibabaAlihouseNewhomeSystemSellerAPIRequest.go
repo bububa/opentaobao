@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseNewhomeSystemSellerAPIRequest 商品发布授权 API请求
+// AlibabaalihousenewhomesystemsellerAPIRequest 商品发布授权 API请求
 // alibaba.alihouse.newhome.system.seller
 //
 // 商品发布授权
-type AlibabaAlihouseNewhomeSystemSellerAPIRequest struct {
+type AlibabaalihousenewhomesystemsellerAPIRequest struct {
 	model.Params
 	// 请求实体
 	_tokenCreateDto *TokenCreateDto
 }
 
-// NewAlibabaAlihouseNewhomeSystemSellerRequest 初始化AlibabaAlihouseNewhomeSystemSellerAPIRequest对象
-func NewAlibabaAlihouseNewhomeSystemSellerRequest() *AlibabaAlihouseNewhomeSystemSellerAPIRequest {
-	return &AlibabaAlihouseNewhomeSystemSellerAPIRequest{
+// NewAlibabaalihousenewhomesystemsellerRequest 初始化AlibabaalihousenewhomesystemsellerAPIRequest对象
+func NewAlibabaalihousenewhomesystemsellerRequest() *AlibabaalihousenewhomesystemsellerAPIRequest {
+	return &AlibabaalihousenewhomesystemsellerAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeSystemSellerAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihousenewhomesystemsellerAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.newhome.system.seller"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeSystemSellerAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihousenewhomesystemsellerAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihouseNewhomeSystemSellerAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihousenewhomesystemsellerAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTokenCreateDto is TokenCreateDto Setter
 // 请求实体
-func (r *AlibabaAlihouseNewhomeSystemSellerAPIRequest) SetTokenCreateDto(_tokenCreateDto *TokenCreateDto) error {
+func (r *AlibabaalihousenewhomesystemsellerAPIRequest) SetTokenCreateDto(_tokenCreateDto *TokenCreateDto) error {
 	r._tokenCreateDto = _tokenCreateDto
 	r.Set("token_create_dto", _tokenCreateDto)
 	return nil
 }
 
 // GetTokenCreateDto TokenCreateDto Getter
-func (r AlibabaAlihouseNewhomeSystemSellerAPIRequest) GetTokenCreateDto() *TokenCreateDto {
+func (r AlibabaalihousenewhomesystemsellerAPIRequest) GetTokenCreateDto() *TokenCreateDto {
 	return r._tokenCreateDto
 }

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCampusSpaceGetbyidsAPIRequest 根据ids和类型查询空间列表 API请求
+// AlibabacampusspacegetbyidsAPIRequest 根据ids和类型查询空间列表 API请求
 // alibaba.campus.space.getbyids
 //
 // 根据ids和类型查询空间列表
-type AlibabaCampusSpaceGetbyidsAPIRequest struct {
+type AlibabacampusspacegetbyidsAPIRequest struct {
 	model.Params
 	// 上下文
 	_context *WorkBenchContext
@@ -18,52 +18,52 @@ type AlibabaCampusSpaceGetbyidsAPIRequest struct {
 	_query *SpaceIdsQuery
 }
 
-// NewAlibabaCampusSpaceGetbyidsRequest 初始化AlibabaCampusSpaceGetbyidsAPIRequest对象
-func NewAlibabaCampusSpaceGetbyidsRequest() *AlibabaCampusSpaceGetbyidsAPIRequest {
-	return &AlibabaCampusSpaceGetbyidsAPIRequest{
+// NewAlibabacampusspacegetbyidsRequest 初始化AlibabacampusspacegetbyidsAPIRequest对象
+func NewAlibabacampusspacegetbyidsRequest() *AlibabacampusspacegetbyidsAPIRequest {
+	return &AlibabacampusspacegetbyidsAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaCampusSpaceGetbyidsAPIRequest) GetApiMethodName() string {
+func (r AlibabacampusspacegetbyidsAPIRequest) GetApiMethodName() string {
 	return "alibaba.campus.space.getbyids"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaCampusSpaceGetbyidsAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabacampusspacegetbyidsAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaCampusSpaceGetbyidsAPIRequest) GetRawParams() model.Params {
+func (r AlibabacampusspacegetbyidsAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetContext is Context Setter
 // 上下文
-func (r *AlibabaCampusSpaceGetbyidsAPIRequest) SetContext(_context *WorkBenchContext) error {
+func (r *AlibabacampusspacegetbyidsAPIRequest) SetContext(_context *WorkBenchContext) error {
 	r._context = _context
 	r.Set("context", _context)
 	return nil
 }
 
 // GetContext Context Getter
-func (r AlibabaCampusSpaceGetbyidsAPIRequest) GetContext() *WorkBenchContext {
+func (r AlibabacampusspacegetbyidsAPIRequest) GetContext() *WorkBenchContext {
 	return r._context
 }
 
 // SetQuery is Query Setter
 // 查询条件
-func (r *AlibabaCampusSpaceGetbyidsAPIRequest) SetQuery(_query *SpaceIdsQuery) error {
+func (r *AlibabacampusspacegetbyidsAPIRequest) SetQuery(_query *SpaceIdsQuery) error {
 	r._query = _query
 	r.Set("query", _query)
 	return nil
 }
 
 // GetQuery Query Getter
-func (r AlibabaCampusSpaceGetbyidsAPIRequest) GetQuery() *SpaceIdsQuery {
+func (r AlibabacampusspacegetbyidsAPIRequest) GetQuery() *SpaceIdsQuery {
 	return r._query
 }

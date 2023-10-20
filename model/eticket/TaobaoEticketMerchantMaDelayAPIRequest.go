@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoEticketMerchantMaDelayAPIRequest 凭证延期 API请求
+// TaobaoeticketmerchantmadelayAPIRequest 凭证延期 API请求
 // taobao.eticket.merchant.ma.delay
 //
 // 订单延期
-type TaobaoEticketMerchantMaDelayAPIRequest struct {
+type TaobaoeticketmerchantmadelayAPIRequest struct {
 	model.Params
 	// 扩展
 	_attributeMap string
@@ -26,104 +26,104 @@ type TaobaoEticketMerchantMaDelayAPIRequest struct {
 	_bizType int64
 }
 
-// NewTaobaoEticketMerchantMaDelayRequest 初始化TaobaoEticketMerchantMaDelayAPIRequest对象
-func NewTaobaoEticketMerchantMaDelayRequest() *TaobaoEticketMerchantMaDelayAPIRequest {
-	return &TaobaoEticketMerchantMaDelayAPIRequest{
+// NewTaobaoeticketmerchantmadelayRequest 初始化TaobaoeticketmerchantmadelayAPIRequest对象
+func NewTaobaoeticketmerchantmadelayRequest() *TaobaoeticketmerchantmadelayAPIRequest {
+	return &TaobaoeticketmerchantmadelayAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoEticketMerchantMaDelayAPIRequest) GetApiMethodName() string {
+func (r TaobaoeticketmerchantmadelayAPIRequest) GetApiMethodName() string {
 	return "taobao.eticket.merchant.ma.delay"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoEticketMerchantMaDelayAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoeticketmerchantmadelayAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoEticketMerchantMaDelayAPIRequest) GetRawParams() model.Params {
+func (r TaobaoeticketmerchantmadelayAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAttributeMap is AttributeMap Setter
 // 扩展
-func (r *TaobaoEticketMerchantMaDelayAPIRequest) SetAttributeMap(_attributeMap string) error {
+func (r *TaobaoeticketmerchantmadelayAPIRequest) SetAttributeMap(_attributeMap string) error {
 	r._attributeMap = _attributeMap
 	r.Set("attribute_map", _attributeMap)
 	return nil
 }
 
 // GetAttributeMap AttributeMap Getter
-func (r TaobaoEticketMerchantMaDelayAPIRequest) GetAttributeMap() string {
+func (r TaobaoeticketmerchantmadelayAPIRequest) GetAttributeMap() string {
 	return r._attributeMap
 }
 
 // SetRequestId is RequestId Setter
 // 请求ID，调用方保证惟一
-func (r *TaobaoEticketMerchantMaDelayAPIRequest) SetRequestId(_requestId string) error {
+func (r *TaobaoeticketmerchantmadelayAPIRequest) SetRequestId(_requestId string) error {
 	r._requestId = _requestId
 	r.Set("request_id", _requestId)
 	return nil
 }
 
 // GetRequestId RequestId Getter
-func (r TaobaoEticketMerchantMaDelayAPIRequest) GetRequestId() string {
+func (r TaobaoeticketmerchantmadelayAPIRequest) GetRequestId() string {
 	return r._requestId
 }
 
 // SetEndDate is EndDate Setter
 // 延期时间
-func (r *TaobaoEticketMerchantMaDelayAPIRequest) SetEndDate(_endDate string) error {
+func (r *TaobaoeticketmerchantmadelayAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
 	r.Set("end_date", _endDate)
 	return nil
 }
 
 // GetEndDate EndDate Getter
-func (r TaobaoEticketMerchantMaDelayAPIRequest) GetEndDate() string {
+func (r TaobaoeticketmerchantmadelayAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
 // SetCode is Code Setter
 // 码
-func (r *TaobaoEticketMerchantMaDelayAPIRequest) SetCode(_code string) error {
+func (r *TaobaoeticketmerchantmadelayAPIRequest) SetCode(_code string) error {
 	r._code = _code
 	r.Set("code", _code)
 	return nil
 }
 
 // GetCode Code Getter
-func (r TaobaoEticketMerchantMaDelayAPIRequest) GetCode() string {
+func (r TaobaoeticketmerchantmadelayAPIRequest) GetCode() string {
 	return r._code
 }
 
 // SetOuterId is OuterId Setter
 // 订单号
-func (r *TaobaoEticketMerchantMaDelayAPIRequest) SetOuterId(_outerId string) error {
+func (r *TaobaoeticketmerchantmadelayAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
 	r.Set("outer_id", _outerId)
 	return nil
 }
 
 // GetOuterId OuterId Getter
-func (r TaobaoEticketMerchantMaDelayAPIRequest) GetOuterId() string {
+func (r TaobaoeticketmerchantmadelayAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
 // SetBizType is BizType Setter
 // 业务类型
-func (r *TaobaoEticketMerchantMaDelayAPIRequest) SetBizType(_bizType int64) error {
+func (r *TaobaoeticketmerchantmadelayAPIRequest) SetBizType(_bizType int64) error {
 	r._bizType = _bizType
 	r.Set("biz_type", _bizType)
 	return nil
 }
 
 // GetBizType BizType Getter
-func (r TaobaoEticketMerchantMaDelayAPIRequest) GetBizType() int64 {
+func (r TaobaoeticketmerchantmadelayAPIRequest) GetBizType() int64 {
 	return r._bizType
 }

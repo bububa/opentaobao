@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoPromotionBenefitActivityDeleteAPIResponse 删除关联的活动权益 API返回值
+// TaobaopromotionbenefitactivitydeleteAPIResponse 删除关联的活动权益 API返回值
 // taobao.promotion.benefit.activity.delete
 //
 // 删除关联的活动权益
-type TaobaoPromotionBenefitActivityDeleteAPIResponse struct {
+type TaobaopromotionbenefitactivitydeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoPromotionBenefitActivityDeleteAPIResponseModel
+	TaobaopromotionbenefitactivitydeleteAPIResponseModel
 }
 
-// TaobaoPromotionBenefitActivityDeleteAPIResponseModel is 删除关联的活动权益 成功返回结果
-type TaobaoPromotionBenefitActivityDeleteAPIResponseModel struct {
+// TaobaopromotionbenefitactivitydeleteAPIResponseModel is 删除关联的活动权益 成功返回结果
+type TaobaopromotionbenefitactivitydeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotion_benefit_activity_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

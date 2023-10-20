@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkMarketingOpenDarunfaActivitySkuSync 营销商品数据同步
+// Alibabawdkmarketingopendarunfaactivityskusync 营销商品数据同步
 // alibaba.wdk.marketing.open.darunfa.activity.sku.sync
 //
 // 大润发营销商品数据同步
-func AlibabaWdkMarketingOpenDarunfaActivitySkuSync(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest, session string) (*wdk.AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIResponse, error) {
-	var resp wdk.AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIResponse
+func Alibabawdkmarketingopendarunfaactivityskusync(clt *core.SDKClient, req *wdk.AlibabawdkmarketingopendarunfaactivityskusyncAPIRequest, session string) (*wdk.AlibabawdkmarketingopendarunfaactivityskusyncAPIResponse, error) {
+	var resp wdk.AlibabawdkmarketingopendarunfaactivityskusyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

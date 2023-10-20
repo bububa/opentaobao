@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/media"
 )
 
-// AlibabaTjbPictureUserstorageQuery 淘特图片空间用户容量查询
+// Alibabatjbpictureuserstoragequery 淘特图片空间用户容量查询
 // alibaba.tjb.picture.userstorage.query
 //
 // 淘特图片空间用户容量查询
-func AlibabaTjbPictureUserstorageQuery(clt *core.SDKClient, req *media.AlibabaTjbPictureUserstorageQueryAPIRequest, session string) (*media.AlibabaTjbPictureUserstorageQueryAPIResponse, error) {
-	var resp media.AlibabaTjbPictureUserstorageQueryAPIResponse
+func Alibabatjbpictureuserstoragequery(clt *core.SDKClient, req *media.AlibabatjbpictureuserstoragequeryAPIRequest, session string) (*media.AlibabatjbpictureuserstoragequeryAPIResponse, error) {
+	var resp media.AlibabatjbpictureuserstoragequeryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

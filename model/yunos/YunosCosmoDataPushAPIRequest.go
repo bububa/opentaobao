@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosCosmoDataPushAPIRequest COSMO-PUSH模式数据接入 API请求
+// YunoscosmodatapushAPIRequest COSMO-PUSH模式数据接入 API请求
 // yunos.cosmo.data.push
 //
 // YunOS提供外部数据源接入，并输出到多端设备上，该接口提供了PUSH模式的数据接入
-type YunosCosmoDataPushAPIRequest struct {
+type YunoscosmodatapushAPIRequest struct {
 	model.Params
 	// 业务方数据源唯一标识，由COSMO平台颁发
 	_appId string
@@ -18,52 +18,52 @@ type YunosCosmoDataPushAPIRequest struct {
 	_jsonModel string
 }
 
-// NewYunosCosmoDataPushRequest 初始化YunosCosmoDataPushAPIRequest对象
-func NewYunosCosmoDataPushRequest() *YunosCosmoDataPushAPIRequest {
-	return &YunosCosmoDataPushAPIRequest{
+// NewYunoscosmodatapushRequest 初始化YunoscosmodatapushAPIRequest对象
+func NewYunoscosmodatapushRequest() *YunoscosmodatapushAPIRequest {
+	return &YunoscosmodatapushAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YunosCosmoDataPushAPIRequest) GetApiMethodName() string {
+func (r YunoscosmodatapushAPIRequest) GetApiMethodName() string {
 	return "yunos.cosmo.data.push"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunosCosmoDataPushAPIRequest) GetApiParams(params url.Values) {
+func (r YunoscosmodatapushAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YunosCosmoDataPushAPIRequest) GetRawParams() model.Params {
+func (r YunoscosmodatapushAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAppId is AppId Setter
 // 业务方数据源唯一标识，由COSMO平台颁发
-func (r *YunosCosmoDataPushAPIRequest) SetAppId(_appId string) error {
+func (r *YunoscosmodatapushAPIRequest) SetAppId(_appId string) error {
 	r._appId = _appId
 	r.Set("app_id", _appId)
 	return nil
 }
 
 // GetAppId AppId Getter
-func (r YunosCosmoDataPushAPIRequest) GetAppId() string {
+func (r YunoscosmodatapushAPIRequest) GetAppId() string {
 	return r._appId
 }
 
 // SetJsonModel is JsonModel Setter
 // 业务方推送数据，List结构的JSON序列化字符串
-func (r *YunosCosmoDataPushAPIRequest) SetJsonModel(_jsonModel string) error {
+func (r *YunoscosmodatapushAPIRequest) SetJsonModel(_jsonModel string) error {
 	r._jsonModel = _jsonModel
 	r.Set("json_model", _jsonModel)
 	return nil
 }
 
 // GetJsonModel JsonModel Getter
-func (r YunosCosmoDataPushAPIRequest) GetJsonModel() string {
+func (r YunoscosmodatapushAPIRequest) GetJsonModel() string {
 	return r._jsonModel
 }

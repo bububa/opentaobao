@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallCarCarefreeDetailGetAPIResponse 查询业务单信息 API返回值
+// TmallcarcarefreedetailgetAPIResponse 查询业务单信息 API返回值
 // tmall.car.carefree.detail.get
 //
 // 查询业务单信息
-type TmallCarCarefreeDetailGetAPIResponse struct {
+type TmallcarcarefreedetailgetAPIResponse struct {
 	model.CommonResponse
-	TmallCarCarefreeDetailGetAPIResponseModel
+	TmallcarcarefreedetailgetAPIResponseModel
 }
 
-// TmallCarCarefreeDetailGetAPIResponseModel is 查询业务单信息 成功返回结果
-type TmallCarCarefreeDetailGetAPIResponseModel struct {
+// TmallcarcarefreedetailgetAPIResponseModel is 查询业务单信息 成功返回结果
+type TmallcarcarefreedetailgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_car_carefree_detail_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

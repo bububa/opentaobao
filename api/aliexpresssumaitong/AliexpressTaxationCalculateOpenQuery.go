@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aliexpresssumaitong"
 )
 
-// AliexpressTaxationCalculateOpenQuery 关务所需的申报清关字段
+// Aliexpresstaxationcalculateopenquery 关务所需的申报清关字段
 // aliexpress.taxation.calculate.open.query
 //
 // 关务所需的申报清关字段
-func AliexpressTaxationCalculateOpenQuery(clt *core.SDKClient, req *aliexpresssumaitong.AliexpressTaxationCalculateOpenQueryAPIRequest, session string) (*aliexpresssumaitong.AliexpressTaxationCalculateOpenQueryAPIResponse, error) {
-	var resp aliexpresssumaitong.AliexpressTaxationCalculateOpenQueryAPIResponse
+func Aliexpresstaxationcalculateopenquery(clt *core.SDKClient, req *aliexpresssumaitong.AliexpresstaxationcalculateopenqueryAPIRequest, session string) (*aliexpresssumaitong.AliexpresstaxationcalculateopenqueryAPIResponse, error) {
+	var resp aliexpresssumaitong.AliexpresstaxationcalculateopenqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

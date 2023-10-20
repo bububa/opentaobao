@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoRegionPriceQueryAPIResponse 区域价格查询 API返回值
+// TaobaoregionpricequeryAPIResponse 区域价格查询 API返回值
 // taobao.region.price.query
 //
 // 区域价格查询
-type TaobaoRegionPriceQueryAPIResponse struct {
+type TaobaoregionpricequeryAPIResponse struct {
 	model.CommonResponse
-	TaobaoRegionPriceQueryAPIResponseModel
+	TaobaoregionpricequeryAPIResponseModel
 }
 
-// TaobaoRegionPriceQueryAPIResponseModel is 区域价格查询 成功返回结果
-type TaobaoRegionPriceQueryAPIResponseModel struct {
+// TaobaoregionpricequeryAPIResponseModel is 区域价格查询 成功返回结果
+type TaobaoregionpricequeryAPIResponseModel struct {
 	XMLName xml.Name `xml:"region_price_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

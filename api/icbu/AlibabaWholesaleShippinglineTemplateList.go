@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/icbu"
 )
 
-// AlibabaWholesaleShippinglineTemplateList 获取运费模板
+// Alibabawholesaleshippinglinetemplatelist 获取运费模板
 // alibaba.wholesale.shippingline.template.list
 //
 // 查询运费模板信息
-func AlibabaWholesaleShippinglineTemplateList(clt *core.SDKClient, req *icbu.AlibabaWholesaleShippinglineTemplateListAPIRequest, session string) (*icbu.AlibabaWholesaleShippinglineTemplateListAPIResponse, error) {
-	var resp icbu.AlibabaWholesaleShippinglineTemplateListAPIResponse
+func Alibabawholesaleshippinglinetemplatelist(clt *core.SDKClient, req *icbu.AlibabawholesaleshippinglinetemplatelistAPIRequest, session string) (*icbu.AlibabawholesaleshippinglinetemplatelistAPIResponse, error) {
+	var resp icbu.AlibabawholesaleshippinglinetemplatelistAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

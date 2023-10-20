@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEinvoiceIncomeTokenReturnAPIRequest 服务商回传税号token API请求
+// AlibabaeinvoiceincometokenreturnAPIRequest 服务商回传税号token API请求
 // alibaba.einvoice.income.token.return
 //
 // 服务商回传税号token，用来勾选抵扣认证
-type AlibabaEinvoiceIncomeTokenReturnAPIRequest struct {
+type AlibabaeinvoiceincometokenreturnAPIRequest struct {
 	model.Params
 	// 税局所在区域，success=true时必填
 	_area string
@@ -30,130 +30,130 @@ type AlibabaEinvoiceIncomeTokenReturnAPIRequest struct {
 	_success bool
 }
 
-// NewAlibabaEinvoiceIncomeTokenReturnRequest 初始化AlibabaEinvoiceIncomeTokenReturnAPIRequest对象
-func NewAlibabaEinvoiceIncomeTokenReturnRequest() *AlibabaEinvoiceIncomeTokenReturnAPIRequest {
-	return &AlibabaEinvoiceIncomeTokenReturnAPIRequest{
+// NewAlibabaeinvoiceincometokenreturnRequest 初始化AlibabaeinvoiceincometokenreturnAPIRequest对象
+func NewAlibabaeinvoiceincometokenreturnRequest() *AlibabaeinvoiceincometokenreturnAPIRequest {
+	return &AlibabaeinvoiceincometokenreturnAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetApiMethodName() string {
+func (r AlibabaeinvoiceincometokenreturnAPIRequest) GetApiMethodName() string {
 	return "alibaba.einvoice.income.token.return"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaeinvoiceincometokenreturnAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetRawParams() model.Params {
+func (r AlibabaeinvoiceincometokenreturnAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetArea is Area Setter
 // 税局所在区域，success=true时必填
-func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetArea(_area string) error {
+func (r *AlibabaeinvoiceincometokenreturnAPIRequest) SetArea(_area string) error {
 	r._area = _area
 	r.Set("area", _area)
 	return nil
 }
 
 // GetArea Area Getter
-func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetArea() string {
+func (r AlibabaeinvoiceincometokenreturnAPIRequest) GetArea() string {
 	return r._area
 }
 
 // SetErrorCode is ErrorCode Setter
 // 错误码，success=false时必填
-func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetErrorCode(_errorCode string) error {
+func (r *AlibabaeinvoiceincometokenreturnAPIRequest) SetErrorCode(_errorCode string) error {
 	r._errorCode = _errorCode
 	r.Set("error_code", _errorCode)
 	return nil
 }
 
 // GetErrorCode ErrorCode Getter
-func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetErrorCode() string {
+func (r AlibabaeinvoiceincometokenreturnAPIRequest) GetErrorCode() string {
 	return r._errorCode
 }
 
 // SetErrorMessage is ErrorMessage Setter
 // 错误信息，success=false时必填
-func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetErrorMessage(_errorMessage string) error {
+func (r *AlibabaeinvoiceincometokenreturnAPIRequest) SetErrorMessage(_errorMessage string) error {
 	r._errorMessage = _errorMessage
 	r.Set("error_message", _errorMessage)
 	return nil
 }
 
 // GetErrorMessage ErrorMessage Getter
-func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetErrorMessage() string {
+func (r AlibabaeinvoiceincometokenreturnAPIRequest) GetErrorMessage() string {
 	return r._errorMessage
 }
 
 // SetExpireTime is ExpireTime Setter
 // token过期时间，success=true时必填
-func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetExpireTime(_expireTime string) error {
+func (r *AlibabaeinvoiceincometokenreturnAPIRequest) SetExpireTime(_expireTime string) error {
 	r._expireTime = _expireTime
 	r.Set("expire_time", _expireTime)
 	return nil
 }
 
 // GetExpireTime ExpireTime Getter
-func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetExpireTime() string {
+func (r AlibabaeinvoiceincometokenreturnAPIRequest) GetExpireTime() string {
 	return r._expireTime
 }
 
 // SetPayeeName is PayeeName Setter
 // 销售方企业名称，success=true时必填
-func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetPayeeName(_payeeName string) error {
+func (r *AlibabaeinvoiceincometokenreturnAPIRequest) SetPayeeName(_payeeName string) error {
 	r._payeeName = _payeeName
 	r.Set("payee_name", _payeeName)
 	return nil
 }
 
 // GetPayeeName PayeeName Getter
-func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetPayeeName() string {
+func (r AlibabaeinvoiceincometokenreturnAPIRequest) GetPayeeName() string {
 	return r._payeeName
 }
 
 // SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 销售方纳税人识别号，success=true时必填
-func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+func (r *AlibabaeinvoiceincometokenreturnAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
 	r.Set("payee_register_no", _payeeRegisterNo)
 	return nil
 }
 
 // GetPayeeRegisterNo PayeeRegisterNo Getter
-func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetPayeeRegisterNo() string {
+func (r AlibabaeinvoiceincometokenreturnAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }
 
 // SetToken is Token Setter
 // token，success=true时必填
-func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetToken(_token string) error {
+func (r *AlibabaeinvoiceincometokenreturnAPIRequest) SetToken(_token string) error {
 	r._token = _token
 	r.Set("token", _token)
 	return nil
 }
 
 // GetToken Token Getter
-func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetToken() string {
+func (r AlibabaeinvoiceincometokenreturnAPIRequest) GetToken() string {
 	return r._token
 }
 
 // SetSuccess is Success Setter
 // token是否获取成功，true=成功， false=失败
-func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetSuccess(_success bool) error {
+func (r *AlibabaeinvoiceincometokenreturnAPIRequest) SetSuccess(_success bool) error {
 	r._success = _success
 	r.Set("success", _success)
 	return nil
 }
 
 // GetSuccess Success Getter
-func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetSuccess() bool {
+func (r AlibabaeinvoiceincometokenreturnAPIRequest) GetSuccess() bool {
 	return r._success
 }

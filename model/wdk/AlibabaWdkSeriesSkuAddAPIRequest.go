@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkSeriesSkuAddAPIRequest 系列品商品变更-添加商品 API请求
+// AlibabawdkseriesskuaddAPIRequest 系列品商品变更-添加商品 API请求
 // alibaba.wdk.series.sku.add
 //
 // 系列品商品变更-添加商品
-type AlibabaWdkSeriesSkuAddAPIRequest struct {
+type AlibabawdkseriesskuaddAPIRequest struct {
 	model.Params
 	// 系列品添加商品请求
 	_seriesSkus *SeriesSkuRequest
 }
 
-// NewAlibabaWdkSeriesSkuAddRequest 初始化AlibabaWdkSeriesSkuAddAPIRequest对象
-func NewAlibabaWdkSeriesSkuAddRequest() *AlibabaWdkSeriesSkuAddAPIRequest {
-	return &AlibabaWdkSeriesSkuAddAPIRequest{
+// NewAlibabawdkseriesskuaddRequest 初始化AlibabawdkseriesskuaddAPIRequest对象
+func NewAlibabawdkseriesskuaddRequest() *AlibabawdkseriesskuaddAPIRequest {
+	return &AlibabawdkseriesskuaddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSeriesSkuAddAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkseriesskuaddAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.series.sku.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSeriesSkuAddAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkseriesskuaddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkSeriesSkuAddAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkseriesskuaddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSeriesSkus is SeriesSkus Setter
 // 系列品添加商品请求
-func (r *AlibabaWdkSeriesSkuAddAPIRequest) SetSeriesSkus(_seriesSkus *SeriesSkuRequest) error {
+func (r *AlibabawdkseriesskuaddAPIRequest) SetSeriesSkus(_seriesSkus *SeriesSkuRequest) error {
 	r._seriesSkus = _seriesSkus
 	r.Set("series_skus", _seriesSkus)
 	return nil
 }
 
 // GetSeriesSkus SeriesSkus Getter
-func (r AlibabaWdkSeriesSkuAddAPIRequest) GetSeriesSkus() *SeriesSkuRequest {
+func (r AlibabawdkseriesskuaddAPIRequest) GetSeriesSkus() *SeriesSkuRequest {
 	return r._seriesSkus
 }

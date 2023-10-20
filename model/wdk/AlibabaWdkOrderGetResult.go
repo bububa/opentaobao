@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkOrderGetResult 结构体
-type AlibabaWdkOrderGetResult struct {
+// AlibabawdkordergetResult 结构体
+type AlibabawdkordergetResult struct {
 	// 订单列表
 	Orders []Order `json:"orders,omitempty" xml:"orders>order,omitempty"`
 	// returnCode

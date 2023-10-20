@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkItemMerchantskuCreateAPIRequest 商家商品信息新建 API请求
+// AlibabawdkitemmerchantskucreateAPIRequest 商家商品信息新建 API请求
 // alibaba.wdk.item.merchantsku.create
 //
 // 商家商品信息新建
-type AlibabaWdkItemMerchantskuCreateAPIRequest struct {
+type AlibabawdkitemmerchantskucreateAPIRequest struct {
 	model.Params
 	// 新建商品参数，是个json字符串
 	_params string
 }
 
-// NewAlibabaWdkItemMerchantskuCreateRequest 初始化AlibabaWdkItemMerchantskuCreateAPIRequest对象
-func NewAlibabaWdkItemMerchantskuCreateRequest() *AlibabaWdkItemMerchantskuCreateAPIRequest {
-	return &AlibabaWdkItemMerchantskuCreateAPIRequest{
+// NewAlibabawdkitemmerchantskucreateRequest 初始化AlibabawdkitemmerchantskucreateAPIRequest对象
+func NewAlibabawdkitemmerchantskucreateRequest() *AlibabawdkitemmerchantskucreateAPIRequest {
+	return &AlibabawdkitemmerchantskucreateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkItemMerchantskuCreateAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkitemmerchantskucreateAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.item.merchantsku.create"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkItemMerchantskuCreateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkitemmerchantskucreateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkItemMerchantskuCreateAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkitemmerchantskucreateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParams is Params Setter
 // 新建商品参数，是个json字符串
-func (r *AlibabaWdkItemMerchantskuCreateAPIRequest) SetParams(_params string) error {
+func (r *AlibabawdkitemmerchantskucreateAPIRequest) SetParams(_params string) error {
 	r._params = _params
 	r.Set("params", _params)
 	return nil
 }
 
 // GetParams Params Getter
-func (r AlibabaWdkItemMerchantskuCreateAPIRequest) GetParams() string {
+func (r AlibabawdkitemmerchantskucreateAPIRequest) GetParams() string {
 	return r._params
 }

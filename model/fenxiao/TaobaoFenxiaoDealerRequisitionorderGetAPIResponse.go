@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoFenxiaoDealerRequisitionorderGetAPIResponse 批量查询采购申请/经销采购单 API返回值
+// TaobaofenxiaodealerrequisitionordergetAPIResponse 批量查询采购申请/经销采购单 API返回值
 // taobao.fenxiao.dealer.requisitionorder.get
 //
 // 批量查询采购申请/经销采购单，目前支持供应商和分销商查询
-type TaobaoFenxiaoDealerRequisitionorderGetAPIResponse struct {
+type TaobaofenxiaodealerrequisitionordergetAPIResponse struct {
 	model.CommonResponse
-	TaobaoFenxiaoDealerRequisitionorderGetAPIResponseModel
+	TaobaofenxiaodealerrequisitionordergetAPIResponseModel
 }
 
-// TaobaoFenxiaoDealerRequisitionorderGetAPIResponseModel is 批量查询采购申请/经销采购单 成功返回结果
-type TaobaoFenxiaoDealerRequisitionorderGetAPIResponseModel struct {
+// TaobaofenxiaodealerrequisitionordergetAPIResponseModel is 批量查询采购申请/经销采购单 成功返回结果
+type TaobaofenxiaodealerrequisitionordergetAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_dealer_requisitionorder_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

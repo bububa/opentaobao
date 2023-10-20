@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoGrowthReachingPicturesRecognizeAPIResponse 图片识别 API返回值
+// TaobaogrowthreachingpicturesrecognizeAPIResponse 图片识别 API返回值
 // taobao.growth.reaching.pictures.recognize
 //
 // 图片识别
-type TaobaoGrowthReachingPicturesRecognizeAPIResponse struct {
+type TaobaogrowthreachingpicturesrecognizeAPIResponse struct {
 	model.CommonResponse
-	TaobaoGrowthReachingPicturesRecognizeAPIResponseModel
+	TaobaogrowthreachingpicturesrecognizeAPIResponseModel
 }
 
-// TaobaoGrowthReachingPicturesRecognizeAPIResponseModel is 图片识别 成功返回结果
-type TaobaoGrowthReachingPicturesRecognizeAPIResponseModel struct {
+// TaobaogrowthreachingpicturesrecognizeAPIResponseModel is 图片识别 成功返回结果
+type TaobaogrowthreachingpicturesrecognizeAPIResponseModel struct {
 	XMLName xml.Name `xml:"growth_reaching_pictures_recognize_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

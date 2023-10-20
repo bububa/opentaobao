@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
 
-// AlitripMerchantGalaxyCommonBindMerchantId 绑定用户和merchantID
+// Alitripmerchantgalaxycommonbindmerchantid 绑定用户和merchantID
 // alitrip.merchant.galaxy.common.bind.merchant.id
 //
 // 绑定用户和merchantID
-func AlitripMerchantGalaxyCommonBindMerchantId(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyCommonBindMerchantIdAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyCommonBindMerchantIdAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyCommonBindMerchantIdAPIResponse
+func Alitripmerchantgalaxycommonbindmerchantid(clt *core.SDKClient, req *alitripmerchant.AlitripmerchantgalaxycommonbindmerchantidAPIRequest, session string) (*alitripmerchant.AlitripmerchantgalaxycommonbindmerchantidAPIResponse, error) {
+	var resp alitripmerchant.AlitripmerchantgalaxycommonbindmerchantidAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

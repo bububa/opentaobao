@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripMerchantGalaxyCommonGetEnumsbynameResponse 结构体
-type AlitripMerchantGalaxyCommonGetEnumsbynameResponse struct {
+// AlitripmerchantgalaxycommongetenumsbynameResponse 结构体
+type AlitripmerchantgalaxycommongetenumsbynameResponse struct {
 	// 枚举
 	Content []EnumVo `json:"content,omitempty" xml:"content>enum_vo,omitempty"`
 	// 错误信息

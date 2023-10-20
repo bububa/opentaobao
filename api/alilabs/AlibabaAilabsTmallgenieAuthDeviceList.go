@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alilabs"
 )
 
-// AlibabaAilabsTmallgenieAuthDeviceList 获取用户设备列表
+// Alibabaailabstmallgenieauthdevicelist 获取用户设备列表
 // alibaba.ailabs.tmallgenie.auth.device.list
 //
 // 通过此接口获取用户绑定的设备信息列表
-func AlibabaAilabsTmallgenieAuthDeviceList(clt *core.SDKClient, req *alilabs.AlibabaAilabsTmallgenieAuthDeviceListAPIRequest, session string) (*alilabs.AlibabaAilabsTmallgenieAuthDeviceListAPIResponse, error) {
-	var resp alilabs.AlibabaAilabsTmallgenieAuthDeviceListAPIResponse
+func Alibabaailabstmallgenieauthdevicelist(clt *core.SDKClient, req *alilabs.AlibabaailabstmallgenieauthdevicelistAPIRequest, session string) (*alilabs.AlibabaailabstmallgenieauthdevicelistAPIResponse, error) {
+	var resp alilabs.AlibabaailabstmallgenieauthdevicelistAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// AlibabaAlihealthDrugKytRemnantbillUpload 零头出入库单据上传
+// Alibabaalihealthdrugkytremnantbillupload 零头出入库单据上传
 // alibaba.alihealth.drug.kyt.remnantbill.upload
 //
 // 零头出入库单据上传
-func AlibabaAlihealthDrugKytRemnantbillUpload(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytRemnantbillUploadAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytRemnantbillUploadAPIResponse
+func Alibabaalihealthdrugkytremnantbillupload(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugkytremnantbilluploadAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugkytremnantbilluploadAPIResponse, error) {
+	var resp drugtrace.AlibabaalihealthdrugkytremnantbilluploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

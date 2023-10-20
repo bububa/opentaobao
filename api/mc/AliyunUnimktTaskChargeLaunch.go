@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mc"
 )
 
-// AliyunUnimktTaskChargeLaunch 云码权益查询
+// Aliyununimkttaskchargelaunch 云码权益查询
 // aliyun.unimkt.task.charge.launch
 //
 // 云码线上流量投放链路，用于判断用户是否有匹配的投放计划
-func AliyunUnimktTaskChargeLaunch(clt *core.SDKClient, req *mc.AliyunUnimktTaskChargeLaunchAPIRequest, session string) (*mc.AliyunUnimktTaskChargeLaunchAPIResponse, error) {
-	var resp mc.AliyunUnimktTaskChargeLaunchAPIResponse
+func Aliyununimkttaskchargelaunch(clt *core.SDKClient, req *mc.AliyununimkttaskchargelaunchAPIRequest, session string) (*mc.AliyununimkttaskchargelaunchAPIResponse, error) {
+	var resp mc.AliyununimkttaskchargelaunchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

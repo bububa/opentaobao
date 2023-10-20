@@ -1,7 +1,7 @@
 package damai
 
-// AlibabaDamaiMevOpenDeletevenueResult 结构体
-type AlibabaDamaiMevOpenDeletevenueResult struct {
+// AlibabadamaimevopendeletevenueResult 结构体
+type AlibabadamaimevopendeletevenueResult struct {
 	// 错误内容
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 错误码

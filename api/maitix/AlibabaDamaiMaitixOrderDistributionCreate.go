@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/maitix"
 )
 
-// AlibabaDamaiMaitixOrderDistributionCreate 大麦-新分销下单
+// Alibabadamaimaitixorderdistributioncreate 大麦-新分销下单
 // alibaba.damai.maitix.order.distribution.create
 //
 // createDistributionOrder
-func AlibabaDamaiMaitixOrderDistributionCreate(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOrderDistributionCreateAPIRequest, session string) (*maitix.AlibabaDamaiMaitixOrderDistributionCreateAPIResponse, error) {
-	var resp maitix.AlibabaDamaiMaitixOrderDistributionCreateAPIResponse
+func Alibabadamaimaitixorderdistributioncreate(clt *core.SDKClient, req *maitix.AlibabadamaimaitixorderdistributioncreateAPIRequest, session string) (*maitix.AlibabadamaimaitixorderdistributioncreateAPIResponse, error) {
+	var resp maitix.AlibabadamaimaitixorderdistributioncreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

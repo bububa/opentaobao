@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTopAuthTokenRefreshAPIResponse 刷新Access Token API返回值
+// TaobaotopauthtokenrefreshAPIResponse 刷新Access Token API返回值
 // taobao.top.auth.token.refresh
 //
 // 根据refresh_token重新生成token，目前只有服务市场订购类应用可以刷新token，其他类型应用（如商家后台）使用固定时长token，不提供刷新功能。
-type TaobaoTopAuthTokenRefreshAPIResponse struct {
+type TaobaotopauthtokenrefreshAPIResponse struct {
 	model.CommonResponse
-	TaobaoTopAuthTokenRefreshAPIResponseModel
+	TaobaotopauthtokenrefreshAPIResponseModel
 }
 
-// TaobaoTopAuthTokenRefreshAPIResponseModel is 刷新Access Token 成功返回结果
-type TaobaoTopAuthTokenRefreshAPIResponseModel struct {
+// TaobaotopauthtokenrefreshAPIResponseModel is 刷新Access Token 成功返回结果
+type TaobaotopauthtokenrefreshAPIResponseModel struct {
 	XMLName xml.Name `xml:"top_auth_token_refresh_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIResponse 根据用户数字id和身份证号校验该用户是否已实名认证成功 API返回值
+// TaobaopaimaiauctioncatnftchecknftuseridentifyAPIResponse 根据用户数字id和身份证号校验该用户是否已实名认证成功 API返回值
 // taobao.paimai.auctioncat.nft.checknftuseridentify
 //
 // 根据用户数字id和身份证号校验该用户是否已实名认证成功
-type TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIResponse struct {
+type TaobaopaimaiauctioncatnftchecknftuseridentifyAPIResponse struct {
 	model.CommonResponse
-	TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIResponseModel
+	TaobaopaimaiauctioncatnftchecknftuseridentifyAPIResponseModel
 }
 
-// TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIResponseModel is 根据用户数字id和身份证号校验该用户是否已实名认证成功 成功返回结果
-type TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIResponseModel struct {
+// TaobaopaimaiauctioncatnftchecknftuseridentifyAPIResponseModel is 根据用户数字id和身份证号校验该用户是否已实名认证成功 成功返回结果
+type TaobaopaimaiauctioncatnftchecknftuseridentifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"paimai_auctioncat_nft_checknftuseridentify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

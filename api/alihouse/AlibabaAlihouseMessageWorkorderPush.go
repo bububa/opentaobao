@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseMessageWorkorderPush 工单消息推送
+// Alibabaalihousemessageworkorderpush 工单消息推送
 // alibaba.alihouse.message.workorder.push
 //
 // 工单消息推送
-func AlibabaAlihouseMessageWorkorderPush(clt *core.SDKClient, req *alihouse.AlibabaAlihouseMessageWorkorderPushAPIRequest, session string) (*alihouse.AlibabaAlihouseMessageWorkorderPushAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseMessageWorkorderPushAPIResponse
+func Alibabaalihousemessageworkorderpush(clt *core.SDKClient, req *alihouse.AlibabaalihousemessageworkorderpushAPIRequest, session string) (*alihouse.AlibabaalihousemessageworkorderpushAPIResponse, error) {
+	var resp alihouse.AlibabaalihousemessageworkorderpushAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

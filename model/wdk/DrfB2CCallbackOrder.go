@@ -1,9 +1,9 @@
 package wdk
 
-// DrfB2CCallbackOrder 结构体
-type DrfB2CCallbackOrder struct {
+// DrfB2ccallbackOrder 结构体
+type DrfB2ccallbackOrder struct {
 	// 作业单元
-	CallbackUnits []DrfB2CCallbackUnit `json:"callback_units,omitempty" xml:"callback_units>drf_b2c_callback_unit,omitempty"`
+	CallbackUnits []DrfB2ccallbackUnit `json:"callback_units,omitempty" xml:"callback_units>drf_b2ccallback_unit,omitempty"`
 	// 容器列表
 	Containers []Container `json:"containers,omitempty" xml:"containers>container,omitempty"`
 	// 作业状态变更时间

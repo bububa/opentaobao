@@ -1,7 +1,7 @@
 package user
 
-// TaobaoNewretailDivisionRecordListGetT 结构体
-type TaobaoNewretailDivisionRecordListGetT struct {
+// TaobaonewretaildivisionrecordlistgetT 结构体
+type TaobaonewretaildivisionrecordlistgetT struct {
 	// 买家昵称
 	BuyerNick string `json:"buyer_nick,omitempty" xml:"buyer_nick,omitempty"`
 	// 导购昵称

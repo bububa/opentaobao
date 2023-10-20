@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoMessageSendAPIResponse 消息发送 API返回值
+// TaobaomessagesendAPIResponse 消息发送 API返回值
 // taobao.message.send
 //
 // 消息发送接口
-type TaobaoMessageSendAPIResponse struct {
+type TaobaomessagesendAPIResponse struct {
 	model.CommonResponse
-	TaobaoMessageSendAPIResponseModel
+	TaobaomessagesendAPIResponseModel
 }
 
-// TaobaoMessageSendAPIResponseModel is 消息发送 成功返回结果
-type TaobaoMessageSendAPIResponseModel struct {
+// TaobaomessagesendAPIResponseModel is 消息发送 成功返回结果
+type TaobaomessagesendAPIResponseModel struct {
 	XMLName xml.Name `xml:"message_send_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

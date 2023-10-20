@@ -13,19 +13,19 @@ import (
 type TaobaotbkscpublisherinfosaveAPIRequest struct {
 	model.Params
 	// 渠道备案 - 来源，取链接的来源
-	_relationfrom string
+	_relationFrom string
 	// 渠道备案 - 线下场景信息，1 - 门店，2- 学校，3 - 工厂，4 - 其他
-	_offlinescene string
+	_offlineScene string
 	// 渠道备案 - 线上场景信息，1 - 微信群，2- QQ群，3 - 其他
-	_onlinescene string
+	_onlineScene string
 	// 淘宝客邀请渠道或会员的邀请码
-	_invitercode string
+	_inviterCode string
 	// 媒体侧渠道备注
 	_note string
 	// 线下备案注册信息,字段包含: 电话号码(phoneNumber，必填),省(province,必填),市(city,必填),区县街道(location,必填),详细地址(detailAddress,必填),经营类型(career,线下个人必填),店铺类型(shopType,线下店铺必填),店铺名称(shopName,线下店铺必填),店铺证书类型(shopCertifyType,线下店铺选填),店铺证书编号(certifyNumber,线下店铺选填)
-	_registerinfo string
+	_registerInfo string
 	// 类型，必选 默认为1:
-	_infotype int64
+	_infoType int64
 }
 
 // NewTaobaotbkscpublisherinfosaveRequest 初始化TaobaotbkscpublisherinfosaveAPIRequest对象
@@ -52,56 +52,56 @@ func (r TaobaotbkscpublisherinfosaveAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetRelationfrom is Relationfrom Setter
+// SetRelationFrom is RelationFrom Setter
 // 渠道备案 - 来源，取链接的来源
-func (r *TaobaotbkscpublisherinfosaveAPIRequest) SetRelationfrom(_relationfrom string) error {
-	r._relationfrom = _relationfrom
-	r.Set("relation_from", _relationfrom)
+func (r *TaobaotbkscpublisherinfosaveAPIRequest) SetRelationFrom(_relationFrom string) error {
+	r._relationFrom = _relationFrom
+	r.Set("relation_from", _relationFrom)
 	return nil
 }
 
-// GetRelationfrom Relationfrom Getter
-func (r TaobaotbkscpublisherinfosaveAPIRequest) GetRelationfrom() string {
-	return r._relationfrom
+// GetRelationFrom RelationFrom Getter
+func (r TaobaotbkscpublisherinfosaveAPIRequest) GetRelationFrom() string {
+	return r._relationFrom
 }
 
-// SetOfflinescene is Offlinescene Setter
+// SetOfflineScene is OfflineScene Setter
 // 渠道备案 - 线下场景信息，1 - 门店，2- 学校，3 - 工厂，4 - 其他
-func (r *TaobaotbkscpublisherinfosaveAPIRequest) SetOfflinescene(_offlinescene string) error {
-	r._offlinescene = _offlinescene
-	r.Set("offline_scene", _offlinescene)
+func (r *TaobaotbkscpublisherinfosaveAPIRequest) SetOfflineScene(_offlineScene string) error {
+	r._offlineScene = _offlineScene
+	r.Set("offline_scene", _offlineScene)
 	return nil
 }
 
-// GetOfflinescene Offlinescene Getter
-func (r TaobaotbkscpublisherinfosaveAPIRequest) GetOfflinescene() string {
-	return r._offlinescene
+// GetOfflineScene OfflineScene Getter
+func (r TaobaotbkscpublisherinfosaveAPIRequest) GetOfflineScene() string {
+	return r._offlineScene
 }
 
-// SetOnlinescene is Onlinescene Setter
+// SetOnlineScene is OnlineScene Setter
 // 渠道备案 - 线上场景信息，1 - 微信群，2- QQ群，3 - 其他
-func (r *TaobaotbkscpublisherinfosaveAPIRequest) SetOnlinescene(_onlinescene string) error {
-	r._onlinescene = _onlinescene
-	r.Set("online_scene", _onlinescene)
+func (r *TaobaotbkscpublisherinfosaveAPIRequest) SetOnlineScene(_onlineScene string) error {
+	r._onlineScene = _onlineScene
+	r.Set("online_scene", _onlineScene)
 	return nil
 }
 
-// GetOnlinescene Onlinescene Getter
-func (r TaobaotbkscpublisherinfosaveAPIRequest) GetOnlinescene() string {
-	return r._onlinescene
+// GetOnlineScene OnlineScene Getter
+func (r TaobaotbkscpublisherinfosaveAPIRequest) GetOnlineScene() string {
+	return r._onlineScene
 }
 
-// SetInvitercode is Invitercode Setter
+// SetInviterCode is InviterCode Setter
 // 淘宝客邀请渠道或会员的邀请码
-func (r *TaobaotbkscpublisherinfosaveAPIRequest) SetInvitercode(_invitercode string) error {
-	r._invitercode = _invitercode
-	r.Set("inviter_code", _invitercode)
+func (r *TaobaotbkscpublisherinfosaveAPIRequest) SetInviterCode(_inviterCode string) error {
+	r._inviterCode = _inviterCode
+	r.Set("inviter_code", _inviterCode)
 	return nil
 }
 
-// GetInvitercode Invitercode Getter
-func (r TaobaotbkscpublisherinfosaveAPIRequest) GetInvitercode() string {
-	return r._invitercode
+// GetInviterCode InviterCode Getter
+func (r TaobaotbkscpublisherinfosaveAPIRequest) GetInviterCode() string {
+	return r._inviterCode
 }
 
 // SetNote is Note Setter
@@ -117,28 +117,28 @@ func (r TaobaotbkscpublisherinfosaveAPIRequest) GetNote() string {
 	return r._note
 }
 
-// SetRegisterinfo is Registerinfo Setter
+// SetRegisterInfo is RegisterInfo Setter
 // 线下备案注册信息,字段包含: 电话号码(phoneNumber，必填),省(province,必填),市(city,必填),区县街道(location,必填),详细地址(detailAddress,必填),经营类型(career,线下个人必填),店铺类型(shopType,线下店铺必填),店铺名称(shopName,线下店铺必填),店铺证书类型(shopCertifyType,线下店铺选填),店铺证书编号(certifyNumber,线下店铺选填)
-func (r *TaobaotbkscpublisherinfosaveAPIRequest) SetRegisterinfo(_registerinfo string) error {
-	r._registerinfo = _registerinfo
-	r.Set("register_info", _registerinfo)
+func (r *TaobaotbkscpublisherinfosaveAPIRequest) SetRegisterInfo(_registerInfo string) error {
+	r._registerInfo = _registerInfo
+	r.Set("register_info", _registerInfo)
 	return nil
 }
 
-// GetRegisterinfo Registerinfo Getter
-func (r TaobaotbkscpublisherinfosaveAPIRequest) GetRegisterinfo() string {
-	return r._registerinfo
+// GetRegisterInfo RegisterInfo Getter
+func (r TaobaotbkscpublisherinfosaveAPIRequest) GetRegisterInfo() string {
+	return r._registerInfo
 }
 
-// SetInfotype is Infotype Setter
+// SetInfoType is InfoType Setter
 // 类型，必选 默认为1:
-func (r *TaobaotbkscpublisherinfosaveAPIRequest) SetInfotype(_infotype int64) error {
-	r._infotype = _infotype
-	r.Set("info_type", _infotype)
+func (r *TaobaotbkscpublisherinfosaveAPIRequest) SetInfoType(_infoType int64) error {
+	r._infoType = _infoType
+	r.Set("info_type", _infoType)
 	return nil
 }
 
-// GetInfotype Infotype Getter
-func (r TaobaotbkscpublisherinfosaveAPIRequest) GetInfotype() int64 {
-	return r._infotype
+// GetInfoType InfoType Getter
+func (r TaobaotbkscpublisherinfosaveAPIRequest) GetInfoType() int64 {
+	return r._infoType
 }

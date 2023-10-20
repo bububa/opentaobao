@@ -1,7 +1,7 @@
 package aetask
 
-// AliexpressInteractiveTaskCompleteResult 结构体
-type AliexpressInteractiveTaskCompleteResult struct {
+// AliexpressinteractivetaskcompleteResult 结构体
+type AliexpressinteractivetaskcompleteResult struct {
 	// 结果
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
 	// 错误码

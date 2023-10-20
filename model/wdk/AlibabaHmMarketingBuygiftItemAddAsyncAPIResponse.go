@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaHmMarketingBuygiftItemAddAsyncAPIResponse 批量发布买赠商品 API返回值
+// AlibabahmmarketingbuygiftitemaddasyncAPIResponse 批量发布买赠商品 API返回值
 // alibaba.hm.marketing.buygift.item.add.async
 //
 // 批量发布买赠商品
-type AlibabaHmMarketingBuygiftItemAddAsyncAPIResponse struct {
+type AlibabahmmarketingbuygiftitemaddasyncAPIResponse struct {
 	model.CommonResponse
-	AlibabaHmMarketingBuygiftItemAddAsyncAPIResponseModel
+	AlibabahmmarketingbuygiftitemaddasyncAPIResponseModel
 }
 
-// AlibabaHmMarketingBuygiftItemAddAsyncAPIResponseModel is 批量发布买赠商品 成功返回结果
-type AlibabaHmMarketingBuygiftItemAddAsyncAPIResponseModel struct {
+// AlibabahmmarketingbuygiftitemaddasyncAPIResponseModel is 批量发布买赠商品 成功返回结果
+type AlibabahmmarketingbuygiftitemaddasyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_hm_marketing_buygift_item_add_async_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package alilabs
 
-// SCanQrCodeResultVo 结构体
-type SCanQrCodeResultVo struct {
+// ScanQrCodeResultVo 结构体
+type ScanQrCodeResultVo struct {
 	// 天猫精灵设备ID
 	Uuid string `json:"uuid,omitempty" xml:"uuid,omitempty"`
 	// 天猫精灵用户ID

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscCrmVoucherStatusChangeAPIRequest 优惠券状态更改 API请求
+// AlibabaalsccrmvoucherstatuschangeAPIRequest 优惠券状态更改 API请求
 // alibaba.alsc.crm.voucher.status.change
 //
 // 核销优惠券
-type AlibabaAlscCrmVoucherStatusChangeAPIRequest struct {
+type AlibabaalsccrmvoucherstatuschangeAPIRequest struct {
 	model.Params
 	// 参数
 	_paramVoucherStatusChangeOpenReq *VoucherStatusChangeOpenReq
 }
 
-// NewAlibabaAlscCrmVoucherStatusChangeRequest 初始化AlibabaAlscCrmVoucherStatusChangeAPIRequest对象
-func NewAlibabaAlscCrmVoucherStatusChangeRequest() *AlibabaAlscCrmVoucherStatusChangeAPIRequest {
-	return &AlibabaAlscCrmVoucherStatusChangeAPIRequest{
+// NewAlibabaalsccrmvoucherstatuschangeRequest 初始化AlibabaalsccrmvoucherstatuschangeAPIRequest对象
+func NewAlibabaalsccrmvoucherstatuschangeRequest() *AlibabaalsccrmvoucherstatuschangeAPIRequest {
+	return &AlibabaalsccrmvoucherstatuschangeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmVoucherStatusChangeAPIRequest) GetApiMethodName() string {
+func (r AlibabaalsccrmvoucherstatuschangeAPIRequest) GetApiMethodName() string {
 	return "alibaba.alsc.crm.voucher.status.change"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmVoucherStatusChangeAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalsccrmvoucherstatuschangeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlscCrmVoucherStatusChangeAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalsccrmvoucherstatuschangeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamVoucherStatusChangeOpenReq is ParamVoucherStatusChangeOpenReq Setter
 // 参数
-func (r *AlibabaAlscCrmVoucherStatusChangeAPIRequest) SetParamVoucherStatusChangeOpenReq(_paramVoucherStatusChangeOpenReq *VoucherStatusChangeOpenReq) error {
+func (r *AlibabaalsccrmvoucherstatuschangeAPIRequest) SetParamVoucherStatusChangeOpenReq(_paramVoucherStatusChangeOpenReq *VoucherStatusChangeOpenReq) error {
 	r._paramVoucherStatusChangeOpenReq = _paramVoucherStatusChangeOpenReq
 	r.Set("param_voucher_status_change_open_req", _paramVoucherStatusChangeOpenReq)
 	return nil
 }
 
 // GetParamVoucherStatusChangeOpenReq ParamVoucherStatusChangeOpenReq Getter
-func (r AlibabaAlscCrmVoucherStatusChangeAPIRequest) GetParamVoucherStatusChangeOpenReq() *VoucherStatusChangeOpenReq {
+func (r AlibabaalsccrmvoucherstatuschangeAPIRequest) GetParamVoucherStatusChangeOpenReq() *VoucherStatusChangeOpenReq {
 	return r._paramVoucherStatusChangeOpenReq
 }

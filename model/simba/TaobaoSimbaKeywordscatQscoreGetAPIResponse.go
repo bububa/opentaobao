@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaKeywordscatQscoreGetAPIResponse 取得一个推广组的所有关键词和类目出价的质量得分 API返回值
+// TaobaosimbakeywordscatqscoregetAPIResponse 取得一个推广组的所有关键词和类目出价的质量得分 API返回值
 // taobao.simba.keywordscat.qscore.get
 //
 // 取得一个推广组的所有关键词和类目出价的质量得分列表
-type TaobaoSimbaKeywordscatQscoreGetAPIResponse struct {
+type TaobaosimbakeywordscatqscoregetAPIResponse struct {
 	model.CommonResponse
-	TaobaoSimbaKeywordscatQscoreGetAPIResponseModel
+	TaobaosimbakeywordscatqscoregetAPIResponseModel
 }
 
-// TaobaoSimbaKeywordscatQscoreGetAPIResponseModel is 取得一个推广组的所有关键词和类目出价的质量得分 成功返回结果
-type TaobaoSimbaKeywordscatQscoreGetAPIResponseModel struct {
+// TaobaosimbakeywordscatqscoregetAPIResponseModel is 取得一个推广组的所有关键词和类目出价的质量得分 成功返回结果
+type TaobaosimbakeywordscatqscoregetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_keywordscat_qscore_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

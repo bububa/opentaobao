@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkopenOrderGetAPIRequest 五道口商户订单获取 API请求
+// AlibabawdkopenordergetAPIRequest 五道口商户订单获取 API请求
 // alibaba.wdkopen.order.get
 //
 // 商户通过五道口订单id获取订单信息
-type AlibabaWdkopenOrderGetAPIRequest struct {
+type AlibabawdkopenordergetAPIRequest struct {
 	model.Params
 	// 经营店id
 	_storeId string
@@ -20,65 +20,65 @@ type AlibabaWdkopenOrderGetAPIRequest struct {
 	_bizOrderId int64
 }
 
-// NewAlibabaWdkopenOrderGetRequest 初始化AlibabaWdkopenOrderGetAPIRequest对象
-func NewAlibabaWdkopenOrderGetRequest() *AlibabaWdkopenOrderGetAPIRequest {
-	return &AlibabaWdkopenOrderGetAPIRequest{
+// NewAlibabawdkopenordergetRequest 初始化AlibabawdkopenordergetAPIRequest对象
+func NewAlibabawdkopenordergetRequest() *AlibabawdkopenordergetAPIRequest {
+	return &AlibabawdkopenordergetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkopenOrderGetAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkopenordergetAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdkopen.order.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkopenOrderGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkopenordergetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkopenOrderGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkopenordergetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetStoreId is StoreId Setter
 // 经营店id
-func (r *AlibabaWdkopenOrderGetAPIRequest) SetStoreId(_storeId string) error {
+func (r *AlibabawdkopenordergetAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
 	r.Set("store_id", _storeId)
 	return nil
 }
 
 // GetStoreId StoreId Getter
-func (r AlibabaWdkopenOrderGetAPIRequest) GetStoreId() string {
+func (r AlibabawdkopenordergetAPIRequest) GetStoreId() string {
 	return r._storeId
 }
 
 // SetOutOrderId is OutOrderId Setter
 // 外部主订单ID
-func (r *AlibabaWdkopenOrderGetAPIRequest) SetOutOrderId(_outOrderId string) error {
+func (r *AlibabawdkopenordergetAPIRequest) SetOutOrderId(_outOrderId string) error {
 	r._outOrderId = _outOrderId
 	r.Set("out_order_id", _outOrderId)
 	return nil
 }
 
 // GetOutOrderId OutOrderId Getter
-func (r AlibabaWdkopenOrderGetAPIRequest) GetOutOrderId() string {
+func (r AlibabawdkopenordergetAPIRequest) GetOutOrderId() string {
 	return r._outOrderId
 }
 
 // SetBizOrderId is BizOrderId Setter
 // 五道口主订单id
-func (r *AlibabaWdkopenOrderGetAPIRequest) SetBizOrderId(_bizOrderId int64) error {
+func (r *AlibabawdkopenordergetAPIRequest) SetBizOrderId(_bizOrderId int64) error {
 	r._bizOrderId = _bizOrderId
 	r.Set("biz_order_id", _bizOrderId)
 	return nil
 }
 
 // GetBizOrderId BizOrderId Getter
-func (r AlibabaWdkopenOrderGetAPIRequest) GetBizOrderId() int64 {
+func (r AlibabawdkopenordergetAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
 }

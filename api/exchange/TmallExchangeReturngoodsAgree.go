@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/exchange"
 )
 
-// TmallExchangeReturngoodsAgree 卖家确认收货
+// Tmallexchangereturngoodsagree 卖家确认收货
 // tmall.exchange.returngoods.agree
 //
 // 卖家确认收货
-func TmallExchangeReturngoodsAgree(clt *core.SDKClient, req *exchange.TmallExchangeReturngoodsAgreeAPIRequest, session string) (*exchange.TmallExchangeReturngoodsAgreeAPIResponse, error) {
-	var resp exchange.TmallExchangeReturngoodsAgreeAPIResponse
+func Tmallexchangereturngoodsagree(clt *core.SDKClient, req *exchange.TmallexchangereturngoodsagreeAPIRequest, session string) (*exchange.TmallexchangereturngoodsagreeAPIResponse, error) {
+	var resp exchange.TmallexchangereturngoodsagreeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoUopTobOrderCreateAPIRequest ToB仓储发货 API请求
+// TaobaouoptobordercreateAPIRequest ToB仓储发货 API请求
 // taobao.uop.tob.order.create
 //
 // ToB仓储发货
-type TaobaoUopTobOrderCreateAPIRequest struct {
+type TaobaouoptobordercreateAPIRequest struct {
 	model.Params
 	// ERP出库对象
 	_deliveryOrder *DeliveryOrder
 }
 
-// NewTaobaoUopTobOrderCreateRequest 初始化TaobaoUopTobOrderCreateAPIRequest对象
-func NewTaobaoUopTobOrderCreateRequest() *TaobaoUopTobOrderCreateAPIRequest {
-	return &TaobaoUopTobOrderCreateAPIRequest{
+// NewTaobaouoptobordercreateRequest 初始化TaobaouoptobordercreateAPIRequest对象
+func NewTaobaouoptobordercreateRequest() *TaobaouoptobordercreateAPIRequest {
+	return &TaobaouoptobordercreateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoUopTobOrderCreateAPIRequest) GetApiMethodName() string {
+func (r TaobaouoptobordercreateAPIRequest) GetApiMethodName() string {
 	return "taobao.uop.tob.order.create"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoUopTobOrderCreateAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaouoptobordercreateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoUopTobOrderCreateAPIRequest) GetRawParams() model.Params {
+func (r TaobaouoptobordercreateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDeliveryOrder is DeliveryOrder Setter
 // ERP出库对象
-func (r *TaobaoUopTobOrderCreateAPIRequest) SetDeliveryOrder(_deliveryOrder *DeliveryOrder) error {
+func (r *TaobaouoptobordercreateAPIRequest) SetDeliveryOrder(_deliveryOrder *DeliveryOrder) error {
 	r._deliveryOrder = _deliveryOrder
 	r.Set("delivery_order", _deliveryOrder)
 	return nil
 }
 
 // GetDeliveryOrder DeliveryOrder Getter
-func (r TaobaoUopTobOrderCreateAPIRequest) GetDeliveryOrder() *DeliveryOrder {
+func (r TaobaouoptobordercreateAPIRequest) GetDeliveryOrder() *DeliveryOrder {
 	return r._deliveryOrder
 }

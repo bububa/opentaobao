@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseNewhomeTradeToolBind 批量绑定交易工具
+// Alibabaalihousenewhometradetoolbind 批量绑定交易工具
 // alibaba.alihouse.newhome.trade.tool.bind
 //
 // 批量绑定交易工具
-func AlibabaAlihouseNewhomeTradeToolBind(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeTradeToolBindAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeTradeToolBindAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeTradeToolBindAPIResponse
+func Alibabaalihousenewhometradetoolbind(clt *core.SDKClient, req *alihouse.AlibabaalihousenewhometradetoolbindAPIRequest, session string) (*alihouse.AlibabaalihousenewhometradetoolbindAPIResponse, error) {
+	var resp alihouse.AlibabaalihousenewhometradetoolbindAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

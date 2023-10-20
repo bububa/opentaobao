@@ -1,7 +1,7 @@
 package tmallsc
 
-// ServiceCallRecordCO 结构体
-type ServiceCallRecordCO struct {
+// ServiceCallRecordCo 结构体
+type ServiceCallRecordCo struct {
 	// 修改日期
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 录音文件链接

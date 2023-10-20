@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpenmallItemGetAPIRequest 获取商品详情物料 API请求
+// TaobaoopenmallitemgetAPIRequest 获取商品详情物料 API请求
 // taobao.openmall.item.get
 //
 // 获取联盟开放的openmall商品
-type TaobaoOpenmallItemGetAPIRequest struct {
+type TaobaoopenmallitemgetAPIRequest struct {
 	model.Params
 	// 商品ID
 	_itemId int64
 }
 
-// NewTaobaoOpenmallItemGetRequest 初始化TaobaoOpenmallItemGetAPIRequest对象
-func NewTaobaoOpenmallItemGetRequest() *TaobaoOpenmallItemGetAPIRequest {
-	return &TaobaoOpenmallItemGetAPIRequest{
+// NewTaobaoopenmallitemgetRequest 初始化TaobaoopenmallitemgetAPIRequest对象
+func NewTaobaoopenmallitemgetRequest() *TaobaoopenmallitemgetAPIRequest {
+	return &TaobaoopenmallitemgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoOpenmallItemGetAPIRequest) GetApiMethodName() string {
+func (r TaobaoopenmallitemgetAPIRequest) GetApiMethodName() string {
 	return "taobao.openmall.item.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOpenmallItemGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoopenmallitemgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoOpenmallItemGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoopenmallitemgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetItemId is ItemId Setter
 // 商品ID
-func (r *TaobaoOpenmallItemGetAPIRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoopenmallitemgetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
 	r.Set("item_id", _itemId)
 	return nil
 }
 
 // GetItemId ItemId Getter
-func (r TaobaoOpenmallItemGetAPIRequest) GetItemId() int64 {
+func (r TaobaoopenmallitemgetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

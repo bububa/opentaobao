@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaRetailMarketingItempoolSkuQueryAPIResponse 查询商品池活动商品【同城零售】 API返回值
+// AlibabaretailmarketingitempoolskuqueryAPIResponse 查询商品池活动商品【同城零售】 API返回值
 // alibaba.retail.marketing.itempool.sku.query
 //
 // 查询商品池活动商品【同城零售】
-type AlibabaRetailMarketingItempoolSkuQueryAPIResponse struct {
+type AlibabaretailmarketingitempoolskuqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaRetailMarketingItempoolSkuQueryAPIResponseModel
+	AlibabaretailmarketingitempoolskuqueryAPIResponseModel
 }
 
-// AlibabaRetailMarketingItempoolSkuQueryAPIResponseModel is 查询商品池活动商品【同城零售】 成功返回结果
-type AlibabaRetailMarketingItempoolSkuQueryAPIResponseModel struct {
+// AlibabaretailmarketingitempoolskuqueryAPIResponseModel is 查询商品池活动商品【同城零售】 成功返回结果
+type AlibabaretailmarketingitempoolskuqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_retail_marketing_itempool_sku_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

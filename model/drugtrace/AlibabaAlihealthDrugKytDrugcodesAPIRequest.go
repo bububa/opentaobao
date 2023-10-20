@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDrugKytDrugcodesAPIRequest 药品是否赋码 API请求
+// AlibabaalihealthdrugkytdrugcodesAPIRequest 药品是否赋码 API请求
 // alibaba.alihealth.drug.kyt.drugcodes
 //
 // 药品是否赋码
-type AlibabaAlihealthDrugKytDrugcodesAPIRequest struct {
+type AlibabaalihealthdrugkytdrugcodesAPIRequest struct {
 	model.Params
 	// 企业名称
 	_refEntName string
@@ -26,104 +26,104 @@ type AlibabaAlihealthDrugKytDrugcodesAPIRequest struct {
 	_pkgSpec string
 }
 
-// NewAlibabaAlihealthDrugKytDrugcodesRequest 初始化AlibabaAlihealthDrugKytDrugcodesAPIRequest对象
-func NewAlibabaAlihealthDrugKytDrugcodesRequest() *AlibabaAlihealthDrugKytDrugcodesAPIRequest {
-	return &AlibabaAlihealthDrugKytDrugcodesAPIRequest{
+// NewAlibabaalihealthdrugkytdrugcodesRequest 初始化AlibabaalihealthdrugkytdrugcodesAPIRequest对象
+func NewAlibabaalihealthdrugkytdrugcodesRequest() *AlibabaalihealthdrugkytdrugcodesAPIRequest {
+	return &AlibabaalihealthdrugkytdrugcodesAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugKytDrugcodesAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthdrugkytdrugcodesAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.drug.kyt.drugcodes"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytDrugcodesAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthdrugkytdrugcodesAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthDrugKytDrugcodesAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthdrugkytdrugcodesAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRefEntName is RefEntName Setter
 // 企业名称
-func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetRefEntName(_refEntName string) error {
+func (r *AlibabaalihealthdrugkytdrugcodesAPIRequest) SetRefEntName(_refEntName string) error {
 	r._refEntName = _refEntName
 	r.Set("ref_ent_name", _refEntName)
 	return nil
 }
 
 // GetRefEntName RefEntName Getter
-func (r AlibabaAlihealthDrugKytDrugcodesAPIRequest) GetRefEntName() string {
+func (r AlibabaalihealthdrugkytdrugcodesAPIRequest) GetRefEntName() string {
 	return r._refEntName
 }
 
 // SetPhysicName is PhysicName Setter
 // 药品名称
-func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetPhysicName(_physicName string) error {
+func (r *AlibabaalihealthdrugkytdrugcodesAPIRequest) SetPhysicName(_physicName string) error {
 	r._physicName = _physicName
 	r.Set("physic_name", _physicName)
 	return nil
 }
 
 // GetPhysicName PhysicName Getter
-func (r AlibabaAlihealthDrugKytDrugcodesAPIRequest) GetPhysicName() string {
+func (r AlibabaalihealthdrugkytdrugcodesAPIRequest) GetPhysicName() string {
 	return r._physicName
 }
 
 // SetProduceBatchNo is ProduceBatchNo Setter
 // 生产批号
-func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetProduceBatchNo(_produceBatchNo string) error {
+func (r *AlibabaalihealthdrugkytdrugcodesAPIRequest) SetProduceBatchNo(_produceBatchNo string) error {
 	r._produceBatchNo = _produceBatchNo
 	r.Set("produce_batch_no", _produceBatchNo)
 	return nil
 }
 
 // GetProduceBatchNo ProduceBatchNo Getter
-func (r AlibabaAlihealthDrugKytDrugcodesAPIRequest) GetProduceBatchNo() string {
+func (r AlibabaalihealthdrugkytdrugcodesAPIRequest) GetProduceBatchNo() string {
 	return r._produceBatchNo
 }
 
 // SetPhysicType is PhysicType Setter
 // 药品类型
-func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetPhysicType(_physicType string) error {
+func (r *AlibabaalihealthdrugkytdrugcodesAPIRequest) SetPhysicType(_physicType string) error {
 	r._physicType = _physicType
 	r.Set("physic_type", _physicType)
 	return nil
 }
 
 // GetPhysicType PhysicType Getter
-func (r AlibabaAlihealthDrugKytDrugcodesAPIRequest) GetPhysicType() string {
+func (r AlibabaalihealthdrugkytdrugcodesAPIRequest) GetPhysicType() string {
 	return r._physicType
 }
 
 // SetPrepnSpec is PrepnSpec Setter
 // 制剂规格
-func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetPrepnSpec(_prepnSpec string) error {
+func (r *AlibabaalihealthdrugkytdrugcodesAPIRequest) SetPrepnSpec(_prepnSpec string) error {
 	r._prepnSpec = _prepnSpec
 	r.Set("prepn_spec", _prepnSpec)
 	return nil
 }
 
 // GetPrepnSpec PrepnSpec Getter
-func (r AlibabaAlihealthDrugKytDrugcodesAPIRequest) GetPrepnSpec() string {
+func (r AlibabaalihealthdrugkytdrugcodesAPIRequest) GetPrepnSpec() string {
 	return r._prepnSpec
 }
 
 // SetPkgSpec is PkgSpec Setter
 // 包装规格
-func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetPkgSpec(_pkgSpec string) error {
+func (r *AlibabaalihealthdrugkytdrugcodesAPIRequest) SetPkgSpec(_pkgSpec string) error {
 	r._pkgSpec = _pkgSpec
 	r.Set("pkg_spec", _pkgSpec)
 	return nil
 }
 
 // GetPkgSpec PkgSpec Getter
-func (r AlibabaAlihealthDrugKytDrugcodesAPIRequest) GetPkgSpec() string {
+func (r AlibabaalihealthdrugkytdrugcodesAPIRequest) GetPkgSpec() string {
 	return r._pkgSpec
 }

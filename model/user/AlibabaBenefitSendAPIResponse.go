@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaBenefitSendAPIResponse 发奖接口 API返回值
+// AlibababenefitsendAPIResponse 发奖接口 API返回值
 // alibaba.benefit.send
 //
 // 发奖接口
-type AlibabaBenefitSendAPIResponse struct {
+type AlibababenefitsendAPIResponse struct {
 	model.CommonResponse
-	AlibabaBenefitSendAPIResponseModel
+	AlibababenefitsendAPIResponseModel
 }
 
-// AlibabaBenefitSendAPIResponseModel is 发奖接口 成功返回结果
-type AlibabaBenefitSendAPIResponseModel struct {
+// AlibababenefitsendAPIResponseModel is 发奖接口 成功返回结果
+type AlibababenefitsendAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_benefit_send_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

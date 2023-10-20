@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-// TmallServicecenterWorkerCreate 服务商工人信息创建
+// Tmallservicecenterworkercreate 服务商工人信息创建
 // tmall.servicecenter.worker.create
 //
 // 服务商工人信息创建
-func TmallServicecenterWorkerCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerCreateAPIRequest, session string) (*tmallservice.TmallServicecenterWorkerCreateAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkerCreateAPIResponse
+func Tmallservicecenterworkercreate(clt *core.SDKClient, req *tmallservice.TmallservicecenterworkercreateAPIRequest, session string) (*tmallservice.TmallservicecenterworkercreateAPIResponse, error) {
+	var resp tmallservice.TmallservicecenterworkercreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

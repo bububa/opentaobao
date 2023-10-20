@@ -5,9 +5,9 @@ type ResultWrapper struct {
 	// 响应数据
 	Datas []Datas `json:"datas,omitempty" xml:"datas>datas,omitempty"`
 	// 系统自动生成
-	Data []AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateData `json:"data,omitempty" xml:"data>alibaba_ascp_aic_supplier_aicinventory_negative_sale_invalidate_data,omitempty"`
+	Data []AlibabaascpaicsupplieraicinventorynegativesaleinvalidateData `json:"data,omitempty" xml:"data>alibabaascpaicsupplieraicinventorynegativesaleinvalidate_data,omitempty"`
 	// 返回内容
-	DataList []AlibabaAscpChannelMainRefundCreateData `json:"data_list,omitempty" xml:"data_list>alibaba_ascp_channel_main_refund_create_data,omitempty"`
+	DataList []AlibabaascpchannelmainrefundcreateData `json:"data_list,omitempty" xml:"data_list>alibabaascpchannelmainrefundcreate_data,omitempty"`
 	// 错误描述
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallServicecenterServicemonitormessageUpdateAPIRequest 服务商更新预警消息状态 API请求
+// TmallservicecenterservicemonitormessageupdateAPIRequest 服务商更新预警消息状态 API请求
 // tmall.servicecenter.servicemonitormessage.update
 //
 // 服务商收到预警后，需要进行回复已读状态，并可填写备注
-type TmallServicecenterServicemonitormessageUpdateAPIRequest struct {
+type TmallservicecenterservicemonitormessageupdateAPIRequest struct {
 	model.Params
 	// 预警处理备注
 	_memo string
@@ -20,65 +20,65 @@ type TmallServicecenterServicemonitormessageUpdateAPIRequest struct {
 	_status int64
 }
 
-// NewTmallServicecenterServicemonitormessageUpdateRequest 初始化TmallServicecenterServicemonitormessageUpdateAPIRequest对象
-func NewTmallServicecenterServicemonitormessageUpdateRequest() *TmallServicecenterServicemonitormessageUpdateAPIRequest {
-	return &TmallServicecenterServicemonitormessageUpdateAPIRequest{
+// NewTmallservicecenterservicemonitormessageupdateRequest 初始化TmallservicecenterservicemonitormessageupdateAPIRequest对象
+func NewTmallservicecenterservicemonitormessageupdateRequest() *TmallservicecenterservicemonitormessageupdateAPIRequest {
+	return &TmallservicecenterservicemonitormessageupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetApiMethodName() string {
+func (r TmallservicecenterservicemonitormessageupdateAPIRequest) GetApiMethodName() string {
 	return "tmall.servicecenter.servicemonitormessage.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetApiParams(params url.Values) {
+func (r TmallservicecenterservicemonitormessageupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetRawParams() model.Params {
+func (r TmallservicecenterservicemonitormessageupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMemo is Memo Setter
 // 预警处理备注
-func (r *TmallServicecenterServicemonitormessageUpdateAPIRequest) SetMemo(_memo string) error {
+func (r *TmallservicecenterservicemonitormessageupdateAPIRequest) SetMemo(_memo string) error {
 	r._memo = _memo
 	r.Set("memo", _memo)
 	return nil
 }
 
 // GetMemo Memo Getter
-func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetMemo() string {
+func (r TmallservicecenterservicemonitormessageupdateAPIRequest) GetMemo() string {
 	return r._memo
 }
 
 // SetServiceMonitorMessageId is ServiceMonitorMessageId Setter
 // 预警消息id
-func (r *TmallServicecenterServicemonitormessageUpdateAPIRequest) SetServiceMonitorMessageId(_serviceMonitorMessageId int64) error {
+func (r *TmallservicecenterservicemonitormessageupdateAPIRequest) SetServiceMonitorMessageId(_serviceMonitorMessageId int64) error {
 	r._serviceMonitorMessageId = _serviceMonitorMessageId
 	r.Set("service_monitor_message_id", _serviceMonitorMessageId)
 	return nil
 }
 
 // GetServiceMonitorMessageId ServiceMonitorMessageId Getter
-func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetServiceMonitorMessageId() int64 {
+func (r TmallservicecenterservicemonitormessageupdateAPIRequest) GetServiceMonitorMessageId() int64 {
 	return r._serviceMonitorMessageId
 }
 
 // SetStatus is Status Setter
 // 可更新状态：3、已读
-func (r *TmallServicecenterServicemonitormessageUpdateAPIRequest) SetStatus(_status int64) error {
+func (r *TmallservicecenterservicemonitormessageupdateAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
 	r.Set("status", _status)
 	return nil
 }
 
 // GetStatus Status Getter
-func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetStatus() int64 {
+func (r TmallservicecenterservicemonitormessageupdateAPIRequest) GetStatus() int64 {
 	return r._status
 }

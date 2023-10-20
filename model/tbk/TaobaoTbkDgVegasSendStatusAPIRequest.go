@@ -13,19 +13,19 @@ import (
 type TaobaotbkdgvegassendstatusAPIRequest struct {
 	model.Params
 	// 渠道管理id
-	_relationid string
+	_relationId string
 	// 会员运营id
-	_specialid string
+	_specialId string
 	// 加密后的值，需用MD5加密，32位小写
-	_devicevalue string
+	_deviceValue string
 	// 入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)： 1. IMEI 2. IDFA 3. OAID 4. MOBILE
-	_devicetype string
+	_deviceType string
 	// 已废弃，请勿传入
-	_thorbizcode string
+	_thorBizCode string
 	// 媒体pid
 	_pid string
 	// 查询红包类型，1-超级红包，2-福利购，3-签到红包，4-福利直降，不传时默认查询超级红包数据
-	_activitycategory int64
+	_activityCategory int64
 }
 
 // NewTaobaotbkdgvegassendstatusRequest 初始化TaobaotbkdgvegassendstatusAPIRequest对象
@@ -52,69 +52,69 @@ func (r TaobaotbkdgvegassendstatusAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetRelationid is Relationid Setter
+// SetRelationId is RelationId Setter
 // 渠道管理id
-func (r *TaobaotbkdgvegassendstatusAPIRequest) SetRelationid(_relationid string) error {
-	r._relationid = _relationid
-	r.Set("relation_id", _relationid)
+func (r *TaobaotbkdgvegassendstatusAPIRequest) SetRelationId(_relationId string) error {
+	r._relationId = _relationId
+	r.Set("relation_id", _relationId)
 	return nil
 }
 
-// GetRelationid Relationid Getter
-func (r TaobaotbkdgvegassendstatusAPIRequest) GetRelationid() string {
-	return r._relationid
+// GetRelationId RelationId Getter
+func (r TaobaotbkdgvegassendstatusAPIRequest) GetRelationId() string {
+	return r._relationId
 }
 
-// SetSpecialid is Specialid Setter
+// SetSpecialId is SpecialId Setter
 // 会员运营id
-func (r *TaobaotbkdgvegassendstatusAPIRequest) SetSpecialid(_specialid string) error {
-	r._specialid = _specialid
-	r.Set("special_id", _specialid)
+func (r *TaobaotbkdgvegassendstatusAPIRequest) SetSpecialId(_specialId string) error {
+	r._specialId = _specialId
+	r.Set("special_id", _specialId)
 	return nil
 }
 
-// GetSpecialid Specialid Getter
-func (r TaobaotbkdgvegassendstatusAPIRequest) GetSpecialid() string {
-	return r._specialid
+// GetSpecialId SpecialId Getter
+func (r TaobaotbkdgvegassendstatusAPIRequest) GetSpecialId() string {
+	return r._specialId
 }
 
-// SetDevicevalue is Devicevalue Setter
+// SetDeviceValue is DeviceValue Setter
 // 加密后的值，需用MD5加密，32位小写
-func (r *TaobaotbkdgvegassendstatusAPIRequest) SetDevicevalue(_devicevalue string) error {
-	r._devicevalue = _devicevalue
-	r.Set("device_value", _devicevalue)
+func (r *TaobaotbkdgvegassendstatusAPIRequest) SetDeviceValue(_deviceValue string) error {
+	r._deviceValue = _deviceValue
+	r.Set("device_value", _deviceValue)
 	return nil
 }
 
-// GetDevicevalue Devicevalue Getter
-func (r TaobaotbkdgvegassendstatusAPIRequest) GetDevicevalue() string {
-	return r._devicevalue
+// GetDeviceValue DeviceValue Getter
+func (r TaobaotbkdgvegassendstatusAPIRequest) GetDeviceValue() string {
+	return r._deviceValue
 }
 
-// SetDevicetype is Devicetype Setter
+// SetDeviceType is DeviceType Setter
 // 入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)： 1. IMEI 2. IDFA 3. OAID 4. MOBILE
-func (r *TaobaotbkdgvegassendstatusAPIRequest) SetDevicetype(_devicetype string) error {
-	r._devicetype = _devicetype
-	r.Set("device_type", _devicetype)
+func (r *TaobaotbkdgvegassendstatusAPIRequest) SetDeviceType(_deviceType string) error {
+	r._deviceType = _deviceType
+	r.Set("device_type", _deviceType)
 	return nil
 }
 
-// GetDevicetype Devicetype Getter
-func (r TaobaotbkdgvegassendstatusAPIRequest) GetDevicetype() string {
-	return r._devicetype
+// GetDeviceType DeviceType Getter
+func (r TaobaotbkdgvegassendstatusAPIRequest) GetDeviceType() string {
+	return r._deviceType
 }
 
-// SetThorbizcode is Thorbizcode Setter
+// SetThorBizCode is ThorBizCode Setter
 // 已废弃，请勿传入
-func (r *TaobaotbkdgvegassendstatusAPIRequest) SetThorbizcode(_thorbizcode string) error {
-	r._thorbizcode = _thorbizcode
-	r.Set("thor_biz_code", _thorbizcode)
+func (r *TaobaotbkdgvegassendstatusAPIRequest) SetThorBizCode(_thorBizCode string) error {
+	r._thorBizCode = _thorBizCode
+	r.Set("thor_biz_code", _thorBizCode)
 	return nil
 }
 
-// GetThorbizcode Thorbizcode Getter
-func (r TaobaotbkdgvegassendstatusAPIRequest) GetThorbizcode() string {
-	return r._thorbizcode
+// GetThorBizCode ThorBizCode Getter
+func (r TaobaotbkdgvegassendstatusAPIRequest) GetThorBizCode() string {
+	return r._thorBizCode
 }
 
 // SetPid is Pid Setter
@@ -130,15 +130,15 @@ func (r TaobaotbkdgvegassendstatusAPIRequest) GetPid() string {
 	return r._pid
 }
 
-// SetActivitycategory is Activitycategory Setter
+// SetActivityCategory is ActivityCategory Setter
 // 查询红包类型，1-超级红包，2-福利购，3-签到红包，4-福利直降，不传时默认查询超级红包数据
-func (r *TaobaotbkdgvegassendstatusAPIRequest) SetActivitycategory(_activitycategory int64) error {
-	r._activitycategory = _activitycategory
-	r.Set("activity_category", _activitycategory)
+func (r *TaobaotbkdgvegassendstatusAPIRequest) SetActivityCategory(_activityCategory int64) error {
+	r._activityCategory = _activityCategory
+	r.Set("activity_category", _activityCategory)
 	return nil
 }
 
-// GetActivitycategory Activitycategory Getter
-func (r TaobaotbkdgvegassendstatusAPIRequest) GetActivitycategory() int64 {
-	return r._activitycategory
+// GetActivityCategory ActivityCategory Getter
+func (r TaobaotbkdgvegassendstatusAPIRequest) GetActivityCategory() int64 {
+	return r._activityCategory
 }

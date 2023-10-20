@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mozi"
 )
 
-// AlibabaMoziFusionDimissionEmployeeAccount 人员离职
+// Alibabamozifusiondimissionemployeeaccount 人员离职
 // alibaba.mozi.fusion.dimission.employee.account
 //
 // 人员离职并且回收账号
-func AlibabaMoziFusionDimissionEmployeeAccount(clt *core.SDKClient, req *mozi.AlibabaMoziFusionDimissionEmployeeAccountAPIRequest, session string) (*mozi.AlibabaMoziFusionDimissionEmployeeAccountAPIResponse, error) {
-	var resp mozi.AlibabaMoziFusionDimissionEmployeeAccountAPIResponse
+func Alibabamozifusiondimissionemployeeaccount(clt *core.SDKClient, req *mozi.AlibabamozifusiondimissionemployeeaccountAPIRequest, session string) (*mozi.AlibabamozifusiondimissionemployeeaccountAPIResponse, error) {
+	var resp mozi.AlibabamozifusiondimissionemployeeaccountAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

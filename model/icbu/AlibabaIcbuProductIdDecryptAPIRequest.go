@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIcbuProductIdDecryptAPIRequest 商品ID解密 API请求
+// AlibabaicbuproductiddecryptAPIRequest 商品ID解密 API请求
 // alibaba.icbu.product.id.decrypt
 //
 // 对混淆的产品ID解密
-type AlibabaIcbuProductIdDecryptAPIRequest struct {
+type AlibabaicbuproductiddecryptAPIRequest struct {
 	model.Params
 	// 语种
 	_language string
@@ -18,52 +18,52 @@ type AlibabaIcbuProductIdDecryptAPIRequest struct {
 	_productId string
 }
 
-// NewAlibabaIcbuProductIdDecryptRequest 初始化AlibabaIcbuProductIdDecryptAPIRequest对象
-func NewAlibabaIcbuProductIdDecryptRequest() *AlibabaIcbuProductIdDecryptAPIRequest {
-	return &AlibabaIcbuProductIdDecryptAPIRequest{
+// NewAlibabaicbuproductiddecryptRequest 初始化AlibabaicbuproductiddecryptAPIRequest对象
+func NewAlibabaicbuproductiddecryptRequest() *AlibabaicbuproductiddecryptAPIRequest {
+	return &AlibabaicbuproductiddecryptAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaIcbuProductIdDecryptAPIRequest) GetApiMethodName() string {
+func (r AlibabaicbuproductiddecryptAPIRequest) GetApiMethodName() string {
 	return "alibaba.icbu.product.id.decrypt"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuProductIdDecryptAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaicbuproductiddecryptAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaIcbuProductIdDecryptAPIRequest) GetRawParams() model.Params {
+func (r AlibabaicbuproductiddecryptAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetLanguage is Language Setter
 // 语种
-func (r *AlibabaIcbuProductIdDecryptAPIRequest) SetLanguage(_language string) error {
+func (r *AlibabaicbuproductiddecryptAPIRequest) SetLanguage(_language string) error {
 	r._language = _language
 	r.Set("language", _language)
 	return nil
 }
 
 // GetLanguage Language Getter
-func (r AlibabaIcbuProductIdDecryptAPIRequest) GetLanguage() string {
+func (r AlibabaicbuproductiddecryptAPIRequest) GetLanguage() string {
 	return r._language
 }
 
 // SetProductId is ProductId Setter
 // 混淆后的商品ID
-func (r *AlibabaIcbuProductIdDecryptAPIRequest) SetProductId(_productId string) error {
+func (r *AlibabaicbuproductiddecryptAPIRequest) SetProductId(_productId string) error {
 	r._productId = _productId
 	r.Set("product_id", _productId)
 	return nil
 }
 
 // GetProductId ProductId Getter
-func (r AlibabaIcbuProductIdDecryptAPIRequest) GetProductId() string {
+func (r AlibabaicbuproductiddecryptAPIRequest) GetProductId() string {
 	return r._productId
 }

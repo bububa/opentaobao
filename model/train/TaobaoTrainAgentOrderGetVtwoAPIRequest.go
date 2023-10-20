@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTrainAgentOrderGetVtwoAPIRequest 代理商获取订单信息回调APIv2--增加鉴权校验 API请求
+// TaobaotrainagentordergetvtwoAPIRequest 代理商获取订单信息回调APIv2--增加鉴权校验 API请求
 // taobao.train.agent.order.get.vtwo
 //
 // 代理商获取订单信息回调API
-type TaobaoTrainAgentOrderGetVtwoAPIRequest struct {
+type TaobaotrainagentordergetvtwoAPIRequest struct {
 	model.Params
 	// 淘宝的主订单号
 	_mainOrderId int64
@@ -18,52 +18,52 @@ type TaobaoTrainAgentOrderGetVtwoAPIRequest struct {
 	_agentId int64
 }
 
-// NewTaobaoTrainAgentOrderGetVtwoRequest 初始化TaobaoTrainAgentOrderGetVtwoAPIRequest对象
-func NewTaobaoTrainAgentOrderGetVtwoRequest() *TaobaoTrainAgentOrderGetVtwoAPIRequest {
-	return &TaobaoTrainAgentOrderGetVtwoAPIRequest{
+// NewTaobaotrainagentordergetvtwoRequest 初始化TaobaotrainagentordergetvtwoAPIRequest对象
+func NewTaobaotrainagentordergetvtwoRequest() *TaobaotrainagentordergetvtwoAPIRequest {
+	return &TaobaotrainagentordergetvtwoAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTrainAgentOrderGetVtwoAPIRequest) GetApiMethodName() string {
+func (r TaobaotrainagentordergetvtwoAPIRequest) GetApiMethodName() string {
 	return "taobao.train.agent.order.get.vtwo"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTrainAgentOrderGetVtwoAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotrainagentordergetvtwoAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTrainAgentOrderGetVtwoAPIRequest) GetRawParams() model.Params {
+func (r TaobaotrainagentordergetvtwoAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMainOrderId is MainOrderId Setter
 // 淘宝的主订单号
-func (r *TaobaoTrainAgentOrderGetVtwoAPIRequest) SetMainOrderId(_mainOrderId int64) error {
+func (r *TaobaotrainagentordergetvtwoAPIRequest) SetMainOrderId(_mainOrderId int64) error {
 	r._mainOrderId = _mainOrderId
 	r.Set("main_order_id", _mainOrderId)
 	return nil
 }
 
 // GetMainOrderId MainOrderId Getter
-func (r TaobaoTrainAgentOrderGetVtwoAPIRequest) GetMainOrderId() int64 {
+func (r TaobaotrainagentordergetvtwoAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
 }
 
 // SetAgentId is AgentId Setter
 // 代理商id
-func (r *TaobaoTrainAgentOrderGetVtwoAPIRequest) SetAgentId(_agentId int64) error {
+func (r *TaobaotrainagentordergetvtwoAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
 	r.Set("agent_id", _agentId)
 	return nil
 }
 
 // GetAgentId AgentId Getter
-func (r TaobaoTrainAgentOrderGetVtwoAPIRequest) GetAgentId() int64 {
+func (r TaobaotrainagentordergetvtwoAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }

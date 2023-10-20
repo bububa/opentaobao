@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/nazca"
 )
 
-// AlibabaNazcaTokenChangeauthapplyGet 根据token获取变更认证申请信息
+// Alibabanazcatokenchangeauthapplyget 根据token获取变更认证申请信息
 // alibaba.nazca.token.changeauthapply.get
 //
 // 根据token获取变更认证申请信息
-func AlibabaNazcaTokenChangeauthapplyGet(clt *core.SDKClient, req *nazca.AlibabaNazcaTokenChangeauthapplyGetAPIRequest, session string) (*nazca.AlibabaNazcaTokenChangeauthapplyGetAPIResponse, error) {
-	var resp nazca.AlibabaNazcaTokenChangeauthapplyGetAPIResponse
+func Alibabanazcatokenchangeauthapplyget(clt *core.SDKClient, req *nazca.AlibabanazcatokenchangeauthapplygetAPIRequest, session string) (*nazca.AlibabanazcatokenchangeauthapplygetAPIResponse, error) {
+	var resp nazca.AlibabanazcatokenchangeauthapplygetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

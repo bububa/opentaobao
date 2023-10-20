@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseNewhomeProjectPhoneSubmitResult 结构体
-type AlibabaAlihouseNewhomeProjectPhoneSubmitResult struct {
+// AlibabaalihousenewhomeprojectphonesubmitResult 结构体
+type AlibabaalihousenewhomeprojectphonesubmitResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// code

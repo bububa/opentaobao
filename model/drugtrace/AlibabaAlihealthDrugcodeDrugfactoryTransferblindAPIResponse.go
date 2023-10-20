@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIResponse 传输盲底文件 API返回值
+// AlibabaalihealthdrugcodedrugfactorytransferblindAPIResponse 传输盲底文件 API返回值
 // alibaba.alihealth.drugcode.drugfactory.transferblind
 //
 // 临床用药试验-传输盲底文件
-type AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIResponse struct {
+type AlibabaalihealthdrugcodedrugfactorytransferblindAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIResponseModel
+	AlibabaalihealthdrugcodedrugfactorytransferblindAPIResponseModel
 }
 
-// AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIResponseModel is 传输盲底文件 成功返回结果
-type AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIResponseModel struct {
+// AlibabaalihealthdrugcodedrugfactorytransferblindAPIResponseModel is 传输盲底文件 成功返回结果
+type AlibabaalihealthdrugcodedrugfactorytransferblindAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drugcode_drugfactory_transferblind_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

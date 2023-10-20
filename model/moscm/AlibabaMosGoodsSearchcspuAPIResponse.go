@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMosGoodsSearchcspuAPIResponse cspu查询 API返回值
+// AlibabamosgoodssearchcspuAPIResponse cspu查询 API返回值
 // alibaba.mos.goods.searchcspu
 //
 // 商品信息查询（仅用于商品上传数据验证，不能用于商品下载，有限流）
-type AlibabaMosGoodsSearchcspuAPIResponse struct {
+type AlibabamosgoodssearchcspuAPIResponse struct {
 	model.CommonResponse
-	AlibabaMosGoodsSearchcspuAPIResponseModel
+	AlibabamosgoodssearchcspuAPIResponseModel
 }
 
-// AlibabaMosGoodsSearchcspuAPIResponseModel is cspu查询 成功返回结果
-type AlibabaMosGoodsSearchcspuAPIResponseModel struct {
+// AlibabamosgoodssearchcspuAPIResponseModel is cspu查询 成功返回结果
+type AlibabamosgoodssearchcspuAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mos_goods_searchcspu_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

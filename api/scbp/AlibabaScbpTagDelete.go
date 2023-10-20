@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// AlibabaScbpTagDelete 删除关键词分组
+// Alibabascbptagdelete 删除关键词分组
 // alibaba.scbp.tag.delete
 //
 // 删除关键词分组
-func AlibabaScbpTagDelete(clt *core.SDKClient, req *scbp.AlibabaScbpTagDeleteAPIRequest, session string) (*scbp.AlibabaScbpTagDeleteAPIResponse, error) {
-	var resp scbp.AlibabaScbpTagDeleteAPIResponse
+func Alibabascbptagdelete(clt *core.SDKClient, req *scbp.AlibabascbptagdeleteAPIRequest, session string) (*scbp.AlibabascbptagdeleteAPIResponse, error) {
+	var resp scbp.AlibabascbptagdeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

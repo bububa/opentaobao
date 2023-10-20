@@ -1,7 +1,7 @@
 package mtopopen
 
-// AlibabaInteractAopdataRegisterResult 结构体
-type AlibabaInteractAopdataRegisterResult struct {
+// AlibabainteractaopdataregisterResult 结构体
+type AlibabainteractaopdataregisterResult struct {
 	// xx
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// xxx失败

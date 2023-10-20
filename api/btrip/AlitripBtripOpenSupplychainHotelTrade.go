@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// AlitripBtripOpenSupplychainHotelTrade 【商旅】酒店交易查询流水接口
+// Alitripbtripopensupplychainhoteltrade 【商旅】酒店交易查询流水接口
 // alitrip.btrip.open.supplychain.hotel.trade
 //
 // 【商旅】酒店交易查询流水接口——杭州市政府
-func AlitripBtripOpenSupplychainHotelTrade(clt *core.SDKClient, req *btrip.AlitripBtripOpenSupplychainHotelTradeAPIRequest, session string) (*btrip.AlitripBtripOpenSupplychainHotelTradeAPIResponse, error) {
-	var resp btrip.AlitripBtripOpenSupplychainHotelTradeAPIResponse
+func Alitripbtripopensupplychainhoteltrade(clt *core.SDKClient, req *btrip.AlitripbtripopensupplychainhoteltradeAPIRequest, session string) (*btrip.AlitripbtripopensupplychainhoteltradeAPIResponse, error) {
+	var resp btrip.AlitripbtripopensupplychainhoteltradeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

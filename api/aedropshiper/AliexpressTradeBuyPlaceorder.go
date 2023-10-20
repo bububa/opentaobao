@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aedropshiper"
 )
 
-// AliexpressTradeBuyPlaceorder AE下单API
+// Aliexpresstradebuyplaceorder AE下单API
 // aliexpress.trade.buy.placeorder
 //
 // 150欧欧盟税改
-func AliexpressTradeBuyPlaceorder(clt *core.SDKClient, req *aedropshiper.AliexpressTradeBuyPlaceorderAPIRequest, session string) (*aedropshiper.AliexpressTradeBuyPlaceorderAPIResponse, error) {
-	var resp aedropshiper.AliexpressTradeBuyPlaceorderAPIResponse
+func Aliexpresstradebuyplaceorder(clt *core.SDKClient, req *aedropshiper.AliexpresstradebuyplaceorderAPIRequest, session string) (*aedropshiper.AliexpresstradebuyplaceorderAPIResponse, error) {
+	var resp aedropshiper.AliexpresstradebuyplaceorderAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

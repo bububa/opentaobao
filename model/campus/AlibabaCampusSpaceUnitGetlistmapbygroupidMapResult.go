@@ -1,7 +1,7 @@
 package campus
 
-// AlibabaCampusSpaceUnitGetlistmapbygroupidMapResult 结构体
-type AlibabaCampusSpaceUnitGetlistmapbygroupidMapResult struct {
+// AlibabacampusspaceunitgetlistmapbygroupidMapResult 结构体
+type AlibabacampusspaceunitgetlistmapbygroupidMapResult struct {
 	// content
 	Content string `json:"content,omitempty" xml:"content,omitempty"`
 	// requestId

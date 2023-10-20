@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMemberCheckmerchantAPIRequest 校验商家身份 API请求
+// AlibabamembercheckmerchantAPIRequest 校验商家身份 API请求
 // alibaba.member.checkmerchant
 //
 // 校验商家身份
-type AlibabaMemberCheckmerchantAPIRequest struct {
+type AlibabamembercheckmerchantAPIRequest struct {
 	model.Params
 	// 混淆后的商家id
 	_openMerchantId string
 }
 
-// NewAlibabaMemberCheckmerchantRequest 初始化AlibabaMemberCheckmerchantAPIRequest对象
-func NewAlibabaMemberCheckmerchantRequest() *AlibabaMemberCheckmerchantAPIRequest {
-	return &AlibabaMemberCheckmerchantAPIRequest{
+// NewAlibabamembercheckmerchantRequest 初始化AlibabamembercheckmerchantAPIRequest对象
+func NewAlibabamembercheckmerchantRequest() *AlibabamembercheckmerchantAPIRequest {
+	return &AlibabamembercheckmerchantAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaMemberCheckmerchantAPIRequest) GetApiMethodName() string {
+func (r AlibabamembercheckmerchantAPIRequest) GetApiMethodName() string {
 	return "alibaba.member.checkmerchant"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMemberCheckmerchantAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabamembercheckmerchantAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaMemberCheckmerchantAPIRequest) GetRawParams() model.Params {
+func (r AlibabamembercheckmerchantAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOpenMerchantId is OpenMerchantId Setter
 // 混淆后的商家id
-func (r *AlibabaMemberCheckmerchantAPIRequest) SetOpenMerchantId(_openMerchantId string) error {
+func (r *AlibabamembercheckmerchantAPIRequest) SetOpenMerchantId(_openMerchantId string) error {
 	r._openMerchantId = _openMerchantId
 	r.Set("open_merchant_id", _openMerchantId)
 	return nil
 }
 
 // GetOpenMerchantId OpenMerchantId Getter
-func (r AlibabaMemberCheckmerchantAPIRequest) GetOpenMerchantId() string {
+func (r AlibabamembercheckmerchantAPIRequest) GetOpenMerchantId() string {
 	return r._openMerchantId
 }

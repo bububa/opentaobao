@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/feedflow"
 )
 
-// TaobaoFeedflowItemAdgroupDelete 根据单元id删除单元
+// Taobaofeedflowitemadgroupdelete 根据单元id删除单元
 // taobao.feedflow.item.adgroup.delete
 //
 // 根据单元id删除单元
-func TaobaoFeedflowItemAdgroupDelete(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupDeleteAPIRequest, session string) (*feedflow.TaobaoFeedflowItemAdgroupDeleteAPIResponse, error) {
-	var resp feedflow.TaobaoFeedflowItemAdgroupDeleteAPIResponse
+func Taobaofeedflowitemadgroupdelete(clt *core.SDKClient, req *feedflow.TaobaofeedflowitemadgroupdeleteAPIRequest, session string) (*feedflow.TaobaofeedflowitemadgroupdeleteAPIResponse, error) {
+	var resp feedflow.TaobaofeedflowitemadgroupdeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

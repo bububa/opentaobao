@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMoziVdsTenantApiServiceDismissAPIRequest MOZI解除组织主管服务 API请求
+// AlibabamozivdstenantapiservicedismissAPIRequest MOZI解除组织主管服务 API请求
 // alibaba.mozi.vds.tenant.api.service.dismiss
 //
 // 解除组织主管
-type AlibabaMoziVdsTenantApiServiceDismissAPIRequest struct {
+type AlibabamozivdstenantapiservicedismissAPIRequest struct {
 	model.Params
 	// 第一个入参
 	_par0 *DismissOrganizationSupervisorRequest
 }
 
-// NewAlibabaMoziVdsTenantApiServiceDismissRequest 初始化AlibabaMoziVdsTenantApiServiceDismissAPIRequest对象
-func NewAlibabaMoziVdsTenantApiServiceDismissRequest() *AlibabaMoziVdsTenantApiServiceDismissAPIRequest {
-	return &AlibabaMoziVdsTenantApiServiceDismissAPIRequest{
+// NewAlibabamozivdstenantapiservicedismissRequest 初始化AlibabamozivdstenantapiservicedismissAPIRequest对象
+func NewAlibabamozivdstenantapiservicedismissRequest() *AlibabamozivdstenantapiservicedismissAPIRequest {
+	return &AlibabamozivdstenantapiservicedismissAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaMoziVdsTenantApiServiceDismissAPIRequest) GetApiMethodName() string {
+func (r AlibabamozivdstenantapiservicedismissAPIRequest) GetApiMethodName() string {
 	return "alibaba.mozi.vds.tenant.api.service.dismiss"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMoziVdsTenantApiServiceDismissAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabamozivdstenantapiservicedismissAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaMoziVdsTenantApiServiceDismissAPIRequest) GetRawParams() model.Params {
+func (r AlibabamozivdstenantapiservicedismissAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPar0 is Par0 Setter
 // 第一个入参
-func (r *AlibabaMoziVdsTenantApiServiceDismissAPIRequest) SetPar0(_par0 *DismissOrganizationSupervisorRequest) error {
+func (r *AlibabamozivdstenantapiservicedismissAPIRequest) SetPar0(_par0 *DismissOrganizationSupervisorRequest) error {
 	r._par0 = _par0
 	r.Set("par0", _par0)
 	return nil
 }
 
 // GetPar0 Par0 Getter
-func (r AlibabaMoziVdsTenantApiServiceDismissAPIRequest) GetPar0() *DismissOrganizationSupervisorRequest {
+func (r AlibabamozivdstenantapiservicedismissAPIRequest) GetPar0() *DismissOrganizationSupervisorRequest {
 	return r._par0
 }

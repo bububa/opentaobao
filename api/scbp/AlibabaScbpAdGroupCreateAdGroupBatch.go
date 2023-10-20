@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// AlibabaScbpAdGroupCreateAdGroupBatch 创建推广单元
+// Alibabascbpadgroupcreateadgroupbatch 创建推广单元
 // alibaba.scbp.ad.group.create.ad.group.batch
 //
 // 创建推广单元
-func AlibabaScbpAdGroupCreateAdGroupBatch(clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest, session string) (*scbp.AlibabaScbpAdGroupCreateAdGroupBatchAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdGroupCreateAdGroupBatchAPIResponse
+func Alibabascbpadgroupcreateadgroupbatch(clt *core.SDKClient, req *scbp.AlibabascbpadgroupcreateadgroupbatchAPIRequest, session string) (*scbp.AlibabascbpadgroupcreateadgroupbatchAPIResponse, error) {
+	var resp scbp.AlibabascbpadgroupcreateadgroupbatchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

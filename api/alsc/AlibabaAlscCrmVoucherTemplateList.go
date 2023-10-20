@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// AlibabaAlscCrmVoucherTemplateList 获取优惠券模版列表
+// Alibabaalsccrmvouchertemplatelist 获取优惠券模版列表
 // alibaba.alsc.crm.voucher.template.list
 //
 // 获取优惠券模版列表
-func AlibabaAlscCrmVoucherTemplateList(clt *core.SDKClient, req *alsc.AlibabaAlscCrmVoucherTemplateListAPIRequest, session string) (*alsc.AlibabaAlscCrmVoucherTemplateListAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmVoucherTemplateListAPIResponse
+func Alibabaalsccrmvouchertemplatelist(clt *core.SDKClient, req *alsc.AlibabaalsccrmvouchertemplatelistAPIRequest, session string) (*alsc.AlibabaalsccrmvouchertemplatelistAPIResponse, error) {
+	var resp alsc.AlibabaalsccrmvouchertemplatelistAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

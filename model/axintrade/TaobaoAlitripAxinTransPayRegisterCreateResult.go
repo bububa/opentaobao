@@ -1,7 +1,7 @@
 package axintrade
 
-// TaobaoAlitripAxinTransPayRegisterCreateResult 结构体
-type TaobaoAlitripAxinTransPayRegisterCreateResult struct {
+// TaobaoalitripaxintranspayregistercreateResult 结构体
+type TaobaoalitripaxintranspayregistercreateResult struct {
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 错误码

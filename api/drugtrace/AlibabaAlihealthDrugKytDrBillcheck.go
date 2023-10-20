@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// AlibabaAlihealthDrugKytDrBillcheck 疫苗追溯验证
+// Alibabaalihealthdrugkytdrbillcheck 疫苗追溯验证
 // alibaba.alihealth.drug.kyt.dr.billcheck
 //
 // 各级疾控在入库完成后，需要做追溯信息验证
-func AlibabaAlihealthDrugKytDrBillcheck(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrBillcheckAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytDrBillcheckAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytDrBillcheckAPIResponse
+func Alibabaalihealthdrugkytdrbillcheck(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugkytdrbillcheckAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugkytdrbillcheckAPIResponse, error) {
+	var resp drugtrace.AlibabaalihealthdrugkytdrbillcheckAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

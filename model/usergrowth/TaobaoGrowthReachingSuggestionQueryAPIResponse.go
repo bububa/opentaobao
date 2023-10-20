@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoGrowthReachingSuggestionQueryAPIResponse 厂商生态推荐信息查询 API返回值
+// TaobaogrowthreachingsuggestionqueryAPIResponse 厂商生态推荐信息查询 API返回值
 // taobao.growth.reaching.suggestion.query
 //
 // 厂商生态推荐信息查询
-type TaobaoGrowthReachingSuggestionQueryAPIResponse struct {
+type TaobaogrowthreachingsuggestionqueryAPIResponse struct {
 	model.CommonResponse
-	TaobaoGrowthReachingSuggestionQueryAPIResponseModel
+	TaobaogrowthreachingsuggestionqueryAPIResponseModel
 }
 
-// TaobaoGrowthReachingSuggestionQueryAPIResponseModel is 厂商生态推荐信息查询 成功返回结果
-type TaobaoGrowthReachingSuggestionQueryAPIResponseModel struct {
+// TaobaogrowthreachingsuggestionqueryAPIResponseModel is 厂商生态推荐信息查询 成功返回结果
+type TaobaogrowthreachingsuggestionqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"growth_reaching_suggestion_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

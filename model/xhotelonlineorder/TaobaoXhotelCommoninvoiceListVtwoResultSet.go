@@ -1,7 +1,7 @@
 package xhotelonlineorder
 
-// TaobaoXhotelCommoninvoiceListVtwoResultSet 结构体
-type TaobaoXhotelCommoninvoiceListVtwoResultSet struct {
+// TaobaoxhotelcommoninvoicelistvtwoResultSet 结构体
+type TaobaoxhotelcommoninvoicelistvtwoResultSet struct {
 	// 常用发票信息
 	Results []CommonInvoiceInfo `json:"results,omitempty" xml:"results>common_invoice_info,omitempty"`
 	// errorCode

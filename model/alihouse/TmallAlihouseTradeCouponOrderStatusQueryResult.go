@@ -1,7 +1,7 @@
 package alihouse
 
-// TmallAlihouseTradeCouponOrderStatusQueryResult 结构体
-type TmallAlihouseTradeCouponOrderStatusQueryResult struct {
+// TmallalihousetradecouponorderstatusqueryResult 结构体
+type TmallalihousetradecouponorderstatusqueryResult struct {
 	// code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 结果说明

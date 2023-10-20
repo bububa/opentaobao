@@ -1,7 +1,7 @@
 package idle
 
-// AlibabaIdleRentItemQueryData 结构体
-type AlibabaIdleRentItemQueryData struct {
+// AlibabaidlerentitemqueryData 结构体
+type AlibabaidlerentitemqueryData struct {
 	// 商品sku信息
 	ItemSkuList []ItemSkuDto `json:"item_sku_list,omitempty" xml:"item_sku_list>item_sku_dto,omitempty"`
 	// 标题

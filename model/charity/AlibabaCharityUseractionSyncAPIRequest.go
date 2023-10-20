@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCharityUseractionSyncAPIRequest 用户公益行为同步 API请求
+// AlibabacharityuseractionsyncAPIRequest 用户公益行为同步 API请求
 // alibaba.charity.useraction.sync
 //
 // 外部公益活动，用户公益行为同步
-type AlibabaCharityUseractionSyncAPIRequest struct {
+type AlibabacharityuseractionsyncAPIRequest struct {
 	model.Params
 	// 用户公益行为
 	_channelUserActionDto *ChannelUserActionDto
 }
 
-// NewAlibabaCharityUseractionSyncRequest 初始化AlibabaCharityUseractionSyncAPIRequest对象
-func NewAlibabaCharityUseractionSyncRequest() *AlibabaCharityUseractionSyncAPIRequest {
-	return &AlibabaCharityUseractionSyncAPIRequest{
+// NewAlibabacharityuseractionsyncRequest 初始化AlibabacharityuseractionsyncAPIRequest对象
+func NewAlibabacharityuseractionsyncRequest() *AlibabacharityuseractionsyncAPIRequest {
+	return &AlibabacharityuseractionsyncAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaCharityUseractionSyncAPIRequest) GetApiMethodName() string {
+func (r AlibabacharityuseractionsyncAPIRequest) GetApiMethodName() string {
 	return "alibaba.charity.useraction.sync"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaCharityUseractionSyncAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabacharityuseractionsyncAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaCharityUseractionSyncAPIRequest) GetRawParams() model.Params {
+func (r AlibabacharityuseractionsyncAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetChannelUserActionDto is ChannelUserActionDto Setter
 // 用户公益行为
-func (r *AlibabaCharityUseractionSyncAPIRequest) SetChannelUserActionDto(_channelUserActionDto *ChannelUserActionDto) error {
+func (r *AlibabacharityuseractionsyncAPIRequest) SetChannelUserActionDto(_channelUserActionDto *ChannelUserActionDto) error {
 	r._channelUserActionDto = _channelUserActionDto
 	r.Set("channel_user_action_dto", _channelUserActionDto)
 	return nil
 }
 
 // GetChannelUserActionDto ChannelUserActionDto Getter
-func (r AlibabaCharityUseractionSyncAPIRequest) GetChannelUserActionDto() *ChannelUserActionDto {
+func (r AlibabacharityuseractionsyncAPIRequest) GetChannelUserActionDto() *ChannelUserActionDto {
 	return r._channelUserActionDto
 }

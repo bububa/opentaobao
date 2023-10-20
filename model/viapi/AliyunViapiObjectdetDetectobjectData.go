@@ -1,7 +1,7 @@
 package viapi
 
-// AliyunViapiObjectdetDetectobjectData 结构体
-type AliyunViapiObjectdetDetectobjectData struct {
+// AliyunviapiobjectdetdetectobjectData 结构体
+type AliyunviapiobjectdetdetectobjectData struct {
 	// 人体检测框的集合
 	Elements []Elements `json:"elements,omitempty" xml:"elements>elements,omitempty"`
 	// 输入图片的高度

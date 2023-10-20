@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-// TmallMsfReservation 喵师傅服务预约API
+// Tmallmsfreservation 喵师傅服务预约API
 // tmall.msf.reservation
 //
 // 喵师傅预约api
-func TmallMsfReservation(clt *core.SDKClient, req *tmallservice.TmallMsfReservationAPIRequest, session string) (*tmallservice.TmallMsfReservationAPIResponse, error) {
-	var resp tmallservice.TmallMsfReservationAPIResponse
+func Tmallmsfreservation(clt *core.SDKClient, req *tmallservice.TmallmsfreservationAPIRequest, session string) (*tmallservice.TmallmsfreservationAPIResponse, error) {
+	var resp tmallservice.TmallmsfreservationAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

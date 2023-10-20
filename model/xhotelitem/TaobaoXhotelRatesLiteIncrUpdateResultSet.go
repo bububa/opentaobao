@@ -1,7 +1,7 @@
 package xhotelitem
 
-// TaobaoXhotelRatesLiteIncrUpdateResultSet 结构体
-type TaobaoXhotelRatesLiteIncrUpdateResultSet struct {
+// TaobaoxhotelratesliteincrupdateResultSet 结构体
+type TaobaoxhotelratesliteincrupdateResultSet struct {
 	// 多个rate的更新结果
 	FirstResult string `json:"first_result,omitempty" xml:"first_result,omitempty"`
 	// errorCode

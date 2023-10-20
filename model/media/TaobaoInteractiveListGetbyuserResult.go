@@ -1,7 +1,7 @@
 package media
 
-// TaobaoInteractiveListGetbyuserResult 结构体
-type TaobaoInteractiveListGetbyuserResult struct {
+// TaobaointeractivelistgetbyuserResult 结构体
+type TaobaointeractivelistgetbyuserResult struct {
 	// 错误
 	ResultCode *ResultCode `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// model

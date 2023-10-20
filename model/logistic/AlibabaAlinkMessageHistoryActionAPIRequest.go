@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlinkMessageHistoryActionAPIRequest 操作历史消息 API请求
+// AlibabaalinkmessagehistoryactionAPIRequest 操作历史消息 API请求
 // alibaba.alink.message.history.action
 //
 // 阿里智能操作历史消息
-type AlibabaAlinkMessageHistoryActionAPIRequest struct {
+type AlibabaalinkmessagehistoryactionAPIRequest struct {
 	model.Params
 	// 消息id
 	_index string
@@ -18,52 +18,52 @@ type AlibabaAlinkMessageHistoryActionAPIRequest struct {
 	_action string
 }
 
-// NewAlibabaAlinkMessageHistoryActionRequest 初始化AlibabaAlinkMessageHistoryActionAPIRequest对象
-func NewAlibabaAlinkMessageHistoryActionRequest() *AlibabaAlinkMessageHistoryActionAPIRequest {
-	return &AlibabaAlinkMessageHistoryActionAPIRequest{
+// NewAlibabaalinkmessagehistoryactionRequest 初始化AlibabaalinkmessagehistoryactionAPIRequest对象
+func NewAlibabaalinkmessagehistoryactionRequest() *AlibabaalinkmessagehistoryactionAPIRequest {
+	return &AlibabaalinkmessagehistoryactionAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlinkMessageHistoryActionAPIRequest) GetApiMethodName() string {
+func (r AlibabaalinkmessagehistoryactionAPIRequest) GetApiMethodName() string {
 	return "alibaba.alink.message.history.action"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlinkMessageHistoryActionAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalinkmessagehistoryactionAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlinkMessageHistoryActionAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalinkmessagehistoryactionAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetIndex is Index Setter
 // 消息id
-func (r *AlibabaAlinkMessageHistoryActionAPIRequest) SetIndex(_index string) error {
+func (r *AlibabaalinkmessagehistoryactionAPIRequest) SetIndex(_index string) error {
 	r._index = _index
 	r.Set("index", _index)
 	return nil
 }
 
 // GetIndex Index Getter
-func (r AlibabaAlinkMessageHistoryActionAPIRequest) GetIndex() string {
+func (r AlibabaalinkmessagehistoryactionAPIRequest) GetIndex() string {
 	return r._index
 }
 
 // SetAction is Action Setter
 // 删除：delete,已读：read
-func (r *AlibabaAlinkMessageHistoryActionAPIRequest) SetAction(_action string) error {
+func (r *AlibabaalinkmessagehistoryactionAPIRequest) SetAction(_action string) error {
 	r._action = _action
 	r.Set("action", _action)
 	return nil
 }
 
 // GetAction Action Getter
-func (r AlibabaAlinkMessageHistoryActionAPIRequest) GetAction() string {
+func (r AlibabaalinkmessagehistoryactionAPIRequest) GetAction() string {
 	return r._action
 }

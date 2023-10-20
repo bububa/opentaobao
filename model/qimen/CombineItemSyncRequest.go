@@ -11,5 +11,5 @@ type CombineItemSyncRequest struct {
 	// 仓库编码
 	WarehouseCode string `json:"warehouseCode,omitempty" xml:"warehouseCode,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoQimenCombineitemSynchronizeMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoqimencombineitemsynchronizeMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

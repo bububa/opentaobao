@@ -1,9 +1,9 @@
 package xhotelonlineorder
 
-// XHotelOrder 结构体
-type XHotelOrder struct {
+// XhotelOrder 结构体
+type XhotelOrder struct {
 	// 入住人信息
-	Guests []XOrderGuest `json:"guests,omitempty" xml:"guests>x_order_guest,omitempty"`
+	Guests []XorderGuest `json:"guests,omitempty" xml:"guests>xorder_guest,omitempty"`
 	// 下单时每间夜的价格（分）
 	Prices []int64 `json:"prices,omitempty" xml:"prices>int64,omitempty"`
 	// 合作方订单号,最长250个字符

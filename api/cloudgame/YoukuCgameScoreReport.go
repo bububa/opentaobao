@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cloudgame"
 )
 
-// YoukuCgameScoreReport 云游戏战绩上传
+// Youkucgamescorereport 云游戏战绩上传
 // youku.cgame.score.report
 //
 // 云游戏战绩上传API
-func YoukuCgameScoreReport(clt *core.SDKClient, req *cloudgame.YoukuCgameScoreReportAPIRequest, session string) (*cloudgame.YoukuCgameScoreReportAPIResponse, error) {
-	var resp cloudgame.YoukuCgameScoreReportAPIResponse
+func Youkucgamescorereport(clt *core.SDKClient, req *cloudgame.YoukucgamescorereportAPIRequest, session string) (*cloudgame.YoukucgamescorereportAPIResponse, error) {
+	var resp cloudgame.YoukucgamescorereportAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

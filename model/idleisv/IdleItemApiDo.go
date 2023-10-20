@@ -57,9 +57,9 @@ type IdleItemApiDo struct {
 	// 行政区划Id，最小行政单位code，若是地区级别，则为地区级别的id；否则为城市级别的id(6位)
 	DivisionId int64 `json:"division_id,omitempty" xml:"division_id,omitempty"`
 	// 纬度
-	Latitude *BigDecimal `json:"latitude,omitempty" xml:"latitude,omitempty"`
+	Latitude float64 `json:"latitude,omitempty" xml:"latitude,omitempty"`
 	// 经度
-	Longitude *BigDecimal `json:"longitude,omitempty" xml:"longitude,omitempty"`
+	Longitude float64 `json:"longitude,omitempty" xml:"longitude,omitempty"`
 	// 已验货业务数据(不传入则不修改)
 	InspectedData *IdleItemApiInspectedDo `json:"inspected_data,omitempty" xml:"inspected_data,omitempty"`
 	// 宝贝库存数量

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripBtripSupplychainFlightSearchAPIResponse 【商旅】机票订单查询 API返回值
+// AlitripbtripsupplychainflightsearchAPIResponse 【商旅】机票订单查询 API返回值
 // alitrip.btrip.supplychain.flight.search
 //
 // 【商旅】机票订单查询
-type AlitripBtripSupplychainFlightSearchAPIResponse struct {
+type AlitripbtripsupplychainflightsearchAPIResponse struct {
 	model.CommonResponse
-	AlitripBtripSupplychainFlightSearchAPIResponseModel
+	AlitripbtripsupplychainflightsearchAPIResponseModel
 }
 
-// AlitripBtripSupplychainFlightSearchAPIResponseModel is 【商旅】机票订单查询 成功返回结果
-type AlitripBtripSupplychainFlightSearchAPIResponseModel struct {
+// AlitripbtripsupplychainflightsearchAPIResponseModel is 【商旅】机票订单查询 成功返回结果
+type AlitripbtripsupplychainflightsearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_supplychain_flight_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

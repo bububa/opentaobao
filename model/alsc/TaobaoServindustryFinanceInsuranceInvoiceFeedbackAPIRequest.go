@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest 保险-开票结果反馈 API请求
+// TaobaoservindustryfinanceinsuranceinvoicefeedbackAPIRequest 保险-开票结果反馈 API请求
 // taobao.servindustry.finance.insurance.invoice.feedback
 //
 // 保险-开票结果反馈
-type TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest struct {
+type TaobaoservindustryfinanceinsuranceinvoicefeedbackAPIRequest struct {
 	model.Params
 	// 开票结果反馈请求
 	_invoiceResultFeedbackTopReq *InvoiceResultFeedbackTopReq
 }
 
-// NewTaobaoServindustryFinanceInsuranceInvoiceFeedbackRequest 初始化TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest对象
-func NewTaobaoServindustryFinanceInsuranceInvoiceFeedbackRequest() *TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest {
-	return &TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest{
+// NewTaobaoservindustryfinanceinsuranceinvoicefeedbackRequest 初始化TaobaoservindustryfinanceinsuranceinvoicefeedbackAPIRequest对象
+func NewTaobaoservindustryfinanceinsuranceinvoicefeedbackRequest() *TaobaoservindustryfinanceinsuranceinvoicefeedbackAPIRequest {
+	return &TaobaoservindustryfinanceinsuranceinvoicefeedbackAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest) GetApiMethodName() string {
+func (r TaobaoservindustryfinanceinsuranceinvoicefeedbackAPIRequest) GetApiMethodName() string {
 	return "taobao.servindustry.finance.insurance.invoice.feedback"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoservindustryfinanceinsuranceinvoicefeedbackAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest) GetRawParams() model.Params {
+func (r TaobaoservindustryfinanceinsuranceinvoicefeedbackAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetInvoiceResultFeedbackTopReq is InvoiceResultFeedbackTopReq Setter
 // 开票结果反馈请求
-func (r *TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest) SetInvoiceResultFeedbackTopReq(_invoiceResultFeedbackTopReq *InvoiceResultFeedbackTopReq) error {
+func (r *TaobaoservindustryfinanceinsuranceinvoicefeedbackAPIRequest) SetInvoiceResultFeedbackTopReq(_invoiceResultFeedbackTopReq *InvoiceResultFeedbackTopReq) error {
 	r._invoiceResultFeedbackTopReq = _invoiceResultFeedbackTopReq
 	r.Set("invoice_result_feedback_top_req", _invoiceResultFeedbackTopReq)
 	return nil
 }
 
 // GetInvoiceResultFeedbackTopReq InvoiceResultFeedbackTopReq Getter
-func (r TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest) GetInvoiceResultFeedbackTopReq() *InvoiceResultFeedbackTopReq {
+func (r TaobaoservindustryfinanceinsuranceinvoicefeedbackAPIRequest) GetInvoiceResultFeedbackTopReq() *InvoiceResultFeedbackTopReq {
 	return r._invoiceResultFeedbackTopReq
 }

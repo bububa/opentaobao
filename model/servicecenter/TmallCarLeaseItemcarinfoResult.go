@@ -1,7 +1,7 @@
 package servicecenter
 
-// TmallCarLeaseItemcarinfoResult 结构体
-type TmallCarLeaseItemcarinfoResult struct {
+// TmallcarleaseitemcarinfoResult 结构体
+type TmallcarleaseitemcarinfoResult struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误提示

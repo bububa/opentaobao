@@ -21,7 +21,7 @@ type TaobaotbkscoptimusmaterialAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// resultList
-	Resultlist []TaobaotbkscoptimusmaterialMapData `json:"result_list,omitempty" xml:"result_list>taobaotbkscoptimusmaterial_map_data,omitempty"`
+	ResultList []TaobaotbkscoptimusmaterialMapData `json:"result_list,omitempty" xml:"result_list>taobaotbkscoptimusmaterial_map_data,omitempty"`
 	// 推荐信息-是否抄底
-	Isdefault string `json:"is_default,omitempty" xml:"is_default,omitempty"`
+	IsDefault string `json:"is_default,omitempty" xml:"is_default,omitempty"`
 }

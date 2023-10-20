@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripTravelProductBaseModifyAPIResponse 供应商编辑产品API API返回值
+// TaobaoalitriptravelproductbasemodifyAPIResponse 供应商编辑产品API API返回值
 // taobao.alitrip.travel.product.base.modify
 //
 // 飞猪供销平台供应商可通过该API编辑产品
-type TaobaoAlitripTravelProductBaseModifyAPIResponse struct {
+type TaobaoalitriptravelproductbasemodifyAPIResponse struct {
 	model.CommonResponse
-	TaobaoAlitripTravelProductBaseModifyAPIResponseModel
+	TaobaoalitriptravelproductbasemodifyAPIResponseModel
 }
 
-// TaobaoAlitripTravelProductBaseModifyAPIResponseModel is 供应商编辑产品API 成功返回结果
-type TaobaoAlitripTravelProductBaseModifyAPIResponseModel struct {
+// TaobaoalitriptravelproductbasemodifyAPIResponseModel is 供应商编辑产品API 成功返回结果
+type TaobaoalitriptravelproductbasemodifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_product_base_modify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

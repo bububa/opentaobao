@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/security"
 )
 
-// AlibabaSecurityJaqRpUpload 聚安全实人认证上传认证信息
+// Alibabasecurityjaqrpupload 聚安全实人认证上传认证信息
 // alibaba.security.jaq.rp.upload
 //
 // 聚安全实人认证上传认证信息
-func AlibabaSecurityJaqRpUpload(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpUploadAPIRequest, session string) (*security.AlibabaSecurityJaqRpUploadAPIResponse, error) {
-	var resp security.AlibabaSecurityJaqRpUploadAPIResponse
+func Alibabasecurityjaqrpupload(clt *core.SDKClient, req *security.AlibabasecurityjaqrpuploadAPIRequest, session string) (*security.AlibabasecurityjaqrpuploadAPIResponse, error) {
+	var resp security.AlibabasecurityjaqrpuploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

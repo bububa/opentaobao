@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAliqinTaSmsNumQueryAPIRequest 短信查询 API请求
+// AlibabaaliqintasmsnumqueryAPIRequest 短信查询 API请求
 // alibaba.aliqin.ta.sms.num.query
 //
 // 查询短信发送揭露
-type AlibabaAliqinTaSmsNumQueryAPIRequest struct {
+type AlibabaaliqintasmsnumqueryAPIRequest struct {
 	model.Params
 	// 短信发送流水
 	_bizId string
@@ -24,91 +24,91 @@ type AlibabaAliqinTaSmsNumQueryAPIRequest struct {
 	_pageSize int64
 }
 
-// NewAlibabaAliqinTaSmsNumQueryRequest 初始化AlibabaAliqinTaSmsNumQueryAPIRequest对象
-func NewAlibabaAliqinTaSmsNumQueryRequest() *AlibabaAliqinTaSmsNumQueryAPIRequest {
-	return &AlibabaAliqinTaSmsNumQueryAPIRequest{
+// NewAlibabaaliqintasmsnumqueryRequest 初始化AlibabaaliqintasmsnumqueryAPIRequest对象
+func NewAlibabaaliqintasmsnumqueryRequest() *AlibabaaliqintasmsnumqueryAPIRequest {
+	return &AlibabaaliqintasmsnumqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAliqinTaSmsNumQueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaaliqintasmsnumqueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.aliqin.ta.sms.num.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAliqinTaSmsNumQueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaaliqintasmsnumqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAliqinTaSmsNumQueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaaliqintasmsnumqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetBizId is BizId Setter
 // 短信发送流水
-func (r *AlibabaAliqinTaSmsNumQueryAPIRequest) SetBizId(_bizId string) error {
+func (r *AlibabaaliqintasmsnumqueryAPIRequest) SetBizId(_bizId string) error {
 	r._bizId = _bizId
 	r.Set("biz_id", _bizId)
 	return nil
 }
 
 // GetBizId BizId Getter
-func (r AlibabaAliqinTaSmsNumQueryAPIRequest) GetBizId() string {
+func (r AlibabaaliqintasmsnumqueryAPIRequest) GetBizId() string {
 	return r._bizId
 }
 
 // SetRecNum is RecNum Setter
 // 短信接收号码
-func (r *AlibabaAliqinTaSmsNumQueryAPIRequest) SetRecNum(_recNum string) error {
+func (r *AlibabaaliqintasmsnumqueryAPIRequest) SetRecNum(_recNum string) error {
 	r._recNum = _recNum
 	r.Set("rec_num", _recNum)
 	return nil
 }
 
 // GetRecNum RecNum Getter
-func (r AlibabaAliqinTaSmsNumQueryAPIRequest) GetRecNum() string {
+func (r AlibabaaliqintasmsnumqueryAPIRequest) GetRecNum() string {
 	return r._recNum
 }
 
 // SetQueryDate is QueryDate Setter
 // 短信发送日期，支持近30天记录查询，格式yyyyMMdd
-func (r *AlibabaAliqinTaSmsNumQueryAPIRequest) SetQueryDate(_queryDate string) error {
+func (r *AlibabaaliqintasmsnumqueryAPIRequest) SetQueryDate(_queryDate string) error {
 	r._queryDate = _queryDate
 	r.Set("query_date", _queryDate)
 	return nil
 }
 
 // GetQueryDate QueryDate Getter
-func (r AlibabaAliqinTaSmsNumQueryAPIRequest) GetQueryDate() string {
+func (r AlibabaaliqintasmsnumqueryAPIRequest) GetQueryDate() string {
 	return r._queryDate
 }
 
 // SetCurrentPage is CurrentPage Setter
 // 分页参数,页码
-func (r *AlibabaAliqinTaSmsNumQueryAPIRequest) SetCurrentPage(_currentPage int64) error {
+func (r *AlibabaaliqintasmsnumqueryAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
 	r.Set("current_page", _currentPage)
 	return nil
 }
 
 // GetCurrentPage CurrentPage Getter
-func (r AlibabaAliqinTaSmsNumQueryAPIRequest) GetCurrentPage() int64 {
+func (r AlibabaaliqintasmsnumqueryAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
 // SetPageSize is PageSize Setter
 // 分页参数，每页数量。最大值50
-func (r *AlibabaAliqinTaSmsNumQueryAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *AlibabaaliqintasmsnumqueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r AlibabaAliqinTaSmsNumQueryAPIRequest) GetPageSize() int64 {
+func (r AlibabaaliqintasmsnumqueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

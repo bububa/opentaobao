@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaSearchcrowdBatchAddAPIRequest 推广单元增加搜索人群 API请求
+// TaobaosimbasearchcrowdbatchaddAPIRequest 推广单元增加搜索人群 API请求
 // taobao.simba.searchcrowd.batch.add
 //
 // 推广单元新增搜索人群
-type TaobaoSimbaSearchcrowdBatchAddAPIRequest struct {
+type TaobaosimbasearchcrowdbatchaddAPIRequest struct {
 	model.Params
 	// 被操作者的淘宝昵称
 	_nick string
@@ -20,65 +20,65 @@ type TaobaoSimbaSearchcrowdBatchAddAPIRequest struct {
 	_adgroupId int64
 }
 
-// NewTaobaoSimbaSearchcrowdBatchAddRequest 初始化TaobaoSimbaSearchcrowdBatchAddAPIRequest对象
-func NewTaobaoSimbaSearchcrowdBatchAddRequest() *TaobaoSimbaSearchcrowdBatchAddAPIRequest {
-	return &TaobaoSimbaSearchcrowdBatchAddAPIRequest{
+// NewTaobaosimbasearchcrowdbatchaddRequest 初始化TaobaosimbasearchcrowdbatchaddAPIRequest对象
+func NewTaobaosimbasearchcrowdbatchaddRequest() *TaobaosimbasearchcrowdbatchaddAPIRequest {
+	return &TaobaosimbasearchcrowdbatchaddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetApiMethodName() string {
+func (r TaobaosimbasearchcrowdbatchaddAPIRequest) GetApiMethodName() string {
 	return "taobao.simba.searchcrowd.batch.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaosimbasearchcrowdbatchaddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetRawParams() model.Params {
+func (r TaobaosimbasearchcrowdbatchaddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetNick is Nick Setter
 // 被操作者的淘宝昵称
-func (r *TaobaoSimbaSearchcrowdBatchAddAPIRequest) SetNick(_nick string) error {
+func (r *TaobaosimbasearchcrowdbatchaddAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
 	r.Set("nick", _nick)
 	return nil
 }
 
 // GetNick Nick Getter
-func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetNick() string {
+func (r TaobaosimbasearchcrowdbatchaddAPIRequest) GetNick() string {
 	return r._nick
 }
 
 // SetAdgroupTargetingTags is AdgroupTargetingTags Setter
 // 新增人群信息,批量接口,入参为list,溢价(discount)范围为[105,400]
-func (r *TaobaoSimbaSearchcrowdBatchAddAPIRequest) SetAdgroupTargetingTags(_adgroupTargetingTags string) error {
+func (r *TaobaosimbasearchcrowdbatchaddAPIRequest) SetAdgroupTargetingTags(_adgroupTargetingTags string) error {
 	r._adgroupTargetingTags = _adgroupTargetingTags
 	r.Set("adgroup_targeting_tags", _adgroupTargetingTags)
 	return nil
 }
 
 // GetAdgroupTargetingTags AdgroupTargetingTags Getter
-func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetAdgroupTargetingTags() string {
+func (r TaobaosimbasearchcrowdbatchaddAPIRequest) GetAdgroupTargetingTags() string {
 	return r._adgroupTargetingTags
 }
 
 // SetAdgroupId is AdgroupId Setter
 // 推广单元id
-func (r *TaobaoSimbaSearchcrowdBatchAddAPIRequest) SetAdgroupId(_adgroupId int64) error {
+func (r *TaobaosimbasearchcrowdbatchaddAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
 	r.Set("adgroup_id", _adgroupId)
 	return nil
 }
 
 // GetAdgroupId AdgroupId Getter
-func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetAdgroupId() int64 {
+func (r TaobaosimbasearchcrowdbatchaddAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }

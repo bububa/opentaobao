@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTrainAgentExpressSetVtwoAPIResponse 线下票回填物流信息v2--增加鉴权校验 API返回值
+// TaobaotrainagentexpresssetvtwoAPIResponse 线下票回填物流信息v2--增加鉴权校验 API返回值
 // taobao.train.agent.express.set.vtwo
 //
 // 线下票回填物流信息服务
-type TaobaoTrainAgentExpressSetVtwoAPIResponse struct {
+type TaobaotrainagentexpresssetvtwoAPIResponse struct {
 	model.CommonResponse
-	TaobaoTrainAgentExpressSetVtwoAPIResponseModel
+	TaobaotrainagentexpresssetvtwoAPIResponseModel
 }
 
-// TaobaoTrainAgentExpressSetVtwoAPIResponseModel is 线下票回填物流信息v2--增加鉴权校验 成功返回结果
-type TaobaoTrainAgentExpressSetVtwoAPIResponseModel struct {
+// TaobaotrainagentexpresssetvtwoAPIResponseModel is 线下票回填物流信息v2--增加鉴权校验 成功返回结果
+type TaobaotrainagentexpresssetvtwoAPIResponseModel struct {
 	XMLName xml.Name `xml:"train_agent_express_set_vtwo_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTanxNativetemplatesGetAPIResponse 批量获取本地模板信息 API返回值
+// TaobaotanxnativetemplatesgetAPIResponse 批量获取本地模板信息 API返回值
 // taobao.tanx.nativetemplates.get
 //
 // 根据传入的本地模板ID批量返回本地模板
-type TaobaoTanxNativetemplatesGetAPIResponse struct {
+type TaobaotanxnativetemplatesgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoTanxNativetemplatesGetAPIResponseModel
+	TaobaotanxnativetemplatesgetAPIResponseModel
 }
 
-// TaobaoTanxNativetemplatesGetAPIResponseModel is 批量获取本地模板信息 成功返回结果
-type TaobaoTanxNativetemplatesGetAPIResponseModel struct {
+// TaobaotanxnativetemplatesgetAPIResponseModel is 批量获取本地模板信息 成功返回结果
+type TaobaotanxnativetemplatesgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tanx_nativetemplates_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

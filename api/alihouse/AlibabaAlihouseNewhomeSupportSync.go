@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseNewhomeSupportSync 周边配套数据同步
+// Alibabaalihousenewhomesupportsync 周边配套数据同步
 // alibaba.alihouse.newhome.support.sync
 //
 // 周边配套数据同步
-func AlibabaAlihouseNewhomeSupportSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeSupportSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeSupportSyncAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeSupportSyncAPIResponse
+func Alibabaalihousenewhomesupportsync(clt *core.SDKClient, req *alihouse.AlibabaalihousenewhomesupportsyncAPIRequest, session string) (*alihouse.AlibabaalihousenewhomesupportsyncAPIResponse, error) {
+	var resp alihouse.AlibabaalihousenewhomesupportsyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

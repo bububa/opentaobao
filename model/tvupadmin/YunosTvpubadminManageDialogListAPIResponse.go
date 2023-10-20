@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosTvpubadminManageDialogListAPIResponse 分页获取弹窗列表 API返回值
+// YunostvpubadminmanagedialoglistAPIResponse 分页获取弹窗列表 API返回值
 // yunos.tvpubadmin.manage.dialog.list
 //
 // 分页获取弹窗配置列表
-type YunosTvpubadminManageDialogListAPIResponse struct {
+type YunostvpubadminmanagedialoglistAPIResponse struct {
 	model.CommonResponse
-	YunosTvpubadminManageDialogListAPIResponseModel
+	YunostvpubadminmanagedialoglistAPIResponseModel
 }
 
-// YunosTvpubadminManageDialogListAPIResponseModel is 分页获取弹窗列表 成功返回结果
-type YunosTvpubadminManageDialogListAPIResponseModel struct {
+// YunostvpubadminmanagedialoglistAPIResponseModel is 分页获取弹窗列表 成功返回结果
+type YunostvpubadminmanagedialoglistAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvpubadmin_manage_dialog_list_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

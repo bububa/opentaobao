@@ -1,7 +1,7 @@
 package drugtrace
 
-// ResPSynonymDto 结构体
-type ResPSynonymDto struct {
+// ResPsynonymDto 结构体
+type ResPsynonymDto struct {
 	// 企业名称
 	EntName string `json:"ent_name,omitempty" xml:"ent_name,omitempty"`
 	// 市

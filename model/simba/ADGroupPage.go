@@ -1,9 +1,9 @@
 package simba
 
-// ADGroupPage 结构体
-type ADGroupPage struct {
+// AdgroupPage 结构体
+type AdgroupPage struct {
 	// 商品对象列表
-	AdgroupList []ADGroup `json:"adgroup_list,omitempty" xml:"adgroup_list>ad_group,omitempty"`
+	AdgroupList []Adgroup `json:"adgroup_list,omitempty" xml:"adgroup_list>adgroup,omitempty"`
 	// 模板规则
 	Schedule string `json:"schedule,omitempty" xml:"schedule,omitempty"`
 	// 模板名称

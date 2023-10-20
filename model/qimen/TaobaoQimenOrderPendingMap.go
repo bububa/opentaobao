@@ -1,5 +1,5 @@
 package qimen
 
-// TaobaoQimenOrderPendingMap 结构体
-type TaobaoQimenOrderPendingMap struct {
+// TaobaoqimenorderpendingMap 结构体
+type TaobaoqimenorderpendingMap struct {
 }

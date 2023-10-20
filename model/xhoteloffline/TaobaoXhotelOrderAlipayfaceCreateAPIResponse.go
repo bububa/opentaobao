@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelOrderAlipayfaceCreateAPIResponse 信用住支付创建接口 API返回值
+// TaobaoxhotelorderalipayfacecreateAPIResponse 信用住支付创建接口 API返回值
 // taobao.xhotel.order.alipayface.create
 //
 // 用于创建一笔信用住支付，主要应用场景是线下信用住
-type TaobaoXhotelOrderAlipayfaceCreateAPIResponse struct {
+type TaobaoxhotelorderalipayfacecreateAPIResponse struct {
 	model.CommonResponse
-	TaobaoXhotelOrderAlipayfaceCreateAPIResponseModel
+	TaobaoxhotelorderalipayfacecreateAPIResponseModel
 }
 
-// TaobaoXhotelOrderAlipayfaceCreateAPIResponseModel is 信用住支付创建接口 成功返回结果
-type TaobaoXhotelOrderAlipayfaceCreateAPIResponseModel struct {
+// TaobaoxhotelorderalipayfacecreateAPIResponseModel is 信用住支付创建接口 成功返回结果
+type TaobaoxhotelorderalipayfacecreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_alipayface_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

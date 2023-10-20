@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/legalsuit"
 )
 
-// AlibabaLegalStandpointDelete 删除关联口径
+// Alibabalegalstandpointdelete 删除关联口径
 // alibaba.legal.standpoint.delete
 //
 // 删除关联口径
-func AlibabaLegalStandpointDelete(clt *core.SDKClient, req *legalsuit.AlibabaLegalStandpointDeleteAPIRequest, session string) (*legalsuit.AlibabaLegalStandpointDeleteAPIResponse, error) {
-	var resp legalsuit.AlibabaLegalStandpointDeleteAPIResponse
+func Alibabalegalstandpointdelete(clt *core.SDKClient, req *legalsuit.AlibabalegalstandpointdeleteAPIRequest, session string) (*legalsuit.AlibabalegalstandpointdeleteAPIResponse, error) {
+	var resp legalsuit.AlibabalegalstandpointdeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

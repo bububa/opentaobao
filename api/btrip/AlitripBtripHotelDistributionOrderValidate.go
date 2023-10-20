@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// AlitripBtripHotelDistributionOrderValidate 商旅酒店API分销下单前校验
+// Alitripbtriphoteldistributionordervalidate 商旅酒店API分销下单前校验
 // alitrip.btrip.hotel.distribution.order.validate
 //
 // 商旅酒店API分销下单前校验
-func AlitripBtripHotelDistributionOrderValidate(clt *core.SDKClient, req *btrip.AlitripBtripHotelDistributionOrderValidateAPIRequest, session string) (*btrip.AlitripBtripHotelDistributionOrderValidateAPIResponse, error) {
-	var resp btrip.AlitripBtripHotelDistributionOrderValidateAPIResponse
+func Alitripbtriphoteldistributionordervalidate(clt *core.SDKClient, req *btrip.AlitripbtriphoteldistributionordervalidateAPIRequest, session string) (*btrip.AlitripbtriphoteldistributionordervalidateAPIResponse, error) {
+	var resp btrip.AlitripbtriphoteldistributionordervalidateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -13,9 +13,9 @@ import (
 type TaobaotbkdgtpwdreportgetAPIRequest struct {
 	model.Params
 	// 待查询的口令
-	_taopassword string
+	_taoPassword string
 	// mm_xxx_xxx_xxx的第3段数字
-	_adzoneid string
+	_adzoneId string
 }
 
 // NewTaobaotbkdgtpwdreportgetRequest 初始化TaobaotbkdgtpwdreportgetAPIRequest对象
@@ -42,28 +42,28 @@ func (r TaobaotbkdgtpwdreportgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetTaopassword is Taopassword Setter
+// SetTaoPassword is TaoPassword Setter
 // 待查询的口令
-func (r *TaobaotbkdgtpwdreportgetAPIRequest) SetTaopassword(_taopassword string) error {
-	r._taopassword = _taopassword
-	r.Set("tao_password", _taopassword)
+func (r *TaobaotbkdgtpwdreportgetAPIRequest) SetTaoPassword(_taoPassword string) error {
+	r._taoPassword = _taoPassword
+	r.Set("tao_password", _taoPassword)
 	return nil
 }
 
-// GetTaopassword Taopassword Getter
-func (r TaobaotbkdgtpwdreportgetAPIRequest) GetTaopassword() string {
-	return r._taopassword
+// GetTaoPassword TaoPassword Getter
+func (r TaobaotbkdgtpwdreportgetAPIRequest) GetTaoPassword() string {
+	return r._taoPassword
 }
 
-// SetAdzoneid is Adzoneid Setter
+// SetAdzoneId is AdzoneId Setter
 // mm_xxx_xxx_xxx的第3段数字
-func (r *TaobaotbkdgtpwdreportgetAPIRequest) SetAdzoneid(_adzoneid string) error {
-	r._adzoneid = _adzoneid
-	r.Set("adzone_id", _adzoneid)
+func (r *TaobaotbkdgtpwdreportgetAPIRequest) SetAdzoneId(_adzoneId string) error {
+	r._adzoneId = _adzoneId
+	r.Set("adzone_id", _adzoneId)
 	return nil
 }
 
-// GetAdzoneid Adzoneid Getter
-func (r TaobaotbkdgtpwdreportgetAPIRequest) GetAdzoneid() string {
-	return r._adzoneid
+// GetAdzoneId AdzoneId Getter
+func (r TaobaotbkdgtpwdreportgetAPIRequest) GetAdzoneId() string {
+	return r._adzoneId
 }

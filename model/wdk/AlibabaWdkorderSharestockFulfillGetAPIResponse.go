@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkorderSharestockFulfillGetAPIResponse 商户订单履约数据获取 API返回值
+// AlibabawdkordersharestockfulfillgetAPIResponse 商户订单履约数据获取 API返回值
 // alibaba.wdkorder.sharestock.fulfill.get
 //
 // 商户订单履约数据获取
-type AlibabaWdkorderSharestockFulfillGetAPIResponse struct {
+type AlibabawdkordersharestockfulfillgetAPIResponse struct {
 	model.CommonResponse
-	AlibabaWdkorderSharestockFulfillGetAPIResponseModel
+	AlibabawdkordersharestockfulfillgetAPIResponseModel
 }
 
-// AlibabaWdkorderSharestockFulfillGetAPIResponseModel is 商户订单履约数据获取 成功返回结果
-type AlibabaWdkorderSharestockFulfillGetAPIResponseModel struct {
+// AlibabawdkordersharestockfulfillgetAPIResponseModel is 商户订单履约数据获取 成功返回结果
+type AlibabawdkordersharestockfulfillgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdkorder_sharestock_fulfill_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

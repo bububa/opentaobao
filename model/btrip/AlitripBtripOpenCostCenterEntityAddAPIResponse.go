@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripBtripOpenCostCenterEntityAddAPIResponse 增加成本中心人员信息 API返回值
+// AlitripbtripopencostcenterentityaddAPIResponse 增加成本中心人员信息 API返回值
 // alitrip.btrip.open.cost.center.entity.add
 //
 // 增加成本中心人员信息
-type AlitripBtripOpenCostCenterEntityAddAPIResponse struct {
+type AlitripbtripopencostcenterentityaddAPIResponse struct {
 	model.CommonResponse
-	AlitripBtripOpenCostCenterEntityAddAPIResponseModel
+	AlitripbtripopencostcenterentityaddAPIResponseModel
 }
 
-// AlitripBtripOpenCostCenterEntityAddAPIResponseModel is 增加成本中心人员信息 成功返回结果
-type AlitripBtripOpenCostCenterEntityAddAPIResponseModel struct {
+// AlitripbtripopencostcenterentityaddAPIResponseModel is 增加成本中心人员信息 成功返回结果
+type AlitripbtripopencostcenterentityaddAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_open_cost_center_entity_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

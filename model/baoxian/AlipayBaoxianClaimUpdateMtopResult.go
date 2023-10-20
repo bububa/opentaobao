@@ -1,7 +1,7 @@
 package baoxian
 
-// AlipayBaoxianClaimUpdateMtopResult 结构体
-type AlipayBaoxianClaimUpdateMtopResult struct {
+// AlipaybaoxianclaimupdateMtopResult 结构体
+type AlipaybaoxianclaimupdateMtopResult struct {
 	// model
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// errorCode

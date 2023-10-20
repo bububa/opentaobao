@@ -13,17 +13,17 @@ import (
 type TaobaotbksctpwdconvertAPIRequest struct {
 	model.Params
 	// 需要解析的淘口令
-	_passwordcontent string
+	_passwordContent string
 	// 1表示商品转通用计划链接，其他值或不传表示优先转营销计划链接
 	_dx string
 	// 渠道id
-	_relationid string
+	_relationId string
 	// 广告位ID，mm_xx_xx_xx pid三段式中的第三段
-	_adzoneid int64
+	_adzoneId int64
 	// 备案的网站id, mm_xx_xx_xx pid三段式中的第二段
-	_siteid int64
+	_siteId int64
 	// 会员人群ID，用于统计人群推广效果
-	_ucrowdid int64
+	_ucrowdId int64
 }
 
 // NewTaobaotbksctpwdconvertRequest 初始化TaobaotbksctpwdconvertAPIRequest对象
@@ -50,17 +50,17 @@ func (r TaobaotbksctpwdconvertAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetPasswordcontent is Passwordcontent Setter
+// SetPasswordContent is PasswordContent Setter
 // 需要解析的淘口令
-func (r *TaobaotbksctpwdconvertAPIRequest) SetPasswordcontent(_passwordcontent string) error {
-	r._passwordcontent = _passwordcontent
-	r.Set("password_content", _passwordcontent)
+func (r *TaobaotbksctpwdconvertAPIRequest) SetPasswordContent(_passwordContent string) error {
+	r._passwordContent = _passwordContent
+	r.Set("password_content", _passwordContent)
 	return nil
 }
 
-// GetPasswordcontent Passwordcontent Getter
-func (r TaobaotbksctpwdconvertAPIRequest) GetPasswordcontent() string {
-	return r._passwordcontent
+// GetPasswordContent PasswordContent Getter
+func (r TaobaotbksctpwdconvertAPIRequest) GetPasswordContent() string {
+	return r._passwordContent
 }
 
 // SetDx is Dx Setter
@@ -76,54 +76,54 @@ func (r TaobaotbksctpwdconvertAPIRequest) GetDx() string {
 	return r._dx
 }
 
-// SetRelationid is Relationid Setter
+// SetRelationId is RelationId Setter
 // 渠道id
-func (r *TaobaotbksctpwdconvertAPIRequest) SetRelationid(_relationid string) error {
-	r._relationid = _relationid
-	r.Set("relation_id", _relationid)
+func (r *TaobaotbksctpwdconvertAPIRequest) SetRelationId(_relationId string) error {
+	r._relationId = _relationId
+	r.Set("relation_id", _relationId)
 	return nil
 }
 
-// GetRelationid Relationid Getter
-func (r TaobaotbksctpwdconvertAPIRequest) GetRelationid() string {
-	return r._relationid
+// GetRelationId RelationId Getter
+func (r TaobaotbksctpwdconvertAPIRequest) GetRelationId() string {
+	return r._relationId
 }
 
-// SetAdzoneid is Adzoneid Setter
+// SetAdzoneId is AdzoneId Setter
 // 广告位ID，mm_xx_xx_xx pid三段式中的第三段
-func (r *TaobaotbksctpwdconvertAPIRequest) SetAdzoneid(_adzoneid int64) error {
-	r._adzoneid = _adzoneid
-	r.Set("adzone_id", _adzoneid)
+func (r *TaobaotbksctpwdconvertAPIRequest) SetAdzoneId(_adzoneId int64) error {
+	r._adzoneId = _adzoneId
+	r.Set("adzone_id", _adzoneId)
 	return nil
 }
 
-// GetAdzoneid Adzoneid Getter
-func (r TaobaotbksctpwdconvertAPIRequest) GetAdzoneid() int64 {
-	return r._adzoneid
+// GetAdzoneId AdzoneId Getter
+func (r TaobaotbksctpwdconvertAPIRequest) GetAdzoneId() int64 {
+	return r._adzoneId
 }
 
-// SetSiteid is Siteid Setter
+// SetSiteId is SiteId Setter
 // 备案的网站id, mm_xx_xx_xx pid三段式中的第二段
-func (r *TaobaotbksctpwdconvertAPIRequest) SetSiteid(_siteid int64) error {
-	r._siteid = _siteid
-	r.Set("site_id", _siteid)
+func (r *TaobaotbksctpwdconvertAPIRequest) SetSiteId(_siteId int64) error {
+	r._siteId = _siteId
+	r.Set("site_id", _siteId)
 	return nil
 }
 
-// GetSiteid Siteid Getter
-func (r TaobaotbksctpwdconvertAPIRequest) GetSiteid() int64 {
-	return r._siteid
+// GetSiteId SiteId Getter
+func (r TaobaotbksctpwdconvertAPIRequest) GetSiteId() int64 {
+	return r._siteId
 }
 
-// SetUcrowdid is Ucrowdid Setter
+// SetUcrowdId is UcrowdId Setter
 // 会员人群ID，用于统计人群推广效果
-func (r *TaobaotbksctpwdconvertAPIRequest) SetUcrowdid(_ucrowdid int64) error {
-	r._ucrowdid = _ucrowdid
-	r.Set("ucrowd_id", _ucrowdid)
+func (r *TaobaotbksctpwdconvertAPIRequest) SetUcrowdId(_ucrowdId int64) error {
+	r._ucrowdId = _ucrowdId
+	r.Set("ucrowd_id", _ucrowdId)
 	return nil
 }
 
-// GetUcrowdid Ucrowdid Getter
-func (r TaobaotbksctpwdconvertAPIRequest) GetUcrowdid() int64 {
-	return r._ucrowdid
+// GetUcrowdId UcrowdId Getter
+func (r TaobaotbksctpwdconvertAPIRequest) GetUcrowdId() int64 {
+	return r._ucrowdId
 }

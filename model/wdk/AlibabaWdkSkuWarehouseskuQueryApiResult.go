@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkSkuWarehouseskuQueryApiResult 结构体
-type AlibabaWdkSkuWarehouseskuQueryApiResult struct {
+// AlibabawdkskuwarehouseskuqueryApiResult 结构体
+type AlibabawdkskuwarehouseskuqueryApiResult struct {
 	// 数据集合
 	Models []WarehouseSkuDo `json:"models,omitempty" xml:"models>warehouse_sku_do,omitempty"`
 	// 错误编码

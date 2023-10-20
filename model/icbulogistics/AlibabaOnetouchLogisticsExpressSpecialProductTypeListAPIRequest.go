@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest 获取商品类型配置项 API请求
+// AlibabaonetouchlogisticsexpressspecialproducttypelistAPIRequest 获取商品类型配置项 API请求
 // alibaba.onetouch.logistics.express.special.product.type.list
 //
 // 获取商品类型配置项
-type AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest struct {
+type AlibabaonetouchlogisticsexpressspecialproducttypelistAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaOnetouchLogisticsExpressSpecialProductTypeListRequest 初始化AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest对象
-func NewAlibabaOnetouchLogisticsExpressSpecialProductTypeListRequest() *AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest {
-	return &AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest{
+// NewAlibabaonetouchlogisticsexpressspecialproducttypelistRequest 初始化AlibabaonetouchlogisticsexpressspecialproducttypelistAPIRequest对象
+func NewAlibabaonetouchlogisticsexpressspecialproducttypelistRequest() *AlibabaonetouchlogisticsexpressspecialproducttypelistAPIRequest {
+	return &AlibabaonetouchlogisticsexpressspecialproducttypelistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest) GetApiMethodName() string {
+func (r AlibabaonetouchlogisticsexpressspecialproducttypelistAPIRequest) GetApiMethodName() string {
 	return "alibaba.onetouch.logistics.express.special.product.type.list"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaonetouchlogisticsexpressspecialproducttypelistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest) GetRawParams() model.Params {
+func (r AlibabaonetouchlogisticsexpressspecialproducttypelistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

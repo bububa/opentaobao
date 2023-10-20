@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelFutureSoftmodifyAPIResponse 未来酒店信息下发 API返回值
+// TaobaoxhotelfuturesoftmodifyAPIResponse 未来酒店信息下发 API返回值
 // taobao.xhotel.future.softmodify
 //
 // 未来酒店信息下发，包含PMS订单查询和自助入住
-type TaobaoXhotelFutureSoftmodifyAPIResponse struct {
+type TaobaoxhotelfuturesoftmodifyAPIResponse struct {
 	model.CommonResponse
-	TaobaoXhotelFutureSoftmodifyAPIResponseModel
+	TaobaoxhotelfuturesoftmodifyAPIResponseModel
 }
 
-// TaobaoXhotelFutureSoftmodifyAPIResponseModel is 未来酒店信息下发 成功返回结果
-type TaobaoXhotelFutureSoftmodifyAPIResponseModel struct {
+// TaobaoxhotelfuturesoftmodifyAPIResponseModel is 未来酒店信息下发 成功返回结果
+type TaobaoxhotelfuturesoftmodifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_future_softmodify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

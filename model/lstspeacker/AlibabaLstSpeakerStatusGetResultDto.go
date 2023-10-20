@@ -1,7 +1,7 @@
 package lstspeacker
 
-// AlibabaLstSpeakerStatusGetResultDto 结构体
-type AlibabaLstSpeakerStatusGetResultDto struct {
+// AlibabalstspeakerstatusgetResultDto 结构体
+type AlibabalstspeakerstatusgetResultDto struct {
 	// 错误码
 	ErroMessage string `json:"erro_message,omitempty" xml:"erro_message,omitempty"`
 	// 错误码

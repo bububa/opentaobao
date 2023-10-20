@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mos"
 )
 
-// AlibabaMosStoreRecordscreenpointinfo 云屏埋点数据记录接口
+// Alibabamosstorerecordscreenpointinfo 云屏埋点数据记录接口
 // alibaba.mos.store.recordscreenpointinfo
 //
 // 记录云屏埋点数据
-func AlibabaMosStoreRecordscreenpointinfo(clt *core.SDKClient, req *mos.AlibabaMosStoreRecordscreenpointinfoAPIRequest, session string) (*mos.AlibabaMosStoreRecordscreenpointinfoAPIResponse, error) {
-	var resp mos.AlibabaMosStoreRecordscreenpointinfoAPIResponse
+func Alibabamosstorerecordscreenpointinfo(clt *core.SDKClient, req *mos.AlibabamosstorerecordscreenpointinfoAPIRequest, session string) (*mos.AlibabamosstorerecordscreenpointinfoAPIResponse, error) {
+	var resp mos.AlibabamosstorerecordscreenpointinfoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

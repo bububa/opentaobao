@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoJushitaJdpUserDeleteAPIResponse 删除数据推送用户 API返回值
+// TaobaojushitajdpuserdeleteAPIResponse 删除数据推送用户 API返回值
 // taobao.jushita.jdp.user.delete
 //
 // 删除应用的数据推送用户，用户被删除后，重新添加时会重新同步历史数据。
-type TaobaoJushitaJdpUserDeleteAPIResponse struct {
+type TaobaojushitajdpuserdeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoJushitaJdpUserDeleteAPIResponseModel
+	TaobaojushitajdpuserdeleteAPIResponseModel
 }
 
-// TaobaoJushitaJdpUserDeleteAPIResponseModel is 删除数据推送用户 成功返回结果
-type TaobaoJushitaJdpUserDeleteAPIResponseModel struct {
+// TaobaojushitajdpuserdeleteAPIResponseModel is 删除数据推送用户 成功返回结果
+type TaobaojushitajdpuserdeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"jushita_jdp_user_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

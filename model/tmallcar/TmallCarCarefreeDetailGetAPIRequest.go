@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallCarCarefreeDetailGetAPIRequest 查询业务单信息 API请求
+// TmallcarcarefreedetailgetAPIRequest 查询业务单信息 API请求
 // tmall.car.carefree.detail.get
 //
 // 查询业务单信息
-type TmallCarCarefreeDetailGetAPIRequest struct {
+type TmallcarcarefreedetailgetAPIRequest struct {
 	model.Params
 	// 查询参数对象
 	_param0 *CarefreeDetailQueryReq
 }
 
-// NewTmallCarCarefreeDetailGetRequest 初始化TmallCarCarefreeDetailGetAPIRequest对象
-func NewTmallCarCarefreeDetailGetRequest() *TmallCarCarefreeDetailGetAPIRequest {
-	return &TmallCarCarefreeDetailGetAPIRequest{
+// NewTmallcarcarefreedetailgetRequest 初始化TmallcarcarefreedetailgetAPIRequest对象
+func NewTmallcarcarefreedetailgetRequest() *TmallcarcarefreedetailgetAPIRequest {
+	return &TmallcarcarefreedetailgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallCarCarefreeDetailGetAPIRequest) GetApiMethodName() string {
+func (r TmallcarcarefreedetailgetAPIRequest) GetApiMethodName() string {
 	return "tmall.car.carefree.detail.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallCarCarefreeDetailGetAPIRequest) GetApiParams(params url.Values) {
+func (r TmallcarcarefreedetailgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallCarCarefreeDetailGetAPIRequest) GetRawParams() model.Params {
+func (r TmallcarcarefreedetailgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam0 is Param0 Setter
 // 查询参数对象
-func (r *TmallCarCarefreeDetailGetAPIRequest) SetParam0(_param0 *CarefreeDetailQueryReq) error {
+func (r *TmallcarcarefreedetailgetAPIRequest) SetParam0(_param0 *CarefreeDetailQueryReq) error {
 	r._param0 = _param0
 	r.Set("param0", _param0)
 	return nil
 }
 
 // GetParam0 Param0 Getter
-func (r TmallCarCarefreeDetailGetAPIRequest) GetParam0() *CarefreeDetailQueryReq {
+func (r TmallcarcarefreedetailgetAPIRequest) GetParam0() *CarefreeDetailQueryReq {
 	return r._param0
 }

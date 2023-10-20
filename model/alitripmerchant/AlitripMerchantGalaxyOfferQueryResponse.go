@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripMerchantGalaxyOfferQueryResponse 结构体
-type AlitripMerchantGalaxyOfferQueryResponse struct {
+// AlitripmerchantgalaxyofferqueryResponse 结构体
+type AlitripmerchantgalaxyofferqueryResponse struct {
 	// offer列表
 	Offers []OfferDetailsDto `json:"offers,omitempty" xml:"offers>offer_details_dto,omitempty"`
 	// 错误代码

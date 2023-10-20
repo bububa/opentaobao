@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseNewhomeAdviserSubmitAccountResult 结构体
-type AlibabaAlihouseNewhomeAdviserSubmitAccountResult struct {
+// AlibabaalihousenewhomeadvisersubmitaccountResult 结构体
+type AlibabaalihousenewhomeadvisersubmitaccountResult struct {
 	// 返回素材id
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// message

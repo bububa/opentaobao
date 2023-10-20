@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCampusAclNewGetappmenutreeAPIResponse 查询应用下的菜单树 API返回值
+// AlibabacampusaclnewgetappmenutreeAPIResponse 查询应用下的菜单树 API返回值
 // alibaba.campus.acl.new.getappmenutree
 //
 // 查询应用下的菜单树
-type AlibabaCampusAclNewGetappmenutreeAPIResponse struct {
+type AlibabacampusaclnewgetappmenutreeAPIResponse struct {
 	model.CommonResponse
-	AlibabaCampusAclNewGetappmenutreeAPIResponseModel
+	AlibabacampusaclnewgetappmenutreeAPIResponseModel
 }
 
-// AlibabaCampusAclNewGetappmenutreeAPIResponseModel is 查询应用下的菜单树 成功返回结果
-type AlibabaCampusAclNewGetappmenutreeAPIResponseModel struct {
+// AlibabacampusaclnewgetappmenutreeAPIResponseModel is 查询应用下的菜单树 成功返回结果
+type AlibabacampusaclnewgetappmenutreeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_campus_acl_new_getappmenutree_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/lstlogistics"
 )
 
-// AlibabaLstLogisticsTraceQuery 供应商-异云-查询运单物流追踪信息
+// Alibabalstlogisticstracequery 供应商-异云-查询运单物流追踪信息
 // alibaba.lst.logistics.trace.query
 //
 // 查询LP单物流追踪信息
-func AlibabaLstLogisticsTraceQuery(clt *core.SDKClient, req *lstlogistics.AlibabaLstLogisticsTraceQueryAPIRequest, session string) (*lstlogistics.AlibabaLstLogisticsTraceQueryAPIResponse, error) {
-	var resp lstlogistics.AlibabaLstLogisticsTraceQueryAPIResponse
+func Alibabalstlogisticstracequery(clt *core.SDKClient, req *lstlogistics.AlibabalstlogisticstracequeryAPIRequest, session string) (*lstlogistics.AlibabalstlogisticstracequeryAPIResponse, error) {
+	var resp lstlogistics.AlibabalstlogisticstracequeryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

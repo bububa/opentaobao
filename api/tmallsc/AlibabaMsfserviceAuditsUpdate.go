@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
 
-// AlibabaMsfserviceAuditsUpdate 操作改约审批单
+// Alibabamsfserviceauditsupdate 操作改约审批单
 // alibaba.msfservice.audits.update
 //
 // 操作改约审批单
-func AlibabaMsfserviceAuditsUpdate(clt *core.SDKClient, req *tmallsc.AlibabaMsfserviceAuditsUpdateAPIRequest, session string) (*tmallsc.AlibabaMsfserviceAuditsUpdateAPIResponse, error) {
-	var resp tmallsc.AlibabaMsfserviceAuditsUpdateAPIResponse
+func Alibabamsfserviceauditsupdate(clt *core.SDKClient, req *tmallsc.AlibabamsfserviceauditsupdateAPIRequest, session string) (*tmallsc.AlibabamsfserviceauditsupdateAPIResponse, error) {
+	var resp tmallsc.AlibabamsfserviceauditsupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

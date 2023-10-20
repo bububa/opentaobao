@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthMedicalDepartmentSyncAPIResponse 阿里健康预约挂号科室同步接口 API返回值
+// AlibabaalihealthmedicaldepartmentsyncAPIResponse 阿里健康预约挂号科室同步接口 API返回值
 // alibaba.alihealth.medical.department.sync
 //
 // 阿里健康预约挂号科室同步接口
-type AlibabaAlihealthMedicalDepartmentSyncAPIResponse struct {
+type AlibabaalihealthmedicaldepartmentsyncAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthMedicalDepartmentSyncAPIResponseModel
+	AlibabaalihealthmedicaldepartmentsyncAPIResponseModel
 }
 
-// AlibabaAlihealthMedicalDepartmentSyncAPIResponseModel is 阿里健康预约挂号科室同步接口 成功返回结果
-type AlibabaAlihealthMedicalDepartmentSyncAPIResponseModel struct {
+// AlibabaalihealthmedicaldepartmentsyncAPIResponseModel is 阿里健康预约挂号科室同步接口 成功返回结果
+type AlibabaalihealthmedicaldepartmentsyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_medical_department_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

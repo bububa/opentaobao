@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripShipProductSyncbaseAPIRequest 基础信息修改回调 API请求
+// AlitripshipproductsyncbaseAPIRequest 基础信息修改回调 API请求
 // alitrip.ship.product.syncbase
 //
 // 基础信息修改回调
-type AlitripShipProductSyncbaseAPIRequest struct {
+type AlitripshipproductsyncbaseAPIRequest struct {
 	model.Params
 }
 
-// NewAlitripShipProductSyncbaseRequest 初始化AlitripShipProductSyncbaseAPIRequest对象
-func NewAlitripShipProductSyncbaseRequest() *AlitripShipProductSyncbaseAPIRequest {
-	return &AlitripShipProductSyncbaseAPIRequest{
+// NewAlitripshipproductsyncbaseRequest 初始化AlitripshipproductsyncbaseAPIRequest对象
+func NewAlitripshipproductsyncbaseRequest() *AlitripshipproductsyncbaseAPIRequest {
+	return &AlitripshipproductsyncbaseAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripShipProductSyncbaseAPIRequest) GetApiMethodName() string {
+func (r AlitripshipproductsyncbaseAPIRequest) GetApiMethodName() string {
 	return "alitrip.ship.product.syncbase"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripShipProductSyncbaseAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripshipproductsyncbaseAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripShipProductSyncbaseAPIRequest) GetRawParams() model.Params {
+func (r AlitripshipproductsyncbaseAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

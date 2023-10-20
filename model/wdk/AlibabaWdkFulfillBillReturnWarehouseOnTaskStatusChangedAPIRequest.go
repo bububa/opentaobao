@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest 退仓结果回传 API请求
+// AlibabawdkfulfillbillreturnwarehouseontaskstatuschangedAPIRequest 退仓结果回传 API请求
 // alibaba.wdk.fulfill.bill.return.warehouse.on.task.status.changed
 //
 // 退货入仓结果回传
-type AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest struct {
+type AlibabawdkfulfillbillreturnwarehouseontaskstatuschangedAPIRequest struct {
 	model.Params
 	// 退仓结果
 	_returnWarehouseResult *ReturnWarehouseResult
 }
 
-// NewAlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedRequest 初始化AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest对象
-func NewAlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedRequest() *AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest {
-	return &AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest{
+// NewAlibabawdkfulfillbillreturnwarehouseontaskstatuschangedRequest 初始化AlibabawdkfulfillbillreturnwarehouseontaskstatuschangedAPIRequest对象
+func NewAlibabawdkfulfillbillreturnwarehouseontaskstatuschangedRequest() *AlibabawdkfulfillbillreturnwarehouseontaskstatuschangedAPIRequest {
+	return &AlibabawdkfulfillbillreturnwarehouseontaskstatuschangedAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkfulfillbillreturnwarehouseontaskstatuschangedAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.fulfill.bill.return.warehouse.on.task.status.changed"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkfulfillbillreturnwarehouseontaskstatuschangedAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkfulfillbillreturnwarehouseontaskstatuschangedAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetReturnWarehouseResult is ReturnWarehouseResult Setter
 // 退仓结果
-func (r *AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest) SetReturnWarehouseResult(_returnWarehouseResult *ReturnWarehouseResult) error {
+func (r *AlibabawdkfulfillbillreturnwarehouseontaskstatuschangedAPIRequest) SetReturnWarehouseResult(_returnWarehouseResult *ReturnWarehouseResult) error {
 	r._returnWarehouseResult = _returnWarehouseResult
 	r.Set("return_warehouse_result", _returnWarehouseResult)
 	return nil
 }
 
 // GetReturnWarehouseResult ReturnWarehouseResult Getter
-func (r AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest) GetReturnWarehouseResult() *ReturnWarehouseResult {
+func (r AlibabawdkfulfillbillreturnwarehouseontaskstatuschangedAPIRequest) GetReturnWarehouseResult() *ReturnWarehouseResult {
 	return r._returnWarehouseResult
 }

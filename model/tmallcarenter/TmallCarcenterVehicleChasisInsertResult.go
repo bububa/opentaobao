@@ -1,7 +1,7 @@
 package tmallcarenter
 
-// TmallCarcenterVehicleChasisInsertResult 结构体
-type TmallCarcenterVehicleChasisInsertResult struct {
+// TmallcarcentervehiclechasisinsertResult 结构体
+type TmallcarcentervehiclechasisinsertResult struct {
 	// msgCode
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msgInfo

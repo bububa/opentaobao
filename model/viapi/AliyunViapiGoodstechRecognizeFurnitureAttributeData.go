@@ -1,7 +1,7 @@
 package viapi
 
-// AliyunViapiGoodstechRecognizeFurnitureAttributeData 结构体
-type AliyunViapiGoodstechRecognizeFurnitureAttributeData struct {
+// AliyunviapigoodstechrecognizefurnitureattributeData 结构体
+type AliyunviapigoodstechrecognizefurnitureattributeData struct {
 	// 预测的风格名称ID
 	Predstyle string `json:"predstyle,omitempty" xml:"predstyle,omitempty"`
 	// 预测的风格置信概率

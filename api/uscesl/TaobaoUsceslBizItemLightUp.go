@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/uscesl"
 )
 
-// TaobaoUsceslBizItemLightUp 商品条码亮灯API
+// Taobaousceslbizitemlightup 商品条码亮灯API
 // taobao.uscesl.biz.item.light.up
 //
 // 亮灯API
-func TaobaoUsceslBizItemLightUp(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizItemLightUpAPIRequest, session string) (*uscesl.TaobaoUsceslBizItemLightUpAPIResponse, error) {
-	var resp uscesl.TaobaoUsceslBizItemLightUpAPIResponse
+func Taobaousceslbizitemlightup(clt *core.SDKClient, req *uscesl.TaobaousceslbizitemlightupAPIRequest, session string) (*uscesl.TaobaousceslbizitemlightupAPIResponse, error) {
+	var resp uscesl.TaobaousceslbizitemlightupAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

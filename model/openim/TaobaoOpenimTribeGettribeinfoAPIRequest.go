@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpenimTribeGettribeinfoAPIRequest 获取群信息 API请求
+// TaobaoopenimtribegettribeinfoAPIRequest 获取群信息 API请求
 // taobao.openim.tribe.gettribeinfo
 //
 // 获取群信息
-type TaobaoOpenimTribeGettribeinfoAPIRequest struct {
+type TaobaoopenimtribegettribeinfoAPIRequest struct {
 	model.Params
 	// 用户信息
 	_user *OpenImUser
@@ -18,52 +18,52 @@ type TaobaoOpenimTribeGettribeinfoAPIRequest struct {
 	_tribeId int64
 }
 
-// NewTaobaoOpenimTribeGettribeinfoRequest 初始化TaobaoOpenimTribeGettribeinfoAPIRequest对象
-func NewTaobaoOpenimTribeGettribeinfoRequest() *TaobaoOpenimTribeGettribeinfoAPIRequest {
-	return &TaobaoOpenimTribeGettribeinfoAPIRequest{
+// NewTaobaoopenimtribegettribeinfoRequest 初始化TaobaoopenimtribegettribeinfoAPIRequest对象
+func NewTaobaoopenimtribegettribeinfoRequest() *TaobaoopenimtribegettribeinfoAPIRequest {
+	return &TaobaoopenimtribegettribeinfoAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoOpenimTribeGettribeinfoAPIRequest) GetApiMethodName() string {
+func (r TaobaoopenimtribegettribeinfoAPIRequest) GetApiMethodName() string {
 	return "taobao.openim.tribe.gettribeinfo"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOpenimTribeGettribeinfoAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoopenimtribegettribeinfoAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoOpenimTribeGettribeinfoAPIRequest) GetRawParams() model.Params {
+func (r TaobaoopenimtribegettribeinfoAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetUser is User Setter
 // 用户信息
-func (r *TaobaoOpenimTribeGettribeinfoAPIRequest) SetUser(_user *OpenImUser) error {
+func (r *TaobaoopenimtribegettribeinfoAPIRequest) SetUser(_user *OpenImUser) error {
 	r._user = _user
 	r.Set("user", _user)
 	return nil
 }
 
 // GetUser User Getter
-func (r TaobaoOpenimTribeGettribeinfoAPIRequest) GetUser() *OpenImUser {
+func (r TaobaoopenimtribegettribeinfoAPIRequest) GetUser() *OpenImUser {
 	return r._user
 }
 
 // SetTribeId is TribeId Setter
 // 群ID
-func (r *TaobaoOpenimTribeGettribeinfoAPIRequest) SetTribeId(_tribeId int64) error {
+func (r *TaobaoopenimtribegettribeinfoAPIRequest) SetTribeId(_tribeId int64) error {
 	r._tribeId = _tribeId
 	r.Set("tribe_id", _tribeId)
 	return nil
 }
 
 // GetTribeId TribeId Getter
-func (r TaobaoOpenimTribeGettribeinfoAPIRequest) GetTribeId() int64 {
+func (r TaobaoopenimtribegettribeinfoAPIRequest) GetTribeId() int64 {
 	return r._tribeId
 }

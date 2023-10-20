@@ -1,7 +1,7 @@
 package alicom
 
-// AlibabaAliqinFcVoiceNumCancelcallBizResult 结构体
-type AlibabaAliqinFcVoiceNumCancelcallBizResult struct {
+// AlibabaaliqinfcvoicenumcancelcallBizResult 结构体
+type AlibabaaliqinfcvoicenumcancelcallBizResult struct {
 	// model
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// code

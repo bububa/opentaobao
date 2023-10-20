@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWlbImportsVasIdentityResultAPIRequest 集货鉴定结果 API请求
+// TaobaowlbimportsvasidentityresultAPIRequest 集货鉴定结果 API请求
 // taobao.wlb.imports.vas.identity.result
 //
 // 集货鉴定结果查询
-type TaobaoWlbImportsVasIdentityResultAPIRequest struct {
+type TaobaowlbimportsvasidentityresultAPIRequest struct {
 	model.Params
 	// 物流订单编号
 	_lgOrderCode string
 }
 
-// NewTaobaoWlbImportsVasIdentityResultRequest 初始化TaobaoWlbImportsVasIdentityResultAPIRequest对象
-func NewTaobaoWlbImportsVasIdentityResultRequest() *TaobaoWlbImportsVasIdentityResultAPIRequest {
-	return &TaobaoWlbImportsVasIdentityResultAPIRequest{
+// NewTaobaowlbimportsvasidentityresultRequest 初始化TaobaowlbimportsvasidentityresultAPIRequest对象
+func NewTaobaowlbimportsvasidentityresultRequest() *TaobaowlbimportsvasidentityresultAPIRequest {
+	return &TaobaowlbimportsvasidentityresultAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoWlbImportsVasIdentityResultAPIRequest) GetApiMethodName() string {
+func (r TaobaowlbimportsvasidentityresultAPIRequest) GetApiMethodName() string {
 	return "taobao.wlb.imports.vas.identity.result"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoWlbImportsVasIdentityResultAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaowlbimportsvasidentityresultAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoWlbImportsVasIdentityResultAPIRequest) GetRawParams() model.Params {
+func (r TaobaowlbimportsvasidentityresultAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetLgOrderCode is LgOrderCode Setter
 // 物流订单编号
-func (r *TaobaoWlbImportsVasIdentityResultAPIRequest) SetLgOrderCode(_lgOrderCode string) error {
+func (r *TaobaowlbimportsvasidentityresultAPIRequest) SetLgOrderCode(_lgOrderCode string) error {
 	r._lgOrderCode = _lgOrderCode
 	r.Set("lg_order_code", _lgOrderCode)
 	return nil
 }
 
 // GetLgOrderCode LgOrderCode Getter
-func (r TaobaoWlbImportsVasIdentityResultAPIRequest) GetLgOrderCode() string {
+func (r TaobaowlbimportsvasidentityresultAPIRequest) GetLgOrderCode() string {
 	return r._lgOrderCode
 }

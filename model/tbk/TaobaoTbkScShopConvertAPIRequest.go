@@ -17,13 +17,13 @@ type TaobaotbkscshopconvertAPIRequest struct {
 	// (该字段不开放)自定义输入串，英文和数字组成，长度不能大于12个字符，区分不同的推广渠道
 	_unid string
 	// 卖家id串，用,分割，从taobao.tbk.shop.get接口获取user_id字段
-	_userids string
+	_userIds string
 	// mm_xxx_xxx_xxx的第3段数字
-	_adzoneid int64
+	_adzoneId int64
 	// 链接形式-1：PC，2：无线。默认为１
 	_platform int64
 	// mm_xxx_xxx_xxx的第2段数字
-	_siteid int64
+	_siteId int64
 }
 
 // NewTaobaotbkscshopconvertRequest 初始化TaobaotbkscshopconvertAPIRequest对象
@@ -76,30 +76,30 @@ func (r TaobaotbkscshopconvertAPIRequest) GetUnid() string {
 	return r._unid
 }
 
-// SetUserids is Userids Setter
+// SetUserIds is UserIds Setter
 // 卖家id串，用,分割，从taobao.tbk.shop.get接口获取user_id字段
-func (r *TaobaotbkscshopconvertAPIRequest) SetUserids(_userids string) error {
-	r._userids = _userids
-	r.Set("user_ids", _userids)
+func (r *TaobaotbkscshopconvertAPIRequest) SetUserIds(_userIds string) error {
+	r._userIds = _userIds
+	r.Set("user_ids", _userIds)
 	return nil
 }
 
-// GetUserids Userids Getter
-func (r TaobaotbkscshopconvertAPIRequest) GetUserids() string {
-	return r._userids
+// GetUserIds UserIds Getter
+func (r TaobaotbkscshopconvertAPIRequest) GetUserIds() string {
+	return r._userIds
 }
 
-// SetAdzoneid is Adzoneid Setter
+// SetAdzoneId is AdzoneId Setter
 // mm_xxx_xxx_xxx的第3段数字
-func (r *TaobaotbkscshopconvertAPIRequest) SetAdzoneid(_adzoneid int64) error {
-	r._adzoneid = _adzoneid
-	r.Set("adzone_id", _adzoneid)
+func (r *TaobaotbkscshopconvertAPIRequest) SetAdzoneId(_adzoneId int64) error {
+	r._adzoneId = _adzoneId
+	r.Set("adzone_id", _adzoneId)
 	return nil
 }
 
-// GetAdzoneid Adzoneid Getter
-func (r TaobaotbkscshopconvertAPIRequest) GetAdzoneid() int64 {
-	return r._adzoneid
+// GetAdzoneId AdzoneId Getter
+func (r TaobaotbkscshopconvertAPIRequest) GetAdzoneId() int64 {
+	return r._adzoneId
 }
 
 // SetPlatform is Platform Setter
@@ -115,15 +115,15 @@ func (r TaobaotbkscshopconvertAPIRequest) GetPlatform() int64 {
 	return r._platform
 }
 
-// SetSiteid is Siteid Setter
+// SetSiteId is SiteId Setter
 // mm_xxx_xxx_xxx的第2段数字
-func (r *TaobaotbkscshopconvertAPIRequest) SetSiteid(_siteid int64) error {
-	r._siteid = _siteid
-	r.Set("site_id", _siteid)
+func (r *TaobaotbkscshopconvertAPIRequest) SetSiteId(_siteId int64) error {
+	r._siteId = _siteId
+	r.Set("site_id", _siteId)
 	return nil
 }
 
-// GetSiteid Siteid Getter
-func (r TaobaotbkscshopconvertAPIRequest) GetSiteid() int64 {
-	return r._siteid
+// GetSiteId SiteId Getter
+func (r TaobaotbkscshopconvertAPIRequest) GetSiteId() int64 {
+	return r._siteId
 }

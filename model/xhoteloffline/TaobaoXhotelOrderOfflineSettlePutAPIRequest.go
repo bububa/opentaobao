@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelOrderOfflineSettlePutAPIRequest 线下信用住结账专用接口 API请求
+// TaobaoxhotelorderofflinesettleputAPIRequest 线下信用住结账专用接口 API请求
 // taobao.xhotel.order.offline.settle.put
 //
 // 线下信用住结账专用接口
-type TaobaoXhotelOrderOfflineSettlePutAPIRequest struct {
+type TaobaoxhotelorderofflinesettleputAPIRequest struct {
 	model.Params
 	// 房间明细列表
 	_roomSettleInfoList []RoomSettleInfo
@@ -46,234 +46,234 @@ type TaobaoXhotelOrderOfflineSettlePutAPIRequest struct {
 	_amount int64
 }
 
-// NewTaobaoXhotelOrderOfflineSettlePutRequest 初始化TaobaoXhotelOrderOfflineSettlePutAPIRequest对象
-func NewTaobaoXhotelOrderOfflineSettlePutRequest() *TaobaoXhotelOrderOfflineSettlePutAPIRequest {
-	return &TaobaoXhotelOrderOfflineSettlePutAPIRequest{
+// NewTaobaoxhotelorderofflinesettleputRequest 初始化TaobaoxhotelorderofflinesettleputAPIRequest对象
+func NewTaobaoxhotelorderofflinesettleputRequest() *TaobaoxhotelorderofflinesettleputAPIRequest {
+	return &TaobaoxhotelorderofflinesettleputAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetApiMethodName() string {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetApiMethodName() string {
 	return "taobao.xhotel.order.offline.settle.put"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetRawParams() model.Params {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRoomSettleInfoList is RoomSettleInfoList Setter
 // 房间明细列表
-func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) SetRoomSettleInfoList(_roomSettleInfoList []RoomSettleInfo) error {
+func (r *TaobaoxhotelorderofflinesettleputAPIRequest) SetRoomSettleInfoList(_roomSettleInfoList []RoomSettleInfo) error {
 	r._roomSettleInfoList = _roomSettleInfoList
 	r.Set("room_settle_info_list", _roomSettleInfoList)
 	return nil
 }
 
 // GetRoomSettleInfoList RoomSettleInfoList Getter
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetRoomSettleInfoList() []RoomSettleInfo {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetRoomSettleInfoList() []RoomSettleInfo {
 	return r._roomSettleInfoList
 }
 
 // SetOtherFeeDetail is OtherFeeDetail Setter
 // 杂费明细,如果otherFee&gt;0则该字段必须设置,并和杂费金额相吻合
-func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) SetOtherFeeDetail(_otherFeeDetail string) error {
+func (r *TaobaoxhotelorderofflinesettleputAPIRequest) SetOtherFeeDetail(_otherFeeDetail string) error {
 	r._otherFeeDetail = _otherFeeDetail
 	r.Set("other_fee_detail", _otherFeeDetail)
 	return nil
 }
 
 // GetOtherFeeDetail OtherFeeDetail Getter
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetOtherFeeDetail() string {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetOtherFeeDetail() string {
 	return r._otherFeeDetail
 }
 
 // SetOutId is OutId Setter
 // 商家订单号
-func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) SetOutId(_outId string) error {
+func (r *TaobaoxhotelorderofflinesettleputAPIRequest) SetOutId(_outId string) error {
 	r._outId = _outId
 	r.Set("out_id", _outId)
 	return nil
 }
 
 // GetOutId OutId Getter
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetOutId() string {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetOutId() string {
 	return r._outId
 }
 
 // SetRoomNo is RoomNo Setter
 // 入住房间号
-func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) SetRoomNo(_roomNo string) error {
+func (r *TaobaoxhotelorderofflinesettleputAPIRequest) SetRoomNo(_roomNo string) error {
 	r._roomNo = _roomNo
 	r.Set("room_no", _roomNo)
 	return nil
 }
 
 // GetRoomNo RoomNo Getter
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetRoomNo() string {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetRoomNo() string {
 	return r._roomNo
 }
 
 // SetDailyPriceInfo is DailyPriceInfo Setter
 // 每日房价,json格式,如果房价和在阿里旅行下单时发生了变化，必须设置该字段.用于更新阿里旅行端的房价信息,涉及到对用户的优惠信息处理等环节(多间房的时候dailyPriceInfo留空)
-func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) SetDailyPriceInfo(_dailyPriceInfo string) error {
+func (r *TaobaoxhotelorderofflinesettleputAPIRequest) SetDailyPriceInfo(_dailyPriceInfo string) error {
 	r._dailyPriceInfo = _dailyPriceInfo
 	r.Set("daily_price_info", _dailyPriceInfo)
 	return nil
 }
 
 // GetDailyPriceInfo DailyPriceInfo Getter
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetDailyPriceInfo() string {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetDailyPriceInfo() string {
 	return r._dailyPriceInfo
 }
 
 // SetCheckOut is CheckOut Setter
 // 实际离店日期，用于校验总房费收取
-func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) SetCheckOut(_checkOut string) error {
+func (r *TaobaoxhotelorderofflinesettleputAPIRequest) SetCheckOut(_checkOut string) error {
 	r._checkOut = _checkOut
 	r.Set("check_out", _checkOut)
 	return nil
 }
 
 // GetCheckOut CheckOut Getter
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetCheckOut() string {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetCheckOut() string {
 	return r._checkOut
 }
 
 // SetMemo is Memo Setter
 // 备注
-func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) SetMemo(_memo string) error {
+func (r *TaobaoxhotelorderofflinesettleputAPIRequest) SetMemo(_memo string) error {
 	r._memo = _memo
 	r.Set("memo", _memo)
 	return nil
 }
 
 // GetMemo Memo Getter
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetMemo() string {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetMemo() string {
 	return r._memo
 }
 
 // SetOutUuid is OutUuid Setter
 // 结账请求流水号
-func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) SetOutUuid(_outUuid string) error {
+func (r *TaobaoxhotelorderofflinesettleputAPIRequest) SetOutUuid(_outUuid string) error {
 	r._outUuid = _outUuid
 	r.Set("out_uuid", _outUuid)
 	return nil
 }
 
 // GetOutUuid OutUuid Getter
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetOutUuid() string {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetOutUuid() string {
 	return r._outUuid
 }
 
 // SetNotifyUrl is NotifyUrl Setter
 // 请求结果通知地址（暂时无效，无需传入）
-func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) SetNotifyUrl(_notifyUrl string) error {
+func (r *TaobaoxhotelorderofflinesettleputAPIRequest) SetNotifyUrl(_notifyUrl string) error {
 	r._notifyUrl = _notifyUrl
 	r.Set("notify_url", _notifyUrl)
 	return nil
 }
 
 // GetNotifyUrl NotifyUrl Getter
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetNotifyUrl() string {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetNotifyUrl() string {
 	return r._notifyUrl
 }
 
 // SetHotelCode is HotelCode Setter
 // 商家酒店编码
-func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) SetHotelCode(_hotelCode string) error {
+func (r *TaobaoxhotelorderofflinesettleputAPIRequest) SetHotelCode(_hotelCode string) error {
 	r._hotelCode = _hotelCode
 	r.Set("hotel_code", _hotelCode)
 	return nil
 }
 
 // GetHotelCode HotelCode Getter
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetHotelCode() string {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetHotelCode() string {
 	return r._hotelCode
 }
 
 // SetVendor is Vendor Setter
 // 系统商标识
-func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) SetVendor(_vendor string) error {
+func (r *TaobaoxhotelorderofflinesettleputAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
 	r.Set("vendor", _vendor)
 	return nil
 }
 
 // GetVendor Vendor Getter
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetVendor() string {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
 // SetTid is Tid Setter
 // 淘宝订单id,必须填写
-func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) SetTid(_tid int64) error {
+func (r *TaobaoxhotelorderofflinesettleputAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
 	r.Set("tid", _tid)
 	return nil
 }
 
 // GetTid Tid Getter
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetTid() int64 {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
 // SetTotalRoomFee is TotalRoomFee Setter
 // 房费总额(必须大于0)
-func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) SetTotalRoomFee(_totalRoomFee int64) error {
+func (r *TaobaoxhotelorderofflinesettleputAPIRequest) SetTotalRoomFee(_totalRoomFee int64) error {
 	r._totalRoomFee = _totalRoomFee
 	r.Set("total_room_fee", _totalRoomFee)
 	return nil
 }
 
 // GetTotalRoomFee TotalRoomFee Getter
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetTotalRoomFee() int64 {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetTotalRoomFee() int64 {
 	return r._totalRoomFee
 }
 
 // SetOtherFee is OtherFee Setter
 // 杂费总额(不能为负数)
-func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) SetOtherFee(_otherFee int64) error {
+func (r *TaobaoxhotelorderofflinesettleputAPIRequest) SetOtherFee(_otherFee int64) error {
 	r._otherFee = _otherFee
 	r.Set("other_fee", _otherFee)
 	return nil
 }
 
 // GetOtherFee OtherFee Getter
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetOtherFee() int64 {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetOtherFee() int64 {
 	return r._otherFee
 }
 
 // SetContainGuarantee is ContainGuarantee Setter
 // 此金额是否包含担保金 0：默认值无意义；1：包含；2：不包含（多间房结账必须传入）
-func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) SetContainGuarantee(_containGuarantee int64) error {
+func (r *TaobaoxhotelorderofflinesettleputAPIRequest) SetContainGuarantee(_containGuarantee int64) error {
 	r._containGuarantee = _containGuarantee
 	r.Set("contain_guarantee", _containGuarantee)
 	return nil
 }
 
 // GetContainGuarantee ContainGuarantee Getter
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetContainGuarantee() int64 {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetContainGuarantee() int64 {
 	return r._containGuarantee
 }
 
 // SetAmount is Amount Setter
 // 应收金额,大于0时，直接按照此金额扣款，忽略房费和杂费金额(单位分)
-func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) SetAmount(_amount int64) error {
+func (r *TaobaoxhotelorderofflinesettleputAPIRequest) SetAmount(_amount int64) error {
 	r._amount = _amount
 	r.Set("amount", _amount)
 	return nil
 }
 
 // GetAmount Amount Getter
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetAmount() int64 {
+func (r TaobaoxhotelorderofflinesettleputAPIRequest) GetAmount() int64 {
 	return r._amount
 }

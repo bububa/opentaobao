@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWlbWmsReturnOrderNotifyAPIResponse 销售退货通知 API返回值
+// TaobaowlbwmsreturnordernotifyAPIResponse 销售退货通知 API返回值
 // taobao.wlb.wms.return.order.notify
 //
 // 销售退货通知
-type TaobaoWlbWmsReturnOrderNotifyAPIResponse struct {
+type TaobaowlbwmsreturnordernotifyAPIResponse struct {
 	model.CommonResponse
-	TaobaoWlbWmsReturnOrderNotifyAPIResponseModel
+	TaobaowlbwmsreturnordernotifyAPIResponseModel
 }
 
-// TaobaoWlbWmsReturnOrderNotifyAPIResponseModel is 销售退货通知 成功返回结果
-type TaobaoWlbWmsReturnOrderNotifyAPIResponseModel struct {
+// TaobaowlbwmsreturnordernotifyAPIResponseModel is 销售退货通知 成功返回结果
+type TaobaowlbwmsreturnordernotifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_wms_return_order_notify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package scs
 
-// TaobaoOnebpDkxMaterialMaterialFindpageResultDto 结构体
-type TaobaoOnebpDkxMaterialMaterialFindpageResultDto struct {
+// TaobaoonebpdkxmaterialmaterialfindpageResultDto 结构体
+type TaobaoonebpdkxmaterialmaterialfindpageResultDto struct {
 	// 返回结果
 	MaterialResultTopDTOList []MaterialResultTopDto `json:"material_result_top_d_t_o_list,omitempty" xml:"material_result_top_d_t_o_list>material_result_top_dto,omitempty"`
 	// 返回消息

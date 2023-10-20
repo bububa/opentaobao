@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest 顾问入职离职 API请求
+// AlibabaalihousenewhomeadvisersubmitaccountAPIRequest 顾问入职离职 API请求
 // alibaba.alihouse.newhome.adviser.submit.account
 //
 // 顾问入职离职
-type AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest struct {
+type AlibabaalihousenewhomeadvisersubmitaccountAPIRequest struct {
 	model.Params
 	// 外部顾问ID
 	_outerConsultantId string
@@ -22,78 +22,78 @@ type AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest struct {
 	_version int64
 }
 
-// NewAlibabaAlihouseNewhomeAdviserSubmitAccountRequest 初始化AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest对象
-func NewAlibabaAlihouseNewhomeAdviserSubmitAccountRequest() *AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest {
-	return &AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest{
+// NewAlibabaalihousenewhomeadvisersubmitaccountRequest 初始化AlibabaalihousenewhomeadvisersubmitaccountAPIRequest对象
+func NewAlibabaalihousenewhomeadvisersubmitaccountRequest() *AlibabaalihousenewhomeadvisersubmitaccountAPIRequest {
+	return &AlibabaalihousenewhomeadvisersubmitaccountAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihousenewhomeadvisersubmitaccountAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.newhome.adviser.submit.account"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihousenewhomeadvisersubmitaccountAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihousenewhomeadvisersubmitaccountAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOuterConsultantId is OuterConsultantId Setter
 // 外部顾问ID
-func (r *AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest) SetOuterConsultantId(_outerConsultantId string) error {
+func (r *AlibabaalihousenewhomeadvisersubmitaccountAPIRequest) SetOuterConsultantId(_outerConsultantId string) error {
 	r._outerConsultantId = _outerConsultantId
 	r.Set("outer_consultant_id", _outerConsultantId)
 	return nil
 }
 
 // GetOuterConsultantId OuterConsultantId Getter
-func (r AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest) GetOuterConsultantId() string {
+func (r AlibabaalihousenewhomeadvisersubmitaccountAPIRequest) GetOuterConsultantId() string {
 	return r._outerConsultantId
 }
 
 // SetOuterShopId is OuterShopId Setter
 // 外部门店id
-func (r *AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest) SetOuterShopId(_outerShopId string) error {
+func (r *AlibabaalihousenewhomeadvisersubmitaccountAPIRequest) SetOuterShopId(_outerShopId string) error {
 	r._outerShopId = _outerShopId
 	r.Set("outer_shop_id", _outerShopId)
 	return nil
 }
 
 // GetOuterShopId OuterShopId Getter
-func (r AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest) GetOuterShopId() string {
+func (r AlibabaalihousenewhomeadvisersubmitaccountAPIRequest) GetOuterShopId() string {
 	return r._outerShopId
 }
 
 // SetStatus is Status Setter
 // 1-入职 2-离职
-func (r *AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest) SetStatus(_status int64) error {
+func (r *AlibabaalihousenewhomeadvisersubmitaccountAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
 	r.Set("status", _status)
 	return nil
 }
 
 // GetStatus Status Getter
-func (r AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest) GetStatus() int64 {
+func (r AlibabaalihousenewhomeadvisersubmitaccountAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
 // SetVersion is Version Setter
 // 版本号，时间戳
-func (r *AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest) SetVersion(_version int64) error {
+func (r *AlibabaalihousenewhomeadvisersubmitaccountAPIRequest) SetVersion(_version int64) error {
 	r._version = _version
 	r.Set("version", _version)
 	return nil
 }
 
 // GetVersion Version Getter
-func (r AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest) GetVersion() int64 {
+func (r AlibabaalihousenewhomeadvisersubmitaccountAPIRequest) GetVersion() int64 {
 	return r._version
 }

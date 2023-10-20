@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthMedicalDepartmentSyncAPIRequest 阿里健康预约挂号科室同步接口 API请求
+// AlibabaalihealthmedicaldepartmentsyncAPIRequest 阿里健康预约挂号科室同步接口 API请求
 // alibaba.alihealth.medical.department.sync
 //
 // 阿里健康预约挂号科室同步接口
-type AlibabaAlihealthMedicalDepartmentSyncAPIRequest struct {
+type AlibabaalihealthmedicaldepartmentsyncAPIRequest struct {
 	model.Params
 	// 接口入参
-	_saveRequest *CommonRequest4Top
+	_saveRequest *CommonRequest4top
 }
 
-// NewAlibabaAlihealthMedicalDepartmentSyncRequest 初始化AlibabaAlihealthMedicalDepartmentSyncAPIRequest对象
-func NewAlibabaAlihealthMedicalDepartmentSyncRequest() *AlibabaAlihealthMedicalDepartmentSyncAPIRequest {
-	return &AlibabaAlihealthMedicalDepartmentSyncAPIRequest{
+// NewAlibabaalihealthmedicaldepartmentsyncRequest 初始化AlibabaalihealthmedicaldepartmentsyncAPIRequest对象
+func NewAlibabaalihealthmedicaldepartmentsyncRequest() *AlibabaalihealthmedicaldepartmentsyncAPIRequest {
+	return &AlibabaalihealthmedicaldepartmentsyncAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthMedicalDepartmentSyncAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthmedicaldepartmentsyncAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.medical.department.sync"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMedicalDepartmentSyncAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthmedicaldepartmentsyncAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthMedicalDepartmentSyncAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthmedicaldepartmentsyncAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSaveRequest is SaveRequest Setter
 // 接口入参
-func (r *AlibabaAlihealthMedicalDepartmentSyncAPIRequest) SetSaveRequest(_saveRequest *CommonRequest4Top) error {
+func (r *AlibabaalihealthmedicaldepartmentsyncAPIRequest) SetSaveRequest(_saveRequest *CommonRequest4top) error {
 	r._saveRequest = _saveRequest
 	r.Set("save_request", _saveRequest)
 	return nil
 }
 
 // GetSaveRequest SaveRequest Getter
-func (r AlibabaAlihealthMedicalDepartmentSyncAPIRequest) GetSaveRequest() *CommonRequest4Top {
+func (r AlibabaalihealthmedicaldepartmentsyncAPIRequest) GetSaveRequest() *CommonRequest4top {
 	return r._saveRequest
 }

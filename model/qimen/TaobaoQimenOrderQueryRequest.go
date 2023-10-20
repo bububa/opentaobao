@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoQimenOrderQueryRequest 结构体
-type TaobaoQimenOrderQueryRequest struct {
+// TaobaoqimenorderqueryRequest 结构体
+type TaobaoqimenorderqueryRequest struct {
 	// 姓名, string (50) , 必填
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 开始时间, string (19) , YYYY-MM-DD HH:MM:SS

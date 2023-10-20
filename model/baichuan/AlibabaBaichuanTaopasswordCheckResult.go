@@ -1,7 +1,7 @@
 package baichuan
 
-// AlibabaBaichuanTaopasswordCheckResult 结构体
-type AlibabaBaichuanTaopasswordCheckResult struct {
+// AlibababaichuantaopasswordcheckResult 结构体
+type AlibababaichuantaopasswordcheckResult struct {
 	// msgCode
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msgInfo

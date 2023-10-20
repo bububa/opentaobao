@@ -1,7 +1,7 @@
 package xhotelitem
 
-// SHotel 结构体
-type SHotel struct {
+// Shotel 结构体
+type Shotel struct {
 	// name
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// used_name

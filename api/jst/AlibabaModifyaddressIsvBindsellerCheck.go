@@ -5,7 +5,7 @@ import (
 	"github.com/bububa/opentaobao/model/jst"
 )
 
-// AlibabaModifyaddressIsvBindsellerCheck 查询服务商下的商家是否开通了改地址
+// Alibabamodifyaddressisvbindsellercheck 查询服务商下的商家是否开通了改地址
 // alibaba.modifyaddress.isv.bindseller.check
 //
 // 鉴权服务商和商家的绑定关系，看商家是否开通了改地址
@@ -13,8 +13,8 @@ import (
 // 2. 已与当前appkey签约
 // 3. 没有签约
 // 4. 与其他服务商软件签约，如果是同一个isv name，返回appkey，否则不返回。
-func AlibabaModifyaddressIsvBindsellerCheck(clt *core.SDKClient, req *jst.AlibabaModifyaddressIsvBindsellerCheckAPIRequest, session string) (*jst.AlibabaModifyaddressIsvBindsellerCheckAPIResponse, error) {
-	var resp jst.AlibabaModifyaddressIsvBindsellerCheckAPIResponse
+func Alibabamodifyaddressisvbindsellercheck(clt *core.SDKClient, req *jst.AlibabamodifyaddressisvbindsellercheckAPIRequest, session string) (*jst.AlibabamodifyaddressisvbindsellercheckAPIResponse, error) {
+	var resp jst.AlibabamodifyaddressisvbindsellercheckAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

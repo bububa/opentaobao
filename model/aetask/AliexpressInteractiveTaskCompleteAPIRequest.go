@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressInteractiveTaskCompleteAPIRequest 任务完成接口 API请求
+// AliexpressinteractivetaskcompleteAPIRequest 任务完成接口 API请求
 // aliexpress.interactive.task.complete
 //
 // 用户完成任务
-type AliexpressInteractiveTaskCompleteAPIRequest struct {
+type AliexpressinteractivetaskcompleteAPIRequest struct {
 	model.Params
 	// appkey
 	_projectAppKey string
@@ -18,52 +18,52 @@ type AliexpressInteractiveTaskCompleteAPIRequest struct {
 	_taskInstanceId int64
 }
 
-// NewAliexpressInteractiveTaskCompleteRequest 初始化AliexpressInteractiveTaskCompleteAPIRequest对象
-func NewAliexpressInteractiveTaskCompleteRequest() *AliexpressInteractiveTaskCompleteAPIRequest {
-	return &AliexpressInteractiveTaskCompleteAPIRequest{
+// NewAliexpressinteractivetaskcompleteRequest 初始化AliexpressinteractivetaskcompleteAPIRequest对象
+func NewAliexpressinteractivetaskcompleteRequest() *AliexpressinteractivetaskcompleteAPIRequest {
+	return &AliexpressinteractivetaskcompleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AliexpressInteractiveTaskCompleteAPIRequest) GetApiMethodName() string {
+func (r AliexpressinteractivetaskcompleteAPIRequest) GetApiMethodName() string {
 	return "aliexpress.interactive.task.complete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpressInteractiveTaskCompleteAPIRequest) GetApiParams(params url.Values) {
+func (r AliexpressinteractivetaskcompleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AliexpressInteractiveTaskCompleteAPIRequest) GetRawParams() model.Params {
+func (r AliexpressinteractivetaskcompleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetProjectAppKey is ProjectAppKey Setter
 // appkey
-func (r *AliexpressInteractiveTaskCompleteAPIRequest) SetProjectAppKey(_projectAppKey string) error {
+func (r *AliexpressinteractivetaskcompleteAPIRequest) SetProjectAppKey(_projectAppKey string) error {
 	r._projectAppKey = _projectAppKey
 	r.Set("project_app_key", _projectAppKey)
 	return nil
 }
 
 // GetProjectAppKey ProjectAppKey Getter
-func (r AliexpressInteractiveTaskCompleteAPIRequest) GetProjectAppKey() string {
+func (r AliexpressinteractivetaskcompleteAPIRequest) GetProjectAppKey() string {
 	return r._projectAppKey
 }
 
 // SetTaskInstanceId is TaskInstanceId Setter
 // 任务实例id
-func (r *AliexpressInteractiveTaskCompleteAPIRequest) SetTaskInstanceId(_taskInstanceId int64) error {
+func (r *AliexpressinteractivetaskcompleteAPIRequest) SetTaskInstanceId(_taskInstanceId int64) error {
 	r._taskInstanceId = _taskInstanceId
 	r.Set("task_instance_id", _taskInstanceId)
 	return nil
 }
 
 // GetTaskInstanceId TaskInstanceId Getter
-func (r AliexpressInteractiveTaskCompleteAPIRequest) GetTaskInstanceId() int64 {
+func (r AliexpressinteractivetaskcompleteAPIRequest) GetTaskInstanceId() int64 {
 	return r._taskInstanceId
 }

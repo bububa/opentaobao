@@ -1,7 +1,7 @@
 package aliqin
 
-// AlibabaAliqinFcIotDevicePostResult 结构体
-type AlibabaAliqinFcIotDevicePostResult struct {
+// AlibabaaliqinfciotdevicepostResult 结构体
+type AlibabaaliqinfciotdevicepostResult struct {
 	// 响应结果描述
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// 响应code 判断以此判断是否提交成功

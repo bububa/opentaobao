@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoFeedflowItemCrowdModifybindAPIRequest 修改人群出价或状态 API请求
+// TaobaofeedflowitemcrowdmodifybindAPIRequest 修改人群出价或状态 API请求
 // taobao.feedflow.item.crowd.modifybind
 //
 // 修改人群出价或状态
-type TaobaoFeedflowItemCrowdModifybindAPIRequest struct {
+type TaobaofeedflowitemcrowdmodifybindAPIRequest struct {
 	model.Params
 	// 人群信息
 	_crowds []CrowdDto
@@ -18,52 +18,52 @@ type TaobaoFeedflowItemCrowdModifybindAPIRequest struct {
 	_adgroupId int64
 }
 
-// NewTaobaoFeedflowItemCrowdModifybindRequest 初始化TaobaoFeedflowItemCrowdModifybindAPIRequest对象
-func NewTaobaoFeedflowItemCrowdModifybindRequest() *TaobaoFeedflowItemCrowdModifybindAPIRequest {
-	return &TaobaoFeedflowItemCrowdModifybindAPIRequest{
+// NewTaobaofeedflowitemcrowdmodifybindRequest 初始化TaobaofeedflowitemcrowdmodifybindAPIRequest对象
+func NewTaobaofeedflowitemcrowdmodifybindRequest() *TaobaofeedflowitemcrowdmodifybindAPIRequest {
+	return &TaobaofeedflowitemcrowdmodifybindAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemCrowdModifybindAPIRequest) GetApiMethodName() string {
+func (r TaobaofeedflowitemcrowdmodifybindAPIRequest) GetApiMethodName() string {
 	return "taobao.feedflow.item.crowd.modifybind"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemCrowdModifybindAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaofeedflowitemcrowdmodifybindAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoFeedflowItemCrowdModifybindAPIRequest) GetRawParams() model.Params {
+func (r TaobaofeedflowitemcrowdmodifybindAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCrowds is Crowds Setter
 // 人群信息
-func (r *TaobaoFeedflowItemCrowdModifybindAPIRequest) SetCrowds(_crowds []CrowdDto) error {
+func (r *TaobaofeedflowitemcrowdmodifybindAPIRequest) SetCrowds(_crowds []CrowdDto) error {
 	r._crowds = _crowds
 	r.Set("crowds", _crowds)
 	return nil
 }
 
 // GetCrowds Crowds Getter
-func (r TaobaoFeedflowItemCrowdModifybindAPIRequest) GetCrowds() []CrowdDto {
+func (r TaobaofeedflowitemcrowdmodifybindAPIRequest) GetCrowds() []CrowdDto {
 	return r._crowds
 }
 
 // SetAdgroupId is AdgroupId Setter
 // 单元id
-func (r *TaobaoFeedflowItemCrowdModifybindAPIRequest) SetAdgroupId(_adgroupId int64) error {
+func (r *TaobaofeedflowitemcrowdmodifybindAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
 	r.Set("adgroup_id", _adgroupId)
 	return nil
 }
 
 // GetAdgroupId AdgroupId Getter
-func (r TaobaoFeedflowItemCrowdModifybindAPIRequest) GetAdgroupId() int64 {
+func (r TaobaofeedflowitemcrowdmodifybindAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }

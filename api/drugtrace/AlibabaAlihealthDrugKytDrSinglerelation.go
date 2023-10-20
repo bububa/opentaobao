@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// AlibabaAlihealthDrugKytDrSinglerelation 多融单码关联关系查询
+// Alibabaalihealthdrugkytdrsinglerelation 多融单码关联关系查询
 // alibaba.alihealth.drug.kyt.dr.singlerelation
 //
 // 单码关联关系查询
-func AlibabaAlihealthDrugKytDrSinglerelation(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrSinglerelationAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytDrSinglerelationAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytDrSinglerelationAPIResponse
+func Alibabaalihealthdrugkytdrsinglerelation(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugkytdrsinglerelationAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugkytdrsinglerelationAPIResponse, error) {
+	var resp drugtrace.AlibabaalihealthdrugkytdrsinglerelationAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

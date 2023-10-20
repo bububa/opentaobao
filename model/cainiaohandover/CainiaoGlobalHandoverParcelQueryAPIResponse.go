@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoGlobalHandoverParcelQueryAPIResponse 获取交接单小包信息 API返回值
+// CainiaoglobalhandoverparcelqueryAPIResponse 获取交接单小包信息 API返回值
 // cainiao.global.handover.parcel.query
 //
 // 提供给ISV通过该接口查询小包信息
-type CainiaoGlobalHandoverParcelQueryAPIResponse struct {
+type CainiaoglobalhandoverparcelqueryAPIResponse struct {
 	model.CommonResponse
-	CainiaoGlobalHandoverParcelQueryAPIResponseModel
+	CainiaoglobalhandoverparcelqueryAPIResponseModel
 }
 
-// CainiaoGlobalHandoverParcelQueryAPIResponseModel is 获取交接单小包信息 成功返回结果
-type CainiaoGlobalHandoverParcelQueryAPIResponseModel struct {
+// CainiaoglobalhandoverparcelqueryAPIResponseModel is 获取交接单小包信息 成功返回结果
+type CainiaoglobalhandoverparcelqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_global_handover_parcel_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

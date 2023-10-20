@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alicom"
 )
 
-// AlibabaAlicomVtDistributeorderCreate 通信业务外放下单
+// Alibabaalicomvtdistributeordercreate 通信业务外放下单
 // alibaba.alicom.vt.distributeorder.create
 //
 // 通信业务外放下单接口
-func AlibabaAlicomVtDistributeorderCreate(clt *core.SDKClient, req *alicom.AlibabaAlicomVtDistributeorderCreateAPIRequest, session string) (*alicom.AlibabaAlicomVtDistributeorderCreateAPIResponse, error) {
-	var resp alicom.AlibabaAlicomVtDistributeorderCreateAPIResponse
+func Alibabaalicomvtdistributeordercreate(clt *core.SDKClient, req *alicom.AlibabaalicomvtdistributeordercreateAPIRequest, session string) (*alicom.AlibabaalicomvtdistributeordercreateAPIResponse, error) {
+	var resp alicom.AlibabaalicomvtdistributeordercreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

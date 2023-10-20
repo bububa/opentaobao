@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressLogisticsDsTrackinginfoQueryAPIResponse 查询物流追踪信息 API返回值
+// AliexpresslogisticsdstrackinginfoqueryAPIResponse 查询物流追踪信息 API返回值
 // aliexpress.logistics.ds.trackinginfo.query
 //
 // Dropshipper查询物流追踪信息
-type AliexpressLogisticsDsTrackinginfoQueryAPIResponse struct {
+type AliexpresslogisticsdstrackinginfoqueryAPIResponse struct {
 	model.CommonResponse
-	AliexpressLogisticsDsTrackinginfoQueryAPIResponseModel
+	AliexpresslogisticsdstrackinginfoqueryAPIResponseModel
 }
 
-// AliexpressLogisticsDsTrackinginfoQueryAPIResponseModel is 查询物流追踪信息 成功返回结果
-type AliexpressLogisticsDsTrackinginfoQueryAPIResponseModel struct {
+// AliexpresslogisticsdstrackinginfoqueryAPIResponseModel is 查询物流追踪信息 成功返回结果
+type AliexpresslogisticsdstrackinginfoqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_logistics_ds_trackinginfo_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/iot"
 )
 
-// TaobaoAilabAicloudTopAuthLogout 登出
+// Taobaoailabaicloudtopauthlogout 登出
 // taobao.ailab.aicloud.top.auth.logout
 //
 // 登出
-func TaobaoAilabAicloudTopAuthLogout(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopAuthLogoutAPIRequest, session string) (*iot.TaobaoAilabAicloudTopAuthLogoutAPIResponse, error) {
-	var resp iot.TaobaoAilabAicloudTopAuthLogoutAPIResponse
+func Taobaoailabaicloudtopauthlogout(clt *core.SDKClient, req *iot.TaobaoailabaicloudtopauthlogoutAPIRequest, session string) (*iot.TaobaoailabaicloudtopauthlogoutAPIResponse, error) {
+	var resp iot.TaobaoailabaicloudtopauthlogoutAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -3,7 +3,7 @@ package hotel
 // HotelPriceResultSet 结构体
 type HotelPriceResultSet struct {
 	// 每个标准酒店的库价集合
-	Results []SHotelPrice `json:"results,omitempty" xml:"results>s_hotel_price,omitempty"`
+	Results []ShotelPrice `json:"results,omitempty" xml:"results>shotel_price,omitempty"`
 	// 当前用户的会员信息
 	BindMemberInfos []SellerSupplierPartnerMemberInfoVo `json:"bind_member_infos,omitempty" xml:"bind_member_infos>seller_supplier_partner_member_info_vo,omitempty"`
 	// 渠道id，0--pc,1--无线

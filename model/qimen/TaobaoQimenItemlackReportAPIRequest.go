@@ -6,48 +6,48 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenItemlackReportAPIRequest 发货单缺货通知接口 API请求
+// TaobaoqimenitemlackreportAPIRequest 发货单缺货通知接口 API请求
 // taobao.qimen.itemlack.report
 //
 // WMS调用奇门的接口,将商家在库某商品缺货的信息回传给ERP
-type TaobaoQimenItemlackReportAPIRequest struct {
+type TaobaoqimenitemlackreportAPIRequest struct {
 	model.Params
 	//
 	_request *ItemLackReportRequest
 }
 
-// NewTaobaoQimenItemlackReportRequest 初始化TaobaoQimenItemlackReportAPIRequest对象
-func NewTaobaoQimenItemlackReportRequest() *TaobaoQimenItemlackReportAPIRequest {
-	return &TaobaoQimenItemlackReportAPIRequest{
+// NewTaobaoqimenitemlackreportRequest 初始化TaobaoqimenitemlackreportAPIRequest对象
+func NewTaobaoqimenitemlackreportRequest() *TaobaoqimenitemlackreportAPIRequest {
+	return &TaobaoqimenitemlackreportAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoQimenItemlackReportAPIRequest) GetApiMethodName() string {
+func (r TaobaoqimenitemlackreportAPIRequest) GetApiMethodName() string {
 	return "taobao.qimen.itemlack.report"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoQimenItemlackReportAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoqimenitemlackreportAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoQimenItemlackReportAPIRequest) GetRawParams() model.Params {
+func (r TaobaoqimenitemlackreportAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRequest is Request Setter
-func (r *TaobaoQimenItemlackReportAPIRequest) SetRequest(_request *ItemLackReportRequest) error {
+func (r *TaobaoqimenitemlackreportAPIRequest) SetRequest(_request *ItemLackReportRequest) error {
 	r._request = _request
 	r.Set("request", _request)
 	return nil
 }
 
 // GetRequest Request Getter
-func (r TaobaoQimenItemlackReportAPIRequest) GetRequest() *ItemLackReportRequest {
+func (r TaobaoqimenitemlackreportAPIRequest) GetRequest() *ItemLackReportRequest {
 	return r._request
 }

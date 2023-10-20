@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest 根据ctei查询状态 API请求
+// AlibabaailabstmallgenieauthdevicestatusgetbycteiAPIRequest 根据ctei查询状态 API请求
 // alibaba.ailabs.tmallgenie.auth.device.status.getbyctei
 //
 // 提供给电信查询设备在线状态值
-type AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest struct {
+type AlibabaailabstmallgenieauthdevicestatusgetbycteiAPIRequest struct {
 	model.Params
 	// ctei
 	_ctei string
 }
 
-// NewAlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiRequest 初始化AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest对象
-func NewAlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiRequest() *AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest {
-	return &AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest{
+// NewAlibabaailabstmallgenieauthdevicestatusgetbycteiRequest 初始化AlibabaailabstmallgenieauthdevicestatusgetbycteiAPIRequest对象
+func NewAlibabaailabstmallgenieauthdevicestatusgetbycteiRequest() *AlibabaailabstmallgenieauthdevicestatusgetbycteiAPIRequest {
+	return &AlibabaailabstmallgenieauthdevicestatusgetbycteiAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest) GetApiMethodName() string {
+func (r AlibabaailabstmallgenieauthdevicestatusgetbycteiAPIRequest) GetApiMethodName() string {
 	return "alibaba.ailabs.tmallgenie.auth.device.status.getbyctei"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaailabstmallgenieauthdevicestatusgetbycteiAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest) GetRawParams() model.Params {
+func (r AlibabaailabstmallgenieauthdevicestatusgetbycteiAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCtei is Ctei Setter
 // ctei
-func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest) SetCtei(_ctei string) error {
+func (r *AlibabaailabstmallgenieauthdevicestatusgetbycteiAPIRequest) SetCtei(_ctei string) error {
 	r._ctei = _ctei
 	r.Set("ctei", _ctei)
 	return nil
 }
 
 // GetCtei Ctei Getter
-func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest) GetCtei() string {
+func (r AlibabaailabstmallgenieauthdevicestatusgetbycteiAPIRequest) GetCtei() string {
 	return r._ctei
 }

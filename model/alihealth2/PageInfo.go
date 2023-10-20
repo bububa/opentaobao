@@ -3,7 +3,7 @@ package alihealth2
 // PageInfo 结构体
 type PageInfo struct {
 	// result
-	Results []AlibabaAlihealthTracecodesellerChannelSearchResult `json:"results,omitempty" xml:"results>alibaba_alihealth_tracecodeseller_channel_search_result,omitempty"`
+	Results []AlibabaalihealthtracecodesellerchannelsearchResult `json:"results,omitempty" xml:"results>alibabaalihealthtracecodesellerchannelsearch_result,omitempty"`
 	// totalNum
 	TotalNum int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
 	// page

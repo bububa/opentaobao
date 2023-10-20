@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoBimTradeorderConsignAPIResponse 驱动保税交易订单发货 API返回值
+// CainiaobimtradeorderconsignAPIResponse 驱动保税交易订单发货 API返回值
 // cainiao.bim.tradeorder.consign
 //
 // 驱动保税交易订单发货
-type CainiaoBimTradeorderConsignAPIResponse struct {
+type CainiaobimtradeorderconsignAPIResponse struct {
 	model.CommonResponse
-	CainiaoBimTradeorderConsignAPIResponseModel
+	CainiaobimtradeorderconsignAPIResponseModel
 }
 
-// CainiaoBimTradeorderConsignAPIResponseModel is 驱动保税交易订单发货 成功返回结果
-type CainiaoBimTradeorderConsignAPIResponseModel struct {
+// CainiaobimtradeorderconsignAPIResponseModel is 驱动保税交易订单发货 成功返回结果
+type CainiaobimtradeorderconsignAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_bim_tradeorder_consign_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

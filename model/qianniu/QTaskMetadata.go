@@ -1,7 +1,7 @@
 package qianniu
 
-// QTaskMetadata 结构体
-type QTaskMetadata struct {
+// QtaskMetadata 结构体
+type QtaskMetadata struct {
 	// 任务标题
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 任务摘要内容

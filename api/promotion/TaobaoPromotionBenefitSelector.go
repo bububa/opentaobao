@@ -5,7 +5,7 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-// TaobaoPromotionBenefitSelector 权益选择器接口
+// Taobaopromotionbenefitselector 权益选择器接口
 // taobao.promotion.benefit.selector
 //
 // 权益选择器，查询用户已有权益，提供用户进行已拥有权益的选择操作，权益发放的前置操作
@@ -14,8 +14,8 @@ import (
 // 3、接口文档中写的 优酷会员卡--2 写错了，正确的是13（已接口返回为准）&lt;br/&gt;
 // 4、step=2用config_id查，即1，4，13，14  &lt;br/&gt;
 // 5、step=3权益id指具体采购的权益id，可以认为是采购的主键（权益id 可以通过step=2 获得 ）  &lt;br/&gt;
-func TaobaoPromotionBenefitSelector(clt *core.SDKClient, req *promotion.TaobaoPromotionBenefitSelectorAPIRequest, session string) (*promotion.TaobaoPromotionBenefitSelectorAPIResponse, error) {
-	var resp promotion.TaobaoPromotionBenefitSelectorAPIResponse
+func Taobaopromotionbenefitselector(clt *core.SDKClient, req *promotion.TaobaopromotionbenefitselectorAPIRequest, session string) (*promotion.TaobaopromotionbenefitselectorAPIResponse, error) {
+	var resp promotion.TaobaopromotionbenefitselectorAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

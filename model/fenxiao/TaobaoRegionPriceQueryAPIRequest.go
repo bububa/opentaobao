@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoRegionPriceQueryAPIRequest 区域价格查询 API请求
+// TaobaoregionpricequeryAPIRequest 区域价格查询 API请求
 // taobao.region.price.query
 //
 // 区域价格查询
-type TaobaoRegionPriceQueryAPIRequest struct {
+type TaobaoregionpricequeryAPIRequest struct {
 	model.Params
 	// 不传则返回所有设置的区域价格
 	_regionalPriceDtos []RegionalPriceDto
@@ -20,65 +20,65 @@ type TaobaoRegionPriceQueryAPIRequest struct {
 	_skuId int64
 }
 
-// NewTaobaoRegionPriceQueryRequest 初始化TaobaoRegionPriceQueryAPIRequest对象
-func NewTaobaoRegionPriceQueryRequest() *TaobaoRegionPriceQueryAPIRequest {
-	return &TaobaoRegionPriceQueryAPIRequest{
+// NewTaobaoregionpricequeryRequest 初始化TaobaoregionpricequeryAPIRequest对象
+func NewTaobaoregionpricequeryRequest() *TaobaoregionpricequeryAPIRequest {
+	return &TaobaoregionpricequeryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoRegionPriceQueryAPIRequest) GetApiMethodName() string {
+func (r TaobaoregionpricequeryAPIRequest) GetApiMethodName() string {
 	return "taobao.region.price.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoRegionPriceQueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoregionpricequeryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoRegionPriceQueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoregionpricequeryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRegionalPriceDtos is RegionalPriceDtos Setter
 // 不传则返回所有设置的区域价格
-func (r *TaobaoRegionPriceQueryAPIRequest) SetRegionalPriceDtos(_regionalPriceDtos []RegionalPriceDto) error {
+func (r *TaobaoregionpricequeryAPIRequest) SetRegionalPriceDtos(_regionalPriceDtos []RegionalPriceDto) error {
 	r._regionalPriceDtos = _regionalPriceDtos
 	r.Set("regional_price_dtos", _regionalPriceDtos)
 	return nil
 }
 
 // GetRegionalPriceDtos RegionalPriceDtos Getter
-func (r TaobaoRegionPriceQueryAPIRequest) GetRegionalPriceDtos() []RegionalPriceDto {
+func (r TaobaoregionpricequeryAPIRequest) GetRegionalPriceDtos() []RegionalPriceDto {
 	return r._regionalPriceDtos
 }
 
 // SetItemId is ItemId Setter
 // 商品id
-func (r *TaobaoRegionPriceQueryAPIRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoregionpricequeryAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
 	r.Set("item_id", _itemId)
 	return nil
 }
 
 // GetItemId ItemId Getter
-func (r TaobaoRegionPriceQueryAPIRequest) GetItemId() int64 {
+func (r TaobaoregionpricequeryAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
 // SetSkuId is SkuId Setter
 // 无sku可传0
-func (r *TaobaoRegionPriceQueryAPIRequest) SetSkuId(_skuId int64) error {
+func (r *TaobaoregionpricequeryAPIRequest) SetSkuId(_skuId int64) error {
 	r._skuId = _skuId
 	r.Set("sku_id", _skuId)
 	return nil
 }
 
 // GetSkuId SkuId Getter
-func (r TaobaoRegionPriceQueryAPIRequest) GetSkuId() int64 {
+func (r TaobaoregionpricequeryAPIRequest) GetSkuId() int64 {
 	return r._skuId
 }

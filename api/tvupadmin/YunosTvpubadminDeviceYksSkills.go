@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-// YunosTvpubadminDeviceYksSkills 根据设备id获取技能列表
+// Yunostvpubadmindeviceyksskills 根据设备id获取技能列表
 // yunos.tvpubadmin.device.yks.skills
 //
 // 根据设备id获取技能列表
-func YunosTvpubadminDeviceYksSkills(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceYksSkillsAPIRequest, session string) (*tvupadmin.YunosTvpubadminDeviceYksSkillsAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminDeviceYksSkillsAPIResponse
+func Yunostvpubadmindeviceyksskills(clt *core.SDKClient, req *tvupadmin.YunostvpubadmindeviceyksskillsAPIRequest, session string) (*tvupadmin.YunostvpubadmindeviceyksskillsAPIResponse, error) {
+	var resp tvupadmin.YunostvpubadmindeviceyksskillsAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoLogisticsExpressPickcodeCheckAPIResponse 快递公司取货码校验 API返回值
+// TaobaologisticsexpresspickcodecheckAPIResponse 快递公司取货码校验 API返回值
 // taobao.logistics.express.pickcode.check
 //
 // 快递公司取货码校验
-type TaobaoLogisticsExpressPickcodeCheckAPIResponse struct {
+type TaobaologisticsexpresspickcodecheckAPIResponse struct {
 	model.CommonResponse
-	TaobaoLogisticsExpressPickcodeCheckAPIResponseModel
+	TaobaologisticsexpresspickcodecheckAPIResponseModel
 }
 
-// TaobaoLogisticsExpressPickcodeCheckAPIResponseModel is 快递公司取货码校验 成功返回结果
-type TaobaoLogisticsExpressPickcodeCheckAPIResponseModel struct {
+// TaobaologisticsexpresspickcodecheckAPIResponseModel is 快递公司取货码校验 成功返回结果
+type TaobaologisticsexpresspickcodecheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_express_pickcode_check_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseNewhomeTalentBindStore 达人号门店关系绑定
+// Alibabaalihousenewhometalentbindstore 达人号门店关系绑定
 // alibaba.alihouse.newhome.talent.bind.store
 //
 // 达人号门店关系绑定
-func AlibabaAlihouseNewhomeTalentBindStore(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeTalentBindStoreAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeTalentBindStoreAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeTalentBindStoreAPIResponse
+func Alibabaalihousenewhometalentbindstore(clt *core.SDKClient, req *alihouse.AlibabaalihousenewhometalentbindstoreAPIRequest, session string) (*alihouse.AlibabaalihousenewhometalentbindstoreAPIResponse, error) {
+	var resp alihouse.AlibabaalihousenewhometalentbindstoreAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

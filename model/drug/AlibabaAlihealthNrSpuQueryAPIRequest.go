@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthNrSpuQueryAPIRequest 获取标品库标品信息 API请求
+// AlibabaalihealthnrspuqueryAPIRequest 获取标品库标品信息 API请求
 // alibaba.alihealth.nr.spu.query
 //
 // 提供给ERP使用的，获取健康标品库信息
-type AlibabaAlihealthNrSpuQueryAPIRequest struct {
+type AlibabaalihealthnrspuqueryAPIRequest struct {
 	model.Params
 	// 标品查询条件
 	_query *TopAlihealthSpuQuery
@@ -18,52 +18,52 @@ type AlibabaAlihealthNrSpuQueryAPIRequest struct {
 	_options *TopAlihealthSpuQueryOptions
 }
 
-// NewAlibabaAlihealthNrSpuQueryRequest 初始化AlibabaAlihealthNrSpuQueryAPIRequest对象
-func NewAlibabaAlihealthNrSpuQueryRequest() *AlibabaAlihealthNrSpuQueryAPIRequest {
-	return &AlibabaAlihealthNrSpuQueryAPIRequest{
+// NewAlibabaalihealthnrspuqueryRequest 初始化AlibabaalihealthnrspuqueryAPIRequest对象
+func NewAlibabaalihealthnrspuqueryRequest() *AlibabaalihealthnrspuqueryAPIRequest {
+	return &AlibabaalihealthnrspuqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthNrSpuQueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthnrspuqueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.nr.spu.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthNrSpuQueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthnrspuqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthNrSpuQueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthnrspuqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQuery is Query Setter
 // 标品查询条件
-func (r *AlibabaAlihealthNrSpuQueryAPIRequest) SetQuery(_query *TopAlihealthSpuQuery) error {
+func (r *AlibabaalihealthnrspuqueryAPIRequest) SetQuery(_query *TopAlihealthSpuQuery) error {
 	r._query = _query
 	r.Set("query", _query)
 	return nil
 }
 
 // GetQuery Query Getter
-func (r AlibabaAlihealthNrSpuQueryAPIRequest) GetQuery() *TopAlihealthSpuQuery {
+func (r AlibabaalihealthnrspuqueryAPIRequest) GetQuery() *TopAlihealthSpuQuery {
 	return r._query
 }
 
 // SetOptions is Options Setter
 // 查询选择器
-func (r *AlibabaAlihealthNrSpuQueryAPIRequest) SetOptions(_options *TopAlihealthSpuQueryOptions) error {
+func (r *AlibabaalihealthnrspuqueryAPIRequest) SetOptions(_options *TopAlihealthSpuQueryOptions) error {
 	r._options = _options
 	r.Set("options", _options)
 	return nil
 }
 
 // GetOptions Options Getter
-func (r AlibabaAlihealthNrSpuQueryAPIRequest) GetOptions() *TopAlihealthSpuQueryOptions {
+func (r AlibabaalihealthnrspuqueryAPIRequest) GetOptions() *TopAlihealthSpuQueryOptions {
 	return r._options
 }

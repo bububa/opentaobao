@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscCrmCustomerGetAPIRequest 查询顾客详情 API请求
+// AlibabaalsccrmcustomergetAPIRequest 查询顾客详情 API请求
 // alibaba.alsc.crm.customer.get
 //
 // 查询顾客详情
-type AlibabaAlscCrmCustomerGetAPIRequest struct {
+type AlibabaalsccrmcustomergetAPIRequest struct {
 	model.Params
 	// 顾客详情查询条件
 	_paramCustomerIdQueryOpenReq *CustomerIdQueryOpenReq
 }
 
-// NewAlibabaAlscCrmCustomerGetRequest 初始化AlibabaAlscCrmCustomerGetAPIRequest对象
-func NewAlibabaAlscCrmCustomerGetRequest() *AlibabaAlscCrmCustomerGetAPIRequest {
-	return &AlibabaAlscCrmCustomerGetAPIRequest{
+// NewAlibabaalsccrmcustomergetRequest 初始化AlibabaalsccrmcustomergetAPIRequest对象
+func NewAlibabaalsccrmcustomergetRequest() *AlibabaalsccrmcustomergetAPIRequest {
+	return &AlibabaalsccrmcustomergetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmCustomerGetAPIRequest) GetApiMethodName() string {
+func (r AlibabaalsccrmcustomergetAPIRequest) GetApiMethodName() string {
 	return "alibaba.alsc.crm.customer.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmCustomerGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalsccrmcustomergetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlscCrmCustomerGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalsccrmcustomergetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamCustomerIdQueryOpenReq is ParamCustomerIdQueryOpenReq Setter
 // 顾客详情查询条件
-func (r *AlibabaAlscCrmCustomerGetAPIRequest) SetParamCustomerIdQueryOpenReq(_paramCustomerIdQueryOpenReq *CustomerIdQueryOpenReq) error {
+func (r *AlibabaalsccrmcustomergetAPIRequest) SetParamCustomerIdQueryOpenReq(_paramCustomerIdQueryOpenReq *CustomerIdQueryOpenReq) error {
 	r._paramCustomerIdQueryOpenReq = _paramCustomerIdQueryOpenReq
 	r.Set("param_customer_id_query_open_req", _paramCustomerIdQueryOpenReq)
 	return nil
 }
 
 // GetParamCustomerIdQueryOpenReq ParamCustomerIdQueryOpenReq Getter
-func (r AlibabaAlscCrmCustomerGetAPIRequest) GetParamCustomerIdQueryOpenReq() *CustomerIdQueryOpenReq {
+func (r AlibabaalsccrmcustomergetAPIRequest) GetParamCustomerIdQueryOpenReq() *CustomerIdQueryOpenReq {
 	return r._paramCustomerIdQueryOpenReq
 }

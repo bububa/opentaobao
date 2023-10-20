@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/openmall"
 )
 
-// TaobaoOpenmallRefundImageUpload OpenMall退款图片上传
+// Taobaoopenmallrefundimageupload OpenMall退款图片上传
 // taobao.openmall.refund.image.upload
 //
 // OpenMall退款图片上传
-func TaobaoOpenmallRefundImageUpload(clt *core.SDKClient, req *openmall.TaobaoOpenmallRefundImageUploadAPIRequest, session string) (*openmall.TaobaoOpenmallRefundImageUploadAPIResponse, error) {
-	var resp openmall.TaobaoOpenmallRefundImageUploadAPIResponse
+func Taobaoopenmallrefundimageupload(clt *core.SDKClient, req *openmall.TaobaoopenmallrefundimageuploadAPIRequest, session string) (*openmall.TaobaoopenmallrefundimageuploadAPIResponse, error) {
+	var resp openmall.TaobaoopenmallrefundimageuploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

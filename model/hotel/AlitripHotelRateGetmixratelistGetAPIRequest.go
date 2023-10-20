@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripHotelRateGetmixratelistGetAPIRequest 酒店评论接口 API请求
+// AlitriphotelrategetmixratelistgetAPIRequest 酒店评论接口 API请求
 // alitrip.hotel.rate.getmixratelist.get
 //
 // 酒店评论接口
-type AlitripHotelRateGetmixratelistGetAPIRequest struct {
+type AlitriphotelrategetmixratelistgetAPIRequest struct {
 	model.Params
 	// 评论参数
 	_paramGetMixRateListParam *GetMixRateListParam
 }
 
-// NewAlitripHotelRateGetmixratelistGetRequest 初始化AlitripHotelRateGetmixratelistGetAPIRequest对象
-func NewAlitripHotelRateGetmixratelistGetRequest() *AlitripHotelRateGetmixratelistGetAPIRequest {
-	return &AlitripHotelRateGetmixratelistGetAPIRequest{
+// NewAlitriphotelrategetmixratelistgetRequest 初始化AlitriphotelrategetmixratelistgetAPIRequest对象
+func NewAlitriphotelrategetmixratelistgetRequest() *AlitriphotelrategetmixratelistgetAPIRequest {
+	return &AlitriphotelrategetmixratelistgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripHotelRateGetmixratelistGetAPIRequest) GetApiMethodName() string {
+func (r AlitriphotelrategetmixratelistgetAPIRequest) GetApiMethodName() string {
 	return "alitrip.hotel.rate.getmixratelist.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripHotelRateGetmixratelistGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlitriphotelrategetmixratelistgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripHotelRateGetmixratelistGetAPIRequest) GetRawParams() model.Params {
+func (r AlitriphotelrategetmixratelistgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamGetMixRateListParam is ParamGetMixRateListParam Setter
 // 评论参数
-func (r *AlitripHotelRateGetmixratelistGetAPIRequest) SetParamGetMixRateListParam(_paramGetMixRateListParam *GetMixRateListParam) error {
+func (r *AlitriphotelrategetmixratelistgetAPIRequest) SetParamGetMixRateListParam(_paramGetMixRateListParam *GetMixRateListParam) error {
 	r._paramGetMixRateListParam = _paramGetMixRateListParam
 	r.Set("param_get_mix_rate_list_param", _paramGetMixRateListParam)
 	return nil
 }
 
 // GetParamGetMixRateListParam ParamGetMixRateListParam Getter
-func (r AlitripHotelRateGetmixratelistGetAPIRequest) GetParamGetMixRateListParam() *GetMixRateListParam {
+func (r AlitriphotelrategetmixratelistgetAPIRequest) GetParamGetMixRateListParam() *GetMixRateListParam {
 	return r._paramGetMixRateListParam
 }

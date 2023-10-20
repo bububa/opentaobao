@@ -1,7 +1,7 @@
 package tmallservice
 
-// AlibabaServicecenterSpserviceorderQueryResult 结构体
-type AlibabaServicecenterSpserviceorderQueryResult struct {
+// AlibabaservicecenterspserviceorderqueryResult 结构体
+type AlibabaservicecenterspserviceorderqueryResult struct {
 	// 错误描述
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 错误码

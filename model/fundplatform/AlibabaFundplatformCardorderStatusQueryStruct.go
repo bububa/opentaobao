@@ -1,7 +1,7 @@
 package fundplatform
 
-// AlibabaFundplatformCardorderStatusQueryStruct 结构体
-type AlibabaFundplatformCardorderStatusQueryStruct struct {
+// AlibabafundplatformcardorderstatusqueryStruct 结构体
+type AlibabafundplatformcardorderstatusqueryStruct struct {
 	// 环境变量值，该字段为枚举值：daily（日常），pre（预发），online（线上）
 	OwnSign string `json:"own_sign,omitempty" xml:"own_sign,omitempty"`
 	// 制卡当前阶段 该字段是枚举值，有： REQUEST_RECEIVED（请求接收成功），REQUEST_NOT_EXIST（请求不存在），WAITING_DELIVERY（制卡完成，等待发货），DELIVERED（已发货）

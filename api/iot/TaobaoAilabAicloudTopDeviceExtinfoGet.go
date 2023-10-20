@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/iot"
 )
 
-// TaobaoAilabAicloudTopDeviceExtinfoGet 获取设备扩展信息
+// Taobaoailabaicloudtopdeviceextinfoget 获取设备扩展信息
 // taobao.ailab.aicloud.top.device.extinfo.get
 //
 // 获取设备扩展信息
-func TaobaoAilabAicloudTopDeviceExtinfoGet(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceExtinfoGetAPIResponse, error) {
-	var resp iot.TaobaoAilabAicloudTopDeviceExtinfoGetAPIResponse
+func Taobaoailabaicloudtopdeviceextinfoget(clt *core.SDKClient, req *iot.TaobaoailabaicloudtopdeviceextinfogetAPIRequest, session string) (*iot.TaobaoailabaicloudtopdeviceextinfogetAPIResponse, error) {
+	var resp iot.TaobaoailabaicloudtopdeviceextinfogetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

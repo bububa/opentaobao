@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// TaobaoUniversalbpReportQueryNotItemPromotion 其他主体报表查询
+// Taobaouniversalbpreportquerynotitempromotion 其他主体报表查询
 // taobao.universalbp.report.query.not.item.promotion
 //
 // 其他主体报表查询
-func TaobaoUniversalbpReportQueryNotItemPromotion(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest, session string) (*simba.TaobaoUniversalbpReportQueryNotItemPromotionAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpReportQueryNotItemPromotionAPIResponse
+func Taobaouniversalbpreportquerynotitempromotion(clt *core.SDKClient, req *simba.TaobaouniversalbpreportquerynotitempromotionAPIRequest, session string) (*simba.TaobaouniversalbpreportquerynotitempromotionAPIResponse, error) {
+	var resp simba.TaobaouniversalbpreportquerynotitempromotionAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

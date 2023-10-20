@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLegalCaseEntrustCallbackAPIResponse 委托回调接口 API返回值
+// AlibabalegalcaseentrustcallbackAPIResponse 委托回调接口 API返回值
 // alibaba.legal.case.entrust.callback
 //
 // 委托回调接口
-type AlibabaLegalCaseEntrustCallbackAPIResponse struct {
+type AlibabalegalcaseentrustcallbackAPIResponse struct {
 	model.CommonResponse
-	AlibabaLegalCaseEntrustCallbackAPIResponseModel
+	AlibabalegalcaseentrustcallbackAPIResponseModel
 }
 
-// AlibabaLegalCaseEntrustCallbackAPIResponseModel is 委托回调接口 成功返回结果
-type AlibabaLegalCaseEntrustCallbackAPIResponseModel struct {
+// AlibabalegalcaseentrustcallbackAPIResponseModel is 委托回调接口 成功返回结果
+type AlibabalegalcaseentrustcallbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_legal_case_entrust_callback_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

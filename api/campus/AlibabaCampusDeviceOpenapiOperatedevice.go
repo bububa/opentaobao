@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// AlibabaCampusDeviceOpenapiOperatedevice 根据uuid操作设备
+// Alibabacampusdeviceopenapioperatedevice 根据uuid操作设备
 // alibaba.campus.device.openapi.operatedevice
 //
 // 根据uuid操作设备
-func AlibabaCampusDeviceOpenapiOperatedevice(clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest, session string) (*campus.AlibabaCampusDeviceOpenapiOperatedeviceAPIResponse, error) {
-	var resp campus.AlibabaCampusDeviceOpenapiOperatedeviceAPIResponse
+func Alibabacampusdeviceopenapioperatedevice(clt *core.SDKClient, req *campus.AlibabacampusdeviceopenapioperatedeviceAPIRequest, session string) (*campus.AlibabacampusdeviceopenapioperatedeviceAPIResponse, error) {
+	var resp campus.AlibabacampusdeviceopenapioperatedeviceAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

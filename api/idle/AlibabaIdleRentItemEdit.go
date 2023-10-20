@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/idle"
 )
 
-// AlibabaIdleRentItemEdit 租赁商品编辑
+// Alibabaidlerentitemedit 租赁商品编辑
 // alibaba.idle.rent.item.edit
 //
 // 发布闲鱼租赁商品
-func AlibabaIdleRentItemEdit(clt *core.SDKClient, req *idle.AlibabaIdleRentItemEditAPIRequest, session string) (*idle.AlibabaIdleRentItemEditAPIResponse, error) {
-	var resp idle.AlibabaIdleRentItemEditAPIResponse
+func Alibabaidlerentitemedit(clt *core.SDKClient, req *idle.AlibabaidlerentitemeditAPIRequest, session string) (*idle.AlibabaidlerentitemeditAPIResponse, error) {
+	var resp idle.AlibabaidlerentitemeditAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -13,19 +13,19 @@ import (
 type TaobaotbkdgcpaactivitydetailAPIRequest struct {
 	model.Params
 	// CPA活动奖励的统计口径，相关说明见文档：https://www.yuque.com/docs/share/7ecf8cf1-7f99-4633-a2ed-f9b6f8116af5?#
-	_indicatoralias string
+	_indicatorAlias string
 	// 指定数据批次号(时间戳)
 	_runtime string
 	// 明细类型，1：预估明细，2：结算明细
-	_querytype int64
+	_queryType int64
 	// 每页条数
-	_pagesize int64
+	_pageSize int64
 	// 页码
-	_pageno int64
+	_pageNo int64
 	// CPA活动ID
-	_eventid int64
+	_eventId int64
 	// 下一页开始查询的记录主键id
-	_startid int64
+	_startId int64
 }
 
 // NewTaobaotbkdgcpaactivitydetailRequest 初始化TaobaotbkdgcpaactivitydetailAPIRequest对象
@@ -52,17 +52,17 @@ func (r TaobaotbkdgcpaactivitydetailAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetIndicatoralias is Indicatoralias Setter
+// SetIndicatorAlias is IndicatorAlias Setter
 // CPA活动奖励的统计口径，相关说明见文档：https://www.yuque.com/docs/share/7ecf8cf1-7f99-4633-a2ed-f9b6f8116af5?#
-func (r *TaobaotbkdgcpaactivitydetailAPIRequest) SetIndicatoralias(_indicatoralias string) error {
-	r._indicatoralias = _indicatoralias
-	r.Set("indicator_alias", _indicatoralias)
+func (r *TaobaotbkdgcpaactivitydetailAPIRequest) SetIndicatorAlias(_indicatorAlias string) error {
+	r._indicatorAlias = _indicatorAlias
+	r.Set("indicator_alias", _indicatorAlias)
 	return nil
 }
 
-// GetIndicatoralias Indicatoralias Getter
-func (r TaobaotbkdgcpaactivitydetailAPIRequest) GetIndicatoralias() string {
-	return r._indicatoralias
+// GetIndicatorAlias IndicatorAlias Getter
+func (r TaobaotbkdgcpaactivitydetailAPIRequest) GetIndicatorAlias() string {
+	return r._indicatorAlias
 }
 
 // SetRuntime is Runtime Setter
@@ -78,67 +78,67 @@ func (r TaobaotbkdgcpaactivitydetailAPIRequest) GetRuntime() string {
 	return r._runtime
 }
 
-// SetQuerytype is Querytype Setter
+// SetQueryType is QueryType Setter
 // 明细类型，1：预估明细，2：结算明细
-func (r *TaobaotbkdgcpaactivitydetailAPIRequest) SetQuerytype(_querytype int64) error {
-	r._querytype = _querytype
-	r.Set("query_type", _querytype)
+func (r *TaobaotbkdgcpaactivitydetailAPIRequest) SetQueryType(_queryType int64) error {
+	r._queryType = _queryType
+	r.Set("query_type", _queryType)
 	return nil
 }
 
-// GetQuerytype Querytype Getter
-func (r TaobaotbkdgcpaactivitydetailAPIRequest) GetQuerytype() int64 {
-	return r._querytype
+// GetQueryType QueryType Getter
+func (r TaobaotbkdgcpaactivitydetailAPIRequest) GetQueryType() int64 {
+	return r._queryType
 }
 
-// SetPagesize is Pagesize Setter
+// SetPageSize is PageSize Setter
 // 每页条数
-func (r *TaobaotbkdgcpaactivitydetailAPIRequest) SetPagesize(_pagesize int64) error {
-	r._pagesize = _pagesize
-	r.Set("page_size", _pagesize)
+func (r *TaobaotbkdgcpaactivitydetailAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
 	return nil
 }
 
-// GetPagesize Pagesize Getter
-func (r TaobaotbkdgcpaactivitydetailAPIRequest) GetPagesize() int64 {
-	return r._pagesize
+// GetPageSize PageSize Getter
+func (r TaobaotbkdgcpaactivitydetailAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }
 
-// SetPageno is Pageno Setter
+// SetPageNo is PageNo Setter
 // 页码
-func (r *TaobaotbkdgcpaactivitydetailAPIRequest) SetPageno(_pageno int64) error {
-	r._pageno = _pageno
-	r.Set("page_no", _pageno)
+func (r *TaobaotbkdgcpaactivitydetailAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
 	return nil
 }
 
-// GetPageno Pageno Getter
-func (r TaobaotbkdgcpaactivitydetailAPIRequest) GetPageno() int64 {
-	return r._pageno
+// GetPageNo PageNo Getter
+func (r TaobaotbkdgcpaactivitydetailAPIRequest) GetPageNo() int64 {
+	return r._pageNo
 }
 
-// SetEventid is Eventid Setter
+// SetEventId is EventId Setter
 // CPA活动ID
-func (r *TaobaotbkdgcpaactivitydetailAPIRequest) SetEventid(_eventid int64) error {
-	r._eventid = _eventid
-	r.Set("event_id", _eventid)
+func (r *TaobaotbkdgcpaactivitydetailAPIRequest) SetEventId(_eventId int64) error {
+	r._eventId = _eventId
+	r.Set("event_id", _eventId)
 	return nil
 }
 
-// GetEventid Eventid Getter
-func (r TaobaotbkdgcpaactivitydetailAPIRequest) GetEventid() int64 {
-	return r._eventid
+// GetEventId EventId Getter
+func (r TaobaotbkdgcpaactivitydetailAPIRequest) GetEventId() int64 {
+	return r._eventId
 }
 
-// SetStartid is Startid Setter
+// SetStartId is StartId Setter
 // 下一页开始查询的记录主键id
-func (r *TaobaotbkdgcpaactivitydetailAPIRequest) SetStartid(_startid int64) error {
-	r._startid = _startid
-	r.Set("start_id", _startid)
+func (r *TaobaotbkdgcpaactivitydetailAPIRequest) SetStartId(_startId int64) error {
+	r._startId = _startId
+	r.Set("start_id", _startId)
 	return nil
 }
 
-// GetStartid Startid Getter
-func (r TaobaotbkdgcpaactivitydetailAPIRequest) GetStartid() int64 {
-	return r._startid
+// GetStartId StartId Getter
+func (r TaobaotbkdgcpaactivitydetailAPIRequest) GetStartId() int64 {
+	return r._startId
 }

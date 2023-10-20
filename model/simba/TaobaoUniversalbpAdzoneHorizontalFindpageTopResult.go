@@ -1,7 +1,7 @@
 package simba
 
-// TaobaoUniversalbpAdzoneHorizontalFindpageTopResult 结构体
-type TaobaoUniversalbpAdzoneHorizontalFindpageTopResult struct {
+// TaobaouniversalbpadzonehorizontalfindpageTopResult 结构体
+type TaobaouniversalbpadzonehorizontalfindpageTopResult struct {
 	// 请求系统信息
 	Info *TopInfo `json:"info,omitempty" xml:"info,omitempty"`
 	// 结果集

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLstBmStoreEmpSaveAPIRequest 保存品牌商自有门店和内部业代之间的关系 API请求
+// AlibabalstbmstoreempsaveAPIRequest 保存品牌商自有门店和内部业代之间的关系 API请求
 // alibaba.lst.bm.store.emp.save
 //
 // 保存品牌商自有门店和内部业代之间的关系
-type AlibabaLstBmStoreEmpSaveAPIRequest struct {
+type AlibabalstbmstoreempsaveAPIRequest struct {
 	model.Params
 	// 门店id标识
 	_storeId string
@@ -18,52 +18,52 @@ type AlibabaLstBmStoreEmpSaveAPIRequest struct {
 	_bmEmpId string
 }
 
-// NewAlibabaLstBmStoreEmpSaveRequest 初始化AlibabaLstBmStoreEmpSaveAPIRequest对象
-func NewAlibabaLstBmStoreEmpSaveRequest() *AlibabaLstBmStoreEmpSaveAPIRequest {
-	return &AlibabaLstBmStoreEmpSaveAPIRequest{
+// NewAlibabalstbmstoreempsaveRequest 初始化AlibabalstbmstoreempsaveAPIRequest对象
+func NewAlibabalstbmstoreempsaveRequest() *AlibabalstbmstoreempsaveAPIRequest {
+	return &AlibabalstbmstoreempsaveAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaLstBmStoreEmpSaveAPIRequest) GetApiMethodName() string {
+func (r AlibabalstbmstoreempsaveAPIRequest) GetApiMethodName() string {
 	return "alibaba.lst.bm.store.emp.save"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaLstBmStoreEmpSaveAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabalstbmstoreempsaveAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaLstBmStoreEmpSaveAPIRequest) GetRawParams() model.Params {
+func (r AlibabalstbmstoreempsaveAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetStoreId is StoreId Setter
 // 门店id标识
-func (r *AlibabaLstBmStoreEmpSaveAPIRequest) SetStoreId(_storeId string) error {
+func (r *AlibabalstbmstoreempsaveAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
 	r.Set("store_id", _storeId)
 	return nil
 }
 
 // GetStoreId StoreId Getter
-func (r AlibabaLstBmStoreEmpSaveAPIRequest) GetStoreId() string {
+func (r AlibabalstbmstoreempsaveAPIRequest) GetStoreId() string {
 	return r._storeId
 }
 
 // SetBmEmpId is BmEmpId Setter
 // 员工id标识
-func (r *AlibabaLstBmStoreEmpSaveAPIRequest) SetBmEmpId(_bmEmpId string) error {
+func (r *AlibabalstbmstoreempsaveAPIRequest) SetBmEmpId(_bmEmpId string) error {
 	r._bmEmpId = _bmEmpId
 	r.Set("bm_emp_id", _bmEmpId)
 	return nil
 }
 
 // GetBmEmpId BmEmpId Getter
-func (r AlibabaLstBmStoreEmpSaveAPIRequest) GetBmEmpId() string {
+func (r AlibabalstbmstoreempsaveAPIRequest) GetBmEmpId() string {
 	return r._bmEmpId
 }

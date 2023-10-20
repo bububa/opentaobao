@@ -1,7 +1,7 @@
 package logistic
 
-// Tms2MscPayQueryRequest 结构体
-type Tms2MscPayQueryRequest struct {
+// Tms2mscPayQueryRequest 结构体
+type Tms2mscPayQueryRequest struct {
 	// 服务类型
 	ServiceType string `json:"service_type,omitempty" xml:"service_type,omitempty"`
 	// 服务商ID

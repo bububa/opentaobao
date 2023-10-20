@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoBusBusnumberGetAPIResponse 汽车票车次查询 API返回值
+// TaobaobusbusnumbergetAPIResponse 汽车票车次查询 API返回值
 // taobao.bus.busnumber.get
 //
 // 提供汽车票车次查询服务
-type TaobaoBusBusnumberGetAPIResponse struct {
+type TaobaobusbusnumbergetAPIResponse struct {
 	model.CommonResponse
-	TaobaoBusBusnumberGetAPIResponseModel
+	TaobaobusbusnumbergetAPIResponseModel
 }
 
-// TaobaoBusBusnumberGetAPIResponseModel is 汽车票车次查询 成功返回结果
-type TaobaoBusBusnumberGetAPIResponseModel struct {
+// TaobaobusbusnumbergetAPIResponseModel is 汽车票车次查询 成功返回结果
+type TaobaobusbusnumbergetAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_busnumber_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *TaobaoBusBusnumberGetResultSet `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TaobaobusbusnumbergetResultSet `json:"result,omitempty" xml:"result,omitempty"`
 }

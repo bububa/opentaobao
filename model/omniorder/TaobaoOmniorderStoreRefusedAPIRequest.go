@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOmniorderStoreRefusedAPIRequest Pos端门店拒单 API请求
+// TaobaoomniorderstorerefusedAPIRequest Pos端门店拒单 API请求
 // taobao.omniorder.store.refused
 //
 // ISV Pos端门店拒单，通知星盘
-type TaobaoOmniorderStoreRefusedAPIRequest struct {
+type TaobaoomniorderstorerefusedAPIRequest struct {
 	model.Params
 	// 子订单列表
 	_subOrderList []SubOrder
@@ -22,78 +22,78 @@ type TaobaoOmniorderStoreRefusedAPIRequest struct {
 	_reportTimestamp int64
 }
 
-// NewTaobaoOmniorderStoreRefusedRequest 初始化TaobaoOmniorderStoreRefusedAPIRequest对象
-func NewTaobaoOmniorderStoreRefusedRequest() *TaobaoOmniorderStoreRefusedAPIRequest {
-	return &TaobaoOmniorderStoreRefusedAPIRequest{
+// NewTaobaoomniorderstorerefusedRequest 初始化TaobaoomniorderstorerefusedAPIRequest对象
+func NewTaobaoomniorderstorerefusedRequest() *TaobaoomniorderstorerefusedAPIRequest {
+	return &TaobaoomniorderstorerefusedAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoOmniorderStoreRefusedAPIRequest) GetApiMethodName() string {
+func (r TaobaoomniorderstorerefusedAPIRequest) GetApiMethodName() string {
 	return "taobao.omniorder.store.refused"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOmniorderStoreRefusedAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoomniorderstorerefusedAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoOmniorderStoreRefusedAPIRequest) GetRawParams() model.Params {
+func (r TaobaoomniorderstorerefusedAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSubOrderList is SubOrderList Setter
 // 子订单列表
-func (r *TaobaoOmniorderStoreRefusedAPIRequest) SetSubOrderList(_subOrderList []SubOrder) error {
+func (r *TaobaoomniorderstorerefusedAPIRequest) SetSubOrderList(_subOrderList []SubOrder) error {
 	r._subOrderList = _subOrderList
 	r.Set("sub_order_list", _subOrderList)
 	return nil
 }
 
 // GetSubOrderList SubOrderList Getter
-func (r TaobaoOmniorderStoreRefusedAPIRequest) GetSubOrderList() []SubOrder {
+func (r TaobaoomniorderstorerefusedAPIRequest) GetSubOrderList() []SubOrder {
 	return r._subOrderList
 }
 
 // SetTraceId is TraceId Setter
 // 跟踪Id
-func (r *TaobaoOmniorderStoreRefusedAPIRequest) SetTraceId(_traceId string) error {
+func (r *TaobaoomniorderstorerefusedAPIRequest) SetTraceId(_traceId string) error {
 	r._traceId = _traceId
 	r.Set("trace_id", _traceId)
 	return nil
 }
 
 // GetTraceId TraceId Getter
-func (r TaobaoOmniorderStoreRefusedAPIRequest) GetTraceId() string {
+func (r TaobaoomniorderstorerefusedAPIRequest) GetTraceId() string {
 	return r._traceId
 }
 
 // SetTid is Tid Setter
 // 淘宝交易主订单ID
-func (r *TaobaoOmniorderStoreRefusedAPIRequest) SetTid(_tid int64) error {
+func (r *TaobaoomniorderstorerefusedAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
 	r.Set("tid", _tid)
 	return nil
 }
 
 // GetTid Tid Getter
-func (r TaobaoOmniorderStoreRefusedAPIRequest) GetTid() int64 {
+func (r TaobaoomniorderstorerefusedAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
 // SetReportTimestamp is ReportTimestamp Setter
 // ISV的系统时间
-func (r *TaobaoOmniorderStoreRefusedAPIRequest) SetReportTimestamp(_reportTimestamp int64) error {
+func (r *TaobaoomniorderstorerefusedAPIRequest) SetReportTimestamp(_reportTimestamp int64) error {
 	r._reportTimestamp = _reportTimestamp
 	r.Set("report_timestamp", _reportTimestamp)
 	return nil
 }
 
 // GetReportTimestamp ReportTimestamp Getter
-func (r TaobaoOmniorderStoreRefusedAPIRequest) GetReportTimestamp() int64 {
+func (r TaobaoomniorderstorerefusedAPIRequest) GetReportTimestamp() int64 {
 	return r._reportTimestamp
 }

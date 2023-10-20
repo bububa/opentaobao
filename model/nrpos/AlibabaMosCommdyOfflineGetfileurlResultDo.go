@@ -1,7 +1,7 @@
 package nrpos
 
-// AlibabaMosCommdyOfflineGetfileurlResultDo 结构体
-type AlibabaMosCommdyOfflineGetfileurlResultDo struct {
+// AlibabamoscommdyofflinegetfileurlResultDo 结构体
+type AlibabamoscommdyofflinegetfileurlResultDo struct {
 	// 返回结果合集
 	Datas []OfflineFileDto `json:"datas,omitempty" xml:"datas>offline_file_dto,omitempty"`
 	// 返回头

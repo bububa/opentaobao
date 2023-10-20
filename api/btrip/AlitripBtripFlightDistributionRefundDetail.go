@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// AlitripBtripFlightDistributionRefundDetail 商旅机票退票详情接口
+// Alitripbtripflightdistributionrefunddetail 商旅机票退票详情接口
 // alitrip.btrip.flight.distribution.refund.detail
 //
 // 商旅机票分销退票详情
-func AlitripBtripFlightDistributionRefundDetail(clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionRefundDetailAPIRequest, session string) (*btrip.AlitripBtripFlightDistributionRefundDetailAPIResponse, error) {
-	var resp btrip.AlitripBtripFlightDistributionRefundDetailAPIResponse
+func Alitripbtripflightdistributionrefunddetail(clt *core.SDKClient, req *btrip.AlitripbtripflightdistributionrefunddetailAPIRequest, session string) (*btrip.AlitripbtripflightdistributionrefunddetailAPIResponse, error) {
+	var resp btrip.AlitripbtripflightdistributionrefunddetailAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

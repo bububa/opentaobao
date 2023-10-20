@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-// YunosTvpubadminAdmOttAudit 优酷OTT广告素材审核
+// Yunostvpubadminadmottaudit 优酷OTT广告素材审核
 // yunos.tvpubadmin.adm.ott.audit
 //
 // 审核优酷OTT端广告素材
-func YunosTvpubadminAdmOttAudit(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminAdmOttAuditAPIRequest, session string) (*tvupadmin.YunosTvpubadminAdmOttAuditAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminAdmOttAuditAPIResponse
+func Yunostvpubadminadmottaudit(clt *core.SDKClient, req *tvupadmin.YunostvpubadminadmottauditAPIRequest, session string) (*tvupadmin.YunostvpubadminadmottauditAPIResponse, error) {
+	var resp tvupadmin.YunostvpubadminadmottauditAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

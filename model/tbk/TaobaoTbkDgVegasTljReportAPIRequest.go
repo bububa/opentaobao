@@ -13,9 +13,9 @@ import (
 type TaobaotbkdgvegastljreportAPIRequest struct {
 	model.Params
 	// 创建淘礼金时返回的rightsId
-	_rightsid string
+	_rightsId string
 	// adzoneId
-	_adzoneid int64
+	_adzoneId int64
 }
 
 // NewTaobaotbkdgvegastljreportRequest 初始化TaobaotbkdgvegastljreportAPIRequest对象
@@ -42,28 +42,28 @@ func (r TaobaotbkdgvegastljreportAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetRightsid is Rightsid Setter
+// SetRightsId is RightsId Setter
 // 创建淘礼金时返回的rightsId
-func (r *TaobaotbkdgvegastljreportAPIRequest) SetRightsid(_rightsid string) error {
-	r._rightsid = _rightsid
-	r.Set("rights_id", _rightsid)
+func (r *TaobaotbkdgvegastljreportAPIRequest) SetRightsId(_rightsId string) error {
+	r._rightsId = _rightsId
+	r.Set("rights_id", _rightsId)
 	return nil
 }
 
-// GetRightsid Rightsid Getter
-func (r TaobaotbkdgvegastljreportAPIRequest) GetRightsid() string {
-	return r._rightsid
+// GetRightsId RightsId Getter
+func (r TaobaotbkdgvegastljreportAPIRequest) GetRightsId() string {
+	return r._rightsId
 }
 
-// SetAdzoneid is Adzoneid Setter
+// SetAdzoneId is AdzoneId Setter
 // adzoneId
-func (r *TaobaotbkdgvegastljreportAPIRequest) SetAdzoneid(_adzoneid int64) error {
-	r._adzoneid = _adzoneid
-	r.Set("adzone_id", _adzoneid)
+func (r *TaobaotbkdgvegastljreportAPIRequest) SetAdzoneId(_adzoneId int64) error {
+	r._adzoneId = _adzoneId
+	r.Set("adzone_id", _adzoneId)
 	return nil
 }
 
-// GetAdzoneid Adzoneid Getter
-func (r TaobaotbkdgvegastljreportAPIRequest) GetAdzoneid() int64 {
-	return r._adzoneid
+// GetAdzoneId AdzoneId Getter
+func (r TaobaotbkdgvegastljreportAPIRequest) GetAdzoneId() int64 {
+	return r._adzoneId
 }

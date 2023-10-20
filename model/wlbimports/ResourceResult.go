@@ -11,5 +11,5 @@ type ResourceResult struct {
 	// 时效，单位（小时）
 	DeliveryTime int64 `json:"delivery_time,omitempty" xml:"delivery_time,omitempty"`
 	// 服务报价。首重（1磅) CNY￥3元 续重（1磅) CNY￥6元
-	DeliveryPrice *BSWeightPrice `json:"delivery_price,omitempty" xml:"delivery_price,omitempty"`
+	DeliveryPrice *BsweightPrice `json:"delivery_price,omitempty" xml:"delivery_price,omitempty"`
 }

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest 更新单品买赠活动 API请求
+// AlibabaretailmarketingbuygiftactivityupdateAPIRequest 更新单品买赠活动 API请求
 // alibaba.retail.marketing.buygift.activity.update
 //
 // 同城零售单品买赠活动更新
-type AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest struct {
+type AlibabaretailmarketingbuygiftactivityupdateAPIRequest struct {
 	model.Params
 	// 更新单品买赠活动参数
 	_param *BuyGiftActivityOperateRequest
 }
 
-// NewAlibabaRetailMarketingBuygiftActivityUpdateRequest 初始化AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest对象
-func NewAlibabaRetailMarketingBuygiftActivityUpdateRequest() *AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest {
-	return &AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest{
+// NewAlibabaretailmarketingbuygiftactivityupdateRequest 初始化AlibabaretailmarketingbuygiftactivityupdateAPIRequest对象
+func NewAlibabaretailmarketingbuygiftactivityupdateRequest() *AlibabaretailmarketingbuygiftactivityupdateAPIRequest {
+	return &AlibabaretailmarketingbuygiftactivityupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest) GetApiMethodName() string {
+func (r AlibabaretailmarketingbuygiftactivityupdateAPIRequest) GetApiMethodName() string {
 	return "alibaba.retail.marketing.buygift.activity.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaretailmarketingbuygiftactivityupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest) GetRawParams() model.Params {
+func (r AlibabaretailmarketingbuygiftactivityupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 更新单品买赠活动参数
-func (r *AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest) SetParam(_param *BuyGiftActivityOperateRequest) error {
+func (r *AlibabaretailmarketingbuygiftactivityupdateAPIRequest) SetParam(_param *BuyGiftActivityOperateRequest) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest) GetParam() *BuyGiftActivityOperateRequest {
+func (r AlibabaretailmarketingbuygiftactivityupdateAPIRequest) GetParam() *BuyGiftActivityOperateRequest {
 	return r._param
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/flight"
 )
 
-// AlitripPolicySpecialUpload 特殊政策上传
+// Alitrippolicyspecialupload 特殊政策上传
 // alitrip.policy.special.upload
 //
 // 上传特殊类型的单程/往返政策
-func AlitripPolicySpecialUpload(clt *core.SDKClient, req *flight.AlitripPolicySpecialUploadAPIRequest, session string) (*flight.AlitripPolicySpecialUploadAPIResponse, error) {
-	var resp flight.AlitripPolicySpecialUploadAPIResponse
+func Alitrippolicyspecialupload(clt *core.SDKClient, req *flight.AlitrippolicyspecialuploadAPIRequest, session string) (*flight.AlitrippolicyspecialuploadAPIResponse, error) {
+	var resp flight.AlitrippolicyspecialuploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

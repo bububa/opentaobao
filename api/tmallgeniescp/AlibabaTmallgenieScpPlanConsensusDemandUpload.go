@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallgeniescp"
 )
 
-// AlibabaTmallgenieScpPlanConsensusDemandUpload 20-IBP共识需求回传接口
+// Alibabatmallgeniescpplanconsensusdemandupload 20-IBP共识需求回传接口
 // alibaba.tmallgenie.scp.plan.consensus.demand.upload
 //
 // IBP共识需求回传接口
-func AlibabaTmallgenieScpPlanConsensusDemandUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanConsensusDemandUploadAPIResponse, error) {
-	var resp tmallgeniescp.AlibabaTmallgenieScpPlanConsensusDemandUploadAPIResponse
+func Alibabatmallgeniescpplanconsensusdemandupload(clt *core.SDKClient, req *tmallgeniescp.AlibabatmallgeniescpplanconsensusdemanduploadAPIRequest, session string) (*tmallgeniescp.AlibabatmallgeniescpplanconsensusdemanduploadAPIResponse, error) {
+	var resp tmallgeniescp.AlibabatmallgeniescpplanconsensusdemanduploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -13,7 +13,7 @@ import (
 type TaobaotbkscpunishordergetAPIRequest struct {
 	model.Params
 	// 入参的对象
-	_aforderoption *TopApiAfOrderOption
+	_afOrderOption *TopApiAfOrderOption
 }
 
 // NewTaobaotbkscpunishordergetRequest 初始化TaobaotbkscpunishordergetAPIRequest对象
@@ -40,15 +40,15 @@ func (r TaobaotbkscpunishordergetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetAforderoption is Aforderoption Setter
+// SetAfOrderOption is AfOrderOption Setter
 // 入参的对象
-func (r *TaobaotbkscpunishordergetAPIRequest) SetAforderoption(_aforderoption *TopApiAfOrderOption) error {
-	r._aforderoption = _aforderoption
-	r.Set("af_order_option", _aforderoption)
+func (r *TaobaotbkscpunishordergetAPIRequest) SetAfOrderOption(_afOrderOption *TopApiAfOrderOption) error {
+	r._afOrderOption = _afOrderOption
+	r.Set("af_order_option", _afOrderOption)
 	return nil
 }
 
-// GetAforderoption Aforderoption Getter
-func (r TaobaotbkscpunishordergetAPIRequest) GetAforderoption() *TopApiAfOrderOption {
-	return r._aforderoption
+// GetAfOrderOption AfOrderOption Getter
+func (r TaobaotbkscpunishordergetAPIRequest) GetAfOrderOption() *TopApiAfOrderOption {
+	return r._afOrderOption
 }

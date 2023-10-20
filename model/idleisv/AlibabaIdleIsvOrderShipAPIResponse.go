@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIdleIsvOrderShipAPIResponse 闲鱼订单服务商物流发货 API返回值
+// AlibabaidleisvordershipAPIResponse 闲鱼订单服务商物流发货 API返回值
 // alibaba.idle.isv.order.ship
 //
 // 闲鱼开放平台服务商订单发货接口
-type AlibabaIdleIsvOrderShipAPIResponse struct {
+type AlibabaidleisvordershipAPIResponse struct {
 	model.CommonResponse
-	AlibabaIdleIsvOrderShipAPIResponseModel
+	AlibabaidleisvordershipAPIResponseModel
 }
 
-// AlibabaIdleIsvOrderShipAPIResponseModel is 闲鱼订单服务商物流发货 成功返回结果
-type AlibabaIdleIsvOrderShipAPIResponseModel struct {
+// AlibabaidleisvordershipAPIResponseModel is 闲鱼订单服务商物流发货 成功返回结果
+type AlibabaidleisvordershipAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_isv_order_ship_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

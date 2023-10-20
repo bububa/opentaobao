@@ -1,7 +1,7 @@
 package koubeimall
 
-// TaobaoKoubeiMallCommonMallNearListResult 结构体
-type TaobaoKoubeiMallCommonMallNearListResult struct {
+// TaobaokoubeimallcommonmallnearlistResult 结构体
+type TaobaokoubeimallcommonmallnearlistResult struct {
 	// 附近商圈列表模型
 	MallList []MallDto `json:"mall_list,omitempty" xml:"mall_list>mall_dto,omitempty"`
 	// API请求全链路追踪ID

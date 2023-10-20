@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaInsightWordssubdataGetAPIResponse 获取关键词按流量细分的数据 API返回值
+// TaobaosimbainsightwordssubdatagetAPIResponse 获取关键词按流量细分的数据 API返回值
 // taobao.simba.insight.wordssubdata.get
 //
 // 获取关键词按流量进行细分的数据，返回结果中network表示流量的来源，意义如下：1-&gt;PC站内，2-&gt;PC站外,4-&gt;无线站内 5-&gt;无线站外
-type TaobaoSimbaInsightWordssubdataGetAPIResponse struct {
+type TaobaosimbainsightwordssubdatagetAPIResponse struct {
 	model.CommonResponse
-	TaobaoSimbaInsightWordssubdataGetAPIResponseModel
+	TaobaosimbainsightwordssubdatagetAPIResponseModel
 }
 
-// TaobaoSimbaInsightWordssubdataGetAPIResponseModel is 获取关键词按流量细分的数据 成功返回结果
-type TaobaoSimbaInsightWordssubdataGetAPIResponseModel struct {
+// TaobaosimbainsightwordssubdatagetAPIResponseModel is 获取关键词按流量细分的数据 成功返回结果
+type TaobaosimbainsightwordssubdatagetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_insight_wordssubdata_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

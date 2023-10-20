@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCampusAclNewCheckuserpermissionAPIRequest 校验用户是否有权限 API请求
+// AlibabacampusaclnewcheckuserpermissionAPIRequest 校验用户是否有权限 API请求
 // alibaba.campus.acl.new.checkuserpermission
 //
 // 校验用户是否有权限
-type AlibabaCampusAclNewCheckuserpermissionAPIRequest struct {
+type AlibabacampusaclnewcheckuserpermissionAPIRequest struct {
 	model.Params
 	// 系统入参
 	_workbenchcontext *WorkBenchContext
@@ -18,52 +18,52 @@ type AlibabaCampusAclNewCheckuserpermissionAPIRequest struct {
 	_checkUserPermissionParam *CheckUserPermissionParam
 }
 
-// NewAlibabaCampusAclNewCheckuserpermissionRequest 初始化AlibabaCampusAclNewCheckuserpermissionAPIRequest对象
-func NewAlibabaCampusAclNewCheckuserpermissionRequest() *AlibabaCampusAclNewCheckuserpermissionAPIRequest {
-	return &AlibabaCampusAclNewCheckuserpermissionAPIRequest{
+// NewAlibabacampusaclnewcheckuserpermissionRequest 初始化AlibabacampusaclnewcheckuserpermissionAPIRequest对象
+func NewAlibabacampusaclnewcheckuserpermissionRequest() *AlibabacampusaclnewcheckuserpermissionAPIRequest {
+	return &AlibabacampusaclnewcheckuserpermissionAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaCampusAclNewCheckuserpermissionAPIRequest) GetApiMethodName() string {
+func (r AlibabacampusaclnewcheckuserpermissionAPIRequest) GetApiMethodName() string {
 	return "alibaba.campus.acl.new.checkuserpermission"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaCampusAclNewCheckuserpermissionAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabacampusaclnewcheckuserpermissionAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaCampusAclNewCheckuserpermissionAPIRequest) GetRawParams() model.Params {
+func (r AlibabacampusaclnewcheckuserpermissionAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetWorkbenchcontext is Workbenchcontext Setter
 // 系统入参
-func (r *AlibabaCampusAclNewCheckuserpermissionAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+func (r *AlibabacampusaclnewcheckuserpermissionAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
 	r._workbenchcontext = _workbenchcontext
 	r.Set("workbenchcontext", _workbenchcontext)
 	return nil
 }
 
 // GetWorkbenchcontext Workbenchcontext Getter
-func (r AlibabaCampusAclNewCheckuserpermissionAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
+func (r AlibabacampusaclnewcheckuserpermissionAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
 	return r._workbenchcontext
 }
 
 // SetCheckUserPermissionParam is CheckUserPermissionParam Setter
 // 接口入参
-func (r *AlibabaCampusAclNewCheckuserpermissionAPIRequest) SetCheckUserPermissionParam(_checkUserPermissionParam *CheckUserPermissionParam) error {
+func (r *AlibabacampusaclnewcheckuserpermissionAPIRequest) SetCheckUserPermissionParam(_checkUserPermissionParam *CheckUserPermissionParam) error {
 	r._checkUserPermissionParam = _checkUserPermissionParam
 	r.Set("check_user_permission_param", _checkUserPermissionParam)
 	return nil
 }
 
 // GetCheckUserPermissionParam CheckUserPermissionParam Getter
-func (r AlibabaCampusAclNewCheckuserpermissionAPIRequest) GetCheckUserPermissionParam() *CheckUserPermissionParam {
+func (r AlibabacampusaclnewcheckuserpermissionAPIRequest) GetCheckUserPermissionParam() *CheckUserPermissionParam {
 	return r._checkUserPermissionParam
 }

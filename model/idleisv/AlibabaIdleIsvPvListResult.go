@@ -1,7 +1,7 @@
 package idleisv
 
-// AlibabaIdleIsvPvListResult 结构体
-type AlibabaIdleIsvPvListResult struct {
+// AlibabaidleisvpvlistResult 结构体
+type AlibabaidleisvpvlistResult struct {
 	// 品牌/型号两级属性
 	PropertyList []IdleNewPubPropertyValueDo `json:"property_list,omitempty" xml:"property_list>idle_new_pub_property_value_do,omitempty"`
 	// 错误码

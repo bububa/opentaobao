@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMosPosAlarmAPIRequest pos故障报警 API请求
+// AlibabamosposalarmAPIRequest pos故障报警 API请求
 // alibaba.mos.pos.alarm
 //
 // 故障报警
-type AlibabaMosPosAlarmAPIRequest struct {
+type AlibabamosposalarmAPIRequest struct {
 	model.Params
 	// 参数
 	_param0 *PosLogDto
 }
 
-// NewAlibabaMosPosAlarmRequest 初始化AlibabaMosPosAlarmAPIRequest对象
-func NewAlibabaMosPosAlarmRequest() *AlibabaMosPosAlarmAPIRequest {
-	return &AlibabaMosPosAlarmAPIRequest{
+// NewAlibabamosposalarmRequest 初始化AlibabamosposalarmAPIRequest对象
+func NewAlibabamosposalarmRequest() *AlibabamosposalarmAPIRequest {
+	return &AlibabamosposalarmAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaMosPosAlarmAPIRequest) GetApiMethodName() string {
+func (r AlibabamosposalarmAPIRequest) GetApiMethodName() string {
 	return "alibaba.mos.pos.alarm"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMosPosAlarmAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabamosposalarmAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaMosPosAlarmAPIRequest) GetRawParams() model.Params {
+func (r AlibabamosposalarmAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam0 is Param0 Setter
 // 参数
-func (r *AlibabaMosPosAlarmAPIRequest) SetParam0(_param0 *PosLogDto) error {
+func (r *AlibabamosposalarmAPIRequest) SetParam0(_param0 *PosLogDto) error {
 	r._param0 = _param0
 	r.Set("param0", _param0)
 	return nil
 }
 
 // GetParam0 Param0 Getter
-func (r AlibabaMosPosAlarmAPIRequest) GetParam0() *PosLogDto {
+func (r AlibabamosposalarmAPIRequest) GetParam0() *PosLogDto {
 	return r._param0
 }

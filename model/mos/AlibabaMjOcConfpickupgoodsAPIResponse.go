@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMjOcConfpickupgoodsAPIResponse 提货核销 API返回值
+// AlibabamjocconfpickupgoodsAPIResponse 提货核销 API返回值
 // alibaba.mj.oc.confpickupgoods
 //
 // 此API用于在银泰商场中，消费者在提货中心提货时， 商户后台调用此接口进行提货核销操作
-type AlibabaMjOcConfpickupgoodsAPIResponse struct {
+type AlibabamjocconfpickupgoodsAPIResponse struct {
 	model.CommonResponse
-	AlibabaMjOcConfpickupgoodsAPIResponseModel
+	AlibabamjocconfpickupgoodsAPIResponseModel
 }
 
-// AlibabaMjOcConfpickupgoodsAPIResponseModel is 提货核销 成功返回结果
-type AlibabaMjOcConfpickupgoodsAPIResponseModel struct {
+// AlibabamjocconfpickupgoodsAPIResponseModel is 提货核销 成功返回结果
+type AlibabamjocconfpickupgoodsAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mj_oc_confpickupgoods_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

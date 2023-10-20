@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/openmall"
 )
 
-// TaobaoOpenmallTraceSearch 获取Openmall订单物流流转信息
+// Taobaoopenmalltracesearch 获取Openmall订单物流流转信息
 // taobao.openmall.trace.search
 //
 // 获取Openmall订单物流流转信息
-func TaobaoOpenmallTraceSearch(clt *core.SDKClient, req *openmall.TaobaoOpenmallTraceSearchAPIRequest, session string) (*openmall.TaobaoOpenmallTraceSearchAPIResponse, error) {
-	var resp openmall.TaobaoOpenmallTraceSearchAPIResponse
+func Taobaoopenmalltracesearch(clt *core.SDKClient, req *openmall.TaobaoopenmalltracesearchAPIRequest, session string) (*openmall.TaobaoopenmalltracesearchAPIResponse, error) {
+	var resp openmall.TaobaoopenmalltracesearchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/openim"
 )
 
-// TaobaoOpenimTribeModifytribeinfo OPENIM群信息修改
+// Taobaoopenimtribemodifytribeinfo OPENIM群信息修改
 // taobao.openim.tribe.modifytribeinfo
 //
 // OPENIM群信息修改
-func TaobaoOpenimTribeModifytribeinfo(clt *core.SDKClient, req *openim.TaobaoOpenimTribeModifytribeinfoAPIRequest, session string) (*openim.TaobaoOpenimTribeModifytribeinfoAPIResponse, error) {
-	var resp openim.TaobaoOpenimTribeModifytribeinfoAPIResponse
+func Taobaoopenimtribemodifytribeinfo(clt *core.SDKClient, req *openim.TaobaoopenimtribemodifytribeinfoAPIRequest, session string) (*openim.TaobaoopenimtribemodifytribeinfoAPIResponse, error) {
+	var resp openim.TaobaoopenimtribemodifytribeinfoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

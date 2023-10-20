@@ -3,9 +3,9 @@ package tbk
 // TaobaotbkdgvegassendreportResult 结构体
 type TaobaotbkdgvegassendreportResult struct {
 	// msgInfo
-	Msginfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
+	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// msgCode
-	Msgcode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
+	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// model
 	Model *RightsSendRptDto `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功

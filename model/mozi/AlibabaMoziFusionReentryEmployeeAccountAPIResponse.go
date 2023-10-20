@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMoziFusionReentryEmployeeAccountAPIResponse 重新入职并且重新启用账号 API返回值
+// AlibabamozifusionreentryemployeeaccountAPIResponse 重新入职并且重新启用账号 API返回值
 // alibaba.mozi.fusion.reentry.employee.account
 //
 // 重新入职并且重新启用账号
-type AlibabaMoziFusionReentryEmployeeAccountAPIResponse struct {
+type AlibabamozifusionreentryemployeeaccountAPIResponse struct {
 	model.CommonResponse
-	AlibabaMoziFusionReentryEmployeeAccountAPIResponseModel
+	AlibabamozifusionreentryemployeeaccountAPIResponseModel
 }
 
-// AlibabaMoziFusionReentryEmployeeAccountAPIResponseModel is 重新入职并且重新启用账号 成功返回结果
-type AlibabaMoziFusionReentryEmployeeAccountAPIResponseModel struct {
+// AlibabamozifusionreentryemployeeaccountAPIResponseModel is 重新入职并且重新启用账号 成功返回结果
+type AlibabamozifusionreentryemployeeaccountAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mozi_fusion_reentry_employee_account_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

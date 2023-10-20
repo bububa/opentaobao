@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkChannelOrderRefundConfirm 退款确认
+// Alibabawdkchannelorderrefundconfirm 退款确认
 // alibaba.wdk.channel.order.refund.confirm
 //
 // 退款确认
-func AlibabaWdkChannelOrderRefundConfirm(clt *core.SDKClient, req *wdk.AlibabaWdkChannelOrderRefundConfirmAPIRequest, session string) (*wdk.AlibabaWdkChannelOrderRefundConfirmAPIResponse, error) {
-	var resp wdk.AlibabaWdkChannelOrderRefundConfirmAPIResponse
+func Alibabawdkchannelorderrefundconfirm(clt *core.SDKClient, req *wdk.AlibabawdkchannelorderrefundconfirmAPIRequest, session string) (*wdk.AlibabawdkchannelorderrefundconfirmAPIResponse, error) {
+	var resp wdk.AlibabawdkchannelorderrefundconfirmAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

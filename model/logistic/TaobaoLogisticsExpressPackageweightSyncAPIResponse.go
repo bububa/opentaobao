@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoLogisticsExpressPackageweightSyncAPIResponse TMS包裹重量回传 API返回值
+// TaobaologisticsexpresspackageweightsyncAPIResponse TMS包裹重量回传 API返回值
 // taobao.logistics.express.packageweight.sync
 //
 // TMS包裹重量回传
-type TaobaoLogisticsExpressPackageweightSyncAPIResponse struct {
+type TaobaologisticsexpresspackageweightsyncAPIResponse struct {
 	model.CommonResponse
-	TaobaoLogisticsExpressPackageweightSyncAPIResponseModel
+	TaobaologisticsexpresspackageweightsyncAPIResponseModel
 }
 
-// TaobaoLogisticsExpressPackageweightSyncAPIResponseModel is TMS包裹重量回传 成功返回结果
-type TaobaoLogisticsExpressPackageweightSyncAPIResponseModel struct {
+// TaobaologisticsexpresspackageweightsyncAPIResponseModel is TMS包裹重量回传 成功返回结果
+type TaobaologisticsexpresspackageweightsyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_express_packageweight_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

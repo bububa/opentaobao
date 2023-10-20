@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoDmpCrowdTemplateApplyAPIResponse 人群模版采纳并生成人群API API返回值
+// TaobaodmpcrowdtemplateapplyAPIResponse 人群模版采纳并生成人群API API返回值
 // taobao.dmp.crowd.template.apply
 //
 // 人群模版采纳并生成人群API
-type TaobaoDmpCrowdTemplateApplyAPIResponse struct {
+type TaobaodmpcrowdtemplateapplyAPIResponse struct {
 	model.CommonResponse
-	TaobaoDmpCrowdTemplateApplyAPIResponseModel
+	TaobaodmpcrowdtemplateapplyAPIResponseModel
 }
 
-// TaobaoDmpCrowdTemplateApplyAPIResponseModel is 人群模版采纳并生成人群API 成功返回结果
-type TaobaoDmpCrowdTemplateApplyAPIResponseModel struct {
+// TaobaodmpcrowdtemplateapplyAPIResponseModel is 人群模版采纳并生成人群API 成功返回结果
+type TaobaodmpcrowdtemplateapplyAPIResponseModel struct {
 	XMLName xml.Name `xml:"dmp_crowd_template_apply_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

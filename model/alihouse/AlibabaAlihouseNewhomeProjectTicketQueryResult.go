@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseNewhomeProjectTicketQueryResult 结构体
-type AlibabaAlihouseNewhomeProjectTicketQueryResult struct {
+// AlibabaalihousenewhomeprojectticketqueryResult 结构体
+type AlibabaalihousenewhomeprojectticketqueryResult struct {
 	// 商品信息列表
 	Data []ProjectVerifyTicketDto `json:"data,omitempty" xml:"data>project_verify_ticket_dto,omitempty"`
 	// 返回编码

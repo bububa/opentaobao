@@ -1,7 +1,7 @@
 package lstvending
 
-// AlibabaLstVendingCargospaceSaveResultDto 结构体
-type AlibabaLstVendingCargospaceSaveResultDto struct {
+// AlibabalstvendingcargospacesaveResultDto 结构体
+type AlibabalstvendingcargospacesaveResultDto struct {
 	// 错误信息
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

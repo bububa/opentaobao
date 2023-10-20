@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoFenxiaoRefundQueryAPIResponse 批量查询采购退款 API返回值
+// TaobaofenxiaorefundqueryAPIResponse 批量查询采购退款 API返回值
 // taobao.fenxiao.refund.query
 //
 // 供应商按查询条件批量查询代销采购退款
-type TaobaoFenxiaoRefundQueryAPIResponse struct {
+type TaobaofenxiaorefundqueryAPIResponse struct {
 	model.CommonResponse
-	TaobaoFenxiaoRefundQueryAPIResponseModel
+	TaobaofenxiaorefundqueryAPIResponseModel
 }
 
-// TaobaoFenxiaoRefundQueryAPIResponseModel is 批量查询采购退款 成功返回结果
-type TaobaoFenxiaoRefundQueryAPIResponseModel struct {
+// TaobaofenxiaorefundqueryAPIResponseModel is 批量查询采购退款 成功返回结果
+type TaobaofenxiaorefundqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_refund_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

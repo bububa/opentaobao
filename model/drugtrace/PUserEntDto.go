@@ -1,7 +1,7 @@
 package drugtrace
 
-// PUserEntDto 结构体
-type PUserEntDto struct {
+// PuserEntDto 结构体
+type PuserEntDto struct {
 	// 机构编码
 	OrgCode string `json:"org_code,omitempty" xml:"org_code,omitempty"`
 	// 原企业名称

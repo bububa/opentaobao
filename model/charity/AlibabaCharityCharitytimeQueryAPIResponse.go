@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCharityCharitytimeQueryAPIResponse 查询公益3小时公益时汇总 API返回值
+// AlibabacharitycharitytimequeryAPIResponse 查询公益3小时公益时汇总 API返回值
 // alibaba.charity.charitytime.query
 //
 // 查询公益3小时公益时汇总
-type AlibabaCharityCharitytimeQueryAPIResponse struct {
+type AlibabacharitycharitytimequeryAPIResponse struct {
 	model.CommonResponse
-	AlibabaCharityCharitytimeQueryAPIResponseModel
+	AlibabacharitycharitytimequeryAPIResponseModel
 }
 
-// AlibabaCharityCharitytimeQueryAPIResponseModel is 查询公益3小时公益时汇总 成功返回结果
-type AlibabaCharityCharitytimeQueryAPIResponseModel struct {
+// AlibabacharitycharitytimequeryAPIResponseModel is 查询公益3小时公益时汇总 成功返回结果
+type AlibabacharitycharitytimequeryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_charity_charitytime_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

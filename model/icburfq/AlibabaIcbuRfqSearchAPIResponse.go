@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIcbuRfqSearchAPIResponse 查询RFQ API返回值
+// AlibabaicburfqsearchAPIResponse 查询RFQ API返回值
 // alibaba.icbu.rfq.search
 //
 // 用于查询RFQ的信息
-type AlibabaIcbuRfqSearchAPIResponse struct {
+type AlibabaicburfqsearchAPIResponse struct {
 	model.CommonResponse
-	AlibabaIcbuRfqSearchAPIResponseModel
+	AlibabaicburfqsearchAPIResponseModel
 }
 
-// AlibabaIcbuRfqSearchAPIResponseModel is 查询RFQ 成功返回结果
-type AlibabaIcbuRfqSearchAPIResponseModel struct {
+// AlibabaicburfqsearchAPIResponseModel is 查询RFQ 成功返回结果
+type AlibabaicburfqsearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_icbu_rfq_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

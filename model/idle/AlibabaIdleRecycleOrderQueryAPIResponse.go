@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIdleRecycleOrderQueryAPIResponse 闲鱼回收订单查询V1 API返回值
+// AlibabaidlerecycleorderqueryAPIResponse 闲鱼回收订单查询V1 API返回值
 // alibaba.idle.recycle.order.query
 //
 // 查询回收订单
-type AlibabaIdleRecycleOrderQueryAPIResponse struct {
+type AlibabaidlerecycleorderqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaIdleRecycleOrderQueryAPIResponseModel
+	AlibabaidlerecycleorderqueryAPIResponseModel
 }
 
-// AlibabaIdleRecycleOrderQueryAPIResponseModel is 闲鱼回收订单查询V1 成功返回结果
-type AlibabaIdleRecycleOrderQueryAPIResponseModel struct {
+// AlibabaidlerecycleorderqueryAPIResponseModel is 闲鱼回收订单查询V1 成功返回结果
+type AlibabaidlerecycleorderqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_recycle_order_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *AlibabaIdleRecycleOrderQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaidlerecycleorderqueryResult `json:"result,omitempty" xml:"result,omitempty"`
 }

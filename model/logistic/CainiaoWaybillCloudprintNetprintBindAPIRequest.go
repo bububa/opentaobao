@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoWaybillCloudprintNetprintBindAPIRequest 网络打印机绑定 API请求
+// CainiaowaybillcloudprintnetprintbindAPIRequest 网络打印机绑定 API请求
 // cainiao.waybill.cloudprint.netprint.bind
 //
 // 绑定打印机接口
-type CainiaoWaybillCloudprintNetprintBindAPIRequest struct {
+type CainiaowaybillcloudprintnetprintbindAPIRequest struct {
 	model.Params
 	// req
 	_params *CloudPrinterBindRequest
 }
 
-// NewCainiaoWaybillCloudprintNetprintBindRequest 初始化CainiaoWaybillCloudprintNetprintBindAPIRequest对象
-func NewCainiaoWaybillCloudprintNetprintBindRequest() *CainiaoWaybillCloudprintNetprintBindAPIRequest {
-	return &CainiaoWaybillCloudprintNetprintBindAPIRequest{
+// NewCainiaowaybillcloudprintnetprintbindRequest 初始化CainiaowaybillcloudprintnetprintbindAPIRequest对象
+func NewCainiaowaybillcloudprintnetprintbindRequest() *CainiaowaybillcloudprintnetprintbindAPIRequest {
+	return &CainiaowaybillcloudprintnetprintbindAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r CainiaoWaybillCloudprintNetprintBindAPIRequest) GetApiMethodName() string {
+func (r CainiaowaybillcloudprintnetprintbindAPIRequest) GetApiMethodName() string {
 	return "cainiao.waybill.cloudprint.netprint.bind"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoWaybillCloudprintNetprintBindAPIRequest) GetApiParams(params url.Values) {
+func (r CainiaowaybillcloudprintnetprintbindAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r CainiaoWaybillCloudprintNetprintBindAPIRequest) GetRawParams() model.Params {
+func (r CainiaowaybillcloudprintnetprintbindAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParams is Params Setter
 // req
-func (r *CainiaoWaybillCloudprintNetprintBindAPIRequest) SetParams(_params *CloudPrinterBindRequest) error {
+func (r *CainiaowaybillcloudprintnetprintbindAPIRequest) SetParams(_params *CloudPrinterBindRequest) error {
 	r._params = _params
 	r.Set("params", _params)
 	return nil
 }
 
 // GetParams Params Getter
-func (r CainiaoWaybillCloudprintNetprintBindAPIRequest) GetParams() *CloudPrinterBindRequest {
+func (r CainiaowaybillcloudprintnetprintbindAPIRequest) GetParams() *CloudPrinterBindRequest {
 	return r._params
 }

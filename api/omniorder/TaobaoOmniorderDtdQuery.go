@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/omniorder"
 )
 
-// TaobaoOmniorderDtdQuery 门店自送根据核销码查订单
+// Taobaoomniorderdtdquery 门店自送根据核销码查订单
 // taobao.omniorder.dtd.query
 //
 // 门店自送根据核销码码查询订单信息
-func TaobaoOmniorderDtdQuery(clt *core.SDKClient, req *omniorder.TaobaoOmniorderDtdQueryAPIRequest, session string) (*omniorder.TaobaoOmniorderDtdQueryAPIResponse, error) {
-	var resp omniorder.TaobaoOmniorderDtdQueryAPIResponse
+func Taobaoomniorderdtdquery(clt *core.SDKClient, req *omniorder.TaobaoomniorderdtdqueryAPIRequest, session string) (*omniorder.TaobaoomniorderdtdqueryAPIResponse, error) {
+	var resp omniorder.TaobaoomniorderdtdqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

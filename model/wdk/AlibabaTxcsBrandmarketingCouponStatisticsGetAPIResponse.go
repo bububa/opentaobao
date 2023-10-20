@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaTxcsBrandmarketingCouponStatisticsGetAPIResponse 品牌营销导购员券推广统计数据回流 API返回值
+// AlibabatxcsbrandmarketingcouponstatisticsgetAPIResponse 品牌营销导购员券推广统计数据回流 API返回值
 // alibaba.txcs.brandmarketing.coupon.statistics.get
 //
 // 请求券统计数据回流
-type AlibabaTxcsBrandmarketingCouponStatisticsGetAPIResponse struct {
+type AlibabatxcsbrandmarketingcouponstatisticsgetAPIResponse struct {
 	model.CommonResponse
-	AlibabaTxcsBrandmarketingCouponStatisticsGetAPIResponseModel
+	AlibabatxcsbrandmarketingcouponstatisticsgetAPIResponseModel
 }
 
-// AlibabaTxcsBrandmarketingCouponStatisticsGetAPIResponseModel is 品牌营销导购员券推广统计数据回流 成功返回结果
-type AlibabaTxcsBrandmarketingCouponStatisticsGetAPIResponseModel struct {
+// AlibabatxcsbrandmarketingcouponstatisticsgetAPIResponseModel is 品牌营销导购员券推广统计数据回流 成功返回结果
+type AlibabatxcsbrandmarketingcouponstatisticsgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_txcs_brandmarketing_coupon_statistics_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

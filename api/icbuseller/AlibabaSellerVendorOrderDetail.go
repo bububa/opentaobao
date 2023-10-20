@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/icbuseller"
 )
 
-// AlibabaSellerVendorOrderDetail 国际站服务市场订单详情接口
+// Alibabasellervendororderdetail 国际站服务市场订单详情接口
 // alibaba.seller.vendor.order.detail
 //
 // 国际站服务市场订单列表接口
-func AlibabaSellerVendorOrderDetail(clt *core.SDKClient, req *icbuseller.AlibabaSellerVendorOrderDetailAPIRequest, session string) (*icbuseller.AlibabaSellerVendorOrderDetailAPIResponse, error) {
-	var resp icbuseller.AlibabaSellerVendorOrderDetailAPIResponse
+func Alibabasellervendororderdetail(clt *core.SDKClient, req *icbuseller.AlibabasellervendororderdetailAPIRequest, session string) (*icbuseller.AlibabasellervendororderdetailAPIResponse, error) {
+	var resp icbuseller.AlibabasellervendororderdetailAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

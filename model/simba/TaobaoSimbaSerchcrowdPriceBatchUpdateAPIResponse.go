@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaSerchcrowdPriceBatchUpdateAPIResponse 单品推广搜索人群修改溢价 API返回值
+// TaobaosimbaserchcrowdpricebatchupdateAPIResponse 单品推广搜索人群修改溢价 API返回值
 // taobao.simba.serchcrowd.price.batch.update
 //
 // 单品推广搜索人群修改溢价, 不支持跨推广单元修改
-type TaobaoSimbaSerchcrowdPriceBatchUpdateAPIResponse struct {
+type TaobaosimbaserchcrowdpricebatchupdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoSimbaSerchcrowdPriceBatchUpdateAPIResponseModel
+	TaobaosimbaserchcrowdpricebatchupdateAPIResponseModel
 }
 
-// TaobaoSimbaSerchcrowdPriceBatchUpdateAPIResponseModel is 单品推广搜索人群修改溢价 成功返回结果
-type TaobaoSimbaSerchcrowdPriceBatchUpdateAPIResponseModel struct {
+// TaobaosimbaserchcrowdpricebatchupdateAPIResponseModel is 单品推广搜索人群修改溢价 成功返回结果
+type TaobaosimbaserchcrowdpricebatchupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_serchcrowd_price_batch_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

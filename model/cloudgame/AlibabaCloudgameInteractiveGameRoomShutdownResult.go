@@ -1,7 +1,7 @@
 package cloudgame
 
-// AlibabaCloudgameInteractiveGameRoomShutdownResult 结构体
-type AlibabaCloudgameInteractiveGameRoomShutdownResult struct {
+// AlibabacloudgameinteractivegameroomshutdownResult 结构体
+type AlibabacloudgameinteractivegameroomshutdownResult struct {
 	// 状态码
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 返回描述

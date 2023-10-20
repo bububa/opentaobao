@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkRefundAggregate 淘鲜达退款单按门店聚合查询
+// Alibabawdkrefundaggregate 淘鲜达退款单按门店聚合查询
 // alibaba.wdk.refund.aggregate
 //
 // 淘鲜达退款单按门店聚合查询
-func AlibabaWdkRefundAggregate(clt *core.SDKClient, req *wdk.AlibabaWdkRefundAggregateAPIRequest, session string) (*wdk.AlibabaWdkRefundAggregateAPIResponse, error) {
-	var resp wdk.AlibabaWdkRefundAggregateAPIResponse
+func Alibabawdkrefundaggregate(clt *core.SDKClient, req *wdk.AlibabawdkrefundaggregateAPIRequest, session string) (*wdk.AlibabawdkrefundaggregateAPIResponse, error) {
+	var resp wdk.AlibabawdkrefundaggregateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

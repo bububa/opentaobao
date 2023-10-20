@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/axindata"
 )
 
-// TaobaoAlitripTravelAxinHotelRoomMatch 阿信酒店房型匹配
+// Taobaoalitriptravelaxinhotelroommatch 阿信酒店房型匹配
 // taobao.alitrip.travel.axin.hotel.room.match
 //
 // 阿信酒店房型匹配
-func TaobaoAlitripTravelAxinHotelRoomMatch(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelAxinHotelRoomMatchAPIRequest, session string) (*axindata.TaobaoAlitripTravelAxinHotelRoomMatchAPIResponse, error) {
-	var resp axindata.TaobaoAlitripTravelAxinHotelRoomMatchAPIResponse
+func Taobaoalitriptravelaxinhotelroommatch(clt *core.SDKClient, req *axindata.TaobaoalitriptravelaxinhotelroommatchAPIRequest, session string) (*axindata.TaobaoalitriptravelaxinhotelroommatchAPIResponse, error) {
+	var resp axindata.TaobaoalitriptravelaxinhotelroommatchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

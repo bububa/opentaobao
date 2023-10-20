@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseStoreCheckResult 结构体
-type AlibabaAlihouseStoreCheckResult struct {
+// AlibabaalihousestorecheckResult 结构体
+type AlibabaalihousestorecheckResult struct {
 	// 结果列表
 	Data []CompanyStoreForCheckDto `json:"data,omitempty" xml:"data>company_store_for_check_dto,omitempty"`
 	// code

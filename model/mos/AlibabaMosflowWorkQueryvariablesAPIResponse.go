@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMosflowWorkQueryvariablesAPIResponse 获取指定流程上下文参数 API返回值
+// AlibabamosflowworkqueryvariablesAPIResponse 获取指定流程上下文参数 API返回值
 // alibaba.mosflow.work.queryvariables
 //
 // 业务查询指定流程上下文内容
-type AlibabaMosflowWorkQueryvariablesAPIResponse struct {
+type AlibabamosflowworkqueryvariablesAPIResponse struct {
 	model.CommonResponse
-	AlibabaMosflowWorkQueryvariablesAPIResponseModel
+	AlibabamosflowworkqueryvariablesAPIResponseModel
 }
 
-// AlibabaMosflowWorkQueryvariablesAPIResponseModel is 获取指定流程上下文参数 成功返回结果
-type AlibabaMosflowWorkQueryvariablesAPIResponseModel struct {
+// AlibabamosflowworkqueryvariablesAPIResponseModel is 获取指定流程上下文参数 成功返回结果
+type AlibabamosflowworkqueryvariablesAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mosflow_work_queryvariables_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

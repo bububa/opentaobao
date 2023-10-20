@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascpchannel"
 )
 
-// AlibabaAscpChannelSalesOrderConfirm 渠道销售单确认收货
+// Alibabaascpchannelsalesorderconfirm 渠道销售单确认收货
 // alibaba.ascp.channel.sales.order.confirm
 //
 // 渠道销售单确认收货
-func AlibabaAscpChannelSalesOrderConfirm(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelSalesOrderConfirmAPIRequest, session string) (*ascpchannel.AlibabaAscpChannelSalesOrderConfirmAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpChannelSalesOrderConfirmAPIResponse
+func Alibabaascpchannelsalesorderconfirm(clt *core.SDKClient, req *ascpchannel.AlibabaascpchannelsalesorderconfirmAPIRequest, session string) (*ascpchannel.AlibabaascpchannelsalesorderconfirmAPIResponse, error) {
+	var resp ascpchannel.AlibabaascpchannelsalesorderconfirmAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

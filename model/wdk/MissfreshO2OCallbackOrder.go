@@ -1,9 +1,9 @@
 package wdk
 
-// MissfreshO2OCallbackOrder 结构体
-type MissfreshO2OCallbackOrder struct {
+// MissfreshO2ocallbackOrder 结构体
+type MissfreshO2ocallbackOrder struct {
 	// 作业单元
-	CallbackUnits []MissfreshO2OCallbackUnit `json:"callback_units,omitempty" xml:"callback_units>missfresh_o2o_callback_unit,omitempty"`
+	CallbackUnits []MissfreshO2ocallbackUnit `json:"callback_units,omitempty" xml:"callback_units>missfresh_o2ocallback_unit,omitempty"`
 	// 容器列表
 	Containers []Container `json:"containers,omitempty" xml:"containers>container,omitempty"`
 	// 作业状态变更时间

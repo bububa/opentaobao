@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoVmarketEticketConsumeAPIResponse 电子票券消费通知 API返回值
+// TaobaovmarketeticketconsumeAPIResponse 电子票券消费通知 API返回值
 // taobao.vmarket.eticket.consume
 //
 // 外部合作商家电子票券消费回调接口
-type TaobaoVmarketEticketConsumeAPIResponse struct {
+type TaobaovmarketeticketconsumeAPIResponse struct {
 	model.CommonResponse
-	TaobaoVmarketEticketConsumeAPIResponseModel
+	TaobaovmarketeticketconsumeAPIResponseModel
 }
 
-// TaobaoVmarketEticketConsumeAPIResponseModel is 电子票券消费通知 成功返回结果
-type TaobaoVmarketEticketConsumeAPIResponseModel struct {
+// TaobaovmarketeticketconsumeAPIResponseModel is 电子票券消费通知 成功返回结果
+type TaobaovmarketeticketconsumeAPIResponseModel struct {
 	XMLName xml.Name `xml:"vmarket_eticket_consume_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

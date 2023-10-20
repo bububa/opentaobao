@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEleEnterpriseRestaurantMixAPIResponse 混合搜索店铺 API返回值
+// AlibabaeleenterpriserestaurantmixAPIResponse 混合搜索店铺 API返回值
 // alibaba.ele.enterprise.restaurant.mix
 //
 // 混合搜索店铺
-type AlibabaEleEnterpriseRestaurantMixAPIResponse struct {
+type AlibabaeleenterpriserestaurantmixAPIResponse struct {
 	model.CommonResponse
-	AlibabaEleEnterpriseRestaurantMixAPIResponseModel
+	AlibabaeleenterpriserestaurantmixAPIResponseModel
 }
 
-// AlibabaEleEnterpriseRestaurantMixAPIResponseModel is 混合搜索店铺 成功返回结果
-type AlibabaEleEnterpriseRestaurantMixAPIResponseModel struct {
+// AlibabaeleenterpriserestaurantmixAPIResponseModel is 混合搜索店铺 成功返回结果
+type AlibabaeleenterpriserestaurantmixAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ele_enterprise_restaurant_mix_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoQimenTransferorderQueryStruct 结构体
-type TaobaoQimenTransferorderQueryStruct struct {
+// TaobaoqimentransferorderqueryStruct 结构体
+type TaobaoqimentransferorderqueryStruct struct {
 	// 调拨单号
 	TransferOrderCode string `json:"transferOrderCode,omitempty" xml:"transferOrderCode,omitempty"`
 	// 111

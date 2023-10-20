@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/flight"
 )
 
-// TaobaoAlitripTotoroAuxproductDelete 廉航辅营产品删除
+// Taobaoalitriptotoroauxproductdelete 廉航辅营产品删除
 // taobao.alitrip.totoro.auxproduct.delete
 //
 // 廉航辅营产品删除接口
-func TaobaoAlitripTotoroAuxproductDelete(clt *core.SDKClient, req *flight.TaobaoAlitripTotoroAuxproductDeleteAPIRequest, session string) (*flight.TaobaoAlitripTotoroAuxproductDeleteAPIResponse, error) {
-	var resp flight.TaobaoAlitripTotoroAuxproductDeleteAPIResponse
+func Taobaoalitriptotoroauxproductdelete(clt *core.SDKClient, req *flight.TaobaoalitriptotoroauxproductdeleteAPIRequest, session string) (*flight.TaobaoalitriptotoroauxproductdeleteAPIResponse, error) {
+	var resp flight.TaobaoalitriptotoroauxproductdeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

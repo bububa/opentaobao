@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-// TmallServicecenterWorkcardSuspend 工单挂起
+// Tmallservicecenterworkcardsuspend 工单挂起
 // tmall.servicecenter.workcard.suspend
 //
 // 工单挂起
-func TmallServicecenterWorkcardSuspend(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardSuspendAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardSuspendAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkcardSuspendAPIResponse
+func Tmallservicecenterworkcardsuspend(clt *core.SDKClient, req *tmallservice.TmallservicecenterworkcardsuspendAPIRequest, session string) (*tmallservice.TmallservicecenterworkcardsuspendAPIResponse, error) {
+	var resp tmallservice.TmallservicecenterworkcardsuspendAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

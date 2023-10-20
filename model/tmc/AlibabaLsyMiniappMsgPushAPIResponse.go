@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLsyMiniappMsgPushAPIResponse 零售云小程序消息推送 API返回值
+// AlibabalsyminiappmsgpushAPIResponse 零售云小程序消息推送 API返回值
 // alibaba.lsy.miniapp.msg.push
 //
 // 零售云小程序消息推送，推送消息至零售云（喵零等）
-type AlibabaLsyMiniappMsgPushAPIResponse struct {
+type AlibabalsyminiappmsgpushAPIResponse struct {
 	model.CommonResponse
-	AlibabaLsyMiniappMsgPushAPIResponseModel
+	AlibabalsyminiappmsgpushAPIResponseModel
 }
 
-// AlibabaLsyMiniappMsgPushAPIResponseModel is 零售云小程序消息推送 成功返回结果
-type AlibabaLsyMiniappMsgPushAPIResponseModel struct {
+// AlibabalsyminiappmsgpushAPIResponseModel is 零售云小程序消息推送 成功返回结果
+type AlibabalsyminiappmsgpushAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lsy_miniapp_msg_push_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

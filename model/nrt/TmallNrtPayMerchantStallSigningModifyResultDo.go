@@ -1,7 +1,7 @@
 package nrt
 
-// TmallNrtPayMerchantStallSigningModifyResultDo 结构体
-type TmallNrtPayMerchantStallSigningModifyResultDo struct {
+// TmallnrtpaymerchantstallsigningmodifyResultDo 结构体
+type TmallnrtpaymerchantstallsigningmodifyResultDo struct {
 	// 系统自动生成
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 系统自动生成

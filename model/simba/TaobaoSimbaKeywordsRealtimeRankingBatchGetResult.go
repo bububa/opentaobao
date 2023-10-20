@@ -1,7 +1,7 @@
 package simba
 
-// TaobaoSimbaKeywordsRealtimeRankingBatchGetResult 结构体
-type TaobaoSimbaKeywordsRealtimeRankingBatchGetResult struct {
+// TaobaosimbakeywordsrealtimerankingbatchgetResult 结构体
+type TaobaosimbakeywordsrealtimerankingbatchgetResult struct {
 	// 关键词id
 	Bidwordid string `json:"bidwordid,omitempty" xml:"bidwordid,omitempty"`
 	// 状态码stat(0:正常;1:非正常)

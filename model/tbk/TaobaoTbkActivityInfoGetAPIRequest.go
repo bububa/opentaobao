@@ -13,15 +13,15 @@ import (
 type TaobaotbkactivityinfogetAPIRequest struct {
 	model.Params
 	// 官方活动会场ID，从淘宝客后台“我要推广-活动推广”中获取
-	_activitymaterialid string
+	_activityMaterialId string
 	// mm_xxx_xxx_xxx 仅三方分成场景使用
-	_subpid string
+	_subPid string
 	// 自定义输入串，英文和数字组成，长度不能大于12个字符，区分不同的推广渠道
-	_unionid string
+	_unionId string
 	// mm_xxx_xxx_xxx的第三位
-	_adzoneid int64
+	_adzoneId int64
 	// 渠道关系id
-	_relationid int64
+	_relationId int64
 }
 
 // NewTaobaotbkactivityinfogetRequest 初始化TaobaotbkactivityinfogetAPIRequest对象
@@ -48,67 +48,67 @@ func (r TaobaotbkactivityinfogetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetActivitymaterialid is Activitymaterialid Setter
+// SetActivityMaterialId is ActivityMaterialId Setter
 // 官方活动会场ID，从淘宝客后台“我要推广-活动推广”中获取
-func (r *TaobaotbkactivityinfogetAPIRequest) SetActivitymaterialid(_activitymaterialid string) error {
-	r._activitymaterialid = _activitymaterialid
-	r.Set("activity_material_id", _activitymaterialid)
+func (r *TaobaotbkactivityinfogetAPIRequest) SetActivityMaterialId(_activityMaterialId string) error {
+	r._activityMaterialId = _activityMaterialId
+	r.Set("activity_material_id", _activityMaterialId)
 	return nil
 }
 
-// GetActivitymaterialid Activitymaterialid Getter
-func (r TaobaotbkactivityinfogetAPIRequest) GetActivitymaterialid() string {
-	return r._activitymaterialid
+// GetActivityMaterialId ActivityMaterialId Getter
+func (r TaobaotbkactivityinfogetAPIRequest) GetActivityMaterialId() string {
+	return r._activityMaterialId
 }
 
-// SetSubpid is Subpid Setter
+// SetSubPid is SubPid Setter
 // mm_xxx_xxx_xxx 仅三方分成场景使用
-func (r *TaobaotbkactivityinfogetAPIRequest) SetSubpid(_subpid string) error {
-	r._subpid = _subpid
-	r.Set("sub_pid", _subpid)
+func (r *TaobaotbkactivityinfogetAPIRequest) SetSubPid(_subPid string) error {
+	r._subPid = _subPid
+	r.Set("sub_pid", _subPid)
 	return nil
 }
 
-// GetSubpid Subpid Getter
-func (r TaobaotbkactivityinfogetAPIRequest) GetSubpid() string {
-	return r._subpid
+// GetSubPid SubPid Getter
+func (r TaobaotbkactivityinfogetAPIRequest) GetSubPid() string {
+	return r._subPid
 }
 
-// SetUnionid is Unionid Setter
+// SetUnionId is UnionId Setter
 // 自定义输入串，英文和数字组成，长度不能大于12个字符，区分不同的推广渠道
-func (r *TaobaotbkactivityinfogetAPIRequest) SetUnionid(_unionid string) error {
-	r._unionid = _unionid
-	r.Set("union_id", _unionid)
+func (r *TaobaotbkactivityinfogetAPIRequest) SetUnionId(_unionId string) error {
+	r._unionId = _unionId
+	r.Set("union_id", _unionId)
 	return nil
 }
 
-// GetUnionid Unionid Getter
-func (r TaobaotbkactivityinfogetAPIRequest) GetUnionid() string {
-	return r._unionid
+// GetUnionId UnionId Getter
+func (r TaobaotbkactivityinfogetAPIRequest) GetUnionId() string {
+	return r._unionId
 }
 
-// SetAdzoneid is Adzoneid Setter
+// SetAdzoneId is AdzoneId Setter
 // mm_xxx_xxx_xxx的第三位
-func (r *TaobaotbkactivityinfogetAPIRequest) SetAdzoneid(_adzoneid int64) error {
-	r._adzoneid = _adzoneid
-	r.Set("adzone_id", _adzoneid)
+func (r *TaobaotbkactivityinfogetAPIRequest) SetAdzoneId(_adzoneId int64) error {
+	r._adzoneId = _adzoneId
+	r.Set("adzone_id", _adzoneId)
 	return nil
 }
 
-// GetAdzoneid Adzoneid Getter
-func (r TaobaotbkactivityinfogetAPIRequest) GetAdzoneid() int64 {
-	return r._adzoneid
+// GetAdzoneId AdzoneId Getter
+func (r TaobaotbkactivityinfogetAPIRequest) GetAdzoneId() int64 {
+	return r._adzoneId
 }
 
-// SetRelationid is Relationid Setter
+// SetRelationId is RelationId Setter
 // 渠道关系id
-func (r *TaobaotbkactivityinfogetAPIRequest) SetRelationid(_relationid int64) error {
-	r._relationid = _relationid
-	r.Set("relation_id", _relationid)
+func (r *TaobaotbkactivityinfogetAPIRequest) SetRelationId(_relationId int64) error {
+	r._relationId = _relationId
+	r.Set("relation_id", _relationId)
 	return nil
 }
 
-// GetRelationid Relationid Getter
-func (r TaobaotbkactivityinfogetAPIRequest) GetRelationid() int64 {
-	return r._relationid
+// GetRelationId RelationId Getter
+func (r TaobaotbkactivityinfogetAPIRequest) GetRelationId() int64 {
+	return r._relationId
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
 
-// TmallServicecenterWorkcardRefuse 买家拒收
+// Tmallservicecenterworkcardrefuse 买家拒收
 // tmall.servicecenter.workcard.refuse
 //
 // 买家拒收通知接口
-func TmallServicecenterWorkcardRefuse(clt *core.SDKClient, req *tmallsc.TmallServicecenterWorkcardRefuseAPIRequest, session string) (*tmallsc.TmallServicecenterWorkcardRefuseAPIResponse, error) {
-	var resp tmallsc.TmallServicecenterWorkcardRefuseAPIResponse
+func Tmallservicecenterworkcardrefuse(clt *core.SDKClient, req *tmallsc.TmallservicecenterworkcardrefuseAPIRequest, session string) (*tmallsc.TmallservicecenterworkcardrefuseAPIResponse, error) {
+	var resp tmallsc.TmallservicecenterworkcardrefuseAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

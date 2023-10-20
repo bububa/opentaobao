@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest 上门取退产能信息同步/更新 API请求
+// TaobaologisticsexpresscapacitytmsasyncAPIRequest 上门取退产能信息同步/更新 API请求
 // taobao.logistics.express.capacity.tms.async
 //
 // 上门取退产能信息同步/更新
-type TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest struct {
+type TaobaologisticsexpresscapacitytmsasyncAPIRequest struct {
 	model.Params
 	// 上门取退产能信息同步/更新
 	_capacityRequest *CapacityRequest
 }
 
-// NewTaobaoLogisticsExpressCapacityTmsAsyncRequest 初始化TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest对象
-func NewTaobaoLogisticsExpressCapacityTmsAsyncRequest() *TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest {
-	return &TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest{
+// NewTaobaologisticsexpresscapacitytmsasyncRequest 初始化TaobaologisticsexpresscapacitytmsasyncAPIRequest对象
+func NewTaobaologisticsexpresscapacitytmsasyncRequest() *TaobaologisticsexpresscapacitytmsasyncAPIRequest {
+	return &TaobaologisticsexpresscapacitytmsasyncAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest) GetApiMethodName() string {
+func (r TaobaologisticsexpresscapacitytmsasyncAPIRequest) GetApiMethodName() string {
 	return "taobao.logistics.express.capacity.tms.async"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaologisticsexpresscapacitytmsasyncAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest) GetRawParams() model.Params {
+func (r TaobaologisticsexpresscapacitytmsasyncAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCapacityRequest is CapacityRequest Setter
 // 上门取退产能信息同步/更新
-func (r *TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest) SetCapacityRequest(_capacityRequest *CapacityRequest) error {
+func (r *TaobaologisticsexpresscapacitytmsasyncAPIRequest) SetCapacityRequest(_capacityRequest *CapacityRequest) error {
 	r._capacityRequest = _capacityRequest
 	r.Set("capacity_request", _capacityRequest)
 	return nil
 }
 
 // GetCapacityRequest CapacityRequest Getter
-func (r TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest) GetCapacityRequest() *CapacityRequest {
+func (r TaobaologisticsexpresscapacitytmsasyncAPIRequest) GetCapacityRequest() *CapacityRequest {
 	return r._capacityRequest
 }

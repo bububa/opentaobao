@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripSellerRefundmoneyConfirmAPIResponse 【机票代理商订单】确认退款 API返回值
+// TaobaoalitripsellerrefundmoneyconfirmAPIResponse 【机票代理商订单】确认退款 API返回值
 // taobao.alitrip.seller.refundmoney.confirm
 //
 // 代理人确认退票申请单的退款
-type TaobaoAlitripSellerRefundmoneyConfirmAPIResponse struct {
+type TaobaoalitripsellerrefundmoneyconfirmAPIResponse struct {
 	model.CommonResponse
-	TaobaoAlitripSellerRefundmoneyConfirmAPIResponseModel
+	TaobaoalitripsellerrefundmoneyconfirmAPIResponseModel
 }
 
-// TaobaoAlitripSellerRefundmoneyConfirmAPIResponseModel is 【机票代理商订单】确认退款 成功返回结果
-type TaobaoAlitripSellerRefundmoneyConfirmAPIResponseModel struct {
+// TaobaoalitripsellerrefundmoneyconfirmAPIResponseModel is 【机票代理商订单】确认退款 成功返回结果
+type TaobaoalitripsellerrefundmoneyconfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_seller_refundmoney_confirm_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

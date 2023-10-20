@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIdleRentItemSkuUpdateAPIRequest 更新/增加sku信息 API请求
+// AlibabaidlerentitemskuupdateAPIRequest 更新/增加sku信息 API请求
 // alibaba.idle.rent.item.sku.update
 //
 // 更新/增加sku信息
-type AlibabaIdleRentItemSkuUpdateAPIRequest struct {
+type AlibabaidlerentitemskuupdateAPIRequest struct {
 	model.Params
 	// sku信息，更新后skuId保持不变
 	_sku *ItemSkuDto
 }
 
-// NewAlibabaIdleRentItemSkuUpdateRequest 初始化AlibabaIdleRentItemSkuUpdateAPIRequest对象
-func NewAlibabaIdleRentItemSkuUpdateRequest() *AlibabaIdleRentItemSkuUpdateAPIRequest {
-	return &AlibabaIdleRentItemSkuUpdateAPIRequest{
+// NewAlibabaidlerentitemskuupdateRequest 初始化AlibabaidlerentitemskuupdateAPIRequest对象
+func NewAlibabaidlerentitemskuupdateRequest() *AlibabaidlerentitemskuupdateAPIRequest {
+	return &AlibabaidlerentitemskuupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaIdleRentItemSkuUpdateAPIRequest) GetApiMethodName() string {
+func (r AlibabaidlerentitemskuupdateAPIRequest) GetApiMethodName() string {
 	return "alibaba.idle.rent.item.sku.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIdleRentItemSkuUpdateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaidlerentitemskuupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaIdleRentItemSkuUpdateAPIRequest) GetRawParams() model.Params {
+func (r AlibabaidlerentitemskuupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSku is Sku Setter
 // sku信息，更新后skuId保持不变
-func (r *AlibabaIdleRentItemSkuUpdateAPIRequest) SetSku(_sku *ItemSkuDto) error {
+func (r *AlibabaidlerentitemskuupdateAPIRequest) SetSku(_sku *ItemSkuDto) error {
 	r._sku = _sku
 	r.Set("sku", _sku)
 	return nil
 }
 
 // GetSku Sku Getter
-func (r AlibabaIdleRentItemSkuUpdateAPIRequest) GetSku() *ItemSkuDto {
+func (r AlibabaidlerentitemskuupdateAPIRequest) GetSku() *ItemSkuDto {
 	return r._sku
 }

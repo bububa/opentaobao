@@ -1,7 +1,7 @@
 package alicom
 
-// AlibabaAliqinAxbVendorPushCallEventResponse 结构体
-type AlibabaAliqinAxbVendorPushCallEventResponse struct {
+// AlibabaaliqinaxbvendorpushcalleventResponse 结构体
+type AlibabaaliqinaxbvendorpushcalleventResponse struct {
 	// 接口调用成功 OK
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 响应描述

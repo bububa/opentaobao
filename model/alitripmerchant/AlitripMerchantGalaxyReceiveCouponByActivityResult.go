@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripMerchantGalaxyReceiveCouponByActivityResult 结构体
-type AlitripMerchantGalaxyReceiveCouponByActivityResult struct {
+// AlitripmerchantgalaxyreceivecouponbyactivityResult 结构体
+type AlitripmerchantgalaxyreceivecouponbyactivityResult struct {
 	// 是否成功
 	Success string `json:"success,omitempty" xml:"success,omitempty"`
 	// 错误码

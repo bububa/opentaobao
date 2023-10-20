@@ -3,7 +3,7 @@ package wdk
 // TradeOutBoundDetailCallBackRequest 结构体
 type TradeOutBoundDetailCallBackRequest struct {
 	// 称重品商品实称重量/g
-	SkuWeights []BigDecimal `json:"sku_weights,omitempty" xml:"sku_weights>big_decimal,omitempty"`
+	SkuWeights []float64 `json:"sku_weights,omitempty" xml:"sku_weights>float64,omitempty"`
 	// 缺货出销售数量
 	OutOfStockSaleQuantity string `json:"out_of_stock_sale_quantity,omitempty" xml:"out_of_stock_sale_quantity,omitempty"`
 	// 渠道子单号

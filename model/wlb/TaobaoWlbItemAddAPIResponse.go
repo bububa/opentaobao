@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWlbItemAddAPIResponse 添加单个物流宝商品 API返回值
+// TaobaowlbitemaddAPIResponse 添加单个物流宝商品 API返回值
 // taobao.wlb.item.add
 //
 // 添加物流宝商品，支持物流宝子商品和属性添加
-type TaobaoWlbItemAddAPIResponse struct {
+type TaobaowlbitemaddAPIResponse struct {
 	model.CommonResponse
-	TaobaoWlbItemAddAPIResponseModel
+	TaobaowlbitemaddAPIResponseModel
 }
 
-// TaobaoWlbItemAddAPIResponseModel is 添加单个物流宝商品 成功返回结果
-type TaobaoWlbItemAddAPIResponseModel struct {
+// TaobaowlbitemaddAPIResponseModel is 添加单个物流宝商品 成功返回结果
+type TaobaowlbitemaddAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_item_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

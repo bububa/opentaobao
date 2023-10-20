@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallTmicQuestionnaireOptionGetAPIResponse 获取单题选项 API返回值
+// TmalltmicquestionnaireoptiongetAPIResponse 获取单题选项 API返回值
 // tmall.tmic.questionnaire.option.get
 //
 // 根据具体题号，获取当前题目的选项列表
-type TmallTmicQuestionnaireOptionGetAPIResponse struct {
+type TmalltmicquestionnaireoptiongetAPIResponse struct {
 	model.CommonResponse
-	TmallTmicQuestionnaireOptionGetAPIResponseModel
+	TmalltmicquestionnaireoptiongetAPIResponseModel
 }
 
-// TmallTmicQuestionnaireOptionGetAPIResponseModel is 获取单题选项 成功返回结果
-type TmallTmicQuestionnaireOptionGetAPIResponseModel struct {
+// TmalltmicquestionnaireoptiongetAPIResponseModel is 获取单题选项 成功返回结果
+type TmalltmicquestionnaireoptiongetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_tmic_questionnaire_option_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

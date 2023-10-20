@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aedropshiper"
 )
 
-// AliexpressDsTradeOrderGet 交易订单查询
+// Aliexpressdstradeorderget 交易订单查询
 // aliexpress.ds.trade.order.get
 //
 // 交易订单查询
-func AliexpressDsTradeOrderGet(clt *core.SDKClient, req *aedropshiper.AliexpressDsTradeOrderGetAPIRequest, session string) (*aedropshiper.AliexpressDsTradeOrderGetAPIResponse, error) {
-	var resp aedropshiper.AliexpressDsTradeOrderGetAPIResponse
+func Aliexpressdstradeorderget(clt *core.SDKClient, req *aedropshiper.AliexpressdstradeordergetAPIRequest, session string) (*aedropshiper.AliexpressdstradeordergetAPIResponse, error) {
+	var resp aedropshiper.AliexpressdstradeordergetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

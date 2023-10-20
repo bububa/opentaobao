@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkorderSharestockCpsorderListAPIRequest cps正向分销订单批量回流 API请求
+// AlibabawdkordersharestockcpsorderlistAPIRequest cps正向分销订单批量回流 API请求
 // alibaba.wdkorder.sharestock.cpsorder.list
 //
 // cps正向分销订单批量回流
-type AlibabaWdkorderSharestockCpsorderListAPIRequest struct {
+type AlibabawdkordersharestockcpsorderlistAPIRequest struct {
 	model.Params
 	// 入参
 	_cpsOrderRequest *CpsOrderRequest
 }
 
-// NewAlibabaWdkorderSharestockCpsorderListRequest 初始化AlibabaWdkorderSharestockCpsorderListAPIRequest对象
-func NewAlibabaWdkorderSharestockCpsorderListRequest() *AlibabaWdkorderSharestockCpsorderListAPIRequest {
-	return &AlibabaWdkorderSharestockCpsorderListAPIRequest{
+// NewAlibabawdkordersharestockcpsorderlistRequest 初始化AlibabawdkordersharestockcpsorderlistAPIRequest对象
+func NewAlibabawdkordersharestockcpsorderlistRequest() *AlibabawdkordersharestockcpsorderlistAPIRequest {
+	return &AlibabawdkordersharestockcpsorderlistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkorderSharestockCpsorderListAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkordersharestockcpsorderlistAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdkorder.sharestock.cpsorder.list"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkorderSharestockCpsorderListAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkordersharestockcpsorderlistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkorderSharestockCpsorderListAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkordersharestockcpsorderlistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCpsOrderRequest is CpsOrderRequest Setter
 // 入参
-func (r *AlibabaWdkorderSharestockCpsorderListAPIRequest) SetCpsOrderRequest(_cpsOrderRequest *CpsOrderRequest) error {
+func (r *AlibabawdkordersharestockcpsorderlistAPIRequest) SetCpsOrderRequest(_cpsOrderRequest *CpsOrderRequest) error {
 	r._cpsOrderRequest = _cpsOrderRequest
 	r.Set("cps_order_request", _cpsOrderRequest)
 	return nil
 }
 
 // GetCpsOrderRequest CpsOrderRequest Getter
-func (r AlibabaWdkorderSharestockCpsorderListAPIRequest) GetCpsOrderRequest() *CpsOrderRequest {
+func (r AlibabawdkordersharestockcpsorderlistAPIRequest) GetCpsOrderRequest() *CpsOrderRequest {
 	return r._cpsOrderRequest
 }

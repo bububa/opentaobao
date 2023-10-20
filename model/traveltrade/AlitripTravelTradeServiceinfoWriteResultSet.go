@@ -1,7 +1,7 @@
 package traveltrade
 
-// AlitripTravelTradeServiceinfoWriteResultSet 结构体
-type AlitripTravelTradeServiceinfoWriteResultSet struct {
+// AlitriptraveltradeserviceinfowriteResultSet 结构体
+type AlitriptraveltradeserviceinfowriteResultSet struct {
 	// 错误码信息
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误详细信息

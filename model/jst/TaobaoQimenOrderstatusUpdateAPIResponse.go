@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenOrderstatusUpdateAPIResponse 订单状态更新接口 API返回值
+// TaobaoqimenorderstatusupdateAPIResponse 订单状态更新接口 API返回值
 // taobao.qimen.orderstatus.update
 //
 // 星盘和ISV，可以通过此接口，来更新订单状态。此接口应用于使用阿里星盘分单，且使用商家系统（非阿里掌柜）接单/拒单的模式下更新订单状态。
-type TaobaoQimenOrderstatusUpdateAPIResponse struct {
+type TaobaoqimenorderstatusupdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoQimenOrderstatusUpdateAPIResponseModel
+	TaobaoqimenorderstatusupdateAPIResponseModel
 }
 
-// TaobaoQimenOrderstatusUpdateAPIResponseModel is 订单状态更新接口 成功返回结果
-type TaobaoQimenOrderstatusUpdateAPIResponseModel struct {
+// TaobaoqimenorderstatusupdateAPIResponseModel is 订单状态更新接口 成功返回结果
+type TaobaoqimenorderstatusupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_orderstatus_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmc"
 )
 
-// TaobaoTmcUserTopicsGet 获取用户开通的topic列表
+// Taobaotmcusertopicsget 获取用户开通的topic列表
 // taobao.tmc.user.topics.get
 //
 // 获取用户开通的topic列表，授权消息使用
-func TaobaoTmcUserTopicsGet(clt *core.SDKClient, req *tmc.TaobaoTmcUserTopicsGetAPIRequest, session string) (*tmc.TaobaoTmcUserTopicsGetAPIResponse, error) {
-	var resp tmc.TaobaoTmcUserTopicsGetAPIResponse
+func Taobaotmcusertopicsget(clt *core.SDKClient, req *tmc.TaobaotmcusertopicsgetAPIRequest, session string) (*tmc.TaobaotmcusertopicsgetAPIResponse, error) {
+	var resp tmc.TaobaotmcusertopicsgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

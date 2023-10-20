@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaoFeedflowItemAdgroupAdzoneBindResultDto 结构体
-type TaobaoFeedflowItemAdgroupAdzoneBindResultDto struct {
+// TaobaofeedflowitemadgroupadzonebindResultDto 结构体
+type TaobaofeedflowitemadgroupadzonebindResultDto struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 调用是否成功,true-成功，false-失败

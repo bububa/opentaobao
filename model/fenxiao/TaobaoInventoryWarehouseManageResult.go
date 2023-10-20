@@ -1,7 +1,7 @@
 package fenxiao
 
-// TaobaoInventoryWarehouseManageResult 结构体
-type TaobaoInventoryWarehouseManageResult struct {
+// TaobaoinventorywarehousemanageResult 结构体
+type TaobaoinventorywarehousemanageResult struct {
 	// errorCode
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// errorMsg

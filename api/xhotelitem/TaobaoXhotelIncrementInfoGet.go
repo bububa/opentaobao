@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
 
-// TaobaoXhotelIncrementInfoGet 酒店状态增量查询接口
+// Taobaoxhotelincrementinfoget 酒店状态增量查询接口
 // taobao.xhotel.increment.info.get
 //
 // 酒店状态增量查询接口
-func TaobaoXhotelIncrementInfoGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelIncrementInfoGetAPIRequest, session string) (*xhotelitem.TaobaoXhotelIncrementInfoGetAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelIncrementInfoGetAPIResponse
+func Taobaoxhotelincrementinfoget(clt *core.SDKClient, req *xhotelitem.TaobaoxhotelincrementinfogetAPIRequest, session string) (*xhotelitem.TaobaoxhotelincrementinfogetAPIResponse, error) {
+	var resp xhotelitem.TaobaoxhotelincrementinfogetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

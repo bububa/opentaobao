@@ -1,7 +1,7 @@
 package tmallservice
 
-// AlibabaSscSupplyplatformServiceInventoryEditResult 结构体
-type AlibabaSscSupplyplatformServiceInventoryEditResult struct {
+// AlibabasscsupplyplatformserviceinventoryeditResult 结构体
+type AlibabasscsupplyplatformserviceinventoryeditResult struct {
 	// 对外展示的错误信息
 	DisplayMsg string `json:"display_msg,omitempty" xml:"display_msg,omitempty"`
 	// 错误信息

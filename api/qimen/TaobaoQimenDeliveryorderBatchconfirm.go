@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/qimen"
 )
 
-// TaobaoQimenDeliveryorderBatchconfirm 发货单确认接口
+// Taobaoqimendeliveryorderbatchconfirm 发货单确认接口
 // taobao.qimen.deliveryorder.batchconfirm
 //
 // taobao.qimen.deliveryorder.batchconfirm
-func TaobaoQimenDeliveryorderBatchconfirm(clt *core.SDKClient, req *qimen.TaobaoQimenDeliveryorderBatchconfirmAPIRequest, session string) (*qimen.TaobaoQimenDeliveryorderBatchconfirmAPIResponse, error) {
-	var resp qimen.TaobaoQimenDeliveryorderBatchconfirmAPIResponse
+func Taobaoqimendeliveryorderbatchconfirm(clt *core.SDKClient, req *qimen.TaobaoqimendeliveryorderbatchconfirmAPIRequest, session string) (*qimen.TaobaoqimendeliveryorderbatchconfirmAPIResponse, error) {
+	var resp qimen.TaobaoqimendeliveryorderbatchconfirmAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

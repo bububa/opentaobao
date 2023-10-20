@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpAdKeywordStatusUpdateAPIResponse 关键词启动暂停推广 API返回值
+// AlibabascbpadkeywordstatusupdateAPIResponse 关键词启动暂停推广 API返回值
 // alibaba.scbp.ad.keyword.status.update
 //
 // 关键词启动暂停推广
-type AlibabaScbpAdKeywordStatusUpdateAPIResponse struct {
+type AlibabascbpadkeywordstatusupdateAPIResponse struct {
 	model.CommonResponse
-	AlibabaScbpAdKeywordStatusUpdateAPIResponseModel
+	AlibabascbpadkeywordstatusupdateAPIResponseModel
 }
 
-// AlibabaScbpAdKeywordStatusUpdateAPIResponseModel is 关键词启动暂停推广 成功返回结果
-type AlibabaScbpAdKeywordStatusUpdateAPIResponseModel struct {
+// AlibabascbpadkeywordstatusupdateAPIResponseModel is 关键词启动暂停推广 成功返回结果
+type AlibabascbpadkeywordstatusupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_ad_keyword_status_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

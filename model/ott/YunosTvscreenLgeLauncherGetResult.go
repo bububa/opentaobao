@@ -1,7 +1,7 @@
 package ott
 
-// YunosTvscreenLgeLauncherGetResult 结构体
-type YunosTvscreenLgeLauncherGetResult struct {
+// YunostvscreenlgelaunchergetResult 结构体
+type YunostvscreenlgelaunchergetResult struct {
 	// Error message when success == false
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// Error code when success == false

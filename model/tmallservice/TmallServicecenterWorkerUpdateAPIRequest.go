@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallServicecenterWorkerUpdateAPIRequest 修改工人信息 API请求
+// TmallservicecenterworkerupdateAPIRequest 修改工人信息 API请求
 // tmall.servicecenter.worker.update
 //
 // 修改工人信息。该接口为多个业务公用，部分字段可忽略。对于电器预约安装业务，同一个服务商，通过工人姓名+手机号+biz_type 保证唯一性。工人已存在才可以修改。
@@ -25,45 +25,45 @@ import (
 // 11000, category_id 无效
 // 11001, biz_type 无效
 // 20001,已查询到最后一页
-type TmallServicecenterWorkerUpdateAPIRequest struct {
+type TmallservicecenterworkerupdateAPIRequest struct {
 	model.Params
 	// 工人信息
 	_worker *WorkerDto
 }
 
-// NewTmallServicecenterWorkerUpdateRequest 初始化TmallServicecenterWorkerUpdateAPIRequest对象
-func NewTmallServicecenterWorkerUpdateRequest() *TmallServicecenterWorkerUpdateAPIRequest {
-	return &TmallServicecenterWorkerUpdateAPIRequest{
+// NewTmallservicecenterworkerupdateRequest 初始化TmallservicecenterworkerupdateAPIRequest对象
+func NewTmallservicecenterworkerupdateRequest() *TmallservicecenterworkerupdateAPIRequest {
+	return &TmallservicecenterworkerupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallServicecenterWorkerUpdateAPIRequest) GetApiMethodName() string {
+func (r TmallservicecenterworkerupdateAPIRequest) GetApiMethodName() string {
 	return "tmall.servicecenter.worker.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallServicecenterWorkerUpdateAPIRequest) GetApiParams(params url.Values) {
+func (r TmallservicecenterworkerupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallServicecenterWorkerUpdateAPIRequest) GetRawParams() model.Params {
+func (r TmallservicecenterworkerupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetWorker is Worker Setter
 // 工人信息
-func (r *TmallServicecenterWorkerUpdateAPIRequest) SetWorker(_worker *WorkerDto) error {
+func (r *TmallservicecenterworkerupdateAPIRequest) SetWorker(_worker *WorkerDto) error {
 	r._worker = _worker
 	r.Set("worker", _worker)
 	return nil
 }
 
 // GetWorker Worker Getter
-func (r TmallServicecenterWorkerUpdateAPIRequest) GetWorker() *WorkerDto {
+func (r TmallservicecenterworkerupdateAPIRequest) GetWorker() *WorkerDto {
 	return r._worker
 }

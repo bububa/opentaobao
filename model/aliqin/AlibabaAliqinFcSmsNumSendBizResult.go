@@ -1,7 +1,7 @@
 package aliqin
 
-// AlibabaAliqinFcSmsNumSendBizResult 结构体
-type AlibabaAliqinFcSmsNumSendBizResult struct {
+// AlibabaaliqinfcsmsnumsendBizResult 结构体
+type AlibabaaliqinfcsmsnumsendBizResult struct {
 	// 返回结果
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// 返回信息描述

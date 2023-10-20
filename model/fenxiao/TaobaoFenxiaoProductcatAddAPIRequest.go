@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoFenxiaoProductcatAddAPIRequest 新增产品线 API请求
+// TaobaofenxiaoproductcataddAPIRequest 新增产品线 API请求
 // taobao.fenxiao.productcat.add
 //
 // 新增产品线
-type TaobaoFenxiaoProductcatAddAPIRequest struct {
+type TaobaofenxiaoproductcataddAPIRequest struct {
 	model.Params
 	// 产品线名称
 	_name string
@@ -24,91 +24,91 @@ type TaobaoFenxiaoProductcatAddAPIRequest struct {
 	_dealerCostPercent int64
 }
 
-// NewTaobaoFenxiaoProductcatAddRequest 初始化TaobaoFenxiaoProductcatAddAPIRequest对象
-func NewTaobaoFenxiaoProductcatAddRequest() *TaobaoFenxiaoProductcatAddAPIRequest {
-	return &TaobaoFenxiaoProductcatAddAPIRequest{
+// NewTaobaofenxiaoproductcataddRequest 初始化TaobaofenxiaoproductcataddAPIRequest对象
+func NewTaobaofenxiaoproductcataddRequest() *TaobaofenxiaoproductcataddAPIRequest {
+	return &TaobaofenxiaoproductcataddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoFenxiaoProductcatAddAPIRequest) GetApiMethodName() string {
+func (r TaobaofenxiaoproductcataddAPIRequest) GetApiMethodName() string {
 	return "taobao.fenxiao.productcat.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoFenxiaoProductcatAddAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaofenxiaoproductcataddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoFenxiaoProductcatAddAPIRequest) GetRawParams() model.Params {
+func (r TaobaofenxiaoproductcataddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetName is Name Setter
 // 产品线名称
-func (r *TaobaoFenxiaoProductcatAddAPIRequest) SetName(_name string) error {
+func (r *TaobaofenxiaoproductcataddAPIRequest) SetName(_name string) error {
 	r._name = _name
 	r.Set("name", _name)
 	return nil
 }
 
 // GetName Name Getter
-func (r TaobaoFenxiaoProductcatAddAPIRequest) GetName() string {
+func (r TaobaofenxiaoproductcataddAPIRequest) GetName() string {
 	return r._name
 }
 
 // SetRetailLowPercent is RetailLowPercent Setter
 // 最低零售价比例，注意：100.00%，则输入为10000
-func (r *TaobaoFenxiaoProductcatAddAPIRequest) SetRetailLowPercent(_retailLowPercent int64) error {
+func (r *TaobaofenxiaoproductcataddAPIRequest) SetRetailLowPercent(_retailLowPercent int64) error {
 	r._retailLowPercent = _retailLowPercent
 	r.Set("retail_low_percent", _retailLowPercent)
 	return nil
 }
 
 // GetRetailLowPercent RetailLowPercent Getter
-func (r TaobaoFenxiaoProductcatAddAPIRequest) GetRetailLowPercent() int64 {
+func (r TaobaofenxiaoproductcataddAPIRequest) GetRetailLowPercent() int64 {
 	return r._retailLowPercent
 }
 
 // SetRetailHighPercent is RetailHighPercent Setter
 // 最高零售价比例，注意：100.00%，则输入为10000
-func (r *TaobaoFenxiaoProductcatAddAPIRequest) SetRetailHighPercent(_retailHighPercent int64) error {
+func (r *TaobaofenxiaoproductcataddAPIRequest) SetRetailHighPercent(_retailHighPercent int64) error {
 	r._retailHighPercent = _retailHighPercent
 	r.Set("retail_high_percent", _retailHighPercent)
 	return nil
 }
 
 // GetRetailHighPercent RetailHighPercent Getter
-func (r TaobaoFenxiaoProductcatAddAPIRequest) GetRetailHighPercent() int64 {
+func (r TaobaofenxiaoproductcataddAPIRequest) GetRetailHighPercent() int64 {
 	return r._retailHighPercent
 }
 
 // SetAgentCostPercent is AgentCostPercent Setter
 // 代销默认采购价比例，注意：100.00%，则输入为10000
-func (r *TaobaoFenxiaoProductcatAddAPIRequest) SetAgentCostPercent(_agentCostPercent int64) error {
+func (r *TaobaofenxiaoproductcataddAPIRequest) SetAgentCostPercent(_agentCostPercent int64) error {
 	r._agentCostPercent = _agentCostPercent
 	r.Set("agent_cost_percent", _agentCostPercent)
 	return nil
 }
 
 // GetAgentCostPercent AgentCostPercent Getter
-func (r TaobaoFenxiaoProductcatAddAPIRequest) GetAgentCostPercent() int64 {
+func (r TaobaofenxiaoproductcataddAPIRequest) GetAgentCostPercent() int64 {
 	return r._agentCostPercent
 }
 
 // SetDealerCostPercent is DealerCostPercent Setter
 // 经销默认采购价比例，注意：100.00%，则输入为10000
-func (r *TaobaoFenxiaoProductcatAddAPIRequest) SetDealerCostPercent(_dealerCostPercent int64) error {
+func (r *TaobaofenxiaoproductcataddAPIRequest) SetDealerCostPercent(_dealerCostPercent int64) error {
 	r._dealerCostPercent = _dealerCostPercent
 	r.Set("dealer_cost_percent", _dealerCostPercent)
 	return nil
 }
 
 // GetDealerCostPercent DealerCostPercent Getter
-func (r TaobaoFenxiaoProductcatAddAPIRequest) GetDealerCostPercent() int64 {
+func (r TaobaofenxiaoproductcataddAPIRequest) GetDealerCostPercent() int64 {
 	return r._dealerCostPercent
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoMiniappTemplateUpdateappAPIResponse 更新实例化应用 API返回值
+// TaobaominiapptemplateupdateappAPIResponse 更新实例化应用 API返回值
 // taobao.miniapp.template.updateapp
 //
 // 商家应用c端模板实例化小程序更新，生成新的版本，但不会自动上线新版本
-type TaobaoMiniappTemplateUpdateappAPIResponse struct {
+type TaobaominiapptemplateupdateappAPIResponse struct {
 	model.CommonResponse
-	TaobaoMiniappTemplateUpdateappAPIResponseModel
+	TaobaominiapptemplateupdateappAPIResponseModel
 }
 
-// TaobaoMiniappTemplateUpdateappAPIResponseModel is 更新实例化应用 成功返回结果
-type TaobaoMiniappTemplateUpdateappAPIResponseModel struct {
+// TaobaominiapptemplateupdateappAPIResponseModel is 更新实例化应用 成功返回结果
+type TaobaominiapptemplateupdateappAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_template_updateapp_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

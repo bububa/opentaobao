@@ -1,7 +1,7 @@
 package msgamp
 
-// TaobaoBcChatMessageSendResult 结构体
-type TaobaoBcChatMessageSendResult struct {
+// TaobaobcchatmessagesendResult 结构体
+type TaobaobcchatmessagesendResult struct {
 	// SERVICE_ERROR
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// model

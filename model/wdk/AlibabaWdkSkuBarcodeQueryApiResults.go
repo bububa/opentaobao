@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkSkuBarcodeQueryApiResults 结构体
-type AlibabaWdkSkuBarcodeQueryApiResults struct {
+// AlibabawdkskubarcodequeryApiResults 结构体
+type AlibabawdkskubarcodequeryApiResults struct {
 	// 条码结果集合
 	Models []BarcodeBo `json:"models,omitempty" xml:"models>barcode_bo,omitempty"`
 	// 错误码

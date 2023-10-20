@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWestcrmGradeGetAPIRequest 获取等级列表 API请求
+// AlibabawestcrmgradegetAPIRequest 获取等级列表 API请求
 // alibaba.westcrm.grade.get
 //
 // 获取会员卡等级列表
-type AlibabaWestcrmGradeGetAPIRequest struct {
+type AlibabawestcrmgradegetAPIRequest struct {
 	model.Params
 	// 园区id
 	_campusId int64
 }
 
-// NewAlibabaWestcrmGradeGetRequest 初始化AlibabaWestcrmGradeGetAPIRequest对象
-func NewAlibabaWestcrmGradeGetRequest() *AlibabaWestcrmGradeGetAPIRequest {
-	return &AlibabaWestcrmGradeGetAPIRequest{
+// NewAlibabawestcrmgradegetRequest 初始化AlibabawestcrmgradegetAPIRequest对象
+func NewAlibabawestcrmgradegetRequest() *AlibabawestcrmgradegetAPIRequest {
+	return &AlibabawestcrmgradegetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWestcrmGradeGetAPIRequest) GetApiMethodName() string {
+func (r AlibabawestcrmgradegetAPIRequest) GetApiMethodName() string {
 	return "alibaba.westcrm.grade.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWestcrmGradeGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawestcrmgradegetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWestcrmGradeGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabawestcrmgradegetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCampusId is CampusId Setter
 // 园区id
-func (r *AlibabaWestcrmGradeGetAPIRequest) SetCampusId(_campusId int64) error {
+func (r *AlibabawestcrmgradegetAPIRequest) SetCampusId(_campusId int64) error {
 	r._campusId = _campusId
 	r.Set("campus_id", _campusId)
 	return nil
 }
 
 // GetCampusId CampusId Getter
-func (r AlibabaWestcrmGradeGetAPIRequest) GetCampusId() int64 {
+func (r AlibabawestcrmgradegetAPIRequest) GetCampusId() int64 {
 	return r._campusId
 }

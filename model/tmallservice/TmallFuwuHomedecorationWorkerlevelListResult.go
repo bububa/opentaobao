@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallFuwuHomedecorationWorkerlevelListResult 结构体
-type TmallFuwuHomedecorationWorkerlevelListResult struct {
+// TmallfuwuhomedecorationworkerlevellistResult 结构体
+type TmallfuwuhomedecorationworkerlevellistResult struct {
 	// 工人分层数据
 	DataList []SupplyLevelWorkerDto `json:"data_list,omitempty" xml:"data_list>supply_level_worker_dto,omitempty"`
 	// 错误码

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallTrendStyleBasicinfoUploadAPIResponse 3D款式基本信息同步API API返回值
+// TmalltrendstylebasicinfouploadAPIResponse 3D款式基本信息同步API API返回值
 // tmall.trend.style.basicinfo.upload
 //
 // 3D款式基本信息同步至天猫趋势中心
-type TmallTrendStyleBasicinfoUploadAPIResponse struct {
+type TmalltrendstylebasicinfouploadAPIResponse struct {
 	model.CommonResponse
-	TmallTrendStyleBasicinfoUploadAPIResponseModel
+	TmalltrendstylebasicinfouploadAPIResponseModel
 }
 
-// TmallTrendStyleBasicinfoUploadAPIResponseModel is 3D款式基本信息同步API 成功返回结果
-type TmallTrendStyleBasicinfoUploadAPIResponseModel struct {
+// TmalltrendstylebasicinfouploadAPIResponseModel is 3D款式基本信息同步API 成功返回结果
+type TmalltrendstylebasicinfouploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_trend_style_basicinfo_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

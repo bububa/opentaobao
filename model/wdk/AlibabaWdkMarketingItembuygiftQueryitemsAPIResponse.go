@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkMarketingItembuygiftQueryitemsAPIResponse 查询买赠活动下的商品 API返回值
+// AlibabawdkmarketingitembuygiftqueryitemsAPIResponse 查询买赠活动下的商品 API返回值
 // alibaba.wdk.marketing.itembuygift.queryitems
 //
 // 查询买赠活动下的商品
-type AlibabaWdkMarketingItembuygiftQueryitemsAPIResponse struct {
+type AlibabawdkmarketingitembuygiftqueryitemsAPIResponse struct {
 	model.CommonResponse
-	AlibabaWdkMarketingItembuygiftQueryitemsAPIResponseModel
+	AlibabawdkmarketingitembuygiftqueryitemsAPIResponseModel
 }
 
-// AlibabaWdkMarketingItembuygiftQueryitemsAPIResponseModel is 查询买赠活动下的商品 成功返回结果
-type AlibabaWdkMarketingItembuygiftQueryitemsAPIResponseModel struct {
+// AlibabawdkmarketingitembuygiftqueryitemsAPIResponseModel is 查询买赠活动下的商品 成功返回结果
+type AlibabawdkmarketingitembuygiftqueryitemsAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_marketing_itembuygift_queryitems_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

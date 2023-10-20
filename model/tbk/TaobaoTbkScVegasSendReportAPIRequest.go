@@ -13,21 +13,21 @@ import (
 type TaobaotbkscvegassendreportAPIRequest struct {
 	model.Params
 	// 统计日期
-	_bizdate string
+	_bizDate string
 	// 媒体推广pid
 	_pid string
 	// 查询维度，不填写默认是pid维度
-	_rptdim string
+	_rptDim string
 	// 渠道关系id
-	_relationid int64
+	_relationId int64
 	// 已下线，后续不需要填写
-	_activityid int64
+	_activityId int64
 	// 页码
-	_pageno int64
+	_pageNo int64
 	// 每页大小
-	_pagesize int64
+	_pageSize int64
 	// 查询红包类型，1-超级红包，2-福利购，3-签到红包，4-福利直降，不传时默认查询超级红包数据
-	_activitycategory int64
+	_activityCategory int64
 }
 
 // NewTaobaotbkscvegassendreportRequest 初始化TaobaotbkscvegassendreportAPIRequest对象
@@ -54,17 +54,17 @@ func (r TaobaotbkscvegassendreportAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetBizdate is Bizdate Setter
+// SetBizDate is BizDate Setter
 // 统计日期
-func (r *TaobaotbkscvegassendreportAPIRequest) SetBizdate(_bizdate string) error {
-	r._bizdate = _bizdate
-	r.Set("biz_date", _bizdate)
+func (r *TaobaotbkscvegassendreportAPIRequest) SetBizDate(_bizDate string) error {
+	r._bizDate = _bizDate
+	r.Set("biz_date", _bizDate)
 	return nil
 }
 
-// GetBizdate Bizdate Getter
-func (r TaobaotbkscvegassendreportAPIRequest) GetBizdate() string {
-	return r._bizdate
+// GetBizDate BizDate Getter
+func (r TaobaotbkscvegassendreportAPIRequest) GetBizDate() string {
+	return r._bizDate
 }
 
 // SetPid is Pid Setter
@@ -80,80 +80,80 @@ func (r TaobaotbkscvegassendreportAPIRequest) GetPid() string {
 	return r._pid
 }
 
-// SetRptdim is Rptdim Setter
+// SetRptDim is RptDim Setter
 // 查询维度，不填写默认是pid维度
-func (r *TaobaotbkscvegassendreportAPIRequest) SetRptdim(_rptdim string) error {
-	r._rptdim = _rptdim
-	r.Set("rpt_dim", _rptdim)
+func (r *TaobaotbkscvegassendreportAPIRequest) SetRptDim(_rptDim string) error {
+	r._rptDim = _rptDim
+	r.Set("rpt_dim", _rptDim)
 	return nil
 }
 
-// GetRptdim Rptdim Getter
-func (r TaobaotbkscvegassendreportAPIRequest) GetRptdim() string {
-	return r._rptdim
+// GetRptDim RptDim Getter
+func (r TaobaotbkscvegassendreportAPIRequest) GetRptDim() string {
+	return r._rptDim
 }
 
-// SetRelationid is Relationid Setter
+// SetRelationId is RelationId Setter
 // 渠道关系id
-func (r *TaobaotbkscvegassendreportAPIRequest) SetRelationid(_relationid int64) error {
-	r._relationid = _relationid
-	r.Set("relation_id", _relationid)
+func (r *TaobaotbkscvegassendreportAPIRequest) SetRelationId(_relationId int64) error {
+	r._relationId = _relationId
+	r.Set("relation_id", _relationId)
 	return nil
 }
 
-// GetRelationid Relationid Getter
-func (r TaobaotbkscvegassendreportAPIRequest) GetRelationid() int64 {
-	return r._relationid
+// GetRelationId RelationId Getter
+func (r TaobaotbkscvegassendreportAPIRequest) GetRelationId() int64 {
+	return r._relationId
 }
 
-// SetActivityid is Activityid Setter
+// SetActivityId is ActivityId Setter
 // 已下线，后续不需要填写
-func (r *TaobaotbkscvegassendreportAPIRequest) SetActivityid(_activityid int64) error {
-	r._activityid = _activityid
-	r.Set("activity_id", _activityid)
+func (r *TaobaotbkscvegassendreportAPIRequest) SetActivityId(_activityId int64) error {
+	r._activityId = _activityId
+	r.Set("activity_id", _activityId)
 	return nil
 }
 
-// GetActivityid Activityid Getter
-func (r TaobaotbkscvegassendreportAPIRequest) GetActivityid() int64 {
-	return r._activityid
+// GetActivityId ActivityId Getter
+func (r TaobaotbkscvegassendreportAPIRequest) GetActivityId() int64 {
+	return r._activityId
 }
 
-// SetPageno is Pageno Setter
+// SetPageNo is PageNo Setter
 // 页码
-func (r *TaobaotbkscvegassendreportAPIRequest) SetPageno(_pageno int64) error {
-	r._pageno = _pageno
-	r.Set("page_no", _pageno)
+func (r *TaobaotbkscvegassendreportAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
 	return nil
 }
 
-// GetPageno Pageno Getter
-func (r TaobaotbkscvegassendreportAPIRequest) GetPageno() int64 {
-	return r._pageno
+// GetPageNo PageNo Getter
+func (r TaobaotbkscvegassendreportAPIRequest) GetPageNo() int64 {
+	return r._pageNo
 }
 
-// SetPagesize is Pagesize Setter
+// SetPageSize is PageSize Setter
 // 每页大小
-func (r *TaobaotbkscvegassendreportAPIRequest) SetPagesize(_pagesize int64) error {
-	r._pagesize = _pagesize
-	r.Set("page_size", _pagesize)
+func (r *TaobaotbkscvegassendreportAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
 	return nil
 }
 
-// GetPagesize Pagesize Getter
-func (r TaobaotbkscvegassendreportAPIRequest) GetPagesize() int64 {
-	return r._pagesize
+// GetPageSize PageSize Getter
+func (r TaobaotbkscvegassendreportAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }
 
-// SetActivitycategory is Activitycategory Setter
+// SetActivityCategory is ActivityCategory Setter
 // 查询红包类型，1-超级红包，2-福利购，3-签到红包，4-福利直降，不传时默认查询超级红包数据
-func (r *TaobaotbkscvegassendreportAPIRequest) SetActivitycategory(_activitycategory int64) error {
-	r._activitycategory = _activitycategory
-	r.Set("activity_category", _activitycategory)
+func (r *TaobaotbkscvegassendreportAPIRequest) SetActivityCategory(_activityCategory int64) error {
+	r._activityCategory = _activityCategory
+	r.Set("activity_category", _activityCategory)
 	return nil
 }
 
-// GetActivitycategory Activitycategory Getter
-func (r TaobaotbkscvegassendreportAPIRequest) GetActivitycategory() int64 {
-	return r._activitycategory
+// GetActivityCategory ActivityCategory Getter
+func (r TaobaotbkscvegassendreportAPIRequest) GetActivityCategory() int64 {
+	return r._activityCategory
 }

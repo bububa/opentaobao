@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripBtripOpenCostCenterEntitySetAPIRequest 设置成本中心人员信息 API请求
+// AlitripbtripopencostcenterentitysetAPIRequest 设置成本中心人员信息 API请求
 // alitrip.btrip.open.cost.center.entity.set
 //
 // 设置成本中心人员信息
-type AlitripBtripOpenCostCenterEntitySetAPIRequest struct {
+type AlitripbtripopencostcenterentitysetAPIRequest struct {
 	model.Params
 	// 入参对象
 	_rq *OpenCostCenterSetEntityRq
 }
 
-// NewAlitripBtripOpenCostCenterEntitySetRequest 初始化AlitripBtripOpenCostCenterEntitySetAPIRequest对象
-func NewAlitripBtripOpenCostCenterEntitySetRequest() *AlitripBtripOpenCostCenterEntitySetAPIRequest {
-	return &AlitripBtripOpenCostCenterEntitySetAPIRequest{
+// NewAlitripbtripopencostcenterentitysetRequest 初始化AlitripbtripopencostcenterentitysetAPIRequest对象
+func NewAlitripbtripopencostcenterentitysetRequest() *AlitripbtripopencostcenterentitysetAPIRequest {
+	return &AlitripbtripopencostcenterentitysetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripBtripOpenCostCenterEntitySetAPIRequest) GetApiMethodName() string {
+func (r AlitripbtripopencostcenterentitysetAPIRequest) GetApiMethodName() string {
 	return "alitrip.btrip.open.cost.center.entity.set"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripBtripOpenCostCenterEntitySetAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripbtripopencostcenterentitysetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripBtripOpenCostCenterEntitySetAPIRequest) GetRawParams() model.Params {
+func (r AlitripbtripopencostcenterentitysetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRq is Rq Setter
 // 入参对象
-func (r *AlitripBtripOpenCostCenterEntitySetAPIRequest) SetRq(_rq *OpenCostCenterSetEntityRq) error {
+func (r *AlitripbtripopencostcenterentitysetAPIRequest) SetRq(_rq *OpenCostCenterSetEntityRq) error {
 	r._rq = _rq
 	r.Set("rq", _rq)
 	return nil
 }
 
 // GetRq Rq Getter
-func (r AlitripBtripOpenCostCenterEntitySetAPIRequest) GetRq() *OpenCostCenterSetEntityRq {
+func (r AlitripbtripopencostcenterentitysetAPIRequest) GetRq() *OpenCostCenterSetEntityRq {
 	return r._rq
 }

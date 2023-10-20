@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallgenie"
 )
 
-// TaobaoAilabAicloudTopMusicSearch 对外音乐搜索服务
+// Taobaoailabaicloudtopmusicsearch 对外音乐搜索服务
 // taobao.ailab.aicloud.top.music.search
 //
 // 供厂商获取音乐列表
-func TaobaoAilabAicloudTopMusicSearch(clt *core.SDKClient, req *tmallgenie.TaobaoAilabAicloudTopMusicSearchAPIRequest, session string) (*tmallgenie.TaobaoAilabAicloudTopMusicSearchAPIResponse, error) {
-	var resp tmallgenie.TaobaoAilabAicloudTopMusicSearchAPIResponse
+func Taobaoailabaicloudtopmusicsearch(clt *core.SDKClient, req *tmallgenie.TaobaoailabaicloudtopmusicsearchAPIRequest, session string) (*tmallgenie.TaobaoailabaicloudtopmusicsearchAPIResponse, error) {
+	var resp tmallgenie.TaobaoailabaicloudtopmusicsearchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

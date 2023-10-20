@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-// TaobaoBanamadpcItemRender 新发商品发布页
+// Taobaobanamadpcitemrender 新发商品发布页
 // taobao.banamadpc.item.render
 //
 // 巴拿马供应商通过此接口新发商品发布页
-func TaobaoBanamadpcItemRender(clt *core.SDKClient, req *product.TaobaoBanamadpcItemRenderAPIRequest, session string) (*product.TaobaoBanamadpcItemRenderAPIResponse, error) {
-	var resp product.TaobaoBanamadpcItemRenderAPIResponse
+func Taobaobanamadpcitemrender(clt *core.SDKClient, req *product.TaobaobanamadpcitemrenderAPIRequest, session string) (*product.TaobaobanamadpcitemrenderAPIResponse, error) {
+	var resp product.TaobaobanamadpcitemrenderAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

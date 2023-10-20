@@ -1,7 +1,7 @@
 package simba
 
-// TaobaoUniversalbpCreativePreaddTopResult 结构体
-type TaobaoUniversalbpCreativePreaddTopResult struct {
+// TaobaouniversalbpcreativepreaddTopResult 结构体
+type TaobaouniversalbpcreativepreaddTopResult struct {
 	// 请求系统信息
 	Info *TopInfo `json:"info,omitempty" xml:"info,omitempty"`
 	// 结果集

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alilabs"
 )
 
-// AlibabaAilabsTmallgenieAuthSwitchuser 切换用户
+// Alibabaailabstmallgenieauthswitchuser 切换用户
 // alibaba.ailabs.tmallgenie.auth.switchuser
 //
 // 设备切换授权用户
-func AlibabaAilabsTmallgenieAuthSwitchuser(clt *core.SDKClient, req *alilabs.AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest, session string) (*alilabs.AlibabaAilabsTmallgenieAuthSwitchuserAPIResponse, error) {
-	var resp alilabs.AlibabaAilabsTmallgenieAuthSwitchuserAPIResponse
+func Alibabaailabstmallgenieauthswitchuser(clt *core.SDKClient, req *alilabs.AlibabaailabstmallgenieauthswitchuserAPIRequest, session string) (*alilabs.AlibabaailabstmallgenieauthswitchuserAPIResponse, error) {
+	var resp alilabs.AlibabaailabstmallgenieauthswitchuserAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

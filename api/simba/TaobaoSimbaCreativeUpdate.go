@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// TaobaoSimbaCreativeUpdate 修改创意
+// Taobaosimbacreativeupdate 修改创意
 // taobao.simba.creative.update
 //
 // 更新一个创意的信息，可以设置创意标题、创意图片
-func TaobaoSimbaCreativeUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaCreativeUpdateAPIRequest, session string) (*simba.TaobaoSimbaCreativeUpdateAPIResponse, error) {
-	var resp simba.TaobaoSimbaCreativeUpdateAPIResponse
+func Taobaosimbacreativeupdate(clt *core.SDKClient, req *simba.TaobaosimbacreativeupdateAPIRequest, session string) (*simba.TaobaosimbacreativeupdateAPIResponse, error) {
+	var resp simba.TaobaosimbacreativeupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

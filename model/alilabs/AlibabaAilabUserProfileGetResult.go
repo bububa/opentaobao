@@ -1,7 +1,7 @@
 package alilabs
 
-// AlibabaAilabUserProfileGetResult 结构体
-type AlibabaAilabUserProfileGetResult struct {
+// AlibabaailabuserprofilegetResult 结构体
+type AlibabaailabuserprofilegetResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 数据model

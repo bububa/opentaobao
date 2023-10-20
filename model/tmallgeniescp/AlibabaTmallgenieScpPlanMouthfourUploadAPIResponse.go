@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaTmallgenieScpPlanMouthfourUploadAPIResponse 21-M+4PR 回传接口接口 API返回值
+// AlibabatmallgeniescpplanmouthfouruploadAPIResponse 21-M+4PR 回传接口接口 API返回值
 // alibaba.tmallgenie.scp.plan.mouthfour.upload
 //
 // M+4 PR 回传接口
-type AlibabaTmallgenieScpPlanMouthfourUploadAPIResponse struct {
+type AlibabatmallgeniescpplanmouthfouruploadAPIResponse struct {
 	model.CommonResponse
-	AlibabaTmallgenieScpPlanMouthfourUploadAPIResponseModel
+	AlibabatmallgeniescpplanmouthfouruploadAPIResponseModel
 }
 
-// AlibabaTmallgenieScpPlanMouthfourUploadAPIResponseModel is 21-M+4PR 回传接口接口 成功返回结果
-type AlibabaTmallgenieScpPlanMouthfourUploadAPIResponseModel struct {
+// AlibabatmallgeniescpplanmouthfouruploadAPIResponseModel is 21-M+4PR 回传接口接口 成功返回结果
+type AlibabatmallgeniescpplanmouthfouruploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tmallgenie_scp_plan_mouthfour_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

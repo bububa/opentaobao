@@ -1,7 +1,7 @@
 package xhotelitem
 
-// TaobaoXhotelServicetimeUpdateResultSet 结构体
-type TaobaoXhotelServicetimeUpdateResultSet struct {
+// TaobaoxhotelservicetimeupdateResultSet 结构体
+type TaobaoxhotelservicetimeupdateResultSet struct {
 	// results
 	Results []string `json:"results,omitempty" xml:"results>string,omitempty"`
 	// exception

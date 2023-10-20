@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliyunViapiImagesegSegmenthdbodyAPIRequest 高清人体分割 API请求
+// AliyunviapiimagesegsegmenthdbodyAPIRequest 高清人体分割 API请求
 // aliyun.viapi.imageseg.segmenthdbody
 //
 // 对输入图像中包含的人进行分割，输出结果透明图。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )
-type AliyunViapiImagesegSegmenthdbodyAPIRequest struct {
+type AliyunviapiimagesegsegmenthdbodyAPIRequest struct {
 	model.Params
 	// 待检测图片链接
 	_imageUrl string
 }
 
-// NewAliyunViapiImagesegSegmenthdbodyRequest 初始化AliyunViapiImagesegSegmenthdbodyAPIRequest对象
-func NewAliyunViapiImagesegSegmenthdbodyRequest() *AliyunViapiImagesegSegmenthdbodyAPIRequest {
-	return &AliyunViapiImagesegSegmenthdbodyAPIRequest{
+// NewAliyunviapiimagesegsegmenthdbodyRequest 初始化AliyunviapiimagesegsegmenthdbodyAPIRequest对象
+func NewAliyunviapiimagesegsegmenthdbodyRequest() *AliyunviapiimagesegsegmenthdbodyAPIRequest {
+	return &AliyunviapiimagesegsegmenthdbodyAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AliyunViapiImagesegSegmenthdbodyAPIRequest) GetApiMethodName() string {
+func (r AliyunviapiimagesegsegmenthdbodyAPIRequest) GetApiMethodName() string {
 	return "aliyun.viapi.imageseg.segmenthdbody"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliyunViapiImagesegSegmenthdbodyAPIRequest) GetApiParams(params url.Values) {
+func (r AliyunviapiimagesegsegmenthdbodyAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AliyunViapiImagesegSegmenthdbodyAPIRequest) GetRawParams() model.Params {
+func (r AliyunviapiimagesegsegmenthdbodyAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetImageUrl is ImageUrl Setter
 // 待检测图片链接
-func (r *AliyunViapiImagesegSegmenthdbodyAPIRequest) SetImageUrl(_imageUrl string) error {
+func (r *AliyunviapiimagesegsegmenthdbodyAPIRequest) SetImageUrl(_imageUrl string) error {
 	r._imageUrl = _imageUrl
 	r.Set("image_url", _imageUrl)
 	return nil
 }
 
 // GetImageUrl ImageUrl Getter
-func (r AliyunViapiImagesegSegmenthdbodyAPIRequest) GetImageUrl() string {
+func (r AliyunviapiimagesegsegmenthdbodyAPIRequest) GetImageUrl() string {
 	return r._imageUrl
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mos"
 )
 
-// AlibabaMosTmcSmsSend 银泰TMC发送短信
+// Alibabamostmcsmssend 银泰TMC发送短信
 // alibaba.mos.tmc.sms.send
 //
 // 银泰TMC发送短信
-func AlibabaMosTmcSmsSend(clt *core.SDKClient, req *mos.AlibabaMosTmcSmsSendAPIRequest, session string) (*mos.AlibabaMosTmcSmsSendAPIResponse, error) {
-	var resp mos.AlibabaMosTmcSmsSendAPIResponse
+func Alibabamostmcsmssend(clt *core.SDKClient, req *mos.AlibabamostmcsmssendAPIRequest, session string) (*mos.AlibabamostmcsmssendAPIResponse, error) {
+	var resp mos.AlibabamostmcsmssendAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscCrmOpenPointOperateAPIRequest 积分操作接口 API请求
+// AlibabaalsccrmopenpointoperateAPIRequest 积分操作接口 API请求
 // alibaba.alsc.crm.open.point.operate
 //
 // 同步积分接口
-type AlibabaAlscCrmOpenPointOperateAPIRequest struct {
+type AlibabaalsccrmopenpointoperateAPIRequest struct {
 	model.Params
 	// 入参
 	_paramPointOperateOpenReq *PointOperateOpenReq
 }
 
-// NewAlibabaAlscCrmOpenPointOperateRequest 初始化AlibabaAlscCrmOpenPointOperateAPIRequest对象
-func NewAlibabaAlscCrmOpenPointOperateRequest() *AlibabaAlscCrmOpenPointOperateAPIRequest {
-	return &AlibabaAlscCrmOpenPointOperateAPIRequest{
+// NewAlibabaalsccrmopenpointoperateRequest 初始化AlibabaalsccrmopenpointoperateAPIRequest对象
+func NewAlibabaalsccrmopenpointoperateRequest() *AlibabaalsccrmopenpointoperateAPIRequest {
+	return &AlibabaalsccrmopenpointoperateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmOpenPointOperateAPIRequest) GetApiMethodName() string {
+func (r AlibabaalsccrmopenpointoperateAPIRequest) GetApiMethodName() string {
 	return "alibaba.alsc.crm.open.point.operate"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmOpenPointOperateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalsccrmopenpointoperateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlscCrmOpenPointOperateAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalsccrmopenpointoperateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamPointOperateOpenReq is ParamPointOperateOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmOpenPointOperateAPIRequest) SetParamPointOperateOpenReq(_paramPointOperateOpenReq *PointOperateOpenReq) error {
+func (r *AlibabaalsccrmopenpointoperateAPIRequest) SetParamPointOperateOpenReq(_paramPointOperateOpenReq *PointOperateOpenReq) error {
 	r._paramPointOperateOpenReq = _paramPointOperateOpenReq
 	r.Set("param_point_operate_open_req", _paramPointOperateOpenReq)
 	return nil
 }
 
 // GetParamPointOperateOpenReq ParamPointOperateOpenReq Getter
-func (r AlibabaAlscCrmOpenPointOperateAPIRequest) GetParamPointOperateOpenReq() *PointOperateOpenReq {
+func (r AlibabaalsccrmopenpointoperateAPIRequest) GetParamPointOperateOpenReq() *PointOperateOpenReq {
 	return r._paramPointOperateOpenReq
 }

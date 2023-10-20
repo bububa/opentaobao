@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaBaichuanCtgContentGetAPIRequest 百川内容平台内容获取 API请求
+// AlibababaichuanctgcontentgetAPIRequest 百川内容平台内容获取 API请求
 // alibaba.baichuan.ctg.content.get
 //
 // 百川内容平台内容获取
-type AlibabaBaichuanCtgContentGetAPIRequest struct {
+type AlibababaichuanctgcontentgetAPIRequest struct {
 	model.Params
 	// 投放位置
 	_deliveryId string
@@ -24,91 +24,91 @@ type AlibabaBaichuanCtgContentGetAPIRequest struct {
 	_currentPage int64
 }
 
-// NewAlibabaBaichuanCtgContentGetRequest 初始化AlibabaBaichuanCtgContentGetAPIRequest对象
-func NewAlibabaBaichuanCtgContentGetRequest() *AlibabaBaichuanCtgContentGetAPIRequest {
-	return &AlibabaBaichuanCtgContentGetAPIRequest{
+// NewAlibababaichuanctgcontentgetRequest 初始化AlibababaichuanctgcontentgetAPIRequest对象
+func NewAlibababaichuanctgcontentgetRequest() *AlibababaichuanctgcontentgetAPIRequest {
+	return &AlibababaichuanctgcontentgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaBaichuanCtgContentGetAPIRequest) GetApiMethodName() string {
+func (r AlibababaichuanctgcontentgetAPIRequest) GetApiMethodName() string {
 	return "alibaba.baichuan.ctg.content.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaBaichuanCtgContentGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibababaichuanctgcontentgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaBaichuanCtgContentGetAPIRequest) GetRawParams() model.Params {
+func (r AlibababaichuanctgcontentgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDeliveryId is DeliveryId Setter
 // 投放位置
-func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetDeliveryId(_deliveryId string) error {
+func (r *AlibababaichuanctgcontentgetAPIRequest) SetDeliveryId(_deliveryId string) error {
 	r._deliveryId = _deliveryId
 	r.Set("delivery_id", _deliveryId)
 	return nil
 }
 
 // GetDeliveryId DeliveryId Getter
-func (r AlibabaBaichuanCtgContentGetAPIRequest) GetDeliveryId() string {
+func (r AlibababaichuanctgcontentgetAPIRequest) GetDeliveryId() string {
 	return r._deliveryId
 }
 
 // SetResId is ResId Setter
 // 资源位
-func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetResId(_resId string) error {
+func (r *AlibababaichuanctgcontentgetAPIRequest) SetResId(_resId string) error {
 	r._resId = _resId
 	r.Set("res_id", _resId)
 	return nil
 }
 
 // GetResId ResId Getter
-func (r AlibabaBaichuanCtgContentGetAPIRequest) GetResId() string {
+func (r AlibababaichuanctgcontentgetAPIRequest) GetResId() string {
 	return r._resId
 }
 
 // SetDate is Date Setter
 // 日期
-func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetDate(_date string) error {
+func (r *AlibababaichuanctgcontentgetAPIRequest) SetDate(_date string) error {
 	r._date = _date
 	r.Set("date", _date)
 	return nil
 }
 
 // GetDate Date Getter
-func (r AlibabaBaichuanCtgContentGetAPIRequest) GetDate() string {
+func (r AlibababaichuanctgcontentgetAPIRequest) GetDate() string {
 	return r._date
 }
 
 // SetPageSize is PageSize Setter
 // 分页大小
-func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *AlibababaichuanctgcontentgetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r AlibabaBaichuanCtgContentGetAPIRequest) GetPageSize() int64 {
+func (r AlibababaichuanctgcontentgetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
 // SetCurrentPage is CurrentPage Setter
 // 当前页
-func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetCurrentPage(_currentPage int64) error {
+func (r *AlibababaichuanctgcontentgetAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
 	r.Set("current_page", _currentPage)
 	return nil
 }
 
 // GetCurrentPage CurrentPage Getter
-func (r AlibabaBaichuanCtgContentGetAPIRequest) GetCurrentPage() int64 {
+func (r AlibababaichuanctgcontentgetAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }

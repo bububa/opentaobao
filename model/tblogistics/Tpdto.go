@@ -1,7 +1,7 @@
 package tblogistics
 
-// TPDto 结构体
-type TPDto struct {
+// Tpdto 结构体
+type Tpdto struct {
 	// 公司编码
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 公司名称

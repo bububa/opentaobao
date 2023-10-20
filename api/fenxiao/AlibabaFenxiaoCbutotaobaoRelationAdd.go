@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-// AlibabaFenxiaoCbutotaobaoRelationAdd 1688分销铺货到淘宝关系添加
+// Alibabafenxiaocbutotaobaorelationadd 1688分销铺货到淘宝关系添加
 // alibaba.fenxiao.cbutotaobao.relation.add
 //
 // 1688分销铺货到淘宝关系添加
-func AlibabaFenxiaoCbutotaobaoRelationAdd(clt *core.SDKClient, req *fenxiao.AlibabaFenxiaoCbutotaobaoRelationAddAPIRequest, session string) (*fenxiao.AlibabaFenxiaoCbutotaobaoRelationAddAPIResponse, error) {
-	var resp fenxiao.AlibabaFenxiaoCbutotaobaoRelationAddAPIResponse
+func Alibabafenxiaocbutotaobaorelationadd(clt *core.SDKClient, req *fenxiao.AlibabafenxiaocbutotaobaorelationaddAPIRequest, session string) (*fenxiao.AlibabafenxiaocbutotaobaorelationaddAPIResponse, error) {
+	var resp fenxiao.AlibabafenxiaocbutotaobaorelationaddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

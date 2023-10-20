@@ -1,7 +1,7 @@
 package servicecenter
 
-// TmallCarLeaseFreedownpaymentPutResult 结构体
-type TmallCarLeaseFreedownpaymentPutResult struct {
+// TmallcarleasefreedownpaymentputResult 结构体
+type TmallcarleasefreedownpaymentputResult struct {
 	// msgCode
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msgInfo

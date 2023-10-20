@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoWaybillCloudprintNetprintPrintAPIResponse 网络打印机打印接口 API返回值
+// CainiaowaybillcloudprintnetprintprintAPIResponse 网络打印机打印接口 API返回值
 // cainiao.waybill.cloudprint.netprint.print
 //
 // 打印接口
-type CainiaoWaybillCloudprintNetprintPrintAPIResponse struct {
+type CainiaowaybillcloudprintnetprintprintAPIResponse struct {
 	model.CommonResponse
-	CainiaoWaybillCloudprintNetprintPrintAPIResponseModel
+	CainiaowaybillcloudprintnetprintprintAPIResponseModel
 }
 
-// CainiaoWaybillCloudprintNetprintPrintAPIResponseModel is 网络打印机打印接口 成功返回结果
-type CainiaoWaybillCloudprintNetprintPrintAPIResponseModel struct {
+// CainiaowaybillcloudprintnetprintprintAPIResponseModel is 网络打印机打印接口 成功返回结果
+type CainiaowaybillcloudprintnetprintprintAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_waybill_cloudprint_netprint_print_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

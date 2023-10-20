@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaInteractSensorPopwindowAPIRequest popwindow API请求
+// AlibabainteractsensorpopwindowAPIRequest popwindow API请求
 // alibaba.interact.sensor.popwindow
 //
 // popwindow
-type AlibabaInteractSensorPopwindowAPIRequest struct {
+type AlibabainteractsensorpopwindowAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaInteractSensorPopwindowRequest 初始化AlibabaInteractSensorPopwindowAPIRequest对象
-func NewAlibabaInteractSensorPopwindowRequest() *AlibabaInteractSensorPopwindowAPIRequest {
-	return &AlibabaInteractSensorPopwindowAPIRequest{
+// NewAlibabainteractsensorpopwindowRequest 初始化AlibabainteractsensorpopwindowAPIRequest对象
+func NewAlibabainteractsensorpopwindowRequest() *AlibabainteractsensorpopwindowAPIRequest {
+	return &AlibabainteractsensorpopwindowAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaInteractSensorPopwindowAPIRequest) GetApiMethodName() string {
+func (r AlibabainteractsensorpopwindowAPIRequest) GetApiMethodName() string {
 	return "alibaba.interact.sensor.popwindow"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorPopwindowAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabainteractsensorpopwindowAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaInteractSensorPopwindowAPIRequest) GetRawParams() model.Params {
+func (r AlibabainteractsensorpopwindowAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

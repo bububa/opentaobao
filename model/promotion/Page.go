@@ -3,7 +3,7 @@ package promotion
 // Page 结构体
 type Page struct {
 	// 结果
-	Datas []AlibabaAsrDataservicePromotionruleQueryData `json:"datas,omitempty" xml:"datas>alibaba_asr_dataservice_promotionrule_query_data,omitempty"`
+	Datas []AlibabaasrdataservicepromotionrulequeryData `json:"datas,omitempty" xml:"datas>alibabaasrdataservicepromotionrulequery_data,omitempty"`
 	// 返回的活动列表
 	ActivityList []ActivityDto `json:"activity_list,omitempty" xml:"activity_list>activity_dto,omitempty"`
 	// 返回查询数据

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// AlibabaTianmaoUopIntercept 阿里巴巴.天猫. 履约订单. 配送拦截
+// Alibabatianmaouopintercept 阿里巴巴.天猫. 履约订单. 配送拦截
 // alibaba.tianmao.uop.intercept
 //
 // 阿里巴巴.天猫. 履约订单. 配送拦截
-func AlibabaTianmaoUopIntercept(clt *core.SDKClient, req *ascp.AlibabaTianmaoUopInterceptAPIRequest, session string) (*ascp.AlibabaTianmaoUopInterceptAPIResponse, error) {
-	var resp ascp.AlibabaTianmaoUopInterceptAPIResponse
+func Alibabatianmaouopintercept(clt *core.SDKClient, req *ascp.AlibabatianmaouopinterceptAPIRequest, session string) (*ascp.AlibabatianmaouopinterceptAPIResponse, error) {
+	var resp ascp.AlibabatianmaouopinterceptAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

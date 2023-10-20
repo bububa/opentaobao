@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEleEnterpriseCartnewQueryAPIResponse 新版购物车查询 API返回值
+// AlibabaeleenterprisecartnewqueryAPIResponse 新版购物车查询 API返回值
 // alibaba.ele.enterprise.cartnew.query
 //
 // 新版购物车查询
-type AlibabaEleEnterpriseCartnewQueryAPIResponse struct {
+type AlibabaeleenterprisecartnewqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaEleEnterpriseCartnewQueryAPIResponseModel
+	AlibabaeleenterprisecartnewqueryAPIResponseModel
 }
 
-// AlibabaEleEnterpriseCartnewQueryAPIResponseModel is 新版购物车查询 成功返回结果
-type AlibabaEleEnterpriseCartnewQueryAPIResponseModel struct {
+// AlibabaeleenterprisecartnewqueryAPIResponseModel is 新版购物车查询 成功返回结果
+type AlibabaeleenterprisecartnewqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ele_enterprise_cartnew_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

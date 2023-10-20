@@ -1,9 +1,9 @@
 package wdk
 
-// AlibabaWdkItemCurrentpriceQueryResult 结构体
-type AlibabaWdkItemCurrentpriceQueryResult struct {
+// AlibabawdkitemcurrentpricequeryResult 结构体
+type AlibabawdkitemcurrentpricequeryResult struct {
 	// 返回的当前当前商品价格列表
-	Models []AlibabaWdkItemCurrentpriceQueryModel `json:"models,omitempty" xml:"models>alibaba_wdk_item_currentprice_query_model,omitempty"`
+	Models []AlibabawdkitemcurrentpricequeryModel `json:"models,omitempty" xml:"models>alibabawdkitemcurrentpricequery_model,omitempty"`
 	// 返回码
 	ReturnCode string `json:"return_code,omitempty" xml:"return_code,omitempty"`
 	// 异常信息

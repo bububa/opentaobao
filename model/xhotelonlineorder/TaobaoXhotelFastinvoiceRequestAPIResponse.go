@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelFastinvoiceRequestAPIResponse 极速开票开票请求回传 API返回值
+// TaobaoxhotelfastinvoicerequestAPIResponse 极速开票开票请求回传 API返回值
 // taobao.xhotel.fastinvoice.request
 //
 // 极速开票开票请求回传,用于记录航信开票请求数据
-type TaobaoXhotelFastinvoiceRequestAPIResponse struct {
+type TaobaoxhotelfastinvoicerequestAPIResponse struct {
 	model.CommonResponse
-	TaobaoXhotelFastinvoiceRequestAPIResponseModel
+	TaobaoxhotelfastinvoicerequestAPIResponseModel
 }
 
-// TaobaoXhotelFastinvoiceRequestAPIResponseModel is 极速开票开票请求回传 成功返回结果
-type TaobaoXhotelFastinvoiceRequestAPIResponseModel struct {
+// TaobaoxhotelfastinvoicerequestAPIResponseModel is 极速开票开票请求回传 成功返回结果
+type TaobaoxhotelfastinvoicerequestAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_fastinvoice_request_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

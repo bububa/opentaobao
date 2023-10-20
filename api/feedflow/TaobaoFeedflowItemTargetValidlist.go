@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/feedflow"
 )
 
-// TaobaoFeedflowItemTargetValidlist 获取有权限的定向列表
+// Taobaofeedflowitemtargetvalidlist 获取有权限的定向列表
 // taobao.feedflow.item.target.validlist
 //
 // 获取有权限的定向列表
-func TaobaoFeedflowItemTargetValidlist(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemTargetValidlistAPIRequest, session string) (*feedflow.TaobaoFeedflowItemTargetValidlistAPIResponse, error) {
-	var resp feedflow.TaobaoFeedflowItemTargetValidlistAPIResponse
+func Taobaofeedflowitemtargetvalidlist(clt *core.SDKClient, req *feedflow.TaobaofeedflowitemtargetvalidlistAPIRequest, session string) (*feedflow.TaobaofeedflowitemtargetvalidlistAPIResponse, error) {
+	var resp feedflow.TaobaofeedflowitemtargetvalidlistAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

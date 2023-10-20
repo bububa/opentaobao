@@ -1,7 +1,7 @@
 package lsttrade
 
-// AlibabaLstTradeSellerOrderDetailQueryResultDto 结构体
-type AlibabaLstTradeSellerOrderDetailQueryResultDto struct {
+// AlibabalsttradesellerorderdetailqueryResultDto 结构体
+type AlibabalsttradesellerorderdetailqueryResultDto struct {
 	// 错误码
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

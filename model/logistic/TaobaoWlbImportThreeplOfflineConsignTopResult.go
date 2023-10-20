@@ -1,7 +1,7 @@
 package logistic
 
-// TaobaoWlbImportThreeplOfflineConsignTopResult 结构体
-type TaobaoWlbImportThreeplOfflineConsignTopResult struct {
+// TaobaowlbimportthreeplofflineconsignTopResult 结构体
+type TaobaowlbimportthreeplofflineconsignTopResult struct {
 	// 发货完成后的物流单号
 	LgOrderCode string `json:"lg_order_code,omitempty" xml:"lg_order_code,omitempty"`
 	// 错误信息

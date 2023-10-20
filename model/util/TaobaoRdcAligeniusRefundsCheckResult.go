@@ -1,7 +1,7 @@
 package util
 
-// TaobaoRdcAligeniusRefundsCheckResult 结构体
-type TaobaoRdcAligeniusRefundsCheckResult struct {
+// TaobaordcaligeniusrefundscheckResult 结构体
+type TaobaordcaligeniusrefundscheckResult struct {
 	// errorCode
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// errorInfo

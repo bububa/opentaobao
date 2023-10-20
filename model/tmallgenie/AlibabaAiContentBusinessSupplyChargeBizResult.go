@@ -1,7 +1,7 @@
 package tmallgenie
 
-// AlibabaAiContentBusinessSupplyChargeBizResult 结构体
-type AlibabaAiContentBusinessSupplyChargeBizResult struct {
+// AlibabaaicontentbusinesssupplychargeBizResult 结构体
+type AlibabaaicontentbusinesssupplychargeBizResult struct {
 	// 0 表示 请求成功，其他表示请求失败
 	RetCode string `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 	// 错误信息

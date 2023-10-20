@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelcrm"
 )
 
-// TaobaoXhotelMemberDerbyStateSync 德比侧同步卡、券状态接口
+// Taobaoxhotelmemberderbystatesync 德比侧同步卡、券状态接口
 // taobao.xhotel.member.derby.state.sync
 //
 // 德比侧同步卡、券状态接口
-func TaobaoXhotelMemberDerbyStateSync(clt *core.SDKClient, req *xhotelcrm.TaobaoXhotelMemberDerbyStateSyncAPIRequest, session string) (*xhotelcrm.TaobaoXhotelMemberDerbyStateSyncAPIResponse, error) {
-	var resp xhotelcrm.TaobaoXhotelMemberDerbyStateSyncAPIResponse
+func Taobaoxhotelmemberderbystatesync(clt *core.SDKClient, req *xhotelcrm.TaobaoxhotelmemberderbystatesyncAPIRequest, session string) (*xhotelcrm.TaobaoxhotelmemberderbystatesyncAPIResponse, error) {
+	var resp xhotelcrm.TaobaoxhotelmemberderbystatesyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aedropshiper"
 )
 
-// AliexpressDsMemberOrderdataSubmit dropshipper数据回流
+// Aliexpressdsmemberorderdatasubmit dropshipper数据回流
 // aliexpress.ds.member.orderdata.submit
 //
 // dropshipper数据回流
-func AliexpressDsMemberOrderdataSubmit(clt *core.SDKClient, req *aedropshiper.AliexpressDsMemberOrderdataSubmitAPIRequest, session string) (*aedropshiper.AliexpressDsMemberOrderdataSubmitAPIResponse, error) {
-	var resp aedropshiper.AliexpressDsMemberOrderdataSubmitAPIResponse
+func Aliexpressdsmemberorderdatasubmit(clt *core.SDKClient, req *aedropshiper.AliexpressdsmemberorderdatasubmitAPIRequest, session string) (*aedropshiper.AliexpressdsmemberorderdatasubmitAPIResponse, error) {
+	var resp aedropshiper.AliexpressdsmemberorderdatasubmitAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

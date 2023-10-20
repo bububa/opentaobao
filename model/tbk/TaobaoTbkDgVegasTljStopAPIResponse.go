@@ -21,11 +21,11 @@ type TaobaotbkdgvegastljstopAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// msgInfo
-	Msginfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
+	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// msgCode
-	Msgcode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
+	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// model
 	Model *UpdateStatusResult `json:"model,omitempty" xml:"model,omitempty"`
 	// 调用接口是否成功
-	Resultsuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
+	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
 }

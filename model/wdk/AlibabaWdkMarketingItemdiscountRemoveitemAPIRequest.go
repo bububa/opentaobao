@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkMarketingItemdiscountRemoveitemAPIRequest 移除报名的商品 API请求
+// AlibabawdkmarketingitemdiscountremoveitemAPIRequest 移除报名的商品 API请求
 // alibaba.wdk.marketing.itemdiscount.removeitem
 //
 // 将报名特价活动的商品从特价活动中移除
-type AlibabaWdkMarketingItemdiscountRemoveitemAPIRequest struct {
+type AlibabawdkmarketingitemdiscountremoveitemAPIRequest struct {
 	model.Params
 	// 商品对象
 	_param0 *ItemDiscountSku
@@ -18,52 +18,52 @@ type AlibabaWdkMarketingItemdiscountRemoveitemAPIRequest struct {
 	_param1 *CommonActivityParam
 }
 
-// NewAlibabaWdkMarketingItemdiscountRemoveitemRequest 初始化AlibabaWdkMarketingItemdiscountRemoveitemAPIRequest对象
-func NewAlibabaWdkMarketingItemdiscountRemoveitemRequest() *AlibabaWdkMarketingItemdiscountRemoveitemAPIRequest {
-	return &AlibabaWdkMarketingItemdiscountRemoveitemAPIRequest{
+// NewAlibabawdkmarketingitemdiscountremoveitemRequest 初始化AlibabawdkmarketingitemdiscountremoveitemAPIRequest对象
+func NewAlibabawdkmarketingitemdiscountremoveitemRequest() *AlibabawdkmarketingitemdiscountremoveitemAPIRequest {
+	return &AlibabawdkmarketingitemdiscountremoveitemAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingItemdiscountRemoveitemAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkmarketingitemdiscountremoveitemAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.marketing.itemdiscount.removeitem"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingItemdiscountRemoveitemAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkmarketingitemdiscountremoveitemAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkMarketingItemdiscountRemoveitemAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkmarketingitemdiscountremoveitemAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam0 is Param0 Setter
 // 商品对象
-func (r *AlibabaWdkMarketingItemdiscountRemoveitemAPIRequest) SetParam0(_param0 *ItemDiscountSku) error {
+func (r *AlibabawdkmarketingitemdiscountremoveitemAPIRequest) SetParam0(_param0 *ItemDiscountSku) error {
 	r._param0 = _param0
 	r.Set("param0", _param0)
 	return nil
 }
 
 // GetParam0 Param0 Getter
-func (r AlibabaWdkMarketingItemdiscountRemoveitemAPIRequest) GetParam0() *ItemDiscountSku {
+func (r AlibabawdkmarketingitemdiscountremoveitemAPIRequest) GetParam0() *ItemDiscountSku {
 	return r._param0
 }
 
 // SetParam1 is Param1 Setter
 // 活动基本信息
-func (r *AlibabaWdkMarketingItemdiscountRemoveitemAPIRequest) SetParam1(_param1 *CommonActivityParam) error {
+func (r *AlibabawdkmarketingitemdiscountremoveitemAPIRequest) SetParam1(_param1 *CommonActivityParam) error {
 	r._param1 = _param1
 	r.Set("param1", _param1)
 	return nil
 }
 
 // GetParam1 Param1 Getter
-func (r AlibabaWdkMarketingItemdiscountRemoveitemAPIRequest) GetParam1() *CommonActivityParam {
+func (r AlibabawdkmarketingitemdiscountremoveitemAPIRequest) GetParam1() *CommonActivityParam {
 	return r._param1
 }

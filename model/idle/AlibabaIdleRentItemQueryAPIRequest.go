@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIdleRentItemQueryAPIRequest 查询租赁商品信息 API请求
+// AlibabaidlerentitemqueryAPIRequest 查询租赁商品信息 API请求
 // alibaba.idle.rent.item.query
 //
 // 查询租赁商品信息
-type AlibabaIdleRentItemQueryAPIRequest struct {
+type AlibabaidlerentitemqueryAPIRequest struct {
 	model.Params
 	// 商品id
 	_itemId int64
 }
 
-// NewAlibabaIdleRentItemQueryRequest 初始化AlibabaIdleRentItemQueryAPIRequest对象
-func NewAlibabaIdleRentItemQueryRequest() *AlibabaIdleRentItemQueryAPIRequest {
-	return &AlibabaIdleRentItemQueryAPIRequest{
+// NewAlibabaidlerentitemqueryRequest 初始化AlibabaidlerentitemqueryAPIRequest对象
+func NewAlibabaidlerentitemqueryRequest() *AlibabaidlerentitemqueryAPIRequest {
+	return &AlibabaidlerentitemqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaIdleRentItemQueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaidlerentitemqueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.idle.rent.item.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIdleRentItemQueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaidlerentitemqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaIdleRentItemQueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaidlerentitemqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetItemId is ItemId Setter
 // 商品id
-func (r *AlibabaIdleRentItemQueryAPIRequest) SetItemId(_itemId int64) error {
+func (r *AlibabaidlerentitemqueryAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
 	r.Set("item_id", _itemId)
 	return nil
 }
 
 // GetItemId ItemId Getter
-func (r AlibabaIdleRentItemQueryAPIRequest) GetItemId() int64 {
+func (r AlibabaidlerentitemqueryAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

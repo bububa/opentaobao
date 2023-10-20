@@ -1,7 +1,7 @@
 package bus
 
-// B2BFetchTicket 结构体
-type B2BFetchTicket struct {
+// B2bfetchTicket 结构体
+type B2bfetchTicket struct {
 	// 取票短信
 	FetchSms string `json:"fetch_sms,omitempty" xml:"fetch_sms,omitempty"`
 	// 取票地址

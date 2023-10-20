@@ -6,12 +6,12 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest 删除网点覆盖的服务 API请求
+// TmallservicecenterservicestoredeleteservicestorecoverserviceAPIRequest 删除网点覆盖的服务 API请求
 // tmall.servicecenter.servicestore.deleteservicestorecoverservice
 //
 // 天猫服务平台删除网点覆盖的服务，
 // 必选字段：serviceStoreCode、bizType
-type TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest struct {
+type TmallservicecenterservicestoredeleteservicestorecoverserviceAPIRequest struct {
 	model.Params
 	// 网点编码
 	_serviceStoreCode string
@@ -19,52 +19,52 @@ type TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest stru
 	_bizType string
 }
 
-// NewTmallServicecenterServicestoreDeleteservicestorecoverserviceRequest 初始化TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest对象
-func NewTmallServicecenterServicestoreDeleteservicestorecoverserviceRequest() *TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest {
-	return &TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest{
+// NewTmallservicecenterservicestoredeleteservicestorecoverserviceRequest 初始化TmallservicecenterservicestoredeleteservicestorecoverserviceAPIRequest对象
+func NewTmallservicecenterservicestoredeleteservicestorecoverserviceRequest() *TmallservicecenterservicestoredeleteservicestorecoverserviceAPIRequest {
+	return &TmallservicecenterservicestoredeleteservicestorecoverserviceAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest) GetApiMethodName() string {
+func (r TmallservicecenterservicestoredeleteservicestorecoverserviceAPIRequest) GetApiMethodName() string {
 	return "tmall.servicecenter.servicestore.deleteservicestorecoverservice"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest) GetApiParams(params url.Values) {
+func (r TmallservicecenterservicestoredeleteservicestorecoverserviceAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest) GetRawParams() model.Params {
+func (r TmallservicecenterservicestoredeleteservicestorecoverserviceAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetServiceStoreCode is ServiceStoreCode Setter
 // 网点编码
-func (r *TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest) SetServiceStoreCode(_serviceStoreCode string) error {
+func (r *TmallservicecenterservicestoredeleteservicestorecoverserviceAPIRequest) SetServiceStoreCode(_serviceStoreCode string) error {
 	r._serviceStoreCode = _serviceStoreCode
 	r.Set("service_store_code", _serviceStoreCode)
 	return nil
 }
 
 // GetServiceStoreCode ServiceStoreCode Getter
-func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest) GetServiceStoreCode() string {
+func (r TmallservicecenterservicestoredeleteservicestorecoverserviceAPIRequest) GetServiceStoreCode() string {
 	return r._serviceStoreCode
 }
 
 // SetBizType is BizType Setter
 // 业务类型
-func (r *TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest) SetBizType(_bizType string) error {
+func (r *TmallservicecenterservicestoredeleteservicestorecoverserviceAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
 	r.Set("biz_type", _bizType)
 	return nil
 }
 
 // GetBizType BizType Getter
-func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest) GetBizType() string {
+func (r TmallservicecenterservicestoredeleteservicestorecoverserviceAPIRequest) GetBizType() string {
 	return r._bizType
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaCampaignAreaGetAPIResponse 取得一个推广计划的投放地域设置 API返回值
+// TaobaosimbacampaignareagetAPIResponse 取得一个推广计划的投放地域设置 API返回值
 // taobao.simba.campaign.area.get
 //
 // 取得一个推广计划的投放地域设置
-type TaobaoSimbaCampaignAreaGetAPIResponse struct {
+type TaobaosimbacampaignareagetAPIResponse struct {
 	model.CommonResponse
-	TaobaoSimbaCampaignAreaGetAPIResponseModel
+	TaobaosimbacampaignareagetAPIResponseModel
 }
 
-// TaobaoSimbaCampaignAreaGetAPIResponseModel is 取得一个推广计划的投放地域设置 成功返回结果
-type TaobaoSimbaCampaignAreaGetAPIResponseModel struct {
+// TaobaosimbacampaignareagetAPIResponseModel is 取得一个推广计划的投放地域设置 成功返回结果
+type TaobaosimbacampaignareagetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_campaign_area_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

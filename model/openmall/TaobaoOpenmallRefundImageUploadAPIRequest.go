@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpenmallRefundImageUploadAPIRequest OpenMall退款图片上传 API请求
+// TaobaoopenmallrefundimageuploadAPIRequest OpenMall退款图片上传 API请求
 // taobao.openmall.refund.image.upload
 //
 // OpenMall退款图片上传
-type TaobaoOpenmallRefundImageUploadAPIRequest struct {
+type TaobaoopenmallrefundimageuploadAPIRequest struct {
 	model.Params
 	// 渠道商Nick
 	_distributor string
@@ -20,65 +20,65 @@ type TaobaoOpenmallRefundImageUploadAPIRequest struct {
 	_refundId int64
 }
 
-// NewTaobaoOpenmallRefundImageUploadRequest 初始化TaobaoOpenmallRefundImageUploadAPIRequest对象
-func NewTaobaoOpenmallRefundImageUploadRequest() *TaobaoOpenmallRefundImageUploadAPIRequest {
-	return &TaobaoOpenmallRefundImageUploadAPIRequest{
+// NewTaobaoopenmallrefundimageuploadRequest 初始化TaobaoopenmallrefundimageuploadAPIRequest对象
+func NewTaobaoopenmallrefundimageuploadRequest() *TaobaoopenmallrefundimageuploadAPIRequest {
+	return &TaobaoopenmallrefundimageuploadAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoOpenmallRefundImageUploadAPIRequest) GetApiMethodName() string {
+func (r TaobaoopenmallrefundimageuploadAPIRequest) GetApiMethodName() string {
 	return "taobao.openmall.refund.image.upload"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOpenmallRefundImageUploadAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoopenmallrefundimageuploadAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoOpenmallRefundImageUploadAPIRequest) GetRawParams() model.Params {
+func (r TaobaoopenmallrefundimageuploadAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDistributor is Distributor Setter
 // 渠道商Nick
-func (r *TaobaoOpenmallRefundImageUploadAPIRequest) SetDistributor(_distributor string) error {
+func (r *TaobaoopenmallrefundimageuploadAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
 	r.Set("distributor", _distributor)
 	return nil
 }
 
 // GetDistributor Distributor Getter
-func (r TaobaoOpenmallRefundImageUploadAPIRequest) GetDistributor() string {
+func (r TaobaoopenmallrefundimageuploadAPIRequest) GetDistributor() string {
 	return r._distributor
 }
 
 // SetImage is Image Setter
 // 上传图片，必须为jpg或png格式，建议小于2M
-func (r *TaobaoOpenmallRefundImageUploadAPIRequest) SetImage(_image *model.File) error {
+func (r *TaobaoopenmallrefundimageuploadAPIRequest) SetImage(_image *model.File) error {
 	r._image = _image
 	r.Set("image", _image)
 	return nil
 }
 
 // GetImage Image Getter
-func (r TaobaoOpenmallRefundImageUploadAPIRequest) GetImage() *model.File {
+func (r TaobaoopenmallrefundimageuploadAPIRequest) GetImage() *model.File {
 	return r._image
 }
 
 // SetRefundId is RefundId Setter
 // 该图片归属的退款单ID
-func (r *TaobaoOpenmallRefundImageUploadAPIRequest) SetRefundId(_refundId int64) error {
+func (r *TaobaoopenmallrefundimageuploadAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
 	r.Set("refund_id", _refundId)
 	return nil
 }
 
 // GetRefundId RefundId Getter
-func (r TaobaoOpenmallRefundImageUploadAPIRequest) GetRefundId() int64 {
+func (r TaobaoopenmallrefundimageuploadAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }

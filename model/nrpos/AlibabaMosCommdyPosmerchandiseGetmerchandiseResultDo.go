@@ -1,7 +1,7 @@
 package nrpos
 
-// AlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo 结构体
-type AlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo struct {
+// AlibabamoscommdyposmerchandisegetmerchandiseResultDo 结构体
+type AlibabamoscommdyposmerchandisegetmerchandiseResultDo struct {
 	// 返回数据，
 	Datas []MerchandiseInfoDto `json:"datas,omitempty" xml:"datas>merchandise_info_dto,omitempty"`
 	// 返回头

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpenimTribeSetmanagerAPIResponse OPENIM群设置管理员 API返回值
+// TaobaoopenimtribesetmanagerAPIResponse OPENIM群设置管理员 API返回值
 // taobao.openim.tribe.setmanager
 //
 // OPENIM群设置管理员
-type TaobaoOpenimTribeSetmanagerAPIResponse struct {
+type TaobaoopenimtribesetmanagerAPIResponse struct {
 	model.CommonResponse
-	TaobaoOpenimTribeSetmanagerAPIResponseModel
+	TaobaoopenimtribesetmanagerAPIResponseModel
 }
 
-// TaobaoOpenimTribeSetmanagerAPIResponseModel is OPENIM群设置管理员 成功返回结果
-type TaobaoOpenimTribeSetmanagerAPIResponseModel struct {
+// TaobaoopenimtribesetmanagerAPIResponseModel is OPENIM群设置管理员 成功返回结果
+type TaobaoopenimtribesetmanagerAPIResponseModel struct {
 	XMLName xml.Name `xml:"openim_tribe_setmanager_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

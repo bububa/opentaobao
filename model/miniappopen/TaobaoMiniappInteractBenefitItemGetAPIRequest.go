@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoMiniappInteractBenefitItemGetAPIRequest 读取实物权益奖池对应绑定的专属下单商品 API请求
+// TaobaominiappinteractbenefititemgetAPIRequest 读取实物权益奖池对应绑定的专属下单商品 API请求
 // taobao.miniapp.interact.benefit.item.get
 //
 // 读取实物权益奖池对应绑定的专属下单商品
-type TaobaoMiniappInteractBenefitItemGetAPIRequest struct {
+type TaobaominiappinteractbenefititemgetAPIRequest struct {
 	model.Params
 	// 查询条件
 	_miniAppSellerStrategyBenefitItemBindRequest *SellerStrategyBenefitItemBindOpenRequest
 }
 
-// NewTaobaoMiniappInteractBenefitItemGetRequest 初始化TaobaoMiniappInteractBenefitItemGetAPIRequest对象
-func NewTaobaoMiniappInteractBenefitItemGetRequest() *TaobaoMiniappInteractBenefitItemGetAPIRequest {
-	return &TaobaoMiniappInteractBenefitItemGetAPIRequest{
+// NewTaobaominiappinteractbenefititemgetRequest 初始化TaobaominiappinteractbenefititemgetAPIRequest对象
+func NewTaobaominiappinteractbenefititemgetRequest() *TaobaominiappinteractbenefititemgetAPIRequest {
+	return &TaobaominiappinteractbenefititemgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoMiniappInteractBenefitItemGetAPIRequest) GetApiMethodName() string {
+func (r TaobaominiappinteractbenefititemgetAPIRequest) GetApiMethodName() string {
 	return "taobao.miniapp.interact.benefit.item.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoMiniappInteractBenefitItemGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaominiappinteractbenefititemgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoMiniappInteractBenefitItemGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaominiappinteractbenefititemgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMiniAppSellerStrategyBenefitItemBindRequest is MiniAppSellerStrategyBenefitItemBindRequest Setter
 // 查询条件
-func (r *TaobaoMiniappInteractBenefitItemGetAPIRequest) SetMiniAppSellerStrategyBenefitItemBindRequest(_miniAppSellerStrategyBenefitItemBindRequest *SellerStrategyBenefitItemBindOpenRequest) error {
+func (r *TaobaominiappinteractbenefititemgetAPIRequest) SetMiniAppSellerStrategyBenefitItemBindRequest(_miniAppSellerStrategyBenefitItemBindRequest *SellerStrategyBenefitItemBindOpenRequest) error {
 	r._miniAppSellerStrategyBenefitItemBindRequest = _miniAppSellerStrategyBenefitItemBindRequest
 	r.Set("mini_app_seller_strategy_benefit_item_bind_request", _miniAppSellerStrategyBenefitItemBindRequest)
 	return nil
 }
 
 // GetMiniAppSellerStrategyBenefitItemBindRequest MiniAppSellerStrategyBenefitItemBindRequest Getter
-func (r TaobaoMiniappInteractBenefitItemGetAPIRequest) GetMiniAppSellerStrategyBenefitItemBindRequest() *SellerStrategyBenefitItemBindOpenRequest {
+func (r TaobaominiappinteractbenefititemgetAPIRequest) GetMiniAppSellerStrategyBenefitItemBindRequest() *SellerStrategyBenefitItemBindOpenRequest {
 	return r._miniAppSellerStrategyBenefitItemBindRequest
 }

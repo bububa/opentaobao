@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseExistinghomeQuotationSync 二手房行情数据同步
+// Alibabaalihouseexistinghomequotationsync 二手房行情数据同步
 // alibaba.alihouse.existinghome.quotation.sync
 //
 // 二手房行情数据同步
-func AlibabaAlihouseExistinghomeQuotationSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeQuotationSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeQuotationSyncAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeQuotationSyncAPIResponse
+func Alibabaalihouseexistinghomequotationsync(clt *core.SDKClient, req *alihouse.AlibabaalihouseexistinghomequotationsyncAPIRequest, session string) (*alihouse.AlibabaalihouseexistinghomequotationsyncAPIResponse, error) {
+	var resp alihouse.AlibabaalihouseexistinghomequotationsyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

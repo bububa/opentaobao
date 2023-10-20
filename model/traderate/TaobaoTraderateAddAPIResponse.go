@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTraderateAddAPIResponse 新增单个评价 API返回值
+// TaobaotraderateaddAPIResponse 新增单个评价 API返回值
 // taobao.traderate.add
 //
 // 新增单个评价(&lt;font color=&#34;red&#34;&gt;注：在评价之前需要对订单成功的时间进行判定（end_time）,如果超过15天，不能再通过该接口进行评价&lt;/font&gt;)
-type TaobaoTraderateAddAPIResponse struct {
+type TaobaotraderateaddAPIResponse struct {
 	model.CommonResponse
-	TaobaoTraderateAddAPIResponseModel
+	TaobaotraderateaddAPIResponseModel
 }
 
-// TaobaoTraderateAddAPIResponseModel is 新增单个评价 成功返回结果
-type TaobaoTraderateAddAPIResponseModel struct {
+// TaobaotraderateaddAPIResponseModel is 新增单个评价 成功返回结果
+type TaobaotraderateaddAPIResponseModel struct {
 	XMLName xml.Name `xml:"traderate_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

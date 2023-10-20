@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIResponse 商家查询负卖库存 API返回值
+// AlibabaascpaicsupplieraicinventorynegativesalequeryAPIResponse 商家查询负卖库存 API返回值
 // alibaba.ascp.aic.supplier.aicinventory.negative.sale.query
 //
 // 商家根据当前接口查询负卖货品的库存
-type AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIResponse struct {
+type AlibabaascpaicsupplieraicinventorynegativesalequeryAPIResponse struct {
 	model.CommonResponse
-	AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIResponseModel
+	AlibabaascpaicsupplieraicinventorynegativesalequeryAPIResponseModel
 }
 
-// AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIResponseModel is 商家查询负卖库存 成功返回结果
-type AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIResponseModel struct {
+// AlibabaascpaicsupplieraicinventorynegativesalequeryAPIResponseModel is 商家查询负卖库存 成功返回结果
+type AlibabaascpaicsupplieraicinventorynegativesalequeryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ascp_aic_supplier_aicinventory_negative_sale_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

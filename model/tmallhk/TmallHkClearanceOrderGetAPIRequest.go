@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallHkClearanceOrderGetAPIRequest 天猫国际订单清关信息 API请求
+// TmallhkclearanceordergetAPIRequest 天猫国际订单清关信息 API请求
 // tmall.hk.clearance.order.get
 //
 // 天猫国际订单清关信息
-type TmallHkClearanceOrderGetAPIRequest struct {
+type TmallhkclearanceordergetAPIRequest struct {
 	model.Params
 	// 入参封装类型
 	_clearanceOrderRequest *ClearanceOrderRequest
 }
 
-// NewTmallHkClearanceOrderGetRequest 初始化TmallHkClearanceOrderGetAPIRequest对象
-func NewTmallHkClearanceOrderGetRequest() *TmallHkClearanceOrderGetAPIRequest {
-	return &TmallHkClearanceOrderGetAPIRequest{
+// NewTmallhkclearanceordergetRequest 初始化TmallhkclearanceordergetAPIRequest对象
+func NewTmallhkclearanceordergetRequest() *TmallhkclearanceordergetAPIRequest {
+	return &TmallhkclearanceordergetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallHkClearanceOrderGetAPIRequest) GetApiMethodName() string {
+func (r TmallhkclearanceordergetAPIRequest) GetApiMethodName() string {
 	return "tmall.hk.clearance.order.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallHkClearanceOrderGetAPIRequest) GetApiParams(params url.Values) {
+func (r TmallhkclearanceordergetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallHkClearanceOrderGetAPIRequest) GetRawParams() model.Params {
+func (r TmallhkclearanceordergetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetClearanceOrderRequest is ClearanceOrderRequest Setter
 // 入参封装类型
-func (r *TmallHkClearanceOrderGetAPIRequest) SetClearanceOrderRequest(_clearanceOrderRequest *ClearanceOrderRequest) error {
+func (r *TmallhkclearanceordergetAPIRequest) SetClearanceOrderRequest(_clearanceOrderRequest *ClearanceOrderRequest) error {
 	r._clearanceOrderRequest = _clearanceOrderRequest
 	r.Set("clearance_order_request", _clearanceOrderRequest)
 	return nil
 }
 
 // GetClearanceOrderRequest ClearanceOrderRequest Getter
-func (r TmallHkClearanceOrderGetAPIRequest) GetClearanceOrderRequest() *ClearanceOrderRequest {
+func (r TmallhkclearanceordergetAPIRequest) GetClearanceOrderRequest() *ClearanceOrderRequest {
 	return r._clearanceOrderRequest
 }

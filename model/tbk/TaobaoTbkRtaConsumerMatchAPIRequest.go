@@ -13,17 +13,17 @@ import (
 type TaobaotbkrtaconsumermatchAPIRequest struct {
 	model.Params
 	// 活动列表
-	_offerlist []OfferList
+	_offerList []OfferList
 	// 消费者对应的会员ID（会员ID或设备信息同时填时，优先使用会员ID）
-	_specialid string
+	_specialId string
 	// 设备信息，加密后的值(IMEI,IDFA,OAID,MOBILE需要加密)，需用MD5加密，32位小写
-	_devicevalue string
+	_deviceValue string
 	// 设备信息，入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)：IMEI, 或者IDFA, 或者OAID, 或者MOBILE, 或者ALIPAY_ID
-	_devicetype string
+	_deviceType string
 	// 策略ID，与活动列表二选一传入
-	_strategyidlist string
+	_strategyIdList string
 	// mm_xxx_xxx_xxx的第3段数字
-	_adzoneid int64
+	_adzoneId int64
 }
 
 // NewTaobaotbkrtaconsumermatchRequest 初始化TaobaotbkrtaconsumermatchAPIRequest对象
@@ -50,80 +50,80 @@ func (r TaobaotbkrtaconsumermatchAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetOfferlist is Offerlist Setter
+// SetOfferList is OfferList Setter
 // 活动列表
-func (r *TaobaotbkrtaconsumermatchAPIRequest) SetOfferlist(_offerlist []OfferList) error {
-	r._offerlist = _offerlist
-	r.Set("offer_list", _offerlist)
+func (r *TaobaotbkrtaconsumermatchAPIRequest) SetOfferList(_offerList []OfferList) error {
+	r._offerList = _offerList
+	r.Set("offer_list", _offerList)
 	return nil
 }
 
-// GetOfferlist Offerlist Getter
-func (r TaobaotbkrtaconsumermatchAPIRequest) GetOfferlist() []OfferList {
-	return r._offerlist
+// GetOfferList OfferList Getter
+func (r TaobaotbkrtaconsumermatchAPIRequest) GetOfferList() []OfferList {
+	return r._offerList
 }
 
-// SetSpecialid is Specialid Setter
+// SetSpecialId is SpecialId Setter
 // 消费者对应的会员ID（会员ID或设备信息同时填时，优先使用会员ID）
-func (r *TaobaotbkrtaconsumermatchAPIRequest) SetSpecialid(_specialid string) error {
-	r._specialid = _specialid
-	r.Set("special_id", _specialid)
+func (r *TaobaotbkrtaconsumermatchAPIRequest) SetSpecialId(_specialId string) error {
+	r._specialId = _specialId
+	r.Set("special_id", _specialId)
 	return nil
 }
 
-// GetSpecialid Specialid Getter
-func (r TaobaotbkrtaconsumermatchAPIRequest) GetSpecialid() string {
-	return r._specialid
+// GetSpecialId SpecialId Getter
+func (r TaobaotbkrtaconsumermatchAPIRequest) GetSpecialId() string {
+	return r._specialId
 }
 
-// SetDevicevalue is Devicevalue Setter
+// SetDeviceValue is DeviceValue Setter
 // 设备信息，加密后的值(IMEI,IDFA,OAID,MOBILE需要加密)，需用MD5加密，32位小写
-func (r *TaobaotbkrtaconsumermatchAPIRequest) SetDevicevalue(_devicevalue string) error {
-	r._devicevalue = _devicevalue
-	r.Set("device_value", _devicevalue)
+func (r *TaobaotbkrtaconsumermatchAPIRequest) SetDeviceValue(_deviceValue string) error {
+	r._deviceValue = _deviceValue
+	r.Set("device_value", _deviceValue)
 	return nil
 }
 
-// GetDevicevalue Devicevalue Getter
-func (r TaobaotbkrtaconsumermatchAPIRequest) GetDevicevalue() string {
-	return r._devicevalue
+// GetDeviceValue DeviceValue Getter
+func (r TaobaotbkrtaconsumermatchAPIRequest) GetDeviceValue() string {
+	return r._deviceValue
 }
 
-// SetDevicetype is Devicetype Setter
+// SetDeviceType is DeviceType Setter
 // 设备信息，入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)：IMEI, 或者IDFA, 或者OAID, 或者MOBILE, 或者ALIPAY_ID
-func (r *TaobaotbkrtaconsumermatchAPIRequest) SetDevicetype(_devicetype string) error {
-	r._devicetype = _devicetype
-	r.Set("device_type", _devicetype)
+func (r *TaobaotbkrtaconsumermatchAPIRequest) SetDeviceType(_deviceType string) error {
+	r._deviceType = _deviceType
+	r.Set("device_type", _deviceType)
 	return nil
 }
 
-// GetDevicetype Devicetype Getter
-func (r TaobaotbkrtaconsumermatchAPIRequest) GetDevicetype() string {
-	return r._devicetype
+// GetDeviceType DeviceType Getter
+func (r TaobaotbkrtaconsumermatchAPIRequest) GetDeviceType() string {
+	return r._deviceType
 }
 
-// SetStrategyidlist is Strategyidlist Setter
+// SetStrategyIdList is StrategyIdList Setter
 // 策略ID，与活动列表二选一传入
-func (r *TaobaotbkrtaconsumermatchAPIRequest) SetStrategyidlist(_strategyidlist string) error {
-	r._strategyidlist = _strategyidlist
-	r.Set("strategy_id_list", _strategyidlist)
+func (r *TaobaotbkrtaconsumermatchAPIRequest) SetStrategyIdList(_strategyIdList string) error {
+	r._strategyIdList = _strategyIdList
+	r.Set("strategy_id_list", _strategyIdList)
 	return nil
 }
 
-// GetStrategyidlist Strategyidlist Getter
-func (r TaobaotbkrtaconsumermatchAPIRequest) GetStrategyidlist() string {
-	return r._strategyidlist
+// GetStrategyIdList StrategyIdList Getter
+func (r TaobaotbkrtaconsumermatchAPIRequest) GetStrategyIdList() string {
+	return r._strategyIdList
 }
 
-// SetAdzoneid is Adzoneid Setter
+// SetAdzoneId is AdzoneId Setter
 // mm_xxx_xxx_xxx的第3段数字
-func (r *TaobaotbkrtaconsumermatchAPIRequest) SetAdzoneid(_adzoneid int64) error {
-	r._adzoneid = _adzoneid
-	r.Set("adzone_id", _adzoneid)
+func (r *TaobaotbkrtaconsumermatchAPIRequest) SetAdzoneId(_adzoneId int64) error {
+	r._adzoneId = _adzoneId
+	r.Set("adzone_id", _adzoneId)
 	return nil
 }
 
-// GetAdzoneid Adzoneid Getter
-func (r TaobaotbkrtaconsumermatchAPIRequest) GetAdzoneid() int64 {
-	return r._adzoneid
+// GetAdzoneId AdzoneId Getter
+func (r TaobaotbkrtaconsumermatchAPIRequest) GetAdzoneId() int64 {
+	return r._adzoneId
 }

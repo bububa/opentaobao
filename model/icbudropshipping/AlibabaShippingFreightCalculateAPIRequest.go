@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaShippingFreightCalculateAPIRequest 阿里巴巴商品运费计算查询接口 API请求
+// AlibabashippingfreightcalculateAPIRequest 阿里巴巴商品运费计算查询接口 API请求
 // alibaba.shipping.freight.calculate
 //
 // 阿里巴巴商品运费计算查询接口
-type AlibabaShippingFreightCalculateAPIRequest struct {
+type AlibabashippingfreightcalculateAPIRequest struct {
 	model.Params
 	// {}
 	_paramFreightTemplateRequest *FreightTemplateRequest
 }
 
-// NewAlibabaShippingFreightCalculateRequest 初始化AlibabaShippingFreightCalculateAPIRequest对象
-func NewAlibabaShippingFreightCalculateRequest() *AlibabaShippingFreightCalculateAPIRequest {
-	return &AlibabaShippingFreightCalculateAPIRequest{
+// NewAlibabashippingfreightcalculateRequest 初始化AlibabashippingfreightcalculateAPIRequest对象
+func NewAlibabashippingfreightcalculateRequest() *AlibabashippingfreightcalculateAPIRequest {
+	return &AlibabashippingfreightcalculateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaShippingFreightCalculateAPIRequest) GetApiMethodName() string {
+func (r AlibabashippingfreightcalculateAPIRequest) GetApiMethodName() string {
 	return "alibaba.shipping.freight.calculate"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaShippingFreightCalculateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabashippingfreightcalculateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaShippingFreightCalculateAPIRequest) GetRawParams() model.Params {
+func (r AlibabashippingfreightcalculateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamFreightTemplateRequest is ParamFreightTemplateRequest Setter
 // {}
-func (r *AlibabaShippingFreightCalculateAPIRequest) SetParamFreightTemplateRequest(_paramFreightTemplateRequest *FreightTemplateRequest) error {
+func (r *AlibabashippingfreightcalculateAPIRequest) SetParamFreightTemplateRequest(_paramFreightTemplateRequest *FreightTemplateRequest) error {
 	r._paramFreightTemplateRequest = _paramFreightTemplateRequest
 	r.Set("param_freight_template_request", _paramFreightTemplateRequest)
 	return nil
 }
 
 // GetParamFreightTemplateRequest ParamFreightTemplateRequest Getter
-func (r AlibabaShippingFreightCalculateAPIRequest) GetParamFreightTemplateRequest() *FreightTemplateRequest {
+func (r AlibabashippingfreightcalculateAPIRequest) GetParamFreightTemplateRequest() *FreightTemplateRequest {
 	return r._paramFreightTemplateRequest
 }

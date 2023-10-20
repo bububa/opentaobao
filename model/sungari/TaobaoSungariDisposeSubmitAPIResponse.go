@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSungariDisposeSubmitAPIResponse 商品商家处置提交任务 API返回值
+// TaobaosungaridisposesubmitAPIResponse 商品商家处置提交任务 API返回值
 // taobao.sungari.dispose.submit
 //
 // 商品商家处置信息接口，提供政府部门发送处置信息给阿里
-type TaobaoSungariDisposeSubmitAPIResponse struct {
+type TaobaosungaridisposesubmitAPIResponse struct {
 	model.CommonResponse
-	TaobaoSungariDisposeSubmitAPIResponseModel
+	TaobaosungaridisposesubmitAPIResponseModel
 }
 
-// TaobaoSungariDisposeSubmitAPIResponseModel is 商品商家处置提交任务 成功返回结果
-type TaobaoSungariDisposeSubmitAPIResponseModel struct {
+// TaobaosungaridisposesubmitAPIResponseModel is 商品商家处置提交任务 成功返回结果
+type TaobaosungaridisposesubmitAPIResponseModel struct {
 	XMLName xml.Name `xml:"sungari_dispose_submit_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

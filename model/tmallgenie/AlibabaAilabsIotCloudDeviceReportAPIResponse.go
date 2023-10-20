@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAilabsIotCloudDeviceReportAPIResponse 天猫精灵云云接入设备状态、事件上报接口 API返回值
+// AlibabaailabsiotclouddevicereportAPIResponse 天猫精灵云云接入设备状态、事件上报接口 API返回值
 // alibaba.ailabs.iot.cloud.device.report
 //
 // 承接天猫精灵云云接入设备的状态、事件上报
-type AlibabaAilabsIotCloudDeviceReportAPIResponse struct {
+type AlibabaailabsiotclouddevicereportAPIResponse struct {
 	model.CommonResponse
-	AlibabaAilabsIotCloudDeviceReportAPIResponseModel
+	AlibabaailabsiotclouddevicereportAPIResponseModel
 }
 
-// AlibabaAilabsIotCloudDeviceReportAPIResponseModel is 天猫精灵云云接入设备状态、事件上报接口 成功返回结果
-type AlibabaAilabsIotCloudDeviceReportAPIResponseModel struct {
+// AlibabaailabsiotclouddevicereportAPIResponseModel is 天猫精灵云云接入设备状态、事件上报接口 成功返回结果
+type AlibabaailabsiotclouddevicereportAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_iot_cloud_device_report_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

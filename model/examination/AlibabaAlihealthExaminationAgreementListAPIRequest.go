@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthExaminationAgreementListAPIRequest isv协议获取 API请求
+// AlibabaalihealthexaminationagreementlistAPIRequest isv协议获取 API请求
 // alibaba.alihealth.examination.agreement.list
 //
 // isv协议获取
-type AlibabaAlihealthExaminationAgreementListAPIRequest struct {
+type AlibabaalihealthexaminationagreementlistAPIRequest struct {
 	model.Params
 	// isv传递过来的门店code
 	_storeCode string
 }
 
-// NewAlibabaAlihealthExaminationAgreementListRequest 初始化AlibabaAlihealthExaminationAgreementListAPIRequest对象
-func NewAlibabaAlihealthExaminationAgreementListRequest() *AlibabaAlihealthExaminationAgreementListAPIRequest {
-	return &AlibabaAlihealthExaminationAgreementListAPIRequest{
+// NewAlibabaalihealthexaminationagreementlistRequest 初始化AlibabaalihealthexaminationagreementlistAPIRequest对象
+func NewAlibabaalihealthexaminationagreementlistRequest() *AlibabaalihealthexaminationagreementlistAPIRequest {
+	return &AlibabaalihealthexaminationagreementlistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthExaminationAgreementListAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthexaminationagreementlistAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.examination.agreement.list"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthExaminationAgreementListAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthexaminationagreementlistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthExaminationAgreementListAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthexaminationagreementlistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetStoreCode is StoreCode Setter
 // isv传递过来的门店code
-func (r *AlibabaAlihealthExaminationAgreementListAPIRequest) SetStoreCode(_storeCode string) error {
+func (r *AlibabaalihealthexaminationagreementlistAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
 	r.Set("store_code", _storeCode)
 	return nil
 }
 
 // GetStoreCode StoreCode Getter
-func (r AlibabaAlihealthExaminationAgreementListAPIRequest) GetStoreCode() string {
+func (r AlibabaalihealthexaminationagreementlistAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }

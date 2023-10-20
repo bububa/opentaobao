@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoUsergrowthDhhDeliveryAskAPIResponse 广告曝光前判定接口V2 API返回值
+// TaobaousergrowthdhhdeliveryaskAPIResponse 广告曝光前判定接口V2 API返回值
 // taobao.usergrowth.dhh.delivery.ask
 //
 // 提供给媒体在曝光广告前调用
-type TaobaoUsergrowthDhhDeliveryAskAPIResponse struct {
+type TaobaousergrowthdhhdeliveryaskAPIResponse struct {
 	model.CommonResponse
-	TaobaoUsergrowthDhhDeliveryAskAPIResponseModel
+	TaobaousergrowthdhhdeliveryaskAPIResponseModel
 }
 
-// TaobaoUsergrowthDhhDeliveryAskAPIResponseModel is 广告曝光前判定接口V2 成功返回结果
-type TaobaoUsergrowthDhhDeliveryAskAPIResponseModel struct {
+// TaobaousergrowthdhhdeliveryaskAPIResponseModel is 广告曝光前判定接口V2 成功返回结果
+type TaobaousergrowthdhhdeliveryaskAPIResponseModel struct {
 	XMLName xml.Name `xml:"usergrowth_dhh_delivery_ask_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

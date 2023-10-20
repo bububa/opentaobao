@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// AlibabaCampusDeviceOpenapiSaveeventinfoforibos saveeventinfoforibos
+// Alibabacampusdeviceopenapisaveeventinfoforibos saveeventinfoforibos
 // alibaba.campus.device.openapi.saveeventinfoforibos
 //
 // IBos的事件信息上报与反馈的处理接口
-func AlibabaCampusDeviceOpenapiSaveeventinfoforibos(clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest, session string) (*campus.AlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIResponse, error) {
-	var resp campus.AlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIResponse
+func Alibabacampusdeviceopenapisaveeventinfoforibos(clt *core.SDKClient, req *campus.AlibabacampusdeviceopenapisaveeventinfoforibosAPIRequest, session string) (*campus.AlibabacampusdeviceopenapisaveeventinfoforibosAPIResponse, error) {
+	var resp campus.AlibabacampusdeviceopenapisaveeventinfoforibosAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkTradeRefundSuccessCreateAPIRequest 五道口终态逆向订单创建 API请求
+// AlibabawdktraderefundsuccesscreateAPIRequest 五道口终态逆向订单创建 API请求
 // alibaba.wdk.trade.refund.success.create
 //
 // 五道口终态逆向订单创建
-type AlibabaWdkTradeRefundSuccessCreateAPIRequest struct {
+type AlibabawdktraderefundsuccesscreateAPIRequest struct {
 	model.Params
 	// 逆向单请求对象
 	_refundOrderRequest *AfterRefundOrderRequest
 }
 
-// NewAlibabaWdkTradeRefundSuccessCreateRequest 初始化AlibabaWdkTradeRefundSuccessCreateAPIRequest对象
-func NewAlibabaWdkTradeRefundSuccessCreateRequest() *AlibabaWdkTradeRefundSuccessCreateAPIRequest {
-	return &AlibabaWdkTradeRefundSuccessCreateAPIRequest{
+// NewAlibabawdktraderefundsuccesscreateRequest 初始化AlibabawdktraderefundsuccesscreateAPIRequest对象
+func NewAlibabawdktraderefundsuccesscreateRequest() *AlibabawdktraderefundsuccesscreateAPIRequest {
+	return &AlibabawdktraderefundsuccesscreateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkTradeRefundSuccessCreateAPIRequest) GetApiMethodName() string {
+func (r AlibabawdktraderefundsuccesscreateAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.trade.refund.success.create"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkTradeRefundSuccessCreateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdktraderefundsuccesscreateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkTradeRefundSuccessCreateAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdktraderefundsuccesscreateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRefundOrderRequest is RefundOrderRequest Setter
 // 逆向单请求对象
-func (r *AlibabaWdkTradeRefundSuccessCreateAPIRequest) SetRefundOrderRequest(_refundOrderRequest *AfterRefundOrderRequest) error {
+func (r *AlibabawdktraderefundsuccesscreateAPIRequest) SetRefundOrderRequest(_refundOrderRequest *AfterRefundOrderRequest) error {
 	r._refundOrderRequest = _refundOrderRequest
 	r.Set("refund_order_request", _refundOrderRequest)
 	return nil
 }
 
 // GetRefundOrderRequest RefundOrderRequest Getter
-func (r AlibabaWdkTradeRefundSuccessCreateAPIRequest) GetRefundOrderRequest() *AfterRefundOrderRequest {
+func (r AlibabawdktraderefundsuccesscreateAPIRequest) GetRefundOrderRequest() *AfterRefundOrderRequest {
 	return r._refundOrderRequest
 }

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthExaminationServiceareaCheckAPIRequest 体检机构对接_上门检测服务范围查询 API请求
+// AlibabaalihealthexaminationserviceareacheckAPIRequest 体检机构对接_上门检测服务范围查询 API请求
 // alibaba.alihealth.examination.servicearea.check
 //
 // 体检机构对接_上门检测服务范围查询
-type AlibabaAlihealthExaminationServiceareaCheckAPIRequest struct {
+type AlibabaalihealthexaminationserviceareacheckAPIRequest struct {
 	model.Params
 	// 机构套餐编码
 	_packageCode string
@@ -34,156 +34,156 @@ type AlibabaAlihealthExaminationServiceareaCheckAPIRequest struct {
 	_districtCode string
 }
 
-// NewAlibabaAlihealthExaminationServiceareaCheckRequest 初始化AlibabaAlihealthExaminationServiceareaCheckAPIRequest对象
-func NewAlibabaAlihealthExaminationServiceareaCheckRequest() *AlibabaAlihealthExaminationServiceareaCheckAPIRequest {
-	return &AlibabaAlihealthExaminationServiceareaCheckAPIRequest{
+// NewAlibabaalihealthexaminationserviceareacheckRequest 初始化AlibabaalihealthexaminationserviceareacheckAPIRequest对象
+func NewAlibabaalihealthexaminationserviceareacheckRequest() *AlibabaalihealthexaminationserviceareacheckAPIRequest {
+	return &AlibabaalihealthexaminationserviceareacheckAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthexaminationserviceareacheckAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.examination.servicearea.check"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthexaminationserviceareacheckAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthexaminationserviceareacheckAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPackageCode is PackageCode Setter
 // 机构套餐编码
-func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetPackageCode(_packageCode string) error {
+func (r *AlibabaalihealthexaminationserviceareacheckAPIRequest) SetPackageCode(_packageCode string) error {
 	r._packageCode = _packageCode
 	r.Set("package_code", _packageCode)
 	return nil
 }
 
 // GetPackageCode PackageCode Getter
-func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetPackageCode() string {
+func (r AlibabaalihealthexaminationserviceareacheckAPIRequest) GetPackageCode() string {
 	return r._packageCode
 }
 
 // SetAddress is Address Setter
 // 上门检测地址
-func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetAddress(_address string) error {
+func (r *AlibabaalihealthexaminationserviceareacheckAPIRequest) SetAddress(_address string) error {
 	r._address = _address
 	r.Set("address", _address)
 	return nil
 }
 
 // GetAddress Address Getter
-func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetAddress() string {
+func (r AlibabaalihealthexaminationserviceareacheckAPIRequest) GetAddress() string {
 	return r._address
 }
 
 // SetLatitude is Latitude Setter
 // 上门检测地址纬度
-func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetLatitude(_latitude string) error {
+func (r *AlibabaalihealthexaminationserviceareacheckAPIRequest) SetLatitude(_latitude string) error {
 	r._latitude = _latitude
 	r.Set("latitude", _latitude)
 	return nil
 }
 
 // GetLatitude Latitude Getter
-func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetLatitude() string {
+func (r AlibabaalihealthexaminationserviceareacheckAPIRequest) GetLatitude() string {
 	return r._latitude
 }
 
 // SetLongitude is Longitude Setter
 // 上门检测地址经度
-func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetLongitude(_longitude string) error {
+func (r *AlibabaalihealthexaminationserviceareacheckAPIRequest) SetLongitude(_longitude string) error {
 	r._longitude = _longitude
 	r.Set("longitude", _longitude)
 	return nil
 }
 
 // GetLongitude Longitude Getter
-func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetLongitude() string {
+func (r AlibabaalihealthexaminationserviceareacheckAPIRequest) GetLongitude() string {
 	return r._longitude
 }
 
 // SetProvince is Province Setter
 // 省份名称（高德）
-func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetProvince(_province string) error {
+func (r *AlibabaalihealthexaminationserviceareacheckAPIRequest) SetProvince(_province string) error {
 	r._province = _province
 	r.Set("province", _province)
 	return nil
 }
 
 // GetProvince Province Getter
-func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetProvince() string {
+func (r AlibabaalihealthexaminationserviceareacheckAPIRequest) GetProvince() string {
 	return r._province
 }
 
 // SetProvinceCode is ProvinceCode Setter
 // 省份编码（高德adcode）
-func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetProvinceCode(_provinceCode string) error {
+func (r *AlibabaalihealthexaminationserviceareacheckAPIRequest) SetProvinceCode(_provinceCode string) error {
 	r._provinceCode = _provinceCode
 	r.Set("province_code", _provinceCode)
 	return nil
 }
 
 // GetProvinceCode ProvinceCode Getter
-func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetProvinceCode() string {
+func (r AlibabaalihealthexaminationserviceareacheckAPIRequest) GetProvinceCode() string {
 	return r._provinceCode
 }
 
 // SetCity is City Setter
 // 城市名称（高德）
-func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetCity(_city string) error {
+func (r *AlibabaalihealthexaminationserviceareacheckAPIRequest) SetCity(_city string) error {
 	r._city = _city
 	r.Set("city", _city)
 	return nil
 }
 
 // GetCity City Getter
-func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetCity() string {
+func (r AlibabaalihealthexaminationserviceareacheckAPIRequest) GetCity() string {
 	return r._city
 }
 
 // SetCityCode is CityCode Setter
 // 城市编码（高德adcode）
-func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetCityCode(_cityCode string) error {
+func (r *AlibabaalihealthexaminationserviceareacheckAPIRequest) SetCityCode(_cityCode string) error {
 	r._cityCode = _cityCode
 	r.Set("city_code", _cityCode)
 	return nil
 }
 
 // GetCityCode CityCode Getter
-func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetCityCode() string {
+func (r AlibabaalihealthexaminationserviceareacheckAPIRequest) GetCityCode() string {
 	return r._cityCode
 }
 
 // SetDistrict is District Setter
 // 区域名称（高德）
-func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetDistrict(_district string) error {
+func (r *AlibabaalihealthexaminationserviceareacheckAPIRequest) SetDistrict(_district string) error {
 	r._district = _district
 	r.Set("district", _district)
 	return nil
 }
 
 // GetDistrict District Getter
-func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetDistrict() string {
+func (r AlibabaalihealthexaminationserviceareacheckAPIRequest) GetDistrict() string {
 	return r._district
 }
 
 // SetDistrictCode is DistrictCode Setter
 // 区域编码（高德adcode）
-func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetDistrictCode(_districtCode string) error {
+func (r *AlibabaalihealthexaminationserviceareacheckAPIRequest) SetDistrictCode(_districtCode string) error {
 	r._districtCode = _districtCode
 	r.Set("district_code", _districtCode)
 	return nil
 }
 
 // GetDistrictCode DistrictCode Getter
-func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetDistrictCode() string {
+func (r AlibabaalihealthexaminationserviceareacheckAPIRequest) GetDistrictCode() string {
 	return r._districtCode
 }

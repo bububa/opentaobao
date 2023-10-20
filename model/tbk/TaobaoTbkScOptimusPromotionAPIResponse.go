@@ -21,5 +21,5 @@ type TaobaotbkscoptimuspromotionAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// resultList
-	Resultlist []TaobaotbkscoptimuspromotionMapData `json:"result_list,omitempty" xml:"result_list>taobaotbkscoptimuspromotion_map_data,omitempty"`
+	ResultList []TaobaotbkscoptimuspromotionMapData `json:"result_list,omitempty" xml:"result_list>taobaotbkscoptimuspromotion_map_data,omitempty"`
 }

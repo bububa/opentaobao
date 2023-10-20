@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaAlihealthDrugKytGetentlicenseResultModel 结构体
-type AlibabaAlihealthDrugKytGetentlicenseResultModel struct {
+// AlibabaalihealthdrugkytgetentlicenseResultModel 结构体
+type AlibabaalihealthdrugkytgetentlicenseResultModel struct {
 	// 列表
-	ModelList []AlibabaAlihealthDrugKytGetentlicenseModel `json:"model_list,omitempty" xml:"model_list>alibaba_alihealth_drug_kyt_getentlicense_model,omitempty"`
+	ModelList []AlibabaalihealthdrugkytgetentlicenseModel `json:"model_list,omitempty" xml:"model_list>alibabaalihealthdrugkytgetentlicense_model,omitempty"`
 }

@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLsyCrmActivityGetAPIResponse 私域导购查询活动详情 API返回值
+// AlibabalsycrmactivitygetAPIResponse 私域导购查询活动详情 API返回值
 // alibaba.lsy.crm.activity.get
 //
 // 私域导购查询活动详情
-type AlibabaLsyCrmActivityGetAPIResponse struct {
+type AlibabalsycrmactivitygetAPIResponse struct {
 	model.CommonResponse
-	AlibabaLsyCrmActivityGetAPIResponseModel
+	AlibabalsycrmactivitygetAPIResponseModel
 }
 
-// AlibabaLsyCrmActivityGetAPIResponseModel is 私域导购查询活动详情 成功返回结果
-type AlibabaLsyCrmActivityGetAPIResponseModel struct {
+// AlibabalsycrmactivitygetAPIResponseModel is 私域导购查询活动详情 成功返回结果
+type AlibabalsycrmactivitygetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lsy_crm_activity_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回值
-	Result *AlibabaLsyCrmActivityGetResultDo `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabalsycrmactivitygetResultDo `json:"result,omitempty" xml:"result,omitempty"`
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIResponse 根据安全简码查询二维码详细信息 API返回值
+// AlibabaailabstmallgenieauthdevicewithshortqrcodegetAPIResponse 根据安全简码查询二维码详细信息 API返回值
 // alibaba.ailabs.tmallgenie.auth.device.withshort.qrcode.get
 //
 // 根据安全简码查询二维码详细信息
-type AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIResponse struct {
+type AlibabaailabstmallgenieauthdevicewithshortqrcodegetAPIResponse struct {
 	model.CommonResponse
-	AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIResponseModel
+	AlibabaailabstmallgenieauthdevicewithshortqrcodegetAPIResponseModel
 }
 
-// AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIResponseModel is 根据安全简码查询二维码详细信息 成功返回结果
-type AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIResponseModel struct {
+// AlibabaailabstmallgenieauthdevicewithshortqrcodegetAPIResponseModel is 根据安全简码查询二维码详细信息 成功返回结果
+type AlibabaailabstmallgenieauthdevicewithshortqrcodegetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_tmallgenie_auth_device_withshort_qrcode_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaDchainAoxiangScitemDeleteAPIRequest 货品删除 API请求
+// AlibabadchainaoxiangscitemdeleteAPIRequest 货品删除 API请求
 // alibaba.dchain.aoxiang.scitem.delete
 //
 // 货品删除
-type AlibabaDchainAoxiangScitemDeleteAPIRequest struct {
+type AlibabadchainaoxiangscitemdeleteAPIRequest struct {
 	model.Params
 	// 入参结构体
 	_deleteScItemRequest *DeleteScItemRequest
 }
 
-// NewAlibabaDchainAoxiangScitemDeleteRequest 初始化AlibabaDchainAoxiangScitemDeleteAPIRequest对象
-func NewAlibabaDchainAoxiangScitemDeleteRequest() *AlibabaDchainAoxiangScitemDeleteAPIRequest {
-	return &AlibabaDchainAoxiangScitemDeleteAPIRequest{
+// NewAlibabadchainaoxiangscitemdeleteRequest 初始化AlibabadchainaoxiangscitemdeleteAPIRequest对象
+func NewAlibabadchainaoxiangscitemdeleteRequest() *AlibabadchainaoxiangscitemdeleteAPIRequest {
+	return &AlibabadchainaoxiangscitemdeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaDchainAoxiangScitemDeleteAPIRequest) GetApiMethodName() string {
+func (r AlibabadchainaoxiangscitemdeleteAPIRequest) GetApiMethodName() string {
 	return "alibaba.dchain.aoxiang.scitem.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaDchainAoxiangScitemDeleteAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabadchainaoxiangscitemdeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaDchainAoxiangScitemDeleteAPIRequest) GetRawParams() model.Params {
+func (r AlibabadchainaoxiangscitemdeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDeleteScItemRequest is DeleteScItemRequest Setter
 // 入参结构体
-func (r *AlibabaDchainAoxiangScitemDeleteAPIRequest) SetDeleteScItemRequest(_deleteScItemRequest *DeleteScItemRequest) error {
+func (r *AlibabadchainaoxiangscitemdeleteAPIRequest) SetDeleteScItemRequest(_deleteScItemRequest *DeleteScItemRequest) error {
 	r._deleteScItemRequest = _deleteScItemRequest
 	r.Set("delete_sc_item_request", _deleteScItemRequest)
 	return nil
 }
 
 // GetDeleteScItemRequest DeleteScItemRequest Getter
-func (r AlibabaDchainAoxiangScitemDeleteAPIRequest) GetDeleteScItemRequest() *DeleteScItemRequest {
+func (r AlibabadchainaoxiangscitemdeleteAPIRequest) GetDeleteScItemRequest() *DeleteScItemRequest {
 	return r._deleteScItemRequest
 }

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLstVendngImageUploadAPIRequest 售货机商品图片上传 API请求
+// AlibabalstvendngimageuploadAPIRequest 售货机商品图片上传 API请求
 // alibaba.lst.vendng.image.upload
 //
 // 零售通自动售货机商品图片上传接口，主要为ISV厂商提供图片同步的通道，从而建立统一的商品图片库。
-type AlibabaLstVendngImageUploadAPIRequest struct {
+type AlibabalstvendngimageuploadAPIRequest struct {
 	model.Params
 	// 图片文件字节数组
 	_imgBytes *model.File
 }
 
-// NewAlibabaLstVendngImageUploadRequest 初始化AlibabaLstVendngImageUploadAPIRequest对象
-func NewAlibabaLstVendngImageUploadRequest() *AlibabaLstVendngImageUploadAPIRequest {
-	return &AlibabaLstVendngImageUploadAPIRequest{
+// NewAlibabalstvendngimageuploadRequest 初始化AlibabalstvendngimageuploadAPIRequest对象
+func NewAlibabalstvendngimageuploadRequest() *AlibabalstvendngimageuploadAPIRequest {
+	return &AlibabalstvendngimageuploadAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaLstVendngImageUploadAPIRequest) GetApiMethodName() string {
+func (r AlibabalstvendngimageuploadAPIRequest) GetApiMethodName() string {
 	return "alibaba.lst.vendng.image.upload"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaLstVendngImageUploadAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabalstvendngimageuploadAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaLstVendngImageUploadAPIRequest) GetRawParams() model.Params {
+func (r AlibabalstvendngimageuploadAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetImgBytes is ImgBytes Setter
 // 图片文件字节数组
-func (r *AlibabaLstVendngImageUploadAPIRequest) SetImgBytes(_imgBytes *model.File) error {
+func (r *AlibabalstvendngimageuploadAPIRequest) SetImgBytes(_imgBytes *model.File) error {
 	r._imgBytes = _imgBytes
 	r.Set("img_bytes", _imgBytes)
 	return nil
 }
 
 // GetImgBytes ImgBytes Getter
-func (r AlibabaLstVendngImageUploadAPIRequest) GetImgBytes() *model.File {
+func (r AlibabalstvendngimageuploadAPIRequest) GetImgBytes() *model.File {
 	return r._imgBytes
 }

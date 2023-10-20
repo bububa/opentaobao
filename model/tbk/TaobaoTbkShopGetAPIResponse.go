@@ -21,7 +21,7 @@ type TaobaotbkshopgetAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 淘宝客店铺
-	Results []NTbkShop `json:"results,omitempty" xml:"results>n_tbk_shop,omitempty"`
+	Results []NtbkShop `json:"results,omitempty" xml:"results>ntbk_shop,omitempty"`
 	// 搜索到符合条件的结果总数
-	Totalresults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 }

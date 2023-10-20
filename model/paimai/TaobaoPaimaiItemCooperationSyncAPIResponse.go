@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoPaimaiItemCooperationSyncAPIResponse 商品同步 API返回值
+// TaobaopaimaiitemcooperationsyncAPIResponse 商品同步 API返回值
 // taobao.paimai.item.cooperation.sync
 //
 // 商品同步
-type TaobaoPaimaiItemCooperationSyncAPIResponse struct {
+type TaobaopaimaiitemcooperationsyncAPIResponse struct {
 	model.CommonResponse
-	TaobaoPaimaiItemCooperationSyncAPIResponseModel
+	TaobaopaimaiitemcooperationsyncAPIResponseModel
 }
 
-// TaobaoPaimaiItemCooperationSyncAPIResponseModel is 商品同步 成功返回结果
-type TaobaoPaimaiItemCooperationSyncAPIResponseModel struct {
+// TaobaopaimaiitemcooperationsyncAPIResponseModel is 商品同步 成功返回结果
+type TaobaopaimaiitemcooperationsyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"paimai_item_cooperation_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

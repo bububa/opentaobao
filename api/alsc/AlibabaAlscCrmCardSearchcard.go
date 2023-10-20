@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// AlibabaAlscCrmCardSearchcard 搜索卡实例列表(支持号段查询)
+// Alibabaalsccrmcardsearchcard 搜索卡实例列表(支持号段查询)
 // alibaba.alsc.crm.card.searchcard
 //
 // 搜索卡实例列表(支持号段查询)
-func AlibabaAlscCrmCardSearchcard(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCardSearchcardAPIRequest, session string) (*alsc.AlibabaAlscCrmCardSearchcardAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmCardSearchcardAPIResponse
+func Alibabaalsccrmcardsearchcard(clt *core.SDKClient, req *alsc.AlibabaalsccrmcardsearchcardAPIRequest, session string) (*alsc.AlibabaalsccrmcardsearchcardAPIResponse, error) {
+	var resp alsc.AlibabaalsccrmcardsearchcardAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoFuwuSpConfirmApplyAPIResponse 内购服务确认单申请接口 API返回值
+// TaobaofuwuspconfirmapplyAPIResponse 内购服务确认单申请接口 API返回值
 // taobao.fuwu.sp.confirm.apply
 //
 // isv能通过该接口发起确认申请单
-type TaobaoFuwuSpConfirmApplyAPIResponse struct {
+type TaobaofuwuspconfirmapplyAPIResponse struct {
 	model.CommonResponse
-	TaobaoFuwuSpConfirmApplyAPIResponseModel
+	TaobaofuwuspconfirmapplyAPIResponseModel
 }
 
-// TaobaoFuwuSpConfirmApplyAPIResponseModel is 内购服务确认单申请接口 成功返回结果
-type TaobaoFuwuSpConfirmApplyAPIResponseModel struct {
+// TaobaofuwuspconfirmapplyAPIResponseModel is 内购服务确认单申请接口 成功返回结果
+type TaobaofuwuspconfirmapplyAPIResponseModel struct {
 	XMLName xml.Name `xml:"fuwu_sp_confirm_apply_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

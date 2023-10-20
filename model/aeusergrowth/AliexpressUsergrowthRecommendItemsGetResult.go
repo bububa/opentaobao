@@ -1,9 +1,9 @@
 package aeusergrowth
 
-// AliexpressUsergrowthRecommendItemsGetResult 结构体
-type AliexpressUsergrowthRecommendItemsGetResult struct {
+// AliexpressusergrowthrecommenditemsgetResult 结构体
+type AliexpressusergrowthrecommenditemsgetResult struct {
 	// Result itemList,The product are located at the top,maybe null when success = false
-	DataList []AliexpressUsergrowthRecommendItemsGetData `json:"data_list,omitempty" xml:"data_list>aliexpress_usergrowth_recommend_items_get_data,omitempty"`
+	DataList []AliexpressusergrowthrecommenditemsgetData `json:"data_list,omitempty" xml:"data_list>aliexpressusergrowthrecommenditemsget_data,omitempty"`
 	// other extend message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// Code is used to determine whether the result is correct

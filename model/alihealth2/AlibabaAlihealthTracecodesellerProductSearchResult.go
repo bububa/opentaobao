@@ -1,7 +1,7 @@
 package alihealth2
 
-// AlibabaAlihealthTracecodesellerProductSearchResult 结构体
-type AlibabaAlihealthTracecodesellerProductSearchResult struct {
+// AlibabaalihealthtracecodesellerproductsearchResult 结构体
+type AlibabaalihealthtracecodesellerproductsearchResult struct {
 	// 商品备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 商品名称

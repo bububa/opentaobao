@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaItemPublishMarketGetAPIRequest 获取商家可发布商品的市场信息 API请求
+// AlibabaitempublishmarketgetAPIRequest 获取商家可发布商品的市场信息 API请求
 // alibaba.item.publish.market.get
 //
 // 获取商家可发布商品的市场信息
-type AlibabaItemPublishMarketGetAPIRequest struct {
+type AlibabaitempublishmarketgetAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaItemPublishMarketGetRequest 初始化AlibabaItemPublishMarketGetAPIRequest对象
-func NewAlibabaItemPublishMarketGetRequest() *AlibabaItemPublishMarketGetAPIRequest {
-	return &AlibabaItemPublishMarketGetAPIRequest{
+// NewAlibabaitempublishmarketgetRequest 初始化AlibabaitempublishmarketgetAPIRequest对象
+func NewAlibabaitempublishmarketgetRequest() *AlibabaitempublishmarketgetAPIRequest {
+	return &AlibabaitempublishmarketgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaItemPublishMarketGetAPIRequest) GetApiMethodName() string {
+func (r AlibabaitempublishmarketgetAPIRequest) GetApiMethodName() string {
 	return "alibaba.item.publish.market.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaItemPublishMarketGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaitempublishmarketgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaItemPublishMarketGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabaitempublishmarketgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

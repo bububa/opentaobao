@@ -1,7 +1,7 @@
 package fundplatform
 
-// AlibabaFundplatformAccountChargeNotifyStruct 结构体
-type AlibabaFundplatformAccountChargeNotifyStruct struct {
+// AlibabafundplatformaccountchargenotifyStruct 结构体
+type AlibabafundplatformaccountchargenotifyStruct struct {
 	// 回传充值时传入的outBizId
 	OutBizId string `json:"out_biz_id,omitempty" xml:"out_biz_id,omitempty"`
 	// 环境变量值，该字段为枚举值：daily（日常），pre（预发），online（线上）

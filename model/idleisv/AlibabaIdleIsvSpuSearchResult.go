@@ -1,9 +1,9 @@
 package idleisv
 
-// AlibabaIdleIsvSpuSearchResult 结构体
-type AlibabaIdleIsvSpuSearchResult struct {
+// AlibabaidleisvspusearchResult 结构体
+type AlibabaidleisvspusearchResult struct {
 	// 候选的品牌型号列表
-	SpuList []SpuPVDo `json:"spu_list,omitempty" xml:"spu_list>spu_pv_do,omitempty"`
+	SpuList []SpuPvdo `json:"spu_list,omitempty" xml:"spu_list>spu_pvdo,omitempty"`
 	// 错误码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误信息

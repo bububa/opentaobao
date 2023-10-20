@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkOrderRefundListAPIRequest 五道口交易退款批量查询 API请求
+// AlibabawdkorderrefundlistAPIRequest 五道口交易退款批量查询 API请求
 // alibaba.wdk.order.refund.list
 //
 // 按照条件查询退款数据
-type AlibabaWdkOrderRefundListAPIRequest struct {
+type AlibabawdkorderrefundlistAPIRequest struct {
 	model.Params
 	// 查询条件
 	_batchQueryRefundRequest *BatchQueryRefundRequest
 }
 
-// NewAlibabaWdkOrderRefundListRequest 初始化AlibabaWdkOrderRefundListAPIRequest对象
-func NewAlibabaWdkOrderRefundListRequest() *AlibabaWdkOrderRefundListAPIRequest {
-	return &AlibabaWdkOrderRefundListAPIRequest{
+// NewAlibabawdkorderrefundlistRequest 初始化AlibabawdkorderrefundlistAPIRequest对象
+func NewAlibabawdkorderrefundlistRequest() *AlibabawdkorderrefundlistAPIRequest {
+	return &AlibabawdkorderrefundlistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkOrderRefundListAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkorderrefundlistAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.order.refund.list"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkOrderRefundListAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkorderrefundlistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkOrderRefundListAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkorderrefundlistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetBatchQueryRefundRequest is BatchQueryRefundRequest Setter
 // 查询条件
-func (r *AlibabaWdkOrderRefundListAPIRequest) SetBatchQueryRefundRequest(_batchQueryRefundRequest *BatchQueryRefundRequest) error {
+func (r *AlibabawdkorderrefundlistAPIRequest) SetBatchQueryRefundRequest(_batchQueryRefundRequest *BatchQueryRefundRequest) error {
 	r._batchQueryRefundRequest = _batchQueryRefundRequest
 	r.Set("batch_query_refund_request", _batchQueryRefundRequest)
 	return nil
 }
 
 // GetBatchQueryRefundRequest BatchQueryRefundRequest Getter
-func (r AlibabaWdkOrderRefundListAPIRequest) GetBatchQueryRefundRequest() *BatchQueryRefundRequest {
+func (r AlibabawdkorderrefundlistAPIRequest) GetBatchQueryRefundRequest() *BatchQueryRefundRequest {
 	return r._batchQueryRefundRequest
 }

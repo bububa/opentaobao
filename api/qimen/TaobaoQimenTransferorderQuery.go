@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/qimen"
 )
 
-// TaobaoQimenTransferorderQuery 调拨单查询
+// Taobaoqimentransferorderquery 调拨单查询
 // taobao.qimen.transferorder.query
 //
 // 调拨单查询
-func TaobaoQimenTransferorderQuery(clt *core.SDKClient, req *qimen.TaobaoQimenTransferorderQueryAPIRequest, session string) (*qimen.TaobaoQimenTransferorderQueryAPIResponse, error) {
-	var resp qimen.TaobaoQimenTransferorderQueryAPIResponse
+func Taobaoqimentransferorderquery(clt *core.SDKClient, req *qimen.TaobaoqimentransferorderqueryAPIRequest, session string) (*qimen.TaobaoqimentransferorderqueryAPIResponse, error) {
+	var resp qimen.TaobaoqimentransferorderqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

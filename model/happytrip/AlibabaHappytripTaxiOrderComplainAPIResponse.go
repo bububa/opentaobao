@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaHappytripTaxiOrderComplainAPIResponse 用户投诉 API返回值
+// AlibabahappytriptaxiordercomplainAPIResponse 用户投诉 API返回值
 // alibaba.happytrip.taxi.order.complain
 //
 // 一个订单只能投诉一次，不可重复投诉
@@ -26,13 +26,13 @@ import (
 // 11	骚扰乘客；
 // 12	危险驾驶；
 // 13	不是订单显示车辆或司机；
-type AlibabaHappytripTaxiOrderComplainAPIResponse struct {
+type AlibabahappytriptaxiordercomplainAPIResponse struct {
 	model.CommonResponse
-	AlibabaHappytripTaxiOrderComplainAPIResponseModel
+	AlibabahappytriptaxiordercomplainAPIResponseModel
 }
 
-// AlibabaHappytripTaxiOrderComplainAPIResponseModel is 用户投诉 成功返回结果
-type AlibabaHappytripTaxiOrderComplainAPIResponseModel struct {
+// AlibabahappytriptaxiordercomplainAPIResponseModel is 用户投诉 成功返回结果
+type AlibabahappytriptaxiordercomplainAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_happytrip_taxi_order_complain_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
@@ -41,5 +41,5 @@ type AlibabaHappytripTaxiOrderComplainAPIResponseModel struct {
 	// 错误码
 	Errno int64 `json:"errno,omitempty" xml:"errno,omitempty"`
 	// 投诉结果
-	Data *AlibabaHappytripTaxiOrderComplainStruct `json:"data,omitempty" xml:"data,omitempty"`
+	Data *AlibabahappytriptaxiordercomplainStruct `json:"data,omitempty" xml:"data,omitempty"`
 }

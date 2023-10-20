@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoLogisticsAppletPackageQueryAPIResponse 淘宝包裹查询 API返回值
+// TaobaologisticsappletpackagequeryAPIResponse 淘宝包裹查询 API返回值
 // taobao.logistics.applet.package.query
 //
 // 淘宝包裹查询
-type TaobaoLogisticsAppletPackageQueryAPIResponse struct {
+type TaobaologisticsappletpackagequeryAPIResponse struct {
 	model.CommonResponse
-	TaobaoLogisticsAppletPackageQueryAPIResponseModel
+	TaobaologisticsappletpackagequeryAPIResponseModel
 }
 
-// TaobaoLogisticsAppletPackageQueryAPIResponseModel is 淘宝包裹查询 成功返回结果
-type TaobaoLogisticsAppletPackageQueryAPIResponseModel struct {
+// TaobaologisticsappletpackagequeryAPIResponseModel is 淘宝包裹查询 成功返回结果
+type TaobaologisticsappletpackagequeryAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_applet_package_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

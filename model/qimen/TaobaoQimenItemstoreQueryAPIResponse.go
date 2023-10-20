@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenItemstoreQueryAPIResponse 商品关联门店查询接口 API返回值
+// TaobaoqimenitemstorequeryAPIResponse 商品关联门店查询接口 API返回值
 // taobao.qimen.itemstore.query
 //
 // 商家在ERP等系统中调用该接口，查询线上商品所关联的门店列表
-type TaobaoQimenItemstoreQueryAPIResponse struct {
+type TaobaoqimenitemstorequeryAPIResponse struct {
 	model.CommonResponse
-	TaobaoQimenItemstoreQueryAPIResponseModel
+	TaobaoqimenitemstorequeryAPIResponseModel
 }
 
-// TaobaoQimenItemstoreQueryAPIResponseModel is 商品关联门店查询接口 成功返回结果
-type TaobaoQimenItemstoreQueryAPIResponseModel struct {
+// TaobaoqimenitemstorequeryAPIResponseModel is 商品关联门店查询接口 成功返回结果
+type TaobaoqimenitemstorequeryAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_itemstore_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

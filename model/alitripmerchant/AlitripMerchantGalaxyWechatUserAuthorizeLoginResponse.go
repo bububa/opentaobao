@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripMerchantGalaxyWechatUserAuthorizeLoginResponse 结构体
-type AlitripMerchantGalaxyWechatUserAuthorizeLoginResponse struct {
+// AlitripmerchantgalaxywechatuserauthorizeloginResponse 结构体
+type AlitripmerchantgalaxywechatuserauthorizeloginResponse struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 具体错误信息

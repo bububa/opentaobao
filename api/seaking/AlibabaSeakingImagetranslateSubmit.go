@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/seaking"
 )
 
-// AlibabaSeakingImagetranslateSubmit 提交图片翻译任务
+// Alibabaseakingimagetranslatesubmit 提交图片翻译任务
 // alibaba.seaking.imagetranslate.submit
 //
 // 提交图片翻译任务
-func AlibabaSeakingImagetranslateSubmit(clt *core.SDKClient, req *seaking.AlibabaSeakingImagetranslateSubmitAPIRequest, session string) (*seaking.AlibabaSeakingImagetranslateSubmitAPIResponse, error) {
-	var resp seaking.AlibabaSeakingImagetranslateSubmitAPIResponse
+func Alibabaseakingimagetranslatesubmit(clt *core.SDKClient, req *seaking.AlibabaseakingimagetranslatesubmitAPIRequest, session string) (*seaking.AlibabaseakingimagetranslatesubmitAPIResponse, error) {
+	var resp seaking.AlibabaseakingimagetranslatesubmitAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

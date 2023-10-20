@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEleEnterpriseRestaurantGetAPIRequest 查询餐厅信息 API请求
+// AlibabaeleenterpriserestaurantgetAPIRequest 查询餐厅信息 API请求
 // alibaba.ele.enterprise.restaurant.get
 //
 // 查询餐厅信息
-type AlibabaEleEnterpriseRestaurantGetAPIRequest struct {
+type AlibabaeleenterpriserestaurantgetAPIRequest struct {
 	model.Params
 	// longitude和latitude用英文逗号分隔
 	_geo string
@@ -18,52 +18,52 @@ type AlibabaEleEnterpriseRestaurantGetAPIRequest struct {
 	_erestaurantId string
 }
 
-// NewAlibabaEleEnterpriseRestaurantGetRequest 初始化AlibabaEleEnterpriseRestaurantGetAPIRequest对象
-func NewAlibabaEleEnterpriseRestaurantGetRequest() *AlibabaEleEnterpriseRestaurantGetAPIRequest {
-	return &AlibabaEleEnterpriseRestaurantGetAPIRequest{
+// NewAlibabaeleenterpriserestaurantgetRequest 初始化AlibabaeleenterpriserestaurantgetAPIRequest对象
+func NewAlibabaeleenterpriserestaurantgetRequest() *AlibabaeleenterpriserestaurantgetAPIRequest {
+	return &AlibabaeleenterpriserestaurantgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaEleEnterpriseRestaurantGetAPIRequest) GetApiMethodName() string {
+func (r AlibabaeleenterpriserestaurantgetAPIRequest) GetApiMethodName() string {
 	return "alibaba.ele.enterprise.restaurant.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaEleEnterpriseRestaurantGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaeleenterpriserestaurantgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaEleEnterpriseRestaurantGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabaeleenterpriserestaurantgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetGeo is Geo Setter
 // longitude和latitude用英文逗号分隔
-func (r *AlibabaEleEnterpriseRestaurantGetAPIRequest) SetGeo(_geo string) error {
+func (r *AlibabaeleenterpriserestaurantgetAPIRequest) SetGeo(_geo string) error {
 	r._geo = _geo
 	r.Set("geo", _geo)
 	return nil
 }
 
 // GetGeo Geo Getter
-func (r AlibabaEleEnterpriseRestaurantGetAPIRequest) GetGeo() string {
+func (r AlibabaeleenterpriserestaurantgetAPIRequest) GetGeo() string {
 	return r._geo
 }
 
 // SetErestaurantId is ErestaurantId Setter
 // 餐厅ID
-func (r *AlibabaEleEnterpriseRestaurantGetAPIRequest) SetErestaurantId(_erestaurantId string) error {
+func (r *AlibabaeleenterpriserestaurantgetAPIRequest) SetErestaurantId(_erestaurantId string) error {
 	r._erestaurantId = _erestaurantId
 	r.Set("erestaurant_id", _erestaurantId)
 	return nil
 }
 
 // GetErestaurantId ErestaurantId Getter
-func (r AlibabaEleEnterpriseRestaurantGetAPIRequest) GetErestaurantId() string {
+func (r AlibabaeleenterpriserestaurantgetAPIRequest) GetErestaurantId() string {
 	return r._erestaurantId
 }

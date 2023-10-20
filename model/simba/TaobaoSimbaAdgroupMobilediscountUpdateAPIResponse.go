@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaAdgroupMobilediscountUpdateAPIResponse 对推广组进行单独移动溢价 API返回值
+// TaobaosimbaadgroupmobilediscountupdateAPIResponse 对推广组进行单独移动溢价 API返回值
 // taobao.simba.adgroup.mobilediscount.update
 //
 // 对推广组进行单独移动溢价
-type TaobaoSimbaAdgroupMobilediscountUpdateAPIResponse struct {
+type TaobaosimbaadgroupmobilediscountupdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoSimbaAdgroupMobilediscountUpdateAPIResponseModel
+	TaobaosimbaadgroupmobilediscountupdateAPIResponseModel
 }
 
-// TaobaoSimbaAdgroupMobilediscountUpdateAPIResponseModel is 对推广组进行单独移动溢价 成功返回结果
-type TaobaoSimbaAdgroupMobilediscountUpdateAPIResponseModel struct {
+// TaobaosimbaadgroupmobilediscountupdateAPIResponseModel is 对推广组进行单独移动溢价 成功返回结果
+type TaobaosimbaadgroupmobilediscountupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_adgroup_mobilediscount_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

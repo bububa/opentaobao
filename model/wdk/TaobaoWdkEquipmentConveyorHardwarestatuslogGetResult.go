@@ -1,7 +1,7 @@
 package wdk
 
-// TaobaoWdkEquipmentConveyorHardwarestatuslogGetResult 结构体
-type TaobaoWdkEquipmentConveyorHardwarestatuslogGetResult struct {
+// TaobaowdkequipmentconveyorhardwarestatusloggetResult 结构体
+type TaobaowdkequipmentconveyorhardwarestatusloggetResult struct {
 	// 返回的数据
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// 返回值与返回的信息

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosTvpubadminContentTopicQuerytopicAPIResponse 迎客松专题查询 API返回值
+// YunostvpubadmincontenttopicquerytopicAPIResponse 迎客松专题查询 API返回值
 // yunos.tvpubadmin.content.topic.querytopic
 //
 // 迎客松专题查询
-type YunosTvpubadminContentTopicQuerytopicAPIResponse struct {
+type YunostvpubadmincontenttopicquerytopicAPIResponse struct {
 	model.CommonResponse
-	YunosTvpubadminContentTopicQuerytopicAPIResponseModel
+	YunostvpubadmincontenttopicquerytopicAPIResponseModel
 }
 
-// YunosTvpubadminContentTopicQuerytopicAPIResponseModel is 迎客松专题查询 成功返回结果
-type YunosTvpubadminContentTopicQuerytopicAPIResponseModel struct {
+// YunostvpubadmincontenttopicquerytopicAPIResponseModel is 迎客松专题查询 成功返回结果
+type YunostvpubadmincontenttopicquerytopicAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvpubadmin_content_topic_querytopic_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

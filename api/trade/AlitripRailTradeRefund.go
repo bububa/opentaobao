@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/trade"
 )
 
-// AlitripRailTradeRefund 退票接口
+// Alitriprailtraderefund 退票接口
 // alitrip.rail.trade.refund
 //
 // 退票接口
-func AlitripRailTradeRefund(clt *core.SDKClient, req *trade.AlitripRailTradeRefundAPIRequest, session string) (*trade.AlitripRailTradeRefundAPIResponse, error) {
-	var resp trade.AlitripRailTradeRefundAPIResponse
+func Alitriprailtraderefund(clt *core.SDKClient, req *trade.AlitriprailtraderefundAPIRequest, session string) (*trade.AlitriprailtraderefundAPIResponse, error) {
+	var resp trade.AlitriprailtraderefundAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

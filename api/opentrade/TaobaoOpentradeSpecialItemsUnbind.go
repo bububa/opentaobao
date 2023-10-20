@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/opentrade"
 )
 
-// TaobaoOpentradeSpecialItemsUnbind 专属下单场景商品解绑
+// Taobaoopentradespecialitemsunbind 专属下单场景商品解绑
 // taobao.opentrade.special.items.unbind
 //
 // 专属下单场景商品解绑
-func TaobaoOpentradeSpecialItemsUnbind(clt *core.SDKClient, req *opentrade.TaobaoOpentradeSpecialItemsUnbindAPIRequest, session string) (*opentrade.TaobaoOpentradeSpecialItemsUnbindAPIResponse, error) {
-	var resp opentrade.TaobaoOpentradeSpecialItemsUnbindAPIResponse
+func Taobaoopentradespecialitemsunbind(clt *core.SDKClient, req *opentrade.TaobaoopentradespecialitemsunbindAPIRequest, session string) (*opentrade.TaobaoopentradespecialitemsunbindAPIResponse, error) {
+	var resp opentrade.TaobaoopentradespecialitemsunbindAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// AlitripBtripHotelOrderSearch 搜索酒店订单列表
+// Alitripbtriphotelordersearch 搜索酒店订单列表
 // alitrip.btrip.hotel.order.search
 //
 // 企业获取商旅酒店订单数据
-func AlitripBtripHotelOrderSearch(clt *core.SDKClient, req *btrip.AlitripBtripHotelOrderSearchAPIRequest, session string) (*btrip.AlitripBtripHotelOrderSearchAPIResponse, error) {
-	var resp btrip.AlitripBtripHotelOrderSearchAPIResponse
+func Alitripbtriphotelordersearch(clt *core.SDKClient, req *btrip.AlitripbtriphotelordersearchAPIRequest, session string) (*btrip.AlitripbtriphotelordersearchAPIResponse, error) {
+	var resp btrip.AlitripbtriphotelordersearchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

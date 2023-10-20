@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaAlihealthDrugKytQueryactivetimeResult 结构体
-type AlibabaAlihealthDrugKytQueryactivetimeResult struct {
+// AlibabaalihealthdrugkytqueryactivetimeResult 结构体
+type AlibabaalihealthdrugkytqueryactivetimeResult struct {
 	// 码激活状态DTO
 	Models []CodeActiveStatusDto `json:"models,omitempty" xml:"models>code_active_status_dto,omitempty"`
 	// msgInfo

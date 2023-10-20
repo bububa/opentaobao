@@ -1,7 +1,7 @@
 package xhotelitem
 
-// TaobaoXhotelItemSelectionSellerStatExposureModule 结构体
-type TaobaoXhotelItemSelectionSellerStatExposureModule struct {
+// TaobaoxhotelitemselectionsellerstatexposureModule 结构体
+type TaobaoxhotelitemselectionsellerstatexposureModule struct {
 	// 返回结果
 	SellerStatExposureElementList []SellerStatExposureElementList `json:"seller_stat_exposure_element_list,omitempty" xml:"seller_stat_exposure_element_list>seller_stat_exposure_element_list,omitempty"`
 }

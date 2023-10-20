@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealth"
 )
 
-// AlibabaAlihealthPrescriptionAuthGet 阿里健康处方平台获取授权码
+// Alibabaalihealthprescriptionauthget 阿里健康处方平台获取授权码
 // alibaba.alihealth.prescription.auth.get
 //
 // 获取处方用户授权
-func AlibabaAlihealthPrescriptionAuthGet(clt *core.SDKClient, req *alihealth.AlibabaAlihealthPrescriptionAuthGetAPIRequest, session string) (*alihealth.AlibabaAlihealthPrescriptionAuthGetAPIResponse, error) {
-	var resp alihealth.AlibabaAlihealthPrescriptionAuthGetAPIResponse
+func Alibabaalihealthprescriptionauthget(clt *core.SDKClient, req *alihealth.AlibabaalihealthprescriptionauthgetAPIRequest, session string) (*alihealth.AlibabaalihealthprescriptionauthgetAPIResponse, error) {
+	var resp alihealth.AlibabaalihealthprescriptionauthgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

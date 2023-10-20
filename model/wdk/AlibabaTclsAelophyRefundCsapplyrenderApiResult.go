@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaTclsAelophyRefundCsapplyrenderApiResult 结构体
-type AlibabaTclsAelophyRefundCsapplyrenderApiResult struct {
+// AlibabatclsaelophyrefundcsapplyrenderApiResult 结构体
+type AlibabatclsaelophyrefundcsapplyrenderApiResult struct {
 	// 回调返回编码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 回调错误信息

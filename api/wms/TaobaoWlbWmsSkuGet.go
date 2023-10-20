@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wms"
 )
 
-// TaobaoWlbWmsSkuGet 商品信息查询
+// Taobaowlbwmsskuget 商品信息查询
 // taobao.wlb.wms.sku.get
 //
 // 商品信息查询
-func TaobaoWlbWmsSkuGet(clt *core.SDKClient, req *wms.TaobaoWlbWmsSkuGetAPIRequest, session string) (*wms.TaobaoWlbWmsSkuGetAPIResponse, error) {
-	var resp wms.TaobaoWlbWmsSkuGetAPIResponse
+func Taobaowlbwmsskuget(clt *core.SDKClient, req *wms.TaobaowlbwmsskugetAPIRequest, session string) (*wms.TaobaowlbwmsskugetAPIResponse, error) {
+	var resp wms.TaobaowlbwmsskugetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

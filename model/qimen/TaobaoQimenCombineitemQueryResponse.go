@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoQimenCombineitemQueryResponse 结构体
-type TaobaoQimenCombineitemQueryResponse struct {
+// TaobaoqimencombineitemqueryResponse 结构体
+type TaobaoqimencombineitemqueryResponse struct {
 	// 奇门仓储字段
 	CombItems []CombItem `json:"combItems,omitempty" xml:"combItems>comb_item,omitempty"`
 	// 响应结果:success|failure

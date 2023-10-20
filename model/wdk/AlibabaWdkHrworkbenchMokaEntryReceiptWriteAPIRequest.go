@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest 摩卡确认入职后往入职单据表写数据接口 API请求
+// AlibabawdkhrworkbenchmokaentryreceiptwriteAPIRequest 摩卡确认入职后往入职单据表写数据接口 API请求
 // alibaba.wdk.hrworkbench.moka.entry.receipt.write
 //
 // 摩卡确认入职后往入职单据表写数据接口
-type AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest struct {
+type AlibabawdkhrworkbenchmokaentryreceiptwriteAPIRequest struct {
 	model.Params
 	// 确认入职后入职单据请求
 	_paramSyncEntryReceiptRequest *SyncEntryReceiptRequest
 }
 
-// NewAlibabaWdkHrworkbenchMokaEntryReceiptWriteRequest 初始化AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest对象
-func NewAlibabaWdkHrworkbenchMokaEntryReceiptWriteRequest() *AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest {
-	return &AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest{
+// NewAlibabawdkhrworkbenchmokaentryreceiptwriteRequest 初始化AlibabawdkhrworkbenchmokaentryreceiptwriteAPIRequest对象
+func NewAlibabawdkhrworkbenchmokaentryreceiptwriteRequest() *AlibabawdkhrworkbenchmokaentryreceiptwriteAPIRequest {
+	return &AlibabawdkhrworkbenchmokaentryreceiptwriteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkhrworkbenchmokaentryreceiptwriteAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.hrworkbench.moka.entry.receipt.write"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkhrworkbenchmokaentryreceiptwriteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkhrworkbenchmokaentryreceiptwriteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamSyncEntryReceiptRequest is ParamSyncEntryReceiptRequest Setter
 // 确认入职后入职单据请求
-func (r *AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest) SetParamSyncEntryReceiptRequest(_paramSyncEntryReceiptRequest *SyncEntryReceiptRequest) error {
+func (r *AlibabawdkhrworkbenchmokaentryreceiptwriteAPIRequest) SetParamSyncEntryReceiptRequest(_paramSyncEntryReceiptRequest *SyncEntryReceiptRequest) error {
 	r._paramSyncEntryReceiptRequest = _paramSyncEntryReceiptRequest
 	r.Set("param_sync_entry_receipt_request", _paramSyncEntryReceiptRequest)
 	return nil
 }
 
 // GetParamSyncEntryReceiptRequest ParamSyncEntryReceiptRequest Getter
-func (r AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest) GetParamSyncEntryReceiptRequest() *SyncEntryReceiptRequest {
+func (r AlibabawdkhrworkbenchmokaentryreceiptwriteAPIRequest) GetParamSyncEntryReceiptRequest() *SyncEntryReceiptRequest {
 	return r._paramSyncEntryReceiptRequest
 }

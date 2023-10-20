@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// TaobaoWdkIotDeviceadminMqttDeviceGetwithtoken 获取mqtt设备信息
+// Taobaowdkiotdeviceadminmqttdevicegetwithtoken 获取mqtt设备信息
 // taobao.wdk.iot.deviceadmin.mqtt.device.getwithtoken
 //
 // 智能硬件设备动态注册和获取mqtt设备信息
-func TaobaoWdkIotDeviceadminMqttDeviceGetwithtoken(clt *core.SDKClient, req *wdk.TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest, session string) (*wdk.TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIResponse, error) {
-	var resp wdk.TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIResponse
+func Taobaowdkiotdeviceadminmqttdevicegetwithtoken(clt *core.SDKClient, req *wdk.TaobaowdkiotdeviceadminmqttdevicegetwithtokenAPIRequest, session string) (*wdk.TaobaowdkiotdeviceadminmqttdevicegetwithtokenAPIResponse, error) {
+	var resp wdk.TaobaowdkiotdeviceadminmqttdevicegetwithtokenAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

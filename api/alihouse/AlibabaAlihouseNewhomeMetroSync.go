@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseNewhomeMetroSync 地铁数据同步
+// Alibabaalihousenewhomemetrosync 地铁数据同步
 // alibaba.alihouse.newhome.metro.sync
 //
 // 地铁数据同步
-func AlibabaAlihouseNewhomeMetroSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeMetroSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeMetroSyncAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeMetroSyncAPIResponse
+func Alibabaalihousenewhomemetrosync(clt *core.SDKClient, req *alihouse.AlibabaalihousenewhomemetrosyncAPIRequest, session string) (*alihouse.AlibabaalihousenewhomemetrosyncAPIResponse, error) {
+	var resp alihouse.AlibabaalihousenewhomemetrosyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

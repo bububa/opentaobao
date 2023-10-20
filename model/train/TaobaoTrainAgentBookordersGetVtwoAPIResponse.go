@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTrainAgentBookordersGetVtwoAPIResponse 代理商获取待出票订单列表v2--增加鉴权校验 API返回值
+// TaobaotrainagentbookordersgetvtwoAPIResponse 代理商获取待出票订单列表v2--增加鉴权校验 API返回值
 // taobao.train.agent.bookorders.get.vtwo
 //
 // 代理商获取待出票订单列表，只返回订单号
-type TaobaoTrainAgentBookordersGetVtwoAPIResponse struct {
+type TaobaotrainagentbookordersgetvtwoAPIResponse struct {
 	model.CommonResponse
-	TaobaoTrainAgentBookordersGetVtwoAPIResponseModel
+	TaobaotrainagentbookordersgetvtwoAPIResponseModel
 }
 
-// TaobaoTrainAgentBookordersGetVtwoAPIResponseModel is 代理商获取待出票订单列表v2--增加鉴权校验 成功返回结果
-type TaobaoTrainAgentBookordersGetVtwoAPIResponseModel struct {
+// TaobaotrainagentbookordersgetvtwoAPIResponseModel is 代理商获取待出票订单列表v2--增加鉴权校验 成功返回结果
+type TaobaotrainagentbookordersgetvtwoAPIResponseModel struct {
 	XMLName xml.Name `xml:"train_agent_bookorders_get_vtwo_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

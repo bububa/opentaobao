@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoUopTobOrderCreateAPIResponse ToB仓储发货 API返回值
+// TaobaouoptobordercreateAPIResponse ToB仓储发货 API返回值
 // taobao.uop.tob.order.create
 //
 // ToB仓储发货
-type TaobaoUopTobOrderCreateAPIResponse struct {
+type TaobaouoptobordercreateAPIResponse struct {
 	model.CommonResponse
-	TaobaoUopTobOrderCreateAPIResponseModel
+	TaobaouoptobordercreateAPIResponseModel
 }
 
-// TaobaoUopTobOrderCreateAPIResponseModel is ToB仓储发货 成功返回结果
-type TaobaoUopTobOrderCreateAPIResponseModel struct {
+// TaobaouoptobordercreateAPIResponseModel is ToB仓储发货 成功返回结果
+type TaobaouoptobordercreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"uop_tob_order_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

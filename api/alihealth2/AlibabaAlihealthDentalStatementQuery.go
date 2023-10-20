@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealth2"
 )
 
-// AlibabaAlihealthDentalStatementQuery ISV查询对账单
+// Alibabaalihealthdentalstatementquery ISV查询对账单
 // alibaba.alihealth.dental.statement.query
 //
 // ISV查询对账单
-func AlibabaAlihealthDentalStatementQuery(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDentalStatementQueryAPIRequest, session string) (*alihealth2.AlibabaAlihealthDentalStatementQueryAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthDentalStatementQueryAPIResponse
+func Alibabaalihealthdentalstatementquery(clt *core.SDKClient, req *alihealth2.AlibabaalihealthdentalstatementqueryAPIRequest, session string) (*alihealth2.AlibabaalihealthdentalstatementqueryAPIResponse, error) {
+	var resp alihealth2.AlibabaalihealthdentalstatementqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package miniappopen
 
-// TaobaoMiniappTemplateUpdateResult 结构体
-type TaobaoMiniappTemplateUpdateResult struct {
+// TaobaominiapptemplateupdateResult 结构体
+type TaobaominiapptemplateupdateResult struct {
 	// 错误码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误信息

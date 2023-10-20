@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
 
-// AlibabaServicecenterWorkcardRelatedskuQuery 查询工单关联的服务项
+// Alibabaservicecenterworkcardrelatedskuquery 查询工单关联的服务项
 // alibaba.servicecenter.workcard.relatedsku.query
 //
 // 查询工单关联的服务项
-func AlibabaServicecenterWorkcardRelatedskuQuery(clt *core.SDKClient, req *tmallsc.AlibabaServicecenterWorkcardRelatedskuQueryAPIRequest, session string) (*tmallsc.AlibabaServicecenterWorkcardRelatedskuQueryAPIResponse, error) {
-	var resp tmallsc.AlibabaServicecenterWorkcardRelatedskuQueryAPIResponse
+func Alibabaservicecenterworkcardrelatedskuquery(clt *core.SDKClient, req *tmallsc.AlibabaservicecenterworkcardrelatedskuqueryAPIRequest, session string) (*tmallsc.AlibabaservicecenterworkcardrelatedskuqueryAPIResponse, error) {
+	var resp tmallsc.AlibabaservicecenterworkcardrelatedskuqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

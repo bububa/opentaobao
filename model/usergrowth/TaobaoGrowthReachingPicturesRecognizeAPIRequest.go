@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoGrowthReachingPicturesRecognizeAPIRequest 图片识别 API请求
+// TaobaogrowthreachingpicturesrecognizeAPIRequest 图片识别 API请求
 // taobao.growth.reaching.pictures.recognize
 //
 // 图片识别
-type TaobaoGrowthReachingPicturesRecognizeAPIRequest struct {
+type TaobaogrowthreachingpicturesrecognizeAPIRequest struct {
 	model.Params
 	// 识别参数对象
 	_recognitionParam *RecognitionParam
 }
 
-// NewTaobaoGrowthReachingPicturesRecognizeRequest 初始化TaobaoGrowthReachingPicturesRecognizeAPIRequest对象
-func NewTaobaoGrowthReachingPicturesRecognizeRequest() *TaobaoGrowthReachingPicturesRecognizeAPIRequest {
-	return &TaobaoGrowthReachingPicturesRecognizeAPIRequest{
+// NewTaobaogrowthreachingpicturesrecognizeRequest 初始化TaobaogrowthreachingpicturesrecognizeAPIRequest对象
+func NewTaobaogrowthreachingpicturesrecognizeRequest() *TaobaogrowthreachingpicturesrecognizeAPIRequest {
+	return &TaobaogrowthreachingpicturesrecognizeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoGrowthReachingPicturesRecognizeAPIRequest) GetApiMethodName() string {
+func (r TaobaogrowthreachingpicturesrecognizeAPIRequest) GetApiMethodName() string {
 	return "taobao.growth.reaching.pictures.recognize"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoGrowthReachingPicturesRecognizeAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaogrowthreachingpicturesrecognizeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoGrowthReachingPicturesRecognizeAPIRequest) GetRawParams() model.Params {
+func (r TaobaogrowthreachingpicturesrecognizeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRecognitionParam is RecognitionParam Setter
 // 识别参数对象
-func (r *TaobaoGrowthReachingPicturesRecognizeAPIRequest) SetRecognitionParam(_recognitionParam *RecognitionParam) error {
+func (r *TaobaogrowthreachingpicturesrecognizeAPIRequest) SetRecognitionParam(_recognitionParam *RecognitionParam) error {
 	r._recognitionParam = _recognitionParam
 	r.Set("recognition_param", _recognitionParam)
 	return nil
 }
 
 // GetRecognitionParam RecognitionParam Getter
-func (r TaobaoGrowthReachingPicturesRecognizeAPIRequest) GetRecognitionParam() *RecognitionParam {
+func (r TaobaogrowthreachingpicturesrecognizeAPIRequest) GetRecognitionParam() *RecognitionParam {
 	return r._recognitionParam
 }

@@ -13,15 +13,15 @@ import (
 type TaobaotbkscoptimuspromotionAPIRequest struct {
 	model.Params
 	// 页大小，每次请求限制10以内
-	_pagesize int64
+	_pageSize int64
 	// 第几页，默认：1
-	_pagenum int64
+	_pageNum int64
 	// mm_xxx_xxx_xxx的第3段数字
-	_adzoneid int64
+	_adzoneId int64
 	// 官方提供的权益物料Id。有价券-37104、大额店铺券-37116、天猫店铺券-62191、券券补-61809 更多权益物料id敬请期待！
-	_promotionid int64
+	_promotionId int64
 	// mm_xxx_xxx_xxx的第2段数字
-	_siteid int64
+	_siteId int64
 }
 
 // NewTaobaotbkscoptimuspromotionRequest 初始化TaobaotbkscoptimuspromotionAPIRequest对象
@@ -48,67 +48,67 @@ func (r TaobaotbkscoptimuspromotionAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetPagesize is Pagesize Setter
+// SetPageSize is PageSize Setter
 // 页大小，每次请求限制10以内
-func (r *TaobaotbkscoptimuspromotionAPIRequest) SetPagesize(_pagesize int64) error {
-	r._pagesize = _pagesize
-	r.Set("page_size", _pagesize)
+func (r *TaobaotbkscoptimuspromotionAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
 	return nil
 }
 
-// GetPagesize Pagesize Getter
-func (r TaobaotbkscoptimuspromotionAPIRequest) GetPagesize() int64 {
-	return r._pagesize
+// GetPageSize PageSize Getter
+func (r TaobaotbkscoptimuspromotionAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }
 
-// SetPagenum is Pagenum Setter
+// SetPageNum is PageNum Setter
 // 第几页，默认：1
-func (r *TaobaotbkscoptimuspromotionAPIRequest) SetPagenum(_pagenum int64) error {
-	r._pagenum = _pagenum
-	r.Set("page_num", _pagenum)
+func (r *TaobaotbkscoptimuspromotionAPIRequest) SetPageNum(_pageNum int64) error {
+	r._pageNum = _pageNum
+	r.Set("page_num", _pageNum)
 	return nil
 }
 
-// GetPagenum Pagenum Getter
-func (r TaobaotbkscoptimuspromotionAPIRequest) GetPagenum() int64 {
-	return r._pagenum
+// GetPageNum PageNum Getter
+func (r TaobaotbkscoptimuspromotionAPIRequest) GetPageNum() int64 {
+	return r._pageNum
 }
 
-// SetAdzoneid is Adzoneid Setter
+// SetAdzoneId is AdzoneId Setter
 // mm_xxx_xxx_xxx的第3段数字
-func (r *TaobaotbkscoptimuspromotionAPIRequest) SetAdzoneid(_adzoneid int64) error {
-	r._adzoneid = _adzoneid
-	r.Set("adzone_id", _adzoneid)
+func (r *TaobaotbkscoptimuspromotionAPIRequest) SetAdzoneId(_adzoneId int64) error {
+	r._adzoneId = _adzoneId
+	r.Set("adzone_id", _adzoneId)
 	return nil
 }
 
-// GetAdzoneid Adzoneid Getter
-func (r TaobaotbkscoptimuspromotionAPIRequest) GetAdzoneid() int64 {
-	return r._adzoneid
+// GetAdzoneId AdzoneId Getter
+func (r TaobaotbkscoptimuspromotionAPIRequest) GetAdzoneId() int64 {
+	return r._adzoneId
 }
 
-// SetPromotionid is Promotionid Setter
+// SetPromotionId is PromotionId Setter
 // 官方提供的权益物料Id。有价券-37104、大额店铺券-37116、天猫店铺券-62191、券券补-61809 更多权益物料id敬请期待！
-func (r *TaobaotbkscoptimuspromotionAPIRequest) SetPromotionid(_promotionid int64) error {
-	r._promotionid = _promotionid
-	r.Set("promotion_id", _promotionid)
+func (r *TaobaotbkscoptimuspromotionAPIRequest) SetPromotionId(_promotionId int64) error {
+	r._promotionId = _promotionId
+	r.Set("promotion_id", _promotionId)
 	return nil
 }
 
-// GetPromotionid Promotionid Getter
-func (r TaobaotbkscoptimuspromotionAPIRequest) GetPromotionid() int64 {
-	return r._promotionid
+// GetPromotionId PromotionId Getter
+func (r TaobaotbkscoptimuspromotionAPIRequest) GetPromotionId() int64 {
+	return r._promotionId
 }
 
-// SetSiteid is Siteid Setter
+// SetSiteId is SiteId Setter
 // mm_xxx_xxx_xxx的第2段数字
-func (r *TaobaotbkscoptimuspromotionAPIRequest) SetSiteid(_siteid int64) error {
-	r._siteid = _siteid
-	r.Set("site_id", _siteid)
+func (r *TaobaotbkscoptimuspromotionAPIRequest) SetSiteId(_siteId int64) error {
+	r._siteId = _siteId
+	r.Set("site_id", _siteId)
 	return nil
 }
 
-// GetSiteid Siteid Getter
-func (r TaobaotbkscoptimuspromotionAPIRequest) GetSiteid() int64 {
-	return r._siteid
+// GetSiteId SiteId Getter
+func (r TaobaotbkscoptimuspromotionAPIRequest) GetSiteId() int64 {
+	return r._siteId
 }

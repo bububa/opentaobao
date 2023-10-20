@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthMdeerScienceSynVideoAPIRequest 视频同步【保存/更新】 API请求
+// AlibabaalihealthmdeersciencesynVideoAPIRequest 视频同步【保存/更新】 API请求
 // alibaba.alihealth.mdeer.science.synVideo
 //
 // 视频同步【保存/更新】
-type AlibabaAlihealthMdeerScienceSynVideoAPIRequest struct {
+type AlibabaalihealthmdeersciencesynVideoAPIRequest struct {
 	model.Params
 	// 视频信息实体
 	_synVideoInfo *SynVideoInfo
 }
 
-// NewAlibabaAlihealthMdeerScienceSynVideoRequest 初始化AlibabaAlihealthMdeerScienceSynVideoAPIRequest对象
-func NewAlibabaAlihealthMdeerScienceSynVideoRequest() *AlibabaAlihealthMdeerScienceSynVideoAPIRequest {
-	return &AlibabaAlihealthMdeerScienceSynVideoAPIRequest{
+// NewAlibabaalihealthmdeersciencesynVideoRequest 初始化AlibabaalihealthmdeersciencesynVideoAPIRequest对象
+func NewAlibabaalihealthmdeersciencesynVideoRequest() *AlibabaalihealthmdeersciencesynVideoAPIRequest {
+	return &AlibabaalihealthmdeersciencesynVideoAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthMdeerScienceSynVideoAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthmdeersciencesynVideoAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.mdeer.science.synVideo"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMdeerScienceSynVideoAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthmdeersciencesynVideoAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthMdeerScienceSynVideoAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthmdeersciencesynVideoAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSynVideoInfo is SynVideoInfo Setter
 // 视频信息实体
-func (r *AlibabaAlihealthMdeerScienceSynVideoAPIRequest) SetSynVideoInfo(_synVideoInfo *SynVideoInfo) error {
+func (r *AlibabaalihealthmdeersciencesynVideoAPIRequest) SetSynVideoInfo(_synVideoInfo *SynVideoInfo) error {
 	r._synVideoInfo = _synVideoInfo
 	r.Set("syn_video_info", _synVideoInfo)
 	return nil
 }
 
 // GetSynVideoInfo SynVideoInfo Getter
-func (r AlibabaAlihealthMdeerScienceSynVideoAPIRequest) GetSynVideoInfo() *SynVideoInfo {
+func (r AlibabaalihealthmdeersciencesynVideoAPIRequest) GetSynVideoInfo() *SynVideoInfo {
 	return r._synVideoInfo
 }

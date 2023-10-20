@@ -1,7 +1,7 @@
 package kclub
 
-// AlibabaKclubKcQueryknowledgeResult 结构体
-type AlibabaKclubKcQueryknowledgeResult struct {
+// AlibabakclubkcqueryknowledgeResult 结构体
+type AlibabakclubkcqueryknowledgeResult struct {
 	// 错误信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 错误编码

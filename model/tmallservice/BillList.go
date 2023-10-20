@@ -29,13 +29,13 @@ type BillList struct {
 	// 工单ID
 	WorkcardId int64 `json:"workcard_id,omitempty" xml:"workcard_id,omitempty"`
 	// 总退款金额
-	SumRefundAmount *BigDecimal `json:"sum_refund_amount,omitempty" xml:"sum_refund_amount,omitempty"`
+	SumRefundAmount float64 `json:"sum_refund_amount,omitempty" xml:"sum_refund_amount,omitempty"`
 	// 总增加费用金额
-	SumAddAmount *BigDecimal `json:"sum_add_amount,omitempty" xml:"sum_add_amount,omitempty"`
+	SumAddAmount float64 `json:"sum_add_amount,omitempty" xml:"sum_add_amount,omitempty"`
 	// 提现金额
-	PayAmount *BigDecimal `json:"pay_amount,omitempty" xml:"pay_amount,omitempty"`
+	PayAmount float64 `json:"pay_amount,omitempty" xml:"pay_amount,omitempty"`
 	// 分成金额
-	FcAmount *BigDecimal `json:"fc_amount,omitempty" xml:"fc_amount,omitempty"`
+	FcAmount float64 `json:"fc_amount,omitempty" xml:"fc_amount,omitempty"`
 	// 总服务费用金额
-	SumServiceAmount *BigDecimal `json:"sum_service_amount,omitempty" xml:"sum_service_amount,omitempty"`
+	SumServiceAmount float64 `json:"sum_service_amount,omitempty" xml:"sum_service_amount,omitempty"`
 }

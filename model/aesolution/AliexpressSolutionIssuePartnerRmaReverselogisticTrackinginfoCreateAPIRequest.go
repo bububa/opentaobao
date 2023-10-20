@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create API请求
+// AliexpresssolutionissuepartnerrmareverselogistictrackinginfocreateAPIRequest aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create API请求
 // aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create
 //
 // Receives information about reverse logistics tracking info
-type AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest struct {
+type AliexpresssolutionissuepartnerrmareverselogistictrackinginfocreateAPIRequest struct {
 	model.Params
 	// Logistic's order creation request
 	_logisticsOrderCreationRequest *LogisticOrderCreationForRmaRequest
 }
 
-// NewAliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest 初始化AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest对象
-func NewAliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest() *AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest {
-	return &AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest{
+// NewAliexpresssolutionissuepartnerrmareverselogistictrackinginfocreateRequest 初始化AliexpresssolutionissuepartnerrmareverselogistictrackinginfocreateAPIRequest对象
+func NewAliexpresssolutionissuepartnerrmareverselogistictrackinginfocreateRequest() *AliexpresssolutionissuepartnerrmareverselogistictrackinginfocreateAPIRequest {
+	return &AliexpresssolutionissuepartnerrmareverselogistictrackinginfocreateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest) GetApiMethodName() string {
+func (r AliexpresssolutionissuepartnerrmareverselogistictrackinginfocreateAPIRequest) GetApiMethodName() string {
 	return "aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest) GetApiParams(params url.Values) {
+func (r AliexpresssolutionissuepartnerrmareverselogistictrackinginfocreateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest) GetRawParams() model.Params {
+func (r AliexpresssolutionissuepartnerrmareverselogistictrackinginfocreateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetLogisticsOrderCreationRequest is LogisticsOrderCreationRequest Setter
 // Logistic&#39;s order creation request
-func (r *AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest) SetLogisticsOrderCreationRequest(_logisticsOrderCreationRequest *LogisticOrderCreationForRmaRequest) error {
+func (r *AliexpresssolutionissuepartnerrmareverselogistictrackinginfocreateAPIRequest) SetLogisticsOrderCreationRequest(_logisticsOrderCreationRequest *LogisticOrderCreationForRmaRequest) error {
 	r._logisticsOrderCreationRequest = _logisticsOrderCreationRequest
 	r.Set("logistics_order_creation_request", _logisticsOrderCreationRequest)
 	return nil
 }
 
 // GetLogisticsOrderCreationRequest LogisticsOrderCreationRequest Getter
-func (r AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest) GetLogisticsOrderCreationRequest() *LogisticOrderCreationForRmaRequest {
+func (r AliexpresssolutionissuepartnerrmareverselogistictrackinginfocreateAPIRequest) GetLogisticsOrderCreationRequest() *LogisticOrderCreationForRmaRequest {
 	return r._logisticsOrderCreationRequest
 }

@@ -1,7 +1,7 @@
 package alihouse
 
-// UpdateECodeBuildingDto 结构体
-type UpdateECodeBuildingDto struct {
+// UpdateEcodeBuildingDto 结构体
+type UpdateEcodeBuildingDto struct {
 	// 外部私域楼盘ID
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 外部货-楼栋id（外部唯一识别码）

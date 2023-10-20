@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIcbuProductSchemaUpdateAPIResponse （新）商品发布增量更新接口 API返回值
+// AlibabaicbuproductschemaupdateAPIResponse （新）商品发布增量更新接口 API返回值
 // alibaba.icbu.product.schema.update
 //
 // 商品更新接口，方式为增量更新，只更新传入的字段
-type AlibabaIcbuProductSchemaUpdateAPIResponse struct {
+type AlibabaicbuproductschemaupdateAPIResponse struct {
 	model.CommonResponse
-	AlibabaIcbuProductSchemaUpdateAPIResponseModel
+	AlibabaicbuproductschemaupdateAPIResponseModel
 }
 
-// AlibabaIcbuProductSchemaUpdateAPIResponseModel is （新）商品发布增量更新接口 成功返回结果
-type AlibabaIcbuProductSchemaUpdateAPIResponseModel struct {
+// AlibabaicbuproductschemaupdateAPIResponseModel is （新）商品发布增量更新接口 成功返回结果
+type AlibabaicbuproductschemaupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_icbu_product_schema_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

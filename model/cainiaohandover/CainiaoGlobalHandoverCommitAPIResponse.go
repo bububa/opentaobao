@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoGlobalHandoverCommitAPIResponse 提交发布交接单 API返回值
+// CainiaoglobalhandovercommitAPIResponse 提交发布交接单 API返回值
 // cainiao.global.handover.commit
 //
 // 提供给ISV通过该接口提交发布交接单
-type CainiaoGlobalHandoverCommitAPIResponse struct {
+type CainiaoglobalhandovercommitAPIResponse struct {
 	model.CommonResponse
-	CainiaoGlobalHandoverCommitAPIResponseModel
+	CainiaoglobalhandovercommitAPIResponseModel
 }
 
-// CainiaoGlobalHandoverCommitAPIResponseModel is 提交发布交接单 成功返回结果
-type CainiaoGlobalHandoverCommitAPIResponseModel struct {
+// CainiaoglobalhandovercommitAPIResponseModel is 提交发布交接单 成功返回结果
+type CainiaoglobalhandovercommitAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_global_handover_commit_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

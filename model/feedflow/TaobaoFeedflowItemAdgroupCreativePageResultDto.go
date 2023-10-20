@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaoFeedflowItemAdgroupCreativePageResultDto 结构体
-type TaobaoFeedflowItemAdgroupCreativePageResultDto struct {
+// TaobaofeedflowitemadgroupcreativepageResultDto 结构体
+type TaobaofeedflowitemadgroupcreativepageResultDto struct {
 	// 绑定创意的列表
 	CreativeBindList []CreativeBindDto `json:"creative_bind_list,omitempty" xml:"creative_bind_list>creative_bind_dto,omitempty"`
 	// 消息

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaItemPublishSubmitAPIResponse 商品发布 API返回值
+// AlibabaitempublishsubmitAPIResponse 商品发布 API返回值
 // alibaba.item.publish.submit
 //
 // 新商品发布，提交商品发布信息
-type AlibabaItemPublishSubmitAPIResponse struct {
+type AlibabaitempublishsubmitAPIResponse struct {
 	model.CommonResponse
-	AlibabaItemPublishSubmitAPIResponseModel
+	AlibabaitempublishsubmitAPIResponseModel
 }
 
-// AlibabaItemPublishSubmitAPIResponseModel is 商品发布 成功返回结果
-type AlibabaItemPublishSubmitAPIResponseModel struct {
+// AlibabaitempublishsubmitAPIResponseModel is 商品发布 成功返回结果
+type AlibabaitempublishsubmitAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_item_publish_submit_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscCrmRechargeChargeprecheckGetAPIRequest 储值账户充值前校验 API请求
+// AlibabaalsccrmrechargechargeprecheckgetAPIRequest 储值账户充值前校验 API请求
 // alibaba.alsc.crm.recharge.chargeprecheck.get
 //
 // 储值账户充值前校验接口
-type AlibabaAlscCrmRechargeChargeprecheckGetAPIRequest struct {
+type AlibabaalsccrmrechargechargeprecheckgetAPIRequest struct {
 	model.Params
 	// 入参
 	_paramChargePreCheckOpenReq *ChargePreCheckOpenReq
 }
 
-// NewAlibabaAlscCrmRechargeChargeprecheckGetRequest 初始化AlibabaAlscCrmRechargeChargeprecheckGetAPIRequest对象
-func NewAlibabaAlscCrmRechargeChargeprecheckGetRequest() *AlibabaAlscCrmRechargeChargeprecheckGetAPIRequest {
-	return &AlibabaAlscCrmRechargeChargeprecheckGetAPIRequest{
+// NewAlibabaalsccrmrechargechargeprecheckgetRequest 初始化AlibabaalsccrmrechargechargeprecheckgetAPIRequest对象
+func NewAlibabaalsccrmrechargechargeprecheckgetRequest() *AlibabaalsccrmrechargechargeprecheckgetAPIRequest {
+	return &AlibabaalsccrmrechargechargeprecheckgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmRechargeChargeprecheckGetAPIRequest) GetApiMethodName() string {
+func (r AlibabaalsccrmrechargechargeprecheckgetAPIRequest) GetApiMethodName() string {
 	return "alibaba.alsc.crm.recharge.chargeprecheck.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmRechargeChargeprecheckGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalsccrmrechargechargeprecheckgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlscCrmRechargeChargeprecheckGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalsccrmrechargechargeprecheckgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamChargePreCheckOpenReq is ParamChargePreCheckOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmRechargeChargeprecheckGetAPIRequest) SetParamChargePreCheckOpenReq(_paramChargePreCheckOpenReq *ChargePreCheckOpenReq) error {
+func (r *AlibabaalsccrmrechargechargeprecheckgetAPIRequest) SetParamChargePreCheckOpenReq(_paramChargePreCheckOpenReq *ChargePreCheckOpenReq) error {
 	r._paramChargePreCheckOpenReq = _paramChargePreCheckOpenReq
 	r.Set("param_charge_pre_check_open_req", _paramChargePreCheckOpenReq)
 	return nil
 }
 
 // GetParamChargePreCheckOpenReq ParamChargePreCheckOpenReq Getter
-func (r AlibabaAlscCrmRechargeChargeprecheckGetAPIRequest) GetParamChargePreCheckOpenReq() *ChargePreCheckOpenReq {
+func (r AlibabaalsccrmrechargechargeprecheckgetAPIRequest) GetParamChargePreCheckOpenReq() *ChargePreCheckOpenReq {
 	return r._paramChargePreCheckOpenReq
 }

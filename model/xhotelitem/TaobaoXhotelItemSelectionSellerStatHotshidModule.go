@@ -1,7 +1,7 @@
 package xhotelitem
 
-// TaobaoXhotelItemSelectionSellerStatHotshidModule 结构体
-type TaobaoXhotelItemSelectionSellerStatHotshidModule struct {
+// TaobaoxhotelitemselectionsellerstathotshidModule 结构体
+type TaobaoxhotelitemselectionsellerstathotshidModule struct {
 	// 热销标准酒店中卖家覆盖的数量
 	CoveredHidAmount string `json:"covered_hid_amount,omitempty" xml:"covered_hid_amount,omitempty"`
 	// 热销标准酒店中卖家可售的酒店数量

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIcbuAnnexUploadAPIRequest 上传附件获取附件files_str API请求
+// AlibabaicbuannexuploadAPIRequest 上传附件获取附件files_str API请求
 // alibaba.icbu.annex.upload
 //
 // 上传附件获取附件files_str
-type AlibabaIcbuAnnexUploadAPIRequest struct {
+type AlibabaicbuannexuploadAPIRequest struct {
 	model.Params
 	// 文件名
 	_fileName string
@@ -20,65 +20,65 @@ type AlibabaIcbuAnnexUploadAPIRequest struct {
 	_fileInputStreamBytes *model.File
 }
 
-// NewAlibabaIcbuAnnexUploadRequest 初始化AlibabaIcbuAnnexUploadAPIRequest对象
-func NewAlibabaIcbuAnnexUploadRequest() *AlibabaIcbuAnnexUploadAPIRequest {
-	return &AlibabaIcbuAnnexUploadAPIRequest{
+// NewAlibabaicbuannexuploadRequest 初始化AlibabaicbuannexuploadAPIRequest对象
+func NewAlibabaicbuannexuploadRequest() *AlibabaicbuannexuploadAPIRequest {
+	return &AlibabaicbuannexuploadAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaIcbuAnnexUploadAPIRequest) GetApiMethodName() string {
+func (r AlibabaicbuannexuploadAPIRequest) GetApiMethodName() string {
 	return "alibaba.icbu.annex.upload"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuAnnexUploadAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaicbuannexuploadAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaIcbuAnnexUploadAPIRequest) GetRawParams() model.Params {
+func (r AlibabaicbuannexuploadAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetFileName is FileName Setter
 // 文件名
-func (r *AlibabaIcbuAnnexUploadAPIRequest) SetFileName(_fileName string) error {
+func (r *AlibabaicbuannexuploadAPIRequest) SetFileName(_fileName string) error {
 	r._fileName = _fileName
 	r.Set("file_name", _fileName)
 	return nil
 }
 
 // GetFileName FileName Getter
-func (r AlibabaIcbuAnnexUploadAPIRequest) GetFileName() string {
+func (r AlibabaicbuannexuploadAPIRequest) GetFileName() string {
 	return r._fileName
 }
 
 // SetSource is Source Setter
 // 来源
-func (r *AlibabaIcbuAnnexUploadAPIRequest) SetSource(_source string) error {
+func (r *AlibabaicbuannexuploadAPIRequest) SetSource(_source string) error {
 	r._source = _source
 	r.Set("source", _source)
 	return nil
 }
 
 // GetSource Source Getter
-func (r AlibabaIcbuAnnexUploadAPIRequest) GetSource() string {
+func (r AlibabaicbuannexuploadAPIRequest) GetSource() string {
 	return r._source
 }
 
 // SetFileInputStreamBytes is FileInputStreamBytes Setter
 // 文件字节流
-func (r *AlibabaIcbuAnnexUploadAPIRequest) SetFileInputStreamBytes(_fileInputStreamBytes *model.File) error {
+func (r *AlibabaicbuannexuploadAPIRequest) SetFileInputStreamBytes(_fileInputStreamBytes *model.File) error {
 	r._fileInputStreamBytes = _fileInputStreamBytes
 	r.Set("file_input_stream_bytes", _fileInputStreamBytes)
 	return nil
 }
 
 // GetFileInputStreamBytes FileInputStreamBytes Getter
-func (r AlibabaIcbuAnnexUploadAPIRequest) GetFileInputStreamBytes() *model.File {
+func (r AlibabaicbuannexuploadAPIRequest) GetFileInputStreamBytes() *model.File {
 	return r._fileInputStreamBytes
 }

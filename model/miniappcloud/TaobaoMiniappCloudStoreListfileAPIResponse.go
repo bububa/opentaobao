@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoMiniappCloudStoreListfileAPIResponse 云存储根据文件名反查地址 API返回值
+// TaobaominiappcloudstorelistfileAPIResponse 云存储根据文件名反查地址 API返回值
 // taobao.miniapp.cloud.store.listfile
 //
 // 云存储中，根据文件名反查地址
-type TaobaoMiniappCloudStoreListfileAPIResponse struct {
+type TaobaominiappcloudstorelistfileAPIResponse struct {
 	model.CommonResponse
-	TaobaoMiniappCloudStoreListfileAPIResponseModel
+	TaobaominiappcloudstorelistfileAPIResponseModel
 }
 
-// TaobaoMiniappCloudStoreListfileAPIResponseModel is 云存储根据文件名反查地址 成功返回结果
-type TaobaoMiniappCloudStoreListfileAPIResponseModel struct {
+// TaobaominiappcloudstorelistfileAPIResponseModel is 云存储根据文件名反查地址 成功返回结果
+type TaobaominiappcloudstorelistfileAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_cloud_store_listfile_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

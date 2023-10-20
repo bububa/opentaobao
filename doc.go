@@ -6,7 +6,7 @@ const (
 	GitVersion = "v1.3.0"
 
 	// GitCommit git commit from build flag
-	GitCommit = "ecd0a1ce7"
+	GitCommit = "39845d25e"
 
 	// GitDate git date from build flag
 	GitDate = "<no value>"

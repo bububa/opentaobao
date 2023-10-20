@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/qimen"
 )
 
-// TaobaoQimenCombineitemQuery 组合货品关系查询接口
+// Taobaoqimencombineitemquery 组合货品关系查询接口
 // taobao.qimen.combineitem.query
 //
 // 组合货品关系查询
-func TaobaoQimenCombineitemQuery(clt *core.SDKClient, req *qimen.TaobaoQimenCombineitemQueryAPIRequest, session string) (*qimen.TaobaoQimenCombineitemQueryAPIResponse, error) {
-	var resp qimen.TaobaoQimenCombineitemQueryAPIResponse
+func Taobaoqimencombineitemquery(clt *core.SDKClient, req *qimen.TaobaoqimencombineitemqueryAPIRequest, session string) (*qimen.TaobaoqimencombineitemqueryAPIResponse, error) {
+	var resp qimen.TaobaoqimencombineitemqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

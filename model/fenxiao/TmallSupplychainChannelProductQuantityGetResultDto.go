@@ -1,7 +1,7 @@
 package fenxiao
 
-// TmallSupplychainChannelProductQuantityGetResultDto 结构体
-type TmallSupplychainChannelProductQuantityGetResultDto struct {
+// TmallsupplychainchannelproductquantitygetResultDto 结构体
+type TmallsupplychainchannelproductquantitygetResultDto struct {
 	// 库存数量
 	Module string `json:"module,omitempty" xml:"module,omitempty"`
 	// 错误码

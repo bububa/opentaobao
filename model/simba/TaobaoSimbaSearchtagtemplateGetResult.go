@@ -1,7 +1,7 @@
 package simba
 
-// TaobaoSimbaSearchtagtemplateGetResult 结构体
-type TaobaoSimbaSearchtagtemplateGetResult struct {
+// TaobaosimbasearchtagtemplategetResult 结构体
+type TaobaosimbasearchtagtemplategetResult struct {
 	// DimDtOs
 	DimList []DimDtOs `json:"dim_list,omitempty" xml:"dim_list>dim_dt_os,omitempty"`
 	// 人群模版名称

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseNewhomeAgreementPreshow 预览地址获取接口
+// Alibabaalihousenewhomeagreementpreshow 预览地址获取接口
 // alibaba.alihouse.newhome.agreement.preshow
 //
 // 预览地址获取接口
-func AlibabaAlihouseNewhomeAgreementPreshow(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeAgreementPreshowAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeAgreementPreshowAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeAgreementPreshowAPIResponse
+func Alibabaalihousenewhomeagreementpreshow(clt *core.SDKClient, req *alihouse.AlibabaalihousenewhomeagreementpreshowAPIRequest, session string) (*alihouse.AlibabaalihousenewhomeagreementpreshowAPIResponse, error) {
+	var resp alihouse.AlibabaalihousenewhomeagreementpreshowAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

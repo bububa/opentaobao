@@ -1,7 +1,7 @@
 package idle
 
-// AlibabaIdleAppraiseOrderQueryResult 结构体
-type AlibabaIdleAppraiseOrderQueryResult struct {
+// AlibabaidleappraiseorderqueryResult 结构体
+type AlibabaidleappraiseorderqueryResult struct {
 	// errCode
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// errMsg

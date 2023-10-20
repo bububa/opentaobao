@@ -1,7 +1,7 @@
 package logistic
 
-// CainiaoCbossWorkplatformBiztypeQuerybyidResult 结构体
-type CainiaoCbossWorkplatformBiztypeQuerybyidResult struct {
+// CainiaocbossworkplatformbiztypequerybyidResult 结构体
+type CainiaocbossworkplatformbiztypequerybyidResult struct {
 	// bizTypeJson
 	BizTypeJson string `json:"biz_type_json,omitempty" xml:"biz_type_json,omitempty"`
 	// errorCode

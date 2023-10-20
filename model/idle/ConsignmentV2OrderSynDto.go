@@ -1,7 +1,7 @@
 package idle
 
-// ConsignmentV2OrderSynDto 结构体
-type ConsignmentV2OrderSynDto struct {
+// ConsignmentV2orderSynDto 结构体
+type ConsignmentV2orderSynDto struct {
 	// 订单子状态
 	OrderSubStatus string `json:"order_sub_status,omitempty" xml:"order_sub_status,omitempty"`
 	// 订单主状态

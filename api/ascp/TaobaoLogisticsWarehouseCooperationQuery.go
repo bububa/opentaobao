@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// TaobaoLogisticsWarehouseCooperationQuery 仓合作关系查询
+// Taobaologisticswarehousecooperationquery 仓合作关系查询
 // taobao.logistics.warehouse.cooperation.query
 //
 // 仓合作关系查询
-func TaobaoLogisticsWarehouseCooperationQuery(clt *core.SDKClient, req *ascp.TaobaoLogisticsWarehouseCooperationQueryAPIRequest, session string) (*ascp.TaobaoLogisticsWarehouseCooperationQueryAPIResponse, error) {
-	var resp ascp.TaobaoLogisticsWarehouseCooperationQueryAPIResponse
+func Taobaologisticswarehousecooperationquery(clt *core.SDKClient, req *ascp.TaobaologisticswarehousecooperationqueryAPIRequest, session string) (*ascp.TaobaologisticswarehousecooperationqueryAPIResponse, error) {
+	var resp ascp.TaobaologisticswarehousecooperationqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

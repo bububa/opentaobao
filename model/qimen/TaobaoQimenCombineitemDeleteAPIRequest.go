@@ -6,48 +6,48 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenCombineitemDeleteAPIRequest 组合货品删除接口 API请求
+// TaobaoqimencombineitemdeleteAPIRequest 组合货品删除接口 API请求
 // taobao.qimen.combineitem.delete
 //
 // 组合货品删除
-type TaobaoQimenCombineitemDeleteAPIRequest struct {
+type TaobaoqimencombineitemdeleteAPIRequest struct {
 	model.Params
 	//
 	_request *RequestDo
 }
 
-// NewTaobaoQimenCombineitemDeleteRequest 初始化TaobaoQimenCombineitemDeleteAPIRequest对象
-func NewTaobaoQimenCombineitemDeleteRequest() *TaobaoQimenCombineitemDeleteAPIRequest {
-	return &TaobaoQimenCombineitemDeleteAPIRequest{
+// NewTaobaoqimencombineitemdeleteRequest 初始化TaobaoqimencombineitemdeleteAPIRequest对象
+func NewTaobaoqimencombineitemdeleteRequest() *TaobaoqimencombineitemdeleteAPIRequest {
+	return &TaobaoqimencombineitemdeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoQimenCombineitemDeleteAPIRequest) GetApiMethodName() string {
+func (r TaobaoqimencombineitemdeleteAPIRequest) GetApiMethodName() string {
 	return "taobao.qimen.combineitem.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoQimenCombineitemDeleteAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoqimencombineitemdeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoQimenCombineitemDeleteAPIRequest) GetRawParams() model.Params {
+func (r TaobaoqimencombineitemdeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRequest is Request Setter
-func (r *TaobaoQimenCombineitemDeleteAPIRequest) SetRequest(_request *RequestDo) error {
+func (r *TaobaoqimencombineitemdeleteAPIRequest) SetRequest(_request *RequestDo) error {
 	r._request = _request
 	r.Set("request", _request)
 	return nil
 }
 
 // GetRequest Request Getter
-func (r TaobaoQimenCombineitemDeleteAPIRequest) GetRequest() *RequestDo {
+func (r TaobaoqimencombineitemdeleteAPIRequest) GetRequest() *RequestDo {
 	return r._request
 }

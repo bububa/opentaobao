@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaPurBasketMergeAPIRequest 合并购物车 API请求
+// AlibabapurbasketmergeAPIRequest 合并购物车 API请求
 // alibaba.pur.basket.merge
 //
 // 采购商城接入第三方商家合并购物车接口服务
-type AlibabaPurBasketMergeAPIRequest struct {
+type AlibabapurbasketmergeAPIRequest struct {
 	model.Params
 	// 合并购物车入参
 	_paramMallMergeCartRequestDTO *MallMergeCartRequestDto
 }
 
-// NewAlibabaPurBasketMergeRequest 初始化AlibabaPurBasketMergeAPIRequest对象
-func NewAlibabaPurBasketMergeRequest() *AlibabaPurBasketMergeAPIRequest {
-	return &AlibabaPurBasketMergeAPIRequest{
+// NewAlibabapurbasketmergeRequest 初始化AlibabapurbasketmergeAPIRequest对象
+func NewAlibabapurbasketmergeRequest() *AlibabapurbasketmergeAPIRequest {
+	return &AlibabapurbasketmergeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaPurBasketMergeAPIRequest) GetApiMethodName() string {
+func (r AlibabapurbasketmergeAPIRequest) GetApiMethodName() string {
 	return "alibaba.pur.basket.merge"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaPurBasketMergeAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabapurbasketmergeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaPurBasketMergeAPIRequest) GetRawParams() model.Params {
+func (r AlibabapurbasketmergeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamMallMergeCartRequestDTO is ParamMallMergeCartRequestDTO Setter
 // 合并购物车入参
-func (r *AlibabaPurBasketMergeAPIRequest) SetParamMallMergeCartRequestDTO(_paramMallMergeCartRequestDTO *MallMergeCartRequestDto) error {
+func (r *AlibabapurbasketmergeAPIRequest) SetParamMallMergeCartRequestDTO(_paramMallMergeCartRequestDTO *MallMergeCartRequestDto) error {
 	r._paramMallMergeCartRequestDTO = _paramMallMergeCartRequestDTO
 	r.Set("param_mall_merge_cart_request_d_t_o", _paramMallMergeCartRequestDTO)
 	return nil
 }
 
 // GetParamMallMergeCartRequestDTO ParamMallMergeCartRequestDTO Getter
-func (r AlibabaPurBasketMergeAPIRequest) GetParamMallMergeCartRequestDTO() *MallMergeCartRequestDto {
+func (r AlibabapurbasketmergeAPIRequest) GetParamMallMergeCartRequestDTO() *MallMergeCartRequestDto {
 	return r._paramMallMergeCartRequestDTO
 }

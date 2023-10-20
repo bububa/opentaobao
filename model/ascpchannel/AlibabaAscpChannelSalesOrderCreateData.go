@@ -1,7 +1,7 @@
 package ascpchannel
 
-// AlibabaAscpChannelSalesOrderCreateData 结构体
-type AlibabaAscpChannelSalesOrderCreateData struct {
+// AlibabaascpchannelsalesordercreateData 结构体
+type AlibabaascpchannelsalesordercreateData struct {
 	// 子单列表
 	SubOrderList []Suborders `json:"sub_order_list,omitempty" xml:"sub_order_list>suborders,omitempty"`
 	// 渠道订单号

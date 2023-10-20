@@ -1,7 +1,7 @@
 package trade
 
-// CainiaoRefundRefundactionsGetBizResult 结构体
-type CainiaoRefundRefundactionsGetBizResult struct {
+// CainiaorefundrefundactionsgetBizResult 结构体
+type CainiaorefundrefundactionsgetBizResult struct {
 	// 调用错误时，错误code
 	StatusCode string `json:"status_code,omitempty" xml:"status_code,omitempty"`
 	// 调用错误时，错误描述

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaAelophyOrderDesensitizephoneGet 获取订单隐私号
+// Alibabaaelophyorderdesensitizephoneget 获取订单隐私号
 // alibaba.aelophy.order.desensitizephone.get
 //
 // 获取订单隐私号
-func AlibabaAelophyOrderDesensitizephoneGet(clt *core.SDKClient, req *wdk.AlibabaAelophyOrderDesensitizephoneGetAPIRequest, session string) (*wdk.AlibabaAelophyOrderDesensitizephoneGetAPIResponse, error) {
-	var resp wdk.AlibabaAelophyOrderDesensitizephoneGetAPIResponse
+func Alibabaaelophyorderdesensitizephoneget(clt *core.SDKClient, req *wdk.AlibabaaelophyorderdesensitizephonegetAPIRequest, session string) (*wdk.AlibabaaelophyorderdesensitizephonegetAPIResponse, error) {
+	var resp wdk.AlibabaaelophyorderdesensitizephonegetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

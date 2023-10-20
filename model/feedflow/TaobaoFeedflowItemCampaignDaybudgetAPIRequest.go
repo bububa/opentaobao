@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoFeedflowItemCampaignDaybudgetAPIRequest 获取当日投放日预算总额 API请求
+// TaobaofeedflowitemcampaigndaybudgetAPIRequest 获取当日投放日预算总额 API请求
 // taobao.feedflow.item.campaign.daybudget
 //
 // 获取当日投放日预算总额
-type TaobaoFeedflowItemCampaignDaybudgetAPIRequest struct {
+type TaobaofeedflowitemcampaigndaybudgetAPIRequest struct {
 	model.Params
 }
 
-// NewTaobaoFeedflowItemCampaignDaybudgetRequest 初始化TaobaoFeedflowItemCampaignDaybudgetAPIRequest对象
-func NewTaobaoFeedflowItemCampaignDaybudgetRequest() *TaobaoFeedflowItemCampaignDaybudgetAPIRequest {
-	return &TaobaoFeedflowItemCampaignDaybudgetAPIRequest{
+// NewTaobaofeedflowitemcampaigndaybudgetRequest 初始化TaobaofeedflowitemcampaigndaybudgetAPIRequest对象
+func NewTaobaofeedflowitemcampaigndaybudgetRequest() *TaobaofeedflowitemcampaigndaybudgetAPIRequest {
+	return &TaobaofeedflowitemcampaigndaybudgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemCampaignDaybudgetAPIRequest) GetApiMethodName() string {
+func (r TaobaofeedflowitemcampaigndaybudgetAPIRequest) GetApiMethodName() string {
 	return "taobao.feedflow.item.campaign.daybudget"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemCampaignDaybudgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaofeedflowitemcampaigndaybudgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoFeedflowItemCampaignDaybudgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaofeedflowitemcampaigndaybudgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

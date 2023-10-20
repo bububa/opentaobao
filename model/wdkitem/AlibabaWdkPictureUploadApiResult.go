@@ -1,7 +1,7 @@
 package wdkitem
 
-// AlibabaWdkPictureUploadApiResult 结构体
-type AlibabaWdkPictureUploadApiResult struct {
+// AlibabawdkpictureuploadApiResult 结构体
+type AlibabawdkpictureuploadApiResult struct {
 	// 错误code
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误原因

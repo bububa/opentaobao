@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaSpOpenPaymentRepayAPIResponse 智付重新打款 API返回值
+// AlibabaspopenpaymentrepayAPIResponse 智付重新打款 API返回值
 // alibaba.sp.open.payment.repay
 //
 // 智付重新打款
-type AlibabaSpOpenPaymentRepayAPIResponse struct {
+type AlibabaspopenpaymentrepayAPIResponse struct {
 	model.CommonResponse
-	AlibabaSpOpenPaymentRepayAPIResponseModel
+	AlibabaspopenpaymentrepayAPIResponseModel
 }
 
-// AlibabaSpOpenPaymentRepayAPIResponseModel is 智付重新打款 成功返回结果
-type AlibabaSpOpenPaymentRepayAPIResponseModel struct {
+// AlibabaspopenpaymentrepayAPIResponseModel is 智付重新打款 成功返回结果
+type AlibabaspopenpaymentrepayAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_sp_open_payment_repay_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

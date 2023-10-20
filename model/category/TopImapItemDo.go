@@ -5,7 +5,7 @@ type TopImapItemDo struct {
 	// 【非必填，能填则填】商品所在叶子类目类目路径名称列表，从一级到叶子
 	SrcCatNamePathList []string `json:"src_cat_name_path_list,omitempty" xml:"src_cat_name_path_list>string,omitempty"`
 	// 【非必填，能填则填】商品相关pv信息
-	PvPairDoList []TopPVPairDo `json:"pv_pair_do_list,omitempty" xml:"pv_pair_do_list>top_pv_pair_do,omitempty"`
+	PvPairDoList []TopPvpairDo `json:"pv_pair_do_list,omitempty" xml:"pv_pair_do_list>top_pvpair_do,omitempty"`
 	// 非必填，能填则填】barccode列表
 	BarcodeList []string `json:"barcode_list,omitempty" xml:"barcode_list>string,omitempty"`
 	// 商品ID

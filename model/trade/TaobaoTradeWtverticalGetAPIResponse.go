@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTradeWtverticalGetAPIResponse 网厅垂直信息查询接口 API返回值
+// TaobaotradewtverticalgetAPIResponse 网厅垂直信息查询接口 API返回值
 // taobao.trade.wtvertical.get
 //
 // 网厅订单垂直信息的查询
-type TaobaoTradeWtverticalGetAPIResponse struct {
+type TaobaotradewtverticalgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoTradeWtverticalGetAPIResponseModel
+	TaobaotradewtverticalgetAPIResponseModel
 }
 
-// TaobaoTradeWtverticalGetAPIResponseModel is 网厅垂直信息查询接口 成功返回结果
-type TaobaoTradeWtverticalGetAPIResponseModel struct {
+// TaobaotradewtverticalgetAPIResponseModel is 网厅垂直信息查询接口 成功返回结果
+type TaobaotradewtverticalgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"trade_wtvertical_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscCrmMarketingEncryptAPIResponse 加密 API返回值
+// AlibabaalsccrmmarketingencryptAPIResponse 加密 API返回值
 // alibaba.alsc.crm.marketing.encrypt
 //
 // 加密
-type AlibabaAlscCrmMarketingEncryptAPIResponse struct {
+type AlibabaalsccrmmarketingencryptAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlscCrmMarketingEncryptAPIResponseModel
+	AlibabaalsccrmmarketingencryptAPIResponseModel
 }
 
-// AlibabaAlscCrmMarketingEncryptAPIResponseModel is 加密 成功返回结果
-type AlibabaAlscCrmMarketingEncryptAPIResponseModel struct {
+// AlibabaalsccrmmarketingencryptAPIResponseModel is 加密 成功返回结果
+type AlibabaalsccrmmarketingencryptAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_marketing_encrypt_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

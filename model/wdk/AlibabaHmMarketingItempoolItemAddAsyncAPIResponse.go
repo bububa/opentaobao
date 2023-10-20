@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaHmMarketingItempoolItemAddAsyncAPIResponse 商品池新增商品 API返回值
+// AlibabahmmarketingitempoolitemaddasyncAPIResponse 商品池新增商品 API返回值
 // alibaba.hm.marketing.itempool.item.add.async
 //
 // 新分组模型下新增商品
-type AlibabaHmMarketingItempoolItemAddAsyncAPIResponse struct {
+type AlibabahmmarketingitempoolitemaddasyncAPIResponse struct {
 	model.CommonResponse
-	AlibabaHmMarketingItempoolItemAddAsyncAPIResponseModel
+	AlibabahmmarketingitempoolitemaddasyncAPIResponseModel
 }
 
-// AlibabaHmMarketingItempoolItemAddAsyncAPIResponseModel is 商品池新增商品 成功返回结果
-type AlibabaHmMarketingItempoolItemAddAsyncAPIResponseModel struct {
+// AlibabahmmarketingitempoolitemaddasyncAPIResponseModel is 商品池新增商品 成功返回结果
+type AlibabahmmarketingitempoolitemaddasyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_hm_marketing_itempool_item_add_async_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

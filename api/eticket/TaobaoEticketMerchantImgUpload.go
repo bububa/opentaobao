@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/eticket"
 )
 
-// TaobaoEticketMerchantImgUpload 码商上传二维码图片
+// Taobaoeticketmerchantimgupload 码商上传二维码图片
 // taobao.eticket.merchant.img.upload
 //
 // 电子凭证的码商可以通过这个接口，上传二维码图片
-func TaobaoEticketMerchantImgUpload(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantImgUploadAPIRequest, session string) (*eticket.TaobaoEticketMerchantImgUploadAPIResponse, error) {
-	var resp eticket.TaobaoEticketMerchantImgUploadAPIResponse
+func Taobaoeticketmerchantimgupload(clt *core.SDKClient, req *eticket.TaobaoeticketmerchantimguploadAPIRequest, session string) (*eticket.TaobaoeticketmerchantimguploadAPIResponse, error) {
+	var resp eticket.TaobaoeticketmerchantimguploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

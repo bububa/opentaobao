@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
 
-// TaobaoXhotelXitemQuery 查询 x 元素
+// Taobaoxhotelxitemquery 查询 x 元素
 // taobao.xhotel.xitem.query
 //
 // 查询 x 元素
-func TaobaoXhotelXitemQuery(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelXitemQueryAPIRequest, session string) (*xhotelitem.TaobaoXhotelXitemQueryAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelXitemQueryAPIResponse
+func Taobaoxhotelxitemquery(clt *core.SDKClient, req *xhotelitem.TaobaoxhotelxitemqueryAPIRequest, session string) (*xhotelitem.TaobaoxhotelxitemqueryAPIResponse, error) {
+	var resp xhotelitem.TaobaoxhotelxitemqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

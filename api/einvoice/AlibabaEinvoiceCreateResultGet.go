@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/einvoice"
 )
 
-// AlibabaEinvoiceCreateResultGet ERP开票结果获取
+// Alibabaeinvoicecreateresultget ERP开票结果获取
 // alibaba.einvoice.create.result.get
 //
 // ERP开票结果获取
-func AlibabaEinvoiceCreateResultGet(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceCreateResultGetAPIRequest, session string) (*einvoice.AlibabaEinvoiceCreateResultGetAPIResponse, error) {
-	var resp einvoice.AlibabaEinvoiceCreateResultGetAPIResponse
+func Alibabaeinvoicecreateresultget(clt *core.SDKClient, req *einvoice.AlibabaeinvoicecreateresultgetAPIRequest, session string) (*einvoice.AlibabaeinvoicecreateresultgetAPIResponse, error) {
+	var resp einvoice.AlibabaeinvoicecreateresultgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

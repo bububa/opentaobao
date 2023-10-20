@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMjOcOnlineTicketnoGetAPIResponse 线上小票号获取 API返回值
+// AlibabamjoconlineticketnogetAPIResponse 线上小票号获取 API返回值
 // alibaba.mj.oc.online.ticketno.get
 //
 // 线上小票号获取
-type AlibabaMjOcOnlineTicketnoGetAPIResponse struct {
+type AlibabamjoconlineticketnogetAPIResponse struct {
 	model.CommonResponse
-	AlibabaMjOcOnlineTicketnoGetAPIResponseModel
+	AlibabamjoconlineticketnogetAPIResponseModel
 }
 
-// AlibabaMjOcOnlineTicketnoGetAPIResponseModel is 线上小票号获取 成功返回结果
-type AlibabaMjOcOnlineTicketnoGetAPIResponseModel struct {
+// AlibabamjoconlineticketnogetAPIResponseModel is 线上小票号获取 成功返回结果
+type AlibabamjoconlineticketnogetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mj_oc_online_ticketno_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

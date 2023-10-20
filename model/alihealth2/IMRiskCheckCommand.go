@@ -1,7 +1,7 @@
 package alihealth2
 
-// IMRiskCheckCommand 结构体
-type IMRiskCheckCommand struct {
+// ImriskCheckCommand 结构体
+type ImriskCheckCommand struct {
 	// 会话内容，按照时间排序
 	Conversations []Conversation `json:"conversations,omitempty" xml:"conversations>conversation,omitempty"`
 	// 患者id

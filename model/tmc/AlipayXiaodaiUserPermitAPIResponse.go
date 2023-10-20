@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlipayXiaodaiUserPermitAPIResponse 阿里金融用户授权 API返回值
+// AlipayxiaodaiuserpermitAPIResponse 阿里金融用户授权 API返回值
 // alipay.xiaodai.user.permit
 //
 // 阿里金融为用户开通消息通道接口
-type AlipayXiaodaiUserPermitAPIResponse struct {
+type AlipayxiaodaiuserpermitAPIResponse struct {
 	model.CommonResponse
-	AlipayXiaodaiUserPermitAPIResponseModel
+	AlipayxiaodaiuserpermitAPIResponseModel
 }
 
-// AlipayXiaodaiUserPermitAPIResponseModel is 阿里金融用户授权 成功返回结果
-type AlipayXiaodaiUserPermitAPIResponseModel struct {
+// AlipayxiaodaiuserpermitAPIResponseModel is 阿里金融用户授权 成功返回结果
+type AlipayxiaodaiuserpermitAPIResponseModel struct {
 	XMLName xml.Name `xml:"alipay_xiaodai_user_permit_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

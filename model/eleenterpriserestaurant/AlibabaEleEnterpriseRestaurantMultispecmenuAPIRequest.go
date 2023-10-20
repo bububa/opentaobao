@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest 查询餐厅菜单 API请求
+// AlibabaeleenterpriserestaurantmultispecmenuAPIRequest 查询餐厅菜单 API请求
 // alibaba.ele.enterprise.restaurant.multispecmenu
 //
 // 查询餐厅菜单
-type AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest struct {
+type AlibabaeleenterpriserestaurantmultispecmenuAPIRequest struct {
 	model.Params
 	// 餐厅ID
 	_erestaurantId string
 }
 
-// NewAlibabaEleEnterpriseRestaurantMultispecmenuRequest 初始化AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest对象
-func NewAlibabaEleEnterpriseRestaurantMultispecmenuRequest() *AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest {
-	return &AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest{
+// NewAlibabaeleenterpriserestaurantmultispecmenuRequest 初始化AlibabaeleenterpriserestaurantmultispecmenuAPIRequest对象
+func NewAlibabaeleenterpriserestaurantmultispecmenuRequest() *AlibabaeleenterpriserestaurantmultispecmenuAPIRequest {
+	return &AlibabaeleenterpriserestaurantmultispecmenuAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest) GetApiMethodName() string {
+func (r AlibabaeleenterpriserestaurantmultispecmenuAPIRequest) GetApiMethodName() string {
 	return "alibaba.ele.enterprise.restaurant.multispecmenu"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaeleenterpriserestaurantmultispecmenuAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest) GetRawParams() model.Params {
+func (r AlibabaeleenterpriserestaurantmultispecmenuAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetErestaurantId is ErestaurantId Setter
 // 餐厅ID
-func (r *AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest) SetErestaurantId(_erestaurantId string) error {
+func (r *AlibabaeleenterpriserestaurantmultispecmenuAPIRequest) SetErestaurantId(_erestaurantId string) error {
 	r._erestaurantId = _erestaurantId
 	r.Set("erestaurant_id", _erestaurantId)
 	return nil
 }
 
 // GetErestaurantId ErestaurantId Getter
-func (r AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest) GetErestaurantId() string {
+func (r AlibabaeleenterpriserestaurantmultispecmenuAPIRequest) GetErestaurantId() string {
 	return r._erestaurantId
 }

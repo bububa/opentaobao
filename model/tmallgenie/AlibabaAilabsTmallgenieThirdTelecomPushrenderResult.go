@@ -1,7 +1,7 @@
 package tmallgenie
 
-// AlibabaAilabsTmallgenieThirdTelecomPushrenderResult 结构体
-type AlibabaAilabsTmallgenieThirdTelecomPushrenderResult struct {
+// AlibabaailabstmallgeniethirdtelecompushrenderResult 结构体
+type AlibabaailabstmallgeniethirdtelecompushrenderResult struct {
 	// 结果信息
 	ResultMessage string `json:"result_message,omitempty" xml:"result_message,omitempty"`
 	// 状态码

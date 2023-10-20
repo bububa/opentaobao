@@ -1,7 +1,7 @@
 package alicom
 
-// AlibabaAliqinTaSmsNumSendBizResult 结构体
-type AlibabaAliqinTaSmsNumSendBizResult struct {
+// AlibabaaliqintasmsnumsendBizResult 结构体
+type AlibabaaliqintasmsnumsendBizResult struct {
 	// 返回结果
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// 返回信息描述

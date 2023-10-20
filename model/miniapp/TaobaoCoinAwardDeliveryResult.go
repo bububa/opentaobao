@@ -1,7 +1,7 @@
 package miniapp
 
-// TaobaoCoinAwardDeliveryResult 结构体
-type TaobaoCoinAwardDeliveryResult struct {
+// TaobaocoinawarddeliveryResult 结构体
+type TaobaocoinawarddeliveryResult struct {
 	// 标题
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 副标题

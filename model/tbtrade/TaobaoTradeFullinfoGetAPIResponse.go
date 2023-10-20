@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTradeFullinfoGetAPIResponse 获取单笔交易的详细信息 API返回值
+// TaobaotradefullinfogetAPIResponse 获取单笔交易的详细信息 API返回值
 // taobao.trade.fullinfo.get
 //
 // 获取单笔交易的详细信息
@@ -15,13 +15,13 @@ import (
 // &lt;br/&gt;3. 获取红包金额使用字段：tmall_coupon_fee（天猫商家订单使用的红包金额）
 // &lt;br/&gt;4. 请按需获取字段，减少TOP系统的压力
 // &lt;br/&gt;&lt;strong&gt;&lt;a href=&#34;https://console.open.taobao.com/dingWeb.htm?from=tradeapi&#34; target=&#34;_blank&#34;&gt;点击查看更多交易API说明&lt;/a&gt;&lt;/strong&gt;
-type TaobaoTradeFullinfoGetAPIResponse struct {
+type TaobaotradefullinfogetAPIResponse struct {
 	model.CommonResponse
-	TaobaoTradeFullinfoGetAPIResponseModel
+	TaobaotradefullinfogetAPIResponseModel
 }
 
-// TaobaoTradeFullinfoGetAPIResponseModel is 获取单笔交易的详细信息 成功返回结果
-type TaobaoTradeFullinfoGetAPIResponseModel struct {
+// TaobaotradefullinfogetAPIResponseModel is 获取单笔交易的详细信息 成功返回结果
+type TaobaotradefullinfogetAPIResponseModel struct {
 	XMLName xml.Name `xml:"trade_fullinfo_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-// TmallServicecenterWorkerQuerypage 查询工人列表
+// Tmallservicecenterworkerquerypage 查询工人列表
 // tmall.servicecenter.worker.querypage
 //
 // 服务商查询工人列表
-func TmallServicecenterWorkerQuerypage(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerQuerypageAPIRequest, session string) (*tmallservice.TmallServicecenterWorkerQuerypageAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkerQuerypageAPIResponse
+func Tmallservicecenterworkerquerypage(clt *core.SDKClient, req *tmallservice.TmallservicecenterworkerquerypageAPIRequest, session string) (*tmallservice.TmallservicecenterworkerquerypageAPIResponse, error) {
+	var resp tmallservice.TmallservicecenterworkerquerypageAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

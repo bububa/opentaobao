@@ -3,7 +3,7 @@ package wdk
 // OrderSuccessRequest 结构体
 type OrderSuccessRequest struct {
 	// 子单列表
-	SubInfoList []OrderDeliveryBO `json:"sub_info_list,omitempty" xml:"sub_info_list>order_delivery_bo,omitempty"`
+	SubInfoList []OrderDeliveryBo `json:"sub_info_list,omitempty" xml:"sub_info_list>order_delivery_bo,omitempty"`
 	// 外部订单号
 	OutOrderId string `json:"out_order_id,omitempty" xml:"out_order_id,omitempty"`
 	// 订单来源
@@ -59,9 +59,9 @@ type OrderSuccessRequest struct {
 	// 商家折扣费(分为单位)
 	MerchantDiscountFee int64 `json:"merchant_discount_fee,omitempty" xml:"merchant_discount_fee,omitempty"`
 	// 买家信息
-	BuyerInfo *OrderPayInfoBO `json:"buyer_info,omitempty" xml:"buyer_info,omitempty"`
+	BuyerInfo *OrderPayInfoBo `json:"buyer_info,omitempty" xml:"buyer_info,omitempty"`
 	// 订单配送信息
-	DeliveryInfo *OrderBuyerInfoBO `json:"delivery_info,omitempty" xml:"delivery_info,omitempty"`
+	DeliveryInfo *OrderBuyerInfoBo `json:"delivery_info,omitempty" xml:"delivery_info,omitempty"`
 	// 卖家id
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// 订单来源

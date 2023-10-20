@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkShopQueryApiResults 结构体
-type AlibabaWdkShopQueryApiResults struct {
+// AlibabawdkshopqueryApiResults 结构体
+type AlibabawdkshopqueryApiResults struct {
 	// 返回门店信息列表
 	Models []ShopDo `json:"models,omitempty" xml:"models>shop_do,omitempty"`
 	// 异常编码

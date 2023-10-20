@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/icbu"
 )
 
-// AlibabaIcbuProductGroupGet 分组信息获取
+// Alibabaicbuproductgroupget 分组信息获取
 // alibaba.icbu.product.group.get
 //
 // 分组信息获取
-func AlibabaIcbuProductGroupGet(clt *core.SDKClient, req *icbu.AlibabaIcbuProductGroupGetAPIRequest, session string) (*icbu.AlibabaIcbuProductGroupGetAPIResponse, error) {
-	var resp icbu.AlibabaIcbuProductGroupGetAPIResponse
+func Alibabaicbuproductgroupget(clt *core.SDKClient, req *icbu.AlibabaicbuproductgroupgetAPIRequest, session string) (*icbu.AlibabaicbuproductgroupgetAPIResponse, error) {
+	var resp icbu.AlibabaicbuproductgroupgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

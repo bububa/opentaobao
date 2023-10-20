@@ -1,7 +1,7 @@
 package lstvending
 
-// AlibabaLstVendngImageUploadResultDto 结构体
-type AlibabaLstVendngImageUploadResultDto struct {
+// AlibabalstvendngimageuploadResultDto 结构体
+type AlibabalstvendngimageuploadResultDto struct {
 	// 错误信息
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

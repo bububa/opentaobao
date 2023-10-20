@@ -1,5 +1,0 @@
-package axintrade
-
-// BigDecimal 结构体
-type BigDecimal struct {
-}

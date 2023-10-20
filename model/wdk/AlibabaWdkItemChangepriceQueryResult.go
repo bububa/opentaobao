@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkItemChangepriceQueryResult 结构体
-type AlibabaWdkItemChangepriceQueryResult struct {
+// AlibabawdkitemchangepricequeryResult 结构体
+type AlibabawdkitemchangepricequeryResult struct {
 	// 返回的商品改价单
 	Models []string `json:"models,omitempty" xml:"models>string,omitempty"`
 	// 结果码

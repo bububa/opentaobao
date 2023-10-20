@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallServicecenterWorkerQuerycapacitytaskAPIRequest 查询需求容量 API请求
+// TmallservicecenterworkerquerycapacitytaskAPIRequest 查询需求容量 API请求
 // tmall.servicecenter.worker.querycapacitytask
 //
 // 查询需求容量
-type TmallServicecenterWorkerQuerycapacitytaskAPIRequest struct {
+type TmallservicecenterworkerquerycapacitytaskAPIRequest struct {
 	model.Params
 	// 查询对象
 	_query *CapacityTaskQueryDto
 }
 
-// NewTmallServicecenterWorkerQuerycapacitytaskRequest 初始化TmallServicecenterWorkerQuerycapacitytaskAPIRequest对象
-func NewTmallServicecenterWorkerQuerycapacitytaskRequest() *TmallServicecenterWorkerQuerycapacitytaskAPIRequest {
-	return &TmallServicecenterWorkerQuerycapacitytaskAPIRequest{
+// NewTmallservicecenterworkerquerycapacitytaskRequest 初始化TmallservicecenterworkerquerycapacitytaskAPIRequest对象
+func NewTmallservicecenterworkerquerycapacitytaskRequest() *TmallservicecenterworkerquerycapacitytaskAPIRequest {
+	return &TmallservicecenterworkerquerycapacitytaskAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallServicecenterWorkerQuerycapacitytaskAPIRequest) GetApiMethodName() string {
+func (r TmallservicecenterworkerquerycapacitytaskAPIRequest) GetApiMethodName() string {
 	return "tmall.servicecenter.worker.querycapacitytask"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallServicecenterWorkerQuerycapacitytaskAPIRequest) GetApiParams(params url.Values) {
+func (r TmallservicecenterworkerquerycapacitytaskAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallServicecenterWorkerQuerycapacitytaskAPIRequest) GetRawParams() model.Params {
+func (r TmallservicecenterworkerquerycapacitytaskAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQuery is Query Setter
 // 查询对象
-func (r *TmallServicecenterWorkerQuerycapacitytaskAPIRequest) SetQuery(_query *CapacityTaskQueryDto) error {
+func (r *TmallservicecenterworkerquerycapacitytaskAPIRequest) SetQuery(_query *CapacityTaskQueryDto) error {
 	r._query = _query
 	r.Set("query", _query)
 	return nil
 }
 
 // GetQuery Query Getter
-func (r TmallServicecenterWorkerQuerycapacitytaskAPIRequest) GetQuery() *CapacityTaskQueryDto {
+func (r TmallservicecenterworkerquerycapacitytaskAPIRequest) GetQuery() *CapacityTaskQueryDto {
 	return r._query
 }

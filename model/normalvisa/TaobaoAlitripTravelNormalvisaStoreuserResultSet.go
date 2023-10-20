@@ -1,7 +1,7 @@
 package normalvisa
 
-// TaobaoAlitripTravelNormalvisaStoreuserResultSet 结构体
-type TaobaoAlitripTravelNormalvisaStoreuserResultSet struct {
+// TaobaoalitriptravelnormalvisastoreuserResultSet 结构体
+type TaobaoalitriptravelnormalvisastoreuserResultSet struct {
 	// 结果：数字数组
 	Results []int64 `json:"results,omitempty" xml:"results>int64,omitempty"`
 	// 异常

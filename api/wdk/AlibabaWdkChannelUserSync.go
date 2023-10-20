@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkChannelUserSync 会员同步
+// Alibabawdkchannelusersync 会员同步
 // alibaba.wdk.channel.user.sync
 //
 // 会员同步
-func AlibabaWdkChannelUserSync(clt *core.SDKClient, req *wdk.AlibabaWdkChannelUserSyncAPIRequest, session string) (*wdk.AlibabaWdkChannelUserSyncAPIResponse, error) {
-	var resp wdk.AlibabaWdkChannelUserSyncAPIResponse
+func Alibabawdkchannelusersync(clt *core.SDKClient, req *wdk.AlibabawdkchannelusersyncAPIRequest, session string) (*wdk.AlibabawdkchannelusersyncAPIResponse, error) {
+	var resp wdk.AlibabawdkchannelusersyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -13,13 +13,13 @@ import (
 type TaobaotbkscucrowdcreateAPIRequest struct {
 	model.Params
 	// 人群外部编码，只能包含：字母、数字、下划线（以字母、数字开头），最大128字符
-	_externalcrowdcode string
+	_externalCrowdCode string
 	// 人群名称，最大32字符
-	_ucrowdname string
+	_ucrowdName string
 	// 人群描述，最大100字符
 	_desc string
 	// 人群类型，1:社群
-	_ucrowdtype int64
+	_ucrowdType int64
 }
 
 // NewTaobaotbkscucrowdcreateRequest 初始化TaobaotbkscucrowdcreateAPIRequest对象
@@ -46,30 +46,30 @@ func (r TaobaotbkscucrowdcreateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetExternalcrowdcode is Externalcrowdcode Setter
+// SetExternalCrowdCode is ExternalCrowdCode Setter
 // 人群外部编码，只能包含：字母、数字、下划线（以字母、数字开头），最大128字符
-func (r *TaobaotbkscucrowdcreateAPIRequest) SetExternalcrowdcode(_externalcrowdcode string) error {
-	r._externalcrowdcode = _externalcrowdcode
-	r.Set("external_crowd_code", _externalcrowdcode)
+func (r *TaobaotbkscucrowdcreateAPIRequest) SetExternalCrowdCode(_externalCrowdCode string) error {
+	r._externalCrowdCode = _externalCrowdCode
+	r.Set("external_crowd_code", _externalCrowdCode)
 	return nil
 }
 
-// GetExternalcrowdcode Externalcrowdcode Getter
-func (r TaobaotbkscucrowdcreateAPIRequest) GetExternalcrowdcode() string {
-	return r._externalcrowdcode
+// GetExternalCrowdCode ExternalCrowdCode Getter
+func (r TaobaotbkscucrowdcreateAPIRequest) GetExternalCrowdCode() string {
+	return r._externalCrowdCode
 }
 
-// SetUcrowdname is Ucrowdname Setter
+// SetUcrowdName is UcrowdName Setter
 // 人群名称，最大32字符
-func (r *TaobaotbkscucrowdcreateAPIRequest) SetUcrowdname(_ucrowdname string) error {
-	r._ucrowdname = _ucrowdname
-	r.Set("ucrowd_name", _ucrowdname)
+func (r *TaobaotbkscucrowdcreateAPIRequest) SetUcrowdName(_ucrowdName string) error {
+	r._ucrowdName = _ucrowdName
+	r.Set("ucrowd_name", _ucrowdName)
 	return nil
 }
 
-// GetUcrowdname Ucrowdname Getter
-func (r TaobaotbkscucrowdcreateAPIRequest) GetUcrowdname() string {
-	return r._ucrowdname
+// GetUcrowdName UcrowdName Getter
+func (r TaobaotbkscucrowdcreateAPIRequest) GetUcrowdName() string {
+	return r._ucrowdName
 }
 
 // SetDesc is Desc Setter
@@ -85,15 +85,15 @@ func (r TaobaotbkscucrowdcreateAPIRequest) GetDesc() string {
 	return r._desc
 }
 
-// SetUcrowdtype is Ucrowdtype Setter
+// SetUcrowdType is UcrowdType Setter
 // 人群类型，1:社群
-func (r *TaobaotbkscucrowdcreateAPIRequest) SetUcrowdtype(_ucrowdtype int64) error {
-	r._ucrowdtype = _ucrowdtype
-	r.Set("ucrowd_type", _ucrowdtype)
+func (r *TaobaotbkscucrowdcreateAPIRequest) SetUcrowdType(_ucrowdType int64) error {
+	r._ucrowdType = _ucrowdType
+	r.Set("ucrowd_type", _ucrowdType)
 	return nil
 }
 
-// GetUcrowdtype Ucrowdtype Getter
-func (r TaobaotbkscucrowdcreateAPIRequest) GetUcrowdtype() int64 {
-	return r._ucrowdtype
+// GetUcrowdType UcrowdType Getter
+func (r TaobaotbkscucrowdcreateAPIRequest) GetUcrowdType() int64 {
+	return r._ucrowdType
 }

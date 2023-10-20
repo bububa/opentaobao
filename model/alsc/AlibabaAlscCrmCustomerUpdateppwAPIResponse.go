@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscCrmCustomerUpdateppwAPIResponse 修改支付密码 API返回值
+// AlibabaalsccrmcustomerupdateppwAPIResponse 修改支付密码 API返回值
 // alibaba.alsc.crm.customer.updateppw
 //
 // 修改支付密码
-type AlibabaAlscCrmCustomerUpdateppwAPIResponse struct {
+type AlibabaalsccrmcustomerupdateppwAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlscCrmCustomerUpdateppwAPIResponseModel
+	AlibabaalsccrmcustomerupdateppwAPIResponseModel
 }
 
-// AlibabaAlscCrmCustomerUpdateppwAPIResponseModel is 修改支付密码 成功返回结果
-type AlibabaAlscCrmCustomerUpdateppwAPIResponseModel struct {
+// AlibabaalsccrmcustomerupdateppwAPIResponseModel is 修改支付密码 成功返回结果
+type AlibabaalsccrmcustomerupdateppwAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_customer_updateppw_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkMarketingItempoolAddcategoryAPIResponse 增加商品池里面的类目 API返回值
+// AlibabawdkmarketingitempooladdcategoryAPIResponse 增加商品池里面的类目 API返回值
 // alibaba.wdk.marketing.itempool.addcategory
 //
 // 增加商品池里面的类目
-type AlibabaWdkMarketingItempoolAddcategoryAPIResponse struct {
+type AlibabawdkmarketingitempooladdcategoryAPIResponse struct {
 	model.CommonResponse
-	AlibabaWdkMarketingItempoolAddcategoryAPIResponseModel
+	AlibabawdkmarketingitempooladdcategoryAPIResponseModel
 }
 
-// AlibabaWdkMarketingItempoolAddcategoryAPIResponseModel is 增加商品池里面的类目 成功返回结果
-type AlibabaWdkMarketingItempoolAddcategoryAPIResponseModel struct {
+// AlibabawdkmarketingitempooladdcategoryAPIResponseModel is 增加商品池里面的类目 成功返回结果
+type AlibabawdkmarketingitempooladdcategoryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_marketing_itempool_addcategory_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

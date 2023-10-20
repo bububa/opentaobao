@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cloudgame"
 )
 
-// AlibabaCloudgameInteractiveGamePlayerStatusGet 获取用户状态
+// Alibabacloudgameinteractivegameplayerstatusget 获取用户状态
 // alibaba.cloudgame.interactive.game.player.status.get
 //
 // 获取用户状态
-func AlibabaCloudgameInteractiveGamePlayerStatusGet(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest, session string) (*cloudgame.AlibabaCloudgameInteractiveGamePlayerStatusGetAPIResponse, error) {
-	var resp cloudgame.AlibabaCloudgameInteractiveGamePlayerStatusGetAPIResponse
+func Alibabacloudgameinteractivegameplayerstatusget(clt *core.SDKClient, req *cloudgame.AlibabacloudgameinteractivegameplayerstatusgetAPIRequest, session string) (*cloudgame.AlibabacloudgameinteractivegameplayerstatusgetAPIResponse, error) {
+	var resp cloudgame.AlibabacloudgameinteractivegameplayerstatusgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

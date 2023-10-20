@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoPaimaiItempropsGetAPIResponse 拍卖相关类目属性 API返回值
+// TaobaopaimaiitempropsgetAPIResponse 拍卖相关类目属性 API返回值
 // taobao.paimai.itemprops.get
 //
 // 读取拍卖相关类目属性
-type TaobaoPaimaiItempropsGetAPIResponse struct {
+type TaobaopaimaiitempropsgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoPaimaiItempropsGetAPIResponseModel
+	TaobaopaimaiitempropsgetAPIResponseModel
 }
 
-// TaobaoPaimaiItempropsGetAPIResponseModel is 拍卖相关类目属性 成功返回结果
-type TaobaoPaimaiItempropsGetAPIResponseModel struct {
+// TaobaopaimaiitempropsgetAPIResponseModel is 拍卖相关类目属性 成功返回结果
+type TaobaopaimaiitempropsgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"paimai_itemprops_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

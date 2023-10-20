@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbitem"
 )
 
-// AlibabaItemPublishPropsGet 商品级联属性信息获取
+// Alibabaitempublishpropsget 商品级联属性信息获取
 // alibaba.item.publish.props.get
 //
 // 新商品发布，商品级联属性信息获取
-func AlibabaItemPublishPropsGet(clt *core.SDKClient, req *tbitem.AlibabaItemPublishPropsGetAPIRequest, session string) (*tbitem.AlibabaItemPublishPropsGetAPIResponse, error) {
-	var resp tbitem.AlibabaItemPublishPropsGetAPIResponse
+func Alibabaitempublishpropsget(clt *core.SDKClient, req *tbitem.AlibabaitempublishpropsgetAPIRequest, session string) (*tbitem.AlibabaitempublishpropsgetAPIResponse, error) {
+	var resp tbitem.AlibabaitempublishpropsgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

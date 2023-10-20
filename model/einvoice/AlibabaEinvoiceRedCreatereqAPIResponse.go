@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEinvoiceRedCreatereqAPIResponse 发票冲红接口 API返回值
+// AlibabaeinvoiceredcreatereqAPIResponse 发票冲红接口 API返回值
 // alibaba.einvoice.red.createreq
 //
 // 发票冲红接口，通过蓝票流水号或者发票号码+发票代码进行冲红
-type AlibabaEinvoiceRedCreatereqAPIResponse struct {
+type AlibabaeinvoiceredcreatereqAPIResponse struct {
 	model.CommonResponse
-	AlibabaEinvoiceRedCreatereqAPIResponseModel
+	AlibabaeinvoiceredcreatereqAPIResponseModel
 }
 
-// AlibabaEinvoiceRedCreatereqAPIResponseModel is 发票冲红接口 成功返回结果
-type AlibabaEinvoiceRedCreatereqAPIResponseModel struct {
+// AlibabaeinvoiceredcreatereqAPIResponseModel is 发票冲红接口 成功返回结果
+type AlibabaeinvoiceredcreatereqAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_red_createreq_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

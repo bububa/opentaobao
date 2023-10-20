@@ -1,7 +1,7 @@
 package util
 
-// AlibabaMosFalconPosCounterQueryResultDo 结构体
-type AlibabaMosFalconPosCounterQueryResultDo struct {
+// AlibabamosfalconposcounterqueryResultDo 结构体
+type AlibabamosfalconposcounterqueryResultDo struct {
 	// 标题
 	Titles []string `json:"titles,omitempty" xml:"titles>string,omitempty"`
 	// traceId

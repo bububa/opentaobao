@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/idle"
 )
 
-// AlibabaIdleTemplateQuesGet 获取SPU最新版本问卷
+// Alibabaidletemplatequesget 获取SPU最新版本问卷
 // alibaba.idle.template.ques.get
 //
 // 获取SPU最新版本问卷
-func AlibabaIdleTemplateQuesGet(clt *core.SDKClient, req *idle.AlibabaIdleTemplateQuesGetAPIRequest, session string) (*idle.AlibabaIdleTemplateQuesGetAPIResponse, error) {
-	var resp idle.AlibabaIdleTemplateQuesGetAPIResponse
+func Alibabaidletemplatequesget(clt *core.SDKClient, req *idle.AlibabaidletemplatequesgetAPIRequest, session string) (*idle.AlibabaidletemplatequesgetAPIResponse, error) {
+	var resp idle.AlibabaidletemplatequesgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package tmallsc
 
-// AlibabaServicecenterWorkcardRelatedskuQueryResult 结构体
-type AlibabaServicecenterWorkcardRelatedskuQueryResult struct {
+// AlibabaservicecenterworkcardrelatedskuqueryResult 结构体
+type AlibabaservicecenterworkcardrelatedskuqueryResult struct {
 	// 服务项信息
 	Values []Value `json:"values,omitempty" xml:"values>value,omitempty"`
 	// 错误码

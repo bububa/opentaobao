@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIResponse 仓站（网格仓自提点）关系查询 API返回值
+// WdklogisticnetworkwarehousedeliveryrelationqueryAPIResponse 仓站（网格仓自提点）关系查询 API返回值
 // wdk.logistic.network.warehouse.delivery.relation.query
 //
 // 盒马集市，仓站（网格仓自提点）关系查询
-type WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIResponse struct {
+type WdklogisticnetworkwarehousedeliveryrelationqueryAPIResponse struct {
 	model.CommonResponse
-	WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIResponseModel
+	WdklogisticnetworkwarehousedeliveryrelationqueryAPIResponseModel
 }
 
-// WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIResponseModel is 仓站（网格仓自提点）关系查询 成功返回结果
-type WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIResponseModel struct {
+// WdklogisticnetworkwarehousedeliveryrelationqueryAPIResponseModel is 仓站（网格仓自提点）关系查询 成功返回结果
+type WdklogisticnetworkwarehousedeliveryrelationqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"wdk_logistic_network_warehouse_delivery_relation_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

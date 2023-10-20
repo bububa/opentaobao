@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDrugcodeScanAPIResponse 查询扫码信息 API返回值
+// AlibabaalihealthdrugcodescanAPIResponse 查询扫码信息 API返回值
 // alibaba.alihealth.drugcode.scan
 //
 // 查询扫码信息
-type AlibabaAlihealthDrugcodeScanAPIResponse struct {
+type AlibabaalihealthdrugcodescanAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthDrugcodeScanAPIResponseModel
+	AlibabaalihealthdrugcodescanAPIResponseModel
 }
 
-// AlibabaAlihealthDrugcodeScanAPIResponseModel is 查询扫码信息 成功返回结果
-type AlibabaAlihealthDrugcodeScanAPIResponseModel struct {
+// AlibabaalihealthdrugcodescanAPIResponseModel is 查询扫码信息 成功返回结果
+type AlibabaalihealthdrugcodescanAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drugcode_scan_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

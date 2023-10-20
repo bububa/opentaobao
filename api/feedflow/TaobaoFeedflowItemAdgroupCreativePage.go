@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/feedflow"
 )
 
-// TaobaoFeedflowItemAdgroupCreativePage 信息流单元下查看创意
+// Taobaofeedflowitemadgroupcreativepage 信息流单元下查看创意
 // taobao.feedflow.item.adgroup.creative.page
 //
 // 信息流单元下查看创意
-func TaobaoFeedflowItemAdgroupCreativePage(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupCreativePageAPIRequest, session string) (*feedflow.TaobaoFeedflowItemAdgroupCreativePageAPIResponse, error) {
-	var resp feedflow.TaobaoFeedflowItemAdgroupCreativePageAPIResponse
+func Taobaofeedflowitemadgroupcreativepage(clt *core.SDKClient, req *feedflow.TaobaofeedflowitemadgroupcreativepageAPIRequest, session string) (*feedflow.TaobaofeedflowitemadgroupcreativepageAPIResponse, error) {
+	var resp feedflow.TaobaofeedflowitemadgroupcreativepageAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

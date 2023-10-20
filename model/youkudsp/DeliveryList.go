@@ -11,7 +11,7 @@ type DeliveryList struct {
 	// 渠道id
 	ChannelId int64 `json:"channel_id,omitempty" xml:"channel_id,omitempty"`
 	// 素材信息
-	Resource *YoukuDspDeliveryResourceMultigetMap `json:"resource,omitempty" xml:"resource,omitempty"`
+	Resource *YoukudspdeliveryresourcemultigetMap `json:"resource,omitempty" xml:"resource,omitempty"`
 	// 子渠道id
 	SubChannelId int64 `json:"sub_channel_id,omitempty" xml:"sub_channel_id,omitempty"`
 }

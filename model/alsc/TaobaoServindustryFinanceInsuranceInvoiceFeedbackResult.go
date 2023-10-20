@@ -1,7 +1,7 @@
 package alsc
 
-// TaobaoServindustryFinanceInsuranceInvoiceFeedbackResult 结构体
-type TaobaoServindustryFinanceInsuranceInvoiceFeedbackResult struct {
+// TaobaoservindustryfinanceinsuranceinvoicefeedbackResult 结构体
+type TaobaoservindustryfinanceinsuranceinvoicefeedbackResult struct {
 	// 鹰眼id
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 开票结果

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mtopopen"
 )
 
-// AlibabaInteractSensorTradeBuy 手淘下单能力开放
+// Alibabainteractsensortradebuy 手淘下单能力开放
 // alibaba.interact.sensor.trade.buy
 //
 // 交易流程鉴权
-func AlibabaInteractSensorTradeBuy(clt *core.SDKClient, req *mtopopen.AlibabaInteractSensorTradeBuyAPIRequest, session string) (*mtopopen.AlibabaInteractSensorTradeBuyAPIResponse, error) {
-	var resp mtopopen.AlibabaInteractSensorTradeBuyAPIResponse
+func Alibabainteractsensortradebuy(clt *core.SDKClient, req *mtopopen.AlibabainteractsensortradebuyAPIRequest, session string) (*mtopopen.AlibabainteractsensortradebuyAPIResponse, error) {
+	var resp mtopopen.AlibabainteractsensortradebuyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

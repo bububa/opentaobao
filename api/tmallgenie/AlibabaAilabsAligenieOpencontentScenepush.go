@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallgenie"
 )
 
-// AlibabaAilabsAligenieOpencontentScenepush 音频场景接入接口
+// Alibabaailabsaligenieopencontentscenepush 音频场景接入接口
 // alibaba.ailabs.aligenie.opencontent.scenepush
 //
 // 天猫精灵音频挂靠场景接入
-func AlibabaAilabsAligenieOpencontentScenepush(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieOpencontentScenepushAPIRequest, session string) (*tmallgenie.AlibabaAilabsAligenieOpencontentScenepushAPIResponse, error) {
-	var resp tmallgenie.AlibabaAilabsAligenieOpencontentScenepushAPIResponse
+func Alibabaailabsaligenieopencontentscenepush(clt *core.SDKClient, req *tmallgenie.AlibabaailabsaligenieopencontentscenepushAPIRequest, session string) (*tmallgenie.AlibabaailabsaligenieopencontentscenepushAPIResponse, error) {
+	var resp tmallgenie.AlibabaailabsaligenieopencontentscenepushAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

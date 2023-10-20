@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
 
-// AlitripMerchantGalaxyWechatDataLotteryQuery 抽奖用户名单查询接口
+// Alitripmerchantgalaxywechatdatalotteryquery 抽奖用户名单查询接口
 // alitrip.merchant.galaxy.wechat.data.lottery.query
 //
 // 抽奖用户名单查询接口
-func AlitripMerchantGalaxyWechatDataLotteryQuery(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyWechatDataLotteryQueryAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyWechatDataLotteryQueryAPIResponse
+func Alitripmerchantgalaxywechatdatalotteryquery(clt *core.SDKClient, req *alitripmerchant.AlitripmerchantgalaxywechatdatalotteryqueryAPIRequest, session string) (*alitripmerchant.AlitripmerchantgalaxywechatdatalotteryqueryAPIResponse, error) {
+	var resp alitripmerchant.AlitripmerchantgalaxywechatdatalotteryqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

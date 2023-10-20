@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoMessageaccountMesssageNormalSendAPIResponse 下行普通消息 API返回值
+// TaobaomessageaccountmesssagenormalsendAPIResponse 下行普通消息 API返回值
 // taobao.messageaccount.messsage.normal.send
 //
 // 消息号下行单个普通消息
-type TaobaoMessageaccountMesssageNormalSendAPIResponse struct {
+type TaobaomessageaccountmesssagenormalsendAPIResponse struct {
 	model.CommonResponse
-	TaobaoMessageaccountMesssageNormalSendAPIResponseModel
+	TaobaomessageaccountmesssagenormalsendAPIResponseModel
 }
 
-// TaobaoMessageaccountMesssageNormalSendAPIResponseModel is 下行普通消息 成功返回结果
-type TaobaoMessageaccountMesssageNormalSendAPIResponseModel struct {
+// TaobaomessageaccountmesssagenormalsendAPIResponseModel is 下行普通消息 成功返回结果
+type TaobaomessageaccountmesssagenormalsendAPIResponseModel struct {
 	XMLName xml.Name `xml:"messageaccount_messsage_normal_send_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

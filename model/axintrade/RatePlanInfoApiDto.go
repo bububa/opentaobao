@@ -25,7 +25,7 @@ type RatePlanInfoApiDto struct {
 	// 人民币总金额
 	CnyTotalPrice int64 `json:"cny_total_price,omitempty" xml:"cny_total_price,omitempty"`
 	// 汇率
-	ExchangeRate *BigDecimal `json:"exchange_rate,omitempty" xml:"exchange_rate,omitempty"`
+	ExchangeRate float64 `json:"exchange_rate,omitempty" xml:"exchange_rate,omitempty"`
 	// 0-全日房, 1-小时房
 	RpType int64 `json:"rp_type,omitempty" xml:"rp_type,omitempty"`
 	// 小时房到店时间&amp;连住时长

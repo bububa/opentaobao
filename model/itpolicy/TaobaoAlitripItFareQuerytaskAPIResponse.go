@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripItFareQuerytaskAPIResponse 【国际机票自有政策】批量操作结果查询 API返回值
+// TaobaoalitripitfarequerytaskAPIResponse 【国际机票自有政策】批量操作结果查询 API返回值
 // taobao.alitrip.it.fare.querytask
 //
 // 批量操作同步返回任务id，后台生成异步任务，通过此接口查询批量操作的执行结果
-type TaobaoAlitripItFareQuerytaskAPIResponse struct {
+type TaobaoalitripitfarequerytaskAPIResponse struct {
 	model.CommonResponse
-	TaobaoAlitripItFareQuerytaskAPIResponseModel
+	TaobaoalitripitfarequerytaskAPIResponseModel
 }
 
-// TaobaoAlitripItFareQuerytaskAPIResponseModel is 【国际机票自有政策】批量操作结果查询 成功返回结果
-type TaobaoAlitripItFareQuerytaskAPIResponseModel struct {
+// TaobaoalitripitfarequerytaskAPIResponseModel is 【国际机票自有政策】批量操作结果查询 成功返回结果
+type TaobaoalitripitfarequerytaskAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_it_fare_querytask_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

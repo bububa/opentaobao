@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaTmallgenieScpPlanNetdemandUploadAPIResponse 23-Net Demand净需求回传 API返回值
+// AlibabatmallgeniescpplannetdemanduploadAPIResponse 23-Net Demand净需求回传 API返回值
 // alibaba.tmallgenie.scp.plan.netdemand.upload
 //
 // Net Demand净需求回传
-type AlibabaTmallgenieScpPlanNetdemandUploadAPIResponse struct {
+type AlibabatmallgeniescpplannetdemanduploadAPIResponse struct {
 	model.CommonResponse
-	AlibabaTmallgenieScpPlanNetdemandUploadAPIResponseModel
+	AlibabatmallgeniescpplannetdemanduploadAPIResponseModel
 }
 
-// AlibabaTmallgenieScpPlanNetdemandUploadAPIResponseModel is 23-Net Demand净需求回传 成功返回结果
-type AlibabaTmallgenieScpPlanNetdemandUploadAPIResponseModel struct {
+// AlibabatmallgeniescpplannetdemanduploadAPIResponseModel is 23-Net Demand净需求回传 成功返回结果
+type AlibabatmallgeniescpplannetdemanduploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tmallgenie_scp_plan_netdemand_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

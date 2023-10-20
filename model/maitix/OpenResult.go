@@ -13,7 +13,7 @@ type OpenResult struct {
 	// 参数extMap
 	ExtMap string `json:"ext_map,omitempty" xml:"ext_map,omitempty"`
 	// 返回结果
-	Model *DisEncrypt4CmbResult `json:"model,omitempty" xml:"model,omitempty"`
+	Model *DisEncrypt4cmbResult `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

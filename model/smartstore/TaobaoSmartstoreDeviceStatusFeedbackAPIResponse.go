@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSmartstoreDeviceStatusFeedbackAPIResponse 设备在线状态回流 API返回值
+// TaobaosmartstoredevicestatusfeedbackAPIResponse 设备在线状态回流 API返回值
 // taobao.smartstore.device.status.feedback
 //
 // 智能硬件设备状态回流
-type TaobaoSmartstoreDeviceStatusFeedbackAPIResponse struct {
+type TaobaosmartstoredevicestatusfeedbackAPIResponse struct {
 	model.CommonResponse
-	TaobaoSmartstoreDeviceStatusFeedbackAPIResponseModel
+	TaobaosmartstoredevicestatusfeedbackAPIResponseModel
 }
 
-// TaobaoSmartstoreDeviceStatusFeedbackAPIResponseModel is 设备在线状态回流 成功返回结果
-type TaobaoSmartstoreDeviceStatusFeedbackAPIResponseModel struct {
+// TaobaosmartstoredevicestatusfeedbackAPIResponseModel is 设备在线状态回流 成功返回结果
+type TaobaosmartstoredevicestatusfeedbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"smartstore_device_status_feedback_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIResponse 短链接口 API返回值
+// AlibabaalscgrowthinteractivelinkgenshortlinkAPIResponse 短链接口 API返回值
 // alibaba.alsc.growth.interactive.link.genshortlink
 //
 // 短链接口
-type AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIResponse struct {
+type AlibabaalscgrowthinteractivelinkgenshortlinkAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIResponseModel
+	AlibabaalscgrowthinteractivelinkgenshortlinkAPIResponseModel
 }
 
-// AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIResponseModel is 短链接口 成功返回结果
-type AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIResponseModel struct {
+// AlibabaalscgrowthinteractivelinkgenshortlinkAPIResponseModel is 短链接口 成功返回结果
+type AlibabaalscgrowthinteractivelinkgenshortlinkAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_growth_interactive_link_genshortlink_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

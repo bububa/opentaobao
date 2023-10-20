@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaKeywordFindbyadgroupidAPIResponse 根据推广单元id获取关键词 API返回值
+// TaobaosimbakeywordfindbyadgroupidAPIResponse 根据推广单元id获取关键词 API返回值
 // taobao.simba.keyword.findbyadgroupid
 //
 // 根据一个关键词Id列表取得一组关键词
-type TaobaoSimbaKeywordFindbyadgroupidAPIResponse struct {
+type TaobaosimbakeywordfindbyadgroupidAPIResponse struct {
 	model.CommonResponse
-	TaobaoSimbaKeywordFindbyadgroupidAPIResponseModel
+	TaobaosimbakeywordfindbyadgroupidAPIResponseModel
 }
 
-// TaobaoSimbaKeywordFindbyadgroupidAPIResponseModel is 根据推广单元id获取关键词 成功返回结果
-type TaobaoSimbaKeywordFindbyadgroupidAPIResponseModel struct {
+// TaobaosimbakeywordfindbyadgroupidAPIResponseModel is 根据推广单元id获取关键词 成功返回结果
+type TaobaosimbakeywordfindbyadgroupidAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_keyword_findbyadgroupid_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

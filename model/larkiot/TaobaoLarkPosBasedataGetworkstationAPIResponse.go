@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoLarkPosBasedataGetworkstationAPIResponse 根据影城id工作站和macId获取工作站 API返回值
+// TaobaolarkposbasedatagetworkstationAPIResponse 根据影城id工作站和macId获取工作站 API返回值
 // taobao.lark.pos.basedata.getworkstation
 //
 // 获取单独工作站
-type TaobaoLarkPosBasedataGetworkstationAPIResponse struct {
+type TaobaolarkposbasedatagetworkstationAPIResponse struct {
 	model.CommonResponse
-	TaobaoLarkPosBasedataGetworkstationAPIResponseModel
+	TaobaolarkposbasedatagetworkstationAPIResponseModel
 }
 
-// TaobaoLarkPosBasedataGetworkstationAPIResponseModel is 根据影城id工作站和macId获取工作站 成功返回结果
-type TaobaoLarkPosBasedataGetworkstationAPIResponseModel struct {
+// TaobaolarkposbasedatagetworkstationAPIResponseModel is 根据影城id工作站和macId获取工作站 成功返回结果
+type TaobaolarkposbasedatagetworkstationAPIResponseModel struct {
 	XMLName xml.Name `xml:"lark_pos_basedata_getworkstation_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

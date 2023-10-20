@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallServicecenterWorkcardReassignResult 结构体
-type TmallServicecenterWorkcardReassignResult struct {
+// TmallservicecenterworkcardreassignResult 结构体
+type TmallservicecenterworkcardreassignResult struct {
 	// 错误码
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 错误信息

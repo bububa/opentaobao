@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelOrderOfficialPrecheckAPIResponse 官网信用住用户资格预校验接口 API返回值
+// TaobaoxhotelorderofficialprecheckAPIResponse 官网信用住用户资格预校验接口 API返回值
 // taobao.xhotel.order.official.precheck
 //
 // 官网信用住用户资格预校验接口是在订单创建之前，根据入住人身份信息对其做预先校验是否具有信用住资格。可以优化用户预定体验，对于无资格的用户在预定前即不可进行信用住的选择。减少在提交预定后预定失败体验。该接口为可选对接接口，商家可根据实际情况自行决定是否对接。
@@ -14,13 +14,13 @@ import (
 // 接口使用场景
 //
 // 提交订单前的预定人信用住资格预先校验，卖家可决定是否在搜索，预订页，补全身份信息时进行调用，以便决定信用住是否提供给用户
-type TaobaoXhotelOrderOfficialPrecheckAPIResponse struct {
+type TaobaoxhotelorderofficialprecheckAPIResponse struct {
 	model.CommonResponse
-	TaobaoXhotelOrderOfficialPrecheckAPIResponseModel
+	TaobaoxhotelorderofficialprecheckAPIResponseModel
 }
 
-// TaobaoXhotelOrderOfficialPrecheckAPIResponseModel is 官网信用住用户资格预校验接口 成功返回结果
-type TaobaoXhotelOrderOfficialPrecheckAPIResponseModel struct {
+// TaobaoxhotelorderofficialprecheckAPIResponseModel is 官网信用住用户资格预校验接口 成功返回结果
+type TaobaoxhotelorderofficialprecheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_official_precheck_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

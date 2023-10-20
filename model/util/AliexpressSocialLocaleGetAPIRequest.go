@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressSocialLocaleGetAPIRequest Locale获取接口 API请求
+// AliexpresssociallocalegetAPIRequest Locale获取接口 API请求
 // aliexpress.social.locale.get
 //
 // 新增Locale获取接口
-type AliexpressSocialLocaleGetAPIRequest struct {
+type AliexpresssociallocalegetAPIRequest struct {
 	model.Params
 }
 
-// NewAliexpressSocialLocaleGetRequest 初始化AliexpressSocialLocaleGetAPIRequest对象
-func NewAliexpressSocialLocaleGetRequest() *AliexpressSocialLocaleGetAPIRequest {
-	return &AliexpressSocialLocaleGetAPIRequest{
+// NewAliexpresssociallocalegetRequest 初始化AliexpresssociallocalegetAPIRequest对象
+func NewAliexpresssociallocalegetRequest() *AliexpresssociallocalegetAPIRequest {
+	return &AliexpresssociallocalegetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AliexpressSocialLocaleGetAPIRequest) GetApiMethodName() string {
+func (r AliexpresssociallocalegetAPIRequest) GetApiMethodName() string {
 	return "aliexpress.social.locale.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpressSocialLocaleGetAPIRequest) GetApiParams(params url.Values) {
+func (r AliexpresssociallocalegetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AliexpressSocialLocaleGetAPIRequest) GetRawParams() model.Params {
+func (r AliexpresssociallocalegetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

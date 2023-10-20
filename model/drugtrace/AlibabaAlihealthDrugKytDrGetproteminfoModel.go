@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaAlihealthDrugKytDrGetproteminfoModel 结构体
-type AlibabaAlihealthDrugKytDrGetproteminfoModel struct {
+// AlibabaalihealthdrugkytdrgetproteminfoModel 结构体
+type AlibabaalihealthdrugkytdrgetproteminfoModel struct {
 	// 存储温度
 	StorageTemperatureList []StorageTemperatureList `json:"storage_temperature_list,omitempty" xml:"storage_temperature_list>storage_temperature_list,omitempty"`
 	// 运输温度

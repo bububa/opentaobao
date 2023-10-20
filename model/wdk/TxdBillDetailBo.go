@@ -51,13 +51,13 @@ type TxdBillDetailBo struct {
 	// 结算公司名称
 	SrcSettleCompanyName string `json:"src_settle_company_name,omitempty" xml:"src_settle_company_name,omitempty"`
 	// 平台红包补贴
-	PlatformVoucherSubsidyFee *BigDecimal `json:"platform_voucher_subsidy_fee,omitempty" xml:"platform_voucher_subsidy_fee,omitempty"`
+	PlatformVoucherSubsidyFee float64 `json:"platform_voucher_subsidy_fee,omitempty" xml:"platform_voucher_subsidy_fee,omitempty"`
 	// 商家承担红包补贴费用
-	MerchantVoucherSubsidyFee *BigDecimal `json:"merchant_voucher_subsidy_fee,omitempty" xml:"merchant_voucher_subsidy_fee,omitempty"`
+	MerchantVoucherSubsidyFee float64 `json:"merchant_voucher_subsidy_fee,omitempty" xml:"merchant_voucher_subsidy_fee,omitempty"`
 	// 商家配送费补贴
-	MerchantSendSubsidyFee *BigDecimal `json:"merchant_send_subsidy_fee,omitempty" xml:"merchant_send_subsidy_fee,omitempty"`
+	MerchantSendSubsidyFee float64 `json:"merchant_send_subsidy_fee,omitempty" xml:"merchant_send_subsidy_fee,omitempty"`
 	// 渠道配送费补贴
-	PlatSendSubsidyFee *BigDecimal `json:"plat_send_subsidy_fee,omitempty" xml:"plat_send_subsidy_fee,omitempty"`
+	PlatSendSubsidyFee float64 `json:"plat_send_subsidy_fee,omitempty" xml:"plat_send_subsidy_fee,omitempty"`
 	// 申诉赔付金
-	DisputeFee *BigDecimal `json:"dispute_fee,omitempty" xml:"dispute_fee,omitempty"`
+	DisputeFee float64 `json:"dispute_fee,omitempty" xml:"dispute_fee,omitempty"`
 }

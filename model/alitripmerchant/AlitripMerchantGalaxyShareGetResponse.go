@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripMerchantGalaxyShareGetResponse 结构体
-type AlitripMerchantGalaxyShareGetResponse struct {
+// AlitripmerchantgalaxysharegetResponse 结构体
+type AlitripmerchantgalaxysharegetResponse struct {
 	// 错误编码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误描述

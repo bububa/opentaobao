@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/perfect"
 )
 
-// AlibabaPerfectPerformanceItemQuery 商品完美履约信息查询
+// Alibabaperfectperformanceitemquery 商品完美履约信息查询
 // alibaba.perfect.performance.item.query
 //
 // 同城零售商品完美履约信息查询
-func AlibabaPerfectPerformanceItemQuery(clt *core.SDKClient, req *perfect.AlibabaPerfectPerformanceItemQueryAPIRequest, session string) (*perfect.AlibabaPerfectPerformanceItemQueryAPIResponse, error) {
-	var resp perfect.AlibabaPerfectPerformanceItemQueryAPIResponse
+func Alibabaperfectperformanceitemquery(clt *core.SDKClient, req *perfect.AlibabaperfectperformanceitemqueryAPIRequest, session string) (*perfect.AlibabaperfectperformanceitemqueryAPIResponse, error) {
+	var resp perfect.AlibabaperfectperformanceitemqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

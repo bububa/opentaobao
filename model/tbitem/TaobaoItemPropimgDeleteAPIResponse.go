@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoItemPropimgDeleteAPIResponse 删除属性图片 API返回值
+// TaobaoitempropimgdeleteAPIResponse 删除属性图片 API返回值
 // taobao.item.propimg.delete
 //
 // 删除propimg_id 所指定的商品属性图片 &lt;br/&gt;传入的num_iid所对应的商品必须属于当前会话的用户 &lt;br/&gt;propimg_id对应的属性图片需要属于num_iid对应的商品
-type TaobaoItemPropimgDeleteAPIResponse struct {
+type TaobaoitempropimgdeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoItemPropimgDeleteAPIResponseModel
+	TaobaoitempropimgdeleteAPIResponseModel
 }
 
-// TaobaoItemPropimgDeleteAPIResponseModel is 删除属性图片 成功返回结果
-type TaobaoItemPropimgDeleteAPIResponseModel struct {
+// TaobaoitempropimgdeleteAPIResponseModel is 删除属性图片 成功返回结果
+type TaobaoitempropimgdeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"item_propimg_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

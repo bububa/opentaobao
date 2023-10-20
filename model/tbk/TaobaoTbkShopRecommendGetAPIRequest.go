@@ -19,7 +19,7 @@ type TaobaotbkshoprecommendgetAPIRequest struct {
 	// 链接形式：1：PC，2：无线，默认：１
 	_platform int64
 	// 卖家Id
-	_userid int64
+	_userId int64
 }
 
 // NewTaobaotbkshoprecommendgetRequest 初始化TaobaotbkshoprecommendgetAPIRequest对象
@@ -85,15 +85,15 @@ func (r TaobaotbkshoprecommendgetAPIRequest) GetPlatform() int64 {
 	return r._platform
 }
 
-// SetUserid is Userid Setter
+// SetUserId is UserId Setter
 // 卖家Id
-func (r *TaobaotbkshoprecommendgetAPIRequest) SetUserid(_userid int64) error {
-	r._userid = _userid
-	r.Set("user_id", _userid)
+func (r *TaobaotbkshoprecommendgetAPIRequest) SetUserId(_userId int64) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
 	return nil
 }
 
-// GetUserid Userid Getter
-func (r TaobaotbkshoprecommendgetAPIRequest) GetUserid() int64 {
-	return r._userid
+// GetUserId UserId Getter
+func (r TaobaotbkshoprecommendgetAPIRequest) GetUserId() int64 {
+	return r._userId
 }

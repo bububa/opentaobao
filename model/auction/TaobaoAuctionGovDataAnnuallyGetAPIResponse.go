@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAuctionGovDataAnnuallyGetAPIResponse 按年统计法院拍卖数据 API返回值
+// TaobaoauctiongovdataannuallygetAPIResponse 按年统计法院拍卖数据 API返回值
 // taobao.auction.gov.data.annually.get
 //
 // 按月统计法院拍卖数据 包含：
@@ -15,13 +15,13 @@ import (
 // 在线标的：在线标的件数、意向用户数、网拍围观人次
 //
 // 最长6年，年起始时间2017年
-type TaobaoAuctionGovDataAnnuallyGetAPIResponse struct {
+type TaobaoauctiongovdataannuallygetAPIResponse struct {
 	model.CommonResponse
-	TaobaoAuctionGovDataAnnuallyGetAPIResponseModel
+	TaobaoauctiongovdataannuallygetAPIResponseModel
 }
 
-// TaobaoAuctionGovDataAnnuallyGetAPIResponseModel is 按年统计法院拍卖数据 成功返回结果
-type TaobaoAuctionGovDataAnnuallyGetAPIResponseModel struct {
+// TaobaoauctiongovdataannuallygetAPIResponseModel is 按年统计法院拍卖数据 成功返回结果
+type TaobaoauctiongovdataannuallygetAPIResponseModel struct {
 	XMLName xml.Name `xml:"auction_gov_data_annually_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

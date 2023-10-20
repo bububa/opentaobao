@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/maitix"
 )
 
-// AlibabaDamaiMaitixDistributionDeliveryCalculate 计算渠道用户下单快递费
+// Alibabadamaimaitixdistributiondeliverycalculate 计算渠道用户下单快递费
 // alibaba.damai.maitix.distribution.delivery.calculate
 //
 // 计算渠道用户下单快递费
-func AlibabaDamaiMaitixDistributionDeliveryCalculate(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest, session string) (*maitix.AlibabaDamaiMaitixDistributionDeliveryCalculateAPIResponse, error) {
-	var resp maitix.AlibabaDamaiMaitixDistributionDeliveryCalculateAPIResponse
+func Alibabadamaimaitixdistributiondeliverycalculate(clt *core.SDKClient, req *maitix.AlibabadamaimaitixdistributiondeliverycalculateAPIRequest, session string) (*maitix.AlibabadamaimaitixdistributiondeliverycalculateAPIResponse, error) {
+	var resp maitix.AlibabadamaimaitixdistributiondeliverycalculateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

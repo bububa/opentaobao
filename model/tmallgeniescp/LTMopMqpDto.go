@@ -1,7 +1,7 @@
 package tmallgeniescp
 
-// LTMopMqpDto 结构体
-type LTMopMqpDto struct {
+// LtmopMqpDto 结构体
+type LtmopMqpDto struct {
 	// 供应商编码
 	LocationCode string `json:"location_code,omitempty" xml:"location_code,omitempty"`
 	// 物料编码

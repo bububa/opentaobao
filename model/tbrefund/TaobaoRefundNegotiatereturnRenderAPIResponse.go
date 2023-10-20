@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoRefundNegotiatereturnRenderAPIResponse 协商退货退款渲染 API返回值
+// TaobaorefundnegotiatereturnrenderAPIResponse 协商退货退款渲染 API返回值
 // taobao.refund.negotiatereturn.render
 //
 // 协商退货退款渲染
-type TaobaoRefundNegotiatereturnRenderAPIResponse struct {
+type TaobaorefundnegotiatereturnrenderAPIResponse struct {
 	model.CommonResponse
-	TaobaoRefundNegotiatereturnRenderAPIResponseModel
+	TaobaorefundnegotiatereturnrenderAPIResponseModel
 }
 
-// TaobaoRefundNegotiatereturnRenderAPIResponseModel is 协商退货退款渲染 成功返回结果
-type TaobaoRefundNegotiatereturnRenderAPIResponseModel struct {
+// TaobaorefundnegotiatereturnrenderAPIResponseModel is 协商退货退款渲染 成功返回结果
+type TaobaorefundnegotiatereturnrenderAPIResponseModel struct {
 	XMLName xml.Name `xml:"refund_negotiatereturn_render_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

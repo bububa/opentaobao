@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaPerfectPerformanceLocalitemEditAPIResponse 同城购定制发品编辑 API返回值
+// AlibabaperfectperformancelocalitemeditAPIResponse 同城购定制发品编辑 API返回值
 // alibaba.perfect.performance.localitem.edit
 //
 // 同城购业务定制化发品接口，同城购业务线专用
-type AlibabaPerfectPerformanceLocalitemEditAPIResponse struct {
+type AlibabaperfectperformancelocalitemeditAPIResponse struct {
 	model.CommonResponse
-	AlibabaPerfectPerformanceLocalitemEditAPIResponseModel
+	AlibabaperfectperformancelocalitemeditAPIResponseModel
 }
 
-// AlibabaPerfectPerformanceLocalitemEditAPIResponseModel is 同城购定制发品编辑 成功返回结果
-type AlibabaPerfectPerformanceLocalitemEditAPIResponseModel struct {
+// AlibabaperfectperformancelocalitemeditAPIResponseModel is 同城购定制发品编辑 成功返回结果
+type AlibabaperfectperformancelocalitemeditAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_perfect_performance_localitem_edit_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

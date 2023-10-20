@@ -1,7 +1,7 @@
 package mos
 
-// AlibabaMosOnsiteTradeIsnewpayorderResultDo 结构体
-type AlibabaMosOnsiteTradeIsnewpayorderResultDo struct {
+// AlibabamosonsitetradeisnewpayorderResultDo 结构体
+type AlibabamosonsitetradeisnewpayorderResultDo struct {
 	// errMsg
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// errCode

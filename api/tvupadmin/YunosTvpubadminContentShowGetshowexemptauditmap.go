@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-// YunosTvpubadminContentShowGetshowexemptauditmap 迎客松批量查询节目某个牌照的免审状态
+// Yunostvpubadmincontentshowgetshowexemptauditmap 迎客松批量查询节目某个牌照的免审状态
 // yunos.tvpubadmin.content.show.getshowexemptauditmap
 //
 // 迎客松批量查询节目某个牌照的免审状态
-func YunosTvpubadminContentShowGetshowexemptauditmap(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentShowGetshowexemptauditmapAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminContentShowGetshowexemptauditmapAPIResponse
+func Yunostvpubadmincontentshowgetshowexemptauditmap(clt *core.SDKClient, req *tvupadmin.YunostvpubadmincontentshowgetshowexemptauditmapAPIRequest, session string) (*tvupadmin.YunostvpubadmincontentshowgetshowexemptauditmapAPIResponse, error) {
+	var resp tvupadmin.YunostvpubadmincontentshowgetshowexemptauditmapAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

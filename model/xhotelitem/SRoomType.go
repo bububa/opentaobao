@@ -1,7 +1,7 @@
 package xhotelitem
 
-// SRoomType 结构体
-type SRoomType struct {
+// SroomType 结构体
+type SroomType struct {
 	// 房型名
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 楼层

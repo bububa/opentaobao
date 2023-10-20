@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaAxChannelSkuStatusUpdateApiResult 结构体
-type AlibabaAxChannelSkuStatusUpdateApiResult struct {
+// AlibabaaxchannelskustatusupdateApiResult 结构体
+type AlibabaaxchannelskustatusupdateApiResult struct {
 	// 调用接口返回错误信息
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 调用接口返回错误bian ma

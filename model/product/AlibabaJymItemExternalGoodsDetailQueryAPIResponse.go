@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaJymItemExternalGoodsDetailQueryAPIResponse 交易猫外部商家商品详情查询接口 API返回值
+// AlibabajymitemexternalgoodsdetailqueryAPIResponse 交易猫外部商家商品详情查询接口 API返回值
 // alibaba.jym.item.external.goods.detail.query
 //
 // 供外部B端商家接入，请求查询商品详情，返回商品详情查询结果
-type AlibabaJymItemExternalGoodsDetailQueryAPIResponse struct {
+type AlibabajymitemexternalgoodsdetailqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaJymItemExternalGoodsDetailQueryAPIResponseModel
+	AlibabajymitemexternalgoodsdetailqueryAPIResponseModel
 }
 
-// AlibabaJymItemExternalGoodsDetailQueryAPIResponseModel is 交易猫外部商家商品详情查询接口 成功返回结果
-type AlibabaJymItemExternalGoodsDetailQueryAPIResponseModel struct {
+// AlibabajymitemexternalgoodsdetailqueryAPIResponseModel is 交易猫外部商家商品详情查询接口 成功返回结果
+type AlibabajymitemexternalgoodsdetailqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_item_external_goods_detail_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

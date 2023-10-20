@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOnebpDkxReportReportCampaignOfflineAPIRequest 查询某计划离线列表 API请求
+// TaobaoonebpdkxreportreportcampaignofflineAPIRequest 查询某计划离线列表 API请求
 // taobao.onebp.dkx.report.report.campaign.offline
 //
 // 查询某计划离线列表；
@@ -15,7 +15,7 @@ import (
 // 入参2示例：{&#34;launch_product_id_list&#34;:[101004013],&#34;start_time&#34;:&#34;2021-04-26&#34;,&#34;campaign_id_list&#34;:[134821085],&#34;end_time&#34;:&#34;2021-04-28&#34;,&#34;effect&#34;:15,}
 // 非拓展流量查询：
 // 入参2示例：{&#34;start_time&#34;:&#34;2021-09-08&#34;,&#34;campaign_id_list&#34;:[2821811599],&#34;end_time&#34;:&#34;2021-09-08&#34;,&#34;effect&#34;:15}
-type TaobaoOnebpDkxReportReportCampaignOfflineAPIRequest struct {
+type TaobaoonebpdkxreportreportcampaignofflineAPIRequest struct {
 	model.Params
 	// 请求体
 	_apiServiceContext *ApiServiceContext
@@ -23,52 +23,52 @@ type TaobaoOnebpDkxReportReportCampaignOfflineAPIRequest struct {
 	_reportQuery *ReportQueryTopDto
 }
 
-// NewTaobaoOnebpDkxReportReportCampaignOfflineRequest 初始化TaobaoOnebpDkxReportReportCampaignOfflineAPIRequest对象
-func NewTaobaoOnebpDkxReportReportCampaignOfflineRequest() *TaobaoOnebpDkxReportReportCampaignOfflineAPIRequest {
-	return &TaobaoOnebpDkxReportReportCampaignOfflineAPIRequest{
+// NewTaobaoonebpdkxreportreportcampaignofflineRequest 初始化TaobaoonebpdkxreportreportcampaignofflineAPIRequest对象
+func NewTaobaoonebpdkxreportreportcampaignofflineRequest() *TaobaoonebpdkxreportreportcampaignofflineAPIRequest {
+	return &TaobaoonebpdkxreportreportcampaignofflineAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoOnebpDkxReportReportCampaignOfflineAPIRequest) GetApiMethodName() string {
+func (r TaobaoonebpdkxreportreportcampaignofflineAPIRequest) GetApiMethodName() string {
 	return "taobao.onebp.dkx.report.report.campaign.offline"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOnebpDkxReportReportCampaignOfflineAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoonebpdkxreportreportcampaignofflineAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoOnebpDkxReportReportCampaignOfflineAPIRequest) GetRawParams() model.Params {
+func (r TaobaoonebpdkxreportreportcampaignofflineAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetApiServiceContext is ApiServiceContext Setter
 // 请求体
-func (r *TaobaoOnebpDkxReportReportCampaignOfflineAPIRequest) SetApiServiceContext(_apiServiceContext *ApiServiceContext) error {
+func (r *TaobaoonebpdkxreportreportcampaignofflineAPIRequest) SetApiServiceContext(_apiServiceContext *ApiServiceContext) error {
 	r._apiServiceContext = _apiServiceContext
 	r.Set("api_service_context", _apiServiceContext)
 	return nil
 }
 
 // GetApiServiceContext ApiServiceContext Getter
-func (r TaobaoOnebpDkxReportReportCampaignOfflineAPIRequest) GetApiServiceContext() *ApiServiceContext {
+func (r TaobaoonebpdkxreportreportcampaignofflineAPIRequest) GetApiServiceContext() *ApiServiceContext {
 	return r._apiServiceContext
 }
 
 // SetReportQuery is ReportQuery Setter
 // 报表查询参数
-func (r *TaobaoOnebpDkxReportReportCampaignOfflineAPIRequest) SetReportQuery(_reportQuery *ReportQueryTopDto) error {
+func (r *TaobaoonebpdkxreportreportcampaignofflineAPIRequest) SetReportQuery(_reportQuery *ReportQueryTopDto) error {
 	r._reportQuery = _reportQuery
 	r.Set("report_query", _reportQuery)
 	return nil
 }
 
 // GetReportQuery ReportQuery Getter
-func (r TaobaoOnebpDkxReportReportCampaignOfflineAPIRequest) GetReportQuery() *ReportQueryTopDto {
+func (r TaobaoonebpdkxreportreportcampaignofflineAPIRequest) GetReportQuery() *ReportQueryTopDto {
 	return r._reportQuery
 }

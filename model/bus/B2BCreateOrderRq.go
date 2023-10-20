@@ -1,13 +1,13 @@
 package bus
 
-// B2BCreateOrderRq 结构体
-type B2BCreateOrderRq struct {
+// B2bcreateOrderRq 结构体
+type B2bcreateOrderRq struct {
 	// 乘客信息
 	Passengers []PassengerVo `json:"passengers,omitempty" xml:"passengers>passenger_vo,omitempty"`
 	// 取票人
-	B2BFetchHolderInfo *B2BFetchHolderInfo `json:"b2_b_fetch_holder_info,omitempty" xml:"b2_b_fetch_holder_info,omitempty"`
+	B2BFetchHolderInfo *B2bfetchHolderInfo `json:"b2_b_fetch_holder_info,omitempty" xml:"b2_b_fetch_holder_info,omitempty"`
 	// 车次信息
-	B2bBusLineInfo *B2BBusLineInfo `json:"b2b_bus_line_info,omitempty" xml:"b2b_bus_line_info,omitempty"`
+	B2bBusLineInfo *B2bbusLineInfo `json:"b2b_bus_line_info,omitempty" xml:"b2b_bus_line_info,omitempty"`
 	// 票数
 	TicketCount int64 `json:"ticket_count,omitempty" xml:"ticket_count,omitempty"`
 	// 总价

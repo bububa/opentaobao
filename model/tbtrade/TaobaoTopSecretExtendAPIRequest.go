@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTopSecretExtendAPIRequest 虚拟号延期 API请求
+// TaobaotopsecretextendAPIRequest 虚拟号延期 API请求
 // taobao.top.secret.extend
 //
 // 虚拟号延期
-type TaobaoTopSecretExtendAPIRequest struct {
+type TaobaotopsecretextendAPIRequest struct {
 	model.Params
 	// 虚拟号延期请求
 	_extendRequest *SecretNoExtendRequest
 }
 
-// NewTaobaoTopSecretExtendRequest 初始化TaobaoTopSecretExtendAPIRequest对象
-func NewTaobaoTopSecretExtendRequest() *TaobaoTopSecretExtendAPIRequest {
-	return &TaobaoTopSecretExtendAPIRequest{
+// NewTaobaotopsecretextendRequest 初始化TaobaotopsecretextendAPIRequest对象
+func NewTaobaotopsecretextendRequest() *TaobaotopsecretextendAPIRequest {
+	return &TaobaotopsecretextendAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTopSecretExtendAPIRequest) GetApiMethodName() string {
+func (r TaobaotopsecretextendAPIRequest) GetApiMethodName() string {
 	return "taobao.top.secret.extend"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTopSecretExtendAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotopsecretextendAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTopSecretExtendAPIRequest) GetRawParams() model.Params {
+func (r TaobaotopsecretextendAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetExtendRequest is ExtendRequest Setter
 // 虚拟号延期请求
-func (r *TaobaoTopSecretExtendAPIRequest) SetExtendRequest(_extendRequest *SecretNoExtendRequest) error {
+func (r *TaobaotopsecretextendAPIRequest) SetExtendRequest(_extendRequest *SecretNoExtendRequest) error {
 	r._extendRequest = _extendRequest
 	r.Set("extend_request", _extendRequest)
 	return nil
 }
 
 // GetExtendRequest ExtendRequest Getter
-func (r TaobaoTopSecretExtendAPIRequest) GetExtendRequest() *SecretNoExtendRequest {
+func (r TaobaotopsecretextendAPIRequest) GetExtendRequest() *SecretNoExtendRequest {
 	return r._extendRequest
 }

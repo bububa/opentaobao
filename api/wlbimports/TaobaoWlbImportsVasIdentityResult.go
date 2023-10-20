@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wlbimports"
 )
 
-// TaobaoWlbImportsVasIdentityResult 集货鉴定结果
+// Taobaowlbimportsvasidentityresult 集货鉴定结果
 // taobao.wlb.imports.vas.identity.result
 //
 // 集货鉴定结果查询
-func TaobaoWlbImportsVasIdentityResult(clt *core.SDKClient, req *wlbimports.TaobaoWlbImportsVasIdentityResultAPIRequest, session string) (*wlbimports.TaobaoWlbImportsVasIdentityResultAPIResponse, error) {
-	var resp wlbimports.TaobaoWlbImportsVasIdentityResultAPIResponse
+func Taobaowlbimportsvasidentityresult(clt *core.SDKClient, req *wlbimports.TaobaowlbimportsvasidentityresultAPIRequest, session string) (*wlbimports.TaobaowlbimportsvasidentityresultAPIResponse, error) {
+	var resp wlbimports.TaobaowlbimportsvasidentityresultAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

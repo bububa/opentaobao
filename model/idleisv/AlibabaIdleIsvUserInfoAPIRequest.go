@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIdleIsvUserInfoAPIRequest 闲鱼用户信息查询接口 API请求
+// AlibabaidleisvuserinfoAPIRequest 闲鱼用户信息查询接口 API请求
 // alibaba.idle.isv.user.info
 //
 // 闲鱼用户信息查询接口
-type AlibabaIdleIsvUserInfoAPIRequest struct {
+type AlibabaidleisvuserinfoAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaIdleIsvUserInfoRequest 初始化AlibabaIdleIsvUserInfoAPIRequest对象
-func NewAlibabaIdleIsvUserInfoRequest() *AlibabaIdleIsvUserInfoAPIRequest {
-	return &AlibabaIdleIsvUserInfoAPIRequest{
+// NewAlibabaidleisvuserinfoRequest 初始化AlibabaidleisvuserinfoAPIRequest对象
+func NewAlibabaidleisvuserinfoRequest() *AlibabaidleisvuserinfoAPIRequest {
+	return &AlibabaidleisvuserinfoAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaIdleIsvUserInfoAPIRequest) GetApiMethodName() string {
+func (r AlibabaidleisvuserinfoAPIRequest) GetApiMethodName() string {
 	return "alibaba.idle.isv.user.info"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIdleIsvUserInfoAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaidleisvuserinfoAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaIdleIsvUserInfoAPIRequest) GetRawParams() model.Params {
+func (r AlibabaidleisvuserinfoAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

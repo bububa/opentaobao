@@ -1,7 +1,7 @@
 package promotion
 
-// TaobaoCardExpandcardQueryResult 结构体
-type TaobaoCardExpandcardQueryResult struct {
+// TaobaocardexpandcardqueryResult 结构体
+type TaobaocardexpandcardqueryResult struct {
 	// 卡信息
 	Models []ExpandCardVo `json:"models,omitempty" xml:"models>expand_card_vo,omitempty"`
 	// debugInfo

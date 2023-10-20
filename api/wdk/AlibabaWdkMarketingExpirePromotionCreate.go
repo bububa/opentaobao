@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkMarketingExpirePromotionCreate 短保优惠创建
+// Alibabawdkmarketingexpirepromotioncreate 短保优惠创建
 // alibaba.wdk.marketing.expire.promotion.create
 //
 // 过期优惠优惠信息录入
-func AlibabaWdkMarketingExpirePromotionCreate(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingExpirePromotionCreateAPIRequest, session string) (*wdk.AlibabaWdkMarketingExpirePromotionCreateAPIResponse, error) {
-	var resp wdk.AlibabaWdkMarketingExpirePromotionCreateAPIResponse
+func Alibabawdkmarketingexpirepromotioncreate(clt *core.SDKClient, req *wdk.AlibabawdkmarketingexpirepromotioncreateAPIRequest, session string) (*wdk.AlibabawdkmarketingexpirepromotioncreateAPIResponse, error) {
+	var resp wdk.AlibabawdkmarketingexpirepromotioncreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

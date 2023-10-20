@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoQimenInventorySynchronizeResponse 结构体
-type TaobaoQimenInventorySynchronizeResponse struct {
+// TaobaoqimeninventorysynchronizeResponse 结构体
+type TaobaoqimeninventorysynchronizeResponse struct {
 	// 响应结果,success|failure,string (10),必填
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 	// 响应码,,string (50),

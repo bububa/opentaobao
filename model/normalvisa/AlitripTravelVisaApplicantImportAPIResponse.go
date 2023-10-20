@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripTravelVisaApplicantImportAPIResponse 签证申请人导入 API返回值
+// AlitriptravelvisaapplicantimportAPIResponse 签证申请人导入 API返回值
 // alitrip.travel.visa.applicant.import
 //
 // 签证线下申请人导入接口。供商家将线下的签证申请人信息导入，进行签证线上化办理
-type AlitripTravelVisaApplicantImportAPIResponse struct {
+type AlitriptravelvisaapplicantimportAPIResponse struct {
 	model.CommonResponse
-	AlitripTravelVisaApplicantImportAPIResponseModel
+	AlitriptravelvisaapplicantimportAPIResponseModel
 }
 
-// AlitripTravelVisaApplicantImportAPIResponseModel is 签证申请人导入 成功返回结果
-type AlitripTravelVisaApplicantImportAPIResponseModel struct {
+// AlitriptravelvisaapplicantimportAPIResponseModel is 签证申请人导入 成功返回结果
+type AlitriptravelvisaapplicantimportAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_visa_applicant_import_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

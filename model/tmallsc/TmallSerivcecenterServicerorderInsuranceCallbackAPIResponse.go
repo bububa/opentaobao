@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallSerivcecenterServicerorderInsuranceCallbackAPIResponse 服务商回传保单信息 API返回值
+// TmallserivcecenterservicerorderinsurancecallbackAPIResponse 服务商回传保单信息 API返回值
 // tmall.serivcecenter.servicerorder.insurance.callback
 //
 // 服务商回传保单信息
-type TmallSerivcecenterServicerorderInsuranceCallbackAPIResponse struct {
+type TmallserivcecenterservicerorderinsurancecallbackAPIResponse struct {
 	model.CommonResponse
-	TmallSerivcecenterServicerorderInsuranceCallbackAPIResponseModel
+	TmallserivcecenterservicerorderinsurancecallbackAPIResponseModel
 }
 
-// TmallSerivcecenterServicerorderInsuranceCallbackAPIResponseModel is 服务商回传保单信息 成功返回结果
-type TmallSerivcecenterServicerorderInsuranceCallbackAPIResponseModel struct {
+// TmallserivcecenterservicerorderinsurancecallbackAPIResponseModel is 服务商回传保单信息 成功返回结果
+type TmallserivcecenterservicerorderinsurancecallbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_serivcecenter_servicerorder_insurance_callback_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

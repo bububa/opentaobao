@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaServicecenterWorkcardServiceskuSuggestAPIResponse 服务商反馈需要履行的服务项 API返回值
+// AlibabaservicecenterworkcardserviceskusuggestAPIResponse 服务商反馈需要履行的服务项 API返回值
 // alibaba.servicecenter.workcard.servicesku.suggest
 //
 // 服务商反馈需要履行的服务项
-type AlibabaServicecenterWorkcardServiceskuSuggestAPIResponse struct {
+type AlibabaservicecenterworkcardserviceskusuggestAPIResponse struct {
 	model.CommonResponse
-	AlibabaServicecenterWorkcardServiceskuSuggestAPIResponseModel
+	AlibabaservicecenterworkcardserviceskusuggestAPIResponseModel
 }
 
-// AlibabaServicecenterWorkcardServiceskuSuggestAPIResponseModel is 服务商反馈需要履行的服务项 成功返回结果
-type AlibabaServicecenterWorkcardServiceskuSuggestAPIResponseModel struct {
+// AlibabaservicecenterworkcardserviceskusuggestAPIResponseModel is 服务商反馈需要履行的服务项 成功返回结果
+type AlibabaservicecenterworkcardserviceskusuggestAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_servicecenter_workcard_servicesku_suggest_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

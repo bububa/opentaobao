@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaSalestarAdgroupAddAPIRequest (新)创建一个推广组 API请求
+// TaobaosimbasalestaradgroupaddAPIRequest (新)创建一个推广组 API请求
 // taobao.simba.salestar.adgroup.add
 //
 // 创建一个推广组
-type TaobaoSimbaSalestarAdgroupAddAPIRequest struct {
+type TaobaosimbasalestaradgroupaddAPIRequest struct {
 	model.Params
 	// 创意标题，最多20个汉字
 	_title string
@@ -22,78 +22,78 @@ type TaobaoSimbaSalestarAdgroupAddAPIRequest struct {
 	_itemId int64
 }
 
-// NewTaobaoSimbaSalestarAdgroupAddRequest 初始化TaobaoSimbaSalestarAdgroupAddAPIRequest对象
-func NewTaobaoSimbaSalestarAdgroupAddRequest() *TaobaoSimbaSalestarAdgroupAddAPIRequest {
-	return &TaobaoSimbaSalestarAdgroupAddAPIRequest{
+// NewTaobaosimbasalestaradgroupaddRequest 初始化TaobaosimbasalestaradgroupaddAPIRequest对象
+func NewTaobaosimbasalestaradgroupaddRequest() *TaobaosimbasalestaradgroupaddAPIRequest {
+	return &TaobaosimbasalestaradgroupaddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetApiMethodName() string {
+func (r TaobaosimbasalestaradgroupaddAPIRequest) GetApiMethodName() string {
 	return "taobao.simba.salestar.adgroup.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaosimbasalestaradgroupaddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetRawParams() model.Params {
+func (r TaobaosimbasalestaradgroupaddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTitle is Title Setter
 // 创意标题，最多20个汉字
-func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetTitle(_title string) error {
+func (r *TaobaosimbasalestaradgroupaddAPIRequest) SetTitle(_title string) error {
 	r._title = _title
 	r.Set("title", _title)
 	return nil
 }
 
 // GetTitle Title Getter
-func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetTitle() string {
+func (r TaobaosimbasalestaradgroupaddAPIRequest) GetTitle() string {
 	return r._title
 }
 
 // SetImgUrl is ImgUrl Setter
 // 创意图片地址，必须是商品的图片之一
-func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetImgUrl(_imgUrl string) error {
+func (r *TaobaosimbasalestaradgroupaddAPIRequest) SetImgUrl(_imgUrl string) error {
 	r._imgUrl = _imgUrl
 	r.Set("img_url", _imgUrl)
 	return nil
 }
 
 // GetImgUrl ImgUrl Getter
-func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetImgUrl() string {
+func (r TaobaosimbasalestaradgroupaddAPIRequest) GetImgUrl() string {
 	return r._imgUrl
 }
 
 // SetCampaignId is CampaignId Setter
 // 推广计划Id
-func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetCampaignId(_campaignId int64) error {
+func (r *TaobaosimbasalestaradgroupaddAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
 	r.Set("campaign_id", _campaignId)
 	return nil
 }
 
 // GetCampaignId CampaignId Getter
-func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetCampaignId() int64 {
+func (r TaobaosimbasalestaradgroupaddAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
 // SetItemId is ItemId Setter
 // 商品Id
-func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetItemId(_itemId int64) error {
+func (r *TaobaosimbasalestaradgroupaddAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
 	r.Set("item_id", _itemId)
 	return nil
 }
 
 // GetItemId ItemId Getter
-func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetItemId() int64 {
+func (r TaobaosimbasalestaradgroupaddAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

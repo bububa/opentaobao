@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/openim"
 )
 
-// TaobaoOpenimTribeExpel OPENIM群踢出成员
+// Taobaoopenimtribeexpel OPENIM群踢出成员
 // taobao.openim.tribe.expel
 //
 // OPENIM群踢出成员
-func TaobaoOpenimTribeExpel(clt *core.SDKClient, req *openim.TaobaoOpenimTribeExpelAPIRequest, session string) (*openim.TaobaoOpenimTribeExpelAPIResponse, error) {
-	var resp openim.TaobaoOpenimTribeExpelAPIResponse
+func Taobaoopenimtribeexpel(clt *core.SDKClient, req *openim.TaobaoopenimtribeexpelAPIRequest, session string) (*openim.TaobaoopenimtribeexpelAPIResponse, error) {
+	var resp openim.TaobaoopenimtribeexpelAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

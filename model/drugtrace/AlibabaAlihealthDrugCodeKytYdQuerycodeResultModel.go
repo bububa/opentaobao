@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaAlihealthDrugCodeKytYdQuerycodeResultModel 结构体
-type AlibabaAlihealthDrugCodeKytYdQuerycodeResultModel struct {
+// AlibabaalihealthdrugcodekytydquerycodeResultModel 结构体
+type AlibabaalihealthdrugcodekytydquerycodeResultModel struct {
 	// 内层大对象
 	Models []CodeFullInfoDto `json:"models,omitempty" xml:"models>code_full_info_dto,omitempty"`
 	// 消息提示内容

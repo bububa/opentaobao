@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoLogisticsExpressCollectResourceTmsDeleteAPIResponse 上门取退可揽范围删除 API返回值
+// TaobaologisticsexpresscollectresourcetmsdeleteAPIResponse 上门取退可揽范围删除 API返回值
 // taobao.logistics.express.collect.resource.tms.delete
 //
 // 上门取退可揽范围删除
-type TaobaoLogisticsExpressCollectResourceTmsDeleteAPIResponse struct {
+type TaobaologisticsexpresscollectresourcetmsdeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoLogisticsExpressCollectResourceTmsDeleteAPIResponseModel
+	TaobaologisticsexpresscollectresourcetmsdeleteAPIResponseModel
 }
 
-// TaobaoLogisticsExpressCollectResourceTmsDeleteAPIResponseModel is 上门取退可揽范围删除 成功返回结果
-type TaobaoLogisticsExpressCollectResourceTmsDeleteAPIResponseModel struct {
+// TaobaologisticsexpresscollectresourcetmsdeleteAPIResponseModel is 上门取退可揽范围删除 成功返回结果
+type TaobaologisticsexpresscollectresourcetmsdeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_express_collect_resource_tms_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

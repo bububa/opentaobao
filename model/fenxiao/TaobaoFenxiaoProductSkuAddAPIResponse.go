@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoFenxiaoProductSkuAddAPIResponse 产品sku添加接口 API返回值
+// TaobaofenxiaoproductskuaddAPIResponse 产品sku添加接口 API返回值
 // taobao.fenxiao.product.sku.add
 //
 // 添加产品SKU信息
-type TaobaoFenxiaoProductSkuAddAPIResponse struct {
+type TaobaofenxiaoproductskuaddAPIResponse struct {
 	model.CommonResponse
-	TaobaoFenxiaoProductSkuAddAPIResponseModel
+	TaobaofenxiaoproductskuaddAPIResponseModel
 }
 
-// TaobaoFenxiaoProductSkuAddAPIResponseModel is 产品sku添加接口 成功返回结果
-type TaobaoFenxiaoProductSkuAddAPIResponseModel struct {
+// TaobaofenxiaoproductskuaddAPIResponseModel is 产品sku添加接口 成功返回结果
+type TaobaofenxiaoproductskuaddAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_product_sku_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

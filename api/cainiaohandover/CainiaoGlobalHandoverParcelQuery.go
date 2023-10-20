@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cainiaohandover"
 )
 
-// CainiaoGlobalHandoverParcelQuery 获取交接单小包信息
+// Cainiaoglobalhandoverparcelquery 获取交接单小包信息
 // cainiao.global.handover.parcel.query
 //
 // 提供给ISV通过该接口查询小包信息
-func CainiaoGlobalHandoverParcelQuery(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverParcelQueryAPIRequest, session string) (*cainiaohandover.CainiaoGlobalHandoverParcelQueryAPIResponse, error) {
-	var resp cainiaohandover.CainiaoGlobalHandoverParcelQueryAPIResponse
+func Cainiaoglobalhandoverparcelquery(clt *core.SDKClient, req *cainiaohandover.CainiaoglobalhandoverparcelqueryAPIRequest, session string) (*cainiaohandover.CainiaoglobalhandoverparcelqueryAPIResponse, error) {
+	var resp cainiaohandover.CainiaoglobalhandoverparcelqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

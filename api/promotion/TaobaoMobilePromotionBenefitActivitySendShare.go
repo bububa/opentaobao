@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-// TaobaoMobilePromotionBenefitActivitySendShare 手淘专用单用户发放接口
+// Taobaomobilepromotionbenefitactivitysendshare 手淘专用单用户发放接口
 // taobao.mobile.promotion.benefit.activity.send.share
 //
 // 卖家活动中需要通过该API来发放对应的权益。手淘专用、验证分享链路。
-func TaobaoMobilePromotionBenefitActivitySendShare(clt *core.SDKClient, req *promotion.TaobaoMobilePromotionBenefitActivitySendShareAPIRequest, session string) (*promotion.TaobaoMobilePromotionBenefitActivitySendShareAPIResponse, error) {
-	var resp promotion.TaobaoMobilePromotionBenefitActivitySendShareAPIResponse
+func Taobaomobilepromotionbenefitactivitysendshare(clt *core.SDKClient, req *promotion.TaobaomobilepromotionbenefitactivitysendshareAPIRequest, session string) (*promotion.TaobaomobilepromotionbenefitactivitysendshareAPIResponse, error) {
+	var resp promotion.TaobaomobilepromotionbenefitactivitysendshareAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

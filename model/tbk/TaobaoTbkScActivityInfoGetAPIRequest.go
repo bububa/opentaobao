@@ -13,15 +13,15 @@ import (
 type TaobaotbkscactivityinfogetAPIRequest struct {
 	model.Params
 	// 官方活动会场ID，从淘宝客后台“我要推广-活动推广”中获取
-	_activitymaterialid string
+	_activityMaterialId string
 	// 自定义输入串，英文和数字组成，长度不能大于12个字符，区分不同的推广渠道
-	_unionid string
+	_unionId string
 	// mm_xxx_xxx_xxx的第3段数字
-	_adzoneid int64
+	_adzoneId int64
 	// mm_xxx_xxx_xxx的第2段数字
-	_siteid int64
+	_siteId int64
 	// 渠道关系id
-	_relationid int64
+	_relationId int64
 }
 
 // NewTaobaotbkscactivityinfogetRequest 初始化TaobaotbkscactivityinfogetAPIRequest对象
@@ -48,67 +48,67 @@ func (r TaobaotbkscactivityinfogetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetActivitymaterialid is Activitymaterialid Setter
+// SetActivityMaterialId is ActivityMaterialId Setter
 // 官方活动会场ID，从淘宝客后台“我要推广-活动推广”中获取
-func (r *TaobaotbkscactivityinfogetAPIRequest) SetActivitymaterialid(_activitymaterialid string) error {
-	r._activitymaterialid = _activitymaterialid
-	r.Set("activity_material_id", _activitymaterialid)
+func (r *TaobaotbkscactivityinfogetAPIRequest) SetActivityMaterialId(_activityMaterialId string) error {
+	r._activityMaterialId = _activityMaterialId
+	r.Set("activity_material_id", _activityMaterialId)
 	return nil
 }
 
-// GetActivitymaterialid Activitymaterialid Getter
-func (r TaobaotbkscactivityinfogetAPIRequest) GetActivitymaterialid() string {
-	return r._activitymaterialid
+// GetActivityMaterialId ActivityMaterialId Getter
+func (r TaobaotbkscactivityinfogetAPIRequest) GetActivityMaterialId() string {
+	return r._activityMaterialId
 }
 
-// SetUnionid is Unionid Setter
+// SetUnionId is UnionId Setter
 // 自定义输入串，英文和数字组成，长度不能大于12个字符，区分不同的推广渠道
-func (r *TaobaotbkscactivityinfogetAPIRequest) SetUnionid(_unionid string) error {
-	r._unionid = _unionid
-	r.Set("union_id", _unionid)
+func (r *TaobaotbkscactivityinfogetAPIRequest) SetUnionId(_unionId string) error {
+	r._unionId = _unionId
+	r.Set("union_id", _unionId)
 	return nil
 }
 
-// GetUnionid Unionid Getter
-func (r TaobaotbkscactivityinfogetAPIRequest) GetUnionid() string {
-	return r._unionid
+// GetUnionId UnionId Getter
+func (r TaobaotbkscactivityinfogetAPIRequest) GetUnionId() string {
+	return r._unionId
 }
 
-// SetAdzoneid is Adzoneid Setter
+// SetAdzoneId is AdzoneId Setter
 // mm_xxx_xxx_xxx的第3段数字
-func (r *TaobaotbkscactivityinfogetAPIRequest) SetAdzoneid(_adzoneid int64) error {
-	r._adzoneid = _adzoneid
-	r.Set("adzone_id", _adzoneid)
+func (r *TaobaotbkscactivityinfogetAPIRequest) SetAdzoneId(_adzoneId int64) error {
+	r._adzoneId = _adzoneId
+	r.Set("adzone_id", _adzoneId)
 	return nil
 }
 
-// GetAdzoneid Adzoneid Getter
-func (r TaobaotbkscactivityinfogetAPIRequest) GetAdzoneid() int64 {
-	return r._adzoneid
+// GetAdzoneId AdzoneId Getter
+func (r TaobaotbkscactivityinfogetAPIRequest) GetAdzoneId() int64 {
+	return r._adzoneId
 }
 
-// SetSiteid is Siteid Setter
+// SetSiteId is SiteId Setter
 // mm_xxx_xxx_xxx的第2段数字
-func (r *TaobaotbkscactivityinfogetAPIRequest) SetSiteid(_siteid int64) error {
-	r._siteid = _siteid
-	r.Set("site_id", _siteid)
+func (r *TaobaotbkscactivityinfogetAPIRequest) SetSiteId(_siteId int64) error {
+	r._siteId = _siteId
+	r.Set("site_id", _siteId)
 	return nil
 }
 
-// GetSiteid Siteid Getter
-func (r TaobaotbkscactivityinfogetAPIRequest) GetSiteid() int64 {
-	return r._siteid
+// GetSiteId SiteId Getter
+func (r TaobaotbkscactivityinfogetAPIRequest) GetSiteId() int64 {
+	return r._siteId
 }
 
-// SetRelationid is Relationid Setter
+// SetRelationId is RelationId Setter
 // 渠道关系id
-func (r *TaobaotbkscactivityinfogetAPIRequest) SetRelationid(_relationid int64) error {
-	r._relationid = _relationid
-	r.Set("relation_id", _relationid)
+func (r *TaobaotbkscactivityinfogetAPIRequest) SetRelationId(_relationId int64) error {
+	r._relationId = _relationId
+	r.Set("relation_id", _relationId)
 	return nil
 }
 
-// GetRelationid Relationid Getter
-func (r TaobaotbkscactivityinfogetAPIRequest) GetRelationid() int64 {
-	return r._relationid
+// GetRelationId RelationId Getter
+func (r TaobaotbkscactivityinfogetAPIRequest) GetRelationId() int64 {
+	return r._relationId
 }

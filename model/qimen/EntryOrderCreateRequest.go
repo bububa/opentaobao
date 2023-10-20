@@ -7,5 +7,5 @@ type EntryOrderCreateRequest struct {
 	// 入库单信息
 	EntryOrder *EntryOrder `json:"entryOrder,omitempty" xml:"entryOrder,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoQimenEntryorderCreateMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoqimenentryordercreateMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

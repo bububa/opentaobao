@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLegalSuitCourttimePushAPIResponse 开庭时间推送（带附件） API返回值
+// AlibabalegalsuitcourttimepushAPIResponse 开庭时间推送（带附件） API返回值
 // alibaba.legal.suit.courttime.push
 //
 // 开庭时间推送（带附件）
-type AlibabaLegalSuitCourttimePushAPIResponse struct {
+type AlibabalegalsuitcourttimepushAPIResponse struct {
 	model.CommonResponse
-	AlibabaLegalSuitCourttimePushAPIResponseModel
+	AlibabalegalsuitcourttimepushAPIResponseModel
 }
 
-// AlibabaLegalSuitCourttimePushAPIResponseModel is 开庭时间推送（带附件） 成功返回结果
-type AlibabaLegalSuitCourttimePushAPIResponseModel struct {
+// AlibabalegalsuitcourttimepushAPIResponseModel is 开庭时间推送（带附件） 成功返回结果
+type AlibabalegalsuitcourttimepushAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_legal_suit_courttime_push_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

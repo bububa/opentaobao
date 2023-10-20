@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaInteractSensorUiAPIResponse 基本ui操作 API返回值
+// AlibabainteractsensoruiAPIResponse 基本ui操作 API返回值
 // alibaba.interact.sensor.ui
 //
 // Weex 基本UI操作
-type AlibabaInteractSensorUiAPIResponse struct {
+type AlibabainteractsensoruiAPIResponse struct {
 	model.CommonResponse
-	AlibabaInteractSensorUiAPIResponseModel
+	AlibabainteractsensoruiAPIResponseModel
 }
 
-// AlibabaInteractSensorUiAPIResponseModel is 基本ui操作 成功返回结果
-type AlibabaInteractSensorUiAPIResponseModel struct {
+// AlibabainteractsensoruiAPIResponseModel is 基本ui操作 成功返回结果
+type AlibabainteractsensoruiAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_sensor_ui_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

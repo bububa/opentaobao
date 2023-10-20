@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIotDeviceCorpusGetAPIResponse IoT设备支持语料获取 API返回值
+// AlibabaiotdevicecorpusgetAPIResponse IoT设备支持语料获取 API返回值
 // alibaba.iot.device.corpus.get
 //
 // ISV通过该接口获取天猫精灵IoT设备支持控制或查询的语料
-type AlibabaIotDeviceCorpusGetAPIResponse struct {
+type AlibabaiotdevicecorpusgetAPIResponse struct {
 	model.CommonResponse
-	AlibabaIotDeviceCorpusGetAPIResponseModel
+	AlibabaiotdevicecorpusgetAPIResponseModel
 }
 
-// AlibabaIotDeviceCorpusGetAPIResponseModel is IoT设备支持语料获取 成功返回结果
-type AlibabaIotDeviceCorpusGetAPIResponseModel struct {
+// AlibabaiotdevicecorpusgetAPIResponseModel is IoT设备支持语料获取 成功返回结果
+type AlibabaiotdevicecorpusgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_iot_device_corpus_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

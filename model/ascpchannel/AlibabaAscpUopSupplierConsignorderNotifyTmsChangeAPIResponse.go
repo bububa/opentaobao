@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIResponse 商家修改运单号 API返回值
+// AlibabaascpuopsupplierconsignordernotifytmschangeAPIResponse 商家修改运单号 API返回值
 // alibaba.ascp.uop.supplier.consignorder.notify.tms.change
 //
 // 供应商可以通过此接口，对出库回告上报的运单号进行修改，目前一次调用只能支持一个运单号的修改
-type AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIResponse struct {
+type AlibabaascpuopsupplierconsignordernotifytmschangeAPIResponse struct {
 	model.CommonResponse
-	AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIResponseModel
+	AlibabaascpuopsupplierconsignordernotifytmschangeAPIResponseModel
 }
 
-// AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIResponseModel is 商家修改运单号 成功返回结果
-type AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIResponseModel struct {
+// AlibabaascpuopsupplierconsignordernotifytmschangeAPIResponseModel is 商家修改运单号 成功返回结果
+type AlibabaascpuopsupplierconsignordernotifytmschangeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ascp_uop_supplier_consignorder_notify_tms_change_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWeikeEserviceScheduleGetAPIRequest 客服排班信息查询接口 API请求
+// TaobaoweikeeserviceschedulegetAPIRequest 客服排班信息查询接口 API请求
 // taobao.weike.eservice.schedule.get
 //
 // 客服排班信息查询接口
-type TaobaoWeikeEserviceScheduleGetAPIRequest struct {
+type TaobaoweikeeserviceschedulegetAPIRequest struct {
 	model.Params
 	// 商家子账号昵称，orderId、sellerNick、spNick三者不能同时为Null
 	_sellerNick string
@@ -24,91 +24,91 @@ type TaobaoWeikeEserviceScheduleGetAPIRequest struct {
 	_orderId int64
 }
 
-// NewTaobaoWeikeEserviceScheduleGetRequest 初始化TaobaoWeikeEserviceScheduleGetAPIRequest对象
-func NewTaobaoWeikeEserviceScheduleGetRequest() *TaobaoWeikeEserviceScheduleGetAPIRequest {
-	return &TaobaoWeikeEserviceScheduleGetAPIRequest{
+// NewTaobaoweikeeserviceschedulegetRequest 初始化TaobaoweikeeserviceschedulegetAPIRequest对象
+func NewTaobaoweikeeserviceschedulegetRequest() *TaobaoweikeeserviceschedulegetAPIRequest {
+	return &TaobaoweikeeserviceschedulegetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetApiMethodName() string {
+func (r TaobaoweikeeserviceschedulegetAPIRequest) GetApiMethodName() string {
 	return "taobao.weike.eservice.schedule.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoweikeeserviceschedulegetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoweikeeserviceschedulegetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSellerNick is SellerNick Setter
 // 商家子账号昵称，orderId、sellerNick、spNick三者不能同时为Null
-func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetSellerNick(_sellerNick string) error {
+func (r *TaobaoweikeeserviceschedulegetAPIRequest) SetSellerNick(_sellerNick string) error {
 	r._sellerNick = _sellerNick
 	r.Set("seller_nick", _sellerNick)
 	return nil
 }
 
 // GetSellerNick SellerNick Getter
-func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetSellerNick() string {
+func (r TaobaoweikeeserviceschedulegetAPIRequest) GetSellerNick() string {
 	return r._sellerNick
 }
 
 // SetSpNick is SpNick Setter
 // 服务商子账号昵称，orderId、sellerNick、spNick三者不能同时为Null
-func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetSpNick(_spNick string) error {
+func (r *TaobaoweikeeserviceschedulegetAPIRequest) SetSpNick(_spNick string) error {
 	r._spNick = _spNick
 	r.Set("sp_nick", _spNick)
 	return nil
 }
 
 // GetSpNick SpNick Getter
-func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetSpNick() string {
+func (r TaobaoweikeeserviceschedulegetAPIRequest) GetSpNick() string {
 	return r._spNick
 }
 
 // SetStartDate is StartDate Setter
 // 起始日期，起始日期和结束日期跨度不能超过31天
-func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetStartDate(_startDate string) error {
+func (r *TaobaoweikeeserviceschedulegetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
 	r.Set("start_date", _startDate)
 	return nil
 }
 
 // GetStartDate StartDate Getter
-func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetStartDate() string {
+func (r TaobaoweikeeserviceschedulegetAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
 // SetEndDate is EndDate Setter
 // 结束日期，起始日期和结束日期跨度不能超过31天
-func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetEndDate(_endDate string) error {
+func (r *TaobaoweikeeserviceschedulegetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
 	r.Set("end_date", _endDate)
 	return nil
 }
 
 // GetEndDate EndDate Getter
-func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetEndDate() string {
+func (r TaobaoweikeeserviceschedulegetAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
 // SetOrderId is OrderId Setter
 // 订单ID，orderId、sellerNick、spNick三者不能同时为Null
-func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetOrderId(_orderId int64) error {
+func (r *TaobaoweikeeserviceschedulegetAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
 	r.Set("order_id", _orderId)
 	return nil
 }
 
 // GetOrderId OrderId Getter
-func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetOrderId() int64 {
+func (r TaobaoweikeeserviceschedulegetAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }

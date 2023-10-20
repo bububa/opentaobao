@@ -1,7 +1,7 @@
 package rail
 
-// AlitripRailIrServiceGetResult 结构体
-type AlitripRailIrServiceGetResult struct {
+// AlitriprailirservicegetResult 结构体
+type AlitriprailirservicegetResult struct {
 	// 仓位坐席数组
 	Modules []Modules `json:"modules,omitempty" xml:"modules>modules,omitempty"`
 	// 错误码

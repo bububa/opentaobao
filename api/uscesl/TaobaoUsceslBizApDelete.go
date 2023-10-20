@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/uscesl"
 )
 
-// TaobaoUsceslBizApDelete 删除价签AP设备
+// Taobaousceslbizapdelete 删除价签AP设备
 // taobao.uscesl.biz.ap.delete
 //
 // 删除价签AP设备
-func TaobaoUsceslBizApDelete(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizApDeleteAPIRequest, session string) (*uscesl.TaobaoUsceslBizApDeleteAPIResponse, error) {
-	var resp uscesl.TaobaoUsceslBizApDeleteAPIResponse
+func Taobaousceslbizapdelete(clt *core.SDKClient, req *uscesl.TaobaousceslbizapdeleteAPIRequest, session string) (*uscesl.TaobaousceslbizapdeleteAPIResponse, error) {
+	var resp uscesl.TaobaousceslbizapdeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

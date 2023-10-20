@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wlbimports"
 )
 
-// CainiaoGlobalImPickupBigbagLogisticsTrajectory 大包物流轨迹查询
+// Cainiaoglobalimpickupbigbaglogisticstrajectory 大包物流轨迹查询
 // cainiao.global.im.pickup.bigbag.logistics.trajectory
 //
 // 大包物流轨迹查询
-func CainiaoGlobalImPickupBigbagLogisticsTrajectory(clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest, session string) (*wlbimports.CainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIResponse, error) {
-	var resp wlbimports.CainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIResponse
+func Cainiaoglobalimpickupbigbaglogisticstrajectory(clt *core.SDKClient, req *wlbimports.CainiaoglobalimpickupbigbaglogisticstrajectoryAPIRequest, session string) (*wlbimports.CainiaoglobalimpickupbigbaglogisticstrajectoryAPIResponse, error) {
+	var resp wlbimports.CainiaoglobalimpickupbigbaglogisticstrajectoryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

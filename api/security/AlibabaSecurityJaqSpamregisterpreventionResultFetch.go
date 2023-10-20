@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/security"
 )
 
-// AlibabaSecurityJaqSpamregisterpreventionResultFetch 获取垃圾注册防控结果
+// Alibabasecurityjaqspamregisterpreventionresultfetch 获取垃圾注册防控结果
 // alibaba.security.jaq.spamregisterprevention.result.fetch
 //
 // 获取垃圾注册防控结果
-func AlibabaSecurityJaqSpamregisterpreventionResultFetch(clt *core.SDKClient, req *security.AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest, session string) (*security.AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIResponse, error) {
-	var resp security.AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIResponse
+func Alibabasecurityjaqspamregisterpreventionresultfetch(clt *core.SDKClient, req *security.AlibabasecurityjaqspamregisterpreventionresultfetchAPIRequest, session string) (*security.AlibabasecurityjaqspamregisterpreventionresultfetchAPIResponse, error) {
+	var resp security.AlibabasecurityjaqspamregisterpreventionresultfetchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

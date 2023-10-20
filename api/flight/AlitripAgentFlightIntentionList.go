@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/flight"
 )
 
-// AlitripAgentFlightIntentionList 意向单列表
+// Alitripagentflightintentionlist 意向单列表
 // alitrip.agent.flight.intention.list
 //
 // 意向单列表
-func AlitripAgentFlightIntentionList(clt *core.SDKClient, req *flight.AlitripAgentFlightIntentionListAPIRequest, session string) (*flight.AlitripAgentFlightIntentionListAPIResponse, error) {
-	var resp flight.AlitripAgentFlightIntentionListAPIResponse
+func Alitripagentflightintentionlist(clt *core.SDKClient, req *flight.AlitripagentflightintentionlistAPIRequest, session string) (*flight.AlitripagentflightintentionlistAPIResponse, error) {
+	var resp flight.AlitripagentflightintentionlistAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

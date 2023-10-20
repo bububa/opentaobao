@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoPlaceStoreCreateAPIRequest 商户门店创建接口 API请求
+// TaobaoplacestorecreateAPIRequest 商户门店创建接口 API请求
 // taobao.place.store.create
 //
 // 用于商家创建线下门店
-type TaobaoPlaceStoreCreateAPIRequest struct {
+type TaobaoplacestorecreateAPIRequest struct {
 	model.Params
 	// 门店创建入参
 	_storeCreate *StoreUpdateTopDto
 }
 
-// NewTaobaoPlaceStoreCreateRequest 初始化TaobaoPlaceStoreCreateAPIRequest对象
-func NewTaobaoPlaceStoreCreateRequest() *TaobaoPlaceStoreCreateAPIRequest {
-	return &TaobaoPlaceStoreCreateAPIRequest{
+// NewTaobaoplacestorecreateRequest 初始化TaobaoplacestorecreateAPIRequest对象
+func NewTaobaoplacestorecreateRequest() *TaobaoplacestorecreateAPIRequest {
+	return &TaobaoplacestorecreateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoPlaceStoreCreateAPIRequest) GetApiMethodName() string {
+func (r TaobaoplacestorecreateAPIRequest) GetApiMethodName() string {
 	return "taobao.place.store.create"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoPlaceStoreCreateAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoplacestorecreateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoPlaceStoreCreateAPIRequest) GetRawParams() model.Params {
+func (r TaobaoplacestorecreateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetStoreCreate is StoreCreate Setter
 // 门店创建入参
-func (r *TaobaoPlaceStoreCreateAPIRequest) SetStoreCreate(_storeCreate *StoreUpdateTopDto) error {
+func (r *TaobaoplacestorecreateAPIRequest) SetStoreCreate(_storeCreate *StoreUpdateTopDto) error {
 	r._storeCreate = _storeCreate
 	r.Set("store_create", _storeCreate)
 	return nil
 }
 
 // GetStoreCreate StoreCreate Getter
-func (r TaobaoPlaceStoreCreateAPIRequest) GetStoreCreate() *StoreUpdateTopDto {
+func (r TaobaoplacestorecreateAPIRequest) GetStoreCreate() *StoreUpdateTopDto {
 	return r._storeCreate
 }

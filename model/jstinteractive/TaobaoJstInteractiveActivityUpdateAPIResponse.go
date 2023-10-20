@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoJstInteractiveActivityUpdateAPIResponse 互动任务活动修改接口 API返回值
+// TaobaojstinteractiveactivityupdateAPIResponse 互动任务活动修改接口 API返回值
 // taobao.jst.interactive.activity.update
 //
 // 互动任务活动修改接口
-type TaobaoJstInteractiveActivityUpdateAPIResponse struct {
+type TaobaojstinteractiveactivityupdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoJstInteractiveActivityUpdateAPIResponseModel
+	TaobaojstinteractiveactivityupdateAPIResponseModel
 }
 
-// TaobaoJstInteractiveActivityUpdateAPIResponseModel is 互动任务活动修改接口 成功返回结果
-type TaobaoJstInteractiveActivityUpdateAPIResponseModel struct {
+// TaobaojstinteractiveactivityupdateAPIResponseModel is 互动任务活动修改接口 成功返回结果
+type TaobaojstinteractiveactivityupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"jst_interactive_activity_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

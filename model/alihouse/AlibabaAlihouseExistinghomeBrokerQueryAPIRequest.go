@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseExistinghomeBrokerQueryAPIRequest 根据外部经纪人ID查询 API请求
+// AlibabaalihouseexistinghomebrokerqueryAPIRequest 根据外部经纪人ID查询 API请求
 // alibaba.alihouse.existinghome.broker.query
 //
 // 根据外部经纪人ID查询
-type AlibabaAlihouseExistinghomeBrokerQueryAPIRequest struct {
+type AlibabaalihouseexistinghomebrokerqueryAPIRequest struct {
 	model.Params
 	// 外部经纪人ID
 	_outerBrokerId string
 }
 
-// NewAlibabaAlihouseExistinghomeBrokerQueryRequest 初始化AlibabaAlihouseExistinghomeBrokerQueryAPIRequest对象
-func NewAlibabaAlihouseExistinghomeBrokerQueryRequest() *AlibabaAlihouseExistinghomeBrokerQueryAPIRequest {
-	return &AlibabaAlihouseExistinghomeBrokerQueryAPIRequest{
+// NewAlibabaalihouseexistinghomebrokerqueryRequest 初始化AlibabaalihouseexistinghomebrokerqueryAPIRequest对象
+func NewAlibabaalihouseexistinghomebrokerqueryRequest() *AlibabaalihouseexistinghomebrokerqueryAPIRequest {
+	return &AlibabaalihouseexistinghomebrokerqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseExistinghomeBrokerQueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihouseexistinghomebrokerqueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.existinghome.broker.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseExistinghomeBrokerQueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihouseexistinghomebrokerqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihouseExistinghomeBrokerQueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihouseexistinghomebrokerqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOuterBrokerId is OuterBrokerId Setter
 // 外部经纪人ID
-func (r *AlibabaAlihouseExistinghomeBrokerQueryAPIRequest) SetOuterBrokerId(_outerBrokerId string) error {
+func (r *AlibabaalihouseexistinghomebrokerqueryAPIRequest) SetOuterBrokerId(_outerBrokerId string) error {
 	r._outerBrokerId = _outerBrokerId
 	r.Set("outer_broker_id", _outerBrokerId)
 	return nil
 }
 
 // GetOuterBrokerId OuterBrokerId Getter
-func (r AlibabaAlihouseExistinghomeBrokerQueryAPIRequest) GetOuterBrokerId() string {
+func (r AlibabaalihouseexistinghomebrokerqueryAPIRequest) GetOuterBrokerId() string {
 	return r._outerBrokerId
 }

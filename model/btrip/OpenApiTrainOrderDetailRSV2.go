@@ -1,7 +1,7 @@
 package btrip
 
-// OpenApiTrainOrderDetailRSV2 结构体
-type OpenApiTrainOrderDetailRSV2 struct {
+// OpenApiTrainOrderDetailRsv2 结构体
+type OpenApiTrainOrderDetailRsv2 struct {
 	// 改签票列表
 	ChangeTicketInfoList []TrainChangeTicketInfo `json:"change_ticket_info_list,omitempty" xml:"change_ticket_info_list>train_change_ticket_info,omitempty"`
 	// 退票列表

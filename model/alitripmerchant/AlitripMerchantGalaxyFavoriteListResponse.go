@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripMerchantGalaxyFavoriteListResponse 结构体
-type AlitripMerchantGalaxyFavoriteListResponse struct {
+// AlitripmerchantgalaxyfavoritelistResponse 结构体
+type AlitripmerchantgalaxyfavoritelistResponse struct {
 	// 收藏列表
 	Contents []FavoriteHotelList `json:"contents,omitempty" xml:"contents>favorite_hotel_list,omitempty"`
 	// 错误码

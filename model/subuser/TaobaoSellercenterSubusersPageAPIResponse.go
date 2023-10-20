@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSellercenterSubusersPageAPIResponse 通过主账号登陆态分页查询子账号列表 API返回值
+// TaobaosellercentersubuserspageAPIResponse 通过主账号登陆态分页查询子账号列表 API返回值
 // taobao.sellercenter.subusers.page
 //
 // 通过主账号登陆态分页查询子账号列表
-type TaobaoSellercenterSubusersPageAPIResponse struct {
+type TaobaosellercentersubuserspageAPIResponse struct {
 	model.CommonResponse
-	TaobaoSellercenterSubusersPageAPIResponseModel
+	TaobaosellercentersubuserspageAPIResponseModel
 }
 
-// TaobaoSellercenterSubusersPageAPIResponseModel is 通过主账号登陆态分页查询子账号列表 成功返回结果
-type TaobaoSellercenterSubusersPageAPIResponseModel struct {
+// TaobaosellercentersubuserspageAPIResponseModel is 通过主账号登陆态分页查询子账号列表 成功返回结果
+type TaobaosellercentersubuserspageAPIResponseModel struct {
 	XMLName xml.Name `xml:"sellercenter_subusers_page_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

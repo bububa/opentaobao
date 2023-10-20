@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaTmallgenieScpPlanMaterielGetAPIResponse 1-IBP同步物料接口 API返回值
+// AlibabatmallgeniescpplanmaterielgetAPIResponse 1-IBP同步物料接口 API返回值
 // alibaba.tmallgenie.scp.plan.materiel.get
 //
 // IBP同步物料接口
-type AlibabaTmallgenieScpPlanMaterielGetAPIResponse struct {
+type AlibabatmallgeniescpplanmaterielgetAPIResponse struct {
 	model.CommonResponse
-	AlibabaTmallgenieScpPlanMaterielGetAPIResponseModel
+	AlibabatmallgeniescpplanmaterielgetAPIResponseModel
 }
 
-// AlibabaTmallgenieScpPlanMaterielGetAPIResponseModel is 1-IBP同步物料接口 成功返回结果
-type AlibabaTmallgenieScpPlanMaterielGetAPIResponseModel struct {
+// AlibabatmallgeniescpplanmaterielgetAPIResponseModel is 1-IBP同步物料接口 成功返回结果
+type AlibabatmallgeniescpplanmaterielgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tmallgenie_scp_plan_materiel_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

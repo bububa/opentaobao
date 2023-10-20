@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkTradeOrderSuccessCreateAPIResponse 五道口终态订单创建 API返回值
+// AlibabawdktradeordersuccesscreateAPIResponse 五道口终态订单创建 API返回值
 // alibaba.wdk.trade.order.success.create
 //
 // 五道口终态订单创建
-type AlibabaWdkTradeOrderSuccessCreateAPIResponse struct {
+type AlibabawdktradeordersuccesscreateAPIResponse struct {
 	model.CommonResponse
-	AlibabaWdkTradeOrderSuccessCreateAPIResponseModel
+	AlibabawdktradeordersuccesscreateAPIResponseModel
 }
 
-// AlibabaWdkTradeOrderSuccessCreateAPIResponseModel is 五道口终态订单创建 成功返回结果
-type AlibabaWdkTradeOrderSuccessCreateAPIResponseModel struct {
+// AlibabawdktradeordersuccesscreateAPIResponseModel is 五道口终态订单创建 成功返回结果
+type AlibabawdktradeordersuccesscreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_trade_order_success_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

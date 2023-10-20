@@ -13,33 +13,33 @@ import (
 type TaobaotbkdgvegastljcreateAPIRequest struct {
 	model.Params
 	// 使用开始日期。相对时间，无需填写，以用户领取时间作为使用开始时间。绝对时间，格式 yyyy-MM-dd，例如，2019-01-29，表示从2019-01-29 00:00:00 开始
-	_usestarttime string
+	_useStartTime string
 	// 使用结束日期。如果是结束时间模式为相对时间，时间格式为1-7直接的整数, 例如，1（相对领取时间1天）； 如果是绝对时间，格式为yyyy-MM-dd，例如，2019-01-29，表示到2019-01-29 23:59:59结束
-	_useendtime string
+	_useEndTime string
 	// 发放截止时间
-	_sendendtime string
+	_sendEndTime string
 	// 发放开始时间
-	_sendstarttime string
+	_sendStartTime string
 	// 单个淘礼金面额，支持两位小数，单位元
-	_perface string
+	_perFace string
 	// 淘礼金名称，最大10个字符
 	_name string
 	// 宝贝ID或营销ID
-	_itemid string
+	_itemId string
 	// 已下线，后续不需要填写
-	_campaigntype string
+	_campaignType string
 	// 必须传入0
-	_securitylevel int64
+	_securityLevel int64
 	// 结束日期的模式,1:相对时间，2:绝对时间
-	_useendtimemode int64
+	_useEndTimeMode int64
 	// 单用户累计中奖次数上限
-	_usertotalwinnumlimit int64
+	_userTotalWinNumLimit int64
 	// 淘礼金总个数
-	_totalnum int64
+	_totalNum int64
 	// 妈妈广告位Id
-	_adzoneid int64
+	_adzoneId int64
 	// 必须设置为true，默认开启安全
-	_securityswitch bool
+	_securitySwitch bool
 }
 
 // NewTaobaotbkdgvegastljcreateRequest 初始化TaobaotbkdgvegastljcreateAPIRequest对象
@@ -66,69 +66,69 @@ func (r TaobaotbkdgvegastljcreateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetUsestarttime is Usestarttime Setter
+// SetUseStartTime is UseStartTime Setter
 // 使用开始日期。相对时间，无需填写，以用户领取时间作为使用开始时间。绝对时间，格式 yyyy-MM-dd，例如，2019-01-29，表示从2019-01-29 00:00:00 开始
-func (r *TaobaotbkdgvegastljcreateAPIRequest) SetUsestarttime(_usestarttime string) error {
-	r._usestarttime = _usestarttime
-	r.Set("use_start_time", _usestarttime)
+func (r *TaobaotbkdgvegastljcreateAPIRequest) SetUseStartTime(_useStartTime string) error {
+	r._useStartTime = _useStartTime
+	r.Set("use_start_time", _useStartTime)
 	return nil
 }
 
-// GetUsestarttime Usestarttime Getter
-func (r TaobaotbkdgvegastljcreateAPIRequest) GetUsestarttime() string {
-	return r._usestarttime
+// GetUseStartTime UseStartTime Getter
+func (r TaobaotbkdgvegastljcreateAPIRequest) GetUseStartTime() string {
+	return r._useStartTime
 }
 
-// SetUseendtime is Useendtime Setter
+// SetUseEndTime is UseEndTime Setter
 // 使用结束日期。如果是结束时间模式为相对时间，时间格式为1-7直接的整数, 例如，1（相对领取时间1天）； 如果是绝对时间，格式为yyyy-MM-dd，例如，2019-01-29，表示到2019-01-29 23:59:59结束
-func (r *TaobaotbkdgvegastljcreateAPIRequest) SetUseendtime(_useendtime string) error {
-	r._useendtime = _useendtime
-	r.Set("use_end_time", _useendtime)
+func (r *TaobaotbkdgvegastljcreateAPIRequest) SetUseEndTime(_useEndTime string) error {
+	r._useEndTime = _useEndTime
+	r.Set("use_end_time", _useEndTime)
 	return nil
 }
 
-// GetUseendtime Useendtime Getter
-func (r TaobaotbkdgvegastljcreateAPIRequest) GetUseendtime() string {
-	return r._useendtime
+// GetUseEndTime UseEndTime Getter
+func (r TaobaotbkdgvegastljcreateAPIRequest) GetUseEndTime() string {
+	return r._useEndTime
 }
 
-// SetSendendtime is Sendendtime Setter
+// SetSendEndTime is SendEndTime Setter
 // 发放截止时间
-func (r *TaobaotbkdgvegastljcreateAPIRequest) SetSendendtime(_sendendtime string) error {
-	r._sendendtime = _sendendtime
-	r.Set("send_end_time", _sendendtime)
+func (r *TaobaotbkdgvegastljcreateAPIRequest) SetSendEndTime(_sendEndTime string) error {
+	r._sendEndTime = _sendEndTime
+	r.Set("send_end_time", _sendEndTime)
 	return nil
 }
 
-// GetSendendtime Sendendtime Getter
-func (r TaobaotbkdgvegastljcreateAPIRequest) GetSendendtime() string {
-	return r._sendendtime
+// GetSendEndTime SendEndTime Getter
+func (r TaobaotbkdgvegastljcreateAPIRequest) GetSendEndTime() string {
+	return r._sendEndTime
 }
 
-// SetSendstarttime is Sendstarttime Setter
+// SetSendStartTime is SendStartTime Setter
 // 发放开始时间
-func (r *TaobaotbkdgvegastljcreateAPIRequest) SetSendstarttime(_sendstarttime string) error {
-	r._sendstarttime = _sendstarttime
-	r.Set("send_start_time", _sendstarttime)
+func (r *TaobaotbkdgvegastljcreateAPIRequest) SetSendStartTime(_sendStartTime string) error {
+	r._sendStartTime = _sendStartTime
+	r.Set("send_start_time", _sendStartTime)
 	return nil
 }
 
-// GetSendstarttime Sendstarttime Getter
-func (r TaobaotbkdgvegastljcreateAPIRequest) GetSendstarttime() string {
-	return r._sendstarttime
+// GetSendStartTime SendStartTime Getter
+func (r TaobaotbkdgvegastljcreateAPIRequest) GetSendStartTime() string {
+	return r._sendStartTime
 }
 
-// SetPerface is Perface Setter
+// SetPerFace is PerFace Setter
 // 单个淘礼金面额，支持两位小数，单位元
-func (r *TaobaotbkdgvegastljcreateAPIRequest) SetPerface(_perface string) error {
-	r._perface = _perface
-	r.Set("per_face", _perface)
+func (r *TaobaotbkdgvegastljcreateAPIRequest) SetPerFace(_perFace string) error {
+	r._perFace = _perFace
+	r.Set("per_face", _perFace)
 	return nil
 }
 
-// GetPerface Perface Getter
-func (r TaobaotbkdgvegastljcreateAPIRequest) GetPerface() string {
-	return r._perface
+// GetPerFace PerFace Getter
+func (r TaobaotbkdgvegastljcreateAPIRequest) GetPerFace() string {
+	return r._perFace
 }
 
 // SetName is Name Setter
@@ -144,106 +144,106 @@ func (r TaobaotbkdgvegastljcreateAPIRequest) GetName() string {
 	return r._name
 }
 
-// SetItemid is Itemid Setter
+// SetItemId is ItemId Setter
 // 宝贝ID或营销ID
-func (r *TaobaotbkdgvegastljcreateAPIRequest) SetItemid(_itemid string) error {
-	r._itemid = _itemid
-	r.Set("item_id", _itemid)
+func (r *TaobaotbkdgvegastljcreateAPIRequest) SetItemId(_itemId string) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
 	return nil
 }
 
-// GetItemid Itemid Getter
-func (r TaobaotbkdgvegastljcreateAPIRequest) GetItemid() string {
-	return r._itemid
+// GetItemId ItemId Getter
+func (r TaobaotbkdgvegastljcreateAPIRequest) GetItemId() string {
+	return r._itemId
 }
 
-// SetCampaigntype is Campaigntype Setter
+// SetCampaignType is CampaignType Setter
 // 已下线，后续不需要填写
-func (r *TaobaotbkdgvegastljcreateAPIRequest) SetCampaigntype(_campaigntype string) error {
-	r._campaigntype = _campaigntype
-	r.Set("campaign_type", _campaigntype)
+func (r *TaobaotbkdgvegastljcreateAPIRequest) SetCampaignType(_campaignType string) error {
+	r._campaignType = _campaignType
+	r.Set("campaign_type", _campaignType)
 	return nil
 }
 
-// GetCampaigntype Campaigntype Getter
-func (r TaobaotbkdgvegastljcreateAPIRequest) GetCampaigntype() string {
-	return r._campaigntype
+// GetCampaignType CampaignType Getter
+func (r TaobaotbkdgvegastljcreateAPIRequest) GetCampaignType() string {
+	return r._campaignType
 }
 
-// SetSecuritylevel is Securitylevel Setter
+// SetSecurityLevel is SecurityLevel Setter
 // 必须传入0
-func (r *TaobaotbkdgvegastljcreateAPIRequest) SetSecuritylevel(_securitylevel int64) error {
-	r._securitylevel = _securitylevel
-	r.Set("security_level", _securitylevel)
+func (r *TaobaotbkdgvegastljcreateAPIRequest) SetSecurityLevel(_securityLevel int64) error {
+	r._securityLevel = _securityLevel
+	r.Set("security_level", _securityLevel)
 	return nil
 }
 
-// GetSecuritylevel Securitylevel Getter
-func (r TaobaotbkdgvegastljcreateAPIRequest) GetSecuritylevel() int64 {
-	return r._securitylevel
+// GetSecurityLevel SecurityLevel Getter
+func (r TaobaotbkdgvegastljcreateAPIRequest) GetSecurityLevel() int64 {
+	return r._securityLevel
 }
 
-// SetUseendtimemode is Useendtimemode Setter
+// SetUseEndTimeMode is UseEndTimeMode Setter
 // 结束日期的模式,1:相对时间，2:绝对时间
-func (r *TaobaotbkdgvegastljcreateAPIRequest) SetUseendtimemode(_useendtimemode int64) error {
-	r._useendtimemode = _useendtimemode
-	r.Set("use_end_time_mode", _useendtimemode)
+func (r *TaobaotbkdgvegastljcreateAPIRequest) SetUseEndTimeMode(_useEndTimeMode int64) error {
+	r._useEndTimeMode = _useEndTimeMode
+	r.Set("use_end_time_mode", _useEndTimeMode)
 	return nil
 }
 
-// GetUseendtimemode Useendtimemode Getter
-func (r TaobaotbkdgvegastljcreateAPIRequest) GetUseendtimemode() int64 {
-	return r._useendtimemode
+// GetUseEndTimeMode UseEndTimeMode Getter
+func (r TaobaotbkdgvegastljcreateAPIRequest) GetUseEndTimeMode() int64 {
+	return r._useEndTimeMode
 }
 
-// SetUsertotalwinnumlimit is Usertotalwinnumlimit Setter
+// SetUserTotalWinNumLimit is UserTotalWinNumLimit Setter
 // 单用户累计中奖次数上限
-func (r *TaobaotbkdgvegastljcreateAPIRequest) SetUsertotalwinnumlimit(_usertotalwinnumlimit int64) error {
-	r._usertotalwinnumlimit = _usertotalwinnumlimit
-	r.Set("user_total_win_num_limit", _usertotalwinnumlimit)
+func (r *TaobaotbkdgvegastljcreateAPIRequest) SetUserTotalWinNumLimit(_userTotalWinNumLimit int64) error {
+	r._userTotalWinNumLimit = _userTotalWinNumLimit
+	r.Set("user_total_win_num_limit", _userTotalWinNumLimit)
 	return nil
 }
 
-// GetUsertotalwinnumlimit Usertotalwinnumlimit Getter
-func (r TaobaotbkdgvegastljcreateAPIRequest) GetUsertotalwinnumlimit() int64 {
-	return r._usertotalwinnumlimit
+// GetUserTotalWinNumLimit UserTotalWinNumLimit Getter
+func (r TaobaotbkdgvegastljcreateAPIRequest) GetUserTotalWinNumLimit() int64 {
+	return r._userTotalWinNumLimit
 }
 
-// SetTotalnum is Totalnum Setter
+// SetTotalNum is TotalNum Setter
 // 淘礼金总个数
-func (r *TaobaotbkdgvegastljcreateAPIRequest) SetTotalnum(_totalnum int64) error {
-	r._totalnum = _totalnum
-	r.Set("total_num", _totalnum)
+func (r *TaobaotbkdgvegastljcreateAPIRequest) SetTotalNum(_totalNum int64) error {
+	r._totalNum = _totalNum
+	r.Set("total_num", _totalNum)
 	return nil
 }
 
-// GetTotalnum Totalnum Getter
-func (r TaobaotbkdgvegastljcreateAPIRequest) GetTotalnum() int64 {
-	return r._totalnum
+// GetTotalNum TotalNum Getter
+func (r TaobaotbkdgvegastljcreateAPIRequest) GetTotalNum() int64 {
+	return r._totalNum
 }
 
-// SetAdzoneid is Adzoneid Setter
+// SetAdzoneId is AdzoneId Setter
 // 妈妈广告位Id
-func (r *TaobaotbkdgvegastljcreateAPIRequest) SetAdzoneid(_adzoneid int64) error {
-	r._adzoneid = _adzoneid
-	r.Set("adzone_id", _adzoneid)
+func (r *TaobaotbkdgvegastljcreateAPIRequest) SetAdzoneId(_adzoneId int64) error {
+	r._adzoneId = _adzoneId
+	r.Set("adzone_id", _adzoneId)
 	return nil
 }
 
-// GetAdzoneid Adzoneid Getter
-func (r TaobaotbkdgvegastljcreateAPIRequest) GetAdzoneid() int64 {
-	return r._adzoneid
+// GetAdzoneId AdzoneId Getter
+func (r TaobaotbkdgvegastljcreateAPIRequest) GetAdzoneId() int64 {
+	return r._adzoneId
 }
 
-// SetSecurityswitch is Securityswitch Setter
+// SetSecuritySwitch is SecuritySwitch Setter
 // 必须设置为true，默认开启安全
-func (r *TaobaotbkdgvegastljcreateAPIRequest) SetSecurityswitch(_securityswitch bool) error {
-	r._securityswitch = _securityswitch
-	r.Set("security_switch", _securityswitch)
+func (r *TaobaotbkdgvegastljcreateAPIRequest) SetSecuritySwitch(_securitySwitch bool) error {
+	r._securitySwitch = _securitySwitch
+	r.Set("security_switch", _securitySwitch)
 	return nil
 }
 
-// GetSecurityswitch Securityswitch Getter
-func (r TaobaotbkdgvegastljcreateAPIRequest) GetSecurityswitch() bool {
-	return r._securityswitch
+// GetSecuritySwitch SecuritySwitch Getter
+func (r TaobaotbkdgvegastljcreateAPIRequest) GetSecuritySwitch() bool {
+	return r._securitySwitch
 }

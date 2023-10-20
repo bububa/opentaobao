@@ -1,7 +1,7 @@
 package flight
 
-// AlitripAgentFlightSellRefundListT 结构体
-type AlitripAgentFlightSellRefundListT struct {
+// AlitripagentflightsellrefundlistT 结构体
+type AlitripagentflightsellrefundlistT struct {
 	// 退票申请单号
 	ApplyId string `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
 	// 飞猪订单号

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthPregnancyNavigateinfoQueryAPIResponse 查询底导数据 API返回值
+// AlibabaalihealthpregnancynavigateinfoqueryAPIResponse 查询底导数据 API返回值
 // alibaba.alihealth.pregnancy.navigateinfo.query
 //
 // 备孕管理--获取底部导航信息
-type AlibabaAlihealthPregnancyNavigateinfoQueryAPIResponse struct {
+type AlibabaalihealthpregnancynavigateinfoqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthPregnancyNavigateinfoQueryAPIResponseModel
+	AlibabaalihealthpregnancynavigateinfoqueryAPIResponseModel
 }
 
-// AlibabaAlihealthPregnancyNavigateinfoQueryAPIResponseModel is 查询底导数据 成功返回结果
-type AlibabaAlihealthPregnancyNavigateinfoQueryAPIResponseModel struct {
+// AlibabaalihealthpregnancynavigateinfoqueryAPIResponseModel is 查询底导数据 成功返回结果
+type AlibabaalihealthpregnancynavigateinfoqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_pregnancy_navigateinfo_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpenmallTradeAgreepayAPIResponse openmall订单支付 API返回值
+// TaobaoopenmalltradeagreepayAPIResponse openmall订单支付 API返回值
 // taobao.openmall.trade.agreepay
 //
 // openmall订单支付
-type TaobaoOpenmallTradeAgreepayAPIResponse struct {
+type TaobaoopenmalltradeagreepayAPIResponse struct {
 	model.CommonResponse
-	TaobaoOpenmallTradeAgreepayAPIResponseModel
+	TaobaoopenmalltradeagreepayAPIResponseModel
 }
 
-// TaobaoOpenmallTradeAgreepayAPIResponseModel is openmall订单支付 成功返回结果
-type TaobaoOpenmallTradeAgreepayAPIResponseModel struct {
+// TaobaoopenmalltradeagreepayAPIResponseModel is openmall订单支付 成功返回结果
+type TaobaoopenmalltradeagreepayAPIResponseModel struct {
 	XMLName xml.Name `xml:"openmall_trade_agreepay_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

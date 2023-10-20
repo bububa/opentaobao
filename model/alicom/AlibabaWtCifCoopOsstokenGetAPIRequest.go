@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWtCifCoopOsstokenGetAPIRequest 获取oss签名接口 API请求
+// AlibabawtcifcooposstokengetAPIRequest 获取oss签名接口 API请求
 // alibaba.wt.cif.coop.osstoken.get
 //
 // 商家合作上传oss图片获取token接口
-type AlibabaWtCifCoopOsstokenGetAPIRequest struct {
+type AlibabawtcifcooposstokengetAPIRequest struct {
 	model.Params
 	// 调用方的应用名
 	_appName string
@@ -20,65 +20,65 @@ type AlibabaWtCifCoopOsstokenGetAPIRequest struct {
 	_biz string
 }
 
-// NewAlibabaWtCifCoopOsstokenGetRequest 初始化AlibabaWtCifCoopOsstokenGetAPIRequest对象
-func NewAlibabaWtCifCoopOsstokenGetRequest() *AlibabaWtCifCoopOsstokenGetAPIRequest {
-	return &AlibabaWtCifCoopOsstokenGetAPIRequest{
+// NewAlibabawtcifcooposstokengetRequest 初始化AlibabawtcifcooposstokengetAPIRequest对象
+func NewAlibabawtcifcooposstokengetRequest() *AlibabawtcifcooposstokengetAPIRequest {
+	return &AlibabawtcifcooposstokengetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWtCifCoopOsstokenGetAPIRequest) GetApiMethodName() string {
+func (r AlibabawtcifcooposstokengetAPIRequest) GetApiMethodName() string {
 	return "alibaba.wt.cif.coop.osstoken.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWtCifCoopOsstokenGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawtcifcooposstokengetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWtCifCoopOsstokenGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabawtcifcooposstokengetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAppName is AppName Setter
 // 调用方的应用名
-func (r *AlibabaWtCifCoopOsstokenGetAPIRequest) SetAppName(_appName string) error {
+func (r *AlibabawtcifcooposstokengetAPIRequest) SetAppName(_appName string) error {
 	r._appName = _appName
 	r.Set("app_name", _appName)
 	return nil
 }
 
 // GetAppName AppName Getter
-func (r AlibabaWtCifCoopOsstokenGetAPIRequest) GetAppName() string {
+func (r AlibabawtcifcooposstokengetAPIRequest) GetAppName() string {
 	return r._appName
 }
 
 // SetSource is Source Setter
 // 系统分配的source
-func (r *AlibabaWtCifCoopOsstokenGetAPIRequest) SetSource(_source string) error {
+func (r *AlibabawtcifcooposstokengetAPIRequest) SetSource(_source string) error {
 	r._source = _source
 	r.Set("source", _source)
 	return nil
 }
 
 // GetSource Source Getter
-func (r AlibabaWtCifCoopOsstokenGetAPIRequest) GetSource() string {
+func (r AlibabawtcifcooposstokengetAPIRequest) GetSource() string {
 	return r._source
 }
 
 // SetBiz is Biz Setter
 // 系统分配的biz
-func (r *AlibabaWtCifCoopOsstokenGetAPIRequest) SetBiz(_biz string) error {
+func (r *AlibabawtcifcooposstokengetAPIRequest) SetBiz(_biz string) error {
 	r._biz = _biz
 	r.Set("biz", _biz)
 	return nil
 }
 
 // GetBiz Biz Getter
-func (r AlibabaWtCifCoopOsstokenGetAPIRequest) GetBiz() string {
+func (r AlibabawtcifcooposstokengetAPIRequest) GetBiz() string {
 	return r._biz
 }

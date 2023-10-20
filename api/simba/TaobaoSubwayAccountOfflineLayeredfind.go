@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// TaobaoSubwayAccountOfflineLayeredfind 获取账户历史报表30天转化周期
+// Taobaosubwayaccountofflinelayeredfind 获取账户历史报表30天转化周期
 // taobao.subway.account.offline.layeredfind
 //
 // 获取账户历史报表
-func TaobaoSubwayAccountOfflineLayeredfind(clt *core.SDKClient, req *simba.TaobaoSubwayAccountOfflineLayeredfindAPIRequest, session string) (*simba.TaobaoSubwayAccountOfflineLayeredfindAPIResponse, error) {
-	var resp simba.TaobaoSubwayAccountOfflineLayeredfindAPIResponse
+func Taobaosubwayaccountofflinelayeredfind(clt *core.SDKClient, req *simba.TaobaosubwayaccountofflinelayeredfindAPIRequest, session string) (*simba.TaobaosubwayaccountofflinelayeredfindAPIResponse, error) {
+	var resp simba.TaobaosubwayaccountofflinelayeredfindAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

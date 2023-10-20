@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWlbOrderdetailDateGetAPIResponse 按照日期范围查询物流订单详情 API返回值
+// TaobaowlborderdetaildategetAPIResponse 按照日期范围查询物流订单详情 API返回值
 // taobao.wlb.orderdetail.date.get
 //
 // 外部ERP可通过该接口查询一段时间内的物流宝订单，以及订单详情
-type TaobaoWlbOrderdetailDateGetAPIResponse struct {
+type TaobaowlborderdetaildategetAPIResponse struct {
 	model.CommonResponse
-	TaobaoWlbOrderdetailDateGetAPIResponseModel
+	TaobaowlborderdetaildategetAPIResponseModel
 }
 
-// TaobaoWlbOrderdetailDateGetAPIResponseModel is 按照日期范围查询物流订单详情 成功返回结果
-type TaobaoWlbOrderdetailDateGetAPIResponseModel struct {
+// TaobaowlborderdetaildategetAPIResponseModel is 按照日期范围查询物流订单详情 成功返回结果
+type TaobaowlborderdetaildategetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_orderdetail_date_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

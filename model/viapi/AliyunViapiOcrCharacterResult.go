@@ -1,7 +1,7 @@
 package viapi
 
-// AliyunViapiOcrCharacterResult 结构体
-type AliyunViapiOcrCharacterResult struct {
+// AliyunviapiocrcharacterResult 结构体
+type AliyunviapiocrcharacterResult struct {
 	// 文字内容
 	Text string `json:"text,omitempty" xml:"text,omitempty"`
 	// 文字区域

@@ -1,7 +1,7 @@
 package aliexpress
 
-// AliexpressFeedPostPublishResponse 结构体
-type AliexpressFeedPostPublishResponse struct {
+// AliexpressfeedpostpublishResponse 结构体
+type AliexpressfeedpostpublishResponse struct {
 	// 成功返回结果，json字符串
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// 错误信息

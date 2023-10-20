@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaShopCategoryAllGetAPIRequest 全部店铺分类信息查询接口 API请求
+// AlibabashopcategoryallgetAPIRequest 全部店铺分类信息查询接口 API请求
 // alibaba.shop.category.all.get
 //
 // 按照卖家身份查询全部分类信息
-type AlibabaShopCategoryAllGetAPIRequest struct {
+type AlibabashopcategoryallgetAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaShopCategoryAllGetRequest 初始化AlibabaShopCategoryAllGetAPIRequest对象
-func NewAlibabaShopCategoryAllGetRequest() *AlibabaShopCategoryAllGetAPIRequest {
-	return &AlibabaShopCategoryAllGetAPIRequest{
+// NewAlibabashopcategoryallgetRequest 初始化AlibabashopcategoryallgetAPIRequest对象
+func NewAlibabashopcategoryallgetRequest() *AlibabashopcategoryallgetAPIRequest {
+	return &AlibabashopcategoryallgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaShopCategoryAllGetAPIRequest) GetApiMethodName() string {
+func (r AlibabashopcategoryallgetAPIRequest) GetApiMethodName() string {
 	return "alibaba.shop.category.all.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaShopCategoryAllGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabashopcategoryallgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaShopCategoryAllGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabashopcategoryallgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

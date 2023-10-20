@@ -11,5 +11,5 @@ type RfqQuotationPriceRemoteDto struct {
 	// 是否提供样本
 	IsSupport string `json:"is_support,omitempty" xml:"is_support,omitempty"`
 	// 预计时间
-	EstimatedDate *BigDecimal `json:"estimated_date,omitempty" xml:"estimated_date,omitempty"`
+	EstimatedDate float64 `json:"estimated_date,omitempty" xml:"estimated_date,omitempty"`
 }

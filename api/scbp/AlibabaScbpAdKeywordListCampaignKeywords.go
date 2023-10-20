@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// AlibabaScbpAdKeywordListCampaignKeywords 获取计划关键词
+// Alibabascbpadkeywordlistcampaignkeywords 获取计划关键词
 // alibaba.scbp.ad.keyword.list.campaign.keywords
 //
 // 获取计划关键词
-func AlibabaScbpAdKeywordListCampaignKeywords(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest, session string) (*scbp.AlibabaScbpAdKeywordListCampaignKeywordsAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdKeywordListCampaignKeywordsAPIResponse
+func Alibabascbpadkeywordlistcampaignkeywords(clt *core.SDKClient, req *scbp.AlibabascbpadkeywordlistcampaignkeywordsAPIRequest, session string) (*scbp.AlibabascbpadkeywordlistcampaignkeywordsAPIResponse, error) {
+	var resp scbp.AlibabascbpadkeywordlistcampaignkeywordsAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

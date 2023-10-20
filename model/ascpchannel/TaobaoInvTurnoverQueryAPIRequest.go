@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoInvTurnoverQueryAPIRequest 业务库存流水查询 API请求
+// TaobaoinvturnoverqueryAPIRequest 业务库存流水查询 API请求
 // taobao.inv.turnover.query
 //
 // 业务库存流水
-type TaobaoInvTurnoverQueryAPIRequest struct {
+type TaobaoinvturnoverqueryAPIRequest struct {
 	model.Params
 	// 库存类型
 	_inventoryType []string
@@ -30,130 +30,130 @@ type TaobaoInvTurnoverQueryAPIRequest struct {
 	_pageSize string
 }
 
-// NewTaobaoInvTurnoverQueryRequest 初始化TaobaoInvTurnoverQueryAPIRequest对象
-func NewTaobaoInvTurnoverQueryRequest() *TaobaoInvTurnoverQueryAPIRequest {
-	return &TaobaoInvTurnoverQueryAPIRequest{
+// NewTaobaoinvturnoverqueryRequest 初始化TaobaoinvturnoverqueryAPIRequest对象
+func NewTaobaoinvturnoverqueryRequest() *TaobaoinvturnoverqueryAPIRequest {
+	return &TaobaoinvturnoverqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoInvTurnoverQueryAPIRequest) GetApiMethodName() string {
+func (r TaobaoinvturnoverqueryAPIRequest) GetApiMethodName() string {
 	return "taobao.inv.turnover.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoInvTurnoverQueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoinvturnoverqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoInvTurnoverQueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoinvturnoverqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetInventoryType is InventoryType Setter
 // 库存类型
-func (r *TaobaoInvTurnoverQueryAPIRequest) SetInventoryType(_inventoryType []string) error {
+func (r *TaobaoinvturnoverqueryAPIRequest) SetInventoryType(_inventoryType []string) error {
 	r._inventoryType = _inventoryType
 	r.Set("inventory_type", _inventoryType)
 	return nil
 }
 
 // GetInventoryType InventoryType Getter
-func (r TaobaoInvTurnoverQueryAPIRequest) GetInventoryType() []string {
+func (r TaobaoinvturnoverqueryAPIRequest) GetInventoryType() []string {
 	return r._inventoryType
 }
 
 // SetScItemId is ScItemId Setter
 // 货品ID
-func (r *TaobaoInvTurnoverQueryAPIRequest) SetScItemId(_scItemId string) error {
+func (r *TaobaoinvturnoverqueryAPIRequest) SetScItemId(_scItemId string) error {
 	r._scItemId = _scItemId
 	r.Set("sc_item_id", _scItemId)
 	return nil
 }
 
 // GetScItemId ScItemId Getter
-func (r TaobaoInvTurnoverQueryAPIRequest) GetScItemId() string {
+func (r TaobaoinvturnoverqueryAPIRequest) GetScItemId() string {
 	return r._scItemId
 }
 
 // SetStoreCode is StoreCode Setter
 // 仓编码
-func (r *TaobaoInvTurnoverQueryAPIRequest) SetStoreCode(_storeCode string) error {
+func (r *TaobaoinvturnoverqueryAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
 	r.Set("store_code", _storeCode)
 	return nil
 }
 
 // GetStoreCode StoreCode Getter
-func (r TaobaoInvTurnoverQueryAPIRequest) GetStoreCode() string {
+func (r TaobaoinvturnoverqueryAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }
 
 // SetActivityType is ActivityType Setter
 // 单据类型
-func (r *TaobaoInvTurnoverQueryAPIRequest) SetActivityType(_activityType string) error {
+func (r *TaobaoinvturnoverqueryAPIRequest) SetActivityType(_activityType string) error {
 	r._activityType = _activityType
 	r.Set("activity_type", _activityType)
 	return nil
 }
 
 // GetActivityType ActivityType Getter
-func (r TaobaoInvTurnoverQueryAPIRequest) GetActivityType() string {
+func (r TaobaoinvturnoverqueryAPIRequest) GetActivityType() string {
 	return r._activityType
 }
 
 // SetSdate is Sdate Setter
 // 开始时间
-func (r *TaobaoInvTurnoverQueryAPIRequest) SetSdate(_sdate string) error {
+func (r *TaobaoinvturnoverqueryAPIRequest) SetSdate(_sdate string) error {
 	r._sdate = _sdate
 	r.Set("sdate", _sdate)
 	return nil
 }
 
 // GetSdate Sdate Getter
-func (r TaobaoInvTurnoverQueryAPIRequest) GetSdate() string {
+func (r TaobaoinvturnoverqueryAPIRequest) GetSdate() string {
 	return r._sdate
 }
 
 // SetEdate is Edate Setter
 // 结束时间
-func (r *TaobaoInvTurnoverQueryAPIRequest) SetEdate(_edate string) error {
+func (r *TaobaoinvturnoverqueryAPIRequest) SetEdate(_edate string) error {
 	r._edate = _edate
 	r.Set("edate", _edate)
 	return nil
 }
 
 // GetEdate Edate Getter
-func (r TaobaoInvTurnoverQueryAPIRequest) GetEdate() string {
+func (r TaobaoinvturnoverqueryAPIRequest) GetEdate() string {
 	return r._edate
 }
 
 // SetPageIndex is PageIndex Setter
 // 查询页
-func (r *TaobaoInvTurnoverQueryAPIRequest) SetPageIndex(_pageIndex string) error {
+func (r *TaobaoinvturnoverqueryAPIRequest) SetPageIndex(_pageIndex string) error {
 	r._pageIndex = _pageIndex
 	r.Set("page_index", _pageIndex)
 	return nil
 }
 
 // GetPageIndex PageIndex Getter
-func (r TaobaoInvTurnoverQueryAPIRequest) GetPageIndex() string {
+func (r TaobaoinvturnoverqueryAPIRequest) GetPageIndex() string {
 	return r._pageIndex
 }
 
 // SetPageSize is PageSize Setter
 // 单页记录数
-func (r *TaobaoInvTurnoverQueryAPIRequest) SetPageSize(_pageSize string) error {
+func (r *TaobaoinvturnoverqueryAPIRequest) SetPageSize(_pageSize string) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r TaobaoInvTurnoverQueryAPIRequest) GetPageSize() string {
+func (r TaobaoinvturnoverqueryAPIRequest) GetPageSize() string {
 	return r._pageSize
 }

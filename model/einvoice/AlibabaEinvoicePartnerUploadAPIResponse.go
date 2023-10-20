@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEinvoicePartnerUploadAPIResponse 服务商发票上传接口（非授权） API返回值
+// AlibabaeinvoicepartneruploadAPIResponse 服务商发票上传接口（非授权） API返回值
 // alibaba.einvoice.partner.upload
 //
 // 服务商发票上传接口（非授权）
-type AlibabaEinvoicePartnerUploadAPIResponse struct {
+type AlibabaeinvoicepartneruploadAPIResponse struct {
 	model.CommonResponse
-	AlibabaEinvoicePartnerUploadAPIResponseModel
+	AlibabaeinvoicepartneruploadAPIResponseModel
 }
 
-// AlibabaEinvoicePartnerUploadAPIResponseModel is 服务商发票上传接口（非授权） 成功返回结果
-type AlibabaEinvoicePartnerUploadAPIResponseModel struct {
+// AlibabaeinvoicepartneruploadAPIResponseModel is 服务商发票上传接口（非授权） 成功返回结果
+type AlibabaeinvoicepartneruploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_partner_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallCrmMemberFrontUnbindAPIRequest 品牌会员解绑 API请求
+// TmallcrmmemberfrontunbindAPIRequest 品牌会员解绑 API请求
 // tmall.crm.member.front.unbind
 //
 // 品牌会员解绑功能
-type TmallCrmMemberFrontUnbindAPIRequest struct {
+type TmallcrmmemberfrontunbindAPIRequest struct {
 	model.Params
 	// 会员昵称
 	_userNick string
 }
 
-// NewTmallCrmMemberFrontUnbindRequest 初始化TmallCrmMemberFrontUnbindAPIRequest对象
-func NewTmallCrmMemberFrontUnbindRequest() *TmallCrmMemberFrontUnbindAPIRequest {
-	return &TmallCrmMemberFrontUnbindAPIRequest{
+// NewTmallcrmmemberfrontunbindRequest 初始化TmallcrmmemberfrontunbindAPIRequest对象
+func NewTmallcrmmemberfrontunbindRequest() *TmallcrmmemberfrontunbindAPIRequest {
+	return &TmallcrmmemberfrontunbindAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallCrmMemberFrontUnbindAPIRequest) GetApiMethodName() string {
+func (r TmallcrmmemberfrontunbindAPIRequest) GetApiMethodName() string {
 	return "tmall.crm.member.front.unbind"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallCrmMemberFrontUnbindAPIRequest) GetApiParams(params url.Values) {
+func (r TmallcrmmemberfrontunbindAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallCrmMemberFrontUnbindAPIRequest) GetRawParams() model.Params {
+func (r TmallcrmmemberfrontunbindAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetUserNick is UserNick Setter
 // 会员昵称
-func (r *TmallCrmMemberFrontUnbindAPIRequest) SetUserNick(_userNick string) error {
+func (r *TmallcrmmemberfrontunbindAPIRequest) SetUserNick(_userNick string) error {
 	r._userNick = _userNick
 	r.Set("user_nick", _userNick)
 	return nil
 }
 
 // GetUserNick UserNick Getter
-func (r TmallCrmMemberFrontUnbindAPIRequest) GetUserNick() string {
+func (r TmallcrmmemberfrontunbindAPIRequest) GetUserNick() string {
 	return r._userNick
 }

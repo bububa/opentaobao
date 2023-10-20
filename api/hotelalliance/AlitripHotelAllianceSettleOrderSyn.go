@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/hotelalliance"
 )
 
-// AlitripHotelAllianceSettleOrderSyn 菲住联盟分账成功订单同步
+// Alitriphotelalliancesettleordersyn 菲住联盟分账成功订单同步
 // alitrip.hotel.alliance.settle.order.syn
 //
 // 用于菲住联盟分账成功订单同步
-func AlitripHotelAllianceSettleOrderSyn(clt *core.SDKClient, req *hotelalliance.AlitripHotelAllianceSettleOrderSynAPIRequest, session string) (*hotelalliance.AlitripHotelAllianceSettleOrderSynAPIResponse, error) {
-	var resp hotelalliance.AlitripHotelAllianceSettleOrderSynAPIResponse
+func Alitriphotelalliancesettleordersyn(clt *core.SDKClient, req *hotelalliance.AlitriphotelalliancesettleordersynAPIRequest, session string) (*hotelalliance.AlitriphotelalliancesettleordersynAPIResponse, error) {
+	var resp hotelalliance.AlitriphotelalliancesettleordersynAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -13,7 +13,7 @@ import (
 type TaobaotbkscucrowdgetAPIRequest struct {
 	model.Params
 	// 人群标签id
-	_ucrowdid int64
+	_ucrowdId int64
 }
 
 // NewTaobaotbkscucrowdgetRequest 初始化TaobaotbkscucrowdgetAPIRequest对象
@@ -40,15 +40,15 @@ func (r TaobaotbkscucrowdgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetUcrowdid is Ucrowdid Setter
+// SetUcrowdId is UcrowdId Setter
 // 人群标签id
-func (r *TaobaotbkscucrowdgetAPIRequest) SetUcrowdid(_ucrowdid int64) error {
-	r._ucrowdid = _ucrowdid
-	r.Set("ucrowd_id", _ucrowdid)
+func (r *TaobaotbkscucrowdgetAPIRequest) SetUcrowdId(_ucrowdId int64) error {
+	r._ucrowdId = _ucrowdId
+	r.Set("ucrowd_id", _ucrowdId)
 	return nil
 }
 
-// GetUcrowdid Ucrowdid Getter
-func (r TaobaotbkscucrowdgetAPIRequest) GetUcrowdid() int64 {
-	return r._ucrowdid
+// GetUcrowdId UcrowdId Getter
+func (r TaobaotbkscucrowdgetAPIRequest) GetUcrowdId() int64 {
+	return r._ucrowdId
 }

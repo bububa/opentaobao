@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aesolution"
 )
 
-// AliexpressSolutionIssuePartnerRmaStateUpdate aliexpress.solution.issue.partner.rma.state.update
+// Aliexpresssolutionissuepartnerrmastateupdate aliexpress.solution.issue.partner.rma.state.update
 // aliexpress.solution.issue.partner.rma.state.update
 //
 // Receive changes in state updates for RMAs orders from after sales partners
-func AliexpressSolutionIssuePartnerRmaStateUpdate(clt *core.SDKClient, req *aesolution.AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest, session string) (*aesolution.AliexpressSolutionIssuePartnerRmaStateUpdateAPIResponse, error) {
-	var resp aesolution.AliexpressSolutionIssuePartnerRmaStateUpdateAPIResponse
+func Aliexpresssolutionissuepartnerrmastateupdate(clt *core.SDKClient, req *aesolution.AliexpresssolutionissuepartnerrmastateupdateAPIRequest, session string) (*aesolution.AliexpresssolutionissuepartnerrmastateupdateAPIResponse, error) {
+	var resp aesolution.AliexpresssolutionissuepartnerrmastateupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

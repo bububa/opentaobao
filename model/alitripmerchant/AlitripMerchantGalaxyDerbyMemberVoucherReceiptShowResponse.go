@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripMerchantGalaxyDerbyMemberVoucherReceiptShowResponse 结构体
-type AlitripMerchantGalaxyDerbyMemberVoucherReceiptShowResponse struct {
+// AlitripmerchantgalaxyderbymembervoucherreceiptshowResponse 结构体
+type AlitripmerchantgalaxyderbymembervoucherreceiptshowResponse struct {
 	// 是否成功
 	Success string `json:"success,omitempty" xml:"success,omitempty"`
 	// 错误码

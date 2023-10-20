@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-// YunosOsupdateAppversionQuery 分页获取桌面升级任务
+// Yunososupdateappversionquery 分页获取桌面升级任务
 // yunos.osupdate.appversion.query
 //
 // 分页获取桌面升级任务
-func YunosOsupdateAppversionQuery(clt *core.SDKClient, req *tvupadmin.YunosOsupdateAppversionQueryAPIRequest, session string) (*tvupadmin.YunosOsupdateAppversionQueryAPIResponse, error) {
-	var resp tvupadmin.YunosOsupdateAppversionQueryAPIResponse
+func Yunososupdateappversionquery(clt *core.SDKClient, req *tvupadmin.YunososupdateappversionqueryAPIRequest, session string) (*tvupadmin.YunososupdateappversionqueryAPIResponse, error) {
+	var resp tvupadmin.YunososupdateappversionqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

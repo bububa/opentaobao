@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest 四级地址库-区域 API请求
+// AlibabaonetouchlogisticsexpressaddressdivisionlistAPIRequest 四级地址库-区域 API请求
 // alibaba.onetouch.logistics.express.address.division.list
 //
 // 四级地址库-区
-type AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest struct {
+type AlibabaonetouchlogisticsexpressaddressdivisionlistAPIRequest struct {
 	model.Params
 	// 请求参数
 	_paramQuery *AddressQueryDto
 }
 
-// NewAlibabaOnetouchLogisticsExpressAddressDivisionListRequest 初始化AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest对象
-func NewAlibabaOnetouchLogisticsExpressAddressDivisionListRequest() *AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest {
-	return &AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest{
+// NewAlibabaonetouchlogisticsexpressaddressdivisionlistRequest 初始化AlibabaonetouchlogisticsexpressaddressdivisionlistAPIRequest对象
+func NewAlibabaonetouchlogisticsexpressaddressdivisionlistRequest() *AlibabaonetouchlogisticsexpressaddressdivisionlistAPIRequest {
+	return &AlibabaonetouchlogisticsexpressaddressdivisionlistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest) GetApiMethodName() string {
+func (r AlibabaonetouchlogisticsexpressaddressdivisionlistAPIRequest) GetApiMethodName() string {
 	return "alibaba.onetouch.logistics.express.address.division.list"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaonetouchlogisticsexpressaddressdivisionlistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest) GetRawParams() model.Params {
+func (r AlibabaonetouchlogisticsexpressaddressdivisionlistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamQuery is ParamQuery Setter
 // 请求参数
-func (r *AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest) SetParamQuery(_paramQuery *AddressQueryDto) error {
+func (r *AlibabaonetouchlogisticsexpressaddressdivisionlistAPIRequest) SetParamQuery(_paramQuery *AddressQueryDto) error {
 	r._paramQuery = _paramQuery
 	r.Set("param_query", _paramQuery)
 	return nil
 }
 
 // GetParamQuery ParamQuery Getter
-func (r AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest) GetParamQuery() *AddressQueryDto {
+func (r AlibabaonetouchlogisticsexpressaddressdivisionlistAPIRequest) GetParamQuery() *AddressQueryDto {
 	return r._paramQuery
 }

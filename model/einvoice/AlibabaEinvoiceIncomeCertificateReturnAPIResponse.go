@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEinvoiceIncomeCertificateReturnAPIResponse 服务商回传进项认证结果 API返回值
+// AlibabaeinvoiceincomecertificatereturnAPIResponse 服务商回传进项认证结果 API返回值
 // alibaba.einvoice.income.certificate.return
 //
 // 服务商回传客户端agent所处环境的设备列表，比如扫描仪
-type AlibabaEinvoiceIncomeCertificateReturnAPIResponse struct {
+type AlibabaeinvoiceincomecertificatereturnAPIResponse struct {
 	model.CommonResponse
-	AlibabaEinvoiceIncomeCertificateReturnAPIResponseModel
+	AlibabaeinvoiceincomecertificatereturnAPIResponseModel
 }
 
-// AlibabaEinvoiceIncomeCertificateReturnAPIResponseModel is 服务商回传进项认证结果 成功返回结果
-type AlibabaEinvoiceIncomeCertificateReturnAPIResponseModel struct {
+// AlibabaeinvoiceincomecertificatereturnAPIResponseModel is 服务商回传进项认证结果 成功返回结果
+type AlibabaeinvoiceincomecertificatereturnAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_income_certificate_return_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

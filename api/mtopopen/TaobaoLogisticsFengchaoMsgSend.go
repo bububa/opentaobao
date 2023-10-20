@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mtopopen"
 )
 
-// TaobaoLogisticsFengchaoMsgSend 丰巢走淘宝发包裹状态通知接口
+// Taobaologisticsfengchaomsgsend 丰巢走淘宝发包裹状态通知接口
 // taobao.logistics.fengchao.msg.send
 //
 // 丰巢走淘宝发包裹状态通知接口
-func TaobaoLogisticsFengchaoMsgSend(clt *core.SDKClient, req *mtopopen.TaobaoLogisticsFengchaoMsgSendAPIRequest, session string) (*mtopopen.TaobaoLogisticsFengchaoMsgSendAPIResponse, error) {
-	var resp mtopopen.TaobaoLogisticsFengchaoMsgSendAPIResponse
+func Taobaologisticsfengchaomsgsend(clt *core.SDKClient, req *mtopopen.TaobaologisticsfengchaomsgsendAPIRequest, session string) (*mtopopen.TaobaologisticsfengchaomsgsendAPIResponse, error) {
+	var resp mtopopen.TaobaologisticsfengchaomsgsendAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

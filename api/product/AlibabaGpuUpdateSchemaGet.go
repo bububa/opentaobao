@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-// AlibabaGpuUpdateSchemaGet 获取产品编辑schema规则的接口
+// Alibabagpuupdateschemaget 获取产品编辑schema规则的接口
 // alibaba.gpu.update.schema.get
 //
 // 获取产品编辑schema规则的接口
-func AlibabaGpuUpdateSchemaGet(clt *core.SDKClient, req *product.AlibabaGpuUpdateSchemaGetAPIRequest, session string) (*product.AlibabaGpuUpdateSchemaGetAPIResponse, error) {
-	var resp product.AlibabaGpuUpdateSchemaGetAPIResponse
+func Alibabagpuupdateschemaget(clt *core.SDKClient, req *product.AlibabagpuupdateschemagetAPIRequest, session string) (*product.AlibabagpuupdateschemagetAPIResponse, error) {
+	var resp product.AlibabagpuupdateschemagetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

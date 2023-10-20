@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// TaobaoSimbaBidwordPricetools 关键词出价指导工具（新）
+// Taobaosimbabidwordpricetools 关键词出价指导工具（新）
 // taobao.simba.bidword.pricetools
 //
 // 关键词出价指导工具（新）
-func TaobaoSimbaBidwordPricetools(clt *core.SDKClient, req *simba.TaobaoSimbaBidwordPricetoolsAPIRequest, session string) (*simba.TaobaoSimbaBidwordPricetoolsAPIResponse, error) {
-	var resp simba.TaobaoSimbaBidwordPricetoolsAPIResponse
+func Taobaosimbabidwordpricetools(clt *core.SDKClient, req *simba.TaobaosimbabidwordpricetoolsAPIRequest, session string) (*simba.TaobaosimbabidwordpricetoolsAPIResponse, error) {
+	var resp simba.TaobaosimbabidwordpricetoolsAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

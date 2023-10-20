@@ -1,7 +1,7 @@
 package lstwarehouse
 
-// AlibabaLstTradeSellerWarehouseQueryResult 结构体
-type AlibabaLstTradeSellerWarehouseQueryResult struct {
+// AlibabalsttradesellerwarehousequeryResult 结构体
+type AlibabalsttradesellerwarehousequeryResult struct {
 	// 记录
 	ContentList []Content `json:"content_list,omitempty" xml:"content_list>content,omitempty"`
 	// 系统自动生成

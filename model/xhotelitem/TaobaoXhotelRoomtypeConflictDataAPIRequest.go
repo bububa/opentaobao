@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelRoomtypeConflictDataAPIRequest 商家床型冲突数据接口 API请求
+// TaobaoxhotelroomtypeconflictdataAPIRequest 商家床型冲突数据接口 API请求
 // taobao.xhotel.roomtype.conflict.data
 //
 // 商家床型冲突数据接口
-type TaobaoXhotelRoomtypeConflictDataAPIRequest struct {
+type TaobaoxhotelroomtypeconflictdataAPIRequest struct {
 	model.Params
 	// 查询第几页数据
 	_currentPage int64
 }
 
-// NewTaobaoXhotelRoomtypeConflictDataRequest 初始化TaobaoXhotelRoomtypeConflictDataAPIRequest对象
-func NewTaobaoXhotelRoomtypeConflictDataRequest() *TaobaoXhotelRoomtypeConflictDataAPIRequest {
-	return &TaobaoXhotelRoomtypeConflictDataAPIRequest{
+// NewTaobaoxhotelroomtypeconflictdataRequest 初始化TaobaoxhotelroomtypeconflictdataAPIRequest对象
+func NewTaobaoxhotelroomtypeconflictdataRequest() *TaobaoxhotelroomtypeconflictdataAPIRequest {
+	return &TaobaoxhotelroomtypeconflictdataAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoXhotelRoomtypeConflictDataAPIRequest) GetApiMethodName() string {
+func (r TaobaoxhotelroomtypeconflictdataAPIRequest) GetApiMethodName() string {
 	return "taobao.xhotel.roomtype.conflict.data"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelRoomtypeConflictDataAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoxhotelroomtypeconflictdataAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoXhotelRoomtypeConflictDataAPIRequest) GetRawParams() model.Params {
+func (r TaobaoxhotelroomtypeconflictdataAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCurrentPage is CurrentPage Setter
 // 查询第几页数据
-func (r *TaobaoXhotelRoomtypeConflictDataAPIRequest) SetCurrentPage(_currentPage int64) error {
+func (r *TaobaoxhotelroomtypeconflictdataAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
 	r.Set("current_page", _currentPage)
 	return nil
 }
 
 // GetCurrentPage CurrentPage Getter
-func (r TaobaoXhotelRoomtypeConflictDataAPIRequest) GetCurrentPage() int64 {
+func (r TaobaoxhotelroomtypeconflictdataAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaPurPrCreateAPIResponse 下pr单 API返回值
+// AlibabapurprcreateAPIResponse 下pr单 API返回值
 // alibaba.pur.pr.create
 //
 // 下pr单
-type AlibabaPurPrCreateAPIResponse struct {
+type AlibabapurprcreateAPIResponse struct {
 	model.CommonResponse
-	AlibabaPurPrCreateAPIResponseModel
+	AlibabapurprcreateAPIResponseModel
 }
 
-// AlibabaPurPrCreateAPIResponseModel is 下pr单 成功返回结果
-type AlibabaPurPrCreateAPIResponseModel struct {
+// AlibabapurprcreateAPIResponseModel is 下pr单 成功返回结果
+type AlibabapurprcreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_pur_pr_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// AlibabaAlscCrmRuleQuerympricerule 查询品牌下的会员价规则
+// Alibabaalsccrmrulequerympricerule 查询品牌下的会员价规则
 // alibaba.alsc.crm.rule.querympricerule
 //
 // 查询品牌下的会员价规则
-func AlibabaAlscCrmRuleQuerympricerule(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRuleQuerympriceruleAPIRequest, session string) (*alsc.AlibabaAlscCrmRuleQuerympriceruleAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmRuleQuerympriceruleAPIResponse
+func Alibabaalsccrmrulequerympricerule(clt *core.SDKClient, req *alsc.AlibabaalsccrmrulequerympriceruleAPIRequest, session string) (*alsc.AlibabaalsccrmrulequerympriceruleAPIResponse, error) {
+	var resp alsc.AlibabaalsccrmrulequerympriceruleAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

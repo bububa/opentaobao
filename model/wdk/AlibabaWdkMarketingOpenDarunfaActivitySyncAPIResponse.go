@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkMarketingOpenDarunfaActivitySyncAPIResponse 活动数据同步 API返回值
+// AlibabawdkmarketingopendarunfaactivitysyncAPIResponse 活动数据同步 API返回值
 // alibaba.wdk.marketing.open.darunfa.activity.sync
 //
 // 大润发活动数据同步
-type AlibabaWdkMarketingOpenDarunfaActivitySyncAPIResponse struct {
+type AlibabawdkmarketingopendarunfaactivitysyncAPIResponse struct {
 	model.CommonResponse
-	AlibabaWdkMarketingOpenDarunfaActivitySyncAPIResponseModel
+	AlibabawdkmarketingopendarunfaactivitysyncAPIResponseModel
 }
 
-// AlibabaWdkMarketingOpenDarunfaActivitySyncAPIResponseModel is 活动数据同步 成功返回结果
-type AlibabaWdkMarketingOpenDarunfaActivitySyncAPIResponseModel struct {
+// AlibabawdkmarketingopendarunfaactivitysyncAPIResponseModel is 活动数据同步 成功返回结果
+type AlibabawdkmarketingopendarunfaactivitysyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_marketing_open_darunfa_activity_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

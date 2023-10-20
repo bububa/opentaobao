@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-// YunosTvpubadminContentAdvertManageschedule 广告牌照管控修改
+// Yunostvpubadmincontentadvertmanageschedule 广告牌照管控修改
 // yunos.tvpubadmin.content.advert.manageschedule
 //
 // 广告牌照管控修改
-func YunosTvpubadminContentAdvertManageschedule(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentAdvertManagescheduleAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentAdvertManagescheduleAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminContentAdvertManagescheduleAPIResponse
+func Yunostvpubadmincontentadvertmanageschedule(clt *core.SDKClient, req *tvupadmin.YunostvpubadmincontentadvertmanagescheduleAPIRequest, session string) (*tvupadmin.YunostvpubadmincontentadvertmanagescheduleAPIResponse, error) {
+	var resp tvupadmin.YunostvpubadmincontentadvertmanagescheduleAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

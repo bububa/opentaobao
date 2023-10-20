@@ -1,7 +1,7 @@
 package alihealth2
 
-// AlibabaAlihealthDentalStoreInsertorupdateMtopResult 结构体
-type AlibabaAlihealthDentalStoreInsertorupdateMtopResult struct {
+// AlibabaalihealthdentalstoreinsertorupdateMtopResult 结构体
+type AlibabaalihealthdentalstoreinsertorupdateMtopResult struct {
 	// msg_code
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msg_info

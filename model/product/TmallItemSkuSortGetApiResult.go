@@ -1,7 +1,7 @@
 package product
 
-// TmallItemSkuSortGetApiResult 结构体
-type TmallItemSkuSortGetApiResult struct {
+// TmallitemskusortgetApiResult 结构体
+type TmallitemskusortgetApiResult struct {
 	// 错误信息集合
 	ErrorCodes []ErrorCode `json:"error_codes,omitempty" xml:"error_codes>error_code,omitempty"`
 	// 属性排序结果信息

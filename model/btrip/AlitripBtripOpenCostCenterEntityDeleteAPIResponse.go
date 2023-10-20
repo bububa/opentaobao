@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripBtripOpenCostCenterEntityDeleteAPIResponse 删除成本中心人员信息 API返回值
+// AlitripbtripopencostcenterentitydeleteAPIResponse 删除成本中心人员信息 API返回值
 // alitrip.btrip.open.cost.center.entity.delete
 //
 // 删除成本中心人员信息
-type AlitripBtripOpenCostCenterEntityDeleteAPIResponse struct {
+type AlitripbtripopencostcenterentitydeleteAPIResponse struct {
 	model.CommonResponse
-	AlitripBtripOpenCostCenterEntityDeleteAPIResponseModel
+	AlitripbtripopencostcenterentitydeleteAPIResponseModel
 }
 
-// AlitripBtripOpenCostCenterEntityDeleteAPIResponseModel is 删除成本中心人员信息 成功返回结果
-type AlitripBtripOpenCostCenterEntityDeleteAPIResponseModel struct {
+// AlitripbtripopencostcenterentitydeleteAPIResponseModel is 删除成本中心人员信息 成功返回结果
+type AlitripbtripopencostcenterentitydeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_open_cost_center_entity_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

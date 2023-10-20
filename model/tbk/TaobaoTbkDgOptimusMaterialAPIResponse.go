@@ -21,9 +21,9 @@ type TaobaotbkdgoptimusmaterialAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// resultList
-	Resultlist []TaobaotbkdgoptimusmaterialMapData `json:"result_list,omitempty" xml:"result_list>taobaotbkdgoptimusmaterial_map_data,omitempty"`
+	ResultList []TaobaotbkdgoptimusmaterialMapData `json:"result_list,omitempty" xml:"result_list>taobaotbkdgoptimusmaterial_map_data,omitempty"`
 	// 推荐信息-是否抄底
-	Isdefault string `json:"is_default,omitempty" xml:"is_default,omitempty"`
+	IsDefault string `json:"is_default,omitempty" xml:"is_default,omitempty"`
 	// 商品总数-目前只有全品库商品查询有该字段
-	Totalcount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 }

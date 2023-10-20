@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoUsergrowthAdMaterialUpdateAPIResponse 素材更新 API返回值
+// TaobaousergrowthadmaterialupdateAPIResponse 素材更新 API返回值
 // taobao.usergrowth.ad.material.update
 //
 // 素材更新
-type TaobaoUsergrowthAdMaterialUpdateAPIResponse struct {
+type TaobaousergrowthadmaterialupdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoUsergrowthAdMaterialUpdateAPIResponseModel
+	TaobaousergrowthadmaterialupdateAPIResponseModel
 }
 
-// TaobaoUsergrowthAdMaterialUpdateAPIResponseModel is 素材更新 成功返回结果
-type TaobaoUsergrowthAdMaterialUpdateAPIResponseModel struct {
+// TaobaousergrowthadmaterialupdateAPIResponseModel is 素材更新 成功返回结果
+type TaobaousergrowthadmaterialupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"usergrowth_ad_material_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package idle
 
-// IdleAppraiseSpuRegister4TopDto 结构体
-type IdleAppraiseSpuRegister4TopDto struct {
+// IdleAppraiseSpuRegister4topDto 结构体
+type IdleAppraiseSpuRegister4topDto struct {
 	// 类目Id
 	CateId string `json:"cate_id,omitempty" xml:"cate_id,omitempty"`
 	// 操作类型，0新增，-1删除。当spu第一次挂载时，会进入1测试中状态。服务商联调通过后，需要再次挂载，actionType还传0，挂载信息状态会变成0已上线。

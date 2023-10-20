@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/itpolicy"
 )
 
-// TaobaoAlitripItFareAddrt 【国际机票自有政策】单条往返添加
+// Taobaoalitripitfareaddrt 【国际机票自有政策】单条往返添加
 // taobao.alitrip.it.fare.addrt
 //
 // 自有政策往返添加接口
-func TaobaoAlitripItFareAddrt(clt *core.SDKClient, req *itpolicy.TaobaoAlitripItFareAddrtAPIRequest, session string) (*itpolicy.TaobaoAlitripItFareAddrtAPIResponse, error) {
-	var resp itpolicy.TaobaoAlitripItFareAddrtAPIResponse
+func Taobaoalitripitfareaddrt(clt *core.SDKClient, req *itpolicy.TaobaoalitripitfareaddrtAPIRequest, session string) (*itpolicy.TaobaoalitripitfareaddrtAPIResponse, error) {
+	var resp itpolicy.TaobaoalitripitfareaddrtAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

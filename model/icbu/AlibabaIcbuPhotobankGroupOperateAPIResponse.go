@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIcbuPhotobankGroupOperateAPIResponse 图片银行分组操作接口 API返回值
+// AlibabaicbuphotobankgroupoperateAPIResponse 图片银行分组操作接口 API返回值
 // alibaba.icbu.photobank.group.operate
 //
 // 修改用户图片银行的分组信息，包括 新增分组，删除分组，分组重命名
-type AlibabaIcbuPhotobankGroupOperateAPIResponse struct {
+type AlibabaicbuphotobankgroupoperateAPIResponse struct {
 	model.CommonResponse
-	AlibabaIcbuPhotobankGroupOperateAPIResponseModel
+	AlibabaicbuphotobankgroupoperateAPIResponseModel
 }
 
-// AlibabaIcbuPhotobankGroupOperateAPIResponseModel is 图片银行分组操作接口 成功返回结果
-type AlibabaIcbuPhotobankGroupOperateAPIResponseModel struct {
+// AlibabaicbuphotobankgroupoperateAPIResponseModel is 图片银行分组操作接口 成功返回结果
+type AlibabaicbuphotobankgroupoperateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_icbu_photobank_group_operate_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

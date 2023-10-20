@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaoFeedflowItemCrowdModifybindResultDto 结构体
-type TaobaoFeedflowItemCrowdModifybindResultDto struct {
+// TaobaofeedflowitemcrowdmodifybindResultDto 结构体
+type TaobaofeedflowitemcrowdmodifybindResultDto struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 调用是否成功,true-成功，false-失败

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallCarFpcarGetcarNotifyAPIResponse 门店通知用户提车 API返回值
+// TmallcarfpcargetcarnotifyAPIResponse 门店通知用户提车 API返回值
 // tmall.car.fpcar.getcar.notify
 //
 // 提供给外部(大搜或其它合作方)的接口-门店通知用户提车
-type TmallCarFpcarGetcarNotifyAPIResponse struct {
+type TmallcarfpcargetcarnotifyAPIResponse struct {
 	model.CommonResponse
-	TmallCarFpcarGetcarNotifyAPIResponseModel
+	TmallcarfpcargetcarnotifyAPIResponseModel
 }
 
-// TmallCarFpcarGetcarNotifyAPIResponseModel is 门店通知用户提车 成功返回结果
-type TmallCarFpcarGetcarNotifyAPIResponseModel struct {
+// TmallcarfpcargetcarnotifyAPIResponseModel is 门店通知用户提车 成功返回结果
+type TmallcarfpcargetcarnotifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_car_fpcar_getcar_notify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

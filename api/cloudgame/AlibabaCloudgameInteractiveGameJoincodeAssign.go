@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cloudgame"
 )
 
-// AlibabaCloudgameInteractiveGameJoincodeAssign 分配joinCode
+// Alibabacloudgameinteractivegamejoincodeassign 分配joinCode
 // alibaba.cloudgame.interactive.game.joincode.assign
 //
 // 分配joinCode
-func AlibabaCloudgameInteractiveGameJoincodeAssign(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGameJoincodeAssignAPIRequest, session string) (*cloudgame.AlibabaCloudgameInteractiveGameJoincodeAssignAPIResponse, error) {
-	var resp cloudgame.AlibabaCloudgameInteractiveGameJoincodeAssignAPIResponse
+func Alibabacloudgameinteractivegamejoincodeassign(clt *core.SDKClient, req *cloudgame.AlibabacloudgameinteractivegamejoincodeassignAPIRequest, session string) (*cloudgame.AlibabacloudgameinteractivegamejoincodeassignAPIResponse, error) {
+	var resp cloudgame.AlibabacloudgameinteractivegamejoincodeassignAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

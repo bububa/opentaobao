@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-// TaobaoItemCarturlGet 加购URL获取
+// Taobaoitemcarturlget 加购URL获取
 // taobao.item.carturl.get
 //
 // 获取加购URL，支持添加商品到购物车
-func TaobaoItemCarturlGet(clt *core.SDKClient, req *product.TaobaoItemCarturlGetAPIRequest, session string) (*product.TaobaoItemCarturlGetAPIResponse, error) {
-	var resp product.TaobaoItemCarturlGetAPIResponse
+func Taobaoitemcarturlget(clt *core.SDKClient, req *product.TaobaoitemcarturlgetAPIRequest, session string) (*product.TaobaoitemcarturlgetAPIResponse, error) {
+	var resp product.TaobaoitemcarturlgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

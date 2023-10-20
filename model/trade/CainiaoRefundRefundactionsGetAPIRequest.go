@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoRefundRefundactionsGetAPIRequest 判断该订单能执行的逆向操作集合列表 API请求
+// CainiaorefundrefundactionsgetAPIRequest 判断该订单能执行的逆向操作集合列表 API请求
 // cainiao.refund.refundactions.get
 //
 // 判断该订单能执行的逆向操作集合列表
-type CainiaoRefundRefundactionsGetAPIRequest struct {
+type CainiaorefundrefundactionsgetAPIRequest struct {
 	model.Params
 	// 子订单ID
 	_orderId string
 }
 
-// NewCainiaoRefundRefundactionsGetRequest 初始化CainiaoRefundRefundactionsGetAPIRequest对象
-func NewCainiaoRefundRefundactionsGetRequest() *CainiaoRefundRefundactionsGetAPIRequest {
-	return &CainiaoRefundRefundactionsGetAPIRequest{
+// NewCainiaorefundrefundactionsgetRequest 初始化CainiaorefundrefundactionsgetAPIRequest对象
+func NewCainiaorefundrefundactionsgetRequest() *CainiaorefundrefundactionsgetAPIRequest {
+	return &CainiaorefundrefundactionsgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r CainiaoRefundRefundactionsGetAPIRequest) GetApiMethodName() string {
+func (r CainiaorefundrefundactionsgetAPIRequest) GetApiMethodName() string {
 	return "cainiao.refund.refundactions.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoRefundRefundactionsGetAPIRequest) GetApiParams(params url.Values) {
+func (r CainiaorefundrefundactionsgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r CainiaoRefundRefundactionsGetAPIRequest) GetRawParams() model.Params {
+func (r CainiaorefundrefundactionsgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOrderId is OrderId Setter
 // 子订单ID
-func (r *CainiaoRefundRefundactionsGetAPIRequest) SetOrderId(_orderId string) error {
+func (r *CainiaorefundrefundactionsgetAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
 	r.Set("order_id", _orderId)
 	return nil
 }
 
 // GetOrderId OrderId Getter
-func (r CainiaoRefundRefundactionsGetAPIRequest) GetOrderId() string {
+func (r CainiaorefundrefundactionsgetAPIRequest) GetOrderId() string {
 	return r._orderId
 }

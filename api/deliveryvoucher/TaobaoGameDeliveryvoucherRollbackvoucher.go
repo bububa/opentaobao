@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/deliveryvoucher"
 )
 
-// TaobaoGameDeliveryvoucherRollbackvoucher 回滚券
+// Taobaogamedeliveryvoucherrollbackvoucher 回滚券
 // taobao.game.deliveryvoucher.rollbackvoucher
 //
 // 提货券发券接口：同步券和订单的关联信息
-func TaobaoGameDeliveryvoucherRollbackvoucher(clt *core.SDKClient, req *deliveryvoucher.TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest, session string) (*deliveryvoucher.TaobaoGameDeliveryvoucherRollbackvoucherAPIResponse, error) {
-	var resp deliveryvoucher.TaobaoGameDeliveryvoucherRollbackvoucherAPIResponse
+func Taobaogamedeliveryvoucherrollbackvoucher(clt *core.SDKClient, req *deliveryvoucher.TaobaogamedeliveryvoucherrollbackvoucherAPIRequest, session string) (*deliveryvoucher.TaobaogamedeliveryvoucherrollbackvoucherAPIResponse, error) {
+	var resp deliveryvoucher.TaobaogamedeliveryvoucherrollbackvoucherAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

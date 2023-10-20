@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallServiceSettleadjustmentCancelResult 结构体
-type TmallServiceSettleadjustmentCancelResult struct {
+// TmallservicesettleadjustmentcancelResult 结构体
+type TmallservicesettleadjustmentcancelResult struct {
 	// errorMessage
 	ErrorMessage *ErrorMessage `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// success

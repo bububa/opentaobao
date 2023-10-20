@@ -1,7 +1,7 @@
 package westcrm
 
-// AlibabaWestcrmGradeGetData 结构体
-type AlibabaWestcrmGradeGetData struct {
+// AlibabawestcrmgradegetData 结构体
+type AlibabawestcrmgradegetData struct {
 	// 等级名称
 	GradeName string `json:"grade_name,omitempty" xml:"grade_name,omitempty"`
 	// 等级列表

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripMerchantGalaxyTriggerEventAPIRequest 抽奖活动自定义事件触发 API请求
+// AlitripmerchantgalaxytriggereventAPIRequest 抽奖活动自定义事件触发 API请求
 // alitrip.merchant.galaxy.trigger.event
 //
 // 自定义事件触发
-type AlitripMerchantGalaxyTriggerEventAPIRequest struct {
+type AlitripmerchantgalaxytriggereventAPIRequest struct {
 	model.Params
 	// 1
 	_tenantKey string
@@ -18,52 +18,52 @@ type AlitripMerchantGalaxyTriggerEventAPIRequest struct {
 	_eventParam *EventParam
 }
 
-// NewAlitripMerchantGalaxyTriggerEventRequest 初始化AlitripMerchantGalaxyTriggerEventAPIRequest对象
-func NewAlitripMerchantGalaxyTriggerEventRequest() *AlitripMerchantGalaxyTriggerEventAPIRequest {
-	return &AlitripMerchantGalaxyTriggerEventAPIRequest{
+// NewAlitripmerchantgalaxytriggereventRequest 初始化AlitripmerchantgalaxytriggereventAPIRequest对象
+func NewAlitripmerchantgalaxytriggereventRequest() *AlitripmerchantgalaxytriggereventAPIRequest {
+	return &AlitripmerchantgalaxytriggereventAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripMerchantGalaxyTriggerEventAPIRequest) GetApiMethodName() string {
+func (r AlitripmerchantgalaxytriggereventAPIRequest) GetApiMethodName() string {
 	return "alitrip.merchant.galaxy.trigger.event"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripMerchantGalaxyTriggerEventAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripmerchantgalaxytriggereventAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripMerchantGalaxyTriggerEventAPIRequest) GetRawParams() model.Params {
+func (r AlitripmerchantgalaxytriggereventAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTenantKey is TenantKey Setter
 // 1
-func (r *AlitripMerchantGalaxyTriggerEventAPIRequest) SetTenantKey(_tenantKey string) error {
+func (r *AlitripmerchantgalaxytriggereventAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
 	r.Set("tenant_key", _tenantKey)
 	return nil
 }
 
 // GetTenantKey TenantKey Getter
-func (r AlitripMerchantGalaxyTriggerEventAPIRequest) GetTenantKey() string {
+func (r AlitripmerchantgalaxytriggereventAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }
 
 // SetEventParam is EventParam Setter
 // 触发事件入参
-func (r *AlitripMerchantGalaxyTriggerEventAPIRequest) SetEventParam(_eventParam *EventParam) error {
+func (r *AlitripmerchantgalaxytriggereventAPIRequest) SetEventParam(_eventParam *EventParam) error {
 	r._eventParam = _eventParam
 	r.Set("event_param", _eventParam)
 	return nil
 }
 
 // GetEventParam EventParam Getter
-func (r AlitripMerchantGalaxyTriggerEventAPIRequest) GetEventParam() *EventParam {
+func (r AlitripmerchantgalaxytriggereventAPIRequest) GetEventParam() *EventParam {
 	return r._eventParam
 }

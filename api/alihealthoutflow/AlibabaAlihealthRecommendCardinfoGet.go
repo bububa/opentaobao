@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealthoutflow"
 )
 
-// AlibabaAlihealthRecommendCardinfoGet 快应用卡片信息
+// Alibabaalihealthrecommendcardinfoget 快应用卡片信息
 // alibaba.alihealth.recommend.cardinfo.get
 //
 // 快应用卡片信息
-func AlibabaAlihealthRecommendCardinfoGet(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthRecommendCardinfoGetAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthRecommendCardinfoGetAPIResponse, error) {
-	var resp alihealthoutflow.AlibabaAlihealthRecommendCardinfoGetAPIResponse
+func Alibabaalihealthrecommendcardinfoget(clt *core.SDKClient, req *alihealthoutflow.AlibabaalihealthrecommendcardinfogetAPIRequest, session string) (*alihealthoutflow.AlibabaalihealthrecommendcardinfogetAPIResponse, error) {
+	var resp alihealthoutflow.AlibabaalihealthrecommendcardinfogetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

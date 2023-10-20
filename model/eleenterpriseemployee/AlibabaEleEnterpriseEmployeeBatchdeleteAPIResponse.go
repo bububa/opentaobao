@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse 批量删除员工 API返回值
+// AlibabaeleenterpriseemployeebatchdeleteAPIResponse 批量删除员工 API返回值
 // alibaba.ele.enterprise.employee.batchdelete
 //
 // 批量删除员工
-type AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse struct {
+type AlibabaeleenterpriseemployeebatchdeleteAPIResponse struct {
 	model.CommonResponse
-	AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponseModel
+	AlibabaeleenterpriseemployeebatchdeleteAPIResponseModel
 }
 
-// AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponseModel is 批量删除员工 成功返回结果
-type AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponseModel struct {
+// AlibabaeleenterpriseemployeebatchdeleteAPIResponseModel is 批量删除员工 成功返回结果
+type AlibabaeleenterpriseemployeebatchdeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ele_enterprise_employee_batchdelete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

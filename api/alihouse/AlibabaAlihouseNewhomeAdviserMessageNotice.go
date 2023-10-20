@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseNewhomeAdviserMessageNotice 催促小B发送短信
+// Alibabaalihousenewhomeadvisermessagenotice 催促小B发送短信
 // alibaba.alihouse.newhome.adviser.message.notice
 //
 // 催促小B发送短信
-func AlibabaAlihouseNewhomeAdviserMessageNotice(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeAdviserMessageNoticeAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeAdviserMessageNoticeAPIResponse
+func Alibabaalihousenewhomeadvisermessagenotice(clt *core.SDKClient, req *alihouse.AlibabaalihousenewhomeadvisermessagenoticeAPIRequest, session string) (*alihouse.AlibabaalihousenewhomeadvisermessagenoticeAPIResponse, error) {
+	var resp alihouse.AlibabaalihousenewhomeadvisermessagenoticeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

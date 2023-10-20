@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/security"
 )
 
-// AlibabaSecurityJaqRpCloudEvent 事件上报
+// Alibabasecurityjaqrpcloudevent 事件上报
 // alibaba.security.jaq.rp.cloud.event
 //
 // 事件上报接口
-func AlibabaSecurityJaqRpCloudEvent(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpCloudEventAPIRequest, session string) (*security.AlibabaSecurityJaqRpCloudEventAPIResponse, error) {
-	var resp security.AlibabaSecurityJaqRpCloudEventAPIResponse
+func Alibabasecurityjaqrpcloudevent(clt *core.SDKClient, req *security.AlibabasecurityjaqrpcloudeventAPIRequest, session string) (*security.AlibabasecurityjaqrpcloudeventAPIResponse, error) {
+	var resp security.AlibabasecurityjaqrpcloudeventAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

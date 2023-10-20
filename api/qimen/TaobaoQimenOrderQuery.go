@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/qimen"
 )
 
-// TaobaoQimenOrderQuery 根据收件人信息查询交易单号接口
+// Taobaoqimenorderquery 根据收件人信息查询交易单号接口
 // taobao.qimen.order.query
 //
 // WMS 调用该接口，根据收件人信息查询平台交易订单号。
-func TaobaoQimenOrderQuery(clt *core.SDKClient, req *qimen.TaobaoQimenOrderQueryAPIRequest, session string) (*qimen.TaobaoQimenOrderQueryAPIResponse, error) {
-	var resp qimen.TaobaoQimenOrderQueryAPIResponse
+func Taobaoqimenorderquery(clt *core.SDKClient, req *qimen.TaobaoqimenorderqueryAPIRequest, session string) (*qimen.TaobaoqimenorderqueryAPIResponse, error) {
+	var resp qimen.TaobaoqimenorderqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

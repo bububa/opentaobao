@@ -1,7 +1,7 @@
 package scbp
 
-// IKeywordQuery 结构体
-type IKeywordQuery struct {
+// IkeywordQuery 结构体
+type IkeywordQuery struct {
 	// 结束时间 当inteval=7或者30的时候不需要填写
 	EndDate string `json:"end_date,omitempty" xml:"end_date,omitempty"`
 	// 关键词

@@ -1,7 +1,7 @@
 package logistic
 
-// CainiaoDataLogisticsDeliveryAgingPredictData 结构体
-type CainiaoDataLogisticsDeliveryAgingPredictData struct {
+// CainiaodatalogisticsdeliveryagingpredictData 结构体
+type CainiaodatalogisticsdeliveryagingpredictData struct {
 	// 快递公司id
 	CompanyId string `json:"company_id,omitempty" xml:"company_id,omitempty"`
 	// 配送时效。字符串，ISV拿到直接展示，不要做处理

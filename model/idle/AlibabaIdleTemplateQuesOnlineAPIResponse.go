@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIdleTemplateQuesOnlineAPIResponse 预上线SPU问卷版本 API返回值
+// AlibabaidletemplatequesonlineAPIResponse 预上线SPU问卷版本 API返回值
 // alibaba.idle.template.ques.online
 //
 // 获取SPU最新版本问卷
-type AlibabaIdleTemplateQuesOnlineAPIResponse struct {
+type AlibabaidletemplatequesonlineAPIResponse struct {
 	model.CommonResponse
-	AlibabaIdleTemplateQuesOnlineAPIResponseModel
+	AlibabaidletemplatequesonlineAPIResponseModel
 }
 
-// AlibabaIdleTemplateQuesOnlineAPIResponseModel is 预上线SPU问卷版本 成功返回结果
-type AlibabaIdleTemplateQuesOnlineAPIResponseModel struct {
+// AlibabaidletemplatequesonlineAPIResponseModel is 预上线SPU问卷版本 成功返回结果
+type AlibabaidletemplatequesonlineAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_template_ques_online_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

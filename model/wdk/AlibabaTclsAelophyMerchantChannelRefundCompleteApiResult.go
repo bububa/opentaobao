@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaTclsAelophyMerchantChannelRefundCompleteApiResult 结构体
-type AlibabaTclsAelophyMerchantChannelRefundCompleteApiResult struct {
+// AlibabatclsaelophymerchantchannelrefundcompleteApiResult 结构体
+type AlibabatclsaelophymerchantchannelrefundcompleteApiResult struct {
 	// 返回码说明
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 返回码

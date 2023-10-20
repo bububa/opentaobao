@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealth2"
 )
 
-// AlibabaAlihealthTracecodesellerBillUpload 上传入出库单api
+// Alibabaalihealthtracecodesellerbillupload 上传入出库单api
 // alibaba.alihealth.tracecodeseller.bill.upload
 //
 // 上传入出库单api
-func AlibabaAlihealthTracecodesellerBillUpload(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthTracecodesellerBillUploadAPIRequest, session string) (*alihealth2.AlibabaAlihealthTracecodesellerBillUploadAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthTracecodesellerBillUploadAPIResponse
+func Alibabaalihealthtracecodesellerbillupload(clt *core.SDKClient, req *alihealth2.AlibabaalihealthtracecodesellerbilluploadAPIRequest, session string) (*alihealth2.AlibabaalihealthtracecodesellerbilluploadAPIResponse, error) {
+	var resp alihealth2.AlibabaalihealthtracecodesellerbilluploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

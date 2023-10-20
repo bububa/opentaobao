@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMoziFusionDimissionEmployeeAccountAPIRequest 人员离职 API请求
+// AlibabamozifusiondimissionemployeeaccountAPIRequest 人员离职 API请求
 // alibaba.mozi.fusion.dimission.employee.account
 //
 // 人员离职并且回收账号
-type AlibabaMoziFusionDimissionEmployeeAccountAPIRequest struct {
+type AlibabamozifusiondimissionemployeeaccountAPIRequest struct {
 	model.Params
 	// 入参
 	_dimissionEmployee *RemoveTenantEmployeeAndAccountRequest
 }
 
-// NewAlibabaMoziFusionDimissionEmployeeAccountRequest 初始化AlibabaMoziFusionDimissionEmployeeAccountAPIRequest对象
-func NewAlibabaMoziFusionDimissionEmployeeAccountRequest() *AlibabaMoziFusionDimissionEmployeeAccountAPIRequest {
-	return &AlibabaMoziFusionDimissionEmployeeAccountAPIRequest{
+// NewAlibabamozifusiondimissionemployeeaccountRequest 初始化AlibabamozifusiondimissionemployeeaccountAPIRequest对象
+func NewAlibabamozifusiondimissionemployeeaccountRequest() *AlibabamozifusiondimissionemployeeaccountAPIRequest {
+	return &AlibabamozifusiondimissionemployeeaccountAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaMoziFusionDimissionEmployeeAccountAPIRequest) GetApiMethodName() string {
+func (r AlibabamozifusiondimissionemployeeaccountAPIRequest) GetApiMethodName() string {
 	return "alibaba.mozi.fusion.dimission.employee.account"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMoziFusionDimissionEmployeeAccountAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabamozifusiondimissionemployeeaccountAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaMoziFusionDimissionEmployeeAccountAPIRequest) GetRawParams() model.Params {
+func (r AlibabamozifusiondimissionemployeeaccountAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDimissionEmployee is DimissionEmployee Setter
 // 入参
-func (r *AlibabaMoziFusionDimissionEmployeeAccountAPIRequest) SetDimissionEmployee(_dimissionEmployee *RemoveTenantEmployeeAndAccountRequest) error {
+func (r *AlibabamozifusiondimissionemployeeaccountAPIRequest) SetDimissionEmployee(_dimissionEmployee *RemoveTenantEmployeeAndAccountRequest) error {
 	r._dimissionEmployee = _dimissionEmployee
 	r.Set("dimission.employee", _dimissionEmployee)
 	return nil
 }
 
 // GetDimissionEmployee DimissionEmployee Getter
-func (r AlibabaMoziFusionDimissionEmployeeAccountAPIRequest) GetDimissionEmployee() *RemoveTenantEmployeeAndAccountRequest {
+func (r AlibabamozifusiondimissionemployeeaccountAPIRequest) GetDimissionEmployee() *RemoveTenantEmployeeAndAccountRequest {
 	return r._dimissionEmployee
 }

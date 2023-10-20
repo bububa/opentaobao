@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaFundplatformCardorderStatusQueryAPIRequest 查询制卡商制卡进度 API请求
+// AlibabafundplatformcardorderstatusqueryAPIRequest 查询制卡商制卡进度 API请求
 // alibaba.fundplatform.cardorder.status.query
 //
 // 当通知制卡商进行制卡后，其制卡流程会比较长，若长时间未反馈当前制卡进展，则需要使用该接口来向制卡商发起进度查询。
-type AlibabaFundplatformCardorderStatusQueryAPIRequest struct {
+type AlibabafundplatformcardorderstatusqueryAPIRequest struct {
 	model.Params
 	// 请求结构体
-	_request *AlibabaFundplatformCardorderStatusQueryStruct
+	_request *AlibabafundplatformcardorderstatusqueryStruct
 }
 
-// NewAlibabaFundplatformCardorderStatusQueryRequest 初始化AlibabaFundplatformCardorderStatusQueryAPIRequest对象
-func NewAlibabaFundplatformCardorderStatusQueryRequest() *AlibabaFundplatformCardorderStatusQueryAPIRequest {
-	return &AlibabaFundplatformCardorderStatusQueryAPIRequest{
+// NewAlibabafundplatformcardorderstatusqueryRequest 初始化AlibabafundplatformcardorderstatusqueryAPIRequest对象
+func NewAlibabafundplatformcardorderstatusqueryRequest() *AlibabafundplatformcardorderstatusqueryAPIRequest {
+	return &AlibabafundplatformcardorderstatusqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaFundplatformCardorderStatusQueryAPIRequest) GetApiMethodName() string {
+func (r AlibabafundplatformcardorderstatusqueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.fundplatform.cardorder.status.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaFundplatformCardorderStatusQueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabafundplatformcardorderstatusqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaFundplatformCardorderStatusQueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabafundplatformcardorderstatusqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRequest is Request Setter
 // 请求结构体
-func (r *AlibabaFundplatformCardorderStatusQueryAPIRequest) SetRequest(_request *AlibabaFundplatformCardorderStatusQueryStruct) error {
+func (r *AlibabafundplatformcardorderstatusqueryAPIRequest) SetRequest(_request *AlibabafundplatformcardorderstatusqueryStruct) error {
 	r._request = _request
 	r.Set("request", _request)
 	return nil
 }
 
 // GetRequest Request Getter
-func (r AlibabaFundplatformCardorderStatusQueryAPIRequest) GetRequest() *AlibabaFundplatformCardorderStatusQueryStruct {
+func (r AlibabafundplatformcardorderstatusqueryAPIRequest) GetRequest() *AlibabafundplatformcardorderstatusqueryStruct {
 	return r._request
 }

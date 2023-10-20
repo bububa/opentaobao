@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLstBmStoreAddAPIResponse 导入品牌商自有门店 API返回值
+// AlibabalstbmstoreaddAPIResponse 导入品牌商自有门店 API返回值
 // alibaba.lst.bm.store.add
 //
 // 导入品牌商自有门店
-type AlibabaLstBmStoreAddAPIResponse struct {
+type AlibabalstbmstoreaddAPIResponse struct {
 	model.CommonResponse
-	AlibabaLstBmStoreAddAPIResponseModel
+	AlibabalstbmstoreaddAPIResponseModel
 }
 
-// AlibabaLstBmStoreAddAPIResponseModel is 导入品牌商自有门店 成功返回结果
-type AlibabaLstBmStoreAddAPIResponseModel struct {
+// AlibabalstbmstoreaddAPIResponseModel is 导入品牌商自有门店 成功返回结果
+type AlibabalstbmstoreaddAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lst_bm_store_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

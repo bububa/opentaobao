@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest 销退单上传 API请求
+// TaobaordcaligeniuswarehousereverseuploadingAPIRequest 销退单上传 API请求
 // taobao.rdc.aligenius.warehouse.reverse.uploading
 //
 // 主要用于商家上传仓库销退单信息
-type TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest struct {
+type TaobaordcaligeniuswarehousereverseuploadingAPIRequest struct {
 	model.Params
 	// 参数
 	_param0 *WarehouseReverseUploadingDto
 }
 
-// NewTaobaoRdcAligeniusWarehouseReverseUploadingRequest 初始化TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest对象
-func NewTaobaoRdcAligeniusWarehouseReverseUploadingRequest() *TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest {
-	return &TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest{
+// NewTaobaordcaligeniuswarehousereverseuploadingRequest 初始化TaobaordcaligeniuswarehousereverseuploadingAPIRequest对象
+func NewTaobaordcaligeniuswarehousereverseuploadingRequest() *TaobaordcaligeniuswarehousereverseuploadingAPIRequest {
+	return &TaobaordcaligeniuswarehousereverseuploadingAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest) GetApiMethodName() string {
+func (r TaobaordcaligeniuswarehousereverseuploadingAPIRequest) GetApiMethodName() string {
 	return "taobao.rdc.aligenius.warehouse.reverse.uploading"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaordcaligeniuswarehousereverseuploadingAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest) GetRawParams() model.Params {
+func (r TaobaordcaligeniuswarehousereverseuploadingAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam0 is Param0 Setter
 // 参数
-func (r *TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest) SetParam0(_param0 *WarehouseReverseUploadingDto) error {
+func (r *TaobaordcaligeniuswarehousereverseuploadingAPIRequest) SetParam0(_param0 *WarehouseReverseUploadingDto) error {
 	r._param0 = _param0
 	r.Set("param0", _param0)
 	return nil
 }
 
 // GetParam0 Param0 Getter
-func (r TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest) GetParam0() *WarehouseReverseUploadingDto {
+func (r TaobaordcaligeniuswarehousereverseuploadingAPIRequest) GetParam0() *WarehouseReverseUploadingDto {
 	return r._param0
 }

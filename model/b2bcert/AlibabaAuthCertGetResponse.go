@@ -1,7 +1,7 @@
 package b2bcert
 
-// AlibabaAuthCertGetResponse 结构体
-type AlibabaAuthCertGetResponse struct {
+// AlibabaauthcertgetResponse 结构体
+type AlibabaauthcertgetResponse struct {
 	// data
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// code

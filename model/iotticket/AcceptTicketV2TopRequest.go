@@ -1,7 +1,7 @@
 package iotticket
 
-// AcceptTicketV2TopRequest 结构体
-type AcceptTicketV2TopRequest struct {
+// AcceptTicketV2topRequest 结构体
+type AcceptTicketV2topRequest struct {
 	// 维修方案 depot_repair:寄回维修;parts_replacement:配件更换;onsite_repair:上门维修;remote_solution:远程解决;transfer_to_customer_service:转单给菜鸟
 	MaintenanceModeCode string `json:"maintenance_mode_code,omitempty" xml:"maintenance_mode_code,omitempty"`
 	// 上门人员Id

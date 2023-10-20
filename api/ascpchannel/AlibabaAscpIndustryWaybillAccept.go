@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascpchannel"
 )
 
-// AlibabaAscpIndustryWaybillAccept 商家ERP预推单
+// Alibabaascpindustrywaybillaccept 商家ERP预推单
 // alibaba.ascp.industry.waybill.accept
 //
 // 商家ERP预推单
-func AlibabaAscpIndustryWaybillAccept(clt *core.SDKClient, req *ascpchannel.AlibabaAscpIndustryWaybillAcceptAPIRequest, session string) (*ascpchannel.AlibabaAscpIndustryWaybillAcceptAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpIndustryWaybillAcceptAPIResponse
+func Alibabaascpindustrywaybillaccept(clt *core.SDKClient, req *ascpchannel.AlibabaascpindustrywaybillacceptAPIRequest, session string) (*ascpchannel.AlibabaascpindustrywaybillacceptAPIResponse, error) {
+	var resp ascpchannel.AlibabaascpindustrywaybillacceptAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

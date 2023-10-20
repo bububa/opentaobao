@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkSkuScrollQueryModelList 结构体
-type AlibabaWdkSkuScrollQueryModelList struct {
+// AlibabawdkskuscrollqueryModelList 结构体
+type AlibabawdkskuscrollqueryModelList struct {
 	// 商品编码
 	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
 	// 商品名称

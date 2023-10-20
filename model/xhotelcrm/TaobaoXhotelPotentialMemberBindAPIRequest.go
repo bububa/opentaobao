@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelPotentialMemberBindAPIRequest 飞猪酒店商家会员绑定 API请求
+// TaobaoxhotelpotentialmemberbindAPIRequest 飞猪酒店商家会员绑定 API请求
 // taobao.xhotel.potential.member.bind
 //
 // 支持互通商家发起会员绑定
-type TaobaoXhotelPotentialMemberBindAPIRequest struct {
+type TaobaoxhotelpotentialmemberbindAPIRequest struct {
 	model.Params
 	// 名
 	_firstName string
@@ -40,195 +40,195 @@ type TaobaoXhotelPotentialMemberBindAPIRequest struct {
 	_age int64
 }
 
-// NewTaobaoXhotelPotentialMemberBindRequest 初始化TaobaoXhotelPotentialMemberBindAPIRequest对象
-func NewTaobaoXhotelPotentialMemberBindRequest() *TaobaoXhotelPotentialMemberBindAPIRequest {
-	return &TaobaoXhotelPotentialMemberBindAPIRequest{
+// NewTaobaoxhotelpotentialmemberbindRequest 初始化TaobaoxhotelpotentialmemberbindAPIRequest对象
+func NewTaobaoxhotelpotentialmemberbindRequest() *TaobaoxhotelpotentialmemberbindAPIRequest {
+	return &TaobaoxhotelpotentialmemberbindAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetApiMethodName() string {
+func (r TaobaoxhotelpotentialmemberbindAPIRequest) GetApiMethodName() string {
 	return "taobao.xhotel.potential.member.bind"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoxhotelpotentialmemberbindAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetRawParams() model.Params {
+func (r TaobaoxhotelpotentialmemberbindAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetFirstName is FirstName Setter
 // 名
-func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetFirstName(_firstName string) error {
+func (r *TaobaoxhotelpotentialmemberbindAPIRequest) SetFirstName(_firstName string) error {
 	r._firstName = _firstName
 	r.Set("first_name", _firstName)
 	return nil
 }
 
 // GetFirstName FirstName Getter
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetFirstName() string {
+func (r TaobaoxhotelpotentialmemberbindAPIRequest) GetFirstName() string {
 	return r._firstName
 }
 
 // SetLastName is LastName Setter
 // 姓
-func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetLastName(_lastName string) error {
+func (r *TaobaoxhotelpotentialmemberbindAPIRequest) SetLastName(_lastName string) error {
 	r._lastName = _lastName
 	r.Set("last_name", _lastName)
 	return nil
 }
 
 // GetLastName LastName Getter
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetLastName() string {
+func (r TaobaoxhotelpotentialmemberbindAPIRequest) GetLastName() string {
 	return r._lastName
 }
 
 // SetPhone is Phone Setter
 // 电话
-func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetPhone(_phone string) error {
+func (r *TaobaoxhotelpotentialmemberbindAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
 	r.Set("phone", _phone)
 	return nil
 }
 
 // GetPhone Phone Getter
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetPhone() string {
+func (r TaobaoxhotelpotentialmemberbindAPIRequest) GetPhone() string {
 	return r._phone
 }
 
 // SetEmail is Email Setter
 // 邮箱
-func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetEmail(_email string) error {
+func (r *TaobaoxhotelpotentialmemberbindAPIRequest) SetEmail(_email string) error {
 	r._email = _email
 	r.Set("email", _email)
 	return nil
 }
 
 // GetEmail Email Getter
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetEmail() string {
+func (r TaobaoxhotelpotentialmemberbindAPIRequest) GetEmail() string {
 	return r._email
 }
 
 // SetCardNo is CardNo Setter
 // 卡号
-func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetCardNo(_cardNo string) error {
+func (r *TaobaoxhotelpotentialmemberbindAPIRequest) SetCardNo(_cardNo string) error {
 	r._cardNo = _cardNo
 	r.Set("card_no", _cardNo)
 	return nil
 }
 
 // GetCardNo CardNo Getter
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetCardNo() string {
+func (r TaobaoxhotelpotentialmemberbindAPIRequest) GetCardNo() string {
 	return r._cardNo
 }
 
 // SetGrade is Grade Setter
 // 等级(V1,V2,V3)
-func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetGrade(_grade string) error {
+func (r *TaobaoxhotelpotentialmemberbindAPIRequest) SetGrade(_grade string) error {
 	r._grade = _grade
 	r.Set("grade", _grade)
 	return nil
 }
 
 // GetGrade Grade Getter
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetGrade() string {
+func (r TaobaoxhotelpotentialmemberbindAPIRequest) GetGrade() string {
 	return r._grade
 }
 
 // SetRegisterDate is RegisterDate Setter
 // 注册时间
-func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetRegisterDate(_registerDate string) error {
+func (r *TaobaoxhotelpotentialmemberbindAPIRequest) SetRegisterDate(_registerDate string) error {
 	r._registerDate = _registerDate
 	r.Set("register_date", _registerDate)
 	return nil
 }
 
 // GetRegisterDate RegisterDate Getter
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetRegisterDate() string {
+func (r TaobaoxhotelpotentialmemberbindAPIRequest) GetRegisterDate() string {
 	return r._registerDate
 }
 
 // SetFromDate is FromDate Setter
 // 生效时间
-func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetFromDate(_fromDate string) error {
+func (r *TaobaoxhotelpotentialmemberbindAPIRequest) SetFromDate(_fromDate string) error {
 	r._fromDate = _fromDate
 	r.Set("from_date", _fromDate)
 	return nil
 }
 
 // GetFromDate FromDate Getter
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetFromDate() string {
+func (r TaobaoxhotelpotentialmemberbindAPIRequest) GetFromDate() string {
 	return r._fromDate
 }
 
 // SetToDate is ToDate Setter
 // 截止时间
-func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetToDate(_toDate string) error {
+func (r *TaobaoxhotelpotentialmemberbindAPIRequest) SetToDate(_toDate string) error {
 	r._toDate = _toDate
 	r.Set("to_date", _toDate)
 	return nil
 }
 
 // GetToDate ToDate Getter
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetToDate() string {
+func (r TaobaoxhotelpotentialmemberbindAPIRequest) GetToDate() string {
 	return r._toDate
 }
 
 // SetSex is Sex Setter
 // 性别(M,F,U-未知)
-func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetSex(_sex string) error {
+func (r *TaobaoxhotelpotentialmemberbindAPIRequest) SetSex(_sex string) error {
 	r._sex = _sex
 	r.Set("sex", _sex)
 	return nil
 }
 
 // GetSex Sex Getter
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetSex() string {
+func (r TaobaoxhotelpotentialmemberbindAPIRequest) GetSex() string {
 	return r._sex
 }
 
 // SetCity is City Setter
 // 城市
-func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetCity(_city string) error {
+func (r *TaobaoxhotelpotentialmemberbindAPIRequest) SetCity(_city string) error {
 	r._city = _city
 	r.Set("city", _city)
 	return nil
 }
 
 // GetCity City Getter
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetCity() string {
+func (r TaobaoxhotelpotentialmemberbindAPIRequest) GetCity() string {
 	return r._city
 }
 
 // SetNativePlace is NativePlace Setter
 // 籍贯
-func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetNativePlace(_nativePlace string) error {
+func (r *TaobaoxhotelpotentialmemberbindAPIRequest) SetNativePlace(_nativePlace string) error {
 	r._nativePlace = _nativePlace
 	r.Set("native_place", _nativePlace)
 	return nil
 }
 
 // GetNativePlace NativePlace Getter
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetNativePlace() string {
+func (r TaobaoxhotelpotentialmemberbindAPIRequest) GetNativePlace() string {
 	return r._nativePlace
 }
 
 // SetAge is Age Setter
 // 年龄
-func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetAge(_age int64) error {
+func (r *TaobaoxhotelpotentialmemberbindAPIRequest) SetAge(_age int64) error {
 	r._age = _age
 	r.Set("age", _age)
 	return nil
 }
 
 // GetAge Age Getter
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetAge() int64 {
+func (r TaobaoxhotelpotentialmemberbindAPIRequest) GetAge() int64 {
 	return r._age
 }

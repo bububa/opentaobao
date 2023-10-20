@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaDamaiMevOpenDeletePaperformatAPIRequest 大麦换验平台-第三方对外开放-票纸版式接口deletePaperFormat API请求
+// AlibabadamaimevopendeletepaperformatAPIRequest 大麦换验平台-第三方对外开放-票纸版式接口deletePaperFormat API请求
 // alibaba.damai.mev.open.delete.paperformat
 //
 // deletePaperFormat
-type AlibabaDamaiMevOpenDeletePaperformatAPIRequest struct {
+type AlibabadamaimevopendeletepaperformatAPIRequest struct {
 	model.Params
 	// 入参deletePaperFormatParam
 	_deletePaperFormatParam *TicketPaperFormatIdOpenParam
 }
 
-// NewAlibabaDamaiMevOpenDeletePaperformatRequest 初始化AlibabaDamaiMevOpenDeletePaperformatAPIRequest对象
-func NewAlibabaDamaiMevOpenDeletePaperformatRequest() *AlibabaDamaiMevOpenDeletePaperformatAPIRequest {
-	return &AlibabaDamaiMevOpenDeletePaperformatAPIRequest{
+// NewAlibabadamaimevopendeletepaperformatRequest 初始化AlibabadamaimevopendeletepaperformatAPIRequest对象
+func NewAlibabadamaimevopendeletepaperformatRequest() *AlibabadamaimevopendeletepaperformatAPIRequest {
+	return &AlibabadamaimevopendeletepaperformatAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMevOpenDeletePaperformatAPIRequest) GetApiMethodName() string {
+func (r AlibabadamaimevopendeletepaperformatAPIRequest) GetApiMethodName() string {
 	return "alibaba.damai.mev.open.delete.paperformat"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenDeletePaperformatAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabadamaimevopendeletepaperformatAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaDamaiMevOpenDeletePaperformatAPIRequest) GetRawParams() model.Params {
+func (r AlibabadamaimevopendeletepaperformatAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDeletePaperFormatParam is DeletePaperFormatParam Setter
 // 入参deletePaperFormatParam
-func (r *AlibabaDamaiMevOpenDeletePaperformatAPIRequest) SetDeletePaperFormatParam(_deletePaperFormatParam *TicketPaperFormatIdOpenParam) error {
+func (r *AlibabadamaimevopendeletepaperformatAPIRequest) SetDeletePaperFormatParam(_deletePaperFormatParam *TicketPaperFormatIdOpenParam) error {
 	r._deletePaperFormatParam = _deletePaperFormatParam
 	r.Set("delete_paper_format_param", _deletePaperFormatParam)
 	return nil
 }
 
 // GetDeletePaperFormatParam DeletePaperFormatParam Getter
-func (r AlibabaDamaiMevOpenDeletePaperformatAPIRequest) GetDeletePaperFormatParam() *TicketPaperFormatIdOpenParam {
+func (r AlibabadamaimevopendeletepaperformatAPIRequest) GetDeletePaperFormatParam() *TicketPaperFormatIdOpenParam {
 	return r._deletePaperFormatParam
 }

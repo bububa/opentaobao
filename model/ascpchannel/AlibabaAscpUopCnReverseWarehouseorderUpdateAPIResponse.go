@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAscpUopCnReverseWarehouseorderUpdateAPIResponse 供应链中台逆向入库单修改服务 API返回值
+// AlibabaascpuopcnreversewarehouseorderupdateAPIResponse 供应链中台逆向入库单修改服务 API返回值
 // alibaba.ascp.uop.cn.reverse.warehouseorder.update
 //
 // 供应链中台逆向入库单修改服务
-type AlibabaAscpUopCnReverseWarehouseorderUpdateAPIResponse struct {
+type AlibabaascpuopcnreversewarehouseorderupdateAPIResponse struct {
 	model.CommonResponse
-	AlibabaAscpUopCnReverseWarehouseorderUpdateAPIResponseModel
+	AlibabaascpuopcnreversewarehouseorderupdateAPIResponseModel
 }
 
-// AlibabaAscpUopCnReverseWarehouseorderUpdateAPIResponseModel is 供应链中台逆向入库单修改服务 成功返回结果
-type AlibabaAscpUopCnReverseWarehouseorderUpdateAPIResponseModel struct {
+// AlibabaascpuopcnreversewarehouseorderupdateAPIResponseModel is 供应链中台逆向入库单修改服务 成功返回结果
+type AlibabaascpuopcnreversewarehouseorderupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ascp_uop_cn_reverse_warehouseorder_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// AlibabaAlscCrmRuleLevelQuerylevelrule 查询会员等级规则
+// Alibabaalsccrmrulelevelquerylevelrule 查询会员等级规则
 // alibaba.alsc.crm.rule.level.querylevelrule
 //
 // 查询会员等级规则
-func AlibabaAlscCrmRuleLevelQuerylevelrule(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest, session string) (*alsc.AlibabaAlscCrmRuleLevelQuerylevelruleAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmRuleLevelQuerylevelruleAPIResponse
+func Alibabaalsccrmrulelevelquerylevelrule(clt *core.SDKClient, req *alsc.AlibabaalsccrmrulelevelquerylevelruleAPIRequest, session string) (*alsc.AlibabaalsccrmrulelevelquerylevelruleAPIResponse, error) {
+	var resp alsc.AlibabaalsccrmrulelevelquerylevelruleAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

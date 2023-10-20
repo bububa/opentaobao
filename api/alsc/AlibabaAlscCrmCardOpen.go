@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// AlibabaAlscCrmCardOpen 标准开卡流程
+// Alibabaalsccrmcardopen 标准开卡流程
 // alibaba.alsc.crm.card.open
 //
 // 标准开卡流程
-func AlibabaAlscCrmCardOpen(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCardOpenAPIRequest, session string) (*alsc.AlibabaAlscCrmCardOpenAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmCardOpenAPIResponse
+func Alibabaalsccrmcardopen(clt *core.SDKClient, req *alsc.AlibabaalsccrmcardopenAPIRequest, session string) (*alsc.AlibabaalsccrmcardopenAPIResponse, error) {
+	var resp alsc.AlibabaalsccrmcardopenAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

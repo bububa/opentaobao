@@ -173,7 +173,7 @@ type Item struct {
 	// 是否有保修,true/false
 	HasWarranty bool `json:"has_warranty,omitempty" xml:"has_warranty,omitempty"`
 	// 是否是3D淘宝的商品
-	Is3D bool `json:"is_3D,omitempty" xml:"is_3D,omitempty"`
+	Is3d bool `json:"is_3D,omitempty" xml:"is_3D,omitempty"`
 	// 是否在外部网店显示
 	IsEx bool `json:"is_ex,omitempty" xml:"is_ex,omitempty"`
 	// 是否24小时闪电发货

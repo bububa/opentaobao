@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tanx"
 )
 
-// TaobaoTanxQualificationFind 资质查询接口
+// Taobaotanxqualificationfind 资质查询接口
 // taobao.tanx.qualification.find
 //
 // 资质查询接口
-func TaobaoTanxQualificationFind(clt *core.SDKClient, req *tanx.TaobaoTanxQualificationFindAPIRequest, session string) (*tanx.TaobaoTanxQualificationFindAPIResponse, error) {
-	var resp tanx.TaobaoTanxQualificationFindAPIResponse
+func Taobaotanxqualificationfind(clt *core.SDKClient, req *tanx.TaobaotanxqualificationfindAPIRequest, session string) (*tanx.TaobaotanxqualificationfindAPIResponse, error) {
+	var resp tanx.TaobaotanxqualificationfindAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

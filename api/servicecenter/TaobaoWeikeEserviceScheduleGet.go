@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
 
-// TaobaoWeikeEserviceScheduleGet 客服排班信息查询接口
+// Taobaoweikeeservicescheduleget 客服排班信息查询接口
 // taobao.weike.eservice.schedule.get
 //
 // 客服排班信息查询接口
-func TaobaoWeikeEserviceScheduleGet(clt *core.SDKClient, req *servicecenter.TaobaoWeikeEserviceScheduleGetAPIRequest, session string) (*servicecenter.TaobaoWeikeEserviceScheduleGetAPIResponse, error) {
-	var resp servicecenter.TaobaoWeikeEserviceScheduleGetAPIResponse
+func Taobaoweikeeservicescheduleget(clt *core.SDKClient, req *servicecenter.TaobaoweikeeserviceschedulegetAPIRequest, session string) (*servicecenter.TaobaoweikeeserviceschedulegetAPIResponse, error) {
+	var resp servicecenter.TaobaoweikeeserviceschedulegetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

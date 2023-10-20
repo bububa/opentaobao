@@ -29,7 +29,7 @@ type HotelOrderQueryRes struct {
 	// 支付id
 	PayId int64 `json:"pay_id,omitempty" xml:"pay_id,omitempty"`
 	// 汇率
-	ExchangeRate *BigDecimal `json:"exchange_rate,omitempty" xml:"exchange_rate,omitempty"`
+	ExchangeRate float64 `json:"exchange_rate,omitempty" xml:"exchange_rate,omitempty"`
 	// 实际支付原币种金额
 	OriginActualTotalFee int64 `json:"origin_actual_total_fee,omitempty" xml:"origin_actual_total_fee,omitempty"`
 }

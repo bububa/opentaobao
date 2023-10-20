@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/qimen"
 )
 
-// TaobaoQimenStoreprocessConfirm 仓内加工单确认接口
+// Taobaoqimenstoreprocessconfirm 仓内加工单确认接口
 // taobao.qimen.storeprocess.confirm
 //
 // WMS调用奇门的接口,回传仓内加工单创建情况
-func TaobaoQimenStoreprocessConfirm(clt *core.SDKClient, req *qimen.TaobaoQimenStoreprocessConfirmAPIRequest, session string) (*qimen.TaobaoQimenStoreprocessConfirmAPIResponse, error) {
-	var resp qimen.TaobaoQimenStoreprocessConfirmAPIResponse
+func Taobaoqimenstoreprocessconfirm(clt *core.SDKClient, req *qimen.TaobaoqimenstoreprocessconfirmAPIRequest, session string) (*qimen.TaobaoqimenstoreprocessconfirmAPIResponse, error) {
+	var resp qimen.TaobaoqimenstoreprocessconfirmAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

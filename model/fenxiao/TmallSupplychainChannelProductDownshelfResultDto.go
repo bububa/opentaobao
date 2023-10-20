@@ -1,7 +1,7 @@
 package fenxiao
 
-// TmallSupplychainChannelProductDownshelfResultDto 结构体
-type TmallSupplychainChannelProductDownshelfResultDto struct {
+// TmallsupplychainchannelproductdownshelfResultDto 结构体
+type TmallsupplychainchannelproductdownshelfResultDto struct {
 	// 错误码
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

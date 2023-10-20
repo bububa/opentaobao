@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaKeywordsDeleteAPIResponse 删除一批关键词 API返回值
+// TaobaosimbakeywordsdeleteAPIResponse 删除一批关键词 API返回值
 // taobao.simba.keywords.delete
 //
 // 删除一批关键词
-type TaobaoSimbaKeywordsDeleteAPIResponse struct {
+type TaobaosimbakeywordsdeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoSimbaKeywordsDeleteAPIResponseModel
+	TaobaosimbakeywordsdeleteAPIResponseModel
 }
 
-// TaobaoSimbaKeywordsDeleteAPIResponseModel is 删除一批关键词 成功返回结果
-type TaobaoSimbaKeywordsDeleteAPIResponseModel struct {
+// TaobaosimbakeywordsdeleteAPIResponseModel is 删除一批关键词 成功返回结果
+type TaobaosimbakeywordsdeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_keywords_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

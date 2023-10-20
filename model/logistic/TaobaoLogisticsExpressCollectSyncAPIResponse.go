@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoLogisticsExpressCollectSyncAPIResponse 服饰逆向揽收信息同步 API返回值
+// TaobaologisticsexpresscollectsyncAPIResponse 服饰逆向揽收信息同步 API返回值
 // taobao.logistics.express.collect.sync
 //
 // 服饰逆向揽收信息同步
-type TaobaoLogisticsExpressCollectSyncAPIResponse struct {
+type TaobaologisticsexpresscollectsyncAPIResponse struct {
 	model.CommonResponse
-	TaobaoLogisticsExpressCollectSyncAPIResponseModel
+	TaobaologisticsexpresscollectsyncAPIResponseModel
 }
 
-// TaobaoLogisticsExpressCollectSyncAPIResponseModel is 服饰逆向揽收信息同步 成功返回结果
-type TaobaoLogisticsExpressCollectSyncAPIResponseModel struct {
+// TaobaologisticsexpresscollectsyncAPIResponseModel is 服饰逆向揽收信息同步 成功返回结果
+type TaobaologisticsexpresscollectsyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_express_collect_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

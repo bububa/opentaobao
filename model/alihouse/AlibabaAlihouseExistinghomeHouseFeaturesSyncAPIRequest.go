@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseExistinghomeHouseFeaturesSyncAPIRequest 房源标准打标数据同步 API请求
+// AlibabaalihouseexistinghomehousefeaturessyncAPIRequest 房源标准打标数据同步 API请求
 // alibaba.alihouse.existinghome.house.features.sync
 //
 // 房源标准打标数据同步
-type AlibabaAlihouseExistinghomeHouseFeaturesSyncAPIRequest struct {
+type AlibabaalihouseexistinghomehousefeaturessyncAPIRequest struct {
 	model.Params
 	// 房源上翻标
 	_houseFeatures *SyncHouseFeaturesDto
 }
 
-// NewAlibabaAlihouseExistinghomeHouseFeaturesSyncRequest 初始化AlibabaAlihouseExistinghomeHouseFeaturesSyncAPIRequest对象
-func NewAlibabaAlihouseExistinghomeHouseFeaturesSyncRequest() *AlibabaAlihouseExistinghomeHouseFeaturesSyncAPIRequest {
-	return &AlibabaAlihouseExistinghomeHouseFeaturesSyncAPIRequest{
+// NewAlibabaalihouseexistinghomehousefeaturessyncRequest 初始化AlibabaalihouseexistinghomehousefeaturessyncAPIRequest对象
+func NewAlibabaalihouseexistinghomehousefeaturessyncRequest() *AlibabaalihouseexistinghomehousefeaturessyncAPIRequest {
+	return &AlibabaalihouseexistinghomehousefeaturessyncAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseExistinghomeHouseFeaturesSyncAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihouseexistinghomehousefeaturessyncAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.existinghome.house.features.sync"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseExistinghomeHouseFeaturesSyncAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihouseexistinghomehousefeaturessyncAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihouseExistinghomeHouseFeaturesSyncAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihouseexistinghomehousefeaturessyncAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetHouseFeatures is HouseFeatures Setter
 // 房源上翻标
-func (r *AlibabaAlihouseExistinghomeHouseFeaturesSyncAPIRequest) SetHouseFeatures(_houseFeatures *SyncHouseFeaturesDto) error {
+func (r *AlibabaalihouseexistinghomehousefeaturessyncAPIRequest) SetHouseFeatures(_houseFeatures *SyncHouseFeaturesDto) error {
 	r._houseFeatures = _houseFeatures
 	r.Set("house_features", _houseFeatures)
 	return nil
 }
 
 // GetHouseFeatures HouseFeatures Getter
-func (r AlibabaAlihouseExistinghomeHouseFeaturesSyncAPIRequest) GetHouseFeatures() *SyncHouseFeaturesDto {
+func (r AlibabaalihouseexistinghomehousefeaturessyncAPIRequest) GetHouseFeatures() *SyncHouseFeaturesDto {
 	return r._houseFeatures
 }

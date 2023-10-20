@@ -1,7 +1,7 @@
 package mos
 
-// AlibabaMosBunkBunkinfoQuerybunkResultDo 结构体
-type AlibabaMosBunkBunkinfoQuerybunkResultDo struct {
+// AlibabamosbunkbunkinfoquerybunkResultDo 结构体
+type AlibabamosbunkbunkinfoquerybunkResultDo struct {
 	// 返回数据
 	DataList []BunkSimpleDto `json:"data_list,omitempty" xml:"data_list>bunk_simple_dto,omitempty"`
 	// 结果标题

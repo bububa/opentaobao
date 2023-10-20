@@ -1,7 +1,7 @@
 package singletreasure
 
-// TaobaoSingletreasureActivityUpdateResultDto 结构体
-type TaobaoSingletreasureActivityUpdateResultDto struct {
+// TaobaosingletreasureactivityupdateResultDto 结构体
+type TaobaosingletreasureactivityupdateResultDto struct {
 	// 错误信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 错误编码

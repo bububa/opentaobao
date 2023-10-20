@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/iot"
 )
 
-// TaobaoAilabAicloudTopDeviceAuthcodeGet 获取设备授权码
+// Taobaoailabaicloudtopdeviceauthcodeget 获取设备授权码
 // taobao.ailab.aicloud.top.device.authcode.get
 //
 // 获取设备授权码
-func TaobaoAilabAicloudTopDeviceAuthcodeGet(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceAuthcodeGetAPIResponse, error) {
-	var resp iot.TaobaoAilabAicloudTopDeviceAuthcodeGetAPIResponse
+func Taobaoailabaicloudtopdeviceauthcodeget(clt *core.SDKClient, req *iot.TaobaoailabaicloudtopdeviceauthcodegetAPIRequest, session string) (*iot.TaobaoailabaicloudtopdeviceauthcodegetAPIResponse, error) {
+	var resp iot.TaobaoailabaicloudtopdeviceauthcodegetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

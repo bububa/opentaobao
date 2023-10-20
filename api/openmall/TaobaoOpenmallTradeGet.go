@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/openmall"
 )
 
-// TaobaoOpenmallTradeGet 查询订单详情
+// Taobaoopenmalltradeget 查询订单详情
 // taobao.openmall.trade.get
 //
 // 查询订单详情
-func TaobaoOpenmallTradeGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeGetAPIRequest, session string) (*openmall.TaobaoOpenmallTradeGetAPIResponse, error) {
-	var resp openmall.TaobaoOpenmallTradeGetAPIResponse
+func Taobaoopenmalltradeget(clt *core.SDKClient, req *openmall.TaobaoopenmalltradegetAPIRequest, session string) (*openmall.TaobaoopenmalltradegetAPIResponse, error) {
+	var resp openmall.TaobaoopenmalltradegetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

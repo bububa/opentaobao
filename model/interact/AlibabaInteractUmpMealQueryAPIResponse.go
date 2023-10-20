@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaInteractUmpMealQueryAPIResponse 淘宝卖家搭配套餐查询 API返回值
+// AlibabainteractumpmealqueryAPIResponse 淘宝卖家搭配套餐查询 API返回值
 // alibaba.interact.ump.meal.query
 //
 // 查询卖家在优惠平台设置的搭配套餐列表，每个套餐包括名称、套餐价格、手淘套餐购买链接
-type AlibabaInteractUmpMealQueryAPIResponse struct {
+type AlibabainteractumpmealqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaInteractUmpMealQueryAPIResponseModel
+	AlibabainteractumpmealqueryAPIResponseModel
 }
 
-// AlibabaInteractUmpMealQueryAPIResponseModel is 淘宝卖家搭配套餐查询 成功返回结果
-type AlibabaInteractUmpMealQueryAPIResponseModel struct {
+// AlibabainteractumpmealqueryAPIResponseModel is 淘宝卖家搭配套餐查询 成功返回结果
+type AlibabainteractumpmealqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_ump_meal_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

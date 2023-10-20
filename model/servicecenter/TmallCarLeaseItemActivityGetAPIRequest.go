@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallCarLeaseItemActivityGetAPIRequest 查询汽车租赁活动信息 API请求
+// TmallcarleaseitemactivitygetAPIRequest 查询汽车租赁活动信息 API请求
 // tmall.car.lease.item.activity.get
 //
 // 查询汽车租赁活动信息
-type TmallCarLeaseItemActivityGetAPIRequest struct {
+type TmallcarleaseitemactivitygetAPIRequest struct {
 	model.Params
 }
 
-// NewTmallCarLeaseItemActivityGetRequest 初始化TmallCarLeaseItemActivityGetAPIRequest对象
-func NewTmallCarLeaseItemActivityGetRequest() *TmallCarLeaseItemActivityGetAPIRequest {
-	return &TmallCarLeaseItemActivityGetAPIRequest{
+// NewTmallcarleaseitemactivitygetRequest 初始化TmallcarleaseitemactivitygetAPIRequest对象
+func NewTmallcarleaseitemactivitygetRequest() *TmallcarleaseitemactivitygetAPIRequest {
+	return &TmallcarleaseitemactivitygetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallCarLeaseItemActivityGetAPIRequest) GetApiMethodName() string {
+func (r TmallcarleaseitemactivitygetAPIRequest) GetApiMethodName() string {
 	return "tmall.car.lease.item.activity.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallCarLeaseItemActivityGetAPIRequest) GetApiParams(params url.Values) {
+func (r TmallcarleaseitemactivitygetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallCarLeaseItemActivityGetAPIRequest) GetRawParams() model.Params {
+func (r TmallcarleaseitemactivitygetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

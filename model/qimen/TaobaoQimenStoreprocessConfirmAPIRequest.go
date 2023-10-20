@@ -6,48 +6,48 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenStoreprocessConfirmAPIRequest 仓内加工单确认接口 API请求
+// TaobaoqimenstoreprocessconfirmAPIRequest 仓内加工单确认接口 API请求
 // taobao.qimen.storeprocess.confirm
 //
 // WMS调用奇门的接口,回传仓内加工单创建情况
-type TaobaoQimenStoreprocessConfirmAPIRequest struct {
+type TaobaoqimenstoreprocessconfirmAPIRequest struct {
 	model.Params
 	//
 	_request *StoreProcessConfirmRequest
 }
 
-// NewTaobaoQimenStoreprocessConfirmRequest 初始化TaobaoQimenStoreprocessConfirmAPIRequest对象
-func NewTaobaoQimenStoreprocessConfirmRequest() *TaobaoQimenStoreprocessConfirmAPIRequest {
-	return &TaobaoQimenStoreprocessConfirmAPIRequest{
+// NewTaobaoqimenstoreprocessconfirmRequest 初始化TaobaoqimenstoreprocessconfirmAPIRequest对象
+func NewTaobaoqimenstoreprocessconfirmRequest() *TaobaoqimenstoreprocessconfirmAPIRequest {
+	return &TaobaoqimenstoreprocessconfirmAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoQimenStoreprocessConfirmAPIRequest) GetApiMethodName() string {
+func (r TaobaoqimenstoreprocessconfirmAPIRequest) GetApiMethodName() string {
 	return "taobao.qimen.storeprocess.confirm"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoQimenStoreprocessConfirmAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoqimenstoreprocessconfirmAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoQimenStoreprocessConfirmAPIRequest) GetRawParams() model.Params {
+func (r TaobaoqimenstoreprocessconfirmAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRequest is Request Setter
-func (r *TaobaoQimenStoreprocessConfirmAPIRequest) SetRequest(_request *StoreProcessConfirmRequest) error {
+func (r *TaobaoqimenstoreprocessconfirmAPIRequest) SetRequest(_request *StoreProcessConfirmRequest) error {
 	r._request = _request
 	r.Set("request", _request)
 	return nil
 }
 
 // GetRequest Request Getter
-func (r TaobaoQimenStoreprocessConfirmAPIRequest) GetRequest() *StoreProcessConfirmRequest {
+func (r TaobaoqimenstoreprocessconfirmAPIRequest) GetRequest() *StoreProcessConfirmRequest {
 	return r._request
 }

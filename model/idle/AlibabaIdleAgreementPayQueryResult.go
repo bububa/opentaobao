@@ -1,7 +1,7 @@
 package idle
 
-// AlibabaIdleAgreementPayQueryResult 结构体
-type AlibabaIdleAgreementPayQueryResult struct {
+// AlibabaidleagreementpayqueryResult 结构体
+type AlibabaidleagreementpayqueryResult struct {
 	// err_code
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误信息

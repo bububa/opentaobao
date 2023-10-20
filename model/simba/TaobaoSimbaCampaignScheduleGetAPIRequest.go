@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaCampaignScheduleGetAPIRequest 取得一个推广计划的分时折扣设置 API请求
+// TaobaosimbacampaignschedulegetAPIRequest 取得一个推广计划的分时折扣设置 API请求
 // taobao.simba.campaign.schedule.get
 //
 // 取得一个推广计划的分时折扣设置
-type TaobaoSimbaCampaignScheduleGetAPIRequest struct {
+type TaobaosimbacampaignschedulegetAPIRequest struct {
 	model.Params
 	// 主人昵称
 	_nick string
@@ -18,52 +18,52 @@ type TaobaoSimbaCampaignScheduleGetAPIRequest struct {
 	_campaignId int64
 }
 
-// NewTaobaoSimbaCampaignScheduleGetRequest 初始化TaobaoSimbaCampaignScheduleGetAPIRequest对象
-func NewTaobaoSimbaCampaignScheduleGetRequest() *TaobaoSimbaCampaignScheduleGetAPIRequest {
-	return &TaobaoSimbaCampaignScheduleGetAPIRequest{
+// NewTaobaosimbacampaignschedulegetRequest 初始化TaobaosimbacampaignschedulegetAPIRequest对象
+func NewTaobaosimbacampaignschedulegetRequest() *TaobaosimbacampaignschedulegetAPIRequest {
+	return &TaobaosimbacampaignschedulegetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaCampaignScheduleGetAPIRequest) GetApiMethodName() string {
+func (r TaobaosimbacampaignschedulegetAPIRequest) GetApiMethodName() string {
 	return "taobao.simba.campaign.schedule.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaCampaignScheduleGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaosimbacampaignschedulegetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoSimbaCampaignScheduleGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaosimbacampaignschedulegetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetNick is Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaCampaignScheduleGetAPIRequest) SetNick(_nick string) error {
+func (r *TaobaosimbacampaignschedulegetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
 	r.Set("nick", _nick)
 	return nil
 }
 
 // GetNick Nick Getter
-func (r TaobaoSimbaCampaignScheduleGetAPIRequest) GetNick() string {
+func (r TaobaosimbacampaignschedulegetAPIRequest) GetNick() string {
 	return r._nick
 }
 
 // SetCampaignId is CampaignId Setter
 // 推广计划Id
-func (r *TaobaoSimbaCampaignScheduleGetAPIRequest) SetCampaignId(_campaignId int64) error {
+func (r *TaobaosimbacampaignschedulegetAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
 	r.Set("campaign_id", _campaignId)
 	return nil
 }
 
 // GetCampaignId CampaignId Getter
-func (r TaobaoSimbaCampaignScheduleGetAPIRequest) GetCampaignId() int64 {
+func (r TaobaosimbacampaignschedulegetAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }

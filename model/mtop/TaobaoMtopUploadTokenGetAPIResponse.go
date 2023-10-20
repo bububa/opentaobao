@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoMtopUploadTokenGetAPIResponse 获取文件上传授权 API返回值
+// TaobaomtopuploadtokengetAPIResponse 获取文件上传授权 API返回值
 // taobao.mtop.upload.token.get
 //
 // 获取mtop文件上传授权
-type TaobaoMtopUploadTokenGetAPIResponse struct {
+type TaobaomtopuploadtokengetAPIResponse struct {
 	model.CommonResponse
-	TaobaoMtopUploadTokenGetAPIResponseModel
+	TaobaomtopuploadtokengetAPIResponseModel
 }
 
-// TaobaoMtopUploadTokenGetAPIResponseModel is 获取文件上传授权 成功返回结果
-type TaobaoMtopUploadTokenGetAPIResponseModel struct {
+// TaobaomtopuploadtokengetAPIResponseModel is 获取文件上传授权 成功返回结果
+type TaobaomtopuploadtokengetAPIResponseModel struct {
 	XMLName xml.Name `xml:"mtop_upload_token_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMosGoodsSetpriceAPIResponse 价格变更接口 API返回值
+// AlibabamosgoodssetpriceAPIResponse 价格变更接口 API返回值
 // alibaba.mos.goods.setprice
 //
 // 价格变更接口，供供应商修改价格时使用。
-type AlibabaMosGoodsSetpriceAPIResponse struct {
+type AlibabamosgoodssetpriceAPIResponse struct {
 	model.CommonResponse
-	AlibabaMosGoodsSetpriceAPIResponseModel
+	AlibabamosgoodssetpriceAPIResponseModel
 }
 
-// AlibabaMosGoodsSetpriceAPIResponseModel is 价格变更接口 成功返回结果
-type AlibabaMosGoodsSetpriceAPIResponseModel struct {
+// AlibabamosgoodssetpriceAPIResponseModel is 价格变更接口 成功返回结果
+type AlibabamosgoodssetpriceAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mos_goods_setprice_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

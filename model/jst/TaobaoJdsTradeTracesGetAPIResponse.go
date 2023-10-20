@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoJdsTradeTracesGetAPIResponse 获取单条订单跟踪详情 API返回值
+// TaobaojdstradetracesgetAPIResponse 获取单条订单跟踪详情 API返回值
 // taobao.jds.trade.traces.get
 //
 // 获取聚石塔数据共享的交易全链路信息
-type TaobaoJdsTradeTracesGetAPIResponse struct {
+type TaobaojdstradetracesgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoJdsTradeTracesGetAPIResponseModel
+	TaobaojdstradetracesgetAPIResponseModel
 }
 
-// TaobaoJdsTradeTracesGetAPIResponseModel is 获取单条订单跟踪详情 成功返回结果
-type TaobaoJdsTradeTracesGetAPIResponseModel struct {
+// TaobaojdstradetracesgetAPIResponseModel is 获取单条订单跟踪详情 成功返回结果
+type TaobaojdstradetracesgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"jds_trade_traces_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkReverseApplyrefund 逆向申请接口
+// Alibabawdkreverseapplyrefund 逆向申请接口
 // alibaba.wdk.reverse.applyrefund
 //
 // 逆向渲染
-func AlibabaWdkReverseApplyrefund(clt *core.SDKClient, req *wdk.AlibabaWdkReverseApplyrefundAPIRequest, session string) (*wdk.AlibabaWdkReverseApplyrefundAPIResponse, error) {
-	var resp wdk.AlibabaWdkReverseApplyrefundAPIResponse
+func Alibabawdkreverseapplyrefund(clt *core.SDKClient, req *wdk.AlibabawdkreverseapplyrefundAPIRequest, session string) (*wdk.AlibabawdkreverseapplyrefundAPIResponse, error) {
+	var resp wdk.AlibabawdkreverseapplyrefundAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

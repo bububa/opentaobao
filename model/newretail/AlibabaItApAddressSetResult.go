@@ -1,7 +1,7 @@
 package newretail
 
-// AlibabaItApAddressSetResult 结构体
-type AlibabaItApAddressSetResult struct {
+// AlibabaitapaddresssetResult 结构体
+type AlibabaitapaddresssetResult struct {
 	// 返回内容
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// 返回的message

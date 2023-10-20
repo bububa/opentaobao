@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/interact"
 )
 
-// TaobaoWeitaoFeedSynchronize 推广淘小铺isv 活动到微淘feed
+// Taobaoweitaofeedsynchronize 推广淘小铺isv 活动到微淘feed
 // taobao.weitao.feed.synchronize
 //
 // 推广淘小铺isv 活动到微淘feed
-func TaobaoWeitaoFeedSynchronize(clt *core.SDKClient, req *interact.TaobaoWeitaoFeedSynchronizeAPIRequest, session string) (*interact.TaobaoWeitaoFeedSynchronizeAPIResponse, error) {
-	var resp interact.TaobaoWeitaoFeedSynchronizeAPIResponse
+func Taobaoweitaofeedsynchronize(clt *core.SDKClient, req *interact.TaobaoweitaofeedsynchronizeAPIRequest, session string) (*interact.TaobaoweitaofeedsynchronizeAPIResponse, error) {
+	var resp interact.TaobaoweitaofeedsynchronizeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

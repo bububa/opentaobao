@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomer 经纪人接待状态变更
+// Alibabaalihouseexistinghomesyncbrokerisreceivecustomer 经纪人接待状态变更
 // alibaba.alihouse.existinghome.sync.broker.is.receive.customer
 //
 // 经纪人接待状态变更
-func AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomer(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIResponse
+func Alibabaalihouseexistinghomesyncbrokerisreceivecustomer(clt *core.SDKClient, req *alihouse.AlibabaalihouseexistinghomesyncbrokerisreceivecustomerAPIRequest, session string) (*alihouse.AlibabaalihouseexistinghomesyncbrokerisreceivecustomerAPIResponse, error) {
+	var resp alihouse.AlibabaalihouseexistinghomesyncbrokerisreceivecustomerAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

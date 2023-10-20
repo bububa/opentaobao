@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaTclsAelophyMerchantChannelOrderCancel 翱象商家自有渠道 交易订单取消
+// Alibabatclsaelophymerchantchannelordercancel 翱象商家自有渠道 交易订单取消
 // alibaba.tcls.aelophy.merchant.channel.order.cancel
 //
 // 翱象小程序用户取消订单
-func AlibabaTclsAelophyMerchantChannelOrderCancel(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelOrderCancelAPIRequest, session string) (*wdk.AlibabaTclsAelophyMerchantChannelOrderCancelAPIResponse, error) {
-	var resp wdk.AlibabaTclsAelophyMerchantChannelOrderCancelAPIResponse
+func Alibabatclsaelophymerchantchannelordercancel(clt *core.SDKClient, req *wdk.AlibabatclsaelophymerchantchannelordercancelAPIRequest, session string) (*wdk.AlibabatclsaelophymerchantchannelordercancelAPIResponse, error) {
+	var resp wdk.AlibabatclsaelophymerchantchannelordercancelAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

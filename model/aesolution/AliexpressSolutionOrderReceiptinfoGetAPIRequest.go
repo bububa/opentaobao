@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressSolutionOrderReceiptinfoGetAPIRequest Get Order Receipt Info API请求
+// AliexpresssolutionorderreceiptinfogetAPIRequest Get Order Receipt Info API请求
 // aliexpress.solution.order.receiptinfo.get
 //
 // Get Order Receipt Info, Support multi stores requirements for Turkey sellers.
-type AliexpressSolutionOrderReceiptinfoGetAPIRequest struct {
+type AliexpresssolutionorderreceiptinfogetAPIRequest struct {
 	model.Params
 	// query param
 	_param1 *SingleOrderQuery
 }
 
-// NewAliexpressSolutionOrderReceiptinfoGetRequest 初始化AliexpressSolutionOrderReceiptinfoGetAPIRequest对象
-func NewAliexpressSolutionOrderReceiptinfoGetRequest() *AliexpressSolutionOrderReceiptinfoGetAPIRequest {
-	return &AliexpressSolutionOrderReceiptinfoGetAPIRequest{
+// NewAliexpresssolutionorderreceiptinfogetRequest 初始化AliexpresssolutionorderreceiptinfogetAPIRequest对象
+func NewAliexpresssolutionorderreceiptinfogetRequest() *AliexpresssolutionorderreceiptinfogetAPIRequest {
+	return &AliexpresssolutionorderreceiptinfogetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AliexpressSolutionOrderReceiptinfoGetAPIRequest) GetApiMethodName() string {
+func (r AliexpresssolutionorderreceiptinfogetAPIRequest) GetApiMethodName() string {
 	return "aliexpress.solution.order.receiptinfo.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpressSolutionOrderReceiptinfoGetAPIRequest) GetApiParams(params url.Values) {
+func (r AliexpresssolutionorderreceiptinfogetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AliexpressSolutionOrderReceiptinfoGetAPIRequest) GetRawParams() model.Params {
+func (r AliexpresssolutionorderreceiptinfogetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam1 is Param1 Setter
 // query param
-func (r *AliexpressSolutionOrderReceiptinfoGetAPIRequest) SetParam1(_param1 *SingleOrderQuery) error {
+func (r *AliexpresssolutionorderreceiptinfogetAPIRequest) SetParam1(_param1 *SingleOrderQuery) error {
 	r._param1 = _param1
 	r.Set("param1", _param1)
 	return nil
 }
 
 // GetParam1 Param1 Getter
-func (r AliexpressSolutionOrderReceiptinfoGetAPIRequest) GetParam1() *SingleOrderQuery {
+func (r AliexpresssolutionorderreceiptinfogetAPIRequest) GetParam1() *SingleOrderQuery {
 	return r._param1
 }

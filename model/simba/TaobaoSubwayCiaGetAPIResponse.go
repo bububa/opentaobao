@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSubwayCiaGetAPIResponse 查询单元智能出价信息 API返回值
+// TaobaosubwayciagetAPIResponse 查询单元智能出价信息 API返回值
 // taobao.subway.cia.get
 //
 // 查询单元智能出价信息
-type TaobaoSubwayCiaGetAPIResponse struct {
+type TaobaosubwayciagetAPIResponse struct {
 	model.CommonResponse
-	TaobaoSubwayCiaGetAPIResponseModel
+	TaobaosubwayciagetAPIResponseModel
 }
 
-// TaobaoSubwayCiaGetAPIResponseModel is 查询单元智能出价信息 成功返回结果
-type TaobaoSubwayCiaGetAPIResponseModel struct {
+// TaobaosubwayciagetAPIResponseModel is 查询单元智能出价信息 成功返回结果
+type TaobaosubwayciagetAPIResponseModel struct {
 	XMLName xml.Name `xml:"subway_cia_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

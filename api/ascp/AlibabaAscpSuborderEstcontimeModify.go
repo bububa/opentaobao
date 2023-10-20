@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// AlibabaAscpSuborderEstcontimeModify 向前修改发货时效
+// Alibabaascpsuborderestcontimemodify 向前修改发货时效
 // alibaba.ascp.suborder.estcontime.modify
 //
 // 向前修改发货时效
-func AlibabaAscpSuborderEstcontimeModify(clt *core.SDKClient, req *ascp.AlibabaAscpSuborderEstcontimeModifyAPIRequest, session string) (*ascp.AlibabaAscpSuborderEstcontimeModifyAPIResponse, error) {
-	var resp ascp.AlibabaAscpSuborderEstcontimeModifyAPIResponse
+func Alibabaascpsuborderestcontimemodify(clt *core.SDKClient, req *ascp.AlibabaascpsuborderestcontimemodifyAPIRequest, session string) (*ascp.AlibabaascpsuborderestcontimemodifyAPIResponse, error) {
+	var resp ascp.AlibabaascpsuborderestcontimemodifyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

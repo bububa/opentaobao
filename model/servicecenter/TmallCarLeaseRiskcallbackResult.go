@@ -1,7 +1,7 @@
 package servicecenter
 
-// TmallCarLeaseRiskcallbackResult 结构体
-type TmallCarLeaseRiskcallbackResult struct {
+// TmallcarleaseriskcallbackResult 结构体
+type TmallcarleaseriskcallbackResult struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误消息

@@ -1,7 +1,7 @@
 package crm
 
-// TaobaoMemberHismemberdataGetPrivyResultDto 结构体
-type TaobaoMemberHismemberdataGetPrivyResultDto struct {
+// TaobaomemberhismemberdatagetprivyResultDto 结构体
+type TaobaomemberhismemberdatagetprivyResultDto struct {
 	// 备份会员信息列表
 	HsmemberinfoList []HsMemberInfoDto `json:"hsmemberinfo_list,omitempty" xml:"hsmemberinfo_list>hs_member_info_dto,omitempty"`
 	// 总记录数，分页用

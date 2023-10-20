@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallcar"
 )
 
-// TmallAliautoTradeCarOrderGet 整车订单详情查询
+// Tmallaliautotradecarorderget 整车订单详情查询
 // tmall.aliauto.trade.car.order.get
 //
 // 整车订单详情查询接口
-func TmallAliautoTradeCarOrderGet(clt *core.SDKClient, req *tmallcar.TmallAliautoTradeCarOrderGetAPIRequest, session string) (*tmallcar.TmallAliautoTradeCarOrderGetAPIResponse, error) {
-	var resp tmallcar.TmallAliautoTradeCarOrderGetAPIResponse
+func Tmallaliautotradecarorderget(clt *core.SDKClient, req *tmallcar.TmallaliautotradecarordergetAPIRequest, session string) (*tmallcar.TmallaliautotradecarordergetAPIResponse, error) {
+	var resp tmallcar.TmallaliautotradecarordergetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

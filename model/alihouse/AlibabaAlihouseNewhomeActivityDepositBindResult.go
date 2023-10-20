@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseNewhomeActivityDepositBindResult 结构体
-type AlibabaAlihouseNewhomeActivityDepositBindResult struct {
+// AlibabaalihousenewhomeactivitydepositbindResult 结构体
+type AlibabaalihousenewhomeactivitydepositbindResult struct {
 	// code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// message

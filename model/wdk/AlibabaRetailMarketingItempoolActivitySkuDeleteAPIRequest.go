@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaRetailMarketingItempoolActivitySkuDeleteAPIRequest 删除商品池活动商品【同城零售】 API请求
+// AlibabaretailmarketingitempoolactivityskudeleteAPIRequest 删除商品池活动商品【同城零售】 API请求
 // alibaba.retail.marketing.itempool.activity.sku.delete
 //
 // 删除商品池活动商品信息【同城零售】
-type AlibabaRetailMarketingItempoolActivitySkuDeleteAPIRequest struct {
+type AlibabaretailmarketingitempoolactivityskudeleteAPIRequest struct {
 	model.Params
 	// 入参
 	_param *ItemPoolActivityElementOperateRequest
 }
 
-// NewAlibabaRetailMarketingItempoolActivitySkuDeleteRequest 初始化AlibabaRetailMarketingItempoolActivitySkuDeleteAPIRequest对象
-func NewAlibabaRetailMarketingItempoolActivitySkuDeleteRequest() *AlibabaRetailMarketingItempoolActivitySkuDeleteAPIRequest {
-	return &AlibabaRetailMarketingItempoolActivitySkuDeleteAPIRequest{
+// NewAlibabaretailmarketingitempoolactivityskudeleteRequest 初始化AlibabaretailmarketingitempoolactivityskudeleteAPIRequest对象
+func NewAlibabaretailmarketingitempoolactivityskudeleteRequest() *AlibabaretailmarketingitempoolactivityskudeleteAPIRequest {
+	return &AlibabaretailmarketingitempoolactivityskudeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaRetailMarketingItempoolActivitySkuDeleteAPIRequest) GetApiMethodName() string {
+func (r AlibabaretailmarketingitempoolactivityskudeleteAPIRequest) GetApiMethodName() string {
 	return "alibaba.retail.marketing.itempool.activity.sku.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaRetailMarketingItempoolActivitySkuDeleteAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaretailmarketingitempoolactivityskudeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaRetailMarketingItempoolActivitySkuDeleteAPIRequest) GetRawParams() model.Params {
+func (r AlibabaretailmarketingitempoolactivityskudeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 入参
-func (r *AlibabaRetailMarketingItempoolActivitySkuDeleteAPIRequest) SetParam(_param *ItemPoolActivityElementOperateRequest) error {
+func (r *AlibabaretailmarketingitempoolactivityskudeleteAPIRequest) SetParam(_param *ItemPoolActivityElementOperateRequest) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlibabaRetailMarketingItempoolActivitySkuDeleteAPIRequest) GetParam() *ItemPoolActivityElementOperateRequest {
+func (r AlibabaretailmarketingitempoolactivityskudeleteAPIRequest) GetParam() *ItemPoolActivityElementOperateRequest {
 	return r._param
 }

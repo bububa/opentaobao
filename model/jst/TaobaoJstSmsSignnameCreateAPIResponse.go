@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoJstSmsSignnameCreateAPIResponse 淘宝短信签名创建接口 API返回值
+// TaobaojstsmssignnamecreateAPIResponse 淘宝短信签名创建接口 API返回值
 // taobao.jst.sms.signname.create
 //
 // 聚石塔短信签名创建接口
-type TaobaoJstSmsSignnameCreateAPIResponse struct {
+type TaobaojstsmssignnamecreateAPIResponse struct {
 	model.CommonResponse
-	TaobaoJstSmsSignnameCreateAPIResponseModel
+	TaobaojstsmssignnamecreateAPIResponseModel
 }
 
-// TaobaoJstSmsSignnameCreateAPIResponseModel is 淘宝短信签名创建接口 成功返回结果
-type TaobaoJstSmsSignnameCreateAPIResponseModel struct {
+// TaobaojstsmssignnamecreateAPIResponseModel is 淘宝短信签名创建接口 成功返回结果
+type TaobaojstsmssignnamecreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"jst_sms_signname_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

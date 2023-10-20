@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/omniorder"
 )
 
-// TaobaoOmniitemSkuGet 获取全渠道门店商品sku
+// Taobaoomniitemskuget 获取全渠道门店商品sku
 // taobao.omniitem.sku.get
 //
 // 通过skuId或者skuOutId查询全渠道门店商品sku信息
-func TaobaoOmniitemSkuGet(clt *core.SDKClient, req *omniorder.TaobaoOmniitemSkuGetAPIRequest, session string) (*omniorder.TaobaoOmniitemSkuGetAPIResponse, error) {
-	var resp omniorder.TaobaoOmniitemSkuGetAPIResponse
+func Taobaoomniitemskuget(clt *core.SDKClient, req *omniorder.TaobaoomniitemskugetAPIRequest, session string) (*omniorder.TaobaoomniitemskugetAPIResponse, error) {
+	var resp omniorder.TaobaoomniitemskugetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

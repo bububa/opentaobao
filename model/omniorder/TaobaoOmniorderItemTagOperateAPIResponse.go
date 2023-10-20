@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOmniorderItemTagOperateAPIResponse 全渠道商品打标与去标 API返回值
+// TaobaoomniorderitemtagoperateAPIResponse 全渠道商品打标与去标 API返回值
 // taobao.omniorder.item.tag.operate
 //
 // 用于对全渠道商品进行打标、去标（门店发货标，门店自提标，前置拆单标）操作。另外还包括增加、删除、修改分单系统，接单系统配置。
-type TaobaoOmniorderItemTagOperateAPIResponse struct {
+type TaobaoomniorderitemtagoperateAPIResponse struct {
 	model.CommonResponse
-	TaobaoOmniorderItemTagOperateAPIResponseModel
+	TaobaoomniorderitemtagoperateAPIResponseModel
 }
 
-// TaobaoOmniorderItemTagOperateAPIResponseModel is 全渠道商品打标与去标 成功返回结果
-type TaobaoOmniorderItemTagOperateAPIResponseModel struct {
+// TaobaoomniorderitemtagoperateAPIResponseModel is 全渠道商品打标与去标 成功返回结果
+type TaobaoomniorderitemtagoperateAPIResponseModel struct {
 	XMLName xml.Name `xml:"omniorder_item_tag_operate_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

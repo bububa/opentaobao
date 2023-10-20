@@ -1,7 +1,7 @@
 package auction
 
-// Result4Top 结构体
-type Result4Top struct {
+// Result4top 结构体
+type Result4top struct {
 	// 最新出价列表
 	Results []LatestBids `json:"results,omitempty" xml:"results>latest_bids,omitempty"`
 	// 错误码

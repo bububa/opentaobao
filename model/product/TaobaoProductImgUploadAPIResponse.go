@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoProductImgUploadAPIResponse 上传单张产品非主图，如果需要传多张，可调多次 API返回值
+// TaobaoproductimguploadAPIResponse 上传单张产品非主图，如果需要传多张，可调多次 API返回值
 // taobao.product.img.upload
 //
 // 1.传入产品ID &lt;br/&gt;2.传入图片内容 &lt;br/&gt;注意：图片最大为500K,只支持JPG,GIF格式,如果需要传多张，可调多次
-type TaobaoProductImgUploadAPIResponse struct {
+type TaobaoproductimguploadAPIResponse struct {
 	model.CommonResponse
-	TaobaoProductImgUploadAPIResponseModel
+	TaobaoproductimguploadAPIResponseModel
 }
 
-// TaobaoProductImgUploadAPIResponseModel is 上传单张产品非主图，如果需要传多张，可调多次 成功返回结果
-type TaobaoProductImgUploadAPIResponseModel struct {
+// TaobaoproductimguploadAPIResponseModel is 上传单张产品非主图，如果需要传多张，可调多次 成功返回结果
+type TaobaoproductimguploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"product_img_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

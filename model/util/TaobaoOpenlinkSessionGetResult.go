@@ -1,7 +1,7 @@
 package util
 
-// TaobaoOpenlinkSessionGetResult 结构体
-type TaobaoOpenlinkSessionGetResult struct {
+// TaobaoopenlinksessiongetResult 结构体
+type TaobaoopenlinksessiongetResult struct {
 	// msgCode
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msgInfo

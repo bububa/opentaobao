@@ -1,7 +1,7 @@
 package film
 
-// TaobaoFilmAccountPhoneQueryModel 结构体
-type TaobaoFilmAccountPhoneQueryModel struct {
+// TaobaofilmaccountphonequeryModel 结构体
+type TaobaofilmaccountphonequeryModel struct {
 	// 对外开放ID
 	MixUserId string `json:"mix_user_id,omitempty" xml:"mix_user_id,omitempty"`
 	// 脱敏昵称

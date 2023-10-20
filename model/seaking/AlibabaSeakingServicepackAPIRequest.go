@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaSeakingServicepackAPIRequest 获取海王用户权限包 API请求
+// AlibabaseakingservicepackAPIRequest 获取海王用户权限包 API请求
 // alibaba.seaking.servicepack
 //
 // 获取海王用户权限包
-type AlibabaSeakingServicepackAPIRequest struct {
+type AlibabaseakingservicepackAPIRequest struct {
 	model.Params
 	// 验证类型
 	_identifyType string
@@ -18,52 +18,52 @@ type AlibabaSeakingServicepackAPIRequest struct {
 	_identifier string
 }
 
-// NewAlibabaSeakingServicepackRequest 初始化AlibabaSeakingServicepackAPIRequest对象
-func NewAlibabaSeakingServicepackRequest() *AlibabaSeakingServicepackAPIRequest {
-	return &AlibabaSeakingServicepackAPIRequest{
+// NewAlibabaseakingservicepackRequest 初始化AlibabaseakingservicepackAPIRequest对象
+func NewAlibabaseakingservicepackRequest() *AlibabaseakingservicepackAPIRequest {
+	return &AlibabaseakingservicepackAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaSeakingServicepackAPIRequest) GetApiMethodName() string {
+func (r AlibabaseakingservicepackAPIRequest) GetApiMethodName() string {
 	return "alibaba.seaking.servicepack"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaSeakingServicepackAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaseakingservicepackAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaSeakingServicepackAPIRequest) GetRawParams() model.Params {
+func (r AlibabaseakingservicepackAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetIdentifyType is IdentifyType Setter
 // 验证类型
-func (r *AlibabaSeakingServicepackAPIRequest) SetIdentifyType(_identifyType string) error {
+func (r *AlibabaseakingservicepackAPIRequest) SetIdentifyType(_identifyType string) error {
 	r._identifyType = _identifyType
 	r.Set("identify_type", _identifyType)
 	return nil
 }
 
 // GetIdentifyType IdentifyType Getter
-func (r AlibabaSeakingServicepackAPIRequest) GetIdentifyType() string {
+func (r AlibabaseakingservicepackAPIRequest) GetIdentifyType() string {
 	return r._identifyType
 }
 
 // SetIdentifier is Identifier Setter
 // 验证类型下的唯一id
-func (r *AlibabaSeakingServicepackAPIRequest) SetIdentifier(_identifier string) error {
+func (r *AlibabaseakingservicepackAPIRequest) SetIdentifier(_identifier string) error {
 	r._identifier = _identifier
 	r.Set("identifier", _identifier)
 	return nil
 }
 
 // GetIdentifier Identifier Getter
-func (r AlibabaSeakingServicepackAPIRequest) GetIdentifier() string {
+func (r AlibabaseakingservicepackAPIRequest) GetIdentifier() string {
 	return r._identifier
 }

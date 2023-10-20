@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkSkuCategoryQueryApiResult 结构体
-type AlibabaWdkSkuCategoryQueryApiResult struct {
+// AlibabawdkskucategoryqueryApiResult 结构体
+type AlibabawdkskucategoryqueryApiResult struct {
 	// 错误码（只有有异常才有值）
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误信息（只有有异常才有值）

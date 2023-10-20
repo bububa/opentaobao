@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkOrderAggregateAPIRequest 淘鲜达订单按门店机台号聚合查询 API请求
+// AlibabawdkorderaggregateAPIRequest 淘鲜达订单按门店机台号聚合查询 API请求
 // alibaba.wdk.order.aggregate
 //
 // 淘鲜达订单按门店机台号聚合查询
-type AlibabaWdkOrderAggregateAPIRequest struct {
+type AlibabawdkorderaggregateAPIRequest struct {
 	model.Params
 	// 系统自动生成
 	_orderAggregateQueryRequest *OrderAggregateQueryRequest
 }
 
-// NewAlibabaWdkOrderAggregateRequest 初始化AlibabaWdkOrderAggregateAPIRequest对象
-func NewAlibabaWdkOrderAggregateRequest() *AlibabaWdkOrderAggregateAPIRequest {
-	return &AlibabaWdkOrderAggregateAPIRequest{
+// NewAlibabawdkorderaggregateRequest 初始化AlibabawdkorderaggregateAPIRequest对象
+func NewAlibabawdkorderaggregateRequest() *AlibabawdkorderaggregateAPIRequest {
+	return &AlibabawdkorderaggregateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkOrderAggregateAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkorderaggregateAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.order.aggregate"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkOrderAggregateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkorderaggregateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkOrderAggregateAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkorderaggregateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOrderAggregateQueryRequest is OrderAggregateQueryRequest Setter
 // 系统自动生成
-func (r *AlibabaWdkOrderAggregateAPIRequest) SetOrderAggregateQueryRequest(_orderAggregateQueryRequest *OrderAggregateQueryRequest) error {
+func (r *AlibabawdkorderaggregateAPIRequest) SetOrderAggregateQueryRequest(_orderAggregateQueryRequest *OrderAggregateQueryRequest) error {
 	r._orderAggregateQueryRequest = _orderAggregateQueryRequest
 	r.Set("order_aggregate_query_request", _orderAggregateQueryRequest)
 	return nil
 }
 
 // GetOrderAggregateQueryRequest OrderAggregateQueryRequest Getter
-func (r AlibabaWdkOrderAggregateAPIRequest) GetOrderAggregateQueryRequest() *OrderAggregateQueryRequest {
+func (r AlibabawdkorderaggregateAPIRequest) GetOrderAggregateQueryRequest() *OrderAggregateQueryRequest {
 	return r._orderAggregateQueryRequest
 }

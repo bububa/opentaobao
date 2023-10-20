@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-// AlibabaWdkCouponTemplateQuery 优惠券模版查询
+// Alibabawdkcoupontemplatequery 优惠券模版查询
 // alibaba.wdk.coupon.template.query
 //
 // 优惠券模版查询
-func AlibabaWdkCouponTemplateQuery(clt *core.SDKClient, req *promotion.AlibabaWdkCouponTemplateQueryAPIRequest, session string) (*promotion.AlibabaWdkCouponTemplateQueryAPIResponse, error) {
-	var resp promotion.AlibabaWdkCouponTemplateQueryAPIResponse
+func Alibabawdkcoupontemplatequery(clt *core.SDKClient, req *promotion.AlibabawdkcoupontemplatequeryAPIRequest, session string) (*promotion.AlibabawdkcoupontemplatequeryAPIResponse, error) {
+	var resp promotion.AlibabawdkcoupontemplatequeryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

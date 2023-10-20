@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascpchannel"
 )
 
-// AlibabaAscpChannelSupplierProductPriceApply 供应商设置渠道产品价格
+// Alibabaascpchannelsupplierproductpriceapply 供应商设置渠道产品价格
 // alibaba.ascp.channel.supplier.product.price.apply
 //
 // 供应商设置渠道产品价格
-func AlibabaAscpChannelSupplierProductPriceApply(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelSupplierProductPriceApplyAPIRequest, session string) (*ascpchannel.AlibabaAscpChannelSupplierProductPriceApplyAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpChannelSupplierProductPriceApplyAPIResponse
+func Alibabaascpchannelsupplierproductpriceapply(clt *core.SDKClient, req *ascpchannel.AlibabaascpchannelsupplierproductpriceapplyAPIRequest, session string) (*ascpchannel.AlibabaascpchannelsupplierproductpriceapplyAPIResponse, error) {
+	var resp ascpchannel.AlibabaascpchannelsupplierproductpriceapplyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

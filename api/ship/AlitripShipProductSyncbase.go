@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ship"
 )
 
-// AlitripShipProductSyncbase 基础信息修改回调
+// Alitripshipproductsyncbase 基础信息修改回调
 // alitrip.ship.product.syncbase
 //
 // 基础信息修改回调
-func AlitripShipProductSyncbase(clt *core.SDKClient, req *ship.AlitripShipProductSyncbaseAPIRequest, session string) (*ship.AlitripShipProductSyncbaseAPIResponse, error) {
-	var resp ship.AlitripShipProductSyncbaseAPIResponse
+func Alitripshipproductsyncbase(clt *core.SDKClient, req *ship.AlitripshipproductsyncbaseAPIRequest, session string) (*ship.AlitripshipproductsyncbaseAPIResponse, error) {
+	var resp ship.AlitripshipproductsyncbaseAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

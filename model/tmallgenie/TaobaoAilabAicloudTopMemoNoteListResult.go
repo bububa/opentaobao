@@ -1,7 +1,7 @@
 package tmallgenie
 
-// TaobaoAilabAicloudTopMemoNoteListResult 结构体
-type TaobaoAilabAicloudTopMemoNoteListResult struct {
+// TaobaoailabaicloudtopmemonotelistResult 结构体
+type TaobaoailabaicloudtopmemonotelistResult struct {
 	// 服务的实际返回结果
 	Notes []Note `json:"notes,omitempty" xml:"notes>note,omitempty"`
 	// 附加信息，典型应用场景是对失败调用进行简述，方便调用方定位问题

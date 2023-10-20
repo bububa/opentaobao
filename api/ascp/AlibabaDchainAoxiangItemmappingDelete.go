@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// AlibabaDchainAoxiangItemmappingDelete 删除商货品关联关系
+// Alibabadchainaoxiangitemmappingdelete 删除商货品关联关系
 // alibaba.dchain.aoxiang.itemmapping.delete
 //
 // 删除商货品关联关系
-func AlibabaDchainAoxiangItemmappingDelete(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangItemmappingDeleteAPIRequest, session string) (*ascp.AlibabaDchainAoxiangItemmappingDeleteAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangItemmappingDeleteAPIResponse
+func Alibabadchainaoxiangitemmappingdelete(clt *core.SDKClient, req *ascp.AlibabadchainaoxiangitemmappingdeleteAPIRequest, session string) (*ascp.AlibabadchainaoxiangitemmappingdeleteAPIResponse, error) {
+	var resp ascp.AlibabadchainaoxiangitemmappingdeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

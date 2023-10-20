@@ -13,19 +13,19 @@ import (
 type TaobaotbkiteminfogetAPIRequest struct {
 	model.Params
 	// 商品ID串，用,分割，最大40个
-	_numiids string
+	_numIids string
 	// ip地址，影响邮费获取，如果不传或者传入不准确，邮费无法精准提供
 	_ip string
 	// 1-动态ID转链场景，2-消费者比价场景，3-商品库导购场景（不填默认为1）
-	_bizsceneid string
+	_bizSceneId string
 	// 1-自购省，2-推广赚（代理模式专属ID，代理模式必填，非代理模式不用填写该字段）
-	_promotiontype string
+	_promotionType string
 	// 渠道关系ID
-	_relationid string
+	_relationId string
 	// 链接形式：1：PC，2：无线，默认：１
 	_platform int64
 	// 商品库服务账户(场景id3权限对应的memberid）
-	_manageitempubid int64
+	_manageItemPubId int64
 }
 
 // NewTaobaotbkiteminfogetRequest 初始化TaobaotbkiteminfogetAPIRequest对象
@@ -52,17 +52,17 @@ func (r TaobaotbkiteminfogetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetNumiids is Numiids Setter
+// SetNumIids is NumIids Setter
 // 商品ID串，用,分割，最大40个
-func (r *TaobaotbkiteminfogetAPIRequest) SetNumiids(_numiids string) error {
-	r._numiids = _numiids
-	r.Set("num_iids", _numiids)
+func (r *TaobaotbkiteminfogetAPIRequest) SetNumIids(_numIids string) error {
+	r._numIids = _numIids
+	r.Set("num_iids", _numIids)
 	return nil
 }
 
-// GetNumiids Numiids Getter
-func (r TaobaotbkiteminfogetAPIRequest) GetNumiids() string {
-	return r._numiids
+// GetNumIids NumIids Getter
+func (r TaobaotbkiteminfogetAPIRequest) GetNumIids() string {
+	return r._numIids
 }
 
 // SetIp is Ip Setter
@@ -78,43 +78,43 @@ func (r TaobaotbkiteminfogetAPIRequest) GetIp() string {
 	return r._ip
 }
 
-// SetBizsceneid is Bizsceneid Setter
+// SetBizSceneId is BizSceneId Setter
 // 1-动态ID转链场景，2-消费者比价场景，3-商品库导购场景（不填默认为1）
-func (r *TaobaotbkiteminfogetAPIRequest) SetBizsceneid(_bizsceneid string) error {
-	r._bizsceneid = _bizsceneid
-	r.Set("biz_scene_id", _bizsceneid)
+func (r *TaobaotbkiteminfogetAPIRequest) SetBizSceneId(_bizSceneId string) error {
+	r._bizSceneId = _bizSceneId
+	r.Set("biz_scene_id", _bizSceneId)
 	return nil
 }
 
-// GetBizsceneid Bizsceneid Getter
-func (r TaobaotbkiteminfogetAPIRequest) GetBizsceneid() string {
-	return r._bizsceneid
+// GetBizSceneId BizSceneId Getter
+func (r TaobaotbkiteminfogetAPIRequest) GetBizSceneId() string {
+	return r._bizSceneId
 }
 
-// SetPromotiontype is Promotiontype Setter
+// SetPromotionType is PromotionType Setter
 // 1-自购省，2-推广赚（代理模式专属ID，代理模式必填，非代理模式不用填写该字段）
-func (r *TaobaotbkiteminfogetAPIRequest) SetPromotiontype(_promotiontype string) error {
-	r._promotiontype = _promotiontype
-	r.Set("promotion_type", _promotiontype)
+func (r *TaobaotbkiteminfogetAPIRequest) SetPromotionType(_promotionType string) error {
+	r._promotionType = _promotionType
+	r.Set("promotion_type", _promotionType)
 	return nil
 }
 
-// GetPromotiontype Promotiontype Getter
-func (r TaobaotbkiteminfogetAPIRequest) GetPromotiontype() string {
-	return r._promotiontype
+// GetPromotionType PromotionType Getter
+func (r TaobaotbkiteminfogetAPIRequest) GetPromotionType() string {
+	return r._promotionType
 }
 
-// SetRelationid is Relationid Setter
+// SetRelationId is RelationId Setter
 // 渠道关系ID
-func (r *TaobaotbkiteminfogetAPIRequest) SetRelationid(_relationid string) error {
-	r._relationid = _relationid
-	r.Set("relation_id", _relationid)
+func (r *TaobaotbkiteminfogetAPIRequest) SetRelationId(_relationId string) error {
+	r._relationId = _relationId
+	r.Set("relation_id", _relationId)
 	return nil
 }
 
-// GetRelationid Relationid Getter
-func (r TaobaotbkiteminfogetAPIRequest) GetRelationid() string {
-	return r._relationid
+// GetRelationId RelationId Getter
+func (r TaobaotbkiteminfogetAPIRequest) GetRelationId() string {
+	return r._relationId
 }
 
 // SetPlatform is Platform Setter
@@ -130,15 +130,15 @@ func (r TaobaotbkiteminfogetAPIRequest) GetPlatform() int64 {
 	return r._platform
 }
 
-// SetManageitempubid is Manageitempubid Setter
+// SetManageItemPubId is ManageItemPubId Setter
 // 商品库服务账户(场景id3权限对应的memberid）
-func (r *TaobaotbkiteminfogetAPIRequest) SetManageitempubid(_manageitempubid int64) error {
-	r._manageitempubid = _manageitempubid
-	r.Set("manage_item_pub_id", _manageitempubid)
+func (r *TaobaotbkiteminfogetAPIRequest) SetManageItemPubId(_manageItemPubId int64) error {
+	r._manageItemPubId = _manageItemPubId
+	r.Set("manage_item_pub_id", _manageItemPubId)
 	return nil
 }
 
-// GetManageitempubid Manageitempubid Getter
-func (r TaobaotbkiteminfogetAPIRequest) GetManageitempubid() int64 {
-	return r._manageitempubid
+// GetManageItemPubId ManageItemPubId Getter
+func (r TaobaotbkiteminfogetAPIRequest) GetManageItemPubId() int64 {
+	return r._manageItemPubId
 }

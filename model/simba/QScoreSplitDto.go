@@ -1,7 +1,7 @@
 package simba
 
-// QScoreSplitDto 结构体
-type QScoreSplitDto struct {
+// QscoreSplitDto 结构体
+type QscoreSplitDto struct {
 	// 关键词新质量得分列表，包含PC和移动的质量分
 	WordScoreList []Wordscorelist `json:"word_score_list,omitempty" xml:"word_score_list>wordscorelist,omitempty"`
 	// 类目质量得分

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmc"
 )
 
-// TaobaoTmcMessageProduce 发布单条消息
+// Taobaotmcmessageproduce 发布单条消息
 // taobao.tmc.message.produce
 //
 // 发布单条消息
-func TaobaoTmcMessageProduce(clt *core.SDKClient, req *tmc.TaobaoTmcMessageProduceAPIRequest, session string) (*tmc.TaobaoTmcMessageProduceAPIResponse, error) {
-	var resp tmc.TaobaoTmcMessageProduceAPIResponse
+func Taobaotmcmessageproduce(clt *core.SDKClient, req *tmc.TaobaotmcmessageproduceAPIRequest, session string) (*tmc.TaobaotmcmessageproduceAPIResponse, error) {
+	var resp tmc.TaobaotmcmessageproduceAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package flight
 
-// AlitripPolicyNormalUploadResult 结构体
-type AlitripPolicyNormalUploadResult struct {
+// AlitrippolicynormaluploadResult 结构体
+type AlitrippolicynormaluploadResult struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误原因

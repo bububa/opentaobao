@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// TaobaoWdkEquipmentConveyorContainerinfoGet 获取批次或波次中容器的信息
+// Taobaowdkequipmentconveyorcontainerinfoget 获取批次或波次中容器的信息
 // taobao.wdk.equipment.conveyor.containerinfo.get
 //
 // 获取批次或波次中容器的信息
-func TaobaoWdkEquipmentConveyorContainerinfoGet(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest, session string) (*wdk.TaobaoWdkEquipmentConveyorContainerinfoGetAPIResponse, error) {
-	var resp wdk.TaobaoWdkEquipmentConveyorContainerinfoGetAPIResponse
+func Taobaowdkequipmentconveyorcontainerinfoget(clt *core.SDKClient, req *wdk.TaobaowdkequipmentconveyorcontainerinfogetAPIRequest, session string) (*wdk.TaobaowdkequipmentconveyorcontainerinfogetAPIResponse, error) {
+	var resp wdk.TaobaowdkequipmentconveyorcontainerinfogetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

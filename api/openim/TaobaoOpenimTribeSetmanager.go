@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/openim"
 )
 
-// TaobaoOpenimTribeSetmanager OPENIM群设置管理员
+// Taobaoopenimtribesetmanager OPENIM群设置管理员
 // taobao.openim.tribe.setmanager
 //
 // OPENIM群设置管理员
-func TaobaoOpenimTribeSetmanager(clt *core.SDKClient, req *openim.TaobaoOpenimTribeSetmanagerAPIRequest, session string) (*openim.TaobaoOpenimTribeSetmanagerAPIResponse, error) {
-	var resp openim.TaobaoOpenimTribeSetmanagerAPIResponse
+func Taobaoopenimtribesetmanager(clt *core.SDKClient, req *openim.TaobaoopenimtribesetmanagerAPIRequest, session string) (*openim.TaobaoopenimtribesetmanagerAPIResponse, error) {
+	var resp openim.TaobaoopenimtribesetmanagerAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

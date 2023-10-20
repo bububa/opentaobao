@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDrugKytWesRemnantbillUploadAPIResponse wes零头出入库单据上传 API返回值
+// AlibabaalihealthdrugkytwesremnantbilluploadAPIResponse wes零头出入库单据上传 API返回值
 // alibaba.alihealth.drug.kyt.wes.remnantbill.upload
 //
 // wes零头出入库单据上传
-type AlibabaAlihealthDrugKytWesRemnantbillUploadAPIResponse struct {
+type AlibabaalihealthdrugkytwesremnantbilluploadAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthDrugKytWesRemnantbillUploadAPIResponseModel
+	AlibabaalihealthdrugkytwesremnantbilluploadAPIResponseModel
 }
 
-// AlibabaAlihealthDrugKytWesRemnantbillUploadAPIResponseModel is wes零头出入库单据上传 成功返回结果
-type AlibabaAlihealthDrugKytWesRemnantbillUploadAPIResponseModel struct {
+// AlibabaalihealthdrugkytwesremnantbilluploadAPIResponseModel is wes零头出入库单据上传 成功返回结果
+type AlibabaalihealthdrugkytwesremnantbilluploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_kyt_wes_remnantbill_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

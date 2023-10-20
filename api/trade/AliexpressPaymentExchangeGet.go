@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/trade"
 )
 
-// AliexpressPaymentExchangeGet getExchange
+// Aliexpresspaymentexchangeget getExchange
 // aliexpress.payment.exchange.get
 //
 // 提供国际汇率服务
-func AliexpressPaymentExchangeGet(clt *core.SDKClient, req *trade.AliexpressPaymentExchangeGetAPIRequest, session string) (*trade.AliexpressPaymentExchangeGetAPIResponse, error) {
-	var resp trade.AliexpressPaymentExchangeGetAPIResponse
+func Aliexpresspaymentexchangeget(clt *core.SDKClient, req *trade.AliexpresspaymentexchangegetAPIRequest, session string) (*trade.AliexpresspaymentexchangegetAPIResponse, error) {
+	var resp trade.AliexpresspaymentexchangegetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

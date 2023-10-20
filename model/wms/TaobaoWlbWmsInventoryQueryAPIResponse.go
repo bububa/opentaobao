@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWlbWmsInventoryQueryAPIResponse 菜鸟商品库存查询 API返回值
+// TaobaowlbwmsinventoryqueryAPIResponse 菜鸟商品库存查询 API返回值
 // taobao.wlb.wms.inventory.query
 //
 // 支持按汇总（不分批次和渠道的总的库存数量）、渠道、批次三类方式查询商品实时库存
-type TaobaoWlbWmsInventoryQueryAPIResponse struct {
+type TaobaowlbwmsinventoryqueryAPIResponse struct {
 	model.CommonResponse
-	TaobaoWlbWmsInventoryQueryAPIResponseModel
+	TaobaowlbwmsinventoryqueryAPIResponseModel
 }
 
-// TaobaoWlbWmsInventoryQueryAPIResponseModel is 菜鸟商品库存查询 成功返回结果
-type TaobaoWlbWmsInventoryQueryAPIResponseModel struct {
+// TaobaowlbwmsinventoryqueryAPIResponseModel is 菜鸟商品库存查询 成功返回结果
+type TaobaowlbwmsinventoryqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_wms_inventory_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

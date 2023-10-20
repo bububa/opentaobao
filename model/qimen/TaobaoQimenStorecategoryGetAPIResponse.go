@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenStorecategoryGetAPIResponse 门店类目获取接口 API返回值
+// TaobaoqimenstorecategorygetAPIResponse 门店类目获取接口 API返回值
 // taobao.qimen.storecategory.get
 //
 // 商家在ERP中调用该接口，获取门店类目
-type TaobaoQimenStorecategoryGetAPIResponse struct {
+type TaobaoqimenstorecategorygetAPIResponse struct {
 	model.CommonResponse
-	TaobaoQimenStorecategoryGetAPIResponseModel
+	TaobaoqimenstorecategorygetAPIResponseModel
 }
 
-// TaobaoQimenStorecategoryGetAPIResponseModel is 门店类目获取接口 成功返回结果
-type TaobaoQimenStorecategoryGetAPIResponseModel struct {
+// TaobaoqimenstorecategorygetAPIResponseModel is 门店类目获取接口 成功返回结果
+type TaobaoqimenstorecategorygetAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_storecategory_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

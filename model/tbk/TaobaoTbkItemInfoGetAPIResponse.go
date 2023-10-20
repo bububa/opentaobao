@@ -21,5 +21,5 @@ type TaobaotbkiteminfogetAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 淘宝客商品
-	Results []NTbkItem `json:"results,omitempty" xml:"results>n_tbk_item,omitempty"`
+	Results []NtbkItem `json:"results,omitempty" xml:"results>ntbk_item,omitempty"`
 }

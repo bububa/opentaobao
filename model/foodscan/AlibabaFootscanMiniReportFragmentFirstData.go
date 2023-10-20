@@ -1,7 +1,7 @@
 package foodscan
 
-// AlibabaFootscanMiniReportFragmentFirstData 结构体
-type AlibabaFootscanMiniReportFragmentFirstData struct {
+// AlibabafootscanminireportfragmentfirstData 结构体
+type AlibabafootscanminireportfragmentfirstData struct {
 	// 扫描ID
 	ScanId string `json:"scan_id,omitempty" xml:"scan_id,omitempty"`
 	// 测量结果为0

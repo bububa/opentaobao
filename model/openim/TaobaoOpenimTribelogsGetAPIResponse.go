@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpenimTribelogsGetAPIResponse openim 群聊天记录导出接口 API返回值
+// TaobaoopenimtribelogsgetAPIResponse openim 群聊天记录导出接口 API返回值
 // taobao.openim.tribelogs.get
 //
 // 获取openim账号的群聊天记录
-type TaobaoOpenimTribelogsGetAPIResponse struct {
+type TaobaoopenimtribelogsgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoOpenimTribelogsGetAPIResponseModel
+	TaobaoopenimtribelogsgetAPIResponseModel
 }
 
-// TaobaoOpenimTribelogsGetAPIResponseModel is openim 群聊天记录导出接口 成功返回结果
-type TaobaoOpenimTribelogsGetAPIResponseModel struct {
+// TaobaoopenimtribelogsgetAPIResponseModel is openim 群聊天记录导出接口 成功返回结果
+type TaobaoopenimtribelogsgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"openim_tribelogs_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

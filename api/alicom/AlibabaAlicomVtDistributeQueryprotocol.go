@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alicom"
 )
 
-// AlibabaAlicomVtDistributeQueryprotocol 通信业务外放协议查询
+// Alibabaalicomvtdistributequeryprotocol 通信业务外放协议查询
 // alibaba.alicom.vt.distribute.queryprotocol
 //
 // 通信业务外放协议查询
-func AlibabaAlicomVtDistributeQueryprotocol(clt *core.SDKClient, req *alicom.AlibabaAlicomVtDistributeQueryprotocolAPIRequest, session string) (*alicom.AlibabaAlicomVtDistributeQueryprotocolAPIResponse, error) {
-	var resp alicom.AlibabaAlicomVtDistributeQueryprotocolAPIResponse
+func Alibabaalicomvtdistributequeryprotocol(clt *core.SDKClient, req *alicom.AlibabaalicomvtdistributequeryprotocolAPIRequest, session string) (*alicom.AlibabaalicomvtdistributequeryprotocolAPIResponse, error) {
+	var resp alicom.AlibabaalicomvtdistributequeryprotocolAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

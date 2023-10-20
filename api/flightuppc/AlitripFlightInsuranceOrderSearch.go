@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/flightuppc"
 )
 
-// AlitripFlightInsuranceOrderSearch 查询保险订单详情
+// Alitripflightinsuranceordersearch 查询保险订单详情
 // alitrip.flight.insurance.order.search
 //
 // 查询保险订单详情
-func AlitripFlightInsuranceOrderSearch(clt *core.SDKClient, req *flightuppc.AlitripFlightInsuranceOrderSearchAPIRequest, session string) (*flightuppc.AlitripFlightInsuranceOrderSearchAPIResponse, error) {
-	var resp flightuppc.AlitripFlightInsuranceOrderSearchAPIResponse
+func Alitripflightinsuranceordersearch(clt *core.SDKClient, req *flightuppc.AlitripflightinsuranceordersearchAPIRequest, session string) (*flightuppc.AlitripflightinsuranceordersearchAPIResponse, error) {
+	var resp flightuppc.AlitripflightinsuranceordersearchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err
