@@ -2,6 +2,7 @@ package mos
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -18,6 +19,12 @@ type AlibabaMosOnsiteTradeRefundAPIResponse struct {
 	AlibabaMosOnsiteTradeRefundAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaMosOnsiteTradeRefundAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaMosOnsiteTradeRefundAPIResponseModel).Reset()
+}
+
 // AlibabaMosOnsiteTradeRefundAPIResponseModel is 退款 成功返回结果
 type AlibabaMosOnsiteTradeRefundAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mos_onsite_trade_refund_response"`
@@ -25,4 +32,27 @@ type AlibabaMosOnsiteTradeRefundAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 交易退款响应
 	Result *AlibabaMosOnsiteTradeRefundResultDo `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaMosOnsiteTradeRefundAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaMosOnsiteTradeRefundAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaMosOnsiteTradeRefundAPIResponse)
+	},
+}
+
+// GetAlibabaMosOnsiteTradeRefundAPIResponse 从 sync.Pool 获取 AlibabaMosOnsiteTradeRefundAPIResponse
+func GetAlibabaMosOnsiteTradeRefundAPIResponse() *AlibabaMosOnsiteTradeRefundAPIResponse {
+	return poolAlibabaMosOnsiteTradeRefundAPIResponse.Get().(*AlibabaMosOnsiteTradeRefundAPIResponse)
+}
+
+// ReleaseAlibabaMosOnsiteTradeRefundAPIResponse 将 AlibabaMosOnsiteTradeRefundAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaMosOnsiteTradeRefundAPIResponse(v *AlibabaMosOnsiteTradeRefundAPIResponse) {
+	v.Reset()
+	poolAlibabaMosOnsiteTradeRefundAPIResponse.Put(v)
 }

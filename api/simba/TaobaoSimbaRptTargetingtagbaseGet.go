@@ -9,11 +9,6 @@ import (
 // taobao.simba.rpt.targetingtagbase.get
 //
 // 获取定向基础报表
-func TaobaoSimbaRptTargetingtagbaseGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptTargetingtagbaseGetAPIRequest, session string) (*simba.TaobaoSimbaRptTargetingtagbaseGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaRptTargetingtagbaseGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaRptTargetingtagbaseGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptTargetingtagbaseGetAPIRequest, resp *simba.TaobaoSimbaRptTargetingtagbaseGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

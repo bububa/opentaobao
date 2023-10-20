@@ -1,6 +1,8 @@
 package miniappopen
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -26,4 +28,30 @@ type DistributionOrderOpenBizDto struct {
 	Status *model.File `json:"status,omitempty" xml:"status,omitempty"`
 	// 唯一标识的id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolDistributionOrderOpenBizDto = sync.Pool{
+	New: func() any {
+		return new(DistributionOrderOpenBizDto)
+	},
+}
+
+// GetDistributionOrderOpenBizDto() 从对象池中获取DistributionOrderOpenBizDto
+func GetDistributionOrderOpenBizDto() *DistributionOrderOpenBizDto {
+	return poolDistributionOrderOpenBizDto.Get().(*DistributionOrderOpenBizDto)
+}
+
+// ReleaseDistributionOrderOpenBizDto 释放DistributionOrderOpenBizDto
+func ReleaseDistributionOrderOpenBizDto(v *DistributionOrderOpenBizDto) {
+	v.WidgetVersion = ""
+	v.Url = ""
+	v.EndTime = ""
+	v.StartTime = ""
+	v.Name = ""
+	v.WidgetId = 0
+	v.TimeType = nil
+	v.AppId = 0
+	v.Status = nil
+	v.Id = 0
+	poolDistributionOrderOpenBizDto.Put(v)
 }

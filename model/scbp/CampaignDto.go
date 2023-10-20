@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // CampaignDto 结构体
 type CampaignDto struct {
 	// 计划标题
@@ -54,4 +58,46 @@ type CampaignDto struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 出价模式 value =1 为智能出价 value =2 为手动出价
 	BidType int64 `json:"bid_type,omitempty" xml:"bid_type,omitempty"`
+}
+
+var poolCampaignDto = sync.Pool{
+	New: func() any {
+		return new(CampaignDto)
+	},
+}
+
+// GetCampaignDto() 从对象池中获取CampaignDto
+func GetCampaignDto() *CampaignDto {
+	return poolCampaignDto.Get().(*CampaignDto)
+}
+
+// ReleaseCampaignDto 释放CampaignDto
+func ReleaseCampaignDto(v *CampaignDto) {
+	v.Title = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.SettleReason = ""
+	v.SettleTime = ""
+	v.TopTime = ""
+	v.Properties = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.SubType = ""
+	v.WeekBudgetStatus = ""
+	v.MinPrice = ""
+	v.MaxPrice = ""
+	v.Budget = ""
+	v.OnlineStatus = 0
+	v.SettleStatus = 0
+	v.Type = 0
+	v.CampaignModel = 0
+	v.SettleVersion = 0
+	v.SceneId = 0
+	v.ProductLineId = 0
+	v.MemberId = 0
+	v.CustId = 0
+	v.BizNumber = 0
+	v.Id = 0
+	v.BidType = 0
+	poolCampaignDto.Put(v)
 }

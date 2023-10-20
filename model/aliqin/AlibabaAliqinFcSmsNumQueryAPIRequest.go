@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaAliqinFcSmsNumQueryAPIRequest struct {
 // NewAlibabaAliqinFcSmsNumQueryRequest 初始化AlibabaAliqinFcSmsNumQueryAPIRequest对象
 func NewAlibabaAliqinFcSmsNumQueryRequest() *AlibabaAliqinFcSmsNumQueryAPIRequest {
 	return &AlibabaAliqinFcSmsNumQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFcSmsNumQueryAPIRequest) Reset() {
+	r._bizId = ""
+	r._recNum = ""
+	r._queryDate = ""
+	r._currentPage = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaAliqinFcSmsNumQueryAPIRequest) SetPageSize(_pageSize int64) erro
 // GetPageSize PageSize Getter
 func (r AlibabaAliqinFcSmsNumQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaAliqinFcSmsNumQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFcSmsNumQueryRequest()
+	},
+}
+
+// GetAlibabaAliqinFcSmsNumQueryRequest 从 sync.Pool 获取 AlibabaAliqinFcSmsNumQueryAPIRequest
+func GetAlibabaAliqinFcSmsNumQueryAPIRequest() *AlibabaAliqinFcSmsNumQueryAPIRequest {
+	return poolAlibabaAliqinFcSmsNumQueryAPIRequest.Get().(*AlibabaAliqinFcSmsNumQueryAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFcSmsNumQueryAPIRequest 将 AlibabaAliqinFcSmsNumQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFcSmsNumQueryAPIRequest(v *AlibabaAliqinFcSmsNumQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFcSmsNumQueryAPIRequest.Put(v)
 }

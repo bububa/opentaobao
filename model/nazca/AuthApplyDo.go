@@ -1,5 +1,9 @@
 package nazca
 
+import (
+	"sync"
+)
+
 // AuthApplyDo 结构体
 type AuthApplyDo struct {
 	// 企业名称
@@ -20,4 +24,29 @@ type AuthApplyDo struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 是否认证
 	Autherized bool `json:"autherized,omitempty" xml:"autherized,omitempty"`
+}
+
+var poolAuthApplyDo = sync.Pool{
+	New: func() any {
+		return new(AuthApplyDo)
+	},
+}
+
+// GetAuthApplyDo() 从对象池中获取AuthApplyDo
+func GetAuthApplyDo() *AuthApplyDo {
+	return poolAuthApplyDo.Get().(*AuthApplyDo)
+}
+
+// ReleaseAuthApplyDo 释放AuthApplyDo
+func ReleaseAuthApplyDo(v *AuthApplyDo) {
+	v.EnterpriseName = ""
+	v.License = ""
+	v.Organization = ""
+	v.PlatformUserId = ""
+	v.ReturnUrl = ""
+	v.Status = ""
+	v.ThreeCertNumber = ""
+	v.Type = 0
+	v.Autherized = false
+	poolAuthApplyDo.Put(v)
 }

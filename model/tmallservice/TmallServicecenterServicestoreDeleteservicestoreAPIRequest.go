@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -32,8 +33,14 @@ type TmallServicecenterServicestoreDeleteservicestoreAPIRequest struct {
 // NewTmallServicecenterServicestoreDeleteservicestoreRequest 初始化TmallServicecenterServicestoreDeleteservicestoreAPIRequest对象
 func NewTmallServicecenterServicestoreDeleteservicestoreRequest() *TmallServicecenterServicestoreDeleteservicestoreAPIRequest {
 	return &TmallServicecenterServicestoreDeleteservicestoreAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterServicestoreDeleteservicestoreAPIRequest) Reset() {
+	r._serviceStoreCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -64,4 +71,21 @@ func (r *TmallServicecenterServicestoreDeleteservicestoreAPIRequest) SetServiceS
 // GetServiceStoreCode ServiceStoreCode Getter
 func (r TmallServicecenterServicestoreDeleteservicestoreAPIRequest) GetServiceStoreCode() string {
 	return r._serviceStoreCode
+}
+
+var poolTmallServicecenterServicestoreDeleteservicestoreAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterServicestoreDeleteservicestoreRequest()
+	},
+}
+
+// GetTmallServicecenterServicestoreDeleteservicestoreRequest 从 sync.Pool 获取 TmallServicecenterServicestoreDeleteservicestoreAPIRequest
+func GetTmallServicecenterServicestoreDeleteservicestoreAPIRequest() *TmallServicecenterServicestoreDeleteservicestoreAPIRequest {
+	return poolTmallServicecenterServicestoreDeleteservicestoreAPIRequest.Get().(*TmallServicecenterServicestoreDeleteservicestoreAPIRequest)
+}
+
+// ReleaseTmallServicecenterServicestoreDeleteservicestoreAPIRequest 将 TmallServicecenterServicestoreDeleteservicestoreAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterServicestoreDeleteservicestoreAPIRequest(v *TmallServicecenterServicestoreDeleteservicestoreAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterServicestoreDeleteservicestoreAPIRequest.Put(v)
 }

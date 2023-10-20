@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // CheckResultDto 结构体
 type CheckResultDto struct {
 	// 不通过错误码
@@ -12,4 +16,25 @@ type CheckResultDto struct {
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 是否通过
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolCheckResultDto = sync.Pool{
+	New: func() any {
+		return new(CheckResultDto)
+	},
+}
+
+// GetCheckResultDto() 从对象池中获取CheckResultDto
+func GetCheckResultDto() *CheckResultDto {
+	return poolCheckResultDto.Get().(*CheckResultDto)
+}
+
+// ReleaseCheckResultDto 释放CheckResultDto
+func ReleaseCheckResultDto(v *CheckResultDto) {
+	v.ExtraCode = ""
+	v.ExtraMessage = ""
+	v.ItemId = 0
+	v.SkuId = 0
+	v.Success = false
+	poolCheckResultDto.Put(v)
 }

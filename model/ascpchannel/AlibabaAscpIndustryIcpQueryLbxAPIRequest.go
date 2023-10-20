@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpIndustryIcpQueryLbxAPIRequest struct {
 // NewAlibabaAscpIndustryIcpQueryLbxRequest 初始化AlibabaAscpIndustryIcpQueryLbxAPIRequest对象
 func NewAlibabaAscpIndustryIcpQueryLbxRequest() *AlibabaAscpIndustryIcpQueryLbxAPIRequest {
 	return &AlibabaAscpIndustryIcpQueryLbxAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpIndustryIcpQueryLbxAPIRequest) Reset() {
+	r._icpOrderCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpIndustryIcpQueryLbxAPIRequest) SetIcpOrderCode(_icpOrderCode
 // GetIcpOrderCode IcpOrderCode Getter
 func (r AlibabaAscpIndustryIcpQueryLbxAPIRequest) GetIcpOrderCode() string {
 	return r._icpOrderCode
+}
+
+var poolAlibabaAscpIndustryIcpQueryLbxAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpIndustryIcpQueryLbxRequest()
+	},
+}
+
+// GetAlibabaAscpIndustryIcpQueryLbxRequest 从 sync.Pool 获取 AlibabaAscpIndustryIcpQueryLbxAPIRequest
+func GetAlibabaAscpIndustryIcpQueryLbxAPIRequest() *AlibabaAscpIndustryIcpQueryLbxAPIRequest {
+	return poolAlibabaAscpIndustryIcpQueryLbxAPIRequest.Get().(*AlibabaAscpIndustryIcpQueryLbxAPIRequest)
+}
+
+// ReleaseAlibabaAscpIndustryIcpQueryLbxAPIRequest 将 AlibabaAscpIndustryIcpQueryLbxAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpIndustryIcpQueryLbxAPIRequest(v *AlibabaAscpIndustryIcpQueryLbxAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpIndustryIcpQueryLbxAPIRequest.Put(v)
 }

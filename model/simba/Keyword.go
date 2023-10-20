@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // Keyword 结构体
 type Keyword struct {
 	// 主人昵称
@@ -34,4 +38,36 @@ type Keyword struct {
 	IsDefaultPrice bool `json:"is_default_price,omitempty" xml:"is_default_price,omitempty"`
 	// 是否是垃圾词，false-不是；true-是；垃圾词是近期无点击的词
 	IsGarbage bool `json:"is_garbage,omitempty" xml:"is_garbage,omitempty"`
+}
+
+var poolKeyword = sync.Pool{
+	New: func() any {
+		return new(Keyword)
+	},
+}
+
+// GetKeyword() 从对象池中获取Keyword
+func GetKeyword() *Keyword {
+	return poolKeyword.Get().(*Keyword)
+}
+
+// ReleaseKeyword 释放Keyword
+func ReleaseKeyword(v *Keyword) {
+	v.Nick = ""
+	v.ModifiedTime = ""
+	v.Word = ""
+	v.AuditStatus = ""
+	v.AuditDesc = ""
+	v.CreateTime = ""
+	v.MatchScope = ""
+	v.Qscore = ""
+	v.KeywordId = 0
+	v.AdgroupId = 0
+	v.CampaignId = 0
+	v.MaxPrice = 0
+	v.MobileIsDefaultPrice = 0
+	v.MaxMobilePrice = 0
+	v.IsDefaultPrice = false
+	v.IsGarbage = false
+	poolKeyword.Put(v)
 }

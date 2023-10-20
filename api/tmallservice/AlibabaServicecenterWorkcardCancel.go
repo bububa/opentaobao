@@ -9,11 +9,6 @@ import (
 // alibaba.servicecenter.workcard.cancel
 //
 // 取消服务工单
-func AlibabaServicecenterWorkcardCancel(clt *core.SDKClient, req *tmallservice.AlibabaServicecenterWorkcardCancelAPIRequest, session string) (*tmallservice.AlibabaServicecenterWorkcardCancelAPIResponse, error) {
-	var resp tmallservice.AlibabaServicecenterWorkcardCancelAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaServicecenterWorkcardCancel(clt *core.SDKClient, req *tmallservice.AlibabaServicecenterWorkcardCancelAPIRequest, resp *tmallservice.AlibabaServicecenterWorkcardCancelAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

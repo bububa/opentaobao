@@ -2,6 +2,7 @@ package media
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoPictureUserinfoGetAPIResponse struct {
 	TaobaoPictureUserinfoGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoPictureUserinfoGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPictureUserinfoGetAPIResponseModel).Reset()
+}
+
 // TaobaoPictureUserinfoGetAPIResponseModel is 查询图片空间用户的信息 成功返回结果
 type TaobaoPictureUserinfoGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"picture_userinfo_get_response"`
@@ -22,4 +29,27 @@ type TaobaoPictureUserinfoGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 用户使用图片空间的信息
 	UserInfo *UserInfo `json:"user_info,omitempty" xml:"user_info,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPictureUserinfoGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.UserInfo = nil
+}
+
+var poolTaobaoPictureUserinfoGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPictureUserinfoGetAPIResponse)
+	},
+}
+
+// GetTaobaoPictureUserinfoGetAPIResponse 从 sync.Pool 获取 TaobaoPictureUserinfoGetAPIResponse
+func GetTaobaoPictureUserinfoGetAPIResponse() *TaobaoPictureUserinfoGetAPIResponse {
+	return poolTaobaoPictureUserinfoGetAPIResponse.Get().(*TaobaoPictureUserinfoGetAPIResponse)
+}
+
+// ReleaseTaobaoPictureUserinfoGetAPIResponse 将 TaobaoPictureUserinfoGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPictureUserinfoGetAPIResponse(v *TaobaoPictureUserinfoGetAPIResponse) {
+	v.Reset()
+	poolTaobaoPictureUserinfoGetAPIResponse.Put(v)
 }

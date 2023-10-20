@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type YunosTvpubadminDeviceYksSkillDeleteAPIRequest struct {
 // NewYunosTvpubadminDeviceYksSkillDeleteRequest 初始化YunosTvpubadminDeviceYksSkillDeleteAPIRequest对象
 func NewYunosTvpubadminDeviceYksSkillDeleteRequest() *YunosTvpubadminDeviceYksSkillDeleteAPIRequest {
 	return &YunosTvpubadminDeviceYksSkillDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminDeviceYksSkillDeleteAPIRequest) Reset() {
+	r._botSkillRelId = 0
+	r._skillId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *YunosTvpubadminDeviceYksSkillDeleteAPIRequest) SetSkillId(_skillId int6
 // GetSkillId SkillId Getter
 func (r YunosTvpubadminDeviceYksSkillDeleteAPIRequest) GetSkillId() int64 {
 	return r._skillId
+}
+
+var poolYunosTvpubadminDeviceYksSkillDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminDeviceYksSkillDeleteRequest()
+	},
+}
+
+// GetYunosTvpubadminDeviceYksSkillDeleteRequest 从 sync.Pool 获取 YunosTvpubadminDeviceYksSkillDeleteAPIRequest
+func GetYunosTvpubadminDeviceYksSkillDeleteAPIRequest() *YunosTvpubadminDeviceYksSkillDeleteAPIRequest {
+	return poolYunosTvpubadminDeviceYksSkillDeleteAPIRequest.Get().(*YunosTvpubadminDeviceYksSkillDeleteAPIRequest)
+}
+
+// ReleaseYunosTvpubadminDeviceYksSkillDeleteAPIRequest 将 YunosTvpubadminDeviceYksSkillDeleteAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminDeviceYksSkillDeleteAPIRequest(v *YunosTvpubadminDeviceYksSkillDeleteAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminDeviceYksSkillDeleteAPIRequest.Put(v)
 }

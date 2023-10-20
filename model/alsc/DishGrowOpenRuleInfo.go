@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // DishGrowOpenRuleInfo 结构体
 type DishGrowOpenRuleInfo struct {
 	// 规则ID
@@ -20,4 +24,29 @@ type DishGrowOpenRuleInfo struct {
 	OutSkuId string `json:"out_sku_id,omitempty" xml:"out_sku_id,omitempty"`
 	// 是否已删除
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
+}
+
+var poolDishGrowOpenRuleInfo = sync.Pool{
+	New: func() any {
+		return new(DishGrowOpenRuleInfo)
+	},
+}
+
+// GetDishGrowOpenRuleInfo() 从对象池中获取DishGrowOpenRuleInfo
+func GetDishGrowOpenRuleInfo() *DishGrowOpenRuleInfo {
+	return poolDishGrowOpenRuleInfo.Get().(*DishGrowOpenRuleInfo)
+}
+
+// ReleaseDishGrowOpenRuleInfo 释放DishGrowOpenRuleInfo
+func ReleaseDishGrowOpenRuleInfo(v *DishGrowOpenRuleInfo) {
+	v.DishRuleId = ""
+	v.ExtInfo = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.PlanId = ""
+	v.SkuId = ""
+	v.ToLevelId = ""
+	v.OutSkuId = ""
+	v.Deleted = false
+	poolDishGrowOpenRuleInfo.Put(v)
 }

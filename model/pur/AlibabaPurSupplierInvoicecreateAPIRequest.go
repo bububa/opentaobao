@@ -2,6 +2,7 @@ package pur
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaPurSupplierInvoicecreateAPIRequest struct {
 // NewAlibabaPurSupplierInvoicecreateRequest 初始化AlibabaPurSupplierInvoicecreateAPIRequest对象
 func NewAlibabaPurSupplierInvoicecreateRequest() *AlibabaPurSupplierInvoicecreateAPIRequest {
 	return &AlibabaPurSupplierInvoicecreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaPurSupplierInvoicecreateAPIRequest) Reset() {
+	r._invoice = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaPurSupplierInvoicecreateAPIRequest) SetInvoice(_invoice *Supplie
 // GetInvoice Invoice Getter
 func (r AlibabaPurSupplierInvoicecreateAPIRequest) GetInvoice() *SupplierPreInvoiceInfoVo {
 	return r._invoice
+}
+
+var poolAlibabaPurSupplierInvoicecreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaPurSupplierInvoicecreateRequest()
+	},
+}
+
+// GetAlibabaPurSupplierInvoicecreateRequest 从 sync.Pool 获取 AlibabaPurSupplierInvoicecreateAPIRequest
+func GetAlibabaPurSupplierInvoicecreateAPIRequest() *AlibabaPurSupplierInvoicecreateAPIRequest {
+	return poolAlibabaPurSupplierInvoicecreateAPIRequest.Get().(*AlibabaPurSupplierInvoicecreateAPIRequest)
+}
+
+// ReleaseAlibabaPurSupplierInvoicecreateAPIRequest 将 AlibabaPurSupplierInvoicecreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaPurSupplierInvoicecreateAPIRequest(v *AlibabaPurSupplierInvoicecreateAPIRequest) {
+	v.Reset()
+	poolAlibabaPurSupplierInvoicecreateAPIRequest.Put(v)
 }

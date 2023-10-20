@@ -2,6 +2,7 @@ package lstvending
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstVendngImageUploadAPIRequest struct {
 // NewAlibabaLstVendngImageUploadRequest 初始化AlibabaLstVendngImageUploadAPIRequest对象
 func NewAlibabaLstVendngImageUploadRequest() *AlibabaLstVendngImageUploadAPIRequest {
 	return &AlibabaLstVendngImageUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstVendngImageUploadAPIRequest) Reset() {
+	r._imgBytes = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstVendngImageUploadAPIRequest) SetImgBytes(_imgBytes *model.Fil
 // GetImgBytes ImgBytes Getter
 func (r AlibabaLstVendngImageUploadAPIRequest) GetImgBytes() *model.File {
 	return r._imgBytes
+}
+
+var poolAlibabaLstVendngImageUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstVendngImageUploadRequest()
+	},
+}
+
+// GetAlibabaLstVendngImageUploadRequest 从 sync.Pool 获取 AlibabaLstVendngImageUploadAPIRequest
+func GetAlibabaLstVendngImageUploadAPIRequest() *AlibabaLstVendngImageUploadAPIRequest {
+	return poolAlibabaLstVendngImageUploadAPIRequest.Get().(*AlibabaLstVendngImageUploadAPIRequest)
+}
+
+// ReleaseAlibabaLstVendngImageUploadAPIRequest 将 AlibabaLstVendngImageUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstVendngImageUploadAPIRequest(v *AlibabaLstVendngImageUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaLstVendngImageUploadAPIRequest.Put(v)
 }

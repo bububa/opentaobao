@@ -9,11 +9,6 @@ import (
 // alibaba.idle.isv.item.recharge.edit
 //
 // 闲鱼商品直充功能编辑
-func AlibabaIdleIsvItemRechargeEdit(clt *core.SDKClient, req *idle.AlibabaIdleIsvItemRechargeEditAPIRequest, session string) (*idle.AlibabaIdleIsvItemRechargeEditAPIResponse, error) {
-	var resp idle.AlibabaIdleIsvItemRechargeEditAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleIsvItemRechargeEdit(clt *core.SDKClient, req *idle.AlibabaIdleIsvItemRechargeEditAPIRequest, resp *idle.AlibabaIdleIsvItemRechargeEditAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

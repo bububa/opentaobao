@@ -2,6 +2,7 @@ package legalsuit
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaLegalStandpointInsertdraftAPIRequest struct {
 // NewAlibabaLegalStandpointInsertdraftRequest 初始化AlibabaLegalStandpointInsertdraftAPIRequest对象
 func NewAlibabaLegalStandpointInsertdraftRequest() *AlibabaLegalStandpointInsertdraftAPIRequest {
 	return &AlibabaLegalStandpointInsertdraftAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegalStandpointInsertdraftAPIRequest) Reset() {
+	r._busid = ""
+	r._busName = ""
+	r._inputSystemCode = ""
+	r._standpointDraftDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaLegalStandpointInsertdraftAPIRequest) SetStandpointDraftDto(_sta
 // GetStandpointDraftDto StandpointDraftDto Getter
 func (r AlibabaLegalStandpointInsertdraftAPIRequest) GetStandpointDraftDto() *StandpointDraftDto {
 	return r._standpointDraftDto
+}
+
+var poolAlibabaLegalStandpointInsertdraftAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegalStandpointInsertdraftRequest()
+	},
+}
+
+// GetAlibabaLegalStandpointInsertdraftRequest 从 sync.Pool 获取 AlibabaLegalStandpointInsertdraftAPIRequest
+func GetAlibabaLegalStandpointInsertdraftAPIRequest() *AlibabaLegalStandpointInsertdraftAPIRequest {
+	return poolAlibabaLegalStandpointInsertdraftAPIRequest.Get().(*AlibabaLegalStandpointInsertdraftAPIRequest)
+}
+
+// ReleaseAlibabaLegalStandpointInsertdraftAPIRequest 将 AlibabaLegalStandpointInsertdraftAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegalStandpointInsertdraftAPIRequest(v *AlibabaLegalStandpointInsertdraftAPIRequest) {
+	v.Reset()
+	poolAlibabaLegalStandpointInsertdraftAPIRequest.Put(v)
 }

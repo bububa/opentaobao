@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // GatherPlaceInfo 结构体
 type GatherPlaceInfo struct {
 	// 集合地点名称
@@ -8,4 +12,23 @@ type GatherPlaceInfo struct {
 	Poi string `json:"poi,omitempty" xml:"poi,omitempty"`
 	// AMAP/GOOGLE/OTHERS。高德（AMAP），GOOGLE，其他（OTHERS）
 	PoiResource string `json:"poi_resource,omitempty" xml:"poi_resource,omitempty"`
+}
+
+var poolGatherPlaceInfo = sync.Pool{
+	New: func() any {
+		return new(GatherPlaceInfo)
+	},
+}
+
+// GetGatherPlaceInfo() 从对象池中获取GatherPlaceInfo
+func GetGatherPlaceInfo() *GatherPlaceInfo {
+	return poolGatherPlaceInfo.Get().(*GatherPlaceInfo)
+}
+
+// ReleaseGatherPlaceInfo 释放GatherPlaceInfo
+func ReleaseGatherPlaceInfo(v *GatherPlaceInfo) {
+	v.Name = ""
+	v.Poi = ""
+	v.PoiResource = ""
+	poolGatherPlaceInfo.Put(v)
 }

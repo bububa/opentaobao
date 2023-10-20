@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // OrderSenderCreate 结构体
 type OrderSenderCreate struct {
 	// 联系人姓名
@@ -16,4 +20,27 @@ type OrderSenderCreate struct {
 	Town string `json:"town,omitempty" xml:"town,omitempty"`
 	// 详细地址
 	DetailAddress string `json:"detail_address,omitempty" xml:"detail_address,omitempty"`
+}
+
+var poolOrderSenderCreate = sync.Pool{
+	New: func() any {
+		return new(OrderSenderCreate)
+	},
+}
+
+// GetOrderSenderCreate() 从对象池中获取OrderSenderCreate
+func GetOrderSenderCreate() *OrderSenderCreate {
+	return poolOrderSenderCreate.Get().(*OrderSenderCreate)
+}
+
+// ReleaseOrderSenderCreate 释放OrderSenderCreate
+func ReleaseOrderSenderCreate(v *OrderSenderCreate) {
+	v.Name = ""
+	v.Mobile = ""
+	v.Province = ""
+	v.City = ""
+	v.Area = ""
+	v.Town = ""
+	v.DetailAddress = ""
+	poolOrderSenderCreate.Put(v)
 }

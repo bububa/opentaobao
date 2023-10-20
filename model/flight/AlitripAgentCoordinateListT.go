@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // AlitripAgentCoordinateListT 结构体
 type AlitripAgentCoordinateListT struct {
 	// 创建时间
@@ -24,4 +28,31 @@ type AlitripAgentCoordinateListT struct {
 	Urge int64 `json:"urge,omitempty" xml:"urge,omitempty"`
 	// 1:出票,2:退票,3:改签,4:航变
 	CorrelationBizType int64 `json:"correlation_biz_type,omitempty" xml:"correlation_biz_type,omitempty"`
+}
+
+var poolAlitripAgentCoordinateListT = sync.Pool{
+	New: func() any {
+		return new(AlitripAgentCoordinateListT)
+	},
+}
+
+// GetAlitripAgentCoordinateListT() 从对象池中获取AlitripAgentCoordinateListT
+func GetAlitripAgentCoordinateListT() *AlitripAgentCoordinateListT {
+	return poolAlitripAgentCoordinateListT.Get().(*AlitripAgentCoordinateListT)
+}
+
+// ReleaseAlitripAgentCoordinateListT 释放AlitripAgentCoordinateListT
+func ReleaseAlitripAgentCoordinateListT(v *AlitripAgentCoordinateListT) {
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.CurrentFollowerName = ""
+	v.Title = ""
+	v.ServeDeadline = ""
+	v.CorrelationOutOrderId = ""
+	v.Id = 0
+	v.CaseType = 0
+	v.Status = 0
+	v.Urge = 0
+	v.CorrelationBizType = 0
+	poolAlitripAgentCoordinateListT.Put(v)
 }

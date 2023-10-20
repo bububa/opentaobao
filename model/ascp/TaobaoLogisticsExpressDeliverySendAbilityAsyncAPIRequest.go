@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest struct {
 // NewTaobaoLogisticsExpressDeliverySendAbilityAsyncRequest 初始化TaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest对象
 func NewTaobaoLogisticsExpressDeliverySendAbilityAsyncRequest() *TaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest {
 	return &TaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest) Reset() {
+	r._deliverySendAbilityRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest) SetDeliverySe
 // GetDeliverySendAbilityRequest DeliverySendAbilityRequest Getter
 func (r TaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest) GetDeliverySendAbilityRequest() *DeliverySendAbilityRequest {
 	return r._deliverySendAbilityRequest
+}
+
+var poolTaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsExpressDeliverySendAbilityAsyncRequest()
+	},
+}
+
+// GetTaobaoLogisticsExpressDeliverySendAbilityAsyncRequest 从 sync.Pool 获取 TaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest
+func GetTaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest() *TaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest {
+	return poolTaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest.Get().(*TaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest 将 TaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest(v *TaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsExpressDeliverySendAbilityAsyncAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.message.subscription.storage
 //
 // 消息订阅中的消息模版的存储
-func AlitripMerchantGalaxyMessageSubscriptionStorage(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyMessageSubscriptionStorageAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyMessageSubscriptionStorageAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyMessageSubscriptionStorageAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyMessageSubscriptionStorage(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyMessageSubscriptionStorageAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyMessageSubscriptionStorageAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

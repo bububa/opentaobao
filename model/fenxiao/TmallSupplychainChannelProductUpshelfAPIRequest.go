@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallSupplychainChannelProductUpshelfAPIRequest struct {
 // NewTmallSupplychainChannelProductUpshelfRequest 初始化TmallSupplychainChannelProductUpshelfAPIRequest对象
 func NewTmallSupplychainChannelProductUpshelfRequest() *TmallSupplychainChannelProductUpshelfAPIRequest {
 	return &TmallSupplychainChannelProductUpshelfAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallSupplychainChannelProductUpshelfAPIRequest) Reset() {
+	r._productId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallSupplychainChannelProductUpshelfAPIRequest) SetProductId(_productI
 // GetProductId ProductId Getter
 func (r TmallSupplychainChannelProductUpshelfAPIRequest) GetProductId() int64 {
 	return r._productId
+}
+
+var poolTmallSupplychainChannelProductUpshelfAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallSupplychainChannelProductUpshelfRequest()
+	},
+}
+
+// GetTmallSupplychainChannelProductUpshelfRequest 从 sync.Pool 获取 TmallSupplychainChannelProductUpshelfAPIRequest
+func GetTmallSupplychainChannelProductUpshelfAPIRequest() *TmallSupplychainChannelProductUpshelfAPIRequest {
+	return poolTmallSupplychainChannelProductUpshelfAPIRequest.Get().(*TmallSupplychainChannelProductUpshelfAPIRequest)
+}
+
+// ReleaseTmallSupplychainChannelProductUpshelfAPIRequest 将 TmallSupplychainChannelProductUpshelfAPIRequest 放入 sync.Pool
+func ReleaseTmallSupplychainChannelProductUpshelfAPIRequest(v *TmallSupplychainChannelProductUpshelfAPIRequest) {
+	v.Reset()
+	poolTmallSupplychainChannelProductUpshelfAPIRequest.Put(v)
 }

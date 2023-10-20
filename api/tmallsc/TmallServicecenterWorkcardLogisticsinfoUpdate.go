@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.workcard.logisticsinfo.update
 //
 // 物流单信息回传接口
-func TmallServicecenterWorkcardLogisticsinfoUpdate(clt *core.SDKClient, req *tmallsc.TmallServicecenterWorkcardLogisticsinfoUpdateAPIRequest, session string) (*tmallsc.TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse, error) {
-	var resp tmallsc.TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkcardLogisticsinfoUpdate(clt *core.SDKClient, req *tmallsc.TmallServicecenterWorkcardLogisticsinfoUpdateAPIRequest, resp *tmallsc.TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

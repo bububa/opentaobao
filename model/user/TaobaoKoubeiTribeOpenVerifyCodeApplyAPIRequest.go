@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest struct {
 // NewTaobaoKoubeiTribeOpenVerifyCodeApplyRequest 初始化TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest对象
 func NewTaobaoKoubeiTribeOpenVerifyCodeApplyRequest() *TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest {
 	return &TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest) Reset() {
+	r._dataSetId = ""
+	r._phone = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest) SetPhone(_phone string)
 // GetPhone Phone Getter
 func (r TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest) GetPhone() string {
 	return r._phone
+}
+
+var poolTaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoKoubeiTribeOpenVerifyCodeApplyRequest()
+	},
+}
+
+// GetTaobaoKoubeiTribeOpenVerifyCodeApplyRequest 从 sync.Pool 获取 TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest
+func GetTaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest() *TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest {
+	return poolTaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest.Get().(*TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest)
+}
+
+// ReleaseTaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest 将 TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest(v *TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest) {
+	v.Reset()
+	poolTaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest.Put(v)
 }

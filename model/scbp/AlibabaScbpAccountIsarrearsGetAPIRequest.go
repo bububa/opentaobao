@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaScbpAccountIsarrearsGetAPIRequest struct {
 // NewAlibabaScbpAccountIsarrearsGetRequest 初始化AlibabaScbpAccountIsarrearsGetAPIRequest对象
 func NewAlibabaScbpAccountIsarrearsGetRequest() *AlibabaScbpAccountIsarrearsGetAPIRequest {
 	return &AlibabaScbpAccountIsarrearsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAccountIsarrearsGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaScbpAccountIsarrearsGetAPIRequest) GetApiParams(params url.Values
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaScbpAccountIsarrearsGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaScbpAccountIsarrearsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAccountIsarrearsGetRequest()
+	},
+}
+
+// GetAlibabaScbpAccountIsarrearsGetRequest 从 sync.Pool 获取 AlibabaScbpAccountIsarrearsGetAPIRequest
+func GetAlibabaScbpAccountIsarrearsGetAPIRequest() *AlibabaScbpAccountIsarrearsGetAPIRequest {
+	return poolAlibabaScbpAccountIsarrearsGetAPIRequest.Get().(*AlibabaScbpAccountIsarrearsGetAPIRequest)
+}
+
+// ReleaseAlibabaScbpAccountIsarrearsGetAPIRequest 将 AlibabaScbpAccountIsarrearsGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAccountIsarrearsGetAPIRequest(v *AlibabaScbpAccountIsarrearsGetAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAccountIsarrearsGetAPIRequest.Put(v)
 }

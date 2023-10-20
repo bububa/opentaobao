@@ -2,6 +2,7 @@ package shop
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDataCouponGetAPIRequest struct {
 // NewAlibabaDataCouponGetRequest 初始化AlibabaDataCouponGetAPIRequest对象
 func NewAlibabaDataCouponGetRequest() *AlibabaDataCouponGetAPIRequest {
 	return &AlibabaDataCouponGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDataCouponGetAPIRequest) Reset() {
+	r._unNamed = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDataCouponGetAPIRequest) SetUnNamed(_unNamed string) error {
 // GetUnNamed UnNamed Getter
 func (r AlibabaDataCouponGetAPIRequest) GetUnNamed() string {
 	return r._unNamed
+}
+
+var poolAlibabaDataCouponGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDataCouponGetRequest()
+	},
+}
+
+// GetAlibabaDataCouponGetRequest 从 sync.Pool 获取 AlibabaDataCouponGetAPIRequest
+func GetAlibabaDataCouponGetAPIRequest() *AlibabaDataCouponGetAPIRequest {
+	return poolAlibabaDataCouponGetAPIRequest.Get().(*AlibabaDataCouponGetAPIRequest)
+}
+
+// ReleaseAlibabaDataCouponGetAPIRequest 将 AlibabaDataCouponGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDataCouponGetAPIRequest(v *AlibabaDataCouponGetAPIRequest) {
+	v.Reset()
+	poolAlibabaDataCouponGetAPIRequest.Put(v)
 }

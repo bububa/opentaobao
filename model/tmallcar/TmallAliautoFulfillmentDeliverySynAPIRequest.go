@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallAliautoFulfillmentDeliverySynAPIRequest struct {
 // NewTmallAliautoFulfillmentDeliverySynRequest 初始化TmallAliautoFulfillmentDeliverySynAPIRequest对象
 func NewTmallAliautoFulfillmentDeliverySynRequest() *TmallAliautoFulfillmentDeliverySynAPIRequest {
 	return &TmallAliautoFulfillmentDeliverySynAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallAliautoFulfillmentDeliverySynAPIRequest) Reset() {
+	r._req = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallAliautoFulfillmentDeliverySynAPIRequest) SetReq(_req *SyncInfoReq)
 // GetReq Req Getter
 func (r TmallAliautoFulfillmentDeliverySynAPIRequest) GetReq() *SyncInfoReq {
 	return r._req
+}
+
+var poolTmallAliautoFulfillmentDeliverySynAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallAliautoFulfillmentDeliverySynRequest()
+	},
+}
+
+// GetTmallAliautoFulfillmentDeliverySynRequest 从 sync.Pool 获取 TmallAliautoFulfillmentDeliverySynAPIRequest
+func GetTmallAliautoFulfillmentDeliverySynAPIRequest() *TmallAliautoFulfillmentDeliverySynAPIRequest {
+	return poolTmallAliautoFulfillmentDeliverySynAPIRequest.Get().(*TmallAliautoFulfillmentDeliverySynAPIRequest)
+}
+
+// ReleaseTmallAliautoFulfillmentDeliverySynAPIRequest 将 TmallAliautoFulfillmentDeliverySynAPIRequest 放入 sync.Pool
+func ReleaseTmallAliautoFulfillmentDeliverySynAPIRequest(v *TmallAliautoFulfillmentDeliverySynAPIRequest) {
+	v.Reset()
+	poolTmallAliautoFulfillmentDeliverySynAPIRequest.Put(v)
 }

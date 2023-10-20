@@ -2,6 +2,7 @@ package scs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOnebpDkxReportReportCampaignDaylistAPIRequest struct {
 // NewTaobaoOnebpDkxReportReportCampaignDaylistRequest 初始化TaobaoOnebpDkxReportReportCampaignDaylistAPIRequest对象
 func NewTaobaoOnebpDkxReportReportCampaignDaylistRequest() *TaobaoOnebpDkxReportReportCampaignDaylistAPIRequest {
 	return &TaobaoOnebpDkxReportReportCampaignDaylistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOnebpDkxReportReportCampaignDaylistAPIRequest) Reset() {
+	r._apiServiceContext = nil
+	r._reportQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOnebpDkxReportReportCampaignDaylistAPIRequest) SetReportQuery(_re
 // GetReportQuery ReportQuery Getter
 func (r TaobaoOnebpDkxReportReportCampaignDaylistAPIRequest) GetReportQuery() *ReportQueryTopDto {
 	return r._reportQuery
+}
+
+var poolTaobaoOnebpDkxReportReportCampaignDaylistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOnebpDkxReportReportCampaignDaylistRequest()
+	},
+}
+
+// GetTaobaoOnebpDkxReportReportCampaignDaylistRequest 从 sync.Pool 获取 TaobaoOnebpDkxReportReportCampaignDaylistAPIRequest
+func GetTaobaoOnebpDkxReportReportCampaignDaylistAPIRequest() *TaobaoOnebpDkxReportReportCampaignDaylistAPIRequest {
+	return poolTaobaoOnebpDkxReportReportCampaignDaylistAPIRequest.Get().(*TaobaoOnebpDkxReportReportCampaignDaylistAPIRequest)
+}
+
+// ReleaseTaobaoOnebpDkxReportReportCampaignDaylistAPIRequest 将 TaobaoOnebpDkxReportReportCampaignDaylistAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOnebpDkxReportReportCampaignDaylistAPIRequest(v *TaobaoOnebpDkxReportReportCampaignDaylistAPIRequest) {
+	v.Reset()
+	poolTaobaoOnebpDkxReportReportCampaignDaylistAPIRequest.Put(v)
 }

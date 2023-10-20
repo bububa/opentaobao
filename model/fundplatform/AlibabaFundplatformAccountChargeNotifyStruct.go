@@ -1,5 +1,9 @@
 package fundplatform
 
+import (
+	"sync"
+)
+
 // AlibabaFundplatformAccountChargeNotifyStruct 结构体
 type AlibabaFundplatformAccountChargeNotifyStruct struct {
 	// 回传充值时传入的outBizId
@@ -14,4 +18,26 @@ type AlibabaFundplatformAccountChargeNotifyStruct struct {
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 用户在淘宝中userId
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolAlibabaFundplatformAccountChargeNotifyStruct = sync.Pool{
+	New: func() any {
+		return new(AlibabaFundplatformAccountChargeNotifyStruct)
+	},
+}
+
+// GetAlibabaFundplatformAccountChargeNotifyStruct() 从对象池中获取AlibabaFundplatformAccountChargeNotifyStruct
+func GetAlibabaFundplatformAccountChargeNotifyStruct() *AlibabaFundplatformAccountChargeNotifyStruct {
+	return poolAlibabaFundplatformAccountChargeNotifyStruct.Get().(*AlibabaFundplatformAccountChargeNotifyStruct)
+}
+
+// ReleaseAlibabaFundplatformAccountChargeNotifyStruct 释放AlibabaFundplatformAccountChargeNotifyStruct
+func ReleaseAlibabaFundplatformAccountChargeNotifyStruct(v *AlibabaFundplatformAccountChargeNotifyStruct) {
+	v.OutBizId = ""
+	v.OwnSign = ""
+	v.AccountId = 0
+	v.SubBizType = 0
+	v.Amount = 0
+	v.UserId = 0
+	poolAlibabaFundplatformAccountChargeNotifyStruct.Put(v)
 }

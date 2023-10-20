@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // PolicyCreateResponseDto 结构体
 type PolicyCreateResponseDto struct {
 	// 错误信息
@@ -36,4 +40,37 @@ type PolicyCreateResponseDto struct {
 	TaskStatus int64 `json:"task_status,omitempty" xml:"task_status,omitempty"`
 	// 任务id
 	TaskId int64 `json:"task_id,omitempty" xml:"task_id,omitempty"`
+}
+
+var poolPolicyCreateResponseDto = sync.Pool{
+	New: func() any {
+		return new(PolicyCreateResponseDto)
+	},
+}
+
+// GetPolicyCreateResponseDto() 从对象池中获取PolicyCreateResponseDto
+func GetPolicyCreateResponseDto() *PolicyCreateResponseDto {
+	return poolPolicyCreateResponseDto.Get().(*PolicyCreateResponseDto)
+}
+
+// ReleasePolicyCreateResponseDto 释放PolicyCreateResponseDto
+func ReleasePolicyCreateResponseDto(v *PolicyCreateResponseDto) {
+	v.ErrorPolicyList = v.ErrorPolicyList[:0]
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.AgentSubNick = ""
+	v.Url = ""
+	v.Attributes = ""
+	v.CreateResult = nil
+	v.DeleteResult = nil
+	v.PolicyProcessType = 0
+	v.AgentId = 0
+	v.SuccessAmount = 0
+	v.AgentSubId = 0
+	v.TotalAmount = 0
+	v.PolicyType = 0
+	v.FailAmount = 0
+	v.TaskStatus = 0
+	v.TaskId = 0
+	poolPolicyCreateResponseDto.Put(v)
 }

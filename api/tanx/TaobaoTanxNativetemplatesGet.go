@@ -9,11 +9,6 @@ import (
 // taobao.tanx.nativetemplates.get
 //
 // 根据传入的本地模板ID批量返回本地模板
-func TaobaoTanxNativetemplatesGet(clt *core.SDKClient, req *tanx.TaobaoTanxNativetemplatesGetAPIRequest, session string) (*tanx.TaobaoTanxNativetemplatesGetAPIResponse, error) {
-	var resp tanx.TaobaoTanxNativetemplatesGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTanxNativetemplatesGet(clt *core.SDKClient, req *tanx.TaobaoTanxNativetemplatesGetAPIRequest, resp *tanx.TaobaoTanxNativetemplatesGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // SubType 结构体
 type SubType struct {
 	// 药品id
@@ -34,4 +38,36 @@ type SubType struct {
 	TypeNo string `json:"type_no,omitempty" xml:"type_no,omitempty"`
 	// 资源码信息
 	ResProdCodes *ResProdCodes `json:"res_prod_codes,omitempty" xml:"res_prod_codes,omitempty"`
+}
+
+var poolSubType = sync.Pool{
+	New: func() any {
+		return new(SubType)
+	},
+}
+
+// GetSubType() 从对象池中获取SubType
+func GetSubType() *SubType {
+	return poolSubType.Get().(*SubType)
+}
+
+// ReleaseSubType 释放SubType
+func ReleaseSubType(v *SubType) {
+	v.DrugEntBaseInfoId = ""
+	v.AuthorizedNo = ""
+	v.PackUnit = ""
+	v.PackageSpec = ""
+	v.PhysicDetailType = ""
+	v.PhysicExpiry = ""
+	v.PhysicExpiryUnit = ""
+	v.PhysicInfo = ""
+	v.PhysicType = ""
+	v.PkgNum = ""
+	v.PrepnUnit = ""
+	v.ProductName = ""
+	v.Spec = ""
+	v.Type = ""
+	v.TypeNo = ""
+	v.ResProdCodes = nil
+	poolSubType.Put(v)
 }

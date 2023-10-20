@@ -2,6 +2,7 @@ package itpolicy
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -47,8 +48,28 @@ type TaobaoAlitripItFareBatchdeleteAPIRequest struct {
 // NewTaobaoAlitripItFareBatchdeleteRequest 初始化TaobaoAlitripItFareBatchdeleteAPIRequest对象
 func NewTaobaoAlitripItFareBatchdeleteRequest() *TaobaoAlitripItFareBatchdeleteAPIRequest {
 	return &TaobaoAlitripItFareBatchdeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(15),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) Reset() {
+	r._statusList = r._statusList[:0]
+	r._extendAttributes = ""
+	r._airline = ""
+	r._arrCity = ""
+	r._cabin = ""
+	r._depCity = ""
+	r._endModifyDate = ""
+	r._endRestrictGoDate = ""
+	r._fileCode = ""
+	r._operateSource = ""
+	r._outId = ""
+	r._startModifyDate = ""
+	r._startRestrictGoDate = ""
+	r._fareType = 0
+	r._canRt = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -261,4 +282,21 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetCanRt(_canRt bool) error {
 // GetCanRt CanRt Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetCanRt() bool {
 	return r._canRt
+}
+
+var poolTaobaoAlitripItFareBatchdeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripItFareBatchdeleteRequest()
+	},
+}
+
+// GetTaobaoAlitripItFareBatchdeleteRequest 从 sync.Pool 获取 TaobaoAlitripItFareBatchdeleteAPIRequest
+func GetTaobaoAlitripItFareBatchdeleteAPIRequest() *TaobaoAlitripItFareBatchdeleteAPIRequest {
+	return poolTaobaoAlitripItFareBatchdeleteAPIRequest.Get().(*TaobaoAlitripItFareBatchdeleteAPIRequest)
+}
+
+// ReleaseTaobaoAlitripItFareBatchdeleteAPIRequest 将 TaobaoAlitripItFareBatchdeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripItFareBatchdeleteAPIRequest(v *TaobaoAlitripItFareBatchdeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripItFareBatchdeleteAPIRequest.Put(v)
 }

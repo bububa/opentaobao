@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // SaleDto 结构体
 type SaleDto struct {
 	// 销售日期
@@ -18,4 +22,28 @@ type SaleDto struct {
 	SaleModeCode int64 `json:"sale_mode_code,omitempty" xml:"sale_mode_code,omitempty"`
 	// 往返停留时长单位：非必填，0-单位:天，3-单位:小时；默认为0
 	StayTimeUnit int64 `json:"stay_time_unit,omitempty" xml:"stay_time_unit,omitempty"`
+}
+
+var poolSaleDto = sync.Pool{
+	New: func() any {
+		return new(SaleDto)
+	},
+}
+
+// GetSaleDto() 从对象池中获取SaleDto
+func GetSaleDto() *SaleDto {
+	return poolSaleDto.Get().(*SaleDto)
+}
+
+// ReleaseSaleDto 释放SaleDto
+func ReleaseSaleDto(v *SaleDto) {
+	v.SaleDate = v.SaleDate[:0]
+	v.GoodsMarket = v.GoodsMarket[:0]
+	v.SaleDates = v.SaleDates[:0]
+	v.AdvanceDay = ""
+	v.SaleTime = ""
+	v.StayDay = ""
+	v.SaleModeCode = 0
+	v.StayTimeUnit = 0
+	poolSaleDto.Put(v)
 }

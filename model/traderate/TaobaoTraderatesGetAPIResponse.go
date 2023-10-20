@@ -2,6 +2,7 @@ package traderate
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTraderatesGetAPIResponse struct {
 	TaobaoTraderatesGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTraderatesGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTraderatesGetAPIResponseModel).Reset()
+}
+
 // TaobaoTraderatesGetAPIResponseModel is 搜索评价信息 成功返回结果
 type TaobaoTraderatesGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"traderates_get_response"`
@@ -26,4 +33,29 @@ type TaobaoTraderatesGetAPIResponseModel struct {
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// 当使用use_has_next时返回信息，如果还有下一页则返回true
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTraderatesGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TradeRates = m.TradeRates[:0]
+	m.TotalResults = 0
+	m.HasNext = false
+}
+
+var poolTaobaoTraderatesGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTraderatesGetAPIResponse)
+	},
+}
+
+// GetTaobaoTraderatesGetAPIResponse 从 sync.Pool 获取 TaobaoTraderatesGetAPIResponse
+func GetTaobaoTraderatesGetAPIResponse() *TaobaoTraderatesGetAPIResponse {
+	return poolTaobaoTraderatesGetAPIResponse.Get().(*TaobaoTraderatesGetAPIResponse)
+}
+
+// ReleaseTaobaoTraderatesGetAPIResponse 将 TaobaoTraderatesGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTraderatesGetAPIResponse(v *TaobaoTraderatesGetAPIResponse) {
+	v.Reset()
+	poolTaobaoTraderatesGetAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // FscPoiApiDto 结构体
 type FscPoiApiDto struct {
 	// poi名称
@@ -22,4 +26,30 @@ type FscPoiApiDto struct {
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
 	// poiId
 	PoiId int64 `json:"poi_id,omitempty" xml:"poi_id,omitempty"`
+}
+
+var poolFscPoiApiDto = sync.Pool{
+	New: func() any {
+		return new(FscPoiApiDto)
+	},
+}
+
+// GetFscPoiApiDto() 从对象池中获取FscPoiApiDto
+func GetFscPoiApiDto() *FscPoiApiDto {
+	return poolFscPoiApiDto.Get().(*FscPoiApiDto)
+}
+
+// ReleaseFscPoiApiDto 释放FscPoiApiDto
+func ReleaseFscPoiApiDto(v *FscPoiApiDto) {
+	v.PoiName = ""
+	v.PoiNameEn = ""
+	v.CityId = ""
+	v.CityName = ""
+	v.ProvinceId = ""
+	v.ProvinceName = ""
+	v.CountryId = ""
+	v.CountryName = ""
+	v.Description = ""
+	v.PoiId = 0
+	poolFscPoiApiDto.Put(v)
 }

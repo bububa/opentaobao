@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // TvmPassengerVo 结构体
 type TvmPassengerVo struct {
 	// 保险信息
@@ -30,4 +34,34 @@ type TvmPassengerVo struct {
 	DiscountType int64 `json:"discount_type,omitempty" xml:"discount_type,omitempty"`
 	// 是否带有儿童
 	HasChildren bool `json:"has_children,omitempty" xml:"has_children,omitempty"`
+}
+
+var poolTvmPassengerVo = sync.Pool{
+	New: func() any {
+		return new(TvmPassengerVo)
+	},
+}
+
+// GetTvmPassengerVo() 从对象池中获取TvmPassengerVo
+func GetTvmPassengerVo() *TvmPassengerVo {
+	return poolTvmPassengerVo.Get().(*TvmPassengerVo)
+}
+
+// ReleaseTvmPassengerVo 释放TvmPassengerVo
+func ReleaseTvmPassengerVo(v *TvmPassengerVo) {
+	v.TvmInsuranceInfos = v.TvmInsuranceInfos[:0]
+	v.AgentEticket = ""
+	v.AgentTicketId = ""
+	v.RiderCertNumber = ""
+	v.RiderCertType = ""
+	v.RiderName = ""
+	v.SeatNumber = ""
+	v.FullPrice = 0
+	v.ServiceCharge = 0
+	v.TicketPrice = 0
+	v.InsurePrice = 0
+	v.TicketType = 0
+	v.DiscountType = 0
+	v.HasChildren = false
+	poolTvmPassengerVo.Put(v)
 }

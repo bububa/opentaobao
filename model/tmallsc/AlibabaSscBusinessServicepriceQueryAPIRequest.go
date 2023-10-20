@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaSscBusinessServicepriceQueryAPIRequest struct {
 // NewAlibabaSscBusinessServicepriceQueryRequest 初始化AlibabaSscBusinessServicepriceQueryAPIRequest对象
 func NewAlibabaSscBusinessServicepriceQueryRequest() *AlibabaSscBusinessServicepriceQueryAPIRequest {
 	return &AlibabaSscBusinessServicepriceQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSscBusinessServicepriceQueryAPIRequest) Reset() {
+	r._servicePriceQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaSscBusinessServicepriceQueryAPIRequest) SetServicePriceQueryRequ
 // GetServicePriceQueryRequest ServicePriceQueryRequest Getter
 func (r AlibabaSscBusinessServicepriceQueryAPIRequest) GetServicePriceQueryRequest() *ServicePriceQueryRequest {
 	return r._servicePriceQueryRequest
+}
+
+var poolAlibabaSscBusinessServicepriceQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSscBusinessServicepriceQueryRequest()
+	},
+}
+
+// GetAlibabaSscBusinessServicepriceQueryRequest 从 sync.Pool 获取 AlibabaSscBusinessServicepriceQueryAPIRequest
+func GetAlibabaSscBusinessServicepriceQueryAPIRequest() *AlibabaSscBusinessServicepriceQueryAPIRequest {
+	return poolAlibabaSscBusinessServicepriceQueryAPIRequest.Get().(*AlibabaSscBusinessServicepriceQueryAPIRequest)
+}
+
+// ReleaseAlibabaSscBusinessServicepriceQueryAPIRequest 将 AlibabaSscBusinessServicepriceQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSscBusinessServicepriceQueryAPIRequest(v *AlibabaSscBusinessServicepriceQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaSscBusinessServicepriceQueryAPIRequest.Put(v)
 }

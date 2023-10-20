@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest struct {
 // NewAlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoRequest 初始化AlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest对象
 func NewAlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoRequest() *AlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest {
 	return &AlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._keyword = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest) SetKeywor
 // GetKeyword Keyword Getter
 func (r AlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest) GetKeyword() string {
 	return r._keyword
+}
+
+var poolAlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoRequest 从 sync.Pool 获取 AlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest
+func GetAlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest() *AlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest {
+	return poolAlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest.Get().(*AlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest 将 AlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest(v *AlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest.Put(v)
 }

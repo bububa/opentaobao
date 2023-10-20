@@ -9,11 +9,6 @@ import (
 // taobao.train.agent.express.set.vtwo
 //
 // 线下票回填物流信息服务
-func TaobaoTrainAgentExpressSetVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentExpressSetVtwoAPIRequest, session string) (*train.TaobaoTrainAgentExpressSetVtwoAPIResponse, error) {
-	var resp train.TaobaoTrainAgentExpressSetVtwoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTrainAgentExpressSetVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentExpressSetVtwoAPIRequest, resp *train.TaobaoTrainAgentExpressSetVtwoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

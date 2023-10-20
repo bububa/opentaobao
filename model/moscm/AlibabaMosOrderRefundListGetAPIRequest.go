@@ -2,6 +2,7 @@ package moscm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaMosOrderRefundListGetAPIRequest struct {
 // NewAlibabaMosOrderRefundListGetRequest 初始化AlibabaMosOrderRefundListGetAPIRequest对象
 func NewAlibabaMosOrderRefundListGetRequest() *AlibabaMosOrderRefundListGetAPIRequest {
 	return &AlibabaMosOrderRefundListGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosOrderRefundListGetAPIRequest) Reset() {
+	r._rmaCriteria = nil
+	r._paginator = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaMosOrderRefundListGetAPIRequest) SetPaginator(_paginator *Pagina
 // GetPaginator Paginator Getter
 func (r AlibabaMosOrderRefundListGetAPIRequest) GetPaginator() *Paginator {
 	return r._paginator
+}
+
+var poolAlibabaMosOrderRefundListGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosOrderRefundListGetRequest()
+	},
+}
+
+// GetAlibabaMosOrderRefundListGetRequest 从 sync.Pool 获取 AlibabaMosOrderRefundListGetAPIRequest
+func GetAlibabaMosOrderRefundListGetAPIRequest() *AlibabaMosOrderRefundListGetAPIRequest {
+	return poolAlibabaMosOrderRefundListGetAPIRequest.Get().(*AlibabaMosOrderRefundListGetAPIRequest)
+}
+
+// ReleaseAlibabaMosOrderRefundListGetAPIRequest 将 AlibabaMosOrderRefundListGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosOrderRefundListGetAPIRequest(v *AlibabaMosOrderRefundListGetAPIRequest) {
+	v.Reset()
+	poolAlibabaMosOrderRefundListGetAPIRequest.Put(v)
 }

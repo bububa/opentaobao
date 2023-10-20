@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // DeductPreCheckOpenReq 结构体
 type DeductPreCheckOpenReq struct {
 	// 品牌ID(不能和outbrandid同时为空))
@@ -16,4 +20,27 @@ type DeductPreCheckOpenReq struct {
 	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
 	// 核销总资产
 	Value int64 `json:"value,omitempty" xml:"value,omitempty"`
+}
+
+var poolDeductPreCheckOpenReq = sync.Pool{
+	New: func() any {
+		return new(DeductPreCheckOpenReq)
+	},
+}
+
+// GetDeductPreCheckOpenReq() 从对象池中获取DeductPreCheckOpenReq
+func GetDeductPreCheckOpenReq() *DeductPreCheckOpenReq {
+	return poolDeductPreCheckOpenReq.Get().(*DeductPreCheckOpenReq)
+}
+
+// ReleaseDeductPreCheckOpenReq 释放DeductPreCheckOpenReq
+func ReleaseDeductPreCheckOpenReq(v *DeductPreCheckOpenReq) {
+	v.BrandId = ""
+	v.CardId = ""
+	v.CustomerId = ""
+	v.ShopId = ""
+	v.OutShopId = ""
+	v.OutBrandId = ""
+	v.Value = 0
+	poolDeductPreCheckOpenReq.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drugcode.drugfactory.blindfiledellog
 //
 // 临床用药试验-接收盲底文件删除日志
-func AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellog(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellog(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest, resp *drugtrace.AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

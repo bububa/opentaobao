@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PageQueryAccountFlowsOpenInfo 结构体
 type PageQueryAccountFlowsOpenInfo struct {
 	// 储值账户id
@@ -44,4 +48,41 @@ type PageQueryAccountFlowsOpenInfo struct {
 	GiftValue int64 `json:"gift_value,omitempty" xml:"gift_value,omitempty"`
 	// 是否删除
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
+}
+
+var poolPageQueryAccountFlowsOpenInfo = sync.Pool{
+	New: func() any {
+		return new(PageQueryAccountFlowsOpenInfo)
+	},
+}
+
+// GetPageQueryAccountFlowsOpenInfo() 从对象池中获取PageQueryAccountFlowsOpenInfo
+func GetPageQueryAccountFlowsOpenInfo() *PageQueryAccountFlowsOpenInfo {
+	return poolPageQueryAccountFlowsOpenInfo.Get().(*PageQueryAccountFlowsOpenInfo)
+}
+
+// ReleasePageQueryAccountFlowsOpenInfo 释放PageQueryAccountFlowsOpenInfo
+func ReleasePageQueryAccountFlowsOpenInfo(v *PageQueryAccountFlowsOpenInfo) {
+	v.AccountId = ""
+	v.CreateBy = ""
+	v.FlowId = ""
+	v.FlowType = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Operator = ""
+	v.OperatorName = ""
+	v.OrderTime = ""
+	v.OuterOrderId = ""
+	v.Remark = ""
+	v.ShopId = ""
+	v.ShopName = ""
+	v.UpdateBy = ""
+	v.OuterPayId = ""
+	v.ExtInfo = ""
+	v.CurrentValue = 0
+	v.OrderSrc = 0
+	v.OrderValue = 0
+	v.GiftValue = 0
+	v.Deleted = false
+	poolPageQueryAccountFlowsOpenInfo.Put(v)
 }

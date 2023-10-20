@@ -9,11 +9,6 @@ import (
 // taobao.ailab.aicloud.top.device.unbind
 //
 // 解绑设备
-func TaobaoAilabAicloudTopDeviceUnbind(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceUnbindAPIRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceUnbindAPIResponse, error) {
-	var resp iot.TaobaoAilabAicloudTopDeviceUnbindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAilabAicloudTopDeviceUnbind(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceUnbindAPIRequest, resp *iot.TaobaoAilabAicloudTopDeviceUnbindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

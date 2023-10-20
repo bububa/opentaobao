@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // ChangeOtaItemRuleRq 结构体
 type ChangeOtaItemRuleRq struct {
 	// 退票规则
@@ -20,4 +24,29 @@ type ChangeOtaItemRuleRq struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 排序使用
 	Index int64 `json:"index,omitempty" xml:"index,omitempty"`
+}
+
+var poolChangeOtaItemRuleRq = sync.Pool{
+	New: func() any {
+		return new(ChangeOtaItemRuleRq)
+	},
+}
+
+// GetChangeOtaItemRuleRq() 从对象池中获取ChangeOtaItemRuleRq
+func GetChangeOtaItemRuleRq() *ChangeOtaItemRuleRq {
+	return poolChangeOtaItemRuleRq.Get().(*ChangeOtaItemRuleRq)
+}
+
+// ReleaseChangeOtaItemRuleRq 释放ChangeOtaItemRuleRq
+func ReleaseChangeOtaItemRuleRq(v *ChangeOtaItemRuleRq) {
+	v.RefundDetails = v.RefundDetails[:0]
+	v.ChangeDetails = v.ChangeDetails[:0]
+	v.BaggageDetails = v.BaggageDetails[:0]
+	v.RefundSubItems = v.RefundSubItems[:0]
+	v.ExtraContents = v.ExtraContents[:0]
+	v.Title = ""
+	v.TableHead = ""
+	v.Type = 0
+	v.Index = 0
+	poolChangeOtaItemRuleRq.Put(v)
 }

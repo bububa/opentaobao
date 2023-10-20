@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // PontusTravelItemBaseInfo 结构体
 type PontusTravelItemBaseInfo struct {
 	// 商品主图
@@ -36,4 +40,37 @@ type PontusTravelItemBaseInfo struct {
 	TripMaxDays int64 `json:"trip_max_days,omitempty" xml:"trip_max_days,omitempty"`
 	// 最小出行天数
 	TripMinDays int64 `json:"trip_min_days,omitempty" xml:"trip_min_days,omitempty"`
+}
+
+var poolPontusTravelItemBaseInfo = sync.Pool{
+	New: func() any {
+		return new(PontusTravelItemBaseInfo)
+	},
+}
+
+// GetPontusTravelItemBaseInfo() 从对象池中获取PontusTravelItemBaseInfo
+func GetPontusTravelItemBaseInfo() *PontusTravelItemBaseInfo {
+	return poolPontusTravelItemBaseInfo.Get().(*PontusTravelItemBaseInfo)
+}
+
+// ReleasePontusTravelItemBaseInfo 释放PontusTravelItemBaseInfo
+func ReleasePontusTravelItemBaseInfo(v *PontusTravelItemBaseInfo) {
+	v.PicUrls = v.PicUrls[:0]
+	v.SubTitles = v.SubTitles[:0]
+	v.City = ""
+	v.Desc = ""
+	v.FromLocations = ""
+	v.OutId = ""
+	v.OuterTitle = ""
+	v.Prov = ""
+	v.Title = ""
+	v.ToLocations = ""
+	v.WapDesc = ""
+	v.ItemTagContent = ""
+	v.AccomNights = 0
+	v.CategoryId = 0
+	v.ItemType = 0
+	v.TripMaxDays = 0
+	v.TripMinDays = 0
+	poolPontusTravelItemBaseInfo.Put(v)
 }

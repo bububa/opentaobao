@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // Drug 结构体
 type Drug struct {
 	// 成分
@@ -24,4 +28,31 @@ type Drug struct {
 	QuantityPerPack int64 `json:"quantity_per_pack,omitempty" xml:"quantity_per_pack,omitempty"`
 	// 最小使用单位数值（例：10）
 	QuantityPerUnit int64 `json:"quantity_per_unit,omitempty" xml:"quantity_per_unit,omitempty"`
+}
+
+var poolDrug = sync.Pool{
+	New: func() any {
+		return new(Drug)
+	},
+}
+
+// GetDrug() 从对象池中获取Drug
+func GetDrug() *Drug {
+	return poolDrug.Get().(*Drug)
+}
+
+// ReleaseDrug 释放Drug
+func ReleaseDrug(v *Drug) {
+	v.Ingredients = v.Ingredients[:0]
+	v.CommonName = ""
+	v.TenantSpuId = ""
+	v.Producer = ""
+	v.SpuId = ""
+	v.UnitOfPerUnit = ""
+	v.ApprovalNumber = ""
+	v.Type = ""
+	v.Norm = ""
+	v.QuantityPerPack = 0
+	v.QuantityPerUnit = 0
+	poolDrug.Put(v)
 }

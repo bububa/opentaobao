@@ -1,5 +1,9 @@
 package jst
 
+import (
+	"sync"
+)
+
 // RdsDbInfo 结构体
 type RdsDbInfo struct {
 	// 最大帐号数，1个数据库最多可以创建的账户数目
@@ -26,4 +30,32 @@ type RdsDbInfo struct {
 	DbType string `json:"db_type,omitempty" xml:"db_type,omitempty"`
 	// 备注
 	Comment string `json:"comment,omitempty" xml:"comment,omitempty"`
+}
+
+var poolRdsDbInfo = sync.Pool{
+	New: func() any {
+		return new(RdsDbInfo)
+	},
+}
+
+// GetRdsDbInfo() 从对象池中获取RdsDbInfo
+func GetRdsDbInfo() *RdsDbInfo {
+	return poolRdsDbInfo.Get().(*RdsDbInfo)
+}
+
+// ReleaseRdsDbInfo 释放RdsDbInfo
+func ReleaseRdsDbInfo(v *RdsDbInfo) {
+	v.MaxAccount = ""
+	v.Password = ""
+	v.DbStatus = ""
+	v.Charset = ""
+	v.InstanceId = ""
+	v.UserName = ""
+	v.DbName = ""
+	v.Uid = ""
+	v.InstanceName = ""
+	v.InstanceType = ""
+	v.DbType = ""
+	v.Comment = ""
+	poolRdsDbInfo.Put(v)
 }

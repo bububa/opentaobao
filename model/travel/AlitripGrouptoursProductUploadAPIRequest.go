@@ -2,6 +2,7 @@ package travel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -84,8 +85,45 @@ type AlitripGrouptoursProductUploadAPIRequest struct {
 // NewAlitripGrouptoursProductUploadRequest 初始化AlitripGrouptoursProductUploadAPIRequest对象
 func NewAlitripGrouptoursProductUploadRequest() *AlitripGrouptoursProductUploadAPIRequest {
 	return &AlitripGrouptoursProductUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(32),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripGrouptoursProductUploadAPIRequest) Reset() {
+	r._itineraries = r._itineraries[:0]
+	r._feeExclude = r._feeExclude[:0]
+	r._orderInfo = r._orderInfo[:0]
+	r._refundRegulations = r._refundRegulations[:0]
+	r._gatherPlaces = r._gatherPlaces[:0]
+	r._feeInclude = r._feeInclude[:0]
+	r._structItineraries = r._structItineraries[:0]
+	r._picUrls = r._picUrls[:0]
+	r._subTitles = r._subTitles[:0]
+	r._wapDesc = ""
+	r._descXml = ""
+	r._title = ""
+	r._itemCustomTag = ""
+	r._outProductId = ""
+	r._toLocations = ""
+	r._reserveLimit = ""
+	r._fromLocations = ""
+	r._descHtml = ""
+	r._goTrafficType = 0
+	r._tripDay = 0
+	r._subStock = 0
+	r._backTrafficType = 0
+	r._confirmTime = 0
+	r._routeType = 0
+	r._confirmType = 0
+	r._tripNight = 0
+	r._itemId = 0
+	r._refundType = 0
+	r._electronContract = nil
+	r._travellerTemplateId = 0
+	r._purePlay = 0
+	r._isOverseasTour = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -519,4 +557,21 @@ func (r *AlitripGrouptoursProductUploadAPIRequest) SetIsOverseasTour(_isOverseas
 // GetIsOverseasTour IsOverseasTour Getter
 func (r AlitripGrouptoursProductUploadAPIRequest) GetIsOverseasTour() int64 {
 	return r._isOverseasTour
+}
+
+var poolAlitripGrouptoursProductUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripGrouptoursProductUploadRequest()
+	},
+}
+
+// GetAlitripGrouptoursProductUploadRequest 从 sync.Pool 获取 AlitripGrouptoursProductUploadAPIRequest
+func GetAlitripGrouptoursProductUploadAPIRequest() *AlitripGrouptoursProductUploadAPIRequest {
+	return poolAlitripGrouptoursProductUploadAPIRequest.Get().(*AlitripGrouptoursProductUploadAPIRequest)
+}
+
+// ReleaseAlitripGrouptoursProductUploadAPIRequest 将 AlitripGrouptoursProductUploadAPIRequest 放入 sync.Pool
+func ReleaseAlitripGrouptoursProductUploadAPIRequest(v *AlitripGrouptoursProductUploadAPIRequest) {
+	v.Reset()
+	poolAlitripGrouptoursProductUploadAPIRequest.Put(v)
 }

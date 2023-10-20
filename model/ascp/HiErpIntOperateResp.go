@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // HiErpIntOperateResp 结构体
 type HiErpIntOperateResp struct {
 	// 履约单号
@@ -10,4 +14,24 @@ type HiErpIntOperateResp struct {
 	TmsCutResultText string `json:"tms_cut_result_text,omitempty" xml:"tms_cut_result_text,omitempty"`
 	// 外部订单号
 	OutOrderCode string `json:"out_order_code,omitempty" xml:"out_order_code,omitempty"`
+}
+
+var poolHiErpIntOperateResp = sync.Pool{
+	New: func() any {
+		return new(HiErpIntOperateResp)
+	},
+}
+
+// GetHiErpIntOperateResp() 从对象池中获取HiErpIntOperateResp
+func GetHiErpIntOperateResp() *HiErpIntOperateResp {
+	return poolHiErpIntOperateResp.Get().(*HiErpIntOperateResp)
+}
+
+// ReleaseHiErpIntOperateResp 释放HiErpIntOperateResp
+func ReleaseHiErpIntOperateResp(v *HiErpIntOperateResp) {
+	v.ScpCode = ""
+	v.MailNo = ""
+	v.TmsCutResultText = ""
+	v.OutOrderCode = ""
+	poolHiErpIntOperateResp.Put(v)
 }

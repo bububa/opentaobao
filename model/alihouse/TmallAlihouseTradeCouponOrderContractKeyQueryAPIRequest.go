@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest struct {
 // NewTmallAlihouseTradeCouponOrderContractKeyQueryRequest 初始化TmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest对象
 func NewTmallAlihouseTradeCouponOrderContractKeyQueryRequest() *TmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest {
 	return &TmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest) Reset() {
+	r._query = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest) SetQuery(_quer
 // GetQuery Query Getter
 func (r TmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest) GetQuery() *CouponOrderQuery {
 	return r._query
+}
+
+var poolTmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallAlihouseTradeCouponOrderContractKeyQueryRequest()
+	},
+}
+
+// GetTmallAlihouseTradeCouponOrderContractKeyQueryRequest 从 sync.Pool 获取 TmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest
+func GetTmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest() *TmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest {
+	return poolTmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest.Get().(*TmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest)
+}
+
+// ReleaseTmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest 将 TmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest(v *TmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest) {
+	v.Reset()
+	poolTmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package crm
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoCrmMembersGroupsBatchdeleteAPIResponse struct {
 	TaobaoCrmMembersGroupsBatchdeleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoCrmMembersGroupsBatchdeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCrmMembersGroupsBatchdeleteAPIResponseModel).Reset()
+}
+
 // TaobaoCrmMembersGroupsBatchdeleteAPIResponseModel is 批量删除分组 成功返回结果
 type TaobaoCrmMembersGroupsBatchdeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"crm_members_groups_batchdelete_response"`
@@ -22,4 +29,27 @@ type TaobaoCrmMembersGroupsBatchdeleteAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 删除是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCrmMembersGroupsBatchdeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoCrmMembersGroupsBatchdeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCrmMembersGroupsBatchdeleteAPIResponse)
+	},
+}
+
+// GetTaobaoCrmMembersGroupsBatchdeleteAPIResponse 从 sync.Pool 获取 TaobaoCrmMembersGroupsBatchdeleteAPIResponse
+func GetTaobaoCrmMembersGroupsBatchdeleteAPIResponse() *TaobaoCrmMembersGroupsBatchdeleteAPIResponse {
+	return poolTaobaoCrmMembersGroupsBatchdeleteAPIResponse.Get().(*TaobaoCrmMembersGroupsBatchdeleteAPIResponse)
+}
+
+// ReleaseTaobaoCrmMembersGroupsBatchdeleteAPIResponse 将 TaobaoCrmMembersGroupsBatchdeleteAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCrmMembersGroupsBatchdeleteAPIResponse(v *TaobaoCrmMembersGroupsBatchdeleteAPIResponse) {
+	v.Reset()
+	poolTaobaoCrmMembersGroupsBatchdeleteAPIResponse.Put(v)
 }

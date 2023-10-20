@@ -2,6 +2,7 @@ package jstinteractive
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoJstInteractiveActivityCreateAPIRequest struct {
 // NewTaobaoJstInteractiveActivityCreateRequest 初始化TaobaoJstInteractiveActivityCreateAPIRequest对象
 func NewTaobaoJstInteractiveActivityCreateRequest() *TaobaoJstInteractiveActivityCreateAPIRequest {
 	return &TaobaoJstInteractiveActivityCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJstInteractiveActivityCreateAPIRequest) Reset() {
+	r._miniAppId = ""
+	r._activityName = ""
+	r._startTime = ""
+	r._endTime = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoJstInteractiveActivityCreateAPIRequest) SetEndTime(_endTime strin
 // GetEndTime EndTime Getter
 func (r TaobaoJstInteractiveActivityCreateAPIRequest) GetEndTime() string {
 	return r._endTime
+}
+
+var poolTaobaoJstInteractiveActivityCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJstInteractiveActivityCreateRequest()
+	},
+}
+
+// GetTaobaoJstInteractiveActivityCreateRequest 从 sync.Pool 获取 TaobaoJstInteractiveActivityCreateAPIRequest
+func GetTaobaoJstInteractiveActivityCreateAPIRequest() *TaobaoJstInteractiveActivityCreateAPIRequest {
+	return poolTaobaoJstInteractiveActivityCreateAPIRequest.Get().(*TaobaoJstInteractiveActivityCreateAPIRequest)
+}
+
+// ReleaseTaobaoJstInteractiveActivityCreateAPIRequest 将 TaobaoJstInteractiveActivityCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJstInteractiveActivityCreateAPIRequest(v *TaobaoJstInteractiveActivityCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoJstInteractiveActivityCreateAPIRequest.Put(v)
 }

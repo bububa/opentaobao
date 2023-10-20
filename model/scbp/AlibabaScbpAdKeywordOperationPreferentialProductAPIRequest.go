@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaScbpAdKeywordOperationPreferentialProductAPIRequest struct {
 // NewAlibabaScbpAdKeywordOperationPreferentialProductRequest 初始化AlibabaScbpAdKeywordOperationPreferentialProductAPIRequest对象
 func NewAlibabaScbpAdKeywordOperationPreferentialProductRequest() *AlibabaScbpAdKeywordOperationPreferentialProductAPIRequest {
 	return &AlibabaScbpAdKeywordOperationPreferentialProductAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdKeywordOperationPreferentialProductAPIRequest) Reset() {
+	r._topContext = nil
+	r._operationDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaScbpAdKeywordOperationPreferentialProductAPIRequest) SetOperatio
 // GetOperationDto OperationDto Getter
 func (r AlibabaScbpAdKeywordOperationPreferentialProductAPIRequest) GetOperationDto() *CampaignTargetingWordSettingOperationDto {
 	return r._operationDto
+}
+
+var poolAlibabaScbpAdKeywordOperationPreferentialProductAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdKeywordOperationPreferentialProductRequest()
+	},
+}
+
+// GetAlibabaScbpAdKeywordOperationPreferentialProductRequest 从 sync.Pool 获取 AlibabaScbpAdKeywordOperationPreferentialProductAPIRequest
+func GetAlibabaScbpAdKeywordOperationPreferentialProductAPIRequest() *AlibabaScbpAdKeywordOperationPreferentialProductAPIRequest {
+	return poolAlibabaScbpAdKeywordOperationPreferentialProductAPIRequest.Get().(*AlibabaScbpAdKeywordOperationPreferentialProductAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdKeywordOperationPreferentialProductAPIRequest 将 AlibabaScbpAdKeywordOperationPreferentialProductAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdKeywordOperationPreferentialProductAPIRequest(v *AlibabaScbpAdKeywordOperationPreferentialProductAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdKeywordOperationPreferentialProductAPIRequest.Put(v)
 }

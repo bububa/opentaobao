@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest struct {
 // NewAlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncRequest 初始化AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest对象
 func NewAlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncRequest() *AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest {
 	return &AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest) Reset() {
+	r._inventoryUploadRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest) SetInve
 // GetInventoryUploadRequest InventoryUploadRequest Getter
 func (r AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest) GetInventoryUploadRequest() *InventoryBatchUploadAsyncRequest {
 	return r._inventoryUploadRequest
+}
+
+var poolAlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncRequest 从 sync.Pool 获取 AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest
+func GetAlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest() *AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest {
+	return poolAlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest.Get().(*AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest 将 AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest(v *AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest.Put(v)
 }

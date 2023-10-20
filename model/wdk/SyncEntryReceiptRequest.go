@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SyncEntryReceiptRequest 结构体
 type SyncEntryReceiptRequest struct {
 	// 地址信息
@@ -20,4 +24,29 @@ type SyncEntryReceiptRequest struct {
 	LanguageInfo []LanguageInfo `json:"language_info,omitempty" xml:"language_info>language_info,omitempty"`
 	// 员工主要信息
 	EmployeeBasic *EmployeeBasic `json:"employee_basic,omitempty" xml:"employee_basic,omitempty"`
+}
+
+var poolSyncEntryReceiptRequest = sync.Pool{
+	New: func() any {
+		return new(SyncEntryReceiptRequest)
+	},
+}
+
+// GetSyncEntryReceiptRequest() 从对象池中获取SyncEntryReceiptRequest
+func GetSyncEntryReceiptRequest() *SyncEntryReceiptRequest {
+	return poolSyncEntryReceiptRequest.Get().(*SyncEntryReceiptRequest)
+}
+
+// ReleaseSyncEntryReceiptRequest 释放SyncEntryReceiptRequest
+func ReleaseSyncEntryReceiptRequest(v *SyncEntryReceiptRequest) {
+	v.AddressInfo = v.AddressInfo[:0]
+	v.ContactInfo = v.ContactInfo[:0]
+	v.EducationExpInfo = v.EducationExpInfo[:0]
+	v.FamilyInfo = v.FamilyInfo[:0]
+	v.JobExpInfo = v.JobExpInfo[:0]
+	v.OfferLicenseInfo = v.OfferLicenseInfo[:0]
+	v.RelatedPartyInfo = v.RelatedPartyInfo[:0]
+	v.LanguageInfo = v.LanguageInfo[:0]
+	v.EmployeeBasic = nil
+	poolSyncEntryReceiptRequest.Put(v)
 }

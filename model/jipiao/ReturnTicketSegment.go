@@ -1,5 +1,9 @@
 package jipiao
 
+import (
+	"sync"
+)
+
 // ReturnTicketSegment 结构体
 type ReturnTicketSegment struct {
 	// 到达机场三字码
@@ -30,4 +34,34 @@ type ReturnTicketSegment struct {
 	TripType int64 `json:"trip_type,omitempty" xml:"trip_type,omitempty"`
 	// 票状态是否挂起
 	Suspend bool `json:"suspend,omitempty" xml:"suspend,omitempty"`
+}
+
+var poolReturnTicketSegment = sync.Pool{
+	New: func() any {
+		return new(ReturnTicketSegment)
+	},
+}
+
+// GetReturnTicketSegment() 从对象池中获取ReturnTicketSegment
+func GetReturnTicketSegment() *ReturnTicketSegment {
+	return poolReturnTicketSegment.Get().(*ReturnTicketSegment)
+}
+
+// ReleaseReturnTicketSegment 释放ReturnTicketSegment
+func ReleaseReturnTicketSegment(v *ReturnTicketSegment) {
+	v.ArrAirportCode = ""
+	v.ArrCity = ""
+	v.DepAirportCode = ""
+	v.DepCity = ""
+	v.DepTime = ""
+	v.FlightNo = ""
+	v.TicketNo = ""
+	v.BuildFee = 0
+	v.Id = 0
+	v.OilTax = 0
+	v.RefundModifyFee = 0
+	v.RefundUpgradeFee = 0
+	v.TripType = 0
+	v.Suspend = false
+	poolReturnTicketSegment.Put(v)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // PaiyangStatDataResult 结构体
 type PaiyangStatDataResult struct {
 	// 统计时间
@@ -30,4 +34,34 @@ type PaiyangStatDataResult struct {
 	PosUseCpnCnt1d string `json:"pos_use_cpn_cnt1d,omitempty" xml:"pos_use_cpn_cnt1d,omitempty"`
 	// 按天分区字段
 	Ds string `json:"ds,omitempty" xml:"ds,omitempty"`
+}
+
+var poolPaiyangStatDataResult = sync.Pool{
+	New: func() any {
+		return new(PaiyangStatDataResult)
+	},
+}
+
+// GetPaiyangStatDataResult() 从对象池中获取PaiyangStatDataResult
+func GetPaiyangStatDataResult() *PaiyangStatDataResult {
+	return poolPaiyangStatDataResult.Get().(*PaiyangStatDataResult)
+}
+
+// ReleasePaiyangStatDataResult 释放PaiyangStatDataResult
+func ReleasePaiyangStatDataResult(v *PaiyangStatDataResult) {
+	v.StatDate = ""
+	v.ActivityId = ""
+	v.ActivityName = ""
+	v.TemplateCode = ""
+	v.CouponName = ""
+	v.MerchantCode = ""
+	v.MerchantName = ""
+	v.SubsidiaryCode = ""
+	v.SubsidiaryName = ""
+	v.ShopCode = ""
+	v.ShopName = ""
+	v.BarcodeList = ""
+	v.PosUseCpnCnt1d = ""
+	v.Ds = ""
+	poolPaiyangStatDataResult.Put(v)
 }

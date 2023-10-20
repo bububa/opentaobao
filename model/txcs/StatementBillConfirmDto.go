@@ -1,5 +1,9 @@
 package txcs
 
+import (
+	"sync"
+)
+
 // StatementBillConfirmDto 结构体
 type StatementBillConfirmDto struct {
 	// 账单code
@@ -12,4 +16,25 @@ type StatementBillConfirmDto struct {
 	OperatorId string `json:"operator_id,omitempty" xml:"operator_id,omitempty"`
 	// 操作人名称
 	OperatorName string `json:"operator_name,omitempty" xml:"operator_name,omitempty"`
+}
+
+var poolStatementBillConfirmDto = sync.Pool{
+	New: func() any {
+		return new(StatementBillConfirmDto)
+	},
+}
+
+// GetStatementBillConfirmDto() 从对象池中获取StatementBillConfirmDto
+func GetStatementBillConfirmDto() *StatementBillConfirmDto {
+	return poolStatementBillConfirmDto.Get().(*StatementBillConfirmDto)
+}
+
+// ReleaseStatementBillConfirmDto 释放StatementBillConfirmDto
+func ReleaseStatementBillConfirmDto(v *StatementBillConfirmDto) {
+	v.StatementBillCodes = v.StatementBillCodes[:0]
+	v.SettlementCompanyCode = ""
+	v.RequestId = ""
+	v.OperatorId = ""
+	v.OperatorName = ""
+	poolStatementBillConfirmDto.Put(v)
 }

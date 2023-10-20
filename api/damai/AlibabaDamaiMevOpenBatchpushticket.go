@@ -9,11 +9,6 @@ import (
 // alibaba.damai.mev.open.batchpushticket
 //
 // 批量推送票单
-func AlibabaDamaiMevOpenBatchpushticket(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenBatchpushticketAPIRequest, session string) (*damai.AlibabaDamaiMevOpenBatchpushticketAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenBatchpushticketAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMevOpenBatchpushticket(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenBatchpushticketAPIRequest, resp *damai.AlibabaDamaiMevOpenBatchpushticketAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

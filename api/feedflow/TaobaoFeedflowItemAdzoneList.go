@@ -9,11 +9,6 @@ import (
 // taobao.feedflow.item.adzone.list
 //
 // 批量查询可用广告位列表
-func TaobaoFeedflowItemAdzoneList(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdzoneListAPIRequest, session string) (*feedflow.TaobaoFeedflowItemAdzoneListAPIResponse, error) {
-	var resp feedflow.TaobaoFeedflowItemAdzoneListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFeedflowItemAdzoneList(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdzoneListAPIRequest, resp *feedflow.TaobaoFeedflowItemAdzoneListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

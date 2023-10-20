@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // PoiType 结构体
 type PoiType struct {
 	// 类别名称
@@ -28,4 +32,33 @@ type PoiType struct {
 	Category int64 `json:"category,omitempty" xml:"category,omitempty"`
 	// 是否删除
 	IsDelete bool `json:"is_delete,omitempty" xml:"is_delete,omitempty"`
+}
+
+var poolPoiType = sync.Pool{
+	New: func() any {
+		return new(PoiType)
+	},
+}
+
+// GetPoiType() 从对象池中获取PoiType
+func GetPoiType() *PoiType {
+	return poolPoiType.Get().(*PoiType)
+}
+
+// ReleasePoiType 释放PoiType
+func ReleasePoiType(v *PoiType) {
+	v.TypeName = ""
+	v.TypeCode = ""
+	v.BigTypeCode = ""
+	v.BigTypeName = ""
+	v.Classify = ""
+	v.Code = ""
+	v.Name = ""
+	v.Description = ""
+	v.TypeEnName = ""
+	v.BigTypeId = 0
+	v.Pid = 0
+	v.Category = 0
+	v.IsDelete = false
+	poolPoiType.Put(v)
 }

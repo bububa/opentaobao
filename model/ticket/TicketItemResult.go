@@ -1,5 +1,9 @@
 package ticket
 
+import (
+	"sync"
+)
+
 // TicketItemResult 结构体
 type TicketItemResult struct {
 	// 商户票种规则id
@@ -20,4 +24,29 @@ type TicketItemResult struct {
 	AliScenicId int64 `json:"ali_scenic_id,omitempty" xml:"ali_scenic_id,omitempty"`
 	// 标准收费项目id
 	AliProductId int64 `json:"ali_product_id,omitempty" xml:"ali_product_id,omitempty"`
+}
+
+var poolTicketItemResult = sync.Pool{
+	New: func() any {
+		return new(TicketItemResult)
+	},
+}
+
+// GetTicketItemResult() 从对象池中获取TicketItemResult
+func GetTicketItemResult() *TicketItemResult {
+	return poolTicketItemResult.Get().(*TicketItemResult)
+}
+
+// ReleaseTicketItemResult 释放TicketItemResult
+func ReleaseTicketItemResult(v *TicketItemResult) {
+	v.OutRuleIds = v.OutRuleIds[:0]
+	v.ModifyedTime = ""
+	v.OutScenicId = ""
+	v.OutProductId = ""
+	v.Extend = ""
+	v.TicketType = ""
+	v.ItemId = 0
+	v.AliScenicId = 0
+	v.AliProductId = 0
+	poolTicketItemResult.Put(v)
 }

@@ -2,6 +2,7 @@ package bus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoBusTvmrefundorderSetAPIRequest struct {
 // NewTaobaoBusTvmrefundorderSetRequest 初始化TaobaoBusTvmrefundorderSetAPIRequest对象
 func NewTaobaoBusTvmrefundorderSetRequest() *TaobaoBusTvmrefundorderSetAPIRequest {
 	return &TaobaoBusTvmrefundorderSetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBusTvmrefundorderSetAPIRequest) Reset() {
+	r._refundAccountInDetails = r._refundAccountInDetails[:0]
+	r._insuranceRefundDetails = r._insuranceRefundDetails[:0]
+	r._alitripOrderId = ""
+	r._refundBatchNo = ""
+	r._refundReason = ""
+	r._refundAmount = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoBusTvmrefundorderSetAPIRequest) SetRefundAmount(_refundAmount int
 // GetRefundAmount RefundAmount Getter
 func (r TaobaoBusTvmrefundorderSetAPIRequest) GetRefundAmount() int64 {
 	return r._refundAmount
+}
+
+var poolTaobaoBusTvmrefundorderSetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBusTvmrefundorderSetRequest()
+	},
+}
+
+// GetTaobaoBusTvmrefundorderSetRequest 从 sync.Pool 获取 TaobaoBusTvmrefundorderSetAPIRequest
+func GetTaobaoBusTvmrefundorderSetAPIRequest() *TaobaoBusTvmrefundorderSetAPIRequest {
+	return poolTaobaoBusTvmrefundorderSetAPIRequest.Get().(*TaobaoBusTvmrefundorderSetAPIRequest)
+}
+
+// ReleaseTaobaoBusTvmrefundorderSetAPIRequest 将 TaobaoBusTvmrefundorderSetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBusTvmrefundorderSetAPIRequest(v *TaobaoBusTvmrefundorderSetAPIRequest) {
+	v.Reset()
+	poolTaobaoBusTvmrefundorderSetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest struct {
 // NewAlibabaScbpAdKeywordBatchQueryKeywordRankPriceRequest 初始化AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest对象
 func NewAlibabaScbpAdKeywordBatchQueryKeywordRankPriceRequest() *AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest {
 	return &AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest) Reset() {
+	r._keywordList = r._keywordList[:0]
+	r._topContext = nil
+	r._campaignId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest) SetCampaignId
 // GetCampaignId CampaignId Getter
 func (r AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
+}
+
+var poolAlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdKeywordBatchQueryKeywordRankPriceRequest()
+	},
+}
+
+// GetAlibabaScbpAdKeywordBatchQueryKeywordRankPriceRequest 从 sync.Pool 获取 AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest
+func GetAlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest() *AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest {
+	return poolAlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest.Get().(*AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest 将 AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest(v *AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallgeniescp
 
+import (
+	"sync"
+)
+
 // SupplierForecastParamDto 结构体
 type SupplierForecastParamDto struct {
 	// 扩展参数
@@ -14,4 +18,26 @@ type SupplierForecastParamDto struct {
 	LocId string `json:"loc_id,omitempty" xml:"loc_id,omitempty"`
 	// 物料号
 	PrdId string `json:"prd_id,omitempty" xml:"prd_id,omitempty"`
+}
+
+var poolSupplierForecastParamDto = sync.Pool{
+	New: func() any {
+		return new(SupplierForecastParamDto)
+	},
+}
+
+// GetSupplierForecastParamDto() 从对象池中获取SupplierForecastParamDto
+func GetSupplierForecastParamDto() *SupplierForecastParamDto {
+	return poolSupplierForecastParamDto.Get().(*SupplierForecastParamDto)
+}
+
+// ReleaseSupplierForecastParamDto 释放SupplierForecastParamDto
+func ReleaseSupplierForecastParamDto(v *SupplierForecastParamDto) {
+	v.ExtendJson = ""
+	v.Tenant = ""
+	v.KeyFigureDate = ""
+	v.Forecast = ""
+	v.LocId = ""
+	v.PrdId = ""
+	poolSupplierForecastParamDto.Put(v)
 }

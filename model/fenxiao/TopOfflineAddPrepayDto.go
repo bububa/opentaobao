@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // TopOfflineAddPrepayDto 结构体
 type TopOfflineAddPrepayDto struct {
 	// 收款人账号
@@ -32,4 +36,35 @@ type TopOfflineAddPrepayDto struct {
 	FlowType int64 `json:"flow_type,omitempty" xml:"flow_type,omitempty"`
 	// 金额，单位分（必须为正数）
 	TicketMoney int64 `json:"ticket_money,omitempty" xml:"ticket_money,omitempty"`
+}
+
+var poolTopOfflineAddPrepayDto = sync.Pool{
+	New: func() any {
+		return new(TopOfflineAddPrepayDto)
+	},
+}
+
+// GetTopOfflineAddPrepayDto() 从对象池中获取TopOfflineAddPrepayDto
+func GetTopOfflineAddPrepayDto() *TopOfflineAddPrepayDto {
+	return poolTopOfflineAddPrepayDto.Get().(*TopOfflineAddPrepayDto)
+}
+
+// ReleaseTopOfflineAddPrepayDto 释放TopOfflineAddPrepayDto
+func ReleaseTopOfflineAddPrepayDto(v *TopOfflineAddPrepayDto) {
+	v.ReceiverAccountNum = ""
+	v.OuterPayId = ""
+	v.DistNick = ""
+	v.DrawerFullName = ""
+	v.PayBankNum = ""
+	v.DrawerAccountNum = ""
+	v.PayTime = ""
+	v.TicketIssueDate = ""
+	v.ReceiverBankFullName = ""
+	v.TicketId = ""
+	v.AcceptDate = ""
+	v.ReceiverFullName = ""
+	v.PayBankFullName = ""
+	v.FlowType = 0
+	v.TicketMoney = 0
+	poolTopOfflineAddPrepayDto.Put(v)
 }

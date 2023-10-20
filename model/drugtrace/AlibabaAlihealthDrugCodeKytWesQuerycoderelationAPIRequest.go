@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest struct {
 // NewAlibabaAlihealthDrugCodeKytWesQuerycoderelationRequest 初始化AlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest对象
 func NewAlibabaAlihealthDrugCodeKytWesQuerycoderelationRequest() *AlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest {
 	return &AlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest) Reset() {
+	r._refEntId = ""
+	r._licenseToken = ""
+	r._code = ""
+	r._desRefEntId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest) SetDesRefEnt
 // GetDesRefEntId DesRefEntId Getter
 func (r AlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest) GetDesRefEntId() string {
 	return r._desRefEntId
+}
+
+var poolAlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugCodeKytWesQuerycoderelationRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugCodeKytWesQuerycoderelationRequest 从 sync.Pool 获取 AlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest
+func GetAlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest() *AlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest {
+	return poolAlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest.Get().(*AlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest 将 AlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest(v *AlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugCodeKytWesQuerycoderelationAPIRequest.Put(v)
 }

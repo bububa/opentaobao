@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest struct {
 // NewAlibabaAilabsTmallgenieSdkDeviceIssupportsdkRequest 初始化AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest对象
 func NewAlibabaAilabsTmallgenieSdkDeviceIssupportsdkRequest() *AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest {
 	return &AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest) Reset() {
+	r._tyAccount = ""
+	r._ctei = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest) SetCtei(_ctei s
 // GetCtei Ctei Getter
 func (r AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest) GetCtei() string {
 	return r._ctei
+}
+
+var poolAlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsTmallgenieSdkDeviceIssupportsdkRequest()
+	},
+}
+
+// GetAlibabaAilabsTmallgenieSdkDeviceIssupportsdkRequest 从 sync.Pool 获取 AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest
+func GetAlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest() *AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest {
+	return poolAlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest.Get().(*AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest)
+}
+
+// ReleaseAlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest 将 AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest(v *AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpTargetAdPlanProductListGetAPIRequest struct {
 // NewAlibabaScbpTargetAdPlanProductListGetRequest 初始化AlibabaScbpTargetAdPlanProductListGetAPIRequest对象
 func NewAlibabaScbpTargetAdPlanProductListGetRequest() *AlibabaScbpTargetAdPlanProductListGetAPIRequest {
 	return &AlibabaScbpTargetAdPlanProductListGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpTargetAdPlanProductListGetAPIRequest) Reset() {
+	r._topP4pQuickProductQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpTargetAdPlanProductListGetAPIRequest) SetTopP4pQuickProductQ
 // GetTopP4pQuickProductQuery TopP4pQuickProductQuery Getter
 func (r AlibabaScbpTargetAdPlanProductListGetAPIRequest) GetTopP4pQuickProductQuery() *TopP4pQuickProductQuery {
 	return r._topP4pQuickProductQuery
+}
+
+var poolAlibabaScbpTargetAdPlanProductListGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpTargetAdPlanProductListGetRequest()
+	},
+}
+
+// GetAlibabaScbpTargetAdPlanProductListGetRequest 从 sync.Pool 获取 AlibabaScbpTargetAdPlanProductListGetAPIRequest
+func GetAlibabaScbpTargetAdPlanProductListGetAPIRequest() *AlibabaScbpTargetAdPlanProductListGetAPIRequest {
+	return poolAlibabaScbpTargetAdPlanProductListGetAPIRequest.Get().(*AlibabaScbpTargetAdPlanProductListGetAPIRequest)
+}
+
+// ReleaseAlibabaScbpTargetAdPlanProductListGetAPIRequest 将 AlibabaScbpTargetAdPlanProductListGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpTargetAdPlanProductListGetAPIRequest(v *AlibabaScbpTargetAdPlanProductListGetAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpTargetAdPlanProductListGetAPIRequest.Put(v)
 }

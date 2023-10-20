@@ -2,6 +2,7 @@ package ieagency
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlitripTripvpAgentOrderSearchAPIRequest struct {
 // NewAlitripTripvpAgentOrderSearchRequest 初始化AlitripTripvpAgentOrderSearchAPIRequest对象
 func NewAlitripTripvpAgentOrderSearchRequest() *AlitripTripvpAgentOrderSearchAPIRequest {
 	return &AlitripTripvpAgentOrderSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTripvpAgentOrderSearchAPIRequest) Reset() {
+	r._beginTime = ""
+	r._endTime = ""
+	r._agentId = 0
+	r._currentPage = 0
+	r._orderStatus = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetPageSize(_pageSize int64) e
 // GetPageSize PageSize Getter
 func (r AlitripTripvpAgentOrderSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlitripTripvpAgentOrderSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTripvpAgentOrderSearchRequest()
+	},
+}
+
+// GetAlitripTripvpAgentOrderSearchRequest 从 sync.Pool 获取 AlitripTripvpAgentOrderSearchAPIRequest
+func GetAlitripTripvpAgentOrderSearchAPIRequest() *AlitripTripvpAgentOrderSearchAPIRequest {
+	return poolAlitripTripvpAgentOrderSearchAPIRequest.Get().(*AlitripTripvpAgentOrderSearchAPIRequest)
+}
+
+// ReleaseAlitripTripvpAgentOrderSearchAPIRequest 将 AlitripTripvpAgentOrderSearchAPIRequest 放入 sync.Pool
+func ReleaseAlitripTripvpAgentOrderSearchAPIRequest(v *AlitripTripvpAgentOrderSearchAPIRequest) {
+	v.Reset()
+	poolAlitripTripvpAgentOrderSearchAPIRequest.Put(v)
 }

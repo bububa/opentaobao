@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest struct {
 // NewAlibabaWdkFulfillBatchOnTaskStatusChangedRequest 初始化AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest对象
 func NewAlibabaWdkFulfillBatchOnTaskStatusChangedRequest() *AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest {
 	return &AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest) Reset() {
+	r._taskStatus = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest) SetTaskStatus(_tas
 // GetTaskStatus TaskStatus Getter
 func (r AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest) GetTaskStatus() *TaskStatus {
 	return r._taskStatus
+}
+
+var poolAlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkFulfillBatchOnTaskStatusChangedRequest()
+	},
+}
+
+// GetAlibabaWdkFulfillBatchOnTaskStatusChangedRequest 从 sync.Pool 获取 AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest
+func GetAlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest() *AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest {
+	return poolAlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest.Get().(*AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest)
+}
+
+// ReleaseAlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest 将 AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest(v *AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest.Put(v)
 }

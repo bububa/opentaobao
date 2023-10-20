@@ -9,11 +9,6 @@ import (
 // taobao.modifyorder.order.check
 //
 // 自助改单服务发货后订单回传接口
-func TaobaoModifyorderOrderCheck(clt *core.SDKClient, req *jst.TaobaoModifyorderOrderCheckAPIRequest, session string) (*jst.TaobaoModifyorderOrderCheckAPIResponse, error) {
-	var resp jst.TaobaoModifyorderOrderCheckAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoModifyorderOrderCheck(clt *core.SDKClient, req *jst.TaobaoModifyorderOrderCheckAPIRequest, resp *jst.TaobaoModifyorderOrderCheckAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

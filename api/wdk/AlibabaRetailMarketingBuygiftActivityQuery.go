@@ -9,11 +9,6 @@ import (
 // alibaba.retail.marketing.buygift.activity.query
 //
 // 查询单品买赠活动【同城零售】
-func AlibabaRetailMarketingBuygiftActivityQuery(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingBuygiftActivityQueryAPIRequest, session string) (*wdk.AlibabaRetailMarketingBuygiftActivityQueryAPIResponse, error) {
-	var resp wdk.AlibabaRetailMarketingBuygiftActivityQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaRetailMarketingBuygiftActivityQuery(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingBuygiftActivityQueryAPIRequest, resp *wdk.AlibabaRetailMarketingBuygiftActivityQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

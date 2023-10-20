@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // QueryCardOpenReq 结构体
 type QueryCardOpenReq struct {
 	// 品牌id
@@ -18,4 +22,28 @@ type QueryCardOpenReq struct {
 	AccountRequired bool `json:"account_required,omitempty" xml:"account_required,omitempty"`
 	// 查询关联物理卡
 	PhysicalCardRequired bool `json:"physical_card_required,omitempty" xml:"physical_card_required,omitempty"`
+}
+
+var poolQueryCardOpenReq = sync.Pool{
+	New: func() any {
+		return new(QueryCardOpenReq)
+	},
+}
+
+// GetQueryCardOpenReq() 从对象池中获取QueryCardOpenReq
+func GetQueryCardOpenReq() *QueryCardOpenReq {
+	return poolQueryCardOpenReq.Get().(*QueryCardOpenReq)
+}
+
+// ReleaseQueryCardOpenReq 释放QueryCardOpenReq
+func ReleaseQueryCardOpenReq(v *QueryCardOpenReq) {
+	v.BrandId = ""
+	v.CardId = ""
+	v.OutBrandId = ""
+	v.OutShopId = ""
+	v.PhysicalCardId = ""
+	v.ShopId = ""
+	v.AccountRequired = false
+	v.PhysicalCardRequired = false
+	poolQueryCardOpenReq.Put(v)
 }

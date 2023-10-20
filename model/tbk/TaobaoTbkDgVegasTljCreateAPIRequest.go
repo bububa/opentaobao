@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -45,8 +46,27 @@ type TaobaoTbkDgVegasTljCreateAPIRequest struct {
 // NewTaobaoTbkDgVegasTljCreateRequest 初始化TaobaoTbkDgVegasTljCreateAPIRequest对象
 func NewTaobaoTbkDgVegasTljCreateRequest() *TaobaoTbkDgVegasTljCreateAPIRequest {
 	return &TaobaoTbkDgVegasTljCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(14),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkDgVegasTljCreateAPIRequest) Reset() {
+	r._useStartTime = ""
+	r._useEndTime = ""
+	r._sendEndTime = ""
+	r._sendStartTime = ""
+	r._perFace = ""
+	r._name = ""
+	r._itemId = ""
+	r._campaignType = ""
+	r._securityLevel = 0
+	r._useEndTimeMode = 0
+	r._userTotalWinNumLimit = 0
+	r._totalNum = 0
+	r._adzoneId = 0
+	r._securitySwitch = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -246,4 +266,21 @@ func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetSecuritySwitch(_securitySwitch 
 // GetSecuritySwitch SecuritySwitch Getter
 func (r TaobaoTbkDgVegasTljCreateAPIRequest) GetSecuritySwitch() bool {
 	return r._securitySwitch
+}
+
+var poolTaobaoTbkDgVegasTljCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkDgVegasTljCreateRequest()
+	},
+}
+
+// GetTaobaoTbkDgVegasTljCreateRequest 从 sync.Pool 获取 TaobaoTbkDgVegasTljCreateAPIRequest
+func GetTaobaoTbkDgVegasTljCreateAPIRequest() *TaobaoTbkDgVegasTljCreateAPIRequest {
+	return poolTaobaoTbkDgVegasTljCreateAPIRequest.Get().(*TaobaoTbkDgVegasTljCreateAPIRequest)
+}
+
+// ReleaseTaobaoTbkDgVegasTljCreateAPIRequest 将 TaobaoTbkDgVegasTljCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkDgVegasTljCreateAPIRequest(v *TaobaoTbkDgVegasTljCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkDgVegasTljCreateAPIRequest.Put(v)
 }

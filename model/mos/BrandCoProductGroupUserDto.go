@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // BrandCoProductGroupUserDto 结构体
 type BrandCoProductGroupUserDto struct {
 	// 数据创建时间
@@ -24,4 +28,31 @@ type BrandCoProductGroupUserDto struct {
 	EndDate string `json:"end_date,omitempty" xml:"end_date,omitempty"`
 	// 组员数据id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolBrandCoProductGroupUserDto = sync.Pool{
+	New: func() any {
+		return new(BrandCoProductGroupUserDto)
+	},
+}
+
+// GetBrandCoProductGroupUserDto() 从对象池中获取BrandCoProductGroupUserDto
+func GetBrandCoProductGroupUserDto() *BrandCoProductGroupUserDto {
+	return poolBrandCoProductGroupUserDto.Get().(*BrandCoProductGroupUserDto)
+}
+
+// ReleaseBrandCoProductGroupUserDto 释放BrandCoProductGroupUserDto
+func ReleaseBrandCoProductGroupUserDto(v *BrandCoProductGroupUserDto) {
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.GzNameCn = ""
+	v.MainWorkNo = ""
+	v.MainName = ""
+	v.MemberName = ""
+	v.MemberWorkNo = ""
+	v.ContractType = ""
+	v.StartDate = ""
+	v.EndDate = ""
+	v.Id = 0
+	poolBrandCoProductGroupUserDto.Put(v)
 }

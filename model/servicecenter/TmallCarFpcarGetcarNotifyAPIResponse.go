@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallCarFpcarGetcarNotifyAPIResponse struct {
 	model.CommonResponse
 	TmallCarFpcarGetcarNotifyAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallCarFpcarGetcarNotifyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallCarFpcarGetcarNotifyAPIResponseModel).Reset()
 }
 
 // TmallCarFpcarGetcarNotifyAPIResponseModel is 门店通知用户提车 成功返回结果
@@ -28,4 +35,30 @@ type TmallCarFpcarGetcarNotifyAPIResponseModel struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 是否成功
 	Succes bool `json:"succes,omitempty" xml:"succes,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallCarFpcarGetcarNotifyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Object = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.Succes = false
+}
+
+var poolTmallCarFpcarGetcarNotifyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallCarFpcarGetcarNotifyAPIResponse)
+	},
+}
+
+// GetTmallCarFpcarGetcarNotifyAPIResponse 从 sync.Pool 获取 TmallCarFpcarGetcarNotifyAPIResponse
+func GetTmallCarFpcarGetcarNotifyAPIResponse() *TmallCarFpcarGetcarNotifyAPIResponse {
+	return poolTmallCarFpcarGetcarNotifyAPIResponse.Get().(*TmallCarFpcarGetcarNotifyAPIResponse)
+}
+
+// ReleaseTmallCarFpcarGetcarNotifyAPIResponse 将 TmallCarFpcarGetcarNotifyAPIResponse 保存到 sync.Pool
+func ReleaseTmallCarFpcarGetcarNotifyAPIResponse(v *TmallCarFpcarGetcarNotifyAPIResponse) {
+	v.Reset()
+	poolTmallCarFpcarGetcarNotifyAPIResponse.Put(v)
 }

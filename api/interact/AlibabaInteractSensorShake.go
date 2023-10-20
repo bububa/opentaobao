@@ -9,11 +9,6 @@ import (
 // alibaba.interact.sensor.shake
 //
 // 摇一摇
-func AlibabaInteractSensorShake(clt *core.SDKClient, req *interact.AlibabaInteractSensorShakeAPIRequest, session string) (*interact.AlibabaInteractSensorShakeAPIResponse, error) {
-	var resp interact.AlibabaInteractSensorShakeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaInteractSensorShake(clt *core.SDKClient, req *interact.AlibabaInteractSensorShakeAPIRequest, resp *interact.AlibabaInteractSensorShakeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

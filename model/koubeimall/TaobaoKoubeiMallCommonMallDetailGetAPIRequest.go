@@ -2,6 +2,7 @@ package koubeimall
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoKoubeiMallCommonMallDetailGetAPIRequest struct {
 // NewTaobaoKoubeiMallCommonMallDetailGetRequest 初始化TaobaoKoubeiMallCommonMallDetailGetAPIRequest对象
 func NewTaobaoKoubeiMallCommonMallDetailGetRequest() *TaobaoKoubeiMallCommonMallDetailGetAPIRequest {
 	return &TaobaoKoubeiMallCommonMallDetailGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoKoubeiMallCommonMallDetailGetAPIRequest) Reset() {
+	r._cityCode = ""
+	r._dataSetId = ""
+	r._mallId = ""
+	r._displayChannel = ""
+	r._appVersion = ""
+	r._terminalType = ""
+	r._latitude = ""
+	r._longitude = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoKoubeiMallCommonMallDetailGetAPIRequest) SetLongitude(_longitude 
 // GetLongitude Longitude Getter
 func (r TaobaoKoubeiMallCommonMallDetailGetAPIRequest) GetLongitude() string {
 	return r._longitude
+}
+
+var poolTaobaoKoubeiMallCommonMallDetailGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoKoubeiMallCommonMallDetailGetRequest()
+	},
+}
+
+// GetTaobaoKoubeiMallCommonMallDetailGetRequest 从 sync.Pool 获取 TaobaoKoubeiMallCommonMallDetailGetAPIRequest
+func GetTaobaoKoubeiMallCommonMallDetailGetAPIRequest() *TaobaoKoubeiMallCommonMallDetailGetAPIRequest {
+	return poolTaobaoKoubeiMallCommonMallDetailGetAPIRequest.Get().(*TaobaoKoubeiMallCommonMallDetailGetAPIRequest)
+}
+
+// ReleaseTaobaoKoubeiMallCommonMallDetailGetAPIRequest 将 TaobaoKoubeiMallCommonMallDetailGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoKoubeiMallCommonMallDetailGetAPIRequest(v *TaobaoKoubeiMallCommonMallDetailGetAPIRequest) {
+	v.Reset()
+	poolTaobaoKoubeiMallCommonMallDetailGetAPIRequest.Put(v)
 }

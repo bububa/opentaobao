@@ -1,5 +1,9 @@
 package train
 
+import (
+	"sync"
+)
+
 // QueryChangeDetailRq 结构体
 type QueryChangeDetailRq struct {
 	// 代理商id
@@ -10,4 +14,24 @@ type QueryChangeDetailRq struct {
 	TpOrderId int64 `json:"tp_order_id,omitempty" xml:"tp_order_id,omitempty"`
 	// ttp单号
 	TtpOrderId int64 `json:"ttp_order_id,omitempty" xml:"ttp_order_id,omitempty"`
+}
+
+var poolQueryChangeDetailRq = sync.Pool{
+	New: func() any {
+		return new(QueryChangeDetailRq)
+	},
+}
+
+// GetQueryChangeDetailRq() 从对象池中获取QueryChangeDetailRq
+func GetQueryChangeDetailRq() *QueryChangeDetailRq {
+	return poolQueryChangeDetailRq.Get().(*QueryChangeDetailRq)
+}
+
+// ReleaseQueryChangeDetailRq 释放QueryChangeDetailRq
+func ReleaseQueryChangeDetailRq(v *QueryChangeDetailRq) {
+	v.AgentId = 0
+	v.ChangeApplyId = 0
+	v.TpOrderId = 0
+	v.TtpOrderId = 0
+	poolQueryChangeDetailRq.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.ad.campaign.create.forbidden.keyword
 //
 // 创建屏蔽词
-func AlibabaScbpAdCampaignCreateForbiddenKeyword(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest, session string) (*scbp.AlibabaScbpAdCampaignCreateForbiddenKeywordAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdCampaignCreateForbiddenKeywordAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAdCampaignCreateForbiddenKeyword(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest, resp *scbp.AlibabaScbpAdCampaignCreateForbiddenKeywordAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

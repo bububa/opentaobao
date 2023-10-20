@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // TopApiAfOrderOption 结构体
 type TopApiAfOrderOption struct {
 	// 查询开始时间，以taoke订单创建时间开始
@@ -26,4 +30,32 @@ type TopApiAfOrderOption struct {
 	ViolationType int64 `json:"violation_type,omitempty" xml:"violation_type,omitempty"`
 	// 此参数不再使用，请勿入参
 	PunishStatus int64 `json:"punish_status,omitempty" xml:"punish_status,omitempty"`
+}
+
+var poolTopApiAfOrderOption = sync.Pool{
+	New: func() any {
+		return new(TopApiAfOrderOption)
+	},
+}
+
+// GetTopApiAfOrderOption() 从对象池中获取TopApiAfOrderOption
+func GetTopApiAfOrderOption() *TopApiAfOrderOption {
+	return poolTopApiAfOrderOption.Get().(*TopApiAfOrderOption)
+}
+
+// ReleaseTopApiAfOrderOption 释放TopApiAfOrderOption
+func ReleaseTopApiAfOrderOption(v *TopApiAfOrderOption) {
+	v.StartTime = ""
+	v.RelationId = 0
+	v.TbTradeId = 0
+	v.TbTradeParentId = 0
+	v.PageSize = 0
+	v.PageNo = 0
+	v.Span = 0
+	v.SpecialId = 0
+	v.AdzoneId = 0
+	v.SiteId = 0
+	v.ViolationType = 0
+	v.PunishStatus = 0
+	poolTopApiAfOrderOption.Put(v)
 }

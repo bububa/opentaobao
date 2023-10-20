@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.time.get
 //
 // 获得当前系统时间
-func AlibabaWdkTimeGet(clt *core.SDKClient, req *wdk.AlibabaWdkTimeGetAPIRequest, session string) (*wdk.AlibabaWdkTimeGetAPIResponse, error) {
-	var resp wdk.AlibabaWdkTimeGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkTimeGet(clt *core.SDKClient, req *wdk.AlibabaWdkTimeGetAPIRequest, resp *wdk.AlibabaWdkTimeGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

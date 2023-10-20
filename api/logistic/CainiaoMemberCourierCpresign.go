@@ -9,11 +9,6 @@ import (
 // cainiao.member.courier.cpresign
 //
 // CP清理内部离职的用户信息
-func CainiaoMemberCourierCpresign(clt *core.SDKClient, req *logistic.CainiaoMemberCourierCpresignAPIRequest, session string) (*logistic.CainiaoMemberCourierCpresignAPIResponse, error) {
-	var resp logistic.CainiaoMemberCourierCpresignAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoMemberCourierCpresign(clt *core.SDKClient, req *logistic.CainiaoMemberCourierCpresignAPIRequest, resp *logistic.CainiaoMemberCourierCpresignAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

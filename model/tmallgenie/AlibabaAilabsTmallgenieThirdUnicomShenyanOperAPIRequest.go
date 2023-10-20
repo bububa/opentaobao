@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest struct {
 // NewAlibabaAilabsTmallgenieThirdUnicomShenyanOperRequest 初始化AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest对象
 func NewAlibabaAilabsTmallgenieThirdUnicomShenyanOperRequest() *AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest {
 	return &AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest) Reset() {
+	r._cuei = ""
+	r._uid = ""
+	r._traceId = ""
+	r._type = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest) SetType(_type 
 // GetType Type Getter
 func (r AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest) GetType() string {
 	return r._type
+}
+
+var poolAlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsTmallgenieThirdUnicomShenyanOperRequest()
+	},
+}
+
+// GetAlibabaAilabsTmallgenieThirdUnicomShenyanOperRequest 从 sync.Pool 获取 AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest
+func GetAlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest() *AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest {
+	return poolAlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest.Get().(*AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest)
+}
+
+// ReleaseAlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest 将 AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest(v *AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIRequest.Put(v)
 }

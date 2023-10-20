@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsOpenalibityWriteAPIRequest struct {
 // NewTaobaoLogisticsOpenalibityWriteRequest 初始化TaobaoLogisticsOpenalibityWriteAPIRequest对象
 func NewTaobaoLogisticsOpenalibityWriteRequest() *TaobaoLogisticsOpenalibityWriteAPIRequest {
 	return &TaobaoLogisticsOpenalibityWriteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsOpenalibityWriteAPIRequest) Reset() {
+	r._generalLogisticsDataWriteRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsOpenalibityWriteAPIRequest) SetGeneralLogisticsDataWrite
 // GetGeneralLogisticsDataWriteRequest GeneralLogisticsDataWriteRequest Getter
 func (r TaobaoLogisticsOpenalibityWriteAPIRequest) GetGeneralLogisticsDataWriteRequest() *GeneralLogisticsDataWriteRequest {
 	return r._generalLogisticsDataWriteRequest
+}
+
+var poolTaobaoLogisticsOpenalibityWriteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsOpenalibityWriteRequest()
+	},
+}
+
+// GetTaobaoLogisticsOpenalibityWriteRequest 从 sync.Pool 获取 TaobaoLogisticsOpenalibityWriteAPIRequest
+func GetTaobaoLogisticsOpenalibityWriteAPIRequest() *TaobaoLogisticsOpenalibityWriteAPIRequest {
+	return poolTaobaoLogisticsOpenalibityWriteAPIRequest.Get().(*TaobaoLogisticsOpenalibityWriteAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsOpenalibityWriteAPIRequest 将 TaobaoLogisticsOpenalibityWriteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsOpenalibityWriteAPIRequest(v *TaobaoLogisticsOpenalibityWriteAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsOpenalibityWriteAPIRequest.Put(v)
 }

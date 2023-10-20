@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // AddressResult 结构体
 type AddressResult struct {
 	// 修改日期时间
@@ -34,4 +38,36 @@ type AddressResult struct {
 	GetDef bool `json:"get_def,omitempty" xml:"get_def,omitempty"`
 	// 是否默认退货地址
 	CancelDef bool `json:"cancel_def,omitempty" xml:"cancel_def,omitempty"`
+}
+
+var poolAddressResult = sync.Pool{
+	New: func() any {
+		return new(AddressResult)
+	},
+}
+
+// GetAddressResult() 从对象池中获取AddressResult
+func GetAddressResult() *AddressResult {
+	return poolAddressResult.Get().(*AddressResult)
+}
+
+// ReleaseAddressResult 释放AddressResult
+func ReleaseAddressResult(v *AddressResult) {
+	v.ModifyDate = ""
+	v.ContactName = ""
+	v.Province = ""
+	v.City = ""
+	v.Country = ""
+	v.Addr = ""
+	v.ZipCode = ""
+	v.Phone = ""
+	v.MobilePhone = ""
+	v.SellerCompany = ""
+	v.Memo = ""
+	v.ContactId = 0
+	v.AreaId = 0
+	v.SendDef = false
+	v.GetDef = false
+	v.CancelDef = false
+	poolAddressResult.Put(v)
 }

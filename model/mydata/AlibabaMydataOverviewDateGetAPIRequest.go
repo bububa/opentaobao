@@ -2,6 +2,7 @@ package mydata
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaMydataOverviewDateGetAPIRequest struct {
 // NewAlibabaMydataOverviewDateGetRequest 初始化AlibabaMydataOverviewDateGetAPIRequest对象
 func NewAlibabaMydataOverviewDateGetRequest() *AlibabaMydataOverviewDateGetAPIRequest {
 	return &AlibabaMydataOverviewDateGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMydataOverviewDateGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaMydataOverviewDateGetAPIRequest) GetApiParams(params url.Values) 
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaMydataOverviewDateGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaMydataOverviewDateGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMydataOverviewDateGetRequest()
+	},
+}
+
+// GetAlibabaMydataOverviewDateGetRequest 从 sync.Pool 获取 AlibabaMydataOverviewDateGetAPIRequest
+func GetAlibabaMydataOverviewDateGetAPIRequest() *AlibabaMydataOverviewDateGetAPIRequest {
+	return poolAlibabaMydataOverviewDateGetAPIRequest.Get().(*AlibabaMydataOverviewDateGetAPIRequest)
+}
+
+// ReleaseAlibabaMydataOverviewDateGetAPIRequest 将 AlibabaMydataOverviewDateGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMydataOverviewDateGetAPIRequest(v *AlibabaMydataOverviewDateGetAPIRequest) {
+	v.Reset()
+	poolAlibabaMydataOverviewDateGetAPIRequest.Put(v)
 }

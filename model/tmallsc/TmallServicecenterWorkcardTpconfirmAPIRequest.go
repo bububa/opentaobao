@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallServicecenterWorkcardTpconfirmAPIRequest struct {
 // NewTmallServicecenterWorkcardTpconfirmRequest 初始化TmallServicecenterWorkcardTpconfirmAPIRequest对象
 func NewTmallServicecenterWorkcardTpconfirmRequest() *TmallServicecenterWorkcardTpconfirmAPIRequest {
 	return &TmallServicecenterWorkcardTpconfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkcardTpconfirmAPIRequest) Reset() {
+	r._tpConfirmRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallServicecenterWorkcardTpconfirmAPIRequest) SetTpConfirmRequest(_tpC
 // GetTpConfirmRequest TpConfirmRequest Getter
 func (r TmallServicecenterWorkcardTpconfirmAPIRequest) GetTpConfirmRequest() *TpConfirmRequest {
 	return r._tpConfirmRequest
+}
+
+var poolTmallServicecenterWorkcardTpconfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkcardTpconfirmRequest()
+	},
+}
+
+// GetTmallServicecenterWorkcardTpconfirmRequest 从 sync.Pool 获取 TmallServicecenterWorkcardTpconfirmAPIRequest
+func GetTmallServicecenterWorkcardTpconfirmAPIRequest() *TmallServicecenterWorkcardTpconfirmAPIRequest {
+	return poolTmallServicecenterWorkcardTpconfirmAPIRequest.Get().(*TmallServicecenterWorkcardTpconfirmAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkcardTpconfirmAPIRequest 将 TmallServicecenterWorkcardTpconfirmAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkcardTpconfirmAPIRequest(v *TmallServicecenterWorkcardTpconfirmAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkcardTpconfirmAPIRequest.Put(v)
 }

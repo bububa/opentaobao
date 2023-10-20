@@ -1,5 +1,9 @@
 package tbitem
 
+import (
+	"sync"
+)
+
 // ItemDescModule 结构体
 type ItemDescModule struct {
 	// 一个List&lt;String&gt;的Json串，里面是模块引导提示，不超过3条（isv提交时可忽略不传）
@@ -16,4 +20,27 @@ type ItemDescModule struct {
 	ModuleId int64 `json:"module_id,omitempty" xml:"module_id,omitempty"`
 	// 是否必填 （isv提交时可忽略不传）
 	Required bool `json:"required,omitempty" xml:"required,omitempty"`
+}
+
+var poolItemDescModule = sync.Pool{
+	New: func() any {
+		return new(ItemDescModule)
+	},
+}
+
+// GetItemDescModule() 从对象池中获取ItemDescModule
+func GetItemDescModule() *ItemDescModule {
+	return poolItemDescModule.Get().(*ItemDescModule)
+}
+
+// ReleaseItemDescModule 释放ItemDescModule
+func ReleaseItemDescModule(v *ItemDescModule) {
+	v.Intros = ""
+	v.TplUrls = ""
+	v.ModuleName = ""
+	v.Type = ""
+	v.Content = ""
+	v.ModuleId = 0
+	v.Required = false
+	poolItemDescModule.Put(v)
 }

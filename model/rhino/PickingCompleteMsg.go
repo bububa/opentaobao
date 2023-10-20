@@ -1,5 +1,9 @@
 package rhino
 
+import (
+	"sync"
+)
+
 // PickingCompleteMsg 结构体
 type PickingCompleteMsg struct {
 	// 运货单信息package_infos
@@ -16,4 +20,27 @@ type PickingCompleteMsg struct {
 	WareHouseId int64 `json:"ware_house_id,omitempty" xml:"ware_house_id,omitempty"`
 	// 出库单单据类型，1-正常出库2-手工出库
 	OutboundType int64 `json:"outbound_type,omitempty" xml:"outbound_type,omitempty"`
+}
+
+var poolPickingCompleteMsg = sync.Pool{
+	New: func() any {
+		return new(PickingCompleteMsg)
+	},
+}
+
+// GetPickingCompleteMsg() 从对象池中获取PickingCompleteMsg
+func GetPickingCompleteMsg() *PickingCompleteMsg {
+	return poolPickingCompleteMsg.Get().(*PickingCompleteMsg)
+}
+
+// ReleasePickingCompleteMsg 释放PickingCompleteMsg
+func ReleasePickingCompleteMsg(v *PickingCompleteMsg) {
+	v.Waybills = v.Waybills[:0]
+	v.SapInvoiceId = ""
+	v.OutboundDate = ""
+	v.WmsInvoiceId = ""
+	v.FactoryId = 0
+	v.WareHouseId = 0
+	v.OutboundType = 0
+	poolPickingCompleteMsg.Put(v)
 }

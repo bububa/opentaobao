@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // CaseModel 结构体
 type CaseModel struct {
 	// 原告信息
@@ -82,4 +86,60 @@ type CaseModel struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 案件类型
 	CaseTypeLabel *LabelOption `json:"case_type_label,omitempty" xml:"case_type_label,omitempty"`
+}
+
+var poolCaseModel = sync.Pool{
+	New: func() any {
+		return new(CaseModel)
+	},
+}
+
+// GetCaseModel() 从对象池中获取CaseModel
+func GetCaseModel() *CaseModel {
+	return poolCaseModel.Get().(*CaseModel)
+}
+
+// ReleaseCaseModel 释放CaseModel
+func ReleaseCaseModel(v *CaseModel) {
+	v.Accusers = v.Accusers[:0]
+	v.AccuserAppealList = v.AccuserAppealList[:0]
+	v.DefendantList = v.DefendantList[:0]
+	v.ThirdList = v.ThirdList[:0]
+	v.CaseFactFileList = v.CaseFactFileList[:0]
+	v.OtherFileList = v.OtherFileList[:0]
+	v.EvidenceFileList = v.EvidenceFileList[:0]
+	v.CourtFileList = v.CourtFileList[:0]
+	v.PleadingFileList = v.PleadingFileList[:0]
+	v.BuLabels = v.BuLabels[:0]
+	v.PreCaseNumber = ""
+	v.Tag4 = ""
+	v.Tag3 = ""
+	v.Tag2 = ""
+	v.Tag1 = ""
+	v.AccuserClaimLegalBasis = ""
+	v.AccuserClaimFact = ""
+	v.SuitRequest = ""
+	v.Remark = ""
+	v.FollowupPeopleName = ""
+	v.OuName = ""
+	v.CourtTime = ""
+	v.SueTime = ""
+	v.Currency = ""
+	v.CaseAmount = ""
+	v.AuditType = ""
+	v.CaseCause = ""
+	v.CaseType2 = ""
+	v.CaseType1 = ""
+	v.SuitType = ""
+	v.CaseDetailDescription = ""
+	v.CaseDetailCode = ""
+	v.CaseNumber = ""
+	v.CaseCode = ""
+	v.SendTime = ""
+	v.SuitFee = nil
+	v.CheckInMsg = nil
+	v.CourtModel = nil
+	v.Id = 0
+	v.CaseTypeLabel = nil
+	poolCaseModel.Put(v)
 }

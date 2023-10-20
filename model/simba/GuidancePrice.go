@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // GuidancePrice 结构体
 type GuidancePrice struct {
 	// 相对当前价格点击提升比例
@@ -16,4 +20,27 @@ type GuidancePrice struct {
 	NewClick string `json:"new_click,omitempty" xml:"new_click,omitempty"`
 	// 建议价格能够拿到的展现量
 	NewImpression string `json:"new_impression,omitempty" xml:"new_impression,omitempty"`
+}
+
+var poolGuidancePrice = sync.Pool{
+	New: func() any {
+		return new(GuidancePrice)
+	},
+}
+
+// GetGuidancePrice() 从对象池中获取GuidancePrice
+func GetGuidancePrice() *GuidancePrice {
+	return poolGuidancePrice.Get().(*GuidancePrice)
+}
+
+// ReleaseGuidancePrice 释放GuidancePrice
+func ReleaseGuidancePrice(v *GuidancePrice) {
+	v.ClickUpRate = ""
+	v.ImpressionUpRate = ""
+	v.PriceFlag = ""
+	v.Price = ""
+	v.Flag = ""
+	v.NewClick = ""
+	v.NewImpression = ""
+	poolGuidancePrice.Put(v)
 }

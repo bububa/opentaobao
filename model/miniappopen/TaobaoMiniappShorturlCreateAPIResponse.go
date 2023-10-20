@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type TaobaoMiniappShorturlCreateAPIResponse struct {
 	TaobaoMiniappShorturlCreateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoMiniappShorturlCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMiniappShorturlCreateAPIResponseModel).Reset()
+}
+
 // TaobaoMiniappShorturlCreateAPIResponseModel is 生成淘宝小程序短链接 成功返回结果
 type TaobaoMiniappShorturlCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_shorturl_create_response"`
@@ -23,4 +30,27 @@ type TaobaoMiniappShorturlCreateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *TaobaoMiniappShorturlCreateResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappShorturlCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoMiniappShorturlCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMiniappShorturlCreateAPIResponse)
+	},
+}
+
+// GetTaobaoMiniappShorturlCreateAPIResponse 从 sync.Pool 获取 TaobaoMiniappShorturlCreateAPIResponse
+func GetTaobaoMiniappShorturlCreateAPIResponse() *TaobaoMiniappShorturlCreateAPIResponse {
+	return poolTaobaoMiniappShorturlCreateAPIResponse.Get().(*TaobaoMiniappShorturlCreateAPIResponse)
+}
+
+// ReleaseTaobaoMiniappShorturlCreateAPIResponse 将 TaobaoMiniappShorturlCreateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMiniappShorturlCreateAPIResponse(v *TaobaoMiniappShorturlCreateAPIResponse) {
+	v.Reset()
+	poolTaobaoMiniappShorturlCreateAPIResponse.Put(v)
 }

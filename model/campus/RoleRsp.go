@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // RoleRsp 结构体
 type RoleRsp struct {
 	// 错误码
@@ -12,4 +16,25 @@ type RoleRsp struct {
 	RoleId string `json:"role_id,omitempty" xml:"role_id,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolRoleRsp = sync.Pool{
+	New: func() any {
+		return new(RoleRsp)
+	},
+}
+
+// GetRoleRsp() 从对象池中获取RoleRsp
+func GetRoleRsp() *RoleRsp {
+	return poolRoleRsp.Get().(*RoleRsp)
+}
+
+// ReleaseRoleRsp 释放RoleRsp
+func ReleaseRoleRsp(v *RoleRsp) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.ErrorLevel = ""
+	v.RoleId = ""
+	v.Success = false
+	poolRoleRsp.Put(v)
 }

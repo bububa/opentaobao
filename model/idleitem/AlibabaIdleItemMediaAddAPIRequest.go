@@ -2,6 +2,7 @@ package idleitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaIdleItemMediaAddAPIRequest struct {
 // NewAlibabaIdleItemMediaAddRequest 初始化AlibabaIdleItemMediaAddAPIRequest对象
 func NewAlibabaIdleItemMediaAddRequest() *AlibabaIdleItemMediaAddAPIRequest {
 	return &AlibabaIdleItemMediaAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleItemMediaAddAPIRequest) Reset() {
+	r._userNick = ""
+	r._mediaData = nil
+	r._mediaType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaIdleItemMediaAddAPIRequest) SetMediaType(_mediaType int64) error
 // GetMediaType MediaType Getter
 func (r AlibabaIdleItemMediaAddAPIRequest) GetMediaType() int64 {
 	return r._mediaType
+}
+
+var poolAlibabaIdleItemMediaAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleItemMediaAddRequest()
+	},
+}
+
+// GetAlibabaIdleItemMediaAddRequest 从 sync.Pool 获取 AlibabaIdleItemMediaAddAPIRequest
+func GetAlibabaIdleItemMediaAddAPIRequest() *AlibabaIdleItemMediaAddAPIRequest {
+	return poolAlibabaIdleItemMediaAddAPIRequest.Get().(*AlibabaIdleItemMediaAddAPIRequest)
+}
+
+// ReleaseAlibabaIdleItemMediaAddAPIRequest 将 AlibabaIdleItemMediaAddAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleItemMediaAddAPIRequest(v *AlibabaIdleItemMediaAddAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleItemMediaAddAPIRequest.Put(v)
 }

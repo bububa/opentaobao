@@ -1,5 +1,9 @@
 package tttm
 
+import (
+	"sync"
+)
+
 // WorkSyncDto 结构体
 type WorkSyncDto struct {
 	// 生产节点
@@ -18,4 +22,28 @@ type WorkSyncDto struct {
 	FinishTime string `json:"finish_time,omitempty" xml:"finish_time,omitempty"`
 	// 生产状态
 	ProduceStatus int64 `json:"produce_status,omitempty" xml:"produce_status,omitempty"`
+}
+
+var poolWorkSyncDto = sync.Pool{
+	New: func() any {
+		return new(WorkSyncDto)
+	},
+}
+
+// GetWorkSyncDto() 从对象池中获取WorkSyncDto
+func GetWorkSyncDto() *WorkSyncDto {
+	return poolWorkSyncDto.Get().(*WorkSyncDto)
+}
+
+// ReleaseWorkSyncDto 释放WorkSyncDto
+func ReleaseWorkSyncDto(v *WorkSyncDto) {
+	v.ProduceLinks = v.ProduceLinks[:0]
+	v.SyncProduceDTOs = v.SyncProduceDTOs[:0]
+	v.WorkId = ""
+	v.ProductCode = ""
+	v.PlanNum = ""
+	v.StartTime = ""
+	v.FinishTime = ""
+	v.ProduceStatus = 0
+	poolWorkSyncDto.Put(v)
 }

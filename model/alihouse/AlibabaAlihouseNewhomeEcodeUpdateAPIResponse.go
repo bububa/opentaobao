@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihouseNewhomeEcodeUpdateAPIResponse struct {
 	AlibabaAlihouseNewhomeEcodeUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihouseNewhomeEcodeUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihouseNewhomeEcodeUpdateAPIResponseModel).Reset()
+}
+
 // AlibabaAlihouseNewhomeEcodeUpdateAPIResponseModel is 新房货变更E码 成功返回结果
 type AlibabaAlihouseNewhomeEcodeUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_newhome_ecode_update_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihouseNewhomeEcodeUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaAlihouseNewhomeEcodeUpdateResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihouseNewhomeEcodeUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihouseNewhomeEcodeUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihouseNewhomeEcodeUpdateAPIResponse)
+	},
+}
+
+// GetAlibabaAlihouseNewhomeEcodeUpdateAPIResponse 从 sync.Pool 获取 AlibabaAlihouseNewhomeEcodeUpdateAPIResponse
+func GetAlibabaAlihouseNewhomeEcodeUpdateAPIResponse() *AlibabaAlihouseNewhomeEcodeUpdateAPIResponse {
+	return poolAlibabaAlihouseNewhomeEcodeUpdateAPIResponse.Get().(*AlibabaAlihouseNewhomeEcodeUpdateAPIResponse)
+}
+
+// ReleaseAlibabaAlihouseNewhomeEcodeUpdateAPIResponse 将 AlibabaAlihouseNewhomeEcodeUpdateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeEcodeUpdateAPIResponse(v *AlibabaAlihouseNewhomeEcodeUpdateAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeEcodeUpdateAPIResponse.Put(v)
 }

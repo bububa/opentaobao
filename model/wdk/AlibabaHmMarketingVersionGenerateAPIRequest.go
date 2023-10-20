@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaHmMarketingVersionGenerateAPIRequest struct {
 // NewAlibabaHmMarketingVersionGenerateRequest 初始化AlibabaHmMarketingVersionGenerateAPIRequest对象
 func NewAlibabaHmMarketingVersionGenerateRequest() *AlibabaHmMarketingVersionGenerateAPIRequest {
 	return &AlibabaHmMarketingVersionGenerateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHmMarketingVersionGenerateAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaHmMarketingVersionGenerateAPIRequest) SetParam(_param *SeasonVer
 // GetParam Param Getter
 func (r AlibabaHmMarketingVersionGenerateAPIRequest) GetParam() *SeasonVersionParam {
 	return r._param
+}
+
+var poolAlibabaHmMarketingVersionGenerateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHmMarketingVersionGenerateRequest()
+	},
+}
+
+// GetAlibabaHmMarketingVersionGenerateRequest 从 sync.Pool 获取 AlibabaHmMarketingVersionGenerateAPIRequest
+func GetAlibabaHmMarketingVersionGenerateAPIRequest() *AlibabaHmMarketingVersionGenerateAPIRequest {
+	return poolAlibabaHmMarketingVersionGenerateAPIRequest.Get().(*AlibabaHmMarketingVersionGenerateAPIRequest)
+}
+
+// ReleaseAlibabaHmMarketingVersionGenerateAPIRequest 将 AlibabaHmMarketingVersionGenerateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHmMarketingVersionGenerateAPIRequest(v *AlibabaHmMarketingVersionGenerateAPIRequest) {
+	v.Reset()
+	poolAlibabaHmMarketingVersionGenerateAPIRequest.Put(v)
 }

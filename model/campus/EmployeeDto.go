@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // EmployeeDto 结构体
 type EmployeeDto struct {
 	// 生日
@@ -54,4 +58,46 @@ type EmployeeDto struct {
 	CompanyId int64 `json:"company_id,omitempty" xml:"company_id,omitempty"`
 	// 用户账号id
 	PassportAccountId int64 `json:"passport_account_id,omitempty" xml:"passport_account_id,omitempty"`
+}
+
+var poolEmployeeDto = sync.Pool{
+	New: func() any {
+		return new(EmployeeDto)
+	},
+}
+
+// GetEmployeeDto() 从对象池中获取EmployeeDto
+func GetEmployeeDto() *EmployeeDto {
+	return poolEmployeeDto.Get().(*EmployeeDto)
+}
+
+// ReleaseEmployeeDto 释放EmployeeDto
+func ReleaseEmployeeDto(v *EmployeeDto) {
+	v.Birthday = ""
+	v.Sex = ""
+	v.Dingding = ""
+	v.Wangwang = ""
+	v.EnName = ""
+	v.Weixin = ""
+	v.NickName = ""
+	v.MobileComment = ""
+	v.DingUserId = ""
+	v.Name = ""
+	v.AvatarUrl = ""
+	v.Qq = ""
+	v.CompanyName = ""
+	v.Avatar = ""
+	v.WorkNo = ""
+	v.Alipay = ""
+	v.Email = ""
+	v.CorpUserId = ""
+	v.AvatarPreViewUrl = ""
+	v.WorkStatus = ""
+	v.Telephone = ""
+	v.Mobile = ""
+	v.AccountId = 0
+	v.Id = 0
+	v.CompanyId = 0
+	v.PassportAccountId = 0
+	poolEmployeeDto.Put(v)
 }

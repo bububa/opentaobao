@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCfdaXtptAppGetshowurlAPIRequest struct {
 // NewAlibabaCfdaXtptAppGetshowurlRequest 初始化AlibabaCfdaXtptAppGetshowurlAPIRequest对象
 func NewAlibabaCfdaXtptAppGetshowurlRequest() *AlibabaCfdaXtptAppGetshowurlAPIRequest {
 	return &AlibabaCfdaXtptAppGetshowurlAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCfdaXtptAppGetshowurlAPIRequest) Reset() {
+	r._code = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCfdaXtptAppGetshowurlAPIRequest) SetCode(_code string) error {
 // GetCode Code Getter
 func (r AlibabaCfdaXtptAppGetshowurlAPIRequest) GetCode() string {
 	return r._code
+}
+
+var poolAlibabaCfdaXtptAppGetshowurlAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCfdaXtptAppGetshowurlRequest()
+	},
+}
+
+// GetAlibabaCfdaXtptAppGetshowurlRequest 从 sync.Pool 获取 AlibabaCfdaXtptAppGetshowurlAPIRequest
+func GetAlibabaCfdaXtptAppGetshowurlAPIRequest() *AlibabaCfdaXtptAppGetshowurlAPIRequest {
+	return poolAlibabaCfdaXtptAppGetshowurlAPIRequest.Get().(*AlibabaCfdaXtptAppGetshowurlAPIRequest)
+}
+
+// ReleaseAlibabaCfdaXtptAppGetshowurlAPIRequest 将 AlibabaCfdaXtptAppGetshowurlAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCfdaXtptAppGetshowurlAPIRequest(v *AlibabaCfdaXtptAppGetshowurlAPIRequest) {
+	v.Reset()
+	poolAlibabaCfdaXtptAppGetshowurlAPIRequest.Put(v)
 }

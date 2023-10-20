@@ -10,11 +10,6 @@ import (
 //
 // 新建租户管理员
 // alibaba.mozi.vds.tenant.api.service.addadmin
-func AlibabaMoziVdsTenantApiServiceAddadmin(clt *core.SDKClient, req *mozivds.AlibabaMoziVdsTenantApiServiceAddadminAPIRequest, session string) (*mozivds.AlibabaMoziVdsTenantApiServiceAddadminAPIResponse, error) {
-	var resp mozivds.AlibabaMoziVdsTenantApiServiceAddadminAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMoziVdsTenantApiServiceAddadmin(clt *core.SDKClient, req *mozivds.AlibabaMoziVdsTenantApiServiceAddadminAPIRequest, resp *mozivds.AlibabaMoziVdsTenantApiServiceAddadminAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

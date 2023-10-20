@@ -9,11 +9,6 @@ import (
 // alibaba.damai.mev.open.pushperform
 //
 // pushPerform
-func AlibabaDamaiMevOpenPushperform(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushperformAPIRequest, session string) (*damai.AlibabaDamaiMevOpenPushperformAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenPushperformAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMevOpenPushperform(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushperformAPIRequest, resp *damai.AlibabaDamaiMevOpenPushperformAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package hotelhstdf
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripHotelHstdfShotelExnotmatchroomAPIRequest struct {
 // NewAlitripHotelHstdfShotelExnotmatchroomRequest 初始化AlitripHotelHstdfShotelExnotmatchroomAPIRequest对象
 func NewAlitripHotelHstdfShotelExnotmatchroomRequest() *AlitripHotelHstdfShotelExnotmatchroomAPIRequest {
 	return &AlitripHotelHstdfShotelExnotmatchroomAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripHotelHstdfShotelExnotmatchroomAPIRequest) Reset() {
+	r._hid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripHotelHstdfShotelExnotmatchroomAPIRequest) SetHid(_hid int64) err
 // GetHid Hid Getter
 func (r AlitripHotelHstdfShotelExnotmatchroomAPIRequest) GetHid() int64 {
 	return r._hid
+}
+
+var poolAlitripHotelHstdfShotelExnotmatchroomAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripHotelHstdfShotelExnotmatchroomRequest()
+	},
+}
+
+// GetAlitripHotelHstdfShotelExnotmatchroomRequest 从 sync.Pool 获取 AlitripHotelHstdfShotelExnotmatchroomAPIRequest
+func GetAlitripHotelHstdfShotelExnotmatchroomAPIRequest() *AlitripHotelHstdfShotelExnotmatchroomAPIRequest {
+	return poolAlitripHotelHstdfShotelExnotmatchroomAPIRequest.Get().(*AlitripHotelHstdfShotelExnotmatchroomAPIRequest)
+}
+
+// ReleaseAlitripHotelHstdfShotelExnotmatchroomAPIRequest 将 AlitripHotelHstdfShotelExnotmatchroomAPIRequest 放入 sync.Pool
+func ReleaseAlitripHotelHstdfShotelExnotmatchroomAPIRequest(v *AlitripHotelHstdfShotelExnotmatchroomAPIRequest) {
+	v.Reset()
+	poolAlitripHotelHstdfShotelExnotmatchroomAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // PassengerVo 结构体
 type PassengerVo struct {
 	// 乘客证件号码
@@ -12,4 +16,25 @@ type PassengerVo struct {
 	ServiceCharge int64 `json:"service_charge,omitempty" xml:"service_charge,omitempty"`
 	// 票价
 	TicketPrice int64 `json:"ticket_price,omitempty" xml:"ticket_price,omitempty"`
+}
+
+var poolPassengerVo = sync.Pool{
+	New: func() any {
+		return new(PassengerVo)
+	},
+}
+
+// GetPassengerVo() 从对象池中获取PassengerVo
+func GetPassengerVo() *PassengerVo {
+	return poolPassengerVo.Get().(*PassengerVo)
+}
+
+// ReleasePassengerVo 释放PassengerVo
+func ReleasePassengerVo(v *PassengerVo) {
+	v.RiderCertNumber = ""
+	v.RiderCertType = ""
+	v.RiderName = ""
+	v.ServiceCharge = 0
+	v.TicketPrice = 0
+	poolPassengerVo.Put(v)
 }

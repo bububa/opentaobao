@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.channel.user.sync
 //
 // 会员同步
-func AlibabaWdkChannelUserSync(clt *core.SDKClient, req *wdk.AlibabaWdkChannelUserSyncAPIRequest, session string) (*wdk.AlibabaWdkChannelUserSyncAPIResponse, error) {
-	var resp wdk.AlibabaWdkChannelUserSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkChannelUserSync(clt *core.SDKClient, req *wdk.AlibabaWdkChannelUserSyncAPIRequest, resp *wdk.AlibabaWdkChannelUserSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

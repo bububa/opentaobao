@@ -1,5 +1,9 @@
 package tmallgenie
 
+import (
+	"sync"
+)
+
 // Note 结构体
 type Note struct {
 	// 创建时间
@@ -16,4 +20,27 @@ type Note struct {
 	Topic string `json:"topic,omitempty" xml:"topic,omitempty"`
 	// memo_ID
 	MemoId int64 `json:"memo_id,omitempty" xml:"memo_id,omitempty"`
+}
+
+var poolNote = sync.Pool{
+	New: func() any {
+		return new(Note)
+	},
+}
+
+// GetNote() 从对象池中获取Note
+func GetNote() *Note {
+	return poolNote.Get().(*Note)
+}
+
+// ReleaseNote 释放Note
+func ReleaseNote(v *Note) {
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Uuid = ""
+	v.Status = ""
+	v.Content = ""
+	v.Topic = ""
+	v.MemoId = 0
+	poolNote.Put(v)
 }

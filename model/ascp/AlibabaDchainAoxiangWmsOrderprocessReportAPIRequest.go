@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangWmsOrderprocessReportAPIRequest struct {
 // NewAlibabaDchainAoxiangWmsOrderprocessReportRequest 初始化AlibabaDchainAoxiangWmsOrderprocessReportAPIRequest对象
 func NewAlibabaDchainAoxiangWmsOrderprocessReportRequest() *AlibabaDchainAoxiangWmsOrderprocessReportAPIRequest {
 	return &AlibabaDchainAoxiangWmsOrderprocessReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangWmsOrderprocessReportAPIRequest) Reset() {
+	r._orderProcessReportRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangWmsOrderprocessReportAPIRequest) SetOrderProcessRep
 // GetOrderProcessReportRequest OrderProcessReportRequest Getter
 func (r AlibabaDchainAoxiangWmsOrderprocessReportAPIRequest) GetOrderProcessReportRequest() *OrderProcessReportRequest {
 	return r._orderProcessReportRequest
+}
+
+var poolAlibabaDchainAoxiangWmsOrderprocessReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangWmsOrderprocessReportRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangWmsOrderprocessReportRequest 从 sync.Pool 获取 AlibabaDchainAoxiangWmsOrderprocessReportAPIRequest
+func GetAlibabaDchainAoxiangWmsOrderprocessReportAPIRequest() *AlibabaDchainAoxiangWmsOrderprocessReportAPIRequest {
+	return poolAlibabaDchainAoxiangWmsOrderprocessReportAPIRequest.Get().(*AlibabaDchainAoxiangWmsOrderprocessReportAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangWmsOrderprocessReportAPIRequest 将 AlibabaDchainAoxiangWmsOrderprocessReportAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangWmsOrderprocessReportAPIRequest(v *AlibabaDchainAoxiangWmsOrderprocessReportAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangWmsOrderprocessReportAPIRequest.Put(v)
 }

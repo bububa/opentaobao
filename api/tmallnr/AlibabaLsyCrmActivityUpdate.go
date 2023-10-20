@@ -9,11 +9,6 @@ import (
 // alibaba.lsy.crm.activity.update
 //
 // ISV活动修改
-func AlibabaLsyCrmActivityUpdate(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmActivityUpdateAPIRequest, session string) (*tmallnr.AlibabaLsyCrmActivityUpdateAPIResponse, error) {
-	var resp tmallnr.AlibabaLsyCrmActivityUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLsyCrmActivityUpdate(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmActivityUpdateAPIRequest, resp *tmallnr.AlibabaLsyCrmActivityUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

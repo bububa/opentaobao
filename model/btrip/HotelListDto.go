@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // HotelListDto 结构体
 type HotelListDto struct {
 	// 酒店名称
@@ -14,4 +18,26 @@ type HotelListDto struct {
 	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
 	// 协议价标识
 	IsProtocol bool `json:"is_protocol,omitempty" xml:"is_protocol,omitempty"`
+}
+
+var poolHotelListDto = sync.Pool{
+	New: func() any {
+		return new(HotelListDto)
+	},
+}
+
+// GetHotelListDto() 从对象池中获取HotelListDto
+func GetHotelListDto() *HotelListDto {
+	return poolHotelListDto.Get().(*HotelListDto)
+}
+
+// ReleaseHotelListDto 释放HotelListDto
+func ReleaseHotelListDto(v *HotelListDto) {
+	v.Name = ""
+	v.SupplierCode = ""
+	v.SupplierName = ""
+	v.LowPrice = 0
+	v.Shid = 0
+	v.IsProtocol = false
+	poolHotelListDto.Put(v)
 }

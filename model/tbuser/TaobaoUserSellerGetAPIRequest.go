@@ -2,6 +2,7 @@ package tbuser
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoUserSellerGetAPIRequest struct {
 // NewTaobaoUserSellerGetRequest 初始化TaobaoUserSellerGetAPIRequest对象
 func NewTaobaoUserSellerGetRequest() *TaobaoUserSellerGetAPIRequest {
 	return &TaobaoUserSellerGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUserSellerGetAPIRequest) Reset() {
+	r._fields = r._fields[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoUserSellerGetAPIRequest) SetFields(_fields []string) error {
 // GetFields Fields Getter
 func (r TaobaoUserSellerGetAPIRequest) GetFields() []string {
 	return r._fields
+}
+
+var poolTaobaoUserSellerGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUserSellerGetRequest()
+	},
+}
+
+// GetTaobaoUserSellerGetRequest 从 sync.Pool 获取 TaobaoUserSellerGetAPIRequest
+func GetTaobaoUserSellerGetAPIRequest() *TaobaoUserSellerGetAPIRequest {
+	return poolTaobaoUserSellerGetAPIRequest.Get().(*TaobaoUserSellerGetAPIRequest)
+}
+
+// ReleaseTaobaoUserSellerGetAPIRequest 将 TaobaoUserSellerGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUserSellerGetAPIRequest(v *TaobaoUserSellerGetAPIRequest) {
+	v.Reset()
+	poolTaobaoUserSellerGetAPIRequest.Put(v)
 }

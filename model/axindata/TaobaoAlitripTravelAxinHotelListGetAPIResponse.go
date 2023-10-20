@@ -2,6 +2,7 @@ package axindata
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAlitripTravelAxinHotelListGetAPIResponse struct {
 	TaobaoAlitripTravelAxinHotelListGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAlitripTravelAxinHotelListGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAlitripTravelAxinHotelListGetAPIResponseModel).Reset()
+}
+
 // TaobaoAlitripTravelAxinHotelListGetAPIResponseModel is 标准酒店信息查询-阿信 成功返回结果
 type TaobaoAlitripTravelAxinHotelListGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_axin_hotel_list_get_response"`
@@ -22,4 +29,27 @@ type TaobaoAlitripTravelAxinHotelListGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *TaobaoAlitripTravelAxinHotelListGetResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAlitripTravelAxinHotelListGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoAlitripTravelAxinHotelListGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripTravelAxinHotelListGetAPIResponse)
+	},
+}
+
+// GetTaobaoAlitripTravelAxinHotelListGetAPIResponse 从 sync.Pool 获取 TaobaoAlitripTravelAxinHotelListGetAPIResponse
+func GetTaobaoAlitripTravelAxinHotelListGetAPIResponse() *TaobaoAlitripTravelAxinHotelListGetAPIResponse {
+	return poolTaobaoAlitripTravelAxinHotelListGetAPIResponse.Get().(*TaobaoAlitripTravelAxinHotelListGetAPIResponse)
+}
+
+// ReleaseTaobaoAlitripTravelAxinHotelListGetAPIResponse 将 TaobaoAlitripTravelAxinHotelListGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAlitripTravelAxinHotelListGetAPIResponse(v *TaobaoAlitripTravelAxinHotelListGetAPIResponse) {
+	v.Reset()
+	poolTaobaoAlitripTravelAxinHotelListGetAPIResponse.Put(v)
 }

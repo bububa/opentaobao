@@ -1,5 +1,9 @@
 package kclub
 
+import (
+	"sync"
+)
+
 // Paging 结构体
 type Paging struct {
 	// 数据
@@ -10,4 +14,24 @@ type Paging struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 当前页
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
+}
+
+var poolPaging = sync.Pool{
+	New: func() any {
+		return new(Paging)
+	},
+}
+
+// GetPaging() 从对象池中获取Paging
+func GetPaging() *Paging {
+	return poolPaging.Get().(*Paging)
+}
+
+// ReleasePaging 释放Paging
+func ReleasePaging(v *Paging) {
+	v.DataList = v.DataList[:0]
+	v.RowCount = 0
+	v.PageSize = 0
+	v.PageNo = 0
+	poolPaging.Put(v)
 }

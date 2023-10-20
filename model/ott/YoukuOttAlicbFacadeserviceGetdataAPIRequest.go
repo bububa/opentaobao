@@ -2,6 +2,7 @@ package ott
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type YoukuOttAlicbFacadeserviceGetdataAPIRequest struct {
 // NewYoukuOttAlicbFacadeserviceGetdataRequest 初始化YoukuOttAlicbFacadeserviceGetdataAPIRequest对象
 func NewYoukuOttAlicbFacadeserviceGetdataRequest() *YoukuOttAlicbFacadeserviceGetdataAPIRequest {
 	return &YoukuOttAlicbFacadeserviceGetdataAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuOttAlicbFacadeserviceGetdataAPIRequest) Reset() {
+	r._serviceList = r._serviceList[:0]
+	r._uuid = ""
+	r._propertyMapJson = ""
+	r._extraInfoMap = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *YoukuOttAlicbFacadeserviceGetdataAPIRequest) SetExtraInfoMap(_extraInfo
 // GetExtraInfoMap ExtraInfoMap Getter
 func (r YoukuOttAlicbFacadeserviceGetdataAPIRequest) GetExtraInfoMap() string {
 	return r._extraInfoMap
+}
+
+var poolYoukuOttAlicbFacadeserviceGetdataAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuOttAlicbFacadeserviceGetdataRequest()
+	},
+}
+
+// GetYoukuOttAlicbFacadeserviceGetdataRequest 从 sync.Pool 获取 YoukuOttAlicbFacadeserviceGetdataAPIRequest
+func GetYoukuOttAlicbFacadeserviceGetdataAPIRequest() *YoukuOttAlicbFacadeserviceGetdataAPIRequest {
+	return poolYoukuOttAlicbFacadeserviceGetdataAPIRequest.Get().(*YoukuOttAlicbFacadeserviceGetdataAPIRequest)
+}
+
+// ReleaseYoukuOttAlicbFacadeserviceGetdataAPIRequest 将 YoukuOttAlicbFacadeserviceGetdataAPIRequest 放入 sync.Pool
+func ReleaseYoukuOttAlicbFacadeserviceGetdataAPIRequest(v *YoukuOttAlicbFacadeserviceGetdataAPIRequest) {
+	v.Reset()
+	poolYoukuOttAlicbFacadeserviceGetdataAPIRequest.Put(v)
 }

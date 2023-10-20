@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaHmMarketingFullrangeRemoveitemAPIRequest struct {
 // NewAlibabaHmMarketingFullrangeRemoveitemRequest 初始化AlibabaHmMarketingFullrangeRemoveitemAPIRequest对象
 func NewAlibabaHmMarketingFullrangeRemoveitemRequest() *AlibabaHmMarketingFullrangeRemoveitemAPIRequest {
 	return &AlibabaHmMarketingFullrangeRemoveitemAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHmMarketingFullrangeRemoveitemAPIRequest) Reset() {
+	r._param0 = nil
+	r._param1 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaHmMarketingFullrangeRemoveitemAPIRequest) SetParam1(_param1 *Com
 // GetParam1 Param1 Getter
 func (r AlibabaHmMarketingFullrangeRemoveitemAPIRequest) GetParam1() *CommonActivityParam {
 	return r._param1
+}
+
+var poolAlibabaHmMarketingFullrangeRemoveitemAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHmMarketingFullrangeRemoveitemRequest()
+	},
+}
+
+// GetAlibabaHmMarketingFullrangeRemoveitemRequest 从 sync.Pool 获取 AlibabaHmMarketingFullrangeRemoveitemAPIRequest
+func GetAlibabaHmMarketingFullrangeRemoveitemAPIRequest() *AlibabaHmMarketingFullrangeRemoveitemAPIRequest {
+	return poolAlibabaHmMarketingFullrangeRemoveitemAPIRequest.Get().(*AlibabaHmMarketingFullrangeRemoveitemAPIRequest)
+}
+
+// ReleaseAlibabaHmMarketingFullrangeRemoveitemAPIRequest 将 AlibabaHmMarketingFullrangeRemoveitemAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHmMarketingFullrangeRemoveitemAPIRequest(v *AlibabaHmMarketingFullrangeRemoveitemAPIRequest) {
+	v.Reset()
+	poolAlibabaHmMarketingFullrangeRemoveitemAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alitrippoi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripPlatformPoiRawPoioutbypoiidsAPIRequest struct {
 // NewAlitripPlatformPoiRawPoioutbypoiidsRequest 初始化AlitripPlatformPoiRawPoioutbypoiidsAPIRequest对象
 func NewAlitripPlatformPoiRawPoioutbypoiidsRequest() *AlitripPlatformPoiRawPoioutbypoiidsAPIRequest {
 	return &AlitripPlatformPoiRawPoioutbypoiidsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripPlatformPoiRawPoioutbypoiidsAPIRequest) Reset() {
+	r._fliggyPoiidParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripPlatformPoiRawPoioutbypoiidsAPIRequest) SetFliggyPoiidParam(_fli
 // GetFliggyPoiidParam FliggyPoiidParam Getter
 func (r AlitripPlatformPoiRawPoioutbypoiidsAPIRequest) GetFliggyPoiidParam() *FliggyPoiIdParam {
 	return r._fliggyPoiidParam
+}
+
+var poolAlitripPlatformPoiRawPoioutbypoiidsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripPlatformPoiRawPoioutbypoiidsRequest()
+	},
+}
+
+// GetAlitripPlatformPoiRawPoioutbypoiidsRequest 从 sync.Pool 获取 AlitripPlatformPoiRawPoioutbypoiidsAPIRequest
+func GetAlitripPlatformPoiRawPoioutbypoiidsAPIRequest() *AlitripPlatformPoiRawPoioutbypoiidsAPIRequest {
+	return poolAlitripPlatformPoiRawPoioutbypoiidsAPIRequest.Get().(*AlitripPlatformPoiRawPoioutbypoiidsAPIRequest)
+}
+
+// ReleaseAlitripPlatformPoiRawPoioutbypoiidsAPIRequest 将 AlitripPlatformPoiRawPoioutbypoiidsAPIRequest 放入 sync.Pool
+func ReleaseAlitripPlatformPoiRawPoioutbypoiidsAPIRequest(v *AlitripPlatformPoiRawPoioutbypoiidsAPIRequest) {
+	v.Reset()
+	poolAlitripPlatformPoiRawPoioutbypoiidsAPIRequest.Put(v)
 }

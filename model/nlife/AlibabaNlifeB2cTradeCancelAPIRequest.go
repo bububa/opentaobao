@@ -2,6 +2,7 @@ package nlife
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaNlifeB2cTradeCancelAPIRequest struct {
 // NewAlibabaNlifeB2cTradeCancelRequest 初始化AlibabaNlifeB2cTradeCancelAPIRequest对象
 func NewAlibabaNlifeB2cTradeCancelRequest() *AlibabaNlifeB2cTradeCancelAPIRequest {
 	return &AlibabaNlifeB2cTradeCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaNlifeB2cTradeCancelAPIRequest) Reset() {
+	r._tradeNo = ""
+	r._outTradeNo = ""
+	r._storeId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaNlifeB2cTradeCancelAPIRequest) SetStoreId(_storeId string) error
 // GetStoreId StoreId Getter
 func (r AlibabaNlifeB2cTradeCancelAPIRequest) GetStoreId() string {
 	return r._storeId
+}
+
+var poolAlibabaNlifeB2cTradeCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaNlifeB2cTradeCancelRequest()
+	},
+}
+
+// GetAlibabaNlifeB2cTradeCancelRequest 从 sync.Pool 获取 AlibabaNlifeB2cTradeCancelAPIRequest
+func GetAlibabaNlifeB2cTradeCancelAPIRequest() *AlibabaNlifeB2cTradeCancelAPIRequest {
+	return poolAlibabaNlifeB2cTradeCancelAPIRequest.Get().(*AlibabaNlifeB2cTradeCancelAPIRequest)
+}
+
+// ReleaseAlibabaNlifeB2cTradeCancelAPIRequest 将 AlibabaNlifeB2cTradeCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaNlifeB2cTradeCancelAPIRequest(v *AlibabaNlifeB2cTradeCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaNlifeB2cTradeCancelAPIRequest.Put(v)
 }

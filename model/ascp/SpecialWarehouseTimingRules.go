@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // SpecialWarehouseTimingRules 结构体
 type SpecialWarehouseTimingRules struct {
 	// wms货主id
@@ -14,4 +18,26 @@ type SpecialWarehouseTimingRules struct {
 	ReceiveCutTime string `json:"receive_cut_time,omitempty" xml:"receive_cut_time,omitempty"`
 	// 是否承诺发 1=承诺发；当截单时间前支付/截单的订单，承诺今日发，否则，承诺24小时发 0=不承诺
 	PromiseType int64 `json:"promise_type,omitempty" xml:"promise_type,omitempty"`
+}
+
+var poolSpecialWarehouseTimingRules = sync.Pool{
+	New: func() any {
+		return new(SpecialWarehouseTimingRules)
+	},
+}
+
+// GetSpecialWarehouseTimingRules() 从对象池中获取SpecialWarehouseTimingRules
+func GetSpecialWarehouseTimingRules() *SpecialWarehouseTimingRules {
+	return poolSpecialWarehouseTimingRules.Get().(*SpecialWarehouseTimingRules)
+}
+
+// ReleaseSpecialWarehouseTimingRules 释放SpecialWarehouseTimingRules
+func ReleaseSpecialWarehouseTimingRules(v *SpecialWarehouseTimingRules) {
+	v.WmsOwnerCode = ""
+	v.CutTime = ""
+	v.BanHourFrom = ""
+	v.BanHourTo = ""
+	v.ReceiveCutTime = ""
+	v.PromiseType = 0
+	poolSpecialWarehouseTimingRules.Put(v)
 }

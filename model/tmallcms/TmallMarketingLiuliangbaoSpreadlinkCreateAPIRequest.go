@@ -2,6 +2,7 @@ package tmallcms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest struct {
 // NewTmallMarketingLiuliangbaoSpreadlinkCreateRequest 初始化TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest对象
 func NewTmallMarketingLiuliangbaoSpreadlinkCreateRequest() *TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest {
 	return &TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest) Reset() {
+	r._url = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest) SetUrl(_url string
 // GetUrl Url Getter
 func (r TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest) GetUrl() string {
 	return r._url
+}
+
+var poolTmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallMarketingLiuliangbaoSpreadlinkCreateRequest()
+	},
+}
+
+// GetTmallMarketingLiuliangbaoSpreadlinkCreateRequest 从 sync.Pool 获取 TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest
+func GetTmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest() *TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest {
+	return poolTmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest.Get().(*TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest)
+}
+
+// ReleaseTmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest 将 TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest 放入 sync.Pool
+func ReleaseTmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest(v *TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest) {
+	v.Reset()
+	poolTmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest.Put(v)
 }

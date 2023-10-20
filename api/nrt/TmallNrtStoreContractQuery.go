@@ -9,11 +9,6 @@ import (
 // tmall.nrt.store.contract.query
 //
 // 摊位合同查询接口
-func TmallNrtStoreContractQuery(clt *core.SDKClient, req *nrt.TmallNrtStoreContractQueryAPIRequest, session string) (*nrt.TmallNrtStoreContractQueryAPIResponse, error) {
-	var resp nrt.TmallNrtStoreContractQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallNrtStoreContractQuery(clt *core.SDKClient, req *nrt.TmallNrtStoreContractQueryAPIRequest, resp *nrt.TmallNrtStoreContractQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

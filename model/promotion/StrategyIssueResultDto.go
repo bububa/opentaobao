@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // StrategyIssueResultDto 结构体
 type StrategyIssueResultDto struct {
 	// 展示面额单位
@@ -48,4 +52,43 @@ type StrategyIssueResultDto struct {
 	StartFee int64 `json:"start_fee,omitempty" xml:"start_fee,omitempty"`
 	// 相对生效时间长度
 	EffectiveInterval int64 `json:"effective_interval,omitempty" xml:"effective_interval,omitempty"`
+}
+
+var poolStrategyIssueResultDto = sync.Pool{
+	New: func() any {
+		return new(StrategyIssueResultDto)
+	},
+}
+
+// GetStrategyIssueResultDto() 从对象池中获取StrategyIssueResultDto
+func GetStrategyIssueResultDto() *StrategyIssueResultDto {
+	return poolStrategyIssueResultDto.Get().(*StrategyIssueResultDto)
+}
+
+// ReleaseStrategyIssueResultDto 释放StrategyIssueResultDto
+func ReleaseStrategyIssueResultDto(v *StrategyIssueResultDto) {
+	v.DisplayAmountUnit = ""
+	v.ExtraData = ""
+	v.IssueTime = ""
+	v.BenefitType = ""
+	v.EffectiveStart = ""
+	v.OuterInstanceId = ""
+	v.BenefitCode = ""
+	v.EffectiveEnd = ""
+	v.DisplayStartFee = ""
+	v.AmountUnit = ""
+	v.TrackingData = ""
+	v.DisplayAmount = ""
+	v.EffectiveTimeMode = ""
+	v.BenefitTitle = ""
+	v.BenefitTypeName = ""
+	v.IntervalTimeUnit = ""
+	v.Material = ""
+	v.EffectiveEndTimestamp = 0
+	v.RecordId = 0
+	v.EffectiveStartTimestamp = 0
+	v.Amount = 0
+	v.StartFee = 0
+	v.EffectiveInterval = 0
+	poolStrategyIssueResultDto.Put(v)
 }

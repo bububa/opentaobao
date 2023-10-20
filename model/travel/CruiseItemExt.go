@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // CruiseItemExt 结构体
 type CruiseItemExt struct {
 	// 邮轮费用包含
@@ -18,4 +22,28 @@ type CruiseItemExt struct {
 	CruiseItemVersion string `json:"cruise_item_version,omitempty" xml:"cruise_item_version,omitempty"`
 	// 邮轮具体航线
 	CruiseSubLine string `json:"cruise_sub_line,omitempty" xml:"cruise_sub_line,omitempty"`
+}
+
+var poolCruiseItemExt = sync.Pool{
+	New: func() any {
+		return new(CruiseItemExt)
+	},
+}
+
+// GetCruiseItemExt() 从对象池中获取CruiseItemExt
+func GetCruiseItemExt() *CruiseItemExt {
+	return poolCruiseItemExt.Get().(*CruiseItemExt)
+}
+
+// ReleaseCruiseItemExt 释放CruiseItemExt
+func ReleaseCruiseItemExt(v *CruiseItemExt) {
+	v.ShipFeeInclude = ""
+	v.ShipName = ""
+	v.CruiseCompany = ""
+	v.CruiseLine = ""
+	v.ShipDown = ""
+	v.ShipUp = ""
+	v.CruiseItemVersion = ""
+	v.CruiseSubLine = ""
+	poolCruiseItemExt.Put(v)
 }

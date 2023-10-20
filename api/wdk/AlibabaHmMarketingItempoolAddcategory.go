@@ -9,11 +9,6 @@ import (
 // alibaba.hm.marketing.itempool.addcategory
 //
 // 增加商品池里面的类目
-func AlibabaHmMarketingItempoolAddcategory(clt *core.SDKClient, req *wdk.AlibabaHmMarketingItempoolAddcategoryAPIRequest, session string) (*wdk.AlibabaHmMarketingItempoolAddcategoryAPIResponse, error) {
-	var resp wdk.AlibabaHmMarketingItempoolAddcategoryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHmMarketingItempoolAddcategory(clt *core.SDKClient, req *wdk.AlibabaHmMarketingItempoolAddcategoryAPIRequest, resp *wdk.AlibabaHmMarketingItempoolAddcategoryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

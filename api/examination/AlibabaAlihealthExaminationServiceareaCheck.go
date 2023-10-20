@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.examination.servicearea.check
 //
 // 体检机构对接_上门检测服务范围查询
-func AlibabaAlihealthExaminationServiceareaCheck(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationServiceareaCheckAPIRequest, session string) (*examination.AlibabaAlihealthExaminationServiceareaCheckAPIResponse, error) {
-	var resp examination.AlibabaAlihealthExaminationServiceareaCheckAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthExaminationServiceareaCheck(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationServiceareaCheckAPIRequest, resp *examination.AlibabaAlihealthExaminationServiceareaCheckAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

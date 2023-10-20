@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoJstAstrolabeOrderstatusSyncAPIResponse struct {
 	TaobaoJstAstrolabeOrderstatusSyncAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoJstAstrolabeOrderstatusSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoJstAstrolabeOrderstatusSyncAPIResponseModel).Reset()
+}
+
 // TaobaoJstAstrolabeOrderstatusSyncAPIResponseModel is 线下门店派单以及单据相关操作接口 成功返回结果
 type TaobaoJstAstrolabeOrderstatusSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"jst_astrolabe_orderstatus_sync_response"`
@@ -24,4 +31,28 @@ type TaobaoJstAstrolabeOrderstatusSyncAPIResponseModel struct {
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoJstAstrolabeOrderstatusSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.Message = ""
+}
+
+var poolTaobaoJstAstrolabeOrderstatusSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoJstAstrolabeOrderstatusSyncAPIResponse)
+	},
+}
+
+// GetTaobaoJstAstrolabeOrderstatusSyncAPIResponse 从 sync.Pool 获取 TaobaoJstAstrolabeOrderstatusSyncAPIResponse
+func GetTaobaoJstAstrolabeOrderstatusSyncAPIResponse() *TaobaoJstAstrolabeOrderstatusSyncAPIResponse {
+	return poolTaobaoJstAstrolabeOrderstatusSyncAPIResponse.Get().(*TaobaoJstAstrolabeOrderstatusSyncAPIResponse)
+}
+
+// ReleaseTaobaoJstAstrolabeOrderstatusSyncAPIResponse 将 TaobaoJstAstrolabeOrderstatusSyncAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoJstAstrolabeOrderstatusSyncAPIResponse(v *TaobaoJstAstrolabeOrderstatusSyncAPIResponse) {
+	v.Reset()
+	poolTaobaoJstAstrolabeOrderstatusSyncAPIResponse.Put(v)
 }

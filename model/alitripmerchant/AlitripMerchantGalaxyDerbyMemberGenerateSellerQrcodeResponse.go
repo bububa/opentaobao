@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse 结构体
 type AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse struct {
 	// 错误码
@@ -10,4 +14,24 @@ type AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse struct {
 	Content string `json:"content,omitempty" xml:"content,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse() 从对象池中获取AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse
+func GetAlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse() *AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse {
+	return poolAlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse.Get().(*AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse 释放AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse
+func ReleaseAlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse(v *AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Content = ""
+	v.Success = false
+	poolAlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse.Put(v)
 }

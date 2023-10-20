@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // AgentMultipleRefundRq 结构体
 type AgentMultipleRefundRq struct {
 	// 退款明细数据
@@ -20,4 +24,29 @@ type AgentMultipleRefundRq struct {
 	TotalRefundAmount int64 `json:"total_refund_amount,omitempty" xml:"total_refund_amount,omitempty"`
 	// 退服务费总金额(分)
 	TotalServiceChargeRefundAmount int64 `json:"total_service_charge_refund_amount,omitempty" xml:"total_service_charge_refund_amount,omitempty"`
+}
+
+var poolAgentMultipleRefundRq = sync.Pool{
+	New: func() any {
+		return new(AgentMultipleRefundRq)
+	},
+}
+
+// GetAgentMultipleRefundRq() 从对象池中获取AgentMultipleRefundRq
+func GetAgentMultipleRefundRq() *AgentMultipleRefundRq {
+	return poolAgentMultipleRefundRq.Get().(*AgentMultipleRefundRq)
+}
+
+// ReleaseAgentMultipleRefundRq 释放AgentMultipleRefundRq
+func ReleaseAgentMultipleRefundRq(v *AgentMultipleRefundRq) {
+	v.RefundTicketDetailList = v.RefundTicketDetailList[:0]
+	v.AgentOrderId = ""
+	v.AgentRefundReason = ""
+	v.AgentRefundTransNo = ""
+	v.RefundScene = ""
+	v.RefundSceneOfficialReasonCode = ""
+	v.MainBizOrderId = 0
+	v.TotalRefundAmount = 0
+	v.TotalServiceChargeRefundAmount = 0
+	poolAgentMultipleRefundRq.Put(v)
 }

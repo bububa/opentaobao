@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallNrtBrandinfoQueryAPIResponse struct {
 	TmallNrtBrandinfoQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallNrtBrandinfoQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallNrtBrandinfoQueryAPIResponseModel).Reset()
+}
+
 // TmallNrtBrandinfoQueryAPIResponseModel is 品牌数据查询 成功返回结果
 type TmallNrtBrandinfoQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_nrt_brandinfo_query_response"`
@@ -22,4 +29,27 @@ type TmallNrtBrandinfoQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 品牌id
 	Datas []string `json:"datas,omitempty" xml:"datas>string,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallNrtBrandinfoQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Datas = m.Datas[:0]
+}
+
+var poolTmallNrtBrandinfoQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallNrtBrandinfoQueryAPIResponse)
+	},
+}
+
+// GetTmallNrtBrandinfoQueryAPIResponse 从 sync.Pool 获取 TmallNrtBrandinfoQueryAPIResponse
+func GetTmallNrtBrandinfoQueryAPIResponse() *TmallNrtBrandinfoQueryAPIResponse {
+	return poolTmallNrtBrandinfoQueryAPIResponse.Get().(*TmallNrtBrandinfoQueryAPIResponse)
+}
+
+// ReleaseTmallNrtBrandinfoQueryAPIResponse 将 TmallNrtBrandinfoQueryAPIResponse 保存到 sync.Pool
+func ReleaseTmallNrtBrandinfoQueryAPIResponse(v *TmallNrtBrandinfoQueryAPIResponse) {
+	v.Reset()
+	poolTmallNrtBrandinfoQueryAPIResponse.Put(v)
 }

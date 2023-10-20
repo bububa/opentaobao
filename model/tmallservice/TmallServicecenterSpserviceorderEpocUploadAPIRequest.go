@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TmallServicecenterSpserviceorderEpocUploadAPIRequest struct {
 // NewTmallServicecenterSpserviceorderEpocUploadRequest 初始化TmallServicecenterSpserviceorderEpocUploadAPIRequest对象
 func NewTmallServicecenterSpserviceorderEpocUploadRequest() *TmallServicecenterSpserviceorderEpocUploadAPIRequest {
 	return &TmallServicecenterSpserviceorderEpocUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterSpserviceorderEpocUploadAPIRequest) Reset() {
+	r._epocFileData = ""
+	r._epocFileName = ""
+	r._tcFileData = ""
+	r._tcFileName = ""
+	r._bizOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TmallServicecenterSpserviceorderEpocUploadAPIRequest) SetBizOrderId(_bi
 // GetBizOrderId BizOrderId Getter
 func (r TmallServicecenterSpserviceorderEpocUploadAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
+}
+
+var poolTmallServicecenterSpserviceorderEpocUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterSpserviceorderEpocUploadRequest()
+	},
+}
+
+// GetTmallServicecenterSpserviceorderEpocUploadRequest 从 sync.Pool 获取 TmallServicecenterSpserviceorderEpocUploadAPIRequest
+func GetTmallServicecenterSpserviceorderEpocUploadAPIRequest() *TmallServicecenterSpserviceorderEpocUploadAPIRequest {
+	return poolTmallServicecenterSpserviceorderEpocUploadAPIRequest.Get().(*TmallServicecenterSpserviceorderEpocUploadAPIRequest)
+}
+
+// ReleaseTmallServicecenterSpserviceorderEpocUploadAPIRequest 将 TmallServicecenterSpserviceorderEpocUploadAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterSpserviceorderEpocUploadAPIRequest(v *TmallServicecenterSpserviceorderEpocUploadAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterSpserviceorderEpocUploadAPIRequest.Put(v)
 }

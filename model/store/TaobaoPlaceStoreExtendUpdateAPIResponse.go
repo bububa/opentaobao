@@ -2,6 +2,7 @@ package store
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoPlaceStoreExtendUpdateAPIResponse struct {
 	TaobaoPlaceStoreExtendUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoPlaceStoreExtendUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPlaceStoreExtendUpdateAPIResponseModel).Reset()
+}
+
 // TaobaoPlaceStoreExtendUpdateAPIResponseModel is 商户门店拓展信息更新接口 成功返回结果
 type TaobaoPlaceStoreExtendUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"place_store_extend_update_response"`
@@ -22,4 +29,27 @@ type TaobaoPlaceStoreExtendUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Result *TaobaoPlaceStoreExtendUpdateResultDo `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPlaceStoreExtendUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoPlaceStoreExtendUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPlaceStoreExtendUpdateAPIResponse)
+	},
+}
+
+// GetTaobaoPlaceStoreExtendUpdateAPIResponse 从 sync.Pool 获取 TaobaoPlaceStoreExtendUpdateAPIResponse
+func GetTaobaoPlaceStoreExtendUpdateAPIResponse() *TaobaoPlaceStoreExtendUpdateAPIResponse {
+	return poolTaobaoPlaceStoreExtendUpdateAPIResponse.Get().(*TaobaoPlaceStoreExtendUpdateAPIResponse)
+}
+
+// ReleaseTaobaoPlaceStoreExtendUpdateAPIResponse 将 TaobaoPlaceStoreExtendUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPlaceStoreExtendUpdateAPIResponse(v *TaobaoPlaceStoreExtendUpdateAPIResponse) {
+	v.Reset()
+	poolTaobaoPlaceStoreExtendUpdateAPIResponse.Put(v)
 }

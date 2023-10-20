@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -81,8 +82,45 @@ type AlibabaAlisportsDataSportsSyncsportsdataAPIRequest struct {
 // NewAlibabaAlisportsDataSportsSyncsportsdataRequest 初始化AlibabaAlisportsDataSportsSyncsportsdataAPIRequest对象
 func NewAlibabaAlisportsDataSportsSyncsportsdataRequest() *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest {
 	return &AlibabaAlisportsDataSportsSyncsportsdataAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(32),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) Reset() {
+	r._alispAppKey = ""
+	r._maxSpeed = ""
+	r._trail = ""
+	r._stime = ""
+	r._etime = ""
+	r._deviceName = ""
+	r._deviceModel = ""
+	r._averSpeed = ""
+	r._subNum = ""
+	r._alispTime = ""
+	r._alispSign = ""
+	r._aliuid = ""
+	r._source = ""
+	r._dataId = ""
+	r._num = ""
+	r._calorie = ""
+	r._match = ""
+	r._distance = ""
+	r._time = ""
+	r._country = ""
+	r._province = ""
+	r._city = ""
+	r._startPoint = ""
+	r._endPoint = ""
+	r._averHeartrate = 0
+	r._maxHeartrate = 0
+	r._minHeartrate = 0
+	r._deviceType = 0
+	r._subUnit = 0
+	r._sportsClass = 0
+	r._sportsType = 0
+	r._unit = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -516,4 +554,21 @@ func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetUnit(_unit int64
 // GetUnit Unit Getter
 func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetUnit() int64 {
 	return r._unit
+}
+
+var poolAlibabaAlisportsDataSportsSyncsportsdataAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlisportsDataSportsSyncsportsdataRequest()
+	},
+}
+
+// GetAlibabaAlisportsDataSportsSyncsportsdataRequest 从 sync.Pool 获取 AlibabaAlisportsDataSportsSyncsportsdataAPIRequest
+func GetAlibabaAlisportsDataSportsSyncsportsdataAPIRequest() *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest {
+	return poolAlibabaAlisportsDataSportsSyncsportsdataAPIRequest.Get().(*AlibabaAlisportsDataSportsSyncsportsdataAPIRequest)
+}
+
+// ReleaseAlibabaAlisportsDataSportsSyncsportsdataAPIRequest 将 AlibabaAlisportsDataSportsSyncsportsdataAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlisportsDataSportsSyncsportsdataAPIRequest(v *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) {
+	v.Reset()
+	poolAlibabaAlisportsDataSportsSyncsportsdataAPIRequest.Put(v)
 }

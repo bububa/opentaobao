@@ -9,11 +9,6 @@ import (
 // taobao.paimai.itemprops.get
 //
 // 读取拍卖相关类目属性
-func TaobaoPaimaiItempropsGet(clt *core.SDKClient, req *paimai.TaobaoPaimaiItempropsGetAPIRequest, session string) (*paimai.TaobaoPaimaiItempropsGetAPIResponse, error) {
-	var resp paimai.TaobaoPaimaiItempropsGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPaimaiItempropsGet(clt *core.SDKClient, req *paimai.TaobaoPaimaiItempropsGetAPIRequest, resp *paimai.TaobaoPaimaiItempropsGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

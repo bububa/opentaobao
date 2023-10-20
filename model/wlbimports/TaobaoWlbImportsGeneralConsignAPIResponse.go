@@ -2,6 +2,7 @@ package wlbimports
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -18,6 +19,12 @@ type TaobaoWlbImportsGeneralConsignAPIResponse struct {
 	TaobaoWlbImportsGeneralConsignAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoWlbImportsGeneralConsignAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWlbImportsGeneralConsignAPIResponseModel).Reset()
+}
+
 // TaobaoWlbImportsGeneralConsignAPIResponseModel is 一般进口发货 成功返回结果
 type TaobaoWlbImportsGeneralConsignAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_imports_general_consign_response"`
@@ -31,4 +38,30 @@ type TaobaoWlbImportsGeneralConsignAPIResponseModel struct {
 	ResultErrorCode string `json:"result_error_code,omitempty" xml:"result_error_code,omitempty"`
 	// 是否发货成功,true:成功，false：失败
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbImportsGeneralConsignAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.LgorderCode = ""
+	m.ResultErrorMsg = ""
+	m.ResultErrorCode = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoWlbImportsGeneralConsignAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbImportsGeneralConsignAPIResponse)
+	},
+}
+
+// GetTaobaoWlbImportsGeneralConsignAPIResponse 从 sync.Pool 获取 TaobaoWlbImportsGeneralConsignAPIResponse
+func GetTaobaoWlbImportsGeneralConsignAPIResponse() *TaobaoWlbImportsGeneralConsignAPIResponse {
+	return poolTaobaoWlbImportsGeneralConsignAPIResponse.Get().(*TaobaoWlbImportsGeneralConsignAPIResponse)
+}
+
+// ReleaseTaobaoWlbImportsGeneralConsignAPIResponse 将 TaobaoWlbImportsGeneralConsignAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWlbImportsGeneralConsignAPIResponse(v *TaobaoWlbImportsGeneralConsignAPIResponse) {
+	v.Reset()
+	poolTaobaoWlbImportsGeneralConsignAPIResponse.Put(v)
 }

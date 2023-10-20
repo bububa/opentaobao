@@ -2,6 +2,7 @@ package qt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQtReportDeleteAPIRequest struct {
 // NewTaobaoQtReportDeleteRequest 初始化TaobaoQtReportDeleteAPIRequest对象
 func NewTaobaoQtReportDeleteRequest() *TaobaoQtReportDeleteAPIRequest {
 	return &TaobaoQtReportDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQtReportDeleteAPIRequest) Reset() {
+	r._qtCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoQtReportDeleteAPIRequest) SetQtCode(_qtCode string) error {
 // GetQtCode QtCode Getter
 func (r TaobaoQtReportDeleteAPIRequest) GetQtCode() string {
 	return r._qtCode
+}
+
+var poolTaobaoQtReportDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQtReportDeleteRequest()
+	},
+}
+
+// GetTaobaoQtReportDeleteRequest 从 sync.Pool 获取 TaobaoQtReportDeleteAPIRequest
+func GetTaobaoQtReportDeleteAPIRequest() *TaobaoQtReportDeleteAPIRequest {
+	return poolTaobaoQtReportDeleteAPIRequest.Get().(*TaobaoQtReportDeleteAPIRequest)
+}
+
+// ReleaseTaobaoQtReportDeleteAPIRequest 将 TaobaoQtReportDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQtReportDeleteAPIRequest(v *TaobaoQtReportDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoQtReportDeleteAPIRequest.Put(v)
 }

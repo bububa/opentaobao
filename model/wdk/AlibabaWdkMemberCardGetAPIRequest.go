@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkMemberCardGetAPIRequest struct {
 // NewAlibabaWdkMemberCardGetRequest 初始化AlibabaWdkMemberCardGetAPIRequest对象
 func NewAlibabaWdkMemberCardGetRequest() *AlibabaWdkMemberCardGetAPIRequest {
 	return &AlibabaWdkMemberCardGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMemberCardGetAPIRequest) Reset() {
+	r._memberQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkMemberCardGetAPIRequest) SetMemberQuery(_memberQuery *MemberQ
 // GetMemberQuery MemberQuery Getter
 func (r AlibabaWdkMemberCardGetAPIRequest) GetMemberQuery() *MemberQueryRequest {
 	return r._memberQuery
+}
+
+var poolAlibabaWdkMemberCardGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMemberCardGetRequest()
+	},
+}
+
+// GetAlibabaWdkMemberCardGetRequest 从 sync.Pool 获取 AlibabaWdkMemberCardGetAPIRequest
+func GetAlibabaWdkMemberCardGetAPIRequest() *AlibabaWdkMemberCardGetAPIRequest {
+	return poolAlibabaWdkMemberCardGetAPIRequest.Get().(*AlibabaWdkMemberCardGetAPIRequest)
+}
+
+// ReleaseAlibabaWdkMemberCardGetAPIRequest 将 AlibabaWdkMemberCardGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMemberCardGetAPIRequest(v *AlibabaWdkMemberCardGetAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMemberCardGetAPIRequest.Put(v)
 }

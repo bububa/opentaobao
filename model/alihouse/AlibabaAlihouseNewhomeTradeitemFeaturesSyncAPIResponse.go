@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponse struct {
 	AlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponseModel).Reset()
+}
+
 // AlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponseModel is 同步品活动标 成功返回结果
 type AlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_newhome_tradeitem_features_sync_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaAlihouseNewhomeTradeitemFeaturesSyncResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponse)
+	},
+}
+
+// GetAlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponse 从 sync.Pool 获取 AlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponse
+func GetAlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponse() *AlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponse {
+	return poolAlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponse.Get().(*AlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponse)
+}
+
+// ReleaseAlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponse 将 AlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponse(v *AlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeTradeitemFeaturesSyncAPIResponse.Put(v)
 }

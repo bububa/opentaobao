@@ -2,6 +2,7 @@ package alihealthoutflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest struct {
 // NewAlibabaAlihealthDoctorLeshuiApplyNotifyRequest 初始化AlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest对象
 func NewAlibabaAlihealthDoctorLeshuiApplyNotifyRequest() *AlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest {
 	return &AlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest) SetParam(_param *App
 // GetParam Param Getter
 func (r AlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest) GetParam() *ApplyTaxNoticeRequest {
 	return r._param
+}
+
+var poolAlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDoctorLeshuiApplyNotifyRequest()
+	},
+}
+
+// GetAlibabaAlihealthDoctorLeshuiApplyNotifyRequest 从 sync.Pool 获取 AlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest
+func GetAlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest() *AlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest {
+	return poolAlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest.Get().(*AlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest 将 AlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest(v *AlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest.Put(v)
 }

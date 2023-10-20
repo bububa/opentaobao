@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -18,6 +19,12 @@ type AlibabaAlihealthDrugKytWesUploadinoutbillAPIResponse struct {
 	AlibabaAlihealthDrugKytWesUploadinoutbillAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugKytWesUploadinoutbillAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugKytWesUploadinoutbillAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthDrugKytWesUploadinoutbillAPIResponseModel is 企业上传出入库信息 成功返回结果
 type AlibabaAlihealthDrugKytWesUploadinoutbillAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_kyt_wes_uploadinoutbill_response"`
@@ -31,4 +38,30 @@ type AlibabaAlihealthDrugKytWesUploadinoutbillAPIResponseModel struct {
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 是否成功(true 成功 false 失败)
 	ResponseSuccess bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugKytWesUploadinoutbillAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Model = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.ResponseSuccess = false
+}
+
+var poolAlibabaAlihealthDrugKytWesUploadinoutbillAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugKytWesUploadinoutbillAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugKytWesUploadinoutbillAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugKytWesUploadinoutbillAPIResponse
+func GetAlibabaAlihealthDrugKytWesUploadinoutbillAPIResponse() *AlibabaAlihealthDrugKytWesUploadinoutbillAPIResponse {
+	return poolAlibabaAlihealthDrugKytWesUploadinoutbillAPIResponse.Get().(*AlibabaAlihealthDrugKytWesUploadinoutbillAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugKytWesUploadinoutbillAPIResponse 将 AlibabaAlihealthDrugKytWesUploadinoutbillAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytWesUploadinoutbillAPIResponse(v *AlibabaAlihealthDrugKytWesUploadinoutbillAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytWesUploadinoutbillAPIResponse.Put(v)
 }

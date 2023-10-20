@@ -9,11 +9,6 @@ import (
 // alibaba.tjb.picture.folder.create
 //
 // 淘特图片空间创建文件夹
-func AlibabaTjbPictureFolderCreate(clt *core.SDKClient, req *media.AlibabaTjbPictureFolderCreateAPIRequest, session string) (*media.AlibabaTjbPictureFolderCreateAPIResponse, error) {
-	var resp media.AlibabaTjbPictureFolderCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTjbPictureFolderCreate(clt *core.SDKClient, req *media.AlibabaTjbPictureFolderCreateAPIRequest, resp *media.AlibabaTjbPictureFolderCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

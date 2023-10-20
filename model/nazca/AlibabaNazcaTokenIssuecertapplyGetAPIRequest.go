@@ -2,6 +2,7 @@ package nazca
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaNazcaTokenIssuecertapplyGetAPIRequest struct {
 // NewAlibabaNazcaTokenIssuecertapplyGetRequest 初始化AlibabaNazcaTokenIssuecertapplyGetAPIRequest对象
 func NewAlibabaNazcaTokenIssuecertapplyGetRequest() *AlibabaNazcaTokenIssuecertapplyGetAPIRequest {
 	return &AlibabaNazcaTokenIssuecertapplyGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaNazcaTokenIssuecertapplyGetAPIRequest) Reset() {
+	r._token = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaNazcaTokenIssuecertapplyGetAPIRequest) SetToken(_token string) e
 // GetToken Token Getter
 func (r AlibabaNazcaTokenIssuecertapplyGetAPIRequest) GetToken() string {
 	return r._token
+}
+
+var poolAlibabaNazcaTokenIssuecertapplyGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaNazcaTokenIssuecertapplyGetRequest()
+	},
+}
+
+// GetAlibabaNazcaTokenIssuecertapplyGetRequest 从 sync.Pool 获取 AlibabaNazcaTokenIssuecertapplyGetAPIRequest
+func GetAlibabaNazcaTokenIssuecertapplyGetAPIRequest() *AlibabaNazcaTokenIssuecertapplyGetAPIRequest {
+	return poolAlibabaNazcaTokenIssuecertapplyGetAPIRequest.Get().(*AlibabaNazcaTokenIssuecertapplyGetAPIRequest)
+}
+
+// ReleaseAlibabaNazcaTokenIssuecertapplyGetAPIRequest 将 AlibabaNazcaTokenIssuecertapplyGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaNazcaTokenIssuecertapplyGetAPIRequest(v *AlibabaNazcaTokenIssuecertapplyGetAPIRequest) {
+	v.Reset()
+	poolAlibabaNazcaTokenIssuecertapplyGetAPIRequest.Put(v)
 }

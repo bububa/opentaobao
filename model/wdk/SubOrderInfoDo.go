@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SubOrderInfoDo 结构体
 type SubOrderInfoDo struct {
 	// 单位
@@ -36,4 +40,37 @@ type SubOrderInfoDo struct {
 	OriginalPrice int64 `json:"original_price,omitempty" xml:"original_price,omitempty"`
 	// 序号
 	Index int64 `json:"index,omitempty" xml:"index,omitempty"`
+}
+
+var poolSubOrderInfoDo = sync.Pool{
+	New: func() any {
+		return new(SubOrderInfoDo)
+	},
+}
+
+// GetSubOrderInfoDo() 从对象池中获取SubOrderInfoDo
+func GetSubOrderInfoDo() *SubOrderInfoDo {
+	return poolSubOrderInfoDo.Get().(*SubOrderInfoDo)
+}
+
+// ReleaseSubOrderInfoDo 释放SubOrderInfoDo
+func ReleaseSubOrderInfoDo(v *SubOrderInfoDo) {
+	v.Unit = ""
+	v.ScanBarcode = ""
+	v.Quantity = ""
+	v.ItemName = ""
+	v.ItemBarcode = ""
+	v.ItemCode = ""
+	v.SerialNum = ""
+	v.PosNo = ""
+	v.StoreId = ""
+	v.TemporaryDiscount = 0
+	v.PromotionDiscount = 0
+	v.MemberDiscount = 0
+	v.DealAmt = 0
+	v.DealPrice = 0
+	v.SellingPrice = 0
+	v.OriginalPrice = 0
+	v.Index = 0
+	poolSubOrderInfoDo.Put(v)
 }

@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // IeBookFlightVo 结构体
 type IeBookFlightVo struct {
 	// 到达机场
@@ -28,4 +32,33 @@ type IeBookFlightVo struct {
 	SegmentRph int64 `json:"segment_rph,omitempty" xml:"segment_rph,omitempty"`
 	// 是否共享航班
 	CodeShare bool `json:"code_share,omitempty" xml:"code_share,omitempty"`
+}
+
+var poolIeBookFlightVo = sync.Pool{
+	New: func() any {
+		return new(IeBookFlightVo)
+	},
+}
+
+// GetIeBookFlightVo() 从对象池中获取IeBookFlightVo
+func GetIeBookFlightVo() *IeBookFlightVo {
+	return poolIeBookFlightVo.Get().(*IeBookFlightVo)
+}
+
+// ReleaseIeBookFlightVo 释放IeBookFlightVo
+func ReleaseIeBookFlightVo(v *IeBookFlightVo) {
+	v.ArrAirport = ""
+	v.ArrTime = ""
+	v.DepAirport = ""
+	v.DepTime = ""
+	v.DirectionType = ""
+	v.EquipType = ""
+	v.FlightCabin = ""
+	v.FlightNumber = ""
+	v.MarketingAirline = ""
+	v.OperatingAirLine = ""
+	v.OperatingFlightNumber = ""
+	v.SegmentRph = 0
+	v.CodeShare = false
+	poolIeBookFlightVo.Put(v)
 }

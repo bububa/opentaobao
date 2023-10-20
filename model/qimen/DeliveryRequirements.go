@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // DeliveryRequirements 结构体
 type DeliveryRequirements struct {
 	// 要求送达日期(YYYY-MM-DD)
@@ -12,4 +16,25 @@ type DeliveryRequirements struct {
 	DeliveryType string `json:"deliveryType,omitempty" xml:"deliveryType,omitempty"`
 	// 投递时延要求(1=工作日;2=节假日;101=当日达;102=次晨达;103=次日达;104= 预约 达)
 	ScheduleType int64 `json:"scheduleType,omitempty" xml:"scheduleType,omitempty"`
+}
+
+var poolDeliveryRequirements = sync.Pool{
+	New: func() any {
+		return new(DeliveryRequirements)
+	},
+}
+
+// GetDeliveryRequirements() 从对象池中获取DeliveryRequirements
+func GetDeliveryRequirements() *DeliveryRequirements {
+	return poolDeliveryRequirements.Get().(*DeliveryRequirements)
+}
+
+// ReleaseDeliveryRequirements 释放DeliveryRequirements
+func ReleaseDeliveryRequirements(v *DeliveryRequirements) {
+	v.ScheduleDay = ""
+	v.ScheduleStartTime = ""
+	v.ScheduleEndTime = ""
+	v.DeliveryType = ""
+	v.ScheduleType = 0
+	poolDeliveryRequirements.Put(v)
 }

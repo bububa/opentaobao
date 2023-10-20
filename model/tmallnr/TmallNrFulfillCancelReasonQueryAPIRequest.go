@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallNrFulfillCancelReasonQueryAPIRequest struct {
 // NewTmallNrFulfillCancelReasonQueryRequest 初始化TmallNrFulfillCancelReasonQueryAPIRequest对象
 func NewTmallNrFulfillCancelReasonQueryRequest() *TmallNrFulfillCancelReasonQueryAPIRequest {
 	return &TmallNrFulfillCancelReasonQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrFulfillCancelReasonQueryAPIRequest) Reset() {
+	r._sellerId = 0
+	r._mainOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallNrFulfillCancelReasonQueryAPIRequest) SetMainOrderId(_mainOrderId 
 // GetMainOrderId MainOrderId Getter
 func (r TmallNrFulfillCancelReasonQueryAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
+}
+
+var poolTmallNrFulfillCancelReasonQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrFulfillCancelReasonQueryRequest()
+	},
+}
+
+// GetTmallNrFulfillCancelReasonQueryRequest 从 sync.Pool 获取 TmallNrFulfillCancelReasonQueryAPIRequest
+func GetTmallNrFulfillCancelReasonQueryAPIRequest() *TmallNrFulfillCancelReasonQueryAPIRequest {
+	return poolTmallNrFulfillCancelReasonQueryAPIRequest.Get().(*TmallNrFulfillCancelReasonQueryAPIRequest)
+}
+
+// ReleaseTmallNrFulfillCancelReasonQueryAPIRequest 将 TmallNrFulfillCancelReasonQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallNrFulfillCancelReasonQueryAPIRequest(v *TmallNrFulfillCancelReasonQueryAPIRequest) {
+	v.Reset()
+	poolTmallNrFulfillCancelReasonQueryAPIRequest.Put(v)
 }

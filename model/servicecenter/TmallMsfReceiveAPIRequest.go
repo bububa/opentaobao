@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallMsfReceiveAPIRequest struct {
 // NewTmallMsfReceiveRequest 初始化TmallMsfReceiveAPIRequest对象
 func NewTmallMsfReceiveRequest() *TmallMsfReceiveAPIRequest {
 	return &TmallMsfReceiveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallMsfReceiveAPIRequest) Reset() {
+	r._shopId = ""
+	r._bizType = ""
+	r._code = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallMsfReceiveAPIRequest) SetCode(_code string) error {
 // GetCode Code Getter
 func (r TmallMsfReceiveAPIRequest) GetCode() string {
 	return r._code
+}
+
+var poolTmallMsfReceiveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallMsfReceiveRequest()
+	},
+}
+
+// GetTmallMsfReceiveRequest 从 sync.Pool 获取 TmallMsfReceiveAPIRequest
+func GetTmallMsfReceiveAPIRequest() *TmallMsfReceiveAPIRequest {
+	return poolTmallMsfReceiveAPIRequest.Get().(*TmallMsfReceiveAPIRequest)
+}
+
+// ReleaseTmallMsfReceiveAPIRequest 将 TmallMsfReceiveAPIRequest 放入 sync.Pool
+func ReleaseTmallMsfReceiveAPIRequest(v *TmallMsfReceiveAPIRequest) {
+	v.Reset()
+	poolTmallMsfReceiveAPIRequest.Put(v)
 }

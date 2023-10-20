@@ -2,6 +2,7 @@ package moziacl
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMoziAclGrantGrantroleAPIRequest struct {
 // NewAlibabaMoziAclGrantGrantroleRequest 初始化AlibabaMoziAclGrantGrantroleAPIRequest对象
 func NewAlibabaMoziAclGrantGrantroleRequest() *AlibabaMoziAclGrantGrantroleAPIRequest {
 	return &AlibabaMoziAclGrantGrantroleAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMoziAclGrantGrantroleAPIRequest) Reset() {
+	r._grantRolesRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMoziAclGrantGrantroleAPIRequest) SetGrantRolesRequest(_grantRole
 // GetGrantRolesRequest GrantRolesRequest Getter
 func (r AlibabaMoziAclGrantGrantroleAPIRequest) GetGrantRolesRequest() *GrantRolesRequest {
 	return r._grantRolesRequest
+}
+
+var poolAlibabaMoziAclGrantGrantroleAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMoziAclGrantGrantroleRequest()
+	},
+}
+
+// GetAlibabaMoziAclGrantGrantroleRequest 从 sync.Pool 获取 AlibabaMoziAclGrantGrantroleAPIRequest
+func GetAlibabaMoziAclGrantGrantroleAPIRequest() *AlibabaMoziAclGrantGrantroleAPIRequest {
+	return poolAlibabaMoziAclGrantGrantroleAPIRequest.Get().(*AlibabaMoziAclGrantGrantroleAPIRequest)
+}
+
+// ReleaseAlibabaMoziAclGrantGrantroleAPIRequest 将 AlibabaMoziAclGrantGrantroleAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMoziAclGrantGrantroleAPIRequest(v *AlibabaMoziAclGrantGrantroleAPIRequest) {
+	v.Reset()
+	poolAlibabaMoziAclGrantGrantroleAPIRequest.Put(v)
 }

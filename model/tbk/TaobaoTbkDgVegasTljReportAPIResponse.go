@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoTbkDgVegasTljReportAPIResponse struct {
 	model.CommonResponse
 	TaobaoTbkDgVegasTljReportAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkDgVegasTljReportAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkDgVegasTljReportAPIResponseModel).Reset()
 }
 
 // TaobaoTbkDgVegasTljReportAPIResponseModel is 淘宝客-推广者-淘礼金效果数据 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoTbkDgVegasTljReportAPIResponseModel struct {
 	Model *InstanceDto `json:"model,omitempty" xml:"model,omitempty"`
 	// 调用接口是否成功
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkDgVegasTljReportAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.Model = nil
+	m.ResultSuccess = false
+}
+
+var poolTaobaoTbkDgVegasTljReportAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkDgVegasTljReportAPIResponse)
+	},
+}
+
+// GetTaobaoTbkDgVegasTljReportAPIResponse 从 sync.Pool 获取 TaobaoTbkDgVegasTljReportAPIResponse
+func GetTaobaoTbkDgVegasTljReportAPIResponse() *TaobaoTbkDgVegasTljReportAPIResponse {
+	return poolTaobaoTbkDgVegasTljReportAPIResponse.Get().(*TaobaoTbkDgVegasTljReportAPIResponse)
+}
+
+// ReleaseTaobaoTbkDgVegasTljReportAPIResponse 将 TaobaoTbkDgVegasTljReportAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkDgVegasTljReportAPIResponse(v *TaobaoTbkDgVegasTljReportAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkDgVegasTljReportAPIResponse.Put(v)
 }

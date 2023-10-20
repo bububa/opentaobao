@@ -2,6 +2,7 @@ package wms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type TaobaoWlbWmsInventoryQueryAPIRequest struct {
 // NewTaobaoWlbWmsInventoryQueryRequest 初始化TaobaoWlbWmsInventoryQueryAPIRequest对象
 func NewTaobaoWlbWmsInventoryQueryRequest() *TaobaoWlbWmsInventoryQueryAPIRequest {
 	return &TaobaoWlbWmsInventoryQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWmsInventoryQueryAPIRequest) Reset() {
+	r._channelCode = ""
+	r._dueDate = ""
+	r._produceDate = ""
+	r._batchCode = ""
+	r._storeCode = ""
+	r._itemId = ""
+	r._pageSize = 0
+	r._pageNo = 0
+	r._type = 0
+	r._inventoryType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetInventoryType(_inventoryType i
 // GetInventoryType InventoryType Getter
 func (r TaobaoWlbWmsInventoryQueryAPIRequest) GetInventoryType() int64 {
 	return r._inventoryType
+}
+
+var poolTaobaoWlbWmsInventoryQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWmsInventoryQueryRequest()
+	},
+}
+
+// GetTaobaoWlbWmsInventoryQueryRequest 从 sync.Pool 获取 TaobaoWlbWmsInventoryQueryAPIRequest
+func GetTaobaoWlbWmsInventoryQueryAPIRequest() *TaobaoWlbWmsInventoryQueryAPIRequest {
+	return poolTaobaoWlbWmsInventoryQueryAPIRequest.Get().(*TaobaoWlbWmsInventoryQueryAPIRequest)
+}
+
+// ReleaseTaobaoWlbWmsInventoryQueryAPIRequest 将 TaobaoWlbWmsInventoryQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWmsInventoryQueryAPIRequest(v *TaobaoWlbWmsInventoryQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWmsInventoryQueryAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alscmerchant
 
+import (
+	"sync"
+)
+
 // ExternalTicketUseRequest 结构体
 type ExternalTicketUseRequest struct {
 	// 需要发送的码列表，其中code表示串码码值，num表示码的可核销份数
@@ -18,4 +22,28 @@ type ExternalTicketUseRequest struct {
 	GmtBiz string `json:"gmt_biz,omitempty" xml:"gmt_biz,omitempty"`
 	// 本地侧凭证id，如果是三方码值核销传参ticketId,则该参数必须
 	TicketId string `json:"ticket_id,omitempty" xml:"ticket_id,omitempty"`
+}
+
+var poolExternalTicketUseRequest = sync.Pool{
+	New: func() any {
+		return new(ExternalTicketUseRequest)
+	},
+}
+
+// GetExternalTicketUseRequest() 从对象池中获取ExternalTicketUseRequest
+func GetExternalTicketUseRequest() *ExternalTicketUseRequest {
+	return poolExternalTicketUseRequest.Get().(*ExternalTicketUseRequest)
+}
+
+// ReleaseExternalTicketUseRequest 释放ExternalTicketUseRequest
+func ReleaseExternalTicketUseRequest(v *ExternalTicketUseRequest) {
+	v.TicketInfos = v.TicketInfos[:0]
+	v.Quantity = ""
+	v.TicketRequestId = ""
+	v.ShopId = ""
+	v.ShopType = ""
+	v.TicketCode = ""
+	v.GmtBiz = ""
+	v.TicketId = ""
+	poolExternalTicketUseRequest.Put(v)
 }

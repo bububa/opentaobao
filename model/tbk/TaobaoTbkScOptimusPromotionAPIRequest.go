@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoTbkScOptimusPromotionAPIRequest struct {
 // NewTaobaoTbkScOptimusPromotionRequest 初始化TaobaoTbkScOptimusPromotionAPIRequest对象
 func NewTaobaoTbkScOptimusPromotionRequest() *TaobaoTbkScOptimusPromotionAPIRequest {
 	return &TaobaoTbkScOptimusPromotionAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkScOptimusPromotionAPIRequest) Reset() {
+	r._pageSize = 0
+	r._pageNum = 0
+	r._adzoneId = 0
+	r._promotionId = 0
+	r._siteId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoTbkScOptimusPromotionAPIRequest) SetSiteId(_siteId int64) error {
 // GetSiteId SiteId Getter
 func (r TaobaoTbkScOptimusPromotionAPIRequest) GetSiteId() int64 {
 	return r._siteId
+}
+
+var poolTaobaoTbkScOptimusPromotionAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkScOptimusPromotionRequest()
+	},
+}
+
+// GetTaobaoTbkScOptimusPromotionRequest 从 sync.Pool 获取 TaobaoTbkScOptimusPromotionAPIRequest
+func GetTaobaoTbkScOptimusPromotionAPIRequest() *TaobaoTbkScOptimusPromotionAPIRequest {
+	return poolTaobaoTbkScOptimusPromotionAPIRequest.Get().(*TaobaoTbkScOptimusPromotionAPIRequest)
+}
+
+// ReleaseTaobaoTbkScOptimusPromotionAPIRequest 将 TaobaoTbkScOptimusPromotionAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkScOptimusPromotionAPIRequest(v *TaobaoTbkScOptimusPromotionAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkScOptimusPromotionAPIRequest.Put(v)
 }

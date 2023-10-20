@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleTenderBtobItemDeleteAPIRequest struct {
 // NewAlibabaIdleTenderBtobItemDeleteRequest 初始化AlibabaIdleTenderBtobItemDeleteAPIRequest对象
 func NewAlibabaIdleTenderBtobItemDeleteRequest() *AlibabaIdleTenderBtobItemDeleteAPIRequest {
 	return &AlibabaIdleTenderBtobItemDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleTenderBtobItemDeleteAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleTenderBtobItemDeleteAPIRequest) SetParam0(_param0 *TenderIte
 // GetParam0 Param0 Getter
 func (r AlibabaIdleTenderBtobItemDeleteAPIRequest) GetParam0() *TenderItemDeleteCmd {
 	return r._param0
+}
+
+var poolAlibabaIdleTenderBtobItemDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleTenderBtobItemDeleteRequest()
+	},
+}
+
+// GetAlibabaIdleTenderBtobItemDeleteRequest 从 sync.Pool 获取 AlibabaIdleTenderBtobItemDeleteAPIRequest
+func GetAlibabaIdleTenderBtobItemDeleteAPIRequest() *AlibabaIdleTenderBtobItemDeleteAPIRequest {
+	return poolAlibabaIdleTenderBtobItemDeleteAPIRequest.Get().(*AlibabaIdleTenderBtobItemDeleteAPIRequest)
+}
+
+// ReleaseAlibabaIdleTenderBtobItemDeleteAPIRequest 将 AlibabaIdleTenderBtobItemDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleTenderBtobItemDeleteAPIRequest(v *AlibabaIdleTenderBtobItemDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleTenderBtobItemDeleteAPIRequest.Put(v)
 }

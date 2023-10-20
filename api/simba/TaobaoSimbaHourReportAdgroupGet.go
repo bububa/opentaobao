@@ -9,11 +9,6 @@ import (
 // taobao.simba.hour.report.adgroup.get
 //
 // 推广单元小时级别实时报表查询
-func TaobaoSimbaHourReportAdgroupGet(clt *core.SDKClient, req *simba.TaobaoSimbaHourReportAdgroupGetAPIRequest, session string) (*simba.TaobaoSimbaHourReportAdgroupGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaHourReportAdgroupGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaHourReportAdgroupGet(clt *core.SDKClient, req *simba.TaobaoSimbaHourReportAdgroupGetAPIRequest, resp *simba.TaobaoSimbaHourReportAdgroupGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

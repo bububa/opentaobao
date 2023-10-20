@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAelophyOrderLogisticsTraceCallbackAPIRequest struct {
 // NewAlibabaAelophyOrderLogisticsTraceCallbackRequest 初始化AlibabaAelophyOrderLogisticsTraceCallbackAPIRequest对象
 func NewAlibabaAelophyOrderLogisticsTraceCallbackRequest() *AlibabaAelophyOrderLogisticsTraceCallbackAPIRequest {
 	return &AlibabaAelophyOrderLogisticsTraceCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAelophyOrderLogisticsTraceCallbackAPIRequest) Reset() {
+	r._logisticsTraceCallbackRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAelophyOrderLogisticsTraceCallbackAPIRequest) SetLogisticsTraceC
 // GetLogisticsTraceCallbackRequest LogisticsTraceCallbackRequest Getter
 func (r AlibabaAelophyOrderLogisticsTraceCallbackAPIRequest) GetLogisticsTraceCallbackRequest() *LogisticsTraceCallbackRequest {
 	return r._logisticsTraceCallbackRequest
+}
+
+var poolAlibabaAelophyOrderLogisticsTraceCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAelophyOrderLogisticsTraceCallbackRequest()
+	},
+}
+
+// GetAlibabaAelophyOrderLogisticsTraceCallbackRequest 从 sync.Pool 获取 AlibabaAelophyOrderLogisticsTraceCallbackAPIRequest
+func GetAlibabaAelophyOrderLogisticsTraceCallbackAPIRequest() *AlibabaAelophyOrderLogisticsTraceCallbackAPIRequest {
+	return poolAlibabaAelophyOrderLogisticsTraceCallbackAPIRequest.Get().(*AlibabaAelophyOrderLogisticsTraceCallbackAPIRequest)
+}
+
+// ReleaseAlibabaAelophyOrderLogisticsTraceCallbackAPIRequest 将 AlibabaAelophyOrderLogisticsTraceCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAelophyOrderLogisticsTraceCallbackAPIRequest(v *AlibabaAelophyOrderLogisticsTraceCallbackAPIRequest) {
+	v.Reset()
+	poolAlibabaAelophyOrderLogisticsTraceCallbackAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package openmall
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -32,8 +33,20 @@ type TaobaoOpenmallRefundCreateAPIRequest struct {
 // NewTaobaoOpenmallRefundCreateRequest 初始化TaobaoOpenmallRefundCreateAPIRequest对象
 func NewTaobaoOpenmallRefundCreateRequest() *TaobaoOpenmallRefundCreateAPIRequest {
 	return &TaobaoOpenmallRefundCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenmallRefundCreateAPIRequest) Reset() {
+	r._distributor = ""
+	r._goodsStatus = ""
+	r._refundDesc = ""
+	r._refundReason = ""
+	r._refundType = ""
+	r._refundFee = 0
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -142,4 +155,21 @@ func (r *TaobaoOpenmallRefundCreateAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoOpenmallRefundCreateAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoOpenmallRefundCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenmallRefundCreateRequest()
+	},
+}
+
+// GetTaobaoOpenmallRefundCreateRequest 从 sync.Pool 获取 TaobaoOpenmallRefundCreateAPIRequest
+func GetTaobaoOpenmallRefundCreateAPIRequest() *TaobaoOpenmallRefundCreateAPIRequest {
+	return poolTaobaoOpenmallRefundCreateAPIRequest.Get().(*TaobaoOpenmallRefundCreateAPIRequest)
+}
+
+// ReleaseTaobaoOpenmallRefundCreateAPIRequest 将 TaobaoOpenmallRefundCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenmallRefundCreateAPIRequest(v *TaobaoOpenmallRefundCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenmallRefundCreateAPIRequest.Put(v)
 }

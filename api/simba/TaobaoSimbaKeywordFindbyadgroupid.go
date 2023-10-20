@@ -9,11 +9,6 @@ import (
 // taobao.simba.keyword.findbyadgroupid
 //
 // 根据一个关键词Id列表取得一组关键词
-func TaobaoSimbaKeywordFindbyadgroupid(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordFindbyadgroupidAPIRequest, session string) (*simba.TaobaoSimbaKeywordFindbyadgroupidAPIResponse, error) {
-	var resp simba.TaobaoSimbaKeywordFindbyadgroupidAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaKeywordFindbyadgroupid(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordFindbyadgroupidAPIRequest, resp *simba.TaobaoSimbaKeywordFindbyadgroupidAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

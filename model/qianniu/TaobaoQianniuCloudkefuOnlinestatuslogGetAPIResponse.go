@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -14,6 +15,12 @@ import (
 type TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponseModel).Reset()
 }
 
 // TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponseModel is 查询客服在线状态 成功返回结果
@@ -33,4 +40,32 @@ type TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponseModel struct {
 	Solution string `json:"solution,omitempty" xml:"solution,omitempty"`
 	// version
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RecordList = m.RecordList[:0]
+	m.Cause = ""
+	m.ErrorMap = ""
+	m.Attachment = ""
+	m.Solution = ""
+	m.Version = 0
+}
+
+var poolTaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse)
+	},
+}
+
+// GetTaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse 从 sync.Pool 获取 TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse
+func GetTaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse() *TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse {
+	return poolTaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse.Get().(*TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse)
+}
+
+// ReleaseTaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse 将 TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse(v *TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse) {
+	v.Reset()
+	poolTaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse.Put(v)
 }

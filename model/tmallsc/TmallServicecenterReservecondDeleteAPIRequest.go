@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallServicecenterReservecondDeleteAPIRequest struct {
 // NewTmallServicecenterReservecondDeleteRequest 初始化TmallServicecenterReservecondDeleteAPIRequest对象
 func NewTmallServicecenterReservecondDeleteRequest() *TmallServicecenterReservecondDeleteAPIRequest {
 	return &TmallServicecenterReservecondDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterReservecondDeleteAPIRequest) Reset() {
+	r._reserveOpenConditionDelDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallServicecenterReservecondDeleteAPIRequest) SetReserveOpenConditionD
 // GetReserveOpenConditionDelDto ReserveOpenConditionDelDto Getter
 func (r TmallServicecenterReservecondDeleteAPIRequest) GetReserveOpenConditionDelDto() *ReserveOpenConditionDelDto {
 	return r._reserveOpenConditionDelDto
+}
+
+var poolTmallServicecenterReservecondDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterReservecondDeleteRequest()
+	},
+}
+
+// GetTmallServicecenterReservecondDeleteRequest 从 sync.Pool 获取 TmallServicecenterReservecondDeleteAPIRequest
+func GetTmallServicecenterReservecondDeleteAPIRequest() *TmallServicecenterReservecondDeleteAPIRequest {
+	return poolTmallServicecenterReservecondDeleteAPIRequest.Get().(*TmallServicecenterReservecondDeleteAPIRequest)
+}
+
+// ReleaseTmallServicecenterReservecondDeleteAPIRequest 将 TmallServicecenterReservecondDeleteAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterReservecondDeleteAPIRequest(v *TmallServicecenterReservecondDeleteAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterReservecondDeleteAPIRequest.Put(v)
 }

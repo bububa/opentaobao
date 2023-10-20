@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.kyt.wes.querycodeactive
 //
 // 查询码是否激活
-func AlibabaAlihealthDrugKytWesQuerycodeactive(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytWesQuerycodeactiveAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytWesQuerycodeactiveAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytWesQuerycodeactiveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugKytWesQuerycodeactive(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytWesQuerycodeactiveAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytWesQuerycodeactiveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

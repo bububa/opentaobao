@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // SyncTradePosOpenDto 结构体
 type SyncTradePosOpenDto struct {
 	// 经营主体id
@@ -30,4 +34,34 @@ type SyncTradePosOpenDto struct {
 	BusinessLicenseUrl string `json:"business_license_url,omitempty" xml:"business_license_url,omitempty"`
 	// 是否使用pos
 	UsePos int64 `json:"use_pos,omitempty" xml:"use_pos,omitempty"`
+}
+
+var poolSyncTradePosOpenDto = sync.Pool{
+	New: func() any {
+		return new(SyncTradePosOpenDto)
+	},
+}
+
+// GetSyncTradePosOpenDto() 从对象池中获取SyncTradePosOpenDto
+func GetSyncTradePosOpenDto() *SyncTradePosOpenDto {
+	return poolSyncTradePosOpenDto.Get().(*SyncTradePosOpenDto)
+}
+
+// ReleaseSyncTradePosOpenDto 释放SyncTradePosOpenDto
+func ReleaseSyncTradePosOpenDto(v *SyncTradePosOpenDto) {
+	v.MerchantOpenId = ""
+	v.LegalNationality = ""
+	v.LegalPhone = ""
+	v.LegalAddress = ""
+	v.LegalSex = ""
+	v.ProvinceCode = ""
+	v.CityCode = ""
+	v.DistrictCode = ""
+	v.LegalCertBackUrl = ""
+	v.LegalCertFrontUrl = ""
+	v.LegalIdExpire = ""
+	v.CompanyAddress = ""
+	v.BusinessLicenseUrl = ""
+	v.UsePos = 0
+	poolSyncTradePosOpenDto.Put(v)
 }

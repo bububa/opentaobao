@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // AlibabaScbpAdCampaignFindForbiddenKeywordResultDto 结构体
 type AlibabaScbpAdCampaignFindForbiddenKeywordResultDto struct {
 	// 服务出参
@@ -10,4 +14,24 @@ type AlibabaScbpAdCampaignFindForbiddenKeywordResultDto struct {
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 执行结果
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaScbpAdCampaignFindForbiddenKeywordResultDto = sync.Pool{
+	New: func() any {
+		return new(AlibabaScbpAdCampaignFindForbiddenKeywordResultDto)
+	},
+}
+
+// GetAlibabaScbpAdCampaignFindForbiddenKeywordResultDto() 从对象池中获取AlibabaScbpAdCampaignFindForbiddenKeywordResultDto
+func GetAlibabaScbpAdCampaignFindForbiddenKeywordResultDto() *AlibabaScbpAdCampaignFindForbiddenKeywordResultDto {
+	return poolAlibabaScbpAdCampaignFindForbiddenKeywordResultDto.Get().(*AlibabaScbpAdCampaignFindForbiddenKeywordResultDto)
+}
+
+// ReleaseAlibabaScbpAdCampaignFindForbiddenKeywordResultDto 释放AlibabaScbpAdCampaignFindForbiddenKeywordResultDto
+func ReleaseAlibabaScbpAdCampaignFindForbiddenKeywordResultDto(v *AlibabaScbpAdCampaignFindForbiddenKeywordResultDto) {
+	v.ResultList = v.ResultList[:0]
+	v.Msg = ""
+	v.Code = ""
+	v.Success = false
+	poolAlibabaScbpAdCampaignFindForbiddenKeywordResultDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.idle.parttime.synclog
 //
 // 提供给供应商查询的接口
-func AlibabaIdleParttimeSynclog(clt *core.SDKClient, req *idleparttime.AlibabaIdleParttimeSynclogAPIRequest, session string) (*idleparttime.AlibabaIdleParttimeSynclogAPIResponse, error) {
-	var resp idleparttime.AlibabaIdleParttimeSynclogAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleParttimeSynclog(clt *core.SDKClient, req *idleparttime.AlibabaIdleParttimeSynclogAPIRequest, resp *idleparttime.AlibabaIdleParttimeSynclogAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

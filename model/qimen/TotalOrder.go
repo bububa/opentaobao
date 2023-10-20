@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // TotalOrder 结构体
 type TotalOrder struct {
 	// 备注
@@ -16,4 +20,27 @@ type TotalOrder struct {
 	OwnerCode string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
 	// 单据行号
 	OrderLineNo string `json:"orderLineNo,omitempty" xml:"orderLineNo,omitempty"`
+}
+
+var poolTotalOrder = sync.Pool{
+	New: func() any {
+		return new(TotalOrder)
+	},
+}
+
+// GetTotalOrder() 从对象池中获取TotalOrder
+func GetTotalOrder() *TotalOrder {
+	return poolTotalOrder.Get().(*TotalOrder)
+}
+
+// ReleaseTotalOrder 释放TotalOrder
+func ReleaseTotalOrder(v *TotalOrder) {
+	v.Remark = ""
+	v.ActualQty = ""
+	v.ItemName = ""
+	v.ItemId = ""
+	v.ItemCode = ""
+	v.OwnerCode = ""
+	v.OrderLineNo = ""
+	poolTotalOrder.Put(v)
 }

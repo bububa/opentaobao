@@ -2,6 +2,7 @@ package ascpqcc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpQccSampleCancelItemRelationAPIRequest struct {
 // NewAlibabaAscpQccSampleCancelItemRelationRequest 初始化AlibabaAscpQccSampleCancelItemRelationAPIRequest对象
 func NewAlibabaAscpQccSampleCancelItemRelationRequest() *AlibabaAscpQccSampleCancelItemRelationAPIRequest {
 	return &AlibabaAscpQccSampleCancelItemRelationAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpQccSampleCancelItemRelationAPIRequest) Reset() {
+	r._cancelRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpQccSampleCancelItemRelationAPIRequest) SetCancelRequest(_can
 // GetCancelRequest CancelRequest Getter
 func (r AlibabaAscpQccSampleCancelItemRelationAPIRequest) GetCancelRequest() *CancelSampleRelationRequest {
 	return r._cancelRequest
+}
+
+var poolAlibabaAscpQccSampleCancelItemRelationAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpQccSampleCancelItemRelationRequest()
+	},
+}
+
+// GetAlibabaAscpQccSampleCancelItemRelationRequest 从 sync.Pool 获取 AlibabaAscpQccSampleCancelItemRelationAPIRequest
+func GetAlibabaAscpQccSampleCancelItemRelationAPIRequest() *AlibabaAscpQccSampleCancelItemRelationAPIRequest {
+	return poolAlibabaAscpQccSampleCancelItemRelationAPIRequest.Get().(*AlibabaAscpQccSampleCancelItemRelationAPIRequest)
+}
+
+// ReleaseAlibabaAscpQccSampleCancelItemRelationAPIRequest 将 AlibabaAscpQccSampleCancelItemRelationAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpQccSampleCancelItemRelationAPIRequest(v *AlibabaAscpQccSampleCancelItemRelationAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpQccSampleCancelItemRelationAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallDeviceCarturlGetAPIRequest struct {
 // NewTmallDeviceCarturlGetRequest 初始化TmallDeviceCarturlGetAPIRequest对象
 func NewTmallDeviceCarturlGetRequest() *TmallDeviceCarturlGetAPIRequest {
 	return &TmallDeviceCarturlGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallDeviceCarturlGetAPIRequest) Reset() {
+	r._itemIds = r._itemIds[:0]
+	r._deviceCode = ""
+	r._longterm = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallDeviceCarturlGetAPIRequest) SetLongterm(_longterm bool) error {
 // GetLongterm Longterm Getter
 func (r TmallDeviceCarturlGetAPIRequest) GetLongterm() bool {
 	return r._longterm
+}
+
+var poolTmallDeviceCarturlGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallDeviceCarturlGetRequest()
+	},
+}
+
+// GetTmallDeviceCarturlGetRequest 从 sync.Pool 获取 TmallDeviceCarturlGetAPIRequest
+func GetTmallDeviceCarturlGetAPIRequest() *TmallDeviceCarturlGetAPIRequest {
+	return poolTmallDeviceCarturlGetAPIRequest.Get().(*TmallDeviceCarturlGetAPIRequest)
+}
+
+// ReleaseTmallDeviceCarturlGetAPIRequest 将 TmallDeviceCarturlGetAPIRequest 放入 sync.Pool
+func ReleaseTmallDeviceCarturlGetAPIRequest(v *TmallDeviceCarturlGetAPIRequest) {
+	v.Reset()
+	poolTmallDeviceCarturlGetAPIRequest.Put(v)
 }

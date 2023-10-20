@@ -2,6 +2,7 @@ package mozi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMoziFusionReentryEmployeeAccountAPIRequest struct {
 // NewAlibabaMoziFusionReentryEmployeeAccountRequest 初始化AlibabaMoziFusionReentryEmployeeAccountAPIRequest对象
 func NewAlibabaMoziFusionReentryEmployeeAccountRequest() *AlibabaMoziFusionReentryEmployeeAccountAPIRequest {
 	return &AlibabaMoziFusionReentryEmployeeAccountAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMoziFusionReentryEmployeeAccountAPIRequest) Reset() {
+	r._reentryEmployeeAccount = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMoziFusionReentryEmployeeAccountAPIRequest) SetReentryEmployeeAc
 // GetReentryEmployeeAccount ReentryEmployeeAccount Getter
 func (r AlibabaMoziFusionReentryEmployeeAccountAPIRequest) GetReentryEmployeeAccount() *ReEntryTenantEmployeeAndAccountRequest {
 	return r._reentryEmployeeAccount
+}
+
+var poolAlibabaMoziFusionReentryEmployeeAccountAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMoziFusionReentryEmployeeAccountRequest()
+	},
+}
+
+// GetAlibabaMoziFusionReentryEmployeeAccountRequest 从 sync.Pool 获取 AlibabaMoziFusionReentryEmployeeAccountAPIRequest
+func GetAlibabaMoziFusionReentryEmployeeAccountAPIRequest() *AlibabaMoziFusionReentryEmployeeAccountAPIRequest {
+	return poolAlibabaMoziFusionReentryEmployeeAccountAPIRequest.Get().(*AlibabaMoziFusionReentryEmployeeAccountAPIRequest)
+}
+
+// ReleaseAlibabaMoziFusionReentryEmployeeAccountAPIRequest 将 AlibabaMoziFusionReentryEmployeeAccountAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMoziFusionReentryEmployeeAccountAPIRequest(v *AlibabaMoziFusionReentryEmployeeAccountAPIRequest) {
+	v.Reset()
+	poolAlibabaMoziFusionReentryEmployeeAccountAPIRequest.Put(v)
 }

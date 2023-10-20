@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // RoomTypeDailyPrice 结构体
 type RoomTypeDailyPrice struct {
 	// 库价具体信息
@@ -18,4 +22,28 @@ type RoomTypeDailyPrice struct {
 	Rid int64 `json:"rid,omitempty" xml:"rid,omitempty"`
 	// 标准房型srid
 	Srid int64 `json:"srid,omitempty" xml:"srid,omitempty"`
+}
+
+var poolRoomTypeDailyPrice = sync.Pool{
+	New: func() any {
+		return new(RoomTypeDailyPrice)
+	},
+}
+
+// GetRoomTypeDailyPrice() 从对象池中获取RoomTypeDailyPrice
+func GetRoomTypeDailyPrice() *RoomTypeDailyPrice {
+	return poolRoomTypeDailyPrice.Get().(*RoomTypeDailyPrice)
+}
+
+// ReleaseRoomTypeDailyPrice 释放RoomTypeDailyPrice
+func ReleaseRoomTypeDailyPrice(v *RoomTypeDailyPrice) {
+	v.Rates = v.Rates[:0]
+	v.BedTypeString = ""
+	v.H5BuyUrl = ""
+	v.Name = ""
+	v.PcBuyUrl = ""
+	v.WindowType = ""
+	v.Rid = 0
+	v.Srid = 0
+	poolRoomTypeDailyPrice.Put(v)
 }

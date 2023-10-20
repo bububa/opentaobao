@@ -9,11 +9,6 @@ import (
 // taobao.region.price.cancle
 //
 // 取消区域价格
-func TaobaoRegionPriceCancle(clt *core.SDKClient, req *fenxiao.TaobaoRegionPriceCancleAPIRequest, session string) (*fenxiao.TaobaoRegionPriceCancleAPIResponse, error) {
-	var resp fenxiao.TaobaoRegionPriceCancleAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoRegionPriceCancle(clt *core.SDKClient, req *fenxiao.TaobaoRegionPriceCancleAPIRequest, resp *fenxiao.TaobaoRegionPriceCancleAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

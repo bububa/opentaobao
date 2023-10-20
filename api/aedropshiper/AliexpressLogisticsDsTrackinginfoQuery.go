@@ -9,11 +9,6 @@ import (
 // aliexpress.logistics.ds.trackinginfo.query
 //
 // Dropshipper查询物流追踪信息
-func AliexpressLogisticsDsTrackinginfoQuery(clt *core.SDKClient, req *aedropshiper.AliexpressLogisticsDsTrackinginfoQueryAPIRequest, session string) (*aedropshiper.AliexpressLogisticsDsTrackinginfoQueryAPIResponse, error) {
-	var resp aedropshiper.AliexpressLogisticsDsTrackinginfoQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressLogisticsDsTrackinginfoQuery(clt *core.SDKClient, req *aedropshiper.AliexpressLogisticsDsTrackinginfoQueryAPIRequest, resp *aedropshiper.AliexpressLogisticsDsTrackinginfoQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

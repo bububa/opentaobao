@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaTianmaoLanpeiLogisticsMailnoAPIRequest struct {
 // NewAlibabaTianmaoLanpeiLogisticsMailnoRequest 初始化AlibabaTianmaoLanpeiLogisticsMailnoAPIRequest对象
 func NewAlibabaTianmaoLanpeiLogisticsMailnoRequest() *AlibabaTianmaoLanpeiLogisticsMailnoAPIRequest {
 	return &AlibabaTianmaoLanpeiLogisticsMailnoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTianmaoLanpeiLogisticsMailnoAPIRequest) Reset() {
+	r._orderCode = ""
+	r._packageQuantity = 0
+	r._ownerId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaTianmaoLanpeiLogisticsMailnoAPIRequest) SetOwnerId(_ownerId int6
 // GetOwnerId OwnerId Getter
 func (r AlibabaTianmaoLanpeiLogisticsMailnoAPIRequest) GetOwnerId() int64 {
 	return r._ownerId
+}
+
+var poolAlibabaTianmaoLanpeiLogisticsMailnoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTianmaoLanpeiLogisticsMailnoRequest()
+	},
+}
+
+// GetAlibabaTianmaoLanpeiLogisticsMailnoRequest 从 sync.Pool 获取 AlibabaTianmaoLanpeiLogisticsMailnoAPIRequest
+func GetAlibabaTianmaoLanpeiLogisticsMailnoAPIRequest() *AlibabaTianmaoLanpeiLogisticsMailnoAPIRequest {
+	return poolAlibabaTianmaoLanpeiLogisticsMailnoAPIRequest.Get().(*AlibabaTianmaoLanpeiLogisticsMailnoAPIRequest)
+}
+
+// ReleaseAlibabaTianmaoLanpeiLogisticsMailnoAPIRequest 将 AlibabaTianmaoLanpeiLogisticsMailnoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTianmaoLanpeiLogisticsMailnoAPIRequest(v *AlibabaTianmaoLanpeiLogisticsMailnoAPIRequest) {
+	v.Reset()
+	poolAlibabaTianmaoLanpeiLogisticsMailnoAPIRequest.Put(v)
 }

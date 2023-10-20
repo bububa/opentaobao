@@ -2,6 +2,7 @@ package alihealthlab
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type AlibabaAlihealthLabItemSyncAPIRequest struct {
 // NewAlibabaAlihealthLabItemSyncRequest 初始化AlibabaAlihealthLabItemSyncAPIRequest对象
 func NewAlibabaAlihealthLabItemSyncRequest() *AlibabaAlihealthLabItemSyncAPIRequest {
 	return &AlibabaAlihealthLabItemSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthLabItemSyncAPIRequest) Reset() {
+	r._subItems = r._subItems[:0]
+	r._relatedIsvStoreCodes = r._relatedIsvStoreCodes[:0]
+	r._isvItemCode = ""
+	r._name = ""
+	r._genderRestriction = ""
+	r._maritalStatusRestriction = ""
+	r._extraAttributes = ""
+	r._isvItemStatus = ""
+	r._intro = ""
+	r._costPrice = 0
+	r._reportGenerationTimeDuration = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *AlibabaAlihealthLabItemSyncAPIRequest) SetReportGenerationTimeDuration(
 // GetReportGenerationTimeDuration ReportGenerationTimeDuration Getter
 func (r AlibabaAlihealthLabItemSyncAPIRequest) GetReportGenerationTimeDuration() int64 {
 	return r._reportGenerationTimeDuration
+}
+
+var poolAlibabaAlihealthLabItemSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthLabItemSyncRequest()
+	},
+}
+
+// GetAlibabaAlihealthLabItemSyncRequest 从 sync.Pool 获取 AlibabaAlihealthLabItemSyncAPIRequest
+func GetAlibabaAlihealthLabItemSyncAPIRequest() *AlibabaAlihealthLabItemSyncAPIRequest {
+	return poolAlibabaAlihealthLabItemSyncAPIRequest.Get().(*AlibabaAlihealthLabItemSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthLabItemSyncAPIRequest 将 AlibabaAlihealthLabItemSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthLabItemSyncAPIRequest(v *AlibabaAlihealthLabItemSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthLabItemSyncAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoSimbaToolsItemsTopGetAPIRequest struct {
 // NewTaobaoSimbaToolsItemsTopGetRequest 初始化TaobaoSimbaToolsItemsTopGetAPIRequest对象
 func NewTaobaoSimbaToolsItemsTopGetRequest() *TaobaoSimbaToolsItemsTopGetAPIRequest {
 	return &TaobaoSimbaToolsItemsTopGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaToolsItemsTopGetAPIRequest) Reset() {
+	r._nick = ""
+	r._keyword = ""
+	r._ip = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoSimbaToolsItemsTopGetAPIRequest) SetIp(_ip string) error {
 // GetIp Ip Getter
 func (r TaobaoSimbaToolsItemsTopGetAPIRequest) GetIp() string {
 	return r._ip
+}
+
+var poolTaobaoSimbaToolsItemsTopGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaToolsItemsTopGetRequest()
+	},
+}
+
+// GetTaobaoSimbaToolsItemsTopGetRequest 从 sync.Pool 获取 TaobaoSimbaToolsItemsTopGetAPIRequest
+func GetTaobaoSimbaToolsItemsTopGetAPIRequest() *TaobaoSimbaToolsItemsTopGetAPIRequest {
+	return poolTaobaoSimbaToolsItemsTopGetAPIRequest.Get().(*TaobaoSimbaToolsItemsTopGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaToolsItemsTopGetAPIRequest 将 TaobaoSimbaToolsItemsTopGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaToolsItemsTopGetAPIRequest(v *TaobaoSimbaToolsItemsTopGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaToolsItemsTopGetAPIRequest.Put(v)
 }

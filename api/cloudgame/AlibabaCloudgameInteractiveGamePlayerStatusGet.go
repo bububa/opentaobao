@@ -9,11 +9,6 @@ import (
 // alibaba.cloudgame.interactive.game.player.status.get
 //
 // 获取用户状态
-func AlibabaCloudgameInteractiveGamePlayerStatusGet(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest, session string) (*cloudgame.AlibabaCloudgameInteractiveGamePlayerStatusGetAPIResponse, error) {
-	var resp cloudgame.AlibabaCloudgameInteractiveGamePlayerStatusGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCloudgameInteractiveGamePlayerStatusGet(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest, resp *cloudgame.AlibabaCloudgameInteractiveGamePlayerStatusGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

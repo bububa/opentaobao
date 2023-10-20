@@ -9,11 +9,6 @@ import (
 // taobao.ump.detail.delete
 //
 // 删除活动详情
-func TaobaoUmpDetailDelete(clt *core.SDKClient, req *promotion.TaobaoUmpDetailDeleteAPIRequest, session string) (*promotion.TaobaoUmpDetailDeleteAPIResponse, error) {
-	var resp promotion.TaobaoUmpDetailDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUmpDetailDelete(clt *core.SDKClient, req *promotion.TaobaoUmpDetailDeleteAPIRequest, resp *promotion.TaobaoUmpDetailDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

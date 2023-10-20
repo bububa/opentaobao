@@ -2,6 +2,7 @@ package legalsuit
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaLegalSuitCourttimePushAPIRequest struct {
 // NewAlibabaLegalSuitCourttimePushRequest 初始化AlibabaLegalSuitCourttimePushAPIRequest对象
 func NewAlibabaLegalSuitCourttimePushRequest() *AlibabaLegalSuitCourttimePushAPIRequest {
 	return &AlibabaLegalSuitCourttimePushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegalSuitCourttimePushAPIRequest) Reset() {
+	r._courtTime = ""
+	r._caseId = 0
+	r._entrustId = 0
+	r._fileModel = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaLegalSuitCourttimePushAPIRequest) SetFileModel(_fileModel *FileM
 // GetFileModel FileModel Getter
 func (r AlibabaLegalSuitCourttimePushAPIRequest) GetFileModel() *FileModel {
 	return r._fileModel
+}
+
+var poolAlibabaLegalSuitCourttimePushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegalSuitCourttimePushRequest()
+	},
+}
+
+// GetAlibabaLegalSuitCourttimePushRequest 从 sync.Pool 获取 AlibabaLegalSuitCourttimePushAPIRequest
+func GetAlibabaLegalSuitCourttimePushAPIRequest() *AlibabaLegalSuitCourttimePushAPIRequest {
+	return poolAlibabaLegalSuitCourttimePushAPIRequest.Get().(*AlibabaLegalSuitCourttimePushAPIRequest)
+}
+
+// ReleaseAlibabaLegalSuitCourttimePushAPIRequest 将 AlibabaLegalSuitCourttimePushAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegalSuitCourttimePushAPIRequest(v *AlibabaLegalSuitCourttimePushAPIRequest) {
+	v.Reset()
+	poolAlibabaLegalSuitCourttimePushAPIRequest.Put(v)
 }

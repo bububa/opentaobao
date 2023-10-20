@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // BeforeChangeSegments 结构体
 type BeforeChangeSegments struct {
 	// 舱等:  F:头等舱, C:商务舱, Y:经济舱, S:超级经济舱, P:超值经济舱, M:标准经济舱, W:超级经济舱
@@ -26,4 +30,32 @@ type BeforeChangeSegments struct {
 	OdIndex int64 `json:"od_index,omitempty" xml:"od_index,omitempty"`
 	// 是否需要修改的航段,1:是,0:否
 	IsModify int64 `json:"is_modify,omitempty" xml:"is_modify,omitempty"`
+}
+
+var poolBeforeChangeSegments = sync.Pool{
+	New: func() any {
+		return new(BeforeChangeSegments)
+	},
+}
+
+// GetBeforeChangeSegments() 从对象池中获取BeforeChangeSegments
+func GetBeforeChangeSegments() *BeforeChangeSegments {
+	return poolBeforeChangeSegments.Get().(*BeforeChangeSegments)
+}
+
+// ReleaseBeforeChangeSegments 释放BeforeChangeSegments
+func ReleaseBeforeChangeSegments(v *BeforeChangeSegments) {
+	v.CabinClass = ""
+	v.FlightNo = ""
+	v.DepTime = ""
+	v.ArrCity = ""
+	v.DepCity = ""
+	v.Cabin = ""
+	v.ArrAirport = ""
+	v.DepAirport = ""
+	v.ArrTime = ""
+	v.SegmentIndex = 0
+	v.OdIndex = 0
+	v.IsModify = 0
+	poolBeforeChangeSegments.Put(v)
 }

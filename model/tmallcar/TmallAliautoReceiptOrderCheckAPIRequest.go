@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallAliautoReceiptOrderCheckAPIRequest struct {
 // NewTmallAliautoReceiptOrderCheckRequest 初始化TmallAliautoReceiptOrderCheckAPIRequest对象
 func NewTmallAliautoReceiptOrderCheckRequest() *TmallAliautoReceiptOrderCheckAPIRequest {
 	return &TmallAliautoReceiptOrderCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallAliautoReceiptOrderCheckAPIRequest) Reset() {
+	r._outerShopId = ""
+	r._receiptId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallAliautoReceiptOrderCheckAPIRequest) SetReceiptId(_receiptId int64)
 // GetReceiptId ReceiptId Getter
 func (r TmallAliautoReceiptOrderCheckAPIRequest) GetReceiptId() int64 {
 	return r._receiptId
+}
+
+var poolTmallAliautoReceiptOrderCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallAliautoReceiptOrderCheckRequest()
+	},
+}
+
+// GetTmallAliautoReceiptOrderCheckRequest 从 sync.Pool 获取 TmallAliautoReceiptOrderCheckAPIRequest
+func GetTmallAliautoReceiptOrderCheckAPIRequest() *TmallAliautoReceiptOrderCheckAPIRequest {
+	return poolTmallAliautoReceiptOrderCheckAPIRequest.Get().(*TmallAliautoReceiptOrderCheckAPIRequest)
+}
+
+// ReleaseTmallAliautoReceiptOrderCheckAPIRequest 将 TmallAliautoReceiptOrderCheckAPIRequest 放入 sync.Pool
+func ReleaseTmallAliautoReceiptOrderCheckAPIRequest(v *TmallAliautoReceiptOrderCheckAPIRequest) {
+	v.Reset()
+	poolTmallAliautoReceiptOrderCheckAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // FillOrderParam 结构体
 type FillOrderParam struct {
 	// 离店时间
@@ -16,4 +20,27 @@ type FillOrderParam struct {
 	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
 	// 房型id
 	SrId int64 `json:"sr_id,omitempty" xml:"sr_id,omitempty"`
+}
+
+var poolFillOrderParam = sync.Pool{
+	New: func() any {
+		return new(FillOrderParam)
+	},
+}
+
+// GetFillOrderParam() 从对象池中获取FillOrderParam
+func GetFillOrderParam() *FillOrderParam {
+	return poolFillOrderParam.Get().(*FillOrderParam)
+}
+
+// ReleaseFillOrderParam 释放FillOrderParam
+func ReleaseFillOrderParam(v *FillOrderParam) {
+	v.CheckOutDate = ""
+	v.HotelId = ""
+	v.RpTitle = ""
+	v.CheckInDate = ""
+	v.VoucherId = ""
+	v.Shid = 0
+	v.SrId = 0
+	poolFillOrderParam.Put(v)
 }

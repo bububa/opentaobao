@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlisportsPassportAccountTokenvalidateAPIResponse struct {
 	AlibabaAlisportsPassportAccountTokenvalidateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlisportsPassportAccountTokenvalidateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlisportsPassportAccountTokenvalidateAPIResponseModel).Reset()
+}
+
 // AlibabaAlisportsPassportAccountTokenvalidateAPIResponseModel is 阿里体育会员系统帐号登录注册token验证接口 成功返回结果
 type AlibabaAlisportsPassportAccountTokenvalidateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alisports_passport_account_tokenvalidate_response"`
@@ -26,4 +33,29 @@ type AlibabaAlisportsPassportAccountTokenvalidateAPIResponseModel struct {
 	AlispData string `json:"alisp_data,omitempty" xml:"alisp_data,omitempty"`
 	// 返回状态码
 	AlispCode int64 `json:"alisp_code,omitempty" xml:"alisp_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlisportsPassportAccountTokenvalidateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.AlispMsg = ""
+	m.AlispData = ""
+	m.AlispCode = 0
+}
+
+var poolAlibabaAlisportsPassportAccountTokenvalidateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlisportsPassportAccountTokenvalidateAPIResponse)
+	},
+}
+
+// GetAlibabaAlisportsPassportAccountTokenvalidateAPIResponse 从 sync.Pool 获取 AlibabaAlisportsPassportAccountTokenvalidateAPIResponse
+func GetAlibabaAlisportsPassportAccountTokenvalidateAPIResponse() *AlibabaAlisportsPassportAccountTokenvalidateAPIResponse {
+	return poolAlibabaAlisportsPassportAccountTokenvalidateAPIResponse.Get().(*AlibabaAlisportsPassportAccountTokenvalidateAPIResponse)
+}
+
+// ReleaseAlibabaAlisportsPassportAccountTokenvalidateAPIResponse 将 AlibabaAlisportsPassportAccountTokenvalidateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlisportsPassportAccountTokenvalidateAPIResponse(v *AlibabaAlisportsPassportAccountTokenvalidateAPIResponse) {
+	v.Reset()
+	poolAlibabaAlisportsPassportAccountTokenvalidateAPIResponse.Put(v)
 }

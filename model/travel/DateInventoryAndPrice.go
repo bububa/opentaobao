@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // DateInventoryAndPrice 结构体
 type DateInventoryAndPrice struct {
 	// 销售日期
@@ -8,4 +12,23 @@ type DateInventoryAndPrice struct {
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 	// Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)，sku数量变化后item的总数量也会随着变化。取值范围:大于等于零的整数
 	Stock int64 `json:"stock,omitempty" xml:"stock,omitempty"`
+}
+
+var poolDateInventoryAndPrice = sync.Pool{
+	New: func() any {
+		return new(DateInventoryAndPrice)
+	},
+}
+
+// GetDateInventoryAndPrice() 从对象池中获取DateInventoryAndPrice
+func GetDateInventoryAndPrice() *DateInventoryAndPrice {
+	return poolDateInventoryAndPrice.Get().(*DateInventoryAndPrice)
+}
+
+// ReleaseDateInventoryAndPrice 释放DateInventoryAndPrice
+func ReleaseDateInventoryAndPrice(v *DateInventoryAndPrice) {
+	v.Date = ""
+	v.Price = 0
+	v.Stock = 0
+	poolDateInventoryAndPrice.Put(v)
 }

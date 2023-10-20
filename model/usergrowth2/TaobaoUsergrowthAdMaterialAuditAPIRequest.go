@@ -2,6 +2,7 @@ package usergrowth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -49,8 +50,29 @@ type TaobaoUsergrowthAdMaterialAuditAPIRequest struct {
 // NewTaobaoUsergrowthAdMaterialAuditRequest 初始化TaobaoUsergrowthAdMaterialAuditAPIRequest对象
 func NewTaobaoUsergrowthAdMaterialAuditRequest() *TaobaoUsergrowthAdMaterialAuditAPIRequest {
 	return &TaobaoUsergrowthAdMaterialAuditAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(16),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUsergrowthAdMaterialAuditAPIRequest) Reset() {
+	r._outerCreativeId = ""
+	r._title = ""
+	r._imgUrl = ""
+	r._h5Url = ""
+	r._videoUrl = ""
+	r._subTitle = ""
+	r._dpUrl = ""
+	r._specificFileName = ""
+	r._bizType = 0
+	r._scenarioType = 0
+	r._adType = 0
+	r._creativeType = 0
+	r._appId = 0
+	r._channelId = 0
+	r._taskId = 0
+	r._hotEvent = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -276,4 +298,21 @@ func (r *TaobaoUsergrowthAdMaterialAuditAPIRequest) SetHotEvent(_hotEvent int64)
 // GetHotEvent HotEvent Getter
 func (r TaobaoUsergrowthAdMaterialAuditAPIRequest) GetHotEvent() int64 {
 	return r._hotEvent
+}
+
+var poolTaobaoUsergrowthAdMaterialAuditAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUsergrowthAdMaterialAuditRequest()
+	},
+}
+
+// GetTaobaoUsergrowthAdMaterialAuditRequest 从 sync.Pool 获取 TaobaoUsergrowthAdMaterialAuditAPIRequest
+func GetTaobaoUsergrowthAdMaterialAuditAPIRequest() *TaobaoUsergrowthAdMaterialAuditAPIRequest {
+	return poolTaobaoUsergrowthAdMaterialAuditAPIRequest.Get().(*TaobaoUsergrowthAdMaterialAuditAPIRequest)
+}
+
+// ReleaseTaobaoUsergrowthAdMaterialAuditAPIRequest 将 TaobaoUsergrowthAdMaterialAuditAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUsergrowthAdMaterialAuditAPIRequest(v *TaobaoUsergrowthAdMaterialAuditAPIRequest) {
+	v.Reset()
+	poolTaobaoUsergrowthAdMaterialAuditAPIRequest.Put(v)
 }

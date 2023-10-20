@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OctopusOpenResult 结构体
 type OctopusOpenResult struct {
 	// 部分失败的商品编码列表
@@ -12,4 +16,25 @@ type OctopusOpenResult struct {
 	Data int64 `json:"data,omitempty" xml:"data,omitempty"`
 	// 操作是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolOctopusOpenResult = sync.Pool{
+	New: func() any {
+		return new(OctopusOpenResult)
+	},
+}
+
+// GetOctopusOpenResult() 从对象池中获取OctopusOpenResult
+func GetOctopusOpenResult() *OctopusOpenResult {
+	return poolOctopusOpenResult.Get().(*OctopusOpenResult)
+}
+
+// ReleaseOctopusOpenResult 释放OctopusOpenResult
+func ReleaseOctopusOpenResult(v *OctopusOpenResult) {
+	v.FailedSkuCodes = v.FailedSkuCodes[:0]
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.Data = 0
+	v.Success = false
+	poolOctopusOpenResult.Put(v)
 }

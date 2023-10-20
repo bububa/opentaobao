@@ -2,6 +2,7 @@ package sungari
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoSungariDisposeQueryAPIRequest struct {
 // NewTaobaoSungariDisposeQueryRequest 初始化TaobaoSungariDisposeQueryAPIRequest对象
 func NewTaobaoSungariDisposeQueryRequest() *TaobaoSungariDisposeQueryAPIRequest {
 	return &TaobaoSungariDisposeQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSungariDisposeQueryAPIRequest) Reset() {
+	r._paramList = r._paramList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoSungariDisposeQueryAPIRequest) SetParamList(_paramList []string) 
 // GetParamList ParamList Getter
 func (r TaobaoSungariDisposeQueryAPIRequest) GetParamList() []string {
 	return r._paramList
+}
+
+var poolTaobaoSungariDisposeQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSungariDisposeQueryRequest()
+	},
+}
+
+// GetTaobaoSungariDisposeQueryRequest 从 sync.Pool 获取 TaobaoSungariDisposeQueryAPIRequest
+func GetTaobaoSungariDisposeQueryAPIRequest() *TaobaoSungariDisposeQueryAPIRequest {
+	return poolTaobaoSungariDisposeQueryAPIRequest.Get().(*TaobaoSungariDisposeQueryAPIRequest)
+}
+
+// ReleaseTaobaoSungariDisposeQueryAPIRequest 将 TaobaoSungariDisposeQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSungariDisposeQueryAPIRequest(v *TaobaoSungariDisposeQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoSungariDisposeQueryAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenApiUpdateApplyRq 结构体
 type OpenApiUpdateApplyRq struct {
 	// 外部申请单id
@@ -18,4 +22,28 @@ type OpenApiUpdateApplyRq struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 1、老版本2、isv对外版本
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolOpenApiUpdateApplyRq = sync.Pool{
+	New: func() any {
+		return new(OpenApiUpdateApplyRq)
+	},
+}
+
+// GetOpenApiUpdateApplyRq() 从对象池中获取OpenApiUpdateApplyRq
+func GetOpenApiUpdateApplyRq() *OpenApiUpdateApplyRq {
+	return poolOpenApiUpdateApplyRq.Get().(*OpenApiUpdateApplyRq)
+}
+
+// ReleaseOpenApiUpdateApplyRq 释放OpenApiUpdateApplyRq
+func ReleaseOpenApiUpdateApplyRq(v *OpenApiUpdateApplyRq) {
+	v.ThirdpartApplyId = ""
+	v.CorpId = ""
+	v.Note = ""
+	v.OperateTime = ""
+	v.UserId = ""
+	v.UserName = ""
+	v.Status = 0
+	v.Version = 0
+	poolOpenApiUpdateApplyRq.Put(v)
 }

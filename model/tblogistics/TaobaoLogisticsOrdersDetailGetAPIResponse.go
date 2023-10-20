@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoLogisticsOrdersDetailGetAPIResponse struct {
 	TaobaoLogisticsOrdersDetailGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoLogisticsOrdersDetailGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLogisticsOrdersDetailGetAPIResponseModel).Reset()
+}
+
 // TaobaoLogisticsOrdersDetailGetAPIResponseModel is 批量查询物流订单,返回详细信息 成功返回结果
 type TaobaoLogisticsOrdersDetailGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_orders_detail_get_response"`
@@ -24,4 +31,28 @@ type TaobaoLogisticsOrdersDetailGetAPIResponseModel struct {
 	Shippings []SingleResultDto `json:"shippings,omitempty" xml:"shippings>single_result_dto,omitempty"`
 	// 搜索到的物流订单列表总数
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsOrdersDetailGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Shippings = m.Shippings[:0]
+	m.TotalResults = 0
+}
+
+var poolTaobaoLogisticsOrdersDetailGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLogisticsOrdersDetailGetAPIResponse)
+	},
+}
+
+// GetTaobaoLogisticsOrdersDetailGetAPIResponse 从 sync.Pool 获取 TaobaoLogisticsOrdersDetailGetAPIResponse
+func GetTaobaoLogisticsOrdersDetailGetAPIResponse() *TaobaoLogisticsOrdersDetailGetAPIResponse {
+	return poolTaobaoLogisticsOrdersDetailGetAPIResponse.Get().(*TaobaoLogisticsOrdersDetailGetAPIResponse)
+}
+
+// ReleaseTaobaoLogisticsOrdersDetailGetAPIResponse 将 TaobaoLogisticsOrdersDetailGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLogisticsOrdersDetailGetAPIResponse(v *TaobaoLogisticsOrdersDetailGetAPIResponse) {
+	v.Reset()
+	poolTaobaoLogisticsOrdersDetailGetAPIResponse.Put(v)
 }

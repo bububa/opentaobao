@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest struct {
 // NewAlibabaScbpAdKeywordGetKeywordCountByQueryRequest 初始化AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest对象
 func NewAlibabaScbpAdKeywordGetKeywordCountByQueryRequest() *AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest {
 	return &AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest) Reset() {
+	r._topContext = nil
+	r._campaignKeywordQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest) SetCampaignKeywor
 // GetCampaignKeywordQuery CampaignKeywordQuery Getter
 func (r AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest) GetCampaignKeywordQuery() *CampaignKeywordQuery {
 	return r._campaignKeywordQuery
+}
+
+var poolAlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdKeywordGetKeywordCountByQueryRequest()
+	},
+}
+
+// GetAlibabaScbpAdKeywordGetKeywordCountByQueryRequest 从 sync.Pool 获取 AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest
+func GetAlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest() *AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest {
+	return poolAlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest.Get().(*AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest 将 AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest(v *AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest.Put(v)
 }

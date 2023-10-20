@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type TaobaoJstSmsMessageDirectBatchsendAPIRequest struct {
 // NewTaobaoJstSmsMessageDirectBatchsendRequest 初始化TaobaoJstSmsMessageDirectBatchsendAPIRequest对象
 func NewTaobaoJstSmsMessageDirectBatchsendRequest() *TaobaoJstSmsMessageDirectBatchsendAPIRequest {
 	return &TaobaoJstSmsMessageDirectBatchsendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJstSmsMessageDirectBatchsendAPIRequest) Reset() {
+	r._signName = ""
+	r._url = ""
+	r._smsTemplateCode = ""
+	r._recNum = ""
+	r._smsContent = ""
+	r._extendNum = ""
+	r._taskCode = ""
+	r._taskSign = ""
+	r._oaids = ""
+	r._orderIds = ""
+	r._extraData = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *TaobaoJstSmsMessageDirectBatchsendAPIRequest) SetExtraData(_extraData s
 // GetExtraData ExtraData Getter
 func (r TaobaoJstSmsMessageDirectBatchsendAPIRequest) GetExtraData() string {
 	return r._extraData
+}
+
+var poolTaobaoJstSmsMessageDirectBatchsendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJstSmsMessageDirectBatchsendRequest()
+	},
+}
+
+// GetTaobaoJstSmsMessageDirectBatchsendRequest 从 sync.Pool 获取 TaobaoJstSmsMessageDirectBatchsendAPIRequest
+func GetTaobaoJstSmsMessageDirectBatchsendAPIRequest() *TaobaoJstSmsMessageDirectBatchsendAPIRequest {
+	return poolTaobaoJstSmsMessageDirectBatchsendAPIRequest.Get().(*TaobaoJstSmsMessageDirectBatchsendAPIRequest)
+}
+
+// ReleaseTaobaoJstSmsMessageDirectBatchsendAPIRequest 将 TaobaoJstSmsMessageDirectBatchsendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJstSmsMessageDirectBatchsendAPIRequest(v *TaobaoJstSmsMessageDirectBatchsendAPIRequest) {
+	v.Reset()
+	poolTaobaoJstSmsMessageDirectBatchsendAPIRequest.Put(v)
 }

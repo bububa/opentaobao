@@ -9,11 +9,6 @@ import (
 // alibaba.damai.mev.open.changeticket
 //
 // 开放接口 换票
-func AlibabaDamaiMevOpenChangeticket(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenChangeticketAPIRequest, session string) (*damai.AlibabaDamaiMevOpenChangeticketAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenChangeticketAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMevOpenChangeticket(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenChangeticketAPIRequest, resp *damai.AlibabaDamaiMevOpenChangeticketAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

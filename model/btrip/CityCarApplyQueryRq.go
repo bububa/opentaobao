@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // CityCarApplyQueryRq 结构体
 type CityCarApplyQueryRq struct {
 	// 第三方企业ID
@@ -16,4 +20,27 @@ type CityCarApplyQueryRq struct {
 	PageNumber int64 `json:"page_number,omitempty" xml:"page_number,omitempty"`
 	// 每页数据量，要求大于等于1，默认20
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolCityCarApplyQueryRq = sync.Pool{
+	New: func() any {
+		return new(CityCarApplyQueryRq)
+	},
+}
+
+// GetCityCarApplyQueryRq() 从对象池中获取CityCarApplyQueryRq
+func GetCityCarApplyQueryRq() *CityCarApplyQueryRq {
+	return poolCityCarApplyQueryRq.Get().(*CityCarApplyQueryRq)
+}
+
+// ReleaseCityCarApplyQueryRq 释放CityCarApplyQueryRq
+func ReleaseCityCarApplyQueryRq(v *CityCarApplyQueryRq) {
+	v.CorpId = ""
+	v.CreatedEndAt = ""
+	v.CreatedStartAt = ""
+	v.ThirdPartApplyId = ""
+	v.UserId = ""
+	v.PageNumber = 0
+	v.PageSize = 0
+	poolCityCarApplyQueryRq.Put(v)
 }

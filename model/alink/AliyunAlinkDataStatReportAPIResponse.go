@@ -2,6 +2,7 @@ package alink
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AliyunAlinkDataStatReportAPIResponse struct {
 	model.CommonResponse
 	AliyunAlinkDataStatReportAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AliyunAlinkDataStatReportAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliyunAlinkDataStatReportAPIResponseModel).Reset()
 }
 
 // AliyunAlinkDataStatReportAPIResponseModel is 外部离线统计数据上报 成功返回结果
@@ -28,4 +35,30 @@ type AliyunAlinkDataStatReportAPIResponseModel struct {
 	Module bool `json:"module,omitempty" xml:"module,omitempty"`
 	// 调用是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliyunAlinkDataStatReportAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.Status = 0
+	m.Module = false
+	m.IsSuccess = false
+}
+
+var poolAliyunAlinkDataStatReportAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliyunAlinkDataStatReportAPIResponse)
+	},
+}
+
+// GetAliyunAlinkDataStatReportAPIResponse 从 sync.Pool 获取 AliyunAlinkDataStatReportAPIResponse
+func GetAliyunAlinkDataStatReportAPIResponse() *AliyunAlinkDataStatReportAPIResponse {
+	return poolAliyunAlinkDataStatReportAPIResponse.Get().(*AliyunAlinkDataStatReportAPIResponse)
+}
+
+// ReleaseAliyunAlinkDataStatReportAPIResponse 将 AliyunAlinkDataStatReportAPIResponse 保存到 sync.Pool
+func ReleaseAliyunAlinkDataStatReportAPIResponse(v *AliyunAlinkDataStatReportAPIResponse) {
+	v.Reset()
+	poolAliyunAlinkDataStatReportAPIResponse.Put(v)
 }

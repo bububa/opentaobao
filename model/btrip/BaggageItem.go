@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BaggageItem 结构体
 type BaggageItem struct {
 	// 行李额子内容
@@ -14,4 +18,26 @@ type BaggageItem struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 提示
 	Tips *BaggageTip `json:"tips,omitempty" xml:"tips,omitempty"`
+}
+
+var poolBaggageItem = sync.Pool{
+	New: func() any {
+		return new(BaggageItem)
+	},
+}
+
+// GetBaggageItem() 从对象池中获取BaggageItem
+func GetBaggageItem() *BaggageItem {
+	return poolBaggageItem.Get().(*BaggageItem)
+}
+
+// ReleaseBaggageItem 释放BaggageItem
+func ReleaseBaggageItem(v *BaggageItem) {
+	v.BaggageSubItems = v.BaggageSubItems[:0]
+	v.TableHead = ""
+	v.Title = ""
+	v.Index = 0
+	v.Type = 0
+	v.Tips = nil
+	poolBaggageItem.Put(v)
 }

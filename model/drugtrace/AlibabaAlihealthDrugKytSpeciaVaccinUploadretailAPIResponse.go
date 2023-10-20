@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponseModel is 零售单据上传接口（疫苗） 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponseModel struct {
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 操作是否成功(true 成功 ,false失败)
 	ResponseSuccess bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Model = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.ResponseSuccess = false
+}
+
+var poolAlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponse
+func GetAlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponse() *AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponse {
+	return poolAlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponse.Get().(*AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponse 将 AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponse(v *AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.aliqin.flow.wallet.consume
 //
 // 流量钱包流量扣减接口
-func AlibabaAliqinFlowWalletConsume(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowWalletConsumeAPIRequest, session string) (*alicom.AlibabaAliqinFlowWalletConsumeAPIResponse, error) {
-	var resp alicom.AlibabaAliqinFlowWalletConsumeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAliqinFlowWalletConsume(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowWalletConsumeAPIRequest, resp *alicom.AlibabaAliqinFlowWalletConsumeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

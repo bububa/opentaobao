@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoItemCarturlGetAPIRequest struct {
 // NewTaobaoItemCarturlGetRequest 初始化TaobaoItemCarturlGetAPIRequest对象
 func NewTaobaoItemCarturlGetRequest() *TaobaoItemCarturlGetAPIRequest {
 	return &TaobaoItemCarturlGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoItemCarturlGetAPIRequest) Reset() {
+	r._itemIds = r._itemIds[:0]
+	r._callbackUrl = ""
+	r._userNick = ""
+	r._extParams = ""
+	r._type = ""
+	r._userId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoItemCarturlGetAPIRequest) SetUserId(_userId int64) error {
 // GetUserId UserId Getter
 func (r TaobaoItemCarturlGetAPIRequest) GetUserId() int64 {
 	return r._userId
+}
+
+var poolTaobaoItemCarturlGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoItemCarturlGetRequest()
+	},
+}
+
+// GetTaobaoItemCarturlGetRequest 从 sync.Pool 获取 TaobaoItemCarturlGetAPIRequest
+func GetTaobaoItemCarturlGetAPIRequest() *TaobaoItemCarturlGetAPIRequest {
+	return poolTaobaoItemCarturlGetAPIRequest.Get().(*TaobaoItemCarturlGetAPIRequest)
+}
+
+// ReleaseTaobaoItemCarturlGetAPIRequest 将 TaobaoItemCarturlGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoItemCarturlGetAPIRequest(v *TaobaoItemCarturlGetAPIRequest) {
+	v.Reset()
+	poolTaobaoItemCarturlGetAPIRequest.Put(v)
 }

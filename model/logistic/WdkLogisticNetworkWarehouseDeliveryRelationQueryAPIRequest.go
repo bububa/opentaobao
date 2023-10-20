@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest struct {
 // NewWdkLogisticNetworkWarehouseDeliveryRelationQueryRequest 初始化WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest对象
 func NewWdkLogisticNetworkWarehouseDeliveryRelationQueryRequest() *WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest {
 	return &WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest) Reset() {
+	r._paramWarehouseDeliveryRelationPageQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest) SetParamWar
 // GetParamWarehouseDeliveryRelationPageQueryRequest ParamWarehouseDeliveryRelationPageQueryRequest Getter
 func (r WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest) GetParamWarehouseDeliveryRelationPageQueryRequest() *WarehouseDeliveryRelationPageQueryRequest {
 	return r._paramWarehouseDeliveryRelationPageQueryRequest
+}
+
+var poolWdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewWdkLogisticNetworkWarehouseDeliveryRelationQueryRequest()
+	},
+}
+
+// GetWdkLogisticNetworkWarehouseDeliveryRelationQueryRequest 从 sync.Pool 获取 WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest
+func GetWdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest() *WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest {
+	return poolWdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest.Get().(*WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest)
+}
+
+// ReleaseWdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest 将 WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest 放入 sync.Pool
+func ReleaseWdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest(v *WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest) {
+	v.Reset()
+	poolWdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest.Put(v)
 }

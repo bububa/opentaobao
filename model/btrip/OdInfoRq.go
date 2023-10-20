@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OdInfoRq 结构体
 type OdInfoRq struct {
 	// 到达机场三字码
@@ -16,4 +20,27 @@ type OdInfoRq struct {
 	EarliestDepTime string `json:"earliest_dep_time,omitempty" xml:"earliest_dep_time,omitempty"`
 	// 最晚起飞时间
 	LatestDepTime string `json:"latest_dep_time,omitempty" xml:"latest_dep_time,omitempty"`
+}
+
+var poolOdInfoRq = sync.Pool{
+	New: func() any {
+		return new(OdInfoRq)
+	},
+}
+
+// GetOdInfoRq() 从对象池中获取OdInfoRq
+func GetOdInfoRq() *OdInfoRq {
+	return poolOdInfoRq.Get().(*OdInfoRq)
+}
+
+// ReleaseOdInfoRq 释放OdInfoRq
+func ReleaseOdInfoRq(v *OdInfoRq) {
+	v.ArrAirportCode = v.ArrAirportCode[:0]
+	v.DepAirportCode = v.DepAirportCode[:0]
+	v.ArrCityCode = ""
+	v.DepCityCode = ""
+	v.DepDate = ""
+	v.EarliestDepTime = ""
+	v.LatestDepTime = ""
+	poolOdInfoRq.Put(v)
 }

@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest struct {
 // NewAlitripMerchantGalaxyDerbyMemberVoucherQueryAmountRequest 初始化AlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest对象
 func NewAlitripMerchantGalaxyDerbyMemberVoucherQueryAmountRequest() *AlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest {
 	return &AlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest) SetToken(
 // GetToken Token Getter
 func (r AlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest) GetToken() string {
 	return r._token
+}
+
+var poolAlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyDerbyMemberVoucherQueryAmountRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyDerbyMemberVoucherQueryAmountRequest 从 sync.Pool 获取 AlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest
+func GetAlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest() *AlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest {
+	return poolAlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest.Get().(*AlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest 将 AlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest(v *AlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyDerbyMemberVoucherQueryAmountAPIRequest.Put(v)
 }

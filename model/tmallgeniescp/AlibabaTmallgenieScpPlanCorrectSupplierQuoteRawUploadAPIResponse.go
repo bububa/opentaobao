@@ -2,6 +2,7 @@ package tmallgeniescp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponseModel).Reset()
 }
 
 // AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponseModel is 同步供应商校准后的配额-二级物料 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponseModel struc
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 返回码
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.DataList = m.DataList[:0]
+	m.ResultMsg = ""
+	m.TraceId = ""
+	m.ResultCode = ""
+}
+
+var poolAlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponse)
+	},
+}
+
+// GetAlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponse 从 sync.Pool 获取 AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponse
+func GetAlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponse() *AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponse {
+	return poolAlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponse.Get().(*AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponse)
+}
+
+// ReleaseAlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponse 将 AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponse(v *AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponse) {
+	v.Reset()
+	poolAlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIResponse.Put(v)
 }

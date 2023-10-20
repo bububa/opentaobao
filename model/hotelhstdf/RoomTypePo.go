@@ -1,5 +1,9 @@
 package hotelhstdf
 
+import (
+	"sync"
+)
+
 // RoomTypePo 结构体
 type RoomTypePo struct {
 	// 外部系统id
@@ -16,4 +20,27 @@ type RoomTypePo struct {
 	Rid int64 `json:"rid,omitempty" xml:"rid,omitempty"`
 	// 窗型
 	WindowType int64 `json:"window_type,omitempty" xml:"window_type,omitempty"`
+}
+
+var poolRoomTypePo = sync.Pool{
+	New: func() any {
+		return new(RoomTypePo)
+	},
+}
+
+// GetRoomTypePo() 从对象池中获取RoomTypePo
+func GetRoomTypePo() *RoomTypePo {
+	return poolRoomTypePo.Get().(*RoomTypePo)
+}
+
+// ReleaseRoomTypePo 释放RoomTypePo
+func ReleaseRoomTypePo(v *RoomTypePo) {
+	v.OuterId = ""
+	v.Area = ""
+	v.BedType = ""
+	v.NameE = ""
+	v.Name = ""
+	v.Rid = 0
+	v.WindowType = 0
+	poolRoomTypePo.Put(v)
 }

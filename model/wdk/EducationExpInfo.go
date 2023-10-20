@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // EducationExpInfo 结构体
 type EducationExpInfo struct {
 	// 学历
@@ -14,4 +18,26 @@ type EducationExpInfo struct {
 	School string `json:"school,omitempty" xml:"school,omitempty"`
 	// 学制年数
 	SchoolingYears string `json:"schooling_years,omitempty" xml:"schooling_years,omitempty"`
+}
+
+var poolEducationExpInfo = sync.Pool{
+	New: func() any {
+		return new(EducationExpInfo)
+	},
+}
+
+// GetEducationExpInfo() 从对象池中获取EducationExpInfo
+func GetEducationExpInfo() *EducationExpInfo {
+	return poolEducationExpInfo.Get().(*EducationExpInfo)
+}
+
+// ReleaseEducationExpInfo 释放EducationExpInfo
+func ReleaseEducationExpInfo(v *EducationExpInfo) {
+	v.Education = ""
+	v.GmtEnd = ""
+	v.GmtStart = ""
+	v.Major = ""
+	v.School = ""
+	v.SchoolingYears = ""
+	poolEducationExpInfo.Put(v)
 }

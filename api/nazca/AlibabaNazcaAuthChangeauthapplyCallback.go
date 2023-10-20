@@ -9,11 +9,6 @@ import (
 // alibaba.nazca.auth.changeauthapply.callback
 //
 // 变更认证回调
-func AlibabaNazcaAuthChangeauthapplyCallback(clt *core.SDKClient, req *nazca.AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest, session string) (*nazca.AlibabaNazcaAuthChangeauthapplyCallbackAPIResponse, error) {
-	var resp nazca.AlibabaNazcaAuthChangeauthapplyCallbackAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaNazcaAuthChangeauthapplyCallback(clt *core.SDKClient, req *nazca.AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest, resp *nazca.AlibabaNazcaAuthChangeauthapplyCallbackAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

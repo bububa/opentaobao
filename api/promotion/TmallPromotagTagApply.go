@@ -9,11 +9,6 @@ import (
 // tmall.promotag.tag.apply
 //
 // 创建优惠标签
-func TmallPromotagTagApply(clt *core.SDKClient, req *promotion.TmallPromotagTagApplyAPIRequest, session string) (*promotion.TmallPromotagTagApplyAPIResponse, error) {
-	var resp promotion.TmallPromotagTagApplyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallPromotagTagApply(clt *core.SDKClient, req *promotion.TmallPromotagTagApplyAPIRequest, resp *promotion.TmallPromotagTagApplyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

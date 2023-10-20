@@ -2,6 +2,7 @@ package mos
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaMosBrandCoproductGroupUserQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosBrandCoproductGroupUserQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaMosBrandCoproductGroupUserQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaMosBrandCoproductGroupUserQueryAPIResponseModel).Reset()
 }
 
 // AlibabaMosBrandCoproductGroupUserQueryAPIResponseModel is 按照条件查询分页数据 成功返回结果
@@ -36,4 +43,34 @@ type AlibabaMosBrandCoproductGroupUserQueryAPIResponseModel struct {
 	Issuccess bool `json:"issuccess,omitempty" xml:"issuccess,omitempty"`
 	// 是否同步
 	IsAsync bool `json:"is_async,omitempty" xml:"is_async,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaMosBrandCoproductGroupUserQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = m.Data[:0]
+	m.TraceId = ""
+	m.AsyncResult = ""
+	m.Errcode = ""
+	m.Attributes = ""
+	m.ErrMessage = ""
+	m.Issuccess = false
+	m.IsAsync = false
+}
+
+var poolAlibabaMosBrandCoproductGroupUserQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaMosBrandCoproductGroupUserQueryAPIResponse)
+	},
+}
+
+// GetAlibabaMosBrandCoproductGroupUserQueryAPIResponse 从 sync.Pool 获取 AlibabaMosBrandCoproductGroupUserQueryAPIResponse
+func GetAlibabaMosBrandCoproductGroupUserQueryAPIResponse() *AlibabaMosBrandCoproductGroupUserQueryAPIResponse {
+	return poolAlibabaMosBrandCoproductGroupUserQueryAPIResponse.Get().(*AlibabaMosBrandCoproductGroupUserQueryAPIResponse)
+}
+
+// ReleaseAlibabaMosBrandCoproductGroupUserQueryAPIResponse 将 AlibabaMosBrandCoproductGroupUserQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaMosBrandCoproductGroupUserQueryAPIResponse(v *AlibabaMosBrandCoproductGroupUserQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaMosBrandCoproductGroupUserQueryAPIResponse.Put(v)
 }

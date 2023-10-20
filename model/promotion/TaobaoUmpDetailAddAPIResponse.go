@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoUmpDetailAddAPIResponse struct {
 	TaobaoUmpDetailAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoUmpDetailAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoUmpDetailAddAPIResponseModel).Reset()
+}
+
 // TaobaoUmpDetailAddAPIResponseModel is 新增活动详情 成功返回结果
 type TaobaoUmpDetailAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"ump_detail_add_response"`
@@ -22,4 +29,27 @@ type TaobaoUmpDetailAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 活动详情的id
 	DetailId int64 `json:"detail_id,omitempty" xml:"detail_id,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoUmpDetailAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.DetailId = 0
+}
+
+var poolTaobaoUmpDetailAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoUmpDetailAddAPIResponse)
+	},
+}
+
+// GetTaobaoUmpDetailAddAPIResponse 从 sync.Pool 获取 TaobaoUmpDetailAddAPIResponse
+func GetTaobaoUmpDetailAddAPIResponse() *TaobaoUmpDetailAddAPIResponse {
+	return poolTaobaoUmpDetailAddAPIResponse.Get().(*TaobaoUmpDetailAddAPIResponse)
+}
+
+// ReleaseTaobaoUmpDetailAddAPIResponse 将 TaobaoUmpDetailAddAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoUmpDetailAddAPIResponse(v *TaobaoUmpDetailAddAPIResponse) {
+	v.Reset()
+	poolTaobaoUmpDetailAddAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package maitix
 
+import (
+	"sync"
+)
+
 // MoaOrderParam 结构体
 type MoaOrderParam struct {
 	// 座位参数，必填，一张票就要有一个这个对象,如果一个套票由两张票组成。这个也就是2个对象,票品id是套票的id.
@@ -50,4 +54,44 @@ type MoaOrderParam struct {
 	AddressInfo *MoaAddressInfo `json:"address_info,omitempty" xml:"address_info,omitempty"`
 	// 必填-是否系统自动选座，无座项目都是true.有座项目通过h5选座就填false.否则true
 	AutoSelectSeats bool `json:"auto_select_seats,omitempty" xml:"auto_select_seats,omitempty"`
+}
+
+var poolMoaOrderParam = sync.Pool{
+	New: func() any {
+		return new(MoaOrderParam)
+	},
+}
+
+// GetMoaOrderParam() 从对象池中获取MoaOrderParam
+func GetMoaOrderParam() *MoaOrderParam {
+	return poolMoaOrderParam.Get().(*MoaOrderParam)
+}
+
+// ReleaseMoaOrderParam 释放MoaOrderParam
+func ReleaseMoaOrderParam(v *MoaOrderParam) {
+	v.SeatProps = v.SeatProps[:0]
+	v.TicketItems = v.TicketItems[:0]
+	v.ThirdOrderNo = ""
+	v.DeliverAddress = ""
+	v.OperatorLoginId = ""
+	v.RealTicketBuyerName = ""
+	v.RealTicketBuyerIdCardNo = ""
+	v.RealTicketBuyerPhone = ""
+	v.RealTicketBuyerPhoneCountryCode = ""
+	v.Memo = ""
+	v.ProjectId = 0
+	v.PerformId = 0
+	v.TotalPrice = 0
+	v.Payment = 0
+	v.TicketMode = 0
+	v.BuyType = 0
+	v.DeliveryType = 0
+	v.PayType = 0
+	v.RealTicketBuyerIdCardType = 0
+	v.ContactInfo = nil
+	v.TimeoutMinutes = 0
+	v.FarePrice = 0
+	v.AddressInfo = nil
+	v.AutoSelectSeats = false
+	poolMoaOrderParam.Put(v)
 }

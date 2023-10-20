@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaEinvoiceDeviceOrderUpdateAPIRequest struct {
 // NewAlibabaEinvoiceDeviceOrderUpdateRequest 初始化AlibabaEinvoiceDeviceOrderUpdateAPIRequest对象
 func NewAlibabaEinvoiceDeviceOrderUpdateRequest() *AlibabaEinvoiceDeviceOrderUpdateAPIRequest {
 	return &AlibabaEinvoiceDeviceOrderUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) Reset() {
+	r._action = ""
+	r._deviceId = ""
+	r._extJson = ""
+	r._flowId = ""
+	r._payeeRegisterNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetPayeeRegisterNo(_payeeRe
 // GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
+}
+
+var poolAlibabaEinvoiceDeviceOrderUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceDeviceOrderUpdateRequest()
+	},
+}
+
+// GetAlibabaEinvoiceDeviceOrderUpdateRequest 从 sync.Pool 获取 AlibabaEinvoiceDeviceOrderUpdateAPIRequest
+func GetAlibabaEinvoiceDeviceOrderUpdateAPIRequest() *AlibabaEinvoiceDeviceOrderUpdateAPIRequest {
+	return poolAlibabaEinvoiceDeviceOrderUpdateAPIRequest.Get().(*AlibabaEinvoiceDeviceOrderUpdateAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceDeviceOrderUpdateAPIRequest 将 AlibabaEinvoiceDeviceOrderUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceDeviceOrderUpdateAPIRequest(v *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceDeviceOrderUpdateAPIRequest.Put(v)
 }

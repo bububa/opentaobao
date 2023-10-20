@@ -2,6 +2,7 @@ package tmallcarenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallCarcenterVehicleVersionInsertAPIRequest struct {
 // NewTmallCarcenterVehicleVersionInsertRequest 初始化TmallCarcenterVehicleVersionInsertAPIRequest对象
 func NewTmallCarcenterVehicleVersionInsertRequest() *TmallCarcenterVehicleVersionInsertAPIRequest {
 	return &TmallCarcenterVehicleVersionInsertAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarcenterVehicleVersionInsertAPIRequest) Reset() {
+	r._dto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallCarcenterVehicleVersionInsertAPIRequest) SetDto(_dto *VersionVehic
 // GetDto Dto Getter
 func (r TmallCarcenterVehicleVersionInsertAPIRequest) GetDto() *VersionVehicleInfoOriginalDto {
 	return r._dto
+}
+
+var poolTmallCarcenterVehicleVersionInsertAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarcenterVehicleVersionInsertRequest()
+	},
+}
+
+// GetTmallCarcenterVehicleVersionInsertRequest 从 sync.Pool 获取 TmallCarcenterVehicleVersionInsertAPIRequest
+func GetTmallCarcenterVehicleVersionInsertAPIRequest() *TmallCarcenterVehicleVersionInsertAPIRequest {
+	return poolTmallCarcenterVehicleVersionInsertAPIRequest.Get().(*TmallCarcenterVehicleVersionInsertAPIRequest)
+}
+
+// ReleaseTmallCarcenterVehicleVersionInsertAPIRequest 将 TmallCarcenterVehicleVersionInsertAPIRequest 放入 sync.Pool
+func ReleaseTmallCarcenterVehicleVersionInsertAPIRequest(v *TmallCarcenterVehicleVersionInsertAPIRequest) {
+	v.Reset()
+	poolTmallCarcenterVehicleVersionInsertAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest struct {
 // NewTaobaoAilabAicloudTopDeviceControlPlayurlRequest 初始化TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest对象
 func NewTaobaoAilabAicloudTopDeviceControlPlayurlRequest() *TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest {
 	return &TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) Reset() {
+	r._param1 = ""
+	r._param2 = ""
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) SetParam0(_param0 
 // GetParam0 Param0 Getter
 func (r TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) GetParam0() *OpenBaseInfo {
 	return r._param0
+}
+
+var poolTaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopDeviceControlPlayurlRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopDeviceControlPlayurlRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest
+func GetTaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest() *TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest {
+	return poolTaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest.Get().(*TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest 将 TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest(v *TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // ShotelPropertiesVo 结构体
 type ShotelPropertiesVo struct {
 	// 二级分类
@@ -18,4 +22,28 @@ type ShotelPropertiesVo struct {
 	Srid int64 `json:"srid,omitempty" xml:"srid,omitempty"`
 	// 一级分类，10-预订须知
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolShotelPropertiesVo = sync.Pool{
+	New: func() any {
+		return new(ShotelPropertiesVo)
+	},
+}
+
+// GetShotelPropertiesVo() 从对象池中获取ShotelPropertiesVo
+func GetShotelPropertiesVo() *ShotelPropertiesVo {
+	return poolShotelPropertiesVo.Get().(*ShotelPropertiesVo)
+}
+
+// ReleaseShotelPropertiesVo 释放ShotelPropertiesVo
+func ReleaseShotelPropertiesVo(v *ShotelPropertiesVo) {
+	v.SubType = ""
+	v.TypeId = ""
+	v.Value = ""
+	v.Id = 0
+	v.OrderNum = 0
+	v.Shid = 0
+	v.Srid = 0
+	v.Type = 0
+	poolShotelPropertiesVo.Put(v)
 }

@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type TaobaoTbkSpreadGetAPIResponse struct {
 	TaobaoTbkSpreadGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTbkSpreadGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkSpreadGetAPIResponseModel).Reset()
+}
+
 // TaobaoTbkSpreadGetAPIResponseModel is 淘宝客-公用-长链转短链 成功返回结果
 type TaobaoTbkSpreadGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_spread_get_response"`
@@ -25,4 +32,28 @@ type TaobaoTbkSpreadGetAPIResponseModel struct {
 	Results []TbkSpread `json:"results,omitempty" xml:"results>tbk_spread,omitempty"`
 	// totalResults
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkSpreadGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Results = m.Results[:0]
+	m.TotalResults = 0
+}
+
+var poolTaobaoTbkSpreadGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkSpreadGetAPIResponse)
+	},
+}
+
+// GetTaobaoTbkSpreadGetAPIResponse 从 sync.Pool 获取 TaobaoTbkSpreadGetAPIResponse
+func GetTaobaoTbkSpreadGetAPIResponse() *TaobaoTbkSpreadGetAPIResponse {
+	return poolTaobaoTbkSpreadGetAPIResponse.Get().(*TaobaoTbkSpreadGetAPIResponse)
+}
+
+// ReleaseTaobaoTbkSpreadGetAPIResponse 将 TaobaoTbkSpreadGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkSpreadGetAPIResponse(v *TaobaoTbkSpreadGetAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkSpreadGetAPIResponse.Put(v)
 }

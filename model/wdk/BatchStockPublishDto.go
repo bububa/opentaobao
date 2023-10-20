@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // BatchStockPublishDto 结构体
 type BatchStockPublishDto struct {
 	// 子参数列表
@@ -24,4 +28,31 @@ type BatchStockPublishDto struct {
 	ChannelSourceType int64 `json:"channel_source_type,omitempty" xml:"channel_source_type,omitempty"`
 	// 是否已扣除未批次数，用于全量发布
 	UnBatchedOrderStockSubtracted bool `json:"un_batched_order_stock_subtracted,omitempty" xml:"un_batched_order_stock_subtracted,omitempty"`
+}
+
+var poolBatchStockPublishDto = sync.Pool{
+	New: func() any {
+		return new(BatchStockPublishDto)
+	},
+}
+
+// GetBatchStockPublishDto() 从对象池中获取BatchStockPublishDto
+func GetBatchStockPublishDto() *BatchStockPublishDto {
+	return poolBatchStockPublishDto.Get().(*BatchStockPublishDto)
+}
+
+// ReleaseBatchStockPublishDto 释放BatchStockPublishDto
+func ReleaseBatchStockPublishDto(v *BatchStockPublishDto) {
+	v.StockPublishDtos = v.StockPublishDtos[:0]
+	v.BillNo = ""
+	v.PublishSource = ""
+	v.WarehouseCode = ""
+	v.ShopCode = ""
+	v.ChannelSourceId = ""
+	v.Operator = ""
+	v.UpdateType = 0
+	v.BillType = 0
+	v.ChannelSourceType = 0
+	v.UnBatchedOrderStockSubtracted = false
+	poolBatchStockPublishDto.Put(v)
 }

@@ -2,6 +2,7 @@ package tvpay
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTvpayPartnerOrderQueryAPIRequest struct {
 // NewTaobaoTvpayPartnerOrderQueryRequest 初始化TaobaoTvpayPartnerOrderQueryAPIRequest对象
 func NewTaobaoTvpayPartnerOrderQueryRequest() *TaobaoTvpayPartnerOrderQueryAPIRequest {
 	return &TaobaoTvpayPartnerOrderQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTvpayPartnerOrderQueryAPIRequest) Reset() {
+	r._orderNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTvpayPartnerOrderQueryAPIRequest) SetOrderNo(_orderNo string) err
 // GetOrderNo OrderNo Getter
 func (r TaobaoTvpayPartnerOrderQueryAPIRequest) GetOrderNo() string {
 	return r._orderNo
+}
+
+var poolTaobaoTvpayPartnerOrderQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTvpayPartnerOrderQueryRequest()
+	},
+}
+
+// GetTaobaoTvpayPartnerOrderQueryRequest 从 sync.Pool 获取 TaobaoTvpayPartnerOrderQueryAPIRequest
+func GetTaobaoTvpayPartnerOrderQueryAPIRequest() *TaobaoTvpayPartnerOrderQueryAPIRequest {
+	return poolTaobaoTvpayPartnerOrderQueryAPIRequest.Get().(*TaobaoTvpayPartnerOrderQueryAPIRequest)
+}
+
+// ReleaseTaobaoTvpayPartnerOrderQueryAPIRequest 将 TaobaoTvpayPartnerOrderQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTvpayPartnerOrderQueryAPIRequest(v *TaobaoTvpayPartnerOrderQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoTvpayPartnerOrderQueryAPIRequest.Put(v)
 }

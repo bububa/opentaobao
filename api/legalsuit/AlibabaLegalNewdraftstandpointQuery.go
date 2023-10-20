@@ -9,11 +9,6 @@ import (
 // alibaba.legal.newdraftstandpoint.query
 //
 // 未采纳口径查询(新)
-func AlibabaLegalNewdraftstandpointQuery(clt *core.SDKClient, req *legalsuit.AlibabaLegalNewdraftstandpointQueryAPIRequest, session string) (*legalsuit.AlibabaLegalNewdraftstandpointQueryAPIResponse, error) {
-	var resp legalsuit.AlibabaLegalNewdraftstandpointQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLegalNewdraftstandpointQuery(clt *core.SDKClient, req *legalsuit.AlibabaLegalNewdraftstandpointQueryAPIRequest, resp *legalsuit.AlibabaLegalNewdraftstandpointQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

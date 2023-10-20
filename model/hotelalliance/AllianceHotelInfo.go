@@ -1,5 +1,9 @@
 package hotelalliance
 
+import (
+	"sync"
+)
+
 // AllianceHotelInfo 结构体
 type AllianceHotelInfo struct {
 	// 邀约人
@@ -66,4 +70,52 @@ type AllianceHotelInfo struct {
 	IsTransfer int64 `json:"is_transfer,omitempty" xml:"is_transfer,omitempty"`
 	// 主合同id
 	MainTplId int64 `json:"main_tpl_id,omitempty" xml:"main_tpl_id,omitempty"`
+}
+
+var poolAllianceHotelInfo = sync.Pool{
+	New: func() any {
+		return new(AllianceHotelInfo)
+	},
+}
+
+// GetAllianceHotelInfo() 从对象池中获取AllianceHotelInfo
+func GetAllianceHotelInfo() *AllianceHotelInfo {
+	return poolAllianceHotelInfo.Get().(*AllianceHotelInfo)
+}
+
+// ReleaseAllianceHotelInfo 释放AllianceHotelInfo
+func ReleaseAllianceHotelInfo(v *AllianceHotelInfo) {
+	v.Inviter = ""
+	v.ContactPhone = ""
+	v.ContractStart = ""
+	v.Fee = ""
+	v.AccountName = ""
+	v.HotelName = ""
+	v.AccountOpeningBank = ""
+	v.ContactName = ""
+	v.AlipayAccount = ""
+	v.BankAccount = ""
+	v.ContractEnd = ""
+	v.ContactEmail = ""
+	v.BankProvince = ""
+	v.BankCity = ""
+	v.MainAccount = ""
+	v.AccountBank = ""
+	v.NewFee = ""
+	v.CompanyName = ""
+	v.AlipayAccountId = ""
+	v.Hid = 0
+	v.PartnerId = 0
+	v.Shid = 0
+	v.FeeType = 0
+	v.PayType = 0
+	v.IsValid = 0
+	v.Ahid = 0
+	v.TplId = 0
+	v.SellerId = 0
+	v.IsNewValid = 0
+	v.NewFeeType = 0
+	v.IsTransfer = 0
+	v.MainTplId = 0
+	poolAllianceHotelInfo.Put(v)
 }

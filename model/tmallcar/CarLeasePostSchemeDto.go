@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // CarLeasePostSchemeDto 结构体
 type CarLeasePostSchemeDto struct {
 	// 续租到期后可选择方案列表
@@ -18,4 +22,28 @@ type CarLeasePostSchemeDto struct {
 	RestAmount int64 `json:"rest_amount,omitempty" xml:"rest_amount,omitempty"`
 	// 0.退车,1.买断,2.分期，3.续租
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolCarLeasePostSchemeDto = sync.Pool{
+	New: func() any {
+		return new(CarLeasePostSchemeDto)
+	},
+}
+
+// GetCarLeasePostSchemeDto() 从对象池中获取CarLeasePostSchemeDto
+func GetCarLeasePostSchemeDto() *CarLeasePostSchemeDto {
+	return poolCarLeasePostSchemeDto.Get().(*CarLeasePostSchemeDto)
+}
+
+// ReleaseCarLeasePostSchemeDto 释放CarLeasePostSchemeDto
+func ReleaseCarLeasePostSchemeDto(v *CarLeasePostSchemeDto) {
+	v.RenewSchemeList = v.RenewSchemeList[:0]
+	v.ReasonCode = ""
+	v.ReasonDesc = ""
+	v.CanSelect = 0
+	v.Month = 0
+	v.MonthlyPay = 0
+	v.RestAmount = 0
+	v.Type = 0
+	poolCarLeasePostSchemeDto.Put(v)
 }

@@ -2,6 +2,7 @@ package iot
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoAilabAicloudTopDeviceControlCustomAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopDeviceControlCustomAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopDeviceControlCustomAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAilabAicloudTopDeviceControlCustomAPIResponseModel).Reset()
 }
 
 // TaobaoAilabAicloudTopDeviceControlCustomAPIResponseModel is 设备控制自定义扩展接口 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoAilabAicloudTopDeviceControlCustomAPIResponseModel struct {
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
 	// 网络请求是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopDeviceControlCustomAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.Model = false
+	m.IsSuccess = false
+}
+
+var poolTaobaoAilabAicloudTopDeviceControlCustomAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAilabAicloudTopDeviceControlCustomAPIResponse)
+	},
+}
+
+// GetTaobaoAilabAicloudTopDeviceControlCustomAPIResponse 从 sync.Pool 获取 TaobaoAilabAicloudTopDeviceControlCustomAPIResponse
+func GetTaobaoAilabAicloudTopDeviceControlCustomAPIResponse() *TaobaoAilabAicloudTopDeviceControlCustomAPIResponse {
+	return poolTaobaoAilabAicloudTopDeviceControlCustomAPIResponse.Get().(*TaobaoAilabAicloudTopDeviceControlCustomAPIResponse)
+}
+
+// ReleaseTaobaoAilabAicloudTopDeviceControlCustomAPIResponse 将 TaobaoAilabAicloudTopDeviceControlCustomAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAilabAicloudTopDeviceControlCustomAPIResponse(v *TaobaoAilabAicloudTopDeviceControlCustomAPIResponse) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopDeviceControlCustomAPIResponse.Put(v)
 }

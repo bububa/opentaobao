@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest struct {
 // NewAlibabaMallitemcenterEntitledserviceSupplierQueryRequest 初始化AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest对象
 func NewAlibabaMallitemcenterEntitledserviceSupplierQueryRequest() *AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest {
 	return &AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest) Reset() {
+	r._id = 0
+	r._currentPage = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest) SetPageSiz
 // GetPageSize PageSize Getter
 func (r AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMallitemcenterEntitledserviceSupplierQueryRequest()
+	},
+}
+
+// GetAlibabaMallitemcenterEntitledserviceSupplierQueryRequest 从 sync.Pool 获取 AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest
+func GetAlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest() *AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest {
+	return poolAlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest.Get().(*AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest)
+}
+
+// ReleaseAlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest 将 AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest(v *AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest.Put(v)
 }

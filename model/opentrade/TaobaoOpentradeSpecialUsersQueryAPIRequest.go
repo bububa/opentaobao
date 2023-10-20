@@ -2,6 +2,7 @@ package opentrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoOpentradeSpecialUsersQueryAPIRequest struct {
 // NewTaobaoOpentradeSpecialUsersQueryRequest 初始化TaobaoOpentradeSpecialUsersQueryAPIRequest对象
 func NewTaobaoOpentradeSpecialUsersQueryRequest() *TaobaoOpentradeSpecialUsersQueryAPIRequest {
 	return &TaobaoOpentradeSpecialUsersQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) Reset() {
+	r._openUserIds = r._openUserIds[:0]
+	r._status = ""
+	r._pageSize = 0
+	r._itemId = 0
+	r._skuId = 0
+	r._pageIndex = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetPageIndex(_pageIndex int
 // GetPageIndex PageIndex Getter
 func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
+}
+
+var poolTaobaoOpentradeSpecialUsersQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpentradeSpecialUsersQueryRequest()
+	},
+}
+
+// GetTaobaoOpentradeSpecialUsersQueryRequest 从 sync.Pool 获取 TaobaoOpentradeSpecialUsersQueryAPIRequest
+func GetTaobaoOpentradeSpecialUsersQueryAPIRequest() *TaobaoOpentradeSpecialUsersQueryAPIRequest {
+	return poolTaobaoOpentradeSpecialUsersQueryAPIRequest.Get().(*TaobaoOpentradeSpecialUsersQueryAPIRequest)
+}
+
+// ReleaseTaobaoOpentradeSpecialUsersQueryAPIRequest 将 TaobaoOpentradeSpecialUsersQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpentradeSpecialUsersQueryAPIRequest(v *TaobaoOpentradeSpecialUsersQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoOpentradeSpecialUsersQueryAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package idleisv
 
+import (
+	"sync"
+)
+
 // IsvRefundTimeoutDto 结构体
 type IsvRefundTimeoutDto struct {
 	// 退款超时动作类型
@@ -14,4 +18,26 @@ type IsvRefundTimeoutDto struct {
 	Timeout int64 `json:"timeout,omitempty" xml:"timeout,omitempty"`
 	// 退款超时运行状态 0:超时创建完成, 1:超时运行中, 2:超时暂停, 3:超时关闭, 4:超时失败, 5:超时成功
 	TimeoutStatus int64 `json:"timeout_status,omitempty" xml:"timeout_status,omitempty"`
+}
+
+var poolIsvRefundTimeoutDto = sync.Pool{
+	New: func() any {
+		return new(IsvRefundTimeoutDto)
+	},
+}
+
+// GetIsvRefundTimeoutDto() 从对象池中获取IsvRefundTimeoutDto
+func GetIsvRefundTimeoutDto() *IsvRefundTimeoutDto {
+	return poolIsvRefundTimeoutDto.Get().(*IsvRefundTimeoutDto)
+}
+
+// ReleaseIsvRefundTimeoutDto 释放IsvRefundTimeoutDto
+func ReleaseIsvRefundTimeoutDto(v *IsvRefundTimeoutDto) {
+	v.TimeoutActionType = ""
+	v.Create = 0
+	v.Modified = 0
+	v.Duration = 0
+	v.Timeout = 0
+	v.TimeoutStatus = 0
+	poolIsvRefundTimeoutDto.Put(v)
 }

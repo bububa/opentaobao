@@ -2,6 +2,7 @@ package xhoteloffline
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoXhotelOrderAlipayfaceCheckAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelOrderAlipayfaceCheckAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderAlipayfaceCheckAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelOrderAlipayfaceCheckAPIResponseModel).Reset()
 }
 
 // TaobaoXhotelOrderAlipayfaceCheckAPIResponseModel is 线下信用住买家资格校验接口 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoXhotelOrderAlipayfaceCheckAPIResponseModel struct {
 	MatchCondition bool `json:"match_condition,omitempty" xml:"match_condition,omitempty"`
 	// existAlipayOrder
 	ExistAlipayOrder bool `json:"exist_alipay_order,omitempty" xml:"exist_alipay_order,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderAlipayfaceCheckAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Reason = ""
+	m.IdNumber = ""
+	m.Action = 0
+	m.MatchCondition = false
+	m.ExistAlipayOrder = false
+}
+
+var poolTaobaoXhotelOrderAlipayfaceCheckAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelOrderAlipayfaceCheckAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelOrderAlipayfaceCheckAPIResponse 从 sync.Pool 获取 TaobaoXhotelOrderAlipayfaceCheckAPIResponse
+func GetTaobaoXhotelOrderAlipayfaceCheckAPIResponse() *TaobaoXhotelOrderAlipayfaceCheckAPIResponse {
+	return poolTaobaoXhotelOrderAlipayfaceCheckAPIResponse.Get().(*TaobaoXhotelOrderAlipayfaceCheckAPIResponse)
+}
+
+// ReleaseTaobaoXhotelOrderAlipayfaceCheckAPIResponse 将 TaobaoXhotelOrderAlipayfaceCheckAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelOrderAlipayfaceCheckAPIResponse(v *TaobaoXhotelOrderAlipayfaceCheckAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelOrderAlipayfaceCheckAPIResponse.Put(v)
 }

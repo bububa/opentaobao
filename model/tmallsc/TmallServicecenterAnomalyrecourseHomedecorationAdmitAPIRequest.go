@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest struct {
 // NewTmallServicecenterAnomalyrecourseHomedecorationAdmitRequest 初始化TmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest对象
 func NewTmallServicecenterAnomalyrecourseHomedecorationAdmitRequest() *TmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest {
 	return &TmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest) Reset() {
+	r._remark = ""
+	r._id = 0
+	r._tpAdmitResponsibleAmount = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest) SetTpAd
 // GetTpAdmitResponsibleAmount TpAdmitResponsibleAmount Getter
 func (r TmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest) GetTpAdmitResponsibleAmount() int64 {
 	return r._tpAdmitResponsibleAmount
+}
+
+var poolTmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterAnomalyrecourseHomedecorationAdmitRequest()
+	},
+}
+
+// GetTmallServicecenterAnomalyrecourseHomedecorationAdmitRequest 从 sync.Pool 获取 TmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest
+func GetTmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest() *TmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest {
+	return poolTmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest.Get().(*TmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest)
+}
+
+// ReleaseTmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest 将 TmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest(v *TmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterAnomalyrecourseHomedecorationAdmitAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeHouseCooperateBrandUpdateRequest 初始化AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest对象
 func NewAlibabaAlihouseExistinghomeHouseCooperateBrandUpdateRequest() *AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest {
 	return &AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest) Reset() {
+	r._syncUpdateCooperateBrand = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest) SetSync
 // GetSyncUpdateCooperateBrand SyncUpdateCooperateBrand Getter
 func (r AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest) GetSyncUpdateCooperateBrand() *SyncUpdateCooperateBrand {
 	return r._syncUpdateCooperateBrand
+}
+
+var poolAlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeHouseCooperateBrandUpdateRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeHouseCooperateBrandUpdateRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest
+func GetAlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest() *AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest {
+	return poolAlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest.Get().(*AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest 将 AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest(v *AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest.Put(v)
 }

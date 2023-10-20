@@ -2,6 +2,7 @@ package hotelalliance
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripHotelAllianceSettleOrderSynAPIRequest struct {
 // NewAlitripHotelAllianceSettleOrderSynRequest 初始化AlitripHotelAllianceSettleOrderSynAPIRequest对象
 func NewAlitripHotelAllianceSettleOrderSynRequest() *AlitripHotelAllianceSettleOrderSynAPIRequest {
 	return &AlitripHotelAllianceSettleOrderSynAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripHotelAllianceSettleOrderSynAPIRequest) Reset() {
+	r._orderInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripHotelAllianceSettleOrderSynAPIRequest) SetOrderInfo(_orderInfo *
 // GetOrderInfo OrderInfo Getter
 func (r AlitripHotelAllianceSettleOrderSynAPIRequest) GetOrderInfo() *AllianceSettleOrderInfo {
 	return r._orderInfo
+}
+
+var poolAlitripHotelAllianceSettleOrderSynAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripHotelAllianceSettleOrderSynRequest()
+	},
+}
+
+// GetAlitripHotelAllianceSettleOrderSynRequest 从 sync.Pool 获取 AlitripHotelAllianceSettleOrderSynAPIRequest
+func GetAlitripHotelAllianceSettleOrderSynAPIRequest() *AlitripHotelAllianceSettleOrderSynAPIRequest {
+	return poolAlitripHotelAllianceSettleOrderSynAPIRequest.Get().(*AlitripHotelAllianceSettleOrderSynAPIRequest)
+}
+
+// ReleaseAlitripHotelAllianceSettleOrderSynAPIRequest 将 AlitripHotelAllianceSettleOrderSynAPIRequest 放入 sync.Pool
+func ReleaseAlitripHotelAllianceSettleOrderSynAPIRequest(v *AlitripHotelAllianceSettleOrderSynAPIRequest) {
+	v.Reset()
+	poolAlitripHotelAllianceSettleOrderSynAPIRequest.Put(v)
 }

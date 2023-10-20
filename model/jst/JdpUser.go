@@ -1,5 +1,9 @@
 package jst
 
+import (
+	"sync"
+)
+
 // JdpUser 结构体
 type JdpUser struct {
 	// rds数据库的实例名
@@ -18,4 +22,28 @@ type JdpUser struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 用户等级，用于区分大卖家，值越大则订单量越大
 	Level int64 `json:"level,omitempty" xml:"level,omitempty"`
+}
+
+var poolJdpUser = sync.Pool{
+	New: func() any {
+		return new(JdpUser)
+	},
+}
+
+// GetJdpUser() 从对象池中获取JdpUser
+func GetJdpUser() *JdpUser {
+	return poolJdpUser.Get().(*JdpUser)
+}
+
+// ReleaseJdpUser 释放JdpUser
+func ReleaseJdpUser(v *JdpUser) {
+	v.RdsName = ""
+	v.UserNick = ""
+	v.SellerType = ""
+	v.HlAppkey = ""
+	v.UserId = 0
+	v.RdsId = 0
+	v.Status = 0
+	v.Level = 0
+	poolJdpUser.Put(v)
 }

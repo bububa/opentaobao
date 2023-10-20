@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest struct {
 // NewAlibabaSecurityJaqCaptchaVerifyResultFetchRequest 初始化AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest对象
 func NewAlibabaSecurityJaqCaptchaVerifyResultFetchRequest() *AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest {
 	return &AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest) Reset() {
+	r._sessionId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest) SetSessionId(_ses
 // GetSessionId SessionId Getter
 func (r AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest) GetSessionId() string {
 	return r._sessionId
+}
+
+var poolAlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqCaptchaVerifyResultFetchRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqCaptchaVerifyResultFetchRequest 从 sync.Pool 获取 AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest
+func GetAlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest() *AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest {
+	return poolAlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest.Get().(*AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest 将 AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest(v *AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest.Put(v)
 }

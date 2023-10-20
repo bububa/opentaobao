@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // FscProductCancelPolicyApiDto 结构体
 type FscProductCancelPolicyApiDto struct {
 	// 扣除明细
@@ -10,4 +14,24 @@ type FscProductCancelPolicyApiDto struct {
 	AheadHourMinute string `json:"ahead_hour_minute,omitempty" xml:"ahead_hour_minute,omitempty"`
 	// 提前天数 1: 代表1天
 	AheadDays int64 `json:"ahead_days,omitempty" xml:"ahead_days,omitempty"`
+}
+
+var poolFscProductCancelPolicyApiDto = sync.Pool{
+	New: func() any {
+		return new(FscProductCancelPolicyApiDto)
+	},
+}
+
+// GetFscProductCancelPolicyApiDto() 从对象池中获取FscProductCancelPolicyApiDto
+func GetFscProductCancelPolicyApiDto() *FscProductCancelPolicyApiDto {
+	return poolFscProductCancelPolicyApiDto.Get().(*FscProductCancelPolicyApiDto)
+}
+
+// ReleaseFscProductCancelPolicyApiDto 释放FscProductCancelPolicyApiDto
+func ReleaseFscProductCancelPolicyApiDto(v *FscProductCancelPolicyApiDto) {
+	v.DeductList = v.DeductList[:0]
+	v.CancelType = ""
+	v.AheadHourMinute = ""
+	v.AheadDays = 0
+	poolFscProductCancelPolicyApiDto.Put(v)
 }

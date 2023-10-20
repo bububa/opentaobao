@@ -9,11 +9,6 @@ import (
 // taobao.universalbp.report.query.item.promotion
 //
 // 宝贝主体报表查询
-func TaobaoUniversalbpReportQueryItemPromotion(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryItemPromotionAPIRequest, session string) (*simba.TaobaoUniversalbpReportQueryItemPromotionAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpReportQueryItemPromotionAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUniversalbpReportQueryItemPromotion(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryItemPromotionAPIRequest, resp *simba.TaobaoUniversalbpReportQueryItemPromotionAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

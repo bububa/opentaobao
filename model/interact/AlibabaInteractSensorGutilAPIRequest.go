@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaInteractSensorGutilAPIRequest struct {
 // NewAlibabaInteractSensorGutilRequest 初始化AlibabaInteractSensorGutilAPIRequest对象
 func NewAlibabaInteractSensorGutilRequest() *AlibabaInteractSensorGutilAPIRequest {
 	return &AlibabaInteractSensorGutilAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractSensorGutilAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaInteractSensorGutilAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaInteractSensorGutilAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaInteractSensorGutilAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractSensorGutilRequest()
+	},
+}
+
+// GetAlibabaInteractSensorGutilRequest 从 sync.Pool 获取 AlibabaInteractSensorGutilAPIRequest
+func GetAlibabaInteractSensorGutilAPIRequest() *AlibabaInteractSensorGutilAPIRequest {
+	return poolAlibabaInteractSensorGutilAPIRequest.Get().(*AlibabaInteractSensorGutilAPIRequest)
+}
+
+// ReleaseAlibabaInteractSensorGutilAPIRequest 将 AlibabaInteractSensorGutilAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractSensorGutilAPIRequest(v *AlibabaInteractSensorGutilAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractSensorGutilAPIRequest.Put(v)
 }

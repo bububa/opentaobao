@@ -9,11 +9,6 @@ import (
 // alibaba.jym.item.external.goods.batch.publish
 //
 // 供外部B端商家接入，提交批量发布商品请求，返回批量发布任务结果
-func AlibabaJymItemExternalGoodsBatchPublish(clt *core.SDKClient, req *product.AlibabaJymItemExternalGoodsBatchPublishAPIRequest, session string) (*product.AlibabaJymItemExternalGoodsBatchPublishAPIResponse, error) {
-	var resp product.AlibabaJymItemExternalGoodsBatchPublishAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaJymItemExternalGoodsBatchPublish(clt *core.SDKClient, req *product.AlibabaJymItemExternalGoodsBatchPublishAPIRequest, resp *product.AlibabaJymItemExternalGoodsBatchPublishAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

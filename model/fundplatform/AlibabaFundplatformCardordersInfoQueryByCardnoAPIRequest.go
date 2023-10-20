@@ -2,6 +2,7 @@ package fundplatform
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest struct {
 // NewAlibabaFundplatformCardordersInfoQueryByCardnoRequest 初始化AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest对象
 func NewAlibabaFundplatformCardordersInfoQueryByCardnoRequest() *AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest {
 	return &AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest) Reset() {
+	r._parameters = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest) SetParameters
 // GetParameters Parameters Getter
 func (r AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest) GetParameters() *CardMakingInfoQueryRequest {
 	return r._parameters
+}
+
+var poolAlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaFundplatformCardordersInfoQueryByCardnoRequest()
+	},
+}
+
+// GetAlibabaFundplatformCardordersInfoQueryByCardnoRequest 从 sync.Pool 获取 AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest
+func GetAlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest() *AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest {
+	return poolAlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest.Get().(*AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest)
+}
+
+// ReleaseAlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest 将 AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest(v *AlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest) {
+	v.Reset()
+	poolAlibabaFundplatformCardordersInfoQueryByCardnoAPIRequest.Put(v)
 }

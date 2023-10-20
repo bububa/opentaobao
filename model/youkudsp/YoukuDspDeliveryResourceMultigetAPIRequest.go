@@ -2,6 +2,7 @@ package youkudsp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type YoukuDspDeliveryResourceMultigetAPIRequest struct {
 // NewYoukuDspDeliveryResourceMultigetRequest 初始化YoukuDspDeliveryResourceMultigetAPIRequest对象
 func NewYoukuDspDeliveryResourceMultigetRequest() *YoukuDspDeliveryResourceMultigetAPIRequest {
 	return &YoukuDspDeliveryResourceMultigetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuDspDeliveryResourceMultigetAPIRequest) Reset() {
+	r._deviceIds = ""
+	r._deviceIdType = ""
+	r._deliveryType = ""
+	r._channelId = 0
+	r._subChannelId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetSubChannelId(_subChannel
 // GetSubChannelId SubChannelId Getter
 func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetSubChannelId() int64 {
 	return r._subChannelId
+}
+
+var poolYoukuDspDeliveryResourceMultigetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuDspDeliveryResourceMultigetRequest()
+	},
+}
+
+// GetYoukuDspDeliveryResourceMultigetRequest 从 sync.Pool 获取 YoukuDspDeliveryResourceMultigetAPIRequest
+func GetYoukuDspDeliveryResourceMultigetAPIRequest() *YoukuDspDeliveryResourceMultigetAPIRequest {
+	return poolYoukuDspDeliveryResourceMultigetAPIRequest.Get().(*YoukuDspDeliveryResourceMultigetAPIRequest)
+}
+
+// ReleaseYoukuDspDeliveryResourceMultigetAPIRequest 将 YoukuDspDeliveryResourceMultigetAPIRequest 放入 sync.Pool
+func ReleaseYoukuDspDeliveryResourceMultigetAPIRequest(v *YoukuDspDeliveryResourceMultigetAPIRequest) {
+	v.Reset()
+	poolYoukuDspDeliveryResourceMultigetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package fivee
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoFiveeImportproductGetAPIResponse struct {
 	TaobaoFiveeImportproductGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoFiveeImportproductGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFiveeImportproductGetAPIResponseModel).Reset()
+}
+
 // TaobaoFiveeImportproductGetAPIResponseModel is 进口商品查询 成功返回结果
 type TaobaoFiveeImportproductGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"fivee_importproduct_get_response"`
@@ -22,4 +29,27 @@ type TaobaoFiveeImportproductGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *TaobaoFiveeImportproductGetResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFiveeImportproductGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoFiveeImportproductGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFiveeImportproductGetAPIResponse)
+	},
+}
+
+// GetTaobaoFiveeImportproductGetAPIResponse 从 sync.Pool 获取 TaobaoFiveeImportproductGetAPIResponse
+func GetTaobaoFiveeImportproductGetAPIResponse() *TaobaoFiveeImportproductGetAPIResponse {
+	return poolTaobaoFiveeImportproductGetAPIResponse.Get().(*TaobaoFiveeImportproductGetAPIResponse)
+}
+
+// ReleaseTaobaoFiveeImportproductGetAPIResponse 将 TaobaoFiveeImportproductGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFiveeImportproductGetAPIResponse(v *TaobaoFiveeImportproductGetAPIResponse) {
+	v.Reset()
+	poolTaobaoFiveeImportproductGetAPIResponse.Put(v)
 }

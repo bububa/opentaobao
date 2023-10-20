@@ -9,11 +9,6 @@ import (
 // taobao.qimen.events.produce
 //
 // 批量发送消息
-func TaobaoQimenEventsProduce(clt *core.SDKClient, req *util.TaobaoQimenEventsProduceAPIRequest, session string) (*util.TaobaoQimenEventsProduceAPIResponse, error) {
-	var resp util.TaobaoQimenEventsProduceAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQimenEventsProduce(clt *core.SDKClient, req *util.TaobaoQimenEventsProduceAPIRequest, resp *util.TaobaoQimenEventsProduceAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

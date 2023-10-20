@@ -9,11 +9,6 @@ import (
 // alibaba.ax.warehouse.inbound.callback
 //
 // 翱象入库回传
-func AlibabaAxWarehouseInboundCallback(clt *core.SDKClient, req *wdk.AlibabaAxWarehouseInboundCallbackAPIRequest, session string) (*wdk.AlibabaAxWarehouseInboundCallbackAPIResponse, error) {
-	var resp wdk.AlibabaAxWarehouseInboundCallbackAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAxWarehouseInboundCallback(clt *core.SDKClient, req *wdk.AlibabaAxWarehouseInboundCallbackAPIRequest, resp *wdk.AlibabaAxWarehouseInboundCallbackAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

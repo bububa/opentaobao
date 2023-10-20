@@ -1,5 +1,9 @@
 package nrt
 
+import (
+	"sync"
+)
+
 // NrtStoreDto 结构体
 type NrtStoreDto struct {
 	// 摊位编号
@@ -72,4 +76,55 @@ type NrtStoreDto struct {
 	StallId int64 `json:"stall_id,omitempty" xml:"stall_id,omitempty"`
 	// 门店id1
 	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
+}
+
+var poolNrtStoreDto = sync.Pool{
+	New: func() any {
+		return new(NrtStoreDto)
+	},
+}
+
+// GetNrtStoreDto() 从对象池中获取NrtStoreDto
+func GetNrtStoreDto() *NrtStoreDto {
+	return poolNrtStoreDto.Get().(*NrtStoreDto)
+}
+
+// ReleaseNrtStoreDto 释放NrtStoreDto
+func ReleaseNrtStoreDto(v *NrtStoreDto) {
+	v.StallCode = ""
+	v.BizCode = ""
+	v.ShortAddress = ""
+	v.EndTime = ""
+	v.OpType = ""
+	v.Pic = ""
+	v.AgencyCode = ""
+	v.BusinessTime = ""
+	v.BusinessBrandids = ""
+	v.CityName = ""
+	v.StallDeptid = ""
+	v.MallCode = ""
+	v.BrandSeries = ""
+	v.OutId = ""
+	v.Lat = ""
+	v.StartTime = ""
+	v.Lng = ""
+	v.DistrictName = ""
+	v.Contract = ""
+	v.BusinessBrandnames = ""
+	v.StallName = ""
+	v.CategoryName = ""
+	v.ProvinceName = ""
+	v.BrandId = ""
+	v.BrandName = ""
+	v.MallDepid = ""
+	v.RelateCode = ""
+	v.Name = ""
+	v.DistrictCode = 0
+	v.CityCode = 0
+	v.ProvinceCode = 0
+	v.Version = 0
+	v.Status = 0
+	v.StallId = 0
+	v.StoreId = 0
+	poolNrtStoreDto.Put(v)
 }

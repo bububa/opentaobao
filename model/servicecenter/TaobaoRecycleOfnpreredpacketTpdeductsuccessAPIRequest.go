@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest struct {
 // NewTaobaoRecycleOfnpreredpacketTpdeductsuccessRequest 初始化TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest对象
 func NewTaobaoRecycleOfnpreredpacketTpdeductsuccessRequest() *TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest {
 	return &TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest) Reset() {
+	r._deductAmount = 0
+	r._oldOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest) SetOldOrderId(_o
 // GetOldOrderId OldOrderId Getter
 func (r TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest) GetOldOrderId() int64 {
 	return r._oldOrderId
+}
+
+var poolTaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRecycleOfnpreredpacketTpdeductsuccessRequest()
+	},
+}
+
+// GetTaobaoRecycleOfnpreredpacketTpdeductsuccessRequest 从 sync.Pool 获取 TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest
+func GetTaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest() *TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest {
+	return poolTaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest.Get().(*TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest)
+}
+
+// ReleaseTaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest 将 TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest(v *TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest) {
+	v.Reset()
+	poolTaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest.Put(v)
 }

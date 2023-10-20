@@ -1,5 +1,9 @@
 package tmallgenie
 
+import (
+	"sync"
+)
+
 // RetValue 结构体
 type RetValue struct {
 	// 设备图片
@@ -24,4 +28,31 @@ type RetValue struct {
 	DeviceZone string `json:"device_zone,omitempty" xml:"device_zone,omitempty"`
 	// 设备id
 	DeviceId string `json:"device_id,omitempty" xml:"device_id,omitempty"`
+}
+
+var poolRetValue = sync.Pool{
+	New: func() any {
+		return new(RetValue)
+	},
+}
+
+// GetRetValue() 从对象池中获取RetValue
+func GetRetValue() *RetValue {
+	return poolRetValue.Get().(*RetValue)
+}
+
+// ReleaseRetValue 释放RetValue
+func ReleaseRetValue(v *RetValue) {
+	v.DeviceIcon = ""
+	v.DeviceModel = ""
+	v.DeviceAlias = ""
+	v.OrginDeviceCategory = ""
+	v.DeviceProperties = ""
+	v.ParticularModel = ""
+	v.DeviceCategoryEn = ""
+	v.DeviceCategory = ""
+	v.DeviceBrand = ""
+	v.DeviceZone = ""
+	v.DeviceId = ""
+	poolRetValue.Put(v)
 }

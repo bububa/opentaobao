@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallServicecenterServicestoreCreateAPIRequest struct {
 // NewTmallServicecenterServicestoreCreateRequest 初始化TmallServicecenterServicestoreCreateAPIRequest对象
 func NewTmallServicecenterServicestoreCreateRequest() *TmallServicecenterServicestoreCreateAPIRequest {
 	return &TmallServicecenterServicestoreCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterServicestoreCreateAPIRequest) Reset() {
+	r._serviceStore = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallServicecenterServicestoreCreateAPIRequest) SetServiceStore(_servic
 // GetServiceStore ServiceStore Getter
 func (r TmallServicecenterServicestoreCreateAPIRequest) GetServiceStore() *ServiceStoreDto {
 	return r._serviceStore
+}
+
+var poolTmallServicecenterServicestoreCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterServicestoreCreateRequest()
+	},
+}
+
+// GetTmallServicecenterServicestoreCreateRequest 从 sync.Pool 获取 TmallServicecenterServicestoreCreateAPIRequest
+func GetTmallServicecenterServicestoreCreateAPIRequest() *TmallServicecenterServicestoreCreateAPIRequest {
+	return poolTmallServicecenterServicestoreCreateAPIRequest.Get().(*TmallServicecenterServicestoreCreateAPIRequest)
+}
+
+// ReleaseTmallServicecenterServicestoreCreateAPIRequest 将 TmallServicecenterServicestoreCreateAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterServicestoreCreateAPIRequest(v *TmallServicecenterServicestoreCreateAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterServicestoreCreateAPIRequest.Put(v)
 }

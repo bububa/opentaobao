@@ -2,6 +2,7 @@ package damai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDamaiMevOpenWithdrawticketAPIRequest struct {
 // NewAlibabaDamaiMevOpenWithdrawticketRequest 初始化AlibabaDamaiMevOpenWithdrawticketAPIRequest对象
 func NewAlibabaDamaiMevOpenWithdrawticketRequest() *AlibabaDamaiMevOpenWithdrawticketAPIRequest {
 	return &AlibabaDamaiMevOpenWithdrawticketAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiMevOpenWithdrawticketAPIRequest) Reset() {
+	r._ticketIdOpenParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDamaiMevOpenWithdrawticketAPIRequest) SetTicketIdOpenParam(_tick
 // GetTicketIdOpenParam TicketIdOpenParam Getter
 func (r AlibabaDamaiMevOpenWithdrawticketAPIRequest) GetTicketIdOpenParam() *TicketIdOpenParam {
 	return r._ticketIdOpenParam
+}
+
+var poolAlibabaDamaiMevOpenWithdrawticketAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiMevOpenWithdrawticketRequest()
+	},
+}
+
+// GetAlibabaDamaiMevOpenWithdrawticketRequest 从 sync.Pool 获取 AlibabaDamaiMevOpenWithdrawticketAPIRequest
+func GetAlibabaDamaiMevOpenWithdrawticketAPIRequest() *AlibabaDamaiMevOpenWithdrawticketAPIRequest {
+	return poolAlibabaDamaiMevOpenWithdrawticketAPIRequest.Get().(*AlibabaDamaiMevOpenWithdrawticketAPIRequest)
+}
+
+// ReleaseAlibabaDamaiMevOpenWithdrawticketAPIRequest 将 AlibabaDamaiMevOpenWithdrawticketAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiMevOpenWithdrawticketAPIRequest(v *AlibabaDamaiMevOpenWithdrawticketAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiMevOpenWithdrawticketAPIRequest.Put(v)
 }

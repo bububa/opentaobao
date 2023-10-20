@@ -9,11 +9,6 @@ import (
 // alibaba.servicecenter.workcard.servicesku.suggest
 //
 // 服务商反馈需要履行的服务项
-func AlibabaServicecenterWorkcardServiceskuSuggest(clt *core.SDKClient, req *tmallsc.AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest, session string) (*tmallsc.AlibabaServicecenterWorkcardServiceskuSuggestAPIResponse, error) {
-	var resp tmallsc.AlibabaServicecenterWorkcardServiceskuSuggestAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaServicecenterWorkcardServiceskuSuggest(clt *core.SDKClient, req *tmallsc.AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest, resp *tmallsc.AlibabaServicecenterWorkcardServiceskuSuggestAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

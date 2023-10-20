@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoWlbOrderJzwithinsConsignAPIRequest struct {
 // NewTaobaoWlbOrderJzwithinsConsignRequest 初始化TaobaoWlbOrderJzwithinsConsignAPIRequest对象
 func NewTaobaoWlbOrderJzwithinsConsignRequest() *TaobaoWlbOrderJzwithinsConsignAPIRequest {
 	return &TaobaoWlbOrderJzwithinsConsignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) Reset() {
+	r._tid = 0
+	r._tmsPartner = nil
+	r._insPartner = nil
+	r._jzConsignArgs = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) SetJzConsignArgs(_jzConsignAr
 // GetJzConsignArgs JzConsignArgs Getter
 func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetJzConsignArgs() *JzConsignArgsNew {
 	return r._jzConsignArgs
+}
+
+var poolTaobaoWlbOrderJzwithinsConsignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbOrderJzwithinsConsignRequest()
+	},
+}
+
+// GetTaobaoWlbOrderJzwithinsConsignRequest 从 sync.Pool 获取 TaobaoWlbOrderJzwithinsConsignAPIRequest
+func GetTaobaoWlbOrderJzwithinsConsignAPIRequest() *TaobaoWlbOrderJzwithinsConsignAPIRequest {
+	return poolTaobaoWlbOrderJzwithinsConsignAPIRequest.Get().(*TaobaoWlbOrderJzwithinsConsignAPIRequest)
+}
+
+// ReleaseTaobaoWlbOrderJzwithinsConsignAPIRequest 将 TaobaoWlbOrderJzwithinsConsignAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbOrderJzwithinsConsignAPIRequest(v *TaobaoWlbOrderJzwithinsConsignAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbOrderJzwithinsConsignAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package baichuan
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaBaichuanAsoQueryAPIRequest struct {
 // NewAlibabaBaichuanAsoQueryRequest 初始化AlibabaBaichuanAsoQueryAPIRequest对象
 func NewAlibabaBaichuanAsoQueryRequest() *AlibabaBaichuanAsoQueryAPIRequest {
 	return &AlibabaBaichuanAsoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaBaichuanAsoQueryAPIRequest) Reset() {
+	r._deviceInfoList = r._deviceInfoList[:0]
+	r._appId = ""
+	r._appOs = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaBaichuanAsoQueryAPIRequest) SetAppOs(_appOs int64) error {
 // GetAppOs AppOs Getter
 func (r AlibabaBaichuanAsoQueryAPIRequest) GetAppOs() int64 {
 	return r._appOs
+}
+
+var poolAlibabaBaichuanAsoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaBaichuanAsoQueryRequest()
+	},
+}
+
+// GetAlibabaBaichuanAsoQueryRequest 从 sync.Pool 获取 AlibabaBaichuanAsoQueryAPIRequest
+func GetAlibabaBaichuanAsoQueryAPIRequest() *AlibabaBaichuanAsoQueryAPIRequest {
+	return poolAlibabaBaichuanAsoQueryAPIRequest.Get().(*AlibabaBaichuanAsoQueryAPIRequest)
+}
+
+// ReleaseAlibabaBaichuanAsoQueryAPIRequest 将 AlibabaBaichuanAsoQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaBaichuanAsoQueryAPIRequest(v *AlibabaBaichuanAsoQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaBaichuanAsoQueryAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.simba.creativeids.deleted.get
 //
 // 获取删除的创意ID
-func TaobaoSimbaCreativeidsDeletedGet(clt *core.SDKClient, req *simba.TaobaoSimbaCreativeidsDeletedGetAPIRequest, session string) (*simba.TaobaoSimbaCreativeidsDeletedGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaCreativeidsDeletedGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaCreativeidsDeletedGet(clt *core.SDKClient, req *simba.TaobaoSimbaCreativeidsDeletedGetAPIRequest, resp *simba.TaobaoSimbaCreativeidsDeletedGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

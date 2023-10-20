@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest struct {
 // NewAlibabaTclsAelophyMerchantChannelOrderPrecheckRequest 初始化AlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest对象
 func NewAlibabaTclsAelophyMerchantChannelOrderPrecheckRequest() *AlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest {
 	return &AlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest) Reset() {
+	r._preCheckRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest) SetPreCheckRe
 // GetPreCheckRequest PreCheckRequest Getter
 func (r AlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest) GetPreCheckRequest() *PreCheckRequest {
 	return r._preCheckRequest
+}
+
+var poolAlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsAelophyMerchantChannelOrderPrecheckRequest()
+	},
+}
+
+// GetAlibabaTclsAelophyMerchantChannelOrderPrecheckRequest 从 sync.Pool 获取 AlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest
+func GetAlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest() *AlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest {
+	return poolAlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest.Get().(*AlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest)
+}
+
+// ReleaseAlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest 将 AlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest(v *AlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsAelophyMerchantChannelOrderPrecheckAPIRequest.Put(v)
 }

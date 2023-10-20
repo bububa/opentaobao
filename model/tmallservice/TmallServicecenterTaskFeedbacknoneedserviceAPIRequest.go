@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallServicecenterTaskFeedbacknoneedserviceAPIRequest struct {
 // NewTmallServicecenterTaskFeedbacknoneedserviceRequest 初始化TmallServicecenterTaskFeedbacknoneedserviceAPIRequest对象
 func NewTmallServicecenterTaskFeedbacknoneedserviceRequest() *TmallServicecenterTaskFeedbacknoneedserviceAPIRequest {
 	return &TmallServicecenterTaskFeedbacknoneedserviceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterTaskFeedbacknoneedserviceAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallServicecenterTaskFeedbacknoneedserviceAPIRequest) SetParam(_param 
 // GetParam Param Getter
 func (r TmallServicecenterTaskFeedbacknoneedserviceAPIRequest) GetParam() *SuspendServiceDo {
 	return r._param
+}
+
+var poolTmallServicecenterTaskFeedbacknoneedserviceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterTaskFeedbacknoneedserviceRequest()
+	},
+}
+
+// GetTmallServicecenterTaskFeedbacknoneedserviceRequest 从 sync.Pool 获取 TmallServicecenterTaskFeedbacknoneedserviceAPIRequest
+func GetTmallServicecenterTaskFeedbacknoneedserviceAPIRequest() *TmallServicecenterTaskFeedbacknoneedserviceAPIRequest {
+	return poolTmallServicecenterTaskFeedbacknoneedserviceAPIRequest.Get().(*TmallServicecenterTaskFeedbacknoneedserviceAPIRequest)
+}
+
+// ReleaseTmallServicecenterTaskFeedbacknoneedserviceAPIRequest 将 TmallServicecenterTaskFeedbacknoneedserviceAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterTaskFeedbacknoneedserviceAPIRequest(v *TmallServicecenterTaskFeedbacknoneedserviceAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterTaskFeedbacknoneedserviceAPIRequest.Put(v)
 }

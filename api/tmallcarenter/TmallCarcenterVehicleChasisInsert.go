@@ -9,11 +9,6 @@ import (
 // tmall.carcenter.vehicle.chasis.insert
 //
 // EPC车型底盘压缩库新增接口
-func TmallCarcenterVehicleChasisInsert(clt *core.SDKClient, req *tmallcarenter.TmallCarcenterVehicleChasisInsertAPIRequest, session string) (*tmallcarenter.TmallCarcenterVehicleChasisInsertAPIResponse, error) {
-	var resp tmallcarenter.TmallCarcenterVehicleChasisInsertAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallCarcenterVehicleChasisInsert(clt *core.SDKClient, req *tmallcarenter.TmallCarcenterVehicleChasisInsertAPIRequest, resp *tmallcarenter.TmallCarcenterVehicleChasisInsertAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

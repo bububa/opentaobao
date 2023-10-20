@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrtCrmSceneActivityDto 结构体
 type NrtCrmSceneActivityDto struct {
 	// 下挂模板DTO
@@ -14,4 +18,26 @@ type NrtCrmSceneActivityDto struct {
 	SceneStatus int64 `json:"scene_status,omitempty" xml:"scene_status,omitempty"`
 	// 有价礼包ID
 	SceneActivityId int64 `json:"scene_activity_id,omitempty" xml:"scene_activity_id,omitempty"`
+}
+
+var poolNrtCrmSceneActivityDto = sync.Pool{
+	New: func() any {
+		return new(NrtCrmSceneActivityDto)
+	},
+}
+
+// GetNrtCrmSceneActivityDto() 从对象池中获取NrtCrmSceneActivityDto
+func GetNrtCrmSceneActivityDto() *NrtCrmSceneActivityDto {
+	return poolNrtCrmSceneActivityDto.Get().(*NrtCrmSceneActivityDto)
+}
+
+// ReleaseNrtCrmSceneActivityDto 释放NrtCrmSceneActivityDto
+func ReleaseNrtCrmSceneActivityDto(v *NrtCrmSceneActivityDto) {
+	v.NrtCrmBenefitList = v.NrtCrmBenefitList[:0]
+	v.TmpType = ""
+	v.ReservePrice = 0
+	v.SellGiftItemId = 0
+	v.SceneStatus = 0
+	v.SceneActivityId = 0
+	poolNrtCrmSceneActivityDto.Put(v)
 }

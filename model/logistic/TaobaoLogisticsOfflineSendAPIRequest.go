@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type TaobaoLogisticsOfflineSendAPIRequest struct {
 // NewTaobaoLogisticsOfflineSendRequest 初始化TaobaoLogisticsOfflineSendAPIRequest对象
 func NewTaobaoLogisticsOfflineSendRequest() *TaobaoLogisticsOfflineSendAPIRequest {
 	return &TaobaoLogisticsOfflineSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsOfflineSendAPIRequest) Reset() {
+	r._subTid = r._subTid[:0]
+	r._companyCode = ""
+	r._feature = ""
+	r._outSid = ""
+	r._sellerIp = ""
+	r._cancelId = 0
+	r._isSplit = 0
+	r._senderId = 0
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *TaobaoLogisticsOfflineSendAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoLogisticsOfflineSendAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoLogisticsOfflineSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsOfflineSendRequest()
+	},
+}
+
+// GetTaobaoLogisticsOfflineSendRequest 从 sync.Pool 获取 TaobaoLogisticsOfflineSendAPIRequest
+func GetTaobaoLogisticsOfflineSendAPIRequest() *TaobaoLogisticsOfflineSendAPIRequest {
+	return poolTaobaoLogisticsOfflineSendAPIRequest.Get().(*TaobaoLogisticsOfflineSendAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsOfflineSendAPIRequest 将 TaobaoLogisticsOfflineSendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsOfflineSendAPIRequest(v *TaobaoLogisticsOfflineSendAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsOfflineSendAPIRequest.Put(v)
 }

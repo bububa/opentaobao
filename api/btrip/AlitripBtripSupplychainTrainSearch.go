@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.supplychain.train.search
 //
 // 【商旅】火车票订单查询
-func AlitripBtripSupplychainTrainSearch(clt *core.SDKClient, req *btrip.AlitripBtripSupplychainTrainSearchAPIRequest, session string) (*btrip.AlitripBtripSupplychainTrainSearchAPIResponse, error) {
-	var resp btrip.AlitripBtripSupplychainTrainSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripSupplychainTrainSearch(clt *core.SDKClient, req *btrip.AlitripBtripSupplychainTrainSearchAPIRequest, resp *btrip.AlitripBtripSupplychainTrainSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

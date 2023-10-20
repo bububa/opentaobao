@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripFlightDistributionOrderCancelAPIRequest struct {
 // NewAlitripBtripFlightDistributionOrderCancelRequest 初始化AlitripBtripFlightDistributionOrderCancelAPIRequest对象
 func NewAlitripBtripFlightDistributionOrderCancelRequest() *AlitripBtripFlightDistributionOrderCancelAPIRequest {
 	return &AlitripBtripFlightDistributionOrderCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripFlightDistributionOrderCancelAPIRequest) Reset() {
+	r._paramBtripFlightOrderOperateCommonRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripFlightDistributionOrderCancelAPIRequest) SetParamBtripFligh
 // GetParamBtripFlightOrderOperateCommonRq ParamBtripFlightOrderOperateCommonRq Getter
 func (r AlitripBtripFlightDistributionOrderCancelAPIRequest) GetParamBtripFlightOrderOperateCommonRq() *BtripFlightCancelOrderRq {
 	return r._paramBtripFlightOrderOperateCommonRq
+}
+
+var poolAlitripBtripFlightDistributionOrderCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripFlightDistributionOrderCancelRequest()
+	},
+}
+
+// GetAlitripBtripFlightDistributionOrderCancelRequest 从 sync.Pool 获取 AlitripBtripFlightDistributionOrderCancelAPIRequest
+func GetAlitripBtripFlightDistributionOrderCancelAPIRequest() *AlitripBtripFlightDistributionOrderCancelAPIRequest {
+	return poolAlitripBtripFlightDistributionOrderCancelAPIRequest.Get().(*AlitripBtripFlightDistributionOrderCancelAPIRequest)
+}
+
+// ReleaseAlitripBtripFlightDistributionOrderCancelAPIRequest 将 AlitripBtripFlightDistributionOrderCancelAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripFlightDistributionOrderCancelAPIRequest(v *AlitripBtripFlightDistributionOrderCancelAPIRequest) {
+	v.Reset()
+	poolAlitripBtripFlightDistributionOrderCancelAPIRequest.Put(v)
 }

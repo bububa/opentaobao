@@ -9,11 +9,6 @@ import (
 // alibaba.icbu.rfq.recommend
 //
 // rfq推荐
-func AlibabaIcbuRfqRecommend(clt *core.SDKClient, req *icburfq.AlibabaIcbuRfqRecommendAPIRequest, session string) (*icburfq.AlibabaIcbuRfqRecommendAPIResponse, error) {
-	var resp icburfq.AlibabaIcbuRfqRecommendAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIcbuRfqRecommend(clt *core.SDKClient, req *icburfq.AlibabaIcbuRfqRecommendAPIRequest, resp *icburfq.AlibabaIcbuRfqRecommendAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package perfect
 
+import (
+	"sync"
+)
+
 // PerfectItemBaseInfoDto 结构体
 type PerfectItemBaseInfoDto struct {
 	// 商品条码
@@ -18,4 +22,28 @@ type PerfectItemBaseInfoDto struct {
 	SaleChannelKey string `json:"sale_channel_key,omitempty" xml:"sale_channel_key,omitempty"`
 	// 商品数量
 	ItemQuantity int64 `json:"item_quantity,omitempty" xml:"item_quantity,omitempty"`
+}
+
+var poolPerfectItemBaseInfoDto = sync.Pool{
+	New: func() any {
+		return new(PerfectItemBaseInfoDto)
+	},
+}
+
+// GetPerfectItemBaseInfoDto() 从对象池中获取PerfectItemBaseInfoDto
+func GetPerfectItemBaseInfoDto() *PerfectItemBaseInfoDto {
+	return poolPerfectItemBaseInfoDto.Get().(*PerfectItemBaseInfoDto)
+}
+
+// ReleasePerfectItemBaseInfoDto 释放PerfectItemBaseInfoDto
+func ReleasePerfectItemBaseInfoDto(v *PerfectItemBaseInfoDto) {
+	v.ItemBarcode = ""
+	v.ItemOuterId = ""
+	v.ItemPretium = ""
+	v.ItemPrice = ""
+	v.ItemSize = ""
+	v.ItemWeight = ""
+	v.SaleChannelKey = ""
+	v.ItemQuantity = 0
+	poolPerfectItemBaseInfoDto.Put(v)
 }

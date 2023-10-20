@@ -9,11 +9,6 @@ import (
 // tmall.car.lease.riskcallback
 //
 // 租赁公司回调风控结果
-func TmallCarLeaseRiskcallback(clt *core.SDKClient, req *servicecenter.TmallCarLeaseRiskcallbackAPIRequest, session string) (*servicecenter.TmallCarLeaseRiskcallbackAPIResponse, error) {
-	var resp servicecenter.TmallCarLeaseRiskcallbackAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallCarLeaseRiskcallback(clt *core.SDKClient, req *servicecenter.TmallCarLeaseRiskcallbackAPIRequest, resp *servicecenter.TmallCarLeaseRiskcallbackAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

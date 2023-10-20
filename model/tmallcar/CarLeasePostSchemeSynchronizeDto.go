@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // CarLeasePostSchemeSynchronizeDto 结构体
 type CarLeasePostSchemeSynchronizeDto struct {
 	// 租后方案
@@ -16,4 +20,27 @@ type CarLeasePostSchemeSynchronizeDto struct {
 	LastPayStatus int64 `json:"last_pay_status,omitempty" xml:"last_pay_status,omitempty"`
 	// 天猫开新车订单id
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolCarLeasePostSchemeSynchronizeDto = sync.Pool{
+	New: func() any {
+		return new(CarLeasePostSchemeSynchronizeDto)
+	},
+}
+
+// GetCarLeasePostSchemeSynchronizeDto() 从对象池中获取CarLeasePostSchemeSynchronizeDto
+func GetCarLeasePostSchemeSynchronizeDto() *CarLeasePostSchemeSynchronizeDto {
+	return poolCarLeasePostSchemeSynchronizeDto.Get().(*CarLeasePostSchemeSynchronizeDto)
+}
+
+// ReleaseCarLeasePostSchemeSynchronizeDto 释放CarLeasePostSchemeSynchronizeDto
+func ReleaseCarLeasePostSchemeSynchronizeDto(v *CarLeasePostSchemeSynchronizeDto) {
+	v.SchemeAfterLeaseList = v.SchemeAfterLeaseList[:0]
+	v.ContractEndDate = ""
+	v.ReasonCode = ""
+	v.ReasonDesc = ""
+	v.CanSelect = 0
+	v.LastPayStatus = 0
+	v.OrderId = 0
+	poolCarLeasePostSchemeSynchronizeDto.Put(v)
 }

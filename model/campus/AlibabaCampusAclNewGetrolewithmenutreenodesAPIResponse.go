@@ -2,6 +2,7 @@ package campus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse struct {
 	AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponseModel).Reset()
+}
+
 // AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponseModel is 根据角色id查询权限 成功返回结果
 type AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_campus_acl_new_getrolewithmenutreenodes_response"`
@@ -22,4 +29,27 @@ type AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *PojoResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse)
+	},
+}
+
+// GetAlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse 从 sync.Pool 获取 AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse
+func GetAlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse() *AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse {
+	return poolAlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse.Get().(*AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse)
+}
+
+// ReleaseAlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse 将 AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse(v *AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse) {
+	v.Reset()
+	poolAlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse.Put(v)
 }

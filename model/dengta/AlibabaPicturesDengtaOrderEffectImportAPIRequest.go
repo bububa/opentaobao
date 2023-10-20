@@ -2,6 +2,7 @@ package dengta
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -59,8 +60,34 @@ type AlibabaPicturesDengtaOrderEffectImportAPIRequest struct {
 // NewAlibabaPicturesDengtaOrderEffectImportRequest 初始化AlibabaPicturesDengtaOrderEffectImportAPIRequest对象
 func NewAlibabaPicturesDengtaOrderEffectImportRequest() *AlibabaPicturesDengtaOrderEffectImportAPIRequest {
 	return &AlibabaPicturesDengtaOrderEffectImportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(21),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) Reset() {
+	r._weiboSource = ""
+	r._location = ""
+	r._url = ""
+	r._verifiedType = ""
+	r._nodesTop = ""
+	r._graph = ""
+	r._words = ""
+	r._keyPath = ""
+	r._gender = ""
+	r._attitudesNumPerHour = ""
+	r._imsOrderId = ""
+	r._failReason = ""
+	r._repostNumPerHour = ""
+	r._weiboNick = ""
+	r._fansCount = ""
+	r._repostsCount = 0
+	r._attitudesCount = 0
+	r._commentsCount = 0
+	r._isSuccess = 0
+	r._readsCount = 0
+	r._followersCount = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -351,4 +378,21 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetFollowersCount(_fo
 // GetFollowersCount FollowersCount Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetFollowersCount() int64 {
 	return r._followersCount
+}
+
+var poolAlibabaPicturesDengtaOrderEffectImportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaPicturesDengtaOrderEffectImportRequest()
+	},
+}
+
+// GetAlibabaPicturesDengtaOrderEffectImportRequest 从 sync.Pool 获取 AlibabaPicturesDengtaOrderEffectImportAPIRequest
+func GetAlibabaPicturesDengtaOrderEffectImportAPIRequest() *AlibabaPicturesDengtaOrderEffectImportAPIRequest {
+	return poolAlibabaPicturesDengtaOrderEffectImportAPIRequest.Get().(*AlibabaPicturesDengtaOrderEffectImportAPIRequest)
+}
+
+// ReleaseAlibabaPicturesDengtaOrderEffectImportAPIRequest 将 AlibabaPicturesDengtaOrderEffectImportAPIRequest 放入 sync.Pool
+func ReleaseAlibabaPicturesDengtaOrderEffectImportAPIRequest(v *AlibabaPicturesDengtaOrderEffectImportAPIRequest) {
+	v.Reset()
+	poolAlibabaPicturesDengtaOrderEffectImportAPIRequest.Put(v)
 }

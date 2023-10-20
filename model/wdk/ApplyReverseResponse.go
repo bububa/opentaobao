@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ApplyReverseResponse 结构体
 type ApplyReverseResponse struct {
 	// wdk交易单号
@@ -24,4 +28,31 @@ type ApplyReverseResponse struct {
 	PostFee int64 `json:"post_fee,omitempty" xml:"post_fee,omitempty"`
 	// 是否支持修改金额
 	SupportModifyAmount bool `json:"support_modify_amount,omitempty" xml:"support_modify_amount,omitempty"`
+}
+
+var poolApplyReverseResponse = sync.Pool{
+	New: func() any {
+		return new(ApplyReverseResponse)
+	},
+}
+
+// GetApplyReverseResponse() 从对象池中获取ApplyReverseResponse
+func GetApplyReverseResponse() *ApplyReverseResponse {
+	return poolApplyReverseResponse.Get().(*ApplyReverseResponse)
+}
+
+// ReleaseApplyReverseResponse 释放ApplyReverseResponse
+func ReleaseApplyReverseResponse(v *ApplyReverseResponse) {
+	v.BizOrderIds = v.BizOrderIds[:0]
+	v.GiftCardNos = v.GiftCardNos[:0]
+	v.ReasonList = v.ReasonList[:0]
+	v.RefundChannelList = v.RefundChannelList[:0]
+	v.ReverseIds = v.ReverseIds[:0]
+	v.RequestId = ""
+	v.StoreId = ""
+	v.InSaleRefund = 0
+	v.MaxRefundFee = 0
+	v.PostFee = 0
+	v.SupportModifyAmount = false
+	poolApplyReverseResponse.Put(v)
 }

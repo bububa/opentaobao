@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoWeikeEserviceOrderGetAPIRequest struct {
 // NewTaobaoWeikeEserviceOrderGetRequest 初始化TaobaoWeikeEserviceOrderGetAPIRequest对象
 func NewTaobaoWeikeEserviceOrderGetRequest() *TaobaoWeikeEserviceOrderGetAPIRequest {
 	return &TaobaoWeikeEserviceOrderGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWeikeEserviceOrderGetAPIRequest) Reset() {
+	r._orderIdList = r._orderIdList[:0]
+	r._startDate = ""
+	r._sellerNick = ""
+	r._endDate = ""
+	r._pageSize = 0
+	r._pageNum = 0
+	r._schedulingState = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetSchedulingState(_schedulingSt
 // GetSchedulingState SchedulingState Getter
 func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetSchedulingState() bool {
 	return r._schedulingState
+}
+
+var poolTaobaoWeikeEserviceOrderGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWeikeEserviceOrderGetRequest()
+	},
+}
+
+// GetTaobaoWeikeEserviceOrderGetRequest 从 sync.Pool 获取 TaobaoWeikeEserviceOrderGetAPIRequest
+func GetTaobaoWeikeEserviceOrderGetAPIRequest() *TaobaoWeikeEserviceOrderGetAPIRequest {
+	return poolTaobaoWeikeEserviceOrderGetAPIRequest.Get().(*TaobaoWeikeEserviceOrderGetAPIRequest)
+}
+
+// ReleaseTaobaoWeikeEserviceOrderGetAPIRequest 将 TaobaoWeikeEserviceOrderGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWeikeEserviceOrderGetAPIRequest(v *TaobaoWeikeEserviceOrderGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWeikeEserviceOrderGetAPIRequest.Put(v)
 }

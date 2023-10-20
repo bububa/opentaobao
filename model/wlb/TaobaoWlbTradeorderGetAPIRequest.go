@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoWlbTradeorderGetAPIRequest struct {
 // NewTaobaoWlbTradeorderGetRequest 初始化TaobaoWlbTradeorderGetAPIRequest对象
 func NewTaobaoWlbTradeorderGetRequest() *TaobaoWlbTradeorderGetAPIRequest {
 	return &TaobaoWlbTradeorderGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbTradeorderGetAPIRequest) Reset() {
+	r._subTradeId = ""
+	r._tradeId = ""
+	r._tradeType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoWlbTradeorderGetAPIRequest) SetTradeType(_tradeType string) error
 // GetTradeType TradeType Getter
 func (r TaobaoWlbTradeorderGetAPIRequest) GetTradeType() string {
 	return r._tradeType
+}
+
+var poolTaobaoWlbTradeorderGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbTradeorderGetRequest()
+	},
+}
+
+// GetTaobaoWlbTradeorderGetRequest 从 sync.Pool 获取 TaobaoWlbTradeorderGetAPIRequest
+func GetTaobaoWlbTradeorderGetAPIRequest() *TaobaoWlbTradeorderGetAPIRequest {
+	return poolTaobaoWlbTradeorderGetAPIRequest.Get().(*TaobaoWlbTradeorderGetAPIRequest)
+}
+
+// ReleaseTaobaoWlbTradeorderGetAPIRequest 将 TaobaoWlbTradeorderGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbTradeorderGetAPIRequest(v *TaobaoWlbTradeorderGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbTradeorderGetAPIRequest.Put(v)
 }

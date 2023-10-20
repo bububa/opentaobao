@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PropertyRefundOpenReq 结构体
 type PropertyRefundOpenReq struct {
 	// 券实例id集合
@@ -24,4 +28,31 @@ type PropertyRefundOpenReq struct {
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 顾客id
 	CustomerId string `json:"customer_id,omitempty" xml:"customer_id,omitempty"`
+}
+
+var poolPropertyRefundOpenReq = sync.Pool{
+	New: func() any {
+		return new(PropertyRefundOpenReq)
+	},
+}
+
+// GetPropertyRefundOpenReq() 从对象池中获取PropertyRefundOpenReq
+func GetPropertyRefundOpenReq() *PropertyRefundOpenReq {
+	return poolPropertyRefundOpenReq.Get().(*PropertyRefundOpenReq)
+}
+
+// ReleasePropertyRefundOpenReq 释放PropertyRefundOpenReq
+func ReleasePropertyRefundOpenReq(v *PropertyRefundOpenReq) {
+	v.VoucherIdList = v.VoucherIdList[:0]
+	v.BrandId = ""
+	v.Mobile = ""
+	v.NewOuterOrderId = ""
+	v.OperatorId = ""
+	v.OuterId = ""
+	v.OuterOrderId = ""
+	v.OuterType = ""
+	v.RequestId = ""
+	v.ShopId = ""
+	v.CustomerId = ""
+	poolPropertyRefundOpenReq.Put(v)
 }

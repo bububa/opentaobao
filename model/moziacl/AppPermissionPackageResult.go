@@ -1,5 +1,9 @@
 package moziacl
 
+import (
+	"sync"
+)
+
 // AppPermissionPackageResult 结构体
 type AppPermissionPackageResult struct {
 	// 套权限餐数据列表
@@ -20,4 +24,29 @@ type AppPermissionPackageResult struct {
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
 	// 是否处理成功，成功则为true
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAppPermissionPackageResult = sync.Pool{
+	New: func() any {
+		return new(AppPermissionPackageResult)
+	},
+}
+
+// GetAppPermissionPackageResult() 从对象池中获取AppPermissionPackageResult
+func GetAppPermissionPackageResult() *AppPermissionPackageResult {
+	return poolAppPermissionPackageResult.Get().(*AppPermissionPackageResult)
+}
+
+// ReleaseAppPermissionPackageResult 释放AppPermissionPackageResult
+func ReleaseAppPermissionPackageResult(v *AppPermissionPackageResult) {
+	v.Datas = v.Datas[:0]
+	v.RequestId = ""
+	v.ResponseMessage = ""
+	v.ResponseMetaData = ""
+	v.ResponseCode = ""
+	v.TotalSize = 0
+	v.PageSize = 0
+	v.CurrentPage = 0
+	v.Success = false
+	poolAppPermissionPackageResult.Put(v)
 }

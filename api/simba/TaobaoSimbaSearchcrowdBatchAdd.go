@@ -9,11 +9,6 @@ import (
 // taobao.simba.searchcrowd.batch.add
 //
 // 推广单元新增搜索人群
-func TaobaoSimbaSearchcrowdBatchAdd(clt *core.SDKClient, req *simba.TaobaoSimbaSearchcrowdBatchAddAPIRequest, session string) (*simba.TaobaoSimbaSearchcrowdBatchAddAPIResponse, error) {
-	var resp simba.TaobaoSimbaSearchcrowdBatchAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaSearchcrowdBatchAdd(clt *core.SDKClient, req *simba.TaobaoSimbaSearchcrowdBatchAddAPIRequest, resp *simba.TaobaoSimbaSearchcrowdBatchAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

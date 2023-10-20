@@ -2,6 +2,7 @@ package flight
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripPolicyProcessAPIRequest struct {
 // NewAlitripPolicyProcessRequest 初始化AlitripPolicyProcessAPIRequest对象
 func NewAlitripPolicyProcessRequest() *AlitripPolicyProcessAPIRequest {
 	return &AlitripPolicyProcessAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripPolicyProcessAPIRequest) Reset() {
+	r._policyTaskQueryDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripPolicyProcessAPIRequest) SetPolicyTaskQueryDTO(_policyTaskQueryD
 // GetPolicyTaskQueryDTO PolicyTaskQueryDTO Getter
 func (r AlitripPolicyProcessAPIRequest) GetPolicyTaskQueryDTO() *PolicyTaskQueryDto {
 	return r._policyTaskQueryDTO
+}
+
+var poolAlitripPolicyProcessAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripPolicyProcessRequest()
+	},
+}
+
+// GetAlitripPolicyProcessRequest 从 sync.Pool 获取 AlitripPolicyProcessAPIRequest
+func GetAlitripPolicyProcessAPIRequest() *AlitripPolicyProcessAPIRequest {
+	return poolAlitripPolicyProcessAPIRequest.Get().(*AlitripPolicyProcessAPIRequest)
+}
+
+// ReleaseAlitripPolicyProcessAPIRequest 将 AlitripPolicyProcessAPIRequest 放入 sync.Pool
+func ReleaseAlitripPolicyProcessAPIRequest(v *AlitripPolicyProcessAPIRequest) {
+	v.Reset()
+	poolAlitripPolicyProcessAPIRequest.Put(v)
 }

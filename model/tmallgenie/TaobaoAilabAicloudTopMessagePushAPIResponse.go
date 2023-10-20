@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAilabAicloudTopMessagePushAPIResponse struct {
 	TaobaoAilabAicloudTopMessagePushAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopMessagePushAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAilabAicloudTopMessagePushAPIResponseModel).Reset()
+}
+
 // TaobaoAilabAicloudTopMessagePushAPIResponseModel is 天猫精灵消息中心广播推送消息接口 成功返回结果
 type TaobaoAilabAicloudTopMessagePushAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_message_push_response"`
@@ -22,4 +29,27 @@ type TaobaoAilabAicloudTopMessagePushAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *OpsCommonResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopMessagePushAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoAilabAicloudTopMessagePushAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAilabAicloudTopMessagePushAPIResponse)
+	},
+}
+
+// GetTaobaoAilabAicloudTopMessagePushAPIResponse 从 sync.Pool 获取 TaobaoAilabAicloudTopMessagePushAPIResponse
+func GetTaobaoAilabAicloudTopMessagePushAPIResponse() *TaobaoAilabAicloudTopMessagePushAPIResponse {
+	return poolTaobaoAilabAicloudTopMessagePushAPIResponse.Get().(*TaobaoAilabAicloudTopMessagePushAPIResponse)
+}
+
+// ReleaseTaobaoAilabAicloudTopMessagePushAPIResponse 将 TaobaoAilabAicloudTopMessagePushAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAilabAicloudTopMessagePushAPIResponse(v *TaobaoAilabAicloudTopMessagePushAPIResponse) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopMessagePushAPIResponse.Put(v)
 }

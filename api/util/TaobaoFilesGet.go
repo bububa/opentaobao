@@ -9,11 +9,6 @@ import (
 // taobao.files.get
 //
 // 获取业务方暂存给ISV的文件列表
-func TaobaoFilesGet(clt *core.SDKClient, req *util.TaobaoFilesGetAPIRequest, session string) (*util.TaobaoFilesGetAPIResponse, error) {
-	var resp util.TaobaoFilesGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFilesGet(clt *core.SDKClient, req *util.TaobaoFilesGetAPIRequest, resp *util.TaobaoFilesGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

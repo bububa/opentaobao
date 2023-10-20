@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // RecipientInfoDto 结构体
 type RecipientInfoDto struct {
 	// 手机号码
@@ -16,4 +20,27 @@ type RecipientInfoDto struct {
 	Caid string `json:"caid,omitempty" xml:"caid,omitempty"`
 	// 地址
 	Address *AddressDto `json:"address,omitempty" xml:"address,omitempty"`
+}
+
+var poolRecipientInfoDto = sync.Pool{
+	New: func() any {
+		return new(RecipientInfoDto)
+	},
+}
+
+// GetRecipientInfoDto() 从对象池中获取RecipientInfoDto
+func GetRecipientInfoDto() *RecipientInfoDto {
+	return poolRecipientInfoDto.Get().(*RecipientInfoDto)
+}
+
+// ReleaseRecipientInfoDto 释放RecipientInfoDto
+func ReleaseRecipientInfoDto(v *RecipientInfoDto) {
+	v.Mobile = ""
+	v.Name = ""
+	v.Phone = ""
+	v.Oaid = ""
+	v.Tid = ""
+	v.Caid = ""
+	v.Address = nil
+	poolRecipientInfoDto.Put(v)
 }

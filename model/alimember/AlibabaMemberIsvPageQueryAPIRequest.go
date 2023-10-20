@@ -2,6 +2,7 @@ package alimember
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMemberIsvPageQueryAPIRequest struct {
 // NewAlibabaMemberIsvPageQueryRequest 初始化AlibabaMemberIsvPageQueryAPIRequest对象
 func NewAlibabaMemberIsvPageQueryRequest() *AlibabaMemberIsvPageQueryAPIRequest {
 	return &AlibabaMemberIsvPageQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMemberIsvPageQueryAPIRequest) Reset() {
+	r._pageQueryIsvCustomerRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMemberIsvPageQueryAPIRequest) SetPageQueryIsvCustomerRequest(_pa
 // GetPageQueryIsvCustomerRequest PageQueryIsvCustomerRequest Getter
 func (r AlibabaMemberIsvPageQueryAPIRequest) GetPageQueryIsvCustomerRequest() *PageQueryIsvCustomerRequest {
 	return r._pageQueryIsvCustomerRequest
+}
+
+var poolAlibabaMemberIsvPageQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMemberIsvPageQueryRequest()
+	},
+}
+
+// GetAlibabaMemberIsvPageQueryRequest 从 sync.Pool 获取 AlibabaMemberIsvPageQueryAPIRequest
+func GetAlibabaMemberIsvPageQueryAPIRequest() *AlibabaMemberIsvPageQueryAPIRequest {
+	return poolAlibabaMemberIsvPageQueryAPIRequest.Get().(*AlibabaMemberIsvPageQueryAPIRequest)
+}
+
+// ReleaseAlibabaMemberIsvPageQueryAPIRequest 将 AlibabaMemberIsvPageQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMemberIsvPageQueryAPIRequest(v *AlibabaMemberIsvPageQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaMemberIsvPageQueryAPIRequest.Put(v)
 }

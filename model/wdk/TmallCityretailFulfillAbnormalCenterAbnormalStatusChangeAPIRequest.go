@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest struct {
 // NewTmallCityretailFulfillAbnormalCenterAbnormalStatusChangeRequest 初始化TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest对象
 func NewTmallCityretailFulfillAbnormalCenterAbnormalStatusChangeRequest() *TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest {
 	return &TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest) Reset() {
+	r._abnormalStatusChangeDto = r._abnormalStatusChangeDto[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest) Set
 // GetAbnormalStatusChangeDto AbnormalStatusChangeDto Getter
 func (r TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest) GetAbnormalStatusChangeDto() []AbnormalStatusChangeDto {
 	return r._abnormalStatusChangeDto
+}
+
+var poolTmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCityretailFulfillAbnormalCenterAbnormalStatusChangeRequest()
+	},
+}
+
+// GetTmallCityretailFulfillAbnormalCenterAbnormalStatusChangeRequest 从 sync.Pool 获取 TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest
+func GetTmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest() *TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest {
+	return poolTmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest.Get().(*TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest)
+}
+
+// ReleaseTmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest 将 TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest 放入 sync.Pool
+func ReleaseTmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest(v *TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest) {
+	v.Reset()
+	poolTmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest.Put(v)
 }

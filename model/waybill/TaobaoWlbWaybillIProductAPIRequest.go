@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoWlbWaybillIProductAPIRequest struct {
 // NewTaobaoWlbWaybillIProductRequest 初始化TaobaoWlbWaybillIProductAPIRequest对象
 func NewTaobaoWlbWaybillIProductRequest() *TaobaoWlbWaybillIProductAPIRequest {
 	return &TaobaoWlbWaybillIProductAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWaybillIProductAPIRequest) Reset() {
+	r._waybillProductTypeRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoWlbWaybillIProductAPIRequest) SetWaybillProductTypeRequest(_waybi
 // GetWaybillProductTypeRequest WaybillProductTypeRequest Getter
 func (r TaobaoWlbWaybillIProductAPIRequest) GetWaybillProductTypeRequest() *WaybillProductTypeRequest {
 	return r._waybillProductTypeRequest
+}
+
+var poolTaobaoWlbWaybillIProductAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWaybillIProductRequest()
+	},
+}
+
+// GetTaobaoWlbWaybillIProductRequest 从 sync.Pool 获取 TaobaoWlbWaybillIProductAPIRequest
+func GetTaobaoWlbWaybillIProductAPIRequest() *TaobaoWlbWaybillIProductAPIRequest {
+	return poolTaobaoWlbWaybillIProductAPIRequest.Get().(*TaobaoWlbWaybillIProductAPIRequest)
+}
+
+// ReleaseTaobaoWlbWaybillIProductAPIRequest 将 TaobaoWlbWaybillIProductAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWaybillIProductAPIRequest(v *TaobaoWlbWaybillIProductAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWaybillIProductAPIRequest.Put(v)
 }

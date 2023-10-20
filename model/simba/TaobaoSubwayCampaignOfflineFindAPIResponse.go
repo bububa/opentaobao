@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoSubwayCampaignOfflineFindAPIResponse struct {
 	TaobaoSubwayCampaignOfflineFindAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoSubwayCampaignOfflineFindAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSubwayCampaignOfflineFindAPIResponseModel).Reset()
+}
+
 // TaobaoSubwayCampaignOfflineFindAPIResponseModel is 查询某计划离线多日汇总列表 成功返回结果
 type TaobaoSubwayCampaignOfflineFindAPIResponseModel struct {
 	XMLName xml.Name `xml:"subway_campaign_offline_find_response"`
@@ -26,4 +33,29 @@ type TaobaoSubwayCampaignOfflineFindAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 总条数
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSubwayCampaignOfflineFindAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = m.Result[:0]
+	m.Message = ""
+	m.TotalCount = 0
+}
+
+var poolTaobaoSubwayCampaignOfflineFindAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSubwayCampaignOfflineFindAPIResponse)
+	},
+}
+
+// GetTaobaoSubwayCampaignOfflineFindAPIResponse 从 sync.Pool 获取 TaobaoSubwayCampaignOfflineFindAPIResponse
+func GetTaobaoSubwayCampaignOfflineFindAPIResponse() *TaobaoSubwayCampaignOfflineFindAPIResponse {
+	return poolTaobaoSubwayCampaignOfflineFindAPIResponse.Get().(*TaobaoSubwayCampaignOfflineFindAPIResponse)
+}
+
+// ReleaseTaobaoSubwayCampaignOfflineFindAPIResponse 将 TaobaoSubwayCampaignOfflineFindAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSubwayCampaignOfflineFindAPIResponse(v *TaobaoSubwayCampaignOfflineFindAPIResponse) {
+	v.Reset()
+	poolTaobaoSubwayCampaignOfflineFindAPIResponse.Put(v)
 }

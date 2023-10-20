@@ -1,5 +1,9 @@
 package eleenterprisecoupon
 
+import (
+	"sync"
+)
+
 // CartCouponDto 结构体
 type CartCouponDto struct {
 	// 券描述信息
@@ -24,4 +28,31 @@ type CartCouponDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 券可使用张数
 	StockCountAvailable int64 `json:"stock_count_available,omitempty" xml:"stock_count_available,omitempty"`
+}
+
+var poolCartCouponDto = sync.Pool{
+	New: func() any {
+		return new(CartCouponDto)
+	},
+}
+
+// GetCartCouponDto() 从对象池中获取CartCouponDto
+func GetCartCouponDto() *CartCouponDto {
+	return poolCartCouponDto.Get().(*CartCouponDto)
+}
+
+// ReleaseCartCouponDto 释放CartCouponDto
+func ReleaseCartCouponDto(v *CartCouponDto) {
+	v.Descriptions = v.Descriptions[:0]
+	v.UnavailableReasons = v.UnavailableReasons[:0]
+	v.Sn = ""
+	v.Name = ""
+	v.Amount = ""
+	v.Threshold = ""
+	v.StockCountLeft = ""
+	v.PromotionType = 0
+	v.Quantity = 0
+	v.Status = 0
+	v.StockCountAvailable = 0
+	poolCartCouponDto.Put(v)
 }

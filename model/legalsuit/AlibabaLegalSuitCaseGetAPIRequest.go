@@ -2,6 +2,7 @@ package legalsuit
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLegalSuitCaseGetAPIRequest struct {
 // NewAlibabaLegalSuitCaseGetRequest 初始化AlibabaLegalSuitCaseGetAPIRequest对象
 func NewAlibabaLegalSuitCaseGetRequest() *AlibabaLegalSuitCaseGetAPIRequest {
 	return &AlibabaLegalSuitCaseGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegalSuitCaseGetAPIRequest) Reset() {
+	r._id = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLegalSuitCaseGetAPIRequest) SetId(_id int64) error {
 // GetId Id Getter
 func (r AlibabaLegalSuitCaseGetAPIRequest) GetId() int64 {
 	return r._id
+}
+
+var poolAlibabaLegalSuitCaseGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegalSuitCaseGetRequest()
+	},
+}
+
+// GetAlibabaLegalSuitCaseGetRequest 从 sync.Pool 获取 AlibabaLegalSuitCaseGetAPIRequest
+func GetAlibabaLegalSuitCaseGetAPIRequest() *AlibabaLegalSuitCaseGetAPIRequest {
+	return poolAlibabaLegalSuitCaseGetAPIRequest.Get().(*AlibabaLegalSuitCaseGetAPIRequest)
+}
+
+// ReleaseAlibabaLegalSuitCaseGetAPIRequest 将 AlibabaLegalSuitCaseGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegalSuitCaseGetAPIRequest(v *AlibabaLegalSuitCaseGetAPIRequest) {
+	v.Reset()
+	poolAlibabaLegalSuitCaseGetAPIRequest.Put(v)
 }

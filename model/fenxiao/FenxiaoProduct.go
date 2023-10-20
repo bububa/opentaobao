@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // FenxiaoProduct 结构体
 type FenxiaoProduct struct {
 	// sku列表
@@ -92,4 +96,65 @@ type FenxiaoProduct struct {
 	HaveInvoice bool `json:"have_invoice,omitempty" xml:"have_invoice,omitempty"`
 	// 是否有保修，可选值：false（否）、true（是）
 	HaveQuarantee bool `json:"have_quarantee,omitempty" xml:"have_quarantee,omitempty"`
+}
+
+var poolFenxiaoProduct = sync.Pool{
+	New: func() any {
+		return new(FenxiaoProduct)
+	},
+}
+
+// GetFenxiaoProduct() 从对象池中获取FenxiaoProduct
+func GetFenxiaoProduct() *FenxiaoProduct {
+	return poolFenxiaoProduct.Get().(*FenxiaoProduct)
+}
+
+// ReleaseFenxiaoProduct 释放FenxiaoProduct
+func ReleaseFenxiaoProduct(v *FenxiaoProduct) {
+	v.Skus = v.Skus[:0]
+	v.Images = v.Images[:0]
+	v.Pdus = v.Pdus[:0]
+	v.Name = ""
+	v.StandardPrice = ""
+	v.StandardRetailPrice = ""
+	v.RetailPriceLow = ""
+	v.RetailPriceHigh = ""
+	v.CostPrice = ""
+	v.DealerCostPrice = ""
+	v.OuterId = ""
+	v.Pictures = ""
+	v.DescPath = ""
+	v.CategoryId = ""
+	v.Description = ""
+	v.Properties = ""
+	v.PropertyAlias = ""
+	v.InputProperties = ""
+	v.Prov = ""
+	v.City = ""
+	v.PostageType = ""
+	v.PostageOrdinary = ""
+	v.PostageFast = ""
+	v.PostageEms = ""
+	v.Created = ""
+	v.Modified = ""
+	v.UpshelfTime = ""
+	v.Status = ""
+	v.TradeType = ""
+	v.IsAuthz = ""
+	v.Pid = 0
+	v.ProductcatId = 0
+	v.Quantity = 0
+	v.PostageId = 0
+	v.DiscountId = 0
+	v.QueryItemId = 0
+	v.ItemsCount = 0
+	v.OrdersCount = 0
+	v.ScitemId = 0
+	v.SpuId = 0
+	v.ReservedQuantity = 0
+	v.QuotaQuantity = 0
+	v.ItemId = 0
+	v.HaveInvoice = false
+	v.HaveQuarantee = false
+	poolFenxiaoProduct.Put(v)
 }

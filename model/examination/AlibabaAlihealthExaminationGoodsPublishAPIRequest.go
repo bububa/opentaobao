@@ -2,6 +2,7 @@ package examination
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type AlibabaAlihealthExaminationGoodsPublishAPIRequest struct {
 // NewAlibabaAlihealthExaminationGoodsPublishRequest 初始化AlibabaAlihealthExaminationGoodsPublishAPIRequest对象
 func NewAlibabaAlihealthExaminationGoodsPublishRequest() *AlibabaAlihealthExaminationGoodsPublishAPIRequest {
 	return &AlibabaAlihealthExaminationGoodsPublishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) Reset() {
+	r._packageList = r._packageList[:0]
+	r._groupId = ""
+	r._groupName = ""
+	r._type = ""
+	r._goodsDesc = ""
+	r._targetGroup = ""
+	r._label = ""
+	r._categoryId = ""
+	r._mode = ""
+	r._backendCategoryId = 0
+	r._reservationApiVersion = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetReservationApiVer
 // GetReservationApiVersion ReservationApiVersion Getter
 func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetReservationApiVersion() int64 {
 	return r._reservationApiVersion
+}
+
+var poolAlibabaAlihealthExaminationGoodsPublishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthExaminationGoodsPublishRequest()
+	},
+}
+
+// GetAlibabaAlihealthExaminationGoodsPublishRequest 从 sync.Pool 获取 AlibabaAlihealthExaminationGoodsPublishAPIRequest
+func GetAlibabaAlihealthExaminationGoodsPublishAPIRequest() *AlibabaAlihealthExaminationGoodsPublishAPIRequest {
+	return poolAlibabaAlihealthExaminationGoodsPublishAPIRequest.Get().(*AlibabaAlihealthExaminationGoodsPublishAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthExaminationGoodsPublishAPIRequest 将 AlibabaAlihealthExaminationGoodsPublishAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthExaminationGoodsPublishAPIRequest(v *AlibabaAlihealthExaminationGoodsPublishAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationGoodsPublishAPIRequest.Put(v)
 }

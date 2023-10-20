@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // PdStockDetailDto 结构体
 type PdStockDetailDto struct {
 	// 备注
@@ -18,4 +22,28 @@ type PdStockDetailDto struct {
 	CabinetCode string `json:"cabinet_code,omitempty" xml:"cabinet_code,omitempty"`
 	// 商品code
 	ItemCode string `json:"item_code,omitempty" xml:"item_code,omitempty"`
+}
+
+var poolPdStockDetailDto = sync.Pool{
+	New: func() any {
+		return new(PdStockDetailDto)
+	},
+}
+
+// GetPdStockDetailDto() 从对象池中获取PdStockDetailDto
+func GetPdStockDetailDto() *PdStockDetailDto {
+	return poolPdStockDetailDto.Get().(*PdStockDetailDto)
+}
+
+// ReleasePdStockDetailDto 释放PdStockDetailDto
+func ReleasePdStockDetailDto(v *PdStockDetailDto) {
+	v.Remark = ""
+	v.EffectiveTime = ""
+	v.OperatorName = ""
+	v.DiffCount = ""
+	v.RealCount = ""
+	v.SnapshotCount = ""
+	v.CabinetCode = ""
+	v.ItemCode = ""
+	poolPdStockDetailDto.Put(v)
 }

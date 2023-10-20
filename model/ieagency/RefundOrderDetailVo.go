@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // RefundOrderDetailVo 结构体
 type RefundOrderDetailVo struct {
 	// 商家回复
@@ -30,4 +34,34 @@ type RefundOrderDetailVo struct {
 	BuiTui bool `json:"bui_tui,omitempty" xml:"bui_tui,omitempty"`
 	// 限时免费退
 	TimeLimitRefund bool `json:"time_limit_refund,omitempty" xml:"time_limit_refund,omitempty"`
+}
+
+var poolRefundOrderDetailVo = sync.Pool{
+	New: func() any {
+		return new(RefundOrderDetailVo)
+	},
+}
+
+// GetRefundOrderDetailVo() 从对象池中获取RefundOrderDetailVo
+func GetRefundOrderDetailVo() *RefundOrderDetailVo {
+	return poolRefundOrderDetailVo.Get().(*RefundOrderDetailVo)
+}
+
+// ReleaseRefundOrderDetailVo 释放RefundOrderDetailVo
+func ReleaseRefundOrderDetailVo(v *RefundOrderDetailVo) {
+	v.AgreeAnswer = ""
+	v.AgreeTime = ""
+	v.LatestProcessTime = ""
+	v.ReceiveAnswer = ""
+	v.ReceiveTime = ""
+	v.RefuseAnswer = ""
+	v.RefuseTime = ""
+	v.ApplyTime = ""
+	v.ModelVersion = ""
+	v.InstantType = 0
+	v.MultiRefundIndex = 0
+	v.RefundTicketDimension = 0
+	v.BuiTui = false
+	v.TimeLimitRefund = false
+	poolRefundOrderDetailVo.Put(v)
 }

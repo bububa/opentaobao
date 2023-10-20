@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // TaobaoQimenItemmappingQueryResponse 结构体
 type TaobaoQimenItemmappingQueryResponse struct {
 	// 商品映射关系
@@ -10,4 +14,24 @@ type TaobaoQimenItemmappingQueryResponse struct {
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 响应信息,invalid appkey,string(100),
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+}
+
+var poolTaobaoQimenItemmappingQueryResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenItemmappingQueryResponse)
+	},
+}
+
+// GetTaobaoQimenItemmappingQueryResponse() 从对象池中获取TaobaoQimenItemmappingQueryResponse
+func GetTaobaoQimenItemmappingQueryResponse() *TaobaoQimenItemmappingQueryResponse {
+	return poolTaobaoQimenItemmappingQueryResponse.Get().(*TaobaoQimenItemmappingQueryResponse)
+}
+
+// ReleaseTaobaoQimenItemmappingQueryResponse 释放TaobaoQimenItemmappingQueryResponse
+func ReleaseTaobaoQimenItemmappingQueryResponse(v *TaobaoQimenItemmappingQueryResponse) {
+	v.ItemMappings = v.ItemMappings[:0]
+	v.Flag = ""
+	v.Code = ""
+	v.Message = ""
+	poolTaobaoQimenItemmappingQueryResponse.Put(v)
 }

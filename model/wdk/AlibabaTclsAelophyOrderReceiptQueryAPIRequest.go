@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTclsAelophyOrderReceiptQueryAPIRequest struct {
 // NewAlibabaTclsAelophyOrderReceiptQueryRequest 初始化AlibabaTclsAelophyOrderReceiptQueryAPIRequest对象
 func NewAlibabaTclsAelophyOrderReceiptQueryRequest() *AlibabaTclsAelophyOrderReceiptQueryAPIRequest {
 	return &AlibabaTclsAelophyOrderReceiptQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsAelophyOrderReceiptQueryAPIRequest) Reset() {
+	r._receiptQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTclsAelophyOrderReceiptQueryAPIRequest) SetReceiptQueryRequest(_
 // GetReceiptQueryRequest ReceiptQueryRequest Getter
 func (r AlibabaTclsAelophyOrderReceiptQueryAPIRequest) GetReceiptQueryRequest() *ReceiptQueryRequest {
 	return r._receiptQueryRequest
+}
+
+var poolAlibabaTclsAelophyOrderReceiptQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsAelophyOrderReceiptQueryRequest()
+	},
+}
+
+// GetAlibabaTclsAelophyOrderReceiptQueryRequest 从 sync.Pool 获取 AlibabaTclsAelophyOrderReceiptQueryAPIRequest
+func GetAlibabaTclsAelophyOrderReceiptQueryAPIRequest() *AlibabaTclsAelophyOrderReceiptQueryAPIRequest {
+	return poolAlibabaTclsAelophyOrderReceiptQueryAPIRequest.Get().(*AlibabaTclsAelophyOrderReceiptQueryAPIRequest)
+}
+
+// ReleaseAlibabaTclsAelophyOrderReceiptQueryAPIRequest 将 AlibabaTclsAelophyOrderReceiptQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsAelophyOrderReceiptQueryAPIRequest(v *AlibabaTclsAelophyOrderReceiptQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsAelophyOrderReceiptQueryAPIRequest.Put(v)
 }

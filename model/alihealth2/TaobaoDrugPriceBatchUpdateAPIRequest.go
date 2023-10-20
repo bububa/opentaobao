@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoDrugPriceBatchUpdateAPIRequest struct {
 // NewTaobaoDrugPriceBatchUpdateRequest 初始化TaobaoDrugPriceBatchUpdateAPIRequest对象
 func NewTaobaoDrugPriceBatchUpdateRequest() *TaobaoDrugPriceBatchUpdateAPIRequest {
 	return &TaobaoDrugPriceBatchUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDrugPriceBatchUpdateAPIRequest) Reset() {
+	r._outStoreId = ""
+	r._outItemIdPriceMap = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoDrugPriceBatchUpdateAPIRequest) SetOutItemIdPriceMap(_outItemIdPr
 // GetOutItemIdPriceMap OutItemIdPriceMap Getter
 func (r TaobaoDrugPriceBatchUpdateAPIRequest) GetOutItemIdPriceMap() string {
 	return r._outItemIdPriceMap
+}
+
+var poolTaobaoDrugPriceBatchUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDrugPriceBatchUpdateRequest()
+	},
+}
+
+// GetTaobaoDrugPriceBatchUpdateRequest 从 sync.Pool 获取 TaobaoDrugPriceBatchUpdateAPIRequest
+func GetTaobaoDrugPriceBatchUpdateAPIRequest() *TaobaoDrugPriceBatchUpdateAPIRequest {
+	return poolTaobaoDrugPriceBatchUpdateAPIRequest.Get().(*TaobaoDrugPriceBatchUpdateAPIRequest)
+}
+
+// ReleaseTaobaoDrugPriceBatchUpdateAPIRequest 将 TaobaoDrugPriceBatchUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDrugPriceBatchUpdateAPIRequest(v *TaobaoDrugPriceBatchUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoDrugPriceBatchUpdateAPIRequest.Put(v)
 }

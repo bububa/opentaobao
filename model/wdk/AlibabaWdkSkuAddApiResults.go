@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaWdkSkuAddApiResults 结构体
 type AlibabaWdkSkuAddApiResults struct {
 	// models
@@ -10,4 +14,24 @@ type AlibabaWdkSkuAddApiResults struct {
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 接口返回成功标志
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaWdkSkuAddApiResults = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkSkuAddApiResults)
+	},
+}
+
+// GetAlibabaWdkSkuAddApiResults() 从对象池中获取AlibabaWdkSkuAddApiResults
+func GetAlibabaWdkSkuAddApiResults() *AlibabaWdkSkuAddApiResults {
+	return poolAlibabaWdkSkuAddApiResults.Get().(*AlibabaWdkSkuAddApiResults)
+}
+
+// ReleaseAlibabaWdkSkuAddApiResults 释放AlibabaWdkSkuAddApiResults
+func ReleaseAlibabaWdkSkuAddApiResults(v *AlibabaWdkSkuAddApiResults) {
+	v.Models = v.Models[:0]
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Success = false
+	poolAlibabaWdkSkuAddApiResults.Put(v)
 }

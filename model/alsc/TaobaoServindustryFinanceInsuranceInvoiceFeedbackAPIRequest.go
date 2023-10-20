@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest struct {
 // NewTaobaoServindustryFinanceInsuranceInvoiceFeedbackRequest 初始化TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest对象
 func NewTaobaoServindustryFinanceInsuranceInvoiceFeedbackRequest() *TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest {
 	return &TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest) Reset() {
+	r._invoiceResultFeedbackTopReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest) SetInvoice
 // GetInvoiceResultFeedbackTopReq InvoiceResultFeedbackTopReq Getter
 func (r TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest) GetInvoiceResultFeedbackTopReq() *InvoiceResultFeedbackTopReq {
 	return r._invoiceResultFeedbackTopReq
+}
+
+var poolTaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoServindustryFinanceInsuranceInvoiceFeedbackRequest()
+	},
+}
+
+// GetTaobaoServindustryFinanceInsuranceInvoiceFeedbackRequest 从 sync.Pool 获取 TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest
+func GetTaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest() *TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest {
+	return poolTaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest.Get().(*TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest)
+}
+
+// ReleaseTaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest 将 TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest 放入 sync.Pool
+func ReleaseTaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest(v *TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest) {
+	v.Reset()
+	poolTaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest.Put(v)
 }

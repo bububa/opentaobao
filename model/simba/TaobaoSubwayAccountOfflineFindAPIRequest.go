@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoSubwayAccountOfflineFindAPIRequest struct {
 // NewTaobaoSubwayAccountOfflineFindRequest 初始化TaobaoSubwayAccountOfflineFindAPIRequest对象
 func NewTaobaoSubwayAccountOfflineFindRequest() *TaobaoSubwayAccountOfflineFindAPIRequest {
 	return &TaobaoSubwayAccountOfflineFindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSubwayAccountOfflineFindAPIRequest) Reset() {
+	r._startTime = ""
+	r._endTime = ""
+	r._offset = 0
+	r._pageSize = 0
+	r._effect = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoSubwayAccountOfflineFindAPIRequest) SetEffect(_effect int64) erro
 // GetEffect Effect Getter
 func (r TaobaoSubwayAccountOfflineFindAPIRequest) GetEffect() int64 {
 	return r._effect
+}
+
+var poolTaobaoSubwayAccountOfflineFindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSubwayAccountOfflineFindRequest()
+	},
+}
+
+// GetTaobaoSubwayAccountOfflineFindRequest 从 sync.Pool 获取 TaobaoSubwayAccountOfflineFindAPIRequest
+func GetTaobaoSubwayAccountOfflineFindAPIRequest() *TaobaoSubwayAccountOfflineFindAPIRequest {
+	return poolTaobaoSubwayAccountOfflineFindAPIRequest.Get().(*TaobaoSubwayAccountOfflineFindAPIRequest)
+}
+
+// ReleaseTaobaoSubwayAccountOfflineFindAPIRequest 将 TaobaoSubwayAccountOfflineFindAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSubwayAccountOfflineFindAPIRequest(v *TaobaoSubwayAccountOfflineFindAPIRequest) {
+	v.Reset()
+	poolTaobaoSubwayAccountOfflineFindAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.mosflow.work.startprocess
 //
 // 业务发起流程审批
-func AlibabaMosflowWorkStartprocess(clt *core.SDKClient, req *mos.AlibabaMosflowWorkStartprocessAPIRequest, session string) (*mos.AlibabaMosflowWorkStartprocessAPIResponse, error) {
-	var resp mos.AlibabaMosflowWorkStartprocessAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMosflowWorkStartprocess(clt *core.SDKClient, req *mos.AlibabaMosflowWorkStartprocessAPIRequest, resp *mos.AlibabaMosflowWorkStartprocessAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package mc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallMcDeviceCircleCheckAPIRequest struct {
 // NewTmallMcDeviceCircleCheckRequest 初始化TmallMcDeviceCircleCheckAPIRequest对象
 func NewTmallMcDeviceCircleCheckRequest() *TmallMcDeviceCircleCheckAPIRequest {
 	return &TmallMcDeviceCircleCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallMcDeviceCircleCheckAPIRequest) Reset() {
+	r._outerCode = ""
+	r._channelId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallMcDeviceCircleCheckAPIRequest) SetChannelId(_channelId string) err
 // GetChannelId ChannelId Getter
 func (r TmallMcDeviceCircleCheckAPIRequest) GetChannelId() string {
 	return r._channelId
+}
+
+var poolTmallMcDeviceCircleCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallMcDeviceCircleCheckRequest()
+	},
+}
+
+// GetTmallMcDeviceCircleCheckRequest 从 sync.Pool 获取 TmallMcDeviceCircleCheckAPIRequest
+func GetTmallMcDeviceCircleCheckAPIRequest() *TmallMcDeviceCircleCheckAPIRequest {
+	return poolTmallMcDeviceCircleCheckAPIRequest.Get().(*TmallMcDeviceCircleCheckAPIRequest)
+}
+
+// ReleaseTmallMcDeviceCircleCheckAPIRequest 将 TmallMcDeviceCircleCheckAPIRequest 放入 sync.Pool
+func ReleaseTmallMcDeviceCircleCheckAPIRequest(v *TmallMcDeviceCircleCheckAPIRequest) {
+	v.Reset()
+	poolTmallMcDeviceCircleCheckAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package media
 
+import (
+	"sync"
+)
+
 // Picture 结构体
 type Picture struct {
 	// 返回的是绝对路径如：http://img07.taobaocdn.com/imgextra/i7/22670458/T2dD0kXb4cXXXXXXXX_!!22670458.jpg
@@ -28,4 +32,33 @@ type Picture struct {
 	Sizes int64 `json:"sizes,omitempty" xml:"sizes,omitempty"`
 	// 图片是否被引用
 	Referenced bool `json:"referenced,omitempty" xml:"referenced,omitempty"`
+}
+
+var poolPicture = sync.Pool{
+	New: func() any {
+		return new(Picture)
+	},
+}
+
+// GetPicture() 从对象池中获取Picture
+func GetPicture() *Picture {
+	return poolPicture.Get().(*Picture)
+}
+
+// ReleasePicture 释放Picture
+func ReleasePicture(v *Picture) {
+	v.PicturePath = ""
+	v.Title = ""
+	v.Pixel = ""
+	v.Status = ""
+	v.Deleted = ""
+	v.ClientType = ""
+	v.Created = ""
+	v.Modified = ""
+	v.Md5 = ""
+	v.PictureId = 0
+	v.PictureCategoryId = 0
+	v.Sizes = 0
+	v.Referenced = false
+	poolPicture.Put(v)
 }

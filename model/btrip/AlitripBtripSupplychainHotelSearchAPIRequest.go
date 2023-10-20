@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripSupplychainHotelSearchAPIRequest struct {
 // NewAlitripBtripSupplychainHotelSearchRequest 初始化AlitripBtripSupplychainHotelSearchAPIRequest对象
 func NewAlitripBtripSupplychainHotelSearchRequest() *AlitripBtripSupplychainHotelSearchAPIRequest {
 	return &AlitripBtripSupplychainHotelSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripSupplychainHotelSearchAPIRequest) Reset() {
+	r._rq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripSupplychainHotelSearchAPIRequest) SetRq(_rq *OpenApiSearchR
 // GetRq Rq Getter
 func (r AlitripBtripSupplychainHotelSearchAPIRequest) GetRq() *OpenApiSearchRq {
 	return r._rq
+}
+
+var poolAlitripBtripSupplychainHotelSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripSupplychainHotelSearchRequest()
+	},
+}
+
+// GetAlitripBtripSupplychainHotelSearchRequest 从 sync.Pool 获取 AlitripBtripSupplychainHotelSearchAPIRequest
+func GetAlitripBtripSupplychainHotelSearchAPIRequest() *AlitripBtripSupplychainHotelSearchAPIRequest {
+	return poolAlitripBtripSupplychainHotelSearchAPIRequest.Get().(*AlitripBtripSupplychainHotelSearchAPIRequest)
+}
+
+// ReleaseAlitripBtripSupplychainHotelSearchAPIRequest 将 AlitripBtripSupplychainHotelSearchAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripSupplychainHotelSearchAPIRequest(v *AlitripBtripSupplychainHotelSearchAPIRequest) {
+	v.Reset()
+	poolAlitripBtripSupplychainHotelSearchAPIRequest.Put(v)
 }

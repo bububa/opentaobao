@@ -9,11 +9,6 @@ import (
 // taobao.marketing.promotion.kfc
 //
 // 活动名称与描述违禁词检查
-func TaobaoMarketingPromotionKfc(clt *core.SDKClient, req *promotion.TaobaoMarketingPromotionKfcAPIRequest, session string) (*promotion.TaobaoMarketingPromotionKfcAPIResponse, error) {
-	var resp promotion.TaobaoMarketingPromotionKfcAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoMarketingPromotionKfc(clt *core.SDKClient, req *promotion.TaobaoMarketingPromotionKfcAPIRequest, resp *promotion.TaobaoMarketingPromotionKfcAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

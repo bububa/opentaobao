@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // CollectionResult 结构体
 type CollectionResult struct {
 	// 菜单内容
@@ -20,4 +24,29 @@ type CollectionResult struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 是否调用成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolCollectionResult = sync.Pool{
+	New: func() any {
+		return new(CollectionResult)
+	},
+}
+
+// GetCollectionResult() 从对象池中获取CollectionResult
+func GetCollectionResult() *CollectionResult {
+	return poolCollectionResult.Get().(*CollectionResult)
+}
+
+// ReleaseCollectionResult 释放CollectionResult
+func ReleaseCollectionResult(v *CollectionResult) {
+	v.Contents = v.Contents[:0]
+	v.ContentList = v.ContentList[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.ErrorLevel = ""
+	v.RequestId = ""
+	v.ErrorExtInfo = ""
+	v.TotalCount = 0
+	v.Success = false
+	poolCollectionResult.Put(v)
 }

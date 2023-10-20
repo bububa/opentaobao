@@ -9,11 +9,6 @@ import (
 // taobao.tbk.rta.consumer.match
 //
 // 淘客计划向用户推送某个定向活动时，调用该接口判断用户是否符合活动目标（淘客接入前需签署协议 https://pub.alimama.com/fourth/protocol/common.htm?key=hangye_laxin）
-func TaobaoTbkRtaConsumerMatch(clt *core.SDKClient, req *tbk.TaobaoTbkRtaConsumerMatchAPIRequest, session string) (*tbk.TaobaoTbkRtaConsumerMatchAPIResponse, error) {
-	var resp tbk.TaobaoTbkRtaConsumerMatchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTbkRtaConsumerMatch(clt *core.SDKClient, req *tbk.TaobaoTbkRtaConsumerMatchAPIRequest, resp *tbk.TaobaoTbkRtaConsumerMatchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

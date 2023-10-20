@@ -2,6 +2,7 @@ package exchange
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallExchangeRefusereasonGetAPIRequest struct {
 // NewTmallExchangeRefusereasonGetRequest 初始化TmallExchangeRefusereasonGetAPIRequest对象
 func NewTmallExchangeRefusereasonGetRequest() *TmallExchangeRefusereasonGetAPIRequest {
 	return &TmallExchangeRefusereasonGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallExchangeRefusereasonGetAPIRequest) Reset() {
+	r._fields = r._fields[:0]
+	r._disputeId = 0
+	r._disputeType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallExchangeRefusereasonGetAPIRequest) SetDisputeType(_disputeType int
 // GetDisputeType DisputeType Getter
 func (r TmallExchangeRefusereasonGetAPIRequest) GetDisputeType() int64 {
 	return r._disputeType
+}
+
+var poolTmallExchangeRefusereasonGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallExchangeRefusereasonGetRequest()
+	},
+}
+
+// GetTmallExchangeRefusereasonGetRequest 从 sync.Pool 获取 TmallExchangeRefusereasonGetAPIRequest
+func GetTmallExchangeRefusereasonGetAPIRequest() *TmallExchangeRefusereasonGetAPIRequest {
+	return poolTmallExchangeRefusereasonGetAPIRequest.Get().(*TmallExchangeRefusereasonGetAPIRequest)
+}
+
+// ReleaseTmallExchangeRefusereasonGetAPIRequest 将 TmallExchangeRefusereasonGetAPIRequest 放入 sync.Pool
+func ReleaseTmallExchangeRefusereasonGetAPIRequest(v *TmallExchangeRefusereasonGetAPIRequest) {
+	v.Reset()
+	poolTmallExchangeRefusereasonGetAPIRequest.Put(v)
 }

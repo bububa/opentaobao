@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenSearchRq 结构体
 type OpenSearchRq struct {
 	// 开始时间
@@ -24,4 +28,31 @@ type OpenSearchRq struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 申请单id
 	ApplyId int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
+}
+
+var poolOpenSearchRq = sync.Pool{
+	New: func() any {
+		return new(OpenSearchRq)
+	},
+}
+
+// GetOpenSearchRq() 从对象池中获取OpenSearchRq
+func GetOpenSearchRq() *OpenSearchRq {
+	return poolOpenSearchRq.Get().(*OpenSearchRq)
+}
+
+// ReleaseOpenSearchRq 释放OpenSearchRq
+func ReleaseOpenSearchRq(v *OpenSearchRq) {
+	v.StartTime = ""
+	v.DepartId = ""
+	v.EndTime = ""
+	v.CorpId = ""
+	v.UserId = ""
+	v.GmtModified = ""
+	v.UpdateEndTime = ""
+	v.UpdateStartTime = ""
+	v.Page = 0
+	v.PageSize = 0
+	v.ApplyId = 0
+	poolOpenSearchRq.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.retail.marketing.buygift.activity.save
 //
 // 同城零售单品买赠活动保存
-func AlibabaRetailMarketingBuygiftActivitySave(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingBuygiftActivitySaveAPIRequest, session string) (*wdk.AlibabaRetailMarketingBuygiftActivitySaveAPIResponse, error) {
-	var resp wdk.AlibabaRetailMarketingBuygiftActivitySaveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaRetailMarketingBuygiftActivitySave(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingBuygiftActivitySaveAPIRequest, resp *wdk.AlibabaRetailMarketingBuygiftActivitySaveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

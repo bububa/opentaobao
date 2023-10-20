@@ -1,5 +1,9 @@
 package feedflow
 
+import (
+	"sync"
+)
+
 // LabelQueryDto 结构体
 type LabelQueryDto struct {
 	// 宝贝id列表
@@ -14,4 +18,26 @@ type LabelQueryDto struct {
 	TargetId int64 `json:"target_id,omitempty" xml:"target_id,omitempty"`
 	// 分页条件
 	Offset int64 `json:"offset,omitempty" xml:"offset,omitempty"`
+}
+
+var poolLabelQueryDto = sync.Pool{
+	New: func() any {
+		return new(LabelQueryDto)
+	},
+}
+
+// GetLabelQueryDto() 从对象池中获取LabelQueryDto
+func GetLabelQueryDto() *LabelQueryDto {
+	return poolLabelQueryDto.Get().(*LabelQueryDto)
+}
+
+// ReleaseLabelQueryDto 释放LabelQueryDto
+func ReleaseLabelQueryDto(v *LabelQueryDto) {
+	v.ItemIdList = v.ItemIdList[:0]
+	v.OptionName = ""
+	v.TargetType = ""
+	v.PageSize = 0
+	v.TargetId = 0
+	v.Offset = 0
+	poolLabelQueryDto.Put(v)
 }

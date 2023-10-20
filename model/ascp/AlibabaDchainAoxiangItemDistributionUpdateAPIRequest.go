@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangItemDistributionUpdateAPIRequest struct {
 // NewAlibabaDchainAoxiangItemDistributionUpdateRequest 初始化AlibabaDchainAoxiangItemDistributionUpdateAPIRequest对象
 func NewAlibabaDchainAoxiangItemDistributionUpdateRequest() *AlibabaDchainAoxiangItemDistributionUpdateAPIRequest {
 	return &AlibabaDchainAoxiangItemDistributionUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangItemDistributionUpdateAPIRequest) Reset() {
+	r._updateItemDistributionRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangItemDistributionUpdateAPIRequest) SetUpdateItemDist
 // GetUpdateItemDistributionRequest UpdateItemDistributionRequest Getter
 func (r AlibabaDchainAoxiangItemDistributionUpdateAPIRequest) GetUpdateItemDistributionRequest() *UpdateItemDistributionRequest {
 	return r._updateItemDistributionRequest
+}
+
+var poolAlibabaDchainAoxiangItemDistributionUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangItemDistributionUpdateRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangItemDistributionUpdateRequest 从 sync.Pool 获取 AlibabaDchainAoxiangItemDistributionUpdateAPIRequest
+func GetAlibabaDchainAoxiangItemDistributionUpdateAPIRequest() *AlibabaDchainAoxiangItemDistributionUpdateAPIRequest {
+	return poolAlibabaDchainAoxiangItemDistributionUpdateAPIRequest.Get().(*AlibabaDchainAoxiangItemDistributionUpdateAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangItemDistributionUpdateAPIRequest 将 AlibabaDchainAoxiangItemDistributionUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangItemDistributionUpdateAPIRequest(v *AlibabaDchainAoxiangItemDistributionUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangItemDistributionUpdateAPIRequest.Put(v)
 }

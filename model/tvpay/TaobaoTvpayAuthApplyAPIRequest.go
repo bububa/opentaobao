@@ -2,6 +2,7 @@ package tvpay
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoTvpayAuthApplyAPIRequest struct {
 // NewTaobaoTvpayAuthApplyRequest 初始化TaobaoTvpayAuthApplyAPIRequest对象
 func NewTaobaoTvpayAuthApplyRequest() *TaobaoTvpayAuthApplyAPIRequest {
 	return &TaobaoTvpayAuthApplyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTvpayAuthApplyAPIRequest) Reset() {
+	r._deviceId = ""
+	r._from = ""
+	r._bizScene = ""
+	r._itemName = ""
+	r._operateType = ""
+	r._outApproveId = ""
+	r._totalFee = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoTvpayAuthApplyAPIRequest) SetTotalFee(_totalFee string) error {
 // GetTotalFee TotalFee Getter
 func (r TaobaoTvpayAuthApplyAPIRequest) GetTotalFee() string {
 	return r._totalFee
+}
+
+var poolTaobaoTvpayAuthApplyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTvpayAuthApplyRequest()
+	},
+}
+
+// GetTaobaoTvpayAuthApplyRequest 从 sync.Pool 获取 TaobaoTvpayAuthApplyAPIRequest
+func GetTaobaoTvpayAuthApplyAPIRequest() *TaobaoTvpayAuthApplyAPIRequest {
+	return poolTaobaoTvpayAuthApplyAPIRequest.Get().(*TaobaoTvpayAuthApplyAPIRequest)
+}
+
+// ReleaseTaobaoTvpayAuthApplyAPIRequest 将 TaobaoTvpayAuthApplyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTvpayAuthApplyAPIRequest(v *TaobaoTvpayAuthApplyAPIRequest) {
+	v.Reset()
+	poolTaobaoTvpayAuthApplyAPIRequest.Put(v)
 }

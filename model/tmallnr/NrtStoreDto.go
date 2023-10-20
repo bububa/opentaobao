@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrtStoreDto 结构体
 type NrtStoreDto struct {
 	// 门店名称
@@ -12,4 +16,25 @@ type NrtStoreDto struct {
 	Lng string `json:"lng,omitempty" xml:"lng,omitempty"`
 	// 门店ID
 	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
+}
+
+var poolNrtStoreDto = sync.Pool{
+	New: func() any {
+		return new(NrtStoreDto)
+	},
+}
+
+// GetNrtStoreDto() 从对象池中获取NrtStoreDto
+func GetNrtStoreDto() *NrtStoreDto {
+	return poolNrtStoreDto.Get().(*NrtStoreDto)
+}
+
+// ReleaseNrtStoreDto 释放NrtStoreDto
+func ReleaseNrtStoreDto(v *NrtStoreDto) {
+	v.Name = ""
+	v.ShortAddress = ""
+	v.Lat = ""
+	v.Lng = ""
+	v.StoreId = 0
+	poolNrtStoreDto.Put(v)
 }

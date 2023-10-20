@@ -1,5 +1,9 @@
 package drug
 
+import (
+	"sync"
+)
+
 // Itemlist 结构体
 type Itemlist struct {
 	// itemId
@@ -30,4 +34,34 @@ type Itemlist struct {
 	DeliveryType int64 `json:"delivery_type,omitempty" xml:"delivery_type,omitempty"`
 	// rx
 	Rx bool `json:"rx,omitempty" xml:"rx,omitempty"`
+}
+
+var poolItemlist = sync.Pool{
+	New: func() any {
+		return new(Itemlist)
+	},
+}
+
+// GetItemlist() 从对象池中获取Itemlist
+func GetItemlist() *Itemlist {
+	return poolItemlist.Get().(*Itemlist)
+}
+
+// ReleaseItemlist 释放Itemlist
+func ReleaseItemlist(v *Itemlist) {
+	v.ItemId = ""
+	v.IsO2o = ""
+	v.ItemName = ""
+	v.ListPicUrl = ""
+	v.OriPrice = ""
+	v.Price = ""
+	v.Symptom = ""
+	v.Quantity = ""
+	v.DeliveryTime = ""
+	v.DeliveryTypeDesc = ""
+	v.BackCate = 0
+	v.AtLimit = 0
+	v.DeliveryType = 0
+	v.Rx = false
+	poolItemlist.Put(v)
 }

@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // TaobaoTbkScTpwdConvertMapData 结构体
 type TaobaoTbkScTpwdConvertMapData struct {
 	// 商品Id
@@ -22,4 +26,30 @@ type TaobaoTbkScTpwdConvertMapData struct {
 	ShortUrl string `json:"short_url,omitempty" xml:"short_url,omitempty"`
 	// 1-单品，2-店铺，3-活动，0-其它
 	UrlType string `json:"url_type,omitempty" xml:"url_type,omitempty"`
+}
+
+var poolTaobaoTbkScTpwdConvertMapData = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkScTpwdConvertMapData)
+	},
+}
+
+// GetTaobaoTbkScTpwdConvertMapData() 从对象池中获取TaobaoTbkScTpwdConvertMapData
+func GetTaobaoTbkScTpwdConvertMapData() *TaobaoTbkScTpwdConvertMapData {
+	return poolTaobaoTbkScTpwdConvertMapData.Get().(*TaobaoTbkScTpwdConvertMapData)
+}
+
+// ReleaseTaobaoTbkScTpwdConvertMapData 释放TaobaoTbkScTpwdConvertMapData
+func ReleaseTaobaoTbkScTpwdConvertMapData(v *TaobaoTbkScTpwdConvertMapData) {
+	v.NumIid = ""
+	v.ClickUrl = ""
+	v.SellerId = ""
+	v.OriginUrl = ""
+	v.OriginPid = ""
+	v.BizSceneId = ""
+	v.Model = ""
+	v.Password = ""
+	v.ShortUrl = ""
+	v.UrlType = ""
+	poolTaobaoTbkScTpwdConvertMapData.Put(v)
 }

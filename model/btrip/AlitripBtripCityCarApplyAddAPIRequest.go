@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripCityCarApplyAddAPIRequest struct {
 // NewAlitripBtripCityCarApplyAddRequest 初始化AlitripBtripCityCarApplyAddAPIRequest对象
 func NewAlitripBtripCityCarApplyAddRequest() *AlitripBtripCityCarApplyAddAPIRequest {
 	return &AlitripBtripCityCarApplyAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripCityCarApplyAddAPIRequest) Reset() {
+	r._rq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripCityCarApplyAddAPIRequest) SetRq(_rq *CityCarApplyAddRq) er
 // GetRq Rq Getter
 func (r AlitripBtripCityCarApplyAddAPIRequest) GetRq() *CityCarApplyAddRq {
 	return r._rq
+}
+
+var poolAlitripBtripCityCarApplyAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripCityCarApplyAddRequest()
+	},
+}
+
+// GetAlitripBtripCityCarApplyAddRequest 从 sync.Pool 获取 AlitripBtripCityCarApplyAddAPIRequest
+func GetAlitripBtripCityCarApplyAddAPIRequest() *AlitripBtripCityCarApplyAddAPIRequest {
+	return poolAlitripBtripCityCarApplyAddAPIRequest.Get().(*AlitripBtripCityCarApplyAddAPIRequest)
+}
+
+// ReleaseAlitripBtripCityCarApplyAddAPIRequest 将 AlitripBtripCityCarApplyAddAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripCityCarApplyAddAPIRequest(v *AlitripBtripCityCarApplyAddAPIRequest) {
+	v.Reset()
+	poolAlitripBtripCityCarApplyAddAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.admin.theme.create
 //
 // 创建云主题
-func AlibabaAlihouseAdminThemeCreate(clt *core.SDKClient, req *alihouse.AlibabaAlihouseAdminThemeCreateAPIRequest, session string) (*alihouse.AlibabaAlihouseAdminThemeCreateAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseAdminThemeCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseAdminThemeCreate(clt *core.SDKClient, req *alihouse.AlibabaAlihouseAdminThemeCreateAPIRequest, resp *alihouse.AlibabaAlihouseAdminThemeCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaWdkSkuScrollQueryModelList 结构体
 type AlibabaWdkSkuScrollQueryModelList struct {
 	// 商品编码
@@ -62,4 +66,50 @@ type AlibabaWdkSkuScrollQueryModelList struct {
 	OnlineSaleFlag int64 `json:"online_sale_flag,omitempty" xml:"online_sale_flag,omitempty"`
 	// 加工时间 单位：分钟
 	ProcessingTime int64 `json:"processing_time,omitempty" xml:"processing_time,omitempty"`
+}
+
+var poolAlibabaWdkSkuScrollQueryModelList = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkSkuScrollQueryModelList)
+	},
+}
+
+// GetAlibabaWdkSkuScrollQueryModelList() 从对象池中获取AlibabaWdkSkuScrollQueryModelList
+func GetAlibabaWdkSkuScrollQueryModelList() *AlibabaWdkSkuScrollQueryModelList {
+	return poolAlibabaWdkSkuScrollQueryModelList.Get().(*AlibabaWdkSkuScrollQueryModelList)
+}
+
+// ReleaseAlibabaWdkSkuScrollQueryModelList 释放AlibabaWdkSkuScrollQueryModelList
+func ReleaseAlibabaWdkSkuScrollQueryModelList(v *AlibabaWdkSkuScrollQueryModelList) {
+	v.SkuCode = ""
+	v.SkuName = ""
+	v.LifeStatus = ""
+	v.Barcodes = ""
+	v.SalePrice = ""
+	v.MemberPrice = ""
+	v.SaleUnit = ""
+	v.WeightFlag = ""
+	v.MerchantCatCode = ""
+	v.OrgNo = ""
+	v.OuCode = ""
+	v.ShopId = ""
+	v.ChannelCodes = ""
+	v.TaxClassNo = ""
+	v.ModifiedTime = ""
+	v.MerchantCode = ""
+	v.SupplierNo = ""
+	v.ShortTitle = ""
+	v.SaleSpec = ""
+	v.BackCatCode = ""
+	v.InputTaxRate = ""
+	v.TaxRate = ""
+	v.BrandName = ""
+	v.BrandCode = ""
+	v.ShelfLife = ""
+	v.BusinessType = 0
+	v.TestFlag = 0
+	v.ServiceFlag = 0
+	v.OnlineSaleFlag = 0
+	v.ProcessingTime = 0
+	poolAlibabaWdkSkuScrollQueryModelList.Put(v)
 }

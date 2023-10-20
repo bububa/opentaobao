@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenOrderPendingAPIRequest struct {
 // NewTaobaoQimenOrderPendingRequest 初始化TaobaoQimenOrderPendingAPIRequest对象
 func NewTaobaoQimenOrderPendingRequest() *TaobaoQimenOrderPendingAPIRequest {
 	return &TaobaoQimenOrderPendingAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenOrderPendingAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -50,4 +57,21 @@ func (r *TaobaoQimenOrderPendingAPIRequest) SetRequest(_request *OrderPendingReq
 // GetRequest Request Getter
 func (r TaobaoQimenOrderPendingAPIRequest) GetRequest() *OrderPendingRequest {
 	return r._request
+}
+
+var poolTaobaoQimenOrderPendingAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenOrderPendingRequest()
+	},
+}
+
+// GetTaobaoQimenOrderPendingRequest 从 sync.Pool 获取 TaobaoQimenOrderPendingAPIRequest
+func GetTaobaoQimenOrderPendingAPIRequest() *TaobaoQimenOrderPendingAPIRequest {
+	return poolTaobaoQimenOrderPendingAPIRequest.Get().(*TaobaoQimenOrderPendingAPIRequest)
+}
+
+// ReleaseTaobaoQimenOrderPendingAPIRequest 将 TaobaoQimenOrderPendingAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenOrderPendingAPIRequest(v *TaobaoQimenOrderPendingAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenOrderPendingAPIRequest.Put(v)
 }

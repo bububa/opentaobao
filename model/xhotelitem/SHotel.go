@@ -1,7 +1,11 @@
 package xhotelitem
 
-// Shotel 结构体
-type Shotel struct {
+import (
+	"sync"
+)
+
+// SHotel 结构体
+type SHotel struct {
 	// name
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// used_name
@@ -74,4 +78,56 @@ type Shotel struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 0：酒店 1：客栈
 	IsKezhan int64 `json:"is_kezhan,omitempty" xml:"is_kezhan,omitempty"`
+}
+
+var poolSHotel = sync.Pool{
+	New: func() any {
+		return new(SHotel)
+	},
+}
+
+// GetSHotel() 从对象池中获取SHotel
+func GetSHotel() *SHotel {
+	return poolSHotel.Get().(*SHotel)
+}
+
+// ReleaseSHotel 释放SHotel
+func ReleaseSHotel(v *SHotel) {
+	v.Name = ""
+	v.UsedName = ""
+	v.Type = ""
+	v.Country = ""
+	v.CityTag = ""
+	v.Business = ""
+	v.Address = ""
+	v.Level = ""
+	v.Longitude = ""
+	v.Latitude = ""
+	v.Tel = ""
+	v.Fax = ""
+	v.OpeningTime = ""
+	v.DecorateTime = ""
+	v.Storeys = ""
+	v.Extend = ""
+	v.Desc = ""
+	v.Service = ""
+	v.HotelFacilities = ""
+	v.RoomFacilities = ""
+	v.PicUrl = ""
+	v.CreatedTime = ""
+	v.ModifiedTime = ""
+	v.PostalCode = ""
+	v.Brand = ""
+	v.Fee = ""
+	v.NameE = ""
+	v.Shid = 0
+	v.Domestic = 0
+	v.Province = 0
+	v.City = 0
+	v.District = 0
+	v.PositionType = 0
+	v.Rooms = 0
+	v.Status = 0
+	v.IsKezhan = 0
+	poolSHotel.Put(v)
 }

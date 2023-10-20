@@ -2,6 +2,7 @@ package koubeimall
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type TaobaoKoubeiMallCommonMallNearListAPIRequest struct {
 // NewTaobaoKoubeiMallCommonMallNearListRequest 初始化TaobaoKoubeiMallCommonMallNearListAPIRequest对象
 func NewTaobaoKoubeiMallCommonMallNearListRequest() *TaobaoKoubeiMallCommonMallNearListAPIRequest {
 	return &TaobaoKoubeiMallCommonMallNearListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) Reset() {
+	r._displayChannel = ""
+	r._appVersion = ""
+	r._terminalType = ""
+	r._latitude = ""
+	r._longitude = ""
+	r._cityCode = ""
+	r._dataSetId = ""
+	r._size = 0
+	r._radius = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetRadius(_radius int64) 
 // GetRadius Radius Getter
 func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetRadius() int64 {
 	return r._radius
+}
+
+var poolTaobaoKoubeiMallCommonMallNearListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoKoubeiMallCommonMallNearListRequest()
+	},
+}
+
+// GetTaobaoKoubeiMallCommonMallNearListRequest 从 sync.Pool 获取 TaobaoKoubeiMallCommonMallNearListAPIRequest
+func GetTaobaoKoubeiMallCommonMallNearListAPIRequest() *TaobaoKoubeiMallCommonMallNearListAPIRequest {
+	return poolTaobaoKoubeiMallCommonMallNearListAPIRequest.Get().(*TaobaoKoubeiMallCommonMallNearListAPIRequest)
+}
+
+// ReleaseTaobaoKoubeiMallCommonMallNearListAPIRequest 将 TaobaoKoubeiMallCommonMallNearListAPIRequest 放入 sync.Pool
+func ReleaseTaobaoKoubeiMallCommonMallNearListAPIRequest(v *TaobaoKoubeiMallCommonMallNearListAPIRequest) {
+	v.Reset()
+	poolTaobaoKoubeiMallCommonMallNearListAPIRequest.Put(v)
 }

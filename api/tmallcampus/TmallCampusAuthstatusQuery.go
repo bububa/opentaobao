@@ -9,11 +9,6 @@ import (
 // tmall.campus.authstatus.query
 //
 // 学生认证状态查询
-func TmallCampusAuthstatusQuery(clt *core.SDKClient, req *tmallcampus.TmallCampusAuthstatusQueryAPIRequest, session string) (*tmallcampus.TmallCampusAuthstatusQueryAPIResponse, error) {
-	var resp tmallcampus.TmallCampusAuthstatusQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallCampusAuthstatusQuery(clt *core.SDKClient, req *tmallcampus.TmallCampusAuthstatusQueryAPIRequest, resp *tmallcampus.TmallCampusAuthstatusQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

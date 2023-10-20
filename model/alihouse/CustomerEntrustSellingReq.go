@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // CustomerEntrustSellingReq 结构体
 type CustomerEntrustSellingReq struct {
 	// 委托状态
@@ -8,4 +12,23 @@ type CustomerEntrustSellingReq struct {
 	ButlerServiceId int64 `json:"butler_service_id,omitempty" xml:"butler_service_id,omitempty"`
 	// 委托业务主ID
 	EntrustSellingId int64 `json:"entrust_selling_id,omitempty" xml:"entrust_selling_id,omitempty"`
+}
+
+var poolCustomerEntrustSellingReq = sync.Pool{
+	New: func() any {
+		return new(CustomerEntrustSellingReq)
+	},
+}
+
+// GetCustomerEntrustSellingReq() 从对象池中获取CustomerEntrustSellingReq
+func GetCustomerEntrustSellingReq() *CustomerEntrustSellingReq {
+	return poolCustomerEntrustSellingReq.Get().(*CustomerEntrustSellingReq)
+}
+
+// ReleaseCustomerEntrustSellingReq 释放CustomerEntrustSellingReq
+func ReleaseCustomerEntrustSellingReq(v *CustomerEntrustSellingReq) {
+	v.EntrustedStatus = 0
+	v.ButlerServiceId = 0
+	v.EntrustSellingId = 0
+	poolCustomerEntrustSellingReq.Put(v)
 }

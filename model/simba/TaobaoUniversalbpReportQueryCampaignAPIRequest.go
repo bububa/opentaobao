@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpReportQueryCampaignAPIRequest struct {
 // NewTaobaoUniversalbpReportQueryCampaignRequest 初始化TaobaoUniversalbpReportQueryCampaignAPIRequest对象
 func NewTaobaoUniversalbpReportQueryCampaignRequest() *TaobaoUniversalbpReportQueryCampaignAPIRequest {
 	return &TaobaoUniversalbpReportQueryCampaignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpReportQueryCampaignAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._topCampaignReportQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpReportQueryCampaignAPIRequest) SetTopCampaignReportQue
 // GetTopCampaignReportQueryVO TopCampaignReportQueryVO Getter
 func (r TaobaoUniversalbpReportQueryCampaignAPIRequest) GetTopCampaignReportQueryVO() *TopCampaignReportQueryVo {
 	return r._topCampaignReportQueryVO
+}
+
+var poolTaobaoUniversalbpReportQueryCampaignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpReportQueryCampaignRequest()
+	},
+}
+
+// GetTaobaoUniversalbpReportQueryCampaignRequest 从 sync.Pool 获取 TaobaoUniversalbpReportQueryCampaignAPIRequest
+func GetTaobaoUniversalbpReportQueryCampaignAPIRequest() *TaobaoUniversalbpReportQueryCampaignAPIRequest {
+	return poolTaobaoUniversalbpReportQueryCampaignAPIRequest.Get().(*TaobaoUniversalbpReportQueryCampaignAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpReportQueryCampaignAPIRequest 将 TaobaoUniversalbpReportQueryCampaignAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpReportQueryCampaignAPIRequest(v *TaobaoUniversalbpReportQueryCampaignAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpReportQueryCampaignAPIRequest.Put(v)
 }

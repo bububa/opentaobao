@@ -2,6 +2,7 @@ package mozivds
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,14 @@ type AlibabaMoziVdsTenantApiServiceAddadminAPIRequest struct {
 // NewAlibabaMoziVdsTenantApiServiceAddadminRequest 初始化AlibabaMoziVdsTenantApiServiceAddadminAPIRequest对象
 func NewAlibabaMoziVdsTenantApiServiceAddadminRequest() *AlibabaMoziVdsTenantApiServiceAddadminAPIRequest {
 	return &AlibabaMoziVdsTenantApiServiceAddadminAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMoziVdsTenantApiServiceAddadminAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *AlibabaMoziVdsTenantApiServiceAddadminAPIRequest) SetParam0(_param0 *Ad
 // GetParam0 Param0 Getter
 func (r AlibabaMoziVdsTenantApiServiceAddadminAPIRequest) GetParam0() *AddTenantAdminsRequest {
 	return r._param0
+}
+
+var poolAlibabaMoziVdsTenantApiServiceAddadminAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMoziVdsTenantApiServiceAddadminRequest()
+	},
+}
+
+// GetAlibabaMoziVdsTenantApiServiceAddadminRequest 从 sync.Pool 获取 AlibabaMoziVdsTenantApiServiceAddadminAPIRequest
+func GetAlibabaMoziVdsTenantApiServiceAddadminAPIRequest() *AlibabaMoziVdsTenantApiServiceAddadminAPIRequest {
+	return poolAlibabaMoziVdsTenantApiServiceAddadminAPIRequest.Get().(*AlibabaMoziVdsTenantApiServiceAddadminAPIRequest)
+}
+
+// ReleaseAlibabaMoziVdsTenantApiServiceAddadminAPIRequest 将 AlibabaMoziVdsTenantApiServiceAddadminAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMoziVdsTenantApiServiceAddadminAPIRequest(v *AlibabaMoziVdsTenantApiServiceAddadminAPIRequest) {
+	v.Reset()
+	poolAlibabaMoziVdsTenantApiServiceAddadminAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package nlife
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaNlifeB2cTradeDownloadAPIRequest struct {
 // NewAlibabaNlifeB2cTradeDownloadRequest 初始化AlibabaNlifeB2cTradeDownloadAPIRequest对象
 func NewAlibabaNlifeB2cTradeDownloadRequest() *AlibabaNlifeB2cTradeDownloadAPIRequest {
 	return &AlibabaNlifeB2cTradeDownloadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) Reset() {
+	r._startDate = ""
+	r._endDate = ""
+	r._storeId = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetPageSize(_pageSize int64) er
 // GetPageSize PageSize Getter
 func (r AlibabaNlifeB2cTradeDownloadAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaNlifeB2cTradeDownloadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaNlifeB2cTradeDownloadRequest()
+	},
+}
+
+// GetAlibabaNlifeB2cTradeDownloadRequest 从 sync.Pool 获取 AlibabaNlifeB2cTradeDownloadAPIRequest
+func GetAlibabaNlifeB2cTradeDownloadAPIRequest() *AlibabaNlifeB2cTradeDownloadAPIRequest {
+	return poolAlibabaNlifeB2cTradeDownloadAPIRequest.Get().(*AlibabaNlifeB2cTradeDownloadAPIRequest)
+}
+
+// ReleaseAlibabaNlifeB2cTradeDownloadAPIRequest 将 AlibabaNlifeB2cTradeDownloadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaNlifeB2cTradeDownloadAPIRequest(v *AlibabaNlifeB2cTradeDownloadAPIRequest) {
+	v.Reset()
+	poolAlibabaNlifeB2cTradeDownloadAPIRequest.Put(v)
 }

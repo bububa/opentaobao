@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // DfPageResultDto 结构体
 type DfPageResultDto struct {
 	// value
@@ -28,4 +32,33 @@ type DfPageResultDto struct {
 	TotalPage int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolDfPageResultDto = sync.Pool{
+	New: func() any {
+		return new(DfPageResultDto)
+	},
+}
+
+// GetDfPageResultDto() 从对象池中获取DfPageResultDto
+func GetDfPageResultDto() *DfPageResultDto {
+	return poolDfPageResultDto.Get().(*DfPageResultDto)
+}
+
+// ReleaseDfPageResultDto 释放DfPageResultDto
+func ReleaseDfPageResultDto(v *DfPageResultDto) {
+	v.Values = v.Values[:0]
+	v.CodeName = ""
+	v.DetailMessage = ""
+	v.Message = ""
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.ResultCode = ""
+	v.Code = 0
+	v.PageNo = 0
+	v.PageSize = 0
+	v.TotalCount = 0
+	v.TotalPage = 0
+	v.Success = false
+	poolDfPageResultDto.Put(v)
 }

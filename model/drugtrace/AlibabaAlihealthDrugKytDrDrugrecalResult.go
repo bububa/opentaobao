@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // AlibabaAlihealthDrugKytDrDrugrecalResult 结构体
 type AlibabaAlihealthDrugKytDrDrugrecalResult struct {
 	// 召回信息列表
@@ -10,4 +14,24 @@ type AlibabaAlihealthDrugKytDrDrugrecalResult struct {
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+var poolAlibabaAlihealthDrugKytDrDrugrecalResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugKytDrDrugrecalResult)
+	},
+}
+
+// GetAlibabaAlihealthDrugKytDrDrugrecalResult() 从对象池中获取AlibabaAlihealthDrugKytDrDrugrecalResult
+func GetAlibabaAlihealthDrugKytDrDrugrecalResult() *AlibabaAlihealthDrugKytDrDrugrecalResult {
+	return poolAlibabaAlihealthDrugKytDrDrugrecalResult.Get().(*AlibabaAlihealthDrugKytDrDrugrecalResult)
+}
+
+// ReleaseAlibabaAlihealthDrugKytDrDrugrecalResult 释放AlibabaAlihealthDrugKytDrDrugrecalResult
+func ReleaseAlibabaAlihealthDrugKytDrDrugrecalResult(v *AlibabaAlihealthDrugKytDrDrugrecalResult) {
+	v.ModelList = v.ModelList[:0]
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.IsSuccess = false
+	poolAlibabaAlihealthDrugKytDrDrugrecalResult.Put(v)
 }

@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaCampusGuardantDataSyncAPIRequest struct {
 // NewAlibabaCampusGuardantDataSyncRequest 初始化AlibabaCampusGuardantDataSyncAPIRequest对象
 func NewAlibabaCampusGuardantDataSyncRequest() *AlibabaCampusGuardantDataSyncAPIRequest {
 	return &AlibabaCampusGuardantDataSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusGuardantDataSyncAPIRequest) Reset() {
+	r._dataType = ""
+	r._supplierName = ""
+	r._data = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaCampusGuardantDataSyncAPIRequest) SetData(_data string) error {
 // GetData Data Getter
 func (r AlibabaCampusGuardantDataSyncAPIRequest) GetData() string {
 	return r._data
+}
+
+var poolAlibabaCampusGuardantDataSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusGuardantDataSyncRequest()
+	},
+}
+
+// GetAlibabaCampusGuardantDataSyncRequest 从 sync.Pool 获取 AlibabaCampusGuardantDataSyncAPIRequest
+func GetAlibabaCampusGuardantDataSyncAPIRequest() *AlibabaCampusGuardantDataSyncAPIRequest {
+	return poolAlibabaCampusGuardantDataSyncAPIRequest.Get().(*AlibabaCampusGuardantDataSyncAPIRequest)
+}
+
+// ReleaseAlibabaCampusGuardantDataSyncAPIRequest 将 AlibabaCampusGuardantDataSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusGuardantDataSyncAPIRequest(v *AlibabaCampusGuardantDataSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusGuardantDataSyncAPIRequest.Put(v)
 }

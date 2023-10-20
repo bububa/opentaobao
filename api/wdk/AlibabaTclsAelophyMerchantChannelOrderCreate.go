@@ -9,11 +9,6 @@ import (
 // alibaba.tcls.aelophy.merchant.channel.order.create
 //
 // 翱象小程序渠道订单创建
-func AlibabaTclsAelophyMerchantChannelOrderCreate(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest, session string) (*wdk.AlibabaTclsAelophyMerchantChannelOrderCreateAPIResponse, error) {
-	var resp wdk.AlibabaTclsAelophyMerchantChannelOrderCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTclsAelophyMerchantChannelOrderCreate(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest, resp *wdk.AlibabaTclsAelophyMerchantChannelOrderCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

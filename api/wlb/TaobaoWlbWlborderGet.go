@@ -9,11 +9,6 @@ import (
 // taobao.wlb.wlborder.get
 //
 // 根据物流宝订单编号查询物流宝订单概要信息
-func TaobaoWlbWlborderGet(clt *core.SDKClient, req *wlb.TaobaoWlbWlborderGetAPIRequest, session string) (*wlb.TaobaoWlbWlborderGetAPIResponse, error) {
-	var resp wlb.TaobaoWlbWlborderGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWlbWlborderGet(clt *core.SDKClient, req *wlb.TaobaoWlbWlborderGetAPIRequest, resp *wlb.TaobaoWlbWlborderGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

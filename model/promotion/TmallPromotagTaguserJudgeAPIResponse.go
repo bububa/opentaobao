@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallPromotagTaguserJudgeAPIResponse struct {
 	TmallPromotagTaguserJudgeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallPromotagTaguserJudgeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallPromotagTaguserJudgeAPIResponseModel).Reset()
+}
+
 // TmallPromotagTaguserJudgeAPIResponseModel is 用户标签判断接口 成功返回结果
 type TmallPromotagTaguserJudgeAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_promotag_taguser_judge_response"`
@@ -24,4 +31,28 @@ type TmallPromotagTaguserJudgeAPIResponseModel struct {
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 用户是否有标签
 	HasTag bool `json:"has_tag,omitempty" xml:"has_tag,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallPromotagTaguserJudgeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.IsSuccess = false
+	m.HasTag = false
+}
+
+var poolTmallPromotagTaguserJudgeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallPromotagTaguserJudgeAPIResponse)
+	},
+}
+
+// GetTmallPromotagTaguserJudgeAPIResponse 从 sync.Pool 获取 TmallPromotagTaguserJudgeAPIResponse
+func GetTmallPromotagTaguserJudgeAPIResponse() *TmallPromotagTaguserJudgeAPIResponse {
+	return poolTmallPromotagTaguserJudgeAPIResponse.Get().(*TmallPromotagTaguserJudgeAPIResponse)
+}
+
+// ReleaseTmallPromotagTaguserJudgeAPIResponse 将 TmallPromotagTaguserJudgeAPIResponse 保存到 sync.Pool
+func ReleaseTmallPromotagTaguserJudgeAPIResponse(v *TmallPromotagTaguserJudgeAPIResponse) {
+	v.Reset()
+	poolTmallPromotagTaguserJudgeAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.region.warehouse.query
 //
 // 查询仓库覆盖范围
-func TaobaoRegionWarehouseQuery(clt *core.SDKClient, req *fenxiao.TaobaoRegionWarehouseQueryAPIRequest, session string) (*fenxiao.TaobaoRegionWarehouseQueryAPIResponse, error) {
-	var resp fenxiao.TaobaoRegionWarehouseQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoRegionWarehouseQuery(clt *core.SDKClient, req *fenxiao.TaobaoRegionWarehouseQueryAPIRequest, resp *fenxiao.TaobaoRegionWarehouseQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

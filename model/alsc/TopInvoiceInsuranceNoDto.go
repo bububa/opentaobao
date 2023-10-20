@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // TopInvoiceInsuranceNoDto 结构体
 type TopInvoiceInsuranceNoDto struct {
 	// 保险单号列表
@@ -36,4 +40,37 @@ type TopInvoiceInsuranceNoDto struct {
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 0 普通 1 专票
 	InvoiceType int64 `json:"invoice_type,omitempty" xml:"invoice_type,omitempty"`
+}
+
+var poolTopInvoiceInsuranceNoDto = sync.Pool{
+	New: func() any {
+		return new(TopInvoiceInsuranceNoDto)
+	},
+}
+
+// GetTopInvoiceInsuranceNoDto() 从对象池中获取TopInvoiceInsuranceNoDto
+func GetTopInvoiceInsuranceNoDto() *TopInvoiceInsuranceNoDto {
+	return poolTopInvoiceInsuranceNoDto.Get().(*TopInvoiceInsuranceNoDto)
+}
+
+// ReleaseTopInvoiceInsuranceNoDto 释放TopInvoiceInsuranceNoDto
+func ReleaseTopInvoiceInsuranceNoDto(v *TopInvoiceInsuranceNoDto) {
+	v.InsuranceNoList = v.InsuranceNoList[:0]
+	v.InvoiceApplyId = ""
+	v.InsuranceType = ""
+	v.UniqueCode = ""
+	v.Months = ""
+	v.PostType = ""
+	v.OperatingLicense = ""
+	v.TaxRegNumber = ""
+	v.InvoiceAddress = ""
+	v.InvoicePhone = ""
+	v.InvoicePostAddress = ""
+	v.InvoicePostPhone = ""
+	v.BankName = ""
+	v.BankAccount = ""
+	v.Email = ""
+	v.Amount = 0
+	v.InvoiceType = 0
+	poolTopInvoiceInsuranceNoDto.Put(v)
 }

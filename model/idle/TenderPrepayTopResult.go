@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // TenderPrepayTopResult 结构体
 type TenderPrepayTopResult struct {
 	// 订单id
@@ -16,4 +20,27 @@ type TenderPrepayTopResult struct {
 	PrePayAmount int64 `json:"pre_pay_amount,omitempty" xml:"pre_pay_amount,omitempty"`
 	// 2-支付预付款
 	PrePayAction int64 `json:"pre_pay_action,omitempty" xml:"pre_pay_action,omitempty"`
+}
+
+var poolTenderPrepayTopResult = sync.Pool{
+	New: func() any {
+		return new(TenderPrepayTopResult)
+	},
+}
+
+// GetTenderPrepayTopResult() 从对象池中获取TenderPrepayTopResult
+func GetTenderPrepayTopResult() *TenderPrepayTopResult {
+	return poolTenderPrepayTopResult.Get().(*TenderPrepayTopResult)
+}
+
+// ReleaseTenderPrepayTopResult 释放TenderPrepayTopResult
+func ReleaseTenderPrepayTopResult(v *TenderPrepayTopResult) {
+	v.OrderId = ""
+	v.PrePayNo = ""
+	v.PrePayStatus = ""
+	v.AppKey = ""
+	v.RequestId = ""
+	v.PrePayAmount = 0
+	v.PrePayAction = 0
+	poolTenderPrepayTopResult.Put(v)
 }

@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoWaybillCloudprintNetprintBindAPIRequest struct {
 // NewCainiaoWaybillCloudprintNetprintBindRequest 初始化CainiaoWaybillCloudprintNetprintBindAPIRequest对象
 func NewCainiaoWaybillCloudprintNetprintBindRequest() *CainiaoWaybillCloudprintNetprintBindAPIRequest {
 	return &CainiaoWaybillCloudprintNetprintBindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoWaybillCloudprintNetprintBindAPIRequest) Reset() {
+	r._params = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoWaybillCloudprintNetprintBindAPIRequest) SetParams(_params *Clou
 // GetParams Params Getter
 func (r CainiaoWaybillCloudprintNetprintBindAPIRequest) GetParams() *CloudPrinterBindRequest {
 	return r._params
+}
+
+var poolCainiaoWaybillCloudprintNetprintBindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoWaybillCloudprintNetprintBindRequest()
+	},
+}
+
+// GetCainiaoWaybillCloudprintNetprintBindRequest 从 sync.Pool 获取 CainiaoWaybillCloudprintNetprintBindAPIRequest
+func GetCainiaoWaybillCloudprintNetprintBindAPIRequest() *CainiaoWaybillCloudprintNetprintBindAPIRequest {
+	return poolCainiaoWaybillCloudprintNetprintBindAPIRequest.Get().(*CainiaoWaybillCloudprintNetprintBindAPIRequest)
+}
+
+// ReleaseCainiaoWaybillCloudprintNetprintBindAPIRequest 将 CainiaoWaybillCloudprintNetprintBindAPIRequest 放入 sync.Pool
+func ReleaseCainiaoWaybillCloudprintNetprintBindAPIRequest(v *CainiaoWaybillCloudprintNetprintBindAPIRequest) {
+	v.Reset()
+	poolCainiaoWaybillCloudprintNetprintBindAPIRequest.Put(v)
 }

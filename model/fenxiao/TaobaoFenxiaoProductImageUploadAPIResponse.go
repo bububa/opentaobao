@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoFenxiaoProductImageUploadAPIResponse struct {
 	TaobaoFenxiaoProductImageUploadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoFenxiaoProductImageUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFenxiaoProductImageUploadAPIResponseModel).Reset()
+}
+
 // TaobaoFenxiaoProductImageUploadAPIResponseModel is 产品图片上传 成功返回结果
 type TaobaoFenxiaoProductImageUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_product_image_upload_response"`
@@ -24,4 +31,28 @@ type TaobaoFenxiaoProductImageUploadAPIResponseModel struct {
 	Created string `json:"created,omitempty" xml:"created,omitempty"`
 	// 操作是否成功
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFenxiaoProductImageUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Created = ""
+	m.Result = false
+}
+
+var poolTaobaoFenxiaoProductImageUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFenxiaoProductImageUploadAPIResponse)
+	},
+}
+
+// GetTaobaoFenxiaoProductImageUploadAPIResponse 从 sync.Pool 获取 TaobaoFenxiaoProductImageUploadAPIResponse
+func GetTaobaoFenxiaoProductImageUploadAPIResponse() *TaobaoFenxiaoProductImageUploadAPIResponse {
+	return poolTaobaoFenxiaoProductImageUploadAPIResponse.Get().(*TaobaoFenxiaoProductImageUploadAPIResponse)
+}
+
+// ReleaseTaobaoFenxiaoProductImageUploadAPIResponse 将 TaobaoFenxiaoProductImageUploadAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFenxiaoProductImageUploadAPIResponse(v *TaobaoFenxiaoProductImageUploadAPIResponse) {
+	v.Reset()
+	poolTaobaoFenxiaoProductImageUploadAPIResponse.Put(v)
 }

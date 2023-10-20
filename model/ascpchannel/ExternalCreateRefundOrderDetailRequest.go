@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // ExternalCreateRefundOrderDetailRequest 结构体
 type ExternalCreateRefundOrderDetailRequest struct {
 	// 退款举证图片列表
@@ -26,4 +30,32 @@ type ExternalCreateRefundOrderDetailRequest struct {
 	RefundType int64 `json:"refund_type,omitempty" xml:"refund_type,omitempty"`
 	// 退货数量
 	RefundQuantity int64 `json:"refund_quantity,omitempty" xml:"refund_quantity,omitempty"`
+}
+
+var poolExternalCreateRefundOrderDetailRequest = sync.Pool{
+	New: func() any {
+		return new(ExternalCreateRefundOrderDetailRequest)
+	},
+}
+
+// GetExternalCreateRefundOrderDetailRequest() 从对象池中获取ExternalCreateRefundOrderDetailRequest
+func GetExternalCreateRefundOrderDetailRequest() *ExternalCreateRefundOrderDetailRequest {
+	return poolExternalCreateRefundOrderDetailRequest.Get().(*ExternalCreateRefundOrderDetailRequest)
+}
+
+// ReleaseExternalCreateRefundOrderDetailRequest 释放ExternalCreateRefundOrderDetailRequest
+func ReleaseExternalCreateRefundOrderDetailRequest(v *ExternalCreateRefundOrderDetailRequest) {
+	v.ProofPicUrls = v.ProofPicUrls[:0]
+	v.CurrencyType = ""
+	v.SubSaleOrderNo = ""
+	v.SaleOrderNo = ""
+	v.OutRefundNo = ""
+	v.Remark = ""
+	v.OutSubOrderNo = ""
+	v.OutOrderNo = ""
+	v.RefundReason = ""
+	v.RefundFee = 0
+	v.RefundType = 0
+	v.RefundQuantity = 0
+	poolExternalCreateRefundOrderDetailRequest.Put(v)
 }

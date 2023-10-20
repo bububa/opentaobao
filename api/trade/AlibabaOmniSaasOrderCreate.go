@@ -9,11 +9,6 @@ import (
 // alibaba.omni.saas.order.create
 //
 // 服务商利用现有的saas系统和阿里完成交易系统的对接
-func AlibabaOmniSaasOrderCreate(clt *core.SDKClient, req *trade.AlibabaOmniSaasOrderCreateAPIRequest, session string) (*trade.AlibabaOmniSaasOrderCreateAPIResponse, error) {
-	var resp trade.AlibabaOmniSaasOrderCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaOmniSaasOrderCreate(clt *core.SDKClient, req *trade.AlibabaOmniSaasOrderCreateAPIRequest, resp *trade.AlibabaOmniSaasOrderCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

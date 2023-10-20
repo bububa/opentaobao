@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaRetailMarketingBuygiftActivitySkuAddAPIResponse struct {
 	AlibabaRetailMarketingBuygiftActivitySkuAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaRetailMarketingBuygiftActivitySkuAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaRetailMarketingBuygiftActivitySkuAddAPIResponseModel).Reset()
+}
+
 // AlibabaRetailMarketingBuygiftActivitySkuAddAPIResponseModel is 添加单品买赠活动商品 成功返回结果
 type AlibabaRetailMarketingBuygiftActivitySkuAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_retail_marketing_buygift_activity_sku_add_response"`
@@ -22,4 +29,27 @@ type AlibabaRetailMarketingBuygiftActivitySkuAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 操作结果
 	Result *OctopusOpenResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaRetailMarketingBuygiftActivitySkuAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaRetailMarketingBuygiftActivitySkuAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaRetailMarketingBuygiftActivitySkuAddAPIResponse)
+	},
+}
+
+// GetAlibabaRetailMarketingBuygiftActivitySkuAddAPIResponse 从 sync.Pool 获取 AlibabaRetailMarketingBuygiftActivitySkuAddAPIResponse
+func GetAlibabaRetailMarketingBuygiftActivitySkuAddAPIResponse() *AlibabaRetailMarketingBuygiftActivitySkuAddAPIResponse {
+	return poolAlibabaRetailMarketingBuygiftActivitySkuAddAPIResponse.Get().(*AlibabaRetailMarketingBuygiftActivitySkuAddAPIResponse)
+}
+
+// ReleaseAlibabaRetailMarketingBuygiftActivitySkuAddAPIResponse 将 AlibabaRetailMarketingBuygiftActivitySkuAddAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaRetailMarketingBuygiftActivitySkuAddAPIResponse(v *AlibabaRetailMarketingBuygiftActivitySkuAddAPIResponse) {
+	v.Reset()
+	poolAlibabaRetailMarketingBuygiftActivitySkuAddAPIResponse.Put(v)
 }

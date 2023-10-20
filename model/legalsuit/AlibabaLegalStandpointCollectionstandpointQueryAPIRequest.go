@@ -2,6 +2,7 @@ package legalsuit
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaLegalStandpointCollectionstandpointQueryAPIRequest struct {
 // NewAlibabaLegalStandpointCollectionstandpointQueryRequest 初始化AlibabaLegalStandpointCollectionstandpointQueryAPIRequest对象
 func NewAlibabaLegalStandpointCollectionstandpointQueryRequest() *AlibabaLegalStandpointCollectionstandpointQueryAPIRequest {
 	return &AlibabaLegalStandpointCollectionstandpointQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegalStandpointCollectionstandpointQueryAPIRequest) Reset() {
+	r._inputSystemCode = ""
+	r._operateWorkNo = ""
+	r._busiId = ""
+	r._pageNum = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaLegalStandpointCollectionstandpointQueryAPIRequest) SetPageSize(
 // GetPageSize PageSize Getter
 func (r AlibabaLegalStandpointCollectionstandpointQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaLegalStandpointCollectionstandpointQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegalStandpointCollectionstandpointQueryRequest()
+	},
+}
+
+// GetAlibabaLegalStandpointCollectionstandpointQueryRequest 从 sync.Pool 获取 AlibabaLegalStandpointCollectionstandpointQueryAPIRequest
+func GetAlibabaLegalStandpointCollectionstandpointQueryAPIRequest() *AlibabaLegalStandpointCollectionstandpointQueryAPIRequest {
+	return poolAlibabaLegalStandpointCollectionstandpointQueryAPIRequest.Get().(*AlibabaLegalStandpointCollectionstandpointQueryAPIRequest)
+}
+
+// ReleaseAlibabaLegalStandpointCollectionstandpointQueryAPIRequest 将 AlibabaLegalStandpointCollectionstandpointQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegalStandpointCollectionstandpointQueryAPIRequest(v *AlibabaLegalStandpointCollectionstandpointQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaLegalStandpointCollectionstandpointQueryAPIRequest.Put(v)
 }

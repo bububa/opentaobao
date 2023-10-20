@@ -2,6 +2,7 @@ package wlbimports
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoWlbImportsOrderCancelAPIResponse struct {
 	TaobaoWlbImportsOrderCancelAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoWlbImportsOrderCancelAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWlbImportsOrderCancelAPIResponseModel).Reset()
+}
+
 // TaobaoWlbImportsOrderCancelAPIResponseModel is 一般进口取消物流订单 成功返回结果
 type TaobaoWlbImportsOrderCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_imports_order_cancel_response"`
@@ -26,4 +33,29 @@ type TaobaoWlbImportsOrderCancelAPIResponseModel struct {
 	ResultErrorCode string `json:"result_error_code,omitempty" xml:"result_error_code,omitempty"`
 	// 是否取消订单成功，true：成功，false：失败
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbImportsOrderCancelAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultErrorMsg = ""
+	m.ResultErrorCode = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoWlbImportsOrderCancelAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbImportsOrderCancelAPIResponse)
+	},
+}
+
+// GetTaobaoWlbImportsOrderCancelAPIResponse 从 sync.Pool 获取 TaobaoWlbImportsOrderCancelAPIResponse
+func GetTaobaoWlbImportsOrderCancelAPIResponse() *TaobaoWlbImportsOrderCancelAPIResponse {
+	return poolTaobaoWlbImportsOrderCancelAPIResponse.Get().(*TaobaoWlbImportsOrderCancelAPIResponse)
+}
+
+// ReleaseTaobaoWlbImportsOrderCancelAPIResponse 将 TaobaoWlbImportsOrderCancelAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWlbImportsOrderCancelAPIResponse(v *TaobaoWlbImportsOrderCancelAPIResponse) {
+	v.Reset()
+	poolTaobaoWlbImportsOrderCancelAPIResponse.Put(v)
 }

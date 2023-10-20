@@ -2,6 +2,7 @@ package interact
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaInteractCoinBuyerAddAPIResponse struct {
 	AlibabaInteractCoinBuyerAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaInteractCoinBuyerAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaInteractCoinBuyerAddAPIResponseModel).Reset()
+}
+
 // AlibabaInteractCoinBuyerAddAPIResponseModel is 平台向买家发放淘金币 成功返回结果
 type AlibabaInteractCoinBuyerAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_coin_buyer_add_response"`
@@ -22,4 +29,27 @@ type AlibabaInteractCoinBuyerAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result=0
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaInteractCoinBuyerAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = ""
+}
+
+var poolAlibabaInteractCoinBuyerAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaInteractCoinBuyerAddAPIResponse)
+	},
+}
+
+// GetAlibabaInteractCoinBuyerAddAPIResponse 从 sync.Pool 获取 AlibabaInteractCoinBuyerAddAPIResponse
+func GetAlibabaInteractCoinBuyerAddAPIResponse() *AlibabaInteractCoinBuyerAddAPIResponse {
+	return poolAlibabaInteractCoinBuyerAddAPIResponse.Get().(*AlibabaInteractCoinBuyerAddAPIResponse)
+}
+
+// ReleaseAlibabaInteractCoinBuyerAddAPIResponse 将 AlibabaInteractCoinBuyerAddAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaInteractCoinBuyerAddAPIResponse(v *AlibabaInteractCoinBuyerAddAPIResponse) {
+	v.Reset()
+	poolAlibabaInteractCoinBuyerAddAPIResponse.Put(v)
 }

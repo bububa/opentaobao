@@ -2,6 +2,7 @@ package moscm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaMosOrderListGetAPIRequest struct {
 // NewAlibabaMosOrderListGetRequest 初始化AlibabaMosOrderListGetAPIRequest对象
 func NewAlibabaMosOrderListGetRequest() *AlibabaMosOrderListGetAPIRequest {
 	return &AlibabaMosOrderListGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosOrderListGetAPIRequest) Reset() {
+	r._orderCriteria = nil
+	r._paginator = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaMosOrderListGetAPIRequest) SetPaginator(_paginator *Paginator) e
 // GetPaginator Paginator Getter
 func (r AlibabaMosOrderListGetAPIRequest) GetPaginator() *Paginator {
 	return r._paginator
+}
+
+var poolAlibabaMosOrderListGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosOrderListGetRequest()
+	},
+}
+
+// GetAlibabaMosOrderListGetRequest 从 sync.Pool 获取 AlibabaMosOrderListGetAPIRequest
+func GetAlibabaMosOrderListGetAPIRequest() *AlibabaMosOrderListGetAPIRequest {
+	return poolAlibabaMosOrderListGetAPIRequest.Get().(*AlibabaMosOrderListGetAPIRequest)
+}
+
+// ReleaseAlibabaMosOrderListGetAPIRequest 将 AlibabaMosOrderListGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosOrderListGetAPIRequest(v *AlibabaMosOrderListGetAPIRequest) {
+	v.Reset()
+	poolAlibabaMosOrderListGetAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PageQueryPointFlowOpenReq 结构体
 type PageQueryPointFlowOpenReq struct {
 	// 品牌id
@@ -26,4 +30,32 @@ type PageQueryPointFlowOpenReq struct {
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 每页大小，默认20
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolPageQueryPointFlowOpenReq = sync.Pool{
+	New: func() any {
+		return new(PageQueryPointFlowOpenReq)
+	},
+}
+
+// GetPageQueryPointFlowOpenReq() 从对象池中获取PageQueryPointFlowOpenReq
+func GetPageQueryPointFlowOpenReq() *PageQueryPointFlowOpenReq {
+	return poolPageQueryPointFlowOpenReq.Get().(*PageQueryPointFlowOpenReq)
+}
+
+// ReleasePageQueryPointFlowOpenReq 释放PageQueryPointFlowOpenReq
+func ReleasePageQueryPointFlowOpenReq(v *PageQueryPointFlowOpenReq) {
+	v.BrandId = ""
+	v.CustomerId = ""
+	v.EndTime = ""
+	v.OutBizId = ""
+	v.PointFlowType = ""
+	v.ShopId = ""
+	v.StartTime = ""
+	v.OutShopId = ""
+	v.OutBrandId = ""
+	v.BizChannel = ""
+	v.PageNo = 0
+	v.PageSize = 0
+	poolPageQueryPointFlowOpenReq.Put(v)
 }

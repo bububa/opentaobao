@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsAppletModifydataSaveAPIRequest struct {
 // NewTaobaoLogisticsAppletModifydataSaveRequest 初始化TaobaoLogisticsAppletModifydataSaveAPIRequest对象
 func NewTaobaoLogisticsAppletModifydataSaveRequest() *TaobaoLogisticsAppletModifydataSaveAPIRequest {
 	return &TaobaoLogisticsAppletModifydataSaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsAppletModifydataSaveAPIRequest) Reset() {
+	r._modifyRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsAppletModifydataSaveAPIRequest) SetModifyRequest(_modify
 // GetModifyRequest ModifyRequest Getter
 func (r TaobaoLogisticsAppletModifydataSaveAPIRequest) GetModifyRequest() *ModifyDeliveryRequest {
 	return r._modifyRequest
+}
+
+var poolTaobaoLogisticsAppletModifydataSaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsAppletModifydataSaveRequest()
+	},
+}
+
+// GetTaobaoLogisticsAppletModifydataSaveRequest 从 sync.Pool 获取 TaobaoLogisticsAppletModifydataSaveAPIRequest
+func GetTaobaoLogisticsAppletModifydataSaveAPIRequest() *TaobaoLogisticsAppletModifydataSaveAPIRequest {
+	return poolTaobaoLogisticsAppletModifydataSaveAPIRequest.Get().(*TaobaoLogisticsAppletModifydataSaveAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsAppletModifydataSaveAPIRequest 将 TaobaoLogisticsAppletModifydataSaveAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsAppletModifydataSaveAPIRequest(v *TaobaoLogisticsAppletModifydataSaveAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsAppletModifydataSaveAPIRequest.Put(v)
 }

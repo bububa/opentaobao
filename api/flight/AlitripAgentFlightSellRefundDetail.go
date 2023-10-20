@@ -9,11 +9,6 @@ import (
 // alitrip.agent.flight.sell.refund.detail
 //
 // 销售退票单详情
-func AlitripAgentFlightSellRefundDetail(clt *core.SDKClient, req *flight.AlitripAgentFlightSellRefundDetailAPIRequest, session string) (*flight.AlitripAgentFlightSellRefundDetailAPIResponse, error) {
-	var resp flight.AlitripAgentFlightSellRefundDetailAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripAgentFlightSellRefundDetail(clt *core.SDKClient, req *flight.AlitripAgentFlightSellRefundDetailAPIRequest, resp *flight.AlitripAgentFlightSellRefundDetailAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

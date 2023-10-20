@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // BillChkInOutDo 结构体
 type BillChkInOutDo struct {
 	// 单据类型
@@ -42,4 +46,40 @@ type BillChkInOutDo struct {
 	ToRefUserId string `json:"to_ref_user_id,omitempty" xml:"to_ref_user_id,omitempty"`
 	// 发货单位ID
 	FromRefUserId string `json:"from_ref_user_id,omitempty" xml:"from_ref_user_id,omitempty"`
+}
+
+var poolBillChkInOutDo = sync.Pool{
+	New: func() any {
+		return new(BillChkInOutDo)
+	},
+}
+
+// GetBillChkInOutDo() 从对象池中获取BillChkInOutDo
+func GetBillChkInOutDo() *BillChkInOutDo {
+	return poolBillChkInOutDo.Get().(*BillChkInOutDo)
+}
+
+// ReleaseBillChkInOutDo 释放BillChkInOutDo
+func ReleaseBillChkInOutDo(v *BillChkInOutDo) {
+	v.BillType = ""
+	v.BillCode = ""
+	v.FromUserId = ""
+	v.RefUserName = ""
+	v.RefUserId = ""
+	v.ProduceDate = ""
+	v.UploadFileName = ""
+	v.FromUserName = ""
+	v.ToUserId = ""
+	v.ProduceEntId = ""
+	v.BillTime = ""
+	v.UserRoleType = ""
+	v.ProcessDate = ""
+	v.BillId = ""
+	v.ToUserName = ""
+	v.AgentUserName = ""
+	v.AgentRefUserId = ""
+	v.BillTypeName = ""
+	v.ToRefUserId = ""
+	v.FromRefUserId = ""
+	poolBillChkInOutDo.Put(v)
 }

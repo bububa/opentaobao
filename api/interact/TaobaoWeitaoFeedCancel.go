@@ -9,11 +9,6 @@ import (
 // taobao.weitao.feed.cancel
 //
 // 取消广播在timeline和广场中的展示。
-func TaobaoWeitaoFeedCancel(clt *core.SDKClient, req *interact.TaobaoWeitaoFeedCancelAPIRequest, session string) (*interact.TaobaoWeitaoFeedCancelAPIResponse, error) {
-	var resp interact.TaobaoWeitaoFeedCancelAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWeitaoFeedCancel(clt *core.SDKClient, req *interact.TaobaoWeitaoFeedCancelAPIRequest, resp *interact.TaobaoWeitaoFeedCancelAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

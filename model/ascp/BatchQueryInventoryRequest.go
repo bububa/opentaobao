@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // BatchQueryInventoryRequest 结构体
 type BatchQueryInventoryRequest struct {
 	// 货品集合
@@ -10,4 +14,24 @@ type BatchQueryInventoryRequest struct {
 	OwnerCode string `json:"owner_code,omitempty" xml:"owner_code,omitempty"`
 	// 业务请求时间(毫秒数)
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
+}
+
+var poolBatchQueryInventoryRequest = sync.Pool{
+	New: func() any {
+		return new(BatchQueryInventoryRequest)
+	},
+}
+
+// GetBatchQueryInventoryRequest() 从对象池中获取BatchQueryInventoryRequest
+func GetBatchQueryInventoryRequest() *BatchQueryInventoryRequest {
+	return poolBatchQueryInventoryRequest.Get().(*BatchQueryInventoryRequest)
+}
+
+// ReleaseBatchQueryInventoryRequest 释放BatchQueryInventoryRequest
+func ReleaseBatchQueryInventoryRequest(v *BatchQueryInventoryRequest) {
+	v.ScItemList = v.ScItemList[:0]
+	v.RequestId = ""
+	v.OwnerCode = ""
+	v.RequestTime = 0
+	poolBatchQueryInventoryRequest.Put(v)
 }

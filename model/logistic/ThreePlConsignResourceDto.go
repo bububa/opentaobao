@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // ThreePlConsignResourceDto 结构体
 type ThreePlConsignResourceDto struct {
 	// 资源code
@@ -24,4 +28,31 @@ type ThreePlConsignResourceDto struct {
 	ResId int64 `json:"res_id,omitempty" xml:"res_id,omitempty"`
 	// 丢失赔付价格
 	MissingCompensatePrice int64 `json:"missing_compensate_price,omitempty" xml:"missing_compensate_price,omitempty"`
+}
+
+var poolThreePlConsignResourceDto = sync.Pool{
+	New: func() any {
+		return new(ThreePlConsignResourceDto)
+	},
+}
+
+// GetThreePlConsignResourceDto() 从对象池中获取ThreePlConsignResourceDto
+func GetThreePlConsignResourceDto() *ThreePlConsignResourceDto {
+	return poolThreePlConsignResourceDto.Get().(*ThreePlConsignResourceDto)
+}
+
+// ReleaseThreePlConsignResourceDto 释放ThreePlConsignResourceDto
+func ReleaseThreePlConsignResourceDto(v *ThreePlConsignResourceDto) {
+	v.ResCode = ""
+	v.ResName = ""
+	v.BrokenCompensatePrice = 0
+	v.BasicWeight = 0
+	v.DeliveryTime = 0
+	v.StepWeight = 0
+	v.BasicWeightPrice = 0
+	v.AchievingRate = 0
+	v.StepWeightPrice = 0
+	v.ResId = 0
+	v.MissingCompensatePrice = 0
+	poolThreePlConsignResourceDto.Put(v)
 }

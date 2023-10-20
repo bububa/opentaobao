@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // GlobalAeopFindProductResultDto 结构体
 type GlobalAeopFindProductResultDto struct {
 	// Product properties
@@ -82,4 +86,60 @@ type GlobalAeopFindProductResultDto struct {
 	IsPackSell bool `json:"is_pack_sell,omitempty" xml:"is_pack_sell,omitempty"`
 	// Packing sale: true; Unpacking sale: false.
 	PackageType bool `json:"package_type,omitempty" xml:"package_type,omitempty"`
+}
+
+var poolGlobalAeopFindProductResultDto = sync.Pool{
+	New: func() any {
+		return new(GlobalAeopFindProductResultDto)
+	},
+}
+
+// GetGlobalAeopFindProductResultDto() 从对象池中获取GlobalAeopFindProductResultDto
+func GetGlobalAeopFindProductResultDto() *GlobalAeopFindProductResultDto {
+	return poolGlobalAeopFindProductResultDto.Get().(*GlobalAeopFindProductResultDto)
+}
+
+// ReleaseGlobalAeopFindProductResultDto 释放GlobalAeopFindProductResultDto
+func ReleaseGlobalAeopFindProductResultDto(v *GlobalAeopFindProductResultDto) {
+	v.AeopAeProductPropertys = v.AeopAeProductPropertys[:0]
+	v.AeopAeProductSKUs = v.AeopAeProductSKUs[:0]
+	v.GroupIds = v.GroupIds[:0]
+	v.MultiLanguageSubjectList = v.MultiLanguageSubjectList[:0]
+	v.MultiLanguageDescriptionList = v.MultiLanguageDescriptionList[:0]
+	v.AddWeight = ""
+	v.CurrencyCode = ""
+	v.Detail = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.GrossWeight = ""
+	v.ImageURLs = ""
+	v.MobileDetail = ""
+	v.OwnerMemberId = ""
+	v.ProductPrice = ""
+	v.ProductStatusType = ""
+	v.ReduceStrategy = ""
+	v.Subject = ""
+	v.WsOfflineDate = ""
+	v.AddUnit = 0
+	v.AeopAEMultimedia = nil
+	v.BaseUnit = 0
+	v.BulkDiscount = 0
+	v.BulkOrder = 0
+	v.CategoryId = 0
+	v.DeliveryTime = 0
+	v.FreightTemplateId = 0
+	v.GroupId = 0
+	v.LotNum = 0
+	v.OwnerMemberSeq = 0
+	v.PackageHeight = 0
+	v.PackageLength = 0
+	v.PackageWidth = 0
+	v.ProductId = 0
+	v.ProductUnit = 0
+	v.PromiseTemplateId = 0
+	v.SizechartId = 0
+	v.MultiCountryPriceConfiguration = nil
+	v.IsPackSell = false
+	v.PackageType = false
+	poolGlobalAeopFindProductResultDto.Put(v)
 }

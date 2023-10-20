@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaMosFinanceBankinfoQuerybankAPIRequest struct {
 // NewAlibabaMosFinanceBankinfoQuerybankRequest 初始化AlibabaMosFinanceBankinfoQuerybankAPIRequest对象
 func NewAlibabaMosFinanceBankinfoQuerybankRequest() *AlibabaMosFinanceBankinfoQuerybankAPIRequest {
 	return &AlibabaMosFinanceBankinfoQuerybankAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosFinanceBankinfoQuerybankAPIRequest) Reset() {
+	r._supplierId = ""
+	r._storeNo = ""
+	r._companyId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaMosFinanceBankinfoQuerybankAPIRequest) SetCompanyId(_companyId s
 // GetCompanyId CompanyId Getter
 func (r AlibabaMosFinanceBankinfoQuerybankAPIRequest) GetCompanyId() string {
 	return r._companyId
+}
+
+var poolAlibabaMosFinanceBankinfoQuerybankAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosFinanceBankinfoQuerybankRequest()
+	},
+}
+
+// GetAlibabaMosFinanceBankinfoQuerybankRequest 从 sync.Pool 获取 AlibabaMosFinanceBankinfoQuerybankAPIRequest
+func GetAlibabaMosFinanceBankinfoQuerybankAPIRequest() *AlibabaMosFinanceBankinfoQuerybankAPIRequest {
+	return poolAlibabaMosFinanceBankinfoQuerybankAPIRequest.Get().(*AlibabaMosFinanceBankinfoQuerybankAPIRequest)
+}
+
+// ReleaseAlibabaMosFinanceBankinfoQuerybankAPIRequest 将 AlibabaMosFinanceBankinfoQuerybankAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosFinanceBankinfoQuerybankAPIRequest(v *AlibabaMosFinanceBankinfoQuerybankAPIRequest) {
+	v.Reset()
+	poolAlibabaMosFinanceBankinfoQuerybankAPIRequest.Put(v)
 }

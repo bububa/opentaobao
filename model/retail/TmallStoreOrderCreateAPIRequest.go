@@ -2,6 +2,7 @@ package retail
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallStoreOrderCreateAPIRequest struct {
 // NewTmallStoreOrderCreateRequest 初始化TmallStoreOrderCreateAPIRequest对象
 func NewTmallStoreOrderCreateRequest() *TmallStoreOrderCreateAPIRequest {
 	return &TmallStoreOrderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallStoreOrderCreateAPIRequest) Reset() {
+	r._createOrderRequest = nil
+	r._appInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallStoreOrderCreateAPIRequest) SetAppInfo(_appInfo *AppInfo) error {
 // GetAppInfo AppInfo Getter
 func (r TmallStoreOrderCreateAPIRequest) GetAppInfo() *AppInfo {
 	return r._appInfo
+}
+
+var poolTmallStoreOrderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallStoreOrderCreateRequest()
+	},
+}
+
+// GetTmallStoreOrderCreateRequest 从 sync.Pool 获取 TmallStoreOrderCreateAPIRequest
+func GetTmallStoreOrderCreateAPIRequest() *TmallStoreOrderCreateAPIRequest {
+	return poolTmallStoreOrderCreateAPIRequest.Get().(*TmallStoreOrderCreateAPIRequest)
+}
+
+// ReleaseTmallStoreOrderCreateAPIRequest 将 TmallStoreOrderCreateAPIRequest 放入 sync.Pool
+func ReleaseTmallStoreOrderCreateAPIRequest(v *TmallStoreOrderCreateAPIRequest) {
+	v.Reset()
+	poolTmallStoreOrderCreateAPIRequest.Put(v)
 }

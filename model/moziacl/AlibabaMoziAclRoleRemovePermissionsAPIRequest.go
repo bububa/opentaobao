@@ -2,6 +2,7 @@ package moziacl
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMoziAclRoleRemovePermissionsAPIRequest struct {
 // NewAlibabaMoziAclRoleRemovePermissionsRequest 初始化AlibabaMoziAclRoleRemovePermissionsAPIRequest对象
 func NewAlibabaMoziAclRoleRemovePermissionsRequest() *AlibabaMoziAclRoleRemovePermissionsAPIRequest {
 	return &AlibabaMoziAclRoleRemovePermissionsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMoziAclRoleRemovePermissionsAPIRequest) Reset() {
+	r._removePermissionsFromRole = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMoziAclRoleRemovePermissionsAPIRequest) SetRemovePermissionsFrom
 // GetRemovePermissionsFromRole RemovePermissionsFromRole Getter
 func (r AlibabaMoziAclRoleRemovePermissionsAPIRequest) GetRemovePermissionsFromRole() *RemovePermissionsFromRoleRequest {
 	return r._removePermissionsFromRole
+}
+
+var poolAlibabaMoziAclRoleRemovePermissionsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMoziAclRoleRemovePermissionsRequest()
+	},
+}
+
+// GetAlibabaMoziAclRoleRemovePermissionsRequest 从 sync.Pool 获取 AlibabaMoziAclRoleRemovePermissionsAPIRequest
+func GetAlibabaMoziAclRoleRemovePermissionsAPIRequest() *AlibabaMoziAclRoleRemovePermissionsAPIRequest {
+	return poolAlibabaMoziAclRoleRemovePermissionsAPIRequest.Get().(*AlibabaMoziAclRoleRemovePermissionsAPIRequest)
+}
+
+// ReleaseAlibabaMoziAclRoleRemovePermissionsAPIRequest 将 AlibabaMoziAclRoleRemovePermissionsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMoziAclRoleRemovePermissionsAPIRequest(v *AlibabaMoziAclRoleRemovePermissionsAPIRequest) {
+	v.Reset()
+	poolAlibabaMoziAclRoleRemovePermissionsAPIRequest.Put(v)
 }

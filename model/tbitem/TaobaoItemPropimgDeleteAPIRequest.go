@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoItemPropimgDeleteAPIRequest struct {
 // NewTaobaoItemPropimgDeleteRequest 初始化TaobaoItemPropimgDeleteAPIRequest对象
 func NewTaobaoItemPropimgDeleteRequest() *TaobaoItemPropimgDeleteAPIRequest {
 	return &TaobaoItemPropimgDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoItemPropimgDeleteAPIRequest) Reset() {
+	r._numIid = 0
+	r._id = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoItemPropimgDeleteAPIRequest) SetId(_id int64) error {
 // GetId Id Getter
 func (r TaobaoItemPropimgDeleteAPIRequest) GetId() int64 {
 	return r._id
+}
+
+var poolTaobaoItemPropimgDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoItemPropimgDeleteRequest()
+	},
+}
+
+// GetTaobaoItemPropimgDeleteRequest 从 sync.Pool 获取 TaobaoItemPropimgDeleteAPIRequest
+func GetTaobaoItemPropimgDeleteAPIRequest() *TaobaoItemPropimgDeleteAPIRequest {
+	return poolTaobaoItemPropimgDeleteAPIRequest.Get().(*TaobaoItemPropimgDeleteAPIRequest)
+}
+
+// ReleaseTaobaoItemPropimgDeleteAPIRequest 将 TaobaoItemPropimgDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoItemPropimgDeleteAPIRequest(v *TaobaoItemPropimgDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoItemPropimgDeleteAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // HotelDetailRoomDto 结构体
 type HotelDetailRoomDto struct {
 	// 详情报价列表
@@ -26,4 +30,32 @@ type HotelDetailRoomDto struct {
 	Srid int64 `json:"srid,omitempty" xml:"srid,omitempty"`
 	// 状态，状态0:正常;-1:删除
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolHotelDetailRoomDto = sync.Pool{
+	New: func() any {
+		return new(HotelDetailRoomDto)
+	},
+}
+
+// GetHotelDetailRoomDto() 从对象池中获取HotelDetailRoomDto
+func GetHotelDetailRoomDto() *HotelDetailRoomDto {
+	return poolHotelDetailRoomDto.Get().(*HotelDetailRoomDto)
+}
+
+// ReleaseHotelDetailRoomDto 释放HotelDetailRoomDto
+func ReleaseHotelDetailRoomDto(v *HotelDetailRoomDto) {
+	v.Rates = v.Rates[:0]
+	v.Area = ""
+	v.BedTypeString = ""
+	v.Facility = ""
+	v.Floor = ""
+	v.Name = ""
+	v.NetworkService = ""
+	v.Pics = ""
+	v.WindowType = ""
+	v.MaxOccupancy = 0
+	v.Srid = 0
+	v.Status = 0
+	poolHotelDetailRoomDto.Put(v)
 }

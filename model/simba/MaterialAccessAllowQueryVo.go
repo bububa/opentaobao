@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // MaterialAccessAllowQueryVo 结构体
 type MaterialAccessAllowQueryVo struct {
 	// 宝贝id集合
@@ -12,4 +16,25 @@ type MaterialAccessAllowQueryVo struct {
 	MaterialType int64 `json:"material_type,omitempty" xml:"material_type,omitempty"`
 	// 是否需要校验资质,true:校验,false:不校验
 	NeedQualification bool `json:"need_qualification,omitempty" xml:"need_qualification,omitempty"`
+}
+
+var poolMaterialAccessAllowQueryVo = sync.Pool{
+	New: func() any {
+		return new(MaterialAccessAllowQueryVo)
+	},
+}
+
+// GetMaterialAccessAllowQueryVo() 从对象池中获取MaterialAccessAllowQueryVo
+func GetMaterialAccessAllowQueryVo() *MaterialAccessAllowQueryVo {
+	return poolMaterialAccessAllowQueryVo.Get().(*MaterialAccessAllowQueryVo)
+}
+
+// ReleaseMaterialAccessAllowQueryVo 释放MaterialAccessAllowQueryVo
+func ReleaseMaterialAccessAllowQueryVo(v *MaterialAccessAllowQueryVo) {
+	v.MaterialIdList = v.MaterialIdList[:0]
+	v.PromotionType = ""
+	v.SubPromotionType = ""
+	v.MaterialType = 0
+	v.NeedQualification = false
+	poolMaterialAccessAllowQueryVo.Put(v)
 }

@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // ExternalEndRedPacketDto 结构体
 type ExternalEndRedPacketDto struct {
 	// 红包支付状态
@@ -16,4 +20,27 @@ type ExternalEndRedPacketDto struct {
 	FreezeFee int64 `json:"freeze_fee,omitempty" xml:"freeze_fee,omitempty"`
 	// 可用金额，单位：分
 	AvailableFee int64 `json:"available_fee,omitempty" xml:"available_fee,omitempty"`
+}
+
+var poolExternalEndRedPacketDto = sync.Pool{
+	New: func() any {
+		return new(ExternalEndRedPacketDto)
+	},
+}
+
+// GetExternalEndRedPacketDto() 从对象池中获取ExternalEndRedPacketDto
+func GetExternalEndRedPacketDto() *ExternalEndRedPacketDto {
+	return poolExternalEndRedPacketDto.Get().(*ExternalEndRedPacketDto)
+}
+
+// ReleaseExternalEndRedPacketDto 释放ExternalEndRedPacketDto
+func ReleaseExternalEndRedPacketDto(v *ExternalEndRedPacketDto) {
+	v.PayStatus = ""
+	v.Status = 0
+	v.TotalFee = 0
+	v.DisburseFee = 0
+	v.RefundFee = 0
+	v.FreezeFee = 0
+	v.AvailableFee = 0
+	poolExternalEndRedPacketDto.Put(v)
 }

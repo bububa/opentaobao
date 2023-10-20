@@ -9,11 +9,6 @@ import (
 // alibaba.tmall.spareparts.details.create
 //
 // 天猫蚁巢同步工单申请备件明细
-func AlibabaTmallSparepartsDetailsCreate(clt *core.SDKClient, req *tmallsc.AlibabaTmallSparepartsDetailsCreateAPIRequest, session string) (*tmallsc.AlibabaTmallSparepartsDetailsCreateAPIResponse, error) {
-	var resp tmallsc.AlibabaTmallSparepartsDetailsCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTmallSparepartsDetailsCreate(clt *core.SDKClient, req *tmallsc.AlibabaTmallSparepartsDetailsCreateAPIRequest, resp *tmallsc.AlibabaTmallSparepartsDetailsCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

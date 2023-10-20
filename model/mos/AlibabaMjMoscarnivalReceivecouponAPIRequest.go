@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaMjMoscarnivalReceivecouponAPIRequest struct {
 // NewAlibabaMjMoscarnivalReceivecouponRequest 初始化AlibabaMjMoscarnivalReceivecouponAPIRequest对象
 func NewAlibabaMjMoscarnivalReceivecouponRequest() *AlibabaMjMoscarnivalReceivecouponAPIRequest {
 	return &AlibabaMjMoscarnivalReceivecouponAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMjMoscarnivalReceivecouponAPIRequest) Reset() {
+	r._mobile = ""
+	r._activityId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaMjMoscarnivalReceivecouponAPIRequest) SetActivityId(_activityId 
 // GetActivityId ActivityId Getter
 func (r AlibabaMjMoscarnivalReceivecouponAPIRequest) GetActivityId() int64 {
 	return r._activityId
+}
+
+var poolAlibabaMjMoscarnivalReceivecouponAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMjMoscarnivalReceivecouponRequest()
+	},
+}
+
+// GetAlibabaMjMoscarnivalReceivecouponRequest 从 sync.Pool 获取 AlibabaMjMoscarnivalReceivecouponAPIRequest
+func GetAlibabaMjMoscarnivalReceivecouponAPIRequest() *AlibabaMjMoscarnivalReceivecouponAPIRequest {
+	return poolAlibabaMjMoscarnivalReceivecouponAPIRequest.Get().(*AlibabaMjMoscarnivalReceivecouponAPIRequest)
+}
+
+// ReleaseAlibabaMjMoscarnivalReceivecouponAPIRequest 将 AlibabaMjMoscarnivalReceivecouponAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMjMoscarnivalReceivecouponAPIRequest(v *AlibabaMjMoscarnivalReceivecouponAPIRequest) {
+	v.Reset()
+	poolAlibabaMjMoscarnivalReceivecouponAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // aliexpress.ascp.inventory.log.query
 //
 // AliExpress库存流水查询API
-func AliexpressAscpInventoryLogQuery(clt *core.SDKClient, req *ascpffo.AliexpressAscpInventoryLogQueryAPIRequest, session string) (*ascpffo.AliexpressAscpInventoryLogQueryAPIResponse, error) {
-	var resp ascpffo.AliexpressAscpInventoryLogQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressAscpInventoryLogQuery(clt *core.SDKClient, req *ascpffo.AliexpressAscpInventoryLogQueryAPIRequest, resp *ascpffo.AliexpressAscpInventoryLogQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

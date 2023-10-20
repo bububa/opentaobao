@@ -9,11 +9,6 @@ import (
 // taobao.feedflow.item.adgroup.delete
 //
 // 根据单元id删除单元
-func TaobaoFeedflowItemAdgroupDelete(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupDeleteAPIRequest, session string) (*feedflow.TaobaoFeedflowItemAdgroupDeleteAPIResponse, error) {
-	var resp feedflow.TaobaoFeedflowItemAdgroupDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFeedflowItemAdgroupDelete(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupDeleteAPIRequest, resp *feedflow.TaobaoFeedflowItemAdgroupDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

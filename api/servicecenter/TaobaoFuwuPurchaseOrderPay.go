@@ -9,11 +9,6 @@ import (
 // taobao.fuwu.purchase.order.pay
 //
 // 通过接口获取某一订单的付款页面链接
-func TaobaoFuwuPurchaseOrderPay(clt *core.SDKClient, req *servicecenter.TaobaoFuwuPurchaseOrderPayAPIRequest, session string) (*servicecenter.TaobaoFuwuPurchaseOrderPayAPIResponse, error) {
-	var resp servicecenter.TaobaoFuwuPurchaseOrderPayAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFuwuPurchaseOrderPay(clt *core.SDKClient, req *servicecenter.TaobaoFuwuPurchaseOrderPayAPIRequest, resp *servicecenter.TaobaoFuwuPurchaseOrderPayAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package elife
 
+import (
+	"sync"
+)
+
 // ConsumeRequest 结构体
 type ConsumeRequest struct {
 	// 商家的操作流水号, 唯一键
@@ -14,4 +18,26 @@ type ConsumeRequest struct {
 	SaleTicket string `json:"sale_ticket,omitempty" xml:"sale_ticket,omitempty"`
 	// 消费金额, 分
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
+}
+
+var poolConsumeRequest = sync.Pool{
+	New: func() any {
+		return new(ConsumeRequest)
+	},
+}
+
+// GetConsumeRequest() 从对象池中获取ConsumeRequest
+func GetConsumeRequest() *ConsumeRequest {
+	return poolConsumeRequest.Get().(*ConsumeRequest)
+}
+
+// ReleaseConsumeRequest 释放ConsumeRequest
+func ReleaseConsumeRequest(v *ConsumeRequest) {
+	v.OpId = ""
+	v.Operator = ""
+	v.OuterStoreId = ""
+	v.PayCode = ""
+	v.SaleTicket = ""
+	v.Amount = 0
+	poolConsumeRequest.Put(v)
 }

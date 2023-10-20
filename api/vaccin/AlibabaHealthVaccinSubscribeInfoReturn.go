@@ -9,11 +9,6 @@ import (
 // alibaba.health.vaccin.subscribe.info.return
 //
 // 自有pov预约信息回传
-func AlibabaHealthVaccinSubscribeInfoReturn(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinSubscribeInfoReturnAPIRequest, session string) (*vaccin.AlibabaHealthVaccinSubscribeInfoReturnAPIResponse, error) {
-	var resp vaccin.AlibabaHealthVaccinSubscribeInfoReturnAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHealthVaccinSubscribeInfoReturn(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinSubscribeInfoReturnAPIRequest, resp *vaccin.AlibabaHealthVaccinSubscribeInfoReturnAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

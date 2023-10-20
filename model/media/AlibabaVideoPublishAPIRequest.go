@@ -2,6 +2,7 @@ package media
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -26,8 +27,17 @@ type AlibabaVideoPublishAPIRequest struct {
 // NewAlibabaVideoPublishRequest 初始化AlibabaVideoPublishAPIRequest对象
 func NewAlibabaVideoPublishRequest() *AlibabaVideoPublishAPIRequest {
 	return &AlibabaVideoPublishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaVideoPublishAPIRequest) Reset() {
+	r._fileId = ""
+	r._title = ""
+	r._coverUrl = ""
+	r._tags = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -97,4 +107,21 @@ func (r *AlibabaVideoPublishAPIRequest) SetTags(_tags string) error {
 // GetTags Tags Getter
 func (r AlibabaVideoPublishAPIRequest) GetTags() string {
 	return r._tags
+}
+
+var poolAlibabaVideoPublishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaVideoPublishRequest()
+	},
+}
+
+// GetAlibabaVideoPublishRequest 从 sync.Pool 获取 AlibabaVideoPublishAPIRequest
+func GetAlibabaVideoPublishAPIRequest() *AlibabaVideoPublishAPIRequest {
+	return poolAlibabaVideoPublishAPIRequest.Get().(*AlibabaVideoPublishAPIRequest)
+}
+
+// ReleaseAlibabaVideoPublishAPIRequest 将 AlibabaVideoPublishAPIRequest 放入 sync.Pool
+func ReleaseAlibabaVideoPublishAPIRequest(v *AlibabaVideoPublishAPIRequest) {
+	v.Reset()
+	poolAlibabaVideoPublishAPIRequest.Put(v)
 }

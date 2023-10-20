@@ -1,5 +1,9 @@
 package normalvisa
 
+import (
+	"sync"
+)
+
 // NormalVisaUpdateUnit 结构体
 type NormalVisaUpdateUnit struct {
 	// 预约时间
@@ -20,4 +24,29 @@ type NormalVisaUpdateUnit struct {
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 用户id
 	PersonVisaId int64 `json:"person_visa_id,omitempty" xml:"person_visa_id,omitempty"`
+}
+
+var poolNormalVisaUpdateUnit = sync.Pool{
+	New: func() any {
+		return new(NormalVisaUpdateUnit)
+	},
+}
+
+// GetNormalVisaUpdateUnit() 从对象池中获取NormalVisaUpdateUnit
+func GetNormalVisaUpdateUnit() *NormalVisaUpdateUnit {
+	return poolNormalVisaUpdateUnit.Get().(*NormalVisaUpdateUnit)
+}
+
+// ReleaseNormalVisaUpdateUnit 释放NormalVisaUpdateUnit
+func ReleaseNormalVisaUpdateUnit(v *NormalVisaUpdateUnit) {
+	v.BookTime = ""
+	v.Remark = ""
+	v.PostNumber = ""
+	v.BookPlace = ""
+	v.PostCompanyCode = ""
+	v.PostCompanyName = ""
+	v.Status = 0
+	v.BizOrderId = 0
+	v.PersonVisaId = 0
+	poolNormalVisaUpdateUnit.Put(v)
 }

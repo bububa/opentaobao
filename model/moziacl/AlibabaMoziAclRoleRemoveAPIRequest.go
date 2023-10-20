@@ -2,6 +2,7 @@ package moziacl
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMoziAclRoleRemoveAPIRequest struct {
 // NewAlibabaMoziAclRoleRemoveRequest 初始化AlibabaMoziAclRoleRemoveAPIRequest对象
 func NewAlibabaMoziAclRoleRemoveRequest() *AlibabaMoziAclRoleRemoveAPIRequest {
 	return &AlibabaMoziAclRoleRemoveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMoziAclRoleRemoveAPIRequest) Reset() {
+	r._deleteRolesRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMoziAclRoleRemoveAPIRequest) SetDeleteRolesRequest(_deleteRolesR
 // GetDeleteRolesRequest DeleteRolesRequest Getter
 func (r AlibabaMoziAclRoleRemoveAPIRequest) GetDeleteRolesRequest() *DeleteRolesRequest {
 	return r._deleteRolesRequest
+}
+
+var poolAlibabaMoziAclRoleRemoveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMoziAclRoleRemoveRequest()
+	},
+}
+
+// GetAlibabaMoziAclRoleRemoveRequest 从 sync.Pool 获取 AlibabaMoziAclRoleRemoveAPIRequest
+func GetAlibabaMoziAclRoleRemoveAPIRequest() *AlibabaMoziAclRoleRemoveAPIRequest {
+	return poolAlibabaMoziAclRoleRemoveAPIRequest.Get().(*AlibabaMoziAclRoleRemoveAPIRequest)
+}
+
+// ReleaseAlibabaMoziAclRoleRemoveAPIRequest 将 AlibabaMoziAclRoleRemoveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMoziAclRoleRemoveAPIRequest(v *AlibabaMoziAclRoleRemoveAPIRequest) {
+	v.Reset()
+	poolAlibabaMoziAclRoleRemoveAPIRequest.Put(v)
 }

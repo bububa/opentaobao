@@ -1,5 +1,9 @@
 package openmall
 
+import (
+	"sync"
+)
+
 // TopTradeDetailVo 结构体
 type TopTradeDetailVo struct {
 	// 订单列表
@@ -78,4 +82,58 @@ type TopTradeDetailVo struct {
 	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
 	// 是否包含邮费
 	HasPostFee bool `json:"has_post_fee,omitempty" xml:"has_post_fee,omitempty"`
+}
+
+var poolTopTradeDetailVo = sync.Pool{
+	New: func() any {
+		return new(TopTradeDetailVo)
+	},
+}
+
+// GetTopTradeDetailVo() 从对象池中获取TopTradeDetailVo
+func GetTopTradeDetailVo() *TopTradeDetailVo {
+	return poolTopTradeDetailVo.Get().(*TopTradeDetailVo)
+}
+
+// ReleaseTopTradeDetailVo 释放TopTradeDetailVo
+func ReleaseTopTradeDetailVo(v *TopTradeDetailVo) {
+	v.Orders = v.Orders[:0]
+	v.OutId = ""
+	v.Payment = ""
+	v.PostFee = ""
+	v.Status = ""
+	v.AlipayNo = ""
+	v.BuyerChannel = ""
+	v.BuyerChannelId = ""
+	v.BuyerMemo = ""
+	v.ConsignTime = ""
+	v.Created = ""
+	v.Distributor = ""
+	v.EndTime = ""
+	v.EstConTime = ""
+	v.MarkDesc = ""
+	v.Modified = ""
+	v.PayTime = ""
+	v.Price = ""
+	v.ReceiverAddress = ""
+	v.ReceiverCity = ""
+	v.ReceiverCountry = ""
+	v.ReceiverDistrict = ""
+	v.ReceiverMobile = ""
+	v.ReceiverName = ""
+	v.ReceiverPhone = ""
+	v.ReceiverState = ""
+	v.ReceiverTown = ""
+	v.ReceiverZip = ""
+	v.SellerNick = ""
+	v.ShippingType = ""
+	v.Sid = ""
+	v.Title = ""
+	v.TotalFee = ""
+	v.TradeMemo = ""
+	v.Tid = 0
+	v.NumIid = 0
+	v.Num = 0
+	v.HasPostFee = false
+	poolTopTradeDetailVo.Put(v)
 }

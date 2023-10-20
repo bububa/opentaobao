@@ -1,5 +1,9 @@
 package tbitem
 
+import (
+	"sync"
+)
+
 // UpdateSkuShipTime 结构体
 type UpdateSkuShipTime struct {
 	// 被更新发货时间；格式和具体设置的发货时间格式相关。绝对发货时间填写yyyy-MM-dd;相对发货时间填写数字。
@@ -10,4 +14,24 @@ type UpdateSkuShipTime struct {
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// SKU的ID
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolUpdateSkuShipTime = sync.Pool{
+	New: func() any {
+		return new(UpdateSkuShipTime)
+	},
+}
+
+// GetUpdateSkuShipTime() 从对象池中获取UpdateSkuShipTime
+func GetUpdateSkuShipTime() *UpdateSkuShipTime {
+	return poolUpdateSkuShipTime.Get().(*UpdateSkuShipTime)
+}
+
+// ReleaseUpdateSkuShipTime 释放UpdateSkuShipTime
+func ReleaseUpdateSkuShipTime(v *UpdateSkuShipTime) {
+	v.ShipTime = ""
+	v.Properties = ""
+	v.OuterId = ""
+	v.SkuId = 0
+	poolUpdateSkuShipTime.Put(v)
 }

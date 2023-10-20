@@ -1,5 +1,9 @@
 package ascpffo
 
+import (
+	"sync"
+)
+
 // AliexpressAscpFfoItemQueryResult 结构体
 type AliexpressAscpFfoItemQueryResult struct {
 	// dto
@@ -10,4 +14,24 @@ type AliexpressAscpFfoItemQueryResult struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAliexpressAscpFfoItemQueryResult = sync.Pool{
+	New: func() any {
+		return new(AliexpressAscpFfoItemQueryResult)
+	},
+}
+
+// GetAliexpressAscpFfoItemQueryResult() 从对象池中获取AliexpressAscpFfoItemQueryResult
+func GetAliexpressAscpFfoItemQueryResult() *AliexpressAscpFfoItemQueryResult {
+	return poolAliexpressAscpFfoItemQueryResult.Get().(*AliexpressAscpFfoItemQueryResult)
+}
+
+// ReleaseAliexpressAscpFfoItemQueryResult 释放AliexpressAscpFfoItemQueryResult
+func ReleaseAliexpressAscpFfoItemQueryResult(v *AliexpressAscpFfoItemQueryResult) {
+	v.DataList = v.DataList[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Success = false
+	poolAliexpressAscpFfoItemQueryResult.Put(v)
 }

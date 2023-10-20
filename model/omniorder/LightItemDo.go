@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // LightItemDo 结构体
 type LightItemDo struct {
 	// 关联门店id
@@ -32,4 +36,35 @@ type LightItemDo struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 商品叶子类目，参见taobao.omniitem.category.get接口返回值
 	CatId int64 `json:"cat_id,omitempty" xml:"cat_id,omitempty"`
+}
+
+var poolLightItemDo = sync.Pool{
+	New: func() any {
+		return new(LightItemDo)
+	},
+}
+
+// GetLightItemDo() 从对象池中获取LightItemDo
+func GetLightItemDo() *LightItemDo {
+	return poolLightItemDo.Get().(*LightItemDo)
+}
+
+// ReleaseLightItemDo 释放LightItemDo
+func ReleaseLightItemDo(v *LightItemDo) {
+	v.StoreIds = v.StoreIds[:0]
+	v.Skus = v.Skus[:0]
+	v.Images = v.Images[:0]
+	v.Operator = ""
+	v.Title = ""
+	v.Subtitle = ""
+	v.Price = ""
+	v.Desc = ""
+	v.Pretium = ""
+	v.OuterId = ""
+	v.Barcode = ""
+	v.ExtendAttr = ""
+	v.UserId = 0
+	v.ItemId = 0
+	v.CatId = 0
+	poolLightItemDo.Put(v)
 }

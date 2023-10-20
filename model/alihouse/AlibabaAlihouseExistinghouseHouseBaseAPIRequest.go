@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghouseHouseBaseAPIRequest struct {
 // NewAlibabaAlihouseExistinghouseHouseBaseRequest 初始化AlibabaAlihouseExistinghouseHouseBaseAPIRequest对象
 func NewAlibabaAlihouseExistinghouseHouseBaseRequest() *AlibabaAlihouseExistinghouseHouseBaseAPIRequest {
 	return &AlibabaAlihouseExistinghouseHouseBaseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghouseHouseBaseAPIRequest) Reset() {
+	r._houseBase = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghouseHouseBaseAPIRequest) SetHouseBase(_houseBas
 // GetHouseBase HouseBase Getter
 func (r AlibabaAlihouseExistinghouseHouseBaseAPIRequest) GetHouseBase() *HouseBaseDto {
 	return r._houseBase
+}
+
+var poolAlibabaAlihouseExistinghouseHouseBaseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghouseHouseBaseRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghouseHouseBaseRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghouseHouseBaseAPIRequest
+func GetAlibabaAlihouseExistinghouseHouseBaseAPIRequest() *AlibabaAlihouseExistinghouseHouseBaseAPIRequest {
+	return poolAlibabaAlihouseExistinghouseHouseBaseAPIRequest.Get().(*AlibabaAlihouseExistinghouseHouseBaseAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghouseHouseBaseAPIRequest 将 AlibabaAlihouseExistinghouseHouseBaseAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghouseHouseBaseAPIRequest(v *AlibabaAlihouseExistinghouseHouseBaseAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghouseHouseBaseAPIRequest.Put(v)
 }

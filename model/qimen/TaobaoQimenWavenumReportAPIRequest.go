@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenWavenumReportAPIRequest struct {
 // NewTaobaoQimenWavenumReportRequest 初始化TaobaoQimenWavenumReportAPIRequest对象
 func NewTaobaoQimenWavenumReportRequest() *TaobaoQimenWavenumReportAPIRequest {
 	return &TaobaoQimenWavenumReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenWavenumReportAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -50,4 +57,21 @@ func (r *TaobaoQimenWavenumReportAPIRequest) SetRequest(_request *WaveNumReportR
 // GetRequest Request Getter
 func (r TaobaoQimenWavenumReportAPIRequest) GetRequest() *WaveNumReportRequest {
 	return r._request
+}
+
+var poolTaobaoQimenWavenumReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenWavenumReportRequest()
+	},
+}
+
+// GetTaobaoQimenWavenumReportRequest 从 sync.Pool 获取 TaobaoQimenWavenumReportAPIRequest
+func GetTaobaoQimenWavenumReportAPIRequest() *TaobaoQimenWavenumReportAPIRequest {
+	return poolTaobaoQimenWavenumReportAPIRequest.Get().(*TaobaoQimenWavenumReportAPIRequest)
+}
+
+// ReleaseTaobaoQimenWavenumReportAPIRequest 将 TaobaoQimenWavenumReportAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenWavenumReportAPIRequest(v *TaobaoQimenWavenumReportAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenWavenumReportAPIRequest.Put(v)
 }

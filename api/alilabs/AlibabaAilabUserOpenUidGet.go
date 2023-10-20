@@ -9,11 +9,6 @@ import (
 // alibaba.ailab.user.open.uid.get
 //
 // access token 获取精灵用户 id
-func AlibabaAilabUserOpenUidGet(clt *core.SDKClient, req *alilabs.AlibabaAilabUserOpenUidGetAPIRequest, session string) (*alilabs.AlibabaAilabUserOpenUidGetAPIResponse, error) {
-	var resp alilabs.AlibabaAilabUserOpenUidGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAilabUserOpenUidGet(clt *core.SDKClient, req *alilabs.AlibabaAilabUserOpenUidGetAPIRequest, resp *alilabs.AlibabaAilabUserOpenUidGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

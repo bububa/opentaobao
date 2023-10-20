@@ -9,11 +9,6 @@ import (
 // alibaba.fundplatform.cardorder.make.success
 //
 // 当外部业务方调用资金平台异步制卡接口后，资金平台制卡成功后通知异步通知业务方
-func AlibabaFundplatformCardorderMakeSuccess(clt *core.SDKClient, req *fundplatform.AlibabaFundplatformCardorderMakeSuccessAPIRequest, session string) (*fundplatform.AlibabaFundplatformCardorderMakeSuccessAPIResponse, error) {
-	var resp fundplatform.AlibabaFundplatformCardorderMakeSuccessAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaFundplatformCardorderMakeSuccess(clt *core.SDKClient, req *fundplatform.AlibabaFundplatformCardorderMakeSuccessAPIRequest, resp *fundplatform.AlibabaFundplatformCardorderMakeSuccessAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

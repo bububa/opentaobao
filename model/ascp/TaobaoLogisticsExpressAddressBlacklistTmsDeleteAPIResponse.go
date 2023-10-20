@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponse struct {
 	TaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponseModel).Reset()
+}
+
 // TaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponseModel is 上门取退可揽范围黑名单删除接口 成功返回结果
 type TaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_express_address_blacklist_tms_delete_response"`
@@ -22,4 +29,27 @@ type TaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回值
 	AddressBlacklistDeleteResponse *AddressBlacklistDeleteResponse `json:"address_blacklist_delete_response,omitempty" xml:"address_blacklist_delete_response,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.AddressBlacklistDeleteResponse = nil
+}
+
+var poolTaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponse)
+	},
+}
+
+// GetTaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponse 从 sync.Pool 获取 TaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponse
+func GetTaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponse() *TaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponse {
+	return poolTaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponse.Get().(*TaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponse)
+}
+
+// ReleaseTaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponse 将 TaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponse(v *TaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponse) {
+	v.Reset()
+	poolTaobaoLogisticsExpressAddressBlacklistTmsDeleteAPIResponse.Put(v)
 }

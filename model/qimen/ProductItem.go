@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // ProductItem 结构体
 type ProductItem struct {
 	// erp系统商品编码
@@ -24,4 +28,31 @@ type ProductItem struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 配比数量
 	RatioQty int64 `json:"ratioQty,omitempty" xml:"ratioQty,omitempty"`
+}
+
+var poolProductItem = sync.Pool{
+	New: func() any {
+		return new(ProductItem)
+	},
+}
+
+// GetProductItem() 从对象池中获取ProductItem
+func GetProductItem() *ProductItem {
+	return poolProductItem.Get().(*ProductItem)
+}
+
+// ReleaseProductItem 释放ProductItem
+func ReleaseProductItem(v *ProductItem) {
+	v.ItemCode = ""
+	v.ItemId = ""
+	v.InventoryType = ""
+	v.ProductDate = ""
+	v.ExpireDate = ""
+	v.ProduceCode = ""
+	v.BatchCode = ""
+	v.Remark = ""
+	v.OwnerCode = ""
+	v.Quantity = 0
+	v.RatioQty = 0
+	poolProductItem.Put(v)
 }

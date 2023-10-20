@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AxStoreCreateRequest 结构体
 type AxStoreCreateRequest struct {
 	// 纬度
@@ -20,4 +24,29 @@ type AxStoreCreateRequest struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 门店经营状态 ：1 正常 0 关闭
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolAxStoreCreateRequest = sync.Pool{
+	New: func() any {
+		return new(AxStoreCreateRequest)
+	},
+}
+
+// GetAxStoreCreateRequest() 从对象池中获取AxStoreCreateRequest
+func GetAxStoreCreateRequest() *AxStoreCreateRequest {
+	return poolAxStoreCreateRequest.Get().(*AxStoreCreateRequest)
+}
+
+// ReleaseAxStoreCreateRequest 释放AxStoreCreateRequest
+func ReleaseAxStoreCreateRequest(v *AxStoreCreateRequest) {
+	v.Latitude = ""
+	v.Longitude = ""
+	v.Address = ""
+	v.Area = ""
+	v.City = ""
+	v.Prov = ""
+	v.Code = ""
+	v.Name = ""
+	v.Status = 0
+	poolAxStoreCreateRequest.Put(v)
 }

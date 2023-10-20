@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaInteractActivityApplyAPIRequest struct {
 // NewAlibabaInteractActivityApplyRequest 初始化AlibabaInteractActivityApplyAPIRequest对象
 func NewAlibabaInteractActivityApplyRequest() *AlibabaInteractActivityApplyAPIRequest {
 	return &AlibabaInteractActivityApplyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractActivityApplyAPIRequest) Reset() {
+	r._benefitType = ""
+	r._benefitDenomination = ""
+	r._bannerUrl = ""
+	r._activityBizId = ""
+	r._bizType = ""
+	r._benefitAmount = ""
+	r._benefitAttribute = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaInteractActivityApplyAPIRequest) SetBenefitAttribute(_benefitAtt
 // GetBenefitAttribute BenefitAttribute Getter
 func (r AlibabaInteractActivityApplyAPIRequest) GetBenefitAttribute() string {
 	return r._benefitAttribute
+}
+
+var poolAlibabaInteractActivityApplyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractActivityApplyRequest()
+	},
+}
+
+// GetAlibabaInteractActivityApplyRequest 从 sync.Pool 获取 AlibabaInteractActivityApplyAPIRequest
+func GetAlibabaInteractActivityApplyAPIRequest() *AlibabaInteractActivityApplyAPIRequest {
+	return poolAlibabaInteractActivityApplyAPIRequest.Get().(*AlibabaInteractActivityApplyAPIRequest)
+}
+
+// ReleaseAlibabaInteractActivityApplyAPIRequest 将 AlibabaInteractActivityApplyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractActivityApplyAPIRequest(v *AlibabaInteractActivityApplyAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractActivityApplyAPIRequest.Put(v)
 }

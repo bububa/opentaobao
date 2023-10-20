@@ -2,6 +2,7 @@ package product
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaJymItemExternalGoodsBatchOnsaleAPIResponse struct {
 	model.CommonResponse
 	AlibabaJymItemExternalGoodsBatchOnsaleAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymItemExternalGoodsBatchOnsaleAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaJymItemExternalGoodsBatchOnsaleAPIResponseModel).Reset()
 }
 
 // AlibabaJymItemExternalGoodsBatchOnsaleAPIResponseModel is 交易猫外部商家批量上架商品接口 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaJymItemExternalGoodsBatchOnsaleAPIResponseModel struct {
 	Result *GoodsBatchResultDto `json:"result,omitempty" xml:"result,omitempty"`
 	// 是否成功
 	Succeed bool `json:"succeed,omitempty" xml:"succeed,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymItemExternalGoodsBatchOnsaleAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.StateCode = ""
+	m.ExtraErrMsg = ""
+	m.Result = nil
+	m.Succeed = false
+}
+
+var poolAlibabaJymItemExternalGoodsBatchOnsaleAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaJymItemExternalGoodsBatchOnsaleAPIResponse)
+	},
+}
+
+// GetAlibabaJymItemExternalGoodsBatchOnsaleAPIResponse 从 sync.Pool 获取 AlibabaJymItemExternalGoodsBatchOnsaleAPIResponse
+func GetAlibabaJymItemExternalGoodsBatchOnsaleAPIResponse() *AlibabaJymItemExternalGoodsBatchOnsaleAPIResponse {
+	return poolAlibabaJymItemExternalGoodsBatchOnsaleAPIResponse.Get().(*AlibabaJymItemExternalGoodsBatchOnsaleAPIResponse)
+}
+
+// ReleaseAlibabaJymItemExternalGoodsBatchOnsaleAPIResponse 将 AlibabaJymItemExternalGoodsBatchOnsaleAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaJymItemExternalGoodsBatchOnsaleAPIResponse(v *AlibabaJymItemExternalGoodsBatchOnsaleAPIResponse) {
+	v.Reset()
+	poolAlibabaJymItemExternalGoodsBatchOnsaleAPIResponse.Put(v)
 }

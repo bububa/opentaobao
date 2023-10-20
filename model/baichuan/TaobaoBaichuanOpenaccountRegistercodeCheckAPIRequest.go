@@ -2,6 +2,7 @@ package baichuan
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest struct {
 // NewTaobaoBaichuanOpenaccountRegistercodeCheckRequest 初始化TaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest对象
 func NewTaobaoBaichuanOpenaccountRegistercodeCheckRequest() *TaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest {
 	return &TaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest) Reset() {
+	r._name = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest) SetName(_name str
 // GetName Name Getter
 func (r TaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest) GetName() string {
 	return r._name
+}
+
+var poolTaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBaichuanOpenaccountRegistercodeCheckRequest()
+	},
+}
+
+// GetTaobaoBaichuanOpenaccountRegistercodeCheckRequest 从 sync.Pool 获取 TaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest
+func GetTaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest() *TaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest {
+	return poolTaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest.Get().(*TaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest)
+}
+
+// ReleaseTaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest 将 TaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest(v *TaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest) {
+	v.Reset()
+	poolTaobaoBaichuanOpenaccountRegistercodeCheckAPIRequest.Put(v)
 }

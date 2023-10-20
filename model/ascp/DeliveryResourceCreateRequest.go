@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // DeliveryResourceCreateRequest 结构体
 type DeliveryResourceCreateRequest struct {
 	// 幂等ID
@@ -22,4 +26,30 @@ type DeliveryResourceCreateRequest struct {
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
 	// 配资源类型，枚举： 20：快递 10：即时配
 	DeliveryType int64 `json:"delivery_type,omitempty" xml:"delivery_type,omitempty"`
+}
+
+var poolDeliveryResourceCreateRequest = sync.Pool{
+	New: func() any {
+		return new(DeliveryResourceCreateRequest)
+	},
+}
+
+// GetDeliveryResourceCreateRequest() 从对象池中获取DeliveryResourceCreateRequest
+func GetDeliveryResourceCreateRequest() *DeliveryResourceCreateRequest {
+	return poolDeliveryResourceCreateRequest.Get().(*DeliveryResourceCreateRequest)
+}
+
+// ReleaseDeliveryResourceCreateRequest 释放DeliveryResourceCreateRequest
+func ReleaseDeliveryResourceCreateRequest(v *DeliveryResourceCreateRequest) {
+	v.RequestId = ""
+	v.SupplierId = ""
+	v.DeliveryName = ""
+	v.BrandCode = ""
+	v.DeliveryCode = ""
+	v.PlatformCode = ""
+	v.ConName = ""
+	v.ConPhone = ""
+	v.RequestTime = 0
+	v.DeliveryType = 0
+	poolDeliveryResourceCreateRequest.Put(v)
 }

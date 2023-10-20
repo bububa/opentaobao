@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // AxinPayRegisterCreateDto 结构体
 type AxinPayRegisterCreateDto struct {
 	// 站点信息
@@ -46,4 +50,42 @@ type AxinPayRegisterCreateDto struct {
 	BindingAlipayLogonId string `json:"binding_alipay_logon_id,omitempty" xml:"binding_alipay_logon_id,omitempty"`
 	// 营业地址
 	BusinessAddress *AxinPayRegisterAddress `json:"business_address,omitempty" xml:"business_address,omitempty"`
+}
+
+var poolAxinPayRegisterCreateDto = sync.Pool{
+	New: func() any {
+		return new(AxinPayRegisterCreateDto)
+	},
+}
+
+// GetAxinPayRegisterCreateDto() 从对象池中获取AxinPayRegisterCreateDto
+func GetAxinPayRegisterCreateDto() *AxinPayRegisterCreateDto {
+	return poolAxinPayRegisterCreateDto.Get().(*AxinPayRegisterCreateDto)
+}
+
+// ReleaseAxinPayRegisterCreateDto 释放AxinPayRegisterCreateDto
+func ReleaseAxinPayRegisterCreateDto(v *AxinPayRegisterCreateDto) {
+	v.Sites = v.Sites[:0]
+	v.Service = v.Service[:0]
+	v.Qualifications = v.Qualifications[:0]
+	v.LegalCertType = ""
+	v.AlipayLogonId = ""
+	v.ContactPhone = ""
+	v.ContactName = ""
+	v.ServicePhone = ""
+	v.LegalCertFrontImage = ""
+	v.LegalCertNo = ""
+	v.LegalName = ""
+	v.CertImage = ""
+	v.CertType = ""
+	v.CertNo = ""
+	v.Mcc = ""
+	v.MerchantType = ""
+	v.AliasName = ""
+	v.Name = ""
+	v.ExternalId = ""
+	v.LegalCertBackImage = ""
+	v.BindingAlipayLogonId = ""
+	v.BusinessAddress = nil
+	poolAxinPayRegisterCreateDto.Put(v)
 }

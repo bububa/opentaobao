@@ -2,6 +2,7 @@ package charity
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest struct {
 // NewAlibabaCsrDonateSellerInvoiceSyncinfoRequest 初始化AlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest对象
 func NewAlibabaCsrDonateSellerInvoiceSyncinfoRequest() *AlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest {
 	return &AlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest) Reset() {
+	r._csrInvoiceAntChainSyncDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest) SetCsrInvoiceAntChainS
 // GetCsrInvoiceAntChainSyncDto CsrInvoiceAntChainSyncDto Getter
 func (r AlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest) GetCsrInvoiceAntChainSyncDto() *CsrInvoiceAntChainSyncDto {
 	return r._csrInvoiceAntChainSyncDto
+}
+
+var poolAlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCsrDonateSellerInvoiceSyncinfoRequest()
+	},
+}
+
+// GetAlibabaCsrDonateSellerInvoiceSyncinfoRequest 从 sync.Pool 获取 AlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest
+func GetAlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest() *AlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest {
+	return poolAlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest.Get().(*AlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest)
+}
+
+// ReleaseAlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest 将 AlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest(v *AlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest) {
+	v.Reset()
+	poolAlibabaCsrDonateSellerInvoiceSyncinfoAPIRequest.Put(v)
 }

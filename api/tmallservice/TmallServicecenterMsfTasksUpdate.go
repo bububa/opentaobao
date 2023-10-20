@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.msf.tasks.update
 //
 // 喵师傅工人任务批量完成接口
-func TmallServicecenterMsfTasksUpdate(clt *core.SDKClient, req *tmallservice.TmallServicecenterMsfTasksUpdateAPIRequest, session string) (*tmallservice.TmallServicecenterMsfTasksUpdateAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterMsfTasksUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterMsfTasksUpdate(clt *core.SDKClient, req *tmallservice.TmallServicecenterMsfTasksUpdateAPIRequest, resp *tmallservice.TmallServicecenterMsfTasksUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

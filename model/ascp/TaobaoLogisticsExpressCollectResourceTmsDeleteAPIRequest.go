@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest struct {
 // NewTaobaoLogisticsExpressCollectResourceTmsDeleteRequest 初始化TaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest对象
 func NewTaobaoLogisticsExpressCollectResourceTmsDeleteRequest() *TaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest {
 	return &TaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest) Reset() {
+	r._collectResourceDeleteRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest) SetCollectRes
 // GetCollectResourceDeleteRequest CollectResourceDeleteRequest Getter
 func (r TaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest) GetCollectResourceDeleteRequest() *CollectResourceDeleteRequest {
 	return r._collectResourceDeleteRequest
+}
+
+var poolTaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsExpressCollectResourceTmsDeleteRequest()
+	},
+}
+
+// GetTaobaoLogisticsExpressCollectResourceTmsDeleteRequest 从 sync.Pool 获取 TaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest
+func GetTaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest() *TaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest {
+	return poolTaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest.Get().(*TaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest 将 TaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest(v *TaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsExpressCollectResourceTmsDeleteAPIRequest.Put(v)
 }

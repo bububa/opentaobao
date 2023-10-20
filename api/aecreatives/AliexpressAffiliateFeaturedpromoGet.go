@@ -9,11 +9,6 @@ import (
 // aliexpress.affiliate.featuredpromo.get
 //
 // 获取联盟主题推广活动信息
-func AliexpressAffiliateFeaturedpromoGet(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateFeaturedpromoGetAPIRequest, session string) (*aecreatives.AliexpressAffiliateFeaturedpromoGetAPIResponse, error) {
-	var resp aecreatives.AliexpressAffiliateFeaturedpromoGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressAffiliateFeaturedpromoGet(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateFeaturedpromoGetAPIRequest, resp *aecreatives.AliexpressAffiliateFeaturedpromoGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

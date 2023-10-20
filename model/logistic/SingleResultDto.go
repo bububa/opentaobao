@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // SingleResultDto 结构体
 type SingleResultDto struct {
 	// 错误描述
@@ -16,4 +20,27 @@ type SingleResultDto struct {
 	IsIdempotent bool `json:"is_idempotent,omitempty" xml:"is_idempotent,omitempty"`
 	// 是否调用成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolSingleResultDto = sync.Pool{
+	New: func() any {
+		return new(SingleResultDto)
+	},
+}
+
+// GetSingleResultDto() 从对象池中获取SingleResultDto
+func GetSingleResultDto() *SingleResultDto {
+	return poolSingleResultDto.Get().(*SingleResultDto)
+}
+
+// ReleaseSingleResultDto 释放SingleResultDto
+func ReleaseSingleResultDto(v *SingleResultDto) {
+	v.ErrorDesc = ""
+	v.TraceId = ""
+	v.ErrorCode = ""
+	v.Result = nil
+	v.IsRetry = false
+	v.IsIdempotent = false
+	v.Success = false
+	poolSingleResultDto.Put(v)
 }

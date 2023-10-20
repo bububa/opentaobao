@@ -1,5 +1,9 @@
 package aliospay
 
+import (
+	"sync"
+)
+
 // PeriodAgreementUnsignRequest 结构体
 type PeriodAgreementUnsignRequest struct {
 	// 请求唯一id，不可重复，服务端会根据此参数防重放
@@ -14,4 +18,26 @@ type PeriodAgreementUnsignRequest struct {
 	ServiceProtocol string `json:"service_protocol,omitempty" xml:"service_protocol,omitempty"`
 	// 周期扣款解约结果回调地址
 	PeriodUnsignNotifyUrl string `json:"period_unsign_notify_url,omitempty" xml:"period_unsign_notify_url,omitempty"`
+}
+
+var poolPeriodAgreementUnsignRequest = sync.Pool{
+	New: func() any {
+		return new(PeriodAgreementUnsignRequest)
+	},
+}
+
+// GetPeriodAgreementUnsignRequest() 从对象池中获取PeriodAgreementUnsignRequest
+func GetPeriodAgreementUnsignRequest() *PeriodAgreementUnsignRequest {
+	return poolPeriodAgreementUnsignRequest.Get().(*PeriodAgreementUnsignRequest)
+}
+
+// ReleasePeriodAgreementUnsignRequest 释放PeriodAgreementUnsignRequest
+func ReleasePeriodAgreementUnsignRequest(v *PeriodAgreementUnsignRequest) {
+	v.TraceId = ""
+	v.Lang = ""
+	v.Time = ""
+	v.ExternalPeriodAgreementCode = ""
+	v.ServiceProtocol = ""
+	v.PeriodUnsignNotifyUrl = ""
+	poolPeriodAgreementUnsignRequest.Put(v)
 }

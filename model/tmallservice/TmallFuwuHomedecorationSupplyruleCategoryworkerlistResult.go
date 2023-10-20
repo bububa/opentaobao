@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // TmallFuwuHomedecorationSupplyruleCategoryworkerlistResult 结构体
 type TmallFuwuHomedecorationSupplyruleCategoryworkerlistResult struct {
 	// 品牌品类工人数据
@@ -16,4 +20,27 @@ type TmallFuwuHomedecorationSupplyruleCategoryworkerlistResult struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmallFuwuHomedecorationSupplyruleCategoryworkerlistResult = sync.Pool{
+	New: func() any {
+		return new(TmallFuwuHomedecorationSupplyruleCategoryworkerlistResult)
+	},
+}
+
+// GetTmallFuwuHomedecorationSupplyruleCategoryworkerlistResult() 从对象池中获取TmallFuwuHomedecorationSupplyruleCategoryworkerlistResult
+func GetTmallFuwuHomedecorationSupplyruleCategoryworkerlistResult() *TmallFuwuHomedecorationSupplyruleCategoryworkerlistResult {
+	return poolTmallFuwuHomedecorationSupplyruleCategoryworkerlistResult.Get().(*TmallFuwuHomedecorationSupplyruleCategoryworkerlistResult)
+}
+
+// ReleaseTmallFuwuHomedecorationSupplyruleCategoryworkerlistResult 释放TmallFuwuHomedecorationSupplyruleCategoryworkerlistResult
+func ReleaseTmallFuwuHomedecorationSupplyruleCategoryworkerlistResult(v *TmallFuwuHomedecorationSupplyruleCategoryworkerlistResult) {
+	v.DataList = v.DataList[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.PageIndex = 0
+	v.PageSize = 0
+	v.TotalCount = 0
+	v.Success = false
+	poolTmallFuwuHomedecorationSupplyruleCategoryworkerlistResult.Put(v)
 }

@@ -2,6 +2,7 @@ package ju
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaJhsCommunityActivityListAPIRequest struct {
 // NewAlibabaJhsCommunityActivityListRequest 初始化AlibabaJhsCommunityActivityListAPIRequest对象
 func NewAlibabaJhsCommunityActivityListRequest() *AlibabaJhsCommunityActivityListAPIRequest {
 	return &AlibabaJhsCommunityActivityListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJhsCommunityActivityListAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaJhsCommunityActivityListAPIRequest) GetApiParams(params url.Value
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaJhsCommunityActivityListAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaJhsCommunityActivityListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJhsCommunityActivityListRequest()
+	},
+}
+
+// GetAlibabaJhsCommunityActivityListRequest 从 sync.Pool 获取 AlibabaJhsCommunityActivityListAPIRequest
+func GetAlibabaJhsCommunityActivityListAPIRequest() *AlibabaJhsCommunityActivityListAPIRequest {
+	return poolAlibabaJhsCommunityActivityListAPIRequest.Get().(*AlibabaJhsCommunityActivityListAPIRequest)
+}
+
+// ReleaseAlibabaJhsCommunityActivityListAPIRequest 将 AlibabaJhsCommunityActivityListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJhsCommunityActivityListAPIRequest(v *AlibabaJhsCommunityActivityListAPIRequest) {
+	v.Reset()
+	poolAlibabaJhsCommunityActivityListAPIRequest.Put(v)
 }

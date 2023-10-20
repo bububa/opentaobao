@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoQianniuTaskMessageSendAPIRequest struct {
 // NewTaobaoQianniuTaskMessageSendRequest 初始化TaobaoQianniuTaskMessageSendAPIRequest对象
 func NewTaobaoQianniuTaskMessageSendRequest() *TaobaoQianniuTaskMessageSendAPIRequest {
 	return &TaobaoQianniuTaskMessageSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQianniuTaskMessageSendAPIRequest) Reset() {
+	r._taskId = 0
+	r._metadataId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoQianniuTaskMessageSendAPIRequest) SetMetadataId(_metadataId int64
 // GetMetadataId MetadataId Getter
 func (r TaobaoQianniuTaskMessageSendAPIRequest) GetMetadataId() int64 {
 	return r._metadataId
+}
+
+var poolTaobaoQianniuTaskMessageSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQianniuTaskMessageSendRequest()
+	},
+}
+
+// GetTaobaoQianniuTaskMessageSendRequest 从 sync.Pool 获取 TaobaoQianniuTaskMessageSendAPIRequest
+func GetTaobaoQianniuTaskMessageSendAPIRequest() *TaobaoQianniuTaskMessageSendAPIRequest {
+	return poolTaobaoQianniuTaskMessageSendAPIRequest.Get().(*TaobaoQianniuTaskMessageSendAPIRequest)
+}
+
+// ReleaseTaobaoQianniuTaskMessageSendAPIRequest 将 TaobaoQianniuTaskMessageSendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQianniuTaskMessageSendAPIRequest(v *TaobaoQianniuTaskMessageSendAPIRequest) {
+	v.Reset()
+	poolTaobaoQianniuTaskMessageSendAPIRequest.Put(v)
 }

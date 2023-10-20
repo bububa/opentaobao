@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoVasServiceValidateAPIRequest struct {
 // NewTaobaoVasServiceValidateRequest 初始化TaobaoVasServiceValidateAPIRequest对象
 func NewTaobaoVasServiceValidateRequest() *TaobaoVasServiceValidateAPIRequest {
 	return &TaobaoVasServiceValidateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoVasServiceValidateAPIRequest) Reset() {
+	r._nick = ""
+	r._servCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoVasServiceValidateAPIRequest) SetServCode(_servCode string) error
 // GetServCode ServCode Getter
 func (r TaobaoVasServiceValidateAPIRequest) GetServCode() string {
 	return r._servCode
+}
+
+var poolTaobaoVasServiceValidateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoVasServiceValidateRequest()
+	},
+}
+
+// GetTaobaoVasServiceValidateRequest 从 sync.Pool 获取 TaobaoVasServiceValidateAPIRequest
+func GetTaobaoVasServiceValidateAPIRequest() *TaobaoVasServiceValidateAPIRequest {
+	return poolTaobaoVasServiceValidateAPIRequest.Get().(*TaobaoVasServiceValidateAPIRequest)
+}
+
+// ReleaseTaobaoVasServiceValidateAPIRequest 将 TaobaoVasServiceValidateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoVasServiceValidateAPIRequest(v *TaobaoVasServiceValidateAPIRequest) {
+	v.Reset()
+	poolTaobaoVasServiceValidateAPIRequest.Put(v)
 }

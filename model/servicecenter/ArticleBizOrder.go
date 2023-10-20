@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // ArticleBizOrder 结构体
 type ArticleBizOrder struct {
 	// 淘宝会员名
@@ -38,4 +42,38 @@ type ArticleBizOrder struct {
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 订单号
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
+}
+
+var poolArticleBizOrder = sync.Pool{
+	New: func() any {
+		return new(ArticleBizOrder)
+	},
+}
+
+// GetArticleBizOrder() 从对象池中获取ArticleBizOrder
+func GetArticleBizOrder() *ArticleBizOrder {
+	return poolArticleBizOrder.Get().(*ArticleBizOrder)
+}
+
+// ReleaseArticleBizOrder 释放ArticleBizOrder
+func ReleaseArticleBizOrder(v *ArticleBizOrder) {
+	v.Nick = ""
+	v.ArticleName = ""
+	v.ArticleCode = ""
+	v.ArticleItemName = ""
+	v.ItemCode = ""
+	v.Create = ""
+	v.OrderCycle = ""
+	v.Fee = ""
+	v.PromFee = ""
+	v.TotalPayFee = ""
+	v.OrderCycleStart = ""
+	v.OrderCycleEnd = ""
+	v.RefundFee = ""
+	v.ActivityCode = ""
+	v.OrderBizStatus = ""
+	v.BizType = 0
+	v.OrderId = 0
+	v.BizOrderId = 0
+	poolArticleBizOrder.Put(v)
 }

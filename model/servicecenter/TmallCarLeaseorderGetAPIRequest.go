@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallCarLeaseorderGetAPIRequest struct {
 // NewTmallCarLeaseorderGetRequest 初始化TmallCarLeaseorderGetAPIRequest对象
 func NewTmallCarLeaseorderGetRequest() *TmallCarLeaseorderGetAPIRequest {
 	return &TmallCarLeaseorderGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarLeaseorderGetAPIRequest) Reset() {
+	r._orderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallCarLeaseorderGetAPIRequest) SetOrderId(_orderId int64) error {
 // GetOrderId OrderId Getter
 func (r TmallCarLeaseorderGetAPIRequest) GetOrderId() int64 {
 	return r._orderId
+}
+
+var poolTmallCarLeaseorderGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarLeaseorderGetRequest()
+	},
+}
+
+// GetTmallCarLeaseorderGetRequest 从 sync.Pool 获取 TmallCarLeaseorderGetAPIRequest
+func GetTmallCarLeaseorderGetAPIRequest() *TmallCarLeaseorderGetAPIRequest {
+	return poolTmallCarLeaseorderGetAPIRequest.Get().(*TmallCarLeaseorderGetAPIRequest)
+}
+
+// ReleaseTmallCarLeaseorderGetAPIRequest 将 TmallCarLeaseorderGetAPIRequest 放入 sync.Pool
+func ReleaseTmallCarLeaseorderGetAPIRequest(v *TmallCarLeaseorderGetAPIRequest) {
+	v.Reset()
+	poolTmallCarLeaseorderGetAPIRequest.Put(v)
 }

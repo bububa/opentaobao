@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // Polinestructureitemdtolist 结构体
 type Polinestructureitemdtolist struct {
 	// 节点名称
@@ -26,4 +30,32 @@ type Polinestructureitemdtolist struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 父节点id，为空则表示该节点是根节点
 	ParentId int64 `json:"parent_id,omitempty" xml:"parent_id,omitempty"`
+}
+
+var poolPolinestructureitemdtolist = sync.Pool{
+	New: func() any {
+		return new(Polinestructureitemdtolist)
+	},
+}
+
+// GetPolinestructureitemdtolist() 从对象池中获取Polinestructureitemdtolist
+func GetPolinestructureitemdtolist() *Polinestructureitemdtolist {
+	return poolPolinestructureitemdtolist.Get().(*Polinestructureitemdtolist)
+}
+
+// ReleasePolinestructureitemdtolist 释放Polinestructureitemdtolist
+func ReleasePolinestructureitemdtolist(v *Polinestructureitemdtolist) {
+	v.ItemName = ""
+	v.CostType = ""
+	v.ChargeUnit = ""
+	v.UnitPrice = ""
+	v.UnitCurrency = ""
+	v.Amount = ""
+	v.Currency = ""
+	v.ExchangeRate = ""
+	v.Quantity = ""
+	v.ExpenseParam = ""
+	v.Id = 0
+	v.ParentId = 0
+	poolPolinestructureitemdtolist.Put(v)
 }

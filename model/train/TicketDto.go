@@ -1,5 +1,9 @@
 package train
 
+import (
+	"sync"
+)
+
 // TicketDto 结构体
 type TicketDto struct {
 	// 12306订单号
@@ -52,4 +56,45 @@ type TicketDto struct {
 	SegmentId int64 `json:"segment_id,omitempty" xml:"segment_id,omitempty"`
 	// 程 序号
 	SegmentIndex int64 `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
+}
+
+var poolTicketDto = sync.Pool{
+	New: func() any {
+		return new(TicketDto)
+	},
+}
+
+// GetTicketDto() 从对象池中获取TicketDto
+func GetTicketDto() *TicketDto {
+	return poolTicketDto.Get().(*TicketDto)
+}
+
+// ReleaseTicketDto 释放TicketDto
+func ReleaseTicketDto(v *TicketDto) {
+	v.SequenceNo = ""
+	v.SeatNo = ""
+	v.CoachNo = ""
+	v.BatchNo = ""
+	v.TicketTypeCode = ""
+	v.RealSeatTypeCode = ""
+	v.FromStationName = ""
+	v.InterChangeStationTelecode = ""
+	v.InterChangeStationName = ""
+	v.TrainCode = ""
+	v.SeatTypeCode = ""
+	v.SeatTypeName = ""
+	v.ToStationName = ""
+	v.FromStationTelecode = ""
+	v.TrainDate = ""
+	v.FromTime = ""
+	v.ToStationTelecode = ""
+	v.ToTime = ""
+	v.TtpOrderId = 0
+	v.SubOrderId = 0
+	v.TtpSubOrderId = 0
+	v.RealTicketPrice = 0
+	v.VipCustomType = 0
+	v.SegmentId = 0
+	v.SegmentIndex = 0
+	poolTicketDto.Put(v)
 }

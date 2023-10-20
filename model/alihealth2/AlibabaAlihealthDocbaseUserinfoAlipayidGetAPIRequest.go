@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest struct {
 // NewAlibabaAlihealthDocbaseUserinfoAlipayidGetRequest 初始化AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest对象
 func NewAlibabaAlihealthDocbaseUserinfoAlipayidGetRequest() *AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest {
 	return &AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest) Reset() {
+	r._alihealthUserId = ""
+	r._appChannel = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest) SetAppChannel(_ap
 // GetAppChannel AppChannel Getter
 func (r AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest) GetAppChannel() string {
 	return r._appChannel
+}
+
+var poolAlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDocbaseUserinfoAlipayidGetRequest()
+	},
+}
+
+// GetAlibabaAlihealthDocbaseUserinfoAlipayidGetRequest 从 sync.Pool 获取 AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest
+func GetAlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest() *AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest {
+	return poolAlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest.Get().(*AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest 将 AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest(v *AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest.Put(v)
 }

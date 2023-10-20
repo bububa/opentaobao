@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihouseNewhomeApartmentLineAPIRequest struct {
 // NewAlibabaAlihouseNewhomeApartmentLineRequest 初始化AlibabaAlihouseNewhomeApartmentLineAPIRequest对象
 func NewAlibabaAlihouseNewhomeApartmentLineRequest() *AlibabaAlihouseNewhomeApartmentLineAPIRequest {
 	return &AlibabaAlihouseNewhomeApartmentLineAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeApartmentLineAPIRequest) Reset() {
+	r._outerId = ""
+	r._type = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihouseNewhomeApartmentLineAPIRequest) SetType(_type *model.Fil
 // GetType Type Getter
 func (r AlibabaAlihouseNewhomeApartmentLineAPIRequest) GetType() *model.File {
 	return r._type
+}
+
+var poolAlibabaAlihouseNewhomeApartmentLineAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeApartmentLineRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeApartmentLineRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeApartmentLineAPIRequest
+func GetAlibabaAlihouseNewhomeApartmentLineAPIRequest() *AlibabaAlihouseNewhomeApartmentLineAPIRequest {
+	return poolAlibabaAlihouseNewhomeApartmentLineAPIRequest.Get().(*AlibabaAlihouseNewhomeApartmentLineAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeApartmentLineAPIRequest 将 AlibabaAlihouseNewhomeApartmentLineAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeApartmentLineAPIRequest(v *AlibabaAlihouseNewhomeApartmentLineAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeApartmentLineAPIRequest.Put(v)
 }

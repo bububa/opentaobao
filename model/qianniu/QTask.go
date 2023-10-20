@@ -1,7 +1,11 @@
 package qianniu
 
-// Qtask 结构体
-type Qtask struct {
+import (
+	"sync"
+)
+
+// QTask 结构体
+type QTask struct {
 	// 执行者用户昵称
 	ReceiverNick string `json:"receiver_nick,omitempty" xml:"receiver_nick,omitempty"`
 	// 发起人nick
@@ -83,9 +87,68 @@ type Qtask struct {
 	// 任务&amp;ldquo;已读&amp;rdquo;、&amp;ldquo;未读&amp;rdquo;状态，0：已读，1：未读
 	ReadStatus int64 `json:"read_status,omitempty" xml:"read_status,omitempty"`
 	// 关联的任务元数据
-	Meta *QtaskMetadata `json:"meta,omitempty" xml:"meta,omitempty"`
+	Meta *QTaskMetadata `json:"meta,omitempty" xml:"meta,omitempty"`
 	// 是否删除
 	IsDeleted int64 `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
 	// 父任务的id
 	ParentTaskId int64 `json:"parent_task_id,omitempty" xml:"parent_task_id,omitempty"`
+}
+
+var poolQTask = sync.Pool{
+	New: func() any {
+		return new(QTask)
+	},
+}
+
+// GetQTask() 从对象池中获取QTask
+func GetQTask() *QTask {
+	return poolQTask.Get().(*QTask)
+}
+
+// ReleaseQTask 释放QTask
+func ReleaseQTask(v *QTask) {
+	v.ReceiverNick = ""
+	v.SenderNick = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.GmtFinished = ""
+	v.BizType = ""
+	v.SubBizType = ""
+	v.BizId = ""
+	v.BizParam = ""
+	v.BizEntry = ""
+	v.Tag = ""
+	v.Memo = ""
+	v.RemindTime = ""
+	v.BizNick = ""
+	v.BizTypeStr = ""
+	v.Action = ""
+	v.BizIdAction = ""
+	v.BizIdName = ""
+	v.Content = ""
+	v.Attachments = ""
+	v.VoiceFile = ""
+	v.NewYunpanAttachments = ""
+	v.OpenBuyerUid = ""
+	v.Id = 0
+	v.ReceiverUid = 0
+	v.SenderUid = 0
+	v.FinishFlag = 0
+	v.Status = 0
+	v.SubStatus = 0
+	v.FinishStrategy = 0
+	v.GmtCreateLong = 0
+	v.GmtModifiedLong = 0
+	v.GmtFinishedLong = 0
+	v.RemindFlag = 0
+	v.RemindTimeLong = 0
+	v.TotalCount = 0
+	v.Priority = 0
+	v.MetadataId = 0
+	v.CommentCount = 0
+	v.ReadStatus = 0
+	v.Meta = nil
+	v.IsDeleted = 0
+	v.ParentTaskId = 0
+	poolQTask.Put(v)
 }

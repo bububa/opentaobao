@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.callrecord.query
 //
 // 天猫服务平台服务商查询通话记录接口
-func TmallServicecenterCallrecordQuery(clt *core.SDKClient, req *tmallsc.TmallServicecenterCallrecordQueryAPIRequest, session string) (*tmallsc.TmallServicecenterCallrecordQueryAPIResponse, error) {
-	var resp tmallsc.TmallServicecenterCallrecordQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterCallrecordQuery(clt *core.SDKClient, req *tmallsc.TmallServicecenterCallrecordQueryAPIRequest, resp *tmallsc.TmallServicecenterCallrecordQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.dmp.crowd.basic.find
 //
 // DMP_BP版人群列表查询
-func TaobaoDmpCrowdBasicFind(clt *core.SDKClient, req *dmp.TaobaoDmpCrowdBasicFindAPIRequest, session string) (*dmp.TaobaoDmpCrowdBasicFindAPIResponse, error) {
-	var resp dmp.TaobaoDmpCrowdBasicFindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoDmpCrowdBasicFind(clt *core.SDKClient, req *dmp.TaobaoDmpCrowdBasicFindAPIRequest, resp *dmp.TaobaoDmpCrowdBasicFindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

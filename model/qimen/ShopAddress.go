@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // ShopAddress 结构体
 type ShopAddress struct {
 	// 邮编, string (50)
@@ -14,4 +18,26 @@ type ShopAddress struct {
 	Town string `json:"town,omitempty" xml:"town,omitempty"`
 	// 详细地址, string (200)
 	DetailAddress string `json:"detailAddress,omitempty" xml:"detailAddress,omitempty"`
+}
+
+var poolShopAddress = sync.Pool{
+	New: func() any {
+		return new(ShopAddress)
+	},
+}
+
+// GetShopAddress() 从对象池中获取ShopAddress
+func GetShopAddress() *ShopAddress {
+	return poolShopAddress.Get().(*ShopAddress)
+}
+
+// ReleaseShopAddress 释放ShopAddress
+func ReleaseShopAddress(v *ShopAddress) {
+	v.ZipCode = ""
+	v.Province = ""
+	v.City = ""
+	v.Area = ""
+	v.Town = ""
+	v.DetailAddress = ""
+	poolShopAddress.Put(v)
 }

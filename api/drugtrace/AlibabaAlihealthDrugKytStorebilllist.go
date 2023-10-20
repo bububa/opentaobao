@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.kyt.storebilllist
 //
 // 零售端平台单据查询
-func AlibabaAlihealthDrugKytStorebilllist(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytStorebilllistAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytStorebilllistAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytStorebilllistAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugKytStorebilllist(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytStorebilllistAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytStorebilllistAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

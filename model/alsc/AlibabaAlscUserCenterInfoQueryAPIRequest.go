@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscUserCenterInfoQueryAPIRequest struct {
 // NewAlibabaAlscUserCenterInfoQueryRequest 初始化AlibabaAlscUserCenterInfoQueryAPIRequest对象
 func NewAlibabaAlscUserCenterInfoQueryRequest() *AlibabaAlscUserCenterInfoQueryAPIRequest {
 	return &AlibabaAlscUserCenterInfoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscUserCenterInfoQueryAPIRequest) Reset() {
+	r._alscUserQueryOpenRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscUserCenterInfoQueryAPIRequest) SetAlscUserQueryOpenRequest(_
 // GetAlscUserQueryOpenRequest AlscUserQueryOpenRequest Getter
 func (r AlibabaAlscUserCenterInfoQueryAPIRequest) GetAlscUserQueryOpenRequest() *AlscUserQueryOpenRequest {
 	return r._alscUserQueryOpenRequest
+}
+
+var poolAlibabaAlscUserCenterInfoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscUserCenterInfoQueryRequest()
+	},
+}
+
+// GetAlibabaAlscUserCenterInfoQueryRequest 从 sync.Pool 获取 AlibabaAlscUserCenterInfoQueryAPIRequest
+func GetAlibabaAlscUserCenterInfoQueryAPIRequest() *AlibabaAlscUserCenterInfoQueryAPIRequest {
+	return poolAlibabaAlscUserCenterInfoQueryAPIRequest.Get().(*AlibabaAlscUserCenterInfoQueryAPIRequest)
+}
+
+// ReleaseAlibabaAlscUserCenterInfoQueryAPIRequest 将 AlibabaAlscUserCenterInfoQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscUserCenterInfoQueryAPIRequest(v *AlibabaAlscUserCenterInfoQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscUserCenterInfoQueryAPIRequest.Put(v)
 }

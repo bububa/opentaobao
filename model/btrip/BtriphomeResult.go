@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtriphomeResult 结构体
 type BtriphomeResult struct {
 	// 返回值对象
@@ -18,4 +22,28 @@ type BtriphomeResult struct {
 	Invoice *OpenInvoiceDo `json:"invoice,omitempty" xml:"invoice,omitempty"`
 	// 成功标识
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolBtriphomeResult = sync.Pool{
+	New: func() any {
+		return new(BtriphomeResult)
+	},
+}
+
+// GetBtriphomeResult() 从对象池中获取BtriphomeResult
+func GetBtriphomeResult() *BtriphomeResult {
+	return poolBtriphomeResult.Get().(*BtriphomeResult)
+}
+
+// ReleaseBtriphomeResult 释放BtriphomeResult
+func ReleaseBtriphomeResult(v *BtriphomeResult) {
+	v.CostCenterList = v.CostCenterList[:0]
+	v.InvoiceList = v.InvoiceList[:0]
+	v.VehicleOrderList = v.VehicleOrderList[:0]
+	v.ResultMsg = ""
+	v.ResultCode = 0
+	v.Module = nil
+	v.Invoice = nil
+	v.Success = false
+	poolBtriphomeResult.Put(v)
 }

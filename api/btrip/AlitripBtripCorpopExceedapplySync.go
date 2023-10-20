@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.corpop.exceedapply.sync
 //
 // 第三方审批单推送到企业后，企业审批结束，将审批结果回传给阿里商旅
-func AlitripBtripCorpopExceedapplySync(clt *core.SDKClient, req *btrip.AlitripBtripCorpopExceedapplySyncAPIRequest, session string) (*btrip.AlitripBtripCorpopExceedapplySyncAPIResponse, error) {
-	var resp btrip.AlitripBtripCorpopExceedapplySyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripCorpopExceedapplySync(clt *core.SDKClient, req *btrip.AlitripBtripCorpopExceedapplySyncAPIRequest, resp *btrip.AlitripBtripCorpopExceedapplySyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

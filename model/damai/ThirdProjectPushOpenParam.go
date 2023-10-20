@@ -1,5 +1,9 @@
 package damai
 
+import (
+	"sync"
+)
+
 // ThirdProjectPushOpenParam 结构体
 type ThirdProjectPushOpenParam struct {
 	// 图片url
@@ -18,4 +22,28 @@ type ThirdProjectPushOpenParam struct {
 	SystemId int64 `json:"system_id,omitempty" xml:"system_id,omitempty"`
 	// 场馆id
 	VenueId int64 `json:"venue_id,omitempty" xml:"venue_id,omitempty"`
+}
+
+var poolThirdProjectPushOpenParam = sync.Pool{
+	New: func() any {
+		return new(ThirdProjectPushOpenParam)
+	},
+}
+
+// GetThirdProjectPushOpenParam() 从对象池中获取ThirdProjectPushOpenParam
+func GetThirdProjectPushOpenParam() *ThirdProjectPushOpenParam {
+	return poolThirdProjectPushOpenParam.Get().(*ThirdProjectPushOpenParam)
+}
+
+// ReleaseThirdProjectPushOpenParam 释放ThirdProjectPushOpenParam
+func ReleaseThirdProjectPushOpenParam(v *ThirdProjectPushOpenParam) {
+	v.PicUrl = ""
+	v.ProjectName = ""
+	v.PushTime = ""
+	v.SupplierSecret = ""
+	v.CityId = 0
+	v.ProjectId = 0
+	v.SystemId = 0
+	v.VenueId = 0
+	poolThirdProjectPushOpenParam.Put(v)
 }

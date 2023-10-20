@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.content.tableaudit.querychilddesktop
 //
 // 迎客松查看小酷宝桌面坑位元数据列表
-func YunosTvpubadminContentTableauditQuerychilddesktop(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentTableauditQuerychilddesktopAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentTableauditQuerychilddesktopAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminContentTableauditQuerychilddesktopAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminContentTableauditQuerychilddesktop(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentTableauditQuerychilddesktopAPIRequest, resp *tvupadmin.YunosTvpubadminContentTableauditQuerychilddesktopAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

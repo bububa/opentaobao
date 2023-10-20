@@ -1,5 +1,9 @@
 package tmallsc
 
+import (
+	"sync"
+)
+
 // ResultBase 结构体
 type ResultBase struct {
 	// gmtModified
@@ -14,4 +18,26 @@ type ResultBase struct {
 	ErrorCode int64 `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolResultBase = sync.Pool{
+	New: func() any {
+		return new(ResultBase)
+	},
+}
+
+// GetResultBase() 从对象池中获取ResultBase
+func GetResultBase() *ResultBase {
+	return poolResultBase.Get().(*ResultBase)
+}
+
+// ReleaseResultBase 释放ResultBase
+func ReleaseResultBase(v *ResultBase) {
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.Value = ""
+	v.ErrorMsg = ""
+	v.ErrorCode = 0
+	v.Success = false
+	poolResultBase.Put(v)
 }

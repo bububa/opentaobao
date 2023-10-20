@@ -1,5 +1,9 @@
 package fundplatform
 
+import (
+	"sync"
+)
+
 // PytLedgerSyncRequest 结构体
 type PytLedgerSyncRequest struct {
 	// 发票行信息
@@ -120,4 +124,79 @@ type PytLedgerSyncRequest struct {
 	TaxRate string `json:"tax_rate,omitempty" xml:"tax_rate,omitempty"`
 	// 发送时间错
 	SendTime int64 `json:"send_time,omitempty" xml:"send_time,omitempty"`
+}
+
+var poolPytLedgerSyncRequest = sync.Pool{
+	New: func() any {
+		return new(PytLedgerSyncRequest)
+	},
+}
+
+// GetPytLedgerSyncRequest() 从对象池中获取PytLedgerSyncRequest
+func GetPytLedgerSyncRequest() *PytLedgerSyncRequest {
+	return poolPytLedgerSyncRequest.Get().(*PytLedgerSyncRequest)
+}
+
+// ReleasePytLedgerSyncRequest 释放PytLedgerSyncRequest
+func ReleasePytLedgerSyncRequest(v *PytLedgerSyncRequest) {
+	v.Details = v.Details[:0]
+	v.AccountType = ""
+	v.AmountWithTax = ""
+	v.AmountWithoutTax = ""
+	v.AuthRemark = ""
+	v.AuthStatus = ""
+	v.AuthStyle = ""
+	v.AuthTaxPeriod = ""
+	v.AuthUse = ""
+	v.BizOrderNo = ""
+	v.BuyerAddressTel = ""
+	v.BuyerBankAccount = ""
+	v.BuyerBankInfo = ""
+	v.BuyerBankName = ""
+	v.BuyerName = ""
+	v.BuyerTaxNo = ""
+	v.CheckCode = ""
+	v.CipherText = ""
+	v.CipherTextQRCode = ""
+	v.DateIssued = ""
+	v.EffectiveTaxAmount = ""
+	v.ElConfirmDate = ""
+	v.ElSyncTime = ""
+	v.ExtendedAttrs = ""
+	v.InvoiceCode = ""
+	v.InvoiceColor = ""
+	v.InvoiceType = ""
+	v.InvoiceNo = ""
+	v.InvoiceSource = ""
+	v.InvoiceStyleType = ""
+	v.Issuer = ""
+	v.MachineCode = ""
+	v.NoAuthReason = ""
+	v.OriginalInvoiceCode = ""
+	v.OriginalInvoiceNo = ""
+	v.Payee = ""
+	v.PdfUrl = ""
+	v.Remark = ""
+	v.ReverseAmountWithTax = ""
+	v.ReverseAmountWithoutTax = ""
+	v.ReverseFlag = ""
+	v.ReverseTaxAmount = ""
+	v.Reviewer = ""
+	v.SaleListFileFlag = ""
+	v.SellerAddress = ""
+	v.SellerAddressTel = ""
+	v.SellerBankAccount = ""
+	v.SellerBankInfo = ""
+	v.SellerBankName = ""
+	v.SellerName = ""
+	v.SellerTaxNo = ""
+	v.SellerTel = ""
+	v.Source = ""
+	v.SpecialType = ""
+	v.Status = ""
+	v.TaxAmount = ""
+	v.TaxInvoiceSource = ""
+	v.TaxRate = ""
+	v.SendTime = 0
+	poolPytLedgerSyncRequest.Put(v)
 }

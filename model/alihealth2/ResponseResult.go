@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // ResponseResult 结构体
 type ResponseResult struct {
 	// 错误码
@@ -12,4 +16,25 @@ type ResponseResult struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 是否成功
 	Issuccess bool `json:"issuccess,omitempty" xml:"issuccess,omitempty"`
+}
+
+var poolResponseResult = sync.Pool{
+	New: func() any {
+		return new(ResponseResult)
+	},
+}
+
+// GetResponseResult() 从对象池中获取ResponseResult
+func GetResponseResult() *ResponseResult {
+	return poolResponseResult.Get().(*ResponseResult)
+}
+
+// ReleaseResponseResult 释放ResponseResult
+func ReleaseResponseResult(v *ResponseResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Result = nil
+	v.Success = false
+	v.Issuccess = false
+	poolResponseResult.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drugtrace.top.lsyd.getkeyflagdruginfo.downloadurl
 //
 // 获取重点追溯品种明细下载URL
-func AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurl(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurl(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest, resp *drugtrace.AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

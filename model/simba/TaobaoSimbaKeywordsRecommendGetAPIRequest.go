@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoSimbaKeywordsRecommendGetAPIRequest struct {
 // NewTaobaoSimbaKeywordsRecommendGetRequest 初始化TaobaoSimbaKeywordsRecommendGetAPIRequest对象
 func NewTaobaoSimbaKeywordsRecommendGetRequest() *TaobaoSimbaKeywordsRecommendGetAPIRequest {
 	return &TaobaoSimbaKeywordsRecommendGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) Reset() {
+	r._nick = ""
+	r._pertinence = ""
+	r._orderBy = ""
+	r._adgroupId = 0
+	r._search = 0
+	r._pageSize = 0
+	r._pageNo = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetPageNo(_pageNo int64) err
 // GetPageNo PageNo Getter
 func (r TaobaoSimbaKeywordsRecommendGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
+}
+
+var poolTaobaoSimbaKeywordsRecommendGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaKeywordsRecommendGetRequest()
+	},
+}
+
+// GetTaobaoSimbaKeywordsRecommendGetRequest 从 sync.Pool 获取 TaobaoSimbaKeywordsRecommendGetAPIRequest
+func GetTaobaoSimbaKeywordsRecommendGetAPIRequest() *TaobaoSimbaKeywordsRecommendGetAPIRequest {
+	return poolTaobaoSimbaKeywordsRecommendGetAPIRequest.Get().(*TaobaoSimbaKeywordsRecommendGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaKeywordsRecommendGetAPIRequest 将 TaobaoSimbaKeywordsRecommendGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaKeywordsRecommendGetAPIRequest(v *TaobaoSimbaKeywordsRecommendGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaKeywordsRecommendGetAPIRequest.Put(v)
 }

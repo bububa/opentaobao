@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // ServiceProviderDto 结构体
 type ServiceProviderDto struct {
 	// 网点编码
@@ -32,4 +36,35 @@ type ServiceProviderDto struct {
 	ProviderId int64 `json:"provider_id,omitempty" xml:"provider_id,omitempty"`
 	// 服务商id值
 	SupplierId int64 `json:"supplier_id,omitempty" xml:"supplier_id,omitempty"`
+}
+
+var poolServiceProviderDto = sync.Pool{
+	New: func() any {
+		return new(ServiceProviderDto)
+	},
+}
+
+// GetServiceProviderDto() 从对象池中获取ServiceProviderDto
+func GetServiceProviderDto() *ServiceProviderDto {
+	return poolServiceProviderDto.Get().(*ServiceProviderDto)
+}
+
+// ReleaseServiceProviderDto 释放ServiceProviderDto
+func ReleaseServiceProviderDto(v *ServiceProviderDto) {
+	v.ServiceStoreCode = ""
+	v.ServiceStoreName = ""
+	v.WorkerMobile = ""
+	v.WorkerName = ""
+	v.TpNick = ""
+	v.SellerStoreName = ""
+	v.SellerStoreCode = ""
+	v.ProviderCode = ""
+	v.FulfilType = ""
+	v.ProviderType = ""
+	v.ServiceStoreId = 0
+	v.TpId = 0
+	v.SellerStoreId = 0
+	v.ProviderId = 0
+	v.SupplierId = 0
+	poolServiceProviderDto.Put(v)
 }

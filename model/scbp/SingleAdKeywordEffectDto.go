@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // SingleAdKeywordEffectDto 结构体
 type SingleAdKeywordEffectDto struct {
 	// 关键词
@@ -18,4 +22,28 @@ type SingleAdKeywordEffectDto struct {
 	Cost string `json:"cost,omitempty" xml:"cost,omitempty"`
 	// 百分比，保留两位小数，例如3.75表示3.75%
 	Ctr string `json:"ctr,omitempty" xml:"ctr,omitempty"`
+}
+
+var poolSingleAdKeywordEffectDto = sync.Pool{
+	New: func() any {
+		return new(SingleAdKeywordEffectDto)
+	},
+}
+
+// GetSingleAdKeywordEffectDto() 从对象池中获取SingleAdKeywordEffectDto
+func GetSingleAdKeywordEffectDto() *SingleAdKeywordEffectDto {
+	return poolSingleAdKeywordEffectDto.Get().(*SingleAdKeywordEffectDto)
+}
+
+// ReleaseSingleAdKeywordEffectDto 释放SingleAdKeywordEffectDto
+func ReleaseSingleAdKeywordEffectDto(v *SingleAdKeywordEffectDto) {
+	v.Keyword = ""
+	v.ImpressionCnt = ""
+	v.StatDate = ""
+	v.ClickCostAvg = ""
+	v.OnlineTime = ""
+	v.ClickCnt = ""
+	v.Cost = ""
+	v.Ctr = ""
+	poolSingleAdKeywordEffectDto.Put(v)
 }

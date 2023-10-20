@@ -2,6 +2,7 @@ package legalsuit
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaLegalStandpointStandpointQueryallAPIRequest struct {
 // NewAlibabaLegalStandpointStandpointQueryallRequest 初始化AlibabaLegalStandpointStandpointQueryallAPIRequest对象
 func NewAlibabaLegalStandpointStandpointQueryallRequest() *AlibabaLegalStandpointStandpointQueryallAPIRequest {
 	return &AlibabaLegalStandpointStandpointQueryallAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegalStandpointStandpointQueryallAPIRequest) Reset() {
+	r._inputSystemCode = ""
+	r._queryParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaLegalStandpointStandpointQueryallAPIRequest) SetQueryParam(_quer
 // GetQueryParam QueryParam Getter
 func (r AlibabaLegalStandpointStandpointQueryallAPIRequest) GetQueryParam() *QueryParam {
 	return r._queryParam
+}
+
+var poolAlibabaLegalStandpointStandpointQueryallAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegalStandpointStandpointQueryallRequest()
+	},
+}
+
+// GetAlibabaLegalStandpointStandpointQueryallRequest 从 sync.Pool 获取 AlibabaLegalStandpointStandpointQueryallAPIRequest
+func GetAlibabaLegalStandpointStandpointQueryallAPIRequest() *AlibabaLegalStandpointStandpointQueryallAPIRequest {
+	return poolAlibabaLegalStandpointStandpointQueryallAPIRequest.Get().(*AlibabaLegalStandpointStandpointQueryallAPIRequest)
+}
+
+// ReleaseAlibabaLegalStandpointStandpointQueryallAPIRequest 将 AlibabaLegalStandpointStandpointQueryallAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegalStandpointStandpointQueryallAPIRequest(v *AlibabaLegalStandpointStandpointQueryallAPIRequest) {
+	v.Reset()
+	poolAlibabaLegalStandpointStandpointQueryallAPIRequest.Put(v)
 }

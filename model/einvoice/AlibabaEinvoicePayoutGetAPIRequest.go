@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaEinvoicePayoutGetAPIRequest struct {
 // NewAlibabaEinvoicePayoutGetRequest 初始化AlibabaEinvoicePayoutGetAPIRequest对象
 func NewAlibabaEinvoicePayoutGetRequest() *AlibabaEinvoicePayoutGetAPIRequest {
 	return &AlibabaEinvoicePayoutGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoicePayoutGetAPIRequest) Reset() {
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaEinvoicePayoutGetAPIRequest) SetPageSize(_pageSize int64) error 
 // GetPageSize PageSize Getter
 func (r AlibabaEinvoicePayoutGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaEinvoicePayoutGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoicePayoutGetRequest()
+	},
+}
+
+// GetAlibabaEinvoicePayoutGetRequest 从 sync.Pool 获取 AlibabaEinvoicePayoutGetAPIRequest
+func GetAlibabaEinvoicePayoutGetAPIRequest() *AlibabaEinvoicePayoutGetAPIRequest {
+	return poolAlibabaEinvoicePayoutGetAPIRequest.Get().(*AlibabaEinvoicePayoutGetAPIRequest)
+}
+
+// ReleaseAlibabaEinvoicePayoutGetAPIRequest 将 AlibabaEinvoicePayoutGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoicePayoutGetAPIRequest(v *AlibabaEinvoicePayoutGetAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoicePayoutGetAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.diccontroltask.getinfo
 //
 // 获取停开服任务详情
-func YunosTvpubadminDiccontroltaskGetinfo(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDiccontroltaskGetinfoAPIRequest, session string) (*tvupadmin.YunosTvpubadminDiccontroltaskGetinfoAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminDiccontroltaskGetinfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminDiccontroltaskGetinfo(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDiccontroltaskGetinfoAPIRequest, resp *tvupadmin.YunosTvpubadminDiccontroltaskGetinfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AlibabaEinvoiceIncomeTokenReturnAPIRequest struct {
 // NewAlibabaEinvoiceIncomeTokenReturnRequest 初始化AlibabaEinvoiceIncomeTokenReturnAPIRequest对象
 func NewAlibabaEinvoiceIncomeTokenReturnRequest() *AlibabaEinvoiceIncomeTokenReturnAPIRequest {
 	return &AlibabaEinvoiceIncomeTokenReturnAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) Reset() {
+	r._area = ""
+	r._errorCode = ""
+	r._errorMessage = ""
+	r._expireTime = ""
+	r._payeeName = ""
+	r._payeeRegisterNo = ""
+	r._token = ""
+	r._success = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetSuccess(_success bool) e
 // GetSuccess Success Getter
 func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetSuccess() bool {
 	return r._success
+}
+
+var poolAlibabaEinvoiceIncomeTokenReturnAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceIncomeTokenReturnRequest()
+	},
+}
+
+// GetAlibabaEinvoiceIncomeTokenReturnRequest 从 sync.Pool 获取 AlibabaEinvoiceIncomeTokenReturnAPIRequest
+func GetAlibabaEinvoiceIncomeTokenReturnAPIRequest() *AlibabaEinvoiceIncomeTokenReturnAPIRequest {
+	return poolAlibabaEinvoiceIncomeTokenReturnAPIRequest.Get().(*AlibabaEinvoiceIncomeTokenReturnAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceIncomeTokenReturnAPIRequest 将 AlibabaEinvoiceIncomeTokenReturnAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceIncomeTokenReturnAPIRequest(v *AlibabaEinvoiceIncomeTokenReturnAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceIncomeTokenReturnAPIRequest.Put(v)
 }

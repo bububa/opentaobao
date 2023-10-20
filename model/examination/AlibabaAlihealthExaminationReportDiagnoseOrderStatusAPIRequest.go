@@ -2,6 +2,7 @@ package examination
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest struct {
 // NewAlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest 初始化AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest对象
 func NewAlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest() *AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest {
 	return &AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest) Reset() {
+	r._reportOrderStatusRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest) SetRepo
 // GetReportOrderStatusRequest ReportOrderStatusRequest Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest) GetReportOrderStatusRequest() *ReportOrderStatusRequest {
 	return r._reportOrderStatusRequest
+}
+
+var poolAlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest()
+	},
+}
+
+// GetAlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest 从 sync.Pool 获取 AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest
+func GetAlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest() *AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest {
+	return poolAlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest.Get().(*AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest 将 AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest(v *AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // OrderInfo 结构体
 type OrderInfo struct {
 	// 商品信息
@@ -104,4 +108,71 @@ type OrderInfo struct {
 	TaxTotalFee int64 `json:"tax_total_fee,omitempty" xml:"tax_total_fee,omitempty"`
 	// 订单总金额，单位分
 	TotalFee int64 `json:"total_fee,omitempty" xml:"total_fee,omitempty"`
+}
+
+var poolOrderInfo = sync.Pool{
+	New: func() any {
+		return new(OrderInfo)
+	},
+}
+
+// GetOrderInfo() 从对象池中获取OrderInfo
+func GetOrderInfo() *OrderInfo {
+	return poolOrderInfo.Get().(*OrderInfo)
+}
+
+// ReleaseOrderInfo 释放OrderInfo
+func ReleaseOrderInfo(v *OrderInfo) {
+	v.ItemList = v.ItemList[:0]
+	v.ActiveTime = ""
+	v.BizChannel = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Memo = ""
+	v.OrderSource = ""
+	v.OrderStatus = ""
+	v.OuterOrderId = ""
+	v.ShopAddress = ""
+	v.ShopId = ""
+	v.ShopName = ""
+	v.PerformanceWay = ""
+	v.BusinessDate = ""
+	v.BusinessType = ""
+	v.BusinessTypeDesc = ""
+	v.DeviceId = ""
+	v.DeviceIp = ""
+	v.DinnerNumber = ""
+	v.DinnerType = ""
+	v.OrderChannel = ""
+	v.OutCashierId = ""
+	v.OutCashierName = ""
+	v.OutDeliveryId = ""
+	v.OutDeliveryName = ""
+	v.OutOrderNo = ""
+	v.OutSalesmanId = ""
+	v.OutSalesmanName = ""
+	v.OutSellerId = ""
+	v.OutStoreId = ""
+	v.OutVipUserId = ""
+	v.OutWaiterId = ""
+	v.OutWaiterName = ""
+	v.RelatedOutOrderNo = ""
+	v.Remark = ""
+	v.Status = ""
+	v.TableNumber = ""
+	v.VipUserId = ""
+	v.ExtInfo = ""
+	v.OutOrgId = ""
+	v.OutBuyer = nil
+	v.OutSeller = nil
+	v.ActualFee = 0
+	v.AttachTotalFee = 0
+	v.DinnerPersons = 0
+	v.OrderTime = 0
+	v.PromoFee = 0
+	v.ScrapFee = 0
+	v.ServiceTotalFee = 0
+	v.TaxTotalFee = 0
+	v.TotalFee = 0
+	poolOrderInfo.Put(v)
 }

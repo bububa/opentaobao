@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // EbbasProjectDto 结构体
 type EbbasProjectDto struct {
 	// 楼盘别名
@@ -220,4 +224,129 @@ type EbbasProjectDto struct {
 	TempModuleId int64 `json:"temp_module_id,omitempty" xml:"temp_module_id,omitempty"`
 	// 是否为测试楼盘 true-是测试楼盘
 	IsTest bool `json:"is_test,omitempty" xml:"is_test,omitempty"`
+}
+
+var poolEbbasProjectDto = sync.Pool{
+	New: func() any {
+		return new(EbbasProjectDto)
+	},
+}
+
+// GetEbbasProjectDto() 从对象池中获取EbbasProjectDto
+func GetEbbasProjectDto() *EbbasProjectDto {
+	return poolEbbasProjectDto.Get().(*EbbasProjectDto)
+}
+
+// ReleaseEbbasProjectDto 释放EbbasProjectDto
+func ReleaseEbbasProjectDto(v *EbbasProjectDto) {
+	v.AliasNames = v.AliasNames[:0]
+	v.TagCodes = v.TagCodes[:0]
+	v.EstateTypes = v.EstateTypes[:0]
+	v.PropertyRightsYearsCodes = v.PropertyRightsYearsCodes[:0]
+	v.DecorationStandardCodes = v.DecorationStandardCodes[:0]
+	v.BuildingCategorys = v.BuildingCategorys[:0]
+	v.BuildingTypes = v.BuildingTypes[:0]
+	v.HouseTypes = v.HouseTypes[:0]
+	v.PeripheralBusiness = v.PeripheralBusiness[:0]
+	v.SurroundingLandscape = v.SurroundingLandscape[:0]
+	v.SurroundingParks = v.SurroundingParks[:0]
+	v.SurroundingHospitals = v.SurroundingHospitals[:0]
+	v.SurroundingSchools = v.SurroundingSchools[:0]
+	v.SurroundingTraffic = v.SurroundingTraffic[:0]
+	v.SurroundingRestaurant = v.SurroundingRestaurant[:0]
+	v.SurroundingBanks = v.SurroundingBanks[:0]
+	v.Investors = v.Investors[:0]
+	v.Layouts = v.Layouts[:0]
+	v.Pictures = v.Pictures[:0]
+	v.ECode = ""
+	v.OuterId = ""
+	v.ProjectName = ""
+	v.RecordName = ""
+	v.Highlights = ""
+	v.TotalPrice = ""
+	v.TotalPriceUnit = ""
+	v.AvgPrice = ""
+	v.AvgPriceUnit = ""
+	v.ShowPrice = ""
+	v.BuildingArea = ""
+	v.ProjectDetailAddress = ""
+	v.MapLocationDetailAddress = ""
+	v.MapLocationLongitude = ""
+	v.MapLocationLatitude = ""
+	v.DeveloperFullName = ""
+	v.BrandName = ""
+	v.DeveloperSalesOfficeAddress = ""
+	v.DeveloperOpeningTime = ""
+	v.DeveloperDueTime = ""
+	v.PhoneNo = ""
+	v.Telephone = ""
+	v.MainPhone = ""
+	v.SubPhone = ""
+	v.CommunityArea = ""
+	v.CommunityVolumeRate = ""
+	v.CommunityGreeningRate = ""
+	v.ParkingRadio = ""
+	v.CommunityEstateCompany = ""
+	v.CommunityEstateExpenses = ""
+	v.CommunityHeatingTypeDesc = ""
+	v.CommunityWaterTypeDesc = ""
+	v.CommunityPowerTypeDesc = ""
+	v.OverallIntroduction = ""
+	v.SubmitReason = ""
+	v.CountryName = ""
+	v.Prov = ""
+	v.City = ""
+	v.Area = ""
+	v.StreetName = ""
+	v.LoopLine = ""
+	v.TrafficDescription = ""
+	v.FloorDescription = ""
+	v.ProjectFeatureDescription = ""
+	v.ProjectScheduleDescription = ""
+	v.SalesProgressDescription = ""
+	v.StartTime = ""
+	v.CompletionTime = ""
+	v.HouseAcquisitionRate = ""
+	v.PaymentMethod = ""
+	v.DownPaymentRatio = ""
+	v.ParkingFee = ""
+	v.GarageConfigurationDescription = ""
+	v.GasSupplyDescription = ""
+	v.MainHouseTypeDescription = ""
+	v.DiversionPeopleVehicles = ""
+	v.PhoneAreaCode = ""
+	v.RealEstateCertificate = ""
+	v.Stages = ""
+	v.Fencing = ""
+	v.ArchitectureAge = ""
+	v.Pinyin = ""
+	v.FullPinyin = ""
+	v.PreSalePermit = ""
+	v.InternalMatching = ""
+	v.OtherFacilities = ""
+	v.BuisnessId = ""
+	v.ModuleId = ""
+	v.DirectSale = ""
+	v.ParkingNumberDesc = ""
+	v.FunctionId = ""
+	v.OuterStoreId = ""
+	v.Source = 0
+	v.Type = 0
+	v.CommunityPlanningBuilding = 0
+	v.CommunityPlanningHouseholds = 0
+	v.CountryId = 0
+	v.ProvId = 0
+	v.CityId = 0
+	v.AreaId = 0
+	v.StreetId = 0
+	v.ParkingNumber = 0
+	v.OvergroundParkingNumber = 0
+	v.UndergroundParkingNumber = 0
+	v.ProjectSalesStatus = 0
+	v.TempCityId = 0
+	v.TempAreaId = 0
+	v.TempFunctionId = 0
+	v.TempModuleId = 0
+	v.IsTest = false
+	poolEbbasProjectDto.Put(v)
 }

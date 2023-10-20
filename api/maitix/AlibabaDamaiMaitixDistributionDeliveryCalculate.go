@@ -9,11 +9,6 @@ import (
 // alibaba.damai.maitix.distribution.delivery.calculate
 //
 // 计算渠道用户下单快递费
-func AlibabaDamaiMaitixDistributionDeliveryCalculate(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest, session string) (*maitix.AlibabaDamaiMaitixDistributionDeliveryCalculateAPIResponse, error) {
-	var resp maitix.AlibabaDamaiMaitixDistributionDeliveryCalculateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMaitixDistributionDeliveryCalculate(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest, resp *maitix.AlibabaDamaiMaitixDistributionDeliveryCalculateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

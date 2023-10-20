@@ -2,6 +2,7 @@ package examination
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthExaminationReserveCancelAPIResponse struct {
 	AlibabaAlihealthExaminationReserveCancelAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthExaminationReserveCancelAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthExaminationReserveCancelAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthExaminationReserveCancelAPIResponseModel is 体检机构对接_预约取消 成功返回结果
 type AlibabaAlihealthExaminationReserveCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_examination_reserve_cancel_response"`
@@ -26,4 +33,29 @@ type AlibabaAlihealthExaminationReserveCancelAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 返回状态码不是600或者700时，不需要返回此字段
 	RevisionInfo *RevisionInfo `json:"revision_info,omitempty" xml:"revision_info,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthExaminationReserveCancelAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResponseCode = ""
+	m.Message = ""
+	m.RevisionInfo = nil
+}
+
+var poolAlibabaAlihealthExaminationReserveCancelAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthExaminationReserveCancelAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthExaminationReserveCancelAPIResponse 从 sync.Pool 获取 AlibabaAlihealthExaminationReserveCancelAPIResponse
+func GetAlibabaAlihealthExaminationReserveCancelAPIResponse() *AlibabaAlihealthExaminationReserveCancelAPIResponse {
+	return poolAlibabaAlihealthExaminationReserveCancelAPIResponse.Get().(*AlibabaAlihealthExaminationReserveCancelAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthExaminationReserveCancelAPIResponse 将 AlibabaAlihealthExaminationReserveCancelAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthExaminationReserveCancelAPIResponse(v *AlibabaAlihealthExaminationReserveCancelAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationReserveCancelAPIResponse.Put(v)
 }

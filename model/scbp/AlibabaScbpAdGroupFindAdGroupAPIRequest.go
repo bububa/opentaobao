@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpAdGroupFindAdGroupAPIRequest struct {
 // NewAlibabaScbpAdGroupFindAdGroupRequest 初始化AlibabaScbpAdGroupFindAdGroupAPIRequest对象
 func NewAlibabaScbpAdGroupFindAdGroupRequest() *AlibabaScbpAdGroupFindAdGroupAPIRequest {
 	return &AlibabaScbpAdGroupFindAdGroupAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdGroupFindAdGroupAPIRequest) Reset() {
+	r._topContext = nil
+	r._campaignId = 0
+	r._adGroupQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpAdGroupFindAdGroupAPIRequest) SetAdGroupQuery(_adGroupQuery 
 // GetAdGroupQuery AdGroupQuery Getter
 func (r AlibabaScbpAdGroupFindAdGroupAPIRequest) GetAdGroupQuery() *AdGroupQueryDto {
 	return r._adGroupQuery
+}
+
+var poolAlibabaScbpAdGroupFindAdGroupAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdGroupFindAdGroupRequest()
+	},
+}
+
+// GetAlibabaScbpAdGroupFindAdGroupRequest 从 sync.Pool 获取 AlibabaScbpAdGroupFindAdGroupAPIRequest
+func GetAlibabaScbpAdGroupFindAdGroupAPIRequest() *AlibabaScbpAdGroupFindAdGroupAPIRequest {
+	return poolAlibabaScbpAdGroupFindAdGroupAPIRequest.Get().(*AlibabaScbpAdGroupFindAdGroupAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdGroupFindAdGroupAPIRequest 将 AlibabaScbpAdGroupFindAdGroupAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdGroupFindAdGroupAPIRequest(v *AlibabaScbpAdGroupFindAdGroupAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdGroupFindAdGroupAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package perfect
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest struct {
 // NewAlibabaTcwmsOutboundLoadContainerReceiveRequest 初始化AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest对象
 func NewAlibabaTcwmsOutboundLoadContainerReceiveRequest() *AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest {
 	return &AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest) Reset() {
+	r._loadReceiveRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest) SetLoadReceiveReque
 // GetLoadReceiveRequest LoadReceiveRequest Getter
 func (r AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest) GetLoadReceiveRequest() *LoadReceiveRequest {
 	return r._loadReceiveRequest
+}
+
+var poolAlibabaTcwmsOutboundLoadContainerReceiveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTcwmsOutboundLoadContainerReceiveRequest()
+	},
+}
+
+// GetAlibabaTcwmsOutboundLoadContainerReceiveRequest 从 sync.Pool 获取 AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest
+func GetAlibabaTcwmsOutboundLoadContainerReceiveAPIRequest() *AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest {
+	return poolAlibabaTcwmsOutboundLoadContainerReceiveAPIRequest.Get().(*AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest)
+}
+
+// ReleaseAlibabaTcwmsOutboundLoadContainerReceiveAPIRequest 将 AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTcwmsOutboundLoadContainerReceiveAPIRequest(v *AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest) {
+	v.Reset()
+	poolAlibabaTcwmsOutboundLoadContainerReceiveAPIRequest.Put(v)
 }

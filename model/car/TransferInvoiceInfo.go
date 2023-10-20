@@ -1,5 +1,9 @@
 package car
 
+import (
+	"sync"
+)
+
 // TransferInvoiceInfo 结构体
 type TransferInvoiceInfo struct {
 	// 发票寄送邮箱（用于电子发票）
@@ -14,4 +18,26 @@ type TransferInvoiceInfo struct {
 	InvoiceType int64 `json:"invoice_type,omitempty" xml:"invoice_type,omitempty"`
 	// -1:未开具1:开具中;2:开具完成;3:已发送
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolTransferInvoiceInfo = sync.Pool{
+	New: func() any {
+		return new(TransferInvoiceInfo)
+	},
+}
+
+// GetTransferInvoiceInfo() 从对象池中获取TransferInvoiceInfo
+func GetTransferInvoiceInfo() *TransferInvoiceInfo {
+	return poolTransferInvoiceInfo.Get().(*TransferInvoiceInfo)
+}
+
+// ReleaseTransferInvoiceInfo 释放TransferInvoiceInfo
+func ReleaseTransferInvoiceInfo(v *TransferInvoiceInfo) {
+	v.EInvoiceSendEmail = ""
+	v.TaxNo = ""
+	v.InvoiceTitle = ""
+	v.Amount = ""
+	v.InvoiceType = 0
+	v.Status = 0
+	poolTransferInvoiceInfo.Put(v)
 }

@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest struct {
 // NewAlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest 初始化AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest对象
 func NewAlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest() *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest {
 	return &AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) Reset() {
+	r._refEntId = ""
+	r._entName = ""
+	r._refPartnerId = ""
+	r._beginDate = ""
+	r._endDate = ""
+	r._pageSize = 0
+	r._page = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetPage(_page
 // GetPage Page Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) GetPage() int64 {
 	return r._page
+}
+
+var poolAlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest 从 sync.Pool 获取 AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest
+func GetAlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest() *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest {
+	return poolAlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest.Get().(*AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest 将 AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest(v *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest.Put(v)
 }

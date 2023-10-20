@@ -2,6 +2,7 @@ package miniappcloud
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoMiniappCloudStoreListfileAPIRequest struct {
 // NewTaobaoMiniappCloudStoreListfileRequest 初始化TaobaoMiniappCloudStoreListfileAPIRequest对象
 func NewTaobaoMiniappCloudStoreListfileRequest() *TaobaoMiniappCloudStoreListfileAPIRequest {
 	return &TaobaoMiniappCloudStoreListfileAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappCloudStoreListfileAPIRequest) Reset() {
+	r._env = ""
+	r._filePath = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoMiniappCloudStoreListfileAPIRequest) SetFilePath(_filePath string
 // GetFilePath FilePath Getter
 func (r TaobaoMiniappCloudStoreListfileAPIRequest) GetFilePath() string {
 	return r._filePath
+}
+
+var poolTaobaoMiniappCloudStoreListfileAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappCloudStoreListfileRequest()
+	},
+}
+
+// GetTaobaoMiniappCloudStoreListfileRequest 从 sync.Pool 获取 TaobaoMiniappCloudStoreListfileAPIRequest
+func GetTaobaoMiniappCloudStoreListfileAPIRequest() *TaobaoMiniappCloudStoreListfileAPIRequest {
+	return poolTaobaoMiniappCloudStoreListfileAPIRequest.Get().(*TaobaoMiniappCloudStoreListfileAPIRequest)
+}
+
+// ReleaseTaobaoMiniappCloudStoreListfileAPIRequest 将 TaobaoMiniappCloudStoreListfileAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappCloudStoreListfileAPIRequest(v *TaobaoMiniappCloudStoreListfileAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappCloudStoreListfileAPIRequest.Put(v)
 }

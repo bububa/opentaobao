@@ -9,11 +9,6 @@ import (
 // taobao.brand.startshop.rpt.creative.get
 //
 // 获取明星店铺广告creative分日报表数据，只能查询近90天内的数据，包括展现量，点击量等
-func TaobaoBrandStartshopRptCreativeGet(clt *core.SDKClient, req *brandhub.TaobaoBrandStartshopRptCreativeGetAPIRequest, session string) (*brandhub.TaobaoBrandStartshopRptCreativeGetAPIResponse, error) {
-	var resp brandhub.TaobaoBrandStartshopRptCreativeGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBrandStartshopRptCreativeGet(clt *core.SDKClient, req *brandhub.TaobaoBrandStartshopRptCreativeGetAPIRequest, resp *brandhub.TaobaoBrandStartshopRptCreativeGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

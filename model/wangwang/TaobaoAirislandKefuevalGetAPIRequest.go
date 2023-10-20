@@ -2,6 +2,7 @@ package wangwang
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,16 @@ type TaobaoAirislandKefuevalGetAPIRequest struct {
 // NewTaobaoAirislandKefuevalGetRequest 初始化TaobaoAirislandKefuevalGetAPIRequest对象
 func NewTaobaoAirislandKefuevalGetRequest() *TaobaoAirislandKefuevalGetAPIRequest {
 	return &TaobaoAirislandKefuevalGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAirislandKefuevalGetAPIRequest) Reset() {
+	r._queryIds = ""
+	r._btime = ""
+	r._etime = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -91,4 +100,21 @@ func (r *TaobaoAirislandKefuevalGetAPIRequest) SetEtime(_etime string) error {
 // GetEtime Etime Getter
 func (r TaobaoAirislandKefuevalGetAPIRequest) GetEtime() string {
 	return r._etime
+}
+
+var poolTaobaoAirislandKefuevalGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAirislandKefuevalGetRequest()
+	},
+}
+
+// GetTaobaoAirislandKefuevalGetRequest 从 sync.Pool 获取 TaobaoAirislandKefuevalGetAPIRequest
+func GetTaobaoAirislandKefuevalGetAPIRequest() *TaobaoAirislandKefuevalGetAPIRequest {
+	return poolTaobaoAirislandKefuevalGetAPIRequest.Get().(*TaobaoAirislandKefuevalGetAPIRequest)
+}
+
+// ReleaseTaobaoAirislandKefuevalGetAPIRequest 将 TaobaoAirislandKefuevalGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAirislandKefuevalGetAPIRequest(v *TaobaoAirislandKefuevalGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAirislandKefuevalGetAPIRequest.Put(v)
 }

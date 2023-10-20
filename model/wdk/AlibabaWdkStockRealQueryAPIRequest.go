@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkStockRealQueryAPIRequest struct {
 // NewAlibabaWdkStockRealQueryRequest 初始化AlibabaWdkStockRealQueryAPIRequest对象
 func NewAlibabaWdkStockRealQueryRequest() *AlibabaWdkStockRealQueryAPIRequest {
 	return &AlibabaWdkStockRealQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkStockRealQueryAPIRequest) Reset() {
+	r._query = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkStockRealQueryAPIRequest) SetQuery(_query *WmsInventoryTopQue
 // GetQuery Query Getter
 func (r AlibabaWdkStockRealQueryAPIRequest) GetQuery() *WmsInventoryTopQuery {
 	return r._query
+}
+
+var poolAlibabaWdkStockRealQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkStockRealQueryRequest()
+	},
+}
+
+// GetAlibabaWdkStockRealQueryRequest 从 sync.Pool 获取 AlibabaWdkStockRealQueryAPIRequest
+func GetAlibabaWdkStockRealQueryAPIRequest() *AlibabaWdkStockRealQueryAPIRequest {
+	return poolAlibabaWdkStockRealQueryAPIRequest.Get().(*AlibabaWdkStockRealQueryAPIRequest)
+}
+
+// ReleaseAlibabaWdkStockRealQueryAPIRequest 将 AlibabaWdkStockRealQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkStockRealQueryAPIRequest(v *AlibabaWdkStockRealQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkStockRealQueryAPIRequest.Put(v)
 }

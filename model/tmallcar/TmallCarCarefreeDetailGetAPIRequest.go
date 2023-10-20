@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallCarCarefreeDetailGetAPIRequest struct {
 // NewTmallCarCarefreeDetailGetRequest 初始化TmallCarCarefreeDetailGetAPIRequest对象
 func NewTmallCarCarefreeDetailGetRequest() *TmallCarCarefreeDetailGetAPIRequest {
 	return &TmallCarCarefreeDetailGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarCarefreeDetailGetAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallCarCarefreeDetailGetAPIRequest) SetParam0(_param0 *CarefreeDetailQ
 // GetParam0 Param0 Getter
 func (r TmallCarCarefreeDetailGetAPIRequest) GetParam0() *CarefreeDetailQueryReq {
 	return r._param0
+}
+
+var poolTmallCarCarefreeDetailGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarCarefreeDetailGetRequest()
+	},
+}
+
+// GetTmallCarCarefreeDetailGetRequest 从 sync.Pool 获取 TmallCarCarefreeDetailGetAPIRequest
+func GetTmallCarCarefreeDetailGetAPIRequest() *TmallCarCarefreeDetailGetAPIRequest {
+	return poolTmallCarCarefreeDetailGetAPIRequest.Get().(*TmallCarCarefreeDetailGetAPIRequest)
+}
+
+// ReleaseTmallCarCarefreeDetailGetAPIRequest 将 TmallCarCarefreeDetailGetAPIRequest 放入 sync.Pool
+func ReleaseTmallCarCarefreeDetailGetAPIRequest(v *TmallCarCarefreeDetailGetAPIRequest) {
+	v.Reset()
+	poolTmallCarCarefreeDetailGetAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.hm.marketing.fullrange.removeitem
 //
 // 删除换购商品
-func AlibabaHmMarketingFullrangeRemoveitem(clt *core.SDKClient, req *wdk.AlibabaHmMarketingFullrangeRemoveitemAPIRequest, session string) (*wdk.AlibabaHmMarketingFullrangeRemoveitemAPIResponse, error) {
-	var resp wdk.AlibabaHmMarketingFullrangeRemoveitemAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHmMarketingFullrangeRemoveitem(clt *core.SDKClient, req *wdk.AlibabaHmMarketingFullrangeRemoveitemAPIRequest, resp *wdk.AlibabaHmMarketingFullrangeRemoveitemAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

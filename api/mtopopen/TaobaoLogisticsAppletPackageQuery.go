@@ -9,11 +9,6 @@ import (
 // taobao.logistics.applet.package.query
 //
 // 淘宝包裹查询
-func TaobaoLogisticsAppletPackageQuery(clt *core.SDKClient, req *mtopopen.TaobaoLogisticsAppletPackageQueryAPIRequest, session string) (*mtopopen.TaobaoLogisticsAppletPackageQueryAPIResponse, error) {
-	var resp mtopopen.TaobaoLogisticsAppletPackageQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLogisticsAppletPackageQuery(clt *core.SDKClient, req *mtopopen.TaobaoLogisticsAppletPackageQueryAPIRequest, resp *mtopopen.TaobaoLogisticsAppletPackageQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

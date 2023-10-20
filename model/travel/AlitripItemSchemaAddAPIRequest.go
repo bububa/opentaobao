@@ -2,6 +2,7 @@ package travel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripItemSchemaAddAPIRequest struct {
 // NewAlitripItemSchemaAddRequest 初始化AlitripItemSchemaAddAPIRequest对象
 func NewAlitripItemSchemaAddRequest() *AlitripItemSchemaAddAPIRequest {
 	return &AlitripItemSchemaAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripItemSchemaAddAPIRequest) Reset() {
+	r._schemaXmlFields = ""
+	r._catId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripItemSchemaAddAPIRequest) SetCatId(_catId int64) error {
 // GetCatId CatId Getter
 func (r AlitripItemSchemaAddAPIRequest) GetCatId() int64 {
 	return r._catId
+}
+
+var poolAlitripItemSchemaAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripItemSchemaAddRequest()
+	},
+}
+
+// GetAlitripItemSchemaAddRequest 从 sync.Pool 获取 AlitripItemSchemaAddAPIRequest
+func GetAlitripItemSchemaAddAPIRequest() *AlitripItemSchemaAddAPIRequest {
+	return poolAlitripItemSchemaAddAPIRequest.Get().(*AlitripItemSchemaAddAPIRequest)
+}
+
+// ReleaseAlitripItemSchemaAddAPIRequest 将 AlitripItemSchemaAddAPIRequest 放入 sync.Pool
+func ReleaseAlitripItemSchemaAddAPIRequest(v *AlitripItemSchemaAddAPIRequest) {
+	v.Reset()
+	poolAlitripItemSchemaAddAPIRequest.Put(v)
 }

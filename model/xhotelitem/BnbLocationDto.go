@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // BnbLocationDto 结构体
 type BnbLocationDto struct {
 	// domestic为0时，固定China； domestic为1时，必须传定义的海外国家编码值。参见：http://hotel.alitrip.com/area.htm
@@ -32,4 +36,35 @@ type BnbLocationDto struct {
 	Province int64 `json:"province,omitempty" xml:"province,omitempty"`
 	// 区域（县级市）编码。参见：http://hotel.alitrip.com/area.htm
 	District int64 `json:"district,omitempty" xml:"district,omitempty"`
+}
+
+var poolBnbLocationDto = sync.Pool{
+	New: func() any {
+		return new(BnbLocationDto)
+	},
+}
+
+// GetBnbLocationDto() 从对象池中获取BnbLocationDto
+func GetBnbLocationDto() *BnbLocationDto {
+	return poolBnbLocationDto.Get().(*BnbLocationDto)
+}
+
+// ReleaseBnbLocationDto 释放BnbLocationDto
+func ReleaseBnbLocationDto(v *BnbLocationDto) {
+	v.Country = ""
+	v.Address = ""
+	v.Business = ""
+	v.Latitude = ""
+	v.PositionType = ""
+	v.EnAddress = ""
+	v.ReceptionAddress = ""
+	v.Timezone = ""
+	v.Doorplate = ""
+	v.Longitude = ""
+	v.CityName = ""
+	v.City = 0
+	v.Domestic = 0
+	v.Province = 0
+	v.District = 0
+	poolBnbLocationDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.wdkorder.sharestock.order.get
 //
 // 商户拉取猫超订单数据
-func AlibabaWdkorderSharestockOrderGet(clt *core.SDKClient, req *wdk.AlibabaWdkorderSharestockOrderGetAPIRequest, session string) (*wdk.AlibabaWdkorderSharestockOrderGetAPIResponse, error) {
-	var resp wdk.AlibabaWdkorderSharestockOrderGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkorderSharestockOrderGet(clt *core.SDKClient, req *wdk.AlibabaWdkorderSharestockOrderGetAPIRequest, resp *wdk.AlibabaWdkorderSharestockOrderGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

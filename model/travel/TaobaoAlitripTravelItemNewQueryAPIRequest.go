@@ -2,6 +2,7 @@ package travel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoAlitripTravelItemNewQueryAPIRequest struct {
 // NewTaobaoAlitripTravelItemNewQueryRequest 初始化TaobaoAlitripTravelItemNewQueryAPIRequest对象
 func NewTaobaoAlitripTravelItemNewQueryRequest() *TaobaoAlitripTravelItemNewQueryAPIRequest {
 	return &TaobaoAlitripTravelItemNewQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelItemNewQueryAPIRequest) Reset() {
+	r._outProductId = ""
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoAlitripTravelItemNewQueryAPIRequest) SetItemId(_itemId int64) err
 // GetItemId ItemId Getter
 func (r TaobaoAlitripTravelItemNewQueryAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTaobaoAlitripTravelItemNewQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelItemNewQueryRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelItemNewQueryRequest 从 sync.Pool 获取 TaobaoAlitripTravelItemNewQueryAPIRequest
+func GetTaobaoAlitripTravelItemNewQueryAPIRequest() *TaobaoAlitripTravelItemNewQueryAPIRequest {
+	return poolTaobaoAlitripTravelItemNewQueryAPIRequest.Get().(*TaobaoAlitripTravelItemNewQueryAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelItemNewQueryAPIRequest 将 TaobaoAlitripTravelItemNewQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelItemNewQueryAPIRequest(v *TaobaoAlitripTravelItemNewQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelItemNewQueryAPIRequest.Put(v)
 }

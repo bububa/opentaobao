@@ -2,6 +2,7 @@ package aesolution
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AliexpressSolutionOrderFulfillAPIRequest struct {
 // NewAliexpressSolutionOrderFulfillRequest 初始化AliexpressSolutionOrderFulfillAPIRequest对象
 func NewAliexpressSolutionOrderFulfillRequest() *AliexpressSolutionOrderFulfillAPIRequest {
 	return &AliexpressSolutionOrderFulfillAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSolutionOrderFulfillAPIRequest) Reset() {
+	r._serviceName = ""
+	r._trackingWebsite = ""
+	r._outRef = ""
+	r._sendType = ""
+	r._description = ""
+	r._logisticsNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AliexpressSolutionOrderFulfillAPIRequest) SetLogisticsNo(_logisticsNo s
 // GetLogisticsNo LogisticsNo Getter
 func (r AliexpressSolutionOrderFulfillAPIRequest) GetLogisticsNo() string {
 	return r._logisticsNo
+}
+
+var poolAliexpressSolutionOrderFulfillAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSolutionOrderFulfillRequest()
+	},
+}
+
+// GetAliexpressSolutionOrderFulfillRequest 从 sync.Pool 获取 AliexpressSolutionOrderFulfillAPIRequest
+func GetAliexpressSolutionOrderFulfillAPIRequest() *AliexpressSolutionOrderFulfillAPIRequest {
+	return poolAliexpressSolutionOrderFulfillAPIRequest.Get().(*AliexpressSolutionOrderFulfillAPIRequest)
+}
+
+// ReleaseAliexpressSolutionOrderFulfillAPIRequest 将 AliexpressSolutionOrderFulfillAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSolutionOrderFulfillAPIRequest(v *AliexpressSolutionOrderFulfillAPIRequest) {
+	v.Reset()
+	poolAliexpressSolutionOrderFulfillAPIRequest.Put(v)
 }

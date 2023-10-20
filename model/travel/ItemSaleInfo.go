@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // ItemSaleInfo 结构体
 type ItemSaleInfo struct {
 	// 关联商品与店铺类目 结构:&amp;quot;,cid1,cid2,...,&amp;quot;，如果店铺类目存在二级类目，必须传入子类目cids。  支持的最大列表长度为：256； 关于如何获取cid，请参考该接口：http://open.taobao.com/doc2/apiDetail.htm?apiId=65
@@ -36,4 +40,37 @@ type ItemSaleInfo struct {
 	HasInvoice bool `json:"has_invoice,omitempty" xml:"has_invoice,omitempty"`
 	// 是否支持会员打折。可选值：true，false；默认值：false(不打折)。不传的话默认为false
 	HasDiscount bool `json:"has_discount,omitempty" xml:"has_discount,omitempty"`
+}
+
+var poolItemSaleInfo = sync.Pool{
+	New: func() any {
+		return new(ItemSaleInfo)
+	},
+}
+
+// GetItemSaleInfo() 从对象池中获取ItemSaleInfo
+func GetItemSaleInfo() *ItemSaleInfo {
+	return poolItemSaleInfo.Get().(*ItemSaleInfo)
+}
+
+// ReleaseItemSaleInfo 释放ItemSaleInfo
+func ReleaseItemSaleInfo(v *ItemSaleInfo) {
+	v.SellerCids = v.SellerCids[:0]
+	v.StartComboDate = ""
+	v.SecondKill = ""
+	v.NetworkId = ""
+	v.Merchant = ""
+	v.EndComboDate = ""
+	v.BcStartDate = ""
+	v.ItemEleCertInfo = nil
+	v.ConfirmTime = 0
+	v.ConfirmType = 0
+	v.SubStock = 0
+	v.SaleType = 0
+	v.Duration = 0
+	v.SupportOnsaleAutoRefund = false
+	v.HasShowcase = false
+	v.HasInvoice = false
+	v.HasDiscount = false
+	poolItemSaleInfo.Put(v)
 }

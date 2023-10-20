@@ -9,11 +9,6 @@ import (
 // alitrip.travel.hotelticket.product.productupdate
 //
 // 产品批量变更通知
-func AlitripTravelHotelticketProductProductupdate(clt *core.SDKClient, req *traveltrade.AlitripTravelHotelticketProductProductupdateAPIRequest, session string) (*traveltrade.AlitripTravelHotelticketProductProductupdateAPIResponse, error) {
-	var resp traveltrade.AlitripTravelHotelticketProductProductupdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripTravelHotelticketProductProductupdate(clt *core.SDKClient, req *traveltrade.AlitripTravelHotelticketProductProductupdateAPIRequest, resp *traveltrade.AlitripTravelHotelticketProductProductupdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

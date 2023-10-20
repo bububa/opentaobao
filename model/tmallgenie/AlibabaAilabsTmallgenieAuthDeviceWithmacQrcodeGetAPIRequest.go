@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest struct {
 // NewAlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetRequest 初始化AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest对象
 func NewAlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetRequest() *AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest {
 	return &AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest) Reset() {
+	r._clientId = ""
+	r._mac = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest) SetMac(_ma
 // GetMac Mac Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest) GetMac() string {
 	return r._mac
+}
+
+var poolAlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetRequest()
+	},
+}
+
+// GetAlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetRequest 从 sync.Pool 获取 AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest
+func GetAlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest() *AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest {
+	return poolAlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest.Get().(*AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest)
+}
+
+// ReleaseAlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest 将 AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest(v *AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenApproveApplyRq 结构体
 type OpenApproveApplyRq struct {
 	// 审批单id
@@ -16,4 +20,27 @@ type OpenApproveApplyRq struct {
 	CorpId string `json:"corp_id,omitempty" xml:"corp_id,omitempty"`
 	// 1已同意 2已拒绝 3已转交 4已取消
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolOpenApproveApplyRq = sync.Pool{
+	New: func() any {
+		return new(OpenApproveApplyRq)
+	},
+}
+
+// GetOpenApproveApplyRq() 从对象池中获取OpenApproveApplyRq
+func GetOpenApproveApplyRq() *OpenApproveApplyRq {
+	return poolOpenApproveApplyRq.Get().(*OpenApproveApplyRq)
+}
+
+// ReleaseOpenApproveApplyRq 释放OpenApproveApplyRq
+func ReleaseOpenApproveApplyRq(v *OpenApproveApplyRq) {
+	v.ApplyId = ""
+	v.OperateTime = ""
+	v.ApprovalUserName = ""
+	v.ApprovalUserId = ""
+	v.Note = ""
+	v.CorpId = ""
+	v.Status = 0
+	poolOpenApproveApplyRq.Put(v)
 }

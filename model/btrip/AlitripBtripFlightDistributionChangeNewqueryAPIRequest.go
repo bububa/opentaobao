@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripFlightDistributionChangeNewqueryAPIRequest struct {
 // NewAlitripBtripFlightDistributionChangeNewqueryRequest 初始化AlitripBtripFlightDistributionChangeNewqueryAPIRequest对象
 func NewAlitripBtripFlightDistributionChangeNewqueryRequest() *AlitripBtripFlightDistributionChangeNewqueryAPIRequest {
 	return &AlitripBtripFlightDistributionChangeNewqueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripFlightDistributionChangeNewqueryAPIRequest) Reset() {
+	r._paramBtripFlightModifyFlightInfoRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripFlightDistributionChangeNewqueryAPIRequest) SetParamBtripFl
 // GetParamBtripFlightModifyFlightInfoRq ParamBtripFlightModifyFlightInfoRq Getter
 func (r AlitripBtripFlightDistributionChangeNewqueryAPIRequest) GetParamBtripFlightModifyFlightInfoRq() *BtripFlightModifyFlightInfoRq {
 	return r._paramBtripFlightModifyFlightInfoRq
+}
+
+var poolAlitripBtripFlightDistributionChangeNewqueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripFlightDistributionChangeNewqueryRequest()
+	},
+}
+
+// GetAlitripBtripFlightDistributionChangeNewqueryRequest 从 sync.Pool 获取 AlitripBtripFlightDistributionChangeNewqueryAPIRequest
+func GetAlitripBtripFlightDistributionChangeNewqueryAPIRequest() *AlitripBtripFlightDistributionChangeNewqueryAPIRequest {
+	return poolAlitripBtripFlightDistributionChangeNewqueryAPIRequest.Get().(*AlitripBtripFlightDistributionChangeNewqueryAPIRequest)
+}
+
+// ReleaseAlitripBtripFlightDistributionChangeNewqueryAPIRequest 将 AlitripBtripFlightDistributionChangeNewqueryAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripFlightDistributionChangeNewqueryAPIRequest(v *AlitripBtripFlightDistributionChangeNewqueryAPIRequest) {
+	v.Reset()
+	poolAlitripBtripFlightDistributionChangeNewqueryAPIRequest.Put(v)
 }

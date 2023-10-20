@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest struct {
 // NewAlitripMerchantGalaxyDerbyMemberVoucherCardQueryRequest 初始化AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest对象
 func NewAlitripMerchantGalaxyDerbyMemberVoucherCardQueryRequest() *AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest {
 	return &AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r._memberVoucherCardID = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest) SetMemberVo
 // GetMemberVoucherCardID MemberVoucherCardID Getter
 func (r AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest) GetMemberVoucherCardID() string {
 	return r._memberVoucherCardID
+}
+
+var poolAlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyDerbyMemberVoucherCardQueryRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyDerbyMemberVoucherCardQueryRequest 从 sync.Pool 获取 AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest
+func GetAlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest() *AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest {
+	return poolAlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest.Get().(*AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest 将 AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest(v *AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest.Put(v)
 }

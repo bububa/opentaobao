@@ -2,6 +2,7 @@ package guoguo
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest struct {
 // NewCainiaoGuoguoCpNborderfrontrUpdateuserRequest 初始化CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest对象
 func NewCainiaoGuoguoCpNborderfrontrUpdateuserRequest() *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest {
 	return &CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) Reset() {
+	r._name = ""
+	r._workStationName = ""
+	r._cpUserId = ""
+	r._alipayAccount = ""
+	r._cityName = ""
+	r._cityCode = ""
+	r._workStationCode = ""
+	r._cpCode = ""
+	r._mobile = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetMobile(_mobile str
 // GetMobile Mobile Getter
 func (r CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) GetMobile() string {
 	return r._mobile
+}
+
+var poolCainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGuoguoCpNborderfrontrUpdateuserRequest()
+	},
+}
+
+// GetCainiaoGuoguoCpNborderfrontrUpdateuserRequest 从 sync.Pool 获取 CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest
+func GetCainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest() *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest {
+	return poolCainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest.Get().(*CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest)
+}
+
+// ReleaseCainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest 将 CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest(v *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) {
+	v.Reset()
+	poolCainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest.Put(v)
 }

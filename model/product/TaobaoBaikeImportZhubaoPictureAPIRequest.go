@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBaikeImportZhubaoPictureAPIRequest struct {
 // NewTaobaoBaikeImportZhubaoPictureRequest 初始化TaobaoBaikeImportZhubaoPictureAPIRequest对象
 func NewTaobaoBaikeImportZhubaoPictureRequest() *TaobaoBaikeImportZhubaoPictureAPIRequest {
 	return &TaobaoBaikeImportZhubaoPictureAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBaikeImportZhubaoPictureAPIRequest) Reset() {
+	r._picture = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBaikeImportZhubaoPictureAPIRequest) SetPicture(_picture *model.Fi
 // GetPicture Picture Getter
 func (r TaobaoBaikeImportZhubaoPictureAPIRequest) GetPicture() *model.File {
 	return r._picture
+}
+
+var poolTaobaoBaikeImportZhubaoPictureAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBaikeImportZhubaoPictureRequest()
+	},
+}
+
+// GetTaobaoBaikeImportZhubaoPictureRequest 从 sync.Pool 获取 TaobaoBaikeImportZhubaoPictureAPIRequest
+func GetTaobaoBaikeImportZhubaoPictureAPIRequest() *TaobaoBaikeImportZhubaoPictureAPIRequest {
+	return poolTaobaoBaikeImportZhubaoPictureAPIRequest.Get().(*TaobaoBaikeImportZhubaoPictureAPIRequest)
+}
+
+// ReleaseTaobaoBaikeImportZhubaoPictureAPIRequest 将 TaobaoBaikeImportZhubaoPictureAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBaikeImportZhubaoPictureAPIRequest(v *TaobaoBaikeImportZhubaoPictureAPIRequest) {
+	v.Reset()
+	poolTaobaoBaikeImportZhubaoPictureAPIRequest.Put(v)
 }

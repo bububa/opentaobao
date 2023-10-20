@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // CodeMovePackagingResultDto 结构体
 type CodeMovePackagingResultDto struct {
 	// 替换码
@@ -10,4 +14,24 @@ type CodeMovePackagingResultDto struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 拼箱信息
 	Info string `json:"info,omitempty" xml:"info,omitempty"`
+}
+
+var poolCodeMovePackagingResultDto = sync.Pool{
+	New: func() any {
+		return new(CodeMovePackagingResultDto)
+	},
+}
+
+// GetCodeMovePackagingResultDto() 从对象池中获取CodeMovePackagingResultDto
+func GetCodeMovePackagingResultDto() *CodeMovePackagingResultDto {
+	return poolCodeMovePackagingResultDto.Get().(*CodeMovePackagingResultDto)
+}
+
+// ReleaseCodeMovePackagingResultDto 释放CodeMovePackagingResultDto
+func ReleaseCodeMovePackagingResultDto(v *CodeMovePackagingResultDto) {
+	v.SourceCode = ""
+	v.TargetCode = ""
+	v.Status = ""
+	v.Info = ""
+	poolCodeMovePackagingResultDto.Put(v)
 }

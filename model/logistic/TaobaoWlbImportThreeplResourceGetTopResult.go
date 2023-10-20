@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // TaobaoWlbImportThreeplResourceGetTopResult 结构体
 type TaobaoWlbImportThreeplResourceGetTopResult struct {
 	// 资源列表
@@ -14,4 +18,26 @@ type TaobaoWlbImportThreeplResourceGetTopResult struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoWlbImportThreeplResourceGetTopResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbImportThreeplResourceGetTopResult)
+	},
+}
+
+// GetTaobaoWlbImportThreeplResourceGetTopResult() 从对象池中获取TaobaoWlbImportThreeplResourceGetTopResult
+func GetTaobaoWlbImportThreeplResourceGetTopResult() *TaobaoWlbImportThreeplResourceGetTopResult {
+	return poolTaobaoWlbImportThreeplResourceGetTopResult.Get().(*TaobaoWlbImportThreeplResourceGetTopResult)
+}
+
+// ReleaseTaobaoWlbImportThreeplResourceGetTopResult 释放TaobaoWlbImportThreeplResourceGetTopResult
+func ReleaseTaobaoWlbImportThreeplResourceGetTopResult(v *TaobaoWlbImportThreeplResourceGetTopResult) {
+	v.Resources = v.Resources[:0]
+	v.SubErrorMsg = ""
+	v.ErrorCode = ""
+	v.SubErrorCode = ""
+	v.ErrorMsg = ""
+	v.Success = false
+	poolTaobaoWlbImportThreeplResourceGetTopResult.Put(v)
 }

@@ -2,6 +2,7 @@ package category
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoItemcatsAuthorizeGetAPIResponse struct {
 	TaobaoItemcatsAuthorizeGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoItemcatsAuthorizeGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoItemcatsAuthorizeGetAPIResponseModel).Reset()
+}
+
 // TaobaoItemcatsAuthorizeGetAPIResponseModel is 查询商家被授权品牌列表和类目列表 成功返回结果
 type TaobaoItemcatsAuthorizeGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"itemcats_authorize_get_response"`
@@ -22,4 +29,27 @@ type TaobaoItemcatsAuthorizeGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 里面有3个数组：Brand[]品牌列表,ItemCat[] 类目列表XinpinItemCat[] 针对于C卖家新品类目列表
 	SellerAuthorize *SellerAuthorize `json:"seller_authorize,omitempty" xml:"seller_authorize,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoItemcatsAuthorizeGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SellerAuthorize = nil
+}
+
+var poolTaobaoItemcatsAuthorizeGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoItemcatsAuthorizeGetAPIResponse)
+	},
+}
+
+// GetTaobaoItemcatsAuthorizeGetAPIResponse 从 sync.Pool 获取 TaobaoItemcatsAuthorizeGetAPIResponse
+func GetTaobaoItemcatsAuthorizeGetAPIResponse() *TaobaoItemcatsAuthorizeGetAPIResponse {
+	return poolTaobaoItemcatsAuthorizeGetAPIResponse.Get().(*TaobaoItemcatsAuthorizeGetAPIResponse)
+}
+
+// ReleaseTaobaoItemcatsAuthorizeGetAPIResponse 将 TaobaoItemcatsAuthorizeGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoItemcatsAuthorizeGetAPIResponse(v *TaobaoItemcatsAuthorizeGetAPIResponse) {
+	v.Reset()
+	poolTaobaoItemcatsAuthorizeGetAPIResponse.Put(v)
 }

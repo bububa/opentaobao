@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // OrderPrivacyReceiverQuery 结构体
 type OrderPrivacyReceiverQuery struct {
 	// 收件人
@@ -20,4 +24,29 @@ type OrderPrivacyReceiverQuery struct {
 	ShopNick string `json:"shop_nick,omitempty" xml:"shop_nick,omitempty"`
 	// 业务请求时间，Unix timestamp ，毫秒
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
+}
+
+var poolOrderPrivacyReceiverQuery = sync.Pool{
+	New: func() any {
+		return new(OrderPrivacyReceiverQuery)
+	},
+}
+
+// GetOrderPrivacyReceiverQuery() 从对象池中获取OrderPrivacyReceiverQuery
+func GetOrderPrivacyReceiverQuery() *OrderPrivacyReceiverQuery {
+	return poolOrderPrivacyReceiverQuery.Get().(*OrderPrivacyReceiverQuery)
+}
+
+// ReleaseOrderPrivacyReceiverQuery 释放OrderPrivacyReceiverQuery
+func ReleaseOrderPrivacyReceiverQuery(v *OrderPrivacyReceiverQuery) {
+	v.Oaid = ""
+	v.Tid = ""
+	v.DeliveryOrderCode = ""
+	v.OwnerCode = ""
+	v.WarehouseCode = ""
+	v.Scene = ""
+	v.ExtendProps = ""
+	v.ShopNick = ""
+	v.RequestTime = 0
+	poolOrderPrivacyReceiverQuery.Put(v)
 }

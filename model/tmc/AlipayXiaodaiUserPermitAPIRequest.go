@@ -2,6 +2,7 @@ package tmc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlipayXiaodaiUserPermitAPIRequest struct {
 // NewAlipayXiaodaiUserPermitRequest 初始化AlipayXiaodaiUserPermitAPIRequest对象
 func NewAlipayXiaodaiUserPermitRequest() *AlipayXiaodaiUserPermitAPIRequest {
 	return &AlipayXiaodaiUserPermitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlipayXiaodaiUserPermitAPIRequest) Reset() {
+	r._userId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlipayXiaodaiUserPermitAPIRequest) SetUserId(_userId int64) error {
 // GetUserId UserId Getter
 func (r AlipayXiaodaiUserPermitAPIRequest) GetUserId() int64 {
 	return r._userId
+}
+
+var poolAlipayXiaodaiUserPermitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlipayXiaodaiUserPermitRequest()
+	},
+}
+
+// GetAlipayXiaodaiUserPermitRequest 从 sync.Pool 获取 AlipayXiaodaiUserPermitAPIRequest
+func GetAlipayXiaodaiUserPermitAPIRequest() *AlipayXiaodaiUserPermitAPIRequest {
+	return poolAlipayXiaodaiUserPermitAPIRequest.Get().(*AlipayXiaodaiUserPermitAPIRequest)
+}
+
+// ReleaseAlipayXiaodaiUserPermitAPIRequest 将 AlipayXiaodaiUserPermitAPIRequest 放入 sync.Pool
+func ReleaseAlipayXiaodaiUserPermitAPIRequest(v *AlipayXiaodaiUserPermitAPIRequest) {
+	v.Reset()
+	poolAlipayXiaodaiUserPermitAPIRequest.Put(v)
 }

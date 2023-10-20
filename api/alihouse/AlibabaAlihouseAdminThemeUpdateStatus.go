@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.admin.theme.update.status
 //
 // 云主题上下架+删除
-func AlibabaAlihouseAdminThemeUpdateStatus(clt *core.SDKClient, req *alihouse.AlibabaAlihouseAdminThemeUpdateStatusAPIRequest, session string) (*alihouse.AlibabaAlihouseAdminThemeUpdateStatusAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseAdminThemeUpdateStatusAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseAdminThemeUpdateStatus(clt *core.SDKClient, req *alihouse.AlibabaAlihouseAdminThemeUpdateStatusAPIRequest, resp *alihouse.AlibabaAlihouseAdminThemeUpdateStatusAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

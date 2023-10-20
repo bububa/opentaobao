@@ -1,5 +1,9 @@
 package middleclaims
 
+import (
+	"sync"
+)
+
 // ClaimsBillDto 结构体
 type ClaimsBillDto struct {
 	// 报案号
@@ -16,4 +20,27 @@ type ClaimsBillDto struct {
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 预留扩展Map
 	ExtensionMap *Extensionmap `json:"extension_map,omitempty" xml:"extension_map,omitempty"`
+}
+
+var poolClaimsBillDto = sync.Pool{
+	New: func() any {
+		return new(ClaimsBillDto)
+	},
+}
+
+// GetClaimsBillDto() 从对象池中获取ClaimsBillDto
+func GetClaimsBillDto() *ClaimsBillDto {
+	return poolClaimsBillDto.Get().(*ClaimsBillDto)
+}
+
+// ReleaseClaimsBillDto 释放ClaimsBillDto
+func ReleaseClaimsBillDto(v *ClaimsBillDto) {
+	v.ReportNo = ""
+	v.AmountCurrency = ""
+	v.Payee = ""
+	v.PayTime = ""
+	v.ServiceWorkOrderId = 0
+	v.Amount = 0
+	v.ExtensionMap = nil
+	poolClaimsBillDto.Put(v)
 }

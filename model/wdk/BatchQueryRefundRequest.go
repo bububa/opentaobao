@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // BatchQueryRefundRequest 结构体
 type BatchQueryRefundRequest struct {
 	// 店铺ID列表，order_from=4时必填，其他非必填
@@ -24,4 +28,31 @@ type BatchQueryRefundRequest struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 渠道来源 3：饿了么 4：盒马&amp;淘鲜达 20：商家自有渠道，必填
 	OrderFrom int64 `json:"order_from,omitempty" xml:"order_from,omitempty"`
+}
+
+var poolBatchQueryRefundRequest = sync.Pool{
+	New: func() any {
+		return new(BatchQueryRefundRequest)
+	},
+}
+
+// GetBatchQueryRefundRequest() 从对象池中获取BatchQueryRefundRequest
+func GetBatchQueryRefundRequest() *BatchQueryRefundRequest {
+	return poolBatchQueryRefundRequest.Get().(*BatchQueryRefundRequest)
+}
+
+// ReleaseBatchQueryRefundRequest 释放BatchQueryRefundRequest
+func ReleaseBatchQueryRefundRequest(v *BatchQueryRefundRequest) {
+	v.StoreIds = v.StoreIds[:0]
+	v.EndTime = ""
+	v.OrderClient = ""
+	v.StartTime = ""
+	v.SyncStatus = ""
+	v.ShopId = ""
+	v.StoreId = ""
+	v.BizType = ""
+	v.PageIndex = 0
+	v.PageSize = 0
+	v.OrderFrom = 0
+	poolBatchQueryRefundRequest.Put(v)
 }

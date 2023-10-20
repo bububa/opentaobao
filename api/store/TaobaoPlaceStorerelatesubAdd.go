@@ -9,11 +9,6 @@ import (
 // taobao.place.storerelatesub.add
 //
 // 门店和子门店关系新增
-func TaobaoPlaceStorerelatesubAdd(clt *core.SDKClient, req *store.TaobaoPlaceStorerelatesubAddAPIRequest, session string) (*store.TaobaoPlaceStorerelatesubAddAPIResponse, error) {
-	var resp store.TaobaoPlaceStorerelatesubAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPlaceStorerelatesubAdd(clt *core.SDKClient, req *store.TaobaoPlaceStorerelatesubAddAPIRequest, resp *store.TaobaoPlaceStorerelatesubAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

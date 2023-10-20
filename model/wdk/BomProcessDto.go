@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // BomProcessDto 结构体
 type BomProcessDto struct {
 	// productItemInfos
@@ -18,4 +22,28 @@ type BomProcessDto struct {
 	Uuid string `json:"uuid,omitempty" xml:"uuid,omitempty"`
 	// 单据编码
 	BomProcessCode string `json:"bom_process_code,omitempty" xml:"bom_process_code,omitempty"`
+}
+
+var poolBomProcessDto = sync.Pool{
+	New: func() any {
+		return new(BomProcessDto)
+	},
+}
+
+// GetBomProcessDto() 从对象池中获取BomProcessDto
+func GetBomProcessDto() *BomProcessDto {
+	return poolBomProcessDto.Get().(*BomProcessDto)
+}
+
+// ReleaseBomProcessDto 释放BomProcessDto
+func ReleaseBomProcessDto(v *BomProcessDto) {
+	v.ProductItemInfos = v.ProductItemInfos[:0]
+	v.MaterialItemInfos = v.MaterialItemInfos[:0]
+	v.DeptCode = ""
+	v.OccurrenceDate = ""
+	v.OccurrenceType = ""
+	v.WarehouseCode = ""
+	v.Uuid = ""
+	v.BomProcessCode = ""
+	poolBomProcessDto.Put(v)
 }

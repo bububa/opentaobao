@@ -2,6 +2,7 @@ package alimember
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMemberPointChangeSyncAPIRequest struct {
 // NewAlibabaMemberPointChangeSyncRequest 初始化AlibabaMemberPointChangeSyncAPIRequest对象
 func NewAlibabaMemberPointChangeSyncRequest() *AlibabaMemberPointChangeSyncAPIRequest {
 	return &AlibabaMemberPointChangeSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMemberPointChangeSyncAPIRequest) Reset() {
+	r._syncMemberPointChangeDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMemberPointChangeSyncAPIRequest) SetSyncMemberPointChangeDto(_sy
 // GetSyncMemberPointChangeDto SyncMemberPointChangeDto Getter
 func (r AlibabaMemberPointChangeSyncAPIRequest) GetSyncMemberPointChangeDto() *SyncMemberPointChangeDto {
 	return r._syncMemberPointChangeDto
+}
+
+var poolAlibabaMemberPointChangeSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMemberPointChangeSyncRequest()
+	},
+}
+
+// GetAlibabaMemberPointChangeSyncRequest 从 sync.Pool 获取 AlibabaMemberPointChangeSyncAPIRequest
+func GetAlibabaMemberPointChangeSyncAPIRequest() *AlibabaMemberPointChangeSyncAPIRequest {
+	return poolAlibabaMemberPointChangeSyncAPIRequest.Get().(*AlibabaMemberPointChangeSyncAPIRequest)
+}
+
+// ReleaseAlibabaMemberPointChangeSyncAPIRequest 将 AlibabaMemberPointChangeSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMemberPointChangeSyncAPIRequest(v *AlibabaMemberPointChangeSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaMemberPointChangeSyncAPIRequest.Put(v)
 }

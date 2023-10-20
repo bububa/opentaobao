@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaAlisportsPassportOauthAlipaygrantAPIRequest struct {
 // NewAlibabaAlisportsPassportOauthAlipaygrantRequest 初始化AlibabaAlisportsPassportOauthAlipaygrantAPIRequest对象
 func NewAlibabaAlisportsPassportOauthAlipaygrantRequest() *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest {
 	return &AlibabaAlisportsPassportOauthAlipaygrantAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) Reset() {
+	r._alispAppKey = ""
+	r._alispTime = ""
+	r._alispSign = ""
+	r._authCode = ""
+	r._partnerMode = ""
+	r._appid = ""
+	r._appUid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) SetAppUid(_appUid s
 // GetAppUid AppUid Getter
 func (r AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) GetAppUid() string {
 	return r._appUid
+}
+
+var poolAlibabaAlisportsPassportOauthAlipaygrantAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlisportsPassportOauthAlipaygrantRequest()
+	},
+}
+
+// GetAlibabaAlisportsPassportOauthAlipaygrantRequest 从 sync.Pool 获取 AlibabaAlisportsPassportOauthAlipaygrantAPIRequest
+func GetAlibabaAlisportsPassportOauthAlipaygrantAPIRequest() *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest {
+	return poolAlibabaAlisportsPassportOauthAlipaygrantAPIRequest.Get().(*AlibabaAlisportsPassportOauthAlipaygrantAPIRequest)
+}
+
+// ReleaseAlibabaAlisportsPassportOauthAlipaygrantAPIRequest 将 AlibabaAlisportsPassportOauthAlipaygrantAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlisportsPassportOauthAlipaygrantAPIRequest(v *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) {
+	v.Reset()
+	poolAlibabaAlisportsPassportOauthAlipaygrantAPIRequest.Put(v)
 }

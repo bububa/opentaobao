@@ -9,11 +9,6 @@ import (
 // alitrip.hotel.alliance.hid.get
 //
 // 获取符合条件的菲住联盟hid，目前支持指定日期上线的菲住联盟hid查询
-func AlitripHotelAllianceHidGet(clt *core.SDKClient, req *hotelalliance.AlitripHotelAllianceHidGetAPIRequest, session string) (*hotelalliance.AlitripHotelAllianceHidGetAPIResponse, error) {
-	var resp hotelalliance.AlitripHotelAllianceHidGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripHotelAllianceHidGet(clt *core.SDKClient, req *hotelalliance.AlitripHotelAllianceHidGetAPIRequest, resp *hotelalliance.AlitripHotelAllianceHidGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

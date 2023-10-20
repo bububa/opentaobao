@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // RecommendKeywordQueryDto 结构体
 type RecommendKeywordQueryDto struct {
 	// 关键词
@@ -16,4 +20,27 @@ type RecommendKeywordQueryDto struct {
 	GroupId int64 `json:"group_id,omitempty" xml:"group_id,omitempty"`
 	// true-精准匹配 false-模糊匹配
 	ExactMatch bool `json:"exact_match,omitempty" xml:"exact_match,omitempty"`
+}
+
+var poolRecommendKeywordQueryDto = sync.Pool{
+	New: func() any {
+		return new(RecommendKeywordQueryDto)
+	},
+}
+
+// GetRecommendKeywordQueryDto() 从对象池中获取RecommendKeywordQueryDto
+func GetRecommendKeywordQueryDto() *RecommendKeywordQueryDto {
+	return poolRecommendKeywordQueryDto.Get().(*RecommendKeywordQueryDto)
+}
+
+// ReleaseRecommendKeywordQueryDto 释放RecommendKeywordQueryDto
+func ReleaseRecommendKeywordQueryDto(v *RecommendKeywordQueryDto) {
+	v.Keyword = ""
+	v.OrderBy = ""
+	v.Order = ""
+	v.SearchType = 0
+	v.CampaignId = 0
+	v.GroupId = 0
+	v.ExactMatch = false
+	poolRecommendKeywordQueryDto.Put(v)
 }

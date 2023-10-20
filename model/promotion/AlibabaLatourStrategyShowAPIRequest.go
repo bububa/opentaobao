@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -49,8 +50,29 @@ type AlibabaLatourStrategyShowAPIRequest struct {
 // NewAlibabaLatourStrategyShowRequest 初始化AlibabaLatourStrategyShowAPIRequest对象
 func NewAlibabaLatourStrategyShowRequest() *AlibabaLatourStrategyShowAPIRequest {
 	return &AlibabaLatourStrategyShowAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(16),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLatourStrategyShowAPIRequest) Reset() {
+	r._channel = ""
+	r._transformedUserType = ""
+	r._userNick = ""
+	r._userId = ""
+	r._strategyCode = ""
+	r._userType = ""
+	r._openid = ""
+	r._pageSize = 0
+	r._currentPage = 0
+	r._withTestBenefit = false
+	r._needIdentifyRisk = false
+	r._skipWithHadWin = false
+	r._filterEmptyInventory = false
+	r._filterCrowd = false
+	r._withStrategyInstance = false
+	r._withBenefitInstance = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -276,4 +298,21 @@ func (r *AlibabaLatourStrategyShowAPIRequest) SetWithBenefitInstance(_withBenefi
 // GetWithBenefitInstance WithBenefitInstance Getter
 func (r AlibabaLatourStrategyShowAPIRequest) GetWithBenefitInstance() bool {
 	return r._withBenefitInstance
+}
+
+var poolAlibabaLatourStrategyShowAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLatourStrategyShowRequest()
+	},
+}
+
+// GetAlibabaLatourStrategyShowRequest 从 sync.Pool 获取 AlibabaLatourStrategyShowAPIRequest
+func GetAlibabaLatourStrategyShowAPIRequest() *AlibabaLatourStrategyShowAPIRequest {
+	return poolAlibabaLatourStrategyShowAPIRequest.Get().(*AlibabaLatourStrategyShowAPIRequest)
+}
+
+// ReleaseAlibabaLatourStrategyShowAPIRequest 将 AlibabaLatourStrategyShowAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLatourStrategyShowAPIRequest(v *AlibabaLatourStrategyShowAPIRequest) {
+	v.Reset()
+	poolAlibabaLatourStrategyShowAPIRequest.Put(v)
 }

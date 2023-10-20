@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoOmniDealerOdersListAPIRequest struct {
 // NewTaobaoOmniDealerOdersListRequest 初始化TaobaoOmniDealerOdersListAPIRequest对象
 func NewTaobaoOmniDealerOdersListRequest() *TaobaoOmniDealerOdersListAPIRequest {
 	return &TaobaoOmniDealerOdersListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOmniDealerOdersListAPIRequest) Reset() {
+	r._queryParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoOmniDealerOdersListAPIRequest) SetQueryParam(_queryParam *QueryOm
 // GetQueryParam QueryParam Getter
 func (r TaobaoOmniDealerOdersListAPIRequest) GetQueryParam() *QueryOmniOrderRequest {
 	return r._queryParam
+}
+
+var poolTaobaoOmniDealerOdersListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOmniDealerOdersListRequest()
+	},
+}
+
+// GetTaobaoOmniDealerOdersListRequest 从 sync.Pool 获取 TaobaoOmniDealerOdersListAPIRequest
+func GetTaobaoOmniDealerOdersListAPIRequest() *TaobaoOmniDealerOdersListAPIRequest {
+	return poolTaobaoOmniDealerOdersListAPIRequest.Get().(*TaobaoOmniDealerOdersListAPIRequest)
+}
+
+// ReleaseTaobaoOmniDealerOdersListAPIRequest 将 TaobaoOmniDealerOdersListAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOmniDealerOdersListAPIRequest(v *TaobaoOmniDealerOdersListAPIRequest) {
+	v.Reset()
+	poolTaobaoOmniDealerOdersListAPIRequest.Put(v)
 }

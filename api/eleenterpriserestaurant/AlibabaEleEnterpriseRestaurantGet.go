@@ -9,11 +9,6 @@ import (
 // alibaba.ele.enterprise.restaurant.get
 //
 // 查询餐厅信息
-func AlibabaEleEnterpriseRestaurantGet(clt *core.SDKClient, req *eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantGetAPIRequest, session string) (*eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantGetAPIResponse, error) {
-	var resp eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEleEnterpriseRestaurantGet(clt *core.SDKClient, req *eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantGetAPIRequest, resp *eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

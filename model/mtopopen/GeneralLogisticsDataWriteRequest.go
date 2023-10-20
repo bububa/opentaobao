@@ -1,5 +1,9 @@
 package mtopopen
 
+import (
+	"sync"
+)
+
 // GeneralLogisticsDataWriteRequest 结构体
 type GeneralLogisticsDataWriteRequest struct {
 	// 快递公司标准编码
@@ -18,4 +22,28 @@ type GeneralLogisticsDataWriteRequest struct {
 	PackageType string `json:"package_type,omitempty" xml:"package_type,omitempty"`
 	// DELIVERY_HOME：送货上门。SIGN_PIC：签收照片
 	Scene string `json:"scene,omitempty" xml:"scene,omitempty"`
+}
+
+var poolGeneralLogisticsDataWriteRequest = sync.Pool{
+	New: func() any {
+		return new(GeneralLogisticsDataWriteRequest)
+	},
+}
+
+// GetGeneralLogisticsDataWriteRequest() 从对象池中获取GeneralLogisticsDataWriteRequest
+func GetGeneralLogisticsDataWriteRequest() *GeneralLogisticsDataWriteRequest {
+	return poolGeneralLogisticsDataWriteRequest.Get().(*GeneralLogisticsDataWriteRequest)
+}
+
+// ReleaseGeneralLogisticsDataWriteRequest 释放GeneralLogisticsDataWriteRequest
+func ReleaseGeneralLogisticsDataWriteRequest(v *GeneralLogisticsDataWriteRequest) {
+	v.CpCode = ""
+	v.MailNo = ""
+	v.CurrentLogisticsStatus = ""
+	v.ReceiverPhone = ""
+	v.ExtendParam = ""
+	v.Openid = ""
+	v.PackageType = ""
+	v.Scene = ""
+	poolGeneralLogisticsDataWriteRequest.Put(v)
 }

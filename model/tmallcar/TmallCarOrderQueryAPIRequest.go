@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallCarOrderQueryAPIRequest struct {
 // NewTmallCarOrderQueryRequest 初始化TmallCarOrderQueryAPIRequest对象
 func NewTmallCarOrderQueryRequest() *TmallCarOrderQueryAPIRequest {
 	return &TmallCarOrderQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarOrderQueryAPIRequest) Reset() {
+	r._topOrderQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallCarOrderQueryAPIRequest) SetTopOrderQuery(_topOrderQuery *TopOrder
 // GetTopOrderQuery TopOrderQuery Getter
 func (r TmallCarOrderQueryAPIRequest) GetTopOrderQuery() *TopOrderQuery {
 	return r._topOrderQuery
+}
+
+var poolTmallCarOrderQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarOrderQueryRequest()
+	},
+}
+
+// GetTmallCarOrderQueryRequest 从 sync.Pool 获取 TmallCarOrderQueryAPIRequest
+func GetTmallCarOrderQueryAPIRequest() *TmallCarOrderQueryAPIRequest {
+	return poolTmallCarOrderQueryAPIRequest.Get().(*TmallCarOrderQueryAPIRequest)
+}
+
+// ReleaseTmallCarOrderQueryAPIRequest 将 TmallCarOrderQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallCarOrderQueryAPIRequest(v *TmallCarOrderQueryAPIRequest) {
+	v.Reset()
+	poolTmallCarOrderQueryAPIRequest.Put(v)
 }

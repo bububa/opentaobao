@@ -1,5 +1,9 @@
 package alihealthoutflow
 
+import (
+	"sync"
+)
+
 // PrescriptionDetailVo 结构体
 type PrescriptionDetailVo struct {
 	// 病历报告单
@@ -58,4 +62,48 @@ type PrescriptionDetailVo struct {
 	EndReceiveTime int64 `json:"end_receive_time,omitempty" xml:"end_receive_time,omitempty"`
 	// 开始接诊时间
 	StartReceiveTime int64 `json:"start_receive_time,omitempty" xml:"start_receive_time,omitempty"`
+}
+
+var poolPrescriptionDetailVo = sync.Pool{
+	New: func() any {
+		return new(PrescriptionDetailVo)
+	},
+}
+
+// GetPrescriptionDetailVo() 从对象池中获取PrescriptionDetailVo
+func GetPrescriptionDetailVo() *PrescriptionDetailVo {
+	return poolPrescriptionDetailVo.Get().(*PrescriptionDetailVo)
+}
+
+// ReleasePrescriptionDetailVo 释放PrescriptionDetailVo
+func ReleasePrescriptionDetailVo(v *PrescriptionDetailVo) {
+	v.RevisitPicUrlList = v.RevisitPicUrlList[:0]
+	v.DrugList = v.DrugList[:0]
+	v.DiagnoseList = v.DiagnoseList[:0]
+	v.PatientAge = ""
+	v.PatientTel = ""
+	v.AuditPharmacistName = ""
+	v.DepartName = ""
+	v.IdCard = ""
+	v.PrescriptionPicUrl = ""
+	v.GanGongDetail = ""
+	v.ProblemHistory = ""
+	v.TaobaoOrderNo = ""
+	v.PatientName = ""
+	v.DispensingPharmacistName = ""
+	v.PatientSex = ""
+	v.HospitalName = ""
+	v.ShenGongDetail = ""
+	v.RxNo = ""
+	v.DiseaseRecordId = ""
+	v.GuoMinDetail = ""
+	v.EffectiveTime = ""
+	v.DoctorName = ""
+	v.HospitalId = ""
+	v.PatientBirthday = ""
+	v.PrescriptionAuditTime = 0
+	v.PrescriptionCreateTime = 0
+	v.EndReceiveTime = 0
+	v.StartReceiveTime = 0
+	poolPrescriptionDetailVo.Put(v)
 }

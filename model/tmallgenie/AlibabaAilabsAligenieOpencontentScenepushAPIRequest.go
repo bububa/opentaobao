@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAilabsAligenieOpencontentScenepushAPIRequest struct {
 // NewAlibabaAilabsAligenieOpencontentScenepushRequest 初始化AlibabaAilabsAligenieOpencontentScenepushAPIRequest对象
 func NewAlibabaAilabsAligenieOpencontentScenepushRequest() *AlibabaAilabsAligenieOpencontentScenepushAPIRequest {
 	return &AlibabaAilabsAligenieOpencontentScenepushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsAligenieOpencontentScenepushAPIRequest) Reset() {
+	r._sceneValue = ""
+	r._sceneType = 0
+	r._batchContent = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAilabsAligenieOpencontentScenepushAPIRequest) SetBatchContent(_b
 // GetBatchContent BatchContent Getter
 func (r AlibabaAilabsAligenieOpencontentScenepushAPIRequest) GetBatchContent() *BatchContent {
 	return r._batchContent
+}
+
+var poolAlibabaAilabsAligenieOpencontentScenepushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsAligenieOpencontentScenepushRequest()
+	},
+}
+
+// GetAlibabaAilabsAligenieOpencontentScenepushRequest 从 sync.Pool 获取 AlibabaAilabsAligenieOpencontentScenepushAPIRequest
+func GetAlibabaAilabsAligenieOpencontentScenepushAPIRequest() *AlibabaAilabsAligenieOpencontentScenepushAPIRequest {
+	return poolAlibabaAilabsAligenieOpencontentScenepushAPIRequest.Get().(*AlibabaAilabsAligenieOpencontentScenepushAPIRequest)
+}
+
+// ReleaseAlibabaAilabsAligenieOpencontentScenepushAPIRequest 将 AlibabaAilabsAligenieOpencontentScenepushAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsAligenieOpencontentScenepushAPIRequest(v *AlibabaAilabsAligenieOpencontentScenepushAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsAligenieOpencontentScenepushAPIRequest.Put(v)
 }

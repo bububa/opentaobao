@@ -2,6 +2,7 @@ package bus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBusAgentMultipleRefundConfirmAPIRequest struct {
 // NewTaobaoBusAgentMultipleRefundConfirmRequest 初始化TaobaoBusAgentMultipleRefundConfirmAPIRequest对象
 func NewTaobaoBusAgentMultipleRefundConfirmRequest() *TaobaoBusAgentMultipleRefundConfirmAPIRequest {
 	return &TaobaoBusAgentMultipleRefundConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBusAgentMultipleRefundConfirmAPIRequest) Reset() {
+	r._paramAgentMultipleRefundRQ = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBusAgentMultipleRefundConfirmAPIRequest) SetParamAgentMultipleRef
 // GetParamAgentMultipleRefundRQ ParamAgentMultipleRefundRQ Getter
 func (r TaobaoBusAgentMultipleRefundConfirmAPIRequest) GetParamAgentMultipleRefundRQ() *AgentMultipleRefundRq {
 	return r._paramAgentMultipleRefundRQ
+}
+
+var poolTaobaoBusAgentMultipleRefundConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBusAgentMultipleRefundConfirmRequest()
+	},
+}
+
+// GetTaobaoBusAgentMultipleRefundConfirmRequest 从 sync.Pool 获取 TaobaoBusAgentMultipleRefundConfirmAPIRequest
+func GetTaobaoBusAgentMultipleRefundConfirmAPIRequest() *TaobaoBusAgentMultipleRefundConfirmAPIRequest {
+	return poolTaobaoBusAgentMultipleRefundConfirmAPIRequest.Get().(*TaobaoBusAgentMultipleRefundConfirmAPIRequest)
+}
+
+// ReleaseTaobaoBusAgentMultipleRefundConfirmAPIRequest 将 TaobaoBusAgentMultipleRefundConfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBusAgentMultipleRefundConfirmAPIRequest(v *TaobaoBusAgentMultipleRefundConfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoBusAgentMultipleRefundConfirmAPIRequest.Put(v)
 }

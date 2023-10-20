@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallNrtStallSynchronizeAPIRequest struct {
 // NewTmallNrtStallSynchronizeRequest 初始化TmallNrtStallSynchronizeAPIRequest对象
 func NewTmallNrtStallSynchronizeRequest() *TmallNrtStallSynchronizeAPIRequest {
 	return &TmallNrtStallSynchronizeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtStallSynchronizeAPIRequest) Reset() {
+	r._stall = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallNrtStallSynchronizeAPIRequest) SetStall(_stall *NrtStoreDto) error
 // GetStall Stall Getter
 func (r TmallNrtStallSynchronizeAPIRequest) GetStall() *NrtStoreDto {
 	return r._stall
+}
+
+var poolTmallNrtStallSynchronizeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtStallSynchronizeRequest()
+	},
+}
+
+// GetTmallNrtStallSynchronizeRequest 从 sync.Pool 获取 TmallNrtStallSynchronizeAPIRequest
+func GetTmallNrtStallSynchronizeAPIRequest() *TmallNrtStallSynchronizeAPIRequest {
+	return poolTmallNrtStallSynchronizeAPIRequest.Get().(*TmallNrtStallSynchronizeAPIRequest)
+}
+
+// ReleaseTmallNrtStallSynchronizeAPIRequest 将 TmallNrtStallSynchronizeAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtStallSynchronizeAPIRequest(v *TmallNrtStallSynchronizeAPIRequest) {
+	v.Reset()
+	poolTmallNrtStallSynchronizeAPIRequest.Put(v)
 }

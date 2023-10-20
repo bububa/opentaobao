@@ -2,6 +2,7 @@ package product
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoProductUpdateAPIResponse struct {
 	TaobaoProductUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoProductUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoProductUpdateAPIResponseModel).Reset()
+}
+
 // TaobaoProductUpdateAPIResponseModel is 修改一个产品，可以修改主图，不能修改子图片 成功返回结果
 type TaobaoProductUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"product_update_response"`
@@ -22,4 +29,27 @@ type TaobaoProductUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回product数据结构中的：product_id,modified
 	Product *Product `json:"product,omitempty" xml:"product,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoProductUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Product = nil
+}
+
+var poolTaobaoProductUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoProductUpdateAPIResponse)
+	},
+}
+
+// GetTaobaoProductUpdateAPIResponse 从 sync.Pool 获取 TaobaoProductUpdateAPIResponse
+func GetTaobaoProductUpdateAPIResponse() *TaobaoProductUpdateAPIResponse {
+	return poolTaobaoProductUpdateAPIResponse.Get().(*TaobaoProductUpdateAPIResponse)
+}
+
+// ReleaseTaobaoProductUpdateAPIResponse 将 TaobaoProductUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoProductUpdateAPIResponse(v *TaobaoProductUpdateAPIResponse) {
+	v.Reset()
+	poolTaobaoProductUpdateAPIResponse.Put(v)
 }

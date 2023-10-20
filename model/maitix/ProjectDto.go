@@ -1,5 +1,9 @@
 package maitix
 
+import (
+	"sync"
+)
+
 // ProjectDto 结构体
 type ProjectDto struct {
 	// 主办方ID
@@ -44,4 +48,41 @@ type ProjectDto struct {
 	Venue *VenueDto `json:"venue,omitempty" xml:"venue,omitempty"`
 	// 是否测试项目 0-正式项目 1-测试项目
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
+}
+
+var poolProjectDto = sync.Pool{
+	New: func() any {
+		return new(ProjectDto)
+	},
+}
+
+// GetProjectDto() 从对象池中获取ProjectDto
+func GetProjectDto() *ProjectDto {
+	return poolProjectDto.Get().(*ProjectDto)
+}
+
+// ReleaseProjectDto 释放ProjectDto
+func ReleaseProjectDto(v *ProjectDto) {
+	v.TraderIdsArrList = v.TraderIdsArrList[:0]
+	v.TraderNamesArrList = v.TraderNamesArrList[:0]
+	v.ClassifyCode = ""
+	v.ClassifyName = ""
+	v.Introduce = ""
+	v.PosterUrl = ""
+	v.ProjectName = ""
+	v.Remark = ""
+	v.SubClassifyCode = ""
+	v.SubClassifyName = ""
+	v.ThirdClassifyCode = ""
+	v.ThirdClassifyName = ""
+	v.City = nil
+	v.Country = nil
+	v.IsHasSeat = 0
+	v.ProjectId = 0
+	v.ProjectStatus = 0
+	v.ProjectType = 0
+	v.Province = nil
+	v.Venue = nil
+	v.IsTest = 0
+	poolProjectDto.Put(v)
 }

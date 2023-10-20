@@ -2,6 +2,7 @@ package consignplatform
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoConsignplatformOrderCancelAPIRequest struct {
 // NewCainiaoConsignplatformOrderCancelRequest 初始化CainiaoConsignplatformOrderCancelAPIRequest对象
 func NewCainiaoConsignplatformOrderCancelRequest() *CainiaoConsignplatformOrderCancelAPIRequest {
 	return &CainiaoConsignplatformOrderCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoConsignplatformOrderCancelAPIRequest) Reset() {
+	r._cancelRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoConsignplatformOrderCancelAPIRequest) SetCancelRequest(_cancelRe
 // GetCancelRequest CancelRequest Getter
 func (r CainiaoConsignplatformOrderCancelAPIRequest) GetCancelRequest() *OrderCancelRequest {
 	return r._cancelRequest
+}
+
+var poolCainiaoConsignplatformOrderCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoConsignplatformOrderCancelRequest()
+	},
+}
+
+// GetCainiaoConsignplatformOrderCancelRequest 从 sync.Pool 获取 CainiaoConsignplatformOrderCancelAPIRequest
+func GetCainiaoConsignplatformOrderCancelAPIRequest() *CainiaoConsignplatformOrderCancelAPIRequest {
+	return poolCainiaoConsignplatformOrderCancelAPIRequest.Get().(*CainiaoConsignplatformOrderCancelAPIRequest)
+}
+
+// ReleaseCainiaoConsignplatformOrderCancelAPIRequest 将 CainiaoConsignplatformOrderCancelAPIRequest 放入 sync.Pool
+func ReleaseCainiaoConsignplatformOrderCancelAPIRequest(v *CainiaoConsignplatformOrderCancelAPIRequest) {
+	v.Reset()
+	poolCainiaoConsignplatformOrderCancelAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package drug
 
+import (
+	"sync"
+)
+
 // TopAlihealthDrugInstructionDto 结构体
 type TopAlihealthDrugInstructionDto struct {
 	// 功能主治
@@ -26,4 +30,32 @@ type TopAlihealthDrugInstructionDto struct {
 	PharmacologicalEffects string `json:"pharmacological_effects,omitempty" xml:"pharmacological_effects,omitempty"`
 	// 用法用量
 	Dosage string `json:"dosage,omitempty" xml:"dosage,omitempty"`
+}
+
+var poolTopAlihealthDrugInstructionDto = sync.Pool{
+	New: func() any {
+		return new(TopAlihealthDrugInstructionDto)
+	},
+}
+
+// GetTopAlihealthDrugInstructionDto() 从对象池中获取TopAlihealthDrugInstructionDto
+func GetTopAlihealthDrugInstructionDto() *TopAlihealthDrugInstructionDto {
+	return poolTopAlihealthDrugInstructionDto.Get().(*TopAlihealthDrugInstructionDto)
+}
+
+// ReleaseTopAlihealthDrugInstructionDto 释放TopAlihealthDrugInstructionDto
+func ReleaseTopAlihealthDrugInstructionDto(v *TopAlihealthDrugInstructionDto) {
+	v.Purpose = ""
+	v.Taboo = ""
+	v.Notes = ""
+	v.ChildReminder = ""
+	v.GravidaReminder = ""
+	v.OldManReminder = ""
+	v.Adr = ""
+	v.Ingredient = ""
+	v.Traits = ""
+	v.Interaction = ""
+	v.PharmacologicalEffects = ""
+	v.Dosage = ""
+	poolTopAlihealthDrugInstructionDto.Put(v)
 }

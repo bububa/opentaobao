@@ -2,6 +2,7 @@ package wms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoWlbWmsCainiaoBillQueryAPIRequest struct {
 // NewTaobaoWlbWmsCainiaoBillQueryRequest 初始化TaobaoWlbWmsCainiaoBillQueryAPIRequest对象
 func NewTaobaoWlbWmsCainiaoBillQueryRequest() *TaobaoWlbWmsCainiaoBillQueryAPIRequest {
 	return &TaobaoWlbWmsCainiaoBillQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWmsCainiaoBillQueryAPIRequest) Reset() {
+	r._orderType = ""
+	r._endModifiedTime = ""
+	r._startModifiedTime = ""
+	r._pageSize = 0
+	r._pageNo = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoWlbWmsCainiaoBillQueryAPIRequest) SetPageNo(_pageNo int64) error 
 // GetPageNo PageNo Getter
 func (r TaobaoWlbWmsCainiaoBillQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
+}
+
+var poolTaobaoWlbWmsCainiaoBillQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWmsCainiaoBillQueryRequest()
+	},
+}
+
+// GetTaobaoWlbWmsCainiaoBillQueryRequest 从 sync.Pool 获取 TaobaoWlbWmsCainiaoBillQueryAPIRequest
+func GetTaobaoWlbWmsCainiaoBillQueryAPIRequest() *TaobaoWlbWmsCainiaoBillQueryAPIRequest {
+	return poolTaobaoWlbWmsCainiaoBillQueryAPIRequest.Get().(*TaobaoWlbWmsCainiaoBillQueryAPIRequest)
+}
+
+// ReleaseTaobaoWlbWmsCainiaoBillQueryAPIRequest 将 TaobaoWlbWmsCainiaoBillQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWmsCainiaoBillQueryAPIRequest(v *TaobaoWlbWmsCainiaoBillQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWmsCainiaoBillQueryAPIRequest.Put(v)
 }

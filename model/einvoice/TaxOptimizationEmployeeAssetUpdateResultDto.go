@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // TaxOptimizationEmployeeAssetUpdateResultDto 结构体
 type TaxOptimizationEmployeeAssetUpdateResultDto struct {
 	// 承包商编码
@@ -18,4 +22,28 @@ type TaxOptimizationEmployeeAssetUpdateResultDto struct {
 	PreviousBindedAssetType string `json:"previous_binded_asset_type,omitempty" xml:"previous_binded_asset_type,omitempty"`
 	// 税优模式
 	TaxOptimizationMode string `json:"tax_optimization_mode,omitempty" xml:"tax_optimization_mode,omitempty"`
+}
+
+var poolTaxOptimizationEmployeeAssetUpdateResultDto = sync.Pool{
+	New: func() any {
+		return new(TaxOptimizationEmployeeAssetUpdateResultDto)
+	},
+}
+
+// GetTaxOptimizationEmployeeAssetUpdateResultDto() 从对象池中获取TaxOptimizationEmployeeAssetUpdateResultDto
+func GetTaxOptimizationEmployeeAssetUpdateResultDto() *TaxOptimizationEmployeeAssetUpdateResultDto {
+	return poolTaxOptimizationEmployeeAssetUpdateResultDto.Get().(*TaxOptimizationEmployeeAssetUpdateResultDto)
+}
+
+// ReleaseTaxOptimizationEmployeeAssetUpdateResultDto 释放TaxOptimizationEmployeeAssetUpdateResultDto
+func ReleaseTaxOptimizationEmployeeAssetUpdateResultDto(v *TaxOptimizationEmployeeAssetUpdateResultDto) {
+	v.ContractorCode = ""
+	v.CurrentBindedAssetSymbol = ""
+	v.CurrentBindedAssetType = ""
+	v.EmployerCode = ""
+	v.IdentificationInBelongingEmployer = ""
+	v.PreviousBindedAssetSymbol = ""
+	v.PreviousBindedAssetType = ""
+	v.TaxOptimizationMode = ""
+	poolTaxOptimizationEmployeeAssetUpdateResultDto.Put(v)
 }

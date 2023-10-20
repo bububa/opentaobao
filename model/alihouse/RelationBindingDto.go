@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // RelationBindingDto 结构体
 type RelationBindingDto struct {
 	// 货下挂的其他品列表 最大列表长度：100
@@ -12,4 +16,25 @@ type RelationBindingDto struct {
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 货所属外部项目店id
 	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
+}
+
+var poolRelationBindingDto = sync.Pool{
+	New: func() any {
+		return new(RelationBindingDto)
+	},
+}
+
+// GetRelationBindingDto() 从对象池中获取RelationBindingDto
+func GetRelationBindingDto() *RelationBindingDto {
+	return poolRelationBindingDto.Get().(*RelationBindingDto)
+}
+
+// ReleaseRelationBindingDto 释放RelationBindingDto
+func ReleaseRelationBindingDto(v *RelationBindingDto) {
+	v.Extend = v.Extend[:0]
+	v.RelationCargos = v.RelationCargos[:0]
+	v.OuterTid = ""
+	v.OuterId = ""
+	v.OuterStoreId = ""
+	poolRelationBindingDto.Put(v)
 }

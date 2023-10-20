@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoServindustryFinanceInsuranceAgreementSignAPIRequest struct {
 // NewTaobaoServindustryFinanceInsuranceAgreementSignRequest 初始化TaobaoServindustryFinanceInsuranceAgreementSignAPIRequest对象
 func NewTaobaoServindustryFinanceInsuranceAgreementSignRequest() *TaobaoServindustryFinanceInsuranceAgreementSignAPIRequest {
 	return &TaobaoServindustryFinanceInsuranceAgreementSignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoServindustryFinanceInsuranceAgreementSignAPIRequest) Reset() {
+	r._innerAgreementId = ""
+	r._uniqueCode = ""
+	r._outAgreementId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoServindustryFinanceInsuranceAgreementSignAPIRequest) SetOutAgreem
 // GetOutAgreementId OutAgreementId Getter
 func (r TaobaoServindustryFinanceInsuranceAgreementSignAPIRequest) GetOutAgreementId() string {
 	return r._outAgreementId
+}
+
+var poolTaobaoServindustryFinanceInsuranceAgreementSignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoServindustryFinanceInsuranceAgreementSignRequest()
+	},
+}
+
+// GetTaobaoServindustryFinanceInsuranceAgreementSignRequest 从 sync.Pool 获取 TaobaoServindustryFinanceInsuranceAgreementSignAPIRequest
+func GetTaobaoServindustryFinanceInsuranceAgreementSignAPIRequest() *TaobaoServindustryFinanceInsuranceAgreementSignAPIRequest {
+	return poolTaobaoServindustryFinanceInsuranceAgreementSignAPIRequest.Get().(*TaobaoServindustryFinanceInsuranceAgreementSignAPIRequest)
+}
+
+// ReleaseTaobaoServindustryFinanceInsuranceAgreementSignAPIRequest 将 TaobaoServindustryFinanceInsuranceAgreementSignAPIRequest 放入 sync.Pool
+func ReleaseTaobaoServindustryFinanceInsuranceAgreementSignAPIRequest(v *TaobaoServindustryFinanceInsuranceAgreementSignAPIRequest) {
+	v.Reset()
+	poolTaobaoServindustryFinanceInsuranceAgreementSignAPIRequest.Put(v)
 }

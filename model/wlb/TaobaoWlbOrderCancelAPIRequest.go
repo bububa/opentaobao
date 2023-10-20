@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoWlbOrderCancelAPIRequest struct {
 // NewTaobaoWlbOrderCancelRequest 初始化TaobaoWlbOrderCancelAPIRequest对象
 func NewTaobaoWlbOrderCancelRequest() *TaobaoWlbOrderCancelAPIRequest {
 	return &TaobaoWlbOrderCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbOrderCancelAPIRequest) Reset() {
+	r._wlbOrderCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoWlbOrderCancelAPIRequest) SetWlbOrderCode(_wlbOrderCode string) e
 // GetWlbOrderCode WlbOrderCode Getter
 func (r TaobaoWlbOrderCancelAPIRequest) GetWlbOrderCode() string {
 	return r._wlbOrderCode
+}
+
+var poolTaobaoWlbOrderCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbOrderCancelRequest()
+	},
+}
+
+// GetTaobaoWlbOrderCancelRequest 从 sync.Pool 获取 TaobaoWlbOrderCancelAPIRequest
+func GetTaobaoWlbOrderCancelAPIRequest() *TaobaoWlbOrderCancelAPIRequest {
+	return poolTaobaoWlbOrderCancelAPIRequest.Get().(*TaobaoWlbOrderCancelAPIRequest)
+}
+
+// ReleaseTaobaoWlbOrderCancelAPIRequest 将 TaobaoWlbOrderCancelAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbOrderCancelAPIRequest(v *TaobaoWlbOrderCancelAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbOrderCancelAPIRequest.Put(v)
 }

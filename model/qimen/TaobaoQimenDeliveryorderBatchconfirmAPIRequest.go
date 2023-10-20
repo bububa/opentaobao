@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenDeliveryorderBatchconfirmAPIRequest struct {
 // NewTaobaoQimenDeliveryorderBatchconfirmRequest 初始化TaobaoQimenDeliveryorderBatchconfirmAPIRequest对象
 func NewTaobaoQimenDeliveryorderBatchconfirmRequest() *TaobaoQimenDeliveryorderBatchconfirmAPIRequest {
 	return &TaobaoQimenDeliveryorderBatchconfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenDeliveryorderBatchconfirmAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -50,4 +57,21 @@ func (r *TaobaoQimenDeliveryorderBatchconfirmAPIRequest) SetRequest(_request *De
 // GetRequest Request Getter
 func (r TaobaoQimenDeliveryorderBatchconfirmAPIRequest) GetRequest() *DeliveryOrderBatchConfirmRequest {
 	return r._request
+}
+
+var poolTaobaoQimenDeliveryorderBatchconfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenDeliveryorderBatchconfirmRequest()
+	},
+}
+
+// GetTaobaoQimenDeliveryorderBatchconfirmRequest 从 sync.Pool 获取 TaobaoQimenDeliveryorderBatchconfirmAPIRequest
+func GetTaobaoQimenDeliveryorderBatchconfirmAPIRequest() *TaobaoQimenDeliveryorderBatchconfirmAPIRequest {
+	return poolTaobaoQimenDeliveryorderBatchconfirmAPIRequest.Get().(*TaobaoQimenDeliveryorderBatchconfirmAPIRequest)
+}
+
+// ReleaseTaobaoQimenDeliveryorderBatchconfirmAPIRequest 将 TaobaoQimenDeliveryorderBatchconfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenDeliveryorderBatchconfirmAPIRequest(v *TaobaoQimenDeliveryorderBatchconfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenDeliveryorderBatchconfirmAPIRequest.Put(v)
 }

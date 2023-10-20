@@ -1,9 +1,13 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // HotelXitemDo 结构体
 type HotelXitemDo struct {
 	// 酒+X 图片格式化信息
-	Pictures []HotelXitemPicture `json:"pictures,omitempty" xml:"pictures>hotel_xitem_picture,omitempty"`
+	Pictures []HotelXItemPicture `json:"pictures,omitempty" xml:"pictures>hotel_x_item_picture,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 修改时间
@@ -32,4 +36,35 @@ type HotelXitemDo struct {
 	DimensionType int64 `json:"dimension_type,omitempty" xml:"dimension_type,omitempty"`
 	//  审核状态-1：拒绝，0：审核中，1：审核通过
 	AuditStatus int64 `json:"audit_status,omitempty" xml:"audit_status,omitempty"`
+}
+
+var poolHotelXitemDo = sync.Pool{
+	New: func() any {
+		return new(HotelXitemDo)
+	},
+}
+
+// GetHotelXitemDo() 从对象池中获取HotelXitemDo
+func GetHotelXitemDo() *HotelXitemDo {
+	return poolHotelXitemDo.Get().(*HotelXitemDo)
+}
+
+// ReleaseHotelXitemDo 释放HotelXitemDo
+func ReleaseHotelXitemDo(v *HotelXitemDo) {
+	v.Pictures = v.Pictures[:0]
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.OutXCode = ""
+	v.SubTypeCode = ""
+	v.OutHid = ""
+	v.ShortName = ""
+	v.Time = ""
+	v.ItemDesc = ""
+	v.AuditRejectReason = ""
+	v.FeatureDetail = ""
+	v.Value = 0
+	v.Status = 0
+	v.DimensionType = 0
+	v.AuditStatus = 0
+	poolHotelXitemDo.Put(v)
 }

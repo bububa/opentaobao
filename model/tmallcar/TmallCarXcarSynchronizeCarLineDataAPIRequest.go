@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,14 +14,20 @@ import (
 type TmallCarXcarSynchronizeCarLineDataAPIRequest struct {
 	model.Params
 	// 入参对象
-	_paramXCarSysLineDTO *XcarSysLineDto
+	_paramXCarSysLineDTO *XCarSysLineDto
 }
 
 // NewTmallCarXcarSynchronizeCarLineDataRequest 初始化TmallCarXcarSynchronizeCarLineDataAPIRequest对象
 func NewTmallCarXcarSynchronizeCarLineDataRequest() *TmallCarXcarSynchronizeCarLineDataAPIRequest {
 	return &TmallCarXcarSynchronizeCarLineDataAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarXcarSynchronizeCarLineDataAPIRequest) Reset() {
+	r._paramXCarSysLineDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -42,13 +49,30 @@ func (r TmallCarXcarSynchronizeCarLineDataAPIRequest) GetRawParams() model.Param
 
 // SetParamXCarSysLineDTO is ParamXCarSysLineDTO Setter
 // 入参对象
-func (r *TmallCarXcarSynchronizeCarLineDataAPIRequest) SetParamXCarSysLineDTO(_paramXCarSysLineDTO *XcarSysLineDto) error {
+func (r *TmallCarXcarSynchronizeCarLineDataAPIRequest) SetParamXCarSysLineDTO(_paramXCarSysLineDTO *XCarSysLineDto) error {
 	r._paramXCarSysLineDTO = _paramXCarSysLineDTO
 	r.Set("param_x_car_sys_line_d_t_o", _paramXCarSysLineDTO)
 	return nil
 }
 
 // GetParamXCarSysLineDTO ParamXCarSysLineDTO Getter
-func (r TmallCarXcarSynchronizeCarLineDataAPIRequest) GetParamXCarSysLineDTO() *XcarSysLineDto {
+func (r TmallCarXcarSynchronizeCarLineDataAPIRequest) GetParamXCarSysLineDTO() *XCarSysLineDto {
 	return r._paramXCarSysLineDTO
+}
+
+var poolTmallCarXcarSynchronizeCarLineDataAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarXcarSynchronizeCarLineDataRequest()
+	},
+}
+
+// GetTmallCarXcarSynchronizeCarLineDataRequest 从 sync.Pool 获取 TmallCarXcarSynchronizeCarLineDataAPIRequest
+func GetTmallCarXcarSynchronizeCarLineDataAPIRequest() *TmallCarXcarSynchronizeCarLineDataAPIRequest {
+	return poolTmallCarXcarSynchronizeCarLineDataAPIRequest.Get().(*TmallCarXcarSynchronizeCarLineDataAPIRequest)
+}
+
+// ReleaseTmallCarXcarSynchronizeCarLineDataAPIRequest 将 TmallCarXcarSynchronizeCarLineDataAPIRequest 放入 sync.Pool
+func ReleaseTmallCarXcarSynchronizeCarLineDataAPIRequest(v *TmallCarXcarSynchronizeCarLineDataAPIRequest) {
+	v.Reset()
+	poolTmallCarXcarSynchronizeCarLineDataAPIRequest.Put(v)
 }

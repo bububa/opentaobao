@@ -2,6 +2,7 @@ package aliexpresssumaitong
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AliexpressTradeOrderOpenQueryAPIRequest struct {
 // NewAliexpressTradeOrderOpenQueryRequest 初始化AliexpressTradeOrderOpenQueryAPIRequest对象
 func NewAliexpressTradeOrderOpenQueryRequest() *AliexpressTradeOrderOpenQueryAPIRequest {
 	return &AliexpressTradeOrderOpenQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressTradeOrderOpenQueryAPIRequest) Reset() {
+	r._orderIds = r._orderIds[:0]
+	r._outIds = r._outIds[:0]
+	r._openAppKey = ""
+	r._bizCode = ""
+	r._buyerId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AliexpressTradeOrderOpenQueryAPIRequest) SetBuyerId(_buyerId int64) err
 // GetBuyerId BuyerId Getter
 func (r AliexpressTradeOrderOpenQueryAPIRequest) GetBuyerId() int64 {
 	return r._buyerId
+}
+
+var poolAliexpressTradeOrderOpenQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressTradeOrderOpenQueryRequest()
+	},
+}
+
+// GetAliexpressTradeOrderOpenQueryRequest 从 sync.Pool 获取 AliexpressTradeOrderOpenQueryAPIRequest
+func GetAliexpressTradeOrderOpenQueryAPIRequest() *AliexpressTradeOrderOpenQueryAPIRequest {
+	return poolAliexpressTradeOrderOpenQueryAPIRequest.Get().(*AliexpressTradeOrderOpenQueryAPIRequest)
+}
+
+// ReleaseAliexpressTradeOrderOpenQueryAPIRequest 将 AliexpressTradeOrderOpenQueryAPIRequest 放入 sync.Pool
+func ReleaseAliexpressTradeOrderOpenQueryAPIRequest(v *AliexpressTradeOrderOpenQueryAPIRequest) {
+	v.Reset()
+	poolAliexpressTradeOrderOpenQueryAPIRequest.Put(v)
 }

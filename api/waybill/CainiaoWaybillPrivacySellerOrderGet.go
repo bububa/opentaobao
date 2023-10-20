@@ -9,11 +9,6 @@ import (
 // cainiao.waybill.privacy.seller.order.get
 //
 // 商家查询最近100天隐私面单记录
-func CainiaoWaybillPrivacySellerOrderGet(clt *core.SDKClient, req *waybill.CainiaoWaybillPrivacySellerOrderGetAPIRequest, session string) (*waybill.CainiaoWaybillPrivacySellerOrderGetAPIResponse, error) {
-	var resp waybill.CainiaoWaybillPrivacySellerOrderGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoWaybillPrivacySellerOrderGet(clt *core.SDKClient, req *waybill.CainiaoWaybillPrivacySellerOrderGetAPIRequest, resp *waybill.CainiaoWaybillPrivacySellerOrderGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

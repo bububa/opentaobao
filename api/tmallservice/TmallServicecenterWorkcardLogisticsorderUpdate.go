@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.workcard.logisticsorder.update
 //
 // 天猫寄送类服务对接外部物流服务商回传物流状态信息
-func TmallServicecenterWorkcardLogisticsorderUpdate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardLogisticsorderUpdateAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkcardLogisticsorderUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkcardLogisticsorderUpdate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest, resp *tmallservice.TmallServicecenterWorkcardLogisticsorderUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

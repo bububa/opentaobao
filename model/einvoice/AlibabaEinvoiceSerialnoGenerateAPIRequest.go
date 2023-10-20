@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaEinvoiceSerialnoGenerateAPIRequest struct {
 // NewAlibabaEinvoiceSerialnoGenerateRequest 初始化AlibabaEinvoiceSerialnoGenerateAPIRequest对象
 func NewAlibabaEinvoiceSerialnoGenerateRequest() *AlibabaEinvoiceSerialnoGenerateAPIRequest {
 	return &AlibabaEinvoiceSerialnoGenerateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceSerialnoGenerateAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaEinvoiceSerialnoGenerateAPIRequest) GetApiParams(params url.Value
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaEinvoiceSerialnoGenerateAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaEinvoiceSerialnoGenerateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceSerialnoGenerateRequest()
+	},
+}
+
+// GetAlibabaEinvoiceSerialnoGenerateRequest 从 sync.Pool 获取 AlibabaEinvoiceSerialnoGenerateAPIRequest
+func GetAlibabaEinvoiceSerialnoGenerateAPIRequest() *AlibabaEinvoiceSerialnoGenerateAPIRequest {
+	return poolAlibabaEinvoiceSerialnoGenerateAPIRequest.Get().(*AlibabaEinvoiceSerialnoGenerateAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceSerialnoGenerateAPIRequest 将 AlibabaEinvoiceSerialnoGenerateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceSerialnoGenerateAPIRequest(v *AlibabaEinvoiceSerialnoGenerateAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceSerialnoGenerateAPIRequest.Put(v)
 }

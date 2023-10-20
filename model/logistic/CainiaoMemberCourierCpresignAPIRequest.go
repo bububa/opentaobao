@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoMemberCourierCpresignAPIRequest struct {
 // NewCainiaoMemberCourierCpresignRequest 初始化CainiaoMemberCourierCpresignAPIRequest对象
 func NewCainiaoMemberCourierCpresignRequest() *CainiaoMemberCourierCpresignAPIRequest {
 	return &CainiaoMemberCourierCpresignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoMemberCourierCpresignAPIRequest) Reset() {
+	r._accountId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoMemberCourierCpresignAPIRequest) SetAccountId(_accountId int64) 
 // GetAccountId AccountId Getter
 func (r CainiaoMemberCourierCpresignAPIRequest) GetAccountId() int64 {
 	return r._accountId
+}
+
+var poolCainiaoMemberCourierCpresignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoMemberCourierCpresignRequest()
+	},
+}
+
+// GetCainiaoMemberCourierCpresignRequest 从 sync.Pool 获取 CainiaoMemberCourierCpresignAPIRequest
+func GetCainiaoMemberCourierCpresignAPIRequest() *CainiaoMemberCourierCpresignAPIRequest {
+	return poolCainiaoMemberCourierCpresignAPIRequest.Get().(*CainiaoMemberCourierCpresignAPIRequest)
+}
+
+// ReleaseCainiaoMemberCourierCpresignAPIRequest 将 CainiaoMemberCourierCpresignAPIRequest 放入 sync.Pool
+func ReleaseCainiaoMemberCourierCpresignAPIRequest(v *CainiaoMemberCourierCpresignAPIRequest) {
+	v.Reset()
+	poolCainiaoMemberCourierCpresignAPIRequest.Put(v)
 }

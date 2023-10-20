@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -28,6 +29,12 @@ type TmallServicecenterServicestoreDeleteservicestoreAPIResponse struct {
 	TmallServicecenterServicestoreDeleteservicestoreAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallServicecenterServicestoreDeleteservicestoreAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServicecenterServicestoreDeleteservicestoreAPIResponseModel).Reset()
+}
+
 // TmallServicecenterServicestoreDeleteservicestoreAPIResponseModel is 删除网点 成功返回结果
 type TmallServicecenterServicestoreDeleteservicestoreAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_servicestore_deleteservicestore_response"`
@@ -35,4 +42,27 @@ type TmallServicecenterServicestoreDeleteservicestoreAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterServicestoreDeleteservicestoreAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallServicecenterServicestoreDeleteservicestoreAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterServicestoreDeleteservicestoreAPIResponse)
+	},
+}
+
+// GetTmallServicecenterServicestoreDeleteservicestoreAPIResponse 从 sync.Pool 获取 TmallServicecenterServicestoreDeleteservicestoreAPIResponse
+func GetTmallServicecenterServicestoreDeleteservicestoreAPIResponse() *TmallServicecenterServicestoreDeleteservicestoreAPIResponse {
+	return poolTmallServicecenterServicestoreDeleteservicestoreAPIResponse.Get().(*TmallServicecenterServicestoreDeleteservicestoreAPIResponse)
+}
+
+// ReleaseTmallServicecenterServicestoreDeleteservicestoreAPIResponse 将 TmallServicecenterServicestoreDeleteservicestoreAPIResponse 保存到 sync.Pool
+func ReleaseTmallServicecenterServicestoreDeleteservicestoreAPIResponse(v *TmallServicecenterServicestoreDeleteservicestoreAPIResponse) {
+	v.Reset()
+	poolTmallServicecenterServicestoreDeleteservicestoreAPIResponse.Put(v)
 }

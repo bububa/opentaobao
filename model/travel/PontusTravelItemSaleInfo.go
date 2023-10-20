@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // PontusTravelItemSaleInfo 结构体
 type PontusTravelItemSaleInfo struct {
 	// 关联商品与店铺类目 结构:&amp;quot;,cid1,cid2,...,&amp;quot;，如果店铺类目存在二级类目，必须传入子类目cids。  支持的最大列表长度为：256； 关于如何获取cid，请参考该接口：http://open.taobao.com/doc2/apiDetail.htm?apiId=65
@@ -36,4 +40,37 @@ type PontusTravelItemSaleInfo struct {
 	HasShowcase bool `json:"has_showcase,omitempty" xml:"has_showcase,omitempty"`
 	// 电子凭证是否支持系统自动退款，true则表示支持
 	SupportOnsaleAutoRefund bool `json:"support_onsale_auto_refund,omitempty" xml:"support_onsale_auto_refund,omitempty"`
+}
+
+var poolPontusTravelItemSaleInfo = sync.Pool{
+	New: func() any {
+		return new(PontusTravelItemSaleInfo)
+	},
+}
+
+// GetPontusTravelItemSaleInfo() 从对象池中获取PontusTravelItemSaleInfo
+func GetPontusTravelItemSaleInfo() *PontusTravelItemSaleInfo {
+	return poolPontusTravelItemSaleInfo.Get().(*PontusTravelItemSaleInfo)
+}
+
+// ReleasePontusTravelItemSaleInfo 释放PontusTravelItemSaleInfo
+func ReleasePontusTravelItemSaleInfo(v *PontusTravelItemSaleInfo) {
+	v.SellerCids = v.SellerCids[:0]
+	v.BcStartDate = ""
+	v.EndComboDate = ""
+	v.Merchant = ""
+	v.NetworkId = ""
+	v.SecondKill = ""
+	v.StartComboDate = ""
+	v.Duration = 0
+	v.SaleType = 0
+	v.SubStock = 0
+	v.ItemEleCertInfo = nil
+	v.ConfirmType = 0
+	v.ConfirmTime = 0
+	v.HasDiscount = false
+	v.HasInvoice = false
+	v.HasShowcase = false
+	v.SupportOnsaleAutoRefund = false
+	poolPontusTravelItemSaleInfo.Put(v)
 }

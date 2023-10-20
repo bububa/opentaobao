@@ -1,5 +1,9 @@
 package mozi
 
+import (
+	"sync"
+)
+
 // GetEmployeeTenantAdminInfoResult 结构体
 type GetEmployeeTenantAdminInfoResult struct {
 	// requestId
@@ -14,4 +18,26 @@ type GetEmployeeTenantAdminInfoResult struct {
 	Admin bool `json:"admin,omitempty" xml:"admin,omitempty"`
 	// 是否主管理员
 	Primary bool `json:"primary,omitempty" xml:"primary,omitempty"`
+}
+
+var poolGetEmployeeTenantAdminInfoResult = sync.Pool{
+	New: func() any {
+		return new(GetEmployeeTenantAdminInfoResult)
+	},
+}
+
+// GetGetEmployeeTenantAdminInfoResult() 从对象池中获取GetEmployeeTenantAdminInfoResult
+func GetGetEmployeeTenantAdminInfoResult() *GetEmployeeTenantAdminInfoResult {
+	return poolGetEmployeeTenantAdminInfoResult.Get().(*GetEmployeeTenantAdminInfoResult)
+}
+
+// ReleaseGetEmployeeTenantAdminInfoResult 释放GetEmployeeTenantAdminInfoResult
+func ReleaseGetEmployeeTenantAdminInfoResult(v *GetEmployeeTenantAdminInfoResult) {
+	v.RequestId = ""
+	v.ResponseMessage = ""
+	v.ResponseCode = ""
+	v.Success = false
+	v.Admin = false
+	v.Primary = false
+	poolGetEmployeeTenantAdminInfoResult.Put(v)
 }

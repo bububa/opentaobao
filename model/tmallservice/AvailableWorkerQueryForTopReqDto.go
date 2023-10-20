@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // AvailableWorkerQueryForTopReqDto 结构体
 type AvailableWorkerQueryForTopReqDto struct {
 	// 服务编码
@@ -14,4 +18,26 @@ type AvailableWorkerQueryForTopReqDto struct {
 	EndDate string `json:"end_date,omitempty" xml:"end_date,omitempty"`
 	// 地址编码
 	AreaCode int64 `json:"area_code,omitempty" xml:"area_code,omitempty"`
+}
+
+var poolAvailableWorkerQueryForTopReqDto = sync.Pool{
+	New: func() any {
+		return new(AvailableWorkerQueryForTopReqDto)
+	},
+}
+
+// GetAvailableWorkerQueryForTopReqDto() 从对象池中获取AvailableWorkerQueryForTopReqDto
+func GetAvailableWorkerQueryForTopReqDto() *AvailableWorkerQueryForTopReqDto {
+	return poolAvailableWorkerQueryForTopReqDto.Get().(*AvailableWorkerQueryForTopReqDto)
+}
+
+// ReleaseAvailableWorkerQueryForTopReqDto 释放AvailableWorkerQueryForTopReqDto
+func ReleaseAvailableWorkerQueryForTopReqDto(v *AvailableWorkerQueryForTopReqDto) {
+	v.ServiceCode = ""
+	v.ServiceSkuCode = ""
+	v.ServiceStoreCode = ""
+	v.StartDate = ""
+	v.EndDate = ""
+	v.AreaCode = 0
+	poolAvailableWorkerQueryForTopReqDto.Put(v)
 }

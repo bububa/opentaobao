@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -22,8 +23,15 @@ type TaobaoTradePostageUpdateAPIRequest struct {
 // NewTaobaoTradePostageUpdateRequest 初始化TaobaoTradePostageUpdateAPIRequest对象
 func NewTaobaoTradePostageUpdateRequest() *TaobaoTradePostageUpdateAPIRequest {
 	return &TaobaoTradePostageUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTradePostageUpdateAPIRequest) Reset() {
+	r._postFee = ""
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -67,4 +75,21 @@ func (r *TaobaoTradePostageUpdateAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoTradePostageUpdateAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoTradePostageUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTradePostageUpdateRequest()
+	},
+}
+
+// GetTaobaoTradePostageUpdateRequest 从 sync.Pool 获取 TaobaoTradePostageUpdateAPIRequest
+func GetTaobaoTradePostageUpdateAPIRequest() *TaobaoTradePostageUpdateAPIRequest {
+	return poolTaobaoTradePostageUpdateAPIRequest.Get().(*TaobaoTradePostageUpdateAPIRequest)
+}
+
+// ReleaseTaobaoTradePostageUpdateAPIRequest 将 TaobaoTradePostageUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTradePostageUpdateAPIRequest(v *TaobaoTradePostageUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoTradePostageUpdateAPIRequest.Put(v)
 }

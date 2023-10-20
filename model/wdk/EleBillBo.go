@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // EleBillBo 结构体
 type EleBillBo struct {
 	// 订单列表
@@ -18,4 +22,28 @@ type EleBillBo struct {
 	PayEntity string `json:"pay_entity,omitempty" xml:"pay_entity,omitempty"`
 	// 订单费用明细
 	OrderDetailFee *OrderDetailFee `json:"order_detail_fee,omitempty" xml:"order_detail_fee,omitempty"`
+}
+
+var poolEleBillBo = sync.Pool{
+	New: func() any {
+		return new(EleBillBo)
+	},
+}
+
+// GetEleBillBo() 从对象池中获取EleBillBo
+func GetEleBillBo() *EleBillBo {
+	return poolEleBillBo.Get().(*EleBillBo)
+}
+
+// ReleaseEleBillBo 释放EleBillBo
+func ReleaseEleBillBo(v *EleBillBo) {
+	v.OrderList = v.OrderList[:0]
+	v.Date = ""
+	v.ShopId = ""
+	v.ExpendFee = ""
+	v.OrderCount = ""
+	v.PayFee = ""
+	v.PayEntity = ""
+	v.OrderDetailFee = nil
+	poolEleBillBo.Put(v)
 }

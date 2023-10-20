@@ -9,11 +9,6 @@ import (
 // taobao.nlp.word
 //
 // 提供文本语言处理中的词法分析功能,开放中文分词和词权重计算功能。
-func TaobaoNlpWord(clt *core.SDKClient, req *nlp.TaobaoNlpWordAPIRequest, session string) (*nlp.TaobaoNlpWordAPIResponse, error) {
-	var resp nlp.TaobaoNlpWordAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoNlpWord(clt *core.SDKClient, req *nlp.TaobaoNlpWordAPIRequest, resp *nlp.TaobaoNlpWordAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

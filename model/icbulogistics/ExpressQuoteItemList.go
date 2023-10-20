@@ -1,5 +1,9 @@
 package icbulogistics
 
+import (
+	"sync"
+)
+
 // ExpressQuoteItemList 结构体
 type ExpressQuoteItemList struct {
 	// 费用编码
@@ -16,4 +20,27 @@ type ExpressQuoteItemList struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 价格信息
 	SalesAmount *Money `json:"sales_amount,omitempty" xml:"sales_amount,omitempty"`
+}
+
+var poolExpressQuoteItemList = sync.Pool{
+	New: func() any {
+		return new(ExpressQuoteItemList)
+	},
+}
+
+// GetExpressQuoteItemList() 从对象池中获取ExpressQuoteItemList
+func GetExpressQuoteItemList() *ExpressQuoteItemList {
+	return poolExpressQuoteItemList.Get().(*ExpressQuoteItemList)
+}
+
+// ReleaseExpressQuoteItemList 释放ExpressQuoteItemList
+func ReleaseExpressQuoteItemList(v *ExpressQuoteItemList) {
+	v.Code = ""
+	v.Name = ""
+	v.ChargeDesc = ""
+	v.Currency = ""
+	v.Type = ""
+	v.Quantity = 0
+	v.SalesAmount = nil
+	poolExpressQuoteItemList.Put(v)
 }

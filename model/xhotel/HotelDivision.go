@@ -1,5 +1,9 @@
 package xhotel
 
+import (
+	"sync"
+)
+
 // HotelDivision 结构体
 type HotelDivision struct {
 	// 城市名称
@@ -16,4 +20,27 @@ type HotelDivision struct {
 	ParentCode int64 `json:"parent_code,omitempty" xml:"parent_code,omitempty"`
 	// code是否可用来搜索酒店，true：code可直接用于搜索酒店，false: code不可直接用于搜索酒店。
 	Searchable bool `json:"searchable,omitempty" xml:"searchable,omitempty"`
+}
+
+var poolHotelDivision = sync.Pool{
+	New: func() any {
+		return new(HotelDivision)
+	},
+}
+
+// GetHotelDivision() 从对象池中获取HotelDivision
+func GetHotelDivision() *HotelDivision {
+	return poolHotelDivision.Get().(*HotelDivision)
+}
+
+// ReleaseHotelDivision 释放HotelDivision
+func ReleaseHotelDivision(v *HotelDivision) {
+	v.Name = ""
+	v.Region = 0
+	v.Code = 0
+	v.Level = 0
+	v.Type = 0
+	v.ParentCode = 0
+	v.Searchable = false
+	poolHotelDivision.Put(v)
 }

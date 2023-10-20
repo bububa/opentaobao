@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // TaobaoTbkDgCpaActivityDetailResult 结构体
 type TaobaoTbkDgCpaActivityDetailResult struct {
 	// 错误代码
@@ -16,4 +20,27 @@ type TaobaoTbkDgCpaActivityDetailResult struct {
 	BizErrorCode int64 `json:"biz_error_code,omitempty" xml:"biz_error_code,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoTbkDgCpaActivityDetailResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkDgCpaActivityDetailResult)
+	},
+}
+
+// GetTaobaoTbkDgCpaActivityDetailResult() 从对象池中获取TaobaoTbkDgCpaActivityDetailResult
+func GetTaobaoTbkDgCpaActivityDetailResult() *TaobaoTbkDgCpaActivityDetailResult {
+	return poolTaobaoTbkDgCpaActivityDetailResult.Get().(*TaobaoTbkDgCpaActivityDetailResult)
+}
+
+// ReleaseTaobaoTbkDgCpaActivityDetailResult 释放TaobaoTbkDgCpaActivityDetailResult
+func ReleaseTaobaoTbkDgCpaActivityDetailResult(v *TaobaoTbkDgCpaActivityDetailResult) {
+	v.BizErrorFeature = ""
+	v.BizErrorDesc = ""
+	v.ResultMsg = ""
+	v.Data = nil
+	v.ResultCode = 0
+	v.BizErrorCode = 0
+	v.Success = false
+	poolTaobaoTbkDgCpaActivityDetailResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // Wdkopenpurchasepricesubs 结构体
 type Wdkopenpurchasepricesubs struct {
 	// 确认标识，0:核对 1:确认，必填
@@ -14,4 +18,26 @@ type Wdkopenpurchasepricesubs struct {
 	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
 	// 淘系子订单号，必填
 	TbSubOrderId string `json:"tb_sub_order_id,omitempty" xml:"tb_sub_order_id,omitempty"`
+}
+
+var poolWdkopenpurchasepricesubs = sync.Pool{
+	New: func() any {
+		return new(Wdkopenpurchasepricesubs)
+	},
+}
+
+// GetWdkopenpurchasepricesubs() 从对象池中获取Wdkopenpurchasepricesubs
+func GetWdkopenpurchasepricesubs() *Wdkopenpurchasepricesubs {
+	return poolWdkopenpurchasepricesubs.Get().(*Wdkopenpurchasepricesubs)
+}
+
+// ReleaseWdkopenpurchasepricesubs 释放Wdkopenpurchasepricesubs
+func ReleaseWdkopenpurchasepricesubs(v *Wdkopenpurchasepricesubs) {
+	v.Confirm = ""
+	v.PriceWithoutTax = ""
+	v.PriceWithTax = ""
+	v.TaxRate = ""
+	v.SkuCode = ""
+	v.TbSubOrderId = ""
+	poolWdkopenpurchasepricesubs.Put(v)
 }

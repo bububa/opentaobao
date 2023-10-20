@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest struct {
 // NewAlibabaAlihealthDrugcodeDrugfactoryGetblindresultRequest 初始化AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest对象
 func NewAlibabaAlihealthDrugcodeDrugfactoryGetblindresultRequest() *AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest {
 	return &AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest) Reset() {
+	r._refEntId = ""
+	r._blindFileName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest) SetBlindFi
 // GetBlindFileName BlindFileName Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest) GetBlindFileName() string {
 	return r._blindFileName
+}
+
+var poolAlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugcodeDrugfactoryGetblindresultRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugcodeDrugfactoryGetblindresultRequest 从 sync.Pool 获取 AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest
+func GetAlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest() *AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest {
+	return poolAlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest.Get().(*AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest 将 AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest(v *AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest.Put(v)
 }

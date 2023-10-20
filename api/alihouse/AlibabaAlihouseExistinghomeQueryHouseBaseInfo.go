@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghome.query.house.base.info
 //
 // 查询房源基本信息
-func AlibabaAlihouseExistinghomeQueryHouseBaseInfo(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeQueryHouseBaseInfoAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeQueryHouseBaseInfoAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeQueryHouseBaseInfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghomeQueryHouseBaseInfo(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeQueryHouseBaseInfoAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeQueryHouseBaseInfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package jipiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoJipiaoAgentOrderBdetailAPIResponse struct {
 	TaobaoJipiaoAgentOrderBdetailAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoJipiaoAgentOrderBdetailAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoJipiaoAgentOrderBdetailAPIResponseModel).Reset()
+}
+
 // TaobaoJipiaoAgentOrderBdetailAPIResponseModel is 【机票代理商订单】采购订单详情 成功返回结果
 type TaobaoJipiaoAgentOrderBdetailAPIResponseModel struct {
 	XMLName xml.Name `xml:"jipiao_agent_order_bdetail_response"`
@@ -24,4 +31,28 @@ type TaobaoJipiaoAgentOrderBdetailAPIResponseModel struct {
 	Orders []TripOrder `json:"orders,omitempty" xml:"orders>trip_order,omitempty"`
 	// 返回操作成功失败信息
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoJipiaoAgentOrderBdetailAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Orders = m.Orders[:0]
+	m.IsSuccess = false
+}
+
+var poolTaobaoJipiaoAgentOrderBdetailAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoJipiaoAgentOrderBdetailAPIResponse)
+	},
+}
+
+// GetTaobaoJipiaoAgentOrderBdetailAPIResponse 从 sync.Pool 获取 TaobaoJipiaoAgentOrderBdetailAPIResponse
+func GetTaobaoJipiaoAgentOrderBdetailAPIResponse() *TaobaoJipiaoAgentOrderBdetailAPIResponse {
+	return poolTaobaoJipiaoAgentOrderBdetailAPIResponse.Get().(*TaobaoJipiaoAgentOrderBdetailAPIResponse)
+}
+
+// ReleaseTaobaoJipiaoAgentOrderBdetailAPIResponse 将 TaobaoJipiaoAgentOrderBdetailAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoJipiaoAgentOrderBdetailAPIResponse(v *TaobaoJipiaoAgentOrderBdetailAPIResponse) {
+	v.Reset()
+	poolTaobaoJipiaoAgentOrderBdetailAPIResponse.Put(v)
 }

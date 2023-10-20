@@ -2,6 +2,7 @@ package mc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AliyunUnimktTaskChargeLaunchAPIResponse struct {
 	model.CommonResponse
 	AliyunUnimktTaskChargeLaunchAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AliyunUnimktTaskChargeLaunchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliyunUnimktTaskChargeLaunchAPIResponseModel).Reset()
 }
 
 // AliyunUnimktTaskChargeLaunchAPIResponseModel is 云码权益查询 成功返回结果
@@ -28,4 +35,30 @@ type AliyunUnimktTaskChargeLaunchAPIResponseModel struct {
 	TaskErrorCode int64 `json:"task_error_code,omitempty" xml:"task_error_code,omitempty"`
 	// 执行结果
 	TaskSuccess bool `json:"task_success,omitempty" xml:"task_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliyunUnimktTaskChargeLaunchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorMsg = ""
+	m.Result = ""
+	m.TaskErrorCode = 0
+	m.TaskSuccess = false
+}
+
+var poolAliyunUnimktTaskChargeLaunchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliyunUnimktTaskChargeLaunchAPIResponse)
+	},
+}
+
+// GetAliyunUnimktTaskChargeLaunchAPIResponse 从 sync.Pool 获取 AliyunUnimktTaskChargeLaunchAPIResponse
+func GetAliyunUnimktTaskChargeLaunchAPIResponse() *AliyunUnimktTaskChargeLaunchAPIResponse {
+	return poolAliyunUnimktTaskChargeLaunchAPIResponse.Get().(*AliyunUnimktTaskChargeLaunchAPIResponse)
+}
+
+// ReleaseAliyunUnimktTaskChargeLaunchAPIResponse 将 AliyunUnimktTaskChargeLaunchAPIResponse 保存到 sync.Pool
+func ReleaseAliyunUnimktTaskChargeLaunchAPIResponse(v *AliyunUnimktTaskChargeLaunchAPIResponse) {
+	v.Reset()
+	poolAliyunUnimktTaskChargeLaunchAPIResponse.Put(v)
 }

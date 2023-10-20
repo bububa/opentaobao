@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoQimenTagItemsQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenTagItemsQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoQimenTagItemsQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoQimenTagItemsQueryAPIResponseModel).Reset()
 }
 
 // TaobaoQimenTagItemsQueryAPIResponseModel is 打标结果查询-标维度 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoQimenTagItemsQueryAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// tagType
 	TagType string `json:"tag_type,omitempty" xml:"tag_type,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoQimenTagItemsQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ItemIds = m.ItemIds[:0]
+	m.Flag = ""
+	m.Message = ""
+	m.TagType = ""
+}
+
+var poolTaobaoQimenTagItemsQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenTagItemsQueryAPIResponse)
+	},
+}
+
+// GetTaobaoQimenTagItemsQueryAPIResponse 从 sync.Pool 获取 TaobaoQimenTagItemsQueryAPIResponse
+func GetTaobaoQimenTagItemsQueryAPIResponse() *TaobaoQimenTagItemsQueryAPIResponse {
+	return poolTaobaoQimenTagItemsQueryAPIResponse.Get().(*TaobaoQimenTagItemsQueryAPIResponse)
+}
+
+// ReleaseTaobaoQimenTagItemsQueryAPIResponse 将 TaobaoQimenTagItemsQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoQimenTagItemsQueryAPIResponse(v *TaobaoQimenTagItemsQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoQimenTagItemsQueryAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package flight
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripPolicySpecialUploadAPIRequest struct {
 // NewAlitripPolicySpecialUploadRequest 初始化AlitripPolicySpecialUploadAPIRequest对象
 func NewAlitripPolicySpecialUploadRequest() *AlitripPolicySpecialUploadAPIRequest {
 	return &AlitripPolicySpecialUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripPolicySpecialUploadAPIRequest) Reset() {
+	r._paramPolicyCreateRequestDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripPolicySpecialUploadAPIRequest) SetParamPolicyCreateRequestDTO(_p
 // GetParamPolicyCreateRequestDTO ParamPolicyCreateRequestDTO Getter
 func (r AlitripPolicySpecialUploadAPIRequest) GetParamPolicyCreateRequestDTO() *PolicyCreateRequestDto {
 	return r._paramPolicyCreateRequestDTO
+}
+
+var poolAlitripPolicySpecialUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripPolicySpecialUploadRequest()
+	},
+}
+
+// GetAlitripPolicySpecialUploadRequest 从 sync.Pool 获取 AlitripPolicySpecialUploadAPIRequest
+func GetAlitripPolicySpecialUploadAPIRequest() *AlitripPolicySpecialUploadAPIRequest {
+	return poolAlitripPolicySpecialUploadAPIRequest.Get().(*AlitripPolicySpecialUploadAPIRequest)
+}
+
+// ReleaseAlitripPolicySpecialUploadAPIRequest 将 AlitripPolicySpecialUploadAPIRequest 放入 sync.Pool
+func ReleaseAlitripPolicySpecialUploadAPIRequest(v *AlitripPolicySpecialUploadAPIRequest) {
+	v.Reset()
+	poolAlitripPolicySpecialUploadAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package zqs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaZqsFulfillCompleteAPIRequest struct {
 // NewAlibabaZqsFulfillCompleteRequest 初始化AlibabaZqsFulfillCompleteAPIRequest对象
 func NewAlibabaZqsFulfillCompleteRequest() *AlibabaZqsFulfillCompleteAPIRequest {
 	return &AlibabaZqsFulfillCompleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaZqsFulfillCompleteAPIRequest) Reset() {
+	r._sequenceNo = 0
+	r._mainBizOrderId = 0
+	r._subBizOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaZqsFulfillCompleteAPIRequest) SetSubBizOrderId(_subBizOrderId in
 // GetSubBizOrderId SubBizOrderId Getter
 func (r AlibabaZqsFulfillCompleteAPIRequest) GetSubBizOrderId() int64 {
 	return r._subBizOrderId
+}
+
+var poolAlibabaZqsFulfillCompleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaZqsFulfillCompleteRequest()
+	},
+}
+
+// GetAlibabaZqsFulfillCompleteRequest 从 sync.Pool 获取 AlibabaZqsFulfillCompleteAPIRequest
+func GetAlibabaZqsFulfillCompleteAPIRequest() *AlibabaZqsFulfillCompleteAPIRequest {
+	return poolAlibabaZqsFulfillCompleteAPIRequest.Get().(*AlibabaZqsFulfillCompleteAPIRequest)
+}
+
+// ReleaseAlibabaZqsFulfillCompleteAPIRequest 将 AlibabaZqsFulfillCompleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaZqsFulfillCompleteAPIRequest(v *AlibabaZqsFulfillCompleteAPIRequest) {
+	v.Reset()
+	poolAlibabaZqsFulfillCompleteAPIRequest.Put(v)
 }

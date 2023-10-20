@@ -9,11 +9,6 @@ import (
 // taobao.fenxiao.productcat.add
 //
 // 新增产品线
-func TaobaoFenxiaoProductcatAdd(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductcatAddAPIRequest, session string) (*fenxiao.TaobaoFenxiaoProductcatAddAPIResponse, error) {
-	var resp fenxiao.TaobaoFenxiaoProductcatAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFenxiaoProductcatAdd(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductcatAddAPIRequest, resp *fenxiao.TaobaoFenxiaoProductcatAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

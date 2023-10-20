@@ -9,11 +9,6 @@ import (
 // taobao.baike.import.zhubao.data
 //
 // 用于接入外部数据录入到商品百科中
-func TaobaoBaikeImportZhubaoData(clt *core.SDKClient, req *product.TaobaoBaikeImportZhubaoDataAPIRequest, session string) (*product.TaobaoBaikeImportZhubaoDataAPIResponse, error) {
-	var resp product.TaobaoBaikeImportZhubaoDataAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBaikeImportZhubaoData(clt *core.SDKClient, req *product.TaobaoBaikeImportZhubaoDataAPIRequest, resp *product.TaobaoBaikeImportZhubaoDataAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

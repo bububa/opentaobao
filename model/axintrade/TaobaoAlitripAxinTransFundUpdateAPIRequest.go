@@ -2,6 +2,7 @@ package axintrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlitripAxinTransFundUpdateAPIRequest struct {
 // NewTaobaoAlitripAxinTransFundUpdateRequest 初始化TaobaoAlitripAxinTransFundUpdateAPIRequest对象
 func NewTaobaoAlitripAxinTransFundUpdateRequest() *TaobaoAlitripAxinTransFundUpdateAPIRequest {
 	return &TaobaoAlitripAxinTransFundUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripAxinTransFundUpdateAPIRequest) Reset() {
+	r._axinFundUpdateDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlitripAxinTransFundUpdateAPIRequest) SetAxinFundUpdateDTO(_axinF
 // GetAxinFundUpdateDTO AxinFundUpdateDTO Getter
 func (r TaobaoAlitripAxinTransFundUpdateAPIRequest) GetAxinFundUpdateDTO() *AxinFundUpdateDto {
 	return r._axinFundUpdateDTO
+}
+
+var poolTaobaoAlitripAxinTransFundUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripAxinTransFundUpdateRequest()
+	},
+}
+
+// GetTaobaoAlitripAxinTransFundUpdateRequest 从 sync.Pool 获取 TaobaoAlitripAxinTransFundUpdateAPIRequest
+func GetTaobaoAlitripAxinTransFundUpdateAPIRequest() *TaobaoAlitripAxinTransFundUpdateAPIRequest {
+	return poolTaobaoAlitripAxinTransFundUpdateAPIRequest.Get().(*TaobaoAlitripAxinTransFundUpdateAPIRequest)
+}
+
+// ReleaseTaobaoAlitripAxinTransFundUpdateAPIRequest 将 TaobaoAlitripAxinTransFundUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripAxinTransFundUpdateAPIRequest(v *TaobaoAlitripAxinTransFundUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripAxinTransFundUpdateAPIRequest.Put(v)
 }

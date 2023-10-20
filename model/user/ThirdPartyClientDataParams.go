@@ -1,5 +1,9 @@
 package user
 
+import (
+	"sync"
+)
+
 // ThirdPartyClientDataParams 结构体
 type ThirdPartyClientDataParams struct {
 	// 扩展字段,这里可支持扩展，但是需要报备
@@ -20,4 +24,29 @@ type ThirdPartyClientDataParams struct {
 	ServiceType string `json:"service_type,omitempty" xml:"service_type,omitempty"`
 	// 客户数据
 	Client *Client `json:"client,omitempty" xml:"client,omitempty"`
+}
+
+var poolThirdPartyClientDataParams = sync.Pool{
+	New: func() any {
+		return new(ThirdPartyClientDataParams)
+	},
+}
+
+// GetThirdPartyClientDataParams() 从对象池中获取ThirdPartyClientDataParams
+func GetThirdPartyClientDataParams() *ThirdPartyClientDataParams {
+	return poolThirdPartyClientDataParams.Get().(*ThirdPartyClientDataParams)
+}
+
+// ReleaseThirdPartyClientDataParams 释放ThirdPartyClientDataParams
+func ReleaseThirdPartyClientDataParams(v *ThirdPartyClientDataParams) {
+	v.Ext = ""
+	v.GenerationTime = ""
+	v.Phone = ""
+	v.RecordContents = ""
+	v.RecordId = ""
+	v.Recorder = ""
+	v.ServiceCode = ""
+	v.ServiceType = ""
+	v.Client = nil
+	poolThirdPartyClientDataParams.Put(v)
 }

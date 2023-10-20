@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TmallCarLeaseStatussynchronizeAPIRequest struct {
 // NewTmallCarLeaseStatussynchronizeRequest 初始化TmallCarLeaseStatussynchronizeAPIRequest对象
 func NewTmallCarLeaseStatussynchronizeRequest() *TmallCarLeaseStatussynchronizeAPIRequest {
 	return &TmallCarLeaseStatussynchronizeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarLeaseStatussynchronizeAPIRequest) Reset() {
+	r._refuseReason = ""
+	r._orderId = 0
+	r._bizType = 0
+	r._actionType = 0
+	r._actionValue = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TmallCarLeaseStatussynchronizeAPIRequest) SetActionValue(_actionValue i
 // GetActionValue ActionValue Getter
 func (r TmallCarLeaseStatussynchronizeAPIRequest) GetActionValue() int64 {
 	return r._actionValue
+}
+
+var poolTmallCarLeaseStatussynchronizeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarLeaseStatussynchronizeRequest()
+	},
+}
+
+// GetTmallCarLeaseStatussynchronizeRequest 从 sync.Pool 获取 TmallCarLeaseStatussynchronizeAPIRequest
+func GetTmallCarLeaseStatussynchronizeAPIRequest() *TmallCarLeaseStatussynchronizeAPIRequest {
+	return poolTmallCarLeaseStatussynchronizeAPIRequest.Get().(*TmallCarLeaseStatussynchronizeAPIRequest)
+}
+
+// ReleaseTmallCarLeaseStatussynchronizeAPIRequest 将 TmallCarLeaseStatussynchronizeAPIRequest 放入 sync.Pool
+func ReleaseTmallCarLeaseStatussynchronizeAPIRequest(v *TmallCarLeaseStatussynchronizeAPIRequest) {
+	v.Reset()
+	poolTmallCarLeaseStatussynchronizeAPIRequest.Put(v)
 }

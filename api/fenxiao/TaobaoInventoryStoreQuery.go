@@ -9,11 +9,6 @@ import (
 // taobao.inventory.store.query
 //
 // 查询商家仓信息
-func TaobaoInventoryStoreQuery(clt *core.SDKClient, req *fenxiao.TaobaoInventoryStoreQueryAPIRequest, session string) (*fenxiao.TaobaoInventoryStoreQueryAPIResponse, error) {
-	var resp fenxiao.TaobaoInventoryStoreQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoInventoryStoreQuery(clt *core.SDKClient, req *fenxiao.TaobaoInventoryStoreQueryAPIRequest, resp *fenxiao.TaobaoInventoryStoreQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

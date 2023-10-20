@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.order.alipayface.update
 //
 // 完成对信用住或者面付订单的状态的更新。包含订单状态的确认，入离店状态的更新等等。（不适用于预付订单）
-func TaobaoXhotelOrderAlipayfaceUpdate(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelOrderAlipayfaceUpdateAPIRequest, session string) (*xhotelonlineorder.TaobaoXhotelOrderAlipayfaceUpdateAPIResponse, error) {
-	var resp xhotelonlineorder.TaobaoXhotelOrderAlipayfaceUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelOrderAlipayfaceUpdate(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelOrderAlipayfaceUpdateAPIRequest, resp *xhotelonlineorder.TaobaoXhotelOrderAlipayfaceUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

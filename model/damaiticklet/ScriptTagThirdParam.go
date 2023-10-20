@@ -1,5 +1,9 @@
 package damaiticklet
 
+import (
+	"sync"
+)
+
 // ScriptTagThirdParam 结构体
 type ScriptTagThirdParam struct {
 	// 剧本名称
@@ -8,4 +12,23 @@ type ScriptTagThirdParam struct {
 	TagType int64 `json:"tag_type,omitempty" xml:"tag_type,omitempty"`
 	// 剧本标签id
 	OutTagId int64 `json:"out_tag_id,omitempty" xml:"out_tag_id,omitempty"`
+}
+
+var poolScriptTagThirdParam = sync.Pool{
+	New: func() any {
+		return new(ScriptTagThirdParam)
+	},
+}
+
+// GetScriptTagThirdParam() 从对象池中获取ScriptTagThirdParam
+func GetScriptTagThirdParam() *ScriptTagThirdParam {
+	return poolScriptTagThirdParam.Get().(*ScriptTagThirdParam)
+}
+
+// ReleaseScriptTagThirdParam 释放ScriptTagThirdParam
+func ReleaseScriptTagThirdParam(v *ScriptTagThirdParam) {
+	v.TagName = ""
+	v.TagType = 0
+	v.OutTagId = 0
+	poolScriptTagThirdParam.Put(v)
 }

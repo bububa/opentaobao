@@ -2,6 +2,7 @@ package traveltrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripTravelBookinfoQueryAPIRequest struct {
 // NewAlitripTravelBookinfoQueryRequest 初始化AlitripTravelBookinfoQueryAPIRequest对象
 func NewAlitripTravelBookinfoQueryRequest() *AlitripTravelBookinfoQueryAPIRequest {
 	return &AlitripTravelBookinfoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTravelBookinfoQueryAPIRequest) Reset() {
+	r._bookinfoId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripTravelBookinfoQueryAPIRequest) SetBookinfoId(_bookinfoId int64) 
 // GetBookinfoId BookinfoId Getter
 func (r AlitripTravelBookinfoQueryAPIRequest) GetBookinfoId() int64 {
 	return r._bookinfoId
+}
+
+var poolAlitripTravelBookinfoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTravelBookinfoQueryRequest()
+	},
+}
+
+// GetAlitripTravelBookinfoQueryRequest 从 sync.Pool 获取 AlitripTravelBookinfoQueryAPIRequest
+func GetAlitripTravelBookinfoQueryAPIRequest() *AlitripTravelBookinfoQueryAPIRequest {
+	return poolAlitripTravelBookinfoQueryAPIRequest.Get().(*AlitripTravelBookinfoQueryAPIRequest)
+}
+
+// ReleaseAlitripTravelBookinfoQueryAPIRequest 将 AlitripTravelBookinfoQueryAPIRequest 放入 sync.Pool
+func ReleaseAlitripTravelBookinfoQueryAPIRequest(v *AlitripTravelBookinfoQueryAPIRequest) {
+	v.Reset()
+	poolAlitripTravelBookinfoQueryAPIRequest.Put(v)
 }

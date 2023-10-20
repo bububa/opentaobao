@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // Param 结构体
 type Param struct {
 	// 门店编码，对应大润发deliveryDockCode
@@ -46,4 +50,42 @@ type Param struct {
 	HjTradeNo int64 `json:"hj_trade_no,omitempty" xml:"hj_trade_no,omitempty"`
 	// 汇金扣拥状态
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolParam = sync.Pool{
+	New: func() any {
+		return new(Param)
+	},
+}
+
+// GetParam() 从对象池中获取Param
+func GetParam() *Param {
+	return poolParam.Get().(*Param)
+}
+
+// ReleaseParam 释放Param
+func ReleaseParam(v *Param) {
+	v.StoreCodes = v.StoreCodes[:0]
+	v.Chainstores = v.Chainstores[:0]
+	v.AppId = ""
+	v.PartnerOrderCode = ""
+	v.ChannelId = ""
+	v.OrderCancelDesc = ""
+	v.ServicePackageCode = ""
+	v.MerchantCode = ""
+	v.ChainstoreCode = ""
+	v.Address = ""
+	v.ChainStoreName = ""
+	v.ChainStoreCode = ""
+	v.ContactPhone = ""
+	v.Longitude = ""
+	v.Latitude = ""
+	v.ErrorMsg = ""
+	v.OrderCancelCode = 0
+	v.OrderCancelReasonCode = 0
+	v.PositionSource = 0
+	v.TradeId = 0
+	v.HjTradeNo = 0
+	v.Success = false
+	poolParam.Put(v)
 }

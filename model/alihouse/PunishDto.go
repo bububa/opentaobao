@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // PunishDto 结构体
 type PunishDto struct {
 	// 处罚级别
@@ -14,4 +18,26 @@ type PunishDto struct {
 	CategoryCode int64 `json:"category_code,omitempty" xml:"category_code,omitempty"`
 	// 是否处罚
 	IsPunish bool `json:"is_punish,omitempty" xml:"is_punish,omitempty"`
+}
+
+var poolPunishDto = sync.Pool{
+	New: func() any {
+		return new(PunishDto)
+	},
+}
+
+// GetPunishDto() 从对象池中获取PunishDto
+func GetPunishDto() *PunishDto {
+	return poolPunishDto.Get().(*PunishDto)
+}
+
+// ReleasePunishDto 释放PunishDto
+func ReleasePunishDto(v *PunishDto) {
+	v.PunishLevel = 0
+	v.BusinessType = 0
+	v.Type = 0
+	v.Version = 0
+	v.CategoryCode = 0
+	v.IsPunish = false
+	poolPunishDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // TagQueryResult 结构体
 type TagQueryResult struct {
 	// 列表
@@ -14,4 +18,26 @@ type TagQueryResult struct {
 	SpentTime int64 `json:"spent_time,omitempty" xml:"spent_time,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTagQueryResult = sync.Pool{
+	New: func() any {
+		return new(TagQueryResult)
+	},
+}
+
+// GetTagQueryResult() 从对象池中获取TagQueryResult
+func GetTagQueryResult() *TagQueryResult {
+	return poolTagQueryResult.Get().(*TagQueryResult)
+}
+
+// ReleaseTagQueryResult 释放TagQueryResult
+func ReleaseTagQueryResult(v *TagQueryResult) {
+	v.TagEntityDoList = v.TagEntityDoList[:0]
+	v.TokenStr = ""
+	v.ErrorMsg = ""
+	v.TotalAmount = 0
+	v.SpentTime = 0
+	v.Success = false
+	poolTagQueryResult.Put(v)
 }

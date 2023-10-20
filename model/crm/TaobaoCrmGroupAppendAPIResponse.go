@@ -2,6 +2,7 @@ package crm
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoCrmGroupAppendAPIResponse struct {
 	TaobaoCrmGroupAppendAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoCrmGroupAppendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCrmGroupAppendAPIResponseModel).Reset()
+}
+
 // TaobaoCrmGroupAppendAPIResponseModel is 将一个分组添加到另外一个分组 成功返回结果
 type TaobaoCrmGroupAppendAPIResponseModel struct {
 	XMLName xml.Name `xml:"crm_group_append_response"`
@@ -22,4 +29,27 @@ type TaobaoCrmGroupAppendAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 异步任务请求成功，添加任务是否完成通过taobao.crm.grouptask.check检测
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCrmGroupAppendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoCrmGroupAppendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCrmGroupAppendAPIResponse)
+	},
+}
+
+// GetTaobaoCrmGroupAppendAPIResponse 从 sync.Pool 获取 TaobaoCrmGroupAppendAPIResponse
+func GetTaobaoCrmGroupAppendAPIResponse() *TaobaoCrmGroupAppendAPIResponse {
+	return poolTaobaoCrmGroupAppendAPIResponse.Get().(*TaobaoCrmGroupAppendAPIResponse)
+}
+
+// ReleaseTaobaoCrmGroupAppendAPIResponse 将 TaobaoCrmGroupAppendAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCrmGroupAppendAPIResponse(v *TaobaoCrmGroupAppendAPIResponse) {
+	v.Reset()
+	poolTaobaoCrmGroupAppendAPIResponse.Put(v)
 }

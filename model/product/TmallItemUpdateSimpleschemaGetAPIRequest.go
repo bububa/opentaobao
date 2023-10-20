@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallItemUpdateSimpleschemaGetAPIRequest struct {
 // NewTmallItemUpdateSimpleschemaGetRequest 初始化TmallItemUpdateSimpleschemaGetAPIRequest对象
 func NewTmallItemUpdateSimpleschemaGetRequest() *TmallItemUpdateSimpleschemaGetAPIRequest {
 	return &TmallItemUpdateSimpleschemaGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallItemUpdateSimpleschemaGetAPIRequest) Reset() {
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallItemUpdateSimpleschemaGetAPIRequest) SetItemId(_itemId int64) erro
 // GetItemId ItemId Getter
 func (r TmallItemUpdateSimpleschemaGetAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTmallItemUpdateSimpleschemaGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallItemUpdateSimpleschemaGetRequest()
+	},
+}
+
+// GetTmallItemUpdateSimpleschemaGetRequest 从 sync.Pool 获取 TmallItemUpdateSimpleschemaGetAPIRequest
+func GetTmallItemUpdateSimpleschemaGetAPIRequest() *TmallItemUpdateSimpleschemaGetAPIRequest {
+	return poolTmallItemUpdateSimpleschemaGetAPIRequest.Get().(*TmallItemUpdateSimpleschemaGetAPIRequest)
+}
+
+// ReleaseTmallItemUpdateSimpleschemaGetAPIRequest 将 TmallItemUpdateSimpleschemaGetAPIRequest 放入 sync.Pool
+func ReleaseTmallItemUpdateSimpleschemaGetAPIRequest(v *TmallItemUpdateSimpleschemaGetAPIRequest) {
+	v.Reset()
+	poolTmallItemUpdateSimpleschemaGetAPIRequest.Put(v)
 }

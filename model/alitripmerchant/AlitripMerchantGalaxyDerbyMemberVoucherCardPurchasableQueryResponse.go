@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // AlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryResponse 结构体
 type AlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryResponse struct {
 	// 1
@@ -10,4 +14,24 @@ type AlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryResponse struct 
 	Content *DerbyVoucherCardPurchasableVo `json:"content,omitempty" xml:"content,omitempty"`
 	// 1
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryResponse() 从对象池中获取AlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryResponse
+func GetAlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryResponse() *AlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryResponse {
+	return poolAlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryResponse.Get().(*AlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryResponse 释放AlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryResponse
+func ReleaseAlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryResponse(v *AlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryResponse) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Content = nil
+	v.Success = false
+	poolAlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryResponse.Put(v)
 }

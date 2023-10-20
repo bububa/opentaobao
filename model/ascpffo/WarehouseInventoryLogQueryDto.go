@@ -1,5 +1,9 @@
 package ascpffo
 
+import (
+	"sync"
+)
+
 // WarehouseInventoryLogQueryDto 结构体
 type WarehouseInventoryLogQueryDto struct {
 	// 业务类型(PO0  普通采购,ADJ0 报废,ADJ1 盘点调整,ADJ2 状态调整,SO0  TOC销售,SO1  TOB销售,SO4  TOC补发,RTV0 普通采购退货,RSO0 TOC销售退货,SYS1 系统调账)
@@ -24,4 +28,31 @@ type WarehouseInventoryLogQueryDto struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 货品ID
 	ScItemId int64 `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
+}
+
+var poolWarehouseInventoryLogQueryDto = sync.Pool{
+	New: func() any {
+		return new(WarehouseInventoryLogQueryDto)
+	},
+}
+
+// GetWarehouseInventoryLogQueryDto() 从对象池中获取WarehouseInventoryLogQueryDto
+func GetWarehouseInventoryLogQueryDto() *WarehouseInventoryLogQueryDto {
+	return poolWarehouseInventoryLogQueryDto.Get().(*WarehouseInventoryLogQueryDto)
+}
+
+// ReleaseWarehouseInventoryLogQueryDto 释放WarehouseInventoryLogQueryDto
+func ReleaseWarehouseInventoryLogQueryDto(v *WarehouseInventoryLogQueryDto) {
+	v.BizActivityType = ""
+	v.BizTradeId = ""
+	v.OperationOrderId = ""
+	v.StoreCode = ""
+	v.BizType = 0
+	v.GmtCreateEnd = 0
+	v.GmtCreateStart = 0
+	v.InventoryType = 0
+	v.PageIndex = 0
+	v.PageSize = 0
+	v.ScItemId = 0
+	poolWarehouseInventoryLogQueryDto.Put(v)
 }

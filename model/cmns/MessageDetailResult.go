@@ -1,5 +1,9 @@
 package cmns
 
+import (
+	"sync"
+)
+
 // MessageDetailResult 结构体
 type MessageDetailResult struct {
 	// 消息侦听通道
@@ -36,4 +40,37 @@ type MessageDetailResult struct {
 	SendStatus int64 `json:"send_status,omitempty" xml:"send_status,omitempty"`
 	// 消息类型，1为透传，2为通知
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolMessageDetailResult = sync.Pool{
+	New: func() any {
+		return new(MessageDetailResult)
+	},
+}
+
+// GetMessageDetailResult() 从对象池中获取MessageDetailResult
+func GetMessageDetailResult() *MessageDetailResult {
+	return poolMessageDetailResult.Get().(*MessageDetailResult)
+}
+
+// ReleaseMessageDetailResult 释放MessageDetailResult
+func ReleaseMessageDetailResult(v *MessageDetailResult) {
+	v.Action = ""
+	v.AppKey = ""
+	v.AppName = ""
+	v.Desc = ""
+	v.ExipiredTime = ""
+	v.GmtCreateTime = ""
+	v.Parameter = ""
+	v.Receiver = ""
+	v.Title = ""
+	v.Uri = ""
+	v.AckCnt = 0
+	v.Audit = 0
+	v.Id = 0
+	v.PredictSendCnt = 0
+	v.Priority = 0
+	v.SendStatus = 0
+	v.Type = 0
+	poolMessageDetailResult.Put(v)
 }

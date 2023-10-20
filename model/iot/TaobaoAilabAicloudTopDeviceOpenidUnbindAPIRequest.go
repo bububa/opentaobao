@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest struct {
 // NewTaobaoAilabAicloudTopDeviceOpenidUnbindRequest 初始化TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest对象
 func NewTaobaoAilabAicloudTopDeviceOpenidUnbindRequest() *TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest {
 	return &TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) Reset() {
+	r._schema = ""
+	r._userId = ""
+	r._ext = ""
+	r._utdId = ""
+	r._openId = ""
+	r._uuid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) SetUuid(_uuid string
 // GetUuid Uuid Getter
 func (r TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) GetUuid() string {
 	return r._uuid
+}
+
+var poolTaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopDeviceOpenidUnbindRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopDeviceOpenidUnbindRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest
+func GetTaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest() *TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest {
+	return poolTaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest.Get().(*TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest 将 TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest(v *TaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopDeviceOpenidUnbindAPIRequest.Put(v)
 }

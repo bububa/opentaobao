@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest 
 // NewTmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryRequest 初始化TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest对象
 func NewTmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryRequest() *TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest {
 	return &TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest) Reset() {
+	r._serviceCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequ
 // GetServiceCode ServiceCode Getter
 func (r TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest) GetServiceCode() string {
 	return r._serviceCode
+}
+
+var poolTmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryRequest()
+	},
+}
+
+// GetTmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryRequest 从 sync.Pool 获取 TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest
+func GetTmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest() *TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest {
+	return poolTmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest.Get().(*TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest)
+}
+
+// ReleaseTmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest 将 TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest(v *TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest.Put(v)
 }

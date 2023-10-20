@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ElectricSignatureDto 结构体
 type ElectricSignatureDto struct {
 	// 外部电子印章ID
@@ -20,4 +24,29 @@ type ElectricSignatureDto struct {
 	IsValid int64 `json:"is_valid,omitempty" xml:"is_valid,omitempty"`
 	// 经营主体ID
 	MerchantOpenId int64 `json:"merchant_open_id,omitempty" xml:"merchant_open_id,omitempty"`
+}
+
+var poolElectricSignatureDto = sync.Pool{
+	New: func() any {
+		return new(ElectricSignatureDto)
+	},
+}
+
+// GetElectricSignatureDto() 从对象池中获取ElectricSignatureDto
+func GetElectricSignatureDto() *ElectricSignatureDto {
+	return poolElectricSignatureDto.Get().(*ElectricSignatureDto)
+}
+
+// ReleaseElectricSignatureDto 释放ElectricSignatureDto
+func ReleaseElectricSignatureDto(v *ElectricSignatureDto) {
+	v.OuterSignatureId = ""
+	v.SignatureName = ""
+	v.HorizontalText = ""
+	v.BackspinText = ""
+	v.SignatureType = 0
+	v.SignatureColor = 0
+	v.CenterPattern = 0
+	v.IsValid = 0
+	v.MerchantOpenId = 0
+	poolElectricSignatureDto.Put(v)
 }

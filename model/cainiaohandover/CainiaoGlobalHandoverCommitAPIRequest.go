@@ -2,6 +2,7 @@ package cainiaohandover
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -49,8 +50,29 @@ type CainiaoGlobalHandoverCommitAPIRequest struct {
 // NewCainiaoGlobalHandoverCommitRequest 初始化CainiaoGlobalHandoverCommitAPIRequest对象
 func NewCainiaoGlobalHandoverCommitRequest() *CainiaoGlobalHandoverCommitAPIRequest {
 	return &CainiaoGlobalHandoverCommitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(16),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalHandoverCommitAPIRequest) Reset() {
+	r._orderCodeList = r._orderCodeList[:0]
+	r._remark = ""
+	r._weightUnit = ""
+	r._type = ""
+	r._client = ""
+	r._locale = ""
+	r._appointmentType = ""
+	r._domesticTrackingNo = ""
+	r._domesticLogisticsCompany = ""
+	r._returnInfo = nil
+	r._pickupInfo = nil
+	r._weight = 0
+	r._handoverOrderId = 0
+	r._userInfo = nil
+	r._features = nil
+	r._domesticLogisticsCompanyId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -276,4 +298,21 @@ func (r *CainiaoGlobalHandoverCommitAPIRequest) SetDomesticLogisticsCompanyId(_d
 // GetDomesticLogisticsCompanyId DomesticLogisticsCompanyId Getter
 func (r CainiaoGlobalHandoverCommitAPIRequest) GetDomesticLogisticsCompanyId() int64 {
 	return r._domesticLogisticsCompanyId
+}
+
+var poolCainiaoGlobalHandoverCommitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalHandoverCommitRequest()
+	},
+}
+
+// GetCainiaoGlobalHandoverCommitRequest 从 sync.Pool 获取 CainiaoGlobalHandoverCommitAPIRequest
+func GetCainiaoGlobalHandoverCommitAPIRequest() *CainiaoGlobalHandoverCommitAPIRequest {
+	return poolCainiaoGlobalHandoverCommitAPIRequest.Get().(*CainiaoGlobalHandoverCommitAPIRequest)
+}
+
+// ReleaseCainiaoGlobalHandoverCommitAPIRequest 将 CainiaoGlobalHandoverCommitAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalHandoverCommitAPIRequest(v *CainiaoGlobalHandoverCommitAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalHandoverCommitAPIRequest.Put(v)
 }

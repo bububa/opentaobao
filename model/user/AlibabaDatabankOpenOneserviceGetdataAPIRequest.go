@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDatabankOpenOneserviceGetdataAPIRequest struct {
 // NewAlibabaDatabankOpenOneserviceGetdataRequest 初始化AlibabaDatabankOpenOneserviceGetdataAPIRequest对象
 func NewAlibabaDatabankOpenOneserviceGetdataRequest() *AlibabaDatabankOpenOneserviceGetdataAPIRequest {
 	return &AlibabaDatabankOpenOneserviceGetdataAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDatabankOpenOneserviceGetdataAPIRequest) Reset() {
+	r._dataIndicatorQueryParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDatabankOpenOneserviceGetdataAPIRequest) SetDataIndicatorQueryPa
 // GetDataIndicatorQueryParam DataIndicatorQueryParam Getter
 func (r AlibabaDatabankOpenOneserviceGetdataAPIRequest) GetDataIndicatorQueryParam() *DataIndicatorQueryParam {
 	return r._dataIndicatorQueryParam
+}
+
+var poolAlibabaDatabankOpenOneserviceGetdataAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDatabankOpenOneserviceGetdataRequest()
+	},
+}
+
+// GetAlibabaDatabankOpenOneserviceGetdataRequest 从 sync.Pool 获取 AlibabaDatabankOpenOneserviceGetdataAPIRequest
+func GetAlibabaDatabankOpenOneserviceGetdataAPIRequest() *AlibabaDatabankOpenOneserviceGetdataAPIRequest {
+	return poolAlibabaDatabankOpenOneserviceGetdataAPIRequest.Get().(*AlibabaDatabankOpenOneserviceGetdataAPIRequest)
+}
+
+// ReleaseAlibabaDatabankOpenOneserviceGetdataAPIRequest 将 AlibabaDatabankOpenOneserviceGetdataAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDatabankOpenOneserviceGetdataAPIRequest(v *AlibabaDatabankOpenOneserviceGetdataAPIRequest) {
+	v.Reset()
+	poolAlibabaDatabankOpenOneserviceGetdataAPIRequest.Put(v)
 }

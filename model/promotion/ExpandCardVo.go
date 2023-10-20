@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // ExpandCardVo 结构体
 type ExpandCardVo struct {
 	// 品牌色
@@ -26,4 +30,32 @@ type ExpandCardVo struct {
 	CardUsedScope string `json:"card_used_scope,omitempty" xml:"card_used_scope,omitempty"`
 	// 店铺信息
 	ShopInfoVo *ShopInfoVo `json:"shop_info_vo,omitempty" xml:"shop_info_vo,omitempty"`
+}
+
+var poolExpandCardVo = sync.Pool{
+	New: func() any {
+		return new(ExpandCardVo)
+	},
+}
+
+// GetExpandCardVo() 从对象池中获取ExpandCardVo
+func GetExpandCardVo() *ExpandCardVo {
+	return poolExpandCardVo.Get().(*ExpandCardVo)
+}
+
+// ReleaseExpandCardVo 释放ExpandCardVo
+func ReleaseExpandCardVo(v *ExpandCardVo) {
+	v.BrandColor = ""
+	v.TargetUrl = ""
+	v.CardCreateDate = ""
+	v.CardValidDesc = ""
+	v.CardValidDate = ""
+	v.CardRemainExpandMoney = ""
+	v.CardRemainBasicMoney = ""
+	v.CardRemainMoney = ""
+	v.CardIconUrl = ""
+	v.CardName = ""
+	v.CardUsedScope = ""
+	v.ShopInfoVo = nil
+	poolExpandCardVo.Put(v)
 }

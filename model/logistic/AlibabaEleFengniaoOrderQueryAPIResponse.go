@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaEleFengniaoOrderQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleFengniaoOrderQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleFengniaoOrderQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEleFengniaoOrderQueryAPIResponseModel).Reset()
 }
 
 // AlibabaEleFengniaoOrderQueryAPIResponseModel is 查询订单基本信息 成功返回结果
@@ -32,4 +39,32 @@ type AlibabaEleFengniaoOrderQueryAPIResponseModel struct {
 	ReceiverLatitude string `json:"receiver_latitude,omitempty" xml:"receiver_latitude,omitempty"`
 	// 订单号
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleFengniaoOrderQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Kvs = m.Kvs[:0]
+	m.ReceiverLongitude = ""
+	m.TransportLatitude = ""
+	m.TransportLongitude = ""
+	m.ReceiverLatitude = ""
+	m.OrderId = 0
+}
+
+var poolAlibabaEleFengniaoOrderQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEleFengniaoOrderQueryAPIResponse)
+	},
+}
+
+// GetAlibabaEleFengniaoOrderQueryAPIResponse 从 sync.Pool 获取 AlibabaEleFengniaoOrderQueryAPIResponse
+func GetAlibabaEleFengniaoOrderQueryAPIResponse() *AlibabaEleFengniaoOrderQueryAPIResponse {
+	return poolAlibabaEleFengniaoOrderQueryAPIResponse.Get().(*AlibabaEleFengniaoOrderQueryAPIResponse)
+}
+
+// ReleaseAlibabaEleFengniaoOrderQueryAPIResponse 将 AlibabaEleFengniaoOrderQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEleFengniaoOrderQueryAPIResponse(v *AlibabaEleFengniaoOrderQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaEleFengniaoOrderQueryAPIResponse.Put(v)
 }

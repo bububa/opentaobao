@@ -2,6 +2,7 @@ package store
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoPlaceStorerelatesubAddAPIRequest struct {
 // NewTaobaoPlaceStorerelatesubAddRequest 初始化TaobaoPlaceStorerelatesubAddAPIRequest对象
 func NewTaobaoPlaceStorerelatesubAddRequest() *TaobaoPlaceStorerelatesubAddAPIRequest {
 	return &TaobaoPlaceStorerelatesubAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPlaceStorerelatesubAddAPIRequest) Reset() {
+	r._subStoreIds = r._subStoreIds[:0]
+	r._storeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoPlaceStorerelatesubAddAPIRequest) SetStoreId(_storeId int64) erro
 // GetStoreId StoreId Getter
 func (r TaobaoPlaceStorerelatesubAddAPIRequest) GetStoreId() int64 {
 	return r._storeId
+}
+
+var poolTaobaoPlaceStorerelatesubAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPlaceStorerelatesubAddRequest()
+	},
+}
+
+// GetTaobaoPlaceStorerelatesubAddRequest 从 sync.Pool 获取 TaobaoPlaceStorerelatesubAddAPIRequest
+func GetTaobaoPlaceStorerelatesubAddAPIRequest() *TaobaoPlaceStorerelatesubAddAPIRequest {
+	return poolTaobaoPlaceStorerelatesubAddAPIRequest.Get().(*TaobaoPlaceStorerelatesubAddAPIRequest)
+}
+
+// ReleaseTaobaoPlaceStorerelatesubAddAPIRequest 将 TaobaoPlaceStorerelatesubAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPlaceStorerelatesubAddAPIRequest(v *TaobaoPlaceStorerelatesubAddAPIRequest) {
+	v.Reset()
+	poolTaobaoPlaceStorerelatesubAddAPIRequest.Put(v)
 }

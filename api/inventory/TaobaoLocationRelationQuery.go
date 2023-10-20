@@ -10,11 +10,6 @@ import (
 //
 // 地点关联关系查询
 // 门店和仓库关联关系查询
-func TaobaoLocationRelationQuery(clt *core.SDKClient, req *inventory.TaobaoLocationRelationQueryAPIRequest, session string) (*inventory.TaobaoLocationRelationQueryAPIResponse, error) {
-	var resp inventory.TaobaoLocationRelationQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLocationRelationQuery(clt *core.SDKClient, req *inventory.TaobaoLocationRelationQueryAPIRequest, resp *inventory.TaobaoLocationRelationQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

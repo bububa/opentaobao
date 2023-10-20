@@ -2,6 +2,7 @@ package cainiaolocker
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type CainiaoEndpointLockerTopOrderTrackingNewAPIResponse struct {
 	CainiaoEndpointLockerTopOrderTrackingNewAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *CainiaoEndpointLockerTopOrderTrackingNewAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoEndpointLockerTopOrderTrackingNewAPIResponseModel).Reset()
+}
+
 // CainiaoEndpointLockerTopOrderTrackingNewAPIResponseModel is 事件回传接口 成功返回结果
 type CainiaoEndpointLockerTopOrderTrackingNewAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_endpoint_locker_top_order_tracking_new_response"`
@@ -22,4 +29,27 @@ type CainiaoEndpointLockerTopOrderTrackingNewAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *SingleResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoEndpointLockerTopOrderTrackingNewAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolCainiaoEndpointLockerTopOrderTrackingNewAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoEndpointLockerTopOrderTrackingNewAPIResponse)
+	},
+}
+
+// GetCainiaoEndpointLockerTopOrderTrackingNewAPIResponse 从 sync.Pool 获取 CainiaoEndpointLockerTopOrderTrackingNewAPIResponse
+func GetCainiaoEndpointLockerTopOrderTrackingNewAPIResponse() *CainiaoEndpointLockerTopOrderTrackingNewAPIResponse {
+	return poolCainiaoEndpointLockerTopOrderTrackingNewAPIResponse.Get().(*CainiaoEndpointLockerTopOrderTrackingNewAPIResponse)
+}
+
+// ReleaseCainiaoEndpointLockerTopOrderTrackingNewAPIResponse 将 CainiaoEndpointLockerTopOrderTrackingNewAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoEndpointLockerTopOrderTrackingNewAPIResponse(v *CainiaoEndpointLockerTopOrderTrackingNewAPIResponse) {
+	v.Reset()
+	poolCainiaoEndpointLockerTopOrderTrackingNewAPIResponse.Put(v)
 }

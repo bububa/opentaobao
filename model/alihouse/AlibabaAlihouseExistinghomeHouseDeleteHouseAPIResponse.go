@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponse struct {
 	AlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponseModel).Reset()
+}
+
 // AlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponseModel is 删除房源 成功返回结果
 type AlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_existinghome_house_delete_house_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaAlihouseExistinghomeHouseDeleteHouseResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponse)
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponse 从 sync.Pool 获取 AlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponse
+func GetAlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponse() *AlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponse {
+	return poolAlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponse.Get().(*AlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponse)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponse 将 AlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponse(v *AlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeHouseDeleteHouseAPIResponse.Put(v)
 }

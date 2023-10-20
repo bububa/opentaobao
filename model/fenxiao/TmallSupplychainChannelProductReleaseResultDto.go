@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // TmallSupplychainChannelProductReleaseResultDto 结构体
 type TmallSupplychainChannelProductReleaseResultDto struct {
 	// 链路ID
@@ -14,4 +18,26 @@ type TmallSupplychainChannelProductReleaseResultDto struct {
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 执行结果
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmallSupplychainChannelProductReleaseResultDto = sync.Pool{
+	New: func() any {
+		return new(TmallSupplychainChannelProductReleaseResultDto)
+	},
+}
+
+// GetTmallSupplychainChannelProductReleaseResultDto() 从对象池中获取TmallSupplychainChannelProductReleaseResultDto
+func GetTmallSupplychainChannelProductReleaseResultDto() *TmallSupplychainChannelProductReleaseResultDto {
+	return poolTmallSupplychainChannelProductReleaseResultDto.Get().(*TmallSupplychainChannelProductReleaseResultDto)
+}
+
+// ReleaseTmallSupplychainChannelProductReleaseResultDto 释放TmallSupplychainChannelProductReleaseResultDto
+func ReleaseTmallSupplychainChannelProductReleaseResultDto(v *TmallSupplychainChannelProductReleaseResultDto) {
+	v.TraceId = ""
+	v.ExpName = ""
+	v.RedirectUrl = ""
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.Success = false
+	poolTmallSupplychainChannelProductReleaseResultDto.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest struct {
 // NewTmallServicecenterAnomalyrecourseHomedecorationCreateRequest 初始化TmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest对象
 func NewTmallServicecenterAnomalyrecourseHomedecorationCreateRequest() *TmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest {
 	return &TmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest) Reset() {
+	r._questionCode = ""
+	r._remark = ""
+	r._images = ""
+	r._workcardId = 0
+	r._publicOpinion = 0
+	r._complainCount = 0
+	r._applyCompensationAmount = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest) SetApp
 // GetApplyCompensationAmount ApplyCompensationAmount Getter
 func (r TmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest) GetApplyCompensationAmount() int64 {
 	return r._applyCompensationAmount
+}
+
+var poolTmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterAnomalyrecourseHomedecorationCreateRequest()
+	},
+}
+
+// GetTmallServicecenterAnomalyrecourseHomedecorationCreateRequest 从 sync.Pool 获取 TmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest
+func GetTmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest() *TmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest {
+	return poolTmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest.Get().(*TmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest)
+}
+
+// ReleaseTmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest 将 TmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest(v *TmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterAnomalyrecourseHomedecorationCreateAPIRequest.Put(v)
 }

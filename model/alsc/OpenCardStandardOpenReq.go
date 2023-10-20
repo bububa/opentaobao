@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // OpenCardStandardOpenReq 结构体
 type OpenCardStandardOpenReq struct {
 	// 品牌ID,与outBrandId不能同时为空
@@ -24,4 +28,31 @@ type OpenCardStandardOpenReq struct {
 	CardTemplateId string `json:"card_template_id,omitempty" xml:"card_template_id,omitempty"`
 	// 是否激活
 	Active bool `json:"active,omitempty" xml:"active,omitempty"`
+}
+
+var poolOpenCardStandardOpenReq = sync.Pool{
+	New: func() any {
+		return new(OpenCardStandardOpenReq)
+	},
+}
+
+// GetOpenCardStandardOpenReq() 从对象池中获取OpenCardStandardOpenReq
+func GetOpenCardStandardOpenReq() *OpenCardStandardOpenReq {
+	return poolOpenCardStandardOpenReq.Get().(*OpenCardStandardOpenReq)
+}
+
+// ReleaseOpenCardStandardOpenReq 释放OpenCardStandardOpenReq
+func ReleaseOpenCardStandardOpenReq(v *OpenCardStandardOpenReq) {
+	v.BrandId = ""
+	v.CustomerId = ""
+	v.OperatorId = ""
+	v.OperatorName = ""
+	v.PhysicalCardId = ""
+	v.ShopId = ""
+	v.OutBrandId = ""
+	v.RequestId = ""
+	v.OutShopId = ""
+	v.CardTemplateId = ""
+	v.Active = false
+	poolOpenCardStandardOpenReq.Put(v)
 }

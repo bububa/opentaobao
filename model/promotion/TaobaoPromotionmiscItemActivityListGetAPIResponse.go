@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoPromotionmiscItemActivityListGetAPIResponse struct {
 	TaobaoPromotionmiscItemActivityListGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoPromotionmiscItemActivityListGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPromotionmiscItemActivityListGetAPIResponseModel).Reset()
+}
+
 // TaobaoPromotionmiscItemActivityListGetAPIResponseModel is 查询无条件单品优惠活动列表 成功返回结果
 type TaobaoPromotionmiscItemActivityListGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotionmisc_item_activity_list_get_response"`
@@ -24,4 +31,28 @@ type TaobaoPromotionmiscItemActivityListGetAPIResponseModel struct {
 	ItemPromotionList []ItemPromotion `json:"item_promotion_list,omitempty" xml:"item_promotion_list>item_promotion,omitempty"`
 	// 记录总条数。
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPromotionmiscItemActivityListGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ItemPromotionList = m.ItemPromotionList[:0]
+	m.TotalCount = 0
+}
+
+var poolTaobaoPromotionmiscItemActivityListGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPromotionmiscItemActivityListGetAPIResponse)
+	},
+}
+
+// GetTaobaoPromotionmiscItemActivityListGetAPIResponse 从 sync.Pool 获取 TaobaoPromotionmiscItemActivityListGetAPIResponse
+func GetTaobaoPromotionmiscItemActivityListGetAPIResponse() *TaobaoPromotionmiscItemActivityListGetAPIResponse {
+	return poolTaobaoPromotionmiscItemActivityListGetAPIResponse.Get().(*TaobaoPromotionmiscItemActivityListGetAPIResponse)
+}
+
+// ReleaseTaobaoPromotionmiscItemActivityListGetAPIResponse 将 TaobaoPromotionmiscItemActivityListGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPromotionmiscItemActivityListGetAPIResponse(v *TaobaoPromotionmiscItemActivityListGetAPIResponse) {
+	v.Reset()
+	poolTaobaoPromotionmiscItemActivityListGetAPIResponse.Put(v)
 }

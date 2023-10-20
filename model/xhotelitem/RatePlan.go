@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // RatePlan 结构体
 type RatePlan struct {
 	// 系统商，一般不填写，使用须申请
@@ -136,4 +140,87 @@ type RatePlan struct {
 	CompanyAssist int64 `json:"company_assist,omitempty" xml:"company_assist,omitempty"`
 	// 会员价支持标识,1表示支持会员价规则
 	MemDiscFlag int64 `json:"mem_disc_flag,omitempty" xml:"mem_disc_flag,omitempty"`
+}
+
+var poolRatePlan = sync.Pool{
+	New: func() any {
+		return new(RatePlan)
+	},
+}
+
+// GetRatePlan() 从对象池中获取RatePlan
+func GetRatePlan() *RatePlan {
+	return poolRatePlan.Get().(*RatePlan)
+}
+
+// ReleaseRatePlan 释放RatePlan
+func ReleaseRatePlan(v *RatePlan) {
+	v.Vendor = ""
+	v.Name = ""
+	v.RatePlanCode = ""
+	v.RateplanCode = ""
+	v.EnglishName = ""
+	v.ExtendFee = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.CancelPolicy = ""
+	v.Extend = ""
+	v.CreatedTime = ""
+	v.ModifiedTime = ""
+	v.ExtendInfo1 = ""
+	v.ExtendInfo2 = ""
+	v.ExtendInfo3 = ""
+	v.GuaranteeStartTime = ""
+	v.MemberLevel = ""
+	v.Channel = ""
+	v.EffectiveTime = ""
+	v.DeadlineTime = ""
+	v.AllotmentReleaseTime = ""
+	v.InvoiceContent = ""
+	v.TagJson = ""
+	v.CanCheckinEnd = ""
+	v.CanCheckinStart = ""
+	v.EndTimeDaily = ""
+	v.RpType = ""
+	v.Hourage = ""
+	v.StartTimeDaily = ""
+	v.CommonAllotReleaseTime = ""
+	v.HotelCompanyMappingDOS = ""
+	v.CalBreakfastStr = ""
+	v.CalGuaranteeStr = ""
+	v.CalChangeRuleStr = ""
+	v.CanCheckoutEnd = ""
+	v.MemberDiscountCal = ""
+	v.Benefits = ""
+	v.ActivityType = ""
+	v.RatePlanId = 0
+	v.Status = 0
+	v.Rpid = 0
+	v.PaymentType = 0
+	v.BreakfastCount = 0
+	v.FeeBreakfastCount = 0
+	v.FeeBreakfastAmount = 0
+	v.FeeGovTaxAmount = 0
+	v.FeeGovTaxPercent = 0
+	v.FeeServiceAmount = 0
+	v.FeeServicePercent = 0
+	v.MinDays = 0
+	v.MaxDays = 0
+	v.MinAmount = 0
+	v.MinAdvHours = 0
+	v.MaxAdvHours = 0
+	v.GuaranteeType = 0
+	v.Occupancy = 0
+	v.FirstStay = 0
+	v.Agreement = 0
+	v.GuaranteeMode = 0
+	v.PackRoomFlag = 0
+	v.BottomPriceFlag = 0
+	v.IsStudent = 0
+	v.Source = 0
+	v.SellGid = 0
+	v.ParentRpid = 0
+	v.CompanyAssist = 0
+	v.MemDiscFlag = 0
+	poolRatePlan.Put(v)
 }

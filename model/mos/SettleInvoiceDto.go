@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // SettleInvoiceDto 结构体
 type SettleInvoiceDto struct {
 	// 发票类型 SPECIAL(&#34;专票&#34;)，ORDINARY(&#34;普票&#34;)
@@ -20,4 +24,29 @@ type SettleInvoiceDto struct {
 	InvoiceDate string `json:"invoice_date,omitempty" xml:"invoice_date,omitempty"`
 	// 扩展
 	ExtendParams string `json:"extend_params,omitempty" xml:"extend_params,omitempty"`
+}
+
+var poolSettleInvoiceDto = sync.Pool{
+	New: func() any {
+		return new(SettleInvoiceDto)
+	},
+}
+
+// GetSettleInvoiceDto() 从对象池中获取SettleInvoiceDto
+func GetSettleInvoiceDto() *SettleInvoiceDto {
+	return poolSettleInvoiceDto.Get().(*SettleInvoiceDto)
+}
+
+// ReleaseSettleInvoiceDto 释放SettleInvoiceDto
+func ReleaseSettleInvoiceDto(v *SettleInvoiceDto) {
+	v.InvoiceType = ""
+	v.InvoicelineNo = ""
+	v.InvoiceNo = ""
+	v.ExcludingTaxAmount = ""
+	v.TaxRate = ""
+	v.TaxAmount = ""
+	v.Amount = ""
+	v.InvoiceDate = ""
+	v.ExtendParams = ""
+	poolSettleInvoiceDto.Put(v)
 }

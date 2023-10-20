@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpIndustryWorkerModifyAPIRequest struct {
 // NewAlibabaAscpIndustryWorkerModifyRequest 初始化AlibabaAscpIndustryWorkerModifyAPIRequest对象
 func NewAlibabaAscpIndustryWorkerModifyRequest() *AlibabaAscpIndustryWorkerModifyAPIRequest {
 	return &AlibabaAscpIndustryWorkerModifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpIndustryWorkerModifyAPIRequest) Reset() {
+	r._omsServiceModifyWorkerParameter = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpIndustryWorkerModifyAPIRequest) SetOmsServiceModifyWorkerPar
 // GetOmsServiceModifyWorkerParameter OmsServiceModifyWorkerParameter Getter
 func (r AlibabaAscpIndustryWorkerModifyAPIRequest) GetOmsServiceModifyWorkerParameter() *OmsServiceModifyWorkerParameter {
 	return r._omsServiceModifyWorkerParameter
+}
+
+var poolAlibabaAscpIndustryWorkerModifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpIndustryWorkerModifyRequest()
+	},
+}
+
+// GetAlibabaAscpIndustryWorkerModifyRequest 从 sync.Pool 获取 AlibabaAscpIndustryWorkerModifyAPIRequest
+func GetAlibabaAscpIndustryWorkerModifyAPIRequest() *AlibabaAscpIndustryWorkerModifyAPIRequest {
+	return poolAlibabaAscpIndustryWorkerModifyAPIRequest.Get().(*AlibabaAscpIndustryWorkerModifyAPIRequest)
+}
+
+// ReleaseAlibabaAscpIndustryWorkerModifyAPIRequest 将 AlibabaAscpIndustryWorkerModifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpIndustryWorkerModifyAPIRequest(v *AlibabaAscpIndustryWorkerModifyAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpIndustryWorkerModifyAPIRequest.Put(v)
 }

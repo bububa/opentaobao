@@ -2,6 +2,7 @@ package koubeimall
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type TaobaoKoubeiMallCommonStoreCommentPageAPIRequest struct {
 // NewTaobaoKoubeiMallCommonStoreCommentPageRequest 初始化TaobaoKoubeiMallCommonStoreCommentPageAPIRequest对象
 func NewTaobaoKoubeiMallCommonStoreCommentPageRequest() *TaobaoKoubeiMallCommonStoreCommentPageAPIRequest {
 	return &TaobaoKoubeiMallCommonStoreCommentPageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) Reset() {
+	r._displayChannel = ""
+	r._appVersion = ""
+	r._terminalType = ""
+	r._latitude = ""
+	r._longitude = ""
+	r._cityCode = ""
+	r._dataSetId = ""
+	r._mallId = ""
+	r._storeId = ""
+	r._pageSize = 0
+	r._start = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) SetStart(_start int64
 // GetStart Start Getter
 func (r TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) GetStart() int64 {
 	return r._start
+}
+
+var poolTaobaoKoubeiMallCommonStoreCommentPageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoKoubeiMallCommonStoreCommentPageRequest()
+	},
+}
+
+// GetTaobaoKoubeiMallCommonStoreCommentPageRequest 从 sync.Pool 获取 TaobaoKoubeiMallCommonStoreCommentPageAPIRequest
+func GetTaobaoKoubeiMallCommonStoreCommentPageAPIRequest() *TaobaoKoubeiMallCommonStoreCommentPageAPIRequest {
+	return poolTaobaoKoubeiMallCommonStoreCommentPageAPIRequest.Get().(*TaobaoKoubeiMallCommonStoreCommentPageAPIRequest)
+}
+
+// ReleaseTaobaoKoubeiMallCommonStoreCommentPageAPIRequest 将 TaobaoKoubeiMallCommonStoreCommentPageAPIRequest 放入 sync.Pool
+func ReleaseTaobaoKoubeiMallCommonStoreCommentPageAPIRequest(v *TaobaoKoubeiMallCommonStoreCommentPageAPIRequest) {
+	v.Reset()
+	poolTaobaoKoubeiMallCommonStoreCommentPageAPIRequest.Put(v)
 }

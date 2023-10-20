@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // DrugInfoDto 结构体
 type DrugInfoDto struct {
 	// 药品过期日期
@@ -18,4 +22,28 @@ type DrugInfoDto struct {
 	PrepnType string `json:"prepn_type,omitempty" xml:"prepn_type,omitempty"`
 	// 生产企业名称
 	EntName string `json:"ent_name,omitempty" xml:"ent_name,omitempty"`
+}
+
+var poolDrugInfoDto = sync.Pool{
+	New: func() any {
+		return new(DrugInfoDto)
+	},
+}
+
+// GetDrugInfoDto() 从对象池中获取DrugInfoDto
+func GetDrugInfoDto() *DrugInfoDto {
+	return poolDrugInfoDto.Get().(*DrugInfoDto)
+}
+
+// ReleaseDrugInfoDto 释放DrugInfoDto
+func ReleaseDrugInfoDto(v *DrugInfoDto) {
+	v.ExpiryDate = ""
+	v.DrugName = ""
+	v.ProductionBatch = ""
+	v.Code = ""
+	v.Specifications = ""
+	v.PkgSpec = ""
+	v.PrepnType = ""
+	v.EntName = ""
+	poolDrugInfoDto.Put(v)
 }

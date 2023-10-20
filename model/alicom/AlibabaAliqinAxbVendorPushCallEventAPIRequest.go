@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,14 @@ type AlibabaAliqinAxbVendorPushCallEventAPIRequest struct {
 // NewAlibabaAliqinAxbVendorPushCallEventRequest 初始化AlibabaAliqinAxbVendorPushCallEventAPIRequest对象
 func NewAlibabaAliqinAxbVendorPushCallEventRequest() *AlibabaAliqinAxbVendorPushCallEventAPIRequest {
 	return &AlibabaAliqinAxbVendorPushCallEventAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinAxbVendorPushCallEventAPIRequest) Reset() {
+	r._eventCallRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *AlibabaAliqinAxbVendorPushCallEventAPIRequest) SetEventCallRequest(_eve
 // GetEventCallRequest EventCallRequest Getter
 func (r AlibabaAliqinAxbVendorPushCallEventAPIRequest) GetEventCallRequest() *EventCallRequest {
 	return r._eventCallRequest
+}
+
+var poolAlibabaAliqinAxbVendorPushCallEventAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinAxbVendorPushCallEventRequest()
+	},
+}
+
+// GetAlibabaAliqinAxbVendorPushCallEventRequest 从 sync.Pool 获取 AlibabaAliqinAxbVendorPushCallEventAPIRequest
+func GetAlibabaAliqinAxbVendorPushCallEventAPIRequest() *AlibabaAliqinAxbVendorPushCallEventAPIRequest {
+	return poolAlibabaAliqinAxbVendorPushCallEventAPIRequest.Get().(*AlibabaAliqinAxbVendorPushCallEventAPIRequest)
+}
+
+// ReleaseAlibabaAliqinAxbVendorPushCallEventAPIRequest 将 AlibabaAliqinAxbVendorPushCallEventAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinAxbVendorPushCallEventAPIRequest(v *AlibabaAliqinAxbVendorPushCallEventAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinAxbVendorPushCallEventAPIRequest.Put(v)
 }

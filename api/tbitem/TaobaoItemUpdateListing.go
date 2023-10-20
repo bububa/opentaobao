@@ -9,11 +9,6 @@ import (
 // taobao.item.update.listing
 //
 // * 单个商品上架&lt;br/&gt;* 输入的num_iid必须属于当前会话用户
-func TaobaoItemUpdateListing(clt *core.SDKClient, req *tbitem.TaobaoItemUpdateListingAPIRequest, session string) (*tbitem.TaobaoItemUpdateListingAPIResponse, error) {
-	var resp tbitem.TaobaoItemUpdateListingAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoItemUpdateListing(clt *core.SDKClient, req *tbitem.TaobaoItemUpdateListingAPIRequest, resp *tbitem.TaobaoItemUpdateListingAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

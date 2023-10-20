@@ -1,5 +1,9 @@
 package scs
 
+import (
+	"sync"
+)
+
 // TaobaoOnebpDkxReportReportAccountOfflineResultDto 结构体
 type TaobaoOnebpDkxReportReportAccountOfflineResultDto struct {
 	// 返回结果
@@ -12,4 +16,25 @@ type TaobaoOnebpDkxReportReportAccountOfflineResultDto struct {
 	ResultCode *ResultCode `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoOnebpDkxReportReportAccountOfflineResultDto = sync.Pool{
+	New: func() any {
+		return new(TaobaoOnebpDkxReportReportAccountOfflineResultDto)
+	},
+}
+
+// GetTaobaoOnebpDkxReportReportAccountOfflineResultDto() 从对象池中获取TaobaoOnebpDkxReportReportAccountOfflineResultDto
+func GetTaobaoOnebpDkxReportReportAccountOfflineResultDto() *TaobaoOnebpDkxReportReportAccountOfflineResultDto {
+	return poolTaobaoOnebpDkxReportReportAccountOfflineResultDto.Get().(*TaobaoOnebpDkxReportReportAccountOfflineResultDto)
+}
+
+// ReleaseTaobaoOnebpDkxReportReportAccountOfflineResultDto 释放TaobaoOnebpDkxReportReportAccountOfflineResultDto
+func ReleaseTaobaoOnebpDkxReportReportAccountOfflineResultDto(v *TaobaoOnebpDkxReportReportAccountOfflineResultDto) {
+	v.ReportResultTopDTOList = v.ReportResultTopDTOList[:0]
+	v.Message = ""
+	v.TotalCount = 0
+	v.ResultCode = nil
+	v.Success = false
+	poolTaobaoOnebpDkxReportReportAccountOfflineResultDto.Put(v)
 }

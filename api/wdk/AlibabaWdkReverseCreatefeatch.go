@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.reverse.createfeatch
 //
 // 发起逆向取货
-func AlibabaWdkReverseCreatefeatch(clt *core.SDKClient, req *wdk.AlibabaWdkReverseCreatefeatchAPIRequest, session string) (*wdk.AlibabaWdkReverseCreatefeatchAPIResponse, error) {
-	var resp wdk.AlibabaWdkReverseCreatefeatchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkReverseCreatefeatch(clt *core.SDKClient, req *wdk.AlibabaWdkReverseCreatefeatchAPIRequest, resp *wdk.AlibabaWdkReverseCreatefeatchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

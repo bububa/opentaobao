@@ -2,6 +2,7 @@ package aedropshiper
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AliexpressDsCommissionorderListbyindexAPIRequest struct {
 // NewAliexpressDsCommissionorderListbyindexRequest 初始化AliexpressDsCommissionorderListbyindexAPIRequest对象
 func NewAliexpressDsCommissionorderListbyindexRequest() *AliexpressDsCommissionorderListbyindexAPIRequest {
 	return &AliexpressDsCommissionorderListbyindexAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressDsCommissionorderListbyindexAPIRequest) Reset() {
+	r._startQueryIndexId = ""
+	r._startTime = ""
+	r._endTime = ""
+	r._status = ""
+	r._pageSize = 0
+	r._pageNo = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AliexpressDsCommissionorderListbyindexAPIRequest) SetPageNo(_pageNo int
 // GetPageNo PageNo Getter
 func (r AliexpressDsCommissionorderListbyindexAPIRequest) GetPageNo() int64 {
 	return r._pageNo
+}
+
+var poolAliexpressDsCommissionorderListbyindexAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressDsCommissionorderListbyindexRequest()
+	},
+}
+
+// GetAliexpressDsCommissionorderListbyindexRequest 从 sync.Pool 获取 AliexpressDsCommissionorderListbyindexAPIRequest
+func GetAliexpressDsCommissionorderListbyindexAPIRequest() *AliexpressDsCommissionorderListbyindexAPIRequest {
+	return poolAliexpressDsCommissionorderListbyindexAPIRequest.Get().(*AliexpressDsCommissionorderListbyindexAPIRequest)
+}
+
+// ReleaseAliexpressDsCommissionorderListbyindexAPIRequest 将 AliexpressDsCommissionorderListbyindexAPIRequest 放入 sync.Pool
+func ReleaseAliexpressDsCommissionorderListbyindexAPIRequest(v *AliexpressDsCommissionorderListbyindexAPIRequest) {
+	v.Reset()
+	poolAliexpressDsCommissionorderListbyindexAPIRequest.Put(v)
 }

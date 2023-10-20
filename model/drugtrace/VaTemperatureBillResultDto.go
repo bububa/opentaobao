@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // VaTemperatureBillResultDto 结构体
 type VaTemperatureBillResultDto struct {
 	// 最小温度值
@@ -18,4 +22,28 @@ type VaTemperatureBillResultDto struct {
 	Time string `json:"time,omitempty" xml:"time,omitempty"`
 	// 温度类型：存储温度/运输温度u
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolVaTemperatureBillResultDto = sync.Pool{
+	New: func() any {
+		return new(VaTemperatureBillResultDto)
+	},
+}
+
+// GetVaTemperatureBillResultDto() 从对象池中获取VaTemperatureBillResultDto
+func GetVaTemperatureBillResultDto() *VaTemperatureBillResultDto {
+	return poolVaTemperatureBillResultDto.Get().(*VaTemperatureBillResultDto)
+}
+
+// ReleaseVaTemperatureBillResultDto 释放VaTemperatureBillResultDto
+func ReleaseVaTemperatureBillResultDto(v *VaTemperatureBillResultDto) {
+	v.MinValue = ""
+	v.EquipmentCode = ""
+	v.MaxValue = ""
+	v.UploadEntName = ""
+	v.EquipmentName = ""
+	v.BillCode = ""
+	v.Time = ""
+	v.Type = ""
+	poolVaTemperatureBillResultDto.Put(v)
 }

@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTbkScAdzoneCreateAPIRequest struct {
 // NewTaobaoTbkScAdzoneCreateRequest 初始化TaobaoTbkScAdzoneCreateAPIRequest对象
 func NewTaobaoTbkScAdzoneCreateRequest() *TaobaoTbkScAdzoneCreateAPIRequest {
 	return &TaobaoTbkScAdzoneCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkScAdzoneCreateAPIRequest) Reset() {
+	r._adzoneName = ""
+	r._siteId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTbkScAdzoneCreateAPIRequest) SetSiteId(_siteId int64) error {
 // GetSiteId SiteId Getter
 func (r TaobaoTbkScAdzoneCreateAPIRequest) GetSiteId() int64 {
 	return r._siteId
+}
+
+var poolTaobaoTbkScAdzoneCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkScAdzoneCreateRequest()
+	},
+}
+
+// GetTaobaoTbkScAdzoneCreateRequest 从 sync.Pool 获取 TaobaoTbkScAdzoneCreateAPIRequest
+func GetTaobaoTbkScAdzoneCreateAPIRequest() *TaobaoTbkScAdzoneCreateAPIRequest {
+	return poolTaobaoTbkScAdzoneCreateAPIRequest.Get().(*TaobaoTbkScAdzoneCreateAPIRequest)
+}
+
+// ReleaseTaobaoTbkScAdzoneCreateAPIRequest 将 TaobaoTbkScAdzoneCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkScAdzoneCreateAPIRequest(v *TaobaoTbkScAdzoneCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkScAdzoneCreateAPIRequest.Put(v)
 }

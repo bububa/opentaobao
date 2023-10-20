@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -18,6 +19,12 @@ type AlibabaAlscCrmCardPagetmpAPIResponse struct {
 	AlibabaAlscCrmCardPagetmpAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlscCrmCardPagetmpAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlscCrmCardPagetmpAPIResponseModel).Reset()
+}
+
 // AlibabaAlscCrmCardPagetmpAPIResponseModel is 查询卡模板列表(支持数据下行) 成功返回结果
 type AlibabaAlscCrmCardPagetmpAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_card_pagetmp_response"`
@@ -25,4 +32,27 @@ type AlibabaAlscCrmCardPagetmpAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 分页返回模型
 	Result *CommonPageResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlscCrmCardPagetmpAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlscCrmCardPagetmpAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlscCrmCardPagetmpAPIResponse)
+	},
+}
+
+// GetAlibabaAlscCrmCardPagetmpAPIResponse 从 sync.Pool 获取 AlibabaAlscCrmCardPagetmpAPIResponse
+func GetAlibabaAlscCrmCardPagetmpAPIResponse() *AlibabaAlscCrmCardPagetmpAPIResponse {
+	return poolAlibabaAlscCrmCardPagetmpAPIResponse.Get().(*AlibabaAlscCrmCardPagetmpAPIResponse)
+}
+
+// ReleaseAlibabaAlscCrmCardPagetmpAPIResponse 将 AlibabaAlscCrmCardPagetmpAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlscCrmCardPagetmpAPIResponse(v *AlibabaAlscCrmCardPagetmpAPIResponse) {
+	v.Reset()
+	poolAlibabaAlscCrmCardPagetmpAPIResponse.Put(v)
 }

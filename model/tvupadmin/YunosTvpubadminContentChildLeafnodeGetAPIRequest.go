@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type YunosTvpubadminContentChildLeafnodeGetAPIRequest struct {
 // NewYunosTvpubadminContentChildLeafnodeGetRequest 初始化YunosTvpubadminContentChildLeafnodeGetAPIRequest对象
 func NewYunosTvpubadminContentChildLeafnodeGetRequest() *YunosTvpubadminContentChildLeafnodeGetAPIRequest {
 	return &YunosTvpubadminContentChildLeafnodeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminContentChildLeafnodeGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r YunosTvpubadminContentChildLeafnodeGetAPIRequest) GetApiParams(params ur
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r YunosTvpubadminContentChildLeafnodeGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolYunosTvpubadminContentChildLeafnodeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminContentChildLeafnodeGetRequest()
+	},
+}
+
+// GetYunosTvpubadminContentChildLeafnodeGetRequest 从 sync.Pool 获取 YunosTvpubadminContentChildLeafnodeGetAPIRequest
+func GetYunosTvpubadminContentChildLeafnodeGetAPIRequest() *YunosTvpubadminContentChildLeafnodeGetAPIRequest {
+	return poolYunosTvpubadminContentChildLeafnodeGetAPIRequest.Get().(*YunosTvpubadminContentChildLeafnodeGetAPIRequest)
+}
+
+// ReleaseYunosTvpubadminContentChildLeafnodeGetAPIRequest 将 YunosTvpubadminContentChildLeafnodeGetAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminContentChildLeafnodeGetAPIRequest(v *YunosTvpubadminContentChildLeafnodeGetAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminContentChildLeafnodeGetAPIRequest.Put(v)
 }

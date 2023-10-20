@@ -1,5 +1,9 @@
 package ott
 
+import (
+	"sync"
+)
+
 // YunosTvscreenLgeLauncherGetResult 结构体
 type YunosTvscreenLgeLauncherGetResult struct {
 	// Error message when success == false
@@ -12,4 +16,25 @@ type YunosTvscreenLgeLauncherGetResult struct {
 	HttpStatusCode int64 `json:"http_status_code,omitempty" xml:"http_status_code,omitempty"`
 	// Is process succeed.
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolYunosTvscreenLgeLauncherGetResult = sync.Pool{
+	New: func() any {
+		return new(YunosTvscreenLgeLauncherGetResult)
+	},
+}
+
+// GetYunosTvscreenLgeLauncherGetResult() 从对象池中获取YunosTvscreenLgeLauncherGetResult
+func GetYunosTvscreenLgeLauncherGetResult() *YunosTvscreenLgeLauncherGetResult {
+	return poolYunosTvscreenLgeLauncherGetResult.Get().(*YunosTvscreenLgeLauncherGetResult)
+}
+
+// ReleaseYunosTvscreenLgeLauncherGetResult 释放YunosTvscreenLgeLauncherGetResult
+func ReleaseYunosTvscreenLgeLauncherGetResult(v *YunosTvscreenLgeLauncherGetResult) {
+	v.MsgInfo = ""
+	v.MsgCode = ""
+	v.Model = nil
+	v.HttpStatusCode = 0
+	v.Success = false
+	poolYunosTvscreenLgeLauncherGetResult.Put(v)
 }

@@ -2,6 +2,7 @@ package cainiaohandover
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoGlobalLogisticsCarrierQuerylistAPIRequest struct {
 // NewCainiaoGlobalLogisticsCarrierQuerylistRequest 初始化CainiaoGlobalLogisticsCarrierQuerylistAPIRequest对象
 func NewCainiaoGlobalLogisticsCarrierQuerylistRequest() *CainiaoGlobalLogisticsCarrierQuerylistAPIRequest {
 	return &CainiaoGlobalLogisticsCarrierQuerylistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalLogisticsCarrierQuerylistAPIRequest) Reset() {
+	r._locale = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoGlobalLogisticsCarrierQuerylistAPIRequest) SetLocale(_locale str
 // GetLocale Locale Getter
 func (r CainiaoGlobalLogisticsCarrierQuerylistAPIRequest) GetLocale() string {
 	return r._locale
+}
+
+var poolCainiaoGlobalLogisticsCarrierQuerylistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalLogisticsCarrierQuerylistRequest()
+	},
+}
+
+// GetCainiaoGlobalLogisticsCarrierQuerylistRequest 从 sync.Pool 获取 CainiaoGlobalLogisticsCarrierQuerylistAPIRequest
+func GetCainiaoGlobalLogisticsCarrierQuerylistAPIRequest() *CainiaoGlobalLogisticsCarrierQuerylistAPIRequest {
+	return poolCainiaoGlobalLogisticsCarrierQuerylistAPIRequest.Get().(*CainiaoGlobalLogisticsCarrierQuerylistAPIRequest)
+}
+
+// ReleaseCainiaoGlobalLogisticsCarrierQuerylistAPIRequest 将 CainiaoGlobalLogisticsCarrierQuerylistAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalLogisticsCarrierQuerylistAPIRequest(v *CainiaoGlobalLogisticsCarrierQuerylistAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalLogisticsCarrierQuerylistAPIRequest.Put(v)
 }

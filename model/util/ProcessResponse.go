@@ -1,5 +1,9 @@
 package util
 
+import (
+	"sync"
+)
+
 // ProcessResponse 结构体
 type ProcessResponse struct {
 	// 流程实例ID
@@ -16,4 +20,27 @@ type ProcessResponse struct {
 	ProcessSuccess bool `json:"process_success,omitempty" xml:"process_success,omitempty"`
 	// 业务是否成功
 	BizSuccess bool `json:"biz_success,omitempty" xml:"biz_success,omitempty"`
+}
+
+var poolProcessResponse = sync.Pool{
+	New: func() any {
+		return new(ProcessResponse)
+	},
+}
+
+// GetProcessResponse() 从对象池中获取ProcessResponse
+func GetProcessResponse() *ProcessResponse {
+	return poolProcessResponse.Get().(*ProcessResponse)
+}
+
+// ReleaseProcessResponse 释放ProcessResponse
+func ReleaseProcessResponse(v *ProcessResponse) {
+	v.ProcessInstanceId = ""
+	v.ProcessErrorCode = ""
+	v.ProcessErrorMsg = ""
+	v.ProcessRemark = ""
+	v.ProcessData = ""
+	v.ProcessSuccess = false
+	v.BizSuccess = false
+	poolProcessResponse.Put(v)
 }

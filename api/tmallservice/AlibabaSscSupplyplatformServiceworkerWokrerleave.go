@@ -9,11 +9,6 @@ import (
 // alibaba.ssc.supplyplatform.serviceworker.wokrerleave
 //
 // 工人请假
-func AlibabaSscSupplyplatformServiceworkerWokrerleave(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIResponse, error) {
-	var resp tmallservice.AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSscSupplyplatformServiceworkerWokrerleave(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest, resp *tmallservice.AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

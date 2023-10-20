@@ -22,11 +22,6 @@ import (
 // 10, 网点已存在
 // 11, 网点不存在
 // 12, 系统错误
-func TmallServicecenterServicestoreDeleteservicestore(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreDeleteservicestoreAPIRequest, session string) (*tmallservice.TmallServicecenterServicestoreDeleteservicestoreAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterServicestoreDeleteservicestoreAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterServicestoreDeleteservicestore(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreDeleteservicestoreAPIRequest, resp *tmallservice.TmallServicecenterServicestoreDeleteservicestoreAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghomeBankcardSyncAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeBankcardSyncRequest 初始化AlibabaAlihouseExistinghomeBankcardSyncAPIRequest对象
 func NewAlibabaAlihouseExistinghomeBankcardSyncRequest() *AlibabaAlihouseExistinghomeBankcardSyncAPIRequest {
 	return &AlibabaAlihouseExistinghomeBankcardSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeBankcardSyncAPIRequest) Reset() {
+	r._existingHomeBankCardDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghomeBankcardSyncAPIRequest) SetExistingHomeBankC
 // GetExistingHomeBankCardDto ExistingHomeBankCardDto Getter
 func (r AlibabaAlihouseExistinghomeBankcardSyncAPIRequest) GetExistingHomeBankCardDto() *ExistingHomeBankCardDto {
 	return r._existingHomeBankCardDto
+}
+
+var poolAlibabaAlihouseExistinghomeBankcardSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeBankcardSyncRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeBankcardSyncRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeBankcardSyncAPIRequest
+func GetAlibabaAlihouseExistinghomeBankcardSyncAPIRequest() *AlibabaAlihouseExistinghomeBankcardSyncAPIRequest {
+	return poolAlibabaAlihouseExistinghomeBankcardSyncAPIRequest.Get().(*AlibabaAlihouseExistinghomeBankcardSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeBankcardSyncAPIRequest 将 AlibabaAlihouseExistinghomeBankcardSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeBankcardSyncAPIRequest(v *AlibabaAlihouseExistinghomeBankcardSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeBankcardSyncAPIRequest.Put(v)
 }

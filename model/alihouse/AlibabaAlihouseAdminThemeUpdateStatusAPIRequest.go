@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseAdminThemeUpdateStatusAPIRequest struct {
 // NewAlibabaAlihouseAdminThemeUpdateStatusRequest 初始化AlibabaAlihouseAdminThemeUpdateStatusAPIRequest对象
 func NewAlibabaAlihouseAdminThemeUpdateStatusRequest() *AlibabaAlihouseAdminThemeUpdateStatusAPIRequest {
 	return &AlibabaAlihouseAdminThemeUpdateStatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseAdminThemeUpdateStatusAPIRequest) Reset() {
+	r._etcThemeDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseAdminThemeUpdateStatusAPIRequest) SetEtcThemeDto(_etcThe
 // GetEtcThemeDto EtcThemeDto Getter
 func (r AlibabaAlihouseAdminThemeUpdateStatusAPIRequest) GetEtcThemeDto() *EtcThemeDto {
 	return r._etcThemeDto
+}
+
+var poolAlibabaAlihouseAdminThemeUpdateStatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseAdminThemeUpdateStatusRequest()
+	},
+}
+
+// GetAlibabaAlihouseAdminThemeUpdateStatusRequest 从 sync.Pool 获取 AlibabaAlihouseAdminThemeUpdateStatusAPIRequest
+func GetAlibabaAlihouseAdminThemeUpdateStatusAPIRequest() *AlibabaAlihouseAdminThemeUpdateStatusAPIRequest {
+	return poolAlibabaAlihouseAdminThemeUpdateStatusAPIRequest.Get().(*AlibabaAlihouseAdminThemeUpdateStatusAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseAdminThemeUpdateStatusAPIRequest 将 AlibabaAlihouseAdminThemeUpdateStatusAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseAdminThemeUpdateStatusAPIRequest(v *AlibabaAlihouseAdminThemeUpdateStatusAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseAdminThemeUpdateStatusAPIRequest.Put(v)
 }

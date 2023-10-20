@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // AlibabaAlihealthDentalItemBindMtopResult 结构体
 type AlibabaAlihealthDentalItemBindMtopResult struct {
 	// model
@@ -10,4 +14,24 @@ type AlibabaAlihealthDentalItemBindMtopResult struct {
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// true
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaAlihealthDentalItemBindMtopResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDentalItemBindMtopResult)
+	},
+}
+
+// GetAlibabaAlihealthDentalItemBindMtopResult() 从对象池中获取AlibabaAlihealthDentalItemBindMtopResult
+func GetAlibabaAlihealthDentalItemBindMtopResult() *AlibabaAlihealthDentalItemBindMtopResult {
+	return poolAlibabaAlihealthDentalItemBindMtopResult.Get().(*AlibabaAlihealthDentalItemBindMtopResult)
+}
+
+// ReleaseAlibabaAlihealthDentalItemBindMtopResult 释放AlibabaAlihealthDentalItemBindMtopResult
+func ReleaseAlibabaAlihealthDentalItemBindMtopResult(v *AlibabaAlihealthDentalItemBindMtopResult) {
+	v.StoreItemRelVoList = v.StoreItemRelVoList[:0]
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.Success = false
+	poolAlibabaAlihealthDentalItemBindMtopResult.Put(v)
 }

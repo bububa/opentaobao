@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // SearchCardOpenReq 结构体
 type SearchCardOpenReq struct {
 	// 卡模板ID
@@ -30,4 +34,34 @@ type SearchCardOpenReq struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 是否需要总数
 	NeedCount bool `json:"need_count,omitempty" xml:"need_count,omitempty"`
+}
+
+var poolSearchCardOpenReq = sync.Pool{
+	New: func() any {
+		return new(SearchCardOpenReq)
+	},
+}
+
+// GetSearchCardOpenReq() 从对象池中获取SearchCardOpenReq
+func GetSearchCardOpenReq() *SearchCardOpenReq {
+	return poolSearchCardOpenReq.Get().(*SearchCardOpenReq)
+}
+
+// ReleaseSearchCardOpenReq 释放SearchCardOpenReq
+func ReleaseSearchCardOpenReq(v *SearchCardOpenReq) {
+	v.CardTemplateIds = v.CardTemplateIds[:0]
+	v.OpenCardShopIds = v.OpenCardShopIds[:0]
+	v.Statuses = v.Statuses[:0]
+	v.BrandId = ""
+	v.CardType = ""
+	v.No = ""
+	v.OpenTimeEnd = ""
+	v.OpenTimeStart = ""
+	v.OutBrandId = ""
+	v.OutShopId = ""
+	v.ShopId = ""
+	v.PageNo = 0
+	v.PageSize = 0
+	v.NeedCount = false
+	poolSearchCardOpenReq.Put(v)
 }

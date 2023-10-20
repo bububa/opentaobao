@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.outflow.prescription.syncstatus
 //
 // 阿里健康-处方外流-对外提供同步处方状态功能
-func AlibabaAlihealthOutflowPrescriptionSyncstatus(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthOutflowPrescriptionSyncstatusAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthOutflowPrescriptionSyncstatusAPIResponse, error) {
-	var resp alihealthoutflow.AlibabaAlihealthOutflowPrescriptionSyncstatusAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthOutflowPrescriptionSyncstatus(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthOutflowPrescriptionSyncstatusAPIRequest, resp *alihealthoutflow.AlibabaAlihealthOutflowPrescriptionSyncstatusAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghome.house.storeentrust.query
 //
 // 门店委托信息查询
-func AlibabaAlihouseExistinghomeHouseStoreentrustQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghomeHouseStoreentrustQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

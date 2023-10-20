@@ -9,11 +9,6 @@ import (
 // taobao.qimen.combineitem.synchronize
 //
 // ERP调用奇门的接口,将商品信息同步给WMS
-func TaobaoQimenCombineitemSynchronize(clt *core.SDKClient, req *qimen.TaobaoQimenCombineitemSynchronizeAPIRequest, session string) (*qimen.TaobaoQimenCombineitemSynchronizeAPIResponse, error) {
-	var resp qimen.TaobaoQimenCombineitemSynchronizeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQimenCombineitemSynchronize(clt *core.SDKClient, req *qimen.TaobaoQimenCombineitemSynchronizeAPIRequest, resp *qimen.TaobaoQimenCombineitemSynchronizeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

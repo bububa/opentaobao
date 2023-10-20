@@ -1,5 +1,9 @@
 package nrt
 
+import (
+	"sync"
+)
+
 // DeviceDto 结构体
 type DeviceDto struct {
 	// 设备编码
@@ -22,4 +26,30 @@ type DeviceDto struct {
 	Latitude string `json:"latitude,omitempty" xml:"latitude,omitempty"`
 	// 激活码
 	Activation string `json:"activation,omitempty" xml:"activation,omitempty"`
+}
+
+var poolDeviceDto = sync.Pool{
+	New: func() any {
+		return new(DeviceDto)
+	},
+}
+
+// GetDeviceDto() 从对象池中获取DeviceDto
+func GetDeviceDto() *DeviceDto {
+	return poolDeviceDto.Get().(*DeviceDto)
+}
+
+// ReleaseDeviceDto 释放DeviceDto
+func ReleaseDeviceDto(v *DeviceDto) {
+	v.DeviceCode = ""
+	v.DeviceUuid = ""
+	v.DeviceSn = ""
+	v.DeviceStatus = ""
+	v.DeviceName = ""
+	v.DeviceAddress = ""
+	v.DeviceTypeName = ""
+	v.Longtitude = ""
+	v.Latitude = ""
+	v.Activation = ""
+	poolDeviceDto.Put(v)
 }

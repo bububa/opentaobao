@@ -1,5 +1,9 @@
 package icbulogistics
 
+import (
+	"sync"
+)
+
 // AddressQueryDto 结构体
 type AddressQueryDto struct {
 	// 国家code
@@ -12,4 +16,25 @@ type AddressQueryDto struct {
 	CityId int64 `json:"city_id,omitempty" xml:"city_id,omitempty"`
 	// 是否包含子节点
 	WithChildren bool `json:"with_children,omitempty" xml:"with_children,omitempty"`
+}
+
+var poolAddressQueryDto = sync.Pool{
+	New: func() any {
+		return new(AddressQueryDto)
+	},
+}
+
+// GetAddressQueryDto() 从对象池中获取AddressQueryDto
+func GetAddressQueryDto() *AddressQueryDto {
+	return poolAddressQueryDto.Get().(*AddressQueryDto)
+}
+
+// ReleaseAddressQueryDto 释放AddressQueryDto
+func ReleaseAddressQueryDto(v *AddressQueryDto) {
+	v.CountryCode = ""
+	v.SearchText = ""
+	v.ProvinceId = 0
+	v.CityId = 0
+	v.WithChildren = false
+	poolAddressQueryDto.Put(v)
 }

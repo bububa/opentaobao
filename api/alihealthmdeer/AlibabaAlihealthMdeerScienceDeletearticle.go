@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.mdeer.science.deletearticle
 //
 // 三方同步文章删除
-func AlibabaAlihealthMdeerScienceDeletearticle(clt *core.SDKClient, req *alihealthmdeer.AlibabaAlihealthMdeerScienceDeletearticleAPIRequest, session string) (*alihealthmdeer.AlibabaAlihealthMdeerScienceDeletearticleAPIResponse, error) {
-	var resp alihealthmdeer.AlibabaAlihealthMdeerScienceDeletearticleAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthMdeerScienceDeletearticle(clt *core.SDKClient, req *alihealthmdeer.AlibabaAlihealthMdeerScienceDeletearticleAPIRequest, resp *alihealthmdeer.AlibabaAlihealthMdeerScienceDeletearticleAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

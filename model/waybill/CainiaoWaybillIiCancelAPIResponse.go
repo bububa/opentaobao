@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type CainiaoWaybillIiCancelAPIResponse struct {
 	CainiaoWaybillIiCancelAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *CainiaoWaybillIiCancelAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoWaybillIiCancelAPIResponseModel).Reset()
+}
+
 // CainiaoWaybillIiCancelAPIResponseModel is 商家取消获取的电子面单号 成功返回结果
 type CainiaoWaybillIiCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_waybill_ii_cancel_response"`
@@ -22,4 +29,27 @@ type CainiaoWaybillIiCancelAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 调用取消是否成功
 	CancelResult bool `json:"cancel_result,omitempty" xml:"cancel_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoWaybillIiCancelAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.CancelResult = false
+}
+
+var poolCainiaoWaybillIiCancelAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoWaybillIiCancelAPIResponse)
+	},
+}
+
+// GetCainiaoWaybillIiCancelAPIResponse 从 sync.Pool 获取 CainiaoWaybillIiCancelAPIResponse
+func GetCainiaoWaybillIiCancelAPIResponse() *CainiaoWaybillIiCancelAPIResponse {
+	return poolCainiaoWaybillIiCancelAPIResponse.Get().(*CainiaoWaybillIiCancelAPIResponse)
+}
+
+// ReleaseCainiaoWaybillIiCancelAPIResponse 将 CainiaoWaybillIiCancelAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoWaybillIiCancelAPIResponse(v *CainiaoWaybillIiCancelAPIResponse) {
+	v.Reset()
+	poolCainiaoWaybillIiCancelAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package damai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDamaiMevOpenPushPaperformatAPIRequest struct {
 // NewAlibabaDamaiMevOpenPushPaperformatRequest 初始化AlibabaDamaiMevOpenPushPaperformatAPIRequest对象
 func NewAlibabaDamaiMevOpenPushPaperformatRequest() *AlibabaDamaiMevOpenPushPaperformatAPIRequest {
 	return &AlibabaDamaiMevOpenPushPaperformatAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiMevOpenPushPaperformatAPIRequest) Reset() {
+	r._pushPaperFormatParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDamaiMevOpenPushPaperformatAPIRequest) SetPushPaperFormatParam(_
 // GetPushPaperFormatParam PushPaperFormatParam Getter
 func (r AlibabaDamaiMevOpenPushPaperformatAPIRequest) GetPushPaperFormatParam() *ThirdPaperFormatPushOpenParam {
 	return r._pushPaperFormatParam
+}
+
+var poolAlibabaDamaiMevOpenPushPaperformatAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiMevOpenPushPaperformatRequest()
+	},
+}
+
+// GetAlibabaDamaiMevOpenPushPaperformatRequest 从 sync.Pool 获取 AlibabaDamaiMevOpenPushPaperformatAPIRequest
+func GetAlibabaDamaiMevOpenPushPaperformatAPIRequest() *AlibabaDamaiMevOpenPushPaperformatAPIRequest {
+	return poolAlibabaDamaiMevOpenPushPaperformatAPIRequest.Get().(*AlibabaDamaiMevOpenPushPaperformatAPIRequest)
+}
+
+// ReleaseAlibabaDamaiMevOpenPushPaperformatAPIRequest 将 AlibabaDamaiMevOpenPushPaperformatAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiMevOpenPushPaperformatAPIRequest(v *AlibabaDamaiMevOpenPushPaperformatAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiMevOpenPushPaperformatAPIRequest.Put(v)
 }

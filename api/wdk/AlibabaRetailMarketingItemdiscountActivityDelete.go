@@ -9,11 +9,6 @@ import (
 // alibaba.retail.marketing.itemdiscount.activity.delete
 //
 // 同城零售单品特价活动删除
-func AlibabaRetailMarketingItemdiscountActivityDelete(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingItemdiscountActivityDeleteAPIRequest, session string) (*wdk.AlibabaRetailMarketingItemdiscountActivityDeleteAPIResponse, error) {
-	var resp wdk.AlibabaRetailMarketingItemdiscountActivityDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaRetailMarketingItemdiscountActivityDelete(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingItemdiscountActivityDeleteAPIRequest, resp *wdk.AlibabaRetailMarketingItemdiscountActivityDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

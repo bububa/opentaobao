@@ -2,6 +2,7 @@ package tuanhotel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlitripTuanHotelItemSkuUpdateAPIResponse struct {
 	model.CommonResponse
 	AlitripTuanHotelItemSkuUpdateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlitripTuanHotelItemSkuUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripTuanHotelItemSkuUpdateAPIResponseModel).Reset()
 }
 
 // AlitripTuanHotelItemSkuUpdateAPIResponseModel is 酒店团购套餐商品SKU更新和新增 成功返回结果
@@ -32,4 +39,32 @@ type AlitripTuanHotelItemSkuUpdateAPIResponseModel struct {
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// 操作状态
 	Status bool `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripTuanHotelItemSkuUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TopItemSkuBaseInfoList = m.TopItemSkuBaseInfoList[:0]
+	m.MsgCode = ""
+	m.Message = ""
+	m.ItemId = 0
+	m.SellerId = 0
+	m.Status = false
+}
+
+var poolAlitripTuanHotelItemSkuUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripTuanHotelItemSkuUpdateAPIResponse)
+	},
+}
+
+// GetAlitripTuanHotelItemSkuUpdateAPIResponse 从 sync.Pool 获取 AlitripTuanHotelItemSkuUpdateAPIResponse
+func GetAlitripTuanHotelItemSkuUpdateAPIResponse() *AlitripTuanHotelItemSkuUpdateAPIResponse {
+	return poolAlitripTuanHotelItemSkuUpdateAPIResponse.Get().(*AlitripTuanHotelItemSkuUpdateAPIResponse)
+}
+
+// ReleaseAlitripTuanHotelItemSkuUpdateAPIResponse 将 AlitripTuanHotelItemSkuUpdateAPIResponse 保存到 sync.Pool
+func ReleaseAlitripTuanHotelItemSkuUpdateAPIResponse(v *AlitripTuanHotelItemSkuUpdateAPIResponse) {
+	v.Reset()
+	poolAlitripTuanHotelItemSkuUpdateAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallCarFpcarRestpayReceiveAPIResponse struct {
 	model.CommonResponse
 	TmallCarFpcarRestpayReceiveAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallCarFpcarRestpayReceiveAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallCarFpcarRestpayReceiveAPIResponseModel).Reset()
 }
 
 // TmallCarFpcarRestpayReceiveAPIResponseModel is 门店线下已收尾款 成功返回结果
@@ -28,4 +35,30 @@ type TmallCarFpcarRestpayReceiveAPIResponseModel struct {
 	Object string `json:"object,omitempty" xml:"object,omitempty"`
 	// 是否成功
 	Succes bool `json:"succes,omitempty" xml:"succes,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallCarFpcarRestpayReceiveAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.Object = ""
+	m.Succes = false
+}
+
+var poolTmallCarFpcarRestpayReceiveAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallCarFpcarRestpayReceiveAPIResponse)
+	},
+}
+
+// GetTmallCarFpcarRestpayReceiveAPIResponse 从 sync.Pool 获取 TmallCarFpcarRestpayReceiveAPIResponse
+func GetTmallCarFpcarRestpayReceiveAPIResponse() *TmallCarFpcarRestpayReceiveAPIResponse {
+	return poolTmallCarFpcarRestpayReceiveAPIResponse.Get().(*TmallCarFpcarRestpayReceiveAPIResponse)
+}
+
+// ReleaseTmallCarFpcarRestpayReceiveAPIResponse 将 TmallCarFpcarRestpayReceiveAPIResponse 保存到 sync.Pool
+func ReleaseTmallCarFpcarRestpayReceiveAPIResponse(v *TmallCarFpcarRestpayReceiveAPIResponse) {
+	v.Reset()
+	poolTmallCarFpcarRestpayReceiveAPIResponse.Put(v)
 }

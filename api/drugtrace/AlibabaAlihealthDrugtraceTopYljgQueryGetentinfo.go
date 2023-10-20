@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drugtrace.top.yljg.query.getentinfo
 //
 // 根据企业名称查询ID
-func AlibabaAlihealthDrugtraceTopYljgQueryGetentinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugtraceTopYljgQueryGetentinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest, resp *drugtrace.AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

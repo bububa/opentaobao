@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // AlitripHotelRateGetmixratelistGetResult 结构体
 type AlitripHotelRateGetmixratelistGetResult struct {
 	// mappingCode
@@ -18,4 +22,28 @@ type AlitripHotelRateGetmixratelistGetResult struct {
 	Model *GetMixRateListResult `json:"model,omitempty" xml:"model,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlitripHotelRateGetmixratelistGetResult = sync.Pool{
+	New: func() any {
+		return new(AlitripHotelRateGetmixratelistGetResult)
+	},
+}
+
+// GetAlitripHotelRateGetmixratelistGetResult() 从对象池中获取AlitripHotelRateGetmixratelistGetResult
+func GetAlitripHotelRateGetmixratelistGetResult() *AlitripHotelRateGetmixratelistGetResult {
+	return poolAlitripHotelRateGetmixratelistGetResult.Get().(*AlitripHotelRateGetmixratelistGetResult)
+}
+
+// ReleaseAlitripHotelRateGetmixratelistGetResult 释放AlitripHotelRateGetmixratelistGetResult
+func ReleaseAlitripHotelRateGetmixratelistGetResult(v *AlitripHotelRateGetmixratelistGetResult) {
+	v.MappingCode = ""
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.BizExtMap = nil
+	v.Headers = nil
+	v.HttpStatusCode = 0
+	v.Model = nil
+	v.Success = false
+	poolAlitripHotelRateGetmixratelistGetResult.Put(v)
 }

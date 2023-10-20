@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse struct {
 	AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponseModel).Reset()
+}
+
 // AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponseModel is 标准化仓作业单回传接口 成功返回结果
 type AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_fulfill_warehouse_work_order_callback_response"`
@@ -26,4 +33,29 @@ type AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponseModel struct {
 	RespCode string `json:"resp_code,omitempty" xml:"resp_code,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RespMessage = ""
+	m.RespCode = ""
+	m.IsSuccess = false
+}
+
+var poolAlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse)
+	},
+}
+
+// GetAlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse 从 sync.Pool 获取 AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse
+func GetAlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse() *AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse {
+	return poolAlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse.Get().(*AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse)
+}
+
+// ReleaseAlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse 将 AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse(v *AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse.Put(v)
 }

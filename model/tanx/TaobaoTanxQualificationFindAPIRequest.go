@@ -2,6 +2,7 @@ package tanx
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoTanxQualificationFindAPIRequest struct {
 // NewTaobaoTanxQualificationFindRequest 初始化TaobaoTanxQualificationFindAPIRequest对象
 func NewTaobaoTanxQualificationFindRequest() *TaobaoTanxQualificationFindAPIRequest {
 	return &TaobaoTanxQualificationFindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTanxQualificationFindAPIRequest) Reset() {
+	r._token = ""
+	r._memberId = 0
+	r._signTime = 0
+	r._page = 0
+	r._pageSize = 0
+	r._query = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoTanxQualificationFindAPIRequest) SetQuery(_query *QualificationQu
 // GetQuery Query Getter
 func (r TaobaoTanxQualificationFindAPIRequest) GetQuery() *QualificationQuery {
 	return r._query
+}
+
+var poolTaobaoTanxQualificationFindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTanxQualificationFindRequest()
+	},
+}
+
+// GetTaobaoTanxQualificationFindRequest 从 sync.Pool 获取 TaobaoTanxQualificationFindAPIRequest
+func GetTaobaoTanxQualificationFindAPIRequest() *TaobaoTanxQualificationFindAPIRequest {
+	return poolTaobaoTanxQualificationFindAPIRequest.Get().(*TaobaoTanxQualificationFindAPIRequest)
+}
+
+// ReleaseTaobaoTanxQualificationFindAPIRequest 将 TaobaoTanxQualificationFindAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTanxQualificationFindAPIRequest(v *TaobaoTanxQualificationFindAPIRequest) {
+	v.Reset()
+	poolTaobaoTanxQualificationFindAPIRequest.Put(v)
 }

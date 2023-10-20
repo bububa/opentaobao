@@ -1,5 +1,9 @@
 package ascpffo
 
+import (
+	"sync"
+)
+
 // ErpFulfillmentForwardDto 结构体
 type ErpFulfillmentForwardDto struct {
 	// 发货金额
@@ -34,4 +38,36 @@ type ErpFulfillmentForwardDto struct {
 	OutBoundTime int64 `json:"out_bound_time,omitempty" xml:"out_bound_time,omitempty"`
 	// 下发到仓时间戳
 	SendFulfillTime int64 `json:"send_fulfill_time,omitempty" xml:"send_fulfill_time,omitempty"`
+}
+
+var poolErpFulfillmentForwardDto = sync.Pool{
+	New: func() any {
+		return new(ErpFulfillmentForwardDto)
+	},
+}
+
+// GetErpFulfillmentForwardDto() 从对象池中获取ErpFulfillmentForwardDto
+func GetErpFulfillmentForwardDto() *ErpFulfillmentForwardDto {
+	return poolErpFulfillmentForwardDto.Get().(*ErpFulfillmentForwardDto)
+}
+
+// ReleaseErpFulfillmentForwardDto 释放ErpFulfillmentForwardDto
+func ReleaseErpFulfillmentForwardDto(v *ErpFulfillmentForwardDto) {
+	v.PackagePaidFee = ""
+	v.ReceiverCountry = ""
+	v.ReceiverPhone = ""
+	v.ReceiverMobile = ""
+	v.ReceiverName = ""
+	v.BuyerName = ""
+	v.TrackingNo = ""
+	v.LbxNo = ""
+	v.FulfillmentOrderNo = ""
+	v.TradeOrderNo = ""
+	v.WarehouseName = ""
+	v.ExtendFields = ""
+	v.OrderStatus = ""
+	v.TradeCreateTime = 0
+	v.OutBoundTime = 0
+	v.SendFulfillTime = 0
+	poolErpFulfillmentForwardDto.Put(v)
 }

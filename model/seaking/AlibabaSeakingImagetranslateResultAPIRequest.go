@@ -2,6 +2,7 @@ package seaking
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaSeakingImagetranslateResultAPIRequest struct {
 // NewAlibabaSeakingImagetranslateResultRequest 初始化AlibabaSeakingImagetranslateResultAPIRequest对象
 func NewAlibabaSeakingImagetranslateResultRequest() *AlibabaSeakingImagetranslateResultAPIRequest {
 	return &AlibabaSeakingImagetranslateResultAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSeakingImagetranslateResultAPIRequest) Reset() {
+	r._tokenFrom = ""
+	r._token = ""
+	r._taskId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaSeakingImagetranslateResultAPIRequest) SetTaskId(_taskId int64) 
 // GetTaskId TaskId Getter
 func (r AlibabaSeakingImagetranslateResultAPIRequest) GetTaskId() int64 {
 	return r._taskId
+}
+
+var poolAlibabaSeakingImagetranslateResultAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSeakingImagetranslateResultRequest()
+	},
+}
+
+// GetAlibabaSeakingImagetranslateResultRequest 从 sync.Pool 获取 AlibabaSeakingImagetranslateResultAPIRequest
+func GetAlibabaSeakingImagetranslateResultAPIRequest() *AlibabaSeakingImagetranslateResultAPIRequest {
+	return poolAlibabaSeakingImagetranslateResultAPIRequest.Get().(*AlibabaSeakingImagetranslateResultAPIRequest)
+}
+
+// ReleaseAlibabaSeakingImagetranslateResultAPIRequest 将 AlibabaSeakingImagetranslateResultAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSeakingImagetranslateResultAPIRequest(v *AlibabaSeakingImagetranslateResultAPIRequest) {
+	v.Reset()
+	poolAlibabaSeakingImagetranslateResultAPIRequest.Put(v)
 }

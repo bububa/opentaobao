@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoSimbaHourReportAccountGetAPIRequest struct {
 // NewTaobaoSimbaHourReportAccountGetRequest 初始化TaobaoSimbaHourReportAccountGetAPIRequest对象
 func NewTaobaoSimbaHourReportAccountGetRequest() *TaobaoSimbaHourReportAccountGetAPIRequest {
 	return &TaobaoSimbaHourReportAccountGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaHourReportAccountGetAPIRequest) Reset() {
+	r._nick = ""
+	r._theDate = ""
+	r._hour = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoSimbaHourReportAccountGetAPIRequest) SetHour(_hour string) error 
 // GetHour Hour Getter
 func (r TaobaoSimbaHourReportAccountGetAPIRequest) GetHour() string {
 	return r._hour
+}
+
+var poolTaobaoSimbaHourReportAccountGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaHourReportAccountGetRequest()
+	},
+}
+
+// GetTaobaoSimbaHourReportAccountGetRequest 从 sync.Pool 获取 TaobaoSimbaHourReportAccountGetAPIRequest
+func GetTaobaoSimbaHourReportAccountGetAPIRequest() *TaobaoSimbaHourReportAccountGetAPIRequest {
+	return poolTaobaoSimbaHourReportAccountGetAPIRequest.Get().(*TaobaoSimbaHourReportAccountGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaHourReportAccountGetAPIRequest 将 TaobaoSimbaHourReportAccountGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaHourReportAccountGetAPIRequest(v *TaobaoSimbaHourReportAccountGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaHourReportAccountGetAPIRequest.Put(v)
 }

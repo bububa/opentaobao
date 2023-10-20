@@ -2,6 +2,7 @@ package train
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTrainAgentChangeissueConfirmVtwoAPIRequest struct {
 // NewTaobaoTrainAgentChangeissueConfirmVtwoRequest 初始化TaobaoTrainAgentChangeissueConfirmVtwoAPIRequest对象
 func NewTaobaoTrainAgentChangeissueConfirmVtwoRequest() *TaobaoTrainAgentChangeissueConfirmVtwoAPIRequest {
 	return &TaobaoTrainAgentChangeissueConfirmVtwoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTrainAgentChangeissueConfirmVtwoAPIRequest) Reset() {
+	r._changeIssueRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTrainAgentChangeissueConfirmVtwoAPIRequest) SetChangeIssueRq(_cha
 // GetChangeIssueRq ChangeIssueRq Getter
 func (r TaobaoTrainAgentChangeissueConfirmVtwoAPIRequest) GetChangeIssueRq() *ChangeIssueRq {
 	return r._changeIssueRq
+}
+
+var poolTaobaoTrainAgentChangeissueConfirmVtwoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTrainAgentChangeissueConfirmVtwoRequest()
+	},
+}
+
+// GetTaobaoTrainAgentChangeissueConfirmVtwoRequest 从 sync.Pool 获取 TaobaoTrainAgentChangeissueConfirmVtwoAPIRequest
+func GetTaobaoTrainAgentChangeissueConfirmVtwoAPIRequest() *TaobaoTrainAgentChangeissueConfirmVtwoAPIRequest {
+	return poolTaobaoTrainAgentChangeissueConfirmVtwoAPIRequest.Get().(*TaobaoTrainAgentChangeissueConfirmVtwoAPIRequest)
+}
+
+// ReleaseTaobaoTrainAgentChangeissueConfirmVtwoAPIRequest 将 TaobaoTrainAgentChangeissueConfirmVtwoAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTrainAgentChangeissueConfirmVtwoAPIRequest(v *TaobaoTrainAgentChangeissueConfirmVtwoAPIRequest) {
+	v.Reset()
+	poolTaobaoTrainAgentChangeissueConfirmVtwoAPIRequest.Put(v)
 }

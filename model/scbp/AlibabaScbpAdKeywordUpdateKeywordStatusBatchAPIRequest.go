@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest struct {
 // NewAlibabaScbpAdKeywordUpdateKeywordStatusBatchRequest 初始化AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest对象
 func NewAlibabaScbpAdKeywordUpdateKeywordStatusBatchRequest() *AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest {
 	return &AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) Reset() {
+	r._topContext = nil
+	r._campaignId = 0
+	r._keywordUpdateQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) SetKeywordUpdat
 // GetKeywordUpdateQuery KeywordUpdateQuery Getter
 func (r AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) GetKeywordUpdateQuery() *KeywordUpdateQuery {
 	return r._keywordUpdateQuery
+}
+
+var poolAlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdKeywordUpdateKeywordStatusBatchRequest()
+	},
+}
+
+// GetAlibabaScbpAdKeywordUpdateKeywordStatusBatchRequest 从 sync.Pool 获取 AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest
+func GetAlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest() *AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest {
+	return poolAlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest.Get().(*AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest 将 AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest(v *AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponse struct {
 	AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponseModel is 导出所有项目的药物属性和药品信息 成功返回结果
 type AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drugcode_drugfactory_exportattribute_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 和三方交互最外层model对象
 	Result *TopResultModel `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponse
+func GetAlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponse() *AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponse {
+	return poolAlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponse.Get().(*AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponse 将 AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponse(v *AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIResponse.Put(v)
 }

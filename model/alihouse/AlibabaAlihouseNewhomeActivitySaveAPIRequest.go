@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -53,8 +54,31 @@ type AlibabaAlihouseNewhomeActivitySaveAPIRequest struct {
 // NewAlibabaAlihouseNewhomeActivitySaveRequest 初始化AlibabaAlihouseNewhomeActivitySaveAPIRequest对象
 func NewAlibabaAlihouseNewhomeActivitySaveRequest() *AlibabaAlihouseNewhomeActivitySaveAPIRequest {
 	return &AlibabaAlihouseNewhomeActivitySaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(18),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeActivitySaveAPIRequest) Reset() {
+	r._outerSalesActivityId = ""
+	r._outerProjectId = ""
+	r._outerStoreId = ""
+	r._activityName = ""
+	r._activityTypeDesc = ""
+	r._prov = ""
+	r._provId = ""
+	r._city = ""
+	r._cityId = ""
+	r._area = ""
+	r._areaId = ""
+	r._detailAddress = ""
+	r._reminderContent = ""
+	r._activityType = 0
+	r._enablePreDepositGold = 0
+	r._enableCustomer = 0
+	r._isDeleted = 0
+	r._isTest = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -306,4 +330,21 @@ func (r *AlibabaAlihouseNewhomeActivitySaveAPIRequest) SetIsTest(_isTest int64) 
 // GetIsTest IsTest Getter
 func (r AlibabaAlihouseNewhomeActivitySaveAPIRequest) GetIsTest() int64 {
 	return r._isTest
+}
+
+var poolAlibabaAlihouseNewhomeActivitySaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeActivitySaveRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeActivitySaveRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeActivitySaveAPIRequest
+func GetAlibabaAlihouseNewhomeActivitySaveAPIRequest() *AlibabaAlihouseNewhomeActivitySaveAPIRequest {
+	return poolAlibabaAlihouseNewhomeActivitySaveAPIRequest.Get().(*AlibabaAlihouseNewhomeActivitySaveAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeActivitySaveAPIRequest 将 AlibabaAlihouseNewhomeActivitySaveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeActivitySaveAPIRequest(v *AlibabaAlihouseNewhomeActivitySaveAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeActivitySaveAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // Meal 结构体
 type Meal struct {
 	// 搭配套餐名称。
@@ -18,4 +22,28 @@ type Meal struct {
 	MealId int64 `json:"meal_id,omitempty" xml:"meal_id,omitempty"`
 	// 普通运费模板id。若这个字段为空或0时，运费是卖家负责;若这个字段不为空，说明运费模板存在，运费是买家负责。
 	PostageId int64 `json:"postage_id,omitempty" xml:"postage_id,omitempty"`
+}
+
+var poolMeal = sync.Pool{
+	New: func() any {
+		return new(Meal)
+	},
+}
+
+// GetMeal() 从对象池中获取Meal
+func GetMeal() *Meal {
+	return poolMeal.Get().(*Meal)
+}
+
+// ReleaseMeal 释放Meal
+func ReleaseMeal(v *Meal) {
+	v.MealName = ""
+	v.MealPrice = ""
+	v.ItemList = ""
+	v.TypePostage = ""
+	v.MealMemo = ""
+	v.Status = ""
+	v.MealId = 0
+	v.PostageId = 0
+	poolMeal.Put(v)
 }

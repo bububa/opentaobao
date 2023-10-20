@@ -1,7 +1,11 @@
 package simba
 
-// Adgroup 结构体
-type Adgroup struct {
+import (
+	"sync"
+)
+
+// ADGroup 结构体
+type ADGroup struct {
 	// 推广组主人昵称
 	Nick string `json:"nick,omitempty" xml:"nick,omitempty"`
 	// 商品类目id，从根类目到子类目，用空格分割
@@ -36,4 +40,37 @@ type Adgroup struct {
 	MobileDiscount int64 `json:"mobile_discount,omitempty" xml:"mobile_discount,omitempty"`
 	// 非搜索是否使用默认出价，false-不用；true-使用；默认为true;
 	IsNonsearchDefaultPrice bool `json:"is_nonsearch_default_price,omitempty" xml:"is_nonsearch_default_price,omitempty"`
+}
+
+var poolADGroup = sync.Pool{
+	New: func() any {
+		return new(ADGroup)
+	},
+}
+
+// GetADGroup() 从对象池中获取ADGroup
+func GetADGroup() *ADGroup {
+	return poolADGroup.Get().(*ADGroup)
+}
+
+// ReleaseADGroup 释放ADGroup
+func ReleaseADGroup(v *ADGroup) {
+	v.Nick = ""
+	v.CategoryIds = ""
+	v.OnlineStatus = ""
+	v.OfflineType = ""
+	v.Reason = ""
+	v.CreateTime = ""
+	v.ModifiedTime = ""
+	v.Title = ""
+	v.ImgUrl = ""
+	v.ItemPrice = ""
+	v.CampaignId = 0
+	v.AdgroupId = 0
+	v.NumIid = 0
+	v.DefaultPrice = 0
+	v.NonsearchMaxPrice = 0
+	v.MobileDiscount = 0
+	v.IsNonsearchDefaultPrice = false
+	poolADGroup.Put(v)
 }

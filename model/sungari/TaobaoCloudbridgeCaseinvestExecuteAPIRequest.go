@@ -2,6 +2,7 @@ package sungari
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoCloudbridgeCaseinvestExecuteAPIRequest struct {
 // NewTaobaoCloudbridgeCaseinvestExecuteRequest 初始化TaobaoCloudbridgeCaseinvestExecuteAPIRequest对象
 func NewTaobaoCloudbridgeCaseinvestExecuteRequest() *TaobaoCloudbridgeCaseinvestExecuteAPIRequest {
 	return &TaobaoCloudbridgeCaseinvestExecuteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCloudbridgeCaseinvestExecuteAPIRequest) Reset() {
+	r._apiName = ""
+	r._data = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoCloudbridgeCaseinvestExecuteAPIRequest) SetData(_data string) err
 // GetData Data Getter
 func (r TaobaoCloudbridgeCaseinvestExecuteAPIRequest) GetData() string {
 	return r._data
+}
+
+var poolTaobaoCloudbridgeCaseinvestExecuteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCloudbridgeCaseinvestExecuteRequest()
+	},
+}
+
+// GetTaobaoCloudbridgeCaseinvestExecuteRequest 从 sync.Pool 获取 TaobaoCloudbridgeCaseinvestExecuteAPIRequest
+func GetTaobaoCloudbridgeCaseinvestExecuteAPIRequest() *TaobaoCloudbridgeCaseinvestExecuteAPIRequest {
+	return poolTaobaoCloudbridgeCaseinvestExecuteAPIRequest.Get().(*TaobaoCloudbridgeCaseinvestExecuteAPIRequest)
+}
+
+// ReleaseTaobaoCloudbridgeCaseinvestExecuteAPIRequest 将 TaobaoCloudbridgeCaseinvestExecuteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCloudbridgeCaseinvestExecuteAPIRequest(v *TaobaoCloudbridgeCaseinvestExecuteAPIRequest) {
+	v.Reset()
+	poolTaobaoCloudbridgeCaseinvestExecuteAPIRequest.Put(v)
 }

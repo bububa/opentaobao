@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // JzConsignArgsNew 结构体
 type JzConsignArgsNew struct {
 	// 快递运单号，serviceType=20 和serviceType=21时必填
@@ -20,4 +24,29 @@ type JzConsignArgsNew struct {
 	ZyPhoneNumber string `json:"zy_phone_number,omitempty" xml:"zy_phone_number,omitempty"`
 	// 发货时间，tmsPartner.virualType=true时必填
 	ZyConsignTime string `json:"zy_consign_time,omitempty" xml:"zy_consign_time,omitempty"`
+}
+
+var poolJzConsignArgsNew = sync.Pool{
+	New: func() any {
+		return new(JzConsignArgsNew)
+	},
+}
+
+// GetJzConsignArgsNew() 从对象池中获取JzConsignArgsNew
+func GetJzConsignArgsNew() *JzConsignArgsNew {
+	return poolJzConsignArgsNew.Get().(*JzConsignArgsNew)
+}
+
+// ReleaseJzConsignArgsNew 释放JzConsignArgsNew
+func ReleaseJzConsignArgsNew(v *JzConsignArgsNew) {
+	v.MailNo = ""
+	v.PackageWeight = ""
+	v.PackageVolume = ""
+	v.PackageNumber = ""
+	v.PackageRemark = ""
+	v.ZyMailNo = ""
+	v.ZyCompany = ""
+	v.ZyPhoneNumber = ""
+	v.ZyConsignTime = ""
+	poolJzConsignArgsNew.Put(v)
 }

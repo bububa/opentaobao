@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest struct {
 // NewAlibabaAlihealthDrugcodeDrugfactoryExportprojectRequest 初始化AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest对象
 func NewAlibabaAlihealthDrugcodeDrugfactoryExportprojectRequest() *AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest {
 	return &AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest) Reset() {
+	r._refEntId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest) SetRefEntId
 // GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest) GetRefEntId() string {
 	return r._refEntId
+}
+
+var poolAlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugcodeDrugfactoryExportprojectRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugcodeDrugfactoryExportprojectRequest 从 sync.Pool 获取 AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest
+func GetAlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest() *AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest {
+	return poolAlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest.Get().(*AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest 将 AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest(v *AlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugcodeDrugfactoryExportprojectAPIRequest.Put(v)
 }

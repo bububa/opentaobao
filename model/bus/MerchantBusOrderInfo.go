@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // MerchantBusOrderInfo 结构体
 type MerchantBusOrderInfo struct {
 	// 票信息列表
@@ -40,4 +44,39 @@ type MerchantBusOrderInfo struct {
 	IsSelfSaleOrder bool `json:"is_self_sale_order,omitempty" xml:"is_self_sale_order,omitempty"`
 	// 微信订单
 	IsWechat bool `json:"is_wechat,omitempty" xml:"is_wechat,omitempty"`
+}
+
+var poolMerchantBusOrderInfo = sync.Pool{
+	New: func() any {
+		return new(MerchantBusOrderInfo)
+	},
+}
+
+// GetMerchantBusOrderInfo() 从对象池中获取MerchantBusOrderInfo
+func GetMerchantBusOrderInfo() *MerchantBusOrderInfo {
+	return poolMerchantBusOrderInfo.Get().(*MerchantBusOrderInfo)
+}
+
+// ReleaseMerchantBusOrderInfo 释放MerchantBusOrderInfo
+func ReleaseMerchantBusOrderInfo(v *MerchantBusOrderInfo) {
+	v.BusTicketInfoList = v.BusTicketInfoList[:0]
+	v.RefundApplyInfoList = v.RefundApplyInfoList[:0]
+	v.EndStation = ""
+	v.IssueTime = ""
+	v.PayTime = ""
+	v.AgentOrderId = ""
+	v.AlipayTradeId = ""
+	v.GmtCreate = ""
+	v.TransType = ""
+	v.StartStation = ""
+	v.TicketCount = 0
+	v.TotalPrice = 0
+	v.OrderStatus = 0
+	v.BusLineInfo = nil
+	v.BusFetchHolderInfo = nil
+	v.MainOrderId = 0
+	v.TpOrderId = 0
+	v.IsSelfSaleOrder = false
+	v.IsWechat = false
+	poolMerchantBusOrderInfo.Put(v)
 }

@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Erpnormalconsignorderrequest 结构体
 type Erpnormalconsignorderrequest struct {
 	// 发货子单信息
@@ -40,4 +44,39 @@ type Erpnormalconsignorderrequest struct {
 	RefunderInfo *Refunderinfo `json:"refunder_info,omitempty" xml:"refunder_info,omitempty"`
 	// 集货信息
 	PickUpInfo *Pickupinfo `json:"pick_up_info,omitempty" xml:"pick_up_info,omitempty"`
+}
+
+var poolErpnormalconsignorderrequest = sync.Pool{
+	New: func() any {
+		return new(Erpnormalconsignorderrequest)
+	},
+}
+
+// GetErpnormalconsignorderrequest() 从对象池中获取Erpnormalconsignorderrequest
+func GetErpnormalconsignorderrequest() *Erpnormalconsignorderrequest {
+	return poolErpnormalconsignorderrequest.Get().(*Erpnormalconsignorderrequest)
+}
+
+// ReleaseErpnormalconsignorderrequest 释放Erpnormalconsignorderrequest
+func ReleaseErpnormalconsignorderrequest(v *Erpnormalconsignorderrequest) {
+	v.ConsignOrderItemList = v.ConsignOrderItemList[:0]
+	v.DeliveryOrderCode = ""
+	v.ShopNick = ""
+	v.ShopId = ""
+	v.SourcePlatformCode = ""
+	v.LogisticsName = ""
+	v.LogisticsCode = ""
+	v.ExpressCode = ""
+	v.Remark = ""
+	v.DeliveryTime = ""
+	v.Feature = ""
+	v.Operator = ""
+	v.OperateTime = ""
+	v.LpServiceType = 0
+	v.EndServiceType = 0
+	v.ReceiverInfo = nil
+	v.SenderInfo = nil
+	v.RefunderInfo = nil
+	v.PickUpInfo = nil
+	poolErpnormalconsignorderrequest.Put(v)
 }

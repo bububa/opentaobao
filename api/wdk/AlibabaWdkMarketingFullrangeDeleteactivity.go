@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.marketing.fullrange.deleteactivity
 //
 // 全场活动删除活动
-func AlibabaWdkMarketingFullrangeDeleteactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingFullrangeDeleteactivityAPIRequest, session string) (*wdk.AlibabaWdkMarketingFullrangeDeleteactivityAPIResponse, error) {
-	var resp wdk.AlibabaWdkMarketingFullrangeDeleteactivityAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkMarketingFullrangeDeleteactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingFullrangeDeleteactivityAPIRequest, resp *wdk.AlibabaWdkMarketingFullrangeDeleteactivityAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

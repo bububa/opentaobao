@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // RecycleRefundDetailDto 结构体
 type RecycleRefundDetailDto struct {
 	// 毫秒，操作超时时间，截止时间
@@ -30,4 +34,34 @@ type RecycleRefundDetailDto struct {
 	ActualRefundFee int64 `json:"actual_refund_fee,omitempty" xml:"actual_refund_fee,omitempty"`
 	// 追缴单
 	RecoverOrderInfo *AlipayOrderDto `json:"recover_order_info,omitempty" xml:"recover_order_info,omitempty"`
+}
+
+var poolRecycleRefundDetailDto = sync.Pool{
+	New: func() any {
+		return new(RecycleRefundDetailDto)
+	},
+}
+
+// GetRecycleRefundDetailDto() 从对象池中获取RecycleRefundDetailDto
+func GetRecycleRefundDetailDto() *RecycleRefundDetailDto {
+	return poolRecycleRefundDetailDto.Get().(*RecycleRefundDetailDto)
+}
+
+// ReleaseRecycleRefundDetailDto 释放RecycleRefundDetailDto
+func ReleaseRecycleRefundDetailDto(v *RecycleRefundDetailDto) {
+	v.OpTimeout = ""
+	v.BizOrderId = ""
+	v.RefundStatus = ""
+	v.RefundStatusDesc = ""
+	v.RefundFee = ""
+	v.RefundDesc = ""
+	v.ApplyReason = ""
+	v.RefuseReason = ""
+	v.RefundEndTime = ""
+	v.RefundStartTime = ""
+	v.SellerAgreeMsg = ""
+	v.SellerAddress = nil
+	v.ActualRefundFee = 0
+	v.RecoverOrderInfo = nil
+	poolRecycleRefundDetailDto.Put(v)
 }

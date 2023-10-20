@@ -1,5 +1,9 @@
 package nrt
 
+import (
+	"sync"
+)
+
 // TopHomeItemDto 结构体
 type TopHomeItemDto struct {
 	// 类目属性
@@ -42,4 +46,40 @@ type TopHomeItemDto struct {
 	MainItemId int64 `json:"main_item_id,omitempty" xml:"main_item_id,omitempty"`
 	// 数量
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolTopHomeItemDto = sync.Pool{
+	New: func() any {
+		return new(TopHomeItemDto)
+	},
+}
+
+// GetTopHomeItemDto() 从对象池中获取TopHomeItemDto
+func GetTopHomeItemDto() *TopHomeItemDto {
+	return poolTopHomeItemDto.Get().(*TopHomeItemDto)
+}
+
+// ReleaseTopHomeItemDto 释放TopHomeItemDto
+func ReleaseTopHomeItemDto(v *TopHomeItemDto) {
+	v.CProps = v.CProps[:0]
+	v.Images = v.Images[:0]
+	v.Skus = v.Skus[:0]
+	v.BoothId = ""
+	v.CreateTime = ""
+	v.DealerCode = ""
+	v.Desc = ""
+	v.Features = ""
+	v.MallId = ""
+	v.OuterId = ""
+	v.Price = ""
+	v.Title = ""
+	v.UpdateTime = ""
+	v.Status = 0
+	v.CId = 0
+	v.Ext = nil
+	v.ItemId = 0
+	v.ItemType = 0
+	v.MainItemId = 0
+	v.Quantity = 0
+	poolTopHomeItemDto.Put(v)
 }

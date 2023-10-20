@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoUniversalbpAccountGetBalanceAPIRequest struct {
 // NewTaobaoUniversalbpAccountGetBalanceRequest 初始化TaobaoUniversalbpAccountGetBalanceAPIRequest对象
 func NewTaobaoUniversalbpAccountGetBalanceRequest() *TaobaoUniversalbpAccountGetBalanceAPIRequest {
 	return &TaobaoUniversalbpAccountGetBalanceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpAccountGetBalanceAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoUniversalbpAccountGetBalanceAPIRequest) SetTopServiceContext(_top
 // GetTopServiceContext TopServiceContext Getter
 func (r TaobaoUniversalbpAccountGetBalanceAPIRequest) GetTopServiceContext() *TopServiceContext {
 	return r._topServiceContext
+}
+
+var poolTaobaoUniversalbpAccountGetBalanceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpAccountGetBalanceRequest()
+	},
+}
+
+// GetTaobaoUniversalbpAccountGetBalanceRequest 从 sync.Pool 获取 TaobaoUniversalbpAccountGetBalanceAPIRequest
+func GetTaobaoUniversalbpAccountGetBalanceAPIRequest() *TaobaoUniversalbpAccountGetBalanceAPIRequest {
+	return poolTaobaoUniversalbpAccountGetBalanceAPIRequest.Get().(*TaobaoUniversalbpAccountGetBalanceAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpAccountGetBalanceAPIRequest 将 TaobaoUniversalbpAccountGetBalanceAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpAccountGetBalanceAPIRequest(v *TaobaoUniversalbpAccountGetBalanceAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpAccountGetBalanceAPIRequest.Put(v)
 }

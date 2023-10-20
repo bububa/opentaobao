@@ -2,6 +2,7 @@ package category
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaImapPvAutofillAPIRequest struct {
 // NewAlibabaImapPvAutofillRequest 初始化AlibabaImapPvAutofillAPIRequest对象
 func NewAlibabaImapPvAutofillRequest() *AlibabaImapPvAutofillAPIRequest {
 	return &AlibabaImapPvAutofillAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaImapPvAutofillAPIRequest) Reset() {
+	r._topImapItemDo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaImapPvAutofillAPIRequest) SetTopImapItemDo(_topImapItemDo *TopIm
 // GetTopImapItemDo TopImapItemDo Getter
 func (r AlibabaImapPvAutofillAPIRequest) GetTopImapItemDo() *TopImapItemDo {
 	return r._topImapItemDo
+}
+
+var poolAlibabaImapPvAutofillAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaImapPvAutofillRequest()
+	},
+}
+
+// GetAlibabaImapPvAutofillRequest 从 sync.Pool 获取 AlibabaImapPvAutofillAPIRequest
+func GetAlibabaImapPvAutofillAPIRequest() *AlibabaImapPvAutofillAPIRequest {
+	return poolAlibabaImapPvAutofillAPIRequest.Get().(*AlibabaImapPvAutofillAPIRequest)
+}
+
+// ReleaseAlibabaImapPvAutofillAPIRequest 将 AlibabaImapPvAutofillAPIRequest 放入 sync.Pool
+func ReleaseAlibabaImapPvAutofillAPIRequest(v *AlibabaImapPvAutofillAPIRequest) {
+	v.Reset()
+	poolAlibabaImapPvAutofillAPIRequest.Put(v)
 }

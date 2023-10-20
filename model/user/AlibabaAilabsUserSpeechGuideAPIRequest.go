@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAilabsUserSpeechGuideAPIRequest struct {
 // NewAlibabaAilabsUserSpeechGuideRequest 初始化AlibabaAilabsUserSpeechGuideAPIRequest对象
 func NewAlibabaAilabsUserSpeechGuideRequest() *AlibabaAilabsUserSpeechGuideAPIRequest {
 	return &AlibabaAilabsUserSpeechGuideAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsUserSpeechGuideAPIRequest) Reset() {
+	r._query = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAilabsUserSpeechGuideAPIRequest) SetQuery(_query string) error {
 // GetQuery Query Getter
 func (r AlibabaAilabsUserSpeechGuideAPIRequest) GetQuery() string {
 	return r._query
+}
+
+var poolAlibabaAilabsUserSpeechGuideAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsUserSpeechGuideRequest()
+	},
+}
+
+// GetAlibabaAilabsUserSpeechGuideRequest 从 sync.Pool 获取 AlibabaAilabsUserSpeechGuideAPIRequest
+func GetAlibabaAilabsUserSpeechGuideAPIRequest() *AlibabaAilabsUserSpeechGuideAPIRequest {
+	return poolAlibabaAilabsUserSpeechGuideAPIRequest.Get().(*AlibabaAilabsUserSpeechGuideAPIRequest)
+}
+
+// ReleaseAlibabaAilabsUserSpeechGuideAPIRequest 将 AlibabaAilabsUserSpeechGuideAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsUserSpeechGuideAPIRequest(v *AlibabaAilabsUserSpeechGuideAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsUserSpeechGuideAPIRequest.Put(v)
 }

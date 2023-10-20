@@ -9,11 +9,6 @@ import (
 // alibaba.dutyfree.stock.query
 //
 // 对外部服务提供库存查询接口
-func AlibabaDutyfreeStockQuery(clt *core.SDKClient, req *dutyfree.AlibabaDutyfreeStockQueryAPIRequest, session string) (*dutyfree.AlibabaDutyfreeStockQueryAPIResponse, error) {
-	var resp dutyfree.AlibabaDutyfreeStockQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDutyfreeStockQuery(clt *core.SDKClient, req *dutyfree.AlibabaDutyfreeStockQueryAPIRequest, resp *dutyfree.AlibabaDutyfreeStockQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

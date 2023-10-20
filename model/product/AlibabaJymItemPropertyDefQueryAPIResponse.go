@@ -2,6 +2,7 @@ package product
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaJymItemPropertyDefQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaJymItemPropertyDefQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymItemPropertyDefQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaJymItemPropertyDefQueryAPIResponseModel).Reset()
 }
 
 // AlibabaJymItemPropertyDefQueryAPIResponseModel is 交易猫商品属性定义查询 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaJymItemPropertyDefQueryAPIResponseModel struct {
 	Result *GoodsPublishPropertyDefDetailDto `json:"result,omitempty" xml:"result,omitempty"`
 	// 是否成功
 	Succeed bool `json:"succeed,omitempty" xml:"succeed,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymItemPropertyDefQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.StateCode = ""
+	m.ExtraErrMsg = ""
+	m.Result = nil
+	m.Succeed = false
+}
+
+var poolAlibabaJymItemPropertyDefQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaJymItemPropertyDefQueryAPIResponse)
+	},
+}
+
+// GetAlibabaJymItemPropertyDefQueryAPIResponse 从 sync.Pool 获取 AlibabaJymItemPropertyDefQueryAPIResponse
+func GetAlibabaJymItemPropertyDefQueryAPIResponse() *AlibabaJymItemPropertyDefQueryAPIResponse {
+	return poolAlibabaJymItemPropertyDefQueryAPIResponse.Get().(*AlibabaJymItemPropertyDefQueryAPIResponse)
+}
+
+// ReleaseAlibabaJymItemPropertyDefQueryAPIResponse 将 AlibabaJymItemPropertyDefQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaJymItemPropertyDefQueryAPIResponse(v *AlibabaJymItemPropertyDefQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaJymItemPropertyDefQueryAPIResponse.Put(v)
 }

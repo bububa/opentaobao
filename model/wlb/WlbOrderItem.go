@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // WlbOrderItem 结构体
 type WlbOrderItem struct {
 	// 订单商品用户昵称
@@ -50,4 +54,44 @@ type WlbOrderItem struct {
 	Flag int64 `json:"flag,omitempty" xml:"flag,omitempty"`
 	// 商品发布版本号
 	PublishVersion int64 `json:"publish_version,omitempty" xml:"publish_version,omitempty"`
+}
+
+var poolWlbOrderItem = sync.Pool{
+	New: func() any {
+		return new(WlbOrderItem)
+	},
+}
+
+// GetWlbOrderItem() 从对象池中获取WlbOrderItem
+func GetWlbOrderItem() *WlbOrderItem {
+	return poolWlbOrderItem.Get().(*WlbOrderItem)
+}
+
+// ReleaseWlbOrderItem 释放WlbOrderItem
+func ReleaseWlbOrderItem(v *WlbOrderItem) {
+	v.UserNick = ""
+	v.InventoryType = ""
+	v.OrderCode = ""
+	v.OrderSubType = ""
+	v.OrderSubCode = ""
+	v.OrderSub2code = ""
+	v.ItemName = ""
+	v.ItemCode = ""
+	v.ProviderTpNick = ""
+	v.ConfirmStatus = ""
+	v.Remark = ""
+	v.BatchRemark = ""
+	v.ExtEntityId = ""
+	v.PictureUrl = ""
+	v.Id = 0
+	v.UserId = 0
+	v.OrderId = 0
+	v.ItemId = 0
+	v.ProviderTpId = 0
+	v.PlanQuantity = 0
+	v.RealQuantity = 0
+	v.ItemPrice = 0
+	v.Flag = 0
+	v.PublishVersion = 0
+	poolWlbOrderItem.Put(v)
 }

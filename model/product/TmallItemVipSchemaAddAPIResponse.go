@@ -2,6 +2,7 @@ package product
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallItemVipSchemaAddAPIResponse struct {
 	TmallItemVipSchemaAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallItemVipSchemaAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallItemVipSchemaAddAPIResponseModel).Reset()
+}
+
 // TmallItemVipSchemaAddAPIResponseModel is 大商家商品发布接口 成功返回结果
 type TmallItemVipSchemaAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_item_vip_schema_add_response"`
@@ -26,4 +33,29 @@ type TmallItemVipSchemaAddAPIResponseModel struct {
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// sku与outerId映射信息
 	SkuMapJson string `json:"sku_map_json,omitempty" xml:"sku_map_json,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallItemVipSchemaAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.AddItemResult = ""
+	m.GmtCreate = ""
+	m.SkuMapJson = ""
+}
+
+var poolTmallItemVipSchemaAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallItemVipSchemaAddAPIResponse)
+	},
+}
+
+// GetTmallItemVipSchemaAddAPIResponse 从 sync.Pool 获取 TmallItemVipSchemaAddAPIResponse
+func GetTmallItemVipSchemaAddAPIResponse() *TmallItemVipSchemaAddAPIResponse {
+	return poolTmallItemVipSchemaAddAPIResponse.Get().(*TmallItemVipSchemaAddAPIResponse)
+}
+
+// ReleaseTmallItemVipSchemaAddAPIResponse 将 TmallItemVipSchemaAddAPIResponse 保存到 sync.Pool
+func ReleaseTmallItemVipSchemaAddAPIResponse(v *TmallItemVipSchemaAddAPIResponse) {
+	v.Reset()
+	poolTmallItemVipSchemaAddAPIResponse.Put(v)
 }

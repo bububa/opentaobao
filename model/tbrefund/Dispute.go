@@ -1,5 +1,9 @@
 package tbrefund
 
+import (
+	"sync"
+)
+
 // Dispute 结构体
 type Dispute struct {
 	// 卖家收货地址
@@ -64,4 +68,51 @@ type Dispute struct {
 	Oid int64 `json:"oid,omitempty" xml:"oid,omitempty"`
 	// 买家是否需要退货。可选值:true(是),false(否)
 	HasGoodReturn bool `json:"has_good_return,omitempty" xml:"has_good_return,omitempty"`
+}
+
+var poolDispute = sync.Pool{
+	New: func() any {
+		return new(Dispute)
+	},
+}
+
+// GetDispute() 从对象池中获取Dispute
+func GetDispute() *Dispute {
+	return poolDispute.Get().(*Dispute)
+}
+
+// ReleaseDispute 释放Dispute
+func ReleaseDispute(v *Dispute) {
+	v.Address = ""
+	v.AlipayNo = ""
+	v.Attribute = ""
+	v.BizOrderId = ""
+	v.BuyerAddress = ""
+	v.BuyerLogisticName = ""
+	v.BuyerLogisticNo = ""
+	v.BuyerName = ""
+	v.BuyerPhone = ""
+	v.CompanyName = ""
+	v.Created = ""
+	v.Desc = ""
+	v.DisputeRequest = ""
+	v.GoodReturnTime = ""
+	v.GoodStatus = ""
+	v.Modified = ""
+	v.OrderStatus = ""
+	v.Reason = ""
+	v.RefundFee = ""
+	v.RefundId = ""
+	v.RefundPhase = ""
+	v.SellerLogisticName = ""
+	v.SellerLogisticNo = ""
+	v.Status = ""
+	v.TimeOut = ""
+	v.Title = ""
+	v.BuyerOpenUid = ""
+	v.BuyerNick = ""
+	v.Num = 0
+	v.Oid = 0
+	v.HasGoodReturn = false
+	poolDispute.Put(v)
 }

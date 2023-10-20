@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // ValidityPeriodItem 结构体
 type ValidityPeriodItem struct {
 	// 请求子明细
@@ -16,4 +20,27 @@ type ValidityPeriodItem struct {
 	Manufacturer string `json:"manufacturer,omitempty" xml:"manufacturer,omitempty"`
 	// 货品ID
 	ScItemId int64 `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
+}
+
+var poolValidityPeriodItem = sync.Pool{
+	New: func() any {
+		return new(ValidityPeriodItem)
+	},
+}
+
+// GetValidityPeriodItem() 从对象池中获取ValidityPeriodItem
+func GetValidityPeriodItem() *ValidityPeriodItem {
+	return poolValidityPeriodItem.Get().(*ValidityPeriodItem)
+}
+
+// ReleaseValidityPeriodItem 释放ValidityPeriodItem
+func ReleaseValidityPeriodItem(v *ValidityPeriodItem) {
+	v.SubItems = v.SubItems[:0]
+	v.ScItemName = ""
+	v.Specification = ""
+	v.ApprovalNumber = ""
+	v.Barcode = ""
+	v.Manufacturer = ""
+	v.ScItemId = 0
+	poolValidityPeriodItem.Put(v)
 }

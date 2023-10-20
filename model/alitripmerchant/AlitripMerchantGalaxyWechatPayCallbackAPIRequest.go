@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripMerchantGalaxyWechatPayCallbackAPIRequest struct {
 // NewAlitripMerchantGalaxyWechatPayCallbackRequest 初始化AlitripMerchantGalaxyWechatPayCallbackAPIRequest对象
 func NewAlitripMerchantGalaxyWechatPayCallbackRequest() *AlitripMerchantGalaxyWechatPayCallbackAPIRequest {
 	return &AlitripMerchantGalaxyWechatPayCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyWechatPayCallbackAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._callBackJson = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripMerchantGalaxyWechatPayCallbackAPIRequest) SetCallBackJson(_call
 // GetCallBackJson CallBackJson Getter
 func (r AlitripMerchantGalaxyWechatPayCallbackAPIRequest) GetCallBackJson() string {
 	return r._callBackJson
+}
+
+var poolAlitripMerchantGalaxyWechatPayCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyWechatPayCallbackRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyWechatPayCallbackRequest 从 sync.Pool 获取 AlitripMerchantGalaxyWechatPayCallbackAPIRequest
+func GetAlitripMerchantGalaxyWechatPayCallbackAPIRequest() *AlitripMerchantGalaxyWechatPayCallbackAPIRequest {
+	return poolAlitripMerchantGalaxyWechatPayCallbackAPIRequest.Get().(*AlitripMerchantGalaxyWechatPayCallbackAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyWechatPayCallbackAPIRequest 将 AlitripMerchantGalaxyWechatPayCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyWechatPayCallbackAPIRequest(v *AlitripMerchantGalaxyWechatPayCallbackAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyWechatPayCallbackAPIRequest.Put(v)
 }

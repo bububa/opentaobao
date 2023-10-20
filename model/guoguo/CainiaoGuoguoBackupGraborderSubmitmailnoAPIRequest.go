@@ -2,6 +2,7 @@ package guoguo
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest struct {
 // NewCainiaoGuoguoBackupGraborderSubmitmailnoRequest 初始化CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest对象
 func NewCainiaoGuoguoBackupGraborderSubmitmailnoRequest() *CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest {
 	return &CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest) Reset() {
+	r._orderCode = ""
+	r._mailNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest) SetMailNo(_mailNo s
 // GetMailNo MailNo Getter
 func (r CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest) GetMailNo() string {
 	return r._mailNo
+}
+
+var poolCainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGuoguoBackupGraborderSubmitmailnoRequest()
+	},
+}
+
+// GetCainiaoGuoguoBackupGraborderSubmitmailnoRequest 从 sync.Pool 获取 CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest
+func GetCainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest() *CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest {
+	return poolCainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest.Get().(*CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest)
+}
+
+// ReleaseCainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest 将 CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest(v *CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest) {
+	v.Reset()
+	poolCainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripFlightRefundPreCalRs 结构体
 type BtripFlightRefundPreCalRs struct {
 	// 多行程退票预计算list
@@ -18,4 +22,28 @@ type BtripFlightRefundPreCalRs struct {
 	RefundFee int64 `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// 是否发生航变
 	FlightChange bool `json:"flight_change,omitempty" xml:"flight_change,omitempty"`
+}
+
+var poolBtripFlightRefundPreCalRs = sync.Pool{
+	New: func() any {
+		return new(BtripFlightRefundPreCalRs)
+	},
+}
+
+// GetBtripFlightRefundPreCalRs() 从对象池中获取BtripFlightRefundPreCalRs
+func GetBtripFlightRefundPreCalRs() *BtripFlightRefundPreCalRs {
+	return poolBtripFlightRefundPreCalRs.Get().(*BtripFlightRefundPreCalRs)
+}
+
+// ReleaseBtripFlightRefundPreCalRs 释放BtripFlightRefundPreCalRs
+func ReleaseBtripFlightRefundPreCalRs(v *BtripFlightRefundPreCalRs) {
+	v.MultiRefundPreCalDetailList = v.MultiRefundPreCalDetailList[:0]
+	v.ReturnReason = v.ReturnReason[:0]
+	v.SessionId = ""
+	v.ItemUnitId = ""
+	v.Tips = ""
+	v.PreRefundMoney = 0
+	v.RefundFee = 0
+	v.FlightChange = false
+	poolBtripFlightRefundPreCalRs.Put(v)
 }

@@ -2,6 +2,7 @@ package youkuott
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type YoukuTvoperatorMediaPageQueryAPIRequest struct {
 // NewYoukuTvoperatorMediaPageQueryRequest 初始化YoukuTvoperatorMediaPageQueryAPIRequest对象
 func NewYoukuTvoperatorMediaPageQueryRequest() *YoukuTvoperatorMediaPageQueryAPIRequest {
 	return &YoukuTvoperatorMediaPageQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuTvoperatorMediaPageQueryAPIRequest) Reset() {
+	r._systemInfo = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r._programId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *YoukuTvoperatorMediaPageQueryAPIRequest) SetProgramId(_programId int64)
 // GetProgramId ProgramId Getter
 func (r YoukuTvoperatorMediaPageQueryAPIRequest) GetProgramId() int64 {
 	return r._programId
+}
+
+var poolYoukuTvoperatorMediaPageQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuTvoperatorMediaPageQueryRequest()
+	},
+}
+
+// GetYoukuTvoperatorMediaPageQueryRequest 从 sync.Pool 获取 YoukuTvoperatorMediaPageQueryAPIRequest
+func GetYoukuTvoperatorMediaPageQueryAPIRequest() *YoukuTvoperatorMediaPageQueryAPIRequest {
+	return poolYoukuTvoperatorMediaPageQueryAPIRequest.Get().(*YoukuTvoperatorMediaPageQueryAPIRequest)
+}
+
+// ReleaseYoukuTvoperatorMediaPageQueryAPIRequest 将 YoukuTvoperatorMediaPageQueryAPIRequest 放入 sync.Pool
+func ReleaseYoukuTvoperatorMediaPageQueryAPIRequest(v *YoukuTvoperatorMediaPageQueryAPIRequest) {
+	v.Reset()
+	poolYoukuTvoperatorMediaPageQueryAPIRequest.Put(v)
 }

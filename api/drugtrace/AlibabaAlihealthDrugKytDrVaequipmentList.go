@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.kyt.dr.vaequipment.list
 //
 // 获取企业冷链设备信息
-func AlibabaAlihealthDrugKytDrVaequipmentList(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytDrVaequipmentListAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytDrVaequipmentListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugKytDrVaequipmentList(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrVaequipmentListAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytDrVaequipmentListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

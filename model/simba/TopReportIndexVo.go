@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // TopReportIndexVo 结构体
 type TopReportIndexVo struct {
 	// 总花费
@@ -144,4 +148,91 @@ type TopReportIndexVo struct {
 	AlipayInshopNumAvg string `json:"alipay_inshop_num_avg,omitempty" xml:"alipay_inshop_num_avg,omitempty"`
 	// 人均成交金额
 	AlipayInshopAmtAvg string `json:"alipay_inshop_amt_avg,omitempty" xml:"alipay_inshop_amt_avg,omitempty"`
+}
+
+var poolTopReportIndexVo = sync.Pool{
+	New: func() any {
+		return new(TopReportIndexVo)
+	},
+}
+
+// GetTopReportIndexVo() 从对象池中获取TopReportIndexVo
+func GetTopReportIndexVo() *TopReportIndexVo {
+	return poolTopReportIndexVo.Get().(*TopReportIndexVo)
+}
+
+// ReleaseTopReportIndexVo 释放TopReportIndexVo
+func ReleaseTopReportIndexVo(v *TopReportIndexVo) {
+	v.TotalCharge = ""
+	v.CrowdSceneCharge = ""
+	v.ItemSceneCharge = ""
+	v.ActivitySceneCharge = ""
+	v.DisplayCharge = ""
+	v.SearchCharge = ""
+	v.ContentSceneCharge = ""
+	v.ShopSceneCharge = ""
+	v.AdPv = ""
+	v.Click = ""
+	v.Charge = ""
+	v.Ctr = ""
+	v.Ecpc = ""
+	v.Ecpm = ""
+	v.PrepayInshopAmt = ""
+	v.PrepayInshopNum = ""
+	v.PrepayDirAmt = ""
+	v.PrepayDirNum = ""
+	v.PrepayIndirAmt = ""
+	v.PrepayIndirNum = ""
+	v.AlipayDirAmt = ""
+	v.AlipayIndirAmt = ""
+	v.AlipayInshopAmt = ""
+	v.AlipayInshopNum = ""
+	v.AlipayDirNum = ""
+	v.AlipayIndirNum = ""
+	v.Cvr = ""
+	v.Roi = ""
+	v.AlipayInshopCost = ""
+	v.CartInshopNum = ""
+	v.CartDirNum = ""
+	v.CartIndirNum = ""
+	v.CartRate = ""
+	v.ItemColInshopNum = ""
+	v.ShopColDirNum = ""
+	v.ShopColInshopCost = ""
+	v.ColCartNum = ""
+	v.ColCartCost = ""
+	v.ItemColCart = ""
+	v.ItemColCartCost = ""
+	v.ColNum = ""
+	v.ItemColInshopCost = ""
+	v.ItemColInshopRate = ""
+	v.CartCost = ""
+	v.GmvInshopNum = ""
+	v.GmvInshopAmt = ""
+	v.ItemColDirNum = ""
+	v.ItemColIndirNum = ""
+	v.CouponShopNum = ""
+	v.ShoppingNum = ""
+	v.ShoppingAmt = ""
+	v.WwNum = ""
+	v.InshopPv = ""
+	v.InshopUv = ""
+	v.InshopPotentialUv = ""
+	v.InshopPotentialUvRate = ""
+	v.RhRate = ""
+	v.RhNum = ""
+	v.InshopPvRate = ""
+	v.DeepInshopPv = ""
+	v.AvgAccessPageNum = ""
+	v.NewAlipayInshopUv = ""
+	v.NewAlipayInshopUvRate = ""
+	v.HySgUv = ""
+	v.HyPayAmt = ""
+	v.HyPayNum = ""
+	v.NaturalPayAmt = ""
+	v.OrgNaturalPv = ""
+	v.AlipayInshopUv = ""
+	v.AlipayInshopNumAvg = ""
+	v.AlipayInshopAmtAvg = ""
+	poolTopReportIndexVo.Put(v)
 }

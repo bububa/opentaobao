@@ -2,6 +2,7 @@ package crm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoCrmGroupMoveAPIRequest struct {
 // NewTaobaoCrmGroupMoveRequest 初始化TaobaoCrmGroupMoveAPIRequest对象
 func NewTaobaoCrmGroupMoveRequest() *TaobaoCrmGroupMoveAPIRequest {
 	return &TaobaoCrmGroupMoveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCrmGroupMoveAPIRequest) Reset() {
+	r._fromGroupId = 0
+	r._toGroupId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoCrmGroupMoveAPIRequest) SetToGroupId(_toGroupId int64) error {
 // GetToGroupId ToGroupId Getter
 func (r TaobaoCrmGroupMoveAPIRequest) GetToGroupId() int64 {
 	return r._toGroupId
+}
+
+var poolTaobaoCrmGroupMoveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCrmGroupMoveRequest()
+	},
+}
+
+// GetTaobaoCrmGroupMoveRequest 从 sync.Pool 获取 TaobaoCrmGroupMoveAPIRequest
+func GetTaobaoCrmGroupMoveAPIRequest() *TaobaoCrmGroupMoveAPIRequest {
+	return poolTaobaoCrmGroupMoveAPIRequest.Get().(*TaobaoCrmGroupMoveAPIRequest)
+}
+
+// ReleaseTaobaoCrmGroupMoveAPIRequest 将 TaobaoCrmGroupMoveAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCrmGroupMoveAPIRequest(v *TaobaoCrmGroupMoveAPIRequest) {
+	v.Reset()
+	poolTaobaoCrmGroupMoveAPIRequest.Put(v)
 }

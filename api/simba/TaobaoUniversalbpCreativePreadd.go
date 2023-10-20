@@ -9,11 +9,6 @@ import (
 // taobao.universalbp.creative.preadd
 //
 // 用于关键词场景创建单品创意前使用
-func TaobaoUniversalbpCreativePreadd(clt *core.SDKClient, req *simba.TaobaoUniversalbpCreativePreaddAPIRequest, session string) (*simba.TaobaoUniversalbpCreativePreaddAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpCreativePreaddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUniversalbpCreativePreadd(clt *core.SDKClient, req *simba.TaobaoUniversalbpCreativePreaddAPIRequest, resp *simba.TaobaoUniversalbpCreativePreaddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

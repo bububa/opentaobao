@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest struct {
 // NewAlibabaAscpAicSupplierAicinventoryChannelInventoryQueryRequest 初始化AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest对象
 func NewAlibabaAscpAicSupplierAicinventoryChannelInventoryQueryRequest() *AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest {
 	return &AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest) Reset() {
+	r._merchantInventoryQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest) SetM
 // GetMerchantInventoryQueryRequest MerchantInventoryQueryRequest Getter
 func (r AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest) GetMerchantInventoryQueryRequest() *MerchantInventoryQuery {
 	return r._merchantInventoryQueryRequest
+}
+
+var poolAlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpAicSupplierAicinventoryChannelInventoryQueryRequest()
+	},
+}
+
+// GetAlibabaAscpAicSupplierAicinventoryChannelInventoryQueryRequest 从 sync.Pool 获取 AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest
+func GetAlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest() *AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest {
+	return poolAlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest.Get().(*AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest)
+}
+
+// ReleaseAlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest 将 AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest(v *AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package lsttrade
 
+import (
+	"sync"
+)
+
 // BuyerContact 结构体
 type BuyerContact struct {
 	// 买家电话
@@ -12,4 +16,25 @@ type BuyerContact struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 邮件地址
 	Email string `json:"email,omitempty" xml:"email,omitempty"`
+}
+
+var poolBuyerContact = sync.Pool{
+	New: func() any {
+		return new(BuyerContact)
+	},
+}
+
+// GetBuyerContact() 从对象池中获取BuyerContact
+func GetBuyerContact() *BuyerContact {
+	return poolBuyerContact.Get().(*BuyerContact)
+}
+
+// ReleaseBuyerContact 释放BuyerContact
+func ReleaseBuyerContact(v *BuyerContact) {
+	v.Phone = ""
+	v.CompanyName = ""
+	v.Mobile = ""
+	v.Name = ""
+	v.Email = ""
+	poolBuyerContact.Put(v)
 }

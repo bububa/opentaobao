@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WdkOpenOrderFinanceBillDo 结构体
 type WdkOpenOrderFinanceBillDo struct {
 	// alipay：支付宝
@@ -30,4 +34,34 @@ type WdkOpenOrderFinanceBillDo struct {
 	FinanceOrganizationCode string `json:"finance_organization_code,omitempty" xml:"finance_organization_code,omitempty"`
 	// 金额，正向交易时数值是正数，退款时数值是负数
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
+}
+
+var poolWdkOpenOrderFinanceBillDo = sync.Pool{
+	New: func() any {
+		return new(WdkOpenOrderFinanceBillDo)
+	},
+}
+
+// GetWdkOpenOrderFinanceBillDo() 从对象池中获取WdkOpenOrderFinanceBillDo
+func GetWdkOpenOrderFinanceBillDo() *WdkOpenOrderFinanceBillDo {
+	return poolWdkOpenOrderFinanceBillDo.Get().(*WdkOpenOrderFinanceBillDo)
+}
+
+// ReleaseWdkOpenOrderFinanceBillDo 释放WdkOpenOrderFinanceBillDo
+func ReleaseWdkOpenOrderFinanceBillDo(v *WdkOpenOrderFinanceBillDo) {
+	v.PayChannel = ""
+	v.HmOrderId = ""
+	v.OrderChannel = ""
+	v.StoreId = ""
+	v.MerchantCode = ""
+	v.TpOrderId = ""
+	v.Dt = ""
+	v.Smid = ""
+	v.PayTime = ""
+	v.BizType = ""
+	v.TradeNo = ""
+	v.FinanceOrganizationName = ""
+	v.FinanceOrganizationCode = ""
+	v.Amount = 0
+	poolWdkOpenOrderFinanceBillDo.Put(v)
 }

@@ -2,6 +2,7 @@ package aecreatives
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type AliexpressAffiliateImageSearchAPIRequest struct {
 // NewAliexpressAffiliateImageSearchRequest 初始化AliexpressAffiliateImageSearchAPIRequest对象
 func NewAliexpressAffiliateImageSearchRequest() *AliexpressAffiliateImageSearchAPIRequest {
 	return &AliexpressAffiliateImageSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressAffiliateImageSearchAPIRequest) Reset() {
+	r._appSignature = ""
+	r._fields = ""
+	r._imgCid = ""
+	r._mediaUserId = ""
+	r._shptTo = ""
+	r._sort = ""
+	r._targetCurrency = ""
+	r._targetLanguage = ""
+	r._trackingId = ""
+	r._imageFileBytes = nil
+	r._productCnt = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *AliexpressAffiliateImageSearchAPIRequest) SetProductCnt(_productCnt int
 // GetProductCnt ProductCnt Getter
 func (r AliexpressAffiliateImageSearchAPIRequest) GetProductCnt() int64 {
 	return r._productCnt
+}
+
+var poolAliexpressAffiliateImageSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressAffiliateImageSearchRequest()
+	},
+}
+
+// GetAliexpressAffiliateImageSearchRequest 从 sync.Pool 获取 AliexpressAffiliateImageSearchAPIRequest
+func GetAliexpressAffiliateImageSearchAPIRequest() *AliexpressAffiliateImageSearchAPIRequest {
+	return poolAliexpressAffiliateImageSearchAPIRequest.Get().(*AliexpressAffiliateImageSearchAPIRequest)
+}
+
+// ReleaseAliexpressAffiliateImageSearchAPIRequest 将 AliexpressAffiliateImageSearchAPIRequest 放入 sync.Pool
+func ReleaseAliexpressAffiliateImageSearchAPIRequest(v *AliexpressAffiliateImageSearchAPIRequest) {
+	v.Reset()
+	poolAliexpressAffiliateImageSearchAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package itpolicy
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoAlitripItFareQuerytaskAPIRequest struct {
 // NewTaobaoAlitripItFareQuerytaskRequest 初始化TaobaoAlitripItFareQuerytaskAPIRequest对象
 func NewTaobaoAlitripItFareQuerytaskRequest() *TaobaoAlitripItFareQuerytaskAPIRequest {
 	return &TaobaoAlitripItFareQuerytaskAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripItFareQuerytaskAPIRequest) Reset() {
+	r._extendAttributes = ""
+	r._taskId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoAlitripItFareQuerytaskAPIRequest) SetTaskId(_taskId int64) error 
 // GetTaskId TaskId Getter
 func (r TaobaoAlitripItFareQuerytaskAPIRequest) GetTaskId() int64 {
 	return r._taskId
+}
+
+var poolTaobaoAlitripItFareQuerytaskAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripItFareQuerytaskRequest()
+	},
+}
+
+// GetTaobaoAlitripItFareQuerytaskRequest 从 sync.Pool 获取 TaobaoAlitripItFareQuerytaskAPIRequest
+func GetTaobaoAlitripItFareQuerytaskAPIRequest() *TaobaoAlitripItFareQuerytaskAPIRequest {
+	return poolTaobaoAlitripItFareQuerytaskAPIRequest.Get().(*TaobaoAlitripItFareQuerytaskAPIRequest)
+}
+
+// ReleaseTaobaoAlitripItFareQuerytaskAPIRequest 将 TaobaoAlitripItFareQuerytaskAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripItFareQuerytaskAPIRequest(v *TaobaoAlitripItFareQuerytaskAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripItFareQuerytaskAPIRequest.Put(v)
 }

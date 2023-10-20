@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaSscSupplyplatformServiceworkerSaveAPIResponse struct {
 	AlibabaSscSupplyplatformServiceworkerSaveAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaSscSupplyplatformServiceworkerSaveAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaSscSupplyplatformServiceworkerSaveAPIResponseModel).Reset()
+}
+
 // AlibabaSscSupplyplatformServiceworkerSaveAPIResponseModel is 服务商绑定工人 成功返回结果
 type AlibabaSscSupplyplatformServiceworkerSaveAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ssc_supplyplatform_serviceworker_save_response"`
@@ -22,4 +29,27 @@ type AlibabaSscSupplyplatformServiceworkerSaveAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaSscSupplyplatformServiceworkerSaveResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaSscSupplyplatformServiceworkerSaveAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaSscSupplyplatformServiceworkerSaveAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaSscSupplyplatformServiceworkerSaveAPIResponse)
+	},
+}
+
+// GetAlibabaSscSupplyplatformServiceworkerSaveAPIResponse 从 sync.Pool 获取 AlibabaSscSupplyplatformServiceworkerSaveAPIResponse
+func GetAlibabaSscSupplyplatformServiceworkerSaveAPIResponse() *AlibabaSscSupplyplatformServiceworkerSaveAPIResponse {
+	return poolAlibabaSscSupplyplatformServiceworkerSaveAPIResponse.Get().(*AlibabaSscSupplyplatformServiceworkerSaveAPIResponse)
+}
+
+// ReleaseAlibabaSscSupplyplatformServiceworkerSaveAPIResponse 将 AlibabaSscSupplyplatformServiceworkerSaveAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaSscSupplyplatformServiceworkerSaveAPIResponse(v *AlibabaSscSupplyplatformServiceworkerSaveAPIResponse) {
+	v.Reset()
+	poolAlibabaSscSupplyplatformServiceworkerSaveAPIResponse.Put(v)
 }

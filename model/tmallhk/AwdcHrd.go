@@ -1,5 +1,9 @@
 package tmallhk
 
+import (
+	"sync"
+)
+
 // AwdcHrd 结构体
 type AwdcHrd struct {
 	// 参数extInfo
@@ -12,4 +16,25 @@ type AwdcHrd struct {
 	ReportInfo string `json:"report_info,omitempty" xml:"report_info,omitempty"`
 	// 参数reportNo
 	ReportNo string `json:"report_no,omitempty" xml:"report_no,omitempty"`
+}
+
+var poolAwdcHrd = sync.Pool{
+	New: func() any {
+		return new(AwdcHrd)
+	},
+}
+
+// GetAwdcHrd() 从对象池中获取AwdcHrd
+func GetAwdcHrd() *AwdcHrd {
+	return poolAwdcHrd.Get().(*AwdcHrd)
+}
+
+// ReleaseAwdcHrd 释放AwdcHrd
+func ReleaseAwdcHrd(v *AwdcHrd) {
+	v.ExtInfo = ""
+	v.In = ""
+	v.Out = ""
+	v.ReportInfo = ""
+	v.ReportNo = ""
+	poolAwdcHrd.Put(v)
 }

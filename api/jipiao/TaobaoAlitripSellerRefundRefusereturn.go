@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.seller.refund.refusereturn
 //
 // 拒绝退票
-func TaobaoAlitripSellerRefundRefusereturn(clt *core.SDKClient, req *jipiao.TaobaoAlitripSellerRefundRefusereturnAPIRequest, session string) (*jipiao.TaobaoAlitripSellerRefundRefusereturnAPIResponse, error) {
-	var resp jipiao.TaobaoAlitripSellerRefundRefusereturnAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripSellerRefundRefusereturn(clt *core.SDKClient, req *jipiao.TaobaoAlitripSellerRefundRefusereturnAPIRequest, resp *jipiao.TaobaoAlitripSellerRefundRefusereturnAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

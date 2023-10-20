@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OpenPromotionRuleStair 结构体
 type OpenPromotionRuleStair struct {
 	// 分组表达式【暂时不使用】
@@ -24,4 +28,31 @@ type OpenPromotionRuleStair struct {
 	IsCount bool `json:"is_count,omitempty" xml:"is_count,omitempty"`
 	// 是否叠加逻辑分组的条件
 	IsOverlayLogicGroupCondition bool `json:"is_overlay_logic_group_condition,omitempty" xml:"is_overlay_logic_group_condition,omitempty"`
+}
+
+var poolOpenPromotionRuleStair = sync.Pool{
+	New: func() any {
+		return new(OpenPromotionRuleStair)
+	},
+}
+
+// GetOpenPromotionRuleStair() 从对象池中获取OpenPromotionRuleStair
+func GetOpenPromotionRuleStair() *OpenPromotionRuleStair {
+	return poolOpenPromotionRuleStair.Get().(*OpenPromotionRuleStair)
+}
+
+// ReleaseOpenPromotionRuleStair 释放OpenPromotionRuleStair
+func ReleaseOpenPromotionRuleStair(v *OpenPromotionRuleStair) {
+	v.LoginGroupExpress = ""
+	v.CapCountDiscountRule = nil
+	v.CoverAllDiscountRule = nil
+	v.CountAtDiscountRule = nil
+	v.Number = 0
+	v.Amount = 0
+	v.Count = 0
+	v.SeparatePricingDiscountRule = nil
+	v.IsAmount = false
+	v.IsCount = false
+	v.IsOverlayLogicGroupCondition = false
+	poolOpenPromotionRuleStair.Put(v)
 }

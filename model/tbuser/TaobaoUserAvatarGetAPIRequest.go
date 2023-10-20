@@ -2,6 +2,7 @@ package tbuser
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoUserAvatarGetAPIRequest struct {
 // NewTaobaoUserAvatarGetRequest 初始化TaobaoUserAvatarGetAPIRequest对象
 func NewTaobaoUserAvatarGetRequest() *TaobaoUserAvatarGetAPIRequest {
 	return &TaobaoUserAvatarGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUserAvatarGetAPIRequest) Reset() {
+	r._nick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoUserAvatarGetAPIRequest) SetNick(_nick string) error {
 // GetNick Nick Getter
 func (r TaobaoUserAvatarGetAPIRequest) GetNick() string {
 	return r._nick
+}
+
+var poolTaobaoUserAvatarGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUserAvatarGetRequest()
+	},
+}
+
+// GetTaobaoUserAvatarGetRequest 从 sync.Pool 获取 TaobaoUserAvatarGetAPIRequest
+func GetTaobaoUserAvatarGetAPIRequest() *TaobaoUserAvatarGetAPIRequest {
+	return poolTaobaoUserAvatarGetAPIRequest.Get().(*TaobaoUserAvatarGetAPIRequest)
+}
+
+// ReleaseTaobaoUserAvatarGetAPIRequest 将 TaobaoUserAvatarGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUserAvatarGetAPIRequest(v *TaobaoUserAvatarGetAPIRequest) {
+	v.Reset()
+	poolTaobaoUserAvatarGetAPIRequest.Put(v)
 }

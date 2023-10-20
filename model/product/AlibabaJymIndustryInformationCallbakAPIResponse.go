@@ -2,6 +2,7 @@ package product
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaJymIndustryInformationCallbakAPIResponse struct {
 	AlibabaJymIndustryInformationCallbakAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaJymIndustryInformationCallbakAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaJymIndustryInformationCallbakAPIResponseModel).Reset()
+}
+
 // AlibabaJymIndustryInformationCallbakAPIResponseModel is VMOS回调行业信息系统 成功返回结果
 type AlibabaJymIndustryInformationCallbakAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_industry_information_callbak_response"`
@@ -24,4 +31,28 @@ type AlibabaJymIndustryInformationCallbakAPIResponseModel struct {
 	StateCode string `json:"state_code,omitempty" xml:"state_code,omitempty"`
 	// 扩展错误信息
 	ExtraErrMsg string `json:"extra_err_msg,omitempty" xml:"extra_err_msg,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymIndustryInformationCallbakAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.StateCode = ""
+	m.ExtraErrMsg = ""
+}
+
+var poolAlibabaJymIndustryInformationCallbakAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaJymIndustryInformationCallbakAPIResponse)
+	},
+}
+
+// GetAlibabaJymIndustryInformationCallbakAPIResponse 从 sync.Pool 获取 AlibabaJymIndustryInformationCallbakAPIResponse
+func GetAlibabaJymIndustryInformationCallbakAPIResponse() *AlibabaJymIndustryInformationCallbakAPIResponse {
+	return poolAlibabaJymIndustryInformationCallbakAPIResponse.Get().(*AlibabaJymIndustryInformationCallbakAPIResponse)
+}
+
+// ReleaseAlibabaJymIndustryInformationCallbakAPIResponse 将 AlibabaJymIndustryInformationCallbakAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaJymIndustryInformationCallbakAPIResponse(v *AlibabaJymIndustryInformationCallbakAPIResponse) {
+	v.Reset()
+	poolAlibabaJymIndustryInformationCallbakAPIResponse.Put(v)
 }

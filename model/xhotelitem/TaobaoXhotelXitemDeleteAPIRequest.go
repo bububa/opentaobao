@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoXhotelXitemDeleteAPIRequest struct {
 // NewTaobaoXhotelXitemDeleteRequest 初始化TaobaoXhotelXitemDeleteAPIRequest对象
 func NewTaobaoXhotelXitemDeleteRequest() *TaobaoXhotelXitemDeleteAPIRequest {
 	return &TaobaoXhotelXitemDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelXitemDeleteAPIRequest) Reset() {
+	r._vendor = ""
+	r._outHid = ""
+	r._outXCodes = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoXhotelXitemDeleteAPIRequest) SetOutXCodes(_outXCodes string) erro
 // GetOutXCodes OutXCodes Getter
 func (r TaobaoXhotelXitemDeleteAPIRequest) GetOutXCodes() string {
 	return r._outXCodes
+}
+
+var poolTaobaoXhotelXitemDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelXitemDeleteRequest()
+	},
+}
+
+// GetTaobaoXhotelXitemDeleteRequest 从 sync.Pool 获取 TaobaoXhotelXitemDeleteAPIRequest
+func GetTaobaoXhotelXitemDeleteAPIRequest() *TaobaoXhotelXitemDeleteAPIRequest {
+	return poolTaobaoXhotelXitemDeleteAPIRequest.Get().(*TaobaoXhotelXitemDeleteAPIRequest)
+}
+
+// ReleaseTaobaoXhotelXitemDeleteAPIRequest 将 TaobaoXhotelXitemDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelXitemDeleteAPIRequest(v *TaobaoXhotelXitemDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelXitemDeleteAPIRequest.Put(v)
 }

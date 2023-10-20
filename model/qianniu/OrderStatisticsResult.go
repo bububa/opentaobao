@@ -1,5 +1,9 @@
 package qianniu
 
+import (
+	"sync"
+)
+
 // OrderStatisticsResult 结构体
 type OrderStatisticsResult struct {
 	// tqdj_order_num
@@ -10,4 +14,24 @@ type OrderStatisticsResult struct {
 	HomeOrderNum int64 `json:"home_order_num,omitempty" xml:"home_order_num,omitempty"`
 	// step_order_num
 	StepOrderNum int64 `json:"step_order_num,omitempty" xml:"step_order_num,omitempty"`
+}
+
+var poolOrderStatisticsResult = sync.Pool{
+	New: func() any {
+		return new(OrderStatisticsResult)
+	},
+}
+
+// GetOrderStatisticsResult() 从对象池中获取OrderStatisticsResult
+func GetOrderStatisticsResult() *OrderStatisticsResult {
+	return poolOrderStatisticsResult.Get().(*OrderStatisticsResult)
+}
+
+// ReleaseOrderStatisticsResult 释放OrderStatisticsResult
+func ReleaseOrderStatisticsResult(v *OrderStatisticsResult) {
+	v.TqdjOrderNum = 0
+	v.TakeOrderNum = 0
+	v.HomeOrderNum = 0
+	v.StepOrderNum = 0
+	poolOrderStatisticsResult.Put(v)
 }

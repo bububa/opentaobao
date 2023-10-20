@@ -1,5 +1,9 @@
 package damai
 
+import (
+	"sync"
+)
+
 // TopSearchProjectParam 结构体
 type TopSearchProjectParam struct {
 	// 一级分类名，支持多个（之间是OR关系），以&#34;|&#34;隔开。演唱会,音乐会,话剧歌剧,舞蹈芭蕾,曲苑杂坛,体育比赛,度假休闲,儿童亲子,旅游演艺,韩流地带,动漫,旅游展览
@@ -26,4 +30,32 @@ type TopSearchProjectParam struct {
 	SortType int64 `json:"sort_type,omitempty" xml:"sort_type,omitempty"`
 	// 0：无强指定 1:今天 2：明天 3：周末 4:30天内 5:自定义 6: 本周 7： 本月 8：本月周末场
 	DateType int64 `json:"date_type,omitempty" xml:"date_type,omitempty"`
+}
+
+var poolTopSearchProjectParam = sync.Pool{
+	New: func() any {
+		return new(TopSearchProjectParam)
+	},
+}
+
+// GetTopSearchProjectParam() 从对象池中获取TopSearchProjectParam
+func GetTopSearchProjectParam() *TopSearchProjectParam {
+	return poolTopSearchProjectParam.Get().(*TopSearchProjectParam)
+}
+
+// ReleaseTopSearchProjectParam 释放TopSearchProjectParam
+func ReleaseTopSearchProjectParam(v *TopSearchProjectParam) {
+	v.CategoryName = ""
+	v.ArtistName = ""
+	v.SubCategoryName = ""
+	v.Keyword = ""
+	v.FilterCityName = ""
+	v.StartDate = ""
+	v.EndDate = ""
+	v.Channel = ""
+	v.PageNumber = 0
+	v.PageSize = 0
+	v.SortType = 0
+	v.DateType = 0
+	poolTopSearchProjectParam.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.omniitem.category.get
 //
 // 全渠道商品轻发布类目信息
-func TaobaoOmniitemCategoryGet(clt *core.SDKClient, req *omniorder.TaobaoOmniitemCategoryGetAPIRequest, session string) (*omniorder.TaobaoOmniitemCategoryGetAPIResponse, error) {
-	var resp omniorder.TaobaoOmniitemCategoryGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOmniitemCategoryGet(clt *core.SDKClient, req *omniorder.TaobaoOmniitemCategoryGetAPIRequest, resp *omniorder.TaobaoOmniitemCategoryGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // CnskuRelationDto 结构体
 type CnskuRelationDto struct {
 	// r_quantity:2 代表数量
@@ -16,4 +20,27 @@ type CnskuRelationDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// skuId,当商品存在sku时,该参数必传
 	IcSkuId int64 `json:"ic_sku_id,omitempty" xml:"ic_sku_id,omitempty"`
+}
+
+var poolCnskuRelationDto = sync.Pool{
+	New: func() any {
+		return new(CnskuRelationDto)
+	},
+}
+
+// GetCnskuRelationDto() 从对象池中获取CnskuRelationDto
+func GetCnskuRelationDto() *CnskuRelationDto {
+	return poolCnskuRelationDto.Get().(*CnskuRelationDto)
+}
+
+// ReleaseCnskuRelationDto 释放CnskuRelationDto
+func ReleaseCnskuRelationDto(v *CnskuRelationDto) {
+	v.TypeAttrMap = ""
+	v.RelationType = 0
+	v.TargetUserId = 0
+	v.TargetItemId = 0
+	v.ItemId = 0
+	v.Status = 0
+	v.IcSkuId = 0
+	poolCnskuRelationDto.Put(v)
 }

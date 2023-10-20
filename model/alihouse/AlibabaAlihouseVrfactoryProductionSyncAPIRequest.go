@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseVrfactoryProductionSyncAPIRequest struct {
 // NewAlibabaAlihouseVrfactoryProductionSyncRequest 初始化AlibabaAlihouseVrfactoryProductionSyncAPIRequest对象
 func NewAlibabaAlihouseVrfactoryProductionSyncRequest() *AlibabaAlihouseVrfactoryProductionSyncAPIRequest {
 	return &AlibabaAlihouseVrfactoryProductionSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseVrfactoryProductionSyncAPIRequest) Reset() {
+	r._projectVrBuildDataDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseVrfactoryProductionSyncAPIRequest) SetProjectVrBuildData
 // GetProjectVrBuildDataDto ProjectVrBuildDataDto Getter
 func (r AlibabaAlihouseVrfactoryProductionSyncAPIRequest) GetProjectVrBuildDataDto() *ProjectVrBuildDataDto {
 	return r._projectVrBuildDataDto
+}
+
+var poolAlibabaAlihouseVrfactoryProductionSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseVrfactoryProductionSyncRequest()
+	},
+}
+
+// GetAlibabaAlihouseVrfactoryProductionSyncRequest 从 sync.Pool 获取 AlibabaAlihouseVrfactoryProductionSyncAPIRequest
+func GetAlibabaAlihouseVrfactoryProductionSyncAPIRequest() *AlibabaAlihouseVrfactoryProductionSyncAPIRequest {
+	return poolAlibabaAlihouseVrfactoryProductionSyncAPIRequest.Get().(*AlibabaAlihouseVrfactoryProductionSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseVrfactoryProductionSyncAPIRequest 将 AlibabaAlihouseVrfactoryProductionSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseVrfactoryProductionSyncAPIRequest(v *AlibabaAlihouseVrfactoryProductionSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseVrfactoryProductionSyncAPIRequest.Put(v)
 }

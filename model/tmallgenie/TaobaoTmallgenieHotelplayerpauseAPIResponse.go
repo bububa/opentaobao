@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTmallgenieHotelplayerpauseAPIResponse struct {
 	TaobaoTmallgenieHotelplayerpauseAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTmallgenieHotelplayerpauseAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTmallgenieHotelplayerpauseAPIResponseModel).Reset()
+}
+
 // TaobaoTmallgenieHotelplayerpauseAPIResponseModel is 天猫精灵酒店播放暂停 成功返回结果
 type TaobaoTmallgenieHotelplayerpauseAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmallgenie_hotelplayerpause_response"`
@@ -24,4 +31,28 @@ type TaobaoTmallgenieHotelplayerpauseAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// statusCode
 	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTmallgenieHotelplayerpauseAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.StatusCode = 0
+}
+
+var poolTaobaoTmallgenieHotelplayerpauseAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTmallgenieHotelplayerpauseAPIResponse)
+	},
+}
+
+// GetTaobaoTmallgenieHotelplayerpauseAPIResponse 从 sync.Pool 获取 TaobaoTmallgenieHotelplayerpauseAPIResponse
+func GetTaobaoTmallgenieHotelplayerpauseAPIResponse() *TaobaoTmallgenieHotelplayerpauseAPIResponse {
+	return poolTaobaoTmallgenieHotelplayerpauseAPIResponse.Get().(*TaobaoTmallgenieHotelplayerpauseAPIResponse)
+}
+
+// ReleaseTaobaoTmallgenieHotelplayerpauseAPIResponse 将 TaobaoTmallgenieHotelplayerpauseAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTmallgenieHotelplayerpauseAPIResponse(v *TaobaoTmallgenieHotelplayerpauseAPIResponse) {
+	v.Reset()
+	poolTaobaoTmallgenieHotelplayerpauseAPIResponse.Put(v)
 }

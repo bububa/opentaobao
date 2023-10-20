@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoMiniappDistributionMaterialDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappDistributionMaterialDeleteAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappDistributionMaterialDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMiniappDistributionMaterialDeleteAPIResponseModel).Reset()
 }
 
 // TaobaoMiniappDistributionMaterialDeleteAPIResponseModel is 小程序投放 --- 删除投放素材 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoMiniappDistributionMaterialDeleteAPIResponseModel struct {
 	MaterialSuccess bool `json:"material_success,omitempty" xml:"material_success,omitempty"`
 	// 操作结果
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappDistributionMaterialDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MaterialErrorCode = ""
+	m.MaterialErrorMessage = ""
+	m.MaterialSuccess = false
+	m.Model = false
+}
+
+var poolTaobaoMiniappDistributionMaterialDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMiniappDistributionMaterialDeleteAPIResponse)
+	},
+}
+
+// GetTaobaoMiniappDistributionMaterialDeleteAPIResponse 从 sync.Pool 获取 TaobaoMiniappDistributionMaterialDeleteAPIResponse
+func GetTaobaoMiniappDistributionMaterialDeleteAPIResponse() *TaobaoMiniappDistributionMaterialDeleteAPIResponse {
+	return poolTaobaoMiniappDistributionMaterialDeleteAPIResponse.Get().(*TaobaoMiniappDistributionMaterialDeleteAPIResponse)
+}
+
+// ReleaseTaobaoMiniappDistributionMaterialDeleteAPIResponse 将 TaobaoMiniappDistributionMaterialDeleteAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMiniappDistributionMaterialDeleteAPIResponse(v *TaobaoMiniappDistributionMaterialDeleteAPIResponse) {
+	v.Reset()
+	poolTaobaoMiniappDistributionMaterialDeleteAPIResponse.Put(v)
 }

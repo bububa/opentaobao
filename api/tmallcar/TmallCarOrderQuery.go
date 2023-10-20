@@ -9,11 +9,6 @@ import (
 // tmall.car.order.query
 //
 // 天猫汽车商家通过该接口查看整车订单信息
-func TmallCarOrderQuery(clt *core.SDKClient, req *tmallcar.TmallCarOrderQueryAPIRequest, session string) (*tmallcar.TmallCarOrderQueryAPIResponse, error) {
-	var resp tmallcar.TmallCarOrderQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallCarOrderQuery(clt *core.SDKClient, req *tmallcar.TmallCarOrderQueryAPIRequest, resp *tmallcar.TmallCarOrderQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

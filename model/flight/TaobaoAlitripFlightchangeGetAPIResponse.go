@@ -2,6 +2,7 @@ package flight
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAlitripFlightchangeGetAPIResponse struct {
 	TaobaoAlitripFlightchangeGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAlitripFlightchangeGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAlitripFlightchangeGetAPIResponseModel).Reset()
+}
+
 // TaobaoAlitripFlightchangeGetAPIResponseModel is 获取航变信息 成功返回结果
 type TaobaoAlitripFlightchangeGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_flightchange_get_response"`
@@ -22,4 +29,27 @@ type TaobaoAlitripFlightchangeGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	ResultDO *TaobaoAlitripFlightchangeGetResultDo `json:"result_d_o,omitempty" xml:"result_d_o,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAlitripFlightchangeGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultDO = nil
+}
+
+var poolTaobaoAlitripFlightchangeGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripFlightchangeGetAPIResponse)
+	},
+}
+
+// GetTaobaoAlitripFlightchangeGetAPIResponse 从 sync.Pool 获取 TaobaoAlitripFlightchangeGetAPIResponse
+func GetTaobaoAlitripFlightchangeGetAPIResponse() *TaobaoAlitripFlightchangeGetAPIResponse {
+	return poolTaobaoAlitripFlightchangeGetAPIResponse.Get().(*TaobaoAlitripFlightchangeGetAPIResponse)
+}
+
+// ReleaseTaobaoAlitripFlightchangeGetAPIResponse 将 TaobaoAlitripFlightchangeGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAlitripFlightchangeGetAPIResponse(v *TaobaoAlitripFlightchangeGetAPIResponse) {
+	v.Reset()
+	poolTaobaoAlitripFlightchangeGetAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // AlitripMerchantGalaxyOrderListQueryResponse 结构体
 type AlitripMerchantGalaxyOrderListQueryResponse struct {
 	// 查询结果
@@ -22,4 +26,30 @@ type AlitripMerchantGalaxyOrderListQueryResponse struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 是否有下一页
 	HasNextPage bool `json:"has_next_page,omitempty" xml:"has_next_page,omitempty"`
+}
+
+var poolAlitripMerchantGalaxyOrderListQueryResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyOrderListQueryResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyOrderListQueryResponse() 从对象池中获取AlitripMerchantGalaxyOrderListQueryResponse
+func GetAlitripMerchantGalaxyOrderListQueryResponse() *AlitripMerchantGalaxyOrderListQueryResponse {
+	return poolAlitripMerchantGalaxyOrderListQueryResponse.Get().(*AlitripMerchantGalaxyOrderListQueryResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyOrderListQueryResponse 释放AlitripMerchantGalaxyOrderListQueryResponse
+func ReleaseAlitripMerchantGalaxyOrderListQueryResponse(v *AlitripMerchantGalaxyOrderListQueryResponse) {
+	v.OrderDtos = v.OrderDtos[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.PageSize = 0
+	v.Size = 0
+	v.PageNo = 0
+	v.TotalPageNum = 0
+	v.TotalCount = 0
+	v.Success = false
+	v.HasNextPage = false
+	poolAlitripMerchantGalaxyOrderListQueryResponse.Put(v)
 }

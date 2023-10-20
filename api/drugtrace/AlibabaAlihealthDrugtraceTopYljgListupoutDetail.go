@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drugtrace.top.yljg.listupout.detail
 //
 // 查询上游出库单明细(带追溯码信息)
-func AlibabaAlihealthDrugtraceTopYljgListupoutDetail(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugtraceTopYljgListupoutDetail(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest, resp *drugtrace.AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

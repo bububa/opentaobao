@@ -9,11 +9,6 @@ import (
 // taobao.universalbp.stdcategory.findlist
 //
 // 入参商品信息，出参商品所属类别
-func TaobaoUniversalbpStdcategoryFindlist(clt *core.SDKClient, req *simba.TaobaoUniversalbpStdcategoryFindlistAPIRequest, session string) (*simba.TaobaoUniversalbpStdcategoryFindlistAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpStdcategoryFindlistAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUniversalbpStdcategoryFindlist(clt *core.SDKClient, req *simba.TaobaoUniversalbpStdcategoryFindlistAPIRequest, resp *simba.TaobaoUniversalbpStdcategoryFindlistAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

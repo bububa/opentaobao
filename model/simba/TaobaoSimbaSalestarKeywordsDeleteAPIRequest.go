@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoSimbaSalestarKeywordsDeleteAPIRequest struct {
 // NewTaobaoSimbaSalestarKeywordsDeleteRequest 初始化TaobaoSimbaSalestarKeywordsDeleteAPIRequest对象
 func NewTaobaoSimbaSalestarKeywordsDeleteRequest() *TaobaoSimbaSalestarKeywordsDeleteAPIRequest {
 	return &TaobaoSimbaSalestarKeywordsDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaSalestarKeywordsDeleteAPIRequest) Reset() {
+	r._bidwordIds = r._bidwordIds[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoSimbaSalestarKeywordsDeleteAPIRequest) SetBidwordIds(_bidwordIds 
 // GetBidwordIds BidwordIds Getter
 func (r TaobaoSimbaSalestarKeywordsDeleteAPIRequest) GetBidwordIds() []string {
 	return r._bidwordIds
+}
+
+var poolTaobaoSimbaSalestarKeywordsDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaSalestarKeywordsDeleteRequest()
+	},
+}
+
+// GetTaobaoSimbaSalestarKeywordsDeleteRequest 从 sync.Pool 获取 TaobaoSimbaSalestarKeywordsDeleteAPIRequest
+func GetTaobaoSimbaSalestarKeywordsDeleteAPIRequest() *TaobaoSimbaSalestarKeywordsDeleteAPIRequest {
+	return poolTaobaoSimbaSalestarKeywordsDeleteAPIRequest.Get().(*TaobaoSimbaSalestarKeywordsDeleteAPIRequest)
+}
+
+// ReleaseTaobaoSimbaSalestarKeywordsDeleteAPIRequest 将 TaobaoSimbaSalestarKeywordsDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaSalestarKeywordsDeleteAPIRequest(v *TaobaoSimbaSalestarKeywordsDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaSalestarKeywordsDeleteAPIRequest.Put(v)
 }

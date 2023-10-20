@@ -1,5 +1,9 @@
 package drug
 
+import (
+	"sync"
+)
+
 // SubOrderDto 结构体
 type SubOrderDto struct {
 	// 套装商品子商品系信息
@@ -24,4 +28,31 @@ type SubOrderDto struct {
 	Rx int64 `json:"rx,omitempty" xml:"rx,omitempty"`
 	// 商品的skuId
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolSubOrderDto = sync.Pool{
+	New: func() any {
+		return new(SubOrderDto)
+	},
+}
+
+// GetSubOrderDto() 从对象池中获取SubOrderDto
+func GetSubOrderDto() *SubOrderDto {
+	return poolSubOrderDto.Get().(*SubOrderDto)
+}
+
+// ReleaseSubOrderDto 释放SubOrderDto
+func ReleaseSubOrderDto(v *SubOrderDto) {
+	v.SuitSubItemDtoList = v.SuitSubItemDtoList[:0]
+	v.Unit = ""
+	v.Title = ""
+	v.OutItemdId = ""
+	v.SubOrderId = 0
+	v.ItemId = 0
+	v.Type = 0
+	v.Price = 0
+	v.BuyAmount = 0
+	v.Rx = 0
+	v.SkuId = 0
+	poolSubOrderDto.Put(v)
 }

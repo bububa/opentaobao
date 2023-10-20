@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Instoragefeedbackrequest 结构体
 type Instoragefeedbackrequest struct {
 	// 退回订单货品信息列表
@@ -24,4 +28,31 @@ type Instoragefeedbackrequest struct {
 	ReceiverInfo *Receiverinfo `json:"receiver_info,omitempty" xml:"receiver_info,omitempty"`
 	// 退回寄件人信息(消费者)
 	SenderInfo *Senderinfo `json:"sender_info,omitempty" xml:"sender_info,omitempty"`
+}
+
+var poolInstoragefeedbackrequest = sync.Pool{
+	New: func() any {
+		return new(Instoragefeedbackrequest)
+	},
+}
+
+// GetInstoragefeedbackrequest() 从对象池中获取Instoragefeedbackrequest
+func GetInstoragefeedbackrequest() *Instoragefeedbackrequest {
+	return poolInstoragefeedbackrequest.Get().(*Instoragefeedbackrequest)
+}
+
+// ReleaseInstoragefeedbackrequest 释放Instoragefeedbackrequest
+func ReleaseInstoragefeedbackrequest(v *Instoragefeedbackrequest) {
+	v.OrderItems = v.OrderItems[:0]
+	v.SupplierId = ""
+	v.BizOrderCode = ""
+	v.OutBizId = ""
+	v.InstorageTime = ""
+	v.TmsServiceCode = ""
+	v.TmsOrderCode = ""
+	v.StoreCode = ""
+	v.BusinessModel = ""
+	v.ReceiverInfo = nil
+	v.SenderInfo = nil
+	poolInstoragefeedbackrequest.Put(v)
 }

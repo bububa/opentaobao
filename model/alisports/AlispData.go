@@ -1,5 +1,9 @@
 package alisports
 
+import (
+	"sync"
+)
+
 // AlispData 结构体
 type AlispData struct {
 	// sso_token
@@ -16,4 +20,27 @@ type AlispData struct {
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
 	// type
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolAlispData = sync.Pool{
+	New: func() any {
+		return new(AlispData)
+	},
+}
+
+// GetAlispData() 从对象池中获取AlispData
+func GetAlispData() *AlispData {
+	return poolAlispData.Get().(*AlispData)
+}
+
+// ReleaseAlispData 释放AlispData
+func ReleaseAlispData(v *AlispData) {
+	v.SsoToken = ""
+	v.Aliuid = ""
+	v.AccessToken = ""
+	v.AvatarUrl = ""
+	v.Nick = ""
+	v.Mobile = ""
+	v.Type = 0
+	poolAlispData.Put(v)
 }

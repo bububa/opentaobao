@@ -1,5 +1,9 @@
 package mozi
 
+import (
+	"sync"
+)
+
 // AddOrUpdateTenantEmployeeAndAccountRequest 结构体
 type AddOrUpdateTenantEmployeeAndAccountRequest struct {
 	// 附加属性
@@ -34,4 +38,36 @@ type AddOrUpdateTenantEmployeeAndAccountRequest struct {
 	Avatar string `json:"avatar,omitempty" xml:"avatar,omitempty"`
 	// 租户ID
 	TenantId int64 `json:"tenant_id,omitempty" xml:"tenant_id,omitempty"`
+}
+
+var poolAddOrUpdateTenantEmployeeAndAccountRequest = sync.Pool{
+	New: func() any {
+		return new(AddOrUpdateTenantEmployeeAndAccountRequest)
+	},
+}
+
+// GetAddOrUpdateTenantEmployeeAndAccountRequest() 从对象池中获取AddOrUpdateTenantEmployeeAndAccountRequest
+func GetAddOrUpdateTenantEmployeeAndAccountRequest() *AddOrUpdateTenantEmployeeAndAccountRequest {
+	return poolAddOrUpdateTenantEmployeeAndAccountRequest.Get().(*AddOrUpdateTenantEmployeeAndAccountRequest)
+}
+
+// ReleaseAddOrUpdateTenantEmployeeAndAccountRequest 释放AddOrUpdateTenantEmployeeAndAccountRequest
+func ReleaseAddOrUpdateTenantEmployeeAndAccountRequest(v *AddOrUpdateTenantEmployeeAndAccountRequest) {
+	v.RequestMetaData = ""
+	v.Nickname = ""
+	v.EmployeeCode = ""
+	v.Operator = ""
+	v.Namespace = ""
+	v.EmployeeName = ""
+	v.Email = ""
+	v.Account = ""
+	v.Language = ""
+	v.SecMobileAreaCode = ""
+	v.ReferId = ""
+	v.SecMobile = ""
+	v.IdentityCardNum = ""
+	v.EmployeeNumber = ""
+	v.Avatar = ""
+	v.TenantId = 0
+	poolAddOrUpdateTenantEmployeeAndAccountRequest.Put(v)
 }

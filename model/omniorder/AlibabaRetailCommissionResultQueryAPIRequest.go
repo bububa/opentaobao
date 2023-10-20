@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaRetailCommissionResultQueryAPIRequest struct {
 // NewAlibabaRetailCommissionResultQueryRequest 初始化AlibabaRetailCommissionResultQueryAPIRequest对象
 func NewAlibabaRetailCommissionResultQueryRequest() *AlibabaRetailCommissionResultQueryAPIRequest {
 	return &AlibabaRetailCommissionResultQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaRetailCommissionResultQueryAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaRetailCommissionResultQueryAPIRequest) SetParam0(_param0 *Commis
 // GetParam0 Param0 Getter
 func (r AlibabaRetailCommissionResultQueryAPIRequest) GetParam0() *CommissionResultQuery {
 	return r._param0
+}
+
+var poolAlibabaRetailCommissionResultQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaRetailCommissionResultQueryRequest()
+	},
+}
+
+// GetAlibabaRetailCommissionResultQueryRequest 从 sync.Pool 获取 AlibabaRetailCommissionResultQueryAPIRequest
+func GetAlibabaRetailCommissionResultQueryAPIRequest() *AlibabaRetailCommissionResultQueryAPIRequest {
+	return poolAlibabaRetailCommissionResultQueryAPIRequest.Get().(*AlibabaRetailCommissionResultQueryAPIRequest)
+}
+
+// ReleaseAlibabaRetailCommissionResultQueryAPIRequest 将 AlibabaRetailCommissionResultQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaRetailCommissionResultQueryAPIRequest(v *AlibabaRetailCommissionResultQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaRetailCommissionResultQueryAPIRequest.Put(v)
 }

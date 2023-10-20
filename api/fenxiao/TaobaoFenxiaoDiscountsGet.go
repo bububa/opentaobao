@@ -9,11 +9,6 @@ import (
 // taobao.fenxiao.discounts.get
 //
 // 查询折扣信息
-func TaobaoFenxiaoDiscountsGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoDiscountsGetAPIRequest, session string) (*fenxiao.TaobaoFenxiaoDiscountsGetAPIResponse, error) {
-	var resp fenxiao.TaobaoFenxiaoDiscountsGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFenxiaoDiscountsGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoDiscountsGetAPIRequest, resp *fenxiao.TaobaoFenxiaoDiscountsGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

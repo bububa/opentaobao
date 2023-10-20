@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaArgusUpdateredriskAPIRequest struct {
 // NewAlibabaArgusUpdateredriskRequest 初始化AlibabaArgusUpdateredriskAPIRequest对象
 func NewAlibabaArgusUpdateredriskRequest() *AlibabaArgusUpdateredriskAPIRequest {
 	return &AlibabaArgusUpdateredriskAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaArgusUpdateredriskAPIRequest) Reset() {
+	r._redRiskUpdateFactor = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaArgusUpdateredriskAPIRequest) SetRedRiskUpdateFactor(_redRiskUpd
 // GetRedRiskUpdateFactor RedRiskUpdateFactor Getter
 func (r AlibabaArgusUpdateredriskAPIRequest) GetRedRiskUpdateFactor() *RedRiskUpdateFactor {
 	return r._redRiskUpdateFactor
+}
+
+var poolAlibabaArgusUpdateredriskAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaArgusUpdateredriskRequest()
+	},
+}
+
+// GetAlibabaArgusUpdateredriskRequest 从 sync.Pool 获取 AlibabaArgusUpdateredriskAPIRequest
+func GetAlibabaArgusUpdateredriskAPIRequest() *AlibabaArgusUpdateredriskAPIRequest {
+	return poolAlibabaArgusUpdateredriskAPIRequest.Get().(*AlibabaArgusUpdateredriskAPIRequest)
+}
+
+// ReleaseAlibabaArgusUpdateredriskAPIRequest 将 AlibabaArgusUpdateredriskAPIRequest 放入 sync.Pool
+func ReleaseAlibabaArgusUpdateredriskAPIRequest(v *AlibabaArgusUpdateredriskAPIRequest) {
+	v.Reset()
+	poolAlibabaArgusUpdateredriskAPIRequest.Put(v)
 }

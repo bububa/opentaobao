@@ -2,6 +2,7 @@ package seaking
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaSeakingAuthmachineapiAPIRequest struct {
 // NewAlibabaSeakingAuthmachineapiRequest 初始化AlibabaSeakingAuthmachineapiAPIRequest对象
 func NewAlibabaSeakingAuthmachineapiRequest() *AlibabaSeakingAuthmachineapiAPIRequest {
 	return &AlibabaSeakingAuthmachineapiAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSeakingAuthmachineapiAPIRequest) Reset() {
+	r._identifyType = ""
+	r._identifier = ""
+	r._subIdentifyType = ""
+	r._subIdentifier = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaSeakingAuthmachineapiAPIRequest) SetSubIdentifier(_subIdentifier
 // GetSubIdentifier SubIdentifier Getter
 func (r AlibabaSeakingAuthmachineapiAPIRequest) GetSubIdentifier() string {
 	return r._subIdentifier
+}
+
+var poolAlibabaSeakingAuthmachineapiAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSeakingAuthmachineapiRequest()
+	},
+}
+
+// GetAlibabaSeakingAuthmachineapiRequest 从 sync.Pool 获取 AlibabaSeakingAuthmachineapiAPIRequest
+func GetAlibabaSeakingAuthmachineapiAPIRequest() *AlibabaSeakingAuthmachineapiAPIRequest {
+	return poolAlibabaSeakingAuthmachineapiAPIRequest.Get().(*AlibabaSeakingAuthmachineapiAPIRequest)
+}
+
+// ReleaseAlibabaSeakingAuthmachineapiAPIRequest 将 AlibabaSeakingAuthmachineapiAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSeakingAuthmachineapiAPIRequest(v *AlibabaSeakingAuthmachineapiAPIRequest) {
+	v.Reset()
+	poolAlibabaSeakingAuthmachineapiAPIRequest.Put(v)
 }

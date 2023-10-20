@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse struct {
 	AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponseModel).Reset()
+}
+
 // AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponseModel is 查询标签数据 成功返回结果
 type AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_ad_target_tag_find_campaign_target_tag_response"`
@@ -22,4 +29,27 @@ type AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回实体
 	ResultList []AdsTargetingTagDto `json:"result_list,omitempty" xml:"result_list>ads_targeting_tag_dto,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultList = m.ResultList[:0]
+}
+
+var poolAlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse)
+	},
+}
+
+// GetAlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse 从 sync.Pool 获取 AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse
+func GetAlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse() *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse {
+	return poolAlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse.Get().(*AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse)
+}
+
+// ReleaseAlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse 将 AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse(v *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse) {
+	v.Reset()
+	poolAlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse.Put(v)
 }

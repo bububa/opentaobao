@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMjOcPayAPIRequest struct {
 // NewAlibabaMjOcPayRequest 初始化AlibabaMjOcPayAPIRequest对象
 func NewAlibabaMjOcPayRequest() *AlibabaMjOcPayAPIRequest {
 	return &AlibabaMjOcPayAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMjOcPayAPIRequest) Reset() {
+	r._posOrder = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMjOcPayAPIRequest) SetPosOrder(_posOrder *PosOrderDto) error {
 // GetPosOrder PosOrder Getter
 func (r AlibabaMjOcPayAPIRequest) GetPosOrder() *PosOrderDto {
 	return r._posOrder
+}
+
+var poolAlibabaMjOcPayAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMjOcPayRequest()
+	},
+}
+
+// GetAlibabaMjOcPayRequest 从 sync.Pool 获取 AlibabaMjOcPayAPIRequest
+func GetAlibabaMjOcPayAPIRequest() *AlibabaMjOcPayAPIRequest {
+	return poolAlibabaMjOcPayAPIRequest.Get().(*AlibabaMjOcPayAPIRequest)
+}
+
+// ReleaseAlibabaMjOcPayAPIRequest 将 AlibabaMjOcPayAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMjOcPayAPIRequest(v *AlibabaMjOcPayAPIRequest) {
+	v.Reset()
+	poolAlibabaMjOcPayAPIRequest.Put(v)
 }

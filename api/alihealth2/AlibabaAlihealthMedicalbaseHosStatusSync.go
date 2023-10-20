@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.medicalbase.hos.status.sync
 //
 // 挂号医院上下线
-func AlibabaAlihealthMedicalbaseHosStatusSync(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthMedicalbaseHosStatusSyncAPIRequest, session string) (*alihealth2.AlibabaAlihealthMedicalbaseHosStatusSyncAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthMedicalbaseHosStatusSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthMedicalbaseHosStatusSync(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthMedicalbaseHosStatusSyncAPIRequest, resp *alihealth2.AlibabaAlihealthMedicalbaseHosStatusSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

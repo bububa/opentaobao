@@ -1,5 +1,9 @@
 package icbulogistics
 
+import (
+	"sync"
+)
+
 // WarehouseDto 结构体
 type WarehouseDto struct {
 	// 仓库地址
@@ -18,4 +22,28 @@ type WarehouseDto struct {
 	PostCode string `json:"post_code,omitempty" xml:"post_code,omitempty"`
 	// 备注
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
+}
+
+var poolWarehouseDto = sync.Pool{
+	New: func() any {
+		return new(WarehouseDto)
+	},
+}
+
+// GetWarehouseDto() 从对象池中获取WarehouseDto
+func GetWarehouseDto() *WarehouseDto {
+	return poolWarehouseDto.Get().(*WarehouseDto)
+}
+
+// ReleaseWarehouseDto 释放WarehouseDto
+func ReleaseWarehouseDto(v *WarehouseDto) {
+	v.Address = ""
+	v.Name = ""
+	v.Code = ""
+	v.ContactPerson = ""
+	v.ContactPhone = ""
+	v.WorkingTime = ""
+	v.PostCode = ""
+	v.Description = ""
+	poolWarehouseDto.Put(v)
 }

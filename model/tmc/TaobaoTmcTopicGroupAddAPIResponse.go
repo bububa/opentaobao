@@ -2,6 +2,7 @@ package tmc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type TaobaoTmcTopicGroupAddAPIResponse struct {
 	TaobaoTmcTopicGroupAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTmcTopicGroupAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTmcTopicGroupAddAPIResponseModel).Reset()
+}
+
 // TaobaoTmcTopicGroupAddAPIResponseModel is topic分组路由 成功返回结果
 type TaobaoTmcTopicGroupAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmc_topic_group_add_response"`
@@ -23,4 +30,27 @@ type TaobaoTmcTopicGroupAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// true
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTmcTopicGroupAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = false
+}
+
+var poolTaobaoTmcTopicGroupAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTmcTopicGroupAddAPIResponse)
+	},
+}
+
+// GetTaobaoTmcTopicGroupAddAPIResponse 从 sync.Pool 获取 TaobaoTmcTopicGroupAddAPIResponse
+func GetTaobaoTmcTopicGroupAddAPIResponse() *TaobaoTmcTopicGroupAddAPIResponse {
+	return poolTaobaoTmcTopicGroupAddAPIResponse.Get().(*TaobaoTmcTopicGroupAddAPIResponse)
+}
+
+// ReleaseTaobaoTmcTopicGroupAddAPIResponse 将 TaobaoTmcTopicGroupAddAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTmcTopicGroupAddAPIResponse(v *TaobaoTmcTopicGroupAddAPIResponse) {
+	v.Reset()
+	poolTaobaoTmcTopicGroupAddAPIResponse.Put(v)
 }

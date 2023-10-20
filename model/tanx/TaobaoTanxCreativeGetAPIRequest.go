@@ -2,6 +2,7 @@ package tanx
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoTanxCreativeGetAPIRequest struct {
 // NewTaobaoTanxCreativeGetRequest 初始化TaobaoTanxCreativeGetAPIRequest对象
 func NewTaobaoTanxCreativeGetRequest() *TaobaoTanxCreativeGetAPIRequest {
 	return &TaobaoTanxCreativeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTanxCreativeGetAPIRequest) Reset() {
+	r._token = ""
+	r._creativeId = ""
+	r._memberId = 0
+	r._signTime = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoTanxCreativeGetAPIRequest) SetSignTime(_signTime int64) error {
 // GetSignTime SignTime Getter
 func (r TaobaoTanxCreativeGetAPIRequest) GetSignTime() int64 {
 	return r._signTime
+}
+
+var poolTaobaoTanxCreativeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTanxCreativeGetRequest()
+	},
+}
+
+// GetTaobaoTanxCreativeGetRequest 从 sync.Pool 获取 TaobaoTanxCreativeGetAPIRequest
+func GetTaobaoTanxCreativeGetAPIRequest() *TaobaoTanxCreativeGetAPIRequest {
+	return poolTaobaoTanxCreativeGetAPIRequest.Get().(*TaobaoTanxCreativeGetAPIRequest)
+}
+
+// ReleaseTaobaoTanxCreativeGetAPIRequest 将 TaobaoTanxCreativeGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTanxCreativeGetAPIRequest(v *TaobaoTanxCreativeGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTanxCreativeGetAPIRequest.Put(v)
 }

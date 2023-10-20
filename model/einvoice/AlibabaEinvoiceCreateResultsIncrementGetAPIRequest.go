@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaEinvoiceCreateResultsIncrementGetAPIRequest struct {
 // NewAlibabaEinvoiceCreateResultsIncrementGetRequest 初始化AlibabaEinvoiceCreateResultsIncrementGetAPIRequest对象
 func NewAlibabaEinvoiceCreateResultsIncrementGetRequest() *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest {
 	return &AlibabaEinvoiceCreateResultsIncrementGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) Reset() {
+	r._endModified = ""
+	r._payeeRegisterNo = ""
+	r._startModified = ""
+	r._status = ""
+	r._pageSize = 0
+	r._pageNo = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetPageNo(_pageNo i
 // GetPageNo PageNo Getter
 func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
+}
+
+var poolAlibabaEinvoiceCreateResultsIncrementGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceCreateResultsIncrementGetRequest()
+	},
+}
+
+// GetAlibabaEinvoiceCreateResultsIncrementGetRequest 从 sync.Pool 获取 AlibabaEinvoiceCreateResultsIncrementGetAPIRequest
+func GetAlibabaEinvoiceCreateResultsIncrementGetAPIRequest() *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest {
+	return poolAlibabaEinvoiceCreateResultsIncrementGetAPIRequest.Get().(*AlibabaEinvoiceCreateResultsIncrementGetAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceCreateResultsIncrementGetAPIRequest 将 AlibabaEinvoiceCreateResultsIncrementGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceCreateResultsIncrementGetAPIRequest(v *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceCreateResultsIncrementGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package mei
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,22 @@ type TmallMeiCrmMemberSyncPrivyAPIRequest struct {
 // NewTmallMeiCrmMemberSyncPrivyRequest 初始化TmallMeiCrmMemberSyncPrivyAPIRequest对象
 func NewTmallMeiCrmMemberSyncPrivyRequest() *TmallMeiCrmMemberSyncPrivyAPIRequest {
 	return &TmallMeiCrmMemberSyncPrivyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallMeiCrmMemberSyncPrivyAPIRequest) Reset() {
+	r._mobile = ""
+	r._extend = ""
+	r._ouid = ""
+	r._levelPoint = ""
+	r._point = 0
+	r._level = 0
+	r._version = 0
+	r._levelExpireTime = 0
+	r._levelType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -173,4 +188,21 @@ func (r *TmallMeiCrmMemberSyncPrivyAPIRequest) SetLevelType(_levelType int64) er
 // GetLevelType LevelType Getter
 func (r TmallMeiCrmMemberSyncPrivyAPIRequest) GetLevelType() int64 {
 	return r._levelType
+}
+
+var poolTmallMeiCrmMemberSyncPrivyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallMeiCrmMemberSyncPrivyRequest()
+	},
+}
+
+// GetTmallMeiCrmMemberSyncPrivyRequest 从 sync.Pool 获取 TmallMeiCrmMemberSyncPrivyAPIRequest
+func GetTmallMeiCrmMemberSyncPrivyAPIRequest() *TmallMeiCrmMemberSyncPrivyAPIRequest {
+	return poolTmallMeiCrmMemberSyncPrivyAPIRequest.Get().(*TmallMeiCrmMemberSyncPrivyAPIRequest)
+}
+
+// ReleaseTmallMeiCrmMemberSyncPrivyAPIRequest 将 TmallMeiCrmMemberSyncPrivyAPIRequest 放入 sync.Pool
+func ReleaseTmallMeiCrmMemberSyncPrivyAPIRequest(v *TmallMeiCrmMemberSyncPrivyAPIRequest) {
+	v.Reset()
+	poolTmallMeiCrmMemberSyncPrivyAPIRequest.Put(v)
 }

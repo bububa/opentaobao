@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoOcApContracturlGetAPIRequest struct {
 // NewTaobaoOcApContracturlGetRequest 初始化TaobaoOcApContracturlGetAPIRequest对象
 func NewTaobaoOcApContracturlGetRequest() *TaobaoOcApContracturlGetAPIRequest {
 	return &TaobaoOcApContracturlGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOcApContracturlGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoOcApContracturlGetAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoOcApContracturlGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoOcApContracturlGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOcApContracturlGetRequest()
+	},
+}
+
+// GetTaobaoOcApContracturlGetRequest 从 sync.Pool 获取 TaobaoOcApContracturlGetAPIRequest
+func GetTaobaoOcApContracturlGetAPIRequest() *TaobaoOcApContracturlGetAPIRequest {
+	return poolTaobaoOcApContracturlGetAPIRequest.Get().(*TaobaoOcApContracturlGetAPIRequest)
+}
+
+// ReleaseTaobaoOcApContracturlGetAPIRequest 将 TaobaoOcApContracturlGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOcApContracturlGetAPIRequest(v *TaobaoOcApContracturlGetAPIRequest) {
+	v.Reset()
+	poolTaobaoOcApContracturlGetAPIRequest.Put(v)
 }

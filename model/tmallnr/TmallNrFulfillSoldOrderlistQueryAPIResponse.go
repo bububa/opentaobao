@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallNrFulfillSoldOrderlistQueryAPIResponse struct {
 	TmallNrFulfillSoldOrderlistQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallNrFulfillSoldOrderlistQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallNrFulfillSoldOrderlistQueryAPIResponseModel).Reset()
+}
+
 // TmallNrFulfillSoldOrderlistQueryAPIResponseModel is 零售商获取品牌商的特定订单列表 成功返回结果
 type TmallNrFulfillSoldOrderlistQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_nr_fulfill_sold_orderlist_query_response"`
@@ -22,4 +29,27 @@ type TmallNrFulfillSoldOrderlistQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *NrResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallNrFulfillSoldOrderlistQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallNrFulfillSoldOrderlistQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallNrFulfillSoldOrderlistQueryAPIResponse)
+	},
+}
+
+// GetTmallNrFulfillSoldOrderlistQueryAPIResponse 从 sync.Pool 获取 TmallNrFulfillSoldOrderlistQueryAPIResponse
+func GetTmallNrFulfillSoldOrderlistQueryAPIResponse() *TmallNrFulfillSoldOrderlistQueryAPIResponse {
+	return poolTmallNrFulfillSoldOrderlistQueryAPIResponse.Get().(*TmallNrFulfillSoldOrderlistQueryAPIResponse)
+}
+
+// ReleaseTmallNrFulfillSoldOrderlistQueryAPIResponse 将 TmallNrFulfillSoldOrderlistQueryAPIResponse 保存到 sync.Pool
+func ReleaseTmallNrFulfillSoldOrderlistQueryAPIResponse(v *TmallNrFulfillSoldOrderlistQueryAPIResponse) {
+	v.Reset()
+	poolTmallNrFulfillSoldOrderlistQueryAPIResponse.Put(v)
 }

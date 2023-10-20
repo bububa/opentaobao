@@ -9,11 +9,6 @@ import (
 // alibaba.campus.device.openapi.getdevicerealtimelog
 //
 // 根据设备uuid获取设备采集信息
-func AlibabaCampusDeviceOpenapiGetdevicerealtimelog(clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest, session string) (*campus.AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIResponse, error) {
-	var resp campus.AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusDeviceOpenapiGetdevicerealtimelog(clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest, resp *campus.AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

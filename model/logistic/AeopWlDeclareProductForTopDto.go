@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // AeopWlDeclareProductForTopDto 结构体
 type AeopWlDeclareProductForTopDto struct {
 	// 类目中文名称
@@ -38,4 +42,38 @@ type AeopWlDeclareProductForTopDto struct {
 	OnlyBattery bool `json:"only_battery,omitempty" xml:"only_battery,omitempty"`
 	// 是否特货
 	ContainsSpecialGoods bool `json:"contains_special_goods,omitempty" xml:"contains_special_goods,omitempty"`
+}
+
+var poolAeopWlDeclareProductForTopDto = sync.Pool{
+	New: func() any {
+		return new(AeopWlDeclareProductForTopDto)
+	},
+}
+
+// GetAeopWlDeclareProductForTopDto() 从对象池中获取AeopWlDeclareProductForTopDto
+func GetAeopWlDeclareProductForTopDto() *AeopWlDeclareProductForTopDto {
+	return poolAeopWlDeclareProductForTopDto.Get().(*AeopWlDeclareProductForTopDto)
+}
+
+// ReleaseAeopWlDeclareProductForTopDto 释放AeopWlDeclareProductForTopDto
+func ReleaseAeopWlDeclareProductForTopDto(v *AeopWlDeclareProductForTopDto) {
+	v.CategoryCnDesc = ""
+	v.CategoryEnDesc = ""
+	v.HsCode = ""
+	v.ProductDeclareAmount = ""
+	v.ProductWeight = ""
+	v.ScItemCode = ""
+	v.ScItemName = ""
+	v.SkuCode = ""
+	v.SkuValue = ""
+	v.ProductId = 0
+	v.ProductNum = 0
+	v.ScItemId = 0
+	v.ChildOrderId = 0
+	v.AneroidMarkup = false
+	v.Breakable = false
+	v.ContainsBattery = false
+	v.OnlyBattery = false
+	v.ContainsSpecialGoods = false
+	poolAeopWlDeclareProductForTopDto.Put(v)
 }

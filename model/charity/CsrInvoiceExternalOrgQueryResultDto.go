@@ -1,5 +1,9 @@
 package charity
 
+import (
+	"sync"
+)
+
 // CsrInvoiceExternalOrgQueryResultDto 结构体
 type CsrInvoiceExternalOrgQueryResultDto struct {
 	// 项目金额明细
@@ -40,4 +44,39 @@ type CsrInvoiceExternalOrgQueryResultDto struct {
 	ShopId int64 `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 申请时间-ms时间戳
 	ApplyTime int64 `json:"apply_time,omitempty" xml:"apply_time,omitempty"`
+}
+
+var poolCsrInvoiceExternalOrgQueryResultDto = sync.Pool{
+	New: func() any {
+		return new(CsrInvoiceExternalOrgQueryResultDto)
+	},
+}
+
+// GetCsrInvoiceExternalOrgQueryResultDto() 从对象池中获取CsrInvoiceExternalOrgQueryResultDto
+func GetCsrInvoiceExternalOrgQueryResultDto() *CsrInvoiceExternalOrgQueryResultDto {
+	return poolCsrInvoiceExternalOrgQueryResultDto.Get().(*CsrInvoiceExternalOrgQueryResultDto)
+}
+
+// ReleaseCsrInvoiceExternalOrgQueryResultDto 释放CsrInvoiceExternalOrgQueryResultDto
+func ReleaseCsrInvoiceExternalOrgQueryResultDto(v *CsrInvoiceExternalOrgQueryResultDto) {
+	v.ProjectList = v.ProjectList[:0]
+	v.SellerNick = ""
+	v.ContactMobile = ""
+	v.UnifiedCreditCode = ""
+	v.ContactName = ""
+	v.AcceptOperator = ""
+	v.ShopName = ""
+	v.OrgPromoteId = ""
+	v.AccountBank = ""
+	v.AccountNo = ""
+	v.InvoiceType = ""
+	v.ContactAddress = ""
+	v.InvoiceId = ""
+	v.InvoiceTitle = ""
+	v.BillInfo = nil
+	v.InvoiceState = 0
+	v.InvoiceAmount = 0
+	v.ShopId = 0
+	v.ApplyTime = 0
+	poolCsrInvoiceExternalOrgQueryResultDto.Put(v)
 }

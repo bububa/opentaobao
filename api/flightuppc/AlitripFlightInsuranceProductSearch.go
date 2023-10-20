@@ -9,11 +9,6 @@ import (
 // alitrip.flight.insurance.product.search
 //
 // 搜索保险产品
-func AlitripFlightInsuranceProductSearch(clt *core.SDKClient, req *flightuppc.AlitripFlightInsuranceProductSearchAPIRequest, session string) (*flightuppc.AlitripFlightInsuranceProductSearchAPIResponse, error) {
-	var resp flightuppc.AlitripFlightInsuranceProductSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripFlightInsuranceProductSearch(clt *core.SDKClient, req *flightuppc.AlitripFlightInsuranceProductSearchAPIRequest, resp *flightuppc.AlitripFlightInsuranceProductSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

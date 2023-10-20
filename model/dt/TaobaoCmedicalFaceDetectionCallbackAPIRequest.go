@@ -2,6 +2,7 @@ package dt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoCmedicalFaceDetectionCallbackAPIRequest struct {
 // NewTaobaoCmedicalFaceDetectionCallbackRequest 初始化TaobaoCmedicalFaceDetectionCallbackAPIRequest对象
 func NewTaobaoCmedicalFaceDetectionCallbackRequest() *TaobaoCmedicalFaceDetectionCallbackAPIRequest {
 	return &TaobaoCmedicalFaceDetectionCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCmedicalFaceDetectionCallbackAPIRequest) Reset() {
+	r._requestId = ""
+	r._identity = ""
+	r._scene = ""
+	r._data = ""
+	r._errorMsg = ""
+	r._success = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoCmedicalFaceDetectionCallbackAPIRequest) SetSuccess(_success bool
 // GetSuccess Success Getter
 func (r TaobaoCmedicalFaceDetectionCallbackAPIRequest) GetSuccess() bool {
 	return r._success
+}
+
+var poolTaobaoCmedicalFaceDetectionCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCmedicalFaceDetectionCallbackRequest()
+	},
+}
+
+// GetTaobaoCmedicalFaceDetectionCallbackRequest 从 sync.Pool 获取 TaobaoCmedicalFaceDetectionCallbackAPIRequest
+func GetTaobaoCmedicalFaceDetectionCallbackAPIRequest() *TaobaoCmedicalFaceDetectionCallbackAPIRequest {
+	return poolTaobaoCmedicalFaceDetectionCallbackAPIRequest.Get().(*TaobaoCmedicalFaceDetectionCallbackAPIRequest)
+}
+
+// ReleaseTaobaoCmedicalFaceDetectionCallbackAPIRequest 将 TaobaoCmedicalFaceDetectionCallbackAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCmedicalFaceDetectionCallbackAPIRequest(v *TaobaoCmedicalFaceDetectionCallbackAPIRequest) {
+	v.Reset()
+	poolTaobaoCmedicalFaceDetectionCallbackAPIRequest.Put(v)
 }

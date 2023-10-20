@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // GlobalAeopAeProductSku 结构体
 type GlobalAeopAeProductSku struct {
 	// List of SKU attributes
@@ -22,4 +26,30 @@ type GlobalAeopAeProductSku struct {
 	IpmSkuStock int64 `json:"ipm_sku_stock,omitempty" xml:"ipm_sku_stock,omitempty"`
 	// True means stock available for the sku, false means out of stock. The stock of at least one should be available.
 	SkuStock bool `json:"sku_stock,omitempty" xml:"sku_stock,omitempty"`
+}
+
+var poolGlobalAeopAeProductSku = sync.Pool{
+	New: func() any {
+		return new(GlobalAeopAeProductSku)
+	},
+}
+
+// GetGlobalAeopAeProductSku() 从对象池中获取GlobalAeopAeProductSku
+func GetGlobalAeopAeProductSku() *GlobalAeopAeProductSku {
+	return poolGlobalAeopAeProductSku.Get().(*GlobalAeopAeProductSku)
+}
+
+// ReleaseGlobalAeopAeProductSku 释放GlobalAeopAeProductSku
+func ReleaseGlobalAeopAeProductSku(v *GlobalAeopAeProductSku) {
+	v.AeopSKUPropertyList = v.AeopSKUPropertyList[:0]
+	v.Barcode = ""
+	v.CurrencyCode = ""
+	v.Id = ""
+	v.SkuCode = ""
+	v.SkuPrice = ""
+	v.SkuDiscountPrice = ""
+	v.EanCode = ""
+	v.IpmSkuStock = 0
+	v.SkuStock = false
+	poolGlobalAeopAeProductSku.Put(v)
 }

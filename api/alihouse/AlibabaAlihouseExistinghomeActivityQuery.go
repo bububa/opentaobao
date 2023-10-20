@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghome.activity.query
 //
 // 五福活动经纪人获取
-func AlibabaAlihouseExistinghomeActivityQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeActivityQueryAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeActivityQueryAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeActivityQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghomeActivityQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeActivityQueryAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeActivityQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaInteractActivityAddcommentAPIRequest struct {
 // NewAlibabaInteractActivityAddcommentRequest 初始化AlibabaInteractActivityAddcommentAPIRequest对象
 func NewAlibabaInteractActivityAddcommentRequest() *AlibabaInteractActivityAddcommentAPIRequest {
 	return &AlibabaInteractActivityAddcommentAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractActivityAddcommentAPIRequest) Reset() {
+	r._content = ""
+	r._bizId = ""
+	r._feedId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaInteractActivityAddcommentAPIRequest) SetFeedId(_feedId int64) e
 // GetFeedId FeedId Getter
 func (r AlibabaInteractActivityAddcommentAPIRequest) GetFeedId() int64 {
 	return r._feedId
+}
+
+var poolAlibabaInteractActivityAddcommentAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractActivityAddcommentRequest()
+	},
+}
+
+// GetAlibabaInteractActivityAddcommentRequest 从 sync.Pool 获取 AlibabaInteractActivityAddcommentAPIRequest
+func GetAlibabaInteractActivityAddcommentAPIRequest() *AlibabaInteractActivityAddcommentAPIRequest {
+	return poolAlibabaInteractActivityAddcommentAPIRequest.Get().(*AlibabaInteractActivityAddcommentAPIRequest)
+}
+
+// ReleaseAlibabaInteractActivityAddcommentAPIRequest 将 AlibabaInteractActivityAddcommentAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractActivityAddcommentAPIRequest(v *AlibabaInteractActivityAddcommentAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractActivityAddcommentAPIRequest.Put(v)
 }

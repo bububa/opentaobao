@@ -2,6 +2,7 @@ package aedropshiper
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AliexpressLogisticsDsTrackinginfoQueryAPIRequest struct {
 // NewAliexpressLogisticsDsTrackinginfoQueryRequest 初始化AliexpressLogisticsDsTrackinginfoQueryAPIRequest对象
 func NewAliexpressLogisticsDsTrackinginfoQueryRequest() *AliexpressLogisticsDsTrackinginfoQueryAPIRequest {
 	return &AliexpressLogisticsDsTrackinginfoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressLogisticsDsTrackinginfoQueryAPIRequest) Reset() {
+	r._logisticsNo = ""
+	r._origin = ""
+	r._outRef = ""
+	r._serviceName = ""
+	r._toArea = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AliexpressLogisticsDsTrackinginfoQueryAPIRequest) SetToArea(_toArea str
 // GetToArea ToArea Getter
 func (r AliexpressLogisticsDsTrackinginfoQueryAPIRequest) GetToArea() string {
 	return r._toArea
+}
+
+var poolAliexpressLogisticsDsTrackinginfoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressLogisticsDsTrackinginfoQueryRequest()
+	},
+}
+
+// GetAliexpressLogisticsDsTrackinginfoQueryRequest 从 sync.Pool 获取 AliexpressLogisticsDsTrackinginfoQueryAPIRequest
+func GetAliexpressLogisticsDsTrackinginfoQueryAPIRequest() *AliexpressLogisticsDsTrackinginfoQueryAPIRequest {
+	return poolAliexpressLogisticsDsTrackinginfoQueryAPIRequest.Get().(*AliexpressLogisticsDsTrackinginfoQueryAPIRequest)
+}
+
+// ReleaseAliexpressLogisticsDsTrackinginfoQueryAPIRequest 将 AliexpressLogisticsDsTrackinginfoQueryAPIRequest 放入 sync.Pool
+func ReleaseAliexpressLogisticsDsTrackinginfoQueryAPIRequest(v *AliexpressLogisticsDsTrackinginfoQueryAPIRequest) {
+	v.Reset()
+	poolAliexpressLogisticsDsTrackinginfoQueryAPIRequest.Put(v)
 }

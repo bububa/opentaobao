@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PromoDetailInfo 结构体
 type PromoDetailInfo struct {
 	// 优惠授权人id
@@ -18,4 +22,28 @@ type PromoDetailInfo struct {
 	PromoReason string `json:"promo_reason,omitempty" xml:"promo_reason,omitempty"`
 	// 优惠金额，单位“分”，减钱为负值
 	PromoFee int64 `json:"promo_fee,omitempty" xml:"promo_fee,omitempty"`
+}
+
+var poolPromoDetailInfo = sync.Pool{
+	New: func() any {
+		return new(PromoDetailInfo)
+	},
+}
+
+// GetPromoDetailInfo() 从对象池中获取PromoDetailInfo
+func GetPromoDetailInfo() *PromoDetailInfo {
+	return poolPromoDetailInfo.Get().(*PromoDetailInfo)
+}
+
+// ReleasePromoDetailInfo 释放PromoDetailInfo
+func ReleasePromoDetailInfo(v *PromoDetailInfo) {
+	v.OutAuthorizerId = ""
+	v.OutAuthorizerName = ""
+	v.OutOrderNo = ""
+	v.OutPromoDetailId = ""
+	v.PromoId = ""
+	v.PromoName = ""
+	v.PromoReason = ""
+	v.PromoFee = 0
+	poolPromoDetailInfo.Put(v)
 }

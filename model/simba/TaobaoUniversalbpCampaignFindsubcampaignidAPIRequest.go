@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpCampaignFindsubcampaignidAPIRequest struct {
 // NewTaobaoUniversalbpCampaignFindsubcampaignidRequest 初始化TaobaoUniversalbpCampaignFindsubcampaignidAPIRequest对象
 func NewTaobaoUniversalbpCampaignFindsubcampaignidRequest() *TaobaoUniversalbpCampaignFindsubcampaignidAPIRequest {
 	return &TaobaoUniversalbpCampaignFindsubcampaignidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpCampaignFindsubcampaignidAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._tpLong = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpCampaignFindsubcampaignidAPIRequest) SetTpLong(_tpLong
 // GetTpLong TpLong Getter
 func (r TaobaoUniversalbpCampaignFindsubcampaignidAPIRequest) GetTpLong() int64 {
 	return r._tpLong
+}
+
+var poolTaobaoUniversalbpCampaignFindsubcampaignidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpCampaignFindsubcampaignidRequest()
+	},
+}
+
+// GetTaobaoUniversalbpCampaignFindsubcampaignidRequest 从 sync.Pool 获取 TaobaoUniversalbpCampaignFindsubcampaignidAPIRequest
+func GetTaobaoUniversalbpCampaignFindsubcampaignidAPIRequest() *TaobaoUniversalbpCampaignFindsubcampaignidAPIRequest {
+	return poolTaobaoUniversalbpCampaignFindsubcampaignidAPIRequest.Get().(*TaobaoUniversalbpCampaignFindsubcampaignidAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpCampaignFindsubcampaignidAPIRequest 将 TaobaoUniversalbpCampaignFindsubcampaignidAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpCampaignFindsubcampaignidAPIRequest(v *TaobaoUniversalbpCampaignFindsubcampaignidAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpCampaignFindsubcampaignidAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tmalltrend
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallBrandItemUploadAPIRequest struct {
 // NewTmallBrandItemUploadRequest 初始化TmallBrandItemUploadAPIRequest对象
 func NewTmallBrandItemUploadRequest() *TmallBrandItemUploadAPIRequest {
 	return &TmallBrandItemUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallBrandItemUploadAPIRequest) Reset() {
+	r._itemList = r._itemList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallBrandItemUploadAPIRequest) SetItemList(_itemList []TmallBrandChann
 // GetItemList ItemList Getter
 func (r TmallBrandItemUploadAPIRequest) GetItemList() []TmallBrandChannelNewItem {
 	return r._itemList
+}
+
+var poolTmallBrandItemUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallBrandItemUploadRequest()
+	},
+}
+
+// GetTmallBrandItemUploadRequest 从 sync.Pool 获取 TmallBrandItemUploadAPIRequest
+func GetTmallBrandItemUploadAPIRequest() *TmallBrandItemUploadAPIRequest {
+	return poolTmallBrandItemUploadAPIRequest.Get().(*TmallBrandItemUploadAPIRequest)
+}
+
+// ReleaseTmallBrandItemUploadAPIRequest 将 TmallBrandItemUploadAPIRequest 放入 sync.Pool
+func ReleaseTmallBrandItemUploadAPIRequest(v *TmallBrandItemUploadAPIRequest) {
+	v.Reset()
+	poolTmallBrandItemUploadAPIRequest.Put(v)
 }

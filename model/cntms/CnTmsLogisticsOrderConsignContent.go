@@ -1,5 +1,9 @@
 package cntms
 
+import (
+	"sync"
+)
+
 // CnTmsLogisticsOrderConsignContent 结构体
 type CnTmsLogisticsOrderConsignContent struct {
 	// 发货商品信息，最大50条记录
@@ -50,4 +54,44 @@ type CnTmsLogisticsOrderConsignContent struct {
 	PackageWidth int64 `json:"package_width,omitempty" xml:"package_width,omitempty"`
 	// 关单标示，true表示发货完结
 	IsLastBatch bool `json:"is_last_batch,omitempty" xml:"is_last_batch,omitempty"`
+}
+
+var poolCnTmsLogisticsOrderConsignContent = sync.Pool{
+	New: func() any {
+		return new(CnTmsLogisticsOrderConsignContent)
+	},
+}
+
+// GetCnTmsLogisticsOrderConsignContent() 从对象池中获取CnTmsLogisticsOrderConsignContent
+func GetCnTmsLogisticsOrderConsignContent() *CnTmsLogisticsOrderConsignContent {
+	return poolCnTmsLogisticsOrderConsignContent.Get().(*CnTmsLogisticsOrderConsignContent)
+}
+
+// ReleaseCnTmsLogisticsOrderConsignContent 释放CnTmsLogisticsOrderConsignContent
+func ReleaseCnTmsLogisticsOrderConsignContent(v *CnTmsLogisticsOrderConsignContent) {
+	v.Items = v.Items[:0]
+	v.PackageList = v.PackageList[:0]
+	v.OrderCode = ""
+	v.TradeId = ""
+	v.OrderSource = ""
+	v.ShopCode = ""
+	v.MailNo = ""
+	v.TmsCode = ""
+	v.SolutionsCode = ""
+	v.ExtendFields = ""
+	v.Remark = ""
+	v.ReceiverInfo = nil
+	v.SenderInfo = nil
+	v.DeliverRequirements = nil
+	v.PickUpType = 0
+	v.TmsGotService = nil
+	v.PackageNo = 0
+	v.PackageWeight = 0
+	v.PackageCount = 0
+	v.PackageLength = 0
+	v.PackageHeight = 0
+	v.PackageVolume = 0
+	v.PackageWidth = 0
+	v.IsLastBatch = false
+	poolCnTmsLogisticsOrderConsignContent.Put(v)
 }

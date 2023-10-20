@@ -9,11 +9,6 @@ import (
 // yunos.osupdate.osfota.add
 //
 // 添加osupdate系统升级任务
-func YunosOsupdateOsfotaAdd(clt *core.SDKClient, req *tvupadmin.YunosOsupdateOsfotaAddAPIRequest, session string) (*tvupadmin.YunosOsupdateOsfotaAddAPIResponse, error) {
-	var resp tvupadmin.YunosOsupdateOsfotaAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosOsupdateOsfotaAdd(clt *core.SDKClient, req *tvupadmin.YunosOsupdateOsfotaAddAPIRequest, resp *tvupadmin.YunosOsupdateOsfotaAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

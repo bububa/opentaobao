@@ -2,6 +2,7 @@ package kclub
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaKclubKcQaGetAPIRequest struct {
 // NewAlibabaKclubKcQaGetRequest 初始化AlibabaKclubKcQaGetAPIRequest对象
 func NewAlibabaKclubKcQaGetRequest() *AlibabaKclubKcQaGetAPIRequest {
 	return &AlibabaKclubKcQaGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaKclubKcQaGetAPIRequest) Reset() {
+	r._questionId = 0
+	r._filter = nil
+	r._auth = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaKclubKcQaGetAPIRequest) SetAuth(_auth *TenancyAuth) error {
 // GetAuth Auth Getter
 func (r AlibabaKclubKcQaGetAPIRequest) GetAuth() *TenancyAuth {
 	return r._auth
+}
+
+var poolAlibabaKclubKcQaGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaKclubKcQaGetRequest()
+	},
+}
+
+// GetAlibabaKclubKcQaGetRequest 从 sync.Pool 获取 AlibabaKclubKcQaGetAPIRequest
+func GetAlibabaKclubKcQaGetAPIRequest() *AlibabaKclubKcQaGetAPIRequest {
+	return poolAlibabaKclubKcQaGetAPIRequest.Get().(*AlibabaKclubKcQaGetAPIRequest)
+}
+
+// ReleaseAlibabaKclubKcQaGetAPIRequest 将 AlibabaKclubKcQaGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaKclubKcQaGetAPIRequest(v *AlibabaKclubKcQaGetAPIRequest) {
+	v.Reset()
+	poolAlibabaKclubKcQaGetAPIRequest.Put(v)
 }

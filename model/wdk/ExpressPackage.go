@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ExpressPackage 结构体
 type ExpressPackage struct {
 	// 快递公司编码
@@ -16,4 +20,27 @@ type ExpressPackage struct {
 	ActualStockQuantity string `json:"actual_stock_quantity,omitempty" xml:"actual_stock_quantity,omitempty"`
 	// 包裹重量（单位g）
 	PackageWeight string `json:"package_weight,omitempty" xml:"package_weight,omitempty"`
+}
+
+var poolExpressPackage = sync.Pool{
+	New: func() any {
+		return new(ExpressPackage)
+	},
+}
+
+// GetExpressPackage() 从对象池中获取ExpressPackage
+func GetExpressPackage() *ExpressPackage {
+	return poolExpressPackage.Get().(*ExpressPackage)
+}
+
+// ReleaseExpressPackage 释放ExpressPackage
+func ReleaseExpressPackage(v *ExpressPackage) {
+	v.ExpressComCode = ""
+	v.ExpressComName = ""
+	v.WayBillNo = ""
+	v.PackageId = ""
+	v.ActualSaleQuantity = ""
+	v.ActualStockQuantity = ""
+	v.PackageWeight = ""
+	poolExpressPackage.Put(v)
 }

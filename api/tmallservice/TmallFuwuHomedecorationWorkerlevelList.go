@@ -9,11 +9,6 @@ import (
 // tmall.fuwu.homedecoration.workerlevel.list
 //
 // 查询工人分层数据接口
-func TmallFuwuHomedecorationWorkerlevelList(clt *core.SDKClient, req *tmallservice.TmallFuwuHomedecorationWorkerlevelListAPIRequest, session string) (*tmallservice.TmallFuwuHomedecorationWorkerlevelListAPIResponse, error) {
-	var resp tmallservice.TmallFuwuHomedecorationWorkerlevelListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallFuwuHomedecorationWorkerlevelList(clt *core.SDKClient, req *tmallservice.TmallFuwuHomedecorationWorkerlevelListAPIRequest, resp *tmallservice.TmallFuwuHomedecorationWorkerlevelListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest struct {
 // NewTaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest 初始化TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest对象
 func NewTaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest() *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest {
 	return &TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest) Reset() {
+	r._deviceId = ""
+	r._applyAccessToken = ""
+	r._businessCode = 0
+	r._deviceType = 0
+	r._enviroCode = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest) SetEnviroCode(
 // GetEnviroCode EnviroCode Getter
 func (r TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest) GetEnviroCode() int64 {
 	return r._enviroCode
+}
+
+var poolTaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest()
+	},
+}
+
+// GetTaobaoWdkIotDeviceadminMqttDeviceGetwithtokenRequest 从 sync.Pool 获取 TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest
+func GetTaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest() *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest {
+	return poolTaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest.Get().(*TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest)
+}
+
+// ReleaseTaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest 将 TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest(v *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest) {
+	v.Reset()
+	poolTaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest.Put(v)
 }

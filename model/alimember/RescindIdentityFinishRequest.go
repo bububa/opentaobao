@@ -1,5 +1,9 @@
 package alimember
 
+import (
+	"sync"
+)
+
 // RescindIdentityFinishRequest 结构体
 type RescindIdentityFinishRequest struct {
 	// 付费会员模板id
@@ -16,4 +20,27 @@ type RescindIdentityFinishRequest struct {
 	OrderModel *OrderModel `json:"order_model,omitempty" xml:"order_model,omitempty"`
 	// 处理结果，成功还是失败
 	SendSuc bool `json:"send_suc,omitempty" xml:"send_suc,omitempty"`
+}
+
+var poolRescindIdentityFinishRequest = sync.Pool{
+	New: func() any {
+		return new(RescindIdentityFinishRequest)
+	},
+}
+
+// GetRescindIdentityFinishRequest() 从对象池中获取RescindIdentityFinishRequest
+func GetRescindIdentityFinishRequest() *RescindIdentityFinishRequest {
+	return poolRescindIdentityFinishRequest.Get().(*RescindIdentityFinishRequest)
+}
+
+// ReleaseRescindIdentityFinishRequest 释放RescindIdentityFinishRequest
+func ReleaseRescindIdentityFinishRequest(v *RescindIdentityFinishRequest) {
+	v.IdentityTemplateId = ""
+	v.OuterMemberId = ""
+	v.OpenMerchantId = ""
+	v.TimeStamp = 0
+	v.IdentityModel = nil
+	v.OrderModel = nil
+	v.SendSuc = false
+	poolRescindIdentityFinishRequest.Put(v)
 }

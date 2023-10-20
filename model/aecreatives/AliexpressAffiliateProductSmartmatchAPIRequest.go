@@ -2,6 +2,7 @@ package aecreatives
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -45,8 +46,27 @@ type AliexpressAffiliateProductSmartmatchAPIRequest struct {
 // NewAliexpressAffiliateProductSmartmatchRequest 初始化AliexpressAffiliateProductSmartmatchAPIRequest对象
 func NewAliexpressAffiliateProductSmartmatchRequest() *AliexpressAffiliateProductSmartmatchAPIRequest {
 	return &AliexpressAffiliateProductSmartmatchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(14),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressAffiliateProductSmartmatchAPIRequest) Reset() {
+	r._app = ""
+	r._appSignature = ""
+	r._device = ""
+	r._deviceId = ""
+	r._fields = ""
+	r._keywords = ""
+	r._productId = ""
+	r._site = ""
+	r._targetCurrency = ""
+	r._targetLanguage = ""
+	r._trackingId = ""
+	r._user = ""
+	r._country = ""
+	r._pageNo = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -246,4 +266,21 @@ func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetPageNo(_pageNo int64
 // GetPageNo PageNo Getter
 func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetPageNo() int64 {
 	return r._pageNo
+}
+
+var poolAliexpressAffiliateProductSmartmatchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressAffiliateProductSmartmatchRequest()
+	},
+}
+
+// GetAliexpressAffiliateProductSmartmatchRequest 从 sync.Pool 获取 AliexpressAffiliateProductSmartmatchAPIRequest
+func GetAliexpressAffiliateProductSmartmatchAPIRequest() *AliexpressAffiliateProductSmartmatchAPIRequest {
+	return poolAliexpressAffiliateProductSmartmatchAPIRequest.Get().(*AliexpressAffiliateProductSmartmatchAPIRequest)
+}
+
+// ReleaseAliexpressAffiliateProductSmartmatchAPIRequest 将 AliexpressAffiliateProductSmartmatchAPIRequest 放入 sync.Pool
+func ReleaseAliexpressAffiliateProductSmartmatchAPIRequest(v *AliexpressAffiliateProductSmartmatchAPIRequest) {
+	v.Reset()
+	poolAliexpressAffiliateProductSmartmatchAPIRequest.Put(v)
 }

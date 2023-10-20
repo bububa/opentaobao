@@ -9,11 +9,6 @@ import (
 // alibaba.alsc.crm.card.batch.active
 //
 // 批量激活卡
-func AlibabaAlscCrmCardBatchActive(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCardBatchActiveAPIRequest, session string) (*alsc.AlibabaAlscCrmCardBatchActiveAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmCardBatchActiveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlscCrmCardBatchActive(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCardBatchActiveAPIRequest, resp *alsc.AlibabaAlscCrmCardBatchActiveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

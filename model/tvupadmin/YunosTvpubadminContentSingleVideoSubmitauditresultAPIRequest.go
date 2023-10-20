@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest struct {
 // NewYunosTvpubadminContentSingleVideoSubmitauditresultRequest 初始化YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest对象
 func NewYunosTvpubadminContentSingleVideoSubmitauditresultRequest() *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest {
 	return &YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) Reset() {
+	r._auditor = ""
+	r._auditComment = ""
+	r._licenseState = 0
+	r._license = 0
+	r._videoAuditId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) SetVideoA
 // GetVideoAuditId VideoAuditId Getter
 func (r YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) GetVideoAuditId() int64 {
 	return r._videoAuditId
+}
+
+var poolYunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminContentSingleVideoSubmitauditresultRequest()
+	},
+}
+
+// GetYunosTvpubadminContentSingleVideoSubmitauditresultRequest 从 sync.Pool 获取 YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest
+func GetYunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest() *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest {
+	return poolYunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest.Get().(*YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest)
+}
+
+// ReleaseYunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest 将 YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest(v *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest.Put(v)
 }

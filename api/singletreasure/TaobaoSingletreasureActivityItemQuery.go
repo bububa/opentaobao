@@ -9,11 +9,6 @@ import (
 // taobao.singletreasure.activity.item.query
 //
 // 分页查询活动下的商品优惠信息
-func TaobaoSingletreasureActivityItemQuery(clt *core.SDKClient, req *singletreasure.TaobaoSingletreasureActivityItemQueryAPIRequest, session string) (*singletreasure.TaobaoSingletreasureActivityItemQueryAPIResponse, error) {
-	var resp singletreasure.TaobaoSingletreasureActivityItemQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSingletreasureActivityItemQuery(clt *core.SDKClient, req *singletreasure.TaobaoSingletreasureActivityItemQueryAPIRequest, resp *singletreasure.TaobaoSingletreasureActivityItemQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

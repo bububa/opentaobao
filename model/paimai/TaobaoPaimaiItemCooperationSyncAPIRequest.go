@@ -2,6 +2,7 @@ package paimai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoPaimaiItemCooperationSyncAPIRequest struct {
 // NewTaobaoPaimaiItemCooperationSyncRequest 初始化TaobaoPaimaiItemCooperationSyncAPIRequest对象
 func NewTaobaoPaimaiItemCooperationSyncRequest() *TaobaoPaimaiItemCooperationSyncAPIRequest {
 	return &TaobaoPaimaiItemCooperationSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPaimaiItemCooperationSyncAPIRequest) Reset() {
+	r._ds = 0
+	r._itemDo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoPaimaiItemCooperationSyncAPIRequest) SetItemDo(_itemDo *ItemDo) e
 // GetItemDo ItemDo Getter
 func (r TaobaoPaimaiItemCooperationSyncAPIRequest) GetItemDo() *ItemDo {
 	return r._itemDo
+}
+
+var poolTaobaoPaimaiItemCooperationSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPaimaiItemCooperationSyncRequest()
+	},
+}
+
+// GetTaobaoPaimaiItemCooperationSyncRequest 从 sync.Pool 获取 TaobaoPaimaiItemCooperationSyncAPIRequest
+func GetTaobaoPaimaiItemCooperationSyncAPIRequest() *TaobaoPaimaiItemCooperationSyncAPIRequest {
+	return poolTaobaoPaimaiItemCooperationSyncAPIRequest.Get().(*TaobaoPaimaiItemCooperationSyncAPIRequest)
+}
+
+// ReleaseTaobaoPaimaiItemCooperationSyncAPIRequest 将 TaobaoPaimaiItemCooperationSyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPaimaiItemCooperationSyncAPIRequest(v *TaobaoPaimaiItemCooperationSyncAPIRequest) {
+	v.Reset()
+	poolTaobaoPaimaiItemCooperationSyncAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // aliexpress.ds.commissionorder.listbyindex
 //
 // 联盟订单分页查询
-func AliexpressDsCommissionorderListbyindex(clt *core.SDKClient, req *aedropshiper.AliexpressDsCommissionorderListbyindexAPIRequest, session string) (*aedropshiper.AliexpressDsCommissionorderListbyindexAPIResponse, error) {
-	var resp aedropshiper.AliexpressDsCommissionorderListbyindexAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressDsCommissionorderListbyindex(clt *core.SDKClient, req *aedropshiper.AliexpressDsCommissionorderListbyindexAPIRequest, resp *aedropshiper.AliexpressDsCommissionorderListbyindexAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

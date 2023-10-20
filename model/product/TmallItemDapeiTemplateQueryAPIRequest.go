@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallItemDapeiTemplateQueryAPIRequest struct {
 // NewTmallItemDapeiTemplateQueryRequest 初始化TmallItemDapeiTemplateQueryAPIRequest对象
 func NewTmallItemDapeiTemplateQueryRequest() *TmallItemDapeiTemplateQueryAPIRequest {
 	return &TmallItemDapeiTemplateQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallItemDapeiTemplateQueryAPIRequest) Reset() {
+	r._title = ""
+	r._pageIndex = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallItemDapeiTemplateQueryAPIRequest) SetPageSize(_pageSize int64) err
 // GetPageSize PageSize Getter
 func (r TmallItemDapeiTemplateQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTmallItemDapeiTemplateQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallItemDapeiTemplateQueryRequest()
+	},
+}
+
+// GetTmallItemDapeiTemplateQueryRequest 从 sync.Pool 获取 TmallItemDapeiTemplateQueryAPIRequest
+func GetTmallItemDapeiTemplateQueryAPIRequest() *TmallItemDapeiTemplateQueryAPIRequest {
+	return poolTmallItemDapeiTemplateQueryAPIRequest.Get().(*TmallItemDapeiTemplateQueryAPIRequest)
+}
+
+// ReleaseTmallItemDapeiTemplateQueryAPIRequest 将 TmallItemDapeiTemplateQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallItemDapeiTemplateQueryAPIRequest(v *TmallItemDapeiTemplateQueryAPIRequest) {
+	v.Reset()
+	poolTmallItemDapeiTemplateQueryAPIRequest.Put(v)
 }

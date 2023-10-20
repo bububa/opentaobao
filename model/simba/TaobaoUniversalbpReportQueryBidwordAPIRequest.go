@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpReportQueryBidwordAPIRequest struct {
 // NewTaobaoUniversalbpReportQueryBidwordRequest 初始化TaobaoUniversalbpReportQueryBidwordAPIRequest对象
 func NewTaobaoUniversalbpReportQueryBidwordRequest() *TaobaoUniversalbpReportQueryBidwordAPIRequest {
 	return &TaobaoUniversalbpReportQueryBidwordAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpReportQueryBidwordAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._topBidWordReportQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpReportQueryBidwordAPIRequest) SetTopBidWordReportQuery
 // GetTopBidWordReportQueryVO TopBidWordReportQueryVO Getter
 func (r TaobaoUniversalbpReportQueryBidwordAPIRequest) GetTopBidWordReportQueryVO() *TopBidWordReportQueryVo {
 	return r._topBidWordReportQueryVO
+}
+
+var poolTaobaoUniversalbpReportQueryBidwordAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpReportQueryBidwordRequest()
+	},
+}
+
+// GetTaobaoUniversalbpReportQueryBidwordRequest 从 sync.Pool 获取 TaobaoUniversalbpReportQueryBidwordAPIRequest
+func GetTaobaoUniversalbpReportQueryBidwordAPIRequest() *TaobaoUniversalbpReportQueryBidwordAPIRequest {
+	return poolTaobaoUniversalbpReportQueryBidwordAPIRequest.Get().(*TaobaoUniversalbpReportQueryBidwordAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpReportQueryBidwordAPIRequest 将 TaobaoUniversalbpReportQueryBidwordAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpReportQueryBidwordAPIRequest(v *TaobaoUniversalbpReportQueryBidwordAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpReportQueryBidwordAPIRequest.Put(v)
 }

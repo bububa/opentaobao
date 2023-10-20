@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // RegisterInfoDto 结构体
 type RegisterInfoDto struct {
 	// 渠道独有 -店铺名称
@@ -18,4 +22,28 @@ type RegisterInfoDto struct {
 	CertifyNumber string `json:"certify_number,omitempty" xml:"certify_number,omitempty"`
 	// 渠道独有 -经营类型
 	Career string `json:"career,omitempty" xml:"career,omitempty"`
+}
+
+var poolRegisterInfoDto = sync.Pool{
+	New: func() any {
+		return new(RegisterInfoDto)
+	},
+}
+
+// GetRegisterInfoDto() 从对象池中获取RegisterInfoDto
+func GetRegisterInfoDto() *RegisterInfoDto {
+	return poolRegisterInfoDto.Get().(*RegisterInfoDto)
+}
+
+// ReleaseRegisterInfoDto 释放RegisterInfoDto
+func ReleaseRegisterInfoDto(v *RegisterInfoDto) {
+	v.ShopName = ""
+	v.ShopType = ""
+	v.PhoneNumber = ""
+	v.DetailAddress = ""
+	v.Location = ""
+	v.ShopCertifyType = ""
+	v.CertifyNumber = ""
+	v.Career = ""
+	poolRegisterInfoDto.Put(v)
 }

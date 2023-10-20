@@ -9,11 +9,6 @@ import (
 // taobao.simba.login.authsign.get
 //
 // 获取登陆权限签名
-func TaobaoSimbaLoginAuthsignGet(clt *core.SDKClient, req *simba.TaobaoSimbaLoginAuthsignGetAPIRequest, session string) (*simba.TaobaoSimbaLoginAuthsignGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaLoginAuthsignGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaLoginAuthsignGet(clt *core.SDKClient, req *simba.TaobaoSimbaLoginAuthsignGetAPIRequest, resp *simba.TaobaoSimbaLoginAuthsignGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.roomtype.status.update
 //
 // top房型状态修改
-func TaobaoRoomtypeStatusUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoRoomtypeStatusUpdateAPIRequest, session string) (*xhotelitem.TaobaoRoomtypeStatusUpdateAPIResponse, error) {
-	var resp xhotelitem.TaobaoRoomtypeStatusUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoRoomtypeStatusUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoRoomtypeStatusUpdateAPIRequest, resp *xhotelitem.TaobaoRoomtypeStatusUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

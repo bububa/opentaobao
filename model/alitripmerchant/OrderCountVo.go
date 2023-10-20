@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // OrderCountVo 结构体
 type OrderCountVo struct {
 	// 对应状态订单对应总数
@@ -18,4 +22,28 @@ type OrderCountVo struct {
 	OrderType string `json:"order_type,omitempty" xml:"order_type,omitempty"`
 	// 倒计时开始时间
 	PayRemainTime int64 `json:"pay_remain_time,omitempty" xml:"pay_remain_time,omitempty"`
+}
+
+var poolOrderCountVo = sync.Pool{
+	New: func() any {
+		return new(OrderCountVo)
+	},
+}
+
+// GetOrderCountVo() 从对象池中获取OrderCountVo
+func GetOrderCountVo() *OrderCountVo {
+	return poolOrderCountVo.Get().(*OrderCountVo)
+}
+
+// ReleaseOrderCountVo 释放OrderCountVo
+func ReleaseOrderCountVo(v *OrderCountVo) {
+	v.OrderCountDetailVOs = v.OrderCountDetailVOs[:0]
+	v.HotelPicture = ""
+	v.Title = ""
+	v.AbstractContent = ""
+	v.CheckInDate = ""
+	v.OrderId = ""
+	v.OrderType = ""
+	v.PayRemainTime = 0
+	poolOrderCountVo.Put(v)
 }

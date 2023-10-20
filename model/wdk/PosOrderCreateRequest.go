@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // PosOrderCreateRequest 结构体
 type PosOrderCreateRequest struct {
 	// 子订单列表
@@ -18,4 +22,28 @@ type PosOrderCreateRequest struct {
 	MemberCardNum string `json:"member_card_num,omitempty" xml:"member_card_num,omitempty"`
 	// 兼容老接口的数据
 	OldData int64 `json:"old_data,omitempty" xml:"old_data,omitempty"`
+}
+
+var poolPosOrderCreateRequest = sync.Pool{
+	New: func() any {
+		return new(PosOrderCreateRequest)
+	},
+}
+
+// GetPosOrderCreateRequest() 从对象池中获取PosOrderCreateRequest
+func GetPosOrderCreateRequest() *PosOrderCreateRequest {
+	return poolPosOrderCreateRequest.Get().(*PosOrderCreateRequest)
+}
+
+// ReleasePosOrderCreateRequest 释放PosOrderCreateRequest
+func ReleasePosOrderCreateRequest(v *PosOrderCreateRequest) {
+	v.SubOrderDOList = v.SubOrderDOList[:0]
+	v.PayChannelList = v.PayChannelList[:0]
+	v.PayTime = ""
+	v.OutOrderId = ""
+	v.StoreId = ""
+	v.ShopId = ""
+	v.MemberCardNum = ""
+	v.OldData = 0
+	poolPosOrderCreateRequest.Put(v)
 }

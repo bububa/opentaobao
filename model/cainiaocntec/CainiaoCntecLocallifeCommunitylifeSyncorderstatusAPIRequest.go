@@ -2,6 +2,7 @@ package cainiaocntec
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest struct {
 // NewCainiaoCntecLocallifeCommunitylifeSyncorderstatusRequest 初始化CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest对象
 func NewCainiaoCntecLocallifeCommunitylifeSyncorderstatusRequest() *CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest {
 	return &CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest) Reset() {
+	r._orderNo = ""
+	r._statusDesc = ""
+	r._feature = ""
+	r._statusCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest) SetStatusC
 // GetStatusCode StatusCode Getter
 func (r CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest) GetStatusCode() string {
 	return r._statusCode
+}
+
+var poolCainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoCntecLocallifeCommunitylifeSyncorderstatusRequest()
+	},
+}
+
+// GetCainiaoCntecLocallifeCommunitylifeSyncorderstatusRequest 从 sync.Pool 获取 CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest
+func GetCainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest() *CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest {
+	return poolCainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest.Get().(*CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest)
+}
+
+// ReleaseCainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest 将 CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest 放入 sync.Pool
+func ReleaseCainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest(v *CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest) {
+	v.Reset()
+	poolCainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaCampusAclNewGetappmenutreeAPIRequest struct {
 // NewAlibabaCampusAclNewGetappmenutreeRequest 初始化AlibabaCampusAclNewGetappmenutreeAPIRequest对象
 func NewAlibabaCampusAclNewGetappmenutreeRequest() *AlibabaCampusAclNewGetappmenutreeAPIRequest {
 	return &AlibabaCampusAclNewGetappmenutreeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusAclNewGetappmenutreeAPIRequest) Reset() {
+	r._workbenchcontext = nil
+	r._withpermission = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaCampusAclNewGetappmenutreeAPIRequest) SetWithpermission(_withper
 // GetWithpermission Withpermission Getter
 func (r AlibabaCampusAclNewGetappmenutreeAPIRequest) GetWithpermission() bool {
 	return r._withpermission
+}
+
+var poolAlibabaCampusAclNewGetappmenutreeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusAclNewGetappmenutreeRequest()
+	},
+}
+
+// GetAlibabaCampusAclNewGetappmenutreeRequest 从 sync.Pool 获取 AlibabaCampusAclNewGetappmenutreeAPIRequest
+func GetAlibabaCampusAclNewGetappmenutreeAPIRequest() *AlibabaCampusAclNewGetappmenutreeAPIRequest {
+	return poolAlibabaCampusAclNewGetappmenutreeAPIRequest.Get().(*AlibabaCampusAclNewGetappmenutreeAPIRequest)
+}
+
+// ReleaseAlibabaCampusAclNewGetappmenutreeAPIRequest 将 AlibabaCampusAclNewGetappmenutreeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusAclNewGetappmenutreeAPIRequest(v *AlibabaCampusAclNewGetappmenutreeAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusAclNewGetappmenutreeAPIRequest.Put(v)
 }

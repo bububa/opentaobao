@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaInteractActivityUnregisterAPIRequest struct {
 // NewAlibabaInteractActivityUnregisterRequest 初始化AlibabaInteractActivityUnregisterAPIRequest对象
 func NewAlibabaInteractActivityUnregisterRequest() *AlibabaInteractActivityUnregisterAPIRequest {
 	return &AlibabaInteractActivityUnregisterAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractActivityUnregisterAPIRequest) Reset() {
+	r._bizId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaInteractActivityUnregisterAPIRequest) SetBizId(_bizId string) er
 // GetBizId BizId Getter
 func (r AlibabaInteractActivityUnregisterAPIRequest) GetBizId() string {
 	return r._bizId
+}
+
+var poolAlibabaInteractActivityUnregisterAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractActivityUnregisterRequest()
+	},
+}
+
+// GetAlibabaInteractActivityUnregisterRequest 从 sync.Pool 获取 AlibabaInteractActivityUnregisterAPIRequest
+func GetAlibabaInteractActivityUnregisterAPIRequest() *AlibabaInteractActivityUnregisterAPIRequest {
+	return poolAlibabaInteractActivityUnregisterAPIRequest.Get().(*AlibabaInteractActivityUnregisterAPIRequest)
+}
+
+// ReleaseAlibabaInteractActivityUnregisterAPIRequest 将 AlibabaInteractActivityUnregisterAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractActivityUnregisterAPIRequest(v *AlibabaInteractActivityUnregisterAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractActivityUnregisterAPIRequest.Put(v)
 }

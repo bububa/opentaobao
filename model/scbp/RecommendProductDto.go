@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // RecommendProductDto 结构体
 type RecommendProductDto struct {
 	// 品标题
@@ -38,4 +42,38 @@ type RecommendProductDto struct {
 	PromotionStatus int64 `json:"promotion_status,omitempty" xml:"promotion_status,omitempty"`
 	// 优越品
 	SuperiorProd int64 `json:"superior_prod,omitempty" xml:"superior_prod,omitempty"`
+}
+
+var poolRecommendProductDto = sync.Pool{
+	New: func() any {
+		return new(RecommendProductDto)
+	},
+}
+
+// GetRecommendProductDto() 从对象池中获取RecommendProductDto
+func GetRecommendProductDto() *RecommendProductDto {
+	return poolRecommendProductDto.Get().(*RecommendProductDto)
+}
+
+// ReleaseRecommendProductDto 释放RecommendProductDto
+func ReleaseRecommendProductDto(v *RecommendProductDto) {
+	v.Subject = ""
+	v.AdsCostAmt = ""
+	v.AdsCtr = ""
+	v.AdsCpc = ""
+	v.WebCtr = ""
+	v.ProdScore = ""
+	v.PowerScore = ""
+	v.BlueSeaScore = ""
+	v.GmtPostingCreate = ""
+	v.ProductId = 0
+	v.AdsImprCnt = 0
+	v.AdsClickCnt = 0
+	v.WebImprCnt = 0
+	v.WebClickCnt = 0
+	v.WebRank = 0
+	v.AdsRank = 0
+	v.PromotionStatus = 0
+	v.SuperiorProd = 0
+	poolRecommendProductDto.Put(v)
 }

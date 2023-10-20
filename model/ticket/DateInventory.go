@@ -1,5 +1,9 @@
 package ticket
 
+import (
+	"sync"
+)
+
 // DateInventory 结构体
 type DateInventory struct {
 	// 日期
@@ -10,4 +14,24 @@ type DateInventory struct {
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 	// 库存
 	Stock int64 `json:"stock,omitempty" xml:"stock,omitempty"`
+}
+
+var poolDateInventory = sync.Pool{
+	New: func() any {
+		return new(DateInventory)
+	},
+}
+
+// GetDateInventory() 从对象池中获取DateInventory
+func GetDateInventory() *DateInventory {
+	return poolDateInventory.Get().(*DateInventory)
+}
+
+// ReleaseDateInventory 释放DateInventory
+func ReleaseDateInventory(v *DateInventory) {
+	v.Date = ""
+	v.OutSkuDateId = ""
+	v.Price = 0
+	v.Stock = 0
+	poolDateInventory.Put(v)
 }

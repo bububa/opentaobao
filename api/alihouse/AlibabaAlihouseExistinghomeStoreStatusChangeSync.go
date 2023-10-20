@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghome.store.status.change.sync
 //
 // 门店状态变更
-func AlibabaAlihouseExistinghomeStoreStatusChangeSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghomeStoreStatusChangeSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

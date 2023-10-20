@@ -1,9 +1,13 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // CpsOrderResponse 结构体
 type CpsOrderResponse struct {
 	// 子单列表
-	CpsSubOrder []CpsSubOrderBo `json:"cps_sub_order,omitempty" xml:"cps_sub_order>cps_sub_order_bo,omitempty"`
+	CpsSubOrder []CpsSubOrderBO `json:"cps_sub_order,omitempty" xml:"cps_sub_order>cps_sub_order_bo,omitempty"`
 	// 订单创建时间
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
 	// 支付成功时间
@@ -20,4 +24,29 @@ type CpsOrderResponse struct {
 	PayPrice int64 `json:"pay_price,omitempty" xml:"pay_price,omitempty"`
 	// 预估总分佣金额（仅是预估金额，实际结算仍然通过xls线下doublecheck为准）
 	ShareAmount int64 `json:"share_amount,omitempty" xml:"share_amount,omitempty"`
+}
+
+var poolCpsOrderResponse = sync.Pool{
+	New: func() any {
+		return new(CpsOrderResponse)
+	},
+}
+
+// GetCpsOrderResponse() 从对象池中获取CpsOrderResponse
+func GetCpsOrderResponse() *CpsOrderResponse {
+	return poolCpsOrderResponse.Get().(*CpsOrderResponse)
+}
+
+// ReleaseCpsOrderResponse 释放CpsOrderResponse
+func ReleaseCpsOrderResponse(v *CpsOrderResponse) {
+	v.CpsSubOrder = v.CpsSubOrder[:0]
+	v.CreateTime = ""
+	v.PayTime = ""
+	v.BizOrderId = ""
+	v.OrderStatus = ""
+	v.OuterId = ""
+	v.ModifiedTime = ""
+	v.PayPrice = 0
+	v.ShareAmount = 0
+	poolCpsOrderResponse.Put(v)
 }

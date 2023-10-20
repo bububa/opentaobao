@@ -9,11 +9,6 @@ import (
 // alibaba.damai.maitix.opengateway.ticketItem.status.query
 //
 // queryTicketItemStatusByTicketItemId
-func AlibabaDamaiMaitixOpengatewayTicketItemStatusQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest, session string) (*maitix.AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIResponse, error) {
-	var resp maitix.AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMaitixOpengatewayTicketItemStatusQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest, resp *maitix.AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

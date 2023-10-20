@@ -1,5 +1,9 @@
 package aedropshiper
 
+import (
+	"sync"
+)
+
 // AeopFindProductResultDto 结构体
 type AeopFindProductResultDto struct {
 	// 商品的SKU信息
@@ -74,4 +78,56 @@ type AeopFindProductResultDto struct {
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 包装类型
 	PackageType bool `json:"package_type,omitempty" xml:"package_type,omitempty"`
+}
+
+var poolAeopFindProductResultDto = sync.Pool{
+	New: func() any {
+		return new(AeopFindProductResultDto)
+	},
+}
+
+// GetAeopFindProductResultDto() 从对象池中获取AeopFindProductResultDto
+func GetAeopFindProductResultDto() *AeopFindProductResultDto {
+	return poolAeopFindProductResultDto.Get().(*AeopFindProductResultDto)
+}
+
+// ReleaseAeopFindProductResultDto 释放AeopFindProductResultDto
+func ReleaseAeopFindProductResultDto(v *AeopFindProductResultDto) {
+	v.AeopAeProductSKUs = v.AeopAeProductSKUs[:0]
+	v.AeopAeProductPropertys = v.AeopAeProductPropertys[:0]
+	v.Detail = ""
+	v.WsOfflineDate = ""
+	v.WsDisplay = ""
+	v.OwnerMemberId = ""
+	v.ProductStatusType = ""
+	v.GrossWeight = ""
+	v.GmtModified = ""
+	v.ErrorMessage = ""
+	v.Subject = ""
+	v.MobileDetail = ""
+	v.CurrencyCode = ""
+	v.GmtCreate = ""
+	v.ImageURLs = ""
+	v.ProductPrice = ""
+	v.ItemOfferSiteSalePrice = ""
+	v.AvgEvaluationRating = ""
+	v.ProductUnit = 0
+	v.CategoryId = 0
+	v.AeopAEMultimedia = nil
+	v.DeliveryTime = 0
+	v.WsValidNum = 0
+	v.AeopNationalQuoteConfiguration = nil
+	v.BaseUnit = 0
+	v.PackageLength = 0
+	v.PackageHeight = 0
+	v.PackageWidth = 0
+	v.ProductId = 0
+	v.ErrorCode = 0
+	v.TotalAvailableStock = 0
+	v.StoreInfo = nil
+	v.EvaluationCount = 0
+	v.OrderCount = 0
+	v.IsSuccess = false
+	v.PackageType = false
+	poolAeopFindProductResultDto.Put(v)
 }

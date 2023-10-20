@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // QueryOmniOrderRequest 结构体
 type QueryOmniOrderRequest struct {
 	// 订单状态，可选值：WAIT_BUYER_PAY(等待买家付款), WAIT_SELLER_SEND_GOODS(等待卖家发货), SELLER_CONSIGNED_PART(卖家部分发货), WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货]), TRADE_BUYER_SIGNED(买家已签收（货到付款专用）), TRADE_FINISHED(交易成功), TRADE_CLOSED(交易关闭), TRADE_CLOSED_BY_TAOBAO(交易被淘宝关闭), TRADE_NO_CREATE_PAY(没有创建外部交易（支付宝交易）)
@@ -14,4 +18,26 @@ type QueryOmniOrderRequest struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 订单创建起始时间，秒时间戳
 	StartCreated int64 `json:"start_created,omitempty" xml:"start_created,omitempty"`
+}
+
+var poolQueryOmniOrderRequest = sync.Pool{
+	New: func() any {
+		return new(QueryOmniOrderRequest)
+	},
+}
+
+// GetQueryOmniOrderRequest() 从对象池中获取QueryOmniOrderRequest
+func GetQueryOmniOrderRequest() *QueryOmniOrderRequest {
+	return poolQueryOmniOrderRequest.Get().(*QueryOmniOrderRequest)
+}
+
+// ReleaseQueryOmniOrderRequest 释放QueryOmniOrderRequest
+func ReleaseQueryOmniOrderRequest(v *QueryOmniOrderRequest) {
+	v.Status = ""
+	v.EndCreated = 0
+	v.PageNo = 0
+	v.BrandSellerId = 0
+	v.PageSize = 0
+	v.StartCreated = 0
+	poolQueryOmniOrderRequest.Put(v)
 }

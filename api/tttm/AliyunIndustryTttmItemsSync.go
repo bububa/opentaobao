@@ -9,11 +9,6 @@ import (
 // aliyun.industry.tttm.items.sync
 //
 // 天天特卖商品信息同步
-func AliyunIndustryTttmItemsSync(clt *core.SDKClient, req *tttm.AliyunIndustryTttmItemsSyncAPIRequest, session string) (*tttm.AliyunIndustryTttmItemsSyncAPIResponse, error) {
-	var resp tttm.AliyunIndustryTttmItemsSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliyunIndustryTttmItemsSync(clt *core.SDKClient, req *tttm.AliyunIndustryTttmItemsSyncAPIRequest, resp *tttm.AliyunIndustryTttmItemsSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

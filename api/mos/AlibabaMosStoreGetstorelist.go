@@ -9,11 +9,6 @@ import (
 // alibaba.mos.store.getstorelist
 //
 // 根据屏编号获取专柜集
-func AlibabaMosStoreGetstorelist(clt *core.SDKClient, req *mos.AlibabaMosStoreGetstorelistAPIRequest, session string) (*mos.AlibabaMosStoreGetstorelistAPIResponse, error) {
-	var resp mos.AlibabaMosStoreGetstorelistAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMosStoreGetstorelist(clt *core.SDKClient, req *mos.AlibabaMosStoreGetstorelistAPIRequest, resp *mos.AlibabaMosStoreGetstorelistAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

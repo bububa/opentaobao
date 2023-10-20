@@ -2,6 +2,7 @@ package miniapp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest struct {
 // NewTaobaoMiniappExtDeliveryAppChannelConfigsQueryRequest 初始化TaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest对象
 func NewTaobaoMiniappExtDeliveryAppChannelConfigsQueryRequest() *TaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest {
 	return &TaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest) Reset() {
+	r._req = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest) SetReq(_req *
 // GetReq Req Getter
 func (r TaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest) GetReq() *AppChannelQueryRequest {
 	return r._req
+}
+
+var poolTaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappExtDeliveryAppChannelConfigsQueryRequest()
+	},
+}
+
+// GetTaobaoMiniappExtDeliveryAppChannelConfigsQueryRequest 从 sync.Pool 获取 TaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest
+func GetTaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest() *TaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest {
+	return poolTaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest.Get().(*TaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest)
+}
+
+// ReleaseTaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest 将 TaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest(v *TaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappExtDeliveryAppChannelConfigsQueryAPIRequest.Put(v)
 }

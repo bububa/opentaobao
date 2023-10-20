@@ -1,5 +1,9 @@
 package util
 
+import (
+	"sync"
+)
+
 // AiotOpenDeviceOrganizationDto 结构体
 type AiotOpenDeviceOrganizationDto struct {
 	// 1级组织架构code
@@ -22,4 +26,30 @@ type AiotOpenDeviceOrganizationDto struct {
 	L5Code string `json:"l5_code,omitempty" xml:"l5_code,omitempty"`
 	// 5级组织架构名
 	L5Name string `json:"l5_name,omitempty" xml:"l5_name,omitempty"`
+}
+
+var poolAiotOpenDeviceOrganizationDto = sync.Pool{
+	New: func() any {
+		return new(AiotOpenDeviceOrganizationDto)
+	},
+}
+
+// GetAiotOpenDeviceOrganizationDto() 从对象池中获取AiotOpenDeviceOrganizationDto
+func GetAiotOpenDeviceOrganizationDto() *AiotOpenDeviceOrganizationDto {
+	return poolAiotOpenDeviceOrganizationDto.Get().(*AiotOpenDeviceOrganizationDto)
+}
+
+// ReleaseAiotOpenDeviceOrganizationDto 释放AiotOpenDeviceOrganizationDto
+func ReleaseAiotOpenDeviceOrganizationDto(v *AiotOpenDeviceOrganizationDto) {
+	v.L1Code = ""
+	v.L1Name = ""
+	v.L2Code = ""
+	v.L2Name = ""
+	v.L3Code = ""
+	v.L3Name = ""
+	v.L4Code = ""
+	v.L4Name = ""
+	v.L5Code = ""
+	v.L5Name = ""
+	poolAiotOpenDeviceOrganizationDto.Put(v)
 }

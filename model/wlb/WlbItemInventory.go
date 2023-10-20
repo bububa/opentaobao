@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // WlbItemInventory 结构体
 type WlbItemInventory struct {
 	// 仓库编码
@@ -12,4 +16,25 @@ type WlbItemInventory struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 锁定库存数量
 	LockQuantity int64 `json:"lock_quantity,omitempty" xml:"lock_quantity,omitempty"`
+}
+
+var poolWlbItemInventory = sync.Pool{
+	New: func() any {
+		return new(WlbItemInventory)
+	},
+}
+
+// GetWlbItemInventory() 从对象池中获取WlbItemInventory
+func GetWlbItemInventory() *WlbItemInventory {
+	return poolWlbItemInventory.Get().(*WlbItemInventory)
+}
+
+// ReleaseWlbItemInventory 释放WlbItemInventory
+func ReleaseWlbItemInventory(v *WlbItemInventory) {
+	v.StoreCode = ""
+	v.Type = ""
+	v.ItemId = 0
+	v.Quantity = 0
+	v.LockQuantity = 0
+	poolWlbItemInventory.Put(v)
 }

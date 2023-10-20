@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.corpop.hotel.billsettlement.query
 //
 // 酒店结算记账查询接口
-func AlitripBtripCorpopHotelBillsettlementQuery(clt *core.SDKClient, req *btrip.AlitripBtripCorpopHotelBillsettlementQueryAPIRequest, session string) (*btrip.AlitripBtripCorpopHotelBillsettlementQueryAPIResponse, error) {
-	var resp btrip.AlitripBtripCorpopHotelBillsettlementQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripCorpopHotelBillsettlementQuery(clt *core.SDKClient, req *btrip.AlitripBtripCorpopHotelBillsettlementQueryAPIRequest, resp *btrip.AlitripBtripCorpopHotelBillsettlementQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.hrworkbench.moka.entry.receipt.write
 //
 // 摩卡确认入职后往入职单据表写数据接口
-func AlibabaWdkHrworkbenchMokaEntryReceiptWrite(clt *core.SDKClient, req *wdk.AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest, session string) (*wdk.AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse, error) {
-	var resp wdk.AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkHrworkbenchMokaEntryReceiptWrite(clt *core.SDKClient, req *wdk.AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest, resp *wdk.AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

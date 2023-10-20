@@ -1,5 +1,9 @@
 package cainiaohandover
 
+import (
+	"sync"
+)
+
 // ReturnerDto 结构体
 type ReturnerDto struct {
 	// 邮箱
@@ -14,4 +18,26 @@ type ReturnerDto struct {
 	Address *AddressDto `json:"address,omitempty" xml:"address,omitempty"`
 	// AE后台维护的退件地址ID
 	AddressId int64 `json:"address_id,omitempty" xml:"address_id,omitempty"`
+}
+
+var poolReturnerDto = sync.Pool{
+	New: func() any {
+		return new(ReturnerDto)
+	},
+}
+
+// GetReturnerDto() 从对象池中获取ReturnerDto
+func GetReturnerDto() *ReturnerDto {
+	return poolReturnerDto.Get().(*ReturnerDto)
+}
+
+// ReleaseReturnerDto 释放ReturnerDto
+func ReleaseReturnerDto(v *ReturnerDto) {
+	v.Email = ""
+	v.Mobile = ""
+	v.Phone = ""
+	v.Name = ""
+	v.Address = nil
+	v.AddressId = 0
+	poolReturnerDto.Put(v)
 }

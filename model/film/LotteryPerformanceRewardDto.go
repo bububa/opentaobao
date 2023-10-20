@@ -1,5 +1,9 @@
 package film
 
+import (
+	"sync"
+)
+
 // LotteryPerformanceRewardDto 结构体
 type LotteryPerformanceRewardDto struct {
 	// 奖品主标题
@@ -20,4 +24,29 @@ type LotteryPerformanceRewardDto struct {
 	RewardCount int64 `json:"reward_count,omitempty" xml:"reward_count,omitempty"`
 	// 奖品面额(单位分)
 	CostPrice int64 `json:"cost_price,omitempty" xml:"cost_price,omitempty"`
+}
+
+var poolLotteryPerformanceRewardDto = sync.Pool{
+	New: func() any {
+		return new(LotteryPerformanceRewardDto)
+	},
+}
+
+// GetLotteryPerformanceRewardDto() 从对象池中获取LotteryPerformanceRewardDto
+func GetLotteryPerformanceRewardDto() *LotteryPerformanceRewardDto {
+	return poolLotteryPerformanceRewardDto.Get().(*LotteryPerformanceRewardDto)
+}
+
+// ReleaseLotteryPerformanceRewardDto 释放LotteryPerformanceRewardDto
+func ReleaseLotteryPerformanceRewardDto(v *LotteryPerformanceRewardDto) {
+	v.RewardTitle = ""
+	v.RewardSubTitle = ""
+	v.RewardUnit = ""
+	v.GmtExpire = ""
+	v.RewardExt = ""
+	v.RewardType = 0
+	v.RewardSubType = 0
+	v.RewardCount = 0
+	v.CostPrice = 0
+	poolLotteryPerformanceRewardDto.Put(v)
 }

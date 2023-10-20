@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // OrderLine 结构体
 type OrderLine struct {
 	// 批次列表
@@ -120,4 +124,79 @@ type OrderLine struct {
 	SnList *SnList `json:"snList,omitempty" xml:"snList,omitempty"`
 	// 扩展属性
 	ExtendProps *TaobaoQimenStockoutCreateMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+}
+
+var poolOrderLine = sync.Pool{
+	New: func() any {
+		return new(OrderLine)
+	},
+}
+
+// GetOrderLine() 从对象池中获取OrderLine
+func GetOrderLine() *OrderLine {
+	return poolOrderLine.Get().(*OrderLine)
+}
+
+// ReleaseOrderLine 释放OrderLine
+func ReleaseOrderLine(v *OrderLine) {
+	v.Batchs = v.Batchs[:0]
+	v.OrderLineNo = ""
+	v.OrderSourceCode = ""
+	v.SubSourceCode = ""
+	v.OwnerCode = ""
+	v.ItemCode = ""
+	v.ItemId = ""
+	v.InventoryType = ""
+	v.ItemName = ""
+	v.ExtCode = ""
+	v.BatchCode = ""
+	v.ProductDate = ""
+	v.ExpireDate = ""
+	v.ProduceCode = ""
+	v.QrCode = ""
+	v.SubDeliveryOrderId = ""
+	v.SupplierCode = ""
+	v.SupplierName = ""
+	v.SourceOrderCode = ""
+	v.SubSourceOrderCode = ""
+	v.PayNo = ""
+	v.RetailPrice = ""
+	v.ActualPrice = ""
+	v.DiscountAmount = ""
+	v.Quantity = ""
+	v.SnCode = ""
+	v.OutBizCode = ""
+	v.Remark = ""
+	v.Unit = ""
+	v.SkuProperty = ""
+	v.PurchasePrice = ""
+	v.DeliveryOrderCode = ""
+	v.ProductCode = ""
+	v.StockInQty = ""
+	v.StockOutQty = ""
+	v.WarehouseCode = ""
+	v.DeliveryOrderId = ""
+	v.Status = ""
+	v.TaobaoItemCode = ""
+	v.DiscountPrice = ""
+	v.Color = ""
+	v.Size = ""
+	v.StandardPrice = ""
+	v.ReferencePrice = ""
+	v.Discount = ""
+	v.StandardAmount = ""
+	v.SettlementAmount = ""
+	v.LocationCode = ""
+	v.Amount = ""
+	v.MoveOutLocation = ""
+	v.MoveInLocation = ""
+	v.ExceptionQty = ""
+	v.OrderFlag = ""
+	v.ReturnReason = ""
+	v.PlatformCode = ""
+	v.PlanQty = 0
+	v.ActualQty = 0
+	v.SnList = nil
+	v.ExtendProps = nil
+	poolOrderLine.Put(v)
 }

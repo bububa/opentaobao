@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // BaseInfo 结构体
 type BaseInfo struct {
 	// 品图片路径。最多支持5张，第一张为主图 必填，其余四张可选填（多张图片间使用英文逗号分隔）。图片链接支持外链图片（即商家系统中图片链接，必须外网可访问，且格式为png、jpg或jpeg，大小在500k以内），或者用户淘宝空间内的图片链接。对于外链图片，将自动下载并上传用户淘宝图片空间，上传失败的外链图片将自动忽略不计。
@@ -56,4 +60,47 @@ type BaseInfo struct {
 	HasDiscount bool `json:"has_discount,omitempty" xml:"has_discount,omitempty"`
 	// 是否橱窗推荐，可选值：true，false；默认值：false(不推荐)
 	HasShowcase bool `json:"has_showcase,omitempty" xml:"has_showcase,omitempty"`
+}
+
+var poolBaseInfo = sync.Pool{
+	New: func() any {
+		return new(BaseInfo)
+	},
+}
+
+// GetBaseInfo() 从对象池中获取BaseInfo
+func GetBaseInfo() *BaseInfo {
+	return poolBaseInfo.Get().(*BaseInfo)
+}
+
+// ReleaseBaseInfo 释放BaseInfo
+func ReleaseBaseInfo(v *BaseInfo) {
+	v.PicUrls = v.PicUrls[:0]
+	v.Props = v.Props[:0]
+	v.SellerCids = v.SellerCids[:0]
+	v.SubTitles = v.SubTitles[:0]
+	v.City = ""
+	v.Desc = ""
+	v.ExtsMap = ""
+	v.Label = ""
+	v.OnlineTime = ""
+	v.OutId = ""
+	v.Prov = ""
+	v.SecondKill = ""
+	v.Title = ""
+	v.WapDesc = ""
+	v.FromLocations = ""
+	v.ToLocations = ""
+	v.ApproveStatus = 0
+	v.CategoryId = 0
+	v.ItemId = 0
+	v.SubStock = 0
+	v.ConfirmType = 0
+	v.ConfirmTime = 0
+	v.Duration = 0
+	v.ReserveDeadlineHours = 0
+	v.ReserveDeadlineMinutes = 0
+	v.HasDiscount = false
+	v.HasShowcase = false
+	poolBaseInfo.Put(v)
 }

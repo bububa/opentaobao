@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // IePassgenerVo 结构体
 type IePassgenerVo struct {
 	// 美国居住地-城市
@@ -32,4 +36,35 @@ type IePassgenerVo struct {
 	AirlineCode string `json:"airline_code,omitempty" xml:"airline_code,omitempty"`
 	// 常旅客卡号
 	AirlineCardNo string `json:"airline_card_no,omitempty" xml:"airline_card_no,omitempty"`
+}
+
+var poolIePassgenerVo = sync.Pool{
+	New: func() any {
+		return new(IePassgenerVo)
+	},
+}
+
+// GetIePassgenerVo() 从对象池中获取IePassgenerVo
+func GetIePassgenerVo() *IePassgenerVo {
+	return poolIePassgenerVo.Get().(*IePassgenerVo)
+}
+
+// ReleaseIePassgenerVo 释放IePassgenerVo
+func ReleaseIePassgenerVo(v *IePassgenerVo) {
+	v.AddressCity = ""
+	v.AddressPostcode = ""
+	v.AddressState = ""
+	v.AddressStreet = ""
+	v.Birthday = ""
+	v.CertIssueCountry = ""
+	v.CertNo = ""
+	v.CertPeriod = ""
+	v.CertType = ""
+	v.Gender = ""
+	v.Name = ""
+	v.Nationality = ""
+	v.PassengerType = ""
+	v.AirlineCode = ""
+	v.AirlineCardNo = ""
+	poolIePassgenerVo.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // BillList 结构体
 type BillList struct {
 	// 工单费用清单
@@ -38,4 +42,38 @@ type BillList struct {
 	FcAmount float64 `json:"fc_amount,omitempty" xml:"fc_amount,omitempty"`
 	// 总服务费用金额
 	SumServiceAmount float64 `json:"sum_service_amount,omitempty" xml:"sum_service_amount,omitempty"`
+}
+
+var poolBillList = sync.Pool{
+	New: func() any {
+		return new(BillList)
+	},
+}
+
+// GetBillList() 从对象池中获取BillList
+func GetBillList() *BillList {
+	return poolBillList.Get().(*BillList)
+}
+
+// ReleaseBillList 释放BillList
+func ReleaseBillList(v *BillList) {
+	v.FeeList = v.FeeList[:0]
+	v.FeeAmount = ""
+	v.FeeNotice = ""
+	v.SrcOrderId = ""
+	v.PayTime = ""
+	v.PlatformCommissionRate = ""
+	v.FeeName = ""
+	v.PayTradeNo = ""
+	v.GmtCreate = ""
+	v.FeeType = ""
+	v.PayTradeNotice = ""
+	v.BillTime = ""
+	v.WorkcardId = 0
+	v.SumRefundAmount = 0
+	v.SumAddAmount = 0
+	v.PayAmount = 0
+	v.FcAmount = 0
+	v.SumServiceAmount = 0
+	poolBillList.Put(v)
 }

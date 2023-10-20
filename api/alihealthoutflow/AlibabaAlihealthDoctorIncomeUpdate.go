@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.doctor.income.update
 //
 // 医蝶谷医生收入打款情况回调
-func AlibabaAlihealthDoctorIncomeUpdate(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthDoctorIncomeUpdateAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthDoctorIncomeUpdateAPIResponse, error) {
-	var resp alihealthoutflow.AlibabaAlihealthDoctorIncomeUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDoctorIncomeUpdate(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthDoctorIncomeUpdateAPIRequest, resp *alihealthoutflow.AlibabaAlihealthDoctorIncomeUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.travel.axin.poi.search
 //
 // 给阿信提供景点poi搜索
-func TaobaoAlitripTravelAxinPoiSearch(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelAxinPoiSearchAPIRequest, session string) (*axindata.TaobaoAlitripTravelAxinPoiSearchAPIResponse, error) {
-	var resp axindata.TaobaoAlitripTravelAxinPoiSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripTravelAxinPoiSearch(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelAxinPoiSearchAPIRequest, resp *axindata.TaobaoAlitripTravelAxinPoiSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

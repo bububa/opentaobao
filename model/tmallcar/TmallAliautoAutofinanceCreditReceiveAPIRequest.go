@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallAliautoAutofinanceCreditReceiveAPIRequest struct {
 // NewTmallAliautoAutofinanceCreditReceiveRequest 初始化TmallAliautoAutofinanceCreditReceiveAPIRequest对象
 func NewTmallAliautoAutofinanceCreditReceiveRequest() *TmallAliautoAutofinanceCreditReceiveAPIRequest {
 	return &TmallAliautoAutofinanceCreditReceiveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallAliautoAutofinanceCreditReceiveAPIRequest) Reset() {
+	r._creditReceiveDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallAliautoAutofinanceCreditReceiveAPIRequest) SetCreditReceiveDto(_cr
 // GetCreditReceiveDto CreditReceiveDto Getter
 func (r TmallAliautoAutofinanceCreditReceiveAPIRequest) GetCreditReceiveDto() *CreditReceiveDto {
 	return r._creditReceiveDto
+}
+
+var poolTmallAliautoAutofinanceCreditReceiveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallAliautoAutofinanceCreditReceiveRequest()
+	},
+}
+
+// GetTmallAliautoAutofinanceCreditReceiveRequest 从 sync.Pool 获取 TmallAliautoAutofinanceCreditReceiveAPIRequest
+func GetTmallAliautoAutofinanceCreditReceiveAPIRequest() *TmallAliautoAutofinanceCreditReceiveAPIRequest {
+	return poolTmallAliautoAutofinanceCreditReceiveAPIRequest.Get().(*TmallAliautoAutofinanceCreditReceiveAPIRequest)
+}
+
+// ReleaseTmallAliautoAutofinanceCreditReceiveAPIRequest 将 TmallAliautoAutofinanceCreditReceiveAPIRequest 放入 sync.Pool
+func ReleaseTmallAliautoAutofinanceCreditReceiveAPIRequest(v *TmallAliautoAutofinanceCreditReceiveAPIRequest) {
+	v.Reset()
+	poolTmallAliautoAutofinanceCreditReceiveAPIRequest.Put(v)
 }

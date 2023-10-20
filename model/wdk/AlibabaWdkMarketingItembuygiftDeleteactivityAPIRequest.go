@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest struct {
 // NewAlibabaWdkMarketingItembuygiftDeleteactivityRequest 初始化AlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest对象
 func NewAlibabaWdkMarketingItembuygiftDeleteactivityRequest() *AlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest {
 	return &AlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest) SetParam(_param
 // GetParam Param Getter
 func (r AlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest) GetParam() *CommonActivityParam {
 	return r._param
+}
+
+var poolAlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMarketingItembuygiftDeleteactivityRequest()
+	},
+}
+
+// GetAlibabaWdkMarketingItembuygiftDeleteactivityRequest 从 sync.Pool 获取 AlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest
+func GetAlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest() *AlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest {
+	return poolAlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest.Get().(*AlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest)
+}
+
+// ReleaseAlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest 将 AlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest(v *AlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest.Put(v)
 }

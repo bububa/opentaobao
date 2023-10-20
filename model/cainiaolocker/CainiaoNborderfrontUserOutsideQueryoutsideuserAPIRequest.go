@@ -2,6 +2,7 @@ package cainiaolocker
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest struct {
 // NewCainiaoNborderfrontUserOutsideQueryoutsideuserRequest 初始化CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest对象
 func NewCainiaoNborderfrontUserOutsideQueryoutsideuserRequest() *CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest {
 	return &CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest) Reset() {
+	r._cpCode = ""
+	r._cpUserId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest) SetCpUserId(_
 // GetCpUserId CpUserId Getter
 func (r CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest) GetCpUserId() string {
 	return r._cpUserId
+}
+
+var poolCainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoNborderfrontUserOutsideQueryoutsideuserRequest()
+	},
+}
+
+// GetCainiaoNborderfrontUserOutsideQueryoutsideuserRequest 从 sync.Pool 获取 CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest
+func GetCainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest() *CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest {
+	return poolCainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest.Get().(*CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest)
+}
+
+// ReleaseCainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest 将 CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest 放入 sync.Pool
+func ReleaseCainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest(v *CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest) {
+	v.Reset()
+	poolCainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest.Put(v)
 }

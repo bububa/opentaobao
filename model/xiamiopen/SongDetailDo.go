@@ -1,5 +1,9 @@
 package xiamiopen
 
+import (
+	"sync"
+)
+
 // SongDetailDo 结构体
 type SongDetailDo struct {
 	// 演唱者
@@ -38,4 +42,38 @@ type SongDetailDo struct {
 	LyricType int64 `json:"lyric_type,omitempty" xml:"lyric_type,omitempty"`
 	// 歌曲时长
 	Length int64 `json:"length,omitempty" xml:"length,omitempty"`
+}
+
+var poolSongDetailDo = sync.Pool{
+	New: func() any {
+		return new(SongDetailDo)
+	},
+}
+
+// GetSongDetailDo() 从对象池中获取SongDetailDo
+func GetSongDetailDo() *SongDetailDo {
+	return poolSongDetailDo.Get().(*SongDetailDo)
+}
+
+// ReleaseSongDetailDo 释放SongDetailDo
+func ReleaseSongDetailDo(v *SongDetailDo) {
+	v.Singers = v.Singers[:0]
+	v.MvId = ""
+	v.AlbumLogo = ""
+	v.Arrangement = ""
+	v.Composer = ""
+	v.SongName = ""
+	v.Songwriters = ""
+	v.LyricFile = ""
+	v.PurviewInfo = ""
+	v.Album = nil
+	v.AlbumId = 0
+	v.Artist = nil
+	v.ArtistId = 0
+	v.CdSerial = 0
+	v.SongId = 0
+	v.Track = 0
+	v.LyricType = 0
+	v.Length = 0
+	poolSongDetailDo.Put(v)
 }

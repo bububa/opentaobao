@@ -9,11 +9,6 @@ import (
 // alibaba.autonavi.api.trafficboard.image.get
 //
 // 获取指定情报板ID的二进制数据（图片）
-func AlibabaAutonaviApiTrafficboardImageGet(clt *core.SDKClient, req *autonavi.AlibabaAutonaviApiTrafficboardImageGetAPIRequest, session string) (*autonavi.AlibabaAutonaviApiTrafficboardImageGetAPIResponse, error) {
-	var resp autonavi.AlibabaAutonaviApiTrafficboardImageGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAutonaviApiTrafficboardImageGet(clt *core.SDKClient, req *autonavi.AlibabaAutonaviApiTrafficboardImageGetAPIRequest, resp *autonavi.AlibabaAutonaviApiTrafficboardImageGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

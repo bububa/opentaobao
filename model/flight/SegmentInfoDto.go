@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // SegmentInfoDto 结构体
 type SegmentInfoDto struct {
 	// 舱位信息
@@ -28,4 +32,33 @@ type SegmentInfoDto struct {
 	OperatingFlightNo string `json:"operating_flight_no,omitempty" xml:"operating_flight_no,omitempty"`
 	// 航段下标
 	SegmentIndex string `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
+}
+
+var poolSegmentInfoDto = sync.Pool{
+	New: func() any {
+		return new(SegmentInfoDto)
+	},
+}
+
+// GetSegmentInfoDto() 从对象池中获取SegmentInfoDto
+func GetSegmentInfoDto() *SegmentInfoDto {
+	return poolSegmentInfoDto.Get().(*SegmentInfoDto)
+}
+
+// ReleaseSegmentInfoDto 释放SegmentInfoDto
+func ReleaseSegmentInfoDto(v *SegmentInfoDto) {
+	v.CabinInfoList = v.CabinInfoList[:0]
+	v.ArrAirport = ""
+	v.ArrCity = ""
+	v.ArrTime = ""
+	v.DepAirport = ""
+	v.DepCity = ""
+	v.DepTime = ""
+	v.MarketingAirline = ""
+	v.MarketingFlightNo = ""
+	v.OdIndex = ""
+	v.OperatingAirline = ""
+	v.OperatingFlightNo = ""
+	v.SegmentIndex = ""
+	poolSegmentInfoDto.Put(v)
 }

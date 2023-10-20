@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type WdkWmsPickMedicineChecksellAPIRequest struct {
 // NewWdkWmsPickMedicineChecksellRequest 初始化WdkWmsPickMedicineChecksellAPIRequest对象
 func NewWdkWmsPickMedicineChecksellRequest() *WdkWmsPickMedicineChecksellAPIRequest {
 	return &WdkWmsPickMedicineChecksellAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *WdkWmsPickMedicineChecksellAPIRequest) Reset() {
+	r._uuid = ""
+	r._shopId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *WdkWmsPickMedicineChecksellAPIRequest) SetShopId(_shopId int64) error {
 // GetShopId ShopId Getter
 func (r WdkWmsPickMedicineChecksellAPIRequest) GetShopId() int64 {
 	return r._shopId
+}
+
+var poolWdkWmsPickMedicineChecksellAPIRequest = sync.Pool{
+	New: func() any {
+		return NewWdkWmsPickMedicineChecksellRequest()
+	},
+}
+
+// GetWdkWmsPickMedicineChecksellRequest 从 sync.Pool 获取 WdkWmsPickMedicineChecksellAPIRequest
+func GetWdkWmsPickMedicineChecksellAPIRequest() *WdkWmsPickMedicineChecksellAPIRequest {
+	return poolWdkWmsPickMedicineChecksellAPIRequest.Get().(*WdkWmsPickMedicineChecksellAPIRequest)
+}
+
+// ReleaseWdkWmsPickMedicineChecksellAPIRequest 将 WdkWmsPickMedicineChecksellAPIRequest 放入 sync.Pool
+func ReleaseWdkWmsPickMedicineChecksellAPIRequest(v *WdkWmsPickMedicineChecksellAPIRequest) {
+	v.Reset()
+	poolWdkWmsPickMedicineChecksellAPIRequest.Put(v)
 }

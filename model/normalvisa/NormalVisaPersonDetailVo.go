@@ -1,5 +1,9 @@
 package normalvisa
 
+import (
+	"sync"
+)
+
 // NormalVisaPersonDetailVo 结构体
 type NormalVisaPersonDetailVo struct {
 	// 证件号
@@ -34,4 +38,36 @@ type NormalVisaPersonDetailVo struct {
 	HasFinishStatus bool `json:"has_finish_status,omitempty" xml:"has_finish_status,omitempty"`
 	// 是否达到最终状态
 	Disabled bool `json:"disabled,omitempty" xml:"disabled,omitempty"`
+}
+
+var poolNormalVisaPersonDetailVo = sync.Pool{
+	New: func() any {
+		return new(NormalVisaPersonDetailVo)
+	},
+}
+
+// GetNormalVisaPersonDetailVo() 从对象池中获取NormalVisaPersonDetailVo
+func GetNormalVisaPersonDetailVo() *NormalVisaPersonDetailVo {
+	return poolNormalVisaPersonDetailVo.Get().(*NormalVisaPersonDetailVo)
+}
+
+// ReleaseNormalVisaPersonDetailVo 释放NormalVisaPersonDetailVo
+func ReleaseNormalVisaPersonDetailVo(v *NormalVisaPersonDetailVo) {
+	v.CredentialCardNo = ""
+	v.CurrentStatusDesc = ""
+	v.Remark = ""
+	v.FinishStatusDesc = ""
+	v.NextCurrentStatusDesc = ""
+	v.CredentialCardInfor = ""
+	v.Name = ""
+	v.PersonVisaId = 0
+	v.CurrentStatus = 0
+	v.FinishStatus = 0
+	v.BizOrderId = 0
+	v.NextCurrentStatus = 0
+	v.Pass = 0
+	v.HasNextStatus = false
+	v.HasFinishStatus = false
+	v.Disabled = false
+	poolNormalVisaPersonDetailVo.Put(v)
 }

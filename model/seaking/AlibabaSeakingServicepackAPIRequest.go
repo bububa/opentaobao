@@ -2,6 +2,7 @@ package seaking
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaSeakingServicepackAPIRequest struct {
 // NewAlibabaSeakingServicepackRequest 初始化AlibabaSeakingServicepackAPIRequest对象
 func NewAlibabaSeakingServicepackRequest() *AlibabaSeakingServicepackAPIRequest {
 	return &AlibabaSeakingServicepackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSeakingServicepackAPIRequest) Reset() {
+	r._identifyType = ""
+	r._identifier = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaSeakingServicepackAPIRequest) SetIdentifier(_identifier string) 
 // GetIdentifier Identifier Getter
 func (r AlibabaSeakingServicepackAPIRequest) GetIdentifier() string {
 	return r._identifier
+}
+
+var poolAlibabaSeakingServicepackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSeakingServicepackRequest()
+	},
+}
+
+// GetAlibabaSeakingServicepackRequest 从 sync.Pool 获取 AlibabaSeakingServicepackAPIRequest
+func GetAlibabaSeakingServicepackAPIRequest() *AlibabaSeakingServicepackAPIRequest {
+	return poolAlibabaSeakingServicepackAPIRequest.Get().(*AlibabaSeakingServicepackAPIRequest)
+}
+
+// ReleaseAlibabaSeakingServicepackAPIRequest 将 AlibabaSeakingServicepackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSeakingServicepackAPIRequest(v *AlibabaSeakingServicepackAPIRequest) {
+	v.Reset()
+	poolAlibabaSeakingServicepackAPIRequest.Put(v)
 }

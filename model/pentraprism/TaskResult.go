@@ -1,5 +1,9 @@
 package pentraprism
 
+import (
+	"sync"
+)
+
 // TaskResult 结构体
 type TaskResult struct {
 	// 错误码
@@ -16,4 +20,27 @@ type TaskResult struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 请求是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaskResult = sync.Pool{
+	New: func() any {
+		return new(TaskResult)
+	},
+}
+
+// GetTaskResult() 从对象池中获取TaskResult
+func GetTaskResult() *TaskResult {
+	return poolTaskResult.Get().(*TaskResult)
+}
+
+// ReleaseTaskResult 释放TaskResult
+func ReleaseTaskResult(v *TaskResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Now = ""
+	v.FinishCount = 0
+	v.Model = nil
+	v.TotalCount = 0
+	v.Success = false
+	poolTaskResult.Put(v)
 }

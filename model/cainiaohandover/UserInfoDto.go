@@ -1,5 +1,9 @@
 package cainiaohandover
 
+import (
+	"sync"
+)
+
 // UserInfoDto 结构体
 type UserInfoDto struct {
 	// 国家编码(选填)
@@ -16,4 +20,27 @@ type UserInfoDto struct {
 	AppUserKey string `json:"app_user_key,omitempty" xml:"app_user_key,omitempty"`
 	// 用户id(选填)
 	UserId string `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolUserInfoDto = sync.Pool{
+	New: func() any {
+		return new(UserInfoDto)
+	},
+}
+
+// GetUserInfoDto() 从对象池中获取UserInfoDto
+func GetUserInfoDto() *UserInfoDto {
+	return poolUserInfoDto.Get().(*UserInfoDto)
+}
+
+// ReleaseUserInfoDto 释放UserInfoDto
+func ReleaseUserInfoDto(v *UserInfoDto) {
+	v.Country = ""
+	v.LoginId = ""
+	v.SellerId = ""
+	v.TopUserKey = ""
+	v.BizSource = ""
+	v.AppUserKey = ""
+	v.UserId = ""
+	poolUserInfoDto.Put(v)
 }

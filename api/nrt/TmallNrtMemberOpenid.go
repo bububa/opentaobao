@@ -9,11 +9,6 @@ import (
 // tmall.nrt.member.openid
 //
 // 根据会员手机查询openId
-func TmallNrtMemberOpenid(clt *core.SDKClient, req *nrt.TmallNrtMemberOpenidAPIRequest, session string) (*nrt.TmallNrtMemberOpenidAPIResponse, error) {
-	var resp nrt.TmallNrtMemberOpenidAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallNrtMemberOpenid(clt *core.SDKClient, req *nrt.TmallNrtMemberOpenidAPIRequest, resp *nrt.TmallNrtMemberOpenidAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

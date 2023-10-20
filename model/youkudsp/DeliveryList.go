@@ -1,5 +1,9 @@
 package youkudsp
 
+import (
+	"sync"
+)
+
 // DeliveryList 结构体
 type DeliveryList struct {
 	// 投放类型push或者feed
@@ -14,4 +18,26 @@ type DeliveryList struct {
 	Resource *YoukuDspDeliveryResourceMultigetMap `json:"resource,omitempty" xml:"resource,omitempty"`
 	// 子渠道id
 	SubChannelId int64 `json:"sub_channel_id,omitempty" xml:"sub_channel_id,omitempty"`
+}
+
+var poolDeliveryList = sync.Pool{
+	New: func() any {
+		return new(DeliveryList)
+	},
+}
+
+// GetDeliveryList() 从对象池中获取DeliveryList
+func GetDeliveryList() *DeliveryList {
+	return poolDeliveryList.Get().(*DeliveryList)
+}
+
+// ReleaseDeliveryList 释放DeliveryList
+func ReleaseDeliveryList(v *DeliveryList) {
+	v.DeliveryType = ""
+	v.DeviceIdType = ""
+	v.DeviceId = ""
+	v.ChannelId = 0
+	v.Resource = nil
+	v.SubChannelId = 0
+	poolDeliveryList.Put(v)
 }

@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // PosSaleOrderDto 结构体
 type PosSaleOrderDto struct {
 	// 商品列表
@@ -14,4 +18,26 @@ type PosSaleOrderDto struct {
 	Operator string `json:"operator,omitempty" xml:"operator,omitempty"`
 	// 开票单号
 	SaleTicketNo string `json:"sale_ticket_no,omitempty" xml:"sale_ticket_no,omitempty"`
+}
+
+var poolPosSaleOrderDto = sync.Pool{
+	New: func() any {
+		return new(PosSaleOrderDto)
+	},
+}
+
+// GetPosSaleOrderDto() 从对象池中获取PosSaleOrderDto
+func GetPosSaleOrderDto() *PosSaleOrderDto {
+	return poolPosSaleOrderDto.Get().(*PosSaleOrderDto)
+}
+
+// ReleasePosSaleOrderDto 释放PosSaleOrderDto
+func ReleasePosSaleOrderDto(v *PosSaleOrderDto) {
+	v.SaleItems = v.SaleItems[:0]
+	v.ExtendParams = ""
+	v.MemberCardNo = ""
+	v.MemberMobile = ""
+	v.Operator = ""
+	v.SaleTicketNo = ""
+	poolPosSaleOrderDto.Put(v)
 }

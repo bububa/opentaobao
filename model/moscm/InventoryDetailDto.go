@@ -1,5 +1,9 @@
 package moscm
 
+import (
+	"sync"
+)
+
 // InventoryDetailDto 结构体
 type InventoryDetailDto struct {
 	// 专柜号
@@ -38,4 +42,38 @@ type InventoryDetailDto struct {
 	GoodsType string `json:"goods_type,omitempty" xml:"goods_type,omitempty"`
 	// 货号
 	ArtNo string `json:"art_no,omitempty" xml:"art_no,omitempty"`
+}
+
+var poolInventoryDetailDto = sync.Pool{
+	New: func() any {
+		return new(InventoryDetailDto)
+	},
+}
+
+// GetInventoryDetailDto() 从对象池中获取InventoryDetailDto
+func GetInventoryDetailDto() *InventoryDetailDto {
+	return poolInventoryDetailDto.Get().(*InventoryDetailDto)
+}
+
+// ReleaseInventoryDetailDto 释放InventoryDetailDto
+func ReleaseInventoryDetailDto(v *InventoryDetailDto) {
+	v.CounterNo = ""
+	v.CounterName = ""
+	v.StoreNo = ""
+	v.StoreName = ""
+	v.OuterId = ""
+	v.SkuId = ""
+	v.Barcode = ""
+	v.SaleProperty = ""
+	v.SkuName = ""
+	v.StyleNo = ""
+	v.WarehouseNumber = ""
+	v.WarehouseName = ""
+	v.OccupyQty = ""
+	v.Quantity = ""
+	v.DefectiveQty = ""
+	v.GoodsStatus = ""
+	v.GoodsType = ""
+	v.ArtNo = ""
+	poolInventoryDetailDto.Put(v)
 }

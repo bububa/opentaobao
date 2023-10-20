@@ -2,6 +2,7 @@ package usergrowth
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoGrowthReachingSuggestionQueryAPIRequest struct {
 // NewTaobaoGrowthReachingSuggestionQueryRequest 初始化TaobaoGrowthReachingSuggestionQueryAPIRequest对象
 func NewTaobaoGrowthReachingSuggestionQueryRequest() *TaobaoGrowthReachingSuggestionQueryAPIRequest {
 	return &TaobaoGrowthReachingSuggestionQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoGrowthReachingSuggestionQueryAPIRequest) Reset() {
+	r._suggestionContext = nil
+	r._wantedSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoGrowthReachingSuggestionQueryAPIRequest) SetWantedSize(_wantedSiz
 // GetWantedSize WantedSize Getter
 func (r TaobaoGrowthReachingSuggestionQueryAPIRequest) GetWantedSize() int64 {
 	return r._wantedSize
+}
+
+var poolTaobaoGrowthReachingSuggestionQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoGrowthReachingSuggestionQueryRequest()
+	},
+}
+
+// GetTaobaoGrowthReachingSuggestionQueryRequest 从 sync.Pool 获取 TaobaoGrowthReachingSuggestionQueryAPIRequest
+func GetTaobaoGrowthReachingSuggestionQueryAPIRequest() *TaobaoGrowthReachingSuggestionQueryAPIRequest {
+	return poolTaobaoGrowthReachingSuggestionQueryAPIRequest.Get().(*TaobaoGrowthReachingSuggestionQueryAPIRequest)
+}
+
+// ReleaseTaobaoGrowthReachingSuggestionQueryAPIRequest 将 TaobaoGrowthReachingSuggestionQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoGrowthReachingSuggestionQueryAPIRequest(v *TaobaoGrowthReachingSuggestionQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoGrowthReachingSuggestionQueryAPIRequest.Put(v)
 }

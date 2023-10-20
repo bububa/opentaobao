@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallItemQuantityUpdateAPIRequest struct {
 // NewTmallItemQuantityUpdateRequest 初始化TmallItemQuantityUpdateAPIRequest对象
 func NewTmallItemQuantityUpdateRequest() *TmallItemQuantityUpdateAPIRequest {
 	return &TmallItemQuantityUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallItemQuantityUpdateAPIRequest) Reset() {
+	r._skuQuantities = r._skuQuantities[:0]
+	r._itemId = 0
+	r._itemQuantity = 0
+	r._options = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallItemQuantityUpdateAPIRequest) SetOptions(_options *UpdateItemQuant
 // GetOptions Options Getter
 func (r TmallItemQuantityUpdateAPIRequest) GetOptions() *UpdateItemQuantityOption {
 	return r._options
+}
+
+var poolTmallItemQuantityUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallItemQuantityUpdateRequest()
+	},
+}
+
+// GetTmallItemQuantityUpdateRequest 从 sync.Pool 获取 TmallItemQuantityUpdateAPIRequest
+func GetTmallItemQuantityUpdateAPIRequest() *TmallItemQuantityUpdateAPIRequest {
+	return poolTmallItemQuantityUpdateAPIRequest.Get().(*TmallItemQuantityUpdateAPIRequest)
+}
+
+// ReleaseTmallItemQuantityUpdateAPIRequest 将 TmallItemQuantityUpdateAPIRequest 放入 sync.Pool
+func ReleaseTmallItemQuantityUpdateAPIRequest(v *TmallItemQuantityUpdateAPIRequest) {
+	v.Reset()
+	poolTmallItemQuantityUpdateAPIRequest.Put(v)
 }

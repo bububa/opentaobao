@@ -9,11 +9,6 @@ import (
 // taobao.user.avatar.get
 //
 // 根据混淆nick查询用户头像
-func TaobaoUserAvatarGet(clt *core.SDKClient, req *tbuser.TaobaoUserAvatarGetAPIRequest, session string) (*tbuser.TaobaoUserAvatarGetAPIResponse, error) {
-	var resp tbuser.TaobaoUserAvatarGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUserAvatarGet(clt *core.SDKClient, req *tbuser.TaobaoUserAvatarGetAPIRequest, resp *tbuser.TaobaoUserAvatarGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

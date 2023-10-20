@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripFlightDistributionChangeNewdetailAPIRequest struct {
 // NewAlitripBtripFlightDistributionChangeNewdetailRequest 初始化AlitripBtripFlightDistributionChangeNewdetailAPIRequest对象
 func NewAlitripBtripFlightDistributionChangeNewdetailRequest() *AlitripBtripFlightDistributionChangeNewdetailAPIRequest {
 	return &AlitripBtripFlightDistributionChangeNewdetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripFlightDistributionChangeNewdetailAPIRequest) Reset() {
+	r._paramBtripFlightOrderOperateCommonRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripFlightDistributionChangeNewdetailAPIRequest) SetParamBtripF
 // GetParamBtripFlightOrderOperateCommonRq ParamBtripFlightOrderOperateCommonRq Getter
 func (r AlitripBtripFlightDistributionChangeNewdetailAPIRequest) GetParamBtripFlightOrderOperateCommonRq() *BtripFlightOrderOperateCommonRq {
 	return r._paramBtripFlightOrderOperateCommonRq
+}
+
+var poolAlitripBtripFlightDistributionChangeNewdetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripFlightDistributionChangeNewdetailRequest()
+	},
+}
+
+// GetAlitripBtripFlightDistributionChangeNewdetailRequest 从 sync.Pool 获取 AlitripBtripFlightDistributionChangeNewdetailAPIRequest
+func GetAlitripBtripFlightDistributionChangeNewdetailAPIRequest() *AlitripBtripFlightDistributionChangeNewdetailAPIRequest {
+	return poolAlitripBtripFlightDistributionChangeNewdetailAPIRequest.Get().(*AlitripBtripFlightDistributionChangeNewdetailAPIRequest)
+}
+
+// ReleaseAlitripBtripFlightDistributionChangeNewdetailAPIRequest 将 AlitripBtripFlightDistributionChangeNewdetailAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripFlightDistributionChangeNewdetailAPIRequest(v *AlitripBtripFlightDistributionChangeNewdetailAPIRequest) {
+	v.Reset()
+	poolAlitripBtripFlightDistributionChangeNewdetailAPIRequest.Put(v)
 }

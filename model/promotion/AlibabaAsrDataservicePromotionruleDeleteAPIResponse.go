@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAsrDataservicePromotionruleDeleteAPIResponse struct {
 	AlibabaAsrDataservicePromotionruleDeleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAsrDataservicePromotionruleDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAsrDataservicePromotionruleDeleteAPIResponseModel).Reset()
+}
+
 // AlibabaAsrDataservicePromotionruleDeleteAPIResponseModel is 优惠规则删除 成功返回结果
 type AlibabaAsrDataservicePromotionruleDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_asr_dataservice_promotionrule_delete_response"`
@@ -22,4 +29,27 @@ type AlibabaAsrDataservicePromotionruleDeleteAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果
 	Result *DataServiceResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAsrDataservicePromotionruleDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAsrDataservicePromotionruleDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAsrDataservicePromotionruleDeleteAPIResponse)
+	},
+}
+
+// GetAlibabaAsrDataservicePromotionruleDeleteAPIResponse 从 sync.Pool 获取 AlibabaAsrDataservicePromotionruleDeleteAPIResponse
+func GetAlibabaAsrDataservicePromotionruleDeleteAPIResponse() *AlibabaAsrDataservicePromotionruleDeleteAPIResponse {
+	return poolAlibabaAsrDataservicePromotionruleDeleteAPIResponse.Get().(*AlibabaAsrDataservicePromotionruleDeleteAPIResponse)
+}
+
+// ReleaseAlibabaAsrDataservicePromotionruleDeleteAPIResponse 将 AlibabaAsrDataservicePromotionruleDeleteAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAsrDataservicePromotionruleDeleteAPIResponse(v *AlibabaAsrDataservicePromotionruleDeleteAPIResponse) {
+	v.Reset()
+	poolAlibabaAsrDataservicePromotionruleDeleteAPIResponse.Put(v)
 }

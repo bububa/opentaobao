@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // FinanceOrderDetail 结构体
 type FinanceOrderDetail struct {
 	// 币种
@@ -46,4 +50,42 @@ type FinanceOrderDetail struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 交易类型编码      * 88 - 销售      * 99 - 退款
 	TradeTypeCode int64 `json:"trade_type_code,omitempty" xml:"trade_type_code,omitempty"`
+}
+
+var poolFinanceOrderDetail = sync.Pool{
+	New: func() any {
+		return new(FinanceOrderDetail)
+	},
+}
+
+// GetFinanceOrderDetail() 从对象池中获取FinanceOrderDetail
+func GetFinanceOrderDetail() *FinanceOrderDetail {
+	return poolFinanceOrderDetail.Get().(*FinanceOrderDetail)
+}
+
+// ReleaseFinanceOrderDetail 释放FinanceOrderDetail
+func ReleaseFinanceOrderDetail(v *FinanceOrderDetail) {
+	v.Currency = ""
+	v.TaxRate = ""
+	v.SaleChannel = ""
+	v.SaleSource = ""
+	v.TradeType = ""
+	v.SkuName = ""
+	v.SkuCode = ""
+	v.PTradeId = ""
+	v.ShopName = ""
+	v.ShopCode = ""
+	v.TradeTime = ""
+	v.BizDate = ""
+	v.BizUk = ""
+	v.UntaxSaleTotalAmount = 0
+	v.SaleTotalAmount = 0
+	v.UntaxDiscountAmount = 0
+	v.DiscountAmount = 0
+	v.UntaxAmount = 0
+	v.Amount = 0
+	v.UnitPrice = 0
+	v.Quantity = 0
+	v.TradeTypeCode = 0
+	poolFinanceOrderDetail.Put(v)
 }

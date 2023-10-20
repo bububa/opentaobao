@@ -9,11 +9,6 @@ import (
 // alibaba.onetouch.logistics.express.logistics.product.list
 //
 // 查询物流产品&amp;揽收仓库列表
-func AlibabaOnetouchLogisticsExpressLogisticsProductList(clt *core.SDKClient, req *icbulogistics.AlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest, session string) (*icbulogistics.AlibabaOnetouchLogisticsExpressLogisticsProductListAPIResponse, error) {
-	var resp icbulogistics.AlibabaOnetouchLogisticsExpressLogisticsProductListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaOnetouchLogisticsExpressLogisticsProductList(clt *core.SDKClient, req *icbulogistics.AlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest, resp *icbulogistics.AlibabaOnetouchLogisticsExpressLogisticsProductListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

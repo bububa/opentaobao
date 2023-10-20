@@ -1,5 +1,9 @@
 package jipiao
 
+import (
+	"sync"
+)
+
 // TripBaseInfo 结构体
 type TripBaseInfo struct {
 	// 订单创建时间
@@ -36,4 +40,37 @@ type TripBaseInfo struct {
 	InsurePromotion bool `json:"insure_promotion,omitempty" xml:"insure_promotion,omitempty"`
 	// 是否强制保险订单，有一张票为强制保险即为true
 	ForceInsure bool `json:"force_insure,omitempty" xml:"force_insure,omitempty"`
+}
+
+var poolTripBaseInfo = sync.Pool{
+	New: func() any {
+		return new(TripBaseInfo)
+	},
+}
+
+// GetTripBaseInfo() 从对象池中获取TripBaseInfo
+func GetTripBaseInfo() *TripBaseInfo {
+	return poolTripBaseInfo.Get().(*TripBaseInfo)
+}
+
+// ReleaseTripBaseInfo 释放TripBaseInfo
+func ReleaseTripBaseInfo(v *TripBaseInfo) {
+	v.CreateTime = ""
+	v.ModifyTime = ""
+	v.PayLatestTime = ""
+	v.Commission = ""
+	v.RelationName = ""
+	v.RelationMobile = ""
+	v.RelationPhoneBak = ""
+	v.RelationEmail = ""
+	v.Extra = ""
+	v.AlipayTradeNo = ""
+	v.OrderId = 0
+	v.TripType = 0
+	v.Status = 0
+	v.PayStatus = 0
+	v.TotalPrice = 0
+	v.InsurePromotion = false
+	v.ForceInsure = false
+	poolTripBaseInfo.Put(v)
 }

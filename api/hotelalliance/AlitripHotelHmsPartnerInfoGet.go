@@ -9,11 +9,6 @@ import (
 // alitrip.hotel.hms.partner.info.get
 //
 // 用于给到未来酒店读取与飞猪酒店合作的合作商信息，开展单体联盟业务
-func AlitripHotelHmsPartnerInfoGet(clt *core.SDKClient, req *hotelalliance.AlitripHotelHmsPartnerInfoGetAPIRequest, session string) (*hotelalliance.AlitripHotelHmsPartnerInfoGetAPIResponse, error) {
-	var resp hotelalliance.AlitripHotelHmsPartnerInfoGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripHotelHmsPartnerInfoGet(clt *core.SDKClient, req *hotelalliance.AlitripHotelHmsPartnerInfoGetAPIRequest, resp *hotelalliance.AlitripHotelHmsPartnerInfoGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

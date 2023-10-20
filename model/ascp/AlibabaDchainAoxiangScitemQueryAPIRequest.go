@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangScitemQueryAPIRequest struct {
 // NewAlibabaDchainAoxiangScitemQueryRequest 初始化AlibabaDchainAoxiangScitemQueryAPIRequest对象
 func NewAlibabaDchainAoxiangScitemQueryRequest() *AlibabaDchainAoxiangScitemQueryAPIRequest {
 	return &AlibabaDchainAoxiangScitemQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangScitemQueryAPIRequest) Reset() {
+	r._queryScitemRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangScitemQueryAPIRequest) SetQueryScitemRequest(_query
 // GetQueryScitemRequest QueryScitemRequest Getter
 func (r AlibabaDchainAoxiangScitemQueryAPIRequest) GetQueryScitemRequest() *QueryScItemRequest {
 	return r._queryScitemRequest
+}
+
+var poolAlibabaDchainAoxiangScitemQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangScitemQueryRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangScitemQueryRequest 从 sync.Pool 获取 AlibabaDchainAoxiangScitemQueryAPIRequest
+func GetAlibabaDchainAoxiangScitemQueryAPIRequest() *AlibabaDchainAoxiangScitemQueryAPIRequest {
+	return poolAlibabaDchainAoxiangScitemQueryAPIRequest.Get().(*AlibabaDchainAoxiangScitemQueryAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangScitemQueryAPIRequest 将 AlibabaDchainAoxiangScitemQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangScitemQueryAPIRequest(v *AlibabaDchainAoxiangScitemQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangScitemQueryAPIRequest.Put(v)
 }

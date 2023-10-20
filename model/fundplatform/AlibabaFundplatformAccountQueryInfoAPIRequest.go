@@ -2,6 +2,7 @@ package fundplatform
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaFundplatformAccountQueryInfoAPIRequest struct {
 // NewAlibabaFundplatformAccountQueryInfoRequest 初始化AlibabaFundplatformAccountQueryInfoAPIRequest对象
 func NewAlibabaFundplatformAccountQueryInfoRequest() *AlibabaFundplatformAccountQueryInfoAPIRequest {
 	return &AlibabaFundplatformAccountQueryInfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaFundplatformAccountQueryInfoAPIRequest) Reset() {
+	r._accountId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaFundplatformAccountQueryInfoAPIRequest) SetAccountId(_accountId 
 // GetAccountId AccountId Getter
 func (r AlibabaFundplatformAccountQueryInfoAPIRequest) GetAccountId() int64 {
 	return r._accountId
+}
+
+var poolAlibabaFundplatformAccountQueryInfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaFundplatformAccountQueryInfoRequest()
+	},
+}
+
+// GetAlibabaFundplatformAccountQueryInfoRequest 从 sync.Pool 获取 AlibabaFundplatformAccountQueryInfoAPIRequest
+func GetAlibabaFundplatformAccountQueryInfoAPIRequest() *AlibabaFundplatformAccountQueryInfoAPIRequest {
+	return poolAlibabaFundplatformAccountQueryInfoAPIRequest.Get().(*AlibabaFundplatformAccountQueryInfoAPIRequest)
+}
+
+// ReleaseAlibabaFundplatformAccountQueryInfoAPIRequest 将 AlibabaFundplatformAccountQueryInfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaFundplatformAccountQueryInfoAPIRequest(v *AlibabaFundplatformAccountQueryInfoAPIRequest) {
+	v.Reset()
+	poolAlibabaFundplatformAccountQueryInfoAPIRequest.Put(v)
 }

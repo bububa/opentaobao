@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // CiaUpdateDto 结构体
 type CiaUpdateDto struct {
 	// 计划Id
@@ -14,4 +18,26 @@ type CiaUpdateDto struct {
 	AdgroupId int64 `json:"adgroup_id,omitempty" xml:"adgroup_id,omitempty"`
 	// 是否开启智能出价
 	IsSmartBidding bool `json:"is_smart_bidding,omitempty" xml:"is_smart_bidding,omitempty"`
+}
+
+var poolCiaUpdateDto = sync.Pool{
+	New: func() any {
+		return new(CiaUpdateDto)
+	},
+}
+
+// GetCiaUpdateDto() 从对象池中获取CiaUpdateDto
+func GetCiaUpdateDto() *CiaUpdateDto {
+	return poolCiaUpdateDto.Get().(*CiaUpdateDto)
+}
+
+// ReleaseCiaUpdateDto 释放CiaUpdateDto
+func ReleaseCiaUpdateDto(v *CiaUpdateDto) {
+	v.CampaignId = 0
+	v.BidTargetType = 0
+	v.MaxPremium = 0
+	v.IsCirculation = 0
+	v.AdgroupId = 0
+	v.IsSmartBidding = false
+	poolCiaUpdateDto.Put(v)
 }

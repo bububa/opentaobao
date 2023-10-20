@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaSscPurchaseServicedefinitionParamQueryAPIRequest struct {
 // NewAlibabaSscPurchaseServicedefinitionParamQueryRequest 初始化AlibabaSscPurchaseServicedefinitionParamQueryAPIRequest对象
 func NewAlibabaSscPurchaseServicedefinitionParamQueryRequest() *AlibabaSscPurchaseServicedefinitionParamQueryAPIRequest {
 	return &AlibabaSscPurchaseServicedefinitionParamQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSscPurchaseServicedefinitionParamQueryAPIRequest) Reset() {
+	r._productId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaSscPurchaseServicedefinitionParamQueryAPIRequest) SetProductId(_
 // GetProductId ProductId Getter
 func (r AlibabaSscPurchaseServicedefinitionParamQueryAPIRequest) GetProductId() int64 {
 	return r._productId
+}
+
+var poolAlibabaSscPurchaseServicedefinitionParamQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSscPurchaseServicedefinitionParamQueryRequest()
+	},
+}
+
+// GetAlibabaSscPurchaseServicedefinitionParamQueryRequest 从 sync.Pool 获取 AlibabaSscPurchaseServicedefinitionParamQueryAPIRequest
+func GetAlibabaSscPurchaseServicedefinitionParamQueryAPIRequest() *AlibabaSscPurchaseServicedefinitionParamQueryAPIRequest {
+	return poolAlibabaSscPurchaseServicedefinitionParamQueryAPIRequest.Get().(*AlibabaSscPurchaseServicedefinitionParamQueryAPIRequest)
+}
+
+// ReleaseAlibabaSscPurchaseServicedefinitionParamQueryAPIRequest 将 AlibabaSscPurchaseServicedefinitionParamQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSscPurchaseServicedefinitionParamQueryAPIRequest(v *AlibabaSscPurchaseServicedefinitionParamQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaSscPurchaseServicedefinitionParamQueryAPIRequest.Put(v)
 }

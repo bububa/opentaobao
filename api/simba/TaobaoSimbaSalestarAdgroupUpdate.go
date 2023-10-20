@@ -9,11 +9,6 @@ import (
 // taobao.simba.salestar.adgroup.update
 //
 // 更新一个推广组的信息，可以设置 是否上线
-func TaobaoSimbaSalestarAdgroupUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarAdgroupUpdateAPIRequest, session string) (*simba.TaobaoSimbaSalestarAdgroupUpdateAPIResponse, error) {
-	var resp simba.TaobaoSimbaSalestarAdgroupUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaSalestarAdgroupUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarAdgroupUpdateAPIRequest, resp *simba.TaobaoSimbaSalestarAdgroupUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

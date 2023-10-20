@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // OrderCancelRequest 结构体
 type OrderCancelRequest struct {
 	// 交易平台子订单信息
@@ -18,4 +22,28 @@ type OrderCancelRequest struct {
 	CancelReason string `json:"cancelReason,omitempty" xml:"cancelReason,omitempty"`
 	// 扩展属性
 	ExtendProps *TaobaoQimenOrderCancelMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+}
+
+var poolOrderCancelRequest = sync.Pool{
+	New: func() any {
+		return new(OrderCancelRequest)
+	},
+}
+
+// GetOrderCancelRequest() 从对象池中获取OrderCancelRequest
+func GetOrderCancelRequest() *OrderCancelRequest {
+	return poolOrderCancelRequest.Get().(*OrderCancelRequest)
+}
+
+// ReleaseOrderCancelRequest 释放OrderCancelRequest
+func ReleaseOrderCancelRequest(v *OrderCancelRequest) {
+	v.SubSourceOrders = v.SubSourceOrders[:0]
+	v.WarehouseCode = ""
+	v.OwnerCode = ""
+	v.OrderCode = ""
+	v.OrderId = ""
+	v.OrderType = ""
+	v.CancelReason = ""
+	v.ExtendProps = nil
+	poolOrderCancelRequest.Put(v)
 }

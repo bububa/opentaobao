@@ -9,11 +9,6 @@ import (
 // alibaba.tcls.aelophy.merchant.user.upload
 //
 // 商家会员数据上传
-func AlibabaTclsAelophyMerchantUserUpload(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantUserUploadAPIRequest, session string) (*wdk.AlibabaTclsAelophyMerchantUserUploadAPIResponse, error) {
-	var resp wdk.AlibabaTclsAelophyMerchantUserUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTclsAelophyMerchantUserUpload(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantUserUploadAPIRequest, resp *wdk.AlibabaTclsAelophyMerchantUserUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

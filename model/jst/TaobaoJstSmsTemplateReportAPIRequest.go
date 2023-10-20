@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoJstSmsTemplateReportAPIRequest struct {
 // NewTaobaoJstSmsTemplateReportRequest 初始化TaobaoJstSmsTemplateReportAPIRequest对象
 func NewTaobaoJstSmsTemplateReportRequest() *TaobaoJstSmsTemplateReportAPIRequest {
 	return &TaobaoJstSmsTemplateReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJstSmsTemplateReportAPIRequest) Reset() {
+	r._smsTemplateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoJstSmsTemplateReportAPIRequest) SetSmsTemplateRequest(_smsTemplat
 // GetSmsTemplateRequest SmsTemplateRequest Getter
 func (r TaobaoJstSmsTemplateReportAPIRequest) GetSmsTemplateRequest() *SmsTemplateRequest {
 	return r._smsTemplateRequest
+}
+
+var poolTaobaoJstSmsTemplateReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJstSmsTemplateReportRequest()
+	},
+}
+
+// GetTaobaoJstSmsTemplateReportRequest 从 sync.Pool 获取 TaobaoJstSmsTemplateReportAPIRequest
+func GetTaobaoJstSmsTemplateReportAPIRequest() *TaobaoJstSmsTemplateReportAPIRequest {
+	return poolTaobaoJstSmsTemplateReportAPIRequest.Get().(*TaobaoJstSmsTemplateReportAPIRequest)
+}
+
+// ReleaseTaobaoJstSmsTemplateReportAPIRequest 将 TaobaoJstSmsTemplateReportAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJstSmsTemplateReportAPIRequest(v *TaobaoJstSmsTemplateReportAPIRequest) {
+	v.Reset()
+	poolTaobaoJstSmsTemplateReportAPIRequest.Put(v)
 }

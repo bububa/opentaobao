@@ -11,11 +11,6 @@ import (
 // 根据分组ID查询相应的空间单元
 // HSF接口名称：com.alibaba.campus.api.space.service.top.SpaceUnitApiTopService
 // HSF方法名称：getListByGroupId
-func AlibabaCampusSpaceUnitGetlistbygroupid(clt *core.SDKClient, req *campus.AlibabaCampusSpaceUnitGetlistbygroupidAPIRequest, session string) (*campus.AlibabaCampusSpaceUnitGetlistbygroupidAPIResponse, error) {
-	var resp campus.AlibabaCampusSpaceUnitGetlistbygroupidAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusSpaceUnitGetlistbygroupid(clt *core.SDKClient, req *campus.AlibabaCampusSpaceUnitGetlistbygroupidAPIRequest, resp *campus.AlibabaCampusSpaceUnitGetlistbygroupidAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

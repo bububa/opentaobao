@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoOmniorderStoreSdtstatusAPIResponse struct {
 	TaobaoOmniorderStoreSdtstatusAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOmniorderStoreSdtstatusAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOmniorderStoreSdtstatusAPIResponseModel).Reset()
+}
+
 // TaobaoOmniorderStoreSdtstatusAPIResponseModel is 菜鸟裹裹运单状态查询 成功返回结果
 type TaobaoOmniorderStoreSdtstatusAPIResponseModel struct {
 	XMLName xml.Name `xml:"omniorder_store_sdtstatus_response"`
@@ -22,4 +29,27 @@ type TaobaoOmniorderStoreSdtstatusAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *TaobaoOmniorderStoreSdtstatusResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOmniorderStoreSdtstatusAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoOmniorderStoreSdtstatusAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOmniorderStoreSdtstatusAPIResponse)
+	},
+}
+
+// GetTaobaoOmniorderStoreSdtstatusAPIResponse 从 sync.Pool 获取 TaobaoOmniorderStoreSdtstatusAPIResponse
+func GetTaobaoOmniorderStoreSdtstatusAPIResponse() *TaobaoOmniorderStoreSdtstatusAPIResponse {
+	return poolTaobaoOmniorderStoreSdtstatusAPIResponse.Get().(*TaobaoOmniorderStoreSdtstatusAPIResponse)
+}
+
+// ReleaseTaobaoOmniorderStoreSdtstatusAPIResponse 将 TaobaoOmniorderStoreSdtstatusAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOmniorderStoreSdtstatusAPIResponse(v *TaobaoOmniorderStoreSdtstatusAPIResponse) {
+	v.Reset()
+	poolTaobaoOmniorderStoreSdtstatusAPIResponse.Put(v)
 }

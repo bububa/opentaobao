@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // ResponseDo 结构体
 type ResponseDo struct {
 	// itemInventories
@@ -12,4 +16,25 @@ type ResponseDo struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// item
 	Item *Item `json:"item,omitempty" xml:"item,omitempty"`
+}
+
+var poolResponseDo = sync.Pool{
+	New: func() any {
+		return new(ResponseDo)
+	},
+}
+
+// GetResponseDo() 从对象池中获取ResponseDo
+func GetResponseDo() *ResponseDo {
+	return poolResponseDo.Get().(*ResponseDo)
+}
+
+// ReleaseResponseDo 释放ResponseDo
+func ReleaseResponseDo(v *ResponseDo) {
+	v.ItemInventories = v.ItemInventories[:0]
+	v.Flag = ""
+	v.Code = ""
+	v.Message = ""
+	v.Item = nil
+	poolResponseDo.Put(v)
 }

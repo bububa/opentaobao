@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // CodeInfo 结构体
 type CodeInfo struct {
 	// 码状态（I核注O核销A激活C注销E错误码）
@@ -12,4 +16,25 @@ type CodeInfo struct {
 	ParentCode string `json:"parent_code,omitempty" xml:"parent_code,omitempty"`
 	// 码等级【1代表最小码   如：申请的包装比例是1:5:10, 对应的码等级就是3、2、1, 代表大码、中码、小码】
 	CodePackLevel string `json:"code_pack_level,omitempty" xml:"code_pack_level,omitempty"`
+}
+
+var poolCodeInfo = sync.Pool{
+	New: func() any {
+		return new(CodeInfo)
+	},
+}
+
+// GetCodeInfo() 从对象池中获取CodeInfo
+func GetCodeInfo() *CodeInfo {
+	return poolCodeInfo.Get().(*CodeInfo)
+}
+
+// ReleaseCodeInfo 释放CodeInfo
+func ReleaseCodeInfo(v *CodeInfo) {
+	v.Status = ""
+	v.Code = ""
+	v.CodeLevel = ""
+	v.ParentCode = ""
+	v.CodePackLevel = ""
+	poolCodeInfo.Put(v)
 }

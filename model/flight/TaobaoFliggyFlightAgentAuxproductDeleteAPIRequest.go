@@ -2,6 +2,7 @@ package flight
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFliggyFlightAgentAuxproductDeleteAPIRequest struct {
 // NewTaobaoFliggyFlightAgentAuxproductDeleteRequest 初始化TaobaoFliggyFlightAgentAuxproductDeleteAPIRequest对象
 func NewTaobaoFliggyFlightAgentAuxproductDeleteRequest() *TaobaoFliggyFlightAgentAuxproductDeleteAPIRequest {
 	return &TaobaoFliggyFlightAgentAuxproductDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFliggyFlightAgentAuxproductDeleteAPIRequest) Reset() {
+	r._delAuxProductRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFliggyFlightAgentAuxproductDeleteAPIRequest) SetDelAuxProductRq(_
 // GetDelAuxProductRq DelAuxProductRq Getter
 func (r TaobaoFliggyFlightAgentAuxproductDeleteAPIRequest) GetDelAuxProductRq() *DelAuxProductRq {
 	return r._delAuxProductRq
+}
+
+var poolTaobaoFliggyFlightAgentAuxproductDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFliggyFlightAgentAuxproductDeleteRequest()
+	},
+}
+
+// GetTaobaoFliggyFlightAgentAuxproductDeleteRequest 从 sync.Pool 获取 TaobaoFliggyFlightAgentAuxproductDeleteAPIRequest
+func GetTaobaoFliggyFlightAgentAuxproductDeleteAPIRequest() *TaobaoFliggyFlightAgentAuxproductDeleteAPIRequest {
+	return poolTaobaoFliggyFlightAgentAuxproductDeleteAPIRequest.Get().(*TaobaoFliggyFlightAgentAuxproductDeleteAPIRequest)
+}
+
+// ReleaseTaobaoFliggyFlightAgentAuxproductDeleteAPIRequest 将 TaobaoFliggyFlightAgentAuxproductDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFliggyFlightAgentAuxproductDeleteAPIRequest(v *TaobaoFliggyFlightAgentAuxproductDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoFliggyFlightAgentAuxproductDeleteAPIRequest.Put(v)
 }

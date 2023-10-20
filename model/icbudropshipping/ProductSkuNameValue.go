@@ -1,5 +1,9 @@
 package icbudropshipping
 
+import (
+	"sync"
+)
+
 // ProductSkuNameValue 结构体
 type ProductSkuNameValue struct {
 	// Attributes name
@@ -12,4 +16,25 @@ type ProductSkuNameValue struct {
 	AttrNameId int64 `json:"attr_name_id,omitempty" xml:"attr_name_id,omitempty"`
 	// Attributes value id
 	AttrValueId int64 `json:"attr_value_id,omitempty" xml:"attr_value_id,omitempty"`
+}
+
+var poolProductSkuNameValue = sync.Pool{
+	New: func() any {
+		return new(ProductSkuNameValue)
+	},
+}
+
+// GetProductSkuNameValue() 从对象池中获取ProductSkuNameValue
+func GetProductSkuNameValue() *ProductSkuNameValue {
+	return poolProductSkuNameValue.Get().(*ProductSkuNameValue)
+}
+
+// ReleaseProductSkuNameValue 释放ProductSkuNameValue
+func ReleaseProductSkuNameValue(v *ProductSkuNameValue) {
+	v.AttrNameDesc = ""
+	v.AttrValueDesc = ""
+	v.AttrValueImage = ""
+	v.AttrNameId = 0
+	v.AttrValueId = 0
+	poolProductSkuNameValue.Put(v)
 }

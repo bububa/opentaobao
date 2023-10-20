@@ -2,6 +2,7 @@ package miniapp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoMiniappCloudFunctionInvokeAPIRequest struct {
 // NewTaobaoMiniappCloudFunctionInvokeRequest 初始化TaobaoMiniappCloudFunctionInvokeAPIRequest对象
 func NewTaobaoMiniappCloudFunctionInvokeRequest() *TaobaoMiniappCloudFunctionInvokeAPIRequest {
 	return &TaobaoMiniappCloudFunctionInvokeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappCloudFunctionInvokeAPIRequest) Reset() {
+	r._name = ""
+	r._handler = ""
+	r._data = ""
+	r._env = ""
+	r._exts = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoMiniappCloudFunctionInvokeAPIRequest) SetExts(_exts string) error
 // GetExts Exts Getter
 func (r TaobaoMiniappCloudFunctionInvokeAPIRequest) GetExts() string {
 	return r._exts
+}
+
+var poolTaobaoMiniappCloudFunctionInvokeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappCloudFunctionInvokeRequest()
+	},
+}
+
+// GetTaobaoMiniappCloudFunctionInvokeRequest 从 sync.Pool 获取 TaobaoMiniappCloudFunctionInvokeAPIRequest
+func GetTaobaoMiniappCloudFunctionInvokeAPIRequest() *TaobaoMiniappCloudFunctionInvokeAPIRequest {
+	return poolTaobaoMiniappCloudFunctionInvokeAPIRequest.Get().(*TaobaoMiniappCloudFunctionInvokeAPIRequest)
+}
+
+// ReleaseTaobaoMiniappCloudFunctionInvokeAPIRequest 将 TaobaoMiniappCloudFunctionInvokeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappCloudFunctionInvokeAPIRequest(v *TaobaoMiniappCloudFunctionInvokeAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappCloudFunctionInvokeAPIRequest.Put(v)
 }

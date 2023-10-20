@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpAdKeywordStatusBatchupdateAPIRequest struct {
 // NewAlibabaScbpAdKeywordStatusBatchupdateRequest 初始化AlibabaScbpAdKeywordStatusBatchupdateAPIRequest对象
 func NewAlibabaScbpAdKeywordStatusBatchupdateRequest() *AlibabaScbpAdKeywordStatusBatchupdateAPIRequest {
 	return &AlibabaScbpAdKeywordStatusBatchupdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdKeywordStatusBatchupdateAPIRequest) Reset() {
+	r._keywordUpdateDtoList = r._keywordUpdateDtoList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpAdKeywordStatusBatchupdateAPIRequest) SetKeywordUpdateDtoLis
 // GetKeywordUpdateDtoList KeywordUpdateDtoList Getter
 func (r AlibabaScbpAdKeywordStatusBatchupdateAPIRequest) GetKeywordUpdateDtoList() []KeywordUpdateDto {
 	return r._keywordUpdateDtoList
+}
+
+var poolAlibabaScbpAdKeywordStatusBatchupdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdKeywordStatusBatchupdateRequest()
+	},
+}
+
+// GetAlibabaScbpAdKeywordStatusBatchupdateRequest 从 sync.Pool 获取 AlibabaScbpAdKeywordStatusBatchupdateAPIRequest
+func GetAlibabaScbpAdKeywordStatusBatchupdateAPIRequest() *AlibabaScbpAdKeywordStatusBatchupdateAPIRequest {
+	return poolAlibabaScbpAdKeywordStatusBatchupdateAPIRequest.Get().(*AlibabaScbpAdKeywordStatusBatchupdateAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdKeywordStatusBatchupdateAPIRequest 将 AlibabaScbpAdKeywordStatusBatchupdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdKeywordStatusBatchupdateAPIRequest(v *AlibabaScbpAdKeywordStatusBatchupdateAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdKeywordStatusBatchupdateAPIRequest.Put(v)
 }

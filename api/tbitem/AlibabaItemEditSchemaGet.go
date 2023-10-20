@@ -9,11 +9,6 @@ import (
 // alibaba.item.edit.schema.get
 //
 // 商品编辑时，获取商品规则信息
-func AlibabaItemEditSchemaGet(clt *core.SDKClient, req *tbitem.AlibabaItemEditSchemaGetAPIRequest, session string) (*tbitem.AlibabaItemEditSchemaGetAPIResponse, error) {
-	var resp tbitem.AlibabaItemEditSchemaGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaItemEditSchemaGet(clt *core.SDKClient, req *tbitem.AlibabaItemEditSchemaGetAPIRequest, resp *tbitem.AlibabaItemEditSchemaGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

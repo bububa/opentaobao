@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenCostCenterQueryRq 结构体
 type OpenCostCenterQueryRq struct {
 	// 第三方成本中心id，不填写的时候user_id必填
@@ -14,4 +18,26 @@ type OpenCostCenterQueryRq struct {
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 	// 是否需要展示成员信息，当成本中心为部分人员适用的时候有返回
 	NeedOrgEntity bool `json:"need_org_entity,omitempty" xml:"need_org_entity,omitempty"`
+}
+
+var poolOpenCostCenterQueryRq = sync.Pool{
+	New: func() any {
+		return new(OpenCostCenterQueryRq)
+	},
+}
+
+// GetOpenCostCenterQueryRq() 从对象池中获取OpenCostCenterQueryRq
+func GetOpenCostCenterQueryRq() *OpenCostCenterQueryRq {
+	return poolOpenCostCenterQueryRq.Get().(*OpenCostCenterQueryRq)
+}
+
+// ReleaseOpenCostCenterQueryRq 释放OpenCostCenterQueryRq
+func ReleaseOpenCostCenterQueryRq(v *OpenCostCenterQueryRq) {
+	v.ThirdpartId = ""
+	v.UserId = ""
+	v.CorpId = ""
+	v.Title = ""
+	v.Version = 0
+	v.NeedOrgEntity = false
+	poolOpenCostCenterQueryRq.Put(v)
 }

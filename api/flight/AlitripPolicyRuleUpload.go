@@ -9,11 +9,6 @@ import (
 // alitrip.policy.rule.upload
 //
 // 上传特殊类型的单程/往返政策
-func AlitripPolicyRuleUpload(clt *core.SDKClient, req *flight.AlitripPolicyRuleUploadAPIRequest, session string) (*flight.AlitripPolicyRuleUploadAPIResponse, error) {
-	var resp flight.AlitripPolicyRuleUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripPolicyRuleUpload(clt *core.SDKClient, req *flight.AlitripPolicyRuleUploadAPIRequest, resp *flight.AlitripPolicyRuleUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

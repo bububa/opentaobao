@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // CainiaoStockInBillInventoryitem 结构体
 type CainiaoStockInBillInventoryitem struct {
 	// 商品保质期信息，失效日期
@@ -16,4 +20,27 @@ type CainiaoStockInBillInventoryitem struct {
 	InventoryType int64 `json:"inventory_type,omitempty" xml:"inventory_type,omitempty"`
 	// 数量
 	ItemQty int64 `json:"item_qty,omitempty" xml:"item_qty,omitempty"`
+}
+
+var poolCainiaoStockInBillInventoryitem = sync.Pool{
+	New: func() any {
+		return new(CainiaoStockInBillInventoryitem)
+	},
+}
+
+// GetCainiaoStockInBillInventoryitem() 从对象池中获取CainiaoStockInBillInventoryitem
+func GetCainiaoStockInBillInventoryitem() *CainiaoStockInBillInventoryitem {
+	return poolCainiaoStockInBillInventoryitem.Get().(*CainiaoStockInBillInventoryitem)
+}
+
+// ReleaseCainiaoStockInBillInventoryitem 释放CainiaoStockInBillInventoryitem
+func ReleaseCainiaoStockInBillInventoryitem(v *CainiaoStockInBillInventoryitem) {
+	v.DueDate = ""
+	v.ProduceDate = ""
+	v.ProduceCode = ""
+	v.ProduceArea = ""
+	v.BatchCode = ""
+	v.InventoryType = 0
+	v.ItemQty = 0
+	poolCainiaoStockInBillInventoryitem.Put(v)
 }

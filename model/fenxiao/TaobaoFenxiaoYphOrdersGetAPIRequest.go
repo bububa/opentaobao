@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type TaobaoFenxiaoYphOrdersGetAPIRequest struct {
 // NewTaobaoFenxiaoYphOrdersGetRequest 初始化TaobaoFenxiaoYphOrdersGetAPIRequest对象
 func NewTaobaoFenxiaoYphOrdersGetRequest() *TaobaoFenxiaoYphOrdersGetAPIRequest {
 	return &TaobaoFenxiaoYphOrdersGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoYphOrdersGetAPIRequest) Reset() {
+	r._beginTime = ""
+	r._endTime = ""
+	r._tradeTypes = 0
+	r._pageSize = 0
+	r._pageNum = 0
+	r._userRoleType = 0
+	r._channelCodes = 0
+	r._orderStatus = 0
+	r._refundStatus = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *TaobaoFenxiaoYphOrdersGetAPIRequest) SetRefundStatus(_refundStatus int6
 // GetRefundStatus RefundStatus Getter
 func (r TaobaoFenxiaoYphOrdersGetAPIRequest) GetRefundStatus() int64 {
 	return r._refundStatus
+}
+
+var poolTaobaoFenxiaoYphOrdersGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoYphOrdersGetRequest()
+	},
+}
+
+// GetTaobaoFenxiaoYphOrdersGetRequest 从 sync.Pool 获取 TaobaoFenxiaoYphOrdersGetAPIRequest
+func GetTaobaoFenxiaoYphOrdersGetAPIRequest() *TaobaoFenxiaoYphOrdersGetAPIRequest {
+	return poolTaobaoFenxiaoYphOrdersGetAPIRequest.Get().(*TaobaoFenxiaoYphOrdersGetAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoYphOrdersGetAPIRequest 将 TaobaoFenxiaoYphOrdersGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoYphOrdersGetAPIRequest(v *TaobaoFenxiaoYphOrdersGetAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoYphOrdersGetAPIRequest.Put(v)
 }

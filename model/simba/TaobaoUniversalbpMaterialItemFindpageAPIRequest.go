@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpMaterialItemFindpageAPIRequest struct {
 // NewTaobaoUniversalbpMaterialItemFindpageRequest 初始化TaobaoUniversalbpMaterialItemFindpageAPIRequest对象
 func NewTaobaoUniversalbpMaterialItemFindpageRequest() *TaobaoUniversalbpMaterialItemFindpageAPIRequest {
 	return &TaobaoUniversalbpMaterialItemFindpageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpMaterialItemFindpageAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._itemQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpMaterialItemFindpageAPIRequest) SetItemQueryVO(_itemQu
 // GetItemQueryVO ItemQueryVO Getter
 func (r TaobaoUniversalbpMaterialItemFindpageAPIRequest) GetItemQueryVO() *ItemQueryVo {
 	return r._itemQueryVO
+}
+
+var poolTaobaoUniversalbpMaterialItemFindpageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpMaterialItemFindpageRequest()
+	},
+}
+
+// GetTaobaoUniversalbpMaterialItemFindpageRequest 从 sync.Pool 获取 TaobaoUniversalbpMaterialItemFindpageAPIRequest
+func GetTaobaoUniversalbpMaterialItemFindpageAPIRequest() *TaobaoUniversalbpMaterialItemFindpageAPIRequest {
+	return poolTaobaoUniversalbpMaterialItemFindpageAPIRequest.Get().(*TaobaoUniversalbpMaterialItemFindpageAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpMaterialItemFindpageAPIRequest 将 TaobaoUniversalbpMaterialItemFindpageAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpMaterialItemFindpageAPIRequest(v *TaobaoUniversalbpMaterialItemFindpageAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpMaterialItemFindpageAPIRequest.Put(v)
 }

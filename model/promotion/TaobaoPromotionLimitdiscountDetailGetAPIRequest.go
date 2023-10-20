@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoPromotionLimitdiscountDetailGetAPIRequest struct {
 // NewTaobaoPromotionLimitdiscountDetailGetRequest 初始化TaobaoPromotionLimitdiscountDetailGetAPIRequest对象
 func NewTaobaoPromotionLimitdiscountDetailGetRequest() *TaobaoPromotionLimitdiscountDetailGetAPIRequest {
 	return &TaobaoPromotionLimitdiscountDetailGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPromotionLimitdiscountDetailGetAPIRequest) Reset() {
+	r._limitDiscountId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoPromotionLimitdiscountDetailGetAPIRequest) SetLimitDiscountId(_li
 // GetLimitDiscountId LimitDiscountId Getter
 func (r TaobaoPromotionLimitdiscountDetailGetAPIRequest) GetLimitDiscountId() int64 {
 	return r._limitDiscountId
+}
+
+var poolTaobaoPromotionLimitdiscountDetailGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPromotionLimitdiscountDetailGetRequest()
+	},
+}
+
+// GetTaobaoPromotionLimitdiscountDetailGetRequest 从 sync.Pool 获取 TaobaoPromotionLimitdiscountDetailGetAPIRequest
+func GetTaobaoPromotionLimitdiscountDetailGetAPIRequest() *TaobaoPromotionLimitdiscountDetailGetAPIRequest {
+	return poolTaobaoPromotionLimitdiscountDetailGetAPIRequest.Get().(*TaobaoPromotionLimitdiscountDetailGetAPIRequest)
+}
+
+// ReleaseTaobaoPromotionLimitdiscountDetailGetAPIRequest 将 TaobaoPromotionLimitdiscountDetailGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPromotionLimitdiscountDetailGetAPIRequest(v *TaobaoPromotionLimitdiscountDetailGetAPIRequest) {
+	v.Reset()
+	poolTaobaoPromotionLimitdiscountDetailGetAPIRequest.Put(v)
 }

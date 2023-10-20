@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // UsersRoleQueryParam 结构体
 type UsersRoleQueryParam struct {
 	// 多应用
@@ -22,4 +26,30 @@ type UsersRoleQueryParam struct {
 	ReturnNotEffective bool `json:"return_not_effective,omitempty" xml:"return_not_effective,omitempty"`
 	// true,返回用户拥有的所有角色；false 只返回roleId, roleName,roleType,roleKey过滤出来的角色
 	ReturnAllUserRole bool `json:"return_all_user_role,omitempty" xml:"return_all_user_role,omitempty"`
+}
+
+var poolUsersRoleQueryParam = sync.Pool{
+	New: func() any {
+		return new(UsersRoleQueryParam)
+	},
+}
+
+// GetUsersRoleQueryParam() 从对象池中获取UsersRoleQueryParam
+func GetUsersRoleQueryParam() *UsersRoleQueryParam {
+	return poolUsersRoleQueryParam.Get().(*UsersRoleQueryParam)
+}
+
+// ReleaseUsersRoleQueryParam 释放UsersRoleQueryParam
+func ReleaseUsersRoleQueryParam(v *UsersRoleQueryParam) {
+	v.AppKeys = v.AppKeys[:0]
+	v.UserIds = v.UserIds[:0]
+	v.RoleKey = ""
+	v.RoleName = ""
+	v.DeptId = ""
+	v.PageSize = 0
+	v.RoleId = 0
+	v.PageNum = 0
+	v.ReturnNotEffective = false
+	v.ReturnAllUserRole = false
+	poolUsersRoleQueryParam.Put(v)
 }

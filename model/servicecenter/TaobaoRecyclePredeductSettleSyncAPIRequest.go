@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoRecyclePredeductSettleSyncAPIRequest struct {
 // NewTaobaoRecyclePredeductSettleSyncRequest 初始化TaobaoRecyclePredeductSettleSyncAPIRequest对象
 func NewTaobaoRecyclePredeductSettleSyncRequest() *TaobaoRecyclePredeductSettleSyncAPIRequest {
 	return &TaobaoRecyclePredeductSettleSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRecyclePredeductSettleSyncAPIRequest) Reset() {
+	r._offlineSettleFee = 0
+	r._oldOrderId = 0
+	r._version = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoRecyclePredeductSettleSyncAPIRequest) SetVersion(_version int64) 
 // GetVersion Version Getter
 func (r TaobaoRecyclePredeductSettleSyncAPIRequest) GetVersion() int64 {
 	return r._version
+}
+
+var poolTaobaoRecyclePredeductSettleSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRecyclePredeductSettleSyncRequest()
+	},
+}
+
+// GetTaobaoRecyclePredeductSettleSyncRequest 从 sync.Pool 获取 TaobaoRecyclePredeductSettleSyncAPIRequest
+func GetTaobaoRecyclePredeductSettleSyncAPIRequest() *TaobaoRecyclePredeductSettleSyncAPIRequest {
+	return poolTaobaoRecyclePredeductSettleSyncAPIRequest.Get().(*TaobaoRecyclePredeductSettleSyncAPIRequest)
+}
+
+// ReleaseTaobaoRecyclePredeductSettleSyncAPIRequest 将 TaobaoRecyclePredeductSettleSyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRecyclePredeductSettleSyncAPIRequest(v *TaobaoRecyclePredeductSettleSyncAPIRequest) {
+	v.Reset()
+	poolTaobaoRecyclePredeductSettleSyncAPIRequest.Put(v)
 }

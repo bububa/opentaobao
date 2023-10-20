@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // RiskDetail 结构体
 type RiskDetail struct {
 	// 仿冒应用信息
@@ -12,4 +16,25 @@ type RiskDetail struct {
 	TaskStatus int64 `json:"task_status,omitempty" xml:"task_status,omitempty"`
 	// 漏洞信息
 	VulnInfo *VulnFullInfo `json:"vuln_info,omitempty" xml:"vuln_info,omitempty"`
+}
+
+var poolRiskDetail = sync.Pool{
+	New: func() any {
+		return new(RiskDetail)
+	},
+}
+
+// GetRiskDetail() 从对象池中获取RiskDetail
+func GetRiskDetail() *RiskDetail {
+	return poolRiskDetail.Get().(*RiskDetail)
+}
+
+// ReleaseRiskDetail 释放RiskDetail
+func ReleaseRiskDetail(v *RiskDetail) {
+	v.FakeInfo = nil
+	v.MalwareInfo = nil
+	v.PluginInfo = nil
+	v.TaskStatus = 0
+	v.VulnInfo = nil
+	poolRiskDetail.Put(v)
 }

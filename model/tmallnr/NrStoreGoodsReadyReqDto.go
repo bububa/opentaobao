@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrStoreGoodsReadyReqDto 结构体
 type NrStoreGoodsReadyReqDto struct {
 	// 配送人员的姓名
@@ -16,4 +20,27 @@ type NrStoreGoodsReadyReqDto struct {
 	CompanyCode string `json:"company_code,omitempty" xml:"company_code,omitempty"`
 	// 交易主订单号
 	MainOrderId int64 `json:"main_order_id,omitempty" xml:"main_order_id,omitempty"`
+}
+
+var poolNrStoreGoodsReadyReqDto = sync.Pool{
+	New: func() any {
+		return new(NrStoreGoodsReadyReqDto)
+	},
+}
+
+// GetNrStoreGoodsReadyReqDto() 从对象池中获取NrStoreGoodsReadyReqDto
+func GetNrStoreGoodsReadyReqDto() *NrStoreGoodsReadyReqDto {
+	return poolNrStoreGoodsReadyReqDto.Get().(*NrStoreGoodsReadyReqDto)
+}
+
+// ReleaseNrStoreGoodsReadyReqDto 释放NrStoreGoodsReadyReqDto
+func ReleaseNrStoreGoodsReadyReqDto(v *NrStoreGoodsReadyReqDto) {
+	v.PerformerName = ""
+	v.PerformerPhone = ""
+	v.CompanyOrderNo = ""
+	v.CompanyName = ""
+	v.BizIdentity = ""
+	v.CompanyCode = ""
+	v.MainOrderId = 0
+	poolNrStoreGoodsReadyReqDto.Put(v)
 }

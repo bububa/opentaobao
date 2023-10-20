@@ -1,5 +1,9 @@
 package smartstore
 
+import (
+	"sync"
+)
+
 // TmallPopupstoreActivityDeviceQueryResult 结构体
 type TmallPopupstoreActivityDeviceQueryResult struct {
 	// 门店列表
@@ -14,4 +18,26 @@ type TmallPopupstoreActivityDeviceQueryResult struct {
 	ActivityStartTime string `json:"activity_start_time,omitempty" xml:"activity_start_time,omitempty"`
 	// 活动状态
 	ActivityStatus int64 `json:"activity_status,omitempty" xml:"activity_status,omitempty"`
+}
+
+var poolTmallPopupstoreActivityDeviceQueryResult = sync.Pool{
+	New: func() any {
+		return new(TmallPopupstoreActivityDeviceQueryResult)
+	},
+}
+
+// GetTmallPopupstoreActivityDeviceQueryResult() 从对象池中获取TmallPopupstoreActivityDeviceQueryResult
+func GetTmallPopupstoreActivityDeviceQueryResult() *TmallPopupstoreActivityDeviceQueryResult {
+	return poolTmallPopupstoreActivityDeviceQueryResult.Get().(*TmallPopupstoreActivityDeviceQueryResult)
+}
+
+// ReleaseTmallPopupstoreActivityDeviceQueryResult 释放TmallPopupstoreActivityDeviceQueryResult
+func ReleaseTmallPopupstoreActivityDeviceQueryResult(v *TmallPopupstoreActivityDeviceQueryResult) {
+	v.StoreList = v.StoreList[:0]
+	v.SellerNames = ""
+	v.ActivityEndTime = ""
+	v.ActivityName = ""
+	v.ActivityStartTime = ""
+	v.ActivityStatus = 0
+	poolTmallPopupstoreActivityDeviceQueryResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // PolicyCreateRequestDto 结构体
 type PolicyCreateRequestDto struct {
 	// 全量上传时，删除政策查询参数
@@ -16,4 +20,27 @@ type PolicyCreateRequestDto struct {
 	AgentId int64 `json:"agent_id,omitempty" xml:"agent_id,omitempty"`
 	// 行程类型：0，单程；1，往返
 	TripType int64 `json:"trip_type,omitempty" xml:"trip_type,omitempty"`
+}
+
+var poolPolicyCreateRequestDto = sync.Pool{
+	New: func() any {
+		return new(PolicyCreateRequestDto)
+	},
+}
+
+// GetPolicyCreateRequestDto() 从对象池中获取PolicyCreateRequestDto
+func GetPolicyCreateRequestDto() *PolicyCreateRequestDto {
+	return poolPolicyCreateRequestDto.Get().(*PolicyCreateRequestDto)
+}
+
+// ReleasePolicyCreateRequestDto 释放PolicyCreateRequestDto
+func ReleasePolicyCreateRequestDto(v *PolicyCreateRequestDto) {
+	v.DeletePolicy = v.DeletePolicy[:0]
+	v.PolicyList = v.PolicyList[:0]
+	v.ExecType = ""
+	v.PolicyType = ""
+	v.AgentSendTime = ""
+	v.AgentId = 0
+	v.TripType = 0
+	poolPolicyCreateRequestDto.Put(v)
 }

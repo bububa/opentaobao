@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // WlbOrderDetail 结构体
 type WlbOrderDetail struct {
 	// 物流宝订单商品
@@ -34,4 +38,36 @@ type WlbOrderDetail struct {
 	OpenUid string `json:"open_uid,omitempty" xml:"open_uid,omitempty"`
 	// 卖家ID
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolWlbOrderDetail = sync.Pool{
+	New: func() any {
+		return new(WlbOrderDetail)
+	},
+}
+
+// GetWlbOrderDetail() 从对象池中获取WlbOrderDetail
+func GetWlbOrderDetail() *WlbOrderDetail {
+	return poolWlbOrderDetail.Get().(*WlbOrderDetail)
+}
+
+// ReleaseWlbOrderDetail 释放WlbOrderDetail
+func ReleaseWlbOrderDetail(v *WlbOrderDetail) {
+	v.OrderItemList = v.OrderItemList[:0]
+	v.OperateType = ""
+	v.OrderCode = ""
+	v.OrderSource = ""
+	v.OrderSourceCode = ""
+	v.OrderType = ""
+	v.OrderSubType = ""
+	v.UserNick = ""
+	v.StoreCode = ""
+	v.OrderStatus = ""
+	v.Remark = ""
+	v.BuyerNick = ""
+	v.ModifyTime = ""
+	v.CreateTime = ""
+	v.OpenUid = ""
+	v.UserId = 0
+	poolWlbOrderDetail.Put(v)
 }

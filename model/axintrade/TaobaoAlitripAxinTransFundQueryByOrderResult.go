@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // TaobaoAlitripAxinTransFundQueryByOrderResult 结构体
 type TaobaoAlitripAxinTransFundQueryByOrderResult struct {
 	// 错误码
@@ -14,4 +18,26 @@ type TaobaoAlitripAxinTransFundQueryByOrderResult struct {
 	NeedRetry bool `json:"need_retry,omitempty" xml:"need_retry,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoAlitripAxinTransFundQueryByOrderResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripAxinTransFundQueryByOrderResult)
+	},
+}
+
+// GetTaobaoAlitripAxinTransFundQueryByOrderResult() 从对象池中获取TaobaoAlitripAxinTransFundQueryByOrderResult
+func GetTaobaoAlitripAxinTransFundQueryByOrderResult() *TaobaoAlitripAxinTransFundQueryByOrderResult {
+	return poolTaobaoAlitripAxinTransFundQueryByOrderResult.Get().(*TaobaoAlitripAxinTransFundQueryByOrderResult)
+}
+
+// ReleaseTaobaoAlitripAxinTransFundQueryByOrderResult 释放TaobaoAlitripAxinTransFundQueryByOrderResult
+func ReleaseTaobaoAlitripAxinTransFundQueryByOrderResult(v *TaobaoAlitripAxinTransFundQueryByOrderResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.InfoMsg = ""
+	v.Data = nil
+	v.NeedRetry = false
+	v.Success = false
+	poolTaobaoAlitripAxinTransFundQueryByOrderResult.Put(v)
 }

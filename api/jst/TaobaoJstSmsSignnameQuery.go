@@ -9,11 +9,6 @@ import (
 // taobao.jst.sms.signname.query
 //
 // 淘宝短信签名查询
-func TaobaoJstSmsSignnameQuery(clt *core.SDKClient, req *jst.TaobaoJstSmsSignnameQueryAPIRequest, session string) (*jst.TaobaoJstSmsSignnameQueryAPIResponse, error) {
-	var resp jst.TaobaoJstSmsSignnameQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJstSmsSignnameQuery(clt *core.SDKClient, req *jst.TaobaoJstSmsSignnameQueryAPIRequest, resp *jst.TaobaoJstSmsSignnameQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // BindCustomerOpenReq 结构体
 type BindCustomerOpenReq struct {
 	// 外部品牌ID
@@ -20,4 +24,29 @@ type BindCustomerOpenReq struct {
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 操作人ID
 	OperatorId string `json:"operator_id,omitempty" xml:"operator_id,omitempty"`
+}
+
+var poolBindCustomerOpenReq = sync.Pool{
+	New: func() any {
+		return new(BindCustomerOpenReq)
+	},
+}
+
+// GetBindCustomerOpenReq() 从对象池中获取BindCustomerOpenReq
+func GetBindCustomerOpenReq() *BindCustomerOpenReq {
+	return poolBindCustomerOpenReq.Get().(*BindCustomerOpenReq)
+}
+
+// ReleaseBindCustomerOpenReq 释放BindCustomerOpenReq
+func ReleaseBindCustomerOpenReq(v *BindCustomerOpenReq) {
+	v.OutBrandId = ""
+	v.PhysicalCardId = ""
+	v.RequestId = ""
+	v.CardId = ""
+	v.BrandId = ""
+	v.OutShopId = ""
+	v.CustomerId = ""
+	v.ShopId = ""
+	v.OperatorId = ""
+	poolBindCustomerOpenReq.Put(v)
 }

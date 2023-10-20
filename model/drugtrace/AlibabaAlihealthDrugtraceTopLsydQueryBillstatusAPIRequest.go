@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -41,8 +42,25 @@ type AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest struct {
 // NewAlibabaAlihealthDrugtraceTopLsydQueryBillstatusRequest 初始化AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest对象
 func NewAlibabaAlihealthDrugtraceTopLsydQueryBillstatusRequest() *AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest {
 	return &AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(12),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest) Reset() {
+	r._refEntId = ""
+	r._beginDate = ""
+	r._endDate = ""
+	r._billType = ""
+	r._billCode = ""
+	r._drugType = ""
+	r._dealStatus = ""
+	r._fromUserId = ""
+	r._toUserId = ""
+	r._agentRefUserId = ""
+	r._pageSize = 0
+	r._page = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -216,4 +234,21 @@ func (r *AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest) SetPage(_pag
 // GetPage Page Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest) GetPage() int64 {
 	return r._page
+}
+
+var poolAlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugtraceTopLsydQueryBillstatusRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugtraceTopLsydQueryBillstatusRequest 从 sync.Pool 获取 AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest
+func GetAlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest() *AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest {
+	return poolAlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest.Get().(*AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest 将 AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest(v *AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest.Put(v)
 }

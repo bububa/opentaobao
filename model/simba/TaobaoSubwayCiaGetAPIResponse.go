@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoSubwayCiaGetAPIResponse struct {
 	TaobaoSubwayCiaGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoSubwayCiaGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSubwayCiaGetAPIResponseModel).Reset()
+}
+
 // TaobaoSubwayCiaGetAPIResponseModel is 查询单元智能出价信息 成功返回结果
 type TaobaoSubwayCiaGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"subway_cia_get_response"`
@@ -22,4 +29,27 @@ type TaobaoSubwayCiaGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 单元智能出价信息
 	Result *CiaConfig `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSubwayCiaGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoSubwayCiaGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSubwayCiaGetAPIResponse)
+	},
+}
+
+// GetTaobaoSubwayCiaGetAPIResponse 从 sync.Pool 获取 TaobaoSubwayCiaGetAPIResponse
+func GetTaobaoSubwayCiaGetAPIResponse() *TaobaoSubwayCiaGetAPIResponse {
+	return poolTaobaoSubwayCiaGetAPIResponse.Get().(*TaobaoSubwayCiaGetAPIResponse)
+}
+
+// ReleaseTaobaoSubwayCiaGetAPIResponse 将 TaobaoSubwayCiaGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSubwayCiaGetAPIResponse(v *TaobaoSubwayCiaGetAPIResponse) {
+	v.Reset()
+	poolTaobaoSubwayCiaGetAPIResponse.Put(v)
 }

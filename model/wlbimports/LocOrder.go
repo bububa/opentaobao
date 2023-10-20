@@ -1,5 +1,9 @@
 package wlbimports
 
+import (
+	"sync"
+)
+
 // LocOrder 结构体
 type LocOrder struct {
 	// 物流承运商
@@ -24,4 +28,31 @@ type LocOrder struct {
 	CustomsFee int64 `json:"customs_fee,omitempty" xml:"customs_fee,omitempty"`
 	// 重量
 	Weight int64 `json:"weight,omitempty" xml:"weight,omitempty"`
+}
+
+var poolLocOrder = sync.Pool{
+	New: func() any {
+		return new(LocOrder)
+	},
+}
+
+// GetLocOrder() 从对象池中获取LocOrder
+func GetLocOrder() *LocOrder {
+	return poolLocOrder.Get().(*LocOrder)
+}
+
+// ReleaseLocOrder 释放LocOrder
+func ReleaseLocOrder(v *LocOrder) {
+	v.Carrier = ""
+	v.StatusCode = ""
+	v.OrderCode = ""
+	v.TrackingNo = ""
+	v.WeightUnit = ""
+	v.Currency = ""
+	v.StatusCodeDesc = ""
+	v.ShippingFee = 0
+	v.TradeId = 0
+	v.CustomsFee = 0
+	v.Weight = 0
+	poolLocOrder.Put(v)
 }

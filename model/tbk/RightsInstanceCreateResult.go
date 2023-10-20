@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // RightsInstanceCreateResult 结构体
 type RightsInstanceCreateResult struct {
 	// 淘礼金Id
@@ -12,4 +16,25 @@ type RightsInstanceCreateResult struct {
 	AvailableFee string `json:"available_fee,omitempty" xml:"available_fee,omitempty"`
 	// 媒体针对此商品今日剩余可领取淘礼金数量
 	ItemTodayNumLeft int64 `json:"item_today_num_left,omitempty" xml:"item_today_num_left,omitempty"`
+}
+
+var poolRightsInstanceCreateResult = sync.Pool{
+	New: func() any {
+		return new(RightsInstanceCreateResult)
+	},
+}
+
+// GetRightsInstanceCreateResult() 从对象池中获取RightsInstanceCreateResult
+func GetRightsInstanceCreateResult() *RightsInstanceCreateResult {
+	return poolRightsInstanceCreateResult.Get().(*RightsInstanceCreateResult)
+}
+
+// ReleaseRightsInstanceCreateResult 释放RightsInstanceCreateResult
+func ReleaseRightsInstanceCreateResult(v *RightsInstanceCreateResult) {
+	v.RightsId = ""
+	v.SendUrl = ""
+	v.VegasCode = ""
+	v.AvailableFee = ""
+	v.ItemTodayNumLeft = 0
+	poolRightsInstanceCreateResult.Put(v)
 }

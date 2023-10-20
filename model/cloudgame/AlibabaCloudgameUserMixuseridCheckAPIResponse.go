@@ -2,6 +2,7 @@ package cloudgame
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaCloudgameUserMixuseridCheckAPIResponse struct {
 	AlibabaCloudgameUserMixuseridCheckAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaCloudgameUserMixuseridCheckAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaCloudgameUserMixuseridCheckAPIResponseModel).Reset()
+}
+
 // AlibabaCloudgameUserMixuseridCheckAPIResponseModel is 云游戏混淆用户ID校验 成功返回结果
 type AlibabaCloudgameUserMixuseridCheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_cloudgame_user_mixuserid_check_response"`
@@ -26,4 +33,29 @@ type AlibabaCloudgameUserMixuseridCheckAPIResponseModel struct {
 	ResultMessage string `json:"result_message,omitempty" xml:"result_message,omitempty"`
 	// 是否有效
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaCloudgameUserMixuseridCheckAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.ResultMessage = ""
+	m.Data = false
+}
+
+var poolAlibabaCloudgameUserMixuseridCheckAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaCloudgameUserMixuseridCheckAPIResponse)
+	},
+}
+
+// GetAlibabaCloudgameUserMixuseridCheckAPIResponse 从 sync.Pool 获取 AlibabaCloudgameUserMixuseridCheckAPIResponse
+func GetAlibabaCloudgameUserMixuseridCheckAPIResponse() *AlibabaCloudgameUserMixuseridCheckAPIResponse {
+	return poolAlibabaCloudgameUserMixuseridCheckAPIResponse.Get().(*AlibabaCloudgameUserMixuseridCheckAPIResponse)
+}
+
+// ReleaseAlibabaCloudgameUserMixuseridCheckAPIResponse 将 AlibabaCloudgameUserMixuseridCheckAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaCloudgameUserMixuseridCheckAPIResponse(v *AlibabaCloudgameUserMixuseridCheckAPIResponse) {
+	v.Reset()
+	poolAlibabaCloudgameUserMixuseridCheckAPIResponse.Put(v)
 }

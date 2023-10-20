@@ -9,11 +9,6 @@ import (
 // taobao.universalbp.report.query.crowd
 //
 // 人群报表查询
-func TaobaoUniversalbpReportQueryCrowd(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryCrowdAPIRequest, session string) (*simba.TaobaoUniversalbpReportQueryCrowdAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpReportQueryCrowdAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUniversalbpReportQueryCrowd(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryCrowdAPIRequest, resp *simba.TaobaoUniversalbpReportQueryCrowdAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

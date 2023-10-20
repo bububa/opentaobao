@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // SyncExistingHouseThreeDimensionalDto 结构体
 type SyncExistingHouseThreeDimensionalDto struct {
 	// 外部小区id
@@ -16,4 +20,27 @@ type SyncExistingHouseThreeDimensionalDto struct {
 	JumpUrl string `json:"jump_url,omitempty" xml:"jump_url,omitempty"`
 	// 类型 1：躺平3D户型
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolSyncExistingHouseThreeDimensionalDto = sync.Pool{
+	New: func() any {
+		return new(SyncExistingHouseThreeDimensionalDto)
+	},
+}
+
+// GetSyncExistingHouseThreeDimensionalDto() 从对象池中获取SyncExistingHouseThreeDimensionalDto
+func GetSyncExistingHouseThreeDimensionalDto() *SyncExistingHouseThreeDimensionalDto {
+	return poolSyncExistingHouseThreeDimensionalDto.Get().(*SyncExistingHouseThreeDimensionalDto)
+}
+
+// ReleaseSyncExistingHouseThreeDimensionalDto 释放SyncExistingHouseThreeDimensionalDto
+func ReleaseSyncExistingHouseThreeDimensionalDto(v *SyncExistingHouseThreeDimensionalDto) {
+	v.CommunityOuterId = ""
+	v.OuterId = ""
+	v.UniqueNo = ""
+	v.CoverPictureUrl = ""
+	v.Data = ""
+	v.JumpUrl = ""
+	v.Type = 0
+	poolSyncExistingHouseThreeDimensionalDto.Put(v)
 }

@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscKmsAccessAPIRequest struct {
 // NewAlibabaAlscKmsAccessRequest 初始化AlibabaAlscKmsAccessAPIRequest对象
 func NewAlibabaAlscKmsAccessRequest() *AlibabaAlscKmsAccessAPIRequest {
 	return &AlibabaAlscKmsAccessAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscKmsAccessAPIRequest) Reset() {
+	r._requestdata = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscKmsAccessAPIRequest) SetRequestdata(_requestdata string) err
 // GetRequestdata Requestdata Getter
 func (r AlibabaAlscKmsAccessAPIRequest) GetRequestdata() string {
 	return r._requestdata
+}
+
+var poolAlibabaAlscKmsAccessAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscKmsAccessRequest()
+	},
+}
+
+// GetAlibabaAlscKmsAccessRequest 从 sync.Pool 获取 AlibabaAlscKmsAccessAPIRequest
+func GetAlibabaAlscKmsAccessAPIRequest() *AlibabaAlscKmsAccessAPIRequest {
+	return poolAlibabaAlscKmsAccessAPIRequest.Get().(*AlibabaAlscKmsAccessAPIRequest)
+}
+
+// ReleaseAlibabaAlscKmsAccessAPIRequest 将 AlibabaAlscKmsAccessAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscKmsAccessAPIRequest(v *AlibabaAlscKmsAccessAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscKmsAccessAPIRequest.Put(v)
 }

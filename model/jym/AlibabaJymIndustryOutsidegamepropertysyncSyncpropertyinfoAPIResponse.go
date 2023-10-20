@@ -2,6 +2,7 @@ package jym
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponseModel).Reset()
 }
 
 // AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponseModel is 外部上报游戏属性信息 成功返回结果
@@ -32,4 +39,32 @@ type AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponseModel s
 	Result *OutSideSyncGamePropertyResponseDto `json:"result,omitempty" xml:"result,omitempty"`
 	// 接口调用结果: true/false
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SubCodeType = ""
+	m.SubExtraErrMsg = ""
+	m.StateCode = ""
+	m.ExtraErrMsg = ""
+	m.Result = nil
+	m.IsSuccess = false
+}
+
+var poolAlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse)
+	},
+}
+
+// GetAlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse 从 sync.Pool 获取 AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse
+func GetAlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse() *AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse {
+	return poolAlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse.Get().(*AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse)
+}
+
+// ReleaseAlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse 将 AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse(v *AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse) {
+	v.Reset()
+	poolAlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse.Put(v)
 }

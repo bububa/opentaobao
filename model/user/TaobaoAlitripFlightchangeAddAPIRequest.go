@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,14 @@ type TaobaoAlitripFlightchangeAddAPIRequest struct {
 // NewTaobaoAlitripFlightchangeAddRequest 初始化TaobaoAlitripFlightchangeAddAPIRequest对象
 func NewTaobaoAlitripFlightchangeAddRequest() *TaobaoAlitripFlightchangeAddAPIRequest {
 	return &TaobaoAlitripFlightchangeAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripFlightchangeAddAPIRequest) Reset() {
+	r._flightChangeDataDo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -55,4 +62,21 @@ func (r *TaobaoAlitripFlightchangeAddAPIRequest) SetFlightChangeDataDo(_flightCh
 // GetFlightChangeDataDo FlightChangeDataDo Getter
 func (r TaobaoAlitripFlightchangeAddAPIRequest) GetFlightChangeDataDo() *FlightChangeDataDo {
 	return r._flightChangeDataDo
+}
+
+var poolTaobaoAlitripFlightchangeAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripFlightchangeAddRequest()
+	},
+}
+
+// GetTaobaoAlitripFlightchangeAddRequest 从 sync.Pool 获取 TaobaoAlitripFlightchangeAddAPIRequest
+func GetTaobaoAlitripFlightchangeAddAPIRequest() *TaobaoAlitripFlightchangeAddAPIRequest {
+	return poolTaobaoAlitripFlightchangeAddAPIRequest.Get().(*TaobaoAlitripFlightchangeAddAPIRequest)
+}
+
+// ReleaseTaobaoAlitripFlightchangeAddAPIRequest 将 TaobaoAlitripFlightchangeAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripFlightchangeAddAPIRequest(v *TaobaoAlitripFlightchangeAddAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripFlightchangeAddAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // CommonMaterialVo 结构体
 type CommonMaterialVo struct {
 	// 生命周期指标-越迁阶段列表,列表中最多有2个元素。在页面上展示的时候，按照元素的索引，从左到右依次展示即
@@ -42,4 +46,40 @@ type CommonMaterialVo struct {
 	LifeCycleDays int64 `json:"life_cycle_days,omitempty" xml:"life_cycle_days,omitempty"`
 	// 商品成长指标-成交排名
 	GrowRank int64 `json:"grow_rank,omitempty" xml:"grow_rank,omitempty"`
+}
+
+var poolCommonMaterialVo = sync.Pool{
+	New: func() any {
+		return new(CommonMaterialVo)
+	},
+}
+
+// GetCommonMaterialVo() 从对象池中获取CommonMaterialVo
+func GetCommonMaterialVo() *CommonMaterialVo {
+	return poolCommonMaterialVo.Get().(*CommonMaterialVo)
+}
+
+// ReleaseCommonMaterialVo 释放CommonMaterialVo
+func ReleaseCommonMaterialVo(v *CommonMaterialVo) {
+	v.LifeCycleList = v.LifeCycleList[:0]
+	v.MaterialName = ""
+	v.Title = ""
+	v.ImgUrl = ""
+	v.LinkUrl = ""
+	v.Price = ""
+	v.FirstStartsTime = ""
+	v.Starts = ""
+	v.CategoryId = ""
+	v.PromotionType = ""
+	v.SubPromotionType = ""
+	v.LifeCycleDiffWithAvg = ""
+	v.LifeCycleDiffWithAvgTips = ""
+	v.GrowDesc = ""
+	v.MaterialId = 0
+	v.MaterialType = 0
+	v.BidCount = 0
+	v.Quantity = 0
+	v.LifeCycleDays = 0
+	v.GrowRank = 0
+	poolCommonMaterialVo.Put(v)
 }

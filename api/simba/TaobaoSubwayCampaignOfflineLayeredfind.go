@@ -9,11 +9,6 @@ import (
 // taobao.subway.campaign.offline.layeredfind
 //
 // 查询某计划离线列表
-func TaobaoSubwayCampaignOfflineLayeredfind(clt *core.SDKClient, req *simba.TaobaoSubwayCampaignOfflineLayeredfindAPIRequest, session string) (*simba.TaobaoSubwayCampaignOfflineLayeredfindAPIResponse, error) {
-	var resp simba.TaobaoSubwayCampaignOfflineLayeredfindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSubwayCampaignOfflineLayeredfind(clt *core.SDKClient, req *simba.TaobaoSubwayCampaignOfflineLayeredfindAPIRequest, resp *simba.TaobaoSubwayCampaignOfflineLayeredfindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

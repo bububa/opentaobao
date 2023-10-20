@@ -9,11 +9,6 @@ import (
 // alibaba.mos.commdy.posmerchandise.getmerchandise
 //
 // 去前置机商品在线查询接口
-func AlibabaMosCommdyPosmerchandiseGetmerchandise(clt *core.SDKClient, req *nrpos.AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest, session string) (*nrpos.AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIResponse, error) {
-	var resp nrpos.AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMosCommdyPosmerchandiseGetmerchandise(clt *core.SDKClient, req *nrpos.AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest, resp *nrpos.AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

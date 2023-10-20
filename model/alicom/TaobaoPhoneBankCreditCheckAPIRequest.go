@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoPhoneBankCreditCheckAPIRequest struct {
 // NewTaobaoPhoneBankCreditCheckRequest 初始化TaobaoPhoneBankCreditCheckAPIRequest对象
 func NewTaobaoPhoneBankCreditCheckRequest() *TaobaoPhoneBankCreditCheckAPIRequest {
 	return &TaobaoPhoneBankCreditCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPhoneBankCreditCheckAPIRequest) Reset() {
+	r._bankCreditCheckRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoPhoneBankCreditCheckAPIRequest) SetBankCreditCheckRequest(_bankCr
 // GetBankCreditCheckRequest BankCreditCheckRequest Getter
 func (r TaobaoPhoneBankCreditCheckAPIRequest) GetBankCreditCheckRequest() *BankCreditCheckRequest {
 	return r._bankCreditCheckRequest
+}
+
+var poolTaobaoPhoneBankCreditCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPhoneBankCreditCheckRequest()
+	},
+}
+
+// GetTaobaoPhoneBankCreditCheckRequest 从 sync.Pool 获取 TaobaoPhoneBankCreditCheckAPIRequest
+func GetTaobaoPhoneBankCreditCheckAPIRequest() *TaobaoPhoneBankCreditCheckAPIRequest {
+	return poolTaobaoPhoneBankCreditCheckAPIRequest.Get().(*TaobaoPhoneBankCreditCheckAPIRequest)
+}
+
+// ReleaseTaobaoPhoneBankCreditCheckAPIRequest 将 TaobaoPhoneBankCreditCheckAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPhoneBankCreditCheckAPIRequest(v *TaobaoPhoneBankCreditCheckAPIRequest) {
+	v.Reset()
+	poolTaobaoPhoneBankCreditCheckAPIRequest.Put(v)
 }

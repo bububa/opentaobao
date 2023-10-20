@@ -9,11 +9,6 @@ import (
 // alibaba.idle.item.media.add
 //
 // 上传图片
-func AlibabaIdleItemMediaAdd(clt *core.SDKClient, req *idleitem.AlibabaIdleItemMediaAddAPIRequest, session string) (*idleitem.AlibabaIdleItemMediaAddAPIResponse, error) {
-	var resp idleitem.AlibabaIdleItemMediaAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleItemMediaAdd(clt *core.SDKClient, req *idleitem.AlibabaIdleItemMediaAddAPIRequest, resp *idleitem.AlibabaIdleItemMediaAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

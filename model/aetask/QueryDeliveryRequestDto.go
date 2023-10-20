@@ -1,5 +1,9 @@
 package aetask
 
+import (
+	"sync"
+)
+
 // QueryDeliveryRequestDto 结构体
 type QueryDeliveryRequestDto struct {
 	// 用户版本信息
@@ -14,4 +18,26 @@ type QueryDeliveryRequestDto struct {
 	PreDisplay int64 `json:"pre_display,omitempty" xml:"pre_display,omitempty"`
 	// 投放场景id
 	SceneId int64 `json:"scene_id,omitempty" xml:"scene_id,omitempty"`
+}
+
+var poolQueryDeliveryRequestDto = sync.Pool{
+	New: func() any {
+		return new(QueryDeliveryRequestDto)
+	},
+}
+
+// GetQueryDeliveryRequestDto() 从对象池中获取QueryDeliveryRequestDto
+func GetQueryDeliveryRequestDto() *QueryDeliveryRequestDto {
+	return poolQueryDeliveryRequestDto.Get().(*QueryDeliveryRequestDto)
+}
+
+// ReleaseQueryDeliveryRequestDto 释放QueryDeliveryRequestDto
+func ReleaseQueryDeliveryRequestDto(v *QueryDeliveryRequestDto) {
+	v.Ttid = ""
+	v.Language = ""
+	v.Country = ""
+	v.ProjectAppKey = ""
+	v.PreDisplay = 0
+	v.SceneId = 0
+	poolQueryDeliveryRequestDto.Put(v)
 }

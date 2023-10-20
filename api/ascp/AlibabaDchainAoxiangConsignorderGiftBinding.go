@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.consignorder.gift.binding
 //
 // 赠品绑赠计算占用
-func AlibabaDchainAoxiangConsignorderGiftBinding(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangConsignorderGiftBindingAPIRequest, session string) (*ascp.AlibabaDchainAoxiangConsignorderGiftBindingAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangConsignorderGiftBindingAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangConsignorderGiftBinding(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangConsignorderGiftBindingAPIRequest, resp *ascp.AlibabaDchainAoxiangConsignorderGiftBindingAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

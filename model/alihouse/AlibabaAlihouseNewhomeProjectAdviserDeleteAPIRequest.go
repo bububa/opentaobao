@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest struct {
 // NewAlibabaAlihouseNewhomeProjectAdviserDeleteRequest 初始化AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest对象
 func NewAlibabaAlihouseNewhomeProjectAdviserDeleteRequest() *AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest {
 	return &AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) Reset() {
+	r._outerConsultantId = ""
+	r._outerStoreId = ""
+	r._version = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) SetVersion(_versi
 // GetVersion Version Getter
 func (r AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) GetVersion() int64 {
 	return r._version
+}
+
+var poolAlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeProjectAdviserDeleteRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeProjectAdviserDeleteRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest
+func GetAlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest() *AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest {
+	return poolAlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest.Get().(*AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest 将 AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest(v *AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest.Put(v)
 }

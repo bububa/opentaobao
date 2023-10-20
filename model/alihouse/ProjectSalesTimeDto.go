@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ProjectSalesTimeDto 结构体
 type ProjectSalesTimeDto struct {
 	// 预售信息对象列表
@@ -82,4 +86,60 @@ type ProjectSalesTimeDto struct {
 	IsBlurOpen int64 `json:"is_blur_open,omitempty" xml:"is_blur_open,omitempty"`
 	// 是否具有选房环节 0(否) 1(是)
 	IsSelection int64 `json:"is_selection,omitempty" xml:"is_selection,omitempty"`
+}
+
+var poolProjectSalesTimeDto = sync.Pool{
+	New: func() any {
+		return new(ProjectSalesTimeDto)
+	},
+}
+
+// GetProjectSalesTimeDto() 从对象池中获取ProjectSalesTimeDto
+func GetProjectSalesTimeDto() *ProjectSalesTimeDto {
+	return poolProjectSalesTimeDto.Get().(*ProjectSalesTimeDto)
+}
+
+// ReleaseProjectSalesTimeDto 释放ProjectSalesTimeDto
+func ReleaseProjectSalesTimeDto(v *ProjectSalesTimeDto) {
+	v.PrePermitDTOList = v.PrePermitDTOList[:0]
+	v.OuterTidList = v.OuterTidList[:0]
+	v.RatioDTOList = v.RatioDTOList[:0]
+	v.OuterSid = ""
+	v.OuterId = ""
+	v.City = ""
+	v.SubjectName = ""
+	v.SubjectAvgPrice = ""
+	v.DecorationStandardPriceDesc = ""
+	v.RegisterStartDate = ""
+	v.RegisterEndDate = ""
+	v.RecognizeStartDate = ""
+	v.RecognizeEndDate = ""
+	v.MaterialStartDate = ""
+	v.MaterialEndDate = ""
+	v.PublicityStartDate = ""
+	v.PublicityEndDate = ""
+	v.LotteryDrawDate = ""
+	v.OfflineLotteryDrawDesc = ""
+	v.OpenDate = ""
+	v.SelectionStartDate = ""
+	v.SelectionEndDate = ""
+	v.OfflineRoomSelectionDesc = ""
+	v.OuterStoreId = ""
+	v.DeveloperDueTime = ""
+	v.FrozenPrice = ""
+	v.FrozenBank = ""
+	v.OpeningLayoutRange = ""
+	v.LayoutAreaRange = ""
+	v.OpeningBuildingRange = ""
+	v.CityId = 0
+	v.IsValid = 0
+	v.IsRegister = 0
+	v.IsRecognize = 0
+	v.IsMaterial = 0
+	v.IsPublicity = 0
+	v.IsLottery = 0
+	v.IsOpen = 0
+	v.IsBlurOpen = 0
+	v.IsSelection = 0
+	poolProjectSalesTimeDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // SignContractReq 结构体
 type SignContractReq struct {
 	// 乙方手机号
@@ -18,4 +22,28 @@ type SignContractReq struct {
 	SecondPartyIdCard string `json:"second_party_id_card,omitempty" xml:"second_party_id_card,omitempty"`
 	// 订单id
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolSignContractReq = sync.Pool{
+	New: func() any {
+		return new(SignContractReq)
+	},
+}
+
+// GetSignContractReq() 从对象池中获取SignContractReq
+func GetSignContractReq() *SignContractReq {
+	return poolSignContractReq.Get().(*SignContractReq)
+}
+
+// ReleaseSignContractReq 释放SignContractReq
+func ReleaseSignContractReq(v *SignContractReq) {
+	v.SecondPartyMobileNum = ""
+	v.ContractType = ""
+	v.FirstPartyName = ""
+	v.FileUrl = ""
+	v.IssueDate = ""
+	v.SecondPartyName = ""
+	v.SecondPartyIdCard = ""
+	v.OrderId = 0
+	poolSignContractReq.Put(v)
 }

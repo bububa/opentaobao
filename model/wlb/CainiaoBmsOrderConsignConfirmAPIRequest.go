@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoBmsOrderConsignConfirmAPIRequest struct {
 // NewCainiaoBmsOrderConsignConfirmRequest 初始化CainiaoBmsOrderConsignConfirmAPIRequest对象
 func NewCainiaoBmsOrderConsignConfirmRequest() *CainiaoBmsOrderConsignConfirmAPIRequest {
 	return &CainiaoBmsOrderConsignConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoBmsOrderConsignConfirmAPIRequest) Reset() {
+	r._content = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoBmsOrderConsignConfirmAPIRequest) SetContent(_content *BmsConsig
 // GetContent Content Getter
 func (r CainiaoBmsOrderConsignConfirmAPIRequest) GetContent() *BmsConsignOrderConfirm {
 	return r._content
+}
+
+var poolCainiaoBmsOrderConsignConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoBmsOrderConsignConfirmRequest()
+	},
+}
+
+// GetCainiaoBmsOrderConsignConfirmRequest 从 sync.Pool 获取 CainiaoBmsOrderConsignConfirmAPIRequest
+func GetCainiaoBmsOrderConsignConfirmAPIRequest() *CainiaoBmsOrderConsignConfirmAPIRequest {
+	return poolCainiaoBmsOrderConsignConfirmAPIRequest.Get().(*CainiaoBmsOrderConsignConfirmAPIRequest)
+}
+
+// ReleaseCainiaoBmsOrderConsignConfirmAPIRequest 将 CainiaoBmsOrderConsignConfirmAPIRequest 放入 sync.Pool
+func ReleaseCainiaoBmsOrderConsignConfirmAPIRequest(v *CainiaoBmsOrderConsignConfirmAPIRequest) {
+	v.Reset()
+	poolCainiaoBmsOrderConsignConfirmAPIRequest.Put(v)
 }

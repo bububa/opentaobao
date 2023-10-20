@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.ums.handling.get
 //
 // 加工单-回流单（新接口）
-func AlibabaWdkUmsHandlingGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsHandlingGetAPIRequest, session string) (*wdk.AlibabaWdkUmsHandlingGetAPIResponse, error) {
-	var resp wdk.AlibabaWdkUmsHandlingGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkUmsHandlingGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsHandlingGetAPIRequest, resp *wdk.AlibabaWdkUmsHandlingGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

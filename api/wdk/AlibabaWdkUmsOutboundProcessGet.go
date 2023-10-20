@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.ums.outbound.process.get
 //
 // 出库业务UMS异步处理结果返回
-func AlibabaWdkUmsOutboundProcessGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsOutboundProcessGetAPIRequest, session string) (*wdk.AlibabaWdkUmsOutboundProcessGetAPIResponse, error) {
-	var resp wdk.AlibabaWdkUmsOutboundProcessGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkUmsOutboundProcessGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsOutboundProcessGetAPIRequest, resp *wdk.AlibabaWdkUmsOutboundProcessGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

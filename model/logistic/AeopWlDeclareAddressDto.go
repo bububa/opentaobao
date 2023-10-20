@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // AeopWlDeclareAddressDto 结构体
 type AeopWlDeclareAddressDto struct {
 	// 电话
@@ -34,4 +38,36 @@ type AeopWlDeclareAddressDto struct {
 	FromWarehouseCode string `json:"from_warehouse_code,omitempty" xml:"from_warehouse_code,omitempty"`
 	// 卖家后台地址id,用来获取卖家详细地址信息，传入值为Long型；传入addressId后，其余字段值无效。
 	AddressId int64 `json:"address_id,omitempty" xml:"address_id,omitempty"`
+}
+
+var poolAeopWlDeclareAddressDto = sync.Pool{
+	New: func() any {
+		return new(AeopWlDeclareAddressDto)
+	},
+}
+
+// GetAeopWlDeclareAddressDto() 从对象池中获取AeopWlDeclareAddressDto
+func GetAeopWlDeclareAddressDto() *AeopWlDeclareAddressDto {
+	return poolAeopWlDeclareAddressDto.Get().(*AeopWlDeclareAddressDto)
+}
+
+// ReleaseAeopWlDeclareAddressDto 释放AeopWlDeclareAddressDto
+func ReleaseAeopWlDeclareAddressDto(v *AeopWlDeclareAddressDto) {
+	v.Phone = ""
+	v.Fax = ""
+	v.MemberType = ""
+	v.TrademanageId = ""
+	v.Street = ""
+	v.Country = ""
+	v.City = ""
+	v.County = ""
+	v.Email = ""
+	v.Name = ""
+	v.Province = ""
+	v.StreetAddress = ""
+	v.Mobile = ""
+	v.PostCode = ""
+	v.FromWarehouseCode = ""
+	v.AddressId = 0
+	poolAeopWlDeclareAddressDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package fundplatform
 
+import (
+	"sync"
+)
+
 // CardFetchAsyncRequest 结构体
 type CardFetchAsyncRequest struct {
 	// 制卡详情
@@ -16,4 +20,27 @@ type CardFetchAsyncRequest struct {
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 是否储值卡同步激活，默认为true
 	Active bool `json:"active,omitempty" xml:"active,omitempty"`
+}
+
+var poolCardFetchAsyncRequest = sync.Pool{
+	New: func() any {
+		return new(CardFetchAsyncRequest)
+	},
+}
+
+// GetCardFetchAsyncRequest() 从对象池中获取CardFetchAsyncRequest
+func GetCardFetchAsyncRequest() *CardFetchAsyncRequest {
+	return poolCardFetchAsyncRequest.Get().(*CardFetchAsyncRequest)
+}
+
+// ReleaseCardFetchAsyncRequest 释放CardFetchAsyncRequest
+func ReleaseCardFetchAsyncRequest(v *CardFetchAsyncRequest) {
+	v.CardFetchDetails = v.CardFetchDetails[:0]
+	v.BuyEntityType = ""
+	v.OutBizId = ""
+	v.SaleMode = ""
+	v.SubizType = 0
+	v.UserId = 0
+	v.Active = false
+	poolCardFetchAsyncRequest.Put(v)
 }

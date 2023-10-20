@@ -1,5 +1,9 @@
 package ju
 
+import (
+	"sync"
+)
+
 // CommunityActivityDto 结构体
 type CommunityActivityDto struct {
 	// 活动标题
@@ -18,4 +22,28 @@ type CommunityActivityDto struct {
 	ReservationTime int64 `json:"reservation_time,omitempty" xml:"reservation_time,omitempty"`
 	// 活动id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolCommunityActivityDto = sync.Pool{
+	New: func() any {
+		return new(CommunityActivityDto)
+	},
+}
+
+// GetCommunityActivityDto() 从对象池中获取CommunityActivityDto
+func GetCommunityActivityDto() *CommunityActivityDto {
+	return poolCommunityActivityDto.Get().(*CommunityActivityDto)
+}
+
+// ReleaseCommunityActivityDto 释放CommunityActivityDto
+func ReleaseCommunityActivityDto(v *CommunityActivityDto) {
+	v.ActivityTitle = ""
+	v.ActivityContent = ""
+	v.ActivityBackUrl = ""
+	v.SpreadTitle = ""
+	v.SpreadPicUrl = ""
+	v.OpeningTime = 0
+	v.ReservationTime = 0
+	v.Id = 0
+	poolCommunityActivityDto.Put(v)
 }

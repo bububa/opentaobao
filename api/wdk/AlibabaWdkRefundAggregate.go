@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.refund.aggregate
 //
 // 淘鲜达退款单按门店聚合查询
-func AlibabaWdkRefundAggregate(clt *core.SDKClient, req *wdk.AlibabaWdkRefundAggregateAPIRequest, session string) (*wdk.AlibabaWdkRefundAggregateAPIResponse, error) {
-	var resp wdk.AlibabaWdkRefundAggregateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkRefundAggregate(clt *core.SDKClient, req *wdk.AlibabaWdkRefundAggregateAPIRequest, resp *wdk.AlibabaWdkRefundAggregateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

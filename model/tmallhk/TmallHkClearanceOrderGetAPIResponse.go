@@ -2,6 +2,7 @@ package tmallhk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallHkClearanceOrderGetAPIResponse struct {
 	model.CommonResponse
 	TmallHkClearanceOrderGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallHkClearanceOrderGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallHkClearanceOrderGetAPIResponseModel).Reset()
 }
 
 // TmallHkClearanceOrderGetAPIResponseModel is 天猫国际订单清关信息 成功返回结果
@@ -28,4 +35,30 @@ type TmallHkClearanceOrderGetAPIResponseModel struct {
 	Obj *ClearanceDataDo `json:"obj,omitempty" xml:"obj,omitempty"`
 	// 是否正常
 	Succeeded bool `json:"succeeded,omitempty" xml:"succeeded,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallHkClearanceOrderGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResponseMessage = ""
+	m.ResponseCode = ""
+	m.Obj = nil
+	m.Succeeded = false
+}
+
+var poolTmallHkClearanceOrderGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallHkClearanceOrderGetAPIResponse)
+	},
+}
+
+// GetTmallHkClearanceOrderGetAPIResponse 从 sync.Pool 获取 TmallHkClearanceOrderGetAPIResponse
+func GetTmallHkClearanceOrderGetAPIResponse() *TmallHkClearanceOrderGetAPIResponse {
+	return poolTmallHkClearanceOrderGetAPIResponse.Get().(*TmallHkClearanceOrderGetAPIResponse)
+}
+
+// ReleaseTmallHkClearanceOrderGetAPIResponse 将 TmallHkClearanceOrderGetAPIResponse 保存到 sync.Pool
+func ReleaseTmallHkClearanceOrderGetAPIResponse(v *TmallHkClearanceOrderGetAPIResponse) {
+	v.Reset()
+	poolTmallHkClearanceOrderGetAPIResponse.Put(v)
 }

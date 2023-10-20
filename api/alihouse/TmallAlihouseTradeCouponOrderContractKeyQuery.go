@@ -9,11 +9,6 @@ import (
 // tmall.alihouse.trade.coupon.order.contract.key.query
 //
 // 查询电商券履约单合同地址
-func TmallAlihouseTradeCouponOrderContractKeyQuery(clt *core.SDKClient, req *alihouse.TmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest, session string) (*alihouse.TmallAlihouseTradeCouponOrderContractKeyQueryAPIResponse, error) {
-	var resp alihouse.TmallAlihouseTradeCouponOrderContractKeyQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallAlihouseTradeCouponOrderContractKeyQuery(clt *core.SDKClient, req *alihouse.TmallAlihouseTradeCouponOrderContractKeyQueryAPIRequest, resp *alihouse.TmallAlihouseTradeCouponOrderContractKeyQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

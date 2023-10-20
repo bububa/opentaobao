@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaAlihealthDrugKytScqyUploadrelationAPIRequest struct {
 // NewAlibabaAlihealthDrugKytScqyUploadrelationRequest 初始化AlibabaAlihealthDrugKytScqyUploadrelationAPIRequest对象
 func NewAlibabaAlihealthDrugKytScqyUploadrelationRequest() *AlibabaAlihealthDrugKytScqyUploadrelationAPIRequest {
 	return &AlibabaAlihealthDrugKytScqyUploadrelationAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytScqyUploadrelationAPIRequest) Reset() {
+	r._affirmFlag = ""
+	r._fileContent = ""
+	r._fileContentString = ""
+	r._refEntId = ""
+	r._clientType = ""
+	r._saveCodeRelation = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaAlihealthDrugKytScqyUploadrelationAPIRequest) SetSaveCodeRelatio
 // GetSaveCodeRelation SaveCodeRelation Getter
 func (r AlibabaAlihealthDrugKytScqyUploadrelationAPIRequest) GetSaveCodeRelation() *SaveCodeRelationType {
 	return r._saveCodeRelation
+}
+
+var poolAlibabaAlihealthDrugKytScqyUploadrelationAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytScqyUploadrelationRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytScqyUploadrelationRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytScqyUploadrelationAPIRequest
+func GetAlibabaAlihealthDrugKytScqyUploadrelationAPIRequest() *AlibabaAlihealthDrugKytScqyUploadrelationAPIRequest {
+	return poolAlibabaAlihealthDrugKytScqyUploadrelationAPIRequest.Get().(*AlibabaAlihealthDrugKytScqyUploadrelationAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytScqyUploadrelationAPIRequest 将 AlibabaAlihealthDrugKytScqyUploadrelationAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytScqyUploadrelationAPIRequest(v *AlibabaAlihealthDrugKytScqyUploadrelationAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytScqyUploadrelationAPIRequest.Put(v)
 }

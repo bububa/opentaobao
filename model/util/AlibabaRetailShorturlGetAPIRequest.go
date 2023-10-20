@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaRetailShorturlGetAPIRequest struct {
 // NewAlibabaRetailShorturlGetRequest 初始化AlibabaRetailShorturlGetAPIRequest对象
 func NewAlibabaRetailShorturlGetRequest() *AlibabaRetailShorturlGetAPIRequest {
 	return &AlibabaRetailShorturlGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaRetailShorturlGetAPIRequest) Reset() {
+	r._sourceUrl = ""
+	r._options = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaRetailShorturlGetAPIRequest) SetOptions(_options *ShortUrlOption
 // GetOptions Options Getter
 func (r AlibabaRetailShorturlGetAPIRequest) GetOptions() *ShortUrlOption {
 	return r._options
+}
+
+var poolAlibabaRetailShorturlGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaRetailShorturlGetRequest()
+	},
+}
+
+// GetAlibabaRetailShorturlGetRequest 从 sync.Pool 获取 AlibabaRetailShorturlGetAPIRequest
+func GetAlibabaRetailShorturlGetAPIRequest() *AlibabaRetailShorturlGetAPIRequest {
+	return poolAlibabaRetailShorturlGetAPIRequest.Get().(*AlibabaRetailShorturlGetAPIRequest)
+}
+
+// ReleaseAlibabaRetailShorturlGetAPIRequest 将 AlibabaRetailShorturlGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaRetailShorturlGetAPIRequest(v *AlibabaRetailShorturlGetAPIRequest) {
+	v.Reset()
+	poolAlibabaRetailShorturlGetAPIRequest.Put(v)
 }

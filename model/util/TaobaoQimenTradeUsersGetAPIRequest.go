@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoQimenTradeUsersGetAPIRequest struct {
 // NewTaobaoQimenTradeUsersGetRequest 初始化TaobaoQimenTradeUsersGetAPIRequest对象
 func NewTaobaoQimenTradeUsersGetRequest() *TaobaoQimenTradeUsersGetAPIRequest {
 	return &TaobaoQimenTradeUsersGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenTradeUsersGetAPIRequest) Reset() {
+	r._pageSize = 0
+	r._pageIndex = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoQimenTradeUsersGetAPIRequest) SetPageIndex(_pageIndex int64) erro
 // GetPageIndex PageIndex Getter
 func (r TaobaoQimenTradeUsersGetAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
+}
+
+var poolTaobaoQimenTradeUsersGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenTradeUsersGetRequest()
+	},
+}
+
+// GetTaobaoQimenTradeUsersGetRequest 从 sync.Pool 获取 TaobaoQimenTradeUsersGetAPIRequest
+func GetTaobaoQimenTradeUsersGetAPIRequest() *TaobaoQimenTradeUsersGetAPIRequest {
+	return poolTaobaoQimenTradeUsersGetAPIRequest.Get().(*TaobaoQimenTradeUsersGetAPIRequest)
+}
+
+// ReleaseTaobaoQimenTradeUsersGetAPIRequest 将 TaobaoQimenTradeUsersGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenTradeUsersGetAPIRequest(v *TaobaoQimenTradeUsersGetAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenTradeUsersGetAPIRequest.Put(v)
 }

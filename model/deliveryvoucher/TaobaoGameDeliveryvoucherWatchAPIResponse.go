@@ -2,6 +2,7 @@ package deliveryvoucher
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoGameDeliveryvoucherWatchAPIResponse struct {
 	TaobaoGameDeliveryvoucherWatchAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoGameDeliveryvoucherWatchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoGameDeliveryvoucherWatchAPIResponseModel).Reset()
+}
+
 // TaobaoGameDeliveryvoucherWatchAPIResponseModel is 监控预约数据 成功返回结果
 type TaobaoGameDeliveryvoucherWatchAPIResponseModel struct {
 	XMLName xml.Name `xml:"game_deliveryvoucher_watch_response"`
@@ -26,4 +33,29 @@ type TaobaoGameDeliveryvoucherWatchAPIResponseModel struct {
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// isSuccess
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoGameDeliveryvoucherWatchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.ResultCode = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoGameDeliveryvoucherWatchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoGameDeliveryvoucherWatchAPIResponse)
+	},
+}
+
+// GetTaobaoGameDeliveryvoucherWatchAPIResponse 从 sync.Pool 获取 TaobaoGameDeliveryvoucherWatchAPIResponse
+func GetTaobaoGameDeliveryvoucherWatchAPIResponse() *TaobaoGameDeliveryvoucherWatchAPIResponse {
+	return poolTaobaoGameDeliveryvoucherWatchAPIResponse.Get().(*TaobaoGameDeliveryvoucherWatchAPIResponse)
+}
+
+// ReleaseTaobaoGameDeliveryvoucherWatchAPIResponse 将 TaobaoGameDeliveryvoucherWatchAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoGameDeliveryvoucherWatchAPIResponse(v *TaobaoGameDeliveryvoucherWatchAPIResponse) {
+	v.Reset()
+	poolTaobaoGameDeliveryvoucherWatchAPIResponse.Put(v)
 }

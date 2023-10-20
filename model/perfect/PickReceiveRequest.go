@@ -1,5 +1,9 @@
 package perfect
 
+import (
+	"sync"
+)
+
 // PickReceiveRequest 结构体
 type PickReceiveRequest struct {
 	// 拣货单参数
@@ -22,4 +26,30 @@ type PickReceiveRequest struct {
 	CargoOwnerCode string `json:"cargo_owner_code,omitempty" xml:"cargo_owner_code,omitempty"`
 	// 1
 	WarehouseCode string `json:"warehouse_code,omitempty" xml:"warehouse_code,omitempty"`
+}
+
+var poolPickReceiveRequest = sync.Pool{
+	New: func() any {
+		return new(PickReceiveRequest)
+	},
+}
+
+// GetPickReceiveRequest() 从对象池中获取PickReceiveRequest
+func GetPickReceiveRequest() *PickReceiveRequest {
+	return poolPickReceiveRequest.Get().(*PickReceiveRequest)
+}
+
+// ReleasePickReceiveRequest 释放PickReceiveRequest
+func ReleasePickReceiveRequest(v *PickReceiveRequest) {
+	v.PickOrders = v.PickOrders[:0]
+	v.OutboundOrders = v.OutboundOrders[:0]
+	v.DockBarcode = ""
+	v.WorkMode = ""
+	v.WaveCode = ""
+	v.DockType = ""
+	v.Attributes = ""
+	v.DockCode = ""
+	v.CargoOwnerCode = ""
+	v.WarehouseCode = ""
+	poolPickReceiveRequest.Put(v)
 }

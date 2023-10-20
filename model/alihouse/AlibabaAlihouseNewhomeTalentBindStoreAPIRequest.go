@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeTalentBindStoreAPIRequest struct {
 // NewAlibabaAlihouseNewhomeTalentBindStoreRequest 初始化AlibabaAlihouseNewhomeTalentBindStoreAPIRequest对象
 func NewAlibabaAlihouseNewhomeTalentBindStoreRequest() *AlibabaAlihouseNewhomeTalentBindStoreAPIRequest {
 	return &AlibabaAlihouseNewhomeTalentBindStoreAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeTalentBindStoreAPIRequest) Reset() {
+	r._storeTalentList = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeTalentBindStoreAPIRequest) SetStoreTalentList(_st
 // GetStoreTalentList StoreTalentList Getter
 func (r AlibabaAlihouseNewhomeTalentBindStoreAPIRequest) GetStoreTalentList() *StoreTalentDto {
 	return r._storeTalentList
+}
+
+var poolAlibabaAlihouseNewhomeTalentBindStoreAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeTalentBindStoreRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeTalentBindStoreRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeTalentBindStoreAPIRequest
+func GetAlibabaAlihouseNewhomeTalentBindStoreAPIRequest() *AlibabaAlihouseNewhomeTalentBindStoreAPIRequest {
+	return poolAlibabaAlihouseNewhomeTalentBindStoreAPIRequest.Get().(*AlibabaAlihouseNewhomeTalentBindStoreAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeTalentBindStoreAPIRequest 将 AlibabaAlihouseNewhomeTalentBindStoreAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeTalentBindStoreAPIRequest(v *AlibabaAlihouseNewhomeTalentBindStoreAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeTalentBindStoreAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package train
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoTrainAgentOrderGetVtwoAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentOrderGetVtwoAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoTrainAgentOrderGetVtwoAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTrainAgentOrderGetVtwoAPIResponseModel).Reset()
 }
 
 // TaobaoTrainAgentOrderGetVtwoAPIResponseModel is 代理商获取订单信息回调APIv2--增加鉴权校验 成功返回结果
@@ -82,4 +89,57 @@ type TaobaoTrainAgentOrderGetVtwoAPIResponseModel struct {
 	NeedReceipt bool `json:"need_receipt,omitempty" xml:"need_receipt,omitempty"`
 	// 是否需要乘车人退款 true:需要 false:不需要
 	RefundByPassenger bool `json:"refund_by_passenger,omitempty" xml:"refund_by_passenger,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTrainAgentOrderGetVtwoAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Tickets = m.Tickets[:0]
+	m.VipCustomList = m.VipCustomList[:0]
+	m.Address = ""
+	m.CompanyName = ""
+	m.RelationName = ""
+	m.Telephone = ""
+	m.LatestIssueTime = ""
+	m.TransportName = ""
+	m.TransportPhone = ""
+	m.TransportAddress = ""
+	m.ExtendParams = ""
+	m.OnlineBookSeat = ""
+	m.InterchangeStation = ""
+	m.IsMultiTrip = ""
+	m.MainOrderId = 0
+	m.OrderStatus = 0
+	m.TotalPrice = 0
+	m.TtpOrderId = 0
+	m.OrderType = 0
+	m.PaperType = 0
+	m.PaperBackup = 0
+	m.PaperLowSeatCount = 0
+	m.TransportPrice = 0
+	m.ServicePrice = 0
+	m.AcceptNoVipCustom = 0
+	m.VipCustomMinSeatCount = 0
+	m.VipCustomType = 0
+	m.Mailing = false
+	m.IsSuccess = false
+	m.NeedReceipt = false
+	m.RefundByPassenger = false
+}
+
+var poolTaobaoTrainAgentOrderGetVtwoAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTrainAgentOrderGetVtwoAPIResponse)
+	},
+}
+
+// GetTaobaoTrainAgentOrderGetVtwoAPIResponse 从 sync.Pool 获取 TaobaoTrainAgentOrderGetVtwoAPIResponse
+func GetTaobaoTrainAgentOrderGetVtwoAPIResponse() *TaobaoTrainAgentOrderGetVtwoAPIResponse {
+	return poolTaobaoTrainAgentOrderGetVtwoAPIResponse.Get().(*TaobaoTrainAgentOrderGetVtwoAPIResponse)
+}
+
+// ReleaseTaobaoTrainAgentOrderGetVtwoAPIResponse 将 TaobaoTrainAgentOrderGetVtwoAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTrainAgentOrderGetVtwoAPIResponse(v *TaobaoTrainAgentOrderGetVtwoAPIResponse) {
+	v.Reset()
+	poolTaobaoTrainAgentOrderGetVtwoAPIResponse.Put(v)
 }

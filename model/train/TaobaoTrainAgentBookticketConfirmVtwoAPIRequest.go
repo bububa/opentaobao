@@ -2,6 +2,7 @@ package train
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -57,8 +58,33 @@ type TaobaoTrainAgentBookticketConfirmVtwoAPIRequest struct {
 // NewTaobaoTrainAgentBookticketConfirmVtwoRequest 初始化TaobaoTrainAgentBookticketConfirmVtwoAPIRequest对象
 func NewTaobaoTrainAgentBookticketConfirmVtwoRequest() *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest {
 	return &TaobaoTrainAgentBookticketConfirmVtwoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(20),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) Reset() {
+	r._tickets = r._tickets[:0]
+	r._ticketInfoList = r._ticketInfoList[:0]
+	r._depDate = ""
+	r._failMsg = ""
+	r._ticket12306Id = ""
+	r._alipayTradeNo = ""
+	r._subOrderId = ""
+	r._alipayAccount = ""
+	r._arriveDate = ""
+	r._fromStationName = ""
+	r._toStationName = ""
+	r._boardingGates = ""
+	r._expectDeliveryTime = ""
+	r._extendParams = ""
+	r._agentId = 0
+	r._mainOrderId = 0
+	r._ticketNum = 0
+	r._orderType = 0
+	r._status = false
+	r._canChange = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -336,4 +362,21 @@ func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetCanChange(_canChang
 // GetCanChange CanChange Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetCanChange() bool {
 	return r._canChange
+}
+
+var poolTaobaoTrainAgentBookticketConfirmVtwoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTrainAgentBookticketConfirmVtwoRequest()
+	},
+}
+
+// GetTaobaoTrainAgentBookticketConfirmVtwoRequest 从 sync.Pool 获取 TaobaoTrainAgentBookticketConfirmVtwoAPIRequest
+func GetTaobaoTrainAgentBookticketConfirmVtwoAPIRequest() *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest {
+	return poolTaobaoTrainAgentBookticketConfirmVtwoAPIRequest.Get().(*TaobaoTrainAgentBookticketConfirmVtwoAPIRequest)
+}
+
+// ReleaseTaobaoTrainAgentBookticketConfirmVtwoAPIRequest 将 TaobaoTrainAgentBookticketConfirmVtwoAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTrainAgentBookticketConfirmVtwoAPIRequest(v *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) {
+	v.Reset()
+	poolTaobaoTrainAgentBookticketConfirmVtwoAPIRequest.Put(v)
 }

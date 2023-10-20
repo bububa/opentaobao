@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // SendGoodsDetail 结构体
 type SendGoodsDetail struct {
 	// 包裹详情
@@ -10,4 +14,24 @@ type SendGoodsDetail struct {
 	ConsignStatus int64 `json:"consign_status,omitempty" xml:"consign_status,omitempty"`
 	// 数量
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
+}
+
+var poolSendGoodsDetail = sync.Pool{
+	New: func() any {
+		return new(SendGoodsDetail)
+	},
+}
+
+// GetSendGoodsDetail() 从对象池中获取SendGoodsDetail
+func GetSendGoodsDetail() *SendGoodsDetail {
+	return poolSendGoodsDetail.Get().(*SendGoodsDetail)
+}
+
+// ReleaseSendGoodsDetail 释放SendGoodsDetail
+func ReleaseSendGoodsDetail(v *SendGoodsDetail) {
+	v.GoodsDetails = v.GoodsDetails[:0]
+	v.Type = 0
+	v.ConsignStatus = 0
+	v.Amount = 0
+	poolSendGoodsDetail.Put(v)
 }

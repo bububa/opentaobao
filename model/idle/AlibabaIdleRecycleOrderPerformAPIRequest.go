@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleRecycleOrderPerformAPIRequest struct {
 // NewAlibabaIdleRecycleOrderPerformRequest 初始化AlibabaIdleRecycleOrderPerformAPIRequest对象
 func NewAlibabaIdleRecycleOrderPerformRequest() *AlibabaIdleRecycleOrderPerformAPIRequest {
 	return &AlibabaIdleRecycleOrderPerformAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleRecycleOrderPerformAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleRecycleOrderPerformAPIRequest) SetParam0(_param0 *RecycleOrd
 // GetParam0 Param0 Getter
 func (r AlibabaIdleRecycleOrderPerformAPIRequest) GetParam0() *RecycleOrderSynDto {
 	return r._param0
+}
+
+var poolAlibabaIdleRecycleOrderPerformAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleRecycleOrderPerformRequest()
+	},
+}
+
+// GetAlibabaIdleRecycleOrderPerformRequest 从 sync.Pool 获取 AlibabaIdleRecycleOrderPerformAPIRequest
+func GetAlibabaIdleRecycleOrderPerformAPIRequest() *AlibabaIdleRecycleOrderPerformAPIRequest {
+	return poolAlibabaIdleRecycleOrderPerformAPIRequest.Get().(*AlibabaIdleRecycleOrderPerformAPIRequest)
+}
+
+// ReleaseAlibabaIdleRecycleOrderPerformAPIRequest 将 AlibabaIdleRecycleOrderPerformAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleRecycleOrderPerformAPIRequest(v *AlibabaIdleRecycleOrderPerformAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleRecycleOrderPerformAPIRequest.Put(v)
 }

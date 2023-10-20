@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponse struct {
 	AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponseModel).Reset()
+}
+
 // AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponseModel is 设备状态查询 成功返回结果
 type AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_tmallgenie_auth_device_status_get_response"`
@@ -22,4 +29,27 @@ type AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口对象封装
 	Result *AlibabaAilabsTmallgenieAuthDeviceStatusGetResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponse)
+	},
+}
+
+// GetAlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponse 从 sync.Pool 获取 AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponse
+func GetAlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponse() *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponse {
+	return poolAlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponse.Get().(*AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponse)
+}
+
+// ReleaseAlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponse 将 AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponse(v *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponse) {
+	v.Reset()
+	poolAlibabaAilabsTmallgenieAuthDeviceStatusGetAPIResponse.Put(v)
 }

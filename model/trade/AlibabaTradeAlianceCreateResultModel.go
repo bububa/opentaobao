@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // AlibabaTradeAlianceCreateResultModel 结构体
 type AlibabaTradeAlianceCreateResultModel struct {
 	// errorCode
@@ -16,4 +20,27 @@ type AlibabaTradeAlianceCreateResultModel struct {
 	TotalAmount int64 `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
 	// 是否创建成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaTradeAlianceCreateResultModel = sync.Pool{
+	New: func() any {
+		return new(AlibabaTradeAlianceCreateResultModel)
+	},
+}
+
+// GetAlibabaTradeAlianceCreateResultModel() 从对象池中获取AlibabaTradeAlianceCreateResultModel
+func GetAlibabaTradeAlianceCreateResultModel() *AlibabaTradeAlianceCreateResultModel {
+	return poolAlibabaTradeAlianceCreateResultModel.Get().(*AlibabaTradeAlianceCreateResultModel)
+}
+
+// ReleaseAlibabaTradeAlianceCreateResultModel 释放AlibabaTradeAlianceCreateResultModel
+func ReleaseAlibabaTradeAlianceCreateResultModel(v *AlibabaTradeAlianceCreateResultModel) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.MainOrderId = ""
+	v.TotalAmount = 0
+	v.Success = false
+	poolAlibabaTradeAlianceCreateResultModel.Put(v)
 }

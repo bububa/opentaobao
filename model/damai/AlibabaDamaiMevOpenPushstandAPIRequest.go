@@ -2,6 +2,7 @@ package damai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDamaiMevOpenPushstandAPIRequest struct {
 // NewAlibabaDamaiMevOpenPushstandRequest 初始化AlibabaDamaiMevOpenPushstandAPIRequest对象
 func NewAlibabaDamaiMevOpenPushstandRequest() *AlibabaDamaiMevOpenPushstandAPIRequest {
 	return &AlibabaDamaiMevOpenPushstandAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiMevOpenPushstandAPIRequest) Reset() {
+	r._pushStandParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDamaiMevOpenPushstandAPIRequest) SetPushStandParam(_pushStandPar
 // GetPushStandParam PushStandParam Getter
 func (r AlibabaDamaiMevOpenPushstandAPIRequest) GetPushStandParam() *ThirdStandPushOpenParam {
 	return r._pushStandParam
+}
+
+var poolAlibabaDamaiMevOpenPushstandAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiMevOpenPushstandRequest()
+	},
+}
+
+// GetAlibabaDamaiMevOpenPushstandRequest 从 sync.Pool 获取 AlibabaDamaiMevOpenPushstandAPIRequest
+func GetAlibabaDamaiMevOpenPushstandAPIRequest() *AlibabaDamaiMevOpenPushstandAPIRequest {
+	return poolAlibabaDamaiMevOpenPushstandAPIRequest.Get().(*AlibabaDamaiMevOpenPushstandAPIRequest)
+}
+
+// ReleaseAlibabaDamaiMevOpenPushstandAPIRequest 将 AlibabaDamaiMevOpenPushstandAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiMevOpenPushstandAPIRequest(v *AlibabaDamaiMevOpenPushstandAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiMevOpenPushstandAPIRequest.Put(v)
 }

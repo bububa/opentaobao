@@ -1,5 +1,9 @@
 package traveltrade
 
+import (
+	"sync"
+)
+
 // PayInfo 结构体
 type PayInfo struct {
 	// 支付宝交易号
@@ -14,4 +18,26 @@ type PayInfo struct {
 	ReceivedPayment int64 `json:"received_payment,omitempty" xml:"received_payment,omitempty"`
 	// 分阶段付款的已付金额
 	StepPaidFee int64 `json:"step_paid_fee,omitempty" xml:"step_paid_fee,omitempty"`
+}
+
+var poolPayInfo = sync.Pool{
+	New: func() any {
+		return new(PayInfo)
+	},
+}
+
+// GetPayInfo() 从对象池中获取PayInfo
+func GetPayInfo() *PayInfo {
+	return poolPayInfo.Get().(*PayInfo)
+}
+
+// ReleasePayInfo 释放PayInfo
+func ReleasePayInfo(v *PayInfo) {
+	v.AlipayNo = ""
+	v.PayTime = ""
+	v.StepTradeStatus = ""
+	v.DiscountFee = 0
+	v.ReceivedPayment = 0
+	v.StepPaidFee = 0
+	poolPayInfo.Put(v)
 }

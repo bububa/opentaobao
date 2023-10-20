@@ -1,5 +1,9 @@
 package legalcase
 
+import (
+	"sync"
+)
+
 // EntrustModel 结构体
 type EntrustModel struct {
 	// 附件
@@ -30,4 +34,34 @@ type EntrustModel struct {
 	SupplierCode string `json:"supplier_code,omitempty" xml:"supplier_code,omitempty"`
 	// 供应商名称
 	SupplierName string `json:"supplier_name,omitempty" xml:"supplier_name,omitempty"`
+}
+
+var poolEntrustModel = sync.Pool{
+	New: func() any {
+		return new(EntrustModel)
+	},
+}
+
+// GetEntrustModel() 从对象池中获取EntrustModel
+func GetEntrustModel() *EntrustModel {
+	return poolEntrustModel.Get().(*EntrustModel)
+}
+
+// ReleaseEntrustModel 释放EntrustModel
+func ReleaseEntrustModel(v *EntrustModel) {
+	v.AttachmentList = v.AttachmentList[:0]
+	v.CaseIds = v.CaseIds[:0]
+	v.EntrustTypes = v.EntrustTypes[:0]
+	v.Deadline = ""
+	v.Description = ""
+	v.EntrustCode = ""
+	v.EntrustParty = ""
+	v.EntrustPeople = ""
+	v.EntrustTime = ""
+	v.LvmsEntrustCode = ""
+	v.MainLawyer = ""
+	v.Suggest = ""
+	v.SupplierCode = ""
+	v.SupplierName = ""
+	poolEntrustModel.Put(v)
 }

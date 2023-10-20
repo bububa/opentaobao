@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaSecurityJaqRpCloudRphitAPIRequest struct {
 // NewAlibabaSecurityJaqRpCloudRphitRequest 初始化AlibabaSecurityJaqRpCloudRphitAPIRequest对象
 func NewAlibabaSecurityJaqRpCloudRphitRequest() *AlibabaSecurityJaqRpCloudRphitAPIRequest {
 	return &AlibabaSecurityJaqRpCloudRphitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqRpCloudRphitAPIRequest) Reset() {
+	r._content = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaSecurityJaqRpCloudRphitAPIRequest) SetContent(_content string) e
 // GetContent Content Getter
 func (r AlibabaSecurityJaqRpCloudRphitAPIRequest) GetContent() string {
 	return r._content
+}
+
+var poolAlibabaSecurityJaqRpCloudRphitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqRpCloudRphitRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqRpCloudRphitRequest 从 sync.Pool 获取 AlibabaSecurityJaqRpCloudRphitAPIRequest
+func GetAlibabaSecurityJaqRpCloudRphitAPIRequest() *AlibabaSecurityJaqRpCloudRphitAPIRequest {
+	return poolAlibabaSecurityJaqRpCloudRphitAPIRequest.Get().(*AlibabaSecurityJaqRpCloudRphitAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqRpCloudRphitAPIRequest 将 AlibabaSecurityJaqRpCloudRphitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqRpCloudRphitAPIRequest(v *AlibabaSecurityJaqRpCloudRphitAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqRpCloudRphitAPIRequest.Put(v)
 }

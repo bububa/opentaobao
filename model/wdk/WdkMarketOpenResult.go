@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WdkMarketOpenResult 结构体
 type WdkMarketOpenResult struct {
 	// 123
@@ -13,7 +17,30 @@ type WdkMarketOpenResult struct {
 	// 错误编码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 唯一码信息
-	Data *UniqueDiscountCodeBo `json:"data,omitempty" xml:"data,omitempty"`
+	Data *UniqueDiscountCodeBO `json:"data,omitempty" xml:"data,omitempty"`
 	// 123123
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolWdkMarketOpenResult = sync.Pool{
+	New: func() any {
+		return new(WdkMarketOpenResult)
+	},
+}
+
+// GetWdkMarketOpenResult() 从对象池中获取WdkMarketOpenResult
+func GetWdkMarketOpenResult() *WdkMarketOpenResult {
+	return poolWdkMarketOpenResult.Get().(*WdkMarketOpenResult)
+}
+
+// ReleaseWdkMarketOpenResult 释放WdkMarketOpenResult
+func ReleaseWdkMarketOpenResult(v *WdkMarketOpenResult) {
+	v.Datas = v.Datas[:0]
+	v.ActivityList = v.ActivityList[:0]
+	v.ErrorCode = ""
+	v.Message = ""
+	v.ErrCode = ""
+	v.Data = nil
+	v.Success = false
+	poolWdkMarketOpenResult.Put(v)
 }

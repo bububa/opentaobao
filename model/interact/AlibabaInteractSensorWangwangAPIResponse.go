@@ -2,6 +2,7 @@ package interact
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaInteractSensorWangwangAPIResponse struct {
 	AlibabaInteractSensorWangwangAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaInteractSensorWangwangAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaInteractSensorWangwangAPIResponseModel).Reset()
+}
+
 // AlibabaInteractSensorWangwangAPIResponseModel is 手淘拉起旺旺接口 成功返回结果
 type AlibabaInteractSensorWangwangAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_sensor_wangwang_response"`
@@ -22,4 +29,27 @@ type AlibabaInteractSensorWangwangAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result=0
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaInteractSensorWangwangAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = ""
+}
+
+var poolAlibabaInteractSensorWangwangAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaInteractSensorWangwangAPIResponse)
+	},
+}
+
+// GetAlibabaInteractSensorWangwangAPIResponse 从 sync.Pool 获取 AlibabaInteractSensorWangwangAPIResponse
+func GetAlibabaInteractSensorWangwangAPIResponse() *AlibabaInteractSensorWangwangAPIResponse {
+	return poolAlibabaInteractSensorWangwangAPIResponse.Get().(*AlibabaInteractSensorWangwangAPIResponse)
+}
+
+// ReleaseAlibabaInteractSensorWangwangAPIResponse 将 AlibabaInteractSensorWangwangAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaInteractSensorWangwangAPIResponse(v *AlibabaInteractSensorWangwangAPIResponse) {
+	v.Reset()
+	poolAlibabaInteractSensorWangwangAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // InsightWordPriceDistributeDataDto 结构体
 type InsightWordPriceDistributeDataDto struct {
 	// 点击转化率
@@ -40,4 +44,39 @@ type InsightWordPriceDistributeDataDto struct {
 	Favshoptotal int64 `json:"favshoptotal,omitempty" xml:"favshoptotal,omitempty"`
 	// 竞争度
 	Competition int64 `json:"competition,omitempty" xml:"competition,omitempty"`
+}
+
+var poolInsightWordPriceDistributeDataDto = sync.Pool{
+	New: func() any {
+		return new(InsightWordPriceDistributeDataDto)
+	},
+}
+
+// GetInsightWordPriceDistributeDataDto() 从对象池中获取InsightWordPriceDistributeDataDto
+func GetInsightWordPriceDistributeDataDto() *InsightWordPriceDistributeDataDto {
+	return poolInsightWordPriceDistributeDataDto.Get().(*InsightWordPriceDistributeDataDto)
+}
+
+// ReleaseInsightWordPriceDistributeDataDto 释放InsightWordPriceDistributeDataDto
+func ReleaseInsightWordPriceDistributeDataDto(v *InsightWordPriceDistributeDataDto) {
+	v.Coverage = ""
+	v.Cpc = ""
+	v.Roi = ""
+	v.Bidword = ""
+	v.Ctr = ""
+	v.Impression = 0
+	v.Indirecttransaction = 0
+	v.Click = 0
+	v.Cost = 0
+	v.Directtransaction = 0
+	v.Favitemtotal = 0
+	v.Transactionshippingtotal = 0
+	v.Favtotal = 0
+	v.Transactiontotal = 0
+	v.Indirecttransactionshipping = 0
+	v.Price = 0
+	v.Directtransactionshipping = 0
+	v.Favshoptotal = 0
+	v.Competition = 0
+	poolInsightWordPriceDistributeDataDto.Put(v)
 }

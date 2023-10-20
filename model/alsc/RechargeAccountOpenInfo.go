@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // RechargeAccountOpenInfo 结构体
 type RechargeAccountOpenInfo struct {
 	// 账户id
@@ -30,4 +34,34 @@ type RechargeAccountOpenInfo struct {
 	UsableValue int64 `json:"usable_value,omitempty" xml:"usable_value,omitempty"`
 	// 是否删除
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
+}
+
+var poolRechargeAccountOpenInfo = sync.Pool{
+	New: func() any {
+		return new(RechargeAccountOpenInfo)
+	},
+}
+
+// GetRechargeAccountOpenInfo() 从对象池中获取RechargeAccountOpenInfo
+func GetRechargeAccountOpenInfo() *RechargeAccountOpenInfo {
+	return poolRechargeAccountOpenInfo.Get().(*RechargeAccountOpenInfo)
+}
+
+// ReleaseRechargeAccountOpenInfo 释放RechargeAccountOpenInfo
+func ReleaseRechargeAccountOpenInfo(v *RechargeAccountOpenInfo) {
+	v.AccountId = ""
+	v.CardId = ""
+	v.CustomerId = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.OptPlanId = ""
+	v.GiftValue = 0
+	v.GiftValueTotal = 0
+	v.PreValue = 0
+	v.PreValueTotal = 0
+	v.RealValue = 0
+	v.RealValueTotal = 0
+	v.UsableValue = 0
+	v.Deleted = false
+	poolRechargeAccountOpenInfo.Put(v)
 }

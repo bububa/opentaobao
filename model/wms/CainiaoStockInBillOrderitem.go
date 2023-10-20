@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // CainiaoStockInBillOrderitem 结构体
 type CainiaoStockInBillOrderitem struct {
 	// 仓库收货商品信息
@@ -12,4 +16,25 @@ type CainiaoStockInBillOrderitem struct {
 	ItemCode string `json:"item_code,omitempty" xml:"item_code,omitempty"`
 	// 通知数量
 	ApplyQty int64 `json:"apply_qty,omitempty" xml:"apply_qty,omitempty"`
+}
+
+var poolCainiaoStockInBillOrderitem = sync.Pool{
+	New: func() any {
+		return new(CainiaoStockInBillOrderitem)
+	},
+}
+
+// GetCainiaoStockInBillOrderitem() 从对象池中获取CainiaoStockInBillOrderitem
+func GetCainiaoStockInBillOrderitem() *CainiaoStockInBillOrderitem {
+	return poolCainiaoStockInBillOrderitem.Get().(*CainiaoStockInBillOrderitem)
+}
+
+// ReleaseCainiaoStockInBillOrderitem 释放CainiaoStockInBillOrderitem
+func ReleaseCainiaoStockInBillOrderitem(v *CainiaoStockInBillOrderitem) {
+	v.InventoryItemList = v.InventoryItemList[:0]
+	v.OrderItemId = ""
+	v.ItemId = ""
+	v.ItemCode = ""
+	v.ApplyQty = 0
+	poolCainiaoStockInBillOrderitem.Put(v)
 }

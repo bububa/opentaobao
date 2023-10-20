@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // ItemListQuery 结构体
 type ItemListQuery struct {
 	// Product Ids which needs to be excluded
@@ -34,4 +38,36 @@ type ItemListQuery struct {
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// Search field by product groups. Enter product group id (groupId).
 	GroupId int64 `json:"group_id,omitempty" xml:"group_id,omitempty"`
+}
+
+var poolItemListQuery = sync.Pool{
+	New: func() any {
+		return new(ItemListQuery)
+	},
+}
+
+// GetItemListQuery() 从对象池中获取ItemListQuery
+func GetItemListQuery() *ItemListQuery {
+	return poolItemListQuery.Get().(*ItemListQuery)
+}
+
+// ReleaseItemListQuery 释放ItemListQuery
+func ReleaseItemListQuery(v *ItemListQuery) {
+	v.ExceptedProductIds = v.ExceptedProductIds[:0]
+	v.OwnerMemberId = ""
+	v.ProductStatusType = ""
+	v.Subject = ""
+	v.WsDisplay = ""
+	v.HaveNationalQuote = ""
+	v.GmtCreateStart = ""
+	v.GmtCreateEnd = ""
+	v.GmtModifiedStart = ""
+	v.GmtModifiedEnd = ""
+	v.SkuCode = ""
+	v.CurrentPage = 0
+	v.OffLineTime = 0
+	v.PageSize = 0
+	v.ProductId = 0
+	v.GroupId = 0
+	poolItemListQuery.Put(v)
 }

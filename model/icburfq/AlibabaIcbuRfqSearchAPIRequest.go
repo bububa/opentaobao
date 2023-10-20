@@ -2,6 +2,7 @@ package icburfq
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaIcbuRfqSearchAPIRequest struct {
 // NewAlibabaIcbuRfqSearchRequest 初始化AlibabaIcbuRfqSearchAPIRequest对象
 func NewAlibabaIcbuRfqSearchRequest() *AlibabaIcbuRfqSearchAPIRequest {
 	return &AlibabaIcbuRfqSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIcbuRfqSearchAPIRequest) Reset() {
+	r._md5key = ""
+	r._cond = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaIcbuRfqSearchAPIRequest) SetCond(_cond *RfqRequestSearchCondDto)
 // GetCond Cond Getter
 func (r AlibabaIcbuRfqSearchAPIRequest) GetCond() *RfqRequestSearchCondDto {
 	return r._cond
+}
+
+var poolAlibabaIcbuRfqSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIcbuRfqSearchRequest()
+	},
+}
+
+// GetAlibabaIcbuRfqSearchRequest 从 sync.Pool 获取 AlibabaIcbuRfqSearchAPIRequest
+func GetAlibabaIcbuRfqSearchAPIRequest() *AlibabaIcbuRfqSearchAPIRequest {
+	return poolAlibabaIcbuRfqSearchAPIRequest.Get().(*AlibabaIcbuRfqSearchAPIRequest)
+}
+
+// ReleaseAlibabaIcbuRfqSearchAPIRequest 将 AlibabaIcbuRfqSearchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIcbuRfqSearchAPIRequest(v *AlibabaIcbuRfqSearchAPIRequest) {
+	v.Reset()
+	poolAlibabaIcbuRfqSearchAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package openmall
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoOpenmallTradeAddressParseAPIResponse struct {
 	TaobaoOpenmallTradeAddressParseAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOpenmallTradeAddressParseAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOpenmallTradeAddressParseAPIResponseModel).Reset()
+}
+
 // TaobaoOpenmallTradeAddressParseAPIResponseModel is openmall服务地址区域码解析 成功返回结果
 type TaobaoOpenmallTradeAddressParseAPIResponseModel struct {
 	XMLName xml.Name `xml:"openmall_trade_address_parse_response"`
@@ -22,4 +29,27 @@ type TaobaoOpenmallTradeAddressParseAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 一组地址解析结构，解析正确率与地址完整度相关
 	Result *TopParseAddressVo `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOpenmallTradeAddressParseAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoOpenmallTradeAddressParseAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOpenmallTradeAddressParseAPIResponse)
+	},
+}
+
+// GetTaobaoOpenmallTradeAddressParseAPIResponse 从 sync.Pool 获取 TaobaoOpenmallTradeAddressParseAPIResponse
+func GetTaobaoOpenmallTradeAddressParseAPIResponse() *TaobaoOpenmallTradeAddressParseAPIResponse {
+	return poolTaobaoOpenmallTradeAddressParseAPIResponse.Get().(*TaobaoOpenmallTradeAddressParseAPIResponse)
+}
+
+// ReleaseTaobaoOpenmallTradeAddressParseAPIResponse 将 TaobaoOpenmallTradeAddressParseAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOpenmallTradeAddressParseAPIResponse(v *TaobaoOpenmallTradeAddressParseAPIResponse) {
+	v.Reset()
+	poolTaobaoOpenmallTradeAddressParseAPIResponse.Put(v)
 }

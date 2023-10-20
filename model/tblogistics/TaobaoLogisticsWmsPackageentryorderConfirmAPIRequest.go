@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsWmsPackageentryorderConfirmAPIRequest struct {
 // NewTaobaoLogisticsWmsPackageentryorderConfirmRequest 初始化TaobaoLogisticsWmsPackageentryorderConfirmAPIRequest对象
 func NewTaobaoLogisticsWmsPackageentryorderConfirmRequest() *TaobaoLogisticsWmsPackageentryorderConfirmAPIRequest {
 	return &TaobaoLogisticsWmsPackageentryorderConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsWmsPackageentryorderConfirmAPIRequest) Reset() {
+	r._confirmPackageEntryOrderRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsWmsPackageentryorderConfirmAPIRequest) SetConfirmPackage
 // GetConfirmPackageEntryOrderRequest ConfirmPackageEntryOrderRequest Getter
 func (r TaobaoLogisticsWmsPackageentryorderConfirmAPIRequest) GetConfirmPackageEntryOrderRequest() *ConfirmPackageOrderRequest {
 	return r._confirmPackageEntryOrderRequest
+}
+
+var poolTaobaoLogisticsWmsPackageentryorderConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsWmsPackageentryorderConfirmRequest()
+	},
+}
+
+// GetTaobaoLogisticsWmsPackageentryorderConfirmRequest 从 sync.Pool 获取 TaobaoLogisticsWmsPackageentryorderConfirmAPIRequest
+func GetTaobaoLogisticsWmsPackageentryorderConfirmAPIRequest() *TaobaoLogisticsWmsPackageentryorderConfirmAPIRequest {
+	return poolTaobaoLogisticsWmsPackageentryorderConfirmAPIRequest.Get().(*TaobaoLogisticsWmsPackageentryorderConfirmAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsWmsPackageentryorderConfirmAPIRequest 将 TaobaoLogisticsWmsPackageentryorderConfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsWmsPackageentryorderConfirmAPIRequest(v *TaobaoLogisticsWmsPackageentryorderConfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsWmsPackageentryorderConfirmAPIRequest.Put(v)
 }

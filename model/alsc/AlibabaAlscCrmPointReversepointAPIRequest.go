@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmPointReversepointAPIRequest struct {
 // NewAlibabaAlscCrmPointReversepointRequest 初始化AlibabaAlscCrmPointReversepointAPIRequest对象
 func NewAlibabaAlscCrmPointReversepointRequest() *AlibabaAlscCrmPointReversepointAPIRequest {
 	return &AlibabaAlscCrmPointReversepointAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmPointReversepointAPIRequest) Reset() {
+	r._paramReverseConsumePointOpenReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmPointReversepointAPIRequest) SetParamReverseConsumePointO
 // GetParamReverseConsumePointOpenReq ParamReverseConsumePointOpenReq Getter
 func (r AlibabaAlscCrmPointReversepointAPIRequest) GetParamReverseConsumePointOpenReq() *ReverseConsumePointOpenReq {
 	return r._paramReverseConsumePointOpenReq
+}
+
+var poolAlibabaAlscCrmPointReversepointAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmPointReversepointRequest()
+	},
+}
+
+// GetAlibabaAlscCrmPointReversepointRequest 从 sync.Pool 获取 AlibabaAlscCrmPointReversepointAPIRequest
+func GetAlibabaAlscCrmPointReversepointAPIRequest() *AlibabaAlscCrmPointReversepointAPIRequest {
+	return poolAlibabaAlscCrmPointReversepointAPIRequest.Get().(*AlibabaAlscCrmPointReversepointAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmPointReversepointAPIRequest 将 AlibabaAlscCrmPointReversepointAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmPointReversepointAPIRequest(v *AlibabaAlscCrmPointReversepointAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmPointReversepointAPIRequest.Put(v)
 }

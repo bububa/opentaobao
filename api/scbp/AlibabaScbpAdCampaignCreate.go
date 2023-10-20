@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.ad.campaign.create
 //
 // 创建计划
-func AlibabaScbpAdCampaignCreate(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignCreateAPIRequest, session string) (*scbp.AlibabaScbpAdCampaignCreateAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdCampaignCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAdCampaignCreate(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignCreateAPIRequest, resp *scbp.AlibabaScbpAdCampaignCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

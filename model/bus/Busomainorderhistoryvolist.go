@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // Busomainorderhistoryvolist 结构体
 type Busomainorderhistoryvolist struct {
 	// lastPlaceName 目的地
@@ -58,4 +62,48 @@ type Busomainorderhistoryvolist struct {
 	RefundStatus int64 `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// orderModel 1 自助机 0 线上订单
 	OrderModel int64 `json:"order_model,omitempty" xml:"order_model,omitempty"`
+}
+
+var poolBusomainorderhistoryvolist = sync.Pool{
+	New: func() any {
+		return new(Busomainorderhistoryvolist)
+	},
+}
+
+// GetBusomainorderhistoryvolist() 从对象池中获取Busomainorderhistoryvolist
+func GetBusomainorderhistoryvolist() *Busomainorderhistoryvolist {
+	return poolBusomainorderhistoryvolist.Get().(*Busomainorderhistoryvolist)
+}
+
+// ReleaseBusomainorderhistoryvolist 释放Busomainorderhistoryvolist
+func ReleaseBusomainorderhistoryvolist(v *Busomainorderhistoryvolist) {
+	v.LastPlaceName = ""
+	v.ScheduleId = ""
+	v.GmtCreate = ""
+	v.StartCityName = ""
+	v.IssueTime = ""
+	v.PayTime = ""
+	v.AgentOrderId = ""
+	v.StartTime = ""
+	v.EndCityName = ""
+	v.ArriveStationName = ""
+	v.BusNumber = ""
+	v.StartStationName = ""
+	v.ExtAttr = ""
+	v.AlipayTradeId = ""
+	v.TradeSource = ""
+	v.PayMode = ""
+	v.MachineNumber = ""
+	v.AgentId = 0
+	v.CanRefund = 0
+	v.MainOrderId = 0
+	v.OrderStatus = 0
+	v.DiscountAmount = 0
+	v.RefundAmount = 0
+	v.PayStatus = 0
+	v.TicketCount = 0
+	v.TotalPrice = 0
+	v.RefundStatus = 0
+	v.OrderModel = 0
+	poolBusomainorderhistoryvolist.Put(v)
 }

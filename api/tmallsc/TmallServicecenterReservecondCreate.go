@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.reservecond.create
 //
 // 1、设置主动预约开通条件
-func TmallServicecenterReservecondCreate(clt *core.SDKClient, req *tmallsc.TmallServicecenterReservecondCreateAPIRequest, session string) (*tmallsc.TmallServicecenterReservecondCreateAPIResponse, error) {
-	var resp tmallsc.TmallServicecenterReservecondCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterReservecondCreate(clt *core.SDKClient, req *tmallsc.TmallServicecenterReservecondCreateAPIRequest, resp *tmallsc.TmallServicecenterReservecondCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

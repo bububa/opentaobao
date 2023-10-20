@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // TopReverseInBoundCallBackRequest 结构体
 type TopReverseInBoundCallBackRequest struct {
 	// 消息体
@@ -12,4 +16,25 @@ type TopReverseInBoundCallBackRequest struct {
 	StoreCode string `json:"store_code,omitempty" xml:"store_code,omitempty"`
 	// 测试标记
 	Test bool `json:"test,omitempty" xml:"test,omitempty"`
+}
+
+var poolTopReverseInBoundCallBackRequest = sync.Pool{
+	New: func() any {
+		return new(TopReverseInBoundCallBackRequest)
+	},
+}
+
+// GetTopReverseInBoundCallBackRequest() 从对象池中获取TopReverseInBoundCallBackRequest
+func GetTopReverseInBoundCallBackRequest() *TopReverseInBoundCallBackRequest {
+	return poolTopReverseInBoundCallBackRequest.Get().(*TopReverseInBoundCallBackRequest)
+}
+
+// ReleaseTopReverseInBoundCallBackRequest 释放TopReverseInBoundCallBackRequest
+func ReleaseTopReverseInBoundCallBackRequest(v *TopReverseInBoundCallBackRequest) {
+	v.Details = v.Details[:0]
+	v.Extension = ""
+	v.ReverseSourceOrderNo = ""
+	v.StoreCode = ""
+	v.Test = false
+	poolTopReverseInBoundCallBackRequest.Put(v)
 }

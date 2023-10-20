@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // CouponQrcodeParamDo 结构体
 type CouponQrcodeParamDo struct {
 	// 商家编码
@@ -12,4 +16,25 @@ type CouponQrcodeParamDo struct {
 	StartTime string `json:"start_time,omitempty" xml:"start_time,omitempty"`
 	// 推广结束时间
 	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
+}
+
+var poolCouponQrcodeParamDo = sync.Pool{
+	New: func() any {
+		return new(CouponQrcodeParamDo)
+	},
+}
+
+// GetCouponQrcodeParamDo() 从对象池中获取CouponQrcodeParamDo
+func GetCouponQrcodeParamDo() *CouponQrcodeParamDo {
+	return poolCouponQrcodeParamDo.Get().(*CouponQrcodeParamDo)
+}
+
+// ReleaseCouponQrcodeParamDo 释放CouponQrcodeParamDo
+func ReleaseCouponQrcodeParamDo(v *CouponQrcodeParamDo) {
+	v.MerchantCode = ""
+	v.BrandName = ""
+	v.GuideId = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	poolCouponQrcodeParamDo.Put(v)
 }

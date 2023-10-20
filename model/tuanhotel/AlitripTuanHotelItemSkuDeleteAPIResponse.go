@@ -2,6 +2,7 @@ package tuanhotel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlitripTuanHotelItemSkuDeleteAPIResponse struct {
 	model.CommonResponse
 	AlitripTuanHotelItemSkuDeleteAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlitripTuanHotelItemSkuDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripTuanHotelItemSkuDeleteAPIResponseModel).Reset()
 }
 
 // AlitripTuanHotelItemSkuDeleteAPIResponseModel is 酒店团购套餐商品SKU删除 成功返回结果
@@ -32,4 +39,32 @@ type AlitripTuanHotelItemSkuDeleteAPIResponseModel struct {
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// 操作状态
 	Status bool `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripTuanHotelItemSkuDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TopItemSkuBaseInfoList = m.TopItemSkuBaseInfoList[:0]
+	m.MsgCode = ""
+	m.Message = ""
+	m.ItemId = 0
+	m.SellerId = 0
+	m.Status = false
+}
+
+var poolAlitripTuanHotelItemSkuDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripTuanHotelItemSkuDeleteAPIResponse)
+	},
+}
+
+// GetAlitripTuanHotelItemSkuDeleteAPIResponse 从 sync.Pool 获取 AlitripTuanHotelItemSkuDeleteAPIResponse
+func GetAlitripTuanHotelItemSkuDeleteAPIResponse() *AlitripTuanHotelItemSkuDeleteAPIResponse {
+	return poolAlitripTuanHotelItemSkuDeleteAPIResponse.Get().(*AlitripTuanHotelItemSkuDeleteAPIResponse)
+}
+
+// ReleaseAlitripTuanHotelItemSkuDeleteAPIResponse 将 AlitripTuanHotelItemSkuDeleteAPIResponse 保存到 sync.Pool
+func ReleaseAlitripTuanHotelItemSkuDeleteAPIResponse(v *AlitripTuanHotelItemSkuDeleteAPIResponse) {
+	v.Reset()
+	poolAlitripTuanHotelItemSkuDeleteAPIResponse.Put(v)
 }

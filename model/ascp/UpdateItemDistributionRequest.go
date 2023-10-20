@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // UpdateItemDistributionRequest 结构体
 type UpdateItemDistributionRequest struct {
 	// 指定分销商铺货详情
@@ -32,4 +36,35 @@ type UpdateItemDistributionRequest struct {
 	Level4Price int64 `json:"level4_price,omitempty" xml:"level4_price,omitempty"`
 	// 5级分销价格
 	Level5Price int64 `json:"level5_price,omitempty" xml:"level5_price,omitempty"`
+}
+
+var poolUpdateItemDistributionRequest = sync.Pool{
+	New: func() any {
+		return new(UpdateItemDistributionRequest)
+	},
+}
+
+// GetUpdateItemDistributionRequest() 从对象池中获取UpdateItemDistributionRequest
+func GetUpdateItemDistributionRequest() *UpdateItemDistributionRequest {
+	return poolUpdateItemDistributionRequest.Get().(*UpdateItemDistributionRequest)
+}
+
+// ReleaseUpdateItemDistributionRequest 释放UpdateItemDistributionRequest
+func ReleaseUpdateItemDistributionRequest(v *UpdateItemDistributionRequest) {
+	v.DistributionInfoList = v.DistributionInfoList[:0]
+	v.RequestId = ""
+	v.ItemId = ""
+	v.SkuId = ""
+	v.DistributeCurrency = ""
+	v.RetailCurrency = ""
+	v.RequestTime = 0
+	v.LogisticsCostTemplateId = 0
+	v.DistributePrice = 0
+	v.RetailPrice = 0
+	v.Level1Price = 0
+	v.Level2Price = 0
+	v.Level3Price = 0
+	v.Level4Price = 0
+	v.Level5Price = 0
+	poolUpdateItemDistributionRequest.Put(v)
 }

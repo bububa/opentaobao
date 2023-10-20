@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoAilabAicloudTopEarthquakeSendAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopEarthquakeSendAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopEarthquakeSendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAilabAicloudTopEarthquakeSendAPIResponseModel).Reset()
 }
 
 // TaobaoAilabAicloudTopEarthquakeSendAPIResponseModel is 地震局发送地震消息 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoAilabAicloudTopEarthquakeSendAPIResponseModel struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 响应结果
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopEarthquakeSendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ExtendInfo = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoAilabAicloudTopEarthquakeSendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAilabAicloudTopEarthquakeSendAPIResponse)
+	},
+}
+
+// GetTaobaoAilabAicloudTopEarthquakeSendAPIResponse 从 sync.Pool 获取 TaobaoAilabAicloudTopEarthquakeSendAPIResponse
+func GetTaobaoAilabAicloudTopEarthquakeSendAPIResponse() *TaobaoAilabAicloudTopEarthquakeSendAPIResponse {
+	return poolTaobaoAilabAicloudTopEarthquakeSendAPIResponse.Get().(*TaobaoAilabAicloudTopEarthquakeSendAPIResponse)
+}
+
+// ReleaseTaobaoAilabAicloudTopEarthquakeSendAPIResponse 将 TaobaoAilabAicloudTopEarthquakeSendAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAilabAicloudTopEarthquakeSendAPIResponse(v *TaobaoAilabAicloudTopEarthquakeSendAPIResponse) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopEarthquakeSendAPIResponse.Put(v)
 }

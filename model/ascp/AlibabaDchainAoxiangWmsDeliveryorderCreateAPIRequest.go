@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest struct {
 // NewAlibabaDchainAoxiangWmsDeliveryorderCreateRequest 初始化AlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest对象
 func NewAlibabaDchainAoxiangWmsDeliveryorderCreateRequest() *AlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest {
 	return &AlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest) Reset() {
+	r._deliveryOrderReportRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest) SetDeliveryOrderR
 // GetDeliveryOrderReportRequest DeliveryOrderReportRequest Getter
 func (r AlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest) GetDeliveryOrderReportRequest() *DeliveryOrderReportRequest {
 	return r._deliveryOrderReportRequest
+}
+
+var poolAlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangWmsDeliveryorderCreateRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangWmsDeliveryorderCreateRequest 从 sync.Pool 获取 AlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest
+func GetAlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest() *AlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest {
+	return poolAlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest.Get().(*AlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest 将 AlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest(v *AlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangWmsDeliveryorderCreateAPIRequest.Put(v)
 }

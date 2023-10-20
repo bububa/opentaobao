@@ -2,6 +2,7 @@ package lstvending
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaLstVendingShippingCallbackAPIRequest struct {
 // NewAlibabaLstVendingShippingCallbackRequest 初始化AlibabaLstVendingShippingCallbackAPIRequest对象
 func NewAlibabaLstVendingShippingCallbackRequest() *AlibabaLstVendingShippingCallbackAPIRequest {
 	return &AlibabaLstVendingShippingCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstVendingShippingCallbackAPIRequest) Reset() {
+	r._equipmentCode = ""
+	r._tradeFlowNo = ""
+	r._code = ""
+	r._message = ""
+	r._time = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaLstVendingShippingCallbackAPIRequest) SetTime(_time string) erro
 // GetTime Time Getter
 func (r AlibabaLstVendingShippingCallbackAPIRequest) GetTime() string {
 	return r._time
+}
+
+var poolAlibabaLstVendingShippingCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstVendingShippingCallbackRequest()
+	},
+}
+
+// GetAlibabaLstVendingShippingCallbackRequest 从 sync.Pool 获取 AlibabaLstVendingShippingCallbackAPIRequest
+func GetAlibabaLstVendingShippingCallbackAPIRequest() *AlibabaLstVendingShippingCallbackAPIRequest {
+	return poolAlibabaLstVendingShippingCallbackAPIRequest.Get().(*AlibabaLstVendingShippingCallbackAPIRequest)
+}
+
+// ReleaseAlibabaLstVendingShippingCallbackAPIRequest 将 AlibabaLstVendingShippingCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstVendingShippingCallbackAPIRequest(v *AlibabaLstVendingShippingCallbackAPIRequest) {
+	v.Reset()
+	poolAlibabaLstVendingShippingCallbackAPIRequest.Put(v)
 }

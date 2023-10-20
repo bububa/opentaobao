@@ -1,5 +1,9 @@
 package filmtfavatar
 
+import (
+	"sync"
+)
+
 // TaobaoFilmTfavatarBillSaleRefundQueryViiResult 结构体
 type TaobaoFilmTfavatarBillSaleRefundQueryViiResult struct {
 	// 错误信息
@@ -10,4 +14,24 @@ type TaobaoFilmTfavatarBillSaleRefundQueryViiResult struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回值
 	ReturnValue *ReturnValue `json:"return_value,omitempty" xml:"return_value,omitempty"`
+}
+
+var poolTaobaoFilmTfavatarBillSaleRefundQueryViiResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoFilmTfavatarBillSaleRefundQueryViiResult)
+	},
+}
+
+// GetTaobaoFilmTfavatarBillSaleRefundQueryViiResult() 从对象池中获取TaobaoFilmTfavatarBillSaleRefundQueryViiResult
+func GetTaobaoFilmTfavatarBillSaleRefundQueryViiResult() *TaobaoFilmTfavatarBillSaleRefundQueryViiResult {
+	return poolTaobaoFilmTfavatarBillSaleRefundQueryViiResult.Get().(*TaobaoFilmTfavatarBillSaleRefundQueryViiResult)
+}
+
+// ReleaseTaobaoFilmTfavatarBillSaleRefundQueryViiResult 释放TaobaoFilmTfavatarBillSaleRefundQueryViiResult
+func ReleaseTaobaoFilmTfavatarBillSaleRefundQueryViiResult(v *TaobaoFilmTfavatarBillSaleRefundQueryViiResult) {
+	v.ReturnMessage = ""
+	v.ReturnCode = ""
+	v.RequestId = ""
+	v.ReturnValue = nil
+	poolTaobaoFilmTfavatarBillSaleRefundQueryViiResult.Put(v)
 }

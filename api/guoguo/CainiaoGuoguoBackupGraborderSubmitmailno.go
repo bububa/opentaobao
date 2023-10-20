@@ -9,11 +9,6 @@ import (
 // cainiao.guoguo.backup.graborder.submitmailno
 //
 // 快递公司回传订单号和运单号给菜鸟裹裹
-func CainiaoGuoguoBackupGraborderSubmitmailno(clt *core.SDKClient, req *guoguo.CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest, session string) (*guoguo.CainiaoGuoguoBackupGraborderSubmitmailnoAPIResponse, error) {
-	var resp guoguo.CainiaoGuoguoBackupGraborderSubmitmailnoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoGuoguoBackupGraborderSubmitmailno(clt *core.SDKClient, req *guoguo.CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest, resp *guoguo.CainiaoGuoguoBackupGraborderSubmitmailnoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

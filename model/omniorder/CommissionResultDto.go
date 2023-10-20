@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // CommissionResultDto 结构体
 type CommissionResultDto struct {
 	// 创建时间
@@ -46,4 +50,42 @@ type CommissionResultDto struct {
 	EmployeeStoreId int64 `json:"employee_store_id,omitempty" xml:"employee_store_id,omitempty"`
 	// 商品id
 	AuctionId int64 `json:"auction_id,omitempty" xml:"auction_id,omitempty"`
+}
+
+var poolCommissionResultDto = sync.Pool{
+	New: func() any {
+		return new(CommissionResultDto)
+	},
+}
+
+// GetCommissionResultDto() 从对象池中获取CommissionResultDto
+func GetCommissionResultDto() *CommissionResultDto {
+	return poolCommissionResultDto.Get().(*CommissionResultDto)
+}
+
+// ReleaseCommissionResultDto 释放CommissionResultDto
+func ReleaseCommissionResultDto(v *CommissionResultDto) {
+	v.OrderCreateTime = ""
+	v.OrderPayTime = ""
+	v.OrderEndTime = ""
+	v.CommissionEmployeeName = ""
+	v.EmployeeStoreName = ""
+	v.SellerName = ""
+	v.BuyerJoinTime = ""
+	v.CommissionTime = ""
+	v.BuyerNick = ""
+	v.WorkId = ""
+	v.PayOrderId = ""
+	v.OrderIdString = ""
+	v.BizOrderIdString = ""
+	v.Id = 0
+	v.BizOrderType = 0
+	v.BizOrderMoney = 0
+	v.OrderPayMoney = 0
+	v.CommissionMoney = 0
+	v.CommissionEmployeeId = 0
+	v.CommissionEmployeeType = 0
+	v.EmployeeStoreId = 0
+	v.AuctionId = 0
+	poolCommissionResultDto.Put(v)
 }

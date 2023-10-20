@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -43,8 +44,26 @@ type TaobaoQimenStoreCreateAPIRequest struct {
 // NewTaobaoQimenStoreCreateRequest 初始化TaobaoQimenStoreCreateAPIRequest对象
 func NewTaobaoQimenStoreCreateRequest() *TaobaoQimenStoreCreateAPIRequest {
 	return &TaobaoQimenStoreCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(13),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenStoreCreateAPIRequest) Reset() {
+	r._storeName = ""
+	r._companyName = ""
+	r._endTime = ""
+	r._startTime = ""
+	r._storeStatus = ""
+	r._storeDescription = ""
+	r._storeType = ""
+	r._storeCode = ""
+	r._remark = ""
+	r._mainCategory = 0
+	r._address = nil
+	r._shopId = 0
+	r._storeKeeper = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -231,4 +250,21 @@ func (r *TaobaoQimenStoreCreateAPIRequest) SetStoreKeeper(_storeKeeper *StoreKee
 // GetStoreKeeper StoreKeeper Getter
 func (r TaobaoQimenStoreCreateAPIRequest) GetStoreKeeper() *StoreKeeper {
 	return r._storeKeeper
+}
+
+var poolTaobaoQimenStoreCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenStoreCreateRequest()
+	},
+}
+
+// GetTaobaoQimenStoreCreateRequest 从 sync.Pool 获取 TaobaoQimenStoreCreateAPIRequest
+func GetTaobaoQimenStoreCreateAPIRequest() *TaobaoQimenStoreCreateAPIRequest {
+	return poolTaobaoQimenStoreCreateAPIRequest.Get().(*TaobaoQimenStoreCreateAPIRequest)
+}
+
+// ReleaseTaobaoQimenStoreCreateAPIRequest 将 TaobaoQimenStoreCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenStoreCreateAPIRequest(v *TaobaoQimenStoreCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenStoreCreateAPIRequest.Put(v)
 }

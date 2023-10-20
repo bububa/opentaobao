@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaJymItemExternalGoodsBatchModifypriceAPIRequest struct {
 // NewAlibabaJymItemExternalGoodsBatchModifypriceRequest 初始化AlibabaJymItemExternalGoodsBatchModifypriceAPIRequest对象
 func NewAlibabaJymItemExternalGoodsBatchModifypriceRequest() *AlibabaJymItemExternalGoodsBatchModifypriceAPIRequest {
 	return &AlibabaJymItemExternalGoodsBatchModifypriceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJymItemExternalGoodsBatchModifypriceAPIRequest) Reset() {
+	r._goodsPriceModifyCommand = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaJymItemExternalGoodsBatchModifypriceAPIRequest) SetGoodsPriceMod
 // GetGoodsPriceModifyCommand GoodsPriceModifyCommand Getter
 func (r AlibabaJymItemExternalGoodsBatchModifypriceAPIRequest) GetGoodsPriceModifyCommand() *GoodsPriceModifyCommandDto {
 	return r._goodsPriceModifyCommand
+}
+
+var poolAlibabaJymItemExternalGoodsBatchModifypriceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJymItemExternalGoodsBatchModifypriceRequest()
+	},
+}
+
+// GetAlibabaJymItemExternalGoodsBatchModifypriceRequest 从 sync.Pool 获取 AlibabaJymItemExternalGoodsBatchModifypriceAPIRequest
+func GetAlibabaJymItemExternalGoodsBatchModifypriceAPIRequest() *AlibabaJymItemExternalGoodsBatchModifypriceAPIRequest {
+	return poolAlibabaJymItemExternalGoodsBatchModifypriceAPIRequest.Get().(*AlibabaJymItemExternalGoodsBatchModifypriceAPIRequest)
+}
+
+// ReleaseAlibabaJymItemExternalGoodsBatchModifypriceAPIRequest 将 AlibabaJymItemExternalGoodsBatchModifypriceAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJymItemExternalGoodsBatchModifypriceAPIRequest(v *AlibabaJymItemExternalGoodsBatchModifypriceAPIRequest) {
+	v.Reset()
+	poolAlibabaJymItemExternalGoodsBatchModifypriceAPIRequest.Put(v)
 }

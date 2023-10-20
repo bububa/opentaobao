@@ -2,6 +2,7 @@ package aliyunocs
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type MKvstoreAliyuncsComDescribeRegions20150301APIResponse struct {
 	MKvstoreAliyuncsComDescribeRegions20150301APIResponseModel
 }
 
+// Reset 清空结构体
+func (m *MKvstoreAliyuncsComDescribeRegions20150301APIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.MKvstoreAliyuncsComDescribeRegions20150301APIResponseModel).Reset()
+}
+
 // MKvstoreAliyuncsComDescribeRegions20150301APIResponseModel is 查看Region列表 成功返回结果
 type MKvstoreAliyuncsComDescribeRegions20150301APIResponseModel struct {
 	XMLName xml.Name `xml:"m-kvstore_aliyuncs_com_DescribeRegions_2015-03-01_response"`
@@ -22,4 +29,28 @@ type MKvstoreAliyuncsComDescribeRegions20150301APIResponseModel struct {
 	RegionIds []AliyunOcsRegion `json:"RegionIds,omitempty" xml:"RegionIds>aliyun_ocs_region,omitempty"`
 	// 请求的唯一ID
 	RequestId string `json:"RequestId,omitempty" xml:"RequestId,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *MKvstoreAliyuncsComDescribeRegions20150301APIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RegionIds = m.RegionIds[:0]
+	m.RequestId = ""
+}
+
+var poolMKvstoreAliyuncsComDescribeRegions20150301APIResponse = sync.Pool{
+	New: func() any {
+		return new(MKvstoreAliyuncsComDescribeRegions20150301APIResponse)
+	},
+}
+
+// GetMKvstoreAliyuncsComDescribeRegions20150301APIResponse 从 sync.Pool 获取 MKvstoreAliyuncsComDescribeRegions20150301APIResponse
+func GetMKvstoreAliyuncsComDescribeRegions20150301APIResponse() *MKvstoreAliyuncsComDescribeRegions20150301APIResponse {
+	return poolMKvstoreAliyuncsComDescribeRegions20150301APIResponse.Get().(*MKvstoreAliyuncsComDescribeRegions20150301APIResponse)
+}
+
+// ReleaseMKvstoreAliyuncsComDescribeRegions20150301APIResponse 将 MKvstoreAliyuncsComDescribeRegions20150301APIResponse 保存到 sync.Pool
+func ReleaseMKvstoreAliyuncsComDescribeRegions20150301APIResponse(v *MKvstoreAliyuncsComDescribeRegions20150301APIResponse) {
+	v.Reset()
+	poolMKvstoreAliyuncsComDescribeRegions20150301APIResponse.Put(v)
 }

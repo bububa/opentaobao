@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // TopP4pQuickCampaignEffectView 结构体
 type TopP4pQuickCampaignEffectView struct {
 	// 推广时长
@@ -16,4 +20,27 @@ type TopP4pQuickCampaignEffectView struct {
 	ImpressionCnt string `json:"impression_cnt,omitempty" xml:"impression_cnt,omitempty"`
 	// 日期
 	Date string `json:"date,omitempty" xml:"date,omitempty"`
+}
+
+var poolTopP4pQuickCampaignEffectView = sync.Pool{
+	New: func() any {
+		return new(TopP4pQuickCampaignEffectView)
+	},
+}
+
+// GetTopP4pQuickCampaignEffectView() 从对象池中获取TopP4pQuickCampaignEffectView
+func GetTopP4pQuickCampaignEffectView() *TopP4pQuickCampaignEffectView {
+	return poolTopP4pQuickCampaignEffectView.Get().(*TopP4pQuickCampaignEffectView)
+}
+
+// ReleaseTopP4pQuickCampaignEffectView 释放TopP4pQuickCampaignEffectView
+func ReleaseTopP4pQuickCampaignEffectView(v *TopP4pQuickCampaignEffectView) {
+	v.OnlineTime = ""
+	v.Cpc = ""
+	v.Ctr = ""
+	v.Cost = ""
+	v.ClickCnt = ""
+	v.ImpressionCnt = ""
+	v.Date = ""
+	poolTopP4pQuickCampaignEffectView.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.rds.db.create
 //
 // 在rds实例里创建数据库
-func TaobaoRdsDbCreate(clt *core.SDKClient, req *jst.TaobaoRdsDbCreateAPIRequest, session string) (*jst.TaobaoRdsDbCreateAPIResponse, error) {
-	var resp jst.TaobaoRdsDbCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoRdsDbCreate(clt *core.SDKClient, req *jst.TaobaoRdsDbCreateAPIRequest, resp *jst.TaobaoRdsDbCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

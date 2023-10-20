@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // Outsuborders 结构体
 type Outsuborders struct {
 	// 渠道子订单ID
@@ -10,4 +14,24 @@ type Outsuborders struct {
 	PostFee int64 `json:"post_fee,omitempty" xml:"post_fee,omitempty"`
 	// 是否可退
 	CanReverse bool `json:"can_reverse,omitempty" xml:"can_reverse,omitempty"`
+}
+
+var poolOutsuborders = sync.Pool{
+	New: func() any {
+		return new(Outsuborders)
+	},
+}
+
+// GetOutsuborders() 从对象池中获取Outsuborders
+func GetOutsuborders() *Outsuborders {
+	return poolOutsuborders.Get().(*Outsuborders)
+}
+
+// ReleaseOutsuborders 释放Outsuborders
+func ReleaseOutsuborders(v *Outsuborders) {
+	v.OutSubOrderId = ""
+	v.MaxRefundFee = 0
+	v.PostFee = 0
+	v.CanReverse = false
+	poolOutsuborders.Put(v)
 }

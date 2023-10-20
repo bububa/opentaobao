@@ -1,5 +1,9 @@
 package examination
 
+import (
+	"sync"
+)
+
 // AddAddress 结构体
 type AddAddress struct {
 	// 用户的上门地址
@@ -20,4 +24,29 @@ type AddAddress struct {
 	ProvinceCode string `json:"province_code,omitempty" xml:"province_code,omitempty"`
 	// 省份名称（高德标准）
 	Province string `json:"province,omitempty" xml:"province,omitempty"`
+}
+
+var poolAddAddress = sync.Pool{
+	New: func() any {
+		return new(AddAddress)
+	},
+}
+
+// GetAddAddress() 从对象池中获取AddAddress
+func GetAddAddress() *AddAddress {
+	return poolAddAddress.Get().(*AddAddress)
+}
+
+// ReleaseAddAddress 释放AddAddress
+func ReleaseAddAddress(v *AddAddress) {
+	v.Address = ""
+	v.Latitude = ""
+	v.Longitude = ""
+	v.DistrictCode = ""
+	v.District = ""
+	v.CityCode = ""
+	v.City = ""
+	v.ProvinceCode = ""
+	v.Province = ""
+	poolAddAddress.Put(v)
 }

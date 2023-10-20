@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoJstSmsTemplateDeleteAPIRequest struct {
 // NewTaobaoJstSmsTemplateDeleteRequest 初始化TaobaoJstSmsTemplateDeleteAPIRequest对象
 func NewTaobaoJstSmsTemplateDeleteRequest() *TaobaoJstSmsTemplateDeleteAPIRequest {
 	return &TaobaoJstSmsTemplateDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJstSmsTemplateDeleteAPIRequest) Reset() {
+	r._deleteSmsTemplateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoJstSmsTemplateDeleteAPIRequest) SetDeleteSmsTemplateRequest(_dele
 // GetDeleteSmsTemplateRequest DeleteSmsTemplateRequest Getter
 func (r TaobaoJstSmsTemplateDeleteAPIRequest) GetDeleteSmsTemplateRequest() *TopDeleteSmsTemplateRequest {
 	return r._deleteSmsTemplateRequest
+}
+
+var poolTaobaoJstSmsTemplateDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJstSmsTemplateDeleteRequest()
+	},
+}
+
+// GetTaobaoJstSmsTemplateDeleteRequest 从 sync.Pool 获取 TaobaoJstSmsTemplateDeleteAPIRequest
+func GetTaobaoJstSmsTemplateDeleteAPIRequest() *TaobaoJstSmsTemplateDeleteAPIRequest {
+	return poolTaobaoJstSmsTemplateDeleteAPIRequest.Get().(*TaobaoJstSmsTemplateDeleteAPIRequest)
+}
+
+// ReleaseTaobaoJstSmsTemplateDeleteAPIRequest 将 TaobaoJstSmsTemplateDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJstSmsTemplateDeleteAPIRequest(v *TaobaoJstSmsTemplateDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoJstSmsTemplateDeleteAPIRequest.Put(v)
 }

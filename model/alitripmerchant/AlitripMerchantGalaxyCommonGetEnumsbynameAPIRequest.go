@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest struct {
 // NewAlitripMerchantGalaxyCommonGetEnumsbynameRequest 初始化AlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest对象
 func NewAlitripMerchantGalaxyCommonGetEnumsbynameRequest() *AlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest {
 	return &AlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._enumClassName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest) SetEnumClassName(_
 // GetEnumClassName EnumClassName Getter
 func (r AlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest) GetEnumClassName() string {
 	return r._enumClassName
+}
+
+var poolAlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyCommonGetEnumsbynameRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyCommonGetEnumsbynameRequest 从 sync.Pool 获取 AlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest
+func GetAlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest() *AlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest {
+	return poolAlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest.Get().(*AlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest 将 AlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest(v *AlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest.Put(v)
 }

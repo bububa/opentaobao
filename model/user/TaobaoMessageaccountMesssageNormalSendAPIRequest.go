@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoMessageaccountMesssageNormalSendAPIRequest struct {
 // NewTaobaoMessageaccountMesssageNormalSendRequest 初始化TaobaoMessageaccountMesssageNormalSendAPIRequest对象
 func NewTaobaoMessageaccountMesssageNormalSendRequest() *TaobaoMessageaccountMesssageNormalSendAPIRequest {
 	return &TaobaoMessageaccountMesssageNormalSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMessageaccountMesssageNormalSendAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoMessageaccountMesssageNormalSendAPIRequest) SetParam(_param *Norm
 // GetParam Param Getter
 func (r TaobaoMessageaccountMesssageNormalSendAPIRequest) GetParam() *NormalMessageDto {
 	return r._param
+}
+
+var poolTaobaoMessageaccountMesssageNormalSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMessageaccountMesssageNormalSendRequest()
+	},
+}
+
+// GetTaobaoMessageaccountMesssageNormalSendRequest 从 sync.Pool 获取 TaobaoMessageaccountMesssageNormalSendAPIRequest
+func GetTaobaoMessageaccountMesssageNormalSendAPIRequest() *TaobaoMessageaccountMesssageNormalSendAPIRequest {
+	return poolTaobaoMessageaccountMesssageNormalSendAPIRequest.Get().(*TaobaoMessageaccountMesssageNormalSendAPIRequest)
+}
+
+// ReleaseTaobaoMessageaccountMesssageNormalSendAPIRequest 将 TaobaoMessageaccountMesssageNormalSendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMessageaccountMesssageNormalSendAPIRequest(v *TaobaoMessageaccountMesssageNormalSendAPIRequest) {
+	v.Reset()
+	poolTaobaoMessageaccountMesssageNormalSendAPIRequest.Put(v)
 }

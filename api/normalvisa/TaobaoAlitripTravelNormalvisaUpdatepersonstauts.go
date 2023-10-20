@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.travel.normalvisa.updatepersonstauts
 //
 // 更新签证办理进度
-func TaobaoAlitripTravelNormalvisaUpdatepersonstauts(clt *core.SDKClient, req *normalvisa.TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest, session string) (*normalvisa.TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIResponse, error) {
-	var resp normalvisa.TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripTravelNormalvisaUpdatepersonstauts(clt *core.SDKClient, req *normalvisa.TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest, resp *normalvisa.TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

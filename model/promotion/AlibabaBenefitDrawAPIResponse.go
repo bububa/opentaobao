@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,6 +22,12 @@ type AlibabaBenefitDrawAPIResponse struct {
 	AlibabaBenefitDrawAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaBenefitDrawAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaBenefitDrawAPIResponseModel).Reset()
+}
+
 // AlibabaBenefitDrawAPIResponseModel is 抽奖接口 成功返回结果
 type AlibabaBenefitDrawAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_benefit_draw_response"`
@@ -34,4 +41,30 @@ type AlibabaBenefitDrawAPIResponseModel struct {
 	ExtAttribute string `json:"ext_attribute,omitempty" xml:"ext_attribute,omitempty"`
 	// 接口返回model
 	Result *AlibabaBenefitDrawResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaBenefitDrawAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.PrizeId = ""
+	m.RightId = ""
+	m.ExtAttribute = ""
+	m.Result = nil
+}
+
+var poolAlibabaBenefitDrawAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaBenefitDrawAPIResponse)
+	},
+}
+
+// GetAlibabaBenefitDrawAPIResponse 从 sync.Pool 获取 AlibabaBenefitDrawAPIResponse
+func GetAlibabaBenefitDrawAPIResponse() *AlibabaBenefitDrawAPIResponse {
+	return poolAlibabaBenefitDrawAPIResponse.Get().(*AlibabaBenefitDrawAPIResponse)
+}
+
+// ReleaseAlibabaBenefitDrawAPIResponse 将 AlibabaBenefitDrawAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaBenefitDrawAPIResponse(v *AlibabaBenefitDrawAPIResponse) {
+	v.Reset()
+	poolAlibabaBenefitDrawAPIResponse.Put(v)
 }

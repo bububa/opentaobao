@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // MultipleRate 结构体
 type MultipleRate struct {
 	// 名称
@@ -20,4 +24,29 @@ type MultipleRate struct {
 	Rpid int64 `json:"rpid,omitempty" xml:"rpid,omitempty"`
 	// 币种
 	CurrencyCode int64 `json:"currency_code,omitempty" xml:"currency_code,omitempty"`
+}
+
+var poolMultipleRate = sync.Pool{
+	New: func() any {
+		return new(MultipleRate)
+	},
+}
+
+// GetMultipleRate() 从对象池中获取MultipleRate
+func GetMultipleRate() *MultipleRate {
+	return poolMultipleRate.Get().(*MultipleRate)
+}
+
+// ReleaseMultipleRate 释放MultipleRate
+func ReleaseMultipleRate(v *MultipleRate) {
+	v.Name = ""
+	v.CreatedTime = ""
+	v.ModifiedTime = ""
+	v.InventoryPrice = ""
+	v.Occupancy = 0
+	v.Lengthofstay = 0
+	v.Gid = 0
+	v.Rpid = 0
+	v.CurrencyCode = 0
+	poolMultipleRate.Put(v)
 }

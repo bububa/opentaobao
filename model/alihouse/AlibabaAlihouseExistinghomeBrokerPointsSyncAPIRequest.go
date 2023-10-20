@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeBrokerPointsSyncRequest 初始化AlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest对象
 func NewAlibabaAlihouseExistinghomeBrokerPointsSyncRequest() *AlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest {
 	return &AlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest) Reset() {
+	r._brokerPointsList = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest) SetBrokerPointsL
 // GetBrokerPointsList BrokerPointsList Getter
 func (r AlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest) GetBrokerPointsList() *SyncBrokerPointsDto {
 	return r._brokerPointsList
+}
+
+var poolAlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeBrokerPointsSyncRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeBrokerPointsSyncRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest
+func GetAlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest() *AlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest {
+	return poolAlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest.Get().(*AlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest 将 AlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest(v *AlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeBrokerPointsSyncAPIRequest.Put(v)
 }

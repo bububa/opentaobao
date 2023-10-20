@@ -1,5 +1,9 @@
 package kclub
 
+import (
+	"sync"
+)
+
 // KcQaSolution 结构体
 type KcQaSolution struct {
 	// 子知识答案摘要
@@ -24,4 +28,31 @@ type KcQaSolution struct {
 	QuestionId int64 `json:"question_id,omitempty" xml:"question_id,omitempty"`
 	// 子知识答案id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolKcQaSolution = sync.Pool{
+	New: func() any {
+		return new(KcQaSolution)
+	},
+}
+
+// GetKcQaSolution() 从对象池中获取KcQaSolution
+func GetKcQaSolution() *KcQaSolution {
+	return poolKcQaSolution.Get().(*KcQaSolution)
+}
+
+// ReleaseKcQaSolution 释放KcQaSolution
+func ReleaseKcQaSolution(v *KcQaSolution) {
+	v.Summary = ""
+	v.ExtraContent = ""
+	v.ContentView = ""
+	v.Content = ""
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.PlainText = ""
+	v.Type = 0
+	v.ContentType = 0
+	v.QuestionId = 0
+	v.Id = 0
+	poolKcQaSolution.Put(v)
 }

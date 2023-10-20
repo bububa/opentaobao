@@ -9,11 +9,6 @@ import (
 // taobao.tbk.sc.tpwd.convert
 //
 // 支持通过淘口令解析商品id，并提供对应的淘客转链接
-func TaobaoTbkScTpwdConvert(clt *core.SDKClient, req *tbk.TaobaoTbkScTpwdConvertAPIRequest, session string) (*tbk.TaobaoTbkScTpwdConvertAPIResponse, error) {
-	var resp tbk.TaobaoTbkScTpwdConvertAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTbkScTpwdConvert(clt *core.SDKClient, req *tbk.TaobaoTbkScTpwdConvertAPIRequest, resp *tbk.TaobaoTbkScTpwdConvertAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

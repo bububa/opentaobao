@@ -9,11 +9,6 @@ import (
 // aliexpress.affiliate.order.get
 //
 // 联盟推广订单效果获取API
-func AliexpressAffiliateOrderGet(clt *core.SDKClient, req *aedata.AliexpressAffiliateOrderGetAPIRequest, session string) (*aedata.AliexpressAffiliateOrderGetAPIResponse, error) {
-	var resp aedata.AliexpressAffiliateOrderGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressAffiliateOrderGet(clt *core.SDKClient, req *aedata.AliexpressAffiliateOrderGetAPIRequest, resp *aedata.AliexpressAffiliateOrderGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

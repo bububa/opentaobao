@@ -1,5 +1,9 @@
 package examination
 
+import (
+	"sync"
+)
+
 // IsvItemPackDto 结构体
 type IsvItemPackDto struct {
 	// 加项包包含的单项id列表
@@ -16,4 +20,27 @@ type IsvItemPackDto struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 版本号，防止isv更改未同步给健康，提供给isv做校验的
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolIsvItemPackDto = sync.Pool{
+	New: func() any {
+		return new(IsvItemPackDto)
+	},
+}
+
+// GetIsvItemPackDto() 从对象池中获取IsvItemPackDto
+func GetIsvItemPackDto() *IsvItemPackDto {
+	return poolIsvItemPackDto.Get().(*IsvItemPackDto)
+}
+
+// ReleaseIsvItemPackDto 释放IsvItemPackDto
+func ReleaseIsvItemPackDto(v *IsvItemPackDto) {
+	v.IsvItemIds = v.IsvItemIds[:0]
+	v.IsvPackId = ""
+	v.PackName = ""
+	v.SoldPrice = ""
+	v.SettlePrice = ""
+	v.Type = 0
+	v.Version = 0
+	poolIsvItemPackDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // AlibabaIdleAppraiseSpuRegisterModifyResult 结构体
 type AlibabaIdleAppraiseSpuRegisterModifyResult struct {
 	// errCode
@@ -10,4 +14,24 @@ type AlibabaIdleAppraiseSpuRegisterModifyResult struct {
 	Module int64 `json:"module,omitempty" xml:"module,omitempty"`
 	// 是否挂载成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaIdleAppraiseSpuRegisterModifyResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleAppraiseSpuRegisterModifyResult)
+	},
+}
+
+// GetAlibabaIdleAppraiseSpuRegisterModifyResult() 从对象池中获取AlibabaIdleAppraiseSpuRegisterModifyResult
+func GetAlibabaIdleAppraiseSpuRegisterModifyResult() *AlibabaIdleAppraiseSpuRegisterModifyResult {
+	return poolAlibabaIdleAppraiseSpuRegisterModifyResult.Get().(*AlibabaIdleAppraiseSpuRegisterModifyResult)
+}
+
+// ReleaseAlibabaIdleAppraiseSpuRegisterModifyResult 释放AlibabaIdleAppraiseSpuRegisterModifyResult
+func ReleaseAlibabaIdleAppraiseSpuRegisterModifyResult(v *AlibabaIdleAppraiseSpuRegisterModifyResult) {
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Module = 0
+	v.Success = false
+	poolAlibabaIdleAppraiseSpuRegisterModifyResult.Put(v)
 }

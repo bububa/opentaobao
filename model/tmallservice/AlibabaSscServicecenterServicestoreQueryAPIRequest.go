@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaSscServicecenterServicestoreQueryAPIRequest struct {
 // NewAlibabaSscServicecenterServicestoreQueryRequest 初始化AlibabaSscServicecenterServicestoreQueryAPIRequest对象
 func NewAlibabaSscServicecenterServicestoreQueryRequest() *AlibabaSscServicecenterServicestoreQueryAPIRequest {
 	return &AlibabaSscServicecenterServicestoreQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSscServicecenterServicestoreQueryAPIRequest) Reset() {
+	r._id = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaSscServicecenterServicestoreQueryAPIRequest) SetId(_id int64) er
 // GetId Id Getter
 func (r AlibabaSscServicecenterServicestoreQueryAPIRequest) GetId() int64 {
 	return r._id
+}
+
+var poolAlibabaSscServicecenterServicestoreQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSscServicecenterServicestoreQueryRequest()
+	},
+}
+
+// GetAlibabaSscServicecenterServicestoreQueryRequest 从 sync.Pool 获取 AlibabaSscServicecenterServicestoreQueryAPIRequest
+func GetAlibabaSscServicecenterServicestoreQueryAPIRequest() *AlibabaSscServicecenterServicestoreQueryAPIRequest {
+	return poolAlibabaSscServicecenterServicestoreQueryAPIRequest.Get().(*AlibabaSscServicecenterServicestoreQueryAPIRequest)
+}
+
+// ReleaseAlibabaSscServicecenterServicestoreQueryAPIRequest 将 AlibabaSscServicecenterServicestoreQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSscServicecenterServicestoreQueryAPIRequest(v *AlibabaSscServicecenterServicestoreQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaSscServicecenterServicestoreQueryAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoQimenItemsMarkingAPIRequest struct {
 // NewTaobaoQimenItemsMarkingRequest 初始化TaobaoQimenItemsMarkingAPIRequest对象
 func NewTaobaoQimenItemsMarkingRequest() *TaobaoQimenItemsMarkingAPIRequest {
 	return &TaobaoQimenItemsMarkingAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenItemsMarkingAPIRequest) Reset() {
+	r._itemIds = r._itemIds[:0]
+	r._actionType = ""
+	r._tagType = ""
+	r._remark = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoQimenItemsMarkingAPIRequest) SetRemark(_remark string) error {
 // GetRemark Remark Getter
 func (r TaobaoQimenItemsMarkingAPIRequest) GetRemark() string {
 	return r._remark
+}
+
+var poolTaobaoQimenItemsMarkingAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenItemsMarkingRequest()
+	},
+}
+
+// GetTaobaoQimenItemsMarkingRequest 从 sync.Pool 获取 TaobaoQimenItemsMarkingAPIRequest
+func GetTaobaoQimenItemsMarkingAPIRequest() *TaobaoQimenItemsMarkingAPIRequest {
+	return poolTaobaoQimenItemsMarkingAPIRequest.Get().(*TaobaoQimenItemsMarkingAPIRequest)
+}
+
+// ReleaseTaobaoQimenItemsMarkingAPIRequest 将 TaobaoQimenItemsMarkingAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenItemsMarkingAPIRequest(v *TaobaoQimenItemsMarkingAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenItemsMarkingAPIRequest.Put(v)
 }

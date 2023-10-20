@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // Topinfomap 结构体
 type Topinfomap struct {
 	// hbsEgOrder
@@ -98,4 +102,68 @@ type Topinfomap struct {
 	SellingMemberPrice int64 `json:"selling_member_price,omitempty" xml:"selling_member_price,omitempty"`
 	// 售卖价
 	SellingPrice int64 `json:"selling_price,omitempty" xml:"selling_price,omitempty"`
+}
+
+var poolTopinfomap = sync.Pool{
+	New: func() any {
+		return new(Topinfomap)
+	},
+}
+
+// GetTopinfomap() 从对象池中获取Topinfomap
+func GetTopinfomap() *Topinfomap {
+	return poolTopinfomap.Get().(*Topinfomap)
+}
+
+// ReleaseTopinfomap 释放Topinfomap
+func ReleaseTopinfomap(v *Topinfomap) {
+	v.HbsEgOrder = ""
+	v.HbsBuyerAlipayNo = ""
+	v.PreChangePromotionFlag = ""
+	v.MorningBuy = ""
+	v.CancelType = ""
+	v.SellerDelayConfirmTime = ""
+	v.CurrencyType = ""
+	v.HbsBedType = ""
+	v.Umid = ""
+	v.HbsOldPromotionamt = ""
+	v.HbsMaxOtherFee = ""
+	v.CancelPolicyJson = ""
+	v.HbsAlipayMobile = ""
+	v.HbsPmsOrderId = ""
+	v.HbsHotelOutId = ""
+	v.HbsCreditSettle = ""
+	v.EbookingDirectTag = ""
+	v.HbsOldPayment = ""
+	v.HbsCardAlipayOrder = ""
+	v.PromotionSnapKey = ""
+	v.HbsAllTags = ""
+	v.HbsDirect = ""
+	v.UpsetPrice = ""
+	v.ReservedRoom = ""
+	v.BlockRoom = ""
+	v.HbsOutSourceCorpName = ""
+	v.HbsScanCodeOrder = ""
+	v.BtripCorporatePay = ""
+	v.OnlineBookingRoom = ""
+	v.B2gFlag = ""
+	v.HbsSelfHelpCheckIn = ""
+	v.HbsXiaoShiFang = ""
+	v.HbsHourage = ""
+	v.AdvanceInvocieTag = ""
+	v.HourRoomReservedTime = ""
+	v.HourRoomLeaveTime = ""
+	v.HourRoomArriveTime = ""
+	v.CreditPayOrder = ""
+	v.IsFzMemberOrder = ""
+	v.BookerMemberCardNo = ""
+	v.HbsOutSourceCorpId = ""
+	v.FliggyMemberLevel = ""
+	v.IsFzMember = ""
+	v.MemberCardOrderId = ""
+	v.NightPromotionDetail = ""
+	v.CreditPayCancelFee = 0
+	v.SellingMemberPrice = 0
+	v.SellingPrice = 0
+	poolTopinfomap.Put(v)
 }

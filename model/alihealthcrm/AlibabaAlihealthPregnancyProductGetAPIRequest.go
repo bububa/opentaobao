@@ -2,6 +2,7 @@ package alihealthcrm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihealthPregnancyProductGetAPIRequest struct {
 // NewAlibabaAlihealthPregnancyProductGetRequest 初始化AlibabaAlihealthPregnancyProductGetAPIRequest对象
 func NewAlibabaAlihealthPregnancyProductGetRequest() *AlibabaAlihealthPregnancyProductGetAPIRequest {
 	return &AlibabaAlihealthPregnancyProductGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthPregnancyProductGetAPIRequest) Reset() {
+	r._sceneId = 0
+	r._currentPage = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihealthPregnancyProductGetAPIRequest) SetPageSize(_pageSize in
 // GetPageSize PageSize Getter
 func (r AlibabaAlihealthPregnancyProductGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaAlihealthPregnancyProductGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthPregnancyProductGetRequest()
+	},
+}
+
+// GetAlibabaAlihealthPregnancyProductGetRequest 从 sync.Pool 获取 AlibabaAlihealthPregnancyProductGetAPIRequest
+func GetAlibabaAlihealthPregnancyProductGetAPIRequest() *AlibabaAlihealthPregnancyProductGetAPIRequest {
+	return poolAlibabaAlihealthPregnancyProductGetAPIRequest.Get().(*AlibabaAlihealthPregnancyProductGetAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthPregnancyProductGetAPIRequest 将 AlibabaAlihealthPregnancyProductGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthPregnancyProductGetAPIRequest(v *AlibabaAlihealthPregnancyProductGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthPregnancyProductGetAPIRequest.Put(v)
 }

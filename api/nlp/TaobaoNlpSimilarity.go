@@ -9,11 +9,6 @@ import (
 // taobao.nlp.similarity
 //
 // 文本语言相似度计算，提供余弦距离、编辑距离和simHash三种相似度计算。返回文本相似度区间为0-1之间，0为完全不相似，1为完全相似。
-func TaobaoNlpSimilarity(clt *core.SDKClient, req *nlp.TaobaoNlpSimilarityAPIRequest, session string) (*nlp.TaobaoNlpSimilarityAPIResponse, error) {
-	var resp nlp.TaobaoNlpSimilarityAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoNlpSimilarity(clt *core.SDKClient, req *nlp.TaobaoNlpSimilarityAPIRequest, resp *nlp.TaobaoNlpSimilarityAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // AddressDto 结构体
 type AddressDto struct {
 	// first name of receiver
@@ -44,4 +48,41 @@ type AddressDto struct {
 	Town string `json:"town,omitempty" xml:"town,omitempty"`
 	// 详细地址
 	DetailAddress string `json:"detail_address,omitempty" xml:"detail_address,omitempty"`
+}
+
+var poolAddressDto = sync.Pool{
+	New: func() any {
+		return new(AddressDto)
+	},
+}
+
+// GetAddressDto() 从对象池中获取AddressDto
+func GetAddressDto() *AddressDto {
+	return poolAddressDto.Get().(*AddressDto)
+}
+
+// ReleaseAddressDto 释放AddressDto
+func ReleaseAddressDto(v *AddressDto) {
+	v.FirstName = ""
+	v.LastName = ""
+	v.City = ""
+	v.FederalTaxId = ""
+	v.Country = ""
+	v.ZipCode = ""
+	v.State = ""
+	v.Address = ""
+	v.AddressNumber = ""
+	v.Email = ""
+	v.CellPhone = ""
+	v.Additional = ""
+	v.TownName = ""
+	v.AddressDetail = ""
+	v.CityName = ""
+	v.AreaName = ""
+	v.ProvinceName = ""
+	v.County = ""
+	v.Province = ""
+	v.Town = ""
+	v.DetailAddress = ""
+	poolAddressDto.Put(v)
 }

@@ -2,6 +2,7 @@ package rhino
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoRhinoCrmGatewayAPIRequest struct {
 // NewTaobaoRhinoCrmGatewayRequest 初始化TaobaoRhinoCrmGatewayAPIRequest对象
 func NewTaobaoRhinoCrmGatewayRequest() *TaobaoRhinoCrmGatewayAPIRequest {
 	return &TaobaoRhinoCrmGatewayAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRhinoCrmGatewayAPIRequest) Reset() {
+	r._formCode = ""
+	r._operateType = ""
+	r._eventTimestamp = 0
+	r._crmEntity = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoRhinoCrmGatewayAPIRequest) SetCrmEntity(_crmEntity *CrmEntity) er
 // GetCrmEntity CrmEntity Getter
 func (r TaobaoRhinoCrmGatewayAPIRequest) GetCrmEntity() *CrmEntity {
 	return r._crmEntity
+}
+
+var poolTaobaoRhinoCrmGatewayAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRhinoCrmGatewayRequest()
+	},
+}
+
+// GetTaobaoRhinoCrmGatewayRequest 从 sync.Pool 获取 TaobaoRhinoCrmGatewayAPIRequest
+func GetTaobaoRhinoCrmGatewayAPIRequest() *TaobaoRhinoCrmGatewayAPIRequest {
+	return poolTaobaoRhinoCrmGatewayAPIRequest.Get().(*TaobaoRhinoCrmGatewayAPIRequest)
+}
+
+// ReleaseTaobaoRhinoCrmGatewayAPIRequest 将 TaobaoRhinoCrmGatewayAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRhinoCrmGatewayAPIRequest(v *TaobaoRhinoCrmGatewayAPIRequest) {
+	v.Reset()
+	poolTaobaoRhinoCrmGatewayAPIRequest.Put(v)
 }

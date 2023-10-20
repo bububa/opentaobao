@@ -2,6 +2,7 @@ package flightuppc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlitripFlightBasicDataCityQueryAllAPIRequest struct {
 // NewAlitripFlightBasicDataCityQueryAllRequest 初始化AlitripFlightBasicDataCityQueryAllAPIRequest对象
 func NewAlitripFlightBasicDataCityQueryAllRequest() *AlitripFlightBasicDataCityQueryAllAPIRequest {
 	return &AlitripFlightBasicDataCityQueryAllAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripFlightBasicDataCityQueryAllAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlitripFlightBasicDataCityQueryAllAPIRequest) GetApiParams(params url.Va
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlitripFlightBasicDataCityQueryAllAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlitripFlightBasicDataCityQueryAllAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripFlightBasicDataCityQueryAllRequest()
+	},
+}
+
+// GetAlitripFlightBasicDataCityQueryAllRequest 从 sync.Pool 获取 AlitripFlightBasicDataCityQueryAllAPIRequest
+func GetAlitripFlightBasicDataCityQueryAllAPIRequest() *AlitripFlightBasicDataCityQueryAllAPIRequest {
+	return poolAlitripFlightBasicDataCityQueryAllAPIRequest.Get().(*AlitripFlightBasicDataCityQueryAllAPIRequest)
+}
+
+// ReleaseAlitripFlightBasicDataCityQueryAllAPIRequest 将 AlitripFlightBasicDataCityQueryAllAPIRequest 放入 sync.Pool
+func ReleaseAlitripFlightBasicDataCityQueryAllAPIRequest(v *AlitripFlightBasicDataCityQueryAllAPIRequest) {
+	v.Reset()
+	poolAlitripFlightBasicDataCityQueryAllAPIRequest.Put(v)
 }

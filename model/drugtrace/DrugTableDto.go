@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // DrugTableDto 结构体
 type DrugTableDto struct {
 	// 子列表
@@ -30,4 +34,34 @@ type DrugTableDto struct {
 	PhysicType int64 `json:"physic_type,omitempty" xml:"physic_type,omitempty"`
 	// 药品详细类型
 	PhysicDetailType int64 `json:"physic_detail_type,omitempty" xml:"physic_detail_type,omitempty"`
+}
+
+var poolDrugTableDto = sync.Pool{
+	New: func() any {
+		return new(DrugTableDto)
+	},
+}
+
+// GetDrugTableDto() 从对象池中获取DrugTableDto
+func GetDrugTableDto() *DrugTableDto {
+	return poolDrugTableDto.Get().(*DrugTableDto)
+}
+
+// ReleaseDrugTableDto 释放DrugTableDto
+func ReleaseDrugTableDto(v *DrugTableDto) {
+	v.SubTypeList = v.SubTypeList[:0]
+	v.PrepnTypeDesc = ""
+	v.PhysicTypeDesc = ""
+	v.PhysicName = ""
+	v.ProdCode = ""
+	v.RefEntId = ""
+	v.ProdName = ""
+	v.ModDate = ""
+	v.EntName = ""
+	v.PkgUnitDesc = ""
+	v.PhysicDetailTypeDesc = ""
+	v.PrepnUnitDesc = ""
+	v.PhysicType = 0
+	v.PhysicDetailType = 0
+	poolDrugTableDto.Put(v)
 }

@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest struct {
 // NewAlibabaDchainAoxiangItemmappingUpdateAsyncRequest 初始化AlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest对象
 func NewAlibabaDchainAoxiangItemmappingUpdateAsyncRequest() *AlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest {
 	return &AlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest) Reset() {
+	r._itemMappingUpdateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest) SetItemMappingUpd
 // GetItemMappingUpdateRequest ItemMappingUpdateRequest Getter
 func (r AlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest) GetItemMappingUpdateRequest() *ItemMappingUpdateAsyncRequest {
 	return r._itemMappingUpdateRequest
+}
+
+var poolAlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangItemmappingUpdateAsyncRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangItemmappingUpdateAsyncRequest 从 sync.Pool 获取 AlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest
+func GetAlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest() *AlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest {
+	return poolAlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest.Get().(*AlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest 将 AlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest(v *AlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // TaobaoTbkDgMaterialOptionalMapData 结构体
 type TaobaoTbkDgMaterialOptionalMapData struct {
 	// 商品信息-商品小图列表
@@ -177,9 +181,115 @@ type TaobaoTbkDgMaterialOptionalMapData struct {
 	// 比价场景专用，当系统检测到入参消费者ID购买当前商品会获得《天天开彩蛋》玩法的彩蛋时，该字段显示1，否则为0
 	RewardInfo int64 `json:"reward_info,omitempty" xml:"reward_info,omitempty"`
 	// 前N件佣金信息-前N件佣金生效或预热时透出以下字段
-	TopnInfo *TopNinfoDto `json:"topn_info,omitempty" xml:"topn_info,omitempty"`
+	TopnInfo *TopNInfoDto `json:"topn_info,omitempty" xml:"topn_info,omitempty"`
 	// 百亿补贴信息
 	BybtInfo *BybtInfoDto `json:"bybt_info,omitempty" xml:"bybt_info,omitempty"`
 	// 猫超买返卡信息
 	MaifanPromotion *MaifanPromotionDto `json:"maifan_promotion,omitempty" xml:"maifan_promotion,omitempty"`
+}
+
+var poolTaobaoTbkDgMaterialOptionalMapData = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkDgMaterialOptionalMapData)
+	},
+}
+
+// GetTaobaoTbkDgMaterialOptionalMapData() 从对象池中获取TaobaoTbkDgMaterialOptionalMapData
+func GetTaobaoTbkDgMaterialOptionalMapData() *TaobaoTbkDgMaterialOptionalMapData {
+	return poolTaobaoTbkDgMaterialOptionalMapData.Get().(*TaobaoTbkDgMaterialOptionalMapData)
+}
+
+// ReleaseTaobaoTbkDgMaterialOptionalMapData 释放TaobaoTbkDgMaterialOptionalMapData
+func ReleaseTaobaoTbkDgMaterialOptionalMapData(v *TaobaoTbkDgMaterialOptionalMapData) {
+	v.SmallImages = v.SmallImages[:0]
+	v.SpCampaignList = v.SpCampaignList[:0]
+	v.CouponStartTime = ""
+	v.CouponEndTime = ""
+	v.InfoDxjh = ""
+	v.TkTotalSales = ""
+	v.TkTotalCommi = ""
+	v.CouponId = ""
+	v.NumIid = ""
+	v.Title = ""
+	v.PictUrl = ""
+	v.ReservePrice = ""
+	v.ZkFinalPrice = ""
+	v.Provcity = ""
+	v.ItemUrl = ""
+	v.IncludeMkt = ""
+	v.IncludeDxjh = ""
+	v.CommissionRate = ""
+	v.ShopTitle = ""
+	v.CouponInfo = ""
+	v.CommissionType = ""
+	v.CouponShareUrl = ""
+	v.Url = ""
+	v.LevelOneCategoryName = ""
+	v.CategoryName = ""
+	v.ShortTitle = ""
+	v.WhiteImage = ""
+	v.Oetime = ""
+	v.Ostime = ""
+	v.JddPrice = ""
+	v.XId = ""
+	v.CouponStartFee = ""
+	v.CouponAmount = ""
+	v.ItemDescription = ""
+	v.Nick = ""
+	v.OrigPrice = ""
+	v.TmallPlayActivityInfo = ""
+	v.ItemId = ""
+	v.RealPostFee = ""
+	v.LockRate = ""
+	v.PresaleDiscountFeeText = ""
+	v.PresaleDeposit = ""
+	v.YsylTljSendTime = ""
+	v.YsylCommissionRate = ""
+	v.YsylTljFace = ""
+	v.YsylClickUrl = ""
+	v.YsylTljUseEndTime = ""
+	v.YsylTljUseStartTime = ""
+	v.SaleBeginTime = ""
+	v.SaleEndTime = ""
+	v.Distance = ""
+	v.UsableShopId = ""
+	v.UsableShopName = ""
+	v.SalePrice = ""
+	v.KuadianPromotionInfo = ""
+	v.SuperiorBrand = ""
+	v.IsBrandFlashSale = ""
+	v.LocalizationExtend = ""
+	v.MatchScore = ""
+	v.CommiScore = ""
+	v.HotFlag = ""
+	v.TtSoldCount = ""
+	v.CpaRewardType = ""
+	v.CpaRewardAmount = ""
+	v.ActivityId = ""
+	v.RankPageUrl = ""
+	v.ItemSearchType = ""
+	v.UserType = 0
+	v.Volume = 0
+	v.SellerId = 0
+	v.CouponTotalCount = 0
+	v.CouponRemainCount = 0
+	v.ShopDsr = 0
+	v.LevelOneCategoryId = 0
+	v.CategoryId = 0
+	v.JddNum = 0
+	v.UvSumPreSale = 0
+	v.TotalStock = 0
+	v.SellNum = 0
+	v.Stock = 0
+	v.LockRateEndTime = 0
+	v.LockRateStartTime = 0
+	v.PresaleTailEndTime = 0
+	v.PresaleTailStartTime = 0
+	v.PresaleEndTime = 0
+	v.PresaleStartTime = 0
+	v.RewardInfo = 0
+	v.TopnInfo = nil
+	v.BybtInfo = nil
+	v.MaifanPromotion = nil
+	poolTaobaoTbkDgMaterialOptionalMapData.Put(v)
 }

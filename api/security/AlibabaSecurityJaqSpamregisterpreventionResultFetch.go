@@ -9,11 +9,6 @@ import (
 // alibaba.security.jaq.spamregisterprevention.result.fetch
 //
 // 获取垃圾注册防控结果
-func AlibabaSecurityJaqSpamregisterpreventionResultFetch(clt *core.SDKClient, req *security.AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest, session string) (*security.AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIResponse, error) {
-	var resp security.AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSecurityJaqSpamregisterpreventionResultFetch(clt *core.SDKClient, req *security.AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest, resp *security.AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

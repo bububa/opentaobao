@@ -2,6 +2,7 @@ package traderate
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFliggyWrateGetmixratelistAPIRequest struct {
 // NewTaobaoFliggyWrateGetmixratelistRequest 初始化TaobaoFliggyWrateGetmixratelistAPIRequest对象
 func NewTaobaoFliggyWrateGetmixratelistRequest() *TaobaoFliggyWrateGetmixratelistAPIRequest {
 	return &TaobaoFliggyWrateGetmixratelistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFliggyWrateGetmixratelistAPIRequest) Reset() {
+	r._paramTopGetMixRateListParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFliggyWrateGetmixratelistAPIRequest) SetParamTopGetMixRateListPar
 // GetParamTopGetMixRateListParam ParamTopGetMixRateListParam Getter
 func (r TaobaoFliggyWrateGetmixratelistAPIRequest) GetParamTopGetMixRateListParam() *TopGetMixRateListParam {
 	return r._paramTopGetMixRateListParam
+}
+
+var poolTaobaoFliggyWrateGetmixratelistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFliggyWrateGetmixratelistRequest()
+	},
+}
+
+// GetTaobaoFliggyWrateGetmixratelistRequest 从 sync.Pool 获取 TaobaoFliggyWrateGetmixratelistAPIRequest
+func GetTaobaoFliggyWrateGetmixratelistAPIRequest() *TaobaoFliggyWrateGetmixratelistAPIRequest {
+	return poolTaobaoFliggyWrateGetmixratelistAPIRequest.Get().(*TaobaoFliggyWrateGetmixratelistAPIRequest)
+}
+
+// ReleaseTaobaoFliggyWrateGetmixratelistAPIRequest 将 TaobaoFliggyWrateGetmixratelistAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFliggyWrateGetmixratelistAPIRequest(v *TaobaoFliggyWrateGetmixratelistAPIRequest) {
+	v.Reset()
+	poolTaobaoFliggyWrateGetmixratelistAPIRequest.Put(v)
 }

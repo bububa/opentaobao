@@ -2,6 +2,7 @@ package icbudropshipping
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,14 @@ type AlibabaOrderFreightCalculateAPIRequest struct {
 // NewAlibabaOrderFreightCalculateRequest 初始化AlibabaOrderFreightCalculateAPIRequest对象
 func NewAlibabaOrderFreightCalculateRequest() *AlibabaOrderFreightCalculateAPIRequest {
 	return &AlibabaOrderFreightCalculateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaOrderFreightCalculateAPIRequest) Reset() {
+	r._paramMultiFreightTemplateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *AlibabaOrderFreightCalculateAPIRequest) SetParamMultiFreightTemplateReq
 // GetParamMultiFreightTemplateRequest ParamMultiFreightTemplateRequest Getter
 func (r AlibabaOrderFreightCalculateAPIRequest) GetParamMultiFreightTemplateRequest() *MultiFreightTemplateRequest {
 	return r._paramMultiFreightTemplateRequest
+}
+
+var poolAlibabaOrderFreightCalculateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaOrderFreightCalculateRequest()
+	},
+}
+
+// GetAlibabaOrderFreightCalculateRequest 从 sync.Pool 获取 AlibabaOrderFreightCalculateAPIRequest
+func GetAlibabaOrderFreightCalculateAPIRequest() *AlibabaOrderFreightCalculateAPIRequest {
+	return poolAlibabaOrderFreightCalculateAPIRequest.Get().(*AlibabaOrderFreightCalculateAPIRequest)
+}
+
+// ReleaseAlibabaOrderFreightCalculateAPIRequest 将 AlibabaOrderFreightCalculateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaOrderFreightCalculateAPIRequest(v *AlibabaOrderFreightCalculateAPIRequest) {
+	v.Reset()
+	poolAlibabaOrderFreightCalculateAPIRequest.Put(v)
 }

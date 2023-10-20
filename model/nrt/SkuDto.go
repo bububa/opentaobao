@@ -1,5 +1,9 @@
 package nrt
 
+import (
+	"sync"
+)
+
 // SkuDto 结构体
 type SkuDto struct {
 	// SKU属性
@@ -18,4 +22,28 @@ type SkuDto struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// SKU ID
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolSkuDto = sync.Pool{
+	New: func() any {
+		return new(SkuDto)
+	},
+}
+
+// GetSkuDto() 从对象池中获取SkuDto
+func GetSkuDto() *SkuDto {
+	return poolSkuDto.Get().(*SkuDto)
+}
+
+// ReleaseSkuDto 释放SkuDto
+func ReleaseSkuDto(v *SkuDto) {
+	v.Properties = v.Properties[:0]
+	v.Barcode = ""
+	v.CreateTime = ""
+	v.OuterId = ""
+	v.Price = ""
+	v.UpdateTime = ""
+	v.Quantity = 0
+	v.SkuId = 0
+	poolSkuDto.Put(v)
 }

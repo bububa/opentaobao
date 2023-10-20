@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // CombineItemSyncRequest 结构体
 type CombineItemSyncRequest struct {
 	// 组合商品接口中的单商品信息
@@ -12,4 +16,25 @@ type CombineItemSyncRequest struct {
 	WarehouseCode string `json:"warehouseCode,omitempty" xml:"warehouseCode,omitempty"`
 	// 扩展属性
 	ExtendProps *TaobaoQimenCombineitemSynchronizeMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+}
+
+var poolCombineItemSyncRequest = sync.Pool{
+	New: func() any {
+		return new(CombineItemSyncRequest)
+	},
+}
+
+// GetCombineItemSyncRequest() 从对象池中获取CombineItemSyncRequest
+func GetCombineItemSyncRequest() *CombineItemSyncRequest {
+	return poolCombineItemSyncRequest.Get().(*CombineItemSyncRequest)
+}
+
+// ReleaseCombineItemSyncRequest 释放CombineItemSyncRequest
+func ReleaseCombineItemSyncRequest(v *CombineItemSyncRequest) {
+	v.Items = v.Items[:0]
+	v.ItemCode = ""
+	v.OwnerCode = ""
+	v.WarehouseCode = ""
+	v.ExtendProps = nil
+	poolCombineItemSyncRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package interact
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaInteractActivityApplyAPIResponse struct {
 	AlibabaInteractActivityApplyAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaInteractActivityApplyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaInteractActivityApplyAPIResponseModel).Reset()
+}
+
 // AlibabaInteractActivityApplyAPIResponseModel is ISV报名官方活动(中心化流量) 成功返回结果
 type AlibabaInteractActivityApplyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_activity_apply_response"`
@@ -26,4 +33,29 @@ type AlibabaInteractActivityApplyAPIResponseModel struct {
 	Data *ActivityWriteResult `json:"data,omitempty" xml:"data,omitempty"`
 	// top接口执行成功与否
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaInteractActivityApplyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrMsg = ""
+	m.Data = nil
+	m.IsSuccess = false
+}
+
+var poolAlibabaInteractActivityApplyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaInteractActivityApplyAPIResponse)
+	},
+}
+
+// GetAlibabaInteractActivityApplyAPIResponse 从 sync.Pool 获取 AlibabaInteractActivityApplyAPIResponse
+func GetAlibabaInteractActivityApplyAPIResponse() *AlibabaInteractActivityApplyAPIResponse {
+	return poolAlibabaInteractActivityApplyAPIResponse.Get().(*AlibabaInteractActivityApplyAPIResponse)
+}
+
+// ReleaseAlibabaInteractActivityApplyAPIResponse 将 AlibabaInteractActivityApplyAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaInteractActivityApplyAPIResponse(v *AlibabaInteractActivityApplyAPIResponse) {
+	v.Reset()
+	poolAlibabaInteractActivityApplyAPIResponse.Put(v)
 }

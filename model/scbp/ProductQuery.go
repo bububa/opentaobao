@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // ProductQuery 结构体
 type ProductQuery struct {
 	// 结束时间 当inteval=7或30的时候 不需要填写
@@ -16,4 +20,27 @@ type ProductQuery struct {
 	ToPage int64 `json:"to_page,omitempty" xml:"to_page,omitempty"`
 	// 产品ID
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
+}
+
+var poolProductQuery = sync.Pool{
+	New: func() any {
+		return new(ProductQuery)
+	},
+}
+
+// GetProductQuery() 从对象池中获取ProductQuery
+func GetProductQuery() *ProductQuery {
+	return poolProductQuery.Get().(*ProductQuery)
+}
+
+// ReleaseProductQuery 释放ProductQuery
+func ReleaseProductQuery(v *ProductQuery) {
+	v.EndDate = ""
+	v.OrderStr = ""
+	v.BeginDate = ""
+	v.Inteval = 0
+	v.PerPageSize = 0
+	v.ToPage = 0
+	v.ProductId = 0
+	poolProductQuery.Put(v)
 }

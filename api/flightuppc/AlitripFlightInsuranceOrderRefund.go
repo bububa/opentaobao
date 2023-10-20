@@ -9,11 +9,6 @@ import (
 // alitrip.flight.insurance.order.refund
 //
 // 保险订单退保
-func AlitripFlightInsuranceOrderRefund(clt *core.SDKClient, req *flightuppc.AlitripFlightInsuranceOrderRefundAPIRequest, session string) (*flightuppc.AlitripFlightInsuranceOrderRefundAPIResponse, error) {
-	var resp flightuppc.AlitripFlightInsuranceOrderRefundAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripFlightInsuranceOrderRefund(clt *core.SDKClient, req *flightuppc.AlitripFlightInsuranceOrderRefundAPIRequest, resp *flightuppc.AlitripFlightInsuranceOrderRefundAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

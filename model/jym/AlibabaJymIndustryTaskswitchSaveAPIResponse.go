@@ -2,6 +2,7 @@ package jym
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaJymIndustryTaskswitchSaveAPIResponse struct {
 	model.CommonResponse
 	AlibabaJymIndustryTaskswitchSaveAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymIndustryTaskswitchSaveAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaJymIndustryTaskswitchSaveAPIResponseModel).Reset()
 }
 
 // AlibabaJymIndustryTaskswitchSaveAPIResponseModel is 行业信息系统开关 成功返回结果
@@ -32,4 +39,32 @@ type AlibabaJymIndustryTaskswitchSaveAPIResponseModel struct {
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
 	// 接口调用结果: true/false
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymIndustryTaskswitchSaveAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SubCodeType = ""
+	m.SubExtraErrMsg = ""
+	m.StateCode = ""
+	m.ExtraErrMsg = ""
+	m.Result = false
+	m.IsSuccess = false
+}
+
+var poolAlibabaJymIndustryTaskswitchSaveAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaJymIndustryTaskswitchSaveAPIResponse)
+	},
+}
+
+// GetAlibabaJymIndustryTaskswitchSaveAPIResponse 从 sync.Pool 获取 AlibabaJymIndustryTaskswitchSaveAPIResponse
+func GetAlibabaJymIndustryTaskswitchSaveAPIResponse() *AlibabaJymIndustryTaskswitchSaveAPIResponse {
+	return poolAlibabaJymIndustryTaskswitchSaveAPIResponse.Get().(*AlibabaJymIndustryTaskswitchSaveAPIResponse)
+}
+
+// ReleaseAlibabaJymIndustryTaskswitchSaveAPIResponse 将 AlibabaJymIndustryTaskswitchSaveAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaJymIndustryTaskswitchSaveAPIResponse(v *AlibabaJymIndustryTaskswitchSaveAPIResponse) {
+	v.Reset()
+	poolAlibabaJymIndustryTaskswitchSaveAPIResponse.Put(v)
 }

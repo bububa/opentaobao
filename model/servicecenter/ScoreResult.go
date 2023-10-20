@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // ScoreResult 结构体
 type ScoreResult struct {
 	// 稳定性评分
@@ -34,4 +38,36 @@ type ScoreResult struct {
 	IsValid int64 `json:"is_valid,omitempty" xml:"is_valid,omitempty"`
 	// 评价id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolScoreResult = sync.Pool{
+	New: func() any {
+		return new(ScoreResult)
+	},
+}
+
+// GetScoreResult() 从对象池中获取ScoreResult
+func GetScoreResult() *ScoreResult {
+	return poolScoreResult.Get().(*ScoreResult)
+}
+
+// ReleaseScoreResult 释放ScoreResult
+func ReleaseScoreResult(v *ScoreResult) {
+	v.StabilityScore = ""
+	v.RapidScore = ""
+	v.AvgScore = ""
+	v.ProfScore = ""
+	v.GmtCreate = ""
+	v.ItemCode = ""
+	v.ItemName = ""
+	v.AttitudeScore = ""
+	v.MatchedScore = ""
+	v.Suggestion = ""
+	v.ServiceCode = ""
+	v.UserNick = ""
+	v.EasyuseScore = ""
+	v.IsPay = 0
+	v.IsValid = 0
+	v.Id = 0
+	poolScoreResult.Put(v)
 }

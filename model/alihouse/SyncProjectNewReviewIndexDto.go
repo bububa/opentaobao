@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // SyncProjectNewReviewIndexDto 结构体
 type SyncProjectNewReviewIndexDto struct {
 	// 外部id
@@ -36,4 +40,37 @@ type SyncProjectNewReviewIndexDto struct {
 	CityId int64 `json:"city_id,omitempty" xml:"city_id,omitempty"`
 	// 1有效0无效
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolSyncProjectNewReviewIndexDto = sync.Pool{
+	New: func() any {
+		return new(SyncProjectNewReviewIndexDto)
+	},
+}
+
+// GetSyncProjectNewReviewIndexDto() 从对象池中获取SyncProjectNewReviewIndexDto
+func GetSyncProjectNewReviewIndexDto() *SyncProjectNewReviewIndexDto {
+	return poolSyncProjectNewReviewIndexDto.Get().(*SyncProjectNewReviewIndexDto)
+}
+
+// ReleaseSyncProjectNewReviewIndexDto 释放SyncProjectNewReviewIndexDto
+func ReleaseSyncProjectNewReviewIndexDto(v *SyncProjectNewReviewIndexDto) {
+	v.OuterId = ""
+	v.CityName = ""
+	v.LocationScore = ""
+	v.TrafficScore = ""
+	v.ProductForceScore = ""
+	v.MatchedScore = ""
+	v.HouseTypeScore = ""
+	v.HouseScore = ""
+	v.LocationLevel = ""
+	v.TrafficLevel = ""
+	v.ProductForceLevel = ""
+	v.MatchedLevel = ""
+	v.HouseTypeLevel = ""
+	v.HouseLevel = ""
+	v.OuterIndexId = 0
+	v.CityId = 0
+	v.Status = 0
+	poolSyncProjectNewReviewIndexDto.Put(v)
 }

@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleRentItemSkuUpdateAPIRequest struct {
 // NewAlibabaIdleRentItemSkuUpdateRequest 初始化AlibabaIdleRentItemSkuUpdateAPIRequest对象
 func NewAlibabaIdleRentItemSkuUpdateRequest() *AlibabaIdleRentItemSkuUpdateAPIRequest {
 	return &AlibabaIdleRentItemSkuUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleRentItemSkuUpdateAPIRequest) Reset() {
+	r._sku = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleRentItemSkuUpdateAPIRequest) SetSku(_sku *ItemSkuDto) error 
 // GetSku Sku Getter
 func (r AlibabaIdleRentItemSkuUpdateAPIRequest) GetSku() *ItemSkuDto {
 	return r._sku
+}
+
+var poolAlibabaIdleRentItemSkuUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleRentItemSkuUpdateRequest()
+	},
+}
+
+// GetAlibabaIdleRentItemSkuUpdateRequest 从 sync.Pool 获取 AlibabaIdleRentItemSkuUpdateAPIRequest
+func GetAlibabaIdleRentItemSkuUpdateAPIRequest() *AlibabaIdleRentItemSkuUpdateAPIRequest {
+	return poolAlibabaIdleRentItemSkuUpdateAPIRequest.Get().(*AlibabaIdleRentItemSkuUpdateAPIRequest)
+}
+
+// ReleaseAlibabaIdleRentItemSkuUpdateAPIRequest 将 AlibabaIdleRentItemSkuUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleRentItemSkuUpdateAPIRequest(v *AlibabaIdleRentItemSkuUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleRentItemSkuUpdateAPIRequest.Put(v)
 }

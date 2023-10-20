@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,13 +18,13 @@ type TaobaoWlbOrderJzConsignAPIRequest struct {
 	// 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。如果为空，取的卖家的默认取货地址
 	_senderId int64
 	// 物流公司信息
-	_lgTpDto *Tpdto
+	_lgTpDto *TPDto
 	// 安装公司信息,需要安装时,才填写
-	_insTpDto *Tpdto
+	_insTpDto *TPDto
 	// 家装收货人信息,如果为空,则取默认收货信息
-	_jzReceiverTo *JzReceiverTo
+	_jzReceiverTo *JzReceiverTO
 	// 安装收货人信息,如果为空,则取默认收货人信息
-	_insReceiverTo *JzReceiverTo
+	_insReceiverTo *JzReceiverTO
 	// 发货参数
 	_jzTopArgs *JzTopArgs
 }
@@ -31,8 +32,20 @@ type TaobaoWlbOrderJzConsignAPIRequest struct {
 // NewTaobaoWlbOrderJzConsignRequest 初始化TaobaoWlbOrderJzConsignAPIRequest对象
 func NewTaobaoWlbOrderJzConsignRequest() *TaobaoWlbOrderJzConsignAPIRequest {
 	return &TaobaoWlbOrderJzConsignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbOrderJzConsignAPIRequest) Reset() {
+	r._tid = 0
+	r._senderId = 0
+	r._lgTpDto = nil
+	r._insTpDto = nil
+	r._jzReceiverTo = nil
+	r._insReceiverTo = nil
+	r._jzTopArgs = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -80,53 +93,53 @@ func (r TaobaoWlbOrderJzConsignAPIRequest) GetSenderId() int64 {
 
 // SetLgTpDto is LgTpDto Setter
 // 物流公司信息
-func (r *TaobaoWlbOrderJzConsignAPIRequest) SetLgTpDto(_lgTpDto *Tpdto) error {
+func (r *TaobaoWlbOrderJzConsignAPIRequest) SetLgTpDto(_lgTpDto *TPDto) error {
 	r._lgTpDto = _lgTpDto
 	r.Set("lg_tp_dto", _lgTpDto)
 	return nil
 }
 
 // GetLgTpDto LgTpDto Getter
-func (r TaobaoWlbOrderJzConsignAPIRequest) GetLgTpDto() *Tpdto {
+func (r TaobaoWlbOrderJzConsignAPIRequest) GetLgTpDto() *TPDto {
 	return r._lgTpDto
 }
 
 // SetInsTpDto is InsTpDto Setter
 // 安装公司信息,需要安装时,才填写
-func (r *TaobaoWlbOrderJzConsignAPIRequest) SetInsTpDto(_insTpDto *Tpdto) error {
+func (r *TaobaoWlbOrderJzConsignAPIRequest) SetInsTpDto(_insTpDto *TPDto) error {
 	r._insTpDto = _insTpDto
 	r.Set("ins_tp_dto", _insTpDto)
 	return nil
 }
 
 // GetInsTpDto InsTpDto Getter
-func (r TaobaoWlbOrderJzConsignAPIRequest) GetInsTpDto() *Tpdto {
+func (r TaobaoWlbOrderJzConsignAPIRequest) GetInsTpDto() *TPDto {
 	return r._insTpDto
 }
 
 // SetJzReceiverTo is JzReceiverTo Setter
 // 家装收货人信息,如果为空,则取默认收货信息
-func (r *TaobaoWlbOrderJzConsignAPIRequest) SetJzReceiverTo(_jzReceiverTo *JzReceiverTo) error {
+func (r *TaobaoWlbOrderJzConsignAPIRequest) SetJzReceiverTo(_jzReceiverTo *JzReceiverTO) error {
 	r._jzReceiverTo = _jzReceiverTo
 	r.Set("jz_receiver_to", _jzReceiverTo)
 	return nil
 }
 
 // GetJzReceiverTo JzReceiverTo Getter
-func (r TaobaoWlbOrderJzConsignAPIRequest) GetJzReceiverTo() *JzReceiverTo {
+func (r TaobaoWlbOrderJzConsignAPIRequest) GetJzReceiverTo() *JzReceiverTO {
 	return r._jzReceiverTo
 }
 
 // SetInsReceiverTo is InsReceiverTo Setter
 // 安装收货人信息,如果为空,则取默认收货人信息
-func (r *TaobaoWlbOrderJzConsignAPIRequest) SetInsReceiverTo(_insReceiverTo *JzReceiverTo) error {
+func (r *TaobaoWlbOrderJzConsignAPIRequest) SetInsReceiverTo(_insReceiverTo *JzReceiverTO) error {
 	r._insReceiverTo = _insReceiverTo
 	r.Set("ins_receiver_to", _insReceiverTo)
 	return nil
 }
 
 // GetInsReceiverTo InsReceiverTo Getter
-func (r TaobaoWlbOrderJzConsignAPIRequest) GetInsReceiverTo() *JzReceiverTo {
+func (r TaobaoWlbOrderJzConsignAPIRequest) GetInsReceiverTo() *JzReceiverTO {
 	return r._insReceiverTo
 }
 
@@ -141,4 +154,21 @@ func (r *TaobaoWlbOrderJzConsignAPIRequest) SetJzTopArgs(_jzTopArgs *JzTopArgs) 
 // GetJzTopArgs JzTopArgs Getter
 func (r TaobaoWlbOrderJzConsignAPIRequest) GetJzTopArgs() *JzTopArgs {
 	return r._jzTopArgs
+}
+
+var poolTaobaoWlbOrderJzConsignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbOrderJzConsignRequest()
+	},
+}
+
+// GetTaobaoWlbOrderJzConsignRequest 从 sync.Pool 获取 TaobaoWlbOrderJzConsignAPIRequest
+func GetTaobaoWlbOrderJzConsignAPIRequest() *TaobaoWlbOrderJzConsignAPIRequest {
+	return poolTaobaoWlbOrderJzConsignAPIRequest.Get().(*TaobaoWlbOrderJzConsignAPIRequest)
+}
+
+// ReleaseTaobaoWlbOrderJzConsignAPIRequest 将 TaobaoWlbOrderJzConsignAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbOrderJzConsignAPIRequest(v *TaobaoWlbOrderJzConsignAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbOrderJzConsignAPIRequest.Put(v)
 }

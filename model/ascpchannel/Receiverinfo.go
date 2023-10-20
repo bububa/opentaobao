@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Receiverinfo 结构体
 type Receiverinfo struct {
 	// 邮编
@@ -50,4 +54,44 @@ type Receiverinfo struct {
 	DetailAddress string `json:"detail_address,omitempty" xml:"detail_address,omitempty"`
 	// 收件人地址ID
 	Oaid string `json:"oaid,omitempty" xml:"oaid,omitempty"`
+}
+
+var poolReceiverinfo = sync.Pool{
+	New: func() any {
+		return new(Receiverinfo)
+	},
+}
+
+// GetReceiverinfo() 从对象池中获取Receiverinfo
+func GetReceiverinfo() *Receiverinfo {
+	return poolReceiverinfo.Get().(*Receiverinfo)
+}
+
+// ReleaseReceiverinfo 释放Receiverinfo
+func ReleaseReceiverinfo(v *Receiverinfo) {
+	v.ReceiverZipCode = ""
+	v.ReceiverCountry = ""
+	v.ReceiverProvince = ""
+	v.ReceiverCity = ""
+	v.ReceiverArea = ""
+	v.ReceiveTown = ""
+	v.ReceiverDetailAddress = ""
+	v.ReceiverName = ""
+	v.ReceiverMobile = ""
+	v.ReceiverPhone = ""
+	v.ReceiverCompanyName = ""
+	v.ReceiverEmail = ""
+	v.ReceiverAddress = ""
+	v.ReceiverTown = ""
+	v.Name = ""
+	v.ZipCode = ""
+	v.Tel = ""
+	v.Mobile = ""
+	v.Province = ""
+	v.City = ""
+	v.Area = ""
+	v.Town = ""
+	v.DetailAddress = ""
+	v.Oaid = ""
+	poolReceiverinfo.Put(v)
 }

@@ -2,6 +2,7 @@ package caipiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,14 @@ type TaobaoCaipiaoMarketingPutAPIRequest struct {
 // NewTaobaoCaipiaoMarketingPutRequest 初始化TaobaoCaipiaoMarketingPutAPIRequest对象
 func NewTaobaoCaipiaoMarketingPutRequest() *TaobaoCaipiaoMarketingPutAPIRequest {
 	return &TaobaoCaipiaoMarketingPutAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCaipiaoMarketingPutAPIRequest) Reset() {
+	r._detail = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -61,4 +68,21 @@ func (r *TaobaoCaipiaoMarketingPutAPIRequest) SetDetail(_detail *WangcaiMarketin
 // GetDetail Detail Getter
 func (r TaobaoCaipiaoMarketingPutAPIRequest) GetDetail() *WangcaiMarketingDetail {
 	return r._detail
+}
+
+var poolTaobaoCaipiaoMarketingPutAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCaipiaoMarketingPutRequest()
+	},
+}
+
+// GetTaobaoCaipiaoMarketingPutRequest 从 sync.Pool 获取 TaobaoCaipiaoMarketingPutAPIRequest
+func GetTaobaoCaipiaoMarketingPutAPIRequest() *TaobaoCaipiaoMarketingPutAPIRequest {
+	return poolTaobaoCaipiaoMarketingPutAPIRequest.Get().(*TaobaoCaipiaoMarketingPutAPIRequest)
+}
+
+// ReleaseTaobaoCaipiaoMarketingPutAPIRequest 将 TaobaoCaipiaoMarketingPutAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCaipiaoMarketingPutAPIRequest(v *TaobaoCaipiaoMarketingPutAPIRequest) {
+	v.Reset()
+	poolTaobaoCaipiaoMarketingPutAPIRequest.Put(v)
 }

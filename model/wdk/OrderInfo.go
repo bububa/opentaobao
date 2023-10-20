@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderInfo 结构体
 type OrderInfo struct {
 	// 子订单信息
@@ -84,4 +88,61 @@ type OrderInfo struct {
 	SelfPickPayableFee int64 `json:"self_pick_payable_fee,omitempty" xml:"self_pick_payable_fee,omitempty"`
 	// 价格加价履约费
 	PriceIncreasePerformanceFee int64 `json:"price_increase_performance_fee,omitempty" xml:"price_increase_performance_fee,omitempty"`
+}
+
+var poolOrderInfo = sync.Pool{
+	New: func() any {
+		return new(OrderInfo)
+	},
+}
+
+// GetOrderInfo() 从对象池中获取OrderInfo
+func GetOrderInfo() *OrderInfo {
+	return poolOrderInfo.Get().(*OrderInfo)
+}
+
+// ReleaseOrderInfo 释放OrderInfo
+func ReleaseOrderInfo(v *OrderInfo) {
+	v.SubOrders = v.SubOrders[:0]
+	v.PayChannels = v.PayChannels[:0]
+	v.OutOrderId = ""
+	v.OutShopId = ""
+	v.OrderStatus = ""
+	v.PayTime = ""
+	v.CreateTime = ""
+	v.SerialNo = ""
+	v.ShopId = ""
+	v.Ext = ""
+	v.StoreId = ""
+	v.Buyer = nil
+	v.Consignee = nil
+	v.PayFee = 0
+	v.OriginFee = 0
+	v.DiscountFee = 0
+	v.PostFee = 0
+	v.OrderFrom = 0
+	v.PickupType = 0
+	v.Commission = 0
+	v.PackageFee = 0
+	v.MerchantTotalFee = 0
+	v.OtherMerchantSubsidyFee = 0
+	v.OtherPlatSubsidyFee = 0
+	v.MerchantBaseSendFee = 0
+	v.PlatSendSubsidyFee = 0
+	v.MerchantSendSubsidyFee = 0
+	v.MerchantCallOrderFee = 0
+	v.ColdChainSendFee = 0
+	v.MerchantCallOrderSendFee = 0
+	v.SendInsuranceFee = 0
+	v.LogisticsShopServiceFee = 0
+	v.ActualIncrementServiceFee = 0
+	v.PerformanceIncrementServiceFee = 0
+	v.DistanceIncreasePerformanceFee = 0
+	v.TimeIncreasePerformanceFee = 0
+	v.MerchantPublicDonation = 0
+	v.PlatPointsDeductionFee = 0
+	v.SelfPickDiscountFee = 0
+	v.SelfPickPayableFee = 0
+	v.PriceIncreasePerformanceFee = 0
+	poolOrderInfo.Put(v)
 }

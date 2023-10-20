@@ -1,5 +1,9 @@
 package category
 
+import (
+	"sync"
+)
+
 // ItemCat 结构体
 type ItemCat struct {
 	// Feature对象列表&lt;br/&gt;目前已有的属性：&lt;br/&gt;若Attr_key为 udsaleprop，attr_value为1 则允许卖家在改类目新增自定义销售属性,不然为不允许
@@ -18,4 +22,28 @@ type ItemCat struct {
 	IsParent bool `json:"is_parent,omitempty" xml:"is_parent,omitempty"`
 	// 是否度量衡类目
 	TaosirCat bool `json:"taosir_cat,omitempty" xml:"taosir_cat,omitempty"`
+}
+
+var poolItemCat = sync.Pool{
+	New: func() any {
+		return new(ItemCat)
+	},
+}
+
+// GetItemCat() 从对象池中获取ItemCat
+func GetItemCat() *ItemCat {
+	return poolItemCat.Get().(*ItemCat)
+}
+
+// ReleaseItemCat 释放ItemCat
+func ReleaseItemCat(v *ItemCat) {
+	v.Features = v.Features[:0]
+	v.Name = ""
+	v.Status = ""
+	v.Cid = 0
+	v.ParentCid = 0
+	v.SortOrder = 0
+	v.IsParent = false
+	v.TaosirCat = false
+	poolItemCat.Put(v)
 }

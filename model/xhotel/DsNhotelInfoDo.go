@@ -1,5 +1,9 @@
 package xhotel
 
+import (
+	"sync"
+)
+
 // DsNhotelInfoDo 结构体
 type DsNhotelInfoDo struct {
 	// onlineDate
@@ -44,4 +48,41 @@ type DsNhotelInfoDo struct {
 	HotelPicturesStatus int64 `json:"hotel_pictures_status,omitempty" xml:"hotel_pictures_status,omitempty"`
 	// canSellStatus
 	CanSellStatus int64 `json:"can_sell_status,omitempty" xml:"can_sell_status,omitempty"`
+}
+
+var poolDsNhotelInfoDo = sync.Pool{
+	New: func() any {
+		return new(DsNhotelInfoDo)
+	},
+}
+
+// GetDsNhotelInfoDo() 从对象池中获取DsNhotelInfoDo
+func GetDsNhotelInfoDo() *DsNhotelInfoDo {
+	return poolDsNhotelInfoDo.Get().(*DsNhotelInfoDo)
+}
+
+// ReleaseDsNhotelInfoDo 释放DsNhotelInfoDo
+func ReleaseDsNhotelInfoDo(v *DsNhotelInfoDo) {
+	v.OnlineDate = ""
+	v.SignDate = ""
+	v.Name = ""
+	v.OuterId = ""
+	v.CanSellDate = ""
+	v.OnlineStatus = 0
+	v.QualificationType = 0
+	v.AccountType = 0
+	v.TrainStatus = 0
+	v.CommLetterStatus = 0
+	v.PrivateReceiptAccountStatus = 0
+	v.HotelierIdStatus = 0
+	v.SrlStatus = 0
+	v.BusinessLicenseStatus = 0
+	v.IdConfirmLetterStatus = 0
+	v.IsSigned = 0
+	v.IsAccountApply = 0
+	v.Hid = 0
+	v.IsKezhan = 0
+	v.HotelPicturesStatus = 0
+	v.CanSellStatus = 0
+	poolDsNhotelInfoDo.Put(v)
 }

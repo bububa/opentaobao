@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest struct {
 // NewAlibabaAscpUopSupplierConsignorderCancelFeedbackRequest 初始化AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest对象
 func NewAlibabaAscpUopSupplierConsignorderCancelFeedbackRequest() *AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest {
 	return &AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest) Reset() {
+	r._consignorderCancelFeedbackRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest) SetConsigno
 // GetConsignorderCancelFeedbackRequest ConsignorderCancelFeedbackRequest Getter
 func (r AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest) GetConsignorderCancelFeedbackRequest() *Consignordercancelfeedbackrequest {
 	return r._consignorderCancelFeedbackRequest
+}
+
+var poolAlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpUopSupplierConsignorderCancelFeedbackRequest()
+	},
+}
+
+// GetAlibabaAscpUopSupplierConsignorderCancelFeedbackRequest 从 sync.Pool 获取 AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest
+func GetAlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest() *AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest {
+	return poolAlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest.Get().(*AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest)
+}
+
+// ReleaseAlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest 将 AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest(v *AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest.Put(v)
 }

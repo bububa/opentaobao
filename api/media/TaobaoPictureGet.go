@@ -9,11 +9,6 @@ import (
 // taobao.picture.get
 //
 // 获取图片信息
-func TaobaoPictureGet(clt *core.SDKClient, req *media.TaobaoPictureGetAPIRequest, session string) (*media.TaobaoPictureGetAPIResponse, error) {
-	var resp media.TaobaoPictureGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPictureGet(clt *core.SDKClient, req *media.TaobaoPictureGetAPIRequest, resp *media.TaobaoPictureGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

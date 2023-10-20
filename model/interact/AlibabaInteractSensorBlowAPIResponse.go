@@ -2,6 +2,7 @@ package interact
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaInteractSensorBlowAPIResponse struct {
 	AlibabaInteractSensorBlowAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaInteractSensorBlowAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaInteractSensorBlowAPIResponseModel).Reset()
+}
+
 // AlibabaInteractSensorBlowAPIResponseModel is 吹气 成功返回结果
 type AlibabaInteractSensorBlowAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_sensor_blow_response"`
@@ -22,4 +29,27 @@ type AlibabaInteractSensorBlowAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// return=0 表示成功
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaInteractSensorBlowAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = ""
+}
+
+var poolAlibabaInteractSensorBlowAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaInteractSensorBlowAPIResponse)
+	},
+}
+
+// GetAlibabaInteractSensorBlowAPIResponse 从 sync.Pool 获取 AlibabaInteractSensorBlowAPIResponse
+func GetAlibabaInteractSensorBlowAPIResponse() *AlibabaInteractSensorBlowAPIResponse {
+	return poolAlibabaInteractSensorBlowAPIResponse.Get().(*AlibabaInteractSensorBlowAPIResponse)
+}
+
+// ReleaseAlibabaInteractSensorBlowAPIResponse 将 AlibabaInteractSensorBlowAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaInteractSensorBlowAPIResponse(v *AlibabaInteractSensorBlowAPIResponse) {
+	v.Reset()
+	poolAlibabaInteractSensorBlowAPIResponse.Put(v)
 }

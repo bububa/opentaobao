@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type CainiaoReachableBatchjudgeAPIRequest struct {
 // NewCainiaoReachableBatchjudgeRequest 初始化CainiaoReachableBatchjudgeAPIRequest对象
 func NewCainiaoReachableBatchjudgeRequest() *CainiaoReachableBatchjudgeAPIRequest {
 	return &CainiaoReachableBatchjudgeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoReachableBatchjudgeAPIRequest) Reset() {
+	r._addressType = 0
+	r._data = nil
+	r._clientInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *CainiaoReachableBatchjudgeAPIRequest) SetClientInfo(_clientInfo *Client
 // GetClientInfo ClientInfo Getter
 func (r CainiaoReachableBatchjudgeAPIRequest) GetClientInfo() *ClientInfoDto {
 	return r._clientInfo
+}
+
+var poolCainiaoReachableBatchjudgeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoReachableBatchjudgeRequest()
+	},
+}
+
+// GetCainiaoReachableBatchjudgeRequest 从 sync.Pool 获取 CainiaoReachableBatchjudgeAPIRequest
+func GetCainiaoReachableBatchjudgeAPIRequest() *CainiaoReachableBatchjudgeAPIRequest {
+	return poolCainiaoReachableBatchjudgeAPIRequest.Get().(*CainiaoReachableBatchjudgeAPIRequest)
+}
+
+// ReleaseCainiaoReachableBatchjudgeAPIRequest 将 CainiaoReachableBatchjudgeAPIRequest 放入 sync.Pool
+func ReleaseCainiaoReachableBatchjudgeAPIRequest(v *CainiaoReachableBatchjudgeAPIRequest) {
+	v.Reset()
+	poolCainiaoReachableBatchjudgeAPIRequest.Put(v)
 }

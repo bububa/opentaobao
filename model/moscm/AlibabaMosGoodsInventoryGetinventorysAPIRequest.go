@@ -2,6 +2,7 @@ package moscm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMosGoodsInventoryGetinventorysAPIRequest struct {
 // NewAlibabaMosGoodsInventoryGetinventorysRequest 初始化AlibabaMosGoodsInventoryGetinventorysAPIRequest对象
 func NewAlibabaMosGoodsInventoryGetinventorysRequest() *AlibabaMosGoodsInventoryGetinventorysAPIRequest {
 	return &AlibabaMosGoodsInventoryGetinventorysAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosGoodsInventoryGetinventorysAPIRequest) Reset() {
+	r._paramVirtualInventoryQueryDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMosGoodsInventoryGetinventorysAPIRequest) SetParamVirtualInvento
 // GetParamVirtualInventoryQueryDto ParamVirtualInventoryQueryDto Getter
 func (r AlibabaMosGoodsInventoryGetinventorysAPIRequest) GetParamVirtualInventoryQueryDto() *VirtualInventoryQueryDto {
 	return r._paramVirtualInventoryQueryDto
+}
+
+var poolAlibabaMosGoodsInventoryGetinventorysAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosGoodsInventoryGetinventorysRequest()
+	},
+}
+
+// GetAlibabaMosGoodsInventoryGetinventorysRequest 从 sync.Pool 获取 AlibabaMosGoodsInventoryGetinventorysAPIRequest
+func GetAlibabaMosGoodsInventoryGetinventorysAPIRequest() *AlibabaMosGoodsInventoryGetinventorysAPIRequest {
+	return poolAlibabaMosGoodsInventoryGetinventorysAPIRequest.Get().(*AlibabaMosGoodsInventoryGetinventorysAPIRequest)
+}
+
+// ReleaseAlibabaMosGoodsInventoryGetinventorysAPIRequest 将 AlibabaMosGoodsInventoryGetinventorysAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosGoodsInventoryGetinventorysAPIRequest(v *AlibabaMosGoodsInventoryGetinventorysAPIRequest) {
+	v.Reset()
+	poolAlibabaMosGoodsInventoryGetinventorysAPIRequest.Put(v)
 }

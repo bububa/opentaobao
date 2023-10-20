@@ -2,6 +2,7 @@ package alink
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AliyunAlinkOpendataUrlQueryAPIResponse struct {
 	model.CommonResponse
 	AliyunAlinkOpendataUrlQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AliyunAlinkOpendataUrlQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliyunAlinkOpendataUrlQueryAPIResponseModel).Reset()
 }
 
 // AliyunAlinkOpendataUrlQueryAPIResponseModel is 开放数据授权访问URL查询 成功返回结果
@@ -28,4 +35,30 @@ type AliyunAlinkOpendataUrlQueryAPIResponseModel struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 调用是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliyunAlinkOpendataUrlQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Module = m.Module[:0]
+	m.Message = ""
+	m.Status = 0
+	m.IsSuccess = false
+}
+
+var poolAliyunAlinkOpendataUrlQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliyunAlinkOpendataUrlQueryAPIResponse)
+	},
+}
+
+// GetAliyunAlinkOpendataUrlQueryAPIResponse 从 sync.Pool 获取 AliyunAlinkOpendataUrlQueryAPIResponse
+func GetAliyunAlinkOpendataUrlQueryAPIResponse() *AliyunAlinkOpendataUrlQueryAPIResponse {
+	return poolAliyunAlinkOpendataUrlQueryAPIResponse.Get().(*AliyunAlinkOpendataUrlQueryAPIResponse)
+}
+
+// ReleaseAliyunAlinkOpendataUrlQueryAPIResponse 将 AliyunAlinkOpendataUrlQueryAPIResponse 保存到 sync.Pool
+func ReleaseAliyunAlinkOpendataUrlQueryAPIResponse(v *AliyunAlinkOpendataUrlQueryAPIResponse) {
+	v.Reset()
+	poolAliyunAlinkOpendataUrlQueryAPIResponse.Put(v)
 }

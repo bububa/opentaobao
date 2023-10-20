@@ -9,11 +9,6 @@ import (
 // taobao.omni.dealer.oders.refund.address
 //
 // 经销商查询逆向退货地址
-func TaobaoOmniDealerOdersRefundAddress(clt *core.SDKClient, req *omniorder.TaobaoOmniDealerOdersRefundAddressAPIRequest, session string) (*omniorder.TaobaoOmniDealerOdersRefundAddressAPIResponse, error) {
-	var resp omniorder.TaobaoOmniDealerOdersRefundAddressAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOmniDealerOdersRefundAddress(clt *core.SDKClient, req *omniorder.TaobaoOmniDealerOdersRefundAddressAPIRequest, resp *omniorder.TaobaoOmniDealerOdersRefundAddressAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

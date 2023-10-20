@@ -1,5 +1,9 @@
 package alihealthmdeer
 
+import (
+	"sync"
+)
+
 // SynVideoInfo 结构体
 type SynVideoInfo struct {
 	// 作者电话
@@ -30,4 +34,34 @@ type SynVideoInfo struct {
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 视频ID
 	VideoId int64 `json:"video_id,omitempty" xml:"video_id,omitempty"`
+}
+
+var poolSynVideoInfo = sync.Pool{
+	New: func() any {
+		return new(SynVideoInfo)
+	},
+}
+
+// GetSynVideoInfo() 从对象池中获取SynVideoInfo
+func GetSynVideoInfo() *SynVideoInfo {
+	return poolSynVideoInfo.Get().(*SynVideoInfo)
+}
+
+// ReleaseSynVideoInfo 释放SynVideoInfo
+func ReleaseSynVideoInfo(v *SynVideoInfo) {
+	v.PhoneNumber = ""
+	v.AuthorIntroduction = ""
+	v.AuthorDepartment = ""
+	v.AuthorLevel = ""
+	v.HospitalLevel = ""
+	v.HospitalName = ""
+	v.PortraitUrl = ""
+	v.AuthorName = ""
+	v.OriginalUrl = ""
+	v.VideoIntroduction = ""
+	v.VideoFileUrl = ""
+	v.PreviewUrl = ""
+	v.Title = ""
+	v.VideoId = 0
+	poolSynVideoInfo.Put(v)
 }

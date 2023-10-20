@@ -2,6 +2,7 @@ package lstbm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaLstBmStoreEmpSaveAPIRequest struct {
 // NewAlibabaLstBmStoreEmpSaveRequest 初始化AlibabaLstBmStoreEmpSaveAPIRequest对象
 func NewAlibabaLstBmStoreEmpSaveRequest() *AlibabaLstBmStoreEmpSaveAPIRequest {
 	return &AlibabaLstBmStoreEmpSaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstBmStoreEmpSaveAPIRequest) Reset() {
+	r._storeId = ""
+	r._bmEmpId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaLstBmStoreEmpSaveAPIRequest) SetBmEmpId(_bmEmpId string) error {
 // GetBmEmpId BmEmpId Getter
 func (r AlibabaLstBmStoreEmpSaveAPIRequest) GetBmEmpId() string {
 	return r._bmEmpId
+}
+
+var poolAlibabaLstBmStoreEmpSaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstBmStoreEmpSaveRequest()
+	},
+}
+
+// GetAlibabaLstBmStoreEmpSaveRequest 从 sync.Pool 获取 AlibabaLstBmStoreEmpSaveAPIRequest
+func GetAlibabaLstBmStoreEmpSaveAPIRequest() *AlibabaLstBmStoreEmpSaveAPIRequest {
+	return poolAlibabaLstBmStoreEmpSaveAPIRequest.Get().(*AlibabaLstBmStoreEmpSaveAPIRequest)
+}
+
+// ReleaseAlibabaLstBmStoreEmpSaveAPIRequest 将 AlibabaLstBmStoreEmpSaveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstBmStoreEmpSaveAPIRequest(v *AlibabaLstBmStoreEmpSaveAPIRequest) {
+	v.Reset()
+	poolAlibabaLstBmStoreEmpSaveAPIRequest.Put(v)
 }

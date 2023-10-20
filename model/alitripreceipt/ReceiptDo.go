@@ -1,5 +1,9 @@
 package alitripreceipt
 
+import (
+	"sync"
+)
+
 // ReceiptDo 结构体
 type ReceiptDo struct {
 	// 错误码
@@ -22,4 +26,30 @@ type ReceiptDo struct {
 	TpOrderId int64 `json:"tp_order_id,omitempty" xml:"tp_order_id,omitempty"`
 	// 发票状态1成功0失败-1取消订单
 	ReceiptStatus int64 `json:"receipt_status,omitempty" xml:"receipt_status,omitempty"`
+}
+
+var poolReceiptDo = sync.Pool{
+	New: func() any {
+		return new(ReceiptDo)
+	},
+}
+
+// GetReceiptDo() 从对象池中获取ReceiptDo
+func GetReceiptDo() *ReceiptDo {
+	return poolReceiptDo.Get().(*ReceiptDo)
+}
+
+// ReleaseReceiptDo 释放ReceiptDo
+func ReleaseReceiptDo(v *ReceiptDo) {
+	v.FailCode = ""
+	v.FailReason = ""
+	v.ReceiptUrl = ""
+	v.ReceiptDateTime = ""
+	v.ReceiptNumber = ""
+	v.ReceiptAmount = 0
+	v.AgentId = 0
+	v.BizType = 0
+	v.TpOrderId = 0
+	v.ReceiptStatus = 0
+	poolReceiptDo.Put(v)
 }

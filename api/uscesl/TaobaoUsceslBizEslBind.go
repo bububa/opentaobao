@@ -9,11 +9,6 @@ import (
 // taobao.uscesl.biz.esl.bind
 //
 // 电子价签商品绑定接口
-func TaobaoUsceslBizEslBind(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizEslBindAPIRequest, session string) (*uscesl.TaobaoUsceslBizEslBindAPIResponse, error) {
-	var resp uscesl.TaobaoUsceslBizEslBindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUsceslBizEslBind(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizEslBindAPIRequest, resp *uscesl.TaobaoUsceslBizEslBindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // JaqAccountRiskData 结构体
 type JaqAccountRiskData struct {
 	// 详情列表
@@ -20,4 +24,29 @@ type JaqAccountRiskData struct {
 	FinalDecision int64 `json:"final_decision,omitempty" xml:"final_decision,omitempty"`
 	// 最终得分
 	FinalScore int64 `json:"final_score,omitempty" xml:"final_score,omitempty"`
+}
+
+var poolJaqAccountRiskData = sync.Pool{
+	New: func() any {
+		return new(JaqAccountRiskData)
+	},
+}
+
+// GetJaqAccountRiskData() 从对象池中获取JaqAccountRiskData
+func GetJaqAccountRiskData() *JaqAccountRiskData {
+	return poolJaqAccountRiskData.Get().(*JaqAccountRiskData)
+}
+
+// ReleaseJaqAccountRiskData 释放JaqAccountRiskData
+func ReleaseJaqAccountRiskData(v *JaqAccountRiskData) {
+	v.Detail = v.Detail[:0]
+	v.DetailList = v.DetailList[:0]
+	v.EventId = ""
+	v.FinalDesc = ""
+	v.UserId = ""
+	v.Umid = ""
+	v.CaptchaCheckData = nil
+	v.FinalDecision = 0
+	v.FinalScore = 0
+	poolJaqAccountRiskData.Put(v)
 }

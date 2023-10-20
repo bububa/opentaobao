@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AliexpressLocalLogisticsOrderInfoQueryAPIResponse struct {
 	model.CommonResponse
 	AliexpressLocalLogisticsOrderInfoQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AliexpressLocalLogisticsOrderInfoQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressLocalLogisticsOrderInfoQueryAPIResponseModel).Reset()
 }
 
 // AliexpressLocalLogisticsOrderInfoQueryAPIResponseModel is query order details 成功返回结果
@@ -28,4 +35,30 @@ type AliexpressLocalLogisticsOrderInfoQueryAPIResponseModel struct {
 	Data *OrderDto `json:"data,omitempty" xml:"data,omitempty"`
 	// is_success
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressLocalLogisticsOrderInfoQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorResultMessage = ""
+	m.ErrorResultCode = ""
+	m.Data = nil
+	m.IsSuccess = false
+}
+
+var poolAliexpressLocalLogisticsOrderInfoQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressLocalLogisticsOrderInfoQueryAPIResponse)
+	},
+}
+
+// GetAliexpressLocalLogisticsOrderInfoQueryAPIResponse 从 sync.Pool 获取 AliexpressLocalLogisticsOrderInfoQueryAPIResponse
+func GetAliexpressLocalLogisticsOrderInfoQueryAPIResponse() *AliexpressLocalLogisticsOrderInfoQueryAPIResponse {
+	return poolAliexpressLocalLogisticsOrderInfoQueryAPIResponse.Get().(*AliexpressLocalLogisticsOrderInfoQueryAPIResponse)
+}
+
+// ReleaseAliexpressLocalLogisticsOrderInfoQueryAPIResponse 将 AliexpressLocalLogisticsOrderInfoQueryAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressLocalLogisticsOrderInfoQueryAPIResponse(v *AliexpressLocalLogisticsOrderInfoQueryAPIResponse) {
+	v.Reset()
+	poolAliexpressLocalLogisticsOrderInfoQueryAPIResponse.Put(v)
 }

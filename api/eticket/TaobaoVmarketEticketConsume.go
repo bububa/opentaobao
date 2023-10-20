@@ -9,11 +9,6 @@ import (
 // taobao.vmarket.eticket.consume
 //
 // 外部合作商家电子票券消费回调接口
-func TaobaoVmarketEticketConsume(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketConsumeAPIRequest, session string) (*eticket.TaobaoVmarketEticketConsumeAPIResponse, error) {
-	var resp eticket.TaobaoVmarketEticketConsumeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoVmarketEticketConsume(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketConsumeAPIRequest, resp *eticket.TaobaoVmarketEticketConsumeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

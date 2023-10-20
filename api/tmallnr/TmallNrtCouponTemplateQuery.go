@@ -9,11 +9,6 @@ import (
 // tmall.nrt.coupon.template.query
 //
 // 查询券模版
-func TmallNrtCouponTemplateQuery(clt *core.SDKClient, req *tmallnr.TmallNrtCouponTemplateQueryAPIRequest, session string) (*tmallnr.TmallNrtCouponTemplateQueryAPIResponse, error) {
-	var resp tmallnr.TmallNrtCouponTemplateQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallNrtCouponTemplateQuery(clt *core.SDKClient, req *tmallnr.TmallNrtCouponTemplateQueryAPIRequest, resp *tmallnr.TmallNrtCouponTemplateQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

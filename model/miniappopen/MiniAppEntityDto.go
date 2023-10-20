@@ -1,5 +1,9 @@
 package miniappopen
 
+import (
+	"sync"
+)
+
 // MiniAppEntityDto 结构体
 type MiniAppEntityDto struct {
 	// appkey
@@ -16,4 +20,27 @@ type MiniAppEntityDto struct {
 	OnlineVersion string `json:"online_version,omitempty" xml:"online_version,omitempty"`
 	// 线上码
 	OnlineCode string `json:"online_code,omitempty" xml:"online_code,omitempty"`
+}
+
+var poolMiniAppEntityDto = sync.Pool{
+	New: func() any {
+		return new(MiniAppEntityDto)
+	},
+}
+
+// GetMiniAppEntityDto() 从对象池中获取MiniAppEntityDto
+func GetMiniAppEntityDto() *MiniAppEntityDto {
+	return poolMiniAppEntityDto.Get().(*MiniAppEntityDto)
+}
+
+// ReleaseMiniAppEntityDto 释放MiniAppEntityDto
+func ReleaseMiniAppEntityDto(v *MiniAppEntityDto) {
+	v.Appkey = ""
+	v.Id = ""
+	v.AppName = ""
+	v.AppDescription = ""
+	v.AppIcon = ""
+	v.OnlineVersion = ""
+	v.OnlineCode = ""
+	poolMiniAppEntityDto.Put(v)
 }

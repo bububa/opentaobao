@@ -1,5 +1,9 @@
 package tmallgenie
 
+import (
+	"sync"
+)
+
 // RawVideoAlbum 结构体
 type RawVideoAlbum struct {
 	// 演员名称
@@ -88,4 +92,63 @@ type RawVideoAlbum struct {
 	UpdateIndex int64 `json:"update_index,omitempty" xml:"update_index,omitempty"`
 	// 是否教育内容
 	IsEducation bool `json:"is_education,omitempty" xml:"is_education,omitempty"`
+}
+
+var poolRawVideoAlbum = sync.Pool{
+	New: func() any {
+		return new(RawVideoAlbum)
+	},
+}
+
+// GetRawVideoAlbum() 从对象池中获取RawVideoAlbum
+func GetRawVideoAlbum() *RawVideoAlbum {
+	return poolRawVideoAlbum.Get().(*RawVideoAlbum)
+}
+
+// ReleaseRawVideoAlbum 释放RawVideoAlbum
+func ReleaseRawVideoAlbum(v *RawVideoAlbum) {
+	v.ActorName = v.ActorName[:0]
+	v.Alias = v.Alias[:0]
+	v.DirectorName = v.DirectorName[:0]
+	v.ProducerName = v.ProducerName[:0]
+	v.TagIds = v.TagIds[:0]
+	v.UploaderName = v.UploaderName[:0]
+	v.VCoverUrl = ""
+	v.Area = ""
+	v.ContentScore = ""
+	v.CoverUrl = ""
+	v.Description = ""
+	v.ExtendInfo = ""
+	v.Id = ""
+	v.Language = ""
+	v.Operation = ""
+	v.OupgcType = ""
+	v.SubTitle = ""
+	v.Title = ""
+	v.GradeStagId = ""
+	v.CourseId = ""
+	v.BookVersionId = ""
+	v.TextbookId = ""
+	v.AuditionNum = 0
+	v.ChargeType = 0
+	v.CollectCount = 0
+	v.CommentCount = 0
+	v.CommonCateId = 0
+	v.CostPrice = 0
+	v.ForwardCount = 0
+	v.IsExclusive = 0
+	v.IsFinished = 0
+	v.LikeCount = 0
+	v.PlayCount = 0
+	v.PlayOrder = 0
+	v.ReleaseTime = 0
+	v.SuggestMaxPrice = 0
+	v.SuggestMinPrice = 0
+	v.TotalEpisode = 0
+	v.ValidEndTime = 0
+	v.ValidStartTime = 0
+	v.CourseType = 0
+	v.UpdateIndex = 0
+	v.IsEducation = false
+	poolRawVideoAlbum.Put(v)
 }

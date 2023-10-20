@@ -2,6 +2,7 @@ package dmp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoDmpCrowdTemplateTopicFindAPIResponse struct {
 	model.CommonResponse
 	TaobaoDmpCrowdTemplateTopicFindAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoDmpCrowdTemplateTopicFindAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoDmpCrowdTemplateTopicFindAPIResponseModel).Reset()
 }
 
 // TaobaoDmpCrowdTemplateTopicFindAPIResponseModel is 平台精选榜单和模版查询接口 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoDmpCrowdTemplateTopicFindAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoDmpCrowdTemplateTopicFindAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = m.Result[:0]
+	m.ResultErrorCode = ""
+	m.Message = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoDmpCrowdTemplateTopicFindAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoDmpCrowdTemplateTopicFindAPIResponse)
+	},
+}
+
+// GetTaobaoDmpCrowdTemplateTopicFindAPIResponse 从 sync.Pool 获取 TaobaoDmpCrowdTemplateTopicFindAPIResponse
+func GetTaobaoDmpCrowdTemplateTopicFindAPIResponse() *TaobaoDmpCrowdTemplateTopicFindAPIResponse {
+	return poolTaobaoDmpCrowdTemplateTopicFindAPIResponse.Get().(*TaobaoDmpCrowdTemplateTopicFindAPIResponse)
+}
+
+// ReleaseTaobaoDmpCrowdTemplateTopicFindAPIResponse 将 TaobaoDmpCrowdTemplateTopicFindAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoDmpCrowdTemplateTopicFindAPIResponse(v *TaobaoDmpCrowdTemplateTopicFindAPIResponse) {
+	v.Reset()
+	poolTaobaoDmpCrowdTemplateTopicFindAPIResponse.Put(v)
 }

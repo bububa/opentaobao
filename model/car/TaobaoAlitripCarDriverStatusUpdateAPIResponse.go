@@ -2,6 +2,7 @@ package car
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAlitripCarDriverStatusUpdateAPIResponse struct {
 	TaobaoAlitripCarDriverStatusUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAlitripCarDriverStatusUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAlitripCarDriverStatusUpdateAPIResponseModel).Reset()
+}
+
 // TaobaoAlitripCarDriverStatusUpdateAPIResponseModel is 司机服务状态更新接口 成功返回结果
 type TaobaoAlitripCarDriverStatusUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_car_driver_status_update_response"`
@@ -26,4 +33,29 @@ type TaobaoAlitripCarDriverStatusUpdateAPIResponseModel struct {
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// 错误码
 	MessageCode int64 `json:"message_code,omitempty" xml:"message_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAlitripCarDriverStatusUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.Data = ""
+	m.MessageCode = 0
+}
+
+var poolTaobaoAlitripCarDriverStatusUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripCarDriverStatusUpdateAPIResponse)
+	},
+}
+
+// GetTaobaoAlitripCarDriverStatusUpdateAPIResponse 从 sync.Pool 获取 TaobaoAlitripCarDriverStatusUpdateAPIResponse
+func GetTaobaoAlitripCarDriverStatusUpdateAPIResponse() *TaobaoAlitripCarDriverStatusUpdateAPIResponse {
+	return poolTaobaoAlitripCarDriverStatusUpdateAPIResponse.Get().(*TaobaoAlitripCarDriverStatusUpdateAPIResponse)
+}
+
+// ReleaseTaobaoAlitripCarDriverStatusUpdateAPIResponse 将 TaobaoAlitripCarDriverStatusUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAlitripCarDriverStatusUpdateAPIResponse(v *TaobaoAlitripCarDriverStatusUpdateAPIResponse) {
+	v.Reset()
+	poolTaobaoAlitripCarDriverStatusUpdateAPIResponse.Put(v)
 }

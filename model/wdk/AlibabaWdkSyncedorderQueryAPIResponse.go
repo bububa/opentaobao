@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaWdkSyncedorderQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkSyncedorderQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkSyncedorderQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkSyncedorderQueryAPIResponseModel).Reset()
 }
 
 // AlibabaWdkSyncedorderQueryAPIResponseModel is 五道口查询同步订单 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaWdkSyncedorderQueryAPIResponseModel struct {
 	ReturnCode int64 `json:"return_code,omitempty" xml:"return_code,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkSyncedorderQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.BizOrderId = ""
+	m.ReturnCode = 0
+	m.IsSuccess = false
+}
+
+var poolAlibabaWdkSyncedorderQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkSyncedorderQueryAPIResponse)
+	},
+}
+
+// GetAlibabaWdkSyncedorderQueryAPIResponse 从 sync.Pool 获取 AlibabaWdkSyncedorderQueryAPIResponse
+func GetAlibabaWdkSyncedorderQueryAPIResponse() *AlibabaWdkSyncedorderQueryAPIResponse {
+	return poolAlibabaWdkSyncedorderQueryAPIResponse.Get().(*AlibabaWdkSyncedorderQueryAPIResponse)
+}
+
+// ReleaseAlibabaWdkSyncedorderQueryAPIResponse 将 AlibabaWdkSyncedorderQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkSyncedorderQueryAPIResponse(v *AlibabaWdkSyncedorderQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkSyncedorderQueryAPIResponse.Put(v)
 }

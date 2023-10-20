@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.common.file.upload
 //
 // 文件上传服务
-func YunosTvpubadminCommonFileUpload(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminCommonFileUploadAPIRequest, session string) (*tvupadmin.YunosTvpubadminCommonFileUploadAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminCommonFileUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminCommonFileUpload(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminCommonFileUploadAPIRequest, resp *tvupadmin.YunosTvpubadminCommonFileUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

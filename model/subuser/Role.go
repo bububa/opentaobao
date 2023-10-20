@@ -1,5 +1,9 @@
 package subuser
 
+import (
+	"sync"
+)
+
 // Role 结构体
 type Role struct {
 	// 所拥有权限
@@ -16,4 +20,27 @@ type Role struct {
 	RoleId int64 `json:"role_id,omitempty" xml:"role_id,omitempty"`
 	// 卖家Id
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
+}
+
+var poolRole = sync.Pool{
+	New: func() any {
+		return new(Role)
+	},
+}
+
+// GetRole() 从对象池中获取Role
+func GetRole() *Role {
+	return poolRole.Get().(*Role)
+}
+
+// ReleaseRole 释放Role
+func ReleaseRole(v *Role) {
+	v.Permissions = v.Permissions[:0]
+	v.Description = ""
+	v.ModifiedTime = ""
+	v.CreateTime = ""
+	v.RoleName = ""
+	v.RoleId = 0
+	v.SellerId = 0
+	poolRole.Put(v)
 }

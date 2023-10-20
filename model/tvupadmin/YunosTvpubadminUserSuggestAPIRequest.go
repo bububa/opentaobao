@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosTvpubadminUserSuggestAPIRequest struct {
 // NewYunosTvpubadminUserSuggestRequest 初始化YunosTvpubadminUserSuggestAPIRequest对象
 func NewYunosTvpubadminUserSuggestRequest() *YunosTvpubadminUserSuggestAPIRequest {
 	return &YunosTvpubadminUserSuggestAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminUserSuggestAPIRequest) Reset() {
+	r._keyword = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosTvpubadminUserSuggestAPIRequest) SetKeyword(_keyword string) error
 // GetKeyword Keyword Getter
 func (r YunosTvpubadminUserSuggestAPIRequest) GetKeyword() string {
 	return r._keyword
+}
+
+var poolYunosTvpubadminUserSuggestAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminUserSuggestRequest()
+	},
+}
+
+// GetYunosTvpubadminUserSuggestRequest 从 sync.Pool 获取 YunosTvpubadminUserSuggestAPIRequest
+func GetYunosTvpubadminUserSuggestAPIRequest() *YunosTvpubadminUserSuggestAPIRequest {
+	return poolYunosTvpubadminUserSuggestAPIRequest.Get().(*YunosTvpubadminUserSuggestAPIRequest)
+}
+
+// ReleaseYunosTvpubadminUserSuggestAPIRequest 将 YunosTvpubadminUserSuggestAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminUserSuggestAPIRequest(v *YunosTvpubadminUserSuggestAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminUserSuggestAPIRequest.Put(v)
 }

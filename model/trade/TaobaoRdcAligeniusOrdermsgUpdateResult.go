@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // TaobaoRdcAligeniusOrdermsgUpdateResult 结构体
 type TaobaoRdcAligeniusOrdermsgUpdateResult struct {
 	// resultData
@@ -10,4 +14,24 @@ type TaobaoRdcAligeniusOrdermsgUpdateResult struct {
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoRdcAligeniusOrdermsgUpdateResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoRdcAligeniusOrdermsgUpdateResult)
+	},
+}
+
+// GetTaobaoRdcAligeniusOrdermsgUpdateResult() 从对象池中获取TaobaoRdcAligeniusOrdermsgUpdateResult
+func GetTaobaoRdcAligeniusOrdermsgUpdateResult() *TaobaoRdcAligeniusOrdermsgUpdateResult {
+	return poolTaobaoRdcAligeniusOrdermsgUpdateResult.Get().(*TaobaoRdcAligeniusOrdermsgUpdateResult)
+}
+
+// ReleaseTaobaoRdcAligeniusOrdermsgUpdateResult 释放TaobaoRdcAligeniusOrdermsgUpdateResult
+func ReleaseTaobaoRdcAligeniusOrdermsgUpdateResult(v *TaobaoRdcAligeniusOrdermsgUpdateResult) {
+	v.ResultData = ""
+	v.ErrorInfo = ""
+	v.ErrorCode = ""
+	v.Success = false
+	poolTaobaoRdcAligeniusOrdermsgUpdateResult.Put(v)
 }

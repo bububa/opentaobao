@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // PontusTravelFreedomItemExt 结构体
 type PontusTravelFreedomItemExt struct {
 	// 其他资源信息
@@ -14,4 +18,26 @@ type PontusTravelFreedomItemExt struct {
 	HotelInfos *PontusTravelItemHotelInfo `json:"hotel_infos,omitempty" xml:"hotel_infos,omitempty"`
 	// 景点信息
 	ScenicInfos *PontusTravelItemScenicInfo `json:"scenic_infos,omitempty" xml:"scenic_infos,omitempty"`
+}
+
+var poolPontusTravelFreedomItemExt = sync.Pool{
+	New: func() any {
+		return new(PontusTravelFreedomItemExt)
+	},
+}
+
+// GetPontusTravelFreedomItemExt() 从对象池中获取PontusTravelFreedomItemExt
+func GetPontusTravelFreedomItemExt() *PontusTravelFreedomItemExt {
+	return poolPontusTravelFreedomItemExt.Get().(*PontusTravelFreedomItemExt)
+}
+
+// ReleasePontusTravelFreedomItemExt 释放PontusTravelFreedomItemExt
+func ReleasePontusTravelFreedomItemExt(v *PontusTravelFreedomItemExt) {
+	v.OtherInfos = v.OtherInfos[:0]
+	v.TrafficDesc = ""
+	v.BackTrafficInfo = nil
+	v.GoTrafficInfo = nil
+	v.HotelInfos = nil
+	v.ScenicInfos = nil
+	poolPontusTravelFreedomItemExt.Put(v)
 }

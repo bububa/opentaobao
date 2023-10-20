@@ -9,11 +9,6 @@ import (
 // taobao.wlb.waybill.i.search
 //
 // 获取发货地&amp;CP开通状态&amp;账户的使用情况
-func TaobaoWlbWaybillISearch(clt *core.SDKClient, req *waybill.TaobaoWlbWaybillISearchAPIRequest, session string) (*waybill.TaobaoWlbWaybillISearchAPIResponse, error) {
-	var resp waybill.TaobaoWlbWaybillISearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWlbWaybillISearch(clt *core.SDKClient, req *waybill.TaobaoWlbWaybillISearchAPIRequest, resp *waybill.TaobaoWlbWaybillISearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

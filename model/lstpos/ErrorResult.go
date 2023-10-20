@@ -1,5 +1,9 @@
 package lstpos
 
+import (
+	"sync"
+)
+
 // ErrorResult 结构体
 type ErrorResult struct {
 	// 单个订单错误消息
@@ -12,4 +16,25 @@ type ErrorResult struct {
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// 单个订单处理结果标示  true：成功 false：失败
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolErrorResult = sync.Pool{
+	New: func() any {
+		return new(ErrorResult)
+	},
+}
+
+// GetErrorResult() 从对象池中获取ErrorResult
+func GetErrorResult() *ErrorResult {
+	return poolErrorResult.Get().(*ErrorResult)
+}
+
+// ReleaseErrorResult 释放ErrorResult
+func ReleaseErrorResult(v *ErrorResult) {
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.Key = ""
+	v.Data = ""
+	v.Success = false
+	poolErrorResult.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.aliqin.fc.iot.cardoffer
 //
 // 查询物联网卡上订购的offer
-func AlibabaAliqinFcIotCardoffer(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotCardofferAPIRequest, session string) (*aliqin.AlibabaAliqinFcIotCardofferAPIResponse, error) {
-	var resp aliqin.AlibabaAliqinFcIotCardofferAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAliqinFcIotCardoffer(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotCardofferAPIRequest, resp *aliqin.AlibabaAliqinFcIotCardofferAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package shop
 
+import (
+	"sync"
+)
+
 // OpenApiSearchRequest 结构体
 type OpenApiSearchRequest struct {
 	// 渠道版本 alipay,koubei,eleme,gaode,taobao
@@ -66,4 +70,52 @@ type OpenApiSearchRequest struct {
 	Start int64 `json:"start,omitempty" xml:"start,omitempty"`
 	// 固定值
 	Forward bool `json:"forward,omitempty" xml:"forward,omitempty"`
+}
+
+var poolOpenApiSearchRequest = sync.Pool{
+	New: func() any {
+		return new(OpenApiSearchRequest)
+	},
+}
+
+// GetOpenApiSearchRequest() 从对象池中获取OpenApiSearchRequest
+func GetOpenApiSearchRequest() *OpenApiSearchRequest {
+	return poolOpenApiSearchRequest.Get().(*OpenApiSearchRequest)
+}
+
+// ReleaseOpenApiSearchRequest 释放OpenApiSearchRequest
+func ReleaseOpenApiSearchRequest(v *OpenApiSearchRequest) {
+	v.App = ""
+	v.CityId = ""
+	v.ClientOs = ""
+	v.ClientVersion = ""
+	v.Context = ""
+	v.CurrentCity = ""
+	v.CurrentDistrict = ""
+	v.CurrentProvince = ""
+	v.Latitude = ""
+	v.LbsBusiAreaId = ""
+	v.LbsCityId = ""
+	v.LbsDistrictId = ""
+	v.LocationAccuracy = ""
+	v.Longitude = ""
+	v.OsVersion = ""
+	v.ParamsMap = ""
+	v.PlaceId = ""
+	v.Query = ""
+	v.RequestId = ""
+	v.SceneId = ""
+	v.SearchId = ""
+	v.SelectedMenus = ""
+	v.SessionId = ""
+	v.Sort = ""
+	v.SrcSpm = ""
+	v.TokenId = ""
+	v.Trace = ""
+	v.Uid = ""
+	v.OriginalSize = 0
+	v.Size = 0
+	v.Start = 0
+	v.Forward = false
+	poolOpenApiSearchRequest.Put(v)
 }

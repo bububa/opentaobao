@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // IeChangeOrderVo 结构体
 type IeChangeOrderVo struct {
 	// 乘机人信息
@@ -56,4 +60,47 @@ type IeChangeOrderVo struct {
 	TotalPrice int64 `json:"total_price,omitempty" xml:"total_price,omitempty"`
 	// 改签联系人
 	ChangeContactVO *IeChangeContactVo `json:"change_contact_v_o,omitempty" xml:"change_contact_v_o,omitempty"`
+}
+
+var poolIeChangeOrderVo = sync.Pool{
+	New: func() any {
+		return new(IeChangeOrderVo)
+	},
+}
+
+// GetIeChangeOrderVo() 从对象池中获取IeChangeOrderVo
+func GetIeChangeOrderVo() *IeChangeOrderVo {
+	return poolIeChangeOrderVo.Get().(*IeChangeOrderVo)
+}
+
+// ReleaseIeChangeOrderVo 释放IeChangeOrderVo
+func ReleaseIeChangeOrderVo(v *IeChangeOrderVo) {
+	v.ChangePassengerVOS = v.ChangePassengerVOS[:0]
+	v.ChangeTicketVOS = v.ChangeTicketVOS[:0]
+	v.AlipayTradeNO = ""
+	v.ApplyTime = ""
+	v.BuyerIntensionMemo = ""
+	v.CheckingPassTime = ""
+	v.CloseMemo = ""
+	v.CloseTime = ""
+	v.GmtCreateTime = ""
+	v.GmtModifiedTime = ""
+	v.LatestAgentIssueTime = ""
+	v.LatestAgentProcessingTime = ""
+	v.LatestBuyerPayTime = ""
+	v.PaySuccessTime = ""
+	v.ChangeIntensions = ""
+	v.AgentId = 0
+	v.BuyerId = 0
+	v.ChangeItem = nil
+	v.ChangeReasonType = 0
+	v.CloseType = 0
+	v.Id = 0
+	v.OrderBizStatus = 0
+	v.OrderId = 0
+	v.OrderStatus = 0
+	v.PayStatus = 0
+	v.TotalPrice = 0
+	v.ChangeContactVO = nil
+	poolIeChangeOrderVo.Put(v)
 }

@@ -1,6 +1,8 @@
 package maitix
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -46,4 +48,40 @@ type LockTicketSubOrderSeatDto struct {
 	SeatRowId int64 `json:"seat_row_id,omitempty" xml:"seat_row_id,omitempty"`
 	// 座位类型
 	SeatType *model.File `json:"seat_type,omitempty" xml:"seat_type,omitempty"`
+}
+
+var poolLockTicketSubOrderSeatDto = sync.Pool{
+	New: func() any {
+		return new(LockTicketSubOrderSeatDto)
+	},
+}
+
+// GetLockTicketSubOrderSeatDto() 从对象池中获取LockTicketSubOrderSeatDto
+func GetLockTicketSubOrderSeatDto() *LockTicketSubOrderSeatDto {
+	return poolLockTicketSubOrderSeatDto.Get().(*LockTicketSubOrderSeatDto)
+}
+
+// ReleaseLockTicketSubOrderSeatDto 释放LockTicketSubOrderSeatDto
+func ReleaseLockTicketSubOrderSeatDto(v *LockTicketSubOrderSeatDto) {
+	v.ProjectName = ""
+	v.PerformName = ""
+	v.PriceName = ""
+	v.Entry = ""
+	v.StandName = ""
+	v.SeatFloorName = ""
+	v.SeatAreaName = ""
+	v.CombineId = ""
+	v.SeatName = ""
+	v.SeatRowName = ""
+	v.ProjectId = 0
+	v.PerformId = 0
+	v.PriceId = 0
+	v.StandId = 0
+	v.SeatFloorId = 0
+	v.SeatAreaId = 0
+	v.SeatGroup = 0
+	v.SeatId = 0
+	v.SeatRowId = 0
+	v.SeatType = nil
+	poolLockTicketSubOrderSeatDto.Put(v)
 }

@@ -2,6 +2,7 @@ package axintrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type TaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest struct {
 // NewTaobaoAlitripTravelAxinHotelticketOrderValidateRequest 初始化TaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest对象
 func NewTaobaoAlitripTravelAxinHotelticketOrderValidateRequest() *TaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest {
 	return &TaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest) Reset() {
+	r._serviceStartTime = ""
+	r._useTime = ""
+	r._serviceEndTime = ""
+	r._bizLine = ""
+	r._productId = 0
+	r._buyAmount = 0
+	r._distributorTid = 0
+	r._productPrice = 0
+	r._totalPrice = 0
+	r._contactInfo = nil
+	r._travelerInfoList = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *TaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest) SetTravelerI
 // GetTravelerInfoList TravelerInfoList Getter
 func (r TaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest) GetTravelerInfoList() *TravelerDto {
 	return r._travelerInfoList
+}
+
+var poolTaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelAxinHotelticketOrderValidateRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelAxinHotelticketOrderValidateRequest 从 sync.Pool 获取 TaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest
+func GetTaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest() *TaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest {
+	return poolTaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest.Get().(*TaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest 将 TaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest(v *TaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelAxinHotelticketOrderValidateAPIRequest.Put(v)
 }

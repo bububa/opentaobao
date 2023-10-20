@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaCampusAclNewDeleteuserroleAPIRequest struct {
 // NewAlibabaCampusAclNewDeleteuserroleRequest 初始化AlibabaCampusAclNewDeleteuserroleAPIRequest对象
 func NewAlibabaCampusAclNewDeleteuserroleRequest() *AlibabaCampusAclNewDeleteuserroleAPIRequest {
 	return &AlibabaCampusAclNewDeleteuserroleAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusAclNewDeleteuserroleAPIRequest) Reset() {
+	r._roleIds = r._roleIds[:0]
+	r._userId = ""
+	r._workbenchcontext = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaCampusAclNewDeleteuserroleAPIRequest) SetWorkbenchcontext(_workb
 // GetWorkbenchcontext Workbenchcontext Getter
 func (r AlibabaCampusAclNewDeleteuserroleAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
 	return r._workbenchcontext
+}
+
+var poolAlibabaCampusAclNewDeleteuserroleAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusAclNewDeleteuserroleRequest()
+	},
+}
+
+// GetAlibabaCampusAclNewDeleteuserroleRequest 从 sync.Pool 获取 AlibabaCampusAclNewDeleteuserroleAPIRequest
+func GetAlibabaCampusAclNewDeleteuserroleAPIRequest() *AlibabaCampusAclNewDeleteuserroleAPIRequest {
+	return poolAlibabaCampusAclNewDeleteuserroleAPIRequest.Get().(*AlibabaCampusAclNewDeleteuserroleAPIRequest)
+}
+
+// ReleaseAlibabaCampusAclNewDeleteuserroleAPIRequest 将 AlibabaCampusAclNewDeleteuserroleAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusAclNewDeleteuserroleAPIRequest(v *AlibabaCampusAclNewDeleteuserroleAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusAclNewDeleteuserroleAPIRequest.Put(v)
 }

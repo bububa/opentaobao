@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // StoreProcessConfirmRequest 结构体
 type StoreProcessConfirmRequest struct {
 	// 加工商品列表
@@ -26,4 +30,32 @@ type StoreProcessConfirmRequest struct {
 	ActualQty int64 `json:"actualQty,omitempty" xml:"actualQty,omitempty"`
 	// 扩展属性
 	ExtendProps *TaobaoQimenStoreprocessConfirmMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+}
+
+var poolStoreProcessConfirmRequest = sync.Pool{
+	New: func() any {
+		return new(StoreProcessConfirmRequest)
+	},
+}
+
+// GetStoreProcessConfirmRequest() 从对象池中获取StoreProcessConfirmRequest
+func GetStoreProcessConfirmRequest() *StoreProcessConfirmRequest {
+	return poolStoreProcessConfirmRequest.Get().(*StoreProcessConfirmRequest)
+}
+
+// ReleaseStoreProcessConfirmRequest 释放StoreProcessConfirmRequest
+func ReleaseStoreProcessConfirmRequest(v *StoreProcessConfirmRequest) {
+	v.Materialitems = v.Materialitems[:0]
+	v.Productitems = v.Productitems[:0]
+	v.OwnerCode = ""
+	v.ProcessOrderCode = ""
+	v.ProcessOrderId = ""
+	v.OutBizCode = ""
+	v.OrderType = ""
+	v.OrderCompleteTime = ""
+	v.Remark = ""
+	v.WarehouseCode = ""
+	v.ActualQty = 0
+	v.ExtendProps = nil
+	poolStoreProcessConfirmRequest.Put(v)
 }

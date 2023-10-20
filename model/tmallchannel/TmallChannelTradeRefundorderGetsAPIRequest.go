@@ -2,6 +2,7 @@ package tmallchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallChannelTradeRefundorderGetsAPIRequest struct {
 // NewTmallChannelTradeRefundorderGetsRequest 初始化TmallChannelTradeRefundorderGetsAPIRequest对象
 func NewTmallChannelTradeRefundorderGetsRequest() *TmallChannelTradeRefundorderGetsAPIRequest {
 	return &TmallChannelTradeRefundorderGetsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallChannelTradeRefundorderGetsAPIRequest) Reset() {
+	r._mainChannelOrderNo = ""
+	r._refundId = 0
+	r._pageSize = 0
+	r._pageNumber = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallChannelTradeRefundorderGetsAPIRequest) SetPageNumber(_pageNumber i
 // GetPageNumber PageNumber Getter
 func (r TmallChannelTradeRefundorderGetsAPIRequest) GetPageNumber() int64 {
 	return r._pageNumber
+}
+
+var poolTmallChannelTradeRefundorderGetsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallChannelTradeRefundorderGetsRequest()
+	},
+}
+
+// GetTmallChannelTradeRefundorderGetsRequest 从 sync.Pool 获取 TmallChannelTradeRefundorderGetsAPIRequest
+func GetTmallChannelTradeRefundorderGetsAPIRequest() *TmallChannelTradeRefundorderGetsAPIRequest {
+	return poolTmallChannelTradeRefundorderGetsAPIRequest.Get().(*TmallChannelTradeRefundorderGetsAPIRequest)
+}
+
+// ReleaseTmallChannelTradeRefundorderGetsAPIRequest 将 TmallChannelTradeRefundorderGetsAPIRequest 放入 sync.Pool
+func ReleaseTmallChannelTradeRefundorderGetsAPIRequest(v *TmallChannelTradeRefundorderGetsAPIRequest) {
+	v.Reset()
+	poolTmallChannelTradeRefundorderGetsAPIRequest.Put(v)
 }

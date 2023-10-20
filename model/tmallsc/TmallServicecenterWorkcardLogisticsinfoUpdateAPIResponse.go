@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse struct {
 	TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponseModel).Reset()
+}
+
 // TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponseModel is 物流单信息回传接口 成功返回结果
 type TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_workcard_logisticsinfo_update_response"`
@@ -26,4 +33,29 @@ type TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponseModel struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.IsSuccess = false
+}
+
+var poolTmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse)
+	},
+}
+
+// GetTmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse 从 sync.Pool 获取 TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse
+func GetTmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse() *TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse {
+	return poolTmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse.Get().(*TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse)
+}
+
+// ReleaseTmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse 将 TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse(v *TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse) {
+	v.Reset()
+	poolTmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse.Put(v)
 }

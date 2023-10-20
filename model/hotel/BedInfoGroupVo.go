@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // BedInfoGroupVo 结构体
 type BedInfoGroupVo struct {
 	// 和关系床型集合
@@ -18,4 +22,28 @@ type BedInfoGroupVo struct {
 	SimpleDesc string `json:"simple_desc,omitempty" xml:"simple_desc,omitempty"`
 	// 床数量
 	BedNum int64 `json:"bed_num,omitempty" xml:"bed_num,omitempty"`
+}
+
+var poolBedInfoGroupVo = sync.Pool{
+	New: func() any {
+		return new(BedInfoGroupVo)
+	},
+}
+
+// GetBedInfoGroupVo() 从对象池中获取BedInfoGroupVo
+func GetBedInfoGroupVo() *BedInfoGroupVo {
+	return poolBedInfoGroupVo.Get().(*BedInfoGroupVo)
+}
+
+// ReleaseBedInfoGroupVo 释放BedInfoGroupVo
+func ReleaseBedInfoGroupVo(v *BedInfoGroupVo) {
+	v.BedInfos = v.BedInfos[:0]
+	v.BriefDesc = ""
+	v.Classification = ""
+	v.ClassificationDesc = ""
+	v.Desc = ""
+	v.FuzzyDesc = ""
+	v.SimpleDesc = ""
+	v.BedNum = 0
+	poolBedInfoGroupVo.Put(v)
 }

@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // WaybillBranchAccount 结构体
 type WaybillBranchAccount struct {
 	// 当前网点下的发货地址
@@ -30,4 +34,34 @@ type WaybillBranchAccount struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 商家ID
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
+}
+
+var poolWaybillBranchAccount = sync.Pool{
+	New: func() any {
+		return new(WaybillBranchAccount)
+	},
+}
+
+// GetWaybillBranchAccount() 从对象池中获取WaybillBranchAccount
+func GetWaybillBranchAccount() *WaybillBranchAccount {
+	return poolWaybillBranchAccount.Get().(*WaybillBranchAccount)
+}
+
+// ReleaseWaybillBranchAccount 释放WaybillBranchAccount
+func ReleaseWaybillBranchAccount(v *WaybillBranchAccount) {
+	v.ShippAddressCols = v.ShippAddressCols[:0]
+	v.ServiceInfoCols = v.ServiceInfoCols[:0]
+	v.CustomerCodeList = v.CustomerCodeList[:0]
+	v.BranchCode = ""
+	v.BranchName = ""
+	v.SegmentCode = ""
+	v.BrandCode = ""
+	v.CustomerCodeMap = ""
+	v.AllocatedQuantity = 0
+	v.BranchStatus = 0
+	v.CancelQuantity = 0
+	v.PrintQuantity = 0
+	v.Quantity = 0
+	v.SellerId = 0
+	poolWaybillBranchAccount.Put(v)
 }

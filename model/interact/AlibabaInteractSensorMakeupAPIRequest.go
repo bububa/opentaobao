@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaInteractSensorMakeupAPIRequest struct {
 // NewAlibabaInteractSensorMakeupRequest 初始化AlibabaInteractSensorMakeupAPIRequest对象
 func NewAlibabaInteractSensorMakeupRequest() *AlibabaInteractSensorMakeupAPIRequest {
 	return &AlibabaInteractSensorMakeupAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractSensorMakeupAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaInteractSensorMakeupAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaInteractSensorMakeupAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaInteractSensorMakeupAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractSensorMakeupRequest()
+	},
+}
+
+// GetAlibabaInteractSensorMakeupRequest 从 sync.Pool 获取 AlibabaInteractSensorMakeupAPIRequest
+func GetAlibabaInteractSensorMakeupAPIRequest() *AlibabaInteractSensorMakeupAPIRequest {
+	return poolAlibabaInteractSensorMakeupAPIRequest.Get().(*AlibabaInteractSensorMakeupAPIRequest)
+}
+
+// ReleaseAlibabaInteractSensorMakeupAPIRequest 将 AlibabaInteractSensorMakeupAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractSensorMakeupAPIRequest(v *AlibabaInteractSensorMakeupAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractSensorMakeupAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // DerbyAuthenticationParam 结构体
 type DerbyAuthenticationParam struct {
 	// 认证邮箱
@@ -14,4 +18,26 @@ type DerbyAuthenticationParam struct {
 	OptinAll bool `json:"optin_all,omitempty" xml:"optin_all,omitempty"`
 	// 是否同意向境外提供个人信息
 	DataExportAgreement bool `json:"data_export_agreement,omitempty" xml:"data_export_agreement,omitempty"`
+}
+
+var poolDerbyAuthenticationParam = sync.Pool{
+	New: func() any {
+		return new(DerbyAuthenticationParam)
+	},
+}
+
+// GetDerbyAuthenticationParam() 从对象池中获取DerbyAuthenticationParam
+func GetDerbyAuthenticationParam() *DerbyAuthenticationParam {
+	return poolDerbyAuthenticationParam.Get().(*DerbyAuthenticationParam)
+}
+
+// ReleaseDerbyAuthenticationParam 释放DerbyAuthenticationParam
+func ReleaseDerbyAuthenticationParam(v *DerbyAuthenticationParam) {
+	v.Email = ""
+	v.Password = ""
+	v.UserRegisterType = ""
+	v.AcceptedTandC = ""
+	v.OptinAll = false
+	v.DataExportAgreement = false
+	poolDerbyAuthenticationParam.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.cgame.avatar.userbody.query
 //
 // Avatar用户body数据查询
-func AlibabaCgameAvatarUserbodyQuery(clt *core.SDKClient, req *cloudgame.AlibabaCgameAvatarUserbodyQueryAPIRequest, session string) (*cloudgame.AlibabaCgameAvatarUserbodyQueryAPIResponse, error) {
-	var resp cloudgame.AlibabaCgameAvatarUserbodyQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCgameAvatarUserbodyQuery(clt *core.SDKClient, req *cloudgame.AlibabaCgameAvatarUserbodyQueryAPIRequest, resp *cloudgame.AlibabaCgameAvatarUserbodyQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

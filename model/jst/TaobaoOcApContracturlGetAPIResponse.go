@@ -2,6 +2,7 @@ package jst
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoOcApContracturlGetAPIResponse struct {
 	TaobaoOcApContracturlGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOcApContracturlGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOcApContracturlGetAPIResponseModel).Reset()
+}
+
 // TaobaoOcApContracturlGetAPIResponseModel is 按用户获取支付宝代扣协议链接地址 成功返回结果
 type TaobaoOcApContracturlGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"oc_ap_contracturl_get_response"`
@@ -26,4 +33,29 @@ type TaobaoOcApContracturlGetAPIResponseModel struct {
 	Url string `json:"url,omitempty" xml:"url,omitempty"`
 	// 判断操作是否执行成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOcApContracturlGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorDescription = ""
+	m.Url = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoOcApContracturlGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOcApContracturlGetAPIResponse)
+	},
+}
+
+// GetTaobaoOcApContracturlGetAPIResponse 从 sync.Pool 获取 TaobaoOcApContracturlGetAPIResponse
+func GetTaobaoOcApContracturlGetAPIResponse() *TaobaoOcApContracturlGetAPIResponse {
+	return poolTaobaoOcApContracturlGetAPIResponse.Get().(*TaobaoOcApContracturlGetAPIResponse)
+}
+
+// ReleaseTaobaoOcApContracturlGetAPIResponse 将 TaobaoOcApContracturlGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOcApContracturlGetAPIResponse(v *TaobaoOcApContracturlGetAPIResponse) {
+	v.Reset()
+	poolTaobaoOcApContracturlGetAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // TaobaoQimenOrderexceptionReportRequest 结构体
 type TaobaoQimenOrderexceptionReportRequest struct {
 	// 奇门仓储字段
@@ -28,4 +32,33 @@ type TaobaoQimenOrderexceptionReportRequest struct {
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 扩展属性
 	ExtendProps *TaobaoQimenOrderexceptionReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+}
+
+var poolTaobaoQimenOrderexceptionReportRequest = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenOrderexceptionReportRequest)
+	},
+}
+
+// GetTaobaoQimenOrderexceptionReportRequest() 从对象池中获取TaobaoQimenOrderexceptionReportRequest
+func GetTaobaoQimenOrderexceptionReportRequest() *TaobaoQimenOrderexceptionReportRequest {
+	return poolTaobaoQimenOrderexceptionReportRequest.Get().(*TaobaoQimenOrderexceptionReportRequest)
+}
+
+// ReleaseTaobaoQimenOrderexceptionReportRequest 释放TaobaoQimenOrderexceptionReportRequest
+func ReleaseTaobaoQimenOrderexceptionReportRequest(v *TaobaoQimenOrderexceptionReportRequest) {
+	v.OrderLines = v.OrderLines[:0]
+	v.MessageId = ""
+	v.WarehouseCode = ""
+	v.DeliveryOrderCode = ""
+	v.DeliveryOrderId = ""
+	v.OrderType = ""
+	v.LogisticsCode = ""
+	v.ExpressCode = ""
+	v.MessageType = ""
+	v.MessageDesc = ""
+	v.CreateTime = ""
+	v.Remark = ""
+	v.ExtendProps = nil
+	poolTaobaoQimenOrderexceptionReportRequest.Put(v)
 }

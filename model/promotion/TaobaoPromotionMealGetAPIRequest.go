@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoPromotionMealGetAPIRequest struct {
 // NewTaobaoPromotionMealGetRequest 初始化TaobaoPromotionMealGetAPIRequest对象
 func NewTaobaoPromotionMealGetRequest() *TaobaoPromotionMealGetAPIRequest {
 	return &TaobaoPromotionMealGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPromotionMealGetAPIRequest) Reset() {
+	r._status = ""
+	r._mealId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoPromotionMealGetAPIRequest) SetMealId(_mealId int64) error {
 // GetMealId MealId Getter
 func (r TaobaoPromotionMealGetAPIRequest) GetMealId() int64 {
 	return r._mealId
+}
+
+var poolTaobaoPromotionMealGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPromotionMealGetRequest()
+	},
+}
+
+// GetTaobaoPromotionMealGetRequest 从 sync.Pool 获取 TaobaoPromotionMealGetAPIRequest
+func GetTaobaoPromotionMealGetAPIRequest() *TaobaoPromotionMealGetAPIRequest {
+	return poolTaobaoPromotionMealGetAPIRequest.Get().(*TaobaoPromotionMealGetAPIRequest)
+}
+
+// ReleaseTaobaoPromotionMealGetAPIRequest 将 TaobaoPromotionMealGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPromotionMealGetAPIRequest(v *TaobaoPromotionMealGetAPIRequest) {
+	v.Reset()
+	poolTaobaoPromotionMealGetAPIRequest.Put(v)
 }

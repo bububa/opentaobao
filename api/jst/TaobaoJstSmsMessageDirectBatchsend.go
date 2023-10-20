@@ -9,11 +9,6 @@ import (
 // taobao.jst.sms.message.direct.batchsend
 //
 // OAID批量发送，支持明文手机号发送
-func TaobaoJstSmsMessageDirectBatchsend(clt *core.SDKClient, req *jst.TaobaoJstSmsMessageDirectBatchsendAPIRequest, session string) (*jst.TaobaoJstSmsMessageDirectBatchsendAPIResponse, error) {
-	var resp jst.TaobaoJstSmsMessageDirectBatchsendAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJstSmsMessageDirectBatchsend(clt *core.SDKClient, req *jst.TaobaoJstSmsMessageDirectBatchsendAPIRequest, resp *jst.TaobaoJstSmsMessageDirectBatchsendAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

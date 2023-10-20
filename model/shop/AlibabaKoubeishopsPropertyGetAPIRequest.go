@@ -2,6 +2,7 @@ package shop
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaKoubeishopsPropertyGetAPIRequest struct {
 // NewAlibabaKoubeishopsPropertyGetRequest 初始化AlibabaKoubeishopsPropertyGetAPIRequest对象
 func NewAlibabaKoubeishopsPropertyGetRequest() *AlibabaKoubeishopsPropertyGetAPIRequest {
 	return &AlibabaKoubeishopsPropertyGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaKoubeishopsPropertyGetAPIRequest) Reset() {
+	r._paramOpenApiSearchRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaKoubeishopsPropertyGetAPIRequest) SetParamOpenApiSearchRequest(_
 // GetParamOpenApiSearchRequest ParamOpenApiSearchRequest Getter
 func (r AlibabaKoubeishopsPropertyGetAPIRequest) GetParamOpenApiSearchRequest() *OpenApiSearchRequest {
 	return r._paramOpenApiSearchRequest
+}
+
+var poolAlibabaKoubeishopsPropertyGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaKoubeishopsPropertyGetRequest()
+	},
+}
+
+// GetAlibabaKoubeishopsPropertyGetRequest 从 sync.Pool 获取 AlibabaKoubeishopsPropertyGetAPIRequest
+func GetAlibabaKoubeishopsPropertyGetAPIRequest() *AlibabaKoubeishopsPropertyGetAPIRequest {
+	return poolAlibabaKoubeishopsPropertyGetAPIRequest.Get().(*AlibabaKoubeishopsPropertyGetAPIRequest)
+}
+
+// ReleaseAlibabaKoubeishopsPropertyGetAPIRequest 将 AlibabaKoubeishopsPropertyGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaKoubeishopsPropertyGetAPIRequest(v *AlibabaKoubeishopsPropertyGetAPIRequest) {
+	v.Reset()
+	poolAlibabaKoubeishopsPropertyGetAPIRequest.Put(v)
 }

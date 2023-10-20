@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WorkOrder 结构体
 type WorkOrder struct {
 	// 作业单列表
@@ -14,4 +18,26 @@ type WorkOrder struct {
 	LatestArriveTime string `json:"latest_arrive_time,omitempty" xml:"latest_arrive_time,omitempty"`
 	// 任务编码
 	WorkOrderId string `json:"work_order_id,omitempty" xml:"work_order_id,omitempty"`
+}
+
+var poolWorkOrder = sync.Pool{
+	New: func() any {
+		return new(WorkOrder)
+	},
+}
+
+// GetWorkOrder() 从对象池中获取WorkOrder
+func GetWorkOrder() *WorkOrder {
+	return poolWorkOrder.Get().(*WorkOrder)
+}
+
+// ReleaseWorkOrder 释放WorkOrder
+func ReleaseWorkOrder(v *WorkOrder) {
+	v.WorkOrderUnits = v.WorkOrderUnits[:0]
+	v.WareHouseCode = ""
+	v.EarliestArrivalTime = ""
+	v.WorkOrderName = ""
+	v.LatestArriveTime = ""
+	v.WorkOrderId = ""
+	poolWorkOrder.Put(v)
 }

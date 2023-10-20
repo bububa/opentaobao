@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // GoodsPublishPropertyDefDetailDto 结构体
 type GoodsPublishPropertyDefDetailDto struct {
 	// 关键商品属性
@@ -48,4 +52,43 @@ type GoodsPublishPropertyDefDetailDto struct {
 	ContentType int64 `json:"content_type,omitempty" xml:"content_type,omitempty"`
 	// 是否可见
 	Visible bool `json:"visible,omitempty" xml:"visible,omitempty"`
+}
+
+var poolGoodsPublishPropertyDefDetailDto = sync.Pool{
+	New: func() any {
+		return new(GoodsPublishPropertyDefDetailDto)
+	},
+}
+
+// GetGoodsPublishPropertyDefDetailDto() 从对象池中获取GoodsPublishPropertyDefDetailDto
+func GetGoodsPublishPropertyDefDetailDto() *GoodsPublishPropertyDefDetailDto {
+	return poolGoodsPublishPropertyDefDetailDto.Get().(*GoodsPublishPropertyDefDetailDto)
+}
+
+// ReleaseGoodsPublishPropertyDefDetailDto 释放GoodsPublishPropertyDefDetailDto
+func ReleaseGoodsPublishPropertyDefDetailDto(v *GoodsPublishPropertyDefDetailDto) {
+	v.KeyProperties = v.KeyProperties[:0]
+	v.ExtProperties = v.ExtProperties[:0]
+	v.SellerAccountProperties = v.SellerAccountProperties[:0]
+	v.Options = v.Options[:0]
+	v.DefaultValue = ""
+	v.AttrUnit = ""
+	v.PropertyName = ""
+	v.Placeholder = ""
+	v.GameId = 0
+	v.Image = nil
+	v.AddlService = nil
+	v.ClientInfo = nil
+	v.Description = nil
+	v.Storage = nil
+	v.Title = nil
+	v.Price = nil
+	v.PropertyContentType = 0
+	v.CategoryAttrType = 0
+	v.PropertyRule = nil
+	v.PropertyGrade = 0
+	v.PropertyId = 0
+	v.ContentType = 0
+	v.Visible = false
+	poolGoodsPublishPropertyDefDetailDto.Put(v)
 }

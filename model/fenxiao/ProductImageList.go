@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // ProductImageList 结构体
 type ProductImageList struct {
 	// 图片对应的url
@@ -12,4 +16,25 @@ type ProductImageList struct {
 	ImageId int64 `json:"image_id,omitempty" xml:"image_id,omitempty"`
 	// 图片顺序
 	ImagePosition int64 `json:"image_position,omitempty" xml:"image_position,omitempty"`
+}
+
+var poolProductImageList = sync.Pool{
+	New: func() any {
+		return new(ProductImageList)
+	},
+}
+
+// GetProductImageList() 从对象池中获取ProductImageList
+func GetProductImageList() *ProductImageList {
+	return poolProductImageList.Get().(*ProductImageList)
+}
+
+// ReleaseProductImageList 释放ProductImageList
+func ReleaseProductImageList(v *ProductImageList) {
+	v.ImageUrl = ""
+	v.Properties = ""
+	v.Type = ""
+	v.ImageId = 0
+	v.ImagePosition = 0
+	poolProductImageList.Put(v)
 }

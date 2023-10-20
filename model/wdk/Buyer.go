@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // Buyer 结构体
 type Buyer struct {
 	// 买家标识
@@ -12,4 +16,25 @@ type Buyer struct {
 	Phone string `json:"phone,omitempty" xml:"phone,omitempty"`
 	// 买家备注
 	UserMemo string `json:"user_memo,omitempty" xml:"user_memo,omitempty"`
+}
+
+var poolBuyer = sync.Pool{
+	New: func() any {
+		return new(Buyer)
+	},
+}
+
+// GetBuyer() 从对象池中获取Buyer
+func GetBuyer() *Buyer {
+	return poolBuyer.Get().(*Buyer)
+}
+
+// ReleaseBuyer 释放Buyer
+func ReleaseBuyer(v *Buyer) {
+	v.UserId = ""
+	v.UserName = ""
+	v.UserNick = ""
+	v.Phone = ""
+	v.UserMemo = ""
+	poolBuyer.Put(v)
 }

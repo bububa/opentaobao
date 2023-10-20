@@ -1,7 +1,11 @@
 package alihealth2
 
-// ImriskCheckCommand 结构体
-type ImriskCheckCommand struct {
+import (
+	"sync"
+)
+
+// IMRiskCheckCommand 结构体
+type IMRiskCheckCommand struct {
 	// 会话内容，按照时间排序
 	Conversations []Conversation `json:"conversations,omitempty" xml:"conversations>conversation,omitempty"`
 	// 患者id
@@ -16,4 +20,27 @@ type ImriskCheckCommand struct {
 	SessionId string `json:"session_id,omitempty" xml:"session_id,omitempty"`
 	// 会话开始时间，YYYY-MM-DD HH:mm:ss格式
 	BizTime string `json:"biz_time,omitempty" xml:"biz_time,omitempty"`
+}
+
+var poolIMRiskCheckCommand = sync.Pool{
+	New: func() any {
+		return new(IMRiskCheckCommand)
+	},
+}
+
+// GetIMRiskCheckCommand() 从对象池中获取IMRiskCheckCommand
+func GetIMRiskCheckCommand() *IMRiskCheckCommand {
+	return poolIMRiskCheckCommand.Get().(*IMRiskCheckCommand)
+}
+
+// ReleaseIMRiskCheckCommand 释放IMRiskCheckCommand
+func ReleaseIMRiskCheckCommand(v *IMRiskCheckCommand) {
+	v.Conversations = v.Conversations[:0]
+	v.PatientId = ""
+	v.DoctorId = ""
+	v.SceneName = ""
+	v.TenantCode = ""
+	v.SessionId = ""
+	v.BizTime = ""
+	poolIMRiskCheckCommand.Put(v)
 }

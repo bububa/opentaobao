@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.deliverytemplate.query
 //
 // 商家运费模板查询
-func AlibabaDchainAoxiangDeliverytemplateQuery(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangDeliverytemplateQueryAPIRequest, session string) (*ascp.AlibabaDchainAoxiangDeliverytemplateQueryAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangDeliverytemplateQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangDeliverytemplateQuery(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangDeliverytemplateQueryAPIRequest, resp *ascp.AlibabaDchainAoxiangDeliverytemplateQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

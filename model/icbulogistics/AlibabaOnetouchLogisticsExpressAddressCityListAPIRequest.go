@@ -2,6 +2,7 @@ package icbulogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest struct {
 // NewAlibabaOnetouchLogisticsExpressAddressCityListRequest 初始化AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest对象
 func NewAlibabaOnetouchLogisticsExpressAddressCityListRequest() *AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest {
 	return &AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest) Reset() {
+	r._paramQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest) SetParamQuery
 // GetParamQuery ParamQuery Getter
 func (r AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest) GetParamQuery() *AddressQueryDto {
 	return r._paramQuery
+}
+
+var poolAlibabaOnetouchLogisticsExpressAddressCityListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaOnetouchLogisticsExpressAddressCityListRequest()
+	},
+}
+
+// GetAlibabaOnetouchLogisticsExpressAddressCityListRequest 从 sync.Pool 获取 AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest
+func GetAlibabaOnetouchLogisticsExpressAddressCityListAPIRequest() *AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest {
+	return poolAlibabaOnetouchLogisticsExpressAddressCityListAPIRequest.Get().(*AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest)
+}
+
+// ReleaseAlibabaOnetouchLogisticsExpressAddressCityListAPIRequest 将 AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaOnetouchLogisticsExpressAddressCityListAPIRequest(v *AlibabaOnetouchLogisticsExpressAddressCityListAPIRequest) {
+	v.Reset()
+	poolAlibabaOnetouchLogisticsExpressAddressCityListAPIRequest.Put(v)
 }

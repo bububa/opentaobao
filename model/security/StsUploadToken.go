@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // StsUploadToken 结构体
 type StsUploadToken struct {
 	// accessKeyId
@@ -16,4 +20,27 @@ type StsUploadToken struct {
 	Path string `json:"path,omitempty" xml:"path,omitempty"`
 	// token
 	Token string `json:"token,omitempty" xml:"token,omitempty"`
+}
+
+var poolStsUploadToken = sync.Pool{
+	New: func() any {
+		return new(StsUploadToken)
+	},
+}
+
+// GetStsUploadToken() 从对象池中获取StsUploadToken
+func GetStsUploadToken() *StsUploadToken {
+	return poolStsUploadToken.Get().(*StsUploadToken)
+}
+
+// ReleaseStsUploadToken 释放StsUploadToken
+func ReleaseStsUploadToken(v *StsUploadToken) {
+	v.AccessKeyId = ""
+	v.AccessKeySecret = ""
+	v.BucketName = ""
+	v.EndPoint = ""
+	v.Expiration = ""
+	v.Path = ""
+	v.Token = ""
+	poolStsUploadToken.Put(v)
 }

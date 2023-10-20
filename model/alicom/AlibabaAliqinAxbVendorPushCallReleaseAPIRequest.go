@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAliqinAxbVendorPushCallReleaseAPIRequest struct {
 // NewAlibabaAliqinAxbVendorPushCallReleaseRequest 初始化AlibabaAliqinAxbVendorPushCallReleaseAPIRequest对象
 func NewAlibabaAliqinAxbVendorPushCallReleaseRequest() *AlibabaAliqinAxbVendorPushCallReleaseAPIRequest {
 	return &AlibabaAliqinAxbVendorPushCallReleaseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinAxbVendorPushCallReleaseAPIRequest) Reset() {
+	r._endCallRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAliqinAxbVendorPushCallReleaseAPIRequest) SetEndCallRequest(_end
 // GetEndCallRequest EndCallRequest Getter
 func (r AlibabaAliqinAxbVendorPushCallReleaseAPIRequest) GetEndCallRequest() *EndCallRequest {
 	return r._endCallRequest
+}
+
+var poolAlibabaAliqinAxbVendorPushCallReleaseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinAxbVendorPushCallReleaseRequest()
+	},
+}
+
+// GetAlibabaAliqinAxbVendorPushCallReleaseRequest 从 sync.Pool 获取 AlibabaAliqinAxbVendorPushCallReleaseAPIRequest
+func GetAlibabaAliqinAxbVendorPushCallReleaseAPIRequest() *AlibabaAliqinAxbVendorPushCallReleaseAPIRequest {
+	return poolAlibabaAliqinAxbVendorPushCallReleaseAPIRequest.Get().(*AlibabaAliqinAxbVendorPushCallReleaseAPIRequest)
+}
+
+// ReleaseAlibabaAliqinAxbVendorPushCallReleaseAPIRequest 将 AlibabaAliqinAxbVendorPushCallReleaseAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinAxbVendorPushCallReleaseAPIRequest(v *AlibabaAliqinAxbVendorPushCallReleaseAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinAxbVendorPushCallReleaseAPIRequest.Put(v)
 }

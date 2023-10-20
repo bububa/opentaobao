@@ -2,6 +2,7 @@ package lstvending
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaLstVendingOrderUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstVendingOrderUpdateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaLstVendingOrderUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLstVendingOrderUpdateAPIResponseModel).Reset()
 }
 
 // AlibabaLstVendingOrderUpdateAPIResponseModel is 自动售货机订单物流信息回传 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaLstVendingOrderUpdateAPIResponseModel struct {
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
 	// 是否执行了更新操作
 	Module bool `json:"module,omitempty" xml:"module,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLstVendingOrderUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorNo = ""
+	m.ErrorMessage = ""
+	m.Succ = false
+	m.Module = false
+}
+
+var poolAlibabaLstVendingOrderUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLstVendingOrderUpdateAPIResponse)
+	},
+}
+
+// GetAlibabaLstVendingOrderUpdateAPIResponse 从 sync.Pool 获取 AlibabaLstVendingOrderUpdateAPIResponse
+func GetAlibabaLstVendingOrderUpdateAPIResponse() *AlibabaLstVendingOrderUpdateAPIResponse {
+	return poolAlibabaLstVendingOrderUpdateAPIResponse.Get().(*AlibabaLstVendingOrderUpdateAPIResponse)
+}
+
+// ReleaseAlibabaLstVendingOrderUpdateAPIResponse 将 AlibabaLstVendingOrderUpdateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLstVendingOrderUpdateAPIResponse(v *AlibabaLstVendingOrderUpdateAPIResponse) {
+	v.Reset()
+	poolAlibabaLstVendingOrderUpdateAPIResponse.Put(v)
 }

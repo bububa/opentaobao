@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SavePurchasePriceRequest 结构体
 type SavePurchasePriceRequest struct {
 	// 门店ID
@@ -20,4 +24,29 @@ type SavePurchasePriceRequest struct {
 	EffectiveStartTime int64 `json:"effective_start_time,omitempty" xml:"effective_start_time,omitempty"`
 	// 区间价格失效时间
 	EffectiveEndTime int64 `json:"effective_end_time,omitempty" xml:"effective_end_time,omitempty"`
+}
+
+var poolSavePurchasePriceRequest = sync.Pool{
+	New: func() any {
+		return new(SavePurchasePriceRequest)
+	},
+}
+
+// GetSavePurchasePriceRequest() 从对象池中获取SavePurchasePriceRequest
+func GetSavePurchasePriceRequest() *SavePurchasePriceRequest {
+	return poolSavePurchasePriceRequest.Get().(*SavePurchasePriceRequest)
+}
+
+// ReleaseSavePurchasePriceRequest 释放SavePurchasePriceRequest
+func ReleaseSavePurchasePriceRequest(v *SavePurchasePriceRequest) {
+	v.OuCode = ""
+	v.SkuCode = ""
+	v.OutId = ""
+	v.ChannelCodes = ""
+	v.MarketingType = 0
+	v.PurchasePriceWithTax = 0
+	v.PriceType = 0
+	v.EffectiveStartTime = 0
+	v.EffectiveEndTime = 0
+	poolSavePurchasePriceRequest.Put(v)
 }

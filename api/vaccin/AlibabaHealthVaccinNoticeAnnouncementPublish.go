@@ -9,11 +9,6 @@ import (
 // alibaba.health.vaccin.notice.announcement.publish
 //
 // 支付宝疫苗POV发布公告提醒信息
-func AlibabaHealthVaccinNoticeAnnouncementPublish(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest, session string) (*vaccin.AlibabaHealthVaccinNoticeAnnouncementPublishAPIResponse, error) {
-	var resp vaccin.AlibabaHealthVaccinNoticeAnnouncementPublishAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHealthVaccinNoticeAnnouncementPublish(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest, resp *vaccin.AlibabaHealthVaccinNoticeAnnouncementPublishAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

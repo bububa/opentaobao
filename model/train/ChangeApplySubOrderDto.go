@@ -1,5 +1,9 @@
 package train
 
+import (
+	"sync"
+)
+
 // ChangeApplySubOrderDto 结构体
 type ChangeApplySubOrderDto struct {
 	// 乘车人姓名
@@ -38,4 +42,38 @@ type ChangeApplySubOrderDto struct {
 	TicketTypeCode int64 `json:"ticket_type_code,omitempty" xml:"ticket_type_code,omitempty"`
 	// 用户提交改签票价(卧铺、儿童票都是按最高票价提交)
 	PreTicketPrice int64 `json:"pre_ticket_price,omitempty" xml:"pre_ticket_price,omitempty"`
+}
+
+var poolChangeApplySubOrderDto = sync.Pool{
+	New: func() any {
+		return new(ChangeApplySubOrderDto)
+	},
+}
+
+// GetChangeApplySubOrderDto() 从对象池中获取ChangeApplySubOrderDto
+func GetChangeApplySubOrderDto() *ChangeApplySubOrderDto {
+	return poolChangeApplySubOrderDto.Get().(*ChangeApplySubOrderDto)
+}
+
+// ReleaseChangeApplySubOrderDto 释放ChangeApplySubOrderDto
+func ReleaseChangeApplySubOrderDto(v *ChangeApplySubOrderDto) {
+	v.PassengerName = ""
+	v.OriginalSeatNo = ""
+	v.OriginalSeatTypeCode = ""
+	v.OriginalSeatTypeName = ""
+	v.CertificateNo = ""
+	v.CertificateTypeName = ""
+	v.CertificateTypeCode = ""
+	v.OriginalTicketPrice = ""
+	v.OriginalCoachName = ""
+	v.TicketTypeName = ""
+	v.OriginalCoachNo = ""
+	v.ChangeSeatTypeCode = ""
+	v.ChangeSeatTypeName = ""
+	v.AgentId = 0
+	v.ChangeApplyId = 0
+	v.SubOrderId = 0
+	v.TicketTypeCode = 0
+	v.PreTicketPrice = 0
+	poolChangeApplySubOrderDto.Put(v)
 }

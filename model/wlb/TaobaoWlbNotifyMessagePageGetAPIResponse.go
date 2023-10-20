@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoWlbNotifyMessagePageGetAPIResponse struct {
 	TaobaoWlbNotifyMessagePageGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoWlbNotifyMessagePageGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWlbNotifyMessagePageGetAPIResponseModel).Reset()
+}
+
 // TaobaoWlbNotifyMessagePageGetAPIResponseModel is 物流宝通知消息查询接口 成功返回结果
 type TaobaoWlbNotifyMessagePageGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_notify_message_page_get_response"`
@@ -24,4 +31,28 @@ type TaobaoWlbNotifyMessagePageGetAPIResponseModel struct {
 	WlbMessages []WlbMessage `json:"wlb_messages,omitempty" xml:"wlb_messages>wlb_message,omitempty"`
 	// 2000-01-01 00:00:00
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbNotifyMessagePageGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.WlbMessages = m.WlbMessages[:0]
+	m.TotalCount = 0
+}
+
+var poolTaobaoWlbNotifyMessagePageGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbNotifyMessagePageGetAPIResponse)
+	},
+}
+
+// GetTaobaoWlbNotifyMessagePageGetAPIResponse 从 sync.Pool 获取 TaobaoWlbNotifyMessagePageGetAPIResponse
+func GetTaobaoWlbNotifyMessagePageGetAPIResponse() *TaobaoWlbNotifyMessagePageGetAPIResponse {
+	return poolTaobaoWlbNotifyMessagePageGetAPIResponse.Get().(*TaobaoWlbNotifyMessagePageGetAPIResponse)
+}
+
+// ReleaseTaobaoWlbNotifyMessagePageGetAPIResponse 将 TaobaoWlbNotifyMessagePageGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWlbNotifyMessagePageGetAPIResponse(v *TaobaoWlbNotifyMessagePageGetAPIResponse) {
+	v.Reset()
+	poolTaobaoWlbNotifyMessagePageGetAPIResponse.Put(v)
 }

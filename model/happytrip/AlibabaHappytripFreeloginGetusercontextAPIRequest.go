@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaHappytripFreeloginGetusercontextAPIRequest struct {
 // NewAlibabaHappytripFreeloginGetusercontextRequest 初始化AlibabaHappytripFreeloginGetusercontextAPIRequest对象
 func NewAlibabaHappytripFreeloginGetusercontextRequest() *AlibabaHappytripFreeloginGetusercontextAPIRequest {
 	return &AlibabaHappytripFreeloginGetusercontextAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHappytripFreeloginGetusercontextAPIRequest) Reset() {
+	r._req = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaHappytripFreeloginGetusercontextAPIRequest) SetReq(_req *SsoPara
 // GetReq Req Getter
 func (r AlibabaHappytripFreeloginGetusercontextAPIRequest) GetReq() *SsoParamDto {
 	return r._req
+}
+
+var poolAlibabaHappytripFreeloginGetusercontextAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHappytripFreeloginGetusercontextRequest()
+	},
+}
+
+// GetAlibabaHappytripFreeloginGetusercontextRequest 从 sync.Pool 获取 AlibabaHappytripFreeloginGetusercontextAPIRequest
+func GetAlibabaHappytripFreeloginGetusercontextAPIRequest() *AlibabaHappytripFreeloginGetusercontextAPIRequest {
+	return poolAlibabaHappytripFreeloginGetusercontextAPIRequest.Get().(*AlibabaHappytripFreeloginGetusercontextAPIRequest)
+}
+
+// ReleaseAlibabaHappytripFreeloginGetusercontextAPIRequest 将 AlibabaHappytripFreeloginGetusercontextAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHappytripFreeloginGetusercontextAPIRequest(v *AlibabaHappytripFreeloginGetusercontextAPIRequest) {
+	v.Reset()
+	poolAlibabaHappytripFreeloginGetusercontextAPIRequest.Put(v)
 }

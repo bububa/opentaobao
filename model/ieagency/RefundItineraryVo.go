@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // RefundItineraryVo 结构体
 type RefundItineraryVo struct {
 	// 航班列表
@@ -12,4 +16,25 @@ type RefundItineraryVo struct {
 	DepDate string `json:"dep_date,omitempty" xml:"dep_date,omitempty"`
 	// 行程序号
 	Index int64 `json:"index,omitempty" xml:"index,omitempty"`
+}
+
+var poolRefundItineraryVo = sync.Pool{
+	New: func() any {
+		return new(RefundItineraryVo)
+	},
+}
+
+// GetRefundItineraryVo() 从对象池中获取RefundItineraryVo
+func GetRefundItineraryVo() *RefundItineraryVo {
+	return poolRefundItineraryVo.Get().(*RefundItineraryVo)
+}
+
+// ReleaseRefundItineraryVo 释放RefundItineraryVo
+func ReleaseRefundItineraryVo(v *RefundItineraryVo) {
+	v.RefundFlightSegmentVos = v.RefundFlightSegmentVos[:0]
+	v.ArrAirportCode = ""
+	v.DepAirportCode = ""
+	v.DepDate = ""
+	v.Index = 0
+	poolRefundItineraryVo.Put(v)
 }

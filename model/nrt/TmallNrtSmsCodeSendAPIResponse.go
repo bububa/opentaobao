@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallNrtSmsCodeSendAPIResponse struct {
 	model.CommonResponse
 	TmallNrtSmsCodeSendAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallNrtSmsCodeSendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallNrtSmsCodeSendAPIResponseModel).Reset()
 }
 
 // TmallNrtSmsCodeSendAPIResponseModel is 喵零发送短信 成功返回结果
@@ -28,4 +35,30 @@ type TmallNrtSmsCodeSendAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 返回数据对象
 	Data *NrtSmsDto `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallNrtSmsCodeSendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.Succ = ""
+	m.Message = ""
+	m.Data = nil
+}
+
+var poolTmallNrtSmsCodeSendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallNrtSmsCodeSendAPIResponse)
+	},
+}
+
+// GetTmallNrtSmsCodeSendAPIResponse 从 sync.Pool 获取 TmallNrtSmsCodeSendAPIResponse
+func GetTmallNrtSmsCodeSendAPIResponse() *TmallNrtSmsCodeSendAPIResponse {
+	return poolTmallNrtSmsCodeSendAPIResponse.Get().(*TmallNrtSmsCodeSendAPIResponse)
+}
+
+// ReleaseTmallNrtSmsCodeSendAPIResponse 将 TmallNrtSmsCodeSendAPIResponse 保存到 sync.Pool
+func ReleaseTmallNrtSmsCodeSendAPIResponse(v *TmallNrtSmsCodeSendAPIResponse) {
+	v.Reset()
+	poolTmallNrtSmsCodeSendAPIResponse.Put(v)
 }

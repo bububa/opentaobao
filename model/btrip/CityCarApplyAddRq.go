@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // CityCarApplyAddRq 结构体
 type CityCarApplyAddRq struct {
 	// 出差事由
@@ -34,4 +38,36 @@ type CityCarApplyAddRq struct {
 	TimesType int64 `json:"times_type,omitempty" xml:"times_type,omitempty"`
 	// 审批单已用次数
 	TimesUsed int64 `json:"times_used,omitempty" xml:"times_used,omitempty"`
+}
+
+var poolCityCarApplyAddRq = sync.Pool{
+	New: func() any {
+		return new(CityCarApplyAddRq)
+	},
+}
+
+// GetCityCarApplyAddRq() 从对象池中获取CityCarApplyAddRq
+func GetCityCarApplyAddRq() *CityCarApplyAddRq {
+	return poolCityCarApplyAddRq.Get().(*CityCarApplyAddRq)
+}
+
+// ReleaseCityCarApplyAddRq 释放CityCarApplyAddRq
+func ReleaseCityCarApplyAddRq(v *CityCarApplyAddRq) {
+	v.Cause = ""
+	v.City = ""
+	v.CorpId = ""
+	v.Date = ""
+	v.ProjectCode = ""
+	v.ProjectName = ""
+	v.ThirdPartApplyId = ""
+	v.ThirdPartCostCenterId = ""
+	v.ThirdPartInvoiceId = ""
+	v.Title = ""
+	v.UserId = ""
+	v.FinishedDate = ""
+	v.Status = 0
+	v.TimesTotal = 0
+	v.TimesType = 0
+	v.TimesUsed = 0
+	poolCityCarApplyAddRq.Put(v)
 }

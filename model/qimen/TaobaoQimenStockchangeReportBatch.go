@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // TaobaoQimenStockchangeReportBatch 结构体
 type TaobaoQimenStockchangeReportBatch struct {
 	// 批次编号
@@ -14,4 +18,26 @@ type TaobaoQimenStockchangeReportBatch struct {
 	InventoryType string `json:"inventoryType,omitempty" xml:"inventoryType,omitempty"`
 	// 异动数量(要求batchs节点下所有的异动数量之和等于orderline中的异动数量)
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolTaobaoQimenStockchangeReportBatch = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenStockchangeReportBatch)
+	},
+}
+
+// GetTaobaoQimenStockchangeReportBatch() 从对象池中获取TaobaoQimenStockchangeReportBatch
+func GetTaobaoQimenStockchangeReportBatch() *TaobaoQimenStockchangeReportBatch {
+	return poolTaobaoQimenStockchangeReportBatch.Get().(*TaobaoQimenStockchangeReportBatch)
+}
+
+// ReleaseTaobaoQimenStockchangeReportBatch 释放TaobaoQimenStockchangeReportBatch
+func ReleaseTaobaoQimenStockchangeReportBatch(v *TaobaoQimenStockchangeReportBatch) {
+	v.BatchCode = ""
+	v.ProductDate = ""
+	v.ExpireDate = ""
+	v.ProduceCode = ""
+	v.InventoryType = ""
+	v.Quantity = 0
+	poolTaobaoQimenStockchangeReportBatch.Put(v)
 }

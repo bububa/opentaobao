@@ -9,11 +9,6 @@ import (
 // alibaba.gsp.supply.image.upload
 //
 // 上传图片至目标海外平台的素材空间
-func AlibabaGspSupplyImageUpload(clt *core.SDKClient, req *product.AlibabaGspSupplyImageUploadAPIRequest, session string) (*product.AlibabaGspSupplyImageUploadAPIResponse, error) {
-	var resp product.AlibabaGspSupplyImageUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaGspSupplyImageUpload(clt *core.SDKClient, req *product.AlibabaGspSupplyImageUploadAPIRequest, resp *product.AlibabaGspSupplyImageUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ItemDiscountActivityOperateRequest 结构体
 type ItemDiscountActivityOperateRequest struct {
 	// 活动终端：1-APP，2-POS
@@ -32,4 +36,35 @@ type ItemDiscountActivityOperateRequest struct {
 	EndTime int64 `json:"end_time,omitempty" xml:"end_time,omitempty"`
 	// 限购配置信息
 	Limit *LimitDto `json:"limit,omitempty" xml:"limit,omitempty"`
+}
+
+var poolItemDiscountActivityOperateRequest = sync.Pool{
+	New: func() any {
+		return new(ItemDiscountActivityOperateRequest)
+	},
+}
+
+// GetItemDiscountActivityOperateRequest() 从对象池中获取ItemDiscountActivityOperateRequest
+func GetItemDiscountActivityOperateRequest() *ItemDiscountActivityOperateRequest {
+	return poolItemDiscountActivityOperateRequest.Get().(*ItemDiscountActivityOperateRequest)
+}
+
+// ReleaseItemDiscountActivityOperateRequest 释放ItemDiscountActivityOperateRequest
+func ReleaseItemDiscountActivityOperateRequest(v *ItemDiscountActivityOperateRequest) {
+	v.Terminals = v.Terminals[:0]
+	v.StoreIds = v.StoreIds[:0]
+	v.MemberCrowdCode = v.MemberCrowdCode[:0]
+	v.Channels = v.Channels[:0]
+	v.CreatorId = ""
+	v.CreatorName = ""
+	v.OutActId = ""
+	v.ActivityName = ""
+	v.Description = ""
+	v.Attributes = ""
+	v.ActId = 0
+	v.DiscountType = 0
+	v.StartTime = 0
+	v.EndTime = 0
+	v.Limit = nil
+	poolItemDiscountActivityOperateRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // EventCallRequest 结构体
 type EventCallRequest struct {
 	// 唯一的呼叫ID，最大可支持字符串长度256
@@ -26,4 +30,32 @@ type EventCallRequest struct {
 	CallTime string `json:"call_time,omitempty" xml:"call_time,omitempty"`
 	// 呼叫前转号码
 	CallForwardingNo string `json:"call_forwarding_no,omitempty" xml:"call_forwarding_no,omitempty"`
+}
+
+var poolEventCallRequest = sync.Pool{
+	New: func() any {
+		return new(EventCallRequest)
+	},
+}
+
+// GetEventCallRequest() 从对象池中获取EventCallRequest
+func GetEventCallRequest() *EventCallRequest {
+	return poolEventCallRequest.Get().(*EventCallRequest)
+}
+
+// ReleaseEventCallRequest 释放EventCallRequest
+func ReleaseEventCallRequest(v *EventCallRequest) {
+	v.CallId = ""
+	v.CalledNo = ""
+	v.CallNo = ""
+	v.ExtensionNo = ""
+	v.EventType = ""
+	v.SubsId = ""
+	v.VendorKey = ""
+	v.SecretNo = ""
+	v.EventTime = ""
+	v.CalledDisplayNo = ""
+	v.CallTime = ""
+	v.CallForwardingNo = ""
+	poolEventCallRequest.Put(v)
 }

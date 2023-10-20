@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.examination.report.diagnose.tempmessage.receive
 //
 // 导医通报告解读临时消息接收
-func AlibabaAlihealthExaminationReportDiagnoseTempmessageReceive(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest, session string) (*examination.AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIResponse, error) {
-	var resp examination.AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthExaminationReportDiagnoseTempmessageReceive(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest, resp *examination.AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

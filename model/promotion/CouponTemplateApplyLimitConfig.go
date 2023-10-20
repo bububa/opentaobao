@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // CouponTemplateApplyLimitConfig 结构体
 type CouponTemplateApplyLimitConfig struct {
 	// 优惠券最后能领取时间(超过这个时间，优惠券不能领取)
@@ -14,4 +18,26 @@ type CouponTemplateApplyLimitConfig struct {
 	PersonalDailyLmt int64 `json:"personal_daily_lmt,omitempty" xml:"personal_daily_lmt,omitempty"`
 	// 个人总领取限制数量（-1表示不限制）
 	PersonalLmt int64 `json:"personal_lmt,omitempty" xml:"personal_lmt,omitempty"`
+}
+
+var poolCouponTemplateApplyLimitConfig = sync.Pool{
+	New: func() any {
+		return new(CouponTemplateApplyLimitConfig)
+	},
+}
+
+// GetCouponTemplateApplyLimitConfig() 从对象池中获取CouponTemplateApplyLimitConfig
+func GetCouponTemplateApplyLimitConfig() *CouponTemplateApplyLimitConfig {
+	return poolCouponTemplateApplyLimitConfig.Get().(*CouponTemplateApplyLimitConfig)
+}
+
+// ReleaseCouponTemplateApplyLimitConfig 释放CouponTemplateApplyLimitConfig
+func ReleaseCouponTemplateApplyLimitConfig(v *CouponTemplateApplyLimitConfig) {
+	v.ApplyEndTime = ""
+	v.ApplyStartTime = ""
+	v.CouponDailyLmt = 0
+	v.CouponTotalLmt = 0
+	v.PersonalDailyLmt = 0
+	v.PersonalLmt = 0
+	poolCouponTemplateApplyLimitConfig.Put(v)
 }

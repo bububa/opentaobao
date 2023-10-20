@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosTvpubadminContentChildRecoitemOfflineAPIRequest struct {
 // NewYunosTvpubadminContentChildRecoitemOfflineRequest 初始化YunosTvpubadminContentChildRecoitemOfflineAPIRequest对象
 func NewYunosTvpubadminContentChildRecoitemOfflineRequest() *YunosTvpubadminContentChildRecoitemOfflineAPIRequest {
 	return &YunosTvpubadminContentChildRecoitemOfflineAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminContentChildRecoitemOfflineAPIRequest) Reset() {
+	r._recItemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosTvpubadminContentChildRecoitemOfflineAPIRequest) SetRecItemId(_rec
 // GetRecItemId RecItemId Getter
 func (r YunosTvpubadminContentChildRecoitemOfflineAPIRequest) GetRecItemId() int64 {
 	return r._recItemId
+}
+
+var poolYunosTvpubadminContentChildRecoitemOfflineAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminContentChildRecoitemOfflineRequest()
+	},
+}
+
+// GetYunosTvpubadminContentChildRecoitemOfflineRequest 从 sync.Pool 获取 YunosTvpubadminContentChildRecoitemOfflineAPIRequest
+func GetYunosTvpubadminContentChildRecoitemOfflineAPIRequest() *YunosTvpubadminContentChildRecoitemOfflineAPIRequest {
+	return poolYunosTvpubadminContentChildRecoitemOfflineAPIRequest.Get().(*YunosTvpubadminContentChildRecoitemOfflineAPIRequest)
+}
+
+// ReleaseYunosTvpubadminContentChildRecoitemOfflineAPIRequest 将 YunosTvpubadminContentChildRecoitemOfflineAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminContentChildRecoitemOfflineAPIRequest(v *YunosTvpubadminContentChildRecoitemOfflineAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminContentChildRecoitemOfflineAPIRequest.Put(v)
 }

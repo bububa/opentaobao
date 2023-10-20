@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,14 +14,20 @@ import (
 type AlibabaIdleAutotradeIsvOrderStateProcessAPIRequest struct {
 	model.Params
 	// AutoTradeAPI通用入参
-	_autoTradeApiParam *AutoTradeApiparam
+	_autoTradeApiParam *AutoTradeAPIParam
 }
 
 // NewAlibabaIdleAutotradeIsvOrderStateProcessRequest 初始化AlibabaIdleAutotradeIsvOrderStateProcessAPIRequest对象
 func NewAlibabaIdleAutotradeIsvOrderStateProcessRequest() *AlibabaIdleAutotradeIsvOrderStateProcessAPIRequest {
 	return &AlibabaIdleAutotradeIsvOrderStateProcessAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleAutotradeIsvOrderStateProcessAPIRequest) Reset() {
+	r._autoTradeApiParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -42,13 +49,30 @@ func (r AlibabaIdleAutotradeIsvOrderStateProcessAPIRequest) GetRawParams() model
 
 // SetAutoTradeApiParam is AutoTradeApiParam Setter
 // AutoTradeAPI通用入参
-func (r *AlibabaIdleAutotradeIsvOrderStateProcessAPIRequest) SetAutoTradeApiParam(_autoTradeApiParam *AutoTradeApiparam) error {
+func (r *AlibabaIdleAutotradeIsvOrderStateProcessAPIRequest) SetAutoTradeApiParam(_autoTradeApiParam *AutoTradeAPIParam) error {
 	r._autoTradeApiParam = _autoTradeApiParam
 	r.Set("auto_trade_api_param", _autoTradeApiParam)
 	return nil
 }
 
 // GetAutoTradeApiParam AutoTradeApiParam Getter
-func (r AlibabaIdleAutotradeIsvOrderStateProcessAPIRequest) GetAutoTradeApiParam() *AutoTradeApiparam {
+func (r AlibabaIdleAutotradeIsvOrderStateProcessAPIRequest) GetAutoTradeApiParam() *AutoTradeAPIParam {
 	return r._autoTradeApiParam
+}
+
+var poolAlibabaIdleAutotradeIsvOrderStateProcessAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleAutotradeIsvOrderStateProcessRequest()
+	},
+}
+
+// GetAlibabaIdleAutotradeIsvOrderStateProcessRequest 从 sync.Pool 获取 AlibabaIdleAutotradeIsvOrderStateProcessAPIRequest
+func GetAlibabaIdleAutotradeIsvOrderStateProcessAPIRequest() *AlibabaIdleAutotradeIsvOrderStateProcessAPIRequest {
+	return poolAlibabaIdleAutotradeIsvOrderStateProcessAPIRequest.Get().(*AlibabaIdleAutotradeIsvOrderStateProcessAPIRequest)
+}
+
+// ReleaseAlibabaIdleAutotradeIsvOrderStateProcessAPIRequest 将 AlibabaIdleAutotradeIsvOrderStateProcessAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleAutotradeIsvOrderStateProcessAPIRequest(v *AlibabaIdleAutotradeIsvOrderStateProcessAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleAutotradeIsvOrderStateProcessAPIRequest.Put(v)
 }

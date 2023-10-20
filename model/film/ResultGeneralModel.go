@@ -1,5 +1,9 @@
 package film
 
+import (
+	"sync"
+)
+
 // ResultGeneralModel 结构体
 type ResultGeneralModel struct {
 	// 调用失败描述信息
@@ -20,4 +24,29 @@ type ResultGeneralModel struct {
 	ReturnValue *TopRefundOrderStatus `json:"return_value,omitempty" xml:"return_value,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolResultGeneralModel = sync.Pool{
+	New: func() any {
+		return new(ResultGeneralModel)
+	},
+}
+
+// GetResultGeneralModel() 从对象池中获取ResultGeneralModel
+func GetResultGeneralModel() *ResultGeneralModel {
+	return poolResultGeneralModel.Get().(*ResultGeneralModel)
+}
+
+// ReleaseResultGeneralModel 释放ResultGeneralModel
+func ReleaseResultGeneralModel(v *ResultGeneralModel) {
+	v.ReturnMessage = ""
+	v.ReturnCode = ""
+	v.ReturnUrl = ""
+	v.RequestId = ""
+	v.ReturnErrorOper = ""
+	v.ReturnErrorSolution = ""
+	v.ReturnErrorStackTrace = ""
+	v.ReturnValue = nil
+	v.Success = false
+	poolResultGeneralModel.Put(v)
 }

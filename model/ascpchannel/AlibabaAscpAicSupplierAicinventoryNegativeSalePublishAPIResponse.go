@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponse struct {
 	AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponseModel).Reset()
+}
+
 // AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponseModel is AIC负卖库存新增和修改接口 成功返回结果
 type AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ascp_aic_supplier_aicinventory_negative_sale_publish_response"`
@@ -22,4 +29,27 @@ type AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponseModel struc
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回值包装,result为返回具体消息内容
 	FutureInvItemResponse *ResultWrapper `json:"future_inv_item_response,omitempty" xml:"future_inv_item_response,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.FutureInvItemResponse = nil
+}
+
+var poolAlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponse)
+	},
+}
+
+// GetAlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponse 从 sync.Pool 获取 AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponse
+func GetAlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponse() *AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponse {
+	return poolAlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponse.Get().(*AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponse)
+}
+
+// ReleaseAlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponse 将 AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponse(v *AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponse) {
+	v.Reset()
+	poolAlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package exchange
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TmallExchangeConfirmConsignAPIRequest struct {
 // NewTmallExchangeConfirmConsignRequest 初始化TmallExchangeConfirmConsignAPIRequest对象
 func NewTmallExchangeConfirmConsignRequest() *TmallExchangeConfirmConsignAPIRequest {
 	return &TmallExchangeConfirmConsignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallExchangeConfirmConsignAPIRequest) Reset() {
+	r._fields = r._fields[:0]
+	r._logisticsNo = ""
+	r._logisticsCompanyName = ""
+	r._disputeId = 0
+	r._logisticsType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TmallExchangeConfirmConsignAPIRequest) SetLogisticsType(_logisticsType 
 // GetLogisticsType LogisticsType Getter
 func (r TmallExchangeConfirmConsignAPIRequest) GetLogisticsType() int64 {
 	return r._logisticsType
+}
+
+var poolTmallExchangeConfirmConsignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallExchangeConfirmConsignRequest()
+	},
+}
+
+// GetTmallExchangeConfirmConsignRequest 从 sync.Pool 获取 TmallExchangeConfirmConsignAPIRequest
+func GetTmallExchangeConfirmConsignAPIRequest() *TmallExchangeConfirmConsignAPIRequest {
+	return poolTmallExchangeConfirmConsignAPIRequest.Get().(*TmallExchangeConfirmConsignAPIRequest)
+}
+
+// ReleaseTmallExchangeConfirmConsignAPIRequest 将 TmallExchangeConfirmConsignAPIRequest 放入 sync.Pool
+func ReleaseTmallExchangeConfirmConsignAPIRequest(v *TmallExchangeConfirmConsignAPIRequest) {
+	v.Reset()
+	poolTmallExchangeConfirmConsignAPIRequest.Put(v)
 }

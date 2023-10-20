@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // CashierShiftFundSummaryDto 结构体
 type CashierShiftFundSummaryDto struct {
 	// 商户编号
@@ -26,4 +30,32 @@ type CashierShiftFundSummaryDto struct {
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 扩展字段
 	Extra string `json:"extra,omitempty" xml:"extra,omitempty"`
+}
+
+var poolCashierShiftFundSummaryDto = sync.Pool{
+	New: func() any {
+		return new(CashierShiftFundSummaryDto)
+	},
+}
+
+// GetCashierShiftFundSummaryDto() 从对象池中获取CashierShiftFundSummaryDto
+func GetCashierShiftFundSummaryDto() *CashierShiftFundSummaryDto {
+	return poolCashierShiftFundSummaryDto.Get().(*CashierShiftFundSummaryDto)
+}
+
+// ReleaseCashierShiftFundSummaryDto 释放CashierShiftFundSummaryDto
+func ReleaseCashierShiftFundSummaryDto(v *CashierShiftFundSummaryDto) {
+	v.MerchantCode = ""
+	v.ShopCode = ""
+	v.BizDate = ""
+	v.PosNo = ""
+	v.ShiftNo = ""
+	v.CashierName = ""
+	v.PayMethod = ""
+	v.SystemAmount = ""
+	v.InputAmount = ""
+	v.SettleStatus = ""
+	v.Remark = ""
+	v.Extra = ""
+	poolCashierShiftFundSummaryDto.Put(v)
 }

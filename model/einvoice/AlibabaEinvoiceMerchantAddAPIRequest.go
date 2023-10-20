@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -32,8 +33,20 @@ type AlibabaEinvoiceMerchantAddAPIRequest struct {
 // NewAlibabaEinvoiceMerchantAddRequest 初始化AlibabaEinvoiceMerchantAddAPIRequest对象
 func NewAlibabaEinvoiceMerchantAddRequest() *AlibabaEinvoiceMerchantAddAPIRequest {
 	return &AlibabaEinvoiceMerchantAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceMerchantAddAPIRequest) Reset() {
+	r._deviceIds = r._deviceIds[:0]
+	r._taxToken = ""
+	r._outerId = ""
+	r._merchantUserId = ""
+	r._platformCode = ""
+	r._payeeRegisterNo = ""
+	r._merchantName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -142,4 +155,21 @@ func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetMerchantName(_merchantName str
 // GetMerchantName MerchantName Getter
 func (r AlibabaEinvoiceMerchantAddAPIRequest) GetMerchantName() string {
 	return r._merchantName
+}
+
+var poolAlibabaEinvoiceMerchantAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceMerchantAddRequest()
+	},
+}
+
+// GetAlibabaEinvoiceMerchantAddRequest 从 sync.Pool 获取 AlibabaEinvoiceMerchantAddAPIRequest
+func GetAlibabaEinvoiceMerchantAddAPIRequest() *AlibabaEinvoiceMerchantAddAPIRequest {
+	return poolAlibabaEinvoiceMerchantAddAPIRequest.Get().(*AlibabaEinvoiceMerchantAddAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceMerchantAddAPIRequest 将 AlibabaEinvoiceMerchantAddAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceMerchantAddAPIRequest(v *AlibabaEinvoiceMerchantAddAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceMerchantAddAPIRequest.Put(v)
 }

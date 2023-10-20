@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.derby.member.generate.seller.qrcode
 //
 // 生成臻享卡德比分销二维码
-func AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcode(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcode(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

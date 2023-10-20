@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // WarehouseReverseGoodsItemDto 结构体
 type WarehouseReverseGoodsItemDto struct {
 	// 扩展字段，JSONObject格式
@@ -34,4 +38,36 @@ type WarehouseReverseGoodsItemDto struct {
 	PlanStatus int64 `json:"plan_status,omitempty" xml:"plan_status,omitempty"`
 	// 状态（1=正品；2=残品；3=部分正品；4=未确认）
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolWarehouseReverseGoodsItemDto = sync.Pool{
+	New: func() any {
+		return new(WarehouseReverseGoodsItemDto)
+	},
+}
+
+// GetWarehouseReverseGoodsItemDto() 从对象池中获取WarehouseReverseGoodsItemDto
+func GetWarehouseReverseGoodsItemDto() *WarehouseReverseGoodsItemDto {
+	return poolWarehouseReverseGoodsItemDto.Get().(*WarehouseReverseGoodsItemDto)
+}
+
+// ReleaseWarehouseReverseGoodsItemDto 释放WarehouseReverseGoodsItemDto
+func ReleaseWarehouseReverseGoodsItemDto(v *WarehouseReverseGoodsItemDto) {
+	v.Extra = ""
+	v.AuctionName = ""
+	v.OwnerNick = ""
+	v.QrCode = ""
+	v.ItemId = ""
+	v.ItemCode = ""
+	v.ItemName = ""
+	v.Id = ""
+	v.Type = 0
+	v.PlanQty = 0
+	v.ActualQty = 0
+	v.Price = 0
+	v.ActualFee = 0
+	v.Oid = 0
+	v.PlanStatus = 0
+	v.Status = 0
+	poolWarehouseReverseGoodsItemDto.Put(v)
 }

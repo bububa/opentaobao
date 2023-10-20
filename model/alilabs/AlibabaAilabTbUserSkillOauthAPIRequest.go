@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAilabTbUserSkillOauthAPIRequest struct {
 // NewAlibabaAilabTbUserSkillOauthRequest 初始化AlibabaAilabTbUserSkillOauthAPIRequest对象
 func NewAlibabaAilabTbUserSkillOauthRequest() *AlibabaAilabTbUserSkillOauthAPIRequest {
 	return &AlibabaAilabTbUserSkillOauthAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabTbUserSkillOauthAPIRequest) Reset() {
+	r._taobaoId = ""
+	r._oauthAccessToken = ""
+	r._refreshToken = ""
+	r._expireIn = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAilabTbUserSkillOauthAPIRequest) SetExpireIn(_expireIn int64) er
 // GetExpireIn ExpireIn Getter
 func (r AlibabaAilabTbUserSkillOauthAPIRequest) GetExpireIn() int64 {
 	return r._expireIn
+}
+
+var poolAlibabaAilabTbUserSkillOauthAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabTbUserSkillOauthRequest()
+	},
+}
+
+// GetAlibabaAilabTbUserSkillOauthRequest 从 sync.Pool 获取 AlibabaAilabTbUserSkillOauthAPIRequest
+func GetAlibabaAilabTbUserSkillOauthAPIRequest() *AlibabaAilabTbUserSkillOauthAPIRequest {
+	return poolAlibabaAilabTbUserSkillOauthAPIRequest.Get().(*AlibabaAilabTbUserSkillOauthAPIRequest)
+}
+
+// ReleaseAlibabaAilabTbUserSkillOauthAPIRequest 将 AlibabaAilabTbUserSkillOauthAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabTbUserSkillOauthAPIRequest(v *AlibabaAilabTbUserSkillOauthAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabTbUserSkillOauthAPIRequest.Put(v)
 }

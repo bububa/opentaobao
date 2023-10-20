@@ -2,6 +2,7 @@ package vms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type CainiaoVmsServiceVehicleinfoUploadAPIRequest struct {
 // NewCainiaoVmsServiceVehicleinfoUploadRequest 初始化CainiaoVmsServiceVehicleinfoUploadAPIRequest对象
 func NewCainiaoVmsServiceVehicleinfoUploadRequest() *CainiaoVmsServiceVehicleinfoUploadAPIRequest {
 	return &CainiaoVmsServiceVehicleinfoUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoVmsServiceVehicleinfoUploadAPIRequest) Reset() {
+	r._deviceId = ""
+	r._providerName = ""
+	r._dataSource = ""
+	r._protocolVersion = ""
+	r._data = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *CainiaoVmsServiceVehicleinfoUploadAPIRequest) SetData(_data string) err
 // GetData Data Getter
 func (r CainiaoVmsServiceVehicleinfoUploadAPIRequest) GetData() string {
 	return r._data
+}
+
+var poolCainiaoVmsServiceVehicleinfoUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoVmsServiceVehicleinfoUploadRequest()
+	},
+}
+
+// GetCainiaoVmsServiceVehicleinfoUploadRequest 从 sync.Pool 获取 CainiaoVmsServiceVehicleinfoUploadAPIRequest
+func GetCainiaoVmsServiceVehicleinfoUploadAPIRequest() *CainiaoVmsServiceVehicleinfoUploadAPIRequest {
+	return poolCainiaoVmsServiceVehicleinfoUploadAPIRequest.Get().(*CainiaoVmsServiceVehicleinfoUploadAPIRequest)
+}
+
+// ReleaseCainiaoVmsServiceVehicleinfoUploadAPIRequest 将 CainiaoVmsServiceVehicleinfoUploadAPIRequest 放入 sync.Pool
+func ReleaseCainiaoVmsServiceVehicleinfoUploadAPIRequest(v *CainiaoVmsServiceVehicleinfoUploadAPIRequest) {
+	v.Reset()
+	poolCainiaoVmsServiceVehicleinfoUploadAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.project.kaname.query
 //
 // 查询KA楼盘名称
-func AlibabaAlihouseNewhomeProjectKanameQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectKanameQueryAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeProjectKanameQueryAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeProjectKanameQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeProjectKanameQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectKanameQueryAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeProjectKanameQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

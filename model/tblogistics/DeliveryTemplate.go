@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // DeliveryTemplate 结构体
 type DeliveryTemplate struct {
 	// 运费模板中运费详细信息对象，包含默认运费和指定地区运费
@@ -22,4 +26,30 @@ type DeliveryTemplate struct {
 	Valuation int64 `json:"valuation,omitempty" xml:"valuation,omitempty"`
 	// 该模板上设置的卖家发货地址区域ID，如：address为浙江省杭州市西湖去文三路XX号那么这个consign_area_id的值就是西湖区的ID
 	ConsignAreaId int64 `json:"consign_area_id,omitempty" xml:"consign_area_id,omitempty"`
+}
+
+var poolDeliveryTemplate = sync.Pool{
+	New: func() any {
+		return new(DeliveryTemplate)
+	},
+}
+
+// GetDeliveryTemplate() 从对象池中获取DeliveryTemplate
+func GetDeliveryTemplate() *DeliveryTemplate {
+	return poolDeliveryTemplate.Get().(*DeliveryTemplate)
+}
+
+// ReleaseDeliveryTemplate 释放DeliveryTemplate
+func ReleaseDeliveryTemplate(v *DeliveryTemplate) {
+	v.FeeList = v.FeeList[:0]
+	v.Created = ""
+	v.Name = ""
+	v.Supports = ""
+	v.Modified = ""
+	v.Address = ""
+	v.TemplateId = 0
+	v.Assumer = 0
+	v.Valuation = 0
+	v.ConsignAreaId = 0
+	poolDeliveryTemplate.Put(v)
 }

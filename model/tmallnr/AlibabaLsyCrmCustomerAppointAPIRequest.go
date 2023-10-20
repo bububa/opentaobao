@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLsyCrmCustomerAppointAPIRequest struct {
 // NewAlibabaLsyCrmCustomerAppointRequest 初始化AlibabaLsyCrmCustomerAppointAPIRequest对象
 func NewAlibabaLsyCrmCustomerAppointRequest() *AlibabaLsyCrmCustomerAppointAPIRequest {
 	return &AlibabaLsyCrmCustomerAppointAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLsyCrmCustomerAppointAPIRequest) Reset() {
+	r._crmAppointActivityReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLsyCrmCustomerAppointAPIRequest) SetCrmAppointActivityReq(_crmAp
 // GetCrmAppointActivityReq CrmAppointActivityReq Getter
 func (r AlibabaLsyCrmCustomerAppointAPIRequest) GetCrmAppointActivityReq() *CrmAppointActivityReq {
 	return r._crmAppointActivityReq
+}
+
+var poolAlibabaLsyCrmCustomerAppointAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLsyCrmCustomerAppointRequest()
+	},
+}
+
+// GetAlibabaLsyCrmCustomerAppointRequest 从 sync.Pool 获取 AlibabaLsyCrmCustomerAppointAPIRequest
+func GetAlibabaLsyCrmCustomerAppointAPIRequest() *AlibabaLsyCrmCustomerAppointAPIRequest {
+	return poolAlibabaLsyCrmCustomerAppointAPIRequest.Get().(*AlibabaLsyCrmCustomerAppointAPIRequest)
+}
+
+// ReleaseAlibabaLsyCrmCustomerAppointAPIRequest 将 AlibabaLsyCrmCustomerAppointAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLsyCrmCustomerAppointAPIRequest(v *AlibabaLsyCrmCustomerAppointAPIRequest) {
+	v.Reset()
+	poolAlibabaLsyCrmCustomerAppointAPIRequest.Put(v)
 }

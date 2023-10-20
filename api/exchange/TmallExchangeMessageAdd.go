@@ -9,11 +9,6 @@ import (
 // tmall.exchange.message.add
 //
 // 卖家创建换货留言
-func TmallExchangeMessageAdd(clt *core.SDKClient, req *exchange.TmallExchangeMessageAddAPIRequest, session string) (*exchange.TmallExchangeMessageAddAPIResponse, error) {
-	var resp exchange.TmallExchangeMessageAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallExchangeMessageAdd(clt *core.SDKClient, req *exchange.TmallExchangeMessageAddAPIRequest, resp *exchange.TmallExchangeMessageAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

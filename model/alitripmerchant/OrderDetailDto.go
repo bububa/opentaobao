@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // OrderDetailDto 结构体
 type OrderDetailDto struct {
 	// 每个房间入住人信息
@@ -86,4 +90,62 @@ type OrderDetailDto struct {
 	AdultNumber int64 `json:"adult_number,omitempty" xml:"adult_number,omitempty"`
 	// 儿童总数
 	ChildrenNumber int64 `json:"children_number,omitempty" xml:"children_number,omitempty"`
+}
+
+var poolOrderDetailDto = sync.Pool{
+	New: func() any {
+		return new(OrderDetailDto)
+	},
+}
+
+// GetOrderDetailDto() 从对象池中获取OrderDetailDto
+func GetOrderDetailDto() *OrderDetailDto {
+	return poolOrderDetailDto.Get().(*OrderDetailDto)
+}
+
+// ReleaseOrderDetailDto 释放OrderDetailDto
+func ReleaseOrderDetailDto(v *OrderDetailDto) {
+	v.GuestByRoomDtos = v.GuestByRoomDtos[:0]
+	v.HotelPhone = ""
+	v.BreakfastType = ""
+	v.RoomPicture = ""
+	v.PaymentDate = ""
+	v.OrderCode = ""
+	v.Lat = ""
+	v.Lon = ""
+	v.ContactEmail = ""
+	v.ContactPhone = ""
+	v.ContactFirstName = ""
+	v.ContactLastName = ""
+	v.CheckOutDate = ""
+	v.CheckInDate = ""
+	v.RpName = ""
+	v.BedTypeDesc = ""
+	v.RoomArea = ""
+	v.RoomName = ""
+	v.HotelName = ""
+	v.Currency = ""
+	v.TotalPrice = ""
+	v.CancelDec = ""
+	v.OrderStatus = ""
+	v.OuterRoomId = ""
+	v.HotelId = ""
+	v.HotelAddress = ""
+	v.RefundCostAmount = ""
+	v.OrderStatusDesc = ""
+	v.PaymentChannel = ""
+	v.PmsCode = ""
+	v.PersonNum = 0
+	v.Days = 0
+	v.RoomNumber = 0
+	v.RoomDetailDto = nil
+	v.MaxCheckInNumber = 0
+	v.PriceDetailDto = nil
+	v.PayType = 0
+	v.CancelRule = 0
+	v.PayRemainTime = 0
+	v.OutRateId = 0
+	v.AdultNumber = 0
+	v.ChildrenNumber = 0
+	poolOrderDetailDto.Put(v)
 }

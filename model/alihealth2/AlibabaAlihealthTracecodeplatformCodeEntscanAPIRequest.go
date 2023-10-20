@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest struct {
 // NewAlibabaAlihealthTracecodeplatformCodeEntscanRequest 初始化AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest对象
 func NewAlibabaAlihealthTracecodeplatformCodeEntscanRequest() *AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest {
 	return &AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) Reset() {
+	r._code = ""
+	r._serviceFlag = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) SetServiceFlag(
 // GetServiceFlag ServiceFlag Getter
 func (r AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) GetServiceFlag() string {
 	return r._serviceFlag
+}
+
+var poolAlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthTracecodeplatformCodeEntscanRequest()
+	},
+}
+
+// GetAlibabaAlihealthTracecodeplatformCodeEntscanRequest 从 sync.Pool 获取 AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest
+func GetAlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest() *AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest {
+	return poolAlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest.Get().(*AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest 将 AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest(v *AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaWdkOrderListResult 结构体
 type AlibabaWdkOrderListResult struct {
 	// 订单列表
@@ -12,4 +16,25 @@ type AlibabaWdkOrderListResult struct {
 	NextIndex int64 `json:"next_index,omitempty" xml:"next_index,omitempty"`
 	// 返回本查询条件下的数据总数。仅在传入page_index=0时返回,在其他情况下返回0
 	TotalNumber int64 `json:"total_number,omitempty" xml:"total_number,omitempty"`
+}
+
+var poolAlibabaWdkOrderListResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkOrderListResult)
+	},
+}
+
+// GetAlibabaWdkOrderListResult() 从对象池中获取AlibabaWdkOrderListResult
+func GetAlibabaWdkOrderListResult() *AlibabaWdkOrderListResult {
+	return poolAlibabaWdkOrderListResult.Get().(*AlibabaWdkOrderListResult)
+}
+
+// ReleaseAlibabaWdkOrderListResult 释放AlibabaWdkOrderListResult
+func ReleaseAlibabaWdkOrderListResult(v *AlibabaWdkOrderListResult) {
+	v.Orders = v.Orders[:0]
+	v.ReturnCode = ""
+	v.ReturnMsg = ""
+	v.NextIndex = 0
+	v.TotalNumber = 0
+	poolAlibabaWdkOrderListResult.Put(v)
 }

@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -28,8 +29,17 @@ type TaobaoOcTradetagsGetAPIRequest struct {
 // NewTaobaoOcTradetagsGetRequest 初始化TaobaoOcTradetagsGetAPIRequest对象
 func NewTaobaoOcTradetagsGetRequest() *TaobaoOcTradetagsGetAPIRequest {
 	return &TaobaoOcTradetagsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOcTradetagsGetAPIRequest) Reset() {
+	r._tagTypes = r._tagTypes[:0]
+	r._tagNames = r._tagNames[:0]
+	r._history = 0
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -99,4 +109,21 @@ func (r *TaobaoOcTradetagsGetAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoOcTradetagsGetAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoOcTradetagsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOcTradetagsGetRequest()
+	},
+}
+
+// GetTaobaoOcTradetagsGetRequest 从 sync.Pool 获取 TaobaoOcTradetagsGetAPIRequest
+func GetTaobaoOcTradetagsGetAPIRequest() *TaobaoOcTradetagsGetAPIRequest {
+	return poolTaobaoOcTradetagsGetAPIRequest.Get().(*TaobaoOcTradetagsGetAPIRequest)
+}
+
+// ReleaseTaobaoOcTradetagsGetAPIRequest 将 TaobaoOcTradetagsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOcTradetagsGetAPIRequest(v *TaobaoOcTradetagsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoOcTradetagsGetAPIRequest.Put(v)
 }

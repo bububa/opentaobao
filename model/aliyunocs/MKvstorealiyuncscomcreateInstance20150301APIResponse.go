@@ -2,6 +2,7 @@ package aliyunocs
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type MKvstoreAliyuncsComCreateInstance20150301APIResponse struct {
 	model.CommonResponse
 	MKvstoreAliyuncsComCreateInstance20150301APIResponseModel
+}
+
+// Reset 清空结构体
+func (m *MKvstoreAliyuncsComCreateInstance20150301APIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.MKvstoreAliyuncsComCreateInstance20150301APIResponseModel).Reset()
 }
 
 // MKvstoreAliyuncsComCreateInstance20150301APIResponseModel is 创建OCS实例 成功返回结果
@@ -43,9 +50,46 @@ type MKvstoreAliyuncsComCreateInstance20150301APIResponseModel struct {
 	// 实例容量上限  单位：MByte
 	Capacity int64 `json:"Capacity,omitempty" xml:"Capacity,omitempty"`
 	// 实例QPS限制&lt;br/&gt;单位：次/秒
-	Qps int64 `json:"QPS,omitempty" xml:"QPS,omitempty"`
+	QPS int64 `json:"QPS,omitempty" xml:"QPS,omitempty"`
 	// 实例带宽限制&lt;br/&gt;单位：MKbps
 	Bandwidth int64 `json:"Bandwidth,omitempty" xml:"Bandwidth,omitempty"`
 	// 实例连接数限制&lt;br/&gt;单位：个
 	Connections int64 `json:"Connections,omitempty" xml:"Connections,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *MKvstoreAliyuncsComCreateInstance20150301APIResponseModel) Reset() {
+	m.RequestId = ""
+	m.InstanceId = ""
+	m.InstanceName = ""
+	m.ConnectionDomain = ""
+	m.UserName = ""
+	m.InstanceStatus = ""
+	m.RegionId = ""
+	m.RequestId = ""
+	m.ZoneId = ""
+	m.NetworkType = ""
+	m.PrivateIpAddress = ""
+	m.Port = 0
+	m.Capacity = 0
+	m.QPS = 0
+	m.Bandwidth = 0
+	m.Connections = 0
+}
+
+var poolMKvstoreAliyuncsComCreateInstance20150301APIResponse = sync.Pool{
+	New: func() any {
+		return new(MKvstoreAliyuncsComCreateInstance20150301APIResponse)
+	},
+}
+
+// GetMKvstoreAliyuncsComCreateInstance20150301APIResponse 从 sync.Pool 获取 MKvstoreAliyuncsComCreateInstance20150301APIResponse
+func GetMKvstoreAliyuncsComCreateInstance20150301APIResponse() *MKvstoreAliyuncsComCreateInstance20150301APIResponse {
+	return poolMKvstoreAliyuncsComCreateInstance20150301APIResponse.Get().(*MKvstoreAliyuncsComCreateInstance20150301APIResponse)
+}
+
+// ReleaseMKvstoreAliyuncsComCreateInstance20150301APIResponse 将 MKvstoreAliyuncsComCreateInstance20150301APIResponse 保存到 sync.Pool
+func ReleaseMKvstoreAliyuncsComCreateInstance20150301APIResponse(v *MKvstoreAliyuncsComCreateInstance20150301APIResponse) {
+	v.Reset()
+	poolMKvstoreAliyuncsComCreateInstance20150301APIResponse.Put(v)
 }

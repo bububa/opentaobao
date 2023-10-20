@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // LeaseOrderInfoDto 结构体
 type LeaseOrderInfoDto struct {
 	// 网商申请号
@@ -10,4 +14,24 @@ type LeaseOrderInfoDto struct {
 	StoreOutId string `json:"store_out_id,omitempty" xml:"store_out_id,omitempty"`
 	// 订单id
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolLeaseOrderInfoDto = sync.Pool{
+	New: func() any {
+		return new(LeaseOrderInfoDto)
+	},
+}
+
+// GetLeaseOrderInfoDto() 从对象池中获取LeaseOrderInfoDto
+func GetLeaseOrderInfoDto() *LeaseOrderInfoDto {
+	return poolLeaseOrderInfoDto.Get().(*LeaseOrderInfoDto)
+}
+
+// ReleaseLeaseOrderInfoDto 释放LeaseOrderInfoDto
+func ReleaseLeaseOrderInfoDto(v *LeaseOrderInfoDto) {
+	v.ApplyNo = ""
+	v.Status = ""
+	v.StoreOutId = ""
+	v.OrderId = 0
+	poolLeaseOrderInfoDto.Put(v)
 }

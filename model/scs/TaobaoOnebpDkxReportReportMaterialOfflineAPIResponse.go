@@ -2,6 +2,7 @@ package scs
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,6 +18,12 @@ type TaobaoOnebpDkxReportReportMaterialOfflineAPIResponse struct {
 	TaobaoOnebpDkxReportReportMaterialOfflineAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOnebpDkxReportReportMaterialOfflineAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOnebpDkxReportReportMaterialOfflineAPIResponseModel).Reset()
+}
+
 // TaobaoOnebpDkxReportReportMaterialOfflineAPIResponseModel is 查询某计划分商品离线报表 成功返回结果
 type TaobaoOnebpDkxReportReportMaterialOfflineAPIResponseModel struct {
 	XMLName xml.Name `xml:"onebp_dkx_report_report_material_offline_response"`
@@ -24,4 +31,27 @@ type TaobaoOnebpDkxReportReportMaterialOfflineAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
 	Result *TaobaoOnebpDkxReportReportMaterialOfflineResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOnebpDkxReportReportMaterialOfflineAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoOnebpDkxReportReportMaterialOfflineAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOnebpDkxReportReportMaterialOfflineAPIResponse)
+	},
+}
+
+// GetTaobaoOnebpDkxReportReportMaterialOfflineAPIResponse 从 sync.Pool 获取 TaobaoOnebpDkxReportReportMaterialOfflineAPIResponse
+func GetTaobaoOnebpDkxReportReportMaterialOfflineAPIResponse() *TaobaoOnebpDkxReportReportMaterialOfflineAPIResponse {
+	return poolTaobaoOnebpDkxReportReportMaterialOfflineAPIResponse.Get().(*TaobaoOnebpDkxReportReportMaterialOfflineAPIResponse)
+}
+
+// ReleaseTaobaoOnebpDkxReportReportMaterialOfflineAPIResponse 将 TaobaoOnebpDkxReportReportMaterialOfflineAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOnebpDkxReportReportMaterialOfflineAPIResponse(v *TaobaoOnebpDkxReportReportMaterialOfflineAPIResponse) {
+	v.Reset()
+	poolTaobaoOnebpDkxReportReportMaterialOfflineAPIResponse.Put(v)
 }

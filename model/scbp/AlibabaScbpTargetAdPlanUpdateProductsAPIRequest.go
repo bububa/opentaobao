@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpTargetAdPlanUpdateProductsAPIRequest struct {
 // NewAlibabaScbpTargetAdPlanUpdateProductsRequest 初始化AlibabaScbpTargetAdPlanUpdateProductsAPIRequest对象
 func NewAlibabaScbpTargetAdPlanUpdateProductsRequest() *AlibabaScbpTargetAdPlanUpdateProductsAPIRequest {
 	return &AlibabaScbpTargetAdPlanUpdateProductsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpTargetAdPlanUpdateProductsAPIRequest) Reset() {
+	r._paramTopP4pModifyQuickCampaignProductDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpTargetAdPlanUpdateProductsAPIRequest) SetParamTopP4pModifyQu
 // GetParamTopP4pModifyQuickCampaignProductDTO ParamTopP4pModifyQuickCampaignProductDTO Getter
 func (r AlibabaScbpTargetAdPlanUpdateProductsAPIRequest) GetParamTopP4pModifyQuickCampaignProductDTO() *TopP4pModifyQuickCampaignProductDto {
 	return r._paramTopP4pModifyQuickCampaignProductDTO
+}
+
+var poolAlibabaScbpTargetAdPlanUpdateProductsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpTargetAdPlanUpdateProductsRequest()
+	},
+}
+
+// GetAlibabaScbpTargetAdPlanUpdateProductsRequest 从 sync.Pool 获取 AlibabaScbpTargetAdPlanUpdateProductsAPIRequest
+func GetAlibabaScbpTargetAdPlanUpdateProductsAPIRequest() *AlibabaScbpTargetAdPlanUpdateProductsAPIRequest {
+	return poolAlibabaScbpTargetAdPlanUpdateProductsAPIRequest.Get().(*AlibabaScbpTargetAdPlanUpdateProductsAPIRequest)
+}
+
+// ReleaseAlibabaScbpTargetAdPlanUpdateProductsAPIRequest 将 AlibabaScbpTargetAdPlanUpdateProductsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpTargetAdPlanUpdateProductsAPIRequest(v *AlibabaScbpTargetAdPlanUpdateProductsAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpTargetAdPlanUpdateProductsAPIRequest.Put(v)
 }

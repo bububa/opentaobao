@@ -1,5 +1,9 @@
 package c2m
 
+import (
+	"sync"
+)
+
 // PageInfo 结构体
 type PageInfo struct {
 	// 邀请关系信息
@@ -12,4 +16,25 @@ type PageInfo struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 第几页
 	PageNum int64 `json:"page_num,omitempty" xml:"page_num,omitempty"`
+}
+
+var poolPageInfo = sync.Pool{
+	New: func() any {
+		return new(PageInfo)
+	},
+}
+
+// GetPageInfo() 从对象池中获取PageInfo
+func GetPageInfo() *PageInfo {
+	return poolPageInfo.Get().(*PageInfo)
+}
+
+// ReleasePageInfo 释放PageInfo
+func ReleasePageInfo(v *PageInfo) {
+	v.List = v.List[:0]
+	v.Total = 0
+	v.Pages = 0
+	v.PageSize = 0
+	v.PageNum = 0
+	poolPageInfo.Put(v)
 }

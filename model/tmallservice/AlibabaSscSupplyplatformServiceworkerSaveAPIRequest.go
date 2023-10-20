@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaSscSupplyplatformServiceworkerSaveAPIRequest struct {
 // NewAlibabaSscSupplyplatformServiceworkerSaveRequest 初始化AlibabaSscSupplyplatformServiceworkerSaveAPIRequest对象
 func NewAlibabaSscSupplyplatformServiceworkerSaveRequest() *AlibabaSscSupplyplatformServiceworkerSaveAPIRequest {
 	return &AlibabaSscSupplyplatformServiceworkerSaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSscSupplyplatformServiceworkerSaveAPIRequest) Reset() {
+	r._workerSaveForTopReqDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaSscSupplyplatformServiceworkerSaveAPIRequest) SetWorkerSaveForTo
 // GetWorkerSaveForTopReqDto WorkerSaveForTopReqDto Getter
 func (r AlibabaSscSupplyplatformServiceworkerSaveAPIRequest) GetWorkerSaveForTopReqDto() *WorkerSaveForTopReqDto {
 	return r._workerSaveForTopReqDto
+}
+
+var poolAlibabaSscSupplyplatformServiceworkerSaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSscSupplyplatformServiceworkerSaveRequest()
+	},
+}
+
+// GetAlibabaSscSupplyplatformServiceworkerSaveRequest 从 sync.Pool 获取 AlibabaSscSupplyplatformServiceworkerSaveAPIRequest
+func GetAlibabaSscSupplyplatformServiceworkerSaveAPIRequest() *AlibabaSscSupplyplatformServiceworkerSaveAPIRequest {
+	return poolAlibabaSscSupplyplatformServiceworkerSaveAPIRequest.Get().(*AlibabaSscSupplyplatformServiceworkerSaveAPIRequest)
+}
+
+// ReleaseAlibabaSscSupplyplatformServiceworkerSaveAPIRequest 将 AlibabaSscSupplyplatformServiceworkerSaveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSscSupplyplatformServiceworkerSaveAPIRequest(v *AlibabaSscSupplyplatformServiceworkerSaveAPIRequest) {
+	v.Reset()
+	poolAlibabaSscSupplyplatformServiceworkerSaveAPIRequest.Put(v)
 }

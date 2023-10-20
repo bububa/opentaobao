@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // TopTradeOutBoundCallBackRequest 结构体
 type TopTradeOutBoundCallBackRequest struct {
 	// 子单明细列表
@@ -18,4 +22,28 @@ type TopTradeOutBoundCallBackRequest struct {
 	StoreCode string `json:"store_code,omitempty" xml:"store_code,omitempty"`
 	// 渠道类型
 	ChannelSource string `json:"channel_source,omitempty" xml:"channel_source,omitempty"`
+}
+
+var poolTopTradeOutBoundCallBackRequest = sync.Pool{
+	New: func() any {
+		return new(TopTradeOutBoundCallBackRequest)
+	},
+}
+
+// GetTopTradeOutBoundCallBackRequest() 从对象池中获取TopTradeOutBoundCallBackRequest
+func GetTopTradeOutBoundCallBackRequest() *TopTradeOutBoundCallBackRequest {
+	return poolTopTradeOutBoundCallBackRequest.Get().(*TopTradeOutBoundCallBackRequest)
+}
+
+// ReleaseTopTradeOutBoundCallBackRequest 释放TopTradeOutBoundCallBackRequest
+func ReleaseTopTradeOutBoundCallBackRequest(v *TopTradeOutBoundCallBackRequest) {
+	v.DemandDetailCallBackRequests = v.DemandDetailCallBackRequests[:0]
+	v.Extension = ""
+	v.BizOrderId = ""
+	v.OutBoundStatus = ""
+	v.ChannelOrderNo = ""
+	v.DemandStatusTime = ""
+	v.StoreCode = ""
+	v.ChannelSource = ""
+	poolTopTradeOutBoundCallBackRequest.Put(v)
 }

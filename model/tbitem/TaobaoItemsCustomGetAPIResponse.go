@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type TaobaoItemsCustomGetAPIResponse struct {
 	TaobaoItemsCustomGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoItemsCustomGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoItemsCustomGetAPIResponseModel).Reset()
+}
+
 // TaobaoItemsCustomGetAPIResponseModel is 根据外部ID取商品 成功返回结果
 type TaobaoItemsCustomGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"items_custom_get_response"`
@@ -23,4 +30,27 @@ type TaobaoItemsCustomGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 商品列表，具体返回字段以fields决定
 	Items []Item `json:"items,omitempty" xml:"items>item,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoItemsCustomGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Items = m.Items[:0]
+}
+
+var poolTaobaoItemsCustomGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoItemsCustomGetAPIResponse)
+	},
+}
+
+// GetTaobaoItemsCustomGetAPIResponse 从 sync.Pool 获取 TaobaoItemsCustomGetAPIResponse
+func GetTaobaoItemsCustomGetAPIResponse() *TaobaoItemsCustomGetAPIResponse {
+	return poolTaobaoItemsCustomGetAPIResponse.Get().(*TaobaoItemsCustomGetAPIResponse)
+}
+
+// ReleaseTaobaoItemsCustomGetAPIResponse 将 TaobaoItemsCustomGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoItemsCustomGetAPIResponse(v *TaobaoItemsCustomGetAPIResponse) {
+	v.Reset()
+	poolTaobaoItemsCustomGetAPIResponse.Put(v)
 }

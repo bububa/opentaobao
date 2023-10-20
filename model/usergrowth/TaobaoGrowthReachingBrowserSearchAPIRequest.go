@@ -2,6 +2,7 @@ package usergrowth
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoGrowthReachingBrowserSearchAPIRequest struct {
 // NewTaobaoGrowthReachingBrowserSearchRequest 初始化TaobaoGrowthReachingBrowserSearchAPIRequest对象
 func NewTaobaoGrowthReachingBrowserSearchRequest() *TaobaoGrowthReachingBrowserSearchAPIRequest {
 	return &TaobaoGrowthReachingBrowserSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoGrowthReachingBrowserSearchAPIRequest) Reset() {
+	r._query = ""
+	r._deviceIds = nil
+	r._wantedSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoGrowthReachingBrowserSearchAPIRequest) SetWantedSize(_wantedSize 
 // GetWantedSize WantedSize Getter
 func (r TaobaoGrowthReachingBrowserSearchAPIRequest) GetWantedSize() int64 {
 	return r._wantedSize
+}
+
+var poolTaobaoGrowthReachingBrowserSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoGrowthReachingBrowserSearchRequest()
+	},
+}
+
+// GetTaobaoGrowthReachingBrowserSearchRequest 从 sync.Pool 获取 TaobaoGrowthReachingBrowserSearchAPIRequest
+func GetTaobaoGrowthReachingBrowserSearchAPIRequest() *TaobaoGrowthReachingBrowserSearchAPIRequest {
+	return poolTaobaoGrowthReachingBrowserSearchAPIRequest.Get().(*TaobaoGrowthReachingBrowserSearchAPIRequest)
+}
+
+// ReleaseTaobaoGrowthReachingBrowserSearchAPIRequest 将 TaobaoGrowthReachingBrowserSearchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoGrowthReachingBrowserSearchAPIRequest(v *TaobaoGrowthReachingBrowserSearchAPIRequest) {
+	v.Reset()
+	poolTaobaoGrowthReachingBrowserSearchAPIRequest.Put(v)
 }

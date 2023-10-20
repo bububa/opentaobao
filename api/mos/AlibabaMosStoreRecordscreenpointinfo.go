@@ -9,11 +9,6 @@ import (
 // alibaba.mos.store.recordscreenpointinfo
 //
 // 记录云屏埋点数据
-func AlibabaMosStoreRecordscreenpointinfo(clt *core.SDKClient, req *mos.AlibabaMosStoreRecordscreenpointinfoAPIRequest, session string) (*mos.AlibabaMosStoreRecordscreenpointinfoAPIResponse, error) {
-	var resp mos.AlibabaMosStoreRecordscreenpointinfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMosStoreRecordscreenpointinfo(clt *core.SDKClient, req *mos.AlibabaMosStoreRecordscreenpointinfoAPIRequest, resp *mos.AlibabaMosStoreRecordscreenpointinfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // TopResultModel 结构体
 type TopResultModel struct {
 	// 返回的批次列表信息
@@ -14,4 +18,26 @@ type TopResultModel struct {
 	Model *AdvanceCodeSearchDto `json:"model,omitempty" xml:"model,omitempty"`
 	// 调用成功
 	ResponseSuccess bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
+}
+
+var poolTopResultModel = sync.Pool{
+	New: func() any {
+		return new(TopResultModel)
+	},
+}
+
+// GetTopResultModel() 从对象池中获取TopResultModel
+func GetTopResultModel() *TopResultModel {
+	return poolTopResultModel.Get().(*TopResultModel)
+}
+
+// ReleaseTopResultModel 释放TopResultModel
+func ReleaseTopResultModel(v *TopResultModel) {
+	v.BlindFileBatchInfoDtoList = v.BlindFileBatchInfoDtoList[:0]
+	v.Models = v.Models[:0]
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.Model = nil
+	v.ResponseSuccess = false
+	poolTopResultModel.Put(v)
 }

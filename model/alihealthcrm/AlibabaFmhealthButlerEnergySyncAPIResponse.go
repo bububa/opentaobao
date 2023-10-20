@@ -2,6 +2,7 @@ package alihealthcrm
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaFmhealthButlerEnergySyncAPIResponse struct {
 	AlibabaFmhealthButlerEnergySyncAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaFmhealthButlerEnergySyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaFmhealthButlerEnergySyncAPIResponseModel).Reset()
+}
+
 // AlibabaFmhealthButlerEnergySyncAPIResponseModel is 同步用户消耗能量 成功返回结果
 type AlibabaFmhealthButlerEnergySyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_fmhealth_butler_energy_sync_response"`
@@ -22,4 +29,27 @@ type AlibabaFmhealthButlerEnergySyncAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *TopResultModel `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaFmhealthButlerEnergySyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaFmhealthButlerEnergySyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaFmhealthButlerEnergySyncAPIResponse)
+	},
+}
+
+// GetAlibabaFmhealthButlerEnergySyncAPIResponse 从 sync.Pool 获取 AlibabaFmhealthButlerEnergySyncAPIResponse
+func GetAlibabaFmhealthButlerEnergySyncAPIResponse() *AlibabaFmhealthButlerEnergySyncAPIResponse {
+	return poolAlibabaFmhealthButlerEnergySyncAPIResponse.Get().(*AlibabaFmhealthButlerEnergySyncAPIResponse)
+}
+
+// ReleaseAlibabaFmhealthButlerEnergySyncAPIResponse 将 AlibabaFmhealthButlerEnergySyncAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaFmhealthButlerEnergySyncAPIResponse(v *AlibabaFmhealthButlerEnergySyncAPIResponse) {
+	v.Reset()
+	poolAlibabaFmhealthButlerEnergySyncAPIResponse.Put(v)
 }

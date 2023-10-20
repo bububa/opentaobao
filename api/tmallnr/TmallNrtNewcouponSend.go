@@ -9,11 +9,6 @@ import (
 // tmall.nrt.newcoupon.send
 //
 // 券发放接口
-func TmallNrtNewcouponSend(clt *core.SDKClient, req *tmallnr.TmallNrtNewcouponSendAPIRequest, session string) (*tmallnr.TmallNrtNewcouponSendAPIResponse, error) {
-	var resp tmallnr.TmallNrtNewcouponSendAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallNrtNewcouponSend(clt *core.SDKClient, req *tmallnr.TmallNrtNewcouponSendAPIRequest, resp *tmallnr.TmallNrtNewcouponSendAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

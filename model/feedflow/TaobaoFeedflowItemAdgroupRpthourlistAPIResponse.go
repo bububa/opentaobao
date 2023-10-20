@@ -2,6 +2,7 @@ package feedflow
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoFeedflowItemAdgroupRpthourlistAPIResponse struct {
 	TaobaoFeedflowItemAdgroupRpthourlistAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoFeedflowItemAdgroupRpthourlistAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFeedflowItemAdgroupRpthourlistAPIResponseModel).Reset()
+}
+
 // TaobaoFeedflowItemAdgroupRpthourlistAPIResponseModel is 超级推荐【商品推广】单元分时报表查询 成功返回结果
 type TaobaoFeedflowItemAdgroupRpthourlistAPIResponseModel struct {
 	XMLName xml.Name `xml:"feedflow_item_adgroup_rpthourlist_response"`
@@ -22,4 +29,27 @@ type TaobaoFeedflowItemAdgroupRpthourlistAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 异步获取历史数据接口返回结果
 	Result *TaobaoFeedflowItemAdgroupRpthourlistResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFeedflowItemAdgroupRpthourlistAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoFeedflowItemAdgroupRpthourlistAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFeedflowItemAdgroupRpthourlistAPIResponse)
+	},
+}
+
+// GetTaobaoFeedflowItemAdgroupRpthourlistAPIResponse 从 sync.Pool 获取 TaobaoFeedflowItemAdgroupRpthourlistAPIResponse
+func GetTaobaoFeedflowItemAdgroupRpthourlistAPIResponse() *TaobaoFeedflowItemAdgroupRpthourlistAPIResponse {
+	return poolTaobaoFeedflowItemAdgroupRpthourlistAPIResponse.Get().(*TaobaoFeedflowItemAdgroupRpthourlistAPIResponse)
+}
+
+// ReleaseTaobaoFeedflowItemAdgroupRpthourlistAPIResponse 将 TaobaoFeedflowItemAdgroupRpthourlistAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFeedflowItemAdgroupRpthourlistAPIResponse(v *TaobaoFeedflowItemAdgroupRpthourlistAPIResponse) {
+	v.Reset()
+	poolTaobaoFeedflowItemAdgroupRpthourlistAPIResponse.Put(v)
 }

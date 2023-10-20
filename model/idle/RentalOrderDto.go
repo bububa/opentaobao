@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // RentalOrderDto 结构体
 type RentalOrderDto struct {
 	// 订单商品信息
@@ -18,4 +22,28 @@ type RentalOrderDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 邮费，单位分
 	Postage int64 `json:"postage,omitempty" xml:"postage,omitempty"`
+}
+
+var poolRentalOrderDto = sync.Pool{
+	New: func() any {
+		return new(RentalOrderDto)
+	},
+}
+
+// GetRentalOrderDto() 从对象池中获取RentalOrderDto
+func GetRentalOrderDto() *RentalOrderDto {
+	return poolRentalOrderDto.Get().(*RentalOrderDto)
+}
+
+// ReleaseRentalOrderDto 释放RentalOrderDto
+func ReleaseRentalOrderDto(v *RentalOrderDto) {
+	v.Items = v.Items[:0]
+	v.BuyerId = ""
+	v.ReservedPackageTime = ""
+	v.BuyerMemberExpireDate = ""
+	v.BuyerAddress = nil
+	v.OrderId = 0
+	v.Status = 0
+	v.Postage = 0
+	poolRentalOrderDto.Put(v)
 }

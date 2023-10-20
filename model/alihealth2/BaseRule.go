@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // BaseRule 结构体
 type BaseRule struct {
 	// 规则的详细数据
@@ -36,4 +40,37 @@ type BaseRule struct {
 	Level int64 `json:"level,omitempty" xml:"level,omitempty"`
 	// 限购上限制（命中周期限购+单次限购规则）
 	LimitThreshold int64 `json:"limit_threshold,omitempty" xml:"limit_threshold,omitempty"`
+}
+
+var poolBaseRule = sync.Pool{
+	New: func() any {
+		return new(BaseRule)
+	},
+}
+
+// GetBaseRule() 从对象池中获取BaseRule
+func GetBaseRule() *BaseRule {
+	return poolBaseRule.Get().(*BaseRule)
+}
+
+// ReleaseBaseRule 释放BaseRule
+func ReleaseBaseRule(v *BaseRule) {
+	v.Detail = ""
+	v.Desc = ""
+	v.Type = ""
+	v.SpuId = ""
+	v.Threshold = ""
+	v.SuggestedFreq = ""
+	v.SuggestedWay = ""
+	v.CommonName = ""
+	v.OtherCommonName = ""
+	v.ForbiddenAge = ""
+	v.ForbiddenUser = ""
+	v.Gender = ""
+	v.DiagCode = ""
+	v.Diags = ""
+	v.ForbiddenDiags = ""
+	v.Level = 0
+	v.LimitThreshold = 0
+	poolBaseRule.Put(v)
 }

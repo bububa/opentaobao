@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkStockPublishAPIRequest struct {
 // NewAlibabaWdkStockPublishRequest 初始化AlibabaWdkStockPublishAPIRequest对象
 func NewAlibabaWdkStockPublishRequest() *AlibabaWdkStockPublishAPIRequest {
 	return &AlibabaWdkStockPublishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkStockPublishAPIRequest) Reset() {
+	r._batchStockPublishDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkStockPublishAPIRequest) SetBatchStockPublishDto(_batchStockPu
 // GetBatchStockPublishDto BatchStockPublishDto Getter
 func (r AlibabaWdkStockPublishAPIRequest) GetBatchStockPublishDto() *BatchStockPublishDto {
 	return r._batchStockPublishDto
+}
+
+var poolAlibabaWdkStockPublishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkStockPublishRequest()
+	},
+}
+
+// GetAlibabaWdkStockPublishRequest 从 sync.Pool 获取 AlibabaWdkStockPublishAPIRequest
+func GetAlibabaWdkStockPublishAPIRequest() *AlibabaWdkStockPublishAPIRequest {
+	return poolAlibabaWdkStockPublishAPIRequest.Get().(*AlibabaWdkStockPublishAPIRequest)
+}
+
+// ReleaseAlibabaWdkStockPublishAPIRequest 将 AlibabaWdkStockPublishAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkStockPublishAPIRequest(v *AlibabaWdkStockPublishAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkStockPublishAPIRequest.Put(v)
 }

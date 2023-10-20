@@ -2,6 +2,7 @@ package xhoteloffline
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoXhotelOrderAlipayfaceExtendAPIRequest struct {
 // NewTaobaoXhotelOrderAlipayfaceExtendRequest 初始化TaobaoXhotelOrderAlipayfaceExtendAPIRequest对象
 func NewTaobaoXhotelOrderAlipayfaceExtendRequest() *TaobaoXhotelOrderAlipayfaceExtendAPIRequest {
 	return &TaobaoXhotelOrderAlipayfaceExtendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelOrderAlipayfaceExtendAPIRequest) Reset() {
+	r._checkOut = ""
+	r._outOrderId = ""
+	r._extendDailyPriceInfo = ""
+	r._tid = 0
+	r._extendFee = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoXhotelOrderAlipayfaceExtendAPIRequest) SetExtendFee(_extendFee in
 // GetExtendFee ExtendFee Getter
 func (r TaobaoXhotelOrderAlipayfaceExtendAPIRequest) GetExtendFee() int64 {
 	return r._extendFee
+}
+
+var poolTaobaoXhotelOrderAlipayfaceExtendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelOrderAlipayfaceExtendRequest()
+	},
+}
+
+// GetTaobaoXhotelOrderAlipayfaceExtendRequest 从 sync.Pool 获取 TaobaoXhotelOrderAlipayfaceExtendAPIRequest
+func GetTaobaoXhotelOrderAlipayfaceExtendAPIRequest() *TaobaoXhotelOrderAlipayfaceExtendAPIRequest {
+	return poolTaobaoXhotelOrderAlipayfaceExtendAPIRequest.Get().(*TaobaoXhotelOrderAlipayfaceExtendAPIRequest)
+}
+
+// ReleaseTaobaoXhotelOrderAlipayfaceExtendAPIRequest 将 TaobaoXhotelOrderAlipayfaceExtendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelOrderAlipayfaceExtendAPIRequest(v *TaobaoXhotelOrderAlipayfaceExtendAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelOrderAlipayfaceExtendAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.kyt.wes.getbyrefentid
 //
 // 根据企业唯一标识查看企业详细信息
-func AlibabaAlihealthDrugKytWesGetbyrefentid(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytWesGetbyrefentidAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytWesGetbyrefentidAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugKytWesGetbyrefentid(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytWesGetbyrefentidAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

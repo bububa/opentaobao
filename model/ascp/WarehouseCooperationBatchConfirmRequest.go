@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // WarehouseCooperationBatchConfirmRequest 结构体
 type WarehouseCooperationBatchConfirmRequest struct {
 	// 合作商家仓编码列表,最多100条
@@ -16,4 +20,27 @@ type WarehouseCooperationBatchConfirmRequest struct {
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
 	// 确认状态： 1：同意合作 2：拒绝合作
 	CooperationStatus int64 `json:"cooperation_status,omitempty" xml:"cooperation_status,omitempty"`
+}
+
+var poolWarehouseCooperationBatchConfirmRequest = sync.Pool{
+	New: func() any {
+		return new(WarehouseCooperationBatchConfirmRequest)
+	},
+}
+
+// GetWarehouseCooperationBatchConfirmRequest() 从对象池中获取WarehouseCooperationBatchConfirmRequest
+func GetWarehouseCooperationBatchConfirmRequest() *WarehouseCooperationBatchConfirmRequest {
+	return poolWarehouseCooperationBatchConfirmRequest.Get().(*WarehouseCooperationBatchConfirmRequest)
+}
+
+// ReleaseWarehouseCooperationBatchConfirmRequest 释放WarehouseCooperationBatchConfirmRequest
+func ReleaseWarehouseCooperationBatchConfirmRequest(v *WarehouseCooperationBatchConfirmRequest) {
+	v.CooperationWarehouses = v.CooperationWarehouses[:0]
+	v.RequestId = ""
+	v.SupplierId = ""
+	v.WarehouseCode = ""
+	v.BusinessCode = ""
+	v.RequestTime = 0
+	v.CooperationStatus = 0
+	poolWarehouseCooperationBatchConfirmRequest.Put(v)
 }

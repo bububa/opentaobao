@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // AlibabaSscSupplyplatformServicestoreOfflineResult 结构体
 type AlibabaSscSupplyplatformServicestoreOfflineResult struct {
 	// 错误信息
@@ -10,4 +14,24 @@ type AlibabaSscSupplyplatformServicestoreOfflineResult struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 成功或失败
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaSscSupplyplatformServicestoreOfflineResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaSscSupplyplatformServicestoreOfflineResult)
+	},
+}
+
+// GetAlibabaSscSupplyplatformServicestoreOfflineResult() 从对象池中获取AlibabaSscSupplyplatformServicestoreOfflineResult
+func GetAlibabaSscSupplyplatformServicestoreOfflineResult() *AlibabaSscSupplyplatformServicestoreOfflineResult {
+	return poolAlibabaSscSupplyplatformServicestoreOfflineResult.Get().(*AlibabaSscSupplyplatformServicestoreOfflineResult)
+}
+
+// ReleaseAlibabaSscSupplyplatformServicestoreOfflineResult 释放AlibabaSscSupplyplatformServicestoreOfflineResult
+func ReleaseAlibabaSscSupplyplatformServicestoreOfflineResult(v *AlibabaSscSupplyplatformServicestoreOfflineResult) {
+	v.DisplayMsg = ""
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Success = false
+	poolAlibabaSscSupplyplatformServicestoreOfflineResult.Put(v)
 }

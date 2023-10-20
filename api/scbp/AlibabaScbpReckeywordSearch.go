@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.reckeyword.search
 //
 // 推荐词-词推词
-func AlibabaScbpReckeywordSearch(clt *core.SDKClient, req *scbp.AlibabaScbpReckeywordSearchAPIRequest, session string) (*scbp.AlibabaScbpReckeywordSearchAPIResponse, error) {
-	var resp scbp.AlibabaScbpReckeywordSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpReckeywordSearch(clt *core.SDKClient, req *scbp.AlibabaScbpReckeywordSearchAPIRequest, resp *scbp.AlibabaScbpReckeywordSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

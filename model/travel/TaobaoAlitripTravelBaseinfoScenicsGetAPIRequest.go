@@ -2,6 +2,7 @@ package travel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest struct {
 // NewTaobaoAlitripTravelBaseinfoScenicsGetRequest 初始化TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest对象
 func NewTaobaoAlitripTravelBaseinfoScenicsGetRequest() *TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest {
 	return &TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest) Reset() {
+	r._city = ""
+	r._scenic = ""
+	r._scenicId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest) SetScenicId(_scenicId 
 // GetScenicId ScenicId Getter
 func (r TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest) GetScenicId() int64 {
 	return r._scenicId
+}
+
+var poolTaobaoAlitripTravelBaseinfoScenicsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelBaseinfoScenicsGetRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelBaseinfoScenicsGetRequest 从 sync.Pool 获取 TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest
+func GetTaobaoAlitripTravelBaseinfoScenicsGetAPIRequest() *TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest {
+	return poolTaobaoAlitripTravelBaseinfoScenicsGetAPIRequest.Get().(*TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelBaseinfoScenicsGetAPIRequest 将 TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelBaseinfoScenicsGetAPIRequest(v *TaobaoAlitripTravelBaseinfoScenicsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelBaseinfoScenicsGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest struct {
 // NewAlibabaCampusAclNewGetrolewithmenutreenodesRequest 初始化AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest对象
 func NewAlibabaCampusAclNewGetrolewithmenutreenodesRequest() *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest {
 	return &AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) Reset() {
+	r._workbenchcontext = nil
+	r._roleId = 0
+	r._allPermission = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) SetAllPermission
 // GetAllPermission AllPermission Getter
 func (r AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) GetAllPermission() bool {
 	return r._allPermission
+}
+
+var poolAlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusAclNewGetrolewithmenutreenodesRequest()
+	},
+}
+
+// GetAlibabaCampusAclNewGetrolewithmenutreenodesRequest 从 sync.Pool 获取 AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest
+func GetAlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest() *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest {
+	return poolAlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest.Get().(*AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest)
+}
+
+// ReleaseAlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest 将 AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest(v *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest.Put(v)
 }

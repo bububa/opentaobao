@@ -1,5 +1,9 @@
 package flightuppc
 
+import (
+	"sync"
+)
+
 // InsProductResult 结构体
 type InsProductResult struct {
 	// 保险产品编码
@@ -20,4 +24,29 @@ type InsProductResult struct {
 	PremiumId int64 `json:"premium_id,omitempty" xml:"premium_id,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolInsProductResult = sync.Pool{
+	New: func() any {
+		return new(InsProductResult)
+	},
+}
+
+// GetInsProductResult() 从对象池中获取InsProductResult
+func GetInsProductResult() *InsProductResult {
+	return poolInsProductResult.Get().(*InsProductResult)
+}
+
+// ReleaseInsProductResult 释放InsProductResult
+func ReleaseInsProductResult(v *InsProductResult) {
+	v.ProdCode = ""
+	v.ProdName = ""
+	v.CsuNo = ""
+	v.Premium = 0
+	v.TcOrderId = 0
+	v.OutOrderId = 0
+	v.InsOrderId = 0
+	v.PremiumId = 0
+	v.Success = false
+	poolInsProductResult.Put(v)
 }

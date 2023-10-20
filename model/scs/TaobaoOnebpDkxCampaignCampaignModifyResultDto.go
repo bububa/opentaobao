@@ -1,5 +1,9 @@
 package scs
 
+import (
+	"sync"
+)
+
 // TaobaoOnebpDkxCampaignCampaignModifyResultDto 结构体
 type TaobaoOnebpDkxCampaignCampaignModifyResultDto struct {
 	// 返回消息
@@ -12,4 +16,25 @@ type TaobaoOnebpDkxCampaignCampaignModifyResultDto struct {
 	ResultCode *ResultCode `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoOnebpDkxCampaignCampaignModifyResultDto = sync.Pool{
+	New: func() any {
+		return new(TaobaoOnebpDkxCampaignCampaignModifyResultDto)
+	},
+}
+
+// GetTaobaoOnebpDkxCampaignCampaignModifyResultDto() 从对象池中获取TaobaoOnebpDkxCampaignCampaignModifyResultDto
+func GetTaobaoOnebpDkxCampaignCampaignModifyResultDto() *TaobaoOnebpDkxCampaignCampaignModifyResultDto {
+	return poolTaobaoOnebpDkxCampaignCampaignModifyResultDto.Get().(*TaobaoOnebpDkxCampaignCampaignModifyResultDto)
+}
+
+// ReleaseTaobaoOnebpDkxCampaignCampaignModifyResultDto 释放TaobaoOnebpDkxCampaignCampaignModifyResultDto
+func ReleaseTaobaoOnebpDkxCampaignCampaignModifyResultDto(v *TaobaoOnebpDkxCampaignCampaignModifyResultDto) {
+	v.Message = ""
+	v.SolutionResultTopDTO = nil
+	v.TotalCount = 0
+	v.ResultCode = nil
+	v.Success = false
+	poolTaobaoOnebpDkxCampaignCampaignModifyResultDto.Put(v)
 }

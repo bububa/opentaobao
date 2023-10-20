@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaHappytripTaxiOrderGetAPIRequest struct {
 // NewAlibabaHappytripTaxiOrderGetRequest 初始化AlibabaHappytripTaxiOrderGetAPIRequest对象
 func NewAlibabaHappytripTaxiOrderGetRequest() *AlibabaHappytripTaxiOrderGetAPIRequest {
 	return &AlibabaHappytripTaxiOrderGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHappytripTaxiOrderGetAPIRequest) Reset() {
+	r._orderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaHappytripTaxiOrderGetAPIRequest) SetOrderId(_orderId string) err
 // GetOrderId OrderId Getter
 func (r AlibabaHappytripTaxiOrderGetAPIRequest) GetOrderId() string {
 	return r._orderId
+}
+
+var poolAlibabaHappytripTaxiOrderGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHappytripTaxiOrderGetRequest()
+	},
+}
+
+// GetAlibabaHappytripTaxiOrderGetRequest 从 sync.Pool 获取 AlibabaHappytripTaxiOrderGetAPIRequest
+func GetAlibabaHappytripTaxiOrderGetAPIRequest() *AlibabaHappytripTaxiOrderGetAPIRequest {
+	return poolAlibabaHappytripTaxiOrderGetAPIRequest.Get().(*AlibabaHappytripTaxiOrderGetAPIRequest)
+}
+
+// ReleaseAlibabaHappytripTaxiOrderGetAPIRequest 将 AlibabaHappytripTaxiOrderGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHappytripTaxiOrderGetAPIRequest(v *AlibabaHappytripTaxiOrderGetAPIRequest) {
+	v.Reset()
+	poolAlibabaHappytripTaxiOrderGetAPIRequest.Put(v)
 }

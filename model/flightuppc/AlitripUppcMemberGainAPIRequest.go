@@ -2,6 +2,7 @@ package flightuppc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlitripUppcMemberGainAPIRequest struct {
 // NewAlitripUppcMemberGainRequest 初始化AlitripUppcMemberGainAPIRequest对象
 func NewAlitripUppcMemberGainRequest() *AlitripUppcMemberGainAPIRequest {
 	return &AlitripUppcMemberGainAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripUppcMemberGainAPIRequest) Reset() {
+	r._requestId = ""
+	r._responseJson = ""
+	r._errorMsg = ""
+	r._statusCode = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlitripUppcMemberGainAPIRequest) SetStatusCode(_statusCode int64) error
 // GetStatusCode StatusCode Getter
 func (r AlitripUppcMemberGainAPIRequest) GetStatusCode() int64 {
 	return r._statusCode
+}
+
+var poolAlitripUppcMemberGainAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripUppcMemberGainRequest()
+	},
+}
+
+// GetAlitripUppcMemberGainRequest 从 sync.Pool 获取 AlitripUppcMemberGainAPIRequest
+func GetAlitripUppcMemberGainAPIRequest() *AlitripUppcMemberGainAPIRequest {
+	return poolAlitripUppcMemberGainAPIRequest.Get().(*AlitripUppcMemberGainAPIRequest)
+}
+
+// ReleaseAlitripUppcMemberGainAPIRequest 将 AlitripUppcMemberGainAPIRequest 放入 sync.Pool
+func ReleaseAlitripUppcMemberGainAPIRequest(v *AlitripUppcMemberGainAPIRequest) {
+	v.Reset()
+	poolAlitripUppcMemberGainAPIRequest.Put(v)
 }

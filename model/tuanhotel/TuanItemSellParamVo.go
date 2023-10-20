@@ -1,5 +1,9 @@
 package tuanhotel
 
+import (
+	"sync"
+)
+
 // TuanItemSellParamVo 结构体
 type TuanItemSellParamVo struct {
 	// PC端图片地址
@@ -134,4 +138,86 @@ type TuanItemSellParamVo struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 是否有发票 0-没有，1-店铺提供，2-卖家提供
 	Invoice int64 `json:"invoice,omitempty" xml:"invoice,omitempty"`
+}
+
+var poolTuanItemSellParamVo = sync.Pool{
+	New: func() any {
+		return new(TuanItemSellParamVo)
+	},
+}
+
+// GetTuanItemSellParamVo() 从对象池中获取TuanItemSellParamVo
+func GetTuanItemSellParamVo() *TuanItemSellParamVo {
+	return poolTuanItemSellParamVo.Get().(*TuanItemSellParamVo)
+}
+
+// ReleaseTuanItemSellParamVo 释放TuanItemSellParamVo
+func ReleaseTuanItemSellParamVo(v *TuanItemSellParamVo) {
+	v.PicUrls = v.PicUrls[:0]
+	v.SecKills = v.SecKills[:0]
+	v.ShopCategoriesIdList = v.ShopCategoriesIdList[:0]
+	v.WirelessPicUrls = v.WirelessPicUrls[:0]
+	v.ContainElements = v.ContainElements[:0]
+	v.Gift = ""
+	v.AppointExplain = ""
+	v.DuringEndDate = ""
+	v.UnavailableDates = ""
+	v.Price = ""
+	v.BeginHour = ""
+	v.ConfirmTime = ""
+	v.BeginMin = ""
+	v.DownShelfHour = ""
+	v.MainVideoPicUrl = ""
+	v.City = ""
+	v.OrigPrice = ""
+	v.EndAvailableDate = ""
+	v.FeeInclude = ""
+	v.Prov = ""
+	v.SellerNick = ""
+	v.WangpuDetail = ""
+	v.Sub2Title = ""
+	v.EndEffectiveDate = ""
+	v.ServiceType = ""
+	v.UnavailableWeeks = ""
+	v.Sub3Title = ""
+	v.StoreSellerId = ""
+	v.Sub4Title = ""
+	v.StartEffectiveDate = ""
+	v.DownShelfMin = ""
+	v.ConfirmType = ""
+	v.WlDescription = ""
+	v.StoreSellerNick = ""
+	v.BreakfastDesc = ""
+	v.Description = ""
+	v.Title = ""
+	v.Sub1Title = ""
+	v.StartAvailableDate = ""
+	v.FeeExclude = ""
+	v.InvoiceExplain = ""
+	v.ProfitRate = ""
+	v.DownShelfDate = ""
+	v.AdditionalPay = ""
+	v.BeginDate = ""
+	v.OuterId = ""
+	v.EffectiveDays = 0
+	v.PromotedStatus = 0
+	v.CatId = 0
+	v.ItemId = 0
+	v.AdvanceDays = 0
+	v.Breakfast = 0
+	v.Refund = 0
+	v.NightCount = 0
+	v.SubStockAtBuy = 0
+	v.EffectiveDateType = 0
+	v.BeginType = 0
+	v.SellerId = 0
+	v.Etc = 0
+	v.InventoryType = 0
+	v.AutoRefund = 0
+	v.AuctionPoint = 0
+	v.OptionPromoted = 0
+	v.Amount = 0
+	v.Quantity = 0
+	v.Invoice = 0
+	poolTuanItemSellParamVo.Put(v)
 }

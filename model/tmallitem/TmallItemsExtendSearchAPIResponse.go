@@ -2,6 +2,7 @@ package tmallitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallItemsExtendSearchAPIResponse struct {
 	model.CommonResponse
 	TmallItemsExtendSearchAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallItemsExtendSearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallItemsExtendSearchAPIResponseModel).Reset()
 }
 
 // TmallItemsExtendSearchAPIResponseModel is 搜索天猫商品 成功返回结果
@@ -30,4 +37,31 @@ type TmallItemsExtendSearchAPIResponseModel struct {
 	Q string `json:"q,omitempty" xml:"q,omitempty"`
 	// 总商品数量
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallItemsExtendSearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.BrandList = m.BrandList[:0]
+	m.ItemList = m.ItemList[:0]
+	m.CatList = m.CatList[:0]
+	m.Q = ""
+	m.TotalResults = 0
+}
+
+var poolTmallItemsExtendSearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallItemsExtendSearchAPIResponse)
+	},
+}
+
+// GetTmallItemsExtendSearchAPIResponse 从 sync.Pool 获取 TmallItemsExtendSearchAPIResponse
+func GetTmallItemsExtendSearchAPIResponse() *TmallItemsExtendSearchAPIResponse {
+	return poolTmallItemsExtendSearchAPIResponse.Get().(*TmallItemsExtendSearchAPIResponse)
+}
+
+// ReleaseTmallItemsExtendSearchAPIResponse 将 TmallItemsExtendSearchAPIResponse 保存到 sync.Pool
+func ReleaseTmallItemsExtendSearchAPIResponse(v *TmallItemsExtendSearchAPIResponse) {
+	v.Reset()
+	poolTmallItemsExtendSearchAPIResponse.Put(v)
 }

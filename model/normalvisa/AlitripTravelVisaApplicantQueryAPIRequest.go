@@ -2,6 +2,7 @@ package normalvisa
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripTravelVisaApplicantQueryAPIRequest struct {
 // NewAlitripTravelVisaApplicantQueryRequest 初始化AlitripTravelVisaApplicantQueryAPIRequest对象
 func NewAlitripTravelVisaApplicantQueryRequest() *AlitripTravelVisaApplicantQueryAPIRequest {
 	return &AlitripTravelVisaApplicantQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTravelVisaApplicantQueryAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripTravelVisaApplicantQueryAPIRequest) SetParam0(_param0 *QueryAppl
 // GetParam0 Param0 Getter
 func (r AlitripTravelVisaApplicantQueryAPIRequest) GetParam0() *QueryApplicantParam {
 	return r._param0
+}
+
+var poolAlitripTravelVisaApplicantQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTravelVisaApplicantQueryRequest()
+	},
+}
+
+// GetAlitripTravelVisaApplicantQueryRequest 从 sync.Pool 获取 AlitripTravelVisaApplicantQueryAPIRequest
+func GetAlitripTravelVisaApplicantQueryAPIRequest() *AlitripTravelVisaApplicantQueryAPIRequest {
+	return poolAlitripTravelVisaApplicantQueryAPIRequest.Get().(*AlitripTravelVisaApplicantQueryAPIRequest)
+}
+
+// ReleaseAlitripTravelVisaApplicantQueryAPIRequest 将 AlitripTravelVisaApplicantQueryAPIRequest 放入 sync.Pool
+func ReleaseAlitripTravelVisaApplicantQueryAPIRequest(v *AlitripTravelVisaApplicantQueryAPIRequest) {
+	v.Reset()
+	poolAlitripTravelVisaApplicantQueryAPIRequest.Put(v)
 }

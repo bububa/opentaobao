@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // Building 结构体
 type Building struct {
 	// 所属公司名称
@@ -32,4 +36,35 @@ type Building struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 是否删除，0未删除，1删除
 	IsDelete bool `json:"is_delete,omitempty" xml:"is_delete,omitempty"`
+}
+
+var poolBuilding = sync.Pool{
+	New: func() any {
+		return new(Building)
+	},
+}
+
+// GetBuilding() 从对象池中获取Building
+func GetBuilding() *Building {
+	return poolBuilding.Get().(*Building)
+}
+
+// ReleaseBuilding 释放Building
+func ReleaseBuilding(v *Building) {
+	v.CompanyName = ""
+	v.Area = ""
+	v.CampusCode = ""
+	v.CampusName = ""
+	v.Name = ""
+	v.Modifier = ""
+	v.Creator = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.CompanyId = 0
+	v.Status = 0
+	v.OrderNo = 0
+	v.CampusId = 0
+	v.Id = 0
+	v.IsDelete = false
+	poolBuilding.Put(v)
 }

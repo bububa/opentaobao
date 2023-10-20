@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.nr.trade.order.get
 //
 // 阿里健康O2O，获取订单详情
-func AlibabaAlihealthNrTradeOrderGet(clt *core.SDKClient, req *drug.AlibabaAlihealthNrTradeOrderGetAPIRequest, session string) (*drug.AlibabaAlihealthNrTradeOrderGetAPIResponse, error) {
-	var resp drug.AlibabaAlihealthNrTradeOrderGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthNrTradeOrderGet(clt *core.SDKClient, req *drug.AlibabaAlihealthNrTradeOrderGetAPIRequest, resp *drug.AlibabaAlihealthNrTradeOrderGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package fans
 
+import (
+	"sync"
+)
+
 // FansResult 结构体
 type FansResult struct {
 	// 推送成功列表
@@ -14,4 +18,26 @@ type FansResult struct {
 	Data *CashPoolVo `json:"data,omitempty" xml:"data,omitempty"`
 	// 调用成功失败
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolFansResult = sync.Pool{
+	New: func() any {
+		return new(FansResult)
+	},
+}
+
+// GetFansResult() 从对象池中获取FansResult
+func GetFansResult() *FansResult {
+	return poolFansResult.Get().(*FansResult)
+}
+
+// ReleaseFansResult 释放FansResult
+func ReleaseFansResult(v *FansResult) {
+	v.DataList = v.DataList[:0]
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.TotalNum = 0
+	v.Data = nil
+	v.Success = false
+	poolFansResult.Put(v)
 }

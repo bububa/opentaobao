@@ -1,5 +1,9 @@
 package aedropshiper
 
+import (
+	"sync"
+)
+
 // AeSkuPropertyDto 结构体
 type AeSkuPropertyDto struct {
 	// Attribute name
@@ -14,4 +18,26 @@ type AeSkuPropertyDto struct {
 	SkuPropertyId int64 `json:"sku_property_id,omitempty" xml:"sku_property_id,omitempty"`
 	// Custom id
 	PropertyValueId int64 `json:"property_value_id,omitempty" xml:"property_value_id,omitempty"`
+}
+
+var poolAeSkuPropertyDto = sync.Pool{
+	New: func() any {
+		return new(AeSkuPropertyDto)
+	},
+}
+
+// GetAeSkuPropertyDto() 从对象池中获取AeSkuPropertyDto
+func GetAeSkuPropertyDto() *AeSkuPropertyDto {
+	return poolAeSkuPropertyDto.Get().(*AeSkuPropertyDto)
+}
+
+// ReleaseAeSkuPropertyDto 释放AeSkuPropertyDto
+func ReleaseAeSkuPropertyDto(v *AeSkuPropertyDto) {
+	v.SkuPropertyName = ""
+	v.SkuPropertyValue = ""
+	v.PropertyValueDefinitionName = ""
+	v.SkuImage = ""
+	v.SkuPropertyId = 0
+	v.PropertyValueId = 0
+	poolAeSkuPropertyDto.Put(v)
 }

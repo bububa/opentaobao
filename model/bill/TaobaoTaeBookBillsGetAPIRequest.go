@@ -2,6 +2,7 @@ package bill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoTaeBookBillsGetAPIRequest struct {
 // NewTaobaoTaeBookBillsGetRequest 初始化TaobaoTaeBookBillsGetAPIRequest对象
 func NewTaobaoTaeBookBillsGetRequest() *TaobaoTaeBookBillsGetAPIRequest {
 	return &TaobaoTaeBookBillsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTaeBookBillsGetAPIRequest) Reset() {
+	r._fields = r._fields[:0]
+	r._journalTypes = r._journalTypes[:0]
+	r._endTime = ""
+	r._startTime = ""
+	r._accountId = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoTaeBookBillsGetAPIRequest) SetPageSize(_pageSize int64) error {
 // GetPageSize PageSize Getter
 func (r TaobaoTaeBookBillsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoTaeBookBillsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTaeBookBillsGetRequest()
+	},
+}
+
+// GetTaobaoTaeBookBillsGetRequest 从 sync.Pool 获取 TaobaoTaeBookBillsGetAPIRequest
+func GetTaobaoTaeBookBillsGetAPIRequest() *TaobaoTaeBookBillsGetAPIRequest {
+	return poolTaobaoTaeBookBillsGetAPIRequest.Get().(*TaobaoTaeBookBillsGetAPIRequest)
+}
+
+// ReleaseTaobaoTaeBookBillsGetAPIRequest 将 TaobaoTaeBookBillsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTaeBookBillsGetAPIRequest(v *TaobaoTaeBookBillsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTaeBookBillsGetAPIRequest.Put(v)
 }

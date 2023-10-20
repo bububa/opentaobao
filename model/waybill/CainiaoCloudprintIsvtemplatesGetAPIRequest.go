@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type CainiaoCloudprintIsvtemplatesGetAPIRequest struct {
 // NewCainiaoCloudprintIsvtemplatesGetRequest 初始化CainiaoCloudprintIsvtemplatesGetAPIRequest对象
 func NewCainiaoCloudprintIsvtemplatesGetRequest() *CainiaoCloudprintIsvtemplatesGetAPIRequest {
 	return &CainiaoCloudprintIsvtemplatesGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoCloudprintIsvtemplatesGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r CainiaoCloudprintIsvtemplatesGetAPIRequest) GetApiParams(params url.Valu
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r CainiaoCloudprintIsvtemplatesGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolCainiaoCloudprintIsvtemplatesGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoCloudprintIsvtemplatesGetRequest()
+	},
+}
+
+// GetCainiaoCloudprintIsvtemplatesGetRequest 从 sync.Pool 获取 CainiaoCloudprintIsvtemplatesGetAPIRequest
+func GetCainiaoCloudprintIsvtemplatesGetAPIRequest() *CainiaoCloudprintIsvtemplatesGetAPIRequest {
+	return poolCainiaoCloudprintIsvtemplatesGetAPIRequest.Get().(*CainiaoCloudprintIsvtemplatesGetAPIRequest)
+}
+
+// ReleaseCainiaoCloudprintIsvtemplatesGetAPIRequest 将 CainiaoCloudprintIsvtemplatesGetAPIRequest 放入 sync.Pool
+func ReleaseCainiaoCloudprintIsvtemplatesGetAPIRequest(v *CainiaoCloudprintIsvtemplatesGetAPIRequest) {
+	v.Reset()
+	poolCainiaoCloudprintIsvtemplatesGetAPIRequest.Put(v)
 }

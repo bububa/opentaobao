@@ -9,11 +9,6 @@ import (
 // alibaba.jym.industry.recommend.goods.get
 //
 // 获取交易猫推荐商品
-func AlibabaJymIndustryRecommendGoodsGet(clt *core.SDKClient, req *jym.AlibabaJymIndustryRecommendGoodsGetAPIRequest, session string) (*jym.AlibabaJymIndustryRecommendGoodsGetAPIResponse, error) {
-	var resp jym.AlibabaJymIndustryRecommendGoodsGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaJymIndustryRecommendGoodsGet(clt *core.SDKClient, req *jym.AlibabaJymIndustryRecommendGoodsGetAPIRequest, resp *jym.AlibabaJymIndustryRecommendGoodsGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

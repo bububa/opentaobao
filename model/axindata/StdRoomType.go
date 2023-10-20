@@ -1,6 +1,8 @@
 package axindata
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -30,4 +32,32 @@ type StdRoomType struct {
 	MaxOccupancy int64 `json:"max_occupancy,omitempty" xml:"max_occupancy,omitempty"`
 	// 状态（0 - 正常 ，-1 删除 ，-4 失效）
 	Status *model.File `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolStdRoomType = sync.Pool{
+	New: func() any {
+		return new(StdRoomType)
+	},
+}
+
+// GetStdRoomType() 从对象池中获取StdRoomType
+func GetStdRoomType() *StdRoomType {
+	return poolStdRoomType.Get().(*StdRoomType)
+}
+
+// ReleaseStdRoomType 释放StdRoomType
+func ReleaseStdRoomType(v *StdRoomType) {
+	v.BedGroupDTOList = v.BedGroupDTOList[:0]
+	v.Name = ""
+	v.Floor = ""
+	v.NetworkService = ""
+	v.Facility = ""
+	v.Area = ""
+	v.WindowType = ""
+	v.BedType = ""
+	v.BedTypeDesc = ""
+	v.Srid = 0
+	v.MaxOccupancy = 0
+	v.Status = nil
+	poolStdRoomType.Put(v)
 }

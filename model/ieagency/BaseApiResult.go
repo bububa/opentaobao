@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // BaseApiResult 结构体
 type BaseApiResult struct {
 	// 错误信息
@@ -10,4 +14,24 @@ type BaseApiResult struct {
 	Model *IeBookPayOrderVo `json:"model,omitempty" xml:"model,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolBaseApiResult = sync.Pool{
+	New: func() any {
+		return new(BaseApiResult)
+	},
+}
+
+// GetBaseApiResult() 从对象池中获取BaseApiResult
+func GetBaseApiResult() *BaseApiResult {
+	return poolBaseApiResult.Get().(*BaseApiResult)
+}
+
+// ReleaseBaseApiResult 释放BaseApiResult
+func ReleaseBaseApiResult(v *BaseApiResult) {
+	v.ErrorMsg = ""
+	v.ErrorCode = 0
+	v.Model = nil
+	v.Success = false
+	poolBaseApiResult.Put(v)
 }

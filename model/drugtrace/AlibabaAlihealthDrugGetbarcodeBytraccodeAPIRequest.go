@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest struct {
 // NewAlibabaAlihealthDrugGetbarcodeBytraccodeRequest 初始化AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest对象
 func NewAlibabaAlihealthDrugGetbarcodeBytraccodeRequest() *AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest {
 	return &AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest) Reset() {
+	r._traceCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest) SetTraceCode(_trace
 // GetTraceCode TraceCode Getter
 func (r AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest) GetTraceCode() string {
 	return r._traceCode
+}
+
+var poolAlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugGetbarcodeBytraccodeRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugGetbarcodeBytraccodeRequest 从 sync.Pool 获取 AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest
+func GetAlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest() *AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest {
+	return poolAlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest.Get().(*AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest 将 AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest(v *AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest.Put(v)
 }

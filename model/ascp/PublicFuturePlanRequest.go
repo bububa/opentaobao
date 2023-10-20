@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // PublicFuturePlanRequest 结构体
 type PublicFuturePlanRequest struct {
 	// 负卖品详情
@@ -14,4 +18,26 @@ type PublicFuturePlanRequest struct {
 	BizActivityCode string `json:"biz_activity_code,omitempty" xml:"biz_activity_code,omitempty"`
 	// 业务请求时间。时间戳。 毫秒
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
+}
+
+var poolPublicFuturePlanRequest = sync.Pool{
+	New: func() any {
+		return new(PublicFuturePlanRequest)
+	},
+}
+
+// GetPublicFuturePlanRequest() 从对象池中获取PublicFuturePlanRequest
+func GetPublicFuturePlanRequest() *PublicFuturePlanRequest {
+	return poolPublicFuturePlanRequest.Get().(*PublicFuturePlanRequest)
+}
+
+// ReleasePublicFuturePlanRequest 释放PublicFuturePlanRequest
+func ReleasePublicFuturePlanRequest(v *PublicFuturePlanRequest) {
+	v.FuturePlanDetailList = v.FuturePlanDetailList[:0]
+	v.RequestId = ""
+	v.OperationOrderId = ""
+	v.OperationCode = ""
+	v.BizActivityCode = ""
+	v.RequestTime = 0
+	poolPublicFuturePlanRequest.Put(v)
 }

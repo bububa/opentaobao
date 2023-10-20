@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type YunosTvpubadminDeviceAppupgradedetailAPIRequest struct {
 // NewYunosTvpubadminDeviceAppupgradedetailRequest 初始化YunosTvpubadminDeviceAppupgradedetailAPIRequest对象
 func NewYunosTvpubadminDeviceAppupgradedetailRequest() *YunosTvpubadminDeviceAppupgradedetailAPIRequest {
 	return &YunosTvpubadminDeviceAppupgradedetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminDeviceAppupgradedetailAPIRequest) Reset() {
+	r._versionId = 0
+	r._license = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *YunosTvpubadminDeviceAppupgradedetailAPIRequest) SetLicense(_license in
 // GetLicense License Getter
 func (r YunosTvpubadminDeviceAppupgradedetailAPIRequest) GetLicense() int64 {
 	return r._license
+}
+
+var poolYunosTvpubadminDeviceAppupgradedetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminDeviceAppupgradedetailRequest()
+	},
+}
+
+// GetYunosTvpubadminDeviceAppupgradedetailRequest 从 sync.Pool 获取 YunosTvpubadminDeviceAppupgradedetailAPIRequest
+func GetYunosTvpubadminDeviceAppupgradedetailAPIRequest() *YunosTvpubadminDeviceAppupgradedetailAPIRequest {
+	return poolYunosTvpubadminDeviceAppupgradedetailAPIRequest.Get().(*YunosTvpubadminDeviceAppupgradedetailAPIRequest)
+}
+
+// ReleaseYunosTvpubadminDeviceAppupgradedetailAPIRequest 将 YunosTvpubadminDeviceAppupgradedetailAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminDeviceAppupgradedetailAPIRequest(v *YunosTvpubadminDeviceAppupgradedetailAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminDeviceAppupgradedetailAPIRequest.Put(v)
 }

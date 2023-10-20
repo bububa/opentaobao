@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // WmsMaterialPackageDto 结构体
 type WmsMaterialPackageDto struct {
 	// 包材信息
@@ -12,4 +16,25 @@ type WmsMaterialPackageDto struct {
 	ExpressCode string `json:"express_code,omitempty" xml:"express_code,omitempty"`
 	// SF
 	LogisticsCode string `json:"logistics_code,omitempty" xml:"logistics_code,omitempty"`
+}
+
+var poolWmsMaterialPackageDto = sync.Pool{
+	New: func() any {
+		return new(WmsMaterialPackageDto)
+	},
+}
+
+// GetWmsMaterialPackageDto() 从对象池中获取WmsMaterialPackageDto
+func GetWmsMaterialPackageDto() *WmsMaterialPackageDto {
+	return poolWmsMaterialPackageDto.Get().(*WmsMaterialPackageDto)
+}
+
+// ReleaseWmsMaterialPackageDto 释放WmsMaterialPackageDto
+func ReleaseWmsMaterialPackageDto(v *WmsMaterialPackageDto) {
+	v.Materials = v.Materials[:0]
+	v.Items = v.Items[:0]
+	v.PackageCode = ""
+	v.ExpressCode = ""
+	v.LogisticsCode = ""
+	poolWmsMaterialPackageDto.Put(v)
 }

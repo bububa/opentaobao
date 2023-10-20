@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoQianniuTaskCancelAPIRequest struct {
 // NewTaobaoQianniuTaskCancelRequest 初始化TaobaoQianniuTaskCancelAPIRequest对象
 func NewTaobaoQianniuTaskCancelRequest() *TaobaoQianniuTaskCancelAPIRequest {
 	return &TaobaoQianniuTaskCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQianniuTaskCancelAPIRequest) Reset() {
+	r._memo = ""
+	r._metaId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoQianniuTaskCancelAPIRequest) SetMetaId(_metaId int64) error {
 // GetMetaId MetaId Getter
 func (r TaobaoQianniuTaskCancelAPIRequest) GetMetaId() int64 {
 	return r._metaId
+}
+
+var poolTaobaoQianniuTaskCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQianniuTaskCancelRequest()
+	},
+}
+
+// GetTaobaoQianniuTaskCancelRequest 从 sync.Pool 获取 TaobaoQianniuTaskCancelAPIRequest
+func GetTaobaoQianniuTaskCancelAPIRequest() *TaobaoQianniuTaskCancelAPIRequest {
+	return poolTaobaoQianniuTaskCancelAPIRequest.Get().(*TaobaoQianniuTaskCancelAPIRequest)
+}
+
+// ReleaseTaobaoQianniuTaskCancelAPIRequest 将 TaobaoQianniuTaskCancelAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQianniuTaskCancelAPIRequest(v *TaobaoQianniuTaskCancelAPIRequest) {
+	v.Reset()
+	poolTaobaoQianniuTaskCancelAPIRequest.Put(v)
 }

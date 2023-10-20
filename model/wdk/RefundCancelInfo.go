@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // RefundCancelInfo 结构体
 type RefundCancelInfo struct {
 	// 外部主单号
@@ -12,4 +16,25 @@ type RefundCancelInfo struct {
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 渠道来源(选填out_shop_id时该值必填)
 	OrderFrom int64 `json:"order_from,omitempty" xml:"order_from,omitempty"`
+}
+
+var poolRefundCancelInfo = sync.Pool{
+	New: func() any {
+		return new(RefundCancelInfo)
+	},
+}
+
+// GetRefundCancelInfo() 从对象池中获取RefundCancelInfo
+func GetRefundCancelInfo() *RefundCancelInfo {
+	return poolRefundCancelInfo.Get().(*RefundCancelInfo)
+}
+
+// ReleaseRefundCancelInfo 释放RefundCancelInfo
+func ReleaseRefundCancelInfo(v *RefundCancelInfo) {
+	v.OutOrderId = ""
+	v.OutShopId = ""
+	v.OutRefundId = ""
+	v.ShopId = ""
+	v.OrderFrom = 0
+	poolRefundCancelInfo.Put(v)
 }

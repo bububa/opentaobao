@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenItemsTagQueryAPIRequest struct {
 // NewTaobaoQimenItemsTagQueryRequest 初始化TaobaoQimenItemsTagQueryAPIRequest对象
 func NewTaobaoQimenItemsTagQueryRequest() *TaobaoQimenItemsTagQueryAPIRequest {
 	return &TaobaoQimenItemsTagQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenItemsTagQueryAPIRequest) Reset() {
+	r._itemIds = r._itemIds[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoQimenItemsTagQueryAPIRequest) SetItemIds(_itemIds []string) error
 // GetItemIds ItemIds Getter
 func (r TaobaoQimenItemsTagQueryAPIRequest) GetItemIds() []string {
 	return r._itemIds
+}
+
+var poolTaobaoQimenItemsTagQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenItemsTagQueryRequest()
+	},
+}
+
+// GetTaobaoQimenItemsTagQueryRequest 从 sync.Pool 获取 TaobaoQimenItemsTagQueryAPIRequest
+func GetTaobaoQimenItemsTagQueryAPIRequest() *TaobaoQimenItemsTagQueryAPIRequest {
+	return poolTaobaoQimenItemsTagQueryAPIRequest.Get().(*TaobaoQimenItemsTagQueryAPIRequest)
+}
+
+// ReleaseTaobaoQimenItemsTagQueryAPIRequest 将 TaobaoQimenItemsTagQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenItemsTagQueryAPIRequest(v *TaobaoQimenItemsTagQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenItemsTagQueryAPIRequest.Put(v)
 }

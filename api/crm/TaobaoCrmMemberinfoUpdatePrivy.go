@@ -9,11 +9,6 @@ import (
 // taobao.crm.memberinfo.update.privy
 //
 // 编辑会员的基本资料，接口返回会员信息修改是否成功
-func TaobaoCrmMemberinfoUpdatePrivy(clt *core.SDKClient, req *crm.TaobaoCrmMemberinfoUpdatePrivyAPIRequest, session string) (*crm.TaobaoCrmMemberinfoUpdatePrivyAPIResponse, error) {
-	var resp crm.TaobaoCrmMemberinfoUpdatePrivyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoCrmMemberinfoUpdatePrivy(clt *core.SDKClient, req *crm.TaobaoCrmMemberinfoUpdatePrivyAPIRequest, resp *crm.TaobaoCrmMemberinfoUpdatePrivyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

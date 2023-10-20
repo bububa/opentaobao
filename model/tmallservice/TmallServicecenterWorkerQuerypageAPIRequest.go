@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallServicecenterWorkerQuerypageAPIRequest struct {
 // NewTmallServicecenterWorkerQuerypageRequest 初始化TmallServicecenterWorkerQuerypageAPIRequest对象
 func NewTmallServicecenterWorkerQuerypageRequest() *TmallServicecenterWorkerQuerypageAPIRequest {
 	return &TmallServicecenterWorkerQuerypageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkerQuerypageAPIRequest) Reset() {
+	r._pageIndex = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallServicecenterWorkerQuerypageAPIRequest) SetPageIndex(_pageIndex in
 // GetPageIndex PageIndex Getter
 func (r TmallServicecenterWorkerQuerypageAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
+}
+
+var poolTmallServicecenterWorkerQuerypageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkerQuerypageRequest()
+	},
+}
+
+// GetTmallServicecenterWorkerQuerypageRequest 从 sync.Pool 获取 TmallServicecenterWorkerQuerypageAPIRequest
+func GetTmallServicecenterWorkerQuerypageAPIRequest() *TmallServicecenterWorkerQuerypageAPIRequest {
+	return poolTmallServicecenterWorkerQuerypageAPIRequest.Get().(*TmallServicecenterWorkerQuerypageAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkerQuerypageAPIRequest 将 TmallServicecenterWorkerQuerypageAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkerQuerypageAPIRequest(v *TmallServicecenterWorkerQuerypageAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkerQuerypageAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.phone.bank.credit.process
 //
 // 虚拟话费任务银行信用卡办理进度回传
-func TaobaoPhoneBankCreditProcess(clt *core.SDKClient, req *alicom.TaobaoPhoneBankCreditProcessAPIRequest, session string) (*alicom.TaobaoPhoneBankCreditProcessAPIResponse, error) {
-	var resp alicom.TaobaoPhoneBankCreditProcessAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPhoneBankCreditProcess(clt *core.SDKClient, req *alicom.TaobaoPhoneBankCreditProcessAPIRequest, resp *alicom.TaobaoPhoneBankCreditProcessAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

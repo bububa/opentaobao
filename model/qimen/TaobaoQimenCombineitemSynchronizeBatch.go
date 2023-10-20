@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // TaobaoQimenCombineitemSynchronizeBatch 结构体
 type TaobaoQimenCombineitemSynchronizeBatch struct {
 	// test
@@ -16,4 +20,27 @@ type TaobaoQimenCombineitemSynchronizeBatch struct {
 	ActualQty string `json:"actualQty,omitempty" xml:"actualQty,omitempty"`
 	// test
 	Quantity string `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolTaobaoQimenCombineitemSynchronizeBatch = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenCombineitemSynchronizeBatch)
+	},
+}
+
+// GetTaobaoQimenCombineitemSynchronizeBatch() 从对象池中获取TaobaoQimenCombineitemSynchronizeBatch
+func GetTaobaoQimenCombineitemSynchronizeBatch() *TaobaoQimenCombineitemSynchronizeBatch {
+	return poolTaobaoQimenCombineitemSynchronizeBatch.Get().(*TaobaoQimenCombineitemSynchronizeBatch)
+}
+
+// ReleaseTaobaoQimenCombineitemSynchronizeBatch 释放TaobaoQimenCombineitemSynchronizeBatch
+func ReleaseTaobaoQimenCombineitemSynchronizeBatch(v *TaobaoQimenCombineitemSynchronizeBatch) {
+	v.BatchCode = ""
+	v.ProductDate = ""
+	v.ExpireDate = ""
+	v.ProduceCode = ""
+	v.InventoryType = ""
+	v.ActualQty = ""
+	v.Quantity = ""
+	poolTaobaoQimenCombineitemSynchronizeBatch.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallServicecenterSettlementStoretransferAuditAPIRequest struct {
 // NewTmallServicecenterSettlementStoretransferAuditRequest 初始化TmallServicecenterSettlementStoretransferAuditAPIRequest对象
 func NewTmallServicecenterSettlementStoretransferAuditRequest() *TmallServicecenterSettlementStoretransferAuditAPIRequest {
 	return &TmallServicecenterSettlementStoretransferAuditAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterSettlementStoretransferAuditAPIRequest) Reset() {
+	r._workcardId = 0
+	r._auditPass = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallServicecenterSettlementStoretransferAuditAPIRequest) SetAuditPass(
 // GetAuditPass AuditPass Getter
 func (r TmallServicecenterSettlementStoretransferAuditAPIRequest) GetAuditPass() bool {
 	return r._auditPass
+}
+
+var poolTmallServicecenterSettlementStoretransferAuditAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterSettlementStoretransferAuditRequest()
+	},
+}
+
+// GetTmallServicecenterSettlementStoretransferAuditRequest 从 sync.Pool 获取 TmallServicecenterSettlementStoretransferAuditAPIRequest
+func GetTmallServicecenterSettlementStoretransferAuditAPIRequest() *TmallServicecenterSettlementStoretransferAuditAPIRequest {
+	return poolTmallServicecenterSettlementStoretransferAuditAPIRequest.Get().(*TmallServicecenterSettlementStoretransferAuditAPIRequest)
+}
+
+// ReleaseTmallServicecenterSettlementStoretransferAuditAPIRequest 将 TmallServicecenterSettlementStoretransferAuditAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterSettlementStoretransferAuditAPIRequest(v *TmallServicecenterSettlementStoretransferAuditAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterSettlementStoretransferAuditAPIRequest.Put(v)
 }

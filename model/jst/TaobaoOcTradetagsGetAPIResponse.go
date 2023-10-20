@@ -2,6 +2,7 @@ package jst
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -18,6 +19,12 @@ type TaobaoOcTradetagsGetAPIResponse struct {
 	TaobaoOcTradetagsGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOcTradetagsGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOcTradetagsGetAPIResponseModel).Reset()
+}
+
 // TaobaoOcTradetagsGetAPIResponseModel is 根据订单查询订单标签 成功返回结果
 type TaobaoOcTradetagsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"oc_tradetags_get_response"`
@@ -25,4 +32,27 @@ type TaobaoOcTradetagsGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	TradeTags []TradeTagRelationDo `json:"trade_tags,omitempty" xml:"trade_tags>trade_tag_relation_do,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOcTradetagsGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TradeTags = m.TradeTags[:0]
+}
+
+var poolTaobaoOcTradetagsGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOcTradetagsGetAPIResponse)
+	},
+}
+
+// GetTaobaoOcTradetagsGetAPIResponse 从 sync.Pool 获取 TaobaoOcTradetagsGetAPIResponse
+func GetTaobaoOcTradetagsGetAPIResponse() *TaobaoOcTradetagsGetAPIResponse {
+	return poolTaobaoOcTradetagsGetAPIResponse.Get().(*TaobaoOcTradetagsGetAPIResponse)
+}
+
+// ReleaseTaobaoOcTradetagsGetAPIResponse 将 TaobaoOcTradetagsGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOcTradetagsGetAPIResponse(v *TaobaoOcTradetagsGetAPIResponse) {
+	v.Reset()
+	poolTaobaoOcTradetagsGetAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaHappytripTaxiOrderNotifyAPIResponse struct {
 	AlibabaHappytripTaxiOrderNotifyAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaHappytripTaxiOrderNotifyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaHappytripTaxiOrderNotifyAPIResponseModel).Reset()
+}
+
 // AlibabaHappytripTaxiOrderNotifyAPIResponseModel is 状态通知 成功返回结果
 type AlibabaHappytripTaxiOrderNotifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_happytrip_taxi_order_notify_response"`
@@ -24,4 +31,28 @@ type AlibabaHappytripTaxiOrderNotifyAPIResponseModel struct {
 	Errno string `json:"errno,omitempty" xml:"errno,omitempty"`
 	// 错误信息描述
 	Errmsg string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaHappytripTaxiOrderNotifyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Errno = ""
+	m.Errmsg = ""
+}
+
+var poolAlibabaHappytripTaxiOrderNotifyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaHappytripTaxiOrderNotifyAPIResponse)
+	},
+}
+
+// GetAlibabaHappytripTaxiOrderNotifyAPIResponse 从 sync.Pool 获取 AlibabaHappytripTaxiOrderNotifyAPIResponse
+func GetAlibabaHappytripTaxiOrderNotifyAPIResponse() *AlibabaHappytripTaxiOrderNotifyAPIResponse {
+	return poolAlibabaHappytripTaxiOrderNotifyAPIResponse.Get().(*AlibabaHappytripTaxiOrderNotifyAPIResponse)
+}
+
+// ReleaseAlibabaHappytripTaxiOrderNotifyAPIResponse 将 AlibabaHappytripTaxiOrderNotifyAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaHappytripTaxiOrderNotifyAPIResponse(v *AlibabaHappytripTaxiOrderNotifyAPIResponse) {
+	v.Reset()
+	poolAlibabaHappytripTaxiOrderNotifyAPIResponse.Put(v)
 }

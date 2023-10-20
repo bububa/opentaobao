@@ -1,5 +1,9 @@
 package scs
 
+import (
+	"sync"
+)
+
 // MaterialResultTopDto 结构体
 type MaterialResultTopDto struct {
 	// itemIdListInLive
@@ -68,4 +72,53 @@ type MaterialResultTopDto struct {
 	TimingStart bool `json:"timing_start,omitempty" xml:"timing_start,omitempty"`
 	// unlockRptIndex
 	UnlockRptIndex bool `json:"unlock_rpt_index,omitempty" xml:"unlock_rpt_index,omitempty"`
+}
+
+var poolMaterialResultTopDto = sync.Pool{
+	New: func() any {
+		return new(MaterialResultTopDto)
+	},
+}
+
+// GetMaterialResultTopDto() 从对象池中获取MaterialResultTopDto
+func GetMaterialResultTopDto() *MaterialResultTopDto {
+	return poolMaterialResultTopDto.Get().(*MaterialResultTopDto)
+}
+
+// ReleaseMaterialResultTopDto 释放MaterialResultTopDto
+func ReleaseMaterialResultTopDto(v *MaterialResultTopDto) {
+	v.ItemIdListInLiveList = v.ItemIdListInLiveList[:0]
+	v.MultiImageURLList = v.MultiImageURLList[:0]
+	v.RecommendTagList = v.RecommendTagList[:0]
+	v.ShowTagInfoList = v.ShowTagInfoList[:0]
+	v.MediaTypeNamesList = v.MediaTypeNamesList[:0]
+	v.ReportInfoList = v.ReportInfoList[:0]
+	v.Title = ""
+	v.LinkUrl = ""
+	v.ImgUrl = ""
+	v.LiveStartTime = ""
+	v.LiveEndTime = ""
+	v.PublishTime = ""
+	v.DarenName = ""
+	v.WirelessLongImageUrl = ""
+	v.CategoryId = ""
+	v.Price = ""
+	v.Starts = ""
+	v.CreateTime = ""
+	v.ModifyTime = ""
+	v.TotalOrderAmount = ""
+	v.MaterialId = 0
+	v.Status = 0
+	v.MaterialType = 0
+	v.ContentEntityType = 0
+	v.ContentBizType = 0
+	v.Quantity = 0
+	v.BidCount = 0
+	v.CategoryLevel1 = 0
+	v.RecommendScore = 0
+	v.VideoDuration = 0
+	v.LaunchCount = 0
+	v.TimingStart = false
+	v.UnlockRptIndex = false
+	poolMaterialResultTopDto.Put(v)
 }

@@ -2,6 +2,7 @@ package damai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDamaiEcSearchProjectSearchAPIRequest struct {
 // NewAlibabaDamaiEcSearchProjectSearchRequest 初始化AlibabaDamaiEcSearchProjectSearchAPIRequest对象
 func NewAlibabaDamaiEcSearchProjectSearchRequest() *AlibabaDamaiEcSearchProjectSearchAPIRequest {
 	return &AlibabaDamaiEcSearchProjectSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiEcSearchProjectSearchAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDamaiEcSearchProjectSearchAPIRequest) SetParam(_param *TopSearch
 // GetParam Param Getter
 func (r AlibabaDamaiEcSearchProjectSearchAPIRequest) GetParam() *TopSearchProjectParam {
 	return r._param
+}
+
+var poolAlibabaDamaiEcSearchProjectSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiEcSearchProjectSearchRequest()
+	},
+}
+
+// GetAlibabaDamaiEcSearchProjectSearchRequest 从 sync.Pool 获取 AlibabaDamaiEcSearchProjectSearchAPIRequest
+func GetAlibabaDamaiEcSearchProjectSearchAPIRequest() *AlibabaDamaiEcSearchProjectSearchAPIRequest {
+	return poolAlibabaDamaiEcSearchProjectSearchAPIRequest.Get().(*AlibabaDamaiEcSearchProjectSearchAPIRequest)
+}
+
+// ReleaseAlibabaDamaiEcSearchProjectSearchAPIRequest 将 AlibabaDamaiEcSearchProjectSearchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiEcSearchProjectSearchAPIRequest(v *AlibabaDamaiEcSearchProjectSearchAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiEcSearchProjectSearchAPIRequest.Put(v)
 }

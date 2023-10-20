@@ -1,5 +1,9 @@
 package traveltrade
 
+import (
+	"sync"
+)
+
 // AlitripTravelBookinfoQueryModule 结构体
 type AlitripTravelBookinfoQueryModule struct {
 	// 出行人信息
@@ -60,4 +64,49 @@ type AlitripTravelBookinfoQueryModule struct {
 	BookStatus int64 `json:"book_status,omitempty" xml:"book_status,omitempty"`
 	// 是否仅更新bookId字段
 	OnlyUpateBookId bool `json:"only_upate_book_id,omitempty" xml:"only_upate_book_id,omitempty"`
+}
+
+var poolAlitripTravelBookinfoQueryModule = sync.Pool{
+	New: func() any {
+		return new(AlitripTravelBookinfoQueryModule)
+	},
+}
+
+// GetAlitripTravelBookinfoQueryModule() 从对象池中获取AlitripTravelBookinfoQueryModule
+func GetAlitripTravelBookinfoQueryModule() *AlitripTravelBookinfoQueryModule {
+	return poolAlitripTravelBookinfoQueryModule.Get().(*AlitripTravelBookinfoQueryModule)
+}
+
+// ReleaseAlitripTravelBookinfoQueryModule 释放AlitripTravelBookinfoQueryModule
+func ReleaseAlitripTravelBookinfoQueryModule(v *AlitripTravelBookinfoQueryModule) {
+	v.TravellerInfos = v.TravellerInfos[:0]
+	v.EndPeriod = ""
+	v.BuyerNick = ""
+	v.PayTime = ""
+	v.StartPeriod = ""
+	v.ModifyTime = ""
+	v.BookCellRemark = ""
+	v.ApplyTime = ""
+	v.BookedTravelTime = ""
+	v.OrderCreateTime = ""
+	v.TravelInsAppyId = ""
+	v.ItemTitle = ""
+	v.ProcessTime = ""
+	v.BookCellName = ""
+	v.BookedTravelReturnTime = ""
+	v.SellerNick = ""
+	v.CreateTime = ""
+	v.Features = ""
+	v.SubTcOrderId = 0
+	v.BookNum = 0
+	v.BookOrderId = 0
+	v.SkuId = 0
+	v.ItemId = 0
+	v.BizType = 0
+	v.BookInfoId = 0
+	v.TcOrderId = 0
+	v.BookCellId = 0
+	v.BookStatus = 0
+	v.OnlyUpateBookId = false
+	poolAlitripTravelBookinfoQueryModule.Put(v)
 }

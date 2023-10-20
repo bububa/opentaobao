@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // DeviceReportEventDto 结构体
 type DeviceReportEventDto struct {
 	// 上传数据
@@ -18,4 +22,28 @@ type DeviceReportEventDto struct {
 	IdType int64 `json:"id_type,omitempty" xml:"id_type,omitempty"`
 	// 消息时间戳
 	EventTime int64 `json:"event_time,omitempty" xml:"event_time,omitempty"`
+}
+
+var poolDeviceReportEventDto = sync.Pool{
+	New: func() any {
+		return new(DeviceReportEventDto)
+	},
+}
+
+// GetDeviceReportEventDto() 从对象池中获取DeviceReportEventDto
+func GetDeviceReportEventDto() *DeviceReportEventDto {
+	return poolDeviceReportEventDto.Get().(*DeviceReportEventDto)
+}
+
+// ReleaseDeviceReportEventDto 释放DeviceReportEventDto
+func ReleaseDeviceReportEventDto(v *DeviceReportEventDto) {
+	v.Data = v.Data[:0]
+	v.TransId = ""
+	v.AppKey = ""
+	v.Source = ""
+	v.Version = ""
+	v.DeviceId = ""
+	v.IdType = 0
+	v.EventTime = 0
+	poolDeviceReportEventDto.Put(v)
 }

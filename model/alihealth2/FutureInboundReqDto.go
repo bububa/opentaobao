@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // FutureInboundReqDto 结构体
 type FutureInboundReqDto struct {
 	// 请求明细,数量需与期货采购一致
@@ -14,4 +18,26 @@ type FutureInboundReqDto struct {
 	SupplierId int64 `json:"supplier_id,omitempty" xml:"supplier_id,omitempty"`
 	// 是否最后一次入库
 	LastInbound bool `json:"last_inbound,omitempty" xml:"last_inbound,omitempty"`
+}
+
+var poolFutureInboundReqDto = sync.Pool{
+	New: func() any {
+		return new(FutureInboundReqDto)
+	},
+}
+
+// GetFutureInboundReqDto() 从对象池中获取FutureInboundReqDto
+func GetFutureInboundReqDto() *FutureInboundReqDto {
+	return poolFutureInboundReqDto.Get().(*FutureInboundReqDto)
+}
+
+// ReleaseFutureInboundReqDto 释放FutureInboundReqDto
+func ReleaseFutureInboundReqDto(v *FutureInboundReqDto) {
+	v.Items = v.Items[:0]
+	v.FuturePurchaseId = ""
+	v.RequestId = ""
+	v.StoreCode = ""
+	v.SupplierId = 0
+	v.LastInbound = false
+	poolFutureInboundReqDto.Put(v)
 }

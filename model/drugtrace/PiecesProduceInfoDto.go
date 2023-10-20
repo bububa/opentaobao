@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // PiecesProduceInfoDto 结构体
 type PiecesProduceInfoDto struct {
 	// 生产管理图片（上传图片）图片建议尺寸：height: 310px;width: 670px;
@@ -16,4 +20,27 @@ type PiecesProduceInfoDto struct {
 	ProductionEndDate string `json:"production_end_date,omitempty" xml:"production_end_date,omitempty"`
 	// 包装材质
 	PackingMaterial string `json:"packing_material,omitempty" xml:"packing_material,omitempty"`
+}
+
+var poolPiecesProduceInfoDto = sync.Pool{
+	New: func() any {
+		return new(PiecesProduceInfoDto)
+	},
+}
+
+// GetPiecesProduceInfoDto() 从对象池中获取PiecesProduceInfoDto
+func GetPiecesProduceInfoDto() *PiecesProduceInfoDto {
+	return poolPiecesProduceInfoDto.Get().(*PiecesProduceInfoDto)
+}
+
+// ReleasePiecesProduceInfoDto 释放PiecesProduceInfoDto
+func ReleasePiecesProduceInfoDto(v *PiecesProduceInfoDto) {
+	v.ProductionPictures = v.ProductionPictures[:0]
+	v.ProductionStartDate = ""
+	v.PackageSpec = ""
+	v.ProductionProcess = ""
+	v.ProductionSum = ""
+	v.ProductionEndDate = ""
+	v.PackingMaterial = ""
+	poolPiecesProduceInfoDto.Put(v)
 }

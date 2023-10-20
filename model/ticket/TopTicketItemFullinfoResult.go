@@ -1,5 +1,9 @@
 package ticket
 
+import (
+	"sync"
+)
+
 // TopTicketItemFullinfoResult 结构体
 type TopTicketItemFullinfoResult struct {
 	// 商品主图
@@ -42,4 +46,40 @@ type TopTicketItemFullinfoResult struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 商品状态 0-下架，1-上架
 	ItemStatus int64 `json:"item_status,omitempty" xml:"item_status,omitempty"`
+}
+
+var poolTopTicketItemFullinfoResult = sync.Pool{
+	New: func() any {
+		return new(TopTicketItemFullinfoResult)
+	},
+}
+
+// GetTopTicketItemFullinfoResult() 从对象池中获取TopTicketItemFullinfoResult
+func GetTopTicketItemFullinfoResult() *TopTicketItemFullinfoResult {
+	return poolTopTicketItemFullinfoResult.Get().(*TopTicketItemFullinfoResult)
+}
+
+// ReleaseTopTicketItemFullinfoResult 释放TopTicketItemFullinfoResult
+func ReleaseTopTicketItemFullinfoResult(v *TopTicketItemFullinfoResult) {
+	v.PicUrls = v.PicUrls[:0]
+	v.TicketTypes = v.TicketTypes[:0]
+	v.OutScenicId = ""
+	v.AliProductName = ""
+	v.OutProductId = ""
+	v.OutProductName = ""
+	v.ExpireDate = ""
+	v.ReserveLimitRule = ""
+	v.Title = ""
+	v.Desc = ""
+	v.WapDesc = ""
+	v.AliScenicIds = ""
+	v.AliScenicId = 0
+	v.AliProductId = 0
+	v.InventoryType = 0
+	v.NeedEnterDate = 0
+	v.ReserveLimitType = 0
+	v.CodeSendingInfo = nil
+	v.ItemId = 0
+	v.ItemStatus = 0
+	poolTopTicketItemFullinfoResult.Put(v)
 }

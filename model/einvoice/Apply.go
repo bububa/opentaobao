@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // Apply 结构体
 type Apply struct {
 	// 发票明细
@@ -44,4 +48,41 @@ type Apply struct {
 	InvoiceKind int64 `json:"invoice_kind,omitempty" xml:"invoice_kind,omitempty"`
 	// 抬头类型，0=个人，1=企业
 	BusinessType int64 `json:"business_type,omitempty" xml:"business_type,omitempty"`
+}
+
+var poolApply = sync.Pool{
+	New: func() any {
+		return new(Apply)
+	},
+}
+
+// GetApply() 从对象池中获取Apply
+func GetApply() *Apply {
+	return poolApply.Get().(*Apply)
+}
+
+// ReleaseApply 释放Apply
+func ReleaseApply(v *Apply) {
+	v.InvoiceItems = v.InvoiceItems[:0]
+	v.PlatformCode = ""
+	v.Memo = ""
+	v.PayerName = ""
+	v.PlatformTid = ""
+	v.PayerRegisterNo = ""
+	v.TriggerStatus = ""
+	v.InvoiceType = ""
+	v.InvoiceAmount = ""
+	v.SumPrice = ""
+	v.SumTax = ""
+	v.PayerPhone = ""
+	v.PayerAddress = ""
+	v.PayerBankaccount = ""
+	v.PayerBank = ""
+	v.GmtModifiedStr = ""
+	v.ExtendProps = ""
+	v.GmtCreate = ""
+	v.Status = 0
+	v.InvoiceKind = 0
+	v.BusinessType = 0
+	poolApply.Put(v)
 }

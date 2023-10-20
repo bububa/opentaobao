@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest struct {
 // NewAlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusRequest 初始化AlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest对象
 func NewAlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusRequest() *AlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest {
 	return &AlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r._orderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest) SetOrder
 // GetOrderId OrderId Getter
 func (r AlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest) GetOrderId() string {
 	return r._orderId
+}
+
+var poolAlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusRequest 从 sync.Pool 获取 AlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest
+func GetAlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest() *AlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest {
+	return poolAlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest.Get().(*AlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest 将 AlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest(v *AlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyDerbyMemberVoucherUpdateStatusAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoFenxiaoGradesGetAPIRequest struct {
 // NewTaobaoFenxiaoGradesGetRequest 初始化TaobaoFenxiaoGradesGetAPIRequest对象
 func NewTaobaoFenxiaoGradesGetRequest() *TaobaoFenxiaoGradesGetAPIRequest {
 	return &TaobaoFenxiaoGradesGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoGradesGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoFenxiaoGradesGetAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoFenxiaoGradesGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoFenxiaoGradesGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoGradesGetRequest()
+	},
+}
+
+// GetTaobaoFenxiaoGradesGetRequest 从 sync.Pool 获取 TaobaoFenxiaoGradesGetAPIRequest
+func GetTaobaoFenxiaoGradesGetAPIRequest() *TaobaoFenxiaoGradesGetAPIRequest {
+	return poolTaobaoFenxiaoGradesGetAPIRequest.Get().(*TaobaoFenxiaoGradesGetAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoGradesGetAPIRequest 将 TaobaoFenxiaoGradesGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoGradesGetAPIRequest(v *TaobaoFenxiaoGradesGetAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoGradesGetAPIRequest.Put(v)
 }

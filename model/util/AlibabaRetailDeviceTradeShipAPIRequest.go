@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaRetailDeviceTradeShipAPIRequest struct {
 // NewAlibabaRetailDeviceTradeShipRequest 初始化AlibabaRetailDeviceTradeShipAPIRequest对象
 func NewAlibabaRetailDeviceTradeShipRequest() *AlibabaRetailDeviceTradeShipAPIRequest {
 	return &AlibabaRetailDeviceTradeShipAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaRetailDeviceTradeShipAPIRequest) Reset() {
+	r._shipDetailList = r._shipDetailList[:0]
+	r._deviceType = ""
+	r._deviceId = ""
+	r._tradeNo = ""
+	r._orderUpdateOption = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetOrderUpdateOption(_orderUpda
 // GetOrderUpdateOption OrderUpdateOption Getter
 func (r AlibabaRetailDeviceTradeShipAPIRequest) GetOrderUpdateOption() *OrderUpdateOption {
 	return r._orderUpdateOption
+}
+
+var poolAlibabaRetailDeviceTradeShipAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaRetailDeviceTradeShipRequest()
+	},
+}
+
+// GetAlibabaRetailDeviceTradeShipRequest 从 sync.Pool 获取 AlibabaRetailDeviceTradeShipAPIRequest
+func GetAlibabaRetailDeviceTradeShipAPIRequest() *AlibabaRetailDeviceTradeShipAPIRequest {
+	return poolAlibabaRetailDeviceTradeShipAPIRequest.Get().(*AlibabaRetailDeviceTradeShipAPIRequest)
+}
+
+// ReleaseAlibabaRetailDeviceTradeShipAPIRequest 将 AlibabaRetailDeviceTradeShipAPIRequest 放入 sync.Pool
+func ReleaseAlibabaRetailDeviceTradeShipAPIRequest(v *AlibabaRetailDeviceTradeShipAPIRequest) {
+	v.Reset()
+	poolAlibabaRetailDeviceTradeShipAPIRequest.Put(v)
 }

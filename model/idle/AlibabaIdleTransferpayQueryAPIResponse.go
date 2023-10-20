@@ -2,6 +2,7 @@ package idle
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaIdleTransferpayQueryAPIResponse struct {
 	AlibabaIdleTransferpayQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaIdleTransferpayQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIdleTransferpayQueryAPIResponseModel).Reset()
+}
+
 // AlibabaIdleTransferpayQueryAPIResponseModel is 闲鱼转账结果查询 成功返回结果
 type AlibabaIdleTransferpayQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_transferpay_query_response"`
@@ -22,4 +29,27 @@ type AlibabaIdleTransferpayQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaIdleTransferpayQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIdleTransferpayQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaIdleTransferpayQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleTransferpayQueryAPIResponse)
+	},
+}
+
+// GetAlibabaIdleTransferpayQueryAPIResponse 从 sync.Pool 获取 AlibabaIdleTransferpayQueryAPIResponse
+func GetAlibabaIdleTransferpayQueryAPIResponse() *AlibabaIdleTransferpayQueryAPIResponse {
+	return poolAlibabaIdleTransferpayQueryAPIResponse.Get().(*AlibabaIdleTransferpayQueryAPIResponse)
+}
+
+// ReleaseAlibabaIdleTransferpayQueryAPIResponse 将 AlibabaIdleTransferpayQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIdleTransferpayQueryAPIResponse(v *AlibabaIdleTransferpayQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaIdleTransferpayQueryAPIResponse.Put(v)
 }

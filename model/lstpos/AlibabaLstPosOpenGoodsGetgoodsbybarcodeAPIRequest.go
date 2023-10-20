@@ -2,6 +2,7 @@ package lstpos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest struct {
 // NewAlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest 初始化AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest对象
 func NewAlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest() *AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest {
 	return &AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest) Reset() {
+	r._barcode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest) SetBarcode(_barcode 
 // GetBarcode Barcode Getter
 func (r AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest) GetBarcode() string {
 	return r._barcode
+}
+
+var poolAlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest()
+	},
+}
+
+// GetAlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest 从 sync.Pool 获取 AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest
+func GetAlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest() *AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest {
+	return poolAlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest.Get().(*AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest)
+}
+
+// ReleaseAlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest 将 AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest(v *AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest) {
+	v.Reset()
+	poolAlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest.Put(v)
 }

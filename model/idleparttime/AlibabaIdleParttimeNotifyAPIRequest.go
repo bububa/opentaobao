@@ -2,6 +2,7 @@ package idleparttime
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaIdleParttimeNotifyAPIRequest struct {
 // NewAlibabaIdleParttimeNotifyRequest 初始化AlibabaIdleParttimeNotifyAPIRequest对象
 func NewAlibabaIdleParttimeNotifyRequest() *AlibabaIdleParttimeNotifyAPIRequest {
 	return &AlibabaIdleParttimeNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleParttimeNotifyAPIRequest) Reset() {
+	r._message = ""
+	r._type = 0
+	r._status = 0
+	r._jobId = 0
+	r._userId = 0
+	r._syncTime = 0
+	r._applyId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaIdleParttimeNotifyAPIRequest) SetApplyId(_applyId int64) error {
 // GetApplyId ApplyId Getter
 func (r AlibabaIdleParttimeNotifyAPIRequest) GetApplyId() int64 {
 	return r._applyId
+}
+
+var poolAlibabaIdleParttimeNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleParttimeNotifyRequest()
+	},
+}
+
+// GetAlibabaIdleParttimeNotifyRequest 从 sync.Pool 获取 AlibabaIdleParttimeNotifyAPIRequest
+func GetAlibabaIdleParttimeNotifyAPIRequest() *AlibabaIdleParttimeNotifyAPIRequest {
+	return poolAlibabaIdleParttimeNotifyAPIRequest.Get().(*AlibabaIdleParttimeNotifyAPIRequest)
+}
+
+// ReleaseAlibabaIdleParttimeNotifyAPIRequest 将 AlibabaIdleParttimeNotifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleParttimeNotifyAPIRequest(v *AlibabaIdleParttimeNotifyAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleParttimeNotifyAPIRequest.Put(v)
 }

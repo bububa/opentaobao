@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoMiniappTemplateUpdateappAPIRequest struct {
 // NewTaobaoMiniappTemplateUpdateappRequest 初始化TaobaoMiniappTemplateUpdateappAPIRequest对象
 func NewTaobaoMiniappTemplateUpdateappRequest() *TaobaoMiniappTemplateUpdateappAPIRequest {
 	return &TaobaoMiniappTemplateUpdateappAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappTemplateUpdateappAPIRequest) Reset() {
+	r._clients = r._clients[:0]
+	r._appId = ""
+	r._extJson = ""
+	r._templateId = ""
+	r._templateVersion = ""
+	r._icon = ""
+	r._desc = ""
+	r._alias = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoMiniappTemplateUpdateappAPIRequest) SetAlias(_alias string) error
 // GetAlias Alias Getter
 func (r TaobaoMiniappTemplateUpdateappAPIRequest) GetAlias() string {
 	return r._alias
+}
+
+var poolTaobaoMiniappTemplateUpdateappAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappTemplateUpdateappRequest()
+	},
+}
+
+// GetTaobaoMiniappTemplateUpdateappRequest 从 sync.Pool 获取 TaobaoMiniappTemplateUpdateappAPIRequest
+func GetTaobaoMiniappTemplateUpdateappAPIRequest() *TaobaoMiniappTemplateUpdateappAPIRequest {
+	return poolTaobaoMiniappTemplateUpdateappAPIRequest.Get().(*TaobaoMiniappTemplateUpdateappAPIRequest)
+}
+
+// ReleaseTaobaoMiniappTemplateUpdateappAPIRequest 将 TaobaoMiniappTemplateUpdateappAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappTemplateUpdateappAPIRequest(v *TaobaoMiniappTemplateUpdateappAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappTemplateUpdateappAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package wlbimports
 
+import (
+	"sync"
+)
+
 // ExpressPreQueryResponse 结构体
 type ExpressPreQueryResponse struct {
 	// 产品code
@@ -16,4 +20,27 @@ type ExpressPreQueryResponse struct {
 	PickupLatest string `json:"pickup_latest,omitempty" xml:"pickup_latest,omitempty"`
 	// 运输总天数
 	TotalTransitDays int64 `json:"total_transit_days,omitempty" xml:"total_transit_days,omitempty"`
+}
+
+var poolExpressPreQueryResponse = sync.Pool{
+	New: func() any {
+		return new(ExpressPreQueryResponse)
+	},
+}
+
+// GetExpressPreQueryResponse() 从对象池中获取ExpressPreQueryResponse
+func GetExpressPreQueryResponse() *ExpressPreQueryResponse {
+	return poolExpressPreQueryResponse.Get().(*ExpressPreQueryResponse)
+}
+
+// ReleaseExpressPreQueryResponse 释放ExpressPreQueryResponse
+func ReleaseExpressPreQueryResponse(v *ExpressPreQueryResponse) {
+	v.ProductCode = ""
+	v.ProductName = ""
+	v.LocalCutoffDateAndTime = ""
+	v.EstimatedDeliveryTime = ""
+	v.PickupEarliest = ""
+	v.PickupLatest = ""
+	v.TotalTransitDays = 0
+	poolExpressPreQueryResponse.Put(v)
 }

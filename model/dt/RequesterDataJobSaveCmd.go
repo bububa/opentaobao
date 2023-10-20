@@ -1,5 +1,9 @@
 package dt
 
+import (
+	"sync"
+)
+
 // RequesterDataJobSaveCmd 结构体
 type RequesterDataJobSaveCmd struct {
 	// oss 导入文件路径
@@ -14,4 +18,26 @@ type RequesterDataJobSaveCmd struct {
 	OdpsImportConfig *OdpsImportConfig `json:"odps_import_config,omitempty" xml:"odps_import_config,omitempty"`
 	// 任务id
 	TaskId int64 `json:"task_id,omitempty" xml:"task_id,omitempty"`
+}
+
+var poolRequesterDataJobSaveCmd = sync.Pool{
+	New: func() any {
+		return new(RequesterDataJobSaveCmd)
+	},
+}
+
+// GetRequesterDataJobSaveCmd() 从对象池中获取RequesterDataJobSaveCmd
+func GetRequesterDataJobSaveCmd() *RequesterDataJobSaveCmd {
+	return poolRequesterDataJobSaveCmd.Get().(*RequesterDataJobSaveCmd)
+}
+
+// ReleaseRequesterDataJobSaveCmd 释放RequesterDataJobSaveCmd
+func ReleaseRequesterDataJobSaveCmd(v *RequesterDataJobSaveCmd) {
+	v.OssKey = ""
+	v.RecordType = ""
+	v.DataType = ""
+	v.Operator = ""
+	v.OdpsImportConfig = nil
+	v.TaskId = 0
+	poolRequesterDataJobSaveCmd.Put(v)
 }

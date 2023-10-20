@@ -2,6 +2,7 @@ package alihealthalgo
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest struct {
 // NewAlibabaAlihealthAlgoMedicationSafetyGetRequest 初始化AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest对象
 func NewAlibabaAlihealthAlgoMedicationSafetyGetRequest() *AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest {
 	return &AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest) Reset() {
+	r._paramSolutionRequestTopSupport = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest) SetParamSolutionRequ
 // GetParamSolutionRequestTopSupport ParamSolutionRequestTopSupport Getter
 func (r AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest) GetParamSolutionRequestTopSupport() *SolutionRequestTopSupport {
 	return r._paramSolutionRequestTopSupport
+}
+
+var poolAlibabaAlihealthAlgoMedicationSafetyGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthAlgoMedicationSafetyGetRequest()
+	},
+}
+
+// GetAlibabaAlihealthAlgoMedicationSafetyGetRequest 从 sync.Pool 获取 AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest
+func GetAlibabaAlihealthAlgoMedicationSafetyGetAPIRequest() *AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest {
+	return poolAlibabaAlihealthAlgoMedicationSafetyGetAPIRequest.Get().(*AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthAlgoMedicationSafetyGetAPIRequest 将 AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthAlgoMedicationSafetyGetAPIRequest(v *AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthAlgoMedicationSafetyGetAPIRequest.Put(v)
 }

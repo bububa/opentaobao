@@ -2,6 +2,7 @@ package scs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOnebpDkxCampaignCampaignModifyAPIRequest struct {
 // NewTaobaoOnebpDkxCampaignCampaignModifyRequest 初始化TaobaoOnebpDkxCampaignCampaignModifyAPIRequest对象
 func NewTaobaoOnebpDkxCampaignCampaignModifyRequest() *TaobaoOnebpDkxCampaignCampaignModifyAPIRequest {
 	return &TaobaoOnebpDkxCampaignCampaignModifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOnebpDkxCampaignCampaignModifyAPIRequest) Reset() {
+	r._apiServiceContext = nil
+	r._campaignQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOnebpDkxCampaignCampaignModifyAPIRequest) SetCampaignQuery(_campa
 // GetCampaignQuery CampaignQuery Getter
 func (r TaobaoOnebpDkxCampaignCampaignModifyAPIRequest) GetCampaignQuery() *CampaignQueryTopDto {
 	return r._campaignQuery
+}
+
+var poolTaobaoOnebpDkxCampaignCampaignModifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOnebpDkxCampaignCampaignModifyRequest()
+	},
+}
+
+// GetTaobaoOnebpDkxCampaignCampaignModifyRequest 从 sync.Pool 获取 TaobaoOnebpDkxCampaignCampaignModifyAPIRequest
+func GetTaobaoOnebpDkxCampaignCampaignModifyAPIRequest() *TaobaoOnebpDkxCampaignCampaignModifyAPIRequest {
+	return poolTaobaoOnebpDkxCampaignCampaignModifyAPIRequest.Get().(*TaobaoOnebpDkxCampaignCampaignModifyAPIRequest)
+}
+
+// ReleaseTaobaoOnebpDkxCampaignCampaignModifyAPIRequest 将 TaobaoOnebpDkxCampaignCampaignModifyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOnebpDkxCampaignCampaignModifyAPIRequest(v *TaobaoOnebpDkxCampaignCampaignModifyAPIRequest) {
+	v.Reset()
+	poolTaobaoOnebpDkxCampaignCampaignModifyAPIRequest.Put(v)
 }

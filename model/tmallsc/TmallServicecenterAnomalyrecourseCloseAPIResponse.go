@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallServicecenterAnomalyrecourseCloseAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterAnomalyrecourseCloseAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterAnomalyrecourseCloseAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServicecenterAnomalyrecourseCloseAPIResponseModel).Reset()
 }
 
 // TmallServicecenterAnomalyrecourseCloseAPIResponseModel is 服务投诉问题单关单 成功返回结果
@@ -28,4 +35,30 @@ type TmallServicecenterAnomalyrecourseCloseAPIResponseModel struct {
 	Value int64 `json:"value,omitempty" xml:"value,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterAnomalyrecourseCloseAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultMsg = ""
+	m.ResultCode = 0
+	m.Value = 0
+	m.IsSuccess = false
+}
+
+var poolTmallServicecenterAnomalyrecourseCloseAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterAnomalyrecourseCloseAPIResponse)
+	},
+}
+
+// GetTmallServicecenterAnomalyrecourseCloseAPIResponse 从 sync.Pool 获取 TmallServicecenterAnomalyrecourseCloseAPIResponse
+func GetTmallServicecenterAnomalyrecourseCloseAPIResponse() *TmallServicecenterAnomalyrecourseCloseAPIResponse {
+	return poolTmallServicecenterAnomalyrecourseCloseAPIResponse.Get().(*TmallServicecenterAnomalyrecourseCloseAPIResponse)
+}
+
+// ReleaseTmallServicecenterAnomalyrecourseCloseAPIResponse 将 TmallServicecenterAnomalyrecourseCloseAPIResponse 保存到 sync.Pool
+func ReleaseTmallServicecenterAnomalyrecourseCloseAPIResponse(v *TmallServicecenterAnomalyrecourseCloseAPIResponse) {
+	v.Reset()
+	poolTmallServicecenterAnomalyrecourseCloseAPIResponse.Put(v)
 }

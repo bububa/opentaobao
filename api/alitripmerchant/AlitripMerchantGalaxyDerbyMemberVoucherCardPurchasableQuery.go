@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.derby.member.voucher.card.purchasable.query
 //
 // 德比付费会员卡可购查询
-func AlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQuery(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQuery(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardPurchasableQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // tmall.promotag.taguser.judge
 //
 // 查询用户是否有标签
-func TmallPromotagTaguserJudge(clt *core.SDKClient, req *promotion.TmallPromotagTaguserJudgeAPIRequest, session string) (*promotion.TmallPromotagTaguserJudgeAPIResponse, error) {
-	var resp promotion.TmallPromotagTaguserJudgeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallPromotagTaguserJudge(clt *core.SDKClient, req *promotion.TmallPromotagTaguserJudgeAPIRequest, resp *promotion.TmallPromotagTaguserJudgeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

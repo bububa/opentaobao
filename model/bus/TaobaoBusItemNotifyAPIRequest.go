@@ -2,6 +2,7 @@ package bus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,14 @@ type TaobaoBusItemNotifyAPIRequest struct {
 // NewTaobaoBusItemNotifyRequest 初始化TaobaoBusItemNotifyAPIRequest对象
 func NewTaobaoBusItemNotifyRequest() *TaobaoBusItemNotifyAPIRequest {
 	return &TaobaoBusItemNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBusItemNotifyAPIRequest) Reset() {
+	r._paramTopItemChangeNotifyRQ = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *TaobaoBusItemNotifyAPIRequest) SetParamTopItemChangeNotifyRQ(_paramTopI
 // GetParamTopItemChangeNotifyRQ ParamTopItemChangeNotifyRQ Getter
 func (r TaobaoBusItemNotifyAPIRequest) GetParamTopItemChangeNotifyRQ() *TopItemChangeNotifyRq {
 	return r._paramTopItemChangeNotifyRQ
+}
+
+var poolTaobaoBusItemNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBusItemNotifyRequest()
+	},
+}
+
+// GetTaobaoBusItemNotifyRequest 从 sync.Pool 获取 TaobaoBusItemNotifyAPIRequest
+func GetTaobaoBusItemNotifyAPIRequest() *TaobaoBusItemNotifyAPIRequest {
+	return poolTaobaoBusItemNotifyAPIRequest.Get().(*TaobaoBusItemNotifyAPIRequest)
+}
+
+// ReleaseTaobaoBusItemNotifyAPIRequest 将 TaobaoBusItemNotifyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBusItemNotifyAPIRequest(v *TaobaoBusItemNotifyAPIRequest) {
+	v.Reset()
+	poolTaobaoBusItemNotifyAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenPresalespackageConsignAPIRequest struct {
 // NewTaobaoQimenPresalespackageConsignRequest 初始化TaobaoQimenPresalespackageConsignAPIRequest对象
 func NewTaobaoQimenPresalespackageConsignRequest() *TaobaoQimenPresalespackageConsignAPIRequest {
 	return &TaobaoQimenPresalespackageConsignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenPresalespackageConsignAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoQimenPresalespackageConsignAPIRequest) SetRequest(_request *Presa
 // GetRequest Request Getter
 func (r TaobaoQimenPresalespackageConsignAPIRequest) GetRequest() *PresalesPackageConsignRequest {
 	return r._request
+}
+
+var poolTaobaoQimenPresalespackageConsignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenPresalespackageConsignRequest()
+	},
+}
+
+// GetTaobaoQimenPresalespackageConsignRequest 从 sync.Pool 获取 TaobaoQimenPresalespackageConsignAPIRequest
+func GetTaobaoQimenPresalespackageConsignAPIRequest() *TaobaoQimenPresalespackageConsignAPIRequest {
+	return poolTaobaoQimenPresalespackageConsignAPIRequest.Get().(*TaobaoQimenPresalespackageConsignAPIRequest)
+}
+
+// ReleaseTaobaoQimenPresalespackageConsignAPIRequest 将 TaobaoQimenPresalespackageConsignAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenPresalespackageConsignAPIRequest(v *TaobaoQimenPresalespackageConsignAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenPresalespackageConsignAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package shop
 
+import (
+	"sync"
+)
+
 // ShopCat 结构体
 type ShopCat struct {
 	// 类目名称
@@ -10,4 +14,24 @@ type ShopCat struct {
 	ParentCid int64 `json:"parent_cid,omitempty" xml:"parent_cid,omitempty"`
 	// 该类目是否为父类目。即：该类目是否还有子类目
 	IsParent bool `json:"is_parent,omitempty" xml:"is_parent,omitempty"`
+}
+
+var poolShopCat = sync.Pool{
+	New: func() any {
+		return new(ShopCat)
+	},
+}
+
+// GetShopCat() 从对象池中获取ShopCat
+func GetShopCat() *ShopCat {
+	return poolShopCat.Get().(*ShopCat)
+}
+
+// ReleaseShopCat 释放ShopCat
+func ReleaseShopCat(v *ShopCat) {
+	v.Name = ""
+	v.Cid = 0
+	v.ParentCid = 0
+	v.IsParent = false
+	poolShopCat.Put(v)
 }

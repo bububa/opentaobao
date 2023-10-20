@@ -9,11 +9,6 @@ import (
 // alibaba.lst.trade.order.querychange
 //
 // 根据品牌和时间段查询有变更记录的订单id
-func AlibabaLstTradeOrderQuerychange(clt *core.SDKClient, req *lsttrade.AlibabaLstTradeOrderQuerychangeAPIRequest, session string) (*lsttrade.AlibabaLstTradeOrderQuerychangeAPIResponse, error) {
-	var resp lsttrade.AlibabaLstTradeOrderQuerychangeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLstTradeOrderQuerychange(clt *core.SDKClient, req *lsttrade.AlibabaLstTradeOrderQuerychangeAPIRequest, resp *lsttrade.AlibabaLstTradeOrderQuerychangeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

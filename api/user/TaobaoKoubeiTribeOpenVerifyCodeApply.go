@@ -9,11 +9,6 @@ import (
 // taobao.koubei.tribe.open.verify.code.apply
 //
 // 口碑综合体通过手机号获取验证码对外开放接口
-func TaobaoKoubeiTribeOpenVerifyCodeApply(clt *core.SDKClient, req *user.TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest, session string) (*user.TaobaoKoubeiTribeOpenVerifyCodeApplyAPIResponse, error) {
-	var resp user.TaobaoKoubeiTribeOpenVerifyCodeApplyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoKoubeiTribeOpenVerifyCodeApply(clt *core.SDKClient, req *user.TaobaoKoubeiTribeOpenVerifyCodeApplyAPIRequest, resp *user.TaobaoKoubeiTribeOpenVerifyCodeApplyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // JaqSendCaptchaResult 结构体
 type JaqSendCaptchaResult struct {
 	// 扩展字段，格式为JSON字符串，由于出参“滚小球”等验证方式所需的额外出参，例如小球位置坐标等，请参考示例
@@ -10,4 +14,24 @@ type JaqSendCaptchaResult struct {
 	JaqDispatchParam *JaqDispatchParam `json:"jaq_dispatch_param,omitempty" xml:"jaq_dispatch_param,omitempty"`
 	// 验证发起请求是否调用成功（及状态），约定正值为成功，负值为失败
 	SendStatus int64 `json:"send_status,omitempty" xml:"send_status,omitempty"`
+}
+
+var poolJaqSendCaptchaResult = sync.Pool{
+	New: func() any {
+		return new(JaqSendCaptchaResult)
+	},
+}
+
+// GetJaqSendCaptchaResult() 从对象池中获取JaqSendCaptchaResult
+func GetJaqSendCaptchaResult() *JaqSendCaptchaResult {
+	return poolJaqSendCaptchaResult.Get().(*JaqSendCaptchaResult)
+}
+
+// ReleaseJaqSendCaptchaResult 释放JaqSendCaptchaResult
+func ReleaseJaqSendCaptchaResult(v *JaqSendCaptchaResult) {
+	v.ExtendData = ""
+	v.SessionId = ""
+	v.JaqDispatchParam = nil
+	v.SendStatus = 0
+	poolJaqSendCaptchaResult.Put(v)
 }

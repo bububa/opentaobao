@@ -1,5 +1,9 @@
 package youkudsp
 
+import (
+	"sync"
+)
+
 // YoukuDspDeliveryResourceMultigetMap 结构体
 type YoukuDspDeliveryResourceMultigetMap struct {
 	// 图片json
@@ -14,4 +18,26 @@ type YoukuDspDeliveryResourceMultigetMap struct {
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// h5地址
 	DestinationUrl string `json:"destination_url,omitempty" xml:"destination_url,omitempty"`
+}
+
+var poolYoukuDspDeliveryResourceMultigetMap = sync.Pool{
+	New: func() any {
+		return new(YoukuDspDeliveryResourceMultigetMap)
+	},
+}
+
+// GetYoukuDspDeliveryResourceMultigetMap() 从对象池中获取YoukuDspDeliveryResourceMultigetMap
+func GetYoukuDspDeliveryResourceMultigetMap() *YoukuDspDeliveryResourceMultigetMap {
+	return poolYoukuDspDeliveryResourceMultigetMap.Get().(*YoukuDspDeliveryResourceMultigetMap)
+}
+
+// ReleaseYoukuDspDeliveryResourceMultigetMap 释放YoukuDspDeliveryResourceMultigetMap
+func ReleaseYoukuDspDeliveryResourceMultigetMap(v *YoukuDspDeliveryResourceMultigetMap) {
+	v.Imgs = ""
+	v.Title = ""
+	v.Text = ""
+	v.DeeplinkUrl = ""
+	v.Type = ""
+	v.DestinationUrl = ""
+	poolYoukuDspDeliveryResourceMultigetMap.Put(v)
 }

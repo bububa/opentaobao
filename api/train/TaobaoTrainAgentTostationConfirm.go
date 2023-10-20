@@ -9,11 +9,6 @@ import (
 // taobao.train.agent.tostation.confirm
 //
 // 送票至车站的订单，代理商确认配送到站
-func TaobaoTrainAgentTostationConfirm(clt *core.SDKClient, req *train.TaobaoTrainAgentTostationConfirmAPIRequest, session string) (*train.TaobaoTrainAgentTostationConfirmAPIResponse, error) {
-	var resp train.TaobaoTrainAgentTostationConfirmAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTrainAgentTostationConfirm(clt *core.SDKClient, req *train.TaobaoTrainAgentTostationConfirmAPIRequest, resp *train.TaobaoTrainAgentTostationConfirmAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

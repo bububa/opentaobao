@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoUniversalbpShopcategoryFindlistAPIRequest struct {
 // NewTaobaoUniversalbpShopcategoryFindlistRequest 初始化TaobaoUniversalbpShopcategoryFindlistAPIRequest对象
 func NewTaobaoUniversalbpShopcategoryFindlistRequest() *TaobaoUniversalbpShopcategoryFindlistAPIRequest {
 	return &TaobaoUniversalbpShopcategoryFindlistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpShopcategoryFindlistAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoUniversalbpShopcategoryFindlistAPIRequest) SetTopServiceContext(_
 // GetTopServiceContext TopServiceContext Getter
 func (r TaobaoUniversalbpShopcategoryFindlistAPIRequest) GetTopServiceContext() *TopServiceContext {
 	return r._topServiceContext
+}
+
+var poolTaobaoUniversalbpShopcategoryFindlistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpShopcategoryFindlistRequest()
+	},
+}
+
+// GetTaobaoUniversalbpShopcategoryFindlistRequest 从 sync.Pool 获取 TaobaoUniversalbpShopcategoryFindlistAPIRequest
+func GetTaobaoUniversalbpShopcategoryFindlistAPIRequest() *TaobaoUniversalbpShopcategoryFindlistAPIRequest {
+	return poolTaobaoUniversalbpShopcategoryFindlistAPIRequest.Get().(*TaobaoUniversalbpShopcategoryFindlistAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpShopcategoryFindlistAPIRequest 将 TaobaoUniversalbpShopcategoryFindlistAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpShopcategoryFindlistAPIRequest(v *TaobaoUniversalbpShopcategoryFindlistAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpShopcategoryFindlistAPIRequest.Put(v)
 }

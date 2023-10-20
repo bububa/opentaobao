@@ -1,5 +1,9 @@
 package deliveryvoucher
 
+import (
+	"sync"
+)
+
 // OrderVoucherRequest 结构体
 type OrderVoucherRequest struct {
 	// 券信息,券信息,最多100条券记录
@@ -26,4 +30,32 @@ type OrderVoucherRequest struct {
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 1:物流发货 2：自提
 	OutOrderType int64 `json:"out_order_type,omitempty" xml:"out_order_type,omitempty"`
+}
+
+var poolOrderVoucherRequest = sync.Pool{
+	New: func() any {
+		return new(OrderVoucherRequest)
+	},
+}
+
+// GetOrderVoucherRequest() 从对象池中获取OrderVoucherRequest
+func GetOrderVoucherRequest() *OrderVoucherRequest {
+	return poolOrderVoucherRequest.Get().(*OrderVoucherRequest)
+}
+
+// ReleaseOrderVoucherRequest 释放OrderVoucherRequest
+func ReleaseOrderVoucherRequest(v *OrderVoucherRequest) {
+	v.VoucherInfos = v.VoucherInfos[:0]
+	v.OperateDate = ""
+	v.Extend = ""
+	v.OpId = ""
+	v.Provider = ""
+	v.AppointmentTime = ""
+	v.OutOrderId = ""
+	v.TerminalAddress = ""
+	v.TerminalPhone = ""
+	v.TerminalName = ""
+	v.OrderId = 0
+	v.OutOrderType = 0
+	poolOrderVoucherRequest.Put(v)
 }

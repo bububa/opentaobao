@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.combo.offshelf
 //
 // 酒店套餐下架
-func TaobaoXhotelComboOffshelf(clt *core.SDKClient, req *tuanhotel.TaobaoXhotelComboOffshelfAPIRequest, session string) (*tuanhotel.TaobaoXhotelComboOffshelfAPIResponse, error) {
-	var resp tuanhotel.TaobaoXhotelComboOffshelfAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelComboOffshelf(clt *core.SDKClient, req *tuanhotel.TaobaoXhotelComboOffshelfAPIRequest, resp *tuanhotel.TaobaoXhotelComboOffshelfAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

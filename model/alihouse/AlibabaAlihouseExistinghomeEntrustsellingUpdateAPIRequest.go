@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeEntrustsellingUpdateRequest 初始化AlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest对象
 func NewAlibabaAlihouseExistinghomeEntrustsellingUpdateRequest() *AlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest {
 	return &AlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest) Reset() {
+	r._customerEntrustSellingReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest) SetCustomerE
 // GetCustomerEntrustSellingReq CustomerEntrustSellingReq Getter
 func (r AlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest) GetCustomerEntrustSellingReq() *CustomerEntrustSellingReq {
 	return r._customerEntrustSellingReq
+}
+
+var poolAlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeEntrustsellingUpdateRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeEntrustsellingUpdateRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest
+func GetAlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest() *AlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest {
+	return poolAlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest.Get().(*AlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest 将 AlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest(v *AlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeEntrustsellingUpdateAPIRequest.Put(v)
 }

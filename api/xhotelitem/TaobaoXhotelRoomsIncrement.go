@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.rooms.increment
 //
 // Room库存增量更新接口，用户仅需要更新ROOM库存中发生变化的库存日历即可。
-func TaobaoXhotelRoomsIncrement(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRoomsIncrementAPIRequest, session string) (*xhotelitem.TaobaoXhotelRoomsIncrementAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelRoomsIncrementAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelRoomsIncrement(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRoomsIncrementAPIRequest, resp *xhotelitem.TaobaoXhotelRoomsIncrementAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

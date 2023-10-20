@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // ItemPromotion 结构体
 type ItemPromotion struct {
 	// 活动名称。
@@ -26,4 +30,32 @@ type ItemPromotion struct {
 	IsDecreaseMoney bool `json:"is_decrease_money,omitempty" xml:"is_decrease_money,omitempty"`
 	// 是否有打折行为。
 	IsDiscount bool `json:"is_discount,omitempty" xml:"is_discount,omitempty"`
+}
+
+var poolItemPromotion = sync.Pool{
+	New: func() any {
+		return new(ItemPromotion)
+	},
+}
+
+// GetItemPromotion() 从对象池中获取ItemPromotion
+func GetItemPromotion() *ItemPromotion {
+	return poolItemPromotion.Get().(*ItemPromotion)
+}
+
+// ReleaseItemPromotion 释放ItemPromotion
+func ReleaseItemPromotion(v *ItemPromotion) {
+	v.Name = ""
+	v.Description = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.UserTag = ""
+	v.ActivityId = 0
+	v.ParticipateRange = 0
+	v.DecreaseAmount = 0
+	v.DiscountRate = 0
+	v.IsUserTag = false
+	v.IsDecreaseMoney = false
+	v.IsDiscount = false
+	poolItemPromotion.Put(v)
 }

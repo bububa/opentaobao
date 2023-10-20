@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // TopP4pQuickProductEffectView 结构体
 type TopP4pQuickProductEffectView struct {
 	// 产品名称
@@ -16,4 +20,27 @@ type TopP4pQuickProductEffectView struct {
 	ImpressionCnt string `json:"impression_cnt,omitempty" xml:"impression_cnt,omitempty"`
 	// 产品id
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
+}
+
+var poolTopP4pQuickProductEffectView = sync.Pool{
+	New: func() any {
+		return new(TopP4pQuickProductEffectView)
+	},
+}
+
+// GetTopP4pQuickProductEffectView() 从对象池中获取TopP4pQuickProductEffectView
+func GetTopP4pQuickProductEffectView() *TopP4pQuickProductEffectView {
+	return poolTopP4pQuickProductEffectView.Get().(*TopP4pQuickProductEffectView)
+}
+
+// ReleaseTopP4pQuickProductEffectView 释放TopP4pQuickProductEffectView
+func ReleaseTopP4pQuickProductEffectView(v *TopP4pQuickProductEffectView) {
+	v.ProductName = ""
+	v.Cpc = ""
+	v.Ctr = ""
+	v.Cost = ""
+	v.ClickCnt = ""
+	v.ImpressionCnt = ""
+	v.ProductId = 0
+	poolTopP4pQuickProductEffectView.Put(v)
 }

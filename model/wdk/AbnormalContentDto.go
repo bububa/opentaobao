@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AbnormalContentDto 结构体
 type AbnormalContentDto struct {
 	// 操作描述
@@ -10,4 +14,24 @@ type AbnormalContentDto struct {
 	AbnormalProcessQuantity string `json:"abnormal_process_quantity,omitempty" xml:"abnormal_process_quantity,omitempty"`
 	// 上报数量
 	AbnormalQuantity string `json:"abnormal_quantity,omitempty" xml:"abnormal_quantity,omitempty"`
+}
+
+var poolAbnormalContentDto = sync.Pool{
+	New: func() any {
+		return new(AbnormalContentDto)
+	},
+}
+
+// GetAbnormalContentDto() 从对象池中获取AbnormalContentDto
+func GetAbnormalContentDto() *AbnormalContentDto {
+	return poolAbnormalContentDto.Get().(*AbnormalContentDto)
+}
+
+// ReleaseAbnormalContentDto 释放AbnormalContentDto
+func ReleaseAbnormalContentDto(v *AbnormalContentDto) {
+	v.OperateDesc = ""
+	v.OperateResult = ""
+	v.AbnormalProcessQuantity = ""
+	v.AbnormalQuantity = ""
+	poolAbnormalContentDto.Put(v)
 }

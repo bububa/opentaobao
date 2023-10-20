@@ -2,6 +2,7 @@ package ottpay
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type YoukuOttPayOrderCreateorderAPIRequest struct {
 // NewYoukuOttPayOrderCreateorderRequest 初始化YoukuOttPayOrderCreateorderAPIRequest对象
 func NewYoukuOttPayOrderCreateorderRequest() *YoukuOttPayOrderCreateorderAPIRequest {
 	return &YoukuOttPayOrderCreateorderAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuOttPayOrderCreateorderAPIRequest) Reset() {
+	r._buyer = ""
+	r._productId = ""
+	r._productName = ""
+	r._orderNo = ""
+	r._price = ""
+	r._callbackUrl = ""
+	r._extra = ""
+	r._realPrice = ""
+	r._orderType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *YoukuOttPayOrderCreateorderAPIRequest) SetOrderType(_orderType int64) e
 // GetOrderType OrderType Getter
 func (r YoukuOttPayOrderCreateorderAPIRequest) GetOrderType() int64 {
 	return r._orderType
+}
+
+var poolYoukuOttPayOrderCreateorderAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuOttPayOrderCreateorderRequest()
+	},
+}
+
+// GetYoukuOttPayOrderCreateorderRequest 从 sync.Pool 获取 YoukuOttPayOrderCreateorderAPIRequest
+func GetYoukuOttPayOrderCreateorderAPIRequest() *YoukuOttPayOrderCreateorderAPIRequest {
+	return poolYoukuOttPayOrderCreateorderAPIRequest.Get().(*YoukuOttPayOrderCreateorderAPIRequest)
+}
+
+// ReleaseYoukuOttPayOrderCreateorderAPIRequest 将 YoukuOttPayOrderCreateorderAPIRequest 放入 sync.Pool
+func ReleaseYoukuOttPayOrderCreateorderAPIRequest(v *YoukuOttPayOrderCreateorderAPIRequest) {
+	v.Reset()
+	poolYoukuOttPayOrderCreateorderAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // MediaStatisticsDto 结构体
 type MediaStatisticsDto struct {
 	// 文章摘要
@@ -76,4 +80,57 @@ type MediaStatisticsDto struct {
 	StatisticTime string `json:"statistic_time,omitempty" xml:"statistic_time,omitempty"`
 	// 发布类型
 	PostType string `json:"post_type,omitempty" xml:"post_type,omitempty"`
+}
+
+var poolMediaStatisticsDto = sync.Pool{
+	New: func() any {
+		return new(MediaStatisticsDto)
+	},
+}
+
+// GetMediaStatisticsDto() 从对象池中获取MediaStatisticsDto
+func GetMediaStatisticsDto() *MediaStatisticsDto {
+	return poolMediaStatisticsDto.Get().(*MediaStatisticsDto)
+}
+
+// ReleaseMediaStatisticsDto 释放MediaStatisticsDto
+func ReleaseMediaStatisticsDto(v *MediaStatisticsDto) {
+	v.Summary = ""
+	v.Rowno = ""
+	v.TopAvgLikenum = ""
+	v.ResultMonth = ""
+	v.RownoUp = ""
+	v.AvgCommentsNum = ""
+	v.CiUp = ""
+	v.CategoryName = ""
+	v.Title = ""
+	v.ReadNum = ""
+	v.NickName = ""
+	v.AvgRepostsNum = ""
+	v.Name = ""
+	v.SecondAvgLikenum = ""
+	v.CopyrightProportion = ""
+	v.PostTime = ""
+	v.TopAvgReadnum = ""
+	v.RepostsNum = ""
+	v.UrlTimes = ""
+	v.CategoryId = ""
+	v.CommentsNum = ""
+	v.Url = ""
+	v.Content = ""
+	v.OtherAvgReadnum = ""
+	v.UrlNumMoreTenw = ""
+	v.LikeNum = ""
+	v.SecondAvgReadnum = ""
+	v.Ci = ""
+	v.AvgLikeNum = ""
+	v.CopyrightUrlNum = ""
+	v.UrlNum = ""
+	v.TypesRowno = ""
+	v.AvgReadNum = ""
+	v.ArticleType = ""
+	v.BoardType = ""
+	v.StatisticTime = ""
+	v.PostType = ""
+	poolMediaStatisticsDto.Put(v)
 }

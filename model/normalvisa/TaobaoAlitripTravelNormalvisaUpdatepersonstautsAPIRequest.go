@@ -2,6 +2,7 @@ package normalvisa
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest struct {
 // NewTaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest 初始化TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest对象
 func NewTaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest() *TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest {
 	return &TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) Reset() {
+	r._normalVisaUpdateUnitList = r._normalVisaUpdateUnitList[:0]
+	r._bizOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) SetBizOrderI
 // GetBizOrderId BizOrderId Getter
 func (r TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
+}
+
+var poolTaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelNormalvisaUpdatepersonstautsRequest 从 sync.Pool 获取 TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest
+func GetTaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest() *TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest {
+	return poolTaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest.Get().(*TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest 将 TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest(v *TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest.Put(v)
 }

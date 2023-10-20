@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // TvAppVersion 结构体
 type TvAppVersion struct {
 	// 适配设备列表
@@ -38,4 +42,38 @@ type TvAppVersion struct {
 	App *AppDto `json:"app,omitempty" xml:"app,omitempty"`
 	// id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolTvAppVersion = sync.Pool{
+	New: func() any {
+		return new(TvAppVersion)
+	},
+}
+
+// GetTvAppVersion() 从对象池中获取TvAppVersion
+func GetTvAppVersion() *TvAppVersion {
+	return poolTvAppVersion.Get().(*TvAppVersion)
+}
+
+// ReleaseTvAppVersion 释放TvAppVersion
+func ReleaseTvAppVersion(v *TvAppVersion) {
+	v.DeviceAdapterList = v.DeviceAdapterList[:0]
+	v.RestartType = ""
+	v.Version = ""
+	v.DownloadPath = ""
+	v.ReleaseNote = ""
+	v.Status = ""
+	v.AppZipType = ""
+	v.NeedRestart = ""
+	v.Downloadmd5 = ""
+	v.GmtCreate = ""
+	v.GmtModify = ""
+	v.Size = ""
+	v.HasNotified = ""
+	v.RestartAppParam = ""
+	v.RestartAppType = ""
+	v.VersionCode = 0
+	v.App = nil
+	v.Id = 0
+	poolTvAppVersion.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.ailab.aicloud.top.device.control.childlock
 //
 // 设备儿童锁
-func TaobaoAilabAicloudTopDeviceControlChildlock(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceControlChildlockAPIRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceControlChildlockAPIResponse, error) {
-	var resp iot.TaobaoAilabAicloudTopDeviceControlChildlockAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAilabAicloudTopDeviceControlChildlock(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceControlChildlockAPIRequest, resp *iot.TaobaoAilabAicloudTopDeviceControlChildlockAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

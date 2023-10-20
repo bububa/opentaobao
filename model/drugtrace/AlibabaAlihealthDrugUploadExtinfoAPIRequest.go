@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAlihealthDrugUploadExtinfoAPIRequest struct {
 // NewAlibabaAlihealthDrugUploadExtinfoRequest 初始化AlibabaAlihealthDrugUploadExtinfoAPIRequest对象
 func NewAlibabaAlihealthDrugUploadExtinfoRequest() *AlibabaAlihealthDrugUploadExtinfoAPIRequest {
 	return &AlibabaAlihealthDrugUploadExtinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugUploadExtinfoAPIRequest) Reset() {
+	r._refEntId = ""
+	r._drugId = ""
+	r._batchNo = ""
+	r._extInfoDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAlihealthDrugUploadExtinfoAPIRequest) SetExtInfoDto(_extInfoDto 
 // GetExtInfoDto ExtInfoDto Getter
 func (r AlibabaAlihealthDrugUploadExtinfoAPIRequest) GetExtInfoDto() *ExtInfoDto {
 	return r._extInfoDto
+}
+
+var poolAlibabaAlihealthDrugUploadExtinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugUploadExtinfoRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugUploadExtinfoRequest 从 sync.Pool 获取 AlibabaAlihealthDrugUploadExtinfoAPIRequest
+func GetAlibabaAlihealthDrugUploadExtinfoAPIRequest() *AlibabaAlihealthDrugUploadExtinfoAPIRequest {
+	return poolAlibabaAlihealthDrugUploadExtinfoAPIRequest.Get().(*AlibabaAlihealthDrugUploadExtinfoAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugUploadExtinfoAPIRequest 将 AlibabaAlihealthDrugUploadExtinfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugUploadExtinfoAPIRequest(v *AlibabaAlihealthDrugUploadExtinfoAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugUploadExtinfoAPIRequest.Put(v)
 }

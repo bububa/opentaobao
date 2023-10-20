@@ -9,11 +9,6 @@ import (
 // taobao.universalbp.label.findconfiglist
 //
 // 入参账号信息，出参可用标签id，用于下游接口入参
-func TaobaoUniversalbpLabelFindconfiglist(clt *core.SDKClient, req *simba.TaobaoUniversalbpLabelFindconfiglistAPIRequest, session string) (*simba.TaobaoUniversalbpLabelFindconfiglistAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpLabelFindconfiglistAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUniversalbpLabelFindconfiglist(clt *core.SDKClient, req *simba.TaobaoUniversalbpLabelFindconfiglistAPIRequest, resp *simba.TaobaoUniversalbpLabelFindconfiglistAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

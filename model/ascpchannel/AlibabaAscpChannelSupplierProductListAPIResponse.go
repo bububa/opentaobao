@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAscpChannelSupplierProductListAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpChannelSupplierProductListAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAscpChannelSupplierProductListAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAscpChannelSupplierProductListAPIResponseModel).Reset()
 }
 
 // AlibabaAscpChannelSupplierProductListAPIResponseModel is 供应商渠道产品列表查询 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAscpChannelSupplierProductListAPIResponseModel struct {
 	Module *ProductListQueryResponseForSupplier `json:"module,omitempty" xml:"module,omitempty"`
 	// 执行结果是否成功
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAscpChannelSupplierProductListAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorMessage = ""
+	m.Error = ""
+	m.Module = nil
+	m.ResultSuccess = false
+}
+
+var poolAlibabaAscpChannelSupplierProductListAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAscpChannelSupplierProductListAPIResponse)
+	},
+}
+
+// GetAlibabaAscpChannelSupplierProductListAPIResponse 从 sync.Pool 获取 AlibabaAscpChannelSupplierProductListAPIResponse
+func GetAlibabaAscpChannelSupplierProductListAPIResponse() *AlibabaAscpChannelSupplierProductListAPIResponse {
+	return poolAlibabaAscpChannelSupplierProductListAPIResponse.Get().(*AlibabaAscpChannelSupplierProductListAPIResponse)
+}
+
+// ReleaseAlibabaAscpChannelSupplierProductListAPIResponse 将 AlibabaAscpChannelSupplierProductListAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAscpChannelSupplierProductListAPIResponse(v *AlibabaAscpChannelSupplierProductListAPIResponse) {
+	v.Reset()
+	poolAlibabaAscpChannelSupplierProductListAPIResponse.Put(v)
 }

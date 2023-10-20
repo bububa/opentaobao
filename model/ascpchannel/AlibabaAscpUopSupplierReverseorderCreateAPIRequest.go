@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpUopSupplierReverseorderCreateAPIRequest struct {
 // NewAlibabaAscpUopSupplierReverseorderCreateRequest 初始化AlibabaAscpUopSupplierReverseorderCreateAPIRequest对象
 func NewAlibabaAscpUopSupplierReverseorderCreateRequest() *AlibabaAscpUopSupplierReverseorderCreateAPIRequest {
 	return &AlibabaAscpUopSupplierReverseorderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpUopSupplierReverseorderCreateAPIRequest) Reset() {
+	r._reverseCreateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpUopSupplierReverseorderCreateAPIRequest) SetReverseCreateReq
 // GetReverseCreateRequest ReverseCreateRequest Getter
 func (r AlibabaAscpUopSupplierReverseorderCreateAPIRequest) GetReverseCreateRequest() *ReverseCreateRequest {
 	return r._reverseCreateRequest
+}
+
+var poolAlibabaAscpUopSupplierReverseorderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpUopSupplierReverseorderCreateRequest()
+	},
+}
+
+// GetAlibabaAscpUopSupplierReverseorderCreateRequest 从 sync.Pool 获取 AlibabaAscpUopSupplierReverseorderCreateAPIRequest
+func GetAlibabaAscpUopSupplierReverseorderCreateAPIRequest() *AlibabaAscpUopSupplierReverseorderCreateAPIRequest {
+	return poolAlibabaAscpUopSupplierReverseorderCreateAPIRequest.Get().(*AlibabaAscpUopSupplierReverseorderCreateAPIRequest)
+}
+
+// ReleaseAlibabaAscpUopSupplierReverseorderCreateAPIRequest 将 AlibabaAscpUopSupplierReverseorderCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpUopSupplierReverseorderCreateAPIRequest(v *AlibabaAscpUopSupplierReverseorderCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpUopSupplierReverseorderCreateAPIRequest.Put(v)
 }

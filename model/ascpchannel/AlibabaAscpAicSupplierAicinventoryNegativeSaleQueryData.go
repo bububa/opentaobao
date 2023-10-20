@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData 结构体
 type AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData struct {
 	// 仓库编码
@@ -24,4 +28,31 @@ type AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData struct {
 	InvStatus int64 `json:"inv_status,omitempty" xml:"inv_status,omitempty"`
 	// ASCP销售市场中的计划ID，供应商不能用这个
 	TradeFutureInvId int64 `json:"trade_future_inv_id,omitempty" xml:"trade_future_inv_id,omitempty"`
+}
+
+var poolAlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData = sync.Pool{
+	New: func() any {
+		return new(AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData)
+	},
+}
+
+// GetAlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData() 从对象池中获取AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData
+func GetAlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData() *AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData {
+	return poolAlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData.Get().(*AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData)
+}
+
+// ReleaseAlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData 释放AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData
+func ReleaseAlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData(v *AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData) {
+	v.StoreCode = ""
+	v.Quantity = ""
+	v.LockQuantity = ""
+	v.ReservedQuantity = ""
+	v.ReservedLockQuantity = ""
+	v.PublishOrderNo = ""
+	v.SellableQuantity = ""
+	v.ScItemId = 0
+	v.SourceUserId = 0
+	v.InvStatus = 0
+	v.TradeFutureInvId = 0
+	poolAlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData.Put(v)
 }

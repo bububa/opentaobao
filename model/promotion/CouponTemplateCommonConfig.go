@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // CouponTemplateCommonConfig 结构体
 type CouponTemplateCommonConfig struct {
 	// 申请渠道 anonymousOffline
@@ -14,4 +18,26 @@ type CouponTemplateCommonConfig struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 优惠券类型 UNIT_PRICE(10,&#34;unitPrice&#34;,&#34;单品定价券&#34;), FULL_AMOUNT_REDUCE(11, &#34;fullAmountReduce&#34;, &#34;满元减券&#34;), FULL_AMOUNT_DISCOUNT(12, &#34;fullAmountDiscount&#34;, &#34;满元折券&#34;), FULL_COUNT_REDUCE(13, &#34;fullCountReduce&#34;, &#34;满件减券&#34;), FULL_COUNT_DISCOUNT(14, &#34;fullCountDiscount&#34;, &#34;满件折券&#34;), VOUCHER(15, &#34;voucher&#34;, &#34;抵用券&#34;),
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolCouponTemplateCommonConfig = sync.Pool{
+	New: func() any {
+		return new(CouponTemplateCommonConfig)
+	},
+}
+
+// GetCouponTemplateCommonConfig() 从对象池中获取CouponTemplateCommonConfig
+func GetCouponTemplateCommonConfig() *CouponTemplateCommonConfig {
+	return poolCouponTemplateCommonConfig.Get().(*CouponTemplateCommonConfig)
+}
+
+// ReleaseCouponTemplateCommonConfig 释放CouponTemplateCommonConfig
+func ReleaseCouponTemplateCommonConfig(v *CouponTemplateCommonConfig) {
+	v.ApplyChannels = v.ApplyChannels[:0]
+	v.Description = ""
+	v.Title = ""
+	v.SendType = ""
+	v.Status = 0
+	v.Type = 0
+	poolCouponTemplateCommonConfig.Put(v)
 }

@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoWeitaoFeedCancelAPIRequest struct {
 // NewTaobaoWeitaoFeedCancelRequest 初始化TaobaoWeitaoFeedCancelAPIRequest对象
 func NewTaobaoWeitaoFeedCancelRequest() *TaobaoWeitaoFeedCancelAPIRequest {
 	return &TaobaoWeitaoFeedCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWeitaoFeedCancelAPIRequest) Reset() {
+	r._bizId = ""
+	r._feedId = 0
+	r._delete = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoWeitaoFeedCancelAPIRequest) SetDelete(_delete bool) error {
 // GetDelete Delete Getter
 func (r TaobaoWeitaoFeedCancelAPIRequest) GetDelete() bool {
 	return r._delete
+}
+
+var poolTaobaoWeitaoFeedCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWeitaoFeedCancelRequest()
+	},
+}
+
+// GetTaobaoWeitaoFeedCancelRequest 从 sync.Pool 获取 TaobaoWeitaoFeedCancelAPIRequest
+func GetTaobaoWeitaoFeedCancelAPIRequest() *TaobaoWeitaoFeedCancelAPIRequest {
+	return poolTaobaoWeitaoFeedCancelAPIRequest.Get().(*TaobaoWeitaoFeedCancelAPIRequest)
+}
+
+// ReleaseTaobaoWeitaoFeedCancelAPIRequest 将 TaobaoWeitaoFeedCancelAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWeitaoFeedCancelAPIRequest(v *TaobaoWeitaoFeedCancelAPIRequest) {
+	v.Reset()
+	poolTaobaoWeitaoFeedCancelAPIRequest.Put(v)
 }

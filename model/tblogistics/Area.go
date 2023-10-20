@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // Area 结构体
 type Area struct {
 	// 地域名称.如北京市,杭州市,西湖区,每一个area_id 都代表了一个具体的地区.
@@ -12,4 +16,25 @@ type Area struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 父节点区域标识.如北京市的area_id是110100,朝阳区是北京市的一个区,所以朝阳区的parent_id就是北京市的area_id.
 	ParentId int64 `json:"parent_id,omitempty" xml:"parent_id,omitempty"`
+}
+
+var poolArea = sync.Pool{
+	New: func() any {
+		return new(Area)
+	},
+}
+
+// GetArea() 从对象池中获取Area
+func GetArea() *Area {
+	return poolArea.Get().(*Area)
+}
+
+// ReleaseArea 释放Area
+func ReleaseArea(v *Area) {
+	v.Name = ""
+	v.Zip = ""
+	v.Id = 0
+	v.Type = 0
+	v.ParentId = 0
+	poolArea.Put(v)
 }

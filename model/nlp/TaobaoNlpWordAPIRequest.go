@@ -2,6 +2,7 @@ package nlp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoNlpWordAPIRequest struct {
 // NewTaobaoNlpWordRequest 初始化TaobaoNlpWordAPIRequest对象
 func NewTaobaoNlpWordRequest() *TaobaoNlpWordAPIRequest {
 	return &TaobaoNlpWordAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoNlpWordAPIRequest) Reset() {
+	r._wType = 0
+	r._text = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoNlpWordAPIRequest) SetText(_text *Text) error {
 // GetText Text Getter
 func (r TaobaoNlpWordAPIRequest) GetText() *Text {
 	return r._text
+}
+
+var poolTaobaoNlpWordAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoNlpWordRequest()
+	},
+}
+
+// GetTaobaoNlpWordRequest 从 sync.Pool 获取 TaobaoNlpWordAPIRequest
+func GetTaobaoNlpWordAPIRequest() *TaobaoNlpWordAPIRequest {
+	return poolTaobaoNlpWordAPIRequest.Get().(*TaobaoNlpWordAPIRequest)
+}
+
+// ReleaseTaobaoNlpWordAPIRequest 将 TaobaoNlpWordAPIRequest 放入 sync.Pool
+func ReleaseTaobaoNlpWordAPIRequest(v *TaobaoNlpWordAPIRequest) {
+	v.Reset()
+	poolTaobaoNlpWordAPIRequest.Put(v)
 }

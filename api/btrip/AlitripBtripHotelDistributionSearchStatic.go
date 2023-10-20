@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.hotel.distribution.search.static
 //
 // 商旅酒店api分销-酒店静态信息接口
-func AlitripBtripHotelDistributionSearchStatic(clt *core.SDKClient, req *btrip.AlitripBtripHotelDistributionSearchStaticAPIRequest, session string) (*btrip.AlitripBtripHotelDistributionSearchStaticAPIResponse, error) {
-	var resp btrip.AlitripBtripHotelDistributionSearchStaticAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripHotelDistributionSearchStatic(clt *core.SDKClient, req *btrip.AlitripBtripHotelDistributionSearchStaticAPIRequest, resp *btrip.AlitripBtripHotelDistributionSearchStaticAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

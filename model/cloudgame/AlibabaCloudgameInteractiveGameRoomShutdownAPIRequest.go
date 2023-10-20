@@ -2,6 +2,7 @@ package cloudgame
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest struct {
 // NewAlibabaCloudgameInteractiveGameRoomShutdownRequest 初始化AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest对象
 func NewAlibabaCloudgameInteractiveGameRoomShutdownRequest() *AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest {
 	return &AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest) Reset() {
+	r._shutdownRoomRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest) SetShutdownRoomR
 // GetShutdownRoomRequest ShutdownRoomRequest Getter
 func (r AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest) GetShutdownRoomRequest() *ShutdownRoomRequest {
 	return r._shutdownRoomRequest
+}
+
+var poolAlibabaCloudgameInteractiveGameRoomShutdownAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCloudgameInteractiveGameRoomShutdownRequest()
+	},
+}
+
+// GetAlibabaCloudgameInteractiveGameRoomShutdownRequest 从 sync.Pool 获取 AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest
+func GetAlibabaCloudgameInteractiveGameRoomShutdownAPIRequest() *AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest {
+	return poolAlibabaCloudgameInteractiveGameRoomShutdownAPIRequest.Get().(*AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest)
+}
+
+// ReleaseAlibabaCloudgameInteractiveGameRoomShutdownAPIRequest 将 AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCloudgameInteractiveGameRoomShutdownAPIRequest(v *AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest) {
+	v.Reset()
+	poolAlibabaCloudgameInteractiveGameRoomShutdownAPIRequest.Put(v)
 }

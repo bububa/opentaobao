@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.wechat.add.coupon.record
 //
 // 雅高小程序添加优惠券实例
-func AlitripMerchantGalaxyWechatAddCouponRecord(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatAddCouponRecordAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyWechatAddCouponRecordAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyWechatAddCouponRecordAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyWechatAddCouponRecord(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatAddCouponRecordAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyWechatAddCouponRecordAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

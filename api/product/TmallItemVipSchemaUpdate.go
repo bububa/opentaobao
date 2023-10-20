@@ -9,11 +9,6 @@ import (
 // tmall.item.vip.schema.update
 //
 // 大商家编辑商品
-func TmallItemVipSchemaUpdate(clt *core.SDKClient, req *product.TmallItemVipSchemaUpdateAPIRequest, session string) (*product.TmallItemVipSchemaUpdateAPIResponse, error) {
-	var resp product.TmallItemVipSchemaUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallItemVipSchemaUpdate(clt *core.SDKClient, req *product.TmallItemVipSchemaUpdateAPIRequest, resp *product.TmallItemVipSchemaUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

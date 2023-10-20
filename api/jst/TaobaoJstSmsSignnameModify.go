@@ -9,11 +9,6 @@ import (
 // taobao.jst.sms.signname.modify
 //
 // 淘宝短信签名修改，只能修改还未被审核的签名。
-func TaobaoJstSmsSignnameModify(clt *core.SDKClient, req *jst.TaobaoJstSmsSignnameModifyAPIRequest, session string) (*jst.TaobaoJstSmsSignnameModifyAPIResponse, error) {
-	var resp jst.TaobaoJstSmsSignnameModifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJstSmsSignnameModify(clt *core.SDKClient, req *jst.TaobaoJstSmsSignnameModifyAPIRequest, resp *jst.TaobaoJstSmsSignnameModifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

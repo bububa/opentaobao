@@ -9,11 +9,6 @@ import (
 // tmall.service.code.consume
 //
 // 天猫服务平台－服务核销
-func TmallServiceCodeConsume(clt *core.SDKClient, req *tmallservice.TmallServiceCodeConsumeAPIRequest, session string) (*tmallservice.TmallServiceCodeConsumeAPIResponse, error) {
-	var resp tmallservice.TmallServiceCodeConsumeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServiceCodeConsume(clt *core.SDKClient, req *tmallservice.TmallServiceCodeConsumeAPIRequest, resp *tmallservice.TmallServiceCodeConsumeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package jym
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaJymSteamRefundAuditAPIRequest struct {
 // NewAlibabaJymSteamRefundAuditRequest 初始化AlibabaJymSteamRefundAuditAPIRequest对象
 func NewAlibabaJymSteamRefundAuditRequest() *AlibabaJymSteamRefundAuditAPIRequest {
 	return &AlibabaJymSteamRefundAuditAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJymSteamRefundAuditAPIRequest) Reset() {
+	r._auditRefundOrderDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaJymSteamRefundAuditAPIRequest) SetAuditRefundOrderDto(_auditRefu
 // GetAuditRefundOrderDto AuditRefundOrderDto Getter
 func (r AlibabaJymSteamRefundAuditAPIRequest) GetAuditRefundOrderDto() *AuditRefundOrderDto {
 	return r._auditRefundOrderDto
+}
+
+var poolAlibabaJymSteamRefundAuditAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJymSteamRefundAuditRequest()
+	},
+}
+
+// GetAlibabaJymSteamRefundAuditRequest 从 sync.Pool 获取 AlibabaJymSteamRefundAuditAPIRequest
+func GetAlibabaJymSteamRefundAuditAPIRequest() *AlibabaJymSteamRefundAuditAPIRequest {
+	return poolAlibabaJymSteamRefundAuditAPIRequest.Get().(*AlibabaJymSteamRefundAuditAPIRequest)
+}
+
+// ReleaseAlibabaJymSteamRefundAuditAPIRequest 将 AlibabaJymSteamRefundAuditAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJymSteamRefundAuditAPIRequest(v *AlibabaJymSteamRefundAuditAPIRequest) {
+	v.Reset()
+	poolAlibabaJymSteamRefundAuditAPIRequest.Put(v)
 }

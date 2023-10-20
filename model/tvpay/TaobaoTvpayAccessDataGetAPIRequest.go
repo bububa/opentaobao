@@ -2,6 +2,7 @@ package tvpay
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoTvpayAccessDataGetAPIRequest struct {
 // NewTaobaoTvpayAccessDataGetRequest 初始化TaobaoTvpayAccessDataGetAPIRequest对象
 func NewTaobaoTvpayAccessDataGetRequest() *TaobaoTvpayAccessDataGetAPIRequest {
 	return &TaobaoTvpayAccessDataGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTvpayAccessDataGetAPIRequest) Reset() {
+	r._deviceId = ""
+	r._from = ""
+	r._accountClientVersion = ""
+	r._outOrderNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoTvpayAccessDataGetAPIRequest) SetOutOrderNo(_outOrderNo string) e
 // GetOutOrderNo OutOrderNo Getter
 func (r TaobaoTvpayAccessDataGetAPIRequest) GetOutOrderNo() string {
 	return r._outOrderNo
+}
+
+var poolTaobaoTvpayAccessDataGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTvpayAccessDataGetRequest()
+	},
+}
+
+// GetTaobaoTvpayAccessDataGetRequest 从 sync.Pool 获取 TaobaoTvpayAccessDataGetAPIRequest
+func GetTaobaoTvpayAccessDataGetAPIRequest() *TaobaoTvpayAccessDataGetAPIRequest {
+	return poolTaobaoTvpayAccessDataGetAPIRequest.Get().(*TaobaoTvpayAccessDataGetAPIRequest)
+}
+
+// ReleaseTaobaoTvpayAccessDataGetAPIRequest 将 TaobaoTvpayAccessDataGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTvpayAccessDataGetAPIRequest(v *TaobaoTvpayAccessDataGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTvpayAccessDataGetAPIRequest.Put(v)
 }

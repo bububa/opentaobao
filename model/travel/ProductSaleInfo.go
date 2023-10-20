@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // ProductSaleInfo 结构体
 type ProductSaleInfo struct {
 	// 建议零售价上限，单位：元
@@ -24,4 +28,31 @@ type ProductSaleInfo struct {
 	Distribute bool `json:"distribute,omitempty" xml:"distribute,omitempty"`
 	// 是否支持代销
 	Agent bool `json:"agent,omitempty" xml:"agent,omitempty"`
+}
+
+var poolProductSaleInfo = sync.Pool{
+	New: func() any {
+		return new(ProductSaleInfo)
+	},
+}
+
+// GetProductSaleInfo() 从对象池中获取ProductSaleInfo
+func GetProductSaleInfo() *ProductSaleInfo {
+	return poolProductSaleInfo.Get().(*ProductSaleInfo)
+}
+
+// ReleaseProductSaleInfo 释放ProductSaleInfo
+func ReleaseProductSaleInfo(v *ProductSaleInfo) {
+	v.PriceUpper = ""
+	v.PriceLower = ""
+	v.EndComboDate = ""
+	v.StartComboDate = ""
+	v.ConfirmTime = 0
+	v.Duration = 0
+	v.ProductLine = 0
+	v.ConfirmType = 0
+	v.SaleType = 0
+	v.Distribute = false
+	v.Agent = false
+	poolProductSaleInfo.Put(v)
 }

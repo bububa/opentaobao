@@ -2,6 +2,7 @@ package tttm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliyunIndustryTttmStockSyncAPIRequest struct {
 // NewAliyunIndustryTttmStockSyncRequest 初始化AliyunIndustryTttmStockSyncAPIRequest对象
 func NewAliyunIndustryTttmStockSyncRequest() *AliyunIndustryTttmStockSyncAPIRequest {
 	return &AliyunIndustryTttmStockSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunIndustryTttmStockSyncAPIRequest) Reset() {
+	r._syncStock = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliyunIndustryTttmStockSyncAPIRequest) SetSyncStock(_syncStock *StockIn
 // GetSyncStock SyncStock Getter
 func (r AliyunIndustryTttmStockSyncAPIRequest) GetSyncStock() *StockInfoDto {
 	return r._syncStock
+}
+
+var poolAliyunIndustryTttmStockSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunIndustryTttmStockSyncRequest()
+	},
+}
+
+// GetAliyunIndustryTttmStockSyncRequest 从 sync.Pool 获取 AliyunIndustryTttmStockSyncAPIRequest
+func GetAliyunIndustryTttmStockSyncAPIRequest() *AliyunIndustryTttmStockSyncAPIRequest {
+	return poolAliyunIndustryTttmStockSyncAPIRequest.Get().(*AliyunIndustryTttmStockSyncAPIRequest)
+}
+
+// ReleaseAliyunIndustryTttmStockSyncAPIRequest 将 AliyunIndustryTttmStockSyncAPIRequest 放入 sync.Pool
+func ReleaseAliyunIndustryTttmStockSyncAPIRequest(v *AliyunIndustryTttmStockSyncAPIRequest) {
+	v.Reset()
+	poolAliyunIndustryTttmStockSyncAPIRequest.Put(v)
 }

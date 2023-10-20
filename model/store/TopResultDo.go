@@ -1,5 +1,9 @@
 package store
 
+import (
+	"sync"
+)
+
 // TopResultDo 结构体
 type TopResultDo struct {
 	// 错误码
@@ -14,4 +18,26 @@ type TopResultDo struct {
 	Failure bool `json:"failure,omitempty" xml:"failure,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTopResultDo = sync.Pool{
+	New: func() any {
+		return new(TopResultDo)
+	},
+}
+
+// GetTopResultDo() 从对象池中获取TopResultDo
+func GetTopResultDo() *TopResultDo {
+	return poolTopResultDo.Get().(*TopResultDo)
+}
+
+// ReleaseTopResultDo 释放TopResultDo
+func ReleaseTopResultDo(v *TopResultDo) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Result = nil
+	v.TotalNum = 0
+	v.Failure = false
+	v.Success = false
+	poolTopResultDo.Put(v)
 }

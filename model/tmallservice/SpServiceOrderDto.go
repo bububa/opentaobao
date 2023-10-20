@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // SpServiceOrderDto 结构体
 type SpServiceOrderDto struct {
 	// 费用信息
@@ -46,4 +50,42 @@ type SpServiceOrderDto struct {
 	ServiceSequence int64 `json:"service_sequence,omitempty" xml:"service_sequence,omitempty"`
 	// 服务提供者
 	ServiceProviderDTO *ServiceProviderDto `json:"service_provider_d_t_o,omitempty" xml:"service_provider_d_t_o,omitempty"`
+}
+
+var poolSpServiceOrderDto = sync.Pool{
+	New: func() any {
+		return new(SpServiceOrderDto)
+	},
+}
+
+// GetSpServiceOrderDto() 从对象池中获取SpServiceOrderDto
+func GetSpServiceOrderDto() *SpServiceOrderDto {
+	return poolSpServiceOrderDto.Get().(*SpServiceOrderDto)
+}
+
+// ReleaseSpServiceOrderDto 释放SpServiceOrderDto
+func ReleaseSpServiceOrderDto(v *SpServiceOrderDto) {
+	v.FeeList = v.FeeList[:0]
+	v.GmtExpire = ""
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.GmtEffect = ""
+	v.StatusCode = ""
+	v.FulfilTypeCode = ""
+	v.RefundServiceCount = 0
+	v.MasterTradeOrder = nil
+	v.ServiceDefinition = nil
+	v.Buyer = nil
+	v.UsedServiceCount = 0
+	v.LeftServiceCount = 0
+	v.ServiceTradeOrder = nil
+	v.ServiceCount = 0
+	v.SpServiceorderId = 0
+	v.UsingServiceCount = 0
+	v.ServiceDefinitionDTO = nil
+	v.Id = 0
+	v.ServiceTradeOrderDTO = nil
+	v.ServiceSequence = 0
+	v.ServiceProviderDTO = nil
+	poolSpServiceOrderDto.Put(v)
 }

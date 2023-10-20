@@ -2,6 +2,7 @@ package openmall
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoOpenmallTradeCloseAPIRequest struct {
 // NewTaobaoOpenmallTradeCloseRequest 初始化TaobaoOpenmallTradeCloseAPIRequest对象
 func NewTaobaoOpenmallTradeCloseRequest() *TaobaoOpenmallTradeCloseAPIRequest {
 	return &TaobaoOpenmallTradeCloseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenmallTradeCloseAPIRequest) Reset() {
+	r._distributor = ""
+	r._reason = ""
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoOpenmallTradeCloseAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoOpenmallTradeCloseAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoOpenmallTradeCloseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenmallTradeCloseRequest()
+	},
+}
+
+// GetTaobaoOpenmallTradeCloseRequest 从 sync.Pool 获取 TaobaoOpenmallTradeCloseAPIRequest
+func GetTaobaoOpenmallTradeCloseAPIRequest() *TaobaoOpenmallTradeCloseAPIRequest {
+	return poolTaobaoOpenmallTradeCloseAPIRequest.Get().(*TaobaoOpenmallTradeCloseAPIRequest)
+}
+
+// ReleaseTaobaoOpenmallTradeCloseAPIRequest 将 TaobaoOpenmallTradeCloseAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenmallTradeCloseAPIRequest(v *TaobaoOpenmallTradeCloseAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenmallTradeCloseAPIRequest.Put(v)
 }

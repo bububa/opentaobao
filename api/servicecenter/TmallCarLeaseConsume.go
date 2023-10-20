@@ -9,11 +9,6 @@ import (
 // tmall.car.lease.consume
 //
 // 租赁公司回传信息，核销
-func TmallCarLeaseConsume(clt *core.SDKClient, req *servicecenter.TmallCarLeaseConsumeAPIRequest, session string) (*servicecenter.TmallCarLeaseConsumeAPIResponse, error) {
-	var resp servicecenter.TmallCarLeaseConsumeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallCarLeaseConsume(clt *core.SDKClient, req *servicecenter.TmallCarLeaseConsumeAPIRequest, resp *servicecenter.TmallCarLeaseConsumeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

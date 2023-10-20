@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // TmallPromotionCouponQueryData 结构体
 type TmallPromotionCouponQueryData struct {
 	// discount
@@ -18,4 +22,28 @@ type TmallPromotionCouponQueryData struct {
 	CouponTemplateId string `json:"coupon_template_id,omitempty" xml:"coupon_template_id,omitempty"`
 	// id
 	Id string `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolTmallPromotionCouponQueryData = sync.Pool{
+	New: func() any {
+		return new(TmallPromotionCouponQueryData)
+	},
+}
+
+// GetTmallPromotionCouponQueryData() 从对象池中获取TmallPromotionCouponQueryData
+func GetTmallPromotionCouponQueryData() *TmallPromotionCouponQueryData {
+	return poolTmallPromotionCouponQueryData.Get().(*TmallPromotionCouponQueryData)
+}
+
+// ReleaseTmallPromotionCouponQueryData 释放TmallPromotionCouponQueryData
+func ReleaseTmallPromotionCouponQueryData(v *TmallPromotionCouponQueryData) {
+	v.Discount = ""
+	v.StartFee = ""
+	v.CouponName = ""
+	v.EndTime = ""
+	v.StartTime = ""
+	v.SupplierId = ""
+	v.CouponTemplateId = ""
+	v.Id = ""
+	poolTmallPromotionCouponQueryData.Put(v)
 }

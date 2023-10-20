@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,6 +18,12 @@ type TmallWorkcardIdentifyAPIResponse struct {
 	TmallWorkcardIdentifyAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallWorkcardIdentifyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallWorkcardIdentifyAPIResponseModel).Reset()
+}
+
 // TmallWorkcardIdentifyAPIResponseModel is 工单核销 成功返回结果
 type TmallWorkcardIdentifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_workcard_identify_response"`
@@ -24,4 +31,27 @@ type TmallWorkcardIdentifyAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *TmallWorkcardIdentifyResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallWorkcardIdentifyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallWorkcardIdentifyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallWorkcardIdentifyAPIResponse)
+	},
+}
+
+// GetTmallWorkcardIdentifyAPIResponse 从 sync.Pool 获取 TmallWorkcardIdentifyAPIResponse
+func GetTmallWorkcardIdentifyAPIResponse() *TmallWorkcardIdentifyAPIResponse {
+	return poolTmallWorkcardIdentifyAPIResponse.Get().(*TmallWorkcardIdentifyAPIResponse)
+}
+
+// ReleaseTmallWorkcardIdentifyAPIResponse 将 TmallWorkcardIdentifyAPIResponse 保存到 sync.Pool
+func ReleaseTmallWorkcardIdentifyAPIResponse(v *TmallWorkcardIdentifyAPIResponse) {
+	v.Reset()
+	poolTmallWorkcardIdentifyAPIResponse.Put(v)
 }

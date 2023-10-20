@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // CouponTemplate 结构体
 type CouponTemplate struct {
 	// 优惠券模版uuid
@@ -28,4 +32,33 @@ type CouponTemplate struct {
 	TimeLimitConfig *CouponTemplateTimeLimitConfig `json:"time_limit_config,omitempty" xml:"time_limit_config,omitempty"`
 	// 兼容历史逻辑配置
 	CompatibleConfig *CouponTemplateCompatibleConfig `json:"compatible_config,omitempty" xml:"compatible_config,omitempty"`
+}
+
+var poolCouponTemplate = sync.Pool{
+	New: func() any {
+		return new(CouponTemplate)
+	},
+}
+
+// GetCouponTemplate() 从对象池中获取CouponTemplate
+func GetCouponTemplate() *CouponTemplate {
+	return poolCouponTemplate.Get().(*CouponTemplate)
+}
+
+// ReleaseCouponTemplate 释放CouponTemplate
+func ReleaseCouponTemplate(v *CouponTemplate) {
+	v.Uuid = ""
+	v.UniqueId = ""
+	v.ApplyLimitConfig = nil
+	v.CommonConfig = nil
+	v.ConditionConfig = nil
+	v.DiscountConfig = nil
+	v.Id = 0
+	v.InvestmentConfig = nil
+	v.OptionConfig = nil
+	v.ParticipateConfig = nil
+	v.SourceId = 0
+	v.TimeLimitConfig = nil
+	v.CompatibleConfig = nil
+	poolCouponTemplate.Put(v)
 }

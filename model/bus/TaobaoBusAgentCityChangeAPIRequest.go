@@ -2,6 +2,7 @@ package bus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBusAgentCityChangeAPIRequest struct {
 // NewTaobaoBusAgentCityChangeRequest 初始化TaobaoBusAgentCityChangeAPIRequest对象
 func NewTaobaoBusAgentCityChangeRequest() *TaobaoBusAgentCityChangeAPIRequest {
 	return &TaobaoBusAgentCityChangeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBusAgentCityChangeAPIRequest) Reset() {
+	r._paramCityChangeRQ = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBusAgentCityChangeAPIRequest) SetParamCityChangeRQ(_paramCityChan
 // GetParamCityChangeRQ ParamCityChangeRQ Getter
 func (r TaobaoBusAgentCityChangeAPIRequest) GetParamCityChangeRQ() *CityChangeRq {
 	return r._paramCityChangeRQ
+}
+
+var poolTaobaoBusAgentCityChangeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBusAgentCityChangeRequest()
+	},
+}
+
+// GetTaobaoBusAgentCityChangeRequest 从 sync.Pool 获取 TaobaoBusAgentCityChangeAPIRequest
+func GetTaobaoBusAgentCityChangeAPIRequest() *TaobaoBusAgentCityChangeAPIRequest {
+	return poolTaobaoBusAgentCityChangeAPIRequest.Get().(*TaobaoBusAgentCityChangeAPIRequest)
+}
+
+// ReleaseTaobaoBusAgentCityChangeAPIRequest 将 TaobaoBusAgentCityChangeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBusAgentCityChangeAPIRequest(v *TaobaoBusAgentCityChangeAPIRequest) {
+	v.Reset()
+	poolTaobaoBusAgentCityChangeAPIRequest.Put(v)
 }

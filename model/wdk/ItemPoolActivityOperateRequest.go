@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ItemPoolActivityOperateRequest 结构体
 type ItemPoolActivityOperateRequest struct {
 	// 阶梯分组
@@ -38,4 +42,38 @@ type ItemPoolActivityOperateRequest struct {
 	ActId int64 `json:"act_id,omitempty" xml:"act_id,omitempty"`
 	// 上不封顶标识，若设置{@link #enableMultiple}=true，则不支持多阶梯配置，且可以叠加优惠
 	EnableMultiple bool `json:"enable_multiple,omitempty" xml:"enable_multiple,omitempty"`
+}
+
+var poolItemPoolActivityOperateRequest = sync.Pool{
+	New: func() any {
+		return new(ItemPoolActivityOperateRequest)
+	},
+}
+
+// GetItemPoolActivityOperateRequest() 从对象池中获取ItemPoolActivityOperateRequest
+func GetItemPoolActivityOperateRequest() *ItemPoolActivityOperateRequest {
+	return poolItemPoolActivityOperateRequest.Get().(*ItemPoolActivityOperateRequest)
+}
+
+// ReleaseItemPoolActivityOperateRequest 释放ItemPoolActivityOperateRequest
+func ReleaseItemPoolActivityOperateRequest(v *ItemPoolActivityOperateRequest) {
+	v.StairGroups = v.StairGroups[:0]
+	v.Terminals = v.Terminals[:0]
+	v.StoreIds = v.StoreIds[:0]
+	v.MemberCrowdCode = v.MemberCrowdCode[:0]
+	v.LogicGroups = v.LogicGroups[:0]
+	v.Channels = v.Channels[:0]
+	v.ActivityName = ""
+	v.CreatorId = ""
+	v.CreatorName = ""
+	v.Description = ""
+	v.OutActId = ""
+	v.Attributes = ""
+	v.PeriodicConfig = nil
+	v.Limit = nil
+	v.StartTime = 0
+	v.EndTime = 0
+	v.ActId = 0
+	v.EnableMultiple = false
+	poolItemPoolActivityOperateRequest.Put(v)
 }

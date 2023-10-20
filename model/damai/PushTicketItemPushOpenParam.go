@@ -1,5 +1,9 @@
 package damai
 
+import (
+	"sync"
+)
+
 // PushTicketItemPushOpenParam 结构体
 type PushTicketItemPushOpenParam struct {
 	// 票品名称
@@ -18,4 +22,28 @@ type PushTicketItemPushOpenParam struct {
 	PerformId int64 `json:"perform_id,omitempty" xml:"perform_id,omitempty"`
 	// 商户id
 	SystemId int64 `json:"system_id,omitempty" xml:"system_id,omitempty"`
+}
+
+var poolPushTicketItemPushOpenParam = sync.Pool{
+	New: func() any {
+		return new(PushTicketItemPushOpenParam)
+	},
+}
+
+// GetPushTicketItemPushOpenParam() 从对象池中获取PushTicketItemPushOpenParam
+func GetPushTicketItemPushOpenParam() *PushTicketItemPushOpenParam {
+	return poolPushTicketItemPushOpenParam.Get().(*PushTicketItemPushOpenParam)
+}
+
+// ReleasePushTicketItemPushOpenParam 释放PushTicketItemPushOpenParam
+func ReleasePushTicketItemPushOpenParam(v *PushTicketItemPushOpenParam) {
+	v.ItemName = ""
+	v.PushTime = ""
+	v.SupplierSecret = ""
+	v.Remark = ""
+	v.ItemId = 0
+	v.ItemPrice = 0
+	v.PerformId = 0
+	v.SystemId = 0
+	poolPushTicketItemPushOpenParam.Put(v)
 }

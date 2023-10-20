@@ -9,11 +9,6 @@ import (
 // alibaba.security.jaq.wsgriskdata.report
 //
 // 无线保镖sdk根据用户的需要，上报数据到聚安全云端
-func AlibabaSecurityJaqWsgriskdataReport(clt *core.SDKClient, req *security.AlibabaSecurityJaqWsgriskdataReportAPIRequest, session string) (*security.AlibabaSecurityJaqWsgriskdataReportAPIResponse, error) {
-	var resp security.AlibabaSecurityJaqWsgriskdataReportAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSecurityJaqWsgriskdataReport(clt *core.SDKClient, req *security.AlibabaSecurityJaqWsgriskdataReportAPIRequest, resp *security.AlibabaSecurityJaqWsgriskdataReportAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

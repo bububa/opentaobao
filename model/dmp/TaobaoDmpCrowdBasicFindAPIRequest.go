@@ -2,6 +2,7 @@ package dmp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoDmpCrowdBasicFindAPIRequest struct {
 // NewTaobaoDmpCrowdBasicFindRequest 初始化TaobaoDmpCrowdBasicFindAPIRequest对象
 func NewTaobaoDmpCrowdBasicFindRequest() *TaobaoDmpCrowdBasicFindAPIRequest {
 	return &TaobaoDmpCrowdBasicFindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDmpCrowdBasicFindAPIRequest) Reset() {
+	r._apiContext = nil
+	r._crowdQuery = nil
+	r._pager = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoDmpCrowdBasicFindAPIRequest) SetPager(_pager *Pager) error {
 // GetPager Pager Getter
 func (r TaobaoDmpCrowdBasicFindAPIRequest) GetPager() *Pager {
 	return r._pager
+}
+
+var poolTaobaoDmpCrowdBasicFindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDmpCrowdBasicFindRequest()
+	},
+}
+
+// GetTaobaoDmpCrowdBasicFindRequest 从 sync.Pool 获取 TaobaoDmpCrowdBasicFindAPIRequest
+func GetTaobaoDmpCrowdBasicFindAPIRequest() *TaobaoDmpCrowdBasicFindAPIRequest {
+	return poolTaobaoDmpCrowdBasicFindAPIRequest.Get().(*TaobaoDmpCrowdBasicFindAPIRequest)
+}
+
+// ReleaseTaobaoDmpCrowdBasicFindAPIRequest 将 TaobaoDmpCrowdBasicFindAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDmpCrowdBasicFindAPIRequest(v *TaobaoDmpCrowdBasicFindAPIRequest) {
+	v.Reset()
+	poolTaobaoDmpCrowdBasicFindAPIRequest.Put(v)
 }

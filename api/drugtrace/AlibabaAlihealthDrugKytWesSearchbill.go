@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.kyt.wes.searchbill
 //
 // 通过时间段批量查询入出库单信息
-func AlibabaAlihealthDrugKytWesSearchbill(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytWesSearchbillAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytWesSearchbillAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytWesSearchbillAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugKytWesSearchbill(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytWesSearchbillAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytWesSearchbillAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

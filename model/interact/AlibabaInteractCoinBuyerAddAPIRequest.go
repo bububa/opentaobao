@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaInteractCoinBuyerAddAPIRequest struct {
 // NewAlibabaInteractCoinBuyerAddRequest 初始化AlibabaInteractCoinBuyerAddAPIRequest对象
 func NewAlibabaInteractCoinBuyerAddRequest() *AlibabaInteractCoinBuyerAddAPIRequest {
 	return &AlibabaInteractCoinBuyerAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractCoinBuyerAddAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaInteractCoinBuyerAddAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaInteractCoinBuyerAddAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaInteractCoinBuyerAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractCoinBuyerAddRequest()
+	},
+}
+
+// GetAlibabaInteractCoinBuyerAddRequest 从 sync.Pool 获取 AlibabaInteractCoinBuyerAddAPIRequest
+func GetAlibabaInteractCoinBuyerAddAPIRequest() *AlibabaInteractCoinBuyerAddAPIRequest {
+	return poolAlibabaInteractCoinBuyerAddAPIRequest.Get().(*AlibabaInteractCoinBuyerAddAPIRequest)
+}
+
+// ReleaseAlibabaInteractCoinBuyerAddAPIRequest 将 AlibabaInteractCoinBuyerAddAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractCoinBuyerAddAPIRequest(v *AlibabaInteractCoinBuyerAddAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractCoinBuyerAddAPIRequest.Put(v)
 }

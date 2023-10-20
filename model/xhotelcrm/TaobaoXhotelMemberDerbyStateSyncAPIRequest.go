@@ -2,6 +2,7 @@ package xhotelcrm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoXhotelMemberDerbyStateSyncAPIRequest struct {
 // NewTaobaoXhotelMemberDerbyStateSyncRequest 初始化TaobaoXhotelMemberDerbyStateSyncAPIRequest对象
 func NewTaobaoXhotelMemberDerbyStateSyncRequest() *TaobaoXhotelMemberDerbyStateSyncAPIRequest {
 	return &TaobaoXhotelMemberDerbyStateSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelMemberDerbyStateSyncAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoXhotelMemberDerbyStateSyncAPIRequest) SetParam(_param *StateSynch
 // GetParam Param Getter
 func (r TaobaoXhotelMemberDerbyStateSyncAPIRequest) GetParam() *StateSynchronizeParam {
 	return r._param
+}
+
+var poolTaobaoXhotelMemberDerbyStateSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelMemberDerbyStateSyncRequest()
+	},
+}
+
+// GetTaobaoXhotelMemberDerbyStateSyncRequest 从 sync.Pool 获取 TaobaoXhotelMemberDerbyStateSyncAPIRequest
+func GetTaobaoXhotelMemberDerbyStateSyncAPIRequest() *TaobaoXhotelMemberDerbyStateSyncAPIRequest {
+	return poolTaobaoXhotelMemberDerbyStateSyncAPIRequest.Get().(*TaobaoXhotelMemberDerbyStateSyncAPIRequest)
+}
+
+// ReleaseTaobaoXhotelMemberDerbyStateSyncAPIRequest 将 TaobaoXhotelMemberDerbyStateSyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelMemberDerbyStateSyncAPIRequest(v *TaobaoXhotelMemberDerbyStateSyncAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelMemberDerbyStateSyncAPIRequest.Put(v)
 }

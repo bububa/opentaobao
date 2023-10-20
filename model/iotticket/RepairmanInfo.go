@@ -1,5 +1,9 @@
 package iotticket
 
+import (
+	"sync"
+)
+
 // RepairmanInfo 结构体
 type RepairmanInfo struct {
 	// 上门维修人员编号
@@ -12,4 +16,25 @@ type RepairmanInfo struct {
 	AppointDate string `json:"appoint_date,omitempty" xml:"appoint_date,omitempty"`
 	// 上门维修地址
 	VisitAddress string `json:"visit_address,omitempty" xml:"visit_address,omitempty"`
+}
+
+var poolRepairmanInfo = sync.Pool{
+	New: func() any {
+		return new(RepairmanInfo)
+	},
+}
+
+// GetRepairmanInfo() 从对象池中获取RepairmanInfo
+func GetRepairmanInfo() *RepairmanInfo {
+	return poolRepairmanInfo.Get().(*RepairmanInfo)
+}
+
+// ReleaseRepairmanInfo 释放RepairmanInfo
+func ReleaseRepairmanInfo(v *RepairmanInfo) {
+	v.RepairmanId = ""
+	v.RepairmanName = ""
+	v.RepairmanPhone = ""
+	v.AppointDate = ""
+	v.VisitAddress = ""
+	poolRepairmanInfo.Put(v)
 }

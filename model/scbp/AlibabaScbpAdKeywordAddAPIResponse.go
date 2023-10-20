@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaScbpAdKeywordAddAPIResponse struct {
 	model.CommonResponse
 	AlibabaScbpAdKeywordAddAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaScbpAdKeywordAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaScbpAdKeywordAddAPIResponseModel).Reset()
 }
 
 // AlibabaScbpAdKeywordAddAPIResponseModel is 外贸直通车加词 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaScbpAdKeywordAddAPIResponseModel struct {
 	RepeatKeyword string `json:"repeat_keyword,omitempty" xml:"repeat_keyword,omitempty"`
 	// 该词是否加入成功
 	IsAdded bool `json:"is_added,omitempty" xml:"is_added,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaScbpAdKeywordAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Keyword = ""
+	m.InvalidType = ""
+	m.RepeatKeyword = ""
+	m.IsAdded = false
+}
+
+var poolAlibabaScbpAdKeywordAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaScbpAdKeywordAddAPIResponse)
+	},
+}
+
+// GetAlibabaScbpAdKeywordAddAPIResponse 从 sync.Pool 获取 AlibabaScbpAdKeywordAddAPIResponse
+func GetAlibabaScbpAdKeywordAddAPIResponse() *AlibabaScbpAdKeywordAddAPIResponse {
+	return poolAlibabaScbpAdKeywordAddAPIResponse.Get().(*AlibabaScbpAdKeywordAddAPIResponse)
+}
+
+// ReleaseAlibabaScbpAdKeywordAddAPIResponse 将 AlibabaScbpAdKeywordAddAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaScbpAdKeywordAddAPIResponse(v *AlibabaScbpAdKeywordAddAPIResponse) {
+	v.Reset()
+	poolAlibabaScbpAdKeywordAddAPIResponse.Put(v)
 }

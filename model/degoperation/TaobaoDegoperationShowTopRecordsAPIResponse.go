@@ -2,6 +2,7 @@ package degoperation
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoDegoperationShowTopRecordsAPIResponse struct {
 	TaobaoDegoperationShowTopRecordsAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoDegoperationShowTopRecordsAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoDegoperationShowTopRecordsAPIResponseModel).Reset()
+}
+
 // TaobaoDegoperationShowTopRecordsAPIResponseModel is 活动中奖记录 成功返回结果
 type TaobaoDegoperationShowTopRecordsAPIResponseModel struct {
 	XMLName xml.Name `xml:"degoperation_show_top_records_response"`
@@ -22,4 +29,27 @@ type TaobaoDegoperationShowTopRecordsAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *BonusResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoDegoperationShowTopRecordsAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoDegoperationShowTopRecordsAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoDegoperationShowTopRecordsAPIResponse)
+	},
+}
+
+// GetTaobaoDegoperationShowTopRecordsAPIResponse 从 sync.Pool 获取 TaobaoDegoperationShowTopRecordsAPIResponse
+func GetTaobaoDegoperationShowTopRecordsAPIResponse() *TaobaoDegoperationShowTopRecordsAPIResponse {
+	return poolTaobaoDegoperationShowTopRecordsAPIResponse.Get().(*TaobaoDegoperationShowTopRecordsAPIResponse)
+}
+
+// ReleaseTaobaoDegoperationShowTopRecordsAPIResponse 将 TaobaoDegoperationShowTopRecordsAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoDegoperationShowTopRecordsAPIResponse(v *TaobaoDegoperationShowTopRecordsAPIResponse) {
+	v.Reset()
+	poolTaobaoDegoperationShowTopRecordsAPIResponse.Put(v)
 }

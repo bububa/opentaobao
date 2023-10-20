@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoItemPromotionRuleGetAPIRequest struct {
 // NewTaobaoItemPromotionRuleGetRequest 初始化TaobaoItemPromotionRuleGetAPIRequest对象
 func NewTaobaoItemPromotionRuleGetRequest() *TaobaoItemPromotionRuleGetAPIRequest {
 	return &TaobaoItemPromotionRuleGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoItemPromotionRuleGetAPIRequest) Reset() {
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoItemPromotionRuleGetAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r TaobaoItemPromotionRuleGetAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTaobaoItemPromotionRuleGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoItemPromotionRuleGetRequest()
+	},
+}
+
+// GetTaobaoItemPromotionRuleGetRequest 从 sync.Pool 获取 TaobaoItemPromotionRuleGetAPIRequest
+func GetTaobaoItemPromotionRuleGetAPIRequest() *TaobaoItemPromotionRuleGetAPIRequest {
+	return poolTaobaoItemPromotionRuleGetAPIRequest.Get().(*TaobaoItemPromotionRuleGetAPIRequest)
+}
+
+// ReleaseTaobaoItemPromotionRuleGetAPIRequest 将 TaobaoItemPromotionRuleGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoItemPromotionRuleGetAPIRequest(v *TaobaoItemPromotionRuleGetAPIRequest) {
+	v.Reset()
+	poolTaobaoItemPromotionRuleGetAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // ServiceStoreDto 结构体
 type ServiceStoreDto struct {
 	// 城市
@@ -74,4 +78,56 @@ type ServiceStoreDto struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 门店id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolServiceStoreDto = sync.Pool{
+	New: func() any {
+		return new(ServiceStoreDto)
+	},
+}
+
+// GetServiceStoreDto() 从对象池中获取ServiceStoreDto
+func GetServiceStoreDto() *ServiceStoreDto {
+	return poolServiceStoreDto.Get().(*ServiceStoreDto)
+}
+
+// ReleaseServiceStoreDto 释放ServiceStoreDto
+func ReleaseServiceStoreDto(v *ServiceStoreDto) {
+	v.AddressCity = ""
+	v.AddressDetail = ""
+	v.AddressDistrict = ""
+	v.AddressProvince = ""
+	v.AddressTown = ""
+	v.AlipayAccount = ""
+	v.AlipayAccountName = ""
+	v.Attributes = ""
+	v.BizType = ""
+	v.BrandCertification = ""
+	v.BusinessHours = ""
+	v.CertificatedBrandIds = ""
+	v.CompanyName = ""
+	v.LegalPersonIdNumber = ""
+	v.LegalPersonName = ""
+	v.ManagerName = ""
+	v.ManagerPhone = ""
+	v.Phone = ""
+	v.ServiceMobile = ""
+	v.ServiceStoreCode = ""
+	v.ServiceStoreName = ""
+	v.SocialCreditCode = ""
+	v.ServiceStoreAlias = ""
+	v.AlipayAccountIdNumber = ""
+	v.LegalPersonIdCardPic = ""
+	v.LegalPersonIdCardPicBack = ""
+	v.FrontPhoto = ""
+	v.LicensePhoto = ""
+	v.AlipayAccountId = ""
+	v.GmtBrandCertificationExpire = ""
+	v.PhotoCollections = ""
+	v.AddressCode = 0
+	v.Latitude = 0
+	v.Longitude = 0
+	v.Type = 0
+	v.Id = 0
+	poolServiceStoreDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.content.tableaudit.querylauncher
 //
 // 运营位管控-查询联盟一体机运营位元数据列表
-func YunosTvpubadminContentTableauditQuerylauncher(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentTableauditQuerylauncherAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentTableauditQuerylauncherAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminContentTableauditQuerylauncherAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminContentTableauditQuerylauncher(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentTableauditQuerylauncherAPIRequest, resp *tvupadmin.YunosTvpubadminContentTableauditQuerylauncherAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

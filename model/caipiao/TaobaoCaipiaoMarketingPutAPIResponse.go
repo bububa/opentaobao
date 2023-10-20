@@ -2,6 +2,7 @@ package caipiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,6 +26,12 @@ type TaobaoCaipiaoMarketingPutAPIResponse struct {
 	TaobaoCaipiaoMarketingPutAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoCaipiaoMarketingPutAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCaipiaoMarketingPutAPIResponseModel).Reset()
+}
+
 // TaobaoCaipiaoMarketingPutAPIResponseModel is 创建或修改商家送彩票活动 成功返回结果
 type TaobaoCaipiaoMarketingPutAPIResponseModel struct {
 	XMLName xml.Name `xml:"caipiao_marketing_put_response"`
@@ -32,4 +39,27 @@ type TaobaoCaipiaoMarketingPutAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 业务操作结果,true成功/false失败
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCaipiaoMarketingPutAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = false
+}
+
+var poolTaobaoCaipiaoMarketingPutAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCaipiaoMarketingPutAPIResponse)
+	},
+}
+
+// GetTaobaoCaipiaoMarketingPutAPIResponse 从 sync.Pool 获取 TaobaoCaipiaoMarketingPutAPIResponse
+func GetTaobaoCaipiaoMarketingPutAPIResponse() *TaobaoCaipiaoMarketingPutAPIResponse {
+	return poolTaobaoCaipiaoMarketingPutAPIResponse.Get().(*TaobaoCaipiaoMarketingPutAPIResponse)
+}
+
+// ReleaseTaobaoCaipiaoMarketingPutAPIResponse 将 TaobaoCaipiaoMarketingPutAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCaipiaoMarketingPutAPIResponse(v *TaobaoCaipiaoMarketingPutAPIResponse) {
+	v.Reset()
+	poolTaobaoCaipiaoMarketingPutAPIResponse.Put(v)
 }

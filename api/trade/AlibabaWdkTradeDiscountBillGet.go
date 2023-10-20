@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.trade.discount.bill.get
 //
 // 商家查询订单优惠账单
-func AlibabaWdkTradeDiscountBillGet(clt *core.SDKClient, req *trade.AlibabaWdkTradeDiscountBillGetAPIRequest, session string) (*trade.AlibabaWdkTradeDiscountBillGetAPIResponse, error) {
-	var resp trade.AlibabaWdkTradeDiscountBillGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkTradeDiscountBillGet(clt *core.SDKClient, req *trade.AlibabaWdkTradeDiscountBillGetAPIRequest, resp *trade.AlibabaWdkTradeDiscountBillGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

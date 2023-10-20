@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // CardChargeCallbackRequestDto 结构体
 type CardChargeCallbackRequestDto struct {
 	// 卡密组（注意：卡密是密文）
@@ -24,4 +28,31 @@ type CardChargeCallbackRequestDto struct {
 	VendorOrderSuccessTime string `json:"vendor_order_success_time,omitempty" xml:"vendor_order_success_time,omitempty"`
 	// 版本号
 	Version string `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolCardChargeCallbackRequestDto = sync.Pool{
+	New: func() any {
+		return new(CardChargeCallbackRequestDto)
+	},
+}
+
+// GetCardChargeCallbackRequestDto() 从对象池中获取CardChargeCallbackRequestDto
+func GetCardChargeCallbackRequestDto() *CardChargeCallbackRequestDto {
+	return poolCardChargeCallbackRequestDto.Get().(*CardChargeCallbackRequestDto)
+}
+
+// ReleaseCardChargeCallbackRequestDto 释放CardChargeCallbackRequestDto
+func ReleaseCardChargeCallbackRequestDto(v *CardChargeCallbackRequestDto) {
+	v.CardInfos = ""
+	v.FailedCode = ""
+	v.FailedReason = ""
+	v.JymOrderNo = ""
+	v.JymOrderType = ""
+	v.VendorId = ""
+	v.VendorOrderNo = ""
+	v.VendorOrderSnap = ""
+	v.VendorOrderStatus = ""
+	v.VendorOrderSuccessTime = ""
+	v.Version = ""
+	poolCardChargeCallbackRequestDto.Put(v)
 }

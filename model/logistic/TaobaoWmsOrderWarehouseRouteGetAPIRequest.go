@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoWmsOrderWarehouseRouteGetAPIRequest struct {
 // NewTaobaoWmsOrderWarehouseRouteGetRequest 初始化TaobaoWmsOrderWarehouseRouteGetAPIRequest对象
 func NewTaobaoWmsOrderWarehouseRouteGetRequest() *TaobaoWmsOrderWarehouseRouteGetAPIRequest {
 	return &TaobaoWmsOrderWarehouseRouteGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWmsOrderWarehouseRouteGetAPIRequest) Reset() {
+	r._orderCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoWmsOrderWarehouseRouteGetAPIRequest) SetOrderCode(_orderCode stri
 // GetOrderCode OrderCode Getter
 func (r TaobaoWmsOrderWarehouseRouteGetAPIRequest) GetOrderCode() string {
 	return r._orderCode
+}
+
+var poolTaobaoWmsOrderWarehouseRouteGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWmsOrderWarehouseRouteGetRequest()
+	},
+}
+
+// GetTaobaoWmsOrderWarehouseRouteGetRequest 从 sync.Pool 获取 TaobaoWmsOrderWarehouseRouteGetAPIRequest
+func GetTaobaoWmsOrderWarehouseRouteGetAPIRequest() *TaobaoWmsOrderWarehouseRouteGetAPIRequest {
+	return poolTaobaoWmsOrderWarehouseRouteGetAPIRequest.Get().(*TaobaoWmsOrderWarehouseRouteGetAPIRequest)
+}
+
+// ReleaseTaobaoWmsOrderWarehouseRouteGetAPIRequest 将 TaobaoWmsOrderWarehouseRouteGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWmsOrderWarehouseRouteGetAPIRequest(v *TaobaoWmsOrderWarehouseRouteGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWmsOrderWarehouseRouteGetAPIRequest.Put(v)
 }

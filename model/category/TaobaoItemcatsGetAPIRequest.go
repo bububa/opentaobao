@@ -2,6 +2,7 @@ package category
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoItemcatsGetAPIRequest struct {
 // NewTaobaoItemcatsGetRequest 初始化TaobaoItemcatsGetAPIRequest对象
 func NewTaobaoItemcatsGetRequest() *TaobaoItemcatsGetAPIRequest {
 	return &TaobaoItemcatsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoItemcatsGetAPIRequest) Reset() {
+	r._cids = r._cids[:0]
+	r._fields = r._fields[:0]
+	r._datetime = ""
+	r._parentCid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoItemcatsGetAPIRequest) SetParentCid(_parentCid int64) error {
 // GetParentCid ParentCid Getter
 func (r TaobaoItemcatsGetAPIRequest) GetParentCid() int64 {
 	return r._parentCid
+}
+
+var poolTaobaoItemcatsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoItemcatsGetRequest()
+	},
+}
+
+// GetTaobaoItemcatsGetRequest 从 sync.Pool 获取 TaobaoItemcatsGetAPIRequest
+func GetTaobaoItemcatsGetAPIRequest() *TaobaoItemcatsGetAPIRequest {
+	return poolTaobaoItemcatsGetAPIRequest.Get().(*TaobaoItemcatsGetAPIRequest)
+}
+
+// ReleaseTaobaoItemcatsGetAPIRequest 将 TaobaoItemcatsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoItemcatsGetAPIRequest(v *TaobaoItemcatsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoItemcatsGetAPIRequest.Put(v)
 }

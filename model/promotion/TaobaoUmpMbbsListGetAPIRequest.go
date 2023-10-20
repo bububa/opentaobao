@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoUmpMbbsListGetAPIRequest struct {
 // NewTaobaoUmpMbbsListGetRequest 初始化TaobaoUmpMbbsListGetAPIRequest对象
 func NewTaobaoUmpMbbsListGetRequest() *TaobaoUmpMbbsListGetAPIRequest {
 	return &TaobaoUmpMbbsListGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUmpMbbsListGetAPIRequest) Reset() {
+	r._ids = r._ids[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoUmpMbbsListGetAPIRequest) SetIds(_ids []int64) error {
 // GetIds Ids Getter
 func (r TaobaoUmpMbbsListGetAPIRequest) GetIds() []int64 {
 	return r._ids
+}
+
+var poolTaobaoUmpMbbsListGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUmpMbbsListGetRequest()
+	},
+}
+
+// GetTaobaoUmpMbbsListGetRequest 从 sync.Pool 获取 TaobaoUmpMbbsListGetAPIRequest
+func GetTaobaoUmpMbbsListGetAPIRequest() *TaobaoUmpMbbsListGetAPIRequest {
+	return poolTaobaoUmpMbbsListGetAPIRequest.Get().(*TaobaoUmpMbbsListGetAPIRequest)
+}
+
+// ReleaseTaobaoUmpMbbsListGetAPIRequest 将 TaobaoUmpMbbsListGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUmpMbbsListGetAPIRequest(v *TaobaoUmpMbbsListGetAPIRequest) {
+	v.Reset()
+	poolTaobaoUmpMbbsListGetAPIRequest.Put(v)
 }

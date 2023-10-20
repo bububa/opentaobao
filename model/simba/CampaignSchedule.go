@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // CampaignSchedule 结构体
 type CampaignSchedule struct {
 	// 主人昵称
@@ -12,4 +16,25 @@ type CampaignSchedule struct {
 	ModifiedTime string `json:"modified_time,omitempty" xml:"modified_time,omitempty"`
 	// 推广计划ID
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
+}
+
+var poolCampaignSchedule = sync.Pool{
+	New: func() any {
+		return new(CampaignSchedule)
+	},
+}
+
+// GetCampaignSchedule() 从对象池中获取CampaignSchedule
+func GetCampaignSchedule() *CampaignSchedule {
+	return poolCampaignSchedule.Get().(*CampaignSchedule)
+}
+
+// ReleaseCampaignSchedule 释放CampaignSchedule
+func ReleaseCampaignSchedule(v *CampaignSchedule) {
+	v.Nick = ""
+	v.Schedule = ""
+	v.CreateTime = ""
+	v.ModifiedTime = ""
+	v.CampaignId = 0
+	poolCampaignSchedule.Put(v)
 }

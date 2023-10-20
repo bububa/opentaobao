@@ -9,11 +9,6 @@ import (
 // alibaba.einvoice.tax.opt.salaryresult.query
 //
 // 查询发薪结果
-func AlibabaEinvoiceTaxOptSalaryresultQuery(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest, session string) (*einvoice.AlibabaEinvoiceTaxOptSalaryresultQueryAPIResponse, error) {
-	var resp einvoice.AlibabaEinvoiceTaxOptSalaryresultQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEinvoiceTaxOptSalaryresultQuery(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest, resp *einvoice.AlibabaEinvoiceTaxOptSalaryresultQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

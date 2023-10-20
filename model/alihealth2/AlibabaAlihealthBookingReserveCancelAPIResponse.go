@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthBookingReserveCancelAPIResponse struct {
 	AlibabaAlihealthBookingReserveCancelAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthBookingReserveCancelAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthBookingReserveCancelAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthBookingReserveCancelAPIResponseModel is 取消预约 成功返回结果
 type AlibabaAlihealthBookingReserveCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_booking_reserve_cancel_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihealthBookingReserveCancelAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// alinkappserver系统返回的通用结果类
 	Result *ServiceResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthBookingReserveCancelAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthBookingReserveCancelAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthBookingReserveCancelAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthBookingReserveCancelAPIResponse 从 sync.Pool 获取 AlibabaAlihealthBookingReserveCancelAPIResponse
+func GetAlibabaAlihealthBookingReserveCancelAPIResponse() *AlibabaAlihealthBookingReserveCancelAPIResponse {
+	return poolAlibabaAlihealthBookingReserveCancelAPIResponse.Get().(*AlibabaAlihealthBookingReserveCancelAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthBookingReserveCancelAPIResponse 将 AlibabaAlihealthBookingReserveCancelAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthBookingReserveCancelAPIResponse(v *AlibabaAlihealthBookingReserveCancelAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthBookingReserveCancelAPIResponse.Put(v)
 }

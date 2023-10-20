@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosTvpubadminContentVideoGetauditlistAPIRequest struct {
 // NewYunosTvpubadminContentVideoGetauditlistRequest 初始化YunosTvpubadminContentVideoGetauditlistAPIRequest对象
 func NewYunosTvpubadminContentVideoGetauditlistRequest() *YunosTvpubadminContentVideoGetauditlistAPIRequest {
 	return &YunosTvpubadminContentVideoGetauditlistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminContentVideoGetauditlistAPIRequest) Reset() {
+	r._query = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosTvpubadminContentVideoGetauditlistAPIRequest) SetQuery(_query stri
 // GetQuery Query Getter
 func (r YunosTvpubadminContentVideoGetauditlistAPIRequest) GetQuery() string {
 	return r._query
+}
+
+var poolYunosTvpubadminContentVideoGetauditlistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminContentVideoGetauditlistRequest()
+	},
+}
+
+// GetYunosTvpubadminContentVideoGetauditlistRequest 从 sync.Pool 获取 YunosTvpubadminContentVideoGetauditlistAPIRequest
+func GetYunosTvpubadminContentVideoGetauditlistAPIRequest() *YunosTvpubadminContentVideoGetauditlistAPIRequest {
+	return poolYunosTvpubadminContentVideoGetauditlistAPIRequest.Get().(*YunosTvpubadminContentVideoGetauditlistAPIRequest)
+}
+
+// ReleaseYunosTvpubadminContentVideoGetauditlistAPIRequest 将 YunosTvpubadminContentVideoGetauditlistAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminContentVideoGetauditlistAPIRequest(v *YunosTvpubadminContentVideoGetauditlistAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminContentVideoGetauditlistAPIRequest.Put(v)
 }

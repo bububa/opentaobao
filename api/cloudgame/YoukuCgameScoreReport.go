@@ -9,11 +9,6 @@ import (
 // youku.cgame.score.report
 //
 // 云游戏战绩上传API
-func YoukuCgameScoreReport(clt *core.SDKClient, req *cloudgame.YoukuCgameScoreReportAPIRequest, session string) (*cloudgame.YoukuCgameScoreReportAPIResponse, error) {
-	var resp cloudgame.YoukuCgameScoreReportAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YoukuCgameScoreReport(clt *core.SDKClient, req *cloudgame.YoukuCgameScoreReportAPIRequest, resp *cloudgame.YoukuCgameScoreReportAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

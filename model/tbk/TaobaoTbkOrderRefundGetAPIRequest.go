@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTbkOrderRefundGetAPIRequest struct {
 // NewTaobaoTbkOrderRefundGetRequest 初始化TaobaoTbkOrderRefundGetAPIRequest对象
 func NewTaobaoTbkOrderRefundGetRequest() *TaobaoTbkOrderRefundGetAPIRequest {
 	return &TaobaoTbkOrderRefundGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkOrderRefundGetAPIRequest) Reset() {
+	r._publisherRefundOrderQueryOption = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTbkOrderRefundGetAPIRequest) SetPublisherRefundOrderQueryOption(_
 // GetPublisherRefundOrderQueryOption PublisherRefundOrderQueryOption Getter
 func (r TaobaoTbkOrderRefundGetAPIRequest) GetPublisherRefundOrderQueryOption() *PublisherRefundOrderQueryOption {
 	return r._publisherRefundOrderQueryOption
+}
+
+var poolTaobaoTbkOrderRefundGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkOrderRefundGetRequest()
+	},
+}
+
+// GetTaobaoTbkOrderRefundGetRequest 从 sync.Pool 获取 TaobaoTbkOrderRefundGetAPIRequest
+func GetTaobaoTbkOrderRefundGetAPIRequest() *TaobaoTbkOrderRefundGetAPIRequest {
+	return poolTaobaoTbkOrderRefundGetAPIRequest.Get().(*TaobaoTbkOrderRefundGetAPIRequest)
+}
+
+// ReleaseTaobaoTbkOrderRefundGetAPIRequest 将 TaobaoTbkOrderRefundGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkOrderRefundGetAPIRequest(v *TaobaoTbkOrderRefundGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkOrderRefundGetAPIRequest.Put(v)
 }

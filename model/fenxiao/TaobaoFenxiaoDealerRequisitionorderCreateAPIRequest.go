@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest struct {
 // NewTaobaoFenxiaoDealerRequisitionorderCreateRequest 初始化TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest对象
 func NewTaobaoFenxiaoDealerRequisitionorderCreateRequest() *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest {
 	return &TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) Reset() {
+	r._orderDetail = r._orderDetail[:0]
+	r._logisticsType = ""
+	r._province = ""
+	r._city = ""
+	r._district = ""
+	r._address = ""
+	r._postCode = ""
+	r._phone = ""
+	r._mobile = ""
+	r._buyerName = ""
+	r._idCardNumber = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetIdCardNumber(_i
 // GetIdCardNumber IdCardNumber Getter
 func (r TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) GetIdCardNumber() string {
 	return r._idCardNumber
+}
+
+var poolTaobaoFenxiaoDealerRequisitionorderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoDealerRequisitionorderCreateRequest()
+	},
+}
+
+// GetTaobaoFenxiaoDealerRequisitionorderCreateRequest 从 sync.Pool 获取 TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest
+func GetTaobaoFenxiaoDealerRequisitionorderCreateAPIRequest() *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest {
+	return poolTaobaoFenxiaoDealerRequisitionorderCreateAPIRequest.Get().(*TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoDealerRequisitionorderCreateAPIRequest 将 TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoDealerRequisitionorderCreateAPIRequest(v *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoDealerRequisitionorderCreateAPIRequest.Put(v)
 }

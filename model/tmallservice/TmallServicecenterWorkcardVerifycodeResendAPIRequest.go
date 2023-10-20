@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallServicecenterWorkcardVerifycodeResendAPIRequest struct {
 // NewTmallServicecenterWorkcardVerifycodeResendRequest 初始化TmallServicecenterWorkcardVerifycodeResendAPIRequest对象
 func NewTmallServicecenterWorkcardVerifycodeResendRequest() *TmallServicecenterWorkcardVerifycodeResendAPIRequest {
 	return &TmallServicecenterWorkcardVerifycodeResendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkcardVerifycodeResendAPIRequest) Reset() {
+	r._workcardId = 0
+	r._serviceStoreId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallServicecenterWorkcardVerifycodeResendAPIRequest) SetServiceStoreId
 // GetServiceStoreId ServiceStoreId Getter
 func (r TmallServicecenterWorkcardVerifycodeResendAPIRequest) GetServiceStoreId() int64 {
 	return r._serviceStoreId
+}
+
+var poolTmallServicecenterWorkcardVerifycodeResendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkcardVerifycodeResendRequest()
+	},
+}
+
+// GetTmallServicecenterWorkcardVerifycodeResendRequest 从 sync.Pool 获取 TmallServicecenterWorkcardVerifycodeResendAPIRequest
+func GetTmallServicecenterWorkcardVerifycodeResendAPIRequest() *TmallServicecenterWorkcardVerifycodeResendAPIRequest {
+	return poolTmallServicecenterWorkcardVerifycodeResendAPIRequest.Get().(*TmallServicecenterWorkcardVerifycodeResendAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkcardVerifycodeResendAPIRequest 将 TmallServicecenterWorkcardVerifycodeResendAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkcardVerifycodeResendAPIRequest(v *TmallServicecenterWorkcardVerifycodeResendAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkcardVerifycodeResendAPIRequest.Put(v)
 }

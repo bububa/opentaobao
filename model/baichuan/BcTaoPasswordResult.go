@@ -1,5 +1,9 @@
 package baichuan
 
+import (
+	"sync"
+)
+
 // BcTaoPasswordResult 结构体
 type BcTaoPasswordResult struct {
 	// 淘口令-文案
@@ -22,4 +26,30 @@ type BcTaoPasswordResult struct {
 	ThumbPicUrl string `json:"thumb_pic_url,omitempty" xml:"thumb_pic_url,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolBcTaoPasswordResult = sync.Pool{
+	New: func() any {
+		return new(BcTaoPasswordResult)
+	},
+}
+
+// GetBcTaoPasswordResult() 从对象池中获取BcTaoPasswordResult
+func GetBcTaoPasswordResult() *BcTaoPasswordResult {
+	return poolBcTaoPasswordResult.Get().(*BcTaoPasswordResult)
+}
+
+// ReleaseBcTaoPasswordResult 释放BcTaoPasswordResult
+func ReleaseBcTaoPasswordResult(v *BcTaoPasswordResult) {
+	v.Content = ""
+	v.Title = ""
+	v.Price = ""
+	v.PicUrl = ""
+	v.ResultCode = ""
+	v.ResultMessage = ""
+	v.Url = ""
+	v.NativeUrl = ""
+	v.ThumbPicUrl = ""
+	v.Success = false
+	poolBcTaoPasswordResult.Put(v)
 }

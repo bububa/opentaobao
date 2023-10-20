@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,14 @@ type TaobaoXhotelCityCoordinatesBatchUploadAPIRequest struct {
 // NewTaobaoXhotelCityCoordinatesBatchUploadRequest 初始化TaobaoXhotelCityCoordinatesBatchUploadAPIRequest对象
 func NewTaobaoXhotelCityCoordinatesBatchUploadRequest() *TaobaoXhotelCityCoordinatesBatchUploadAPIRequest {
 	return &TaobaoXhotelCityCoordinatesBatchUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelCityCoordinatesBatchUploadAPIRequest) Reset() {
+	r._coordinateList = r._coordinateList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *TaobaoXhotelCityCoordinatesBatchUploadAPIRequest) SetCoordinateList(_co
 // GetCoordinateList CoordinateList Getter
 func (r TaobaoXhotelCityCoordinatesBatchUploadAPIRequest) GetCoordinateList() []Coordinate {
 	return r._coordinateList
+}
+
+var poolTaobaoXhotelCityCoordinatesBatchUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelCityCoordinatesBatchUploadRequest()
+	},
+}
+
+// GetTaobaoXhotelCityCoordinatesBatchUploadRequest 从 sync.Pool 获取 TaobaoXhotelCityCoordinatesBatchUploadAPIRequest
+func GetTaobaoXhotelCityCoordinatesBatchUploadAPIRequest() *TaobaoXhotelCityCoordinatesBatchUploadAPIRequest {
+	return poolTaobaoXhotelCityCoordinatesBatchUploadAPIRequest.Get().(*TaobaoXhotelCityCoordinatesBatchUploadAPIRequest)
+}
+
+// ReleaseTaobaoXhotelCityCoordinatesBatchUploadAPIRequest 将 TaobaoXhotelCityCoordinatesBatchUploadAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelCityCoordinatesBatchUploadAPIRequest(v *TaobaoXhotelCityCoordinatesBatchUploadAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelCityCoordinatesBatchUploadAPIRequest.Put(v)
 }

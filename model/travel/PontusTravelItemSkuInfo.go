@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // PontusTravelItemSkuInfo 结构体
 type PontusTravelItemSkuInfo struct {
 	// 套餐的日历价格库存。如果是预约商品，只需要填写一个Price，并且，不需要填写Price中的date字段不填，且预约商品只有成人价格和库存。
@@ -24,4 +28,31 @@ type PontusTravelItemSkuInfo struct {
 	PeopleNumber int64 `json:"people_number,omitempty" xml:"people_number,omitempty"`
 	// 下单人数是否与房型人数一致
 	OrderCountMatch bool `json:"order_count_match,omitempty" xml:"order_count_match,omitempty"`
+}
+
+var poolPontusTravelItemSkuInfo = sync.Pool{
+	New: func() any {
+		return new(PontusTravelItemSkuInfo)
+	},
+}
+
+// GetPontusTravelItemSkuInfo() 从对象池中获取PontusTravelItemSkuInfo
+func GetPontusTravelItemSkuInfo() *PontusTravelItemSkuInfo {
+	return poolPontusTravelItemSkuInfo.Get().(*PontusTravelItemSkuInfo)
+}
+
+// ReleasePontusTravelItemSkuInfo 释放PontusTravelItemSkuInfo
+func ReleasePontusTravelItemSkuInfo(v *PontusTravelItemSkuInfo) {
+	v.Prices = v.Prices[:0]
+	v.Products = v.Products[:0]
+	v.OuterSkuId = ""
+	v.PackageDesc = ""
+	v.PackageName = ""
+	v.Combos = ""
+	v.RoomTypeName = ""
+	v.RoomTypeId = 0
+	v.RoomType = 0
+	v.PeopleNumber = 0
+	v.OrderCountMatch = false
+	poolPontusTravelItemSkuInfo.Put(v)
 }

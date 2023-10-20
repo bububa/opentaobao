@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // AlibabaMosBunkBunkinfoQuerybunkResultDo 结构体
 type AlibabaMosBunkBunkinfoQuerybunkResultDo struct {
 	// 返回数据
@@ -20,4 +24,29 @@ type AlibabaMosBunkBunkinfoQuerybunkResultDo struct {
 	ErrCode int64 `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 调用是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaMosBunkBunkinfoQuerybunkResultDo = sync.Pool{
+	New: func() any {
+		return new(AlibabaMosBunkBunkinfoQuerybunkResultDo)
+	},
+}
+
+// GetAlibabaMosBunkBunkinfoQuerybunkResultDo() 从对象池中获取AlibabaMosBunkBunkinfoQuerybunkResultDo
+func GetAlibabaMosBunkBunkinfoQuerybunkResultDo() *AlibabaMosBunkBunkinfoQuerybunkResultDo {
+	return poolAlibabaMosBunkBunkinfoQuerybunkResultDo.Get().(*AlibabaMosBunkBunkinfoQuerybunkResultDo)
+}
+
+// ReleaseAlibabaMosBunkBunkinfoQuerybunkResultDo 释放AlibabaMosBunkBunkinfoQuerybunkResultDo
+func ReleaseAlibabaMosBunkBunkinfoQuerybunkResultDo(v *AlibabaMosBunkBunkinfoQuerybunkResultDo) {
+	v.DataList = v.DataList[:0]
+	v.Titles = v.Titles[:0]
+	v.TraceId = ""
+	v.Extra = ""
+	v.ErrMsg = ""
+	v.ResultCode = ""
+	v.Total = 0
+	v.ErrCode = 0
+	v.Success = false
+	poolAlibabaMosBunkBunkinfoQuerybunkResultDo.Put(v)
 }

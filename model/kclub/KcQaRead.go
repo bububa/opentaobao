@@ -1,5 +1,9 @@
 package kclub
 
+import (
+	"sync"
+)
+
 // KcQaRead 结构体
 type KcQaRead struct {
 	// 子知识
@@ -30,4 +34,34 @@ type KcQaRead struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 问题id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolKcQaRead = sync.Pool{
+	New: func() any {
+		return new(KcQaRead)
+	},
+}
+
+// GetKcQaRead() 从对象池中获取KcQaRead
+func GetKcQaRead() *KcQaRead {
+	return poolKcQaRead.Get().(*KcQaRead)
+}
+
+// ReleaseKcQaRead 释放KcQaRead
+func ReleaseKcQaRead(v *KcQaRead) {
+	v.ChildQas = v.ChildQas[:0]
+	v.Solutions = v.Solutions[:0]
+	v.ParentCats = v.ParentCats[:0]
+	v.EntityCode = ""
+	v.CatPath = ""
+	v.Title = ""
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.Context = 0
+	v.QuestionType = 0
+	v.CatId = 0
+	v.TenantId = 0
+	v.Status = 0
+	v.Id = 0
+	poolKcQaRead.Put(v)
 }

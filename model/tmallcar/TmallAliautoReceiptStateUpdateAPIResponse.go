@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallAliautoReceiptStateUpdateAPIResponse struct {
 	TmallAliautoReceiptStateUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallAliautoReceiptStateUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallAliautoReceiptStateUpdateAPIResponseModel).Reset()
+}
+
 // TmallAliautoReceiptStateUpdateAPIResponseModel is 服务工单状态更新 成功返回结果
 type TmallAliautoReceiptStateUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_aliauto_receipt_state_update_response"`
@@ -22,4 +29,27 @@ type TmallAliautoReceiptStateUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回包装类
 	Result *BaseResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallAliautoReceiptStateUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallAliautoReceiptStateUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallAliautoReceiptStateUpdateAPIResponse)
+	},
+}
+
+// GetTmallAliautoReceiptStateUpdateAPIResponse 从 sync.Pool 获取 TmallAliautoReceiptStateUpdateAPIResponse
+func GetTmallAliautoReceiptStateUpdateAPIResponse() *TmallAliautoReceiptStateUpdateAPIResponse {
+	return poolTmallAliautoReceiptStateUpdateAPIResponse.Get().(*TmallAliautoReceiptStateUpdateAPIResponse)
+}
+
+// ReleaseTmallAliautoReceiptStateUpdateAPIResponse 将 TmallAliautoReceiptStateUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTmallAliautoReceiptStateUpdateAPIResponse(v *TmallAliautoReceiptStateUpdateAPIResponse) {
+	v.Reset()
+	poolTmallAliautoReceiptStateUpdateAPIResponse.Put(v)
 }

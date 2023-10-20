@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Transferdetaildtolist 结构体
 type Transferdetaildtolist struct {
 	// 品基本信息
@@ -12,4 +16,25 @@ type Transferdetaildtolist struct {
 	UnitType string `json:"unit_type,omitempty" xml:"unit_type,omitempty"`
 	// 出库lbx-下发仓、仓接单、部分出、全出 	 * 入库lbx-下发仓、仓接单、部分入、全入
 	FulfilUniBizStatus string `json:"fulfil_uni_biz_status,omitempty" xml:"fulfil_uni_biz_status,omitempty"`
+}
+
+var poolTransferdetaildtolist = sync.Pool{
+	New: func() any {
+		return new(Transferdetaildtolist)
+	},
+}
+
+// GetTransferdetaildtolist() 从对象池中获取Transferdetaildtolist
+func GetTransferdetaildtolist() *Transferdetaildtolist {
+	return poolTransferdetaildtolist.Get().(*Transferdetaildtolist)
+}
+
+// ReleaseTransferdetaildtolist 释放Transferdetaildtolist
+func ReleaseTransferdetaildtolist(v *Transferdetaildtolist) {
+	v.TransferUnitOrderItemList = v.TransferUnitOrderItemList[:0]
+	v.StoreCode = ""
+	v.UnitBizCode = ""
+	v.UnitType = ""
+	v.FulfilUniBizStatus = ""
+	poolTransferdetaildtolist.Put(v)
 }

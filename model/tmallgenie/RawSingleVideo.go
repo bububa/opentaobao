@@ -1,5 +1,9 @@
 package tmallgenie
 
+import (
+	"sync"
+)
+
 // RawSingleVideo 结构体
 type RawSingleVideo struct {
 	// 系统标签ID，取值参见文档说明
@@ -78,4 +82,58 @@ type RawSingleVideo struct {
 	CostPrice int64 `json:"cost_price,omitempty" xml:"cost_price,omitempty"`
 	// 试看秒数，若支持试看填1，否则填0
 	AuditionSecond int64 `json:"audition_second,omitempty" xml:"audition_second,omitempty"`
+}
+
+var poolRawSingleVideo = sync.Pool{
+	New: func() any {
+		return new(RawSingleVideo)
+	},
+}
+
+// GetRawSingleVideo() 从对象池中获取RawSingleVideo
+func GetRawSingleVideo() *RawSingleVideo {
+	return poolRawSingleVideo.Get().(*RawSingleVideo)
+}
+
+// ReleaseRawSingleVideo 释放RawSingleVideo
+func ReleaseRawSingleVideo(v *RawSingleVideo) {
+	v.TagIds = v.TagIds[:0]
+	v.ActorName = v.ActorName[:0]
+	v.DirectorName = v.DirectorName[:0]
+	v.Alias = v.Alias[:0]
+	v.SupportDefinition = v.SupportDefinition[:0]
+	v.ProducerName = v.ProducerName[:0]
+	v.UploaderName = v.UploaderName[:0]
+	v.AlbumId = ""
+	v.Description = ""
+	v.Language = ""
+	v.Title = ""
+	v.PlayUrl = ""
+	v.SubTitle = ""
+	v.Id = ""
+	v.Area = ""
+	v.VCoverUrl = ""
+	v.OupgcType = ""
+	v.CoverUrl = ""
+	v.Operation = ""
+	v.ExtendInfo = ""
+	v.ReleaseTime = 0
+	v.ChargeType = 0
+	v.LikeCount = 0
+	v.Duration = 0
+	v.IsExclusive = 0
+	v.ValidEndTime = 0
+	v.ForwardCount = 0
+	v.CommonCateId = 0
+	v.ValidStartTime = 0
+	v.CollectCount = 0
+	v.CommentCount = 0
+	v.PlayCount = 0
+	v.OrderIndex = 0
+	v.ContentScore = 0
+	v.SuggestMaxPrice = 0
+	v.SuggestMinPrice = 0
+	v.CostPrice = 0
+	v.AuditionSecond = 0
+	poolRawSingleVideo.Put(v)
 }

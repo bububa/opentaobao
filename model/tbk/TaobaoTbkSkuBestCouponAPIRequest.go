@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTbkSkuBestCouponAPIRequest struct {
 // NewTaobaoTbkSkuBestCouponRequest 初始化TaobaoTbkSkuBestCouponAPIRequest对象
 func NewTaobaoTbkSkuBestCouponRequest() *TaobaoTbkSkuBestCouponAPIRequest {
 	return &TaobaoTbkSkuBestCouponAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkSkuBestCouponAPIRequest) Reset() {
+	r._skuId = 0
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTbkSkuBestCouponAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r TaobaoTbkSkuBestCouponAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTaobaoTbkSkuBestCouponAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkSkuBestCouponRequest()
+	},
+}
+
+// GetTaobaoTbkSkuBestCouponRequest 从 sync.Pool 获取 TaobaoTbkSkuBestCouponAPIRequest
+func GetTaobaoTbkSkuBestCouponAPIRequest() *TaobaoTbkSkuBestCouponAPIRequest {
+	return poolTaobaoTbkSkuBestCouponAPIRequest.Get().(*TaobaoTbkSkuBestCouponAPIRequest)
+}
+
+// ReleaseTaobaoTbkSkuBestCouponAPIRequest 将 TaobaoTbkSkuBestCouponAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkSkuBestCouponAPIRequest(v *TaobaoTbkSkuBestCouponAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkSkuBestCouponAPIRequest.Put(v)
 }

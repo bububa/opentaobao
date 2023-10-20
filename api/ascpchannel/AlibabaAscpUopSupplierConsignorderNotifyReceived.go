@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.uop.supplier.consignorder.notify.received
 //
 // ASCP通过该接口接收商家仓开始接单生产订单对应的物流订单信息
-func AlibabaAscpUopSupplierConsignorderNotifyReceived(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest, session string) (*ascpchannel.AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpUopSupplierConsignorderNotifyReceived(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest, resp *ascpchannel.AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package seaking
 
+import (
+	"sync"
+)
+
 // ImageTranslateDetailDto 结构体
 type ImageTranslateDetailDto struct {
 	// 目标语种
@@ -14,4 +18,26 @@ type ImageTranslateDetailDto struct {
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// 子任务编号，从1开始，必须连续
 	Idx int64 `json:"idx,omitempty" xml:"idx,omitempty"`
+}
+
+var poolImageTranslateDetailDto = sync.Pool{
+	New: func() any {
+		return new(ImageTranslateDetailDto)
+	},
+}
+
+// GetImageTranslateDetailDto() 从对象池中获取ImageTranslateDetailDto
+func GetImageTranslateDetailDto() *ImageTranslateDetailDto {
+	return poolImageTranslateDetailDto.Get().(*ImageTranslateDetailDto)
+}
+
+// ReleaseImageTranslateDetailDto 释放ImageTranslateDetailDto
+func ReleaseImageTranslateDetailDto(v *ImageTranslateDetailDto) {
+	v.TargetLang = ""
+	v.SourceLang = ""
+	v.ImageUrl = ""
+	v.Platform = ""
+	v.ProductId = 0
+	v.Idx = 0
+	poolImageTranslateDetailDto.Put(v)
 }

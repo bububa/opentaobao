@@ -2,6 +2,7 @@ package damai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDamaiMevOpenDeleteprojectAPIRequest struct {
 // NewAlibabaDamaiMevOpenDeleteprojectRequest 初始化AlibabaDamaiMevOpenDeleteprojectAPIRequest对象
 func NewAlibabaDamaiMevOpenDeleteprojectRequest() *AlibabaDamaiMevOpenDeleteprojectAPIRequest {
 	return &AlibabaDamaiMevOpenDeleteprojectAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiMevOpenDeleteprojectAPIRequest) Reset() {
+	r._deleteProjectParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDamaiMevOpenDeleteprojectAPIRequest) SetDeleteProjectParam(_dele
 // GetDeleteProjectParam DeleteProjectParam Getter
 func (r AlibabaDamaiMevOpenDeleteprojectAPIRequest) GetDeleteProjectParam() *ProjectIdOpenParam {
 	return r._deleteProjectParam
+}
+
+var poolAlibabaDamaiMevOpenDeleteprojectAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiMevOpenDeleteprojectRequest()
+	},
+}
+
+// GetAlibabaDamaiMevOpenDeleteprojectRequest 从 sync.Pool 获取 AlibabaDamaiMevOpenDeleteprojectAPIRequest
+func GetAlibabaDamaiMevOpenDeleteprojectAPIRequest() *AlibabaDamaiMevOpenDeleteprojectAPIRequest {
+	return poolAlibabaDamaiMevOpenDeleteprojectAPIRequest.Get().(*AlibabaDamaiMevOpenDeleteprojectAPIRequest)
+}
+
+// ReleaseAlibabaDamaiMevOpenDeleteprojectAPIRequest 将 AlibabaDamaiMevOpenDeleteprojectAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiMevOpenDeleteprojectAPIRequest(v *AlibabaDamaiMevOpenDeleteprojectAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiMevOpenDeleteprojectAPIRequest.Put(v)
 }

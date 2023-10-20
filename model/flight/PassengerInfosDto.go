@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // PassengerInfosDto 结构体
 type PassengerInfosDto struct {
 	// 乘机人基础信息
@@ -16,4 +20,27 @@ type PassengerInfosDto struct {
 	SalePrice int64 `json:"sale_price,omitempty" xml:"sale_price,omitempty"`
 	// 票面价
 	TicketPrice int64 `json:"ticket_price,omitempty" xml:"ticket_price,omitempty"`
+}
+
+var poolPassengerInfosDto = sync.Pool{
+	New: func() any {
+		return new(PassengerInfosDto)
+	},
+}
+
+// GetPassengerInfosDto() 从对象池中获取PassengerInfosDto
+func GetPassengerInfosDto() *PassengerInfosDto {
+	return poolPassengerInfosDto.Get().(*PassengerInfosDto)
+}
+
+// ReleasePassengerInfosDto 释放PassengerInfosDto
+func ReleasePassengerInfosDto(v *PassengerInfosDto) {
+	v.PassengerBaseInfos = v.PassengerBaseInfos[:0]
+	v.BuildPrice = 0
+	v.Nums = 0
+	v.OilPrice = 0
+	v.PassengerType = 0
+	v.SalePrice = 0
+	v.TicketPrice = 0
+	poolPassengerInfosDto.Put(v)
 }

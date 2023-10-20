@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type YunosTvpubadminUserRightsAPIRequest struct {
 // NewYunosTvpubadminUserRightsRequest 初始化YunosTvpubadminUserRightsAPIRequest对象
 func NewYunosTvpubadminUserRightsRequest() *YunosTvpubadminUserRightsAPIRequest {
 	return &YunosTvpubadminUserRightsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminUserRightsAPIRequest) Reset() {
+	r._uid = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *YunosTvpubadminUserRightsAPIRequest) SetPageSize(_pageSize int64) error
 // GetPageSize PageSize Getter
 func (r YunosTvpubadminUserRightsAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolYunosTvpubadminUserRightsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminUserRightsRequest()
+	},
+}
+
+// GetYunosTvpubadminUserRightsRequest 从 sync.Pool 获取 YunosTvpubadminUserRightsAPIRequest
+func GetYunosTvpubadminUserRightsAPIRequest() *YunosTvpubadminUserRightsAPIRequest {
+	return poolYunosTvpubadminUserRightsAPIRequest.Get().(*YunosTvpubadminUserRightsAPIRequest)
+}
+
+// ReleaseYunosTvpubadminUserRightsAPIRequest 将 YunosTvpubadminUserRightsAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminUserRightsAPIRequest(v *YunosTvpubadminUserRightsAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminUserRightsAPIRequest.Put(v)
 }

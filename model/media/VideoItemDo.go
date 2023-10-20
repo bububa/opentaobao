@@ -1,5 +1,9 @@
 package media
 
+import (
+	"sync"
+)
+
 // VideoItemDo 结构体
 type VideoItemDo struct {
 	// 视频封面
@@ -10,4 +14,24 @@ type VideoItemDo struct {
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 视频时长
 	Duration int64 `json:"duration,omitempty" xml:"duration,omitempty"`
+}
+
+var poolVideoItemDo = sync.Pool{
+	New: func() any {
+		return new(VideoItemDo)
+	},
+}
+
+// GetVideoItemDo() 从对象池中获取VideoItemDo
+func GetVideoItemDo() *VideoItemDo {
+	return poolVideoItemDo.Get().(*VideoItemDo)
+}
+
+// ReleaseVideoItemDo 释放VideoItemDo
+func ReleaseVideoItemDo(v *VideoItemDo) {
+	v.CoverUrl = ""
+	v.UploadTime = ""
+	v.Title = ""
+	v.Duration = 0
+	poolVideoItemDo.Put(v)
 }

@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // FullTravelItem 结构体
 type FullTravelItem struct {
 	// 预定规则
@@ -42,4 +46,40 @@ type FullTravelItem struct {
 	TcwlItemExt *TcwlItemExt `json:"tcwl_item_ext,omitempty" xml:"tcwl_item_ext,omitempty"`
 	// 航旅度假TOP API3.0 邮轮扩展信息结构
 	CruiseItemExt *CruiseItemExt `json:"cruise_item_ext,omitempty" xml:"cruise_item_ext,omitempty"`
+}
+
+var poolFullTravelItem = sync.Pool{
+	New: func() any {
+		return new(FullTravelItem)
+	},
+}
+
+// GetFullTravelItem() 从对象池中获取FullTravelItem
+func GetFullTravelItem() *FullTravelItem {
+	return poolFullTravelItem.Get().(*FullTravelItem)
+}
+
+// ReleaseFullTravelItem 释放FullTravelItem
+func ReleaseFullTravelItem(v *FullTravelItem) {
+	v.BookingRules = v.BookingRules[:0]
+	v.Itineraries = v.Itineraries[:0]
+	v.SkuInfos = v.SkuInfos[:0]
+	v.HighLights = v.HighLights[:0]
+	v.Created = ""
+	v.Modified = ""
+	v.SellerNick = ""
+	v.Features = ""
+	v.RefTrip = ""
+	v.BaseInfo = nil
+	v.FreedomItemExt = nil
+	v.GroupItemExt = nil
+	v.ItemType = 0
+	v.ItemStatus = 0
+	v.ItemId = 0
+	v.RefundInfo = nil
+	v.SaleInfo = nil
+	v.SellerId = 0
+	v.TcwlItemExt = nil
+	v.CruiseItemExt = nil
+	poolFullTravelItem.Put(v)
 }

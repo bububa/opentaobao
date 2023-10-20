@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTopAuthTokenRefreshAPIRequest struct {
 // NewTaobaoTopAuthTokenRefreshRequest 初始化TaobaoTopAuthTokenRefreshAPIRequest对象
 func NewTaobaoTopAuthTokenRefreshRequest() *TaobaoTopAuthTokenRefreshAPIRequest {
 	return &TaobaoTopAuthTokenRefreshAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTopAuthTokenRefreshAPIRequest) Reset() {
+	r._refreshToken = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTopAuthTokenRefreshAPIRequest) SetRefreshToken(_refreshToken stri
 // GetRefreshToken RefreshToken Getter
 func (r TaobaoTopAuthTokenRefreshAPIRequest) GetRefreshToken() string {
 	return r._refreshToken
+}
+
+var poolTaobaoTopAuthTokenRefreshAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTopAuthTokenRefreshRequest()
+	},
+}
+
+// GetTaobaoTopAuthTokenRefreshRequest 从 sync.Pool 获取 TaobaoTopAuthTokenRefreshAPIRequest
+func GetTaobaoTopAuthTokenRefreshAPIRequest() *TaobaoTopAuthTokenRefreshAPIRequest {
+	return poolTaobaoTopAuthTokenRefreshAPIRequest.Get().(*TaobaoTopAuthTokenRefreshAPIRequest)
+}
+
+// ReleaseTaobaoTopAuthTokenRefreshAPIRequest 将 TaobaoTopAuthTokenRefreshAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTopAuthTokenRefreshAPIRequest(v *TaobaoTopAuthTokenRefreshAPIRequest) {
+	v.Reset()
+	poolTaobaoTopAuthTokenRefreshAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package singletreasure
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoSingletreasureActivityItemDeleteAPIRequest struct {
 // NewTaobaoSingletreasureActivityItemDeleteRequest 初始化TaobaoSingletreasureActivityItemDeleteAPIRequest对象
 func NewTaobaoSingletreasureActivityItemDeleteRequest() *TaobaoSingletreasureActivityItemDeleteAPIRequest {
 	return &TaobaoSingletreasureActivityItemDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSingletreasureActivityItemDeleteAPIRequest) Reset() {
+	r._activityId = 0
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoSingletreasureActivityItemDeleteAPIRequest) SetItemId(_itemId int
 // GetItemId ItemId Getter
 func (r TaobaoSingletreasureActivityItemDeleteAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTaobaoSingletreasureActivityItemDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSingletreasureActivityItemDeleteRequest()
+	},
+}
+
+// GetTaobaoSingletreasureActivityItemDeleteRequest 从 sync.Pool 获取 TaobaoSingletreasureActivityItemDeleteAPIRequest
+func GetTaobaoSingletreasureActivityItemDeleteAPIRequest() *TaobaoSingletreasureActivityItemDeleteAPIRequest {
+	return poolTaobaoSingletreasureActivityItemDeleteAPIRequest.Get().(*TaobaoSingletreasureActivityItemDeleteAPIRequest)
+}
+
+// ReleaseTaobaoSingletreasureActivityItemDeleteAPIRequest 将 TaobaoSingletreasureActivityItemDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSingletreasureActivityItemDeleteAPIRequest(v *TaobaoSingletreasureActivityItemDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoSingletreasureActivityItemDeleteAPIRequest.Put(v)
 }

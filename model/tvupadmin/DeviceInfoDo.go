@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // DeviceInfoDo 结构体
 type DeviceInfoDo struct {
 	// uuid
@@ -30,4 +34,34 @@ type DeviceInfoDo struct {
 	SystemVersion string `json:"system_version,omitempty" xml:"system_version,omitempty"`
 	// brandId
 	BrandId int64 `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
+}
+
+var poolDeviceInfoDo = sync.Pool{
+	New: func() any {
+		return new(DeviceInfoDo)
+	},
+}
+
+// GetDeviceInfoDo() 从对象池中获取DeviceInfoDo
+func GetDeviceInfoDo() *DeviceInfoDo {
+	return poolDeviceInfoDo.Get().(*DeviceInfoDo)
+}
+
+// ReleaseDeviceInfoDo 释放DeviceInfoDo
+func ReleaseDeviceInfoDo(v *DeviceInfoDo) {
+	v.Uuid = ""
+	v.Tvid = ""
+	v.BrandName = ""
+	v.DeviceModel = ""
+	v.TerminalType = ""
+	v.EthMac = ""
+	v.WlanMac = ""
+	v.ActiveTime = ""
+	v.UserActiveTime = ""
+	v.LastLoginTime = ""
+	v.CreatedAt = ""
+	v.UpdatedAt = ""
+	v.SystemVersion = ""
+	v.BrandId = 0
+	poolDeviceInfoDo.Put(v)
 }

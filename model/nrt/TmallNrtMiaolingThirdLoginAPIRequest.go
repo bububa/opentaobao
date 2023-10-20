@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallNrtMiaolingThirdLoginAPIRequest struct {
 // NewTmallNrtMiaolingThirdLoginRequest 初始化TmallNrtMiaolingThirdLoginAPIRequest对象
 func NewTmallNrtMiaolingThirdLoginRequest() *TmallNrtMiaolingThirdLoginAPIRequest {
 	return &TmallNrtMiaolingThirdLoginAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtMiaolingThirdLoginAPIRequest) Reset() {
+	r._nrtEaLoginDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallNrtMiaolingThirdLoginAPIRequest) SetNrtEaLoginDto(_nrtEaLoginDto *
 // GetNrtEaLoginDto NrtEaLoginDto Getter
 func (r TmallNrtMiaolingThirdLoginAPIRequest) GetNrtEaLoginDto() *NrtEaLoginDto {
 	return r._nrtEaLoginDto
+}
+
+var poolTmallNrtMiaolingThirdLoginAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtMiaolingThirdLoginRequest()
+	},
+}
+
+// GetTmallNrtMiaolingThirdLoginRequest 从 sync.Pool 获取 TmallNrtMiaolingThirdLoginAPIRequest
+func GetTmallNrtMiaolingThirdLoginAPIRequest() *TmallNrtMiaolingThirdLoginAPIRequest {
+	return poolTmallNrtMiaolingThirdLoginAPIRequest.Get().(*TmallNrtMiaolingThirdLoginAPIRequest)
+}
+
+// ReleaseTmallNrtMiaolingThirdLoginAPIRequest 将 TmallNrtMiaolingThirdLoginAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtMiaolingThirdLoginAPIRequest(v *TmallNrtMiaolingThirdLoginAPIRequest) {
+	v.Reset()
+	poolTmallNrtMiaolingThirdLoginAPIRequest.Put(v)
 }

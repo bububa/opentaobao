@@ -2,6 +2,7 @@ package product
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallProductSpecGetAPIResponse struct {
 	TmallProductSpecGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallProductSpecGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallProductSpecGetAPIResponseModel).Reset()
+}
+
 // TmallProductSpecGetAPIResponseModel is 根据产品规格的Id号获取当个的规格信息 成功返回结果
 type TmallProductSpecGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_product_spec_get_response"`
@@ -22,4 +29,27 @@ type TmallProductSpecGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回的产品规格信息，注意，这个产品规格信息可能是等待审核的，不一定可用。根据状态判断1：表示审核通过&lt;br/&gt;3：表示等待审核。
 	ProductSpec *ProductSpec `json:"product_spec,omitempty" xml:"product_spec,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallProductSpecGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ProductSpec = nil
+}
+
+var poolTmallProductSpecGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallProductSpecGetAPIResponse)
+	},
+}
+
+// GetTmallProductSpecGetAPIResponse 从 sync.Pool 获取 TmallProductSpecGetAPIResponse
+func GetTmallProductSpecGetAPIResponse() *TmallProductSpecGetAPIResponse {
+	return poolTmallProductSpecGetAPIResponse.Get().(*TmallProductSpecGetAPIResponse)
+}
+
+// ReleaseTmallProductSpecGetAPIResponse 将 TmallProductSpecGetAPIResponse 保存到 sync.Pool
+func ReleaseTmallProductSpecGetAPIResponse(v *TmallProductSpecGetAPIResponse) {
+	v.Reset()
+	poolTmallProductSpecGetAPIResponse.Put(v)
 }

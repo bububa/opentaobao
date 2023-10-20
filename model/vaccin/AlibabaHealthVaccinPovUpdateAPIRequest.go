@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaHealthVaccinPovUpdateAPIRequest struct {
 // NewAlibabaHealthVaccinPovUpdateRequest 初始化AlibabaHealthVaccinPovUpdateAPIRequest对象
 func NewAlibabaHealthVaccinPovUpdateRequest() *AlibabaHealthVaccinPovUpdateAPIRequest {
 	return &AlibabaHealthVaccinPovUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHealthVaccinPovUpdateAPIRequest) Reset() {
+	r._povNo = ""
+	r._povName = ""
+	r._telephone = ""
+	r._address = ""
+	r._description = ""
+	r._businessTime = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetBusinessTime(_businessTime s
 // GetBusinessTime BusinessTime Getter
 func (r AlibabaHealthVaccinPovUpdateAPIRequest) GetBusinessTime() string {
 	return r._businessTime
+}
+
+var poolAlibabaHealthVaccinPovUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHealthVaccinPovUpdateRequest()
+	},
+}
+
+// GetAlibabaHealthVaccinPovUpdateRequest 从 sync.Pool 获取 AlibabaHealthVaccinPovUpdateAPIRequest
+func GetAlibabaHealthVaccinPovUpdateAPIRequest() *AlibabaHealthVaccinPovUpdateAPIRequest {
+	return poolAlibabaHealthVaccinPovUpdateAPIRequest.Get().(*AlibabaHealthVaccinPovUpdateAPIRequest)
+}
+
+// ReleaseAlibabaHealthVaccinPovUpdateAPIRequest 将 AlibabaHealthVaccinPovUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHealthVaccinPovUpdateAPIRequest(v *AlibabaHealthVaccinPovUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaHealthVaccinPovUpdateAPIRequest.Put(v)
 }

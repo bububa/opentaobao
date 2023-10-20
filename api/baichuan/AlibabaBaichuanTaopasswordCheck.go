@@ -9,11 +9,6 @@ import (
 // alibaba.baichuan.taopassword.check
 //
 // 检查当前文本是否为淘口令
-func AlibabaBaichuanTaopasswordCheck(clt *core.SDKClient, req *baichuan.AlibabaBaichuanTaopasswordCheckAPIRequest, session string) (*baichuan.AlibabaBaichuanTaopasswordCheckAPIResponse, error) {
-	var resp baichuan.AlibabaBaichuanTaopasswordCheckAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaBaichuanTaopasswordCheck(clt *core.SDKClient, req *baichuan.AlibabaBaichuanTaopasswordCheckAPIRequest, resp *baichuan.AlibabaBaichuanTaopasswordCheckAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

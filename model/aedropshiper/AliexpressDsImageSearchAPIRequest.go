@@ -2,6 +2,7 @@ package aedropshiper
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AliexpressDsImageSearchAPIRequest struct {
 // NewAliexpressDsImageSearchRequest 初始化AliexpressDsImageSearchAPIRequest对象
 func NewAliexpressDsImageSearchRequest() *AliexpressDsImageSearchAPIRequest {
 	return &AliexpressDsImageSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressDsImageSearchAPIRequest) Reset() {
+	r._targetLanguage = ""
+	r._targetCurrency = ""
+	r._sort = ""
+	r._shptTo = ""
+	r._productCnt = 0
+	r._imageFileBytes = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AliexpressDsImageSearchAPIRequest) SetImageFileBytes(_imageFileBytes *m
 // GetImageFileBytes ImageFileBytes Getter
 func (r AliexpressDsImageSearchAPIRequest) GetImageFileBytes() *model.File {
 	return r._imageFileBytes
+}
+
+var poolAliexpressDsImageSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressDsImageSearchRequest()
+	},
+}
+
+// GetAliexpressDsImageSearchRequest 从 sync.Pool 获取 AliexpressDsImageSearchAPIRequest
+func GetAliexpressDsImageSearchAPIRequest() *AliexpressDsImageSearchAPIRequest {
+	return poolAliexpressDsImageSearchAPIRequest.Get().(*AliexpressDsImageSearchAPIRequest)
+}
+
+// ReleaseAliexpressDsImageSearchAPIRequest 将 AliexpressDsImageSearchAPIRequest 放入 sync.Pool
+func ReleaseAliexpressDsImageSearchAPIRequest(v *AliexpressDsImageSearchAPIRequest) {
+	v.Reset()
+	poolAliexpressDsImageSearchAPIRequest.Put(v)
 }

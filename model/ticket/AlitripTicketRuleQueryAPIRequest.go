@@ -2,6 +2,7 @@ package ticket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripTicketRuleQueryAPIRequest struct {
 // NewAlitripTicketRuleQueryRequest 初始化AlitripTicketRuleQueryAPIRequest对象
 func NewAlitripTicketRuleQueryRequest() *AlitripTicketRuleQueryAPIRequest {
 	return &AlitripTicketRuleQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTicketRuleQueryAPIRequest) Reset() {
+	r._outRuleId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripTicketRuleQueryAPIRequest) SetOutRuleId(_outRuleId string) error
 // GetOutRuleId OutRuleId Getter
 func (r AlitripTicketRuleQueryAPIRequest) GetOutRuleId() string {
 	return r._outRuleId
+}
+
+var poolAlitripTicketRuleQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTicketRuleQueryRequest()
+	},
+}
+
+// GetAlitripTicketRuleQueryRequest 从 sync.Pool 获取 AlitripTicketRuleQueryAPIRequest
+func GetAlitripTicketRuleQueryAPIRequest() *AlitripTicketRuleQueryAPIRequest {
+	return poolAlitripTicketRuleQueryAPIRequest.Get().(*AlitripTicketRuleQueryAPIRequest)
+}
+
+// ReleaseAlitripTicketRuleQueryAPIRequest 将 AlitripTicketRuleQueryAPIRequest 放入 sync.Pool
+func ReleaseAlitripTicketRuleQueryAPIRequest(v *AlitripTicketRuleQueryAPIRequest) {
+	v.Reset()
+	poolAlitripTicketRuleQueryAPIRequest.Put(v)
 }

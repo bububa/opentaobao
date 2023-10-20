@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PromotionFacadeOpenReq 结构体
 type PromotionFacadeOpenReq struct {
 	// STATUS_NEW,STATUS_WORKING,STATUS_SUSPEND,STATUS_END，STATUS_EXPIRED,未投放,执行中,已暂停,已终止,已终止
@@ -20,4 +24,29 @@ type PromotionFacadeOpenReq struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 1
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
+}
+
+var poolPromotionFacadeOpenReq = sync.Pool{
+	New: func() any {
+		return new(PromotionFacadeOpenReq)
+	},
+}
+
+// GetPromotionFacadeOpenReq() 从对象池中获取PromotionFacadeOpenReq
+func GetPromotionFacadeOpenReq() *PromotionFacadeOpenReq {
+	return poolPromotionFacadeOpenReq.Get().(*PromotionFacadeOpenReq)
+}
+
+// ReleasePromotionFacadeOpenReq 释放PromotionFacadeOpenReq
+func ReleasePromotionFacadeOpenReq(v *PromotionFacadeOpenReq) {
+	v.StatusList = v.StatusList[:0]
+	v.BrandId = ""
+	v.GmtModified = ""
+	v.OutBrandId = ""
+	v.LastId = ""
+	v.PromotionId = ""
+	v.PageNo = 0
+	v.PageSize = 0
+	v.Deleted = false
+	poolPromotionFacadeOpenReq.Put(v)
 }

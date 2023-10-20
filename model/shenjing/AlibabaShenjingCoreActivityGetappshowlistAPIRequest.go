@@ -2,6 +2,7 @@ package shenjing
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaShenjingCoreActivityGetappshowlistAPIRequest struct {
 // NewAlibabaShenjingCoreActivityGetappshowlistRequest 初始化AlibabaShenjingCoreActivityGetappshowlistAPIRequest对象
 func NewAlibabaShenjingCoreActivityGetappshowlistRequest() *AlibabaShenjingCoreActivityGetappshowlistAPIRequest {
 	return &AlibabaShenjingCoreActivityGetappshowlistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaShenjingCoreActivityGetappshowlistAPIRequest) Reset() {
+	r._workBenchContext = nil
+	r._timestamp1 = 0
+	r._page = 0
+	r._size = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaShenjingCoreActivityGetappshowlistAPIRequest) SetSize(_size int6
 // GetSize Size Getter
 func (r AlibabaShenjingCoreActivityGetappshowlistAPIRequest) GetSize() int64 {
 	return r._size
+}
+
+var poolAlibabaShenjingCoreActivityGetappshowlistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaShenjingCoreActivityGetappshowlistRequest()
+	},
+}
+
+// GetAlibabaShenjingCoreActivityGetappshowlistRequest 从 sync.Pool 获取 AlibabaShenjingCoreActivityGetappshowlistAPIRequest
+func GetAlibabaShenjingCoreActivityGetappshowlistAPIRequest() *AlibabaShenjingCoreActivityGetappshowlistAPIRequest {
+	return poolAlibabaShenjingCoreActivityGetappshowlistAPIRequest.Get().(*AlibabaShenjingCoreActivityGetappshowlistAPIRequest)
+}
+
+// ReleaseAlibabaShenjingCoreActivityGetappshowlistAPIRequest 将 AlibabaShenjingCoreActivityGetappshowlistAPIRequest 放入 sync.Pool
+func ReleaseAlibabaShenjingCoreActivityGetappshowlistAPIRequest(v *AlibabaShenjingCoreActivityGetappshowlistAPIRequest) {
+	v.Reset()
+	poolAlibabaShenjingCoreActivityGetappshowlistAPIRequest.Put(v)
 }

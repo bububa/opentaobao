@@ -2,6 +2,7 @@ package xiamicontent
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type XiamiContentMusicInfoQueryAPIResponse struct {
 	XiamiContentMusicInfoQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *XiamiContentMusicInfoQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.XiamiContentMusicInfoQueryAPIResponseModel).Reset()
+}
+
 // XiamiContentMusicInfoQueryAPIResponseModel is 搜索音乐 成功返回结果
 type XiamiContentMusicInfoQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"xiami_content_music_info_query_response"`
@@ -24,4 +31,28 @@ type XiamiContentMusicInfoQueryAPIResponseModel struct {
 	MusicDtoPage *Page `json:"music_dto_page,omitempty" xml:"music_dto_page,omitempty"`
 	// 结果code
 	ResultCode *ResultCode `json:"result_code,omitempty" xml:"result_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *XiamiContentMusicInfoQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MusicDtoPage = nil
+	m.ResultCode = nil
+}
+
+var poolXiamiContentMusicInfoQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(XiamiContentMusicInfoQueryAPIResponse)
+	},
+}
+
+// GetXiamiContentMusicInfoQueryAPIResponse 从 sync.Pool 获取 XiamiContentMusicInfoQueryAPIResponse
+func GetXiamiContentMusicInfoQueryAPIResponse() *XiamiContentMusicInfoQueryAPIResponse {
+	return poolXiamiContentMusicInfoQueryAPIResponse.Get().(*XiamiContentMusicInfoQueryAPIResponse)
+}
+
+// ReleaseXiamiContentMusicInfoQueryAPIResponse 将 XiamiContentMusicInfoQueryAPIResponse 保存到 sync.Pool
+func ReleaseXiamiContentMusicInfoQueryAPIResponse(v *XiamiContentMusicInfoQueryAPIResponse) {
+	v.Reset()
+	poolXiamiContentMusicInfoQueryAPIResponse.Put(v)
 }

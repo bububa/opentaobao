@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTradeReceivetimeDelayAPIRequest struct {
 // NewTaobaoTradeReceivetimeDelayRequest 初始化TaobaoTradeReceivetimeDelayAPIRequest对象
 func NewTaobaoTradeReceivetimeDelayRequest() *TaobaoTradeReceivetimeDelayAPIRequest {
 	return &TaobaoTradeReceivetimeDelayAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTradeReceivetimeDelayAPIRequest) Reset() {
+	r._tid = 0
+	r._days = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTradeReceivetimeDelayAPIRequest) SetDays(_days int64) error {
 // GetDays Days Getter
 func (r TaobaoTradeReceivetimeDelayAPIRequest) GetDays() int64 {
 	return r._days
+}
+
+var poolTaobaoTradeReceivetimeDelayAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTradeReceivetimeDelayRequest()
+	},
+}
+
+// GetTaobaoTradeReceivetimeDelayRequest 从 sync.Pool 获取 TaobaoTradeReceivetimeDelayAPIRequest
+func GetTaobaoTradeReceivetimeDelayAPIRequest() *TaobaoTradeReceivetimeDelayAPIRequest {
+	return poolTaobaoTradeReceivetimeDelayAPIRequest.Get().(*TaobaoTradeReceivetimeDelayAPIRequest)
+}
+
+// ReleaseTaobaoTradeReceivetimeDelayAPIRequest 将 TaobaoTradeReceivetimeDelayAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTradeReceivetimeDelayAPIRequest(v *TaobaoTradeReceivetimeDelayAPIRequest) {
+	v.Reset()
+	poolTaobaoTradeReceivetimeDelayAPIRequest.Put(v)
 }

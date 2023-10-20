@@ -1,5 +1,9 @@
 package pentraprism
 
+import (
+	"sync"
+)
+
 // OpenTaskPo 结构体
 type OpenTaskPo struct {
 	// 应用名称
@@ -30,4 +34,34 @@ type OpenTaskPo struct {
 	UserType int64 `json:"user_type,omitempty" xml:"user_type,omitempty"`
 	// 是否忽略任务规则
 	IgnoreRules bool `json:"ignore_rules,omitempty" xml:"ignore_rules,omitempty"`
+}
+
+var poolOpenTaskPo = sync.Pool{
+	New: func() any {
+		return new(OpenTaskPo)
+	},
+}
+
+// GetOpenTaskPo() 从对象池中获取OpenTaskPo
+func GetOpenTaskPo() *OpenTaskPo {
+	return poolOpenTaskPo.Get().(*OpenTaskPo)
+}
+
+// ReleaseOpenTaskPo 释放OpenTaskPo
+func ReleaseOpenTaskPo(v *OpenTaskPo) {
+	v.AppName = ""
+	v.AppVersion = ""
+	v.FromAppName = ""
+	v.FromToken = ""
+	v.ImplId = ""
+	v.Now = ""
+	v.OpenToken = ""
+	v.Platform = ""
+	v.OpenId = ""
+	v.AwardIndex = 0
+	v.DeliveryId = 0
+	v.SceneId = 0
+	v.UserType = 0
+	v.IgnoreRules = false
+	poolOpenTaskPo.Put(v)
 }

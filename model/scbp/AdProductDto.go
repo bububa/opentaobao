@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // AdProductDto 结构体
 type AdProductDto struct {
 	// 创建时间
@@ -44,4 +48,41 @@ type AdProductDto struct {
 	CateLv3Id int64 `json:"cate_lv3_id,omitempty" xml:"cate_lv3_id,omitempty"`
 	// 效果数据
 	Effect *AdProductEffectDto `json:"effect,omitempty" xml:"effect,omitempty"`
+}
+
+var poolAdProductDto = sync.Pool{
+	New: func() any {
+		return new(AdProductDto)
+	},
+}
+
+// GetAdProductDto() 从对象池中获取AdProductDto
+func GetAdProductDto() *AdProductDto {
+	return poolAdProductDto.Get().(*AdProductDto)
+}
+
+// ReleaseAdProductDto 释放AdProductDto
+func ReleaseAdProductDto(v *AdProductDto) {
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Subject = ""
+	v.GmtPostingCreate = ""
+	v.GmtPostingModified = ""
+	v.CampaignId = 0
+	v.CampaignType = 0
+	v.CampaignStatus = 0
+	v.AdGroupId = 0
+	v.AdGroupStatus = 0
+	v.AdsLineId = 0
+	v.AdsId = 0
+	v.Id = 0
+	v.ProductId = 0
+	v.GroupLv1Id = 0
+	v.GroupLv2Id = 0
+	v.GroupLv3Id = 0
+	v.CateLv1Id = 0
+	v.CateLv2Id = 0
+	v.CateLv3Id = 0
+	v.Effect = nil
+	poolAdProductDto.Put(v)
 }

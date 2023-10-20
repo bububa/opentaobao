@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaWdkFulfillBoxPostBackBoxAPIResponse struct {
 	AlibabaWdkFulfillBoxPostBackBoxAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaWdkFulfillBoxPostBackBoxAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkFulfillBoxPostBackBoxAPIResponseModel).Reset()
+}
+
 // AlibabaWdkFulfillBoxPostBackBoxAPIResponseModel is RT收箱回传 成功返回结果
 type AlibabaWdkFulfillBoxPostBackBoxAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_fulfill_box_post_back_box_response"`
@@ -22,4 +29,27 @@ type AlibabaWdkFulfillBoxPostBackBoxAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// fulfillLogisticSingleResult
 	FulfillLogisticSingleResult *FulfillLogisticDefaultResult `json:"fulfill_logistic_single_result,omitempty" xml:"fulfill_logistic_single_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkFulfillBoxPostBackBoxAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.FulfillLogisticSingleResult = nil
+}
+
+var poolAlibabaWdkFulfillBoxPostBackBoxAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkFulfillBoxPostBackBoxAPIResponse)
+	},
+}
+
+// GetAlibabaWdkFulfillBoxPostBackBoxAPIResponse 从 sync.Pool 获取 AlibabaWdkFulfillBoxPostBackBoxAPIResponse
+func GetAlibabaWdkFulfillBoxPostBackBoxAPIResponse() *AlibabaWdkFulfillBoxPostBackBoxAPIResponse {
+	return poolAlibabaWdkFulfillBoxPostBackBoxAPIResponse.Get().(*AlibabaWdkFulfillBoxPostBackBoxAPIResponse)
+}
+
+// ReleaseAlibabaWdkFulfillBoxPostBackBoxAPIResponse 将 AlibabaWdkFulfillBoxPostBackBoxAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkFulfillBoxPostBackBoxAPIResponse(v *AlibabaWdkFulfillBoxPostBackBoxAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkFulfillBoxPostBackBoxAPIResponse.Put(v)
 }

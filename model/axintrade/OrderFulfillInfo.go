@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // OrderFulfillInfo 结构体
 type OrderFulfillInfo struct {
 	// 离店时间
@@ -20,4 +24,29 @@ type OrderFulfillInfo struct {
 	Hourage int64 `json:"hourage,omitempty" xml:"hourage,omitempty"`
 	// 是否小时房
 	HourRoom bool `json:"hour_room,omitempty" xml:"hour_room,omitempty"`
+}
+
+var poolOrderFulfillInfo = sync.Pool{
+	New: func() any {
+		return new(OrderFulfillInfo)
+	},
+}
+
+// GetOrderFulfillInfo() 从对象池中获取OrderFulfillInfo
+func GetOrderFulfillInfo() *OrderFulfillInfo {
+	return poolOrderFulfillInfo.Get().(*OrderFulfillInfo)
+}
+
+// ReleaseOrderFulfillInfo 释放OrderFulfillInfo
+func ReleaseOrderFulfillInfo(v *OrderFulfillInfo) {
+	v.CheckOut = ""
+	v.CheckIn = ""
+	v.LateArriveTime = ""
+	v.ConfirmCode = ""
+	v.CheckInTime = ""
+	v.CheckOutTime = ""
+	v.RoomNumber = 0
+	v.Hourage = 0
+	v.HourRoom = false
+	poolOrderFulfillInfo.Put(v)
 }

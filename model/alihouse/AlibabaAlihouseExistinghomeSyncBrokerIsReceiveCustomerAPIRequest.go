@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerRequest 初始化AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest对象
 func NewAlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerRequest() *AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest {
 	return &AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest) Reset() {
+	r._outerId = ""
+	r._outerStoreId = ""
+	r._isReceiveCustomer = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest) SetIs
 // GetIsReceiveCustomer IsReceiveCustomer Getter
 func (r AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest) GetIsReceiveCustomer() int64 {
 	return r._isReceiveCustomer
+}
+
+var poolAlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest
+func GetAlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest() *AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest {
+	return poolAlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest.Get().(*AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest 将 AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest(v *AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // CombineScItem 结构体
 type CombineScItem struct {
 	// 子条目
@@ -22,4 +26,30 @@ type CombineScItem struct {
 	Currency string `json:"currency,omitempty" xml:"currency,omitempty"`
 	// 零售价（人民币-分）
 	RetailPrice int64 `json:"retail_price,omitempty" xml:"retail_price,omitempty"`
+}
+
+var poolCombineScItem = sync.Pool{
+	New: func() any {
+		return new(CombineScItem)
+	},
+}
+
+// GetCombineScItem() 从对象池中获取CombineScItem
+func GetCombineScItem() *CombineScItem {
+	return poolCombineScItem.Get().(*CombineScItem)
+}
+
+// ReleaseCombineScItem 释放CombineScItem
+func ReleaseCombineScItem(v *CombineScItem) {
+	v.SubScItems = v.SubScItems[:0]
+	v.CombineScItemId = ""
+	v.CombineScItemCode = ""
+	v.CombineScItemName = ""
+	v.OwnerCode = ""
+	v.BrandName = ""
+	v.CategoryName = ""
+	v.Remark = ""
+	v.Currency = ""
+	v.RetailPrice = 0
+	poolCombineScItem.Put(v)
 }

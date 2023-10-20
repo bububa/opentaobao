@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAliqinTccTradeIdentityGetAPIRequest struct {
 // NewAlibabaAliqinTccTradeIdentityGetRequest 初始化AlibabaAliqinTccTradeIdentityGetAPIRequest对象
 func NewAlibabaAliqinTccTradeIdentityGetRequest() *AlibabaAliqinTccTradeIdentityGetAPIRequest {
 	return &AlibabaAliqinTccTradeIdentityGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinTccTradeIdentityGetAPIRequest) Reset() {
+	r._sellerNick = ""
+	r._bizOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAliqinTccTradeIdentityGetAPIRequest) SetBizOrderId(_bizOrderId i
 // GetBizOrderId BizOrderId Getter
 func (r AlibabaAliqinTccTradeIdentityGetAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
+}
+
+var poolAlibabaAliqinTccTradeIdentityGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinTccTradeIdentityGetRequest()
+	},
+}
+
+// GetAlibabaAliqinTccTradeIdentityGetRequest 从 sync.Pool 获取 AlibabaAliqinTccTradeIdentityGetAPIRequest
+func GetAlibabaAliqinTccTradeIdentityGetAPIRequest() *AlibabaAliqinTccTradeIdentityGetAPIRequest {
+	return poolAlibabaAliqinTccTradeIdentityGetAPIRequest.Get().(*AlibabaAliqinTccTradeIdentityGetAPIRequest)
+}
+
+// ReleaseAlibabaAliqinTccTradeIdentityGetAPIRequest 将 AlibabaAliqinTccTradeIdentityGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinTccTradeIdentityGetAPIRequest(v *AlibabaAliqinTccTradeIdentityGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinTccTradeIdentityGetAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // GlobalAeopTpChildOrderDto 结构体
 type GlobalAeopTpChildOrderDto struct {
 	// discount detail list for each child order
@@ -74,4 +78,56 @@ type GlobalAeopTpChildOrderDto struct {
 	ChildOrderDiscountInfo *GlobalMoneyStr `json:"child_order_discount_info,omitempty" xml:"child_order_discount_info,omitempty"`
 	// An amount to adjust the product price on, for example, if the seller wants to give buyer a personal discount by the &#34;Adjust price&#34;  button in order management backend.
 	ChildOrderAdjustAmount *GlobalMoneyStr `json:"child_order_adjust_amount,omitempty" xml:"child_order_adjust_amount,omitempty"`
+}
+
+var poolGlobalAeopTpChildOrderDto = sync.Pool{
+	New: func() any {
+		return new(GlobalAeopTpChildOrderDto)
+	},
+}
+
+// GetGlobalAeopTpChildOrderDto() 从对象池中获取GlobalAeopTpChildOrderDto
+func GetGlobalAeopTpChildOrderDto() *GlobalAeopTpChildOrderDto {
+	return poolGlobalAeopTpChildOrderDto.Get().(*GlobalAeopTpChildOrderDto)
+}
+
+// ReleaseGlobalAeopTpChildOrderDto 释放GlobalAeopTpChildOrderDto
+func ReleaseGlobalAeopTpChildOrderDto(v *GlobalAeopTpChildOrderDto) {
+	v.ChildOrderDiscountDetailList = v.ChildOrderDiscountDetailList[:0]
+	v.SnapshotId = ""
+	v.ProductAttributes = ""
+	v.BuyerMemo = ""
+	v.ProductUnit = ""
+	v.LogisticsType = ""
+	v.FrozenStatus = ""
+	v.IssueStatus = ""
+	v.AfflicateFeeRate = ""
+	v.LogisticsServiceName = ""
+	v.ProductSnapUrl = ""
+	v.OrderStatus = ""
+	v.SkuCode = ""
+	v.SendGoodsOperator = ""
+	v.FundStatus = ""
+	v.EscrowFeeRate = ""
+	v.ProductImgUrl = ""
+	v.ChildOrderId = ""
+	v.ProductName = ""
+	v.SnapshotSmallPhotoPath = ""
+	v.ProductStandard = ""
+	v.LogisticsWarehouseType = ""
+	v.LotNum = 0
+	v.LogisticsAmount = nil
+	v.GoodsPrepareTime = 0
+	v.RefundInfo = nil
+	v.Id = 0
+	v.OrderSortId = 0
+	v.InitOrderAmt = nil
+	v.ChildIssueInfo = nil
+	v.LoanInfo = nil
+	v.ProductId = 0
+	v.ProductCount = 0
+	v.ProductPrice = nil
+	v.ChildOrderDiscountInfo = nil
+	v.ChildOrderAdjustAmount = nil
+	poolGlobalAeopTpChildOrderDto.Put(v)
 }

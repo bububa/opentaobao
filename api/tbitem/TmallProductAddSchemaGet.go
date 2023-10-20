@@ -9,11 +9,6 @@ import (
 // tmall.product.add.schema.get
 //
 // 获取用户发布产品的规则
-func TmallProductAddSchemaGet(clt *core.SDKClient, req *tbitem.TmallProductAddSchemaGetAPIRequest, session string) (*tbitem.TmallProductAddSchemaGetAPIResponse, error) {
-	var resp tbitem.TmallProductAddSchemaGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallProductAddSchemaGet(clt *core.SDKClient, req *tbitem.TmallProductAddSchemaGetAPIRequest, resp *tbitem.TmallProductAddSchemaGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

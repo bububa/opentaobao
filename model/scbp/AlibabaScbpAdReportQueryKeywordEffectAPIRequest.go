@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaScbpAdReportQueryKeywordEffectAPIRequest struct {
 // NewAlibabaScbpAdReportQueryKeywordEffectRequest 初始化AlibabaScbpAdReportQueryKeywordEffectAPIRequest对象
 func NewAlibabaScbpAdReportQueryKeywordEffectRequest() *AlibabaScbpAdReportQueryKeywordEffectAPIRequest {
 	return &AlibabaScbpAdReportQueryKeywordEffectAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdReportQueryKeywordEffectAPIRequest) Reset() {
+	r._topContext = nil
+	r._keywordReportOperation = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaScbpAdReportQueryKeywordEffectAPIRequest) SetKeywordReportOperat
 // GetKeywordReportOperation KeywordReportOperation Getter
 func (r AlibabaScbpAdReportQueryKeywordEffectAPIRequest) GetKeywordReportOperation() *KeywordReportOperationDto {
 	return r._keywordReportOperation
+}
+
+var poolAlibabaScbpAdReportQueryKeywordEffectAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdReportQueryKeywordEffectRequest()
+	},
+}
+
+// GetAlibabaScbpAdReportQueryKeywordEffectRequest 从 sync.Pool 获取 AlibabaScbpAdReportQueryKeywordEffectAPIRequest
+func GetAlibabaScbpAdReportQueryKeywordEffectAPIRequest() *AlibabaScbpAdReportQueryKeywordEffectAPIRequest {
+	return poolAlibabaScbpAdReportQueryKeywordEffectAPIRequest.Get().(*AlibabaScbpAdReportQueryKeywordEffectAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdReportQueryKeywordEffectAPIRequest 将 AlibabaScbpAdReportQueryKeywordEffectAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdReportQueryKeywordEffectAPIRequest(v *AlibabaScbpAdReportQueryKeywordEffectAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdReportQueryKeywordEffectAPIRequest.Put(v)
 }

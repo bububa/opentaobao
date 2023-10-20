@@ -2,6 +2,7 @@ package singletreasure
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoSingletreasureActivityItemBatchaddAPIRequest struct {
 // NewTaobaoSingletreasureActivityItemBatchaddRequest 初始化TaobaoSingletreasureActivityItemBatchaddAPIRequest对象
 func NewTaobaoSingletreasureActivityItemBatchaddRequest() *TaobaoSingletreasureActivityItemBatchaddAPIRequest {
 	return &TaobaoSingletreasureActivityItemBatchaddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSingletreasureActivityItemBatchaddAPIRequest) Reset() {
+	r._itemDetailInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoSingletreasureActivityItemBatchaddAPIRequest) SetItemDetailInfo(_
 // GetItemDetailInfo ItemDetailInfo Getter
 func (r TaobaoSingletreasureActivityItemBatchaddAPIRequest) GetItemDetailInfo() *ItemDetailInfoBatchCreateDto {
 	return r._itemDetailInfo
+}
+
+var poolTaobaoSingletreasureActivityItemBatchaddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSingletreasureActivityItemBatchaddRequest()
+	},
+}
+
+// GetTaobaoSingletreasureActivityItemBatchaddRequest 从 sync.Pool 获取 TaobaoSingletreasureActivityItemBatchaddAPIRequest
+func GetTaobaoSingletreasureActivityItemBatchaddAPIRequest() *TaobaoSingletreasureActivityItemBatchaddAPIRequest {
+	return poolTaobaoSingletreasureActivityItemBatchaddAPIRequest.Get().(*TaobaoSingletreasureActivityItemBatchaddAPIRequest)
+}
+
+// ReleaseTaobaoSingletreasureActivityItemBatchaddAPIRequest 将 TaobaoSingletreasureActivityItemBatchaddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSingletreasureActivityItemBatchaddAPIRequest(v *TaobaoSingletreasureActivityItemBatchaddAPIRequest) {
+	v.Reset()
+	poolTaobaoSingletreasureActivityItemBatchaddAPIRequest.Put(v)
 }

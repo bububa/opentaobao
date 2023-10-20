@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,20 @@ type TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest struct {
 // NewTaobaoPromotionmiscCommonItemActivityUpdateRequest 初始化TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest对象
 func NewTaobaoPromotionmiscCommonItemActivityUpdateRequest() *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest {
 	return &TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) Reset() {
+	r._description = ""
+	r._endTime = ""
+	r._name = ""
+	r._startTime = ""
+	r._userTag = ""
+	r._activityId = 0
+	r._isUserTag = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -143,4 +156,21 @@ func (r *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) SetIsUserTag(_is
 // GetIsUserTag IsUserTag Getter
 func (r TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) GetIsUserTag() bool {
 	return r._isUserTag
+}
+
+var poolTaobaoPromotionmiscCommonItemActivityUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPromotionmiscCommonItemActivityUpdateRequest()
+	},
+}
+
+// GetTaobaoPromotionmiscCommonItemActivityUpdateRequest 从 sync.Pool 获取 TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest
+func GetTaobaoPromotionmiscCommonItemActivityUpdateAPIRequest() *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest {
+	return poolTaobaoPromotionmiscCommonItemActivityUpdateAPIRequest.Get().(*TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest)
+}
+
+// ReleaseTaobaoPromotionmiscCommonItemActivityUpdateAPIRequest 将 TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPromotionmiscCommonItemActivityUpdateAPIRequest(v *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoPromotionmiscCommonItemActivityUpdateAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.spserviceorder.create
 //
 // 服务单创建
-func TmallServicecenterSpserviceorderCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterSpserviceorderCreateAPIRequest, session string) (*tmallservice.TmallServicecenterSpserviceorderCreateAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterSpserviceorderCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterSpserviceorderCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterSpserviceorderCreateAPIRequest, resp *tmallservice.TmallServicecenterSpserviceorderCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

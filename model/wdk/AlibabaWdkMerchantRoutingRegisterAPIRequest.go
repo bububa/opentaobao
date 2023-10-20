@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkMerchantRoutingRegisterAPIRequest struct {
 // NewAlibabaWdkMerchantRoutingRegisterRequest 初始化AlibabaWdkMerchantRoutingRegisterAPIRequest对象
 func NewAlibabaWdkMerchantRoutingRegisterRequest() *AlibabaWdkMerchantRoutingRegisterAPIRequest {
 	return &AlibabaWdkMerchantRoutingRegisterAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMerchantRoutingRegisterAPIRequest) Reset() {
+	r._merchantRoutingInfoRegister = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkMerchantRoutingRegisterAPIRequest) SetMerchantRoutingInfoRegi
 // GetMerchantRoutingInfoRegister MerchantRoutingInfoRegister Getter
 func (r AlibabaWdkMerchantRoutingRegisterAPIRequest) GetMerchantRoutingInfoRegister() *MerchantRoutingInfoRegisterDo {
 	return r._merchantRoutingInfoRegister
+}
+
+var poolAlibabaWdkMerchantRoutingRegisterAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMerchantRoutingRegisterRequest()
+	},
+}
+
+// GetAlibabaWdkMerchantRoutingRegisterRequest 从 sync.Pool 获取 AlibabaWdkMerchantRoutingRegisterAPIRequest
+func GetAlibabaWdkMerchantRoutingRegisterAPIRequest() *AlibabaWdkMerchantRoutingRegisterAPIRequest {
+	return poolAlibabaWdkMerchantRoutingRegisterAPIRequest.Get().(*AlibabaWdkMerchantRoutingRegisterAPIRequest)
+}
+
+// ReleaseAlibabaWdkMerchantRoutingRegisterAPIRequest 将 AlibabaWdkMerchantRoutingRegisterAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMerchantRoutingRegisterAPIRequest(v *AlibabaWdkMerchantRoutingRegisterAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMerchantRoutingRegisterAPIRequest.Put(v)
 }

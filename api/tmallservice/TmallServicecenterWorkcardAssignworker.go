@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.workcard.assignworker
 //
 // 服务商调用该接口分派工人给具体的工单
-func TmallServicecenterWorkcardAssignworker(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardAssignworkerAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardAssignworkerAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkcardAssignworkerAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkcardAssignworker(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardAssignworkerAPIRequest, resp *tmallservice.TmallServicecenterWorkcardAssignworkerAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

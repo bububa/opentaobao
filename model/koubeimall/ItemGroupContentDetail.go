@@ -1,5 +1,9 @@
 package koubeimall
 
+import (
+	"sync"
+)
+
 // ItemGroupContentDetail 结构体
 type ItemGroupContentDetail struct {
 	// 金额
@@ -12,4 +16,25 @@ type ItemGroupContentDetail struct {
 	ContentName string `json:"content_name,omitempty" xml:"content_name,omitempty"`
 	// 份数
 	ContentCount int64 `json:"content_count,omitempty" xml:"content_count,omitempty"`
+}
+
+var poolItemGroupContentDetail = sync.Pool{
+	New: func() any {
+		return new(ItemGroupContentDetail)
+	},
+}
+
+// GetItemGroupContentDetail() 从对象池中获取ItemGroupContentDetail
+func GetItemGroupContentDetail() *ItemGroupContentDetail {
+	return poolItemGroupContentDetail.Get().(*ItemGroupContentDetail)
+}
+
+// ReleaseItemGroupContentDetail 释放ItemGroupContentDetail
+func ReleaseItemGroupContentDetail(v *ItemGroupContentDetail) {
+	v.ContentAmount = ""
+	v.Unit = ""
+	v.Spec = ""
+	v.ContentName = ""
+	v.ContentCount = 0
+	poolItemGroupContentDetail.Put(v)
 }

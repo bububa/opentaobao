@@ -9,11 +9,6 @@ import (
 // alibaba.interact.sensor.vibrate
 //
 // 客户端震动
-func AlibabaInteractSensorVibrate(clt *core.SDKClient, req *interact.AlibabaInteractSensorVibrateAPIRequest, session string) (*interact.AlibabaInteractSensorVibrateAPIResponse, error) {
-	var resp interact.AlibabaInteractSensorVibrateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaInteractSensorVibrate(clt *core.SDKClient, req *interact.AlibabaInteractSensorVibrateAPIRequest, resp *interact.AlibabaInteractSensorVibrateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

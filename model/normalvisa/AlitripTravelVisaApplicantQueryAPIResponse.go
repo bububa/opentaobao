@@ -2,6 +2,7 @@ package normalvisa
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripTravelVisaApplicantQueryAPIResponse struct {
 	AlitripTravelVisaApplicantQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripTravelVisaApplicantQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripTravelVisaApplicantQueryAPIResponseModel).Reset()
+}
+
 // AlitripTravelVisaApplicantQueryAPIResponseModel is 签证申请人查询接口 成功返回结果
 type AlitripTravelVisaApplicantQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_visa_applicant_query_response"`
@@ -22,4 +29,27 @@ type AlitripTravelVisaApplicantQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *QueryVisaApplicantResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripTravelVisaApplicantQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripTravelVisaApplicantQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripTravelVisaApplicantQueryAPIResponse)
+	},
+}
+
+// GetAlitripTravelVisaApplicantQueryAPIResponse 从 sync.Pool 获取 AlitripTravelVisaApplicantQueryAPIResponse
+func GetAlitripTravelVisaApplicantQueryAPIResponse() *AlitripTravelVisaApplicantQueryAPIResponse {
+	return poolAlitripTravelVisaApplicantQueryAPIResponse.Get().(*AlitripTravelVisaApplicantQueryAPIResponse)
+}
+
+// ReleaseAlitripTravelVisaApplicantQueryAPIResponse 将 AlitripTravelVisaApplicantQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlitripTravelVisaApplicantQueryAPIResponse(v *AlitripTravelVisaApplicantQueryAPIResponse) {
+	v.Reset()
+	poolAlitripTravelVisaApplicantQueryAPIResponse.Put(v)
 }

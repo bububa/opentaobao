@@ -9,11 +9,6 @@ import (
 // taobao.baichuan.openaccount.login
 //
 // 百川用户名密码登录
-func TaobaoBaichuanOpenaccountLogin(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountLoginAPIRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountLoginAPIResponse, error) {
-	var resp baichuan.TaobaoBaichuanOpenaccountLoginAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBaichuanOpenaccountLogin(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountLoginAPIRequest, resp *baichuan.TaobaoBaichuanOpenaccountLoginAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

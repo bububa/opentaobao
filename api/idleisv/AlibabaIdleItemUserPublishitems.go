@@ -9,11 +9,6 @@ import (
 // alibaba.idle.item.user.publishitems
 //
 // 为服务商的卖家提供发布的闲鱼商品列表
-func AlibabaIdleItemUserPublishitems(clt *core.SDKClient, req *idleisv.AlibabaIdleItemUserPublishitemsAPIRequest, session string) (*idleisv.AlibabaIdleItemUserPublishitemsAPIResponse, error) {
-	var resp idleisv.AlibabaIdleItemUserPublishitemsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleItemUserPublishitems(clt *core.SDKClient, req *idleisv.AlibabaIdleItemUserPublishitemsAPIRequest, resp *idleisv.AlibabaIdleItemUserPublishitemsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

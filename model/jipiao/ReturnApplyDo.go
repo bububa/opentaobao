@@ -1,5 +1,9 @@
 package jipiao
 
+import (
+	"sync"
+)
+
 // ReturnApplyDo 结构体
 type ReturnApplyDo struct {
 	// 航线二字码
@@ -38,4 +42,38 @@ type ReturnApplyDo struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 是否自愿
 	IsVoluntary bool `json:"is_voluntary,omitempty" xml:"is_voluntary,omitempty"`
+}
+
+var poolReturnApplyDo = sync.Pool{
+	New: func() any {
+		return new(ReturnApplyDo)
+	},
+}
+
+// GetReturnApplyDo() 从对象池中获取ReturnApplyDo
+func GetReturnApplyDo() *ReturnApplyDo {
+	return poolReturnApplyDo.Get().(*ReturnApplyDo)
+}
+
+// ReleaseReturnApplyDo 释放ReturnApplyDo
+func ReleaseReturnApplyDo(v *ReturnApplyDo) {
+	v.AirlineCode = ""
+	v.ApplyTime = ""
+	v.ArrAirportCode = ""
+	v.Cabin = ""
+	v.DepAirportCode = ""
+	v.DepTime = ""
+	v.FirstProcessTime = ""
+	v.FlightNo = ""
+	v.PassengerName = ""
+	v.PaySuccessTime = ""
+	v.TicketNo = ""
+	v.RefundReason = ""
+	v.Id = 0
+	v.OrderId = 0
+	v.RefundFee = 0
+	v.RefundMoney = 0
+	v.Status = 0
+	v.IsVoluntary = false
+	poolReturnApplyDo.Put(v)
 }

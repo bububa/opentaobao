@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleTemplateQuesGetAPIRequest struct {
 // NewAlibabaIdleTemplateQuesGetRequest 初始化AlibabaIdleTemplateQuesGetAPIRequest对象
 func NewAlibabaIdleTemplateQuesGetRequest() *AlibabaIdleTemplateQuesGetAPIRequest {
 	return &AlibabaIdleTemplateQuesGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleTemplateQuesGetAPIRequest) Reset() {
+	r._spuQuestionnaireTopQry = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleTemplateQuesGetAPIRequest) SetSpuQuestionnaireTopQry(_spuQue
 // GetSpuQuestionnaireTopQry SpuQuestionnaireTopQry Getter
 func (r AlibabaIdleTemplateQuesGetAPIRequest) GetSpuQuestionnaireTopQry() *SpuQuestionnaireTopQry {
 	return r._spuQuestionnaireTopQry
+}
+
+var poolAlibabaIdleTemplateQuesGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleTemplateQuesGetRequest()
+	},
+}
+
+// GetAlibabaIdleTemplateQuesGetRequest 从 sync.Pool 获取 AlibabaIdleTemplateQuesGetAPIRequest
+func GetAlibabaIdleTemplateQuesGetAPIRequest() *AlibabaIdleTemplateQuesGetAPIRequest {
+	return poolAlibabaIdleTemplateQuesGetAPIRequest.Get().(*AlibabaIdleTemplateQuesGetAPIRequest)
+}
+
+// ReleaseAlibabaIdleTemplateQuesGetAPIRequest 将 AlibabaIdleTemplateQuesGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleTemplateQuesGetAPIRequest(v *AlibabaIdleTemplateQuesGetAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleTemplateQuesGetAPIRequest.Put(v)
 }

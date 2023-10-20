@@ -1,5 +1,9 @@
 package alitrippoi
 
+import (
+	"sync"
+)
+
 // AlitripPlatformPoiRawPoioutbypoiidsResult 结构体
 type AlitripPlatformPoiRawPoioutbypoiidsResult struct {
 	// 返回poi详情
@@ -12,4 +16,25 @@ type AlitripPlatformPoiRawPoioutbypoiidsResult struct {
 	TotalRecords int64 `json:"total_records,omitempty" xml:"total_records,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlitripPlatformPoiRawPoioutbypoiidsResult = sync.Pool{
+	New: func() any {
+		return new(AlitripPlatformPoiRawPoioutbypoiidsResult)
+	},
+}
+
+// GetAlitripPlatformPoiRawPoioutbypoiidsResult() 从对象池中获取AlitripPlatformPoiRawPoioutbypoiidsResult
+func GetAlitripPlatformPoiRawPoioutbypoiidsResult() *AlitripPlatformPoiRawPoioutbypoiidsResult {
+	return poolAlitripPlatformPoiRawPoioutbypoiidsResult.Get().(*AlitripPlatformPoiRawPoioutbypoiidsResult)
+}
+
+// ReleaseAlitripPlatformPoiRawPoioutbypoiidsResult 释放AlitripPlatformPoiRawPoioutbypoiidsResult
+func ReleaseAlitripPlatformPoiRawPoioutbypoiidsResult(v *AlitripPlatformPoiRawPoioutbypoiidsResult) {
+	v.Datas = v.Datas[:0]
+	v.Message = ""
+	v.ResultCode = ""
+	v.TotalRecords = 0
+	v.Success = false
+	poolAlitripPlatformPoiRawPoioutbypoiidsResult.Put(v)
 }

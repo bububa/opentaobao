@@ -2,6 +2,7 @@ package sungari
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoSungariDisposeQueryAPIResponse struct {
 	TaobaoSungariDisposeQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoSungariDisposeQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSungariDisposeQueryAPIResponseModel).Reset()
+}
+
 // TaobaoSungariDisposeQueryAPIResponseModel is 商品商家处置结果查询 成功返回结果
 type TaobaoSungariDisposeQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"sungari_dispose_query_response"`
@@ -22,4 +29,27 @@ type TaobaoSungariDisposeQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *TaobaoSungariDisposeQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSungariDisposeQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoSungariDisposeQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSungariDisposeQueryAPIResponse)
+	},
+}
+
+// GetTaobaoSungariDisposeQueryAPIResponse 从 sync.Pool 获取 TaobaoSungariDisposeQueryAPIResponse
+func GetTaobaoSungariDisposeQueryAPIResponse() *TaobaoSungariDisposeQueryAPIResponse {
+	return poolTaobaoSungariDisposeQueryAPIResponse.Get().(*TaobaoSungariDisposeQueryAPIResponse)
+}
+
+// ReleaseTaobaoSungariDisposeQueryAPIResponse 将 TaobaoSungariDisposeQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSungariDisposeQueryAPIResponse(v *TaobaoSungariDisposeQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoSungariDisposeQueryAPIResponse.Put(v)
 }

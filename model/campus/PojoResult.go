@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // PojoResult 结构体
 type PojoResult struct {
 	// 内容
@@ -24,4 +28,31 @@ type PojoResult struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 是否成功
 	ApiSuccess bool `json:"api_success,omitempty" xml:"api_success,omitempty"`
+}
+
+var poolPojoResult = sync.Pool{
+	New: func() any {
+		return new(PojoResult)
+	},
+}
+
+// GetPojoResult() 从对象池中获取PojoResult
+func GetPojoResult() *PojoResult {
+	return poolPojoResult.Get().(*PojoResult)
+}
+
+// ReleasePojoResult 释放PojoResult
+func ReleasePojoResult(v *PojoResult) {
+	v.Contents = v.Contents[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.ErrorLevel = ""
+	v.RequestId = ""
+	v.ErrorExtInfo = ""
+	v.ApiErrorMsg = ""
+	v.ApiErrorCode = ""
+	v.Content = false
+	v.Success = false
+	v.ApiSuccess = false
+	poolPojoResult.Put(v)
 }

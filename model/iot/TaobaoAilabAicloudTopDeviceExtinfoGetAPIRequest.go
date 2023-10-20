@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest struct {
 // NewTaobaoAilabAicloudTopDeviceExtinfoGetRequest 初始化TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest对象
 func NewTaobaoAilabAicloudTopDeviceExtinfoGetRequest() *TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest {
 	return &TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest) Reset() {
+	r._originUserId = ""
+	r._schemaKey = ""
+	r._userType = ""
+	r._deviceId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest) SetDeviceId(_deviceId 
 // GetDeviceId DeviceId Getter
 func (r TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest) GetDeviceId() string {
 	return r._deviceId
+}
+
+var poolTaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopDeviceExtinfoGetRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopDeviceExtinfoGetRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest
+func GetTaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest() *TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest {
+	return poolTaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest.Get().(*TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest 将 TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest(v *TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest.Put(v)
 }

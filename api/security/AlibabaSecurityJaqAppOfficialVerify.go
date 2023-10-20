@@ -9,11 +9,6 @@ import (
 // alibaba.security.jaq.app.official.verify
 //
 // 接入用户来查询应用是否为官方应用
-func AlibabaSecurityJaqAppOfficialVerify(clt *core.SDKClient, req *security.AlibabaSecurityJaqAppOfficialVerifyAPIRequest, session string) (*security.AlibabaSecurityJaqAppOfficialVerifyAPIResponse, error) {
-	var resp security.AlibabaSecurityJaqAppOfficialVerifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSecurityJaqAppOfficialVerify(clt *core.SDKClient, req *security.AlibabaSecurityJaqAppOfficialVerifyAPIRequest, resp *security.AlibabaSecurityJaqAppOfficialVerifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

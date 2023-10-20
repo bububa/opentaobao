@@ -9,11 +9,6 @@ import (
 // taobao.taotv.video.playlist.all
 //
 // 根据牌照和视频源等获取播单列表
-func TaobaoTaotvVideoPlaylistAll(clt *core.SDKClient, req *taotv.TaobaoTaotvVideoPlaylistAllAPIRequest, session string) (*taotv.TaobaoTaotvVideoPlaylistAllAPIResponse, error) {
-	var resp taotv.TaobaoTaotvVideoPlaylistAllAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTaotvVideoPlaylistAll(clt *core.SDKClient, req *taotv.TaobaoTaotvVideoPlaylistAllAPIRequest, resp *taotv.TaobaoTaotvVideoPlaylistAllAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

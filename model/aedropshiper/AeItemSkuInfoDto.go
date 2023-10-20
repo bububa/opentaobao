@@ -1,5 +1,9 @@
 package aedropshiper
 
+import (
+	"sync"
+)
+
 // AeItemSkuInfoDto 结构体
 type AeItemSkuInfoDto struct {
 	// SKU attribute object
@@ -26,4 +30,32 @@ type AeItemSkuInfoDto struct {
 	SkuAvailableStock int64 `json:"sku_available_stock,omitempty" xml:"sku_available_stock,omitempty"`
 	// SKU inventory, the data format is true if stock is available, false if no stock is available; at least one sku record is available.
 	SkuStock bool `json:"sku_stock,omitempty" xml:"sku_stock,omitempty"`
+}
+
+var poolAeItemSkuInfoDto = sync.Pool{
+	New: func() any {
+		return new(AeItemSkuInfoDto)
+	},
+}
+
+// GetAeItemSkuInfoDto() 从对象池中获取AeItemSkuInfoDto
+func GetAeItemSkuInfoDto() *AeItemSkuInfoDto {
+	return poolAeItemSkuInfoDto.Get().(*AeItemSkuInfoDto)
+}
+
+// ReleaseAeItemSkuInfoDto 释放AeItemSkuInfoDto
+func ReleaseAeItemSkuInfoDto(v *AeItemSkuInfoDto) {
+	v.AeSkuPropertyDtos = v.AeSkuPropertyDtos[:0]
+	v.Id = ""
+	v.SkuPrice = ""
+	v.SkuCode = ""
+	v.CurrencyCode = ""
+	v.Barcode = ""
+	v.OfferSalePrice = ""
+	v.OfferBulkSalePrice = ""
+	v.IpmSkuStock = 0
+	v.SkuBulkOrder = 0
+	v.SkuAvailableStock = 0
+	v.SkuStock = false
+	poolAeItemSkuInfoDto.Put(v)
 }

@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlisportsPassportAuthAccountinfoAPIRequest struct {
 // NewAlibabaAlisportsPassportAuthAccountinfoRequest 初始化AlibabaAlisportsPassportAuthAccountinfoAPIRequest对象
 func NewAlibabaAlisportsPassportAuthAccountinfoRequest() *AlibabaAlisportsPassportAuthAccountinfoAPIRequest {
 	return &AlibabaAlisportsPassportAuthAccountinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlisportsPassportAuthAccountinfoAPIRequest) Reset() {
+	r._alispAppKey = ""
+	r._ssoToken = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlisportsPassportAuthAccountinfoAPIRequest) SetSsoToken(_ssoToke
 // GetSsoToken SsoToken Getter
 func (r AlibabaAlisportsPassportAuthAccountinfoAPIRequest) GetSsoToken() string {
 	return r._ssoToken
+}
+
+var poolAlibabaAlisportsPassportAuthAccountinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlisportsPassportAuthAccountinfoRequest()
+	},
+}
+
+// GetAlibabaAlisportsPassportAuthAccountinfoRequest 从 sync.Pool 获取 AlibabaAlisportsPassportAuthAccountinfoAPIRequest
+func GetAlibabaAlisportsPassportAuthAccountinfoAPIRequest() *AlibabaAlisportsPassportAuthAccountinfoAPIRequest {
+	return poolAlibabaAlisportsPassportAuthAccountinfoAPIRequest.Get().(*AlibabaAlisportsPassportAuthAccountinfoAPIRequest)
+}
+
+// ReleaseAlibabaAlisportsPassportAuthAccountinfoAPIRequest 将 AlibabaAlisportsPassportAuthAccountinfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlisportsPassportAuthAccountinfoAPIRequest(v *AlibabaAlisportsPassportAuthAccountinfoAPIRequest) {
+	v.Reset()
+	poolAlibabaAlisportsPassportAuthAccountinfoAPIRequest.Put(v)
 }

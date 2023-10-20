@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // OrderAddressDto 结构体
 type OrderAddressDto struct {
 	// English country/region name
@@ -36,4 +40,37 @@ type OrderAddressDto struct {
 	FaxArea string `json:"fax_area,omitempty" xml:"fax_area,omitempty"`
 	// localized address, currently for buyer whose address is in Russia.
 	LocalizedAddress string `json:"localized_address,omitempty" xml:"localized_address,omitempty"`
+}
+
+var poolOrderAddressDto = sync.Pool{
+	New: func() any {
+		return new(OrderAddressDto)
+	},
+}
+
+// GetOrderAddressDto() 从对象池中获取OrderAddressDto
+func GetOrderAddressDto() *OrderAddressDto {
+	return poolOrderAddressDto.Get().(*OrderAddressDto)
+}
+
+// ReleaseOrderAddressDto 释放OrderAddressDto
+func ReleaseOrderAddressDto(v *OrderAddressDto) {
+	v.CountryName = ""
+	v.MobileNo = ""
+	v.ContactPerson = ""
+	v.PhoneCountry = ""
+	v.PhoneArea = ""
+	v.Province = ""
+	v.Address = ""
+	v.PhoneNumber = ""
+	v.FaxNumber = ""
+	v.DetailAddress = ""
+	v.City = ""
+	v.Country = ""
+	v.Address2 = ""
+	v.FaxCountry = ""
+	v.Zip = ""
+	v.FaxArea = ""
+	v.LocalizedAddress = ""
+	poolOrderAddressDto.Put(v)
 }

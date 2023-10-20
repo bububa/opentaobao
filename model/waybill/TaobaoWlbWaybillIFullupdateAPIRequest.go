@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoWlbWaybillIFullupdateAPIRequest struct {
 // NewTaobaoWlbWaybillIFullupdateRequest 初始化TaobaoWlbWaybillIFullupdateAPIRequest对象
 func NewTaobaoWlbWaybillIFullupdateRequest() *TaobaoWlbWaybillIFullupdateAPIRequest {
 	return &TaobaoWlbWaybillIFullupdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWaybillIFullupdateAPIRequest) Reset() {
+	r._waybillApplyFullUpdateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoWlbWaybillIFullupdateAPIRequest) SetWaybillApplyFullUpdateRequest
 // GetWaybillApplyFullUpdateRequest WaybillApplyFullUpdateRequest Getter
 func (r TaobaoWlbWaybillIFullupdateAPIRequest) GetWaybillApplyFullUpdateRequest() *WaybillApplyFullUpdateRequest {
 	return r._waybillApplyFullUpdateRequest
+}
+
+var poolTaobaoWlbWaybillIFullupdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWaybillIFullupdateRequest()
+	},
+}
+
+// GetTaobaoWlbWaybillIFullupdateRequest 从 sync.Pool 获取 TaobaoWlbWaybillIFullupdateAPIRequest
+func GetTaobaoWlbWaybillIFullupdateAPIRequest() *TaobaoWlbWaybillIFullupdateAPIRequest {
+	return poolTaobaoWlbWaybillIFullupdateAPIRequest.Get().(*TaobaoWlbWaybillIFullupdateAPIRequest)
+}
+
+// ReleaseTaobaoWlbWaybillIFullupdateAPIRequest 将 TaobaoWlbWaybillIFullupdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWaybillIFullupdateAPIRequest(v *TaobaoWlbWaybillIFullupdateAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWaybillIFullupdateAPIRequest.Put(v)
 }

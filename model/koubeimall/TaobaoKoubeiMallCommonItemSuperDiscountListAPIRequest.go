@@ -2,6 +2,7 @@ package koubeimall
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest struct {
 // NewTaobaoKoubeiMallCommonItemSuperDiscountListRequest 初始化TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest对象
 func NewTaobaoKoubeiMallCommonItemSuperDiscountListRequest() *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest {
 	return &TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) Reset() {
+	r._displayChannel = ""
+	r._appVersion = ""
+	r._terminalType = ""
+	r._latitude = ""
+	r._longitude = ""
+	r._cityCode = ""
+	r._dataSetId = ""
+	r._mallId = ""
+	r._itemSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetItemSize(_ite
 // GetItemSize ItemSize Getter
 func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetItemSize() int64 {
 	return r._itemSize
+}
+
+var poolTaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoKoubeiMallCommonItemSuperDiscountListRequest()
+	},
+}
+
+// GetTaobaoKoubeiMallCommonItemSuperDiscountListRequest 从 sync.Pool 获取 TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest
+func GetTaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest() *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest {
+	return poolTaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest.Get().(*TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest)
+}
+
+// ReleaseTaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest 将 TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest 放入 sync.Pool
+func ReleaseTaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest(v *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) {
+	v.Reset()
+	poolTaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest.Put(v)
 }

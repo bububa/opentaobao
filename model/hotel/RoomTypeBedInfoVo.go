@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // RoomTypeBedInfoVo 结构体
 type RoomTypeBedInfoVo struct {
 	// 或关系床型集合
@@ -16,4 +20,27 @@ type RoomTypeBedInfoVo struct {
 	FuzzyDesc string `json:"fuzzy_desc,omitempty" xml:"fuzzy_desc,omitempty"`
 	// 简单描述，较长描述省略床宽，但依然会描述具体的床型信息，用于详情页标准房型床型展示
 	SimpleDesc string `json:"simple_desc,omitempty" xml:"simple_desc,omitempty"`
+}
+
+var poolRoomTypeBedInfoVo = sync.Pool{
+	New: func() any {
+		return new(RoomTypeBedInfoVo)
+	},
+}
+
+// GetRoomTypeBedInfoVo() 从对象池中获取RoomTypeBedInfoVo
+func GetRoomTypeBedInfoVo() *RoomTypeBedInfoVo {
+	return poolRoomTypeBedInfoVo.Get().(*RoomTypeBedInfoVo)
+}
+
+// ReleaseRoomTypeBedInfoVo 释放RoomTypeBedInfoVo
+func ReleaseRoomTypeBedInfoVo(v *RoomTypeBedInfoVo) {
+	v.BedInfoGroups = v.BedInfoGroups[:0]
+	v.Classifications = v.Classifications[:0]
+	v.BriefDesc = ""
+	v.ClassificationDesc = ""
+	v.Desc = ""
+	v.FuzzyDesc = ""
+	v.SimpleDesc = ""
+	poolRoomTypeBedInfoVo.Put(v)
 }

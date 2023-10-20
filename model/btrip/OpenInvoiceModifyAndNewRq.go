@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenInvoiceModifyAndNewRq 结构体
 type OpenInvoiceModifyAndNewRq struct {
 	// 注册地址
@@ -22,4 +26,30 @@ type OpenInvoiceModifyAndNewRq struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 商旅开放平台传2
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolOpenInvoiceModifyAndNewRq = sync.Pool{
+	New: func() any {
+		return new(OpenInvoiceModifyAndNewRq)
+	},
+}
+
+// GetOpenInvoiceModifyAndNewRq() 从对象池中获取OpenInvoiceModifyAndNewRq
+func GetOpenInvoiceModifyAndNewRq() *OpenInvoiceModifyAndNewRq {
+	return poolOpenInvoiceModifyAndNewRq.Get().(*OpenInvoiceModifyAndNewRq)
+}
+
+// ReleaseOpenInvoiceModifyAndNewRq 释放OpenInvoiceModifyAndNewRq
+func ReleaseOpenInvoiceModifyAndNewRq(v *OpenInvoiceModifyAndNewRq) {
+	v.Address = ""
+	v.BankNo = ""
+	v.BankName = ""
+	v.CorpId = ""
+	v.TaxNo = ""
+	v.Tel = ""
+	v.ThirdPartId = ""
+	v.Title = ""
+	v.Type = 0
+	v.Version = 0
+	poolOpenInvoiceModifyAndNewRq.Put(v)
 }

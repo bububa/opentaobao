@@ -2,6 +2,7 @@ package cloudgame
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCloudgameUserMixuseridCheckAPIRequest struct {
 // NewAlibabaCloudgameUserMixuseridCheckRequest 初始化AlibabaCloudgameUserMixuseridCheckAPIRequest对象
 func NewAlibabaCloudgameUserMixuseridCheckRequest() *AlibabaCloudgameUserMixuseridCheckAPIRequest {
 	return &AlibabaCloudgameUserMixuseridCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCloudgameUserMixuseridCheckAPIRequest) Reset() {
+	r._mixUserId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCloudgameUserMixuseridCheckAPIRequest) SetMixUserId(_mixUserId s
 // GetMixUserId MixUserId Getter
 func (r AlibabaCloudgameUserMixuseridCheckAPIRequest) GetMixUserId() string {
 	return r._mixUserId
+}
+
+var poolAlibabaCloudgameUserMixuseridCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCloudgameUserMixuseridCheckRequest()
+	},
+}
+
+// GetAlibabaCloudgameUserMixuseridCheckRequest 从 sync.Pool 获取 AlibabaCloudgameUserMixuseridCheckAPIRequest
+func GetAlibabaCloudgameUserMixuseridCheckAPIRequest() *AlibabaCloudgameUserMixuseridCheckAPIRequest {
+	return poolAlibabaCloudgameUserMixuseridCheckAPIRequest.Get().(*AlibabaCloudgameUserMixuseridCheckAPIRequest)
+}
+
+// ReleaseAlibabaCloudgameUserMixuseridCheckAPIRequest 将 AlibabaCloudgameUserMixuseridCheckAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCloudgameUserMixuseridCheckAPIRequest(v *AlibabaCloudgameUserMixuseridCheckAPIRequest) {
+	v.Reset()
+	poolAlibabaCloudgameUserMixuseridCheckAPIRequest.Put(v)
 }

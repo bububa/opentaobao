@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // FreeTourTrafficInfo 结构体
 type FreeTourTrafficInfo struct {
 	// 参考班次号，飞机需要填航班号，火车需要填车次号，汽车和船可不填
@@ -28,4 +32,33 @@ type FreeTourTrafficInfo struct {
 	Group int64 `json:"group,omitempty" xml:"group,omitempty"`
 	// 是否经停
 	StopOver bool `json:"stop_over,omitempty" xml:"stop_over,omitempty"`
+}
+
+var poolFreeTourTrafficInfo = sync.Pool{
+	New: func() any {
+		return new(FreeTourTrafficInfo)
+	},
+}
+
+// GetFreeTourTrafficInfo() 从对象池中获取FreeTourTrafficInfo
+func GetFreeTourTrafficInfo() *FreeTourTrafficInfo {
+	return poolFreeTourTrafficInfo.Get().(*FreeTourTrafficInfo)
+}
+
+// ReleaseFreeTourTrafficInfo 释放FreeTourTrafficInfo
+func ReleaseFreeTourTrafficInfo(v *FreeTourTrafficInfo) {
+	v.TrafficNo = ""
+	v.Vendor = ""
+	v.PlaneType = ""
+	v.Departure = ""
+	v.Destination = ""
+	v.DepartureTime = ""
+	v.ArrivalTime = ""
+	v.TrafficDesc = ""
+	v.StopCity = ""
+	v.Day = 0
+	v.NonStop = 0
+	v.Group = 0
+	v.StopOver = false
+	poolFreeTourTrafficInfo.Put(v)
 }

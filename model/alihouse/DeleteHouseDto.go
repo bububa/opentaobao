@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // DeleteHouseDto 结构体
 type DeleteHouseDto struct {
 	// 外部小区id
@@ -16,4 +20,27 @@ type DeleteHouseDto struct {
 	HouseModel int64 `json:"house_model,omitempty" xml:"house_model,omitempty"`
 	// 公私域区分 1公域 2私域
 	Scene int64 `json:"scene,omitempty" xml:"scene,omitempty"`
+}
+
+var poolDeleteHouseDto = sync.Pool{
+	New: func() any {
+		return new(DeleteHouseDto)
+	},
+}
+
+// GetDeleteHouseDto() 从对象池中获取DeleteHouseDto
+func GetDeleteHouseDto() *DeleteHouseDto {
+	return poolDeleteHouseDto.Get().(*DeleteHouseDto)
+}
+
+// ReleaseDeleteHouseDto 释放DeleteHouseDto
+func ReleaseDeleteHouseDto(v *DeleteHouseDto) {
+	v.CommunityOuterId = ""
+	v.OuterId = ""
+	v.EntrustOuterId = ""
+	v.BusinessType = 0
+	v.HouseType = 0
+	v.HouseModel = 0
+	v.Scene = 0
+	poolDeleteHouseDto.Put(v)
 }

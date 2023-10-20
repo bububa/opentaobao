@@ -2,6 +2,7 @@ package elife
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoElifeLifecardRefundAPIRequest struct {
 // NewTaobaoElifeLifecardRefundRequest 初始化TaobaoElifeLifecardRefundAPIRequest对象
 func NewTaobaoElifeLifecardRefundRequest() *TaobaoElifeLifecardRefundAPIRequest {
 	return &TaobaoElifeLifecardRefundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoElifeLifecardRefundAPIRequest) Reset() {
+	r._refundRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoElifeLifecardRefundAPIRequest) SetRefundRequest(_refundRequest *R
 // GetRefundRequest RefundRequest Getter
 func (r TaobaoElifeLifecardRefundAPIRequest) GetRefundRequest() *RefundRequest {
 	return r._refundRequest
+}
+
+var poolTaobaoElifeLifecardRefundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoElifeLifecardRefundRequest()
+	},
+}
+
+// GetTaobaoElifeLifecardRefundRequest 从 sync.Pool 获取 TaobaoElifeLifecardRefundAPIRequest
+func GetTaobaoElifeLifecardRefundAPIRequest() *TaobaoElifeLifecardRefundAPIRequest {
+	return poolTaobaoElifeLifecardRefundAPIRequest.Get().(*TaobaoElifeLifecardRefundAPIRequest)
+}
+
+// ReleaseTaobaoElifeLifecardRefundAPIRequest 将 TaobaoElifeLifecardRefundAPIRequest 放入 sync.Pool
+func ReleaseTaobaoElifeLifecardRefundAPIRequest(v *TaobaoElifeLifecardRefundAPIRequest) {
+	v.Reset()
+	poolTaobaoElifeLifecardRefundAPIRequest.Put(v)
 }

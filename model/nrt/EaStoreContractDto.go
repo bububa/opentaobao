@@ -1,5 +1,9 @@
 package nrt
 
+import (
+	"sync"
+)
+
 // EaStoreContractDto 结构体
 type EaStoreContractDto struct {
 	// 合同号
@@ -52,4 +56,45 @@ type EaStoreContractDto struct {
 	RowStatus int64 `json:"row_status,omitempty" xml:"row_status,omitempty"`
 	// 卖场id
 	MallId int64 `json:"mall_id,omitempty" xml:"mall_id,omitempty"`
+}
+
+var poolEaStoreContractDto = sync.Pool{
+	New: func() any {
+		return new(EaStoreContractDto)
+	},
+}
+
+// GetEaStoreContractDto() 从对象池中获取EaStoreContractDto
+func GetEaStoreContractDto() *EaStoreContractDto {
+	return poolEaStoreContractDto.Get().(*EaStoreContractDto)
+}
+
+// ReleaseEaStoreContractDto 释放EaStoreContractDto
+func ReleaseEaStoreContractDto(v *EaStoreContractDto) {
+	v.Code = ""
+	v.OldCode = ""
+	v.OldStoreContractCode = ""
+	v.MallCode = ""
+	v.MallName = ""
+	v.AgencyCode = ""
+	v.AgencyName = ""
+	v.StoreCode = ""
+	v.StoreName = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.Status = ""
+	v.BrandName = ""
+	v.CategoryName = ""
+	v.ShortAddress = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Attributes = ""
+	v.StoreId = 0
+	v.BrandId = 0
+	v.MallDingDeptId = 0
+	v.StoreDingDeptId = 0
+	v.OldStoreDingDeptId = 0
+	v.RowStatus = 0
+	v.MallId = 0
+	poolEaStoreContractDto.Put(v)
 }

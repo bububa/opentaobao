@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest struct {
 // NewCainiaoWaybillCloudprintNetprintVerifycodeRequest 初始化CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest对象
 func NewCainiaoWaybillCloudprintNetprintVerifycodeRequest() *CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest {
 	return &CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest) Reset() {
+	r._printer = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest) SetPrinter(_print
 // GetPrinter Printer Getter
 func (r CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest) GetPrinter() *CloudPrinterVerifyCodeRequest {
 	return r._printer
+}
+
+var poolCainiaoWaybillCloudprintNetprintVerifycodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoWaybillCloudprintNetprintVerifycodeRequest()
+	},
+}
+
+// GetCainiaoWaybillCloudprintNetprintVerifycodeRequest 从 sync.Pool 获取 CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest
+func GetCainiaoWaybillCloudprintNetprintVerifycodeAPIRequest() *CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest {
+	return poolCainiaoWaybillCloudprintNetprintVerifycodeAPIRequest.Get().(*CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest)
+}
+
+// ReleaseCainiaoWaybillCloudprintNetprintVerifycodeAPIRequest 将 CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest 放入 sync.Pool
+func ReleaseCainiaoWaybillCloudprintNetprintVerifycodeAPIRequest(v *CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest) {
+	v.Reset()
+	poolCainiaoWaybillCloudprintNetprintVerifycodeAPIRequest.Put(v)
 }

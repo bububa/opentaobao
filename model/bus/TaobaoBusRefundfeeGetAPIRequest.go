@@ -2,6 +2,7 @@ package bus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoBusRefundfeeGetAPIRequest struct {
 // NewTaobaoBusRefundfeeGetRequest 初始化TaobaoBusRefundfeeGetAPIRequest对象
 func NewTaobaoBusRefundfeeGetRequest() *TaobaoBusRefundfeeGetAPIRequest {
 	return &TaobaoBusRefundfeeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBusRefundfeeGetAPIRequest) Reset() {
+	r._subOrderIds = r._subOrderIds[:0]
+	r._aliTripOrderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoBusRefundfeeGetAPIRequest) SetAliTripOrderId(_aliTripOrderId stri
 // GetAliTripOrderId AliTripOrderId Getter
 func (r TaobaoBusRefundfeeGetAPIRequest) GetAliTripOrderId() string {
 	return r._aliTripOrderId
+}
+
+var poolTaobaoBusRefundfeeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBusRefundfeeGetRequest()
+	},
+}
+
+// GetTaobaoBusRefundfeeGetRequest 从 sync.Pool 获取 TaobaoBusRefundfeeGetAPIRequest
+func GetTaobaoBusRefundfeeGetAPIRequest() *TaobaoBusRefundfeeGetAPIRequest {
+	return poolTaobaoBusRefundfeeGetAPIRequest.Get().(*TaobaoBusRefundfeeGetAPIRequest)
+}
+
+// ReleaseTaobaoBusRefundfeeGetAPIRequest 将 TaobaoBusRefundfeeGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBusRefundfeeGetAPIRequest(v *TaobaoBusRefundfeeGetAPIRequest) {
+	v.Reset()
+	poolTaobaoBusRefundfeeGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaItemEditSchemaGetAPIRequest struct {
 // NewAlibabaItemEditSchemaGetRequest 初始化AlibabaItemEditSchemaGetAPIRequest对象
 func NewAlibabaItemEditSchemaGetRequest() *AlibabaItemEditSchemaGetAPIRequest {
 	return &AlibabaItemEditSchemaGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaItemEditSchemaGetAPIRequest) Reset() {
+	r._fields = r._fields[:0]
+	r._bizType = ""
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaItemEditSchemaGetAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r AlibabaItemEditSchemaGetAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolAlibabaItemEditSchemaGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaItemEditSchemaGetRequest()
+	},
+}
+
+// GetAlibabaItemEditSchemaGetRequest 从 sync.Pool 获取 AlibabaItemEditSchemaGetAPIRequest
+func GetAlibabaItemEditSchemaGetAPIRequest() *AlibabaItemEditSchemaGetAPIRequest {
+	return poolAlibabaItemEditSchemaGetAPIRequest.Get().(*AlibabaItemEditSchemaGetAPIRequest)
+}
+
+// ReleaseAlibabaItemEditSchemaGetAPIRequest 将 AlibabaItemEditSchemaGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaItemEditSchemaGetAPIRequest(v *AlibabaItemEditSchemaGetAPIRequest) {
+	v.Reset()
+	poolAlibabaItemEditSchemaGetAPIRequest.Put(v)
 }

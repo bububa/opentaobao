@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoPlaceStorecategoryGetAPIRequest struct {
 // NewTaobaoPlaceStorecategoryGetRequest 初始化TaobaoPlaceStorecategoryGetAPIRequest对象
 func NewTaobaoPlaceStorecategoryGetRequest() *TaobaoPlaceStorecategoryGetAPIRequest {
 	return &TaobaoPlaceStorecategoryGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPlaceStorecategoryGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoPlaceStorecategoryGetAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoPlaceStorecategoryGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoPlaceStorecategoryGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPlaceStorecategoryGetRequest()
+	},
+}
+
+// GetTaobaoPlaceStorecategoryGetRequest 从 sync.Pool 获取 TaobaoPlaceStorecategoryGetAPIRequest
+func GetTaobaoPlaceStorecategoryGetAPIRequest() *TaobaoPlaceStorecategoryGetAPIRequest {
+	return poolTaobaoPlaceStorecategoryGetAPIRequest.Get().(*TaobaoPlaceStorecategoryGetAPIRequest)
+}
+
+// ReleaseTaobaoPlaceStorecategoryGetAPIRequest 将 TaobaoPlaceStorecategoryGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPlaceStorecategoryGetAPIRequest(v *TaobaoPlaceStorecategoryGetAPIRequest) {
+	v.Reset()
+	poolTaobaoPlaceStorecategoryGetAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.growth.reaching.suggestion.query
 //
 // 厂商生态推荐信息查询
-func TaobaoGrowthReachingSuggestionQuery(clt *core.SDKClient, req *usergrowth.TaobaoGrowthReachingSuggestionQueryAPIRequest, session string) (*usergrowth.TaobaoGrowthReachingSuggestionQueryAPIResponse, error) {
-	var resp usergrowth.TaobaoGrowthReachingSuggestionQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoGrowthReachingSuggestionQuery(clt *core.SDKClient, req *usergrowth.TaobaoGrowthReachingSuggestionQueryAPIRequest, resp *usergrowth.TaobaoGrowthReachingSuggestionQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

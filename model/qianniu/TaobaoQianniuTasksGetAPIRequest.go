@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -69,8 +70,39 @@ type TaobaoQianniuTasksGetAPIRequest struct {
 // NewTaobaoQianniuTasksGetRequest 初始化TaobaoQianniuTasksGetAPIRequest对象
 func NewTaobaoQianniuTasksGetRequest() *TaobaoQianniuTasksGetAPIRequest {
 	return &TaobaoQianniuTasksGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(26),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQianniuTasksGetAPIRequest) Reset() {
+	r._bizType = ""
+	r._subBizType = ""
+	r._taskIds = ""
+	r._bizIds = ""
+	r._status = ""
+	r._subStatus = ""
+	r._metadataIds = ""
+	r._fields = ""
+	r._orderBy = ""
+	r._orderType = ""
+	r._bizNick = ""
+	r._startDate = ""
+	r._endDate = ""
+	r._modifyStartTimeStr = ""
+	r._modifyEndTimeStr = ""
+	r._excludeBizType = ""
+	r._keyWord = ""
+	r._clientInfo = ""
+	r._receiverUid = 0
+	r._senderUid = 0
+	r._pageSize = 0
+	r._currentPage = 0
+	r._remindFlag = 0
+	r._priority = 0
+	r._needMeta = false
+	r._needDeleted = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -426,4 +458,21 @@ func (r *TaobaoQianniuTasksGetAPIRequest) SetNeedDeleted(_needDeleted bool) erro
 // GetNeedDeleted NeedDeleted Getter
 func (r TaobaoQianniuTasksGetAPIRequest) GetNeedDeleted() bool {
 	return r._needDeleted
+}
+
+var poolTaobaoQianniuTasksGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQianniuTasksGetRequest()
+	},
+}
+
+// GetTaobaoQianniuTasksGetRequest 从 sync.Pool 获取 TaobaoQianniuTasksGetAPIRequest
+func GetTaobaoQianniuTasksGetAPIRequest() *TaobaoQianniuTasksGetAPIRequest {
+	return poolTaobaoQianniuTasksGetAPIRequest.Get().(*TaobaoQianniuTasksGetAPIRequest)
+}
+
+// ReleaseTaobaoQianniuTasksGetAPIRequest 将 TaobaoQianniuTasksGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQianniuTasksGetAPIRequest(v *TaobaoQianniuTasksGetAPIRequest) {
+	v.Reset()
+	poolTaobaoQianniuTasksGetAPIRequest.Put(v)
 }

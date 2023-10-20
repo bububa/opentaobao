@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAilabUserAuthorizedCancelAPIRequest struct {
 // NewAlibabaAilabUserAuthorizedCancelRequest 初始化AlibabaAilabUserAuthorizedCancelAPIRequest对象
 func NewAlibabaAilabUserAuthorizedCancelRequest() *AlibabaAilabUserAuthorizedCancelAPIRequest {
 	return &AlibabaAilabUserAuthorizedCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabUserAuthorizedCancelAPIRequest) Reset() {
+	r._merchantUserId = ""
+	r._schemaKey = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAilabUserAuthorizedCancelAPIRequest) SetSchemaKey(_schemaKey str
 // GetSchemaKey SchemaKey Getter
 func (r AlibabaAilabUserAuthorizedCancelAPIRequest) GetSchemaKey() string {
 	return r._schemaKey
+}
+
+var poolAlibabaAilabUserAuthorizedCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabUserAuthorizedCancelRequest()
+	},
+}
+
+// GetAlibabaAilabUserAuthorizedCancelRequest 从 sync.Pool 获取 AlibabaAilabUserAuthorizedCancelAPIRequest
+func GetAlibabaAilabUserAuthorizedCancelAPIRequest() *AlibabaAilabUserAuthorizedCancelAPIRequest {
+	return poolAlibabaAilabUserAuthorizedCancelAPIRequest.Get().(*AlibabaAilabUserAuthorizedCancelAPIRequest)
+}
+
+// ReleaseAlibabaAilabUserAuthorizedCancelAPIRequest 将 AlibabaAilabUserAuthorizedCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabUserAuthorizedCancelAPIRequest(v *AlibabaAilabUserAuthorizedCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabUserAuthorizedCancelAPIRequest.Put(v)
 }

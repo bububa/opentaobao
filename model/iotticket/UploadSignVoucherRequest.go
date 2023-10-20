@@ -1,5 +1,9 @@
 package iotticket
 
+import (
+	"sync"
+)
+
 // UploadSignVoucherRequest 结构体
 type UploadSignVoucherRequest struct {
 	// 快递签收凭证
@@ -20,4 +24,29 @@ type UploadSignVoucherRequest struct {
 	SpCode string `json:"sp_code,omitempty" xml:"sp_code,omitempty"`
 	// 工单Id
 	TicketId int64 `json:"ticket_id,omitempty" xml:"ticket_id,omitempty"`
+}
+
+var poolUploadSignVoucherRequest = sync.Pool{
+	New: func() any {
+		return new(UploadSignVoucherRequest)
+	},
+}
+
+// GetUploadSignVoucherRequest() 从对象池中获取UploadSignVoucherRequest
+func GetUploadSignVoucherRequest() *UploadSignVoucherRequest {
+	return poolUploadSignVoucherRequest.Get().(*UploadSignVoucherRequest)
+}
+
+// ReleaseUploadSignVoucherRequest 释放UploadSignVoucherRequest
+func ReleaseUploadSignVoucherRequest(v *UploadSignVoucherRequest) {
+	v.SignProofs = v.SignProofs[:0]
+	v.MailNo = ""
+	v.Feature = ""
+	v.Comment = ""
+	v.OperatorPhone = ""
+	v.OperatorId = ""
+	v.OperatorName = ""
+	v.SpCode = ""
+	v.TicketId = 0
+	poolUploadSignVoucherRequest.Put(v)
 }

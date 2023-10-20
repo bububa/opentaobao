@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest struct {
 // NewAlibabaAscpUopSupplierConsignorderOutofstockCallbackRequest 初始化AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest对象
 func NewAlibabaAscpUopSupplierConsignorderOutofstockCallbackRequest() *AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest {
 	return &AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest) Reset() {
+	r._consignorderOutofstockCallbackRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest) SetCons
 // GetConsignorderOutofstockCallbackRequest ConsignorderOutofstockCallbackRequest Getter
 func (r AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest) GetConsignorderOutofstockCallbackRequest() *Consignorderoutofstockcallbackrequest {
 	return r._consignorderOutofstockCallbackRequest
+}
+
+var poolAlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpUopSupplierConsignorderOutofstockCallbackRequest()
+	},
+}
+
+// GetAlibabaAscpUopSupplierConsignorderOutofstockCallbackRequest 从 sync.Pool 获取 AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest
+func GetAlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest() *AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest {
+	return poolAlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest.Get().(*AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest)
+}
+
+// ReleaseAlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest 将 AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest(v *AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest.Put(v)
 }

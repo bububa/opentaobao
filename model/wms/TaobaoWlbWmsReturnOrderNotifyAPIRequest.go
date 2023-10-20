@@ -2,6 +2,7 @@ package wms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -53,8 +54,31 @@ type TaobaoWlbWmsReturnOrderNotifyAPIRequest struct {
 // NewTaobaoWlbWmsReturnOrderNotifyRequest 初始化TaobaoWlbWmsReturnOrderNotifyAPIRequest对象
 func NewTaobaoWlbWmsReturnOrderNotifyRequest() *TaobaoWlbWmsReturnOrderNotifyAPIRequest {
 	return &TaobaoWlbWmsReturnOrderNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(18),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWmsReturnOrderNotifyAPIRequest) Reset() {
+	r._orderItemList = r._orderItemList[:0]
+	r._orderCode = ""
+	r._storeCode = ""
+	r._orderFlag = ""
+	r._prevOrderCode = ""
+	r._tmsServiceCode = ""
+	r._tmsOrderCode = ""
+	r._returnReason = ""
+	r._buyerNick = ""
+	r._extendFields = ""
+	r._remark = ""
+	r._orderSource = ""
+	r._orderType = ""
+	r._ownerUserId = ""
+	r._orderCreateTime = ""
+	r._tmsServiceName = ""
+	r._senderInfo = nil
+	r._receiverInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -306,4 +330,21 @@ func (r *TaobaoWlbWmsReturnOrderNotifyAPIRequest) SetReceiverInfo(_receiverInfo 
 // GetReceiverInfo ReceiverInfo Getter
 func (r TaobaoWlbWmsReturnOrderNotifyAPIRequest) GetReceiverInfo() *Receiverinfowlbwmsreturnordernotify {
 	return r._receiverInfo
+}
+
+var poolTaobaoWlbWmsReturnOrderNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWmsReturnOrderNotifyRequest()
+	},
+}
+
+// GetTaobaoWlbWmsReturnOrderNotifyRequest 从 sync.Pool 获取 TaobaoWlbWmsReturnOrderNotifyAPIRequest
+func GetTaobaoWlbWmsReturnOrderNotifyAPIRequest() *TaobaoWlbWmsReturnOrderNotifyAPIRequest {
+	return poolTaobaoWlbWmsReturnOrderNotifyAPIRequest.Get().(*TaobaoWlbWmsReturnOrderNotifyAPIRequest)
+}
+
+// ReleaseTaobaoWlbWmsReturnOrderNotifyAPIRequest 将 TaobaoWlbWmsReturnOrderNotifyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWmsReturnOrderNotifyAPIRequest(v *TaobaoWlbWmsReturnOrderNotifyAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWmsReturnOrderNotifyAPIRequest.Put(v)
 }

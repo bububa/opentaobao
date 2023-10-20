@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkChannelOrderStatusUpdateAPIRequest struct {
 // NewAlibabaWdkChannelOrderStatusUpdateRequest 初始化AlibabaWdkChannelOrderStatusUpdateAPIRequest对象
 func NewAlibabaWdkChannelOrderStatusUpdateRequest() *AlibabaWdkChannelOrderStatusUpdateAPIRequest {
 	return &AlibabaWdkChannelOrderStatusUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkChannelOrderStatusUpdateAPIRequest) Reset() {
+	r._orderStatusInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkChannelOrderStatusUpdateAPIRequest) SetOrderStatusInfo(_order
 // GetOrderStatusInfo OrderStatusInfo Getter
 func (r AlibabaWdkChannelOrderStatusUpdateAPIRequest) GetOrderStatusInfo() *OrderStatusInfo {
 	return r._orderStatusInfo
+}
+
+var poolAlibabaWdkChannelOrderStatusUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkChannelOrderStatusUpdateRequest()
+	},
+}
+
+// GetAlibabaWdkChannelOrderStatusUpdateRequest 从 sync.Pool 获取 AlibabaWdkChannelOrderStatusUpdateAPIRequest
+func GetAlibabaWdkChannelOrderStatusUpdateAPIRequest() *AlibabaWdkChannelOrderStatusUpdateAPIRequest {
+	return poolAlibabaWdkChannelOrderStatusUpdateAPIRequest.Get().(*AlibabaWdkChannelOrderStatusUpdateAPIRequest)
+}
+
+// ReleaseAlibabaWdkChannelOrderStatusUpdateAPIRequest 将 AlibabaWdkChannelOrderStatusUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkChannelOrderStatusUpdateAPIRequest(v *AlibabaWdkChannelOrderStatusUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkChannelOrderStatusUpdateAPIRequest.Put(v)
 }

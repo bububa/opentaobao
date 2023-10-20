@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTopOaidDecryptAPIResponse struct {
 	TaobaoTopOaidDecryptAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTopOaidDecryptAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTopOaidDecryptAPIResponseModel).Reset()
+}
+
 // TaobaoTopOaidDecryptAPIResponseModel is OAID解密 成功返回结果
 type TaobaoTopOaidDecryptAPIResponseModel struct {
 	XMLName xml.Name `xml:"top_oaid_decrypt_response"`
@@ -22,4 +29,27 @@ type TaobaoTopOaidDecryptAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 收件人列表
 	ReceiverList []Receiver `json:"receiver_list,omitempty" xml:"receiver_list>receiver,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTopOaidDecryptAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ReceiverList = m.ReceiverList[:0]
+}
+
+var poolTaobaoTopOaidDecryptAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTopOaidDecryptAPIResponse)
+	},
+}
+
+// GetTaobaoTopOaidDecryptAPIResponse 从 sync.Pool 获取 TaobaoTopOaidDecryptAPIResponse
+func GetTaobaoTopOaidDecryptAPIResponse() *TaobaoTopOaidDecryptAPIResponse {
+	return poolTaobaoTopOaidDecryptAPIResponse.Get().(*TaobaoTopOaidDecryptAPIResponse)
+}
+
+// ReleaseTaobaoTopOaidDecryptAPIResponse 将 TaobaoTopOaidDecryptAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTopOaidDecryptAPIResponse(v *TaobaoTopOaidDecryptAPIResponse) {
+	v.Reset()
+	poolTaobaoTopOaidDecryptAPIResponse.Put(v)
 }

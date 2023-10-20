@@ -2,6 +2,7 @@ package aesolution
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliexpressSolutionOrderReceiptinfoGetAPIResponse struct {
 	AliexpressSolutionOrderReceiptinfoGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliexpressSolutionOrderReceiptinfoGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressSolutionOrderReceiptinfoGetAPIResponseModel).Reset()
+}
+
 // AliexpressSolutionOrderReceiptinfoGetAPIResponseModel is Get Order Receipt Info 成功返回结果
 type AliexpressSolutionOrderReceiptinfoGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_solution_order_receiptinfo_get_response"`
@@ -22,4 +29,27 @@ type AliexpressSolutionOrderReceiptinfoGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *OrderAddressDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressSolutionOrderReceiptinfoGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAliexpressSolutionOrderReceiptinfoGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressSolutionOrderReceiptinfoGetAPIResponse)
+	},
+}
+
+// GetAliexpressSolutionOrderReceiptinfoGetAPIResponse 从 sync.Pool 获取 AliexpressSolutionOrderReceiptinfoGetAPIResponse
+func GetAliexpressSolutionOrderReceiptinfoGetAPIResponse() *AliexpressSolutionOrderReceiptinfoGetAPIResponse {
+	return poolAliexpressSolutionOrderReceiptinfoGetAPIResponse.Get().(*AliexpressSolutionOrderReceiptinfoGetAPIResponse)
+}
+
+// ReleaseAliexpressSolutionOrderReceiptinfoGetAPIResponse 将 AliexpressSolutionOrderReceiptinfoGetAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressSolutionOrderReceiptinfoGetAPIResponse(v *AliexpressSolutionOrderReceiptinfoGetAPIResponse) {
+	v.Reset()
+	poolAliexpressSolutionOrderReceiptinfoGetAPIResponse.Put(v)
 }

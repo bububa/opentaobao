@@ -2,6 +2,7 @@ package film
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFilmAccountPhoneQueryAPIRequest struct {
 // NewTaobaoFilmAccountPhoneQueryRequest 初始化TaobaoFilmAccountPhoneQueryAPIRequest对象
 func NewTaobaoFilmAccountPhoneQueryRequest() *TaobaoFilmAccountPhoneQueryAPIRequest {
 	return &TaobaoFilmAccountPhoneQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFilmAccountPhoneQueryAPIRequest) Reset() {
+	r._phone = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFilmAccountPhoneQueryAPIRequest) SetPhone(_phone string) error {
 // GetPhone Phone Getter
 func (r TaobaoFilmAccountPhoneQueryAPIRequest) GetPhone() string {
 	return r._phone
+}
+
+var poolTaobaoFilmAccountPhoneQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFilmAccountPhoneQueryRequest()
+	},
+}
+
+// GetTaobaoFilmAccountPhoneQueryRequest 从 sync.Pool 获取 TaobaoFilmAccountPhoneQueryAPIRequest
+func GetTaobaoFilmAccountPhoneQueryAPIRequest() *TaobaoFilmAccountPhoneQueryAPIRequest {
+	return poolTaobaoFilmAccountPhoneQueryAPIRequest.Get().(*TaobaoFilmAccountPhoneQueryAPIRequest)
+}
+
+// ReleaseTaobaoFilmAccountPhoneQueryAPIRequest 将 TaobaoFilmAccountPhoneQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFilmAccountPhoneQueryAPIRequest(v *TaobaoFilmAccountPhoneQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoFilmAccountPhoneQueryAPIRequest.Put(v)
 }

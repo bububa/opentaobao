@@ -2,6 +2,7 @@ package icbushowcase
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpShowcaseSortAPIRequest struct {
 // NewAlibabaScbpShowcaseSortRequest 初始化AlibabaScbpShowcaseSortAPIRequest对象
 func NewAlibabaScbpShowcaseSortRequest() *AlibabaScbpShowcaseSortAPIRequest {
 	return &AlibabaScbpShowcaseSortAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpShowcaseSortAPIRequest) Reset() {
+	r._windowId = 0
+	r._sourceOrder = 0
+	r._targetOrder = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpShowcaseSortAPIRequest) SetTargetOrder(_targetOrder int64) e
 // GetTargetOrder TargetOrder Getter
 func (r AlibabaScbpShowcaseSortAPIRequest) GetTargetOrder() int64 {
 	return r._targetOrder
+}
+
+var poolAlibabaScbpShowcaseSortAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpShowcaseSortRequest()
+	},
+}
+
+// GetAlibabaScbpShowcaseSortRequest 从 sync.Pool 获取 AlibabaScbpShowcaseSortAPIRequest
+func GetAlibabaScbpShowcaseSortAPIRequest() *AlibabaScbpShowcaseSortAPIRequest {
+	return poolAlibabaScbpShowcaseSortAPIRequest.Get().(*AlibabaScbpShowcaseSortAPIRequest)
+}
+
+// ReleaseAlibabaScbpShowcaseSortAPIRequest 将 AlibabaScbpShowcaseSortAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpShowcaseSortAPIRequest(v *AlibabaScbpShowcaseSortAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpShowcaseSortAPIRequest.Put(v)
 }

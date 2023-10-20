@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMjOcCalldispatcherAPIRequest struct {
 // NewAlibabaMjOcCalldispatcherRequest 初始化AlibabaMjOcCalldispatcherAPIRequest对象
 func NewAlibabaMjOcCalldispatcherRequest() *AlibabaMjOcCalldispatcherAPIRequest {
 	return &AlibabaMjOcCalldispatcherAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMjOcCalldispatcherAPIRequest) Reset() {
+	r._callDispatcherDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMjOcCalldispatcherAPIRequest) SetCallDispatcherDTO(_callDispatch
 // GetCallDispatcherDTO CallDispatcherDTO Getter
 func (r AlibabaMjOcCalldispatcherAPIRequest) GetCallDispatcherDTO() *CallDispatcherDto {
 	return r._callDispatcherDTO
+}
+
+var poolAlibabaMjOcCalldispatcherAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMjOcCalldispatcherRequest()
+	},
+}
+
+// GetAlibabaMjOcCalldispatcherRequest 从 sync.Pool 获取 AlibabaMjOcCalldispatcherAPIRequest
+func GetAlibabaMjOcCalldispatcherAPIRequest() *AlibabaMjOcCalldispatcherAPIRequest {
+	return poolAlibabaMjOcCalldispatcherAPIRequest.Get().(*AlibabaMjOcCalldispatcherAPIRequest)
+}
+
+// ReleaseAlibabaMjOcCalldispatcherAPIRequest 将 AlibabaMjOcCalldispatcherAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMjOcCalldispatcherAPIRequest(v *AlibabaMjOcCalldispatcherAPIRequest) {
+	v.Reset()
+	poolAlibabaMjOcCalldispatcherAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.wlb.inventory.detail.get
 //
 // 查询库存详情，通过商品ID获取发送请求的卖家的库存详情
-func TaobaoWlbInventoryDetailGet(clt *core.SDKClient, req *wlb.TaobaoWlbInventoryDetailGetAPIRequest, session string) (*wlb.TaobaoWlbInventoryDetailGetAPIResponse, error) {
-	var resp wlb.TaobaoWlbInventoryDetailGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWlbInventoryDetailGet(clt *core.SDKClient, req *wlb.TaobaoWlbInventoryDetailGetAPIRequest, resp *wlb.TaobaoWlbInventoryDetailGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

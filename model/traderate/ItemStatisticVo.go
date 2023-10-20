@@ -1,5 +1,9 @@
 package traderate
 
+import (
+	"sync"
+)
+
 // ItemStatisticVo 结构体
 type ItemStatisticVo struct {
 	// tab筛选信息
@@ -12,4 +16,25 @@ type ItemStatisticVo struct {
 	TotalScore string `json:"total_score,omitempty" xml:"total_score,omitempty"`
 	// 评论数量
 	RateCnt int64 `json:"rate_cnt,omitempty" xml:"rate_cnt,omitempty"`
+}
+
+var poolItemStatisticVo = sync.Pool{
+	New: func() any {
+		return new(ItemStatisticVo)
+	},
+}
+
+// GetItemStatisticVo() 从对象池中获取ItemStatisticVo
+func GetItemStatisticVo() *ItemStatisticVo {
+	return poolItemStatisticVo.Get().(*ItemStatisticVo)
+}
+
+// ReleaseItemStatisticVo 释放ItemStatisticVo
+func ReleaseItemStatisticVo(v *ItemStatisticVo) {
+	v.TabInfos = v.TabInfos[:0]
+	v.RankDesc = ""
+	v.ScoreDetail = ""
+	v.TotalScore = ""
+	v.RateCnt = 0
+	poolItemStatisticVo.Put(v)
 }

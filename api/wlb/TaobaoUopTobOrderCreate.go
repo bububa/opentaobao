@@ -9,11 +9,6 @@ import (
 // taobao.uop.tob.order.create
 //
 // ToB仓储发货
-func TaobaoUopTobOrderCreate(clt *core.SDKClient, req *wlb.TaobaoUopTobOrderCreateAPIRequest, session string) (*wlb.TaobaoUopTobOrderCreateAPIResponse, error) {
-	var resp wlb.TaobaoUopTobOrderCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUopTobOrderCreate(clt *core.SDKClient, req *wlb.TaobaoUopTobOrderCreateAPIRequest, resp *wlb.TaobaoUopTobOrderCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

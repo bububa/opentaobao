@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // GoodsRelationDto 结构体
 type GoodsRelationDto struct {
 	// 交易商品所属商品id或者货所属商品id
@@ -8,4 +12,23 @@ type GoodsRelationDto struct {
 	RelationSkuId int64 `json:"relation_sku_id,omitempty" xml:"relation_sku_id,omitempty"`
 	// 类型 1-安心置业 2-特价房 3-0元购  4-大额电商券 5-认购商品 6-楼栋  7-户型  8-房源
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolGoodsRelationDto = sync.Pool{
+	New: func() any {
+		return new(GoodsRelationDto)
+	},
+}
+
+// GetGoodsRelationDto() 从对象池中获取GoodsRelationDto
+func GetGoodsRelationDto() *GoodsRelationDto {
+	return poolGoodsRelationDto.Get().(*GoodsRelationDto)
+}
+
+// ReleaseGoodsRelationDto 释放GoodsRelationDto
+func ReleaseGoodsRelationDto(v *GoodsRelationDto) {
+	v.RelationItemId = 0
+	v.RelationSkuId = 0
+	v.Type = 0
+	poolGoodsRelationDto.Put(v)
 }

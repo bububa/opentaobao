@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaHmMarketingItembuygiftRemoveitemAPIRequest struct {
 // NewAlibabaHmMarketingItembuygiftRemoveitemRequest 初始化AlibabaHmMarketingItembuygiftRemoveitemAPIRequest对象
 func NewAlibabaHmMarketingItembuygiftRemoveitemRequest() *AlibabaHmMarketingItembuygiftRemoveitemAPIRequest {
 	return &AlibabaHmMarketingItembuygiftRemoveitemAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHmMarketingItembuygiftRemoveitemAPIRequest) Reset() {
+	r._param0 = nil
+	r._param1 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaHmMarketingItembuygiftRemoveitemAPIRequest) SetParam1(_param1 *C
 // GetParam1 Param1 Getter
 func (r AlibabaHmMarketingItembuygiftRemoveitemAPIRequest) GetParam1() *CommonActivityParam {
 	return r._param1
+}
+
+var poolAlibabaHmMarketingItembuygiftRemoveitemAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHmMarketingItembuygiftRemoveitemRequest()
+	},
+}
+
+// GetAlibabaHmMarketingItembuygiftRemoveitemRequest 从 sync.Pool 获取 AlibabaHmMarketingItembuygiftRemoveitemAPIRequest
+func GetAlibabaHmMarketingItembuygiftRemoveitemAPIRequest() *AlibabaHmMarketingItembuygiftRemoveitemAPIRequest {
+	return poolAlibabaHmMarketingItembuygiftRemoveitemAPIRequest.Get().(*AlibabaHmMarketingItembuygiftRemoveitemAPIRequest)
+}
+
+// ReleaseAlibabaHmMarketingItembuygiftRemoveitemAPIRequest 将 AlibabaHmMarketingItembuygiftRemoveitemAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHmMarketingItembuygiftRemoveitemAPIRequest(v *AlibabaHmMarketingItembuygiftRemoveitemAPIRequest) {
+	v.Reset()
+	poolAlibabaHmMarketingItembuygiftRemoveitemAPIRequest.Put(v)
 }

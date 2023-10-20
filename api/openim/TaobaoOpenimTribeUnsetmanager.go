@@ -9,11 +9,6 @@ import (
 // taobao.openim.tribe.unsetmanager
 //
 // OPENIM群取消管理员
-func TaobaoOpenimTribeUnsetmanager(clt *core.SDKClient, req *openim.TaobaoOpenimTribeUnsetmanagerAPIRequest, session string) (*openim.TaobaoOpenimTribeUnsetmanagerAPIResponse, error) {
-	var resp openim.TaobaoOpenimTribeUnsetmanagerAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenimTribeUnsetmanager(clt *core.SDKClient, req *openim.TaobaoOpenimTribeUnsetmanagerAPIRequest, resp *openim.TaobaoOpenimTribeUnsetmanagerAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

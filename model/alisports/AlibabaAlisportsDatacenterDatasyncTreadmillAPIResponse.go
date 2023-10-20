@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponseModel).Reset()
 }
 
 // AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponseModel is 阿里体育同步跑步机设备数据 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponseModel struct {
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
 	// 返回值
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RsMsg = ""
+	m.RsCode = ""
+	m.Succ = false
+	m.Model = false
+}
+
+var poolAlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse)
+	},
+}
+
+// GetAlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse 从 sync.Pool 获取 AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse
+func GetAlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse() *AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse {
+	return poolAlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse.Get().(*AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse)
+}
+
+// ReleaseAlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse 将 AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse(v *AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse) {
+	v.Reset()
+	poolAlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse.Put(v)
 }

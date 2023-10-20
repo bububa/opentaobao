@@ -2,6 +2,7 @@ package iot
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAilabsIotBusinessRecipeGetdetailAPIResponse struct {
 	AlibabaAilabsIotBusinessRecipeGetdetailAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAilabsIotBusinessRecipeGetdetailAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAilabsIotBusinessRecipeGetdetailAPIResponseModel).Reset()
+}
+
 // AlibabaAilabsIotBusinessRecipeGetdetailAPIResponseModel is 获取食谱详情 成功返回结果
 type AlibabaAilabsIotBusinessRecipeGetdetailAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_iot_business_recipe_getdetail_response"`
@@ -22,4 +29,27 @@ type AlibabaAilabsIotBusinessRecipeGetdetailAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回包装类
 	Result *BaseResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAilabsIotBusinessRecipeGetdetailAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAilabsIotBusinessRecipeGetdetailAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAilabsIotBusinessRecipeGetdetailAPIResponse)
+	},
+}
+
+// GetAlibabaAilabsIotBusinessRecipeGetdetailAPIResponse 从 sync.Pool 获取 AlibabaAilabsIotBusinessRecipeGetdetailAPIResponse
+func GetAlibabaAilabsIotBusinessRecipeGetdetailAPIResponse() *AlibabaAilabsIotBusinessRecipeGetdetailAPIResponse {
+	return poolAlibabaAilabsIotBusinessRecipeGetdetailAPIResponse.Get().(*AlibabaAilabsIotBusinessRecipeGetdetailAPIResponse)
+}
+
+// ReleaseAlibabaAilabsIotBusinessRecipeGetdetailAPIResponse 将 AlibabaAilabsIotBusinessRecipeGetdetailAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAilabsIotBusinessRecipeGetdetailAPIResponse(v *AlibabaAilabsIotBusinessRecipeGetdetailAPIResponse) {
+	v.Reset()
+	poolAlibabaAilabsIotBusinessRecipeGetdetailAPIResponse.Put(v)
 }

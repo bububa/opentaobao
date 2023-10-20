@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // TaobaoTbkScVegasSendReportResult 结构体
 type TaobaoTbkScVegasSendReportResult struct {
 	// msgInfo
@@ -10,4 +14,24 @@ type TaobaoTbkScVegasSendReportResult struct {
 	Model *RightsSendRptDto `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoTbkScVegasSendReportResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkScVegasSendReportResult)
+	},
+}
+
+// GetTaobaoTbkScVegasSendReportResult() 从对象池中获取TaobaoTbkScVegasSendReportResult
+func GetTaobaoTbkScVegasSendReportResult() *TaobaoTbkScVegasSendReportResult {
+	return poolTaobaoTbkScVegasSendReportResult.Get().(*TaobaoTbkScVegasSendReportResult)
+}
+
+// ReleaseTaobaoTbkScVegasSendReportResult 释放TaobaoTbkScVegasSendReportResult
+func ReleaseTaobaoTbkScVegasSendReportResult(v *TaobaoTbkScVegasSendReportResult) {
+	v.MsgInfo = ""
+	v.MsgCode = ""
+	v.Model = nil
+	v.Success = false
+	poolTaobaoTbkScVegasSendReportResult.Put(v)
 }

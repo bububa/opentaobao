@@ -2,6 +2,7 @@ package pentraprism
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoPentaprismTaskQueryitemAPIRequest struct {
 // NewTaobaoPentaprismTaskQueryitemRequest 初始化TaobaoPentaprismTaskQueryitemAPIRequest对象
 func NewTaobaoPentaprismTaskQueryitemRequest() *TaobaoPentaprismTaskQueryitemAPIRequest {
 	return &TaobaoPentaprismTaskQueryitemAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPentaprismTaskQueryitemAPIRequest) Reset() {
+	r._openPo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoPentaprismTaskQueryitemAPIRequest) SetOpenPo(_openPo *OpenTaskPo)
 // GetOpenPo OpenPo Getter
 func (r TaobaoPentaprismTaskQueryitemAPIRequest) GetOpenPo() *OpenTaskPo {
 	return r._openPo
+}
+
+var poolTaobaoPentaprismTaskQueryitemAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPentaprismTaskQueryitemRequest()
+	},
+}
+
+// GetTaobaoPentaprismTaskQueryitemRequest 从 sync.Pool 获取 TaobaoPentaprismTaskQueryitemAPIRequest
+func GetTaobaoPentaprismTaskQueryitemAPIRequest() *TaobaoPentaprismTaskQueryitemAPIRequest {
+	return poolTaobaoPentaprismTaskQueryitemAPIRequest.Get().(*TaobaoPentaprismTaskQueryitemAPIRequest)
+}
+
+// ReleaseTaobaoPentaprismTaskQueryitemAPIRequest 将 TaobaoPentaprismTaskQueryitemAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPentaprismTaskQueryitemAPIRequest(v *TaobaoPentaprismTaskQueryitemAPIRequest) {
+	v.Reset()
+	poolTaobaoPentaprismTaskQueryitemAPIRequest.Put(v)
 }

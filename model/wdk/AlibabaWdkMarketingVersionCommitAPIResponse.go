@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaWdkMarketingVersionCommitAPIResponse struct {
 	AlibabaWdkMarketingVersionCommitAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaWdkMarketingVersionCommitAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkMarketingVersionCommitAPIResponseModel).Reset()
+}
+
 // AlibabaWdkMarketingVersionCommitAPIResponseModel is 提交版本号 成功返回结果
 type AlibabaWdkMarketingVersionCommitAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_marketing_version_commit_response"`
@@ -22,4 +29,27 @@ type AlibabaWdkMarketingVersionCommitAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *MarketResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkMarketingVersionCommitAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaWdkMarketingVersionCommitAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkMarketingVersionCommitAPIResponse)
+	},
+}
+
+// GetAlibabaWdkMarketingVersionCommitAPIResponse 从 sync.Pool 获取 AlibabaWdkMarketingVersionCommitAPIResponse
+func GetAlibabaWdkMarketingVersionCommitAPIResponse() *AlibabaWdkMarketingVersionCommitAPIResponse {
+	return poolAlibabaWdkMarketingVersionCommitAPIResponse.Get().(*AlibabaWdkMarketingVersionCommitAPIResponse)
+}
+
+// ReleaseAlibabaWdkMarketingVersionCommitAPIResponse 将 AlibabaWdkMarketingVersionCommitAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkMarketingVersionCommitAPIResponse(v *AlibabaWdkMarketingVersionCommitAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkMarketingVersionCommitAPIResponse.Put(v)
 }

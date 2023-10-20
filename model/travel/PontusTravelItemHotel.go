@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // PontusTravelItemHotel 结构体
 type PontusTravelItemHotel struct {
 	// 必填，所在城市
@@ -14,4 +18,26 @@ type PontusTravelItemHotel struct {
 	Poi string `json:"poi,omitempty" xml:"poi,omitempty"`
 	// POI来源，AMAP/GOOGLE。境内为高德（AMAP） 境外为GOOGLE
 	PoiResource string `json:"poi_resource,omitempty" xml:"poi_resource,omitempty"`
+}
+
+var poolPontusTravelItemHotel = sync.Pool{
+	New: func() any {
+		return new(PontusTravelItemHotel)
+	},
+}
+
+// GetPontusTravelItemHotel() 从对象池中获取PontusTravelItemHotel
+func GetPontusTravelItemHotel() *PontusTravelItemHotel {
+	return poolPontusTravelItemHotel.Get().(*PontusTravelItemHotel)
+}
+
+// ReleasePontusTravelItemHotel 释放PontusTravelItemHotel
+func ReleasePontusTravelItemHotel(v *PontusTravelItemHotel) {
+	v.City = ""
+	v.CnName = ""
+	v.HotelLevel = ""
+	v.HouseType = ""
+	v.Poi = ""
+	v.PoiResource = ""
+	poolPontusTravelItemHotel.Put(v)
 }

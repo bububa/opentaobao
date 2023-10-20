@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // HotelOrderDirectInfo 结构体
 type HotelOrderDirectInfo struct {
 	// 单次请求的唯一标识
@@ -28,4 +32,33 @@ type HotelOrderDirectInfo struct {
 	Action int64 `json:"action,omitempty" xml:"action,omitempty"`
 	// * 消息状态（tips:Pms定时get走请求，状态可以考虑不变化）      * 0：新建消息（接收到交易系统请求）      * 1:请求已获取（pms已经取走请求数据）      * 2:请求已认领（pms已经有人认领消息，正在处理）      * 3:请求已反馈（Pms反馈请求处理结果）      * 4:处理完成（已通知相关系统（交易））      * 5:请求失效
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolHotelOrderDirectInfo = sync.Pool{
+	New: func() any {
+		return new(HotelOrderDirectInfo)
+	},
+}
+
+// GetHotelOrderDirectInfo() 从对象池中获取HotelOrderDirectInfo
+func GetHotelOrderDirectInfo() *HotelOrderDirectInfo {
+	return poolHotelOrderDirectInfo.Get().(*HotelOrderDirectInfo)
+}
+
+// ReleaseHotelOrderDirectInfo 释放HotelOrderDirectInfo
+func ReleaseHotelOrderDirectInfo(v *HotelOrderDirectInfo) {
+	v.RequestID = ""
+	v.OutOrderId = ""
+	v.HotelCode = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Context = ""
+	v.Extensions = ""
+	v.DisplayText = ""
+	v.Tid = 0
+	v.SellerId = 0
+	v.BizType = 0
+	v.Action = 0
+	v.Status = 0
+	poolHotelOrderDirectInfo.Put(v)
 }

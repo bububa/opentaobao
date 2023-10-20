@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest struct {
 // NewAlibabaAlihealthDentalStoreInvisibleConsumeUpdateRequest 初始化AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest对象
 func NewAlibabaAlihealthDentalStoreInvisibleConsumeUpdateRequest() *AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest {
 	return &AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest) Reset() {
+	r._store = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest) SetStore(_
 // GetStore Store Getter
 func (r AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest) GetStore() *DentalOuterStoreNicRequest {
 	return r._store
+}
+
+var poolAlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDentalStoreInvisibleConsumeUpdateRequest()
+	},
+}
+
+// GetAlibabaAlihealthDentalStoreInvisibleConsumeUpdateRequest 从 sync.Pool 获取 AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest
+func GetAlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest() *AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest {
+	return poolAlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest.Get().(*AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest 将 AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest(v *AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest.Put(v)
 }

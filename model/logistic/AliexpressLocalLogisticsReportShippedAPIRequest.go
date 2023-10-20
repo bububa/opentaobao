@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressLocalLogisticsReportShippedAPIRequest struct {
 // NewAliexpressLocalLogisticsReportShippedRequest 初始化AliexpressLocalLogisticsReportShippedAPIRequest对象
 func NewAliexpressLocalLogisticsReportShippedRequest() *AliexpressLocalLogisticsReportShippedAPIRequest {
 	return &AliexpressLocalLogisticsReportShippedAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressLocalLogisticsReportShippedAPIRequest) Reset() {
+	r._param1 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressLocalLogisticsReportShippedAPIRequest) SetParam1(_param1 *Rep
 // GetParam1 Param1 Getter
 func (r AliexpressLocalLogisticsReportShippedAPIRequest) GetParam1() *ReportShippedRequestDto {
 	return r._param1
+}
+
+var poolAliexpressLocalLogisticsReportShippedAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressLocalLogisticsReportShippedRequest()
+	},
+}
+
+// GetAliexpressLocalLogisticsReportShippedRequest 从 sync.Pool 获取 AliexpressLocalLogisticsReportShippedAPIRequest
+func GetAliexpressLocalLogisticsReportShippedAPIRequest() *AliexpressLocalLogisticsReportShippedAPIRequest {
+	return poolAliexpressLocalLogisticsReportShippedAPIRequest.Get().(*AliexpressLocalLogisticsReportShippedAPIRequest)
+}
+
+// ReleaseAliexpressLocalLogisticsReportShippedAPIRequest 将 AliexpressLocalLogisticsReportShippedAPIRequest 放入 sync.Pool
+func ReleaseAliexpressLocalLogisticsReportShippedAPIRequest(v *AliexpressLocalLogisticsReportShippedAPIRequest) {
+	v.Reset()
+	poolAliexpressLocalLogisticsReportShippedAPIRequest.Put(v)
 }

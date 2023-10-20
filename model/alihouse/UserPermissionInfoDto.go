@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // UserPermissionInfoDto 结构体
 type UserPermissionInfoDto struct {
 	// 装修场景主体
@@ -16,4 +20,27 @@ type UserPermissionInfoDto struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 外部门店ID
 	OuterTargetType int64 `json:"outer_target_type,omitempty" xml:"outer_target_type,omitempty"`
+}
+
+var poolUserPermissionInfoDto = sync.Pool{
+	New: func() any {
+		return new(UserPermissionInfoDto)
+	},
+}
+
+// GetUserPermissionInfoDto() 从对象池中获取UserPermissionInfoDto
+func GetUserPermissionInfoDto() *UserPermissionInfoDto {
+	return poolUserPermissionInfoDto.Get().(*UserPermissionInfoDto)
+}
+
+// ReleaseUserPermissionInfoDto 释放UserPermissionInfoDto
+func ReleaseUserPermissionInfoDto(v *UserPermissionInfoDto) {
+	v.SceneInfoList = v.SceneInfoList[:0]
+	v.FunctionList = v.FunctionList[:0]
+	v.OuterTargetId = ""
+	v.OuterSellerId = ""
+	v.BusinessType = 0
+	v.Type = 0
+	v.OuterTargetType = 0
+	poolUserPermissionInfoDto.Put(v)
 }

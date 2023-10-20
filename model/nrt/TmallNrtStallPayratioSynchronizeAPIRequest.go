@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallNrtStallPayratioSynchronizeAPIRequest struct {
 // NewTmallNrtStallPayratioSynchronizeRequest 初始化TmallNrtStallPayratioSynchronizeAPIRequest对象
 func NewTmallNrtStallPayratioSynchronizeRequest() *TmallNrtStallPayratioSynchronizeAPIRequest {
 	return &TmallNrtStallPayratioSynchronizeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtStallPayratioSynchronizeAPIRequest) Reset() {
+	r._bizCode = ""
+	r._contractCode = ""
+	r._storeCode = ""
+	r._payRatio = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallNrtStallPayratioSynchronizeAPIRequest) SetPayRatio(_payRatio strin
 // GetPayRatio PayRatio Getter
 func (r TmallNrtStallPayratioSynchronizeAPIRequest) GetPayRatio() string {
 	return r._payRatio
+}
+
+var poolTmallNrtStallPayratioSynchronizeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtStallPayratioSynchronizeRequest()
+	},
+}
+
+// GetTmallNrtStallPayratioSynchronizeRequest 从 sync.Pool 获取 TmallNrtStallPayratioSynchronizeAPIRequest
+func GetTmallNrtStallPayratioSynchronizeAPIRequest() *TmallNrtStallPayratioSynchronizeAPIRequest {
+	return poolTmallNrtStallPayratioSynchronizeAPIRequest.Get().(*TmallNrtStallPayratioSynchronizeAPIRequest)
+}
+
+// ReleaseTmallNrtStallPayratioSynchronizeAPIRequest 将 TmallNrtStallPayratioSynchronizeAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtStallPayratioSynchronizeAPIRequest(v *TmallNrtStallPayratioSynchronizeAPIRequest) {
+	v.Reset()
+	poolTmallNrtStallPayratioSynchronizeAPIRequest.Put(v)
 }

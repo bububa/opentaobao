@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest struct {
 // NewAlibabaAlscCrmRechargeUnchargecheckGetRequest 初始化AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest对象
 func NewAlibabaAlscCrmRechargeUnchargecheckGetRequest() *AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest {
 	return &AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest) Reset() {
+	r._paramUnchargeCheckOpenReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest) SetParamUnchargeCheck
 // GetParamUnchargeCheckOpenReq ParamUnchargeCheckOpenReq Getter
 func (r AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest) GetParamUnchargeCheckOpenReq() *UnchargeCheckOpenReq {
 	return r._paramUnchargeCheckOpenReq
+}
+
+var poolAlibabaAlscCrmRechargeUnchargecheckGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmRechargeUnchargecheckGetRequest()
+	},
+}
+
+// GetAlibabaAlscCrmRechargeUnchargecheckGetRequest 从 sync.Pool 获取 AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest
+func GetAlibabaAlscCrmRechargeUnchargecheckGetAPIRequest() *AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest {
+	return poolAlibabaAlscCrmRechargeUnchargecheckGetAPIRequest.Get().(*AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmRechargeUnchargecheckGetAPIRequest 将 AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmRechargeUnchargecheckGetAPIRequest(v *AlibabaAlscCrmRechargeUnchargecheckGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmRechargeUnchargecheckGetAPIRequest.Put(v)
 }

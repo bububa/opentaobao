@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoPromotionCouponsGetAPIRequest struct {
 // NewTaobaoPromotionCouponsGetRequest 初始化TaobaoPromotionCouponsGetAPIRequest对象
 func NewTaobaoPromotionCouponsGetRequest() *TaobaoPromotionCouponsGetAPIRequest {
 	return &TaobaoPromotionCouponsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPromotionCouponsGetAPIRequest) Reset() {
+	r._endTime = ""
+	r._couponId = 0
+	r._denominations = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoPromotionCouponsGetAPIRequest) SetPageSize(_pageSize int64) error
 // GetPageSize PageSize Getter
 func (r TaobaoPromotionCouponsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoPromotionCouponsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPromotionCouponsGetRequest()
+	},
+}
+
+// GetTaobaoPromotionCouponsGetRequest 从 sync.Pool 获取 TaobaoPromotionCouponsGetAPIRequest
+func GetTaobaoPromotionCouponsGetAPIRequest() *TaobaoPromotionCouponsGetAPIRequest {
+	return poolTaobaoPromotionCouponsGetAPIRequest.Get().(*TaobaoPromotionCouponsGetAPIRequest)
+}
+
+// ReleaseTaobaoPromotionCouponsGetAPIRequest 将 TaobaoPromotionCouponsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPromotionCouponsGetAPIRequest(v *TaobaoPromotionCouponsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoPromotionCouponsGetAPIRequest.Put(v)
 }

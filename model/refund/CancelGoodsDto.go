@@ -1,5 +1,9 @@
 package refund
 
+import (
+	"sync"
+)
+
 // CancelGoodsDto 结构体
 type CancelGoodsDto struct {
 	// 操作时间
@@ -22,4 +26,30 @@ type CancelGoodsDto struct {
 	AuctionNum int64 `json:"auction_num,omitempty" xml:"auction_num,omitempty"`
 	// 主订单ID
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+}
+
+var poolCancelGoodsDto = sync.Pool{
+	New: func() any {
+		return new(CancelGoodsDto)
+	},
+}
+
+// GetCancelGoodsDto() 从对象池中获取CancelGoodsDto
+func GetCancelGoodsDto() *CancelGoodsDto {
+	return poolCancelGoodsDto.Get().(*CancelGoodsDto)
+}
+
+// ReleaseCancelGoodsDto 释放CancelGoodsDto
+func ReleaseCancelGoodsDto(v *CancelGoodsDto) {
+	v.OperateTime = ""
+	v.Status = ""
+	v.OuterId = ""
+	v.Msg = ""
+	v.Oid = 0
+	v.RefundId = 0
+	v.RefundFee = 0
+	v.AuctionId = 0
+	v.AuctionNum = 0
+	v.Tid = 0
+	poolCancelGoodsDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package idleisv
 
+import (
+	"sync"
+)
+
 // IdleItemApiBidDo 结构体
 type IdleItemApiBidDo struct {
 	// 拍卖商品id
@@ -18,4 +22,28 @@ type IdleItemApiBidDo struct {
 	BidCount int64 `json:"bid_count,omitempty" xml:"bid_count,omitempty"`
 	// 最后两分钟被出价的延迟次数
 	DelayCount int64 `json:"delay_count,omitempty" xml:"delay_count,omitempty"`
+}
+
+var poolIdleItemApiBidDo = sync.Pool{
+	New: func() any {
+		return new(IdleItemApiBidDo)
+	},
+}
+
+// GetIdleItemApiBidDo() 从对象池中获取IdleItemApiBidDo
+func GetIdleItemApiBidDo() *IdleItemApiBidDo {
+	return poolIdleItemApiBidDo.Get().(*IdleItemApiBidDo)
+}
+
+// ReleaseIdleItemApiBidDo 释放IdleItemApiBidDo
+func ReleaseIdleItemApiBidDo(v *IdleItemApiBidDo) {
+	v.BidItemId = 0
+	v.BidStartTime = 0
+	v.BidEndTime = 0
+	v.BidBail = 0
+	v.BidStep = 0
+	v.CurrentBidPrice = 0
+	v.BidCount = 0
+	v.DelayCount = 0
+	poolIdleItemApiBidDo.Put(v)
 }

@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoDeliveryTemplateDeleteAPIRequest struct {
 // NewTaobaoDeliveryTemplateDeleteRequest 初始化TaobaoDeliveryTemplateDeleteAPIRequest对象
 func NewTaobaoDeliveryTemplateDeleteRequest() *TaobaoDeliveryTemplateDeleteAPIRequest {
 	return &TaobaoDeliveryTemplateDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDeliveryTemplateDeleteAPIRequest) Reset() {
+	r._templateId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoDeliveryTemplateDeleteAPIRequest) SetTemplateId(_templateId int64
 // GetTemplateId TemplateId Getter
 func (r TaobaoDeliveryTemplateDeleteAPIRequest) GetTemplateId() int64 {
 	return r._templateId
+}
+
+var poolTaobaoDeliveryTemplateDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDeliveryTemplateDeleteRequest()
+	},
+}
+
+// GetTaobaoDeliveryTemplateDeleteRequest 从 sync.Pool 获取 TaobaoDeliveryTemplateDeleteAPIRequest
+func GetTaobaoDeliveryTemplateDeleteAPIRequest() *TaobaoDeliveryTemplateDeleteAPIRequest {
+	return poolTaobaoDeliveryTemplateDeleteAPIRequest.Get().(*TaobaoDeliveryTemplateDeleteAPIRequest)
+}
+
+// ReleaseTaobaoDeliveryTemplateDeleteAPIRequest 将 TaobaoDeliveryTemplateDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDeliveryTemplateDeleteAPIRequest(v *TaobaoDeliveryTemplateDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoDeliveryTemplateDeleteAPIRequest.Put(v)
 }

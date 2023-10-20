@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAelophyOrderDelivererChangeAPIRequest struct {
 // NewAlibabaAelophyOrderDelivererChangeRequest 初始化AlibabaAelophyOrderDelivererChangeAPIRequest对象
 func NewAlibabaAelophyOrderDelivererChangeRequest() *AlibabaAelophyOrderDelivererChangeAPIRequest {
 	return &AlibabaAelophyOrderDelivererChangeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAelophyOrderDelivererChangeAPIRequest) Reset() {
+	r._delivererChangeRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAelophyOrderDelivererChangeAPIRequest) SetDelivererChangeRequest
 // GetDelivererChangeRequest DelivererChangeRequest Getter
 func (r AlibabaAelophyOrderDelivererChangeAPIRequest) GetDelivererChangeRequest() *DelivererChangeRequest {
 	return r._delivererChangeRequest
+}
+
+var poolAlibabaAelophyOrderDelivererChangeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAelophyOrderDelivererChangeRequest()
+	},
+}
+
+// GetAlibabaAelophyOrderDelivererChangeRequest 从 sync.Pool 获取 AlibabaAelophyOrderDelivererChangeAPIRequest
+func GetAlibabaAelophyOrderDelivererChangeAPIRequest() *AlibabaAelophyOrderDelivererChangeAPIRequest {
+	return poolAlibabaAelophyOrderDelivererChangeAPIRequest.Get().(*AlibabaAelophyOrderDelivererChangeAPIRequest)
+}
+
+// ReleaseAlibabaAelophyOrderDelivererChangeAPIRequest 将 AlibabaAelophyOrderDelivererChangeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAelophyOrderDelivererChangeAPIRequest(v *AlibabaAelophyOrderDelivererChangeAPIRequest) {
+	v.Reset()
+	poolAlibabaAelophyOrderDelivererChangeAPIRequest.Put(v)
 }

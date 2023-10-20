@@ -2,6 +2,7 @@ package openmall
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type TaobaoOpenmallTradeShipaddressUpdateAPIRequest struct {
 // NewTaobaoOpenmallTradeShipaddressUpdateRequest 初始化TaobaoOpenmallTradeShipaddressUpdateAPIRequest对象
 func NewTaobaoOpenmallTradeShipaddressUpdateRequest() *TaobaoOpenmallTradeShipaddressUpdateAPIRequest {
 	return &TaobaoOpenmallTradeShipaddressUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) Reset() {
+	r._distributor = ""
+	r._receiverAddress = ""
+	r._receiverCity = ""
+	r._receiverDistrict = ""
+	r._receiverMobile = ""
+	r._receiverName = ""
+	r._receiverPhone = ""
+	r._receiverState = ""
+	r._receiverZip = ""
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetTid(_tid int64) erro
 // GetTid Tid Getter
 func (r TaobaoOpenmallTradeShipaddressUpdateAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoOpenmallTradeShipaddressUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenmallTradeShipaddressUpdateRequest()
+	},
+}
+
+// GetTaobaoOpenmallTradeShipaddressUpdateRequest 从 sync.Pool 获取 TaobaoOpenmallTradeShipaddressUpdateAPIRequest
+func GetTaobaoOpenmallTradeShipaddressUpdateAPIRequest() *TaobaoOpenmallTradeShipaddressUpdateAPIRequest {
+	return poolTaobaoOpenmallTradeShipaddressUpdateAPIRequest.Get().(*TaobaoOpenmallTradeShipaddressUpdateAPIRequest)
+}
+
+// ReleaseTaobaoOpenmallTradeShipaddressUpdateAPIRequest 将 TaobaoOpenmallTradeShipaddressUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenmallTradeShipaddressUpdateAPIRequest(v *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenmallTradeShipaddressUpdateAPIRequest.Put(v)
 }

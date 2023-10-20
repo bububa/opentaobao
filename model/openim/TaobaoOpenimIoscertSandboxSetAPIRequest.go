@@ -2,6 +2,7 @@ package openim
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOpenimIoscertSandboxSetAPIRequest struct {
 // NewTaobaoOpenimIoscertSandboxSetRequest 初始化TaobaoOpenimIoscertSandboxSetAPIRequest对象
 func NewTaobaoOpenimIoscertSandboxSetRequest() *TaobaoOpenimIoscertSandboxSetAPIRequest {
 	return &TaobaoOpenimIoscertSandboxSetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenimIoscertSandboxSetAPIRequest) Reset() {
+	r._cert = ""
+	r._password = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOpenimIoscertSandboxSetAPIRequest) SetPassword(_password string) 
 // GetPassword Password Getter
 func (r TaobaoOpenimIoscertSandboxSetAPIRequest) GetPassword() string {
 	return r._password
+}
+
+var poolTaobaoOpenimIoscertSandboxSetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenimIoscertSandboxSetRequest()
+	},
+}
+
+// GetTaobaoOpenimIoscertSandboxSetRequest 从 sync.Pool 获取 TaobaoOpenimIoscertSandboxSetAPIRequest
+func GetTaobaoOpenimIoscertSandboxSetAPIRequest() *TaobaoOpenimIoscertSandboxSetAPIRequest {
+	return poolTaobaoOpenimIoscertSandboxSetAPIRequest.Get().(*TaobaoOpenimIoscertSandboxSetAPIRequest)
+}
+
+// ReleaseTaobaoOpenimIoscertSandboxSetAPIRequest 将 TaobaoOpenimIoscertSandboxSetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenimIoscertSandboxSetAPIRequest(v *TaobaoOpenimIoscertSandboxSetAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenimIoscertSandboxSetAPIRequest.Put(v)
 }

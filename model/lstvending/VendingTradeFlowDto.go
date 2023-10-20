@@ -1,5 +1,9 @@
 package lstvending
 
+import (
+	"sync"
+)
+
 // VendingTradeFlowDto 结构体
 type VendingTradeFlowDto struct {
 	// 商品清单
@@ -32,4 +36,35 @@ type VendingTradeFlowDto struct {
 	Commission int64 `json:"commission,omitempty" xml:"commission,omitempty"`
 	// 实际总金额
 	ActualAmount int64 `json:"actual_amount,omitempty" xml:"actual_amount,omitempty"`
+}
+
+var poolVendingTradeFlowDto = sync.Pool{
+	New: func() any {
+		return new(VendingTradeFlowDto)
+	},
+}
+
+// GetVendingTradeFlowDto() 从对象池中获取VendingTradeFlowDto
+func GetVendingTradeFlowDto() *VendingTradeFlowDto {
+	return poolVendingTradeFlowDto.Get().(*VendingTradeFlowDto)
+}
+
+// ReleaseVendingTradeFlowDto 释放VendingTradeFlowDto
+func ReleaseVendingTradeFlowDto(v *VendingTradeFlowDto) {
+	v.GoodsDetailDTOList = v.GoodsDetailDTOList[:0]
+	v.PaymentDTOList = v.PaymentDTOList[:0]
+	v.SupplierCode = ""
+	v.TradeFlowNo = ""
+	v.PaymentTradeFlowNo = ""
+	v.EquipmentCode = ""
+	v.ExtFields = ""
+	v.GmtModified = 0
+	v.TradeType = 0
+	v.GmtCreate = 0
+	v.Discount = 0
+	v.TotalAmount = 0
+	v.EquipmentId = 0
+	v.Commission = 0
+	v.ActualAmount = 0
+	poolVendingTradeFlowDto.Put(v)
 }

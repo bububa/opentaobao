@@ -1,5 +1,9 @@
 package wlbimports
 
+import (
+	"sync"
+)
+
 // PickupInfo 结构体
 type PickupInfo struct {
 	// 国家
@@ -28,4 +32,33 @@ type PickupInfo struct {
 	CountryId int64 `json:"country_id,omitempty" xml:"country_id,omitempty"`
 	// 菜鸟地址id（非自寄模式必填）
 	AreaId int64 `json:"area_id,omitempty" xml:"area_id,omitempty"`
+}
+
+var poolPickupInfo = sync.Pool{
+	New: func() any {
+		return new(PickupInfo)
+	},
+}
+
+// GetPickupInfo() 从对象池中获取PickupInfo
+func GetPickupInfo() *PickupInfo {
+	return poolPickupInfo.Get().(*PickupInfo)
+}
+
+// ReleasePickupInfo 释放PickupInfo
+func ReleasePickupInfo(v *PickupInfo) {
+	v.Country = ""
+	v.ZipCode = ""
+	v.City = ""
+	v.CompanyName = ""
+	v.ResourceName = ""
+	v.ResourceCode = ""
+	v.Province = ""
+	v.Phone = ""
+	v.Name = ""
+	v.DetailAddress = ""
+	v.Email = ""
+	v.CountryId = 0
+	v.AreaId = 0
+	poolPickupInfo.Put(v)
 }

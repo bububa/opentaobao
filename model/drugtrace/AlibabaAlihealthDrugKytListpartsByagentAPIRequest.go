@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AlibabaAlihealthDrugKytListpartsByagentAPIRequest struct {
 // NewAlibabaAlihealthDrugKytListpartsByagentRequest 初始化AlibabaAlihealthDrugKytListpartsByagentAPIRequest对象
 func NewAlibabaAlihealthDrugKytListpartsByagentRequest() *AlibabaAlihealthDrugKytListpartsByagentAPIRequest {
 	return &AlibabaAlihealthDrugKytListpartsByagentAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytListpartsByagentAPIRequest) Reset() {
+	r._refEntId = ""
+	r._entName = ""
+	r._refPartnerId = ""
+	r._beginDate = ""
+	r._endDate = ""
+	r._agentRefEntId = ""
+	r._pageSize = 0
+	r._page = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *AlibabaAlihealthDrugKytListpartsByagentAPIRequest) SetPage(_page int64)
 // GetPage Page Getter
 func (r AlibabaAlihealthDrugKytListpartsByagentAPIRequest) GetPage() int64 {
 	return r._page
+}
+
+var poolAlibabaAlihealthDrugKytListpartsByagentAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytListpartsByagentRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytListpartsByagentRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytListpartsByagentAPIRequest
+func GetAlibabaAlihealthDrugKytListpartsByagentAPIRequest() *AlibabaAlihealthDrugKytListpartsByagentAPIRequest {
+	return poolAlibabaAlihealthDrugKytListpartsByagentAPIRequest.Get().(*AlibabaAlihealthDrugKytListpartsByagentAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytListpartsByagentAPIRequest 将 AlibabaAlihealthDrugKytListpartsByagentAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytListpartsByagentAPIRequest(v *AlibabaAlihealthDrugKytListpartsByagentAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytListpartsByagentAPIRequest.Put(v)
 }

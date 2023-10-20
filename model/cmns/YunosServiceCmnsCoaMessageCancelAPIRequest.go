@@ -2,6 +2,7 @@ package cmns
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosServiceCmnsCoaMessageCancelAPIRequest struct {
 // NewYunosServiceCmnsCoaMessageCancelRequest 初始化YunosServiceCmnsCoaMessageCancelAPIRequest对象
 func NewYunosServiceCmnsCoaMessageCancelRequest() *YunosServiceCmnsCoaMessageCancelAPIRequest {
 	return &YunosServiceCmnsCoaMessageCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosServiceCmnsCoaMessageCancelAPIRequest) Reset() {
+	r._mid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosServiceCmnsCoaMessageCancelAPIRequest) SetMid(_mid int64) error {
 // GetMid Mid Getter
 func (r YunosServiceCmnsCoaMessageCancelAPIRequest) GetMid() int64 {
 	return r._mid
+}
+
+var poolYunosServiceCmnsCoaMessageCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosServiceCmnsCoaMessageCancelRequest()
+	},
+}
+
+// GetYunosServiceCmnsCoaMessageCancelRequest 从 sync.Pool 获取 YunosServiceCmnsCoaMessageCancelAPIRequest
+func GetYunosServiceCmnsCoaMessageCancelAPIRequest() *YunosServiceCmnsCoaMessageCancelAPIRequest {
+	return poolYunosServiceCmnsCoaMessageCancelAPIRequest.Get().(*YunosServiceCmnsCoaMessageCancelAPIRequest)
+}
+
+// ReleaseYunosServiceCmnsCoaMessageCancelAPIRequest 将 YunosServiceCmnsCoaMessageCancelAPIRequest 放入 sync.Pool
+func ReleaseYunosServiceCmnsCoaMessageCancelAPIRequest(v *YunosServiceCmnsCoaMessageCancelAPIRequest) {
+	v.Reset()
+	poolYunosServiceCmnsCoaMessageCancelAPIRequest.Put(v)
 }

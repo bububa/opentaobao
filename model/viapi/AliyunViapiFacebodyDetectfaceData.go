@@ -1,5 +1,9 @@
 package viapi
 
+import (
+	"sync"
+)
+
 // AliyunViapiFacebodyDetectfaceData 结构体
 type AliyunViapiFacebodyDetectfaceData struct {
 	// 返回人脸概率, 0-1之间，如有多个人脸，则依次顺延。如有两个人脸则返回[face_prob1, face_prob2]
@@ -16,4 +20,27 @@ type AliyunViapiFacebodyDetectfaceData struct {
 	LandmarkCount int64 `json:"landmark_count,omitempty" xml:"landmark_count,omitempty"`
 	// 检测出来的人脸个数
 	FaceCount int64 `json:"face_count,omitempty" xml:"face_count,omitempty"`
+}
+
+var poolAliyunViapiFacebodyDetectfaceData = sync.Pool{
+	New: func() any {
+		return new(AliyunViapiFacebodyDetectfaceData)
+	},
+}
+
+// GetAliyunViapiFacebodyDetectfaceData() 从对象池中获取AliyunViapiFacebodyDetectfaceData
+func GetAliyunViapiFacebodyDetectfaceData() *AliyunViapiFacebodyDetectfaceData {
+	return poolAliyunViapiFacebodyDetectfaceData.Get().(*AliyunViapiFacebodyDetectfaceData)
+}
+
+// ReleaseAliyunViapiFacebodyDetectfaceData 释放AliyunViapiFacebodyDetectfaceData
+func ReleaseAliyunViapiFacebodyDetectfaceData(v *AliyunViapiFacebodyDetectfaceData) {
+	v.FaceProbabilityList = v.FaceProbabilityList[:0]
+	v.FaceRectangles = v.FaceRectangles[:0]
+	v.Landmarks = v.Landmarks[:0]
+	v.PoseList = v.PoseList[:0]
+	v.Pupils = v.Pupils[:0]
+	v.LandmarkCount = 0
+	v.FaceCount = 0
+	poolAliyunViapiFacebodyDetectfaceData.Put(v)
 }

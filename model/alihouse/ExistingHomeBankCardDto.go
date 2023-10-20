@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ExistingHomeBankCardDto 结构体
 type ExistingHomeBankCardDto struct {
 	// 银联号
@@ -38,4 +42,38 @@ type ExistingHomeBankCardDto struct {
 	IsOpenNetBusiness int64 `json:"is_open_net_business,omitempty" xml:"is_open_net_business,omitempty"`
 	// 场景 5-融合店
 	SceneType int64 `json:"scene_type,omitempty" xml:"scene_type,omitempty"`
+}
+
+var poolExistingHomeBankCardDto = sync.Pool{
+	New: func() any {
+		return new(ExistingHomeBankCardDto)
+	},
+}
+
+// GetExistingHomeBankCardDto() 从对象池中获取ExistingHomeBankCardDto
+func GetExistingHomeBankCardDto() *ExistingHomeBankCardDto {
+	return poolExistingHomeBankCardDto.Get().(*ExistingHomeBankCardDto)
+}
+
+// ReleaseExistingHomeBankCardDto 释放ExistingHomeBankCardDto
+func ReleaseExistingHomeBankCardDto(v *ExistingHomeBankCardDto) {
+	v.BankContactLine = ""
+	v.BankCardNo = ""
+	v.BankAccountAlias = ""
+	v.BankAccountName = ""
+	v.OuterBankId = ""
+	v.AccountType = ""
+	v.BankNameSimple = ""
+	v.BankName = ""
+	v.BankBranchProvince = ""
+	v.BankBranchCity = ""
+	v.BankBranchName = ""
+	v.IsValid = 0
+	v.IsFourAccount = 0
+	v.AccountUseType = 0
+	v.MerchantOpenId = 0
+	v.CardType = 0
+	v.IsOpenNetBusiness = 0
+	v.SceneType = 0
+	poolExistingHomeBankCardDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // NoDateSkuInfo 结构体
 type NoDateSkuInfo struct {
 	// sku销售属性别名；如套餐1  需要调整成其他  需要在这里修改
@@ -12,4 +16,25 @@ type NoDateSkuInfo struct {
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 	// Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)，sku数量变化后item的总数量也会随着变化。取值范围:大于等于零的整数
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolNoDateSkuInfo = sync.Pool{
+	New: func() any {
+		return new(NoDateSkuInfo)
+	},
+}
+
+// GetNoDateSkuInfo() 从对象池中获取NoDateSkuInfo
+func GetNoDateSkuInfo() *NoDateSkuInfo {
+	return poolNoDateSkuInfo.Get().(*NoDateSkuInfo)
+}
+
+// ReleaseNoDateSkuInfo 释放NoDateSkuInfo
+func ReleaseNoDateSkuInfo(v *NoDateSkuInfo) {
+	v.Alias = v.Alias[:0]
+	v.Properties = v.Properties[:0]
+	v.OuterId = ""
+	v.Price = 0
+	v.Quantity = 0
+	poolNoDateSkuInfo.Put(v)
 }

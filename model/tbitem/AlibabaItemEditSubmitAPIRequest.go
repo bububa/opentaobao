@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaItemEditSubmitAPIRequest struct {
 // NewAlibabaItemEditSubmitRequest 初始化AlibabaItemEditSubmitAPIRequest对象
 func NewAlibabaItemEditSubmitRequest() *AlibabaItemEditSubmitAPIRequest {
 	return &AlibabaItemEditSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaItemEditSubmitAPIRequest) Reset() {
+	r._bizType = ""
+	r._schema = ""
+	r._itemId = 0
+	r._catId = 0
+	r._spuId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaItemEditSubmitAPIRequest) SetSpuId(_spuId int64) error {
 // GetSpuId SpuId Getter
 func (r AlibabaItemEditSubmitAPIRequest) GetSpuId() int64 {
 	return r._spuId
+}
+
+var poolAlibabaItemEditSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaItemEditSubmitRequest()
+	},
+}
+
+// GetAlibabaItemEditSubmitRequest 从 sync.Pool 获取 AlibabaItemEditSubmitAPIRequest
+func GetAlibabaItemEditSubmitAPIRequest() *AlibabaItemEditSubmitAPIRequest {
+	return poolAlibabaItemEditSubmitAPIRequest.Get().(*AlibabaItemEditSubmitAPIRequest)
+}
+
+// ReleaseAlibabaItemEditSubmitAPIRequest 将 AlibabaItemEditSubmitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaItemEditSubmitAPIRequest(v *AlibabaItemEditSubmitAPIRequest) {
+	v.Reset()
+	poolAlibabaItemEditSubmitAPIRequest.Put(v)
 }

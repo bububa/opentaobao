@@ -2,6 +2,7 @@ package mos
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaMosflowWorkStartprocessAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosflowWorkStartprocessAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaMosflowWorkStartprocessAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaMosflowWorkStartprocessAPIResponseModel).Reset()
 }
 
 // AlibabaMosflowWorkStartprocessAPIResponseModel is 发起流程 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaMosflowWorkStartprocessAPIResponseModel struct {
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 操作是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaMosflowWorkStartprocessAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = ""
+	m.ResultMessage = ""
+	m.ResultCode = ""
+	m.IsSuccess = false
+}
+
+var poolAlibabaMosflowWorkStartprocessAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaMosflowWorkStartprocessAPIResponse)
+	},
+}
+
+// GetAlibabaMosflowWorkStartprocessAPIResponse 从 sync.Pool 获取 AlibabaMosflowWorkStartprocessAPIResponse
+func GetAlibabaMosflowWorkStartprocessAPIResponse() *AlibabaMosflowWorkStartprocessAPIResponse {
+	return poolAlibabaMosflowWorkStartprocessAPIResponse.Get().(*AlibabaMosflowWorkStartprocessAPIResponse)
+}
+
+// ReleaseAlibabaMosflowWorkStartprocessAPIResponse 将 AlibabaMosflowWorkStartprocessAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaMosflowWorkStartprocessAPIResponse(v *AlibabaMosflowWorkStartprocessAPIResponse) {
+	v.Reset()
+	poolAlibabaMosflowWorkStartprocessAPIResponse.Put(v)
 }

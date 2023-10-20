@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type TaobaoFenxiaoProductsGetAPIRequest struct {
 // NewTaobaoFenxiaoProductsGetRequest 初始化TaobaoFenxiaoProductsGetAPIRequest对象
 func NewTaobaoFenxiaoProductsGetRequest() *TaobaoFenxiaoProductsGetAPIRequest {
 	return &TaobaoFenxiaoProductsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoProductsGetAPIRequest) Reset() {
+	r._outerId = ""
+	r._fields = ""
+	r._startModified = ""
+	r._endModified = ""
+	r._skuNumber = ""
+	r._isAuthz = ""
+	r._productcatId = 0
+	r._pids = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r._itemIds = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *TaobaoFenxiaoProductsGetAPIRequest) SetItemIds(_itemIds int64) error {
 // GetItemIds ItemIds Getter
 func (r TaobaoFenxiaoProductsGetAPIRequest) GetItemIds() int64 {
 	return r._itemIds
+}
+
+var poolTaobaoFenxiaoProductsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoProductsGetRequest()
+	},
+}
+
+// GetTaobaoFenxiaoProductsGetRequest 从 sync.Pool 获取 TaobaoFenxiaoProductsGetAPIRequest
+func GetTaobaoFenxiaoProductsGetAPIRequest() *TaobaoFenxiaoProductsGetAPIRequest {
+	return poolTaobaoFenxiaoProductsGetAPIRequest.Get().(*TaobaoFenxiaoProductsGetAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoProductsGetAPIRequest 将 TaobaoFenxiaoProductsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoProductsGetAPIRequest(v *TaobaoFenxiaoProductsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoProductsGetAPIRequest.Put(v)
 }

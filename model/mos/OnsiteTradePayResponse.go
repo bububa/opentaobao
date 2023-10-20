@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // OnsiteTradePayResponse 结构体
 type OnsiteTradePayResponse struct {
 	// 喵街交易凭证号。必然返回
@@ -14,4 +18,26 @@ type OnsiteTradePayResponse struct {
 	TradeStatus string `json:"trade_status,omitempty" xml:"trade_status,omitempty"`
 	// 码来源，取值：MJ、M_TAO、ALIPAY
 	AuthCodeSource string `json:"auth_code_source,omitempty" xml:"auth_code_source,omitempty"`
+}
+
+var poolOnsiteTradePayResponse = sync.Pool{
+	New: func() any {
+		return new(OnsiteTradePayResponse)
+	},
+}
+
+// GetOnsiteTradePayResponse() 从对象池中获取OnsiteTradePayResponse
+func GetOnsiteTradePayResponse() *OnsiteTradePayResponse {
+	return poolOnsiteTradePayResponse.Get().(*OnsiteTradePayResponse)
+}
+
+// ReleaseOnsiteTradePayResponse 释放OnsiteTradePayResponse
+func ReleaseOnsiteTradePayResponse(v *OnsiteTradePayResponse) {
+	v.TradeNo = ""
+	v.OutTradeNo = ""
+	v.BuyerNick = ""
+	v.TotalAmount = ""
+	v.TradeStatus = ""
+	v.AuthCodeSource = ""
+	poolOnsiteTradePayResponse.Put(v)
 }

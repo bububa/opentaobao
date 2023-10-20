@@ -1,5 +1,9 @@
 package moscm
 
+import (
+	"sync"
+)
+
 // IsvStockAdjustRequestDto 结构体
 type IsvStockAdjustRequestDto struct {
 	// 入库项（最大列表长度：20）
@@ -14,4 +18,26 @@ type IsvStockAdjustRequestDto struct {
 	OutId string `json:"out_id,omitempty" xml:"out_id,omitempty"`
 	// 备注
 	Remarks string `json:"remarks,omitempty" xml:"remarks,omitempty"`
+}
+
+var poolIsvStockAdjustRequestDto = sync.Pool{
+	New: func() any {
+		return new(IsvStockAdjustRequestDto)
+	},
+}
+
+// GetIsvStockAdjustRequestDto() 从对象池中获取IsvStockAdjustRequestDto
+func GetIsvStockAdjustRequestDto() *IsvStockAdjustRequestDto {
+	return poolIsvStockAdjustRequestDto.Get().(*IsvStockAdjustRequestDto)
+}
+
+// ReleaseIsvStockAdjustRequestDto 释放IsvStockAdjustRequestDto
+func ReleaseIsvStockAdjustRequestDto(v *IsvStockAdjustRequestDto) {
+	v.InboundItems = v.InboundItems[:0]
+	v.OutboundItems = v.OutboundItems[:0]
+	v.CounterId = ""
+	v.OutCounterId = ""
+	v.OutId = ""
+	v.Remarks = ""
+	poolIsvStockAdjustRequestDto.Put(v)
 }

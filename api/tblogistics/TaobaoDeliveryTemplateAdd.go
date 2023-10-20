@@ -9,11 +9,6 @@ import (
 // taobao.delivery.template.add
 //
 // 增加运费模板的外部接口
-func TaobaoDeliveryTemplateAdd(clt *core.SDKClient, req *tblogistics.TaobaoDeliveryTemplateAddAPIRequest, session string) (*tblogistics.TaobaoDeliveryTemplateAddAPIResponse, error) {
-	var resp tblogistics.TaobaoDeliveryTemplateAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoDeliveryTemplateAdd(clt *core.SDKClient, req *tblogistics.TaobaoDeliveryTemplateAddAPIRequest, resp *tblogistics.TaobaoDeliveryTemplateAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

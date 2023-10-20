@@ -9,11 +9,6 @@ import (
 // taobao.simba.campaign.platform.get
 //
 // 获得一个推广计划的投放平台设置
-func TaobaoSimbaCampaignPlatformGet(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignPlatformGetAPIRequest, session string) (*simba.TaobaoSimbaCampaignPlatformGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaCampaignPlatformGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaCampaignPlatformGet(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignPlatformGetAPIRequest, resp *simba.TaobaoSimbaCampaignPlatformGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

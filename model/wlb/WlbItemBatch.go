@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // WlbItemBatch 结构体
 type WlbItemBatch struct {
 	// 存储类型
@@ -34,4 +38,36 @@ type WlbItemBatch struct {
 	DefectQuantity int64 `json:"defect_quantity,omitempty" xml:"defect_quantity,omitempty"`
 	// 天（单位）
 	GuaranteeUnit int64 `json:"guarantee_unit,omitempty" xml:"guarantee_unit,omitempty"`
+}
+
+var poolWlbItemBatch = sync.Pool{
+	New: func() any {
+		return new(WlbItemBatch)
+	},
+}
+
+// GetWlbItemBatch() 从对象池中获取WlbItemBatch
+func GetWlbItemBatch() *WlbItemBatch {
+	return poolWlbItemBatch.Get().(*WlbItemBatch)
+}
+
+// ReleaseWlbItemBatch 释放WlbItemBatch
+func ReleaseWlbItemBatch(v *WlbItemBatch) {
+	v.StoreCode = ""
+	v.BatchCode = ""
+	v.ProduceCode = ""
+	v.DueDate = ""
+	v.ProduceDate = ""
+	v.ReceiveDate = ""
+	v.GuaranteePeriod = ""
+	v.ProduceArea = ""
+	v.Remarks = ""
+	v.Status = ""
+	v.Id = 0
+	v.UserId = 0
+	v.ItemId = 0
+	v.Quantity = 0
+	v.DefectQuantity = 0
+	v.GuaranteeUnit = 0
+	poolWlbItemBatch.Put(v)
 }

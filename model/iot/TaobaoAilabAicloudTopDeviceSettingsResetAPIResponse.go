@@ -2,6 +2,7 @@ package iot
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoAilabAicloudTopDeviceSettingsResetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopDeviceSettingsResetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopDeviceSettingsResetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAilabAicloudTopDeviceSettingsResetAPIResponseModel).Reset()
 }
 
 // TaobaoAilabAicloudTopDeviceSettingsResetAPIResponseModel is 重置设备个性化设置 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoAilabAicloudTopDeviceSettingsResetAPIResponseModel struct {
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
 	// 网络请求是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopDeviceSettingsResetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.ExtendInfo = ""
+	m.Model = false
+	m.IsSuccess = false
+}
+
+var poolTaobaoAilabAicloudTopDeviceSettingsResetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAilabAicloudTopDeviceSettingsResetAPIResponse)
+	},
+}
+
+// GetTaobaoAilabAicloudTopDeviceSettingsResetAPIResponse 从 sync.Pool 获取 TaobaoAilabAicloudTopDeviceSettingsResetAPIResponse
+func GetTaobaoAilabAicloudTopDeviceSettingsResetAPIResponse() *TaobaoAilabAicloudTopDeviceSettingsResetAPIResponse {
+	return poolTaobaoAilabAicloudTopDeviceSettingsResetAPIResponse.Get().(*TaobaoAilabAicloudTopDeviceSettingsResetAPIResponse)
+}
+
+// ReleaseTaobaoAilabAicloudTopDeviceSettingsResetAPIResponse 将 TaobaoAilabAicloudTopDeviceSettingsResetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAilabAicloudTopDeviceSettingsResetAPIResponse(v *TaobaoAilabAicloudTopDeviceSettingsResetAPIResponse) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopDeviceSettingsResetAPIResponse.Put(v)
 }

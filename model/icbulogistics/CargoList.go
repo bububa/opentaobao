@@ -1,5 +1,9 @@
 package icbulogistics
 
+import (
+	"sync"
+)
+
 // CargoList 结构体
 type CargoList struct {
 	// 商品特性列表对象
@@ -24,4 +28,31 @@ type CargoList struct {
 	Purpose string `json:"purpose,omitempty" xml:"purpose,omitempty"`
 	// 货物数量
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolCargoList = sync.Pool{
+	New: func() any {
+		return new(CargoList)
+	},
+}
+
+// GetCargoList() 从对象池中获取CargoList
+func GetCargoList() *CargoList {
+	return poolCargoList.Get().(*CargoList)
+}
+
+// ReleaseCargoList 释放CargoList
+func ReleaseCargoList(v *CargoList) {
+	v.ProductType = v.ProductType[:0]
+	v.Unit = ""
+	v.Hscode = ""
+	v.DeclarationValue = ""
+	v.Price = ""
+	v.NameCn = ""
+	v.Currency = ""
+	v.NameEn = ""
+	v.Material = ""
+	v.Purpose = ""
+	v.Quantity = 0
+	poolCargoList.Put(v)
 }

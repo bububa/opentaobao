@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.series.sku.remove
 //
 // 系列品商品变更-移除商品
-func AlibabaWdkSeriesSkuRemove(clt *core.SDKClient, req *wdk.AlibabaWdkSeriesSkuRemoveAPIRequest, session string) (*wdk.AlibabaWdkSeriesSkuRemoveAPIResponse, error) {
-	var resp wdk.AlibabaWdkSeriesSkuRemoveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkSeriesSkuRemove(clt *core.SDKClient, req *wdk.AlibabaWdkSeriesSkuRemoveAPIRequest, resp *wdk.AlibabaWdkSeriesSkuRemoveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

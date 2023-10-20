@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // FuturePlanItemResult 结构体
 type FuturePlanItemResult struct {
 	// 错误码
@@ -20,4 +24,29 @@ type FuturePlanItemResult struct {
 	ScItemId int64 `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
 	// 业务结果
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolFuturePlanItemResult = sync.Pool{
+	New: func() any {
+		return new(FuturePlanItemResult)
+	},
+}
+
+// GetFuturePlanItemResult() 从对象池中获取FuturePlanItemResult
+func GetFuturePlanItemResult() *FuturePlanItemResult {
+	return poolFuturePlanItemResult.Get().(*FuturePlanItemResult)
+}
+
+// ReleaseFuturePlanItemResult 释放FuturePlanItemResult
+func ReleaseFuturePlanItemResult(v *FuturePlanItemResult) {
+	v.ErrorCode = ""
+	v.ErrorMessage = ""
+	v.ExtOrderId = ""
+	v.ExtSubOrderId = ""
+	v.StoreCode = ""
+	v.ChannelInvId = ""
+	v.UserId = 0
+	v.ScItemId = 0
+	v.Success = false
+	poolFuturePlanItemResult.Put(v)
 }

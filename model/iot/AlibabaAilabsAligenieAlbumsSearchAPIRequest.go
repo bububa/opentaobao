@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type AlibabaAilabsAligenieAlbumsSearchAPIRequest struct {
 // NewAlibabaAilabsAligenieAlbumsSearchRequest 初始化AlibabaAilabsAligenieAlbumsSearchAPIRequest对象
 func NewAlibabaAilabsAligenieAlbumsSearchRequest() *AlibabaAilabsAligenieAlbumsSearchAPIRequest {
 	return &AlibabaAilabsAligenieAlbumsSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsAligenieAlbumsSearchAPIRequest) Reset() {
+	r._schema = ""
+	r._userId = ""
+	r._utdId = ""
+	r._ext = ""
+	r._param1 = ""
+	r._param2 = ""
+	r._param3 = ""
+	r._param4 = 0
+	r._param5 = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *AlibabaAilabsAligenieAlbumsSearchAPIRequest) SetParam5(_param5 int64) e
 // GetParam5 Param5 Getter
 func (r AlibabaAilabsAligenieAlbumsSearchAPIRequest) GetParam5() int64 {
 	return r._param5
+}
+
+var poolAlibabaAilabsAligenieAlbumsSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsAligenieAlbumsSearchRequest()
+	},
+}
+
+// GetAlibabaAilabsAligenieAlbumsSearchRequest 从 sync.Pool 获取 AlibabaAilabsAligenieAlbumsSearchAPIRequest
+func GetAlibabaAilabsAligenieAlbumsSearchAPIRequest() *AlibabaAilabsAligenieAlbumsSearchAPIRequest {
+	return poolAlibabaAilabsAligenieAlbumsSearchAPIRequest.Get().(*AlibabaAilabsAligenieAlbumsSearchAPIRequest)
+}
+
+// ReleaseAlibabaAilabsAligenieAlbumsSearchAPIRequest 将 AlibabaAilabsAligenieAlbumsSearchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsAligenieAlbumsSearchAPIRequest(v *AlibabaAilabsAligenieAlbumsSearchAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsAligenieAlbumsSearchAPIRequest.Put(v)
 }

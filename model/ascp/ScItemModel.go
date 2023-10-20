@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // ScItemModel 结构体
 type ScItemModel struct {
 	// 子货品列表(仅对组合货品生效)
@@ -56,4 +60,47 @@ type ScItemModel struct {
 	PurchasePrices *PurchasePrice `json:"purchase_prices,omitempty" xml:"purchase_prices,omitempty"`
 	// 货品类型；1-普通货品, 2-组合货品
 	ScitemType int64 `json:"scitem_type,omitempty" xml:"scitem_type,omitempty"`
+}
+
+var poolScItemModel = sync.Pool{
+	New: func() any {
+		return new(ScItemModel)
+	},
+}
+
+// GetScItemModel() 从对象池中获取ScItemModel
+func GetScItemModel() *ScItemModel {
+	return poolScItemModel.Get().(*ScItemModel)
+}
+
+// ReleaseScItemModel 释放ScItemModel
+func ReleaseScItemModel(v *ScItemModel) {
+	v.SubScitems = v.SubScitems[:0]
+	v.WarehouseCode = ""
+	v.Industry = ""
+	v.OwnerCode = ""
+	v.ScitemName = ""
+	v.ScitemCode = ""
+	v.ScitemId = ""
+	v.WarehouseScitemCode = ""
+	v.Barcode = ""
+	v.BrandName = ""
+	v.CategoryName = ""
+	v.PicPath = ""
+	v.StorageEnvironment = ""
+	v.Remark = ""
+	v.ExtendProps = ""
+	v.IndustryFeatureMap = ""
+	v.Length = 0
+	v.Width = 0
+	v.Height = 0
+	v.Weight = 0
+	v.RetailPrice = 0
+	v.Hazardous = 0
+	v.Fragile = 0
+	v.Liquid = 0
+	v.Precious = 0
+	v.PurchasePrices = nil
+	v.ScitemType = 0
+	poolScItemModel.Put(v)
 }

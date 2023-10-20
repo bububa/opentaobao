@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaMjMoscarnivalReceiveencryptAPIRequest struct {
 // NewAlibabaMjMoscarnivalReceiveencryptRequest 初始化AlibabaMjMoscarnivalReceiveencryptAPIRequest对象
 func NewAlibabaMjMoscarnivalReceiveencryptRequest() *AlibabaMjMoscarnivalReceiveencryptAPIRequest {
 	return &AlibabaMjMoscarnivalReceiveencryptAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMjMoscarnivalReceiveencryptAPIRequest) Reset() {
+	r._mobile = ""
+	r._activityId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaMjMoscarnivalReceiveencryptAPIRequest) SetActivityId(_activityId
 // GetActivityId ActivityId Getter
 func (r AlibabaMjMoscarnivalReceiveencryptAPIRequest) GetActivityId() int64 {
 	return r._activityId
+}
+
+var poolAlibabaMjMoscarnivalReceiveencryptAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMjMoscarnivalReceiveencryptRequest()
+	},
+}
+
+// GetAlibabaMjMoscarnivalReceiveencryptRequest 从 sync.Pool 获取 AlibabaMjMoscarnivalReceiveencryptAPIRequest
+func GetAlibabaMjMoscarnivalReceiveencryptAPIRequest() *AlibabaMjMoscarnivalReceiveencryptAPIRequest {
+	return poolAlibabaMjMoscarnivalReceiveencryptAPIRequest.Get().(*AlibabaMjMoscarnivalReceiveencryptAPIRequest)
+}
+
+// ReleaseAlibabaMjMoscarnivalReceiveencryptAPIRequest 将 AlibabaMjMoscarnivalReceiveencryptAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMjMoscarnivalReceiveencryptAPIRequest(v *AlibabaMjMoscarnivalReceiveencryptAPIRequest) {
+	v.Reset()
+	poolAlibabaMjMoscarnivalReceiveencryptAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type AlibabaEinvoiceQrcodeCreateAPIRequest struct {
 // NewAlibabaEinvoiceQrcodeCreateRequest 初始化AlibabaEinvoiceQrcodeCreateAPIRequest对象
 func NewAlibabaEinvoiceQrcodeCreateRequest() *AlibabaEinvoiceQrcodeCreateAPIRequest {
 	return &AlibabaEinvoiceQrcodeCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceQrcodeCreateAPIRequest) Reset() {
+	r._invoiceItems = r._invoiceItems[:0]
+	r._payeeRegisterNo = ""
+	r._orderId = ""
+	r._sumPrice = ""
+	r._sourceId = ""
+	r._platform = ""
+	r._qrLogo = ""
+	r._width = 0
+	r._height = 0
+	r._qrType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *AlibabaEinvoiceQrcodeCreateAPIRequest) SetQrType(_qrType int64) error {
 // GetQrType QrType Getter
 func (r AlibabaEinvoiceQrcodeCreateAPIRequest) GetQrType() int64 {
 	return r._qrType
+}
+
+var poolAlibabaEinvoiceQrcodeCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceQrcodeCreateRequest()
+	},
+}
+
+// GetAlibabaEinvoiceQrcodeCreateRequest 从 sync.Pool 获取 AlibabaEinvoiceQrcodeCreateAPIRequest
+func GetAlibabaEinvoiceQrcodeCreateAPIRequest() *AlibabaEinvoiceQrcodeCreateAPIRequest {
+	return poolAlibabaEinvoiceQrcodeCreateAPIRequest.Get().(*AlibabaEinvoiceQrcodeCreateAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceQrcodeCreateAPIRequest 将 AlibabaEinvoiceQrcodeCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceQrcodeCreateAPIRequest(v *AlibabaEinvoiceQrcodeCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceQrcodeCreateAPIRequest.Put(v)
 }

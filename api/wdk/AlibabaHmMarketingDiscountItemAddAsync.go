@@ -9,11 +9,6 @@ import (
 // alibaba.hm.marketing.discount.item.add.async
 //
 // 新分组模型下新增商品
-func AlibabaHmMarketingDiscountItemAddAsync(clt *core.SDKClient, req *wdk.AlibabaHmMarketingDiscountItemAddAsyncAPIRequest, session string) (*wdk.AlibabaHmMarketingDiscountItemAddAsyncAPIResponse, error) {
-	var resp wdk.AlibabaHmMarketingDiscountItemAddAsyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHmMarketingDiscountItemAddAsync(clt *core.SDKClient, req *wdk.AlibabaHmMarketingDiscountItemAddAsyncAPIRequest, resp *wdk.AlibabaHmMarketingDiscountItemAddAsyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.iwork.mc.msg.senddefault
 //
 // 给神鲸注册用户发送对应操作结果的消息
-func AlibabaIworkMcMsgSenddefault(clt *core.SDKClient, req *campus.AlibabaIworkMcMsgSenddefaultAPIRequest, session string) (*campus.AlibabaIworkMcMsgSenddefaultAPIResponse, error) {
-	var resp campus.AlibabaIworkMcMsgSenddefaultAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIworkMcMsgSenddefault(clt *core.SDKClient, req *campus.AlibabaIworkMcMsgSenddefaultAPIRequest, resp *campus.AlibabaIworkMcMsgSenddefaultAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

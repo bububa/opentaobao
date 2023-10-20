@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallMsfIdentifyStatusQueryAPIRequest struct {
 // NewTmallMsfIdentifyStatusQueryRequest 初始化TmallMsfIdentifyStatusQueryAPIRequest对象
 func NewTmallMsfIdentifyStatusQueryRequest() *TmallMsfIdentifyStatusQueryAPIRequest {
 	return &TmallMsfIdentifyStatusQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallMsfIdentifyStatusQueryAPIRequest) Reset() {
+	r._orderId = 0
+	r._serviceType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallMsfIdentifyStatusQueryAPIRequest) SetServiceType(_serviceType int6
 // GetServiceType ServiceType Getter
 func (r TmallMsfIdentifyStatusQueryAPIRequest) GetServiceType() int64 {
 	return r._serviceType
+}
+
+var poolTmallMsfIdentifyStatusQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallMsfIdentifyStatusQueryRequest()
+	},
+}
+
+// GetTmallMsfIdentifyStatusQueryRequest 从 sync.Pool 获取 TmallMsfIdentifyStatusQueryAPIRequest
+func GetTmallMsfIdentifyStatusQueryAPIRequest() *TmallMsfIdentifyStatusQueryAPIRequest {
+	return poolTmallMsfIdentifyStatusQueryAPIRequest.Get().(*TmallMsfIdentifyStatusQueryAPIRequest)
+}
+
+// ReleaseTmallMsfIdentifyStatusQueryAPIRequest 将 TmallMsfIdentifyStatusQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallMsfIdentifyStatusQueryAPIRequest(v *TmallMsfIdentifyStatusQueryAPIRequest) {
+	v.Reset()
+	poolTmallMsfIdentifyStatusQueryAPIRequest.Put(v)
 }

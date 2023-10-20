@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoFuwuScoresGetAPIRequest struct {
 // NewTaobaoFuwuScoresGetRequest 初始化TaobaoFuwuScoresGetAPIRequest对象
 func NewTaobaoFuwuScoresGetRequest() *TaobaoFuwuScoresGetAPIRequest {
 	return &TaobaoFuwuScoresGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFuwuScoresGetAPIRequest) Reset() {
+	r._date = ""
+	r._pageSize = 0
+	r._currentPage = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoFuwuScoresGetAPIRequest) SetCurrentPage(_currentPage int64) error
 // GetCurrentPage CurrentPage Getter
 func (r TaobaoFuwuScoresGetAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
+}
+
+var poolTaobaoFuwuScoresGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFuwuScoresGetRequest()
+	},
+}
+
+// GetTaobaoFuwuScoresGetRequest 从 sync.Pool 获取 TaobaoFuwuScoresGetAPIRequest
+func GetTaobaoFuwuScoresGetAPIRequest() *TaobaoFuwuScoresGetAPIRequest {
+	return poolTaobaoFuwuScoresGetAPIRequest.Get().(*TaobaoFuwuScoresGetAPIRequest)
+}
+
+// ReleaseTaobaoFuwuScoresGetAPIRequest 将 TaobaoFuwuScoresGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFuwuScoresGetAPIRequest(v *TaobaoFuwuScoresGetAPIRequest) {
+	v.Reset()
+	poolTaobaoFuwuScoresGetAPIRequest.Put(v)
 }

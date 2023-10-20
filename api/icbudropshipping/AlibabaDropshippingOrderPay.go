@@ -9,11 +9,6 @@ import (
 // alibaba.dropshipping.order.pay
 //
 // alibaba dropshipping 支付代扣
-func AlibabaDropshippingOrderPay(clt *core.SDKClient, req *icbudropshipping.AlibabaDropshippingOrderPayAPIRequest, session string) (*icbudropshipping.AlibabaDropshippingOrderPayAPIResponse, error) {
-	var resp icbudropshipping.AlibabaDropshippingOrderPayAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDropshippingOrderPay(clt *core.SDKClient, req *icbudropshipping.AlibabaDropshippingOrderPayAPIRequest, resp *icbudropshipping.AlibabaDropshippingOrderPayAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

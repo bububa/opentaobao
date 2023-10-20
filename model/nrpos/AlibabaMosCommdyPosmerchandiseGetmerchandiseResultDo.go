@@ -1,5 +1,9 @@
 package nrpos
 
+import (
+	"sync"
+)
+
 // AlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo 结构体
 type AlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo struct {
 	// 返回数据，
@@ -18,4 +22,28 @@ type AlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo struct {
 	HttpStatusCode int64 `json:"http_status_code,omitempty" xml:"http_status_code,omitempty"`
 	// 调用是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo = sync.Pool{
+	New: func() any {
+		return new(AlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo)
+	},
+}
+
+// GetAlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo() 从对象池中获取AlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo
+func GetAlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo() *AlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo {
+	return poolAlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo.Get().(*AlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo)
+}
+
+// ReleaseAlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo 释放AlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo
+func ReleaseAlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo(v *AlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo) {
+	v.Datas = v.Datas[:0]
+	v.Headers = ""
+	v.MappingCode = ""
+	v.BizExtMap = ""
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.HttpStatusCode = 0
+	v.Success = false
+	poolAlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo.Put(v)
 }

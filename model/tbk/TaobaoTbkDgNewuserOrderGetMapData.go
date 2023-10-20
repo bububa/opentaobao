@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // TaobaoTbkDgNewuserOrderGetMapData 结构体
 type TaobaoTbkDgNewuserOrderGetMapData struct {
 	// 复购订单，仅适用于手淘拉新
@@ -56,4 +60,47 @@ type TaobaoTbkDgNewuserOrderGetMapData struct {
 	TbTradeParentId int64 `json:"tb_trade_parent_id,omitempty" xml:"tb_trade_parent_id,omitempty"`
 	// 银行卡是否是绑定状态：1-绑定，0-未绑定
 	IsCardSave int64 `json:"is_card_save,omitempty" xml:"is_card_save,omitempty"`
+}
+
+var poolTaobaoTbkDgNewuserOrderGetMapData = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkDgNewuserOrderGetMapData)
+	},
+}
+
+// GetTaobaoTbkDgNewuserOrderGetMapData() 从对象池中获取TaobaoTbkDgNewuserOrderGetMapData
+func GetTaobaoTbkDgNewuserOrderGetMapData() *TaobaoTbkDgNewuserOrderGetMapData {
+	return poolTaobaoTbkDgNewuserOrderGetMapData.Get().(*TaobaoTbkDgNewuserOrderGetMapData)
+}
+
+// ReleaseTaobaoTbkDgNewuserOrderGetMapData 释放TaobaoTbkDgNewuserOrderGetMapData
+func ReleaseTaobaoTbkDgNewuserOrderGetMapData(v *TaobaoTbkDgNewuserOrderGetMapData) {
+	v.Orders = v.Orders[:0]
+	v.RegisterTime = ""
+	v.BindTime = ""
+	v.BuyTime = ""
+	v.Mobile = ""
+	v.UnionId = ""
+	v.MemberNick = ""
+	v.SiteName = ""
+	v.AdzoneName = ""
+	v.AcceptTime = ""
+	v.ReceiveTime = ""
+	v.SuccessTime = ""
+	v.ActivityType = ""
+	v.ActivityId = ""
+	v.BizDate = ""
+	v.BindCardTime = ""
+	v.LoginTime = ""
+	v.UseRightsTime = ""
+	v.GetRightsTime = ""
+	v.RelationId = ""
+	v.Status = 0
+	v.OrderTkType = 0
+	v.MemberId = 0
+	v.SiteId = 0
+	v.AdzoneId = 0
+	v.TbTradeParentId = 0
+	v.IsCardSave = 0
+	poolTaobaoTbkDgNewuserOrderGetMapData.Put(v)
 }

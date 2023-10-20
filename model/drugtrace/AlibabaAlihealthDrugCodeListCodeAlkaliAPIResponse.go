@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,6 +22,12 @@ type AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse struct {
 	AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponseModel is 根据码查询码信息-黄麻碱 成功返回结果
 type AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_code_list_code_alkali_response"`
@@ -28,4 +35,27 @@ type AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 最外层结果
 	Result *AlibabaAlihealthDrugCodeListCodeAlkaliResultModel `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse
+func GetAlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse() *AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse {
+	return poolAlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse.Get().(*AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse 将 AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse(v *AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse.Put(v)
 }

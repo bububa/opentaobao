@@ -2,6 +2,7 @@ package fundplatform
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTaxInvoiceSyncLedgerAPIRequest struct {
 // NewAlibabaTaxInvoiceSyncLedgerRequest 初始化AlibabaTaxInvoiceSyncLedgerAPIRequest对象
 func NewAlibabaTaxInvoiceSyncLedgerRequest() *AlibabaTaxInvoiceSyncLedgerAPIRequest {
 	return &AlibabaTaxInvoiceSyncLedgerAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTaxInvoiceSyncLedgerAPIRequest) Reset() {
+	r._paramSyncLedgerInvoiceRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTaxInvoiceSyncLedgerAPIRequest) SetParamSyncLedgerInvoiceRequest
 // GetParamSyncLedgerInvoiceRequest ParamSyncLedgerInvoiceRequest Getter
 func (r AlibabaTaxInvoiceSyncLedgerAPIRequest) GetParamSyncLedgerInvoiceRequest() *SyncLedgerInvoiceRequest {
 	return r._paramSyncLedgerInvoiceRequest
+}
+
+var poolAlibabaTaxInvoiceSyncLedgerAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTaxInvoiceSyncLedgerRequest()
+	},
+}
+
+// GetAlibabaTaxInvoiceSyncLedgerRequest 从 sync.Pool 获取 AlibabaTaxInvoiceSyncLedgerAPIRequest
+func GetAlibabaTaxInvoiceSyncLedgerAPIRequest() *AlibabaTaxInvoiceSyncLedgerAPIRequest {
+	return poolAlibabaTaxInvoiceSyncLedgerAPIRequest.Get().(*AlibabaTaxInvoiceSyncLedgerAPIRequest)
+}
+
+// ReleaseAlibabaTaxInvoiceSyncLedgerAPIRequest 将 AlibabaTaxInvoiceSyncLedgerAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTaxInvoiceSyncLedgerAPIRequest(v *AlibabaTaxInvoiceSyncLedgerAPIRequest) {
+	v.Reset()
+	poolAlibabaTaxInvoiceSyncLedgerAPIRequest.Put(v)
 }

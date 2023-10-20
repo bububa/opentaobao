@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest struct {
 // NewCainiaoCbossWorkplatformLogisticsIscainiaoorderRequest 初始化CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest对象
 func NewCainiaoCbossWorkplatformLogisticsIscainiaoorderRequest() *CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest {
 	return &CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest) Reset() {
+	r._tradeId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest) SetTradeId(_
 // GetTradeId TradeId Getter
 func (r CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest) GetTradeId() string {
 	return r._tradeId
+}
+
+var poolCainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoCbossWorkplatformLogisticsIscainiaoorderRequest()
+	},
+}
+
+// GetCainiaoCbossWorkplatformLogisticsIscainiaoorderRequest 从 sync.Pool 获取 CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest
+func GetCainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest() *CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest {
+	return poolCainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest.Get().(*CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest)
+}
+
+// ReleaseCainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest 将 CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest 放入 sync.Pool
+func ReleaseCainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest(v *CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest) {
+	v.Reset()
+	poolCainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest.Put(v)
 }

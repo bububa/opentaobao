@@ -2,6 +2,7 @@ package alitrippoi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripPlatformContentRawAddAPIRequest struct {
 // NewAlitripPlatformContentRawAddRequest 初始化AlitripPlatformContentRawAddAPIRequest对象
 func NewAlitripPlatformContentRawAddRequest() *AlitripPlatformContentRawAddAPIRequest {
 	return &AlitripPlatformContentRawAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripPlatformContentRawAddAPIRequest) Reset() {
+	r._fliggyContentRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripPlatformContentRawAddAPIRequest) SetFliggyContentRequest(_fliggy
 // GetFliggyContentRequest FliggyContentRequest Getter
 func (r AlitripPlatformContentRawAddAPIRequest) GetFliggyContentRequest() *FliggyContentRequest {
 	return r._fliggyContentRequest
+}
+
+var poolAlitripPlatformContentRawAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripPlatformContentRawAddRequest()
+	},
+}
+
+// GetAlitripPlatformContentRawAddRequest 从 sync.Pool 获取 AlitripPlatformContentRawAddAPIRequest
+func GetAlitripPlatformContentRawAddAPIRequest() *AlitripPlatformContentRawAddAPIRequest {
+	return poolAlitripPlatformContentRawAddAPIRequest.Get().(*AlitripPlatformContentRawAddAPIRequest)
+}
+
+// ReleaseAlitripPlatformContentRawAddAPIRequest 将 AlitripPlatformContentRawAddAPIRequest 放入 sync.Pool
+func ReleaseAlitripPlatformContentRawAddAPIRequest(v *AlitripPlatformContentRawAddAPIRequest) {
+	v.Reset()
+	poolAlitripPlatformContentRawAddAPIRequest.Put(v)
 }

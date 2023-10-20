@@ -9,11 +9,6 @@ import (
 // taobao.baichuan.item.subscribe
 //
 // 百川单个商品订阅
-func TaobaoBaichuanItemSubscribe(clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemSubscribeAPIRequest, session string) (*baichuan.TaobaoBaichuanItemSubscribeAPIResponse, error) {
-	var resp baichuan.TaobaoBaichuanItemSubscribeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBaichuanItemSubscribe(clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemSubscribeAPIRequest, resp *baichuan.TaobaoBaichuanItemSubscribeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

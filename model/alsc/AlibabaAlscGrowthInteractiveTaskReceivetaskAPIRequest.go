@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest struct {
 // NewAlibabaAlscGrowthInteractiveTaskReceivetaskRequest 初始化AlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest对象
 func NewAlibabaAlscGrowthInteractiveTaskReceivetaskRequest() *AlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest {
 	return &AlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest) Reset() {
+	r._missionReceiveQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest) SetMissionReceiv
 // GetMissionReceiveQuery MissionReceiveQuery Getter
 func (r AlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest) GetMissionReceiveQuery() *MissionReceiveQuery {
 	return r._missionReceiveQuery
+}
+
+var poolAlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscGrowthInteractiveTaskReceivetaskRequest()
+	},
+}
+
+// GetAlibabaAlscGrowthInteractiveTaskReceivetaskRequest 从 sync.Pool 获取 AlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest
+func GetAlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest() *AlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest {
+	return poolAlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest.Get().(*AlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest)
+}
+
+// ReleaseAlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest 将 AlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest(v *AlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package elife
 
+import (
+	"sync"
+)
+
 // RefundRequest 结构体
 type RefundRequest struct {
 	// 操作流水号, 商家全系统唯一
@@ -16,4 +20,27 @@ type RefundRequest struct {
 	SaleTicket string `json:"sale_ticket,omitempty" xml:"sale_ticket,omitempty"`
 	// 金额分
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
+}
+
+var poolRefundRequest = sync.Pool{
+	New: func() any {
+		return new(RefundRequest)
+	},
+}
+
+// GetRefundRequest() 从对象池中获取RefundRequest
+func GetRefundRequest() *RefundRequest {
+	return poolRefundRequest.Get().(*RefundRequest)
+}
+
+// ReleaseRefundRequest 释放RefundRequest
+func ReleaseRefundRequest(v *RefundRequest) {
+	v.OpId = ""
+	v.Operator = ""
+	v.OriginalOpId = ""
+	v.OuterStoreId = ""
+	v.PayCode = ""
+	v.SaleTicket = ""
+	v.Amount = 0
+	poolRefundRequest.Put(v)
 }

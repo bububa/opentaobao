@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoWlbWaybillIFullupdateAPIResponse struct {
 	TaobaoWlbWaybillIFullupdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoWlbWaybillIFullupdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWlbWaybillIFullupdateAPIResponseModel).Reset()
+}
+
 // TaobaoWlbWaybillIFullupdateAPIResponseModel is 面单信息更新接口v1.0 成功返回结果
 type TaobaoWlbWaybillIFullupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_waybill_i_fullupdate_response"`
@@ -22,4 +29,27 @@ type TaobaoWlbWaybillIFullupdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 更新接口出参
 	WaybillApplyUpdateInfo *WaybillApplyUpdateInfo `json:"waybill_apply_update_info,omitempty" xml:"waybill_apply_update_info,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbWaybillIFullupdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.WaybillApplyUpdateInfo = nil
+}
+
+var poolTaobaoWlbWaybillIFullupdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbWaybillIFullupdateAPIResponse)
+	},
+}
+
+// GetTaobaoWlbWaybillIFullupdateAPIResponse 从 sync.Pool 获取 TaobaoWlbWaybillIFullupdateAPIResponse
+func GetTaobaoWlbWaybillIFullupdateAPIResponse() *TaobaoWlbWaybillIFullupdateAPIResponse {
+	return poolTaobaoWlbWaybillIFullupdateAPIResponse.Get().(*TaobaoWlbWaybillIFullupdateAPIResponse)
+}
+
+// ReleaseTaobaoWlbWaybillIFullupdateAPIResponse 将 TaobaoWlbWaybillIFullupdateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWlbWaybillIFullupdateAPIResponse(v *TaobaoWlbWaybillIFullupdateAPIResponse) {
+	v.Reset()
+	poolTaobaoWlbWaybillIFullupdateAPIResponse.Put(v)
 }

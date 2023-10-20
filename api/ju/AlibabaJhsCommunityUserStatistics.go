@@ -9,11 +9,6 @@ import (
 // alibaba.jhs.community.user.statistics
 //
 // 聚划算社群用户行为上报
-func AlibabaJhsCommunityUserStatistics(clt *core.SDKClient, req *ju.AlibabaJhsCommunityUserStatisticsAPIRequest, session string) (*ju.AlibabaJhsCommunityUserStatisticsAPIResponse, error) {
-	var resp ju.AlibabaJhsCommunityUserStatisticsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaJhsCommunityUserStatistics(clt *core.SDKClient, req *ju.AlibabaJhsCommunityUserStatisticsAPIRequest, resp *ju.AlibabaJhsCommunityUserStatisticsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

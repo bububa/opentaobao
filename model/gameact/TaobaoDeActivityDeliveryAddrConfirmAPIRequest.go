@@ -2,6 +2,7 @@ package gameact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoDeActivityDeliveryAddrConfirmAPIRequest struct {
 // NewTaobaoDeActivityDeliveryAddrConfirmRequest 初始化TaobaoDeActivityDeliveryAddrConfirmAPIRequest对象
 func NewTaobaoDeActivityDeliveryAddrConfirmRequest() *TaobaoDeActivityDeliveryAddrConfirmAPIRequest {
 	return &TaobaoDeActivityDeliveryAddrConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDeActivityDeliveryAddrConfirmAPIRequest) Reset() {
+	r._serialNumber = ""
+	r._addressSign = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoDeActivityDeliveryAddrConfirmAPIRequest) SetAddressSign(_addressS
 // GetAddressSign AddressSign Getter
 func (r TaobaoDeActivityDeliveryAddrConfirmAPIRequest) GetAddressSign() string {
 	return r._addressSign
+}
+
+var poolTaobaoDeActivityDeliveryAddrConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDeActivityDeliveryAddrConfirmRequest()
+	},
+}
+
+// GetTaobaoDeActivityDeliveryAddrConfirmRequest 从 sync.Pool 获取 TaobaoDeActivityDeliveryAddrConfirmAPIRequest
+func GetTaobaoDeActivityDeliveryAddrConfirmAPIRequest() *TaobaoDeActivityDeliveryAddrConfirmAPIRequest {
+	return poolTaobaoDeActivityDeliveryAddrConfirmAPIRequest.Get().(*TaobaoDeActivityDeliveryAddrConfirmAPIRequest)
+}
+
+// ReleaseTaobaoDeActivityDeliveryAddrConfirmAPIRequest 将 TaobaoDeActivityDeliveryAddrConfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDeActivityDeliveryAddrConfirmAPIRequest(v *TaobaoDeActivityDeliveryAddrConfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoDeActivityDeliveryAddrConfirmAPIRequest.Put(v)
 }

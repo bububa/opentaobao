@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // OrderGroup 结构体
 type OrderGroup struct {
 	// 淘宝交易子订单id
@@ -14,4 +18,26 @@ type OrderGroup struct {
 	OrderType int64 `json:"order_type,omitempty" xml:"order_type,omitempty"`
 	// 商品类型, 0:下单货品，1:赠品，2:其他
 	ItemType int64 `json:"item_type,omitempty" xml:"item_type,omitempty"`
+}
+
+var poolOrderGroup = sync.Pool{
+	New: func() any {
+		return new(OrderGroup)
+	},
+}
+
+// GetOrderGroup() 从对象池中获取OrderGroup
+func GetOrderGroup() *OrderGroup {
+	return poolOrderGroup.Get().(*OrderGroup)
+}
+
+// ReleaseOrderGroup 释放OrderGroup
+func ReleaseOrderGroup(v *OrderGroup) {
+	v.TaobaoSubOrderId = ""
+	v.OrderId = ""
+	v.ErpOrderId = ""
+	v.TaobaoParentOrderId = ""
+	v.OrderType = 0
+	v.ItemType = 0
+	poolOrderGroup.Put(v)
 }

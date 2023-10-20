@@ -2,6 +2,7 @@ package caipiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoCaipiaoGoodsInfoInputAPIResponse struct {
 	TaobaoCaipiaoGoodsInfoInputAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoCaipiaoGoodsInfoInputAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCaipiaoGoodsInfoInputAPIResponseModel).Reset()
+}
+
 // TaobaoCaipiaoGoodsInfoInputAPIResponseModel is 录入参加送彩票商品信息 成功返回结果
 type TaobaoCaipiaoGoodsInfoInputAPIResponseModel struct {
 	XMLName xml.Name `xml:"caipiao_goods_info_input_response"`
@@ -22,4 +29,27 @@ type TaobaoCaipiaoGoodsInfoInputAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 录入操作是否成功
 	InputResult bool `json:"input_result,omitempty" xml:"input_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCaipiaoGoodsInfoInputAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.InputResult = false
+}
+
+var poolTaobaoCaipiaoGoodsInfoInputAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCaipiaoGoodsInfoInputAPIResponse)
+	},
+}
+
+// GetTaobaoCaipiaoGoodsInfoInputAPIResponse 从 sync.Pool 获取 TaobaoCaipiaoGoodsInfoInputAPIResponse
+func GetTaobaoCaipiaoGoodsInfoInputAPIResponse() *TaobaoCaipiaoGoodsInfoInputAPIResponse {
+	return poolTaobaoCaipiaoGoodsInfoInputAPIResponse.Get().(*TaobaoCaipiaoGoodsInfoInputAPIResponse)
+}
+
+// ReleaseTaobaoCaipiaoGoodsInfoInputAPIResponse 将 TaobaoCaipiaoGoodsInfoInputAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCaipiaoGoodsInfoInputAPIResponse(v *TaobaoCaipiaoGoodsInfoInputAPIResponse) {
+	v.Reset()
+	poolTaobaoCaipiaoGoodsInfoInputAPIResponse.Put(v)
 }

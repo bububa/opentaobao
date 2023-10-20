@@ -2,6 +2,7 @@ package rhino
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoRhinoCrmGatewayAPIResponse struct {
 	TaobaoRhinoCrmGatewayAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoRhinoCrmGatewayAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoRhinoCrmGatewayAPIResponseModel).Reset()
+}
+
 // TaobaoRhinoCrmGatewayAPIResponseModel is crm实体变更回调接口 成功返回结果
 type TaobaoRhinoCrmGatewayAPIResponseModel struct {
 	XMLName xml.Name `xml:"rhino_crm_gateway_response"`
@@ -26,4 +33,29 @@ type TaobaoRhinoCrmGatewayAPIResponseModel struct {
 	RetCode int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 	// 是否成功
 	Content bool `json:"content,omitempty" xml:"content,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoRhinoCrmGatewayAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.RetCode = 0
+	m.Content = false
+}
+
+var poolTaobaoRhinoCrmGatewayAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoRhinoCrmGatewayAPIResponse)
+	},
+}
+
+// GetTaobaoRhinoCrmGatewayAPIResponse 从 sync.Pool 获取 TaobaoRhinoCrmGatewayAPIResponse
+func GetTaobaoRhinoCrmGatewayAPIResponse() *TaobaoRhinoCrmGatewayAPIResponse {
+	return poolTaobaoRhinoCrmGatewayAPIResponse.Get().(*TaobaoRhinoCrmGatewayAPIResponse)
+}
+
+// ReleaseTaobaoRhinoCrmGatewayAPIResponse 将 TaobaoRhinoCrmGatewayAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoRhinoCrmGatewayAPIResponse(v *TaobaoRhinoCrmGatewayAPIResponse) {
+	v.Reset()
+	poolTaobaoRhinoCrmGatewayAPIResponse.Put(v)
 }

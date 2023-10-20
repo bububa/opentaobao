@@ -1,5 +1,9 @@
 package fundplatform
 
+import (
+	"sync"
+)
+
 // AlibabaFundplatformCardorderMakeStruct 结构体
 type AlibabaFundplatformCardorderMakeStruct struct {
 	// 卡模板编号
@@ -28,4 +32,33 @@ type AlibabaFundplatformCardorderMakeStruct struct {
 	Count int64 `json:"count,omitempty" xml:"count,omitempty"`
 	// 是否调用成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaFundplatformCardorderMakeStruct = sync.Pool{
+	New: func() any {
+		return new(AlibabaFundplatformCardorderMakeStruct)
+	},
+}
+
+// GetAlibabaFundplatformCardorderMakeStruct() 从对象池中获取AlibabaFundplatformCardorderMakeStruct
+func GetAlibabaFundplatformCardorderMakeStruct() *AlibabaFundplatformCardorderMakeStruct {
+	return poolAlibabaFundplatformCardorderMakeStruct.Get().(*AlibabaFundplatformCardorderMakeStruct)
+}
+
+// ReleaseAlibabaFundplatformCardorderMakeStruct 释放AlibabaFundplatformCardorderMakeStruct
+func ReleaseAlibabaFundplatformCardorderMakeStruct(v *AlibabaFundplatformCardorderMakeStruct) {
+	v.TemplateNo = ""
+	v.PictureUrl = ""
+	v.ParValue = ""
+	v.CardName = ""
+	v.ReceiverZipCode = ""
+	v.ReceiverAddress = ""
+	v.ReceiverNumber = ""
+	v.ReceiverName = ""
+	v.MakingCardNo = ""
+	v.ResultMessage = ""
+	v.ResultCode = ""
+	v.Count = 0
+	v.Success = false
+	poolAlibabaFundplatformCardorderMakeStruct.Put(v)
 }

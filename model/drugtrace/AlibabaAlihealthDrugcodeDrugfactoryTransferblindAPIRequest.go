@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest struct {
 // NewAlibabaAlihealthDrugcodeDrugfactoryTransferblindRequest 初始化AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest对象
 func NewAlibabaAlihealthDrugcodeDrugfactoryTransferblindRequest() *AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest {
 	return &AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest) Reset() {
+	r._refEntId = ""
+	r._signValue = ""
+	r._cipherText = ""
+	r._fileName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest) SetFileName
 // GetFileName FileName Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest) GetFileName() string {
 	return r._fileName
+}
+
+var poolAlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugcodeDrugfactoryTransferblindRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugcodeDrugfactoryTransferblindRequest 从 sync.Pool 获取 AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest
+func GetAlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest() *AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest {
+	return poolAlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest.Get().(*AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest 将 AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest(v *AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest.Put(v)
 }

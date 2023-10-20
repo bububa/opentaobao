@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // CouponValidateOrderDto 结构体
 type CouponValidateOrderDto struct {
 	// 优惠券实例列表
@@ -12,4 +16,25 @@ type CouponValidateOrderDto struct {
 	NoDiscountDTO *ValidateResultVo `json:"no_discount_d_t_o,omitempty" xml:"no_discount_d_t_o,omitempty"`
 	// 权益商品展示信息
 	DerbyVoucherInfo *DerbyVoucherInfo `json:"derby_voucher_info,omitempty" xml:"derby_voucher_info,omitempty"`
+}
+
+var poolCouponValidateOrderDto = sync.Pool{
+	New: func() any {
+		return new(CouponValidateOrderDto)
+	},
+}
+
+// GetCouponValidateOrderDto() 从对象池中获取CouponValidateOrderDto
+func GetCouponValidateOrderDto() *CouponValidateOrderDto {
+	return poolCouponValidateOrderDto.Get().(*CouponValidateOrderDto)
+}
+
+// ReleaseCouponValidateOrderDto 释放CouponValidateOrderDto
+func ReleaseCouponValidateOrderDto(v *CouponValidateOrderDto) {
+	v.InstanceVOList = v.InstanceVOList[:0]
+	v.CouponInfoVO = nil
+	v.DiscountDTO = nil
+	v.NoDiscountDTO = nil
+	v.DerbyVoucherInfo = nil
+	poolCouponValidateOrderDto.Put(v)
 }

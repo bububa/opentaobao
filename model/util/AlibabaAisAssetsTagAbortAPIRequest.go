@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAisAssetsTagAbortAPIRequest struct {
 // NewAlibabaAisAssetsTagAbortRequest 初始化AlibabaAisAssetsTagAbortAPIRequest对象
 func NewAlibabaAisAssetsTagAbortRequest() *AlibabaAisAssetsTagAbortAPIRequest {
 	return &AlibabaAisAssetsTagAbortAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAisAssetsTagAbortAPIRequest) Reset() {
+	r._requestParam = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAisAssetsTagAbortAPIRequest) SetRequestParam(_requestParam strin
 // GetRequestParam RequestParam Getter
 func (r AlibabaAisAssetsTagAbortAPIRequest) GetRequestParam() string {
 	return r._requestParam
+}
+
+var poolAlibabaAisAssetsTagAbortAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAisAssetsTagAbortRequest()
+	},
+}
+
+// GetAlibabaAisAssetsTagAbortRequest 从 sync.Pool 获取 AlibabaAisAssetsTagAbortAPIRequest
+func GetAlibabaAisAssetsTagAbortAPIRequest() *AlibabaAisAssetsTagAbortAPIRequest {
+	return poolAlibabaAisAssetsTagAbortAPIRequest.Get().(*AlibabaAisAssetsTagAbortAPIRequest)
+}
+
+// ReleaseAlibabaAisAssetsTagAbortAPIRequest 将 AlibabaAisAssetsTagAbortAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAisAssetsTagAbortAPIRequest(v *AlibabaAisAssetsTagAbortAPIRequest) {
+	v.Reset()
+	poolAlibabaAisAssetsTagAbortAPIRequest.Put(v)
 }

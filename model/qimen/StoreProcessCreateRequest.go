@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // StoreProcessCreateRequest 结构体
 type StoreProcessCreateRequest struct {
 	// 加工商品列表
@@ -24,4 +28,31 @@ type StoreProcessCreateRequest struct {
 	PlanQty int64 `json:"planQty,omitempty" xml:"planQty,omitempty"`
 	// 扩展属性
 	ExtendProps *TaobaoQimenStoreprocessCreateMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+}
+
+var poolStoreProcessCreateRequest = sync.Pool{
+	New: func() any {
+		return new(StoreProcessCreateRequest)
+	},
+}
+
+// GetStoreProcessCreateRequest() 从对象池中获取StoreProcessCreateRequest
+func GetStoreProcessCreateRequest() *StoreProcessCreateRequest {
+	return poolStoreProcessCreateRequest.Get().(*StoreProcessCreateRequest)
+}
+
+// ReleaseStoreProcessCreateRequest 释放StoreProcessCreateRequest
+func ReleaseStoreProcessCreateRequest(v *StoreProcessCreateRequest) {
+	v.Materialitems = v.Materialitems[:0]
+	v.Productitems = v.Productitems[:0]
+	v.ProcessOrderCode = ""
+	v.WarehouseCode = ""
+	v.OrderType = ""
+	v.OrderCreateTime = ""
+	v.PlanTime = ""
+	v.ServiceType = ""
+	v.Remark = ""
+	v.PlanQty = 0
+	v.ExtendProps = nil
+	poolStoreProcessCreateRequest.Put(v)
 }

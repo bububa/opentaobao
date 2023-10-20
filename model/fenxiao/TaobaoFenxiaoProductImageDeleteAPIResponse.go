@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoFenxiaoProductImageDeleteAPIResponse struct {
 	TaobaoFenxiaoProductImageDeleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoFenxiaoProductImageDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFenxiaoProductImageDeleteAPIResponseModel).Reset()
+}
+
 // TaobaoFenxiaoProductImageDeleteAPIResponseModel is 产品图片删除 成功返回结果
 type TaobaoFenxiaoProductImageDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_product_image_delete_response"`
@@ -24,4 +31,28 @@ type TaobaoFenxiaoProductImageDeleteAPIResponseModel struct {
 	Created string `json:"created,omitempty" xml:"created,omitempty"`
 	// 操作结果
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFenxiaoProductImageDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Created = ""
+	m.Result = false
+}
+
+var poolTaobaoFenxiaoProductImageDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFenxiaoProductImageDeleteAPIResponse)
+	},
+}
+
+// GetTaobaoFenxiaoProductImageDeleteAPIResponse 从 sync.Pool 获取 TaobaoFenxiaoProductImageDeleteAPIResponse
+func GetTaobaoFenxiaoProductImageDeleteAPIResponse() *TaobaoFenxiaoProductImageDeleteAPIResponse {
+	return poolTaobaoFenxiaoProductImageDeleteAPIResponse.Get().(*TaobaoFenxiaoProductImageDeleteAPIResponse)
+}
+
+// ReleaseTaobaoFenxiaoProductImageDeleteAPIResponse 将 TaobaoFenxiaoProductImageDeleteAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFenxiaoProductImageDeleteAPIResponse(v *TaobaoFenxiaoProductImageDeleteAPIResponse) {
+	v.Reset()
+	poolTaobaoFenxiaoProductImageDeleteAPIResponse.Put(v)
 }

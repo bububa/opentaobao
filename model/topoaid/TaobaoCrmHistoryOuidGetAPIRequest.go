@@ -2,6 +2,7 @@ package topoaid
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoCrmHistoryOuidGetAPIRequest struct {
 // NewTaobaoCrmHistoryOuidGetRequest 初始化TaobaoCrmHistoryOuidGetAPIRequest对象
 func NewTaobaoCrmHistoryOuidGetRequest() *TaobaoCrmHistoryOuidGetAPIRequest {
 	return &TaobaoCrmHistoryOuidGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCrmHistoryOuidGetAPIRequest) Reset() {
+	r._buyerNick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoCrmHistoryOuidGetAPIRequest) SetBuyerNick(_buyerNick string) erro
 // GetBuyerNick BuyerNick Getter
 func (r TaobaoCrmHistoryOuidGetAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
+}
+
+var poolTaobaoCrmHistoryOuidGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCrmHistoryOuidGetRequest()
+	},
+}
+
+// GetTaobaoCrmHistoryOuidGetRequest 从 sync.Pool 获取 TaobaoCrmHistoryOuidGetAPIRequest
+func GetTaobaoCrmHistoryOuidGetAPIRequest() *TaobaoCrmHistoryOuidGetAPIRequest {
+	return poolTaobaoCrmHistoryOuidGetAPIRequest.Get().(*TaobaoCrmHistoryOuidGetAPIRequest)
+}
+
+// ReleaseTaobaoCrmHistoryOuidGetAPIRequest 将 TaobaoCrmHistoryOuidGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCrmHistoryOuidGetAPIRequest(v *TaobaoCrmHistoryOuidGetAPIRequest) {
+	v.Reset()
+	poolTaobaoCrmHistoryOuidGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest struct {
 // NewAlibabaAscpUopSupplierConsignorderNotifyTmsChangeRequest 初始化AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest对象
 func NewAlibabaAscpUopSupplierConsignorderNotifyTmsChangeRequest() *AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest {
 	return &AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest) Reset() {
+	r._modifyMailNoRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest) SetModifyM
 // GetModifyMailNoRequest ModifyMailNoRequest Getter
 func (r AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest) GetModifyMailNoRequest() *Modifymailnorequest {
 	return r._modifyMailNoRequest
+}
+
+var poolAlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpUopSupplierConsignorderNotifyTmsChangeRequest()
+	},
+}
+
+// GetAlibabaAscpUopSupplierConsignorderNotifyTmsChangeRequest 从 sync.Pool 获取 AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest
+func GetAlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest() *AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest {
+	return poolAlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest.Get().(*AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest)
+}
+
+// ReleaseAlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest 将 AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest(v *AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest.Put(v)
 }

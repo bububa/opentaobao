@@ -9,11 +9,6 @@ import (
 // taobao.eticket.merchant.ma.consume
 //
 // 电子凭证核销接口
-func TaobaoEticketMerchantMaConsume(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaConsumeAPIRequest, session string) (*eticket.TaobaoEticketMerchantMaConsumeAPIResponse, error) {
-	var resp eticket.TaobaoEticketMerchantMaConsumeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoEticketMerchantMaConsume(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaConsumeAPIRequest, resp *eticket.TaobaoEticketMerchantMaConsumeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

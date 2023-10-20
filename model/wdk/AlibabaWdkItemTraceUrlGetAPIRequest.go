@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaWdkItemTraceUrlGetAPIRequest struct {
 // NewAlibabaWdkItemTraceUrlGetRequest 初始化AlibabaWdkItemTraceUrlGetAPIRequest对象
 func NewAlibabaWdkItemTraceUrlGetRequest() *AlibabaWdkItemTraceUrlGetAPIRequest {
 	return &AlibabaWdkItemTraceUrlGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkItemTraceUrlGetAPIRequest) Reset() {
+	r._skuCode = ""
+	r._shopId = ""
+	r._sourceCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaWdkItemTraceUrlGetAPIRequest) SetSourceCode(_sourceCode string) 
 // GetSourceCode SourceCode Getter
 func (r AlibabaWdkItemTraceUrlGetAPIRequest) GetSourceCode() string {
 	return r._sourceCode
+}
+
+var poolAlibabaWdkItemTraceUrlGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkItemTraceUrlGetRequest()
+	},
+}
+
+// GetAlibabaWdkItemTraceUrlGetRequest 从 sync.Pool 获取 AlibabaWdkItemTraceUrlGetAPIRequest
+func GetAlibabaWdkItemTraceUrlGetAPIRequest() *AlibabaWdkItemTraceUrlGetAPIRequest {
+	return poolAlibabaWdkItemTraceUrlGetAPIRequest.Get().(*AlibabaWdkItemTraceUrlGetAPIRequest)
+}
+
+// ReleaseAlibabaWdkItemTraceUrlGetAPIRequest 将 AlibabaWdkItemTraceUrlGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkItemTraceUrlGetAPIRequest(v *AlibabaWdkItemTraceUrlGetAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkItemTraceUrlGetAPIRequest.Put(v)
 }

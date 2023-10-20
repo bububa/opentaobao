@@ -9,11 +9,6 @@ import (
 // taobao.miniapp.messsage.normal.send
 //
 // 小程序下行单个普通消息
-func TaobaoMiniappMesssageNormalSend(clt *core.SDKClient, req *user.TaobaoMiniappMesssageNormalSendAPIRequest, session string) (*user.TaobaoMiniappMesssageNormalSendAPIResponse, error) {
-	var resp user.TaobaoMiniappMesssageNormalSendAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoMiniappMesssageNormalSend(clt *core.SDKClient, req *user.TaobaoMiniappMesssageNormalSendAPIRequest, resp *user.TaobaoMiniappMesssageNormalSendAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

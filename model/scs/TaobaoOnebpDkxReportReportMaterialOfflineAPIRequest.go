@@ -2,6 +2,7 @@ package scs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,15 @@ type TaobaoOnebpDkxReportReportMaterialOfflineAPIRequest struct {
 // NewTaobaoOnebpDkxReportReportMaterialOfflineRequest 初始化TaobaoOnebpDkxReportReportMaterialOfflineAPIRequest对象
 func NewTaobaoOnebpDkxReportReportMaterialOfflineRequest() *TaobaoOnebpDkxReportReportMaterialOfflineAPIRequest {
 	return &TaobaoOnebpDkxReportReportMaterialOfflineAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOnebpDkxReportReportMaterialOfflineAPIRequest) Reset() {
+	r._apiServiceContext = nil
+	r._reportQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -68,4 +76,21 @@ func (r *TaobaoOnebpDkxReportReportMaterialOfflineAPIRequest) SetReportQuery(_re
 // GetReportQuery ReportQuery Getter
 func (r TaobaoOnebpDkxReportReportMaterialOfflineAPIRequest) GetReportQuery() *ReportQueryTopDto {
 	return r._reportQuery
+}
+
+var poolTaobaoOnebpDkxReportReportMaterialOfflineAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOnebpDkxReportReportMaterialOfflineRequest()
+	},
+}
+
+// GetTaobaoOnebpDkxReportReportMaterialOfflineRequest 从 sync.Pool 获取 TaobaoOnebpDkxReportReportMaterialOfflineAPIRequest
+func GetTaobaoOnebpDkxReportReportMaterialOfflineAPIRequest() *TaobaoOnebpDkxReportReportMaterialOfflineAPIRequest {
+	return poolTaobaoOnebpDkxReportReportMaterialOfflineAPIRequest.Get().(*TaobaoOnebpDkxReportReportMaterialOfflineAPIRequest)
+}
+
+// ReleaseTaobaoOnebpDkxReportReportMaterialOfflineAPIRequest 将 TaobaoOnebpDkxReportReportMaterialOfflineAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOnebpDkxReportReportMaterialOfflineAPIRequest(v *TaobaoOnebpDkxReportReportMaterialOfflineAPIRequest) {
+	v.Reset()
+	poolTaobaoOnebpDkxReportReportMaterialOfflineAPIRequest.Put(v)
 }

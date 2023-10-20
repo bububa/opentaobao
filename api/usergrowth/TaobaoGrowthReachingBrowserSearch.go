@@ -9,11 +9,6 @@ import (
 // taobao.growth.reaching.browser.search
 //
 // 查询搜索关联
-func TaobaoGrowthReachingBrowserSearch(clt *core.SDKClient, req *usergrowth.TaobaoGrowthReachingBrowserSearchAPIRequest, session string) (*usergrowth.TaobaoGrowthReachingBrowserSearchAPIResponse, error) {
-	var resp usergrowth.TaobaoGrowthReachingBrowserSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoGrowthReachingBrowserSearch(clt *core.SDKClient, req *usergrowth.TaobaoGrowthReachingBrowserSearchAPIRequest, resp *usergrowth.TaobaoGrowthReachingBrowserSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package pentraprism
 
+import (
+	"sync"
+)
+
 // TaskRewardVo 结构体
 type TaskRewardVo struct {
 	// 查询奖励错误码
@@ -14,4 +18,26 @@ type TaskRewardVo struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 是否领奖
 	Win bool `json:"win,omitempty" xml:"win,omitempty"`
+}
+
+var poolTaskRewardVo = sync.Pool{
+	New: func() any {
+		return new(TaskRewardVo)
+	},
+}
+
+// GetTaskRewardVo() 从对象池中获取TaskRewardVo
+func GetTaskRewardVo() *TaskRewardVo {
+	return poolTaskRewardVo.Get().(*TaskRewardVo)
+}
+
+// ReleaseTaskRewardVo 释放TaskRewardVo
+func ReleaseTaskRewardVo(v *TaskRewardVo) {
+	v.ErrorCode = ""
+	v.Type = ""
+	v.Result = nil
+	v.Time = 0
+	v.Success = false
+	v.Win = false
+	poolTaskRewardVo.Put(v)
 }

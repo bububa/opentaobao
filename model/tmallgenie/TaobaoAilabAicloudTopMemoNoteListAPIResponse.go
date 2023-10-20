@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAilabAicloudTopMemoNoteListAPIResponse struct {
 	TaobaoAilabAicloudTopMemoNoteListAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopMemoNoteListAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAilabAicloudTopMemoNoteListAPIResponseModel).Reset()
+}
+
 // TaobaoAilabAicloudTopMemoNoteListAPIResponseModel is 查询天猫精灵用户设置的所有备忘录 成功返回结果
 type TaobaoAilabAicloudTopMemoNoteListAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_memo_note_list_response"`
@@ -22,4 +29,27 @@ type TaobaoAilabAicloudTopMemoNoteListAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 服务的结果封装
 	Result *TaobaoAilabAicloudTopMemoNoteListResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopMemoNoteListAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoAilabAicloudTopMemoNoteListAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAilabAicloudTopMemoNoteListAPIResponse)
+	},
+}
+
+// GetTaobaoAilabAicloudTopMemoNoteListAPIResponse 从 sync.Pool 获取 TaobaoAilabAicloudTopMemoNoteListAPIResponse
+func GetTaobaoAilabAicloudTopMemoNoteListAPIResponse() *TaobaoAilabAicloudTopMemoNoteListAPIResponse {
+	return poolTaobaoAilabAicloudTopMemoNoteListAPIResponse.Get().(*TaobaoAilabAicloudTopMemoNoteListAPIResponse)
+}
+
+// ReleaseTaobaoAilabAicloudTopMemoNoteListAPIResponse 将 TaobaoAilabAicloudTopMemoNoteListAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAilabAicloudTopMemoNoteListAPIResponse(v *TaobaoAilabAicloudTopMemoNoteListAPIResponse) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopMemoNoteListAPIResponse.Put(v)
 }

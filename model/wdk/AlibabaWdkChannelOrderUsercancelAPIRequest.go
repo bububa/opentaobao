@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkChannelOrderUsercancelAPIRequest struct {
 // NewAlibabaWdkChannelOrderUsercancelRequest 初始化AlibabaWdkChannelOrderUsercancelAPIRequest对象
 func NewAlibabaWdkChannelOrderUsercancelRequest() *AlibabaWdkChannelOrderUsercancelAPIRequest {
 	return &AlibabaWdkChannelOrderUsercancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkChannelOrderUsercancelAPIRequest) Reset() {
+	r._userCancelInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkChannelOrderUsercancelAPIRequest) SetUserCancelInfo(_userCanc
 // GetUserCancelInfo UserCancelInfo Getter
 func (r AlibabaWdkChannelOrderUsercancelAPIRequest) GetUserCancelInfo() *OrderUserCancelInfo {
 	return r._userCancelInfo
+}
+
+var poolAlibabaWdkChannelOrderUsercancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkChannelOrderUsercancelRequest()
+	},
+}
+
+// GetAlibabaWdkChannelOrderUsercancelRequest 从 sync.Pool 获取 AlibabaWdkChannelOrderUsercancelAPIRequest
+func GetAlibabaWdkChannelOrderUsercancelAPIRequest() *AlibabaWdkChannelOrderUsercancelAPIRequest {
+	return poolAlibabaWdkChannelOrderUsercancelAPIRequest.Get().(*AlibabaWdkChannelOrderUsercancelAPIRequest)
+}
+
+// ReleaseAlibabaWdkChannelOrderUsercancelAPIRequest 将 AlibabaWdkChannelOrderUsercancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkChannelOrderUsercancelAPIRequest(v *AlibabaWdkChannelOrderUsercancelAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkChannelOrderUsercancelAPIRequest.Put(v)
 }

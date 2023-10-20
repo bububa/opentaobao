@@ -9,11 +9,6 @@ import (
 // alibaba.einvoice.device.order.query
 //
 // 查询税控设备订购单详情
-func AlibabaEinvoiceDeviceOrderQuery(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceDeviceOrderQueryAPIRequest, session string) (*einvoice.AlibabaEinvoiceDeviceOrderQueryAPIResponse, error) {
-	var resp einvoice.AlibabaEinvoiceDeviceOrderQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEinvoiceDeviceOrderQuery(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceDeviceOrderQueryAPIRequest, resp *einvoice.AlibabaEinvoiceDeviceOrderQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

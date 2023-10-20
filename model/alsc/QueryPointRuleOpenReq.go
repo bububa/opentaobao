@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // QueryPointRuleOpenReq 结构体
 type QueryPointRuleOpenReq struct {
 	// 品牌id(不能和outbrandid同时为空)
@@ -16,4 +20,27 @@ type QueryPointRuleOpenReq struct {
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 是否包含逻辑删除
 	IncludeLogicalDelete bool `json:"include_logical_delete,omitempty" xml:"include_logical_delete,omitempty"`
+}
+
+var poolQueryPointRuleOpenReq = sync.Pool{
+	New: func() any {
+		return new(QueryPointRuleOpenReq)
+	},
+}
+
+// GetQueryPointRuleOpenReq() 从对象池中获取QueryPointRuleOpenReq
+func GetQueryPointRuleOpenReq() *QueryPointRuleOpenReq {
+	return poolQueryPointRuleOpenReq.Get().(*QueryPointRuleOpenReq)
+}
+
+// ReleaseQueryPointRuleOpenReq 释放QueryPointRuleOpenReq
+func ReleaseQueryPointRuleOpenReq(v *QueryPointRuleOpenReq) {
+	v.BrandId = ""
+	v.LevelId = ""
+	v.MaxUpdateTime = ""
+	v.OutBrandId = ""
+	v.OutShopId = ""
+	v.ShopId = ""
+	v.IncludeLogicalDelete = false
+	poolQueryPointRuleOpenReq.Put(v)
 }

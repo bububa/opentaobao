@@ -9,11 +9,6 @@ import (
 // taobao.qianniu.task.cancel
 //
 // 由任务发起者调用
-func TaobaoQianniuTaskCancel(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskCancelAPIRequest, session string) (*qianniu.TaobaoQianniuTaskCancelAPIResponse, error) {
-	var resp qianniu.TaobaoQianniuTaskCancelAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQianniuTaskCancel(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskCancelAPIRequest, resp *qianniu.TaobaoQianniuTaskCancelAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

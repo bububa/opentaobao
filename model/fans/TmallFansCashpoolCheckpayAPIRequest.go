@@ -2,6 +2,7 @@ package fans
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallFansCashpoolCheckpayAPIRequest struct {
 // NewTmallFansCashpoolCheckpayRequest 初始化TmallFansCashpoolCheckpayAPIRequest对象
 func NewTmallFansCashpoolCheckpayRequest() *TmallFansCashpoolCheckpayAPIRequest {
 	return &TmallFansCashpoolCheckpayAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallFansCashpoolCheckpayAPIRequest) Reset() {
+	r._cashPoolList = r._cashPoolList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallFansCashpoolCheckpayAPIRequest) SetCashPoolList(_cashPoolList []in
 // GetCashPoolList CashPoolList Getter
 func (r TmallFansCashpoolCheckpayAPIRequest) GetCashPoolList() []int64 {
 	return r._cashPoolList
+}
+
+var poolTmallFansCashpoolCheckpayAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallFansCashpoolCheckpayRequest()
+	},
+}
+
+// GetTmallFansCashpoolCheckpayRequest 从 sync.Pool 获取 TmallFansCashpoolCheckpayAPIRequest
+func GetTmallFansCashpoolCheckpayAPIRequest() *TmallFansCashpoolCheckpayAPIRequest {
+	return poolTmallFansCashpoolCheckpayAPIRequest.Get().(*TmallFansCashpoolCheckpayAPIRequest)
+}
+
+// ReleaseTmallFansCashpoolCheckpayAPIRequest 将 TmallFansCashpoolCheckpayAPIRequest 放入 sync.Pool
+func ReleaseTmallFansCashpoolCheckpayAPIRequest(v *TmallFansCashpoolCheckpayAPIRequest) {
+	v.Reset()
+	poolTmallFansCashpoolCheckpayAPIRequest.Put(v)
 }

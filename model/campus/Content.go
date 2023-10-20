@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // Content 结构体
 type Content struct {
 	// 面积
@@ -48,4 +52,43 @@ type Content struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 是否删除
 	IsDelete bool `json:"is_delete,omitempty" xml:"is_delete,omitempty"`
+}
+
+var poolContent = sync.Pool{
+	New: func() any {
+		return new(Content)
+	},
+}
+
+// GetContent() 从对象池中获取Content
+func GetContent() *Content {
+	return poolContent.Get().(*Content)
+}
+
+// ReleaseContent 释放Content
+func ReleaseContent(v *Content) {
+	v.Area = ""
+	v.Creator = ""
+	v.GmtModified = ""
+	v.Code = ""
+	v.SpaceType = ""
+	v.CampusName = ""
+	v.Modifier = ""
+	v.Description = ""
+	v.GmtCreate = ""
+	v.Uuid = ""
+	v.BuildingName = ""
+	v.Name = ""
+	v.FloorName = ""
+	v.Height = ""
+	v.OrderNo = 0
+	v.CampusId = 0
+	v.GeoFloorId = 0
+	v.BuildingId = 0
+	v.FloorId = 0
+	v.CompanyId = 0
+	v.Id = 0
+	v.Status = 0
+	v.IsDelete = false
+	poolContent.Put(v)
 }

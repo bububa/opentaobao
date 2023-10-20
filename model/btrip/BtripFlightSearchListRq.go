@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripFlightSearchListRq 结构体
 type BtripFlightSearchListRq struct {
 	// 忽略店铺列表
@@ -46,4 +50,42 @@ type BtripFlightSearchListRq struct {
 	NeedMultiClassRice bool `json:"need_multi_class_rice,omitempty" xml:"need_multi_class_rice,omitempty"`
 	// 是否查询多舱价位
 	NeedMultiClassPrice bool `json:"need_multi_class_price,omitempty" xml:"need_multi_class_price,omitempty"`
+}
+
+var poolBtripFlightSearchListRq = sync.Pool{
+	New: func() any {
+		return new(BtripFlightSearchListRq)
+	},
+}
+
+// GetBtripFlightSearchListRq() 从对象池中获取BtripFlightSearchListRq
+func GetBtripFlightSearchListRq() *BtripFlightSearchListRq {
+	return poolBtripFlightSearchListRq.Get().(*BtripFlightSearchListRq)
+}
+
+// ReleaseBtripFlightSearchListRq 释放BtripFlightSearchListRq
+func ReleaseBtripFlightSearchListRq(v *BtripFlightSearchListRq) {
+	v.IgnoredShopNames = v.IgnoredShopNames[:0]
+	v.ShopNames = v.ShopNames[:0]
+	v.TravelerList = v.TravelerList[:0]
+	v.AirlineCode = ""
+	v.ArrCityCode = ""
+	v.ArrCityName = ""
+	v.ArrDate = ""
+	v.CabinClass = ""
+	v.DepCityCode = ""
+	v.DepCityName = ""
+	v.DepDate = ""
+	v.PassengerNum = ""
+	v.SubChannel = ""
+	v.TripType = ""
+	v.FlightNo = ""
+	v.TransferFlightNo = ""
+	v.IsvName = ""
+	v.SupplierCode = ""
+	v.TransferCityCode = ""
+	v.TransferLeaveDate = ""
+	v.NeedMultiClassRice = false
+	v.NeedMultiClassPrice = false
+	poolBtripFlightSearchListRq.Put(v)
 }

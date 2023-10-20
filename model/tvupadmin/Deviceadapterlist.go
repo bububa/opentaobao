@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // Deviceadapterlist 结构体
 type Deviceadapterlist struct {
 	// 设备最小版本号
@@ -18,4 +22,28 @@ type Deviceadapterlist struct {
 	BrandId int64 `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
 	// 设备ID
 	ModelId int64 `json:"model_id,omitempty" xml:"model_id,omitempty"`
+}
+
+var poolDeviceadapterlist = sync.Pool{
+	New: func() any {
+		return new(Deviceadapterlist)
+	},
+}
+
+// GetDeviceadapterlist() 从对象池中获取Deviceadapterlist
+func GetDeviceadapterlist() *Deviceadapterlist {
+	return poolDeviceadapterlist.Get().(*Deviceadapterlist)
+}
+
+// ReleaseDeviceadapterlist 释放Deviceadapterlist
+func ReleaseDeviceadapterlist(v *Deviceadapterlist) {
+	v.MinimumSystemVersion = ""
+	v.HighestSystemVersion = ""
+	v.RealTypeName = ""
+	v.BrandName = ""
+	v.ModelName = ""
+	v.RealTypeId = 0
+	v.BrandId = 0
+	v.ModelId = 0
+	poolDeviceadapterlist.Put(v)
 }

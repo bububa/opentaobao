@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // SmAddrModel 结构体
 type SmAddrModel struct {
 	// 详细地址，如果地区Code没有填写，API会根据address反向解析地区Code
@@ -24,4 +28,31 @@ type SmAddrModel struct {
 	PrivinceName string `json:"privince_name,omitempty" xml:"privince_name,omitempty"`
 	// 省份Code
 	ProvinceCode string `json:"province_code,omitempty" xml:"province_code,omitempty"`
+}
+
+var poolSmAddrModel = sync.Pool{
+	New: func() any {
+		return new(SmAddrModel)
+	},
+}
+
+// GetSmAddrModel() 从对象池中获取SmAddrModel
+func GetSmAddrModel() *SmAddrModel {
+	return poolSmAddrModel.Get().(*SmAddrModel)
+}
+
+// ReleaseSmAddrModel 释放SmAddrModel
+func ReleaseSmAddrModel(v *SmAddrModel) {
+	v.Address = ""
+	v.AreaCode = ""
+	v.AreaName = ""
+	v.CityCode = ""
+	v.CityName = ""
+	v.FullName = ""
+	v.Mobile = ""
+	v.Phone = ""
+	v.PostCode = ""
+	v.PrivinceName = ""
+	v.ProvinceCode = ""
+	poolSmAddrModel.Put(v)
 }

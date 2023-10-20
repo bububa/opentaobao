@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // DrugEntUseDto 结构体
 type DrugEntUseDto struct {
 	// 药品通用名称
@@ -64,4 +68,51 @@ type DrugEntUseDto struct {
 	AgentEntInfo *BaseEntInfoDto `json:"agent_ent_info,omitempty" xml:"agent_ent_info,omitempty"`
 	// 零售企业信息
 	RetailEntInfo *BaseEntInfoDto `json:"retail_ent_info,omitempty" xml:"retail_ent_info,omitempty"`
+}
+
+var poolDrugEntUseDto = sync.Pool{
+	New: func() any {
+		return new(DrugEntUseDto)
+	},
+}
+
+// GetDrugEntUseDto() 从对象池中获取DrugEntUseDto
+func GetDrugEntUseDto() *DrugEntUseDto {
+	return poolDrugEntUseDto.Get().(*DrugEntUseDto)
+}
+
+// ReleaseDrugEntUseDto 释放DrugEntUseDto
+func ReleaseDrugEntUseDto(v *DrugEntUseDto) {
+	v.PhysicName = ""
+	v.PhysicNameEn = ""
+	v.ProdName = ""
+	v.CfdaDrugId = ""
+	v.SdcCode = ""
+	v.PrepnTypeDesc = ""
+	v.PrepnSpec = ""
+	v.PkgSpec = ""
+	v.ExpiryTerm = ""
+	v.ApprovalLicenceNo = ""
+	v.ApprovalLicenceExpiry = ""
+	v.ProductionDate = ""
+	v.ExpiryDate = ""
+	v.ProductionBatch = ""
+	v.ImportRegCert = ""
+	v.ImportRegCertValidity = ""
+	v.ImportAppCert = ""
+	v.ImportAppCertValidity = ""
+	v.CodeStatus = ""
+	v.PkgNum = 0
+	v.ExprieLife = 0
+	v.ExprieUnit = 0
+	v.DrugRegistrationClassfication = 0
+	v.NationalEssentialDrugsFlag = 0
+	v.ControlledDrugManagementType = 0
+	v.OtcFlag = 0
+	v.AuthorizerEntInfo = nil
+	v.ProduceEntInfo = nil
+	v.PackEntInfo = nil
+	v.AgentEntInfo = nil
+	v.RetailEntInfo = nil
+	poolDrugEntUseDto.Put(v)
 }

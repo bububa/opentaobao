@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // InsightWordDataUnderCatDto 结构体
 type InsightWordDataUnderCatDto struct {
 	// 类目名称
@@ -42,4 +46,40 @@ type InsightWordDataUnderCatDto struct {
 	Favshoptotal int64 `json:"favshoptotal,omitempty" xml:"favshoptotal,omitempty"`
 	// 竞争度
 	Competition int64 `json:"competition,omitempty" xml:"competition,omitempty"`
+}
+
+var poolInsightWordDataUnderCatDto = sync.Pool{
+	New: func() any {
+		return new(InsightWordDataUnderCatDto)
+	},
+}
+
+// GetInsightWordDataUnderCatDto() 从对象池中获取InsightWordDataUnderCatDto
+func GetInsightWordDataUnderCatDto() *InsightWordDataUnderCatDto {
+	return poolInsightWordDataUnderCatDto.Get().(*InsightWordDataUnderCatDto)
+}
+
+// ReleaseInsightWordDataUnderCatDto 释放InsightWordDataUnderCatDto
+func ReleaseInsightWordDataUnderCatDto(v *InsightWordDataUnderCatDto) {
+	v.CatName = ""
+	v.Coverage = ""
+	v.Cpc = ""
+	v.Roi = ""
+	v.Bidword = ""
+	v.Ctr = ""
+	v.Impression = 0
+	v.Indirecttransaction = 0
+	v.Click = 0
+	v.Cost = 0
+	v.Directtransaction = 0
+	v.Favitemtotal = 0
+	v.CatId = 0
+	v.Transactionshippingtotal = 0
+	v.Favtotal = 0
+	v.Transactiontotal = 0
+	v.Indirecttransactionshipping = 0
+	v.Directtransactionshipping = 0
+	v.Favshoptotal = 0
+	v.Competition = 0
+	poolInsightWordDataUnderCatDto.Put(v)
 }

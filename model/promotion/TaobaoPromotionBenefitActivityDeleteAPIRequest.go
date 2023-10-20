@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoPromotionBenefitActivityDeleteAPIRequest struct {
 // NewTaobaoPromotionBenefitActivityDeleteRequest 初始化TaobaoPromotionBenefitActivityDeleteAPIRequest对象
 func NewTaobaoPromotionBenefitActivityDeleteRequest() *TaobaoPromotionBenefitActivityDeleteAPIRequest {
 	return &TaobaoPromotionBenefitActivityDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPromotionBenefitActivityDeleteAPIRequest) Reset() {
+	r._relationId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoPromotionBenefitActivityDeleteAPIRequest) SetRelationId(_relation
 // GetRelationId RelationId Getter
 func (r TaobaoPromotionBenefitActivityDeleteAPIRequest) GetRelationId() int64 {
 	return r._relationId
+}
+
+var poolTaobaoPromotionBenefitActivityDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPromotionBenefitActivityDeleteRequest()
+	},
+}
+
+// GetTaobaoPromotionBenefitActivityDeleteRequest 从 sync.Pool 获取 TaobaoPromotionBenefitActivityDeleteAPIRequest
+func GetTaobaoPromotionBenefitActivityDeleteAPIRequest() *TaobaoPromotionBenefitActivityDeleteAPIRequest {
+	return poolTaobaoPromotionBenefitActivityDeleteAPIRequest.Get().(*TaobaoPromotionBenefitActivityDeleteAPIRequest)
+}
+
+// ReleaseTaobaoPromotionBenefitActivityDeleteAPIRequest 将 TaobaoPromotionBenefitActivityDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPromotionBenefitActivityDeleteAPIRequest(v *TaobaoPromotionBenefitActivityDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoPromotionBenefitActivityDeleteAPIRequest.Put(v)
 }

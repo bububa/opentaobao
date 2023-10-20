@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest struct {
 // NewAlibabaSscSupplyplatformServiceworkerAvailableworkerRequest 初始化AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest对象
 func NewAlibabaSscSupplyplatformServiceworkerAvailableworkerRequest() *AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest {
 	return &AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest) Reset() {
+	r._availableWorkerQueryForTopReqDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest) SetAvai
 // GetAvailableWorkerQueryForTopReqDto AvailableWorkerQueryForTopReqDto Getter
 func (r AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest) GetAvailableWorkerQueryForTopReqDto() *AvailableWorkerQueryForTopReqDto {
 	return r._availableWorkerQueryForTopReqDto
+}
+
+var poolAlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSscSupplyplatformServiceworkerAvailableworkerRequest()
+	},
+}
+
+// GetAlibabaSscSupplyplatformServiceworkerAvailableworkerRequest 从 sync.Pool 获取 AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest
+func GetAlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest() *AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest {
+	return poolAlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest.Get().(*AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest)
+}
+
+// ReleaseAlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest 将 AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest(v *AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest) {
+	v.Reset()
+	poolAlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest.Put(v)
 }

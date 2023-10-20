@@ -1,5 +1,9 @@
 package idleisv
 
+import (
+	"sync"
+)
+
 // AppraiseIsvRefundDto 结构体
 type AppraiseIsvRefundDto struct {
 	// 买家申请退款原因
@@ -52,4 +56,45 @@ type AppraiseIsvRefundDto struct {
 	TimeoutData *IsvRefundTimeoutDto `json:"timeout_data,omitempty" xml:"timeout_data,omitempty"`
 	// 买家是否需要退货
 	NeedReturnGoods bool `json:"need_return_goods,omitempty" xml:"need_return_goods,omitempty"`
+}
+
+var poolAppraiseIsvRefundDto = sync.Pool{
+	New: func() any {
+		return new(AppraiseIsvRefundDto)
+	},
+}
+
+// GetAppraiseIsvRefundDto() 从对象池中获取AppraiseIsvRefundDto
+func GetAppraiseIsvRefundDto() *AppraiseIsvRefundDto {
+	return poolAppraiseIsvRefundDto.Get().(*AppraiseIsvRefundDto)
+}
+
+// ReleaseAppraiseIsvRefundDto 释放AppraiseIsvRefundDto
+func ReleaseAppraiseIsvRefundDto(v *AppraiseIsvRefundDto) {
+	v.BuyerApplyReason = ""
+	v.BuyerApplySubReason = ""
+	v.BuyerNick = ""
+	v.BuyerApplyDesc = ""
+	v.RefundPostCompany = ""
+	v.RefundPostNo = ""
+	v.SellerAgreeMsg = ""
+	v.SellerNick = ""
+	v.SellerRefuseMsg = ""
+	v.SellerRefuseReason = ""
+	v.EncryptionBuyerId = ""
+	v.EncryptionSellerId = ""
+	v.BizOrderId = 0
+	v.BuyAmount = 0
+	v.GoodsStatus = 0
+	v.Item = nil
+	v.OrderStatus = 0
+	v.Payment = 0
+	v.RefundCreateTime = 0
+	v.RefundFee = 0
+	v.RefundId = 0
+	v.RefundStatus = 0
+	v.RefundModifyTime = 0
+	v.TimeoutData = nil
+	v.NeedReturnGoods = false
+	poolAppraiseIsvRefundDto.Put(v)
 }

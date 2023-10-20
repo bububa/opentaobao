@@ -2,6 +2,7 @@ package tanx
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoTanxAuditDepositcreativeAddAPIRequest struct {
 // NewTaobaoTanxAuditDepositcreativeAddRequest 初始化TaobaoTanxAuditDepositcreativeAddAPIRequest对象
 func NewTaobaoTanxAuditDepositcreativeAddRequest() *TaobaoTanxAuditDepositcreativeAddAPIRequest {
 	return &TaobaoTanxAuditDepositcreativeAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTanxAuditDepositcreativeAddAPIRequest) Reset() {
+	r._token = ""
+	r._memberId = 0
+	r._signTime = 0
+	r._creative = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoTanxAuditDepositcreativeAddAPIRequest) SetCreative(_creative *Cre
 // GetCreative Creative Getter
 func (r TaobaoTanxAuditDepositcreativeAddAPIRequest) GetCreative() *CreativeInfoDto {
 	return r._creative
+}
+
+var poolTaobaoTanxAuditDepositcreativeAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTanxAuditDepositcreativeAddRequest()
+	},
+}
+
+// GetTaobaoTanxAuditDepositcreativeAddRequest 从 sync.Pool 获取 TaobaoTanxAuditDepositcreativeAddAPIRequest
+func GetTaobaoTanxAuditDepositcreativeAddAPIRequest() *TaobaoTanxAuditDepositcreativeAddAPIRequest {
+	return poolTaobaoTanxAuditDepositcreativeAddAPIRequest.Get().(*TaobaoTanxAuditDepositcreativeAddAPIRequest)
+}
+
+// ReleaseTaobaoTanxAuditDepositcreativeAddAPIRequest 将 TaobaoTanxAuditDepositcreativeAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTanxAuditDepositcreativeAddAPIRequest(v *TaobaoTanxAuditDepositcreativeAddAPIRequest) {
+	v.Reset()
+	poolTaobaoTanxAuditDepositcreativeAddAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTianmaoLanpeiUopCreateAPIRequest struct {
 // NewAlibabaTianmaoLanpeiUopCreateRequest 初始化AlibabaTianmaoLanpeiUopCreateAPIRequest对象
 func NewAlibabaTianmaoLanpeiUopCreateRequest() *AlibabaTianmaoLanpeiUopCreateAPIRequest {
 	return &AlibabaTianmaoLanpeiUopCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTianmaoLanpeiUopCreateAPIRequest) Reset() {
+	r._hiErpOrderEvent = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTianmaoLanpeiUopCreateAPIRequest) SetHiErpOrderEvent(_hiErpOrder
 // GetHiErpOrderEvent HiErpOrderEvent Getter
 func (r AlibabaTianmaoLanpeiUopCreateAPIRequest) GetHiErpOrderEvent() *HiErpOrderEvent {
 	return r._hiErpOrderEvent
+}
+
+var poolAlibabaTianmaoLanpeiUopCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTianmaoLanpeiUopCreateRequest()
+	},
+}
+
+// GetAlibabaTianmaoLanpeiUopCreateRequest 从 sync.Pool 获取 AlibabaTianmaoLanpeiUopCreateAPIRequest
+func GetAlibabaTianmaoLanpeiUopCreateAPIRequest() *AlibabaTianmaoLanpeiUopCreateAPIRequest {
+	return poolAlibabaTianmaoLanpeiUopCreateAPIRequest.Get().(*AlibabaTianmaoLanpeiUopCreateAPIRequest)
+}
+
+// ReleaseAlibabaTianmaoLanpeiUopCreateAPIRequest 将 AlibabaTianmaoLanpeiUopCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTianmaoLanpeiUopCreateAPIRequest(v *AlibabaTianmaoLanpeiUopCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaTianmaoLanpeiUopCreateAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.house.roomtype.add
 //
 // 房型添加或更新
-func TaobaoXhotelHouseRoomtypeAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelHouseRoomtypeAddAPIRequest, session string) (*xhotelitem.TaobaoXhotelHouseRoomtypeAddAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelHouseRoomtypeAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelHouseRoomtypeAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelHouseRoomtypeAddAPIRequest, resp *xhotelitem.TaobaoXhotelHouseRoomtypeAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -12,11 +12,6 @@ import (
 // 前提是网点要存在，
 // 如果需要更新的网点容量不存在，会更新失败。
 // 网点容量包含了业务类型(比如电器预约安装)、天猫服务的servicecode列表、类目区域和容量
-func TmallServicecenterServicestoreUpdateservicestorecapacity(clt *core.SDKClient, req *tmallsc.TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest, session string) (*tmallsc.TmallServicecenterServicestoreUpdateservicestorecapacityAPIResponse, error) {
-	var resp tmallsc.TmallServicecenterServicestoreUpdateservicestorecapacityAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterServicestoreUpdateservicestorecapacity(clt *core.SDKClient, req *tmallsc.TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest, resp *tmallsc.TmallServicecenterServicestoreUpdateservicestorecapacityAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

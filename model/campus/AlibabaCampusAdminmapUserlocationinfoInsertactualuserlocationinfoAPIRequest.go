@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,15 @@ type AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest
 // NewAlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest 初始化AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest对象
 func NewAlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest() *AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest {
 	return &AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest) Reset() {
+	r._param0 = nil
+	r._param1 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -68,4 +76,21 @@ func (r *AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIReq
 // GetParam1 Param1 Getter
 func (r AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest) GetParam1() *UserLocationInfo {
 	return r._param1
+}
+
+var poolAlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest()
+	},
+}
+
+// GetAlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest 从 sync.Pool 获取 AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest
+func GetAlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest() *AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest {
+	return poolAlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest.Get().(*AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest)
+}
+
+// ReleaseAlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest 将 AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest(v *AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest.Put(v)
 }

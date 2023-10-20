@@ -1,5 +1,9 @@
 package alitripreceipt
 
+import (
+	"sync"
+)
+
 // IssueResultNotifyCmd 结构体
 type IssueResultNotifyCmd struct {
 	// 开票状态success:开票成功；fail:开票失败;issuing:开票中；cancel:已撤销；red：已冲红）
@@ -14,4 +18,26 @@ type IssueResultNotifyCmd struct {
 	FailReason string `json:"fail_reason,omitempty" xml:"fail_reason,omitempty"`
 	// 是否最终
 	IsFinally bool `json:"is_finally,omitempty" xml:"is_finally,omitempty"`
+}
+
+var poolIssueResultNotifyCmd = sync.Pool{
+	New: func() any {
+		return new(IssueResultNotifyCmd)
+	},
+}
+
+// GetIssueResultNotifyCmd() 从对象池中获取IssueResultNotifyCmd
+func GetIssueResultNotifyCmd() *IssueResultNotifyCmd {
+	return poolIssueResultNotifyCmd.Get().(*IssueResultNotifyCmd)
+}
+
+// ReleaseIssueResultNotifyCmd 释放IssueResultNotifyCmd
+func ReleaseIssueResultNotifyCmd(v *IssueResultNotifyCmd) {
+	v.IssueStatus = ""
+	v.IssueApplyId = ""
+	v.TpOrderId = ""
+	v.FailCode = ""
+	v.FailReason = ""
+	v.IsFinally = false
+	poolIssueResultNotifyCmd.Put(v)
 }

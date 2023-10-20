@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaEinvoiceIncomeDeviceReturnAPIRequest struct {
 // NewAlibabaEinvoiceIncomeDeviceReturnRequest 初始化AlibabaEinvoiceIncomeDeviceReturnAPIRequest对象
 func NewAlibabaEinvoiceIncomeDeviceReturnRequest() *AlibabaEinvoiceIncomeDeviceReturnAPIRequest {
 	return &AlibabaEinvoiceIncomeDeviceReturnAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) Reset() {
+	r._deviceList = r._deviceList[:0]
+	r._errorCode = ""
+	r._errorMessage = ""
+	r._reqIndex = ""
+	r._success = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) SetSuccess(_success bool) 
 // GetSuccess Success Getter
 func (r AlibabaEinvoiceIncomeDeviceReturnAPIRequest) GetSuccess() bool {
 	return r._success
+}
+
+var poolAlibabaEinvoiceIncomeDeviceReturnAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceIncomeDeviceReturnRequest()
+	},
+}
+
+// GetAlibabaEinvoiceIncomeDeviceReturnRequest 从 sync.Pool 获取 AlibabaEinvoiceIncomeDeviceReturnAPIRequest
+func GetAlibabaEinvoiceIncomeDeviceReturnAPIRequest() *AlibabaEinvoiceIncomeDeviceReturnAPIRequest {
+	return poolAlibabaEinvoiceIncomeDeviceReturnAPIRequest.Get().(*AlibabaEinvoiceIncomeDeviceReturnAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceIncomeDeviceReturnAPIRequest 将 AlibabaEinvoiceIncomeDeviceReturnAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceIncomeDeviceReturnAPIRequest(v *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceIncomeDeviceReturnAPIRequest.Put(v)
 }

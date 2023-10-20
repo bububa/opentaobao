@@ -9,11 +9,6 @@ import (
 // alibaba.idle.onespu.register.update
 //
 // 闲鱼 ONESPU 挂载接口
-func AlibabaIdleOnespuRegisterUpdate(clt *core.SDKClient, req *idle.AlibabaIdleOnespuRegisterUpdateAPIRequest, session string) (*idle.AlibabaIdleOnespuRegisterUpdateAPIResponse, error) {
-	var resp idle.AlibabaIdleOnespuRegisterUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleOnespuRegisterUpdate(clt *core.SDKClient, req *idle.AlibabaIdleOnespuRegisterUpdateAPIRequest, resp *idle.AlibabaIdleOnespuRegisterUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

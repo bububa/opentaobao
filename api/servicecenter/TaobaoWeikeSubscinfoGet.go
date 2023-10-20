@@ -9,11 +9,6 @@ import (
 // taobao.weike.subscinfo.get
 //
 // 需求订单查询接口
-func TaobaoWeikeSubscinfoGet(clt *core.SDKClient, req *servicecenter.TaobaoWeikeSubscinfoGetAPIRequest, session string) (*servicecenter.TaobaoWeikeSubscinfoGetAPIResponse, error) {
-	var resp servicecenter.TaobaoWeikeSubscinfoGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWeikeSubscinfoGet(clt *core.SDKClient, req *servicecenter.TaobaoWeikeSubscinfoGetAPIRequest, resp *servicecenter.TaobaoWeikeSubscinfoGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ReceiptInfoDto 结构体
 type ReceiptInfoDto struct {
 	// 商品列表
@@ -56,4 +60,47 @@ type ReceiptInfoDto struct {
 	BuyerInfo *BuyerInfoDto `json:"buyer_info,omitempty" xml:"buyer_info,omitempty"`
 	// 缺货出状态
 	OutOfStock bool `json:"out_of_stock,omitempty" xml:"out_of_stock,omitempty"`
+}
+
+var poolReceiptInfoDto = sync.Pool{
+	New: func() any {
+		return new(ReceiptInfoDto)
+	},
+}
+
+// GetReceiptInfoDto() 从对象池中获取ReceiptInfoDto
+func GetReceiptInfoDto() *ReceiptInfoDto {
+	return poolReceiptInfoDto.Get().(*ReceiptInfoDto)
+}
+
+// ReleaseReceiptInfoDto 释放ReceiptInfoDto
+func ReleaseReceiptInfoDto(v *ReceiptInfoDto) {
+	v.ItemInfoList = v.ItemInfoList[:0]
+	v.TicketCouPon = v.TicketCouPon[:0]
+	v.BatchName = ""
+	v.TbOrderId = ""
+	v.CancelAmount = ""
+	v.OrderNum = ""
+	v.DiscountAmount = ""
+	v.Remark = ""
+	v.BatchId = ""
+	v.WarehouseName = ""
+	v.WarehouseCode = ""
+	v.SelfPickPlace = ""
+	v.LatestArriveTime = ""
+	v.PayOrderAmount = ""
+	v.PackageFee = ""
+	v.RefundAmount = ""
+	v.ChannelOrderId = ""
+	v.BillingLink = ""
+	v.Postage = ""
+	v.TotalOrderAmount = ""
+	v.BatchStrategy = ""
+	v.BusinessType = ""
+	v.FulfillOrderId = ""
+	v.StorageMode = 0
+	v.AllItemCount = 0
+	v.BuyerInfo = nil
+	v.OutOfStock = false
+	poolReceiptInfoDto.Put(v)
 }

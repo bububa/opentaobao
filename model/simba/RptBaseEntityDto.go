@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // RptBaseEntityDto 结构体
 type RptBaseEntityDto struct {
 	// 日期
@@ -26,4 +30,32 @@ type RptBaseEntityDto struct {
 	Impression int64 `json:"impression,omitempty" xml:"impression,omitempty"`
 	// 点击量
 	Click int64 `json:"click,omitempty" xml:"click,omitempty"`
+}
+
+var poolRptBaseEntityDto = sync.Pool{
+	New: func() any {
+		return new(RptBaseEntityDto)
+	},
+}
+
+// GetRptBaseEntityDto() 从对象池中获取RptBaseEntityDto
+func GetRptBaseEntityDto() *RptBaseEntityDto {
+	return poolRptBaseEntityDto.Get().(*RptBaseEntityDto)
+}
+
+// ReleaseRptBaseEntityDto 释放RptBaseEntityDto
+func ReleaseRptBaseEntityDto(v *RptBaseEntityDto) {
+	v.Thedate = ""
+	v.Campaignid = ""
+	v.Adgroupid = ""
+	v.Cost = ""
+	v.Ctr = ""
+	v.Cpc = ""
+	v.Cpm = ""
+	v.Crowdname = ""
+	v.Source = ""
+	v.Crowdid = ""
+	v.Impression = 0
+	v.Click = 0
+	poolRptBaseEntityDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.seller.refund.get
 //
 // 查询退票申请单详情
-func TaobaoAlitripSellerRefundGet(clt *core.SDKClient, req *jipiao.TaobaoAlitripSellerRefundGetAPIRequest, session string) (*jipiao.TaobaoAlitripSellerRefundGetAPIResponse, error) {
-	var resp jipiao.TaobaoAlitripSellerRefundGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripSellerRefundGet(clt *core.SDKClient, req *jipiao.TaobaoAlitripSellerRefundGetAPIRequest, resp *jipiao.TaobaoAlitripSellerRefundGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

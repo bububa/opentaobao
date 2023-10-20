@@ -1,5 +1,9 @@
 package icbu
 
+import (
+	"sync"
+)
+
 // SkuDetail 结构体
 type SkuDetail struct {
 	// 商品属性
@@ -12,4 +16,25 @@ type SkuDetail struct {
 	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
 	// SKU id，唯一标识一个SKU
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolSkuDetail = sync.Pool{
+	New: func() any {
+		return new(SkuDetail)
+	},
+}
+
+// GetSkuDetail() 从对象池中获取SkuDetail
+func GetSkuDetail() *SkuDetail {
+	return poolSkuDetail.Get().(*SkuDetail)
+}
+
+// ReleaseSkuDetail 释放SkuDetail
+func ReleaseSkuDetail(v *SkuDetail) {
+	v.Attributes = v.Attributes[:0]
+	v.InventoryDtoList = v.InventoryDtoList[:0]
+	v.Price = ""
+	v.SkuCode = ""
+	v.SkuId = 0
+	poolSkuDetail.Put(v)
 }

@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // LogisticsModifyInfo 结构体
 type LogisticsModifyInfo struct {
 	// 修改关联的订单好
@@ -18,4 +22,28 @@ type LogisticsModifyInfo struct {
 	SkuId string `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 成分品的组合id
 	CombId string `json:"comb_id,omitempty" xml:"comb_id,omitempty"`
+}
+
+var poolLogisticsModifyInfo = sync.Pool{
+	New: func() any {
+		return new(LogisticsModifyInfo)
+	},
+}
+
+// GetLogisticsModifyInfo() 从对象池中获取LogisticsModifyInfo
+func GetLogisticsModifyInfo() *LogisticsModifyInfo {
+	return poolLogisticsModifyInfo.Get().(*LogisticsModifyInfo)
+}
+
+// ReleaseLogisticsModifyInfo 释放LogisticsModifyInfo
+func ReleaseLogisticsModifyInfo(v *LogisticsModifyInfo) {
+	v.RelatedId = ""
+	v.ConsignTime = ""
+	v.OriginConsignTime = ""
+	v.ModifyTime = ""
+	v.ModifyReason = ""
+	v.ItemId = ""
+	v.SkuId = ""
+	v.CombId = ""
+	poolLogisticsModifyInfo.Put(v)
 }

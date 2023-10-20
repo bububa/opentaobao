@@ -9,11 +9,6 @@ import (
 // alibaba.mos.brand.coproduct.group.user.query
 //
 // 按照条件查询分页数据
-func AlibabaMosBrandCoproductGroupUserQuery(clt *core.SDKClient, req *mos.AlibabaMosBrandCoproductGroupUserQueryAPIRequest, session string) (*mos.AlibabaMosBrandCoproductGroupUserQueryAPIResponse, error) {
-	var resp mos.AlibabaMosBrandCoproductGroupUserQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMosBrandCoproductGroupUserQuery(clt *core.SDKClient, req *mos.AlibabaMosBrandCoproductGroupUserQueryAPIRequest, resp *mos.AlibabaMosBrandCoproductGroupUserQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

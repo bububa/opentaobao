@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTradeCloseAPIResponse struct {
 	TaobaoTradeCloseAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTradeCloseAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTradeCloseAPIResponseModel).Reset()
+}
+
 // TaobaoTradeCloseAPIResponseModel is 卖家关闭一笔交易 成功返回结果
 type TaobaoTradeCloseAPIResponseModel struct {
 	XMLName xml.Name `xml:"trade_close_response"`
@@ -22,4 +29,27 @@ type TaobaoTradeCloseAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 关闭交易时返回的Trade信息，可用字段有tid和modified
 	Trade *Trade `json:"trade,omitempty" xml:"trade,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTradeCloseAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Trade = nil
+}
+
+var poolTaobaoTradeCloseAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTradeCloseAPIResponse)
+	},
+}
+
+// GetTaobaoTradeCloseAPIResponse 从 sync.Pool 获取 TaobaoTradeCloseAPIResponse
+func GetTaobaoTradeCloseAPIResponse() *TaobaoTradeCloseAPIResponse {
+	return poolTaobaoTradeCloseAPIResponse.Get().(*TaobaoTradeCloseAPIResponse)
+}
+
+// ReleaseTaobaoTradeCloseAPIResponse 将 TaobaoTradeCloseAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTradeCloseAPIResponse(v *TaobaoTradeCloseAPIResponse) {
+	v.Reset()
+	poolTaobaoTradeCloseAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // DeliveryOrder 结构体
 type DeliveryOrder struct {
 	// 发票信息
@@ -128,4 +132,83 @@ type DeliveryOrder struct {
 	ReceiverInfo *ReceiverInfo `json:"receiver_info,omitempty" xml:"receiver_info,omitempty"`
 	// 保险信息
 	Insurance *Insurance `json:"insurance,omitempty" xml:"insurance,omitempty"`
+}
+
+var poolDeliveryOrder = sync.Pool{
+	New: func() any {
+		return new(DeliveryOrder)
+	},
+}
+
+// GetDeliveryOrder() 从对象池中获取DeliveryOrder
+func GetDeliveryOrder() *DeliveryOrder {
+	return poolDeliveryOrder.Get().(*DeliveryOrder)
+}
+
+// ReleaseDeliveryOrder 释放DeliveryOrder
+func ReleaseDeliveryOrder(v *DeliveryOrder) {
+	v.Invoices = v.Invoices[:0]
+	v.PackageMaterialList = v.PackageMaterialList[:0]
+	v.Items = v.Items[:0]
+	v.DeliveryOrderCode = ""
+	v.DeliveryOrderId = ""
+	v.WarehouseCode = ""
+	v.OrderType = ""
+	v.Status = ""
+	v.OutBizCode = ""
+	v.ConfirmType = ""
+	v.OrderConfirmTime = ""
+	v.OperatorCode = ""
+	v.OperatorName = ""
+	v.OperateTime = ""
+	v.StorageFee = ""
+	v.LogisticsCode = ""
+	v.LogisticsName = ""
+	v.ExpressCode = ""
+	v.PackageCode = ""
+	v.Length = ""
+	v.Width = ""
+	v.Height = ""
+	v.TheoreticalWeight = ""
+	v.Weight = ""
+	v.Volume = ""
+	v.InvoiceNo = ""
+	v.PreDeliveryOrderCode = ""
+	v.PreDeliveryOrderId = ""
+	v.OrderFlag = ""
+	v.SourcePlatformCode = ""
+	v.SourcePlatformName = ""
+	v.CreateTime = ""
+	v.PlaceOrderTime = ""
+	v.PayTime = ""
+	v.PayNo = ""
+	v.ShopNick = ""
+	v.SellerNick = ""
+	v.BuyerNick = ""
+	v.TotalAmount = ""
+	v.ItemAmount = ""
+	v.DiscountAmount = ""
+	v.Freight = ""
+	v.ArAmount = ""
+	v.GotAmount = ""
+	v.ServiceFee = ""
+	v.LogisticsAreaCode = ""
+	v.IsUrgency = ""
+	v.InvoiceFlag = ""
+	v.InsuranceFlag = ""
+	v.BuyerMessage = ""
+	v.SellerMessage = ""
+	v.Remark = ""
+	v.ServiceCode = ""
+	v.OwnerCode = ""
+	v.LatestCollectionTime = ""
+	v.LatestDeliveryTime = ""
+	v.OaidOrderSourceCode = ""
+	v.OrderCode = ""
+	v.OrderId = ""
+	v.DeliveryRequirements = nil
+	v.SenderInfo = nil
+	v.ReceiverInfo = nil
+	v.Insurance = nil
+	poolDeliveryOrder.Put(v)
 }

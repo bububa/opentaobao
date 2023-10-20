@@ -9,11 +9,6 @@ import (
 // tmall.car.lease.contractdownload
 //
 // 天猫开新车租后合同下载
-func TmallCarLeaseContractdownload(clt *core.SDKClient, req *tmallcar.TmallCarLeaseContractdownloadAPIRequest, session string) (*tmallcar.TmallCarLeaseContractdownloadAPIResponse, error) {
-	var resp tmallcar.TmallCarLeaseContractdownloadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallCarLeaseContractdownload(clt *core.SDKClient, req *tmallcar.TmallCarLeaseContractdownloadAPIRequest, resp *tmallcar.TmallCarLeaseContractdownloadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

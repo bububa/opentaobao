@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmOpenPointOperateAPIRequest struct {
 // NewAlibabaAlscCrmOpenPointOperateRequest 初始化AlibabaAlscCrmOpenPointOperateAPIRequest对象
 func NewAlibabaAlscCrmOpenPointOperateRequest() *AlibabaAlscCrmOpenPointOperateAPIRequest {
 	return &AlibabaAlscCrmOpenPointOperateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmOpenPointOperateAPIRequest) Reset() {
+	r._paramPointOperateOpenReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmOpenPointOperateAPIRequest) SetParamPointOperateOpenReq(_
 // GetParamPointOperateOpenReq ParamPointOperateOpenReq Getter
 func (r AlibabaAlscCrmOpenPointOperateAPIRequest) GetParamPointOperateOpenReq() *PointOperateOpenReq {
 	return r._paramPointOperateOpenReq
+}
+
+var poolAlibabaAlscCrmOpenPointOperateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmOpenPointOperateRequest()
+	},
+}
+
+// GetAlibabaAlscCrmOpenPointOperateRequest 从 sync.Pool 获取 AlibabaAlscCrmOpenPointOperateAPIRequest
+func GetAlibabaAlscCrmOpenPointOperateAPIRequest() *AlibabaAlscCrmOpenPointOperateAPIRequest {
+	return poolAlibabaAlscCrmOpenPointOperateAPIRequest.Get().(*AlibabaAlscCrmOpenPointOperateAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmOpenPointOperateAPIRequest 将 AlibabaAlscCrmOpenPointOperateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmOpenPointOperateAPIRequest(v *AlibabaAlscCrmOpenPointOperateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmOpenPointOperateAPIRequest.Put(v)
 }

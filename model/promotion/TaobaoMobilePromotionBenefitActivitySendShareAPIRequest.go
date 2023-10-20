@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type TaobaoMobilePromotionBenefitActivitySendShareAPIRequest struct {
 // NewTaobaoMobilePromotionBenefitActivitySendShareRequest 初始化TaobaoMobilePromotionBenefitActivitySendShareAPIRequest对象
 func NewTaobaoMobilePromotionBenefitActivitySendShareRequest() *TaobaoMobilePromotionBenefitActivitySendShareAPIRequest {
 	return &TaobaoMobilePromotionBenefitActivitySendShareAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) Reset() {
+	r._bizId = ""
+	r._shareKey = ""
+	r._shareUsers = ""
+	r._traceId = ""
+	r._uniqueId = ""
+	r._benefitType = 0
+	r._detailId = 0
+	r._feedId = 0
+	r._relationId = 0
+	r._sendCount = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) SetSendCount(_
 // GetSendCount SendCount Getter
 func (r TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) GetSendCount() int64 {
 	return r._sendCount
+}
+
+var poolTaobaoMobilePromotionBenefitActivitySendShareAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMobilePromotionBenefitActivitySendShareRequest()
+	},
+}
+
+// GetTaobaoMobilePromotionBenefitActivitySendShareRequest 从 sync.Pool 获取 TaobaoMobilePromotionBenefitActivitySendShareAPIRequest
+func GetTaobaoMobilePromotionBenefitActivitySendShareAPIRequest() *TaobaoMobilePromotionBenefitActivitySendShareAPIRequest {
+	return poolTaobaoMobilePromotionBenefitActivitySendShareAPIRequest.Get().(*TaobaoMobilePromotionBenefitActivitySendShareAPIRequest)
+}
+
+// ReleaseTaobaoMobilePromotionBenefitActivitySendShareAPIRequest 将 TaobaoMobilePromotionBenefitActivitySendShareAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMobilePromotionBenefitActivitySendShareAPIRequest(v *TaobaoMobilePromotionBenefitActivitySendShareAPIRequest) {
+	v.Reset()
+	poolTaobaoMobilePromotionBenefitActivitySendShareAPIRequest.Put(v)
 }

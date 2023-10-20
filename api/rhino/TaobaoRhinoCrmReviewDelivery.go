@@ -9,11 +9,6 @@ import (
 // taobao.rhino.crm.review.delivery
 //
 // crm实体预询期
-func TaobaoRhinoCrmReviewDelivery(clt *core.SDKClient, req *rhino.TaobaoRhinoCrmReviewDeliveryAPIRequest, session string) (*rhino.TaobaoRhinoCrmReviewDeliveryAPIResponse, error) {
-	var resp rhino.TaobaoRhinoCrmReviewDeliveryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoRhinoCrmReviewDelivery(clt *core.SDKClient, req *rhino.TaobaoRhinoCrmReviewDeliveryAPIRequest, resp *rhino.TaobaoRhinoCrmReviewDeliveryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

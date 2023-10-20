@@ -9,11 +9,6 @@ import (
 // taobao.rp.refunds.agree
 //
 // 卖家同意退款，支持批量退款，只允许子账号操作。淘宝退款一次最多能退20笔，总金额不超过6000元；天猫退款一次最多能退30笔，总金额不超过10000元。
-func TaobaoRpRefundsAgree(clt *core.SDKClient, req *tbrefund.TaobaoRpRefundsAgreeAPIRequest, session string) (*tbrefund.TaobaoRpRefundsAgreeAPIResponse, error) {
-	var resp tbrefund.TaobaoRpRefundsAgreeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoRpRefundsAgree(clt *core.SDKClient, req *tbrefund.TaobaoRpRefundsAgreeAPIRequest, resp *tbrefund.TaobaoRpRefundsAgreeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

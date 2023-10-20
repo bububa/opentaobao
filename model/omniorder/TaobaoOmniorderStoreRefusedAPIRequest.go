@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoOmniorderStoreRefusedAPIRequest struct {
 // NewTaobaoOmniorderStoreRefusedRequest 初始化TaobaoOmniorderStoreRefusedAPIRequest对象
 func NewTaobaoOmniorderStoreRefusedRequest() *TaobaoOmniorderStoreRefusedAPIRequest {
 	return &TaobaoOmniorderStoreRefusedAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOmniorderStoreRefusedAPIRequest) Reset() {
+	r._subOrderList = r._subOrderList[:0]
+	r._traceId = ""
+	r._tid = 0
+	r._reportTimestamp = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoOmniorderStoreRefusedAPIRequest) SetReportTimestamp(_reportTimest
 // GetReportTimestamp ReportTimestamp Getter
 func (r TaobaoOmniorderStoreRefusedAPIRequest) GetReportTimestamp() int64 {
 	return r._reportTimestamp
+}
+
+var poolTaobaoOmniorderStoreRefusedAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOmniorderStoreRefusedRequest()
+	},
+}
+
+// GetTaobaoOmniorderStoreRefusedRequest 从 sync.Pool 获取 TaobaoOmniorderStoreRefusedAPIRequest
+func GetTaobaoOmniorderStoreRefusedAPIRequest() *TaobaoOmniorderStoreRefusedAPIRequest {
+	return poolTaobaoOmniorderStoreRefusedAPIRequest.Get().(*TaobaoOmniorderStoreRefusedAPIRequest)
+}
+
+// ReleaseTaobaoOmniorderStoreRefusedAPIRequest 将 TaobaoOmniorderStoreRefusedAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOmniorderStoreRefusedAPIRequest(v *TaobaoOmniorderStoreRefusedAPIRequest) {
+	v.Reset()
+	poolTaobaoOmniorderStoreRefusedAPIRequest.Put(v)
 }

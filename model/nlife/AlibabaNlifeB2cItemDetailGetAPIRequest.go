@@ -2,6 +2,7 @@ package nlife
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaNlifeB2cItemDetailGetAPIRequest struct {
 // NewAlibabaNlifeB2cItemDetailGetRequest 初始化AlibabaNlifeB2cItemDetailGetAPIRequest对象
 func NewAlibabaNlifeB2cItemDetailGetRequest() *AlibabaNlifeB2cItemDetailGetAPIRequest {
 	return &AlibabaNlifeB2cItemDetailGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaNlifeB2cItemDetailGetAPIRequest) Reset() {
+	r._storeId = ""
+	r._uniqueCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaNlifeB2cItemDetailGetAPIRequest) SetUniqueCode(_uniqueCode strin
 // GetUniqueCode UniqueCode Getter
 func (r AlibabaNlifeB2cItemDetailGetAPIRequest) GetUniqueCode() string {
 	return r._uniqueCode
+}
+
+var poolAlibabaNlifeB2cItemDetailGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaNlifeB2cItemDetailGetRequest()
+	},
+}
+
+// GetAlibabaNlifeB2cItemDetailGetRequest 从 sync.Pool 获取 AlibabaNlifeB2cItemDetailGetAPIRequest
+func GetAlibabaNlifeB2cItemDetailGetAPIRequest() *AlibabaNlifeB2cItemDetailGetAPIRequest {
+	return poolAlibabaNlifeB2cItemDetailGetAPIRequest.Get().(*AlibabaNlifeB2cItemDetailGetAPIRequest)
+}
+
+// ReleaseAlibabaNlifeB2cItemDetailGetAPIRequest 将 AlibabaNlifeB2cItemDetailGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaNlifeB2cItemDetailGetAPIRequest(v *AlibabaNlifeB2cItemDetailGetAPIRequest) {
+	v.Reset()
+	poolAlibabaNlifeB2cItemDetailGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package eticket
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoVmarketEticketAuthBeforeconsumeAPIResponse struct {
 	model.CommonResponse
 	TaobaoVmarketEticketAuthBeforeconsumeAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoVmarketEticketAuthBeforeconsumeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoVmarketEticketAuthBeforeconsumeAPIResponseModel).Reset()
 }
 
 // TaobaoVmarketEticketAuthBeforeconsumeAPIResponseModel is 核销放行的查询接口 成功返回结果
@@ -36,4 +43,34 @@ type TaobaoVmarketEticketAuthBeforeconsumeAPIResponseModel struct {
 	TaobaoSid int64 `json:"taobao_sid,omitempty" xml:"taobao_sid,omitempty"`
 	// 当前码剩余可核销数量
 	CodeLeftNum int64 `json:"code_left_num,omitempty" xml:"code_left_num,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoVmarketEticketAuthBeforeconsumeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ItemTitle = ""
+	m.SellerNick = ""
+	m.ValidEnds = ""
+	m.ValidStart = ""
+	m.RetCode = 0
+	m.OrderId = 0
+	m.TaobaoSid = 0
+	m.CodeLeftNum = 0
+}
+
+var poolTaobaoVmarketEticketAuthBeforeconsumeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoVmarketEticketAuthBeforeconsumeAPIResponse)
+	},
+}
+
+// GetTaobaoVmarketEticketAuthBeforeconsumeAPIResponse 从 sync.Pool 获取 TaobaoVmarketEticketAuthBeforeconsumeAPIResponse
+func GetTaobaoVmarketEticketAuthBeforeconsumeAPIResponse() *TaobaoVmarketEticketAuthBeforeconsumeAPIResponse {
+	return poolTaobaoVmarketEticketAuthBeforeconsumeAPIResponse.Get().(*TaobaoVmarketEticketAuthBeforeconsumeAPIResponse)
+}
+
+// ReleaseTaobaoVmarketEticketAuthBeforeconsumeAPIResponse 将 TaobaoVmarketEticketAuthBeforeconsumeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoVmarketEticketAuthBeforeconsumeAPIResponse(v *TaobaoVmarketEticketAuthBeforeconsumeAPIResponse) {
+	v.Reset()
+	poolTaobaoVmarketEticketAuthBeforeconsumeAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // PropertyApiDto 结构体
 type PropertyApiDto struct {
 	// 参数点名称
@@ -28,4 +32,33 @@ type PropertyApiDto struct {
 	UnitId int64 `json:"unit_id,omitempty" xml:"unit_id,omitempty"`
 	// 是否报警类参数
 	Alarm bool `json:"alarm,omitempty" xml:"alarm,omitempty"`
+}
+
+var poolPropertyApiDto = sync.Pool{
+	New: func() any {
+		return new(PropertyApiDto)
+	},
+}
+
+// GetPropertyApiDto() 从对象池中获取PropertyApiDto
+func GetPropertyApiDto() *PropertyApiDto {
+	return poolPropertyApiDto.Get().(*PropertyApiDto)
+}
+
+// ReleasePropertyApiDto 释放PropertyApiDto
+func ReleasePropertyApiDto(v *PropertyApiDto) {
+	v.Name = ""
+	v.Code = ""
+	v.TypeName = ""
+	v.ValueTypeName = ""
+	v.PropertyKindCode = ""
+	v.ControlEnumValue = ""
+	v.UnitCode = ""
+	v.Id = 0
+	v.Type = 0
+	v.ValueType = 0
+	v.PropertyKind = 0
+	v.UnitId = 0
+	v.Alarm = false
+	poolPropertyApiDto.Put(v)
 }

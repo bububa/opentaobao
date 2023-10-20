@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // TradeOrderQuery 结构体
 type TradeOrderQuery struct {
 	// 业务订单标识
@@ -16,4 +20,27 @@ type TradeOrderQuery struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 分页大小（不大于20）
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolTradeOrderQuery = sync.Pool{
+	New: func() any {
+		return new(TradeOrderQuery)
+	},
+}
+
+// GetTradeOrderQuery() 从对象池中获取TradeOrderQuery
+func GetTradeOrderQuery() *TradeOrderQuery {
+	return poolTradeOrderQuery.Get().(*TradeOrderQuery)
+}
+
+// ReleaseTradeOrderQuery 释放TradeOrderQuery
+func ReleaseTradeOrderQuery(v *TradeOrderQuery) {
+	v.BizOrderIds = v.BizOrderIds[:0]
+	v.EndTime = ""
+	v.StartTime = ""
+	v.ShopId = ""
+	v.UserId = ""
+	v.PageIndex = 0
+	v.PageSize = 0
+	poolTradeOrderQuery.Put(v)
 }

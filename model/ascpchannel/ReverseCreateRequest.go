@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // ReverseCreateRequest 结构体
 type ReverseCreateRequest struct {
 	// 退回订单货品信息列表
@@ -22,4 +26,30 @@ type ReverseCreateRequest struct {
 	ReceiverInfo *Receiverinfo `json:"receiver_info,omitempty" xml:"receiver_info,omitempty"`
 	// 退回寄件人信息（消费者）
 	SenderInfo *Senderinfo `json:"sender_info,omitempty" xml:"sender_info,omitempty"`
+}
+
+var poolReverseCreateRequest = sync.Pool{
+	New: func() any {
+		return new(ReverseCreateRequest)
+	},
+}
+
+// GetReverseCreateRequest() 从对象池中获取ReverseCreateRequest
+func GetReverseCreateRequest() *ReverseCreateRequest {
+	return poolReverseCreateRequest.Get().(*ReverseCreateRequest)
+}
+
+// ReleaseReverseCreateRequest 释放ReverseCreateRequest
+func ReleaseReverseCreateRequest(v *ReverseCreateRequest) {
+	v.OrderItems = v.OrderItems[:0]
+	v.SupplierId = ""
+	v.OutBizId = ""
+	v.ReverseType = ""
+	v.BizOrderCode = ""
+	v.TmsServiceCode = ""
+	v.TmsOrderCode = ""
+	v.StoreCode = ""
+	v.ReceiverInfo = nil
+	v.SenderInfo = nil
+	poolReverseCreateRequest.Put(v)
 }

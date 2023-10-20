@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // PluginDetail 结构体
 type PluginDetail struct {
 	// 插件行为
@@ -14,4 +18,26 @@ type PluginDetail struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 插件位置
 	Path string `json:"path,omitempty" xml:"path,omitempty"`
+}
+
+var poolPluginDetail = sync.Pool{
+	New: func() any {
+		return new(PluginDetail)
+	},
+}
+
+// GetPluginDetail() 从对象池中获取PluginDetail
+func GetPluginDetail() *PluginDetail {
+	return poolPluginDetail.Get().(*PluginDetail)
+}
+
+// ReleasePluginDetail 释放PluginDetail
+func ReleasePluginDetail(v *PluginDetail) {
+	v.Actions = v.Actions[:0]
+	v.Types = v.Types[:0]
+	v.Company = ""
+	v.Desc = ""
+	v.Name = ""
+	v.Path = ""
+	poolPluginDetail.Put(v)
 }

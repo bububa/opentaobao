@@ -9,11 +9,6 @@ import (
 // taobao.recycle.ofnpreredpacket.tpdeductsuccess
 //
 // 回收商-&gt;天猫后端，同步前置补贴红包的代扣成功事件
-func TaobaoRecycleOfnpreredpacketTpdeductsuccess(clt *core.SDKClient, req *servicecenter.TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest, session string) (*servicecenter.TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIResponse, error) {
-	var resp servicecenter.TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoRecycleOfnpreredpacketTpdeductsuccess(clt *core.SDKClient, req *servicecenter.TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIRequest, resp *servicecenter.TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

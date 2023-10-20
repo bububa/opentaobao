@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaSecurityJaqRpFetchmaterialAPIRequest struct {
 // NewAlibabaSecurityJaqRpFetchmaterialRequest 初始化AlibabaSecurityJaqRpFetchmaterialAPIRequest对象
 func NewAlibabaSecurityJaqRpFetchmaterialRequest() *AlibabaSecurityJaqRpFetchmaterialAPIRequest {
 	return &AlibabaSecurityJaqRpFetchmaterialAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqRpFetchmaterialAPIRequest) Reset() {
+	r._securityKey = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaSecurityJaqRpFetchmaterialAPIRequest) SetSecurityKey(_securityKe
 // GetSecurityKey SecurityKey Getter
 func (r AlibabaSecurityJaqRpFetchmaterialAPIRequest) GetSecurityKey() string {
 	return r._securityKey
+}
+
+var poolAlibabaSecurityJaqRpFetchmaterialAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqRpFetchmaterialRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqRpFetchmaterialRequest 从 sync.Pool 获取 AlibabaSecurityJaqRpFetchmaterialAPIRequest
+func GetAlibabaSecurityJaqRpFetchmaterialAPIRequest() *AlibabaSecurityJaqRpFetchmaterialAPIRequest {
+	return poolAlibabaSecurityJaqRpFetchmaterialAPIRequest.Get().(*AlibabaSecurityJaqRpFetchmaterialAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqRpFetchmaterialAPIRequest 将 AlibabaSecurityJaqRpFetchmaterialAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqRpFetchmaterialAPIRequest(v *AlibabaSecurityJaqRpFetchmaterialAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqRpFetchmaterialAPIRequest.Put(v)
 }

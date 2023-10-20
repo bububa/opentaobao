@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTbkDgVegasSendStatusAPIResponse struct {
 	TaobaoTbkDgVegasSendStatusAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTbkDgVegasSendStatusAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkDgVegasSendStatusAPIResponseModel).Reset()
+}
+
 // TaobaoTbkDgVegasSendStatusAPIResponseModel is 淘宝客-推广者-红包领取状态查询 成功返回结果
 type TaobaoTbkDgVegasSendStatusAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_dg_vegas_send_status_response"`
@@ -24,4 +31,28 @@ type TaobaoTbkDgVegasSendStatusAPIResponseModel struct {
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// 返回结果封装对象
 	Data *TaobaoTbkDgVegasSendStatusData `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkDgVegasSendStatusAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultMsg = ""
+	m.Data = nil
+}
+
+var poolTaobaoTbkDgVegasSendStatusAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkDgVegasSendStatusAPIResponse)
+	},
+}
+
+// GetTaobaoTbkDgVegasSendStatusAPIResponse 从 sync.Pool 获取 TaobaoTbkDgVegasSendStatusAPIResponse
+func GetTaobaoTbkDgVegasSendStatusAPIResponse() *TaobaoTbkDgVegasSendStatusAPIResponse {
+	return poolTaobaoTbkDgVegasSendStatusAPIResponse.Get().(*TaobaoTbkDgVegasSendStatusAPIResponse)
+}
+
+// ReleaseTaobaoTbkDgVegasSendStatusAPIResponse 将 TaobaoTbkDgVegasSendStatusAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkDgVegasSendStatusAPIResponse(v *TaobaoTbkDgVegasSendStatusAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkDgVegasSendStatusAPIResponse.Put(v)
 }

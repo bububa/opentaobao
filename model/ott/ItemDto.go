@@ -1,5 +1,9 @@
 package ott
 
+import (
+	"sync"
+)
+
 // ItemDto 结构体
 type ItemDto struct {
 	// availablelanguages
@@ -58,4 +62,48 @@ type ItemDto struct {
 	EpisodeNumber int64 `json:"episode_number,omitempty" xml:"episode_number,omitempty"`
 	// seasonNumber
 	SeasonNumber int64 `json:"season_number,omitempty" xml:"season_number,omitempty"`
+}
+
+var poolItemDto = sync.Pool{
+	New: func() any {
+		return new(ItemDto)
+	},
+}
+
+// GetItemDto() 从对象池中获取ItemDto
+func GetItemDto() *ItemDto {
+	return poolItemDto.Get().(*ItemDto)
+}
+
+// ReleaseItemDto 释放ItemDto
+func ReleaseItemDto(v *ItemDto) {
+	v.Availablelanguages = v.Availablelanguages[:0]
+	v.Availablesubtitles = v.Availablesubtitles[:0]
+	v.Awardsandfestivals = v.Awardsandfestivals[:0]
+	v.Casts = v.Casts[:0]
+	v.Certifications = v.Certifications[:0]
+	v.Crews = v.Crews[:0]
+	v.Genres = v.Genres[:0]
+	v.Images = v.Images[:0]
+	v.Ratings = v.Ratings[:0]
+	v.Viewingoptions = v.Viewingoptions[:0]
+	v.Album = ""
+	v.Artist = ""
+	v.BitRate = ""
+	v.Description = ""
+	v.Duration = ""
+	v.Procom = ""
+	v.ProgramType = ""
+	v.Resolution = ""
+	v.SeasonId = ""
+	v.SeriesId = ""
+	v.SubProgramType = ""
+	v.SubTitle = ""
+	v.Title = ""
+	v.TitleId = ""
+	v.Trailer = ""
+	v.Year = ""
+	v.EpisodeNumber = 0
+	v.SeasonNumber = 0
+	poolItemDto.Put(v)
 }

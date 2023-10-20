@@ -2,6 +2,7 @@ package shenjing
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaIbShenjingVisitorPadGetinfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaIbShenjingVisitorPadGetinfoAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaIbShenjingVisitorPadGetinfoAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIbShenjingVisitorPadGetinfoAPIResponseModel).Reset()
 }
 
 // AlibabaIbShenjingVisitorPadGetinfoAPIResponseModel is 获取OSS上传参数 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaIbShenjingVisitorPadGetinfoAPIResponseModel struct {
 	Content *PostObjectPolicyVo `json:"content,omitempty" xml:"content,omitempty"`
 	// 是否成功
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIbShenjingVisitorPadGetinfoAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.ResultMsg = ""
+	m.ResultRequestId = ""
+	m.Content = nil
+	m.ResultSuccess = false
+}
+
+var poolAlibabaIbShenjingVisitorPadGetinfoAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIbShenjingVisitorPadGetinfoAPIResponse)
+	},
+}
+
+// GetAlibabaIbShenjingVisitorPadGetinfoAPIResponse 从 sync.Pool 获取 AlibabaIbShenjingVisitorPadGetinfoAPIResponse
+func GetAlibabaIbShenjingVisitorPadGetinfoAPIResponse() *AlibabaIbShenjingVisitorPadGetinfoAPIResponse {
+	return poolAlibabaIbShenjingVisitorPadGetinfoAPIResponse.Get().(*AlibabaIbShenjingVisitorPadGetinfoAPIResponse)
+}
+
+// ReleaseAlibabaIbShenjingVisitorPadGetinfoAPIResponse 将 AlibabaIbShenjingVisitorPadGetinfoAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIbShenjingVisitorPadGetinfoAPIResponse(v *AlibabaIbShenjingVisitorPadGetinfoAPIResponse) {
+	v.Reset()
+	poolAlibabaIbShenjingVisitorPadGetinfoAPIResponse.Put(v)
 }

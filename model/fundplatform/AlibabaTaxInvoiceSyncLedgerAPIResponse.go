@@ -2,6 +2,7 @@ package fundplatform
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaTaxInvoiceSyncLedgerAPIResponse struct {
 	AlibabaTaxInvoiceSyncLedgerAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaTaxInvoiceSyncLedgerAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaTaxInvoiceSyncLedgerAPIResponseModel).Reset()
+}
+
 // AlibabaTaxInvoiceSyncLedgerAPIResponseModel is 同步底账数据 成功返回结果
 type AlibabaTaxInvoiceSyncLedgerAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tax_invoice_sync_ledger_response"`
@@ -26,4 +33,29 @@ type AlibabaTaxInvoiceSyncLedgerAPIResponseModel struct {
 	ResponseMsg string `json:"response_msg,omitempty" xml:"response_msg,omitempty"`
 	// true/false
 	Succeeded bool `json:"succeeded,omitempty" xml:"succeeded,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaTaxInvoiceSyncLedgerAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResponseCode = ""
+	m.ResponseMsg = ""
+	m.Succeeded = false
+}
+
+var poolAlibabaTaxInvoiceSyncLedgerAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaTaxInvoiceSyncLedgerAPIResponse)
+	},
+}
+
+// GetAlibabaTaxInvoiceSyncLedgerAPIResponse 从 sync.Pool 获取 AlibabaTaxInvoiceSyncLedgerAPIResponse
+func GetAlibabaTaxInvoiceSyncLedgerAPIResponse() *AlibabaTaxInvoiceSyncLedgerAPIResponse {
+	return poolAlibabaTaxInvoiceSyncLedgerAPIResponse.Get().(*AlibabaTaxInvoiceSyncLedgerAPIResponse)
+}
+
+// ReleaseAlibabaTaxInvoiceSyncLedgerAPIResponse 将 AlibabaTaxInvoiceSyncLedgerAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaTaxInvoiceSyncLedgerAPIResponse(v *AlibabaTaxInvoiceSyncLedgerAPIResponse) {
+	v.Reset()
+	poolAlibabaTaxInvoiceSyncLedgerAPIResponse.Put(v)
 }

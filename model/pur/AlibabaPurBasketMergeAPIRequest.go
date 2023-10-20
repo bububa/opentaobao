@@ -2,6 +2,7 @@ package pur
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaPurBasketMergeAPIRequest struct {
 // NewAlibabaPurBasketMergeRequest 初始化AlibabaPurBasketMergeAPIRequest对象
 func NewAlibabaPurBasketMergeRequest() *AlibabaPurBasketMergeAPIRequest {
 	return &AlibabaPurBasketMergeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaPurBasketMergeAPIRequest) Reset() {
+	r._paramMallMergeCartRequestDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaPurBasketMergeAPIRequest) SetParamMallMergeCartRequestDTO(_param
 // GetParamMallMergeCartRequestDTO ParamMallMergeCartRequestDTO Getter
 func (r AlibabaPurBasketMergeAPIRequest) GetParamMallMergeCartRequestDTO() *MallMergeCartRequestDto {
 	return r._paramMallMergeCartRequestDTO
+}
+
+var poolAlibabaPurBasketMergeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaPurBasketMergeRequest()
+	},
+}
+
+// GetAlibabaPurBasketMergeRequest 从 sync.Pool 获取 AlibabaPurBasketMergeAPIRequest
+func GetAlibabaPurBasketMergeAPIRequest() *AlibabaPurBasketMergeAPIRequest {
+	return poolAlibabaPurBasketMergeAPIRequest.Get().(*AlibabaPurBasketMergeAPIRequest)
+}
+
+// ReleaseAlibabaPurBasketMergeAPIRequest 将 AlibabaPurBasketMergeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaPurBasketMergeAPIRequest(v *AlibabaPurBasketMergeAPIRequest) {
+	v.Reset()
+	poolAlibabaPurBasketMergeAPIRequest.Put(v)
 }

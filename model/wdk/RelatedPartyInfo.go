@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // RelatedPartyInfo 结构体
 type RelatedPartyInfo struct {
 	// 所在部门
@@ -12,4 +16,25 @@ type RelatedPartyInfo struct {
 	RelatedPartyType string `json:"related_party_type,omitempty" xml:"related_party_type,omitempty"`
 	// 关系
 	Relation string `json:"relation,omitempty" xml:"relation,omitempty"`
+}
+
+var poolRelatedPartyInfo = sync.Pool{
+	New: func() any {
+		return new(RelatedPartyInfo)
+	},
+}
+
+// GetRelatedPartyInfo() 从对象池中获取RelatedPartyInfo
+func GetRelatedPartyInfo() *RelatedPartyInfo {
+	return poolRelatedPartyInfo.Get().(*RelatedPartyInfo)
+}
+
+// ReleaseRelatedPartyInfo 释放RelatedPartyInfo
+func ReleaseRelatedPartyInfo(v *RelatedPartyInfo) {
+	v.Department = ""
+	v.Name = ""
+	v.Post = ""
+	v.RelatedPartyType = ""
+	v.Relation = ""
+	poolRelatedPartyInfo.Put(v)
 }

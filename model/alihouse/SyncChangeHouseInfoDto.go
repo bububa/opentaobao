@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // SyncChangeHouseInfoDto 结构体
 type SyncChangeHouseInfoDto struct {
 	// 老小区外部id
@@ -22,4 +26,30 @@ type SyncChangeHouseInfoDto struct {
 	IsAsync int64 `json:"is_async,omitempty" xml:"is_async,omitempty"`
 	// 1
 	IsChangeCommunity int64 `json:"is_change_community,omitempty" xml:"is_change_community,omitempty"`
+}
+
+var poolSyncChangeHouseInfoDto = sync.Pool{
+	New: func() any {
+		return new(SyncChangeHouseInfoDto)
+	},
+}
+
+// GetSyncChangeHouseInfoDto() 从对象池中获取SyncChangeHouseInfoDto
+func GetSyncChangeHouseInfoDto() *SyncChangeHouseInfoDto {
+	return poolSyncChangeHouseInfoDto.Get().(*SyncChangeHouseInfoDto)
+}
+
+// ReleaseSyncChangeHouseInfoDto 释放SyncChangeHouseInfoDto
+func ReleaseSyncChangeHouseInfoDto(v *SyncChangeHouseInfoDto) {
+	v.OldCommunityOuterId = ""
+	v.CommunityOuterId = ""
+	v.OuterId = ""
+	v.ECode = ""
+	v.EntrustOuterId = ""
+	v.BusinessType = 0
+	v.HouseModel = 0
+	v.HouseType = 0
+	v.IsAsync = 0
+	v.IsChangeCommunity = 0
+	poolSyncChangeHouseInfoDto.Put(v)
 }

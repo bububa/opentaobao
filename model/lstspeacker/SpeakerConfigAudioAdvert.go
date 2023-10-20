@@ -1,5 +1,9 @@
 package lstspeacker
 
+import (
+	"sync"
+)
+
 // SpeakerConfigAudioAdvert 结构体
 type SpeakerConfigAudioAdvert struct {
 	// 广告ID
@@ -24,4 +28,31 @@ type SpeakerConfigAudioAdvert struct {
 	FileSize int64 `json:"file_size,omitempty" xml:"file_size,omitempty"`
 	// 播放时长
 	Length int64 `json:"length,omitempty" xml:"length,omitempty"`
+}
+
+var poolSpeakerConfigAudioAdvert = sync.Pool{
+	New: func() any {
+		return new(SpeakerConfigAudioAdvert)
+	},
+}
+
+// GetSpeakerConfigAudioAdvert() 从对象池中获取SpeakerConfigAudioAdvert
+func GetSpeakerConfigAudioAdvert() *SpeakerConfigAudioAdvert {
+	return poolSpeakerConfigAudioAdvert.Get().(*SpeakerConfigAudioAdvert)
+}
+
+// ReleaseSpeakerConfigAudioAdvert 释放SpeakerConfigAudioAdvert
+func ReleaseSpeakerConfigAudioAdvert(v *SpeakerConfigAudioAdvert) {
+	v.Id = ""
+	v.OrderId = ""
+	v.Name = ""
+	v.Md5 = ""
+	v.UnitPrice = ""
+	v.AdvertDiscountRatio = ""
+	v.StoreDiscountRatio = ""
+	v.Url = ""
+	v.PlayScheduleTime = 0
+	v.FileSize = 0
+	v.Length = 0
+	poolSpeakerConfigAudioAdvert.Put(v)
 }

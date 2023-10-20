@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenApproverInfo 结构体
 type OpenApproverInfo struct {
 	// 操作时间
@@ -16,4 +20,27 @@ type OpenApproverInfo struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 审批人顺序
 	Order int64 `json:"order,omitempty" xml:"order,omitempty"`
+}
+
+var poolOpenApproverInfo = sync.Pool{
+	New: func() any {
+		return new(OpenApproverInfo)
+	},
+}
+
+// GetOpenApproverInfo() 从对象池中获取OpenApproverInfo
+func GetOpenApproverInfo() *OpenApproverInfo {
+	return poolOpenApproverInfo.Get().(*OpenApproverInfo)
+}
+
+// ReleaseOpenApproverInfo 释放OpenApproverInfo
+func ReleaseOpenApproverInfo(v *OpenApproverInfo) {
+	v.OperateTime = ""
+	v.Note = ""
+	v.UserName = ""
+	v.UserId = ""
+	v.StatusDesc = ""
+	v.Status = 0
+	v.Order = 0
+	poolOpenApproverInfo.Put(v)
 }

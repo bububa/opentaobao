@@ -2,6 +2,7 @@ package cloudgame
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCgameContentDistributionFileDownloadUpdateAPIRequest struct {
 // NewAlibabaCgameContentDistributionFileDownloadUpdateRequest 初始化AlibabaCgameContentDistributionFileDownloadUpdateAPIRequest对象
 func NewAlibabaCgameContentDistributionFileDownloadUpdateRequest() *AlibabaCgameContentDistributionFileDownloadUpdateAPIRequest {
 	return &AlibabaCgameContentDistributionFileDownloadUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCgameContentDistributionFileDownloadUpdateAPIRequest) Reset() {
+	r._reqParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCgameContentDistributionFileDownloadUpdateAPIRequest) SetReqPara
 // GetReqParam ReqParam Getter
 func (r AlibabaCgameContentDistributionFileDownloadUpdateAPIRequest) GetReqParam() *FileDownloadCallbackRequest {
 	return r._reqParam
+}
+
+var poolAlibabaCgameContentDistributionFileDownloadUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCgameContentDistributionFileDownloadUpdateRequest()
+	},
+}
+
+// GetAlibabaCgameContentDistributionFileDownloadUpdateRequest 从 sync.Pool 获取 AlibabaCgameContentDistributionFileDownloadUpdateAPIRequest
+func GetAlibabaCgameContentDistributionFileDownloadUpdateAPIRequest() *AlibabaCgameContentDistributionFileDownloadUpdateAPIRequest {
+	return poolAlibabaCgameContentDistributionFileDownloadUpdateAPIRequest.Get().(*AlibabaCgameContentDistributionFileDownloadUpdateAPIRequest)
+}
+
+// ReleaseAlibabaCgameContentDistributionFileDownloadUpdateAPIRequest 将 AlibabaCgameContentDistributionFileDownloadUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCgameContentDistributionFileDownloadUpdateAPIRequest(v *AlibabaCgameContentDistributionFileDownloadUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaCgameContentDistributionFileDownloadUpdateAPIRequest.Put(v)
 }

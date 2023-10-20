@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTianmaoUopCancelAPIRequest struct {
 // NewAlibabaTianmaoUopCancelRequest 初始化AlibabaTianmaoUopCancelAPIRequest对象
 func NewAlibabaTianmaoUopCancelRequest() *AlibabaTianmaoUopCancelAPIRequest {
 	return &AlibabaTianmaoUopCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTianmaoUopCancelAPIRequest) Reset() {
+	r._hiErpCloseDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTianmaoUopCancelAPIRequest) SetHiErpCloseDto(_hiErpCloseDto *HiE
 // GetHiErpCloseDto HiErpCloseDto Getter
 func (r AlibabaTianmaoUopCancelAPIRequest) GetHiErpCloseDto() *HiErpCloseDto {
 	return r._hiErpCloseDto
+}
+
+var poolAlibabaTianmaoUopCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTianmaoUopCancelRequest()
+	},
+}
+
+// GetAlibabaTianmaoUopCancelRequest 从 sync.Pool 获取 AlibabaTianmaoUopCancelAPIRequest
+func GetAlibabaTianmaoUopCancelAPIRequest() *AlibabaTianmaoUopCancelAPIRequest {
+	return poolAlibabaTianmaoUopCancelAPIRequest.Get().(*AlibabaTianmaoUopCancelAPIRequest)
+}
+
+// ReleaseAlibabaTianmaoUopCancelAPIRequest 将 AlibabaTianmaoUopCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTianmaoUopCancelAPIRequest(v *AlibabaTianmaoUopCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaTianmaoUopCancelAPIRequest.Put(v)
 }

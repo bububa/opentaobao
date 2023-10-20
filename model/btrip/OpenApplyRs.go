@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenApplyRs 结构体
 type OpenApplyRs struct {
 	// 行程单列表
@@ -40,4 +44,39 @@ type OpenApplyRs struct {
 	TripDay int64 `json:"trip_day,omitempty" xml:"trip_day,omitempty"`
 	// 审批单id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolOpenApplyRs = sync.Pool{
+	New: func() any {
+		return new(OpenApplyRs)
+	},
+}
+
+// GetOpenApplyRs() 从对象池中获取OpenApplyRs
+func GetOpenApplyRs() *OpenApplyRs {
+	return poolOpenApplyRs.Get().(*OpenApplyRs)
+}
+
+// ReleaseOpenApplyRs 释放OpenApplyRs
+func ReleaseOpenApplyRs(v *OpenApplyRs) {
+	v.ItineraryList = v.ItineraryList[:0]
+	v.TravelerList = v.TravelerList[:0]
+	v.ApproverList = v.ApproverList[:0]
+	v.TripTitle = ""
+	v.TripCause = ""
+	v.DepartName = ""
+	v.DepartId = ""
+	v.UserName = ""
+	v.UserId = ""
+	v.CorpName = ""
+	v.CorpId = ""
+	v.ThirdpartId = ""
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.StatusDesc = ""
+	v.ApplyShowId = ""
+	v.Status = 0
+	v.TripDay = 0
+	v.Id = 0
+	poolOpenApplyRs.Put(v)
 }

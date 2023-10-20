@@ -2,6 +2,7 @@ package axintrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -41,8 +42,25 @@ type TaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest struct {
 // NewTaobaoAlitripTravelAxinHotelticketOrderCreateorderRequest 初始化TaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest对象
 func NewTaobaoAlitripTravelAxinHotelticketOrderCreateorderRequest() *TaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest {
 	return &TaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(12),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest) Reset() {
+	r._outerOrderId = ""
+	r._serviceStartTime = ""
+	r._serviceEndTime = ""
+	r._useTime = ""
+	r._bizLine = ""
+	r._productId = 0
+	r._contactInfo = nil
+	r._travelerInfoList = nil
+	r._buyAmount = 0
+	r._productPrice = 0
+	r._totalPrice = 0
+	r._distributorTid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -216,4 +234,21 @@ func (r *TaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest) SetDistri
 // GetDistributorTid DistributorTid Getter
 func (r TaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest) GetDistributorTid() int64 {
 	return r._distributorTid
+}
+
+var poolTaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelAxinHotelticketOrderCreateorderRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelAxinHotelticketOrderCreateorderRequest 从 sync.Pool 获取 TaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest
+func GetTaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest() *TaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest {
+	return poolTaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest.Get().(*TaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest 将 TaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest(v *TaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelAxinHotelticketOrderCreateorderAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoSimbaRptTargetingtagbaseGetAPIResponse struct {
 	TaobaoSimbaRptTargetingtagbaseGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoSimbaRptTargetingtagbaseGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSimbaRptTargetingtagbaseGetAPIResponseModel).Reset()
+}
+
 // TaobaoSimbaRptTargetingtagbaseGetAPIResponseModel is 定向基础报表 成功返回结果
 type TaobaoSimbaRptTargetingtagbaseGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_rpt_targetingtagbase_get_response"`
@@ -22,4 +29,27 @@ type TaobaoSimbaRptTargetingtagbaseGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Results []RptBaseEntityDto `json:"results,omitempty" xml:"results>rpt_base_entity_dto,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSimbaRptTargetingtagbaseGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Results = m.Results[:0]
+}
+
+var poolTaobaoSimbaRptTargetingtagbaseGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSimbaRptTargetingtagbaseGetAPIResponse)
+	},
+}
+
+// GetTaobaoSimbaRptTargetingtagbaseGetAPIResponse 从 sync.Pool 获取 TaobaoSimbaRptTargetingtagbaseGetAPIResponse
+func GetTaobaoSimbaRptTargetingtagbaseGetAPIResponse() *TaobaoSimbaRptTargetingtagbaseGetAPIResponse {
+	return poolTaobaoSimbaRptTargetingtagbaseGetAPIResponse.Get().(*TaobaoSimbaRptTargetingtagbaseGetAPIResponse)
+}
+
+// ReleaseTaobaoSimbaRptTargetingtagbaseGetAPIResponse 将 TaobaoSimbaRptTargetingtagbaseGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSimbaRptTargetingtagbaseGetAPIResponse(v *TaobaoSimbaRptTargetingtagbaseGetAPIResponse) {
+	v.Reset()
+	poolTaobaoSimbaRptTargetingtagbaseGetAPIResponse.Put(v)
 }

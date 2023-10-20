@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // CombineSubItemDo 结构体
 type CombineSubItemDo struct {
 	// 商品名称
@@ -26,4 +30,32 @@ type CombineSubItemDo struct {
 	EduOriginalFee int64 `json:"edu_original_fee,omitempty" xml:"edu_original_fee,omitempty"`
 	// 套餐购是否商品主子成分品��
 	Ismain bool `json:"ismain,omitempty" xml:"ismain,omitempty"`
+}
+
+var poolCombineSubItemDo = sync.Pool{
+	New: func() any {
+		return new(CombineSubItemDo)
+	},
+}
+
+// GetCombineSubItemDo() 从对象池中获取CombineSubItemDo
+func GetCombineSubItemDo() *CombineSubItemDo {
+	return poolCombineSubItemDo.Get().(*CombineSubItemDo)
+}
+
+// ReleaseCombineSubItemDo 释放CombineSubItemDo
+func ReleaseCombineSubItemDo(v *CombineSubItemDo) {
+	v.ItemName = ""
+	v.OuterIid = ""
+	v.SkuTitle = ""
+	v.EstconTime = ""
+	v.OuterSkuId = ""
+	v.ItemId = 0
+	v.SkuId = 0
+	v.Quantity = 0
+	v.OriginFee = 0
+	v.CombineSubItemFee = 0
+	v.EduOriginalFee = 0
+	v.Ismain = false
+	poolCombineSubItemDo.Put(v)
 }

@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripFlightDistributionChangeNewapplyAPIRequest struct {
 // NewAlitripBtripFlightDistributionChangeNewapplyRequest 初始化AlitripBtripFlightDistributionChangeNewapplyAPIRequest对象
 func NewAlitripBtripFlightDistributionChangeNewapplyRequest() *AlitripBtripFlightDistributionChangeNewapplyAPIRequest {
 	return &AlitripBtripFlightDistributionChangeNewapplyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripFlightDistributionChangeNewapplyAPIRequest) Reset() {
+	r._paramBtripFlightModifyApplyRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripFlightDistributionChangeNewapplyAPIRequest) SetParamBtripFl
 // GetParamBtripFlightModifyApplyRq ParamBtripFlightModifyApplyRq Getter
 func (r AlitripBtripFlightDistributionChangeNewapplyAPIRequest) GetParamBtripFlightModifyApplyRq() *BtripFlightModifyApplyRq {
 	return r._paramBtripFlightModifyApplyRq
+}
+
+var poolAlitripBtripFlightDistributionChangeNewapplyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripFlightDistributionChangeNewapplyRequest()
+	},
+}
+
+// GetAlitripBtripFlightDistributionChangeNewapplyRequest 从 sync.Pool 获取 AlitripBtripFlightDistributionChangeNewapplyAPIRequest
+func GetAlitripBtripFlightDistributionChangeNewapplyAPIRequest() *AlitripBtripFlightDistributionChangeNewapplyAPIRequest {
+	return poolAlitripBtripFlightDistributionChangeNewapplyAPIRequest.Get().(*AlitripBtripFlightDistributionChangeNewapplyAPIRequest)
+}
+
+// ReleaseAlitripBtripFlightDistributionChangeNewapplyAPIRequest 将 AlitripBtripFlightDistributionChangeNewapplyAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripFlightDistributionChangeNewapplyAPIRequest(v *AlitripBtripFlightDistributionChangeNewapplyAPIRequest) {
+	v.Reset()
+	poolAlitripBtripFlightDistributionChangeNewapplyAPIRequest.Put(v)
 }

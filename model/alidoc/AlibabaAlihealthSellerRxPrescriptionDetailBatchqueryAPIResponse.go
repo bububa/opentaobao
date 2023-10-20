@@ -2,6 +2,7 @@ package alidoc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponse struct {
 	AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponseModel is 商家维度批量查询订单处方详情 成功返回结果
 type AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_seller_rx_prescription_detail_batchquery_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponseModel struct
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponse 从 sync.Pool 获取 AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponse
+func GetAlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponse() *AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponse {
+	return poolAlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponse.Get().(*AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponse 将 AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponse(v *AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIResponse.Put(v)
 }

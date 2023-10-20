@@ -1,5 +1,9 @@
 package alitrippoi
 
+import (
+	"sync"
+)
+
 // AlitripPlatformPoiRawPoioutbypoiidsData 结构体
 type AlitripPlatformPoiRawPoioutbypoiidsData struct {
 	// poiId
@@ -28,4 +32,33 @@ type AlitripPlatformPoiRawPoioutbypoiidsData struct {
 	FirstCategory int64 `json:"first_category,omitempty" xml:"first_category,omitempty"`
 	// poiId
 	PoiId int64 `json:"poi_id,omitempty" xml:"poi_id,omitempty"`
+}
+
+var poolAlitripPlatformPoiRawPoioutbypoiidsData = sync.Pool{
+	New: func() any {
+		return new(AlitripPlatformPoiRawPoioutbypoiidsData)
+	},
+}
+
+// GetAlitripPlatformPoiRawPoioutbypoiidsData() 从对象池中获取AlitripPlatformPoiRawPoioutbypoiidsData
+func GetAlitripPlatformPoiRawPoioutbypoiidsData() *AlitripPlatformPoiRawPoioutbypoiidsData {
+	return poolAlitripPlatformPoiRawPoioutbypoiidsData.Get().(*AlitripPlatformPoiRawPoioutbypoiidsData)
+}
+
+// ReleaseAlitripPlatformPoiRawPoioutbypoiidsData 释放AlitripPlatformPoiRawPoioutbypoiidsData
+func ReleaseAlitripPlatformPoiRawPoioutbypoiidsData(v *AlitripPlatformPoiRawPoioutbypoiidsData) {
+	v.SourceId = ""
+	v.DivisionTreeName = ""
+	v.DivisionTreeId = ""
+	v.OpenTime = ""
+	v.Lat = ""
+	v.Lon = ""
+	v.Telephone = ""
+	v.Address = ""
+	v.Desc = ""
+	v.NameEn = ""
+	v.Name = ""
+	v.FirstCategory = 0
+	v.PoiId = 0
+	poolAlitripPlatformPoiRawPoioutbypoiidsData.Put(v)
 }

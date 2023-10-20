@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthTracecodesellerProductSearchAPIResponse struct {
 	AlibabaAlihealthTracecodesellerProductSearchAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthTracecodesellerProductSearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthTracecodesellerProductSearchAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthTracecodesellerProductSearchAPIResponseModel is 查询商品api 成功返回结果
 type AlibabaAlihealthTracecodesellerProductSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_tracecodeseller_product_search_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihealthTracecodesellerProductSearchAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *TopResultModel `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthTracecodesellerProductSearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthTracecodesellerProductSearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthTracecodesellerProductSearchAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthTracecodesellerProductSearchAPIResponse 从 sync.Pool 获取 AlibabaAlihealthTracecodesellerProductSearchAPIResponse
+func GetAlibabaAlihealthTracecodesellerProductSearchAPIResponse() *AlibabaAlihealthTracecodesellerProductSearchAPIResponse {
+	return poolAlibabaAlihealthTracecodesellerProductSearchAPIResponse.Get().(*AlibabaAlihealthTracecodesellerProductSearchAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthTracecodesellerProductSearchAPIResponse 将 AlibabaAlihealthTracecodesellerProductSearchAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthTracecodesellerProductSearchAPIResponse(v *AlibabaAlihealthTracecodesellerProductSearchAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthTracecodesellerProductSearchAPIResponse.Put(v)
 }

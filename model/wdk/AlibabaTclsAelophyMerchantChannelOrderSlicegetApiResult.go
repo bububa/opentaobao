@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult 结构体
 type AlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult struct {
 	// 返回码说明
@@ -10,4 +14,24 @@ type AlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult struct {
 	Model *TimeSliceGetResponse `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult)
+	},
+}
+
+// GetAlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult() 从对象池中获取AlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult
+func GetAlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult() *AlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult {
+	return poolAlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult.Get().(*AlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult)
+}
+
+// ReleaseAlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult 释放AlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult
+func ReleaseAlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult(v *AlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult) {
+	v.ErrMsg = ""
+	v.ErrCode = ""
+	v.Model = nil
+	v.Success = false
+	poolAlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package normalvisa
 
+import (
+	"sync"
+)
+
 // NormalVisaInfo 结构体
 type NormalVisaInfo struct {
 	// 支付时间
@@ -26,4 +30,32 @@ type NormalVisaInfo struct {
 	EndStatus bool `json:"end_status,omitempty" xml:"end_status,omitempty"`
 	// 是否需要商家代填
 	NeedFillContact bool `json:"need_fill_contact,omitempty" xml:"need_fill_contact,omitempty"`
+}
+
+var poolNormalVisaInfo = sync.Pool{
+	New: func() any {
+		return new(NormalVisaInfo)
+	},
+}
+
+// GetNormalVisaInfo() 从对象池中获取NormalVisaInfo
+func GetNormalVisaInfo() *NormalVisaInfo {
+	return poolNormalVisaInfo.Get().(*NormalVisaInfo)
+}
+
+// ReleaseNormalVisaInfo 释放NormalVisaInfo
+func ReleaseNormalVisaInfo(v *NormalVisaInfo) {
+	v.PayTime = ""
+	v.AuctionPrice = ""
+	v.Title = ""
+	v.StatusDesc = ""
+	v.CountryId = ""
+	v.Openuid = ""
+	v.NormalVisaType = 0
+	v.Status = 0
+	v.Amount = 0
+	v.BizOrderId = 0
+	v.EndStatus = false
+	v.NeedFillContact = false
+	poolNormalVisaInfo.Put(v)
 }

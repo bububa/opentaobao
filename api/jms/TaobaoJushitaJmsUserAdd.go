@@ -9,11 +9,6 @@ import (
 // taobao.jushita.jms.user.add
 //
 // 添加ONS消息同步用户
-func TaobaoJushitaJmsUserAdd(clt *core.SDKClient, req *jms.TaobaoJushitaJmsUserAddAPIRequest, session string) (*jms.TaobaoJushitaJmsUserAddAPIResponse, error) {
-	var resp jms.TaobaoJushitaJmsUserAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJushitaJmsUserAdd(clt *core.SDKClient, req *jms.TaobaoJushitaJmsUserAddAPIRequest, resp *jms.TaobaoJushitaJmsUserAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

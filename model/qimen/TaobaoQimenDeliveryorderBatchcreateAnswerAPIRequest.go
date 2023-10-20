@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest struct {
 // NewTaobaoQimenDeliveryorderBatchcreateAnswerRequest 初始化TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest对象
 func NewTaobaoQimenDeliveryorderBatchcreateAnswerRequest() *TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest {
 	return &TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -50,4 +57,21 @@ func (r *TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest) SetRequest(_reques
 // GetRequest Request Getter
 func (r TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest) GetRequest() *DeliveryOrderBatchCreateAnswerRequest {
 	return r._request
+}
+
+var poolTaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenDeliveryorderBatchcreateAnswerRequest()
+	},
+}
+
+// GetTaobaoQimenDeliveryorderBatchcreateAnswerRequest 从 sync.Pool 获取 TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest
+func GetTaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest() *TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest {
+	return poolTaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest.Get().(*TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest)
+}
+
+// ReleaseTaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest 将 TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest(v *TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest.Put(v)
 }

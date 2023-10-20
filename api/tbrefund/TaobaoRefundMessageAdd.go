@@ -9,11 +9,6 @@ import (
 // taobao.refund.message.add
 //
 // 创建退款留言/凭证
-func TaobaoRefundMessageAdd(clt *core.SDKClient, req *tbrefund.TaobaoRefundMessageAddAPIRequest, session string) (*tbrefund.TaobaoRefundMessageAddAPIResponse, error) {
-	var resp tbrefund.TaobaoRefundMessageAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoRefundMessageAdd(clt *core.SDKClient, req *tbrefund.TaobaoRefundMessageAddAPIRequest, resp *tbrefund.TaobaoRefundMessageAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

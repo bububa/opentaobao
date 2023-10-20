@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type YunosTvpubadminCommonFileUploadAPIResponse struct {
 	YunosTvpubadminCommonFileUploadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *YunosTvpubadminCommonFileUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.YunosTvpubadminCommonFileUploadAPIResponseModel).Reset()
+}
+
 // YunosTvpubadminCommonFileUploadAPIResponseModel is 文件上传API 成功返回结果
 type YunosTvpubadminCommonFileUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvpubadmin_common_file_upload_response"`
@@ -22,4 +29,27 @@ type YunosTvpubadminCommonFileUploadAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 上传后的文件地址
 	Object string `json:"object,omitempty" xml:"object,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *YunosTvpubadminCommonFileUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Object = ""
+}
+
+var poolYunosTvpubadminCommonFileUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(YunosTvpubadminCommonFileUploadAPIResponse)
+	},
+}
+
+// GetYunosTvpubadminCommonFileUploadAPIResponse 从 sync.Pool 获取 YunosTvpubadminCommonFileUploadAPIResponse
+func GetYunosTvpubadminCommonFileUploadAPIResponse() *YunosTvpubadminCommonFileUploadAPIResponse {
+	return poolYunosTvpubadminCommonFileUploadAPIResponse.Get().(*YunosTvpubadminCommonFileUploadAPIResponse)
+}
+
+// ReleaseYunosTvpubadminCommonFileUploadAPIResponse 将 YunosTvpubadminCommonFileUploadAPIResponse 保存到 sync.Pool
+func ReleaseYunosTvpubadminCommonFileUploadAPIResponse(v *YunosTvpubadminCommonFileUploadAPIResponse) {
+	v.Reset()
+	poolYunosTvpubadminCommonFileUploadAPIResponse.Put(v)
 }

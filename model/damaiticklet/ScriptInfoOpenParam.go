@@ -1,5 +1,9 @@
 package damaiticklet
 
+import (
+	"sync"
+)
+
 // ScriptInfoOpenParam 结构体
 type ScriptInfoOpenParam struct {
 	// 剧本标签数据
@@ -64,4 +68,51 @@ type ScriptInfoOpenParam struct {
 	PlayerMaxNum int64 `json:"player_max_num,omitempty" xml:"player_max_num,omitempty"`
 	// 1:6+ ，2:12+ ，3:16+ ，4:18+
 	RightAge int64 `json:"right_age,omitempty" xml:"right_age,omitempty"`
+}
+
+var poolScriptInfoOpenParam = sync.Pool{
+	New: func() any {
+		return new(ScriptInfoOpenParam)
+	},
+}
+
+// GetScriptInfoOpenParam() 从对象池中获取ScriptInfoOpenParam
+func GetScriptInfoOpenParam() *ScriptInfoOpenParam {
+	return poolScriptInfoOpenParam.Get().(*ScriptInfoOpenParam)
+}
+
+// ReleaseScriptInfoOpenParam 释放ScriptInfoOpenParam
+func ReleaseScriptInfoOpenParam(v *ScriptInfoOpenParam) {
+	v.ThirdScriptTagList = v.ThirdScriptTagList[:0]
+	v.ScriptOtherImageList = v.ScriptOtherImageList[:0]
+	v.ScriptVideoList = v.ScriptVideoList[:0]
+	v.ScriptPosterList = v.ScriptPosterList[:0]
+	v.ReleaseTime = ""
+	v.HasHolographic = ""
+	v.ScriptDescribe = ""
+	v.SuperviseName = ""
+	v.HasProp = ""
+	v.ElectronicData = ""
+	v.ScriptCover = ""
+	v.Author = ""
+	v.IsReverse = ""
+	v.ScriptName = ""
+	v.Producer = ""
+	v.DistributionStudio = ""
+	v.HasDeduction = ""
+	v.PlayerMinNum = 0
+	v.Source = 0
+	v.GirlNum = 0
+	v.ReadingVolume = 0
+	v.HostingDifficulty = 0
+	v.BoyNum = 0
+	v.OutId = 0
+	v.SalePrice = 0
+	v.SaleMode = 0
+	v.ScriptTime = 0
+	v.Difficulty = 0
+	v.PlayerNumMode = 0
+	v.PlayerMaxNum = 0
+	v.RightAge = 0
+	poolScriptInfoOpenParam.Put(v)
 }

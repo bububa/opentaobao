@@ -2,6 +2,7 @@ package legalcase
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaLegalCaseMediateRecordSaveAPIRequest struct {
 // NewAlibabaLegalCaseMediateRecordSaveRequest 初始化AlibabaLegalCaseMediateRecordSaveAPIRequest对象
 func NewAlibabaLegalCaseMediateRecordSaveRequest() *AlibabaLegalCaseMediateRecordSaveAPIRequest {
 	return &AlibabaLegalCaseMediateRecordSaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegalCaseMediateRecordSaveAPIRequest) Reset() {
+	r._caseId = 0
+	r._entrustId = 0
+	r._record = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaLegalCaseMediateRecordSaveAPIRequest) SetRecord(_record *Mediate
 // GetRecord Record Getter
 func (r AlibabaLegalCaseMediateRecordSaveAPIRequest) GetRecord() *MediateCommunicationModel {
 	return r._record
+}
+
+var poolAlibabaLegalCaseMediateRecordSaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegalCaseMediateRecordSaveRequest()
+	},
+}
+
+// GetAlibabaLegalCaseMediateRecordSaveRequest 从 sync.Pool 获取 AlibabaLegalCaseMediateRecordSaveAPIRequest
+func GetAlibabaLegalCaseMediateRecordSaveAPIRequest() *AlibabaLegalCaseMediateRecordSaveAPIRequest {
+	return poolAlibabaLegalCaseMediateRecordSaveAPIRequest.Get().(*AlibabaLegalCaseMediateRecordSaveAPIRequest)
+}
+
+// ReleaseAlibabaLegalCaseMediateRecordSaveAPIRequest 将 AlibabaLegalCaseMediateRecordSaveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegalCaseMediateRecordSaveAPIRequest(v *AlibabaLegalCaseMediateRecordSaveAPIRequest) {
+	v.Reset()
+	poolAlibabaLegalCaseMediateRecordSaveAPIRequest.Put(v)
 }

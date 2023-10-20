@@ -9,11 +9,6 @@ import (
 // taobao.logistics.wms.goods.info.sync
 //
 // WMS回传货品长宽高图片等信息
-func TaobaoLogisticsWmsGoodsInfoSync(clt *core.SDKClient, req *logistic.TaobaoLogisticsWmsGoodsInfoSyncAPIRequest, session string) (*logistic.TaobaoLogisticsWmsGoodsInfoSyncAPIResponse, error) {
-	var resp logistic.TaobaoLogisticsWmsGoodsInfoSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLogisticsWmsGoodsInfoSync(clt *core.SDKClient, req *logistic.TaobaoLogisticsWmsGoodsInfoSyncAPIRequest, resp *logistic.TaobaoLogisticsWmsGoodsInfoSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

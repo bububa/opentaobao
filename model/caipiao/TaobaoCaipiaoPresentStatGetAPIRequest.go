@@ -2,6 +2,7 @@ package caipiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoCaipiaoPresentStatGetAPIRequest struct {
 // NewTaobaoCaipiaoPresentStatGetRequest 初始化TaobaoCaipiaoPresentStatGetAPIRequest对象
 func NewTaobaoCaipiaoPresentStatGetRequest() *TaobaoCaipiaoPresentStatGetAPIRequest {
 	return &TaobaoCaipiaoPresentStatGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCaipiaoPresentStatGetAPIRequest) Reset() {
+	r._days = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoCaipiaoPresentStatGetAPIRequest) SetDays(_days int64) error {
 // GetDays Days Getter
 func (r TaobaoCaipiaoPresentStatGetAPIRequest) GetDays() int64 {
 	return r._days
+}
+
+var poolTaobaoCaipiaoPresentStatGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCaipiaoPresentStatGetRequest()
+	},
+}
+
+// GetTaobaoCaipiaoPresentStatGetRequest 从 sync.Pool 获取 TaobaoCaipiaoPresentStatGetAPIRequest
+func GetTaobaoCaipiaoPresentStatGetAPIRequest() *TaobaoCaipiaoPresentStatGetAPIRequest {
+	return poolTaobaoCaipiaoPresentStatGetAPIRequest.Get().(*TaobaoCaipiaoPresentStatGetAPIRequest)
+}
+
+// ReleaseTaobaoCaipiaoPresentStatGetAPIRequest 将 TaobaoCaipiaoPresentStatGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCaipiaoPresentStatGetAPIRequest(v *TaobaoCaipiaoPresentStatGetAPIRequest) {
+	v.Reset()
+	poolTaobaoCaipiaoPresentStatGetAPIRequest.Put(v)
 }

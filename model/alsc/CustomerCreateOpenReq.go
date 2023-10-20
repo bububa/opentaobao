@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // CustomerCreateOpenReq 结构体
 type CustomerCreateOpenReq struct {
 	// 标签列表
@@ -44,4 +48,41 @@ type CustomerCreateOpenReq struct {
 	OutShopId string `json:"out_shop_id,omitempty" xml:"out_shop_id,omitempty"`
 	// 顾客类型，1:会员，0:顾客
 	CustomerType int64 `json:"customer_type,omitempty" xml:"customer_type,omitempty"`
+}
+
+var poolCustomerCreateOpenReq = sync.Pool{
+	New: func() any {
+		return new(CustomerCreateOpenReq)
+	},
+}
+
+// GetCustomerCreateOpenReq() 从对象池中获取CustomerCreateOpenReq
+func GetCustomerCreateOpenReq() *CustomerCreateOpenReq {
+	return poolCustomerCreateOpenReq.Get().(*CustomerCreateOpenReq)
+}
+
+// ReleaseCustomerCreateOpenReq 释放CustomerCreateOpenReq
+func ReleaseCustomerCreateOpenReq(v *CustomerCreateOpenReq) {
+	v.TagIdList = v.TagIdList[:0]
+	v.Address = ""
+	v.Birthday = ""
+	v.BrandId = ""
+	v.Channel = ""
+	v.Email = ""
+	v.Gender = ""
+	v.Invoice = ""
+	v.LevelId = ""
+	v.Mobile = ""
+	v.Name = ""
+	v.OperatorId = ""
+	v.OuterId = ""
+	v.OuterType = ""
+	v.Phone = ""
+	v.Remark = ""
+	v.RequestId = ""
+	v.ShopId = ""
+	v.OutBrandId = ""
+	v.OutShopId = ""
+	v.CustomerType = 0
+	poolCustomerCreateOpenReq.Put(v)
 }

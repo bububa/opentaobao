@@ -1,5 +1,9 @@
 package subuser
 
+import (
+	"sync"
+)
+
 // SubUserFullInfo 结构体
 type SubUserFullInfo struct {
 	// 工作地点
@@ -50,4 +54,44 @@ type SubUserFullInfo struct {
 	SubDispatchStatus bool `json:"sub_dispatch_status,omitempty" xml:"sub_dispatch_status,omitempty"`
 	// 子账号是否已欠费 true:已欠费 false:未欠费
 	SubOwedStatus bool `json:"sub_owed_status,omitempty" xml:"sub_owed_status,omitempty"`
+}
+
+var poolSubUserFullInfo = sync.Pool{
+	New: func() any {
+		return new(SubUserFullInfo)
+	},
+}
+
+// GetSubUserFullInfo() 从对象池中获取SubUserFullInfo
+func GetSubUserFullInfo() *SubUserFullInfo {
+	return poolSubUserFullInfo.Get().(*SubUserFullInfo)
+}
+
+// ReleaseSubUserFullInfo 释放SubUserFullInfo
+func ReleaseSubUserFullInfo(v *SubUserFullInfo) {
+	v.WorkLocation = ""
+	v.EmployeeNickname = ""
+	v.UserEmail = ""
+	v.DutyName = ""
+	v.EmployeeName = ""
+	v.EmployeeNum = ""
+	v.EntryDate = ""
+	v.DepartmentName = ""
+	v.SubNick = ""
+	v.UserNick = ""
+	v.OfficePhone = ""
+	v.SubuserEmail = ""
+	v.Sex = 0
+	v.SubId = 0
+	v.SubStatus = 0
+	v.DepartmentId = 0
+	v.DutyLevel = 0
+	v.LeaderId = 0
+	v.ParentDepartment = 0
+	v.DutyId = 0
+	v.UserId = 0
+	v.EmployeeId = 0
+	v.SubDispatchStatus = false
+	v.SubOwedStatus = false
+	poolSubUserFullInfo.Put(v)
 }

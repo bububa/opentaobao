@@ -9,11 +9,6 @@ import (
 // alibaba.ailabs.aligenie.skill.entity.import
 //
 // 根据用户上传的实体信息，进行制定技能实体的动态变更
-func AlibabaAilabsAligenieSkillEntityImport(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieSkillEntityImportAPIRequest, session string) (*tmallgenie.AlibabaAilabsAligenieSkillEntityImportAPIResponse, error) {
-	var resp tmallgenie.AlibabaAilabsAligenieSkillEntityImportAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAilabsAligenieSkillEntityImport(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieSkillEntityImportAPIRequest, resp *tmallgenie.AlibabaAilabsAligenieSkillEntityImportAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

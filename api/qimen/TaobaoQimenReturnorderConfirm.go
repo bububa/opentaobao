@@ -9,11 +9,6 @@ import (
 // taobao.qimen.returnorder.confirm
 //
 // taobao.qimen.returnorder.confirm
-func TaobaoQimenReturnorderConfirm(clt *core.SDKClient, req *qimen.TaobaoQimenReturnorderConfirmAPIRequest, session string) (*qimen.TaobaoQimenReturnorderConfirmAPIResponse, error) {
-	var resp qimen.TaobaoQimenReturnorderConfirmAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQimenReturnorderConfirm(clt *core.SDKClient, req *qimen.TaobaoQimenReturnorderConfirmAPIRequest, resp *qimen.TaobaoQimenReturnorderConfirmAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

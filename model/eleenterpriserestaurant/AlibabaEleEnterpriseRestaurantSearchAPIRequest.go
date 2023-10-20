@@ -2,6 +2,7 @@ package eleenterpriserestaurant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -47,8 +48,28 @@ type AlibabaEleEnterpriseRestaurantSearchAPIRequest struct {
 // NewAlibabaEleEnterpriseRestaurantSearchRequest 初始化AlibabaEleEnterpriseRestaurantSearchAPIRequest对象
 func NewAlibabaEleEnterpriseRestaurantSearchRequest() *AlibabaEleEnterpriseRestaurantSearchAPIRequest {
 	return &AlibabaEleEnterpriseRestaurantSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(15),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleEnterpriseRestaurantSearchAPIRequest) Reset() {
+	r._categoryIds = r._categoryIds[:0]
+	r._geo = ""
+	r._rankId = ""
+	r._isBookable = ""
+	r._crossDayBooking = ""
+	r._start = 0
+	r._limit = 0
+	r._costTo = 0
+	r._costFrom = 0
+	r._insurance = 0
+	r._invoice = 0
+	r._isPremium = 0
+	r._newRestaurant = 0
+	r._deliveryMode = 0
+	r._orderBy = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -261,4 +282,21 @@ func (r *AlibabaEleEnterpriseRestaurantSearchAPIRequest) SetOrderBy(_orderBy int
 // GetOrderBy OrderBy Getter
 func (r AlibabaEleEnterpriseRestaurantSearchAPIRequest) GetOrderBy() int64 {
 	return r._orderBy
+}
+
+var poolAlibabaEleEnterpriseRestaurantSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleEnterpriseRestaurantSearchRequest()
+	},
+}
+
+// GetAlibabaEleEnterpriseRestaurantSearchRequest 从 sync.Pool 获取 AlibabaEleEnterpriseRestaurantSearchAPIRequest
+func GetAlibabaEleEnterpriseRestaurantSearchAPIRequest() *AlibabaEleEnterpriseRestaurantSearchAPIRequest {
+	return poolAlibabaEleEnterpriseRestaurantSearchAPIRequest.Get().(*AlibabaEleEnterpriseRestaurantSearchAPIRequest)
+}
+
+// ReleaseAlibabaEleEnterpriseRestaurantSearchAPIRequest 将 AlibabaEleEnterpriseRestaurantSearchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleEnterpriseRestaurantSearchAPIRequest(v *AlibabaEleEnterpriseRestaurantSearchAPIRequest) {
+	v.Reset()
+	poolAlibabaEleEnterpriseRestaurantSearchAPIRequest.Put(v)
 }

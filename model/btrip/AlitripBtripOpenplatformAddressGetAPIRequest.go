@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripOpenplatformAddressGetAPIRequest struct {
 // NewAlitripBtripOpenplatformAddressGetRequest 初始化AlitripBtripOpenplatformAddressGetAPIRequest对象
 func NewAlitripBtripOpenplatformAddressGetRequest() *AlitripBtripOpenplatformAddressGetAPIRequest {
 	return &AlitripBtripOpenplatformAddressGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripOpenplatformAddressGetAPIRequest) Reset() {
+	r._rq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripOpenplatformAddressGetAPIRequest) SetRq(_rq *OpenApiJumpInf
 // GetRq Rq Getter
 func (r AlitripBtripOpenplatformAddressGetAPIRequest) GetRq() *OpenApiJumpInfoRq {
 	return r._rq
+}
+
+var poolAlitripBtripOpenplatformAddressGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripOpenplatformAddressGetRequest()
+	},
+}
+
+// GetAlitripBtripOpenplatformAddressGetRequest 从 sync.Pool 获取 AlitripBtripOpenplatformAddressGetAPIRequest
+func GetAlitripBtripOpenplatformAddressGetAPIRequest() *AlitripBtripOpenplatformAddressGetAPIRequest {
+	return poolAlitripBtripOpenplatformAddressGetAPIRequest.Get().(*AlitripBtripOpenplatformAddressGetAPIRequest)
+}
+
+// ReleaseAlitripBtripOpenplatformAddressGetAPIRequest 将 AlitripBtripOpenplatformAddressGetAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripOpenplatformAddressGetAPIRequest(v *AlitripBtripOpenplatformAddressGetAPIRequest) {
+	v.Reset()
+	poolAlitripBtripOpenplatformAddressGetAPIRequest.Put(v)
 }

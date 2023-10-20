@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // DeviceApiQuery 结构体
 type DeviceApiQuery struct {
 	// 园区id集合
@@ -40,4 +44,39 @@ type DeviceApiQuery struct {
 	RunStatus int64 `json:"run_status,omitempty" xml:"run_status,omitempty"`
 	// 是否启用
 	BeRun bool `json:"be_run,omitempty" xml:"be_run,omitempty"`
+}
+
+var poolDeviceApiQuery = sync.Pool{
+	New: func() any {
+		return new(DeviceApiQuery)
+	},
+}
+
+// GetDeviceApiQuery() 从对象池中获取DeviceApiQuery
+func GetDeviceApiQuery() *DeviceApiQuery {
+	return poolDeviceApiQuery.Get().(*DeviceApiQuery)
+}
+
+// ReleaseDeviceApiQuery 释放DeviceApiQuery
+func ReleaseDeviceApiQuery(v *DeviceApiQuery) {
+	v.CampusIdList = v.CampusIdList[:0]
+	v.TemplateCodeList = v.TemplateCodeList[:0]
+	v.UuidList = v.UuidList[:0]
+	v.SpaceIdList = v.SpaceIdList[:0]
+	v.FloorIdList = v.FloorIdList[:0]
+	v.BuildingIdList = v.BuildingIdList[:0]
+	v.Key = ""
+	v.TemplateCode = ""
+	v.TagName = ""
+	v.NameOrCode = ""
+	v.Code = ""
+	v.CampusId = 0
+	v.Limit = 0
+	v.CurrentPage = 0
+	v.FloorId = 0
+	v.SpaceId = 0
+	v.BuildingId = 0
+	v.RunStatus = 0
+	v.BeRun = false
+	poolDeviceApiQuery.Put(v)
 }

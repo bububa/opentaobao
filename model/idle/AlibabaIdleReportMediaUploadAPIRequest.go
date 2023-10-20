@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaIdleReportMediaUploadAPIRequest struct {
 // NewAlibabaIdleReportMediaUploadRequest 初始化AlibabaIdleReportMediaUploadAPIRequest对象
 func NewAlibabaIdleReportMediaUploadRequest() *AlibabaIdleReportMediaUploadAPIRequest {
 	return &AlibabaIdleReportMediaUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleReportMediaUploadAPIRequest) Reset() {
+	r._name = ""
+	r._type = ""
+	r._data = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaIdleReportMediaUploadAPIRequest) SetData(_data *model.File) erro
 // GetData Data Getter
 func (r AlibabaIdleReportMediaUploadAPIRequest) GetData() *model.File {
 	return r._data
+}
+
+var poolAlibabaIdleReportMediaUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleReportMediaUploadRequest()
+	},
+}
+
+// GetAlibabaIdleReportMediaUploadRequest 从 sync.Pool 获取 AlibabaIdleReportMediaUploadAPIRequest
+func GetAlibabaIdleReportMediaUploadAPIRequest() *AlibabaIdleReportMediaUploadAPIRequest {
+	return poolAlibabaIdleReportMediaUploadAPIRequest.Get().(*AlibabaIdleReportMediaUploadAPIRequest)
+}
+
+// ReleaseAlibabaIdleReportMediaUploadAPIRequest 将 AlibabaIdleReportMediaUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleReportMediaUploadAPIRequest(v *AlibabaIdleReportMediaUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleReportMediaUploadAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package ticket
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type AlitripTicketRuleUploadAPIResponse struct {
 	AlitripTicketRuleUploadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripTicketRuleUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripTicketRuleUploadAPIResponseModel).Reset()
+}
+
 // AlitripTicketRuleUploadAPIResponseModel is 【门票API2.0】景点门票规则维护接口 成功返回结果
 type AlitripTicketRuleUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_ticket_rule_upload_response"`
@@ -23,4 +30,27 @@ type AlitripTicketRuleUploadAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *AlitripTicketRuleUploadResultSet `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripTicketRuleUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripTicketRuleUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripTicketRuleUploadAPIResponse)
+	},
+}
+
+// GetAlitripTicketRuleUploadAPIResponse 从 sync.Pool 获取 AlitripTicketRuleUploadAPIResponse
+func GetAlitripTicketRuleUploadAPIResponse() *AlitripTicketRuleUploadAPIResponse {
+	return poolAlitripTicketRuleUploadAPIResponse.Get().(*AlitripTicketRuleUploadAPIResponse)
+}
+
+// ReleaseAlitripTicketRuleUploadAPIResponse 将 AlitripTicketRuleUploadAPIResponse 保存到 sync.Pool
+func ReleaseAlitripTicketRuleUploadAPIResponse(v *AlitripTicketRuleUploadAPIResponse) {
+	v.Reset()
+	poolAlitripTicketRuleUploadAPIResponse.Put(v)
 }

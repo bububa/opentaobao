@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type YunosOsupdateDeviceserviceSearchmodelsAPIRequest struct {
 // NewYunosOsupdateDeviceserviceSearchmodelsRequest 初始化YunosOsupdateDeviceserviceSearchmodelsAPIRequest对象
 func NewYunosOsupdateDeviceserviceSearchmodelsRequest() *YunosOsupdateDeviceserviceSearchmodelsAPIRequest {
 	return &YunosOsupdateDeviceserviceSearchmodelsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosOsupdateDeviceserviceSearchmodelsAPIRequest) Reset() {
+	r._name = ""
+	r._parentId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *YunosOsupdateDeviceserviceSearchmodelsAPIRequest) SetParentId(_parentId
 // GetParentId ParentId Getter
 func (r YunosOsupdateDeviceserviceSearchmodelsAPIRequest) GetParentId() int64 {
 	return r._parentId
+}
+
+var poolYunosOsupdateDeviceserviceSearchmodelsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosOsupdateDeviceserviceSearchmodelsRequest()
+	},
+}
+
+// GetYunosOsupdateDeviceserviceSearchmodelsRequest 从 sync.Pool 获取 YunosOsupdateDeviceserviceSearchmodelsAPIRequest
+func GetYunosOsupdateDeviceserviceSearchmodelsAPIRequest() *YunosOsupdateDeviceserviceSearchmodelsAPIRequest {
+	return poolYunosOsupdateDeviceserviceSearchmodelsAPIRequest.Get().(*YunosOsupdateDeviceserviceSearchmodelsAPIRequest)
+}
+
+// ReleaseYunosOsupdateDeviceserviceSearchmodelsAPIRequest 将 YunosOsupdateDeviceserviceSearchmodelsAPIRequest 放入 sync.Pool
+func ReleaseYunosOsupdateDeviceserviceSearchmodelsAPIRequest(v *YunosOsupdateDeviceserviceSearchmodelsAPIRequest) {
+	v.Reset()
+	poolYunosOsupdateDeviceserviceSearchmodelsAPIRequest.Put(v)
 }

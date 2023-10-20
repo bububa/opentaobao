@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -79,8 +80,44 @@ type TmallServicecenterWorkcardStatusUpdateAPIRequest struct {
 // NewTmallServicecenterWorkcardStatusUpdateRequest 初始化TmallServicecenterWorkcardStatusUpdateAPIRequest对象
 func NewTmallServicecenterWorkcardStatusUpdateRequest() *TmallServicecenterWorkcardStatusUpdateAPIRequest {
 	return &TmallServicecenterWorkcardStatusUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(31),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) Reset() {
+	r._workCardInstallDetailList = r._workCardInstallDetailList[:0]
+	r._updater = ""
+	r._comments = ""
+	r._address = ""
+	r._contactName = ""
+	r._contactPhone = ""
+	r._serviceVoucherPics = ""
+	r._attribute = ""
+	r._serviceCenterCode = ""
+	r._serviceCenterName = ""
+	r._beforeServiceMemo = ""
+	r._afterServiceMemo = ""
+	r._phoneImei = ""
+	r._serviceCenterManagerPhone = ""
+	r._serviceCenterManagerName = ""
+	r._serviceCenterAddress = ""
+	r._serviceFeeDetail = ""
+	r._expressCode = ""
+	r._expressCompany = ""
+	r._buyerId = 0
+	r._effectDate = 0
+	r._workcardId = 0
+	r._expireDate = 0
+	r._status = nil
+	r._updateDate = 0
+	r._type = nil
+	r._serviceDate = 0
+	r._completeDate = 0
+	r._serviceFee = 0
+	r._subStatus = 0
+	r._isVisit = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -501,4 +538,21 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetIsVisit(_isVisit b
 // GetIsVisit IsVisit Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetIsVisit() bool {
 	return r._isVisit
+}
+
+var poolTmallServicecenterWorkcardStatusUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkcardStatusUpdateRequest()
+	},
+}
+
+// GetTmallServicecenterWorkcardStatusUpdateRequest 从 sync.Pool 获取 TmallServicecenterWorkcardStatusUpdateAPIRequest
+func GetTmallServicecenterWorkcardStatusUpdateAPIRequest() *TmallServicecenterWorkcardStatusUpdateAPIRequest {
+	return poolTmallServicecenterWorkcardStatusUpdateAPIRequest.Get().(*TmallServicecenterWorkcardStatusUpdateAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkcardStatusUpdateAPIRequest 将 TmallServicecenterWorkcardStatusUpdateAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkcardStatusUpdateAPIRequest(v *TmallServicecenterWorkcardStatusUpdateAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkcardStatusUpdateAPIRequest.Put(v)
 }

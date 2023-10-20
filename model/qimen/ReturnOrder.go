@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // ReturnOrder 结构体
 type ReturnOrder struct {
 	// ERP的退货入库单编码
@@ -44,4 +48,41 @@ type ReturnOrder struct {
 	SenderInfo *SenderInfo `json:"senderInfo,omitempty" xml:"senderInfo,omitempty"`
 	// 退货单多次入库
 	ConfirmType int64 `json:"confirmType,omitempty" xml:"confirmType,omitempty"`
+}
+
+var poolReturnOrder = sync.Pool{
+	New: func() any {
+		return new(ReturnOrder)
+	},
+}
+
+// GetReturnOrder() 从对象池中获取ReturnOrder
+func GetReturnOrder() *ReturnOrder {
+	return poolReturnOrder.Get().(*ReturnOrder)
+}
+
+// ReleaseReturnOrder 释放ReturnOrder
+func ReleaseReturnOrder(v *ReturnOrder) {
+	v.ReturnOrderCode = ""
+	v.ReturnOrderId = ""
+	v.WarehouseCode = ""
+	v.OutBizCode = ""
+	v.OrderType = ""
+	v.OrderConfirmTime = ""
+	v.LogisticsCode = ""
+	v.LogisticsName = ""
+	v.ExpressCode = ""
+	v.ReturnReason = ""
+	v.Remark = ""
+	v.OrderFlag = ""
+	v.PreDeliveryOrderCode = ""
+	v.PreDeliveryOrderId = ""
+	v.BuyerNick = ""
+	v.SourcePlatformCode = ""
+	v.SourcePlatformName = ""
+	v.ShopNick = ""
+	v.SellerNick = ""
+	v.SenderInfo = nil
+	v.ConfirmType = 0
+	poolReturnOrder.Put(v)
 }

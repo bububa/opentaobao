@@ -1,5 +1,9 @@
 package feedflow
 
+import (
+	"sync"
+)
+
 // LabelDto 结构体
 type LabelDto struct {
 	// 选项结构
@@ -16,4 +20,27 @@ type LabelDto struct {
 	LabelId int64 `json:"label_id,omitempty" xml:"label_id,omitempty"`
 	// 定向id，可通过标签接口获取
 	TargetId int64 `json:"target_id,omitempty" xml:"target_id,omitempty"`
+}
+
+var poolLabelDto = sync.Pool{
+	New: func() any {
+		return new(LabelDto)
+	},
+}
+
+// GetLabelDto() 从对象池中获取LabelDto
+func GetLabelDto() *LabelDto {
+	return poolLabelDto.Get().(*LabelDto)
+}
+
+// ReleaseLabelDto 释放LabelDto
+func ReleaseLabelDto(v *LabelDto) {
+	v.Options = v.Options[:0]
+	v.LabelValue = ""
+	v.TargetType = ""
+	v.LabelName = ""
+	v.LabelDesc = ""
+	v.LabelId = 0
+	v.TargetId = 0
+	poolLabelDto.Put(v)
 }

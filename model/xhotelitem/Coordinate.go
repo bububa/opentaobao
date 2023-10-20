@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // Coordinate 结构体
 type Coordinate struct {
 	// 飞猪城市中文名称
@@ -18,4 +22,28 @@ type Coordinate struct {
 	City int64 `json:"city,omitempty" xml:"city,omitempty"`
 	// 飞猪国家编码
 	Country int64 `json:"country,omitempty" xml:"country,omitempty"`
+}
+
+var poolCoordinate = sync.Pool{
+	New: func() any {
+		return new(Coordinate)
+	},
+}
+
+// GetCoordinate() 从对象池中获取Coordinate
+func GetCoordinate() *Coordinate {
+	return poolCoordinate.Get().(*Coordinate)
+}
+
+// ReleaseCoordinate 释放Coordinate
+func ReleaseCoordinate(v *Coordinate) {
+	v.CityCnName = ""
+	v.CityEnName = ""
+	v.OuterId = ""
+	v.Latitude = ""
+	v.Longitude = ""
+	v.BatchId = 0
+	v.City = 0
+	v.Country = 0
+	poolCoordinate.Put(v)
 }

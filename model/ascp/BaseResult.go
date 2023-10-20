@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // BaseResult 结构体
 type BaseResult struct {
 	// 通常用于success为false时的页面错误类型判定
@@ -12,4 +16,25 @@ type BaseResult struct {
 	Result *HiErpOrderResp `json:"result,omitempty" xml:"result,omitempty"`
 	// false: 失败   true: 成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolBaseResult = sync.Pool{
+	New: func() any {
+		return new(BaseResult)
+	},
+}
+
+// GetBaseResult() 从对象池中获取BaseResult
+func GetBaseResult() *BaseResult {
+	return poolBaseResult.Get().(*BaseResult)
+}
+
+// ReleaseBaseResult 释放BaseResult
+func ReleaseBaseResult(v *BaseResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Msg = ""
+	v.Result = nil
+	v.Success = false
+	poolBaseResult.Put(v)
 }

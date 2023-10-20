@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderActivity 结构体
 type OrderActivity struct {
 	// 渠道活动ID
@@ -18,4 +22,28 @@ type OrderActivity struct {
 	DiscountMerchantFee int64 `json:"discount_merchant_fee,omitempty" xml:"discount_merchant_fee,omitempty"`
 	// 活动优惠平台分摊
 	DiscountPlatformFee int64 `json:"discount_platform_fee,omitempty" xml:"discount_platform_fee,omitempty"`
+}
+
+var poolOrderActivity = sync.Pool{
+	New: func() any {
+		return new(OrderActivity)
+	},
+}
+
+// GetOrderActivity() 从对象池中获取OrderActivity
+func GetOrderActivity() *OrderActivity {
+	return poolOrderActivity.Get().(*OrderActivity)
+}
+
+// ReleaseOrderActivity 释放OrderActivity
+func ReleaseOrderActivity(v *OrderActivity) {
+	v.ChannelActivityId = ""
+	v.BizActivityId = ""
+	v.MerchantActivityId = ""
+	v.ActivityName = ""
+	v.ActivityType = ""
+	v.DiscountFee = 0
+	v.DiscountMerchantFee = 0
+	v.DiscountPlatformFee = 0
+	poolOrderActivity.Put(v)
 }

@@ -2,6 +2,7 @@ package flight
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripPolicyNormalUploadAPIRequest struct {
 // NewAlitripPolicyNormalUploadRequest 初始化AlitripPolicyNormalUploadAPIRequest对象
 func NewAlitripPolicyNormalUploadRequest() *AlitripPolicyNormalUploadAPIRequest {
 	return &AlitripPolicyNormalUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripPolicyNormalUploadAPIRequest) Reset() {
+	r._paramPolicyCreateRequestDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripPolicyNormalUploadAPIRequest) SetParamPolicyCreateRequestDTO(_pa
 // GetParamPolicyCreateRequestDTO ParamPolicyCreateRequestDTO Getter
 func (r AlitripPolicyNormalUploadAPIRequest) GetParamPolicyCreateRequestDTO() *PolicyCreateRequestDto {
 	return r._paramPolicyCreateRequestDTO
+}
+
+var poolAlitripPolicyNormalUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripPolicyNormalUploadRequest()
+	},
+}
+
+// GetAlitripPolicyNormalUploadRequest 从 sync.Pool 获取 AlitripPolicyNormalUploadAPIRequest
+func GetAlitripPolicyNormalUploadAPIRequest() *AlitripPolicyNormalUploadAPIRequest {
+	return poolAlitripPolicyNormalUploadAPIRequest.Get().(*AlitripPolicyNormalUploadAPIRequest)
+}
+
+// ReleaseAlitripPolicyNormalUploadAPIRequest 将 AlitripPolicyNormalUploadAPIRequest 放入 sync.Pool
+func ReleaseAlitripPolicyNormalUploadAPIRequest(v *AlitripPolicyNormalUploadAPIRequest) {
+	v.Reset()
+	poolAlitripPolicyNormalUploadAPIRequest.Put(v)
 }

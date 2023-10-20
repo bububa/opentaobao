@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // PosPaymentDto 结构体
 type PosPaymentDto struct {
 	// 扩展参数。注：POS中的支付大类、小类，通过extendParams传。支付大类属性名： paymentType，支付小类属性名： paymentSubType。
@@ -16,4 +20,27 @@ type PosPaymentDto struct {
 	PaymentLineNo int64 `json:"payment_line_no,omitempty" xml:"payment_line_no,omitempty"`
 	// 1:支付，2:优惠
 	PayType int64 `json:"pay_type,omitempty" xml:"pay_type,omitempty"`
+}
+
+var poolPosPaymentDto = sync.Pool{
+	New: func() any {
+		return new(PosPaymentDto)
+	},
+}
+
+// GetPosPaymentDto() 从对象池中获取PosPaymentDto
+func GetPosPaymentDto() *PosPaymentDto {
+	return poolPosPaymentDto.Get().(*PosPaymentDto)
+}
+
+// ReleasePosPaymentDto 释放PosPaymentDto
+func ReleasePosPaymentDto(v *PosPaymentDto) {
+	v.ExtendParams = ""
+	v.PaymentCode = ""
+	v.PaymentName = ""
+	v.PaymentNo = ""
+	v.PaymentAmount = 0
+	v.PaymentLineNo = 0
+	v.PayType = 0
+	poolPosPaymentDto.Put(v)
 }

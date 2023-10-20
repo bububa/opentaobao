@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmPointChkpntbypayAPIRequest struct {
 // NewAlibabaAlscCrmPointChkpntbypayRequest 初始化AlibabaAlscCrmPointChkpntbypayAPIRequest对象
 func NewAlibabaAlscCrmPointChkpntbypayRequest() *AlibabaAlscCrmPointChkpntbypayAPIRequest {
 	return &AlibabaAlscCrmPointChkpntbypayAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmPointChkpntbypayAPIRequest) Reset() {
+	r._paramConsumePointByPayOpenReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmPointChkpntbypayAPIRequest) SetParamConsumePointByPayOpen
 // GetParamConsumePointByPayOpenReq ParamConsumePointByPayOpenReq Getter
 func (r AlibabaAlscCrmPointChkpntbypayAPIRequest) GetParamConsumePointByPayOpenReq() *ConsumePointByPayOpenReq {
 	return r._paramConsumePointByPayOpenReq
+}
+
+var poolAlibabaAlscCrmPointChkpntbypayAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmPointChkpntbypayRequest()
+	},
+}
+
+// GetAlibabaAlscCrmPointChkpntbypayRequest 从 sync.Pool 获取 AlibabaAlscCrmPointChkpntbypayAPIRequest
+func GetAlibabaAlscCrmPointChkpntbypayAPIRequest() *AlibabaAlscCrmPointChkpntbypayAPIRequest {
+	return poolAlibabaAlscCrmPointChkpntbypayAPIRequest.Get().(*AlibabaAlscCrmPointChkpntbypayAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmPointChkpntbypayAPIRequest 将 AlibabaAlscCrmPointChkpntbypayAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmPointChkpntbypayAPIRequest(v *AlibabaAlscCrmPointChkpntbypayAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmPointChkpntbypayAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.usergrowth.ad.material.audit
 //
 // 素材审核
-func TaobaoUsergrowthAdMaterialAudit(clt *core.SDKClient, req *usergrowth2.TaobaoUsergrowthAdMaterialAuditAPIRequest, session string) (*usergrowth2.TaobaoUsergrowthAdMaterialAuditAPIResponse, error) {
-	var resp usergrowth2.TaobaoUsergrowthAdMaterialAuditAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUsergrowthAdMaterialAudit(clt *core.SDKClient, req *usergrowth2.TaobaoUsergrowthAdMaterialAuditAPIRequest, resp *usergrowth2.TaobaoUsergrowthAdMaterialAuditAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

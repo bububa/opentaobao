@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // AxinFundUpdateDto 结构体
 type AxinFundUpdateDto struct {
 	// 请求版本号，用于幂等校验
@@ -14,4 +18,26 @@ type AxinFundUpdateDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 资金单ID
 	FundId int64 `json:"fund_id,omitempty" xml:"fund_id,omitempty"`
+}
+
+var poolAxinFundUpdateDto = sync.Pool{
+	New: func() any {
+		return new(AxinFundUpdateDto)
+	},
+}
+
+// GetAxinFundUpdateDto() 从对象池中获取AxinFundUpdateDto
+func GetAxinFundUpdateDto() *AxinFundUpdateDto {
+	return poolAxinFundUpdateDto.Get().(*AxinFundUpdateDto)
+}
+
+// ReleaseAxinFundUpdateDto 释放AxinFundUpdateDto
+func ReleaseAxinFundUpdateDto(v *AxinFundUpdateDto) {
+	v.ReqVersion = ""
+	v.Attributes = ""
+	v.AlipayOrderId = ""
+	v.OuterOrderId = ""
+	v.Status = 0
+	v.FundId = 0
+	poolAxinFundUpdateDto.Put(v)
 }

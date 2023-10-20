@@ -2,6 +2,7 @@ package fivee
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoFiveeCompanyUploadAPIResponse struct {
 	model.CommonResponse
 	TaobaoFiveeCompanyUploadAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoFiveeCompanyUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFiveeCompanyUploadAPIResponseModel).Reset()
 }
 
 // TaobaoFiveeCompanyUploadAPIResponseModel is 上传商信息接口 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoFiveeCompanyUploadAPIResponseModel struct {
 	CodeT int64 `json:"code_t,omitempty" xml:"code_t,omitempty"`
 	// 是否成功
 	SuccessT bool `json:"success_t,omitempty" xml:"success_t,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFiveeCompanyUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = ""
+	m.Message = ""
+	m.CodeT = 0
+	m.SuccessT = false
+}
+
+var poolTaobaoFiveeCompanyUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFiveeCompanyUploadAPIResponse)
+	},
+}
+
+// GetTaobaoFiveeCompanyUploadAPIResponse 从 sync.Pool 获取 TaobaoFiveeCompanyUploadAPIResponse
+func GetTaobaoFiveeCompanyUploadAPIResponse() *TaobaoFiveeCompanyUploadAPIResponse {
+	return poolTaobaoFiveeCompanyUploadAPIResponse.Get().(*TaobaoFiveeCompanyUploadAPIResponse)
+}
+
+// ReleaseTaobaoFiveeCompanyUploadAPIResponse 将 TaobaoFiveeCompanyUploadAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFiveeCompanyUploadAPIResponse(v *TaobaoFiveeCompanyUploadAPIResponse) {
+	v.Reset()
+	poolTaobaoFiveeCompanyUploadAPIResponse.Put(v)
 }

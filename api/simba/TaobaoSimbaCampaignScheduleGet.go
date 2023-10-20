@@ -9,11 +9,6 @@ import (
 // taobao.simba.campaign.schedule.get
 //
 // 取得一个推广计划的分时折扣设置
-func TaobaoSimbaCampaignScheduleGet(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignScheduleGetAPIRequest, session string) (*simba.TaobaoSimbaCampaignScheduleGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaCampaignScheduleGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaCampaignScheduleGet(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignScheduleGetAPIRequest, resp *simba.TaobaoSimbaCampaignScheduleGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

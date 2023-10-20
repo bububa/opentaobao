@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // ExternalRefundGoodsWaybillRequest 结构体
 type ExternalRefundGoodsWaybillRequest struct {
 	// 外部退款单号
@@ -12,4 +16,25 @@ type ExternalRefundGoodsWaybillRequest struct {
 	LogisticsCompanyCode string `json:"logistics_company_code,omitempty" xml:"logistics_company_code,omitempty"`
 	// 物流单号
 	LogisticsWaybillNo string `json:"logistics_waybill_no,omitempty" xml:"logistics_waybill_no,omitempty"`
+}
+
+var poolExternalRefundGoodsWaybillRequest = sync.Pool{
+	New: func() any {
+		return new(ExternalRefundGoodsWaybillRequest)
+	},
+}
+
+// GetExternalRefundGoodsWaybillRequest() 从对象池中获取ExternalRefundGoodsWaybillRequest
+func GetExternalRefundGoodsWaybillRequest() *ExternalRefundGoodsWaybillRequest {
+	return poolExternalRefundGoodsWaybillRequest.Get().(*ExternalRefundGoodsWaybillRequest)
+}
+
+// ReleaseExternalRefundGoodsWaybillRequest 释放ExternalRefundGoodsWaybillRequest
+func ReleaseExternalRefundGoodsWaybillRequest(v *ExternalRefundGoodsWaybillRequest) {
+	v.OutRefundNo = ""
+	v.RefundNo = ""
+	v.LogisticsCompanyName = ""
+	v.LogisticsCompanyCode = ""
+	v.LogisticsWaybillNo = ""
+	poolExternalRefundGoodsWaybillRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpTargetAdPlanTagGetAPIRequest struct {
 // NewAlibabaScbpTargetAdPlanTagGetRequest 初始化AlibabaScbpTargetAdPlanTagGetAPIRequest对象
 func NewAlibabaScbpTargetAdPlanTagGetRequest() *AlibabaScbpTargetAdPlanTagGetAPIRequest {
 	return &AlibabaScbpTargetAdPlanTagGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpTargetAdPlanTagGetAPIRequest) Reset() {
+	r._campaignId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpTargetAdPlanTagGetAPIRequest) SetCampaignId(_campaignId int6
 // GetCampaignId CampaignId Getter
 func (r AlibabaScbpTargetAdPlanTagGetAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
+}
+
+var poolAlibabaScbpTargetAdPlanTagGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpTargetAdPlanTagGetRequest()
+	},
+}
+
+// GetAlibabaScbpTargetAdPlanTagGetRequest 从 sync.Pool 获取 AlibabaScbpTargetAdPlanTagGetAPIRequest
+func GetAlibabaScbpTargetAdPlanTagGetAPIRequest() *AlibabaScbpTargetAdPlanTagGetAPIRequest {
+	return poolAlibabaScbpTargetAdPlanTagGetAPIRequest.Get().(*AlibabaScbpTargetAdPlanTagGetAPIRequest)
+}
+
+// ReleaseAlibabaScbpTargetAdPlanTagGetAPIRequest 将 AlibabaScbpTargetAdPlanTagGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpTargetAdPlanTagGetAPIRequest(v *AlibabaScbpTargetAdPlanTagGetAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpTargetAdPlanTagGetAPIRequest.Put(v)
 }

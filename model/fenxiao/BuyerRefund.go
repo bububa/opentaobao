@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // BuyerRefund 结构体
 type BuyerRefund struct {
 	// 消费者订单退款创建时间
@@ -34,4 +38,36 @@ type BuyerRefund struct {
 	ReturnGoodsQuantity int64 `json:"return_goods_quantity,omitempty" xml:"return_goods_quantity,omitempty"`
 	// 买家是否退货
 	NeedReturnGoods bool `json:"need_return_goods,omitempty" xml:"need_return_goods,omitempty"`
+}
+
+var poolBuyerRefund = sync.Pool{
+	New: func() any {
+		return new(BuyerRefund)
+	},
+}
+
+// GetBuyerRefund() 从对象池中获取BuyerRefund
+func GetBuyerRefund() *BuyerRefund {
+	return poolBuyerRefund.Get().(*BuyerRefund)
+}
+
+// ReleaseBuyerRefund 释放BuyerRefund
+func ReleaseBuyerRefund(v *BuyerRefund) {
+	v.RefundCreateTime = ""
+	v.GoodsStatusDesc = ""
+	v.RefundReason = ""
+	v.RefundDesc = ""
+	v.BuyerNick = ""
+	v.Modified = ""
+	v.OpenBuyerId = ""
+	v.GmtModified = ""
+	v.SubOrderId = 0
+	v.RefundId = 0
+	v.BizOrderId = 0
+	v.RefundStatus = 0
+	v.ReturnFee = 0
+	v.ToSellerFee = 0
+	v.ReturnGoodsQuantity = 0
+	v.NeedReturnGoods = false
+	poolBuyerRefund.Put(v)
 }

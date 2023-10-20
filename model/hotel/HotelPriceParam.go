@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // HotelPriceParam 结构体
 type HotelPriceParam struct {
 	// 版本控制(3.0支持信用住)
@@ -16,4 +20,27 @@ type HotelPriceParam struct {
 	StartDate string `json:"start_date,omitempty" xml:"start_date,omitempty"`
 	// 请求类型：0批量请求；1实时请求
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolHotelPriceParam = sync.Pool{
+	New: func() any {
+		return new(HotelPriceParam)
+	},
+}
+
+// GetHotelPriceParam() 从对象池中获取HotelPriceParam
+func GetHotelPriceParam() *HotelPriceParam {
+	return poolHotelPriceParam.Get().(*HotelPriceParam)
+}
+
+// ReleaseHotelPriceParam 释放HotelPriceParam
+func ReleaseHotelPriceParam(v *HotelPriceParam) {
+	v.DataVersion = ""
+	v.EndDate = ""
+	v.OpenId = ""
+	v.Pid = ""
+	v.ShidCityCode = ""
+	v.StartDate = ""
+	v.Type = 0
+	poolHotelPriceParam.Put(v)
 }

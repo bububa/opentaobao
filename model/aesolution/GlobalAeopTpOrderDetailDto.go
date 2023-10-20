@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // GlobalAeopTpOrderDetailDto 结构体
 type GlobalAeopTpOrderDetailDto struct {
 	// Order Message list(deprecated)
@@ -86,4 +90,62 @@ type GlobalAeopTpOrderDetailDto struct {
 	OrderDiscountInfo *GlobalMoneyStr `json:"order_discount_info,omitempty" xml:"order_discount_info,omitempty"`
 	// phone order or not
 	IsPhone bool `json:"is_phone,omitempty" xml:"is_phone,omitempty"`
+}
+
+var poolGlobalAeopTpOrderDetailDto = sync.Pool{
+	New: func() any {
+		return new(GlobalAeopTpOrderDetailDto)
+	},
+}
+
+// GetGlobalAeopTpOrderDetailDto() 从对象池中获取GlobalAeopTpOrderDetailDto
+func GetGlobalAeopTpOrderDetailDto() *GlobalAeopTpOrderDetailDto {
+	return poolGlobalAeopTpOrderDetailDto.Get().(*GlobalAeopTpOrderDetailDto)
+}
+
+// ReleaseGlobalAeopTpOrderDetailDto 释放GlobalAeopTpOrderDetailDto
+func ReleaseGlobalAeopTpOrderDetailDto(v *GlobalAeopTpOrderDetailDto) {
+	v.OrderMsgList = v.OrderMsgList[:0]
+	v.ChildOrderExtInfoList = v.ChildOrderExtInfoList[:0]
+	v.LogisticInfoList = v.LogisticInfoList[:0]
+	v.OprLogDtoList = v.OprLogDtoList[:0]
+	v.ChildOrderList = v.ChildOrderList[:0]
+	v.GmtModified = ""
+	v.GmtTradeEnd = ""
+	v.Buyerloginid = ""
+	v.Memo = ""
+	v.LogisitcsEscrowFeeRate = ""
+	v.SettlementCurrency = ""
+	v.PayAmountBySettlementCur = ""
+	v.FrozenStatus = ""
+	v.IssueStatus = ""
+	v.LogisticsStatus = ""
+	v.SellerSignerFullname = ""
+	v.OverTimeLeft = ""
+	v.OrderEndReason = ""
+	v.GmtCreate = ""
+	v.SellerOperatorLoginId = ""
+	v.PaymentType = ""
+	v.OrderStatus = ""
+	v.BuyerSignerFullname = ""
+	v.GmtPaySuccess = ""
+	v.LoanStatus = ""
+	v.SellerOperatorAliidloginid = ""
+	v.FundStatus = ""
+	v.CpfNumber = ""
+	v.OfflinePickupType = ""
+	v.OfflinePickupPointCode = ""
+	v.BuyerInfo = nil
+	v.ReceiptAddress = nil
+	v.LogisticsAmount = nil
+	v.IssueInfo = nil
+	v.RefundInfo = nil
+	v.Id = 0
+	v.OrderAmount = nil
+	v.InitOderAmount = nil
+	v.LoanInfo = nil
+	v.EscrowFee = nil
+	v.OrderDiscountInfo = nil
+	v.IsPhone = false
+	poolGlobalAeopTpOrderDetailDto.Put(v)
 }

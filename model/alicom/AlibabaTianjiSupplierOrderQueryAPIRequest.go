@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTianjiSupplierOrderQueryAPIRequest struct {
 // NewAlibabaTianjiSupplierOrderQueryRequest 初始化AlibabaTianjiSupplierOrderQueryAPIRequest对象
 func NewAlibabaTianjiSupplierOrderQueryRequest() *AlibabaTianjiSupplierOrderQueryAPIRequest {
 	return &AlibabaTianjiSupplierOrderQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTianjiSupplierOrderQueryAPIRequest) Reset() {
+	r._paramSupplierTopQueryModel = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTianjiSupplierOrderQueryAPIRequest) SetParamSupplierTopQueryMode
 // GetParamSupplierTopQueryModel ParamSupplierTopQueryModel Getter
 func (r AlibabaTianjiSupplierOrderQueryAPIRequest) GetParamSupplierTopQueryModel() *SupplierTopQueryModel {
 	return r._paramSupplierTopQueryModel
+}
+
+var poolAlibabaTianjiSupplierOrderQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTianjiSupplierOrderQueryRequest()
+	},
+}
+
+// GetAlibabaTianjiSupplierOrderQueryRequest 从 sync.Pool 获取 AlibabaTianjiSupplierOrderQueryAPIRequest
+func GetAlibabaTianjiSupplierOrderQueryAPIRequest() *AlibabaTianjiSupplierOrderQueryAPIRequest {
+	return poolAlibabaTianjiSupplierOrderQueryAPIRequest.Get().(*AlibabaTianjiSupplierOrderQueryAPIRequest)
+}
+
+// ReleaseAlibabaTianjiSupplierOrderQueryAPIRequest 将 AlibabaTianjiSupplierOrderQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTianjiSupplierOrderQueryAPIRequest(v *AlibabaTianjiSupplierOrderQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaTianjiSupplierOrderQueryAPIRequest.Put(v)
 }

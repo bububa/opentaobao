@@ -9,11 +9,6 @@ import (
 // taobao.wlb.wms.sku.update
 //
 // 商品信息的更新
-func TaobaoWlbWmsSkuUpdate(clt *core.SDKClient, req *wms.TaobaoWlbWmsSkuUpdateAPIRequest, session string) (*wms.TaobaoWlbWmsSkuUpdateAPIResponse, error) {
-	var resp wms.TaobaoWlbWmsSkuUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWlbWmsSkuUpdate(clt *core.SDKClient, req *wms.TaobaoWlbWmsSkuUpdateAPIRequest, resp *wms.TaobaoWlbWmsSkuUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

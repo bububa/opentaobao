@@ -2,6 +2,7 @@ package idleisv
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleIsvOrderAdjustpriceAPIRequest struct {
 // NewAlibabaIdleIsvOrderAdjustpriceRequest 初始化AlibabaIdleIsvOrderAdjustpriceAPIRequest对象
 func NewAlibabaIdleIsvOrderAdjustpriceRequest() *AlibabaIdleIsvOrderAdjustpriceAPIRequest {
 	return &AlibabaIdleIsvOrderAdjustpriceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleIsvOrderAdjustpriceAPIRequest) Reset() {
+	r._paramAdjustOrderPrice = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleIsvOrderAdjustpriceAPIRequest) SetParamAdjustOrderPrice(_par
 // GetParamAdjustOrderPrice ParamAdjustOrderPrice Getter
 func (r AlibabaIdleIsvOrderAdjustpriceAPIRequest) GetParamAdjustOrderPrice() *IsvAdjustOrderPriceDto {
 	return r._paramAdjustOrderPrice
+}
+
+var poolAlibabaIdleIsvOrderAdjustpriceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleIsvOrderAdjustpriceRequest()
+	},
+}
+
+// GetAlibabaIdleIsvOrderAdjustpriceRequest 从 sync.Pool 获取 AlibabaIdleIsvOrderAdjustpriceAPIRequest
+func GetAlibabaIdleIsvOrderAdjustpriceAPIRequest() *AlibabaIdleIsvOrderAdjustpriceAPIRequest {
+	return poolAlibabaIdleIsvOrderAdjustpriceAPIRequest.Get().(*AlibabaIdleIsvOrderAdjustpriceAPIRequest)
+}
+
+// ReleaseAlibabaIdleIsvOrderAdjustpriceAPIRequest 将 AlibabaIdleIsvOrderAdjustpriceAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleIsvOrderAdjustpriceAPIRequest(v *AlibabaIdleIsvOrderAdjustpriceAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleIsvOrderAdjustpriceAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.wdk.equipment.conveyor.conveyorinfo.get
 //
 // 获取五道口悬挂链信息
-func TaobaoWdkEquipmentConveyorConveyorinfoGet(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorConveyorinfoGetAPIRequest, session string) (*wdk.TaobaoWdkEquipmentConveyorConveyorinfoGetAPIResponse, error) {
-	var resp wdk.TaobaoWdkEquipmentConveyorConveyorinfoGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWdkEquipmentConveyorConveyorinfoGet(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorConveyorinfoGetAPIRequest, resp *wdk.TaobaoWdkEquipmentConveyorConveyorinfoGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

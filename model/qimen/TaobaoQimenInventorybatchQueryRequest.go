@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // TaobaoQimenInventorybatchQueryRequest 结构体
 type TaobaoQimenInventorybatchQueryRequest struct {
 	// 货主编码，string(50)，必填
@@ -14,4 +18,26 @@ type TaobaoQimenInventorybatchQueryRequest struct {
 	Page int64 `json:"page,omitempty" xml:"page,omitempty"`
 	// 每页条数(最多 100 条)，必填
 	PageSize int64 `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
+}
+
+var poolTaobaoQimenInventorybatchQueryRequest = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenInventorybatchQueryRequest)
+	},
+}
+
+// GetTaobaoQimenInventorybatchQueryRequest() 从对象池中获取TaobaoQimenInventorybatchQueryRequest
+func GetTaobaoQimenInventorybatchQueryRequest() *TaobaoQimenInventorybatchQueryRequest {
+	return poolTaobaoQimenInventorybatchQueryRequest.Get().(*TaobaoQimenInventorybatchQueryRequest)
+}
+
+// ReleaseTaobaoQimenInventorybatchQueryRequest 释放TaobaoQimenInventorybatchQueryRequest
+func ReleaseTaobaoQimenInventorybatchQueryRequest(v *TaobaoQimenInventorybatchQueryRequest) {
+	v.OwnerCode = ""
+	v.WarehouseCode = ""
+	v.ItemCode = ""
+	v.ItemId = ""
+	v.Page = 0
+	v.PageSize = 0
+	poolTaobaoQimenInventorybatchQueryRequest.Put(v)
 }

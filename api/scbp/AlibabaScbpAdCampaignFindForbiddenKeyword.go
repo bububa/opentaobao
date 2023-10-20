@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.ad.campaign.find.forbidden.keyword
 //
 // 查询屏蔽词
-func AlibabaScbpAdCampaignFindForbiddenKeyword(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest, session string) (*scbp.AlibabaScbpAdCampaignFindForbiddenKeywordAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdCampaignFindForbiddenKeywordAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAdCampaignFindForbiddenKeyword(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest, resp *scbp.AlibabaScbpAdCampaignFindForbiddenKeywordAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

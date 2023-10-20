@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaHtcouponFuluPhonechargeCallbackAPIResponse struct {
 	AlibabaHtcouponFuluPhonechargeCallbackAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaHtcouponFuluPhonechargeCallbackAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaHtcouponFuluPhonechargeCallbackAPIResponseModel).Reset()
+}
+
 // AlibabaHtcouponFuluPhonechargeCallbackAPIResponseModel is 话费充值回调 成功返回结果
 type AlibabaHtcouponFuluPhonechargeCallbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_htcoupon_fulu_phonecharge_callback_response"`
@@ -24,4 +31,28 @@ type AlibabaHtcouponFuluPhonechargeCallbackAPIResponseModel struct {
 	ReturnMessage string `json:"return_message,omitempty" xml:"return_message,omitempty"`
 	// 返回码描述
 	ReturnCode string `json:"return_code,omitempty" xml:"return_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaHtcouponFuluPhonechargeCallbackAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ReturnMessage = ""
+	m.ReturnCode = ""
+}
+
+var poolAlibabaHtcouponFuluPhonechargeCallbackAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaHtcouponFuluPhonechargeCallbackAPIResponse)
+	},
+}
+
+// GetAlibabaHtcouponFuluPhonechargeCallbackAPIResponse 从 sync.Pool 获取 AlibabaHtcouponFuluPhonechargeCallbackAPIResponse
+func GetAlibabaHtcouponFuluPhonechargeCallbackAPIResponse() *AlibabaHtcouponFuluPhonechargeCallbackAPIResponse {
+	return poolAlibabaHtcouponFuluPhonechargeCallbackAPIResponse.Get().(*AlibabaHtcouponFuluPhonechargeCallbackAPIResponse)
+}
+
+// ReleaseAlibabaHtcouponFuluPhonechargeCallbackAPIResponse 将 AlibabaHtcouponFuluPhonechargeCallbackAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaHtcouponFuluPhonechargeCallbackAPIResponse(v *AlibabaHtcouponFuluPhonechargeCallbackAPIResponse) {
+	v.Reset()
+	poolAlibabaHtcouponFuluPhonechargeCallbackAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoQimenStoreitemQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenStoreitemQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoQimenStoreitemQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoQimenStoreitemQueryAPIResponseModel).Reset()
 }
 
 // TaobaoQimenStoreitemQueryAPIResponseModel is 门店关联商品查询接口 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoQimenStoreitemQueryAPIResponseModel struct {
 	QimenCode string `json:"qimen_code,omitempty" xml:"qimen_code,omitempty"`
 	// 商品总数
 	TotalLines int64 `json:"total_lines,omitempty" xml:"total_lines,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoQimenStoreitemQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ItemIds = m.ItemIds[:0]
+	m.Message = ""
+	m.Flag = ""
+	m.QimenCode = ""
+	m.TotalLines = 0
+}
+
+var poolTaobaoQimenStoreitemQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenStoreitemQueryAPIResponse)
+	},
+}
+
+// GetTaobaoQimenStoreitemQueryAPIResponse 从 sync.Pool 获取 TaobaoQimenStoreitemQueryAPIResponse
+func GetTaobaoQimenStoreitemQueryAPIResponse() *TaobaoQimenStoreitemQueryAPIResponse {
+	return poolTaobaoQimenStoreitemQueryAPIResponse.Get().(*TaobaoQimenStoreitemQueryAPIResponse)
+}
+
+// ReleaseTaobaoQimenStoreitemQueryAPIResponse 将 TaobaoQimenStoreitemQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoQimenStoreitemQueryAPIResponse(v *TaobaoQimenStoreitemQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoQimenStoreitemQueryAPIResponse.Put(v)
 }

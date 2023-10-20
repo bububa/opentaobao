@@ -2,6 +2,7 @@ package c2m
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoSebpOrganizationGetinviteinfoAPIRequest struct {
 // NewTaobaoSebpOrganizationGetinviteinfoRequest 初始化TaobaoSebpOrganizationGetinviteinfoAPIRequest对象
 func NewTaobaoSebpOrganizationGetinviteinfoRequest() *TaobaoSebpOrganizationGetinviteinfoAPIRequest {
 	return &TaobaoSebpOrganizationGetinviteinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSebpOrganizationGetinviteinfoAPIRequest) Reset() {
+	r._modifyDate = ""
+	r._pageNum = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoSebpOrganizationGetinviteinfoAPIRequest) SetPageNum(_pageNum int6
 // GetPageNum PageNum Getter
 func (r TaobaoSebpOrganizationGetinviteinfoAPIRequest) GetPageNum() int64 {
 	return r._pageNum
+}
+
+var poolTaobaoSebpOrganizationGetinviteinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSebpOrganizationGetinviteinfoRequest()
+	},
+}
+
+// GetTaobaoSebpOrganizationGetinviteinfoRequest 从 sync.Pool 获取 TaobaoSebpOrganizationGetinviteinfoAPIRequest
+func GetTaobaoSebpOrganizationGetinviteinfoAPIRequest() *TaobaoSebpOrganizationGetinviteinfoAPIRequest {
+	return poolTaobaoSebpOrganizationGetinviteinfoAPIRequest.Get().(*TaobaoSebpOrganizationGetinviteinfoAPIRequest)
+}
+
+// ReleaseTaobaoSebpOrganizationGetinviteinfoAPIRequest 将 TaobaoSebpOrganizationGetinviteinfoAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSebpOrganizationGetinviteinfoAPIRequest(v *TaobaoSebpOrganizationGetinviteinfoAPIRequest) {
+	v.Reset()
+	poolTaobaoSebpOrganizationGetinviteinfoAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package rail
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -26,8 +27,17 @@ type AlitripRailIrDivisionGetAPIRequest struct {
 // NewAlitripRailIrDivisionGetRequest 初始化AlitripRailIrDivisionGetAPIRequest对象
 func NewAlitripRailIrDivisionGetRequest() *AlitripRailIrDivisionGetAPIRequest {
 	return &AlitripRailIrDivisionGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripRailIrDivisionGetAPIRequest) Reset() {
+	r._agentId = 0
+	r._level = 0
+	r._pageSize = 0
+	r._pageIndex = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -97,4 +107,21 @@ func (r *AlitripRailIrDivisionGetAPIRequest) SetPageIndex(_pageIndex int64) erro
 // GetPageIndex PageIndex Getter
 func (r AlitripRailIrDivisionGetAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
+}
+
+var poolAlitripRailIrDivisionGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripRailIrDivisionGetRequest()
+	},
+}
+
+// GetAlitripRailIrDivisionGetRequest 从 sync.Pool 获取 AlitripRailIrDivisionGetAPIRequest
+func GetAlitripRailIrDivisionGetAPIRequest() *AlitripRailIrDivisionGetAPIRequest {
+	return poolAlitripRailIrDivisionGetAPIRequest.Get().(*AlitripRailIrDivisionGetAPIRequest)
+}
+
+// ReleaseAlitripRailIrDivisionGetAPIRequest 将 AlitripRailIrDivisionGetAPIRequest 放入 sync.Pool
+func ReleaseAlitripRailIrDivisionGetAPIRequest(v *AlitripRailIrDivisionGetAPIRequest) {
+	v.Reset()
+	poolAlitripRailIrDivisionGetAPIRequest.Put(v)
 }

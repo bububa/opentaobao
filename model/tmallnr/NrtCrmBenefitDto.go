@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrtCrmBenefitDto 结构体
 type NrtCrmBenefitDto struct {
 	// 限领总额
@@ -44,4 +48,41 @@ type NrtCrmBenefitDto struct {
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// 优惠券类型
 	CouponType int64 `json:"coupon_type,omitempty" xml:"coupon_type,omitempty"`
+}
+
+var poolNrtCrmBenefitDto = sync.Pool{
+	New: func() any {
+		return new(NrtCrmBenefitDto)
+	},
+}
+
+// GetNrtCrmBenefitDto() 从对象池中获取NrtCrmBenefitDto
+func GetNrtCrmBenefitDto() *NrtCrmBenefitDto {
+	return poolNrtCrmBenefitDto.Get().(*NrtCrmBenefitDto)
+}
+
+// ReleaseNrtCrmBenefitDto 释放NrtCrmBenefitDto
+func ReleaseNrtCrmBenefitDto(v *NrtCrmBenefitDto) {
+	v.TotalQuantity = ""
+	v.PersonLimitCount = ""
+	v.Uuid = ""
+	v.StartFee = ""
+	v.FaceValue = ""
+	v.EffectiveDuration = ""
+	v.EffectiveEndTime = ""
+	v.EffectiveStartTime = ""
+	v.EffectiveTimeMode = ""
+	v.EndTime = ""
+	v.StartTime = ""
+	v.BenefitName = ""
+	v.BenefitDescription = ""
+	v.BenefitCode = ""
+	v.TemplateCode = ""
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.TemplateId = ""
+	v.OutId = 0
+	v.SellerId = 0
+	v.CouponType = 0
+	poolNrtCrmBenefitDto.Put(v)
 }

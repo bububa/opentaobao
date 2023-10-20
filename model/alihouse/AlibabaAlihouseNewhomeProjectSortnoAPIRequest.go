@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeProjectSortnoAPIRequest struct {
 // NewAlibabaAlihouseNewhomeProjectSortnoRequest 初始化AlibabaAlihouseNewhomeProjectSortnoAPIRequest对象
 func NewAlibabaAlihouseNewhomeProjectSortnoRequest() *AlibabaAlihouseNewhomeProjectSortnoAPIRequest {
 	return &AlibabaAlihouseNewhomeProjectSortnoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeProjectSortnoAPIRequest) Reset() {
+	r._updateSortNoDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeProjectSortnoAPIRequest) SetUpdateSortNoDto(_upda
 // GetUpdateSortNoDto UpdateSortNoDto Getter
 func (r AlibabaAlihouseNewhomeProjectSortnoAPIRequest) GetUpdateSortNoDto() *UpdateSortNoDto {
 	return r._updateSortNoDto
+}
+
+var poolAlibabaAlihouseNewhomeProjectSortnoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeProjectSortnoRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeProjectSortnoRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeProjectSortnoAPIRequest
+func GetAlibabaAlihouseNewhomeProjectSortnoAPIRequest() *AlibabaAlihouseNewhomeProjectSortnoAPIRequest {
+	return poolAlibabaAlihouseNewhomeProjectSortnoAPIRequest.Get().(*AlibabaAlihouseNewhomeProjectSortnoAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeProjectSortnoAPIRequest 将 AlibabaAlihouseNewhomeProjectSortnoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeProjectSortnoAPIRequest(v *AlibabaAlihouseNewhomeProjectSortnoAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeProjectSortnoAPIRequest.Put(v)
 }

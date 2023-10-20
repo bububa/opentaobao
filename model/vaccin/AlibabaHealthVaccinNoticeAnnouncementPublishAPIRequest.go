@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest struct {
 // NewAlibabaHealthVaccinNoticeAnnouncementPublishRequest 初始化AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest对象
 func NewAlibabaHealthVaccinNoticeAnnouncementPublishRequest() *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest {
 	return &AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) Reset() {
+	r._alipayUserIds = r._alipayUserIds[:0]
+	r._povNo = ""
+	r._noticeTitle = ""
+	r._noticeContent = ""
+	r._noticeType = ""
+	r._noticeTime = ""
+	r._povName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetPovName(_pov
 // GetPovName PovName Getter
 func (r AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) GetPovName() string {
 	return r._povName
+}
+
+var poolAlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHealthVaccinNoticeAnnouncementPublishRequest()
+	},
+}
+
+// GetAlibabaHealthVaccinNoticeAnnouncementPublishRequest 从 sync.Pool 获取 AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest
+func GetAlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest() *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest {
+	return poolAlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest.Get().(*AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest)
+}
+
+// ReleaseAlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest 将 AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest(v *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) {
+	v.Reset()
+	poolAlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest.Put(v)
 }

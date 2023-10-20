@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallSerivcecenterWorkcardInsuranceClaimAPIRequest struct {
 // NewTmallSerivcecenterWorkcardInsuranceClaimRequest 初始化TmallSerivcecenterWorkcardInsuranceClaimAPIRequest对象
 func NewTmallSerivcecenterWorkcardInsuranceClaimRequest() *TmallSerivcecenterWorkcardInsuranceClaimAPIRequest {
 	return &TmallSerivcecenterWorkcardInsuranceClaimAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallSerivcecenterWorkcardInsuranceClaimAPIRequest) Reset() {
+	r._workcardInsuranceCallbackRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallSerivcecenterWorkcardInsuranceClaimAPIRequest) SetWorkcardInsuranc
 // GetWorkcardInsuranceCallbackRequest WorkcardInsuranceCallbackRequest Getter
 func (r TmallSerivcecenterWorkcardInsuranceClaimAPIRequest) GetWorkcardInsuranceCallbackRequest() *WorkcardInsuranceCallbackRequest {
 	return r._workcardInsuranceCallbackRequest
+}
+
+var poolTmallSerivcecenterWorkcardInsuranceClaimAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallSerivcecenterWorkcardInsuranceClaimRequest()
+	},
+}
+
+// GetTmallSerivcecenterWorkcardInsuranceClaimRequest 从 sync.Pool 获取 TmallSerivcecenterWorkcardInsuranceClaimAPIRequest
+func GetTmallSerivcecenterWorkcardInsuranceClaimAPIRequest() *TmallSerivcecenterWorkcardInsuranceClaimAPIRequest {
+	return poolTmallSerivcecenterWorkcardInsuranceClaimAPIRequest.Get().(*TmallSerivcecenterWorkcardInsuranceClaimAPIRequest)
+}
+
+// ReleaseTmallSerivcecenterWorkcardInsuranceClaimAPIRequest 将 TmallSerivcecenterWorkcardInsuranceClaimAPIRequest 放入 sync.Pool
+func ReleaseTmallSerivcecenterWorkcardInsuranceClaimAPIRequest(v *TmallSerivcecenterWorkcardInsuranceClaimAPIRequest) {
+	v.Reset()
+	poolTmallSerivcecenterWorkcardInsuranceClaimAPIRequest.Put(v)
 }

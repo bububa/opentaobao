@@ -2,6 +2,7 @@ package train
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoTrainAgentTicketStatusCallbackAPIRequest struct {
 // NewTaobaoTrainAgentTicketStatusCallbackRequest 初始化TaobaoTrainAgentTicketStatusCallbackAPIRequest对象
 func NewTaobaoTrainAgentTicketStatusCallbackRequest() *TaobaoTrainAgentTicketStatusCallbackAPIRequest {
 	return &TaobaoTrainAgentTicketStatusCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTrainAgentTicketStatusCallbackAPIRequest) Reset() {
+	r._msg = ""
+	r._id = ""
+	r._ticketStatus = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoTrainAgentTicketStatusCallbackAPIRequest) SetTicketStatus(_ticket
 // GetTicketStatus TicketStatus Getter
 func (r TaobaoTrainAgentTicketStatusCallbackAPIRequest) GetTicketStatus() int64 {
 	return r._ticketStatus
+}
+
+var poolTaobaoTrainAgentTicketStatusCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTrainAgentTicketStatusCallbackRequest()
+	},
+}
+
+// GetTaobaoTrainAgentTicketStatusCallbackRequest 从 sync.Pool 获取 TaobaoTrainAgentTicketStatusCallbackAPIRequest
+func GetTaobaoTrainAgentTicketStatusCallbackAPIRequest() *TaobaoTrainAgentTicketStatusCallbackAPIRequest {
+	return poolTaobaoTrainAgentTicketStatusCallbackAPIRequest.Get().(*TaobaoTrainAgentTicketStatusCallbackAPIRequest)
+}
+
+// ReleaseTaobaoTrainAgentTicketStatusCallbackAPIRequest 将 TaobaoTrainAgentTicketStatusCallbackAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTrainAgentTicketStatusCallbackAPIRequest(v *TaobaoTrainAgentTicketStatusCallbackAPIRequest) {
+	v.Reset()
+	poolTaobaoTrainAgentTicketStatusCallbackAPIRequest.Put(v)
 }

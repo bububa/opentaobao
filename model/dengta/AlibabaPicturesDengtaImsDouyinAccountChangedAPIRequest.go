@@ -2,6 +2,7 @@ package dengta
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest struct {
 // NewAlibabaPicturesDengtaImsDouyinAccountChangedRequest 初始化AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest对象
 func NewAlibabaPicturesDengtaImsDouyinAccountChangedRequest() *AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest {
 	return &AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest) Reset() {
+	r._accountIds = ""
+	r._accountType = 0
+	r._changeType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest) SetChangeType(_
 // GetChangeType ChangeType Getter
 func (r AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest) GetChangeType() int64 {
 	return r._changeType
+}
+
+var poolAlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaPicturesDengtaImsDouyinAccountChangedRequest()
+	},
+}
+
+// GetAlibabaPicturesDengtaImsDouyinAccountChangedRequest 从 sync.Pool 获取 AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest
+func GetAlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest() *AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest {
+	return poolAlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest.Get().(*AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest)
+}
+
+// ReleaseAlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest 将 AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest 放入 sync.Pool
+func ReleaseAlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest(v *AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest) {
+	v.Reset()
+	poolAlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest.Put(v)
 }

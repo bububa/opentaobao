@@ -1,5 +1,9 @@
 package tvpay
 
+import (
+	"sync"
+)
+
 // PartnerPayResultDo 结构体
 type PartnerPayResultDo struct {
 	// 金额
@@ -14,4 +18,26 @@ type PartnerPayResultDo struct {
 	PayCode string `json:"pay_code,omitempty" xml:"pay_code,omitempty"`
 	// 支付模式码
 	PayMode string `json:"pay_mode,omitempty" xml:"pay_mode,omitempty"`
+}
+
+var poolPartnerPayResultDo = sync.Pool{
+	New: func() any {
+		return new(PartnerPayResultDo)
+	},
+}
+
+// GetPartnerPayResultDo() 从对象池中获取PartnerPayResultDo
+func GetPartnerPayResultDo() *PartnerPayResultDo {
+	return poolPartnerPayResultDo.Get().(*PartnerPayResultDo)
+}
+
+// ReleasePartnerPayResultDo 释放PartnerPayResultDo
+func ReleasePartnerPayResultDo(v *PartnerPayResultDo) {
+	v.FundMoney = ""
+	v.FundMoneyCode = ""
+	v.Mobile = ""
+	v.OrderNo = ""
+	v.PayCode = ""
+	v.PayMode = ""
+	poolPartnerPayResultDo.Put(v)
 }

@@ -2,6 +2,7 @@ package alitripreceipt
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripReceiptIssueresultNotifyAPIResponse struct {
 	AlitripReceiptIssueresultNotifyAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripReceiptIssueresultNotifyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripReceiptIssueresultNotifyAPIResponseModel).Reset()
+}
+
 // AlitripReceiptIssueresultNotifyAPIResponseModel is 飞猪发票开票结果通知 成功返回结果
 type AlitripReceiptIssueresultNotifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_receipt_issueresult_notify_response"`
@@ -26,4 +33,29 @@ type AlitripReceiptIssueresultNotifyAPIResponseModel struct {
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 错误原因
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripReceiptIssueresultNotifyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.IsSuccess = ""
+	m.ResultCode = ""
+	m.ResultMsg = ""
+}
+
+var poolAlitripReceiptIssueresultNotifyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripReceiptIssueresultNotifyAPIResponse)
+	},
+}
+
+// GetAlitripReceiptIssueresultNotifyAPIResponse 从 sync.Pool 获取 AlitripReceiptIssueresultNotifyAPIResponse
+func GetAlitripReceiptIssueresultNotifyAPIResponse() *AlitripReceiptIssueresultNotifyAPIResponse {
+	return poolAlitripReceiptIssueresultNotifyAPIResponse.Get().(*AlitripReceiptIssueresultNotifyAPIResponse)
+}
+
+// ReleaseAlitripReceiptIssueresultNotifyAPIResponse 将 AlitripReceiptIssueresultNotifyAPIResponse 保存到 sync.Pool
+func ReleaseAlitripReceiptIssueresultNotifyAPIResponse(v *AlitripReceiptIssueresultNotifyAPIResponse) {
+	v.Reset()
+	poolAlitripReceiptIssueresultNotifyAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package miniapp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoSmartappTableMetaGetAPIRequest struct {
 // NewTaobaoSmartappTableMetaGetRequest 初始化TaobaoSmartappTableMetaGetAPIRequest对象
 func NewTaobaoSmartappTableMetaGetRequest() *TaobaoSmartappTableMetaGetAPIRequest {
 	return &TaobaoSmartappTableMetaGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSmartappTableMetaGetAPIRequest) Reset() {
+	r._tableId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoSmartappTableMetaGetAPIRequest) SetTableId(_tableId string) error
 // GetTableId TableId Getter
 func (r TaobaoSmartappTableMetaGetAPIRequest) GetTableId() string {
 	return r._tableId
+}
+
+var poolTaobaoSmartappTableMetaGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSmartappTableMetaGetRequest()
+	},
+}
+
+// GetTaobaoSmartappTableMetaGetRequest 从 sync.Pool 获取 TaobaoSmartappTableMetaGetAPIRequest
+func GetTaobaoSmartappTableMetaGetAPIRequest() *TaobaoSmartappTableMetaGetAPIRequest {
+	return poolTaobaoSmartappTableMetaGetAPIRequest.Get().(*TaobaoSmartappTableMetaGetAPIRequest)
+}
+
+// ReleaseTaobaoSmartappTableMetaGetAPIRequest 将 TaobaoSmartappTableMetaGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSmartappTableMetaGetAPIRequest(v *TaobaoSmartappTableMetaGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSmartappTableMetaGetAPIRequest.Put(v)
 }

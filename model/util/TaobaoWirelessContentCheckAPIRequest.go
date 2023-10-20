@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoWirelessContentCheckAPIRequest struct {
 // NewTaobaoWirelessContentCheckRequest 初始化TaobaoWirelessContentCheckAPIRequest对象
 func NewTaobaoWirelessContentCheckRequest() *TaobaoWirelessContentCheckAPIRequest {
 	return &TaobaoWirelessContentCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWirelessContentCheckAPIRequest) Reset() {
+	r._text = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoWirelessContentCheckAPIRequest) SetText(_text string) error {
 // GetText Text Getter
 func (r TaobaoWirelessContentCheckAPIRequest) GetText() string {
 	return r._text
+}
+
+var poolTaobaoWirelessContentCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWirelessContentCheckRequest()
+	},
+}
+
+// GetTaobaoWirelessContentCheckRequest 从 sync.Pool 获取 TaobaoWirelessContentCheckAPIRequest
+func GetTaobaoWirelessContentCheckAPIRequest() *TaobaoWirelessContentCheckAPIRequest {
+	return poolTaobaoWirelessContentCheckAPIRequest.Get().(*TaobaoWirelessContentCheckAPIRequest)
+}
+
+// ReleaseTaobaoWirelessContentCheckAPIRequest 将 TaobaoWirelessContentCheckAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWirelessContentCheckAPIRequest(v *TaobaoWirelessContentCheckAPIRequest) {
+	v.Reset()
+	poolTaobaoWirelessContentCheckAPIRequest.Put(v)
 }

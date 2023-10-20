@@ -2,6 +2,7 @@ package ticket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripTicketScenicQueryAPIRequest struct {
 // NewAlitripTicketScenicQueryRequest 初始化AlitripTicketScenicQueryAPIRequest对象
 func NewAlitripTicketScenicQueryRequest() *AlitripTicketScenicQueryAPIRequest {
 	return &AlitripTicketScenicQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTicketScenicQueryAPIRequest) Reset() {
+	r._outScenicId = ""
+	r._aliScenicId = 0
+	r._currentPage = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripTicketScenicQueryAPIRequest) SetCurrentPage(_currentPage int64) 
 // GetCurrentPage CurrentPage Getter
 func (r AlitripTicketScenicQueryAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
+}
+
+var poolAlitripTicketScenicQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTicketScenicQueryRequest()
+	},
+}
+
+// GetAlitripTicketScenicQueryRequest 从 sync.Pool 获取 AlitripTicketScenicQueryAPIRequest
+func GetAlitripTicketScenicQueryAPIRequest() *AlitripTicketScenicQueryAPIRequest {
+	return poolAlitripTicketScenicQueryAPIRequest.Get().(*AlitripTicketScenicQueryAPIRequest)
+}
+
+// ReleaseAlitripTicketScenicQueryAPIRequest 将 AlitripTicketScenicQueryAPIRequest 放入 sync.Pool
+func ReleaseAlitripTicketScenicQueryAPIRequest(v *AlitripTicketScenicQueryAPIRequest) {
+	v.Reset()
+	poolAlitripTicketScenicQueryAPIRequest.Put(v)
 }

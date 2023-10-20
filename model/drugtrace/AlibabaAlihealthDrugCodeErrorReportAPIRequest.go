@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AlibabaAlihealthDrugCodeErrorReportAPIRequest struct {
 // NewAlibabaAlihealthDrugCodeErrorReportRequest 初始化AlibabaAlihealthDrugCodeErrorReportAPIRequest对象
 func NewAlibabaAlihealthDrugCodeErrorReportRequest() *AlibabaAlihealthDrugCodeErrorReportAPIRequest {
 	return &AlibabaAlihealthDrugCodeErrorReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) Reset() {
+	r._code = ""
+	r._fieldName = ""
+	r._codeValue = ""
+	r._sourceValue = ""
+	r._errMsg = ""
+	r._reporter = ""
+	r._reporterEmail = ""
+	r._reporterMobile = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) SetReporterMobile(_repor
 // GetReporterMobile ReporterMobile Getter
 func (r AlibabaAlihealthDrugCodeErrorReportAPIRequest) GetReporterMobile() string {
 	return r._reporterMobile
+}
+
+var poolAlibabaAlihealthDrugCodeErrorReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugCodeErrorReportRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugCodeErrorReportRequest 从 sync.Pool 获取 AlibabaAlihealthDrugCodeErrorReportAPIRequest
+func GetAlibabaAlihealthDrugCodeErrorReportAPIRequest() *AlibabaAlihealthDrugCodeErrorReportAPIRequest {
+	return poolAlibabaAlihealthDrugCodeErrorReportAPIRequest.Get().(*AlibabaAlihealthDrugCodeErrorReportAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugCodeErrorReportAPIRequest 将 AlibabaAlihealthDrugCodeErrorReportAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugCodeErrorReportAPIRequest(v *AlibabaAlihealthDrugCodeErrorReportAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugCodeErrorReportAPIRequest.Put(v)
 }

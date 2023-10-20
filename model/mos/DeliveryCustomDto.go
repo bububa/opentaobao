@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // DeliveryCustomDto 结构体
 type DeliveryCustomDto struct {
 	// 名
@@ -12,4 +16,25 @@ type DeliveryCustomDto struct {
 	Telphone string `json:"telphone,omitempty" xml:"telphone,omitempty"`
 	// 详细信息
 	AddressInfo *DeliveryAddressDto `json:"address_info,omitempty" xml:"address_info,omitempty"`
+}
+
+var poolDeliveryCustomDto = sync.Pool{
+	New: func() any {
+		return new(DeliveryCustomDto)
+	},
+}
+
+// GetDeliveryCustomDto() 从对象池中获取DeliveryCustomDto
+func GetDeliveryCustomDto() *DeliveryCustomDto {
+	return poolDeliveryCustomDto.Get().(*DeliveryCustomDto)
+}
+
+// ReleaseDeliveryCustomDto 释放DeliveryCustomDto
+func ReleaseDeliveryCustomDto(v *DeliveryCustomDto) {
+	v.Name = ""
+	v.AvatarUrl = ""
+	v.MobilePhone = ""
+	v.Telphone = ""
+	v.AddressInfo = nil
+	poolDeliveryCustomDto.Put(v)
 }

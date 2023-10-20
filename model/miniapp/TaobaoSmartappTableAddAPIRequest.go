@@ -2,6 +2,7 @@ package miniapp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoSmartappTableAddAPIRequest struct {
 // NewTaobaoSmartappTableAddRequest 初始化TaobaoSmartappTableAddAPIRequest对象
 func NewTaobaoSmartappTableAddRequest() *TaobaoSmartappTableAddAPIRequest {
 	return &TaobaoSmartappTableAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSmartappTableAddAPIRequest) Reset() {
+	r._record = ""
+	r._tableId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoSmartappTableAddAPIRequest) SetTableId(_tableId string) error {
 // GetTableId TableId Getter
 func (r TaobaoSmartappTableAddAPIRequest) GetTableId() string {
 	return r._tableId
+}
+
+var poolTaobaoSmartappTableAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSmartappTableAddRequest()
+	},
+}
+
+// GetTaobaoSmartappTableAddRequest 从 sync.Pool 获取 TaobaoSmartappTableAddAPIRequest
+func GetTaobaoSmartappTableAddAPIRequest() *TaobaoSmartappTableAddAPIRequest {
+	return poolTaobaoSmartappTableAddAPIRequest.Get().(*TaobaoSmartappTableAddAPIRequest)
+}
+
+// ReleaseTaobaoSmartappTableAddAPIRequest 将 TaobaoSmartappTableAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSmartappTableAddAPIRequest(v *TaobaoSmartappTableAddAPIRequest) {
+	v.Reset()
+	poolTaobaoSmartappTableAddAPIRequest.Put(v)
 }

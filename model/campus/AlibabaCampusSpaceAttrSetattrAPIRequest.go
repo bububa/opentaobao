@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaCampusSpaceAttrSetattrAPIRequest struct {
 // NewAlibabaCampusSpaceAttrSetattrRequest 初始化AlibabaCampusSpaceAttrSetattrAPIRequest对象
 func NewAlibabaCampusSpaceAttrSetattrRequest() *AlibabaCampusSpaceAttrSetattrAPIRequest {
 	return &AlibabaCampusSpaceAttrSetattrAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusSpaceAttrSetattrAPIRequest) Reset() {
+	r._list = r._list[:0]
+	r._context = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaCampusSpaceAttrSetattrAPIRequest) SetContext(_context *WorkBench
 // GetContext Context Getter
 func (r AlibabaCampusSpaceAttrSetattrAPIRequest) GetContext() *WorkBenchContext {
 	return r._context
+}
+
+var poolAlibabaCampusSpaceAttrSetattrAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusSpaceAttrSetattrRequest()
+	},
+}
+
+// GetAlibabaCampusSpaceAttrSetattrRequest 从 sync.Pool 获取 AlibabaCampusSpaceAttrSetattrAPIRequest
+func GetAlibabaCampusSpaceAttrSetattrAPIRequest() *AlibabaCampusSpaceAttrSetattrAPIRequest {
+	return poolAlibabaCampusSpaceAttrSetattrAPIRequest.Get().(*AlibabaCampusSpaceAttrSetattrAPIRequest)
+}
+
+// ReleaseAlibabaCampusSpaceAttrSetattrAPIRequest 将 AlibabaCampusSpaceAttrSetattrAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusSpaceAttrSetattrAPIRequest(v *AlibabaCampusSpaceAttrSetattrAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusSpaceAttrSetattrAPIRequest.Put(v)
 }

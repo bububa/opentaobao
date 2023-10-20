@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // TradeOrderInfoDto 结构体
 type TradeOrderInfoDto struct {
 	// 物流服务值（详见https://support-cnkuaidi.taobao.com/doc.htm#?docId=106156&amp;docType=1，如无特殊服务请置空）
@@ -18,4 +22,28 @@ type TradeOrderInfoDto struct {
 	Recipient *RecipientInfoDto `json:"recipient,omitempty" xml:"recipient,omitempty"`
 	// 使用者ID（使用电子面单账号的实际商家ID，如存在一个电子面单账号多个店铺使用时，请传入店铺的商家ID）
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolTradeOrderInfoDto = sync.Pool{
+	New: func() any {
+		return new(TradeOrderInfoDto)
+	},
+}
+
+// GetTradeOrderInfoDto() 从对象池中获取TradeOrderInfoDto
+func GetTradeOrderInfoDto() *TradeOrderInfoDto {
+	return poolTradeOrderInfoDto.Get().(*TradeOrderInfoDto)
+}
+
+// ReleaseTradeOrderInfoDto 释放TradeOrderInfoDto
+func ReleaseTradeOrderInfoDto(v *TradeOrderInfoDto) {
+	v.LogisticsServices = ""
+	v.ObjectId = ""
+	v.TemplateUrl = ""
+	v.WaybillCode = ""
+	v.OrderInfo = nil
+	v.PackageInfo = nil
+	v.Recipient = nil
+	v.UserId = 0
+	poolTradeOrderInfoDto.Put(v)
 }

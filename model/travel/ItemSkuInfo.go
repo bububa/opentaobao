@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // ItemSkuInfo 结构体
 type ItemSkuInfo struct {
 	// 套餐关联的产品元素信息
@@ -28,4 +32,33 @@ type ItemSkuInfo struct {
 	PackageOperation int64 `json:"package_operation,omitempty" xml:"package_operation,omitempty"`
 	// 邮轮下单是否限制人数和房型人数一致
 	OrderCountMatch bool `json:"order_count_match,omitempty" xml:"order_count_match,omitempty"`
+}
+
+var poolItemSkuInfo = sync.Pool{
+	New: func() any {
+		return new(ItemSkuInfo)
+	},
+}
+
+// GetItemSkuInfo() 从对象池中获取ItemSkuInfo
+func GetItemSkuInfo() *ItemSkuInfo {
+	return poolItemSkuInfo.Get().(*ItemSkuInfo)
+}
+
+// ReleaseItemSkuInfo 释放ItemSkuInfo
+func ReleaseItemSkuInfo(v *ItemSkuInfo) {
+	v.Products = v.Products[:0]
+	v.Prices = v.Prices[:0]
+	v.Combos = ""
+	v.PackageName = ""
+	v.PackageDesc = ""
+	v.OuterSkuId = ""
+	v.RoomTypeName = ""
+	v.PackageId = 0
+	v.RoomTypeId = 0
+	v.RoomType = 0
+	v.PeopleNumber = 0
+	v.PackageOperation = 0
+	v.OrderCountMatch = false
+	poolItemSkuInfo.Put(v)
 }

@@ -2,6 +2,7 @@ package moscm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMosGoodsAdjustAPIRequest struct {
 // NewAlibabaMosGoodsAdjustRequest 初始化AlibabaMosGoodsAdjustAPIRequest对象
 func NewAlibabaMosGoodsAdjustRequest() *AlibabaMosGoodsAdjustAPIRequest {
 	return &AlibabaMosGoodsAdjustAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosGoodsAdjustAPIRequest) Reset() {
+	r._paramIsvStockAdjustRequestDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMosGoodsAdjustAPIRequest) SetParamIsvStockAdjustRequestDTO(_para
 // GetParamIsvStockAdjustRequestDTO ParamIsvStockAdjustRequestDTO Getter
 func (r AlibabaMosGoodsAdjustAPIRequest) GetParamIsvStockAdjustRequestDTO() *IsvStockAdjustRequestDto {
 	return r._paramIsvStockAdjustRequestDTO
+}
+
+var poolAlibabaMosGoodsAdjustAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosGoodsAdjustRequest()
+	},
+}
+
+// GetAlibabaMosGoodsAdjustRequest 从 sync.Pool 获取 AlibabaMosGoodsAdjustAPIRequest
+func GetAlibabaMosGoodsAdjustAPIRequest() *AlibabaMosGoodsAdjustAPIRequest {
+	return poolAlibabaMosGoodsAdjustAPIRequest.Get().(*AlibabaMosGoodsAdjustAPIRequest)
+}
+
+// ReleaseAlibabaMosGoodsAdjustAPIRequest 将 AlibabaMosGoodsAdjustAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosGoodsAdjustAPIRequest(v *AlibabaMosGoodsAdjustAPIRequest) {
+	v.Reset()
+	poolAlibabaMosGoodsAdjustAPIRequest.Put(v)
 }

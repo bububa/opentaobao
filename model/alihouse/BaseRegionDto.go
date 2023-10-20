@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // BaseRegionDto 结构体
 type BaseRegionDto struct {
 	// 高德围栏
@@ -28,4 +32,33 @@ type BaseRegionDto struct {
 	ParentId int64 `json:"parent_id,omitempty" xml:"parent_id,omitempty"`
 	// 数据源类型（1-新房 2-二手房）
 	SourceType int64 `json:"source_type,omitempty" xml:"source_type,omitempty"`
+}
+
+var poolBaseRegionDto = sync.Pool{
+	New: func() any {
+		return new(BaseRegionDto)
+	},
+}
+
+// GetBaseRegionDto() 从对象池中获取BaseRegionDto
+func GetBaseRegionDto() *BaseRegionDto {
+	return poolBaseRegionDto.Get().(*BaseRegionDto)
+}
+
+// ReleaseBaseRegionDto 释放BaseRegionDto
+func ReleaseBaseRegionDto(v *BaseRegionDto) {
+	v.Fencing = ""
+	v.GaodeLatitude = ""
+	v.GaodeLongitude = ""
+	v.NameSimple = ""
+	v.Name = ""
+	v.NamePinyin = ""
+	v.NamePinyinSimple = ""
+	v.RegionType = ""
+	v.OuterRegionId = ""
+	v.IsDeleted = ""
+	v.RegionId = 0
+	v.ParentId = 0
+	v.SourceType = 0
+	poolBaseRegionDto.Put(v)
 }

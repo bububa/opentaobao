@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest struct {
 // NewAlibabaCampusDeviceOpenapiSaveeventinfoforibosRequest 初始化AlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest对象
 func NewAlibabaCampusDeviceOpenapiSaveeventinfoforibosRequest() *AlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest {
 	return &AlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest) Reset() {
+	r._param0 = nil
+	r._param1 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest) SetParam1(_pa
 // GetParam1 Param1 Getter
 func (r AlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest) GetParam1() *EventInfoApiDto {
 	return r._param1
+}
+
+var poolAlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusDeviceOpenapiSaveeventinfoforibosRequest()
+	},
+}
+
+// GetAlibabaCampusDeviceOpenapiSaveeventinfoforibosRequest 从 sync.Pool 获取 AlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest
+func GetAlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest() *AlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest {
+	return poolAlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest.Get().(*AlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest)
+}
+
+// ReleaseAlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest 将 AlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest(v *AlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusDeviceOpenapiSaveeventinfoforibosAPIRequest.Put(v)
 }

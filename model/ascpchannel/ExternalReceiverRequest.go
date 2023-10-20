@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // ExternalReceiverRequest 结构体
 type ExternalReceiverRequest struct {
 	// 收货人名称
@@ -30,4 +34,34 @@ type ExternalReceiverRequest struct {
 	AreaCode int64 `json:"area_code,omitempty" xml:"area_code,omitempty"`
 	// 区域编码
 	DivisionId int64 `json:"division_id,omitempty" xml:"division_id,omitempty"`
+}
+
+var poolExternalReceiverRequest = sync.Pool{
+	New: func() any {
+		return new(ExternalReceiverRequest)
+	},
+}
+
+// GetExternalReceiverRequest() 从对象池中获取ExternalReceiverRequest
+func GetExternalReceiverRequest() *ExternalReceiverRequest {
+	return poolExternalReceiverRequest.Get().(*ExternalReceiverRequest)
+}
+
+// ReleaseExternalReceiverRequest 释放ExternalReceiverRequest
+func ReleaseExternalReceiverRequest(v *ExternalReceiverRequest) {
+	v.ContactName = ""
+	v.StreetName = ""
+	v.MobilePhone = ""
+	v.Post = ""
+	v.CityName = ""
+	v.Phone = ""
+	v.AreaName = ""
+	v.DetailAddress = ""
+	v.ProvinceName = ""
+	v.ProvinceCode = 0
+	v.CityCode = 0
+	v.StreetCode = 0
+	v.AreaCode = 0
+	v.DivisionId = 0
+	poolExternalReceiverRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package aliospay
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliyunAliosPayRecordListAPIRequest struct {
 // NewAliyunAliosPayRecordListRequest 初始化AliyunAliosPayRecordListAPIRequest对象
 func NewAliyunAliosPayRecordListRequest() *AliyunAliosPayRecordListAPIRequest {
 	return &AliyunAliosPayRecordListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunAliosPayRecordListAPIRequest) Reset() {
+	r._searchRecordRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliyunAliosPayRecordListAPIRequest) SetSearchRecordRequest(_searchRecor
 // GetSearchRecordRequest SearchRecordRequest Getter
 func (r AliyunAliosPayRecordListAPIRequest) GetSearchRecordRequest() *SearchRecordRequest {
 	return r._searchRecordRequest
+}
+
+var poolAliyunAliosPayRecordListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunAliosPayRecordListRequest()
+	},
+}
+
+// GetAliyunAliosPayRecordListRequest 从 sync.Pool 获取 AliyunAliosPayRecordListAPIRequest
+func GetAliyunAliosPayRecordListAPIRequest() *AliyunAliosPayRecordListAPIRequest {
+	return poolAliyunAliosPayRecordListAPIRequest.Get().(*AliyunAliosPayRecordListAPIRequest)
+}
+
+// ReleaseAliyunAliosPayRecordListAPIRequest 将 AliyunAliosPayRecordListAPIRequest 放入 sync.Pool
+func ReleaseAliyunAliosPayRecordListAPIRequest(v *AliyunAliosPayRecordListAPIRequest) {
+	v.Reset()
+	poolAliyunAliosPayRecordListAPIRequest.Put(v)
 }

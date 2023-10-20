@@ -1,5 +1,9 @@
 package user
 
+import (
+	"sync"
+)
+
 // OpenAccountTokenValidateResult 结构体
 type OpenAccountTokenValidateResult struct {
 	// 错误信息
@@ -10,4 +14,24 @@ type OpenAccountTokenValidateResult struct {
 	Data *TokenInfo `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	Successful bool `json:"successful,omitempty" xml:"successful,omitempty"`
+}
+
+var poolOpenAccountTokenValidateResult = sync.Pool{
+	New: func() any {
+		return new(OpenAccountTokenValidateResult)
+	},
+}
+
+// GetOpenAccountTokenValidateResult() 从对象池中获取OpenAccountTokenValidateResult
+func GetOpenAccountTokenValidateResult() *OpenAccountTokenValidateResult {
+	return poolOpenAccountTokenValidateResult.Get().(*OpenAccountTokenValidateResult)
+}
+
+// ReleaseOpenAccountTokenValidateResult 释放OpenAccountTokenValidateResult
+func ReleaseOpenAccountTokenValidateResult(v *OpenAccountTokenValidateResult) {
+	v.Message = ""
+	v.Code = 0
+	v.Data = nil
+	v.Successful = false
+	poolOpenAccountTokenValidateResult.Put(v)
 }

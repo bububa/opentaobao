@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaAlihouseMerchantEnterpriseEntryAPIRequest struct {
 // NewAlibabaAlihouseMerchantEnterpriseEntryRequest 初始化AlibabaAlihouseMerchantEnterpriseEntryAPIRequest对象
 func NewAlibabaAlihouseMerchantEnterpriseEntryRequest() *AlibabaAlihouseMerchantEnterpriseEntryAPIRequest {
 	return &AlibabaAlihouseMerchantEnterpriseEntryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseMerchantEnterpriseEntryAPIRequest) Reset() {
+	r._name = ""
+	r._nick = ""
+	r._outerId = ""
+	r._storePhone = ""
+	r._isTest = nil
+	r._storeType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaAlihouseMerchantEnterpriseEntryAPIRequest) SetStoreType(_storeTy
 // GetStoreType StoreType Getter
 func (r AlibabaAlihouseMerchantEnterpriseEntryAPIRequest) GetStoreType() int64 {
 	return r._storeType
+}
+
+var poolAlibabaAlihouseMerchantEnterpriseEntryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseMerchantEnterpriseEntryRequest()
+	},
+}
+
+// GetAlibabaAlihouseMerchantEnterpriseEntryRequest 从 sync.Pool 获取 AlibabaAlihouseMerchantEnterpriseEntryAPIRequest
+func GetAlibabaAlihouseMerchantEnterpriseEntryAPIRequest() *AlibabaAlihouseMerchantEnterpriseEntryAPIRequest {
+	return poolAlibabaAlihouseMerchantEnterpriseEntryAPIRequest.Get().(*AlibabaAlihouseMerchantEnterpriseEntryAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseMerchantEnterpriseEntryAPIRequest 将 AlibabaAlihouseMerchantEnterpriseEntryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseMerchantEnterpriseEntryAPIRequest(v *AlibabaAlihouseMerchantEnterpriseEntryAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseMerchantEnterpriseEntryAPIRequest.Put(v)
 }

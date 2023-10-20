@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // InvoiceResultItemDto 结构体
 type InvoiceResultItemDto struct {
 	// 数量，最多6位小数。  折扣行此参数不能传，非折扣行必传。存在则需&gt;0
@@ -26,4 +30,32 @@ type InvoiceResultItemDto struct {
 	SumPrice string `json:"sum_price,omitempty" xml:"sum_price,omitempty"`
 	// 发票行性质。0表示正常行，1表示折扣行，2表示被折扣行。  比如充电器单价100元，折扣10元，则明细为2行，充电器行性质为2，折扣行性质为1。如果充电器没有折扣，则值应为0
 	RowType int64 `json:"row_type,omitempty" xml:"row_type,omitempty"`
+}
+
+var poolInvoiceResultItemDto = sync.Pool{
+	New: func() any {
+		return new(InvoiceResultItemDto)
+	},
+}
+
+// GetInvoiceResultItemDto() 从对象池中获取InvoiceResultItemDto
+func GetInvoiceResultItemDto() *InvoiceResultItemDto {
+	return poolInvoiceResultItemDto.Get().(*InvoiceResultItemDto)
+}
+
+// ReleaseInvoiceResultItemDto 释放InvoiceResultItemDto
+func ReleaseInvoiceResultItemDto(v *InvoiceResultItemDto) {
+	v.Quantity = ""
+	v.Price = ""
+	v.TaxRate = ""
+	v.ItemNo = ""
+	v.ItemName = ""
+	v.Amount = ""
+	v.Unit = ""
+	v.Specification = ""
+	v.ZeroRateFlag = ""
+	v.Tax = ""
+	v.SumPrice = ""
+	v.RowType = 0
+	poolInvoiceResultItemDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // RefundAggregateQueryRequest 结构体
 type RefundAggregateQueryRequest struct {
 	// 起始时间
@@ -16,4 +20,27 @@ type RefundAggregateQueryRequest struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 分页size
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolRefundAggregateQueryRequest = sync.Pool{
+	New: func() any {
+		return new(RefundAggregateQueryRequest)
+	},
+}
+
+// GetRefundAggregateQueryRequest() 从对象池中获取RefundAggregateQueryRequest
+func GetRefundAggregateQueryRequest() *RefundAggregateQueryRequest {
+	return poolRefundAggregateQueryRequest.Get().(*RefundAggregateQueryRequest)
+}
+
+// ReleaseRefundAggregateQueryRequest 释放RefundAggregateQueryRequest
+func ReleaseRefundAggregateQueryRequest(v *RefundAggregateQueryRequest) {
+	v.StartTime = ""
+	v.EndTime = ""
+	v.StoreId = ""
+	v.OrderClient = ""
+	v.OperatorId = ""
+	v.PageIndex = 0
+	v.PageSize = 0
+	poolRefundAggregateQueryRequest.Put(v)
 }

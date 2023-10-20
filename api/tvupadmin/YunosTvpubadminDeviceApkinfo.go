@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.device.apkinfo
 //
 // 获取停开服apk信息
-func YunosTvpubadminDeviceApkinfo(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceApkinfoAPIRequest, session string) (*tvupadmin.YunosTvpubadminDeviceApkinfoAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminDeviceApkinfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminDeviceApkinfo(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceApkinfoAPIRequest, resp *tvupadmin.YunosTvpubadminDeviceApkinfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package bus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBusDisableqrcodeSetAPIRequest struct {
 // NewTaobaoBusDisableqrcodeSetRequest 初始化TaobaoBusDisableqrcodeSetAPIRequest对象
 func NewTaobaoBusDisableqrcodeSetRequest() *TaobaoBusDisableqrcodeSetAPIRequest {
 	return &TaobaoBusDisableqrcodeSetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBusDisableqrcodeSetAPIRequest) Reset() {
+	r._alitripOrderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBusDisableqrcodeSetAPIRequest) SetAlitripOrderId(_alitripOrderId 
 // GetAlitripOrderId AlitripOrderId Getter
 func (r TaobaoBusDisableqrcodeSetAPIRequest) GetAlitripOrderId() string {
 	return r._alitripOrderId
+}
+
+var poolTaobaoBusDisableqrcodeSetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBusDisableqrcodeSetRequest()
+	},
+}
+
+// GetTaobaoBusDisableqrcodeSetRequest 从 sync.Pool 获取 TaobaoBusDisableqrcodeSetAPIRequest
+func GetTaobaoBusDisableqrcodeSetAPIRequest() *TaobaoBusDisableqrcodeSetAPIRequest {
+	return poolTaobaoBusDisableqrcodeSetAPIRequest.Get().(*TaobaoBusDisableqrcodeSetAPIRequest)
+}
+
+// ReleaseTaobaoBusDisableqrcodeSetAPIRequest 将 TaobaoBusDisableqrcodeSetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBusDisableqrcodeSetAPIRequest(v *TaobaoBusDisableqrcodeSetAPIRequest) {
+	v.Reset()
+	poolTaobaoBusDisableqrcodeSetAPIRequest.Put(v)
 }

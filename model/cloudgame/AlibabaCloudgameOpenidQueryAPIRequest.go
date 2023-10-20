@@ -2,6 +2,7 @@ package cloudgame
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCloudgameOpenidQueryAPIRequest struct {
 // NewAlibabaCloudgameOpenidQueryRequest 初始化AlibabaCloudgameOpenidQueryAPIRequest对象
 func NewAlibabaCloudgameOpenidQueryRequest() *AlibabaCloudgameOpenidQueryAPIRequest {
 	return &AlibabaCloudgameOpenidQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCloudgameOpenidQueryAPIRequest) Reset() {
+	r._requestParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCloudgameOpenidQueryAPIRequest) SetRequestParam(_requestParam *H
 // GetRequestParam RequestParam Getter
 func (r AlibabaCloudgameOpenidQueryAPIRequest) GetRequestParam() *HavanaUserIdQueryRequest {
 	return r._requestParam
+}
+
+var poolAlibabaCloudgameOpenidQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCloudgameOpenidQueryRequest()
+	},
+}
+
+// GetAlibabaCloudgameOpenidQueryRequest 从 sync.Pool 获取 AlibabaCloudgameOpenidQueryAPIRequest
+func GetAlibabaCloudgameOpenidQueryAPIRequest() *AlibabaCloudgameOpenidQueryAPIRequest {
+	return poolAlibabaCloudgameOpenidQueryAPIRequest.Get().(*AlibabaCloudgameOpenidQueryAPIRequest)
+}
+
+// ReleaseAlibabaCloudgameOpenidQueryAPIRequest 将 AlibabaCloudgameOpenidQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCloudgameOpenidQueryAPIRequest(v *AlibabaCloudgameOpenidQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaCloudgameOpenidQueryAPIRequest.Put(v)
 }

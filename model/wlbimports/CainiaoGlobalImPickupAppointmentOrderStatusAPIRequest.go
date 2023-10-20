@@ -2,6 +2,7 @@ package wlbimports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoGlobalImPickupAppointmentOrderStatusAPIRequest struct {
 // NewCainiaoGlobalImPickupAppointmentOrderStatusRequest 初始化CainiaoGlobalImPickupAppointmentOrderStatusAPIRequest对象
 func NewCainiaoGlobalImPickupAppointmentOrderStatusRequest() *CainiaoGlobalImPickupAppointmentOrderStatusAPIRequest {
 	return &CainiaoGlobalImPickupAppointmentOrderStatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalImPickupAppointmentOrderStatusAPIRequest) Reset() {
+	r._appointmentOrderStatusRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoGlobalImPickupAppointmentOrderStatusAPIRequest) SetAppointmentOr
 // GetAppointmentOrderStatusRequest AppointmentOrderStatusRequest Getter
 func (r CainiaoGlobalImPickupAppointmentOrderStatusAPIRequest) GetAppointmentOrderStatusRequest() *AppointmentOrderStatusRequest {
 	return r._appointmentOrderStatusRequest
+}
+
+var poolCainiaoGlobalImPickupAppointmentOrderStatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalImPickupAppointmentOrderStatusRequest()
+	},
+}
+
+// GetCainiaoGlobalImPickupAppointmentOrderStatusRequest 从 sync.Pool 获取 CainiaoGlobalImPickupAppointmentOrderStatusAPIRequest
+func GetCainiaoGlobalImPickupAppointmentOrderStatusAPIRequest() *CainiaoGlobalImPickupAppointmentOrderStatusAPIRequest {
+	return poolCainiaoGlobalImPickupAppointmentOrderStatusAPIRequest.Get().(*CainiaoGlobalImPickupAppointmentOrderStatusAPIRequest)
+}
+
+// ReleaseCainiaoGlobalImPickupAppointmentOrderStatusAPIRequest 将 CainiaoGlobalImPickupAppointmentOrderStatusAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalImPickupAppointmentOrderStatusAPIRequest(v *CainiaoGlobalImPickupAppointmentOrderStatusAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalImPickupAppointmentOrderStatusAPIRequest.Put(v)
 }

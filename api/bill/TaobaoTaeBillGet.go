@@ -9,11 +9,6 @@ import (
 // taobao.tae.bill.get
 //
 // 查询单笔账单明细
-func TaobaoTaeBillGet(clt *core.SDKClient, req *bill.TaobaoTaeBillGetAPIRequest, session string) (*bill.TaobaoTaeBillGetAPIResponse, error) {
-	var resp bill.TaobaoTaeBillGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTaeBillGet(clt *core.SDKClient, req *bill.TaobaoTaeBillGetAPIRequest, resp *bill.TaobaoTaeBillGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

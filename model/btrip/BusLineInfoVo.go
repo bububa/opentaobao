@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BusLineInfoVo 结构体
 type BusLineInfoVo struct {
 	// 到达站
@@ -54,4 +58,46 @@ type BusLineInfoVo struct {
 	ExtraSchedule bool `json:"extra_schedule,omitempty" xml:"extra_schedule,omitempty"`
 	// 是否是预约购票订单
 	PreOrder bool `json:"pre_order,omitempty" xml:"pre_order,omitempty"`
+}
+
+var poolBusLineInfoVo = sync.Pool{
+	New: func() any {
+		return new(BusLineInfoVo)
+	},
+}
+
+// GetBusLineInfoVo() 从对象池中获取BusLineInfoVo
+func GetBusLineInfoVo() *BusLineInfoVo {
+	return poolBusLineInfoVo.Get().(*BusLineInfoVo)
+}
+
+// ReleaseBusLineInfoVo 释放BusLineInfoVo
+func ReleaseBusLineInfoVo(v *BusLineInfoVo) {
+	v.ArrStation = ""
+	v.ArrivalTime = ""
+	v.BusDistance = ""
+	v.BusNumber = ""
+	v.BusType = ""
+	v.DepCity = ""
+	v.DepStation = ""
+	v.DepartTime = ""
+	v.LastDepartTime = ""
+	v.LastPlaceName = ""
+	v.RealNameGrade = ""
+	v.StandardCityName = ""
+	v.ViaStation = ""
+	v.BusNoId = 0
+	v.BusNumberUuid = 0
+	v.FullPrice = 0
+	v.HalfPrice = 0
+	v.IsSupportETicket = 0
+	v.ServicePrice = 0
+	v.ShiftType = 0
+	v.SpendTime = 0
+	v.Status = 0
+	v.Stock = 0
+	v.ViaStationType = 0
+	v.ExtraSchedule = false
+	v.PreOrder = false
+	poolBusLineInfoVo.Put(v)
 }

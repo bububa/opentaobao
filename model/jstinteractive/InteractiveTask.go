@@ -1,5 +1,9 @@
 package jstinteractive
 
+import (
+	"sync"
+)
+
 // InteractiveTask 结构体
 type InteractiveTask struct {
 	// 任务ID
@@ -14,4 +18,26 @@ type InteractiveTask struct {
 	TaskType int64 `json:"task_type,omitempty" xml:"task_type,omitempty"`
 	// 当前任务是否在进行中，默认为true。直播任务中的false代表当前不在直播时间段，不返回action字段，前端应屏蔽跳转
 	InProgress bool `json:"in_progress,omitempty" xml:"in_progress,omitempty"`
+}
+
+var poolInteractiveTask = sync.Pool{
+	New: func() any {
+		return new(InteractiveTask)
+	},
+}
+
+// GetInteractiveTask() 从对象池中获取InteractiveTask
+func GetInteractiveTask() *InteractiveTask {
+	return poolInteractiveTask.Get().(*InteractiveTask)
+}
+
+// ReleaseInteractiveTask 释放InteractiveTask
+func ReleaseInteractiveTask(v *InteractiveTask) {
+	v.TaskId = ""
+	v.Status = ""
+	v.Material = nil
+	v.Progress = nil
+	v.TaskType = 0
+	v.InProgress = false
+	poolInteractiveTask.Put(v)
 }

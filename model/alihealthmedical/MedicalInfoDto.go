@@ -1,5 +1,9 @@
 package alihealthmedical
 
+import (
+	"sync"
+)
+
 // MedicalInfoDto 结构体
 type MedicalInfoDto struct {
 	// 既往史详情
@@ -48,4 +52,43 @@ type MedicalInfoDto struct {
 	HasFamilyHistory bool `json:"has_family_history,omitempty" xml:"has_family_history,omitempty"`
 	// 是否有既往史
 	HasPastHistory bool `json:"has_past_history,omitempty" xml:"has_past_history,omitempty"`
+}
+
+var poolMedicalInfoDto = sync.Pool{
+	New: func() any {
+		return new(MedicalInfoDto)
+	},
+}
+
+// GetMedicalInfoDto() 从对象池中获取MedicalInfoDto
+func GetMedicalInfoDto() *MedicalInfoDto {
+	return poolMedicalInfoDto.Get().(*MedicalInfoDto)
+}
+
+// ReleaseMedicalInfoDto 释放MedicalInfoDto
+func ReleaseMedicalInfoDto(v *MedicalInfoDto) {
+	v.PastHistoryDetails = v.PastHistoryDetails[:0]
+	v.DiseasePictures = v.DiseasePictures[:0]
+	v.AllergiesDetails = v.AllergiesDetails[:0]
+	v.FamilyHistoryDetails = v.FamilyHistoryDetails[:0]
+	v.DiagnosedDiseases = v.DiagnosedDiseases[:0]
+	v.City = ""
+	v.ChiefComplaint = ""
+	v.AbnormalLiverFunctionDetail = ""
+	v.AbnormalRenalFunctionDetail = ""
+	v.PresentIllnessHistory = ""
+	v.PastHistoryDescription = ""
+	v.Sex = ""
+	v.ExpectedConfinementDate = ""
+	v.FamilyHistoryDescription = ""
+	v.AllergiesDescription = ""
+	v.PregnantType = ""
+	v.Age = ""
+	v.HasAllergiesHistory = false
+	v.IsPregnant = false
+	v.IsLiverFunctionAbnormal = false
+	v.IsRenalFunctionAbnormal = false
+	v.HasFamilyHistory = false
+	v.HasPastHistory = false
+	poolMedicalInfoDto.Put(v)
 }

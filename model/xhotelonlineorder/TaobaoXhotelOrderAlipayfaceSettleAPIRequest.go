@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -51,8 +52,30 @@ type TaobaoXhotelOrderAlipayfaceSettleAPIRequest struct {
 // NewTaobaoXhotelOrderAlipayfaceSettleRequest 初始化TaobaoXhotelOrderAlipayfaceSettleAPIRequest对象
 func NewTaobaoXhotelOrderAlipayfaceSettleRequest() *TaobaoXhotelOrderAlipayfaceSettleAPIRequest {
 	return &TaobaoXhotelOrderAlipayfaceSettleAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(17),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) Reset() {
+	r._roomSettleInfoList = r._roomSettleInfoList[:0]
+	r._otherFeeDetail = ""
+	r._outId = ""
+	r._roomNo = ""
+	r._dailyPriceInfo = ""
+	r._checkOut = ""
+	r._memo = ""
+	r._currencyCode = ""
+	r._currencyRate = ""
+	r._hotelCode = ""
+	r._tid = 0
+	r._totalRoomFee = 0
+	r._otherFee = 0
+	r._containGuarantee = 0
+	r._priceChange = 0
+	r._taxAndFee = 0
+	r._amount = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -291,4 +314,21 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetAmount(_amount int64) e
 // GetAmount Amount Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetAmount() int64 {
 	return r._amount
+}
+
+var poolTaobaoXhotelOrderAlipayfaceSettleAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelOrderAlipayfaceSettleRequest()
+	},
+}
+
+// GetTaobaoXhotelOrderAlipayfaceSettleRequest 从 sync.Pool 获取 TaobaoXhotelOrderAlipayfaceSettleAPIRequest
+func GetTaobaoXhotelOrderAlipayfaceSettleAPIRequest() *TaobaoXhotelOrderAlipayfaceSettleAPIRequest {
+	return poolTaobaoXhotelOrderAlipayfaceSettleAPIRequest.Get().(*TaobaoXhotelOrderAlipayfaceSettleAPIRequest)
+}
+
+// ReleaseTaobaoXhotelOrderAlipayfaceSettleAPIRequest 将 TaobaoXhotelOrderAlipayfaceSettleAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelOrderAlipayfaceSettleAPIRequest(v *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelOrderAlipayfaceSettleAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tuanhotel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,13 +16,19 @@ type AlitripTuanHotelItemInfoGetAPIResponse struct {
 	AlitripTuanHotelItemInfoGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripTuanHotelItemInfoGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripTuanHotelItemInfoGetAPIResponseModel).Reset()
+}
+
 // AlitripTuanHotelItemInfoGetAPIResponseModel is 宝贝信息查询接口 成功返回结果
 type AlitripTuanHotelItemInfoGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_tuan_hotel_item_info_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// sku列表
-	TuanItemSkuList []TopTuanItemSkuVolist `json:"tuan_item_sku_list,omitempty" xml:"tuan_item_sku_list>top_tuan_item_sku_volist,omitempty"`
+	TuanItemSkuList []TopTuanItemSkuVOList `json:"tuan_item_sku_list,omitempty" xml:"tuan_item_sku_list>top_tuan_item_sku_vo_list,omitempty"`
 	// 关联门店列表
 	Stores []TopStoreVo `json:"stores,omitempty" xml:"stores>top_store_vo,omitempty"`
 	// 关联POI列表
@@ -38,4 +45,35 @@ type AlitripTuanHotelItemInfoGetAPIResponseModel struct {
 	TuanEticketPackage *TuanEticketPackageVo `json:"tuan_eticket_package,omitempty" xml:"tuan_eticket_package,omitempty"`
 	// 操作状态
 	Status bool `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripTuanHotelItemInfoGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TuanItemSkuList = m.TuanItemSkuList[:0]
+	m.Stores = m.Stores[:0]
+	m.RelatedPoiDetailVOList = m.RelatedPoiDetailVOList[:0]
+	m.TuanItemRelateGiftList = m.TuanItemRelateGiftList[:0]
+	m.MsgCode = ""
+	m.Message = ""
+	m.ItemInfo = nil
+	m.TuanEticketPackage = nil
+	m.Status = false
+}
+
+var poolAlitripTuanHotelItemInfoGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripTuanHotelItemInfoGetAPIResponse)
+	},
+}
+
+// GetAlitripTuanHotelItemInfoGetAPIResponse 从 sync.Pool 获取 AlitripTuanHotelItemInfoGetAPIResponse
+func GetAlitripTuanHotelItemInfoGetAPIResponse() *AlitripTuanHotelItemInfoGetAPIResponse {
+	return poolAlitripTuanHotelItemInfoGetAPIResponse.Get().(*AlitripTuanHotelItemInfoGetAPIResponse)
+}
+
+// ReleaseAlitripTuanHotelItemInfoGetAPIResponse 将 AlitripTuanHotelItemInfoGetAPIResponse 保存到 sync.Pool
+func ReleaseAlitripTuanHotelItemInfoGetAPIResponse(v *AlitripTuanHotelItemInfoGetAPIResponse) {
+	v.Reset()
+	poolAlitripTuanHotelItemInfoGetAPIResponse.Put(v)
 }

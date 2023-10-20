@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // ResultWrapper 结构体
 type ResultWrapper struct {
 	// 响应数据
@@ -20,4 +24,29 @@ type ResultWrapper struct {
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
 	// 是否需要重试
 	Retry bool `json:"retry,omitempty" xml:"retry,omitempty"`
+}
+
+var poolResultWrapper = sync.Pool{
+	New: func() any {
+		return new(ResultWrapper)
+	},
+}
+
+// GetResultWrapper() 从对象池中获取ResultWrapper
+func GetResultWrapper() *ResultWrapper {
+	return poolResultWrapper.Get().(*ResultWrapper)
+}
+
+// ReleaseResultWrapper 释放ResultWrapper
+func ReleaseResultWrapper(v *ResultWrapper) {
+	v.Datas = v.Datas[:0]
+	v.Data = v.Data[:0]
+	v.DataList = v.DataList[:0]
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.Error = ""
+	v.Success = false
+	v.ResultSuccess = false
+	v.Retry = false
+	poolResultWrapper.Put(v)
 }

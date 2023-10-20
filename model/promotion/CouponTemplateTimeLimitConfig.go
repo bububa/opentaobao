@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // CouponTemplateTimeLimitConfig 结构体
 type CouponTemplateTimeLimitConfig struct {
 	// 优惠券结束时间
@@ -14,4 +18,26 @@ type CouponTemplateTimeLimitConfig struct {
 	ValidityStartInterval int64 `json:"validity_start_interval,omitempty" xml:"validity_start_interval,omitempty"`
 	// 优惠券有效结束时长，单位为秒（优惠券领取后X-Y天有效的Y）
 	ValidityEndInterval int64 `json:"validity_end_interval,omitempty" xml:"validity_end_interval,omitempty"`
+}
+
+var poolCouponTemplateTimeLimitConfig = sync.Pool{
+	New: func() any {
+		return new(CouponTemplateTimeLimitConfig)
+	},
+}
+
+// GetCouponTemplateTimeLimitConfig() 从对象池中获取CouponTemplateTimeLimitConfig
+func GetCouponTemplateTimeLimitConfig() *CouponTemplateTimeLimitConfig {
+	return poolCouponTemplateTimeLimitConfig.Get().(*CouponTemplateTimeLimitConfig)
+}
+
+// ReleaseCouponTemplateTimeLimitConfig 释放CouponTemplateTimeLimitConfig
+func ReleaseCouponTemplateTimeLimitConfig(v *CouponTemplateTimeLimitConfig) {
+	v.EndValidTime = ""
+	v.StartValidTime = ""
+	v.ValidTimeType = 0
+	v.ValidityPeriod = 0
+	v.ValidityStartInterval = 0
+	v.ValidityEndInterval = 0
+	poolCouponTemplateTimeLimitConfig.Put(v)
 }

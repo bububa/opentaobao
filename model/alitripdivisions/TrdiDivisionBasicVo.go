@@ -1,5 +1,9 @@
 package alitripdivisions
 
+import (
+	"sync"
+)
+
 // TrdiDivisionBasicVo 结构体
 type TrdiDivisionBasicVo struct {
 	// 国家码
@@ -30,4 +34,34 @@ type TrdiDivisionBasicVo struct {
 	Level int64 `json:"level,omitempty" xml:"level,omitempty"`
 	// 父节点id
 	ParentId int64 `json:"parent_id,omitempty" xml:"parent_id,omitempty"`
+}
+
+var poolTrdiDivisionBasicVo = sync.Pool{
+	New: func() any {
+		return new(TrdiDivisionBasicVo)
+	},
+}
+
+// GetTrdiDivisionBasicVo() 从对象池中获取TrdiDivisionBasicVo
+func GetTrdiDivisionBasicVo() *TrdiDivisionBasicVo {
+	return poolTrdiDivisionBasicVo.Get().(*TrdiDivisionBasicVo)
+}
+
+// ReleaseTrdiDivisionBasicVo 释放TrdiDivisionBasicVo
+func ReleaseTrdiDivisionBasicVo(v *TrdiDivisionBasicVo) {
+	v.CountryCode2 = ""
+	v.CountryName = ""
+	v.Latitude = ""
+	v.Longitude = ""
+	v.Name = ""
+	v.NameAbbr = ""
+	v.NameEn = ""
+	v.Pinyin = ""
+	v.Py = ""
+	v.TreeId = ""
+	v.TreeName = ""
+	v.Id = 0
+	v.Level = 0
+	v.ParentId = 0
+	poolTrdiDivisionBasicVo.Put(v)
 }

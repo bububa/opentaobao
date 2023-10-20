@@ -2,6 +2,7 @@ package aliyun
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AccountAliyuncsComDeleteAppForBid20130701APIRequest struct {
 // NewAccountAliyuncsComDeleteAppForBid20130701Request 初始化AccountAliyuncsComDeleteAppForBid20130701APIRequest对象
 func NewAccountAliyuncsComDeleteAppForBid20130701Request() *AccountAliyuncsComDeleteAppForBid20130701APIRequest {
 	return &AccountAliyuncsComDeleteAppForBid20130701APIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AccountAliyuncsComDeleteAppForBid20130701APIRequest) Reset() {
+	r._ownerId = ""
+	r._ownerAppkey = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AccountAliyuncsComDeleteAppForBid20130701APIRequest) SetOwnerAppkey(_ow
 // GetOwnerAppkey OwnerAppkey Getter
 func (r AccountAliyuncsComDeleteAppForBid20130701APIRequest) GetOwnerAppkey() string {
 	return r._ownerAppkey
+}
+
+var poolAccountAliyuncsComDeleteAppForBid20130701APIRequest = sync.Pool{
+	New: func() any {
+		return NewAccountAliyuncsComDeleteAppForBid20130701Request()
+	},
+}
+
+// GetAccountAliyuncsComDeleteAppForBid20130701Request 从 sync.Pool 获取 AccountAliyuncsComDeleteAppForBid20130701APIRequest
+func GetAccountAliyuncsComDeleteAppForBid20130701APIRequest() *AccountAliyuncsComDeleteAppForBid20130701APIRequest {
+	return poolAccountAliyuncsComDeleteAppForBid20130701APIRequest.Get().(*AccountAliyuncsComDeleteAppForBid20130701APIRequest)
+}
+
+// ReleaseAccountAliyuncsComDeleteAppForBid20130701APIRequest 将 AccountAliyuncsComDeleteAppForBid20130701APIRequest 放入 sync.Pool
+func ReleaseAccountAliyuncsComDeleteAppForBid20130701APIRequest(v *AccountAliyuncsComDeleteAppForBid20130701APIRequest) {
+	v.Reset()
+	poolAccountAliyuncsComDeleteAppForBid20130701APIRequest.Put(v)
 }

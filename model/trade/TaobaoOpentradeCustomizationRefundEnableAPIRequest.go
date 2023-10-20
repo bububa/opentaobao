@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoOpentradeCustomizationRefundEnableAPIRequest struct {
 // NewTaobaoOpentradeCustomizationRefundEnableRequest 初始化TaobaoOpentradeCustomizationRefundEnableAPIRequest对象
 func NewTaobaoOpentradeCustomizationRefundEnableRequest() *TaobaoOpentradeCustomizationRefundEnableAPIRequest {
 	return &TaobaoOpentradeCustomizationRefundEnableAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpentradeCustomizationRefundEnableAPIRequest) Reset() {
+	r._tradeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoOpentradeCustomizationRefundEnableAPIRequest) SetTradeId(_tradeId
 // GetTradeId TradeId Getter
 func (r TaobaoOpentradeCustomizationRefundEnableAPIRequest) GetTradeId() int64 {
 	return r._tradeId
+}
+
+var poolTaobaoOpentradeCustomizationRefundEnableAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpentradeCustomizationRefundEnableRequest()
+	},
+}
+
+// GetTaobaoOpentradeCustomizationRefundEnableRequest 从 sync.Pool 获取 TaobaoOpentradeCustomizationRefundEnableAPIRequest
+func GetTaobaoOpentradeCustomizationRefundEnableAPIRequest() *TaobaoOpentradeCustomizationRefundEnableAPIRequest {
+	return poolTaobaoOpentradeCustomizationRefundEnableAPIRequest.Get().(*TaobaoOpentradeCustomizationRefundEnableAPIRequest)
+}
+
+// ReleaseTaobaoOpentradeCustomizationRefundEnableAPIRequest 将 TaobaoOpentradeCustomizationRefundEnableAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpentradeCustomizationRefundEnableAPIRequest(v *TaobaoOpentradeCustomizationRefundEnableAPIRequest) {
+	v.Reset()
+	poolTaobaoOpentradeCustomizationRefundEnableAPIRequest.Put(v)
 }

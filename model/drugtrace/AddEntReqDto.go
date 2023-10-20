@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // AddEntReqDto 结构体
 type AddEntReqDto struct {
 	// 企业其他地址省市区信息
@@ -26,4 +30,32 @@ type AddEntReqDto struct {
 	RegAddr *Address `json:"reg_addr,omitempty" xml:"reg_addr,omitempty"`
 	// 用类型code值：比如营业执照资质则传8.资质证照类型枚举结构：(类型code，类型值)；枚举值：DRUG_BUSINESS_LICENSE(1, &#34;药品经营许可证&#34;), GSP(2, &#34;GSP&#34;), PRACTICE_LICENSE_OF_MEDICAL_INSTITUTION(3, &#34;医疗机构执业许可证&#34;), GMP(4, &#34;GMP&#34;), PHARMACEUTICAL_PRODUCTION_LICENSE(5, &#34;药品生产许可证&#34;), GUP(6, &#34;GUP&#34;), REGISTRATION_CERTIFICATE_OF_FOREIGN_ENTERPRISES(7, &#34;外国企业常驻中国代表机构登记证&#34;), BUSINESS_LICENSE(8, &#34;营业执照&#34;), OTHER(9, &#34;其他&#34;), ORG_CODE_LICENSE(10, &#34;组织机构代码证&#34;), PUBLIC_INSTITUTIONS_LICENSE(11, &#34;事业单位法人证书&#34;), PRIVATE_NON_ENTERPRISE_ORGANIZATION_LICENSE(12, &#34;民办非企业单位登记证书&#34;), AGENCY_BUSINESS_LICENSE(13, &#34;代理公司营业执照&#34;), IMPORT_DRUG_REGISTRATION_LICENSE(14, &#34;进口药品注册证&#34;), DRUG_REGISTRATION_APPROVAL_LICENSE(15, &#34;药品注册批件&#34;), AUTHORIZATION_LICENSE(16, &#34;授权书&#34;) ;
 	LicenseType int64 `json:"license_type,omitempty" xml:"license_type,omitempty"`
+}
+
+var poolAddEntReqDto = sync.Pool{
+	New: func() any {
+		return new(AddEntReqDto)
+	},
+}
+
+// GetAddEntReqDto() 从对象池中获取AddEntReqDto
+func GetAddEntReqDto() *AddEntReqDto {
+	return poolAddEntReqDto.Get().(*AddEntReqDto)
+}
+
+// ReleaseAddEntReqDto 释放AddEntReqDto
+func ReleaseAddEntReqDto(v *AddEntReqDto) {
+	v.StoreAddrs = v.StoreAddrs[:0]
+	v.DictRegionDetail = ""
+	v.EntName = ""
+	v.MobilePhone = ""
+	v.OrgCode = ""
+	v.Tel = ""
+	v.ContactPsnNm = ""
+	v.Email = ""
+	v.EntOrgType = 0
+	v.UserRoleType = 0
+	v.RegAddr = nil
+	v.LicenseType = 0
+	poolAddEntReqDto.Put(v)
 }

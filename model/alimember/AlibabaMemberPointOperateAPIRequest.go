@@ -2,6 +2,7 @@ package alimember
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMemberPointOperateAPIRequest struct {
 // NewAlibabaMemberPointOperateRequest 初始化AlibabaMemberPointOperateAPIRequest对象
 func NewAlibabaMemberPointOperateRequest() *AlibabaMemberPointOperateAPIRequest {
 	return &AlibabaMemberPointOperateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMemberPointOperateAPIRequest) Reset() {
+	r._pointOperateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMemberPointOperateAPIRequest) SetPointOperateRequest(_pointOpera
 // GetPointOperateRequest PointOperateRequest Getter
 func (r AlibabaMemberPointOperateAPIRequest) GetPointOperateRequest() *PointOperateDto {
 	return r._pointOperateRequest
+}
+
+var poolAlibabaMemberPointOperateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMemberPointOperateRequest()
+	},
+}
+
+// GetAlibabaMemberPointOperateRequest 从 sync.Pool 获取 AlibabaMemberPointOperateAPIRequest
+func GetAlibabaMemberPointOperateAPIRequest() *AlibabaMemberPointOperateAPIRequest {
+	return poolAlibabaMemberPointOperateAPIRequest.Get().(*AlibabaMemberPointOperateAPIRequest)
+}
+
+// ReleaseAlibabaMemberPointOperateAPIRequest 将 AlibabaMemberPointOperateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMemberPointOperateAPIRequest(v *AlibabaMemberPointOperateAPIRequest) {
+	v.Reset()
+	poolAlibabaMemberPointOperateAPIRequest.Put(v)
 }

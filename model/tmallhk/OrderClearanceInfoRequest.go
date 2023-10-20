@@ -1,5 +1,9 @@
 package tmallhk
 
+import (
+	"sync"
+)
+
 // OrderClearanceInfoRequest 结构体
 type OrderClearanceInfoRequest struct {
 	// 清关结果编码放行/000开头 清关失败/100开头
@@ -18,4 +22,28 @@ type OrderClearanceInfoRequest struct {
 	ClearanceStatus int64 `json:"clearance_status,omitempty" xml:"clearance_status,omitempty"`
 	// 订单ID
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolOrderClearanceInfoRequest = sync.Pool{
+	New: func() any {
+		return new(OrderClearanceInfoRequest)
+	},
+}
+
+// GetOrderClearanceInfoRequest() 从对象池中获取OrderClearanceInfoRequest
+func GetOrderClearanceInfoRequest() *OrderClearanceInfoRequest {
+	return poolOrderClearanceInfoRequest.Get().(*OrderClearanceInfoRequest)
+}
+
+// ReleaseOrderClearanceInfoRequest 释放OrderClearanceInfoRequest
+func ReleaseOrderClearanceInfoRequest(v *OrderClearanceInfoRequest) {
+	v.ClearanceResultCode = ""
+	v.ClearancePortNo = ""
+	v.ClearanceTime = ""
+	v.CustomsPassNo = ""
+	v.CustomsReturnReceipt = ""
+	v.Idempotent = ""
+	v.ClearanceStatus = 0
+	v.OrderId = 0
+	poolOrderClearanceInfoRequest.Put(v)
 }

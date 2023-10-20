@@ -2,6 +2,7 @@ package usergrowth
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoGrowthReachingPicturesRecognizeAPIResponse struct {
 	TaobaoGrowthReachingPicturesRecognizeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoGrowthReachingPicturesRecognizeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoGrowthReachingPicturesRecognizeAPIResponseModel).Reset()
+}
+
 // TaobaoGrowthReachingPicturesRecognizeAPIResponseModel is 图片识别 成功返回结果
 type TaobaoGrowthReachingPicturesRecognizeAPIResponseModel struct {
 	XMLName xml.Name `xml:"growth_reaching_pictures_recognize_response"`
@@ -26,4 +33,29 @@ type TaobaoGrowthReachingPicturesRecognizeAPIResponseModel struct {
 	PicId string `json:"pic_id,omitempty" xml:"pic_id,omitempty"`
 	// 唤端链接
 	DeepLink string `json:"deep_link,omitempty" xml:"deep_link,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoGrowthReachingPicturesRecognizeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RegionList = m.RegionList[:0]
+	m.PicId = ""
+	m.DeepLink = ""
+}
+
+var poolTaobaoGrowthReachingPicturesRecognizeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoGrowthReachingPicturesRecognizeAPIResponse)
+	},
+}
+
+// GetTaobaoGrowthReachingPicturesRecognizeAPIResponse 从 sync.Pool 获取 TaobaoGrowthReachingPicturesRecognizeAPIResponse
+func GetTaobaoGrowthReachingPicturesRecognizeAPIResponse() *TaobaoGrowthReachingPicturesRecognizeAPIResponse {
+	return poolTaobaoGrowthReachingPicturesRecognizeAPIResponse.Get().(*TaobaoGrowthReachingPicturesRecognizeAPIResponse)
+}
+
+// ReleaseTaobaoGrowthReachingPicturesRecognizeAPIResponse 将 TaobaoGrowthReachingPicturesRecognizeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoGrowthReachingPicturesRecognizeAPIResponse(v *TaobaoGrowthReachingPicturesRecognizeAPIResponse) {
+	v.Reset()
+	poolTaobaoGrowthReachingPicturesRecognizeAPIResponse.Put(v)
 }

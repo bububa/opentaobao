@@ -9,11 +9,6 @@ import (
 // alitrip.flight.flightchange.order.query
 //
 // 订单维度航变查询
-func AlitripFlightFlightchangeOrderQuery(clt *core.SDKClient, req *flightuppc.AlitripFlightFlightchangeOrderQueryAPIRequest, session string) (*flightuppc.AlitripFlightFlightchangeOrderQueryAPIResponse, error) {
-	var resp flightuppc.AlitripFlightFlightchangeOrderQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripFlightFlightchangeOrderQuery(clt *core.SDKClient, req *flightuppc.AlitripFlightFlightchangeOrderQueryAPIRequest, resp *flightuppc.AlitripFlightFlightchangeOrderQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

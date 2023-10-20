@@ -9,11 +9,6 @@ import (
 // alibaba.interact.media.audio
 //
 // 新音频包的鉴权接口
-func AlibabaInteractMediaAudio(clt *core.SDKClient, req *mtopopen.AlibabaInteractMediaAudioAPIRequest, session string) (*mtopopen.AlibabaInteractMediaAudioAPIResponse, error) {
-	var resp mtopopen.AlibabaInteractMediaAudioAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaInteractMediaAudio(clt *core.SDKClient, req *mtopopen.AlibabaInteractMediaAudioAPIRequest, resp *mtopopen.AlibabaInteractMediaAudioAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

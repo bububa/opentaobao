@@ -2,6 +2,7 @@ package txcs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallTxcsFinanceInvoiceInputAPIRequest struct {
 // NewTmallTxcsFinanceInvoiceInputRequest 初始化TmallTxcsFinanceInvoiceInputAPIRequest对象
 func NewTmallTxcsFinanceInvoiceInputRequest() *TmallTxcsFinanceInvoiceInputAPIRequest {
 	return &TmallTxcsFinanceInvoiceInputAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallTxcsFinanceInvoiceInputAPIRequest) Reset() {
+	r._invoiceInputDTO1 = r._invoiceInputDTO1[:0]
+	r._ouCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallTxcsFinanceInvoiceInputAPIRequest) SetOuCode(_ouCode string) error
 // GetOuCode OuCode Getter
 func (r TmallTxcsFinanceInvoiceInputAPIRequest) GetOuCode() string {
 	return r._ouCode
+}
+
+var poolTmallTxcsFinanceInvoiceInputAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallTxcsFinanceInvoiceInputRequest()
+	},
+}
+
+// GetTmallTxcsFinanceInvoiceInputRequest 从 sync.Pool 获取 TmallTxcsFinanceInvoiceInputAPIRequest
+func GetTmallTxcsFinanceInvoiceInputAPIRequest() *TmallTxcsFinanceInvoiceInputAPIRequest {
+	return poolTmallTxcsFinanceInvoiceInputAPIRequest.Get().(*TmallTxcsFinanceInvoiceInputAPIRequest)
+}
+
+// ReleaseTmallTxcsFinanceInvoiceInputAPIRequest 将 TmallTxcsFinanceInvoiceInputAPIRequest 放入 sync.Pool
+func ReleaseTmallTxcsFinanceInvoiceInputAPIRequest(v *TmallTxcsFinanceInvoiceInputAPIRequest) {
+	v.Reset()
+	poolTmallTxcsFinanceInvoiceInputAPIRequest.Put(v)
 }

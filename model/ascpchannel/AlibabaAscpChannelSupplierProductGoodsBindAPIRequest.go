@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpChannelSupplierProductGoodsBindAPIRequest struct {
 // NewAlibabaAscpChannelSupplierProductGoodsBindRequest 初始化AlibabaAscpChannelSupplierProductGoodsBindAPIRequest对象
 func NewAlibabaAscpChannelSupplierProductGoodsBindRequest() *AlibabaAscpChannelSupplierProductGoodsBindAPIRequest {
 	return &AlibabaAscpChannelSupplierProductGoodsBindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpChannelSupplierProductGoodsBindAPIRequest) Reset() {
+	r._topBindProductGoodsRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpChannelSupplierProductGoodsBindAPIRequest) SetTopBindProduct
 // GetTopBindProductGoodsRequest TopBindProductGoodsRequest Getter
 func (r AlibabaAscpChannelSupplierProductGoodsBindAPIRequest) GetTopBindProductGoodsRequest() *TopBindProductGoodsRequest {
 	return r._topBindProductGoodsRequest
+}
+
+var poolAlibabaAscpChannelSupplierProductGoodsBindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpChannelSupplierProductGoodsBindRequest()
+	},
+}
+
+// GetAlibabaAscpChannelSupplierProductGoodsBindRequest 从 sync.Pool 获取 AlibabaAscpChannelSupplierProductGoodsBindAPIRequest
+func GetAlibabaAscpChannelSupplierProductGoodsBindAPIRequest() *AlibabaAscpChannelSupplierProductGoodsBindAPIRequest {
+	return poolAlibabaAscpChannelSupplierProductGoodsBindAPIRequest.Get().(*AlibabaAscpChannelSupplierProductGoodsBindAPIRequest)
+}
+
+// ReleaseAlibabaAscpChannelSupplierProductGoodsBindAPIRequest 将 AlibabaAscpChannelSupplierProductGoodsBindAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpChannelSupplierProductGoodsBindAPIRequest(v *AlibabaAscpChannelSupplierProductGoodsBindAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpChannelSupplierProductGoodsBindAPIRequest.Put(v)
 }

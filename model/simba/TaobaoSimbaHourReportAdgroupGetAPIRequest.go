@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoSimbaHourReportAdgroupGetAPIRequest struct {
 // NewTaobaoSimbaHourReportAdgroupGetRequest 初始化TaobaoSimbaHourReportAdgroupGetAPIRequest对象
 func NewTaobaoSimbaHourReportAdgroupGetRequest() *TaobaoSimbaHourReportAdgroupGetAPIRequest {
 	return &TaobaoSimbaHourReportAdgroupGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaHourReportAdgroupGetAPIRequest) Reset() {
+	r._nick = ""
+	r._theDate = ""
+	r._hour = ""
+	r._campaignId = ""
+	r._adgroupId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoSimbaHourReportAdgroupGetAPIRequest) SetAdgroupId(_adgroupId stri
 // GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaHourReportAdgroupGetAPIRequest) GetAdgroupId() string {
 	return r._adgroupId
+}
+
+var poolTaobaoSimbaHourReportAdgroupGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaHourReportAdgroupGetRequest()
+	},
+}
+
+// GetTaobaoSimbaHourReportAdgroupGetRequest 从 sync.Pool 获取 TaobaoSimbaHourReportAdgroupGetAPIRequest
+func GetTaobaoSimbaHourReportAdgroupGetAPIRequest() *TaobaoSimbaHourReportAdgroupGetAPIRequest {
+	return poolTaobaoSimbaHourReportAdgroupGetAPIRequest.Get().(*TaobaoSimbaHourReportAdgroupGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaHourReportAdgroupGetAPIRequest 将 TaobaoSimbaHourReportAdgroupGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaHourReportAdgroupGetAPIRequest(v *TaobaoSimbaHourReportAdgroupGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaHourReportAdgroupGetAPIRequest.Put(v)
 }

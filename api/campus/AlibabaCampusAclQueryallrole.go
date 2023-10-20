@@ -9,11 +9,6 @@ import (
 // alibaba.campus.acl.queryallrole
 //
 // 查询全部园区
-func AlibabaCampusAclQueryallrole(clt *core.SDKClient, req *campus.AlibabaCampusAclQueryallroleAPIRequest, session string) (*campus.AlibabaCampusAclQueryallroleAPIResponse, error) {
-	var resp campus.AlibabaCampusAclQueryallroleAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusAclQueryallrole(clt *core.SDKClient, req *campus.AlibabaCampusAclQueryallroleAPIRequest, resp *campus.AlibabaCampusAclQueryallroleAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

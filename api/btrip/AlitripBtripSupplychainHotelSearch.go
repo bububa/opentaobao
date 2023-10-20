@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.supplychain.hotel.search
 //
 // 【商旅】酒店订单查询
-func AlitripBtripSupplychainHotelSearch(clt *core.SDKClient, req *btrip.AlitripBtripSupplychainHotelSearchAPIRequest, session string) (*btrip.AlitripBtripSupplychainHotelSearchAPIResponse, error) {
-	var resp btrip.AlitripBtripSupplychainHotelSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripSupplychainHotelSearch(clt *core.SDKClient, req *btrip.AlitripBtripSupplychainHotelSearchAPIRequest, resp *btrip.AlitripBtripSupplychainHotelSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.security.jaq.campaignprevention.result.fetch
 //
 // 获取活动保护结果
-func AlibabaSecurityJaqCampaignpreventionResultFetch(clt *core.SDKClient, req *security.AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest, session string) (*security.AlibabaSecurityJaqCampaignpreventionResultFetchAPIResponse, error) {
-	var resp security.AlibabaSecurityJaqCampaignpreventionResultFetchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSecurityJaqCampaignpreventionResultFetch(clt *core.SDKClient, req *security.AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest, resp *security.AlibabaSecurityJaqCampaignpreventionResultFetchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

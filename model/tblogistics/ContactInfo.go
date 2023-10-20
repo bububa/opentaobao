@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // ContactInfo 结构体
 type ContactInfo struct {
 	// 姓名
@@ -20,4 +24,29 @@ type ContactInfo struct {
 	DetailAddress string `json:"detail_address,omitempty" xml:"detail_address,omitempty"`
 	// 订单oaid，正向出库时下发
 	Oaid string `json:"oaid,omitempty" xml:"oaid,omitempty"`
+}
+
+var poolContactInfo = sync.Pool{
+	New: func() any {
+		return new(ContactInfo)
+	},
+}
+
+// GetContactInfo() 从对象池中获取ContactInfo
+func GetContactInfo() *ContactInfo {
+	return poolContactInfo.Get().(*ContactInfo)
+}
+
+// ReleaseContactInfo 释放ContactInfo
+func ReleaseContactInfo(v *ContactInfo) {
+	v.Name = ""
+	v.Tel = ""
+	v.Mobile = ""
+	v.Province = ""
+	v.City = ""
+	v.Area = ""
+	v.Town = ""
+	v.DetailAddress = ""
+	v.Oaid = ""
+	poolContactInfo.Put(v)
 }

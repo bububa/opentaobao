@@ -2,6 +2,7 @@ package rail
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type AlitripRailIrDivisionGetAPIResponse struct {
 	AlitripRailIrDivisionGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripRailIrDivisionGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripRailIrDivisionGetAPIResponseModel).Reset()
+}
+
 // AlitripRailIrDivisionGetAPIResponseModel is 国际火车票标准城市查询 成功返回结果
 type AlitripRailIrDivisionGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_rail_ir_division_get_response"`
@@ -23,4 +30,27 @@ type AlitripRailIrDivisionGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回对象
 	Result *RailResultList `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripRailIrDivisionGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripRailIrDivisionGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripRailIrDivisionGetAPIResponse)
+	},
+}
+
+// GetAlitripRailIrDivisionGetAPIResponse 从 sync.Pool 获取 AlitripRailIrDivisionGetAPIResponse
+func GetAlitripRailIrDivisionGetAPIResponse() *AlitripRailIrDivisionGetAPIResponse {
+	return poolAlitripRailIrDivisionGetAPIResponse.Get().(*AlitripRailIrDivisionGetAPIResponse)
+}
+
+// ReleaseAlitripRailIrDivisionGetAPIResponse 将 AlitripRailIrDivisionGetAPIResponse 保存到 sync.Pool
+func ReleaseAlitripRailIrDivisionGetAPIResponse(v *AlitripRailIrDivisionGetAPIResponse) {
+	v.Reset()
+	poolAlitripRailIrDivisionGetAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // VulnFullInfo 结构体
 type VulnFullInfo struct {
 	// 漏洞详情列表(任务完成时才返回)
@@ -12,4 +16,25 @@ type VulnFullInfo struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 漏洞数量信息(任务完成时才返回)
 	VulnCount *VulnCount `json:"vuln_count,omitempty" xml:"vuln_count,omitempty"`
+}
+
+var poolVulnFullInfo = sync.Pool{
+	New: func() any {
+		return new(VulnFullInfo)
+	},
+}
+
+// GetVulnFullInfo() 从对象池中获取VulnFullInfo
+func GetVulnFullInfo() *VulnFullInfo {
+	return poolVulnFullInfo.Get().(*VulnFullInfo)
+}
+
+// ReleaseVulnFullInfo 释放VulnFullInfo
+func ReleaseVulnFullInfo(v *VulnFullInfo) {
+	v.VulnDetails = v.VulnDetails[:0]
+	v.TaskErrorCode = ""
+	v.TaskErrorMsg = ""
+	v.Status = 0
+	v.VulnCount = nil
+	poolVulnFullInfo.Put(v)
 }

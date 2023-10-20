@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripOpenSupplychainFlightTradeAPIRequest struct {
 // NewAlitripBtripOpenSupplychainFlightTradeRequest 初始化AlitripBtripOpenSupplychainFlightTradeAPIRequest对象
 func NewAlitripBtripOpenSupplychainFlightTradeRequest() *AlitripBtripOpenSupplychainFlightTradeAPIRequest {
 	return &AlitripBtripOpenSupplychainFlightTradeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripOpenSupplychainFlightTradeAPIRequest) Reset() {
+	r._rq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripOpenSupplychainFlightTradeAPIRequest) SetRq(_rq *OpenApiZzd
 // GetRq Rq Getter
 func (r AlitripBtripOpenSupplychainFlightTradeAPIRequest) GetRq() *OpenApiZzdSearchRq {
 	return r._rq
+}
+
+var poolAlitripBtripOpenSupplychainFlightTradeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripOpenSupplychainFlightTradeRequest()
+	},
+}
+
+// GetAlitripBtripOpenSupplychainFlightTradeRequest 从 sync.Pool 获取 AlitripBtripOpenSupplychainFlightTradeAPIRequest
+func GetAlitripBtripOpenSupplychainFlightTradeAPIRequest() *AlitripBtripOpenSupplychainFlightTradeAPIRequest {
+	return poolAlitripBtripOpenSupplychainFlightTradeAPIRequest.Get().(*AlitripBtripOpenSupplychainFlightTradeAPIRequest)
+}
+
+// ReleaseAlitripBtripOpenSupplychainFlightTradeAPIRequest 将 AlitripBtripOpenSupplychainFlightTradeAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripOpenSupplychainFlightTradeAPIRequest(v *AlitripBtripOpenSupplychainFlightTradeAPIRequest) {
+	v.Reset()
+	poolAlitripBtripOpenSupplychainFlightTradeAPIRequest.Put(v)
 }

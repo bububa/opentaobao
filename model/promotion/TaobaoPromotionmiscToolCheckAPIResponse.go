@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoPromotionmiscToolCheckAPIResponse struct {
 	TaobaoPromotionmiscToolCheckAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoPromotionmiscToolCheckAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPromotionmiscToolCheckAPIResponseModel).Reset()
+}
+
 // TaobaoPromotionmiscToolCheckAPIResponseModel is UMP工具检测 成功返回结果
 type TaobaoPromotionmiscToolCheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotionmisc_tool_check_response"`
@@ -26,4 +33,29 @@ type TaobaoPromotionmiscToolCheckAPIResponseModel struct {
 	CheckToolModule *CheckToolModule `json:"check_tool_module,omitempty" xml:"check_tool_module,omitempty"`
 	// 工具检测动作是否成功。检测是否通过请查看返回值default_model里的is_pass。
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPromotionmiscToolCheckAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorMessage = ""
+	m.CheckToolModule = nil
+	m.IsSuccess = false
+}
+
+var poolTaobaoPromotionmiscToolCheckAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPromotionmiscToolCheckAPIResponse)
+	},
+}
+
+// GetTaobaoPromotionmiscToolCheckAPIResponse 从 sync.Pool 获取 TaobaoPromotionmiscToolCheckAPIResponse
+func GetTaobaoPromotionmiscToolCheckAPIResponse() *TaobaoPromotionmiscToolCheckAPIResponse {
+	return poolTaobaoPromotionmiscToolCheckAPIResponse.Get().(*TaobaoPromotionmiscToolCheckAPIResponse)
+}
+
+// ReleaseTaobaoPromotionmiscToolCheckAPIResponse 将 TaobaoPromotionmiscToolCheckAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPromotionmiscToolCheckAPIResponse(v *TaobaoPromotionmiscToolCheckAPIResponse) {
+	v.Reset()
+	poolTaobaoPromotionmiscToolCheckAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaWdkBmCouponQueryAPIResponse struct {
 	AlibabaWdkBmCouponQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaWdkBmCouponQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkBmCouponQueryAPIResponseModel).Reset()
+}
+
 // AlibabaWdkBmCouponQueryAPIResponseModel is 淘鲜达券信息查询接口 成功返回结果
 type AlibabaWdkBmCouponQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_bm_coupon_query_response"`
@@ -22,4 +29,27 @@ type AlibabaWdkBmCouponQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果
 	Result *BmResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkBmCouponQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaWdkBmCouponQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkBmCouponQueryAPIResponse)
+	},
+}
+
+// GetAlibabaWdkBmCouponQueryAPIResponse 从 sync.Pool 获取 AlibabaWdkBmCouponQueryAPIResponse
+func GetAlibabaWdkBmCouponQueryAPIResponse() *AlibabaWdkBmCouponQueryAPIResponse {
+	return poolAlibabaWdkBmCouponQueryAPIResponse.Get().(*AlibabaWdkBmCouponQueryAPIResponse)
+}
+
+// ReleaseAlibabaWdkBmCouponQueryAPIResponse 将 AlibabaWdkBmCouponQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkBmCouponQueryAPIResponse(v *AlibabaWdkBmCouponQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkBmCouponQueryAPIResponse.Put(v)
 }

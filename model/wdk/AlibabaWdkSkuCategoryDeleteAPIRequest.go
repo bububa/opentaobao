@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkSkuCategoryDeleteAPIRequest struct {
 // NewAlibabaWdkSkuCategoryDeleteRequest 初始化AlibabaWdkSkuCategoryDeleteAPIRequest对象
 func NewAlibabaWdkSkuCategoryDeleteRequest() *AlibabaWdkSkuCategoryDeleteAPIRequest {
 	return &AlibabaWdkSkuCategoryDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkSkuCategoryDeleteAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkSkuCategoryDeleteAPIRequest) SetParam(_param *CategoryDo) err
 // GetParam Param Getter
 func (r AlibabaWdkSkuCategoryDeleteAPIRequest) GetParam() *CategoryDo {
 	return r._param
+}
+
+var poolAlibabaWdkSkuCategoryDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkSkuCategoryDeleteRequest()
+	},
+}
+
+// GetAlibabaWdkSkuCategoryDeleteRequest 从 sync.Pool 获取 AlibabaWdkSkuCategoryDeleteAPIRequest
+func GetAlibabaWdkSkuCategoryDeleteAPIRequest() *AlibabaWdkSkuCategoryDeleteAPIRequest {
+	return poolAlibabaWdkSkuCategoryDeleteAPIRequest.Get().(*AlibabaWdkSkuCategoryDeleteAPIRequest)
+}
+
+// ReleaseAlibabaWdkSkuCategoryDeleteAPIRequest 将 AlibabaWdkSkuCategoryDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkSkuCategoryDeleteAPIRequest(v *AlibabaWdkSkuCategoryDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkSkuCategoryDeleteAPIRequest.Put(v)
 }

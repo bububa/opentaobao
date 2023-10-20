@@ -1,5 +1,9 @@
 package tbrefund
 
+import (
+	"sync"
+)
+
 // QueryRefundStatusResponse 结构体
 type QueryRefundStatusResponse struct {
 	// 更新时间。格式:yyyy-MM-dd HH:mm:ss
@@ -12,4 +16,25 @@ type QueryRefundStatusResponse struct {
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
 	// 子订单号
 	Oid int64 `json:"oid,omitempty" xml:"oid,omitempty"`
+}
+
+var poolQueryRefundStatusResponse = sync.Pool{
+	New: func() any {
+		return new(QueryRefundStatusResponse)
+	},
+}
+
+// GetQueryRefundStatusResponse() 从对象池中获取QueryRefundStatusResponse
+func GetQueryRefundStatusResponse() *QueryRefundStatusResponse {
+	return poolQueryRefundStatusResponse.Get().(*QueryRefundStatusResponse)
+}
+
+// ReleaseQueryRefundStatusResponse 释放QueryRefundStatusResponse
+func ReleaseQueryRefundStatusResponse(v *QueryRefundStatusResponse) {
+	v.Modified = ""
+	v.Status = ""
+	v.RefundId = 0
+	v.Tid = 0
+	v.Oid = 0
+	poolQueryRefundStatusResponse.Put(v)
 }

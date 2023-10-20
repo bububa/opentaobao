@@ -2,6 +2,7 @@ package charity
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest struct {
 // NewAlibabaCsrDonateInvoiceQuerytoblockchainossRequest 初始化AlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest对象
 func NewAlibabaCsrDonateInvoiceQuerytoblockchainossRequest() *AlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest {
 	return &AlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest) Reset() {
+	r._accountCheckQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest) SetAccountCheckQ
 // GetAccountCheckQuery AccountCheckQuery Getter
 func (r AlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest) GetAccountCheckQuery() *AccountCheckQuery {
 	return r._accountCheckQuery
+}
+
+var poolAlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCsrDonateInvoiceQuerytoblockchainossRequest()
+	},
+}
+
+// GetAlibabaCsrDonateInvoiceQuerytoblockchainossRequest 从 sync.Pool 获取 AlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest
+func GetAlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest() *AlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest {
+	return poolAlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest.Get().(*AlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest)
+}
+
+// ReleaseAlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest 将 AlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest(v *AlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest) {
+	v.Reset()
+	poolAlibabaCsrDonateInvoiceQuerytoblockchainossAPIRequest.Put(v)
 }

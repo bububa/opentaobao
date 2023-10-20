@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // TmallFuwuHomedecorationWorkerlevelListResult 结构体
 type TmallFuwuHomedecorationWorkerlevelListResult struct {
 	// 工人分层数据
@@ -16,4 +20,27 @@ type TmallFuwuHomedecorationWorkerlevelListResult struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmallFuwuHomedecorationWorkerlevelListResult = sync.Pool{
+	New: func() any {
+		return new(TmallFuwuHomedecorationWorkerlevelListResult)
+	},
+}
+
+// GetTmallFuwuHomedecorationWorkerlevelListResult() 从对象池中获取TmallFuwuHomedecorationWorkerlevelListResult
+func GetTmallFuwuHomedecorationWorkerlevelListResult() *TmallFuwuHomedecorationWorkerlevelListResult {
+	return poolTmallFuwuHomedecorationWorkerlevelListResult.Get().(*TmallFuwuHomedecorationWorkerlevelListResult)
+}
+
+// ReleaseTmallFuwuHomedecorationWorkerlevelListResult 释放TmallFuwuHomedecorationWorkerlevelListResult
+func ReleaseTmallFuwuHomedecorationWorkerlevelListResult(v *TmallFuwuHomedecorationWorkerlevelListResult) {
+	v.DataList = v.DataList[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.PageIndex = 0
+	v.PageSize = 0
+	v.TotalCount = 0
+	v.Success = false
+	poolTmallFuwuHomedecorationWorkerlevelListResult.Put(v)
 }

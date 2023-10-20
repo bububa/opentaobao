@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihouseNewhomeProjectLineAPIResponse struct {
 	AlibabaAlihouseNewhomeProjectLineAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihouseNewhomeProjectLineAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihouseNewhomeProjectLineAPIResponseModel).Reset()
+}
+
 // AlibabaAlihouseNewhomeProjectLineAPIResponseModel is 楼盘上下架 成功返回结果
 type AlibabaAlihouseNewhomeProjectLineAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_newhome_project_line_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihouseNewhomeProjectLineAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaAlihouseNewhomeProjectLineResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihouseNewhomeProjectLineAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihouseNewhomeProjectLineAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihouseNewhomeProjectLineAPIResponse)
+	},
+}
+
+// GetAlibabaAlihouseNewhomeProjectLineAPIResponse 从 sync.Pool 获取 AlibabaAlihouseNewhomeProjectLineAPIResponse
+func GetAlibabaAlihouseNewhomeProjectLineAPIResponse() *AlibabaAlihouseNewhomeProjectLineAPIResponse {
+	return poolAlibabaAlihouseNewhomeProjectLineAPIResponse.Get().(*AlibabaAlihouseNewhomeProjectLineAPIResponse)
+}
+
+// ReleaseAlibabaAlihouseNewhomeProjectLineAPIResponse 将 AlibabaAlihouseNewhomeProjectLineAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeProjectLineAPIResponse(v *AlibabaAlihouseNewhomeProjectLineAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeProjectLineAPIResponse.Put(v)
 }

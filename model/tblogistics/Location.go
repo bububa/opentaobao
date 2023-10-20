@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // Location 结构体
 type Location struct {
 	// 邮政编码
@@ -14,4 +18,26 @@ type Location struct {
 	Country string `json:"country,omitempty" xml:"country,omitempty"`
 	// 区/县（只适用于物流API）
 	District string `json:"district,omitempty" xml:"district,omitempty"`
+}
+
+var poolLocation = sync.Pool{
+	New: func() any {
+		return new(Location)
+	},
+}
+
+// GetLocation() 从对象池中获取Location
+func GetLocation() *Location {
+	return poolLocation.Get().(*Location)
+}
+
+// ReleaseLocation 释放Location
+func ReleaseLocation(v *Location) {
+	v.Zip = ""
+	v.Address = ""
+	v.City = ""
+	v.State = ""
+	v.Country = ""
+	v.District = ""
+	poolLocation.Put(v)
 }

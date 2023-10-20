@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTbkScUcrowdDeleteAPIResponse struct {
 	TaobaoTbkScUcrowdDeleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTbkScUcrowdDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkScUcrowdDeleteAPIResponseModel).Reset()
+}
+
 // TaobaoTbkScUcrowdDeleteAPIResponseModel is 淘宝客-服务商-删除人群标签 成功返回结果
 type TaobaoTbkScUcrowdDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_sc_ucrowd_delete_response"`
@@ -22,4 +29,27 @@ type TaobaoTbkScUcrowdDeleteAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// data
 	Data *TaobaoTbkScUcrowdDeleteRpcResult `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkScUcrowdDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = nil
+}
+
+var poolTaobaoTbkScUcrowdDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkScUcrowdDeleteAPIResponse)
+	},
+}
+
+// GetTaobaoTbkScUcrowdDeleteAPIResponse 从 sync.Pool 获取 TaobaoTbkScUcrowdDeleteAPIResponse
+func GetTaobaoTbkScUcrowdDeleteAPIResponse() *TaobaoTbkScUcrowdDeleteAPIResponse {
+	return poolTaobaoTbkScUcrowdDeleteAPIResponse.Get().(*TaobaoTbkScUcrowdDeleteAPIResponse)
+}
+
+// ReleaseTaobaoTbkScUcrowdDeleteAPIResponse 将 TaobaoTbkScUcrowdDeleteAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkScUcrowdDeleteAPIResponse(v *TaobaoTbkScUcrowdDeleteAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkScUcrowdDeleteAPIResponse.Put(v)
 }

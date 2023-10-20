@@ -2,6 +2,7 @@ package lstvending
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstVendingEquipmentQueryAPIRequest struct {
 // NewAlibabaLstVendingEquipmentQueryRequest 初始化AlibabaLstVendingEquipmentQueryAPIRequest对象
 func NewAlibabaLstVendingEquipmentQueryRequest() *AlibabaLstVendingEquipmentQueryAPIRequest {
 	return &AlibabaLstVendingEquipmentQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstVendingEquipmentQueryAPIRequest) Reset() {
+	r._openEquipmentQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstVendingEquipmentQueryAPIRequest) SetOpenEquipmentQuery(_openE
 // GetOpenEquipmentQuery OpenEquipmentQuery Getter
 func (r AlibabaLstVendingEquipmentQueryAPIRequest) GetOpenEquipmentQuery() *OpenEquipmentQuery {
 	return r._openEquipmentQuery
+}
+
+var poolAlibabaLstVendingEquipmentQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstVendingEquipmentQueryRequest()
+	},
+}
+
+// GetAlibabaLstVendingEquipmentQueryRequest 从 sync.Pool 获取 AlibabaLstVendingEquipmentQueryAPIRequest
+func GetAlibabaLstVendingEquipmentQueryAPIRequest() *AlibabaLstVendingEquipmentQueryAPIRequest {
+	return poolAlibabaLstVendingEquipmentQueryAPIRequest.Get().(*AlibabaLstVendingEquipmentQueryAPIRequest)
+}
+
+// ReleaseAlibabaLstVendingEquipmentQueryAPIRequest 将 AlibabaLstVendingEquipmentQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstVendingEquipmentQueryAPIRequest(v *AlibabaLstVendingEquipmentQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaLstVendingEquipmentQueryAPIRequest.Put(v)
 }

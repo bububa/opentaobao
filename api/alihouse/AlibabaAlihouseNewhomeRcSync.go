@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.rc.sync
 //
 // 接收图文草稿信息
-func AlibabaAlihouseNewhomeRcSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeRcSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeRcSyncAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeRcSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeRcSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeRcSyncAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeRcSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

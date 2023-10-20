@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -45,8 +46,27 @@ type AlibabaHappytripTaxiPriceGetAPIRequest struct {
 // NewAlibabaHappytripTaxiPriceGetRequest 初始化AlibabaHappytripTaxiPriceGetAPIRequest对象
 func NewAlibabaHappytripTaxiPriceGetRequest() *AlibabaHappytripTaxiPriceGetAPIRequest {
 	return &AlibabaHappytripTaxiPriceGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(14),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHappytripTaxiPriceGetAPIRequest) Reset() {
+	r._flat = ""
+	r._flng = ""
+	r._tlat = ""
+	r._tlng = ""
+	r._mapType = ""
+	r._city = ""
+	r._departureTime = ""
+	r._costCenter = ""
+	r._requireLevel = ""
+	r._uid = ""
+	r._passengerPhone = ""
+	r._type = 0
+	r._carpoolType = 0
+	r._passengerNumber = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -246,4 +266,21 @@ func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetPassengerNumber(_passengerNu
 // GetPassengerNumber PassengerNumber Getter
 func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetPassengerNumber() int64 {
 	return r._passengerNumber
+}
+
+var poolAlibabaHappytripTaxiPriceGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHappytripTaxiPriceGetRequest()
+	},
+}
+
+// GetAlibabaHappytripTaxiPriceGetRequest 从 sync.Pool 获取 AlibabaHappytripTaxiPriceGetAPIRequest
+func GetAlibabaHappytripTaxiPriceGetAPIRequest() *AlibabaHappytripTaxiPriceGetAPIRequest {
+	return poolAlibabaHappytripTaxiPriceGetAPIRequest.Get().(*AlibabaHappytripTaxiPriceGetAPIRequest)
+}
+
+// ReleaseAlibabaHappytripTaxiPriceGetAPIRequest 将 AlibabaHappytripTaxiPriceGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHappytripTaxiPriceGetAPIRequest(v *AlibabaHappytripTaxiPriceGetAPIRequest) {
+	v.Reset()
+	poolAlibabaHappytripTaxiPriceGetAPIRequest.Put(v)
 }

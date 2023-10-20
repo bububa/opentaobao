@@ -1,5 +1,9 @@
 package cainiaolocker
 
+import (
+	"sync"
+)
+
 // StationInfo 结构体
 type StationInfo struct {
 	// 邮编
@@ -38,4 +42,38 @@ type StationInfo struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 站点类型：100-代收点
 	StationType int64 `json:"station_type,omitempty" xml:"station_type,omitempty"`
+}
+
+var poolStationInfo = sync.Pool{
+	New: func() any {
+		return new(StationInfo)
+	},
+}
+
+// GetStationInfo() 从对象池中获取StationInfo
+func GetStationInfo() *StationInfo {
+	return poolStationInfo.Get().(*StationInfo)
+}
+
+// ReleaseStationInfo 释放StationInfo
+func ReleaseStationInfo(v *StationInfo) {
+	v.Zip = ""
+	v.StationLng = ""
+	v.StationAddr = ""
+	v.StationId = ""
+	v.StationName = ""
+	v.HousingEstate = ""
+	v.StationNo = ""
+	v.City = ""
+	v.ImgUrl = ""
+	v.StationLat = ""
+	v.Province = ""
+	v.CoordType = ""
+	v.Town = ""
+	v.District = ""
+	v.Extra = ""
+	v.Contact = ""
+	v.Status = 0
+	v.StationType = 0
+	poolStationInfo.Put(v)
 }

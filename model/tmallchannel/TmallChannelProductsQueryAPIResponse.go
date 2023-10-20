@@ -2,6 +2,7 @@ package tmallchannel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallChannelProductsQueryAPIResponse struct {
 	TmallChannelProductsQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallChannelProductsQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallChannelProductsQueryAPIResponseModel).Reset()
+}
+
 // TmallChannelProductsQueryAPIResponseModel is 渠道中心-查询产品列表 成功返回结果
 type TmallChannelProductsQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_channel_products_query_response"`
@@ -22,4 +29,27 @@ type TmallChannelProductsQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *PageResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallChannelProductsQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallChannelProductsQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallChannelProductsQueryAPIResponse)
+	},
+}
+
+// GetTmallChannelProductsQueryAPIResponse 从 sync.Pool 获取 TmallChannelProductsQueryAPIResponse
+func GetTmallChannelProductsQueryAPIResponse() *TmallChannelProductsQueryAPIResponse {
+	return poolTmallChannelProductsQueryAPIResponse.Get().(*TmallChannelProductsQueryAPIResponse)
+}
+
+// ReleaseTmallChannelProductsQueryAPIResponse 将 TmallChannelProductsQueryAPIResponse 保存到 sync.Pool
+func ReleaseTmallChannelProductsQueryAPIResponse(v *TmallChannelProductsQueryAPIResponse) {
+	v.Reset()
+	poolTmallChannelProductsQueryAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // SysRolePermissionsVo 结构体
 type SysRolePermissionsVo struct {
 	// permissions
@@ -22,4 +26,30 @@ type SysRolePermissionsVo struct {
 	RoleDesc string `json:"role_desc,omitempty" xml:"role_desc,omitempty"`
 	// id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolSysRolePermissionsVo = sync.Pool{
+	New: func() any {
+		return new(SysRolePermissionsVo)
+	},
+}
+
+// GetSysRolePermissionsVo() 从对象池中获取SysRolePermissionsVo
+func GetSysRolePermissionsVo() *SysRolePermissionsVo {
+	return poolSysRolePermissionsVo.Get().(*SysRolePermissionsVo)
+}
+
+// ReleaseSysRolePermissionsVo 释放SysRolePermissionsVo
+func ReleaseSysRolePermissionsVo(v *SysRolePermissionsVo) {
+	v.Permissions = v.Permissions[:0]
+	v.RoleKey = ""
+	v.Tenant = ""
+	v.AppKey = ""
+	v.DeptId = ""
+	v.DeptName = ""
+	v.RoleName = ""
+	v.RoleType = ""
+	v.RoleDesc = ""
+	v.Id = 0
+	poolSysRolePermissionsVo.Put(v)
 }

@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosTvpubadminContentAppOnoffappbylicenseAPIRequest struct {
 // NewYunosTvpubadminContentAppOnoffappbylicenseRequest 初始化YunosTvpubadminContentAppOnoffappbylicenseAPIRequest对象
 func NewYunosTvpubadminContentAppOnoffappbylicenseRequest() *YunosTvpubadminContentAppOnoffappbylicenseAPIRequest {
 	return &YunosTvpubadminContentAppOnoffappbylicenseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminContentAppOnoffappbylicenseAPIRequest) Reset() {
+	r._onOffApp = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosTvpubadminContentAppOnoffappbylicenseAPIRequest) SetOnOffApp(_onOf
 // GetOnOffApp OnOffApp Getter
 func (r YunosTvpubadminContentAppOnoffappbylicenseAPIRequest) GetOnOffApp() string {
 	return r._onOffApp
+}
+
+var poolYunosTvpubadminContentAppOnoffappbylicenseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminContentAppOnoffappbylicenseRequest()
+	},
+}
+
+// GetYunosTvpubadminContentAppOnoffappbylicenseRequest 从 sync.Pool 获取 YunosTvpubadminContentAppOnoffappbylicenseAPIRequest
+func GetYunosTvpubadminContentAppOnoffappbylicenseAPIRequest() *YunosTvpubadminContentAppOnoffappbylicenseAPIRequest {
+	return poolYunosTvpubadminContentAppOnoffappbylicenseAPIRequest.Get().(*YunosTvpubadminContentAppOnoffappbylicenseAPIRequest)
+}
+
+// ReleaseYunosTvpubadminContentAppOnoffappbylicenseAPIRequest 将 YunosTvpubadminContentAppOnoffappbylicenseAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminContentAppOnoffappbylicenseAPIRequest(v *YunosTvpubadminContentAppOnoffappbylicenseAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminContentAppOnoffappbylicenseAPIRequest.Put(v)
 }

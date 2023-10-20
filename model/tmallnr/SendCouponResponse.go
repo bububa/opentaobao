@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // SendCouponResponse 结构体
 type SendCouponResponse struct {
 	// 券名称
@@ -16,4 +20,27 @@ type SendCouponResponse struct {
 	EndTime int64 `json:"end_time,omitempty" xml:"end_time,omitempty"`
 	// 开始时间
 	StartTime int64 `json:"start_time,omitempty" xml:"start_time,omitempty"`
+}
+
+var poolSendCouponResponse = sync.Pool{
+	New: func() any {
+		return new(SendCouponResponse)
+	},
+}
+
+// GetSendCouponResponse() 从对象池中获取SendCouponResponse
+func GetSendCouponResponse() *SendCouponResponse {
+	return poolSendCouponResponse.Get().(*SendCouponResponse)
+}
+
+// ReleaseSendCouponResponse 释放SendCouponResponse
+func ReleaseSendCouponResponse(v *SendCouponResponse) {
+	v.CouponName = ""
+	v.Discount = 0
+	v.StartFee = 0
+	v.CouponTemplateId = 0
+	v.CouponInstanceId = 0
+	v.EndTime = 0
+	v.StartTime = 0
+	poolSendCouponResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package crm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoCrmGrouptaskCheckAPIRequest struct {
 // NewTaobaoCrmGrouptaskCheckRequest 初始化TaobaoCrmGrouptaskCheckAPIRequest对象
 func NewTaobaoCrmGrouptaskCheckRequest() *TaobaoCrmGrouptaskCheckAPIRequest {
 	return &TaobaoCrmGrouptaskCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCrmGrouptaskCheckAPIRequest) Reset() {
+	r._groupId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoCrmGrouptaskCheckAPIRequest) SetGroupId(_groupId int64) error {
 // GetGroupId GroupId Getter
 func (r TaobaoCrmGrouptaskCheckAPIRequest) GetGroupId() int64 {
 	return r._groupId
+}
+
+var poolTaobaoCrmGrouptaskCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCrmGrouptaskCheckRequest()
+	},
+}
+
+// GetTaobaoCrmGrouptaskCheckRequest 从 sync.Pool 获取 TaobaoCrmGrouptaskCheckAPIRequest
+func GetTaobaoCrmGrouptaskCheckAPIRequest() *TaobaoCrmGrouptaskCheckAPIRequest {
+	return poolTaobaoCrmGrouptaskCheckAPIRequest.Get().(*TaobaoCrmGrouptaskCheckAPIRequest)
+}
+
+// ReleaseTaobaoCrmGrouptaskCheckAPIRequest 将 TaobaoCrmGrouptaskCheckAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCrmGrouptaskCheckAPIRequest(v *TaobaoCrmGrouptaskCheckAPIRequest) {
+	v.Reset()
+	poolTaobaoCrmGrouptaskCheckAPIRequest.Put(v)
 }

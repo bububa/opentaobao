@@ -9,11 +9,6 @@ import (
 // taobao.openmall.trace.search
 //
 // 获取Openmall订单物流流转信息
-func TaobaoOpenmallTraceSearch(clt *core.SDKClient, req *openmall.TaobaoOpenmallTraceSearchAPIRequest, session string) (*openmall.TaobaoOpenmallTraceSearchAPIResponse, error) {
-	var resp openmall.TaobaoOpenmallTraceSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenmallTraceSearch(clt *core.SDKClient, req *openmall.TaobaoOpenmallTraceSearchAPIRequest, resp *openmall.TaobaoOpenmallTraceSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

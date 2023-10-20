@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // Value 结构体
 type Value struct {
 	// 订单编号
@@ -30,4 +34,34 @@ type Value struct {
 	EndDate string `json:"end_date,omitempty" xml:"end_date,omitempty"`
 	// CPO NO
 	CpoNo string `json:"cpo_no,omitempty" xml:"cpo_no,omitempty"`
+}
+
+var poolValue = sync.Pool{
+	New: func() any {
+		return new(Value)
+	},
+}
+
+// GetValue() 从对象池中获取Value
+func GetValue() *Value {
+	return poolValue.Get().(*Value)
+}
+
+// ReleaseValue 释放Value
+func ReleaseValue(v *Value) {
+	v.PoNo = ""
+	v.EffectTime = ""
+	v.ContractNo = ""
+	v.CurrencyCode = ""
+	v.Amount = ""
+	v.DeliverAmount = ""
+	v.ReceiveAmount = ""
+	v.BillAmount = ""
+	v.ToPayAmount = ""
+	v.PaymentAmount = ""
+	v.Status = ""
+	v.BeginDate = ""
+	v.EndDate = ""
+	v.CpoNo = ""
+	poolValue.Put(v)
 }

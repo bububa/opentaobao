@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsAppletPackageQueryAPIRequest struct {
 // NewTaobaoLogisticsAppletPackageQueryRequest 初始化TaobaoLogisticsAppletPackageQueryAPIRequest对象
 func NewTaobaoLogisticsAppletPackageQueryRequest() *TaobaoLogisticsAppletPackageQueryAPIRequest {
 	return &TaobaoLogisticsAppletPackageQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsAppletPackageQueryAPIRequest) Reset() {
+	r._queryPackageListRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsAppletPackageQueryAPIRequest) SetQueryPackageListRequest
 // GetQueryPackageListRequest QueryPackageListRequest Getter
 func (r TaobaoLogisticsAppletPackageQueryAPIRequest) GetQueryPackageListRequest() *QueryPackageListRequest {
 	return r._queryPackageListRequest
+}
+
+var poolTaobaoLogisticsAppletPackageQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsAppletPackageQueryRequest()
+	},
+}
+
+// GetTaobaoLogisticsAppletPackageQueryRequest 从 sync.Pool 获取 TaobaoLogisticsAppletPackageQueryAPIRequest
+func GetTaobaoLogisticsAppletPackageQueryAPIRequest() *TaobaoLogisticsAppletPackageQueryAPIRequest {
+	return poolTaobaoLogisticsAppletPackageQueryAPIRequest.Get().(*TaobaoLogisticsAppletPackageQueryAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsAppletPackageQueryAPIRequest 将 TaobaoLogisticsAppletPackageQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsAppletPackageQueryAPIRequest(v *TaobaoLogisticsAppletPackageQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsAppletPackageQueryAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ChannelSkuUpdateStatusReq 结构体
 type ChannelSkuUpdateStatusReq struct {
 	// 商品编码
@@ -10,4 +14,24 @@ type ChannelSkuUpdateStatusReq struct {
 	ChannelCode string `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
 	// 是否渠道可售 1可售（上架）0：不可售（下架）
 	OnlineSaleFlag int64 `json:"online_sale_flag,omitempty" xml:"online_sale_flag,omitempty"`
+}
+
+var poolChannelSkuUpdateStatusReq = sync.Pool{
+	New: func() any {
+		return new(ChannelSkuUpdateStatusReq)
+	},
+}
+
+// GetChannelSkuUpdateStatusReq() 从对象池中获取ChannelSkuUpdateStatusReq
+func GetChannelSkuUpdateStatusReq() *ChannelSkuUpdateStatusReq {
+	return poolChannelSkuUpdateStatusReq.Get().(*ChannelSkuUpdateStatusReq)
+}
+
+// ReleaseChannelSkuUpdateStatusReq 释放ChannelSkuUpdateStatusReq
+func ReleaseChannelSkuUpdateStatusReq(v *ChannelSkuUpdateStatusReq) {
+	v.SkuCode = ""
+	v.StoreId = ""
+	v.ChannelCode = ""
+	v.OnlineSaleFlag = 0
+	poolChannelSkuUpdateStatusReq.Put(v)
 }

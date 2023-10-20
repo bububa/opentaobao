@@ -9,11 +9,6 @@ import (
 // taobao.ts.property.get
 //
 // 淘宝服务属性查询
-func TaobaoTsPropertyGet(clt *core.SDKClient, req *qt.TaobaoTsPropertyGetAPIRequest, session string) (*qt.TaobaoTsPropertyGetAPIResponse, error) {
-	var resp qt.TaobaoTsPropertyGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTsPropertyGet(clt *core.SDKClient, req *qt.TaobaoTsPropertyGetAPIRequest, resp *qt.TaobaoTsPropertyGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

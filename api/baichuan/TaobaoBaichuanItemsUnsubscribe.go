@@ -9,11 +9,6 @@ import (
 // taobao.baichuan.items.unsubscribe
 //
 // 批量删除商品订阅
-func TaobaoBaichuanItemsUnsubscribe(clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemsUnsubscribeAPIRequest, session string) (*baichuan.TaobaoBaichuanItemsUnsubscribeAPIResponse, error) {
-	var resp baichuan.TaobaoBaichuanItemsUnsubscribeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBaichuanItemsUnsubscribe(clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemsUnsubscribeAPIRequest, resp *baichuan.TaobaoBaichuanItemsUnsubscribeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // TopAreaReportQueryVo 结构体
 type TopAreaReportQueryVo struct {
 	// 聚合维度，province-省份，date-时间
@@ -32,4 +36,35 @@ type TopAreaReportQueryVo struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 是否分页，true-是，false-否
 	ByPage bool `json:"by_page,omitempty" xml:"by_page,omitempty"`
+}
+
+var poolTopAreaReportQueryVo = sync.Pool{
+	New: func() any {
+		return new(TopAreaReportQueryVo)
+	},
+}
+
+// GetTopAreaReportQueryVo() 从对象池中获取TopAreaReportQueryVo
+func GetTopAreaReportQueryVo() *TopAreaReportQueryVo {
+	return poolTopAreaReportQueryVo.Get().(*TopAreaReportQueryVo)
+}
+
+// ReleaseTopAreaReportQueryVo 释放TopAreaReportQueryVo
+func ReleaseTopAreaReportQueryVo(v *TopAreaReportQueryVo) {
+	v.QueryDomains = v.QueryDomains[:0]
+	v.QueryFieldInList = v.QueryFieldInList[:0]
+	v.BizCodeInList = v.BizCodeInList[:0]
+	v.ProvinceIdInList = v.ProvinceIdInList[:0]
+	v.StrategyOptimizeTargetInList = v.StrategyOptimizeTargetInList[:0]
+	v.StrategyCampaignIdInList = v.StrategyCampaignIdInList[:0]
+	v.AdzonePkgIdInList = v.AdzonePkgIdInList[:0]
+	v.SplitType = ""
+	v.UnifyType = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.EffectEqual = 0
+	v.Offset = 0
+	v.PageSize = 0
+	v.ByPage = false
+	poolTopAreaReportQueryVo.Put(v)
 }

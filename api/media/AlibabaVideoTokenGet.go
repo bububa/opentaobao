@@ -9,11 +9,6 @@ import (
 // alibaba.video.token.get
 //
 // 获取上传token
-func AlibabaVideoTokenGet(clt *core.SDKClient, req *media.AlibabaVideoTokenGetAPIRequest, session string) (*media.AlibabaVideoTokenGetAPIResponse, error) {
-	var resp media.AlibabaVideoTokenGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaVideoTokenGet(clt *core.SDKClient, req *media.AlibabaVideoTokenGetAPIRequest, resp *media.AlibabaVideoTokenGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

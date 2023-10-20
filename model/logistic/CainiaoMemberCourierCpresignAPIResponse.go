@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type CainiaoMemberCourierCpresignAPIResponse struct {
 	model.CommonResponse
 	CainiaoMemberCourierCpresignAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *CainiaoMemberCourierCpresignAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoMemberCourierCpresignAPIResponseModel).Reset()
 }
 
 // CainiaoMemberCourierCpresignAPIResponseModel is cp清理离职用户信息 成功返回结果
@@ -28,4 +35,30 @@ type CainiaoMemberCourierCpresignAPIResponseModel struct {
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 	// 调用是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoMemberCourierCpresignAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.StatusMessage = ""
+	m.StatusCode = ""
+	m.Data = false
+	m.IsSuccess = false
+}
+
+var poolCainiaoMemberCourierCpresignAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoMemberCourierCpresignAPIResponse)
+	},
+}
+
+// GetCainiaoMemberCourierCpresignAPIResponse 从 sync.Pool 获取 CainiaoMemberCourierCpresignAPIResponse
+func GetCainiaoMemberCourierCpresignAPIResponse() *CainiaoMemberCourierCpresignAPIResponse {
+	return poolCainiaoMemberCourierCpresignAPIResponse.Get().(*CainiaoMemberCourierCpresignAPIResponse)
+}
+
+// ReleaseCainiaoMemberCourierCpresignAPIResponse 将 CainiaoMemberCourierCpresignAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoMemberCourierCpresignAPIResponse(v *CainiaoMemberCourierCpresignAPIResponse) {
+	v.Reset()
+	poolCainiaoMemberCourierCpresignAPIResponse.Put(v)
 }

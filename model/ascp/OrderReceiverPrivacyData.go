@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // OrderReceiverPrivacyData 结构体
 type OrderReceiverPrivacyData struct {
 	// 姓名
@@ -18,4 +22,28 @@ type OrderReceiverPrivacyData struct {
 	District string `json:"district,omitempty" xml:"district,omitempty"`
 	// 收件人所在街道
 	Town string `json:"town,omitempty" xml:"town,omitempty"`
+}
+
+var poolOrderReceiverPrivacyData = sync.Pool{
+	New: func() any {
+		return new(OrderReceiverPrivacyData)
+	},
+}
+
+// GetOrderReceiverPrivacyData() 从对象池中获取OrderReceiverPrivacyData
+func GetOrderReceiverPrivacyData() *OrderReceiverPrivacyData {
+	return poolOrderReceiverPrivacyData.Get().(*OrderReceiverPrivacyData)
+}
+
+// ReleaseOrderReceiverPrivacyData 释放OrderReceiverPrivacyData
+func ReleaseOrderReceiverPrivacyData(v *OrderReceiverPrivacyData) {
+	v.Name = ""
+	v.Phone = ""
+	v.CountryCode = ""
+	v.Province = ""
+	v.DetailAddress = ""
+	v.City = ""
+	v.District = ""
+	v.Town = ""
+	poolOrderReceiverPrivacyData.Put(v)
 }

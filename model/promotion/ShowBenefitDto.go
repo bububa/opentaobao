@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // ShowBenefitDto 结构体
 type ShowBenefitDto struct {
 	// 权益规则列表
@@ -60,4 +64,49 @@ type ShowBenefitDto struct {
 	HadWin bool `json:"had_win,omitempty" xml:"had_win,omitempty"`
 	// 是否有库存
 	HasInventory bool `json:"has_inventory,omitempty" xml:"has_inventory,omitempty"`
+}
+
+var poolShowBenefitDto = sync.Pool{
+	New: func() any {
+		return new(ShowBenefitDto)
+	},
+}
+
+// GetShowBenefitDto() 从对象池中获取ShowBenefitDto
+func GetShowBenefitDto() *ShowBenefitDto {
+	return poolShowBenefitDto.Get().(*ShowBenefitDto)
+}
+
+// ReleaseShowBenefitDto 释放ShowBenefitDto
+func ReleaseShowBenefitDto(v *ShowBenefitDto) {
+	v.ShowRules = v.ShowRules[:0]
+	v.ShowBenefitInstances = v.ShowBenefitInstances[:0]
+	v.Code = ""
+	v.TypeDesc = ""
+	v.DisplayAmountUnit = ""
+	v.EndDate = ""
+	v.Title = ""
+	v.Type = ""
+	v.Feature = ""
+	v.IntervalTimeUnit = ""
+	v.DisplayStartFee = ""
+	v.SendMode = ""
+	v.SendLifeCycleState = ""
+	v.AmountUnit = ""
+	v.DisplayAmount = ""
+	v.EffectiveTimeMode = ""
+	v.Material = ""
+	v.EncryptedDynamicInfo = ""
+	v.Asac = ""
+	v.StartDate = ""
+	v.EffectiveStart = ""
+	v.EffectiveEnd = ""
+	v.Amount = 0
+	v.EffectiveInterval = 0
+	v.StartFee = 0
+	v.CanWin = false
+	v.Test = false
+	v.HadWin = false
+	v.HasInventory = false
+	poolShowBenefitDto.Put(v)
 }

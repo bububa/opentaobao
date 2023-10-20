@@ -9,11 +9,6 @@ import (
 // taobao.fliggy.flight.agent.auxproduct.push
 //
 // 廉航辅营产品投放接口
-func TaobaoFliggyFlightAgentAuxproductPush(clt *core.SDKClient, req *flight.TaobaoFliggyFlightAgentAuxproductPushAPIRequest, session string) (*flight.TaobaoFliggyFlightAgentAuxproductPushAPIResponse, error) {
-	var resp flight.TaobaoFliggyFlightAgentAuxproductPushAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFliggyFlightAgentAuxproductPush(clt *core.SDKClient, req *flight.TaobaoFliggyFlightAgentAuxproductPushAPIRequest, resp *flight.TaobaoFliggyFlightAgentAuxproductPushAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

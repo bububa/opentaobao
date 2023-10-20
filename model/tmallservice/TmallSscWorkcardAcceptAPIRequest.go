@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallSscWorkcardAcceptAPIRequest struct {
 // NewTmallSscWorkcardAcceptRequest 初始化TmallSscWorkcardAcceptAPIRequest对象
 func NewTmallSscWorkcardAcceptRequest() *TmallSscWorkcardAcceptAPIRequest {
 	return &TmallSscWorkcardAcceptAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallSscWorkcardAcceptAPIRequest) Reset() {
+	r._acceptWorkcardRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallSscWorkcardAcceptAPIRequest) SetAcceptWorkcardRequest(_acceptWorkc
 // GetAcceptWorkcardRequest AcceptWorkcardRequest Getter
 func (r TmallSscWorkcardAcceptAPIRequest) GetAcceptWorkcardRequest() *AcceptWorkcardRequest {
 	return r._acceptWorkcardRequest
+}
+
+var poolTmallSscWorkcardAcceptAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallSscWorkcardAcceptRequest()
+	},
+}
+
+// GetTmallSscWorkcardAcceptRequest 从 sync.Pool 获取 TmallSscWorkcardAcceptAPIRequest
+func GetTmallSscWorkcardAcceptAPIRequest() *TmallSscWorkcardAcceptAPIRequest {
+	return poolTmallSscWorkcardAcceptAPIRequest.Get().(*TmallSscWorkcardAcceptAPIRequest)
+}
+
+// ReleaseTmallSscWorkcardAcceptAPIRequest 将 TmallSscWorkcardAcceptAPIRequest 放入 sync.Pool
+func ReleaseTmallSscWorkcardAcceptAPIRequest(v *TmallSscWorkcardAcceptAPIRequest) {
+	v.Reset()
+	poolTmallSscWorkcardAcceptAPIRequest.Put(v)
 }

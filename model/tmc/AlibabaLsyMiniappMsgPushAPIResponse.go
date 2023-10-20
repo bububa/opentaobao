@@ -2,6 +2,7 @@ package tmc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaLsyMiniappMsgPushAPIResponse struct {
 	AlibabaLsyMiniappMsgPushAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaLsyMiniappMsgPushAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLsyMiniappMsgPushAPIResponseModel).Reset()
+}
+
 // AlibabaLsyMiniappMsgPushAPIResponseModel is 零售云小程序消息推送 成功返回结果
 type AlibabaLsyMiniappMsgPushAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lsy_miniapp_msg_push_response"`
@@ -26,4 +33,29 @@ type AlibabaLsyMiniappMsgPushAPIResponseModel struct {
 	FailCode string `json:"fail_code,omitempty" xml:"fail_code,omitempty"`
 	// 是否成功
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLsyMiniappMsgPushAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.FailMsg = ""
+	m.FailCode = ""
+	m.Succ = false
+}
+
+var poolAlibabaLsyMiniappMsgPushAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLsyMiniappMsgPushAPIResponse)
+	},
+}
+
+// GetAlibabaLsyMiniappMsgPushAPIResponse 从 sync.Pool 获取 AlibabaLsyMiniappMsgPushAPIResponse
+func GetAlibabaLsyMiniappMsgPushAPIResponse() *AlibabaLsyMiniappMsgPushAPIResponse {
+	return poolAlibabaLsyMiniappMsgPushAPIResponse.Get().(*AlibabaLsyMiniappMsgPushAPIResponse)
+}
+
+// ReleaseAlibabaLsyMiniappMsgPushAPIResponse 将 AlibabaLsyMiniappMsgPushAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLsyMiniappMsgPushAPIResponse(v *AlibabaLsyMiniappMsgPushAPIResponse) {
+	v.Reset()
+	poolAlibabaLsyMiniappMsgPushAPIResponse.Put(v)
 }

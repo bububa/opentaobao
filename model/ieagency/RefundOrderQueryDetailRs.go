@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // RefundOrderQueryDetailRs 结构体
 type RefundOrderQueryDetailRs struct {
 	// 错误描述
@@ -16,4 +20,27 @@ type RefundOrderQueryDetailRs struct {
 	Failure bool `json:"failure,omitempty" xml:"failure,omitempty"`
 	// 成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolRefundOrderQueryDetailRs = sync.Pool{
+	New: func() any {
+		return new(RefundOrderQueryDetailRs)
+	},
+}
+
+// GetRefundOrderQueryDetailRs() 从对象池中获取RefundOrderQueryDetailRs
+func GetRefundOrderQueryDetailRs() *RefundOrderQueryDetailRs {
+	return poolRefundOrderQueryDetailRs.Get().(*RefundOrderQueryDetailRs)
+}
+
+// ReleaseRefundOrderQueryDetailRs 释放RefundOrderQueryDetailRs
+func ReleaseRefundOrderQueryDetailRs(v *RefundOrderQueryDetailRs) {
+	v.ApiErrorMsg = ""
+	v.ErrTrace = ""
+	v.HostName = ""
+	v.ApiErrorCode = 0
+	v.RefundOrderVo = nil
+	v.Failure = false
+	v.Success = false
+	poolRefundOrderQueryDetailRs.Put(v)
 }

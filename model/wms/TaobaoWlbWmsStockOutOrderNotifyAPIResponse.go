@@ -2,6 +2,7 @@ package wms
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoWlbWmsStockOutOrderNotifyAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWmsStockOutOrderNotifyAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbWmsStockOutOrderNotifyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWlbWmsStockOutOrderNotifyAPIResponseModel).Reset()
 }
 
 // TaobaoWlbWmsStockOutOrderNotifyAPIResponseModel is 出库单通知 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoWlbWmsStockOutOrderNotifyAPIResponseModel struct {
 	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
 	// 是否成功
 	WlSuccess bool `json:"wl_success,omitempty" xml:"wl_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbWmsStockOutOrderNotifyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.WlErrorCode = ""
+	m.WlErrorMsg = ""
+	m.OrderCode = ""
+	m.WlSuccess = false
+}
+
+var poolTaobaoWlbWmsStockOutOrderNotifyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbWmsStockOutOrderNotifyAPIResponse)
+	},
+}
+
+// GetTaobaoWlbWmsStockOutOrderNotifyAPIResponse 从 sync.Pool 获取 TaobaoWlbWmsStockOutOrderNotifyAPIResponse
+func GetTaobaoWlbWmsStockOutOrderNotifyAPIResponse() *TaobaoWlbWmsStockOutOrderNotifyAPIResponse {
+	return poolTaobaoWlbWmsStockOutOrderNotifyAPIResponse.Get().(*TaobaoWlbWmsStockOutOrderNotifyAPIResponse)
+}
+
+// ReleaseTaobaoWlbWmsStockOutOrderNotifyAPIResponse 将 TaobaoWlbWmsStockOutOrderNotifyAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWlbWmsStockOutOrderNotifyAPIResponse(v *TaobaoWlbWmsStockOutOrderNotifyAPIResponse) {
+	v.Reset()
+	poolTaobaoWlbWmsStockOutOrderNotifyAPIResponse.Put(v)
 }

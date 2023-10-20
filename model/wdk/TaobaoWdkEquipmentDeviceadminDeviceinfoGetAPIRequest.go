@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest struct {
 // NewTaobaoWdkEquipmentDeviceadminDeviceinfoGetRequest 初始化TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest对象
 func NewTaobaoWdkEquipmentDeviceadminDeviceinfoGetRequest() *TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest {
 	return &TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest) Reset() {
+	r._warehouseCode = ""
+	r._deviceType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest) SetDeviceType(_de
 // GetDeviceType DeviceType Getter
 func (r TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest) GetDeviceType() int64 {
 	return r._deviceType
+}
+
+var poolTaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWdkEquipmentDeviceadminDeviceinfoGetRequest()
+	},
+}
+
+// GetTaobaoWdkEquipmentDeviceadminDeviceinfoGetRequest 从 sync.Pool 获取 TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest
+func GetTaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest() *TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest {
+	return poolTaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest.Get().(*TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest)
+}
+
+// ReleaseTaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest 将 TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest(v *TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.kyt.scqy.codeprocess
 //
 // 关联关系处理查询
-func AlibabaAlihealthDrugKytScqyCodeprocess(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytScqyCodeprocessAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytScqyCodeprocessAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytScqyCodeprocessAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugKytScqyCodeprocess(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytScqyCodeprocessAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytScqyCodeprocessAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

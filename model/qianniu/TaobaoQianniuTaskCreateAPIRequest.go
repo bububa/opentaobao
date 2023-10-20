@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoQianniuTaskCreateAPIRequest struct {
 // NewTaobaoQianniuTaskCreateRequest 初始化TaobaoQianniuTaskCreateAPIRequest对象
 func NewTaobaoQianniuTaskCreateRequest() *TaobaoQianniuTaskCreateAPIRequest {
 	return &TaobaoQianniuTaskCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQianniuTaskCreateAPIRequest) Reset() {
+	r._meta = ""
+	r._tasks = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoQianniuTaskCreateAPIRequest) SetTasks(_tasks string) error {
 // GetTasks Tasks Getter
 func (r TaobaoQianniuTaskCreateAPIRequest) GetTasks() string {
 	return r._tasks
+}
+
+var poolTaobaoQianniuTaskCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQianniuTaskCreateRequest()
+	},
+}
+
+// GetTaobaoQianniuTaskCreateRequest 从 sync.Pool 获取 TaobaoQianniuTaskCreateAPIRequest
+func GetTaobaoQianniuTaskCreateAPIRequest() *TaobaoQianniuTaskCreateAPIRequest {
+	return poolTaobaoQianniuTaskCreateAPIRequest.Get().(*TaobaoQianniuTaskCreateAPIRequest)
+}
+
+// ReleaseTaobaoQianniuTaskCreateAPIRequest 将 TaobaoQianniuTaskCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQianniuTaskCreateAPIRequest(v *TaobaoQianniuTaskCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoQianniuTaskCreateAPIRequest.Put(v)
 }

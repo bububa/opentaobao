@@ -9,11 +9,6 @@ import (
 // alibaba.hm.marketing.version.commit
 //
 // 提交版本号，标识结束此版本操作
-func AlibabaHmMarketingVersionCommit(clt *core.SDKClient, req *wdk.AlibabaHmMarketingVersionCommitAPIRequest, session string) (*wdk.AlibabaHmMarketingVersionCommitAPIResponse, error) {
-	var resp wdk.AlibabaHmMarketingVersionCommitAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHmMarketingVersionCommit(clt *core.SDKClient, req *wdk.AlibabaHmMarketingVersionCommitAPIRequest, resp *wdk.AlibabaHmMarketingVersionCommitAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.employee.query
 //
 // 企业员工查询
-func AlitripBtripEmployeeQuery(clt *core.SDKClient, req *btrip.AlitripBtripEmployeeQueryAPIRequest, session string) (*btrip.AlitripBtripEmployeeQueryAPIResponse, error) {
-	var resp btrip.AlitripBtripEmployeeQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripEmployeeQuery(clt *core.SDKClient, req *btrip.AlitripBtripEmployeeQueryAPIRequest, resp *btrip.AlitripBtripEmployeeQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeProjectChannelphoneAPIRequest struct {
 // NewAlibabaAlihouseNewhomeProjectChannelphoneRequest 初始化AlibabaAlihouseNewhomeProjectChannelphoneAPIRequest对象
 func NewAlibabaAlihouseNewhomeProjectChannelphoneRequest() *AlibabaAlihouseNewhomeProjectChannelphoneAPIRequest {
 	return &AlibabaAlihouseNewhomeProjectChannelphoneAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeProjectChannelphoneAPIRequest) Reset() {
+	r._channelPhoneDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeProjectChannelphoneAPIRequest) SetChannelPhoneDto
 // GetChannelPhoneDto ChannelPhoneDto Getter
 func (r AlibabaAlihouseNewhomeProjectChannelphoneAPIRequest) GetChannelPhoneDto() *ProjectChannelPhoneDto {
 	return r._channelPhoneDto
+}
+
+var poolAlibabaAlihouseNewhomeProjectChannelphoneAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeProjectChannelphoneRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeProjectChannelphoneRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeProjectChannelphoneAPIRequest
+func GetAlibabaAlihouseNewhomeProjectChannelphoneAPIRequest() *AlibabaAlihouseNewhomeProjectChannelphoneAPIRequest {
+	return poolAlibabaAlihouseNewhomeProjectChannelphoneAPIRequest.Get().(*AlibabaAlihouseNewhomeProjectChannelphoneAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeProjectChannelphoneAPIRequest 将 AlibabaAlihouseNewhomeProjectChannelphoneAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeProjectChannelphoneAPIRequest(v *AlibabaAlihouseNewhomeProjectChannelphoneAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeProjectChannelphoneAPIRequest.Put(v)
 }

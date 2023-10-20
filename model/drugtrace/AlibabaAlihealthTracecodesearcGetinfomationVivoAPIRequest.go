@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest struct {
 // NewAlibabaAlihealthTracecodesearcGetinfomationVivoRequest 初始化AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest对象
 func NewAlibabaAlihealthTracecodesearcGetinfomationVivoRequest() *AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest {
 	return &AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest) Reset() {
+	r._channel = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest) SetChannel(_
 // GetChannel Channel Getter
 func (r AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest) GetChannel() string {
 	return r._channel
+}
+
+var poolAlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthTracecodesearcGetinfomationVivoRequest()
+	},
+}
+
+// GetAlibabaAlihealthTracecodesearcGetinfomationVivoRequest 从 sync.Pool 获取 AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest
+func GetAlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest() *AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest {
+	return poolAlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest.Get().(*AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest 将 AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest(v *AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest.Put(v)
 }

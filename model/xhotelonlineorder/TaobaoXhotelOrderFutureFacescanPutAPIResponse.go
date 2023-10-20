@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoXhotelOrderFutureFacescanPutAPIResponse struct {
 	TaobaoXhotelOrderFutureFacescanPutAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderFutureFacescanPutAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelOrderFutureFacescanPutAPIResponseModel).Reset()
+}
+
 // TaobaoXhotelOrderFutureFacescanPutAPIResponseModel is 未来酒店扫脸信息上传 成功返回结果
 type TaobaoXhotelOrderFutureFacescanPutAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_future_facescan_put_response"`
@@ -22,4 +29,27 @@ type TaobaoXhotelOrderFutureFacescanPutAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *TaobaoXhotelOrderFutureFacescanPutResultSet `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderFutureFacescanPutAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoXhotelOrderFutureFacescanPutAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelOrderFutureFacescanPutAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelOrderFutureFacescanPutAPIResponse 从 sync.Pool 获取 TaobaoXhotelOrderFutureFacescanPutAPIResponse
+func GetTaobaoXhotelOrderFutureFacescanPutAPIResponse() *TaobaoXhotelOrderFutureFacescanPutAPIResponse {
+	return poolTaobaoXhotelOrderFutureFacescanPutAPIResponse.Get().(*TaobaoXhotelOrderFutureFacescanPutAPIResponse)
+}
+
+// ReleaseTaobaoXhotelOrderFutureFacescanPutAPIResponse 将 TaobaoXhotelOrderFutureFacescanPutAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelOrderFutureFacescanPutAPIResponse(v *TaobaoXhotelOrderFutureFacescanPutAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelOrderFutureFacescanPutAPIResponse.Put(v)
 }

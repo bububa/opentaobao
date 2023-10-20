@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkSkuBarcodeQueryAPIRequest struct {
 // NewAlibabaWdkSkuBarcodeQueryRequest 初始化AlibabaWdkSkuBarcodeQueryAPIRequest对象
 func NewAlibabaWdkSkuBarcodeQueryRequest() *AlibabaWdkSkuBarcodeQueryAPIRequest {
 	return &AlibabaWdkSkuBarcodeQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkSkuBarcodeQueryAPIRequest) Reset() {
+	r._skuCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkSkuBarcodeQueryAPIRequest) SetSkuCode(_skuCode string) error 
 // GetSkuCode SkuCode Getter
 func (r AlibabaWdkSkuBarcodeQueryAPIRequest) GetSkuCode() string {
 	return r._skuCode
+}
+
+var poolAlibabaWdkSkuBarcodeQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkSkuBarcodeQueryRequest()
+	},
+}
+
+// GetAlibabaWdkSkuBarcodeQueryRequest 从 sync.Pool 获取 AlibabaWdkSkuBarcodeQueryAPIRequest
+func GetAlibabaWdkSkuBarcodeQueryAPIRequest() *AlibabaWdkSkuBarcodeQueryAPIRequest {
+	return poolAlibabaWdkSkuBarcodeQueryAPIRequest.Get().(*AlibabaWdkSkuBarcodeQueryAPIRequest)
+}
+
+// ReleaseAlibabaWdkSkuBarcodeQueryAPIRequest 将 AlibabaWdkSkuBarcodeQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkSkuBarcodeQueryAPIRequest(v *AlibabaWdkSkuBarcodeQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkSkuBarcodeQueryAPIRequest.Put(v)
 }

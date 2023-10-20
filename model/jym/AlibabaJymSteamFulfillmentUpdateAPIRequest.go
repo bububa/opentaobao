@@ -2,6 +2,7 @@ package jym
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaJymSteamFulfillmentUpdateAPIRequest struct {
 // NewAlibabaJymSteamFulfillmentUpdateRequest 初始化AlibabaJymSteamFulfillmentUpdateAPIRequest对象
 func NewAlibabaJymSteamFulfillmentUpdateRequest() *AlibabaJymSteamFulfillmentUpdateAPIRequest {
 	return &AlibabaJymSteamFulfillmentUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJymSteamFulfillmentUpdateAPIRequest) Reset() {
+	r._deliveryNotifyDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaJymSteamFulfillmentUpdateAPIRequest) SetDeliveryNotifyDto(_deliv
 // GetDeliveryNotifyDto DeliveryNotifyDto Getter
 func (r AlibabaJymSteamFulfillmentUpdateAPIRequest) GetDeliveryNotifyDto() *DeliveryNotifyDto {
 	return r._deliveryNotifyDto
+}
+
+var poolAlibabaJymSteamFulfillmentUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJymSteamFulfillmentUpdateRequest()
+	},
+}
+
+// GetAlibabaJymSteamFulfillmentUpdateRequest 从 sync.Pool 获取 AlibabaJymSteamFulfillmentUpdateAPIRequest
+func GetAlibabaJymSteamFulfillmentUpdateAPIRequest() *AlibabaJymSteamFulfillmentUpdateAPIRequest {
+	return poolAlibabaJymSteamFulfillmentUpdateAPIRequest.Get().(*AlibabaJymSteamFulfillmentUpdateAPIRequest)
+}
+
+// ReleaseAlibabaJymSteamFulfillmentUpdateAPIRequest 将 AlibabaJymSteamFulfillmentUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJymSteamFulfillmentUpdateAPIRequest(v *AlibabaJymSteamFulfillmentUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaJymSteamFulfillmentUpdateAPIRequest.Put(v)
 }

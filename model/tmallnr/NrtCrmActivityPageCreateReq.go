@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrtCrmActivityPageCreateReq 结构体
 type NrtCrmActivityPageCreateReq struct {
 	// isvCode
@@ -22,4 +26,30 @@ type NrtCrmActivityPageCreateReq struct {
 	Creator int64 `json:"creator,omitempty" xml:"creator,omitempty"`
 	// 页面类型
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolNrtCrmActivityPageCreateReq = sync.Pool{
+	New: func() any {
+		return new(NrtCrmActivityPageCreateReq)
+	},
+}
+
+// GetNrtCrmActivityPageCreateReq() 从对象池中获取NrtCrmActivityPageCreateReq
+func GetNrtCrmActivityPageCreateReq() *NrtCrmActivityPageCreateReq {
+	return poolNrtCrmActivityPageCreateReq.Get().(*NrtCrmActivityPageCreateReq)
+}
+
+// ReleaseNrtCrmActivityPageCreateReq 释放NrtCrmActivityPageCreateReq
+func ReleaseNrtCrmActivityPageCreateReq(v *NrtCrmActivityPageCreateReq) {
+	v.IsvCode = ""
+	v.Thumbnail = ""
+	v.Url = ""
+	v.Description = ""
+	v.Synopsis = ""
+	v.Title = ""
+	v.BizCode = ""
+	v.PageId = 0
+	v.Creator = 0
+	v.Type = 0
+	poolNrtCrmActivityPageCreateReq.Put(v)
 }

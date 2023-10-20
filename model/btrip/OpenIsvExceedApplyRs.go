@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenIsvExceedApplyRs 结构体
 type OpenIsvExceedApplyRs struct {
 	// 商旅企业id
@@ -26,4 +30,32 @@ type OpenIsvExceedApplyRs struct {
 	ExceedType int64 `json:"exceed_type,omitempty" xml:"exceed_type,omitempty"`
 	// 意向出行信息
 	ApplyIntentionInfoDo *ApplyIntentionInfoDo `json:"apply_intention_info_do,omitempty" xml:"apply_intention_info_do,omitempty"`
+}
+
+var poolOpenIsvExceedApplyRs = sync.Pool{
+	New: func() any {
+		return new(OpenIsvExceedApplyRs)
+	},
+}
+
+// GetOpenIsvExceedApplyRs() 从对象池中获取OpenIsvExceedApplyRs
+func GetOpenIsvExceedApplyRs() *OpenIsvExceedApplyRs {
+	return poolOpenIsvExceedApplyRs.Get().(*OpenIsvExceedApplyRs)
+}
+
+// ReleaseOpenIsvExceedApplyRs 释放OpenIsvExceedApplyRs
+func ReleaseOpenIsvExceedApplyRs(v *OpenIsvExceedApplyRs) {
+	v.CorpId = ""
+	v.BtripCause = ""
+	v.ExceedReason = ""
+	v.OriginStandard = ""
+	v.UserId = ""
+	v.SubmitTime = ""
+	v.ThirdpartCorpId = ""
+	v.ThirdpartApplyId = ""
+	v.ApplyId = 0
+	v.Status = 0
+	v.ExceedType = 0
+	v.ApplyIntentionInfoDo = nil
+	poolOpenIsvExceedApplyRs.Put(v)
 }

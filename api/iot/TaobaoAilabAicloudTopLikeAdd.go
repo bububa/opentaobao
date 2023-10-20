@@ -9,11 +9,6 @@ import (
 // taobao.ailab.aicloud.top.like.add
 //
 // 将制定内容加入收藏
-func TaobaoAilabAicloudTopLikeAdd(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopLikeAddAPIRequest, session string) (*iot.TaobaoAilabAicloudTopLikeAddAPIResponse, error) {
-	var resp iot.TaobaoAilabAicloudTopLikeAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAilabAicloudTopLikeAdd(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopLikeAddAPIRequest, resp *iot.TaobaoAilabAicloudTopLikeAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

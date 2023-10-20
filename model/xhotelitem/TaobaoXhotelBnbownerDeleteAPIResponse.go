@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoXhotelBnbownerDeleteAPIResponse struct {
 	TaobaoXhotelBnbownerDeleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoXhotelBnbownerDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelBnbownerDeleteAPIResponseModel).Reset()
+}
+
 // TaobaoXhotelBnbownerDeleteAPIResponseModel is 民宿房东删除接口 成功返回结果
 type TaobaoXhotelBnbownerDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_bnbowner_delete_response"`
@@ -22,4 +29,27 @@ type TaobaoXhotelBnbownerDeleteAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 查询结果集
 	Result *TaobaoXhotelBnbownerDeleteResultSet `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelBnbownerDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoXhotelBnbownerDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelBnbownerDeleteAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelBnbownerDeleteAPIResponse 从 sync.Pool 获取 TaobaoXhotelBnbownerDeleteAPIResponse
+func GetTaobaoXhotelBnbownerDeleteAPIResponse() *TaobaoXhotelBnbownerDeleteAPIResponse {
+	return poolTaobaoXhotelBnbownerDeleteAPIResponse.Get().(*TaobaoXhotelBnbownerDeleteAPIResponse)
+}
+
+// ReleaseTaobaoXhotelBnbownerDeleteAPIResponse 将 TaobaoXhotelBnbownerDeleteAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelBnbownerDeleteAPIResponse(v *TaobaoXhotelBnbownerDeleteAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelBnbownerDeleteAPIResponse.Put(v)
 }

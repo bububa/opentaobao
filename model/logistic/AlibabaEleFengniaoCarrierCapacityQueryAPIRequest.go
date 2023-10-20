@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEleFengniaoCarrierCapacityQueryAPIRequest struct {
 // NewAlibabaEleFengniaoCarrierCapacityQueryRequest 初始化AlibabaEleFengniaoCarrierCapacityQueryAPIRequest对象
 func NewAlibabaEleFengniaoCarrierCapacityQueryRequest() *AlibabaEleFengniaoCarrierCapacityQueryAPIRequest {
 	return &AlibabaEleFengniaoCarrierCapacityQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleFengniaoCarrierCapacityQueryAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEleFengniaoCarrierCapacityQueryAPIRequest) SetParam(_param *Para
 // GetParam Param Getter
 func (r AlibabaEleFengniaoCarrierCapacityQueryAPIRequest) GetParam() *Param {
 	return r._param
+}
+
+var poolAlibabaEleFengniaoCarrierCapacityQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleFengniaoCarrierCapacityQueryRequest()
+	},
+}
+
+// GetAlibabaEleFengniaoCarrierCapacityQueryRequest 从 sync.Pool 获取 AlibabaEleFengniaoCarrierCapacityQueryAPIRequest
+func GetAlibabaEleFengniaoCarrierCapacityQueryAPIRequest() *AlibabaEleFengniaoCarrierCapacityQueryAPIRequest {
+	return poolAlibabaEleFengniaoCarrierCapacityQueryAPIRequest.Get().(*AlibabaEleFengniaoCarrierCapacityQueryAPIRequest)
+}
+
+// ReleaseAlibabaEleFengniaoCarrierCapacityQueryAPIRequest 将 AlibabaEleFengniaoCarrierCapacityQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleFengniaoCarrierCapacityQueryAPIRequest(v *AlibabaEleFengniaoCarrierCapacityQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaEleFengniaoCarrierCapacityQueryAPIRequest.Put(v)
 }

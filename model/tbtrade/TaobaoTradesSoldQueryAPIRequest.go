@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoTradesSoldQueryAPIRequest struct {
 // NewTaobaoTradesSoldQueryRequest 初始化TaobaoTradesSoldQueryAPIRequest对象
 func NewTaobaoTradesSoldQueryRequest() *TaobaoTradesSoldQueryAPIRequest {
 	return &TaobaoTradesSoldQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTradesSoldQueryAPIRequest) Reset() {
+	r._queryList = r._queryList[:0]
+	r._scene = ""
+	r._orderType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoTradesSoldQueryAPIRequest) SetOrderType(_orderType string) error 
 // GetOrderType OrderType Getter
 func (r TaobaoTradesSoldQueryAPIRequest) GetOrderType() string {
 	return r._orderType
+}
+
+var poolTaobaoTradesSoldQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTradesSoldQueryRequest()
+	},
+}
+
+// GetTaobaoTradesSoldQueryRequest 从 sync.Pool 获取 TaobaoTradesSoldQueryAPIRequest
+func GetTaobaoTradesSoldQueryAPIRequest() *TaobaoTradesSoldQueryAPIRequest {
+	return poolTaobaoTradesSoldQueryAPIRequest.Get().(*TaobaoTradesSoldQueryAPIRequest)
+}
+
+// ReleaseTaobaoTradesSoldQueryAPIRequest 将 TaobaoTradesSoldQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTradesSoldQueryAPIRequest(v *TaobaoTradesSoldQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoTradesSoldQueryAPIRequest.Put(v)
 }

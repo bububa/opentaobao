@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type YunosTvpubadminContentDeviceGetvendorAPIRequest struct {
 // NewYunosTvpubadminContentDeviceGetvendorRequest 初始化YunosTvpubadminContentDeviceGetvendorAPIRequest对象
 func NewYunosTvpubadminContentDeviceGetvendorRequest() *YunosTvpubadminContentDeviceGetvendorAPIRequest {
 	return &YunosTvpubadminContentDeviceGetvendorAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminContentDeviceGetvendorAPIRequest) Reset() {
+	r._license = 0
+	r._brandId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *YunosTvpubadminContentDeviceGetvendorAPIRequest) SetBrandId(_brandId in
 // GetBrandId BrandId Getter
 func (r YunosTvpubadminContentDeviceGetvendorAPIRequest) GetBrandId() int64 {
 	return r._brandId
+}
+
+var poolYunosTvpubadminContentDeviceGetvendorAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminContentDeviceGetvendorRequest()
+	},
+}
+
+// GetYunosTvpubadminContentDeviceGetvendorRequest 从 sync.Pool 获取 YunosTvpubadminContentDeviceGetvendorAPIRequest
+func GetYunosTvpubadminContentDeviceGetvendorAPIRequest() *YunosTvpubadminContentDeviceGetvendorAPIRequest {
+	return poolYunosTvpubadminContentDeviceGetvendorAPIRequest.Get().(*YunosTvpubadminContentDeviceGetvendorAPIRequest)
+}
+
+// ReleaseYunosTvpubadminContentDeviceGetvendorAPIRequest 将 YunosTvpubadminContentDeviceGetvendorAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminContentDeviceGetvendorAPIRequest(v *YunosTvpubadminContentDeviceGetvendorAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminContentDeviceGetvendorAPIRequest.Put(v)
 }

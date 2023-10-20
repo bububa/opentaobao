@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest struct {
 // NewAlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeRequest 初始化AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest对象
 func NewAlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeRequest() *AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest {
 	return &AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest) Reset() {
+	r._billCode = ""
+	r._refEntId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest) SetRefE
 // GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest) GetRefEntId() string {
 	return r._refEntId
+}
+
+var poolAlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest
+func GetAlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest() *AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest {
+	return poolAlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest.Get().(*AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest 将 AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest(v *AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest.Put(v)
 }

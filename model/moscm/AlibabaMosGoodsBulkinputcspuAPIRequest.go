@@ -2,6 +2,7 @@ package moscm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMosGoodsBulkinputcspuAPIRequest struct {
 // NewAlibabaMosGoodsBulkinputcspuRequest 初始化AlibabaMosGoodsBulkinputcspuAPIRequest对象
 func NewAlibabaMosGoodsBulkinputcspuRequest() *AlibabaMosGoodsBulkinputcspuAPIRequest {
 	return &AlibabaMosGoodsBulkinputcspuAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosGoodsBulkinputcspuAPIRequest) Reset() {
+	r._cspuInputDtoList = r._cspuInputDtoList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMosGoodsBulkinputcspuAPIRequest) SetCspuInputDtoList(_cspuInputD
 // GetCspuInputDtoList CspuInputDtoList Getter
 func (r AlibabaMosGoodsBulkinputcspuAPIRequest) GetCspuInputDtoList() []CspuInputDto {
 	return r._cspuInputDtoList
+}
+
+var poolAlibabaMosGoodsBulkinputcspuAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosGoodsBulkinputcspuRequest()
+	},
+}
+
+// GetAlibabaMosGoodsBulkinputcspuRequest 从 sync.Pool 获取 AlibabaMosGoodsBulkinputcspuAPIRequest
+func GetAlibabaMosGoodsBulkinputcspuAPIRequest() *AlibabaMosGoodsBulkinputcspuAPIRequest {
+	return poolAlibabaMosGoodsBulkinputcspuAPIRequest.Get().(*AlibabaMosGoodsBulkinputcspuAPIRequest)
+}
+
+// ReleaseAlibabaMosGoodsBulkinputcspuAPIRequest 将 AlibabaMosGoodsBulkinputcspuAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosGoodsBulkinputcspuAPIRequest(v *AlibabaMosGoodsBulkinputcspuAPIRequest) {
+	v.Reset()
+	poolAlibabaMosGoodsBulkinputcspuAPIRequest.Put(v)
 }

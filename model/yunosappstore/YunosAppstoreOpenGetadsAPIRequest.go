@@ -2,6 +2,7 @@ package yunosappstore
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -51,8 +52,30 @@ type YunosAppstoreOpenGetadsAPIRequest struct {
 // NewYunosAppstoreOpenGetadsRequest 初始化YunosAppstoreOpenGetadsAPIRequest对象
 func NewYunosAppstoreOpenGetadsRequest() *YunosAppstoreOpenGetadsAPIRequest {
 	return &YunosAppstoreOpenGetadsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(17),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosAppstoreOpenGetadsAPIRequest) Reset() {
+	r._cats = r._cats[:0]
+	r._pkgs = r._pkgs[:0]
+	r._excludePkgs = r._excludePkgs[:0]
+	r._excludeCats = r._excludeCats[:0]
+	r._templateIds = r._templateIds[:0]
+	r._caseId = ""
+	r._ssp = ""
+	r._feeType = ""
+	r._clientIp = ""
+	r._deviceId = ""
+	r._rid = ""
+	r._clientVerCode = 0
+	r._size = 0
+	r._mrp = 0
+	r._options = 0
+	r._excludeInstall = false
+	r._tryMapToUuid = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -291,4 +314,21 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetTryMapToUuid(_tryMapToUuid bool) 
 // GetTryMapToUuid TryMapToUuid Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetTryMapToUuid() bool {
 	return r._tryMapToUuid
+}
+
+var poolYunosAppstoreOpenGetadsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosAppstoreOpenGetadsRequest()
+	},
+}
+
+// GetYunosAppstoreOpenGetadsRequest 从 sync.Pool 获取 YunosAppstoreOpenGetadsAPIRequest
+func GetYunosAppstoreOpenGetadsAPIRequest() *YunosAppstoreOpenGetadsAPIRequest {
+	return poolYunosAppstoreOpenGetadsAPIRequest.Get().(*YunosAppstoreOpenGetadsAPIRequest)
+}
+
+// ReleaseYunosAppstoreOpenGetadsAPIRequest 将 YunosAppstoreOpenGetadsAPIRequest 放入 sync.Pool
+func ReleaseYunosAppstoreOpenGetadsAPIRequest(v *YunosAppstoreOpenGetadsAPIRequest) {
+	v.Reset()
+	poolYunosAppstoreOpenGetadsAPIRequest.Put(v)
 }

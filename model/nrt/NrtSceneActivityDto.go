@@ -1,5 +1,9 @@
 package nrt
 
+import (
+	"sync"
+)
+
 // NrtSceneActivityDto 结构体
 type NrtSceneActivityDto struct {
 	// 权益列表
@@ -30,4 +34,34 @@ type NrtSceneActivityDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 版本
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolNrtSceneActivityDto = sync.Pool{
+	New: func() any {
+		return new(NrtSceneActivityDto)
+	},
+}
+
+// GetNrtSceneActivityDto() 从对象池中获取NrtSceneActivityDto
+func GetNrtSceneActivityDto() *NrtSceneActivityDto {
+	return poolNrtSceneActivityDto.Get().(*NrtSceneActivityDto)
+}
+
+// ReleaseNrtSceneActivityDto 释放NrtSceneActivityDto
+func ReleaseNrtSceneActivityDto(v *NrtSceneActivityDto) {
+	v.BenefitList = v.BenefitList[:0]
+	v.ChannelList = v.ChannelList[:0]
+	v.BizCode = ""
+	v.CreatorId = ""
+	v.Extra = ""
+	v.Name = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.ActivityType = ""
+	v.ModifiedId = ""
+	v.ItemId = 0
+	v.ActivityId = 0
+	v.Status = 0
+	v.Version = 0
+	poolNrtSceneActivityDto.Put(v)
 }

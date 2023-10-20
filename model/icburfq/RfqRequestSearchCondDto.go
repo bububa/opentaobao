@@ -1,5 +1,9 @@
 package icburfq
 
+import (
+	"sync"
+)
+
 // RfqRequestSearchCondDto 结构体
 type RfqRequestSearchCondDto struct {
 	// 关键词
@@ -30,4 +34,34 @@ type RfqRequestSearchCondDto struct {
 	ZeroQuotation bool `json:"zero_quotation,omitempty" xml:"zero_quotation,omitempty"`
 	// 是否过滤已报价
 	FilterQuoted bool `json:"filter_quoted,omitempty" xml:"filter_quoted,omitempty"`
+}
+
+var poolRfqRequestSearchCondDto = sync.Pool{
+	New: func() any {
+		return new(RfqRequestSearchCondDto)
+	},
+}
+
+// GetRfqRequestSearchCondDto() 从对象池中获取RfqRequestSearchCondDto
+func GetRfqRequestSearchCondDto() *RfqRequestSearchCondDto {
+	return poolRfqRequestSearchCondDto.Get().(*RfqRequestSearchCondDto)
+}
+
+// ReleaseRfqRequestSearchCondDto 释放RfqRequestSearchCondDto
+func ReleaseRfqRequestSearchCondDto(v *RfqRequestSearchCondDto) {
+	v.SearchText = ""
+	v.Country = ""
+	v.CategoryId = ""
+	v.PageSize = 0
+	v.OpenTime = 0
+	v.CloseTime = 0
+	v.QuantityMin = 0
+	v.CurrentPage = 0
+	v.QuantityMax = 0
+	v.Attachment = false
+	v.Photo = false
+	v.FullQuote = false
+	v.ZeroQuotation = false
+	v.FilterQuoted = false
+	poolRfqRequestSearchCondDto.Put(v)
 }

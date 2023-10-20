@@ -9,11 +9,6 @@ import (
 // alibaba.interact.vip.get
 //
 // 提供用户淘气值&amp;用户角色身份查询
-func AlibabaInteractVipGet(clt *core.SDKClient, req *interactvip.AlibabaInteractVipGetAPIRequest, session string) (*interactvip.AlibabaInteractVipGetAPIResponse, error) {
-	var resp interactvip.AlibabaInteractVipGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaInteractVipGet(clt *core.SDKClient, req *interactvip.AlibabaInteractVipGetAPIRequest, resp *interactvip.AlibabaInteractVipGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAilabsIotBusinessRecipeGetpageAPIRequest struct {
 // NewAlibabaAilabsIotBusinessRecipeGetpageRequest 初始化AlibabaAilabsIotBusinessRecipeGetpageAPIRequest对象
 func NewAlibabaAilabsIotBusinessRecipeGetpageRequest() *AlibabaAilabsIotBusinessRecipeGetpageAPIRequest {
 	return &AlibabaAilabsIotBusinessRecipeGetpageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsIotBusinessRecipeGetpageAPIRequest) Reset() {
+	r._openAccountId = ""
+	r._pageNum = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAilabsIotBusinessRecipeGetpageAPIRequest) SetPageSize(_pageSize 
 // GetPageSize PageSize Getter
 func (r AlibabaAilabsIotBusinessRecipeGetpageAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaAilabsIotBusinessRecipeGetpageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsIotBusinessRecipeGetpageRequest()
+	},
+}
+
+// GetAlibabaAilabsIotBusinessRecipeGetpageRequest 从 sync.Pool 获取 AlibabaAilabsIotBusinessRecipeGetpageAPIRequest
+func GetAlibabaAilabsIotBusinessRecipeGetpageAPIRequest() *AlibabaAilabsIotBusinessRecipeGetpageAPIRequest {
+	return poolAlibabaAilabsIotBusinessRecipeGetpageAPIRequest.Get().(*AlibabaAilabsIotBusinessRecipeGetpageAPIRequest)
+}
+
+// ReleaseAlibabaAilabsIotBusinessRecipeGetpageAPIRequest 将 AlibabaAilabsIotBusinessRecipeGetpageAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsIotBusinessRecipeGetpageAPIRequest(v *AlibabaAilabsIotBusinessRecipeGetpageAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsIotBusinessRecipeGetpageAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package dmp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoDmpCrowdTemplateApplyAPIResponse struct {
 	model.CommonResponse
 	TaobaoDmpCrowdTemplateApplyAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoDmpCrowdTemplateApplyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoDmpCrowdTemplateApplyAPIResponseModel).Reset()
 }
 
 // TaobaoDmpCrowdTemplateApplyAPIResponseModel is 人群模版采纳并生成人群API 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoDmpCrowdTemplateApplyAPIResponseModel struct {
 	Result int64 `json:"result,omitempty" xml:"result,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoDmpCrowdTemplateApplyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultErrorCode = ""
+	m.Message = ""
+	m.Result = 0
+	m.IsSuccess = false
+}
+
+var poolTaobaoDmpCrowdTemplateApplyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoDmpCrowdTemplateApplyAPIResponse)
+	},
+}
+
+// GetTaobaoDmpCrowdTemplateApplyAPIResponse 从 sync.Pool 获取 TaobaoDmpCrowdTemplateApplyAPIResponse
+func GetTaobaoDmpCrowdTemplateApplyAPIResponse() *TaobaoDmpCrowdTemplateApplyAPIResponse {
+	return poolTaobaoDmpCrowdTemplateApplyAPIResponse.Get().(*TaobaoDmpCrowdTemplateApplyAPIResponse)
+}
+
+// ReleaseTaobaoDmpCrowdTemplateApplyAPIResponse 将 TaobaoDmpCrowdTemplateApplyAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoDmpCrowdTemplateApplyAPIResponse(v *TaobaoDmpCrowdTemplateApplyAPIResponse) {
+	v.Reset()
+	poolTaobaoDmpCrowdTemplateApplyAPIResponse.Put(v)
 }

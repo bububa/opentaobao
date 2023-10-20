@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // TopBindProductGoodsRequest 结构体
 type TopBindProductGoodsRequest struct {
 	// 二级渠道编码
@@ -12,4 +16,25 @@ type TopBindProductGoodsRequest struct {
 	GoodsId int64 `json:"goods_id,omitempty" xml:"goods_id,omitempty"`
 	// 供应商渠道产品skuId
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolTopBindProductGoodsRequest = sync.Pool{
+	New: func() any {
+		return new(TopBindProductGoodsRequest)
+	},
+}
+
+// GetTopBindProductGoodsRequest() 从对象池中获取TopBindProductGoodsRequest
+func GetTopBindProductGoodsRequest() *TopBindProductGoodsRequest {
+	return poolTopBindProductGoodsRequest.Get().(*TopBindProductGoodsRequest)
+}
+
+// ReleaseTopBindProductGoodsRequest 释放TopBindProductGoodsRequest
+func ReleaseTopBindProductGoodsRequest(v *TopBindProductGoodsRequest) {
+	v.SubChannelCode = ""
+	v.ChannelCode = ""
+	v.ProductId = 0
+	v.GoodsId = 0
+	v.SkuId = 0
+	poolTopBindProductGoodsRequest.Put(v)
 }

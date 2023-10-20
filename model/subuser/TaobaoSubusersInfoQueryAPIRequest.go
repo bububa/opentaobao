@@ -2,6 +2,7 @@ package subuser
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoSubusersInfoQueryAPIRequest struct {
 // NewTaobaoSubusersInfoQueryRequest 初始化TaobaoSubusersInfoQueryAPIRequest对象
 func NewTaobaoSubusersInfoQueryRequest() *TaobaoSubusersInfoQueryAPIRequest {
 	return &TaobaoSubusersInfoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSubusersInfoQueryAPIRequest) Reset() {
+	r._site = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoSubusersInfoQueryAPIRequest) SetSite(_site int64) error {
 // GetSite Site Getter
 func (r TaobaoSubusersInfoQueryAPIRequest) GetSite() int64 {
 	return r._site
+}
+
+var poolTaobaoSubusersInfoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSubusersInfoQueryRequest()
+	},
+}
+
+// GetTaobaoSubusersInfoQueryRequest 从 sync.Pool 获取 TaobaoSubusersInfoQueryAPIRequest
+func GetTaobaoSubusersInfoQueryAPIRequest() *TaobaoSubusersInfoQueryAPIRequest {
+	return poolTaobaoSubusersInfoQueryAPIRequest.Get().(*TaobaoSubusersInfoQueryAPIRequest)
+}
+
+// ReleaseTaobaoSubusersInfoQueryAPIRequest 将 TaobaoSubusersInfoQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSubusersInfoQueryAPIRequest(v *TaobaoSubusersInfoQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoSubusersInfoQueryAPIRequest.Put(v)
 }

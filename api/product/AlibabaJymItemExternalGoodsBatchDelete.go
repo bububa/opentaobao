@@ -9,11 +9,6 @@ import (
 // alibaba.jym.item.external.goods.batch.delete
 //
 // 交易猫外部商家批量删除商品接口
-func AlibabaJymItemExternalGoodsBatchDelete(clt *core.SDKClient, req *product.AlibabaJymItemExternalGoodsBatchDeleteAPIRequest, session string) (*product.AlibabaJymItemExternalGoodsBatchDeleteAPIResponse, error) {
-	var resp product.AlibabaJymItemExternalGoodsBatchDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaJymItemExternalGoodsBatchDelete(clt *core.SDKClient, req *product.AlibabaJymItemExternalGoodsBatchDeleteAPIRequest, resp *product.AlibabaJymItemExternalGoodsBatchDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

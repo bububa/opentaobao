@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest struct {
 // NewTaobaoMiniappWidgetTemplateInstanceQueryRequest 初始化TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest对象
 func NewTaobaoMiniappWidgetTemplateInstanceQueryRequest() *TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest {
 	return &TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest) SetParam0(_param0 *
 // GetParam0 Param0 Getter
 func (r TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest) GetParam0() *MiniAppInstantiateAppOpenQuery {
 	return r._param0
+}
+
+var poolTaobaoMiniappWidgetTemplateInstanceQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappWidgetTemplateInstanceQueryRequest()
+	},
+}
+
+// GetTaobaoMiniappWidgetTemplateInstanceQueryRequest 从 sync.Pool 获取 TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest
+func GetTaobaoMiniappWidgetTemplateInstanceQueryAPIRequest() *TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest {
+	return poolTaobaoMiniappWidgetTemplateInstanceQueryAPIRequest.Get().(*TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest)
+}
+
+// ReleaseTaobaoMiniappWidgetTemplateInstanceQueryAPIRequest 将 TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappWidgetTemplateInstanceQueryAPIRequest(v *TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappWidgetTemplateInstanceQueryAPIRequest.Put(v)
 }

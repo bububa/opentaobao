@@ -2,6 +2,7 @@ package eticket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoVmarketEticketQrcodeUploadAPIRequest struct {
 // NewTaobaoVmarketEticketQrcodeUploadRequest 初始化TaobaoVmarketEticketQrcodeUploadAPIRequest对象
 func NewTaobaoVmarketEticketQrcodeUploadRequest() *TaobaoVmarketEticketQrcodeUploadAPIRequest {
 	return &TaobaoVmarketEticketQrcodeUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoVmarketEticketQrcodeUploadAPIRequest) Reset() {
+	r._imgBytes = nil
+	r._codeMerchantId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoVmarketEticketQrcodeUploadAPIRequest) SetCodeMerchantId(_codeMerc
 // GetCodeMerchantId CodeMerchantId Getter
 func (r TaobaoVmarketEticketQrcodeUploadAPIRequest) GetCodeMerchantId() int64 {
 	return r._codeMerchantId
+}
+
+var poolTaobaoVmarketEticketQrcodeUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoVmarketEticketQrcodeUploadRequest()
+	},
+}
+
+// GetTaobaoVmarketEticketQrcodeUploadRequest 从 sync.Pool 获取 TaobaoVmarketEticketQrcodeUploadAPIRequest
+func GetTaobaoVmarketEticketQrcodeUploadAPIRequest() *TaobaoVmarketEticketQrcodeUploadAPIRequest {
+	return poolTaobaoVmarketEticketQrcodeUploadAPIRequest.Get().(*TaobaoVmarketEticketQrcodeUploadAPIRequest)
+}
+
+// ReleaseTaobaoVmarketEticketQrcodeUploadAPIRequest 将 TaobaoVmarketEticketQrcodeUploadAPIRequest 放入 sync.Pool
+func ReleaseTaobaoVmarketEticketQrcodeUploadAPIRequest(v *TaobaoVmarketEticketQrcodeUploadAPIRequest) {
+	v.Reset()
+	poolTaobaoVmarketEticketQrcodeUploadAPIRequest.Put(v)
 }

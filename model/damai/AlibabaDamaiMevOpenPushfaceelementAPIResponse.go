@@ -2,6 +2,7 @@ package damai
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaDamaiMevOpenPushfaceelementAPIResponse struct {
 	AlibabaDamaiMevOpenPushfaceelementAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaDamaiMevOpenPushfaceelementAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaDamaiMevOpenPushfaceelementAPIResponseModel).Reset()
+}
+
 // AlibabaDamaiMevOpenPushfaceelementAPIResponseModel is 大麦换验平台-第三方对外开放-票面元素接口pushFaceElement 成功返回结果
 type AlibabaDamaiMevOpenPushfaceelementAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_damai_mev_open_pushfaceelement_response"`
@@ -22,4 +29,27 @@ type AlibabaDamaiMevOpenPushfaceelementAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *AlibabaDamaiMevOpenPushfaceelementResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaDamaiMevOpenPushfaceelementAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaDamaiMevOpenPushfaceelementAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaDamaiMevOpenPushfaceelementAPIResponse)
+	},
+}
+
+// GetAlibabaDamaiMevOpenPushfaceelementAPIResponse 从 sync.Pool 获取 AlibabaDamaiMevOpenPushfaceelementAPIResponse
+func GetAlibabaDamaiMevOpenPushfaceelementAPIResponse() *AlibabaDamaiMevOpenPushfaceelementAPIResponse {
+	return poolAlibabaDamaiMevOpenPushfaceelementAPIResponse.Get().(*AlibabaDamaiMevOpenPushfaceelementAPIResponse)
+}
+
+// ReleaseAlibabaDamaiMevOpenPushfaceelementAPIResponse 将 AlibabaDamaiMevOpenPushfaceelementAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaDamaiMevOpenPushfaceelementAPIResponse(v *AlibabaDamaiMevOpenPushfaceelementAPIResponse) {
+	v.Reset()
+	poolAlibabaDamaiMevOpenPushfaceelementAPIResponse.Put(v)
 }

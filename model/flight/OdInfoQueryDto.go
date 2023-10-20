@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // OdInfoQueryDto 结构体
 type OdInfoQueryDto struct {
 	// 起飞机场
@@ -12,4 +16,25 @@ type OdInfoQueryDto struct {
 	DepEndDate string `json:"dep_end_date,omitempty" xml:"dep_end_date,omitempty"`
 	// 0，去程；1，返程；暂时仅支持单程，默认为0
 	Index int64 `json:"index,omitempty" xml:"index,omitempty"`
+}
+
+var poolOdInfoQueryDto = sync.Pool{
+	New: func() any {
+		return new(OdInfoQueryDto)
+	},
+}
+
+// GetOdInfoQueryDto() 从对象池中获取OdInfoQueryDto
+func GetOdInfoQueryDto() *OdInfoQueryDto {
+	return poolOdInfoQueryDto.Get().(*OdInfoQueryDto)
+}
+
+// ReleaseOdInfoQueryDto 释放OdInfoQueryDto
+func ReleaseOdInfoQueryDto(v *OdInfoQueryDto) {
+	v.DepAirport = ""
+	v.ArrAirport = ""
+	v.DepStartDate = ""
+	v.DepEndDate = ""
+	v.Index = 0
+	poolOdInfoQueryDto.Put(v)
 }

@@ -2,6 +2,7 @@ package retail
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaRetailVendingPriceWhitelistRemoveAPIRequest struct {
 // NewAlibabaRetailVendingPriceWhitelistRemoveRequest 初始化AlibabaRetailVendingPriceWhitelistRemoveAPIRequest对象
 func NewAlibabaRetailVendingPriceWhitelistRemoveRequest() *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest {
 	return &AlibabaRetailVendingPriceWhitelistRemoveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) Reset() {
+	r._deviceCodeList = r._deviceCodeList[:0]
+	r._deviceUuidList = r._deviceUuidList[:0]
+	r._barcode = ""
+	r._sellerId = 0
+	r._itemId = 0
+	r._allDevice = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) SetAllDevice(_allDe
 // GetAllDevice AllDevice Getter
 func (r AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) GetAllDevice() bool {
 	return r._allDevice
+}
+
+var poolAlibabaRetailVendingPriceWhitelistRemoveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaRetailVendingPriceWhitelistRemoveRequest()
+	},
+}
+
+// GetAlibabaRetailVendingPriceWhitelistRemoveRequest 从 sync.Pool 获取 AlibabaRetailVendingPriceWhitelistRemoveAPIRequest
+func GetAlibabaRetailVendingPriceWhitelistRemoveAPIRequest() *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest {
+	return poolAlibabaRetailVendingPriceWhitelistRemoveAPIRequest.Get().(*AlibabaRetailVendingPriceWhitelistRemoveAPIRequest)
+}
+
+// ReleaseAlibabaRetailVendingPriceWhitelistRemoveAPIRequest 将 AlibabaRetailVendingPriceWhitelistRemoveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaRetailVendingPriceWhitelistRemoveAPIRequest(v *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) {
+	v.Reset()
+	poolAlibabaRetailVendingPriceWhitelistRemoveAPIRequest.Put(v)
 }

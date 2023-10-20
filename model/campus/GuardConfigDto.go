@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // GuardConfigDto 结构体
 type GuardConfigDto struct {
 	// 设备
@@ -12,4 +16,25 @@ type GuardConfigDto struct {
 	OpenPlanId int64 `json:"open_plan_id,omitempty" xml:"open_plan_id,omitempty"`
 	// 封阻时间计划
 	BlockPlanId int64 `json:"block_plan_id,omitempty" xml:"block_plan_id,omitempty"`
+}
+
+var poolGuardConfigDto = sync.Pool{
+	New: func() any {
+		return new(GuardConfigDto)
+	},
+}
+
+// GetGuardConfigDto() 从对象池中获取GuardConfigDto
+func GetGuardConfigDto() *GuardConfigDto {
+	return poolGuardConfigDto.Get().(*GuardConfigDto)
+}
+
+// ReleaseGuardConfigDto 释放GuardConfigDto
+func ReleaseGuardConfigDto(v *GuardConfigDto) {
+	v.InputList = v.InputList[:0]
+	v.OutputList = v.OutputList[:0]
+	v.Guard = nil
+	v.OpenPlanId = 0
+	v.BlockPlanId = 0
+	poolGuardConfigDto.Put(v)
 }

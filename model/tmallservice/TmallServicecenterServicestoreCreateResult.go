@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // TmallServicecenterServicestoreCreateResult 结构体
 type TmallServicecenterServicestoreCreateResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type TmallServicecenterServicestoreCreateResult struct {
 	ResultData *ServiceStoreCreateResp `json:"result_data,omitempty" xml:"result_data,omitempty"`
 	// 调用是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmallServicecenterServicestoreCreateResult = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterServicestoreCreateResult)
+	},
+}
+
+// GetTmallServicecenterServicestoreCreateResult() 从对象池中获取TmallServicecenterServicestoreCreateResult
+func GetTmallServicecenterServicestoreCreateResult() *TmallServicecenterServicestoreCreateResult {
+	return poolTmallServicecenterServicestoreCreateResult.Get().(*TmallServicecenterServicestoreCreateResult)
+}
+
+// ReleaseTmallServicecenterServicestoreCreateResult 释放TmallServicecenterServicestoreCreateResult
+func ReleaseTmallServicecenterServicestoreCreateResult(v *TmallServicecenterServicestoreCreateResult) {
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.ResultData = nil
+	v.Success = false
+	poolTmallServicecenterServicestoreCreateResult.Put(v)
 }

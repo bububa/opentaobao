@@ -1,5 +1,9 @@
 package alihealthmedical
 
+import (
+	"sync"
+)
+
 // OrderDetailDto 结构体
 type OrderDetailDto struct {
 	// 商品类型
@@ -38,4 +42,38 @@ type OrderDetailDto struct {
 	MedicalInfo *MedicalInfoDto `json:"medical_info,omitempty" xml:"medical_info,omitempty"`
 	// 评价综合得分：取值 1 - 5
 	Score int64 `json:"score,omitempty" xml:"score,omitempty"`
+}
+
+var poolOrderDetailDto = sync.Pool{
+	New: func() any {
+		return new(OrderDetailDto)
+	},
+}
+
+// GetOrderDetailDto() 从对象池中获取OrderDetailDto
+func GetOrderDetailDto() *OrderDetailDto {
+	return poolOrderDetailDto.Get().(*OrderDetailDto)
+}
+
+// ReleaseOrderDetailDto 释放OrderDetailDto
+func ReleaseOrderDetailDto(v *OrderDetailDto) {
+	v.ItemType = ""
+	v.CloseAccountTime = ""
+	v.LabelNames = ""
+	v.DiagnosingTime = ""
+	v.OrderId = ""
+	v.PatientId = ""
+	v.OrderCreateTime = ""
+	v.OrderStatus = ""
+	v.ItemId = ""
+	v.DoctorName = ""
+	v.ReviewCreateTime = ""
+	v.TotalFee = ""
+	v.DoctorId = ""
+	v.OrderFinishTime = ""
+	v.Comment = ""
+	v.SessionId = ""
+	v.MedicalInfo = nil
+	v.Score = 0
+	poolOrderDetailDto.Put(v)
 }

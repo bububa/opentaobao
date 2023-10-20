@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // SupplierOrderQueryDto 结构体
 type SupplierOrderQueryDto struct {
 	// 外部门店ID
@@ -12,4 +16,25 @@ type SupplierOrderQueryDto struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 分页参数，页大小
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolSupplierOrderQueryDto = sync.Pool{
+	New: func() any {
+		return new(SupplierOrderQueryDto)
+	},
+}
+
+// GetSupplierOrderQueryDto() 从对象池中获取SupplierOrderQueryDto
+func GetSupplierOrderQueryDto() *SupplierOrderQueryDto {
+	return poolSupplierOrderQueryDto.Get().(*SupplierOrderQueryDto)
+}
+
+// ReleaseSupplierOrderQueryDto 释放SupplierOrderQueryDto
+func ReleaseSupplierOrderQueryDto(v *SupplierOrderQueryDto) {
+	v.OuterStoreId = ""
+	v.TradeCreateDate = ""
+	v.Supplier = ""
+	v.PageIndex = 0
+	v.PageSize = 0
+	poolSupplierOrderQueryDto.Put(v)
 }

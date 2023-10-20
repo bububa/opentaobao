@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // CommissionResultQuery 结构体
 type CommissionResultQuery struct {
 	// 分佣导购
@@ -20,4 +24,29 @@ type CommissionResultQuery struct {
 	BizOrderType int64 `json:"biz_order_type,omitempty" xml:"biz_order_type,omitempty"`
 	// 当前页
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
+}
+
+var poolCommissionResultQuery = sync.Pool{
+	New: func() any {
+		return new(CommissionResultQuery)
+	},
+}
+
+// GetCommissionResultQuery() 从对象池中获取CommissionResultQuery
+func GetCommissionResultQuery() *CommissionResultQuery {
+	return poolCommissionResultQuery.Get().(*CommissionResultQuery)
+}
+
+// ReleaseCommissionResultQuery 释放CommissionResultQuery
+func ReleaseCommissionResultQuery(v *CommissionResultQuery) {
+	v.CommissionEmployeeName = ""
+	v.CommissionStoreId = ""
+	v.OrderPayTimeStart = ""
+	v.CommissionTimeEnd = ""
+	v.CommissionTimeStart = ""
+	v.OrderPayTimeEnd = ""
+	v.PageSize = 0
+	v.BizOrderType = 0
+	v.PageNo = 0
+	poolCommissionResultQuery.Put(v)
 }

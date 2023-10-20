@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // ResultVo 结构体
 type ResultVo struct {
 	// 异常代码
@@ -14,4 +18,26 @@ type ResultVo struct {
 	Object *LeaseOrderInfoDto `json:"object,omitempty" xml:"object,omitempty"`
 	// 成功与否
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolResultVo = sync.Pool{
+	New: func() any {
+		return new(ResultVo)
+	},
+}
+
+// GetResultVo() 从对象池中获取ResultVo
+func GetResultVo() *ResultVo {
+	return poolResultVo.Get().(*ResultVo)
+}
+
+// ReleaseResultVo 释放ResultVo
+func ReleaseResultVo(v *ResultVo) {
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.CostTime = 0
+	v.GmtCurrentTime = 0
+	v.Object = nil
+	v.Success = false
+	poolResultVo.Put(v)
 }

@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // PaymentModeReqDto 结构体
 type PaymentModeReqDto struct {
 	// 外部楼盘id
@@ -22,4 +26,30 @@ type PaymentModeReqDto struct {
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
 	// 是否删除
 	IsDeleted int64 `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
+}
+
+var poolPaymentModeReqDto = sync.Pool{
+	New: func() any {
+		return new(PaymentModeReqDto)
+	},
+}
+
+// GetPaymentModeReqDto() 从对象池中获取PaymentModeReqDto
+func GetPaymentModeReqDto() *PaymentModeReqDto {
+	return poolPaymentModeReqDto.Get().(*PaymentModeReqDto)
+}
+
+// ReleasePaymentModeReqDto 释放PaymentModeReqDto
+func ReleasePaymentModeReqDto(v *PaymentModeReqDto) {
+	v.OuterProjectId = ""
+	v.PaymentName = ""
+	v.CreatUserName = ""
+	v.OuterPaymentId = ""
+	v.OuterStoreId = ""
+	v.PaymentType = 0
+	v.BuyOneRadio = 0
+	v.BuyMultiRadio = 0
+	v.IsTest = 0
+	v.IsDeleted = 0
+	poolPaymentModeReqDto.Put(v)
 }

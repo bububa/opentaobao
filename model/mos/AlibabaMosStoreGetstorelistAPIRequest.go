@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMosStoreGetstorelistAPIRequest struct {
 // NewAlibabaMosStoreGetstorelistRequest 初始化AlibabaMosStoreGetstorelistAPIRequest对象
 func NewAlibabaMosStoreGetstorelistRequest() *AlibabaMosStoreGetstorelistAPIRequest {
 	return &AlibabaMosStoreGetstorelistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosStoreGetstorelistAPIRequest) Reset() {
+	r._screenNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMosStoreGetstorelistAPIRequest) SetScreenNo(_screenNo string) er
 // GetScreenNo ScreenNo Getter
 func (r AlibabaMosStoreGetstorelistAPIRequest) GetScreenNo() string {
 	return r._screenNo
+}
+
+var poolAlibabaMosStoreGetstorelistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosStoreGetstorelistRequest()
+	},
+}
+
+// GetAlibabaMosStoreGetstorelistRequest 从 sync.Pool 获取 AlibabaMosStoreGetstorelistAPIRequest
+func GetAlibabaMosStoreGetstorelistAPIRequest() *AlibabaMosStoreGetstorelistAPIRequest {
+	return poolAlibabaMosStoreGetstorelistAPIRequest.Get().(*AlibabaMosStoreGetstorelistAPIRequest)
+}
+
+// ReleaseAlibabaMosStoreGetstorelistAPIRequest 将 AlibabaMosStoreGetstorelistAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosStoreGetstorelistAPIRequest(v *AlibabaMosStoreGetstorelistAPIRequest) {
+	v.Reset()
+	poolAlibabaMosStoreGetstorelistAPIRequest.Put(v)
 }

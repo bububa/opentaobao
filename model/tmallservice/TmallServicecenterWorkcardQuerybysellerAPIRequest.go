@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TmallServicecenterWorkcardQuerybysellerAPIRequest struct {
 // NewTmallServicecenterWorkcardQuerybysellerRequest 初始化TmallServicecenterWorkcardQuerybysellerAPIRequest对象
 func NewTmallServicecenterWorkcardQuerybysellerRequest() *TmallServicecenterWorkcardQuerybysellerAPIRequest {
 	return &TmallServicecenterWorkcardQuerybysellerAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) Reset() {
+	r._identifyCode = ""
+	r._gmtCreateStart = ""
+	r._gmtCreateEnd = ""
+	r._serviceStoreId = 0
+	r._id = 0
+	r._bizOrderId = 0
+	r._currentPage = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) SetPageSize(_pageSiz
 // GetPageSize PageSize Getter
 func (r TmallServicecenterWorkcardQuerybysellerAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTmallServicecenterWorkcardQuerybysellerAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkcardQuerybysellerRequest()
+	},
+}
+
+// GetTmallServicecenterWorkcardQuerybysellerRequest 从 sync.Pool 获取 TmallServicecenterWorkcardQuerybysellerAPIRequest
+func GetTmallServicecenterWorkcardQuerybysellerAPIRequest() *TmallServicecenterWorkcardQuerybysellerAPIRequest {
+	return poolTmallServicecenterWorkcardQuerybysellerAPIRequest.Get().(*TmallServicecenterWorkcardQuerybysellerAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkcardQuerybysellerAPIRequest 将 TmallServicecenterWorkcardQuerybysellerAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkcardQuerybysellerAPIRequest(v *TmallServicecenterWorkcardQuerybysellerAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkcardQuerybysellerAPIRequest.Put(v)
 }

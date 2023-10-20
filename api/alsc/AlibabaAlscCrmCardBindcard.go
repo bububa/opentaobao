@@ -9,11 +9,6 @@ import (
 // alibaba.alsc.crm.card.bindcard
 //
 // 将会员卡和实例物理卡绑定在一起
-func AlibabaAlscCrmCardBindcard(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCardBindcardAPIRequest, session string) (*alsc.AlibabaAlscCrmCardBindcardAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmCardBindcardAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlscCrmCardBindcard(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCardBindcardAPIRequest, resp *alsc.AlibabaAlscCrmCardBindcardAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

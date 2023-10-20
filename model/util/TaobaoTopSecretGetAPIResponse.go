@@ -2,6 +2,7 @@ package util
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoTopSecretGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTopSecretGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoTopSecretGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTopSecretGetAPIResponseModel).Reset()
 }
 
 // TaobaoTopSecretGetAPIResponseModel is 获取TOP通道解密秘钥 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoTopSecretGetAPIResponseModel struct {
 	MaxInterval int64 `json:"max_interval,omitempty" xml:"max_interval,omitempty"`
 	// 秘钥版本号
 	SecretVersion int64 `json:"secret_version,omitempty" xml:"secret_version,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTopSecretGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Secret = ""
+	m.AppConfig = ""
+	m.Interval = 0
+	m.MaxInterval = 0
+	m.SecretVersion = 0
+}
+
+var poolTaobaoTopSecretGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTopSecretGetAPIResponse)
+	},
+}
+
+// GetTaobaoTopSecretGetAPIResponse 从 sync.Pool 获取 TaobaoTopSecretGetAPIResponse
+func GetTaobaoTopSecretGetAPIResponse() *TaobaoTopSecretGetAPIResponse {
+	return poolTaobaoTopSecretGetAPIResponse.Get().(*TaobaoTopSecretGetAPIResponse)
+}
+
+// ReleaseTaobaoTopSecretGetAPIResponse 将 TaobaoTopSecretGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTopSecretGetAPIResponse(v *TaobaoTopSecretGetAPIResponse) {
+	v.Reset()
+	poolTaobaoTopSecretGetAPIResponse.Put(v)
 }

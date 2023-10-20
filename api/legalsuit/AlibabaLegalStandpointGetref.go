@@ -9,11 +9,6 @@ import (
 // alibaba.legal.standpoint.getref
 //
 // 口径查询
-func AlibabaLegalStandpointGetref(clt *core.SDKClient, req *legalsuit.AlibabaLegalStandpointGetrefAPIRequest, session string) (*legalsuit.AlibabaLegalStandpointGetrefAPIResponse, error) {
-	var resp legalsuit.AlibabaLegalStandpointGetrefAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLegalStandpointGetref(clt *core.SDKClient, req *legalsuit.AlibabaLegalStandpointGetrefAPIRequest, resp *legalsuit.AlibabaLegalStandpointGetrefAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

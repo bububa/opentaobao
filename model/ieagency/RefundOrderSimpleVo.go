@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // RefundOrderSimpleVo 结构体
 type RefundOrderSimpleVo struct {
 	// 新老模型（V1:老模型，V2：新模型）
@@ -16,4 +20,27 @@ type RefundOrderSimpleVo struct {
 	RefundOrderStatus int64 `json:"refund_order_status,omitempty" xml:"refund_order_status,omitempty"`
 	// 申请单支付状态(   INIT(1, &#34;初始化&#34;),     REFUND_FAIL(2, &#34;退款失败&#34;),     REFUND_SUCCESS(3, &#34;退款成功&#34;))
 	RefundPayStatus int64 `json:"refund_pay_status,omitempty" xml:"refund_pay_status,omitempty"`
+}
+
+var poolRefundOrderSimpleVo = sync.Pool{
+	New: func() any {
+		return new(RefundOrderSimpleVo)
+	},
+}
+
+// GetRefundOrderSimpleVo() 从对象池中获取RefundOrderSimpleVo
+func GetRefundOrderSimpleVo() *RefundOrderSimpleVo {
+	return poolRefundOrderSimpleVo.Get().(*RefundOrderSimpleVo)
+}
+
+// ReleaseRefundOrderSimpleVo 释放RefundOrderSimpleVo
+func ReleaseRefundOrderSimpleVo(v *RefundOrderSimpleVo) {
+	v.ModelVersion = ""
+	v.AgentId = 0
+	v.OrderId = 0
+	v.RefundBizStatus = 0
+	v.RefundOrderId = 0
+	v.RefundOrderStatus = 0
+	v.RefundPayStatus = 0
+	poolRefundOrderSimpleVo.Put(v)
 }

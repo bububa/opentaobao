@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoFuwuSkuGetAPIResponse struct {
 	TaobaoFuwuSkuGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoFuwuSkuGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFuwuSkuGetAPIResponseModel).Reset()
+}
+
 // TaobaoFuwuSkuGetAPIResponseModel is 获取内购服务及SKU详情 成功返回结果
 type TaobaoFuwuSkuGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"fuwu_sku_get_response"`
@@ -22,4 +29,27 @@ type TaobaoFuwuSkuGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 内购服务及SKU详情
 	Result *ArticleViewResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFuwuSkuGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoFuwuSkuGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFuwuSkuGetAPIResponse)
+	},
+}
+
+// GetTaobaoFuwuSkuGetAPIResponse 从 sync.Pool 获取 TaobaoFuwuSkuGetAPIResponse
+func GetTaobaoFuwuSkuGetAPIResponse() *TaobaoFuwuSkuGetAPIResponse {
+	return poolTaobaoFuwuSkuGetAPIResponse.Get().(*TaobaoFuwuSkuGetAPIResponse)
+}
+
+// ReleaseTaobaoFuwuSkuGetAPIResponse 将 TaobaoFuwuSkuGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFuwuSkuGetAPIResponse(v *TaobaoFuwuSkuGetAPIResponse) {
+	v.Reset()
+	poolTaobaoFuwuSkuGetAPIResponse.Put(v)
 }

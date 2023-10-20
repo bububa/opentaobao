@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // Pagination 结构体
 type Pagination struct {
 	// 数据列表
@@ -32,4 +36,35 @@ type Pagination struct {
 	ToResourceType string `json:"to_resource_type,omitempty" xml:"to_resource_type,omitempty"`
 	// 总数
 	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
+}
+
+var poolPagination = sync.Pool{
+	New: func() any {
+		return new(Pagination)
+	},
+}
+
+// GetPagination() 从对象池中获取Pagination
+func GetPagination() *Pagination {
+	return poolPagination.Get().(*Pagination)
+}
+
+// ReleasePagination 释放Pagination
+func ReleasePagination(v *Pagination) {
+	v.Results = v.Results[:0]
+	v.FromOrgResourceCode = ""
+	v.FromOrgSource = ""
+	v.FromResourceCode = ""
+	v.FromResourceName = ""
+	v.FromResourceType = ""
+	v.MerchantCode = ""
+	v.NetworkCode = ""
+	v.RelationType = ""
+	v.ToOrgResourceCode = ""
+	v.ToOrgSource = ""
+	v.ToResourceCode = ""
+	v.ToResourceName = ""
+	v.ToResourceType = ""
+	v.Total = 0
+	poolPagination.Put(v)
 }

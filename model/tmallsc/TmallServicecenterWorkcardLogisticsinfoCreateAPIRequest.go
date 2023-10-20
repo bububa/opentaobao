@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallServicecenterWorkcardLogisticsinfoCreateAPIRequest struct {
 // NewTmallServicecenterWorkcardLogisticsinfoCreateRequest 初始化TmallServicecenterWorkcardLogisticsinfoCreateAPIRequest对象
 func NewTmallServicecenterWorkcardLogisticsinfoCreateRequest() *TmallServicecenterWorkcardLogisticsinfoCreateAPIRequest {
 	return &TmallServicecenterWorkcardLogisticsinfoCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkcardLogisticsinfoCreateAPIRequest) Reset() {
+	r._createLogisticsOrderRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallServicecenterWorkcardLogisticsinfoCreateAPIRequest) SetCreateLogis
 // GetCreateLogisticsOrderRequest CreateLogisticsOrderRequest Getter
 func (r TmallServicecenterWorkcardLogisticsinfoCreateAPIRequest) GetCreateLogisticsOrderRequest() *CreateLogisticsOrderRequest {
 	return r._createLogisticsOrderRequest
+}
+
+var poolTmallServicecenterWorkcardLogisticsinfoCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkcardLogisticsinfoCreateRequest()
+	},
+}
+
+// GetTmallServicecenterWorkcardLogisticsinfoCreateRequest 从 sync.Pool 获取 TmallServicecenterWorkcardLogisticsinfoCreateAPIRequest
+func GetTmallServicecenterWorkcardLogisticsinfoCreateAPIRequest() *TmallServicecenterWorkcardLogisticsinfoCreateAPIRequest {
+	return poolTmallServicecenterWorkcardLogisticsinfoCreateAPIRequest.Get().(*TmallServicecenterWorkcardLogisticsinfoCreateAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkcardLogisticsinfoCreateAPIRequest 将 TmallServicecenterWorkcardLogisticsinfoCreateAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkcardLogisticsinfoCreateAPIRequest(v *TmallServicecenterWorkcardLogisticsinfoCreateAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkcardLogisticsinfoCreateAPIRequest.Put(v)
 }

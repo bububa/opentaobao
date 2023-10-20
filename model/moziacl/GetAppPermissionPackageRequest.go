@@ -1,5 +1,9 @@
 package moziacl
 
+import (
+	"sync"
+)
+
 // GetAppPermissionPackageRequest 结构体
 type GetAppPermissionPackageRequest struct {
 	// 要查询的应用的appname
@@ -20,4 +24,29 @@ type GetAppPermissionPackageRequest struct {
 	ReturnTotalSize bool `json:"return_total_size,omitempty" xml:"return_total_size,omitempty"`
 	// 是否查询权限套餐中包含的角色、权限、数据权限 的数量。(如无必要，建议不要设置为true，会增加额外查询)
 	ShowELementCount bool `json:"show_e_lement_count,omitempty" xml:"show_e_lement_count,omitempty"`
+}
+
+var poolGetAppPermissionPackageRequest = sync.Pool{
+	New: func() any {
+		return new(GetAppPermissionPackageRequest)
+	},
+}
+
+// GetGetAppPermissionPackageRequest() 从对象池中获取GetAppPermissionPackageRequest
+func GetGetAppPermissionPackageRequest() *GetAppPermissionPackageRequest {
+	return poolGetAppPermissionPackageRequest.Get().(*GetAppPermissionPackageRequest)
+}
+
+// ReleaseGetAppPermissionPackageRequest 释放GetAppPermissionPackageRequest
+func ReleaseGetAppPermissionPackageRequest(v *GetAppPermissionPackageRequest) {
+	v.TargetAppName = ""
+	v.RequestMetaData = ""
+	v.FuzzyName = ""
+	v.PrincipalParam = nil
+	v.PageSize = 0
+	v.PageNo = 0
+	v.ShowRealmInfo = false
+	v.ReturnTotalSize = false
+	v.ShowELementCount = false
+	poolGetAppPermissionPackageRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAxWarehouseOutboundCallbackAPIRequest struct {
 // NewAlibabaAxWarehouseOutboundCallbackRequest 初始化AlibabaAxWarehouseOutboundCallbackAPIRequest对象
 func NewAlibabaAxWarehouseOutboundCallbackRequest() *AlibabaAxWarehouseOutboundCallbackAPIRequest {
 	return &AlibabaAxWarehouseOutboundCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAxWarehouseOutboundCallbackAPIRequest) Reset() {
+	r._tradeOutBoundCallBackRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAxWarehouseOutboundCallbackAPIRequest) SetTradeOutBoundCallBackR
 // GetTradeOutBoundCallBackRequest TradeOutBoundCallBackRequest Getter
 func (r AlibabaAxWarehouseOutboundCallbackAPIRequest) GetTradeOutBoundCallBackRequest() *TopTradeOutBoundCallBackRequest {
 	return r._tradeOutBoundCallBackRequest
+}
+
+var poolAlibabaAxWarehouseOutboundCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAxWarehouseOutboundCallbackRequest()
+	},
+}
+
+// GetAlibabaAxWarehouseOutboundCallbackRequest 从 sync.Pool 获取 AlibabaAxWarehouseOutboundCallbackAPIRequest
+func GetAlibabaAxWarehouseOutboundCallbackAPIRequest() *AlibabaAxWarehouseOutboundCallbackAPIRequest {
+	return poolAlibabaAxWarehouseOutboundCallbackAPIRequest.Get().(*AlibabaAxWarehouseOutboundCallbackAPIRequest)
+}
+
+// ReleaseAlibabaAxWarehouseOutboundCallbackAPIRequest 将 AlibabaAxWarehouseOutboundCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAxWarehouseOutboundCallbackAPIRequest(v *AlibabaAxWarehouseOutboundCallbackAPIRequest) {
+	v.Reset()
+	poolAlibabaAxWarehouseOutboundCallbackAPIRequest.Put(v)
 }

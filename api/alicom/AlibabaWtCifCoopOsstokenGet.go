@@ -9,11 +9,6 @@ import (
 // alibaba.wt.cif.coop.osstoken.get
 //
 // 商家合作上传oss图片获取token接口
-func AlibabaWtCifCoopOsstokenGet(clt *core.SDKClient, req *alicom.AlibabaWtCifCoopOsstokenGetAPIRequest, session string) (*alicom.AlibabaWtCifCoopOsstokenGetAPIResponse, error) {
-	var resp alicom.AlibabaWtCifCoopOsstokenGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWtCifCoopOsstokenGet(clt *core.SDKClient, req *alicom.AlibabaWtCifCoopOsstokenGetAPIRequest, resp *alicom.AlibabaWtCifCoopOsstokenGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

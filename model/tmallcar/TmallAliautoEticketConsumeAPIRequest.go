@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallAliautoEticketConsumeAPIRequest struct {
 // NewTmallAliautoEticketConsumeRequest 初始化TmallAliautoEticketConsumeAPIRequest对象
 func NewTmallAliautoEticketConsumeRequest() *TmallAliautoEticketConsumeAPIRequest {
 	return &TmallAliautoEticketConsumeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallAliautoEticketConsumeAPIRequest) Reset() {
+	r._consumeCode = ""
+	r._employeeNo = ""
+	r._storeNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallAliautoEticketConsumeAPIRequest) SetStoreNo(_storeNo string) error
 // GetStoreNo StoreNo Getter
 func (r TmallAliautoEticketConsumeAPIRequest) GetStoreNo() string {
 	return r._storeNo
+}
+
+var poolTmallAliautoEticketConsumeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallAliautoEticketConsumeRequest()
+	},
+}
+
+// GetTmallAliautoEticketConsumeRequest 从 sync.Pool 获取 TmallAliautoEticketConsumeAPIRequest
+func GetTmallAliautoEticketConsumeAPIRequest() *TmallAliautoEticketConsumeAPIRequest {
+	return poolTmallAliautoEticketConsumeAPIRequest.Get().(*TmallAliautoEticketConsumeAPIRequest)
+}
+
+// ReleaseTmallAliautoEticketConsumeAPIRequest 将 TmallAliautoEticketConsumeAPIRequest 放入 sync.Pool
+func ReleaseTmallAliautoEticketConsumeAPIRequest(v *TmallAliautoEticketConsumeAPIRequest) {
+	v.Reset()
+	poolTmallAliautoEticketConsumeAPIRequest.Put(v)
 }

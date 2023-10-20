@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // ComboInfo 结构体
 type ComboInfo struct {
 	// 套餐菜品做法明细
@@ -22,4 +26,30 @@ type ComboInfo struct {
 	ItemCount int64 `json:"item_count,omitempty" xml:"item_count,omitempty"`
 	// 单价
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
+}
+
+var poolComboInfo = sync.Pool{
+	New: func() any {
+		return new(ComboInfo)
+	},
+}
+
+// GetComboInfo() 从对象池中获取ComboInfo
+func GetComboInfo() *ComboInfo {
+	return poolComboInfo.Get().(*ComboInfo)
+}
+
+// ReleaseComboInfo 释放ComboInfo
+func ReleaseComboInfo(v *ComboInfo) {
+	v.CookingMethodsInfoList = v.CookingMethodsInfoList[:0]
+	v.IngredientsInfoList = v.IngredientsInfoList[:0]
+	v.OutItemId = ""
+	v.OutItemName = ""
+	v.OutSkuId = ""
+	v.OutSkuName = ""
+	v.Unit = ""
+	v.Weight = ""
+	v.ItemCount = 0
+	v.Price = 0
+	poolComboInfo.Put(v)
 }

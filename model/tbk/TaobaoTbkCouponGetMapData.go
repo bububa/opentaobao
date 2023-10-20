@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // TaobaoTbkCouponGetMapData 结构体
 type TaobaoTbkCouponGetMapData struct {
 	// 优惠券门槛金额
@@ -20,4 +24,29 @@ type TaobaoTbkCouponGetMapData struct {
 	CouponSrcScene int64 `json:"coupon_src_scene,omitempty" xml:"coupon_src_scene,omitempty"`
 	// 券属性，0表示店铺券，1表示单品券
 	CouponType int64 `json:"coupon_type,omitempty" xml:"coupon_type,omitempty"`
+}
+
+var poolTaobaoTbkCouponGetMapData = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkCouponGetMapData)
+	},
+}
+
+// GetTaobaoTbkCouponGetMapData() 从对象池中获取TaobaoTbkCouponGetMapData
+func GetTaobaoTbkCouponGetMapData() *TaobaoTbkCouponGetMapData {
+	return poolTaobaoTbkCouponGetMapData.Get().(*TaobaoTbkCouponGetMapData)
+}
+
+// ReleaseTaobaoTbkCouponGetMapData 释放TaobaoTbkCouponGetMapData
+func ReleaseTaobaoTbkCouponGetMapData(v *TaobaoTbkCouponGetMapData) {
+	v.CouponStartFee = ""
+	v.CouponEndTime = ""
+	v.CouponStartTime = ""
+	v.CouponAmount = ""
+	v.CouponActivityId = ""
+	v.CouponRemainCount = 0
+	v.CouponTotalCount = 0
+	v.CouponSrcScene = 0
+	v.CouponType = 0
+	poolTaobaoTbkCouponGetMapData.Put(v)
 }

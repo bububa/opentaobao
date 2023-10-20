@@ -9,11 +9,6 @@ import (
 // alibaba.txcs.brandmarketing.coupon.qrcode.get
 //
 // 构建券页码二维码url
-func AlibabaTxcsBrandmarketingCouponQrcodeGet(clt *core.SDKClient, req *wdk.AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest, session string) (*wdk.AlibabaTxcsBrandmarketingCouponQrcodeGetAPIResponse, error) {
-	var resp wdk.AlibabaTxcsBrandmarketingCouponQrcodeGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTxcsBrandmarketingCouponQrcodeGet(clt *core.SDKClient, req *wdk.AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest, resp *wdk.AlibabaTxcsBrandmarketingCouponQrcodeGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

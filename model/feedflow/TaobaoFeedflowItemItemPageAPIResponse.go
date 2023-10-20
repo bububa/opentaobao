@@ -2,6 +2,7 @@ package feedflow
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoFeedflowItemItemPageAPIResponse struct {
 	TaobaoFeedflowItemItemPageAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoFeedflowItemItemPageAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFeedflowItemItemPageAPIResponseModel).Reset()
+}
+
 // TaobaoFeedflowItemItemPageAPIResponseModel is 信息流查看商品列表 成功返回结果
 type TaobaoFeedflowItemItemPageAPIResponseModel struct {
 	XMLName xml.Name `xml:"feedflow_item_item_page_response"`
@@ -22,4 +29,27 @@ type TaobaoFeedflowItemItemPageAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果对象
 	Result *TaobaoFeedflowItemItemPageResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFeedflowItemItemPageAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoFeedflowItemItemPageAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFeedflowItemItemPageAPIResponse)
+	},
+}
+
+// GetTaobaoFeedflowItemItemPageAPIResponse 从 sync.Pool 获取 TaobaoFeedflowItemItemPageAPIResponse
+func GetTaobaoFeedflowItemItemPageAPIResponse() *TaobaoFeedflowItemItemPageAPIResponse {
+	return poolTaobaoFeedflowItemItemPageAPIResponse.Get().(*TaobaoFeedflowItemItemPageAPIResponse)
+}
+
+// ReleaseTaobaoFeedflowItemItemPageAPIResponse 将 TaobaoFeedflowItemItemPageAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFeedflowItemItemPageAPIResponse(v *TaobaoFeedflowItemItemPageAPIResponse) {
+	v.Reset()
+	poolTaobaoFeedflowItemItemPageAPIResponse.Put(v)
 }

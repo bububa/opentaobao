@@ -2,6 +2,7 @@ package idleisv
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaIdleIsvOrderShipAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleIsvOrderShipAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaIdleIsvOrderShipAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIdleIsvOrderShipAPIResponseModel).Reset()
 }
 
 // AlibabaIdleIsvOrderShipAPIResponseModel is 闲鱼订单服务商物流发货 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaIdleIsvOrderShipAPIResponseModel struct {
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
 	// 业务逻辑结果，暂时不用
 	ResultModule bool `json:"result_module,omitempty" xml:"result_module,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIdleIsvOrderShipAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultErrCode = ""
+	m.ResultErrMsg = ""
+	m.ResultSuccess = false
+	m.ResultModule = false
+}
+
+var poolAlibabaIdleIsvOrderShipAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleIsvOrderShipAPIResponse)
+	},
+}
+
+// GetAlibabaIdleIsvOrderShipAPIResponse 从 sync.Pool 获取 AlibabaIdleIsvOrderShipAPIResponse
+func GetAlibabaIdleIsvOrderShipAPIResponse() *AlibabaIdleIsvOrderShipAPIResponse {
+	return poolAlibabaIdleIsvOrderShipAPIResponse.Get().(*AlibabaIdleIsvOrderShipAPIResponse)
+}
+
+// ReleaseAlibabaIdleIsvOrderShipAPIResponse 将 AlibabaIdleIsvOrderShipAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIdleIsvOrderShipAPIResponse(v *AlibabaIdleIsvOrderShipAPIResponse) {
+	v.Reset()
+	poolAlibabaIdleIsvOrderShipAPIResponse.Put(v)
 }

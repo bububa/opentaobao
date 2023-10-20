@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrZqsPlanRespDto 结构体
 type NrZqsPlanRespDto struct {
 	// 已生成的配送计划序号及配送日期
@@ -22,4 +26,30 @@ type NrZqsPlanRespDto struct {
 	CycleType int64 `json:"cycle_type,omitempty" xml:"cycle_type,omitempty"`
 	// 每周几送，在cycle_type=4时生效，其它时候为空， 1表示周日，2表示周一...7表示周六（以周日为每周的第一天）
 	WeekDay int64 `json:"week_day,omitempty" xml:"week_day,omitempty"`
+}
+
+var poolNrZqsPlanRespDto = sync.Pool{
+	New: func() any {
+		return new(NrZqsPlanRespDto)
+	},
+}
+
+// GetNrZqsPlanRespDto() 从对象池中获取NrZqsPlanRespDto
+func GetNrZqsPlanRespDto() *NrZqsPlanRespDto {
+	return poolNrZqsPlanRespDto.Get().(*NrZqsPlanRespDto)
+}
+
+// ReleaseNrZqsPlanRespDto 释放NrZqsPlanRespDto
+func ReleaseNrZqsPlanRespDto(v *NrZqsPlanRespDto) {
+	v.PlanList = v.PlanList[:0]
+	v.PauseInfos = v.PauseInfos[:0]
+	v.SendStartTime = ""
+	v.SendEndTime = ""
+	v.StartRefundDate = ""
+	v.NumPerCycle = 0
+	v.PauseAheadDays = 0
+	v.CycleDays = 0
+	v.CycleType = 0
+	v.WeekDay = 0
+	poolNrZqsPlanRespDto.Put(v)
 }

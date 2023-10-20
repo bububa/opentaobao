@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // TmallFuwuHomedecorationSupplyruleListResult 结构体
 type TmallFuwuHomedecorationSupplyruleListResult struct {
 	// 规则数据
@@ -16,4 +20,27 @@ type TmallFuwuHomedecorationSupplyruleListResult struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmallFuwuHomedecorationSupplyruleListResult = sync.Pool{
+	New: func() any {
+		return new(TmallFuwuHomedecorationSupplyruleListResult)
+	},
+}
+
+// GetTmallFuwuHomedecorationSupplyruleListResult() 从对象池中获取TmallFuwuHomedecorationSupplyruleListResult
+func GetTmallFuwuHomedecorationSupplyruleListResult() *TmallFuwuHomedecorationSupplyruleListResult {
+	return poolTmallFuwuHomedecorationSupplyruleListResult.Get().(*TmallFuwuHomedecorationSupplyruleListResult)
+}
+
+// ReleaseTmallFuwuHomedecorationSupplyruleListResult 释放TmallFuwuHomedecorationSupplyruleListResult
+func ReleaseTmallFuwuHomedecorationSupplyruleListResult(v *TmallFuwuHomedecorationSupplyruleListResult) {
+	v.DataList = v.DataList[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.PageIndex = 0
+	v.PageSize = 0
+	v.TotalCount = 0
+	v.Success = false
+	poolTmallFuwuHomedecorationSupplyruleListResult.Put(v)
 }

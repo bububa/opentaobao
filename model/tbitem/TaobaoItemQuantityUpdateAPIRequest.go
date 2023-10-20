@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoItemQuantityUpdateAPIRequest struct {
 // NewTaobaoItemQuantityUpdateRequest 初始化TaobaoItemQuantityUpdateAPIRequest对象
 func NewTaobaoItemQuantityUpdateRequest() *TaobaoItemQuantityUpdateAPIRequest {
 	return &TaobaoItemQuantityUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoItemQuantityUpdateAPIRequest) Reset() {
+	r._outerId = ""
+	r._numIid = 0
+	r._skuId = 0
+	r._quantity = 0
+	r._type = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoItemQuantityUpdateAPIRequest) SetType(_type int64) error {
 // GetType Type Getter
 func (r TaobaoItemQuantityUpdateAPIRequest) GetType() int64 {
 	return r._type
+}
+
+var poolTaobaoItemQuantityUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoItemQuantityUpdateRequest()
+	},
+}
+
+// GetTaobaoItemQuantityUpdateRequest 从 sync.Pool 获取 TaobaoItemQuantityUpdateAPIRequest
+func GetTaobaoItemQuantityUpdateAPIRequest() *TaobaoItemQuantityUpdateAPIRequest {
+	return poolTaobaoItemQuantityUpdateAPIRequest.Get().(*TaobaoItemQuantityUpdateAPIRequest)
+}
+
+// ReleaseTaobaoItemQuantityUpdateAPIRequest 将 TaobaoItemQuantityUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoItemQuantityUpdateAPIRequest(v *TaobaoItemQuantityUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoItemQuantityUpdateAPIRequest.Put(v)
 }

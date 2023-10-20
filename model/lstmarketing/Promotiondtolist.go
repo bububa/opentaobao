@@ -1,5 +1,9 @@
 package lstmarketing
 
+import (
+	"sync"
+)
+
 // Promotiondtolist 结构体
 type Promotiondtolist struct {
 	// 活动id
@@ -10,4 +14,24 @@ type Promotiondtolist struct {
 	PromotionTypeName string `json:"promotion_type_name,omitempty" xml:"promotion_type_name,omitempty"`
 	// 优惠金额，分为单位
 	DiscountFee int64 `json:"discount_fee,omitempty" xml:"discount_fee,omitempty"`
+}
+
+var poolPromotiondtolist = sync.Pool{
+	New: func() any {
+		return new(Promotiondtolist)
+	},
+}
+
+// GetPromotiondtolist() 从对象池中获取Promotiondtolist
+func GetPromotiondtolist() *Promotiondtolist {
+	return poolPromotiondtolist.Get().(*Promotiondtolist)
+}
+
+// ReleasePromotiondtolist 释放Promotiondtolist
+func ReleasePromotiondtolist(v *Promotiondtolist) {
+	v.ActivityId = ""
+	v.ActivityName = ""
+	v.PromotionTypeName = ""
+	v.DiscountFee = 0
+	poolPromotiondtolist.Put(v)
 }

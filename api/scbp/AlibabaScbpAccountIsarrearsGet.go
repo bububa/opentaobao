@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.account.isarrears.get
 //
 // 查询关键词推广账户是否欠款
-func AlibabaScbpAccountIsarrearsGet(clt *core.SDKClient, req *scbp.AlibabaScbpAccountIsarrearsGetAPIRequest, session string) (*scbp.AlibabaScbpAccountIsarrearsGetAPIResponse, error) {
-	var resp scbp.AlibabaScbpAccountIsarrearsGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAccountIsarrearsGet(clt *core.SDKClient, req *scbp.AlibabaScbpAccountIsarrearsGetAPIRequest, resp *scbp.AlibabaScbpAccountIsarrearsGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

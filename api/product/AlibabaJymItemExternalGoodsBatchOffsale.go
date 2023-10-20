@@ -9,11 +9,6 @@ import (
 // alibaba.jym.item.external.goods.batch.offsale
 //
 // 供外部B端商家接入，提交批量下架商品请求，返回批量下架任务结果
-func AlibabaJymItemExternalGoodsBatchOffsale(clt *core.SDKClient, req *product.AlibabaJymItemExternalGoodsBatchOffsaleAPIRequest, session string) (*product.AlibabaJymItemExternalGoodsBatchOffsaleAPIResponse, error) {
-	var resp product.AlibabaJymItemExternalGoodsBatchOffsaleAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaJymItemExternalGoodsBatchOffsale(clt *core.SDKClient, req *product.AlibabaJymItemExternalGoodsBatchOffsaleAPIRequest, resp *product.AlibabaJymItemExternalGoodsBatchOffsaleAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

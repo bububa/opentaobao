@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEinvoiceIncomeAgentCheckAPIRequest struct {
 // NewAlibabaEinvoiceIncomeAgentCheckRequest 初始化AlibabaEinvoiceIncomeAgentCheckAPIRequest对象
 func NewAlibabaEinvoiceIncomeAgentCheckRequest() *AlibabaEinvoiceIncomeAgentCheckAPIRequest {
 	return &AlibabaEinvoiceIncomeAgentCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceIncomeAgentCheckAPIRequest) Reset() {
+	r._agentId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEinvoiceIncomeAgentCheckAPIRequest) SetAgentId(_agentId string) 
 // GetAgentId AgentId Getter
 func (r AlibabaEinvoiceIncomeAgentCheckAPIRequest) GetAgentId() string {
 	return r._agentId
+}
+
+var poolAlibabaEinvoiceIncomeAgentCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceIncomeAgentCheckRequest()
+	},
+}
+
+// GetAlibabaEinvoiceIncomeAgentCheckRequest 从 sync.Pool 获取 AlibabaEinvoiceIncomeAgentCheckAPIRequest
+func GetAlibabaEinvoiceIncomeAgentCheckAPIRequest() *AlibabaEinvoiceIncomeAgentCheckAPIRequest {
+	return poolAlibabaEinvoiceIncomeAgentCheckAPIRequest.Get().(*AlibabaEinvoiceIncomeAgentCheckAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceIncomeAgentCheckAPIRequest 将 AlibabaEinvoiceIncomeAgentCheckAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceIncomeAgentCheckAPIRequest(v *AlibabaEinvoiceIncomeAgentCheckAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceIncomeAgentCheckAPIRequest.Put(v)
 }

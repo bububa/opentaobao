@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // TxdBillListGetRequest 结构体
 type TxdBillListGetRequest struct {
 	// 结束账单日
@@ -12,4 +16,25 @@ type TxdBillListGetRequest struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 当前页码，默认1
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
+}
+
+var poolTxdBillListGetRequest = sync.Pool{
+	New: func() any {
+		return new(TxdBillListGetRequest)
+	},
+}
+
+// GetTxdBillListGetRequest() 从对象池中获取TxdBillListGetRequest
+func GetTxdBillListGetRequest() *TxdBillListGetRequest {
+	return poolTxdBillListGetRequest.Get().(*TxdBillListGetRequest)
+}
+
+// ReleaseTxdBillListGetRequest 释放TxdBillListGetRequest
+func ReleaseTxdBillListGetRequest(v *TxdBillListGetRequest) {
+	v.EndBillDate = ""
+	v.StartBillDate = ""
+	v.ShopCode = ""
+	v.PageSize = 0
+	v.PageIndex = 0
+	poolTxdBillListGetRequest.Put(v)
 }

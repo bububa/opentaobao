@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest struct {
 // NewAlibabaDchainAoxiangConsignorderBatchQueryRequest 初始化AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest对象
 func NewAlibabaDchainAoxiangConsignorderBatchQueryRequest() *AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest {
 	return &AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest) Reset() {
+	r._batchQueryConsignorderRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest) SetBatchQueryCons
 // GetBatchQueryConsignorderRequest BatchQueryConsignorderRequest Getter
 func (r AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest) GetBatchQueryConsignorderRequest() *BatchQueryConsignorderRequest {
 	return r._batchQueryConsignorderRequest
+}
+
+var poolAlibabaDchainAoxiangConsignorderBatchQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangConsignorderBatchQueryRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangConsignorderBatchQueryRequest 从 sync.Pool 获取 AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest
+func GetAlibabaDchainAoxiangConsignorderBatchQueryAPIRequest() *AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest {
+	return poolAlibabaDchainAoxiangConsignorderBatchQueryAPIRequest.Get().(*AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangConsignorderBatchQueryAPIRequest 将 AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangConsignorderBatchQueryAPIRequest(v *AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangConsignorderBatchQueryAPIRequest.Put(v)
 }

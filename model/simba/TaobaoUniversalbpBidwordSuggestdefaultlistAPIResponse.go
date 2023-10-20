@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse struct {
 	TaobaoUniversalbpBidwordSuggestdefaultlistAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoUniversalbpBidwordSuggestdefaultlistAPIResponseModel).Reset()
+}
+
 // TaobaoUniversalbpBidwordSuggestdefaultlistAPIResponseModel is 建议默认关键词 成功返回结果
 type TaobaoUniversalbpBidwordSuggestdefaultlistAPIResponseModel struct {
 	XMLName xml.Name `xml:"universalbp_bidword_suggestdefaultlist_response"`
@@ -22,4 +29,27 @@ type TaobaoUniversalbpBidwordSuggestdefaultlistAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
 	Result *TaobaoUniversalbpBidwordSuggestdefaultlistTopResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoUniversalbpBidwordSuggestdefaultlistAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse)
+	},
+}
+
+// GetTaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse 从 sync.Pool 获取 TaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse
+func GetTaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse() *TaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse {
+	return poolTaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse.Get().(*TaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse)
+}
+
+// ReleaseTaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse 将 TaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse(v *TaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse) {
+	v.Reset()
+	poolTaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse.Put(v)
 }

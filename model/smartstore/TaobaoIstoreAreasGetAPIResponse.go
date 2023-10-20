@@ -2,6 +2,7 @@ package smartstore
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type TaobaoIstoreAreasGetAPIResponse struct {
 	TaobaoIstoreAreasGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoIstoreAreasGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoIstoreAreasGetAPIResponseModel).Reset()
+}
+
 // TaobaoIstoreAreasGetAPIResponseModel is 智慧门店区域编码查询 成功返回结果
 type TaobaoIstoreAreasGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"istore_areas_get_response"`
@@ -23,4 +30,27 @@ type TaobaoIstoreAreasGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 地址区域信息列表.返回的Area包含的具体信息为入参fields请求的字段信息 。
 	Areas []Area `json:"areas,omitempty" xml:"areas>area,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoIstoreAreasGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Areas = m.Areas[:0]
+}
+
+var poolTaobaoIstoreAreasGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoIstoreAreasGetAPIResponse)
+	},
+}
+
+// GetTaobaoIstoreAreasGetAPIResponse 从 sync.Pool 获取 TaobaoIstoreAreasGetAPIResponse
+func GetTaobaoIstoreAreasGetAPIResponse() *TaobaoIstoreAreasGetAPIResponse {
+	return poolTaobaoIstoreAreasGetAPIResponse.Get().(*TaobaoIstoreAreasGetAPIResponse)
+}
+
+// ReleaseTaobaoIstoreAreasGetAPIResponse 将 TaobaoIstoreAreasGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoIstoreAreasGetAPIResponse(v *TaobaoIstoreAreasGetAPIResponse) {
+	v.Reset()
+	poolTaobaoIstoreAreasGetAPIResponse.Put(v)
 }

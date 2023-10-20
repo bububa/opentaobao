@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // SpaceGroupQuery 结构体
 type SpaceGroupQuery struct {
 	// 分组ID集合
@@ -28,4 +32,33 @@ type SpaceGroupQuery struct {
 	CampusId int64 `json:"campus_id,omitempty" xml:"campus_id,omitempty"`
 	// 楼宇ID
 	BuildingId int64 `json:"building_id,omitempty" xml:"building_id,omitempty"`
+}
+
+var poolSpaceGroupQuery = sync.Pool{
+	New: func() any {
+		return new(SpaceGroupQuery)
+	},
+}
+
+// GetSpaceGroupQuery() 从对象池中获取SpaceGroupQuery
+func GetSpaceGroupQuery() *SpaceGroupQuery {
+	return poolSpaceGroupQuery.Get().(*SpaceGroupQuery)
+}
+
+// ReleaseSpaceGroupQuery 释放SpaceGroupQuery
+func ReleaseSpaceGroupQuery(v *SpaceGroupQuery) {
+	v.Ids = v.Ids[:0]
+	v.TypeCode = ""
+	v.Code = ""
+	v.Name = ""
+	v.NameOrCode = ""
+	v.Limit = 0
+	v.GroupId = 0
+	v.FloorId = 0
+	v.CurrentPage = 0
+	v.CompanyId = 0
+	v.TypeId = 0
+	v.CampusId = 0
+	v.BuildingId = 0
+	poolSpaceGroupQuery.Put(v)
 }

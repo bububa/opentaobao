@@ -2,6 +2,7 @@ package viapi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AliyunViapiOcrCharacterAPIRequest struct {
 // NewAliyunViapiOcrCharacterRequest 初始化AliyunViapiOcrCharacterAPIRequest对象
 func NewAliyunViapiOcrCharacterRequest() *AliyunViapiOcrCharacterAPIRequest {
 	return &AliyunViapiOcrCharacterAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunViapiOcrCharacterAPIRequest) Reset() {
+	r._imageUrl = ""
+	r._imageType = 0
+	r._minHeight = 0
+	r._outputProbability = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AliyunViapiOcrCharacterAPIRequest) SetOutputProbability(_outputProbabil
 // GetOutputProbability OutputProbability Getter
 func (r AliyunViapiOcrCharacterAPIRequest) GetOutputProbability() bool {
 	return r._outputProbability
+}
+
+var poolAliyunViapiOcrCharacterAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunViapiOcrCharacterRequest()
+	},
+}
+
+// GetAliyunViapiOcrCharacterRequest 从 sync.Pool 获取 AliyunViapiOcrCharacterAPIRequest
+func GetAliyunViapiOcrCharacterAPIRequest() *AliyunViapiOcrCharacterAPIRequest {
+	return poolAliyunViapiOcrCharacterAPIRequest.Get().(*AliyunViapiOcrCharacterAPIRequest)
+}
+
+// ReleaseAliyunViapiOcrCharacterAPIRequest 将 AliyunViapiOcrCharacterAPIRequest 放入 sync.Pool
+func ReleaseAliyunViapiOcrCharacterAPIRequest(v *AliyunViapiOcrCharacterAPIRequest) {
+	v.Reset()
+	poolAliyunViapiOcrCharacterAPIRequest.Put(v)
 }

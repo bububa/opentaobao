@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest struct {
 // NewAlibabaServicecenterFulfiltaskBuyeraddressChangeRequest 初始化AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest对象
 func NewAlibabaServicecenterFulfiltaskBuyeraddressChangeRequest() *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest {
 	return &AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) Reset() {
+	r._addressDetail = ""
+	r._fulfilTaskId = 0
+	r._location = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) SetLocation
 // GetLocation Location Getter
 func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetLocation() int64 {
 	return r._location
+}
+
+var poolAlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaServicecenterFulfiltaskBuyeraddressChangeRequest()
+	},
+}
+
+// GetAlibabaServicecenterFulfiltaskBuyeraddressChangeRequest 从 sync.Pool 获取 AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest
+func GetAlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest() *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest {
+	return poolAlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest.Get().(*AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest)
+}
+
+// ReleaseAlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest 将 AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest(v *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) {
+	v.Reset()
+	poolAlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest.Put(v)
 }

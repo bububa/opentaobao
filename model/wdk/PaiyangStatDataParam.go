@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // PaiyangStatDataParam 结构体
 type PaiyangStatDataParam struct {
 	// 活动id集合，最大支持20个
@@ -14,4 +18,26 @@ type PaiyangStatDataParam struct {
 	Current int64 `json:"current,omitempty" xml:"current,omitempty"`
 	// 分页页大小
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolPaiyangStatDataParam = sync.Pool{
+	New: func() any {
+		return new(PaiyangStatDataParam)
+	},
+}
+
+// GetPaiyangStatDataParam() 从对象池中获取PaiyangStatDataParam
+func GetPaiyangStatDataParam() *PaiyangStatDataParam {
+	return poolPaiyangStatDataParam.Get().(*PaiyangStatDataParam)
+}
+
+// ReleasePaiyangStatDataParam 释放PaiyangStatDataParam
+func ReleasePaiyangStatDataParam(v *PaiyangStatDataParam) {
+	v.ActivityIdList = v.ActivityIdList[:0]
+	v.BarcodeList = v.BarcodeList[:0]
+	v.ShopCode = ""
+	v.StatDate = ""
+	v.Current = 0
+	v.PageSize = 0
+	poolPaiyangStatDataParam.Put(v)
 }

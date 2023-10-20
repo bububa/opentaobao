@@ -9,11 +9,6 @@ import (
 // taobao.banamadpc.item.add
 //
 // 巴拿马供应商通过此接口新发商品
-func TaobaoBanamadpcItemAdd(clt *core.SDKClient, req *product.TaobaoBanamadpcItemAddAPIRequest, session string) (*product.TaobaoBanamadpcItemAddAPIResponse, error) {
-	var resp product.TaobaoBanamadpcItemAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBanamadpcItemAdd(clt *core.SDKClient, req *product.TaobaoBanamadpcItemAddAPIRequest, resp *product.TaobaoBanamadpcItemAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

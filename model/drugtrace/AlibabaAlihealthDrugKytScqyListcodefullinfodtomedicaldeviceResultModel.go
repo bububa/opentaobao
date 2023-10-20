@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceResultModel 结构体
 type AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceResultModel struct {
 	// 消息码
@@ -10,4 +14,24 @@ type AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceResultModel stru
 	Model *CodeFullInfoDto `json:"model,omitempty" xml:"model,omitempty"`
 	// 查询成功失败标记
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceResultModel = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceResultModel)
+	},
+}
+
+// GetAlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceResultModel() 从对象池中获取AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceResultModel
+func GetAlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceResultModel() *AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceResultModel {
+	return poolAlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceResultModel.Get().(*AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceResultModel)
+}
+
+// ReleaseAlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceResultModel 释放AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceResultModel
+func ReleaseAlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceResultModel(v *AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceResultModel) {
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.Model = nil
+	v.Success = false
+	poolAlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceResultModel.Put(v)
 }

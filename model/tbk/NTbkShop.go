@@ -1,7 +1,11 @@
 package tbk
 
-// NtbkShop 结构体
-type NtbkShop struct {
+import (
+	"sync"
+)
+
+// NTbkShop 结构体
+type NTbkShop struct {
 	// 店铺推广链接
 	ClickUrl string `json:"click_url,omitempty" xml:"click_url,omitempty"`
 	// 店铺地址
@@ -16,4 +20,27 @@ type NtbkShop struct {
 	PictUrl string `json:"pict_url,omitempty" xml:"pict_url,omitempty"`
 	// 卖家id
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolNTbkShop = sync.Pool{
+	New: func() any {
+		return new(NTbkShop)
+	},
+}
+
+// GetNTbkShop() 从对象池中获取NTbkShop
+func GetNTbkShop() *NTbkShop {
+	return poolNTbkShop.Get().(*NTbkShop)
+}
+
+// ReleaseNTbkShop 释放NTbkShop
+func ReleaseNTbkShop(v *NTbkShop) {
+	v.ClickUrl = ""
+	v.ShopUrl = ""
+	v.SellerNick = ""
+	v.ShopType = ""
+	v.ShopTitle = ""
+	v.PictUrl = ""
+	v.UserId = 0
+	poolNTbkShop.Put(v)
 }

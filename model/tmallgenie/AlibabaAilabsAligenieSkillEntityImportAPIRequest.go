@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaAilabsAligenieSkillEntityImportAPIRequest struct {
 // NewAlibabaAilabsAligenieSkillEntityImportRequest 初始化AlibabaAilabsAligenieSkillEntityImportAPIRequest对象
 func NewAlibabaAilabsAligenieSkillEntityImportRequest() *AlibabaAilabsAligenieSkillEntityImportAPIRequest {
 	return &AlibabaAilabsAligenieSkillEntityImportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) Reset() {
+	r._type = ""
+	r._entityName = ""
+	r._skillId = 0
+	r._fileData = nil
+	r._append = false
+	r._test = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) SetTest(_test bool) e
 // GetTest Test Getter
 func (r AlibabaAilabsAligenieSkillEntityImportAPIRequest) GetTest() bool {
 	return r._test
+}
+
+var poolAlibabaAilabsAligenieSkillEntityImportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsAligenieSkillEntityImportRequest()
+	},
+}
+
+// GetAlibabaAilabsAligenieSkillEntityImportRequest 从 sync.Pool 获取 AlibabaAilabsAligenieSkillEntityImportAPIRequest
+func GetAlibabaAilabsAligenieSkillEntityImportAPIRequest() *AlibabaAilabsAligenieSkillEntityImportAPIRequest {
+	return poolAlibabaAilabsAligenieSkillEntityImportAPIRequest.Get().(*AlibabaAilabsAligenieSkillEntityImportAPIRequest)
+}
+
+// ReleaseAlibabaAilabsAligenieSkillEntityImportAPIRequest 将 AlibabaAilabsAligenieSkillEntityImportAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsAligenieSkillEntityImportAPIRequest(v *AlibabaAilabsAligenieSkillEntityImportAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsAligenieSkillEntityImportAPIRequest.Put(v)
 }

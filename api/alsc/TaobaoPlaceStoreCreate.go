@@ -9,11 +9,6 @@ import (
 // taobao.place.store.create
 //
 // 用于商家创建线下门店
-func TaobaoPlaceStoreCreate(clt *core.SDKClient, req *alsc.TaobaoPlaceStoreCreateAPIRequest, session string) (*alsc.TaobaoPlaceStoreCreateAPIResponse, error) {
-	var resp alsc.TaobaoPlaceStoreCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPlaceStoreCreate(clt *core.SDKClient, req *alsc.TaobaoPlaceStoreCreateAPIRequest, resp *alsc.TaobaoPlaceStoreCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

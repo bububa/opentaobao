@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpIndustryInquiryResultCallbackAPIRequest struct {
 // NewAlibabaAscpIndustryInquiryResultCallbackRequest 初始化AlibabaAscpIndustryInquiryResultCallbackAPIRequest对象
 func NewAlibabaAscpIndustryInquiryResultCallbackRequest() *AlibabaAscpIndustryInquiryResultCallbackAPIRequest {
 	return &AlibabaAscpIndustryInquiryResultCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpIndustryInquiryResultCallbackAPIRequest) Reset() {
+	r._inquiryResult = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpIndustryInquiryResultCallbackAPIRequest) SetInquiryResult(_i
 // GetInquiryResult InquiryResult Getter
 func (r AlibabaAscpIndustryInquiryResultCallbackAPIRequest) GetInquiryResult() *InquiryResult {
 	return r._inquiryResult
+}
+
+var poolAlibabaAscpIndustryInquiryResultCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpIndustryInquiryResultCallbackRequest()
+	},
+}
+
+// GetAlibabaAscpIndustryInquiryResultCallbackRequest 从 sync.Pool 获取 AlibabaAscpIndustryInquiryResultCallbackAPIRequest
+func GetAlibabaAscpIndustryInquiryResultCallbackAPIRequest() *AlibabaAscpIndustryInquiryResultCallbackAPIRequest {
+	return poolAlibabaAscpIndustryInquiryResultCallbackAPIRequest.Get().(*AlibabaAscpIndustryInquiryResultCallbackAPIRequest)
+}
+
+// ReleaseAlibabaAscpIndustryInquiryResultCallbackAPIRequest 将 AlibabaAscpIndustryInquiryResultCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpIndustryInquiryResultCallbackAPIRequest(v *AlibabaAscpIndustryInquiryResultCallbackAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpIndustryInquiryResultCallbackAPIRequest.Put(v)
 }

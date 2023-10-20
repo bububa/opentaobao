@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoUniversalbpLabelFindconfiglistAPIRequest struct {
 // NewTaobaoUniversalbpLabelFindconfiglistRequest 初始化TaobaoUniversalbpLabelFindconfiglistAPIRequest对象
 func NewTaobaoUniversalbpLabelFindconfiglistRequest() *TaobaoUniversalbpLabelFindconfiglistAPIRequest {
 	return &TaobaoUniversalbpLabelFindconfiglistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpLabelFindconfiglistAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoUniversalbpLabelFindconfiglistAPIRequest) SetTopServiceContext(_t
 // GetTopServiceContext TopServiceContext Getter
 func (r TaobaoUniversalbpLabelFindconfiglistAPIRequest) GetTopServiceContext() *TopServiceContext {
 	return r._topServiceContext
+}
+
+var poolTaobaoUniversalbpLabelFindconfiglistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpLabelFindconfiglistRequest()
+	},
+}
+
+// GetTaobaoUniversalbpLabelFindconfiglistRequest 从 sync.Pool 获取 TaobaoUniversalbpLabelFindconfiglistAPIRequest
+func GetTaobaoUniversalbpLabelFindconfiglistAPIRequest() *TaobaoUniversalbpLabelFindconfiglistAPIRequest {
+	return poolTaobaoUniversalbpLabelFindconfiglistAPIRequest.Get().(*TaobaoUniversalbpLabelFindconfiglistAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpLabelFindconfiglistAPIRequest 将 TaobaoUniversalbpLabelFindconfiglistAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpLabelFindconfiglistAPIRequest(v *TaobaoUniversalbpLabelFindconfiglistAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpLabelFindconfiglistAPIRequest.Put(v)
 }

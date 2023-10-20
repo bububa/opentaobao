@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // RoomSettleInfo 结构体
 type RoomSettleInfo struct {
 	// 房间号
@@ -18,4 +22,28 @@ type RoomSettleInfo struct {
 	RoomFee int64 `json:"room_fee,omitempty" xml:"room_fee,omitempty"`
 	// 房间杂费（不能为负数）
 	RoomOtherFee int64 `json:"room_other_fee,omitempty" xml:"room_other_fee,omitempty"`
+}
+
+var poolRoomSettleInfo = sync.Pool{
+	New: func() any {
+		return new(RoomSettleInfo)
+	},
+}
+
+// GetRoomSettleInfo() 从对象池中获取RoomSettleInfo
+func GetRoomSettleInfo() *RoomSettleInfo {
+	return poolRoomSettleInfo.Get().(*RoomSettleInfo)
+}
+
+// ReleaseRoomSettleInfo 释放RoomSettleInfo
+func ReleaseRoomSettleInfo(v *RoomSettleInfo) {
+	v.RoomNo = ""
+	v.RoomOtherFeeDetail = ""
+	v.RoomCheckIn = ""
+	v.RoomCheckOut = ""
+	v.DailyPriceInfo = ""
+	v.RoomStatus = ""
+	v.RoomFee = 0
+	v.RoomOtherFee = 0
+	poolRoomSettleInfo.Put(v)
 }

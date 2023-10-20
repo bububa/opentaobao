@@ -9,11 +9,6 @@ import (
 // taobao.openuid.get.bymixnick
 //
 // 通过mixnick转换openuid
-func TaobaoOpenuidGetBymixnick(clt *core.SDKClient, req *util.TaobaoOpenuidGetBymixnickAPIRequest, session string) (*util.TaobaoOpenuidGetBymixnickAPIResponse, error) {
-	var resp util.TaobaoOpenuidGetBymixnickAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenuidGetBymixnick(clt *core.SDKClient, req *util.TaobaoOpenuidGetBymixnickAPIRequest, resp *util.TaobaoOpenuidGetBymixnickAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package wlbimports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest struct {
 // NewCainiaoGlobalImPickupBigbagLogisticsTrajectoryRequest 初始化CainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest对象
 func NewCainiaoGlobalImPickupBigbagLogisticsTrajectoryRequest() *CainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest {
 	return &CainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest) Reset() {
+	r._bigbagLogisticsQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest) SetBigbagLogi
 // GetBigbagLogisticsQueryRequest BigbagLogisticsQueryRequest Getter
 func (r CainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest) GetBigbagLogisticsQueryRequest() *BigbagLogisticsQueryRequest {
 	return r._bigbagLogisticsQueryRequest
+}
+
+var poolCainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalImPickupBigbagLogisticsTrajectoryRequest()
+	},
+}
+
+// GetCainiaoGlobalImPickupBigbagLogisticsTrajectoryRequest 从 sync.Pool 获取 CainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest
+func GetCainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest() *CainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest {
+	return poolCainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest.Get().(*CainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest)
+}
+
+// ReleaseCainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest 将 CainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest(v *CainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalImPickupBigbagLogisticsTrajectoryAPIRequest.Put(v)
 }

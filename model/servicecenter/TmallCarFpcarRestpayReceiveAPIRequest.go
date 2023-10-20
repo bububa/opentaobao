@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallCarFpcarRestpayReceiveAPIRequest struct {
 // NewTmallCarFpcarRestpayReceiveRequest 初始化TmallCarFpcarRestpayReceiveAPIRequest对象
 func NewTmallCarFpcarRestpayReceiveRequest() *TmallCarFpcarRestpayReceiveAPIRequest {
 	return &TmallCarFpcarRestpayReceiveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarFpcarRestpayReceiveAPIRequest) Reset() {
+	r._sellerId = 0
+	r._orderId = 0
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallCarFpcarRestpayReceiveAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r TmallCarFpcarRestpayReceiveAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTmallCarFpcarRestpayReceiveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarFpcarRestpayReceiveRequest()
+	},
+}
+
+// GetTmallCarFpcarRestpayReceiveRequest 从 sync.Pool 获取 TmallCarFpcarRestpayReceiveAPIRequest
+func GetTmallCarFpcarRestpayReceiveAPIRequest() *TmallCarFpcarRestpayReceiveAPIRequest {
+	return poolTmallCarFpcarRestpayReceiveAPIRequest.Get().(*TmallCarFpcarRestpayReceiveAPIRequest)
+}
+
+// ReleaseTmallCarFpcarRestpayReceiveAPIRequest 将 TmallCarFpcarRestpayReceiveAPIRequest 放入 sync.Pool
+func ReleaseTmallCarFpcarRestpayReceiveAPIRequest(v *TmallCarFpcarRestpayReceiveAPIRequest) {
+	v.Reset()
+	poolTmallCarFpcarRestpayReceiveAPIRequest.Put(v)
 }

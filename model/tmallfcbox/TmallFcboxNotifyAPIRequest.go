@@ -2,6 +2,7 @@ package tmallfcbox
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TmallFcboxNotifyAPIRequest struct {
 // NewTmallFcboxNotifyRequest 初始化TmallFcboxNotifyAPIRequest对象
 func NewTmallFcboxNotifyRequest() *TmallFcboxNotifyAPIRequest {
 	return &TmallFcboxNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallFcboxNotifyAPIRequest) Reset() {
+	r._stateRemark = ""
+	r._state = ""
+	r._operateTime = ""
+	r._operate = ""
+	r._applyId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TmallFcboxNotifyAPIRequest) SetApplyId(_applyId string) error {
 // GetApplyId ApplyId Getter
 func (r TmallFcboxNotifyAPIRequest) GetApplyId() string {
 	return r._applyId
+}
+
+var poolTmallFcboxNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallFcboxNotifyRequest()
+	},
+}
+
+// GetTmallFcboxNotifyRequest 从 sync.Pool 获取 TmallFcboxNotifyAPIRequest
+func GetTmallFcboxNotifyAPIRequest() *TmallFcboxNotifyAPIRequest {
+	return poolTmallFcboxNotifyAPIRequest.Get().(*TmallFcboxNotifyAPIRequest)
+}
+
+// ReleaseTmallFcboxNotifyAPIRequest 将 TmallFcboxNotifyAPIRequest 放入 sync.Pool
+func ReleaseTmallFcboxNotifyAPIRequest(v *TmallFcboxNotifyAPIRequest) {
+	v.Reset()
+	poolTmallFcboxNotifyAPIRequest.Put(v)
 }

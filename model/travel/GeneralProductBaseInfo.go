@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // GeneralProductBaseInfo 结构体
 type GeneralProductBaseInfo struct {
 	// 品图片路径。最多支持5张，第一张为主图 必填，其余四张可选填（多张图片间使用英文逗号分隔）。图片链接支持外链图片（即商家系统中图片链接，必须外网可访问，且格式为png、jpg或jpeg，大小在500k以内），或者用户淘宝空间内的图片链接。对于外链图片，将自动下载并上传用户淘宝图片空间，上传失败的外链图片将自动忽略不计。
@@ -32,4 +36,35 @@ type GeneralProductBaseInfo struct {
 	ReserveDeadlineHours int64 `json:"reserve_deadline_hours,omitempty" xml:"reserve_deadline_hours,omitempty"`
 	// 可选，资源确认类型。1-即时确认，2-二次确认。不传默认1
 	ConfirmType int64 `json:"confirm_type,omitempty" xml:"confirm_type,omitempty"`
+}
+
+var poolGeneralProductBaseInfo = sync.Pool{
+	New: func() any {
+		return new(GeneralProductBaseInfo)
+	},
+}
+
+// GetGeneralProductBaseInfo() 从对象池中获取GeneralProductBaseInfo
+func GetGeneralProductBaseInfo() *GeneralProductBaseInfo {
+	return poolGeneralProductBaseInfo.Get().(*GeneralProductBaseInfo)
+}
+
+// ReleaseGeneralProductBaseInfo 释放GeneralProductBaseInfo
+func ReleaseGeneralProductBaseInfo(v *GeneralProductBaseInfo) {
+	v.PicUrls = v.PicUrls[:0]
+	v.SubTitles = v.SubTitles[:0]
+	v.Props = v.Props[:0]
+	v.Desc = ""
+	v.WapDesc = ""
+	v.OutId = ""
+	v.ToLocations = ""
+	v.Title = ""
+	v.ReserveDeadlineMinutes = 0
+	v.CategoryId = 0
+	v.ItemId = 0
+	v.ConfirmTime = 0
+	v.Duration = 0
+	v.ReserveDeadlineHours = 0
+	v.ConfirmType = 0
+	poolGeneralProductBaseInfo.Put(v)
 }

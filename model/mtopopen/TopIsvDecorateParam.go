@@ -1,5 +1,9 @@
 package mtopopen
 
+import (
+	"sync"
+)
+
 // TopIsvDecorateParam 结构体
 type TopIsvDecorateParam struct {
 	// 活动id，调用alibaba.interact.activity.register传入的bizid
@@ -12,4 +16,25 @@ type TopIsvDecorateParam struct {
 	Position string `json:"position,omitempty" xml:"position,omitempty"`
 	// 目前必须填0，代表店铺中宝箱资源位
 	SubBizType string `json:"sub_biz_type,omitempty" xml:"sub_biz_type,omitempty"`
+}
+
+var poolTopIsvDecorateParam = sync.Pool{
+	New: func() any {
+		return new(TopIsvDecorateParam)
+	},
+}
+
+// GetTopIsvDecorateParam() 从对象池中获取TopIsvDecorateParam
+func GetTopIsvDecorateParam() *TopIsvDecorateParam {
+	return poolTopIsvDecorateParam.Get().(*TopIsvDecorateParam)
+}
+
+// ReleaseTopIsvDecorateParam 释放TopIsvDecorateParam
+func ReleaseTopIsvDecorateParam(v *TopIsvDecorateParam) {
+	v.BizId = ""
+	v.BizType = ""
+	v.BusinessParams = ""
+	v.Position = ""
+	v.SubBizType = ""
+	poolTopIsvDecorateParam.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTclsAelophyMerchantIdMixAPIRequest struct {
 // NewAlibabaTclsAelophyMerchantIdMixRequest 初始化AlibabaTclsAelophyMerchantIdMixAPIRequest对象
 func NewAlibabaTclsAelophyMerchantIdMixRequest() *AlibabaTclsAelophyMerchantIdMixAPIRequest {
 	return &AlibabaTclsAelophyMerchantIdMixAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsAelophyMerchantIdMixAPIRequest) Reset() {
+	r._unionUid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTclsAelophyMerchantIdMixAPIRequest) SetUnionUid(_unionUid string
 // GetUnionUid UnionUid Getter
 func (r AlibabaTclsAelophyMerchantIdMixAPIRequest) GetUnionUid() string {
 	return r._unionUid
+}
+
+var poolAlibabaTclsAelophyMerchantIdMixAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsAelophyMerchantIdMixRequest()
+	},
+}
+
+// GetAlibabaTclsAelophyMerchantIdMixRequest 从 sync.Pool 获取 AlibabaTclsAelophyMerchantIdMixAPIRequest
+func GetAlibabaTclsAelophyMerchantIdMixAPIRequest() *AlibabaTclsAelophyMerchantIdMixAPIRequest {
+	return poolAlibabaTclsAelophyMerchantIdMixAPIRequest.Get().(*AlibabaTclsAelophyMerchantIdMixAPIRequest)
+}
+
+// ReleaseAlibabaTclsAelophyMerchantIdMixAPIRequest 将 AlibabaTclsAelophyMerchantIdMixAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsAelophyMerchantIdMixAPIRequest(v *AlibabaTclsAelophyMerchantIdMixAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsAelophyMerchantIdMixAPIRequest.Put(v)
 }

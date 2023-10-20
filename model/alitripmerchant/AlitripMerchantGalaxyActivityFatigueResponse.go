@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // AlitripMerchantGalaxyActivityFatigueResponse 结构体
 type AlitripMerchantGalaxyActivityFatigueResponse struct {
 	// 错误信息
@@ -10,4 +14,24 @@ type AlitripMerchantGalaxyActivityFatigueResponse struct {
 	Content bool `json:"content,omitempty" xml:"content,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlitripMerchantGalaxyActivityFatigueResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyActivityFatigueResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyActivityFatigueResponse() 从对象池中获取AlitripMerchantGalaxyActivityFatigueResponse
+func GetAlitripMerchantGalaxyActivityFatigueResponse() *AlitripMerchantGalaxyActivityFatigueResponse {
+	return poolAlitripMerchantGalaxyActivityFatigueResponse.Get().(*AlitripMerchantGalaxyActivityFatigueResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyActivityFatigueResponse 释放AlitripMerchantGalaxyActivityFatigueResponse
+func ReleaseAlitripMerchantGalaxyActivityFatigueResponse(v *AlitripMerchantGalaxyActivityFatigueResponse) {
+	v.ErrorMsg = ""
+	v.ErrorCode = ""
+	v.Content = false
+	v.Success = false
+	poolAlitripMerchantGalaxyActivityFatigueResponse.Put(v)
 }

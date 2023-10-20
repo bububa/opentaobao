@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthReserveDentalUnbinditemAPIRequest struct {
 // NewAlibabaAlihealthReserveDentalUnbinditemRequest 初始化AlibabaAlihealthReserveDentalUnbinditemAPIRequest对象
 func NewAlibabaAlihealthReserveDentalUnbinditemRequest() *AlibabaAlihealthReserveDentalUnbinditemAPIRequest {
 	return &AlibabaAlihealthReserveDentalUnbinditemAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthReserveDentalUnbinditemAPIRequest) Reset() {
+	r._spStoreId = ""
+	r._spItemId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthReserveDentalUnbinditemAPIRequest) SetSpItemId(_spItemI
 // GetSpItemId SpItemId Getter
 func (r AlibabaAlihealthReserveDentalUnbinditemAPIRequest) GetSpItemId() string {
 	return r._spItemId
+}
+
+var poolAlibabaAlihealthReserveDentalUnbinditemAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthReserveDentalUnbinditemRequest()
+	},
+}
+
+// GetAlibabaAlihealthReserveDentalUnbinditemRequest 从 sync.Pool 获取 AlibabaAlihealthReserveDentalUnbinditemAPIRequest
+func GetAlibabaAlihealthReserveDentalUnbinditemAPIRequest() *AlibabaAlihealthReserveDentalUnbinditemAPIRequest {
+	return poolAlibabaAlihealthReserveDentalUnbinditemAPIRequest.Get().(*AlibabaAlihealthReserveDentalUnbinditemAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthReserveDentalUnbinditemAPIRequest 将 AlibabaAlihealthReserveDentalUnbinditemAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthReserveDentalUnbinditemAPIRequest(v *AlibabaAlihealthReserveDentalUnbinditemAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthReserveDentalUnbinditemAPIRequest.Put(v)
 }

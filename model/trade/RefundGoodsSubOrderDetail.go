@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // RefundGoodsSubOrderDetail 结构体
 type RefundGoodsSubOrderDetail struct {
 	// 子订单号
@@ -40,4 +44,39 @@ type RefundGoodsSubOrderDetail struct {
 	RefundStatus int64 `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// Init(0,&#34;初始状态&#34;),NoTakeGoods(1, &#34;无需取货&#34;),FailTakeGoods(2, &#34;取货失败&#34;),Timeout(3, &#34;超时关闭&#34;),EnterDock(4, &#34;已入站&#34;);
 	FinishType int64 `json:"finish_type,omitempty" xml:"finish_type,omitempty"`
+}
+
+var poolRefundGoodsSubOrderDetail = sync.Pool{
+	New: func() any {
+		return new(RefundGoodsSubOrderDetail)
+	},
+}
+
+// GetRefundGoodsSubOrderDetail() 从对象池中获取RefundGoodsSubOrderDetail
+func GetRefundGoodsSubOrderDetail() *RefundGoodsSubOrderDetail {
+	return poolRefundGoodsSubOrderDetail.Get().(*RefundGoodsSubOrderDetail)
+}
+
+// ReleaseRefundGoodsSubOrderDetail 释放RefundGoodsSubOrderDetail
+func ReleaseRefundGoodsSubOrderDetail(v *RefundGoodsSubOrderDetail) {
+	v.SubBizOrderId = ""
+	v.FulfillId = ""
+	v.RefundGoodsId = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.ExpectFulfilStartTime = ""
+	v.ExpectFulfilEndTime = ""
+	v.ExpectRefundAmount = ""
+	v.ActualRefundAmount = ""
+	v.FulfilRefundAmount = ""
+	v.AgreeRefundAmount = ""
+	v.SkuId = ""
+	v.AuctionTitle = ""
+	v.ItemIu = ""
+	v.ItemBu = ""
+	v.RefundSpeedType = 0
+	v.WeightItem = 0
+	v.RefundStatus = 0
+	v.FinishType = 0
+	poolRefundGoodsSubOrderDetail.Put(v)
 }

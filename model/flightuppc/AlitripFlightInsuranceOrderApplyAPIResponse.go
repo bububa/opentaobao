@@ -2,6 +2,7 @@ package flightuppc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlitripFlightInsuranceOrderApplyAPIResponse struct {
 	model.CommonResponse
 	AlitripFlightInsuranceOrderApplyAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlitripFlightInsuranceOrderApplyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripFlightInsuranceOrderApplyAPIResponseModel).Reset()
 }
 
 // AlitripFlightInsuranceOrderApplyAPIResponseModel is 多险种批量投保 成功返回结果
@@ -28,4 +35,30 @@ type AlitripFlightInsuranceOrderApplyAPIResponseModel struct {
 	OutOrderId int64 `json:"out_order_id,omitempty" xml:"out_order_id,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripFlightInsuranceOrderApplyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.InsProductResultList = m.InsProductResultList[:0]
+	m.ErrMsgForClient = ""
+	m.OutOrderId = 0
+	m.IsSuccess = false
+}
+
+var poolAlitripFlightInsuranceOrderApplyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripFlightInsuranceOrderApplyAPIResponse)
+	},
+}
+
+// GetAlitripFlightInsuranceOrderApplyAPIResponse 从 sync.Pool 获取 AlitripFlightInsuranceOrderApplyAPIResponse
+func GetAlitripFlightInsuranceOrderApplyAPIResponse() *AlitripFlightInsuranceOrderApplyAPIResponse {
+	return poolAlitripFlightInsuranceOrderApplyAPIResponse.Get().(*AlitripFlightInsuranceOrderApplyAPIResponse)
+}
+
+// ReleaseAlitripFlightInsuranceOrderApplyAPIResponse 将 AlitripFlightInsuranceOrderApplyAPIResponse 保存到 sync.Pool
+func ReleaseAlitripFlightInsuranceOrderApplyAPIResponse(v *AlitripFlightInsuranceOrderApplyAPIResponse) {
+	v.Reset()
+	poolAlitripFlightInsuranceOrderApplyAPIResponse.Put(v)
 }

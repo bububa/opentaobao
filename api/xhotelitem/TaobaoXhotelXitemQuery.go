@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.xitem.query
 //
 // 查询 x 元素
-func TaobaoXhotelXitemQuery(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelXitemQueryAPIRequest, session string) (*xhotelitem.TaobaoXhotelXitemQueryAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelXitemQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelXitemQuery(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelXitemQueryAPIRequest, resp *xhotelitem.TaobaoXhotelXitemQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

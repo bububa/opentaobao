@@ -2,6 +2,7 @@ package xhotel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoXhotelDataServiceHotelServiceindexAPIRequest struct {
 // NewTaobaoXhotelDataServiceHotelServiceindexRequest 初始化TaobaoXhotelDataServiceHotelServiceindexAPIRequest对象
 func NewTaobaoXhotelDataServiceHotelServiceindexRequest() *TaobaoXhotelDataServiceHotelServiceindexAPIRequest {
 	return &TaobaoXhotelDataServiceHotelServiceindexAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) Reset() {
+	r._vendor = ""
+	r._reportEndDate = ""
+	r._reportStartDate = ""
+	r._supplier = ""
+	r._hid = 0
+	r._startRow = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetPageSize(_pageSi
 // GetPageSize PageSize Getter
 func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoXhotelDataServiceHotelServiceindexAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelDataServiceHotelServiceindexRequest()
+	},
+}
+
+// GetTaobaoXhotelDataServiceHotelServiceindexRequest 从 sync.Pool 获取 TaobaoXhotelDataServiceHotelServiceindexAPIRequest
+func GetTaobaoXhotelDataServiceHotelServiceindexAPIRequest() *TaobaoXhotelDataServiceHotelServiceindexAPIRequest {
+	return poolTaobaoXhotelDataServiceHotelServiceindexAPIRequest.Get().(*TaobaoXhotelDataServiceHotelServiceindexAPIRequest)
+}
+
+// ReleaseTaobaoXhotelDataServiceHotelServiceindexAPIRequest 将 TaobaoXhotelDataServiceHotelServiceindexAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelDataServiceHotelServiceindexAPIRequest(v *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelDataServiceHotelServiceindexAPIRequest.Put(v)
 }

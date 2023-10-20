@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoLogisticsTraceSearchAPIResponse struct {
 	model.CommonResponse
 	TaobaoLogisticsTraceSearchAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsTraceSearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLogisticsTraceSearchAPIResponseModel).Reset()
 }
 
 // TaobaoLogisticsTraceSearchAPIResponseModel is 物流流转信息查询 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoLogisticsTraceSearchAPIResponseModel struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 交易号
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsTraceSearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TraceList = m.TraceList[:0]
+	m.OutSid = ""
+	m.CompanyName = ""
+	m.Status = ""
+	m.Tid = 0
+}
+
+var poolTaobaoLogisticsTraceSearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLogisticsTraceSearchAPIResponse)
+	},
+}
+
+// GetTaobaoLogisticsTraceSearchAPIResponse 从 sync.Pool 获取 TaobaoLogisticsTraceSearchAPIResponse
+func GetTaobaoLogisticsTraceSearchAPIResponse() *TaobaoLogisticsTraceSearchAPIResponse {
+	return poolTaobaoLogisticsTraceSearchAPIResponse.Get().(*TaobaoLogisticsTraceSearchAPIResponse)
+}
+
+// ReleaseTaobaoLogisticsTraceSearchAPIResponse 将 TaobaoLogisticsTraceSearchAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLogisticsTraceSearchAPIResponse(v *TaobaoLogisticsTraceSearchAPIResponse) {
+	v.Reset()
+	poolTaobaoLogisticsTraceSearchAPIResponse.Put(v)
 }

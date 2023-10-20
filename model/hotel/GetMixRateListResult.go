@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // GetMixRateListResult 结构体
 type GetMixRateListResult struct {
 	// 商品评论列表
@@ -26,4 +30,32 @@ type GetMixRateListResult struct {
 	Degrade bool `json:"degrade,omitempty" xml:"degrade,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolGetMixRateListResult = sync.Pool{
+	New: func() any {
+		return new(GetMixRateListResult)
+	},
+}
+
+// GetGetMixRateListResult() 从对象池中获取GetMixRateListResult
+func GetGetMixRateListResult() *GetMixRateListResult {
+	return poolGetMixRateListResult.Get().(*GetMixRateListResult)
+}
+
+// ReleaseGetMixRateListResult 释放GetMixRateListResult
+func ReleaseGetMixRateListResult(v *GetMixRateListResult) {
+	v.MixRates = v.MixRates[:0]
+	v.ConfigInfo = ""
+	v.DebugInfo = ""
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.HostName = ""
+	v.Attributes = nil
+	v.HasNextPage = 0
+	v.ItemStatistic = nil
+	v.TotalNum = 0
+	v.Degrade = false
+	v.Success = false
+	poolGetMixRateListResult.Put(v)
 }

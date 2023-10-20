@@ -9,11 +9,6 @@ import (
 // taobao.qimen.warehouseinfo.query
 //
 // 货主仓库资源查询
-func TaobaoQimenWarehouseinfoQuery(clt *core.SDKClient, req *qimen.TaobaoQimenWarehouseinfoQueryAPIRequest, session string) (*qimen.TaobaoQimenWarehouseinfoQueryAPIResponse, error) {
-	var resp qimen.TaobaoQimenWarehouseinfoQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQimenWarehouseinfoQuery(clt *core.SDKClient, req *qimen.TaobaoQimenWarehouseinfoQueryAPIRequest, resp *qimen.TaobaoQimenWarehouseinfoQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

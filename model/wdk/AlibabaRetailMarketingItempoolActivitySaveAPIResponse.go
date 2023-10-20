@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaRetailMarketingItempoolActivitySaveAPIResponse struct {
 	AlibabaRetailMarketingItempoolActivitySaveAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaRetailMarketingItempoolActivitySaveAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaRetailMarketingItempoolActivitySaveAPIResponseModel).Reset()
+}
+
 // AlibabaRetailMarketingItempoolActivitySaveAPIResponseModel is 【同城零售】保存商品池活动 成功返回结果
 type AlibabaRetailMarketingItempoolActivitySaveAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_retail_marketing_itempool_activity_save_response"`
@@ -22,4 +29,27 @@ type AlibabaRetailMarketingItempoolActivitySaveAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 操作结果
 	Result *OctopusOpenResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaRetailMarketingItempoolActivitySaveAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaRetailMarketingItempoolActivitySaveAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaRetailMarketingItempoolActivitySaveAPIResponse)
+	},
+}
+
+// GetAlibabaRetailMarketingItempoolActivitySaveAPIResponse 从 sync.Pool 获取 AlibabaRetailMarketingItempoolActivitySaveAPIResponse
+func GetAlibabaRetailMarketingItempoolActivitySaveAPIResponse() *AlibabaRetailMarketingItempoolActivitySaveAPIResponse {
+	return poolAlibabaRetailMarketingItempoolActivitySaveAPIResponse.Get().(*AlibabaRetailMarketingItempoolActivitySaveAPIResponse)
+}
+
+// ReleaseAlibabaRetailMarketingItempoolActivitySaveAPIResponse 将 AlibabaRetailMarketingItempoolActivitySaveAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaRetailMarketingItempoolActivitySaveAPIResponse(v *AlibabaRetailMarketingItempoolActivitySaveAPIResponse) {
+	v.Reset()
+	poolAlibabaRetailMarketingItempoolActivitySaveAPIResponse.Put(v)
 }

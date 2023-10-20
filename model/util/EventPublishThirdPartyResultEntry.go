@@ -1,5 +1,9 @@
 package util
 
+import (
+	"sync"
+)
+
 // EventPublishThirdPartyResultEntry 结构体
 type EventPublishThirdPartyResultEntry struct {
 	// 事件编码
@@ -12,4 +16,25 @@ type EventPublishThirdPartyResultEntry struct {
 	SubErrMsg string `json:"sub_err_msg,omitempty" xml:"sub_err_msg,omitempty"`
 	// 发布是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolEventPublishThirdPartyResultEntry = sync.Pool{
+	New: func() any {
+		return new(EventPublishThirdPartyResultEntry)
+	},
+}
+
+// GetEventPublishThirdPartyResultEntry() 从对象池中获取EventPublishThirdPartyResultEntry
+func GetEventPublishThirdPartyResultEntry() *EventPublishThirdPartyResultEntry {
+	return poolEventPublishThirdPartyResultEntry.Get().(*EventPublishThirdPartyResultEntry)
+}
+
+// ReleaseEventPublishThirdPartyResultEntry 释放EventPublishThirdPartyResultEntry
+func ReleaseEventPublishThirdPartyResultEntry(v *EventPublishThirdPartyResultEntry) {
+	v.TriggerCode = ""
+	v.TraceId = ""
+	v.SubErrCode = ""
+	v.SubErrMsg = ""
+	v.Success = false
+	poolEventPublishThirdPartyResultEntry.Put(v)
 }

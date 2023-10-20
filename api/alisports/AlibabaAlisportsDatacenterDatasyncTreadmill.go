@@ -9,11 +9,6 @@ import (
 // alibaba.alisports.datacenter.datasync.treadmill
 //
 // 合作方向阿里体育同步跑步机设备的数据
-func AlibabaAlisportsDatacenterDatasyncTreadmill(clt *core.SDKClient, req *alisports.AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest, session string) (*alisports.AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse, error) {
-	var resp alisports.AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlisportsDatacenterDatasyncTreadmill(clt *core.SDKClient, req *alisports.AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest, resp *alisports.AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

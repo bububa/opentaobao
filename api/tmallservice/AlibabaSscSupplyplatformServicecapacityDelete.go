@@ -9,11 +9,6 @@ import (
 // alibaba.ssc.supplyplatform.servicecapacity.delete
 //
 // 服务容量删除
-func AlibabaSscSupplyplatformServicecapacityDelete(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServicecapacityDeleteAPIResponse, error) {
-	var resp tmallservice.AlibabaSscSupplyplatformServicecapacityDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSscSupplyplatformServicecapacityDelete(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest, resp *tmallservice.AlibabaSscSupplyplatformServicecapacityDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

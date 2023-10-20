@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.coupon.valid.list
 //
 // 雅高小程序用户有效优惠券列表
-func AlitripMerchantGalaxyCouponValidList(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyCouponValidListAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyCouponValidListAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyCouponValidListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyCouponValidList(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyCouponValidListAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyCouponValidListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // RptQueryConditionVo 结构体
 type RptQueryConditionVo struct {
 	// 流量来源(资源位包id),可为空
@@ -12,4 +16,25 @@ type RptQueryConditionVo struct {
 	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
 	// 是否查询实时报表，true查实时、false查离线，不传则默认查离线
 	IsRt bool `json:"is_rt,omitempty" xml:"is_rt,omitempty"`
+}
+
+var poolRptQueryConditionVo = sync.Pool{
+	New: func() any {
+		return new(RptQueryConditionVo)
+	},
+}
+
+// GetRptQueryConditionVo() 从对象池中获取RptQueryConditionVo
+func GetRptQueryConditionVo() *RptQueryConditionVo {
+	return poolRptQueryConditionVo.Get().(*RptQueryConditionVo)
+}
+
+// ReleaseRptQueryConditionVo 释放RptQueryConditionVo
+func ReleaseRptQueryConditionVo(v *RptQueryConditionVo) {
+	v.AdzonePkgIdList = v.AdzonePkgIdList[:0]
+	v.UnifyType = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.IsRt = false
+	poolRptQueryConditionVo.Put(v)
 }

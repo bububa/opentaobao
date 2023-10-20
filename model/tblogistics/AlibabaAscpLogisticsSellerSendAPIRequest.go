@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AlibabaAscpLogisticsSellerSendAPIRequest struct {
 // NewAlibabaAscpLogisticsSellerSendRequest 初始化AlibabaAscpLogisticsSellerSendAPIRequest对象
 func NewAlibabaAscpLogisticsSellerSendRequest() *AlibabaAscpLogisticsSellerSendAPIRequest {
 	return &AlibabaAscpLogisticsSellerSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpLogisticsSellerSendAPIRequest) Reset() {
+	r._deliveryMobile = ""
+	r._feature = ""
+	r._tid = ""
+	r._subTid = ""
+	r._deliveryName = ""
+	r._mode = ""
+	r._senderId = 0
+	r._cancelId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -157,4 +171,21 @@ func (r *AlibabaAscpLogisticsSellerSendAPIRequest) SetCancelId(_cancelId int64) 
 // GetCancelId CancelId Getter
 func (r AlibabaAscpLogisticsSellerSendAPIRequest) GetCancelId() int64 {
 	return r._cancelId
+}
+
+var poolAlibabaAscpLogisticsSellerSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpLogisticsSellerSendRequest()
+	},
+}
+
+// GetAlibabaAscpLogisticsSellerSendRequest 从 sync.Pool 获取 AlibabaAscpLogisticsSellerSendAPIRequest
+func GetAlibabaAscpLogisticsSellerSendAPIRequest() *AlibabaAscpLogisticsSellerSendAPIRequest {
+	return poolAlibabaAscpLogisticsSellerSendAPIRequest.Get().(*AlibabaAscpLogisticsSellerSendAPIRequest)
+}
+
+// ReleaseAlibabaAscpLogisticsSellerSendAPIRequest 将 AlibabaAscpLogisticsSellerSendAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpLogisticsSellerSendAPIRequest(v *AlibabaAscpLogisticsSellerSendAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpLogisticsSellerSendAPIRequest.Put(v)
 }

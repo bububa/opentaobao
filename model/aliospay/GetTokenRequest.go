@@ -1,5 +1,9 @@
 package aliospay
 
+import (
+	"sync"
+)
+
 // GetTokenRequest 结构体
 type GetTokenRequest struct {
 	// 请求唯一id，不可重复，服务端会根据此参数防重放
@@ -30,4 +34,34 @@ type GetTokenRequest struct {
 	DiscountableAmount int64 `json:"discountable_amount,omitempty" xml:"discountable_amount,omitempty"`
 	// 订单总金额
 	TotalAmount int64 `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
+}
+
+var poolGetTokenRequest = sync.Pool{
+	New: func() any {
+		return new(GetTokenRequest)
+	},
+}
+
+// GetGetTokenRequest() 从对象池中获取GetTokenRequest
+func GetGetTokenRequest() *GetTokenRequest {
+	return poolGetTokenRequest.Get().(*GetTokenRequest)
+}
+
+// ReleaseGetTokenRequest 释放GetTokenRequest
+func ReleaseGetTokenRequest(v *GetTokenRequest) {
+	v.TraceId = ""
+	v.TokenType = ""
+	v.Subject = ""
+	v.BizOrderId = ""
+	v.Time = ""
+	v.Lang = ""
+	v.PeriodRuleParams = ""
+	v.ServiceProtocol = ""
+	v.PeriodSignNotifyUrl = ""
+	v.PeriodUnsignNotifyUrl = ""
+	v.PayNotifyUrl = ""
+	v.OriginalAmount = 0
+	v.DiscountableAmount = 0
+	v.TotalAmount = 0
+	poolGetTokenRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTopSecretAppkeyBillDetailAPIResponse struct {
 	TaobaoTopSecretAppkeyBillDetailAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTopSecretAppkeyBillDetailAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTopSecretAppkeyBillDetailAPIResponseModel).Reset()
+}
+
 // TaobaoTopSecretAppkeyBillDetailAPIResponseModel is 服务商解密账单查询 成功返回结果
 type TaobaoTopSecretAppkeyBillDetailAPIResponseModel struct {
 	XMLName xml.Name `xml:"top_secret_appkey_bill_detail_response"`
@@ -24,4 +31,28 @@ type TaobaoTopSecretAppkeyBillDetailAPIResponseModel struct {
 	Data []BillDetailInfo `json:"data,omitempty" xml:"data>bill_detail_info,omitempty"`
 	// 账单总个数
 	TotalNum int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTopSecretAppkeyBillDetailAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = m.Data[:0]
+	m.TotalNum = 0
+}
+
+var poolTaobaoTopSecretAppkeyBillDetailAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTopSecretAppkeyBillDetailAPIResponse)
+	},
+}
+
+// GetTaobaoTopSecretAppkeyBillDetailAPIResponse 从 sync.Pool 获取 TaobaoTopSecretAppkeyBillDetailAPIResponse
+func GetTaobaoTopSecretAppkeyBillDetailAPIResponse() *TaobaoTopSecretAppkeyBillDetailAPIResponse {
+	return poolTaobaoTopSecretAppkeyBillDetailAPIResponse.Get().(*TaobaoTopSecretAppkeyBillDetailAPIResponse)
+}
+
+// ReleaseTaobaoTopSecretAppkeyBillDetailAPIResponse 将 TaobaoTopSecretAppkeyBillDetailAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTopSecretAppkeyBillDetailAPIResponse(v *TaobaoTopSecretAppkeyBillDetailAPIResponse) {
+	v.Reset()
+	poolTaobaoTopSecretAppkeyBillDetailAPIResponse.Put(v)
 }

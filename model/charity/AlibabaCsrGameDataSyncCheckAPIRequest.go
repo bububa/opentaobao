@@ -2,6 +2,7 @@ package charity
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCsrGameDataSyncCheckAPIRequest struct {
 // NewAlibabaCsrGameDataSyncCheckRequest 初始化AlibabaCsrGameDataSyncCheckAPIRequest对象
 func NewAlibabaCsrGameDataSyncCheckRequest() *AlibabaCsrGameDataSyncCheckAPIRequest {
 	return &AlibabaCsrGameDataSyncCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCsrGameDataSyncCheckAPIRequest) Reset() {
+	r._snakeDataCheckRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCsrGameDataSyncCheckAPIRequest) SetSnakeDataCheckRequest(_snakeD
 // GetSnakeDataCheckRequest SnakeDataCheckRequest Getter
 func (r AlibabaCsrGameDataSyncCheckAPIRequest) GetSnakeDataCheckRequest() *SnakeDataCheckRequest {
 	return r._snakeDataCheckRequest
+}
+
+var poolAlibabaCsrGameDataSyncCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCsrGameDataSyncCheckRequest()
+	},
+}
+
+// GetAlibabaCsrGameDataSyncCheckRequest 从 sync.Pool 获取 AlibabaCsrGameDataSyncCheckAPIRequest
+func GetAlibabaCsrGameDataSyncCheckAPIRequest() *AlibabaCsrGameDataSyncCheckAPIRequest {
+	return poolAlibabaCsrGameDataSyncCheckAPIRequest.Get().(*AlibabaCsrGameDataSyncCheckAPIRequest)
+}
+
+// ReleaseAlibabaCsrGameDataSyncCheckAPIRequest 将 AlibabaCsrGameDataSyncCheckAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCsrGameDataSyncCheckAPIRequest(v *AlibabaCsrGameDataSyncCheckAPIRequest) {
+	v.Reset()
+	poolAlibabaCsrGameDataSyncCheckAPIRequest.Put(v)
 }

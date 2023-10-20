@@ -2,6 +2,7 @@ package charity
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaValueCoinIssueAPIRequest struct {
 // NewAlibabaValueCoinIssueRequest 初始化AlibabaValueCoinIssueAPIRequest对象
 func NewAlibabaValueCoinIssueRequest() *AlibabaValueCoinIssueAPIRequest {
 	return &AlibabaValueCoinIssueAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaValueCoinIssueAPIRequest) Reset() {
+	r._exCoinIssueParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaValueCoinIssueAPIRequest) SetExCoinIssueParam(_exCoinIssueParam 
 // GetExCoinIssueParam ExCoinIssueParam Getter
 func (r AlibabaValueCoinIssueAPIRequest) GetExCoinIssueParam() *ExCoinIssueParam {
 	return r._exCoinIssueParam
+}
+
+var poolAlibabaValueCoinIssueAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaValueCoinIssueRequest()
+	},
+}
+
+// GetAlibabaValueCoinIssueRequest 从 sync.Pool 获取 AlibabaValueCoinIssueAPIRequest
+func GetAlibabaValueCoinIssueAPIRequest() *AlibabaValueCoinIssueAPIRequest {
+	return poolAlibabaValueCoinIssueAPIRequest.Get().(*AlibabaValueCoinIssueAPIRequest)
+}
+
+// ReleaseAlibabaValueCoinIssueAPIRequest 将 AlibabaValueCoinIssueAPIRequest 放入 sync.Pool
+func ReleaseAlibabaValueCoinIssueAPIRequest(v *AlibabaValueCoinIssueAPIRequest) {
+	v.Reset()
+	poolAlibabaValueCoinIssueAPIRequest.Put(v)
 }

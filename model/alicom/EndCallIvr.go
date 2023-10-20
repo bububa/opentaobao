@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // EndCallIvr 结构体
 type EndCallIvr struct {
 	// 挂机ivr开关
@@ -18,4 +22,28 @@ type EndCallIvr struct {
 	WaitingEndCall int64 `json:"waiting_end_call,omitempty" xml:"waiting_end_call,omitempty"`
 	// 0:主叫,1:被叫
 	Direction int64 `json:"direction,omitempty" xml:"direction,omitempty"`
+}
+
+var poolEndCallIvr = sync.Pool{
+	New: func() any {
+		return new(EndCallIvr)
+	},
+}
+
+// GetEndCallIvr() 从对象池中获取EndCallIvr
+func GetEndCallIvr() *EndCallIvr {
+	return poolEndCallIvr.Get().(*EndCallIvr)
+}
+
+// ReleaseEndCallIvr 释放EndCallIvr
+func ReleaseEndCallIvr(v *EndCallIvr) {
+	v.EndCallIvr = ""
+	v.Step1File = ""
+	v.Step2File = ""
+	v.ValidKey = ""
+	v.WaitingDtmfTime = 0
+	v.MaxLoop = 0
+	v.WaitingEndCall = 0
+	v.Direction = 0
+	poolEndCallIvr.Put(v)
 }

@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // CoordinationListRequestDto 结构体
 type CoordinationListRequestDto struct {
 	// 协同单状态列表，0:“待分配”，1:“待处理”，2:“处理中”，3:“已完结”，4:“已拒绝”，5:“已关闭”，6:“待验收”，7:“预约处理”
@@ -18,4 +22,28 @@ type CoordinationListRequestDto struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 1:国内，2:国际
 	DomesticIntl int64 `json:"domestic_intl,omitempty" xml:"domestic_intl,omitempty"`
+}
+
+var poolCoordinationListRequestDto = sync.Pool{
+	New: func() any {
+		return new(CoordinationListRequestDto)
+	},
+}
+
+// GetCoordinationListRequestDto() 从对象池中获取CoordinationListRequestDto
+func GetCoordinationListRequestDto() *CoordinationListRequestDto {
+	return poolCoordinationListRequestDto.Get().(*CoordinationListRequestDto)
+}
+
+// ReleaseCoordinationListRequestDto 释放CoordinationListRequestDto
+func ReleaseCoordinationListRequestDto(v *CoordinationListRequestDto) {
+	v.StatusList = v.StatusList[:0]
+	v.CaseTypeList = v.CaseTypeList[:0]
+	v.CreateGmtBegin = ""
+	v.CreateGmtEnd = ""
+	v.CorrelationOutOrderId = ""
+	v.StartIndex = 0
+	v.PageSize = 0
+	v.DomesticIntl = 0
+	poolCoordinationListRequestDto.Put(v)
 }

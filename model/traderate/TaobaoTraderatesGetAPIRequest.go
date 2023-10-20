@@ -2,6 +2,7 @@ package traderate
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -41,8 +42,25 @@ type TaobaoTraderatesGetAPIRequest struct {
 // NewTaobaoTraderatesGetRequest 初始化TaobaoTraderatesGetAPIRequest对象
 func NewTaobaoTraderatesGetRequest() *TaobaoTraderatesGetAPIRequest {
 	return &TaobaoTraderatesGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(12),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTraderatesGetAPIRequest) Reset() {
+	r._fields = r._fields[:0]
+	r._rateType = ""
+	r._role = ""
+	r._result = ""
+	r._startDate = ""
+	r._endDate = ""
+	r._ouid = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r._tid = 0
+	r._numIid = 0
+	r._useHasNext = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -216,4 +234,21 @@ func (r *TaobaoTraderatesGetAPIRequest) SetUseHasNext(_useHasNext bool) error {
 // GetUseHasNext UseHasNext Getter
 func (r TaobaoTraderatesGetAPIRequest) GetUseHasNext() bool {
 	return r._useHasNext
+}
+
+var poolTaobaoTraderatesGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTraderatesGetRequest()
+	},
+}
+
+// GetTaobaoTraderatesGetRequest 从 sync.Pool 获取 TaobaoTraderatesGetAPIRequest
+func GetTaobaoTraderatesGetAPIRequest() *TaobaoTraderatesGetAPIRequest {
+	return poolTaobaoTraderatesGetAPIRequest.Get().(*TaobaoTraderatesGetAPIRequest)
+}
+
+// ReleaseTaobaoTraderatesGetAPIRequest 将 TaobaoTraderatesGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTraderatesGetAPIRequest(v *TaobaoTraderatesGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTraderatesGetAPIRequest.Put(v)
 }

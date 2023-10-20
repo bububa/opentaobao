@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // CityAddressDetail 结构体
 type CityAddressDetail struct {
 	// 国家(汉字)
@@ -20,4 +24,29 @@ type CityAddressDetail struct {
 	CityCode int64 `json:"city_code,omitempty" xml:"city_code,omitempty"`
 	// 省份代码
 	ProvinceCode int64 `json:"province_code,omitempty" xml:"province_code,omitempty"`
+}
+
+var poolCityAddressDetail = sync.Pool{
+	New: func() any {
+		return new(CityAddressDetail)
+	},
+}
+
+// GetCityAddressDetail() 从对象池中获取CityAddressDetail
+func GetCityAddressDetail() *CityAddressDetail {
+	return poolCityAddressDetail.Get().(*CityAddressDetail)
+}
+
+// ReleaseCityAddressDetail 释放CityAddressDetail
+func ReleaseCityAddressDetail(v *CityAddressDetail) {
+	v.CountryCn = ""
+	v.CityCn = ""
+	v.ProvinceCn = ""
+	v.CityPyHead = ""
+	v.CityUrl = ""
+	v.Domestic = 0
+	v.CountryCode = 0
+	v.CityCode = 0
+	v.ProvinceCode = 0
+	poolCityAddressDetail.Put(v)
 }

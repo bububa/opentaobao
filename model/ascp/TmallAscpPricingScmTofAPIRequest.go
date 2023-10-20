@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallAscpPricingScmTofAPIRequest struct {
 // NewTmallAscpPricingScmTofRequest 初始化TmallAscpPricingScmTofAPIRequest对象
 func NewTmallAscpPricingScmTofRequest() *TmallAscpPricingScmTofAPIRequest {
 	return &TmallAscpPricingScmTofAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallAscpPricingScmTofAPIRequest) Reset() {
+	r._costs = r._costs[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallAscpPricingScmTofAPIRequest) SetCosts(_costs []ItemSkuCost) error 
 // GetCosts Costs Getter
 func (r TmallAscpPricingScmTofAPIRequest) GetCosts() []ItemSkuCost {
 	return r._costs
+}
+
+var poolTmallAscpPricingScmTofAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallAscpPricingScmTofRequest()
+	},
+}
+
+// GetTmallAscpPricingScmTofRequest 从 sync.Pool 获取 TmallAscpPricingScmTofAPIRequest
+func GetTmallAscpPricingScmTofAPIRequest() *TmallAscpPricingScmTofAPIRequest {
+	return poolTmallAscpPricingScmTofAPIRequest.Get().(*TmallAscpPricingScmTofAPIRequest)
+}
+
+// ReleaseTmallAscpPricingScmTofAPIRequest 将 TmallAscpPricingScmTofAPIRequest 放入 sync.Pool
+func ReleaseTmallAscpPricingScmTofAPIRequest(v *TmallAscpPricingScmTofAPIRequest) {
+	v.Reset()
+	poolTmallAscpPricingScmTofAPIRequest.Put(v)
 }

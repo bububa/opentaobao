@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // SupplierAsnInfoVo 结构体
 type SupplierAsnInfoVo struct {
 	// asn行信息
@@ -52,4 +56,45 @@ type SupplierAsnInfoVo struct {
 	SupplierName string `json:"supplier_name,omitempty" xml:"supplier_name,omitempty"`
 	// 供应商编码
 	SupplierCode string `json:"supplier_code,omitempty" xml:"supplier_code,omitempty"`
+}
+
+var poolSupplierAsnInfoVo = sync.Pool{
+	New: func() any {
+		return new(SupplierAsnInfoVo)
+	},
+}
+
+// GetSupplierAsnInfoVo() 从对象池中获取SupplierAsnInfoVo
+func GetSupplierAsnInfoVo() *SupplierAsnInfoVo {
+	return poolSupplierAsnInfoVo.Get().(*SupplierAsnInfoVo)
+}
+
+// ReleaseSupplierAsnInfoVo 释放SupplierAsnInfoVo
+func ReleaseSupplierAsnInfoVo(v *SupplierAsnInfoVo) {
+	v.AsnItemList = v.AsnItemList[:0]
+	v.CloseReason = ""
+	v.Status = ""
+	v.Remark = ""
+	v.ReceivedBy = ""
+	v.Receipient = ""
+	v.ConsigneeAddress = ""
+	v.DeliveryAddress = ""
+	v.Consignee = ""
+	v.Cass = ""
+	v.ContainerNo = ""
+	v.PackingListNo = ""
+	v.Incoterms = ""
+	v.TrackingNum = ""
+	v.CarrierContactPhone = ""
+	v.CarrierContactEmail = ""
+	v.CarrierContact = ""
+	v.Carrier = ""
+	v.ShipmentType = ""
+	v.ActualArrivalDate = ""
+	v.EstimatedArrivalDate = ""
+	v.DemanderPurchaseOrgCode = ""
+	v.OuCode = ""
+	v.SupplierName = ""
+	v.SupplierCode = ""
+	poolSupplierAsnInfoVo.Put(v)
 }

@@ -2,6 +2,7 @@ package car
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type AlitripTravelCrsorderSearchAPIRequest struct {
 // NewAlitripTravelCrsorderSearchRequest 初始化AlitripTravelCrsorderSearchAPIRequest对象
 func NewAlitripTravelCrsorderSearchRequest() *AlitripTravelCrsorderSearchAPIRequest {
 	return &AlitripTravelCrsorderSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTravelCrsorderSearchAPIRequest) Reset() {
+	r._beginCarUseTime = ""
+	r._endCarUseTime = ""
+	r._endPayTime = ""
+	r._beginPayTime = ""
+	r._beginCancelTime = ""
+	r._endCancelTime = ""
+	r._crsOrderStatus = 0
+	r._pageSize = 0
+	r._currentPage = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *AlitripTravelCrsorderSearchAPIRequest) SetCurrentPage(_currentPage int6
 // GetCurrentPage CurrentPage Getter
 func (r AlitripTravelCrsorderSearchAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
+}
+
+var poolAlitripTravelCrsorderSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTravelCrsorderSearchRequest()
+	},
+}
+
+// GetAlitripTravelCrsorderSearchRequest 从 sync.Pool 获取 AlitripTravelCrsorderSearchAPIRequest
+func GetAlitripTravelCrsorderSearchAPIRequest() *AlitripTravelCrsorderSearchAPIRequest {
+	return poolAlitripTravelCrsorderSearchAPIRequest.Get().(*AlitripTravelCrsorderSearchAPIRequest)
+}
+
+// ReleaseAlitripTravelCrsorderSearchAPIRequest 将 AlitripTravelCrsorderSearchAPIRequest 放入 sync.Pool
+func ReleaseAlitripTravelCrsorderSearchAPIRequest(v *AlitripTravelCrsorderSearchAPIRequest) {
+	v.Reset()
+	poolAlitripTravelCrsorderSearchAPIRequest.Put(v)
 }

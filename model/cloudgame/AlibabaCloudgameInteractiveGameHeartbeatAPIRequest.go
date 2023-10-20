@@ -2,6 +2,7 @@ package cloudgame
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCloudgameInteractiveGameHeartbeatAPIRequest struct {
 // NewAlibabaCloudgameInteractiveGameHeartbeatRequest 初始化AlibabaCloudgameInteractiveGameHeartbeatAPIRequest对象
 func NewAlibabaCloudgameInteractiveGameHeartbeatRequest() *AlibabaCloudgameInteractiveGameHeartbeatAPIRequest {
 	return &AlibabaCloudgameInteractiveGameHeartbeatAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCloudgameInteractiveGameHeartbeatAPIRequest) Reset() {
+	r._startGameRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCloudgameInteractiveGameHeartbeatAPIRequest) SetStartGameRequest
 // GetStartGameRequest StartGameRequest Getter
 func (r AlibabaCloudgameInteractiveGameHeartbeatAPIRequest) GetStartGameRequest() *HeartBeatRequest {
 	return r._startGameRequest
+}
+
+var poolAlibabaCloudgameInteractiveGameHeartbeatAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCloudgameInteractiveGameHeartbeatRequest()
+	},
+}
+
+// GetAlibabaCloudgameInteractiveGameHeartbeatRequest 从 sync.Pool 获取 AlibabaCloudgameInteractiveGameHeartbeatAPIRequest
+func GetAlibabaCloudgameInteractiveGameHeartbeatAPIRequest() *AlibabaCloudgameInteractiveGameHeartbeatAPIRequest {
+	return poolAlibabaCloudgameInteractiveGameHeartbeatAPIRequest.Get().(*AlibabaCloudgameInteractiveGameHeartbeatAPIRequest)
+}
+
+// ReleaseAlibabaCloudgameInteractiveGameHeartbeatAPIRequest 将 AlibabaCloudgameInteractiveGameHeartbeatAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCloudgameInteractiveGameHeartbeatAPIRequest(v *AlibabaCloudgameInteractiveGameHeartbeatAPIRequest) {
+	v.Reset()
+	poolAlibabaCloudgameInteractiveGameHeartbeatAPIRequest.Put(v)
 }

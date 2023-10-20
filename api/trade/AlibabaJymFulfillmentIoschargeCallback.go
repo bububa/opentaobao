@@ -9,11 +9,6 @@ import (
 // alibaba.jym.fulfillment.ioscharge.callback
 //
 // 代充充值回调
-func AlibabaJymFulfillmentIoschargeCallback(clt *core.SDKClient, req *trade.AlibabaJymFulfillmentIoschargeCallbackAPIRequest, session string) (*trade.AlibabaJymFulfillmentIoschargeCallbackAPIResponse, error) {
-	var resp trade.AlibabaJymFulfillmentIoschargeCallbackAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaJymFulfillmentIoschargeCallback(clt *core.SDKClient, req *trade.AlibabaJymFulfillmentIoschargeCallbackAPIRequest, resp *trade.AlibabaJymFulfillmentIoschargeCallbackAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

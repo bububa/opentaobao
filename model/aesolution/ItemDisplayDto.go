@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // ItemDisplayDto 结构体
 type ItemDisplayDto struct {
 	// product offline time
@@ -36,4 +40,37 @@ type ItemDisplayDto struct {
 	GroupId int64 `json:"group_id,omitempty" xml:"group_id,omitempty"`
 	// freight template id
 	FreightTemplateId int64 `json:"freight_template_id,omitempty" xml:"freight_template_id,omitempty"`
+}
+
+var poolItemDisplayDto = sync.Pool{
+	New: func() any {
+		return new(ItemDisplayDto)
+	},
+}
+
+// GetItemDisplayDto() 从对象池中获取ItemDisplayDto
+func GetItemDisplayDto() *ItemDisplayDto {
+	return poolItemDisplayDto.Get().(*ItemDisplayDto)
+}
+
+// ReleaseItemDisplayDto 释放ItemDisplayDto
+func ReleaseItemDisplayDto(v *ItemDisplayDto) {
+	v.WsOfflineDate = ""
+	v.WsDisplay = ""
+	v.Subject = ""
+	v.Src = ""
+	v.ProductMinPrice = ""
+	v.ProductMaxPrice = ""
+	v.OwnerMemberId = ""
+	v.ImageURLs = ""
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.CurrencyCode = ""
+	v.CouponStartDate = ""
+	v.CouponEndDate = ""
+	v.ProductId = 0
+	v.OwnerMemberSeq = 0
+	v.GroupId = 0
+	v.FreightTemplateId = 0
+	poolItemDisplayDto.Put(v)
 }

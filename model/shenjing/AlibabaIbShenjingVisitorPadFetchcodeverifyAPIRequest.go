@@ -2,6 +2,7 @@ package shenjing
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest struct {
 // NewAlibabaIbShenjingVisitorPadFetchcodeverifyRequest 初始化AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest对象
 func NewAlibabaIbShenjingVisitorPadFetchcodeverifyRequest() *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest {
 	return &AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) Reset() {
+	r._termId = ""
+	r._visitorCode = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) SetVisitorCode(_v
 // GetVisitorCode VisitorCode Getter
 func (r AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) GetVisitorCode() int64 {
 	return r._visitorCode
+}
+
+var poolAlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIbShenjingVisitorPadFetchcodeverifyRequest()
+	},
+}
+
+// GetAlibabaIbShenjingVisitorPadFetchcodeverifyRequest 从 sync.Pool 获取 AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest
+func GetAlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest() *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest {
+	return poolAlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest.Get().(*AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest)
+}
+
+// ReleaseAlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest 将 AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest(v *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) {
+	v.Reset()
+	poolAlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest.Put(v)
 }

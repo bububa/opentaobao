@@ -2,6 +2,7 @@ package feedflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFeedflowItemAdgroupCreativePageAPIRequest struct {
 // NewTaobaoFeedflowItemAdgroupCreativePageRequest 初始化TaobaoFeedflowItemAdgroupCreativePageAPIRequest对象
 func NewTaobaoFeedflowItemAdgroupCreativePageRequest() *TaobaoFeedflowItemAdgroupCreativePageAPIRequest {
 	return &TaobaoFeedflowItemAdgroupCreativePageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFeedflowItemAdgroupCreativePageAPIRequest) Reset() {
+	r._creativeBindQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFeedflowItemAdgroupCreativePageAPIRequest) SetCreativeBindQuery(_
 // GetCreativeBindQuery CreativeBindQuery Getter
 func (r TaobaoFeedflowItemAdgroupCreativePageAPIRequest) GetCreativeBindQuery() *CreativeBindQueryDto {
 	return r._creativeBindQuery
+}
+
+var poolTaobaoFeedflowItemAdgroupCreativePageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFeedflowItemAdgroupCreativePageRequest()
+	},
+}
+
+// GetTaobaoFeedflowItemAdgroupCreativePageRequest 从 sync.Pool 获取 TaobaoFeedflowItemAdgroupCreativePageAPIRequest
+func GetTaobaoFeedflowItemAdgroupCreativePageAPIRequest() *TaobaoFeedflowItemAdgroupCreativePageAPIRequest {
+	return poolTaobaoFeedflowItemAdgroupCreativePageAPIRequest.Get().(*TaobaoFeedflowItemAdgroupCreativePageAPIRequest)
+}
+
+// ReleaseTaobaoFeedflowItemAdgroupCreativePageAPIRequest 将 TaobaoFeedflowItemAdgroupCreativePageAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFeedflowItemAdgroupCreativePageAPIRequest(v *TaobaoFeedflowItemAdgroupCreativePageAPIRequest) {
+	v.Reset()
+	poolTaobaoFeedflowItemAdgroupCreativePageAPIRequest.Put(v)
 }

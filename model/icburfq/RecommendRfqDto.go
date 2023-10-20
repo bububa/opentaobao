@@ -1,5 +1,9 @@
 package icburfq
 
+import (
+	"sync"
+)
+
 // RecommendRfqDto 结构体
 type RecommendRfqDto struct {
 	// 国家全称
@@ -28,4 +32,33 @@ type RecommendRfqDto struct {
 	HasRead bool `json:"has_read,omitempty" xml:"has_read,omitempty"`
 	// 是否有图片
 	HaveImage bool `json:"have_image,omitempty" xml:"have_image,omitempty"`
+}
+
+var poolRecommendRfqDto = sync.Pool{
+	New: func() any {
+		return new(RecommendRfqDto)
+	},
+}
+
+// GetRecommendRfqDto() 从对象池中获取RecommendRfqDto
+func GetRecommendRfqDto() *RecommendRfqDto {
+	return poolRecommendRfqDto.Get().(*RecommendRfqDto)
+}
+
+// ReleaseRecommendRfqDto 释放RecommendRfqDto
+func ReleaseRecommendRfqDto(v *RecommendRfqDto) {
+	v.Country = ""
+	v.CountrySimple = ""
+	v.DatePostStr = ""
+	v.Detail = ""
+	v.ImageUrl = ""
+	v.RfqId = ""
+	v.Subject = ""
+	v.QuantityUnit = ""
+	v.DatePost = 0
+	v.LeftCount = 0
+	v.Quantity = 0
+	v.HasRead = false
+	v.HaveImage = false
+	poolRecommendRfqDto.Put(v)
 }

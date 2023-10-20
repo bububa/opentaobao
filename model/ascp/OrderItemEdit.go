@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // OrderItemEdit 结构体
 type OrderItemEdit struct {
 	// 体积，单位mm3
@@ -20,4 +24,29 @@ type OrderItemEdit struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 包裹数量
 	PackNum int64 `json:"pack_num,omitempty" xml:"pack_num,omitempty"`
+}
+
+var poolOrderItemEdit = sync.Pool{
+	New: func() any {
+		return new(OrderItemEdit)
+	},
+}
+
+// GetOrderItemEdit() 从对象池中获取OrderItemEdit
+func GetOrderItemEdit() *OrderItemEdit {
+	return poolOrderItemEdit.Get().(*OrderItemEdit)
+}
+
+// ReleaseOrderItemEdit 释放OrderItemEdit
+func ReleaseOrderItemEdit(v *OrderItemEdit) {
+	v.Volume = ""
+	v.LeafCatId = ""
+	v.ItemName = ""
+	v.Feature = ""
+	v.Weight = ""
+	v.Property = ""
+	v.AssembleType = ""
+	v.Quantity = 0
+	v.PackNum = 0
+	poolOrderItemEdit.Put(v)
 }

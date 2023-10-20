@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // Campaign 结构体
 type Campaign struct {
 	// 主人昵称
@@ -20,4 +24,29 @@ type Campaign struct {
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
 	// 计划类型0 标准计划，16 销量明星
 	CampaignType int64 `json:"campaign_type,omitempty" xml:"campaign_type,omitempty"`
+}
+
+var poolCampaign = sync.Pool{
+	New: func() any {
+		return new(Campaign)
+	},
+}
+
+// GetCampaign() 从对象池中获取Campaign
+func GetCampaign() *Campaign {
+	return poolCampaign.Get().(*Campaign)
+}
+
+// ReleaseCampaign 释放Campaign
+func ReleaseCampaign(v *Campaign) {
+	v.Nick = ""
+	v.Title = ""
+	v.SettleReason = ""
+	v.CreateTime = ""
+	v.ModifiedTime = ""
+	v.OnlineStatus = ""
+	v.SettleStatus = ""
+	v.CampaignId = 0
+	v.CampaignType = 0
+	poolCampaign.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alisports.passport.auth.accountinfo
 //
 // 获取体育用户OpenId\nick\avatar 三个信息
-func AlibabaAlisportsPassportAuthAccountinfo(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAuthAccountinfoAPIRequest, session string) (*alisports.AlibabaAlisportsPassportAuthAccountinfoAPIResponse, error) {
-	var resp alisports.AlibabaAlisportsPassportAuthAccountinfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlisportsPassportAuthAccountinfo(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAuthAccountinfoAPIRequest, resp *alisports.AlibabaAlisportsPassportAuthAccountinfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

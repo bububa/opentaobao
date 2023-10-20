@@ -1,5 +1,9 @@
 package damai
 
+import (
+	"sync"
+)
+
 // AlibabaDamaiMevOpenDeletePaperformatResult 结构体
 type AlibabaDamaiMevOpenDeletePaperformatResult struct {
 	// 错误信息
@@ -10,4 +14,24 @@ type AlibabaDamaiMevOpenDeletePaperformatResult struct {
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaDamaiMevOpenDeletePaperformatResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaDamaiMevOpenDeletePaperformatResult)
+	},
+}
+
+// GetAlibabaDamaiMevOpenDeletePaperformatResult() 从对象池中获取AlibabaDamaiMevOpenDeletePaperformatResult
+func GetAlibabaDamaiMevOpenDeletePaperformatResult() *AlibabaDamaiMevOpenDeletePaperformatResult {
+	return poolAlibabaDamaiMevOpenDeletePaperformatResult.Get().(*AlibabaDamaiMevOpenDeletePaperformatResult)
+}
+
+// ReleaseAlibabaDamaiMevOpenDeletePaperformatResult 释放AlibabaDamaiMevOpenDeletePaperformatResult
+func ReleaseAlibabaDamaiMevOpenDeletePaperformatResult(v *AlibabaDamaiMevOpenDeletePaperformatResult) {
+	v.ErrorMsg = ""
+	v.ErrorCode = 0
+	v.Model = false
+	v.Success = false
+	poolAlibabaDamaiMevOpenDeletePaperformatResult.Put(v)
 }

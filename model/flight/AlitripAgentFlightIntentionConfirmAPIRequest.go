@@ -2,6 +2,7 @@ package flight
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripAgentFlightIntentionConfirmAPIRequest struct {
 // NewAlitripAgentFlightIntentionConfirmRequest 初始化AlitripAgentFlightIntentionConfirmAPIRequest对象
 func NewAlitripAgentFlightIntentionConfirmRequest() *AlitripAgentFlightIntentionConfirmAPIRequest {
 	return &AlitripAgentFlightIntentionConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripAgentFlightIntentionConfirmAPIRequest) Reset() {
+	r._paramConfirmRequestDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripAgentFlightIntentionConfirmAPIRequest) SetParamConfirmRequestDTO
 // GetParamConfirmRequestDTO ParamConfirmRequestDTO Getter
 func (r AlitripAgentFlightIntentionConfirmAPIRequest) GetParamConfirmRequestDTO() *ConfirmRequestDto {
 	return r._paramConfirmRequestDTO
+}
+
+var poolAlitripAgentFlightIntentionConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripAgentFlightIntentionConfirmRequest()
+	},
+}
+
+// GetAlitripAgentFlightIntentionConfirmRequest 从 sync.Pool 获取 AlitripAgentFlightIntentionConfirmAPIRequest
+func GetAlitripAgentFlightIntentionConfirmAPIRequest() *AlitripAgentFlightIntentionConfirmAPIRequest {
+	return poolAlitripAgentFlightIntentionConfirmAPIRequest.Get().(*AlitripAgentFlightIntentionConfirmAPIRequest)
+}
+
+// ReleaseAlitripAgentFlightIntentionConfirmAPIRequest 将 AlitripAgentFlightIntentionConfirmAPIRequest 放入 sync.Pool
+func ReleaseAlitripAgentFlightIntentionConfirmAPIRequest(v *AlitripAgentFlightIntentionConfirmAPIRequest) {
+	v.Reset()
+	poolAlitripAgentFlightIntentionConfirmAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.subway.creative.video.unbind
 //
 // 将创意与视频解绑
-func TaobaoSubwayCreativeVideoUnbind(clt *core.SDKClient, req *simba.TaobaoSubwayCreativeVideoUnbindAPIRequest, session string) (*simba.TaobaoSubwayCreativeVideoUnbindAPIResponse, error) {
-	var resp simba.TaobaoSubwayCreativeVideoUnbindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSubwayCreativeVideoUnbind(clt *core.SDKClient, req *simba.TaobaoSubwayCreativeVideoUnbindAPIRequest, resp *simba.TaobaoSubwayCreativeVideoUnbindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package ottpay
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YoukuOttPayOrderQueryauthstateAPIRequest struct {
 // NewYoukuOttPayOrderQueryauthstateRequest 初始化YoukuOttPayOrderQueryauthstateAPIRequest对象
 func NewYoukuOttPayOrderQueryauthstateRequest() *YoukuOttPayOrderQueryauthstateAPIRequest {
 	return &YoukuOttPayOrderQueryauthstateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuOttPayOrderQueryauthstateAPIRequest) Reset() {
+	r._originalCpOrderNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YoukuOttPayOrderQueryauthstateAPIRequest) SetOriginalCpOrderNo(_origina
 // GetOriginalCpOrderNo OriginalCpOrderNo Getter
 func (r YoukuOttPayOrderQueryauthstateAPIRequest) GetOriginalCpOrderNo() string {
 	return r._originalCpOrderNo
+}
+
+var poolYoukuOttPayOrderQueryauthstateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuOttPayOrderQueryauthstateRequest()
+	},
+}
+
+// GetYoukuOttPayOrderQueryauthstateRequest 从 sync.Pool 获取 YoukuOttPayOrderQueryauthstateAPIRequest
+func GetYoukuOttPayOrderQueryauthstateAPIRequest() *YoukuOttPayOrderQueryauthstateAPIRequest {
+	return poolYoukuOttPayOrderQueryauthstateAPIRequest.Get().(*YoukuOttPayOrderQueryauthstateAPIRequest)
+}
+
+// ReleaseYoukuOttPayOrderQueryauthstateAPIRequest 将 YoukuOttPayOrderQueryauthstateAPIRequest 放入 sync.Pool
+func ReleaseYoukuOttPayOrderQueryauthstateAPIRequest(v *YoukuOttPayOrderQueryauthstateAPIRequest) {
+	v.Reset()
+	poolYoukuOttPayOrderQueryauthstateAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.car.vehicleinfo.register
 //
 // 全量车型导入
-func TaobaoCarVehicleinfoRegister(clt *core.SDKClient, req *tmallcar.TaobaoCarVehicleinfoRegisterAPIRequest, session string) (*tmallcar.TaobaoCarVehicleinfoRegisterAPIResponse, error) {
-	var resp tmallcar.TaobaoCarVehicleinfoRegisterAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoCarVehicleinfoRegister(clt *core.SDKClient, req *tmallcar.TaobaoCarVehicleinfoRegisterAPIRequest, resp *tmallcar.TaobaoCarVehicleinfoRegisterAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

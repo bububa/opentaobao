@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,15 @@ type AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIReque
 // NewAlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsRequest 初始化AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest对象
 func NewAlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsRequest() *AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest {
 	return &AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest) Reset() {
+	r._param0 = nil
+	r._param1 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -68,4 +76,21 @@ func (r *AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIR
 // GetParam1 Param1 Getter
 func (r AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest) GetParam1() *UserLocationInfoQuery {
 	return r._param1
+}
+
+var poolAlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsRequest()
+	},
+}
+
+// GetAlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsRequest 从 sync.Pool 获取 AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest
+func GetAlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest() *AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest {
+	return poolAlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest.Get().(*AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest)
+}
+
+// ReleaseAlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest 将 AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest(v *AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest.Put(v)
 }

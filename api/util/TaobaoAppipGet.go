@@ -9,11 +9,6 @@ import (
 // taobao.appip.get
 //
 // 获取ISV发起请求服务器IP
-func TaobaoAppipGet(clt *core.SDKClient, req *util.TaobaoAppipGetAPIRequest, session string) (*util.TaobaoAppipGetAPIResponse, error) {
-	var resp util.TaobaoAppipGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAppipGet(clt *core.SDKClient, req *util.TaobaoAppipGetAPIRequest, resp *util.TaobaoAppipGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

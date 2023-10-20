@@ -1,5 +1,9 @@
 package mydata
 
+import (
+	"sync"
+)
+
 // CompanyIndicators 结构体
 type CompanyIndicators struct {
 	// 点击率
@@ -14,4 +18,26 @@ type CompanyIndicators struct {
 	Imps int64 `json:"imps,omitempty" xml:"imps,omitempty"`
 	// 访客
 	Visitor int64 `json:"visitor,omitempty" xml:"visitor,omitempty"`
+}
+
+var poolCompanyIndicators = sync.Pool{
+	New: func() any {
+		return new(CompanyIndicators)
+	},
+}
+
+// GetCompanyIndicators() 从对象池中获取CompanyIndicators
+func GetCompanyIndicators() *CompanyIndicators {
+	return poolCompanyIndicators.Get().(*CompanyIndicators)
+}
+
+// ReleaseCompanyIndicators 释放CompanyIndicators
+func ReleaseCompanyIndicators(v *CompanyIndicators) {
+	v.ClkRate = ""
+	v.Reply = ""
+	v.Clk = 0
+	v.Fb = 0
+	v.Imps = 0
+	v.Visitor = 0
+	poolCompanyIndicators.Put(v)
 }

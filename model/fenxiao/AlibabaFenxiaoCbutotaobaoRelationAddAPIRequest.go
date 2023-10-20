@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaFenxiaoCbutotaobaoRelationAddAPIRequest struct {
 // NewAlibabaFenxiaoCbutotaobaoRelationAddRequest 初始化AlibabaFenxiaoCbutotaobaoRelationAddAPIRequest对象
 func NewAlibabaFenxiaoCbutotaobaoRelationAddRequest() *AlibabaFenxiaoCbutotaobaoRelationAddAPIRequest {
 	return &AlibabaFenxiaoCbutotaobaoRelationAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaFenxiaoCbutotaobaoRelationAddAPIRequest) Reset() {
+	r._itemId = 0
+	r._buyerId = 0
+	r._supplierId = 0
+	r._offerId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaFenxiaoCbutotaobaoRelationAddAPIRequest) SetOfferId(_offerId int
 // GetOfferId OfferId Getter
 func (r AlibabaFenxiaoCbutotaobaoRelationAddAPIRequest) GetOfferId() int64 {
 	return r._offerId
+}
+
+var poolAlibabaFenxiaoCbutotaobaoRelationAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaFenxiaoCbutotaobaoRelationAddRequest()
+	},
+}
+
+// GetAlibabaFenxiaoCbutotaobaoRelationAddRequest 从 sync.Pool 获取 AlibabaFenxiaoCbutotaobaoRelationAddAPIRequest
+func GetAlibabaFenxiaoCbutotaobaoRelationAddAPIRequest() *AlibabaFenxiaoCbutotaobaoRelationAddAPIRequest {
+	return poolAlibabaFenxiaoCbutotaobaoRelationAddAPIRequest.Get().(*AlibabaFenxiaoCbutotaobaoRelationAddAPIRequest)
+}
+
+// ReleaseAlibabaFenxiaoCbutotaobaoRelationAddAPIRequest 将 AlibabaFenxiaoCbutotaobaoRelationAddAPIRequest 放入 sync.Pool
+func ReleaseAlibabaFenxiaoCbutotaobaoRelationAddAPIRequest(v *AlibabaFenxiaoCbutotaobaoRelationAddAPIRequest) {
+	v.Reset()
+	poolAlibabaFenxiaoCbutotaobaoRelationAddAPIRequest.Put(v)
 }

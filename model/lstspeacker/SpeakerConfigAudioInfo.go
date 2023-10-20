@@ -1,5 +1,9 @@
 package lstspeacker
 
+import (
+	"sync"
+)
+
 // SpeakerConfigAudioInfo 结构体
 type SpeakerConfigAudioInfo struct {
 	// 音频集名称
@@ -12,4 +16,25 @@ type SpeakerConfigAudioInfo struct {
 	Describes string `json:"describes,omitempty" xml:"describes,omitempty"`
 	// 音频封面
 	Url string `json:"url,omitempty" xml:"url,omitempty"`
+}
+
+var poolSpeakerConfigAudioInfo = sync.Pool{
+	New: func() any {
+		return new(SpeakerConfigAudioInfo)
+	},
+}
+
+// GetSpeakerConfigAudioInfo() 从对象池中获取SpeakerConfigAudioInfo
+func GetSpeakerConfigAudioInfo() *SpeakerConfigAudioInfo {
+	return poolSpeakerConfigAudioInfo.Get().(*SpeakerConfigAudioInfo)
+}
+
+// ReleaseSpeakerConfigAudioInfo 释放SpeakerConfigAudioInfo
+func ReleaseSpeakerConfigAudioInfo(v *SpeakerConfigAudioInfo) {
+	v.Name = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.Describes = ""
+	v.Url = ""
+	poolSpeakerConfigAudioInfo.Put(v)
 }

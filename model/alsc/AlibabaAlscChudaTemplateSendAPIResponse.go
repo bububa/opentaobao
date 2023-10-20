@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlscChudaTemplateSendAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscChudaTemplateSendAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlscChudaTemplateSendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlscChudaTemplateSendAPIResponseModel).Reset()
 }
 
 // AlibabaAlscChudaTemplateSendAPIResponseModel is 本地生活触达模板消息发送接口 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAlscChudaTemplateSendAPIResponseModel struct {
 	ResultObj int64 `json:"result_obj,omitempty" xml:"result_obj,omitempty"`
 	// 发送是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlscChudaTemplateSendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.ResultDesc = ""
+	m.ResultObj = 0
+	m.IsSuccess = false
+}
+
+var poolAlibabaAlscChudaTemplateSendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlscChudaTemplateSendAPIResponse)
+	},
+}
+
+// GetAlibabaAlscChudaTemplateSendAPIResponse 从 sync.Pool 获取 AlibabaAlscChudaTemplateSendAPIResponse
+func GetAlibabaAlscChudaTemplateSendAPIResponse() *AlibabaAlscChudaTemplateSendAPIResponse {
+	return poolAlibabaAlscChudaTemplateSendAPIResponse.Get().(*AlibabaAlscChudaTemplateSendAPIResponse)
+}
+
+// ReleaseAlibabaAlscChudaTemplateSendAPIResponse 将 AlibabaAlscChudaTemplateSendAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlscChudaTemplateSendAPIResponse(v *AlibabaAlscChudaTemplateSendAPIResponse) {
+	v.Reset()
+	poolAlibabaAlscChudaTemplateSendAPIResponse.Put(v)
 }

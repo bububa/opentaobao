@@ -2,6 +2,7 @@ package train
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTrainAgentOrderConfirmAPIRequest struct {
 // NewTaobaoTrainAgentOrderConfirmRequest 初始化TaobaoTrainAgentOrderConfirmAPIRequest对象
 func NewTaobaoTrainAgentOrderConfirmRequest() *TaobaoTrainAgentOrderConfirmAPIRequest {
 	return &TaobaoTrainAgentOrderConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTrainAgentOrderConfirmAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTrainAgentOrderConfirmAPIRequest) SetParam(_param *BookTicketConf
 // GetParam Param Getter
 func (r TaobaoTrainAgentOrderConfirmAPIRequest) GetParam() *BookTicketConfirmRq {
 	return r._param
+}
+
+var poolTaobaoTrainAgentOrderConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTrainAgentOrderConfirmRequest()
+	},
+}
+
+// GetTaobaoTrainAgentOrderConfirmRequest 从 sync.Pool 获取 TaobaoTrainAgentOrderConfirmAPIRequest
+func GetTaobaoTrainAgentOrderConfirmAPIRequest() *TaobaoTrainAgentOrderConfirmAPIRequest {
+	return poolTaobaoTrainAgentOrderConfirmAPIRequest.Get().(*TaobaoTrainAgentOrderConfirmAPIRequest)
+}
+
+// ReleaseTaobaoTrainAgentOrderConfirmAPIRequest 将 TaobaoTrainAgentOrderConfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTrainAgentOrderConfirmAPIRequest(v *TaobaoTrainAgentOrderConfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoTrainAgentOrderConfirmAPIRequest.Put(v)
 }

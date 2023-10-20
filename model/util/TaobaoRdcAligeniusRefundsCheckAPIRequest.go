@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoRdcAligeniusRefundsCheckAPIRequest struct {
 // NewTaobaoRdcAligeniusRefundsCheckRequest 初始化TaobaoRdcAligeniusRefundsCheckAPIRequest对象
 func NewTaobaoRdcAligeniusRefundsCheckRequest() *TaobaoRdcAligeniusRefundsCheckAPIRequest {
 	return &TaobaoRdcAligeniusRefundsCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRdcAligeniusRefundsCheckAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoRdcAligeniusRefundsCheckAPIRequest) SetParam(_param *RefundCheckD
 // GetParam Param Getter
 func (r TaobaoRdcAligeniusRefundsCheckAPIRequest) GetParam() *RefundCheckDto {
 	return r._param
+}
+
+var poolTaobaoRdcAligeniusRefundsCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRdcAligeniusRefundsCheckRequest()
+	},
+}
+
+// GetTaobaoRdcAligeniusRefundsCheckRequest 从 sync.Pool 获取 TaobaoRdcAligeniusRefundsCheckAPIRequest
+func GetTaobaoRdcAligeniusRefundsCheckAPIRequest() *TaobaoRdcAligeniusRefundsCheckAPIRequest {
+	return poolTaobaoRdcAligeniusRefundsCheckAPIRequest.Get().(*TaobaoRdcAligeniusRefundsCheckAPIRequest)
+}
+
+// ReleaseTaobaoRdcAligeniusRefundsCheckAPIRequest 将 TaobaoRdcAligeniusRefundsCheckAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRdcAligeniusRefundsCheckAPIRequest(v *TaobaoRdcAligeniusRefundsCheckAPIRequest) {
+	v.Reset()
+	poolTaobaoRdcAligeniusRefundsCheckAPIRequest.Put(v)
 }

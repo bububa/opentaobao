@@ -1,5 +1,9 @@
 package tmallsc
 
+import (
+	"sync"
+)
+
 // WorkcardInsuranceCallbackRequest 结构体
 type WorkcardInsuranceCallbackRequest struct {
 	// 拒绝理赔原因（拒绝时启用
@@ -16,4 +20,27 @@ type WorkcardInsuranceCallbackRequest struct {
 	ClaimStatus int64 `json:"claim_status,omitempty" xml:"claim_status,omitempty"`
 	// 理赔金额（分
 	ClaimFee int64 `json:"claim_fee,omitempty" xml:"claim_fee,omitempty"`
+}
+
+var poolWorkcardInsuranceCallbackRequest = sync.Pool{
+	New: func() any {
+		return new(WorkcardInsuranceCallbackRequest)
+	},
+}
+
+// GetWorkcardInsuranceCallbackRequest() 从对象池中获取WorkcardInsuranceCallbackRequest
+func GetWorkcardInsuranceCallbackRequest() *WorkcardInsuranceCallbackRequest {
+	return poolWorkcardInsuranceCallbackRequest.Get().(*WorkcardInsuranceCallbackRequest)
+}
+
+// ReleaseWorkcardInsuranceCallbackRequest 释放WorkcardInsuranceCallbackRequest
+func ReleaseWorkcardInsuranceCallbackRequest(v *WorkcardInsuranceCallbackRequest) {
+	v.ClaimDesc = ""
+	v.ClaimOrderNo = ""
+	v.ClaimTime = ""
+	v.WorkcardId = 0
+	v.ClaimCount = 0
+	v.ClaimStatus = 0
+	v.ClaimFee = 0
+	poolWorkcardInsuranceCallbackRequest.Put(v)
 }

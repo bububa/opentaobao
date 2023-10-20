@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ShopConfigDto 结构体
 type ShopConfigDto struct {
 	// 配置详细信息
@@ -22,4 +26,30 @@ type ShopConfigDto struct {
 	IsShow int64 `json:"is_show,omitempty" xml:"is_show,omitempty"`
 	// 是否为测试
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
+}
+
+var poolShopConfigDto = sync.Pool{
+	New: func() any {
+		return new(ShopConfigDto)
+	},
+}
+
+// GetShopConfigDto() 从对象池中获取ShopConfigDto
+func GetShopConfigDto() *ShopConfigDto {
+	return poolShopConfigDto.Get().(*ShopConfigDto)
+}
+
+// ReleaseShopConfigDto 释放ShopConfigDto
+func ReleaseShopConfigDto(v *ShopConfigDto) {
+	v.ShopConfigDetails = v.ShopConfigDetails[:0]
+	v.OuterShopConfigId = ""
+	v.OuterStoreId = ""
+	v.IsDraft = 0
+	v.ModuleType = 0
+	v.IsPreShow = 0
+	v.BizType = 0
+	v.CityId = 0
+	v.IsShow = 0
+	v.IsTest = 0
+	poolShopConfigDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package miniappopen
 
+import (
+	"sync"
+)
+
 // MiniappItemDto 结构体
 type MiniappItemDto struct {
 	// 主图
@@ -14,4 +18,26 @@ type MiniappItemDto struct {
 	ReservePrice int64 `json:"reserve_price,omitempty" xml:"reserve_price,omitempty"`
 	// 0-正常，其他均为不正常
 	AuctionStatus int64 `json:"auction_status,omitempty" xml:"auction_status,omitempty"`
+}
+
+var poolMiniappItemDto = sync.Pool{
+	New: func() any {
+		return new(MiniappItemDto)
+	},
+}
+
+// GetMiniappItemDto() 从对象池中获取MiniappItemDto
+func GetMiniappItemDto() *MiniappItemDto {
+	return poolMiniappItemDto.Get().(*MiniappItemDto)
+}
+
+// ReleaseMiniappItemDto 释放MiniappItemDto
+func ReleaseMiniappItemDto(v *MiniappItemDto) {
+	v.MainPicUrl = ""
+	v.Title = ""
+	v.OutItemId = ""
+	v.ItemId = 0
+	v.ReservePrice = 0
+	v.AuctionStatus = 0
+	poolMiniappItemDto.Put(v)
 }

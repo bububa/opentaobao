@@ -2,6 +2,7 @@ package tmallhk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallHkClearanceGetAPIRequest struct {
 // NewTmallHkClearanceGetRequest 初始化TmallHkClearanceGetAPIRequest对象
 func NewTmallHkClearanceGetRequest() *TmallHkClearanceGetAPIRequest {
 	return &TmallHkClearanceGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallHkClearanceGetAPIRequest) Reset() {
+	r._orderId = 0
+	r._needImage = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallHkClearanceGetAPIRequest) SetNeedImage(_needImage bool) error {
 // GetNeedImage NeedImage Getter
 func (r TmallHkClearanceGetAPIRequest) GetNeedImage() bool {
 	return r._needImage
+}
+
+var poolTmallHkClearanceGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallHkClearanceGetRequest()
+	},
+}
+
+// GetTmallHkClearanceGetRequest 从 sync.Pool 获取 TmallHkClearanceGetAPIRequest
+func GetTmallHkClearanceGetAPIRequest() *TmallHkClearanceGetAPIRequest {
+	return poolTmallHkClearanceGetAPIRequest.Get().(*TmallHkClearanceGetAPIRequest)
+}
+
+// ReleaseTmallHkClearanceGetAPIRequest 将 TmallHkClearanceGetAPIRequest 放入 sync.Pool
+func ReleaseTmallHkClearanceGetAPIRequest(v *TmallHkClearanceGetAPIRequest) {
+	v.Reset()
+	poolTmallHkClearanceGetAPIRequest.Put(v)
 }

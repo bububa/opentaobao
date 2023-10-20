@@ -9,11 +9,6 @@ import (
 // taobao.user.openuid.getbynick
 //
 // 根据买家nick获取买家openuid，最大查询30个
-func TaobaoUserOpenuidGetbynick(clt *core.SDKClient, req *tbuser.TaobaoUserOpenuidGetbynickAPIRequest, session string) (*tbuser.TaobaoUserOpenuidGetbynickAPIResponse, error) {
-	var resp tbuser.TaobaoUserOpenuidGetbynickAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUserOpenuidGetbynick(clt *core.SDKClient, req *tbuser.TaobaoUserOpenuidGetbynickAPIRequest, resp *tbuser.TaobaoUserOpenuidGetbynickAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

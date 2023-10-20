@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -43,8 +44,18 @@ type AlibabaHappytripTaxiOrderComplainAPIRequest struct {
 // NewAlibabaHappytripTaxiOrderComplainRequest 初始化AlibabaHappytripTaxiOrderComplainAPIRequest对象
 func NewAlibabaHappytripTaxiOrderComplainRequest() *AlibabaHappytripTaxiOrderComplainAPIRequest {
 	return &AlibabaHappytripTaxiOrderComplainAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHappytripTaxiOrderComplainAPIRequest) Reset() {
+	r._orderId = ""
+	r._content = ""
+	r._mobile = ""
+	r._type = 0
+	r._time = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -127,4 +138,21 @@ func (r *AlibabaHappytripTaxiOrderComplainAPIRequest) SetTime(_time int64) error
 // GetTime Time Getter
 func (r AlibabaHappytripTaxiOrderComplainAPIRequest) GetTime() int64 {
 	return r._time
+}
+
+var poolAlibabaHappytripTaxiOrderComplainAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHappytripTaxiOrderComplainRequest()
+	},
+}
+
+// GetAlibabaHappytripTaxiOrderComplainRequest 从 sync.Pool 获取 AlibabaHappytripTaxiOrderComplainAPIRequest
+func GetAlibabaHappytripTaxiOrderComplainAPIRequest() *AlibabaHappytripTaxiOrderComplainAPIRequest {
+	return poolAlibabaHappytripTaxiOrderComplainAPIRequest.Get().(*AlibabaHappytripTaxiOrderComplainAPIRequest)
+}
+
+// ReleaseAlibabaHappytripTaxiOrderComplainAPIRequest 将 AlibabaHappytripTaxiOrderComplainAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHappytripTaxiOrderComplainAPIRequest(v *AlibabaHappytripTaxiOrderComplainAPIRequest) {
+	v.Reset()
+	poolAlibabaHappytripTaxiOrderComplainAPIRequest.Put(v)
 }

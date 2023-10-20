@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrtCrmLiveDto 结构体
 type NrtCrmLiveDto struct {
 	// 预考链接
@@ -20,4 +24,29 @@ type NrtCrmLiveDto struct {
 	LiveStatus int64 `json:"live_status,omitempty" xml:"live_status,omitempty"`
 	// 直播间ID
 	LiveId int64 `json:"live_id,omitempty" xml:"live_id,omitempty"`
+}
+
+var poolNrtCrmLiveDto = sync.Pool{
+	New: func() any {
+		return new(NrtCrmLiveDto)
+	},
+}
+
+// GetNrtCrmLiveDto() 从对象池中获取NrtCrmLiveDto
+func GetNrtCrmLiveDto() *NrtCrmLiveDto {
+	return poolNrtCrmLiveDto.Get().(*NrtCrmLiveDto)
+}
+
+// ReleaseNrtCrmLiveDto 释放NrtCrmLiveDto
+func ReleaseNrtCrmLiveDto(v *NrtCrmLiveDto) {
+	v.LiveForeShow = ""
+	v.LiveTaoPwd = ""
+	v.LiveUrl = ""
+	v.LiveEndTime = ""
+	v.LiveStartTime = ""
+	v.LiveTitle = ""
+	v.LiveCoverUrl = ""
+	v.LiveStatus = 0
+	v.LiveId = 0
+	poolNrtCrmLiveDto.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -28,6 +29,12 @@ type TmallServicecenterServicestoreCreateservicestoreAPIResponse struct {
 	TmallServicecenterServicestoreCreateservicestoreAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallServicecenterServicestoreCreateservicestoreAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServicecenterServicestoreCreateservicestoreAPIResponseModel).Reset()
+}
+
 // TmallServicecenterServicestoreCreateservicestoreAPIResponseModel is 服务网点创建 成功返回结果
 type TmallServicecenterServicestoreCreateservicestoreAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_servicestore_createservicestore_response"`
@@ -35,4 +42,27 @@ type TmallServicecenterServicestoreCreateservicestoreAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterServicestoreCreateservicestoreAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallServicecenterServicestoreCreateservicestoreAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterServicestoreCreateservicestoreAPIResponse)
+	},
+}
+
+// GetTmallServicecenterServicestoreCreateservicestoreAPIResponse 从 sync.Pool 获取 TmallServicecenterServicestoreCreateservicestoreAPIResponse
+func GetTmallServicecenterServicestoreCreateservicestoreAPIResponse() *TmallServicecenterServicestoreCreateservicestoreAPIResponse {
+	return poolTmallServicecenterServicestoreCreateservicestoreAPIResponse.Get().(*TmallServicecenterServicestoreCreateservicestoreAPIResponse)
+}
+
+// ReleaseTmallServicecenterServicestoreCreateservicestoreAPIResponse 将 TmallServicecenterServicestoreCreateservicestoreAPIResponse 保存到 sync.Pool
+func ReleaseTmallServicecenterServicestoreCreateservicestoreAPIResponse(v *TmallServicecenterServicestoreCreateservicestoreAPIResponse) {
+	v.Reset()
+	poolTmallServicecenterServicestoreCreateservicestoreAPIResponse.Put(v)
 }

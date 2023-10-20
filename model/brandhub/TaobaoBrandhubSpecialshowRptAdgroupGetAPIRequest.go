@@ -2,6 +2,7 @@ package brandhub
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest struct {
 // NewTaobaoBrandhubSpecialshowRptAdgroupGetRequest 初始化TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest对象
 func NewTaobaoBrandhubSpecialshowRptAdgroupGetRequest() *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest {
 	return &TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) Reset() {
+	r._startDate = ""
+	r._solutionId = ""
+	r._taskId = ""
+	r._endDate = ""
+	r._pageIndex = ""
+	r._pageSize = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) SetPageSize(_pageSize
 // GetPageSize PageSize Getter
 func (r TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) GetPageSize() string {
 	return r._pageSize
+}
+
+var poolTaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBrandhubSpecialshowRptAdgroupGetRequest()
+	},
+}
+
+// GetTaobaoBrandhubSpecialshowRptAdgroupGetRequest 从 sync.Pool 获取 TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest
+func GetTaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest() *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest {
+	return poolTaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest.Get().(*TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest)
+}
+
+// ReleaseTaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest 将 TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest(v *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) {
+	v.Reset()
+	poolTaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest.Put(v)
 }

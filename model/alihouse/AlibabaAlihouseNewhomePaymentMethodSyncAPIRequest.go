@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest struct {
 // NewAlibabaAlihouseNewhomePaymentMethodSyncRequest 初始化AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest对象
 func NewAlibabaAlihouseNewhomePaymentMethodSyncRequest() *AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest {
 	return &AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest) Reset() {
+	r._paymentModeReqDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest) SetPaymentModeReqDto
 // GetPaymentModeReqDto PaymentModeReqDto Getter
 func (r AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest) GetPaymentModeReqDto() *PaymentModeReqDto {
 	return r._paymentModeReqDto
+}
+
+var poolAlibabaAlihouseNewhomePaymentMethodSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomePaymentMethodSyncRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomePaymentMethodSyncRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest
+func GetAlibabaAlihouseNewhomePaymentMethodSyncAPIRequest() *AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest {
+	return poolAlibabaAlihouseNewhomePaymentMethodSyncAPIRequest.Get().(*AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomePaymentMethodSyncAPIRequest 将 AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomePaymentMethodSyncAPIRequest(v *AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomePaymentMethodSyncAPIRequest.Put(v)
 }

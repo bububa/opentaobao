@@ -9,11 +9,6 @@ import (
 // cainiao.global.handover.update
 //
 // 提供给ISV通过该接口修改交接单
-func CainiaoGlobalHandoverUpdate(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverUpdateAPIRequest, session string) (*cainiaohandover.CainiaoGlobalHandoverUpdateAPIResponse, error) {
-	var resp cainiaohandover.CainiaoGlobalHandoverUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoGlobalHandoverUpdate(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverUpdateAPIRequest, resp *cainiaohandover.CainiaoGlobalHandoverUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

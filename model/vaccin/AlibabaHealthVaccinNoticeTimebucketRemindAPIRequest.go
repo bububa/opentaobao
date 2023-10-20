@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest struct {
 // NewAlibabaHealthVaccinNoticeTimebucketRemindRequest 初始化AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest对象
 func NewAlibabaHealthVaccinNoticeTimebucketRemindRequest() *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest {
 	return &AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) Reset() {
+	r._alipayUserId = ""
+	r._vaccineName = ""
+	r._reserveDate = ""
+	r._name = ""
+	r._theTimes = ""
+	r._povStoreName = ""
+	r._reserveTime = ""
+	r._mobile = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) SetMobile(_mobile 
 // GetMobile Mobile Getter
 func (r AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) GetMobile() string {
 	return r._mobile
+}
+
+var poolAlibabaHealthVaccinNoticeTimebucketRemindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHealthVaccinNoticeTimebucketRemindRequest()
+	},
+}
+
+// GetAlibabaHealthVaccinNoticeTimebucketRemindRequest 从 sync.Pool 获取 AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest
+func GetAlibabaHealthVaccinNoticeTimebucketRemindAPIRequest() *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest {
+	return poolAlibabaHealthVaccinNoticeTimebucketRemindAPIRequest.Get().(*AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest)
+}
+
+// ReleaseAlibabaHealthVaccinNoticeTimebucketRemindAPIRequest 将 AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHealthVaccinNoticeTimebucketRemindAPIRequest(v *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) {
+	v.Reset()
+	poolAlibabaHealthVaccinNoticeTimebucketRemindAPIRequest.Put(v)
 }

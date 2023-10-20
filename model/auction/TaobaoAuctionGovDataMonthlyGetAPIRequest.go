@@ -2,6 +2,7 @@ package auction
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,17 @@ type TaobaoAuctionGovDataMonthlyGetAPIRequest struct {
 // NewTaobaoAuctionGovDataMonthlyGetRequest 初始化TaobaoAuctionGovDataMonthlyGetAPIRequest对象
 func NewTaobaoAuctionGovDataMonthlyGetRequest() *TaobaoAuctionGovDataMonthlyGetAPIRequest {
 	return &TaobaoAuctionGovDataMonthlyGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) Reset() {
+	r._courtName = ""
+	r._startMonth = ""
+	r._endMonth = ""
+	r._isIncludeSub = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -102,4 +112,21 @@ func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetIsIncludeSub(_isIncludeSub
 // GetIsIncludeSub IsIncludeSub Getter
 func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetIsIncludeSub() bool {
 	return r._isIncludeSub
+}
+
+var poolTaobaoAuctionGovDataMonthlyGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAuctionGovDataMonthlyGetRequest()
+	},
+}
+
+// GetTaobaoAuctionGovDataMonthlyGetRequest 从 sync.Pool 获取 TaobaoAuctionGovDataMonthlyGetAPIRequest
+func GetTaobaoAuctionGovDataMonthlyGetAPIRequest() *TaobaoAuctionGovDataMonthlyGetAPIRequest {
+	return poolTaobaoAuctionGovDataMonthlyGetAPIRequest.Get().(*TaobaoAuctionGovDataMonthlyGetAPIRequest)
+}
+
+// ReleaseTaobaoAuctionGovDataMonthlyGetAPIRequest 将 TaobaoAuctionGovDataMonthlyGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAuctionGovDataMonthlyGetAPIRequest(v *TaobaoAuctionGovDataMonthlyGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAuctionGovDataMonthlyGetAPIRequest.Put(v)
 }

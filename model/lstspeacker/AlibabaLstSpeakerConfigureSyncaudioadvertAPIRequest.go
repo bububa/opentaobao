@@ -2,6 +2,7 @@ package lstspeacker
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,14 +16,21 @@ type AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest struct {
 	// 设备编码
 	_deviceCode string
 	// 音频参数
-	_speakerConfigParam4SyncAudioAdvert *SpeakerConfigParam4syncAudioAdvert
+	_speakerConfigParam4SyncAudioAdvert *SpeakerConfigParam4SyncAudioAdvert
 }
 
 // NewAlibabaLstSpeakerConfigureSyncaudioadvertRequest 初始化AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest对象
 func NewAlibabaLstSpeakerConfigureSyncaudioadvertRequest() *AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest {
 	return &AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest) Reset() {
+	r._deviceCode = ""
+	r._speakerConfigParam4SyncAudioAdvert = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -57,13 +65,30 @@ func (r AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest) GetDeviceCode() str
 
 // SetSpeakerConfigParam4SyncAudioAdvert is SpeakerConfigParam4SyncAudioAdvert Setter
 // 音频参数
-func (r *AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest) SetSpeakerConfigParam4SyncAudioAdvert(_speakerConfigParam4SyncAudioAdvert *SpeakerConfigParam4syncAudioAdvert) error {
+func (r *AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest) SetSpeakerConfigParam4SyncAudioAdvert(_speakerConfigParam4SyncAudioAdvert *SpeakerConfigParam4SyncAudioAdvert) error {
 	r._speakerConfigParam4SyncAudioAdvert = _speakerConfigParam4SyncAudioAdvert
 	r.Set("speaker_config_param4_sync_audio_advert", _speakerConfigParam4SyncAudioAdvert)
 	return nil
 }
 
 // GetSpeakerConfigParam4SyncAudioAdvert SpeakerConfigParam4SyncAudioAdvert Getter
-func (r AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest) GetSpeakerConfigParam4SyncAudioAdvert() *SpeakerConfigParam4syncAudioAdvert {
+func (r AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest) GetSpeakerConfigParam4SyncAudioAdvert() *SpeakerConfigParam4SyncAudioAdvert {
 	return r._speakerConfigParam4SyncAudioAdvert
+}
+
+var poolAlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstSpeakerConfigureSyncaudioadvertRequest()
+	},
+}
+
+// GetAlibabaLstSpeakerConfigureSyncaudioadvertRequest 从 sync.Pool 获取 AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest
+func GetAlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest() *AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest {
+	return poolAlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest.Get().(*AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest)
+}
+
+// ReleaseAlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest 将 AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest(v *AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest) {
+	v.Reset()
+	poolAlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest.Put(v)
 }

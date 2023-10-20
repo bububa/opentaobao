@@ -9,11 +9,6 @@ import (
 // alibaba.lsy.crm.customer.appoint
 //
 // ISV直播间预约
-func AlibabaLsyCrmCustomerAppoint(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmCustomerAppointAPIRequest, session string) (*tmallnr.AlibabaLsyCrmCustomerAppointAPIResponse, error) {
-	var resp tmallnr.AlibabaLsyCrmCustomerAppointAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLsyCrmCustomerAppoint(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmCustomerAppointAPIRequest, resp *tmallnr.AlibabaLsyCrmCustomerAppointAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

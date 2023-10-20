@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // AlitripMerchantGalaxyMemberCompleteSwitchResponse 结构体
 type AlitripMerchantGalaxyMemberCompleteSwitchResponse struct {
 	// 错误码
@@ -10,4 +14,24 @@ type AlitripMerchantGalaxyMemberCompleteSwitchResponse struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 是否切换成功
 	Content bool `json:"content,omitempty" xml:"content,omitempty"`
+}
+
+var poolAlitripMerchantGalaxyMemberCompleteSwitchResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyMemberCompleteSwitchResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyMemberCompleteSwitchResponse() 从对象池中获取AlitripMerchantGalaxyMemberCompleteSwitchResponse
+func GetAlitripMerchantGalaxyMemberCompleteSwitchResponse() *AlitripMerchantGalaxyMemberCompleteSwitchResponse {
+	return poolAlitripMerchantGalaxyMemberCompleteSwitchResponse.Get().(*AlitripMerchantGalaxyMemberCompleteSwitchResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyMemberCompleteSwitchResponse 释放AlitripMerchantGalaxyMemberCompleteSwitchResponse
+func ReleaseAlitripMerchantGalaxyMemberCompleteSwitchResponse(v *AlitripMerchantGalaxyMemberCompleteSwitchResponse) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Success = false
+	v.Content = false
+	poolAlitripMerchantGalaxyMemberCompleteSwitchResponse.Put(v)
 }

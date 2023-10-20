@@ -2,6 +2,7 @@ package tmic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallTmicQuestionnaireAnswerSubmitAPIResponse struct {
 	TmallTmicQuestionnaireAnswerSubmitAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallTmicQuestionnaireAnswerSubmitAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallTmicQuestionnaireAnswerSubmitAPIResponseModel).Reset()
+}
+
 // TmallTmicQuestionnaireAnswerSubmitAPIResponseModel is 提交问卷答案 成功返回结果
 type TmallTmicQuestionnaireAnswerSubmitAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_tmic_questionnaire_answer_submit_response"`
@@ -26,4 +33,29 @@ type TmallTmicQuestionnaireAnswerSubmitAPIResponseModel struct {
 	BizErrorCode string `json:"biz_error_code,omitempty" xml:"biz_error_code,omitempty"`
 	// 是否调用成功
 	BizSuccess bool `json:"biz_success,omitempty" xml:"biz_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallTmicQuestionnaireAnswerSubmitAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.BizErrorInfo = ""
+	m.BizErrorCode = ""
+	m.BizSuccess = false
+}
+
+var poolTmallTmicQuestionnaireAnswerSubmitAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallTmicQuestionnaireAnswerSubmitAPIResponse)
+	},
+}
+
+// GetTmallTmicQuestionnaireAnswerSubmitAPIResponse 从 sync.Pool 获取 TmallTmicQuestionnaireAnswerSubmitAPIResponse
+func GetTmallTmicQuestionnaireAnswerSubmitAPIResponse() *TmallTmicQuestionnaireAnswerSubmitAPIResponse {
+	return poolTmallTmicQuestionnaireAnswerSubmitAPIResponse.Get().(*TmallTmicQuestionnaireAnswerSubmitAPIResponse)
+}
+
+// ReleaseTmallTmicQuestionnaireAnswerSubmitAPIResponse 将 TmallTmicQuestionnaireAnswerSubmitAPIResponse 保存到 sync.Pool
+func ReleaseTmallTmicQuestionnaireAnswerSubmitAPIResponse(v *TmallTmicQuestionnaireAnswerSubmitAPIResponse) {
+	v.Reset()
+	poolTmallTmicQuestionnaireAnswerSubmitAPIResponse.Put(v)
 }

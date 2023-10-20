@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // PagingResult 结构体
 type PagingResult struct {
 	// 员工数组。
@@ -10,4 +14,24 @@ type PagingResult struct {
 	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 	// 是否还有更多数据项。
 	HasMore bool `json:"has_more,omitempty" xml:"has_more,omitempty"`
+}
+
+var poolPagingResult = sync.Pool{
+	New: func() any {
+		return new(PagingResult)
+	},
+}
+
+// GetPagingResult() 从对象池中获取PagingResult
+func GetPagingResult() *PagingResult {
+	return poolPagingResult.Get().(*PagingResult)
+}
+
+// ReleasePagingResult 释放PagingResult
+func ReleasePagingResult(v *PagingResult) {
+	v.Items = v.Items[:0]
+	v.PageToken = ""
+	v.Total = 0
+	v.HasMore = false
+	poolPagingResult.Put(v)
 }

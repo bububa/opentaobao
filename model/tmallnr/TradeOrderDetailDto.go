@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // TradeOrderDetailDto 结构体
 type TradeOrderDetailDto struct {
 	// 子订单列表
@@ -44,4 +48,41 @@ type TradeOrderDetailDto struct {
 	BuyerMemo string `json:"buyer_memo,omitempty" xml:"buyer_memo,omitempty"`
 	// 主订单
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolTradeOrderDetailDto = sync.Pool{
+	New: func() any {
+		return new(TradeOrderDetailDto)
+	},
+}
+
+// GetTradeOrderDetailDto() 从对象池中获取TradeOrderDetailDto
+func GetTradeOrderDetailDto() *TradeOrderDetailDto {
+	return poolTradeOrderDetailDto.Get().(*TradeOrderDetailDto)
+}
+
+// ReleaseTradeOrderDetailDto 释放TradeOrderDetailDto
+func ReleaseTradeOrderDetailDto(v *TradeOrderDetailDto) {
+	v.OrderDTOs = v.OrderDTOs[:0]
+	v.StoreCode = ""
+	v.AppointEndTime = ""
+	v.AppointStartTime = ""
+	v.ReceiverAddress = ""
+	v.ReceiverTown = ""
+	v.ReceiverDistrict = ""
+	v.ReceiverCity = ""
+	v.ReceiverProvince = ""
+	v.ReceiverPhone = ""
+	v.ReceiverMobile = ""
+	v.ReceiverName = ""
+	v.PayTime = ""
+	v.Status = ""
+	v.CreateTime = ""
+	v.BuyerNick = ""
+	v.SellerNick = ""
+	v.OutIdStoreCode = ""
+	v.PostFee = ""
+	v.BuyerMemo = ""
+	v.OrderId = 0
+	poolTradeOrderDetailDto.Put(v)
 }

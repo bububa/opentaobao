@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAliqinFcVoiceRecordGeturlAPIRequest struct {
 // NewAlibabaAliqinFcVoiceRecordGeturlRequest 初始化AlibabaAliqinFcVoiceRecordGeturlAPIRequest对象
 func NewAlibabaAliqinFcVoiceRecordGeturlRequest() *AlibabaAliqinFcVoiceRecordGeturlAPIRequest {
 	return &AlibabaAliqinFcVoiceRecordGeturlAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFcVoiceRecordGeturlAPIRequest) Reset() {
+	r._callId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAliqinFcVoiceRecordGeturlAPIRequest) SetCallId(_callId string) e
 // GetCallId CallId Getter
 func (r AlibabaAliqinFcVoiceRecordGeturlAPIRequest) GetCallId() string {
 	return r._callId
+}
+
+var poolAlibabaAliqinFcVoiceRecordGeturlAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFcVoiceRecordGeturlRequest()
+	},
+}
+
+// GetAlibabaAliqinFcVoiceRecordGeturlRequest 从 sync.Pool 获取 AlibabaAliqinFcVoiceRecordGeturlAPIRequest
+func GetAlibabaAliqinFcVoiceRecordGeturlAPIRequest() *AlibabaAliqinFcVoiceRecordGeturlAPIRequest {
+	return poolAlibabaAliqinFcVoiceRecordGeturlAPIRequest.Get().(*AlibabaAliqinFcVoiceRecordGeturlAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFcVoiceRecordGeturlAPIRequest 将 AlibabaAliqinFcVoiceRecordGeturlAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFcVoiceRecordGeturlAPIRequest(v *AlibabaAliqinFcVoiceRecordGeturlAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFcVoiceRecordGeturlAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaScbpAdCampaignFindCampaignPageAPIRequest struct {
 // NewAlibabaScbpAdCampaignFindCampaignPageRequest 初始化AlibabaScbpAdCampaignFindCampaignPageAPIRequest对象
 func NewAlibabaScbpAdCampaignFindCampaignPageRequest() *AlibabaScbpAdCampaignFindCampaignPageAPIRequest {
 	return &AlibabaScbpAdCampaignFindCampaignPageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdCampaignFindCampaignPageAPIRequest) Reset() {
+	r._topContext = nil
+	r._campaignQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaScbpAdCampaignFindCampaignPageAPIRequest) SetCampaignQuery(_camp
 // GetCampaignQuery CampaignQuery Getter
 func (r AlibabaScbpAdCampaignFindCampaignPageAPIRequest) GetCampaignQuery() *CampaignQueryDto {
 	return r._campaignQuery
+}
+
+var poolAlibabaScbpAdCampaignFindCampaignPageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdCampaignFindCampaignPageRequest()
+	},
+}
+
+// GetAlibabaScbpAdCampaignFindCampaignPageRequest 从 sync.Pool 获取 AlibabaScbpAdCampaignFindCampaignPageAPIRequest
+func GetAlibabaScbpAdCampaignFindCampaignPageAPIRequest() *AlibabaScbpAdCampaignFindCampaignPageAPIRequest {
+	return poolAlibabaScbpAdCampaignFindCampaignPageAPIRequest.Get().(*AlibabaScbpAdCampaignFindCampaignPageAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdCampaignFindCampaignPageAPIRequest 将 AlibabaScbpAdCampaignFindCampaignPageAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdCampaignFindCampaignPageAPIRequest(v *AlibabaScbpAdCampaignFindCampaignPageAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdCampaignFindCampaignPageAPIRequest.Put(v)
 }

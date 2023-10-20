@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // QueryShippingMethodRequestTopDto 结构体
 type QueryShippingMethodRequestTopDto struct {
 	// product list
@@ -12,4 +16,25 @@ type QueryShippingMethodRequestTopDto struct {
 	Extension *ExtensionTopDto `json:"extension,omitempty" xml:"extension,omitempty"`
 	// destination address
 	ReceiptAddress *AddressTopDto `json:"receipt_address,omitempty" xml:"receipt_address,omitempty"`
+}
+
+var poolQueryShippingMethodRequestTopDto = sync.Pool{
+	New: func() any {
+		return new(QueryShippingMethodRequestTopDto)
+	},
+}
+
+// GetQueryShippingMethodRequestTopDto() 从对象池中获取QueryShippingMethodRequestTopDto
+func GetQueryShippingMethodRequestTopDto() *QueryShippingMethodRequestTopDto {
+	return poolQueryShippingMethodRequestTopDto.Get().(*QueryShippingMethodRequestTopDto)
+}
+
+// ReleaseQueryShippingMethodRequestTopDto 释放QueryShippingMethodRequestTopDto
+func ReleaseQueryShippingMethodRequestTopDto(v *QueryShippingMethodRequestTopDto) {
+	v.Products = v.Products[:0]
+	v.TradeOrderId = 0
+	v.SenderAddress = nil
+	v.Extension = nil
+	v.ReceiptAddress = nil
+	poolQueryShippingMethodRequestTopDto.Put(v)
 }

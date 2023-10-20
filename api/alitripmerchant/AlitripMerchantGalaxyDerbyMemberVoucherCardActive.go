@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.derby.member.voucher.card.active
 //
 // 权益卡订单激活
-func AlitripMerchantGalaxyDerbyMemberVoucherCardActive(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardActiveAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardActiveAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardActiveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyDerbyMemberVoucherCardActive(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardActiveAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardActiveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

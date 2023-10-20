@@ -9,11 +9,6 @@ import (
 // alibaba.einvoice.paper.print
 //
 // 打印一张已开具成功的纸票
-func AlibabaEinvoicePaperPrint(clt *core.SDKClient, req *einvoice.AlibabaEinvoicePaperPrintAPIRequest, session string) (*einvoice.AlibabaEinvoicePaperPrintAPIResponse, error) {
-	var resp einvoice.AlibabaEinvoicePaperPrintAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEinvoicePaperPrint(clt *core.SDKClient, req *einvoice.AlibabaEinvoicePaperPrintAPIRequest, resp *einvoice.AlibabaEinvoicePaperPrintAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

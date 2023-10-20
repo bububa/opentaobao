@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallItemCombineGetAPIRequest struct {
 // NewTmallItemCombineGetRequest 初始化TmallItemCombineGetAPIRequest对象
 func NewTmallItemCombineGetRequest() *TmallItemCombineGetAPIRequest {
 	return &TmallItemCombineGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallItemCombineGetAPIRequest) Reset() {
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallItemCombineGetAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r TmallItemCombineGetAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTmallItemCombineGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallItemCombineGetRequest()
+	},
+}
+
+// GetTmallItemCombineGetRequest 从 sync.Pool 获取 TmallItemCombineGetAPIRequest
+func GetTmallItemCombineGetAPIRequest() *TmallItemCombineGetAPIRequest {
+	return poolTmallItemCombineGetAPIRequest.Get().(*TmallItemCombineGetAPIRequest)
+}
+
+// ReleaseTmallItemCombineGetAPIRequest 将 TmallItemCombineGetAPIRequest 放入 sync.Pool
+func ReleaseTmallItemCombineGetAPIRequest(v *TmallItemCombineGetAPIRequest) {
+	v.Reset()
+	poolTmallItemCombineGetAPIRequest.Put(v)
 }

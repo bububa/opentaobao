@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.channel.sales.order.confirm
 //
 // 渠道销售单确认收货
-func AlibabaAscpChannelSalesOrderConfirm(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelSalesOrderConfirmAPIRequest, session string) (*ascpchannel.AlibabaAscpChannelSalesOrderConfirmAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpChannelSalesOrderConfirmAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpChannelSalesOrderConfirm(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelSalesOrderConfirmAPIRequest, resp *ascpchannel.AlibabaAscpChannelSalesOrderConfirmAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

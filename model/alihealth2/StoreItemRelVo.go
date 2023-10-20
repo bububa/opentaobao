@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // StoreItemRelVo 结构体
 type StoreItemRelVo struct {
 	// 审核原因
@@ -18,4 +22,28 @@ type StoreItemRelVo struct {
 	CheckStatus int64 `json:"check_status,omitempty" xml:"check_status,omitempty"`
 	// 商品ID
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+}
+
+var poolStoreItemRelVo = sync.Pool{
+	New: func() any {
+		return new(StoreItemRelVo)
+	},
+}
+
+// GetStoreItemRelVo() 从对象池中获取StoreItemRelVo
+func GetStoreItemRelVo() *StoreItemRelVo {
+	return poolStoreItemRelVo.Get().(*StoreItemRelVo)
+}
+
+// ReleaseStoreItemRelVo 释放StoreItemRelVo
+func ReleaseStoreItemRelVo(v *StoreItemRelVo) {
+	v.Reason = ""
+	v.CheckStatusString = ""
+	v.SpStoreId = ""
+	v.SpItemId = ""
+	v.StoreId = 0
+	v.BindId = 0
+	v.CheckStatus = 0
+	v.ItemId = 0
+	poolStoreItemRelVo.Put(v)
 }

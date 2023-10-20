@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaHmMarketingExpirePromotionCreateT 结构体
 type AlibabaHmMarketingExpirePromotionCreateT struct {
 	// 商家code
@@ -16,4 +20,27 @@ type AlibabaHmMarketingExpirePromotionCreateT struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaHmMarketingExpirePromotionCreateT = sync.Pool{
+	New: func() any {
+		return new(AlibabaHmMarketingExpirePromotionCreateT)
+	},
+}
+
+// GetAlibabaHmMarketingExpirePromotionCreateT() 从对象池中获取AlibabaHmMarketingExpirePromotionCreateT
+func GetAlibabaHmMarketingExpirePromotionCreateT() *AlibabaHmMarketingExpirePromotionCreateT {
+	return poolAlibabaHmMarketingExpirePromotionCreateT.Get().(*AlibabaHmMarketingExpirePromotionCreateT)
+}
+
+// ReleaseAlibabaHmMarketingExpirePromotionCreateT 释放AlibabaHmMarketingExpirePromotionCreateT
+func ReleaseAlibabaHmMarketingExpirePromotionCreateT(v *AlibabaHmMarketingExpirePromotionCreateT) {
+	v.MerchantCode = ""
+	v.SkuCode = ""
+	v.ShopId = ""
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.ItemId = 0
+	v.Success = false
+	poolAlibabaHmMarketingExpirePromotionCreateT.Put(v)
 }

@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // ExternalCreateSubSalesOrderRequest 结构体
 type ExternalCreateSubSalesOrderRequest struct {
 	// 外部前端sku id
@@ -16,4 +20,27 @@ type ExternalCreateSubSalesOrderRequest struct {
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 产品id
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
+}
+
+var poolExternalCreateSubSalesOrderRequest = sync.Pool{
+	New: func() any {
+		return new(ExternalCreateSubSalesOrderRequest)
+	},
+}
+
+// GetExternalCreateSubSalesOrderRequest() 从对象池中获取ExternalCreateSubSalesOrderRequest
+func GetExternalCreateSubSalesOrderRequest() *ExternalCreateSubSalesOrderRequest {
+	return poolExternalCreateSubSalesOrderRequest.Get().(*ExternalCreateSubSalesOrderRequest)
+}
+
+// ReleaseExternalCreateSubSalesOrderRequest 释放ExternalCreateSubSalesOrderRequest
+func ReleaseExternalCreateSubSalesOrderRequest(v *ExternalCreateSubSalesOrderRequest) {
+	v.OutSkuId = ""
+	v.OutItemId = ""
+	v.OutSubOrderNo = ""
+	v.Attributes = ""
+	v.Quantity = 0
+	v.SkuId = 0
+	v.ProductId = 0
+	poolExternalCreateSubSalesOrderRequest.Put(v)
 }

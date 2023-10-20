@@ -2,6 +2,7 @@ package tanx
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoTanxQualificationSolidFindAPIRequest struct {
 // NewTaobaoTanxQualificationSolidFindRequest 初始化TaobaoTanxQualificationSolidFindAPIRequest对象
 func NewTaobaoTanxQualificationSolidFindRequest() *TaobaoTanxQualificationSolidFindAPIRequest {
 	return &TaobaoTanxQualificationSolidFindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTanxQualificationSolidFindAPIRequest) Reset() {
+	r._elementIds = r._elementIds[:0]
+	r._token = ""
+	r._advertiserId = 0
+	r._memberId = 0
+	r._signTime = 0
+	r._page = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetPageSize(_pageSize int64
 // GetPageSize PageSize Getter
 func (r TaobaoTanxQualificationSolidFindAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoTanxQualificationSolidFindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTanxQualificationSolidFindRequest()
+	},
+}
+
+// GetTaobaoTanxQualificationSolidFindRequest 从 sync.Pool 获取 TaobaoTanxQualificationSolidFindAPIRequest
+func GetTaobaoTanxQualificationSolidFindAPIRequest() *TaobaoTanxQualificationSolidFindAPIRequest {
+	return poolTaobaoTanxQualificationSolidFindAPIRequest.Get().(*TaobaoTanxQualificationSolidFindAPIRequest)
+}
+
+// ReleaseTaobaoTanxQualificationSolidFindAPIRequest 将 TaobaoTanxQualificationSolidFindAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTanxQualificationSolidFindAPIRequest(v *TaobaoTanxQualificationSolidFindAPIRequest) {
+	v.Reset()
+	poolTaobaoTanxQualificationSolidFindAPIRequest.Put(v)
 }

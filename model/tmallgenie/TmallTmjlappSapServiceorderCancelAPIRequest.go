@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallTmjlappSapServiceorderCancelAPIRequest struct {
 // NewTmallTmjlappSapServiceorderCancelRequest 初始化TmallTmjlappSapServiceorderCancelAPIRequest对象
 func NewTmallTmjlappSapServiceorderCancelRequest() *TmallTmjlappSapServiceorderCancelAPIRequest {
 	return &TmallTmjlappSapServiceorderCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallTmjlappSapServiceorderCancelAPIRequest) Reset() {
+	r._cancelRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallTmjlappSapServiceorderCancelAPIRequest) SetCancelRequest(_cancelRe
 // GetCancelRequest CancelRequest Getter
 func (r TmallTmjlappSapServiceorderCancelAPIRequest) GetCancelRequest() *Dtcancelrequest {
 	return r._cancelRequest
+}
+
+var poolTmallTmjlappSapServiceorderCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallTmjlappSapServiceorderCancelRequest()
+	},
+}
+
+// GetTmallTmjlappSapServiceorderCancelRequest 从 sync.Pool 获取 TmallTmjlappSapServiceorderCancelAPIRequest
+func GetTmallTmjlappSapServiceorderCancelAPIRequest() *TmallTmjlappSapServiceorderCancelAPIRequest {
+	return poolTmallTmjlappSapServiceorderCancelAPIRequest.Get().(*TmallTmjlappSapServiceorderCancelAPIRequest)
+}
+
+// ReleaseTmallTmjlappSapServiceorderCancelAPIRequest 将 TmallTmjlappSapServiceorderCancelAPIRequest 放入 sync.Pool
+func ReleaseTmallTmjlappSapServiceorderCancelAPIRequest(v *TmallTmjlappSapServiceorderCancelAPIRequest) {
+	v.Reset()
+	poolTmallTmjlappSapServiceorderCancelAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package kclub
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaKclubKcQueryknowledgeAPIRequest struct {
 // NewAlibabaKclubKcQueryknowledgeRequest 初始化AlibabaKclubKcQueryknowledgeAPIRequest对象
 func NewAlibabaKclubKcQueryknowledgeRequest() *AlibabaKclubKcQueryknowledgeAPIRequest {
 	return &AlibabaKclubKcQueryknowledgeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaKclubKcQueryknowledgeAPIRequest) Reset() {
+	r._kcQaQuery = nil
+	r._auth = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaKclubKcQueryknowledgeAPIRequest) SetAuth(_auth *TenancyAuth) err
 // GetAuth Auth Getter
 func (r AlibabaKclubKcQueryknowledgeAPIRequest) GetAuth() *TenancyAuth {
 	return r._auth
+}
+
+var poolAlibabaKclubKcQueryknowledgeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaKclubKcQueryknowledgeRequest()
+	},
+}
+
+// GetAlibabaKclubKcQueryknowledgeRequest 从 sync.Pool 获取 AlibabaKclubKcQueryknowledgeAPIRequest
+func GetAlibabaKclubKcQueryknowledgeAPIRequest() *AlibabaKclubKcQueryknowledgeAPIRequest {
+	return poolAlibabaKclubKcQueryknowledgeAPIRequest.Get().(*AlibabaKclubKcQueryknowledgeAPIRequest)
+}
+
+// ReleaseAlibabaKclubKcQueryknowledgeAPIRequest 将 AlibabaKclubKcQueryknowledgeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaKclubKcQueryknowledgeAPIRequest(v *AlibabaKclubKcQueryknowledgeAPIRequest) {
+	v.Reset()
+	poolAlibabaKclubKcQueryknowledgeAPIRequest.Put(v)
 }

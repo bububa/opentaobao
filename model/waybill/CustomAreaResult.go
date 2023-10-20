@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // CustomAreaResult 结构体
 type CustomAreaResult struct {
 	// keys
@@ -16,4 +20,27 @@ type CustomAreaResult struct {
 	StandardTemplateId int64 `json:"standard_template_id,omitempty" xml:"standard_template_id,omitempty"`
 	// 用户模板id，等同于mystdtemplates.get中返回的用户模板id
 	UserTemplateId int64 `json:"user_template_id,omitempty" xml:"user_template_id,omitempty"`
+}
+
+var poolCustomAreaResult = sync.Pool{
+	New: func() any {
+		return new(CustomAreaResult)
+	},
+}
+
+// GetCustomAreaResult() 从对象池中获取CustomAreaResult
+func GetCustomAreaResult() *CustomAreaResult {
+	return poolCustomAreaResult.Get().(*CustomAreaResult)
+}
+
+// ReleaseCustomAreaResult 释放CustomAreaResult
+func ReleaseCustomAreaResult(v *CustomAreaResult) {
+	v.Keys = v.Keys[:0]
+	v.CustomAreaUrl = ""
+	v.CustomAreaName = ""
+	v.StandardTemplateUrl = ""
+	v.CustomAreaId = 0
+	v.StandardTemplateId = 0
+	v.UserTemplateId = 0
+	poolCustomAreaResult.Put(v)
 }

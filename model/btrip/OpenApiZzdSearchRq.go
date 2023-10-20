@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenApiZzdSearchRq 结构体
 type OpenApiZzdSearchRq struct {
 	// 第三方企业ID
@@ -20,4 +24,29 @@ type OpenApiZzdSearchRq struct {
 	ApplyId int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
 	// 第几页
 	Page int64 `json:"page,omitempty" xml:"page,omitempty"`
+}
+
+var poolOpenApiZzdSearchRq = sync.Pool{
+	New: func() any {
+		return new(OpenApiZzdSearchRq)
+	},
+}
+
+// GetOpenApiZzdSearchRq() 从对象池中获取OpenApiZzdSearchRq
+func GetOpenApiZzdSearchRq() *OpenApiZzdSearchRq {
+	return poolOpenApiZzdSearchRq.Get().(*OpenApiZzdSearchRq)
+}
+
+// ReleaseOpenApiZzdSearchRq 释放OpenApiZzdSearchRq
+func ReleaseOpenApiZzdSearchRq(v *OpenApiZzdSearchRq) {
+	v.ThirdpartCorpId = ""
+	v.EndDate = ""
+	v.UserId = ""
+	v.TradeId = ""
+	v.StartDate = ""
+	v.OrderId = 0
+	v.PageSize = 0
+	v.ApplyId = 0
+	v.Page = 0
+	poolOpenApiZzdSearchRq.Put(v)
 }

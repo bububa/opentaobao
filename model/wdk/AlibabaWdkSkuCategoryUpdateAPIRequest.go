@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkSkuCategoryUpdateAPIRequest struct {
 // NewAlibabaWdkSkuCategoryUpdateRequest 初始化AlibabaWdkSkuCategoryUpdateAPIRequest对象
 func NewAlibabaWdkSkuCategoryUpdateRequest() *AlibabaWdkSkuCategoryUpdateAPIRequest {
 	return &AlibabaWdkSkuCategoryUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkSkuCategoryUpdateAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkSkuCategoryUpdateAPIRequest) SetParam(_param *CategoryDo) err
 // GetParam Param Getter
 func (r AlibabaWdkSkuCategoryUpdateAPIRequest) GetParam() *CategoryDo {
 	return r._param
+}
+
+var poolAlibabaWdkSkuCategoryUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkSkuCategoryUpdateRequest()
+	},
+}
+
+// GetAlibabaWdkSkuCategoryUpdateRequest 从 sync.Pool 获取 AlibabaWdkSkuCategoryUpdateAPIRequest
+func GetAlibabaWdkSkuCategoryUpdateAPIRequest() *AlibabaWdkSkuCategoryUpdateAPIRequest {
+	return poolAlibabaWdkSkuCategoryUpdateAPIRequest.Get().(*AlibabaWdkSkuCategoryUpdateAPIRequest)
+}
+
+// ReleaseAlibabaWdkSkuCategoryUpdateAPIRequest 将 AlibabaWdkSkuCategoryUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkSkuCategoryUpdateAPIRequest(v *AlibabaWdkSkuCategoryUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkSkuCategoryUpdateAPIRequest.Put(v)
 }

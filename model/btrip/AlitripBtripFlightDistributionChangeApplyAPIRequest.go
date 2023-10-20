@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripFlightDistributionChangeApplyAPIRequest struct {
 // NewAlitripBtripFlightDistributionChangeApplyRequest 初始化AlitripBtripFlightDistributionChangeApplyAPIRequest对象
 func NewAlitripBtripFlightDistributionChangeApplyRequest() *AlitripBtripFlightDistributionChangeApplyAPIRequest {
 	return &AlitripBtripFlightDistributionChangeApplyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripFlightDistributionChangeApplyAPIRequest) Reset() {
+	r._paramBtripFlightModifyApplyRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripFlightDistributionChangeApplyAPIRequest) SetParamBtripFligh
 // GetParamBtripFlightModifyApplyRq ParamBtripFlightModifyApplyRq Getter
 func (r AlitripBtripFlightDistributionChangeApplyAPIRequest) GetParamBtripFlightModifyApplyRq() *BtripFlightModifyApplyRq {
 	return r._paramBtripFlightModifyApplyRq
+}
+
+var poolAlitripBtripFlightDistributionChangeApplyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripFlightDistributionChangeApplyRequest()
+	},
+}
+
+// GetAlitripBtripFlightDistributionChangeApplyRequest 从 sync.Pool 获取 AlitripBtripFlightDistributionChangeApplyAPIRequest
+func GetAlitripBtripFlightDistributionChangeApplyAPIRequest() *AlitripBtripFlightDistributionChangeApplyAPIRequest {
+	return poolAlitripBtripFlightDistributionChangeApplyAPIRequest.Get().(*AlitripBtripFlightDistributionChangeApplyAPIRequest)
+}
+
+// ReleaseAlitripBtripFlightDistributionChangeApplyAPIRequest 将 AlitripBtripFlightDistributionChangeApplyAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripFlightDistributionChangeApplyAPIRequest(v *AlitripBtripFlightDistributionChangeApplyAPIRequest) {
+	v.Reset()
+	poolAlitripBtripFlightDistributionChangeApplyAPIRequest.Put(v)
 }

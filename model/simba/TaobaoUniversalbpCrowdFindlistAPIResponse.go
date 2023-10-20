@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoUniversalbpCrowdFindlistAPIResponse struct {
 	TaobaoUniversalbpCrowdFindlistAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoUniversalbpCrowdFindlistAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoUniversalbpCrowdFindlistAPIResponseModel).Reset()
+}
+
 // TaobaoUniversalbpCrowdFindlistAPIResponseModel is 查询人群绑定列表 成功返回结果
 type TaobaoUniversalbpCrowdFindlistAPIResponseModel struct {
 	XMLName xml.Name `xml:"universalbp_crowd_findlist_response"`
@@ -22,4 +29,27 @@ type TaobaoUniversalbpCrowdFindlistAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
 	Result *TaobaoUniversalbpCrowdFindlistTopResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoUniversalbpCrowdFindlistAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoUniversalbpCrowdFindlistAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoUniversalbpCrowdFindlistAPIResponse)
+	},
+}
+
+// GetTaobaoUniversalbpCrowdFindlistAPIResponse 从 sync.Pool 获取 TaobaoUniversalbpCrowdFindlistAPIResponse
+func GetTaobaoUniversalbpCrowdFindlistAPIResponse() *TaobaoUniversalbpCrowdFindlistAPIResponse {
+	return poolTaobaoUniversalbpCrowdFindlistAPIResponse.Get().(*TaobaoUniversalbpCrowdFindlistAPIResponse)
+}
+
+// ReleaseTaobaoUniversalbpCrowdFindlistAPIResponse 将 TaobaoUniversalbpCrowdFindlistAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoUniversalbpCrowdFindlistAPIResponse(v *TaobaoUniversalbpCrowdFindlistAPIResponse) {
+	v.Reset()
+	poolTaobaoUniversalbpCrowdFindlistAPIResponse.Put(v)
 }

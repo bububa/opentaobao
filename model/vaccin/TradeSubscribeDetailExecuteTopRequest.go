@@ -1,5 +1,9 @@
 package vaccin
 
+import (
+	"sync"
+)
+
 // TradeSubscribeDetailExecuteTopRequest 结构体
 type TradeSubscribeDetailExecuteTopRequest struct {
 	// 外部商家预约单主键
@@ -26,4 +30,32 @@ type TradeSubscribeDetailExecuteTopRequest struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 接种状态
 	InnoculateStatus int64 `json:"innoculate_status,omitempty" xml:"innoculate_status,omitempty"`
+}
+
+var poolTradeSubscribeDetailExecuteTopRequest = sync.Pool{
+	New: func() any {
+		return new(TradeSubscribeDetailExecuteTopRequest)
+	},
+}
+
+// GetTradeSubscribeDetailExecuteTopRequest() 从对象池中获取TradeSubscribeDetailExecuteTopRequest
+func GetTradeSubscribeDetailExecuteTopRequest() *TradeSubscribeDetailExecuteTopRequest {
+	return poolTradeSubscribeDetailExecuteTopRequest.Get().(*TradeSubscribeDetailExecuteTopRequest)
+}
+
+// ReleaseTradeSubscribeDetailExecuteTopRequest 释放TradeSubscribeDetailExecuteTopRequest
+func ReleaseTradeSubscribeDetailExecuteTopRequest(v *TradeSubscribeDetailExecuteTopRequest) {
+	v.IsvSubscribeId = ""
+	v.SubscribeTime = ""
+	v.MerchantId = ""
+	v.ShopName = ""
+	v.CancelReason = ""
+	v.SocialCreditCode = ""
+	v.SubscribeStartTime = ""
+	v.SubscribeEndTime = ""
+	v.InjectionNum = 0
+	v.BizOrderId = 0
+	v.Status = 0
+	v.InnoculateStatus = 0
+	poolTradeSubscribeDetailExecuteTopRequest.Put(v)
 }

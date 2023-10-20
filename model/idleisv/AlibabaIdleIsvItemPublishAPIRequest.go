@@ -2,6 +2,7 @@ package idleisv
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleIsvItemPublishAPIRequest struct {
 // NewAlibabaIdleIsvItemPublishRequest 初始化AlibabaIdleIsvItemPublishAPIRequest对象
 func NewAlibabaIdleIsvItemPublishRequest() *AlibabaIdleIsvItemPublishAPIRequest {
 	return &AlibabaIdleIsvItemPublishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleIsvItemPublishAPIRequest) Reset() {
+	r._itemParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleIsvItemPublishAPIRequest) SetItemParam(_itemParam *IdleItemA
 // GetItemParam ItemParam Getter
 func (r AlibabaIdleIsvItemPublishAPIRequest) GetItemParam() *IdleItemApiDo {
 	return r._itemParam
+}
+
+var poolAlibabaIdleIsvItemPublishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleIsvItemPublishRequest()
+	},
+}
+
+// GetAlibabaIdleIsvItemPublishRequest 从 sync.Pool 获取 AlibabaIdleIsvItemPublishAPIRequest
+func GetAlibabaIdleIsvItemPublishAPIRequest() *AlibabaIdleIsvItemPublishAPIRequest {
+	return poolAlibabaIdleIsvItemPublishAPIRequest.Get().(*AlibabaIdleIsvItemPublishAPIRequest)
+}
+
+// ReleaseAlibabaIdleIsvItemPublishAPIRequest 将 AlibabaIdleIsvItemPublishAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleIsvItemPublishAPIRequest(v *AlibabaIdleIsvItemPublishAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleIsvItemPublishAPIRequest.Put(v)
 }

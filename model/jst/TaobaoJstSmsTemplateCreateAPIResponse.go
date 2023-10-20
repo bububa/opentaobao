@@ -2,6 +2,7 @@ package jst
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoJstSmsTemplateCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstSmsTemplateCreateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoJstSmsTemplateCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoJstSmsTemplateCreateAPIResponseModel).Reset()
 }
 
 // TaobaoJstSmsTemplateCreateAPIResponseModel is 淘宝短信模板创建 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoJstSmsTemplateCreateAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 请求成功
 	RSuccess bool `json:"r_success,omitempty" xml:"r_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoJstSmsTemplateCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RCode = ""
+	m.Module = ""
+	m.Message = ""
+	m.RSuccess = false
+}
+
+var poolTaobaoJstSmsTemplateCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoJstSmsTemplateCreateAPIResponse)
+	},
+}
+
+// GetTaobaoJstSmsTemplateCreateAPIResponse 从 sync.Pool 获取 TaobaoJstSmsTemplateCreateAPIResponse
+func GetTaobaoJstSmsTemplateCreateAPIResponse() *TaobaoJstSmsTemplateCreateAPIResponse {
+	return poolTaobaoJstSmsTemplateCreateAPIResponse.Get().(*TaobaoJstSmsTemplateCreateAPIResponse)
+}
+
+// ReleaseTaobaoJstSmsTemplateCreateAPIResponse 将 TaobaoJstSmsTemplateCreateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoJstSmsTemplateCreateAPIResponse(v *TaobaoJstSmsTemplateCreateAPIResponse) {
+	v.Reset()
+	poolTaobaoJstSmsTemplateCreateAPIResponse.Put(v)
 }

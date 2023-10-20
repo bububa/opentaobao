@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SkuFeatureDo 结构体
 type SkuFeatureDo struct {
 	// 商品编码
@@ -16,4 +20,27 @@ type SkuFeatureDo struct {
 	FeatureValue string `json:"feature_value,omitempty" xml:"feature_value,omitempty"`
 	// 是否添加，默认是添加
 	Add bool `json:"add,omitempty" xml:"add,omitempty"`
+}
+
+var poolSkuFeatureDo = sync.Pool{
+	New: func() any {
+		return new(SkuFeatureDo)
+	},
+}
+
+// GetSkuFeatureDo() 从对象池中获取SkuFeatureDo
+func GetSkuFeatureDo() *SkuFeatureDo {
+	return poolSkuFeatureDo.Get().(*SkuFeatureDo)
+}
+
+// ReleaseSkuFeatureDo 释放SkuFeatureDo
+func ReleaseSkuFeatureDo(v *SkuFeatureDo) {
+	v.SkuCode = ""
+	v.OuCode = ""
+	v.OrgCode = ""
+	v.ChannelCode = ""
+	v.FeatureCode = ""
+	v.FeatureValue = ""
+	v.Add = false
+	poolSkuFeatureDo.Put(v)
 }

@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaInteractSensorAudioAPIRequest struct {
 // NewAlibabaInteractSensorAudioRequest 初始化AlibabaInteractSensorAudioAPIRequest对象
 func NewAlibabaInteractSensorAudioRequest() *AlibabaInteractSensorAudioAPIRequest {
 	return &AlibabaInteractSensorAudioAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractSensorAudioAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaInteractSensorAudioAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaInteractSensorAudioAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaInteractSensorAudioAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractSensorAudioRequest()
+	},
+}
+
+// GetAlibabaInteractSensorAudioRequest 从 sync.Pool 获取 AlibabaInteractSensorAudioAPIRequest
+func GetAlibabaInteractSensorAudioAPIRequest() *AlibabaInteractSensorAudioAPIRequest {
+	return poolAlibabaInteractSensorAudioAPIRequest.Get().(*AlibabaInteractSensorAudioAPIRequest)
+}
+
+// ReleaseAlibabaInteractSensorAudioAPIRequest 将 AlibabaInteractSensorAudioAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractSensorAudioAPIRequest(v *AlibabaInteractSensorAudioAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractSensorAudioAPIRequest.Put(v)
 }

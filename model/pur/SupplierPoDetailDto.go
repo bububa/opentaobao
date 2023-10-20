@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // SupplierPoDetailDto 结构体
 type SupplierPoDetailDto struct {
 	// 订单行列表
@@ -30,4 +34,34 @@ type SupplierPoDetailDto struct {
 	Comments string `json:"comments,omitempty" xml:"comments,omitempty"`
 	// cpoNo
 	CpoNo string `json:"cpo_no,omitempty" xml:"cpo_no,omitempty"`
+}
+
+var poolSupplierPoDetailDto = sync.Pool{
+	New: func() any {
+		return new(SupplierPoDetailDto)
+	},
+}
+
+// GetSupplierPoDetailDto() 从对象池中获取SupplierPoDetailDto
+func GetSupplierPoDetailDto() *SupplierPoDetailDto {
+	return poolSupplierPoDetailDto.Get().(*SupplierPoDetailDto)
+}
+
+// ReleaseSupplierPoDetailDto 释放SupplierPoDetailDto
+func ReleaseSupplierPoDetailDto(v *SupplierPoDetailDto) {
+	v.PoLineList = v.PoLineList[:0]
+	v.SupplierName = ""
+	v.PoNo = ""
+	v.SupplierContact = ""
+	v.SupplierMobile = ""
+	v.EffectTime = ""
+	v.OuName = ""
+	v.OuCode = ""
+	v.ContractNo = ""
+	v.BuyerName = ""
+	v.BuyMobile = ""
+	v.PrNo = ""
+	v.Comments = ""
+	v.CpoNo = ""
+	poolSupplierPoDetailDto.Put(v)
 }

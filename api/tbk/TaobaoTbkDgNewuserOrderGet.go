@@ -9,11 +9,6 @@ import (
 // taobao.tbk.dg.newuser.order.get
 //
 // 拉新API
-func TaobaoTbkDgNewuserOrderGet(clt *core.SDKClient, req *tbk.TaobaoTbkDgNewuserOrderGetAPIRequest, session string) (*tbk.TaobaoTbkDgNewuserOrderGetAPIResponse, error) {
-	var resp tbk.TaobaoTbkDgNewuserOrderGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTbkDgNewuserOrderGet(clt *core.SDKClient, req *tbk.TaobaoTbkDgNewuserOrderGetAPIRequest, resp *tbk.TaobaoTbkDgNewuserOrderGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

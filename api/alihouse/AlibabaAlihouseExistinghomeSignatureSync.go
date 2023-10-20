@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghome.signature.sync
 //
 // 二手房电子签章数据同步
-func AlibabaAlihouseExistinghomeSignatureSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeSignatureSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeSignatureSyncAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeSignatureSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghomeSignatureSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeSignatureSyncAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeSignatureSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

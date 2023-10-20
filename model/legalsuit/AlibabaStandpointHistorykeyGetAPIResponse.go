@@ -2,6 +2,7 @@ package legalsuit
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaStandpointHistorykeyGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaStandpointHistorykeyGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaStandpointHistorykeyGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaStandpointHistorykeyGetAPIResponseModel).Reset()
 }
 
 // AlibabaStandpointHistorykeyGetAPIResponseModel is 查询历史数据 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaStandpointHistorykeyGetAPIResponseModel struct {
 	ErrorCodeRes int64 `json:"error_code_res,omitempty" xml:"error_code_res,omitempty"`
 	// 是否成功
 	SuccessRes bool `json:"success_res,omitempty" xml:"success_res,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaStandpointHistorykeyGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Content = m.Content[:0]
+	m.ErrorMsg = ""
+	m.ErrorCodeRes = 0
+	m.SuccessRes = false
+}
+
+var poolAlibabaStandpointHistorykeyGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaStandpointHistorykeyGetAPIResponse)
+	},
+}
+
+// GetAlibabaStandpointHistorykeyGetAPIResponse 从 sync.Pool 获取 AlibabaStandpointHistorykeyGetAPIResponse
+func GetAlibabaStandpointHistorykeyGetAPIResponse() *AlibabaStandpointHistorykeyGetAPIResponse {
+	return poolAlibabaStandpointHistorykeyGetAPIResponse.Get().(*AlibabaStandpointHistorykeyGetAPIResponse)
+}
+
+// ReleaseAlibabaStandpointHistorykeyGetAPIResponse 将 AlibabaStandpointHistorykeyGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaStandpointHistorykeyGetAPIResponse(v *AlibabaStandpointHistorykeyGetAPIResponse) {
+	v.Reset()
+	poolAlibabaStandpointHistorykeyGetAPIResponse.Put(v)
 }

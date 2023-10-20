@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AliexpressSocialItemRankingAPIRequest struct {
 // NewAliexpressSocialItemRankingRequest 初始化AliexpressSocialItemRankingAPIRequest对象
 func NewAliexpressSocialItemRankingRequest() *AliexpressSocialItemRankingAPIRequest {
 	return &AliexpressSocialItemRankingAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSocialItemRankingAPIRequest) Reset() {
+	r._countryList = r._countryList[:0]
+	r._currency = ""
+	r._locale = ""
+	r._pageNo = 0
+	r._cateId = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AliexpressSocialItemRankingAPIRequest) SetPageSize(_pageSize int64) err
 // GetPageSize PageSize Getter
 func (r AliexpressSocialItemRankingAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAliexpressSocialItemRankingAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSocialItemRankingRequest()
+	},
+}
+
+// GetAliexpressSocialItemRankingRequest 从 sync.Pool 获取 AliexpressSocialItemRankingAPIRequest
+func GetAliexpressSocialItemRankingAPIRequest() *AliexpressSocialItemRankingAPIRequest {
+	return poolAliexpressSocialItemRankingAPIRequest.Get().(*AliexpressSocialItemRankingAPIRequest)
+}
+
+// ReleaseAliexpressSocialItemRankingAPIRequest 将 AliexpressSocialItemRankingAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSocialItemRankingAPIRequest(v *AliexpressSocialItemRankingAPIRequest) {
+	v.Reset()
+	poolAliexpressSocialItemRankingAPIRequest.Put(v)
 }

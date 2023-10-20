@@ -1,5 +1,9 @@
 package retail
 
+import (
+	"sync"
+)
+
 // ItemLineDto 结构体
 type ItemLineDto struct {
 	// 服务子订单
@@ -20,4 +24,29 @@ type ItemLineDto struct {
 	BuyAmount int64 `json:"buy_amount,omitempty" xml:"buy_amount,omitempty"`
 	// 实际付款价格
 	PayFee int64 `json:"pay_fee,omitempty" xml:"pay_fee,omitempty"`
+}
+
+var poolItemLineDto = sync.Pool{
+	New: func() any {
+		return new(ItemLineDto)
+	},
+}
+
+// GetItemLineDto() 从对象池中获取ItemLineDto
+func GetItemLineDto() *ItemLineDto {
+	return poolItemLineDto.Get().(*ItemLineDto)
+}
+
+// ReleaseItemLineDto 释放ItemLineDto
+func ReleaseItemLineDto(v *ItemLineDto) {
+	v.ServiceList = v.ServiceList[:0]
+	v.OutLineId = ""
+	v.OutSkuId = ""
+	v.StoreOrderLineId = 0
+	v.ItemId = 0
+	v.SkuId = 0
+	v.Price = 0
+	v.BuyAmount = 0
+	v.PayFee = 0
+	poolItemLineDto.Put(v)
 }

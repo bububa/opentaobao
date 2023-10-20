@@ -1,5 +1,9 @@
 package tmallgeniescp
 
+import (
+	"sync"
+)
+
 // IbpMaterielDto 结构体
 type IbpMaterielDto struct {
 	// 层级的code
@@ -30,4 +34,34 @@ type IbpMaterielDto struct {
 	ExtendJson string `json:"extend_json,omitempty" xml:"extend_json,omitempty"`
 	// 租户
 	Tenant string `json:"tenant,omitempty" xml:"tenant,omitempty"`
+}
+
+var poolIbpMaterielDto = sync.Pool{
+	New: func() any {
+		return new(IbpMaterielDto)
+	},
+}
+
+// GetIbpMaterielDto() 从对象池中获取IbpMaterielDto
+func GetIbpMaterielDto() *IbpMaterielDto {
+	return poolIbpMaterielDto.Get().(*IbpMaterielDto)
+}
+
+// ReleaseIbpMaterielDto 释放IbpMaterielDto
+func ReleaseIbpMaterielDto(v *IbpMaterielDto) {
+	v.Level6 = ""
+	v.Level5 = ""
+	v.Level4 = ""
+	v.Level3 = ""
+	v.Level2 = ""
+	v.Level1 = ""
+	v.PlmStatus = ""
+	v.UnitDesc = ""
+	v.Unit = ""
+	v.MaterielType = ""
+	v.MaterielName = ""
+	v.MaterielCode = ""
+	v.ExtendJson = ""
+	v.Tenant = ""
+	poolIbpMaterielDto.Put(v)
 }

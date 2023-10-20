@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.activity.popup.query
 //
 // 获取雅高微信小程序，营销抽奖首页弹窗数据。
-func AlitripMerchantGalaxyActivityPopupQuery(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyActivityPopupQueryAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyActivityPopupQueryAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyActivityPopupQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyActivityPopupQuery(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyActivityPopupQueryAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyActivityPopupQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

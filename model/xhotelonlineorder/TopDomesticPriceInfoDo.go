@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // TopDomesticPriceInfoDo 结构体
 type TopDomesticPriceInfoDo struct {
 	// createOrderDailyPrice
@@ -24,4 +28,31 @@ type TopDomesticPriceInfoDo struct {
 	BasePrice int64 `json:"base_price,omitempty" xml:"base_price,omitempty"`
 	// bookingBasePrice
 	BookingBasePrice int64 `json:"booking_base_price,omitempty" xml:"booking_base_price,omitempty"`
+}
+
+var poolTopDomesticPriceInfoDo = sync.Pool{
+	New: func() any {
+		return new(TopDomesticPriceInfoDo)
+	},
+}
+
+// GetTopDomesticPriceInfoDo() 从对象池中获取TopDomesticPriceInfoDo
+func GetTopDomesticPriceInfoDo() *TopDomesticPriceInfoDo {
+	return poolTopDomesticPriceInfoDo.Get().(*TopDomesticPriceInfoDo)
+}
+
+// ReleaseTopDomesticPriceInfoDo 释放TopDomesticPriceInfoDo
+func ReleaseTopDomesticPriceInfoDo(v *TopDomesticPriceInfoDo) {
+	v.CreateOrderDailyPrice = nil
+	v.TaxPrice = 0
+	v.RoomsPrice = 0
+	v.ServicePrice = 0
+	v.OtherFee = 0
+	v.BookingRoomsPrice = 0
+	v.BookingTaxPrice = 0
+	v.BookingServicePrice = 0
+	v.SettleOrderDailyPrice = nil
+	v.BasePrice = 0
+	v.BookingBasePrice = 0
+	poolTopDomesticPriceInfoDo.Put(v)
 }

@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseStoreCheckAPIRequest struct {
 // NewAlibabaAlihouseStoreCheckRequest 初始化AlibabaAlihouseStoreCheckAPIRequest对象
 func NewAlibabaAlihouseStoreCheckRequest() *AlibabaAlihouseStoreCheckAPIRequest {
 	return &AlibabaAlihouseStoreCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseStoreCheckAPIRequest) Reset() {
+	r._outerIds = r._outerIds[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseStoreCheckAPIRequest) SetOuterIds(_outerIds []string) er
 // GetOuterIds OuterIds Getter
 func (r AlibabaAlihouseStoreCheckAPIRequest) GetOuterIds() []string {
 	return r._outerIds
+}
+
+var poolAlibabaAlihouseStoreCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseStoreCheckRequest()
+	},
+}
+
+// GetAlibabaAlihouseStoreCheckRequest 从 sync.Pool 获取 AlibabaAlihouseStoreCheckAPIRequest
+func GetAlibabaAlihouseStoreCheckAPIRequest() *AlibabaAlihouseStoreCheckAPIRequest {
+	return poolAlibabaAlihouseStoreCheckAPIRequest.Get().(*AlibabaAlihouseStoreCheckAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseStoreCheckAPIRequest 将 AlibabaAlihouseStoreCheckAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseStoreCheckAPIRequest(v *AlibabaAlihouseStoreCheckAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseStoreCheckAPIRequest.Put(v)
 }

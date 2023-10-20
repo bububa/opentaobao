@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.kyt.getcodebaseinfo
 //
 // 提供根据码查询码基本信息接口
-func AlibabaAlihealthDrugKytGetcodebaseinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytGetcodebaseinfoAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytGetcodebaseinfoAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytGetcodebaseinfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugKytGetcodebaseinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytGetcodebaseinfoAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytGetcodebaseinfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // CardTemplateOpenInfo 结构体
 type CardTemplateOpenInfo struct {
 	// 储值门店列表
@@ -78,4 +82,58 @@ type CardTemplateOpenInfo struct {
 	WxCardSwitch bool `json:"wx_card_switch,omitempty" xml:"wx_card_switch,omitempty"`
 	// 是否已经制卡
 	Publish bool `json:"publish,omitempty" xml:"publish,omitempty"`
+}
+
+var poolCardTemplateOpenInfo = sync.Pool{
+	New: func() any {
+		return new(CardTemplateOpenInfo)
+	},
+}
+
+// GetCardTemplateOpenInfo() 从对象池中获取CardTemplateOpenInfo
+func GetCardTemplateOpenInfo() *CardTemplateOpenInfo {
+	return poolCardTemplateOpenInfo.Get().(*CardTemplateOpenInfo)
+}
+
+// ReleaseCardTemplateOpenInfo 释放CardTemplateOpenInfo
+func ReleaseCardTemplateOpenInfo(v *CardTemplateOpenInfo) {
+	v.RechargeShopIds = v.RechargeShopIds[:0]
+	v.SellShopIds = v.SellShopIds[:0]
+	v.UseShopIds = v.UseShopIds[:0]
+	v.Vouchers = v.Vouchers[:0]
+	v.OutRechargeShopIds = v.OutRechargeShopIds[:0]
+	v.OutSellShopIds = v.OutSellShopIds[:0]
+	v.OutUseShopIds = v.OutUseShopIds[:0]
+	v.CardTemplateId = ""
+	v.CardType = ""
+	v.CreateBy = ""
+	v.ExpireType = ""
+	v.ExpireValue = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.MenuId = ""
+	v.MenuLimitType = ""
+	v.Name = ""
+	v.OptPlanId = ""
+	v.SellShopGroupId = ""
+	v.StartexpireType = ""
+	v.Status = ""
+	v.UpdateBy = ""
+	v.UseLimitType = ""
+	v.ExtInfo = nil
+	v.PhyCardFeeAmount = 0
+	v.PreRechargeAmount = 0
+	v.RechargeRuleOpenInfo = nil
+	v.SellPrice = 0
+	v.WxCardExt = nil
+	v.Deleted = false
+	v.MenuSwitch = false
+	v.OpenGiftSwitch = false
+	v.PhyCardFeeBack = false
+	v.PhyCardFeeSwitch = false
+	v.RechargeClear = false
+	v.RechargeSwitch = false
+	v.WxCardSwitch = false
+	v.Publish = false
+	poolCardTemplateOpenInfo.Put(v)
 }

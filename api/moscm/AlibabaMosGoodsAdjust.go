@@ -9,11 +9,6 @@ import (
 // alibaba.mos.goods.adjust
 //
 // 库存调整接口
-func AlibabaMosGoodsAdjust(clt *core.SDKClient, req *moscm.AlibabaMosGoodsAdjustAPIRequest, session string) (*moscm.AlibabaMosGoodsAdjustAPIResponse, error) {
-	var resp moscm.AlibabaMosGoodsAdjustAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMosGoodsAdjust(clt *core.SDKClient, req *moscm.AlibabaMosGoodsAdjustAPIRequest, resp *moscm.AlibabaMosGoodsAdjustAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

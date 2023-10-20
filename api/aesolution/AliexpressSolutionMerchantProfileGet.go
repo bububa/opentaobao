@@ -9,11 +9,6 @@ import (
 // aliexpress.solution.merchant.profile.get
 //
 // API for oversea sellers to obtain the normal information, e.g. store id, registration country code.
-func AliexpressSolutionMerchantProfileGet(clt *core.SDKClient, req *aesolution.AliexpressSolutionMerchantProfileGetAPIRequest, session string) (*aesolution.AliexpressSolutionMerchantProfileGetAPIResponse, error) {
-	var resp aesolution.AliexpressSolutionMerchantProfileGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressSolutionMerchantProfileGet(clt *core.SDKClient, req *aesolution.AliexpressSolutionMerchantProfileGetAPIRequest, resp *aesolution.AliexpressSolutionMerchantProfileGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

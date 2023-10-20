@@ -2,6 +2,7 @@ package alitripbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBpCouponinfoSyncAPIRequest struct {
 // NewAlitripBpCouponinfoSyncRequest 初始化AlitripBpCouponinfoSyncAPIRequest对象
 func NewAlitripBpCouponinfoSyncRequest() *AlitripBpCouponinfoSyncAPIRequest {
 	return &AlitripBpCouponinfoSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBpCouponinfoSyncAPIRequest) Reset() {
+	r._paramCouponDataRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBpCouponinfoSyncAPIRequest) SetParamCouponDataRequest(_paramCoup
 // GetParamCouponDataRequest ParamCouponDataRequest Getter
 func (r AlitripBpCouponinfoSyncAPIRequest) GetParamCouponDataRequest() *CouponDataRequest {
 	return r._paramCouponDataRequest
+}
+
+var poolAlitripBpCouponinfoSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBpCouponinfoSyncRequest()
+	},
+}
+
+// GetAlitripBpCouponinfoSyncRequest 从 sync.Pool 获取 AlitripBpCouponinfoSyncAPIRequest
+func GetAlitripBpCouponinfoSyncAPIRequest() *AlitripBpCouponinfoSyncAPIRequest {
+	return poolAlitripBpCouponinfoSyncAPIRequest.Get().(*AlitripBpCouponinfoSyncAPIRequest)
+}
+
+// ReleaseAlitripBpCouponinfoSyncAPIRequest 将 AlitripBpCouponinfoSyncAPIRequest 放入 sync.Pool
+func ReleaseAlitripBpCouponinfoSyncAPIRequest(v *AlitripBpCouponinfoSyncAPIRequest) {
+	v.Reset()
+	poolAlitripBpCouponinfoSyncAPIRequest.Put(v)
 }

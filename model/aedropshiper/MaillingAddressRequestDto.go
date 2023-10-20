@@ -1,5 +1,9 @@
 package aedropshiper
 
+import (
+	"sync"
+)
+
 // MaillingAddressRequestDto 结构体
 type MaillingAddressRequestDto struct {
 	// 地址信息
@@ -46,4 +50,42 @@ type MaillingAddressRequestDto struct {
 	TaxCompany string `json:"tax_company,omitempty" xml:"tax_company,omitempty"`
 	// 地址树ID
 	LocationTreeAddressId string `json:"location_tree_address_id,omitempty" xml:"location_tree_address_id,omitempty"`
+}
+
+var poolMaillingAddressRequestDto = sync.Pool{
+	New: func() any {
+		return new(MaillingAddressRequestDto)
+	},
+}
+
+// GetMaillingAddressRequestDto() 从对象池中获取MaillingAddressRequestDto
+func GetMaillingAddressRequestDto() *MaillingAddressRequestDto {
+	return poolMaillingAddressRequestDto.Get().(*MaillingAddressRequestDto)
+}
+
+// ReleaseMaillingAddressRequestDto 释放MaillingAddressRequestDto
+func ReleaseMaillingAddressRequestDto(v *MaillingAddressRequestDto) {
+	v.Address = ""
+	v.Address2 = ""
+	v.City = ""
+	v.ContactPerson = ""
+	v.Country = ""
+	v.Cpf = ""
+	v.FullName = ""
+	v.Locale = ""
+	v.MobileNo = ""
+	v.PassportNo = ""
+	v.PassportNoDate = ""
+	v.PassportOrganization = ""
+	v.PhoneCountry = ""
+	v.Province = ""
+	v.TaxNumber = ""
+	v.Zip = ""
+	v.RutNo = ""
+	v.ForeignerPassportNo = ""
+	v.IsForeigner = ""
+	v.VatNo = ""
+	v.TaxCompany = ""
+	v.LocationTreeAddressId = ""
+	poolMaillingAddressRequestDto.Put(v)
 }

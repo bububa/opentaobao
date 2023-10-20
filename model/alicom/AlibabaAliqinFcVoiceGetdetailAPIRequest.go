@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAliqinFcVoiceGetdetailAPIRequest struct {
 // NewAlibabaAliqinFcVoiceGetdetailRequest 初始化AlibabaAliqinFcVoiceGetdetailAPIRequest对象
 func NewAlibabaAliqinFcVoiceGetdetailRequest() *AlibabaAliqinFcVoiceGetdetailAPIRequest {
 	return &AlibabaAliqinFcVoiceGetdetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) Reset() {
+	r._callId = ""
+	r._queryDate = 0
+	r._prodId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) SetProdId(_prodId int64) error
 // GetProdId ProdId Getter
 func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetProdId() int64 {
 	return r._prodId
+}
+
+var poolAlibabaAliqinFcVoiceGetdetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFcVoiceGetdetailRequest()
+	},
+}
+
+// GetAlibabaAliqinFcVoiceGetdetailRequest 从 sync.Pool 获取 AlibabaAliqinFcVoiceGetdetailAPIRequest
+func GetAlibabaAliqinFcVoiceGetdetailAPIRequest() *AlibabaAliqinFcVoiceGetdetailAPIRequest {
+	return poolAlibabaAliqinFcVoiceGetdetailAPIRequest.Get().(*AlibabaAliqinFcVoiceGetdetailAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFcVoiceGetdetailAPIRequest 将 AlibabaAliqinFcVoiceGetdetailAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFcVoiceGetdetailAPIRequest(v *AlibabaAliqinFcVoiceGetdetailAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFcVoiceGetdetailAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpCrowdFindlistAPIRequest struct {
 // NewTaobaoUniversalbpCrowdFindlistRequest 初始化TaobaoUniversalbpCrowdFindlistAPIRequest对象
 func NewTaobaoUniversalbpCrowdFindlistRequest() *TaobaoUniversalbpCrowdFindlistAPIRequest {
 	return &TaobaoUniversalbpCrowdFindlistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpCrowdFindlistAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._dataList = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpCrowdFindlistAPIRequest) SetDataList(_dataList *CrowdB
 // GetDataList DataList Getter
 func (r TaobaoUniversalbpCrowdFindlistAPIRequest) GetDataList() *CrowdBindQueryVo {
 	return r._dataList
+}
+
+var poolTaobaoUniversalbpCrowdFindlistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpCrowdFindlistRequest()
+	},
+}
+
+// GetTaobaoUniversalbpCrowdFindlistRequest 从 sync.Pool 获取 TaobaoUniversalbpCrowdFindlistAPIRequest
+func GetTaobaoUniversalbpCrowdFindlistAPIRequest() *TaobaoUniversalbpCrowdFindlistAPIRequest {
+	return poolTaobaoUniversalbpCrowdFindlistAPIRequest.Get().(*TaobaoUniversalbpCrowdFindlistAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpCrowdFindlistAPIRequest 将 TaobaoUniversalbpCrowdFindlistAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpCrowdFindlistAPIRequest(v *TaobaoUniversalbpCrowdFindlistAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpCrowdFindlistAPIRequest.Put(v)
 }

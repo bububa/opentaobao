@@ -9,11 +9,6 @@ import (
 // tmall.serivcecenter.servicerorder.insurance.callback
 //
 // 服务商回传保单信息
-func TmallSerivcecenterServicerorderInsuranceCallback(clt *core.SDKClient, req *tmallsc.TmallSerivcecenterServicerorderInsuranceCallbackAPIRequest, session string) (*tmallsc.TmallSerivcecenterServicerorderInsuranceCallbackAPIResponse, error) {
-	var resp tmallsc.TmallSerivcecenterServicerorderInsuranceCallbackAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallSerivcecenterServicerorderInsuranceCallback(clt *core.SDKClient, req *tmallsc.TmallSerivcecenterServicerorderInsuranceCallbackAPIRequest, resp *tmallsc.TmallSerivcecenterServicerorderInsuranceCallbackAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package xiamicontent
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type XiamiContentAlbumInfoGetAPIResponse struct {
 	XiamiContentAlbumInfoGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *XiamiContentAlbumInfoGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.XiamiContentAlbumInfoGetAPIResponseModel).Reset()
+}
+
 // XiamiContentAlbumInfoGetAPIResponseModel is 获取专辑信息 成功返回结果
 type XiamiContentAlbumInfoGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"xiami_content_album_info_get_response"`
@@ -24,4 +31,28 @@ type XiamiContentAlbumInfoGetAPIResponseModel struct {
 	AlbumList []AlbumDto `json:"album_list,omitempty" xml:"album_list>album_dto,omitempty"`
 	// 返回结果
 	ResultCode *ResultCode `json:"result_code,omitempty" xml:"result_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *XiamiContentAlbumInfoGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.AlbumList = m.AlbumList[:0]
+	m.ResultCode = nil
+}
+
+var poolXiamiContentAlbumInfoGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(XiamiContentAlbumInfoGetAPIResponse)
+	},
+}
+
+// GetXiamiContentAlbumInfoGetAPIResponse 从 sync.Pool 获取 XiamiContentAlbumInfoGetAPIResponse
+func GetXiamiContentAlbumInfoGetAPIResponse() *XiamiContentAlbumInfoGetAPIResponse {
+	return poolXiamiContentAlbumInfoGetAPIResponse.Get().(*XiamiContentAlbumInfoGetAPIResponse)
+}
+
+// ReleaseXiamiContentAlbumInfoGetAPIResponse 将 XiamiContentAlbumInfoGetAPIResponse 保存到 sync.Pool
+func ReleaseXiamiContentAlbumInfoGetAPIResponse(v *XiamiContentAlbumInfoGetAPIResponse) {
+	v.Reset()
+	poolXiamiContentAlbumInfoGetAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package icburfq
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaIcbuAnnexUploadAPIRequest struct {
 // NewAlibabaIcbuAnnexUploadRequest 初始化AlibabaIcbuAnnexUploadAPIRequest对象
 func NewAlibabaIcbuAnnexUploadRequest() *AlibabaIcbuAnnexUploadAPIRequest {
 	return &AlibabaIcbuAnnexUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIcbuAnnexUploadAPIRequest) Reset() {
+	r._fileName = ""
+	r._source = ""
+	r._fileInputStreamBytes = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaIcbuAnnexUploadAPIRequest) SetFileInputStreamBytes(_fileInputStr
 // GetFileInputStreamBytes FileInputStreamBytes Getter
 func (r AlibabaIcbuAnnexUploadAPIRequest) GetFileInputStreamBytes() *model.File {
 	return r._fileInputStreamBytes
+}
+
+var poolAlibabaIcbuAnnexUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIcbuAnnexUploadRequest()
+	},
+}
+
+// GetAlibabaIcbuAnnexUploadRequest 从 sync.Pool 获取 AlibabaIcbuAnnexUploadAPIRequest
+func GetAlibabaIcbuAnnexUploadAPIRequest() *AlibabaIcbuAnnexUploadAPIRequest {
+	return poolAlibabaIcbuAnnexUploadAPIRequest.Get().(*AlibabaIcbuAnnexUploadAPIRequest)
+}
+
+// ReleaseAlibabaIcbuAnnexUploadAPIRequest 将 AlibabaIcbuAnnexUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIcbuAnnexUploadAPIRequest(v *AlibabaIcbuAnnexUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaIcbuAnnexUploadAPIRequest.Put(v)
 }

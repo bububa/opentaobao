@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // TaobaoAlitripAxinTransRefundCreateResult 结构体
 type TaobaoAlitripAxinTransRefundCreateResult struct {
 	// 错误信息
@@ -14,4 +18,26 @@ type TaobaoAlitripAxinTransRefundCreateResult struct {
 	NeedRetry bool `json:"need_retry,omitempty" xml:"need_retry,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoAlitripAxinTransRefundCreateResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripAxinTransRefundCreateResult)
+	},
+}
+
+// GetTaobaoAlitripAxinTransRefundCreateResult() 从对象池中获取TaobaoAlitripAxinTransRefundCreateResult
+func GetTaobaoAlitripAxinTransRefundCreateResult() *TaobaoAlitripAxinTransRefundCreateResult {
+	return poolTaobaoAlitripAxinTransRefundCreateResult.Get().(*TaobaoAlitripAxinTransRefundCreateResult)
+}
+
+// ReleaseTaobaoAlitripAxinTransRefundCreateResult 释放TaobaoAlitripAxinTransRefundCreateResult
+func ReleaseTaobaoAlitripAxinTransRefundCreateResult(v *TaobaoAlitripAxinTransRefundCreateResult) {
+	v.ErrorMsg = ""
+	v.ErrorCode = ""
+	v.InfoMsg = ""
+	v.Data = nil
+	v.NeedRetry = false
+	v.Success = false
+	poolTaobaoAlitripAxinTransRefundCreateResult.Put(v)
 }

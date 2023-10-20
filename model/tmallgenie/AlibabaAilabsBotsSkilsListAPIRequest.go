@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAilabsBotsSkilsListAPIRequest struct {
 // NewAlibabaAilabsBotsSkilsListRequest 初始化AlibabaAilabsBotsSkilsListAPIRequest对象
 func NewAlibabaAilabsBotsSkilsListRequest() *AlibabaAilabsBotsSkilsListAPIRequest {
 	return &AlibabaAilabsBotsSkilsListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsBotsSkilsListAPIRequest) Reset() {
+	r._pageIndex = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAilabsBotsSkilsListAPIRequest) SetPageSize(_pageSize int64) erro
 // GetPageSize PageSize Getter
 func (r AlibabaAilabsBotsSkilsListAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaAilabsBotsSkilsListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsBotsSkilsListRequest()
+	},
+}
+
+// GetAlibabaAilabsBotsSkilsListRequest 从 sync.Pool 获取 AlibabaAilabsBotsSkilsListAPIRequest
+func GetAlibabaAilabsBotsSkilsListAPIRequest() *AlibabaAilabsBotsSkilsListAPIRequest {
+	return poolAlibabaAilabsBotsSkilsListAPIRequest.Get().(*AlibabaAilabsBotsSkilsListAPIRequest)
+}
+
+// ReleaseAlibabaAilabsBotsSkilsListAPIRequest 将 AlibabaAilabsBotsSkilsListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsBotsSkilsListAPIRequest(v *AlibabaAilabsBotsSkilsListAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsBotsSkilsListAPIRequest.Put(v)
 }

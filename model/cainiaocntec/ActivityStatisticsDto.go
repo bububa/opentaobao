@@ -1,5 +1,9 @@
 package cainiaocntec
 
+import (
+	"sync"
+)
+
 // ActivityStatisticsDto 结构体
 type ActivityStatisticsDto struct {
 	// 箱规
@@ -28,4 +32,33 @@ type ActivityStatisticsDto struct {
 	MktActivityType string `json:"mkt_activity_type,omitempty" xml:"mkt_activity_type,omitempty"`
 	// 预计到货时间
 	PredictArrivalTime string `json:"predict_arrival_time,omitempty" xml:"predict_arrival_time,omitempty"`
+}
+
+var poolActivityStatisticsDto = sync.Pool{
+	New: func() any {
+		return new(ActivityStatisticsDto)
+	},
+}
+
+// GetActivityStatisticsDto() 从对象池中获取ActivityStatisticsDto
+func GetActivityStatisticsDto() *ActivityStatisticsDto {
+	return poolActivityStatisticsDto.Get().(*ActivityStatisticsDto)
+}
+
+// ReleaseActivityStatisticsDto 释放ActivityStatisticsDto
+func ReleaseActivityStatisticsDto(v *ActivityStatisticsDto) {
+	v.InventoryCoefficient = ""
+	v.TotoalPrice = ""
+	v.BuyAmount = ""
+	v.Price = ""
+	v.Title = ""
+	v.ProductCode = ""
+	v.StationName = ""
+	v.StationId = ""
+	v.StoreName = ""
+	v.StoreId = ""
+	v.ActivityName = ""
+	v.MktActivityType = ""
+	v.PredictArrivalTime = ""
+	poolActivityStatisticsDto.Put(v)
 }

@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoWaybillIiSearchAPIRequest struct {
 // NewCainiaoWaybillIiSearchRequest 初始化CainiaoWaybillIiSearchAPIRequest对象
 func NewCainiaoWaybillIiSearchRequest() *CainiaoWaybillIiSearchAPIRequest {
 	return &CainiaoWaybillIiSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoWaybillIiSearchAPIRequest) Reset() {
+	r._cpCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoWaybillIiSearchAPIRequest) SetCpCode(_cpCode string) error {
 // GetCpCode CpCode Getter
 func (r CainiaoWaybillIiSearchAPIRequest) GetCpCode() string {
 	return r._cpCode
+}
+
+var poolCainiaoWaybillIiSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoWaybillIiSearchRequest()
+	},
+}
+
+// GetCainiaoWaybillIiSearchRequest 从 sync.Pool 获取 CainiaoWaybillIiSearchAPIRequest
+func GetCainiaoWaybillIiSearchAPIRequest() *CainiaoWaybillIiSearchAPIRequest {
+	return poolCainiaoWaybillIiSearchAPIRequest.Get().(*CainiaoWaybillIiSearchAPIRequest)
+}
+
+// ReleaseCainiaoWaybillIiSearchAPIRequest 将 CainiaoWaybillIiSearchAPIRequest 放入 sync.Pool
+func ReleaseCainiaoWaybillIiSearchAPIRequest(v *CainiaoWaybillIiSearchAPIRequest) {
+	v.Reset()
+	poolCainiaoWaybillIiSearchAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // CaseFieldActivityDto 结构体
 type CaseFieldActivityDto struct {
 	// 外部活动ID
@@ -40,4 +44,39 @@ type CaseFieldActivityDto struct {
 	IsOfficialShow int64 `json:"is_official_show,omitempty" xml:"is_official_show,omitempty"`
 	// 是否签署免责声明
 	IsSignDisclaimer int64 `json:"is_sign_disclaimer,omitempty" xml:"is_sign_disclaimer,omitempty"`
+}
+
+var poolCaseFieldActivityDto = sync.Pool{
+	New: func() any {
+		return new(CaseFieldActivityDto)
+	},
+}
+
+// GetCaseFieldActivityDto() 从对象池中获取CaseFieldActivityDto
+func GetCaseFieldActivityDto() *CaseFieldActivityDto {
+	return poolCaseFieldActivityDto.Get().(*CaseFieldActivityDto)
+}
+
+// ReleaseCaseFieldActivityDto 释放CaseFieldActivityDto
+func ReleaseCaseFieldActivityDto(v *CaseFieldActivityDto) {
+	v.OuterActivityId = ""
+	v.ActivityName = ""
+	v.ActivitySubName = ""
+	v.ActivityRemark = ""
+	v.ActivityRule = ""
+	v.ActivityBeginTime = ""
+	v.ActivityEndTime = ""
+	v.SignUpBeginTime = ""
+	v.SignUpEndTime = ""
+	v.HoldBeginTime = ""
+	v.HoldEndTime = ""
+	v.BannerUrls = ""
+	v.ContentUrls = ""
+	v.Contactor = ""
+	v.ContactorPhone = ""
+	v.ContactorEmail = ""
+	v.IsOnline = 0
+	v.IsOfficialShow = 0
+	v.IsSignDisclaimer = 0
+	poolCaseFieldActivityDto.Put(v)
 }

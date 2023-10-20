@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.isv.wms.orderprocess.batch.report
 //
 // 仓作业信息批量同步
-func AlibabaDchainIsvWmsOrderprocessBatchReport(clt *core.SDKClient, req *ascp.AlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest, session string) (*ascp.AlibabaDchainIsvWmsOrderprocessBatchReportAPIResponse, error) {
-	var resp ascp.AlibabaDchainIsvWmsOrderprocessBatchReportAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainIsvWmsOrderprocessBatchReport(clt *core.SDKClient, req *ascp.AlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest, resp *ascp.AlibabaDchainIsvWmsOrderprocessBatchReportAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

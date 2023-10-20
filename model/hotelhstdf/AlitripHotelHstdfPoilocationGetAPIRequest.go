@@ -2,6 +2,7 @@ package hotelhstdf
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripHotelHstdfPoilocationGetAPIRequest struct {
 // NewAlitripHotelHstdfPoilocationGetRequest 初始化AlitripHotelHstdfPoilocationGetAPIRequest对象
 func NewAlitripHotelHstdfPoilocationGetRequest() *AlitripHotelHstdfPoilocationGetAPIRequest {
 	return &AlitripHotelHstdfPoilocationGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripHotelHstdfPoilocationGetAPIRequest) Reset() {
+	r._paramGetByTrdiDivisionIdParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripHotelHstdfPoilocationGetAPIRequest) SetParamGetByTrdiDivisionIdP
 // GetParamGetByTrdiDivisionIdParam ParamGetByTrdiDivisionIdParam Getter
 func (r AlitripHotelHstdfPoilocationGetAPIRequest) GetParamGetByTrdiDivisionIdParam() *GetByTrdiDivisionIdParam {
 	return r._paramGetByTrdiDivisionIdParam
+}
+
+var poolAlitripHotelHstdfPoilocationGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripHotelHstdfPoilocationGetRequest()
+	},
+}
+
+// GetAlitripHotelHstdfPoilocationGetRequest 从 sync.Pool 获取 AlitripHotelHstdfPoilocationGetAPIRequest
+func GetAlitripHotelHstdfPoilocationGetAPIRequest() *AlitripHotelHstdfPoilocationGetAPIRequest {
+	return poolAlitripHotelHstdfPoilocationGetAPIRequest.Get().(*AlitripHotelHstdfPoilocationGetAPIRequest)
+}
+
+// ReleaseAlitripHotelHstdfPoilocationGetAPIRequest 将 AlitripHotelHstdfPoilocationGetAPIRequest 放入 sync.Pool
+func ReleaseAlitripHotelHstdfPoilocationGetAPIRequest(v *AlitripHotelHstdfPoilocationGetAPIRequest) {
+	v.Reset()
+	poolAlitripHotelHstdfPoilocationGetAPIRequest.Put(v)
 }

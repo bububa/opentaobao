@@ -1,5 +1,9 @@
 package eleenterpriserestaurant
 
+import (
+	"sync"
+)
+
 // DataList 结构体
 type DataList struct {
 	// 食物信息
@@ -50,4 +54,44 @@ type DataList struct {
 	IsBookable int64 `json:"is_bookable,omitempty" xml:"is_bookable,omitempty"`
 	// 餐厅整体营业状态：1 餐厅营业中，2餐厅关闭，3 餐厅网路不稳定，4 餐厅休息中，5 直接说预定，6 只接受电话预定，7 餐厅休假中
 	TotalStatus int64 `json:"total_status,omitempty" xml:"total_status,omitempty"`
+}
+
+var poolDataList = sync.Pool{
+	New: func() any {
+		return new(DataList)
+	},
+}
+
+// GetDataList() 从对象池中获取DataList
+func GetDataList() *DataList {
+	return poolDataList.Get().(*DataList)
+}
+
+// ReleaseDataList 释放DataList
+func ReleaseDataList(v *DataList) {
+	v.Foods = v.Foods[:0]
+	v.Activities = v.Activities[:0]
+	v.Distance = ""
+	v.Rating = ""
+	v.OnlyRestaurantCode = ""
+	v.PromotionInfo = ""
+	v.AgentFee = ""
+	v.RestaurantName = ""
+	v.ImageUrl = ""
+	v.DeliverAmount = ""
+	v.ErestaurantId = ""
+	v.AverageCost = ""
+	v.SerialNumber = ""
+	v.Restaurant = nil
+	v.IsInsurance = 0
+	v.IsNew = 0
+	v.RecentOrderNum = 0
+	v.DeliverSpent = 0
+	v.IsOpen = 0
+	v.IsDistRst = 0
+	v.Invoice = 0
+	v.IsPremium = 0
+	v.IsBookable = 0
+	v.TotalStatus = 0
+	poolDataList.Put(v)
 }

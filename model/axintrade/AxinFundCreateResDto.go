@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // AxinFundCreateResDto 结构体
 type AxinFundCreateResDto struct {
 	// 支付宝返回的拼接串
@@ -18,4 +22,28 @@ type AxinFundCreateResDto struct {
 	TotalAmount string `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
 	// 该交易在支付宝系统中的交易流水号
 	TradeNo string `json:"trade_no,omitempty" xml:"trade_no,omitempty"`
+}
+
+var poolAxinFundCreateResDto = sync.Pool{
+	New: func() any {
+		return new(AxinFundCreateResDto)
+	},
+}
+
+// GetAxinFundCreateResDto() 从对象池中获取AxinFundCreateResDto
+func GetAxinFundCreateResDto() *AxinFundCreateResDto {
+	return poolAxinFundCreateResDto.Get().(*AxinFundCreateResDto)
+}
+
+// ReleaseAxinFundCreateResDto 释放AxinFundCreateResDto
+func ReleaseAxinFundCreateResDto(v *AxinFundCreateResDto) {
+	v.AlipayBody = ""
+	v.AppId = ""
+	v.FundId = ""
+	v.MerchantOrderNo = ""
+	v.OutTradeNo = ""
+	v.SellerId = ""
+	v.TotalAmount = ""
+	v.TradeNo = ""
+	poolAxinFundCreateResDto.Put(v)
 }

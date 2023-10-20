@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.casefield.activity.project.submit
 //
 // 案场活动楼盘维护
-func AlibabaAlihouseNewhomeCasefieldActivityProjectSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeCasefieldActivityProjectSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

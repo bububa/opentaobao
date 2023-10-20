@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoSimbaInsightCatsforecastnewGetAPIRequest struct {
 // NewTaobaoSimbaInsightCatsforecastnewGetRequest 初始化TaobaoSimbaInsightCatsforecastnewGetAPIRequest对象
 func NewTaobaoSimbaInsightCatsforecastnewGetRequest() *TaobaoSimbaInsightCatsforecastnewGetAPIRequest {
 	return &TaobaoSimbaInsightCatsforecastnewGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaInsightCatsforecastnewGetAPIRequest) Reset() {
+	r._bidwordList = r._bidwordList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoSimbaInsightCatsforecastnewGetAPIRequest) SetBidwordList(_bidword
 // GetBidwordList BidwordList Getter
 func (r TaobaoSimbaInsightCatsforecastnewGetAPIRequest) GetBidwordList() []string {
 	return r._bidwordList
+}
+
+var poolTaobaoSimbaInsightCatsforecastnewGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaInsightCatsforecastnewGetRequest()
+	},
+}
+
+// GetTaobaoSimbaInsightCatsforecastnewGetRequest 从 sync.Pool 获取 TaobaoSimbaInsightCatsforecastnewGetAPIRequest
+func GetTaobaoSimbaInsightCatsforecastnewGetAPIRequest() *TaobaoSimbaInsightCatsforecastnewGetAPIRequest {
+	return poolTaobaoSimbaInsightCatsforecastnewGetAPIRequest.Get().(*TaobaoSimbaInsightCatsforecastnewGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaInsightCatsforecastnewGetAPIRequest 将 TaobaoSimbaInsightCatsforecastnewGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaInsightCatsforecastnewGetAPIRequest(v *TaobaoSimbaInsightCatsforecastnewGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaInsightCatsforecastnewGetAPIRequest.Put(v)
 }

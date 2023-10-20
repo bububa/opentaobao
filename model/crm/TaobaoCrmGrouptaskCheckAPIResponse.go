@@ -2,6 +2,7 @@ package crm
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoCrmGrouptaskCheckAPIResponse struct {
 	TaobaoCrmGrouptaskCheckAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoCrmGrouptaskCheckAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCrmGrouptaskCheckAPIResponseModel).Reset()
+}
+
 // TaobaoCrmGrouptaskCheckAPIResponseModel is 查询分组任务是否完成 成功返回结果
 type TaobaoCrmGrouptaskCheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"crm_grouptask_check_response"`
@@ -22,4 +29,27 @@ type TaobaoCrmGrouptaskCheckAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 异步任务是否完成，true表示完成
 	IsFinished bool `json:"is_finished,omitempty" xml:"is_finished,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCrmGrouptaskCheckAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.IsFinished = false
+}
+
+var poolTaobaoCrmGrouptaskCheckAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCrmGrouptaskCheckAPIResponse)
+	},
+}
+
+// GetTaobaoCrmGrouptaskCheckAPIResponse 从 sync.Pool 获取 TaobaoCrmGrouptaskCheckAPIResponse
+func GetTaobaoCrmGrouptaskCheckAPIResponse() *TaobaoCrmGrouptaskCheckAPIResponse {
+	return poolTaobaoCrmGrouptaskCheckAPIResponse.Get().(*TaobaoCrmGrouptaskCheckAPIResponse)
+}
+
+// ReleaseTaobaoCrmGrouptaskCheckAPIResponse 将 TaobaoCrmGrouptaskCheckAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCrmGrouptaskCheckAPIResponse(v *TaobaoCrmGrouptaskCheckAPIResponse) {
+	v.Reset()
+	poolTaobaoCrmGrouptaskCheckAPIResponse.Put(v)
 }

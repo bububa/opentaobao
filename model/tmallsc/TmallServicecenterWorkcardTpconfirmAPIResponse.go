@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallServicecenterWorkcardTpconfirmAPIResponse struct {
 	TmallServicecenterWorkcardTpconfirmAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallServicecenterWorkcardTpconfirmAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServicecenterWorkcardTpconfirmAPIResponseModel).Reset()
+}
+
 // TmallServicecenterWorkcardTpconfirmAPIResponseModel is 确认服务完成 成功返回结果
 type TmallServicecenterWorkcardTpconfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_workcard_tpconfirm_response"`
@@ -26,4 +33,29 @@ type TmallServicecenterWorkcardTpconfirmAPIResponseModel struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterWorkcardTpconfirmAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.IsSuccess = false
+}
+
+var poolTmallServicecenterWorkcardTpconfirmAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterWorkcardTpconfirmAPIResponse)
+	},
+}
+
+// GetTmallServicecenterWorkcardTpconfirmAPIResponse 从 sync.Pool 获取 TmallServicecenterWorkcardTpconfirmAPIResponse
+func GetTmallServicecenterWorkcardTpconfirmAPIResponse() *TmallServicecenterWorkcardTpconfirmAPIResponse {
+	return poolTmallServicecenterWorkcardTpconfirmAPIResponse.Get().(*TmallServicecenterWorkcardTpconfirmAPIResponse)
+}
+
+// ReleaseTmallServicecenterWorkcardTpconfirmAPIResponse 将 TmallServicecenterWorkcardTpconfirmAPIResponse 保存到 sync.Pool
+func ReleaseTmallServicecenterWorkcardTpconfirmAPIResponse(v *TmallServicecenterWorkcardTpconfirmAPIResponse) {
+	v.Reset()
+	poolTmallServicecenterWorkcardTpconfirmAPIResponse.Put(v)
 }

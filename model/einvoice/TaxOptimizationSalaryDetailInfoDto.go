@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // TaxOptimizationSalaryDetailInfoDto 结构体
 type TaxOptimizationSalaryDetailInfoDto struct {
 	// 承包商编码
@@ -12,4 +16,25 @@ type TaxOptimizationSalaryDetailInfoDto struct {
 	IdentificationInBelongingEmployer string `json:"identification_in_belonging_employer,omitempty" xml:"identification_in_belonging_employer,omitempty"`
 	// 明细金额
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
+}
+
+var poolTaxOptimizationSalaryDetailInfoDto = sync.Pool{
+	New: func() any {
+		return new(TaxOptimizationSalaryDetailInfoDto)
+	},
+}
+
+// GetTaxOptimizationSalaryDetailInfoDto() 从对象池中获取TaxOptimizationSalaryDetailInfoDto
+func GetTaxOptimizationSalaryDetailInfoDto() *TaxOptimizationSalaryDetailInfoDto {
+	return poolTaxOptimizationSalaryDetailInfoDto.Get().(*TaxOptimizationSalaryDetailInfoDto)
+}
+
+// ReleaseTaxOptimizationSalaryDetailInfoDto 释放TaxOptimizationSalaryDetailInfoDto
+func ReleaseTaxOptimizationSalaryDetailInfoDto(v *TaxOptimizationSalaryDetailInfoDto) {
+	v.ContractorCode = ""
+	v.CreateTime = ""
+	v.DetailId = ""
+	v.IdentificationInBelongingEmployer = ""
+	v.Amount = 0
+	poolTaxOptimizationSalaryDetailInfoDto.Put(v)
 }

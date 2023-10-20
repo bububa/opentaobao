@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // DistributeTradeMsgModel 结构体
 type DistributeTradeMsgModel struct {
 	// 业务来源
@@ -16,4 +20,27 @@ type DistributeTradeMsgModel struct {
 	SkuId string `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 要办理的商品ID
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+}
+
+var poolDistributeTradeMsgModel = sync.Pool{
+	New: func() any {
+		return new(DistributeTradeMsgModel)
+	},
+}
+
+// GetDistributeTradeMsgModel() 从对象池中获取DistributeTradeMsgModel
+func GetDistributeTradeMsgModel() *DistributeTradeMsgModel {
+	return poolDistributeTradeMsgModel.Get().(*DistributeTradeMsgModel)
+}
+
+// ReleaseDistributeTradeMsgModel 释放DistributeTradeMsgModel
+func ReleaseDistributeTradeMsgModel(v *DistributeTradeMsgModel) {
+	v.Source = ""
+	v.WtBizType = ""
+	v.Account = ""
+	v.WttParam = ""
+	v.OutOrderId = ""
+	v.SkuId = ""
+	v.ItemId = 0
+	poolDistributeTradeMsgModel.Put(v)
 }

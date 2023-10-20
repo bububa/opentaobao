@@ -1,5 +1,9 @@
 package filmtfavatar
 
+import (
+	"sync"
+)
+
 // TaobaoFilmTfavatarBillSalePrintQueryResult 结构体
 type TaobaoFilmTfavatarBillSalePrintQueryResult struct {
 	// 返回码
@@ -10,4 +14,24 @@ type TaobaoFilmTfavatarBillSalePrintQueryResult struct {
 	ReturnMessage string `json:"return_message,omitempty" xml:"return_message,omitempty"`
 	// 返回参数
 	ReturnValue *ReturnValue `json:"return_value,omitempty" xml:"return_value,omitempty"`
+}
+
+var poolTaobaoFilmTfavatarBillSalePrintQueryResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoFilmTfavatarBillSalePrintQueryResult)
+	},
+}
+
+// GetTaobaoFilmTfavatarBillSalePrintQueryResult() 从对象池中获取TaobaoFilmTfavatarBillSalePrintQueryResult
+func GetTaobaoFilmTfavatarBillSalePrintQueryResult() *TaobaoFilmTfavatarBillSalePrintQueryResult {
+	return poolTaobaoFilmTfavatarBillSalePrintQueryResult.Get().(*TaobaoFilmTfavatarBillSalePrintQueryResult)
+}
+
+// ReleaseTaobaoFilmTfavatarBillSalePrintQueryResult 释放TaobaoFilmTfavatarBillSalePrintQueryResult
+func ReleaseTaobaoFilmTfavatarBillSalePrintQueryResult(v *TaobaoFilmTfavatarBillSalePrintQueryResult) {
+	v.ReturnCode = ""
+	v.RequestId = ""
+	v.ReturnMessage = ""
+	v.ReturnValue = nil
+	poolTaobaoFilmTfavatarBillSalePrintQueryResult.Put(v)
 }

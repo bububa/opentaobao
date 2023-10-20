@@ -2,6 +2,7 @@ package refund
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoRdcAligeniusSendgoodsCancelAPIRequest struct {
 // NewTaobaoRdcAligeniusSendgoodsCancelRequest 初始化TaobaoRdcAligeniusSendgoodsCancelAPIRequest对象
 func NewTaobaoRdcAligeniusSendgoodsCancelRequest() *TaobaoRdcAligeniusSendgoodsCancelAPIRequest {
 	return &TaobaoRdcAligeniusSendgoodsCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRdcAligeniusSendgoodsCancelAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoRdcAligeniusSendgoodsCancelAPIRequest) SetParam(_param *CancelGoo
 // GetParam Param Getter
 func (r TaobaoRdcAligeniusSendgoodsCancelAPIRequest) GetParam() *CancelGoodsDto {
 	return r._param
+}
+
+var poolTaobaoRdcAligeniusSendgoodsCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRdcAligeniusSendgoodsCancelRequest()
+	},
+}
+
+// GetTaobaoRdcAligeniusSendgoodsCancelRequest 从 sync.Pool 获取 TaobaoRdcAligeniusSendgoodsCancelAPIRequest
+func GetTaobaoRdcAligeniusSendgoodsCancelAPIRequest() *TaobaoRdcAligeniusSendgoodsCancelAPIRequest {
+	return poolTaobaoRdcAligeniusSendgoodsCancelAPIRequest.Get().(*TaobaoRdcAligeniusSendgoodsCancelAPIRequest)
+}
+
+// ReleaseTaobaoRdcAligeniusSendgoodsCancelAPIRequest 将 TaobaoRdcAligeniusSendgoodsCancelAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRdcAligeniusSendgoodsCancelAPIRequest(v *TaobaoRdcAligeniusSendgoodsCancelAPIRequest) {
+	v.Reset()
+	poolTaobaoRdcAligeniusSendgoodsCancelAPIRequest.Put(v)
 }

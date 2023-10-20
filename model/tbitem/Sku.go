@@ -1,5 +1,9 @@
 package tbitem
 
+import (
+	"sync"
+)
+
 // Sku 结构体
 type Sku struct {
 	// sku最后修改日期 时间格式：yyyy-MM-dd HH:mm:ss
@@ -32,4 +36,35 @@ type Sku struct {
 	WithHoldQuantity int64 `json:"with_hold_quantity,omitempty" xml:"with_hold_quantity,omitempty"`
 	// skuFeature
 	SkuFeature *SkuFeature `json:"sku_feature,omitempty" xml:"sku_feature,omitempty"`
+}
+
+var poolSku = sync.Pool{
+	New: func() any {
+		return new(Sku)
+	},
+}
+
+// GetSku() 从对象池中获取Sku
+func GetSku() *Sku {
+	return poolSku.Get().(*Sku)
+}
+
+// ReleaseSku 释放Sku
+func ReleaseSku(v *Sku) {
+	v.Modified = ""
+	v.Barcode = ""
+	v.Created = ""
+	v.OuterId = ""
+	v.Price = ""
+	v.Properties = ""
+	v.PropertiesName = ""
+	v.Iid = ""
+	v.Status = ""
+	v.SkuId = 0
+	v.Quantity = 0
+	v.NumIid = 0
+	v.SkuSpecId = 0
+	v.WithHoldQuantity = 0
+	v.SkuFeature = nil
+	poolSku.Put(v)
 }

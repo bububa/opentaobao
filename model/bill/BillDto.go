@@ -1,5 +1,9 @@
 package bill
 
+import (
+	"sync"
+)
+
 // BillDto 结构体
 type BillDto struct {
 	// 修改时间
@@ -42,4 +46,40 @@ type BillDto struct {
 	AccountId int64 `json:"account_id,omitempty" xml:"account_id,omitempty"`
 	// 账单编号
 	Bid int64 `json:"bid,omitempty" xml:"bid,omitempty"`
+}
+
+var poolBillDto = sync.Pool{
+	New: func() any {
+		return new(BillDto)
+	},
+}
+
+// GetBillDto() 从对象池中获取BillDto
+func GetBillDto() *BillDto {
+	return poolBillDto.Get().(*BillDto)
+}
+
+// ReleaseBillDto 释放BillDto
+func ReleaseBillDto(v *BillDto) {
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.OrderId = ""
+	v.BizTime = ""
+	v.AlipayNotice = ""
+	v.AlipayOutno = ""
+	v.ObjAlipayId = ""
+	v.TradeId = ""
+	v.AlipayId = ""
+	v.AlipayMail = ""
+	v.ObjAlipayMail = ""
+	v.PayTime = ""
+	v.BookTime = ""
+	v.NumIid = ""
+	v.AlipayNo = ""
+	v.TotalAmount = 0
+	v.Status = 0
+	v.Amount = 0
+	v.AccountId = 0
+	v.Bid = 0
+	poolBillDto.Put(v)
 }

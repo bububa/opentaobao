@@ -1,5 +1,9 @@
 package tuanhotel
 
+import (
+	"sync"
+)
+
 // TopStoreVo 结构体
 type TopStoreVo struct {
 	// 房型列表
@@ -22,4 +26,30 @@ type TopStoreVo struct {
 	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
 	// 门店ID
 	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
+}
+
+var poolTopStoreVo = sync.Pool{
+	New: func() any {
+		return new(TopStoreVo)
+	},
+}
+
+// GetTopStoreVo() 从对象池中获取TopStoreVo
+func GetTopStoreVo() *TopStoreVo {
+	return poolTopStoreVo.Get().(*TopStoreVo)
+}
+
+// ReleaseTopStoreVo 释放TopStoreVo
+func ReleaseTopStoreVo(v *TopStoreVo) {
+	v.RoomTypes = v.RoomTypes[:0]
+	v.AppointPhones = v.AppointPhones[:0]
+	v.BillInfos = ""
+	v.BillDescs = ""
+	v.WriteOffAccounts = ""
+	v.Name = ""
+	v.Hid = 0
+	v.City = 0
+	v.Shid = 0
+	v.StoreId = 0
+	poolTopStoreVo.Put(v)
 }

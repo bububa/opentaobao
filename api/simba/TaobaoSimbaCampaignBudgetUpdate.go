@@ -9,11 +9,6 @@ import (
 // taobao.simba.campaign.budget.update
 //
 // 更新一个推广计划的日限额
-func TaobaoSimbaCampaignBudgetUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignBudgetUpdateAPIRequest, session string) (*simba.TaobaoSimbaCampaignBudgetUpdateAPIResponse, error) {
-	var resp simba.TaobaoSimbaCampaignBudgetUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaCampaignBudgetUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignBudgetUpdateAPIRequest, resp *simba.TaobaoSimbaCampaignBudgetUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

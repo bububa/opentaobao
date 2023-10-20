@@ -2,6 +2,7 @@ package feedflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFeedflowItemAdzoneListAPIRequest struct {
 // NewTaobaoFeedflowItemAdzoneListRequest 初始化TaobaoFeedflowItemAdzoneListAPIRequest对象
 func NewTaobaoFeedflowItemAdzoneListRequest() *TaobaoFeedflowItemAdzoneListAPIRequest {
 	return &TaobaoFeedflowItemAdzoneListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFeedflowItemAdzoneListAPIRequest) Reset() {
+	r._adzoneQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFeedflowItemAdzoneListAPIRequest) SetAdzoneQuery(_adzoneQuery *Ad
 // GetAdzoneQuery AdzoneQuery Getter
 func (r TaobaoFeedflowItemAdzoneListAPIRequest) GetAdzoneQuery() *AdzoneQueryDto {
 	return r._adzoneQuery
+}
+
+var poolTaobaoFeedflowItemAdzoneListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFeedflowItemAdzoneListRequest()
+	},
+}
+
+// GetTaobaoFeedflowItemAdzoneListRequest 从 sync.Pool 获取 TaobaoFeedflowItemAdzoneListAPIRequest
+func GetTaobaoFeedflowItemAdzoneListAPIRequest() *TaobaoFeedflowItemAdzoneListAPIRequest {
+	return poolTaobaoFeedflowItemAdzoneListAPIRequest.Get().(*TaobaoFeedflowItemAdzoneListAPIRequest)
+}
+
+// ReleaseTaobaoFeedflowItemAdzoneListAPIRequest 将 TaobaoFeedflowItemAdzoneListAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFeedflowItemAdzoneListAPIRequest(v *TaobaoFeedflowItemAdzoneListAPIRequest) {
+	v.Reset()
+	poolTaobaoFeedflowItemAdzoneListAPIRequest.Put(v)
 }

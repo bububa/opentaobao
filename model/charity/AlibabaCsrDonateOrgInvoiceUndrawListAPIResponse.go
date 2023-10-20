@@ -2,6 +2,7 @@ package charity
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaCsrDonateOrgInvoiceUndrawListAPIResponse struct {
 	model.CommonResponse
 	AlibabaCsrDonateOrgInvoiceUndrawListAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaCsrDonateOrgInvoiceUndrawListAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaCsrDonateOrgInvoiceUndrawListAPIResponseModel).Reset()
 }
 
 // AlibabaCsrDonateOrgInvoiceUndrawListAPIResponseModel is 获取机构待开票列表 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaCsrDonateOrgInvoiceUndrawListAPIResponseModel struct {
 	ResData *CsrPage `json:"res_data,omitempty" xml:"res_data,omitempty"`
 	// 是否成功响应
 	ResSuccess bool `json:"res_success,omitempty" xml:"res_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaCsrDonateOrgInvoiceUndrawListAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResMsg = ""
+	m.ResLocalizedMsg = ""
+	m.ResCode = 0
+	m.ResData = nil
+	m.ResSuccess = false
+}
+
+var poolAlibabaCsrDonateOrgInvoiceUndrawListAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaCsrDonateOrgInvoiceUndrawListAPIResponse)
+	},
+}
+
+// GetAlibabaCsrDonateOrgInvoiceUndrawListAPIResponse 从 sync.Pool 获取 AlibabaCsrDonateOrgInvoiceUndrawListAPIResponse
+func GetAlibabaCsrDonateOrgInvoiceUndrawListAPIResponse() *AlibabaCsrDonateOrgInvoiceUndrawListAPIResponse {
+	return poolAlibabaCsrDonateOrgInvoiceUndrawListAPIResponse.Get().(*AlibabaCsrDonateOrgInvoiceUndrawListAPIResponse)
+}
+
+// ReleaseAlibabaCsrDonateOrgInvoiceUndrawListAPIResponse 将 AlibabaCsrDonateOrgInvoiceUndrawListAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaCsrDonateOrgInvoiceUndrawListAPIResponse(v *AlibabaCsrDonateOrgInvoiceUndrawListAPIResponse) {
+	v.Reset()
+	poolAlibabaCsrDonateOrgInvoiceUndrawListAPIResponse.Put(v)
 }

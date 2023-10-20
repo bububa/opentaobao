@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghome.sync.broker.is.receive.customer
 //
 // 经纪人接待状态变更
-func AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomer(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomer(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeSyncBrokerIsReceiveCustomerAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

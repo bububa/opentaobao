@@ -1,5 +1,9 @@
 package ticket
 
+import (
+	"sync"
+)
+
 // ItemEleCertInfo 结构体
 type ItemEleCertInfo struct {
 	// 电子凭证 有效期 开始时间
@@ -20,4 +24,29 @@ type ItemEleCertInfo struct {
 	AutoRefundRate int64 `json:"auto_refund_rate,omitempty" xml:"auto_refund_rate,omitempty"`
 	// 过期自动退款比例，0~100
 	ExpiredRefundRate int64 `json:"expired_refund_rate,omitempty" xml:"expired_refund_rate,omitempty"`
+}
+
+var poolItemEleCertInfo = sync.Pool{
+	New: func() any {
+		return new(ItemEleCertInfo)
+	},
+}
+
+// GetItemEleCertInfo() 从对象池中获取ItemEleCertInfo
+func GetItemEleCertInfo() *ItemEleCertInfo {
+	return poolItemEleCertInfo.Get().(*ItemEleCertInfo)
+}
+
+// ReleaseItemEleCertInfo 释放ItemEleCertInfo
+func ReleaseItemEleCertInfo(v *ItemEleCertInfo) {
+	v.ExpiryDateStart = ""
+	v.ExpiryDateEnd = ""
+	v.ShopTel = ""
+	v.MerchantName = ""
+	v.ExpiryDateType = 0
+	v.ExpiryDays = 0
+	v.PackageId = 0
+	v.AutoRefundRate = 0
+	v.ExpiredRefundRate = 0
+	poolItemEleCertInfo.Put(v)
 }

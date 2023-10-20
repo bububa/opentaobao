@@ -9,11 +9,6 @@ import (
 // alibaba.alsc.crm.rule.queryoptplan
 //
 // 查询运营计划
-func AlibabaAlscCrmRuleQueryoptplan(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRuleQueryoptplanAPIRequest, session string) (*alsc.AlibabaAlscCrmRuleQueryoptplanAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmRuleQueryoptplanAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlscCrmRuleQueryoptplan(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRuleQueryoptplanAPIRequest, resp *alsc.AlibabaAlscCrmRuleQueryoptplanAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

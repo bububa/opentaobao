@@ -9,11 +9,6 @@ import (
 // tmall.item.store.update.schema.get
 //
 // 天猫门店商品修改规则获取
-func TmallItemStoreUpdateSchemaGet(clt *core.SDKClient, req *product.TmallItemStoreUpdateSchemaGetAPIRequest, session string) (*product.TmallItemStoreUpdateSchemaGetAPIResponse, error) {
-	var resp product.TmallItemStoreUpdateSchemaGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallItemStoreUpdateSchemaGet(clt *core.SDKClient, req *product.TmallItemStoreUpdateSchemaGetAPIRequest, resp *product.TmallItemStoreUpdateSchemaGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

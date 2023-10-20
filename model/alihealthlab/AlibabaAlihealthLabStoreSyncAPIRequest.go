@@ -2,6 +2,7 @@ package alihealthlab
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -53,8 +54,31 @@ type AlibabaAlihealthLabStoreSyncAPIRequest struct {
 // NewAlibabaAlihealthLabStoreSyncRequest 初始化AlibabaAlihealthLabStoreSyncAPIRequest对象
 func NewAlibabaAlihealthLabStoreSyncRequest() *AlibabaAlihealthLabStoreSyncAPIRequest {
 	return &AlibabaAlihealthLabStoreSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(18),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthLabStoreSyncAPIRequest) Reset() {
+	r._allowedTbItemCategoryIds = r._allowedTbItemCategoryIds[:0]
+	r._isvStoreStatus = ""
+	r._reserveNotice = ""
+	r._storeTypeDesc = ""
+	r._socialCreditCode = ""
+	r._licenseNo = ""
+	r._licenseName = ""
+	r._storeRoutesDesc = ""
+	r._workTimeDesc = ""
+	r._storePhone = ""
+	r._storeIntro = ""
+	r._storeAddress = ""
+	r._isvStoreCode = ""
+	r._storeName = ""
+	r._longitude = 0
+	r._latitude = 0
+	r._cityCode = 0
+	r._supportOnlineReport = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -306,4 +330,21 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetSupportOnlineReport(_support
 // GetSupportOnlineReport SupportOnlineReport Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetSupportOnlineReport() bool {
 	return r._supportOnlineReport
+}
+
+var poolAlibabaAlihealthLabStoreSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthLabStoreSyncRequest()
+	},
+}
+
+// GetAlibabaAlihealthLabStoreSyncRequest 从 sync.Pool 获取 AlibabaAlihealthLabStoreSyncAPIRequest
+func GetAlibabaAlihealthLabStoreSyncAPIRequest() *AlibabaAlihealthLabStoreSyncAPIRequest {
+	return poolAlibabaAlihealthLabStoreSyncAPIRequest.Get().(*AlibabaAlihealthLabStoreSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthLabStoreSyncAPIRequest 将 AlibabaAlihealthLabStoreSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthLabStoreSyncAPIRequest(v *AlibabaAlihealthLabStoreSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthLabStoreSyncAPIRequest.Put(v)
 }

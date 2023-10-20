@@ -9,11 +9,6 @@ import (
 // alibaba.leg.msg.post
 //
 // 消息发送能力
-func AlibabaLegMsgPost(clt *core.SDKClient, req *alimsg.AlibabaLegMsgPostAPIRequest, session string) (*alimsg.AlibabaLegMsgPostAPIResponse, error) {
-	var resp alimsg.AlibabaLegMsgPostAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLegMsgPost(clt *core.SDKClient, req *alimsg.AlibabaLegMsgPostAPIRequest, resp *alimsg.AlibabaLegMsgPostAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

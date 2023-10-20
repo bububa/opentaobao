@@ -1,5 +1,9 @@
 package aliexpress
 
+import (
+	"sync"
+)
+
 // OffsitePublishPostEntity 结构体
 type OffsitePublishPostEntity struct {
 	// 图片列表，类型为1时不可为空
@@ -22,4 +26,30 @@ type OffsitePublishPostEntity struct {
 	Currency string `json:"currency,omitempty" xml:"currency,omitempty"`
 	// 视频参数，类型为2时不可为空
 	VideoInfo *OffsitePostVideoVo `json:"video_info,omitempty" xml:"video_info,omitempty"`
+}
+
+var poolOffsitePublishPostEntity = sync.Pool{
+	New: func() any {
+		return new(OffsitePublishPostEntity)
+	},
+}
+
+// GetOffsitePublishPostEntity() 从对象池中获取OffsitePublishPostEntity
+func GetOffsitePublishPostEntity() *OffsitePublishPostEntity {
+	return poolOffsitePublishPostEntity.Get().(*OffsitePublishPostEntity)
+}
+
+// ReleaseOffsitePublishPostEntity 释放OffsitePublishPostEntity
+func ReleaseOffsitePublishPostEntity(v *OffsitePublishPostEntity) {
+	v.ImageInfos = v.ImageInfos[:0]
+	v.ProductIds = v.ProductIds[:0]
+	v.Hashtag = v.Hashtag[:0]
+	v.Summary = ""
+	v.PostType = ""
+	v.Origin = ""
+	v.Lang = ""
+	v.ExtendsInfo = ""
+	v.Currency = ""
+	v.VideoInfo = nil
+	poolOffsitePublishPostEntity.Put(v)
 }

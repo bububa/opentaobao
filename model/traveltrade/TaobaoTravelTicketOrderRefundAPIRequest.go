@@ -2,6 +2,7 @@ package traveltrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoTravelTicketOrderRefundAPIRequest struct {
 // NewTaobaoTravelTicketOrderRefundRequest 初始化TaobaoTravelTicketOrderRefundAPIRequest对象
 func NewTaobaoTravelTicketOrderRefundRequest() *TaobaoTravelTicketOrderRefundAPIRequest {
 	return &TaobaoTravelTicketOrderRefundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTravelTicketOrderRefundAPIRequest) Reset() {
+	r._refundFailureReason = ""
+	r._refundBatchNo = ""
+	r._refundNum = 0
+	r._orderId = 0
+	r._refundStatus = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoTravelTicketOrderRefundAPIRequest) SetRefundStatus(_refundStatus 
 // GetRefundStatus RefundStatus Getter
 func (r TaobaoTravelTicketOrderRefundAPIRequest) GetRefundStatus() int64 {
 	return r._refundStatus
+}
+
+var poolTaobaoTravelTicketOrderRefundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTravelTicketOrderRefundRequest()
+	},
+}
+
+// GetTaobaoTravelTicketOrderRefundRequest 从 sync.Pool 获取 TaobaoTravelTicketOrderRefundAPIRequest
+func GetTaobaoTravelTicketOrderRefundAPIRequest() *TaobaoTravelTicketOrderRefundAPIRequest {
+	return poolTaobaoTravelTicketOrderRefundAPIRequest.Get().(*TaobaoTravelTicketOrderRefundAPIRequest)
+}
+
+// ReleaseTaobaoTravelTicketOrderRefundAPIRequest 将 TaobaoTravelTicketOrderRefundAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTravelTicketOrderRefundAPIRequest(v *TaobaoTravelTicketOrderRefundAPIRequest) {
+	v.Reset()
+	poolTaobaoTravelTicketOrderRefundAPIRequest.Put(v)
 }

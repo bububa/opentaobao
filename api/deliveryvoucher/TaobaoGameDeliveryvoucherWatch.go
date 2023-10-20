@@ -9,11 +9,6 @@ import (
 // taobao.game.deliveryvoucher.watch
 //
 // 监控预约数据
-func TaobaoGameDeliveryvoucherWatch(clt *core.SDKClient, req *deliveryvoucher.TaobaoGameDeliveryvoucherWatchAPIRequest, session string) (*deliveryvoucher.TaobaoGameDeliveryvoucherWatchAPIResponse, error) {
-	var resp deliveryvoucher.TaobaoGameDeliveryvoucherWatchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoGameDeliveryvoucherWatch(clt *core.SDKClient, req *deliveryvoucher.TaobaoGameDeliveryvoucherWatchAPIRequest, resp *deliveryvoucher.TaobaoGameDeliveryvoucherWatchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoPhoneItemExternalRecommendAPIRequest struct {
 // NewTaobaoPhoneItemExternalRecommendRequest 初始化TaobaoPhoneItemExternalRecommendAPIRequest对象
 func NewTaobaoPhoneItemExternalRecommendRequest() *TaobaoPhoneItemExternalRecommendAPIRequest {
 	return &TaobaoPhoneItemExternalRecommendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPhoneItemExternalRecommendAPIRequest) Reset() {
+	r._phoneDistributionRecommendReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoPhoneItemExternalRecommendAPIRequest) SetPhoneDistributionRecomme
 // GetPhoneDistributionRecommendReq PhoneDistributionRecommendReq Getter
 func (r TaobaoPhoneItemExternalRecommendAPIRequest) GetPhoneDistributionRecommendReq() *PhoneDistributionRecommendReq {
 	return r._phoneDistributionRecommendReq
+}
+
+var poolTaobaoPhoneItemExternalRecommendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPhoneItemExternalRecommendRequest()
+	},
+}
+
+// GetTaobaoPhoneItemExternalRecommendRequest 从 sync.Pool 获取 TaobaoPhoneItemExternalRecommendAPIRequest
+func GetTaobaoPhoneItemExternalRecommendAPIRequest() *TaobaoPhoneItemExternalRecommendAPIRequest {
+	return poolTaobaoPhoneItemExternalRecommendAPIRequest.Get().(*TaobaoPhoneItemExternalRecommendAPIRequest)
+}
+
+// ReleaseTaobaoPhoneItemExternalRecommendAPIRequest 将 TaobaoPhoneItemExternalRecommendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPhoneItemExternalRecommendAPIRequest(v *TaobaoPhoneItemExternalRecommendAPIRequest) {
+	v.Reset()
+	poolTaobaoPhoneItemExternalRecommendAPIRequest.Put(v)
 }

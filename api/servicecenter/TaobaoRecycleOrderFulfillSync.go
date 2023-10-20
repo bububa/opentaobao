@@ -9,11 +9,6 @@ import (
 // taobao.recycle.order.fulfill.sync
 //
 // 同步回收单最终履约方式
-func TaobaoRecycleOrderFulfillSync(clt *core.SDKClient, req *servicecenter.TaobaoRecycleOrderFulfillSyncAPIRequest, session string) (*servicecenter.TaobaoRecycleOrderFulfillSyncAPIResponse, error) {
-	var resp servicecenter.TaobaoRecycleOrderFulfillSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoRecycleOrderFulfillSync(clt *core.SDKClient, req *servicecenter.TaobaoRecycleOrderFulfillSyncAPIRequest, resp *servicecenter.TaobaoRecycleOrderFulfillSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

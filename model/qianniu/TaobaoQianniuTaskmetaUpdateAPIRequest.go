@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQianniuTaskmetaUpdateAPIRequest struct {
 // NewTaobaoQianniuTaskmetaUpdateRequest 初始化TaobaoQianniuTaskmetaUpdateAPIRequest对象
 func NewTaobaoQianniuTaskmetaUpdateRequest() *TaobaoQianniuTaskmetaUpdateAPIRequest {
 	return &TaobaoQianniuTaskmetaUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQianniuTaskmetaUpdateAPIRequest) Reset() {
+	r._meta = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoQianniuTaskmetaUpdateAPIRequest) SetMeta(_meta string) error {
 // GetMeta Meta Getter
 func (r TaobaoQianniuTaskmetaUpdateAPIRequest) GetMeta() string {
 	return r._meta
+}
+
+var poolTaobaoQianniuTaskmetaUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQianniuTaskmetaUpdateRequest()
+	},
+}
+
+// GetTaobaoQianniuTaskmetaUpdateRequest 从 sync.Pool 获取 TaobaoQianniuTaskmetaUpdateAPIRequest
+func GetTaobaoQianniuTaskmetaUpdateAPIRequest() *TaobaoQianniuTaskmetaUpdateAPIRequest {
+	return poolTaobaoQianniuTaskmetaUpdateAPIRequest.Get().(*TaobaoQianniuTaskmetaUpdateAPIRequest)
+}
+
+// ReleaseTaobaoQianniuTaskmetaUpdateAPIRequest 将 TaobaoQianniuTaskmetaUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQianniuTaskmetaUpdateAPIRequest(v *TaobaoQianniuTaskmetaUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoQianniuTaskmetaUpdateAPIRequest.Put(v)
 }

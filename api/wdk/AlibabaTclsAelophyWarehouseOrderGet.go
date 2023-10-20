@@ -9,11 +9,6 @@ import (
 // alibaba.tcls.aelophy.warehouse.order.get
 //
 // 仓作业单获取
-func AlibabaTclsAelophyWarehouseOrderGet(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyWarehouseOrderGetAPIRequest, session string) (*wdk.AlibabaTclsAelophyWarehouseOrderGetAPIResponse, error) {
-	var resp wdk.AlibabaTclsAelophyWarehouseOrderGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTclsAelophyWarehouseOrderGet(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyWarehouseOrderGetAPIRequest, resp *wdk.AlibabaTclsAelophyWarehouseOrderGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package crm
 
+import (
+	"sync"
+)
+
 // Group 结构体
 type Group struct {
 	// 分组的名称
@@ -14,4 +18,26 @@ type Group struct {
 	MemberCount int64 `json:"member_count,omitempty" xml:"member_count,omitempty"`
 	// 分组的id
 	GroupId int64 `json:"group_id,omitempty" xml:"group_id,omitempty"`
+}
+
+var poolGroup = sync.Pool{
+	New: func() any {
+		return new(Group)
+	},
+}
+
+// GetGroup() 从对象池中获取Group
+func GetGroup() *Group {
+	return poolGroup.Get().(*Group)
+}
+
+// ReleaseGroup 释放Group
+func ReleaseGroup(v *Group) {
+	v.GroupName = ""
+	v.Status = ""
+	v.GroupModify = ""
+	v.GroupCreate = ""
+	v.MemberCount = 0
+	v.GroupId = 0
+	poolGroup.Put(v)
 }

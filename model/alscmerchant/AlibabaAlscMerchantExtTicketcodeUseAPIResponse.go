@@ -2,6 +2,7 @@ package alscmerchant
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlscMerchantExtTicketcodeUseAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscMerchantExtTicketcodeUseAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlscMerchantExtTicketcodeUseAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlscMerchantExtTicketcodeUseAPIResponseModel).Reset()
 }
 
 // AlibabaAlscMerchantExtTicketcodeUseAPIResponseModel is 外部核销服务 成功返回结果
@@ -60,4 +67,46 @@ type AlibabaAlscMerchantExtTicketcodeUseAPIResponseModel struct {
 	MerchantSubsidyAmount string `json:"merchant_subsidy_amount,omitempty" xml:"merchant_subsidy_amount,omitempty"`
 	// 12位的券码，券码为纯数字，且唯一不重复 /***** 20220922后对接的服务商，不支持该字段 ******
 	TicketCode string `json:"ticket_code,omitempty" xml:"ticket_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlscMerchantExtTicketcodeUseAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TicketUseDetails = m.TicketUseDetails[:0]
+	m.OrderNo = ""
+	m.OriginalPrice = ""
+	m.BizCode = ""
+	m.CurrentPrice = ""
+	m.DiscountAmount = ""
+	m.InvoiceAmount = ""
+	m.UseShopId = ""
+	m.ItemAlias = ""
+	m.UseShopName = ""
+	m.ItemId = ""
+	m.ReceiptAmount = ""
+	m.ItemName = ""
+	m.TicketTransId = ""
+	m.UseDate = ""
+	m.VoucherId = ""
+	m.TicketRequestId = ""
+	m.BuyerPayAmount = ""
+	m.MerchantSubsidyAmount = ""
+	m.TicketCode = ""
+}
+
+var poolAlibabaAlscMerchantExtTicketcodeUseAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlscMerchantExtTicketcodeUseAPIResponse)
+	},
+}
+
+// GetAlibabaAlscMerchantExtTicketcodeUseAPIResponse 从 sync.Pool 获取 AlibabaAlscMerchantExtTicketcodeUseAPIResponse
+func GetAlibabaAlscMerchantExtTicketcodeUseAPIResponse() *AlibabaAlscMerchantExtTicketcodeUseAPIResponse {
+	return poolAlibabaAlscMerchantExtTicketcodeUseAPIResponse.Get().(*AlibabaAlscMerchantExtTicketcodeUseAPIResponse)
+}
+
+// ReleaseAlibabaAlscMerchantExtTicketcodeUseAPIResponse 将 AlibabaAlscMerchantExtTicketcodeUseAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlscMerchantExtTicketcodeUseAPIResponse(v *AlibabaAlscMerchantExtTicketcodeUseAPIResponse) {
+	v.Reset()
+	poolAlibabaAlscMerchantExtTicketcodeUseAPIResponse.Put(v)
 }

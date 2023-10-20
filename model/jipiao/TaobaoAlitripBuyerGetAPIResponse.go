@@ -2,6 +2,7 @@ package jipiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAlitripBuyerGetAPIResponse struct {
 	TaobaoAlitripBuyerGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAlitripBuyerGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAlitripBuyerGetAPIResponseModel).Reset()
+}
+
 // TaobaoAlitripBuyerGetAPIResponseModel is 敏感信息查询 成功返回结果
 type TaobaoAlitripBuyerGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_buyer_get_response"`
@@ -24,4 +31,28 @@ type TaobaoAlitripBuyerGetAPIResponseModel struct {
 	Content string `json:"content,omitempty" xml:"content,omitempty"`
 	// 有效期
 	Expires string `json:"expires,omitempty" xml:"expires,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAlitripBuyerGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Content = ""
+	m.Expires = ""
+}
+
+var poolTaobaoAlitripBuyerGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripBuyerGetAPIResponse)
+	},
+}
+
+// GetTaobaoAlitripBuyerGetAPIResponse 从 sync.Pool 获取 TaobaoAlitripBuyerGetAPIResponse
+func GetTaobaoAlitripBuyerGetAPIResponse() *TaobaoAlitripBuyerGetAPIResponse {
+	return poolTaobaoAlitripBuyerGetAPIResponse.Get().(*TaobaoAlitripBuyerGetAPIResponse)
+}
+
+// ReleaseTaobaoAlitripBuyerGetAPIResponse 将 TaobaoAlitripBuyerGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAlitripBuyerGetAPIResponse(v *TaobaoAlitripBuyerGetAPIResponse) {
+	v.Reset()
+	poolTaobaoAlitripBuyerGetAPIResponse.Put(v)
 }

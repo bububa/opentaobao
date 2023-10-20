@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // StockChangeDetailDto 结构体
 type StockChangeDetailDto struct {
 	// quantity
@@ -14,4 +18,26 @@ type StockChangeDetailDto struct {
 	BizOrderCode string `json:"biz_order_code,omitempty" xml:"biz_order_code,omitempty"`
 	// cabinetCode
 	CabinetCode string `json:"cabinet_code,omitempty" xml:"cabinet_code,omitempty"`
+}
+
+var poolStockChangeDetailDto = sync.Pool{
+	New: func() any {
+		return new(StockChangeDetailDto)
+	},
+}
+
+// GetStockChangeDetailDto() 从对象池中获取StockChangeDetailDto
+func GetStockChangeDetailDto() *StockChangeDetailDto {
+	return poolStockChangeDetailDto.Get().(*StockChangeDetailDto)
+}
+
+// ReleaseStockChangeDetailDto 释放StockChangeDetailDto
+func ReleaseStockChangeDetailDto(v *StockChangeDetailDto) {
+	v.Quantity = ""
+	v.ItemCode = ""
+	v.BatchCode = ""
+	v.Reason = ""
+	v.BizOrderCode = ""
+	v.CabinetCode = ""
+	poolStockChangeDetailDto.Put(v)
 }

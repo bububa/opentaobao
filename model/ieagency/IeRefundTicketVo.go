@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // IeRefundTicketVo 结构体
 type IeRefundTicketVo struct {
 	// 申请时间
@@ -42,4 +46,40 @@ type IeRefundTicketVo struct {
 	RefundProductType int64 `json:"refund_product_type,omitempty" xml:"refund_product_type,omitempty"`
 	// 是否补退订单
 	BuTui bool `json:"bu_tui,omitempty" xml:"bu_tui,omitempty"`
+}
+
+var poolIeRefundTicketVo = sync.Pool{
+	New: func() any {
+		return new(IeRefundTicketVo)
+	},
+}
+
+// GetIeRefundTicketVo() 从对象池中获取IeRefundTicketVo
+func GetIeRefundTicketVo() *IeRefundTicketVo {
+	return poolIeRefundTicketVo.Get().(*IeRefundTicketVo)
+}
+
+// ReleaseIeRefundTicketVo 释放IeRefundTicketVo
+func ReleaseIeRefundTicketVo(v *IeRefundTicketVo) {
+	v.ApplyTime = ""
+	v.TicketNo = ""
+	v.AgentAgreeTime = ""
+	v.ApplyReason = ""
+	v.AgentName = ""
+	v.PassengerName = ""
+	v.AgentPayTime = ""
+	v.AgentRefuseTime = ""
+	v.ApplyAnswer = ""
+	v.AgentReceiveTime = ""
+	v.RefundMoney = 0
+	v.ApplyId = 0
+	v.PassengerId = 0
+	v.RefundPayStatus = 0
+	v.RefundStatus = 0
+	v.RefundToUserMoney = 0
+	v.ApplyType = 0
+	v.OrderId = 0
+	v.RefundProductType = 0
+	v.BuTui = false
+	poolIeRefundTicketVo.Put(v)
 }

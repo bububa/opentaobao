@@ -1,7 +1,11 @@
 package drugtrace
 
-// PentParDto 结构体
-type PentParDto struct {
+import (
+	"sync"
+)
+
+// PEntParDto 结构体
+type PEntParDto struct {
 	// 往来单位ID
 	PartnerId string `json:"partner_id,omitempty" xml:"partner_id,omitempty"`
 	// 往来单位名称
@@ -56,4 +60,47 @@ type PentParDto struct {
 	AuditFlag int64 `json:"audit_flag,omitempty" xml:"audit_flag,omitempty"`
 	// networkType
 	NetworkType int64 `json:"network_type,omitempty" xml:"network_type,omitempty"`
+}
+
+var poolPEntParDto = sync.Pool{
+	New: func() any {
+		return new(PEntParDto)
+	},
+}
+
+// GetPEntParDto() 从对象池中获取PEntParDto
+func GetPEntParDto() *PEntParDto {
+	return poolPEntParDto.Get().(*PEntParDto)
+}
+
+// ReleasePEntParDto 释放PEntParDto
+func ReleasePEntParDto(v *PEntParDto) {
+	v.PartnerId = ""
+	v.PartnerName = ""
+	v.EntId = ""
+	v.RefEntId = ""
+	v.EntProvCode = ""
+	v.ProvName = ""
+	v.AreaName = ""
+	v.CityName = ""
+	v.IsNetwork = ""
+	v.PartnerCapitalName = ""
+	v.PartnerType = ""
+	v.PartnerEntId = ""
+	v.LastModDate = ""
+	v.CrtDate = ""
+	v.CrtIcName = ""
+	v.Status = ""
+	v.ModIcName = ""
+	v.PartnerLevel = ""
+	v.ModIcCode = ""
+	v.PEntParId = ""
+	v.CrtIcCode = ""
+	v.ParRefEntId = ""
+	v.LicenseTypeStr = ""
+	v.AddrDetail = ""
+	v.CountryName = ""
+	v.AuditFlag = 0
+	v.NetworkType = 0
+	poolPEntParDto.Put(v)
 }

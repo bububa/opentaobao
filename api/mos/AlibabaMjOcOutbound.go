@@ -9,11 +9,6 @@ import (
 // alibaba.mj.oc.outbound
 //
 // 用于接收发货的数据
-func AlibabaMjOcOutbound(clt *core.SDKClient, req *mos.AlibabaMjOcOutboundAPIRequest, session string) (*mos.AlibabaMjOcOutboundAPIResponse, error) {
-	var resp mos.AlibabaMjOcOutboundAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMjOcOutbound(clt *core.SDKClient, req *mos.AlibabaMjOcOutboundAPIRequest, resp *mos.AlibabaMjOcOutboundAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

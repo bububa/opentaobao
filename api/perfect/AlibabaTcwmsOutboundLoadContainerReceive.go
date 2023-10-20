@@ -9,11 +9,6 @@ import (
 // alibaba.tcwms.outbound.load.container.receive
 //
 // 装箱接单
-func AlibabaTcwmsOutboundLoadContainerReceive(clt *core.SDKClient, req *perfect.AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest, session string) (*perfect.AlibabaTcwmsOutboundLoadContainerReceiveAPIResponse, error) {
-	var resp perfect.AlibabaTcwmsOutboundLoadContainerReceiveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTcwmsOutboundLoadContainerReceive(clt *core.SDKClient, req *perfect.AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest, resp *perfect.AlibabaTcwmsOutboundLoadContainerReceiveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.examination.reserve.report.nofify
 //
 // 服务商主动回传用户的体检报告数据
-func AlibabaAlihealthExaminationReserveReportNofify(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReserveReportNofifyAPIRequest, session string) (*examination.AlibabaAlihealthExaminationReserveReportNofifyAPIResponse, error) {
-	var resp examination.AlibabaAlihealthExaminationReserveReportNofifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthExaminationReserveReportNofify(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReserveReportNofifyAPIRequest, resp *examination.AlibabaAlihealthExaminationReserveReportNofifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

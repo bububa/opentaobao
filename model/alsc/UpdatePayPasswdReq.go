@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // UpdatePayPasswdReq 结构体
 type UpdatePayPasswdReq struct {
 	// 品牌id  、 外部品牌id    2选1
@@ -18,4 +22,28 @@ type UpdatePayPasswdReq struct {
 	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
 	// 请求id
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+}
+
+var poolUpdatePayPasswdReq = sync.Pool{
+	New: func() any {
+		return new(UpdatePayPasswdReq)
+	},
+}
+
+// GetUpdatePayPasswdReq() 从对象池中获取UpdatePayPasswdReq
+func GetUpdatePayPasswdReq() *UpdatePayPasswdReq {
+	return poolUpdatePayPasswdReq.Get().(*UpdatePayPasswdReq)
+}
+
+// ReleaseUpdatePayPasswdReq 释放UpdatePayPasswdReq
+func ReleaseUpdatePayPasswdReq(v *UpdatePayPasswdReq) {
+	v.BrandId = ""
+	v.OperatorName = ""
+	v.OperatorId = ""
+	v.PasswdType = ""
+	v.PayPasswd = ""
+	v.CustomerId = ""
+	v.OutBrandId = ""
+	v.RequestId = ""
+	poolUpdatePayPasswdReq.Put(v)
 }

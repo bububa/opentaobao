@@ -2,6 +2,7 @@ package travel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -74,8 +75,40 @@ type AlitripLocalplayProductUploadAPIRequest struct {
 // NewAlitripLocalplayProductUploadRequest 初始化AlitripLocalplayProductUploadAPIRequest对象
 func NewAlitripLocalplayProductUploadRequest() *AlitripLocalplayProductUploadAPIRequest {
 	return &AlitripLocalplayProductUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(27),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripLocalplayProductUploadAPIRequest) Reset() {
+	r._feeExclude = r._feeExclude[:0]
+	r._orderInfo = r._orderInfo[:0]
+	r._picUrls = r._picUrls[:0]
+	r._subTitles = r._subTitles[:0]
+	r._sellerCids = r._sellerCids[:0]
+	r._wapDesc = ""
+	r._descXml = ""
+	r._title = ""
+	r._itemCustomTag = ""
+	r._outProductId = ""
+	r._toLocations = ""
+	r._reserveLimit = ""
+	r._descHtml = ""
+	r._fromLocations = ""
+	r._touristServiceProvider = ""
+	r._refundRegulationsJson = ""
+	r._secondKill = ""
+	r._tripDay = 0
+	r._subStock = 0
+	r._confirmTime = 0
+	r._confirmType = 0
+	r._tripNight = 0
+	r._itemId = 0
+	r._refundType = 0
+	r._travellerTemplateId = 0
+	r._isOverseasTour = 0
+	r._hasDiscount = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -444,4 +477,21 @@ func (r *AlitripLocalplayProductUploadAPIRequest) SetHasDiscount(_hasDiscount bo
 // GetHasDiscount HasDiscount Getter
 func (r AlitripLocalplayProductUploadAPIRequest) GetHasDiscount() bool {
 	return r._hasDiscount
+}
+
+var poolAlitripLocalplayProductUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripLocalplayProductUploadRequest()
+	},
+}
+
+// GetAlitripLocalplayProductUploadRequest 从 sync.Pool 获取 AlitripLocalplayProductUploadAPIRequest
+func GetAlitripLocalplayProductUploadAPIRequest() *AlitripLocalplayProductUploadAPIRequest {
+	return poolAlitripLocalplayProductUploadAPIRequest.Get().(*AlitripLocalplayProductUploadAPIRequest)
+}
+
+// ReleaseAlitripLocalplayProductUploadAPIRequest 将 AlitripLocalplayProductUploadAPIRequest 放入 sync.Pool
+func ReleaseAlitripLocalplayProductUploadAPIRequest(v *AlitripLocalplayProductUploadAPIRequest) {
+	v.Reset()
+	poolAlitripLocalplayProductUploadAPIRequest.Put(v)
 }

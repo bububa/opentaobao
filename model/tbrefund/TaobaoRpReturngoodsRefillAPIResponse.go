@@ -2,6 +2,7 @@ package tbrefund
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoRpReturngoodsRefillAPIResponse struct {
 	TaobaoRpReturngoodsRefillAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoRpReturngoodsRefillAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoRpReturngoodsRefillAPIResponseModel).Reset()
+}
+
 // TaobaoRpReturngoodsRefillAPIResponseModel is 卖家回填物流信息 成功返回结果
 type TaobaoRpReturngoodsRefillAPIResponseModel struct {
 	XMLName xml.Name `xml:"rp_returngoods_refill_response"`
@@ -22,4 +29,27 @@ type TaobaoRpReturngoodsRefillAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 验货操作是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoRpReturngoodsRefillAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoRpReturngoodsRefillAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoRpReturngoodsRefillAPIResponse)
+	},
+}
+
+// GetTaobaoRpReturngoodsRefillAPIResponse 从 sync.Pool 获取 TaobaoRpReturngoodsRefillAPIResponse
+func GetTaobaoRpReturngoodsRefillAPIResponse() *TaobaoRpReturngoodsRefillAPIResponse {
+	return poolTaobaoRpReturngoodsRefillAPIResponse.Get().(*TaobaoRpReturngoodsRefillAPIResponse)
+}
+
+// ReleaseTaobaoRpReturngoodsRefillAPIResponse 将 TaobaoRpReturngoodsRefillAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoRpReturngoodsRefillAPIResponse(v *TaobaoRpReturngoodsRefillAPIResponse) {
+	v.Reset()
+	poolTaobaoRpReturngoodsRefillAPIResponse.Put(v)
 }

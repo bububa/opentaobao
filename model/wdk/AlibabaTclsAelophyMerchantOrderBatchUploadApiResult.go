@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaTclsAelophyMerchantOrderBatchUploadApiResult 结构体
 type AlibabaTclsAelophyMerchantOrderBatchUploadApiResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type AlibabaTclsAelophyMerchantOrderBatchUploadApiResult struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 返回值
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
+}
+
+var poolAlibabaTclsAelophyMerchantOrderBatchUploadApiResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaTclsAelophyMerchantOrderBatchUploadApiResult)
+	},
+}
+
+// GetAlibabaTclsAelophyMerchantOrderBatchUploadApiResult() 从对象池中获取AlibabaTclsAelophyMerchantOrderBatchUploadApiResult
+func GetAlibabaTclsAelophyMerchantOrderBatchUploadApiResult() *AlibabaTclsAelophyMerchantOrderBatchUploadApiResult {
+	return poolAlibabaTclsAelophyMerchantOrderBatchUploadApiResult.Get().(*AlibabaTclsAelophyMerchantOrderBatchUploadApiResult)
+}
+
+// ReleaseAlibabaTclsAelophyMerchantOrderBatchUploadApiResult 释放AlibabaTclsAelophyMerchantOrderBatchUploadApiResult
+func ReleaseAlibabaTclsAelophyMerchantOrderBatchUploadApiResult(v *AlibabaTclsAelophyMerchantOrderBatchUploadApiResult) {
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Success = false
+	v.Model = false
+	poolAlibabaTclsAelophyMerchantOrderBatchUploadApiResult.Put(v)
 }

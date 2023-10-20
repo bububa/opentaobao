@@ -2,6 +2,7 @@ package util
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type WdkRexoutDeviceInfoGetAPIResponse struct {
 	model.CommonResponse
 	WdkRexoutDeviceInfoGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *WdkRexoutDeviceInfoGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.WdkRexoutDeviceInfoGetAPIResponseModel).Reset()
 }
 
 // WdkRexoutDeviceInfoGetAPIResponseModel is 获取设备详情-外部对接 成功返回结果
@@ -28,4 +35,30 @@ type WdkRexoutDeviceInfoGetAPIResponseModel struct {
 	Data *AiotTopOpenDeviceDto `json:"data,omitempty" xml:"data,omitempty"`
 	// 结果是否成功
 	Succeed bool `json:"succeed,omitempty" xml:"succeed,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *WdkRexoutDeviceInfoGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.Data = nil
+	m.Succeed = false
+}
+
+var poolWdkRexoutDeviceInfoGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(WdkRexoutDeviceInfoGetAPIResponse)
+	},
+}
+
+// GetWdkRexoutDeviceInfoGetAPIResponse 从 sync.Pool 获取 WdkRexoutDeviceInfoGetAPIResponse
+func GetWdkRexoutDeviceInfoGetAPIResponse() *WdkRexoutDeviceInfoGetAPIResponse {
+	return poolWdkRexoutDeviceInfoGetAPIResponse.Get().(*WdkRexoutDeviceInfoGetAPIResponse)
+}
+
+// ReleaseWdkRexoutDeviceInfoGetAPIResponse 将 WdkRexoutDeviceInfoGetAPIResponse 保存到 sync.Pool
+func ReleaseWdkRexoutDeviceInfoGetAPIResponse(v *WdkRexoutDeviceInfoGetAPIResponse) {
+	v.Reset()
+	poolWdkRexoutDeviceInfoGetAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package eticket
 
+import (
+	"sync"
+)
+
 // IsvMa 结构体
 type IsvMa struct {
 	// 串码码值
@@ -8,4 +12,23 @@ type IsvMa struct {
 	QrImage string `json:"qr_image,omitempty" xml:"qr_image,omitempty"`
 	// 码的可核销份数
 	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
+}
+
+var poolIsvMa = sync.Pool{
+	New: func() any {
+		return new(IsvMa)
+	},
+}
+
+// GetIsvMa() 从对象池中获取IsvMa
+func GetIsvMa() *IsvMa {
+	return poolIsvMa.Get().(*IsvMa)
+}
+
+// ReleaseIsvMa 释放IsvMa
+func ReleaseIsvMa(v *IsvMa) {
+	v.Code = ""
+	v.QrImage = ""
+	v.Num = 0
+	poolIsvMa.Put(v)
 }

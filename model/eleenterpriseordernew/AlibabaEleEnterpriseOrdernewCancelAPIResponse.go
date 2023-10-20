@@ -2,6 +2,7 @@ package eleenterpriseordernew
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaEleEnterpriseOrdernewCancelAPIResponse struct {
 	AlibabaEleEnterpriseOrdernewCancelAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaEleEnterpriseOrdernewCancelAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEleEnterpriseOrdernewCancelAPIResponseModel).Reset()
+}
+
 // AlibabaEleEnterpriseOrdernewCancelAPIResponseModel is 订单取消 成功返回结果
 type AlibabaEleEnterpriseOrdernewCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ele_enterprise_ordernew_cancel_response"`
@@ -26,4 +33,29 @@ type AlibabaEleEnterpriseOrdernewCancelAPIResponseModel struct {
 	EnterpriseMsg string `json:"enterprise_msg,omitempty" xml:"enterprise_msg,omitempty"`
 	// 请求id
 	EnterpriseRequestid string `json:"enterprise_requestid,omitempty" xml:"enterprise_requestid,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleEnterpriseOrdernewCancelAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.EnterpriseCode = ""
+	m.EnterpriseMsg = ""
+	m.EnterpriseRequestid = ""
+}
+
+var poolAlibabaEleEnterpriseOrdernewCancelAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEleEnterpriseOrdernewCancelAPIResponse)
+	},
+}
+
+// GetAlibabaEleEnterpriseOrdernewCancelAPIResponse 从 sync.Pool 获取 AlibabaEleEnterpriseOrdernewCancelAPIResponse
+func GetAlibabaEleEnterpriseOrdernewCancelAPIResponse() *AlibabaEleEnterpriseOrdernewCancelAPIResponse {
+	return poolAlibabaEleEnterpriseOrdernewCancelAPIResponse.Get().(*AlibabaEleEnterpriseOrdernewCancelAPIResponse)
+}
+
+// ReleaseAlibabaEleEnterpriseOrdernewCancelAPIResponse 将 AlibabaEleEnterpriseOrdernewCancelAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEleEnterpriseOrdernewCancelAPIResponse(v *AlibabaEleEnterpriseOrdernewCancelAPIResponse) {
+	v.Reset()
+	poolAlibabaEleEnterpriseOrdernewCancelAPIResponse.Put(v)
 }

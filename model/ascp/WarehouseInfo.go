@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // WarehouseInfo 结构体
 type WarehouseInfo struct {
 	// 联系人信息；必填 1个
@@ -38,4 +42,38 @@ type WarehouseInfo struct {
 	WmsAppkey string `json:"wms_appkey,omitempty" xml:"wms_appkey,omitempty"`
 	// 仓拓展信息，创建时必填
 	ExtendInfo *ExtendInfo `json:"extend_info,omitempty" xml:"extend_info,omitempty"`
+}
+
+var poolWarehouseInfo = sync.Pool{
+	New: func() any {
+		return new(WarehouseInfo)
+	},
+}
+
+// GetWarehouseInfo() 从对象池中获取WarehouseInfo
+func GetWarehouseInfo() *WarehouseInfo {
+	return poolWarehouseInfo.Get().(*WarehouseInfo)
+}
+
+// ReleaseWarehouseInfo 释放WarehouseInfo
+func ReleaseWarehouseInfo(v *WarehouseInfo) {
+	v.ContactInfos = v.ContactInfos[:0]
+	v.ErpWarehouseCode = ""
+	v.ErpWarehouseBizCode = ""
+	v.ErpWarehouseName = ""
+	v.WmsWarehouseCode = ""
+	v.WmsWarehouseName = ""
+	v.Province = ""
+	v.City = ""
+	v.Area = ""
+	v.Town = ""
+	v.DetailAddress = ""
+	v.ZipCode = ""
+	v.Status = ""
+	v.WarehouseCode = ""
+	v.WarehouseName = ""
+	v.WmsStoreCode = ""
+	v.WmsAppkey = ""
+	v.ExtendInfo = nil
+	poolWarehouseInfo.Put(v)
 }

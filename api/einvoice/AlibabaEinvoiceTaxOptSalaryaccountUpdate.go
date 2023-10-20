@@ -9,11 +9,6 @@ import (
 // alibaba.einvoice.tax.opt.salaryaccount.update
 //
 // 更新用户的发薪账号
-func AlibabaEinvoiceTaxOptSalaryaccountUpdate(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest, session string) (*einvoice.AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIResponse, error) {
-	var resp einvoice.AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEinvoiceTaxOptSalaryaccountUpdate(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest, resp *einvoice.AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

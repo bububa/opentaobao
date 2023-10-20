@@ -2,6 +2,7 @@ package idleisv
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaIdleIsvSpuSearchAPIRequest struct {
 // NewAlibabaIdleIsvSpuSearchRequest 初始化AlibabaIdleIsvSpuSearchAPIRequest对象
 func NewAlibabaIdleIsvSpuSearchRequest() *AlibabaIdleIsvSpuSearchAPIRequest {
 	return &AlibabaIdleIsvSpuSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleIsvSpuSearchAPIRequest) Reset() {
+	r._channelCatId = ""
+	r._searchText = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaIdleIsvSpuSearchAPIRequest) SetSearchText(_searchText string) er
 // GetSearchText SearchText Getter
 func (r AlibabaIdleIsvSpuSearchAPIRequest) GetSearchText() string {
 	return r._searchText
+}
+
+var poolAlibabaIdleIsvSpuSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleIsvSpuSearchRequest()
+	},
+}
+
+// GetAlibabaIdleIsvSpuSearchRequest 从 sync.Pool 获取 AlibabaIdleIsvSpuSearchAPIRequest
+func GetAlibabaIdleIsvSpuSearchAPIRequest() *AlibabaIdleIsvSpuSearchAPIRequest {
+	return poolAlibabaIdleIsvSpuSearchAPIRequest.Get().(*AlibabaIdleIsvSpuSearchAPIRequest)
+}
+
+// ReleaseAlibabaIdleIsvSpuSearchAPIRequest 将 AlibabaIdleIsvSpuSearchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleIsvSpuSearchAPIRequest(v *AlibabaIdleIsvSpuSearchAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleIsvSpuSearchAPIRequest.Put(v)
 }

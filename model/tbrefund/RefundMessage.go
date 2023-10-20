@@ -1,5 +1,9 @@
 package tbrefund
 
+import (
+	"sync"
+)
+
 // RefundMessage 结构体
 type RefundMessage struct {
 	// 图片链接
@@ -24,4 +28,31 @@ type RefundMessage struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 留言者编号
 	OwnerId int64 `json:"owner_id,omitempty" xml:"owner_id,omitempty"`
+}
+
+var poolRefundMessage = sync.Pool{
+	New: func() any {
+		return new(RefundMessage)
+	},
+}
+
+// GetRefundMessage() 从对象池中获取RefundMessage
+func GetRefundMessage() *RefundMessage {
+	return poolRefundMessage.Get().(*RefundMessage)
+}
+
+// ReleaseRefundMessage 释放RefundMessage
+func ReleaseRefundMessage(v *RefundMessage) {
+	v.PicUrls = v.PicUrls[:0]
+	v.Created = ""
+	v.Content = ""
+	v.MessageType = ""
+	v.OwnerNick = ""
+	v.OwnerRole = ""
+	v.RefundId = ""
+	v.RefundPhase = ""
+	v.OwnerOpenUid = ""
+	v.Id = 0
+	v.OwnerId = 0
+	poolRefundMessage.Put(v)
 }

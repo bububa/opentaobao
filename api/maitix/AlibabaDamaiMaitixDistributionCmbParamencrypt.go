@@ -9,11 +9,6 @@ import (
 // alibaba.damai.maitix.distribution.cmb.paramencrypt
 //
 // encryptParam4Cmb
-func AlibabaDamaiMaitixDistributionCmbParamencrypt(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest, session string) (*maitix.AlibabaDamaiMaitixDistributionCmbParamencryptAPIResponse, error) {
-	var resp maitix.AlibabaDamaiMaitixDistributionCmbParamencryptAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMaitixDistributionCmbParamencrypt(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest, resp *maitix.AlibabaDamaiMaitixDistributionCmbParamencryptAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

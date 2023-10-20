@@ -2,6 +2,7 @@ package xiamicontent
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type XiamiContentMusicCollectGetAPIRequest struct {
 // NewXiamiContentMusicCollectGetRequest 初始化XiamiContentMusicCollectGetAPIRequest对象
 func NewXiamiContentMusicCollectGetRequest() *XiamiContentMusicCollectGetAPIRequest {
 	return &XiamiContentMusicCollectGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *XiamiContentMusicCollectGetAPIRequest) Reset() {
+	r._collectId = 0
+	r._pageSize = 0
+	r._page = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *XiamiContentMusicCollectGetAPIRequest) SetPage(_page int64) error {
 // GetPage Page Getter
 func (r XiamiContentMusicCollectGetAPIRequest) GetPage() int64 {
 	return r._page
+}
+
+var poolXiamiContentMusicCollectGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewXiamiContentMusicCollectGetRequest()
+	},
+}
+
+// GetXiamiContentMusicCollectGetRequest 从 sync.Pool 获取 XiamiContentMusicCollectGetAPIRequest
+func GetXiamiContentMusicCollectGetAPIRequest() *XiamiContentMusicCollectGetAPIRequest {
+	return poolXiamiContentMusicCollectGetAPIRequest.Get().(*XiamiContentMusicCollectGetAPIRequest)
+}
+
+// ReleaseXiamiContentMusicCollectGetAPIRequest 将 XiamiContentMusicCollectGetAPIRequest 放入 sync.Pool
+func ReleaseXiamiContentMusicCollectGetAPIRequest(v *XiamiContentMusicCollectGetAPIRequest) {
+	v.Reset()
+	poolXiamiContentMusicCollectGetAPIRequest.Put(v)
 }

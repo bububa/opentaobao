@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaMsfserviceWorkerQueryidAPIRequest struct {
 // NewAlibabaMsfserviceWorkerQueryidRequest 初始化AlibabaMsfserviceWorkerQueryidAPIRequest对象
 func NewAlibabaMsfserviceWorkerQueryidRequest() *AlibabaMsfserviceWorkerQueryidAPIRequest {
 	return &AlibabaMsfserviceWorkerQueryidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMsfserviceWorkerQueryidAPIRequest) Reset() {
+	r._phone = ""
+	r._idNumber = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaMsfserviceWorkerQueryidAPIRequest) SetIdNumber(_idNumber string)
 // GetIdNumber IdNumber Getter
 func (r AlibabaMsfserviceWorkerQueryidAPIRequest) GetIdNumber() string {
 	return r._idNumber
+}
+
+var poolAlibabaMsfserviceWorkerQueryidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMsfserviceWorkerQueryidRequest()
+	},
+}
+
+// GetAlibabaMsfserviceWorkerQueryidRequest 从 sync.Pool 获取 AlibabaMsfserviceWorkerQueryidAPIRequest
+func GetAlibabaMsfserviceWorkerQueryidAPIRequest() *AlibabaMsfserviceWorkerQueryidAPIRequest {
+	return poolAlibabaMsfserviceWorkerQueryidAPIRequest.Get().(*AlibabaMsfserviceWorkerQueryidAPIRequest)
+}
+
+// ReleaseAlibabaMsfserviceWorkerQueryidAPIRequest 将 AlibabaMsfserviceWorkerQueryidAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMsfserviceWorkerQueryidAPIRequest(v *AlibabaMsfserviceWorkerQueryidAPIRequest) {
+	v.Reset()
+	poolAlibabaMsfserviceWorkerQueryidAPIRequest.Put(v)
 }

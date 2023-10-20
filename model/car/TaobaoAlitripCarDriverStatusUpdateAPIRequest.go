@@ -2,6 +2,7 @@ package car
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoAlitripCarDriverStatusUpdateAPIRequest struct {
 // NewTaobaoAlitripCarDriverStatusUpdateRequest 初始化TaobaoAlitripCarDriverStatusUpdateAPIRequest对象
 func NewTaobaoAlitripCarDriverStatusUpdateRequest() *TaobaoAlitripCarDriverStatusUpdateAPIRequest {
 	return &TaobaoAlitripCarDriverStatusUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripCarDriverStatusUpdateAPIRequest) Reset() {
+	r._orderId = ""
+	r._thirdOrderId = ""
+	r._providerId = ""
+	r._time = ""
+	r._sellerId = ""
+	r._status = 0
+	r._useType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoAlitripCarDriverStatusUpdateAPIRequest) SetUseType(_useType int64
 // GetUseType UseType Getter
 func (r TaobaoAlitripCarDriverStatusUpdateAPIRequest) GetUseType() int64 {
 	return r._useType
+}
+
+var poolTaobaoAlitripCarDriverStatusUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripCarDriverStatusUpdateRequest()
+	},
+}
+
+// GetTaobaoAlitripCarDriverStatusUpdateRequest 从 sync.Pool 获取 TaobaoAlitripCarDriverStatusUpdateAPIRequest
+func GetTaobaoAlitripCarDriverStatusUpdateAPIRequest() *TaobaoAlitripCarDriverStatusUpdateAPIRequest {
+	return poolTaobaoAlitripCarDriverStatusUpdateAPIRequest.Get().(*TaobaoAlitripCarDriverStatusUpdateAPIRequest)
+}
+
+// ReleaseTaobaoAlitripCarDriverStatusUpdateAPIRequest 将 TaobaoAlitripCarDriverStatusUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripCarDriverStatusUpdateAPIRequest(v *TaobaoAlitripCarDriverStatusUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripCarDriverStatusUpdateAPIRequest.Put(v)
 }

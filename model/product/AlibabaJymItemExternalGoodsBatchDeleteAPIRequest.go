@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaJymItemExternalGoodsBatchDeleteAPIRequest struct {
 // NewAlibabaJymItemExternalGoodsBatchDeleteRequest 初始化AlibabaJymItemExternalGoodsBatchDeleteAPIRequest对象
 func NewAlibabaJymItemExternalGoodsBatchDeleteRequest() *AlibabaJymItemExternalGoodsBatchDeleteAPIRequest {
 	return &AlibabaJymItemExternalGoodsBatchDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJymItemExternalGoodsBatchDeleteAPIRequest) Reset() {
+	r._goodsDeleteCommandDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaJymItemExternalGoodsBatchDeleteAPIRequest) SetGoodsDeleteCommand
 // GetGoodsDeleteCommandDto GoodsDeleteCommandDto Getter
 func (r AlibabaJymItemExternalGoodsBatchDeleteAPIRequest) GetGoodsDeleteCommandDto() *GoodsDeleteCommandDto {
 	return r._goodsDeleteCommandDto
+}
+
+var poolAlibabaJymItemExternalGoodsBatchDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJymItemExternalGoodsBatchDeleteRequest()
+	},
+}
+
+// GetAlibabaJymItemExternalGoodsBatchDeleteRequest 从 sync.Pool 获取 AlibabaJymItemExternalGoodsBatchDeleteAPIRequest
+func GetAlibabaJymItemExternalGoodsBatchDeleteAPIRequest() *AlibabaJymItemExternalGoodsBatchDeleteAPIRequest {
+	return poolAlibabaJymItemExternalGoodsBatchDeleteAPIRequest.Get().(*AlibabaJymItemExternalGoodsBatchDeleteAPIRequest)
+}
+
+// ReleaseAlibabaJymItemExternalGoodsBatchDeleteAPIRequest 将 AlibabaJymItemExternalGoodsBatchDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJymItemExternalGoodsBatchDeleteAPIRequest(v *AlibabaJymItemExternalGoodsBatchDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaJymItemExternalGoodsBatchDeleteAPIRequest.Put(v)
 }

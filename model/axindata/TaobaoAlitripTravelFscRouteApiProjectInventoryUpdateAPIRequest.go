@@ -2,6 +2,7 @@ package axindata
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest struct {
 // NewTaobaoAlitripTravelFscRouteApiProjectInventoryUpdateRequest 初始化TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest对象
 func NewTaobaoAlitripTravelFscRouteApiProjectInventoryUpdateRequest() *TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest {
 	return &TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest) Reset() {
+	r._fscProjectInventoryUpdateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest) SetFscP
 // GetFscProjectInventoryUpdateRequest FscProjectInventoryUpdateRequest Getter
 func (r TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest) GetFscProjectInventoryUpdateRequest() *FscProjectInventoryUpdateRequest {
 	return r._fscProjectInventoryUpdateRequest
+}
+
+var poolTaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelFscRouteApiProjectInventoryUpdateRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelFscRouteApiProjectInventoryUpdateRequest 从 sync.Pool 获取 TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest
+func GetTaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest() *TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest {
+	return poolTaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest.Get().(*TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest 将 TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest(v *TaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelFscRouteApiProjectInventoryUpdateAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alimember
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMemberIdentityRescindfinishAPIRequest struct {
 // NewAlibabaMemberIdentityRescindfinishRequest 初始化AlibabaMemberIdentityRescindfinishAPIRequest对象
 func NewAlibabaMemberIdentityRescindfinishRequest() *AlibabaMemberIdentityRescindfinishAPIRequest {
 	return &AlibabaMemberIdentityRescindfinishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMemberIdentityRescindfinishAPIRequest) Reset() {
+	r._rescindFinish = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMemberIdentityRescindfinishAPIRequest) SetRescindFinish(_rescind
 // GetRescindFinish RescindFinish Getter
 func (r AlibabaMemberIdentityRescindfinishAPIRequest) GetRescindFinish() *RescindIdentityFinishRequest {
 	return r._rescindFinish
+}
+
+var poolAlibabaMemberIdentityRescindfinishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMemberIdentityRescindfinishRequest()
+	},
+}
+
+// GetAlibabaMemberIdentityRescindfinishRequest 从 sync.Pool 获取 AlibabaMemberIdentityRescindfinishAPIRequest
+func GetAlibabaMemberIdentityRescindfinishAPIRequest() *AlibabaMemberIdentityRescindfinishAPIRequest {
+	return poolAlibabaMemberIdentityRescindfinishAPIRequest.Get().(*AlibabaMemberIdentityRescindfinishAPIRequest)
+}
+
+// ReleaseAlibabaMemberIdentityRescindfinishAPIRequest 将 AlibabaMemberIdentityRescindfinishAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMemberIdentityRescindfinishAPIRequest(v *AlibabaMemberIdentityRescindfinishAPIRequest) {
+	v.Reset()
+	poolAlibabaMemberIdentityRescindfinishAPIRequest.Put(v)
 }

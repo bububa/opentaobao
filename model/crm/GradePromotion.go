@@ -1,5 +1,9 @@
 package crm
 
+import (
+	"sync"
+)
+
 // GradePromotion 结构体
 type GradePromotion struct {
 	// 店铺客户、普通会员 、高级会员、VIP会员、至尊VIP
@@ -16,4 +20,27 @@ type GradePromotion struct {
 	NextUpgradeAmount int64 `json:"next_upgrade_amount,omitempty" xml:"next_upgrade_amount,omitempty"`
 	// 会员级别折扣率没有小数，990代表9.9折
 	Discount int64 `json:"discount,omitempty" xml:"discount,omitempty"`
+}
+
+var poolGradePromotion = sync.Pool{
+	New: func() any {
+		return new(GradePromotion)
+	},
+}
+
+// GetGradePromotion() 从对象池中获取GradePromotion
+func GetGradePromotion() *GradePromotion {
+	return poolGradePromotion.Get().(*GradePromotion)
+}
+
+// ReleaseGradePromotion 释放GradePromotion
+func ReleaseGradePromotion(v *GradePromotion) {
+	v.CurGradeName = ""
+	v.CurGrade = ""
+	v.NextGradeName = ""
+	v.NextGrade = ""
+	v.NextUpgradeCount = 0
+	v.NextUpgradeAmount = 0
+	v.Discount = 0
+	poolGradePromotion.Put(v)
 }

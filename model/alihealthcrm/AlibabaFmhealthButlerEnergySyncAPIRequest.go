@@ -2,6 +2,7 @@ package alihealthcrm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaFmhealthButlerEnergySyncAPIRequest struct {
 // NewAlibabaFmhealthButlerEnergySyncRequest 初始化AlibabaFmhealthButlerEnergySyncAPIRequest对象
 func NewAlibabaFmhealthButlerEnergySyncRequest() *AlibabaFmhealthButlerEnergySyncAPIRequest {
 	return &AlibabaFmhealthButlerEnergySyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaFmhealthButlerEnergySyncAPIRequest) Reset() {
+	r._energyType = ""
+	r._userId = 0
+	r._value = 0
+	r._target = 0
+	r._sport = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaFmhealthButlerEnergySyncAPIRequest) SetSport(_sport float64) err
 // GetSport Sport Getter
 func (r AlibabaFmhealthButlerEnergySyncAPIRequest) GetSport() float64 {
 	return r._sport
+}
+
+var poolAlibabaFmhealthButlerEnergySyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaFmhealthButlerEnergySyncRequest()
+	},
+}
+
+// GetAlibabaFmhealthButlerEnergySyncRequest 从 sync.Pool 获取 AlibabaFmhealthButlerEnergySyncAPIRequest
+func GetAlibabaFmhealthButlerEnergySyncAPIRequest() *AlibabaFmhealthButlerEnergySyncAPIRequest {
+	return poolAlibabaFmhealthButlerEnergySyncAPIRequest.Get().(*AlibabaFmhealthButlerEnergySyncAPIRequest)
+}
+
+// ReleaseAlibabaFmhealthButlerEnergySyncAPIRequest 将 AlibabaFmhealthButlerEnergySyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaFmhealthButlerEnergySyncAPIRequest(v *AlibabaFmhealthButlerEnergySyncAPIRequest) {
+	v.Reset()
+	poolAlibabaFmhealthButlerEnergySyncAPIRequest.Put(v)
 }

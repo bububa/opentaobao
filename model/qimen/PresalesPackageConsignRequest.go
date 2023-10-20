@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // PresalesPackageConsignRequest 结构体
 type PresalesPackageConsignRequest struct {
 	// 货主编码
@@ -14,4 +18,26 @@ type PresalesPackageConsignRequest struct {
 	ExtendProps string `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 	// 金额(单位为分)
 	TotalAmount int64 `json:"totalAmount,omitempty" xml:"totalAmount,omitempty"`
+}
+
+var poolPresalesPackageConsignRequest = sync.Pool{
+	New: func() any {
+		return new(PresalesPackageConsignRequest)
+	},
+}
+
+// GetPresalesPackageConsignRequest() 从对象池中获取PresalesPackageConsignRequest
+func GetPresalesPackageConsignRequest() *PresalesPackageConsignRequest {
+	return poolPresalesPackageConsignRequest.Get().(*PresalesPackageConsignRequest)
+}
+
+// ReleasePresalesPackageConsignRequest 释放PresalesPackageConsignRequest
+func ReleasePresalesPackageConsignRequest(v *PresalesPackageConsignRequest) {
+	v.OwnerCode = ""
+	v.OrderCode = ""
+	v.PayTime = ""
+	v.Remark = ""
+	v.ExtendProps = ""
+	v.TotalAmount = 0
+	poolPresalesPackageConsignRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alitrip.tripvp.agent.order.issue
 //
 // 廉航辅营正向订单出货接口
-func AlitripTripvpAgentOrderIssue(clt *core.SDKClient, req *flight.AlitripTripvpAgentOrderIssueAPIRequest, session string) (*flight.AlitripTripvpAgentOrderIssueAPIResponse, error) {
-	var resp flight.AlitripTripvpAgentOrderIssueAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripTripvpAgentOrderIssue(clt *core.SDKClient, req *flight.AlitripTripvpAgentOrderIssueAPIRequest, resp *flight.AlitripTripvpAgentOrderIssueAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

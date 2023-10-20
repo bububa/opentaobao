@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // SettleAdjustmentRequest 结构体
 type SettleAdjustmentRequest struct {
 	// 计价因子，填写规则：1、有计价因子场景：{name:计价因子名称 ,value:数量｝如示例；2、没有计价因子场景：填默认值：｛name:计价因子,value:0｝
@@ -18,4 +22,28 @@ type SettleAdjustmentRequest struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 服务商结算标记 1-服务商 2-商家
 	TpSettleFlag int64 `json:"tp_settle_flag,omitempty" xml:"tp_settle_flag,omitempty"`
+}
+
+var poolSettleAdjustmentRequest = sync.Pool{
+	New: func() any {
+		return new(SettleAdjustmentRequest)
+	},
+}
+
+// GetSettleAdjustmentRequest() 从对象池中获取SettleAdjustmentRequest
+func GetSettleAdjustmentRequest() *SettleAdjustmentRequest {
+	return poolSettleAdjustmentRequest.Get().(*SettleAdjustmentRequest)
+}
+
+// ReleaseSettleAdjustmentRequest 释放SettleAdjustmentRequest
+func ReleaseSettleAdjustmentRequest(v *SettleAdjustmentRequest) {
+	v.PriceFactors = v.PriceFactors[:0]
+	v.Description = ""
+	v.PictureUrls = ""
+	v.RealTpNick = ""
+	v.Cost = 0
+	v.WorkcardId = 0
+	v.Type = 0
+	v.TpSettleFlag = 0
+	poolSettleAdjustmentRequest.Put(v)
 }

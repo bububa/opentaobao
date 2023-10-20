@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // ApplyIntentionInfoDo 结构体
 type ApplyIntentionInfoDo struct {
 	// 出发城市名称
@@ -48,4 +52,43 @@ type ApplyIntentionInfoDo struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 是否合住
 	Together bool `json:"together,omitempty" xml:"together,omitempty"`
+}
+
+var poolApplyIntentionInfoDo = sync.Pool{
+	New: func() any {
+		return new(ApplyIntentionInfoDo)
+	},
+}
+
+// GetApplyIntentionInfoDo() 从对象池中获取ApplyIntentionInfoDo
+func GetApplyIntentionInfoDo() *ApplyIntentionInfoDo {
+	return poolApplyIntentionInfoDo.Get().(*ApplyIntentionInfoDo)
+}
+
+// ReleaseApplyIntentionInfoDo 释放ApplyIntentionInfoDo
+func ReleaseApplyIntentionInfoDo(v *ApplyIntentionInfoDo) {
+	v.DepCityName = ""
+	v.ArrCityName = ""
+	v.DepCity = ""
+	v.ArrCity = ""
+	v.DepTime = ""
+	v.ArrTime = ""
+	v.FlightNo = ""
+	v.Cabin = ""
+	v.CabinClassStr = ""
+	v.Discount = ""
+	v.CityCode = ""
+	v.CityName = ""
+	v.CheckIn = ""
+	v.CheckOut = ""
+	v.ArrStation = ""
+	v.DepStation = ""
+	v.TrainNo = ""
+	v.TrainTypeDesc = ""
+	v.SeatName = ""
+	v.CabinClass = 0
+	v.Price = 0
+	v.Type = 0
+	v.Together = false
+	poolApplyIntentionInfoDo.Put(v)
 }

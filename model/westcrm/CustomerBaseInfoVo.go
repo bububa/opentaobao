@@ -1,5 +1,9 @@
 package westcrm
 
+import (
+	"sync"
+)
+
 // CustomerBaseInfoVo 结构体
 type CustomerBaseInfoVo struct {
 	// 头像
@@ -22,4 +26,30 @@ type CustomerBaseInfoVo struct {
 	GradeId int64 `json:"grade_id,omitempty" xml:"grade_id,omitempty"`
 	// 用户id
 	IbUserId int64 `json:"ib_user_id,omitempty" xml:"ib_user_id,omitempty"`
+}
+
+var poolCustomerBaseInfoVo = sync.Pool{
+	New: func() any {
+		return new(CustomerBaseInfoVo)
+	},
+}
+
+// GetCustomerBaseInfoVo() 从对象池中获取CustomerBaseInfoVo
+func GetCustomerBaseInfoVo() *CustomerBaseInfoVo {
+	return poolCustomerBaseInfoVo.Get().(*CustomerBaseInfoVo)
+}
+
+// ReleaseCustomerBaseInfoVo 释放CustomerBaseInfoVo
+func ReleaseCustomerBaseInfoVo(v *CustomerBaseInfoVo) {
+	v.Avatar = ""
+	v.Mobile = ""
+	v.Name = ""
+	v.GradeName = ""
+	v.Point = 0
+	v.GradeNum = 0
+	v.CampusId = 0
+	v.Gender = 0
+	v.GradeId = 0
+	v.IbUserId = 0
+	poolCustomerBaseInfoVo.Put(v)
 }

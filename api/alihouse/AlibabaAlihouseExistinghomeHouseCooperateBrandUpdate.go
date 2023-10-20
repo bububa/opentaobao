@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghome.house.cooperate.brand.update
 //
 // 租房合作品牌更新接口
-func AlibabaAlihouseExistinghomeHouseCooperateBrandUpdate(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghomeHouseCooperateBrandUpdate(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeHouseCooperateBrandUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

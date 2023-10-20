@@ -9,11 +9,6 @@ import (
 // alibaba.campus.topology.getall
 //
 // 获取所属园区的所有规则拓扑图
-func AlibabaCampusTopologyGetall(clt *core.SDKClient, req *campus.AlibabaCampusTopologyGetallAPIRequest, session string) (*campus.AlibabaCampusTopologyGetallAPIResponse, error) {
-	var resp campus.AlibabaCampusTopologyGetallAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusTopologyGetall(clt *core.SDKClient, req *campus.AlibabaCampusTopologyGetallAPIRequest, resp *campus.AlibabaCampusTopologyGetallAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

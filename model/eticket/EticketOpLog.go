@@ -1,5 +1,9 @@
 package eticket
 
+import (
+	"sync"
+)
+
 // EticketOpLog 结构体
 type EticketOpLog struct {
 	// 操作流水号
@@ -18,4 +22,28 @@ type EticketOpLog struct {
 	OpType int64 `json:"op_type,omitempty" xml:"op_type,omitempty"`
 	// 订单ID
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolEticketOpLog = sync.Pool{
+	New: func() any {
+		return new(EticketOpLog)
+	},
+}
+
+// GetEticketOpLog() 从对象池中获取EticketOpLog
+func GetEticketOpLog() *EticketOpLog {
+	return poolEticketOpLog.Get().(*EticketOpLog)
+}
+
+// ReleaseEticketOpLog 释放EticketOpLog
+func ReleaseEticketOpLog(v *EticketOpLog) {
+	v.ConsumeSerialNum = ""
+	v.Amount = ""
+	v.OpTime = ""
+	v.PosId = ""
+	v.Mobile = ""
+	v.Num = 0
+	v.OpType = 0
+	v.OrderId = 0
+	poolEticketOpLog.Put(v)
 }

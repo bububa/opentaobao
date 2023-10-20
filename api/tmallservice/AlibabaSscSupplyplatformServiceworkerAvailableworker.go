@@ -9,11 +9,6 @@ import (
 // alibaba.ssc.supplyplatform.serviceworker.availableworker
 //
 // 可用工人查询
-func AlibabaSscSupplyplatformServiceworkerAvailableworker(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIResponse, error) {
-	var resp tmallservice.AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSscSupplyplatformServiceworkerAvailableworker(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIRequest, resp *tmallservice.AlibabaSscSupplyplatformServiceworkerAvailableworkerAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

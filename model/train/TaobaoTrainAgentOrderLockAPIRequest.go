@@ -2,6 +2,7 @@ package train
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTrainAgentOrderLockAPIRequest struct {
 // NewTaobaoTrainAgentOrderLockRequest 初始化TaobaoTrainAgentOrderLockAPIRequest对象
 func NewTaobaoTrainAgentOrderLockRequest() *TaobaoTrainAgentOrderLockAPIRequest {
 	return &TaobaoTrainAgentOrderLockAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTrainAgentOrderLockAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTrainAgentOrderLockAPIRequest) SetParam(_param *LockOrderRq) erro
 // GetParam Param Getter
 func (r TaobaoTrainAgentOrderLockAPIRequest) GetParam() *LockOrderRq {
 	return r._param
+}
+
+var poolTaobaoTrainAgentOrderLockAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTrainAgentOrderLockRequest()
+	},
+}
+
+// GetTaobaoTrainAgentOrderLockRequest 从 sync.Pool 获取 TaobaoTrainAgentOrderLockAPIRequest
+func GetTaobaoTrainAgentOrderLockAPIRequest() *TaobaoTrainAgentOrderLockAPIRequest {
+	return poolTaobaoTrainAgentOrderLockAPIRequest.Get().(*TaobaoTrainAgentOrderLockAPIRequest)
+}
+
+// ReleaseTaobaoTrainAgentOrderLockAPIRequest 将 TaobaoTrainAgentOrderLockAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTrainAgentOrderLockAPIRequest(v *TaobaoTrainAgentOrderLockAPIRequest) {
+	v.Reset()
+	poolTaobaoTrainAgentOrderLockAPIRequest.Put(v)
 }

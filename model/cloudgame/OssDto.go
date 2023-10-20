@@ -1,5 +1,9 @@
 package cloudgame
 
+import (
+	"sync"
+)
+
 // OssDto 结构体
 type OssDto struct {
 	// oss bucket
@@ -16,4 +20,27 @@ type OssDto struct {
 	FileExt string `json:"file_ext,omitempty" xml:"file_ext,omitempty"`
 	// 文件类型, AUDIO,IMAGE, VIDEO, GIF
 	FileType string `json:"file_type,omitempty" xml:"file_type,omitempty"`
+}
+
+var poolOssDto = sync.Pool{
+	New: func() any {
+		return new(OssDto)
+	},
+}
+
+// GetOssDto() 从对象池中获取OssDto
+func GetOssDto() *OssDto {
+	return poolOssDto.Get().(*OssDto)
+}
+
+// ReleaseOssDto 释放OssDto
+func ReleaseOssDto(v *OssDto) {
+	v.Bucket = ""
+	v.FileName = ""
+	v.Endpoint = ""
+	v.FilePurpose = ""
+	v.FileKey = ""
+	v.FileExt = ""
+	v.FileType = ""
+	poolOssDto.Put(v)
 }

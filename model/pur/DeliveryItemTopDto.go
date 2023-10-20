@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // DeliveryItemTopDto 结构体
 type DeliveryItemTopDto struct {
 	// 收货地址
@@ -64,4 +68,51 @@ type DeliveryItemTopDto struct {
 	SupplierId int64 `json:"supplier_id,omitempty" xml:"supplier_id,omitempty"`
 	// 是否按明细
 	DeliveryByDetail bool `json:"delivery_by_detail,omitempty" xml:"delivery_by_detail,omitempty"`
+}
+
+var poolDeliveryItemTopDto = sync.Pool{
+	New: func() any {
+		return new(DeliveryItemTopDto)
+	},
+}
+
+// GetDeliveryItemTopDto() 从对象池中获取DeliveryItemTopDto
+func GetDeliveryItemTopDto() *DeliveryItemTopDto {
+	return poolDeliveryItemTopDto.Get().(*DeliveryItemTopDto)
+}
+
+// ReleaseDeliveryItemTopDto 释放DeliveryItemTopDto
+func ReleaseDeliveryItemTopDto(v *DeliveryItemTopDto) {
+	v.AddressInfo = ""
+	v.BizCode = ""
+	v.BizId = ""
+	v.CategoryCode = ""
+	v.CategoryUse = ""
+	v.CompanyCode = ""
+	v.CurrencyCode = ""
+	v.DeliveryUnit = ""
+	v.Demander = ""
+	v.ExpenseMonth = ""
+	v.ExpenseMonthEnd = ""
+	v.ExpenseMonthStart = ""
+	v.ExtStr = ""
+	v.ItemDescription = ""
+	v.ItemId = ""
+	v.ItemName = ""
+	v.OrderType = ""
+	v.PhoneNo = ""
+	v.QuantityDelivered = ""
+	v.ReceiveUnit = ""
+	v.Receiver = ""
+	v.Specification = ""
+	v.SettlementDate = ""
+	v.TaxCode = ""
+	v.TaxRate = ""
+	v.UnitPrice = ""
+	v.Uom = ""
+	v.StructureItem = ""
+	v.PurchaseOrgId = 0
+	v.SupplierId = 0
+	v.DeliveryByDetail = false
+	poolDeliveryItemTopDto.Put(v)
 }

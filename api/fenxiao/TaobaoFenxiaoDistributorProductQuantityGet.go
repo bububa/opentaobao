@@ -9,11 +9,6 @@ import (
 // taobao.fenxiao.distributor.product.quantity.get
 //
 // 分销商查询产品库存
-func TaobaoFenxiaoDistributorProductQuantityGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoDistributorProductQuantityGetAPIRequest, session string) (*fenxiao.TaobaoFenxiaoDistributorProductQuantityGetAPIResponse, error) {
-	var resp fenxiao.TaobaoFenxiaoDistributorProductQuantityGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFenxiaoDistributorProductQuantityGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoDistributorProductQuantityGetAPIRequest, resp *fenxiao.TaobaoFenxiaoDistributorProductQuantityGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

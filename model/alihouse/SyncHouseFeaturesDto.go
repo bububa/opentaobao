@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // SyncHouseFeaturesDto 结构体
 type SyncHouseFeaturesDto struct {
 	// 商业活动标
@@ -14,4 +18,26 @@ type SyncHouseFeaturesDto struct {
 	FeaturesType string `json:"features_type,omitempty" xml:"features_type,omitempty"`
 	// 业务类型，1-新房，2-二手房，3-租房，默认为2
 	BusinessType int64 `json:"business_type,omitempty" xml:"business_type,omitempty"`
+}
+
+var poolSyncHouseFeaturesDto = sync.Pool{
+	New: func() any {
+		return new(SyncHouseFeaturesDto)
+	},
+}
+
+// GetSyncHouseFeaturesDto() 从对象池中获取SyncHouseFeaturesDto
+func GetSyncHouseFeaturesDto() *SyncHouseFeaturesDto {
+	return poolSyncHouseFeaturesDto.Get().(*SyncHouseFeaturesDto)
+}
+
+// ReleaseSyncHouseFeaturesDto 释放SyncHouseFeaturesDto
+func ReleaseSyncHouseFeaturesDto(v *SyncHouseFeaturesDto) {
+	v.BusinessActivities = v.BusinessActivities[:0]
+	v.HouseFeaturesList = v.HouseFeaturesList[:0]
+	v.OperationType = ""
+	v.BatchNumber = ""
+	v.FeaturesType = ""
+	v.BusinessType = 0
+	poolSyncHouseFeaturesDto.Put(v)
 }

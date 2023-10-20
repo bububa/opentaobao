@@ -9,11 +9,6 @@ import (
 // taobao.logistics.express.capacity.tms.async
 //
 // 上门取退产能信息同步/更新
-func TaobaoLogisticsExpressCapacityTmsAsync(clt *core.SDKClient, req *ascp.TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest, session string) (*ascp.TaobaoLogisticsExpressCapacityTmsAsyncAPIResponse, error) {
-	var resp ascp.TaobaoLogisticsExpressCapacityTmsAsyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLogisticsExpressCapacityTmsAsync(clt *core.SDKClient, req *ascp.TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest, resp *ascp.TaobaoLogisticsExpressCapacityTmsAsyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // SkillSimpleView 结构体
 type SkillSimpleView struct {
 	// 技能名称
@@ -14,4 +18,26 @@ type SkillSimpleView struct {
 	SkillId int64 `json:"skill_id,omitempty" xml:"skill_id,omitempty"`
 	// 上下架
 	DeleteToken int64 `json:"delete_token,omitempty" xml:"delete_token,omitempty"`
+}
+
+var poolSkillSimpleView = sync.Pool{
+	New: func() any {
+		return new(SkillSimpleView)
+	},
+}
+
+// GetSkillSimpleView() 从对象池中获取SkillSimpleView
+func GetSkillSimpleView() *SkillSimpleView {
+	return poolSkillSimpleView.Get().(*SkillSimpleView)
+}
+
+// ReleaseSkillSimpleView 释放SkillSimpleView
+func ReleaseSkillSimpleView(v *SkillSimpleView) {
+	v.Name = ""
+	v.Image = ""
+	v.IsOnline = 0
+	v.BotSkillId = 0
+	v.SkillId = 0
+	v.DeleteToken = 0
+	poolSkillSimpleView.Put(v)
 }

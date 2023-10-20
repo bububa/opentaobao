@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripMerchantGalaxyCityListAPIRequest struct {
 // NewAlitripMerchantGalaxyCityListRequest 初始化AlitripMerchantGalaxyCityListAPIRequest对象
 func NewAlitripMerchantGalaxyCityListRequest() *AlitripMerchantGalaxyCityListAPIRequest {
 	return &AlitripMerchantGalaxyCityListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyCityListAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._domestic = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripMerchantGalaxyCityListAPIRequest) SetDomestic(_domestic int64) e
 // GetDomestic Domestic Getter
 func (r AlitripMerchantGalaxyCityListAPIRequest) GetDomestic() int64 {
 	return r._domestic
+}
+
+var poolAlitripMerchantGalaxyCityListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyCityListRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyCityListRequest 从 sync.Pool 获取 AlitripMerchantGalaxyCityListAPIRequest
+func GetAlitripMerchantGalaxyCityListAPIRequest() *AlitripMerchantGalaxyCityListAPIRequest {
+	return poolAlitripMerchantGalaxyCityListAPIRequest.Get().(*AlitripMerchantGalaxyCityListAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyCityListAPIRequest 将 AlitripMerchantGalaxyCityListAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyCityListAPIRequest(v *AlitripMerchantGalaxyCityListAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyCityListAPIRequest.Put(v)
 }

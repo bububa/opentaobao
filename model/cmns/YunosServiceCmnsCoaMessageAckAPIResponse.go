@@ -2,6 +2,7 @@ package cmns
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type YunosServiceCmnsCoaMessageAckAPIResponse struct {
 	YunosServiceCmnsCoaMessageAckAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *YunosServiceCmnsCoaMessageAckAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.YunosServiceCmnsCoaMessageAckAPIResponseModel).Reset()
+}
+
 // YunosServiceCmnsCoaMessageAckAPIResponseModel is 消息回执查询 成功返回结果
 type YunosServiceCmnsCoaMessageAckAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_service_cmns_coa_message_ack_response"`
@@ -26,4 +33,29 @@ type YunosServiceCmnsCoaMessageAckAPIResponseModel struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 接口调用成功返回信息&lt;br/&gt;0:未到达 1：已到达
 	Data int64 `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *YunosServiceCmnsCoaMessageAckAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.Status = 0
+	m.Data = 0
+}
+
+var poolYunosServiceCmnsCoaMessageAckAPIResponse = sync.Pool{
+	New: func() any {
+		return new(YunosServiceCmnsCoaMessageAckAPIResponse)
+	},
+}
+
+// GetYunosServiceCmnsCoaMessageAckAPIResponse 从 sync.Pool 获取 YunosServiceCmnsCoaMessageAckAPIResponse
+func GetYunosServiceCmnsCoaMessageAckAPIResponse() *YunosServiceCmnsCoaMessageAckAPIResponse {
+	return poolYunosServiceCmnsCoaMessageAckAPIResponse.Get().(*YunosServiceCmnsCoaMessageAckAPIResponse)
+}
+
+// ReleaseYunosServiceCmnsCoaMessageAckAPIResponse 将 YunosServiceCmnsCoaMessageAckAPIResponse 保存到 sync.Pool
+func ReleaseYunosServiceCmnsCoaMessageAckAPIResponse(v *YunosServiceCmnsCoaMessageAckAPIResponse) {
+	v.Reset()
+	poolYunosServiceCmnsCoaMessageAckAPIResponse.Put(v)
 }

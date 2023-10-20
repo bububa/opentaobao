@@ -2,6 +2,7 @@ package ieagency
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripIeBuyerOrderBookpayAPIRequest struct {
 // NewAlitripIeBuyerOrderBookpayRequest 初始化AlitripIeBuyerOrderBookpayAPIRequest对象
 func NewAlitripIeBuyerOrderBookpayRequest() *AlitripIeBuyerOrderBookpayAPIRequest {
 	return &AlitripIeBuyerOrderBookpayAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripIeBuyerOrderBookpayAPIRequest) Reset() {
+	r._bookPayOrderParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripIeBuyerOrderBookpayAPIRequest) SetBookPayOrderParam(_bookPayOrde
 // GetBookPayOrderParam BookPayOrderParam Getter
 func (r AlitripIeBuyerOrderBookpayAPIRequest) GetBookPayOrderParam() *BookPayOrderRq {
 	return r._bookPayOrderParam
+}
+
+var poolAlitripIeBuyerOrderBookpayAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripIeBuyerOrderBookpayRequest()
+	},
+}
+
+// GetAlitripIeBuyerOrderBookpayRequest 从 sync.Pool 获取 AlitripIeBuyerOrderBookpayAPIRequest
+func GetAlitripIeBuyerOrderBookpayAPIRequest() *AlitripIeBuyerOrderBookpayAPIRequest {
+	return poolAlitripIeBuyerOrderBookpayAPIRequest.Get().(*AlitripIeBuyerOrderBookpayAPIRequest)
+}
+
+// ReleaseAlitripIeBuyerOrderBookpayAPIRequest 将 AlitripIeBuyerOrderBookpayAPIRequest 放入 sync.Pool
+func ReleaseAlitripIeBuyerOrderBookpayAPIRequest(v *AlitripIeBuyerOrderBookpayAPIRequest) {
+	v.Reset()
+	poolAlitripIeBuyerOrderBookpayAPIRequest.Put(v)
 }

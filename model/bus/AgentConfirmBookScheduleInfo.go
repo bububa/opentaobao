@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // AgentConfirmBookScheduleInfo 结构体
 type AgentConfirmBookScheduleInfo struct {
 	// 司机姓名
@@ -12,4 +16,25 @@ type AgentConfirmBookScheduleInfo struct {
 	MotorcycleType string `json:"motorcycle_type,omitempty" xml:"motorcycle_type,omitempty"`
 	// 车辆品牌
 	VehicleBrands string `json:"vehicle_brands,omitempty" xml:"vehicle_brands,omitempty"`
+}
+
+var poolAgentConfirmBookScheduleInfo = sync.Pool{
+	New: func() any {
+		return new(AgentConfirmBookScheduleInfo)
+	},
+}
+
+// GetAgentConfirmBookScheduleInfo() 从对象池中获取AgentConfirmBookScheduleInfo
+func GetAgentConfirmBookScheduleInfo() *AgentConfirmBookScheduleInfo {
+	return poolAgentConfirmBookScheduleInfo.Get().(*AgentConfirmBookScheduleInfo)
+}
+
+// ReleaseAgentConfirmBookScheduleInfo 释放AgentConfirmBookScheduleInfo
+func ReleaseAgentConfirmBookScheduleInfo(v *AgentConfirmBookScheduleInfo) {
+	v.DriverName = ""
+	v.DriverPhone = ""
+	v.LicensePlateNumber = ""
+	v.MotorcycleType = ""
+	v.VehicleBrands = ""
+	poolAgentConfirmBookScheduleInfo.Put(v)
 }

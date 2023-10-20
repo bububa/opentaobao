@@ -1,5 +1,9 @@
 package category
 
+import (
+	"sync"
+)
+
 // TopImapUnionCategoryPathDo 结构体
 type TopImapUnionCategoryPathDo struct {
 	// 叶子类目名称
@@ -30,4 +34,34 @@ type TopImapUnionCategoryPathDo struct {
 	ChannelId int64 `json:"channel_id,omitempty" xml:"channel_id,omitempty"`
 	// 是否叶子
 	Leaf bool `json:"leaf,omitempty" xml:"leaf,omitempty"`
+}
+
+var poolTopImapUnionCategoryPathDo = sync.Pool{
+	New: func() any {
+		return new(TopImapUnionCategoryPathDo)
+	},
+}
+
+// GetTopImapUnionCategoryPathDo() 从对象池中获取TopImapUnionCategoryPathDo
+func GetTopImapUnionCategoryPathDo() *TopImapUnionCategoryPathDo {
+	return poolTopImapUnionCategoryPathDo.Get().(*TopImapUnionCategoryPathDo)
+}
+
+// ReleaseTopImapUnionCategoryPathDo 释放TopImapUnionCategoryPathDo
+func ReleaseTopImapUnionCategoryPathDo(v *TopImapUnionCategoryPathDo) {
+	v.LeafCatName = ""
+	v.L4CatName = ""
+	v.L2CatName = ""
+	v.L3CatName = ""
+	v.L5CatName = ""
+	v.L1CatName = ""
+	v.L5CatId = 0
+	v.L3CatId = 0
+	v.LeafCatId = 0
+	v.L1CatId = 0
+	v.L4CatId = 0
+	v.L2CatId = 0
+	v.ChannelId = 0
+	v.Leaf = false
+	poolTopImapUnionCategoryPathDo.Put(v)
 }

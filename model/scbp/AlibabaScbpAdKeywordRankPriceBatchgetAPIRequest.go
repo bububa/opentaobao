@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest struct {
 // NewAlibabaScbpAdKeywordRankPriceBatchgetRequest 初始化AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest对象
 func NewAlibabaScbpAdKeywordRankPriceBatchgetRequest() *AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest {
 	return &AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) Reset() {
+	r._keywordRequest = nil
+	r._context = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) SetContext(_context *C
 // GetContext Context Getter
 func (r AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) GetContext() *ContextDto {
 	return r._context
+}
+
+var poolAlibabaScbpAdKeywordRankPriceBatchgetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdKeywordRankPriceBatchgetRequest()
+	},
+}
+
+// GetAlibabaScbpAdKeywordRankPriceBatchgetRequest 从 sync.Pool 获取 AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest
+func GetAlibabaScbpAdKeywordRankPriceBatchgetAPIRequest() *AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest {
+	return poolAlibabaScbpAdKeywordRankPriceBatchgetAPIRequest.Get().(*AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdKeywordRankPriceBatchgetAPIRequest 将 AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdKeywordRankPriceBatchgetAPIRequest(v *AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdKeywordRankPriceBatchgetAPIRequest.Put(v)
 }

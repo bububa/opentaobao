@@ -1,5 +1,9 @@
 package vaccin
 
+import (
+	"sync"
+)
+
 // SubmitVcRegisterRequest 结构体
 type SubmitVcRegisterRequest struct {
 	// cdc侧的登记单id
@@ -30,4 +34,34 @@ type SubmitVcRegisterRequest struct {
 	PovId int64 `json:"pov_id,omitempty" xml:"pov_id,omitempty"`
 	// cdc侧的疫苗名称
 	VaccineName int64 `json:"vaccine_name,omitempty" xml:"vaccine_name,omitempty"`
+}
+
+var poolSubmitVcRegisterRequest = sync.Pool{
+	New: func() any {
+		return new(SubmitVcRegisterRequest)
+	},
+}
+
+// GetSubmitVcRegisterRequest() 从对象池中获取SubmitVcRegisterRequest
+func GetSubmitVcRegisterRequest() *SubmitVcRegisterRequest {
+	return poolSubmitVcRegisterRequest.Get().(*SubmitVcRegisterRequest)
+}
+
+// ReleaseSubmitVcRegisterRequest 释放SubmitVcRegisterRequest
+func ReleaseSubmitVcRegisterRequest(v *SubmitVcRegisterRequest) {
+	v.RegisterId = ""
+	v.ProvinceName = ""
+	v.CityName = ""
+	v.AreaName = ""
+	v.AlipayUserId = ""
+	v.VaccineId = ""
+	v.CreateTime = ""
+	v.Mobile = ""
+	v.AppChannel = ""
+	v.ProvinceCode = 0
+	v.CityCode = 0
+	v.AreaCode = 0
+	v.PovId = 0
+	v.VaccineName = 0
+	poolSubmitVcRegisterRequest.Put(v)
 }

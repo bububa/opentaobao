@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // CampaignPlatform 结构体
 type CampaignPlatform struct {
 	// 搜索投放频道代码数组，频道代码必须是直通车搜索类频道列表中的值。1：淘宝站内搜索，8、无线站内搜索；16:无线站外搜索
@@ -18,4 +22,28 @@ type CampaignPlatform struct {
 	OutsideDiscount int64 `json:"outside_discount,omitempty" xml:"outside_discount,omitempty"`
 	// 已经废弃了
 	MobileDiscount int64 `json:"mobile_discount,omitempty" xml:"mobile_discount,omitempty"`
+}
+
+var poolCampaignPlatform = sync.Pool{
+	New: func() any {
+		return new(CampaignPlatform)
+	},
+}
+
+// GetCampaignPlatform() 从对象池中获取CampaignPlatform
+func GetCampaignPlatform() *CampaignPlatform {
+	return poolCampaignPlatform.Get().(*CampaignPlatform)
+}
+
+// ReleaseCampaignPlatform 释放CampaignPlatform
+func ReleaseCampaignPlatform(v *CampaignPlatform) {
+	v.SearchChannels = v.SearchChannels[:0]
+	v.NonsearchChannels = v.NonsearchChannels[:0]
+	v.Nick = ""
+	v.CreateTime = ""
+	v.ModifiedTime = ""
+	v.CampaignId = 0
+	v.OutsideDiscount = 0
+	v.MobileDiscount = 0
+	poolCampaignPlatform.Put(v)
 }

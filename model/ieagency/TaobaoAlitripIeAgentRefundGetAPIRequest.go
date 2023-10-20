@@ -2,6 +2,7 @@ package ieagency
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoAlitripIeAgentRefundGetAPIRequest struct {
 // NewTaobaoAlitripIeAgentRefundGetRequest 初始化TaobaoAlitripIeAgentRefundGetAPIRequest对象
 func NewTaobaoAlitripIeAgentRefundGetRequest() *TaobaoAlitripIeAgentRefundGetAPIRequest {
 	return &TaobaoAlitripIeAgentRefundGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripIeAgentRefundGetAPIRequest) Reset() {
+	r._applyId = 0
+	r._agentId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoAlitripIeAgentRefundGetAPIRequest) SetAgentId(_agentId int64) err
 // GetAgentId AgentId Getter
 func (r TaobaoAlitripIeAgentRefundGetAPIRequest) GetAgentId() int64 {
 	return r._agentId
+}
+
+var poolTaobaoAlitripIeAgentRefundGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripIeAgentRefundGetRequest()
+	},
+}
+
+// GetTaobaoAlitripIeAgentRefundGetRequest 从 sync.Pool 获取 TaobaoAlitripIeAgentRefundGetAPIRequest
+func GetTaobaoAlitripIeAgentRefundGetAPIRequest() *TaobaoAlitripIeAgentRefundGetAPIRequest {
+	return poolTaobaoAlitripIeAgentRefundGetAPIRequest.Get().(*TaobaoAlitripIeAgentRefundGetAPIRequest)
+}
+
+// ReleaseTaobaoAlitripIeAgentRefundGetAPIRequest 将 TaobaoAlitripIeAgentRefundGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripIeAgentRefundGetAPIRequest(v *TaobaoAlitripIeAgentRefundGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripIeAgentRefundGetAPIRequest.Put(v)
 }

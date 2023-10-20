@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -28,8 +29,17 @@ type AlibabaSscSupplyplatformServiceInventoryEditAPIRequest struct {
 // NewAlibabaSscSupplyplatformServiceInventoryEditRequest 初始化AlibabaSscSupplyplatformServiceInventoryEditAPIRequest对象
 func NewAlibabaSscSupplyplatformServiceInventoryEditRequest() *AlibabaSscSupplyplatformServiceInventoryEditAPIRequest {
 	return &AlibabaSscSupplyplatformServiceInventoryEditAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSscSupplyplatformServiceInventoryEditAPIRequest) Reset() {
+	r._editDetails = r._editDetails[:0]
+	r._providerType = ""
+	r._bizId = ""
+	r._providerId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -99,4 +109,21 @@ func (r *AlibabaSscSupplyplatformServiceInventoryEditAPIRequest) SetProviderId(_
 // GetProviderId ProviderId Getter
 func (r AlibabaSscSupplyplatformServiceInventoryEditAPIRequest) GetProviderId() int64 {
 	return r._providerId
+}
+
+var poolAlibabaSscSupplyplatformServiceInventoryEditAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSscSupplyplatformServiceInventoryEditRequest()
+	},
+}
+
+// GetAlibabaSscSupplyplatformServiceInventoryEditRequest 从 sync.Pool 获取 AlibabaSscSupplyplatformServiceInventoryEditAPIRequest
+func GetAlibabaSscSupplyplatformServiceInventoryEditAPIRequest() *AlibabaSscSupplyplatformServiceInventoryEditAPIRequest {
+	return poolAlibabaSscSupplyplatformServiceInventoryEditAPIRequest.Get().(*AlibabaSscSupplyplatformServiceInventoryEditAPIRequest)
+}
+
+// ReleaseAlibabaSscSupplyplatformServiceInventoryEditAPIRequest 将 AlibabaSscSupplyplatformServiceInventoryEditAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSscSupplyplatformServiceInventoryEditAPIRequest(v *AlibabaSscSupplyplatformServiceInventoryEditAPIRequest) {
+	v.Reset()
+	poolAlibabaSscSupplyplatformServiceInventoryEditAPIRequest.Put(v)
 }

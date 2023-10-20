@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpSuborderEstcontimeModifyAPIRequest struct {
 // NewAlibabaAscpSuborderEstcontimeModifyRequest 初始化AlibabaAscpSuborderEstcontimeModifyAPIRequest对象
 func NewAlibabaAscpSuborderEstcontimeModifyRequest() *AlibabaAscpSuborderEstcontimeModifyAPIRequest {
 	return &AlibabaAscpSuborderEstcontimeModifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpSuborderEstcontimeModifyAPIRequest) Reset() {
+	r._modifyEstConTimeRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpSuborderEstcontimeModifyAPIRequest) SetModifyEstConTimeReque
 // GetModifyEstConTimeRequest ModifyEstConTimeRequest Getter
 func (r AlibabaAscpSuborderEstcontimeModifyAPIRequest) GetModifyEstConTimeRequest() *ModifyEstConTimeRequest {
 	return r._modifyEstConTimeRequest
+}
+
+var poolAlibabaAscpSuborderEstcontimeModifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpSuborderEstcontimeModifyRequest()
+	},
+}
+
+// GetAlibabaAscpSuborderEstcontimeModifyRequest 从 sync.Pool 获取 AlibabaAscpSuborderEstcontimeModifyAPIRequest
+func GetAlibabaAscpSuborderEstcontimeModifyAPIRequest() *AlibabaAscpSuborderEstcontimeModifyAPIRequest {
+	return poolAlibabaAscpSuborderEstcontimeModifyAPIRequest.Get().(*AlibabaAscpSuborderEstcontimeModifyAPIRequest)
+}
+
+// ReleaseAlibabaAscpSuborderEstcontimeModifyAPIRequest 将 AlibabaAscpSuborderEstcontimeModifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpSuborderEstcontimeModifyAPIRequest(v *AlibabaAscpSuborderEstcontimeModifyAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpSuborderEstcontimeModifyAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // Lawyers 结构体
 type Lawyers struct {
 	// 附件列表
@@ -22,4 +26,30 @@ type Lawyers struct {
 	AttachmentCount int64 `json:"attachment_count,omitempty" xml:"attachment_count,omitempty"`
 	// 律师ID
 	LawyerId int64 `json:"lawyer_id,omitempty" xml:"lawyer_id,omitempty"`
+}
+
+var poolLawyers = sync.Pool{
+	New: func() any {
+		return new(Lawyers)
+	},
+}
+
+// GetLawyers() 从对象池中获取Lawyers
+func GetLawyers() *Lawyers {
+	return poolLawyers.Get().(*Lawyers)
+}
+
+// ReleaseLawyers 释放Lawyers
+func ReleaseLawyers(v *Lawyers) {
+	v.AttachmentList = v.AttachmentList[:0]
+	v.ResponseStrategy = ""
+	v.ChargeThisCase = ""
+	v.ProfessionalCertNum = ""
+	v.SupplierCode = ""
+	v.BusinessLicenseNum = ""
+	v.LawyerName = ""
+	v.LawyerFirmName = ""
+	v.AttachmentCount = 0
+	v.LawyerId = 0
+	poolLawyers.Put(v)
 }

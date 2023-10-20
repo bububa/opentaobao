@@ -2,6 +2,7 @@ package icbudropshipping
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaOrderPayResultQueryAPIRequest struct {
 // NewAlibabaOrderPayResultQueryRequest 初始化AlibabaOrderPayResultQueryAPIRequest对象
 func NewAlibabaOrderPayResultQueryRequest() *AlibabaOrderPayResultQueryAPIRequest {
 	return &AlibabaOrderPayResultQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaOrderPayResultQueryAPIRequest) Reset() {
+	r._tradeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaOrderPayResultQueryAPIRequest) SetTradeId(_tradeId int64) error 
 // GetTradeId TradeId Getter
 func (r AlibabaOrderPayResultQueryAPIRequest) GetTradeId() int64 {
 	return r._tradeId
+}
+
+var poolAlibabaOrderPayResultQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaOrderPayResultQueryRequest()
+	},
+}
+
+// GetAlibabaOrderPayResultQueryRequest 从 sync.Pool 获取 AlibabaOrderPayResultQueryAPIRequest
+func GetAlibabaOrderPayResultQueryAPIRequest() *AlibabaOrderPayResultQueryAPIRequest {
+	return poolAlibabaOrderPayResultQueryAPIRequest.Get().(*AlibabaOrderPayResultQueryAPIRequest)
+}
+
+// ReleaseAlibabaOrderPayResultQueryAPIRequest 将 AlibabaOrderPayResultQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaOrderPayResultQueryAPIRequest(v *AlibabaOrderPayResultQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaOrderPayResultQueryAPIRequest.Put(v)
 }

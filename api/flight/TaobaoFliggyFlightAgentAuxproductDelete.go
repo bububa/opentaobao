@@ -9,11 +9,6 @@ import (
 // taobao.fliggy.flight.agent.auxproduct.delete
 //
 // 廉航辅营产品删除接口
-func TaobaoFliggyFlightAgentAuxproductDelete(clt *core.SDKClient, req *flight.TaobaoFliggyFlightAgentAuxproductDeleteAPIRequest, session string) (*flight.TaobaoFliggyFlightAgentAuxproductDeleteAPIResponse, error) {
-	var resp flight.TaobaoFliggyFlightAgentAuxproductDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFliggyFlightAgentAuxproductDelete(clt *core.SDKClient, req *flight.TaobaoFliggyFlightAgentAuxproductDeleteAPIRequest, resp *flight.TaobaoFliggyFlightAgentAuxproductDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

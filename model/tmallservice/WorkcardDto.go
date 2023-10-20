@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // WorkcardDto 结构体
 type WorkcardDto struct {
 	// 费用信息
@@ -58,4 +62,48 @@ type WorkcardDto struct {
 	Sequence int64 `json:"sequence,omitempty" xml:"sequence,omitempty"`
 	// 服务单id
 	SpServiceOrderId int64 `json:"sp_service_order_id,omitempty" xml:"sp_service_order_id,omitempty"`
+}
+
+var poolWorkcardDto = sync.Pool{
+	New: func() any {
+		return new(WorkcardDto)
+	},
+}
+
+// GetWorkcardDto() 从对象池中获取WorkcardDto
+func GetWorkcardDto() *WorkcardDto {
+	return poolWorkcardDto.Get().(*WorkcardDto)
+}
+
+// ReleaseWorkcardDto 释放WorkcardDto
+func ReleaseWorkcardDto(v *WorkcardDto) {
+	v.FeeList = v.FeeList[:0]
+	v.MemoList = v.MemoList[:0]
+	v.WorkcardOperationInfo = v.WorkcardOperationInfo[:0]
+	v.Attributes = ""
+	v.GmtSignIn = ""
+	v.GmtReserveEnd = ""
+	v.GmtModify = ""
+	v.GmtCancel = ""
+	v.StatusCode = ""
+	v.ReserveFailDesc = ""
+	v.FulfilTypeCode = ""
+	v.GmtIdentify = ""
+	v.GmtCreate = ""
+	v.GmtReserveStart = ""
+	v.BuyerExpectDate = ""
+	v.UsedServiceCount = 0
+	v.ServiceTradeOrder = nil
+	v.ServiceCount = 0
+	v.Id = 0
+	v.LeftServiceCount = 0
+	v.ParentBizOrderId = 0
+	v.ReserveFailCode = 0
+	v.Buyer = nil
+	v.ServiceProvider = nil
+	v.MasterTradeOrder = nil
+	v.ServiceDefinition = nil
+	v.Sequence = 0
+	v.SpServiceOrderId = 0
+	poolWorkcardDto.Put(v)
 }

@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaItemOperateDeleteAPIRequest struct {
 // NewAlibabaItemOperateDeleteRequest 初始化AlibabaItemOperateDeleteAPIRequest对象
 func NewAlibabaItemOperateDeleteRequest() *AlibabaItemOperateDeleteAPIRequest {
 	return &AlibabaItemOperateDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaItemOperateDeleteAPIRequest) Reset() {
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaItemOperateDeleteAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r AlibabaItemOperateDeleteAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolAlibabaItemOperateDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaItemOperateDeleteRequest()
+	},
+}
+
+// GetAlibabaItemOperateDeleteRequest 从 sync.Pool 获取 AlibabaItemOperateDeleteAPIRequest
+func GetAlibabaItemOperateDeleteAPIRequest() *AlibabaItemOperateDeleteAPIRequest {
+	return poolAlibabaItemOperateDeleteAPIRequest.Get().(*AlibabaItemOperateDeleteAPIRequest)
+}
+
+// ReleaseAlibabaItemOperateDeleteAPIRequest 将 AlibabaItemOperateDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaItemOperateDeleteAPIRequest(v *AlibabaItemOperateDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaItemOperateDeleteAPIRequest.Put(v)
 }

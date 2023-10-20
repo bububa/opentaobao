@@ -2,6 +2,7 @@ package mtop
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoMtopUploadTokenGetAPIRequest struct {
 // NewTaobaoMtopUploadTokenGetRequest 初始化TaobaoMtopUploadTokenGetAPIRequest对象
 func NewTaobaoMtopUploadTokenGetRequest() *TaobaoMtopUploadTokenGetAPIRequest {
 	return &TaobaoMtopUploadTokenGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMtopUploadTokenGetAPIRequest) Reset() {
+	r._paramUploadTokenRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoMtopUploadTokenGetAPIRequest) SetParamUploadTokenRequest(_paramUp
 // GetParamUploadTokenRequest ParamUploadTokenRequest Getter
 func (r TaobaoMtopUploadTokenGetAPIRequest) GetParamUploadTokenRequest() *UploadTokenRequestV {
 	return r._paramUploadTokenRequest
+}
+
+var poolTaobaoMtopUploadTokenGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMtopUploadTokenGetRequest()
+	},
+}
+
+// GetTaobaoMtopUploadTokenGetRequest 从 sync.Pool 获取 TaobaoMtopUploadTokenGetAPIRequest
+func GetTaobaoMtopUploadTokenGetAPIRequest() *TaobaoMtopUploadTokenGetAPIRequest {
+	return poolTaobaoMtopUploadTokenGetAPIRequest.Get().(*TaobaoMtopUploadTokenGetAPIRequest)
+}
+
+// ReleaseTaobaoMtopUploadTokenGetAPIRequest 将 TaobaoMtopUploadTokenGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMtopUploadTokenGetAPIRequest(v *TaobaoMtopUploadTokenGetAPIRequest) {
+	v.Reset()
+	poolTaobaoMtopUploadTokenGetAPIRequest.Put(v)
 }

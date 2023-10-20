@@ -9,11 +9,6 @@ import (
 // taobao.subway.creativeoffline.find
 //
 // 获取创意离线报表
-func TaobaoSubwayCreativeofflineFind(clt *core.SDKClient, req *simba.TaobaoSubwayCreativeofflineFindAPIRequest, session string) (*simba.TaobaoSubwayCreativeofflineFindAPIResponse, error) {
-	var resp simba.TaobaoSubwayCreativeofflineFindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSubwayCreativeofflineFind(clt *core.SDKClient, req *simba.TaobaoSubwayCreativeofflineFindAPIRequest, resp *simba.TaobaoSubwayCreativeofflineFindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

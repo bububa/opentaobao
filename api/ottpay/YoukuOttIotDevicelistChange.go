@@ -9,11 +9,6 @@ import (
 // youku.ott.iot.devicelist.change
 //
 // iot设备列表变化接口
-func YoukuOttIotDevicelistChange(clt *core.SDKClient, req *ottpay.YoukuOttIotDevicelistChangeAPIRequest, session string) (*ottpay.YoukuOttIotDevicelistChangeAPIResponse, error) {
-	var resp ottpay.YoukuOttIotDevicelistChangeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YoukuOttIotDevicelistChange(clt *core.SDKClient, req *ottpay.YoukuOttIotDevicelistChangeAPIRequest, resp *ottpay.YoukuOttIotDevicelistChangeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

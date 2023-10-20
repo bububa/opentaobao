@@ -9,11 +9,6 @@ import (
 // alibaba.campus.acl.getpermissionbyroleid
 //
 // 根据角色查询权限
-func AlibabaCampusAclGetpermissionbyroleid(clt *core.SDKClient, req *campus.AlibabaCampusAclGetpermissionbyroleidAPIRequest, session string) (*campus.AlibabaCampusAclGetpermissionbyroleidAPIResponse, error) {
-	var resp campus.AlibabaCampusAclGetpermissionbyroleidAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusAclGetpermissionbyroleid(clt *core.SDKClient, req *campus.AlibabaCampusAclGetpermissionbyroleidAPIRequest, resp *campus.AlibabaCampusAclGetpermissionbyroleidAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

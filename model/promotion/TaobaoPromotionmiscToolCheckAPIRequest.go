@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoPromotionmiscToolCheckAPIRequest struct {
 // NewTaobaoPromotionmiscToolCheckRequest 初始化TaobaoPromotionmiscToolCheckAPIRequest对象
 func NewTaobaoPromotionmiscToolCheckRequest() *TaobaoPromotionmiscToolCheckAPIRequest {
 	return &TaobaoPromotionmiscToolCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPromotionmiscToolCheckAPIRequest) Reset() {
+	r._metaAllow = ""
+	r._toolId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoPromotionmiscToolCheckAPIRequest) SetToolId(_toolId int64) error 
 // GetToolId ToolId Getter
 func (r TaobaoPromotionmiscToolCheckAPIRequest) GetToolId() int64 {
 	return r._toolId
+}
+
+var poolTaobaoPromotionmiscToolCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPromotionmiscToolCheckRequest()
+	},
+}
+
+// GetTaobaoPromotionmiscToolCheckRequest 从 sync.Pool 获取 TaobaoPromotionmiscToolCheckAPIRequest
+func GetTaobaoPromotionmiscToolCheckAPIRequest() *TaobaoPromotionmiscToolCheckAPIRequest {
+	return poolTaobaoPromotionmiscToolCheckAPIRequest.Get().(*TaobaoPromotionmiscToolCheckAPIRequest)
+}
+
+// ReleaseTaobaoPromotionmiscToolCheckAPIRequest 将 TaobaoPromotionmiscToolCheckAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPromotionmiscToolCheckAPIRequest(v *TaobaoPromotionmiscToolCheckAPIRequest) {
+	v.Reset()
+	poolTaobaoPromotionmiscToolCheckAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package icbu
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaIcbuProductSchemaAddAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuProductSchemaAddAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaIcbuProductSchemaAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIcbuProductSchemaAddAPIResponseModel).Reset()
 }
 
 // AlibabaIcbuProductSchemaAddAPIResponseModel is （新）商品发布新接口 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaIcbuProductSchemaAddAPIResponseModel struct {
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// 调用是否成功
 	BizSuccess bool `json:"biz_success,omitempty" xml:"biz_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIcbuProductSchemaAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.MsgCode = ""
+	m.TraceId = ""
+	m.ProductId = 0
+	m.BizSuccess = false
+}
+
+var poolAlibabaIcbuProductSchemaAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIcbuProductSchemaAddAPIResponse)
+	},
+}
+
+// GetAlibabaIcbuProductSchemaAddAPIResponse 从 sync.Pool 获取 AlibabaIcbuProductSchemaAddAPIResponse
+func GetAlibabaIcbuProductSchemaAddAPIResponse() *AlibabaIcbuProductSchemaAddAPIResponse {
+	return poolAlibabaIcbuProductSchemaAddAPIResponse.Get().(*AlibabaIcbuProductSchemaAddAPIResponse)
+}
+
+// ReleaseAlibabaIcbuProductSchemaAddAPIResponse 将 AlibabaIcbuProductSchemaAddAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIcbuProductSchemaAddAPIResponse(v *AlibabaIcbuProductSchemaAddAPIResponse) {
+	v.Reset()
+	poolAlibabaIcbuProductSchemaAddAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaWdkMarketingItempoolAddcategoryAPIRequest struct {
 // NewAlibabaWdkMarketingItempoolAddcategoryRequest 初始化AlibabaWdkMarketingItempoolAddcategoryAPIRequest对象
 func NewAlibabaWdkMarketingItempoolAddcategoryRequest() *AlibabaWdkMarketingItempoolAddcategoryAPIRequest {
 	return &AlibabaWdkMarketingItempoolAddcategoryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMarketingItempoolAddcategoryAPIRequest) Reset() {
+	r._itemPoolActivityCategory = nil
+	r._commonActivityParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaWdkMarketingItempoolAddcategoryAPIRequest) SetCommonActivityPara
 // GetCommonActivityParam CommonActivityParam Getter
 func (r AlibabaWdkMarketingItempoolAddcategoryAPIRequest) GetCommonActivityParam() *CommonActivityParam {
 	return r._commonActivityParam
+}
+
+var poolAlibabaWdkMarketingItempoolAddcategoryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMarketingItempoolAddcategoryRequest()
+	},
+}
+
+// GetAlibabaWdkMarketingItempoolAddcategoryRequest 从 sync.Pool 获取 AlibabaWdkMarketingItempoolAddcategoryAPIRequest
+func GetAlibabaWdkMarketingItempoolAddcategoryAPIRequest() *AlibabaWdkMarketingItempoolAddcategoryAPIRequest {
+	return poolAlibabaWdkMarketingItempoolAddcategoryAPIRequest.Get().(*AlibabaWdkMarketingItempoolAddcategoryAPIRequest)
+}
+
+// ReleaseAlibabaWdkMarketingItempoolAddcategoryAPIRequest 将 AlibabaWdkMarketingItempoolAddcategoryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMarketingItempoolAddcategoryAPIRequest(v *AlibabaWdkMarketingItempoolAddcategoryAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMarketingItempoolAddcategoryAPIRequest.Put(v)
 }

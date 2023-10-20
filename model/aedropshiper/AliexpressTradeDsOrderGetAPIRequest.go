@@ -2,6 +2,7 @@ package aedropshiper
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressTradeDsOrderGetAPIRequest struct {
 // NewAliexpressTradeDsOrderGetRequest 初始化AliexpressTradeDsOrderGetAPIRequest对象
 func NewAliexpressTradeDsOrderGetRequest() *AliexpressTradeDsOrderGetAPIRequest {
 	return &AliexpressTradeDsOrderGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressTradeDsOrderGetAPIRequest) Reset() {
+	r._singleOrderQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressTradeDsOrderGetAPIRequest) SetSingleOrderQuery(_singleOrderQu
 // GetSingleOrderQuery SingleOrderQuery Getter
 func (r AliexpressTradeDsOrderGetAPIRequest) GetSingleOrderQuery() *AeopSingleOrderQuery {
 	return r._singleOrderQuery
+}
+
+var poolAliexpressTradeDsOrderGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressTradeDsOrderGetRequest()
+	},
+}
+
+// GetAliexpressTradeDsOrderGetRequest 从 sync.Pool 获取 AliexpressTradeDsOrderGetAPIRequest
+func GetAliexpressTradeDsOrderGetAPIRequest() *AliexpressTradeDsOrderGetAPIRequest {
+	return poolAliexpressTradeDsOrderGetAPIRequest.Get().(*AliexpressTradeDsOrderGetAPIRequest)
+}
+
+// ReleaseAliexpressTradeDsOrderGetAPIRequest 将 AliexpressTradeDsOrderGetAPIRequest 放入 sync.Pool
+func ReleaseAliexpressTradeDsOrderGetAPIRequest(v *AliexpressTradeDsOrderGetAPIRequest) {
+	v.Reset()
+	poolAliexpressTradeDsOrderGetAPIRequest.Put(v)
 }

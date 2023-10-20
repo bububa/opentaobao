@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"io"
 	"strconv"
-	"sync"
 )
 
 // File 用于上传文件，对应淘宝API中byte[]类型
@@ -61,14 +60,20 @@ func (p ParamValue) String() string {
 type Params map[string]*ParamValue
 
 // NewParams 新建API参数列表对象
-func NewParams() Params {
-	p := make(Params)
+func NewParams(cap int) Params {
+	p := make(Params, cap)
 	return p
 }
 
 func (p Params) Reset() {
 	for k := range p {
 		delete(p, k)
+	}
+}
+
+func (p Params) ToZero() {
+	for k := range p {
+		p[k] = nil
 	}
 }
 
@@ -125,19 +130,4 @@ func AnyToString(val interface{}) (string, error) {
 		str = string(data)
 	}
 	return str, nil
-}
-
-var paramsPool = sync.Pool{
-	New: func() any {
-		return NewParams()
-	},
-}
-
-func GetParamsFromPool() Params {
-	return paramsPool.Get().(Params)
-}
-
-func PutParamsToPool(params Params) {
-	params.Reset()
-	paramsPool.Put(params)
 }

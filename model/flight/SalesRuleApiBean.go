@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // SalesRuleApiBean 结构体
 type SalesRuleApiBean struct {
 	// 适用舱位(可以多个，支持子舱，用“/”隔开)；
@@ -52,4 +56,45 @@ type SalesRuleApiBean struct {
 	ReceiptWay int64 `json:"receipt_way,omitempty" xml:"receipt_way,omitempty"`
 	// 共享航班是否可用 1:不能用于共享航班，2:可用
 	CodeShareForbidden bool `json:"code_share_forbidden,omitempty" xml:"code_share_forbidden,omitempty"`
+}
+
+var poolSalesRuleApiBean = sync.Pool{
+	New: func() any {
+		return new(SalesRuleApiBean)
+	},
+}
+
+// GetSalesRuleApiBean() 从对象池中获取SalesRuleApiBean
+func GetSalesRuleApiBean() *SalesRuleApiBean {
+	return poolSalesRuleApiBean.Get().(*SalesRuleApiBean)
+}
+
+// ReleaseSalesRuleApiBean 释放SalesRuleApiBean
+func ReleaseSalesRuleApiBean(v *SalesRuleApiBean) {
+	v.Cabin = ""
+	v.ExceptOds = ""
+	v.TravelDateStart = ""
+	v.TravelDateEnd = ""
+	v.ExceptAirports = ""
+	v.SaleDateEnd = ""
+	v.ExceptFlightNos = ""
+	v.Ods = ""
+	v.AirlineCodes = ""
+	v.ExceptCabin = ""
+	v.Airports = ""
+	v.SaleDateStart = ""
+	v.ExceptAirlineCodes = ""
+	v.FlightNos = ""
+	v.OutboundTerminal = ""
+	v.StockRule = ""
+	v.ExceptCabinClass = 0
+	v.LatestBuyTime = 0
+	v.EarlistBuyTime = 0
+	v.CabinClass = 0
+	v.ReceiptType = 0
+	v.StockNum = 0
+	v.StockType = 0
+	v.ReceiptWay = 0
+	v.CodeShareForbidden = false
+	poolSalesRuleApiBean.Put(v)
 }

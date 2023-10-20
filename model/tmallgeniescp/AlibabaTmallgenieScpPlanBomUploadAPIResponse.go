@@ -2,6 +2,7 @@ package tmallgeniescp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaTmallgenieScpPlanBomUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanBomUploadAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaTmallgenieScpPlanBomUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaTmallgenieScpPlanBomUploadAPIResponseModel).Reset()
 }
 
 // AlibabaTmallgenieScpPlanBomUploadAPIResponseModel is 计划BOM同步 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaTmallgenieScpPlanBomUploadAPIResponseModel struct {
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 返回码
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaTmallgenieScpPlanBomUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.DataList = m.DataList[:0]
+	m.ResultMsg = ""
+	m.TraceId = ""
+	m.ResultCode = ""
+}
+
+var poolAlibabaTmallgenieScpPlanBomUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaTmallgenieScpPlanBomUploadAPIResponse)
+	},
+}
+
+// GetAlibabaTmallgenieScpPlanBomUploadAPIResponse 从 sync.Pool 获取 AlibabaTmallgenieScpPlanBomUploadAPIResponse
+func GetAlibabaTmallgenieScpPlanBomUploadAPIResponse() *AlibabaTmallgenieScpPlanBomUploadAPIResponse {
+	return poolAlibabaTmallgenieScpPlanBomUploadAPIResponse.Get().(*AlibabaTmallgenieScpPlanBomUploadAPIResponse)
+}
+
+// ReleaseAlibabaTmallgenieScpPlanBomUploadAPIResponse 将 AlibabaTmallgenieScpPlanBomUploadAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaTmallgenieScpPlanBomUploadAPIResponse(v *AlibabaTmallgenieScpPlanBomUploadAPIResponse) {
+	v.Reset()
+	poolAlibabaTmallgenieScpPlanBomUploadAPIResponse.Put(v)
 }

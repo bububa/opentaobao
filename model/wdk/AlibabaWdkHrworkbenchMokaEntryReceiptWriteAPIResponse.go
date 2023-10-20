@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponseModel).Reset()
 }
 
 // AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponseModel is 摩卡确认入职后往入职单据表写数据接口 成功返回结果
@@ -32,4 +39,32 @@ type AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponseModel struct {
 	SuccAndNotNull bool `json:"succ_and_not_null,omitempty" xml:"succ_and_not_null,omitempty"`
 	// 成功结果为空
 	SuccAndNull bool `json:"succ_and_null,omitempty" xml:"succ_and_null,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.TraceId = ""
+	m.Data = false
+	m.Fail = false
+	m.SuccAndNotNull = false
+	m.SuccAndNull = false
+}
+
+var poolAlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse)
+	},
+}
+
+// GetAlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse 从 sync.Pool 获取 AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse
+func GetAlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse() *AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse {
+	return poolAlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse.Get().(*AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse)
+}
+
+// ReleaseAlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse 将 AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse(v *AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse.Put(v)
 }

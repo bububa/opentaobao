@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // TaobaoQimenOrderQueryRequest 结构体
 type TaobaoQimenOrderQueryRequest struct {
 	// 姓名, string (50) , 必填
@@ -14,4 +18,26 @@ type TaobaoQimenOrderQueryRequest struct {
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
 	// 1001，客服咨询；1002，售后服务
 	Scene string `json:"scene,omitempty" xml:"scene,omitempty"`
+}
+
+var poolTaobaoQimenOrderQueryRequest = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenOrderQueryRequest)
+	},
+}
+
+// GetTaobaoQimenOrderQueryRequest() 从对象池中获取TaobaoQimenOrderQueryRequest
+func GetTaobaoQimenOrderQueryRequest() *TaobaoQimenOrderQueryRequest {
+	return poolTaobaoQimenOrderQueryRequest.Get().(*TaobaoQimenOrderQueryRequest)
+}
+
+// ReleaseTaobaoQimenOrderQueryRequest 释放TaobaoQimenOrderQueryRequest
+func ReleaseTaobaoQimenOrderQueryRequest(v *TaobaoQimenOrderQueryRequest) {
+	v.Name = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.Tel = ""
+	v.Mobile = ""
+	v.Scene = ""
+	poolTaobaoQimenOrderQueryRequest.Put(v)
 }

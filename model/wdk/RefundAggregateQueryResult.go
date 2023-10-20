@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // RefundAggregateQueryResult 结构体
 type RefundAggregateQueryResult struct {
 	// 退款单id列表
@@ -16,4 +20,27 @@ type RefundAggregateQueryResult struct {
 	TotalNum int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
 	// 下一页序号
 	NextIndex int64 `json:"next_index,omitempty" xml:"next_index,omitempty"`
+}
+
+var poolRefundAggregateQueryResult = sync.Pool{
+	New: func() any {
+		return new(RefundAggregateQueryResult)
+	},
+}
+
+// GetRefundAggregateQueryResult() 从对象池中获取RefundAggregateQueryResult
+func GetRefundAggregateQueryResult() *RefundAggregateQueryResult {
+	return poolRefundAggregateQueryResult.Get().(*RefundAggregateQueryResult)
+}
+
+// ReleaseRefundAggregateQueryResult 释放RefundAggregateQueryResult
+func ReleaseRefundAggregateQueryResult(v *RefundAggregateQueryResult) {
+	v.RefundIdList = v.RefundIdList[:0]
+	v.BizIdList = v.BizIdList[:0]
+	v.TbBizIdList = v.TbBizIdList[:0]
+	v.ReturnCode = ""
+	v.ReturnMsg = ""
+	v.TotalNum = 0
+	v.NextIndex = 0
+	poolRefundAggregateQueryResult.Put(v)
 }

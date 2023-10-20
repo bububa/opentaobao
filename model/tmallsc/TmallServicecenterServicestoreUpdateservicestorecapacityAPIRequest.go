@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -28,8 +29,17 @@ type TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest struct {
 // NewTmallServicecenterServicestoreUpdateservicestorecapacityRequest 初始化TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest对象
 func NewTmallServicecenterServicestoreUpdateservicestorecapacityRequest() *TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest {
 	return &TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest) Reset() {
+	r._bizType = ""
+	r._categoryIdsAndAreaCodesAndCapacity = ""
+	r._serviceCodes = ""
+	r._serviceStoreCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -99,4 +109,21 @@ func (r *TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest) Set
 // GetServiceStoreCode ServiceStoreCode Getter
 func (r TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest) GetServiceStoreCode() string {
 	return r._serviceStoreCode
+}
+
+var poolTmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterServicestoreUpdateservicestorecapacityRequest()
+	},
+}
+
+// GetTmallServicecenterServicestoreUpdateservicestorecapacityRequest 从 sync.Pool 获取 TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest
+func GetTmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest() *TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest {
+	return poolTmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest.Get().(*TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest)
+}
+
+// ReleaseTmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest 将 TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest(v *TmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterServicestoreUpdateservicestorecapacityAPIRequest.Put(v)
 }

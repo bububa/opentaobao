@@ -24,11 +24,6 @@ import (
 // 11000, category_id 无效
 // 11001, biz_type 无效
 // 20001,已查询到最后一页
-func TmallServicecenterWorkerDelete(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerDeleteAPIRequest, session string) (*tmallservice.TmallServicecenterWorkerDeleteAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkerDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkerDelete(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerDeleteAPIRequest, resp *tmallservice.TmallServicecenterWorkerDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

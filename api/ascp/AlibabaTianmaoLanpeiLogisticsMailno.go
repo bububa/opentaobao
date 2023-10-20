@@ -9,11 +9,6 @@ import (
 // alibaba.tianmao.lanpei.logistics.mailno
 //
 // 阿里巴巴.天猫家装.揽配.物流.获取运单号
-func AlibabaTianmaoLanpeiLogisticsMailno(clt *core.SDKClient, req *ascp.AlibabaTianmaoLanpeiLogisticsMailnoAPIRequest, session string) (*ascp.AlibabaTianmaoLanpeiLogisticsMailnoAPIResponse, error) {
-	var resp ascp.AlibabaTianmaoLanpeiLogisticsMailnoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTianmaoLanpeiLogisticsMailno(clt *core.SDKClient, req *ascp.AlibabaTianmaoLanpeiLogisticsMailnoAPIRequest, resp *ascp.AlibabaTianmaoLanpeiLogisticsMailnoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

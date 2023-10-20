@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // TaobaoXhotelRoomtypeConflictDataResultSet 结构体
 type TaobaoXhotelRoomtypeConflictDataResultSet struct {
 	// 结果集
@@ -14,4 +18,26 @@ type TaobaoXhotelRoomtypeConflictDataResultSet struct {
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// 是否还有下一页
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
+}
+
+var poolTaobaoXhotelRoomtypeConflictDataResultSet = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelRoomtypeConflictDataResultSet)
+	},
+}
+
+// GetTaobaoXhotelRoomtypeConflictDataResultSet() 从对象池中获取TaobaoXhotelRoomtypeConflictDataResultSet
+func GetTaobaoXhotelRoomtypeConflictDataResultSet() *TaobaoXhotelRoomtypeConflictDataResultSet {
+	return poolTaobaoXhotelRoomtypeConflictDataResultSet.Get().(*TaobaoXhotelRoomtypeConflictDataResultSet)
+}
+
+// ReleaseTaobaoXhotelRoomtypeConflictDataResultSet 释放TaobaoXhotelRoomtypeConflictDataResultSet
+func ReleaseTaobaoXhotelRoomtypeConflictDataResultSet(v *TaobaoXhotelRoomtypeConflictDataResultSet) {
+	v.Results = v.Results[:0]
+	v.WarnMessage = ""
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.TotalResults = 0
+	v.HasNext = false
+	poolTaobaoXhotelRoomtypeConflictDataResultSet.Put(v)
 }

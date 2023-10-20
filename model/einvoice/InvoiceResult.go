@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // InvoiceResult 结构体
 type InvoiceResult struct {
 	// 电子发票明细，erp开票默认不返回，如果erp需要获取阿里发票平台自动开票的结果，需要先找阿里小二开通权限
@@ -66,4 +70,52 @@ type InvoiceResult struct {
 	QrCode string `json:"qr_code,omitempty" xml:"qr_code,omitempty"`
 	// 发票种类，0=电子发票，1=纸质发票，2=纸质专票
 	InvoiceKind int64 `json:"invoice_kind,omitempty" xml:"invoice_kind,omitempty"`
+}
+
+var poolInvoiceResult = sync.Pool{
+	New: func() any {
+		return new(InvoiceResult)
+	},
+}
+
+// GetInvoiceResult() 从对象池中获取InvoiceResult
+func GetInvoiceResult() *InvoiceResult {
+	return poolInvoiceResult.Get().(*InvoiceResult)
+}
+
+// ReleaseInvoiceResult 释放InvoiceResult
+func ReleaseInvoiceResult(v *InvoiceResult) {
+	v.InvoiceItems = v.InvoiceItems[:0]
+	v.AntiFakeCode = ""
+	v.Ciphertext = ""
+	v.DeviceNo = ""
+	v.ErpTid = ""
+	v.FileDataType = ""
+	v.FilePath = ""
+	v.InvoiceAmount = ""
+	v.InvoiceCode = ""
+	v.InvoiceDate = ""
+	v.InvoiceNo = ""
+	v.PlatformCode = ""
+	v.PlatformTid = ""
+	v.SerialNo = ""
+	v.Status = ""
+	v.BizErrorCode = ""
+	v.BizErrorMsg = ""
+	v.InvoiceType = ""
+	v.NormalInvoiceCode = ""
+	v.NormalInvoiceNo = ""
+	v.PayeeOperator = ""
+	v.PayeeReceiver = ""
+	v.PayeeChecker = ""
+	v.PayerName = ""
+	v.PayerRegisterNo = ""
+	v.PayerPhone = ""
+	v.PayerAddress = ""
+	v.PayerBankaccount = ""
+	v.PayeeRegisterNo = ""
+	v.InvoiceTime = ""
+	v.QrCode = ""
+	v.InvoiceKind = 0
+	poolInvoiceResult.Put(v)
 }

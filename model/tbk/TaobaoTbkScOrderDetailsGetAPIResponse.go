@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTbkScOrderDetailsGetAPIResponse struct {
 	TaobaoTbkScOrderDetailsGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTbkScOrderDetailsGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkScOrderDetailsGetAPIResponseModel).Reset()
+}
+
 // TaobaoTbkScOrderDetailsGetAPIResponseModel is 淘宝客-服务商-所有订单查询 成功返回结果
 type TaobaoTbkScOrderDetailsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_sc_order_details_get_response"`
@@ -22,4 +29,27 @@ type TaobaoTbkScOrderDetailsGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// PublisherOrderDto
 	Data *OrderPage `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkScOrderDetailsGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = nil
+}
+
+var poolTaobaoTbkScOrderDetailsGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkScOrderDetailsGetAPIResponse)
+	},
+}
+
+// GetTaobaoTbkScOrderDetailsGetAPIResponse 从 sync.Pool 获取 TaobaoTbkScOrderDetailsGetAPIResponse
+func GetTaobaoTbkScOrderDetailsGetAPIResponse() *TaobaoTbkScOrderDetailsGetAPIResponse {
+	return poolTaobaoTbkScOrderDetailsGetAPIResponse.Get().(*TaobaoTbkScOrderDetailsGetAPIResponse)
+}
+
+// ReleaseTaobaoTbkScOrderDetailsGetAPIResponse 将 TaobaoTbkScOrderDetailsGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkScOrderDetailsGetAPIResponse(v *TaobaoTbkScOrderDetailsGetAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkScOrderDetailsGetAPIResponse.Put(v)
 }

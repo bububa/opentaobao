@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // TaobaoRdcAligeniusLogisticsPackagesNoticeResult 结构体
 type TaobaoRdcAligeniusLogisticsPackagesNoticeResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type TaobaoRdcAligeniusLogisticsPackagesNoticeResult struct {
 	ResultData *Resultdata `json:"result_data,omitempty" xml:"result_data,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoRdcAligeniusLogisticsPackagesNoticeResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoRdcAligeniusLogisticsPackagesNoticeResult)
+	},
+}
+
+// GetTaobaoRdcAligeniusLogisticsPackagesNoticeResult() 从对象池中获取TaobaoRdcAligeniusLogisticsPackagesNoticeResult
+func GetTaobaoRdcAligeniusLogisticsPackagesNoticeResult() *TaobaoRdcAligeniusLogisticsPackagesNoticeResult {
+	return poolTaobaoRdcAligeniusLogisticsPackagesNoticeResult.Get().(*TaobaoRdcAligeniusLogisticsPackagesNoticeResult)
+}
+
+// ReleaseTaobaoRdcAligeniusLogisticsPackagesNoticeResult 释放TaobaoRdcAligeniusLogisticsPackagesNoticeResult
+func ReleaseTaobaoRdcAligeniusLogisticsPackagesNoticeResult(v *TaobaoRdcAligeniusLogisticsPackagesNoticeResult) {
+	v.ErrorCode = ""
+	v.ErrorInfo = ""
+	v.ResultData = nil
+	v.Success = false
+	poolTaobaoRdcAligeniusLogisticsPackagesNoticeResult.Put(v)
 }

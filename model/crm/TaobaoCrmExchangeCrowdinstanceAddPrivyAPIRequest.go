@@ -2,6 +2,7 @@ package crm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest struct {
 // NewTaobaoCrmExchangeCrowdinstanceAddPrivyRequest 初始化TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest对象
 func NewTaobaoCrmExchangeCrowdinstanceAddPrivyRequest() *TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest {
 	return &TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest) Reset() {
+	r._ouid = ""
+	r._reason = ""
+	r._crowdInstanceId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest) SetCrowdInstanceId(_c
 // GetCrowdInstanceId CrowdInstanceId Getter
 func (r TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest) GetCrowdInstanceId() int64 {
 	return r._crowdInstanceId
+}
+
+var poolTaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCrmExchangeCrowdinstanceAddPrivyRequest()
+	},
+}
+
+// GetTaobaoCrmExchangeCrowdinstanceAddPrivyRequest 从 sync.Pool 获取 TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest
+func GetTaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest() *TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest {
+	return poolTaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest.Get().(*TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest)
+}
+
+// ReleaseTaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest 将 TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest(v *TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest) {
+	v.Reset()
+	poolTaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest.Put(v)
 }

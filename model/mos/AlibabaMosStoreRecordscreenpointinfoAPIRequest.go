@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMosStoreRecordscreenpointinfoAPIRequest struct {
 // NewAlibabaMosStoreRecordscreenpointinfoRequest 初始化AlibabaMosStoreRecordscreenpointinfoAPIRequest对象
 func NewAlibabaMosStoreRecordscreenpointinfoRequest() *AlibabaMosStoreRecordscreenpointinfoAPIRequest {
 	return &AlibabaMosStoreRecordscreenpointinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosStoreRecordscreenpointinfoAPIRequest) Reset() {
+	r._screenPointInfo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMosStoreRecordscreenpointinfoAPIRequest) SetScreenPointInfo(_scr
 // GetScreenPointInfo ScreenPointInfo Getter
 func (r AlibabaMosStoreRecordscreenpointinfoAPIRequest) GetScreenPointInfo() string {
 	return r._screenPointInfo
+}
+
+var poolAlibabaMosStoreRecordscreenpointinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosStoreRecordscreenpointinfoRequest()
+	},
+}
+
+// GetAlibabaMosStoreRecordscreenpointinfoRequest 从 sync.Pool 获取 AlibabaMosStoreRecordscreenpointinfoAPIRequest
+func GetAlibabaMosStoreRecordscreenpointinfoAPIRequest() *AlibabaMosStoreRecordscreenpointinfoAPIRequest {
+	return poolAlibabaMosStoreRecordscreenpointinfoAPIRequest.Get().(*AlibabaMosStoreRecordscreenpointinfoAPIRequest)
+}
+
+// ReleaseAlibabaMosStoreRecordscreenpointinfoAPIRequest 将 AlibabaMosStoreRecordscreenpointinfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosStoreRecordscreenpointinfoAPIRequest(v *AlibabaMosStoreRecordscreenpointinfoAPIRequest) {
+	v.Reset()
+	poolAlibabaMosStoreRecordscreenpointinfoAPIRequest.Put(v)
 }

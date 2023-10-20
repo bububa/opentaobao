@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type CainiaoWaybillPrivacySellerOrderGetAPIResponse struct {
 	model.CommonResponse
 	CainiaoWaybillPrivacySellerOrderGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *CainiaoWaybillPrivacySellerOrderGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoWaybillPrivacySellerOrderGetAPIResponseModel).Reset()
 }
 
 // CainiaoWaybillPrivacySellerOrderGetAPIResponseModel is 隐私面单商家订单查询 成功返回结果
@@ -32,4 +39,32 @@ type CainiaoWaybillPrivacySellerOrderGetAPIResponseModel struct {
 	ObjectId string `json:"object_id,omitempty" xml:"object_id,omitempty"`
 	// 是否失败
 	Failure bool `json:"failure,omitempty" xml:"failure,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoWaybillPrivacySellerOrderGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorCodeList = m.ErrorCodeList[:0]
+	m.ResponseList = m.ResponseList[:0]
+	m.ErrorInfoList = m.ErrorInfoList[:0]
+	m.OneErrorInfo = ""
+	m.ObjectId = ""
+	m.Failure = false
+}
+
+var poolCainiaoWaybillPrivacySellerOrderGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoWaybillPrivacySellerOrderGetAPIResponse)
+	},
+}
+
+// GetCainiaoWaybillPrivacySellerOrderGetAPIResponse 从 sync.Pool 获取 CainiaoWaybillPrivacySellerOrderGetAPIResponse
+func GetCainiaoWaybillPrivacySellerOrderGetAPIResponse() *CainiaoWaybillPrivacySellerOrderGetAPIResponse {
+	return poolCainiaoWaybillPrivacySellerOrderGetAPIResponse.Get().(*CainiaoWaybillPrivacySellerOrderGetAPIResponse)
+}
+
+// ReleaseCainiaoWaybillPrivacySellerOrderGetAPIResponse 将 CainiaoWaybillPrivacySellerOrderGetAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoWaybillPrivacySellerOrderGetAPIResponse(v *CainiaoWaybillPrivacySellerOrderGetAPIResponse) {
+	v.Reset()
+	poolCainiaoWaybillPrivacySellerOrderGetAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package media
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoPicturePicturesGetAPIResponse struct {
 	TaobaoPicturePicturesGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoPicturePicturesGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPicturePicturesGetAPIResponseModel).Reset()
+}
+
 // TaobaoPicturePicturesGetAPIResponseModel is 图片获取 成功返回结果
 type TaobaoPicturePicturesGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"picture_pictures_get_response"`
@@ -22,4 +29,27 @@ type TaobaoPicturePicturesGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 图片空间图片数据对象
 	Pictures []Picture `json:"pictures,omitempty" xml:"pictures>picture,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPicturePicturesGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Pictures = m.Pictures[:0]
+}
+
+var poolTaobaoPicturePicturesGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPicturePicturesGetAPIResponse)
+	},
+}
+
+// GetTaobaoPicturePicturesGetAPIResponse 从 sync.Pool 获取 TaobaoPicturePicturesGetAPIResponse
+func GetTaobaoPicturePicturesGetAPIResponse() *TaobaoPicturePicturesGetAPIResponse {
+	return poolTaobaoPicturePicturesGetAPIResponse.Get().(*TaobaoPicturePicturesGetAPIResponse)
+}
+
+// ReleaseTaobaoPicturePicturesGetAPIResponse 将 TaobaoPicturePicturesGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPicturePicturesGetAPIResponse(v *TaobaoPicturePicturesGetAPIResponse) {
+	v.Reset()
+	poolTaobaoPicturePicturesGetAPIResponse.Put(v)
 }

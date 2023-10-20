@@ -2,6 +2,7 @@ package degoperation
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoDegoperationCreateqrcodeAPIRequest struct {
 // NewTaobaoDegoperationCreateqrcodeRequest 初始化TaobaoDegoperationCreateqrcodeAPIRequest对象
 func NewTaobaoDegoperationCreateqrcodeRequest() *TaobaoDegoperationCreateqrcodeAPIRequest {
 	return &TaobaoDegoperationCreateqrcodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDegoperationCreateqrcodeAPIRequest) Reset() {
+	r._uuid = ""
+	r._degAccessToken = ""
+	r._sequenceNo = ""
+	r._activity = ""
+	r._title = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoDegoperationCreateqrcodeAPIRequest) SetTitle(_title string) error
 // GetTitle Title Getter
 func (r TaobaoDegoperationCreateqrcodeAPIRequest) GetTitle() string {
 	return r._title
+}
+
+var poolTaobaoDegoperationCreateqrcodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDegoperationCreateqrcodeRequest()
+	},
+}
+
+// GetTaobaoDegoperationCreateqrcodeRequest 从 sync.Pool 获取 TaobaoDegoperationCreateqrcodeAPIRequest
+func GetTaobaoDegoperationCreateqrcodeAPIRequest() *TaobaoDegoperationCreateqrcodeAPIRequest {
+	return poolTaobaoDegoperationCreateqrcodeAPIRequest.Get().(*TaobaoDegoperationCreateqrcodeAPIRequest)
+}
+
+// ReleaseTaobaoDegoperationCreateqrcodeAPIRequest 将 TaobaoDegoperationCreateqrcodeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDegoperationCreateqrcodeAPIRequest(v *TaobaoDegoperationCreateqrcodeAPIRequest) {
+	v.Reset()
+	poolTaobaoDegoperationCreateqrcodeAPIRequest.Put(v)
 }

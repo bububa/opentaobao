@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // WaybillCloudPrintUpdateRequest 结构体
 type WaybillCloudPrintUpdateRequest struct {
 	// 物流公司CODE
@@ -18,4 +22,28 @@ type WaybillCloudPrintUpdateRequest struct {
 	Recipient *UserInfoDto `json:"recipient,omitempty" xml:"recipient,omitempty"`
 	// 发件信息
 	Sender *UserInfoDto `json:"sender,omitempty" xml:"sender,omitempty"`
+}
+
+var poolWaybillCloudPrintUpdateRequest = sync.Pool{
+	New: func() any {
+		return new(WaybillCloudPrintUpdateRequest)
+	},
+}
+
+// GetWaybillCloudPrintUpdateRequest() 从对象池中获取WaybillCloudPrintUpdateRequest
+func GetWaybillCloudPrintUpdateRequest() *WaybillCloudPrintUpdateRequest {
+	return poolWaybillCloudPrintUpdateRequest.Get().(*WaybillCloudPrintUpdateRequest)
+}
+
+// ReleaseWaybillCloudPrintUpdateRequest 释放WaybillCloudPrintUpdateRequest
+func ReleaseWaybillCloudPrintUpdateRequest(v *WaybillCloudPrintUpdateRequest) {
+	v.CpCode = ""
+	v.LogisticsServices = ""
+	v.TemplateUrl = ""
+	v.WaybillCode = ""
+	v.ObjectId = ""
+	v.PackageInfo = nil
+	v.Recipient = nil
+	v.Sender = nil
+	poolWaybillCloudPrintUpdateRequest.Put(v)
 }

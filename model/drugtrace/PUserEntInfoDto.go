@@ -1,7 +1,11 @@
 package drugtrace
 
-// PuserEntInfoDto 结构体
-type PuserEntInfoDto struct {
+import (
+	"sync"
+)
+
+// PUserEntInfoDto 结构体
+type PUserEntInfoDto struct {
 	// 所在地编码
 	DictRegionCode string `json:"dict_region_code,omitempty" xml:"dict_region_code,omitempty"`
 	// 所在地明细
@@ -42,4 +46,40 @@ type PuserEntInfoDto struct {
 	CityName string `json:"city_name,omitempty" xml:"city_name,omitempty"`
 	// 入网标识【0非入网1入网2入驻马上放心】
 	NetworkType string `json:"network_type,omitempty" xml:"network_type,omitempty"`
+}
+
+var poolPUserEntInfoDto = sync.Pool{
+	New: func() any {
+		return new(PUserEntInfoDto)
+	},
+}
+
+// GetPUserEntInfoDto() 从对象池中获取PUserEntInfoDto
+func GetPUserEntInfoDto() *PUserEntInfoDto {
+	return poolPUserEntInfoDto.Get().(*PUserEntInfoDto)
+}
+
+// ReleasePUserEntInfoDto 释放PUserEntInfoDto
+func ReleasePUserEntInfoDto(v *PUserEntInfoDto) {
+	v.DictRegionCode = ""
+	v.RegRegionDetail = ""
+	v.RegRegionCode = ""
+	v.OrgCode = ""
+	v.LegalOrgFlag = ""
+	v.DirectManage = ""
+	v.EntName = ""
+	v.IsNetwork = ""
+	v.RefEntId = ""
+	v.EntId = ""
+	v.DictRegionDetail = ""
+	v.Status = ""
+	v.EntCapitalName = ""
+	v.UserRoleType = ""
+	v.UserRoleTypeStr = ""
+	v.EntOrgType = ""
+	v.ProvName = ""
+	v.AreaName = ""
+	v.CityName = ""
+	v.NetworkType = ""
+	poolPUserEntInfoDto.Put(v)
 }

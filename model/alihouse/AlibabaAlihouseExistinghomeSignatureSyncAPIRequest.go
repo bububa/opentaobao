@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghomeSignatureSyncAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeSignatureSyncRequest 初始化AlibabaAlihouseExistinghomeSignatureSyncAPIRequest对象
 func NewAlibabaAlihouseExistinghomeSignatureSyncRequest() *AlibabaAlihouseExistinghomeSignatureSyncAPIRequest {
 	return &AlibabaAlihouseExistinghomeSignatureSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeSignatureSyncAPIRequest) Reset() {
+	r._electricSignatureDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghomeSignatureSyncAPIRequest) SetElectricSignatur
 // GetElectricSignatureDto ElectricSignatureDto Getter
 func (r AlibabaAlihouseExistinghomeSignatureSyncAPIRequest) GetElectricSignatureDto() *ElectricSignatureDto {
 	return r._electricSignatureDto
+}
+
+var poolAlibabaAlihouseExistinghomeSignatureSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeSignatureSyncRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeSignatureSyncRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeSignatureSyncAPIRequest
+func GetAlibabaAlihouseExistinghomeSignatureSyncAPIRequest() *AlibabaAlihouseExistinghomeSignatureSyncAPIRequest {
+	return poolAlibabaAlihouseExistinghomeSignatureSyncAPIRequest.Get().(*AlibabaAlihouseExistinghomeSignatureSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeSignatureSyncAPIRequest 将 AlibabaAlihouseExistinghomeSignatureSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeSignatureSyncAPIRequest(v *AlibabaAlihouseExistinghomeSignatureSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeSignatureSyncAPIRequest.Put(v)
 }

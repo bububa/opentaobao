@@ -2,6 +2,7 @@ package shenjing
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse struct {
 	model.CommonResponse
 	AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponseModel).Reset()
 }
 
 // AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponseModel is pad获取二维码 成功返回结果
@@ -32,4 +39,32 @@ type AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponseModel struct {
 	ResultRequestId string `json:"result_request_id,omitempty" xml:"result_request_id,omitempty"`
 	// 是否成功
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Content = ""
+	m.ResultCode = ""
+	m.ResultMsg = ""
+	m.ResultLevel = ""
+	m.ResultRequestId = ""
+	m.ResultSuccess = false
+}
+
+var poolAlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse)
+	},
+}
+
+// GetAlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse 从 sync.Pool 获取 AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse
+func GetAlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse() *AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse {
+	return poolAlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse.Get().(*AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse)
+}
+
+// ReleaseAlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse 将 AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse(v *AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse) {
+	v.Reset()
+	poolAlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse.Put(v)
 }

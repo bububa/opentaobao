@@ -1,5 +1,9 @@
 package openmall
 
+import (
+	"sync"
+)
+
 // TopItemSkuVo 结构体
 type TopItemSkuVo struct {
 	// 属于这个sku的商品的价格 取值范围:0-100000000;精确到2位小数;单位:元。如:200.07，表示:200元7分。
@@ -12,4 +16,25 @@ type TopItemSkuVo struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// sku的id
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolTopItemSkuVo = sync.Pool{
+	New: func() any {
+		return new(TopItemSkuVo)
+	},
+}
+
+// GetTopItemSkuVo() 从对象池中获取TopItemSkuVo
+func GetTopItemSkuVo() *TopItemSkuVo {
+	return poolTopItemSkuVo.Get().(*TopItemSkuVo)
+}
+
+// ReleaseTopItemSkuVo 释放TopItemSkuVo
+func ReleaseTopItemSkuVo(v *TopItemSkuVo) {
+	v.Price = ""
+	v.Properties = ""
+	v.Description = ""
+	v.Quantity = 0
+	v.SkuId = 0
+	poolTopItemSkuVo.Put(v)
 }

@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmMenuListAPIRequest struct {
 // NewAlibabaAlscCrmMenuListRequest 初始化AlibabaAlscCrmMenuListAPIRequest对象
 func NewAlibabaAlscCrmMenuListRequest() *AlibabaAlscCrmMenuListAPIRequest {
 	return &AlibabaAlscCrmMenuListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmMenuListAPIRequest) Reset() {
+	r._menuOpenReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmMenuListAPIRequest) SetMenuOpenReq(_menuOpenReq *MenuOpen
 // GetMenuOpenReq MenuOpenReq Getter
 func (r AlibabaAlscCrmMenuListAPIRequest) GetMenuOpenReq() *MenuOpenReq {
 	return r._menuOpenReq
+}
+
+var poolAlibabaAlscCrmMenuListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmMenuListRequest()
+	},
+}
+
+// GetAlibabaAlscCrmMenuListRequest 从 sync.Pool 获取 AlibabaAlscCrmMenuListAPIRequest
+func GetAlibabaAlscCrmMenuListAPIRequest() *AlibabaAlscCrmMenuListAPIRequest {
+	return poolAlibabaAlscCrmMenuListAPIRequest.Get().(*AlibabaAlscCrmMenuListAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmMenuListAPIRequest 将 AlibabaAlscCrmMenuListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmMenuListAPIRequest(v *AlibabaAlscCrmMenuListAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmMenuListAPIRequest.Put(v)
 }

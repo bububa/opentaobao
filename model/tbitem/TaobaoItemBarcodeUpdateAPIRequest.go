@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoItemBarcodeUpdateAPIRequest struct {
 // NewTaobaoItemBarcodeUpdateRequest 初始化TaobaoItemBarcodeUpdateAPIRequest对象
 func NewTaobaoItemBarcodeUpdateRequest() *TaobaoItemBarcodeUpdateAPIRequest {
 	return &TaobaoItemBarcodeUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoItemBarcodeUpdateAPIRequest) Reset() {
+	r._itemBarcode = ""
+	r._skuIds = ""
+	r._skuBarcodes = ""
+	r._src = ""
+	r._itemId = 0
+	r._isforce = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoItemBarcodeUpdateAPIRequest) SetIsforce(_isforce bool) error {
 // GetIsforce Isforce Getter
 func (r TaobaoItemBarcodeUpdateAPIRequest) GetIsforce() bool {
 	return r._isforce
+}
+
+var poolTaobaoItemBarcodeUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoItemBarcodeUpdateRequest()
+	},
+}
+
+// GetTaobaoItemBarcodeUpdateRequest 从 sync.Pool 获取 TaobaoItemBarcodeUpdateAPIRequest
+func GetTaobaoItemBarcodeUpdateAPIRequest() *TaobaoItemBarcodeUpdateAPIRequest {
+	return poolTaobaoItemBarcodeUpdateAPIRequest.Get().(*TaobaoItemBarcodeUpdateAPIRequest)
+}
+
+// ReleaseTaobaoItemBarcodeUpdateAPIRequest 将 TaobaoItemBarcodeUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoItemBarcodeUpdateAPIRequest(v *TaobaoItemBarcodeUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoItemBarcodeUpdateAPIRequest.Put(v)
 }

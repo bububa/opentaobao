@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.content.app.onoffappbylicense
 //
 // 应用上下架操作
-func YunosTvpubadminContentAppOnoffappbylicense(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentAppOnoffappbylicenseAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentAppOnoffappbylicenseAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminContentAppOnoffappbylicenseAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminContentAppOnoffappbylicense(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentAppOnoffappbylicenseAPIRequest, resp *tvupadmin.YunosTvpubadminContentAppOnoffappbylicenseAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

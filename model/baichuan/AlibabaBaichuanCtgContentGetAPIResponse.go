@@ -2,6 +2,7 @@ package baichuan
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaBaichuanCtgContentGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaBaichuanCtgContentGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaBaichuanCtgContentGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaBaichuanCtgContentGetAPIResponseModel).Reset()
 }
 
 // AlibabaBaichuanCtgContentGetAPIResponseModel is 百川内容平台内容获取 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaBaichuanCtgContentGetAPIResponseModel struct {
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
 	// success
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaBaichuanCtgContentGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.DataList = m.DataList[:0]
+	m.ErrMessage = ""
+	m.ErrCode = ""
+	m.HasNext = false
+	m.IsSuccess = false
+}
+
+var poolAlibabaBaichuanCtgContentGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaBaichuanCtgContentGetAPIResponse)
+	},
+}
+
+// GetAlibabaBaichuanCtgContentGetAPIResponse 从 sync.Pool 获取 AlibabaBaichuanCtgContentGetAPIResponse
+func GetAlibabaBaichuanCtgContentGetAPIResponse() *AlibabaBaichuanCtgContentGetAPIResponse {
+	return poolAlibabaBaichuanCtgContentGetAPIResponse.Get().(*AlibabaBaichuanCtgContentGetAPIResponse)
+}
+
+// ReleaseAlibabaBaichuanCtgContentGetAPIResponse 将 AlibabaBaichuanCtgContentGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaBaichuanCtgContentGetAPIResponse(v *AlibabaBaichuanCtgContentGetAPIResponse) {
+	v.Reset()
+	poolAlibabaBaichuanCtgContentGetAPIResponse.Put(v)
 }

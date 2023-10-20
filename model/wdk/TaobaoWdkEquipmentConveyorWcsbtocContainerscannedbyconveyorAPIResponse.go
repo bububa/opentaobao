@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse struct {
 	model.CommonResponse
 	TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponseModel).Reset()
 }
 
 // TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponseModel is 容器被悬挂链扫描 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponseModel
 	ServiceErrorMsg string `json:"service_error_msg,omitempty" xml:"service_error_msg,omitempty"`
 	// success
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.List = m.List[:0]
+	m.ServiceErrorCode = ""
+	m.ServiceErrorMsg = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse)
+	},
+}
+
+// GetTaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse 从 sync.Pool 获取 TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse
+func GetTaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse() *TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse {
+	return poolTaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse.Get().(*TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse)
+}
+
+// ReleaseTaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse 将 TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse(v *TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse) {
+	v.Reset()
+	poolTaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package maitix
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest struct {
 // NewAlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest 初始化AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest对象
 func NewAlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest() *AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest {
 	return &AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest) Reset() {
+	r._disProjectStatusQueryParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest) SetDisProjec
 // GetDisProjectStatusQueryParam DisProjectStatusQueryParam Getter
 func (r AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest) GetDisProjectStatusQueryParam() *DisProjectStatusQueryDto {
 	return r._disProjectStatusQueryParam
+}
+
+var poolAlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest()
+	},
+}
+
+// GetAlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest 从 sync.Pool 获取 AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest
+func GetAlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest() *AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest {
+	return poolAlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest.Get().(*AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest)
+}
+
+// ReleaseAlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest 将 AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest(v *AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest.Put(v)
 }

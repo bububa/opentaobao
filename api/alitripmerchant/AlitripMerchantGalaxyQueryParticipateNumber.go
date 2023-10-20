@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.query.participate.number
 //
 // 雅高小程序抽奖活动，查询用户抽奖次数
-func AlitripMerchantGalaxyQueryParticipateNumber(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyQueryParticipateNumberAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyQueryParticipateNumberAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyQueryParticipateNumberAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyQueryParticipateNumber(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyQueryParticipateNumberAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyQueryParticipateNumberAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

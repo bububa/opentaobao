@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthBcFutureStockInboundAPIRequest struct {
 // NewAlibabaAlihealthBcFutureStockInboundRequest 初始化AlibabaAlihealthBcFutureStockInboundAPIRequest对象
 func NewAlibabaAlihealthBcFutureStockInboundRequest() *AlibabaAlihealthBcFutureStockInboundAPIRequest {
 	return &AlibabaAlihealthBcFutureStockInboundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthBcFutureStockInboundAPIRequest) Reset() {
+	r._futureInboundReqDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthBcFutureStockInboundAPIRequest) SetFutureInboundReqDto(
 // GetFutureInboundReqDto FutureInboundReqDto Getter
 func (r AlibabaAlihealthBcFutureStockInboundAPIRequest) GetFutureInboundReqDto() *FutureInboundReqDto {
 	return r._futureInboundReqDto
+}
+
+var poolAlibabaAlihealthBcFutureStockInboundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthBcFutureStockInboundRequest()
+	},
+}
+
+// GetAlibabaAlihealthBcFutureStockInboundRequest 从 sync.Pool 获取 AlibabaAlihealthBcFutureStockInboundAPIRequest
+func GetAlibabaAlihealthBcFutureStockInboundAPIRequest() *AlibabaAlihealthBcFutureStockInboundAPIRequest {
+	return poolAlibabaAlihealthBcFutureStockInboundAPIRequest.Get().(*AlibabaAlihealthBcFutureStockInboundAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthBcFutureStockInboundAPIRequest 将 AlibabaAlihealthBcFutureStockInboundAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthBcFutureStockInboundAPIRequest(v *AlibabaAlihealthBcFutureStockInboundAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthBcFutureStockInboundAPIRequest.Put(v)
 }

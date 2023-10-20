@@ -1,5 +1,9 @@
 package admarket
 
+import (
+	"sync"
+)
+
 // Network 结构体
 type Network struct {
 	// 基站id
@@ -10,4 +14,24 @@ type Network struct {
 	ConnectionType string `json:"connection_type,omitempty" xml:"connection_type,omitempty"`
 	// ip地址
 	Ip string `json:"ip,omitempty" xml:"ip,omitempty"`
+}
+
+var poolNetwork = sync.Pool{
+	New: func() any {
+		return new(Network)
+	},
+}
+
+// GetNetwork() 从对象池中获取Network
+func GetNetwork() *Network {
+	return poolNetwork.Get().(*Network)
+}
+
+// ReleaseNetwork 释放Network
+func ReleaseNetwork(v *Network) {
+	v.CellularId = ""
+	v.OperatorType = ""
+	v.ConnectionType = ""
+	v.Ip = ""
+	poolNetwork.Put(v)
 }

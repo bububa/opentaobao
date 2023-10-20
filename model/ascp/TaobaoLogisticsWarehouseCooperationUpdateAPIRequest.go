@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsWarehouseCooperationUpdateAPIRequest struct {
 // NewTaobaoLogisticsWarehouseCooperationUpdateRequest 初始化TaobaoLogisticsWarehouseCooperationUpdateAPIRequest对象
 func NewTaobaoLogisticsWarehouseCooperationUpdateRequest() *TaobaoLogisticsWarehouseCooperationUpdateAPIRequest {
 	return &TaobaoLogisticsWarehouseCooperationUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsWarehouseCooperationUpdateAPIRequest) Reset() {
+	r._warehouseCooperationUpdateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsWarehouseCooperationUpdateAPIRequest) SetWarehouseCooper
 // GetWarehouseCooperationUpdateRequest WarehouseCooperationUpdateRequest Getter
 func (r TaobaoLogisticsWarehouseCooperationUpdateAPIRequest) GetWarehouseCooperationUpdateRequest() *WarehouseCooperationUpdateRequest {
 	return r._warehouseCooperationUpdateRequest
+}
+
+var poolTaobaoLogisticsWarehouseCooperationUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsWarehouseCooperationUpdateRequest()
+	},
+}
+
+// GetTaobaoLogisticsWarehouseCooperationUpdateRequest 从 sync.Pool 获取 TaobaoLogisticsWarehouseCooperationUpdateAPIRequest
+func GetTaobaoLogisticsWarehouseCooperationUpdateAPIRequest() *TaobaoLogisticsWarehouseCooperationUpdateAPIRequest {
+	return poolTaobaoLogisticsWarehouseCooperationUpdateAPIRequest.Get().(*TaobaoLogisticsWarehouseCooperationUpdateAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsWarehouseCooperationUpdateAPIRequest 将 TaobaoLogisticsWarehouseCooperationUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsWarehouseCooperationUpdateAPIRequest(v *TaobaoLogisticsWarehouseCooperationUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsWarehouseCooperationUpdateAPIRequest.Put(v)
 }

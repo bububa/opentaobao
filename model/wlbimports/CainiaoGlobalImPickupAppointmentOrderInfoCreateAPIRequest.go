@@ -2,6 +2,7 @@ package wlbimports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest struct {
 // NewCainiaoGlobalImPickupAppointmentOrderInfoCreateRequest 初始化CainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest对象
 func NewCainiaoGlobalImPickupAppointmentOrderInfoCreateRequest() *CainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest {
 	return &CainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest) Reset() {
+	r._appointmentCreateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest) SetAppointme
 // GetAppointmentCreateRequest AppointmentCreateRequest Getter
 func (r CainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest) GetAppointmentCreateRequest() *AppointmentCreateRequest {
 	return r._appointmentCreateRequest
+}
+
+var poolCainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalImPickupAppointmentOrderInfoCreateRequest()
+	},
+}
+
+// GetCainiaoGlobalImPickupAppointmentOrderInfoCreateRequest 从 sync.Pool 获取 CainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest
+func GetCainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest() *CainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest {
+	return poolCainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest.Get().(*CainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest)
+}
+
+// ReleaseCainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest 将 CainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest(v *CainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest.Put(v)
 }

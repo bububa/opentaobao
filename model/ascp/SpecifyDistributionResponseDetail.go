@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // SpecifyDistributionResponseDetail 结构体
 type SpecifyDistributionResponseDetail struct {
 	// 错误编码
@@ -14,4 +18,26 @@ type SpecifyDistributionResponseDetail struct {
 	DistributorShopUserId int64 `json:"distributor_shop_user_id,omitempty" xml:"distributor_shop_user_id,omitempty"`
 	//  处理是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolSpecifyDistributionResponseDetail = sync.Pool{
+	New: func() any {
+		return new(SpecifyDistributionResponseDetail)
+	},
+}
+
+// GetSpecifyDistributionResponseDetail() 从对象池中获取SpecifyDistributionResponseDetail
+func GetSpecifyDistributionResponseDetail() *SpecifyDistributionResponseDetail {
+	return poolSpecifyDistributionResponseDetail.Get().(*SpecifyDistributionResponseDetail)
+}
+
+// ReleaseSpecifyDistributionResponseDetail 释放SpecifyDistributionResponseDetail
+func ReleaseSpecifyDistributionResponseDetail(v *SpecifyDistributionResponseDetail) {
+	v.ErrorCode = ""
+	v.ErrorMessage = ""
+	v.ItemId = ""
+	v.SkuId = ""
+	v.DistributorShopUserId = 0
+	v.Success = false
+	poolSpecifyDistributionResponseDetail.Put(v)
 }

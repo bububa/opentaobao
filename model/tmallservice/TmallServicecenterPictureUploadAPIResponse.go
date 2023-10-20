@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallServicecenterPictureUploadAPIResponse struct {
 	TmallServicecenterPictureUploadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallServicecenterPictureUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServicecenterPictureUploadAPIResponseModel).Reset()
+}
+
 // TmallServicecenterPictureUploadAPIResponseModel is 上传图片 成功返回结果
 type TmallServicecenterPictureUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_picture_upload_response"`
@@ -22,4 +29,27 @@ type TmallServicecenterPictureUploadAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterPictureUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallServicecenterPictureUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterPictureUploadAPIResponse)
+	},
+}
+
+// GetTmallServicecenterPictureUploadAPIResponse 从 sync.Pool 获取 TmallServicecenterPictureUploadAPIResponse
+func GetTmallServicecenterPictureUploadAPIResponse() *TmallServicecenterPictureUploadAPIResponse {
+	return poolTmallServicecenterPictureUploadAPIResponse.Get().(*TmallServicecenterPictureUploadAPIResponse)
+}
+
+// ReleaseTmallServicecenterPictureUploadAPIResponse 将 TmallServicecenterPictureUploadAPIResponse 保存到 sync.Pool
+func ReleaseTmallServicecenterPictureUploadAPIResponse(v *TmallServicecenterPictureUploadAPIResponse) {
+	v.Reset()
+	poolTmallServicecenterPictureUploadAPIResponse.Put(v)
 }

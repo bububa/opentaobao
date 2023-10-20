@@ -1,5 +1,9 @@
 package alimember
 
+import (
+	"sync"
+)
+
 // SignIdentityFinishRequest 结构体
 type SignIdentityFinishRequest struct {
 	// 付费会员模板id
@@ -16,4 +20,27 @@ type SignIdentityFinishRequest struct {
 	OrderModel *OrderModel `json:"order_model,omitempty" xml:"order_model,omitempty"`
 	// 处理结果，成功还是失败
 	SendSuc bool `json:"send_suc,omitempty" xml:"send_suc,omitempty"`
+}
+
+var poolSignIdentityFinishRequest = sync.Pool{
+	New: func() any {
+		return new(SignIdentityFinishRequest)
+	},
+}
+
+// GetSignIdentityFinishRequest() 从对象池中获取SignIdentityFinishRequest
+func GetSignIdentityFinishRequest() *SignIdentityFinishRequest {
+	return poolSignIdentityFinishRequest.Get().(*SignIdentityFinishRequest)
+}
+
+// ReleaseSignIdentityFinishRequest 释放SignIdentityFinishRequest
+func ReleaseSignIdentityFinishRequest(v *SignIdentityFinishRequest) {
+	v.IdentityTemplateId = ""
+	v.OuterMemberId = ""
+	v.OpenMerchantId = ""
+	v.TimeStamp = 0
+	v.IdentityModel = nil
+	v.OrderModel = nil
+	v.SendSuc = false
+	poolSignIdentityFinishRequest.Put(v)
 }

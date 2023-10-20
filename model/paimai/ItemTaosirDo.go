@@ -1,5 +1,9 @@
 package paimai
 
+import (
+	"sync"
+)
+
 // ItemTaosirDo 结构体
 type ItemTaosirDo struct {
 	// 卖家可选单位List&lt;单位id，单位名&gt;
@@ -10,4 +14,24 @@ type ItemTaosirDo struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 数值小数点精度
 	Precision int64 `json:"precision,omitempty" xml:"precision,omitempty"`
+}
+
+var poolItemTaosirDo = sync.Pool{
+	New: func() any {
+		return new(ItemTaosirDo)
+	},
+}
+
+// GetItemTaosirDo() 从对象池中获取ItemTaosirDo
+func GetItemTaosirDo() *ItemTaosirDo {
+	return poolItemTaosirDo.Get().(*ItemTaosirDo)
+}
+
+// ReleaseItemTaosirDo 释放ItemTaosirDo
+func ReleaseItemTaosirDo(v *ItemTaosirDo) {
+	v.StdUnitList = v.StdUnitList[:0]
+	v.ExprElList = v.ExprElList[:0]
+	v.Type = 0
+	v.Precision = 0
+	poolItemTaosirDo.Put(v)
 }

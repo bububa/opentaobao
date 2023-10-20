@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsAddressSearchAPIRequest struct {
 // NewTaobaoLogisticsAddressSearchRequest 初始化TaobaoLogisticsAddressSearchAPIRequest对象
 func NewTaobaoLogisticsAddressSearchRequest() *TaobaoLogisticsAddressSearchAPIRequest {
 	return &TaobaoLogisticsAddressSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsAddressSearchAPIRequest) Reset() {
+	r._rdef = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsAddressSearchAPIRequest) SetRdef(_rdef string) error {
 // GetRdef Rdef Getter
 func (r TaobaoLogisticsAddressSearchAPIRequest) GetRdef() string {
 	return r._rdef
+}
+
+var poolTaobaoLogisticsAddressSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsAddressSearchRequest()
+	},
+}
+
+// GetTaobaoLogisticsAddressSearchRequest 从 sync.Pool 获取 TaobaoLogisticsAddressSearchAPIRequest
+func GetTaobaoLogisticsAddressSearchAPIRequest() *TaobaoLogisticsAddressSearchAPIRequest {
+	return poolTaobaoLogisticsAddressSearchAPIRequest.Get().(*TaobaoLogisticsAddressSearchAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsAddressSearchAPIRequest 将 TaobaoLogisticsAddressSearchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsAddressSearchAPIRequest(v *TaobaoLogisticsAddressSearchAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsAddressSearchAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package middleclaims
 
+import (
+	"sync"
+)
+
 // DeliveryAddressDto 结构体
 type DeliveryAddressDto struct {
 	// 收货人姓名
@@ -18,4 +22,28 @@ type DeliveryAddressDto struct {
 	PostCode string `json:"post_code,omitempty" xml:"post_code,omitempty"`
 	// 具体地址
 	ReceiverAddressDetail string `json:"receiver_address_detail,omitempty" xml:"receiver_address_detail,omitempty"`
+}
+
+var poolDeliveryAddressDto = sync.Pool{
+	New: func() any {
+		return new(DeliveryAddressDto)
+	},
+}
+
+// GetDeliveryAddressDto() 从对象池中获取DeliveryAddressDto
+func GetDeliveryAddressDto() *DeliveryAddressDto {
+	return poolDeliveryAddressDto.Get().(*DeliveryAddressDto)
+}
+
+// ReleaseDeliveryAddressDto 释放DeliveryAddressDto
+func ReleaseDeliveryAddressDto(v *DeliveryAddressDto) {
+	v.ReceiverName = ""
+	v.ReceiverMobilePhone = ""
+	v.CountryName = ""
+	v.ProvinceName = ""
+	v.CityName = ""
+	v.AreaName = ""
+	v.PostCode = ""
+	v.ReceiverAddressDetail = ""
+	poolDeliveryAddressDto.Put(v)
 }

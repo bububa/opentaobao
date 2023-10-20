@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest struct {
 // NewAlibabaAlisportsPassportAccountSsotokenrefreshRequest 初始化AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest对象
 func NewAlibabaAlisportsPassportAccountSsotokenrefreshRequest() *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest {
 	return &AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) Reset() {
+	r._alispAppKey = ""
+	r._alispTime = ""
+	r._alispSign = ""
+	r._secret = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) SetSecret(_se
 // GetSecret Secret Getter
 func (r AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) GetSecret() string {
 	return r._secret
+}
+
+var poolAlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlisportsPassportAccountSsotokenrefreshRequest()
+	},
+}
+
+// GetAlibabaAlisportsPassportAccountSsotokenrefreshRequest 从 sync.Pool 获取 AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest
+func GetAlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest() *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest {
+	return poolAlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest.Get().(*AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest)
+}
+
+// ReleaseAlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest 将 AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest(v *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) {
+	v.Reset()
+	poolAlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest.Put(v)
 }

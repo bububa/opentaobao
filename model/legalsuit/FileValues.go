@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // FileValues 结构体
 type FileValues struct {
 	// 文件名
@@ -12,4 +16,25 @@ type FileValues struct {
 	FileType string `json:"file_type,omitempty" xml:"file_type,omitempty"`
 	// 文件id
 	FileId int64 `json:"file_id,omitempty" xml:"file_id,omitempty"`
+}
+
+var poolFileValues = sync.Pool{
+	New: func() any {
+		return new(FileValues)
+	},
+}
+
+// GetFileValues() 从对象池中获取FileValues
+func GetFileValues() *FileValues {
+	return poolFileValues.Get().(*FileValues)
+}
+
+// ReleaseFileValues 释放FileValues
+func ReleaseFileValues(v *FileValues) {
+	v.FileName = ""
+	v.PreviewUrl = ""
+	v.DownloadUrl = ""
+	v.FileType = ""
+	v.FileId = 0
+	poolFileValues.Put(v)
 }

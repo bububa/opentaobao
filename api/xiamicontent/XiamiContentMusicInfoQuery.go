@@ -9,11 +9,6 @@ import (
 // xiami.content.music.info.query
 //
 // (批量)获取歌曲信息
-func XiamiContentMusicInfoQuery(clt *core.SDKClient, req *xiamicontent.XiamiContentMusicInfoQueryAPIRequest, session string) (*xiamicontent.XiamiContentMusicInfoQueryAPIResponse, error) {
-	var resp xiamicontent.XiamiContentMusicInfoQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func XiamiContentMusicInfoQuery(clt *core.SDKClient, req *xiamicontent.XiamiContentMusicInfoQueryAPIRequest, resp *xiamicontent.XiamiContentMusicInfoQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

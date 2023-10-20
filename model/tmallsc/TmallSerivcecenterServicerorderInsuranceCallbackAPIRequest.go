@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallSerivcecenterServicerorderInsuranceCallbackAPIRequest struct {
 // NewTmallSerivcecenterServicerorderInsuranceCallbackRequest 初始化TmallSerivcecenterServicerorderInsuranceCallbackAPIRequest对象
 func NewTmallSerivcecenterServicerorderInsuranceCallbackRequest() *TmallSerivcecenterServicerorderInsuranceCallbackAPIRequest {
 	return &TmallSerivcecenterServicerorderInsuranceCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallSerivcecenterServicerorderInsuranceCallbackAPIRequest) Reset() {
+	r._serviceInsuranceCallbackRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallSerivcecenterServicerorderInsuranceCallbackAPIRequest) SetServiceI
 // GetServiceInsuranceCallbackRequest ServiceInsuranceCallbackRequest Getter
 func (r TmallSerivcecenterServicerorderInsuranceCallbackAPIRequest) GetServiceInsuranceCallbackRequest() *ServiceInsuranceCallbackRequest {
 	return r._serviceInsuranceCallbackRequest
+}
+
+var poolTmallSerivcecenterServicerorderInsuranceCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallSerivcecenterServicerorderInsuranceCallbackRequest()
+	},
+}
+
+// GetTmallSerivcecenterServicerorderInsuranceCallbackRequest 从 sync.Pool 获取 TmallSerivcecenterServicerorderInsuranceCallbackAPIRequest
+func GetTmallSerivcecenterServicerorderInsuranceCallbackAPIRequest() *TmallSerivcecenterServicerorderInsuranceCallbackAPIRequest {
+	return poolTmallSerivcecenterServicerorderInsuranceCallbackAPIRequest.Get().(*TmallSerivcecenterServicerorderInsuranceCallbackAPIRequest)
+}
+
+// ReleaseTmallSerivcecenterServicerorderInsuranceCallbackAPIRequest 将 TmallSerivcecenterServicerorderInsuranceCallbackAPIRequest 放入 sync.Pool
+func ReleaseTmallSerivcecenterServicerorderInsuranceCallbackAPIRequest(v *TmallSerivcecenterServicerorderInsuranceCallbackAPIRequest) {
+	v.Reset()
+	poolTmallSerivcecenterServicerorderInsuranceCallbackAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.shopconfig.detail.submit
 //
 // 提供店铺配置的能力
-func AlibabaAlihouseNewhomeShopconfigDetailSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeShopconfigDetailSubmitAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeShopconfigDetailSubmitAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeShopconfigDetailSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeShopconfigDetailSubmitAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

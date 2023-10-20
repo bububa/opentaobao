@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // VoucherTemplateOpenInfo 结构体
 type VoucherTemplateOpenInfo struct {
 	// 1
@@ -52,4 +56,45 @@ type VoucherTemplateOpenInfo struct {
 	TodayAvailable bool `json:"today_available,omitempty" xml:"today_available,omitempty"`
 	// 是否删除
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
+}
+
+var poolVoucherTemplateOpenInfo = sync.Pool{
+	New: func() any {
+		return new(VoucherTemplateOpenInfo)
+	},
+}
+
+// GetVoucherTemplateOpenInfo() 从对象池中获取VoucherTemplateOpenInfo
+func GetVoucherTemplateOpenInfo() *VoucherTemplateOpenInfo {
+	return poolVoucherTemplateOpenInfo.Get().(*VoucherTemplateOpenInfo)
+}
+
+// ReleaseVoucherTemplateOpenInfo 释放VoucherTemplateOpenInfo
+func ReleaseVoucherTemplateOpenInfo(v *VoucherTemplateOpenInfo) {
+	v.ItemSelectedOpenInfoList = v.ItemSelectedOpenInfoList[:0]
+	v.ShopSelectedOpenInfoList = v.ShopSelectedOpenInfoList[:0]
+	v.AvailableTime = ""
+	v.Description = ""
+	v.EndTime = ""
+	v.ExtInfo = ""
+	v.ItemCoverage = ""
+	v.Name = ""
+	v.StartTime = ""
+	v.Status = ""
+	v.Type = ""
+	v.UseCondition = ""
+	v.ValidDateType = ""
+	v.VoucherTemplateId = ""
+	v.Denomination = ""
+	v.UpdateBy = ""
+	v.CreateBy = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Inventory = 0
+	v.MinCharge = 0
+	v.UserLimit = 0
+	v.ValidDayCount = 0
+	v.TodayAvailable = false
+	v.Deleted = false
+	poolVoucherTemplateOpenInfo.Put(v)
 }

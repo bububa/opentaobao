@@ -1,5 +1,9 @@
 package baodian
 
+import (
+	"sync"
+)
+
 // CoinUserDepositV2 结构体
 type CoinUserDepositV2 struct {
 	// 账期
@@ -34,4 +38,36 @@ type CoinUserDepositV2 struct {
 	IsPayAfterPlay bool `json:"is_pay_after_play,omitempty" xml:"is_pay_after_play,omitempty"`
 	// 是否新用户
 	NewUser bool `json:"new_user,omitempty" xml:"new_user,omitempty"`
+}
+
+var poolCoinUserDepositV2 = sync.Pool{
+	New: func() any {
+		return new(CoinUserDepositV2)
+	},
+}
+
+// GetCoinUserDepositV2() 从对象池中获取CoinUserDepositV2
+func GetCoinUserDepositV2() *CoinUserDepositV2 {
+	return poolCoinUserDepositV2.Get().(*CoinUserDepositV2)
+}
+
+// ReleaseCoinUserDepositV2 释放CoinUserDepositV2
+func ReleaseCoinUserDepositV2(v *CoinUserDepositV2) {
+	v.CreditPeriod = ""
+	v.ImageUrl = ""
+	v.UserAuthCode = ""
+	v.UserNick = ""
+	v.UserStrId = ""
+	v.AvatarUrl = ""
+	v.Credit = 0
+	v.CreditLimit = 0
+	v.Deposit = 0
+	v.GamePoint = 0
+	v.Price = 0
+	v.DeviceAuth = false
+	v.EnablePay = false
+	v.IsExpired = false
+	v.IsPayAfterPlay = false
+	v.NewUser = false
+	poolCoinUserDepositV2.Put(v)
 }

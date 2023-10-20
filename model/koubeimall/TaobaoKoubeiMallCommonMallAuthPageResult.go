@@ -1,5 +1,9 @@
 package koubeimall
 
+import (
+	"sync"
+)
+
 // TaobaoKoubeiMallCommonMallAuthPageResult 结构体
 type TaobaoKoubeiMallCommonMallAuthPageResult struct {
 	// API请求全链路追踪ID
@@ -10,4 +14,24 @@ type TaobaoKoubeiMallCommonMallAuthPageResult struct {
 	Error *TribeError `json:"error,omitempty" xml:"error,omitempty"`
 	// 请求是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoKoubeiMallCommonMallAuthPageResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoKoubeiMallCommonMallAuthPageResult)
+	},
+}
+
+// GetTaobaoKoubeiMallCommonMallAuthPageResult() 从对象池中获取TaobaoKoubeiMallCommonMallAuthPageResult
+func GetTaobaoKoubeiMallCommonMallAuthPageResult() *TaobaoKoubeiMallCommonMallAuthPageResult {
+	return poolTaobaoKoubeiMallCommonMallAuthPageResult.Get().(*TaobaoKoubeiMallCommonMallAuthPageResult)
+}
+
+// ReleaseTaobaoKoubeiMallCommonMallAuthPageResult 释放TaobaoKoubeiMallCommonMallAuthPageResult
+func ReleaseTaobaoKoubeiMallCommonMallAuthPageResult(v *TaobaoKoubeiMallCommonMallAuthPageResult) {
+	v.TraceId = ""
+	v.Data = nil
+	v.Error = nil
+	v.Success = false
+	poolTaobaoKoubeiMallCommonMallAuthPageResult.Put(v)
 }

@@ -2,6 +2,7 @@ package moscm
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaMosGoodsBulkinputcspuAPIResponse struct {
 	AlibabaMosGoodsBulkinputcspuAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaMosGoodsBulkinputcspuAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaMosGoodsBulkinputcspuAPIResponseModel).Reset()
+}
+
 // AlibabaMosGoodsBulkinputcspuAPIResponseModel is 批量录入商品信息 成功返回结果
 type AlibabaMosGoodsBulkinputcspuAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mos_goods_bulkinputcspu_response"`
@@ -22,4 +29,27 @@ type AlibabaMosGoodsBulkinputcspuAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回数据
 	Data *BulkInputCspuResult `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaMosGoodsBulkinputcspuAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = nil
+}
+
+var poolAlibabaMosGoodsBulkinputcspuAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaMosGoodsBulkinputcspuAPIResponse)
+	},
+}
+
+// GetAlibabaMosGoodsBulkinputcspuAPIResponse 从 sync.Pool 获取 AlibabaMosGoodsBulkinputcspuAPIResponse
+func GetAlibabaMosGoodsBulkinputcspuAPIResponse() *AlibabaMosGoodsBulkinputcspuAPIResponse {
+	return poolAlibabaMosGoodsBulkinputcspuAPIResponse.Get().(*AlibabaMosGoodsBulkinputcspuAPIResponse)
+}
+
+// ReleaseAlibabaMosGoodsBulkinputcspuAPIResponse 将 AlibabaMosGoodsBulkinputcspuAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaMosGoodsBulkinputcspuAPIResponse(v *AlibabaMosGoodsBulkinputcspuAPIResponse) {
+	v.Reset()
+	poolAlibabaMosGoodsBulkinputcspuAPIResponse.Put(v)
 }

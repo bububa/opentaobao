@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosTvpubadminManageDialogListAPIRequest struct {
 // NewYunosTvpubadminManageDialogListRequest 初始化YunosTvpubadminManageDialogListAPIRequest对象
 func NewYunosTvpubadminManageDialogListRequest() *YunosTvpubadminManageDialogListAPIRequest {
 	return &YunosTvpubadminManageDialogListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminManageDialogListAPIRequest) Reset() {
+	r._query = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosTvpubadminManageDialogListAPIRequest) SetQuery(_query string) erro
 // GetQuery Query Getter
 func (r YunosTvpubadminManageDialogListAPIRequest) GetQuery() string {
 	return r._query
+}
+
+var poolYunosTvpubadminManageDialogListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminManageDialogListRequest()
+	},
+}
+
+// GetYunosTvpubadminManageDialogListRequest 从 sync.Pool 获取 YunosTvpubadminManageDialogListAPIRequest
+func GetYunosTvpubadminManageDialogListAPIRequest() *YunosTvpubadminManageDialogListAPIRequest {
+	return poolYunosTvpubadminManageDialogListAPIRequest.Get().(*YunosTvpubadminManageDialogListAPIRequest)
+}
+
+// ReleaseYunosTvpubadminManageDialogListAPIRequest 将 YunosTvpubadminManageDialogListAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminManageDialogListAPIRequest(v *YunosTvpubadminManageDialogListAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminManageDialogListAPIRequest.Put(v)
 }

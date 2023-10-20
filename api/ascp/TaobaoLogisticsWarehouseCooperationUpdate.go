@@ -9,11 +9,6 @@ import (
 // taobao.logistics.warehouse.cooperation.update
 //
 // 合作商家信息同步
-func TaobaoLogisticsWarehouseCooperationUpdate(clt *core.SDKClient, req *ascp.TaobaoLogisticsWarehouseCooperationUpdateAPIRequest, session string) (*ascp.TaobaoLogisticsWarehouseCooperationUpdateAPIResponse, error) {
-	var resp ascp.TaobaoLogisticsWarehouseCooperationUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLogisticsWarehouseCooperationUpdate(clt *core.SDKClient, req *ascp.TaobaoLogisticsWarehouseCooperationUpdateAPIRequest, resp *ascp.TaobaoLogisticsWarehouseCooperationUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

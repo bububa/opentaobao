@@ -2,6 +2,7 @@ package usergrowth
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoGrowthReachingBuzzwordQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoGrowthReachingBuzzwordQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoGrowthReachingBuzzwordQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoGrowthReachingBuzzwordQueryAPIResponseModel).Reset()
 }
 
 // TaobaoGrowthReachingBuzzwordQueryAPIResponseModel is 淘宝热词榜单数据查询接口 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoGrowthReachingBuzzwordQueryAPIResponseModel struct {
 	CacheDuration int64 `json:"cache_duration,omitempty" xml:"cache_duration,omitempty"`
 	// 是否针对此设备进行投放
 	IsOffering bool `json:"is_offering,omitempty" xml:"is_offering,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoGrowthReachingBuzzwordQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Buzzwords = m.Buzzwords[:0]
+	m.ExposureUrl = ""
+	m.Extra = nil
+	m.CacheDuration = 0
+	m.IsOffering = false
+}
+
+var poolTaobaoGrowthReachingBuzzwordQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoGrowthReachingBuzzwordQueryAPIResponse)
+	},
+}
+
+// GetTaobaoGrowthReachingBuzzwordQueryAPIResponse 从 sync.Pool 获取 TaobaoGrowthReachingBuzzwordQueryAPIResponse
+func GetTaobaoGrowthReachingBuzzwordQueryAPIResponse() *TaobaoGrowthReachingBuzzwordQueryAPIResponse {
+	return poolTaobaoGrowthReachingBuzzwordQueryAPIResponse.Get().(*TaobaoGrowthReachingBuzzwordQueryAPIResponse)
+}
+
+// ReleaseTaobaoGrowthReachingBuzzwordQueryAPIResponse 将 TaobaoGrowthReachingBuzzwordQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoGrowthReachingBuzzwordQueryAPIResponse(v *TaobaoGrowthReachingBuzzwordQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoGrowthReachingBuzzwordQueryAPIResponse.Put(v)
 }

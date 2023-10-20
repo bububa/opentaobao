@@ -2,6 +2,7 @@ package viapi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AliyunViapiFacebodyComparefaceAPIRequest struct {
 // NewAliyunViapiFacebodyComparefaceRequest 初始化AliyunViapiFacebodyComparefaceAPIRequest对象
 func NewAliyunViapiFacebodyComparefaceRequest() *AliyunViapiFacebodyComparefaceAPIRequest {
 	return &AliyunViapiFacebodyComparefaceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunViapiFacebodyComparefaceAPIRequest) Reset() {
+	r._imageUrlA = ""
+	r._imageUrlB = ""
+	r._imageType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AliyunViapiFacebodyComparefaceAPIRequest) SetImageType(_imageType int64
 // GetImageType ImageType Getter
 func (r AliyunViapiFacebodyComparefaceAPIRequest) GetImageType() int64 {
 	return r._imageType
+}
+
+var poolAliyunViapiFacebodyComparefaceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunViapiFacebodyComparefaceRequest()
+	},
+}
+
+// GetAliyunViapiFacebodyComparefaceRequest 从 sync.Pool 获取 AliyunViapiFacebodyComparefaceAPIRequest
+func GetAliyunViapiFacebodyComparefaceAPIRequest() *AliyunViapiFacebodyComparefaceAPIRequest {
+	return poolAliyunViapiFacebodyComparefaceAPIRequest.Get().(*AliyunViapiFacebodyComparefaceAPIRequest)
+}
+
+// ReleaseAliyunViapiFacebodyComparefaceAPIRequest 将 AliyunViapiFacebodyComparefaceAPIRequest 放入 sync.Pool
+func ReleaseAliyunViapiFacebodyComparefaceAPIRequest(v *AliyunViapiFacebodyComparefaceAPIRequest) {
+	v.Reset()
+	poolAliyunViapiFacebodyComparefaceAPIRequest.Put(v)
 }

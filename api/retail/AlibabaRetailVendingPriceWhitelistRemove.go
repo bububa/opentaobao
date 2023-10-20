@@ -9,11 +9,6 @@ import (
 // alibaba.retail.vending.price.whitelist.remove
 //
 // 商家价格管控白名单去除
-func AlibabaRetailVendingPriceWhitelistRemove(clt *core.SDKClient, req *retail.AlibabaRetailVendingPriceWhitelistRemoveAPIRequest, session string) (*retail.AlibabaRetailVendingPriceWhitelistRemoveAPIResponse, error) {
-	var resp retail.AlibabaRetailVendingPriceWhitelistRemoveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaRetailVendingPriceWhitelistRemove(clt *core.SDKClient, req *retail.AlibabaRetailVendingPriceWhitelistRemoveAPIRequest, resp *retail.AlibabaRetailVendingPriceWhitelistRemoveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

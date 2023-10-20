@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,14 @@ type AlibabaAlscCrmPointCalAPIRequest struct {
 // NewAlibabaAlscCrmPointCalRequest 初始化AlibabaAlscCrmPointCalAPIRequest对象
 func NewAlibabaAlscCrmPointCalRequest() *AlibabaAlscCrmPointCalAPIRequest {
 	return &AlibabaAlscCrmPointCalAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmPointCalAPIRequest) Reset() {
+	r._paramCalculateDeductedMoneyOpenReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -55,4 +62,21 @@ func (r *AlibabaAlscCrmPointCalAPIRequest) SetParamCalculateDeductedMoneyOpenReq
 // GetParamCalculateDeductedMoneyOpenReq ParamCalculateDeductedMoneyOpenReq Getter
 func (r AlibabaAlscCrmPointCalAPIRequest) GetParamCalculateDeductedMoneyOpenReq() *CalculateDeductedMoneyOpenReq {
 	return r._paramCalculateDeductedMoneyOpenReq
+}
+
+var poolAlibabaAlscCrmPointCalAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmPointCalRequest()
+	},
+}
+
+// GetAlibabaAlscCrmPointCalRequest 从 sync.Pool 获取 AlibabaAlscCrmPointCalAPIRequest
+func GetAlibabaAlscCrmPointCalAPIRequest() *AlibabaAlscCrmPointCalAPIRequest {
+	return poolAlibabaAlscCrmPointCalAPIRequest.Get().(*AlibabaAlscCrmPointCalAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmPointCalAPIRequest 将 AlibabaAlscCrmPointCalAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmPointCalAPIRequest(v *AlibabaAlscCrmPointCalAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmPointCalAPIRequest.Put(v)
 }

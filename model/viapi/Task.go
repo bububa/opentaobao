@@ -1,5 +1,9 @@
 package viapi
 
+import (
+	"sync"
+)
+
 // Task 结构体
 type Task struct {
 	// 数据ID
@@ -14,4 +18,26 @@ type Task struct {
 	Interval int64 `json:"interval,omitempty" xml:"interval,omitempty"`
 	// 最大截帧数量
 	MaxFrames int64 `json:"max_frames,omitempty" xml:"max_frames,omitempty"`
+}
+
+var poolTask = sync.Pool{
+	New: func() any {
+		return new(Task)
+	},
+}
+
+// GetTask() 从对象池中获取Task
+func GetTask() *Task {
+	return poolTask.Get().(*Task)
+}
+
+// ReleaseTask 释放Task
+func ReleaseTask(v *Task) {
+	v.DataId = ""
+	v.ImageUrl = ""
+	v.Content = ""
+	v.ImageTime = 0
+	v.Interval = 0
+	v.MaxFrames = 0
+	poolTask.Put(v)
 }

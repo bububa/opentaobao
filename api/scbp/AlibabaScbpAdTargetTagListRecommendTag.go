@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.ad.target.tag.list.recommend.tag
 //
 // 给计划推荐标签
-func AlibabaScbpAdTargetTagListRecommendTag(clt *core.SDKClient, req *scbp.AlibabaScbpAdTargetTagListRecommendTagAPIRequest, session string) (*scbp.AlibabaScbpAdTargetTagListRecommendTagAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdTargetTagListRecommendTagAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAdTargetTagListRecommendTag(clt *core.SDKClient, req *scbp.AlibabaScbpAdTargetTagListRecommendTagAPIRequest, resp *scbp.AlibabaScbpAdTargetTagListRecommendTagAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

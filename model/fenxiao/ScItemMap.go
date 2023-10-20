@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // ScItemMap 结构体
 type ScItemMap struct {
 	// 后端商品所有者名称
@@ -20,4 +24,29 @@ type ScItemMap struct {
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 当宝贝下没SKU时该字段为空
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolScItemMap = sync.Pool{
+	New: func() any {
+		return new(ScItemMap)
+	},
+}
+
+// GetScItemMap() 从对象池中获取ScItemMap
+func GetScItemMap() *ScItemMap {
+	return poolScItemMap.Get().(*ScItemMap)
+}
+
+// ReleaseScItemMap 释放ScItemMap
+func ReleaseScItemMap(v *ScItemMap) {
+	v.RelUserNick = ""
+	v.UserNick = ""
+	v.RelOuterCode = ""
+	v.RelItemId = 0
+	v.ItemId = 0
+	v.RelUserId = 0
+	v.MapType = 0
+	v.UserId = 0
+	v.SkuId = 0
+	poolScItemMap.Put(v)
 }

@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // ItemListResultDto 结构体
 type ItemListResultDto struct {
 	// product list
@@ -18,4 +22,28 @@ type ItemListResultDto struct {
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
 	// success or not
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolItemListResultDto = sync.Pool{
+	New: func() any {
+		return new(ItemListResultDto)
+	},
+}
+
+// GetItemListResultDto() 从对象池中获取ItemListResultDto
+func GetItemListResultDto() *ItemListResultDto {
+	return poolItemListResultDto.Get().(*ItemListResultDto)
+}
+
+// ReleaseItemListResultDto 释放ItemListResultDto
+func ReleaseItemListResultDto(v *ItemListResultDto) {
+	v.AeopAEProductDisplayDTOList = v.AeopAEProductDisplayDTOList[:0]
+	v.ErrorMessage = ""
+	v.ErrorMsg = ""
+	v.ErrorCode = 0
+	v.TotalPage = 0
+	v.ProductCount = 0
+	v.CurrentPage = 0
+	v.Success = false
+	poolItemListResultDto.Put(v)
 }

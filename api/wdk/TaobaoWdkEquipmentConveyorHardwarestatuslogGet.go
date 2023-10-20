@@ -9,11 +9,6 @@ import (
 // taobao.wdk.equipment.conveyor.hardwarestatuslog.get
 //
 // 硬件状态变化日志查询
-func TaobaoWdkEquipmentConveyorHardwarestatuslogGet(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest, session string) (*wdk.TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIResponse, error) {
-	var resp wdk.TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWdkEquipmentConveyorHardwarestatuslogGet(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest, resp *wdk.TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

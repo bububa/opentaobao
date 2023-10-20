@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoUniversalbpAdzoneFindconfiglistAPIResponse struct {
 	TaobaoUniversalbpAdzoneFindconfiglistAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoUniversalbpAdzoneFindconfiglistAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoUniversalbpAdzoneFindconfiglistAPIResponseModel).Reset()
+}
+
 // TaobaoUniversalbpAdzoneFindconfiglistAPIResponseModel is 查询所有可用资源包信息 成功返回结果
 type TaobaoUniversalbpAdzoneFindconfiglistAPIResponseModel struct {
 	XMLName xml.Name `xml:"universalbp_adzone_findconfiglist_response"`
@@ -22,4 +29,27 @@ type TaobaoUniversalbpAdzoneFindconfiglistAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
 	Result *TaobaoUniversalbpAdzoneFindconfiglistTopResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoUniversalbpAdzoneFindconfiglistAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoUniversalbpAdzoneFindconfiglistAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoUniversalbpAdzoneFindconfiglistAPIResponse)
+	},
+}
+
+// GetTaobaoUniversalbpAdzoneFindconfiglistAPIResponse 从 sync.Pool 获取 TaobaoUniversalbpAdzoneFindconfiglistAPIResponse
+func GetTaobaoUniversalbpAdzoneFindconfiglistAPIResponse() *TaobaoUniversalbpAdzoneFindconfiglistAPIResponse {
+	return poolTaobaoUniversalbpAdzoneFindconfiglistAPIResponse.Get().(*TaobaoUniversalbpAdzoneFindconfiglistAPIResponse)
+}
+
+// ReleaseTaobaoUniversalbpAdzoneFindconfiglistAPIResponse 将 TaobaoUniversalbpAdzoneFindconfiglistAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoUniversalbpAdzoneFindconfiglistAPIResponse(v *TaobaoUniversalbpAdzoneFindconfiglistAPIResponse) {
+	v.Reset()
+	poolTaobaoUniversalbpAdzoneFindconfiglistAPIResponse.Put(v)
 }

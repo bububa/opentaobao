@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoLogisticsTraceSearchAPIRequest struct {
 // NewTaobaoLogisticsTraceSearchRequest 初始化TaobaoLogisticsTraceSearchAPIRequest对象
 func NewTaobaoLogisticsTraceSearchRequest() *TaobaoLogisticsTraceSearchAPIRequest {
 	return &TaobaoLogisticsTraceSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsTraceSearchAPIRequest) Reset() {
+	r._subTid = r._subTid[:0]
+	r._tid = 0
+	r._isSplit = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoLogisticsTraceSearchAPIRequest) SetIsSplit(_isSplit int64) error 
 // GetIsSplit IsSplit Getter
 func (r TaobaoLogisticsTraceSearchAPIRequest) GetIsSplit() int64 {
 	return r._isSplit
+}
+
+var poolTaobaoLogisticsTraceSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsTraceSearchRequest()
+	},
+}
+
+// GetTaobaoLogisticsTraceSearchRequest 从 sync.Pool 获取 TaobaoLogisticsTraceSearchAPIRequest
+func GetTaobaoLogisticsTraceSearchAPIRequest() *TaobaoLogisticsTraceSearchAPIRequest {
+	return poolTaobaoLogisticsTraceSearchAPIRequest.Get().(*TaobaoLogisticsTraceSearchAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsTraceSearchAPIRequest 将 TaobaoLogisticsTraceSearchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsTraceSearchAPIRequest(v *TaobaoLogisticsTraceSearchAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsTraceSearchAPIRequest.Put(v)
 }

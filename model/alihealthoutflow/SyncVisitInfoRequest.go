@@ -1,5 +1,9 @@
 package alihealthoutflow
 
+import (
+	"sync"
+)
+
 // SyncVisitInfoRequest 结构体
 type SyncVisitInfoRequest struct {
 	// 业务创建时间(非空)
@@ -28,4 +32,33 @@ type SyncVisitInfoRequest struct {
 	VisitStatus string `json:"visit_status,omitempty" xml:"visit_status,omitempty"`
 	// 首次回复时间(可空)
 	FirstResponseTime string `json:"first_response_time,omitempty" xml:"first_response_time,omitempty"`
+}
+
+var poolSyncVisitInfoRequest = sync.Pool{
+	New: func() any {
+		return new(SyncVisitInfoRequest)
+	},
+}
+
+// GetSyncVisitInfoRequest() 从对象池中获取SyncVisitInfoRequest
+func GetSyncVisitInfoRequest() *SyncVisitInfoRequest {
+	return poolSyncVisitInfoRequest.Get().(*SyncVisitInfoRequest)
+}
+
+// ReleaseSyncVisitInfoRequest 释放SyncVisitInfoRequest
+func ReleaseSyncVisitInfoRequest(v *SyncVisitInfoRequest) {
+	v.CreateTime = ""
+	v.BusinessType = ""
+	v.BusinessId = ""
+	v.AuthorizationId = ""
+	v.HospitalId = ""
+	v.DoctorId = ""
+	v.DoctorName = ""
+	v.DepartId = ""
+	v.DepartName = ""
+	v.PatientId = ""
+	v.PatientName = ""
+	v.VisitStatus = ""
+	v.FirstResponseTime = ""
+	poolSyncVisitInfoRequest.Put(v)
 }

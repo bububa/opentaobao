@@ -1,5 +1,9 @@
 package alihealthoutflow
 
+import (
+	"sync"
+)
+
 // Drugs 结构体
 type Drugs struct {
 	// 规格(非空)
@@ -34,4 +38,36 @@ type Drugs struct {
 	ProduceId string `json:"produce_id,omitempty" xml:"produce_id,omitempty"`
 	// spuid (drug_id、spuid二选一) - 纳里必传
 	Spuid string `json:"spuid,omitempty" xml:"spuid,omitempty"`
+}
+
+var poolDrugs = sync.Pool{
+	New: func() any {
+		return new(Drugs)
+	},
+}
+
+// GetDrugs() 从对象池中获取Drugs
+func GetDrugs() *Drugs {
+	return poolDrugs.Get().(*Drugs)
+}
+
+// ReleaseDrugs 释放Drugs
+func ReleaseDrugs(v *Drugs) {
+	v.Spec = ""
+	v.Total = ""
+	v.DrugName = ""
+	v.Day = ""
+	v.Frequency = ""
+	v.Note = ""
+	v.Dose = ""
+	v.DrugCommonName = ""
+	v.DoseUnit = ""
+	v.TotalUnit = ""
+	v.Price = ""
+	v.TotalPrice = ""
+	v.DoseUsage = ""
+	v.DrugId = ""
+	v.ProduceId = ""
+	v.Spuid = ""
+	poolDrugs.Put(v)
 }

@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoTbkScUcrowdMemberAddAPIRequest struct {
 // NewTaobaoTbkScUcrowdMemberAddRequest 初始化TaobaoTbkScUcrowdMemberAddAPIRequest对象
 func NewTaobaoTbkScUcrowdMemberAddRequest() *TaobaoTbkScUcrowdMemberAddAPIRequest {
 	return &TaobaoTbkScUcrowdMemberAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkScUcrowdMemberAddAPIRequest) Reset() {
+	r._accountList = r._accountList[:0]
+	r._accountType = 0
+	r._ucrowdId = 0
+	r._editType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoTbkScUcrowdMemberAddAPIRequest) SetEditType(_editType int64) erro
 // GetEditType EditType Getter
 func (r TaobaoTbkScUcrowdMemberAddAPIRequest) GetEditType() int64 {
 	return r._editType
+}
+
+var poolTaobaoTbkScUcrowdMemberAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkScUcrowdMemberAddRequest()
+	},
+}
+
+// GetTaobaoTbkScUcrowdMemberAddRequest 从 sync.Pool 获取 TaobaoTbkScUcrowdMemberAddAPIRequest
+func GetTaobaoTbkScUcrowdMemberAddAPIRequest() *TaobaoTbkScUcrowdMemberAddAPIRequest {
+	return poolTaobaoTbkScUcrowdMemberAddAPIRequest.Get().(*TaobaoTbkScUcrowdMemberAddAPIRequest)
+}
+
+// ReleaseTaobaoTbkScUcrowdMemberAddAPIRequest 将 TaobaoTbkScUcrowdMemberAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkScUcrowdMemberAddAPIRequest(v *TaobaoTbkScUcrowdMemberAddAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkScUcrowdMemberAddAPIRequest.Put(v)
 }

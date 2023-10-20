@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.open.cost.center.query
 //
 // 查询成本中心
-func AlitripBtripOpenCostCenterQuery(clt *core.SDKClient, req *btrip.AlitripBtripOpenCostCenterQueryAPIRequest, session string) (*btrip.AlitripBtripOpenCostCenterQueryAPIResponse, error) {
-	var resp btrip.AlitripBtripOpenCostCenterQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripOpenCostCenterQuery(clt *core.SDKClient, req *btrip.AlitripBtripOpenCostCenterQueryAPIRequest, resp *btrip.AlitripBtripOpenCostCenterQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

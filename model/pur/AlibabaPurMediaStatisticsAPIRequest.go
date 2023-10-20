@@ -2,6 +2,7 @@ package pur
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaPurMediaStatisticsAPIRequest struct {
 // NewAlibabaPurMediaStatisticsRequest 初始化AlibabaPurMediaStatisticsAPIRequest对象
 func NewAlibabaPurMediaStatisticsRequest() *AlibabaPurMediaStatisticsAPIRequest {
 	return &AlibabaPurMediaStatisticsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaPurMediaStatisticsAPIRequest) Reset() {
+	r._mediaStatisticsDTO = r._mediaStatisticsDTO[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaPurMediaStatisticsAPIRequest) SetMediaStatisticsDTO(_mediaStatis
 // GetMediaStatisticsDTO MediaStatisticsDTO Getter
 func (r AlibabaPurMediaStatisticsAPIRequest) GetMediaStatisticsDTO() []MediaStatisticsDto {
 	return r._mediaStatisticsDTO
+}
+
+var poolAlibabaPurMediaStatisticsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaPurMediaStatisticsRequest()
+	},
+}
+
+// GetAlibabaPurMediaStatisticsRequest 从 sync.Pool 获取 AlibabaPurMediaStatisticsAPIRequest
+func GetAlibabaPurMediaStatisticsAPIRequest() *AlibabaPurMediaStatisticsAPIRequest {
+	return poolAlibabaPurMediaStatisticsAPIRequest.Get().(*AlibabaPurMediaStatisticsAPIRequest)
+}
+
+// ReleaseAlibabaPurMediaStatisticsAPIRequest 将 AlibabaPurMediaStatisticsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaPurMediaStatisticsAPIRequest(v *AlibabaPurMediaStatisticsAPIRequest) {
+	v.Reset()
+	poolAlibabaPurMediaStatisticsAPIRequest.Put(v)
 }

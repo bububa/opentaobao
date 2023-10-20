@@ -9,11 +9,6 @@ import (
 // alibaba.ai.content.business.send.plan.receive
 //
 // 天猫精灵商业化采销发放计划领取
-func AlibabaAiContentBusinessSendPlanReceive(clt *core.SDKClient, req *tmallgenie.AlibabaAiContentBusinessSendPlanReceiveAPIRequest, session string) (*tmallgenie.AlibabaAiContentBusinessSendPlanReceiveAPIResponse, error) {
-	var resp tmallgenie.AlibabaAiContentBusinessSendPlanReceiveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAiContentBusinessSendPlanReceive(clt *core.SDKClient, req *tmallgenie.AlibabaAiContentBusinessSendPlanReceiveAPIRequest, resp *tmallgenie.AlibabaAiContentBusinessSendPlanReceiveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

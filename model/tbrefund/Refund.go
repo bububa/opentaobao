@@ -1,5 +1,9 @@
 package tbrefund
 
+import (
+	"sync"
+)
+
 // Refund 结构体
 type Refund struct {
 	// 组合品信息
@@ -86,4 +90,62 @@ type Refund struct {
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
 	// 买家是否需要退货。可选值:true(是),false(否)
 	HasGoodReturn bool `json:"has_good_return,omitempty" xml:"has_good_return,omitempty"`
+}
+
+var poolRefund = sync.Pool{
+	New: func() any {
+		return new(Refund)
+	},
+}
+
+// GetRefund() 从对象池中获取Refund
+func GetRefund() *Refund {
+	return poolRefund.Get().(*Refund)
+}
+
+// ReleaseRefund 释放Refund
+func ReleaseRefund(v *Refund) {
+	v.CombineItemInfo = v.CombineItemInfo[:0]
+	v.Address = ""
+	v.AlipayNo = ""
+	v.Attribute = ""
+	v.BuyerNick = ""
+	v.CompanyName = ""
+	v.Created = ""
+	v.Desc = ""
+	v.GoodReturnTime = ""
+	v.GoodStatus = ""
+	v.Modified = ""
+	v.OperationContraint = ""
+	v.OrderStatus = ""
+	v.OuterId = ""
+	v.Payment = ""
+	v.Price = ""
+	v.Reason = ""
+	v.RefundFee = ""
+	v.RefundId = ""
+	v.RefundPhase = ""
+	v.SellerNick = ""
+	v.ShippingType = ""
+	v.Sid = ""
+	v.Sku = ""
+	v.SplitSellerFee = ""
+	v.SplitTaobaoFee = ""
+	v.Status = ""
+	v.Title = ""
+	v.TotalFee = ""
+	v.BuyerOpenUid = ""
+	v.Ouid = ""
+	v.DisputeType = ""
+	v.SpecialRefundType = ""
+	v.AdvanceStatus = 0
+	v.CsStatus = 0
+	v.Num = 0
+	v.NumIid = 0
+	v.Oid = 0
+	v.RefundRemindTimeout = nil
+	v.RefundVersion = 0
+	v.Tid = 0
+	v.HasGoodReturn = false
+	poolRefund.Put(v)
 }

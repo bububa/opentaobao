@@ -2,6 +2,7 @@ package traveltrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -45,8 +46,27 @@ type AlitripTravelVisaApplicantUpdateAPIRequest struct {
 // NewAlitripTravelVisaApplicantUpdateRequest 初始化AlitripTravelVisaApplicantUpdateAPIRequest对象
 func NewAlitripTravelVisaApplicantUpdateRequest() *AlitripTravelVisaApplicantUpdateAPIRequest {
 	return &AlitripTravelVisaApplicantUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(14),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTravelVisaApplicantUpdateAPIRequest) Reset() {
+	r._applicantInfos = r._applicantInfos[:0]
+	r._documentInfos = r._documentInfos[:0]
+	r._subOrderId = ""
+	r._photoType = ""
+	r._passportType = ""
+	r._hotelBookingFormType = ""
+	r._flightBookingFormType = ""
+	r._applicantOp = nil
+	r._operType = 0
+	r._fileBytes = nil
+	r._photoBytes = nil
+	r._passportBytes = nil
+	r._hotelBookingFormBytes = nil
+	r._flightBookingFormBytes = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -246,4 +266,21 @@ func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetFlightBookingFormBytes(_
 // GetFlightBookingFormBytes FlightBookingFormBytes Getter
 func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetFlightBookingFormBytes() *model.File {
 	return r._flightBookingFormBytes
+}
+
+var poolAlitripTravelVisaApplicantUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTravelVisaApplicantUpdateRequest()
+	},
+}
+
+// GetAlitripTravelVisaApplicantUpdateRequest 从 sync.Pool 获取 AlitripTravelVisaApplicantUpdateAPIRequest
+func GetAlitripTravelVisaApplicantUpdateAPIRequest() *AlitripTravelVisaApplicantUpdateAPIRequest {
+	return poolAlitripTravelVisaApplicantUpdateAPIRequest.Get().(*AlitripTravelVisaApplicantUpdateAPIRequest)
+}
+
+// ReleaseAlitripTravelVisaApplicantUpdateAPIRequest 将 AlitripTravelVisaApplicantUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlitripTravelVisaApplicantUpdateAPIRequest(v *AlitripTravelVisaApplicantUpdateAPIRequest) {
+	v.Reset()
+	poolAlitripTravelVisaApplicantUpdateAPIRequest.Put(v)
 }

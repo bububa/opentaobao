@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // Orderitemwlbwmsstockoutordernotify 结构体
 type Orderitemwlbwmsstockoutordernotify struct {
 	// 生产日期
@@ -20,4 +24,29 @@ type Orderitemwlbwmsstockoutordernotify struct {
 	ItemQuantity int64 `json:"item_quantity,omitempty" xml:"item_quantity,omitempty"`
 	// 库存类型
 	InventoryType int64 `json:"inventory_type,omitempty" xml:"inventory_type,omitempty"`
+}
+
+var poolOrderitemwlbwmsstockoutordernotify = sync.Pool{
+	New: func() any {
+		return new(Orderitemwlbwmsstockoutordernotify)
+	},
+}
+
+// GetOrderitemwlbwmsstockoutordernotify() 从对象池中获取Orderitemwlbwmsstockoutordernotify
+func GetOrderitemwlbwmsstockoutordernotify() *Orderitemwlbwmsstockoutordernotify {
+	return poolOrderitemwlbwmsstockoutordernotify.Get().(*Orderitemwlbwmsstockoutordernotify)
+}
+
+// ReleaseOrderitemwlbwmsstockoutordernotify 释放Orderitemwlbwmsstockoutordernotify
+func ReleaseOrderitemwlbwmsstockoutordernotify(v *Orderitemwlbwmsstockoutordernotify) {
+	v.ProduceDate = ""
+	v.BatchCode = ""
+	v.OrderItemId = ""
+	v.ItemId = ""
+	v.ProduceCode = ""
+	v.ExtendFields = ""
+	v.DueDate = ""
+	v.ItemQuantity = 0
+	v.InventoryType = 0
+	poolOrderitemwlbwmsstockoutordernotify.Put(v)
 }

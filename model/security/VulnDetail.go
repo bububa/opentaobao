@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // VulnDetail 结构体
 type VulnDetail struct {
 	// 漏洞位置
@@ -20,4 +24,29 @@ type VulnDetail struct {
 	Count int64 `json:"count,omitempty" xml:"count,omitempty"`
 	// 是否安全红线漏洞
 	RedLine bool `json:"red_line,omitempty" xml:"red_line,omitempty"`
+}
+
+var poolVulnDetail = sync.Pool{
+	New: func() any {
+		return new(VulnDetail)
+	},
+}
+
+// GetVulnDetail() 从对象池中获取VulnDetail
+func GetVulnDetail() *VulnDetail {
+	return poolVulnDetail.Get().(*VulnDetail)
+}
+
+// ReleaseVulnDetail 释放VulnDetail
+func ReleaseVulnDetail(v *VulnDetail) {
+	v.Locations = v.Locations[:0]
+	v.Level = ""
+	v.Name = ""
+	v.Recommendation = ""
+	v.ReferenctLink = ""
+	v.VulnId = ""
+	v.Description = ""
+	v.Count = 0
+	v.RedLine = false
+	poolVulnDetail.Put(v)
 }

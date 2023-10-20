@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoPhoneOrderExternalStatusAPIResponse struct {
 	model.CommonResponse
 	TaobaoPhoneOrderExternalStatusAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoPhoneOrderExternalStatusAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPhoneOrderExternalStatusAPIResponseModel).Reset()
 }
 
 // TaobaoPhoneOrderExternalStatusAPIResponseModel is 话费外放订单状态接口 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoPhoneOrderExternalStatusAPIResponseModel struct {
 	Model *DistributeTradeOrderInfo `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPhoneOrderExternalStatusAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.BizCode = ""
+	m.Desc = ""
+	m.Model = nil
+	m.IsSuccess = false
+}
+
+var poolTaobaoPhoneOrderExternalStatusAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPhoneOrderExternalStatusAPIResponse)
+	},
+}
+
+// GetTaobaoPhoneOrderExternalStatusAPIResponse 从 sync.Pool 获取 TaobaoPhoneOrderExternalStatusAPIResponse
+func GetTaobaoPhoneOrderExternalStatusAPIResponse() *TaobaoPhoneOrderExternalStatusAPIResponse {
+	return poolTaobaoPhoneOrderExternalStatusAPIResponse.Get().(*TaobaoPhoneOrderExternalStatusAPIResponse)
+}
+
+// ReleaseTaobaoPhoneOrderExternalStatusAPIResponse 将 TaobaoPhoneOrderExternalStatusAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPhoneOrderExternalStatusAPIResponse(v *TaobaoPhoneOrderExternalStatusAPIResponse) {
+	v.Reset()
+	poolTaobaoPhoneOrderExternalStatusAPIResponse.Put(v)
 }

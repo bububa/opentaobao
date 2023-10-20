@@ -2,6 +2,7 @@ package subuser
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoSubuserInfoUpdateAPIRequest struct {
 // NewTaobaoSubuserInfoUpdateRequest 初始化TaobaoSubuserInfoUpdateAPIRequest对象
 func NewTaobaoSubuserInfoUpdateRequest() *TaobaoSubuserInfoUpdateAPIRequest {
 	return &TaobaoSubuserInfoUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSubuserInfoUpdateAPIRequest) Reset() {
+	r._subId = 0
+	r._isDispatch = false
+	r._isDisableSubaccount = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoSubuserInfoUpdateAPIRequest) SetIsDisableSubaccount(_isDisableSub
 // GetIsDisableSubaccount IsDisableSubaccount Getter
 func (r TaobaoSubuserInfoUpdateAPIRequest) GetIsDisableSubaccount() bool {
 	return r._isDisableSubaccount
+}
+
+var poolTaobaoSubuserInfoUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSubuserInfoUpdateRequest()
+	},
+}
+
+// GetTaobaoSubuserInfoUpdateRequest 从 sync.Pool 获取 TaobaoSubuserInfoUpdateAPIRequest
+func GetTaobaoSubuserInfoUpdateAPIRequest() *TaobaoSubuserInfoUpdateAPIRequest {
+	return poolTaobaoSubuserInfoUpdateAPIRequest.Get().(*TaobaoSubuserInfoUpdateAPIRequest)
+}
+
+// ReleaseTaobaoSubuserInfoUpdateAPIRequest 将 TaobaoSubuserInfoUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSubuserInfoUpdateAPIRequest(v *TaobaoSubuserInfoUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoSubuserInfoUpdateAPIRequest.Put(v)
 }

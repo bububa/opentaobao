@@ -1,5 +1,9 @@
 package legalcase
 
+import (
+	"sync"
+)
+
 // FeedbackRequestModel 结构体
 type FeedbackRequestModel struct {
 	// 答辩口径描述
@@ -20,4 +24,29 @@ type FeedbackRequestModel struct {
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 	// 是否采纳,主动查询反馈必须为true
 	AcceptFlag bool `json:"accept_flag,omitempty" xml:"accept_flag,omitempty"`
+}
+
+var poolFeedbackRequestModel = sync.Pool{
+	New: func() any {
+		return new(FeedbackRequestModel)
+	},
+}
+
+// GetFeedbackRequestModel() 从对象池中获取FeedbackRequestModel
+func GetFeedbackRequestModel() *FeedbackRequestModel {
+	return poolFeedbackRequestModel.Get().(*FeedbackRequestModel)
+}
+
+// ReleaseFeedbackRequestModel 释放FeedbackRequestModel
+func ReleaseFeedbackRequestModel(v *FeedbackRequestModel) {
+	v.DefenseCaliber = ""
+	v.FeedBackType = ""
+	v.Reason = ""
+	v.SubmitPeople = ""
+	v.EntrustId = 0
+	v.StandpointId = 0
+	v.SuitId = 0
+	v.Version = 0
+	v.AcceptFlag = false
+	poolFeedbackRequestModel.Put(v)
 }

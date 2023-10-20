@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaHmMarketingVersionCommitAPIRequest struct {
 // NewAlibabaHmMarketingVersionCommitRequest 初始化AlibabaHmMarketingVersionCommitAPIRequest对象
 func NewAlibabaHmMarketingVersionCommitRequest() *AlibabaHmMarketingVersionCommitAPIRequest {
 	return &AlibabaHmMarketingVersionCommitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHmMarketingVersionCommitAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaHmMarketingVersionCommitAPIRequest) SetParam(_param *SeasonVersi
 // GetParam Param Getter
 func (r AlibabaHmMarketingVersionCommitAPIRequest) GetParam() *SeasonVersionCommitParam {
 	return r._param
+}
+
+var poolAlibabaHmMarketingVersionCommitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHmMarketingVersionCommitRequest()
+	},
+}
+
+// GetAlibabaHmMarketingVersionCommitRequest 从 sync.Pool 获取 AlibabaHmMarketingVersionCommitAPIRequest
+func GetAlibabaHmMarketingVersionCommitAPIRequest() *AlibabaHmMarketingVersionCommitAPIRequest {
+	return poolAlibabaHmMarketingVersionCommitAPIRequest.Get().(*AlibabaHmMarketingVersionCommitAPIRequest)
+}
+
+// ReleaseAlibabaHmMarketingVersionCommitAPIRequest 将 AlibabaHmMarketingVersionCommitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHmMarketingVersionCommitAPIRequest(v *AlibabaHmMarketingVersionCommitAPIRequest) {
+	v.Reset()
+	poolAlibabaHmMarketingVersionCommitAPIRequest.Put(v)
 }

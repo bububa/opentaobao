@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // DerbyVoucherCardVo 结构体
 type DerbyVoucherCardVo struct {
 	// 1
@@ -20,4 +24,29 @@ type DerbyVoucherCardVo struct {
 	EndDate string `json:"end_date,omitempty" xml:"end_date,omitempty"`
 	// 1
 	QrCodeIDImage string `json:"qr_code_i_d_image,omitempty" xml:"qr_code_i_d_image,omitempty"`
+}
+
+var poolDerbyVoucherCardVo = sync.Pool{
+	New: func() any {
+		return new(DerbyVoucherCardVo)
+	},
+}
+
+// GetDerbyVoucherCardVo() 从对象池中获取DerbyVoucherCardVo
+func GetDerbyVoucherCardVo() *DerbyVoucherCardVo {
+	return poolDerbyVoucherCardVo.Get().(*DerbyVoucherCardVo)
+}
+
+// ReleaseDerbyVoucherCardVo 释放DerbyVoucherCardVo
+func ReleaseDerbyVoucherCardVo(v *DerbyVoucherCardVo) {
+	v.DerbyVoucherCountVOs = v.DerbyVoucherCountVOs[:0]
+	v.DerbyVoucherPolymerizationVOs = v.DerbyVoucherPolymerizationVOs[:0]
+	v.Vouchers = v.Vouchers[:0]
+	v.Name = ""
+	v.MemberVoucherCardID = ""
+	v.VoucherCardCategory = ""
+	v.Status = ""
+	v.EndDate = ""
+	v.QrCodeIDImage = ""
+	poolDerbyVoucherCardVo.Put(v)
 }

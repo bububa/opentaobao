@@ -2,6 +2,7 @@ package ottpay
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YoukuOttIotDevicelistChangeAPIRequest struct {
 // NewYoukuOttIotDevicelistChangeRequest 初始化YoukuOttIotDevicelistChangeAPIRequest对象
 func NewYoukuOttIotDevicelistChangeRequest() *YoukuOttIotDevicelistChangeAPIRequest {
 	return &YoukuOttIotDevicelistChangeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuOttIotDevicelistChangeAPIRequest) Reset() {
+	r._changeInfo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YoukuOttIotDevicelistChangeAPIRequest) SetChangeInfo(_changeInfo string
 // GetChangeInfo ChangeInfo Getter
 func (r YoukuOttIotDevicelistChangeAPIRequest) GetChangeInfo() string {
 	return r._changeInfo
+}
+
+var poolYoukuOttIotDevicelistChangeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuOttIotDevicelistChangeRequest()
+	},
+}
+
+// GetYoukuOttIotDevicelistChangeRequest 从 sync.Pool 获取 YoukuOttIotDevicelistChangeAPIRequest
+func GetYoukuOttIotDevicelistChangeAPIRequest() *YoukuOttIotDevicelistChangeAPIRequest {
+	return poolYoukuOttIotDevicelistChangeAPIRequest.Get().(*YoukuOttIotDevicelistChangeAPIRequest)
+}
+
+// ReleaseYoukuOttIotDevicelistChangeAPIRequest 将 YoukuOttIotDevicelistChangeAPIRequest 放入 sync.Pool
+func ReleaseYoukuOttIotDevicelistChangeAPIRequest(v *YoukuOttIotDevicelistChangeAPIRequest) {
+	v.Reset()
+	poolYoukuOttIotDevicelistChangeAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoSubwayKeywordOfflineLayeredfindAPIRequest struct {
 // NewTaobaoSubwayKeywordOfflineLayeredfindRequest 初始化TaobaoSubwayKeywordOfflineLayeredfindAPIRequest对象
 func NewTaobaoSubwayKeywordOfflineLayeredfindRequest() *TaobaoSubwayKeywordOfflineLayeredfindAPIRequest {
 	return &TaobaoSubwayKeywordOfflineLayeredfindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSubwayKeywordOfflineLayeredfindAPIRequest) Reset() {
+	r._startTime = ""
+	r._endTime = ""
+	r._pvTypeIn = 0
+	r._bidwordIdEqual = 0
+	r._offset = 0
+	r._pageSize = 0
+	r._effect = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoSubwayKeywordOfflineLayeredfindAPIRequest) SetEffect(_effect int6
 // GetEffect Effect Getter
 func (r TaobaoSubwayKeywordOfflineLayeredfindAPIRequest) GetEffect() int64 {
 	return r._effect
+}
+
+var poolTaobaoSubwayKeywordOfflineLayeredfindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSubwayKeywordOfflineLayeredfindRequest()
+	},
+}
+
+// GetTaobaoSubwayKeywordOfflineLayeredfindRequest 从 sync.Pool 获取 TaobaoSubwayKeywordOfflineLayeredfindAPIRequest
+func GetTaobaoSubwayKeywordOfflineLayeredfindAPIRequest() *TaobaoSubwayKeywordOfflineLayeredfindAPIRequest {
+	return poolTaobaoSubwayKeywordOfflineLayeredfindAPIRequest.Get().(*TaobaoSubwayKeywordOfflineLayeredfindAPIRequest)
+}
+
+// ReleaseTaobaoSubwayKeywordOfflineLayeredfindAPIRequest 将 TaobaoSubwayKeywordOfflineLayeredfindAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSubwayKeywordOfflineLayeredfindAPIRequest(v *TaobaoSubwayKeywordOfflineLayeredfindAPIRequest) {
+	v.Reset()
+	poolTaobaoSubwayKeywordOfflineLayeredfindAPIRequest.Put(v)
 }

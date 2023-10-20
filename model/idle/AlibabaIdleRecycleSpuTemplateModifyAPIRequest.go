@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleRecycleSpuTemplateModifyAPIRequest struct {
 // NewAlibabaIdleRecycleSpuTemplateModifyRequest 初始化AlibabaIdleRecycleSpuTemplateModifyAPIRequest对象
 func NewAlibabaIdleRecycleSpuTemplateModifyRequest() *AlibabaIdleRecycleSpuTemplateModifyAPIRequest {
 	return &AlibabaIdleRecycleSpuTemplateModifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleRecycleSpuTemplateModifyAPIRequest) Reset() {
+	r._recycleSpuTemplate = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleRecycleSpuTemplateModifyAPIRequest) SetRecycleSpuTemplate(_r
 // GetRecycleSpuTemplate RecycleSpuTemplate Getter
 func (r AlibabaIdleRecycleSpuTemplateModifyAPIRequest) GetRecycleSpuTemplate() *RecycleSpuTemplate {
 	return r._recycleSpuTemplate
+}
+
+var poolAlibabaIdleRecycleSpuTemplateModifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleRecycleSpuTemplateModifyRequest()
+	},
+}
+
+// GetAlibabaIdleRecycleSpuTemplateModifyRequest 从 sync.Pool 获取 AlibabaIdleRecycleSpuTemplateModifyAPIRequest
+func GetAlibabaIdleRecycleSpuTemplateModifyAPIRequest() *AlibabaIdleRecycleSpuTemplateModifyAPIRequest {
+	return poolAlibabaIdleRecycleSpuTemplateModifyAPIRequest.Get().(*AlibabaIdleRecycleSpuTemplateModifyAPIRequest)
+}
+
+// ReleaseAlibabaIdleRecycleSpuTemplateModifyAPIRequest 将 AlibabaIdleRecycleSpuTemplateModifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleRecycleSpuTemplateModifyAPIRequest(v *AlibabaIdleRecycleSpuTemplateModifyAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleRecycleSpuTemplateModifyAPIRequest.Put(v)
 }

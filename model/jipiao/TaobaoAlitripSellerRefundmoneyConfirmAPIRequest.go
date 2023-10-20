@@ -2,6 +2,7 @@ package jipiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlitripSellerRefundmoneyConfirmAPIRequest struct {
 // NewTaobaoAlitripSellerRefundmoneyConfirmRequest 初始化TaobaoAlitripSellerRefundmoneyConfirmAPIRequest对象
 func NewTaobaoAlitripSellerRefundmoneyConfirmRequest() *TaobaoAlitripSellerRefundmoneyConfirmAPIRequest {
 	return &TaobaoAlitripSellerRefundmoneyConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripSellerRefundmoneyConfirmAPIRequest) Reset() {
+	r._applyId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlitripSellerRefundmoneyConfirmAPIRequest) SetApplyId(_applyId in
 // GetApplyId ApplyId Getter
 func (r TaobaoAlitripSellerRefundmoneyConfirmAPIRequest) GetApplyId() int64 {
 	return r._applyId
+}
+
+var poolTaobaoAlitripSellerRefundmoneyConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripSellerRefundmoneyConfirmRequest()
+	},
+}
+
+// GetTaobaoAlitripSellerRefundmoneyConfirmRequest 从 sync.Pool 获取 TaobaoAlitripSellerRefundmoneyConfirmAPIRequest
+func GetTaobaoAlitripSellerRefundmoneyConfirmAPIRequest() *TaobaoAlitripSellerRefundmoneyConfirmAPIRequest {
+	return poolTaobaoAlitripSellerRefundmoneyConfirmAPIRequest.Get().(*TaobaoAlitripSellerRefundmoneyConfirmAPIRequest)
+}
+
+// ReleaseTaobaoAlitripSellerRefundmoneyConfirmAPIRequest 将 TaobaoAlitripSellerRefundmoneyConfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripSellerRefundmoneyConfirmAPIRequest(v *TaobaoAlitripSellerRefundmoneyConfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripSellerRefundmoneyConfirmAPIRequest.Put(v)
 }

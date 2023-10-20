@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // WarehouseCooperationUpdateRequest 结构体
 type WarehouseCooperationUpdateRequest struct {
 	// 是否自动同步货主关联的所有店铺（仅菜鸟开放），为否，必填；最多50条
@@ -22,4 +26,30 @@ type WarehouseCooperationUpdateRequest struct {
 	IsAutoSync int64 `json:"is_auto_sync,omitempty" xml:"is_auto_sync,omitempty"`
 	// 合作关系状态： 1：解除合作 2：建立合作
 	CooperationStatus int64 `json:"cooperation_status,omitempty" xml:"cooperation_status,omitempty"`
+}
+
+var poolWarehouseCooperationUpdateRequest = sync.Pool{
+	New: func() any {
+		return new(WarehouseCooperationUpdateRequest)
+	},
+}
+
+// GetWarehouseCooperationUpdateRequest() 从对象池中获取WarehouseCooperationUpdateRequest
+func GetWarehouseCooperationUpdateRequest() *WarehouseCooperationUpdateRequest {
+	return poolWarehouseCooperationUpdateRequest.Get().(*WarehouseCooperationUpdateRequest)
+}
+
+// ReleaseWarehouseCooperationUpdateRequest 释放WarehouseCooperationUpdateRequest
+func ReleaseWarehouseCooperationUpdateRequest(v *WarehouseCooperationUpdateRequest) {
+	v.SellerIds = v.SellerIds[:0]
+	v.RequestId = ""
+	v.SupplierId = ""
+	v.WarehouseCode = ""
+	v.WmsOwnerCode = ""
+	v.CustomerId = ""
+	v.BusinessCode = ""
+	v.RequestTime = 0
+	v.IsAutoSync = 0
+	v.CooperationStatus = 0
+	poolWarehouseCooperationUpdateRequest.Put(v)
 }

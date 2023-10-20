@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.booking.reserve.confirm
 //
 // 确认预约
-func AlibabaAlihealthBookingReserveConfirm(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthBookingReserveConfirmAPIRequest, session string) (*alihealth2.AlibabaAlihealthBookingReserveConfirmAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthBookingReserveConfirmAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthBookingReserveConfirm(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthBookingReserveConfirmAPIRequest, resp *alihealth2.AlibabaAlihealthBookingReserveConfirmAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

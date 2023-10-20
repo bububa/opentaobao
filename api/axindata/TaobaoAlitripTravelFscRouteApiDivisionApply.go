@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.travel.fsc.route.api.division.apply
 //
 // 线路供应商提交新增城市申请
-func TaobaoAlitripTravelFscRouteApiDivisionApply(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiDivisionApplyAPIRequest, session string) (*axindata.TaobaoAlitripTravelFscRouteApiDivisionApplyAPIResponse, error) {
-	var resp axindata.TaobaoAlitripTravelFscRouteApiDivisionApplyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripTravelFscRouteApiDivisionApply(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiDivisionApplyAPIRequest, resp *axindata.TaobaoAlitripTravelFscRouteApiDivisionApplyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

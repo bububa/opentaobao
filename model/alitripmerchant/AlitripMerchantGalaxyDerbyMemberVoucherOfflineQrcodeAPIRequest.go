@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest struct {
 // NewAlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeRequest 初始化AlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest对象
 func NewAlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeRequest() *AlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest {
 	return &AlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r._memberVoucherId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest) SetMemb
 // GetMemberVoucherId MemberVoucherId Getter
 func (r AlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest) GetMemberVoucherId() string {
 	return r._memberVoucherId
+}
+
+var poolAlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeRequest 从 sync.Pool 获取 AlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest
+func GetAlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest() *AlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest {
+	return poolAlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest.Get().(*AlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest 将 AlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest(v *AlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyDerbyMemberVoucherOfflineQrcodeAPIRequest.Put(v)
 }

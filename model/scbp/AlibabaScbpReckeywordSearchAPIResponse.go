@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaScbpReckeywordSearchAPIResponse struct {
 	AlibabaScbpReckeywordSearchAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaScbpReckeywordSearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaScbpReckeywordSearchAPIResponseModel).Reset()
+}
+
 // AlibabaScbpReckeywordSearchAPIResponseModel is 推荐词-词推词 成功返回结果
 type AlibabaScbpReckeywordSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_reckeyword_search_response"`
@@ -26,4 +33,29 @@ type AlibabaScbpReckeywordSearchAPIResponseModel struct {
 	TotalNum int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
 	// 总页数
 	TotalPage int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaScbpReckeywordSearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultList = m.ResultList[:0]
+	m.TotalNum = 0
+	m.TotalPage = 0
+}
+
+var poolAlibabaScbpReckeywordSearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaScbpReckeywordSearchAPIResponse)
+	},
+}
+
+// GetAlibabaScbpReckeywordSearchAPIResponse 从 sync.Pool 获取 AlibabaScbpReckeywordSearchAPIResponse
+func GetAlibabaScbpReckeywordSearchAPIResponse() *AlibabaScbpReckeywordSearchAPIResponse {
+	return poolAlibabaScbpReckeywordSearchAPIResponse.Get().(*AlibabaScbpReckeywordSearchAPIResponse)
+}
+
+// ReleaseAlibabaScbpReckeywordSearchAPIResponse 将 AlibabaScbpReckeywordSearchAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaScbpReckeywordSearchAPIResponse(v *AlibabaScbpReckeywordSearchAPIResponse) {
+	v.Reset()
+	poolAlibabaScbpReckeywordSearchAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaInteractOrderCheckuserimeiAPIRequest struct {
 // NewAlibabaInteractOrderCheckuserimeiRequest 初始化AlibabaInteractOrderCheckuserimeiAPIRequest对象
 func NewAlibabaInteractOrderCheckuserimeiRequest() *AlibabaInteractOrderCheckuserimeiAPIRequest {
 	return &AlibabaInteractOrderCheckuserimeiAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractOrderCheckuserimeiAPIRequest) Reset() {
+	r._userNick = ""
+	r._name = ""
+	r._cardNo = ""
+	r._imeis = ""
+	r._mtopImei = ""
+	r._userId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaInteractOrderCheckuserimeiAPIRequest) SetUserId(_userId int64) e
 // GetUserId UserId Getter
 func (r AlibabaInteractOrderCheckuserimeiAPIRequest) GetUserId() int64 {
 	return r._userId
+}
+
+var poolAlibabaInteractOrderCheckuserimeiAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractOrderCheckuserimeiRequest()
+	},
+}
+
+// GetAlibabaInteractOrderCheckuserimeiRequest 从 sync.Pool 获取 AlibabaInteractOrderCheckuserimeiAPIRequest
+func GetAlibabaInteractOrderCheckuserimeiAPIRequest() *AlibabaInteractOrderCheckuserimeiAPIRequest {
+	return poolAlibabaInteractOrderCheckuserimeiAPIRequest.Get().(*AlibabaInteractOrderCheckuserimeiAPIRequest)
+}
+
+// ReleaseAlibabaInteractOrderCheckuserimeiAPIRequest 将 AlibabaInteractOrderCheckuserimeiAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractOrderCheckuserimeiAPIRequest(v *AlibabaInteractOrderCheckuserimeiAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractOrderCheckuserimeiAPIRequest.Put(v)
 }

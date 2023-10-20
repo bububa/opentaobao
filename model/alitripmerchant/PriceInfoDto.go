@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // PriceInfoDto 结构体
 type PriceInfoDto struct {
 	// 早餐信息 -1 含早、0无早、1单早、2、双早
@@ -100,4 +104,69 @@ type PriceInfoDto struct {
 	MemberRoomV2 bool `json:"member_room_v2,omitempty" xml:"member_room_v2,omitempty"`
 	// 是否为权益商品房型
 	IsDerbyVoucherRoom bool `json:"is_derby_voucher_room,omitempty" xml:"is_derby_voucher_room,omitempty"`
+}
+
+var poolPriceInfoDto = sync.Pool{
+	New: func() any {
+		return new(PriceInfoDto)
+	},
+}
+
+// GetPriceInfoDto() 从对象池中获取PriceInfoDto
+func GetPriceInfoDto() *PriceInfoDto {
+	return poolPriceInfoDto.Get().(*PriceInfoDto)
+}
+
+// ReleasePriceInfoDto 释放PriceInfoDto
+func ReleasePriceInfoDto(v *PriceInfoDto) {
+	v.Breakfasts = v.Breakfasts[:0]
+	v.HotelDinamicLabels = v.HotelDinamicLabels[:0]
+	v.CouponTemplateIds = v.CouponTemplateIds[:0]
+	v.TaxAndFeeToString = ""
+	v.DinamicOriginalPriceToString = ""
+	v.RefundRules = ""
+	v.CancelInsuranceIcon = ""
+	v.RatePriceToString = ""
+	v.MemberLevel = ""
+	v.PriceType = ""
+	v.BreakfastDesc = ""
+	v.CancelTime = ""
+	v.RoomTotalPriceToString = ""
+	v.CancelInsuranceDesc = ""
+	v.RpName = ""
+	v.StockNumberDes = ""
+	v.FirstLive = ""
+	v.MemberLevelV2 = ""
+	v.RpCode = ""
+	v.Tag = ""
+	v.CouponType = ""
+	v.Category = ""
+	v.VoucherCardCategory = ""
+	v.UnderscorePrice = ""
+	v.IsGuarantee = 0
+	v.StockNumber = 0
+	v.Gid = 0
+	v.CancelType = 0
+	v.DinamicOriginalPrice = 0
+	v.IsSellOut = 0
+	v.RoomTotalPrice = 0
+	v.RpId = 0
+	v.RateId = 0
+	v.PaymentType = 0
+	v.RatePrice = 0
+	v.TaxAndFee = 0
+	v.OuterRoomId = 0
+	v.AllowPersonNumber = 0
+	v.Status = 0
+	v.RoomId = 0
+	v.HotPrice = 0
+	v.PriceInfo = nil
+	v.DiscountAmount = 0
+	v.VoucherInfo = nil
+	v.DiscountOff = 0
+	v.BookingOrBuy = 0
+	v.MemberRoom = false
+	v.MemberRoomV2 = false
+	v.IsDerbyVoucherRoom = false
+	poolPriceInfoDto.Put(v)
 }

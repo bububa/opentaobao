@@ -9,11 +9,6 @@ import (
 // taobao.inventory.adjust.external
 //
 // 商家非交易调整库存，调拨出库、盘点等时调用
-func TaobaoInventoryAdjustExternal(clt *core.SDKClient, req *fenxiao.TaobaoInventoryAdjustExternalAPIRequest, session string) (*fenxiao.TaobaoInventoryAdjustExternalAPIResponse, error) {
-	var resp fenxiao.TaobaoInventoryAdjustExternalAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoInventoryAdjustExternal(clt *core.SDKClient, req *fenxiao.TaobaoInventoryAdjustExternalAPIRequest, resp *fenxiao.TaobaoInventoryAdjustExternalAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

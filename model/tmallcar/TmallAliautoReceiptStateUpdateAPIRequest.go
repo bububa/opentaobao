@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallAliautoReceiptStateUpdateAPIRequest struct {
 // NewTmallAliautoReceiptStateUpdateRequest 初始化TmallAliautoReceiptStateUpdateAPIRequest对象
 func NewTmallAliautoReceiptStateUpdateRequest() *TmallAliautoReceiptStateUpdateAPIRequest {
 	return &TmallAliautoReceiptStateUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallAliautoReceiptStateUpdateAPIRequest) Reset() {
+	r._status = ""
+	r._outerStoreId = ""
+	r._receiptId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallAliautoReceiptStateUpdateAPIRequest) SetReceiptId(_receiptId int64
 // GetReceiptId ReceiptId Getter
 func (r TmallAliautoReceiptStateUpdateAPIRequest) GetReceiptId() int64 {
 	return r._receiptId
+}
+
+var poolTmallAliautoReceiptStateUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallAliautoReceiptStateUpdateRequest()
+	},
+}
+
+// GetTmallAliautoReceiptStateUpdateRequest 从 sync.Pool 获取 TmallAliautoReceiptStateUpdateAPIRequest
+func GetTmallAliautoReceiptStateUpdateAPIRequest() *TmallAliautoReceiptStateUpdateAPIRequest {
+	return poolTmallAliautoReceiptStateUpdateAPIRequest.Get().(*TmallAliautoReceiptStateUpdateAPIRequest)
+}
+
+// ReleaseTmallAliautoReceiptStateUpdateAPIRequest 将 TmallAliautoReceiptStateUpdateAPIRequest 放入 sync.Pool
+func ReleaseTmallAliautoReceiptStateUpdateAPIRequest(v *TmallAliautoReceiptStateUpdateAPIRequest) {
+	v.Reset()
+	poolTmallAliautoReceiptStateUpdateAPIRequest.Put(v)
 }

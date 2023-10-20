@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // UpdateSkuScProduct 结构体
 type UpdateSkuScProduct struct {
 	// 商家外部id，如果填写，将以商家外部id查找被更新的SKU
@@ -12,4 +16,25 @@ type UpdateSkuScProduct struct {
 	ScProductId int64 `json:"sc_product_id,omitempty" xml:"sc_product_id,omitempty"`
 	// SkuID，如果填写，将以SKUID查找被更新的SKU
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolUpdateSkuScProduct = sync.Pool{
+	New: func() any {
+		return new(UpdateSkuScProduct)
+	},
+}
+
+// GetUpdateSkuScProduct() 从对象池中获取UpdateSkuScProduct
+func GetUpdateSkuScProduct() *UpdateSkuScProduct {
+	return poolUpdateSkuScProduct.Get().(*UpdateSkuScProduct)
+}
+
+// ReleaseUpdateSkuScProduct 释放UpdateSkuScProduct
+func ReleaseUpdateSkuScProduct(v *UpdateSkuScProduct) {
+	v.OuterId = ""
+	v.Properties = ""
+	v.ScUserId = 0
+	v.ScProductId = 0
+	v.SkuId = 0
+	poolUpdateSkuScProduct.Put(v)
 }

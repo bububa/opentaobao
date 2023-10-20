@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.order.alipayface.cancelsettle
 //
 // 信用住订单由于客人为出现等原因，最终取消结算,一定要在结算后2个小时之内调用，否则不会成功。
-func TaobaoXhotelOrderAlipayfaceCancelsettle(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelOrderAlipayfaceCancelsettleAPIRequest, session string) (*xhotelonlineorder.TaobaoXhotelOrderAlipayfaceCancelsettleAPIResponse, error) {
-	var resp xhotelonlineorder.TaobaoXhotelOrderAlipayfaceCancelsettleAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelOrderAlipayfaceCancelsettle(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelOrderAlipayfaceCancelsettleAPIRequest, resp *xhotelonlineorder.TaobaoXhotelOrderAlipayfaceCancelsettleAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

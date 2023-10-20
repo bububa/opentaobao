@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // CreditLoanStatusSyncReq 结构体
 type CreditLoanStatusSyncReq struct {
 	// 金融方案id
@@ -24,4 +28,31 @@ type CreditLoanStatusSyncReq struct {
 	CreditAmount int64 `json:"credit_amount,omitempty" xml:"credit_amount,omitempty"`
 	// 放款金额
 	LoanAmount int64 `json:"loan_amount,omitempty" xml:"loan_amount,omitempty"`
+}
+
+var poolCreditLoanStatusSyncReq = sync.Pool{
+	New: func() any {
+		return new(CreditLoanStatusSyncReq)
+	},
+}
+
+// GetCreditLoanStatusSyncReq() 从对象池中获取CreditLoanStatusSyncReq
+func GetCreditLoanStatusSyncReq() *CreditLoanStatusSyncReq {
+	return poolCreditLoanStatusSyncReq.Get().(*CreditLoanStatusSyncReq)
+}
+
+// ReleaseCreditLoanStatusSyncReq 释放CreditLoanStatusSyncReq
+func ReleaseCreditLoanStatusSyncReq(v *CreditLoanStatusSyncReq) {
+	v.FinancePlanId = ""
+	v.WsBankOrderId = ""
+	v.Status = ""
+	v.BizContent = ""
+	v.ChannelCode = ""
+	v.OrderId = 0
+	v.MonthlyPayment = 0
+	v.Periods = 0
+	v.DownPaymentAmount = 0
+	v.CreditAmount = 0
+	v.LoanAmount = 0
+	poolCreditLoanStatusSyncReq.Put(v)
 }

@@ -2,6 +2,7 @@ package aesolution
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AliexpressSolutionSellerCategoryTreeQueryAPIRequest struct {
 // NewAliexpressSolutionSellerCategoryTreeQueryRequest 初始化AliexpressSolutionSellerCategoryTreeQueryAPIRequest对象
 func NewAliexpressSolutionSellerCategoryTreeQueryRequest() *AliexpressSolutionSellerCategoryTreeQueryAPIRequest {
 	return &AliexpressSolutionSellerCategoryTreeQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSolutionSellerCategoryTreeQueryAPIRequest) Reset() {
+	r._categoryId = 0
+	r._filterNoPermission = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AliexpressSolutionSellerCategoryTreeQueryAPIRequest) SetFilterNoPermiss
 // GetFilterNoPermission FilterNoPermission Getter
 func (r AliexpressSolutionSellerCategoryTreeQueryAPIRequest) GetFilterNoPermission() bool {
 	return r._filterNoPermission
+}
+
+var poolAliexpressSolutionSellerCategoryTreeQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSolutionSellerCategoryTreeQueryRequest()
+	},
+}
+
+// GetAliexpressSolutionSellerCategoryTreeQueryRequest 从 sync.Pool 获取 AliexpressSolutionSellerCategoryTreeQueryAPIRequest
+func GetAliexpressSolutionSellerCategoryTreeQueryAPIRequest() *AliexpressSolutionSellerCategoryTreeQueryAPIRequest {
+	return poolAliexpressSolutionSellerCategoryTreeQueryAPIRequest.Get().(*AliexpressSolutionSellerCategoryTreeQueryAPIRequest)
+}
+
+// ReleaseAliexpressSolutionSellerCategoryTreeQueryAPIRequest 将 AliexpressSolutionSellerCategoryTreeQueryAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSolutionSellerCategoryTreeQueryAPIRequest(v *AliexpressSolutionSellerCategoryTreeQueryAPIRequest) {
+	v.Reset()
+	poolAliexpressSolutionSellerCategoryTreeQueryAPIRequest.Put(v)
 }

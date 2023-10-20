@@ -1,5 +1,9 @@
 package jipiao
 
+import (
+	"sync"
+)
+
 // ReturnApplyPassenge 结构体
 type ReturnApplyPassenge struct {
 	// 退款航段信息
@@ -20,4 +24,29 @@ type ReturnApplyPassenge struct {
 	TicketPrice int64 `json:"ticket_price,omitempty" xml:"ticket_price,omitempty"`
 	// 优惠券金额
 	VoucherPrice int64 `json:"voucher_price,omitempty" xml:"voucher_price,omitempty"`
+}
+
+var poolReturnApplyPassenge = sync.Pool{
+	New: func() any {
+		return new(ReturnApplyPassenge)
+	},
+}
+
+// GetReturnApplyPassenge() 从对象池中获取ReturnApplyPassenge
+func GetReturnApplyPassenge() *ReturnApplyPassenge {
+	return poolReturnApplyPassenge.Get().(*ReturnApplyPassenge)
+}
+
+// ReleaseReturnApplyPassenge 释放ReturnApplyPassenge
+func ReleaseReturnApplyPassenge(v *ReturnApplyPassenge) {
+	v.ReturnTicketSegment = v.ReturnTicketSegment[:0]
+	v.PassengerName = ""
+	v.DiscountTicketPrice = 0
+	v.Id = 0
+	v.PassengerType = 0
+	v.RefundFee = 0
+	v.RefundMoney = 0
+	v.TicketPrice = 0
+	v.VoucherPrice = 0
+	poolReturnApplyPassenge.Put(v)
 }

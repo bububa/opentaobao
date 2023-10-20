@@ -2,6 +2,7 @@ package iot
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAilabAicloudTopAuthLogoutAPIResponse struct {
 	TaobaoAilabAicloudTopAuthLogoutAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopAuthLogoutAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAilabAicloudTopAuthLogoutAPIResponseModel).Reset()
+}
+
 // TaobaoAilabAicloudTopAuthLogoutAPIResponseModel is 登出 成功返回结果
 type TaobaoAilabAicloudTopAuthLogoutAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_auth_logout_response"`
@@ -24,4 +31,28 @@ type TaobaoAilabAicloudTopAuthLogoutAPIResponseModel struct {
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopAuthLogoutAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoAilabAicloudTopAuthLogoutAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAilabAicloudTopAuthLogoutAPIResponse)
+	},
+}
+
+// GetTaobaoAilabAicloudTopAuthLogoutAPIResponse 从 sync.Pool 获取 TaobaoAilabAicloudTopAuthLogoutAPIResponse
+func GetTaobaoAilabAicloudTopAuthLogoutAPIResponse() *TaobaoAilabAicloudTopAuthLogoutAPIResponse {
+	return poolTaobaoAilabAicloudTopAuthLogoutAPIResponse.Get().(*TaobaoAilabAicloudTopAuthLogoutAPIResponse)
+}
+
+// ReleaseTaobaoAilabAicloudTopAuthLogoutAPIResponse 将 TaobaoAilabAicloudTopAuthLogoutAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAilabAicloudTopAuthLogoutAPIResponse(v *TaobaoAilabAicloudTopAuthLogoutAPIResponse) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopAuthLogoutAPIResponse.Put(v)
 }

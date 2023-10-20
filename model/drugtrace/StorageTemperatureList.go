@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // StorageTemperatureList 结构体
 type StorageTemperatureList struct {
 	// 设备名称
@@ -18,4 +22,28 @@ type StorageTemperatureList struct {
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 最高温度
 	MaxValue string `json:"max_value,omitempty" xml:"max_value,omitempty"`
+}
+
+var poolStorageTemperatureList = sync.Pool{
+	New: func() any {
+		return new(StorageTemperatureList)
+	},
+}
+
+// GetStorageTemperatureList() 从对象池中获取StorageTemperatureList
+func GetStorageTemperatureList() *StorageTemperatureList {
+	return poolStorageTemperatureList.Get().(*StorageTemperatureList)
+}
+
+// ReleaseStorageTemperatureList 释放StorageTemperatureList
+func ReleaseStorageTemperatureList(v *StorageTemperatureList) {
+	v.EquipmentName = ""
+	v.Time = ""
+	v.EquipmentCode = ""
+	v.MinValue = ""
+	v.UploadEntName = ""
+	v.BillCode = ""
+	v.Type = ""
+	v.MaxValue = ""
+	poolStorageTemperatureList.Put(v)
 }

@@ -2,6 +2,7 @@ package security
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaSecurityJaqRpStatusAPIResponse struct {
 	AlibabaSecurityJaqRpStatusAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaSecurityJaqRpStatusAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaSecurityJaqRpStatusAPIResponseModel).Reset()
+}
+
 // AlibabaSecurityJaqRpStatusAPIResponseModel is 聚安全实人认证查询状态接口 成功返回结果
 type AlibabaSecurityJaqRpStatusAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_security_jaq_rp_status_response"`
@@ -22,4 +29,27 @@ type AlibabaSecurityJaqRpStatusAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 状态信息
 	Data *RpStatusResultBo `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaSecurityJaqRpStatusAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = nil
+}
+
+var poolAlibabaSecurityJaqRpStatusAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaSecurityJaqRpStatusAPIResponse)
+	},
+}
+
+// GetAlibabaSecurityJaqRpStatusAPIResponse 从 sync.Pool 获取 AlibabaSecurityJaqRpStatusAPIResponse
+func GetAlibabaSecurityJaqRpStatusAPIResponse() *AlibabaSecurityJaqRpStatusAPIResponse {
+	return poolAlibabaSecurityJaqRpStatusAPIResponse.Get().(*AlibabaSecurityJaqRpStatusAPIResponse)
+}
+
+// ReleaseAlibabaSecurityJaqRpStatusAPIResponse 将 AlibabaSecurityJaqRpStatusAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaSecurityJaqRpStatusAPIResponse(v *AlibabaSecurityJaqRpStatusAPIResponse) {
+	v.Reset()
+	poolAlibabaSecurityJaqRpStatusAPIResponse.Put(v)
 }

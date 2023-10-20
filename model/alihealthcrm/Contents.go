@@ -1,5 +1,9 @@
 package alihealthcrm
 
+import (
+	"sync"
+)
+
 // Contents 结构体
 type Contents struct {
 	// 商品列表
@@ -18,4 +22,28 @@ type Contents struct {
 	PublishTime string `json:"publish_time,omitempty" xml:"publish_time,omitempty"`
 	// 商品计数
 	ItemCount int64 `json:"item_count,omitempty" xml:"item_count,omitempty"`
+}
+
+var poolContents = sync.Pool{
+	New: func() any {
+		return new(Contents)
+	},
+}
+
+// GetContents() 从对象池中获取Contents
+func GetContents() *Contents {
+	return poolContents.Get().(*Contents)
+}
+
+// ReleaseContents 释放Contents
+func ReleaseContents(v *Contents) {
+	v.Items = v.Items[:0]
+	v.Title = ""
+	v.Tags = ""
+	v.PhotoUrl = ""
+	v.Content = ""
+	v.LinkUrl = ""
+	v.PublishTime = ""
+	v.ItemCount = 0
+	poolContents.Put(v)
 }

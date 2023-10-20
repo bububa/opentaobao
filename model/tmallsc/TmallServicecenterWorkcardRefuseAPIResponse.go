@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallServicecenterWorkcardRefuseAPIResponse struct {
 	TmallServicecenterWorkcardRefuseAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallServicecenterWorkcardRefuseAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServicecenterWorkcardRefuseAPIResponseModel).Reset()
+}
+
 // TmallServicecenterWorkcardRefuseAPIResponseModel is 买家拒收 成功返回结果
 type TmallServicecenterWorkcardRefuseAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_workcard_refuse_response"`
@@ -26,4 +33,29 @@ type TmallServicecenterWorkcardRefuseAPIResponseModel struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 是否成功
 	MsgSuccess bool `json:"msg_success,omitempty" xml:"msg_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterWorkcardRefuseAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.MsgSuccess = false
+}
+
+var poolTmallServicecenterWorkcardRefuseAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterWorkcardRefuseAPIResponse)
+	},
+}
+
+// GetTmallServicecenterWorkcardRefuseAPIResponse 从 sync.Pool 获取 TmallServicecenterWorkcardRefuseAPIResponse
+func GetTmallServicecenterWorkcardRefuseAPIResponse() *TmallServicecenterWorkcardRefuseAPIResponse {
+	return poolTmallServicecenterWorkcardRefuseAPIResponse.Get().(*TmallServicecenterWorkcardRefuseAPIResponse)
+}
+
+// ReleaseTmallServicecenterWorkcardRefuseAPIResponse 将 TmallServicecenterWorkcardRefuseAPIResponse 保存到 sync.Pool
+func ReleaseTmallServicecenterWorkcardRefuseAPIResponse(v *TmallServicecenterWorkcardRefuseAPIResponse) {
+	v.Reset()
+	poolTmallServicecenterWorkcardRefuseAPIResponse.Put(v)
 }

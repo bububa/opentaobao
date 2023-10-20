@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAliqinFlowWalletCheckBalanceAPIRequest struct {
 // NewAlibabaAliqinFlowWalletCheckBalanceRequest 初始化AlibabaAliqinFlowWalletCheckBalanceAPIRequest对象
 func NewAlibabaAliqinFlowWalletCheckBalanceRequest() *AlibabaAliqinFlowWalletCheckBalanceAPIRequest {
 	return &AlibabaAliqinFlowWalletCheckBalanceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFlowWalletCheckBalanceAPIRequest) Reset() {
+	r._gradeId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAliqinFlowWalletCheckBalanceAPIRequest) SetGradeId(_gradeId stri
 // GetGradeId GradeId Getter
 func (r AlibabaAliqinFlowWalletCheckBalanceAPIRequest) GetGradeId() string {
 	return r._gradeId
+}
+
+var poolAlibabaAliqinFlowWalletCheckBalanceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFlowWalletCheckBalanceRequest()
+	},
+}
+
+// GetAlibabaAliqinFlowWalletCheckBalanceRequest 从 sync.Pool 获取 AlibabaAliqinFlowWalletCheckBalanceAPIRequest
+func GetAlibabaAliqinFlowWalletCheckBalanceAPIRequest() *AlibabaAliqinFlowWalletCheckBalanceAPIRequest {
+	return poolAlibabaAliqinFlowWalletCheckBalanceAPIRequest.Get().(*AlibabaAliqinFlowWalletCheckBalanceAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFlowWalletCheckBalanceAPIRequest 将 AlibabaAliqinFlowWalletCheckBalanceAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFlowWalletCheckBalanceAPIRequest(v *AlibabaAliqinFlowWalletCheckBalanceAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFlowWalletCheckBalanceAPIRequest.Put(v)
 }

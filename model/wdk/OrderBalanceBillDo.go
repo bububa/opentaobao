@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderBalanceBillDo 结构体
 type OrderBalanceBillDo struct {
 	// 订单原价
@@ -84,4 +88,61 @@ type OrderBalanceBillDo struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 是否退款计算收入(1:是，0:否) 这是逆向的
 	Income int64 `json:"income,omitempty" xml:"income,omitempty"`
+}
+
+var poolOrderBalanceBillDo = sync.Pool{
+	New: func() any {
+		return new(OrderBalanceBillDo)
+	},
+}
+
+// GetOrderBalanceBillDo() 从对象池中获取OrderBalanceBillDo
+func GetOrderBalanceBillDo() *OrderBalanceBillDo {
+	return poolOrderBalanceBillDo.Get().(*OrderBalanceBillDo)
+}
+
+// ReleaseOrderBalanceBillDo 释放OrderBalanceBillDo
+func ReleaseOrderBalanceBillDo(v *OrderBalanceBillDo) {
+	v.ParentTotalPrice = ""
+	v.PayTime = ""
+	v.GmtCreate = ""
+	v.OrderChannel = ""
+	v.MordId = ""
+	v.StoreName = ""
+	v.StoreId = ""
+	v.SubsidiaryName = ""
+	v.SubsidiaryCode = ""
+	v.MerchantName = ""
+	v.MerchantCode = ""
+	v.Thedate = ""
+	v.GmtModified = ""
+	v.PayTechFee = ""
+	v.PayFee = ""
+	v.ParentOriginalPrice = ""
+	v.DiscountFee = ""
+	v.PayDiscountFee = ""
+	v.DiscountFzFee = ""
+	v.PmtDiscountFee = ""
+	v.ParentDiscountFee = ""
+	v.OrderFrom = ""
+	v.PayChannel = ""
+	v.Type = ""
+	v.SellerReceiveFee = ""
+	v.DiscountChangeFee = ""
+	v.DiscountTechFee = ""
+	v.DiscountSellerFee = ""
+	v.DiscountPlatformFee = ""
+	v.FzFee = ""
+	v.DeliveryFee = ""
+	v.PayChangeFee = ""
+	v.ParentPostFee = ""
+	v.UserPayAmount = ""
+	v.PayByAliPay = ""
+	v.PayByOther = ""
+	v.IncomeAmount = ""
+	v.PackageTime = ""
+	v.PackagedStatus = ""
+	v.Id = 0
+	v.Income = 0
+	poolOrderBalanceBillDo.Put(v)
 }

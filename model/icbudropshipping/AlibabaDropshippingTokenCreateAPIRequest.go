@@ -2,6 +2,7 @@ package icbudropshipping
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaDropshippingTokenCreateAPIRequest struct {
 // NewAlibabaDropshippingTokenCreateRequest 初始化AlibabaDropshippingTokenCreateAPIRequest对象
 func NewAlibabaDropshippingTokenCreateRequest() *AlibabaDropshippingTokenCreateAPIRequest {
 	return &AlibabaDropshippingTokenCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDropshippingTokenCreateAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaDropshippingTokenCreateAPIRequest) GetApiParams(params url.Values
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaDropshippingTokenCreateAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaDropshippingTokenCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDropshippingTokenCreateRequest()
+	},
+}
+
+// GetAlibabaDropshippingTokenCreateRequest 从 sync.Pool 获取 AlibabaDropshippingTokenCreateAPIRequest
+func GetAlibabaDropshippingTokenCreateAPIRequest() *AlibabaDropshippingTokenCreateAPIRequest {
+	return poolAlibabaDropshippingTokenCreateAPIRequest.Get().(*AlibabaDropshippingTokenCreateAPIRequest)
+}
+
+// ReleaseAlibabaDropshippingTokenCreateAPIRequest 将 AlibabaDropshippingTokenCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDropshippingTokenCreateAPIRequest(v *AlibabaDropshippingTokenCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaDropshippingTokenCreateAPIRequest.Put(v)
 }

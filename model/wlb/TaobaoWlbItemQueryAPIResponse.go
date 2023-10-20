@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoWlbItemQueryAPIResponse struct {
 	TaobaoWlbItemQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoWlbItemQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWlbItemQueryAPIResponseModel).Reset()
+}
+
 // TaobaoWlbItemQueryAPIResponseModel is 分页查询商品 成功返回结果
 type TaobaoWlbItemQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_item_query_response"`
@@ -24,4 +31,28 @@ type TaobaoWlbItemQueryAPIResponseModel struct {
 	ItemList []WlbItem `json:"item_list,omitempty" xml:"item_list>wlb_item,omitempty"`
 	// 结果总数
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbItemQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ItemList = m.ItemList[:0]
+	m.TotalCount = 0
+}
+
+var poolTaobaoWlbItemQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbItemQueryAPIResponse)
+	},
+}
+
+// GetTaobaoWlbItemQueryAPIResponse 从 sync.Pool 获取 TaobaoWlbItemQueryAPIResponse
+func GetTaobaoWlbItemQueryAPIResponse() *TaobaoWlbItemQueryAPIResponse {
+	return poolTaobaoWlbItemQueryAPIResponse.Get().(*TaobaoWlbItemQueryAPIResponse)
+}
+
+// ReleaseTaobaoWlbItemQueryAPIResponse 将 TaobaoWlbItemQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWlbItemQueryAPIResponse(v *TaobaoWlbItemQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoWlbItemQueryAPIResponse.Put(v)
 }

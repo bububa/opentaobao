@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaScbpEffectProductReportAPIResponse struct {
 	AlibabaScbpEffectProductReportAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaScbpEffectProductReportAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaScbpEffectProductReportAPIResponseModel).Reset()
+}
+
 // AlibabaScbpEffectProductReportAPIResponseModel is 所有产品报表 成功返回结果
 type AlibabaScbpEffectProductReportAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_effect_product_report_response"`
@@ -26,4 +33,29 @@ type AlibabaScbpEffectProductReportAPIResponseModel struct {
 	TotalNum int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
 	// 总页数
 	TotalPage int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaScbpEffectProductReportAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ProductEffectList = m.ProductEffectList[:0]
+	m.TotalNum = 0
+	m.TotalPage = 0
+}
+
+var poolAlibabaScbpEffectProductReportAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaScbpEffectProductReportAPIResponse)
+	},
+}
+
+// GetAlibabaScbpEffectProductReportAPIResponse 从 sync.Pool 获取 AlibabaScbpEffectProductReportAPIResponse
+func GetAlibabaScbpEffectProductReportAPIResponse() *AlibabaScbpEffectProductReportAPIResponse {
+	return poolAlibabaScbpEffectProductReportAPIResponse.Get().(*AlibabaScbpEffectProductReportAPIResponse)
+}
+
+// ReleaseAlibabaScbpEffectProductReportAPIResponse 将 AlibabaScbpEffectProductReportAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaScbpEffectProductReportAPIResponse(v *AlibabaScbpEffectProductReportAPIResponse) {
+	v.Reset()
+	poolAlibabaScbpEffectProductReportAPIResponse.Put(v)
 }

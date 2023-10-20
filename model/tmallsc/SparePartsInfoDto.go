@@ -1,5 +1,9 @@
 package tmallsc
 
+import (
+	"sync"
+)
+
 // SparePartsInfoDto 结构体
 type SparePartsInfoDto struct {
 	// 备件编码
@@ -24,4 +28,31 @@ type SparePartsInfoDto struct {
 	SparePartsCount int64 `json:"spare_parts_count,omitempty" xml:"spare_parts_count,omitempty"`
 	// 是否需要返件
 	NeedReturn bool `json:"need_return,omitempty" xml:"need_return,omitempty"`
+}
+
+var poolSparePartsInfoDto = sync.Pool{
+	New: func() any {
+		return new(SparePartsInfoDto)
+	},
+}
+
+// GetSparePartsInfoDto() 从对象池中获取SparePartsInfoDto
+func GetSparePartsInfoDto() *SparePartsInfoDto {
+	return poolSparePartsInfoDto.Get().(*SparePartsInfoDto)
+}
+
+// ReleaseSparePartsInfoDto 释放SparePartsInfoDto
+func ReleaseSparePartsInfoDto(v *SparePartsInfoDto) {
+	v.SparePartsCode = ""
+	v.SparePartsName = ""
+	v.Model = ""
+	v.SparePartsType = ""
+	v.FirstLevelCategoryId = 0
+	v.SellingPrice = 0
+	v.SecondLevelCategoryId = 0
+	v.SparePartsSource = 0
+	v.PurchasePrice = 0
+	v.SparePartsCount = 0
+	v.NeedReturn = false
+	poolSparePartsInfoDto.Put(v)
 }

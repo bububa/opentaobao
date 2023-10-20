@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type WdkMealPosGetfetchmealcodeAPIRequest struct {
 // NewWdkMealPosGetfetchmealcodeRequest 初始化WdkMealPosGetfetchmealcodeAPIRequest对象
 func NewWdkMealPosGetfetchmealcodeRequest() *WdkMealPosGetfetchmealcodeAPIRequest {
 	return &WdkMealPosGetfetchmealcodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *WdkMealPosGetfetchmealcodeAPIRequest) Reset() {
+	r._channelShopId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *WdkMealPosGetfetchmealcodeAPIRequest) SetChannelShopId(_channelShopId s
 // GetChannelShopId ChannelShopId Getter
 func (r WdkMealPosGetfetchmealcodeAPIRequest) GetChannelShopId() string {
 	return r._channelShopId
+}
+
+var poolWdkMealPosGetfetchmealcodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewWdkMealPosGetfetchmealcodeRequest()
+	},
+}
+
+// GetWdkMealPosGetfetchmealcodeRequest 从 sync.Pool 获取 WdkMealPosGetfetchmealcodeAPIRequest
+func GetWdkMealPosGetfetchmealcodeAPIRequest() *WdkMealPosGetfetchmealcodeAPIRequest {
+	return poolWdkMealPosGetfetchmealcodeAPIRequest.Get().(*WdkMealPosGetfetchmealcodeAPIRequest)
+}
+
+// ReleaseWdkMealPosGetfetchmealcodeAPIRequest 将 WdkMealPosGetfetchmealcodeAPIRequest 放入 sync.Pool
+func ReleaseWdkMealPosGetfetchmealcodeAPIRequest(v *WdkMealPosGetfetchmealcodeAPIRequest) {
+	v.Reset()
+	poolWdkMealPosGetfetchmealcodeAPIRequest.Put(v)
 }

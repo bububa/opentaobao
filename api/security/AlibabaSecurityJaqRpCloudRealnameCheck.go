@@ -9,11 +9,6 @@ import (
 // alibaba.security.jaq.rp.cloud.realname.check
 //
 // 验证姓名和证件号
-func AlibabaSecurityJaqRpCloudRealnameCheck(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest, session string) (*security.AlibabaSecurityJaqRpCloudRealnameCheckAPIResponse, error) {
-	var resp security.AlibabaSecurityJaqRpCloudRealnameCheckAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSecurityJaqRpCloudRealnameCheck(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest, resp *security.AlibabaSecurityJaqRpCloudRealnameCheckAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

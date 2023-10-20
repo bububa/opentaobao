@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest struct {
 // NewAlibabaWdkFulfillWarehouseWorkOrderSealboxRequest 初始化AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest对象
 func NewAlibabaWdkFulfillWarehouseWorkOrderSealboxRequest() *AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest {
 	return &AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest) Reset() {
+	r._sameTownBox = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest) SetSameTownBox(_s
 // GetSameTownBox SameTownBox Getter
 func (r AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest) GetSameTownBox() *SameTownBox {
 	return r._sameTownBox
+}
+
+var poolAlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkFulfillWarehouseWorkOrderSealboxRequest()
+	},
+}
+
+// GetAlibabaWdkFulfillWarehouseWorkOrderSealboxRequest 从 sync.Pool 获取 AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest
+func GetAlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest() *AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest {
+	return poolAlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest.Get().(*AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest)
+}
+
+// ReleaseAlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest 将 AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest(v *AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest.Put(v)
 }

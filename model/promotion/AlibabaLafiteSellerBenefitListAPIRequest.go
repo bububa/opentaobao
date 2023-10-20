@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLafiteSellerBenefitListAPIRequest struct {
 // NewAlibabaLafiteSellerBenefitListRequest 初始化AlibabaLafiteSellerBenefitListAPIRequest对象
 func NewAlibabaLafiteSellerBenefitListRequest() *AlibabaLafiteSellerBenefitListAPIRequest {
 	return &AlibabaLafiteSellerBenefitListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLafiteSellerBenefitListAPIRequest) Reset() {
+	r._benefitReadTopQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLafiteSellerBenefitListAPIRequest) SetBenefitReadTopQuery(_benef
 // GetBenefitReadTopQuery BenefitReadTopQuery Getter
 func (r AlibabaLafiteSellerBenefitListAPIRequest) GetBenefitReadTopQuery() *BenefitReadTopQuery {
 	return r._benefitReadTopQuery
+}
+
+var poolAlibabaLafiteSellerBenefitListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLafiteSellerBenefitListRequest()
+	},
+}
+
+// GetAlibabaLafiteSellerBenefitListRequest 从 sync.Pool 获取 AlibabaLafiteSellerBenefitListAPIRequest
+func GetAlibabaLafiteSellerBenefitListAPIRequest() *AlibabaLafiteSellerBenefitListAPIRequest {
+	return poolAlibabaLafiteSellerBenefitListAPIRequest.Get().(*AlibabaLafiteSellerBenefitListAPIRequest)
+}
+
+// ReleaseAlibabaLafiteSellerBenefitListAPIRequest 将 AlibabaLafiteSellerBenefitListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLafiteSellerBenefitListAPIRequest(v *AlibabaLafiteSellerBenefitListAPIRequest) {
+	v.Reset()
+	poolAlibabaLafiteSellerBenefitListAPIRequest.Put(v)
 }

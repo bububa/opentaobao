@@ -2,6 +2,7 @@ package travel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -18,6 +19,12 @@ type AlitripGrouptoursProductUploadAPIResponse struct {
 	AlitripGrouptoursProductUploadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripGrouptoursProductUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripGrouptoursProductUploadAPIResponseModel).Reset()
+}
+
 // AlitripGrouptoursProductUploadAPIResponseModel is 跟团游 产品维护接口 成功返回结果
 type AlitripGrouptoursProductUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_grouptours_product_upload_response"`
@@ -25,4 +32,27 @@ type AlitripGrouptoursProductUploadAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// firstResult
 	FirstResult *TopTravelItem `json:"first_result,omitempty" xml:"first_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripGrouptoursProductUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.FirstResult = nil
+}
+
+var poolAlitripGrouptoursProductUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripGrouptoursProductUploadAPIResponse)
+	},
+}
+
+// GetAlitripGrouptoursProductUploadAPIResponse 从 sync.Pool 获取 AlitripGrouptoursProductUploadAPIResponse
+func GetAlitripGrouptoursProductUploadAPIResponse() *AlitripGrouptoursProductUploadAPIResponse {
+	return poolAlitripGrouptoursProductUploadAPIResponse.Get().(*AlitripGrouptoursProductUploadAPIResponse)
+}
+
+// ReleaseAlitripGrouptoursProductUploadAPIResponse 将 AlitripGrouptoursProductUploadAPIResponse 保存到 sync.Pool
+func ReleaseAlitripGrouptoursProductUploadAPIResponse(v *AlitripGrouptoursProductUploadAPIResponse) {
+	v.Reset()
+	poolAlitripGrouptoursProductUploadAPIResponse.Put(v)
 }

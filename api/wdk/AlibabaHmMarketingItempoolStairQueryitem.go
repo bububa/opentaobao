@@ -9,11 +9,6 @@ import (
 // alibaba.hm.marketing.itempool.stair.queryitem
 //
 // 换购商品查询
-func AlibabaHmMarketingItempoolStairQueryitem(clt *core.SDKClient, req *wdk.AlibabaHmMarketingItempoolStairQueryitemAPIRequest, session string) (*wdk.AlibabaHmMarketingItempoolStairQueryitemAPIResponse, error) {
-	var resp wdk.AlibabaHmMarketingItempoolStairQueryitemAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHmMarketingItempoolStairQueryitem(clt *core.SDKClient, req *wdk.AlibabaHmMarketingItempoolStairQueryitemAPIRequest, resp *wdk.AlibabaHmMarketingItempoolStairQueryitemAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

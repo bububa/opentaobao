@@ -9,11 +9,6 @@ import (
 // taobao.ailab.aicloud.top.memo.meeting.list
 //
 // 查询天猫精灵用户设置的所有会议
-func TaobaoAilabAicloudTopMemoMeetingList(clt *core.SDKClient, req *tmallgenie.TaobaoAilabAicloudTopMemoMeetingListAPIRequest, session string) (*tmallgenie.TaobaoAilabAicloudTopMemoMeetingListAPIResponse, error) {
-	var resp tmallgenie.TaobaoAilabAicloudTopMemoMeetingListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAilabAicloudTopMemoMeetingList(clt *core.SDKClient, req *tmallgenie.TaobaoAilabAicloudTopMemoMeetingListAPIRequest, resp *tmallgenie.TaobaoAilabAicloudTopMemoMeetingListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

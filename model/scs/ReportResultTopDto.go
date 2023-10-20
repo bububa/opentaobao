@@ -1,5 +1,9 @@
 package scs
 
+import (
+	"sync"
+)
+
 // ReportResultTopDto 结构体
 type ReportResultTopDto struct {
 	// 按天维度划分的日期
@@ -94,4 +98,66 @@ type ReportResultTopDto struct {
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
 	// 商品ID
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+}
+
+var poolReportResultTopDto = sync.Pool{
+	New: func() any {
+		return new(ReportResultTopDto)
+	},
+}
+
+// GetReportResultTopDto() 从对象池中获取ReportResultTopDto
+func GetReportResultTopDto() *ReportResultTopDto {
+	return poolReportResultTopDto.Get().(*ReportResultTopDto)
+}
+
+// ReleaseReportResultTopDto 释放ReportResultTopDto
+func ReleaseReportResultTopDto(v *ReportResultTopDto) {
+	v.LogDate = ""
+	v.Ctr = ""
+	v.Ecpm = ""
+	v.Charge = ""
+	v.Ecpc = ""
+	v.AlipayInshopAmt = ""
+	v.Cvr = ""
+	v.Roi = ""
+	v.PrepayInshopAmt = ""
+	v.NoLalipayInshopAmtProprtion = ""
+	v.DirAlipayInshopAmt = ""
+	v.IndirAlipayInshopAmt = ""
+	v.SampleAlipayAmt = ""
+	v.AlipayInshopAmtKuan = ""
+	v.CvrKuan = ""
+	v.RoiKuan = ""
+	v.PrepayInshopAmtKuan = ""
+	v.NoLalipayInshopAmtProprtionKuan = ""
+	v.DirAlipayInshopAmtKuan = ""
+	v.IndirAlipayInshopAmtKuan = ""
+	v.SampleAlipayAmtKuan = ""
+	v.HourId = 0
+	v.AdPv = 0
+	v.Click = 0
+	v.CarNum = 0
+	v.DirCarNum = 0
+	v.IndirCarNum = 0
+	v.InshopItemColNum = 0
+	v.InshopItemColCarNumCost = 0
+	v.AlipayInshopNum = 0
+	v.PrepayInshopNum = 0
+	v.DirAlipayInshopNum = 0
+	v.IndirAlipayInshopNum = 0
+	v.SampleAlipayNum = 0
+	v.CarNumKuan = 0
+	v.DirCarNumKuan = 0
+	v.IndirCarNumKuan = 0
+	v.InshopItemColNumKuan = 0
+	v.InshopItemColCarNumCostKuan = 0
+	v.AlipayInshopNumKuan = 0
+	v.PrepayInshopNumKuan = 0
+	v.DirAlipayInshopNumKuan = 0
+	v.IndirAlipayInshopNumKuan = 0
+	v.SampleAlipayNumKuan = 0
+	v.CampaignId = 0
+	v.ItemId = 0
+	poolReportResultTopDto.Put(v)
 }

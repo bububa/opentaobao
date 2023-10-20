@@ -2,6 +2,7 @@ package aecreatives
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliexpressAffiliateImageSearchAPIResponse struct {
 	AliexpressAffiliateImageSearchAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliexpressAffiliateImageSearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressAffiliateImageSearchAPIResponseModel).Reset()
+}
+
 // AliexpressAffiliateImageSearchAPIResponseModel is 图搜 成功返回结果
 type AliexpressAffiliateImageSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_affiliate_image_search_response"`
@@ -22,4 +29,27 @@ type AliexpressAffiliateImageSearchAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 默认描述
 	Result *AliexpressAffiliateImageSearchResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressAffiliateImageSearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAliexpressAffiliateImageSearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressAffiliateImageSearchAPIResponse)
+	},
+}
+
+// GetAliexpressAffiliateImageSearchAPIResponse 从 sync.Pool 获取 AliexpressAffiliateImageSearchAPIResponse
+func GetAliexpressAffiliateImageSearchAPIResponse() *AliexpressAffiliateImageSearchAPIResponse {
+	return poolAliexpressAffiliateImageSearchAPIResponse.Get().(*AliexpressAffiliateImageSearchAPIResponse)
+}
+
+// ReleaseAliexpressAffiliateImageSearchAPIResponse 将 AliexpressAffiliateImageSearchAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressAffiliateImageSearchAPIResponse(v *AliexpressAffiliateImageSearchAPIResponse) {
+	v.Reset()
+	poolAliexpressAffiliateImageSearchAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleTenderBtobItemUploadAPIRequest struct {
 // NewAlibabaIdleTenderBtobItemUploadRequest 初始化AlibabaIdleTenderBtobItemUploadAPIRequest对象
 func NewAlibabaIdleTenderBtobItemUploadRequest() *AlibabaIdleTenderBtobItemUploadAPIRequest {
 	return &AlibabaIdleTenderBtobItemUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleTenderBtobItemUploadAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleTenderBtobItemUploadAPIRequest) SetParam0(_param0 *TenderIte
 // GetParam0 Param0 Getter
 func (r AlibabaIdleTenderBtobItemUploadAPIRequest) GetParam0() *TenderItemUploadCmd {
 	return r._param0
+}
+
+var poolAlibabaIdleTenderBtobItemUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleTenderBtobItemUploadRequest()
+	},
+}
+
+// GetAlibabaIdleTenderBtobItemUploadRequest 从 sync.Pool 获取 AlibabaIdleTenderBtobItemUploadAPIRequest
+func GetAlibabaIdleTenderBtobItemUploadAPIRequest() *AlibabaIdleTenderBtobItemUploadAPIRequest {
+	return poolAlibabaIdleTenderBtobItemUploadAPIRequest.Get().(*AlibabaIdleTenderBtobItemUploadAPIRequest)
+}
+
+// ReleaseAlibabaIdleTenderBtobItemUploadAPIRequest 将 AlibabaIdleTenderBtobItemUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleTenderBtobItemUploadAPIRequest(v *AlibabaIdleTenderBtobItemUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleTenderBtobItemUploadAPIRequest.Put(v)
 }

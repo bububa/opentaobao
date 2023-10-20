@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // CapCountDiscountRule 结构体
 type CapCountDiscountRule struct {
 	// 指定件数每件一口价【分】
@@ -18,4 +22,28 @@ type CapCountDiscountRule struct {
 	IsCapCountDiscountRate bool `json:"is_cap_count_discount_rate,omitempty" xml:"is_cap_count_discount_rate,omitempty"`
 	// 是否指定件数每件一口价
 	IsCapCountEachFixPrice bool `json:"is_cap_count_each_fix_price,omitempty" xml:"is_cap_count_each_fix_price,omitempty"`
+}
+
+var poolCapCountDiscountRule = sync.Pool{
+	New: func() any {
+		return new(CapCountDiscountRule)
+	},
+}
+
+// GetCapCountDiscountRule() 从对象池中获取CapCountDiscountRule
+func GetCapCountDiscountRule() *CapCountDiscountRule {
+	return poolCapCountDiscountRule.Get().(*CapCountDiscountRule)
+}
+
+// ReleaseCapCountDiscountRule 释放CapCountDiscountRule
+func ReleaseCapCountDiscountRule(v *CapCountDiscountRule) {
+	v.CapCountEachFixPrice = 0
+	v.CapCountDiscountRate = 0
+	v.CapCountDecreaseMoney = 0
+	v.CapCountFixPrice = 0
+	v.IsCapCountFixPrice = false
+	v.IsCapCountDecreaseMoney = false
+	v.IsCapCountDiscountRate = false
+	v.IsCapCountEachFixPrice = false
+	poolCapCountDiscountRule.Put(v)
 }

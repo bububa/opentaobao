@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoMiniappDistributionOrderGetAPIRequest struct {
 // NewTaobaoMiniappDistributionOrderGetRequest 初始化TaobaoMiniappDistributionOrderGetAPIRequest对象
 func NewTaobaoMiniappDistributionOrderGetRequest() *TaobaoMiniappDistributionOrderGetAPIRequest {
 	return &TaobaoMiniappDistributionOrderGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappDistributionOrderGetAPIRequest) Reset() {
+	r._orderIdRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoMiniappDistributionOrderGetAPIRequest) SetOrderIdRequest(_orderId
 // GetOrderIdRequest OrderIdRequest Getter
 func (r TaobaoMiniappDistributionOrderGetAPIRequest) GetOrderIdRequest() *DistributionOrderQueryByIdOpenRequest {
 	return r._orderIdRequest
+}
+
+var poolTaobaoMiniappDistributionOrderGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappDistributionOrderGetRequest()
+	},
+}
+
+// GetTaobaoMiniappDistributionOrderGetRequest 从 sync.Pool 获取 TaobaoMiniappDistributionOrderGetAPIRequest
+func GetTaobaoMiniappDistributionOrderGetAPIRequest() *TaobaoMiniappDistributionOrderGetAPIRequest {
+	return poolTaobaoMiniappDistributionOrderGetAPIRequest.Get().(*TaobaoMiniappDistributionOrderGetAPIRequest)
+}
+
+// ReleaseTaobaoMiniappDistributionOrderGetAPIRequest 将 TaobaoMiniappDistributionOrderGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappDistributionOrderGetAPIRequest(v *TaobaoMiniappDistributionOrderGetAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappDistributionOrderGetAPIRequest.Put(v)
 }

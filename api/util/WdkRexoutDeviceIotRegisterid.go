@@ -9,11 +9,6 @@ import (
 // wdk.rexout.device.iot.registerid
 //
 // 通过设备ID获取三元组-外部
-func WdkRexoutDeviceIotRegisterid(clt *core.SDKClient, req *util.WdkRexoutDeviceIotRegisteridAPIRequest, session string) (*util.WdkRexoutDeviceIotRegisteridAPIResponse, error) {
-	var resp util.WdkRexoutDeviceIotRegisteridAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func WdkRexoutDeviceIotRegisterid(clt *core.SDKClient, req *util.WdkRexoutDeviceIotRegisteridAPIRequest, resp *util.WdkRexoutDeviceIotRegisteridAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

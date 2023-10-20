@@ -1,5 +1,9 @@
 package tmallhk
 
+import (
+	"sync"
+)
+
 // AwdcShipment 结构体
 type AwdcShipment struct {
 	// 到达城市
@@ -22,4 +26,30 @@ type AwdcShipment struct {
 	ShipmentNumber string `json:"shipment_number,omitempty" xml:"shipment_number,omitempty"`
 	// 押运公司
 	Shipper string `json:"shipper,omitempty" xml:"shipper,omitempty"`
+}
+
+var poolAwdcShipment = sync.Pool{
+	New: func() any {
+		return new(AwdcShipment)
+	},
+}
+
+// GetAwdcShipment() 从对象池中获取AwdcShipment
+func GetAwdcShipment() *AwdcShipment {
+	return poolAwdcShipment.Get().(*AwdcShipment)
+}
+
+// ReleaseAwdcShipment 释放AwdcShipment
+func ReleaseAwdcShipment(v *AwdcShipment) {
+	v.ArrivalCity = ""
+	v.ArrivalDate = ""
+	v.DepartureCity = ""
+	v.DepartureDate = ""
+	v.DoIn = ""
+	v.DoNumber = ""
+	v.DoOut = ""
+	v.LogisticNumber = ""
+	v.ShipmentNumber = ""
+	v.Shipper = ""
+	poolAwdcShipment.Put(v)
 }

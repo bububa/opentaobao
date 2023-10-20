@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // RechargeOperateOpenReq 结构体
 type RechargeOperateOpenReq struct {
 	// saas品牌id
@@ -28,4 +32,33 @@ type RechargeOperateOpenReq struct {
 	ChangeValue int64 `json:"change_value,omitempty" xml:"change_value,omitempty"`
 	// 1-充值(charge) 2-冻结(freeze) 3-核销(verify) 4-充值回退(refund)
 	OperateType int64 `json:"operate_type,omitempty" xml:"operate_type,omitempty"`
+}
+
+var poolRechargeOperateOpenReq = sync.Pool{
+	New: func() any {
+		return new(RechargeOperateOpenReq)
+	},
+}
+
+// GetRechargeOperateOpenReq() 从对象池中获取RechargeOperateOpenReq
+func GetRechargeOperateOpenReq() *RechargeOperateOpenReq {
+	return poolRechargeOperateOpenReq.Get().(*RechargeOperateOpenReq)
+}
+
+// ReleaseRechargeOperateOpenReq 释放RechargeOperateOpenReq
+func ReleaseRechargeOperateOpenReq(v *RechargeOperateOpenReq) {
+	v.BrandId = ""
+	v.CustomerId = ""
+	v.Mobile = ""
+	v.OperatorId = ""
+	v.OuterId = ""
+	v.OuterOrderId = ""
+	v.OuterType = ""
+	v.Reason = ""
+	v.RequestId = ""
+	v.ShopId = ""
+	v.NewOuterOrderId = ""
+	v.ChangeValue = 0
+	v.OperateType = 0
+	poolRechargeOperateOpenReq.Put(v)
 }

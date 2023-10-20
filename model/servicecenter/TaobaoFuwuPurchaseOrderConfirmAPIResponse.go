@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoFuwuPurchaseOrderConfirmAPIResponse struct {
 	TaobaoFuwuPurchaseOrderConfirmAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoFuwuPurchaseOrderConfirmAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFuwuPurchaseOrderConfirmAPIResponseModel).Reset()
+}
+
 // TaobaoFuwuPurchaseOrderConfirmAPIResponseModel is 服务市场内购服务下单接口 成功返回结果
 type TaobaoFuwuPurchaseOrderConfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"fuwu_purchase_order_confirm_response"`
@@ -22,4 +29,27 @@ type TaobaoFuwuPurchaseOrderConfirmAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 下单页面url
 	Url string `json:"url,omitempty" xml:"url,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFuwuPurchaseOrderConfirmAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Url = ""
+}
+
+var poolTaobaoFuwuPurchaseOrderConfirmAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFuwuPurchaseOrderConfirmAPIResponse)
+	},
+}
+
+// GetTaobaoFuwuPurchaseOrderConfirmAPIResponse 从 sync.Pool 获取 TaobaoFuwuPurchaseOrderConfirmAPIResponse
+func GetTaobaoFuwuPurchaseOrderConfirmAPIResponse() *TaobaoFuwuPurchaseOrderConfirmAPIResponse {
+	return poolTaobaoFuwuPurchaseOrderConfirmAPIResponse.Get().(*TaobaoFuwuPurchaseOrderConfirmAPIResponse)
+}
+
+// ReleaseTaobaoFuwuPurchaseOrderConfirmAPIResponse 将 TaobaoFuwuPurchaseOrderConfirmAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFuwuPurchaseOrderConfirmAPIResponse(v *TaobaoFuwuPurchaseOrderConfirmAPIResponse) {
+	v.Reset()
+	poolTaobaoFuwuPurchaseOrderConfirmAPIResponse.Put(v)
 }

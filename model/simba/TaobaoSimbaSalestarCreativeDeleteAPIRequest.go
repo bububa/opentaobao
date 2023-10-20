@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoSimbaSalestarCreativeDeleteAPIRequest struct {
 // NewTaobaoSimbaSalestarCreativeDeleteRequest 初始化TaobaoSimbaSalestarCreativeDeleteAPIRequest对象
 func NewTaobaoSimbaSalestarCreativeDeleteRequest() *TaobaoSimbaSalestarCreativeDeleteAPIRequest {
 	return &TaobaoSimbaSalestarCreativeDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaSalestarCreativeDeleteAPIRequest) Reset() {
+	r._creativeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoSimbaSalestarCreativeDeleteAPIRequest) SetCreativeId(_creativeId 
 // GetCreativeId CreativeId Getter
 func (r TaobaoSimbaSalestarCreativeDeleteAPIRequest) GetCreativeId() int64 {
 	return r._creativeId
+}
+
+var poolTaobaoSimbaSalestarCreativeDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaSalestarCreativeDeleteRequest()
+	},
+}
+
+// GetTaobaoSimbaSalestarCreativeDeleteRequest 从 sync.Pool 获取 TaobaoSimbaSalestarCreativeDeleteAPIRequest
+func GetTaobaoSimbaSalestarCreativeDeleteAPIRequest() *TaobaoSimbaSalestarCreativeDeleteAPIRequest {
+	return poolTaobaoSimbaSalestarCreativeDeleteAPIRequest.Get().(*TaobaoSimbaSalestarCreativeDeleteAPIRequest)
+}
+
+// ReleaseTaobaoSimbaSalestarCreativeDeleteAPIRequest 将 TaobaoSimbaSalestarCreativeDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaSalestarCreativeDeleteAPIRequest(v *TaobaoSimbaSalestarCreativeDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaSalestarCreativeDeleteAPIRequest.Put(v)
 }

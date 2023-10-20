@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // ShowStrategyDto 结构体
 type ShowStrategyDto struct {
 	// 投放计划规则
@@ -16,4 +20,27 @@ type ShowStrategyDto struct {
 	AllRulePassed bool `json:"all_rule_passed,omitempty" xml:"all_rule_passed,omitempty"`
 	// 算法容灾结果
 	AlgorithmFailover bool `json:"algorithm_failover,omitempty" xml:"algorithm_failover,omitempty"`
+}
+
+var poolShowStrategyDto = sync.Pool{
+	New: func() any {
+		return new(ShowStrategyDto)
+	},
+}
+
+// GetShowStrategyDto() 从对象池中获取ShowStrategyDto
+func GetShowStrategyDto() *ShowStrategyDto {
+	return poolShowStrategyDto.Get().(*ShowStrategyDto)
+}
+
+// ReleaseShowStrategyDto 释放ShowStrategyDto
+func ReleaseShowStrategyDto(v *ShowStrategyDto) {
+	v.ShowRules = v.ShowRules[:0]
+	v.ShowBenefitInstances = v.ShowBenefitInstances[:0]
+	v.Mode = ""
+	v.Code = ""
+	v.Asac = ""
+	v.AllRulePassed = false
+	v.AlgorithmFailover = false
+	poolShowStrategyDto.Put(v)
 }

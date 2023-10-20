@@ -9,11 +9,6 @@ import (
 // alibaba.health.nr.logistics.query
 //
 // 对阿里健康o2o对接的商户提供查询物流单详情的能力
-func AlibabaHealthNrLogisticsQuery(clt *core.SDKClient, req *healthnr.AlibabaHealthNrLogisticsQueryAPIRequest, session string) (*healthnr.AlibabaHealthNrLogisticsQueryAPIResponse, error) {
-	var resp healthnr.AlibabaHealthNrLogisticsQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHealthNrLogisticsQuery(clt *core.SDKClient, req *healthnr.AlibabaHealthNrLogisticsQueryAPIRequest, resp *healthnr.AlibabaHealthNrLogisticsQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // ExtendInfo 结构体
 type ExtendInfo struct {
 	// 合作快递公司编码列表；最多50个，创建时必填
@@ -38,4 +42,38 @@ type ExtendInfo struct {
 	LeaseQualification int64 `json:"lease_qualification,omitempty" xml:"lease_qualification,omitempty"`
 	// 保险合同 1=基本险；2=综合险；3=一切险
 	InsuranceContract int64 `json:"insurance_contract,omitempty" xml:"insurance_contract,omitempty"`
+}
+
+var poolExtendInfo = sync.Pool{
+	New: func() any {
+		return new(ExtendInfo)
+	},
+}
+
+// GetExtendInfo() 从对象池中获取ExtendInfo
+func GetExtendInfo() *ExtendInfo {
+	return poolExtendInfo.Get().(*ExtendInfo)
+}
+
+// ReleaseExtendInfo 释放ExtendInfo
+func ReleaseExtendInfo(v *ExtendInfo) {
+	v.PlatformDeliveryCodes = v.PlatformDeliveryCodes[:0]
+	v.GoodsCategories = v.GoodsCategories[:0]
+	v.AdditionalServices = v.AdditionalServices[:0]
+	v.FireSafetyAcceptances = v.FireSafetyAcceptances[:0]
+	v.OwnershipProofs = v.OwnershipProofs[:0]
+	v.WhInsurancePolicies = v.WhInsurancePolicies[:0]
+	v.WhInteriorPictures = v.WhInteriorPictures[:0]
+	v.BusinessLicenses = v.BusinessLicenses[:0]
+	v.ServiceProducts = v.ServiceProducts[:0]
+	v.IntroductionVideo = ""
+	v.DailyOrderQuantity = 0
+	v.MaxOutboundCapacity = 0
+	v.StorageArea = 0
+	v.B2cExperience = 0
+	v.WarehouseType = 0
+	v.FireSafetyQualification = 0
+	v.LeaseQualification = 0
+	v.InsuranceContract = 0
+	poolExtendInfo.Put(v)
 }

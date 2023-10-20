@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoMiniappAppSellerConfigCompleteAPIRequest struct {
 // NewTaobaoMiniappAppSellerConfigCompleteRequest 初始化TaobaoMiniappAppSellerConfigCompleteAPIRequest对象
 func NewTaobaoMiniappAppSellerConfigCompleteRequest() *TaobaoMiniappAppSellerConfigCompleteAPIRequest {
 	return &TaobaoMiniappAppSellerConfigCompleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappAppSellerConfigCompleteAPIRequest) Reset() {
+	r._version = ""
+	r._appId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoMiniappAppSellerConfigCompleteAPIRequest) SetAppId(_appId int64) 
 // GetAppId AppId Getter
 func (r TaobaoMiniappAppSellerConfigCompleteAPIRequest) GetAppId() int64 {
 	return r._appId
+}
+
+var poolTaobaoMiniappAppSellerConfigCompleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappAppSellerConfigCompleteRequest()
+	},
+}
+
+// GetTaobaoMiniappAppSellerConfigCompleteRequest 从 sync.Pool 获取 TaobaoMiniappAppSellerConfigCompleteAPIRequest
+func GetTaobaoMiniappAppSellerConfigCompleteAPIRequest() *TaobaoMiniappAppSellerConfigCompleteAPIRequest {
+	return poolTaobaoMiniappAppSellerConfigCompleteAPIRequest.Get().(*TaobaoMiniappAppSellerConfigCompleteAPIRequest)
+}
+
+// ReleaseTaobaoMiniappAppSellerConfigCompleteAPIRequest 将 TaobaoMiniappAppSellerConfigCompleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappAppSellerConfigCompleteAPIRequest(v *TaobaoMiniappAppSellerConfigCompleteAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappAppSellerConfigCompleteAPIRequest.Put(v)
 }

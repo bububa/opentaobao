@@ -9,11 +9,6 @@ import (
 // taobao.opentrade.special.users.mark
 //
 // 对于专属下单的交易场景，根据openid标记用户可购买商品
-func TaobaoOpentradeSpecialUsersMark(clt *core.SDKClient, req *opentrade.TaobaoOpentradeSpecialUsersMarkAPIRequest, session string) (*opentrade.TaobaoOpentradeSpecialUsersMarkAPIResponse, error) {
-	var resp opentrade.TaobaoOpentradeSpecialUsersMarkAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpentradeSpecialUsersMark(clt *core.SDKClient, req *opentrade.TaobaoOpentradeSpecialUsersMarkAPIRequest, resp *opentrade.TaobaoOpentradeSpecialUsersMarkAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

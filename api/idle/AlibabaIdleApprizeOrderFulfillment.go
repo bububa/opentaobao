@@ -9,11 +9,6 @@ import (
 // alibaba.idle.apprize.order.fulfillment
 //
 // 服务商针对自己的服务订单进行履约
-func AlibabaIdleApprizeOrderFulfillment(clt *core.SDKClient, req *idle.AlibabaIdleApprizeOrderFulfillmentAPIRequest, session string) (*idle.AlibabaIdleApprizeOrderFulfillmentAPIResponse, error) {
-	var resp idle.AlibabaIdleApprizeOrderFulfillmentAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleApprizeOrderFulfillment(clt *core.SDKClient, req *idle.AlibabaIdleApprizeOrderFulfillmentAPIRequest, resp *idle.AlibabaIdleApprizeOrderFulfillmentAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package admarket
 
+import (
+	"sync"
+)
+
 // Udid 结构体
 type Udid struct {
 	// imei
@@ -22,4 +26,30 @@ type Udid struct {
 	Utdid string `json:"utdid,omitempty" xml:"utdid,omitempty"`
 	// 设备id
 	DeviceId string `json:"device_id,omitempty" xml:"device_id,omitempty"`
+}
+
+var poolUdid = sync.Pool{
+	New: func() any {
+		return new(Udid)
+	},
+}
+
+// GetUdid() 从对象池中获取Udid
+func GetUdid() *Udid {
+	return poolUdid.Get().(*Udid)
+}
+
+// ReleaseUdid 释放Udid
+func ReleaseUdid(v *Udid) {
+	v.Imei = ""
+	v.Mac = ""
+	v.AndroidId = ""
+	v.UmidToken = ""
+	v.Uuid = ""
+	v.SerialNum = ""
+	v.SimSn = ""
+	v.Imsi = ""
+	v.Utdid = ""
+	v.DeviceId = ""
+	poolUdid.Put(v)
 }

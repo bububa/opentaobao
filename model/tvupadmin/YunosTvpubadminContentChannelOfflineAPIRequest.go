@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosTvpubadminContentChannelOfflineAPIRequest struct {
 // NewYunosTvpubadminContentChannelOfflineRequest 初始化YunosTvpubadminContentChannelOfflineAPIRequest对象
 func NewYunosTvpubadminContentChannelOfflineRequest() *YunosTvpubadminContentChannelOfflineAPIRequest {
 	return &YunosTvpubadminContentChannelOfflineAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminContentChannelOfflineAPIRequest) Reset() {
+	r._id = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosTvpubadminContentChannelOfflineAPIRequest) SetId(_id int64) error 
 // GetId Id Getter
 func (r YunosTvpubadminContentChannelOfflineAPIRequest) GetId() int64 {
 	return r._id
+}
+
+var poolYunosTvpubadminContentChannelOfflineAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminContentChannelOfflineRequest()
+	},
+}
+
+// GetYunosTvpubadminContentChannelOfflineRequest 从 sync.Pool 获取 YunosTvpubadminContentChannelOfflineAPIRequest
+func GetYunosTvpubadminContentChannelOfflineAPIRequest() *YunosTvpubadminContentChannelOfflineAPIRequest {
+	return poolYunosTvpubadminContentChannelOfflineAPIRequest.Get().(*YunosTvpubadminContentChannelOfflineAPIRequest)
+}
+
+// ReleaseYunosTvpubadminContentChannelOfflineAPIRequest 将 YunosTvpubadminContentChannelOfflineAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminContentChannelOfflineAPIRequest(v *YunosTvpubadminContentChannelOfflineAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminContentChannelOfflineAPIRequest.Put(v)
 }

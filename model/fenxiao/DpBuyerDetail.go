@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // DpBuyerDetail 结构体
 type DpBuyerDetail struct {
 	// 地区
@@ -20,4 +24,29 @@ type DpBuyerDetail struct {
 	Prov string `json:"prov,omitempty" xml:"prov,omitempty"`
 	// 收件人ID (Open Addressee ID)，长度在128个字符之内。
 	Oaid string `json:"oaid,omitempty" xml:"oaid,omitempty"`
+}
+
+var poolDpBuyerDetail = sync.Pool{
+	New: func() any {
+		return new(DpBuyerDetail)
+	},
+}
+
+// GetDpBuyerDetail() 从对象池中获取DpBuyerDetail
+func GetDpBuyerDetail() *DpBuyerDetail {
+	return poolDpBuyerDetail.Get().(*DpBuyerDetail)
+}
+
+// ReleaseDpBuyerDetail 释放DpBuyerDetail
+func ReleaseDpBuyerDetail(v *DpBuyerDetail) {
+	v.Area = ""
+	v.Address = ""
+	v.MobilePhone = ""
+	v.Post = ""
+	v.City = ""
+	v.Phone = ""
+	v.FullName = ""
+	v.Prov = ""
+	v.Oaid = ""
+	poolDpBuyerDetail.Put(v)
 }

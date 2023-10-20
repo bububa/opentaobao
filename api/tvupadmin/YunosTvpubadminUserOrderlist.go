@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.user.orderlist
 //
 // 获取用户订单列表
-func YunosTvpubadminUserOrderlist(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminUserOrderlistAPIRequest, session string) (*tvupadmin.YunosTvpubadminUserOrderlistAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminUserOrderlistAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminUserOrderlist(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminUserOrderlistAPIRequest, resp *tvupadmin.YunosTvpubadminUserOrderlistAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

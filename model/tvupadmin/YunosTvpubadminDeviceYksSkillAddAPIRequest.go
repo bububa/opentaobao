@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type YunosTvpubadminDeviceYksSkillAddAPIRequest struct {
 // NewYunosTvpubadminDeviceYksSkillAddRequest 初始化YunosTvpubadminDeviceYksSkillAddAPIRequest对象
 func NewYunosTvpubadminDeviceYksSkillAddRequest() *YunosTvpubadminDeviceYksSkillAddAPIRequest {
 	return &YunosTvpubadminDeviceYksSkillAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminDeviceYksSkillAddAPIRequest) Reset() {
+	r._name = ""
+	r._iconImageUrl = ""
+	r._skillId = 0
+	r._botId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *YunosTvpubadminDeviceYksSkillAddAPIRequest) SetBotId(_botId int64) erro
 // GetBotId BotId Getter
 func (r YunosTvpubadminDeviceYksSkillAddAPIRequest) GetBotId() int64 {
 	return r._botId
+}
+
+var poolYunosTvpubadminDeviceYksSkillAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminDeviceYksSkillAddRequest()
+	},
+}
+
+// GetYunosTvpubadminDeviceYksSkillAddRequest 从 sync.Pool 获取 YunosTvpubadminDeviceYksSkillAddAPIRequest
+func GetYunosTvpubadminDeviceYksSkillAddAPIRequest() *YunosTvpubadminDeviceYksSkillAddAPIRequest {
+	return poolYunosTvpubadminDeviceYksSkillAddAPIRequest.Get().(*YunosTvpubadminDeviceYksSkillAddAPIRequest)
+}
+
+// ReleaseYunosTvpubadminDeviceYksSkillAddAPIRequest 将 YunosTvpubadminDeviceYksSkillAddAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminDeviceYksSkillAddAPIRequest(v *YunosTvpubadminDeviceYksSkillAddAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminDeviceYksSkillAddAPIRequest.Put(v)
 }

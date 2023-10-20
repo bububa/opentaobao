@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // CainiaoStockOutBillStockoutinfo 结构体
 type CainiaoStockOutBillStockoutinfo struct {
 	// 包裹信息列表，包含每个包裹使用的快递信息
@@ -16,4 +20,27 @@ type CainiaoStockOutBillStockoutinfo struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 单据类型 903 普通出库单 305 B2B出库单 901 退供出库单
 	OrderType int64 `json:"order_type,omitempty" xml:"order_type,omitempty"`
+}
+
+var poolCainiaoStockOutBillStockoutinfo = sync.Pool{
+	New: func() any {
+		return new(CainiaoStockOutBillStockoutinfo)
+	},
+}
+
+// GetCainiaoStockOutBillStockoutinfo() 从对象池中获取CainiaoStockOutBillStockoutinfo
+func GetCainiaoStockOutBillStockoutinfo() *CainiaoStockOutBillStockoutinfo {
+	return poolCainiaoStockOutBillStockoutinfo.Get().(*CainiaoStockOutBillStockoutinfo)
+}
+
+// ReleaseCainiaoStockOutBillStockoutinfo 释放CainiaoStockOutBillStockoutinfo
+func ReleaseCainiaoStockOutBillStockoutinfo(v *CainiaoStockOutBillStockoutinfo) {
+	v.PackageInfoList = v.PackageInfoList[:0]
+	v.OrderItemList = v.OrderItemList[:0]
+	v.OrderCode = ""
+	v.CnOrderCode = ""
+	v.ConfirmTime = ""
+	v.Status = ""
+	v.OrderType = 0
+	poolCainiaoStockOutBillStockoutinfo.Put(v)
 }

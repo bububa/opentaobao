@@ -1,5 +1,9 @@
 package train
 
+import (
+	"sync"
+)
+
 // ChangeIssueRq 结构体
 type ChangeIssueRq struct {
 	// 改签票信息列表
@@ -38,4 +42,38 @@ type ChangeIssueRq struct {
 	TtpOrderId int64 `json:"ttp_order_id,omitempty" xml:"ttp_order_id,omitempty"`
 	// 出票状态 1成功 2失败
 	IssueStatus int64 `json:"issue_status,omitempty" xml:"issue_status,omitempty"`
+}
+
+var poolChangeIssueRq = sync.Pool{
+	New: func() any {
+		return new(ChangeIssueRq)
+	},
+}
+
+// GetChangeIssueRq() 从对象池中获取ChangeIssueRq
+func GetChangeIssueRq() *ChangeIssueRq {
+	return poolChangeIssueRq.Get().(*ChangeIssueRq)
+}
+
+// ReleaseChangeIssueRq 释放ChangeIssueRq
+func ReleaseChangeIssueRq(v *ChangeIssueRq) {
+	v.ChangeTickets = v.ChangeTickets[:0]
+	v.ChangeFromStation = ""
+	v.AlipayTradeNo = ""
+	v.AlipayAccount = ""
+	v.ChangeToStation = ""
+	v.SequenceNo = ""
+	v.ChangeFromDateTime = ""
+	v.ChangeToDateTime = ""
+	v.ChangeTrainDate = ""
+	v.ChangeTrainCode = ""
+	v.IssueFailMsg = ""
+	v.IssueFailCode = 0
+	v.AgentId = 0
+	v.ChangeApplyId = 0
+	v.ChangeSettlementMode = 0
+	v.TpOrderId = 0
+	v.TtpOrderId = 0
+	v.IssueStatus = 0
+	poolChangeIssueRq.Put(v)
 }

@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkMarketingCouponSendmaAPIRequest struct {
 // NewAlibabaWdkMarketingCouponSendmaRequest 初始化AlibabaWdkMarketingCouponSendmaAPIRequest对象
 func NewAlibabaWdkMarketingCouponSendmaRequest() *AlibabaWdkMarketingCouponSendmaAPIRequest {
 	return &AlibabaWdkMarketingCouponSendmaAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMarketingCouponSendmaAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkMarketingCouponSendmaAPIRequest) SetParam0(_param0 *CommonAct
 // GetParam0 Param0 Getter
 func (r AlibabaWdkMarketingCouponSendmaAPIRequest) GetParam0() *CommonActivityParam {
 	return r._param0
+}
+
+var poolAlibabaWdkMarketingCouponSendmaAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMarketingCouponSendmaRequest()
+	},
+}
+
+// GetAlibabaWdkMarketingCouponSendmaRequest 从 sync.Pool 获取 AlibabaWdkMarketingCouponSendmaAPIRequest
+func GetAlibabaWdkMarketingCouponSendmaAPIRequest() *AlibabaWdkMarketingCouponSendmaAPIRequest {
+	return poolAlibabaWdkMarketingCouponSendmaAPIRequest.Get().(*AlibabaWdkMarketingCouponSendmaAPIRequest)
+}
+
+// ReleaseAlibabaWdkMarketingCouponSendmaAPIRequest 将 AlibabaWdkMarketingCouponSendmaAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMarketingCouponSendmaAPIRequest(v *AlibabaWdkMarketingCouponSendmaAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMarketingCouponSendmaAPIRequest.Put(v)
 }

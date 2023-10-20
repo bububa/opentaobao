@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // WaybillAddress 结构体
 type WaybillAddress struct {
 	// 详细地址
@@ -18,4 +22,28 @@ type WaybillAddress struct {
 	DivisionId int64 `json:"division_id,omitempty" xml:"division_id,omitempty"`
 	// waybill 地址记录ID(非地址库ID)
 	WaybillAddressId int64 `json:"waybill_address_id,omitempty" xml:"waybill_address_id,omitempty"`
+}
+
+var poolWaybillAddress = sync.Pool{
+	New: func() any {
+		return new(WaybillAddress)
+	},
+}
+
+// GetWaybillAddress() 从对象池中获取WaybillAddress
+func GetWaybillAddress() *WaybillAddress {
+	return poolWaybillAddress.Get().(*WaybillAddress)
+}
+
+// ReleaseWaybillAddress 释放WaybillAddress
+func ReleaseWaybillAddress(v *WaybillAddress) {
+	v.AddressDetail = ""
+	v.Area = ""
+	v.City = ""
+	v.Province = ""
+	v.Town = ""
+	v.AddressNonCodeFormat = ""
+	v.DivisionId = 0
+	v.WaybillAddressId = 0
+	poolWaybillAddress.Put(v)
 }

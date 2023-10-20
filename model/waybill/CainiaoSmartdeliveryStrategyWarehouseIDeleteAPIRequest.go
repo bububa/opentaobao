@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest struct {
 // NewCainiaoSmartdeliveryStrategyWarehouseIDeleteRequest 初始化CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest对象
 func NewCainiaoSmartdeliveryStrategyWarehouseIDeleteRequest() *CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest {
 	return &CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest) Reset() {
+	r._warehouseId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest) SetWarehouseId(
 // GetWarehouseId WarehouseId Getter
 func (r CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest) GetWarehouseId() int64 {
 	return r._warehouseId
+}
+
+var poolCainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoSmartdeliveryStrategyWarehouseIDeleteRequest()
+	},
+}
+
+// GetCainiaoSmartdeliveryStrategyWarehouseIDeleteRequest 从 sync.Pool 获取 CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest
+func GetCainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest() *CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest {
+	return poolCainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest.Get().(*CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest)
+}
+
+// ReleaseCainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest 将 CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest 放入 sync.Pool
+func ReleaseCainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest(v *CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest) {
+	v.Reset()
+	poolCainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest.Put(v)
 }

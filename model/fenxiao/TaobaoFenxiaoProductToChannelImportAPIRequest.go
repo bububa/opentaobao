@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoFenxiaoProductToChannelImportAPIRequest struct {
 // NewTaobaoFenxiaoProductToChannelImportRequest 初始化TaobaoFenxiaoProductToChannelImportAPIRequest对象
 func NewTaobaoFenxiaoProductToChannelImportRequest() *TaobaoFenxiaoProductToChannelImportAPIRequest {
 	return &TaobaoFenxiaoProductToChannelImportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoProductToChannelImportAPIRequest) Reset() {
+	r._channel = 0
+	r._productId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoFenxiaoProductToChannelImportAPIRequest) SetProductId(_productId 
 // GetProductId ProductId Getter
 func (r TaobaoFenxiaoProductToChannelImportAPIRequest) GetProductId() int64 {
 	return r._productId
+}
+
+var poolTaobaoFenxiaoProductToChannelImportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoProductToChannelImportRequest()
+	},
+}
+
+// GetTaobaoFenxiaoProductToChannelImportRequest 从 sync.Pool 获取 TaobaoFenxiaoProductToChannelImportAPIRequest
+func GetTaobaoFenxiaoProductToChannelImportAPIRequest() *TaobaoFenxiaoProductToChannelImportAPIRequest {
+	return poolTaobaoFenxiaoProductToChannelImportAPIRequest.Get().(*TaobaoFenxiaoProductToChannelImportAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoProductToChannelImportAPIRequest 将 TaobaoFenxiaoProductToChannelImportAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoProductToChannelImportAPIRequest(v *TaobaoFenxiaoProductToChannelImportAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoProductToChannelImportAPIRequest.Put(v)
 }

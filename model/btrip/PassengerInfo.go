@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // PassengerInfo 结构体
 type PassengerInfo struct {
 	// 项目code
@@ -22,4 +26,30 @@ type PassengerInfo struct {
 	UserType int64 `json:"user_type,omitempty" xml:"user_type,omitempty"`
 	// 项目id
 	ProjectId int64 `json:"project_id,omitempty" xml:"project_id,omitempty"`
+}
+
+var poolPassengerInfo = sync.Pool{
+	New: func() any {
+		return new(PassengerInfo)
+	},
+}
+
+// GetPassengerInfo() 从对象池中获取PassengerInfo
+func GetPassengerInfo() *PassengerInfo {
+	return poolPassengerInfo.Get().(*PassengerInfo)
+}
+
+// ReleasePassengerInfo 释放PassengerInfo
+func ReleasePassengerInfo(v *PassengerInfo) {
+	v.ProjectCode = ""
+	v.CostCenterName = ""
+	v.CostCenterNumber = ""
+	v.ThirdpartProjectId = ""
+	v.UserName = ""
+	v.UserId = ""
+	v.ProjectTitle = ""
+	v.CostCenterId = 0
+	v.UserType = 0
+	v.ProjectId = 0
+	poolPassengerInfo.Put(v)
 }

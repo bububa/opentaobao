@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest struct {
 // NewAlibabaWdkorderSharestockInsuranceRefundcallbackRequest 初始化AlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest对象
 func NewAlibabaWdkorderSharestockInsuranceRefundcallbackRequest() *AlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest {
 	return &AlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest) Reset() {
+	r._refundId = ""
+	r._claimId = ""
+	r._tbSubOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest) SetTbSubOrd
 // GetTbSubOrderId TbSubOrderId Getter
 func (r AlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest) GetTbSubOrderId() int64 {
 	return r._tbSubOrderId
+}
+
+var poolAlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkorderSharestockInsuranceRefundcallbackRequest()
+	},
+}
+
+// GetAlibabaWdkorderSharestockInsuranceRefundcallbackRequest 从 sync.Pool 获取 AlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest
+func GetAlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest() *AlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest {
+	return poolAlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest.Get().(*AlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest)
+}
+
+// ReleaseAlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest 将 AlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest(v *AlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkorderSharestockInsuranceRefundcallbackAPIRequest.Put(v)
 }

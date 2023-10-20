@@ -2,6 +2,7 @@ package customizemarket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallIndustryBabyAuthprofileBackflowAPIRequest struct {
 // NewTmallIndustryBabyAuthprofileBackflowRequest 初始化TmallIndustryBabyAuthprofileBackflowAPIRequest对象
 func NewTmallIndustryBabyAuthprofileBackflowRequest() *TmallIndustryBabyAuthprofileBackflowAPIRequest {
 	return &TmallIndustryBabyAuthprofileBackflowAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallIndustryBabyAuthprofileBackflowAPIRequest) Reset() {
+	r._yxyBabyProfileCmd = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallIndustryBabyAuthprofileBackflowAPIRequest) SetYxyBabyProfileCmd(_y
 // GetYxyBabyProfileCmd YxyBabyProfileCmd Getter
 func (r TmallIndustryBabyAuthprofileBackflowAPIRequest) GetYxyBabyProfileCmd() *YxyBabyProfileCmd {
 	return r._yxyBabyProfileCmd
+}
+
+var poolTmallIndustryBabyAuthprofileBackflowAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallIndustryBabyAuthprofileBackflowRequest()
+	},
+}
+
+// GetTmallIndustryBabyAuthprofileBackflowRequest 从 sync.Pool 获取 TmallIndustryBabyAuthprofileBackflowAPIRequest
+func GetTmallIndustryBabyAuthprofileBackflowAPIRequest() *TmallIndustryBabyAuthprofileBackflowAPIRequest {
+	return poolTmallIndustryBabyAuthprofileBackflowAPIRequest.Get().(*TmallIndustryBabyAuthprofileBackflowAPIRequest)
+}
+
+// ReleaseTmallIndustryBabyAuthprofileBackflowAPIRequest 将 TmallIndustryBabyAuthprofileBackflowAPIRequest 放入 sync.Pool
+func ReleaseTmallIndustryBabyAuthprofileBackflowAPIRequest(v *TmallIndustryBabyAuthprofileBackflowAPIRequest) {
+	v.Reset()
+	poolTmallIndustryBabyAuthprofileBackflowAPIRequest.Put(v)
 }

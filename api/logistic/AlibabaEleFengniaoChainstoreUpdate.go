@@ -9,11 +9,6 @@ import (
 // alibaba.ele.fengniao.chainstore.update
 //
 // 修改门店的经纬度，文本地址，电话，门店名
-func AlibabaEleFengniaoChainstoreUpdate(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoChainstoreUpdateAPIRequest, session string) (*logistic.AlibabaEleFengniaoChainstoreUpdateAPIResponse, error) {
-	var resp logistic.AlibabaEleFengniaoChainstoreUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEleFengniaoChainstoreUpdate(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoChainstoreUpdateAPIRequest, resp *logistic.AlibabaEleFengniaoChainstoreUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

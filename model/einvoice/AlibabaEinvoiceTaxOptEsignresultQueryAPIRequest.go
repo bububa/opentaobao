@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest struct {
 // NewAlibabaEinvoiceTaxOptEsignresultQueryRequest 初始化AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest对象
 func NewAlibabaEinvoiceTaxOptEsignresultQueryRequest() *AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest {
 	return &AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest) Reset() {
+	r._employerCode = ""
+	r._identificationInBelongingEmployer = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest) SetIdentificationInBel
 // GetIdentificationInBelongingEmployer IdentificationInBelongingEmployer Getter
 func (r AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest) GetIdentificationInBelongingEmployer() string {
 	return r._identificationInBelongingEmployer
+}
+
+var poolAlibabaEinvoiceTaxOptEsignresultQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceTaxOptEsignresultQueryRequest()
+	},
+}
+
+// GetAlibabaEinvoiceTaxOptEsignresultQueryRequest 从 sync.Pool 获取 AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest
+func GetAlibabaEinvoiceTaxOptEsignresultQueryAPIRequest() *AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest {
+	return poolAlibabaEinvoiceTaxOptEsignresultQueryAPIRequest.Get().(*AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceTaxOptEsignresultQueryAPIRequest 将 AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceTaxOptEsignresultQueryAPIRequest(v *AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceTaxOptEsignresultQueryAPIRequest.Put(v)
 }

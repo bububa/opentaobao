@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // TopGoodsDto 结构体
 type TopGoodsDto struct {
 	// 商品名
@@ -24,4 +28,31 @@ type TopGoodsDto struct {
 	ReceiveQty int64 `json:"receive_qty,omitempty" xml:"receive_qty,omitempty"`
 	// 金额
 	AmountMoney int64 `json:"amount_money,omitempty" xml:"amount_money,omitempty"`
+}
+
+var poolTopGoodsDto = sync.Pool{
+	New: func() any {
+		return new(TopGoodsDto)
+	},
+}
+
+// GetTopGoodsDto() 从对象池中获取TopGoodsDto
+func GetTopGoodsDto() *TopGoodsDto {
+	return poolTopGoodsDto.Get().(*TopGoodsDto)
+}
+
+// ReleaseTopGoodsDto 释放TopGoodsDto
+func ReleaseTopGoodsDto(v *TopGoodsDto) {
+	v.GoodsName = ""
+	v.GoodsCode = ""
+	v.GoodsSpec = ""
+	v.PackUnitName = ""
+	v.LotNo = ""
+	v.ProductDate = ""
+	v.ValidityDate = ""
+	v.UnitPriceStr = ""
+	v.PackQty = 0
+	v.ReceiveQty = 0
+	v.AmountMoney = 0
+	poolTopGoodsDto.Put(v)
 }

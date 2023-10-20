@@ -1,5 +1,9 @@
 package train
 
+import (
+	"sync"
+)
+
 // OrderTicketInfo 结构体
 type OrderTicketInfo struct {
 	// 出票结果定制信息列表
@@ -26,4 +30,32 @@ type OrderTicketInfo struct {
 	InsurancePayPrice int64 `json:"insurance_pay_price,omitempty" xml:"insurance_pay_price,omitempty"`
 	// 定制票出票结果 1:定制票出票 0:非定制票出票
 	VipCustomResult int64 `json:"vip_custom_result,omitempty" xml:"vip_custom_result,omitempty"`
+}
+
+var poolOrderTicketInfo = sync.Pool{
+	New: func() any {
+		return new(OrderTicketInfo)
+	},
+}
+
+// GetOrderTicketInfo() 从对象池中获取OrderTicketInfo
+func GetOrderTicketInfo() *OrderTicketInfo {
+	return poolOrderTicketInfo.Get().(*OrderTicketInfo)
+}
+
+// ReleaseOrderTicketInfo 释放OrderTicketInfo
+func ReleaseOrderTicketInfo(v *OrderTicketInfo) {
+	v.VipCustomResultList = v.VipCustomResultList[:0]
+	v.SeatNum = ""
+	v.TrainNo = ""
+	v.PassengerName = ""
+	v.CertType = ""
+	v.CertificateNum = ""
+	v.TicketNo = ""
+	v.TtpSubOrderId = 0
+	v.RealTicketPrice = 0
+	v.RealSeat = 0
+	v.InsurancePayPrice = 0
+	v.VipCustomResult = 0
+	poolOrderTicketInfo.Put(v)
 }

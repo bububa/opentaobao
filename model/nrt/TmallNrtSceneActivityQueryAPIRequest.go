@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallNrtSceneActivityQueryAPIRequest struct {
 // NewTmallNrtSceneActivityQueryRequest 初始化TmallNrtSceneActivityQueryAPIRequest对象
 func NewTmallNrtSceneActivityQueryRequest() *TmallNrtSceneActivityQueryAPIRequest {
 	return &TmallNrtSceneActivityQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtSceneActivityQueryAPIRequest) Reset() {
+	r._bizCode = ""
+	r._activityId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallNrtSceneActivityQueryAPIRequest) SetActivityId(_activityId int64) 
 // GetActivityId ActivityId Getter
 func (r TmallNrtSceneActivityQueryAPIRequest) GetActivityId() int64 {
 	return r._activityId
+}
+
+var poolTmallNrtSceneActivityQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtSceneActivityQueryRequest()
+	},
+}
+
+// GetTmallNrtSceneActivityQueryRequest 从 sync.Pool 获取 TmallNrtSceneActivityQueryAPIRequest
+func GetTmallNrtSceneActivityQueryAPIRequest() *TmallNrtSceneActivityQueryAPIRequest {
+	return poolTmallNrtSceneActivityQueryAPIRequest.Get().(*TmallNrtSceneActivityQueryAPIRequest)
+}
+
+// ReleaseTmallNrtSceneActivityQueryAPIRequest 将 TmallNrtSceneActivityQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtSceneActivityQueryAPIRequest(v *TmallNrtSceneActivityQueryAPIRequest) {
+	v.Reset()
+	poolTmallNrtSceneActivityQueryAPIRequest.Put(v)
 }

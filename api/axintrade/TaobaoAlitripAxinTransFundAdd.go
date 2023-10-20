@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.axin.trans.fund.add
 //
 // 创建资金单
-func TaobaoAlitripAxinTransFundAdd(clt *core.SDKClient, req *axintrade.TaobaoAlitripAxinTransFundAddAPIRequest, session string) (*axintrade.TaobaoAlitripAxinTransFundAddAPIResponse, error) {
-	var resp axintrade.TaobaoAlitripAxinTransFundAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripAxinTransFundAdd(clt *core.SDKClient, req *axintrade.TaobaoAlitripAxinTransFundAddAPIRequest, resp *axintrade.TaobaoAlitripAxinTransFundAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

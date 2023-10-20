@@ -2,6 +2,7 @@ package ascpffo
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressAscpWarehouseInventoryQueryAPIRequest struct {
 // NewAliexpressAscpWarehouseInventoryQueryRequest 初始化AliexpressAscpWarehouseInventoryQueryAPIRequest对象
 func NewAliexpressAscpWarehouseInventoryQueryRequest() *AliexpressAscpWarehouseInventoryQueryAPIRequest {
 	return &AliexpressAscpWarehouseInventoryQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressAscpWarehouseInventoryQueryAPIRequest) Reset() {
+	r._warehouseInventoryQueryDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressAscpWarehouseInventoryQueryAPIRequest) SetWarehouseInventoryQ
 // GetWarehouseInventoryQueryDto WarehouseInventoryQueryDto Getter
 func (r AliexpressAscpWarehouseInventoryQueryAPIRequest) GetWarehouseInventoryQueryDto() *WarehouseInventoryQueryDto {
 	return r._warehouseInventoryQueryDto
+}
+
+var poolAliexpressAscpWarehouseInventoryQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressAscpWarehouseInventoryQueryRequest()
+	},
+}
+
+// GetAliexpressAscpWarehouseInventoryQueryRequest 从 sync.Pool 获取 AliexpressAscpWarehouseInventoryQueryAPIRequest
+func GetAliexpressAscpWarehouseInventoryQueryAPIRequest() *AliexpressAscpWarehouseInventoryQueryAPIRequest {
+	return poolAliexpressAscpWarehouseInventoryQueryAPIRequest.Get().(*AliexpressAscpWarehouseInventoryQueryAPIRequest)
+}
+
+// ReleaseAliexpressAscpWarehouseInventoryQueryAPIRequest 将 AliexpressAscpWarehouseInventoryQueryAPIRequest 放入 sync.Pool
+func ReleaseAliexpressAscpWarehouseInventoryQueryAPIRequest(v *AliexpressAscpWarehouseInventoryQueryAPIRequest) {
+	v.Reset()
+	poolAliexpressAscpWarehouseInventoryQueryAPIRequest.Put(v)
 }

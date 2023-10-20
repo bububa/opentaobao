@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // CapacityRequest 结构体
 type CapacityRequest struct {
 	// 行政地址id（菜鸟地址库id）
@@ -30,4 +34,34 @@ type CapacityRequest struct {
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
 	// 产能更新方式：1-全量更新；2-部分更新 ● 电子围栏产能首次同步时，需选择全量更新 ● 选择全量更新时，日常及指定日期时间段产能均做全量覆盖更新； ● 选择部分更新时，日常及指定日期时间段产能仅对传入的时间段的产能进行更新，其他时间段不做处理，维持原状
 	UpdateMethod int64 `json:"update_method,omitempty" xml:"update_method,omitempty"`
+}
+
+var poolCapacityRequest = sync.Pool{
+	New: func() any {
+		return new(CapacityRequest)
+	},
+}
+
+// GetCapacityRequest() 从对象池中获取CapacityRequest
+func GetCapacityRequest() *CapacityRequest {
+	return poolCapacityRequest.Get().(*CapacityRequest)
+}
+
+// ReleaseCapacityRequest 释放CapacityRequest
+func ReleaseCapacityRequest(v *CapacityRequest) {
+	v.AddressIds = v.AddressIds[:0]
+	v.AddressNames = v.AddressNames[:0]
+	v.DailyCapacityInfos = v.DailyCapacityInfos[:0]
+	v.SpecifyCapacityInfos = v.SpecifyCapacityInfos[:0]
+	v.RequestId = ""
+	v.SupplierId = ""
+	v.DeliveryCode = ""
+	v.ServiceType = ""
+	v.AbilityType = ""
+	v.ServiceScopeType = ""
+	v.AddressType = ""
+	v.RegionCode = ""
+	v.RequestTime = 0
+	v.UpdateMethod = 0
+	poolCapacityRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // ExpressModifyAppointTopRequestDto 结构体
 type ExpressModifyAppointTopRequestDto struct {
 	// 子交易单号
@@ -22,4 +26,30 @@ type ExpressModifyAppointTopRequestDto struct {
 	ReceiverAddress string `json:"receiver_address,omitempty" xml:"receiver_address,omitempty"`
 	// 卖家Id
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
+}
+
+var poolExpressModifyAppointTopRequestDto = sync.Pool{
+	New: func() any {
+		return new(ExpressModifyAppointTopRequestDto)
+	},
+}
+
+// GetExpressModifyAppointTopRequestDto() 从对象池中获取ExpressModifyAppointTopRequestDto
+func GetExpressModifyAppointTopRequestDto() *ExpressModifyAppointTopRequestDto {
+	return poolExpressModifyAppointTopRequestDto.Get().(*ExpressModifyAppointTopRequestDto)
+}
+
+// ReleaseExpressModifyAppointTopRequestDto 释放ExpressModifyAppointTopRequestDto
+func ReleaseExpressModifyAppointTopRequestDto(v *ExpressModifyAppointTopRequestDto) {
+	v.SubTradeIds = v.SubTradeIds[:0]
+	v.ScDate = ""
+	v.TradeId = ""
+	v.ReceiverMobile = ""
+	v.OsDate = ""
+	v.ReceiverName = ""
+	v.Feature = ""
+	v.OutOrderCode = ""
+	v.ReceiverAddress = ""
+	v.SellerId = 0
+	poolExpressModifyAppointTopRequestDto.Put(v)
 }

@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest struct {
 // NewAlibabaSecurityJaqOcrImageAsyncDetectResultsFetchRequest 初始化AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest对象
 func NewAlibabaSecurityJaqOcrImageAsyncDetectResultsFetchRequest() *AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest {
 	return &AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest) Reset() {
+	r._taskIds = r._taskIds[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest) SetTaskIds
 // GetTaskIds TaskIds Getter
 func (r AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest) GetTaskIds() []string {
 	return r._taskIds
+}
+
+var poolAlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqOcrImageAsyncDetectResultsFetchRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqOcrImageAsyncDetectResultsFetchRequest 从 sync.Pool 获取 AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest
+func GetAlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest() *AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest {
+	return poolAlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest.Get().(*AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest 将 AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest(v *AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // EtcThemeDto 结构体
 type EtcThemeDto struct {
 	// 手动导入的商品信息
@@ -42,4 +46,40 @@ type EtcThemeDto struct {
 	OnlineStatus int64 `json:"online_status,omitempty" xml:"online_status,omitempty"`
 	// 是否删除(0:未删除 1:已删除)
 	IsDeleted int64 `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
+}
+
+var poolEtcThemeDto = sync.Pool{
+	New: func() any {
+		return new(EtcThemeDto)
+	},
+}
+
+// GetEtcThemeDto() 从对象池中获取EtcThemeDto
+func GetEtcThemeDto() *EtcThemeDto {
+	return poolEtcThemeDto.Get().(*EtcThemeDto)
+}
+
+// ReleaseEtcThemeDto 释放EtcThemeDto
+func ReleaseEtcThemeDto(v *EtcThemeDto) {
+	v.ThemeDetailExcels = v.ThemeDetailExcels[:0]
+	v.OuterId = ""
+	v.Name = ""
+	v.Title = ""
+	v.Descr = ""
+	v.CityCodes = ""
+	v.DetailImage = ""
+	v.DetailShowTitle = ""
+	v.DetailColorVal = ""
+	v.Type = 0
+	v.DetailDataSource = 0
+	v.DetailSelectorIsShow = 0
+	v.DetailThemeTemplateId = 0
+	v.DetailShowFetchInfoComponent = 0
+	v.Category = 0
+	v.MinContentNum = 0
+	v.SelectionId = 0
+	v.Id = 0
+	v.OnlineStatus = 0
+	v.IsDeleted = 0
+	poolEtcThemeDto.Put(v)
 }

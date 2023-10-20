@@ -2,6 +2,7 @@ package car
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripRentcarOrderDetailQueryAPIRequest struct {
 // NewAlitripRentcarOrderDetailQueryRequest 初始化AlitripRentcarOrderDetailQueryAPIRequest对象
 func NewAlitripRentcarOrderDetailQueryRequest() *AlitripRentcarOrderDetailQueryAPIRequest {
 	return &AlitripRentcarOrderDetailQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripRentcarOrderDetailQueryAPIRequest) Reset() {
+	r._paramRentCarOrderDetailCallbackReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripRentcarOrderDetailQueryAPIRequest) SetParamRentCarOrderDetailCal
 // GetParamRentCarOrderDetailCallbackReq ParamRentCarOrderDetailCallbackReq Getter
 func (r AlitripRentcarOrderDetailQueryAPIRequest) GetParamRentCarOrderDetailCallbackReq() *RentCarOrderDetailCallbackReq {
 	return r._paramRentCarOrderDetailCallbackReq
+}
+
+var poolAlitripRentcarOrderDetailQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripRentcarOrderDetailQueryRequest()
+	},
+}
+
+// GetAlitripRentcarOrderDetailQueryRequest 从 sync.Pool 获取 AlitripRentcarOrderDetailQueryAPIRequest
+func GetAlitripRentcarOrderDetailQueryAPIRequest() *AlitripRentcarOrderDetailQueryAPIRequest {
+	return poolAlitripRentcarOrderDetailQueryAPIRequest.Get().(*AlitripRentcarOrderDetailQueryAPIRequest)
+}
+
+// ReleaseAlitripRentcarOrderDetailQueryAPIRequest 将 AlitripRentcarOrderDetailQueryAPIRequest 放入 sync.Pool
+func ReleaseAlitripRentcarOrderDetailQueryAPIRequest(v *AlitripRentcarOrderDetailQueryAPIRequest) {
+	v.Reset()
+	poolAlitripRentcarOrderDetailQueryAPIRequest.Put(v)
 }

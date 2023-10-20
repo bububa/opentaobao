@@ -1,7 +1,11 @@
 package maitix
 
-// DisEncrypt4cmbParam 结构体
-type DisEncrypt4cmbParam struct {
+import (
+	"sync"
+)
+
+// DisEncrypt4CmbParam 结构体
+type DisEncrypt4CmbParam struct {
 	// 订单金额
 	Amount string `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 订单日期
@@ -14,4 +18,26 @@ type DisEncrypt4cmbParam struct {
 	PayNoticePara string `json:"pay_notice_para,omitempty" xml:"pay_notice_para,omitempty"`
 	// 支付成功返回的地址
 	ReturnUrl string `json:"return_url,omitempty" xml:"return_url,omitempty"`
+}
+
+var poolDisEncrypt4CmbParam = sync.Pool{
+	New: func() any {
+		return new(DisEncrypt4CmbParam)
+	},
+}
+
+// GetDisEncrypt4CmbParam() 从对象池中获取DisEncrypt4CmbParam
+func GetDisEncrypt4CmbParam() *DisEncrypt4CmbParam {
+	return poolDisEncrypt4CmbParam.Get().(*DisEncrypt4CmbParam)
+}
+
+// ReleaseDisEncrypt4CmbParam 释放DisEncrypt4CmbParam
+func ReleaseDisEncrypt4CmbParam(v *DisEncrypt4CmbParam) {
+	v.Amount = ""
+	v.Date = ""
+	v.ExpireTimeSpan = ""
+	v.OrderNo = ""
+	v.PayNoticePara = ""
+	v.ReturnUrl = ""
+	poolDisEncrypt4CmbParam.Put(v)
 }

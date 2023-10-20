@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenItemmappingCreateAPIRequest struct {
 // NewTaobaoQimenItemmappingCreateRequest 初始化TaobaoQimenItemmappingCreateAPIRequest对象
 func NewTaobaoQimenItemmappingCreateRequest() *TaobaoQimenItemmappingCreateAPIRequest {
 	return &TaobaoQimenItemmappingCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenItemmappingCreateAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -50,4 +57,21 @@ func (r *TaobaoQimenItemmappingCreateAPIRequest) SetRequest(_request *RequestDo)
 // GetRequest Request Getter
 func (r TaobaoQimenItemmappingCreateAPIRequest) GetRequest() *RequestDo {
 	return r._request
+}
+
+var poolTaobaoQimenItemmappingCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenItemmappingCreateRequest()
+	},
+}
+
+// GetTaobaoQimenItemmappingCreateRequest 从 sync.Pool 获取 TaobaoQimenItemmappingCreateAPIRequest
+func GetTaobaoQimenItemmappingCreateAPIRequest() *TaobaoQimenItemmappingCreateAPIRequest {
+	return poolTaobaoQimenItemmappingCreateAPIRequest.Get().(*TaobaoQimenItemmappingCreateAPIRequest)
+}
+
+// ReleaseTaobaoQimenItemmappingCreateAPIRequest 将 TaobaoQimenItemmappingCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenItemmappingCreateAPIRequest(v *TaobaoQimenItemmappingCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenItemmappingCreateAPIRequest.Put(v)
 }

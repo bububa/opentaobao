@@ -9,11 +9,6 @@ import (
 // alibaba.einvoice.income.token.return
 //
 // 服务商回传税号token，用来勾选抵扣认证
-func AlibabaEinvoiceIncomeTokenReturn(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceIncomeTokenReturnAPIRequest, session string) (*einvoice.AlibabaEinvoiceIncomeTokenReturnAPIResponse, error) {
-	var resp einvoice.AlibabaEinvoiceIncomeTokenReturnAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEinvoiceIncomeTokenReturn(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceIncomeTokenReturnAPIRequest, resp *einvoice.AlibabaEinvoiceIncomeTokenReturnAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

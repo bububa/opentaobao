@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // ServiceResult 结构体
 type ServiceResult struct {
 	// 操作结果对象
@@ -18,4 +22,28 @@ type ServiceResult struct {
 	InvoiceApplyDtl *InvoiceApplyDtlDto `json:"invoice_apply_dtl,omitempty" xml:"invoice_apply_dtl,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolServiceResult = sync.Pool{
+	New: func() any {
+		return new(ServiceResult)
+	},
+}
+
+// GetServiceResult() 从对象池中获取ServiceResult
+func GetServiceResult() *ServiceResult {
+	return poolServiceResult.Get().(*ServiceResult)
+}
+
+// ReleaseServiceResult 释放ServiceResult
+func ReleaseServiceResult(v *ServiceResult) {
+	v.ResultCode = ""
+	v.ResultMsg = ""
+	v.Result = nil
+	v.InvoiceFlowRenewResult = nil
+	v.TaxFlowQueryResult = nil
+	v.ApplyResultDto = nil
+	v.InvoiceApplyDtl = nil
+	v.Success = false
+	poolServiceResult.Put(v)
 }

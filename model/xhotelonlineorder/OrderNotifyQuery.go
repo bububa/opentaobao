@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // OrderNotifyQuery 结构体
 type OrderNotifyQuery struct {
 	// 支付时间
@@ -12,4 +16,25 @@ type OrderNotifyQuery struct {
 	NotifyType int64 `json:"notify_type,omitempty" xml:"notify_type,omitempty"`
 	// 平台促销
 	PlatformPromotion int64 `json:"platform_promotion,omitempty" xml:"platform_promotion,omitempty"`
+}
+
+var poolOrderNotifyQuery = sync.Pool{
+	New: func() any {
+		return new(OrderNotifyQuery)
+	},
+}
+
+// GetOrderNotifyQuery() 从对象池中获取OrderNotifyQuery
+func GetOrderNotifyQuery() *OrderNotifyQuery {
+	return poolOrderNotifyQuery.Get().(*OrderNotifyQuery)
+}
+
+// ReleaseOrderNotifyQuery 释放OrderNotifyQuery
+func ReleaseOrderNotifyQuery(v *OrderNotifyQuery) {
+	v.PayTime = ""
+	v.MemberCardNo = ""
+	v.BizOrderId = 0
+	v.NotifyType = 0
+	v.PlatformPromotion = 0
+	poolOrderNotifyQuery.Put(v)
 }

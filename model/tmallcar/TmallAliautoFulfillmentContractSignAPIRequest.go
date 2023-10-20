@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallAliautoFulfillmentContractSignAPIRequest struct {
 // NewTmallAliautoFulfillmentContractSignRequest 初始化TmallAliautoFulfillmentContractSignAPIRequest对象
 func NewTmallAliautoFulfillmentContractSignRequest() *TmallAliautoFulfillmentContractSignAPIRequest {
 	return &TmallAliautoFulfillmentContractSignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallAliautoFulfillmentContractSignAPIRequest) Reset() {
+	r._req = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallAliautoFulfillmentContractSignAPIRequest) SetReq(_req *SignContrac
 // GetReq Req Getter
 func (r TmallAliautoFulfillmentContractSignAPIRequest) GetReq() *SignContractReq {
 	return r._req
+}
+
+var poolTmallAliautoFulfillmentContractSignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallAliautoFulfillmentContractSignRequest()
+	},
+}
+
+// GetTmallAliautoFulfillmentContractSignRequest 从 sync.Pool 获取 TmallAliautoFulfillmentContractSignAPIRequest
+func GetTmallAliautoFulfillmentContractSignAPIRequest() *TmallAliautoFulfillmentContractSignAPIRequest {
+	return poolTmallAliautoFulfillmentContractSignAPIRequest.Get().(*TmallAliautoFulfillmentContractSignAPIRequest)
+}
+
+// ReleaseTmallAliautoFulfillmentContractSignAPIRequest 将 TmallAliautoFulfillmentContractSignAPIRequest 放入 sync.Pool
+func ReleaseTmallAliautoFulfillmentContractSignAPIRequest(v *TmallAliautoFulfillmentContractSignAPIRequest) {
+	v.Reset()
+	poolTmallAliautoFulfillmentContractSignAPIRequest.Put(v)
 }

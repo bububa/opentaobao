@@ -1,5 +1,9 @@
 package icbulogistics
 
+import (
+	"sync"
+)
+
 // PlaceOrderDto 结构体
 type PlaceOrderDto struct {
 	// 货品信息
@@ -36,4 +40,37 @@ type PlaceOrderDto struct {
 	ReturnAddress *ContactAddress `json:"return_address,omitempty" xml:"return_address,omitempty"`
 	// 1
 	NeedPickup bool `json:"need_pickup,omitempty" xml:"need_pickup,omitempty"`
+}
+
+var poolPlaceOrderDto = sync.Pool{
+	New: func() any {
+		return new(PlaceOrderDto)
+	},
+}
+
+// GetPlaceOrderDto() 从对象池中获取PlaceOrderDto
+func GetPlaceOrderDto() *PlaceOrderDto {
+	return poolPlaceOrderDto.Get().(*PlaceOrderDto)
+}
+
+// ReleasePlaceOrderDto 释放PlaceOrderDto
+func ReleasePlaceOrderDto(v *PlaceOrderDto) {
+	v.CargoList = v.CargoList[:0]
+	v.PackageList = v.PackageList[:0]
+	v.OriginZipCode = ""
+	v.DestinationCountryCode = ""
+	v.WarehouseCode = ""
+	v.ProductCode = ""
+	v.DestinationZipCode = ""
+	v.SupplyChainBizId = ""
+	v.TradeBizId = ""
+	v.TradePlatform = ""
+	v.DeliverWarehouseExpress = nil
+	v.ConsignorAddress = nil
+	v.ExpressCustoms = nil
+	v.ConsigneeAddress = nil
+	v.PickupAddress = nil
+	v.ReturnAddress = nil
+	v.NeedPickup = false
+	poolPlaceOrderDto.Put(v)
 }

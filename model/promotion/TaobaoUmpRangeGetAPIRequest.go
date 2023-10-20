@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoUmpRangeGetAPIRequest struct {
 // NewTaobaoUmpRangeGetRequest 初始化TaobaoUmpRangeGetAPIRequest对象
 func NewTaobaoUmpRangeGetRequest() *TaobaoUmpRangeGetAPIRequest {
 	return &TaobaoUmpRangeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUmpRangeGetAPIRequest) Reset() {
+	r._actId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoUmpRangeGetAPIRequest) SetActId(_actId int64) error {
 // GetActId ActId Getter
 func (r TaobaoUmpRangeGetAPIRequest) GetActId() int64 {
 	return r._actId
+}
+
+var poolTaobaoUmpRangeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUmpRangeGetRequest()
+	},
+}
+
+// GetTaobaoUmpRangeGetRequest 从 sync.Pool 获取 TaobaoUmpRangeGetAPIRequest
+func GetTaobaoUmpRangeGetAPIRequest() *TaobaoUmpRangeGetAPIRequest {
+	return poolTaobaoUmpRangeGetAPIRequest.Get().(*TaobaoUmpRangeGetAPIRequest)
+}
+
+// ReleaseTaobaoUmpRangeGetAPIRequest 将 TaobaoUmpRangeGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUmpRangeGetAPIRequest(v *TaobaoUmpRangeGetAPIRequest) {
+	v.Reset()
+	poolTaobaoUmpRangeGetAPIRequest.Put(v)
 }

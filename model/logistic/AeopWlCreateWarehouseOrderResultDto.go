@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // AeopWlCreateWarehouseOrderResultDto 结构体
 type AeopWlCreateWarehouseOrderResultDto struct {
 	// 创建时错误信息
@@ -18,4 +22,28 @@ type AeopWlCreateWarehouseOrderResultDto struct {
 	WarehouseOrderId int64 `json:"warehouse_order_id,omitempty" xml:"warehouse_order_id,omitempty"`
 	// 创建订单是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAeopWlCreateWarehouseOrderResultDto = sync.Pool{
+	New: func() any {
+		return new(AeopWlCreateWarehouseOrderResultDto)
+	},
+}
+
+// GetAeopWlCreateWarehouseOrderResultDto() 从对象池中获取AeopWlCreateWarehouseOrderResultDto
+func GetAeopWlCreateWarehouseOrderResultDto() *AeopWlCreateWarehouseOrderResultDto {
+	return poolAeopWlCreateWarehouseOrderResultDto.Get().(*AeopWlCreateWarehouseOrderResultDto)
+}
+
+// ReleaseAeopWlCreateWarehouseOrderResultDto 释放AeopWlCreateWarehouseOrderResultDto
+func ReleaseAeopWlCreateWarehouseOrderResultDto(v *AeopWlCreateWarehouseOrderResultDto) {
+	v.ErrorDesc = ""
+	v.IntlTrackingNo = ""
+	v.TradeOrderFrom = ""
+	v.ErrorCode = 0
+	v.OutOrderId = 0
+	v.TradeOrderId = 0
+	v.WarehouseOrderId = 0
+	v.Success = false
+	poolAeopWlCreateWarehouseOrderResultDto.Put(v)
 }

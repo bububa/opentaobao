@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // DeliveryDecision 结构体
 type DeliveryDecision struct {
 	// ERP发货单号
@@ -30,4 +34,34 @@ type DeliveryDecision struct {
 	ReceiveTown string `json:"receive_town,omitempty" xml:"receive_town,omitempty"`
 	// 订单收货地地址编码（先识别编码，如果识别失败，解析地址）
 	ReceiveDivisionCode string `json:"receive_division_code,omitempty" xml:"receive_division_code,omitempty"`
+}
+
+var poolDeliveryDecision = sync.Pool{
+	New: func() any {
+		return new(DeliveryDecision)
+	},
+}
+
+// GetDeliveryDecision() 从对象池中获取DeliveryDecision
+func GetDeliveryDecision() *DeliveryDecision {
+	return poolDeliveryDecision.Get().(*DeliveryDecision)
+}
+
+// ReleaseDeliveryDecision 释放DeliveryDecision
+func ReleaseDeliveryDecision(v *DeliveryDecision) {
+	v.OrderCode = ""
+	v.SendProvince = ""
+	v.SendCity = ""
+	v.SendDistrict = ""
+	v.SendTown = ""
+	v.SendDivisionCode = ""
+	v.TradeId = ""
+	v.SubTradeId = ""
+	v.OrderFlag = ""
+	v.ReceiveProvince = ""
+	v.ReceiveCity = ""
+	v.ReceiveDistrict = ""
+	v.ReceiveTown = ""
+	v.ReceiveDivisionCode = ""
+	poolDeliveryDecision.Put(v)
 }

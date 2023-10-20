@@ -2,6 +2,7 @@ package ottpay
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YoukuOttIotStatusPushAPIRequest struct {
 // NewYoukuOttIotStatusPushRequest 初始化YoukuOttIotStatusPushAPIRequest对象
 func NewYoukuOttIotStatusPushRequest() *YoukuOttIotStatusPushAPIRequest {
 	return &YoukuOttIotStatusPushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuOttIotStatusPushAPIRequest) Reset() {
+	r._changeInfo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YoukuOttIotStatusPushAPIRequest) SetChangeInfo(_changeInfo string) erro
 // GetChangeInfo ChangeInfo Getter
 func (r YoukuOttIotStatusPushAPIRequest) GetChangeInfo() string {
 	return r._changeInfo
+}
+
+var poolYoukuOttIotStatusPushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuOttIotStatusPushRequest()
+	},
+}
+
+// GetYoukuOttIotStatusPushRequest 从 sync.Pool 获取 YoukuOttIotStatusPushAPIRequest
+func GetYoukuOttIotStatusPushAPIRequest() *YoukuOttIotStatusPushAPIRequest {
+	return poolYoukuOttIotStatusPushAPIRequest.Get().(*YoukuOttIotStatusPushAPIRequest)
+}
+
+// ReleaseYoukuOttIotStatusPushAPIRequest 将 YoukuOttIotStatusPushAPIRequest 放入 sync.Pool
+func ReleaseYoukuOttIotStatusPushAPIRequest(v *YoukuOttIotStatusPushAPIRequest) {
+	v.Reset()
+	poolYoukuOttIotStatusPushAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package jym
 
+import (
+	"sync"
+)
+
 // TaskSwitchReqDto 结构体
 type TaskSwitchReqDto struct {
 	// 游戏ID，0代表所有游戏
@@ -20,4 +24,29 @@ type TaskSwitchReqDto struct {
 	OperationSystem int64 `json:"operation_system,omitempty" xml:"operation_system,omitempty"`
 	// 规则状态，1-生效，2-失效
 	RuleStatus int64 `json:"rule_status,omitempty" xml:"rule_status,omitempty"`
+}
+
+var poolTaskSwitchReqDto = sync.Pool{
+	New: func() any {
+		return new(TaskSwitchReqDto)
+	},
+}
+
+// GetTaskSwitchReqDto() 从对象池中获取TaskSwitchReqDto
+func GetTaskSwitchReqDto() *TaskSwitchReqDto {
+	return poolTaskSwitchReqDto.Get().(*TaskSwitchReqDto)
+}
+
+// ReleaseTaskSwitchReqDto 释放TaskSwitchReqDto
+func ReleaseTaskSwitchReqDto(v *TaskSwitchReqDto) {
+	v.GameId = ""
+	v.Reason = ""
+	v.GameServer = ""
+	v.ClientId = ""
+	v.BeginTime = ""
+	v.EndTime = ""
+	v.TaskType = 0
+	v.OperationSystem = 0
+	v.RuleStatus = 0
+	poolTaskSwitchReqDto.Put(v)
 }

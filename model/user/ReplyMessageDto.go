@@ -1,5 +1,9 @@
 package user
 
+import (
+	"sync"
+)
+
 // ReplyMessageDto 结构体
 type ReplyMessageDto struct {
 	// text or mix
@@ -16,4 +20,27 @@ type ReplyMessageDto struct {
 	AppId string `json:"app_id,omitempty" xml:"app_id,omitempty"`
 	// 毫秒时间戳
 	CreateTime int64 `json:"create_time,omitempty" xml:"create_time,omitempty"`
+}
+
+var poolReplyMessageDto = sync.Pool{
+	New: func() any {
+		return new(ReplyMessageDto)
+	},
+}
+
+// GetReplyMessageDto() 从对象池中获取ReplyMessageDto
+func GetReplyMessageDto() *ReplyMessageDto {
+	return poolReplyMessageDto.Get().(*ReplyMessageDto)
+}
+
+// ReleaseReplyMessageDto 释放ReplyMessageDto
+func ReleaseReplyMessageDto(v *ReplyMessageDto) {
+	v.ContentType = ""
+	v.OriginalMessageId = ""
+	v.ReceiverId = ""
+	v.Content = ""
+	v.BizMessageTag = ""
+	v.AppId = ""
+	v.CreateTime = 0
+	poolReplyMessageDto.Put(v)
 }

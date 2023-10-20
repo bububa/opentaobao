@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // DerbyVoucherCardOrdersVo 结构体
 type DerbyVoucherCardOrdersVo struct {
 	// 商品数量
@@ -18,4 +22,28 @@ type DerbyVoucherCardOrdersVo struct {
 	OrderId string `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 商品图片
 	ProductPic string `json:"product_pic,omitempty" xml:"product_pic,omitempty"`
+}
+
+var poolDerbyVoucherCardOrdersVo = sync.Pool{
+	New: func() any {
+		return new(DerbyVoucherCardOrdersVo)
+	},
+}
+
+// GetDerbyVoucherCardOrdersVo() 从对象池中获取DerbyVoucherCardOrdersVo
+func GetDerbyVoucherCardOrdersVo() *DerbyVoucherCardOrdersVo {
+	return poolDerbyVoucherCardOrdersVo.Get().(*DerbyVoucherCardOrdersVo)
+}
+
+// ReleaseDerbyVoucherCardOrdersVo 释放DerbyVoucherCardOrdersVo
+func ReleaseDerbyVoucherCardOrdersVo(v *DerbyVoucherCardOrdersVo) {
+	v.ProductCount = ""
+	v.ProductPaidIn = ""
+	v.OrderTime = ""
+	v.ProductMinType = ""
+	v.OrderStatus = ""
+	v.CardStatus = ""
+	v.OrderId = ""
+	v.ProductPic = ""
+	poolDerbyVoucherCardOrdersVo.Put(v)
 }

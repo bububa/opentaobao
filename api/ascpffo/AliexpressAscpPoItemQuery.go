@@ -9,11 +9,6 @@ import (
 // aliexpress.ascp.po.item.query
 //
 // AE 供应链仓发 采购单明细查询
-func AliexpressAscpPoItemQuery(clt *core.SDKClient, req *ascpffo.AliexpressAscpPoItemQueryAPIRequest, session string) (*ascpffo.AliexpressAscpPoItemQueryAPIResponse, error) {
-	var resp ascpffo.AliexpressAscpPoItemQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressAscpPoItemQuery(clt *core.SDKClient, req *ascpffo.AliexpressAscpPoItemQueryAPIRequest, resp *ascpffo.AliexpressAscpPoItemQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

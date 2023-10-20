@@ -9,11 +9,6 @@ import (
 // tmall.exchange.returngoods.agree
 //
 // 卖家确认收货
-func TmallExchangeReturngoodsAgree(clt *core.SDKClient, req *exchange.TmallExchangeReturngoodsAgreeAPIRequest, session string) (*exchange.TmallExchangeReturngoodsAgreeAPIResponse, error) {
-	var resp exchange.TmallExchangeReturngoodsAgreeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallExchangeReturngoodsAgree(clt *core.SDKClient, req *exchange.TmallExchangeReturngoodsAgreeAPIRequest, resp *exchange.TmallExchangeReturngoodsAgreeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

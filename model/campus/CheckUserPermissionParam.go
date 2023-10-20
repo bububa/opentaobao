@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // CheckUserPermissionParam 结构体
 type CheckUserPermissionParam struct {
 	// 权限key
@@ -12,4 +16,25 @@ type CheckUserPermissionParam struct {
 	HierarchicalCheckRolePermissionGroup bool `json:"hierarchical_check_role_permission_group,omitempty" xml:"hierarchical_check_role_permission_group,omitempty"`
 	// 是否用户拥有菜单，就认为用户级联拥有菜单下的权限
 	HierarchicalObtainMenuPermission bool `json:"hierarchical_obtain_menu_permission,omitempty" xml:"hierarchical_obtain_menu_permission,omitempty"`
+}
+
+var poolCheckUserPermissionParam = sync.Pool{
+	New: func() any {
+		return new(CheckUserPermissionParam)
+	},
+}
+
+// GetCheckUserPermissionParam() 从对象池中获取CheckUserPermissionParam
+func GetCheckUserPermissionParam() *CheckUserPermissionParam {
+	return poolCheckUserPermissionParam.Get().(*CheckUserPermissionParam)
+}
+
+// ReleaseCheckUserPermissionParam 释放CheckUserPermissionParam
+func ReleaseCheckUserPermissionParam(v *CheckUserPermissionParam) {
+	v.PermissionKey = ""
+	v.UserId = ""
+	v.HierarchicalCheckPermissionGroup = false
+	v.HierarchicalCheckRolePermissionGroup = false
+	v.HierarchicalObtainMenuPermission = false
+	poolCheckUserPermissionParam.Put(v)
 }

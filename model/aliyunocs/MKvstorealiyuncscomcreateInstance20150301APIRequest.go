@@ -2,6 +2,7 @@ package aliyunocs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,7 +28,7 @@ type MKvstoreAliyuncsComCreateInstance20150301APIRequest struct {
 	// OCS实例所属vpc实例id。如果NetworkType参数为vpc，则本参数为必须。
 	_vpcId string
 	// OCS实例所属vpc实例的虚拟交换机ID。如果NetworkType参数为vpc，则本参数为必须。
-	_vswitchId string
+	_vSwitchId string
 	// OCS实例所属vpc内的私网IP地址。当NetworkType参数为vpc时有效。如果不带本参数，则系统通过VpcId和VSwitchId自动分配。如果此参数对应的私网IP地址不在VSwitchId包含的IP地址段内，则创建失败。
 	_privateIpAddress string
 	// 说明：实例容量设置单位：MByte输入范围请见OCS规格参数表
@@ -37,8 +38,23 @@ type MKvstoreAliyuncsComCreateInstance20150301APIRequest struct {
 // NewMKvstoreAliyuncsComCreateInstance20150301Request 初始化MKvstoreAliyuncsComCreateInstance20150301APIRequest对象
 func NewMKvstoreAliyuncsComCreateInstance20150301Request() *MKvstoreAliyuncsComCreateInstance20150301APIRequest {
 	return &MKvstoreAliyuncsComCreateInstance20150301APIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *MKvstoreAliyuncsComCreateInstance20150301APIRequest) Reset() {
+	r._instanceName = ""
+	r._password = ""
+	r._regionId = ""
+	r._token = ""
+	r._zoneId = ""
+	r._networkType = ""
+	r._vpcId = ""
+	r._vSwitchId = ""
+	r._privateIpAddress = ""
+	r._capacity = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -149,17 +165,17 @@ func (r MKvstoreAliyuncsComCreateInstance20150301APIRequest) GetVpcId() string {
 	return r._vpcId
 }
 
-// SetVswitchId is VswitchId Setter
+// SetVSwitchId is VSwitchId Setter
 // OCS实例所属vpc实例的虚拟交换机ID。如果NetworkType参数为vpc，则本参数为必须。
-func (r *MKvstoreAliyuncsComCreateInstance20150301APIRequest) SetVswitchId(_vswitchId string) error {
-	r._vswitchId = _vswitchId
-	r.Set("VSwitchId", _vswitchId)
+func (r *MKvstoreAliyuncsComCreateInstance20150301APIRequest) SetVSwitchId(_vSwitchId string) error {
+	r._vSwitchId = _vSwitchId
+	r.Set("VSwitchId", _vSwitchId)
 	return nil
 }
 
-// GetVswitchId VswitchId Getter
-func (r MKvstoreAliyuncsComCreateInstance20150301APIRequest) GetVswitchId() string {
-	return r._vswitchId
+// GetVSwitchId VSwitchId Getter
+func (r MKvstoreAliyuncsComCreateInstance20150301APIRequest) GetVSwitchId() string {
+	return r._vSwitchId
 }
 
 // SetPrivateIpAddress is PrivateIpAddress Setter
@@ -186,4 +202,21 @@ func (r *MKvstoreAliyuncsComCreateInstance20150301APIRequest) SetCapacity(_capac
 // GetCapacity Capacity Getter
 func (r MKvstoreAliyuncsComCreateInstance20150301APIRequest) GetCapacity() int64 {
 	return r._capacity
+}
+
+var poolMKvstoreAliyuncsComCreateInstance20150301APIRequest = sync.Pool{
+	New: func() any {
+		return NewMKvstoreAliyuncsComCreateInstance20150301Request()
+	},
+}
+
+// GetMKvstoreAliyuncsComCreateInstance20150301Request 从 sync.Pool 获取 MKvstoreAliyuncsComCreateInstance20150301APIRequest
+func GetMKvstoreAliyuncsComCreateInstance20150301APIRequest() *MKvstoreAliyuncsComCreateInstance20150301APIRequest {
+	return poolMKvstoreAliyuncsComCreateInstance20150301APIRequest.Get().(*MKvstoreAliyuncsComCreateInstance20150301APIRequest)
+}
+
+// ReleaseMKvstoreAliyuncsComCreateInstance20150301APIRequest 将 MKvstoreAliyuncsComCreateInstance20150301APIRequest 放入 sync.Pool
+func ReleaseMKvstoreAliyuncsComCreateInstance20150301APIRequest(v *MKvstoreAliyuncsComCreateInstance20150301APIRequest) {
+	v.Reset()
+	poolMKvstoreAliyuncsComCreateInstance20150301APIRequest.Put(v)
 }

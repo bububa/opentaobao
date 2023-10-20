@@ -1,5 +1,9 @@
 package cmns
 
+import (
+	"sync"
+)
+
 // PushRequest 结构体
 type PushRequest struct {
 	// 消息内容, 为json字符串,格式详见http://open.yunos.com/doc/detail?spm=a2c01.7698725.0002.40.ZNPFOJ&amp;documentId=102975
@@ -20,4 +24,29 @@ type PushRequest struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 消息发送优先级，范围为1-5，数字越高，优先级越大，不设置默认优先级为2
 	Priority int64 `json:"priority,omitempty" xml:"priority,omitempty"`
+}
+
+var poolPushRequest = sync.Pool{
+	New: func() any {
+		return new(PushRequest)
+	},
+}
+
+// GetPushRequest() 从对象池中获取PushRequest
+func GetPushRequest() *PushRequest {
+	return poolPushRequest.Get().(*PushRequest)
+}
+
+// ReleasePushRequest 释放PushRequest
+func ReleasePushRequest(v *PushRequest) {
+	v.Msg = ""
+	v.BizAppKey = ""
+	v.CollapseKey = ""
+	v.DeviceType = 0
+	v.Expiration = 0
+	v.IosEnvironment = 0
+	v.Receiver = nil
+	v.Type = 0
+	v.Priority = 0
+	poolPushRequest.Put(v)
 }

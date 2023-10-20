@@ -2,6 +2,7 @@ package vms
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type CainiaoVmsServiceVehicleinfoUploadAPIResponse struct {
 	CainiaoVmsServiceVehicleinfoUploadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *CainiaoVmsServiceVehicleinfoUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoVmsServiceVehicleinfoUploadAPIResponseModel).Reset()
+}
+
 // CainiaoVmsServiceVehicleinfoUploadAPIResponseModel is 新能源车--外部车辆信息回传 成功返回结果
 type CainiaoVmsServiceVehicleinfoUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_vms_service_vehicleinfo_upload_response"`
@@ -22,4 +29,27 @@ type CainiaoVmsServiceVehicleinfoUploadAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *AppBaseResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoVmsServiceVehicleinfoUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolCainiaoVmsServiceVehicleinfoUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoVmsServiceVehicleinfoUploadAPIResponse)
+	},
+}
+
+// GetCainiaoVmsServiceVehicleinfoUploadAPIResponse 从 sync.Pool 获取 CainiaoVmsServiceVehicleinfoUploadAPIResponse
+func GetCainiaoVmsServiceVehicleinfoUploadAPIResponse() *CainiaoVmsServiceVehicleinfoUploadAPIResponse {
+	return poolCainiaoVmsServiceVehicleinfoUploadAPIResponse.Get().(*CainiaoVmsServiceVehicleinfoUploadAPIResponse)
+}
+
+// ReleaseCainiaoVmsServiceVehicleinfoUploadAPIResponse 将 CainiaoVmsServiceVehicleinfoUploadAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoVmsServiceVehicleinfoUploadAPIResponse(v *CainiaoVmsServiceVehicleinfoUploadAPIResponse) {
+	v.Reset()
+	poolCainiaoVmsServiceVehicleinfoUploadAPIResponse.Put(v)
 }

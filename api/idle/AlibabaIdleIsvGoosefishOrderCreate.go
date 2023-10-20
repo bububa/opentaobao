@@ -9,11 +9,6 @@ import (
 // alibaba.idle.isv.goosefish.order.create
 //
 // 闲鱼三方安康容器订单创建
-func AlibabaIdleIsvGoosefishOrderCreate(clt *core.SDKClient, req *idle.AlibabaIdleIsvGoosefishOrderCreateAPIRequest, session string) (*idle.AlibabaIdleIsvGoosefishOrderCreateAPIResponse, error) {
-	var resp idle.AlibabaIdleIsvGoosefishOrderCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleIsvGoosefishOrderCreate(clt *core.SDKClient, req *idle.AlibabaIdleIsvGoosefishOrderCreateAPIRequest, resp *idle.AlibabaIdleIsvGoosefishOrderCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

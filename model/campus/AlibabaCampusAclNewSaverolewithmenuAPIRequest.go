@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaCampusAclNewSaverolewithmenuAPIRequest struct {
 // NewAlibabaCampusAclNewSaverolewithmenuRequest 初始化AlibabaCampusAclNewSaverolewithmenuAPIRequest对象
 func NewAlibabaCampusAclNewSaverolewithmenuRequest() *AlibabaCampusAclNewSaverolewithmenuAPIRequest {
 	return &AlibabaCampusAclNewSaverolewithmenuAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusAclNewSaverolewithmenuAPIRequest) Reset() {
+	r._treeNodeIds = r._treeNodeIds[:0]
+	r._workbenchcontext = nil
+	r._sysRoleDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaCampusAclNewSaverolewithmenuAPIRequest) SetSysRoleDTO(_sysRoleDT
 // GetSysRoleDTO SysRoleDTO Getter
 func (r AlibabaCampusAclNewSaverolewithmenuAPIRequest) GetSysRoleDTO() *SysRoleDto {
 	return r._sysRoleDTO
+}
+
+var poolAlibabaCampusAclNewSaverolewithmenuAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusAclNewSaverolewithmenuRequest()
+	},
+}
+
+// GetAlibabaCampusAclNewSaverolewithmenuRequest 从 sync.Pool 获取 AlibabaCampusAclNewSaverolewithmenuAPIRequest
+func GetAlibabaCampusAclNewSaverolewithmenuAPIRequest() *AlibabaCampusAclNewSaverolewithmenuAPIRequest {
+	return poolAlibabaCampusAclNewSaverolewithmenuAPIRequest.Get().(*AlibabaCampusAclNewSaverolewithmenuAPIRequest)
+}
+
+// ReleaseAlibabaCampusAclNewSaverolewithmenuAPIRequest 将 AlibabaCampusAclNewSaverolewithmenuAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusAclNewSaverolewithmenuAPIRequest(v *AlibabaCampusAclNewSaverolewithmenuAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusAclNewSaverolewithmenuAPIRequest.Put(v)
 }

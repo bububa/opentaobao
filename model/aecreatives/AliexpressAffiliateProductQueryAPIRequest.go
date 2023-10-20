@@ -2,6 +2,7 @@ package aecreatives
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -47,8 +48,28 @@ type AliexpressAffiliateProductQueryAPIRequest struct {
 // NewAliexpressAffiliateProductQueryRequest 初始化AliexpressAffiliateProductQueryAPIRequest对象
 func NewAliexpressAffiliateProductQueryRequest() *AliexpressAffiliateProductQueryAPIRequest {
 	return &AliexpressAffiliateProductQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(15),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressAffiliateProductQueryAPIRequest) Reset() {
+	r._appSignature = ""
+	r._categoryIds = ""
+	r._fields = ""
+	r._keywords = ""
+	r._platformProductType = ""
+	r._sort = ""
+	r._targetCurrency = ""
+	r._targetLanguage = ""
+	r._trackingId = ""
+	r._shipToCountry = ""
+	r._deliveryDays = ""
+	r._maxSalePrice = 0
+	r._minSalePrice = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -261,4 +282,21 @@ func (r *AliexpressAffiliateProductQueryAPIRequest) SetPageSize(_pageSize int64)
 // GetPageSize PageSize Getter
 func (r AliexpressAffiliateProductQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAliexpressAffiliateProductQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressAffiliateProductQueryRequest()
+	},
+}
+
+// GetAliexpressAffiliateProductQueryRequest 从 sync.Pool 获取 AliexpressAffiliateProductQueryAPIRequest
+func GetAliexpressAffiliateProductQueryAPIRequest() *AliexpressAffiliateProductQueryAPIRequest {
+	return poolAliexpressAffiliateProductQueryAPIRequest.Get().(*AliexpressAffiliateProductQueryAPIRequest)
+}
+
+// ReleaseAliexpressAffiliateProductQueryAPIRequest 将 AliexpressAffiliateProductQueryAPIRequest 放入 sync.Pool
+func ReleaseAliexpressAffiliateProductQueryAPIRequest(v *AliexpressAffiliateProductQueryAPIRequest) {
+	v.Reset()
+	poolAliexpressAffiliateProductQueryAPIRequest.Put(v)
 }

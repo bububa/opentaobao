@@ -1,5 +1,9 @@
 package wangwang
 
+import (
+	"sync"
+)
+
 // EvalDetail 结构体
 type EvalDetail struct {
 	// 发送评价邀请的商家客服昵称
@@ -18,4 +22,28 @@ type EvalDetail struct {
 	EvalCode int64 `json:"eval_code,omitempty" xml:"eval_code,omitempty"`
 	// 评价来源：0-客服邀评；1-消费者自主评价；2-系统邀评
 	Source int64 `json:"source,omitempty" xml:"source,omitempty"`
+}
+
+var poolEvalDetail = sync.Pool{
+	New: func() any {
+		return new(EvalDetail)
+	},
+}
+
+// GetEvalDetail() 从对象池中获取EvalDetail
+func GetEvalDetail() *EvalDetail {
+	return poolEvalDetail.Get().(*EvalDetail)
+}
+
+// ReleaseEvalDetail 释放EvalDetail
+func ReleaseEvalDetail(v *EvalDetail) {
+	v.EvalSender = ""
+	v.EvalTime = ""
+	v.OpenUid = ""
+	v.SendTime = ""
+	v.LabelName = ""
+	v.EvalRecer = ""
+	v.EvalCode = 0
+	v.Source = 0
+	poolEvalDetail.Put(v)
 }

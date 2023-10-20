@@ -2,6 +2,7 @@ package moziacl
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaMoziAclGrantGrantroleAPIResponse struct {
 	AlibabaMoziAclGrantGrantroleAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaMoziAclGrantGrantroleAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaMoziAclGrantGrantroleAPIResponseModel).Reset()
+}
+
 // AlibabaMoziAclGrantGrantroleAPIResponseModel is 将一个角色授予一个账号 成功返回结果
 type AlibabaMoziAclGrantGrantroleAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mozi_acl_grant_grantrole_response"`
@@ -22,4 +29,27 @@ type AlibabaMoziAclGrantGrantroleAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 给账号授予角色结果
 	Result *GrantRolesResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaMoziAclGrantGrantroleAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaMoziAclGrantGrantroleAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaMoziAclGrantGrantroleAPIResponse)
+	},
+}
+
+// GetAlibabaMoziAclGrantGrantroleAPIResponse 从 sync.Pool 获取 AlibabaMoziAclGrantGrantroleAPIResponse
+func GetAlibabaMoziAclGrantGrantroleAPIResponse() *AlibabaMoziAclGrantGrantroleAPIResponse {
+	return poolAlibabaMoziAclGrantGrantroleAPIResponse.Get().(*AlibabaMoziAclGrantGrantroleAPIResponse)
+}
+
+// ReleaseAlibabaMoziAclGrantGrantroleAPIResponse 将 AlibabaMoziAclGrantGrantroleAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaMoziAclGrantGrantroleAPIResponse(v *AlibabaMoziAclGrantGrantroleAPIResponse) {
+	v.Reset()
+	poolAlibabaMoziAclGrantGrantroleAPIResponse.Put(v)
 }

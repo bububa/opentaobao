@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // OutSourceOrderCreateReq 结构体
 type OutSourceOrderCreateReq struct {
 	// 入住人信息
@@ -72,4 +76,55 @@ type OutSourceOrderCreateReq struct {
 	SellerPromotion int64 `json:"seller_promotion,omitempty" xml:"seller_promotion,omitempty"`
 	// 是否直连订单
 	IsDirectOrder bool `json:"is_direct_order,omitempty" xml:"is_direct_order,omitempty"`
+}
+
+var poolOutSourceOrderCreateReq = sync.Pool{
+	New: func() any {
+		return new(OutSourceOrderCreateReq)
+	},
+}
+
+// GetOutSourceOrderCreateReq() 从对象池中获取OutSourceOrderCreateReq
+func GetOutSourceOrderCreateReq() *OutSourceOrderCreateReq {
+	return poolOutSourceOrderCreateReq.Get().(*OutSourceOrderCreateReq)
+}
+
+// ReleaseOutSourceOrderCreateReq 释放OutSourceOrderCreateReq
+func ReleaseOutSourceOrderCreateReq(v *OutSourceOrderCreateReq) {
+	v.GuestInfoList = v.GuestInfoList[:0]
+	v.DailyPriceInfoList = v.DailyPriceInfoList[:0]
+	v.CreateAppKey = ""
+	v.Memo = ""
+	v.Title = ""
+	v.OutUserId = ""
+	v.OutSource = ""
+	v.LateArriveTime = ""
+	v.Checkout = ""
+	v.ContactName = ""
+	v.RoomTypeName = ""
+	v.GmtCreate = ""
+	v.Ttid = ""
+	v.HotelName = ""
+	v.CheckIn = ""
+	v.OutOrderId = ""
+	v.Attributes = ""
+	v.ContactPhone = ""
+	v.CancelPolicyDesc = ""
+	v.Hid = 0
+	v.RoomNumber = 0
+	v.TagJsqr = 0
+	v.Gid = 0
+	v.Rid = 0
+	v.RpId = 0
+	v.RateId = 0
+	v.Srid = 0
+	v.SellerId = 0
+	v.ItemIid = 0
+	v.TotalRoomPrice = 0
+	v.CancelPolicy = nil
+	v.InventoryTypeFlag = 0
+	v.PlatformPromotion = 0
+	v.SellerPromotion = 0
+	v.IsDirectOrder = false
+	poolOutSourceOrderCreateReq.Put(v)
 }

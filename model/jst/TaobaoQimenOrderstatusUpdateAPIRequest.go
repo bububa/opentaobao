@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoQimenOrderstatusUpdateAPIRequest struct {
 // NewTaobaoQimenOrderstatusUpdateRequest 初始化TaobaoQimenOrderstatusUpdateAPIRequest对象
 func NewTaobaoQimenOrderstatusUpdateRequest() *TaobaoQimenOrderstatusUpdateAPIRequest {
 	return &TaobaoQimenOrderstatusUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenOrderstatusUpdateAPIRequest) Reset() {
+	r._orderCodes = r._orderCodes[:0]
+	r._allocationCode = ""
+	r._type = ""
+	r._status = ""
+	r._operator = ""
+	r._actionTime = ""
+	r._storeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetStoreId(_storeId int64) erro
 // GetStoreId StoreId Getter
 func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetStoreId() int64 {
 	return r._storeId
+}
+
+var poolTaobaoQimenOrderstatusUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenOrderstatusUpdateRequest()
+	},
+}
+
+// GetTaobaoQimenOrderstatusUpdateRequest 从 sync.Pool 获取 TaobaoQimenOrderstatusUpdateAPIRequest
+func GetTaobaoQimenOrderstatusUpdateAPIRequest() *TaobaoQimenOrderstatusUpdateAPIRequest {
+	return poolTaobaoQimenOrderstatusUpdateAPIRequest.Get().(*TaobaoQimenOrderstatusUpdateAPIRequest)
+}
+
+// ReleaseTaobaoQimenOrderstatusUpdateAPIRequest 将 TaobaoQimenOrderstatusUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenOrderstatusUpdateAPIRequest(v *TaobaoQimenOrderstatusUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenOrderstatusUpdateAPIRequest.Put(v)
 }

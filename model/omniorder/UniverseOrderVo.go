@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // UniverseOrderVo 结构体
 type UniverseOrderVo struct {
 	// 订单支付时间：yyyy-MM-dd HH:mm:ss
@@ -44,4 +48,41 @@ type UniverseOrderVo struct {
 	GuideSales int64 `json:"guide_sales,omitempty" xml:"guide_sales,omitempty"`
 	// 订单金额，单位分
 	OrderMoney int64 `json:"order_money,omitempty" xml:"order_money,omitempty"`
+}
+
+var poolUniverseOrderVo = sync.Pool{
+	New: func() any {
+		return new(UniverseOrderVo)
+	},
+}
+
+// GetUniverseOrderVo() 从对象池中获取UniverseOrderVo
+func GetUniverseOrderVo() *UniverseOrderVo {
+	return poolUniverseOrderVo.Get().(*UniverseOrderVo)
+}
+
+// ReleaseUniverseOrderVo 释放UniverseOrderVo
+func ReleaseUniverseOrderVo(v *UniverseOrderVo) {
+	v.OrderPayTime = ""
+	v.OuterOrderId = ""
+	v.OrderCreateTime = ""
+	v.GuideWorkId = ""
+	v.OrderEndTime = ""
+	v.OrderGoodsTime = ""
+	v.GuidePhone = ""
+	v.BuyerNick = ""
+	v.AuctionId = ""
+	v.BizOrderId = ""
+	v.OrderId = ""
+	v.BuyerPhone = ""
+	v.EmployeeId = 0
+	v.CommissionMoney = 0
+	v.OrderType = 0
+	v.OrderSource = 0
+	v.OrderStatus = 0
+	v.BuyerId = 0
+	v.CommissionRatio = 0
+	v.GuideSales = 0
+	v.OrderMoney = 0
+	poolUniverseOrderVo.Put(v)
 }

@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenOrderexceptionReportAPIRequest struct {
 // NewTaobaoQimenOrderexceptionReportRequest 初始化TaobaoQimenOrderexceptionReportAPIRequest对象
 func NewTaobaoQimenOrderexceptionReportRequest() *TaobaoQimenOrderexceptionReportAPIRequest {
 	return &TaobaoQimenOrderexceptionReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenOrderexceptionReportAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -50,4 +57,21 @@ func (r *TaobaoQimenOrderexceptionReportAPIRequest) SetRequest(_request *TaobaoQ
 // GetRequest Request Getter
 func (r TaobaoQimenOrderexceptionReportAPIRequest) GetRequest() *TaobaoQimenOrderexceptionReportRequest {
 	return r._request
+}
+
+var poolTaobaoQimenOrderexceptionReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenOrderexceptionReportRequest()
+	},
+}
+
+// GetTaobaoQimenOrderexceptionReportRequest 从 sync.Pool 获取 TaobaoQimenOrderexceptionReportAPIRequest
+func GetTaobaoQimenOrderexceptionReportAPIRequest() *TaobaoQimenOrderexceptionReportAPIRequest {
+	return poolTaobaoQimenOrderexceptionReportAPIRequest.Get().(*TaobaoQimenOrderexceptionReportAPIRequest)
+}
+
+// ReleaseTaobaoQimenOrderexceptionReportAPIRequest 将 TaobaoQimenOrderexceptionReportAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenOrderexceptionReportAPIRequest(v *TaobaoQimenOrderexceptionReportAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenOrderexceptionReportAPIRequest.Put(v)
 }

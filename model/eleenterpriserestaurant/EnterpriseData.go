@@ -1,5 +1,9 @@
 package eleenterpriserestaurant
 
+import (
+	"sync"
+)
+
 // EnterpriseData 结构体
 type EnterpriseData struct {
 	// 活动, 参考餐厅活动
@@ -80,4 +84,59 @@ type EnterpriseData struct {
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
 	// 是否为活动商品
 	IsActivity bool `json:"is_activity,omitempty" xml:"is_activity,omitempty"`
+}
+
+var poolEnterpriseData = sync.Pool{
+	New: func() any {
+		return new(EnterpriseData)
+	},
+}
+
+// GetEnterpriseData() 从对象池中获取EnterpriseData
+func GetEnterpriseData() *EnterpriseData {
+	return poolEnterpriseData.Get().(*EnterpriseData)
+}
+
+// ReleaseEnterpriseData 释放EnterpriseData
+func ReleaseEnterpriseData(v *EnterpriseData) {
+	v.Activities = v.Activities[:0]
+	v.ServingTimes = v.ServingTimes[:0]
+	v.PhoneList = v.PhoneList[:0]
+	v.DataList = v.DataList[:0]
+	v.Foods = v.Foods[:0]
+	v.Name = ""
+	v.Latitude = ""
+	v.Longitude = ""
+	v.Distance = ""
+	v.Rating = ""
+	v.OnlyRestaurantCode = ""
+	v.PromotionInfo = ""
+	v.AgentFee = ""
+	v.RestaurantName = ""
+	v.ImageUrl = ""
+	v.DeliverAmount = ""
+	v.ErestaurantId = ""
+	v.SerialNumber = ""
+	v.IsInsurance = ""
+	v.AddressText = ""
+	v.AverageCost = ""
+	v.RankId = ""
+	v.Description = ""
+	v.Channel = 0
+	v.Id = 0
+	v.ParentId = 0
+	v.RecentOrderNum = 0
+	v.DeliverSpent = 0
+	v.IsOpen = 0
+	v.IsDistRst = 0
+	v.Invoice = 0
+	v.IsBookable = 0
+	v.IsNew = 0
+	v.IsPremium = 0
+	v.TotalStatus = 0
+	v.Type = 0
+	v.IsDeliverable = false
+	v.HasNext = false
+	v.IsActivity = false
+	poolEnterpriseData.Put(v)
 }

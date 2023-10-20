@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // RefundFundDetailInfo 结构体
 type RefundFundDetailInfo struct {
 	// 外部订单号
@@ -24,4 +28,31 @@ type RefundFundDetailInfo struct {
 	RefundFee int64 `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// 退款成功时间
 	SuccessTime int64 `json:"success_time,omitempty" xml:"success_time,omitempty"`
+}
+
+var poolRefundFundDetailInfo = sync.Pool{
+	New: func() any {
+		return new(RefundFundDetailInfo)
+	},
+}
+
+// GetRefundFundDetailInfo() 从对象池中获取RefundFundDetailInfo
+func GetRefundFundDetailInfo() *RefundFundDetailInfo {
+	return poolRefundFundDetailInfo.Get().(*RefundFundDetailInfo)
+}
+
+// ReleaseRefundFundDetailInfo 释放RefundFundDetailInfo
+func ReleaseRefundFundDetailInfo(v *RefundFundDetailInfo) {
+	v.OutOrderNo = ""
+	v.OutPayChannelId = ""
+	v.OutPayChannelName = ""
+	v.OutPayCode = ""
+	v.OutRefundFundDetailNo = ""
+	v.OutRefundNo = ""
+	v.OutRefundOrderNo = ""
+	v.Status = ""
+	v.ExtInfo = ""
+	v.RefundFee = 0
+	v.SuccessTime = 0
+	poolRefundFundDetailInfo.Put(v)
 }

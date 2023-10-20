@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoTbkScInvitecodeGetAPIRequest struct {
 // NewTaobaoTbkScInvitecodeGetRequest 初始化TaobaoTbkScInvitecodeGetAPIRequest对象
 func NewTaobaoTbkScInvitecodeGetRequest() *TaobaoTbkScInvitecodeGetAPIRequest {
 	return &TaobaoTbkScInvitecodeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkScInvitecodeGetAPIRequest) Reset() {
+	r._relationApp = ""
+	r._relationId = 0
+	r._codeType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoTbkScInvitecodeGetAPIRequest) SetCodeType(_codeType int64) error 
 // GetCodeType CodeType Getter
 func (r TaobaoTbkScInvitecodeGetAPIRequest) GetCodeType() int64 {
 	return r._codeType
+}
+
+var poolTaobaoTbkScInvitecodeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkScInvitecodeGetRequest()
+	},
+}
+
+// GetTaobaoTbkScInvitecodeGetRequest 从 sync.Pool 获取 TaobaoTbkScInvitecodeGetAPIRequest
+func GetTaobaoTbkScInvitecodeGetAPIRequest() *TaobaoTbkScInvitecodeGetAPIRequest {
+	return poolTaobaoTbkScInvitecodeGetAPIRequest.Get().(*TaobaoTbkScInvitecodeGetAPIRequest)
+}
+
+// ReleaseTaobaoTbkScInvitecodeGetAPIRequest 将 TaobaoTbkScInvitecodeGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkScInvitecodeGetAPIRequest(v *TaobaoTbkScInvitecodeGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkScInvitecodeGetAPIRequest.Put(v)
 }

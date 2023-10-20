@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoFenxiaoTradePrepayOfflineAddAPIResponse struct {
 	TaobaoFenxiaoTradePrepayOfflineAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoFenxiaoTradePrepayOfflineAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFenxiaoTradePrepayOfflineAddAPIResponseModel).Reset()
+}
+
 // TaobaoFenxiaoTradePrepayOfflineAddAPIResponseModel is 线下预存款流水增加 成功返回结果
 type TaobaoFenxiaoTradePrepayOfflineAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_trade_prepay_offline_add_response"`
@@ -22,4 +29,27 @@ type TaobaoFenxiaoTradePrepayOfflineAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *TaobaoFenxiaoTradePrepayOfflineAddResultTopDo `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFenxiaoTradePrepayOfflineAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoFenxiaoTradePrepayOfflineAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFenxiaoTradePrepayOfflineAddAPIResponse)
+	},
+}
+
+// GetTaobaoFenxiaoTradePrepayOfflineAddAPIResponse 从 sync.Pool 获取 TaobaoFenxiaoTradePrepayOfflineAddAPIResponse
+func GetTaobaoFenxiaoTradePrepayOfflineAddAPIResponse() *TaobaoFenxiaoTradePrepayOfflineAddAPIResponse {
+	return poolTaobaoFenxiaoTradePrepayOfflineAddAPIResponse.Get().(*TaobaoFenxiaoTradePrepayOfflineAddAPIResponse)
+}
+
+// ReleaseTaobaoFenxiaoTradePrepayOfflineAddAPIResponse 将 TaobaoFenxiaoTradePrepayOfflineAddAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFenxiaoTradePrepayOfflineAddAPIResponse(v *TaobaoFenxiaoTradePrepayOfflineAddAPIResponse) {
+	v.Reset()
+	poolTaobaoFenxiaoTradePrepayOfflineAddAPIResponse.Put(v)
 }

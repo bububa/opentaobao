@@ -2,6 +2,7 @@ package iot
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAilabAicloudTopDeviceAuthresultGetAPIResponse struct {
 	TaobaoAilabAicloudTopDeviceAuthresultGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopDeviceAuthresultGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAilabAicloudTopDeviceAuthresultGetAPIResponseModel).Reset()
+}
+
 // TaobaoAilabAicloudTopDeviceAuthresultGetAPIResponseModel is 获取设备授权码验证结果 成功返回结果
 type TaobaoAilabAicloudTopDeviceAuthresultGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_device_authresult_get_response"`
@@ -22,4 +29,27 @@ type TaobaoAilabAicloudTopDeviceAuthresultGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *AiCloudResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopDeviceAuthresultGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoAilabAicloudTopDeviceAuthresultGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAilabAicloudTopDeviceAuthresultGetAPIResponse)
+	},
+}
+
+// GetTaobaoAilabAicloudTopDeviceAuthresultGetAPIResponse 从 sync.Pool 获取 TaobaoAilabAicloudTopDeviceAuthresultGetAPIResponse
+func GetTaobaoAilabAicloudTopDeviceAuthresultGetAPIResponse() *TaobaoAilabAicloudTopDeviceAuthresultGetAPIResponse {
+	return poolTaobaoAilabAicloudTopDeviceAuthresultGetAPIResponse.Get().(*TaobaoAilabAicloudTopDeviceAuthresultGetAPIResponse)
+}
+
+// ReleaseTaobaoAilabAicloudTopDeviceAuthresultGetAPIResponse 将 TaobaoAilabAicloudTopDeviceAuthresultGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAilabAicloudTopDeviceAuthresultGetAPIResponse(v *TaobaoAilabAicloudTopDeviceAuthresultGetAPIResponse) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopDeviceAuthresultGetAPIResponse.Put(v)
 }

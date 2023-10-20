@@ -1,5 +1,9 @@
 package alihealthoutflow
 
+import (
+	"sync"
+)
+
 // QuickAppRequest 结构体
 type QuickAppRequest struct {
 	// 场景id
@@ -16,4 +20,27 @@ type QuickAppRequest struct {
 	Latitude string `json:"latitude,omitempty" xml:"latitude,omitempty"`
 	// 经度
 	Longitude string `json:"longitude,omitempty" xml:"longitude,omitempty"`
+}
+
+var poolQuickAppRequest = sync.Pool{
+	New: func() any {
+		return new(QuickAppRequest)
+	},
+}
+
+// GetQuickAppRequest() 从对象池中获取QuickAppRequest
+func GetQuickAppRequest() *QuickAppRequest {
+	return poolQuickAppRequest.Get().(*QuickAppRequest)
+}
+
+// ReleaseQuickAppRequest 释放QuickAppRequest
+func ReleaseQuickAppRequest(v *QuickAppRequest) {
+	v.SceneId = ""
+	v.ShowTime = ""
+	v.Channel = ""
+	v.AppVersion = ""
+	v.CityCode = ""
+	v.Latitude = ""
+	v.Longitude = ""
+	poolQuickAppRequest.Put(v)
 }

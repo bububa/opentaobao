@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // WorkerTag 结构体
 type WorkerTag struct {
 	// 错误码
@@ -20,4 +24,29 @@ type WorkerTag struct {
 	Vip bool `json:"vip,omitempty" xml:"vip,omitempty"`
 	// 大促工人
 	BigPromotion bool `json:"big_promotion,omitempty" xml:"big_promotion,omitempty"`
+}
+
+var poolWorkerTag = sync.Pool{
+	New: func() any {
+		return new(WorkerTag)
+	},
+}
+
+// GetWorkerTag() 从对象池中获取WorkerTag
+func GetWorkerTag() *WorkerTag {
+	return poolWorkerTag.Get().(*WorkerTag)
+}
+
+// ReleaseWorkerTag 释放WorkerTag
+func ReleaseWorkerTag(v *WorkerTag) {
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.AbilityMap = ""
+	v.ResultData = nil
+	v.Success = false
+	v.BlackList = false
+	v.Degradation = false
+	v.Vip = false
+	v.BigPromotion = false
+	poolWorkerTag.Put(v)
 }

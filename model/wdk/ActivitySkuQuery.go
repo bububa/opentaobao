@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ActivitySkuQuery 结构体
 type ActivitySkuQuery struct {
 	// 需要查询的商品skuCodes
@@ -14,4 +18,26 @@ type ActivitySkuQuery struct {
 	Page *BasePageQuery `json:"page,omitempty" xml:"page,omitempty"`
 	// 是否自定义渠道同步
 	ByChannel bool `json:"by_channel,omitempty" xml:"by_channel,omitempty"`
+}
+
+var poolActivitySkuQuery = sync.Pool{
+	New: func() any {
+		return new(ActivitySkuQuery)
+	},
+}
+
+// GetActivitySkuQuery() 从对象池中获取ActivitySkuQuery
+func GetActivitySkuQuery() *ActivitySkuQuery {
+	return poolActivitySkuQuery.Get().(*ActivitySkuQuery)
+}
+
+// ReleaseActivitySkuQuery 释放ActivitySkuQuery
+func ReleaseActivitySkuQuery(v *ActivitySkuQuery) {
+	v.SkuCodes = v.SkuCodes[:0]
+	v.ChannelConfigList = v.ChannelConfigList[:0]
+	v.OutActId = ""
+	v.ActivityId = 0
+	v.Page = nil
+	v.ByChannel = false
+	poolActivitySkuQuery.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // tmall.hk.clearance.info.send
 //
 // 清关信息回调通知
-func TmallHkClearanceInfoSend(clt *core.SDKClient, req *tmallhk.TmallHkClearanceInfoSendAPIRequest, session string) (*tmallhk.TmallHkClearanceInfoSendAPIResponse, error) {
-	var resp tmallhk.TmallHkClearanceInfoSendAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallHkClearanceInfoSend(clt *core.SDKClient, req *tmallhk.TmallHkClearanceInfoSendAPIRequest, resp *tmallhk.TmallHkClearanceInfoSendAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

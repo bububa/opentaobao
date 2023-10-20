@@ -2,6 +2,7 @@ package lstspeacker
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest struct {
 // NewAlibabaLstSpeakerConfigureAdjustvolumeRequest 初始化AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest对象
 func NewAlibabaLstSpeakerConfigureAdjustvolumeRequest() *AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest {
 	return &AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) Reset() {
+	r._deviceCode = ""
+	r._volume = ""
+	r._valueType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) SetValueType(_valueTy
 // GetValueType ValueType Getter
 func (r AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) GetValueType() string {
 	return r._valueType
+}
+
+var poolAlibabaLstSpeakerConfigureAdjustvolumeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstSpeakerConfigureAdjustvolumeRequest()
+	},
+}
+
+// GetAlibabaLstSpeakerConfigureAdjustvolumeRequest 从 sync.Pool 获取 AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest
+func GetAlibabaLstSpeakerConfigureAdjustvolumeAPIRequest() *AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest {
+	return poolAlibabaLstSpeakerConfigureAdjustvolumeAPIRequest.Get().(*AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest)
+}
+
+// ReleaseAlibabaLstSpeakerConfigureAdjustvolumeAPIRequest 将 AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstSpeakerConfigureAdjustvolumeAPIRequest(v *AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) {
+	v.Reset()
+	poolAlibabaLstSpeakerConfigureAdjustvolumeAPIRequest.Put(v)
 }

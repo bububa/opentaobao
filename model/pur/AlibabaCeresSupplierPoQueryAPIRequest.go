@@ -2,6 +2,7 @@ package pur
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaCeresSupplierPoQueryAPIRequest struct {
 // NewAlibabaCeresSupplierPoQueryRequest 初始化AlibabaCeresSupplierPoQueryAPIRequest对象
 func NewAlibabaCeresSupplierPoQueryRequest() *AlibabaCeresSupplierPoQueryAPIRequest {
 	return &AlibabaCeresSupplierPoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCeresSupplierPoQueryAPIRequest) Reset() {
+	r._startDate = ""
+	r._endDate = ""
+	r._status = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaCeresSupplierPoQueryAPIRequest) SetStatus(_status string) error 
 // GetStatus Status Getter
 func (r AlibabaCeresSupplierPoQueryAPIRequest) GetStatus() string {
 	return r._status
+}
+
+var poolAlibabaCeresSupplierPoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCeresSupplierPoQueryRequest()
+	},
+}
+
+// GetAlibabaCeresSupplierPoQueryRequest 从 sync.Pool 获取 AlibabaCeresSupplierPoQueryAPIRequest
+func GetAlibabaCeresSupplierPoQueryAPIRequest() *AlibabaCeresSupplierPoQueryAPIRequest {
+	return poolAlibabaCeresSupplierPoQueryAPIRequest.Get().(*AlibabaCeresSupplierPoQueryAPIRequest)
+}
+
+// ReleaseAlibabaCeresSupplierPoQueryAPIRequest 将 AlibabaCeresSupplierPoQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCeresSupplierPoQueryAPIRequest(v *AlibabaCeresSupplierPoQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaCeresSupplierPoQueryAPIRequest.Put(v)
 }

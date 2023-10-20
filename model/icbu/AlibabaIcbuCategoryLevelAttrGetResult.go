@@ -1,5 +1,9 @@
 package icbu
 
+import (
+	"sync"
+)
+
 // AlibabaIcbuCategoryLevelAttrGetResult 结构体
 type AlibabaIcbuCategoryLevelAttrGetResult struct {
 	// List&lt;Map&lt;String,Object&gt;&gt;  列表中每个元素的key-value说明如下:  id: 值id  name：值名称  leaf: 此key存在且为true代表当前节点下已无下层属性,这种情况下前端不需再在当前节点上提供弹出下级菜单之类的操作
@@ -10,4 +14,24 @@ type AlibabaIcbuCategoryLevelAttrGetResult struct {
 	PropertyEnName string `json:"property_en_name,omitempty" xml:"property_en_name,omitempty"`
 	// 返回值所在的属性id，如入参valueId为0，则与入参的attrId一致，否则为所选属性值的下层属性id
 	PropertyId int64 `json:"property_id,omitempty" xml:"property_id,omitempty"`
+}
+
+var poolAlibabaIcbuCategoryLevelAttrGetResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaIcbuCategoryLevelAttrGetResult)
+	},
+}
+
+// GetAlibabaIcbuCategoryLevelAttrGetResult() 从对象池中获取AlibabaIcbuCategoryLevelAttrGetResult
+func GetAlibabaIcbuCategoryLevelAttrGetResult() *AlibabaIcbuCategoryLevelAttrGetResult {
+	return poolAlibabaIcbuCategoryLevelAttrGetResult.Get().(*AlibabaIcbuCategoryLevelAttrGetResult)
+}
+
+// ReleaseAlibabaIcbuCategoryLevelAttrGetResult 释放AlibabaIcbuCategoryLevelAttrGetResult
+func ReleaseAlibabaIcbuCategoryLevelAttrGetResult(v *AlibabaIcbuCategoryLevelAttrGetResult) {
+	v.Values = ""
+	v.PropertyCnName = ""
+	v.PropertyEnName = ""
+	v.PropertyId = 0
+	poolAlibabaIcbuCategoryLevelAttrGetResult.Put(v)
 }

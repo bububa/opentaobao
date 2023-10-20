@@ -2,6 +2,7 @@ package cainiaolocker
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoEndpointLockerTopOrderTrackingNewAPIRequest struct {
 // NewCainiaoEndpointLockerTopOrderTrackingNewRequest 初始化CainiaoEndpointLockerTopOrderTrackingNewAPIRequest对象
 func NewCainiaoEndpointLockerTopOrderTrackingNewRequest() *CainiaoEndpointLockerTopOrderTrackingNewAPIRequest {
 	return &CainiaoEndpointLockerTopOrderTrackingNewAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoEndpointLockerTopOrderTrackingNewAPIRequest) Reset() {
+	r._trackInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoEndpointLockerTopOrderTrackingNewAPIRequest) SetTrackInfo(_track
 // GetTrackInfo TrackInfo Getter
 func (r CainiaoEndpointLockerTopOrderTrackingNewAPIRequest) GetTrackInfo() *CollectTrackingInfo {
 	return r._trackInfo
+}
+
+var poolCainiaoEndpointLockerTopOrderTrackingNewAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoEndpointLockerTopOrderTrackingNewRequest()
+	},
+}
+
+// GetCainiaoEndpointLockerTopOrderTrackingNewRequest 从 sync.Pool 获取 CainiaoEndpointLockerTopOrderTrackingNewAPIRequest
+func GetCainiaoEndpointLockerTopOrderTrackingNewAPIRequest() *CainiaoEndpointLockerTopOrderTrackingNewAPIRequest {
+	return poolCainiaoEndpointLockerTopOrderTrackingNewAPIRequest.Get().(*CainiaoEndpointLockerTopOrderTrackingNewAPIRequest)
+}
+
+// ReleaseCainiaoEndpointLockerTopOrderTrackingNewAPIRequest 将 CainiaoEndpointLockerTopOrderTrackingNewAPIRequest 放入 sync.Pool
+func ReleaseCainiaoEndpointLockerTopOrderTrackingNewAPIRequest(v *CainiaoEndpointLockerTopOrderTrackingNewAPIRequest) {
+	v.Reset()
+	poolCainiaoEndpointLockerTopOrderTrackingNewAPIRequest.Put(v)
 }

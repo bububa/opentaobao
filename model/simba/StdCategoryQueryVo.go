@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // StdCategoryQueryVo 结构体
 type StdCategoryQueryVo struct {
 	// 宝贝id集合
@@ -8,4 +12,23 @@ type StdCategoryQueryVo struct {
 	PromotionType string `json:"promotion_type,omitempty" xml:"promotion_type,omitempty"`
 	// 父级类目级别
 	ParentCatLevel int64 `json:"parent_cat_level,omitempty" xml:"parent_cat_level,omitempty"`
+}
+
+var poolStdCategoryQueryVo = sync.Pool{
+	New: func() any {
+		return new(StdCategoryQueryVo)
+	},
+}
+
+// GetStdCategoryQueryVo() 从对象池中获取StdCategoryQueryVo
+func GetStdCategoryQueryVo() *StdCategoryQueryVo {
+	return poolStdCategoryQueryVo.Get().(*StdCategoryQueryVo)
+}
+
+// ReleaseStdCategoryQueryVo 释放StdCategoryQueryVo
+func ReleaseStdCategoryQueryVo(v *StdCategoryQueryVo) {
+	v.MaterialIdList = v.MaterialIdList[:0]
+	v.PromotionType = ""
+	v.ParentCatLevel = 0
+	poolStdCategoryQueryVo.Put(v)
 }

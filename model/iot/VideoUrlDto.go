@@ -1,5 +1,9 @@
 package iot
 
+import (
+	"sync"
+)
+
 // VideoUrlDto 结构体
 type VideoUrlDto struct {
 	// 默认播放链接
@@ -16,4 +20,27 @@ type VideoUrlDto struct {
 	Height int64 `json:"height,omitempty" xml:"height,omitempty"`
 	// 视频宽度
 	Width int64 `json:"width,omitempty" xml:"width,omitempty"`
+}
+
+var poolVideoUrlDto = sync.Pool{
+	New: func() any {
+		return new(VideoUrlDto)
+	},
+}
+
+// GetVideoUrlDto() 从对象池中获取VideoUrlDto
+func GetVideoUrlDto() *VideoUrlDto {
+	return poolVideoUrlDto.Get().(*VideoUrlDto)
+}
+
+// ReleaseVideoUrlDto 释放VideoUrlDto
+func ReleaseVideoUrlDto(v *VideoUrlDto) {
+	v.DefaultUrl = ""
+	v.High = ""
+	v.Standard = ""
+	v.Ultra = ""
+	v.Cover = nil
+	v.Height = 0
+	v.Width = 0
+	poolVideoUrlDto.Put(v)
 }

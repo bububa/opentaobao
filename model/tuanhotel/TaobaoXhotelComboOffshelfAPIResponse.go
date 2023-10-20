@@ -2,6 +2,7 @@ package tuanhotel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoXhotelComboOffshelfAPIResponse struct {
 	TaobaoXhotelComboOffshelfAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoXhotelComboOffshelfAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelComboOffshelfAPIResponseModel).Reset()
+}
+
 // TaobaoXhotelComboOffshelfAPIResponseModel is 酒店套餐下架 成功返回结果
 type TaobaoXhotelComboOffshelfAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_combo_offshelf_response"`
@@ -22,4 +29,27 @@ type TaobaoXhotelComboOffshelfAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 下架状态
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelComboOffshelfAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = ""
+}
+
+var poolTaobaoXhotelComboOffshelfAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelComboOffshelfAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelComboOffshelfAPIResponse 从 sync.Pool 获取 TaobaoXhotelComboOffshelfAPIResponse
+func GetTaobaoXhotelComboOffshelfAPIResponse() *TaobaoXhotelComboOffshelfAPIResponse {
+	return poolTaobaoXhotelComboOffshelfAPIResponse.Get().(*TaobaoXhotelComboOffshelfAPIResponse)
+}
+
+// ReleaseTaobaoXhotelComboOffshelfAPIResponse 将 TaobaoXhotelComboOffshelfAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelComboOffshelfAPIResponse(v *TaobaoXhotelComboOffshelfAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelComboOffshelfAPIResponse.Put(v)
 }

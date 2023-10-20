@@ -2,6 +2,7 @@ package jae
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoAplatformWeakgetAPIRequest struct {
 // NewTaobaoAplatformWeakgetRequest 初始化TaobaoAplatformWeakgetAPIRequest对象
 func NewTaobaoAplatformWeakgetRequest() *TaobaoAplatformWeakgetAPIRequest {
 	return &TaobaoAplatformWeakgetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAplatformWeakgetAPIRequest) Reset() {
+	r._paramRichClientInfo = nil
+	r._paramDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoAplatformWeakgetAPIRequest) SetParamDto(_paramDto *ParamDto) erro
 // GetParamDto ParamDto Getter
 func (r TaobaoAplatformWeakgetAPIRequest) GetParamDto() *ParamDto {
 	return r._paramDto
+}
+
+var poolTaobaoAplatformWeakgetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAplatformWeakgetRequest()
+	},
+}
+
+// GetTaobaoAplatformWeakgetRequest 从 sync.Pool 获取 TaobaoAplatformWeakgetAPIRequest
+func GetTaobaoAplatformWeakgetAPIRequest() *TaobaoAplatformWeakgetAPIRequest {
+	return poolTaobaoAplatformWeakgetAPIRequest.Get().(*TaobaoAplatformWeakgetAPIRequest)
+}
+
+// ReleaseTaobaoAplatformWeakgetAPIRequest 将 TaobaoAplatformWeakgetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAplatformWeakgetAPIRequest(v *TaobaoAplatformWeakgetAPIRequest) {
+	v.Reset()
+	poolTaobaoAplatformWeakgetAPIRequest.Put(v)
 }

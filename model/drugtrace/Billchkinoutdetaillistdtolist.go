@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // Billchkinoutdetaillistdtolist 结构体
 type Billchkinoutdetaillistdtolist struct {
 	// 码列表
@@ -34,4 +38,36 @@ type Billchkinoutdetaillistdtolist struct {
 	PhysicType string `json:"physic_type,omitempty" xml:"physic_type,omitempty"`
 	// 国药准字
 	ApproveNo string `json:"approve_no,omitempty" xml:"approve_no,omitempty"`
+}
+
+var poolBillchkinoutdetaillistdtolist = sync.Pool{
+	New: func() any {
+		return new(Billchkinoutdetaillistdtolist)
+	},
+}
+
+// GetBillchkinoutdetaillistdtolist() 从对象池中获取Billchkinoutdetaillistdtolist
+func GetBillchkinoutdetaillistdtolist() *Billchkinoutdetaillistdtolist {
+	return poolBillchkinoutdetaillistdtolist.Get().(*Billchkinoutdetaillistdtolist)
+}
+
+// ReleaseBillchkinoutdetaillistdtolist 释放Billchkinoutdetaillistdtolist
+func ReleaseBillchkinoutdetaillistdtolist(v *Billchkinoutdetaillistdtolist) {
+	v.CodeAndParentList = v.CodeAndParentList[:0]
+	v.ExpiredDate = ""
+	v.ProduceEntName = ""
+	v.ProdCode = ""
+	v.ProductCode = ""
+	v.ProduceDate = ""
+	v.ProductBatchNo = ""
+	v.DrugEntBaseInfoId = ""
+	v.PhysicName = ""
+	v.PreparationsUnit = ""
+	v.TempPkgSpec = ""
+	v.MinPreparationsCount = ""
+	v.MinPkgCount = ""
+	v.PhysicTypeName = ""
+	v.PhysicType = ""
+	v.ApproveNo = ""
+	poolBillchkinoutdetaillistdtolist.Put(v)
 }

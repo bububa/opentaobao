@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest struct {
 // NewAlibabaDchainAoxiangDeliveryStatusUpdateRequest 初始化AlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest对象
 func NewAlibabaDchainAoxiangDeliveryStatusUpdateRequest() *AlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest {
 	return &AlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest) Reset() {
+	r._deliveryStatusUpdateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest) SetDeliveryStatusUp
 // GetDeliveryStatusUpdateRequest DeliveryStatusUpdateRequest Getter
 func (r AlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest) GetDeliveryStatusUpdateRequest() *DeliveryStatusUpdateRequest {
 	return r._deliveryStatusUpdateRequest
+}
+
+var poolAlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangDeliveryStatusUpdateRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangDeliveryStatusUpdateRequest 从 sync.Pool 获取 AlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest
+func GetAlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest() *AlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest {
+	return poolAlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest.Get().(*AlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest 将 AlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest(v *AlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangDeliveryStatusUpdateAPIRequest.Put(v)
 }

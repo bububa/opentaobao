@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderSyncDto 结构体
 type OrderSyncDto struct {
 	// subOrders
@@ -54,4 +58,46 @@ type OrderSyncDto struct {
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 订单渠道来源
 	OrderFrom int64 `json:"order_from,omitempty" xml:"order_from,omitempty"`
+}
+
+var poolOrderSyncDto = sync.Pool{
+	New: func() any {
+		return new(OrderSyncDto)
+	},
+}
+
+// GetOrderSyncDto() 从对象池中获取OrderSyncDto
+func GetOrderSyncDto() *OrderSyncDto {
+	return poolOrderSyncDto.Get().(*OrderSyncDto)
+}
+
+// ReleaseOrderSyncDto 释放OrderSyncDto
+func ReleaseOrderSyncDto(v *OrderSyncDto) {
+	v.SubOrders = v.SubOrders[:0]
+	v.PayChannels = v.PayChannels[:0]
+	v.ShopId = ""
+	v.OutOrderId = ""
+	v.GiftCoupon = ""
+	v.OpenUid = ""
+	v.TradeAttributes = ""
+	v.DutyCode = ""
+	v.PackageTime = ""
+	v.MemberPoint = ""
+	v.OrderStatus = ""
+	v.MerchantCode = ""
+	v.OperatorName = ""
+	v.OperatorId = ""
+	v.MemberCardNum = ""
+	v.StoreId = ""
+	v.PayTime = ""
+	v.SourceMerchantCode = ""
+	v.OrderClient = ""
+	v.TbBizOrderId = 0
+	v.MemberDiscountAmt = 0
+	v.PostFee = 0
+	v.OriginalAmt = 0
+	v.DiscountAmt = 0
+	v.BizOrderId = 0
+	v.OrderFrom = 0
+	poolOrderSyncDto.Put(v)
 }

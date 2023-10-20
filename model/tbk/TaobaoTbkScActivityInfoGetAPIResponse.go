@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTbkScActivityInfoGetAPIResponse struct {
 	TaobaoTbkScActivityInfoGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTbkScActivityInfoGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkScActivityInfoGetAPIResponseModel).Reset()
+}
+
 // TaobaoTbkScActivityInfoGetAPIResponseModel is 淘宝客-服务商-官方活动转链 成功返回结果
 type TaobaoTbkScActivityInfoGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_sc_activity_info_get_response"`
@@ -22,4 +29,27 @@ type TaobaoTbkScActivityInfoGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果对象
 	Data *TaobaoTbkScActivityInfoGetData `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkScActivityInfoGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = nil
+}
+
+var poolTaobaoTbkScActivityInfoGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkScActivityInfoGetAPIResponse)
+	},
+}
+
+// GetTaobaoTbkScActivityInfoGetAPIResponse 从 sync.Pool 获取 TaobaoTbkScActivityInfoGetAPIResponse
+func GetTaobaoTbkScActivityInfoGetAPIResponse() *TaobaoTbkScActivityInfoGetAPIResponse {
+	return poolTaobaoTbkScActivityInfoGetAPIResponse.Get().(*TaobaoTbkScActivityInfoGetAPIResponse)
+}
+
+// ReleaseTaobaoTbkScActivityInfoGetAPIResponse 将 TaobaoTbkScActivityInfoGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkScActivityInfoGetAPIResponse(v *TaobaoTbkScActivityInfoGetAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkScActivityInfoGetAPIResponse.Put(v)
 }

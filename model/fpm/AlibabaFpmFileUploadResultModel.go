@@ -1,5 +1,9 @@
 package fpm
 
+import (
+	"sync"
+)
+
 // AlibabaFpmFileUploadResultModel 结构体
 type AlibabaFpmFileUploadResultModel struct {
 	// 错误编码
@@ -10,4 +14,24 @@ type AlibabaFpmFileUploadResultModel struct {
 	ReturnValue *FileUploadReponseDto `json:"return_value,omitempty" xml:"return_value,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaFpmFileUploadResultModel = sync.Pool{
+	New: func() any {
+		return new(AlibabaFpmFileUploadResultModel)
+	},
+}
+
+// GetAlibabaFpmFileUploadResultModel() 从对象池中获取AlibabaFpmFileUploadResultModel
+func GetAlibabaFpmFileUploadResultModel() *AlibabaFpmFileUploadResultModel {
+	return poolAlibabaFpmFileUploadResultModel.Get().(*AlibabaFpmFileUploadResultModel)
+}
+
+// ReleaseAlibabaFpmFileUploadResultModel 释放AlibabaFpmFileUploadResultModel
+func ReleaseAlibabaFpmFileUploadResultModel(v *AlibabaFpmFileUploadResultModel) {
+	v.ErrorCode = ""
+	v.ErrorMessage = ""
+	v.ReturnValue = nil
+	v.Success = false
+	poolAlibabaFpmFileUploadResultModel.Put(v)
 }

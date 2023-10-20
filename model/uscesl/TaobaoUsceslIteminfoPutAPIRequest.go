@@ -2,6 +2,7 @@ package uscesl
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -85,8 +86,47 @@ type TaobaoUsceslIteminfoPutAPIRequest struct {
 // NewTaobaoUsceslIteminfoPutRequest 初始化TaobaoUsceslIteminfoPutAPIRequest对象
 func NewTaobaoUsceslIteminfoPutRequest() *TaobaoUsceslIteminfoPutAPIRequest {
 	return &TaobaoUsceslIteminfoPutAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(34),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUsceslIteminfoPutAPIRequest) Reset() {
+	r._modelNum = ""
+	r._priceUnit = ""
+	r._brandName = ""
+	r._saleSpec = ""
+	r._categoryName = ""
+	r._rank = ""
+	r._itemChangeStatus = ""
+	r._acctionPrice = ""
+	r._energyEfficiency = ""
+	r._skuId = ""
+	r._promotionStart = ""
+	r._itemBarCode = ""
+	r._itemTitle = ""
+	r._promotionText = ""
+	r._customizeFeatureC = ""
+	r._customizeFeatureD = ""
+	r._customizeFeatureE = ""
+	r._customizeFeatureF = ""
+	r._customizeFeatureG = ""
+	r._customizeFeatureH = ""
+	r._customizeFeatureI = ""
+	r._customizeFeatureJ = ""
+	r._itemQrCode = ""
+	r._promotionEnd = ""
+	r._promotionReason = ""
+	r._originalPrice = ""
+	r._shortTitle = ""
+	r._customizeFeatureB = ""
+	r._productionPlace = ""
+	r._customizeFeatureA = ""
+	r._itemStatus = 0
+	r._itemId = 0
+	r._shopId = 0
+	r._ifPromotion = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -546,4 +586,21 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetIfPromotion(_ifPromotion bool) er
 // GetIfPromotion IfPromotion Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetIfPromotion() bool {
 	return r._ifPromotion
+}
+
+var poolTaobaoUsceslIteminfoPutAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUsceslIteminfoPutRequest()
+	},
+}
+
+// GetTaobaoUsceslIteminfoPutRequest 从 sync.Pool 获取 TaobaoUsceslIteminfoPutAPIRequest
+func GetTaobaoUsceslIteminfoPutAPIRequest() *TaobaoUsceslIteminfoPutAPIRequest {
+	return poolTaobaoUsceslIteminfoPutAPIRequest.Get().(*TaobaoUsceslIteminfoPutAPIRequest)
+}
+
+// ReleaseTaobaoUsceslIteminfoPutAPIRequest 将 TaobaoUsceslIteminfoPutAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUsceslIteminfoPutAPIRequest(v *TaobaoUsceslIteminfoPutAPIRequest) {
+	v.Reset()
+	poolTaobaoUsceslIteminfoPutAPIRequest.Put(v)
 }

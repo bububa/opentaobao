@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoTradeDrugConfirmorderAPIRequest struct {
 // NewTaobaoTradeDrugConfirmorderRequest 初始化TaobaoTradeDrugConfirmorderAPIRequest对象
 func NewTaobaoTradeDrugConfirmorderRequest() *TaobaoTradeDrugConfirmorderAPIRequest {
 	return &TaobaoTradeDrugConfirmorderAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTradeDrugConfirmorderAPIRequest) Reset() {
+	r._subUserNick = ""
+	r._deliveryId = 0
+	r._confirmType = 0
+	r._orderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoTradeDrugConfirmorderAPIRequest) SetOrderId(_orderId int64) error
 // GetOrderId OrderId Getter
 func (r TaobaoTradeDrugConfirmorderAPIRequest) GetOrderId() int64 {
 	return r._orderId
+}
+
+var poolTaobaoTradeDrugConfirmorderAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTradeDrugConfirmorderRequest()
+	},
+}
+
+// GetTaobaoTradeDrugConfirmorderRequest 从 sync.Pool 获取 TaobaoTradeDrugConfirmorderAPIRequest
+func GetTaobaoTradeDrugConfirmorderAPIRequest() *TaobaoTradeDrugConfirmorderAPIRequest {
+	return poolTaobaoTradeDrugConfirmorderAPIRequest.Get().(*TaobaoTradeDrugConfirmorderAPIRequest)
+}
+
+// ReleaseTaobaoTradeDrugConfirmorderAPIRequest 将 TaobaoTradeDrugConfirmorderAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTradeDrugConfirmorderAPIRequest(v *TaobaoTradeDrugConfirmorderAPIRequest) {
+	v.Reset()
+	poolTaobaoTradeDrugConfirmorderAPIRequest.Put(v)
 }

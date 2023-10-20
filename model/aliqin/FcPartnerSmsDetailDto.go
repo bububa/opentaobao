@@ -1,5 +1,9 @@
 package aliqin
 
+import (
+	"sync"
+)
+
 // FcPartnerSmsDetailDto 结构体
 type FcPartnerSmsDetailDto struct {
 	// 公共回传参数
@@ -18,4 +22,28 @@ type FcPartnerSmsDetailDto struct {
 	SmsSendTime string `json:"sms_send_time,omitempty" xml:"sms_send_time,omitempty"`
 	// 发送状态 1：等待回执，2：发送失败，3：发送成功
 	SmsStatus int64 `json:"sms_status,omitempty" xml:"sms_status,omitempty"`
+}
+
+var poolFcPartnerSmsDetailDto = sync.Pool{
+	New: func() any {
+		return new(FcPartnerSmsDetailDto)
+	},
+}
+
+// GetFcPartnerSmsDetailDto() 从对象池中获取FcPartnerSmsDetailDto
+func GetFcPartnerSmsDetailDto() *FcPartnerSmsDetailDto {
+	return poolFcPartnerSmsDetailDto.Get().(*FcPartnerSmsDetailDto)
+}
+
+// ReleaseFcPartnerSmsDetailDto 释放FcPartnerSmsDetailDto
+func ReleaseFcPartnerSmsDetailDto(v *FcPartnerSmsDetailDto) {
+	v.Extend = ""
+	v.RecNum = ""
+	v.ResultCode = ""
+	v.SmsCode = ""
+	v.SmsContent = ""
+	v.SmsReceiverTime = ""
+	v.SmsSendTime = ""
+	v.SmsStatus = 0
+	poolFcPartnerSmsDetailDto.Put(v)
 }

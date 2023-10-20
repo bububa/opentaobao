@@ -1,5 +1,9 @@
 package alihealthoutflow
 
+import (
+	"sync"
+)
+
 // ServiceResult 结构体
 type ServiceResult struct {
 	// errMessage
@@ -10,4 +14,24 @@ type ServiceResult struct {
 	Data *PrescriptionDetailVo `json:"data,omitempty" xml:"data,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolServiceResult = sync.Pool{
+	New: func() any {
+		return new(ServiceResult)
+	},
+}
+
+// GetServiceResult() 从对象池中获取ServiceResult
+func GetServiceResult() *ServiceResult {
+	return poolServiceResult.Get().(*ServiceResult)
+}
+
+// ReleaseServiceResult 释放ServiceResult
+func ReleaseServiceResult(v *ServiceResult) {
+	v.ErrMessage = ""
+	v.ErrCode = ""
+	v.Data = nil
+	v.Success = false
+	poolServiceResult.Put(v)
 }

@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseMessageWorkorderPushAPIRequest struct {
 // NewAlibabaAlihouseMessageWorkorderPushRequest 初始化AlibabaAlihouseMessageWorkorderPushAPIRequest对象
 func NewAlibabaAlihouseMessageWorkorderPushRequest() *AlibabaAlihouseMessageWorkorderPushAPIRequest {
 	return &AlibabaAlihouseMessageWorkorderPushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseMessageWorkorderPushAPIRequest) Reset() {
+	r._messageInfoDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseMessageWorkorderPushAPIRequest) SetMessageInfoDto(_messa
 // GetMessageInfoDto MessageInfoDto Getter
 func (r AlibabaAlihouseMessageWorkorderPushAPIRequest) GetMessageInfoDto() *MessageInfoDto {
 	return r._messageInfoDto
+}
+
+var poolAlibabaAlihouseMessageWorkorderPushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseMessageWorkorderPushRequest()
+	},
+}
+
+// GetAlibabaAlihouseMessageWorkorderPushRequest 从 sync.Pool 获取 AlibabaAlihouseMessageWorkorderPushAPIRequest
+func GetAlibabaAlihouseMessageWorkorderPushAPIRequest() *AlibabaAlihouseMessageWorkorderPushAPIRequest {
+	return poolAlibabaAlihouseMessageWorkorderPushAPIRequest.Get().(*AlibabaAlihouseMessageWorkorderPushAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseMessageWorkorderPushAPIRequest 将 AlibabaAlihouseMessageWorkorderPushAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseMessageWorkorderPushAPIRequest(v *AlibabaAlihouseMessageWorkorderPushAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseMessageWorkorderPushAPIRequest.Put(v)
 }

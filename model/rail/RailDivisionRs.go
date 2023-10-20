@@ -1,5 +1,9 @@
 package rail
 
+import (
+	"sync"
+)
+
 // RailDivisionRs 结构体
 type RailDivisionRs struct {
 	// 省份城市
@@ -62,4 +66,50 @@ type RailDivisionRs struct {
 	CityId int64 `json:"city_id,omitempty" xml:"city_id,omitempty"`
 	// 区域id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolRailDivisionRs = sync.Pool{
+	New: func() any {
+		return new(RailDivisionRs)
+	},
+}
+
+// GetRailDivisionRs() 从对象池中获取RailDivisionRs
+func GetRailDivisionRs() *RailDivisionRs {
+	return poolRailDivisionRs.Get().(*RailDivisionRs)
+}
+
+// ReleaseRailDivisionRs 释放RailDivisionRs
+func ReleaseRailDivisionRs(v *RailDivisionRs) {
+	v.ProvName = ""
+	v.ProvNameEn = ""
+	v.CountryNameEn = ""
+	v.CountryName = ""
+	v.ContinentNameEn = ""
+	v.ContinentName = ""
+	v.CityCode3 = ""
+	v.Py = ""
+	v.Pinyin = ""
+	v.Timezoneid = ""
+	v.CountryCode2 = ""
+	v.Latitude = ""
+	v.Longitude = ""
+	v.NameEn = ""
+	v.NameAbbr = ""
+	v.Name = ""
+	v.DistrictNameEn = ""
+	v.DistrictName = ""
+	v.CityNameEn = ""
+	v.CityName = ""
+	v.ProvId = 0
+	v.CountryId = 0
+	v.ContinentId = 0
+	v.CapitalFlag = 0
+	v.Abroad = 0
+	v.ParentId = 0
+	v.Level = 0
+	v.DistrictId = 0
+	v.CityId = 0
+	v.Id = 0
+	poolRailDivisionRs.Put(v)
 }

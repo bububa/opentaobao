@@ -2,6 +2,7 @@ package auction
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoAuctionVehicleReportRecieveAPIRequest struct {
 // NewTaobaoAuctionVehicleReportRecieveRequest 初始化TaobaoAuctionVehicleReportRecieveAPIRequest对象
 func NewTaobaoAuctionVehicleReportRecieveRequest() *TaobaoAuctionVehicleReportRecieveAPIRequest {
 	return &TaobaoAuctionVehicleReportRecieveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAuctionVehicleReportRecieveAPIRequest) Reset() {
+	r._itemId = 0
+	r._vehicleTestReportDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoAuctionVehicleReportRecieveAPIRequest) SetVehicleTestReportDto(_v
 // GetVehicleTestReportDto VehicleTestReportDto Getter
 func (r TaobaoAuctionVehicleReportRecieveAPIRequest) GetVehicleTestReportDto() *VehicleTestReportDto {
 	return r._vehicleTestReportDto
+}
+
+var poolTaobaoAuctionVehicleReportRecieveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAuctionVehicleReportRecieveRequest()
+	},
+}
+
+// GetTaobaoAuctionVehicleReportRecieveRequest 从 sync.Pool 获取 TaobaoAuctionVehicleReportRecieveAPIRequest
+func GetTaobaoAuctionVehicleReportRecieveAPIRequest() *TaobaoAuctionVehicleReportRecieveAPIRequest {
+	return poolTaobaoAuctionVehicleReportRecieveAPIRequest.Get().(*TaobaoAuctionVehicleReportRecieveAPIRequest)
+}
+
+// ReleaseTaobaoAuctionVehicleReportRecieveAPIRequest 将 TaobaoAuctionVehicleReportRecieveAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAuctionVehicleReportRecieveAPIRequest(v *TaobaoAuctionVehicleReportRecieveAPIRequest) {
+	v.Reset()
+	poolTaobaoAuctionVehicleReportRecieveAPIRequest.Put(v)
 }

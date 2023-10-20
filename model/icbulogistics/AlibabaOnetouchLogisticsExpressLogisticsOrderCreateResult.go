@@ -1,5 +1,9 @@
 package icbulogistics
 
+import (
+	"sync"
+)
+
 // AlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult 结构体
 type AlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult struct {
 	// 返回结果描述
@@ -10,4 +14,24 @@ type AlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult struct {
 	ErrorCode int64 `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult)
+	},
+}
+
+// GetAlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult() 从对象池中获取AlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult
+func GetAlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult() *AlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult {
+	return poolAlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult.Get().(*AlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult)
+}
+
+// ReleaseAlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult 释放AlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult
+func ReleaseAlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult(v *AlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult) {
+	v.ErrorMessage = ""
+	v.Values = nil
+	v.ErrorCode = 0
+	v.Success = false
+	poolAlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult.Put(v)
 }

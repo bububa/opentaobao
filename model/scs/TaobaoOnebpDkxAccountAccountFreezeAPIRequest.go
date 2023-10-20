@@ -2,6 +2,7 @@ package scs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOnebpDkxAccountAccountFreezeAPIRequest struct {
 // NewTaobaoOnebpDkxAccountAccountFreezeRequest 初始化TaobaoOnebpDkxAccountAccountFreezeAPIRequest对象
 func NewTaobaoOnebpDkxAccountAccountFreezeRequest() *TaobaoOnebpDkxAccountAccountFreezeAPIRequest {
 	return &TaobaoOnebpDkxAccountAccountFreezeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOnebpDkxAccountAccountFreezeAPIRequest) Reset() {
+	r._apiServiceContext = nil
+	r._accountInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOnebpDkxAccountAccountFreezeAPIRequest) SetAccountInfo(_accountIn
 // GetAccountInfo AccountInfo Getter
 func (r TaobaoOnebpDkxAccountAccountFreezeAPIRequest) GetAccountInfo() *AccountTopDto {
 	return r._accountInfo
+}
+
+var poolTaobaoOnebpDkxAccountAccountFreezeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOnebpDkxAccountAccountFreezeRequest()
+	},
+}
+
+// GetTaobaoOnebpDkxAccountAccountFreezeRequest 从 sync.Pool 获取 TaobaoOnebpDkxAccountAccountFreezeAPIRequest
+func GetTaobaoOnebpDkxAccountAccountFreezeAPIRequest() *TaobaoOnebpDkxAccountAccountFreezeAPIRequest {
+	return poolTaobaoOnebpDkxAccountAccountFreezeAPIRequest.Get().(*TaobaoOnebpDkxAccountAccountFreezeAPIRequest)
+}
+
+// ReleaseTaobaoOnebpDkxAccountAccountFreezeAPIRequest 将 TaobaoOnebpDkxAccountAccountFreezeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOnebpDkxAccountAccountFreezeAPIRequest(v *TaobaoOnebpDkxAccountAccountFreezeAPIRequest) {
+	v.Reset()
+	poolTaobaoOnebpDkxAccountAccountFreezeAPIRequest.Put(v)
 }

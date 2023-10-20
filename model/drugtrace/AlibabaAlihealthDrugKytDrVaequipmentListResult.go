@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // AlibabaAlihealthDrugKytDrVaequipmentListResult 结构体
 type AlibabaAlihealthDrugKytDrVaequipmentListResult struct {
 	// msgInfo
@@ -42,4 +46,40 @@ type AlibabaAlihealthDrugKytDrVaequipmentListResult struct {
 	Model *AlibabaAlihealthDrugKytDrVaequipmentListModel `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaAlihealthDrugKytDrVaequipmentListResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugKytDrVaequipmentListResult)
+	},
+}
+
+// GetAlibabaAlihealthDrugKytDrVaequipmentListResult() 从对象池中获取AlibabaAlihealthDrugKytDrVaequipmentListResult
+func GetAlibabaAlihealthDrugKytDrVaequipmentListResult() *AlibabaAlihealthDrugKytDrVaequipmentListResult {
+	return poolAlibabaAlihealthDrugKytDrVaequipmentListResult.Get().(*AlibabaAlihealthDrugKytDrVaequipmentListResult)
+}
+
+// ReleaseAlibabaAlihealthDrugKytDrVaequipmentListResult 释放AlibabaAlihealthDrugKytDrVaequipmentListResult
+func ReleaseAlibabaAlihealthDrugKytDrVaequipmentListResult(v *AlibabaAlihealthDrugKytDrVaequipmentListResult) {
+	v.MsgInfo = ""
+	v.MsgCode = ""
+	v.ModDate = ""
+	v.Address = ""
+	v.Comments = ""
+	v.EquipmentCode = ""
+	v.CrtDate = ""
+	v.EquipmentType = ""
+	v.AssociatedStatus = ""
+	v.Probe = ""
+	v.ModIcCode = ""
+	v.AddressDetail = ""
+	v.DictRegionDTO = ""
+	v.CrtIcCode = ""
+	v.RefEntId = ""
+	v.EquipmentName = ""
+	v.VaEquipmentId = ""
+	v.Status = ""
+	v.Model = nil
+	v.Success = false
+	poolAlibabaAlihealthDrugKytDrVaequipmentListResult.Put(v)
 }

@@ -2,6 +2,7 @@ package inventory
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaRetailDeviceInventorySyncAPIRequest struct {
 // NewAlibabaRetailDeviceInventorySyncRequest 初始化AlibabaRetailDeviceInventorySyncAPIRequest对象
 func NewAlibabaRetailDeviceInventorySyncRequest() *AlibabaRetailDeviceInventorySyncAPIRequest {
 	return &AlibabaRetailDeviceInventorySyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaRetailDeviceInventorySyncAPIRequest) Reset() {
+	r._inventoryDtos = r._inventoryDtos[:0]
+	r._deviceType = ""
+	r._deviceId = ""
+	r._deviceOption = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaRetailDeviceInventorySyncAPIRequest) SetDeviceOption(_deviceOpti
 // GetDeviceOption DeviceOption Getter
 func (r AlibabaRetailDeviceInventorySyncAPIRequest) GetDeviceOption() *InventorySyncOption {
 	return r._deviceOption
+}
+
+var poolAlibabaRetailDeviceInventorySyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaRetailDeviceInventorySyncRequest()
+	},
+}
+
+// GetAlibabaRetailDeviceInventorySyncRequest 从 sync.Pool 获取 AlibabaRetailDeviceInventorySyncAPIRequest
+func GetAlibabaRetailDeviceInventorySyncAPIRequest() *AlibabaRetailDeviceInventorySyncAPIRequest {
+	return poolAlibabaRetailDeviceInventorySyncAPIRequest.Get().(*AlibabaRetailDeviceInventorySyncAPIRequest)
+}
+
+// ReleaseAlibabaRetailDeviceInventorySyncAPIRequest 将 AlibabaRetailDeviceInventorySyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaRetailDeviceInventorySyncAPIRequest(v *AlibabaRetailDeviceInventorySyncAPIRequest) {
+	v.Reset()
+	poolAlibabaRetailDeviceInventorySyncAPIRequest.Put(v)
 }

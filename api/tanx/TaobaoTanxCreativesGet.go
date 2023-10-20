@@ -9,11 +9,6 @@ import (
 // taobao.tanx.creatives.get
 //
 // 批量获取DSP用户的创意审核结果
-func TaobaoTanxCreativesGet(clt *core.SDKClient, req *tanx.TaobaoTanxCreativesGetAPIRequest, session string) (*tanx.TaobaoTanxCreativesGetAPIResponse, error) {
-	var resp tanx.TaobaoTanxCreativesGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTanxCreativesGet(clt *core.SDKClient, req *tanx.TaobaoTanxCreativesGetAPIRequest, resp *tanx.TaobaoTanxCreativesGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

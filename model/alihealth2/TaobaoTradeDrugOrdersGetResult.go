@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // TaobaoTradeDrugOrdersGetResult 结构体
 type TaobaoTradeDrugOrdersGetResult struct {
 	// 订单列表
@@ -42,4 +46,40 @@ type TaobaoTradeDrugOrdersGetResult struct {
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 用户下单方式(PC/APP)
 	From int64 `json:"from,omitempty" xml:"from,omitempty"`
+}
+
+var poolTaobaoTradeDrugOrdersGetResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoTradeDrugOrdersGetResult)
+	},
+}
+
+// GetTaobaoTradeDrugOrdersGetResult() 从对象池中获取TaobaoTradeDrugOrdersGetResult
+func GetTaobaoTradeDrugOrdersGetResult() *TaobaoTradeDrugOrdersGetResult {
+	return poolTaobaoTradeDrugOrdersGetResult.Get().(*TaobaoTradeDrugOrdersGetResult)
+}
+
+// ReleaseTaobaoTradeDrugOrdersGetResult 释放TaobaoTradeDrugOrdersGetResult
+func ReleaseTaobaoTradeDrugOrdersGetResult(v *TaobaoTradeDrugOrdersGetResult) {
+	v.ResultList = v.ResultList[:0]
+	v.GoodsList = v.GoodsList[:0]
+	v.StartDeliveryTime = ""
+	v.PayAccount = ""
+	v.Address = ""
+	v.DeliveryPay = ""
+	v.EndDeliveryTime = ""
+	v.CreateTime = ""
+	v.TotalPay = ""
+	v.StoreName = ""
+	v.StoreContactPhone = ""
+	v.Note = ""
+	v.AlipayStreamId = ""
+	v.ResultSize = 0
+	v.TotalCount = 0
+	v.UserAddress = nil
+	v.StoreId = 0
+	v.Id = 0
+	v.UserId = 0
+	v.From = 0
+	poolTaobaoTradeDrugOrdersGetResult.Put(v)
 }

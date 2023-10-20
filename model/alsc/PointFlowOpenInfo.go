@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PointFlowOpenInfo 结构体
 type PointFlowOpenInfo struct {
 	// 业务场景
@@ -22,4 +26,30 @@ type PointFlowOpenInfo struct {
 	ChangePoint int64 `json:"change_point,omitempty" xml:"change_point,omitempty"`
 	// 剩余积分
 	RemainPoint int64 `json:"remain_point,omitempty" xml:"remain_point,omitempty"`
+}
+
+var poolPointFlowOpenInfo = sync.Pool{
+	New: func() any {
+		return new(PointFlowOpenInfo)
+	},
+}
+
+// GetPointFlowOpenInfo() 从对象池中获取PointFlowOpenInfo
+func GetPointFlowOpenInfo() *PointFlowOpenInfo {
+	return poolPointFlowOpenInfo.Get().(*PointFlowOpenInfo)
+}
+
+// ReleasePointFlowOpenInfo 释放PointFlowOpenInfo
+func ReleasePointFlowOpenInfo(v *PointFlowOpenInfo) {
+	v.BizType = ""
+	v.BizTypeDescription = ""
+	v.FlowId = ""
+	v.OperatorName = ""
+	v.OutBizId = ""
+	v.Reason = ""
+	v.ShopName = ""
+	v.Time = ""
+	v.ChangePoint = 0
+	v.RemainPoint = 0
+	poolPointFlowOpenInfo.Put(v)
 }

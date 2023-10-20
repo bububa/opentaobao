@@ -9,11 +9,6 @@ import (
 // taobao.openlink.session.get
 //
 // 帮助第三方isv生成三方session
-func TaobaoOpenlinkSessionGet(clt *core.SDKClient, req *util.TaobaoOpenlinkSessionGetAPIRequest, session string) (*util.TaobaoOpenlinkSessionGetAPIResponse, error) {
-	var resp util.TaobaoOpenlinkSessionGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenlinkSessionGet(clt *core.SDKClient, req *util.TaobaoOpenlinkSessionGetAPIRequest, resp *util.TaobaoOpenlinkSessionGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

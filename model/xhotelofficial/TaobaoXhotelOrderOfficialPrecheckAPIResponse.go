@@ -2,6 +2,7 @@ package xhotelofficial
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,6 +20,12 @@ type TaobaoXhotelOrderOfficialPrecheckAPIResponse struct {
 	TaobaoXhotelOrderOfficialPrecheckAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderOfficialPrecheckAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelOrderOfficialPrecheckAPIResponseModel).Reset()
+}
+
 // TaobaoXhotelOrderOfficialPrecheckAPIResponseModel is 官网信用住用户资格预校验接口 成功返回结果
 type TaobaoXhotelOrderOfficialPrecheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_official_precheck_response"`
@@ -32,4 +39,30 @@ type TaobaoXhotelOrderOfficialPrecheckAPIResponseModel struct {
 	Action int64 `json:"action,omitempty" xml:"action,omitempty"`
 	// 是否符合信用住条件
 	MatchCondition bool `json:"match_condition,omitempty" xml:"match_condition,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderOfficialPrecheckAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Reason = ""
+	m.IdNumber = ""
+	m.Action = 0
+	m.MatchCondition = false
+}
+
+var poolTaobaoXhotelOrderOfficialPrecheckAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelOrderOfficialPrecheckAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelOrderOfficialPrecheckAPIResponse 从 sync.Pool 获取 TaobaoXhotelOrderOfficialPrecheckAPIResponse
+func GetTaobaoXhotelOrderOfficialPrecheckAPIResponse() *TaobaoXhotelOrderOfficialPrecheckAPIResponse {
+	return poolTaobaoXhotelOrderOfficialPrecheckAPIResponse.Get().(*TaobaoXhotelOrderOfficialPrecheckAPIResponse)
+}
+
+// ReleaseTaobaoXhotelOrderOfficialPrecheckAPIResponse 将 TaobaoXhotelOrderOfficialPrecheckAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelOrderOfficialPrecheckAPIResponse(v *TaobaoXhotelOrderOfficialPrecheckAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelOrderOfficialPrecheckAPIResponse.Put(v)
 }

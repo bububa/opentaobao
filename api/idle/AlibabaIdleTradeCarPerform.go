@@ -9,11 +9,6 @@ import (
 // alibaba.idle.trade.car.perform
 //
 // 二手车寄卖履约接口
-func AlibabaIdleTradeCarPerform(clt *core.SDKClient, req *idle.AlibabaIdleTradeCarPerformAPIRequest, session string) (*idle.AlibabaIdleTradeCarPerformAPIResponse, error) {
-	var resp idle.AlibabaIdleTradeCarPerformAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleTradeCarPerform(clt *core.SDKClient, req *idle.AlibabaIdleTradeCarPerformAPIRequest, resp *idle.AlibabaIdleTradeCarPerformAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // DiscountInfo 结构体
 type DiscountInfo struct {
 	// 营销活动ID
@@ -16,4 +20,27 @@ type DiscountInfo struct {
 	PlatformDiscountFee int64 `json:"platform_discount_fee,omitempty" xml:"platform_discount_fee,omitempty"`
 	// 优惠金额
 	DicountFee int64 `json:"dicount_fee,omitempty" xml:"dicount_fee,omitempty"`
+}
+
+var poolDiscountInfo = sync.Pool{
+	New: func() any {
+		return new(DiscountInfo)
+	},
+}
+
+// GetDiscountInfo() 从对象池中获取DiscountInfo
+func GetDiscountInfo() *DiscountInfo {
+	return poolDiscountInfo.Get().(*DiscountInfo)
+}
+
+// ReleaseDiscountInfo 释放DiscountInfo
+func ReleaseDiscountInfo(v *DiscountInfo) {
+	v.ActivityId = ""
+	v.ActivityType = ""
+	v.ActivityName = ""
+	v.DiscountFee = 0
+	v.MerchantDiscountFee = 0
+	v.PlatformDiscountFee = 0
+	v.DicountFee = 0
+	poolDiscountInfo.Put(v)
 }

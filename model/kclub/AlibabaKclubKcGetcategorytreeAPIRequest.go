@@ -2,6 +2,7 @@ package kclub
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaKclubKcGetcategorytreeAPIRequest struct {
 // NewAlibabaKclubKcGetcategorytreeRequest 初始化AlibabaKclubKcGetcategorytreeAPIRequest对象
 func NewAlibabaKclubKcGetcategorytreeRequest() *AlibabaKclubKcGetcategorytreeAPIRequest {
 	return &AlibabaKclubKcGetcategorytreeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaKclubKcGetcategorytreeAPIRequest) Reset() {
+	r._tenantId = 0
+	r._auth = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaKclubKcGetcategorytreeAPIRequest) SetAuth(_auth *TenancyAuth) er
 // GetAuth Auth Getter
 func (r AlibabaKclubKcGetcategorytreeAPIRequest) GetAuth() *TenancyAuth {
 	return r._auth
+}
+
+var poolAlibabaKclubKcGetcategorytreeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaKclubKcGetcategorytreeRequest()
+	},
+}
+
+// GetAlibabaKclubKcGetcategorytreeRequest 从 sync.Pool 获取 AlibabaKclubKcGetcategorytreeAPIRequest
+func GetAlibabaKclubKcGetcategorytreeAPIRequest() *AlibabaKclubKcGetcategorytreeAPIRequest {
+	return poolAlibabaKclubKcGetcategorytreeAPIRequest.Get().(*AlibabaKclubKcGetcategorytreeAPIRequest)
+}
+
+// ReleaseAlibabaKclubKcGetcategorytreeAPIRequest 将 AlibabaKclubKcGetcategorytreeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaKclubKcGetcategorytreeAPIRequest(v *AlibabaKclubKcGetcategorytreeAPIRequest) {
+	v.Reset()
+	poolAlibabaKclubKcGetcategorytreeAPIRequest.Put(v)
 }

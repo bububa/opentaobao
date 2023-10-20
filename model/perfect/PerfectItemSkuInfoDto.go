@@ -1,5 +1,9 @@
 package perfect
 
+import (
+	"sync"
+)
+
 // PerfectItemSkuInfoDto 结构体
 type PerfectItemSkuInfoDto struct {
 	// sku销售属性
@@ -16,4 +20,27 @@ type PerfectItemSkuInfoDto struct {
 	ScProductInfo *PerfectScProductInfoDto `json:"sc_product_info,omitempty" xml:"sc_product_info,omitempty"`
 	// sku数量
 	SkuQuantity int64 `json:"sku_quantity,omitempty" xml:"sku_quantity,omitempty"`
+}
+
+var poolPerfectItemSkuInfoDto = sync.Pool{
+	New: func() any {
+		return new(PerfectItemSkuInfoDto)
+	},
+}
+
+// GetPerfectItemSkuInfoDto() 从对象池中获取PerfectItemSkuInfoDto
+func GetPerfectItemSkuInfoDto() *PerfectItemSkuInfoDto {
+	return poolPerfectItemSkuInfoDto.Get().(*PerfectItemSkuInfoDto)
+}
+
+// ReleasePerfectItemSkuInfoDto 释放PerfectItemSkuInfoDto
+func ReleasePerfectItemSkuInfoDto(v *PerfectItemSkuInfoDto) {
+	v.SaleProperties = v.SaleProperties[:0]
+	v.SkuBarcode = ""
+	v.SkuOuterId = ""
+	v.SkuPretium = ""
+	v.SkuPrice = ""
+	v.ScProductInfo = nil
+	v.SkuQuantity = 0
+	poolPerfectItemSkuInfoDto.Put(v)
 }

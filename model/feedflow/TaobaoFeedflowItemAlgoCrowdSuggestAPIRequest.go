@@ -2,6 +2,7 @@ package feedflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest struct {
 // NewTaobaoFeedflowItemAlgoCrowdSuggestRequest 初始化TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest对象
 func NewTaobaoFeedflowItemAlgoCrowdSuggestRequest() *TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest {
 	return &TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest) Reset() {
+	r._crowds = r._crowds[:0]
+	r._itemId = 0
+	r._campaignId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest) SetCampaignId(_campaignId
 // GetCampaignId CampaignId Getter
 func (r TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
+}
+
+var poolTaobaoFeedflowItemAlgoCrowdSuggestAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFeedflowItemAlgoCrowdSuggestRequest()
+	},
+}
+
+// GetTaobaoFeedflowItemAlgoCrowdSuggestRequest 从 sync.Pool 获取 TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest
+func GetTaobaoFeedflowItemAlgoCrowdSuggestAPIRequest() *TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest {
+	return poolTaobaoFeedflowItemAlgoCrowdSuggestAPIRequest.Get().(*TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest)
+}
+
+// ReleaseTaobaoFeedflowItemAlgoCrowdSuggestAPIRequest 将 TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFeedflowItemAlgoCrowdSuggestAPIRequest(v *TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest) {
+	v.Reset()
+	poolTaobaoFeedflowItemAlgoCrowdSuggestAPIRequest.Put(v)
 }

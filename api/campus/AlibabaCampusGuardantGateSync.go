@@ -9,11 +9,6 @@ import (
 // alibaba.campus.guardant.gate.sync
 //
 // 门禁供应商创建网点同步
-func AlibabaCampusGuardantGateSync(clt *core.SDKClient, req *campus.AlibabaCampusGuardantGateSyncAPIRequest, session string) (*campus.AlibabaCampusGuardantGateSyncAPIResponse, error) {
-	var resp campus.AlibabaCampusGuardantGateSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusGuardantGateSync(clt *core.SDKClient, req *campus.AlibabaCampusGuardantGateSyncAPIRequest, resp *campus.AlibabaCampusGuardantGateSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

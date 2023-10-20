@@ -2,6 +2,7 @@ package alihealthmdeer
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthMdeerScienceSynVideoAPIRequest struct {
 // NewAlibabaAlihealthMdeerScienceSynVideoRequest 初始化AlibabaAlihealthMdeerScienceSynVideoAPIRequest对象
 func NewAlibabaAlihealthMdeerScienceSynVideoRequest() *AlibabaAlihealthMdeerScienceSynVideoAPIRequest {
 	return &AlibabaAlihealthMdeerScienceSynVideoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthMdeerScienceSynVideoAPIRequest) Reset() {
+	r._synVideoInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthMdeerScienceSynVideoAPIRequest) SetSynVideoInfo(_synVid
 // GetSynVideoInfo SynVideoInfo Getter
 func (r AlibabaAlihealthMdeerScienceSynVideoAPIRequest) GetSynVideoInfo() *SynVideoInfo {
 	return r._synVideoInfo
+}
+
+var poolAlibabaAlihealthMdeerScienceSynVideoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthMdeerScienceSynVideoRequest()
+	},
+}
+
+// GetAlibabaAlihealthMdeerScienceSynVideoRequest 从 sync.Pool 获取 AlibabaAlihealthMdeerScienceSynVideoAPIRequest
+func GetAlibabaAlihealthMdeerScienceSynVideoAPIRequest() *AlibabaAlihealthMdeerScienceSynVideoAPIRequest {
+	return poolAlibabaAlihealthMdeerScienceSynVideoAPIRequest.Get().(*AlibabaAlihealthMdeerScienceSynVideoAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthMdeerScienceSynVideoAPIRequest 将 AlibabaAlihealthMdeerScienceSynVideoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthMdeerScienceSynVideoAPIRequest(v *AlibabaAlihealthMdeerScienceSynVideoAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthMdeerScienceSynVideoAPIRequest.Put(v)
 }

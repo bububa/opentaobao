@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallCarXcarSynchronizeCarModelDataAPIResponse struct {
 	TmallCarXcarSynchronizeCarModelDataAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallCarXcarSynchronizeCarModelDataAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallCarXcarSynchronizeCarModelDataAPIResponseModel).Reset()
+}
+
 // TmallCarXcarSynchronizeCarModelDataAPIResponseModel is 爱车车型数据同步 成功返回结果
 type TmallCarXcarSynchronizeCarModelDataAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_car_xcar_synchronize_car_model_data_response"`
@@ -22,4 +29,27 @@ type TmallCarXcarSynchronizeCarModelDataAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回对象描述
 	Result *ResultVo `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallCarXcarSynchronizeCarModelDataAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallCarXcarSynchronizeCarModelDataAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallCarXcarSynchronizeCarModelDataAPIResponse)
+	},
+}
+
+// GetTmallCarXcarSynchronizeCarModelDataAPIResponse 从 sync.Pool 获取 TmallCarXcarSynchronizeCarModelDataAPIResponse
+func GetTmallCarXcarSynchronizeCarModelDataAPIResponse() *TmallCarXcarSynchronizeCarModelDataAPIResponse {
+	return poolTmallCarXcarSynchronizeCarModelDataAPIResponse.Get().(*TmallCarXcarSynchronizeCarModelDataAPIResponse)
+}
+
+// ReleaseTmallCarXcarSynchronizeCarModelDataAPIResponse 将 TmallCarXcarSynchronizeCarModelDataAPIResponse 保存到 sync.Pool
+func ReleaseTmallCarXcarSynchronizeCarModelDataAPIResponse(v *TmallCarXcarSynchronizeCarModelDataAPIResponse) {
+	v.Reset()
+	poolTmallCarXcarSynchronizeCarModelDataAPIResponse.Put(v)
 }

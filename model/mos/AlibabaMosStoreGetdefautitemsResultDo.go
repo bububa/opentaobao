@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // AlibabaMosStoreGetdefautitemsResultDo 结构体
 type AlibabaMosStoreGetdefautitemsResultDo struct {
 	// errMsg
@@ -12,4 +16,25 @@ type AlibabaMosStoreGetdefautitemsResultDo struct {
 	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaMosStoreGetdefautitemsResultDo = sync.Pool{
+	New: func() any {
+		return new(AlibabaMosStoreGetdefautitemsResultDo)
+	},
+}
+
+// GetAlibabaMosStoreGetdefautitemsResultDo() 从对象池中获取AlibabaMosStoreGetdefautitemsResultDo
+func GetAlibabaMosStoreGetdefautitemsResultDo() *AlibabaMosStoreGetdefautitemsResultDo {
+	return poolAlibabaMosStoreGetdefautitemsResultDo.Get().(*AlibabaMosStoreGetdefautitemsResultDo)
+}
+
+// ReleaseAlibabaMosStoreGetdefautitemsResultDo 释放AlibabaMosStoreGetdefautitemsResultDo
+func ReleaseAlibabaMosStoreGetdefautitemsResultDo(v *AlibabaMosStoreGetdefautitemsResultDo) {
+	v.ErrMsg = ""
+	v.Data = nil
+	v.ErrCode = 0
+	v.Total = 0
+	v.Success = false
+	poolAlibabaMosStoreGetdefautitemsResultDo.Put(v)
 }

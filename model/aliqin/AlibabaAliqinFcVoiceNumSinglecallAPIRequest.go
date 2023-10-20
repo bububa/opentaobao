@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAliqinFcVoiceNumSinglecallAPIRequest struct {
 // NewAlibabaAliqinFcVoiceNumSinglecallRequest 初始化AlibabaAliqinFcVoiceNumSinglecallAPIRequest对象
 func NewAlibabaAliqinFcVoiceNumSinglecallRequest() *AlibabaAliqinFcVoiceNumSinglecallAPIRequest {
 	return &AlibabaAliqinFcVoiceNumSinglecallAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFcVoiceNumSinglecallAPIRequest) Reset() {
+	r._calledNum = ""
+	r._calledShowNum = ""
+	r._voiceCode = ""
+	r._extend = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAliqinFcVoiceNumSinglecallAPIRequest) SetExtend(_extend string) 
 // GetExtend Extend Getter
 func (r AlibabaAliqinFcVoiceNumSinglecallAPIRequest) GetExtend() string {
 	return r._extend
+}
+
+var poolAlibabaAliqinFcVoiceNumSinglecallAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFcVoiceNumSinglecallRequest()
+	},
+}
+
+// GetAlibabaAliqinFcVoiceNumSinglecallRequest 从 sync.Pool 获取 AlibabaAliqinFcVoiceNumSinglecallAPIRequest
+func GetAlibabaAliqinFcVoiceNumSinglecallAPIRequest() *AlibabaAliqinFcVoiceNumSinglecallAPIRequest {
+	return poolAlibabaAliqinFcVoiceNumSinglecallAPIRequest.Get().(*AlibabaAliqinFcVoiceNumSinglecallAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFcVoiceNumSinglecallAPIRequest 将 AlibabaAliqinFcVoiceNumSinglecallAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFcVoiceNumSinglecallAPIRequest(v *AlibabaAliqinFcVoiceNumSinglecallAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFcVoiceNumSinglecallAPIRequest.Put(v)
 }

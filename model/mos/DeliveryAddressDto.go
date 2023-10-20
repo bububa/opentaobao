@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // DeliveryAddressDto 结构体
 type DeliveryAddressDto struct {
 	// 省
@@ -16,4 +20,27 @@ type DeliveryAddressDto struct {
 	ZipCode string `json:"zip_code,omitempty" xml:"zip_code,omitempty"`
 	// 编码
 	DivisionId int64 `json:"division_id,omitempty" xml:"division_id,omitempty"`
+}
+
+var poolDeliveryAddressDto = sync.Pool{
+	New: func() any {
+		return new(DeliveryAddressDto)
+	},
+}
+
+// GetDeliveryAddressDto() 从对象池中获取DeliveryAddressDto
+func GetDeliveryAddressDto() *DeliveryAddressDto {
+	return poolDeliveryAddressDto.Get().(*DeliveryAddressDto)
+}
+
+// ReleaseDeliveryAddressDto 释放DeliveryAddressDto
+func ReleaseDeliveryAddressDto(v *DeliveryAddressDto) {
+	v.Province = ""
+	v.City = ""
+	v.District = ""
+	v.Town = ""
+	v.DetailAddress = ""
+	v.ZipCode = ""
+	v.DivisionId = 0
+	poolDeliveryAddressDto.Put(v)
 }

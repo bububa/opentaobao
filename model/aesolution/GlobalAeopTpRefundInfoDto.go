@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // GlobalAeopTpRefundInfoDto 结构体
 type GlobalAeopTpRefundInfoDto struct {
 	// refund reason
@@ -14,4 +18,26 @@ type GlobalAeopTpRefundInfoDto struct {
 	RefundCouponAmt *GlobalMoneyStr `json:"refund_coupon_amt,omitempty" xml:"refund_coupon_amt,omitempty"`
 	// refund cash amount
 	RefundCashAmt *GlobalMoneyStr `json:"refund_cash_amt,omitempty" xml:"refund_cash_amt,omitempty"`
+}
+
+var poolGlobalAeopTpRefundInfoDto = sync.Pool{
+	New: func() any {
+		return new(GlobalAeopTpRefundInfoDto)
+	},
+}
+
+// GetGlobalAeopTpRefundInfoDto() 从对象池中获取GlobalAeopTpRefundInfoDto
+func GetGlobalAeopTpRefundInfoDto() *GlobalAeopTpRefundInfoDto {
+	return poolGlobalAeopTpRefundInfoDto.Get().(*GlobalAeopTpRefundInfoDto)
+}
+
+// ReleaseGlobalAeopTpRefundInfoDto 释放GlobalAeopTpRefundInfoDto
+func ReleaseGlobalAeopTpRefundInfoDto(v *GlobalAeopTpRefundInfoDto) {
+	v.RefundReason = ""
+	v.RefundStatus = ""
+	v.RefundType = ""
+	v.RefundTime = ""
+	v.RefundCouponAmt = nil
+	v.RefundCashAmt = nil
+	poolGlobalAeopTpRefundInfoDto.Put(v)
 }

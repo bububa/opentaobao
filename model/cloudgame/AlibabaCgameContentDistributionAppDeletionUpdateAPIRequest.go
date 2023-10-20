@@ -2,6 +2,7 @@ package cloudgame
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCgameContentDistributionAppDeletionUpdateAPIRequest struct {
 // NewAlibabaCgameContentDistributionAppDeletionUpdateRequest 初始化AlibabaCgameContentDistributionAppDeletionUpdateAPIRequest对象
 func NewAlibabaCgameContentDistributionAppDeletionUpdateRequest() *AlibabaCgameContentDistributionAppDeletionUpdateAPIRequest {
 	return &AlibabaCgameContentDistributionAppDeletionUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCgameContentDistributionAppDeletionUpdateAPIRequest) Reset() {
+	r._reqParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCgameContentDistributionAppDeletionUpdateAPIRequest) SetReqParam
 // GetReqParam ReqParam Getter
 func (r AlibabaCgameContentDistributionAppDeletionUpdateAPIRequest) GetReqParam() *AppDeletionCallbackRequest {
 	return r._reqParam
+}
+
+var poolAlibabaCgameContentDistributionAppDeletionUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCgameContentDistributionAppDeletionUpdateRequest()
+	},
+}
+
+// GetAlibabaCgameContentDistributionAppDeletionUpdateRequest 从 sync.Pool 获取 AlibabaCgameContentDistributionAppDeletionUpdateAPIRequest
+func GetAlibabaCgameContentDistributionAppDeletionUpdateAPIRequest() *AlibabaCgameContentDistributionAppDeletionUpdateAPIRequest {
+	return poolAlibabaCgameContentDistributionAppDeletionUpdateAPIRequest.Get().(*AlibabaCgameContentDistributionAppDeletionUpdateAPIRequest)
+}
+
+// ReleaseAlibabaCgameContentDistributionAppDeletionUpdateAPIRequest 将 AlibabaCgameContentDistributionAppDeletionUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCgameContentDistributionAppDeletionUpdateAPIRequest(v *AlibabaCgameContentDistributionAppDeletionUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaCgameContentDistributionAppDeletionUpdateAPIRequest.Put(v)
 }

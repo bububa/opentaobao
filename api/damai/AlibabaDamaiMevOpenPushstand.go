@@ -9,11 +9,6 @@ import (
 // alibaba.damai.mev.open.pushstand
 //
 // pushStand
-func AlibabaDamaiMevOpenPushstand(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushstandAPIRequest, session string) (*damai.AlibabaDamaiMevOpenPushstandAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenPushstandAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMevOpenPushstand(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushstandAPIRequest, resp *damai.AlibabaDamaiMevOpenPushstandAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

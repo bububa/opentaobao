@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // TopOrderDto 结构体
 type TopOrderDto struct {
 	// 核销时间
@@ -16,4 +20,27 @@ type TopOrderDto struct {
 	SkuFeatureX string `json:"sku_feature_x,omitempty" xml:"sku_feature_x,omitempty"`
 	// 订单id
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolTopOrderDto = sync.Pool{
+	New: func() any {
+		return new(TopOrderDto)
+	},
+}
+
+// GetTopOrderDto() 从对象池中获取TopOrderDto
+func GetTopOrderDto() *TopOrderDto {
+	return poolTopOrderDto.Get().(*TopOrderDto)
+}
+
+// ReleaseTopOrderDto 释放TopOrderDto
+func ReleaseTopOrderDto(v *TopOrderDto) {
+	v.ConsumeTime = ""
+	v.ConsumeStore = ""
+	v.StoreName = ""
+	v.SkuFeature1 = ""
+	v.SkuFeature2 = ""
+	v.SkuFeatureX = ""
+	v.OrderId = 0
+	poolTopOrderDto.Put(v)
 }

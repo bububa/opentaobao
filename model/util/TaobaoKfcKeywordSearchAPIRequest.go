@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoKfcKeywordSearchAPIRequest struct {
 // NewTaobaoKfcKeywordSearchRequest 初始化TaobaoKfcKeywordSearchAPIRequest对象
 func NewTaobaoKfcKeywordSearchRequest() *TaobaoKfcKeywordSearchAPIRequest {
 	return &TaobaoKfcKeywordSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoKfcKeywordSearchAPIRequest) Reset() {
+	r._nick = ""
+	r._apply = ""
+	r._content = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoKfcKeywordSearchAPIRequest) SetContent(_content string) error {
 // GetContent Content Getter
 func (r TaobaoKfcKeywordSearchAPIRequest) GetContent() string {
 	return r._content
+}
+
+var poolTaobaoKfcKeywordSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoKfcKeywordSearchRequest()
+	},
+}
+
+// GetTaobaoKfcKeywordSearchRequest 从 sync.Pool 获取 TaobaoKfcKeywordSearchAPIRequest
+func GetTaobaoKfcKeywordSearchAPIRequest() *TaobaoKfcKeywordSearchAPIRequest {
+	return poolTaobaoKfcKeywordSearchAPIRequest.Get().(*TaobaoKfcKeywordSearchAPIRequest)
+}
+
+// ReleaseTaobaoKfcKeywordSearchAPIRequest 将 TaobaoKfcKeywordSearchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoKfcKeywordSearchAPIRequest(v *TaobaoKfcKeywordSearchAPIRequest) {
+	v.Reset()
+	poolTaobaoKfcKeywordSearchAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoWeitaoFeedIsrelationAPIRequest struct {
 // NewTaobaoWeitaoFeedIsrelationRequest 初始化TaobaoWeitaoFeedIsrelationAPIRequest对象
 func NewTaobaoWeitaoFeedIsrelationRequest() *TaobaoWeitaoFeedIsrelationAPIRequest {
 	return &TaobaoWeitaoFeedIsrelationAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWeitaoFeedIsrelationAPIRequest) Reset() {
+	r._sellerNick = ""
+	r._fansNick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoWeitaoFeedIsrelationAPIRequest) SetFansNick(_fansNick string) err
 // GetFansNick FansNick Getter
 func (r TaobaoWeitaoFeedIsrelationAPIRequest) GetFansNick() string {
 	return r._fansNick
+}
+
+var poolTaobaoWeitaoFeedIsrelationAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWeitaoFeedIsrelationRequest()
+	},
+}
+
+// GetTaobaoWeitaoFeedIsrelationRequest 从 sync.Pool 获取 TaobaoWeitaoFeedIsrelationAPIRequest
+func GetTaobaoWeitaoFeedIsrelationAPIRequest() *TaobaoWeitaoFeedIsrelationAPIRequest {
+	return poolTaobaoWeitaoFeedIsrelationAPIRequest.Get().(*TaobaoWeitaoFeedIsrelationAPIRequest)
+}
+
+// ReleaseTaobaoWeitaoFeedIsrelationAPIRequest 将 TaobaoWeitaoFeedIsrelationAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWeitaoFeedIsrelationAPIRequest(v *TaobaoWeitaoFeedIsrelationAPIRequest) {
+	v.Reset()
+	poolTaobaoWeitaoFeedIsrelationAPIRequest.Put(v)
 }

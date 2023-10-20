@@ -1,5 +1,9 @@
 package miniappopen
 
+import (
+	"sync"
+)
+
 // MiniAppEntranceMaterialBizOpenDto 结构体
 type MiniAppEntranceMaterialBizOpenDto struct {
 	// 素材id列表
@@ -24,4 +28,31 @@ type MiniAppEntranceMaterialBizOpenDto struct {
 	MaterialId int64 `json:"material_id,omitempty" xml:"material_id,omitempty"`
 	// 要修改的素材id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolMiniAppEntranceMaterialBizOpenDto = sync.Pool{
+	New: func() any {
+		return new(MiniAppEntranceMaterialBizOpenDto)
+	},
+}
+
+// GetMiniAppEntranceMaterialBizOpenDto() 从对象池中获取MiniAppEntranceMaterialBizOpenDto
+func GetMiniAppEntranceMaterialBizOpenDto() *MiniAppEntranceMaterialBizOpenDto {
+	return poolMiniAppEntranceMaterialBizOpenDto.Get().(*MiniAppEntranceMaterialBizOpenDto)
+}
+
+// ReleaseMiniAppEntranceMaterialBizOpenDto 释放MiniAppEntranceMaterialBizOpenDto
+func ReleaseMiniAppEntranceMaterialBizOpenDto(v *MiniAppEntranceMaterialBizOpenDto) {
+	v.MaterialIdList = v.MaterialIdList[:0]
+	v.DataStr = ""
+	v.PParamsValueStr = ""
+	v.Path = ""
+	v.QParamsValueStr = ""
+	v.Name = ""
+	v.AppId = 0
+	v.CardId = 0
+	v.SceneId = 0
+	v.MaterialId = 0
+	v.Id = 0
+	poolMiniAppEntranceMaterialBizOpenDto.Put(v)
 }

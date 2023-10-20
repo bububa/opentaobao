@@ -9,11 +9,6 @@ import (
 // alitrip.transfer.order.detail
 //
 // 接送订单详情接口
-func AlitripTransferOrderDetail(clt *core.SDKClient, req *car.AlitripTransferOrderDetailAPIRequest, session string) (*car.AlitripTransferOrderDetailAPIResponse, error) {
-	var resp car.AlitripTransferOrderDetailAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripTransferOrderDetail(clt *core.SDKClient, req *car.AlitripTransferOrderDetailAPIRequest, resp *car.AlitripTransferOrderDetailAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

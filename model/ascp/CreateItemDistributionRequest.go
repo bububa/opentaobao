@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // CreateItemDistributionRequest 结构体
 type CreateItemDistributionRequest struct {
 	// 【必传】要选择进行铺货的店铺宝贝 itemId
@@ -42,4 +46,40 @@ type CreateItemDistributionRequest struct {
 	Level4Price int64 `json:"level4_price,omitempty" xml:"level4_price,omitempty"`
 	// 5级分销价格
 	Level5Price int64 `json:"level5_price,omitempty" xml:"level5_price,omitempty"`
+}
+
+var poolCreateItemDistributionRequest = sync.Pool{
+	New: func() any {
+		return new(CreateItemDistributionRequest)
+	},
+}
+
+// GetCreateItemDistributionRequest() 从对象池中获取CreateItemDistributionRequest
+func GetCreateItemDistributionRequest() *CreateItemDistributionRequest {
+	return poolCreateItemDistributionRequest.Get().(*CreateItemDistributionRequest)
+}
+
+// ReleaseCreateItemDistributionRequest 释放CreateItemDistributionRequest
+func ReleaseCreateItemDistributionRequest(v *CreateItemDistributionRequest) {
+	v.ItemId = ""
+	v.ItemCode = ""
+	v.ItemTitle = ""
+	v.SkuId = ""
+	v.SkuCode = ""
+	v.SkuTitle = ""
+	v.ScItemId = ""
+	v.RequestId = ""
+	v.DistributeCurrency = ""
+	v.RetailCurrency = ""
+	v.ScItemCode = ""
+	v.LogisticsCostTemplateId = 0
+	v.DistributePrice = 0
+	v.RetailPrice = 0
+	v.RequestTime = 0
+	v.Level1Price = 0
+	v.Level2Price = 0
+	v.Level3Price = 0
+	v.Level4Price = 0
+	v.Level5Price = 0
+	poolCreateItemDistributionRequest.Put(v)
 }

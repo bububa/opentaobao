@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // TaxFlowQueryResult 结构体
 type TaxFlowQueryResult struct {
 	// 入驻开通工单ID
@@ -10,4 +14,24 @@ type TaxFlowQueryResult struct {
 	InvoiceMerchant *InvoiceMerchantDto `json:"invoice_merchant,omitempty" xml:"invoice_merchant,omitempty"`
 	// 订购单信息
 	InvoiceOrder *InvoiceOrderSimpleDto `json:"invoice_order,omitempty" xml:"invoice_order,omitempty"`
+}
+
+var poolTaxFlowQueryResult = sync.Pool{
+	New: func() any {
+		return new(TaxFlowQueryResult)
+	},
+}
+
+// GetTaxFlowQueryResult() 从对象池中获取TaxFlowQueryResult
+func GetTaxFlowQueryResult() *TaxFlowQueryResult {
+	return poolTaxFlowQueryResult.Get().(*TaxFlowQueryResult)
+}
+
+// ReleaseTaxFlowQueryResult 释放TaxFlowQueryResult
+func ReleaseTaxFlowQueryResult(v *TaxFlowQueryResult) {
+	v.FlowId = ""
+	v.FlowStatus = ""
+	v.InvoiceMerchant = nil
+	v.InvoiceOrder = nil
+	poolTaxFlowQueryResult.Put(v)
 }

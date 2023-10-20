@@ -2,6 +2,7 @@ package crm
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoCrmMemberGroupGetAPIResponse struct {
 	TaobaoCrmMemberGroupGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoCrmMemberGroupGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCrmMemberGroupGetAPIResponseModel).Reset()
+}
+
 // TaobaoCrmMemberGroupGetAPIResponseModel is 获取买家身上的标签 成功返回结果
 type TaobaoCrmMemberGroupGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"crm_member_group_get_response"`
@@ -22,4 +29,27 @@ type TaobaoCrmMemberGroupGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 查询到的当前卖家的当前页的会员
 	Groups []Group `json:"groups,omitempty" xml:"groups>group,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCrmMemberGroupGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Groups = m.Groups[:0]
+}
+
+var poolTaobaoCrmMemberGroupGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCrmMemberGroupGetAPIResponse)
+	},
+}
+
+// GetTaobaoCrmMemberGroupGetAPIResponse 从 sync.Pool 获取 TaobaoCrmMemberGroupGetAPIResponse
+func GetTaobaoCrmMemberGroupGetAPIResponse() *TaobaoCrmMemberGroupGetAPIResponse {
+	return poolTaobaoCrmMemberGroupGetAPIResponse.Get().(*TaobaoCrmMemberGroupGetAPIResponse)
+}
+
+// ReleaseTaobaoCrmMemberGroupGetAPIResponse 将 TaobaoCrmMemberGroupGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCrmMemberGroupGetAPIResponse(v *TaobaoCrmMemberGroupGetAPIResponse) {
+	v.Reset()
+	poolTaobaoCrmMemberGroupGetAPIResponse.Put(v)
 }

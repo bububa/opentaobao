@@ -9,11 +9,6 @@ import (
 // tmall.ascp.orders.sale.create
 //
 // ASCP渠道中心销售单创建接口
-func TmallAscpOrdersSaleCreate(clt *core.SDKClient, req *trade.TmallAscpOrdersSaleCreateAPIRequest, session string) (*trade.TmallAscpOrdersSaleCreateAPIResponse, error) {
-	var resp trade.TmallAscpOrdersSaleCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallAscpOrdersSaleCreate(clt *core.SDKClient, req *trade.TmallAscpOrdersSaleCreateAPIRequest, resp *trade.TmallAscpOrdersSaleCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

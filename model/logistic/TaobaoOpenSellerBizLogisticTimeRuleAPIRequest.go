@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOpenSellerBizLogisticTimeRuleAPIRequest struct {
 // NewTaobaoOpenSellerBizLogisticTimeRuleRequest 初始化TaobaoOpenSellerBizLogisticTimeRuleAPIRequest对象
 func NewTaobaoOpenSellerBizLogisticTimeRuleRequest() *TaobaoOpenSellerBizLogisticTimeRuleAPIRequest {
 	return &TaobaoOpenSellerBizLogisticTimeRuleAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenSellerBizLogisticTimeRuleAPIRequest) Reset() {
+	r._lastPayTime = ""
+	r._lastDeliveryTime = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOpenSellerBizLogisticTimeRuleAPIRequest) SetLastDeliveryTime(_las
 // GetLastDeliveryTime LastDeliveryTime Getter
 func (r TaobaoOpenSellerBizLogisticTimeRuleAPIRequest) GetLastDeliveryTime() string {
 	return r._lastDeliveryTime
+}
+
+var poolTaobaoOpenSellerBizLogisticTimeRuleAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenSellerBizLogisticTimeRuleRequest()
+	},
+}
+
+// GetTaobaoOpenSellerBizLogisticTimeRuleRequest 从 sync.Pool 获取 TaobaoOpenSellerBizLogisticTimeRuleAPIRequest
+func GetTaobaoOpenSellerBizLogisticTimeRuleAPIRequest() *TaobaoOpenSellerBizLogisticTimeRuleAPIRequest {
+	return poolTaobaoOpenSellerBizLogisticTimeRuleAPIRequest.Get().(*TaobaoOpenSellerBizLogisticTimeRuleAPIRequest)
+}
+
+// ReleaseTaobaoOpenSellerBizLogisticTimeRuleAPIRequest 将 TaobaoOpenSellerBizLogisticTimeRuleAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenSellerBizLogisticTimeRuleAPIRequest(v *TaobaoOpenSellerBizLogisticTimeRuleAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenSellerBizLogisticTimeRuleAPIRequest.Put(v)
 }

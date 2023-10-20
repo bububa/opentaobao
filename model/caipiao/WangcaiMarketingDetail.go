@@ -1,5 +1,9 @@
 package caipiao
 
+import (
+	"sync"
+)
+
 // WangcaiMarketingDetail 结构体
 type WangcaiMarketingDetail struct {
 	// 参与活动的商品ID
@@ -22,4 +26,30 @@ type WangcaiMarketingDetail struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 活动类型,0全店/1指定商品
 	ActivityType int64 `json:"activity_type,omitempty" xml:"activity_type,omitempty"`
+}
+
+var poolWangcaiMarketingDetail = sync.Pool{
+	New: func() any {
+		return new(WangcaiMarketingDetail)
+	},
+}
+
+// GetWangcaiMarketingDetail() 从对象池中获取WangcaiMarketingDetail
+func GetWangcaiMarketingDetail() *WangcaiMarketingDetail {
+	return poolWangcaiMarketingDetail.Get().(*WangcaiMarketingDetail)
+}
+
+// ReleaseWangcaiMarketingDetail 释放WangcaiMarketingDetail
+func ReleaseWangcaiMarketingDetail(v *WangcaiMarketingDetail) {
+	v.Items = v.Items[:0]
+	v.ActivityId = ""
+	v.BeginTime = ""
+	v.EndTime = ""
+	v.ActivityName = ""
+	v.BizId = ""
+	v.LotteryTypeId = 0
+	v.MinAmount = 0
+	v.Quantity = 0
+	v.ActivityType = 0
+	poolWangcaiMarketingDetail.Put(v)
 }

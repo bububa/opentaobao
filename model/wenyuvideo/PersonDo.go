@@ -1,5 +1,9 @@
 package wenyuvideo
 
+import (
+	"sync"
+)
+
 // PersonDo 结构体
 type PersonDo struct {
 	// 人物名字
@@ -16,4 +20,27 @@ type PersonDo struct {
 	PersonDesc string `json:"person_desc,omitempty" xml:"person_desc,omitempty"`
 	// 人物ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolPersonDo = sync.Pool{
+	New: func() any {
+		return new(PersonDo)
+	},
+}
+
+// GetPersonDo() 从对象池中获取PersonDo
+func GetPersonDo() *PersonDo {
+	return poolPersonDo.Get().(*PersonDo)
+}
+
+// ReleasePersonDo 释放PersonDo
+func ReleasePersonDo(v *PersonDo) {
+	v.Name = ""
+	v.ThumbUrl = ""
+	v.ThumbUrlLg = ""
+	v.PosterUrl = ""
+	v.PosterUrlH = ""
+	v.PersonDesc = ""
+	v.Id = 0
+	poolPersonDo.Put(v)
 }

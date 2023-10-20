@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // Action 结构体
 type Action struct {
 	// 减钱金额，单位分
@@ -16,4 +20,27 @@ type Action struct {
 	FixPrice bool `json:"fix_price,omitempty" xml:"fix_price,omitempty"`
 	// 是否减钱
 	Decrease bool `json:"decrease,omitempty" xml:"decrease,omitempty"`
+}
+
+var poolAction = sync.Pool{
+	New: func() any {
+		return new(Action)
+	},
+}
+
+// GetAction() 从对象池中获取Action
+func GetAction() *Action {
+	return poolAction.Get().(*Action)
+}
+
+// ReleaseAction 释放Action
+func ReleaseAction(v *Action) {
+	v.DecreaseMoney = 0
+	v.DiscountRate = 0
+	v.FixPriceMoney = 0
+	v.FixPriceType = 0
+	v.Discount = false
+	v.FixPrice = false
+	v.Decrease = false
+	poolAction.Put(v)
 }

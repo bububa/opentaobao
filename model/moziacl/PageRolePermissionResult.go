@@ -1,5 +1,9 @@
 package moziacl
 
+import (
+	"sync"
+)
+
 // PageRolePermissionResult 结构体
 type PageRolePermissionResult struct {
 	// 角色下的权限列表数据
@@ -22,4 +26,30 @@ type PageRolePermissionResult struct {
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
 	// 是否处理成功，成功则返回true
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolPageRolePermissionResult = sync.Pool{
+	New: func() any {
+		return new(PageRolePermissionResult)
+	},
+}
+
+// GetPageRolePermissionResult() 从对象池中获取PageRolePermissionResult
+func GetPageRolePermissionResult() *PageRolePermissionResult {
+	return poolPageRolePermissionResult.Get().(*PageRolePermissionResult)
+}
+
+// ReleasePageRolePermissionResult 释放PageRolePermissionResult
+func ReleasePageRolePermissionResult(v *PageRolePermissionResult) {
+	v.Datas = v.Datas[:0]
+	v.RequestId = ""
+	v.RoleName = ""
+	v.ResponseMessage = ""
+	v.ResponseMetaData = ""
+	v.ResponseCode = ""
+	v.TotalSize = 0
+	v.PageSize = 0
+	v.CurrentPage = 0
+	v.Success = false
+	poolPageRolePermissionResult.Put(v)
 }

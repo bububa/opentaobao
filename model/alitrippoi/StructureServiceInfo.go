@@ -1,5 +1,9 @@
 package alitrippoi
 
+import (
+	"sync"
+)
+
 // StructureServiceInfo 结构体
 type StructureServiceInfo struct {
 	// 是否提供酒精饮料
@@ -22,4 +26,30 @@ type StructureServiceInfo struct {
 	Tips bool `json:"tips,omitempty" xml:"tips,omitempty"`
 	// 是否支持电话预定
 	TelRsvt bool `json:"tel_rsvt,omitempty" xml:"tel_rsvt,omitempty"`
+}
+
+var poolStructureServiceInfo = sync.Pool{
+	New: func() any {
+		return new(StructureServiceInfo)
+	},
+}
+
+// GetStructureServiceInfo() 从对象池中获取StructureServiceInfo
+func GetStructureServiceInfo() *StructureServiceInfo {
+	return poolStructureServiceInfo.Get().(*StructureServiceInfo)
+}
+
+// ReleaseStructureServiceInfo 释放StructureServiceInfo
+func ReleaseStructureServiceInfo(v *StructureServiceInfo) {
+	v.Alcohol = false
+	v.Parking = false
+	v.Wifi = false
+	v.Booking = false
+	v.Byo = false
+	v.Box = false
+	v.ChineseSvc = false
+	v.Takeout = false
+	v.Tips = false
+	v.TelRsvt = false
+	poolStructureServiceInfo.Put(v)
 }

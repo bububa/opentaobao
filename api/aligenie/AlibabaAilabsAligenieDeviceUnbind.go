@@ -9,11 +9,6 @@ import (
 // alibaba.ailabs.aligenie.device.unbind
 //
 // 让开发者能根据设备ID进行解绑操作的接口
-func AlibabaAilabsAligenieDeviceUnbind(clt *core.SDKClient, req *aligenie.AlibabaAilabsAligenieDeviceUnbindAPIRequest, session string) (*aligenie.AlibabaAilabsAligenieDeviceUnbindAPIResponse, error) {
-	var resp aligenie.AlibabaAilabsAligenieDeviceUnbindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAilabsAligenieDeviceUnbind(clt *core.SDKClient, req *aligenie.AlibabaAilabsAligenieDeviceUnbindAPIRequest, resp *aligenie.AlibabaAilabsAligenieDeviceUnbindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

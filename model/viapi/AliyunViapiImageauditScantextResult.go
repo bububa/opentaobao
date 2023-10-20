@@ -1,5 +1,9 @@
 package viapi
 
+import (
+	"sync"
+)
+
 // AliyunViapiImageauditScantextResult 结构体
 type AliyunViapiImageauditScantextResult struct {
 	// 单个文本的检测结果
@@ -10,4 +14,24 @@ type AliyunViapiImageauditScantextResult struct {
 	Label string `json:"label,omitempty" xml:"label,omitempty"`
 	// 结果为该分类的概率，取值范围为[0.00-100.00]。值越高，表示越有可能属于该分类。  说明 分值仅供参考，您需要关注label和suggestion内容
 	Rate int64 `json:"rate,omitempty" xml:"rate,omitempty"`
+}
+
+var poolAliyunViapiImageauditScantextResult = sync.Pool{
+	New: func() any {
+		return new(AliyunViapiImageauditScantextResult)
+	},
+}
+
+// GetAliyunViapiImageauditScantextResult() 从对象池中获取AliyunViapiImageauditScantextResult
+func GetAliyunViapiImageauditScantextResult() *AliyunViapiImageauditScantextResult {
+	return poolAliyunViapiImageauditScantextResult.Get().(*AliyunViapiImageauditScantextResult)
+}
+
+// ReleaseAliyunViapiImageauditScantextResult 释放AliyunViapiImageauditScantextResult
+func ReleaseAliyunViapiImageauditScantextResult(v *AliyunViapiImageauditScantextResult) {
+	v.Details = v.Details[:0]
+	v.Suggestion = ""
+	v.Label = ""
+	v.Rate = 0
+	poolAliyunViapiImageauditScantextResult.Put(v)
 }

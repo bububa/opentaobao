@@ -1,5 +1,9 @@
 package hotelhstdf
 
+import (
+	"sync"
+)
+
 // SroomTypePo 结构体
 type SroomTypePo struct {
 	// 标准房型名称
@@ -14,4 +18,26 @@ type SroomTypePo struct {
 	Srid int64 `json:"srid,omitempty" xml:"srid,omitempty"`
 	// 窗型，0:无窗,1:有窗,2:部分有窗,3:暗窗,4:部分暗窗
 	WindowType int64 `json:"window_type,omitempty" xml:"window_type,omitempty"`
+}
+
+var poolSroomTypePo = sync.Pool{
+	New: func() any {
+		return new(SroomTypePo)
+	},
+}
+
+// GetSroomTypePo() 从对象池中获取SroomTypePo
+func GetSroomTypePo() *SroomTypePo {
+	return poolSroomTypePo.Get().(*SroomTypePo)
+}
+
+// ReleaseSroomTypePo 释放SroomTypePo
+func ReleaseSroomTypePo(v *SroomTypePo) {
+	v.Name = ""
+	v.NameE = ""
+	v.BedType = ""
+	v.Area = ""
+	v.Srid = 0
+	v.WindowType = 0
+	poolSroomTypePo.Put(v)
 }

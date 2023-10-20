@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoDaogoubaoOrderStatisticsTotalAPIRequest struct {
 // NewTaobaoDaogoubaoOrderStatisticsTotalRequest 初始化TaobaoDaogoubaoOrderStatisticsTotalAPIRequest对象
 func NewTaobaoDaogoubaoOrderStatisticsTotalRequest() *TaobaoDaogoubaoOrderStatisticsTotalAPIRequest {
 	return &TaobaoDaogoubaoOrderStatisticsTotalAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDaogoubaoOrderStatisticsTotalAPIRequest) Reset() {
+	r._debugId = ""
+	r._field = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoDaogoubaoOrderStatisticsTotalAPIRequest) SetField(_field string) 
 // GetField Field Getter
 func (r TaobaoDaogoubaoOrderStatisticsTotalAPIRequest) GetField() string {
 	return r._field
+}
+
+var poolTaobaoDaogoubaoOrderStatisticsTotalAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDaogoubaoOrderStatisticsTotalRequest()
+	},
+}
+
+// GetTaobaoDaogoubaoOrderStatisticsTotalRequest 从 sync.Pool 获取 TaobaoDaogoubaoOrderStatisticsTotalAPIRequest
+func GetTaobaoDaogoubaoOrderStatisticsTotalAPIRequest() *TaobaoDaogoubaoOrderStatisticsTotalAPIRequest {
+	return poolTaobaoDaogoubaoOrderStatisticsTotalAPIRequest.Get().(*TaobaoDaogoubaoOrderStatisticsTotalAPIRequest)
+}
+
+// ReleaseTaobaoDaogoubaoOrderStatisticsTotalAPIRequest 将 TaobaoDaogoubaoOrderStatisticsTotalAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDaogoubaoOrderStatisticsTotalAPIRequest(v *TaobaoDaogoubaoOrderStatisticsTotalAPIRequest) {
+	v.Reset()
+	poolTaobaoDaogoubaoOrderStatisticsTotalAPIRequest.Put(v)
 }

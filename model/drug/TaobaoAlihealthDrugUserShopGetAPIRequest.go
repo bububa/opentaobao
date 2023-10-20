@@ -2,6 +2,7 @@ package drug
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlihealthDrugUserShopGetAPIRequest struct {
 // NewTaobaoAlihealthDrugUserShopGetRequest 初始化TaobaoAlihealthDrugUserShopGetAPIRequest对象
 func NewTaobaoAlihealthDrugUserShopGetRequest() *TaobaoAlihealthDrugUserShopGetAPIRequest {
 	return &TaobaoAlihealthDrugUserShopGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlihealthDrugUserShopGetAPIRequest) Reset() {
+	r._userNick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlihealthDrugUserShopGetAPIRequest) SetUserNick(_userNick string)
 // GetUserNick UserNick Getter
 func (r TaobaoAlihealthDrugUserShopGetAPIRequest) GetUserNick() string {
 	return r._userNick
+}
+
+var poolTaobaoAlihealthDrugUserShopGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlihealthDrugUserShopGetRequest()
+	},
+}
+
+// GetTaobaoAlihealthDrugUserShopGetRequest 从 sync.Pool 获取 TaobaoAlihealthDrugUserShopGetAPIRequest
+func GetTaobaoAlihealthDrugUserShopGetAPIRequest() *TaobaoAlihealthDrugUserShopGetAPIRequest {
+	return poolTaobaoAlihealthDrugUserShopGetAPIRequest.Get().(*TaobaoAlihealthDrugUserShopGetAPIRequest)
+}
+
+// ReleaseTaobaoAlihealthDrugUserShopGetAPIRequest 将 TaobaoAlihealthDrugUserShopGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlihealthDrugUserShopGetAPIRequest(v *TaobaoAlihealthDrugUserShopGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAlihealthDrugUserShopGetAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package aedropshiper
 
+import (
+	"sync"
+)
+
 // TrafficImageProductDto 结构体
 type TrafficImageProductDto struct {
 	// commodity thumbnail address list
@@ -52,4 +56,45 @@ type TrafficImageProductDto struct {
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// shop id
 	ShopId int64 `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
+}
+
+var poolTrafficImageProductDto = sync.Pool{
+	New: func() any {
+		return new(TrafficImageProductDto)
+	},
+}
+
+// GetTrafficImageProductDto() 从对象池中获取TrafficImageProductDto
+func GetTrafficImageProductDto() *TrafficImageProductDto {
+	return poolTrafficImageProductDto.Get().(*TrafficImageProductDto)
+}
+
+// ReleaseTrafficImageProductDto 释放TrafficImageProductDto
+func ReleaseTrafficImageProductDto(v *TrafficImageProductDto) {
+	v.ProductSmallImageUrls = v.ProductSmallImageUrls[:0]
+	v.OriginalPrice = ""
+	v.OriginalPriceCurrency = ""
+	v.Discount = ""
+	v.LastestVolume = ""
+	v.TargetSalePrice = ""
+	v.EvaluateRate = ""
+	v.TargetOriginalPrice = ""
+	v.SecondLevelCategoryName = ""
+	v.FirstLevelCategoryId = ""
+	v.ProductVideoUrl = ""
+	v.ProductId = ""
+	v.SalePrice = ""
+	v.TargetSalePriceCurrency = ""
+	v.SecondLevelCategoryId = ""
+	v.ShopUrl = ""
+	v.ProductTitle = ""
+	v.ProductDetailUrl = ""
+	v.FirstLevelCategoryName = ""
+	v.ProductMainImageUrl = ""
+	v.PlatformProductType = ""
+	v.TargetOriginalPriceCurrency = ""
+	v.SalePriceCurrency = ""
+	v.SellerId = 0
+	v.ShopId = 0
+	poolTrafficImageProductDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // ParameterEntity 结构体
 type ParameterEntity struct {
 	// 流程定义KEY,发起流程的唯一标
@@ -26,4 +30,32 @@ type ParameterEntity struct {
 	YzCode string `json:"yz_code,omitempty" xml:"yz_code,omitempty"`
 	// 流程发起描述信息(会展示在审批日志中)
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+}
+
+var poolParameterEntity = sync.Pool{
+	New: func() any {
+		return new(ParameterEntity)
+	},
+}
+
+// GetParameterEntity() 从对象池中获取ParameterEntity
+func GetParameterEntity() *ParameterEntity {
+	return poolParameterEntity.Get().(*ParameterEntity)
+}
+
+// ReleaseParameterEntity 释放ParameterEntity
+func ReleaseParameterEntity(v *ParameterEntity) {
+	v.ProcessDefinitionKey = ""
+	v.ProcessType = ""
+	v.BusinessDataUrl = ""
+	v.StartUserRoleName = ""
+	v.OperId = ""
+	v.FormId = ""
+	v.Title = ""
+	v.StoreNo = ""
+	v.CcUserIds = ""
+	v.OperIdType = ""
+	v.YzCode = ""
+	v.Message = ""
+	poolParameterEntity.Put(v)
 }

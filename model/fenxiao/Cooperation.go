@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // Cooperation 结构体
 type Cooperation struct {
 	// 授权产品线名称，和product_line中的值按序对应
@@ -28,4 +32,33 @@ type Cooperation struct {
 	SupplierId int64 `json:"supplier_id,omitempty" xml:"supplier_id,omitempty"`
 	// 等级ID
 	GradeId int64 `json:"grade_id,omitempty" xml:"grade_id,omitempty"`
+}
+
+var poolCooperation = sync.Pool{
+	New: func() any {
+		return new(Cooperation)
+	},
+}
+
+// GetCooperation() 从对象池中获取Cooperation
+func GetCooperation() *Cooperation {
+	return poolCooperation.Get().(*Cooperation)
+}
+
+// ReleaseCooperation 释放Cooperation
+func ReleaseCooperation(v *Cooperation) {
+	v.ProductLineName = v.ProductLineName[:0]
+	v.AuthPayway = v.AuthPayway[:0]
+	v.DistributorNick = ""
+	v.SupplierNick = ""
+	v.ProductLine = ""
+	v.TradeType = ""
+	v.StartDate = ""
+	v.EndDate = ""
+	v.Status = ""
+	v.CooperateId = 0
+	v.DistributorId = 0
+	v.SupplierId = 0
+	v.GradeId = 0
+	poolCooperation.Put(v)
 }

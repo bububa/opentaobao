@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // TaxOptimizationSalaryPaymentAccessReqDto 结构体
 type TaxOptimizationSalaryPaymentAccessReqDto struct {
 	// 发薪明细列表
@@ -18,4 +22,28 @@ type TaxOptimizationSalaryPaymentAccessReqDto struct {
 	PaySalaryMode string `json:"pay_salary_mode,omitempty" xml:"pay_salary_mode,omitempty"`
 	// 请求id
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+}
+
+var poolTaxOptimizationSalaryPaymentAccessReqDto = sync.Pool{
+	New: func() any {
+		return new(TaxOptimizationSalaryPaymentAccessReqDto)
+	},
+}
+
+// GetTaxOptimizationSalaryPaymentAccessReqDto() 从对象池中获取TaxOptimizationSalaryPaymentAccessReqDto
+func GetTaxOptimizationSalaryPaymentAccessReqDto() *TaxOptimizationSalaryPaymentAccessReqDto {
+	return poolTaxOptimizationSalaryPaymentAccessReqDto.Get().(*TaxOptimizationSalaryPaymentAccessReqDto)
+}
+
+// ReleaseTaxOptimizationSalaryPaymentAccessReqDto 释放TaxOptimizationSalaryPaymentAccessReqDto
+func ReleaseTaxOptimizationSalaryPaymentAccessReqDto(v *TaxOptimizationSalaryPaymentAccessReqDto) {
+	v.DetailIdList = v.DetailIdList[:0]
+	v.AccountDate = ""
+	v.ApplyAmount = ""
+	v.BusinessTime = ""
+	v.EmployerCode = ""
+	v.IdentificationInBelongingEmployer = ""
+	v.PaySalaryMode = ""
+	v.RequestId = ""
+	poolTaxOptimizationSalaryPaymentAccessReqDto.Put(v)
 }

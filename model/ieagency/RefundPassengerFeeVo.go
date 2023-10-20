@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // RefundPassengerFeeVo 结构体
 type RefundPassengerFeeVo struct {
 	// 活动列表
@@ -20,4 +24,29 @@ type RefundPassengerFeeVo struct {
 	RefundToBuyerMoney int64 `json:"refund_to_buyer_money,omitempty" xml:"refund_to_buyer_money,omitempty"`
 	// 乘机人红包收回(单位:分)
 	TakeBackActivityMoney int64 `json:"take_back_activity_money,omitempty" xml:"take_back_activity_money,omitempty"`
+}
+
+var poolRefundPassengerFeeVo = sync.Pool{
+	New: func() any {
+		return new(RefundPassengerFeeVo)
+	},
+}
+
+// GetRefundPassengerFeeVo() 从对象池中获取RefundPassengerFeeVo
+func GetRefundPassengerFeeVo() *RefundPassengerFeeVo {
+	return poolRefundPassengerFeeVo.Get().(*RefundPassengerFeeVo)
+}
+
+// ReleaseRefundPassengerFeeVo 释放RefundPassengerFeeVo
+func ReleaseRefundPassengerFeeVo(v *RefundPassengerFeeVo) {
+	v.RefundActivityVos = v.RefundActivityVos[:0]
+	v.AlreadyUsedTotalPirce = 0
+	v.NonRefundableChangeServiceFee = 0
+	v.NonRefundableChangeUpgradeFee = 0
+	v.NonRefundableTaxPrice = 0
+	v.NonRefundableTicketPrice = 0
+	v.PassengerId = 0
+	v.RefundToBuyerMoney = 0
+	v.TakeBackActivityMoney = 0
+	poolRefundPassengerFeeVo.Put(v)
 }

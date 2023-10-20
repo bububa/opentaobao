@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTmallgenieHotelwelcomeAPIResponse struct {
 	TaobaoTmallgenieHotelwelcomeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTmallgenieHotelwelcomeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTmallgenieHotelwelcomeAPIResponseModel).Reset()
+}
+
 // TaobaoTmallgenieHotelwelcomeAPIResponseModel is 酒店欢迎词推送 成功返回结果
 type TaobaoTmallgenieHotelwelcomeAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmallgenie_hotelwelcome_response"`
@@ -24,4 +31,28 @@ type TaobaoTmallgenieHotelwelcomeAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// statusCode
 	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTmallgenieHotelwelcomeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.StatusCode = 0
+}
+
+var poolTaobaoTmallgenieHotelwelcomeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTmallgenieHotelwelcomeAPIResponse)
+	},
+}
+
+// GetTaobaoTmallgenieHotelwelcomeAPIResponse 从 sync.Pool 获取 TaobaoTmallgenieHotelwelcomeAPIResponse
+func GetTaobaoTmallgenieHotelwelcomeAPIResponse() *TaobaoTmallgenieHotelwelcomeAPIResponse {
+	return poolTaobaoTmallgenieHotelwelcomeAPIResponse.Get().(*TaobaoTmallgenieHotelwelcomeAPIResponse)
+}
+
+// ReleaseTaobaoTmallgenieHotelwelcomeAPIResponse 将 TaobaoTmallgenieHotelwelcomeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTmallgenieHotelwelcomeAPIResponse(v *TaobaoTmallgenieHotelwelcomeAPIResponse) {
+	v.Reset()
+	poolTaobaoTmallgenieHotelwelcomeAPIResponse.Put(v)
 }

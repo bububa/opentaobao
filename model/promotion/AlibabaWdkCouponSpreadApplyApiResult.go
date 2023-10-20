@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // AlibabaWdkCouponSpreadApplyApiResult 结构体
 type AlibabaWdkCouponSpreadApplyApiResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type AlibabaWdkCouponSpreadApplyApiResult struct {
 	Model *CouponTemplateOperateResponse `json:"model,omitempty" xml:"model,omitempty"`
 	// 成功标志
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaWdkCouponSpreadApplyApiResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkCouponSpreadApplyApiResult)
+	},
+}
+
+// GetAlibabaWdkCouponSpreadApplyApiResult() 从对象池中获取AlibabaWdkCouponSpreadApplyApiResult
+func GetAlibabaWdkCouponSpreadApplyApiResult() *AlibabaWdkCouponSpreadApplyApiResult {
+	return poolAlibabaWdkCouponSpreadApplyApiResult.Get().(*AlibabaWdkCouponSpreadApplyApiResult)
+}
+
+// ReleaseAlibabaWdkCouponSpreadApplyApiResult 释放AlibabaWdkCouponSpreadApplyApiResult
+func ReleaseAlibabaWdkCouponSpreadApplyApiResult(v *AlibabaWdkCouponSpreadApplyApiResult) {
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Model = nil
+	v.Success = false
+	poolAlibabaWdkCouponSpreadApplyApiResult.Put(v)
 }

@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQianniuNumberPutAPIRequest struct {
 // NewTaobaoQianniuNumberPutRequest 初始化TaobaoQianniuNumberPutAPIRequest对象
 func NewTaobaoQianniuNumberPutRequest() *TaobaoQianniuNumberPutAPIRequest {
 	return &TaobaoQianniuNumberPutAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQianniuNumberPutAPIRequest) Reset() {
+	r._data = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoQianniuNumberPutAPIRequest) SetData(_data string) error {
 // GetData Data Getter
 func (r TaobaoQianniuNumberPutAPIRequest) GetData() string {
 	return r._data
+}
+
+var poolTaobaoQianniuNumberPutAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQianniuNumberPutRequest()
+	},
+}
+
+// GetTaobaoQianniuNumberPutRequest 从 sync.Pool 获取 TaobaoQianniuNumberPutAPIRequest
+func GetTaobaoQianniuNumberPutAPIRequest() *TaobaoQianniuNumberPutAPIRequest {
+	return poolTaobaoQianniuNumberPutAPIRequest.Get().(*TaobaoQianniuNumberPutAPIRequest)
+}
+
+// ReleaseTaobaoQianniuNumberPutAPIRequest 将 TaobaoQianniuNumberPutAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQianniuNumberPutAPIRequest(v *TaobaoQianniuNumberPutAPIRequest) {
+	v.Reset()
+	poolTaobaoQianniuNumberPutAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaInteractCouponApplyAPIRequest struct {
 // NewAlibabaInteractCouponApplyRequest 初始化AlibabaInteractCouponApplyAPIRequest对象
 func NewAlibabaInteractCouponApplyRequest() *AlibabaInteractCouponApplyAPIRequest {
 	return &AlibabaInteractCouponApplyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractCouponApplyAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaInteractCouponApplyAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaInteractCouponApplyAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaInteractCouponApplyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractCouponApplyRequest()
+	},
+}
+
+// GetAlibabaInteractCouponApplyRequest 从 sync.Pool 获取 AlibabaInteractCouponApplyAPIRequest
+func GetAlibabaInteractCouponApplyAPIRequest() *AlibabaInteractCouponApplyAPIRequest {
+	return poolAlibabaInteractCouponApplyAPIRequest.Get().(*AlibabaInteractCouponApplyAPIRequest)
+}
+
+// ReleaseAlibabaInteractCouponApplyAPIRequest 将 AlibabaInteractCouponApplyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractCouponApplyAPIRequest(v *AlibabaInteractCouponApplyAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractCouponApplyAPIRequest.Put(v)
 }

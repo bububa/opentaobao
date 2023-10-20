@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // MerchantProductRequest 结构体
 type MerchantProductRequest struct {
 	// 商品条码
@@ -64,4 +68,51 @@ type MerchantProductRequest struct {
 	IsShelflife bool `json:"is_shelflife,omitempty" xml:"is_shelflife,omitempty"`
 	// 是否称重
 	IsWeight bool `json:"is_weight,omitempty" xml:"is_weight,omitempty"`
+}
+
+var poolMerchantProductRequest = sync.Pool{
+	New: func() any {
+		return new(MerchantProductRequest)
+	},
+}
+
+// GetMerchantProductRequest() 从对象池中获取MerchantProductRequest
+func GetMerchantProductRequest() *MerchantProductRequest {
+	return poolMerchantProductRequest.Get().(*MerchantProductRequest)
+}
+
+// ReleaseMerchantProductRequest 释放MerchantProductRequest
+func ReleaseMerchantProductRequest(v *MerchantProductRequest) {
+	v.Barcodes = v.Barcodes[:0]
+	v.CatProps = v.CatProps[:0]
+	v.TransportWeight = ""
+	v.Title = ""
+	v.TaxInvoice = ""
+	v.InventoryUnit = ""
+	v.Price = ""
+	v.TransportHeight = ""
+	v.Height = ""
+	v.Length = ""
+	v.Specification = ""
+	v.Weight = ""
+	v.TransportWidth = ""
+	v.MarketCategories = ""
+	v.TransportLength = ""
+	v.Volume = ""
+	v.Width = ""
+	v.AvgWeight = ""
+	v.YxCategoryId = ""
+	v.RtCategoryNamePath = ""
+	v.TransportVolume = ""
+	v.YxCategoryNamePath = ""
+	v.ExpirationDays = 0
+	v.RtCategoryId = 0
+	v.PackageNum = 0
+	v.StepQuantity = 0
+	v.StandardCategoryId = 0
+	v.PurchaseQuantity = 0
+	v.RtItemCode = 0
+	v.IsShelflife = false
+	v.IsWeight = false
+	poolMerchantProductRequest.Put(v)
 }

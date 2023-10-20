@@ -9,11 +9,6 @@ import (
 // cainiao.waybill.cloudprint.netprint.verifycode
 //
 // 打印获取验证码
-func CainiaoWaybillCloudprintNetprintVerifycode(clt *core.SDKClient, req *logistic.CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest, session string) (*logistic.CainiaoWaybillCloudprintNetprintVerifycodeAPIResponse, error) {
-	var resp logistic.CainiaoWaybillCloudprintNetprintVerifycodeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoWaybillCloudprintNetprintVerifycode(clt *core.SDKClient, req *logistic.CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest, resp *logistic.CainiaoWaybillCloudprintNetprintVerifycodeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

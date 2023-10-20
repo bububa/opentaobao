@@ -2,6 +2,7 @@ package eticket
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoVmarketEticketConsumeAPIResponse struct {
 	model.CommonResponse
 	TaobaoVmarketEticketConsumeAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoVmarketEticketConsumeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoVmarketEticketConsumeAPIResponseModel).Reset()
 }
 
 // TaobaoVmarketEticketConsumeAPIResponseModel is 电子票券消费通知 成功返回结果
@@ -34,4 +41,33 @@ type TaobaoVmarketEticketConsumeAPIResponseModel struct {
 	LeftNum int64 `json:"left_num,omitempty" xml:"left_num,omitempty"`
 	// 该核销码在核销后剩余的可核销份数，如果传了new_code来重新生成码，那么这些可核销份数会累积到新的码上
 	CodeLeftNum int64 `json:"code_left_num,omitempty" xml:"code_left_num,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoVmarketEticketConsumeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ItemTitle = ""
+	m.SmsTpl = ""
+	m.PrintTpl = ""
+	m.ConsumeSecialNum = ""
+	m.RetCode = 0
+	m.LeftNum = 0
+	m.CodeLeftNum = 0
+}
+
+var poolTaobaoVmarketEticketConsumeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoVmarketEticketConsumeAPIResponse)
+	},
+}
+
+// GetTaobaoVmarketEticketConsumeAPIResponse 从 sync.Pool 获取 TaobaoVmarketEticketConsumeAPIResponse
+func GetTaobaoVmarketEticketConsumeAPIResponse() *TaobaoVmarketEticketConsumeAPIResponse {
+	return poolTaobaoVmarketEticketConsumeAPIResponse.Get().(*TaobaoVmarketEticketConsumeAPIResponse)
+}
+
+// ReleaseTaobaoVmarketEticketConsumeAPIResponse 将 TaobaoVmarketEticketConsumeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoVmarketEticketConsumeAPIResponse(v *TaobaoVmarketEticketConsumeAPIResponse) {
+	v.Reset()
+	poolTaobaoVmarketEticketConsumeAPIResponse.Put(v)
 }

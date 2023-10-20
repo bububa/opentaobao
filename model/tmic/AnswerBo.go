@@ -1,5 +1,9 @@
 package tmic
 
+import (
+	"sync"
+)
+
 // AnswerBo 结构体
 type AnswerBo struct {
 	// 问题编码，问卷中的问题的唯一编码，从问卷信息接口的应答中获取
@@ -12,4 +16,25 @@ type AnswerBo struct {
 	OptionChecked string `json:"option_checked,omitempty" xml:"option_checked,omitempty"`
 	// 文本题的答案，如果是选择题则不填
 	AnswerValue string `json:"answer_value,omitempty" xml:"answer_value,omitempty"`
+}
+
+var poolAnswerBo = sync.Pool{
+	New: func() any {
+		return new(AnswerBo)
+	},
+}
+
+// GetAnswerBo() 从对象池中获取AnswerBo
+func GetAnswerBo() *AnswerBo {
+	return poolAnswerBo.Get().(*AnswerBo)
+}
+
+// ReleaseAnswerBo 释放AnswerBo
+func ReleaseAnswerBo(v *AnswerBo) {
+	v.QuestionCode = ""
+	v.SubQuestionCode = ""
+	v.OptionCode = ""
+	v.OptionChecked = ""
+	v.AnswerValue = ""
+	poolAnswerBo.Put(v)
 }

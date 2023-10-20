@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // ServiceProvider 结构体
 type ServiceProvider struct {
 	// 服务商昵称
@@ -22,4 +26,30 @@ type ServiceProvider struct {
 	ServiceStoreId int64 `json:"service_store_id,omitempty" xml:"service_store_id,omitempty"`
 	// isv服务商
 	IsvTpId int64 `json:"isv_tp_id,omitempty" xml:"isv_tp_id,omitempty"`
+}
+
+var poolServiceProvider = sync.Pool{
+	New: func() any {
+		return new(ServiceProvider)
+	},
+}
+
+// GetServiceProvider() 从对象池中获取ServiceProvider
+func GetServiceProvider() *ServiceProvider {
+	return poolServiceProvider.Get().(*ServiceProvider)
+}
+
+// ReleaseServiceProvider 释放ServiceProvider
+func ReleaseServiceProvider(v *ServiceProvider) {
+	v.TpNick = ""
+	v.WorkerMobile = ""
+	v.ServiceStoreCode = ""
+	v.WorkerName = ""
+	v.ServiceStoreName = ""
+	v.IsvTpName = ""
+	v.TpId = 0
+	v.WorkerId = 0
+	v.ServiceStoreId = 0
+	v.IsvTpId = 0
+	poolServiceProvider.Put(v)
 }

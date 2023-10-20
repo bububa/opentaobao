@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // TaobaoTbkActivityInfoGetData 结构体
 type TaobaoTbkActivityInfoGetData struct {
 	// 【本地化】微信推广二维码地址
@@ -20,4 +24,29 @@ type TaobaoTbkActivityInfoGetData struct {
 	PageEndTime string `json:"page_end_time,omitempty" xml:"page_end_time,omitempty"`
 	// 【本地化】微信小程序路径
 	WxMiniprogramPath string `json:"wx_miniprogram_path,omitempty" xml:"wx_miniprogram_path,omitempty"`
+}
+
+var poolTaobaoTbkActivityInfoGetData = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkActivityInfoGetData)
+	},
+}
+
+// GetTaobaoTbkActivityInfoGetData() 从对象池中获取TaobaoTbkActivityInfoGetData
+func GetTaobaoTbkActivityInfoGetData() *TaobaoTbkActivityInfoGetData {
+	return poolTaobaoTbkActivityInfoGetData.Get().(*TaobaoTbkActivityInfoGetData)
+}
+
+// ReleaseTaobaoTbkActivityInfoGetData 释放TaobaoTbkActivityInfoGetData
+func ReleaseTaobaoTbkActivityInfoGetData(v *TaobaoTbkActivityInfoGetData) {
+	v.WxQrcodeUrl = ""
+	v.ClickUrl = ""
+	v.ShortClickUrl = ""
+	v.TerminalType = ""
+	v.MaterialOssUrl = ""
+	v.PageName = ""
+	v.PageStartTime = ""
+	v.PageEndTime = ""
+	v.WxMiniprogramPath = ""
+	poolTaobaoTbkActivityInfoGetData.Put(v)
 }

@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlitripTravelElementsSearchAPIRequest struct {
 // NewAlitripTravelElementsSearchRequest 初始化AlitripTravelElementsSearchAPIRequest对象
 func NewAlitripTravelElementsSearchRequest() *AlitripTravelElementsSearchAPIRequest {
 	return &AlitripTravelElementsSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTravelElementsSearchAPIRequest) Reset() {
+	r._query = ""
+	r._sellerId = 0
+	r._count = 0
+	r._type = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlitripTravelElementsSearchAPIRequest) SetType(_type int64) error {
 // GetType Type Getter
 func (r AlitripTravelElementsSearchAPIRequest) GetType() int64 {
 	return r._type
+}
+
+var poolAlitripTravelElementsSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTravelElementsSearchRequest()
+	},
+}
+
+// GetAlitripTravelElementsSearchRequest 从 sync.Pool 获取 AlitripTravelElementsSearchAPIRequest
+func GetAlitripTravelElementsSearchAPIRequest() *AlitripTravelElementsSearchAPIRequest {
+	return poolAlitripTravelElementsSearchAPIRequest.Get().(*AlitripTravelElementsSearchAPIRequest)
+}
+
+// ReleaseAlitripTravelElementsSearchAPIRequest 将 AlitripTravelElementsSearchAPIRequest 放入 sync.Pool
+func ReleaseAlitripTravelElementsSearchAPIRequest(v *AlitripTravelElementsSearchAPIRequest) {
+	v.Reset()
+	poolAlitripTravelElementsSearchAPIRequest.Put(v)
 }

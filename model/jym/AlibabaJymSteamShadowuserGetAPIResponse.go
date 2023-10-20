@@ -2,6 +2,7 @@ package jym
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaJymSteamShadowuserGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaJymSteamShadowuserGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymSteamShadowuserGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaJymSteamShadowuserGetAPIResponseModel).Reset()
 }
 
 // AlibabaJymSteamShadowuserGetAPIResponseModel is 获取影子标识 成功返回结果
@@ -32,4 +39,32 @@ type AlibabaJymSteamShadowuserGetAPIResponseModel struct {
 	Result *SteamShadowDto `json:"result,omitempty" xml:"result,omitempty"`
 	// 调用结果
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymSteamShadowuserGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SubCodeType = ""
+	m.SubExtraErrMsg = ""
+	m.StateCode = ""
+	m.ExtraErrMsg = ""
+	m.Result = nil
+	m.IsSuccess = false
+}
+
+var poolAlibabaJymSteamShadowuserGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaJymSteamShadowuserGetAPIResponse)
+	},
+}
+
+// GetAlibabaJymSteamShadowuserGetAPIResponse 从 sync.Pool 获取 AlibabaJymSteamShadowuserGetAPIResponse
+func GetAlibabaJymSteamShadowuserGetAPIResponse() *AlibabaJymSteamShadowuserGetAPIResponse {
+	return poolAlibabaJymSteamShadowuserGetAPIResponse.Get().(*AlibabaJymSteamShadowuserGetAPIResponse)
+}
+
+// ReleaseAlibabaJymSteamShadowuserGetAPIResponse 将 AlibabaJymSteamShadowuserGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaJymSteamShadowuserGetAPIResponse(v *AlibabaJymSteamShadowuserGetAPIResponse) {
+	v.Reset()
+	poolAlibabaJymSteamShadowuserGetAPIResponse.Put(v)
 }

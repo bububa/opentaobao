@@ -9,11 +9,6 @@ import (
 // alibaba.aliqin.fc.iot.qrycard
 //
 // 查询终端信息
-func AlibabaAliqinFcIotQrycard(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotQrycardAPIRequest, session string) (*aliqin.AlibabaAliqinFcIotQrycardAPIResponse, error) {
-	var resp aliqin.AlibabaAliqinFcIotQrycardAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAliqinFcIotQrycard(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotQrycardAPIRequest, resp *aliqin.AlibabaAliqinFcIotQrycardAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

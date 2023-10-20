@@ -2,6 +2,7 @@ package cainiaohandover
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type CainiaoGlobalHandoverSavedraftAPIRequest struct {
 // NewCainiaoGlobalHandoverSavedraftRequest 初始化CainiaoGlobalHandoverSavedraftAPIRequest对象
 func NewCainiaoGlobalHandoverSavedraftRequest() *CainiaoGlobalHandoverSavedraftAPIRequest {
 	return &CainiaoGlobalHandoverSavedraftAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalHandoverSavedraftAPIRequest) Reset() {
+	r._orderCodeList = r._orderCodeList[:0]
+	r._remark = ""
+	r._weightUnit = ""
+	r._client = ""
+	r._locale = ""
+	r._userInfo = nil
+	r._weight = 0
+	r._pickupInfo = nil
+	r._returnInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetReturnInfo(_returnInfo *Re
 // GetReturnInfo ReturnInfo Getter
 func (r CainiaoGlobalHandoverSavedraftAPIRequest) GetReturnInfo() *ReturnerDto {
 	return r._returnInfo
+}
+
+var poolCainiaoGlobalHandoverSavedraftAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalHandoverSavedraftRequest()
+	},
+}
+
+// GetCainiaoGlobalHandoverSavedraftRequest 从 sync.Pool 获取 CainiaoGlobalHandoverSavedraftAPIRequest
+func GetCainiaoGlobalHandoverSavedraftAPIRequest() *CainiaoGlobalHandoverSavedraftAPIRequest {
+	return poolCainiaoGlobalHandoverSavedraftAPIRequest.Get().(*CainiaoGlobalHandoverSavedraftAPIRequest)
+}
+
+// ReleaseCainiaoGlobalHandoverSavedraftAPIRequest 将 CainiaoGlobalHandoverSavedraftAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalHandoverSavedraftAPIRequest(v *CainiaoGlobalHandoverSavedraftAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalHandoverSavedraftAPIRequest.Put(v)
 }

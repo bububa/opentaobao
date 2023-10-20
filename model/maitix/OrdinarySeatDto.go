@@ -1,5 +1,9 @@
 package maitix
 
+import (
+	"sync"
+)
+
 // OrdinarySeatDto 结构体
 type OrdinarySeatDto struct {
 	// 座位号
@@ -18,4 +22,28 @@ type OrdinarySeatDto struct {
 	SeatId int64 `json:"seat_id,omitempty" xml:"seat_id,omitempty"`
 	// 票品ID,价格id,和ticket_item_id等价
 	PriceId int64 `json:"price_id,omitempty" xml:"price_id,omitempty"`
+}
+
+var poolOrdinarySeatDto = sync.Pool{
+	New: func() any {
+		return new(OrdinarySeatDto)
+	},
+}
+
+// GetOrdinarySeatDto() 从对象池中获取OrdinarySeatDto
+func GetOrdinarySeatDto() *OrdinarySeatDto {
+	return poolOrdinarySeatDto.Get().(*OrdinarySeatDto)
+}
+
+// ReleaseOrdinarySeatDto 释放OrdinarySeatDto
+func ReleaseOrdinarySeatDto(v *OrdinarySeatDto) {
+	v.SeatNo = ""
+	v.RowNo = ""
+	v.FloorName = ""
+	v.StandName = ""
+	v.Price = ""
+	v.StandId = 0
+	v.SeatId = 0
+	v.PriceId = 0
+	poolOrdinarySeatDto.Put(v)
 }

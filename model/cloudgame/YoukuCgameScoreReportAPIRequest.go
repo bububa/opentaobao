@@ -2,6 +2,7 @@ package cloudgame
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YoukuCgameScoreReportAPIRequest struct {
 // NewYoukuCgameScoreReportRequest 初始化YoukuCgameScoreReportAPIRequest对象
 func NewYoukuCgameScoreReportRequest() *YoukuCgameScoreReportAPIRequest {
 	return &YoukuCgameScoreReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuCgameScoreReportAPIRequest) Reset() {
+	r._scoreReportDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YoukuCgameScoreReportAPIRequest) SetScoreReportDto(_scoreReportDto *Sco
 // GetScoreReportDto ScoreReportDto Getter
 func (r YoukuCgameScoreReportAPIRequest) GetScoreReportDto() *ScoreReportDto {
 	return r._scoreReportDto
+}
+
+var poolYoukuCgameScoreReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuCgameScoreReportRequest()
+	},
+}
+
+// GetYoukuCgameScoreReportRequest 从 sync.Pool 获取 YoukuCgameScoreReportAPIRequest
+func GetYoukuCgameScoreReportAPIRequest() *YoukuCgameScoreReportAPIRequest {
+	return poolYoukuCgameScoreReportAPIRequest.Get().(*YoukuCgameScoreReportAPIRequest)
+}
+
+// ReleaseYoukuCgameScoreReportAPIRequest 将 YoukuCgameScoreReportAPIRequest 放入 sync.Pool
+func ReleaseYoukuCgameScoreReportAPIRequest(v *YoukuCgameScoreReportAPIRequest) {
+	v.Reset()
+	poolYoukuCgameScoreReportAPIRequest.Put(v)
 }

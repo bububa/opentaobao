@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type YunosTvpubadminManageDialogEditAPIResponse struct {
 	YunosTvpubadminManageDialogEditAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *YunosTvpubadminManageDialogEditAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.YunosTvpubadminManageDialogEditAPIResponseModel).Reset()
+}
+
 // YunosTvpubadminManageDialogEditAPIResponseModel is 编辑全局弹窗 成功返回结果
 type YunosTvpubadminManageDialogEditAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvpubadmin_manage_dialog_edit_response"`
@@ -22,4 +29,27 @@ type YunosTvpubadminManageDialogEditAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *YunosTvpubadminManageDialogEditTopResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *YunosTvpubadminManageDialogEditAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolYunosTvpubadminManageDialogEditAPIResponse = sync.Pool{
+	New: func() any {
+		return new(YunosTvpubadminManageDialogEditAPIResponse)
+	},
+}
+
+// GetYunosTvpubadminManageDialogEditAPIResponse 从 sync.Pool 获取 YunosTvpubadminManageDialogEditAPIResponse
+func GetYunosTvpubadminManageDialogEditAPIResponse() *YunosTvpubadminManageDialogEditAPIResponse {
+	return poolYunosTvpubadminManageDialogEditAPIResponse.Get().(*YunosTvpubadminManageDialogEditAPIResponse)
+}
+
+// ReleaseYunosTvpubadminManageDialogEditAPIResponse 将 YunosTvpubadminManageDialogEditAPIResponse 保存到 sync.Pool
+func ReleaseYunosTvpubadminManageDialogEditAPIResponse(v *YunosTvpubadminManageDialogEditAPIResponse) {
+	v.Reset()
+	poolYunosTvpubadminManageDialogEditAPIResponse.Put(v)
 }

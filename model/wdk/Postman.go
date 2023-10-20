@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // Postman 结构体
 type Postman struct {
 	// 配送员姓名
@@ -12,4 +16,25 @@ type Postman struct {
 	ProviderName string `json:"provider_name,omitempty" xml:"provider_name,omitempty"`
 	// 服务商编码
 	ProviderCode string `json:"provider_code,omitempty" xml:"provider_code,omitempty"`
+}
+
+var poolPostman = sync.Pool{
+	New: func() any {
+		return new(Postman)
+	},
+}
+
+// GetPostman() 从对象池中获取Postman
+func GetPostman() *Postman {
+	return poolPostman.Get().(*Postman)
+}
+
+// ReleasePostman 释放Postman
+func ReleasePostman(v *Postman) {
+	v.PostmanName = ""
+	v.PostmanCode = ""
+	v.PostmanPhone = ""
+	v.ProviderName = ""
+	v.ProviderCode = ""
+	poolPostman.Put(v)
 }

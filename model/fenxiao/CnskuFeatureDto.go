@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // CnskuFeatureDto 结构体
 type CnskuFeatureDto struct {
 	// 认证数据标
@@ -86,4 +90,62 @@ type CnskuFeatureDto struct {
 	UseYn bool `json:"use_yn,omitempty" xml:"use_yn,omitempty"`
 	// 是否需要测量图片-销售单元
 	NeedMeasureImage bool `json:"need_measure_image,omitempty" xml:"need_measure_image,omitempty"`
+}
+
+var poolCnskuFeatureDto = sync.Pool{
+	New: func() any {
+		return new(CnskuFeatureDto)
+	},
+}
+
+// GetCnskuFeatureDto() 从对象池中获取CnskuFeatureDto
+func GetCnskuFeatureDto() *CnskuFeatureDto {
+	return poolCnskuFeatureDto.Get().(*CnskuFeatureDto)
+}
+
+// ReleaseCnskuFeatureDto 释放CnskuFeatureDto
+func ReleaseCnskuFeatureDto(v *CnskuFeatureDto) {
+	v.GrayFlag = ""
+	v.WhcCategory = ""
+	v.Unit = ""
+	v.GoodsValue = ""
+	v.GoodsNo = ""
+	v.Specification = ""
+	v.SnMode = ""
+	v.OriginAddress = ""
+	v.Size = ""
+	v.MaterialGroup = ""
+	v.SkuCode = ""
+	v.MaterialClass = ""
+	v.SpecificationType = ""
+	v.PackagingScheme = ""
+	v.CnProductCode = ""
+	v.ApprovalNumber = ""
+	v.CnCubage = ""
+	v.WhcName = ""
+	v.Lifecycle = 0
+	v.NetWeight = 0
+	v.RejectLifecycle = 0
+	v.LockupLifecycle = 0
+	v.AdventLifecycle = 0
+	v.Pcs = 0
+	v.SkuPrice = 0
+	v.CostPrice = 0
+	v.IsPrecious = false
+	v.IsStandardCarton = false
+	v.IsDanger = false
+	v.IsSnMgt = false
+	v.IsPoMgt = false
+	v.IsHygroscopic = false
+	v.IsStandard = false
+	v.IsBatchMgt = false
+	v.IsShelflife = false
+	v.WhcSnOutMode = false
+	v.WhcSnInMode = false
+	v.IsUnifiedAllWh = false
+	v.IsUnifiedAllWhCarton = false
+	v.NeedMeasureImageCarton = false
+	v.UseYn = false
+	v.NeedMeasureImage = false
+	poolCnskuFeatureDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // BenefitDto 结构体
 type BenefitDto struct {
 	// 权益code
@@ -38,4 +42,38 @@ type BenefitDto struct {
 	TotalNum int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
 	// 权益id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolBenefitDto = sync.Pool{
+	New: func() any {
+		return new(BenefitDto)
+	},
+}
+
+// GetBenefitDto() 从对象池中获取BenefitDto
+func GetBenefitDto() *BenefitDto {
+	return poolBenefitDto.Get().(*BenefitDto)
+}
+
+// ReleaseBenefitDto 释放BenefitDto
+func ReleaseBenefitDto(v *BenefitDto) {
+	v.Code = ""
+	v.Type = ""
+	v.Name = ""
+	v.Description = ""
+	v.Status = ""
+	v.StartDate = ""
+	v.EndDate = ""
+	v.Feature = ""
+	v.SendMode = ""
+	v.CreatorUserName = ""
+	v.ModifierUserName = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Total = 0
+	v.Bestow = 0
+	v.BenefitPoolId = 0
+	v.TotalNum = 0
+	v.Id = 0
+	poolBenefitDto.Put(v)
 }

@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoFenxiaoYphOrderGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoFenxiaoYphOrderGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoFenxiaoYphOrderGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFenxiaoYphOrderGetAPIResponseModel).Reset()
 }
 
 // TaobaoFenxiaoYphOrderGetAPIResponseModel is 一盘货商家单个查询采购单信息 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoFenxiaoYphOrderGetAPIResponseModel struct {
 	OptTime string `json:"opt_time,omitempty" xml:"opt_time,omitempty"`
 	// 返回的采购单对象
 	PurchaseOrder *PurchaseOrder `json:"purchase_order,omitempty" xml:"purchase_order,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFenxiaoYphOrderGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.Remark = ""
+	m.OptTime = ""
+	m.PurchaseOrder = nil
+}
+
+var poolTaobaoFenxiaoYphOrderGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFenxiaoYphOrderGetAPIResponse)
+	},
+}
+
+// GetTaobaoFenxiaoYphOrderGetAPIResponse 从 sync.Pool 获取 TaobaoFenxiaoYphOrderGetAPIResponse
+func GetTaobaoFenxiaoYphOrderGetAPIResponse() *TaobaoFenxiaoYphOrderGetAPIResponse {
+	return poolTaobaoFenxiaoYphOrderGetAPIResponse.Get().(*TaobaoFenxiaoYphOrderGetAPIResponse)
+}
+
+// ReleaseTaobaoFenxiaoYphOrderGetAPIResponse 将 TaobaoFenxiaoYphOrderGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFenxiaoYphOrderGetAPIResponse(v *TaobaoFenxiaoYphOrderGetAPIResponse) {
+	v.Reset()
+	poolTaobaoFenxiaoYphOrderGetAPIResponse.Put(v)
 }

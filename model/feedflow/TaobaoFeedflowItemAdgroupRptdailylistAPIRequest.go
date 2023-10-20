@@ -2,6 +2,7 @@ package feedflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFeedflowItemAdgroupRptdailylistAPIRequest struct {
 // NewTaobaoFeedflowItemAdgroupRptdailylistRequest 初始化TaobaoFeedflowItemAdgroupRptdailylistAPIRequest对象
 func NewTaobaoFeedflowItemAdgroupRptdailylistRequest() *TaobaoFeedflowItemAdgroupRptdailylistAPIRequest {
 	return &TaobaoFeedflowItemAdgroupRptdailylistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFeedflowItemAdgroupRptdailylistAPIRequest) Reset() {
+	r._rptQueryDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFeedflowItemAdgroupRptdailylistAPIRequest) SetRptQueryDTO(_rptQue
 // GetRptQueryDTO RptQueryDTO Getter
 func (r TaobaoFeedflowItemAdgroupRptdailylistAPIRequest) GetRptQueryDTO() *RptQueryDto {
 	return r._rptQueryDTO
+}
+
+var poolTaobaoFeedflowItemAdgroupRptdailylistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFeedflowItemAdgroupRptdailylistRequest()
+	},
+}
+
+// GetTaobaoFeedflowItemAdgroupRptdailylistRequest 从 sync.Pool 获取 TaobaoFeedflowItemAdgroupRptdailylistAPIRequest
+func GetTaobaoFeedflowItemAdgroupRptdailylistAPIRequest() *TaobaoFeedflowItemAdgroupRptdailylistAPIRequest {
+	return poolTaobaoFeedflowItemAdgroupRptdailylistAPIRequest.Get().(*TaobaoFeedflowItemAdgroupRptdailylistAPIRequest)
+}
+
+// ReleaseTaobaoFeedflowItemAdgroupRptdailylistAPIRequest 将 TaobaoFeedflowItemAdgroupRptdailylistAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFeedflowItemAdgroupRptdailylistAPIRequest(v *TaobaoFeedflowItemAdgroupRptdailylistAPIRequest) {
+	v.Reset()
+	poolTaobaoFeedflowItemAdgroupRptdailylistAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest struct {
 // NewAlibabaSecurityJaqSpamregisterpreventionFeedbackRequest 初始化AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest对象
 func NewAlibabaSecurityJaqSpamregisterpreventionFeedbackRequest() *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest {
 	return &AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) Reset() {
+	r._itemId = ""
+	r._denyReason = ""
+	r._jaqDecision = 0
+	r._customerDecision = 0
+	r._feedBack = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) SetFeedBack
 // GetFeedBack FeedBack Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) GetFeedBack() int64 {
 	return r._feedBack
+}
+
+var poolAlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqSpamregisterpreventionFeedbackRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqSpamregisterpreventionFeedbackRequest 从 sync.Pool 获取 AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest
+func GetAlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest() *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest {
+	return poolAlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest.Get().(*AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest 将 AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest(v *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest.Put(v)
 }

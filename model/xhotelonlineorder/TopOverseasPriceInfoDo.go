@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // TopOverseasPriceInfoDo 结构体
 type TopOverseasPriceInfoDo struct {
 	// 币种
@@ -46,4 +50,42 @@ type TopOverseasPriceInfoDo struct {
 	BasePrice int64 `json:"base_price,omitempty" xml:"base_price,omitempty"`
 	// 下单时底价房费
 	BookingBasePrice int64 `json:"booking_base_price,omitempty" xml:"booking_base_price,omitempty"`
+}
+
+var poolTopOverseasPriceInfoDo = sync.Pool{
+	New: func() any {
+		return new(TopOverseasPriceInfoDo)
+	},
+}
+
+// GetTopOverseasPriceInfoDo() 从对象池中获取TopOverseasPriceInfoDo
+func GetTopOverseasPriceInfoDo() *TopOverseasPriceInfoDo {
+	return poolTopOverseasPriceInfoDo.Get().(*TopOverseasPriceInfoDo)
+}
+
+// ReleaseTopOverseasPriceInfoDo 释放TopOverseasPriceInfoDo
+func ReleaseTopOverseasPriceInfoDo(v *TopOverseasPriceInfoDo) {
+	v.CurrencyCode = ""
+	v.BookingRate = ""
+	v.Rate = ""
+	v.CheckoutRate = ""
+	v.BookingProductSalePrice = 0
+	v.BuyerPayment = 0
+	v.TaxPrice = 0
+	v.SellerPayment = 0
+	v.OtherFee = 0
+	v.BookingServicePrice = 0
+	v.BookSellerPayment = 0
+	v.BookingTaxPrice = 0
+	v.TotalPayment = 0
+	v.FundPrice = 0
+	v.SettleProductSalePrice = 0
+	v.ServicePrice = 0
+	v.CreateOrderDailyPrice = nil
+	v.BookingRoomsPrice = 0
+	v.SettleOrderDailyPrice = nil
+	v.RoomsPrice = 0
+	v.BasePrice = 0
+	v.BookingBasePrice = 0
+	poolTopOverseasPriceInfoDo.Put(v)
 }

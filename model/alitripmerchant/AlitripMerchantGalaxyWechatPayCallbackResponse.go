@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // AlitripMerchantGalaxyWechatPayCallbackResponse 结构体
 type AlitripMerchantGalaxyWechatPayCallbackResponse struct {
 	// 1
@@ -10,4 +14,24 @@ type AlitripMerchantGalaxyWechatPayCallbackResponse struct {
 	Content *WechatCallbackResponse `json:"content,omitempty" xml:"content,omitempty"`
 	// 1
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlitripMerchantGalaxyWechatPayCallbackResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyWechatPayCallbackResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyWechatPayCallbackResponse() 从对象池中获取AlitripMerchantGalaxyWechatPayCallbackResponse
+func GetAlitripMerchantGalaxyWechatPayCallbackResponse() *AlitripMerchantGalaxyWechatPayCallbackResponse {
+	return poolAlitripMerchantGalaxyWechatPayCallbackResponse.Get().(*AlitripMerchantGalaxyWechatPayCallbackResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyWechatPayCallbackResponse 释放AlitripMerchantGalaxyWechatPayCallbackResponse
+func ReleaseAlitripMerchantGalaxyWechatPayCallbackResponse(v *AlitripMerchantGalaxyWechatPayCallbackResponse) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Content = nil
+	v.Success = false
+	poolAlitripMerchantGalaxyWechatPayCallbackResponse.Put(v)
 }

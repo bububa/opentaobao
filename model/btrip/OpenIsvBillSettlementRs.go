@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenIsvBillSettlementRs 结构体
 type OpenIsvBillSettlementRs struct {
 	// 数据集合
@@ -14,4 +18,26 @@ type OpenIsvBillSettlementRs struct {
 	TotalNum int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
 	// 类目，枚举详见语雀
 	Category int64 `json:"category,omitempty" xml:"category,omitempty"`
+}
+
+var poolOpenIsvBillSettlementRs = sync.Pool{
+	New: func() any {
+		return new(OpenIsvBillSettlementRs)
+	},
+}
+
+// GetOpenIsvBillSettlementRs() 从对象池中获取OpenIsvBillSettlementRs
+func GetOpenIsvBillSettlementRs() *OpenIsvBillSettlementRs {
+	return poolOpenIsvBillSettlementRs.Get().(*OpenIsvBillSettlementRs)
+}
+
+// ReleaseOpenIsvBillSettlementRs 释放OpenIsvBillSettlementRs
+func ReleaseOpenIsvBillSettlementRs(v *OpenIsvBillSettlementRs) {
+	v.DataList = v.DataList[:0]
+	v.CorpId = ""
+	v.PeriodStart = ""
+	v.PeriodEnd = ""
+	v.TotalNum = 0
+	v.Category = 0
+	poolOpenIsvBillSettlementRs.Put(v)
 }

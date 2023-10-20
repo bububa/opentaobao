@@ -9,11 +9,6 @@ import (
 // cainiao.waybill.cloudprint.netprint.print
 //
 // 打印接口
-func CainiaoWaybillCloudprintNetprintPrint(clt *core.SDKClient, req *wlb.CainiaoWaybillCloudprintNetprintPrintAPIRequest, session string) (*wlb.CainiaoWaybillCloudprintNetprintPrintAPIResponse, error) {
-	var resp wlb.CainiaoWaybillCloudprintNetprintPrintAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoWaybillCloudprintNetprintPrint(clt *core.SDKClient, req *wlb.CainiaoWaybillCloudprintNetprintPrintAPIRequest, resp *wlb.CainiaoWaybillCloudprintNetprintPrintAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoXhotelEntityConfigAPIRequest struct {
 // NewTaobaoXhotelEntityConfigRequest 初始化TaobaoXhotelEntityConfigAPIRequest对象
 func NewTaobaoXhotelEntityConfigRequest() *TaobaoXhotelEntityConfigAPIRequest {
 	return &TaobaoXhotelEntityConfigAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelEntityConfigAPIRequest) Reset() {
+	r._entityCode = ""
+	r._configData = ""
+	r._vendor = ""
+	r._entityId = 0
+	r._type = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoXhotelEntityConfigAPIRequest) SetType(_type int64) error {
 // GetType Type Getter
 func (r TaobaoXhotelEntityConfigAPIRequest) GetType() int64 {
 	return r._type
+}
+
+var poolTaobaoXhotelEntityConfigAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelEntityConfigRequest()
+	},
+}
+
+// GetTaobaoXhotelEntityConfigRequest 从 sync.Pool 获取 TaobaoXhotelEntityConfigAPIRequest
+func GetTaobaoXhotelEntityConfigAPIRequest() *TaobaoXhotelEntityConfigAPIRequest {
+	return poolTaobaoXhotelEntityConfigAPIRequest.Get().(*TaobaoXhotelEntityConfigAPIRequest)
+}
+
+// ReleaseTaobaoXhotelEntityConfigAPIRequest 将 TaobaoXhotelEntityConfigAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelEntityConfigAPIRequest(v *TaobaoXhotelEntityConfigAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelEntityConfigAPIRequest.Put(v)
 }

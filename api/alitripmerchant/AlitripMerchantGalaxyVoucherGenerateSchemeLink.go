@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.voucher.generate.scheme.link
 //
 // 生成微信跳转链接scheme_link
-func AlitripMerchantGalaxyVoucherGenerateSchemeLink(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyVoucherGenerateSchemeLink(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

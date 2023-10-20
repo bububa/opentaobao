@@ -2,6 +2,7 @@ package ticket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -64,8 +65,36 @@ type AlitripTicketRuleUploadAPIRequest struct {
 // NewAlitripTicketRuleUploadRequest 初始化AlitripTicketRuleUploadAPIRequest对象
 func NewAlitripTicketRuleUploadRequest() *AlitripTicketRuleUploadAPIRequest {
 	return &AlitripTicketRuleUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(23),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTicketRuleUploadAPIRequest) Reset() {
+	r._extraDesc = ""
+	r._refundDesc = ""
+	r._enterAddress = ""
+	r._feeInclude = ""
+	r._enterVoucherValue = ""
+	r._outScenicId = ""
+	r._ticketChangeAdderss = ""
+	r._outRuleName = ""
+	r._outRuleId = ""
+	r._visitorInfos = ""
+	r._refundCustomRules = ""
+	r._aliScenicId = 0
+	r._visitorLimitMode = 0
+	r._enterType = 0
+	r._enterVoucherType = 0
+	r._visitorLimitNum = 0
+	r._visitorRequire = 0
+	r._ruleStatus = 0
+	r._visitorLimitAble = 0
+	r._refundType = 0
+	r._ruleType = 0
+	r._visitorLimitType = 0
+	r._autoRefundSupport = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -382,4 +411,21 @@ func (r *AlitripTicketRuleUploadAPIRequest) SetAutoRefundSupport(_autoRefundSupp
 // GetAutoRefundSupport AutoRefundSupport Getter
 func (r AlitripTicketRuleUploadAPIRequest) GetAutoRefundSupport() int64 {
 	return r._autoRefundSupport
+}
+
+var poolAlitripTicketRuleUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTicketRuleUploadRequest()
+	},
+}
+
+// GetAlitripTicketRuleUploadRequest 从 sync.Pool 获取 AlitripTicketRuleUploadAPIRequest
+func GetAlitripTicketRuleUploadAPIRequest() *AlitripTicketRuleUploadAPIRequest {
+	return poolAlitripTicketRuleUploadAPIRequest.Get().(*AlitripTicketRuleUploadAPIRequest)
+}
+
+// ReleaseAlitripTicketRuleUploadAPIRequest 将 AlitripTicketRuleUploadAPIRequest 放入 sync.Pool
+func ReleaseAlitripTicketRuleUploadAPIRequest(v *AlitripTicketRuleUploadAPIRequest) {
+	v.Reset()
+	poolAlitripTicketRuleUploadAPIRequest.Put(v)
 }

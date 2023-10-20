@@ -1,5 +1,9 @@
 package opentrade
 
+import (
+	"sync"
+)
+
 // MarkUserInfo 结构体
 type MarkUserInfo struct {
 	// 用户openId
@@ -12,4 +16,25 @@ type MarkUserInfo struct {
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 专属下单商品数量
 	Quality int64 `json:"quality,omitempty" xml:"quality,omitempty"`
+}
+
+var poolMarkUserInfo = sync.Pool{
+	New: func() any {
+		return new(MarkUserInfo)
+	},
+}
+
+// GetMarkUserInfo() 从对象池中获取MarkUserInfo
+func GetMarkUserInfo() *MarkUserInfo {
+	return poolMarkUserInfo.Get().(*MarkUserInfo)
+}
+
+// ReleaseMarkUserInfo 释放MarkUserInfo
+func ReleaseMarkUserInfo(v *MarkUserInfo) {
+	v.UserOpenId = ""
+	v.Status = ""
+	v.ItemId = 0
+	v.SkuId = 0
+	v.Quality = 0
+	poolMarkUserInfo.Put(v)
 }

@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest struc
 // NewAlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceRequest 初始化AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest对象
 func NewAlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceRequest() *AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest {
 	return &AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest) Reset() {
+	r._code = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest) 
 // GetCode Code Getter
 func (r AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest) GetCode() string {
 	return r._code
+}
+
+var poolAlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest
+func GetAlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest() *AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest {
+	return poolAlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest.Get().(*AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest 将 AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest(v *AlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytScqyListcodefullinfodtomedicaldeviceAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // RefundDetailShowVo 结构体
 type RefundDetailShowVo struct {
 	// 退改表达内容
@@ -18,4 +22,28 @@ type RefundDetailShowVo struct {
 	Index int64 `json:"index,omitempty" xml:"index,omitempty"`
 	// 提示
 	Tips *Tips `json:"tips,omitempty" xml:"tips,omitempty"`
+}
+
+var poolRefundDetailShowVo = sync.Pool{
+	New: func() any {
+		return new(RefundDetailShowVo)
+	},
+}
+
+// GetRefundDetailShowVo() 从对象池中获取RefundDetailShowVo
+func GetRefundDetailShowVo() *RefundDetailShowVo {
+	return poolRefundDetailShowVo.Get().(*RefundDetailShowVo)
+}
+
+// ReleaseRefundDetailShowVo 释放RefundDetailShowVo
+func ReleaseRefundDetailShowVo(v *RefundDetailShowVo) {
+	v.RefundSubItems = v.RefundSubItems[:0]
+	v.ExtraContents = v.ExtraContents[:0]
+	v.BaggageSubItems = v.BaggageSubItems[:0]
+	v.Title = ""
+	v.TableHead = ""
+	v.Type = 0
+	v.Index = 0
+	v.Tips = nil
+	poolRefundDetailShowVo.Put(v)
 }

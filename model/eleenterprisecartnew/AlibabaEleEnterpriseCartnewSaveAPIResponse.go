@@ -2,6 +2,7 @@ package eleenterprisecartnew
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaEleEnterpriseCartnewSaveAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseCartnewSaveAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleEnterpriseCartnewSaveAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEleEnterpriseCartnewSaveAPIResponseModel).Reset()
 }
 
 // AlibabaEleEnterpriseCartnewSaveAPIResponseModel is 新版创建购物车 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaEleEnterpriseCartnewSaveAPIResponseModel struct {
 	EnterpriseRequestid string `json:"enterprise_requestid,omitempty" xml:"enterprise_requestid,omitempty"`
 	// 系统自动生成
 	EnterpriseDatas *EnterpriseData `json:"enterprise_datas,omitempty" xml:"enterprise_datas,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleEnterpriseCartnewSaveAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.EnterpriseCode = ""
+	m.EnterpriseMsg = ""
+	m.EnterpriseRequestid = ""
+	m.EnterpriseDatas = nil
+}
+
+var poolAlibabaEleEnterpriseCartnewSaveAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEleEnterpriseCartnewSaveAPIResponse)
+	},
+}
+
+// GetAlibabaEleEnterpriseCartnewSaveAPIResponse 从 sync.Pool 获取 AlibabaEleEnterpriseCartnewSaveAPIResponse
+func GetAlibabaEleEnterpriseCartnewSaveAPIResponse() *AlibabaEleEnterpriseCartnewSaveAPIResponse {
+	return poolAlibabaEleEnterpriseCartnewSaveAPIResponse.Get().(*AlibabaEleEnterpriseCartnewSaveAPIResponse)
+}
+
+// ReleaseAlibabaEleEnterpriseCartnewSaveAPIResponse 将 AlibabaEleEnterpriseCartnewSaveAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEleEnterpriseCartnewSaveAPIResponse(v *AlibabaEleEnterpriseCartnewSaveAPIResponse) {
+	v.Reset()
+	poolAlibabaEleEnterpriseCartnewSaveAPIResponse.Put(v)
 }

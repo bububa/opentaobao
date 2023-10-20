@@ -1,5 +1,9 @@
 package icbulogistics
 
+import (
+	"sync"
+)
+
 // ExpressCustomsDto 结构体
 type ExpressCustomsDto struct {
 	// 申报金额
@@ -16,4 +20,27 @@ type ExpressCustomsDto struct {
 	TaxpayerId string `json:"taxpayer_id,omitempty" xml:"taxpayer_id,omitempty"`
 	// 欧盟EORI
 	EoriNumber string `json:"eori_number,omitempty" xml:"eori_number,omitempty"`
+}
+
+var poolExpressCustomsDto = sync.Pool{
+	New: func() any {
+		return new(ExpressCustomsDto)
+	},
+}
+
+// GetExpressCustomsDto() 从对象池中获取ExpressCustomsDto
+func GetExpressCustomsDto() *ExpressCustomsDto {
+	return poolExpressCustomsDto.Get().(*ExpressCustomsDto)
+}
+
+// ReleaseExpressCustomsDto 释放ExpressCustomsDto
+func ReleaseExpressCustomsDto(v *ExpressCustomsDto) {
+	v.DeclarationAmount = ""
+	v.NeedCustomsClearance = ""
+	v.DeclarationCurrency = ""
+	v.VatType = ""
+	v.VatNumber = ""
+	v.TaxpayerId = ""
+	v.EoriNumber = ""
+	poolExpressCustomsDto.Put(v)
 }

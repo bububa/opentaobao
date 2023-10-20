@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTbkScUcrowdGetAPIRequest struct {
 // NewTaobaoTbkScUcrowdGetRequest 初始化TaobaoTbkScUcrowdGetAPIRequest对象
 func NewTaobaoTbkScUcrowdGetRequest() *TaobaoTbkScUcrowdGetAPIRequest {
 	return &TaobaoTbkScUcrowdGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkScUcrowdGetAPIRequest) Reset() {
+	r._ucrowdId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTbkScUcrowdGetAPIRequest) SetUcrowdId(_ucrowdId int64) error {
 // GetUcrowdId UcrowdId Getter
 func (r TaobaoTbkScUcrowdGetAPIRequest) GetUcrowdId() int64 {
 	return r._ucrowdId
+}
+
+var poolTaobaoTbkScUcrowdGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkScUcrowdGetRequest()
+	},
+}
+
+// GetTaobaoTbkScUcrowdGetRequest 从 sync.Pool 获取 TaobaoTbkScUcrowdGetAPIRequest
+func GetTaobaoTbkScUcrowdGetAPIRequest() *TaobaoTbkScUcrowdGetAPIRequest {
+	return poolTaobaoTbkScUcrowdGetAPIRequest.Get().(*TaobaoTbkScUcrowdGetAPIRequest)
+}
+
+// ReleaseTaobaoTbkScUcrowdGetAPIRequest 将 TaobaoTbkScUcrowdGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkScUcrowdGetAPIRequest(v *TaobaoTbkScUcrowdGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkScUcrowdGetAPIRequest.Put(v)
 }

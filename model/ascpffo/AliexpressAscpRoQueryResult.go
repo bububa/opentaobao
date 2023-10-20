@@ -1,5 +1,9 @@
 package ascpffo
 
+import (
+	"sync"
+)
+
 // AliexpressAscpRoQueryResult 结构体
 type AliexpressAscpRoQueryResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type AliexpressAscpRoQueryResult struct {
 	Data *ErpReturnOrderDto `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAliexpressAscpRoQueryResult = sync.Pool{
+	New: func() any {
+		return new(AliexpressAscpRoQueryResult)
+	},
+}
+
+// GetAliexpressAscpRoQueryResult() 从对象池中获取AliexpressAscpRoQueryResult
+func GetAliexpressAscpRoQueryResult() *AliexpressAscpRoQueryResult {
+	return poolAliexpressAscpRoQueryResult.Get().(*AliexpressAscpRoQueryResult)
+}
+
+// ReleaseAliexpressAscpRoQueryResult 释放AliexpressAscpRoQueryResult
+func ReleaseAliexpressAscpRoQueryResult(v *AliexpressAscpRoQueryResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Data = nil
+	v.Success = false
+	poolAliexpressAscpRoQueryResult.Put(v)
 }

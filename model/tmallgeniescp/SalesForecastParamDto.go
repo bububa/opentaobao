@@ -1,5 +1,9 @@
 package tmallgeniescp
 
+import (
+	"sync"
+)
+
 // SalesForecastParamDto 结构体
 type SalesForecastParamDto struct {
 	// 扩展参数
@@ -18,4 +22,28 @@ type SalesForecastParamDto struct {
 	SalesForecastQtyPm string `json:"sales_forecast_qty_pm,omitempty" xml:"sales_forecast_qty_pm,omitempty"`
 	// 销管提报预测数量
 	SalesForecastQtySl string `json:"sales_forecast_qty_sl,omitempty" xml:"sales_forecast_qty_sl,omitempty"`
+}
+
+var poolSalesForecastParamDto = sync.Pool{
+	New: func() any {
+		return new(SalesForecastParamDto)
+	},
+}
+
+// GetSalesForecastParamDto() 从对象池中获取SalesForecastParamDto
+func GetSalesForecastParamDto() *SalesForecastParamDto {
+	return poolSalesForecastParamDto.Get().(*SalesForecastParamDto)
+}
+
+// ReleaseSalesForecastParamDto 释放SalesForecastParamDto
+func ReleaseSalesForecastParamDto(v *SalesForecastParamDto) {
+	v.ExtendJson = ""
+	v.Tenant = ""
+	v.KeyFigureDate = ""
+	v.SalesForecastQtyPmPerMonth = ""
+	v.CustId = ""
+	v.PrdId = ""
+	v.SalesForecastQtyPm = ""
+	v.SalesForecastQtySl = ""
+	poolSalesForecastParamDto.Put(v)
 }

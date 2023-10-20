@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // RpAuditDetails 结构体
 type RpAuditDetails struct {
 	// comparisonDetail
@@ -14,4 +18,26 @@ type RpAuditDetails struct {
 	AuditFinishTime string `json:"audit_finish_time,omitempty" xml:"audit_finish_time,omitempty"`
 	// reviewDeadline
 	ReviewDeadline string `json:"review_deadline,omitempty" xml:"review_deadline,omitempty"`
+}
+
+var poolRpAuditDetails = sync.Pool{
+	New: func() any {
+		return new(RpAuditDetails)
+	},
+}
+
+// GetRpAuditDetails() 从对象池中获取RpAuditDetails
+func GetRpAuditDetails() *RpAuditDetails {
+	return poolRpAuditDetails.Get().(*RpAuditDetails)
+}
+
+// ReleaseRpAuditDetails 释放RpAuditDetails
+func ReleaseRpAuditDetails(v *RpAuditDetails) {
+	v.ComparisonDetailList = v.ComparisonDetailList[:0]
+	v.MaterialDetailList = v.MaterialDetailList[:0]
+	v.MaterialDetails = v.MaterialDetails[:0]
+	v.ComparisonDetails = v.ComparisonDetails[:0]
+	v.AuditFinishTime = ""
+	v.ReviewDeadline = ""
+	poolRpAuditDetails.Put(v)
 }

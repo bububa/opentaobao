@@ -1,5 +1,9 @@
 package damai
 
+import (
+	"sync"
+)
+
 // VenueIdOpenParam 结构体
 type VenueIdOpenParam struct {
 	// 操作员
@@ -16,4 +20,27 @@ type VenueIdOpenParam struct {
 	SystemId int64 `json:"system_id,omitempty" xml:"system_id,omitempty"`
 	// 场馆id
 	VenueId int64 `json:"venue_id,omitempty" xml:"venue_id,omitempty"`
+}
+
+var poolVenueIdOpenParam = sync.Pool{
+	New: func() any {
+		return new(VenueIdOpenParam)
+	},
+}
+
+// GetVenueIdOpenParam() 从对象池中获取VenueIdOpenParam
+func GetVenueIdOpenParam() *VenueIdOpenParam {
+	return poolVenueIdOpenParam.Get().(*VenueIdOpenParam)
+}
+
+// ReleaseVenueIdOpenParam 释放VenueIdOpenParam
+func ReleaseVenueIdOpenParam(v *VenueIdOpenParam) {
+	v.Operator = ""
+	v.SupplierSecret = ""
+	v.CpId = 0
+	v.Id = 0
+	v.OperatorId = 0
+	v.SystemId = 0
+	v.VenueId = 0
+	poolVenueIdOpenParam.Put(v)
 }

@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // AgentConfirmReturnAndRefundRq 结构体
 type AgentConfirmReturnAndRefundRq struct {
 	// 商家订单号
@@ -36,4 +40,37 @@ type AgentConfirmReturnAndRefundRq struct {
 	MainBizOrderId int64 `json:"main_biz_order_id,omitempty" xml:"main_biz_order_id,omitempty"`
 	// 退票结果编码,(退票失败时必填,参考标准错误码)
 	AgentReturnTicketCode int64 `json:"agent_return_ticket_code,omitempty" xml:"agent_return_ticket_code,omitempty"`
+}
+
+var poolAgentConfirmReturnAndRefundRq = sync.Pool{
+	New: func() any {
+		return new(AgentConfirmReturnAndRefundRq)
+	},
+}
+
+// GetAgentConfirmReturnAndRefundRq() 从对象池中获取AgentConfirmReturnAndRefundRq
+func GetAgentConfirmReturnAndRefundRq() *AgentConfirmReturnAndRefundRq {
+	return poolAgentConfirmReturnAndRefundRq.Get().(*AgentConfirmReturnAndRefundRq)
+}
+
+// ReleaseAgentConfirmReturnAndRefundRq 释放AgentConfirmReturnAndRefundRq
+func ReleaseAgentConfirmReturnAndRefundRq(v *AgentConfirmReturnAndRefundRq) {
+	v.AgentOrderId = ""
+	v.AgentRefundAmount = ""
+	v.AgentRefundTransId = ""
+	v.AgentReturnTime = ""
+	v.AgentTicketId = ""
+	v.DepartDate = ""
+	v.PassengerIdNum = ""
+	v.PassengerName = ""
+	v.PassengerPhone = ""
+	v.AgentExtAttr = ""
+	v.AgentReturnMode = ""
+	v.RefundScene = ""
+	v.RefundSceneOfficialReasonCode = ""
+	v.AgentReturnTicketStatus = 0
+	v.AgentReturnTicketType = 0
+	v.MainBizOrderId = 0
+	v.AgentReturnTicketCode = 0
+	poolAgentConfirmReturnAndRefundRq.Put(v)
 }

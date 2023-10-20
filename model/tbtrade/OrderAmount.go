@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // OrderAmount 结构体
 type OrderAmount struct {
 	// 商品标题
@@ -28,4 +32,33 @@ type OrderAmount struct {
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 子交易订单中购买商品的数量
 	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
+}
+
+var poolOrderAmount = sync.Pool{
+	New: func() any {
+		return new(OrderAmount)
+	},
+}
+
+// GetOrderAmount() 从对象池中获取OrderAmount
+func GetOrderAmount() *OrderAmount {
+	return poolOrderAmount.Get().(*OrderAmount)
+}
+
+// ReleaseOrderAmount 释放OrderAmount
+func ReleaseOrderAmount(v *OrderAmount) {
+	v.Title = ""
+	v.SkuPropertiesName = ""
+	v.Price = ""
+	v.DiscountFee = ""
+	v.PromotionName = ""
+	v.AdjustFee = ""
+	v.DivideOrderFee = ""
+	v.PartMjzDiscount = ""
+	v.Payment = ""
+	v.Oid = 0
+	v.NumIid = 0
+	v.SkuId = 0
+	v.Num = 0
+	poolOrderAmount.Put(v)
 }

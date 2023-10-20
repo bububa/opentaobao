@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.eleme.bill.get
 //
 // 查询饿了么日维度对账单信息
-func AlibabaWdkElemeBillGet(clt *core.SDKClient, req *wdk.AlibabaWdkElemeBillGetAPIRequest, session string) (*wdk.AlibabaWdkElemeBillGetAPIResponse, error) {
-	var resp wdk.AlibabaWdkElemeBillGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkElemeBillGet(clt *core.SDKClient, req *wdk.AlibabaWdkElemeBillGetAPIRequest, resp *wdk.AlibabaWdkElemeBillGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

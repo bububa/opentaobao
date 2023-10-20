@@ -2,6 +2,7 @@ package baichuan
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBaichuanOrderurlGetAPIRequest struct {
 // NewTaobaoBaichuanOrderurlGetRequest 初始化TaobaoBaichuanOrderurlGetAPIRequest对象
 func NewTaobaoBaichuanOrderurlGetRequest() *TaobaoBaichuanOrderurlGetAPIRequest {
 	return &TaobaoBaichuanOrderurlGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBaichuanOrderurlGetAPIRequest) Reset() {
+	r._name = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBaichuanOrderurlGetAPIRequest) SetName(_name string) error {
 // GetName Name Getter
 func (r TaobaoBaichuanOrderurlGetAPIRequest) GetName() string {
 	return r._name
+}
+
+var poolTaobaoBaichuanOrderurlGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBaichuanOrderurlGetRequest()
+	},
+}
+
+// GetTaobaoBaichuanOrderurlGetRequest 从 sync.Pool 获取 TaobaoBaichuanOrderurlGetAPIRequest
+func GetTaobaoBaichuanOrderurlGetAPIRequest() *TaobaoBaichuanOrderurlGetAPIRequest {
+	return poolTaobaoBaichuanOrderurlGetAPIRequest.Get().(*TaobaoBaichuanOrderurlGetAPIRequest)
+}
+
+// ReleaseTaobaoBaichuanOrderurlGetAPIRequest 将 TaobaoBaichuanOrderurlGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBaichuanOrderurlGetAPIRequest(v *TaobaoBaichuanOrderurlGetAPIRequest) {
+	v.Reset()
+	poolTaobaoBaichuanOrderurlGetAPIRequest.Put(v)
 }

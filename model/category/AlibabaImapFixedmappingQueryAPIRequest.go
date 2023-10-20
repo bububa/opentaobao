@@ -2,6 +2,7 @@ package category
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaImapFixedmappingQueryAPIRequest struct {
 // NewAlibabaImapFixedmappingQueryRequest 初始化AlibabaImapFixedmappingQueryAPIRequest对象
 func NewAlibabaImapFixedmappingQueryRequest() *AlibabaImapFixedmappingQueryAPIRequest {
 	return &AlibabaImapFixedmappingQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaImapFixedmappingQueryAPIRequest) Reset() {
+	r._targetChannelIdList = r._targetChannelIdList[:0]
+	r._password = ""
+	r._appName = ""
+	r._srcChannelId = 0
+	r._targetCategoryId = 0
+	r._srcCategoryId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaImapFixedmappingQueryAPIRequest) SetSrcCategoryId(_srcCategoryId
 // GetSrcCategoryId SrcCategoryId Getter
 func (r AlibabaImapFixedmappingQueryAPIRequest) GetSrcCategoryId() int64 {
 	return r._srcCategoryId
+}
+
+var poolAlibabaImapFixedmappingQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaImapFixedmappingQueryRequest()
+	},
+}
+
+// GetAlibabaImapFixedmappingQueryRequest 从 sync.Pool 获取 AlibabaImapFixedmappingQueryAPIRequest
+func GetAlibabaImapFixedmappingQueryAPIRequest() *AlibabaImapFixedmappingQueryAPIRequest {
+	return poolAlibabaImapFixedmappingQueryAPIRequest.Get().(*AlibabaImapFixedmappingQueryAPIRequest)
+}
+
+// ReleaseAlibabaImapFixedmappingQueryAPIRequest 将 AlibabaImapFixedmappingQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaImapFixedmappingQueryAPIRequest(v *AlibabaImapFixedmappingQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaImapFixedmappingQueryAPIRequest.Put(v)
 }

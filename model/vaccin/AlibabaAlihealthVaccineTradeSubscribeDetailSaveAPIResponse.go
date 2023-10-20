@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponseModel is 私立疫苗交易-预约详情更新或保存 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponseModel struct {
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 	// 业务成功状态
 	BizSuccess bool `json:"biz_success,omitempty" xml:"biz_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.BizCode = ""
+	m.BizMessage = ""
+	m.Data = false
+	m.BizSuccess = false
+}
+
+var poolAlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponse 从 sync.Pool 获取 AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponse
+func GetAlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponse() *AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponse {
+	return poolAlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponse.Get().(*AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponse 将 AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponse(v *AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIResponse.Put(v)
 }

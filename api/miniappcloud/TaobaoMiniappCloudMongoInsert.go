@@ -9,11 +9,6 @@ import (
 // taobao.miniapp.cloud.mongo.insert
 //
 // 向商家应用云中插入一条记录，用于外部数据同步到应用中
-func TaobaoMiniappCloudMongoInsert(clt *core.SDKClient, req *miniappcloud.TaobaoMiniappCloudMongoInsertAPIRequest, session string) (*miniappcloud.TaobaoMiniappCloudMongoInsertAPIResponse, error) {
-	var resp miniappcloud.TaobaoMiniappCloudMongoInsertAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoMiniappCloudMongoInsert(clt *core.SDKClient, req *miniappcloud.TaobaoMiniappCloudMongoInsertAPIRequest, resp *miniappcloud.TaobaoMiniappCloudMongoInsertAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

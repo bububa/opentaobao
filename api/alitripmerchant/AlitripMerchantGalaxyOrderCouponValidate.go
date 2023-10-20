@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.order.coupon.validate
 //
 // 试单时可以使用优惠券，返回一个原价，一个折扣价
-func AlitripMerchantGalaxyOrderCouponValidate(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyOrderCouponValidateAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyOrderCouponValidateAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyOrderCouponValidateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyOrderCouponValidate(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyOrderCouponValidateAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyOrderCouponValidateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package wms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoWlbWmsConsignBillGetAPIRequest struct {
 // NewTaobaoWlbWmsConsignBillGetRequest 初始化TaobaoWlbWmsConsignBillGetAPIRequest对象
 func NewTaobaoWlbWmsConsignBillGetRequest() *TaobaoWlbWmsConsignBillGetAPIRequest {
 	return &TaobaoWlbWmsConsignBillGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWmsConsignBillGetAPIRequest) Reset() {
+	r._cnOrderCode = ""
+	r._orderCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoWlbWmsConsignBillGetAPIRequest) SetOrderCode(_orderCode string) e
 // GetOrderCode OrderCode Getter
 func (r TaobaoWlbWmsConsignBillGetAPIRequest) GetOrderCode() string {
 	return r._orderCode
+}
+
+var poolTaobaoWlbWmsConsignBillGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWmsConsignBillGetRequest()
+	},
+}
+
+// GetTaobaoWlbWmsConsignBillGetRequest 从 sync.Pool 获取 TaobaoWlbWmsConsignBillGetAPIRequest
+func GetTaobaoWlbWmsConsignBillGetAPIRequest() *TaobaoWlbWmsConsignBillGetAPIRequest {
+	return poolTaobaoWlbWmsConsignBillGetAPIRequest.Get().(*TaobaoWlbWmsConsignBillGetAPIRequest)
+}
+
+// ReleaseTaobaoWlbWmsConsignBillGetAPIRequest 将 TaobaoWlbWmsConsignBillGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWmsConsignBillGetAPIRequest(v *TaobaoWlbWmsConsignBillGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWmsConsignBillGetAPIRequest.Put(v)
 }

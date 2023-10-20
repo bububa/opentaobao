@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaCampusAclNewListusermenuAPIRequest struct {
 // NewAlibabaCampusAclNewListusermenuRequest 初始化AlibabaCampusAclNewListusermenuAPIRequest对象
 func NewAlibabaCampusAclNewListusermenuRequest() *AlibabaCampusAclNewListusermenuAPIRequest {
 	return &AlibabaCampusAclNewListusermenuAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusAclNewListusermenuAPIRequest) Reset() {
+	r._userId = ""
+	r._workbenchcontext = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaCampusAclNewListusermenuAPIRequest) SetWorkbenchcontext(_workben
 // GetWorkbenchcontext Workbenchcontext Getter
 func (r AlibabaCampusAclNewListusermenuAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
 	return r._workbenchcontext
+}
+
+var poolAlibabaCampusAclNewListusermenuAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusAclNewListusermenuRequest()
+	},
+}
+
+// GetAlibabaCampusAclNewListusermenuRequest 从 sync.Pool 获取 AlibabaCampusAclNewListusermenuAPIRequest
+func GetAlibabaCampusAclNewListusermenuAPIRequest() *AlibabaCampusAclNewListusermenuAPIRequest {
+	return poolAlibabaCampusAclNewListusermenuAPIRequest.Get().(*AlibabaCampusAclNewListusermenuAPIRequest)
+}
+
+// ReleaseAlibabaCampusAclNewListusermenuAPIRequest 将 AlibabaCampusAclNewListusermenuAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusAclNewListusermenuAPIRequest(v *AlibabaCampusAclNewListusermenuAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusAclNewListusermenuAPIRequest.Put(v)
 }

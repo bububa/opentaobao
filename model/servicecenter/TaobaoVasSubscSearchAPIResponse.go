@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoVasSubscSearchAPIResponse struct {
 	TaobaoVasSubscSearchAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoVasSubscSearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoVasSubscSearchAPIResponseModel).Reset()
+}
+
 // TaobaoVasSubscSearchAPIResponseModel is 订购记录导出 成功返回结果
 type TaobaoVasSubscSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"vas_subsc_search_response"`
@@ -24,4 +31,28 @@ type TaobaoVasSubscSearchAPIResponseModel struct {
 	ArticleSubs []ArticleSub `json:"article_subs,omitempty" xml:"article_subs>article_sub,omitempty"`
 	// 总记录数
 	TotalItem int64 `json:"total_item,omitempty" xml:"total_item,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoVasSubscSearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ArticleSubs = m.ArticleSubs[:0]
+	m.TotalItem = 0
+}
+
+var poolTaobaoVasSubscSearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoVasSubscSearchAPIResponse)
+	},
+}
+
+// GetTaobaoVasSubscSearchAPIResponse 从 sync.Pool 获取 TaobaoVasSubscSearchAPIResponse
+func GetTaobaoVasSubscSearchAPIResponse() *TaobaoVasSubscSearchAPIResponse {
+	return poolTaobaoVasSubscSearchAPIResponse.Get().(*TaobaoVasSubscSearchAPIResponse)
+}
+
+// ReleaseTaobaoVasSubscSearchAPIResponse 将 TaobaoVasSubscSearchAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoVasSubscSearchAPIResponse(v *TaobaoVasSubscSearchAPIResponse) {
+	v.Reset()
+	poolTaobaoVasSubscSearchAPIResponse.Put(v)
 }

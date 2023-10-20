@@ -1,5 +1,9 @@
 package car
 
+import (
+	"sync"
+)
+
 // TransferBuyerInfo 结构体
 type TransferBuyerInfo struct {
 	// 飞猪虚拟号
@@ -10,4 +14,24 @@ type TransferBuyerInfo struct {
 	SecretPhoneEndTime string `json:"secret_phone_end_time,omitempty" xml:"secret_phone_end_time,omitempty"`
 	// 乘客真实号（可能为空）
 	PassengerRealPhone string `json:"passenger_real_phone,omitempty" xml:"passenger_real_phone,omitempty"`
+}
+
+var poolTransferBuyerInfo = sync.Pool{
+	New: func() any {
+		return new(TransferBuyerInfo)
+	},
+}
+
+// GetTransferBuyerInfo() 从对象池中获取TransferBuyerInfo
+func GetTransferBuyerInfo() *TransferBuyerInfo {
+	return poolTransferBuyerInfo.Get().(*TransferBuyerInfo)
+}
+
+// ReleaseTransferBuyerInfo 释放TransferBuyerInfo
+func ReleaseTransferBuyerInfo(v *TransferBuyerInfo) {
+	v.TravellerSecretPhone = ""
+	v.PassengerRealPhoneLast = ""
+	v.SecretPhoneEndTime = ""
+	v.PassengerRealPhone = ""
+	poolTransferBuyerInfo.Put(v)
 }

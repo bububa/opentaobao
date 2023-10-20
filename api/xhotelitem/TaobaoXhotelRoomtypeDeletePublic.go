@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.roomtype.delete.public
 //
 // 房型删除TOP接口
-func TaobaoXhotelRoomtypeDeletePublic(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRoomtypeDeletePublicAPIRequest, session string) (*xhotelitem.TaobaoXhotelRoomtypeDeletePublicAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelRoomtypeDeletePublicAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelRoomtypeDeletePublic(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRoomtypeDeletePublicAPIRequest, resp *xhotelitem.TaobaoXhotelRoomtypeDeletePublicAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

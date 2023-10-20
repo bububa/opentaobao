@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,6 +18,12 @@ type AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponse struct {
 	AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponseModel is 医院发药机 成功返回结果
 type AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_code_kyt_hospitalsenddrugmachine_response"`
@@ -24,4 +31,27 @@ type AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 最外层结果
 	Result *AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineResultModel `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponse
+func GetAlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponse() *AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponse {
+	return poolAlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponse.Get().(*AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponse 将 AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponse(v *AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIResponse.Put(v)
 }

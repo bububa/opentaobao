@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // Activity 结构体
 type Activity struct {
 	// enabled代表有效，invalid代表失效。other代表空值
@@ -18,4 +22,28 @@ type Activity struct {
 	AppliedCount int64 `json:"applied_count,omitempty" xml:"applied_count,omitempty"`
 	// 每个买家限领取优惠券的数量，1～5张
 	PersonLimitCount int64 `json:"person_limit_count,omitempty" xml:"person_limit_count,omitempty"`
+}
+
+var poolActivity = sync.Pool{
+	New: func() any {
+		return new(Activity)
+	},
+}
+
+// GetActivity() 从对象池中获取Activity
+func GetActivity() *Activity {
+	return poolActivity.Get().(*Activity)
+}
+
+// ReleaseActivity 释放Activity
+func ReleaseActivity(v *Activity) {
+	v.Status = ""
+	v.ActivityUrl = ""
+	v.CreateUser = ""
+	v.ActivityId = 0
+	v.CouponId = 0
+	v.TotalCount = 0
+	v.AppliedCount = 0
+	v.PersonLimitCount = 0
+	poolActivity.Put(v)
 }

@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -45,8 +46,25 @@ type TaobaoTradesSoldHistoryGetAPIRequest struct {
 // NewTaobaoTradesSoldHistoryGetRequest 初始化TaobaoTradesSoldHistoryGetAPIRequest对象
 func NewTaobaoTradesSoldHistoryGetRequest() *TaobaoTradesSoldHistoryGetAPIRequest {
 	return &TaobaoTradesSoldHistoryGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(12),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTradesSoldHistoryGetAPIRequest) Reset() {
+	r._fields = ""
+	r._startCreated = ""
+	r._endCreated = ""
+	r._status = ""
+	r._ouid = ""
+	r._type = ""
+	r._extType = ""
+	r._rateStatus = ""
+	r._tag = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r._useHasNext = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -220,4 +238,21 @@ func (r *TaobaoTradesSoldHistoryGetAPIRequest) SetUseHasNext(_useHasNext bool) e
 // GetUseHasNext UseHasNext Getter
 func (r TaobaoTradesSoldHistoryGetAPIRequest) GetUseHasNext() bool {
 	return r._useHasNext
+}
+
+var poolTaobaoTradesSoldHistoryGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTradesSoldHistoryGetRequest()
+	},
+}
+
+// GetTaobaoTradesSoldHistoryGetRequest 从 sync.Pool 获取 TaobaoTradesSoldHistoryGetAPIRequest
+func GetTaobaoTradesSoldHistoryGetAPIRequest() *TaobaoTradesSoldHistoryGetAPIRequest {
+	return poolTaobaoTradesSoldHistoryGetAPIRequest.Get().(*TaobaoTradesSoldHistoryGetAPIRequest)
+}
+
+// ReleaseTaobaoTradesSoldHistoryGetAPIRequest 将 TaobaoTradesSoldHistoryGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTradesSoldHistoryGetAPIRequest(v *TaobaoTradesSoldHistoryGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTradesSoldHistoryGetAPIRequest.Put(v)
 }

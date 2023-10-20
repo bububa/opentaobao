@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // LogisticsNoticeDto 结构体
 type LogisticsNoticeDto struct {
 	// 商品信息
@@ -12,4 +16,25 @@ type LogisticsNoticeDto struct {
 	ImportType int64 `json:"import_type,omitempty" xml:"import_type,omitempty"`
 	// 主交易单号
 	ParentOrderId int64 `json:"parent_order_id,omitempty" xml:"parent_order_id,omitempty"`
+}
+
+var poolLogisticsNoticeDto = sync.Pool{
+	New: func() any {
+		return new(LogisticsNoticeDto)
+	},
+}
+
+// GetLogisticsNoticeDto() 从对象池中获取LogisticsNoticeDto
+func GetLogisticsNoticeDto() *LogisticsNoticeDto {
+	return poolLogisticsNoticeDto.Get().(*LogisticsNoticeDto)
+}
+
+// ReleaseLogisticsNoticeDto 释放LogisticsNoticeDto
+func ReleaseLogisticsNoticeDto(v *LogisticsNoticeDto) {
+	v.CommodityInfos = v.CommodityInfos[:0]
+	v.MailNo = ""
+	v.TpCode = ""
+	v.ImportType = 0
+	v.ParentOrderId = 0
+	poolLogisticsNoticeDto.Put(v)
 }

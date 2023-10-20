@@ -10,11 +10,6 @@ import (
 //
 // 批量获取openmall订单
 // 注意：该接口数据存在延迟，实时数据请通过taobao.openmall.trade.get获取
-func TaobaoOpenmallTradeBatchGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeBatchGetAPIRequest, session string) (*openmall.TaobaoOpenmallTradeBatchGetAPIResponse, error) {
-	var resp openmall.TaobaoOpenmallTradeBatchGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenmallTradeBatchGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeBatchGetAPIRequest, resp *openmall.TaobaoOpenmallTradeBatchGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

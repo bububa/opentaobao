@@ -9,11 +9,6 @@ import (
 // taobao.film.tfavatar.bill.sale.payment.query
 //
 // 获取影院卖品账单--支付账单
-func TaobaoFilmTfavatarBillSalePaymentQuery(clt *core.SDKClient, req *filmtfavatar.TaobaoFilmTfavatarBillSalePaymentQueryAPIRequest, session string) (*filmtfavatar.TaobaoFilmTfavatarBillSalePaymentQueryAPIResponse, error) {
-	var resp filmtfavatar.TaobaoFilmTfavatarBillSalePaymentQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFilmTfavatarBillSalePaymentQuery(clt *core.SDKClient, req *filmtfavatar.TaobaoFilmTfavatarBillSalePaymentQueryAPIRequest, resp *filmtfavatar.TaobaoFilmTfavatarBillSalePaymentQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

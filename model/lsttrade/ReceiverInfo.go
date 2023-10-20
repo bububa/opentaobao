@@ -1,5 +1,9 @@
 package lsttrade
 
+import (
+	"sync"
+)
+
 // ReceiverInfo 结构体
 type ReceiverInfo struct {
 	// 收货人地址区域编码
@@ -20,4 +24,29 @@ type ReceiverInfo struct {
 	ToArea string `json:"to_area,omitempty" xml:"to_area,omitempty"`
 	// 详细地址
 	ToDetailAddress string `json:"to_detail_address,omitempty" xml:"to_detail_address,omitempty"`
+}
+
+var poolReceiverInfo = sync.Pool{
+	New: func() any {
+		return new(ReceiverInfo)
+	},
+}
+
+// GetReceiverInfo() 从对象池中获取ReceiverInfo
+func GetReceiverInfo() *ReceiverInfo {
+	return poolReceiverInfo.Get().(*ReceiverInfo)
+}
+
+// ReleaseReceiverInfo 释放ReceiverInfo
+func ReleaseReceiverInfo(v *ReceiverInfo) {
+	v.ToDivisionCode = ""
+	v.ToTownCode = ""
+	v.ToDetailArea = ""
+	v.ToFullName = ""
+	v.ToMobile = ""
+	v.ToPhone = ""
+	v.ToPost = ""
+	v.ToArea = ""
+	v.ToDetailAddress = ""
+	poolReceiverInfo.Put(v)
 }

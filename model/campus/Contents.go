@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // Contents 结构体
 type Contents struct {
 	// 楼宇名称
@@ -58,4 +62,48 @@ type Contents struct {
 	GeoFloorId int64 `json:"geo_floor_id,omitempty" xml:"geo_floor_id,omitempty"`
 	// 是否删除,0代表未删除,1代表删除
 	IsDelete bool `json:"is_delete,omitempty" xml:"is_delete,omitempty"`
+}
+
+var poolContents = sync.Pool{
+	New: func() any {
+		return new(Contents)
+	},
+}
+
+// GetContents() 从对象池中获取Contents
+func GetContents() *Contents {
+	return poolContents.Get().(*Contents)
+}
+
+// ReleaseContents 释放Contents
+func ReleaseContents(v *Contents) {
+	v.BuildingName = ""
+	v.GmtModified = ""
+	v.Code = ""
+	v.Creator = ""
+	v.TypeCode = ""
+	v.Modifier = ""
+	v.GmtCreate = ""
+	v.FloorName = ""
+	v.Height = ""
+	v.Area = ""
+	v.TypeName = ""
+	v.CampusCode = ""
+	v.CampusName = ""
+	v.Name = ""
+	v.FtId = ""
+	v.Uuid = ""
+	v.CategoryName = ""
+	v.CompanyId = 0
+	v.Status = 0
+	v.BuildingId = 0
+	v.GroupId = 0
+	v.CampusId = 0
+	v.TypeId = 0
+	v.Id = 0
+	v.Category = 0
+	v.FloorId = 0
+	v.GeoFloorId = 0
+	v.IsDelete = false
+	poolContents.Put(v)
 }

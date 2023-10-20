@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // SpCampaign 结构体
 type SpCampaign struct {
 	// 定向计划活动ID
@@ -14,4 +18,26 @@ type SpCampaign struct {
 	SpApplyLink string `json:"sp_apply_link,omitempty" xml:"sp_apply_link,omitempty"`
 	// 定向计划是否可用 1-可用 0-不可用
 	SpStatus string `json:"sp_status,omitempty" xml:"sp_status,omitempty"`
+}
+
+var poolSpCampaign = sync.Pool{
+	New: func() any {
+		return new(SpCampaign)
+	},
+}
+
+// GetSpCampaign() 从对象池中获取SpCampaign
+func GetSpCampaign() *SpCampaign {
+	return poolSpCampaign.Get().(*SpCampaign)
+}
+
+// ReleaseSpCampaign 释放SpCampaign
+func ReleaseSpCampaign(v *SpCampaign) {
+	v.SpCid = ""
+	v.SpName = ""
+	v.SpRate = ""
+	v.SpLockStatus = ""
+	v.SpApplyLink = ""
+	v.SpStatus = ""
+	poolSpCampaign.Put(v)
 }

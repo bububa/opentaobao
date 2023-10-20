@@ -9,11 +9,6 @@ import (
 // tmall.car.carefree.detail.get
 //
 // 查询业务单信息
-func TmallCarCarefreeDetailGet(clt *core.SDKClient, req *tmallcar.TmallCarCarefreeDetailGetAPIRequest, session string) (*tmallcar.TmallCarCarefreeDetailGetAPIResponse, error) {
-	var resp tmallcar.TmallCarCarefreeDetailGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallCarCarefreeDetailGet(clt *core.SDKClient, req *tmallcar.TmallCarCarefreeDetailGetAPIRequest, resp *tmallcar.TmallCarCarefreeDetailGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

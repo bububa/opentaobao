@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // AccessProductDto 结构体
 type AccessProductDto struct {
 	// 图片地址列表
@@ -54,4 +58,46 @@ type AccessProductDto struct {
 	CategoryUseId int64 `json:"category_use_id,omitempty" xml:"category_use_id,omitempty"`
 	// 前台类目
 	FrontCategoryId int64 `json:"front_category_id,omitempty" xml:"front_category_id,omitempty"`
+}
+
+var poolAccessProductDto = sync.Pool{
+	New: func() any {
+		return new(AccessProductDto)
+	},
+}
+
+// GetAccessProductDto() 从对象池中获取AccessProductDto
+func GetAccessProductDto() *AccessProductDto {
+	return poolAccessProductDto.Get().(*AccessProductDto)
+}
+
+// ReleaseAccessProductDto 释放AccessProductDto
+func ReleaseAccessProductDto(v *AccessProductDto) {
+	v.ImgUrlList = v.ImgUrlList[:0]
+	v.ProductAttrValueList = v.ProductAttrValueList[:0]
+	v.LeadPurOrg = v.LeadPurOrg[:0]
+	v.BuyerWorkNo = ""
+	v.CategoryCode = ""
+	v.DataSource = ""
+	v.MallUrl = ""
+	v.OrderType = ""
+	v.ProductDesc = ""
+	v.ProductName = ""
+	v.PurchaseChannel = ""
+	v.Recommendation = ""
+	v.SourceCategoryName = ""
+	v.SourceInfo = ""
+	v.SourceType = ""
+	v.SourceValue = ""
+	v.Unit = ""
+	v.BrandName = ""
+	v.ImgStorageType = ""
+	v.CatalogCategoryId = 0
+	v.SourceCategoryId = 0
+	v.TenantId = 0
+	v.CategoryId = 0
+	v.BrandId = 0
+	v.CategoryUseId = 0
+	v.FrontCategoryId = 0
+	poolAccessProductDto.Put(v)
 }

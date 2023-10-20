@@ -2,6 +2,7 @@ package wlbimports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoWlbImportsResourceTransferstoreGetAPIRequest struct {
 // NewTaobaoWlbImportsResourceTransferstoreGetRequest 初始化TaobaoWlbImportsResourceTransferstoreGetAPIRequest对象
 func NewTaobaoWlbImportsResourceTransferstoreGetRequest() *TaobaoWlbImportsResourceTransferstoreGetAPIRequest {
 	return &TaobaoWlbImportsResourceTransferstoreGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbImportsResourceTransferstoreGetAPIRequest) Reset() {
+	r._cids = r._cids[:0]
+	r._resourceId = 0
+	r._fromId = 0
+	r._toAddress = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoWlbImportsResourceTransferstoreGetAPIRequest) SetToAddress(_toAdd
 // GetToAddress ToAddress Getter
 func (r TaobaoWlbImportsResourceTransferstoreGetAPIRequest) GetToAddress() *ReciverAddressDo {
 	return r._toAddress
+}
+
+var poolTaobaoWlbImportsResourceTransferstoreGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbImportsResourceTransferstoreGetRequest()
+	},
+}
+
+// GetTaobaoWlbImportsResourceTransferstoreGetRequest 从 sync.Pool 获取 TaobaoWlbImportsResourceTransferstoreGetAPIRequest
+func GetTaobaoWlbImportsResourceTransferstoreGetAPIRequest() *TaobaoWlbImportsResourceTransferstoreGetAPIRequest {
+	return poolTaobaoWlbImportsResourceTransferstoreGetAPIRequest.Get().(*TaobaoWlbImportsResourceTransferstoreGetAPIRequest)
+}
+
+// ReleaseTaobaoWlbImportsResourceTransferstoreGetAPIRequest 将 TaobaoWlbImportsResourceTransferstoreGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbImportsResourceTransferstoreGetAPIRequest(v *TaobaoWlbImportsResourceTransferstoreGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbImportsResourceTransferstoreGetAPIRequest.Put(v)
 }

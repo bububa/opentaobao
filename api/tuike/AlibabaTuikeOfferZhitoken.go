@@ -9,11 +9,6 @@ import (
 // alibaba.tuike.offer.zhitoken
 //
 // 推荐链接生产吱口令
-func AlibabaTuikeOfferZhitoken(clt *core.SDKClient, req *tuike.AlibabaTuikeOfferZhitokenAPIRequest, session string) (*tuike.AlibabaTuikeOfferZhitokenAPIResponse, error) {
-	var resp tuike.AlibabaTuikeOfferZhitokenAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTuikeOfferZhitoken(clt *core.SDKClient, req *tuike.AlibabaTuikeOfferZhitokenAPIRequest, resp *tuike.AlibabaTuikeOfferZhitokenAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

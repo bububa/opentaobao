@@ -1,5 +1,9 @@
 package happytrip
 
+import (
+	"sync"
+)
+
 // OrderInfo 结构体
 type OrderInfo struct {
 	// 订单id
@@ -92,4 +96,65 @@ type OrderInfo struct {
 	NormalTime int64 `json:"normal_time,omitempty" xml:"normal_time,omitempty"`
 	// 是否允许修改目的地
 	AllowModifyDest bool `json:"allow_modify_dest,omitempty" xml:"allow_modify_dest,omitempty"`
+}
+
+var poolOrderInfo = sync.Pool{
+	New: func() any {
+		return new(OrderInfo)
+	},
+}
+
+// GetOrderInfo() 从对象池中获取OrderInfo
+func GetOrderInfo() *OrderInfo {
+	return poolOrderInfo.Get().(*OrderInfo)
+}
+
+// ReleaseOrderInfo 释放OrderInfo
+func ReleaseOrderInfo(v *OrderInfo) {
+	v.Id = ""
+	v.City = ""
+	v.CallPhone = ""
+	v.PassengerPhone = ""
+	v.Flat = ""
+	v.Flng = ""
+	v.Tlat = ""
+	v.Tlng = ""
+	v.Clat = ""
+	v.Clng = ""
+	v.StartName = ""
+	v.StartAddress = ""
+	v.EndName = ""
+	v.EndAddress = ""
+	v.ExtraInfo = ""
+	v.DepartureTime = ""
+	v.OrderTime = ""
+	v.RequireLevel = ""
+	v.Remark = ""
+	v.CostCenter = ""
+	v.DriverName = ""
+	v.DriverPhone = ""
+	v.DriverId = ""
+	v.DriverPhoneReal = ""
+	v.DriverCarType = ""
+	v.DriverCard = ""
+	v.DriverAvatar = ""
+	v.DriverLevel = ""
+	v.Dlng = ""
+	v.Dlat = ""
+	v.StriveTime = ""
+	v.ReachTime = ""
+	v.BeginChargeTime = ""
+	v.FinishTime = ""
+	v.DelayTimeStart = ""
+	v.NormalDistance = ""
+	v.StriveLevel = ""
+	v.DriverCarColor = ""
+	v.Type = 0
+	v.Status = 0
+	v.SubStatus = 0
+	v.DriverNum = 0
+	v.DriverOrderCount = 0
+	v.NormalTime = 0
+	v.AllowModifyDest = false
+	poolOrderInfo.Put(v)
 }

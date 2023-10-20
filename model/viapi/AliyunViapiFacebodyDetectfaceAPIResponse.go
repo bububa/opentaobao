@@ -2,6 +2,7 @@ package viapi
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliyunViapiFacebodyDetectfaceAPIResponse struct {
 	AliyunViapiFacebodyDetectfaceAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliyunViapiFacebodyDetectfaceAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliyunViapiFacebodyDetectfaceAPIResponseModel).Reset()
+}
+
 // AliyunViapiFacebodyDetectfaceAPIResponseModel is 人脸检测定位 成功返回结果
 type AliyunViapiFacebodyDetectfaceAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliyun_viapi_facebody_detectface_response"`
@@ -24,4 +31,28 @@ type AliyunViapiFacebodyDetectfaceAPIResponseModel struct {
 	TaobaoRequestId string `json:"taobao_request_id,omitempty" xml:"taobao_request_id,omitempty"`
 	// 系统自动生成
 	Data *AliyunViapiFacebodyDetectfaceData `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliyunViapiFacebodyDetectfaceAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TaobaoRequestId = ""
+	m.Data = nil
+}
+
+var poolAliyunViapiFacebodyDetectfaceAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliyunViapiFacebodyDetectfaceAPIResponse)
+	},
+}
+
+// GetAliyunViapiFacebodyDetectfaceAPIResponse 从 sync.Pool 获取 AliyunViapiFacebodyDetectfaceAPIResponse
+func GetAliyunViapiFacebodyDetectfaceAPIResponse() *AliyunViapiFacebodyDetectfaceAPIResponse {
+	return poolAliyunViapiFacebodyDetectfaceAPIResponse.Get().(*AliyunViapiFacebodyDetectfaceAPIResponse)
+}
+
+// ReleaseAliyunViapiFacebodyDetectfaceAPIResponse 将 AliyunViapiFacebodyDetectfaceAPIResponse 保存到 sync.Pool
+func ReleaseAliyunViapiFacebodyDetectfaceAPIResponse(v *AliyunViapiFacebodyDetectfaceAPIResponse) {
+	v.Reset()
+	poolAliyunViapiFacebodyDetectfaceAPIResponse.Put(v)
 }

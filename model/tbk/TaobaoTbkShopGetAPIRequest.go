@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -47,8 +48,28 @@ type TaobaoTbkShopGetAPIRequest struct {
 // NewTaobaoTbkShopGetRequest 初始化TaobaoTbkShopGetAPIRequest对象
 func NewTaobaoTbkShopGetRequest() *TaobaoTbkShopGetAPIRequest {
 	return &TaobaoTbkShopGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(15),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkShopGetAPIRequest) Reset() {
+	r._fields = ""
+	r._q = ""
+	r._sort = ""
+	r._endAuctionCount = 0
+	r._endCommissionRate = 0
+	r._endCredit = 0
+	r._endTotalAction = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r._platform = 0
+	r._startAuctionCount = 0
+	r._startCommissionRate = 0
+	r._startCredit = 0
+	r._startTotalAction = 0
+	r._isTmall = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -261,4 +282,21 @@ func (r *TaobaoTbkShopGetAPIRequest) SetIsTmall(_isTmall bool) error {
 // GetIsTmall IsTmall Getter
 func (r TaobaoTbkShopGetAPIRequest) GetIsTmall() bool {
 	return r._isTmall
+}
+
+var poolTaobaoTbkShopGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkShopGetRequest()
+	},
+}
+
+// GetTaobaoTbkShopGetRequest 从 sync.Pool 获取 TaobaoTbkShopGetAPIRequest
+func GetTaobaoTbkShopGetAPIRequest() *TaobaoTbkShopGetAPIRequest {
+	return poolTaobaoTbkShopGetAPIRequest.Get().(*TaobaoTbkShopGetAPIRequest)
+}
+
+// ReleaseTaobaoTbkShopGetAPIRequest 将 TaobaoTbkShopGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkShopGetAPIRequest(v *TaobaoTbkShopGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkShopGetAPIRequest.Put(v)
 }

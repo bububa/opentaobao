@@ -1,5 +1,9 @@
 package nlife
 
+import (
+	"sync"
+)
+
 // Goods 结构体
 type Goods struct {
 	// 导购员编号
@@ -20,4 +24,29 @@ type Goods struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 商品skuId
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolGoods = sync.Pool{
+	New: func() any {
+		return new(Goods)
+	},
+}
+
+// GetGoods() 从对象池中获取Goods
+func GetGoods() *Goods {
+	return poolGoods.Get().(*Goods)
+}
+
+// ReleaseGoods 释放Goods
+func ReleaseGoods(v *Goods) {
+	v.Guider = ""
+	v.Currency = ""
+	v.Id = ""
+	v.Title = ""
+	v.CustomCodes = ""
+	v.Quantity = 0
+	v.Price = 0
+	v.ItemId = 0
+	v.SkuId = 0
+	poolGoods.Put(v)
 }

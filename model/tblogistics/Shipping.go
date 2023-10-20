@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // Shipping 结构体
 type Shipping struct {
 	// 拆单子订单列表，对应的数据是：该物流订单下的全部子订单
@@ -44,4 +48,41 @@ type Shipping struct {
 	IsSplit int64 `json:"is_split,omitempty" xml:"is_split,omitempty"`
 	// 返回发货是否成功。
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+var poolShipping = sync.Pool{
+	New: func() any {
+		return new(Shipping)
+	},
+}
+
+// GetShipping() 从对象池中获取Shipping
+func GetShipping() *Shipping {
+	return poolShipping.Get().(*Shipping)
+}
+
+// ReleaseShipping 释放Shipping
+func ReleaseShipping(v *Shipping) {
+	v.SubTids = v.SubTids[:0]
+	v.OrderCode = ""
+	v.SellerNick = ""
+	v.BuyerNick = ""
+	v.DeliveryStart = ""
+	v.DeliveryEnd = ""
+	v.OutSid = ""
+	v.ItemTitle = ""
+	v.ReceiverName = ""
+	v.Created = ""
+	v.Modified = ""
+	v.Status = ""
+	v.Type = ""
+	v.FreightPayer = ""
+	v.CompanyName = ""
+	v.SellerConfirm = ""
+	v.Ouid = ""
+	v.Openuid = ""
+	v.Tid = 0
+	v.IsSplit = 0
+	v.IsSuccess = false
+	poolShipping.Put(v)
 }

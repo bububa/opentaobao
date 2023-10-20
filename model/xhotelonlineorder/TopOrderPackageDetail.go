@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // TopOrderPackageDetail 结构体
 type TopOrderPackageDetail struct {
 	// 景区地址
@@ -28,4 +32,33 @@ type TopOrderPackageDetail struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 套餐ID
 	PackageId int64 `json:"package_id,omitempty" xml:"package_id,omitempty"`
+}
+
+var poolTopOrderPackageDetail = sync.Pool{
+	New: func() any {
+		return new(TopOrderPackageDetail)
+	},
+}
+
+// GetTopOrderPackageDetail() 从对象池中获取TopOrderPackageDetail
+func GetTopOrderPackageDetail() *TopOrderPackageDetail {
+	return poolTopOrderPackageDetail.Get().(*TopOrderPackageDetail)
+}
+
+// ReleaseTopOrderPackageDetail 释放TopOrderPackageDetail
+func ReleaseTopOrderPackageDetail(v *TopOrderPackageDetail) {
+	v.ScenicAddress = ""
+	v.ScenicName = ""
+	v.HowToPlay = ""
+	v.AmountUnit = ""
+	v.DimensionText = ""
+	v.TypeName = ""
+	v.Name = ""
+	v.ScenicCoverImg = ""
+	v.ScenicId = 0
+	v.Amount = 0
+	v.DiscountPrice = 0
+	v.Type = 0
+	v.PackageId = 0
+	poolTopOrderPackageDetail.Put(v)
 }

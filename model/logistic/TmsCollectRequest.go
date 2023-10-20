@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // TmsCollectRequest 结构体
 type TmsCollectRequest struct {
 	// 电联信息
@@ -40,4 +44,39 @@ type TmsCollectRequest struct {
 	WeightIsVerified string `json:"weight_is_verified,omitempty" xml:"weight_is_verified,omitempty"`
 	// 扩展字段
 	Feature *TmsCollectFeatureDto `json:"feature,omitempty" xml:"feature,omitempty"`
+}
+
+var poolTmsCollectRequest = sync.Pool{
+	New: func() any {
+		return new(TmsCollectRequest)
+	},
+}
+
+// GetTmsCollectRequest() 从对象池中获取TmsCollectRequest
+func GetTmsCollectRequest() *TmsCollectRequest {
+	return poolTmsCollectRequest.Get().(*TmsCollectRequest)
+}
+
+// ReleaseTmsCollectRequest 释放TmsCollectRequest
+func ReleaseTmsCollectRequest(v *TmsCollectRequest) {
+	v.PhoneCallInfos = v.PhoneCallInfos[:0]
+	v.ExtendOperateInfos = v.ExtendOperateInfos[:0]
+	v.ServiceType = ""
+	v.MailNo = ""
+	v.PicUrl = ""
+	v.BizCode = ""
+	v.Length = ""
+	v.Width = ""
+	v.ServiceFlag = ""
+	v.Weight = ""
+	v.TmsCpCode = ""
+	v.EstimateFee = ""
+	v.ChargedWeight = ""
+	v.Height = ""
+	v.SupplierId = ""
+	v.DeliveryCode = ""
+	v.ThrowingWeight = ""
+	v.WeightIsVerified = ""
+	v.Feature = nil
+	poolTmsCollectRequest.Put(v)
 }

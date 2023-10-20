@@ -9,11 +9,6 @@ import (
 // alibaba.ele.fengniao.order.push
 //
 // 推送淘宝订单至蜂鸟开放平台配送
-func AlibabaEleFengniaoOrderPush(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoOrderPushAPIRequest, session string) (*logistic.AlibabaEleFengniaoOrderPushAPIResponse, error) {
-	var resp logistic.AlibabaEleFengniaoOrderPushAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEleFengniaoOrderPush(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoOrderPushAPIRequest, resp *logistic.AlibabaEleFengniaoOrderPushAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

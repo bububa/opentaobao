@@ -2,6 +2,7 @@ package ioti
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaItEslEslimageShowimagecommonAPIRequest struct {
 // NewAlibabaItEslEslimageShowimagecommonRequest 初始化AlibabaItEslEslimageShowimagecommonAPIRequest对象
 func NewAlibabaItEslEslimageShowimagecommonRequest() *AlibabaItEslEslimageShowimagecommonAPIRequest {
 	return &AlibabaItEslEslimageShowimagecommonAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaItEslEslimageShowimagecommonAPIRequest) Reset() {
+	r._mac = ""
+	r._content2 = ""
+	r._content = ""
+	r._isCompress = ""
+	r._isManual = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaItEslEslimageShowimagecommonAPIRequest) SetIsManual(_isManual st
 // GetIsManual IsManual Getter
 func (r AlibabaItEslEslimageShowimagecommonAPIRequest) GetIsManual() string {
 	return r._isManual
+}
+
+var poolAlibabaItEslEslimageShowimagecommonAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaItEslEslimageShowimagecommonRequest()
+	},
+}
+
+// GetAlibabaItEslEslimageShowimagecommonRequest 从 sync.Pool 获取 AlibabaItEslEslimageShowimagecommonAPIRequest
+func GetAlibabaItEslEslimageShowimagecommonAPIRequest() *AlibabaItEslEslimageShowimagecommonAPIRequest {
+	return poolAlibabaItEslEslimageShowimagecommonAPIRequest.Get().(*AlibabaItEslEslimageShowimagecommonAPIRequest)
+}
+
+// ReleaseAlibabaItEslEslimageShowimagecommonAPIRequest 将 AlibabaItEslEslimageShowimagecommonAPIRequest 放入 sync.Pool
+func ReleaseAlibabaItEslEslimageShowimagecommonAPIRequest(v *AlibabaItEslEslimageShowimagecommonAPIRequest) {
+	v.Reset()
+	poolAlibabaItEslEslimageShowimagecommonAPIRequest.Put(v)
 }

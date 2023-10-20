@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // TagReqDto 结构体
 type TagReqDto struct {
 	// 商品编码列表
@@ -12,4 +16,25 @@ type TagReqDto struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 商家编码
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
+}
+
+var poolTagReqDto = sync.Pool{
+	New: func() any {
+		return new(TagReqDto)
+	},
+}
+
+// GetTagReqDto() 从对象池中获取TagReqDto
+func GetTagReqDto() *TagReqDto {
+	return poolTagReqDto.Get().(*TagReqDto)
+}
+
+// ReleaseTagReqDto 释放TagReqDto
+func ReleaseTagReqDto(v *TagReqDto) {
+	v.ItemIds = v.ItemIds[:0]
+	v.BizIdentity = ""
+	v.TraceId = ""
+	v.Type = 0
+	v.SellerId = 0
+	poolTagReqDto.Put(v)
 }

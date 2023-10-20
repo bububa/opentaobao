@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAlihealthDrugKytStorebilldeleteAPIRequest struct {
 // NewAlibabaAlihealthDrugKytStorebilldeleteRequest 初始化AlibabaAlihealthDrugKytStorebilldeleteAPIRequest对象
 func NewAlibabaAlihealthDrugKytStorebilldeleteRequest() *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest {
 	return &AlibabaAlihealthDrugKytStorebilldeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) Reset() {
+	r._refEntId = ""
+	r._icCode = ""
+	r._billId = ""
+	r._billType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) SetBillType(_billType
 // GetBillType BillType Getter
 func (r AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) GetBillType() string {
 	return r._billType
+}
+
+var poolAlibabaAlihealthDrugKytStorebilldeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytStorebilldeleteRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytStorebilldeleteRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytStorebilldeleteAPIRequest
+func GetAlibabaAlihealthDrugKytStorebilldeleteAPIRequest() *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest {
+	return poolAlibabaAlihealthDrugKytStorebilldeleteAPIRequest.Get().(*AlibabaAlihealthDrugKytStorebilldeleteAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytStorebilldeleteAPIRequest 将 AlibabaAlihealthDrugKytStorebilldeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytStorebilldeleteAPIRequest(v *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytStorebilldeleteAPIRequest.Put(v)
 }

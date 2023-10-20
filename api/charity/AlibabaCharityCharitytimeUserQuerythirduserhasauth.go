@@ -9,11 +9,6 @@ import (
 // alibaba.charity.charitytime.user.querythirduserhasauth
 //
 // 查询是否绑定3小时账号
-func AlibabaCharityCharitytimeUserQuerythirduserhasauth(clt *core.SDKClient, req *charity.AlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest, session string) (*charity.AlibabaCharityCharitytimeUserQuerythirduserhasauthAPIResponse, error) {
-	var resp charity.AlibabaCharityCharitytimeUserQuerythirduserhasauthAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCharityCharitytimeUserQuerythirduserhasauth(clt *core.SDKClient, req *charity.AlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest, resp *charity.AlibabaCharityCharitytimeUserQuerythirduserhasauthAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

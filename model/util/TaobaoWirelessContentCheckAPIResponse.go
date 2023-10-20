@@ -2,6 +2,7 @@ package util
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoWirelessContentCheckAPIResponse struct {
 	TaobaoWirelessContentCheckAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoWirelessContentCheckAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWirelessContentCheckAPIResponseModel).Reset()
+}
+
 // TaobaoWirelessContentCheckAPIResponseModel is 无线开放内容检查 成功返回结果
 type TaobaoWirelessContentCheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"wireless_content_check_response"`
@@ -24,4 +31,28 @@ type TaobaoWirelessContentCheckAPIResponseModel struct {
 	CheckResults []Checkpoints `json:"check_results,omitempty" xml:"check_results>checkpoints,omitempty"`
 	// 综合结果建议。建议用户执行的操作，取值范围： pass：文本正常； review：需要人工审核； block：文本违规，可以直接删除或者做限制处理
 	Suggestion string `json:"suggestion,omitempty" xml:"suggestion,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWirelessContentCheckAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.CheckResults = m.CheckResults[:0]
+	m.Suggestion = ""
+}
+
+var poolTaobaoWirelessContentCheckAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWirelessContentCheckAPIResponse)
+	},
+}
+
+// GetTaobaoWirelessContentCheckAPIResponse 从 sync.Pool 获取 TaobaoWirelessContentCheckAPIResponse
+func GetTaobaoWirelessContentCheckAPIResponse() *TaobaoWirelessContentCheckAPIResponse {
+	return poolTaobaoWirelessContentCheckAPIResponse.Get().(*TaobaoWirelessContentCheckAPIResponse)
+}
+
+// ReleaseTaobaoWirelessContentCheckAPIResponse 将 TaobaoWirelessContentCheckAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWirelessContentCheckAPIResponse(v *TaobaoWirelessContentCheckAPIResponse) {
+	v.Reset()
+	poolTaobaoWirelessContentCheckAPIResponse.Put(v)
 }

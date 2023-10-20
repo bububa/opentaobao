@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaFenxiaoCbutotaobaoRelationAddAPIResponse struct {
 	AlibabaFenxiaoCbutotaobaoRelationAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaFenxiaoCbutotaobaoRelationAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaFenxiaoCbutotaobaoRelationAddAPIResponseModel).Reset()
+}
+
 // AlibabaFenxiaoCbutotaobaoRelationAddAPIResponseModel is 1688分销铺货到淘宝关系添加 成功返回结果
 type AlibabaFenxiaoCbutotaobaoRelationAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_fenxiao_cbutotaobao_relation_add_response"`
@@ -26,4 +33,29 @@ type AlibabaFenxiaoCbutotaobaoRelationAddAPIResponseModel struct {
 	ResultMessage string `json:"result_message,omitempty" xml:"result_message,omitempty"`
 	// 是否成功
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaFenxiaoCbutotaobaoRelationAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = ""
+	m.ResultMessage = ""
+	m.ResultSuccess = false
+}
+
+var poolAlibabaFenxiaoCbutotaobaoRelationAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaFenxiaoCbutotaobaoRelationAddAPIResponse)
+	},
+}
+
+// GetAlibabaFenxiaoCbutotaobaoRelationAddAPIResponse 从 sync.Pool 获取 AlibabaFenxiaoCbutotaobaoRelationAddAPIResponse
+func GetAlibabaFenxiaoCbutotaobaoRelationAddAPIResponse() *AlibabaFenxiaoCbutotaobaoRelationAddAPIResponse {
+	return poolAlibabaFenxiaoCbutotaobaoRelationAddAPIResponse.Get().(*AlibabaFenxiaoCbutotaobaoRelationAddAPIResponse)
+}
+
+// ReleaseAlibabaFenxiaoCbutotaobaoRelationAddAPIResponse 将 AlibabaFenxiaoCbutotaobaoRelationAddAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaFenxiaoCbutotaobaoRelationAddAPIResponse(v *AlibabaFenxiaoCbutotaobaoRelationAddAPIResponse) {
+	v.Reset()
+	poolAlibabaFenxiaoCbutotaobaoRelationAddAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package moscm
 
+import (
+	"sync"
+)
+
 // PropertyDto 结构体
 type PropertyDto struct {
 	// 属性别名
@@ -24,4 +28,31 @@ type PropertyDto struct {
 	PropertyType string `json:"property_type,omitempty" xml:"property_type,omitempty"`
 	// 顺序
 	Order int64 `json:"order,omitempty" xml:"order,omitempty"`
+}
+
+var poolPropertyDto = sync.Pool{
+	New: func() any {
+		return new(PropertyDto)
+	},
+}
+
+// GetPropertyDto() 从对象池中获取PropertyDto
+func GetPropertyDto() *PropertyDto {
+	return poolPropertyDto.Get().(*PropertyDto)
+}
+
+// ReleasePropertyDto 释放PropertyDto
+func ReleasePropertyDto(v *PropertyDto) {
+	v.PAlias = ""
+	v.PCustomName = ""
+	v.PId = ""
+	v.PName = ""
+	v.VAlias = ""
+	v.VCustomName = ""
+	v.VId = ""
+	v.VName = ""
+	v.ImgUrl = ""
+	v.PropertyType = ""
+	v.Order = 0
+	poolPropertyDto.Put(v)
 }

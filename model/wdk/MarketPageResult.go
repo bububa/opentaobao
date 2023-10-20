@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // MarketPageResult 结构体
 type MarketPageResult struct {
 	// 返回的数据
@@ -22,4 +26,30 @@ type MarketPageResult struct {
 	TotalPage int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
 	// 查询商品是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolMarketPageResult = sync.Pool{
+	New: func() any {
+		return new(MarketPageResult)
+	},
+}
+
+// GetMarketPageResult() 从对象池中获取MarketPageResult
+func GetMarketPageResult() *MarketPageResult {
+	return poolMarketPageResult.Get().(*MarketPageResult)
+}
+
+// ReleaseMarketPageResult 释放MarketPageResult
+func ReleaseMarketPageResult(v *MarketPageResult) {
+	v.ItemCouponSkuList = v.ItemCouponSkuList[:0]
+	v.SkuList = v.SkuList[:0]
+	v.ItemPoolSkuList = v.ItemPoolSkuList[:0]
+	v.Message = ""
+	v.ErrorCode = ""
+	v.Total = 0
+	v.PageSize = 0
+	v.Current = 0
+	v.TotalPage = 0
+	v.Success = false
+	poolMarketPageResult.Put(v)
 }

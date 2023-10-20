@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // MerchantBusRefundApplyInfo 结构体
 type MerchantBusRefundApplyInfo struct {
 	// 退款时间
@@ -32,4 +36,35 @@ type MerchantBusRefundApplyInfo struct {
 	CommissionChargeAmount int64 `json:"commission_charge_amount,omitempty" xml:"commission_charge_amount,omitempty"`
 	// 退商家服务费金额，单位分
 	RefundServiceChargeAmount int64 `json:"refund_service_charge_amount,omitempty" xml:"refund_service_charge_amount,omitempty"`
+}
+
+var poolMerchantBusRefundApplyInfo = sync.Pool{
+	New: func() any {
+		return new(MerchantBusRefundApplyInfo)
+	},
+}
+
+// GetMerchantBusRefundApplyInfo() 从对象池中获取MerchantBusRefundApplyInfo
+func GetMerchantBusRefundApplyInfo() *MerchantBusRefundApplyInfo {
+	return poolMerchantBusRefundApplyInfo.Get().(*MerchantBusRefundApplyInfo)
+}
+
+// ReleaseMerchantBusRefundApplyInfo 释放MerchantBusRefundApplyInfo
+func ReleaseMerchantBusRefundApplyInfo(v *MerchantBusRefundApplyInfo) {
+	v.RefundTime = ""
+	v.RefundReason = ""
+	v.ExtAttr = ""
+	v.CreateTime = ""
+	v.AgreeOrRefuseTime = ""
+	v.ApplyTime = ""
+	v.RefuseReason = ""
+	v.ApplyType = 0
+	v.RefundTicketAmount = 0
+	v.RefundTotalAmount = 0
+	v.RefundStatus = 0
+	v.ApplyId = 0
+	v.BusTicketInfo = nil
+	v.CommissionChargeAmount = 0
+	v.RefundServiceChargeAmount = 0
+	poolMerchantBusRefundApplyInfo.Put(v)
 }

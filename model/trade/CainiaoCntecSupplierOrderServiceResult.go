@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // CainiaoCntecSupplierOrderServiceResult 结构体
 type CainiaoCntecSupplierOrderServiceResult struct {
 	// 订单列表
@@ -18,4 +22,28 @@ type CainiaoCntecSupplierOrderServiceResult struct {
 	HasNextPage bool `json:"has_next_page,omitempty" xml:"has_next_page,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolCainiaoCntecSupplierOrderServiceResult = sync.Pool{
+	New: func() any {
+		return new(CainiaoCntecSupplierOrderServiceResult)
+	},
+}
+
+// GetCainiaoCntecSupplierOrderServiceResult() 从对象池中获取CainiaoCntecSupplierOrderServiceResult
+func GetCainiaoCntecSupplierOrderServiceResult() *CainiaoCntecSupplierOrderServiceResult {
+	return poolCainiaoCntecSupplierOrderServiceResult.Get().(*CainiaoCntecSupplierOrderServiceResult)
+}
+
+// ReleaseCainiaoCntecSupplierOrderServiceResult 释放CainiaoCntecSupplierOrderServiceResult
+func ReleaseCainiaoCntecSupplierOrderServiceResult(v *CainiaoCntecSupplierOrderServiceResult) {
+	v.OrderList = v.OrderList[:0]
+	v.ErrorMsg = ""
+	v.ErrCode = ""
+	v.PageSize = 0
+	v.TotalCount = 0
+	v.PageIndex = 0
+	v.HasNextPage = false
+	v.Success = false
+	poolCainiaoCntecSupplierOrderServiceResult.Put(v)
 }

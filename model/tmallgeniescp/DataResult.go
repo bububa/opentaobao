@@ -1,5 +1,9 @@
 package tmallgeniescp
 
+import (
+	"sync"
+)
+
 // DataResult 结构体
 type DataResult struct {
 	// 数据对象列表
@@ -14,4 +18,26 @@ type DataResult struct {
 	Msg string `json:"msg,omitempty" xml:"msg,omitempty"`
 	// 参数code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
+}
+
+var poolDataResult = sync.Pool{
+	New: func() any {
+		return new(DataResult)
+	},
+}
+
+// GetDataResult() 从对象池中获取DataResult
+func GetDataResult() *DataResult {
+	return poolDataResult.Get().(*DataResult)
+}
+
+// ReleaseDataResult 释放DataResult
+func ReleaseDataResult(v *DataResult) {
+	v.DataList = v.DataList[:0]
+	v.ResultMsg = ""
+	v.TraceId = ""
+	v.ResultCode = ""
+	v.Msg = ""
+	v.Code = ""
+	poolDataResult.Put(v)
 }

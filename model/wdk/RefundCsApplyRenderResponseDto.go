@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // RefundCsApplyRenderResponseDto 结构体
 type RefundCsApplyRenderResponseDto struct {
 	// 申请退款的子订单列表
@@ -12,4 +16,25 @@ type RefundCsApplyRenderResponseDto struct {
 	OutOrderId string `json:"out_order_id,omitempty" xml:"out_order_id,omitempty"`
 	// 请求唯一键, 提交请求(alibaba.tcls.aelophy.refund.csapply)时保持一致
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+}
+
+var poolRefundCsApplyRenderResponseDto = sync.Pool{
+	New: func() any {
+		return new(RefundCsApplyRenderResponseDto)
+	},
+}
+
+// GetRefundCsApplyRenderResponseDto() 从对象池中获取RefundCsApplyRenderResponseDto
+func GetRefundCsApplyRenderResponseDto() *RefundCsApplyRenderResponseDto {
+	return poolRefundCsApplyRenderResponseDto.Get().(*RefundCsApplyRenderResponseDto)
+}
+
+// ReleaseRefundCsApplyRenderResponseDto 释放RefundCsApplyRenderResponseDto
+func ReleaseRefundCsApplyRenderResponseDto(v *RefundCsApplyRenderResponseDto) {
+	v.OutSubOrders = v.OutSubOrders[:0]
+	v.ReasonList = v.ReasonList[:0]
+	v.StoreId = ""
+	v.OutOrderId = ""
+	v.RequestId = ""
+	poolRefundCsApplyRenderResponseDto.Put(v)
 }

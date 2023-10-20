@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeRightBindBackAPIRequest struct {
 // NewAlibabaAlihouseNewhomeRightBindBackRequest 初始化AlibabaAlihouseNewhomeRightBindBackAPIRequest对象
 func NewAlibabaAlihouseNewhomeRightBindBackRequest() *AlibabaAlihouseNewhomeRightBindBackAPIRequest {
 	return &AlibabaAlihouseNewhomeRightBindBackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeRightBindBackAPIRequest) Reset() {
+	r._userInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeRightBindBackAPIRequest) SetUserInfo(_userInfo *U
 // GetUserInfo UserInfo Getter
 func (r AlibabaAlihouseNewhomeRightBindBackAPIRequest) GetUserInfo() *UserPermissionInfoDto {
 	return r._userInfo
+}
+
+var poolAlibabaAlihouseNewhomeRightBindBackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeRightBindBackRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeRightBindBackRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeRightBindBackAPIRequest
+func GetAlibabaAlihouseNewhomeRightBindBackAPIRequest() *AlibabaAlihouseNewhomeRightBindBackAPIRequest {
+	return poolAlibabaAlihouseNewhomeRightBindBackAPIRequest.Get().(*AlibabaAlihouseNewhomeRightBindBackAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeRightBindBackAPIRequest 将 AlibabaAlihouseNewhomeRightBindBackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeRightBindBackAPIRequest(v *AlibabaAlihouseNewhomeRightBindBackAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeRightBindBackAPIRequest.Put(v)
 }

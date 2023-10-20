@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // RpAuditResult 结构体
 type RpAuditResult struct {
 	// 审核比对信息
@@ -22,4 +26,30 @@ type RpAuditResult struct {
 	GradeCertified bool `json:"grade_certified,omitempty" xml:"grade_certified,omitempty"`
 	// reviewStatus
 	ReviewStatus bool `json:"review_status,omitempty" xml:"review_status,omitempty"`
+}
+
+var poolRpAuditResult = sync.Pool{
+	New: func() any {
+		return new(RpAuditResult)
+	},
+}
+
+// GetRpAuditResult() 从对象池中获取RpAuditResult
+func GetRpAuditResult() *RpAuditResult {
+	return poolRpAuditResult.Get().(*RpAuditResult)
+}
+
+// ReleaseRpAuditResult 释放RpAuditResult
+func ReleaseRpAuditResult(v *RpAuditResult) {
+	v.Results = v.Results[:0]
+	v.Biz = ""
+	v.ReviewType = ""
+	v.AuditStatus = nil
+	v.CurGrade = nil
+	v.RequireGrade = nil
+	v.RpAuditDetails = nil
+	v.RpUserResult = nil
+	v.GradeCertified = false
+	v.ReviewStatus = false
+	poolRpAuditResult.Put(v)
 }

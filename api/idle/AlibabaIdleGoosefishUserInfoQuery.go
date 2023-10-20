@@ -9,11 +9,6 @@ import (
 // alibaba.idle.goosefish.user.info.query
 //
 // 闲鱼三方容器用户信息获取
-func AlibabaIdleGoosefishUserInfoQuery(clt *core.SDKClient, req *idle.AlibabaIdleGoosefishUserInfoQueryAPIRequest, session string) (*idle.AlibabaIdleGoosefishUserInfoQueryAPIResponse, error) {
-	var resp idle.AlibabaIdleGoosefishUserInfoQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleGoosefishUserInfoQuery(clt *core.SDKClient, req *idle.AlibabaIdleGoosefishUserInfoQueryAPIRequest, resp *idle.AlibabaIdleGoosefishUserInfoQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

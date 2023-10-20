@@ -2,6 +2,7 @@ package wlbimports
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse struct {
 	CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponseModel).Reset()
+}
+
 // CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponseModel is 首公里揽收-快递预查询服务 成功返回结果
 type CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_global_im_pickup_bigbag_express_prequery_response"`
@@ -22,4 +29,27 @@ type CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// hsfResult
 	HsfResult *HsfResult `json:"hsf_result,omitempty" xml:"hsf_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.HsfResult = nil
+}
+
+var poolCainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse)
+	},
+}
+
+// GetCainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse 从 sync.Pool 获取 CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse
+func GetCainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse() *CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse {
+	return poolCainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse.Get().(*CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse)
+}
+
+// ReleaseCainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse 将 CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse(v *CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse) {
+	v.Reset()
+	poolCainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse.Put(v)
 }

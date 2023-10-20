@@ -9,11 +9,6 @@ import (
 // taobao.baichuan.openaccount.password.reset
 //
 // 百川找回密码
-func TaobaoBaichuanOpenaccountPasswordReset(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountPasswordResetAPIRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountPasswordResetAPIResponse, error) {
-	var resp baichuan.TaobaoBaichuanOpenaccountPasswordResetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBaichuanOpenaccountPasswordReset(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountPasswordResetAPIRequest, resp *baichuan.TaobaoBaichuanOpenaccountPasswordResetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

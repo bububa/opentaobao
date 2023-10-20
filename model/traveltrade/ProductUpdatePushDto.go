@@ -1,5 +1,9 @@
 package traveltrade
 
+import (
+	"sync"
+)
+
 // ProductUpdatePushDto 结构体
 type ProductUpdatePushDto struct {
 	// 日历价格库存信息  日历价格库存信息
@@ -18,4 +22,28 @@ type ProductUpdatePushDto struct {
 	NotifyType int64 `json:"notify_type,omitempty" xml:"notify_type,omitempty"`
 	// 模式 默认值1；1:普通日历/预约商品（非通兑和非任选）
 	Mode int64 `json:"mode,omitempty" xml:"mode,omitempty"`
+}
+
+var poolProductUpdatePushDto = sync.Pool{
+	New: func() any {
+		return new(ProductUpdatePushDto)
+	},
+}
+
+// GetProductUpdatePushDto() 从对象池中获取ProductUpdatePushDto
+func GetProductUpdatePushDto() *ProductUpdatePushDto {
+	return poolProductUpdatePushDto.Get().(*ProductUpdatePushDto)
+}
+
+// ReleaseProductUpdatePushDto 释放ProductUpdatePushDto
+func ReleaseProductUpdatePushDto(v *ProductUpdatePushDto) {
+	v.PriceStocks = v.PriceStocks[:0]
+	v.ProductId = ""
+	v.BedId = ""
+	v.HotelId = ""
+	v.RoomId = ""
+	v.ExtendParams = ""
+	v.NotifyType = 0
+	v.Mode = 0
+	poolProductUpdatePushDto.Put(v)
 }

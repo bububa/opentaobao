@@ -2,6 +2,7 @@ package train
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoTrainAgentHandrefundRefundfeeAPIRequest struct {
 // NewTaobaoTrainAgentHandrefundRefundfeeRequest 初始化TaobaoTrainAgentHandrefundRefundfeeAPIRequest对象
 func NewTaobaoTrainAgentHandrefundRefundfeeRequest() *TaobaoTrainAgentHandrefundRefundfeeAPIRequest {
 	return &TaobaoTrainAgentHandrefundRefundfeeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTrainAgentHandrefundRefundfeeAPIRequest) Reset() {
+	r._outTradeNo = ""
+	r._mainBizOrderId = 0
+	r._refundFee = 0
+	r._subOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoTrainAgentHandrefundRefundfeeAPIRequest) SetSubOrderId(_subOrderI
 // GetSubOrderId SubOrderId Getter
 func (r TaobaoTrainAgentHandrefundRefundfeeAPIRequest) GetSubOrderId() int64 {
 	return r._subOrderId
+}
+
+var poolTaobaoTrainAgentHandrefundRefundfeeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTrainAgentHandrefundRefundfeeRequest()
+	},
+}
+
+// GetTaobaoTrainAgentHandrefundRefundfeeRequest 从 sync.Pool 获取 TaobaoTrainAgentHandrefundRefundfeeAPIRequest
+func GetTaobaoTrainAgentHandrefundRefundfeeAPIRequest() *TaobaoTrainAgentHandrefundRefundfeeAPIRequest {
+	return poolTaobaoTrainAgentHandrefundRefundfeeAPIRequest.Get().(*TaobaoTrainAgentHandrefundRefundfeeAPIRequest)
+}
+
+// ReleaseTaobaoTrainAgentHandrefundRefundfeeAPIRequest 将 TaobaoTrainAgentHandrefundRefundfeeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTrainAgentHandrefundRefundfeeAPIRequest(v *TaobaoTrainAgentHandrefundRefundfeeAPIRequest) {
+	v.Reset()
+	poolTaobaoTrainAgentHandrefundRefundfeeAPIRequest.Put(v)
 }

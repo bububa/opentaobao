@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAliqinFlowWalletQueryChargeAPIRequest struct {
 // NewAlibabaAliqinFlowWalletQueryChargeRequest 初始化AlibabaAliqinFlowWalletQueryChargeAPIRequest对象
 func NewAlibabaAliqinFlowWalletQueryChargeRequest() *AlibabaAliqinFlowWalletQueryChargeAPIRequest {
 	return &AlibabaAliqinFlowWalletQueryChargeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFlowWalletQueryChargeAPIRequest) Reset() {
+	r._outRechargeId = ""
+	r._channelId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAliqinFlowWalletQueryChargeAPIRequest) SetChannelId(_channelId s
 // GetChannelId ChannelId Getter
 func (r AlibabaAliqinFlowWalletQueryChargeAPIRequest) GetChannelId() string {
 	return r._channelId
+}
+
+var poolAlibabaAliqinFlowWalletQueryChargeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFlowWalletQueryChargeRequest()
+	},
+}
+
+// GetAlibabaAliqinFlowWalletQueryChargeRequest 从 sync.Pool 获取 AlibabaAliqinFlowWalletQueryChargeAPIRequest
+func GetAlibabaAliqinFlowWalletQueryChargeAPIRequest() *AlibabaAliqinFlowWalletQueryChargeAPIRequest {
+	return poolAlibabaAliqinFlowWalletQueryChargeAPIRequest.Get().(*AlibabaAliqinFlowWalletQueryChargeAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFlowWalletQueryChargeAPIRequest 将 AlibabaAliqinFlowWalletQueryChargeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFlowWalletQueryChargeAPIRequest(v *AlibabaAliqinFlowWalletQueryChargeAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFlowWalletQueryChargeAPIRequest.Put(v)
 }

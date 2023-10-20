@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // WriteOffGoodsDto 结构体
 type WriteOffGoodsDto struct {
 	// 商品Id
@@ -14,4 +18,26 @@ type WriteOffGoodsDto struct {
 	GoodsPicId string `json:"goods_pic_id,omitempty" xml:"goods_pic_id,omitempty"`
 	// 数量
 	GoodsQuantity int64 `json:"goods_quantity,omitempty" xml:"goods_quantity,omitempty"`
+}
+
+var poolWriteOffGoodsDto = sync.Pool{
+	New: func() any {
+		return new(WriteOffGoodsDto)
+	},
+}
+
+// GetWriteOffGoodsDto() 从对象池中获取WriteOffGoodsDto
+func GetWriteOffGoodsDto() *WriteOffGoodsDto {
+	return poolWriteOffGoodsDto.Get().(*WriteOffGoodsDto)
+}
+
+// ReleaseWriteOffGoodsDto 释放WriteOffGoodsDto
+func ReleaseWriteOffGoodsDto(v *WriteOffGoodsDto) {
+	v.ItemId = ""
+	v.Price = ""
+	v.GoodsName = ""
+	v.SkuId = ""
+	v.GoodsPicId = ""
+	v.GoodsQuantity = 0
+	poolWriteOffGoodsDto.Put(v)
 }

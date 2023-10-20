@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // Product 结构体
 type Product struct {
 	// 描述
@@ -12,4 +16,25 @@ type Product struct {
 	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
 	// 是否主元素
 	MainProduct bool `json:"main_product,omitempty" xml:"main_product,omitempty"`
+}
+
+var poolProduct = sync.Pool{
+	New: func() any {
+		return new(Product)
+	},
+}
+
+// GetProduct() 从对象池中获取Product
+func GetProduct() *Product {
+	return poolProduct.Get().(*Product)
+}
+
+// ReleaseProduct 释放Product
+func ReleaseProduct(v *Product) {
+	v.Descr = ""
+	v.ElementId = ""
+	v.PackageId = 0
+	v.Num = 0
+	v.MainProduct = false
+	poolProduct.Put(v)
 }

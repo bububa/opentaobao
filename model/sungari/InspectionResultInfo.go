@@ -1,5 +1,9 @@
 package sungari
 
+import (
+	"sync"
+)
+
 // InspectionResultInfo 结构体
 type InspectionResultInfo struct {
 	// 卖家nick
@@ -16,4 +20,27 @@ type InspectionResultInfo struct {
 	CertificationName string `json:"certification_name,omitempty" xml:"certification_name,omitempty"`
 	// 处置结果
 	DisposeResult string `json:"dispose_result,omitempty" xml:"dispose_result,omitempty"`
+}
+
+var poolInspectionResultInfo = sync.Pool{
+	New: func() any {
+		return new(InspectionResultInfo)
+	},
+}
+
+// GetInspectionResultInfo() 从对象池中获取InspectionResultInfo
+func GetInspectionResultInfo() *InspectionResultInfo {
+	return poolInspectionResultInfo.Get().(*InspectionResultInfo)
+}
+
+// ReleaseInspectionResultInfo 释放InspectionResultInfo
+func ReleaseInspectionResultInfo(v *InspectionResultInfo) {
+	v.SellerNick = ""
+	v.SendAddress = ""
+	v.RegisterAddress = ""
+	v.LicenceNo = ""
+	v.SellerTel = ""
+	v.CertificationName = ""
+	v.DisposeResult = ""
+	poolInspectionResultInfo.Put(v)
 }

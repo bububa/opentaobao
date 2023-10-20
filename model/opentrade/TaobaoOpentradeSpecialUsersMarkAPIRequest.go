@@ -2,6 +2,7 @@ package opentrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoOpentradeSpecialUsersMarkAPIRequest struct {
 // NewTaobaoOpentradeSpecialUsersMarkRequest 初始化TaobaoOpentradeSpecialUsersMarkAPIRequest对象
 func NewTaobaoOpentradeSpecialUsersMarkRequest() *TaobaoOpentradeSpecialUsersMarkAPIRequest {
 	return &TaobaoOpentradeSpecialUsersMarkAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpentradeSpecialUsersMarkAPIRequest) Reset() {
+	r._openUserIds = r._openUserIds[:0]
+	r._status = ""
+	r._itemId = 0
+	r._skuId = 0
+	r._limitNum = 0
+	r._hit = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoOpentradeSpecialUsersMarkAPIRequest) SetHit(_hit bool) error {
 // GetHit Hit Getter
 func (r TaobaoOpentradeSpecialUsersMarkAPIRequest) GetHit() bool {
 	return r._hit
+}
+
+var poolTaobaoOpentradeSpecialUsersMarkAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpentradeSpecialUsersMarkRequest()
+	},
+}
+
+// GetTaobaoOpentradeSpecialUsersMarkRequest 从 sync.Pool 获取 TaobaoOpentradeSpecialUsersMarkAPIRequest
+func GetTaobaoOpentradeSpecialUsersMarkAPIRequest() *TaobaoOpentradeSpecialUsersMarkAPIRequest {
+	return poolTaobaoOpentradeSpecialUsersMarkAPIRequest.Get().(*TaobaoOpentradeSpecialUsersMarkAPIRequest)
+}
+
+// ReleaseTaobaoOpentradeSpecialUsersMarkAPIRequest 将 TaobaoOpentradeSpecialUsersMarkAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpentradeSpecialUsersMarkAPIRequest(v *TaobaoOpentradeSpecialUsersMarkAPIRequest) {
+	v.Reset()
+	poolTaobaoOpentradeSpecialUsersMarkAPIRequest.Put(v)
 }

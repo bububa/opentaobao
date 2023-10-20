@@ -9,11 +9,6 @@ import (
 // taobao.crm.grademkt.member.add
 //
 // 商家通过该接口吸纳线上店铺会员。
-func TaobaoCrmGrademktMemberAdd(clt *core.SDKClient, req *crm.TaobaoCrmGrademktMemberAddAPIRequest, session string) (*crm.TaobaoCrmGrademktMemberAddAPIResponse, error) {
-	var resp crm.TaobaoCrmGrademktMemberAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoCrmGrademktMemberAdd(clt *core.SDKClient, req *crm.TaobaoCrmGrademktMemberAddAPIRequest, resp *crm.TaobaoCrmGrademktMemberAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

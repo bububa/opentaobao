@@ -2,6 +2,7 @@ package caipiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoCaipiaoLotterytypesGetAPIResponse struct {
 	TaobaoCaipiaoLotterytypesGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoCaipiaoLotterytypesGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCaipiaoLotterytypesGetAPIResponseModel).Reset()
+}
+
 // TaobaoCaipiaoLotterytypesGetAPIResponseModel is 获取可用的彩种列表 成功返回结果
 type TaobaoCaipiaoLotterytypesGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"caipiao_lotterytypes_get_response"`
@@ -24,4 +31,28 @@ type TaobaoCaipiaoLotterytypesGetAPIResponseModel struct {
 	Results []LotteryType `json:"results,omitempty" xml:"results>lottery_type,omitempty"`
 	// 彩种个数
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCaipiaoLotterytypesGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Results = m.Results[:0]
+	m.TotalResults = 0
+}
+
+var poolTaobaoCaipiaoLotterytypesGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCaipiaoLotterytypesGetAPIResponse)
+	},
+}
+
+// GetTaobaoCaipiaoLotterytypesGetAPIResponse 从 sync.Pool 获取 TaobaoCaipiaoLotterytypesGetAPIResponse
+func GetTaobaoCaipiaoLotterytypesGetAPIResponse() *TaobaoCaipiaoLotterytypesGetAPIResponse {
+	return poolTaobaoCaipiaoLotterytypesGetAPIResponse.Get().(*TaobaoCaipiaoLotterytypesGetAPIResponse)
+}
+
+// ReleaseTaobaoCaipiaoLotterytypesGetAPIResponse 将 TaobaoCaipiaoLotterytypesGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCaipiaoLotterytypesGetAPIResponse(v *TaobaoCaipiaoLotterytypesGetAPIResponse) {
+	v.Reset()
+	poolTaobaoCaipiaoLotterytypesGetAPIResponse.Put(v)
 }

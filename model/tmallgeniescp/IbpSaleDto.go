@@ -1,5 +1,9 @@
 package tmallgeniescp
 
+import (
+	"sync"
+)
+
 // IbpSaleDto 结构体
 type IbpSaleDto struct {
 	// 关键日期值
@@ -22,4 +26,30 @@ type IbpSaleDto struct {
 	SellOutQuantity int64 `json:"sell_out_quantity,omitempty" xml:"sell_out_quantity,omitempty"`
 	// 出货数量
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolIbpSaleDto = sync.Pool{
+	New: func() any {
+		return new(IbpSaleDto)
+	},
+}
+
+// GetIbpSaleDto() 从对象池中获取IbpSaleDto
+func GetIbpSaleDto() *IbpSaleDto {
+	return poolIbpSaleDto.Get().(*IbpSaleDto)
+}
+
+// ReleaseIbpSaleDto 释放IbpSaleDto
+func ReleaseIbpSaleDto(v *IbpSaleDto) {
+	v.KeyFigureDate = ""
+	v.ChannelId = ""
+	v.MaterielCode = ""
+	v.ExtendJson = ""
+	v.Tenant = ""
+	v.ChannelType = ""
+	v.ActivationQuantity = 0
+	v.SellInQuantity = 0
+	v.SellOutQuantity = 0
+	v.Quantity = 0
+	poolIbpSaleDto.Put(v)
 }

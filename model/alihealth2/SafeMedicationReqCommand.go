@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // SafeMedicationReqCommand 结构体
 type SafeMedicationReqCommand struct {
 	// 处方项，包括药品、用法用量以及购买量
@@ -14,4 +18,26 @@ type SafeMedicationReqCommand struct {
 	TenantCode string `json:"tenant_code,omitempty" xml:"tenant_code,omitempty"`
 	// 患者，启用特殊人群规则情况下必传
 	Patient *Patient `json:"patient,omitempty" xml:"patient,omitempty"`
+}
+
+var poolSafeMedicationReqCommand = sync.Pool{
+	New: func() any {
+		return new(SafeMedicationReqCommand)
+	},
+}
+
+// GetSafeMedicationReqCommand() 从对象池中获取SafeMedicationReqCommand
+func GetSafeMedicationReqCommand() *SafeMedicationReqCommand {
+	return poolSafeMedicationReqCommand.Get().(*SafeMedicationReqCommand)
+}
+
+// ReleaseSafeMedicationReqCommand 释放SafeMedicationReqCommand
+func ReleaseSafeMedicationReqCommand(v *SafeMedicationReqCommand) {
+	v.PrescriptionItems = v.PrescriptionItems[:0]
+	v.Diags = v.Diags[:0]
+	v.OrderId = ""
+	v.SceneName = ""
+	v.TenantCode = ""
+	v.Patient = nil
+	poolSafeMedicationReqCommand.Put(v)
 }

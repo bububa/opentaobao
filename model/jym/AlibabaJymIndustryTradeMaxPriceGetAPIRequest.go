@@ -2,6 +2,7 @@ package jym
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaJymIndustryTradeMaxPriceGetAPIRequest struct {
 // NewAlibabaJymIndustryTradeMaxPriceGetRequest 初始化AlibabaJymIndustryTradeMaxPriceGetAPIRequest对象
 func NewAlibabaJymIndustryTradeMaxPriceGetRequest() *AlibabaJymIndustryTradeMaxPriceGetAPIRequest {
 	return &AlibabaJymIndustryTradeMaxPriceGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJymIndustryTradeMaxPriceGetAPIRequest) Reset() {
+	r._jymMaxPriceRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaJymIndustryTradeMaxPriceGetAPIRequest) SetJymMaxPriceRequest(_jy
 // GetJymMaxPriceRequest JymMaxPriceRequest Getter
 func (r AlibabaJymIndustryTradeMaxPriceGetAPIRequest) GetJymMaxPriceRequest() *JymMaxPriceRequestDto {
 	return r._jymMaxPriceRequest
+}
+
+var poolAlibabaJymIndustryTradeMaxPriceGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJymIndustryTradeMaxPriceGetRequest()
+	},
+}
+
+// GetAlibabaJymIndustryTradeMaxPriceGetRequest 从 sync.Pool 获取 AlibabaJymIndustryTradeMaxPriceGetAPIRequest
+func GetAlibabaJymIndustryTradeMaxPriceGetAPIRequest() *AlibabaJymIndustryTradeMaxPriceGetAPIRequest {
+	return poolAlibabaJymIndustryTradeMaxPriceGetAPIRequest.Get().(*AlibabaJymIndustryTradeMaxPriceGetAPIRequest)
+}
+
+// ReleaseAlibabaJymIndustryTradeMaxPriceGetAPIRequest 将 AlibabaJymIndustryTradeMaxPriceGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJymIndustryTradeMaxPriceGetAPIRequest(v *AlibabaJymIndustryTradeMaxPriceGetAPIRequest) {
+	v.Reset()
+	poolAlibabaJymIndustryTradeMaxPriceGetAPIRequest.Put(v)
 }

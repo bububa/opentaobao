@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkUmsInventoryCheckGetAPIRequest struct {
 // NewAlibabaWdkUmsInventoryCheckGetRequest 初始化AlibabaWdkUmsInventoryCheckGetAPIRequest对象
 func NewAlibabaWdkUmsInventoryCheckGetRequest() *AlibabaWdkUmsInventoryCheckGetAPIRequest {
 	return &AlibabaWdkUmsInventoryCheckGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkUmsInventoryCheckGetAPIRequest) Reset() {
+	r._warehouseCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkUmsInventoryCheckGetAPIRequest) SetWarehouseCode(_warehouseCo
 // GetWarehouseCode WarehouseCode Getter
 func (r AlibabaWdkUmsInventoryCheckGetAPIRequest) GetWarehouseCode() string {
 	return r._warehouseCode
+}
+
+var poolAlibabaWdkUmsInventoryCheckGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkUmsInventoryCheckGetRequest()
+	},
+}
+
+// GetAlibabaWdkUmsInventoryCheckGetRequest 从 sync.Pool 获取 AlibabaWdkUmsInventoryCheckGetAPIRequest
+func GetAlibabaWdkUmsInventoryCheckGetAPIRequest() *AlibabaWdkUmsInventoryCheckGetAPIRequest {
+	return poolAlibabaWdkUmsInventoryCheckGetAPIRequest.Get().(*AlibabaWdkUmsInventoryCheckGetAPIRequest)
+}
+
+// ReleaseAlibabaWdkUmsInventoryCheckGetAPIRequest 将 AlibabaWdkUmsInventoryCheckGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkUmsInventoryCheckGetAPIRequest(v *AlibabaWdkUmsInventoryCheckGetAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkUmsInventoryCheckGetAPIRequest.Put(v)
 }

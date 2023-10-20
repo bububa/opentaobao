@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // CombineItem 结构体
 type CombineItem struct {
 	// 商品编码
@@ -18,4 +22,28 @@ type CombineItem struct {
 	BuyAmountSale int64 `json:"buy_amount_sale,omitempty" xml:"buy_amount_sale,omitempty"`
 	// 商品价格
 	AuctionPrice int64 `json:"auction_price,omitempty" xml:"auction_price,omitempty"`
+}
+
+var poolCombineItem = sync.Pool{
+	New: func() any {
+		return new(CombineItem)
+	},
+}
+
+// GetCombineItem() 从对象池中获取CombineItem
+func GetCombineItem() *CombineItem {
+	return poolCombineItem.Get().(*CombineItem)
+}
+
+// ReleaseCombineItem 释放CombineItem
+func ReleaseCombineItem(v *CombineItem) {
+	v.SkuCode = ""
+	v.AuctionTitle = ""
+	v.BarCode = ""
+	v.BuyAmountStock = ""
+	v.SaleUnit = ""
+	v.StockUnit = ""
+	v.BuyAmountSale = 0
+	v.AuctionPrice = 0
+	poolCombineItem.Put(v)
 }

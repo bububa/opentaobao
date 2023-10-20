@@ -1,5 +1,9 @@
 package idleisv
 
+import (
+	"sync"
+)
+
 // IdleNewPubValueDo 结构体
 type IdleNewPubValueDo struct {
 	// 属性id
@@ -12,4 +16,25 @@ type IdleNewPubValueDo struct {
 	ValueId string `json:"value_id,omitempty" xml:"value_id,omitempty"`
 	// 值名称
 	ValueName string `json:"value_name,omitempty" xml:"value_name,omitempty"`
+}
+
+var poolIdleNewPubValueDo = sync.Pool{
+	New: func() any {
+		return new(IdleNewPubValueDo)
+	},
+}
+
+// GetIdleNewPubValueDo() 从对象池中获取IdleNewPubValueDo
+func GetIdleNewPubValueDo() *IdleNewPubValueDo {
+	return poolIdleNewPubValueDo.Get().(*IdleNewPubValueDo)
+}
+
+// ReleaseIdleNewPubValueDo 释放IdleNewPubValueDo
+func ReleaseIdleNewPubValueDo(v *IdleNewPubValueDo) {
+	v.PropertyId = ""
+	v.PropertyName = ""
+	v.ChannelCatId = ""
+	v.ValueId = ""
+	v.ValueName = ""
+	poolIdleNewPubValueDo.Put(v)
 }

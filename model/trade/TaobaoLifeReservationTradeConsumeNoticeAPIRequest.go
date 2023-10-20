@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoLifeReservationTradeConsumeNoticeAPIRequest struct {
 // NewTaobaoLifeReservationTradeConsumeNoticeRequest 初始化TaobaoLifeReservationTradeConsumeNoticeAPIRequest对象
 func NewTaobaoLifeReservationTradeConsumeNoticeRequest() *TaobaoLifeReservationTradeConsumeNoticeAPIRequest {
 	return &TaobaoLifeReservationTradeConsumeNoticeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLifeReservationTradeConsumeNoticeAPIRequest) Reset() {
+	r._tradeNo = ""
+	r._ticketId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoLifeReservationTradeConsumeNoticeAPIRequest) SetTicketId(_ticketI
 // GetTicketId TicketId Getter
 func (r TaobaoLifeReservationTradeConsumeNoticeAPIRequest) GetTicketId() string {
 	return r._ticketId
+}
+
+var poolTaobaoLifeReservationTradeConsumeNoticeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLifeReservationTradeConsumeNoticeRequest()
+	},
+}
+
+// GetTaobaoLifeReservationTradeConsumeNoticeRequest 从 sync.Pool 获取 TaobaoLifeReservationTradeConsumeNoticeAPIRequest
+func GetTaobaoLifeReservationTradeConsumeNoticeAPIRequest() *TaobaoLifeReservationTradeConsumeNoticeAPIRequest {
+	return poolTaobaoLifeReservationTradeConsumeNoticeAPIRequest.Get().(*TaobaoLifeReservationTradeConsumeNoticeAPIRequest)
+}
+
+// ReleaseTaobaoLifeReservationTradeConsumeNoticeAPIRequest 将 TaobaoLifeReservationTradeConsumeNoticeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLifeReservationTradeConsumeNoticeAPIRequest(v *TaobaoLifeReservationTradeConsumeNoticeAPIRequest) {
+	v.Reset()
+	poolTaobaoLifeReservationTradeConsumeNoticeAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.channel.order.status.update
 //
 // 订单状态变更
-func AlibabaWdkChannelOrderStatusUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkChannelOrderStatusUpdateAPIRequest, session string) (*wdk.AlibabaWdkChannelOrderStatusUpdateAPIResponse, error) {
-	var resp wdk.AlibabaWdkChannelOrderStatusUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkChannelOrderStatusUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkChannelOrderStatusUpdateAPIRequest, resp *wdk.AlibabaWdkChannelOrderStatusUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

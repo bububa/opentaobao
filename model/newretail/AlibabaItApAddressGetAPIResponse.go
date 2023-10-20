@@ -2,6 +2,7 @@ package newretail
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaItApAddressGetAPIResponse struct {
 	AlibabaItApAddressGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaItApAddressGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaItApAddressGetAPIResponseModel).Reset()
+}
+
 // AlibabaItApAddressGetAPIResponseModel is getApAddressByMacNew 成功返回结果
 type AlibabaItApAddressGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_it_ap_address_get_response"`
@@ -22,4 +29,27 @@ type AlibabaItApAddressGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaItApAddressGetResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaItApAddressGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaItApAddressGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaItApAddressGetAPIResponse)
+	},
+}
+
+// GetAlibabaItApAddressGetAPIResponse 从 sync.Pool 获取 AlibabaItApAddressGetAPIResponse
+func GetAlibabaItApAddressGetAPIResponse() *AlibabaItApAddressGetAPIResponse {
+	return poolAlibabaItApAddressGetAPIResponse.Get().(*AlibabaItApAddressGetAPIResponse)
+}
+
+// ReleaseAlibabaItApAddressGetAPIResponse 将 AlibabaItApAddressGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaItApAddressGetAPIResponse(v *AlibabaItApAddressGetAPIResponse) {
+	v.Reset()
+	poolAlibabaItApAddressGetAPIResponse.Put(v)
 }

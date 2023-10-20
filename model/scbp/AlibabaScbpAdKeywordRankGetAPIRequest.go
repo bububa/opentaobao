@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpAdKeywordRankGetAPIRequest struct {
 // NewAlibabaScbpAdKeywordRankGetRequest 初始化AlibabaScbpAdKeywordRankGetAPIRequest对象
 func NewAlibabaScbpAdKeywordRankGetRequest() *AlibabaScbpAdKeywordRankGetAPIRequest {
 	return &AlibabaScbpAdKeywordRankGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdKeywordRankGetAPIRequest) Reset() {
+	r._keyword = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpAdKeywordRankGetAPIRequest) SetKeyword(_keyword string) erro
 // GetKeyword Keyword Getter
 func (r AlibabaScbpAdKeywordRankGetAPIRequest) GetKeyword() string {
 	return r._keyword
+}
+
+var poolAlibabaScbpAdKeywordRankGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdKeywordRankGetRequest()
+	},
+}
+
+// GetAlibabaScbpAdKeywordRankGetRequest 从 sync.Pool 获取 AlibabaScbpAdKeywordRankGetAPIRequest
+func GetAlibabaScbpAdKeywordRankGetAPIRequest() *AlibabaScbpAdKeywordRankGetAPIRequest {
+	return poolAlibabaScbpAdKeywordRankGetAPIRequest.Get().(*AlibabaScbpAdKeywordRankGetAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdKeywordRankGetAPIRequest 将 AlibabaScbpAdKeywordRankGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdKeywordRankGetAPIRequest(v *AlibabaScbpAdKeywordRankGetAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdKeywordRankGetAPIRequest.Put(v)
 }

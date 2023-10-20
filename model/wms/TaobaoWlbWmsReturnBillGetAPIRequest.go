@@ -2,6 +2,7 @@ package wms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoWlbWmsReturnBillGetAPIRequest struct {
 // NewTaobaoWlbWmsReturnBillGetRequest 初始化TaobaoWlbWmsReturnBillGetAPIRequest对象
 func NewTaobaoWlbWmsReturnBillGetRequest() *TaobaoWlbWmsReturnBillGetAPIRequest {
 	return &TaobaoWlbWmsReturnBillGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWmsReturnBillGetAPIRequest) Reset() {
+	r._orderCode = ""
+	r._cnOrderCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoWlbWmsReturnBillGetAPIRequest) SetCnOrderCode(_cnOrderCode string
 // GetCnOrderCode CnOrderCode Getter
 func (r TaobaoWlbWmsReturnBillGetAPIRequest) GetCnOrderCode() string {
 	return r._cnOrderCode
+}
+
+var poolTaobaoWlbWmsReturnBillGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWmsReturnBillGetRequest()
+	},
+}
+
+// GetTaobaoWlbWmsReturnBillGetRequest 从 sync.Pool 获取 TaobaoWlbWmsReturnBillGetAPIRequest
+func GetTaobaoWlbWmsReturnBillGetAPIRequest() *TaobaoWlbWmsReturnBillGetAPIRequest {
+	return poolTaobaoWlbWmsReturnBillGetAPIRequest.Get().(*TaobaoWlbWmsReturnBillGetAPIRequest)
+}
+
+// ReleaseTaobaoWlbWmsReturnBillGetAPIRequest 将 TaobaoWlbWmsReturnBillGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWmsReturnBillGetAPIRequest(v *TaobaoWlbWmsReturnBillGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWmsReturnBillGetAPIRequest.Put(v)
 }

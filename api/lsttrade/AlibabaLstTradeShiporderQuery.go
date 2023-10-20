@@ -9,11 +9,6 @@ import (
 // alibaba.lst.trade.shiporder.query
 //
 // 供应商数据开放--发货单接口
-func AlibabaLstTradeShiporderQuery(clt *core.SDKClient, req *lsttrade.AlibabaLstTradeShiporderQueryAPIRequest, session string) (*lsttrade.AlibabaLstTradeShiporderQueryAPIResponse, error) {
-	var resp lsttrade.AlibabaLstTradeShiporderQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLstTradeShiporderQuery(clt *core.SDKClient, req *lsttrade.AlibabaLstTradeShiporderQueryAPIRequest, resp *lsttrade.AlibabaLstTradeShiporderQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

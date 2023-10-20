@@ -9,11 +9,6 @@ import (
 // alibaba.msfservice.worker.queryid
 //
 // 查询师傅workerid
-func AlibabaMsfserviceWorkerQueryid(clt *core.SDKClient, req *tmallsc.AlibabaMsfserviceWorkerQueryidAPIRequest, session string) (*tmallsc.AlibabaMsfserviceWorkerQueryidAPIResponse, error) {
-	var resp tmallsc.AlibabaMsfserviceWorkerQueryidAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMsfserviceWorkerQueryid(clt *core.SDKClient, req *tmallsc.AlibabaMsfserviceWorkerQueryidAPIRequest, resp *tmallsc.AlibabaMsfserviceWorkerQueryidAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

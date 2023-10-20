@@ -2,6 +2,7 @@ package fpm
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaCfoIncomingInvoicePytImageUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaCfoIncomingInvoicePytImageUploadAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaCfoIncomingInvoicePytImageUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaCfoIncomingInvoicePytImageUploadAPIResponseModel).Reset()
 }
 
 // AlibabaCfoIncomingInvoicePytImageUploadAPIResponseModel is 票易通发票影像上传 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaCfoIncomingInvoicePytImageUploadAPIResponseModel struct {
 	ResponseMsg string `json:"response_msg,omitempty" xml:"response_msg,omitempty"`
 	// 是否成功
 	Succeeded bool `json:"succeeded,omitempty" xml:"succeeded,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaCfoIncomingInvoicePytImageUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = ""
+	m.ResponseCode = ""
+	m.ResponseMsg = ""
+	m.Succeeded = false
+}
+
+var poolAlibabaCfoIncomingInvoicePytImageUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaCfoIncomingInvoicePytImageUploadAPIResponse)
+	},
+}
+
+// GetAlibabaCfoIncomingInvoicePytImageUploadAPIResponse 从 sync.Pool 获取 AlibabaCfoIncomingInvoicePytImageUploadAPIResponse
+func GetAlibabaCfoIncomingInvoicePytImageUploadAPIResponse() *AlibabaCfoIncomingInvoicePytImageUploadAPIResponse {
+	return poolAlibabaCfoIncomingInvoicePytImageUploadAPIResponse.Get().(*AlibabaCfoIncomingInvoicePytImageUploadAPIResponse)
+}
+
+// ReleaseAlibabaCfoIncomingInvoicePytImageUploadAPIResponse 将 AlibabaCfoIncomingInvoicePytImageUploadAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaCfoIncomingInvoicePytImageUploadAPIResponse(v *AlibabaCfoIncomingInvoicePytImageUploadAPIResponse) {
+	v.Reset()
+	poolAlibabaCfoIncomingInvoicePytImageUploadAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Aicinventoryquerylist 结构体
 type Aicinventoryquerylist struct {
 	// 仓库编码列表，一般不用入参
@@ -14,4 +18,26 @@ type Aicinventoryquerylist struct {
 	SourceUserId string `json:"source_user_id,omitempty" xml:"source_user_id,omitempty"`
 	// 货品ID
 	ScItemId int64 `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
+}
+
+var poolAicinventoryquerylist = sync.Pool{
+	New: func() any {
+		return new(Aicinventoryquerylist)
+	},
+}
+
+// GetAicinventoryquerylist() 从对象池中获取Aicinventoryquerylist
+func GetAicinventoryquerylist() *Aicinventoryquerylist {
+	return poolAicinventoryquerylist.Get().(*Aicinventoryquerylist)
+}
+
+// ReleaseAicinventoryquerylist 释放Aicinventoryquerylist
+func ReleaseAicinventoryquerylist(v *Aicinventoryquerylist) {
+	v.StoreCodeList = v.StoreCodeList[:0]
+	v.PublishOrderNos = v.PublishOrderNos[:0]
+	v.ChannelCodeList = v.ChannelCodeList[:0]
+	v.InventoryTypeList = v.InventoryTypeList[:0]
+	v.SourceUserId = ""
+	v.ScItemId = 0
+	poolAicinventoryquerylist.Put(v)
 }

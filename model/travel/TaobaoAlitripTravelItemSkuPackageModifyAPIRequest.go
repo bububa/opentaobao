@@ -2,6 +2,7 @@ package travel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoAlitripTravelItemSkuPackageModifyAPIRequest struct {
 // NewTaobaoAlitripTravelItemSkuPackageModifyRequest 初始化TaobaoAlitripTravelItemSkuPackageModifyAPIRequest对象
 func NewTaobaoAlitripTravelItemSkuPackageModifyRequest() *TaobaoAlitripTravelItemSkuPackageModifyAPIRequest {
 	return &TaobaoAlitripTravelItemSkuPackageModifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) Reset() {
+	r._skus = r._skus[:0]
+	r._outProductId = ""
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) SetItemId(_itemId in
 // GetItemId ItemId Getter
 func (r TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTaobaoAlitripTravelItemSkuPackageModifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelItemSkuPackageModifyRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelItemSkuPackageModifyRequest 从 sync.Pool 获取 TaobaoAlitripTravelItemSkuPackageModifyAPIRequest
+func GetTaobaoAlitripTravelItemSkuPackageModifyAPIRequest() *TaobaoAlitripTravelItemSkuPackageModifyAPIRequest {
+	return poolTaobaoAlitripTravelItemSkuPackageModifyAPIRequest.Get().(*TaobaoAlitripTravelItemSkuPackageModifyAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelItemSkuPackageModifyAPIRequest 将 TaobaoAlitripTravelItemSkuPackageModifyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelItemSkuPackageModifyAPIRequest(v *TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelItemSkuPackageModifyAPIRequest.Put(v)
 }

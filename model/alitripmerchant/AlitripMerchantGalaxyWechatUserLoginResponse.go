@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // AlitripMerchantGalaxyWechatUserLoginResponse 结构体
 type AlitripMerchantGalaxyWechatUserLoginResponse struct {
 	// 错误码
@@ -10,4 +14,24 @@ type AlitripMerchantGalaxyWechatUserLoginResponse struct {
 	Content *UserCurrentStatus `json:"content,omitempty" xml:"content,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlitripMerchantGalaxyWechatUserLoginResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyWechatUserLoginResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyWechatUserLoginResponse() 从对象池中获取AlitripMerchantGalaxyWechatUserLoginResponse
+func GetAlitripMerchantGalaxyWechatUserLoginResponse() *AlitripMerchantGalaxyWechatUserLoginResponse {
+	return poolAlitripMerchantGalaxyWechatUserLoginResponse.Get().(*AlitripMerchantGalaxyWechatUserLoginResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyWechatUserLoginResponse 释放AlitripMerchantGalaxyWechatUserLoginResponse
+func ReleaseAlitripMerchantGalaxyWechatUserLoginResponse(v *AlitripMerchantGalaxyWechatUserLoginResponse) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Content = nil
+	v.Success = false
+	poolAlitripMerchantGalaxyWechatUserLoginResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.derby.member.voucher.card.change.callback
 //
 // v5.0德比付费会员卡通知
-func AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallback(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallback(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

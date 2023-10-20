@@ -9,11 +9,6 @@ import (
 // taobao.item.quantity.update
 //
 // 提供按照全量或增量形式修改宝贝/SKU库存的功能
-func TaobaoItemQuantityUpdate(clt *core.SDKClient, req *tbitem.TaobaoItemQuantityUpdateAPIRequest, session string) (*tbitem.TaobaoItemQuantityUpdateAPIResponse, error) {
-	var resp tbitem.TaobaoItemQuantityUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoItemQuantityUpdate(clt *core.SDKClient, req *tbitem.TaobaoItemQuantityUpdateAPIRequest, resp *tbitem.TaobaoItemQuantityUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

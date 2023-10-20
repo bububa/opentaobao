@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type TaobaoTbkDgOptimusMaterialAPIRequest struct {
 // NewTaobaoTbkDgOptimusMaterialRequest 初始化TaobaoTbkDgOptimusMaterialAPIRequest对象
 func NewTaobaoTbkDgOptimusMaterialRequest() *TaobaoTbkDgOptimusMaterialAPIRequest {
 	return &TaobaoTbkDgOptimusMaterialAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkDgOptimusMaterialAPIRequest) Reset() {
+	r._deviceValue = ""
+	r._deviceEncrypt = ""
+	r._deviceType = ""
+	r._contentSource = ""
+	r._itemId = ""
+	r._favoritesId = ""
+	r._pageSize = 0
+	r._pageNo = 0
+	r._adzoneId = 0
+	r._materialId = 0
+	r._contentId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetContentId(_contentId int64) er
 // GetContentId ContentId Getter
 func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetContentId() int64 {
 	return r._contentId
+}
+
+var poolTaobaoTbkDgOptimusMaterialAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkDgOptimusMaterialRequest()
+	},
+}
+
+// GetTaobaoTbkDgOptimusMaterialRequest 从 sync.Pool 获取 TaobaoTbkDgOptimusMaterialAPIRequest
+func GetTaobaoTbkDgOptimusMaterialAPIRequest() *TaobaoTbkDgOptimusMaterialAPIRequest {
+	return poolTaobaoTbkDgOptimusMaterialAPIRequest.Get().(*TaobaoTbkDgOptimusMaterialAPIRequest)
+}
+
+// ReleaseTaobaoTbkDgOptimusMaterialAPIRequest 将 TaobaoTbkDgOptimusMaterialAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkDgOptimusMaterialAPIRequest(v *TaobaoTbkDgOptimusMaterialAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkDgOptimusMaterialAPIRequest.Put(v)
 }

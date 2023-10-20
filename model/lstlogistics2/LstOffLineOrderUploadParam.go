@@ -1,5 +1,9 @@
 package lstlogistics2
 
+import (
+	"sync"
+)
+
 // LstOffLineOrderUploadParam 结构体
 type LstOffLineOrderUploadParam struct {
 	// 子订单
@@ -28,4 +32,33 @@ type LstOffLineOrderUploadParam struct {
 	SenderContact *ContactParam `json:"sender_contact,omitempty" xml:"sender_contact,omitempty"`
 	// 收货地址
 	ReceiverAddress *AddressParam `json:"receiver_address,omitempty" xml:"receiver_address,omitempty"`
+}
+
+var poolLstOffLineOrderUploadParam = sync.Pool{
+	New: func() any {
+		return new(LstOffLineOrderUploadParam)
+	},
+}
+
+// GetLstOffLineOrderUploadParam() 从对象池中获取LstOffLineOrderUploadParam
+func GetLstOffLineOrderUploadParam() *LstOffLineOrderUploadParam {
+	return poolLstOffLineOrderUploadParam.Get().(*LstOffLineOrderUploadParam)
+}
+
+// ReleaseLstOffLineOrderUploadParam 释放LstOffLineOrderUploadParam
+func ReleaseLstOffLineOrderUploadParam(v *LstOffLineOrderUploadParam) {
+	v.SubOrders = v.SubOrders[:0]
+	v.OutOrderId = ""
+	v.OrderCreateTime = ""
+	v.OrderPayTime = ""
+	v.WarehouseName = ""
+	v.ShopName = ""
+	v.OutShopId = ""
+	v.BuyerMessage = ""
+	v.PayAmount = 0
+	v.LstShopId = 0
+	v.ReceiverContact = nil
+	v.SenderContact = nil
+	v.ReceiverAddress = nil
+	poolLstOffLineOrderUploadParam.Put(v)
 }

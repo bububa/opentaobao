@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.marketing.fullrange.queryactivity
 //
 // 全场活动查询活动
-func AlibabaWdkMarketingFullrangeQueryactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingFullrangeQueryactivityAPIRequest, session string) (*wdk.AlibabaWdkMarketingFullrangeQueryactivityAPIResponse, error) {
-	var resp wdk.AlibabaWdkMarketingFullrangeQueryactivityAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkMarketingFullrangeQueryactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingFullrangeQueryactivityAPIRequest, resp *wdk.AlibabaWdkMarketingFullrangeQueryactivityAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

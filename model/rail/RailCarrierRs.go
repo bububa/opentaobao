@@ -1,5 +1,9 @@
 package rail
 
+import (
+	"sync"
+)
+
 // RailCarrierRs 结构体
 type RailCarrierRs struct {
 	// 铁路运营公司列表
@@ -20,4 +24,29 @@ type RailCarrierRs struct {
 	EnName string `json:"en_name,omitempty" xml:"en_name,omitempty"`
 	// 关联or归属铁路局编码
 	RailWayCode string `json:"rail_way_code,omitempty" xml:"rail_way_code,omitempty"`
+}
+
+var poolRailCarrierRs = sync.Pool{
+	New: func() any {
+		return new(RailCarrierRs)
+	},
+}
+
+// GetRailCarrierRs() 从对象池中获取RailCarrierRs
+func GetRailCarrierRs() *RailCarrierRs {
+	return poolRailCarrierRs.Get().(*RailCarrierRs)
+}
+
+// ReleaseRailCarrierRs 释放RailCarrierRs
+func ReleaseRailCarrierRs(v *RailCarrierRs) {
+	v.ModuleList = v.ModuleList[:0]
+	v.Success = ""
+	v.ErrMsg = ""
+	v.ErrCode = ""
+	v.Code = ""
+	v.CnName = ""
+	v.Logo = ""
+	v.EnName = ""
+	v.RailWayCode = ""
+	poolRailCarrierRs.Put(v)
 }

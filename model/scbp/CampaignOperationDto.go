@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // CampaignOperationDto 结构体
 type CampaignOperationDto struct {
 	// 标题
@@ -26,4 +30,32 @@ type CampaignOperationDto struct {
 	BidType int64 `json:"bid_type,omitempty" xml:"bid_type,omitempty"`
 	// 计划id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolCampaignOperationDto = sync.Pool{
+	New: func() any {
+		return new(CampaignOperationDto)
+	},
+}
+
+// GetCampaignOperationDto() 从对象池中获取CampaignOperationDto
+func GetCampaignOperationDto() *CampaignOperationDto {
+	return poolCampaignOperationDto.Get().(*CampaignOperationDto)
+}
+
+// ReleaseCampaignOperationDto 释放CampaignOperationDto
+func ReleaseCampaignOperationDto(v *CampaignOperationDto) {
+	v.Title = ""
+	v.MinPrice = ""
+	v.MaxPrice = ""
+	v.SubType = ""
+	v.Budget = ""
+	v.WeekBudgetStatus = ""
+	v.SyncExtMatchConf = ""
+	v.StartTime = ""
+	v.Type = 0
+	v.OnlineStatus = 0
+	v.BidType = 0
+	v.Id = 0
+	poolCampaignOperationDto.Put(v)
 }

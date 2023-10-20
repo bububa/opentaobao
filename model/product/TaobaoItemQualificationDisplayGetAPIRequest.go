@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoItemQualificationDisplayGetAPIRequest struct {
 // NewTaobaoItemQualificationDisplayGetRequest 初始化TaobaoItemQualificationDisplayGetAPIRequest对象
 func NewTaobaoItemQualificationDisplayGetRequest() *TaobaoItemQualificationDisplayGetAPIRequest {
 	return &TaobaoItemQualificationDisplayGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoItemQualificationDisplayGetAPIRequest) Reset() {
+	r._param = ""
+	r._itemId = 0
+	r._categoryId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoItemQualificationDisplayGetAPIRequest) SetCategoryId(_categoryId 
 // GetCategoryId CategoryId Getter
 func (r TaobaoItemQualificationDisplayGetAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
+}
+
+var poolTaobaoItemQualificationDisplayGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoItemQualificationDisplayGetRequest()
+	},
+}
+
+// GetTaobaoItemQualificationDisplayGetRequest 从 sync.Pool 获取 TaobaoItemQualificationDisplayGetAPIRequest
+func GetTaobaoItemQualificationDisplayGetAPIRequest() *TaobaoItemQualificationDisplayGetAPIRequest {
+	return poolTaobaoItemQualificationDisplayGetAPIRequest.Get().(*TaobaoItemQualificationDisplayGetAPIRequest)
+}
+
+// ReleaseTaobaoItemQualificationDisplayGetAPIRequest 将 TaobaoItemQualificationDisplayGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoItemQualificationDisplayGetAPIRequest(v *TaobaoItemQualificationDisplayGetAPIRequest) {
+	v.Reset()
+	poolTaobaoItemQualificationDisplayGetAPIRequest.Put(v)
 }

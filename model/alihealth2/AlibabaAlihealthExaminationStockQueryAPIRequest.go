@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaAlihealthExaminationStockQueryAPIRequest struct {
 // NewAlibabaAlihealthExaminationStockQueryRequest 初始化AlibabaAlihealthExaminationStockQueryAPIRequest对象
 func NewAlibabaAlihealthExaminationStockQueryRequest() *AlibabaAlihealthExaminationStockQueryAPIRequest {
 	return &AlibabaAlihealthExaminationStockQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthExaminationStockQueryAPIRequest) Reset() {
+	r._merchantCode = ""
+	r._hospitalId = ""
+	r._packageId = ""
+	r._timeFrom = ""
+	r._timeTo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaAlihealthExaminationStockQueryAPIRequest) SetTimeTo(_timeTo stri
 // GetTimeTo TimeTo Getter
 func (r AlibabaAlihealthExaminationStockQueryAPIRequest) GetTimeTo() string {
 	return r._timeTo
+}
+
+var poolAlibabaAlihealthExaminationStockQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthExaminationStockQueryRequest()
+	},
+}
+
+// GetAlibabaAlihealthExaminationStockQueryRequest 从 sync.Pool 获取 AlibabaAlihealthExaminationStockQueryAPIRequest
+func GetAlibabaAlihealthExaminationStockQueryAPIRequest() *AlibabaAlihealthExaminationStockQueryAPIRequest {
+	return poolAlibabaAlihealthExaminationStockQueryAPIRequest.Get().(*AlibabaAlihealthExaminationStockQueryAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthExaminationStockQueryAPIRequest 将 AlibabaAlihealthExaminationStockQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthExaminationStockQueryAPIRequest(v *AlibabaAlihealthExaminationStockQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationStockQueryAPIRequest.Put(v)
 }

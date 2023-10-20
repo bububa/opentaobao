@@ -9,11 +9,6 @@ import (
 // alibaba.interact.sensor.trade.buy
 //
 // 交易流程鉴权
-func AlibabaInteractSensorTradeBuy(clt *core.SDKClient, req *mtopopen.AlibabaInteractSensorTradeBuyAPIRequest, session string) (*mtopopen.AlibabaInteractSensorTradeBuyAPIResponse, error) {
-	var resp mtopopen.AlibabaInteractSensorTradeBuyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaInteractSensorTradeBuy(clt *core.SDKClient, req *mtopopen.AlibabaInteractSensorTradeBuyAPIRequest, resp *mtopopen.AlibabaInteractSensorTradeBuyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

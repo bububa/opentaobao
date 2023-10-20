@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // TopInsStationInfo 结构体
 type TopInsStationInfo struct {
 	// 机具ID
@@ -14,4 +18,26 @@ type TopInsStationInfo struct {
 	ProvinceCode string `json:"province_code,omitempty" xml:"province_code,omitempty"`
 	// 出发车站站点ID
 	StartStationId string `json:"start_station_id,omitempty" xml:"start_station_id,omitempty"`
+}
+
+var poolTopInsStationInfo = sync.Pool{
+	New: func() any {
+		return new(TopInsStationInfo)
+	},
+}
+
+// GetTopInsStationInfo() 从对象池中获取TopInsStationInfo
+func GetTopInsStationInfo() *TopInsStationInfo {
+	return poolTopInsStationInfo.Get().(*TopInsStationInfo)
+}
+
+// ReleaseTopInsStationInfo 释放TopInsStationInfo
+func ReleaseTopInsStationInfo(v *TopInsStationInfo) {
+	v.MachineId = ""
+	v.CityCode = ""
+	v.IsvName = ""
+	v.IsvId = ""
+	v.ProvinceCode = ""
+	v.StartStationId = ""
+	poolTopInsStationInfo.Put(v)
 }

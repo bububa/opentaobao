@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest struct {
 // NewAlibabaAscpGlobalSupplierItemListInfoQueryRequest 初始化AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest对象
 func NewAlibabaAscpGlobalSupplierItemListInfoQueryRequest() *AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest {
 	return &AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest) Reset() {
+	r._supplyProductPageQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest) SetSupplyProductP
 // GetSupplyProductPageQuery SupplyProductPageQuery Getter
 func (r AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest) GetSupplyProductPageQuery() *TopRequest {
 	return r._supplyProductPageQuery
+}
+
+var poolAlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpGlobalSupplierItemListInfoQueryRequest()
+	},
+}
+
+// GetAlibabaAscpGlobalSupplierItemListInfoQueryRequest 从 sync.Pool 获取 AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest
+func GetAlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest() *AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest {
+	return poolAlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest.Get().(*AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest)
+}
+
+// ReleaseAlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest 将 AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest(v *AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest.Put(v)
 }

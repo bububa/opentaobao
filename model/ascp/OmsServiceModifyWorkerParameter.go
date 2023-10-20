@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // OmsServiceModifyWorkerParameter 结构体
 type OmsServiceModifyWorkerParameter struct {
 	// 师傅id
@@ -20,4 +24,29 @@ type OmsServiceModifyWorkerParameter struct {
 	Score string `json:"score,omitempty" xml:"score,omitempty"`
 	// 完工数量
 	CompletionQuantity int64 `json:"completion_quantity,omitempty" xml:"completion_quantity,omitempty"`
+}
+
+var poolOmsServiceModifyWorkerParameter = sync.Pool{
+	New: func() any {
+		return new(OmsServiceModifyWorkerParameter)
+	},
+}
+
+// GetOmsServiceModifyWorkerParameter() 从对象池中获取OmsServiceModifyWorkerParameter
+func GetOmsServiceModifyWorkerParameter() *OmsServiceModifyWorkerParameter {
+	return poolOmsServiceModifyWorkerParameter.Get().(*OmsServiceModifyWorkerParameter)
+}
+
+// ReleaseOmsServiceModifyWorkerParameter 释放OmsServiceModifyWorkerParameter
+func ReleaseOmsServiceModifyWorkerParameter(v *OmsServiceModifyWorkerParameter) {
+	v.WorkerId = ""
+	v.WorkerName = ""
+	v.WorkerMobile = ""
+	v.WdsCoordinationOrderId = ""
+	v.WorkcardId = ""
+	v.TpId = ""
+	v.SellerId = ""
+	v.Score = ""
+	v.CompletionQuantity = 0
+	poolOmsServiceModifyWorkerParameter.Put(v)
 }

@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoItemUpdateListingTmallAPIResponse struct {
 	TaobaoItemUpdateListingTmallAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoItemUpdateListingTmallAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoItemUpdateListingTmallAPIResponseModel).Reset()
+}
+
 // TaobaoItemUpdateListingTmallAPIResponseModel is taobao.item.update.listing天猫分流 成功返回结果
 type TaobaoItemUpdateListingTmallAPIResponseModel struct {
 	XMLName xml.Name `xml:"item_update_listing_tmall_response"`
@@ -22,4 +29,27 @@ type TaobaoItemUpdateListingTmallAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 上架后返回的商品信息：返回的结果就是:num_iid和modified
 	Item *Item `json:"item,omitempty" xml:"item,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoItemUpdateListingTmallAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Item = nil
+}
+
+var poolTaobaoItemUpdateListingTmallAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoItemUpdateListingTmallAPIResponse)
+	},
+}
+
+// GetTaobaoItemUpdateListingTmallAPIResponse 从 sync.Pool 获取 TaobaoItemUpdateListingTmallAPIResponse
+func GetTaobaoItemUpdateListingTmallAPIResponse() *TaobaoItemUpdateListingTmallAPIResponse {
+	return poolTaobaoItemUpdateListingTmallAPIResponse.Get().(*TaobaoItemUpdateListingTmallAPIResponse)
+}
+
+// ReleaseTaobaoItemUpdateListingTmallAPIResponse 将 TaobaoItemUpdateListingTmallAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoItemUpdateListingTmallAPIResponse(v *TaobaoItemUpdateListingTmallAPIResponse) {
+	v.Reset()
+	poolTaobaoItemUpdateListingTmallAPIResponse.Put(v)
 }

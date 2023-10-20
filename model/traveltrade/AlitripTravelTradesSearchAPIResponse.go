@@ -2,6 +2,7 @@ package traveltrade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripTravelTradesSearchAPIResponse struct {
 	AlitripTravelTradesSearchAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripTravelTradesSearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripTravelTradesSearchAPIResponseModel).Reset()
+}
+
 // AlitripTravelTradesSearchAPIResponseModel is 飞猪度假-订单列表搜索接口 成功返回结果
 type AlitripTravelTradesSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_trades_search_response"`
@@ -26,4 +33,29 @@ type AlitripTravelTradesSearchAPIResponseModel struct {
 	OrderStringList []string `json:"order_string_list,omitempty" xml:"order_string_list>string,omitempty"`
 	// 本次搜索包含的订单总数，用于分页控制
 	TotalOrders int64 `json:"total_orders,omitempty" xml:"total_orders,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripTravelTradesSearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.OrderList = m.OrderList[:0]
+	m.OrderStringList = m.OrderStringList[:0]
+	m.TotalOrders = 0
+}
+
+var poolAlitripTravelTradesSearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripTravelTradesSearchAPIResponse)
+	},
+}
+
+// GetAlitripTravelTradesSearchAPIResponse 从 sync.Pool 获取 AlitripTravelTradesSearchAPIResponse
+func GetAlitripTravelTradesSearchAPIResponse() *AlitripTravelTradesSearchAPIResponse {
+	return poolAlitripTravelTradesSearchAPIResponse.Get().(*AlitripTravelTradesSearchAPIResponse)
+}
+
+// ReleaseAlitripTravelTradesSearchAPIResponse 将 AlitripTravelTradesSearchAPIResponse 保存到 sync.Pool
+func ReleaseAlitripTravelTradesSearchAPIResponse(v *AlitripTravelTradesSearchAPIResponse) {
+	v.Reset()
+	poolAlitripTravelTradesSearchAPIResponse.Put(v)
 }

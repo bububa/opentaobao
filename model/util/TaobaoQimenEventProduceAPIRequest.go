@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type TaobaoQimenEventProduceAPIRequest struct {
 // NewTaobaoQimenEventProduceRequest 初始化TaobaoQimenEventProduceAPIRequest对象
 func NewTaobaoQimenEventProduceRequest() *TaobaoQimenEventProduceAPIRequest {
 	return &TaobaoQimenEventProduceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenEventProduceAPIRequest) Reset() {
+	r._status = ""
+	r._ext = ""
+	r._tid = ""
+	r._platform = ""
+	r._nick = ""
+	r._erpOrderId = ""
+	r._taobaoSubOrderIds = ""
+	r._eventTime = ""
+	r._create = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *TaobaoQimenEventProduceAPIRequest) SetCreate(_create int64) error {
 // GetCreate Create Getter
 func (r TaobaoQimenEventProduceAPIRequest) GetCreate() int64 {
 	return r._create
+}
+
+var poolTaobaoQimenEventProduceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenEventProduceRequest()
+	},
+}
+
+// GetTaobaoQimenEventProduceRequest 从 sync.Pool 获取 TaobaoQimenEventProduceAPIRequest
+func GetTaobaoQimenEventProduceAPIRequest() *TaobaoQimenEventProduceAPIRequest {
+	return poolTaobaoQimenEventProduceAPIRequest.Get().(*TaobaoQimenEventProduceAPIRequest)
+}
+
+// ReleaseTaobaoQimenEventProduceAPIRequest 将 TaobaoQimenEventProduceAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenEventProduceAPIRequest(v *TaobaoQimenEventProduceAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenEventProduceAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest struct {
 // NewAlibabaAlscSaasCodecCodeAttrsQueryRequest 初始化AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest对象
 func NewAlibabaAlscSaasCodecCodeAttrsQueryRequest() *AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest {
 	return &AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest) Reset() {
+	r._queryCodeRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest) SetQueryCodeRequest(_quer
 // GetQueryCodeRequest QueryCodeRequest Getter
 func (r AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest) GetQueryCodeRequest() *QueryCodeBizAttrRequest {
 	return r._queryCodeRequest
+}
+
+var poolAlibabaAlscSaasCodecCodeAttrsQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscSaasCodecCodeAttrsQueryRequest()
+	},
+}
+
+// GetAlibabaAlscSaasCodecCodeAttrsQueryRequest 从 sync.Pool 获取 AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest
+func GetAlibabaAlscSaasCodecCodeAttrsQueryAPIRequest() *AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest {
+	return poolAlibabaAlscSaasCodecCodeAttrsQueryAPIRequest.Get().(*AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest)
+}
+
+// ReleaseAlibabaAlscSaasCodecCodeAttrsQueryAPIRequest 将 AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscSaasCodecCodeAttrsQueryAPIRequest(v *AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscSaasCodecCodeAttrsQueryAPIRequest.Put(v)
 }

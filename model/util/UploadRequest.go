@@ -1,6 +1,8 @@
 package util
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -18,4 +20,26 @@ type UploadRequest struct {
 	DirIdForQnaigc int64 `json:"dir_id_for_qnaigc,omitempty" xml:"dir_id_for_qnaigc,omitempty"`
 	// 图片字节列表，image_data和image_url二选一
 	ImageData *model.File `json:"image_data,omitempty" xml:"image_data,omitempty"`
+}
+
+var poolUploadRequest = sync.Pool{
+	New: func() any {
+		return new(UploadRequest)
+	},
+}
+
+// GetUploadRequest() 从对象池中获取UploadRequest
+func GetUploadRequest() *UploadRequest {
+	return poolUploadRequest.Get().(*UploadRequest)
+}
+
+// ReleaseUploadRequest 释放UploadRequest
+func ReleaseUploadRequest(v *UploadRequest) {
+	v.ImageUrl = ""
+	v.ImageTitle = ""
+	v.SellerId = 0
+	v.DirIdForTu = 0
+	v.DirIdForQnaigc = 0
+	v.ImageData = nil
+	poolUploadRequest.Put(v)
 }

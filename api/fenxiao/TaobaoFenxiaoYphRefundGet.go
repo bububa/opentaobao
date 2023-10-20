@@ -9,11 +9,6 @@ import (
 // taobao.fenxiao.yph.refund.get
 //
 // 一盘货商家单个查询退款单信息
-func TaobaoFenxiaoYphRefundGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoYphRefundGetAPIRequest, session string) (*fenxiao.TaobaoFenxiaoYphRefundGetAPIResponse, error) {
-	var resp fenxiao.TaobaoFenxiaoYphRefundGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFenxiaoYphRefundGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoYphRefundGetAPIRequest, resp *fenxiao.TaobaoFenxiaoYphRefundGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

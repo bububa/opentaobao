@@ -1,5 +1,9 @@
 package alimsg
 
+import (
+	"sync"
+)
+
 // ServiceResult 结构体
 type ServiceResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type ServiceResult struct {
 	Content *SendTemplateMsgResponse `json:"content,omitempty" xml:"content,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolServiceResult = sync.Pool{
+	New: func() any {
+		return new(ServiceResult)
+	},
+}
+
+// GetServiceResult() 从对象池中获取ServiceResult
+func GetServiceResult() *ServiceResult {
+	return poolServiceResult.Get().(*ServiceResult)
+}
+
+// ReleaseServiceResult 释放ServiceResult
+func ReleaseServiceResult(v *ServiceResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Content = nil
+	v.Success = false
+	poolServiceResult.Put(v)
 }

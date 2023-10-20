@@ -2,6 +2,7 @@ package nlp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoNlpPreprocessAPIRequest struct {
 // NewTaobaoNlpPreprocessRequest 初始化TaobaoNlpPreprocessAPIRequest对象
 func NewTaobaoNlpPreprocessRequest() *TaobaoNlpPreprocessAPIRequest {
 	return &TaobaoNlpPreprocessAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoNlpPreprocessAPIRequest) Reset() {
+	r._keyword = ""
+	r._text = nil
+	r._funcType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoNlpPreprocessAPIRequest) SetFuncType(_funcType int64) error {
 // GetFuncType FuncType Getter
 func (r TaobaoNlpPreprocessAPIRequest) GetFuncType() int64 {
 	return r._funcType
+}
+
+var poolTaobaoNlpPreprocessAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoNlpPreprocessRequest()
+	},
+}
+
+// GetTaobaoNlpPreprocessRequest 从 sync.Pool 获取 TaobaoNlpPreprocessAPIRequest
+func GetTaobaoNlpPreprocessAPIRequest() *TaobaoNlpPreprocessAPIRequest {
+	return poolTaobaoNlpPreprocessAPIRequest.Get().(*TaobaoNlpPreprocessAPIRequest)
+}
+
+// ReleaseTaobaoNlpPreprocessAPIRequest 将 TaobaoNlpPreprocessAPIRequest 放入 sync.Pool
+func ReleaseTaobaoNlpPreprocessAPIRequest(v *TaobaoNlpPreprocessAPIRequest) {
+	v.Reset()
+	poolTaobaoNlpPreprocessAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // FlightInfoDto 结构体
 type FlightInfoDto struct {
 	// 最低舱位价格列表
@@ -108,4 +112,73 @@ type FlightInfoDto struct {
 	IsTransfer bool `json:"is_transfer,omitempty" xml:"is_transfer,omitempty"`
 	// 是否协议价
 	IsProtocol bool `json:"is_protocol,omitempty" xml:"is_protocol,omitempty"`
+}
+
+var poolFlightInfoDto = sync.Pool{
+	New: func() any {
+		return new(FlightInfoDto)
+	},
+}
+
+// GetFlightInfoDto() 从对象池中获取FlightInfoDto
+func GetFlightInfoDto() *FlightInfoDto {
+	return poolFlightInfoDto.Get().(*FlightInfoDto)
+}
+
+// ReleaseFlightInfoDto 释放FlightInfoDto
+func ReleaseFlightInfoDto(v *FlightInfoDto) {
+	v.LowestCabinPrice = v.LowestCabinPrice[:0]
+	v.CabinList = v.CabinList[:0]
+	v.LowestCabinPriceList = v.LowestCabinPriceList[:0]
+	v.FlightRuleList = v.FlightRuleList[:0]
+	v.CabinInfoList = v.CabinInfoList[:0]
+	v.FlightNo = ""
+	v.CarrierNo = ""
+	v.CarrierAirline = ""
+	v.LowestCabinNum = ""
+	v.LowestCabin = ""
+	v.LowestCabinClass = ""
+	v.ModifyFlightDepDate = ""
+	v.ModifyFlightDepTime = ""
+	v.ModifyFlightArrTime = ""
+	v.SessionId = ""
+	v.Cabin = ""
+	v.CabinClass = ""
+	v.DepCityCode = ""
+	v.DepDate = ""
+	v.StopArrTime = ""
+	v.StopCity = ""
+	v.StopDepTime = ""
+	v.TotalPrice = ""
+	v.ClassRule = ""
+	v.Memo = ""
+	v.PromotionPrice = ""
+	v.RemainedSeatCount = ""
+	v.SecretParams = ""
+	v.SegmentNumber = ""
+	v.ArrDate = ""
+	v.MealDesc = ""
+	v.ProductTypeDesc = ""
+	v.FlightSize = ""
+	v.FlightType = ""
+	v.LowestCabinDesc = ""
+	v.CarrierAirLine = ""
+	v.OtaItemId = ""
+	v.AirlineInfo = nil
+	v.DepAirportInfo = nil
+	v.ArrAirportInfo = nil
+	v.BuildPrice = 0
+	v.Discount = 0
+	v.OilPrice = 0
+	v.TicketPrice = 0
+	v.InvoiceType = 0
+	v.TripType = 0
+	v.TransferInfo = nil
+	v.Price = 0
+	v.BasicCabinPrice = 0
+	v.IsShare = false
+	v.IsStop = false
+	v.IsTransfer = false
+	v.IsProtocol = false
+	poolFlightInfoDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package bill
 
+import (
+	"sync"
+)
+
 // TopAccountDto 结构体
 type TopAccountDto struct {
 	// 创建时间
@@ -18,4 +22,28 @@ type TopAccountDto struct {
 	AccountType int64 `json:"account_type,omitempty" xml:"account_type,omitempty"`
 	// 是否订单相关:0-订单无关 1-订单相关
 	RelatedOrder int64 `json:"related_order,omitempty" xml:"related_order,omitempty"`
+}
+
+var poolTopAccountDto = sync.Pool{
+	New: func() any {
+		return new(TopAccountDto)
+	},
+}
+
+// GetTopAccountDto() 从对象池中获取TopAccountDto
+func GetTopAccountDto() *TopAccountDto {
+	return poolTopAccountDto.Get().(*TopAccountDto)
+}
+
+// ReleaseTopAccountDto 释放TopAccountDto
+func ReleaseTopAccountDto(v *TopAccountDto) {
+	v.GmtCreate = ""
+	v.AccountCode = ""
+	v.GmtModified = ""
+	v.AccountName = ""
+	v.AccountId = 0
+	v.Status = 0
+	v.AccountType = 0
+	v.RelatedOrder = 0
+	poolTopAccountDto.Put(v)
 }

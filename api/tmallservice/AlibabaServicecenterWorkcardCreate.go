@@ -9,11 +9,6 @@ import (
 // alibaba.servicecenter.workcard.create
 //
 // 创建服务平台工单
-func AlibabaServicecenterWorkcardCreate(clt *core.SDKClient, req *tmallservice.AlibabaServicecenterWorkcardCreateAPIRequest, session string) (*tmallservice.AlibabaServicecenterWorkcardCreateAPIResponse, error) {
-	var resp tmallservice.AlibabaServicecenterWorkcardCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaServicecenterWorkcardCreate(clt *core.SDKClient, req *tmallservice.AlibabaServicecenterWorkcardCreateAPIRequest, resp *tmallservice.AlibabaServicecenterWorkcardCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

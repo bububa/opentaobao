@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // OrderResult 结构体
 type OrderResult struct {
 	// 错误编码
@@ -12,4 +16,25 @@ type OrderResult struct {
 	Trade *TradeOrder `json:"trade,omitempty" xml:"trade,omitempty"`
 	// 是否取消成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolOrderResult = sync.Pool{
+	New: func() any {
+		return new(OrderResult)
+	},
+}
+
+// GetOrderResult() 从对象池中获取OrderResult
+func GetOrderResult() *OrderResult {
+	return poolOrderResult.Get().(*OrderResult)
+}
+
+// ReleaseOrderResult 释放OrderResult
+func ReleaseOrderResult(v *OrderResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Result = nil
+	v.Trade = nil
+	v.Success = false
+	poolOrderResult.Put(v)
 }

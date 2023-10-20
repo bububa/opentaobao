@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.activity.popup.control
 //
 // 星河=营销弹屏疲劳控制
-func AlitripMerchantGalaxyActivityPopupControl(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyActivityPopupControlAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyActivityPopupControlAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyActivityPopupControlAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyActivityPopupControl(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyActivityPopupControlAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyActivityPopupControlAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

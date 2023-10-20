@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoAilabAicloudTopLikeFilterAPIRequest struct {
 // NewTaobaoAilabAicloudTopLikeFilterRequest 初始化TaobaoAilabAicloudTopLikeFilterAPIRequest对象
 func NewTaobaoAilabAicloudTopLikeFilterRequest() *TaobaoAilabAicloudTopLikeFilterAPIRequest {
 	return &TaobaoAilabAicloudTopLikeFilterAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopLikeFilterAPIRequest) Reset() {
+	r._mediaItems = r._mediaItems[:0]
+	r._schema = ""
+	r._userId = ""
+	r._utdId = ""
+	r._ext = ""
+	r._type = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoAilabAicloudTopLikeFilterAPIRequest) SetType(_type string) error 
 // GetType Type Getter
 func (r TaobaoAilabAicloudTopLikeFilterAPIRequest) GetType() string {
 	return r._type
+}
+
+var poolTaobaoAilabAicloudTopLikeFilterAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopLikeFilterRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopLikeFilterRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopLikeFilterAPIRequest
+func GetTaobaoAilabAicloudTopLikeFilterAPIRequest() *TaobaoAilabAicloudTopLikeFilterAPIRequest {
+	return poolTaobaoAilabAicloudTopLikeFilterAPIRequest.Get().(*TaobaoAilabAicloudTopLikeFilterAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopLikeFilterAPIRequest 将 TaobaoAilabAicloudTopLikeFilterAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopLikeFilterAPIRequest(v *TaobaoAilabAicloudTopLikeFilterAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopLikeFilterAPIRequest.Put(v)
 }

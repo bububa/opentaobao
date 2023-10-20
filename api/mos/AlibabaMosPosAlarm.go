@@ -9,11 +9,6 @@ import (
 // alibaba.mos.pos.alarm
 //
 // 故障报警
-func AlibabaMosPosAlarm(clt *core.SDKClient, req *mos.AlibabaMosPosAlarmAPIRequest, session string) (*mos.AlibabaMosPosAlarmAPIResponse, error) {
-	var resp mos.AlibabaMosPosAlarmAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMosPosAlarm(clt *core.SDKClient, req *mos.AlibabaMosPosAlarmAPIRequest, resp *mos.AlibabaMosPosAlarmAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

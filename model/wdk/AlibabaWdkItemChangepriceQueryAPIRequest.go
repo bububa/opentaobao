@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,17 @@ type AlibabaWdkItemChangepriceQueryAPIRequest struct {
 // NewAlibabaWdkItemChangepriceQueryRequest 初始化AlibabaWdkItemChangepriceQueryAPIRequest对象
 func NewAlibabaWdkItemChangepriceQueryRequest() *AlibabaWdkItemChangepriceQueryAPIRequest {
 	return &AlibabaWdkItemChangepriceQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkItemChangepriceQueryAPIRequest) Reset() {
+	r._startTime = ""
+	r._endTime = ""
+	r._shopId = ""
+	r._type = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -102,4 +112,21 @@ func (r *AlibabaWdkItemChangepriceQueryAPIRequest) SetType(_type string) error {
 // GetType Type Getter
 func (r AlibabaWdkItemChangepriceQueryAPIRequest) GetType() string {
 	return r._type
+}
+
+var poolAlibabaWdkItemChangepriceQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkItemChangepriceQueryRequest()
+	},
+}
+
+// GetAlibabaWdkItemChangepriceQueryRequest 从 sync.Pool 获取 AlibabaWdkItemChangepriceQueryAPIRequest
+func GetAlibabaWdkItemChangepriceQueryAPIRequest() *AlibabaWdkItemChangepriceQueryAPIRequest {
+	return poolAlibabaWdkItemChangepriceQueryAPIRequest.Get().(*AlibabaWdkItemChangepriceQueryAPIRequest)
+}
+
+// ReleaseAlibabaWdkItemChangepriceQueryAPIRequest 将 AlibabaWdkItemChangepriceQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkItemChangepriceQueryAPIRequest(v *AlibabaWdkItemChangepriceQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkItemChangepriceQueryAPIRequest.Put(v)
 }

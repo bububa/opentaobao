@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // RpidCardBo 结构体
 type RpidCardBo struct {
 	// 类型
@@ -20,4 +24,29 @@ type RpidCardBo struct {
 	Sex *RpSex `json:"sex,omitempty" xml:"sex,omitempty"`
 	// RPIDCardImage
 	RPIDCardImage *RpidCardImage `json:"r_p_i_d_card_image,omitempty" xml:"r_p_i_d_card_image,omitempty"`
+}
+
+var poolRpidCardBo = sync.Pool{
+	New: func() any {
+		return new(RpidCardBo)
+	},
+}
+
+// GetRpidCardBo() 从对象池中获取RpidCardBo
+func GetRpidCardBo() *RpidCardBo {
+	return poolRpidCardBo.Get().(*RpidCardBo)
+}
+
+// ReleaseRpidCardBo 释放RpidCardBo
+func ReleaseRpidCardBo(v *RpidCardBo) {
+	v.CardType = ""
+	v.UrlBackImage = ""
+	v.UrlFrontImage = ""
+	v.BirthDay = ""
+	v.Address = ""
+	v.Name = ""
+	v.Code = ""
+	v.Sex = nil
+	v.RPIDCardImage = nil
+	poolRpidCardBo.Put(v)
 }

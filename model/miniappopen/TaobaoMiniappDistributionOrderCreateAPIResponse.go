@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoMiniappDistributionOrderCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappDistributionOrderCreateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappDistributionOrderCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMiniappDistributionOrderCreateAPIResponseModel).Reset()
 }
 
 // TaobaoMiniappDistributionOrderCreateAPIResponseModel is 创建小程序投放计划 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoMiniappDistributionOrderCreateAPIResponseModel struct {
 	Model int64 `json:"model,omitempty" xml:"model,omitempty"`
 	// 调用是否成功
 	OrderSuccess bool `json:"order_success,omitempty" xml:"order_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappDistributionOrderCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.OrderErrorInfo = ""
+	m.OrderErrorCode = 0
+	m.Model = 0
+	m.OrderSuccess = false
+}
+
+var poolTaobaoMiniappDistributionOrderCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMiniappDistributionOrderCreateAPIResponse)
+	},
+}
+
+// GetTaobaoMiniappDistributionOrderCreateAPIResponse 从 sync.Pool 获取 TaobaoMiniappDistributionOrderCreateAPIResponse
+func GetTaobaoMiniappDistributionOrderCreateAPIResponse() *TaobaoMiniappDistributionOrderCreateAPIResponse {
+	return poolTaobaoMiniappDistributionOrderCreateAPIResponse.Get().(*TaobaoMiniappDistributionOrderCreateAPIResponse)
+}
+
+// ReleaseTaobaoMiniappDistributionOrderCreateAPIResponse 将 TaobaoMiniappDistributionOrderCreateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMiniappDistributionOrderCreateAPIResponse(v *TaobaoMiniappDistributionOrderCreateAPIResponse) {
+	v.Reset()
+	poolTaobaoMiniappDistributionOrderCreateAPIResponse.Put(v)
 }

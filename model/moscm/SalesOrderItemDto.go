@@ -1,5 +1,9 @@
 package moscm
 
+import (
+	"sync"
+)
+
 // SalesOrderItemDto 结构体
 type SalesOrderItemDto struct {
 	// 外部商品Id
@@ -40,4 +44,39 @@ type SalesOrderItemDto struct {
 	E2PartDiscount string `json:"e2_part_discount,omitempty" xml:"e2_part_discount,omitempty"`
 	// 商品编码
 	SettlementCode string `json:"settlement_code,omitempty" xml:"settlement_code,omitempty"`
+}
+
+var poolSalesOrderItemDto = sync.Pool{
+	New: func() any {
+		return new(SalesOrderItemDto)
+	},
+}
+
+// GetSalesOrderItemDto() 从对象池中获取SalesOrderItemDto
+func GetSalesOrderItemDto() *SalesOrderItemDto {
+	return poolSalesOrderItemDto.Get().(*SalesOrderItemDto)
+}
+
+// ReleaseSalesOrderItemDto 释放SalesOrderItemDto
+func ReleaseSalesOrderItemDto(v *SalesOrderItemDto) {
+	v.OutId = ""
+	v.SkuId = ""
+	v.Title = ""
+	v.ProductType = ""
+	v.SaleProperty = ""
+	v.Quantity = ""
+	v.Price = ""
+	v.Discount = ""
+	v.TagPrice = ""
+	v.Payments = ""
+	v.DiscCode = ""
+	v.DiscAmount = ""
+	v.ShipmentInterception = ""
+	v.GuiderId = ""
+	v.Barcode = ""
+	v.ArtNo = ""
+	v.Id = ""
+	v.E2PartDiscount = ""
+	v.SettlementCode = ""
+	poolSalesOrderItemDto.Put(v)
 }

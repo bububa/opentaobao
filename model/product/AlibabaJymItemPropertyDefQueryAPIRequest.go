@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaJymItemPropertyDefQueryAPIRequest struct {
 // NewAlibabaJymItemPropertyDefQueryRequest 初始化AlibabaJymItemPropertyDefQueryAPIRequest对象
 func NewAlibabaJymItemPropertyDefQueryRequest() *AlibabaJymItemPropertyDefQueryAPIRequest {
 	return &AlibabaJymItemPropertyDefQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJymItemPropertyDefQueryAPIRequest) Reset() {
+	r._categoryId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaJymItemPropertyDefQueryAPIRequest) SetCategoryId(_categoryId int
 // GetCategoryId CategoryId Getter
 func (r AlibabaJymItemPropertyDefQueryAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
+}
+
+var poolAlibabaJymItemPropertyDefQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJymItemPropertyDefQueryRequest()
+	},
+}
+
+// GetAlibabaJymItemPropertyDefQueryRequest 从 sync.Pool 获取 AlibabaJymItemPropertyDefQueryAPIRequest
+func GetAlibabaJymItemPropertyDefQueryAPIRequest() *AlibabaJymItemPropertyDefQueryAPIRequest {
+	return poolAlibabaJymItemPropertyDefQueryAPIRequest.Get().(*AlibabaJymItemPropertyDefQueryAPIRequest)
+}
+
+// ReleaseAlibabaJymItemPropertyDefQueryAPIRequest 将 AlibabaJymItemPropertyDefQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJymItemPropertyDefQueryAPIRequest(v *AlibabaJymItemPropertyDefQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaJymItemPropertyDefQueryAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaScbpEffectAccountDateGetAPIRequest struct {
 // NewAlibabaScbpEffectAccountDateGetRequest 初始化AlibabaScbpEffectAccountDateGetAPIRequest对象
 func NewAlibabaScbpEffectAccountDateGetRequest() *AlibabaScbpEffectAccountDateGetAPIRequest {
 	return &AlibabaScbpEffectAccountDateGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpEffectAccountDateGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaScbpEffectAccountDateGetAPIRequest) GetApiParams(params url.Value
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaScbpEffectAccountDateGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaScbpEffectAccountDateGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpEffectAccountDateGetRequest()
+	},
+}
+
+// GetAlibabaScbpEffectAccountDateGetRequest 从 sync.Pool 获取 AlibabaScbpEffectAccountDateGetAPIRequest
+func GetAlibabaScbpEffectAccountDateGetAPIRequest() *AlibabaScbpEffectAccountDateGetAPIRequest {
+	return poolAlibabaScbpEffectAccountDateGetAPIRequest.Get().(*AlibabaScbpEffectAccountDateGetAPIRequest)
+}
+
+// ReleaseAlibabaScbpEffectAccountDateGetAPIRequest 将 AlibabaScbpEffectAccountDateGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpEffectAccountDateGetAPIRequest(v *AlibabaScbpEffectAccountDateGetAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpEffectAccountDateGetAPIRequest.Put(v)
 }

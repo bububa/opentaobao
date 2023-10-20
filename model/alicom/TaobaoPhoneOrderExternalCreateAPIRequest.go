@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoPhoneOrderExternalCreateAPIRequest struct {
 // NewTaobaoPhoneOrderExternalCreateRequest 初始化TaobaoPhoneOrderExternalCreateAPIRequest对象
 func NewTaobaoPhoneOrderExternalCreateRequest() *TaobaoPhoneOrderExternalCreateAPIRequest {
 	return &TaobaoPhoneOrderExternalCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPhoneOrderExternalCreateAPIRequest) Reset() {
+	r._createPhoneOrderReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoPhoneOrderExternalCreateAPIRequest) SetCreatePhoneOrderReq(_creat
 // GetCreatePhoneOrderReq CreatePhoneOrderReq Getter
 func (r TaobaoPhoneOrderExternalCreateAPIRequest) GetCreatePhoneOrderReq() *CreatePhoneOrderReq {
 	return r._createPhoneOrderReq
+}
+
+var poolTaobaoPhoneOrderExternalCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPhoneOrderExternalCreateRequest()
+	},
+}
+
+// GetTaobaoPhoneOrderExternalCreateRequest 从 sync.Pool 获取 TaobaoPhoneOrderExternalCreateAPIRequest
+func GetTaobaoPhoneOrderExternalCreateAPIRequest() *TaobaoPhoneOrderExternalCreateAPIRequest {
+	return poolTaobaoPhoneOrderExternalCreateAPIRequest.Get().(*TaobaoPhoneOrderExternalCreateAPIRequest)
+}
+
+// ReleaseTaobaoPhoneOrderExternalCreateAPIRequest 将 TaobaoPhoneOrderExternalCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPhoneOrderExternalCreateAPIRequest(v *TaobaoPhoneOrderExternalCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoPhoneOrderExternalCreateAPIRequest.Put(v)
 }

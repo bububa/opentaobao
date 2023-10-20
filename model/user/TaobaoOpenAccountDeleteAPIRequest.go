@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOpenAccountDeleteAPIRequest struct {
 // NewTaobaoOpenAccountDeleteRequest 初始化TaobaoOpenAccountDeleteAPIRequest对象
 func NewTaobaoOpenAccountDeleteRequest() *TaobaoOpenAccountDeleteAPIRequest {
 	return &TaobaoOpenAccountDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenAccountDeleteAPIRequest) Reset() {
+	r._openAccountIds = r._openAccountIds[:0]
+	r._isvAccountIds = r._isvAccountIds[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOpenAccountDeleteAPIRequest) SetIsvAccountIds(_isvAccountIds []st
 // GetIsvAccountIds IsvAccountIds Getter
 func (r TaobaoOpenAccountDeleteAPIRequest) GetIsvAccountIds() []string {
 	return r._isvAccountIds
+}
+
+var poolTaobaoOpenAccountDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenAccountDeleteRequest()
+	},
+}
+
+// GetTaobaoOpenAccountDeleteRequest 从 sync.Pool 获取 TaobaoOpenAccountDeleteAPIRequest
+func GetTaobaoOpenAccountDeleteAPIRequest() *TaobaoOpenAccountDeleteAPIRequest {
+	return poolTaobaoOpenAccountDeleteAPIRequest.Get().(*TaobaoOpenAccountDeleteAPIRequest)
+}
+
+// ReleaseTaobaoOpenAccountDeleteAPIRequest 将 TaobaoOpenAccountDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenAccountDeleteAPIRequest(v *TaobaoOpenAccountDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenAccountDeleteAPIRequest.Put(v)
 }

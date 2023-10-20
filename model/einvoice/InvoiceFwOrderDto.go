@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // InvoiceFwOrderDto 结构体
 type InvoiceFwOrderDto struct {
 	// 订购时间，格式yyyy-MM-dd HH:mm:ss
@@ -28,4 +32,33 @@ type InvoiceFwOrderDto struct {
 	ArticleName string `json:"article_name,omitempty" xml:"article_name,omitempty"`
 	// 联系人对象
 	InvoiceContact *InvoiceContactDto `json:"invoice_contact,omitempty" xml:"invoice_contact,omitempty"`
+}
+
+var poolInvoiceFwOrderDto = sync.Pool{
+	New: func() any {
+		return new(InvoiceFwOrderDto)
+	},
+}
+
+// GetInvoiceFwOrderDto() 从对象池中获取InvoiceFwOrderDto
+func GetInvoiceFwOrderDto() *InvoiceFwOrderDto {
+	return poolInvoiceFwOrderDto.Get().(*InvoiceFwOrderDto)
+}
+
+// ReleaseInvoiceFwOrderDto 释放InvoiceFwOrderDto
+func ReleaseInvoiceFwOrderDto(v *InvoiceFwOrderDto) {
+	v.BuyDate = ""
+	v.FactTotalFee = ""
+	v.ItemId = ""
+	v.ArticleId = ""
+	v.OrderId = ""
+	v.ProductCode = ""
+	v.PayeeRegisterNo = ""
+	v.FlowId = ""
+	v.RegisterType = ""
+	v.ServEndTime = ""
+	v.ServStartTime = ""
+	v.ArticleName = ""
+	v.InvoiceContact = nil
+	poolInvoiceFwOrderDto.Put(v)
 }

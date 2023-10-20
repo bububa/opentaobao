@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallServicecenterAnomalyrecourseCloseAPIRequest struct {
 // NewTmallServicecenterAnomalyrecourseCloseRequest 初始化TmallServicecenterAnomalyrecourseCloseAPIRequest对象
 func NewTmallServicecenterAnomalyrecourseCloseRequest() *TmallServicecenterAnomalyrecourseCloseAPIRequest {
 	return &TmallServicecenterAnomalyrecourseCloseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterAnomalyrecourseCloseAPIRequest) Reset() {
+	r._remark = ""
+	r._id = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallServicecenterAnomalyrecourseCloseAPIRequest) SetId(_id int64) erro
 // GetId Id Getter
 func (r TmallServicecenterAnomalyrecourseCloseAPIRequest) GetId() int64 {
 	return r._id
+}
+
+var poolTmallServicecenterAnomalyrecourseCloseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterAnomalyrecourseCloseRequest()
+	},
+}
+
+// GetTmallServicecenterAnomalyrecourseCloseRequest 从 sync.Pool 获取 TmallServicecenterAnomalyrecourseCloseAPIRequest
+func GetTmallServicecenterAnomalyrecourseCloseAPIRequest() *TmallServicecenterAnomalyrecourseCloseAPIRequest {
+	return poolTmallServicecenterAnomalyrecourseCloseAPIRequest.Get().(*TmallServicecenterAnomalyrecourseCloseAPIRequest)
+}
+
+// ReleaseTmallServicecenterAnomalyrecourseCloseAPIRequest 将 TmallServicecenterAnomalyrecourseCloseAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterAnomalyrecourseCloseAPIRequest(v *TmallServicecenterAnomalyrecourseCloseAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterAnomalyrecourseCloseAPIRequest.Put(v)
 }

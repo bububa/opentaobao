@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoFenxiaoProductImportFromAuctionAPIResponse struct {
 	TaobaoFenxiaoProductImportFromAuctionAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoFenxiaoProductImportFromAuctionAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFenxiaoProductImportFromAuctionAPIResponseModel).Reset()
+}
+
 // TaobaoFenxiaoProductImportFromAuctionAPIResponseModel is 导入商品生成产品 成功返回结果
 type TaobaoFenxiaoProductImportFromAuctionAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_product_import_from_auction_response"`
@@ -24,4 +31,28 @@ type TaobaoFenxiaoProductImportFromAuctionAPIResponseModel struct {
 	OptTime string `json:"opt_time,omitempty" xml:"opt_time,omitempty"`
 	// 生成的产品id
 	Pid int64 `json:"pid,omitempty" xml:"pid,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFenxiaoProductImportFromAuctionAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.OptTime = ""
+	m.Pid = 0
+}
+
+var poolTaobaoFenxiaoProductImportFromAuctionAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFenxiaoProductImportFromAuctionAPIResponse)
+	},
+}
+
+// GetTaobaoFenxiaoProductImportFromAuctionAPIResponse 从 sync.Pool 获取 TaobaoFenxiaoProductImportFromAuctionAPIResponse
+func GetTaobaoFenxiaoProductImportFromAuctionAPIResponse() *TaobaoFenxiaoProductImportFromAuctionAPIResponse {
+	return poolTaobaoFenxiaoProductImportFromAuctionAPIResponse.Get().(*TaobaoFenxiaoProductImportFromAuctionAPIResponse)
+}
+
+// ReleaseTaobaoFenxiaoProductImportFromAuctionAPIResponse 将 TaobaoFenxiaoProductImportFromAuctionAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFenxiaoProductImportFromAuctionAPIResponse(v *TaobaoFenxiaoProductImportFromAuctionAPIResponse) {
+	v.Reset()
+	poolTaobaoFenxiaoProductImportFromAuctionAPIResponse.Put(v)
 }

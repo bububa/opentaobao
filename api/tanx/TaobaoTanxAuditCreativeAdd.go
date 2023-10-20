@@ -9,11 +9,6 @@ import (
 // taobao.tanx.audit.creative.add
 //
 // 创意预审新增接口
-func TaobaoTanxAuditCreativeAdd(clt *core.SDKClient, req *tanx.TaobaoTanxAuditCreativeAddAPIRequest, session string) (*tanx.TaobaoTanxAuditCreativeAddAPIResponse, error) {
-	var resp tanx.TaobaoTanxAuditCreativeAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTanxAuditCreativeAdd(clt *core.SDKClient, req *tanx.TaobaoTanxAuditCreativeAddAPIRequest, resp *tanx.TaobaoTanxAuditCreativeAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

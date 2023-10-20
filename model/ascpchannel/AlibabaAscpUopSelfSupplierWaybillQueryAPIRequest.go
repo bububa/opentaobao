@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpUopSelfSupplierWaybillQueryAPIRequest struct {
 // NewAlibabaAscpUopSelfSupplierWaybillQueryRequest 初始化AlibabaAscpUopSelfSupplierWaybillQueryAPIRequest对象
 func NewAlibabaAscpUopSelfSupplierWaybillQueryRequest() *AlibabaAscpUopSelfSupplierWaybillQueryAPIRequest {
 	return &AlibabaAscpUopSelfSupplierWaybillQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpUopSelfSupplierWaybillQueryAPIRequest) Reset() {
+	r._waybillQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpUopSelfSupplierWaybillQueryAPIRequest) SetWaybillQueryReques
 // GetWaybillQueryRequest WaybillQueryRequest Getter
 func (r AlibabaAscpUopSelfSupplierWaybillQueryAPIRequest) GetWaybillQueryRequest() *Waybillqueryrequest {
 	return r._waybillQueryRequest
+}
+
+var poolAlibabaAscpUopSelfSupplierWaybillQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpUopSelfSupplierWaybillQueryRequest()
+	},
+}
+
+// GetAlibabaAscpUopSelfSupplierWaybillQueryRequest 从 sync.Pool 获取 AlibabaAscpUopSelfSupplierWaybillQueryAPIRequest
+func GetAlibabaAscpUopSelfSupplierWaybillQueryAPIRequest() *AlibabaAscpUopSelfSupplierWaybillQueryAPIRequest {
+	return poolAlibabaAscpUopSelfSupplierWaybillQueryAPIRequest.Get().(*AlibabaAscpUopSelfSupplierWaybillQueryAPIRequest)
+}
+
+// ReleaseAlibabaAscpUopSelfSupplierWaybillQueryAPIRequest 将 AlibabaAscpUopSelfSupplierWaybillQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpUopSelfSupplierWaybillQueryAPIRequest(v *AlibabaAscpUopSelfSupplierWaybillQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpUopSelfSupplierWaybillQueryAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,13 @@ type TaobaoModifyskuQueryStatusAPIRequest struct {
 // NewTaobaoModifyskuQueryStatusRequest 初始化TaobaoModifyskuQueryStatusAPIRequest对象
 func NewTaobaoModifyskuQueryStatusRequest() *TaobaoModifyskuQueryStatusAPIRequest {
 	return &TaobaoModifyskuQueryStatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoModifyskuQueryStatusAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -40,4 +46,21 @@ func (r TaobaoModifyskuQueryStatusAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoModifyskuQueryStatusAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoModifyskuQueryStatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoModifyskuQueryStatusRequest()
+	},
+}
+
+// GetTaobaoModifyskuQueryStatusRequest 从 sync.Pool 获取 TaobaoModifyskuQueryStatusAPIRequest
+func GetTaobaoModifyskuQueryStatusAPIRequest() *TaobaoModifyskuQueryStatusAPIRequest {
+	return poolTaobaoModifyskuQueryStatusAPIRequest.Get().(*TaobaoModifyskuQueryStatusAPIRequest)
+}
+
+// ReleaseTaobaoModifyskuQueryStatusAPIRequest 将 TaobaoModifyskuQueryStatusAPIRequest 放入 sync.Pool
+func ReleaseTaobaoModifyskuQueryStatusAPIRequest(v *TaobaoModifyskuQueryStatusAPIRequest) {
+	v.Reset()
+	poolTaobaoModifyskuQueryStatusAPIRequest.Put(v)
 }

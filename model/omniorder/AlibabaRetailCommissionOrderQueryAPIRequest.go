@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaRetailCommissionOrderQueryAPIRequest struct {
 // NewAlibabaRetailCommissionOrderQueryRequest 初始化AlibabaRetailCommissionOrderQueryAPIRequest对象
 func NewAlibabaRetailCommissionOrderQueryRequest() *AlibabaRetailCommissionOrderQueryAPIRequest {
 	return &AlibabaRetailCommissionOrderQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaRetailCommissionOrderQueryAPIRequest) Reset() {
+	r._endPayTime = ""
+	r._startPayTime = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaRetailCommissionOrderQueryAPIRequest) SetPageSize(_pageSize int6
 // GetPageSize PageSize Getter
 func (r AlibabaRetailCommissionOrderQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaRetailCommissionOrderQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaRetailCommissionOrderQueryRequest()
+	},
+}
+
+// GetAlibabaRetailCommissionOrderQueryRequest 从 sync.Pool 获取 AlibabaRetailCommissionOrderQueryAPIRequest
+func GetAlibabaRetailCommissionOrderQueryAPIRequest() *AlibabaRetailCommissionOrderQueryAPIRequest {
+	return poolAlibabaRetailCommissionOrderQueryAPIRequest.Get().(*AlibabaRetailCommissionOrderQueryAPIRequest)
+}
+
+// ReleaseAlibabaRetailCommissionOrderQueryAPIRequest 将 AlibabaRetailCommissionOrderQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaRetailCommissionOrderQueryAPIRequest(v *AlibabaRetailCommissionOrderQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaRetailCommissionOrderQueryAPIRequest.Put(v)
 }

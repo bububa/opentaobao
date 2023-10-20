@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // AdGroupOperationDto 结构体
 type AdGroupOperationDto struct {
 	// key
@@ -12,4 +16,25 @@ type AdGroupOperationDto struct {
 	OnlineStatus int64 `json:"online_status,omitempty" xml:"online_status,omitempty"`
 	// 产品id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolAdGroupOperationDto = sync.Pool{
+	New: func() any {
+		return new(AdGroupOperationDto)
+	},
+}
+
+// GetAdGroupOperationDto() 从对象池中获取AdGroupOperationDto
+func GetAdGroupOperationDto() *AdGroupOperationDto {
+	return poolAdGroupOperationDto.Get().(*AdGroupOperationDto)
+}
+
+// ReleaseAdGroupOperationDto 释放AdGroupOperationDto
+func ReleaseAdGroupOperationDto(v *AdGroupOperationDto) {
+	v.SettingKey = ""
+	v.SettingValue = ""
+	v.ProductId = 0
+	v.OnlineStatus = 0
+	v.Id = 0
+	poolAdGroupOperationDto.Put(v)
 }

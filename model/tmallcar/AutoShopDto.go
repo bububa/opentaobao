@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // AutoShopDto 结构体
 type AutoShopDto struct {
 	// 门店自用编码
@@ -18,4 +22,28 @@ type AutoShopDto struct {
 	FirstLevelShopCode string `json:"first_level_shop_code,omitempty" xml:"first_level_shop_code,omitempty"`
 	// 门店id
 	ShopId int64 `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
+}
+
+var poolAutoShopDto = sync.Pool{
+	New: func() any {
+		return new(AutoShopDto)
+	},
+}
+
+// GetAutoShopDto() 从对象池中获取AutoShopDto
+func GetAutoShopDto() *AutoShopDto {
+	return poolAutoShopDto.Get().(*AutoShopDto)
+}
+
+// ReleaseAutoShopDto 释放AutoShopDto
+func ReleaseAutoShopDto(v *AutoShopDto) {
+	v.ShopOuterNum = ""
+	v.ShopName = ""
+	v.FirstLevelShopName = ""
+	v.ProvinceName = ""
+	v.CityName = ""
+	v.ShopInvoiceCode = ""
+	v.FirstLevelShopCode = ""
+	v.ShopId = 0
+	poolAutoShopDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // RentItemDto 结构体
 type RentItemDto struct {
 	// 标签
@@ -34,4 +38,36 @@ type RentItemDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// true表示包邮，否则表示不包邮
 	FreePostage bool `json:"free_postage,omitempty" xml:"free_postage,omitempty"`
+}
+
+var poolRentItemDto = sync.Pool{
+	New: func() any {
+		return new(RentItemDto)
+	},
+}
+
+// GetRentItemDto() 从对象池中获取RentItemDto
+func GetRentItemDto() *RentItemDto {
+	return poolRentItemDto.Get().(*RentItemDto)
+}
+
+// ReleaseRentItemDto 释放RentItemDto
+func ReleaseRentItemDto(v *RentItemDto) {
+	v.FeaturedTags = v.FeaturedTags[:0]
+	v.ItemSkuList = v.ItemSkuList[:0]
+	v.PropPairs = v.PropPairs[:0]
+	v.StandardEquipments = v.StandardEquipments[:0]
+	v.Desc = ""
+	v.Title = ""
+	v.Address = nil
+	v.CatId = 0
+	v.Media = nil
+	v.PriceInfo = nil
+	v.Quantity = 0
+	v.UsedLevel = 0
+	v.TemplateId = 0
+	v.ItemId = 0
+	v.Status = 0
+	v.FreePostage = false
+	poolRentItemDto.Put(v)
 }

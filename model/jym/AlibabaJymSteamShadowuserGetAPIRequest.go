@@ -2,6 +2,7 @@ package jym
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaJymSteamShadowuserGetAPIRequest struct {
 // NewAlibabaJymSteamShadowuserGetRequest 初始化AlibabaJymSteamShadowuserGetAPIRequest对象
 func NewAlibabaJymSteamShadowuserGetRequest() *AlibabaJymSteamShadowuserGetAPIRequest {
 	return &AlibabaJymSteamShadowuserGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJymSteamShadowuserGetAPIRequest) Reset() {
+	r._token = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaJymSteamShadowuserGetAPIRequest) SetToken(_token string) error {
 // GetToken Token Getter
 func (r AlibabaJymSteamShadowuserGetAPIRequest) GetToken() string {
 	return r._token
+}
+
+var poolAlibabaJymSteamShadowuserGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJymSteamShadowuserGetRequest()
+	},
+}
+
+// GetAlibabaJymSteamShadowuserGetRequest 从 sync.Pool 获取 AlibabaJymSteamShadowuserGetAPIRequest
+func GetAlibabaJymSteamShadowuserGetAPIRequest() *AlibabaJymSteamShadowuserGetAPIRequest {
+	return poolAlibabaJymSteamShadowuserGetAPIRequest.Get().(*AlibabaJymSteamShadowuserGetAPIRequest)
+}
+
+// ReleaseAlibabaJymSteamShadowuserGetAPIRequest 将 AlibabaJymSteamShadowuserGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJymSteamShadowuserGetAPIRequest(v *AlibabaJymSteamShadowuserGetAPIRequest) {
+	v.Reset()
+	poolAlibabaJymSteamShadowuserGetAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.tcls.aelophy.refund.csapplyrender
 //
 // 提供商家代客售后逆向申请渲染获取的接口
-func AlibabaTclsAelophyRefundCsapplyrender(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyRefundCsapplyrenderAPIRequest, session string) (*wdk.AlibabaTclsAelophyRefundCsapplyrenderAPIResponse, error) {
-	var resp wdk.AlibabaTclsAelophyRefundCsapplyrenderAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTclsAelophyRefundCsapplyrender(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyRefundCsapplyrenderAPIRequest, resp *wdk.AlibabaTclsAelophyRefundCsapplyrenderAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

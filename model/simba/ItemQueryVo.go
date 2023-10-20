@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // ItemQueryVo 结构体
 type ItemQueryVo struct {
 	// 宝贝id集合
@@ -20,4 +24,29 @@ type ItemQueryVo struct {
 	Offset int64 `json:"offset,omitempty" xml:"offset,omitempty"`
 	// 页面大小
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolItemQueryVo = sync.Pool{
+	New: func() any {
+		return new(ItemQueryVo)
+	},
+}
+
+// GetItemQueryVo() 从对象池中获取ItemQueryVo
+func GetItemQueryVo() *ItemQueryVo {
+	return poolItemQueryVo.Get().(*ItemQueryVo)
+}
+
+// ReleaseItemQueryVo 释放ItemQueryVo
+func ReleaseItemQueryVo(v *ItemQueryVo) {
+	v.ItemIdList = v.ItemIdList[:0]
+	v.Title = ""
+	v.PromotionScene = ""
+	v.OptimizeTarget = ""
+	v.ItemSelectedMode = ""
+	v.ShopItemType = ""
+	v.TagId = 0
+	v.Offset = 0
+	v.PageSize = 0
+	poolItemQueryVo.Put(v)
 }

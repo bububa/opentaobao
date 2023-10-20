@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // RefundItemDetailInfo 结构体
 type RefundItemDetailInfo struct {
 	// 商品id
@@ -14,4 +18,26 @@ type RefundItemDetailInfo struct {
 	OutSubOrderNo string `json:"out_sub_order_no,omitempty" xml:"out_sub_order_no,omitempty"`
 	// 退款商品数
 	RefundCount int64 `json:"refund_count,omitempty" xml:"refund_count,omitempty"`
+}
+
+var poolRefundItemDetailInfo = sync.Pool{
+	New: func() any {
+		return new(RefundItemDetailInfo)
+	},
+}
+
+// GetRefundItemDetailInfo() 从对象池中获取RefundItemDetailInfo
+func GetRefundItemDetailInfo() *RefundItemDetailInfo {
+	return poolRefundItemDetailInfo.Get().(*RefundItemDetailInfo)
+}
+
+// ReleaseRefundItemDetailInfo 释放RefundItemDetailInfo
+func ReleaseRefundItemDetailInfo(v *RefundItemDetailInfo) {
+	v.OutItemId = ""
+	v.OutItemName = ""
+	v.OutRefundItemDetailNo = ""
+	v.OutRefundOrderNo = ""
+	v.OutSubOrderNo = ""
+	v.RefundCount = 0
+	poolRefundItemDetailInfo.Put(v)
 }

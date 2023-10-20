@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.industry.waybill.edit
 //
 // 服务商编辑运单
-func AlibabaDchainAoxiangIndustryWaybillEdit(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangIndustryWaybillEditAPIRequest, session string) (*ascp.AlibabaDchainAoxiangIndustryWaybillEditAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangIndustryWaybillEditAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangIndustryWaybillEdit(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangIndustryWaybillEditAPIRequest, resp *ascp.AlibabaDchainAoxiangIndustryWaybillEditAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

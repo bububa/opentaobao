@@ -9,11 +9,6 @@ import (
 // aliexpress.solution.order.fulfill
 //
 // fulfill order for seller
-func AliexpressSolutionOrderFulfill(clt *core.SDKClient, req *aesolution.AliexpressSolutionOrderFulfillAPIRequest, session string) (*aesolution.AliexpressSolutionOrderFulfillAPIResponse, error) {
-	var resp aesolution.AliexpressSolutionOrderFulfillAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressSolutionOrderFulfill(clt *core.SDKClient, req *aesolution.AliexpressSolutionOrderFulfillAPIRequest, resp *aesolution.AliexpressSolutionOrderFulfillAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

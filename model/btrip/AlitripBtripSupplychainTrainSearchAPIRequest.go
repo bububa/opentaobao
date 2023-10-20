@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripSupplychainTrainSearchAPIRequest struct {
 // NewAlitripBtripSupplychainTrainSearchRequest 初始化AlitripBtripSupplychainTrainSearchAPIRequest对象
 func NewAlitripBtripSupplychainTrainSearchRequest() *AlitripBtripSupplychainTrainSearchAPIRequest {
 	return &AlitripBtripSupplychainTrainSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripSupplychainTrainSearchAPIRequest) Reset() {
+	r._rq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripSupplychainTrainSearchAPIRequest) SetRq(_rq *OpenApiSearchR
 // GetRq Rq Getter
 func (r AlitripBtripSupplychainTrainSearchAPIRequest) GetRq() *OpenApiSearchRq {
 	return r._rq
+}
+
+var poolAlitripBtripSupplychainTrainSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripSupplychainTrainSearchRequest()
+	},
+}
+
+// GetAlitripBtripSupplychainTrainSearchRequest 从 sync.Pool 获取 AlitripBtripSupplychainTrainSearchAPIRequest
+func GetAlitripBtripSupplychainTrainSearchAPIRequest() *AlitripBtripSupplychainTrainSearchAPIRequest {
+	return poolAlitripBtripSupplychainTrainSearchAPIRequest.Get().(*AlitripBtripSupplychainTrainSearchAPIRequest)
+}
+
+// ReleaseAlitripBtripSupplychainTrainSearchAPIRequest 将 AlitripBtripSupplychainTrainSearchAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripSupplychainTrainSearchAPIRequest(v *AlitripBtripSupplychainTrainSearchAPIRequest) {
+	v.Reset()
+	poolAlitripBtripSupplychainTrainSearchAPIRequest.Put(v)
 }

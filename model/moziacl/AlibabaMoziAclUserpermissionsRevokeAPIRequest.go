@@ -2,6 +2,7 @@ package moziacl
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMoziAclUserpermissionsRevokeAPIRequest struct {
 // NewAlibabaMoziAclUserpermissionsRevokeRequest 初始化AlibabaMoziAclUserpermissionsRevokeAPIRequest对象
 func NewAlibabaMoziAclUserpermissionsRevokeRequest() *AlibabaMoziAclUserpermissionsRevokeAPIRequest {
 	return &AlibabaMoziAclUserpermissionsRevokeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMoziAclUserpermissionsRevokeAPIRequest) Reset() {
+	r._revokePermission = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMoziAclUserpermissionsRevokeAPIRequest) SetRevokePermission(_rev
 // GetRevokePermission RevokePermission Getter
 func (r AlibabaMoziAclUserpermissionsRevokeAPIRequest) GetRevokePermission() *RevokePermissionsRequest {
 	return r._revokePermission
+}
+
+var poolAlibabaMoziAclUserpermissionsRevokeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMoziAclUserpermissionsRevokeRequest()
+	},
+}
+
+// GetAlibabaMoziAclUserpermissionsRevokeRequest 从 sync.Pool 获取 AlibabaMoziAclUserpermissionsRevokeAPIRequest
+func GetAlibabaMoziAclUserpermissionsRevokeAPIRequest() *AlibabaMoziAclUserpermissionsRevokeAPIRequest {
+	return poolAlibabaMoziAclUserpermissionsRevokeAPIRequest.Get().(*AlibabaMoziAclUserpermissionsRevokeAPIRequest)
+}
+
+// ReleaseAlibabaMoziAclUserpermissionsRevokeAPIRequest 将 AlibabaMoziAclUserpermissionsRevokeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMoziAclUserpermissionsRevokeAPIRequest(v *AlibabaMoziAclUserpermissionsRevokeAPIRequest) {
+	v.Reset()
+	poolAlibabaMoziAclUserpermissionsRevokeAPIRequest.Put(v)
 }

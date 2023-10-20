@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // TopPriceApplyCreateRequest 结构体
 type TopPriceApplyCreateRequest struct {
 	// 操作人名称
@@ -24,4 +28,31 @@ type TopPriceApplyCreateRequest struct {
 	ChannelCode string `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
 	// 渠道产品id
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
+}
+
+var poolTopPriceApplyCreateRequest = sync.Pool{
+	New: func() any {
+		return new(TopPriceApplyCreateRequest)
+	},
+}
+
+// GetTopPriceApplyCreateRequest() 从对象池中获取TopPriceApplyCreateRequest
+func GetTopPriceApplyCreateRequest() *TopPriceApplyCreateRequest {
+	return poolTopPriceApplyCreateRequest.Get().(*TopPriceApplyCreateRequest)
+}
+
+// ReleaseTopPriceApplyCreateRequest 释放TopPriceApplyCreateRequest
+func ReleaseTopPriceApplyCreateRequest(v *TopPriceApplyCreateRequest) {
+	v.CreatorNick = ""
+	v.AdviseSalePriceLow = ""
+	v.CreatorId = ""
+	v.SkuPriceMap = ""
+	v.AdviseSalePriceHigh = ""
+	v.DistributorNick = ""
+	v.DistributePrice = ""
+	v.SubChannelCode = ""
+	v.ProductPrice = ""
+	v.ChannelCode = ""
+	v.ProductId = 0
+	poolTopPriceApplyCreateRequest.Put(v)
 }

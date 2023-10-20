@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // MemberPointAdditionRuleOpenInfo 结构体
 type MemberPointAdditionRuleOpenInfo struct {
 	// 商品SKU_ID列表
@@ -16,4 +20,27 @@ type MemberPointAdditionRuleOpenInfo struct {
 	AllowRecharge bool `json:"allow_recharge,omitempty" xml:"allow_recharge,omitempty"`
 	// 是否允许获取积分
 	Enable bool `json:"enable,omitempty" xml:"enable,omitempty"`
+}
+
+var poolMemberPointAdditionRuleOpenInfo = sync.Pool{
+	New: func() any {
+		return new(MemberPointAdditionRuleOpenInfo)
+	},
+}
+
+// GetMemberPointAdditionRuleOpenInfo() 从对象池中获取MemberPointAdditionRuleOpenInfo
+func GetMemberPointAdditionRuleOpenInfo() *MemberPointAdditionRuleOpenInfo {
+	return poolMemberPointAdditionRuleOpenInfo.Get().(*MemberPointAdditionRuleOpenInfo)
+}
+
+// ReleaseMemberPointAdditionRuleOpenInfo 释放MemberPointAdditionRuleOpenInfo
+func ReleaseMemberPointAdditionRuleOpenInfo(v *MemberPointAdditionRuleOpenInfo) {
+	v.SkuIds = v.SkuIds[:0]
+	v.AllowProductType = ""
+	v.LevelId = ""
+	v.ConsumeMoney = 0
+	v.RewardPoint = 0
+	v.AllowRecharge = false
+	v.Enable = false
+	poolMemberPointAdditionRuleOpenInfo.Put(v)
 }

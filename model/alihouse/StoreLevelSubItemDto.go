@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // StoreLevelSubItemDto 结构体
 type StoreLevelSubItemDto struct {
 	// 子项名称
@@ -14,4 +18,26 @@ type StoreLevelSubItemDto struct {
 	TargetScore int64 `json:"target_score,omitempty" xml:"target_score,omitempty"`
 	// 排序键
 	Sort int64 `json:"sort,omitempty" xml:"sort,omitempty"`
+}
+
+var poolStoreLevelSubItemDto = sync.Pool{
+	New: func() any {
+		return new(StoreLevelSubItemDto)
+	},
+}
+
+// GetStoreLevelSubItemDto() 从对象池中获取StoreLevelSubItemDto
+func GetStoreLevelSubItemDto() *StoreLevelSubItemDto {
+	return poolStoreLevelSubItemDto.Get().(*StoreLevelSubItemDto)
+}
+
+// ReleaseStoreLevelSubItemDto 释放StoreLevelSubItemDto
+func ReleaseStoreLevelSubItemDto(v *StoreLevelSubItemDto) {
+	v.SubItemName = ""
+	v.SubItemValue = ""
+	v.SubItemTargetValue = ""
+	v.Score = ""
+	v.TargetScore = 0
+	v.Sort = 0
+	poolStoreLevelSubItemDto.Put(v)
 }

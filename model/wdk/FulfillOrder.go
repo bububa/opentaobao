@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // FulfillOrder 结构体
 type FulfillOrder struct {
 	// 子订单信息列表
@@ -42,4 +46,40 @@ type FulfillOrder struct {
 	StorageMode string `json:"storage_mode,omitempty" xml:"storage_mode,omitempty"`
 	// 多供给标识，取值：多1、多2、多3
 	NewSupply string `json:"new_supply,omitempty" xml:"new_supply,omitempty"`
+}
+
+var poolFulfillOrder = sync.Pool{
+	New: func() any {
+		return new(FulfillOrder)
+	},
+}
+
+// GetFulfillOrder() 从对象池中获取FulfillOrder
+func GetFulfillOrder() *FulfillOrder {
+	return poolFulfillOrder.Get().(*FulfillOrder)
+}
+
+// ReleaseFulfillOrder 释放FulfillOrder
+func ReleaseFulfillOrder(v *FulfillOrder) {
+	v.SkuInfoList = v.SkuInfoList[:0]
+	v.FulfillOrderId = ""
+	v.Attributes = ""
+	v.BuyerName = ""
+	v.BuyerPhone = ""
+	v.BuyerAddress = ""
+	v.TotalOrderAmount = ""
+	v.DiscountAmount = ""
+	v.PayOrderAmount = ""
+	v.PaidAmount = ""
+	v.RefundAmount = ""
+	v.CarriageAmount = ""
+	v.CancelAmount = ""
+	v.OutOfStockAmount = ""
+	v.BizOrderId = ""
+	v.SourceOrderId = ""
+	v.ScenarioGroup = ""
+	v.OrderTag = ""
+	v.StorageMode = ""
+	v.NewSupply = ""
+	poolFulfillOrder.Put(v)
 }

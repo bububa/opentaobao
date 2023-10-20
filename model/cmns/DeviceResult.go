@@ -1,5 +1,9 @@
 package cmns
 
+import (
+	"sync"
+)
+
 // DeviceResult 结构体
 type DeviceResult struct {
 	// 激活时间
@@ -48,4 +52,43 @@ type DeviceResult struct {
 	LoginTime int64 `json:"login_time,omitempty" xml:"login_time,omitempty"`
 	// 是否在线,1为在线，0为离线
 	Online int64 `json:"online,omitempty" xml:"online,omitempty"`
+}
+
+var poolDeviceResult = sync.Pool{
+	New: func() any {
+		return new(DeviceResult)
+	},
+}
+
+// GetDeviceResult() 从对象池中获取DeviceResult
+func GetDeviceResult() *DeviceResult {
+	return poolDeviceResult.Get().(*DeviceResult)
+}
+
+// ReleaseDeviceResult 释放DeviceResult
+func ReleaseDeviceResult(v *DeviceResult) {
+	v.ActiveTime = ""
+	v.BaseType = ""
+	v.BspType = ""
+	v.EthMac = ""
+	v.Imei = ""
+	v.Imsi1 = ""
+	v.Imsi2 = ""
+	v.IsVendorRom = ""
+	v.Kp = ""
+	v.Networking = ""
+	v.PhoneType = ""
+	v.Rom = ""
+	v.RomTuiguang = ""
+	v.RomVendor = ""
+	v.Terminal = ""
+	v.UpdateVersion = ""
+	v.Uuid = ""
+	v.WlanMac = ""
+	v.AcceptMessage = 0
+	v.DeviceType = 0
+	v.Id = 0
+	v.LoginTime = 0
+	v.Online = 0
+	poolDeviceResult.Put(v)
 }

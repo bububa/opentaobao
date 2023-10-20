@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // RefundPassengerFeeParam 结构体
 type RefundPassengerFeeParam struct {
 	// 乘机人姓名
@@ -14,4 +18,26 @@ type RefundPassengerFeeParam struct {
 	NonRefundableTotalChangeServiceFee int64 `json:"non_refundable_total_change_service_fee,omitempty" xml:"non_refundable_total_change_service_fee,omitempty"`
 	// 机票不可退改签升舱费(单位:分)
 	NonRefundableTotalChangeUpgradeFee int64 `json:"non_refundable_total_change_upgrade_fee,omitempty" xml:"non_refundable_total_change_upgrade_fee,omitempty"`
+}
+
+var poolRefundPassengerFeeParam = sync.Pool{
+	New: func() any {
+		return new(RefundPassengerFeeParam)
+	},
+}
+
+// GetRefundPassengerFeeParam() 从对象池中获取RefundPassengerFeeParam
+func GetRefundPassengerFeeParam() *RefundPassengerFeeParam {
+	return poolRefundPassengerFeeParam.Get().(*RefundPassengerFeeParam)
+}
+
+// ReleaseRefundPassengerFeeParam 释放RefundPassengerFeeParam
+func ReleaseRefundPassengerFeeParam(v *RefundPassengerFeeParam) {
+	v.PassengerName = ""
+	v.AlreadyUsedTotalPirce = 0
+	v.NonRefundableTaxPrice = 0
+	v.NonRefundableTicketPrice = 0
+	v.NonRefundableTotalChangeServiceFee = 0
+	v.NonRefundableTotalChangeUpgradeFee = 0
+	poolRefundPassengerFeeParam.Put(v)
 }

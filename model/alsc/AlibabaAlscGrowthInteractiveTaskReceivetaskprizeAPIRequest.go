@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest struct {
 // NewAlibabaAlscGrowthInteractiveTaskReceivetaskprizeRequest 初始化AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest对象
 func NewAlibabaAlscGrowthInteractiveTaskReceivetaskprizeRequest() *AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest {
 	return &AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest) Reset() {
+	r._rewardReceiveQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest) SetRewardRe
 // GetRewardReceiveQuery RewardReceiveQuery Getter
 func (r AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest) GetRewardReceiveQuery() *RewardReceiveQuery {
 	return r._rewardReceiveQuery
+}
+
+var poolAlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscGrowthInteractiveTaskReceivetaskprizeRequest()
+	},
+}
+
+// GetAlibabaAlscGrowthInteractiveTaskReceivetaskprizeRequest 从 sync.Pool 获取 AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest
+func GetAlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest() *AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest {
+	return poolAlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest.Get().(*AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest)
+}
+
+// ReleaseAlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest 将 AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest(v *AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIRequest.Put(v)
 }

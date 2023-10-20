@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOfnSelfRecycleAuthAPIRequest struct {
 // NewTaobaoOfnSelfRecycleAuthRequest 初始化TaobaoOfnSelfRecycleAuthAPIRequest对象
 func NewTaobaoOfnSelfRecycleAuthRequest() *TaobaoOfnSelfRecycleAuthAPIRequest {
 	return &TaobaoOfnSelfRecycleAuthAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOfnSelfRecycleAuthAPIRequest) Reset() {
+	r._recycleOrderId = ""
+	r._openUid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOfnSelfRecycleAuthAPIRequest) SetOpenUid(_openUid string) error {
 // GetOpenUid OpenUid Getter
 func (r TaobaoOfnSelfRecycleAuthAPIRequest) GetOpenUid() string {
 	return r._openUid
+}
+
+var poolTaobaoOfnSelfRecycleAuthAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOfnSelfRecycleAuthRequest()
+	},
+}
+
+// GetTaobaoOfnSelfRecycleAuthRequest 从 sync.Pool 获取 TaobaoOfnSelfRecycleAuthAPIRequest
+func GetTaobaoOfnSelfRecycleAuthAPIRequest() *TaobaoOfnSelfRecycleAuthAPIRequest {
+	return poolTaobaoOfnSelfRecycleAuthAPIRequest.Get().(*TaobaoOfnSelfRecycleAuthAPIRequest)
+}
+
+// ReleaseTaobaoOfnSelfRecycleAuthAPIRequest 将 TaobaoOfnSelfRecycleAuthAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOfnSelfRecycleAuthAPIRequest(v *TaobaoOfnSelfRecycleAuthAPIRequest) {
+	v.Reset()
+	poolTaobaoOfnSelfRecycleAuthAPIRequest.Put(v)
 }

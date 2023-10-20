@@ -1,5 +1,9 @@
 package topoaid
 
+import (
+	"sync"
+)
+
 // UserAuthInfo 结构体
 type UserAuthInfo struct {
 	// 收件人手机号
@@ -18,4 +22,28 @@ type UserAuthInfo struct {
 	MainSecretNo bool `json:"main_secret_no,omitempty" xml:"main_secret_no,omitempty"`
 	// 收件人手机号是否在柜机黑名单中
 	Black bool `json:"black,omitempty" xml:"black,omitempty"`
+}
+
+var poolUserAuthInfo = sync.Pool{
+	New: func() any {
+		return new(UserAuthInfo)
+	},
+}
+
+// GetUserAuthInfo() 从对象池中获取UserAuthInfo
+func GetUserAuthInfo() *UserAuthInfo {
+	return poolUserAuthInfo.Get().(*UserAuthInfo)
+}
+
+// ReleaseUserAuthInfo 释放UserAuthInfo
+func ReleaseUserAuthInfo(v *UserAuthInfo) {
+	v.Mobile = ""
+	v.AuthorizeExpireTime = ""
+	v.OpenId = ""
+	v.SecretNo = ""
+	v.SecretExpireTime = ""
+	v.CpCode = ""
+	v.MainSecretNo = false
+	v.Black = false
+	poolUserAuthInfo.Put(v)
 }

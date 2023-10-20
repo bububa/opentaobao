@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // Requisition 结构体
 type Requisition struct {
 	// 分销申请加盟时，给供应商的留言
@@ -28,4 +32,33 @@ type Requisition struct {
 	RequisitionId int64 `json:"requisition_id,omitempty" xml:"requisition_id,omitempty"`
 	// 是否消保(0-不是、1-是)
 	DistIsXiaobao int64 `json:"dist_is_xiaobao,omitempty" xml:"dist_is_xiaobao,omitempty"`
+}
+
+var poolRequisition = sync.Pool{
+	New: func() any {
+		return new(Requisition)
+	},
+}
+
+// GetRequisition() 从对象池中获取Requisition
+func GetRequisition() *Requisition {
+	return poolRequisition.Get().(*Requisition)
+}
+
+// ReleaseRequisition 释放Requisition
+func ReleaseRequisition(v *Requisition) {
+	v.DistMessage = ""
+	v.GmtCreate = ""
+	v.DistributorNick = ""
+	v.DistOpenDate = ""
+	v.DistShopAddress = ""
+	v.DistCategoryName = ""
+	v.DistAppraise = 0
+	v.DistLevel = 0
+	v.Status = 0
+	v.DistCategory = 0
+	v.DistributorId = 0
+	v.RequisitionId = 0
+	v.DistIsXiaobao = 0
+	poolRequisition.Put(v)
 }

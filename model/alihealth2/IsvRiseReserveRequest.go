@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // IsvRiseReserveRequest 结构体
 type IsvRiseReserveRequest struct {
 	// 科室名称
@@ -42,4 +46,40 @@ type IsvRiseReserveRequest struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 修改状态 2 待就诊 4 已就诊
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolIsvRiseReserveRequest = sync.Pool{
+	New: func() any {
+		return new(IsvRiseReserveRequest)
+	},
+}
+
+// GetIsvRiseReserveRequest() 从对象池中获取IsvRiseReserveRequest
+func GetIsvRiseReserveRequest() *IsvRiseReserveRequest {
+	return poolIsvRiseReserveRequest.Get().(*IsvRiseReserveRequest)
+}
+
+// ReleaseIsvRiseReserveRequest 释放IsvRiseReserveRequest
+func ReleaseIsvRiseReserveRequest(v *IsvRiseReserveRequest) {
+	v.DepartmentName = ""
+	v.OrderId = ""
+	v.SpStoreName = ""
+	v.IdNumber = ""
+	v.UserId = ""
+	v.SpItemName = ""
+	v.SpItemId = ""
+	v.DoctorName = ""
+	v.Phone = ""
+	v.UserNick = ""
+	v.SpStoreId = ""
+	v.ReserveTime = ""
+	v.SpReserveId = ""
+	v.IdType = 0
+	v.FirstReserveId = 0
+	v.Sex = 0
+	v.OpType = 0
+	v.IsMarried = 0
+	v.ItemId = 0
+	v.Status = 0
+	poolIsvRiseReserveRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // Prices 结构体
 type Prices struct {
 	// 日期
@@ -12,4 +16,25 @@ type Prices struct {
 	Stock int64 `json:"stock,omitempty" xml:"stock,omitempty"`
 	// 价格类型。price_type 取：1-成人价，2-儿童价，3-单房差
 	PriceType int64 `json:"price_type,omitempty" xml:"price_type,omitempty"`
+}
+
+var poolPrices = sync.Pool{
+	New: func() any {
+		return new(Prices)
+	},
+}
+
+// GetPrices() 从对象池中获取Prices
+func GetPrices() *Prices {
+	return poolPrices.Get().(*Prices)
+}
+
+// ReleasePrices 释放Prices
+func ReleasePrices(v *Prices) {
+	v.Date = ""
+	v.OuterPriceId = ""
+	v.Price = 0
+	v.Stock = 0
+	v.PriceType = 0
+	poolPrices.Put(v)
 }

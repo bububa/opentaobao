@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // BuyGiftActivitySkuDto 结构体
 type BuyGiftActivitySkuDto struct {
 	// 操作人ID
@@ -22,4 +26,30 @@ type BuyGiftActivitySkuDto struct {
 	BuyNum int64 `json:"buy_num,omitempty" xml:"buy_num,omitempty"`
 	// 买N赠M的M参数
 	GiftNum int64 `json:"gift_num,omitempty" xml:"gift_num,omitempty"`
+}
+
+var poolBuyGiftActivitySkuDto = sync.Pool{
+	New: func() any {
+		return new(BuyGiftActivitySkuDto)
+	},
+}
+
+// GetBuyGiftActivitySkuDto() 从对象池中获取BuyGiftActivitySkuDto
+func GetBuyGiftActivitySkuDto() *BuyGiftActivitySkuDto {
+	return poolBuyGiftActivitySkuDto.Get().(*BuyGiftActivitySkuDto)
+}
+
+// ReleaseBuyGiftActivitySkuDto 释放BuyGiftActivitySkuDto
+func ReleaseBuyGiftActivitySkuDto(v *BuyGiftActivitySkuDto) {
+	v.CreatorId = ""
+	v.CreatorName = ""
+	v.SkuCode = ""
+	v.BarCode = ""
+	v.GiftSkuCode = ""
+	v.GiftBarCode = ""
+	v.ActId = 0
+	v.Limit = nil
+	v.BuyNum = 0
+	v.GiftNum = 0
+	poolBuyGiftActivitySkuDto.Put(v)
 }

@@ -2,6 +2,7 @@ package game
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoAppleNewuserSignNotifyAPIRequest struct {
 // NewTaobaoAppleNewuserSignNotifyRequest 初始化TaobaoAppleNewuserSignNotifyAPIRequest对象
 func NewTaobaoAppleNewuserSignNotifyRequest() *TaobaoAppleNewuserSignNotifyAPIRequest {
 	return &TaobaoAppleNewuserSignNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAppleNewuserSignNotifyAPIRequest) Reset() {
+	r._resultCode = ""
+	r._resultMsg = ""
+	r._mainData = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoAppleNewuserSignNotifyAPIRequest) SetMainData(_mainData *AppleTop
 // GetMainData MainData Getter
 func (r TaobaoAppleNewuserSignNotifyAPIRequest) GetMainData() *AppleTopNewSignNotifyDo {
 	return r._mainData
+}
+
+var poolTaobaoAppleNewuserSignNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAppleNewuserSignNotifyRequest()
+	},
+}
+
+// GetTaobaoAppleNewuserSignNotifyRequest 从 sync.Pool 获取 TaobaoAppleNewuserSignNotifyAPIRequest
+func GetTaobaoAppleNewuserSignNotifyAPIRequest() *TaobaoAppleNewuserSignNotifyAPIRequest {
+	return poolTaobaoAppleNewuserSignNotifyAPIRequest.Get().(*TaobaoAppleNewuserSignNotifyAPIRequest)
+}
+
+// ReleaseTaobaoAppleNewuserSignNotifyAPIRequest 将 TaobaoAppleNewuserSignNotifyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAppleNewuserSignNotifyAPIRequest(v *TaobaoAppleNewuserSignNotifyAPIRequest) {
+	v.Reset()
+	poolTaobaoAppleNewuserSignNotifyAPIRequest.Put(v)
 }

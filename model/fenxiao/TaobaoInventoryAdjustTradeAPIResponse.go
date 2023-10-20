@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoInventoryAdjustTradeAPIResponse struct {
 	TaobaoInventoryAdjustTradeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoInventoryAdjustTradeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoInventoryAdjustTradeAPIResponseModel).Reset()
+}
+
 // TaobaoInventoryAdjustTradeAPIResponseModel is 交易库存调整单 成功返回结果
 type TaobaoInventoryAdjustTradeAPIResponseModel struct {
 	XMLName xml.Name `xml:"inventory_adjust_trade_response"`
@@ -24,4 +31,28 @@ type TaobaoInventoryAdjustTradeAPIResponseModel struct {
 	TipInfos []TipInfo `json:"tip_infos,omitempty" xml:"tip_infos>tip_info,omitempty"`
 	// 操作返回码
 	OperateCode string `json:"operate_code,omitempty" xml:"operate_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoInventoryAdjustTradeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TipInfos = m.TipInfos[:0]
+	m.OperateCode = ""
+}
+
+var poolTaobaoInventoryAdjustTradeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoInventoryAdjustTradeAPIResponse)
+	},
+}
+
+// GetTaobaoInventoryAdjustTradeAPIResponse 从 sync.Pool 获取 TaobaoInventoryAdjustTradeAPIResponse
+func GetTaobaoInventoryAdjustTradeAPIResponse() *TaobaoInventoryAdjustTradeAPIResponse {
+	return poolTaobaoInventoryAdjustTradeAPIResponse.Get().(*TaobaoInventoryAdjustTradeAPIResponse)
+}
+
+// ReleaseTaobaoInventoryAdjustTradeAPIResponse 将 TaobaoInventoryAdjustTradeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoInventoryAdjustTradeAPIResponse(v *TaobaoInventoryAdjustTradeAPIResponse) {
+	v.Reset()
+	poolTaobaoInventoryAdjustTradeAPIResponse.Put(v)
 }

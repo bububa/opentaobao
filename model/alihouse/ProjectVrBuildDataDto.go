@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ProjectVrBuildDataDto 结构体
 type ProjectVrBuildDataDto struct {
 	// 外部房源ID
@@ -18,4 +22,28 @@ type ProjectVrBuildDataDto struct {
 	IsDeleted int64 `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
 	// 类型:新房-1，二手房-2
 	SourceType int64 `json:"source_type,omitempty" xml:"source_type,omitempty"`
+}
+
+var poolProjectVrBuildDataDto = sync.Pool{
+	New: func() any {
+		return new(ProjectVrBuildDataDto)
+	},
+}
+
+// GetProjectVrBuildDataDto() 从对象池中获取ProjectVrBuildDataDto
+func GetProjectVrBuildDataDto() *ProjectVrBuildDataDto {
+	return poolProjectVrBuildDataDto.Get().(*ProjectVrBuildDataDto)
+}
+
+// ReleaseProjectVrBuildDataDto 释放ProjectVrBuildDataDto
+func ReleaseProjectVrBuildDataDto(v *ProjectVrBuildDataDto) {
+	v.OuterHouseId = ""
+	v.OuterProjectId = ""
+	v.ExtractedCode = ""
+	v.OuterLayoutId = ""
+	v.OuterLayoutTid = ""
+	v.OuterStoreId = ""
+	v.IsDeleted = 0
+	v.SourceType = 0
+	poolProjectVrBuildDataDto.Put(v)
 }

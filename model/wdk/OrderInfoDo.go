@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderInfoDo 结构体
 type OrderInfoDo struct {
 	// 小票付款渠道
@@ -44,4 +48,41 @@ type OrderInfoDo struct {
 	AskAmt int64 `json:"ask_amt,omitempty" xml:"ask_amt,omitempty"`
 	// 交易类型
 	TrdType int64 `json:"trd_type,omitempty" xml:"trd_type,omitempty"`
+}
+
+var poolOrderInfoDo = sync.Pool{
+	New: func() any {
+		return new(OrderInfoDo)
+	},
+}
+
+// GetOrderInfoDo() 从对象池中获取OrderInfoDo
+func GetOrderInfoDo() *OrderInfoDo {
+	return poolOrderInfoDo.Get().(*OrderInfoDo)
+}
+
+// ReleaseOrderInfoDo 释放OrderInfoDo
+func ReleaseOrderInfoDo(v *OrderInfoDo) {
+	v.PayChannels = v.PayChannels[:0]
+	v.SubOrders = v.SubOrders[:0]
+	v.OrderFrom = ""
+	v.OriginalTrdTime = ""
+	v.OriginalSerialNum = ""
+	v.OriginalPosNo = ""
+	v.MemberCardNum = ""
+	v.OpName = ""
+	v.OpNum = ""
+	v.TrdTime = ""
+	v.SerialNum = ""
+	v.PosNo = ""
+	v.StoreId = ""
+	v.AliUserId = ""
+	v.DiscountAmt = 0
+	v.OverflowAmt = 0
+	v.MemberDiscount = 0
+	v.ChangeAmt = 0
+	v.ActualAmt = 0
+	v.AskAmt = 0
+	v.TrdType = 0
+	poolOrderInfoDo.Put(v)
 }

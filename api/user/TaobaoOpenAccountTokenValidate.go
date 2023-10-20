@@ -9,11 +9,6 @@ import (
 // taobao.open.account.token.validate
 //
 // open account token验证
-func TaobaoOpenAccountTokenValidate(clt *core.SDKClient, req *user.TaobaoOpenAccountTokenValidateAPIRequest, session string) (*user.TaobaoOpenAccountTokenValidateAPIResponse, error) {
-	var resp user.TaobaoOpenAccountTokenValidateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenAccountTokenValidate(clt *core.SDKClient, req *user.TaobaoOpenAccountTokenValidateAPIRequest, resp *user.TaobaoOpenAccountTokenValidateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

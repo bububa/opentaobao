@@ -1,5 +1,9 @@
 package aedropshiper
 
+import (
+	"sync"
+)
+
 // TrafficOrderEffectDto 结构体
 type TrafficOrderEffectDto struct {
 	// commission rate
@@ -60,4 +64,49 @@ type TrafficOrderEffectDto struct {
 	PaidAmount int64 `json:"paid_amount,omitempty" xml:"paid_amount,omitempty"`
 	// category id
 	CategoryId int64 `json:"category_id,omitempty" xml:"category_id,omitempty"`
+}
+
+var poolTrafficOrderEffectDto = sync.Pool{
+	New: func() any {
+		return new(TrafficOrderEffectDto)
+	},
+}
+
+// GetTrafficOrderEffectDto() 从对象池中获取TrafficOrderEffectDto
+func GetTrafficOrderEffectDto() *TrafficOrderEffectDto {
+	return poolTrafficOrderEffectDto.Get().(*TrafficOrderEffectDto)
+}
+
+// ReleaseTrafficOrderEffectDto 释放TrafficOrderEffectDto
+func ReleaseTrafficOrderEffectDto(v *TrafficOrderEffectDto) {
+	v.CommissionRate = ""
+	v.FinishedAmount = ""
+	v.IsAffiliateProduct = ""
+	v.IsNewBuyer = ""
+	v.ItemTitle = ""
+	v.EffectDetailStatus = ""
+	v.EstimatedIncentiveFinishedCommission = ""
+	v.EstimatedIncentivePaidCommission = ""
+	v.IsHotProduct = ""
+	v.ItemDetailUrl = ""
+	v.CreatedTime = ""
+	v.PublisherSettledCurrency = ""
+	v.ShipToCountry = ""
+	v.ItemMainImageUrl = ""
+	v.PaidTime = ""
+	v.ItemCount = ""
+	v.EffectStatus = ""
+	v.EstimatedFinishedCommission = ""
+	v.FinishedTime = ""
+	v.IncentiveCommissionRate = ""
+	v.OrderNumber = 0
+	v.PublisherId = 0
+	v.ParentOrderNumber = 0
+	v.OrderId = 0
+	v.ItemId = 0
+	v.SubOrderId = 0
+	v.EstimatedPaidCommission = 0
+	v.PaidAmount = 0
+	v.CategoryId = 0
+	poolTrafficOrderEffectDto.Put(v)
 }

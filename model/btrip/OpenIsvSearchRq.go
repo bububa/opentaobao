@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenIsvSearchRq 结构体
 type OpenIsvSearchRq struct {
 	// 阿里商旅审批单展示id
@@ -36,4 +40,37 @@ type OpenIsvSearchRq struct {
 	AllApply bool `json:"all_apply,omitempty" xml:"all_apply,omitempty"`
 	// true:商旅申请单
 	OnlyShangLvApply bool `json:"only_shang_lv_apply,omitempty" xml:"only_shang_lv_apply,omitempty"`
+}
+
+var poolOpenIsvSearchRq = sync.Pool{
+	New: func() any {
+		return new(OpenIsvSearchRq)
+	},
+}
+
+// GetOpenIsvSearchRq() 从对象池中获取OpenIsvSearchRq
+func GetOpenIsvSearchRq() *OpenIsvSearchRq {
+	return poolOpenIsvSearchRq.Get().(*OpenIsvSearchRq)
+}
+
+// ReleaseOpenIsvSearchRq 释放OpenIsvSearchRq
+func ReleaseOpenIsvSearchRq(v *OpenIsvSearchRq) {
+	v.ApplyShowId = ""
+	v.CorpId = ""
+	v.ThirdpartApplyId = ""
+	v.DepartId = ""
+	v.EndTime = ""
+	v.GmtModified = ""
+	v.StartTime = ""
+	v.UserId = ""
+	v.UnionNo = ""
+	v.ApplyId = 0
+	v.Version = 0
+	v.Type = 0
+	v.Page = 0
+	v.PageSize = 0
+	v.BizCategory = 0
+	v.AllApply = false
+	v.OnlyShangLvApply = false
+	poolOpenIsvSearchRq.Put(v)
 }

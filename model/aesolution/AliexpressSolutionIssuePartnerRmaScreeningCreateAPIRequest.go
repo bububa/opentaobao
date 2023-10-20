@@ -2,6 +2,7 @@ package aesolution
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest struct {
 // NewAliexpressSolutionIssuePartnerRmaScreeningCreateRequest 初始化AliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest对象
 func NewAliexpressSolutionIssuePartnerRmaScreeningCreateRequest() *AliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest {
 	return &AliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest) Reset() {
+	r._screeningResultCreationRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest) SetScreenin
 // GetScreeningResultCreationRequest ScreeningResultCreationRequest Getter
 func (r AliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest) GetScreeningResultCreationRequest() *RmaScreeningCreationRequest {
 	return r._screeningResultCreationRequest
+}
+
+var poolAliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSolutionIssuePartnerRmaScreeningCreateRequest()
+	},
+}
+
+// GetAliexpressSolutionIssuePartnerRmaScreeningCreateRequest 从 sync.Pool 获取 AliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest
+func GetAliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest() *AliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest {
+	return poolAliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest.Get().(*AliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest)
+}
+
+// ReleaseAliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest 将 AliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest(v *AliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest) {
+	v.Reset()
+	poolAliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest.Put(v)
 }

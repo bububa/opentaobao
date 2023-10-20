@@ -2,6 +2,7 @@ package smartstore
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallPopupstoreActivityDeviceQueryAPIRequest struct {
 // NewTmallPopupstoreActivityDeviceQueryRequest 初始化TmallPopupstoreActivityDeviceQueryAPIRequest对象
 func NewTmallPopupstoreActivityDeviceQueryRequest() *TmallPopupstoreActivityDeviceQueryAPIRequest {
 	return &TmallPopupstoreActivityDeviceQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallPopupstoreActivityDeviceQueryAPIRequest) Reset() {
+	r._activityId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallPopupstoreActivityDeviceQueryAPIRequest) SetActivityId(_activityId
 // GetActivityId ActivityId Getter
 func (r TmallPopupstoreActivityDeviceQueryAPIRequest) GetActivityId() int64 {
 	return r._activityId
+}
+
+var poolTmallPopupstoreActivityDeviceQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallPopupstoreActivityDeviceQueryRequest()
+	},
+}
+
+// GetTmallPopupstoreActivityDeviceQueryRequest 从 sync.Pool 获取 TmallPopupstoreActivityDeviceQueryAPIRequest
+func GetTmallPopupstoreActivityDeviceQueryAPIRequest() *TmallPopupstoreActivityDeviceQueryAPIRequest {
+	return poolTmallPopupstoreActivityDeviceQueryAPIRequest.Get().(*TmallPopupstoreActivityDeviceQueryAPIRequest)
+}
+
+// ReleaseTmallPopupstoreActivityDeviceQueryAPIRequest 将 TmallPopupstoreActivityDeviceQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallPopupstoreActivityDeviceQueryAPIRequest(v *TmallPopupstoreActivityDeviceQueryAPIRequest) {
+	v.Reset()
+	poolTmallPopupstoreActivityDeviceQueryAPIRequest.Put(v)
 }

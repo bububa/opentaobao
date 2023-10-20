@@ -1,5 +1,9 @@
 package alihealthoutflow
 
+import (
+	"sync"
+)
+
 // CaSignStatusSaveRequest 结构体
 type CaSignStatusSaveRequest struct {
 	// 子机构id
@@ -22,4 +26,30 @@ type CaSignStatusSaveRequest struct {
 	CertStartDate string `json:"cert_start_date,omitempty" xml:"cert_start_date,omitempty"`
 	// 状态 1:通过 2:停用 3:拒绝
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolCaSignStatusSaveRequest = sync.Pool{
+	New: func() any {
+		return new(CaSignStatusSaveRequest)
+	},
+}
+
+// GetCaSignStatusSaveRequest() 从对象池中获取CaSignStatusSaveRequest
+func GetCaSignStatusSaveRequest() *CaSignStatusSaveRequest {
+	return poolCaSignStatusSaveRequest.Get().(*CaSignStatusSaveRequest)
+}
+
+// ReleaseCaSignStatusSaveRequest 释放CaSignStatusSaveRequest
+func ReleaseCaSignStatusSaveRequest(v *CaSignStatusSaveRequest) {
+	v.ThirdDepartId = ""
+	v.ClientId = ""
+	v.CertEndDate = ""
+	v.Sign = ""
+	v.Stamp = ""
+	v.DepartId = ""
+	v.Description = ""
+	v.CertNum = ""
+	v.CertStartDate = ""
+	v.Status = ""
+	poolCaSignStatusSaveRequest.Put(v)
 }

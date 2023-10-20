@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAilabUserTokenGetAPIResponse struct {
 	AlibabaAilabUserTokenGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAilabUserTokenGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAilabUserTokenGetAPIResponseModel).Reset()
+}
+
 // AlibabaAilabUserTokenGetAPIResponseModel is 三方账号获取 token 成功返回结果
 type AlibabaAilabUserTokenGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailab_user_token_get_response"`
@@ -26,4 +33,29 @@ type AlibabaAilabUserTokenGetAPIResponseModel struct {
 	Token string `json:"token,omitempty" xml:"token,omitempty"`
 	// statusCode
 	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAilabUserTokenGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.Token = ""
+	m.StatusCode = 0
+}
+
+var poolAlibabaAilabUserTokenGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAilabUserTokenGetAPIResponse)
+	},
+}
+
+// GetAlibabaAilabUserTokenGetAPIResponse 从 sync.Pool 获取 AlibabaAilabUserTokenGetAPIResponse
+func GetAlibabaAilabUserTokenGetAPIResponse() *AlibabaAilabUserTokenGetAPIResponse {
+	return poolAlibabaAilabUserTokenGetAPIResponse.Get().(*AlibabaAilabUserTokenGetAPIResponse)
+}
+
+// ReleaseAlibabaAilabUserTokenGetAPIResponse 将 AlibabaAilabUserTokenGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAilabUserTokenGetAPIResponse(v *AlibabaAilabUserTokenGetAPIResponse) {
+	v.Reset()
+	poolAlibabaAilabUserTokenGetAPIResponse.Put(v)
 }

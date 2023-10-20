@@ -9,11 +9,6 @@ import (
 // tmall.crm.member.front.unbind
 //
 // 品牌会员解绑功能
-func TmallCrmMemberFrontUnbind(clt *core.SDKClient, req *mei.TmallCrmMemberFrontUnbindAPIRequest, session string) (*mei.TmallCrmMemberFrontUnbindAPIResponse, error) {
-	var resp mei.TmallCrmMemberFrontUnbindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallCrmMemberFrontUnbind(clt *core.SDKClient, req *mei.TmallCrmMemberFrontUnbindAPIRequest, resp *mei.TmallCrmMemberFrontUnbindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

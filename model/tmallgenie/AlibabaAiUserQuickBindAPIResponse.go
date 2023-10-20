@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAiUserQuickBindAPIResponse struct {
 	model.CommonResponse
 	AlibabaAiUserQuickBindAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAiUserQuickBindAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAiUserQuickBindAPIResponseModel).Reset()
 }
 
 // AlibabaAiUserQuickBindAPIResponseModel is 精灵用户绑定第三方账号信息 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAiUserQuickBindAPIResponseModel struct {
 	MessageDetail string `json:"message_detail,omitempty" xml:"message_detail,omitempty"`
 	// 交易结果码（200：成功、其他：失败）
 	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAiUserQuickBindAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.Result = ""
+	m.MessageDetail = ""
+	m.StatusCode = 0
+}
+
+var poolAlibabaAiUserQuickBindAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAiUserQuickBindAPIResponse)
+	},
+}
+
+// GetAlibabaAiUserQuickBindAPIResponse 从 sync.Pool 获取 AlibabaAiUserQuickBindAPIResponse
+func GetAlibabaAiUserQuickBindAPIResponse() *AlibabaAiUserQuickBindAPIResponse {
+	return poolAlibabaAiUserQuickBindAPIResponse.Get().(*AlibabaAiUserQuickBindAPIResponse)
+}
+
+// ReleaseAlibabaAiUserQuickBindAPIResponse 将 AlibabaAiUserQuickBindAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAiUserQuickBindAPIResponse(v *AlibabaAiUserQuickBindAPIResponse) {
+	v.Reset()
+	poolAlibabaAiUserQuickBindAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // CouponOrderStatusDto 结构体
 type CouponOrderStatusDto struct {
 	// 淘宝订单id
@@ -22,4 +26,30 @@ type CouponOrderStatusDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 取消状态
 	CancelStatus int64 `json:"cancel_status,omitempty" xml:"cancel_status,omitempty"`
+}
+
+var poolCouponOrderStatusDto = sync.Pool{
+	New: func() any {
+		return new(CouponOrderStatusDto)
+	},
+}
+
+// GetCouponOrderStatusDto() 从对象池中获取CouponOrderStatusDto
+func GetCouponOrderStatusDto() *CouponOrderStatusDto {
+	return poolCouponOrderStatusDto.Get().(*CouponOrderStatusDto)
+}
+
+// ReleaseCouponOrderStatusDto 释放CouponOrderStatusDto
+func ReleaseCouponOrderStatusDto(v *CouponOrderStatusDto) {
+	v.TbOrderId = ""
+	v.FinishTime = ""
+	v.Code = ""
+	v.StatusDesc = ""
+	v.OrderNo = ""
+	v.ItemId = 0
+	v.ContractOrderId = 0
+	v.Id = 0
+	v.Status = 0
+	v.CancelStatus = 0
+	poolCouponOrderStatusDto.Put(v)
 }

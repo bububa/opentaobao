@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AlibabaAlisportsPassportAccountTokenvalidateAPIRequest struct {
 // NewAlibabaAlisportsPassportAccountTokenvalidateRequest 初始化AlibabaAlisportsPassportAccountTokenvalidateAPIRequest对象
 func NewAlibabaAlisportsPassportAccountTokenvalidateRequest() *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest {
 	return &AlibabaAlisportsPassportAccountTokenvalidateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) Reset() {
+	r._alispAppKey = ""
+	r._alispSign = ""
+	r._token = ""
+	r._alispTime = ""
+	r._secret = ""
+	r._extInfo = ""
+	r._mtopAppkey = ""
+	r._userType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetUserType(_us
 // GetUserType UserType Getter
 func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetUserType() int64 {
 	return r._userType
+}
+
+var poolAlibabaAlisportsPassportAccountTokenvalidateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlisportsPassportAccountTokenvalidateRequest()
+	},
+}
+
+// GetAlibabaAlisportsPassportAccountTokenvalidateRequest 从 sync.Pool 获取 AlibabaAlisportsPassportAccountTokenvalidateAPIRequest
+func GetAlibabaAlisportsPassportAccountTokenvalidateAPIRequest() *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest {
+	return poolAlibabaAlisportsPassportAccountTokenvalidateAPIRequest.Get().(*AlibabaAlisportsPassportAccountTokenvalidateAPIRequest)
+}
+
+// ReleaseAlibabaAlisportsPassportAccountTokenvalidateAPIRequest 将 AlibabaAlisportsPassportAccountTokenvalidateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlisportsPassportAccountTokenvalidateAPIRequest(v *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlisportsPassportAccountTokenvalidateAPIRequest.Put(v)
 }

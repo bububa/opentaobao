@@ -1,5 +1,9 @@
 package tbitem
 
+import (
+	"sync"
+)
+
 // HscodeAuditInfo 结构体
 type HscodeAuditInfo struct {
 	// hscode信息当前审核状态的具体说明
@@ -12,4 +16,25 @@ type HscodeAuditInfo struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// SKU的ID
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolHscodeAuditInfo = sync.Pool{
+	New: func() any {
+		return new(HscodeAuditInfo)
+	},
+}
+
+// GetHscodeAuditInfo() 从对象池中获取HscodeAuditInfo
+func GetHscodeAuditInfo() *HscodeAuditInfo {
+	return poolHscodeAuditInfo.Get().(*HscodeAuditInfo)
+}
+
+// ReleaseHscodeAuditInfo 释放HscodeAuditInfo
+func ReleaseHscodeAuditInfo(v *HscodeAuditInfo) {
+	v.Reason = ""
+	v.Hscode = ""
+	v.Status = ""
+	v.ItemId = 0
+	v.SkuId = 0
+	poolHscodeAuditInfo.Put(v)
 }

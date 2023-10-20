@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // AlibabaAlihealthDrugKytDestbillListModel 结构体
 type AlibabaAlihealthDrugKytDestbillListModel struct {
 	// 药品类型
@@ -28,4 +32,33 @@ type AlibabaAlihealthDrugKytDestbillListModel struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 单据编号
 	BillCode string `json:"bill_code,omitempty" xml:"bill_code,omitempty"`
+}
+
+var poolAlibabaAlihealthDrugKytDestbillListModel = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugKytDestbillListModel)
+	},
+}
+
+// GetAlibabaAlihealthDrugKytDestbillListModel() 从对象池中获取AlibabaAlihealthDrugKytDestbillListModel
+func GetAlibabaAlihealthDrugKytDestbillListModel() *AlibabaAlihealthDrugKytDestbillListModel {
+	return poolAlibabaAlihealthDrugKytDestbillListModel.Get().(*AlibabaAlihealthDrugKytDestbillListModel)
+}
+
+// ReleaseAlibabaAlihealthDrugKytDestbillListModel 释放AlibabaAlihealthDrugKytDestbillListModel
+func ReleaseAlibabaAlihealthDrugKytDestbillListModel(v *AlibabaAlihealthDrugKytDestbillListModel) {
+	v.DrugType = ""
+	v.FromUserName = ""
+	v.AssRefEntId = ""
+	v.DestEntName = ""
+	v.AssEntName = ""
+	v.DisRefEntId = ""
+	v.BillId = ""
+	v.AssEntId = ""
+	v.DisEntId = ""
+	v.ToUserName = ""
+	v.DisEntName = ""
+	v.Status = ""
+	v.BillCode = ""
+	poolAlibabaAlihealthDrugKytDestbillListModel.Put(v)
 }

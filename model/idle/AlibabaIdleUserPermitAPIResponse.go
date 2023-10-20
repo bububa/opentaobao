@@ -2,6 +2,7 @@ package idle
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaIdleUserPermitAPIResponse struct {
 	AlibabaIdleUserPermitAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaIdleUserPermitAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIdleUserPermitAPIResponseModel).Reset()
+}
+
 // AlibabaIdleUserPermitAPIResponseModel is 用户appkey授权 成功返回结果
 type AlibabaIdleUserPermitAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_user_permit_response"`
@@ -22,4 +29,27 @@ type AlibabaIdleUserPermitAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回包装类
 	Result *BaseResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIdleUserPermitAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaIdleUserPermitAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleUserPermitAPIResponse)
+	},
+}
+
+// GetAlibabaIdleUserPermitAPIResponse 从 sync.Pool 获取 AlibabaIdleUserPermitAPIResponse
+func GetAlibabaIdleUserPermitAPIResponse() *AlibabaIdleUserPermitAPIResponse {
+	return poolAlibabaIdleUserPermitAPIResponse.Get().(*AlibabaIdleUserPermitAPIResponse)
+}
+
+// ReleaseAlibabaIdleUserPermitAPIResponse 将 AlibabaIdleUserPermitAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIdleUserPermitAPIResponse(v *AlibabaIdleUserPermitAPIResponse) {
+	v.Reset()
+	poolAlibabaIdleUserPermitAPIResponse.Put(v)
 }

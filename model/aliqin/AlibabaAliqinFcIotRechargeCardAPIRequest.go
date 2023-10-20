@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaAliqinFcIotRechargeCardAPIRequest struct {
 // NewAlibabaAliqinFcIotRechargeCardRequest 初始化AlibabaAliqinFcIotRechargeCardAPIRequest对象
 func NewAlibabaAliqinFcIotRechargeCardRequest() *AlibabaAliqinFcIotRechargeCardAPIRequest {
 	return &AlibabaAliqinFcIotRechargeCardAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFcIotRechargeCardAPIRequest) Reset() {
+	r._outRechargeId = ""
+	r._billSource = ""
+	r._billReal = ""
+	r._iccid = ""
+	r._offerId = ""
+	r._effCode = ""
+	r._effTime = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaAliqinFcIotRechargeCardAPIRequest) SetEffTime(_effTime string) e
 // GetEffTime EffTime Getter
 func (r AlibabaAliqinFcIotRechargeCardAPIRequest) GetEffTime() string {
 	return r._effTime
+}
+
+var poolAlibabaAliqinFcIotRechargeCardAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFcIotRechargeCardRequest()
+	},
+}
+
+// GetAlibabaAliqinFcIotRechargeCardRequest 从 sync.Pool 获取 AlibabaAliqinFcIotRechargeCardAPIRequest
+func GetAlibabaAliqinFcIotRechargeCardAPIRequest() *AlibabaAliqinFcIotRechargeCardAPIRequest {
+	return poolAlibabaAliqinFcIotRechargeCardAPIRequest.Get().(*AlibabaAliqinFcIotRechargeCardAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFcIotRechargeCardAPIRequest 将 AlibabaAliqinFcIotRechargeCardAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFcIotRechargeCardAPIRequest(v *AlibabaAliqinFcIotRechargeCardAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFcIotRechargeCardAPIRequest.Put(v)
 }

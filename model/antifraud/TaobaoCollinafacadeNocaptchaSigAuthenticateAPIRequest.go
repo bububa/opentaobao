@@ -2,6 +2,7 @@ package antifraud
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest struct {
 // NewTaobaoCollinafacadeNocaptchaSigAuthenticateRequest 初始化TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest对象
 func NewTaobaoCollinafacadeNocaptchaSigAuthenticateRequest() *TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest {
 	return &TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest) Reset() {
+	r._sigAuthenticateContext = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest) SetSigAuthentica
 // GetSigAuthenticateContext SigAuthenticateContext Getter
 func (r TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest) GetSigAuthenticateContext() *SigAuthenticateContext {
 	return r._sigAuthenticateContext
+}
+
+var poolTaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCollinafacadeNocaptchaSigAuthenticateRequest()
+	},
+}
+
+// GetTaobaoCollinafacadeNocaptchaSigAuthenticateRequest 从 sync.Pool 获取 TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest
+func GetTaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest() *TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest {
+	return poolTaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest.Get().(*TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest)
+}
+
+// ReleaseTaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest 将 TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest(v *TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest) {
+	v.Reset()
+	poolTaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest.Put(v)
 }

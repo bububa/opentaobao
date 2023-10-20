@@ -9,11 +9,6 @@ import (
 // taobao.wlb.wms.sn.info.query
 //
 // 查询仓库作业的各类单据记录的Sn信息
-func TaobaoWlbWmsSnInfoQuery(clt *core.SDKClient, req *wms.TaobaoWlbWmsSnInfoQueryAPIRequest, session string) (*wms.TaobaoWlbWmsSnInfoQueryAPIResponse, error) {
-	var resp wms.TaobaoWlbWmsSnInfoQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWlbWmsSnInfoQuery(clt *core.SDKClient, req *wms.TaobaoWlbWmsSnInfoQueryAPIRequest, resp *wms.TaobaoWlbWmsSnInfoQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

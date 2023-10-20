@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest struct 
 // NewAlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackRequest 初始化AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest对象
 func NewAlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackRequest() *AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest {
 	return &AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._derbyMethod = ""
+	r._derbyBody = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest) Se
 // GetDerbyBody DerbyBody Getter
 func (r AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest) GetDerbyBody() string {
 	return r._derbyBody
+}
+
+var poolAlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackRequest 从 sync.Pool 获取 AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest
+func GetAlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest() *AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest {
+	return poolAlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest.Get().(*AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest 将 AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest(v *AlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyDerbyMemberVoucherCardChangeCallbackAPIRequest.Put(v)
 }

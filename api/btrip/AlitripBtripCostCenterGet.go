@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.cost.center.get
 //
 // 获取差旅申请用户的费用归属列表
-func AlitripBtripCostCenterGet(clt *core.SDKClient, req *btrip.AlitripBtripCostCenterGetAPIRequest, session string) (*btrip.AlitripBtripCostCenterGetAPIResponse, error) {
-	var resp btrip.AlitripBtripCostCenterGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripCostCenterGet(clt *core.SDKClient, req *btrip.AlitripBtripCostCenterGetAPIRequest, resp *btrip.AlitripBtripCostCenterGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

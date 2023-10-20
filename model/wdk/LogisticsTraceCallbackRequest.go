@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // LogisticsTraceCallbackRequest 结构体
 type LogisticsTraceCallbackRequest struct {
 	// 经营店编码
@@ -12,4 +16,25 @@ type LogisticsTraceCallbackRequest struct {
 	UpdateTime string `json:"update_time,omitempty" xml:"update_time,omitempty"`
 	// 订单编码
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
+}
+
+var poolLogisticsTraceCallbackRequest = sync.Pool{
+	New: func() any {
+		return new(LogisticsTraceCallbackRequest)
+	},
+}
+
+// GetLogisticsTraceCallbackRequest() 从对象池中获取LogisticsTraceCallbackRequest
+func GetLogisticsTraceCallbackRequest() *LogisticsTraceCallbackRequest {
+	return poolLogisticsTraceCallbackRequest.Get().(*LogisticsTraceCallbackRequest)
+}
+
+// ReleaseLogisticsTraceCallbackRequest 释放LogisticsTraceCallbackRequest
+func ReleaseLogisticsTraceCallbackRequest(v *LogisticsTraceCallbackRequest) {
+	v.StoreId = ""
+	v.Longitude = ""
+	v.Latitude = ""
+	v.UpdateTime = ""
+	v.BizOrderId = 0
+	poolLogisticsTraceCallbackRequest.Put(v)
 }

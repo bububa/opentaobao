@@ -1,5 +1,9 @@
 package tmallsc
 
+import (
+	"sync"
+)
+
 // VerifyRequestDto 结构体
 type VerifyRequestDto struct {
 	// 核销来源
@@ -20,4 +24,29 @@ type VerifyRequestDto struct {
 	WorkcardId int64 `json:"workcard_id,omitempty" xml:"workcard_id,omitempty"`
 	// 子订单id
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolVerifyRequestDto = sync.Pool{
+	New: func() any {
+		return new(VerifyRequestDto)
+	},
+}
+
+// GetVerifyRequestDto() 从对象池中获取VerifyRequestDto
+func GetVerifyRequestDto() *VerifyRequestDto {
+	return poolVerifyRequestDto.Get().(*VerifyRequestDto)
+}
+
+// ReleaseVerifyRequestDto 释放VerifyRequestDto
+func ReleaseVerifyRequestDto(v *VerifyRequestDto) {
+	v.VerifySource = ""
+	v.Attrs = ""
+	v.BizType = ""
+	v.Code = ""
+	v.ParentOrderId = 0
+	v.TpId = 0
+	v.BuyerId = 0
+	v.WorkcardId = 0
+	v.OrderId = 0
+	poolVerifyRequestDto.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallServicecenterReservecondCreateAPIRequest struct {
 // NewTmallServicecenterReservecondCreateRequest 初始化TmallServicecenterReservecondCreateAPIRequest对象
 func NewTmallServicecenterReservecondCreateRequest() *TmallServicecenterReservecondCreateAPIRequest {
 	return &TmallServicecenterReservecondCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterReservecondCreateAPIRequest) Reset() {
+	r._rocList = r._rocList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallServicecenterReservecondCreateAPIRequest) SetRocList(_rocList []Re
 // GetRocList RocList Getter
 func (r TmallServicecenterReservecondCreateAPIRequest) GetRocList() []ReserveOpenConditionDto {
 	return r._rocList
+}
+
+var poolTmallServicecenterReservecondCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterReservecondCreateRequest()
+	},
+}
+
+// GetTmallServicecenterReservecondCreateRequest 从 sync.Pool 获取 TmallServicecenterReservecondCreateAPIRequest
+func GetTmallServicecenterReservecondCreateAPIRequest() *TmallServicecenterReservecondCreateAPIRequest {
+	return poolTmallServicecenterReservecondCreateAPIRequest.Get().(*TmallServicecenterReservecondCreateAPIRequest)
+}
+
+// ReleaseTmallServicecenterReservecondCreateAPIRequest 将 TmallServicecenterReservecondCreateAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterReservecondCreateAPIRequest(v *TmallServicecenterReservecondCreateAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterReservecondCreateAPIRequest.Put(v)
 }

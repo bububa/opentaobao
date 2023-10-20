@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // AccessQuotationDto 结构体
 type AccessQuotationDto struct {
 	// 阶梯价信息
@@ -20,4 +24,29 @@ type AccessQuotationDto struct {
 	OriginUnitPrice float64 `json:"origin_unit_price,omitempty" xml:"origin_unit_price,omitempty"`
 	// 是否阶梯价
 	LadderPrice bool `json:"ladder_price,omitempty" xml:"ladder_price,omitempty"`
+}
+
+var poolAccessQuotationDto = sync.Pool{
+	New: func() any {
+		return new(AccessQuotationDto)
+	},
+}
+
+// GetAccessQuotationDto() 从对象池中获取AccessQuotationDto
+func GetAccessQuotationDto() *AccessQuotationDto {
+	return poolAccessQuotationDto.Get().(*AccessQuotationDto)
+}
+
+// ReleaseAccessQuotationDto 释放AccessQuotationDto
+func ReleaseAccessQuotationDto(v *AccessQuotationDto) {
+	v.LadderPriceList = v.LadderPriceList[:0]
+	v.SkuAttrValueList = v.SkuAttrValueList[:0]
+	v.CurrencyCode = ""
+	v.EffectiveDate = ""
+	v.ExpireDate = ""
+	v.SourceSkuId = ""
+	v.UnitPrice = 0
+	v.OriginUnitPrice = 0
+	v.LadderPrice = false
+	poolAccessQuotationDto.Put(v)
 }

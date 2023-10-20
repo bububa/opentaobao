@@ -1,5 +1,9 @@
 package openmall
 
+import (
+	"sync"
+)
+
 // TopTradeCreateDo 结构体
 type TopTradeCreateDo struct {
 	// 收货地址的收件人地址
@@ -40,4 +44,39 @@ type TopTradeCreateDo struct {
 	SkuIids int64 `json:"sku_iids,omitempty" xml:"sku_iids,omitempty"`
 	// 创建订单传入true的时候，订单支付后会进入半小时的hold单（订单状态为：PAID_FORBID_CONSIGN），此时订单不会发货，用户可以调用Openmall地址修改接口修改订单收货地址，半小时结束后订单自动结束hold单进入发货流程订单状态为（WAIT_SELLER_SEND_GOODS）
 	NeedErpHold bool `json:"need_erp_hold,omitempty" xml:"need_erp_hold,omitempty"`
+}
+
+var poolTopTradeCreateDo = sync.Pool{
+	New: func() any {
+		return new(TopTradeCreateDo)
+	},
+}
+
+// GetTopTradeCreateDo() 从对象池中获取TopTradeCreateDo
+func GetTopTradeCreateDo() *TopTradeCreateDo {
+	return poolTopTradeCreateDo.Get().(*TopTradeCreateDo)
+}
+
+// ReleaseTopTradeCreateDo 释放TopTradeCreateDo
+func ReleaseTopTradeCreateDo(v *TopTradeCreateDo) {
+	v.Address = ""
+	v.BuyerChannel = ""
+	v.BuyerChannelId = ""
+	v.BuyerMemo = ""
+	v.BuyerPhone = ""
+	v.Distributor = ""
+	v.Divisioncode = ""
+	v.ExpectOrderFee = ""
+	v.Mobile = ""
+	v.Name = ""
+	v.OutId = ""
+	v.OuterOrderFee = ""
+	v.Phone = ""
+	v.Postcode = ""
+	v.ShippingType = ""
+	v.NumIid = 0
+	v.Nums = 0
+	v.SkuIids = 0
+	v.NeedErpHold = false
+	poolTopTradeCreateDo.Put(v)
 }

@@ -2,6 +2,7 @@ package nazca
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaNazcaAuthAuthapplyCallbackAPIRequest struct {
 // NewAlibabaNazcaAuthAuthapplyCallbackRequest 初始化AlibabaNazcaAuthAuthapplyCallbackAPIRequest对象
 func NewAlibabaNazcaAuthAuthapplyCallbackRequest() *AlibabaNazcaAuthAuthapplyCallbackAPIRequest {
 	return &AlibabaNazcaAuthAuthapplyCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaNazcaAuthAuthapplyCallbackAPIRequest) Reset() {
+	r._authApplyDoneCallbackDo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaNazcaAuthAuthapplyCallbackAPIRequest) SetAuthApplyDoneCallbackDo
 // GetAuthApplyDoneCallbackDo AuthApplyDoneCallbackDo Getter
 func (r AlibabaNazcaAuthAuthapplyCallbackAPIRequest) GetAuthApplyDoneCallbackDo() *AuthApplyDoneCallBackDo {
 	return r._authApplyDoneCallbackDo
+}
+
+var poolAlibabaNazcaAuthAuthapplyCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaNazcaAuthAuthapplyCallbackRequest()
+	},
+}
+
+// GetAlibabaNazcaAuthAuthapplyCallbackRequest 从 sync.Pool 获取 AlibabaNazcaAuthAuthapplyCallbackAPIRequest
+func GetAlibabaNazcaAuthAuthapplyCallbackAPIRequest() *AlibabaNazcaAuthAuthapplyCallbackAPIRequest {
+	return poolAlibabaNazcaAuthAuthapplyCallbackAPIRequest.Get().(*AlibabaNazcaAuthAuthapplyCallbackAPIRequest)
+}
+
+// ReleaseAlibabaNazcaAuthAuthapplyCallbackAPIRequest 将 AlibabaNazcaAuthAuthapplyCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaNazcaAuthAuthapplyCallbackAPIRequest(v *AlibabaNazcaAuthAuthapplyCallbackAPIRequest) {
+	v.Reset()
+	poolAlibabaNazcaAuthAuthapplyCallbackAPIRequest.Put(v)
 }

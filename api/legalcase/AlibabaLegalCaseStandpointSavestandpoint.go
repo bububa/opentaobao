@@ -9,11 +9,6 @@ import (
 // alibaba.legal.case.standpoint.savestandpoint
 //
 // 新增反馈口径 ,从外部接受反馈的口径
-func AlibabaLegalCaseStandpointSavestandpoint(clt *core.SDKClient, req *legalcase.AlibabaLegalCaseStandpointSavestandpointAPIRequest, session string) (*legalcase.AlibabaLegalCaseStandpointSavestandpointAPIResponse, error) {
-	var resp legalcase.AlibabaLegalCaseStandpointSavestandpointAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLegalCaseStandpointSavestandpoint(clt *core.SDKClient, req *legalcase.AlibabaLegalCaseStandpointSavestandpointAPIRequest, resp *legalcase.AlibabaLegalCaseStandpointSavestandpointAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package train
 
+import (
+	"sync"
+)
+
 // TicketInfoDto 结构体
 type TicketInfoDto struct {
 	// 乘车人姓名
@@ -14,4 +18,26 @@ type TicketInfoDto struct {
 	MobileNo string `json:"mobile_no,omitempty" xml:"mobile_no,omitempty"`
 	// ttp子单号
 	TtpSubOrderId int64 `json:"ttp_sub_order_id,omitempty" xml:"ttp_sub_order_id,omitempty"`
+}
+
+var poolTicketInfoDto = sync.Pool{
+	New: func() any {
+		return new(TicketInfoDto)
+	},
+}
+
+// GetTicketInfoDto() 从对象池中获取TicketInfoDto
+func GetTicketInfoDto() *TicketInfoDto {
+	return poolTicketInfoDto.Get().(*TicketInfoDto)
+}
+
+// ReleaseTicketInfoDto 释放TicketInfoDto
+func ReleaseTicketInfoDto(v *TicketInfoDto) {
+	v.PassengerName = ""
+	v.PassengerTypeCode = ""
+	v.CertificateTypeCode = ""
+	v.CertificateNo = ""
+	v.MobileNo = ""
+	v.TtpSubOrderId = 0
+	poolTicketInfoDto.Put(v)
 }

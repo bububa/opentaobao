@@ -1,5 +1,9 @@
 package wlbimports
 
+import (
+	"sync"
+)
+
 // TransferStoreCenterResponse 结构体
 type TransferStoreCenterResponse struct {
 	// 邮编
@@ -28,4 +32,33 @@ type TransferStoreCenterResponse struct {
 	CountryId int64 `json:"country_id,omitempty" xml:"country_id,omitempty"`
 	// 地区id
 	AreaId int64 `json:"area_id,omitempty" xml:"area_id,omitempty"`
+}
+
+var poolTransferStoreCenterResponse = sync.Pool{
+	New: func() any {
+		return new(TransferStoreCenterResponse)
+	},
+}
+
+// GetTransferStoreCenterResponse() 从对象池中获取TransferStoreCenterResponse
+func GetTransferStoreCenterResponse() *TransferStoreCenterResponse {
+	return poolTransferStoreCenterResponse.Get().(*TransferStoreCenterResponse)
+}
+
+// ReleaseTransferStoreCenterResponse 释放TransferStoreCenterResponse
+func ReleaseTransferStoreCenterResponse(v *TransferStoreCenterResponse) {
+	v.ZipCode = ""
+	v.Country = ""
+	v.City = ""
+	v.CompanyName = ""
+	v.Province = ""
+	v.Phone = ""
+	v.Name = ""
+	v.DetailAddress = ""
+	v.StoreName = ""
+	v.Email = ""
+	v.StoreCode = ""
+	v.CountryId = 0
+	v.AreaId = 0
+	poolTransferStoreCenterResponse.Put(v)
 }

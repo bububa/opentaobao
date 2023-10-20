@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.activity.customer.save
 //
 // 销售活动批量保存定向用户
-func AlibabaAlihouseNewhomeActivityCustomerSave(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeActivityCustomerSaveAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeActivityCustomerSaveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeActivityCustomerSave(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeActivityCustomerSaveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

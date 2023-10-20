@@ -2,6 +2,7 @@ package ju
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaJhsCommunityActivityReservationAPIRequest struct {
 // NewAlibabaJhsCommunityActivityReservationRequest 初始化AlibabaJhsCommunityActivityReservationAPIRequest对象
 func NewAlibabaJhsCommunityActivityReservationRequest() *AlibabaJhsCommunityActivityReservationAPIRequest {
 	return &AlibabaJhsCommunityActivityReservationAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJhsCommunityActivityReservationAPIRequest) Reset() {
+	r._token = ""
+	r._activityId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaJhsCommunityActivityReservationAPIRequest) SetActivityId(_activi
 // GetActivityId ActivityId Getter
 func (r AlibabaJhsCommunityActivityReservationAPIRequest) GetActivityId() int64 {
 	return r._activityId
+}
+
+var poolAlibabaJhsCommunityActivityReservationAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJhsCommunityActivityReservationRequest()
+	},
+}
+
+// GetAlibabaJhsCommunityActivityReservationRequest 从 sync.Pool 获取 AlibabaJhsCommunityActivityReservationAPIRequest
+func GetAlibabaJhsCommunityActivityReservationAPIRequest() *AlibabaJhsCommunityActivityReservationAPIRequest {
+	return poolAlibabaJhsCommunityActivityReservationAPIRequest.Get().(*AlibabaJhsCommunityActivityReservationAPIRequest)
+}
+
+// ReleaseAlibabaJhsCommunityActivityReservationAPIRequest 将 AlibabaJhsCommunityActivityReservationAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJhsCommunityActivityReservationAPIRequest(v *AlibabaJhsCommunityActivityReservationAPIRequest) {
+	v.Reset()
+	poolAlibabaJhsCommunityActivityReservationAPIRequest.Put(v)
 }

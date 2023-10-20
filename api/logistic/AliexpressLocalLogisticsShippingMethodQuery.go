@@ -9,11 +9,6 @@ import (
 // aliexpress.local.logistics.shipping.method.query
 //
 // query shipping method
-func AliexpressLocalLogisticsShippingMethodQuery(clt *core.SDKClient, req *logistic.AliexpressLocalLogisticsShippingMethodQueryAPIRequest, session string) (*logistic.AliexpressLocalLogisticsShippingMethodQueryAPIResponse, error) {
-	var resp logistic.AliexpressLocalLogisticsShippingMethodQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressLocalLogisticsShippingMethodQuery(clt *core.SDKClient, req *logistic.AliexpressLocalLogisticsShippingMethodQueryAPIRequest, resp *logistic.AliexpressLocalLogisticsShippingMethodQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

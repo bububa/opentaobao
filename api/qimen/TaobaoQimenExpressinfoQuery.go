@@ -9,11 +9,6 @@ import (
 // taobao.qimen.expressinfo.query
 //
 // 配送公司信息查询
-func TaobaoQimenExpressinfoQuery(clt *core.SDKClient, req *qimen.TaobaoQimenExpressinfoQueryAPIRequest, session string) (*qimen.TaobaoQimenExpressinfoQueryAPIResponse, error) {
-	var resp qimen.TaobaoQimenExpressinfoQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQimenExpressinfoQuery(clt *core.SDKClient, req *qimen.TaobaoQimenExpressinfoQueryAPIRequest, resp *qimen.TaobaoQimenExpressinfoQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

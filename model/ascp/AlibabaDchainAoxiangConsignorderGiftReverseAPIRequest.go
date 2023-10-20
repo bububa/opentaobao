@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest struct {
 // NewAlibabaDchainAoxiangConsignorderGiftReverseRequest 初始化AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest对象
 func NewAlibabaDchainAoxiangConsignorderGiftReverseRequest() *AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest {
 	return &AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest) Reset() {
+	r._reverseConsignorderGiftRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest) SetReverseConsig
 // GetReverseConsignorderGiftRequest ReverseConsignorderGiftRequest Getter
 func (r AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest) GetReverseConsignorderGiftRequest() *ReverseConsignOrderGiftRequest {
 	return r._reverseConsignorderGiftRequest
+}
+
+var poolAlibabaDchainAoxiangConsignorderGiftReverseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangConsignorderGiftReverseRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangConsignorderGiftReverseRequest 从 sync.Pool 获取 AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest
+func GetAlibabaDchainAoxiangConsignorderGiftReverseAPIRequest() *AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest {
+	return poolAlibabaDchainAoxiangConsignorderGiftReverseAPIRequest.Get().(*AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangConsignorderGiftReverseAPIRequest 将 AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangConsignorderGiftReverseAPIRequest(v *AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangConsignorderGiftReverseAPIRequest.Put(v)
 }

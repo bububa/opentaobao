@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpAdKeywordDeleteAPIRequest struct {
 // NewAlibabaScbpAdKeywordDeleteRequest 初始化AlibabaScbpAdKeywordDeleteAPIRequest对象
 func NewAlibabaScbpAdKeywordDeleteRequest() *AlibabaScbpAdKeywordDeleteAPIRequest {
 	return &AlibabaScbpAdKeywordDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdKeywordDeleteAPIRequest) Reset() {
+	r._adKeyword = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpAdKeywordDeleteAPIRequest) SetAdKeyword(_adKeyword string) e
 // GetAdKeyword AdKeyword Getter
 func (r AlibabaScbpAdKeywordDeleteAPIRequest) GetAdKeyword() string {
 	return r._adKeyword
+}
+
+var poolAlibabaScbpAdKeywordDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdKeywordDeleteRequest()
+	},
+}
+
+// GetAlibabaScbpAdKeywordDeleteRequest 从 sync.Pool 获取 AlibabaScbpAdKeywordDeleteAPIRequest
+func GetAlibabaScbpAdKeywordDeleteAPIRequest() *AlibabaScbpAdKeywordDeleteAPIRequest {
+	return poolAlibabaScbpAdKeywordDeleteAPIRequest.Get().(*AlibabaScbpAdKeywordDeleteAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdKeywordDeleteAPIRequest 将 AlibabaScbpAdKeywordDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdKeywordDeleteAPIRequest(v *AlibabaScbpAdKeywordDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdKeywordDeleteAPIRequest.Put(v)
 }

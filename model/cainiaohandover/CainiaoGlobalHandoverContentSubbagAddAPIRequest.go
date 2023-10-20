@@ -2,6 +2,7 @@ package cainiaohandover
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type CainiaoGlobalHandoverContentSubbagAddAPIRequest struct {
 // NewCainiaoGlobalHandoverContentSubbagAddRequest 初始化CainiaoGlobalHandoverContentSubbagAddAPIRequest对象
 func NewCainiaoGlobalHandoverContentSubbagAddRequest() *CainiaoGlobalHandoverContentSubbagAddAPIRequest {
 	return &CainiaoGlobalHandoverContentSubbagAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalHandoverContentSubbagAddAPIRequest) Reset() {
+	r._handoverContentCode = ""
+	r._client = ""
+	r._locale = ""
+	r._subbagCount = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *CainiaoGlobalHandoverContentSubbagAddAPIRequest) SetSubbagCount(_subbag
 // GetSubbagCount SubbagCount Getter
 func (r CainiaoGlobalHandoverContentSubbagAddAPIRequest) GetSubbagCount() int64 {
 	return r._subbagCount
+}
+
+var poolCainiaoGlobalHandoverContentSubbagAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalHandoverContentSubbagAddRequest()
+	},
+}
+
+// GetCainiaoGlobalHandoverContentSubbagAddRequest 从 sync.Pool 获取 CainiaoGlobalHandoverContentSubbagAddAPIRequest
+func GetCainiaoGlobalHandoverContentSubbagAddAPIRequest() *CainiaoGlobalHandoverContentSubbagAddAPIRequest {
+	return poolCainiaoGlobalHandoverContentSubbagAddAPIRequest.Get().(*CainiaoGlobalHandoverContentSubbagAddAPIRequest)
+}
+
+// ReleaseCainiaoGlobalHandoverContentSubbagAddAPIRequest 将 CainiaoGlobalHandoverContentSubbagAddAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalHandoverContentSubbagAddAPIRequest(v *CainiaoGlobalHandoverContentSubbagAddAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalHandoverContentSubbagAddAPIRequest.Put(v)
 }

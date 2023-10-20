@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaMosBunkBunkinfoQuerybunkAPIRequest struct {
 // NewAlibabaMosBunkBunkinfoQuerybunkRequest 初始化AlibabaMosBunkBunkinfoQuerybunkAPIRequest对象
 func NewAlibabaMosBunkBunkinfoQuerybunkRequest() *AlibabaMosBunkBunkinfoQuerybunkAPIRequest {
 	return &AlibabaMosBunkBunkinfoQuerybunkAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosBunkBunkinfoQuerybunkAPIRequest) Reset() {
+	r._statusList = r._statusList[:0]
+	r._contractCodes = r._contractCodes[:0]
+	r._storeNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaMosBunkBunkinfoQuerybunkAPIRequest) SetStoreNo(_storeNo string) 
 // GetStoreNo StoreNo Getter
 func (r AlibabaMosBunkBunkinfoQuerybunkAPIRequest) GetStoreNo() string {
 	return r._storeNo
+}
+
+var poolAlibabaMosBunkBunkinfoQuerybunkAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosBunkBunkinfoQuerybunkRequest()
+	},
+}
+
+// GetAlibabaMosBunkBunkinfoQuerybunkRequest 从 sync.Pool 获取 AlibabaMosBunkBunkinfoQuerybunkAPIRequest
+func GetAlibabaMosBunkBunkinfoQuerybunkAPIRequest() *AlibabaMosBunkBunkinfoQuerybunkAPIRequest {
+	return poolAlibabaMosBunkBunkinfoQuerybunkAPIRequest.Get().(*AlibabaMosBunkBunkinfoQuerybunkAPIRequest)
+}
+
+// ReleaseAlibabaMosBunkBunkinfoQuerybunkAPIRequest 将 AlibabaMosBunkBunkinfoQuerybunkAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosBunkBunkinfoQuerybunkAPIRequest(v *AlibabaMosBunkBunkinfoQuerybunkAPIRequest) {
+	v.Reset()
+	poolAlibabaMosBunkBunkinfoQuerybunkAPIRequest.Put(v)
 }

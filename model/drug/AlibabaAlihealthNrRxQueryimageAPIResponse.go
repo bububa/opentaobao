@@ -2,6 +2,7 @@ package drug
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlihealthNrRxQueryimageAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthNrRxQueryimageAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthNrRxQueryimageAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthNrRxQueryimageAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthNrRxQueryimageAPIResponseModel is o2o查看处方图片 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAlihealthNrRxQueryimageAPIResponseModel struct {
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
 	// 成功或失败
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthNrRxQueryimageAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorInfoCode = ""
+	m.ErrorInfoMsg = ""
+	m.Result = ""
+	m.IsSuccess = false
+}
+
+var poolAlibabaAlihealthNrRxQueryimageAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthNrRxQueryimageAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthNrRxQueryimageAPIResponse 从 sync.Pool 获取 AlibabaAlihealthNrRxQueryimageAPIResponse
+func GetAlibabaAlihealthNrRxQueryimageAPIResponse() *AlibabaAlihealthNrRxQueryimageAPIResponse {
+	return poolAlibabaAlihealthNrRxQueryimageAPIResponse.Get().(*AlibabaAlihealthNrRxQueryimageAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthNrRxQueryimageAPIResponse 将 AlibabaAlihealthNrRxQueryimageAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthNrRxQueryimageAPIResponse(v *AlibabaAlihealthNrRxQueryimageAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthNrRxQueryimageAPIResponse.Put(v)
 }

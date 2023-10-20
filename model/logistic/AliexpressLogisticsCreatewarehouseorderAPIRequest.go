@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -45,8 +46,27 @@ type AliexpressLogisticsCreatewarehouseorderAPIRequest struct {
 // NewAliexpressLogisticsCreatewarehouseorderRequest 初始化AliexpressLogisticsCreatewarehouseorderAPIRequest对象
 func NewAliexpressLogisticsCreatewarehouseorderRequest() *AliexpressLogisticsCreatewarehouseorderAPIRequest {
 	return &AliexpressLogisticsCreatewarehouseorderAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(14),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressLogisticsCreatewarehouseorderAPIRequest) Reset() {
+	r._declareProductDTOs = r._declareProductDTOs[:0]
+	r._domesticLogisticsCompany = ""
+	r._domesticTrackingNo = ""
+	r._tradeOrderFrom = ""
+	r._warehouseCarrierService = ""
+	r._invoiceNumber = ""
+	r._topUserKey = ""
+	r._addressDTOs = nil
+	r._domesticLogisticsCompanyId = 0
+	r._packageNum = 0
+	r._tradeOrderId = 0
+	r._undeliverableDecision = 0
+	r._insuranceCoverage = nil
+	r._isAgreeUpgradeReverseParcelInsure = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -246,4 +266,21 @@ func (r *AliexpressLogisticsCreatewarehouseorderAPIRequest) SetIsAgreeUpgradeRev
 // GetIsAgreeUpgradeReverseParcelInsure IsAgreeUpgradeReverseParcelInsure Getter
 func (r AliexpressLogisticsCreatewarehouseorderAPIRequest) GetIsAgreeUpgradeReverseParcelInsure() bool {
 	return r._isAgreeUpgradeReverseParcelInsure
+}
+
+var poolAliexpressLogisticsCreatewarehouseorderAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressLogisticsCreatewarehouseorderRequest()
+	},
+}
+
+// GetAliexpressLogisticsCreatewarehouseorderRequest 从 sync.Pool 获取 AliexpressLogisticsCreatewarehouseorderAPIRequest
+func GetAliexpressLogisticsCreatewarehouseorderAPIRequest() *AliexpressLogisticsCreatewarehouseorderAPIRequest {
+	return poolAliexpressLogisticsCreatewarehouseorderAPIRequest.Get().(*AliexpressLogisticsCreatewarehouseorderAPIRequest)
+}
+
+// ReleaseAliexpressLogisticsCreatewarehouseorderAPIRequest 将 AliexpressLogisticsCreatewarehouseorderAPIRequest 放入 sync.Pool
+func ReleaseAliexpressLogisticsCreatewarehouseorderAPIRequest(v *AliexpressLogisticsCreatewarehouseorderAPIRequest) {
+	v.Reset()
+	poolAliexpressLogisticsCreatewarehouseorderAPIRequest.Put(v)
 }

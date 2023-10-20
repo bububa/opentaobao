@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeHouseTradeQueryStatusRequest 初始化AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest对象
 func NewAlibabaAlihouseExistinghomeHouseTradeQueryStatusRequest() *AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest {
 	return &AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest) Reset() {
+	r._communityOuterId = ""
+	r._outerId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest) SetOuterId(
 // GetOuterId OuterId Getter
 func (r AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest) GetOuterId() string {
 	return r._outerId
+}
+
+var poolAlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeHouseTradeQueryStatusRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeHouseTradeQueryStatusRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest
+func GetAlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest() *AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest {
+	return poolAlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest.Get().(*AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest 将 AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest(v *AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest.Put(v)
 }

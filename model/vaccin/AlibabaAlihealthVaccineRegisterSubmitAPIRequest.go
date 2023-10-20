@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthVaccineRegisterSubmitAPIRequest struct {
 // NewAlibabaAlihealthVaccineRegisterSubmitRequest 初始化AlibabaAlihealthVaccineRegisterSubmitAPIRequest对象
 func NewAlibabaAlihealthVaccineRegisterSubmitRequest() *AlibabaAlihealthVaccineRegisterSubmitAPIRequest {
 	return &AlibabaAlihealthVaccineRegisterSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthVaccineRegisterSubmitAPIRequest) Reset() {
+	r._topRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthVaccineRegisterSubmitAPIRequest) SetTopRequest(_topRequ
 // GetTopRequest TopRequest Getter
 func (r AlibabaAlihealthVaccineRegisterSubmitAPIRequest) GetTopRequest() *SubmitVcRegisterRequest {
 	return r._topRequest
+}
+
+var poolAlibabaAlihealthVaccineRegisterSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthVaccineRegisterSubmitRequest()
+	},
+}
+
+// GetAlibabaAlihealthVaccineRegisterSubmitRequest 从 sync.Pool 获取 AlibabaAlihealthVaccineRegisterSubmitAPIRequest
+func GetAlibabaAlihealthVaccineRegisterSubmitAPIRequest() *AlibabaAlihealthVaccineRegisterSubmitAPIRequest {
+	return poolAlibabaAlihealthVaccineRegisterSubmitAPIRequest.Get().(*AlibabaAlihealthVaccineRegisterSubmitAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthVaccineRegisterSubmitAPIRequest 将 AlibabaAlihealthVaccineRegisterSubmitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthVaccineRegisterSubmitAPIRequest(v *AlibabaAlihealthVaccineRegisterSubmitAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthVaccineRegisterSubmitAPIRequest.Put(v)
 }

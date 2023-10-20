@@ -9,11 +9,6 @@ import (
 // cainiao.global.im.pickup.appointment.order.status
 //
 // 预约单状态查询
-func CainiaoGlobalImPickupAppointmentOrderStatus(clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupAppointmentOrderStatusAPIRequest, session string) (*wlbimports.CainiaoGlobalImPickupAppointmentOrderStatusAPIResponse, error) {
-	var resp wlbimports.CainiaoGlobalImPickupAppointmentOrderStatusAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoGlobalImPickupAppointmentOrderStatus(clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupAppointmentOrderStatusAPIRequest, resp *wlbimports.CainiaoGlobalImPickupAppointmentOrderStatusAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

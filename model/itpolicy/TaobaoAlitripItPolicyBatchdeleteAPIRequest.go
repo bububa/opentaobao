@@ -2,6 +2,7 @@ package itpolicy
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoAlitripItPolicyBatchdeleteAPIRequest struct {
 // NewTaobaoAlitripItPolicyBatchdeleteRequest 初始化TaobaoAlitripItPolicyBatchdeleteAPIRequest对象
 func NewTaobaoAlitripItPolicyBatchdeleteRequest() *TaobaoAlitripItPolicyBatchdeleteAPIRequest {
 	return &TaobaoAlitripItPolicyBatchdeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripItPolicyBatchdeleteAPIRequest) Reset() {
+	r._statusList = r._statusList[:0]
+	r._airline = ""
+	r._arrCity = ""
+	r._cabin = ""
+	r._depCity = ""
+	r._policyId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoAlitripItPolicyBatchdeleteAPIRequest) SetPolicyId(_policyId strin
 // GetPolicyId PolicyId Getter
 func (r TaobaoAlitripItPolicyBatchdeleteAPIRequest) GetPolicyId() string {
 	return r._policyId
+}
+
+var poolTaobaoAlitripItPolicyBatchdeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripItPolicyBatchdeleteRequest()
+	},
+}
+
+// GetTaobaoAlitripItPolicyBatchdeleteRequest 从 sync.Pool 获取 TaobaoAlitripItPolicyBatchdeleteAPIRequest
+func GetTaobaoAlitripItPolicyBatchdeleteAPIRequest() *TaobaoAlitripItPolicyBatchdeleteAPIRequest {
+	return poolTaobaoAlitripItPolicyBatchdeleteAPIRequest.Get().(*TaobaoAlitripItPolicyBatchdeleteAPIRequest)
+}
+
+// ReleaseTaobaoAlitripItPolicyBatchdeleteAPIRequest 将 TaobaoAlitripItPolicyBatchdeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripItPolicyBatchdeleteAPIRequest(v *TaobaoAlitripItPolicyBatchdeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripItPolicyBatchdeleteAPIRequest.Put(v)
 }

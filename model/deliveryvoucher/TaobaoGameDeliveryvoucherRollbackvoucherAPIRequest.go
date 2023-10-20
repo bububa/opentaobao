@@ -2,6 +2,7 @@ package deliveryvoucher
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest struct {
 // NewTaobaoGameDeliveryvoucherRollbackvoucherRequest 初始化TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest对象
 func NewTaobaoGameDeliveryvoucherRollbackvoucherRequest() *TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest {
 	return &TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest) SetParam0(_param0 *
 // GetParam0 Param0 Getter
 func (r TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest) GetParam0() *RollbackVoucherRequest {
 	return r._param0
+}
+
+var poolTaobaoGameDeliveryvoucherRollbackvoucherAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoGameDeliveryvoucherRollbackvoucherRequest()
+	},
+}
+
+// GetTaobaoGameDeliveryvoucherRollbackvoucherRequest 从 sync.Pool 获取 TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest
+func GetTaobaoGameDeliveryvoucherRollbackvoucherAPIRequest() *TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest {
+	return poolTaobaoGameDeliveryvoucherRollbackvoucherAPIRequest.Get().(*TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest)
+}
+
+// ReleaseTaobaoGameDeliveryvoucherRollbackvoucherAPIRequest 将 TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest 放入 sync.Pool
+func ReleaseTaobaoGameDeliveryvoucherRollbackvoucherAPIRequest(v *TaobaoGameDeliveryvoucherRollbackvoucherAPIRequest) {
+	v.Reset()
+	poolTaobaoGameDeliveryvoucherRollbackvoucherAPIRequest.Put(v)
 }

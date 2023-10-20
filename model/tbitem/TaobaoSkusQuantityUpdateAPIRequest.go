@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoSkusQuantityUpdateAPIRequest struct {
 // NewTaobaoSkusQuantityUpdateRequest 初始化TaobaoSkusQuantityUpdateAPIRequest对象
 func NewTaobaoSkusQuantityUpdateRequest() *TaobaoSkusQuantityUpdateAPIRequest {
 	return &TaobaoSkusQuantityUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSkusQuantityUpdateAPIRequest) Reset() {
+	r._skuidQuantities = ""
+	r._outeridQuantities = ""
+	r._numIid = 0
+	r._type = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoSkusQuantityUpdateAPIRequest) SetType(_type int64) error {
 // GetType Type Getter
 func (r TaobaoSkusQuantityUpdateAPIRequest) GetType() int64 {
 	return r._type
+}
+
+var poolTaobaoSkusQuantityUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSkusQuantityUpdateRequest()
+	},
+}
+
+// GetTaobaoSkusQuantityUpdateRequest 从 sync.Pool 获取 TaobaoSkusQuantityUpdateAPIRequest
+func GetTaobaoSkusQuantityUpdateAPIRequest() *TaobaoSkusQuantityUpdateAPIRequest {
+	return poolTaobaoSkusQuantityUpdateAPIRequest.Get().(*TaobaoSkusQuantityUpdateAPIRequest)
+}
+
+// ReleaseTaobaoSkusQuantityUpdateAPIRequest 将 TaobaoSkusQuantityUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSkusQuantityUpdateAPIRequest(v *TaobaoSkusQuantityUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoSkusQuantityUpdateAPIRequest.Put(v)
 }

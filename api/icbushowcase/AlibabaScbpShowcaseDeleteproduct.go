@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.showcase.deleteproduct
 //
 // 批量删除橱窗商品
-func AlibabaScbpShowcaseDeleteproduct(clt *core.SDKClient, req *icbushowcase.AlibabaScbpShowcaseDeleteproductAPIRequest, session string) (*icbushowcase.AlibabaScbpShowcaseDeleteproductAPIResponse, error) {
-	var resp icbushowcase.AlibabaScbpShowcaseDeleteproductAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpShowcaseDeleteproduct(clt *core.SDKClient, req *icbushowcase.AlibabaScbpShowcaseDeleteproductAPIRequest, resp *icbushowcase.AlibabaScbpShowcaseDeleteproductAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

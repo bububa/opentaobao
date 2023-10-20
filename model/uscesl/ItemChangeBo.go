@@ -1,5 +1,9 @@
 package uscesl
 
+import (
+	"sync"
+)
+
 // ItemChangeBo 结构体
 type ItemChangeBo struct {
 	// 溯源码URL
@@ -84,4 +88,61 @@ type ItemChangeBo struct {
 	IfPromotion bool `json:"if_promotion,omitempty" xml:"if_promotion,omitempty"`
 	// 是否溯源
 	IfSourceCode bool `json:"if_source_code,omitempty" xml:"if_source_code,omitempty"`
+}
+
+var poolItemChangeBo = sync.Pool{
+	New: func() any {
+		return new(ItemChangeBo)
+	},
+}
+
+// GetItemChangeBo() 从对象池中获取ItemChangeBo
+func GetItemChangeBo() *ItemChangeBo {
+	return poolItemChangeBo.Get().(*ItemChangeBo)
+}
+
+// ReleaseItemChangeBo 释放ItemChangeBo
+func ReleaseItemChangeBo(v *ItemChangeBo) {
+	v.SourceCode = ""
+	v.PriceUnit = ""
+	v.BrandName = ""
+	v.CategoryName = ""
+	v.Rank = ""
+	v.SuggestPrice = ""
+	v.SkuId = ""
+	v.EnergyEfficiency = ""
+	v.PromotionStart = ""
+	v.ForestSecondCatId = ""
+	v.CustomizeFeatureC = ""
+	v.CustomizeFeatureD = ""
+	v.CustomizeFeatureE = ""
+	v.CustomizeFeatureF = ""
+	v.CustomizeFeatureG = ""
+	v.CustomizeFeatureH = ""
+	v.CustomizeFeatureI = ""
+	v.CustomizeFeatureJ = ""
+	v.ItemQrCode = ""
+	v.PromotionEnd = ""
+	v.ExtraAttribute = ""
+	v.OriginalPrice = ""
+	v.PositonCode = ""
+	v.CustomizeFeatureB = ""
+	v.CustomizeFeatureA = ""
+	v.ModelNum = ""
+	v.SaleSpec = ""
+	v.AcctionPrice = ""
+	v.ItemBarCode = ""
+	v.MemberPrice = ""
+	v.ItemTitle = ""
+	v.PromotionText = ""
+	v.ForestFirstCatId = ""
+	v.ShortTitle = ""
+	v.ProductionPlace = ""
+	v.ItemChangeStatus = ""
+	v.PromotionReason = ""
+	v.ItemStatus = 0
+	v.ItemId = 0
+	v.IfPromotion = false
+	v.IfSourceCode = false
+	poolItemChangeBo.Put(v)
 }

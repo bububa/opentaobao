@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // PosRefundCreateRequest 结构体
 type PosRefundCreateRequest struct {
 	// 外部主订单号
@@ -28,4 +32,33 @@ type PosRefundCreateRequest struct {
 	RefundSpeedType int64 `json:"refund_speed_type,omitempty" xml:"refund_speed_type,omitempty"`
 	// 是否称重商品
 	WeightItem bool `json:"weight_item,omitempty" xml:"weight_item,omitempty"`
+}
+
+var poolPosRefundCreateRequest = sync.Pool{
+	New: func() any {
+		return new(PosRefundCreateRequest)
+	},
+}
+
+// GetPosRefundCreateRequest() 从对象池中获取PosRefundCreateRequest
+func GetPosRefundCreateRequest() *PosRefundCreateRequest {
+	return poolPosRefundCreateRequest.Get().(*PosRefundCreateRequest)
+}
+
+// ReleasePosRefundCreateRequest 释放PosRefundCreateRequest
+func ReleasePosRefundCreateRequest(v *PosRefundCreateRequest) {
+	v.OutOrderId = ""
+	v.ShopId = ""
+	v.StoreId = ""
+	v.OutSubOrderId = ""
+	v.SkuCode = ""
+	v.RefundAmountStock = ""
+	v.StockUnit = ""
+	v.SaleUnit = ""
+	v.RefundAmountSale = 0
+	v.RefundFee = 0
+	v.RefundType = 0
+	v.RefundSpeedType = 0
+	v.WeightItem = false
+	poolPosRefundCreateRequest.Put(v)
 }

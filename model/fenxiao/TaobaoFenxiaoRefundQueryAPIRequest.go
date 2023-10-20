@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type TaobaoFenxiaoRefundQueryAPIRequest struct {
 // NewTaobaoFenxiaoRefundQueryRequest 初始化TaobaoFenxiaoRefundQueryAPIRequest对象
 func NewTaobaoFenxiaoRefundQueryRequest() *TaobaoFenxiaoRefundQueryAPIRequest {
 	return &TaobaoFenxiaoRefundQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoRefundQueryAPIRequest) Reset() {
+	r._tradeTypes = r._tradeTypes[:0]
+	r._channelCodes = r._channelCodes[:0]
+	r._startDate = ""
+	r._endDate = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r._userRoleType = 0
+	r._refundFlowTypes = 0
+	r._querySellerRefund = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetQuerySellerRefund(_querySellerRe
 // GetQuerySellerRefund QuerySellerRefund Getter
 func (r TaobaoFenxiaoRefundQueryAPIRequest) GetQuerySellerRefund() bool {
 	return r._querySellerRefund
+}
+
+var poolTaobaoFenxiaoRefundQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoRefundQueryRequest()
+	},
+}
+
+// GetTaobaoFenxiaoRefundQueryRequest 从 sync.Pool 获取 TaobaoFenxiaoRefundQueryAPIRequest
+func GetTaobaoFenxiaoRefundQueryAPIRequest() *TaobaoFenxiaoRefundQueryAPIRequest {
+	return poolTaobaoFenxiaoRefundQueryAPIRequest.Get().(*TaobaoFenxiaoRefundQueryAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoRefundQueryAPIRequest 将 TaobaoFenxiaoRefundQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoRefundQueryAPIRequest(v *TaobaoFenxiaoRefundQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoRefundQueryAPIRequest.Put(v)
 }

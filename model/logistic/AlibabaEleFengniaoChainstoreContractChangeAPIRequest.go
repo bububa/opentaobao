@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEleFengniaoChainstoreContractChangeAPIRequest struct {
 // NewAlibabaEleFengniaoChainstoreContractChangeRequest 初始化AlibabaEleFengniaoChainstoreContractChangeAPIRequest对象
 func NewAlibabaEleFengniaoChainstoreContractChangeRequest() *AlibabaEleFengniaoChainstoreContractChangeAPIRequest {
 	return &AlibabaEleFengniaoChainstoreContractChangeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleFengniaoChainstoreContractChangeAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEleFengniaoChainstoreContractChangeAPIRequest) SetParam(_param *
 // GetParam Param Getter
 func (r AlibabaEleFengniaoChainstoreContractChangeAPIRequest) GetParam() *Param {
 	return r._param
+}
+
+var poolAlibabaEleFengniaoChainstoreContractChangeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleFengniaoChainstoreContractChangeRequest()
+	},
+}
+
+// GetAlibabaEleFengniaoChainstoreContractChangeRequest 从 sync.Pool 获取 AlibabaEleFengniaoChainstoreContractChangeAPIRequest
+func GetAlibabaEleFengniaoChainstoreContractChangeAPIRequest() *AlibabaEleFengniaoChainstoreContractChangeAPIRequest {
+	return poolAlibabaEleFengniaoChainstoreContractChangeAPIRequest.Get().(*AlibabaEleFengniaoChainstoreContractChangeAPIRequest)
+}
+
+// ReleaseAlibabaEleFengniaoChainstoreContractChangeAPIRequest 将 AlibabaEleFengniaoChainstoreContractChangeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleFengniaoChainstoreContractChangeAPIRequest(v *AlibabaEleFengniaoChainstoreContractChangeAPIRequest) {
+	v.Reset()
+	poolAlibabaEleFengniaoChainstoreContractChangeAPIRequest.Put(v)
 }

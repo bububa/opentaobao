@@ -1,5 +1,9 @@
 package iot
 
+import (
+	"sync"
+)
+
 // BaseResult 结构体
 type BaseResult struct {
 	// 信息
@@ -10,4 +14,24 @@ type BaseResult struct {
 	RetCode int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 	// 返回结果
 	RetValue *BusinessRecipeOpenDto `json:"ret_value,omitempty" xml:"ret_value,omitempty"`
+}
+
+var poolBaseResult = sync.Pool{
+	New: func() any {
+		return new(BaseResult)
+	},
+}
+
+// GetBaseResult() 从对象池中获取BaseResult
+func GetBaseResult() *BaseResult {
+	return poolBaseResult.Get().(*BaseResult)
+}
+
+// ReleaseBaseResult 释放BaseResult
+func ReleaseBaseResult(v *BaseResult) {
+	v.Message = ""
+	v.TraceId = ""
+	v.RetCode = 0
+	v.RetValue = nil
+	poolBaseResult.Put(v)
 }

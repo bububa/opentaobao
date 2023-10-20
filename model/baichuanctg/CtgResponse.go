@@ -1,5 +1,9 @@
 package baichuanctg
 
+import (
+	"sync"
+)
+
 // CtgResponse 结构体
 type CtgResponse struct {
 	// 数据列表
@@ -12,4 +16,25 @@ type CtgResponse struct {
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
 	// 处理成功与否
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolCtgResponse = sync.Pool{
+	New: func() any {
+		return new(CtgResponse)
+	},
+}
+
+// GetCtgResponse() 从对象池中获取CtgResponse
+func GetCtgResponse() *CtgResponse {
+	return poolCtgResponse.Get().(*CtgResponse)
+}
+
+// ReleaseCtgResponse 释放CtgResponse
+func ReleaseCtgResponse(v *CtgResponse) {
+	v.DataList = v.DataList[:0]
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.HasNext = false
+	v.Success = false
+	poolCtgResponse.Put(v)
 }

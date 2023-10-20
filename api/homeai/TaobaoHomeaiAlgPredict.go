@@ -9,11 +9,6 @@ import (
 // taobao.homeai.alg.predict
 //
 // 居然之家硬装预测服务
-func TaobaoHomeaiAlgPredict(clt *core.SDKClient, req *homeai.TaobaoHomeaiAlgPredictAPIRequest, session string) (*homeai.TaobaoHomeaiAlgPredictAPIResponse, error) {
-	var resp homeai.TaobaoHomeaiAlgPredictAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoHomeaiAlgPredict(clt *core.SDKClient, req *homeai.TaobaoHomeaiAlgPredictAPIRequest, resp *homeai.TaobaoHomeaiAlgPredictAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.retail.marketing.buygift.activity.delete
 //
 // 同城零售单品特价活动删除
-func AlibabaRetailMarketingBuygiftActivityDelete(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingBuygiftActivityDeleteAPIRequest, session string) (*wdk.AlibabaRetailMarketingBuygiftActivityDeleteAPIResponse, error) {
-	var resp wdk.AlibabaRetailMarketingBuygiftActivityDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaRetailMarketingBuygiftActivityDelete(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingBuygiftActivityDeleteAPIRequest, resp *wdk.AlibabaRetailMarketingBuygiftActivityDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

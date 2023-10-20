@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoMobilePromotionBenefitActivitySendShareAPIResponse struct {
 	TaobaoMobilePromotionBenefitActivitySendShareAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoMobilePromotionBenefitActivitySendShareAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMobilePromotionBenefitActivitySendShareAPIResponseModel).Reset()
+}
+
 // TaobaoMobilePromotionBenefitActivitySendShareAPIResponseModel is 手淘专用单用户发放接口 成功返回结果
 type TaobaoMobilePromotionBenefitActivitySendShareAPIResponseModel struct {
 	XMLName xml.Name `xml:"mobile_promotion_benefit_activity_send_share_response"`
@@ -22,4 +29,27 @@ type TaobaoMobilePromotionBenefitActivitySendShareAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 权益发放结果
 	SendResult *ShareBenefitSendResult `json:"send_result,omitempty" xml:"send_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMobilePromotionBenefitActivitySendShareAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SendResult = nil
+}
+
+var poolTaobaoMobilePromotionBenefitActivitySendShareAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMobilePromotionBenefitActivitySendShareAPIResponse)
+	},
+}
+
+// GetTaobaoMobilePromotionBenefitActivitySendShareAPIResponse 从 sync.Pool 获取 TaobaoMobilePromotionBenefitActivitySendShareAPIResponse
+func GetTaobaoMobilePromotionBenefitActivitySendShareAPIResponse() *TaobaoMobilePromotionBenefitActivitySendShareAPIResponse {
+	return poolTaobaoMobilePromotionBenefitActivitySendShareAPIResponse.Get().(*TaobaoMobilePromotionBenefitActivitySendShareAPIResponse)
+}
+
+// ReleaseTaobaoMobilePromotionBenefitActivitySendShareAPIResponse 将 TaobaoMobilePromotionBenefitActivitySendShareAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMobilePromotionBenefitActivitySendShareAPIResponse(v *TaobaoMobilePromotionBenefitActivitySendShareAPIResponse) {
+	v.Reset()
+	poolTaobaoMobilePromotionBenefitActivitySendShareAPIResponse.Put(v)
 }

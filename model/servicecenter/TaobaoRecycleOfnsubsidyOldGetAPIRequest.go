@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoRecycleOfnsubsidyOldGetAPIRequest struct {
 // NewTaobaoRecycleOfnsubsidyOldGetRequest 初始化TaobaoRecycleOfnsubsidyOldGetAPIRequest对象
 func NewTaobaoRecycleOfnsubsidyOldGetRequest() *TaobaoRecycleOfnsubsidyOldGetAPIRequest {
 	return &TaobaoRecycleOfnsubsidyOldGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRecycleOfnsubsidyOldGetAPIRequest) Reset() {
+	r._oldOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoRecycleOfnsubsidyOldGetAPIRequest) SetOldOrderId(_oldOrderId int6
 // GetOldOrderId OldOrderId Getter
 func (r TaobaoRecycleOfnsubsidyOldGetAPIRequest) GetOldOrderId() int64 {
 	return r._oldOrderId
+}
+
+var poolTaobaoRecycleOfnsubsidyOldGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRecycleOfnsubsidyOldGetRequest()
+	},
+}
+
+// GetTaobaoRecycleOfnsubsidyOldGetRequest 从 sync.Pool 获取 TaobaoRecycleOfnsubsidyOldGetAPIRequest
+func GetTaobaoRecycleOfnsubsidyOldGetAPIRequest() *TaobaoRecycleOfnsubsidyOldGetAPIRequest {
+	return poolTaobaoRecycleOfnsubsidyOldGetAPIRequest.Get().(*TaobaoRecycleOfnsubsidyOldGetAPIRequest)
+}
+
+// ReleaseTaobaoRecycleOfnsubsidyOldGetAPIRequest 将 TaobaoRecycleOfnsubsidyOldGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRecycleOfnsubsidyOldGetAPIRequest(v *TaobaoRecycleOfnsubsidyOldGetAPIRequest) {
+	v.Reset()
+	poolTaobaoRecycleOfnsubsidyOldGetAPIRequest.Put(v)
 }

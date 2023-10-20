@@ -9,11 +9,6 @@ import (
 // taobao.universalbp.adgroup.horizontal.findpage
 //
 // 查询单元分页列表
-func TaobaoUniversalbpAdgroupHorizontalFindpage(clt *core.SDKClient, req *simba.TaobaoUniversalbpAdgroupHorizontalFindpageAPIRequest, session string) (*simba.TaobaoUniversalbpAdgroupHorizontalFindpageAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpAdgroupHorizontalFindpageAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUniversalbpAdgroupHorizontalFindpage(clt *core.SDKClient, req *simba.TaobaoUniversalbpAdgroupHorizontalFindpageAPIRequest, resp *simba.TaobaoUniversalbpAdgroupHorizontalFindpageAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

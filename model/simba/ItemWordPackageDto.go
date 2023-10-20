@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // ItemWordPackageDto 结构体
 type ItemWordPackageDto struct {
 	// 词包名称（可选：流量智选词包、捡漏词包）
@@ -14,4 +18,26 @@ type ItemWordPackageDto struct {
 	PackageType int64 `json:"package_type,omitempty" xml:"package_type,omitempty"`
 	// 无线端出价（单位为分）
 	WlBidPrice int64 `json:"wl_bid_price,omitempty" xml:"wl_bid_price,omitempty"`
+}
+
+var poolItemWordPackageDto = sync.Pool{
+	New: func() any {
+		return new(ItemWordPackageDto)
+	},
+}
+
+// GetItemWordPackageDto() 从对象池中获取ItemWordPackageDto
+func GetItemWordPackageDto() *ItemWordPackageDto {
+	return poolItemWordPackageDto.Get().(*ItemWordPackageDto)
+}
+
+// ReleaseItemWordPackageDto 释放ItemWordPackageDto
+func ReleaseItemWordPackageDto(v *ItemWordPackageDto) {
+	v.WordPackageName = ""
+	v.WordPackageId = 0
+	v.OnlineStatus = 0
+	v.PcBidPrice = 0
+	v.PackageType = 0
+	v.WlBidPrice = 0
+	poolItemWordPackageDto.Put(v)
 }

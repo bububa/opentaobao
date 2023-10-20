@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // OfnPreRedPacketDto 结构体
 type OfnPreRedPacketDto struct {
 	// 操作列表
@@ -58,4 +62,48 @@ type OfnPreRedPacketDto struct {
 	Mode int64 `json:"mode,omitempty" xml:"mode,omitempty"`
 	// 是否信用单
 	CreditPay bool `json:"credit_pay,omitempty" xml:"credit_pay,omitempty"`
+}
+
+var poolOfnPreRedPacketDto = sync.Pool{
+	New: func() any {
+		return new(OfnPreRedPacketDto)
+	},
+}
+
+// GetOfnPreRedPacketDto() 从对象池中获取OfnPreRedPacketDto
+func GetOfnPreRedPacketDto() *OfnPreRedPacketDto {
+	return poolOfnPreRedPacketDto.Get().(*OfnPreRedPacketDto)
+}
+
+// ReleaseOfnPreRedPacketDto 释放OfnPreRedPacketDto
+func ReleaseOfnPreRedPacketDto(v *OfnPreRedPacketDto) {
+	v.ActionList = v.ActionList[:0]
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.ActivityId = 0
+	v.CreditPayLimit = 0
+	v.EndAlreadySendAmount = 0
+	v.EndPlanSendAmount = 0
+	v.EndWaitSendAmount = 0
+	v.Id = 0
+	v.NewItemCouponPrice = 0
+	v.NewItemId = 0
+	v.NewOrderId = 0
+	v.OldItemActualPrice = 0
+	v.OldItemApprizePrice = 0
+	v.OldItemSpuId = 0
+	v.OldOrderId = 0
+	v.PlanSendAmount = 0
+	v.PreAlreadySendAmount = 0
+	v.PrePlanSendAmount = 0
+	v.PreWaitSendAmount = 0
+	v.Status = 0
+	v.TmallAlreadyDeductAmount = 0
+	v.TmallWaitDeductAmount = 0
+	v.TpAlreadyDeductAmount = 0
+	v.TpWaitDeductAmount = 0
+	v.Version = 0
+	v.Mode = 0
+	v.CreditPay = false
+	poolOfnPreRedPacketDto.Put(v)
 }

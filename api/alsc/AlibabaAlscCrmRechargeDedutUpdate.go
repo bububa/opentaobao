@@ -9,11 +9,6 @@ import (
 // alibaba.alsc.crm.recharge.dedut.update
 //
 // 增加储值消费接口
-func AlibabaAlscCrmRechargeDedutUpdate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRechargeDedutUpdateAPIRequest, session string) (*alsc.AlibabaAlscCrmRechargeDedutUpdateAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmRechargeDedutUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlscCrmRechargeDedutUpdate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRechargeDedutUpdateAPIRequest, resp *alsc.AlibabaAlscCrmRechargeDedutUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

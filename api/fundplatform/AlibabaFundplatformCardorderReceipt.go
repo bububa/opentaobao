@@ -9,11 +9,6 @@ import (
 // alibaba.fundplatform.cardorder.receipt
 //
 // 告知卡商这一批储值卡已经被用户确认收货
-func AlibabaFundplatformCardorderReceipt(clt *core.SDKClient, req *fundplatform.AlibabaFundplatformCardorderReceiptAPIRequest, session string) (*fundplatform.AlibabaFundplatformCardorderReceiptAPIResponse, error) {
-	var resp fundplatform.AlibabaFundplatformCardorderReceiptAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaFundplatformCardorderReceipt(clt *core.SDKClient, req *fundplatform.AlibabaFundplatformCardorderReceiptAPIRequest, resp *fundplatform.AlibabaFundplatformCardorderReceiptAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

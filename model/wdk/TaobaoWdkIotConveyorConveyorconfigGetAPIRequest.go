@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoWdkIotConveyorConveyorconfigGetAPIRequest struct {
 // NewTaobaoWdkIotConveyorConveyorconfigGetRequest 初始化TaobaoWdkIotConveyorConveyorconfigGetAPIRequest对象
 func NewTaobaoWdkIotConveyorConveyorconfigGetRequest() *TaobaoWdkIotConveyorConveyorconfigGetAPIRequest {
 	return &TaobaoWdkIotConveyorConveyorconfigGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWdkIotConveyorConveyorconfigGetAPIRequest) Reset() {
+	r._warehouseCode = ""
+	r._conveyorId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoWdkIotConveyorConveyorconfigGetAPIRequest) SetConveyorId(_conveyo
 // GetConveyorId ConveyorId Getter
 func (r TaobaoWdkIotConveyorConveyorconfigGetAPIRequest) GetConveyorId() int64 {
 	return r._conveyorId
+}
+
+var poolTaobaoWdkIotConveyorConveyorconfigGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWdkIotConveyorConveyorconfigGetRequest()
+	},
+}
+
+// GetTaobaoWdkIotConveyorConveyorconfigGetRequest 从 sync.Pool 获取 TaobaoWdkIotConveyorConveyorconfigGetAPIRequest
+func GetTaobaoWdkIotConveyorConveyorconfigGetAPIRequest() *TaobaoWdkIotConveyorConveyorconfigGetAPIRequest {
+	return poolTaobaoWdkIotConveyorConveyorconfigGetAPIRequest.Get().(*TaobaoWdkIotConveyorConveyorconfigGetAPIRequest)
+}
+
+// ReleaseTaobaoWdkIotConveyorConveyorconfigGetAPIRequest 将 TaobaoWdkIotConveyorConveyorconfigGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWdkIotConveyorConveyorconfigGetAPIRequest(v *TaobaoWdkIotConveyorConveyorconfigGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWdkIotConveyorConveyorconfigGetAPIRequest.Put(v)
 }

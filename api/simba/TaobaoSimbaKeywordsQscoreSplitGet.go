@@ -9,11 +9,6 @@ import (
 // taobao.simba.keywords.qscore.split.get
 //
 // 获取关键词新的质量分
-func TaobaoSimbaKeywordsQscoreSplitGet(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordsQscoreSplitGetAPIRequest, session string) (*simba.TaobaoSimbaKeywordsQscoreSplitGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaKeywordsQscoreSplitGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaKeywordsQscoreSplitGet(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordsQscoreSplitGetAPIRequest, resp *simba.TaobaoSimbaKeywordsQscoreSplitGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

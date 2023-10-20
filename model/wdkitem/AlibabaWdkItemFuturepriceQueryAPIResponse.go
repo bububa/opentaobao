@@ -2,6 +2,7 @@ package wdkitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaWdkItemFuturepriceQueryAPIResponse struct {
 	AlibabaWdkItemFuturepriceQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaWdkItemFuturepriceQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkItemFuturepriceQueryAPIResponseModel).Reset()
+}
+
 // AlibabaWdkItemFuturepriceQueryAPIResponseModel is 单个商品未来价查询接口 成功返回结果
 type AlibabaWdkItemFuturepriceQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_item_futureprice_query_response"`
@@ -22,4 +29,27 @@ type AlibabaWdkItemFuturepriceQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaWdkItemFuturepriceQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkItemFuturepriceQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaWdkItemFuturepriceQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkItemFuturepriceQueryAPIResponse)
+	},
+}
+
+// GetAlibabaWdkItemFuturepriceQueryAPIResponse 从 sync.Pool 获取 AlibabaWdkItemFuturepriceQueryAPIResponse
+func GetAlibabaWdkItemFuturepriceQueryAPIResponse() *AlibabaWdkItemFuturepriceQueryAPIResponse {
+	return poolAlibabaWdkItemFuturepriceQueryAPIResponse.Get().(*AlibabaWdkItemFuturepriceQueryAPIResponse)
+}
+
+// ReleaseAlibabaWdkItemFuturepriceQueryAPIResponse 将 AlibabaWdkItemFuturepriceQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkItemFuturepriceQueryAPIResponse(v *AlibabaWdkItemFuturepriceQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkItemFuturepriceQueryAPIResponse.Put(v)
 }

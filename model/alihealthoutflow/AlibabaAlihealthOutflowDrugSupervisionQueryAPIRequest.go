@@ -2,6 +2,7 @@ package alihealthoutflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest struct {
 // NewAlibabaAlihealthOutflowDrugSupervisionQueryRequest 初始化AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest对象
 func NewAlibabaAlihealthOutflowDrugSupervisionQueryRequest() *AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest {
 	return &AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest) Reset() {
+	r._request1 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest) SetRequest1(_req
 // GetRequest1 Request1 Getter
 func (r AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest) GetRequest1() *OuterDrugVo {
 	return r._request1
+}
+
+var poolAlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthOutflowDrugSupervisionQueryRequest()
+	},
+}
+
+// GetAlibabaAlihealthOutflowDrugSupervisionQueryRequest 从 sync.Pool 获取 AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest
+func GetAlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest() *AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest {
+	return poolAlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest.Get().(*AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest 将 AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest(v *AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest.Put(v)
 }

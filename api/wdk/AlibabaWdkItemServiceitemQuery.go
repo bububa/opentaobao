@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.item.serviceitem.query
 //
 // 查询服务商品
-func AlibabaWdkItemServiceitemQuery(clt *core.SDKClient, req *wdk.AlibabaWdkItemServiceitemQueryAPIRequest, session string) (*wdk.AlibabaWdkItemServiceitemQueryAPIResponse, error) {
-	var resp wdk.AlibabaWdkItemServiceitemQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkItemServiceitemQuery(clt *core.SDKClient, req *wdk.AlibabaWdkItemServiceitemQueryAPIRequest, resp *wdk.AlibabaWdkItemServiceitemQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

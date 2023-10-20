@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFenxiaoDistributorsGetAPIRequest struct {
 // NewTaobaoFenxiaoDistributorsGetRequest 初始化TaobaoFenxiaoDistributorsGetAPIRequest对象
 func NewTaobaoFenxiaoDistributorsGetRequest() *TaobaoFenxiaoDistributorsGetAPIRequest {
 	return &TaobaoFenxiaoDistributorsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoDistributorsGetAPIRequest) Reset() {
+	r._nicks = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFenxiaoDistributorsGetAPIRequest) SetNicks(_nicks string) error {
 // GetNicks Nicks Getter
 func (r TaobaoFenxiaoDistributorsGetAPIRequest) GetNicks() string {
 	return r._nicks
+}
+
+var poolTaobaoFenxiaoDistributorsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoDistributorsGetRequest()
+	},
+}
+
+// GetTaobaoFenxiaoDistributorsGetRequest 从 sync.Pool 获取 TaobaoFenxiaoDistributorsGetAPIRequest
+func GetTaobaoFenxiaoDistributorsGetAPIRequest() *TaobaoFenxiaoDistributorsGetAPIRequest {
+	return poolTaobaoFenxiaoDistributorsGetAPIRequest.Get().(*TaobaoFenxiaoDistributorsGetAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoDistributorsGetAPIRequest 将 TaobaoFenxiaoDistributorsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoDistributorsGetAPIRequest(v *TaobaoFenxiaoDistributorsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoDistributorsGetAPIRequest.Put(v)
 }

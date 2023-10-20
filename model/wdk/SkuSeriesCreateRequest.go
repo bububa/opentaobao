@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SkuSeriesCreateRequest 结构体
 type SkuSeriesCreateRequest struct {
 	// 系列品描述
@@ -10,4 +14,24 @@ type SkuSeriesCreateRequest struct {
 	IndustryType string `json:"industry_type,omitempty" xml:"industry_type,omitempty"`
 	// 类目id
 	CategoryId int64 `json:"category_id,omitempty" xml:"category_id,omitempty"`
+}
+
+var poolSkuSeriesCreateRequest = sync.Pool{
+	New: func() any {
+		return new(SkuSeriesCreateRequest)
+	},
+}
+
+// GetSkuSeriesCreateRequest() 从对象池中获取SkuSeriesCreateRequest
+func GetSkuSeriesCreateRequest() *SkuSeriesCreateRequest {
+	return poolSkuSeriesCreateRequest.Get().(*SkuSeriesCreateRequest)
+}
+
+// ReleaseSkuSeriesCreateRequest 释放SkuSeriesCreateRequest
+func ReleaseSkuSeriesCreateRequest(v *SkuSeriesCreateRequest) {
+	v.SeriesDesc = ""
+	v.SeriesName = ""
+	v.IndustryType = ""
+	v.CategoryId = 0
+	poolSkuSeriesCreateRequest.Put(v)
 }

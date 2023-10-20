@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.store.check
 //
 // 门店对账查询工具
-func AlibabaAlihouseStoreCheck(clt *core.SDKClient, req *alihouse.AlibabaAlihouseStoreCheckAPIRequest, session string) (*alihouse.AlibabaAlihouseStoreCheckAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseStoreCheckAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseStoreCheck(clt *core.SDKClient, req *alihouse.AlibabaAlihouseStoreCheckAPIRequest, resp *alihouse.AlibabaAlihouseStoreCheckAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

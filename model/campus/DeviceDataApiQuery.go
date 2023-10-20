@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // DeviceDataApiQuery 结构体
 type DeviceDataApiQuery struct {
 	// 启始时间(防止接口超时,建议不要传入时间跨度过大,如查询一个月内的数据)
@@ -14,4 +18,26 @@ type DeviceDataApiQuery struct {
 	Limit int64 `json:"limit,omitempty" xml:"limit,omitempty"`
 	// 当前页
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
+}
+
+var poolDeviceDataApiQuery = sync.Pool{
+	New: func() any {
+		return new(DeviceDataApiQuery)
+	},
+}
+
+// GetDeviceDataApiQuery() 从对象池中获取DeviceDataApiQuery
+func GetDeviceDataApiQuery() *DeviceDataApiQuery {
+	return poolDeviceDataApiQuery.Get().(*DeviceDataApiQuery)
+}
+
+// ReleaseDeviceDataApiQuery 释放DeviceDataApiQuery
+func ReleaseDeviceDataApiQuery(v *DeviceDataApiQuery) {
+	v.StartDate = ""
+	v.PropertyCode = ""
+	v.EndDate = ""
+	v.Uuid = ""
+	v.Limit = 0
+	v.CurrentPage = 0
+	poolDeviceDataApiQuery.Put(v)
 }

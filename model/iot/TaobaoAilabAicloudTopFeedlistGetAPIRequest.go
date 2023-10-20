@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoAilabAicloudTopFeedlistGetAPIRequest struct {
 // NewTaobaoAilabAicloudTopFeedlistGetRequest 初始化TaobaoAilabAicloudTopFeedlistGetAPIRequest对象
 func NewTaobaoAilabAicloudTopFeedlistGetRequest() *TaobaoAilabAicloudTopFeedlistGetAPIRequest {
 	return &TaobaoAilabAicloudTopFeedlistGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopFeedlistGetAPIRequest) Reset() {
+	r._param1 = ""
+	r._param2 = ""
+	r._param3 = ""
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoAilabAicloudTopFeedlistGetAPIRequest) SetParam0(_param0 *OpenBase
 // GetParam0 Param0 Getter
 func (r TaobaoAilabAicloudTopFeedlistGetAPIRequest) GetParam0() *OpenBaseInfo {
 	return r._param0
+}
+
+var poolTaobaoAilabAicloudTopFeedlistGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopFeedlistGetRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopFeedlistGetRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopFeedlistGetAPIRequest
+func GetTaobaoAilabAicloudTopFeedlistGetAPIRequest() *TaobaoAilabAicloudTopFeedlistGetAPIRequest {
+	return poolTaobaoAilabAicloudTopFeedlistGetAPIRequest.Get().(*TaobaoAilabAicloudTopFeedlistGetAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopFeedlistGetAPIRequest 将 TaobaoAilabAicloudTopFeedlistGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopFeedlistGetAPIRequest(v *TaobaoAilabAicloudTopFeedlistGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopFeedlistGetAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package traveltrade
 
+import (
+	"sync"
+)
+
 // PromotionDetail 结构体
 type PromotionDetail struct {
 	// 优惠金额（免运费、限时打折时为空）,单位：分
@@ -12,4 +16,25 @@ type PromotionDetail struct {
 	PromotionName string `json:"promotion_name,omitempty" xml:"promotion_name,omitempty"`
 	// 交易的主订单或子订单号
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolPromotionDetail = sync.Pool{
+	New: func() any {
+		return new(PromotionDetail)
+	},
+}
+
+// GetPromotionDetail() 从对象池中获取PromotionDetail
+func GetPromotionDetail() *PromotionDetail {
+	return poolPromotionDetail.Get().(*PromotionDetail)
+}
+
+// ReleasePromotionDetail 释放PromotionDetail
+func ReleasePromotionDetail(v *PromotionDetail) {
+	v.DiscountFee = ""
+	v.PromotionDesc = ""
+	v.PromotionId = ""
+	v.PromotionName = ""
+	v.Id = 0
+	poolPromotionDetail.Put(v)
 }

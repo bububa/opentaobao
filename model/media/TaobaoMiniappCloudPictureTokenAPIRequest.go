@@ -2,6 +2,7 @@ package media
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -28,8 +29,14 @@ type TaobaoMiniappCloudPictureTokenAPIRequest struct {
 // NewTaobaoMiniappCloudPictureTokenRequest 初始化TaobaoMiniappCloudPictureTokenAPIRequest对象
 func NewTaobaoMiniappCloudPictureTokenRequest() *TaobaoMiniappCloudPictureTokenAPIRequest {
 	return &TaobaoMiniappCloudPictureTokenAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappCloudPictureTokenAPIRequest) Reset() {
+	r._generateTokenRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -60,4 +67,21 @@ func (r *TaobaoMiniappCloudPictureTokenAPIRequest) SetGenerateTokenRequest(_gene
 // GetGenerateTokenRequest GenerateTokenRequest Getter
 func (r TaobaoMiniappCloudPictureTokenAPIRequest) GetGenerateTokenRequest() *GenerateTokenRequest {
 	return r._generateTokenRequest
+}
+
+var poolTaobaoMiniappCloudPictureTokenAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappCloudPictureTokenRequest()
+	},
+}
+
+// GetTaobaoMiniappCloudPictureTokenRequest 从 sync.Pool 获取 TaobaoMiniappCloudPictureTokenAPIRequest
+func GetTaobaoMiniappCloudPictureTokenAPIRequest() *TaobaoMiniappCloudPictureTokenAPIRequest {
+	return poolTaobaoMiniappCloudPictureTokenAPIRequest.Get().(*TaobaoMiniappCloudPictureTokenAPIRequest)
+}
+
+// ReleaseTaobaoMiniappCloudPictureTokenAPIRequest 将 TaobaoMiniappCloudPictureTokenAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappCloudPictureTokenAPIRequest(v *TaobaoMiniappCloudPictureTokenAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappCloudPictureTokenAPIRequest.Put(v)
 }

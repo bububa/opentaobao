@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaCampusAclGrantpermiitemstouserAPIRequest struct {
 // NewAlibabaCampusAclGrantpermiitemstouserRequest 初始化AlibabaCampusAclGrantpermiitemstouserAPIRequest对象
 func NewAlibabaCampusAclGrantpermiitemstouserRequest() *AlibabaCampusAclGrantpermiitemstouserAPIRequest {
 	return &AlibabaCampusAclGrantpermiitemstouserAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusAclGrantpermiitemstouserAPIRequest) Reset() {
+	r._priv = r._priv[:0]
+	r._systemId = ""
+	r._userId = ""
+	r._empId = ""
+	r._companyId = 0
+	r._campusId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaCampusAclGrantpermiitemstouserAPIRequest) SetCampusId(_campusId 
 // GetCampusId CampusId Getter
 func (r AlibabaCampusAclGrantpermiitemstouserAPIRequest) GetCampusId() int64 {
 	return r._campusId
+}
+
+var poolAlibabaCampusAclGrantpermiitemstouserAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusAclGrantpermiitemstouserRequest()
+	},
+}
+
+// GetAlibabaCampusAclGrantpermiitemstouserRequest 从 sync.Pool 获取 AlibabaCampusAclGrantpermiitemstouserAPIRequest
+func GetAlibabaCampusAclGrantpermiitemstouserAPIRequest() *AlibabaCampusAclGrantpermiitemstouserAPIRequest {
+	return poolAlibabaCampusAclGrantpermiitemstouserAPIRequest.Get().(*AlibabaCampusAclGrantpermiitemstouserAPIRequest)
+}
+
+// ReleaseAlibabaCampusAclGrantpermiitemstouserAPIRequest 将 AlibabaCampusAclGrantpermiitemstouserAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusAclGrantpermiitemstouserAPIRequest(v *AlibabaCampusAclGrantpermiitemstouserAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusAclGrantpermiitemstouserAPIRequest.Put(v)
 }

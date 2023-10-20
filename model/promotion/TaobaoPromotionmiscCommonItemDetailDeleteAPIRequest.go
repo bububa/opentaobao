@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest struct {
 // NewTaobaoPromotionmiscCommonItemDetailDeleteRequest 初始化TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest对象
 func NewTaobaoPromotionmiscCommonItemDetailDeleteRequest() *TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest {
 	return &TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) Reset() {
+	r._activityId = 0
+	r._detailId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) SetDetailId(_detai
 // GetDetailId DetailId Getter
 func (r TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) GetDetailId() int64 {
 	return r._detailId
+}
+
+var poolTaobaoPromotionmiscCommonItemDetailDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPromotionmiscCommonItemDetailDeleteRequest()
+	},
+}
+
+// GetTaobaoPromotionmiscCommonItemDetailDeleteRequest 从 sync.Pool 获取 TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest
+func GetTaobaoPromotionmiscCommonItemDetailDeleteAPIRequest() *TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest {
+	return poolTaobaoPromotionmiscCommonItemDetailDeleteAPIRequest.Get().(*TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest)
+}
+
+// ReleaseTaobaoPromotionmiscCommonItemDetailDeleteAPIRequest 将 TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPromotionmiscCommonItemDetailDeleteAPIRequest(v *TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoPromotionmiscCommonItemDetailDeleteAPIRequest.Put(v)
 }

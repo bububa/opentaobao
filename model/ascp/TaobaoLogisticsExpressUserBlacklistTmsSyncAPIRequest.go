@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest struct {
 // NewTaobaoLogisticsExpressUserBlacklistTmsSyncRequest 初始化TaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest对象
 func NewTaobaoLogisticsExpressUserBlacklistTmsSyncRequest() *TaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest {
 	return &TaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest) Reset() {
+	r._userBlacklistRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest) SetUserBlacklistR
 // GetUserBlacklistRequest UserBlacklistRequest Getter
 func (r TaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest) GetUserBlacklistRequest() *UserBlacklistRequest {
 	return r._userBlacklistRequest
+}
+
+var poolTaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsExpressUserBlacklistTmsSyncRequest()
+	},
+}
+
+// GetTaobaoLogisticsExpressUserBlacklistTmsSyncRequest 从 sync.Pool 获取 TaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest
+func GetTaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest() *TaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest {
+	return poolTaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest.Get().(*TaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest 将 TaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest(v *TaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest.Put(v)
 }

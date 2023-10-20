@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SubOrder 结构体
 type SubOrder struct {
 	// 营销优惠明细
@@ -84,4 +88,61 @@ type SubOrder struct {
 	TxdPmtAmt int64 `json:"txd_pmt_amt,omitempty" xml:"txd_pmt_amt,omitempty"`
 	// 拣货金额
 	PickAmt int64 `json:"pick_amt,omitempty" xml:"pick_amt,omitempty"`
+}
+
+var poolSubOrder = sync.Pool{
+	New: func() any {
+		return new(SubOrder)
+	},
+}
+
+// GetSubOrder() 从对象池中获取SubOrder
+func GetSubOrder() *SubOrder {
+	return poolSubOrder.Get().(*SubOrder)
+}
+
+// ReleaseSubOrder 释放SubOrder
+func ReleaseSubOrder(v *SubOrder) {
+	v.DiscountInfos = v.DiscountInfos[:0]
+	v.SubOutOrderId = ""
+	v.SkuCode = ""
+	v.HandlingType = ""
+	v.SubBizOrderId = ""
+	v.PromotionInfo = ""
+	v.StoreId = ""
+	v.SellUnit = ""
+	v.NsQuantity = ""
+	v.PickAmountStock = ""
+	v.BuyAmountStock = ""
+	v.MemberPoint = ""
+	v.OrderType = ""
+	v.OrderStatus = ""
+	v.StatusChangeTime = ""
+	v.StockUnit = ""
+	v.SaleUnit = ""
+	v.TradeSubAttributes = ""
+	v.OutOrderId = ""
+	v.OutSkuCode = ""
+	v.SaleQuantity = 0
+	v.SalePrice = 0
+	v.PayFee = 0
+	v.OriginFee = 0
+	v.DiscountFee = 0
+	v.MerchantDiscountFee = 0
+	v.PlatformDiscountFee = 0
+	v.TotalWeight = 0
+	v.BizOrderId = 0
+	v.PromotionDiscountAmt = 0
+	v.ItemCode = 0
+	v.OriginalAmt = 0
+	v.ParentId = 0
+	v.Price = 0
+	v.Quantity = 0
+	v.TrdType = 0
+	v.MemberDiscountAmt = 0
+	v.ShareDiscountAmt = 0
+	v.TbBizOrderId = 0
+	v.TxdPmtAmt = 0
+	v.PickAmt = 0
+	poolSubOrder.Put(v)
 }

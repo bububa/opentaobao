@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // OfnRecycleOrderPreDeductDetailDto 结构体
 type OfnRecycleOrderPreDeductDetailDto struct {
 	// 数据更新时间
@@ -16,4 +20,27 @@ type OfnRecycleOrderPreDeductDetailDto struct {
 	OfflineSettleFee int64 `json:"offline_settle_fee,omitempty" xml:"offline_settle_fee,omitempty"`
 	// 质检价，单位 分
 	QaAmount int64 `json:"qa_amount,omitempty" xml:"qa_amount,omitempty"`
+}
+
+var poolOfnRecycleOrderPreDeductDetailDto = sync.Pool{
+	New: func() any {
+		return new(OfnRecycleOrderPreDeductDetailDto)
+	},
+}
+
+// GetOfnRecycleOrderPreDeductDetailDto() 从对象池中获取OfnRecycleOrderPreDeductDetailDto
+func GetOfnRecycleOrderPreDeductDetailDto() *OfnRecycleOrderPreDeductDetailDto {
+	return poolOfnRecycleOrderPreDeductDetailDto.Get().(*OfnRecycleOrderPreDeductDetailDto)
+}
+
+// ReleaseOfnRecycleOrderPreDeductDetailDto 释放OfnRecycleOrderPreDeductDetailDto
+func ReleaseOfnRecycleOrderPreDeductDetailDto(v *OfnRecycleOrderPreDeductDetailDto) {
+	v.UpdateTime = ""
+	v.PreDeductTotalFee = 0
+	v.PreDeductUsedFee = 0
+	v.PreDeductRefundFee = 0
+	v.PreDeductFundId = 0
+	v.OfflineSettleFee = 0
+	v.QaAmount = 0
+	poolOfnRecycleOrderPreDeductDetailDto.Put(v)
 }

@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTbkCouponGetAPIResponse struct {
 	TaobaoTbkCouponGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTbkCouponGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkCouponGetAPIResponseModel).Reset()
+}
+
 // TaobaoTbkCouponGetAPIResponseModel is 淘宝客-公用-阿里妈妈推广券详情查询 成功返回结果
 type TaobaoTbkCouponGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_coupon_get_response"`
@@ -22,4 +29,27 @@ type TaobaoTbkCouponGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// data
 	Data *TaobaoTbkCouponGetMapData `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkCouponGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = nil
+}
+
+var poolTaobaoTbkCouponGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkCouponGetAPIResponse)
+	},
+}
+
+// GetTaobaoTbkCouponGetAPIResponse 从 sync.Pool 获取 TaobaoTbkCouponGetAPIResponse
+func GetTaobaoTbkCouponGetAPIResponse() *TaobaoTbkCouponGetAPIResponse {
+	return poolTaobaoTbkCouponGetAPIResponse.Get().(*TaobaoTbkCouponGetAPIResponse)
+}
+
+// ReleaseTaobaoTbkCouponGetAPIResponse 将 TaobaoTbkCouponGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkCouponGetAPIResponse(v *TaobaoTbkCouponGetAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkCouponGetAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // tmall.aliauto.meta.receive
 //
 // 天猫汽车对外提供的汽车资源元数据上传接口
-func TmallAliautoMetaReceive(clt *core.SDKClient, req *tmallcar.TmallAliautoMetaReceiveAPIRequest, session string) (*tmallcar.TmallAliautoMetaReceiveAPIResponse, error) {
-	var resp tmallcar.TmallAliautoMetaReceiveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallAliautoMetaReceive(clt *core.SDKClient, req *tmallcar.TmallAliautoMetaReceiveAPIRequest, resp *tmallcar.TmallAliautoMetaReceiveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

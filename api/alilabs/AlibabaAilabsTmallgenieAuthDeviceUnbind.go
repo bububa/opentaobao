@@ -9,11 +9,6 @@ import (
 // alibaba.ailabs.tmallgenie.auth.device.unbind
 //
 // 通过此接口解绑天猫精灵设备
-func AlibabaAilabsTmallgenieAuthDeviceUnbind(clt *core.SDKClient, req *alilabs.AlibabaAilabsTmallgenieAuthDeviceUnbindAPIRequest, session string) (*alilabs.AlibabaAilabsTmallgenieAuthDeviceUnbindAPIResponse, error) {
-	var resp alilabs.AlibabaAilabsTmallgenieAuthDeviceUnbindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAilabsTmallgenieAuthDeviceUnbind(clt *core.SDKClient, req *alilabs.AlibabaAilabsTmallgenieAuthDeviceUnbindAPIRequest, resp *alilabs.AlibabaAilabsTmallgenieAuthDeviceUnbindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

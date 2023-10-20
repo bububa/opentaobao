@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // TaobaoQimenInventoryreserveCancelResponse 结构体
 type TaobaoQimenInventoryreserveCancelResponse struct {
 	// 奇门仓储字段
@@ -14,4 +18,26 @@ type TaobaoQimenInventoryreserveCancelResponse struct {
 	OrderCode string `json:"orderCode,omitempty" xml:"orderCode,omitempty"`
 	// 奇门仓储字段
 	IsRetry string `json:"isRetry,omitempty" xml:"isRetry,omitempty"`
+}
+
+var poolTaobaoQimenInventoryreserveCancelResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenInventoryreserveCancelResponse)
+	},
+}
+
+// GetTaobaoQimenInventoryreserveCancelResponse() 从对象池中获取TaobaoQimenInventoryreserveCancelResponse
+func GetTaobaoQimenInventoryreserveCancelResponse() *TaobaoQimenInventoryreserveCancelResponse {
+	return poolTaobaoQimenInventoryreserveCancelResponse.Get().(*TaobaoQimenInventoryreserveCancelResponse)
+}
+
+// ReleaseTaobaoQimenInventoryreserveCancelResponse 释放TaobaoQimenInventoryreserveCancelResponse
+func ReleaseTaobaoQimenInventoryreserveCancelResponse(v *TaobaoQimenInventoryreserveCancelResponse) {
+	v.ItemInventories = v.ItemInventories[:0]
+	v.Flag = ""
+	v.Code = ""
+	v.Message = ""
+	v.OrderCode = ""
+	v.IsRetry = ""
+	poolTaobaoQimenInventoryreserveCancelResponse.Put(v)
 }

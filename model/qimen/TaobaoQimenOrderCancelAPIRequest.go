@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenOrderCancelAPIRequest struct {
 // NewTaobaoQimenOrderCancelRequest 初始化TaobaoQimenOrderCancelAPIRequest对象
 func NewTaobaoQimenOrderCancelRequest() *TaobaoQimenOrderCancelAPIRequest {
 	return &TaobaoQimenOrderCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenOrderCancelAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -50,4 +57,21 @@ func (r *TaobaoQimenOrderCancelAPIRequest) SetRequest(_request *OrderCancelReque
 // GetRequest Request Getter
 func (r TaobaoQimenOrderCancelAPIRequest) GetRequest() *OrderCancelRequest {
 	return r._request
+}
+
+var poolTaobaoQimenOrderCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenOrderCancelRequest()
+	},
+}
+
+// GetTaobaoQimenOrderCancelRequest 从 sync.Pool 获取 TaobaoQimenOrderCancelAPIRequest
+func GetTaobaoQimenOrderCancelAPIRequest() *TaobaoQimenOrderCancelAPIRequest {
+	return poolTaobaoQimenOrderCancelAPIRequest.Get().(*TaobaoQimenOrderCancelAPIRequest)
+}
+
+// ReleaseTaobaoQimenOrderCancelAPIRequest 将 TaobaoQimenOrderCancelAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenOrderCancelAPIRequest(v *TaobaoQimenOrderCancelAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenOrderCancelAPIRequest.Put(v)
 }

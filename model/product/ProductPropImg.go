@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // ProductPropImg 结构体
 type ProductPropImg struct {
 	// 属性串(pid:vid),目前只有颜色属性.如:颜色:红色表示为　1627207:28326
@@ -16,4 +20,27 @@ type ProductPropImg struct {
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// 图片序号。产品里的图片展示顺序，数据越小越靠前。要求是正整数。
 	Position int64 `json:"position,omitempty" xml:"position,omitempty"`
+}
+
+var poolProductPropImg = sync.Pool{
+	New: func() any {
+		return new(ProductPropImg)
+	},
+}
+
+// GetProductPropImg() 从对象池中获取ProductPropImg
+func GetProductPropImg() *ProductPropImg {
+	return poolProductPropImg.Get().(*ProductPropImg)
+}
+
+// ReleaseProductPropImg 释放ProductPropImg
+func ReleaseProductPropImg(v *ProductPropImg) {
+	v.Props = ""
+	v.Url = ""
+	v.Created = ""
+	v.Modified = ""
+	v.Id = 0
+	v.ProductId = 0
+	v.Position = 0
+	poolProductPropImg.Put(v)
 }

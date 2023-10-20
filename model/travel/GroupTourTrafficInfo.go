@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // GroupTourTrafficInfo 结构体
 type GroupTourTrafficInfo struct {
 	// 交通说明，针对交通类型是汽车，轮船和其他
@@ -32,4 +36,35 @@ type GroupTourTrafficInfo struct {
 	StopOver bool `json:"stop_over,omitempty" xml:"stop_over,omitempty"`
 	// 是否是&#34;非红眼航班&#34;。【红眼航班】定义：凌晨一点至六点起飞，且飞行时间少于少于正常睡眠需求（8小时）的航班。
 	IsNonRedEyeFlight bool `json:"is_non_red_eye_flight,omitempty" xml:"is_non_red_eye_flight,omitempty"`
+}
+
+var poolGroupTourTrafficInfo = sync.Pool{
+	New: func() any {
+		return new(GroupTourTrafficInfo)
+	},
+}
+
+// GetGroupTourTrafficInfo() 从对象池中获取GroupTourTrafficInfo
+func GetGroupTourTrafficInfo() *GroupTourTrafficInfo {
+	return poolGroupTourTrafficInfo.Get().(*GroupTourTrafficInfo)
+}
+
+// ReleaseGroupTourTrafficInfo 释放GroupTourTrafficInfo
+func ReleaseGroupTourTrafficInfo(v *GroupTourTrafficInfo) {
+	v.TrafficDesc = ""
+	v.ArrivalTime = ""
+	v.DepartureTime = ""
+	v.Destination = ""
+	v.Departure = ""
+	v.PlaneType = ""
+	v.Vendor = ""
+	v.TrafficNo = ""
+	v.StopCity = ""
+	v.TransportWay = 0
+	v.Group = 0
+	v.NonStop = 0
+	v.Day = 0
+	v.StopOver = false
+	v.IsNonRedEyeFlight = false
+	poolGroupTourTrafficInfo.Put(v)
 }

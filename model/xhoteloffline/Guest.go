@@ -1,5 +1,9 @@
 package xhoteloffline
 
+import (
+	"sync"
+)
+
 // Guest 结构体
 type Guest struct {
 	// 姓名, 如果加密方式设置为1, 传入加密后的姓名
@@ -14,4 +18,26 @@ type Guest struct {
 	IdType int64 `json:"id_type,omitempty" xml:"id_type,omitempty"`
 	// 是否主入住人，该入住人会参与信用住结算扣款，多个入住人时必须有且仅有一个该字段设置为true
 	IsMain bool `json:"is_main,omitempty" xml:"is_main,omitempty"`
+}
+
+var poolGuest = sync.Pool{
+	New: func() any {
+		return new(Guest)
+	},
+}
+
+// GetGuest() 从对象池中获取Guest
+func GetGuest() *Guest {
+	return poolGuest.Get().(*Guest)
+}
+
+// ReleaseGuest 释放Guest
+func ReleaseGuest(v *Guest) {
+	v.Name = ""
+	v.IdNumber = ""
+	v.Phone = ""
+	v.EncryptType = 0
+	v.IdType = 0
+	v.IsMain = false
+	poolGuest.Put(v)
 }

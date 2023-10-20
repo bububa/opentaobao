@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest struct {
 // NewAlitripMerchantGalaxyVoucherGenerateSchemeLinkRequest 初始化AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest对象
 func NewAlitripMerchantGalaxyVoucherGenerateSchemeLinkRequest() *AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest {
 	return &AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r._encryptionMerchantId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest) SetEncryption
 // GetEncryptionMerchantId EncryptionMerchantId Getter
 func (r AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest) GetEncryptionMerchantId() string {
 	return r._encryptionMerchantId
+}
+
+var poolAlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyVoucherGenerateSchemeLinkRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyVoucherGenerateSchemeLinkRequest 从 sync.Pool 获取 AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest
+func GetAlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest() *AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest {
+	return poolAlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest.Get().(*AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest 将 AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest(v *AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest.Put(v)
 }

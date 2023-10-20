@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoOpenlinkSessionGetAPIRequest struct {
 // NewTaobaoOpenlinkSessionGetRequest 初始化TaobaoOpenlinkSessionGetAPIRequest对象
 func NewTaobaoOpenlinkSessionGetRequest() *TaobaoOpenlinkSessionGetAPIRequest {
 	return &TaobaoOpenlinkSessionGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenlinkSessionGetAPIRequest) Reset() {
+	r._code = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoOpenlinkSessionGetAPIRequest) SetCode(_code string) error {
 // GetCode Code Getter
 func (r TaobaoOpenlinkSessionGetAPIRequest) GetCode() string {
 	return r._code
+}
+
+var poolTaobaoOpenlinkSessionGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenlinkSessionGetRequest()
+	},
+}
+
+// GetTaobaoOpenlinkSessionGetRequest 从 sync.Pool 获取 TaobaoOpenlinkSessionGetAPIRequest
+func GetTaobaoOpenlinkSessionGetAPIRequest() *TaobaoOpenlinkSessionGetAPIRequest {
+	return poolTaobaoOpenlinkSessionGetAPIRequest.Get().(*TaobaoOpenlinkSessionGetAPIRequest)
+}
+
+// ReleaseTaobaoOpenlinkSessionGetAPIRequest 将 TaobaoOpenlinkSessionGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenlinkSessionGetAPIRequest(v *TaobaoOpenlinkSessionGetAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenlinkSessionGetAPIRequest.Put(v)
 }

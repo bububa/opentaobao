@@ -2,6 +2,7 @@ package lstvending
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstVendingCargospaceSaveAPIRequest struct {
 // NewAlibabaLstVendingCargospaceSaveRequest 初始化AlibabaLstVendingCargospaceSaveAPIRequest对象
 func NewAlibabaLstVendingCargospaceSaveRequest() *AlibabaLstVendingCargospaceSaveAPIRequest {
 	return &AlibabaLstVendingCargospaceSaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstVendingCargospaceSaveAPIRequest) Reset() {
+	r._cargoSpaceDTOList = r._cargoSpaceDTOList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstVendingCargospaceSaveAPIRequest) SetCargoSpaceDTOList(_cargoS
 // GetCargoSpaceDTOList CargoSpaceDTOList Getter
 func (r AlibabaLstVendingCargospaceSaveAPIRequest) GetCargoSpaceDTOList() []VendingCargoSpaceDto {
 	return r._cargoSpaceDTOList
+}
+
+var poolAlibabaLstVendingCargospaceSaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstVendingCargospaceSaveRequest()
+	},
+}
+
+// GetAlibabaLstVendingCargospaceSaveRequest 从 sync.Pool 获取 AlibabaLstVendingCargospaceSaveAPIRequest
+func GetAlibabaLstVendingCargospaceSaveAPIRequest() *AlibabaLstVendingCargospaceSaveAPIRequest {
+	return poolAlibabaLstVendingCargospaceSaveAPIRequest.Get().(*AlibabaLstVendingCargospaceSaveAPIRequest)
+}
+
+// ReleaseAlibabaLstVendingCargospaceSaveAPIRequest 将 AlibabaLstVendingCargospaceSaveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstVendingCargospaceSaveAPIRequest(v *AlibabaLstVendingCargospaceSaveAPIRequest) {
+	v.Reset()
+	poolAlibabaLstVendingCargospaceSaveAPIRequest.Put(v)
 }

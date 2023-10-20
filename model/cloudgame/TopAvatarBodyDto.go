@@ -1,5 +1,9 @@
 package cloudgame
 
+import (
+	"sync"
+)
+
 // TopAvatarBodyDto 结构体
 type TopAvatarBodyDto struct {
 	// 头像icons
@@ -16,4 +20,27 @@ type TopAvatarBodyDto struct {
 	ExtInfo string `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
 	// 形象性别 1-男, 2-女
 	Gender int64 `json:"gender,omitempty" xml:"gender,omitempty"`
+}
+
+var poolTopAvatarBodyDto = sync.Pool{
+	New: func() any {
+		return new(TopAvatarBodyDto)
+	},
+}
+
+// GetTopAvatarBodyDto() 从对象池中获取TopAvatarBodyDto
+func GetTopAvatarBodyDto() *TopAvatarBodyDto {
+	return poolTopAvatarBodyDto.Get().(*TopAvatarBodyDto)
+}
+
+// ReleaseTopAvatarBodyDto 释放TopAvatarBodyDto
+func ReleaseTopAvatarBodyDto(v *TopAvatarBodyDto) {
+	v.AvatarIcons = v.AvatarIcons[:0]
+	v.TraceId = ""
+	v.FaceDataJson = ""
+	v.RequestId = ""
+	v.MixUserId = ""
+	v.ExtInfo = ""
+	v.Gender = 0
+	poolTopAvatarBodyDto.Put(v)
 }

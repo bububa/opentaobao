@@ -2,6 +2,7 @@ package tbuser
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoUserOpenuidGetbynickAPIRequest struct {
 // NewTaobaoUserOpenuidGetbynickRequest 初始化TaobaoUserOpenuidGetbynickAPIRequest对象
 func NewTaobaoUserOpenuidGetbynickRequest() *TaobaoUserOpenuidGetbynickAPIRequest {
 	return &TaobaoUserOpenuidGetbynickAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUserOpenuidGetbynickAPIRequest) Reset() {
+	r._buyerNicks = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoUserOpenuidGetbynickAPIRequest) SetBuyerNicks(_buyerNicks string)
 // GetBuyerNicks BuyerNicks Getter
 func (r TaobaoUserOpenuidGetbynickAPIRequest) GetBuyerNicks() string {
 	return r._buyerNicks
+}
+
+var poolTaobaoUserOpenuidGetbynickAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUserOpenuidGetbynickRequest()
+	},
+}
+
+// GetTaobaoUserOpenuidGetbynickRequest 从 sync.Pool 获取 TaobaoUserOpenuidGetbynickAPIRequest
+func GetTaobaoUserOpenuidGetbynickAPIRequest() *TaobaoUserOpenuidGetbynickAPIRequest {
+	return poolTaobaoUserOpenuidGetbynickAPIRequest.Get().(*TaobaoUserOpenuidGetbynickAPIRequest)
+}
+
+// ReleaseTaobaoUserOpenuidGetbynickAPIRequest 将 TaobaoUserOpenuidGetbynickAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUserOpenuidGetbynickAPIRequest(v *TaobaoUserOpenuidGetbynickAPIRequest) {
+	v.Reset()
+	poolTaobaoUserOpenuidGetbynickAPIRequest.Put(v)
 }

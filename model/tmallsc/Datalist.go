@@ -1,5 +1,9 @@
 package tmallsc
 
+import (
+	"sync"
+)
+
 // Datalist 结构体
 type Datalist struct {
 	// 入款方支付宝账号
@@ -54,4 +58,46 @@ type Datalist struct {
 	ServiceOrderId int64 `json:"service_order_id,omitempty" xml:"service_order_id,omitempty"`
 	// 门店Id
 	ServiceStoreId int64 `json:"service_store_id,omitempty" xml:"service_store_id,omitempty"`
+}
+
+var poolDatalist = sync.Pool{
+	New: func() any {
+		return new(Datalist)
+	},
+}
+
+// GetDatalist() 从对象池中获取Datalist
+func GetDatalist() *Datalist {
+	return poolDatalist.Get().(*Datalist)
+}
+
+// ReleaseDatalist 释放Datalist
+func ReleaseDatalist(v *Datalist) {
+	v.InUserAlipayAccountId = ""
+	v.Currency = ""
+	v.Id = ""
+	v.OutUserNick = ""
+	v.Action = ""
+	v.OutUserAlipayAccountId = ""
+	v.InUserNick = ""
+	v.SellerNick = ""
+	v.OutUserRole = ""
+	v.Status = ""
+	v.ServiceStoreCode = ""
+	v.AlipayOrderId = ""
+	v.PayTime = ""
+	v.InUserRole = ""
+	v.CreateTime = ""
+	v.ServiceStoreName = ""
+	v.Attributes = ""
+	v.Comment = ""
+	v.WorkcardId = 0
+	v.WorkcardSequence = 0
+	v.TransferAmount = 0
+	v.ServiceTradeOrderId = 0
+	v.MasterTradeOrderId = 0
+	v.ParentTradeOrderId = 0
+	v.ServiceOrderId = 0
+	v.ServiceStoreId = 0
+	poolDatalist.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLsyCrmCustomerAddNewAPIRequest struct {
 // NewAlibabaLsyCrmCustomerAddNewRequest 初始化AlibabaLsyCrmCustomerAddNewAPIRequest对象
 func NewAlibabaLsyCrmCustomerAddNewRequest() *AlibabaLsyCrmCustomerAddNewAPIRequest {
 	return &AlibabaLsyCrmCustomerAddNewAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLsyCrmCustomerAddNewAPIRequest) Reset() {
+	r._reqDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLsyCrmCustomerAddNewAPIRequest) SetReqDTO(_reqDTO *NrtCrmCreateC
 // GetReqDTO ReqDTO Getter
 func (r AlibabaLsyCrmCustomerAddNewAPIRequest) GetReqDTO() *NrtCrmCreateCustomerReq {
 	return r._reqDTO
+}
+
+var poolAlibabaLsyCrmCustomerAddNewAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLsyCrmCustomerAddNewRequest()
+	},
+}
+
+// GetAlibabaLsyCrmCustomerAddNewRequest 从 sync.Pool 获取 AlibabaLsyCrmCustomerAddNewAPIRequest
+func GetAlibabaLsyCrmCustomerAddNewAPIRequest() *AlibabaLsyCrmCustomerAddNewAPIRequest {
+	return poolAlibabaLsyCrmCustomerAddNewAPIRequest.Get().(*AlibabaLsyCrmCustomerAddNewAPIRequest)
+}
+
+// ReleaseAlibabaLsyCrmCustomerAddNewAPIRequest 将 AlibabaLsyCrmCustomerAddNewAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLsyCrmCustomerAddNewAPIRequest(v *AlibabaLsyCrmCustomerAddNewAPIRequest) {
+	v.Reset()
+	poolAlibabaLsyCrmCustomerAddNewAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.charity.charitytime.user.cancelauth
 //
 // 取消用户授权
-func AlibabaCharityCharitytimeUserCancelauth(clt *core.SDKClient, req *charity.AlibabaCharityCharitytimeUserCancelauthAPIRequest, session string) (*charity.AlibabaCharityCharitytimeUserCancelauthAPIResponse, error) {
-	var resp charity.AlibabaCharityCharitytimeUserCancelauthAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCharityCharitytimeUserCancelauth(clt *core.SDKClient, req *charity.AlibabaCharityCharitytimeUserCancelauthAPIRequest, resp *charity.AlibabaCharityCharitytimeUserCancelauthAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

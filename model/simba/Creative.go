@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // Creative 结构体
 type Creative struct {
 	// 主人昵称
@@ -32,4 +36,35 @@ type Creative struct {
 	ImgType int64 `json:"img_type,omitempty" xml:"img_type,omitempty"`
 	// 视频id
 	VideoId int64 `json:"video_id,omitempty" xml:"video_id,omitempty"`
+}
+
+var poolCreative = sync.Pool{
+	New: func() any {
+		return new(Creative)
+	},
+}
+
+// GetCreative() 从对象池中获取Creative
+func GetCreative() *Creative {
+	return poolCreative.Get().(*Creative)
+}
+
+// ReleaseCreative 释放Creative
+func ReleaseCreative(v *Creative) {
+	v.Nick = ""
+	v.Title = ""
+	v.ImgUrl = ""
+	v.AuditStatus = ""
+	v.AuditDesc = ""
+	v.CreateTime = ""
+	v.ModifiedTime = ""
+	v.SecondImgOriginUrl = ""
+	v.AdExaminationCode = ""
+	v.VideoUrl = ""
+	v.CampaignId = 0
+	v.AdgroupId = 0
+	v.CreativeId = 0
+	v.ImgType = 0
+	v.VideoId = 0
+	poolCreative.Put(v)
 }

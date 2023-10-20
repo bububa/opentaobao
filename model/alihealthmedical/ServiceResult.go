@@ -1,5 +1,9 @@
 package alihealthmedical
 
+import (
+	"sync"
+)
+
 // ServiceResult 结构体
 type ServiceResult struct {
 	// errCode
@@ -16,4 +20,27 @@ type ServiceResult struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 消息是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+var poolServiceResult = sync.Pool{
+	New: func() any {
+		return new(ServiceResult)
+	},
+}
+
+// GetServiceResult() 从对象池中获取ServiceResult
+func GetServiceResult() *ServiceResult {
+	return poolServiceResult.Get().(*ServiceResult)
+}
+
+// ReleaseServiceResult 释放ServiceResult
+func ReleaseServiceResult(v *ServiceResult) {
+	v.ErrCode = ""
+	v.ErrMessage = ""
+	v.CodeError = ""
+	v.MessageError = ""
+	v.Data = nil
+	v.Success = false
+	v.IsSuccess = false
+	poolServiceResult.Put(v)
 }

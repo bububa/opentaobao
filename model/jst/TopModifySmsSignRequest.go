@@ -1,5 +1,9 @@
 package jst
 
+import (
+	"sync"
+)
+
 // TopModifySmsSignRequest 结构体
 type TopModifySmsSignRequest struct {
 	// 上传的证明文件
@@ -10,4 +14,24 @@ type TopModifySmsSignRequest struct {
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 0--企事业单位的全程或简称   1--已备案网站  2--已上线APP  3--公众号或小程序 4--电商平台店铺名 5--已注册商标名
 	SignSource int64 `json:"sign_source,omitempty" xml:"sign_source,omitempty"`
+}
+
+var poolTopModifySmsSignRequest = sync.Pool{
+	New: func() any {
+		return new(TopModifySmsSignRequest)
+	},
+}
+
+// GetTopModifySmsSignRequest() 从对象池中获取TopModifySmsSignRequest
+func GetTopModifySmsSignRequest() *TopModifySmsSignRequest {
+	return poolTopModifySmsSignRequest.Get().(*TopModifySmsSignRequest)
+}
+
+// ReleaseTopModifySmsSignRequest 释放TopModifySmsSignRequest
+func ReleaseTopModifySmsSignRequest(v *TopModifySmsSignRequest) {
+	v.SignFileList = v.SignFileList[:0]
+	v.SignName = ""
+	v.Remark = ""
+	v.SignSource = 0
+	poolTopModifySmsSignRequest.Put(v)
 }

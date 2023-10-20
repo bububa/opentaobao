@@ -2,6 +2,7 @@ package cainiaocntec
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoCntecCompassRpaExeResultsaveAPIRequest struct {
 // NewCainiaoCntecCompassRpaExeResultsaveRequest 初始化CainiaoCntecCompassRpaExeResultsaveAPIRequest对象
 func NewCainiaoCntecCompassRpaExeResultsaveRequest() *CainiaoCntecCompassRpaExeResultsaveAPIRequest {
 	return &CainiaoCntecCompassRpaExeResultsaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoCntecCompassRpaExeResultsaveAPIRequest) Reset() {
+	r._rpaExeResultByUuidReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoCntecCompassRpaExeResultsaveAPIRequest) SetRpaExeResultByUuidReq
 // GetRpaExeResultByUuidReq RpaExeResultByUuidReq Getter
 func (r CainiaoCntecCompassRpaExeResultsaveAPIRequest) GetRpaExeResultByUuidReq() *RpaExeResultByUuidReq {
 	return r._rpaExeResultByUuidReq
+}
+
+var poolCainiaoCntecCompassRpaExeResultsaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoCntecCompassRpaExeResultsaveRequest()
+	},
+}
+
+// GetCainiaoCntecCompassRpaExeResultsaveRequest 从 sync.Pool 获取 CainiaoCntecCompassRpaExeResultsaveAPIRequest
+func GetCainiaoCntecCompassRpaExeResultsaveAPIRequest() *CainiaoCntecCompassRpaExeResultsaveAPIRequest {
+	return poolCainiaoCntecCompassRpaExeResultsaveAPIRequest.Get().(*CainiaoCntecCompassRpaExeResultsaveAPIRequest)
+}
+
+// ReleaseCainiaoCntecCompassRpaExeResultsaveAPIRequest 将 CainiaoCntecCompassRpaExeResultsaveAPIRequest 放入 sync.Pool
+func ReleaseCainiaoCntecCompassRpaExeResultsaveAPIRequest(v *CainiaoCntecCompassRpaExeResultsaveAPIRequest) {
+	v.Reset()
+	poolCainiaoCntecCompassRpaExeResultsaveAPIRequest.Put(v)
 }

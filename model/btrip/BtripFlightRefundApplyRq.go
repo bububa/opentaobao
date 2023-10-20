@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripFlightRefundApplyRq 结构体
 type BtripFlightRefundApplyRq struct {
 	// 乘客航段列表
@@ -36,4 +40,37 @@ type BtripFlightRefundApplyRq struct {
 	CorpRefundPrice int64 `json:"corp_refund_price,omitempty" xml:"corp_refund_price,omitempty"`
 	// 个人退款金额
 	PersonalRefundPrice int64 `json:"personal_refund_price,omitempty" xml:"personal_refund_price,omitempty"`
+}
+
+var poolBtripFlightRefundApplyRq = sync.Pool{
+	New: func() any {
+		return new(BtripFlightRefundApplyRq)
+	},
+}
+
+// GetBtripFlightRefundApplyRq() 从对象池中获取BtripFlightRefundApplyRq
+func GetBtripFlightRefundApplyRq() *BtripFlightRefundApplyRq {
+	return poolBtripFlightRefundApplyRq.Get().(*BtripFlightRefundApplyRq)
+}
+
+// ReleaseBtripFlightRefundApplyRq 释放BtripFlightRefundApplyRq
+func ReleaseBtripFlightRefundApplyRq(v *BtripFlightRefundApplyRq) {
+	v.PassengerSegmentInfoList = v.PassengerSegmentInfoList[:0]
+	v.RefundVoucherInfo = v.RefundVoucherInfo[:0]
+	v.TicketNos = v.TicketNos[:0]
+	v.DisOrderId = ""
+	v.ReasonDetail = ""
+	v.SubChannel = ""
+	v.DisSubOrderId = ""
+	v.Extra = ""
+	v.ItemUnitIds = ""
+	v.SessionId = ""
+	v.DisplayRefundMoney = ""
+	v.IsVoluntary = 0
+	v.ReasonType = 0
+	v.ReasoType = 0
+	v.TotalRefundPrice = 0
+	v.CorpRefundPrice = 0
+	v.PersonalRefundPrice = 0
+	poolBtripFlightRefundApplyRq.Put(v)
 }

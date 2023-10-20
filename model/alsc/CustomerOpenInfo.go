@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // CustomerOpenInfo 结构体
 type CustomerOpenInfo struct {
 	// 标签列表
@@ -70,4 +74,54 @@ type CustomerOpenInfo struct {
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
 	// 是否设置了支付密码
 	HasPassword bool `json:"has_password,omitempty" xml:"has_password,omitempty"`
+}
+
+var poolCustomerOpenInfo = sync.Pool{
+	New: func() any {
+		return new(CustomerOpenInfo)
+	},
+}
+
+// GetCustomerOpenInfo() 从对象池中获取CustomerOpenInfo
+func GetCustomerOpenInfo() *CustomerOpenInfo {
+	return poolCustomerOpenInfo.Get().(*CustomerOpenInfo)
+}
+
+// ReleaseCustomerOpenInfo 释放CustomerOpenInfo
+func ReleaseCustomerOpenInfo(v *CustomerOpenInfo) {
+	v.Tags = v.Tags[:0]
+	v.CustomerOutInfoList = v.CustomerOutInfoList[:0]
+	v.Address = ""
+	v.Birthday = ""
+	v.CreateBy = ""
+	v.CustomerId = ""
+	v.CustomerStoreId = ""
+	v.CustomerTime = ""
+	v.Email = ""
+	v.FollowWxTime = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Invoice = ""
+	v.LastConsumeTime = ""
+	v.LevelDesc = ""
+	v.LevelId = ""
+	v.MemberStoreId = ""
+	v.MemberTime = ""
+	v.Mobile = ""
+	v.Name = ""
+	v.Phone = ""
+	v.Remark = ""
+	v.UpdateBy = ""
+	v.AvgConsume = 0
+	v.Channel = 0
+	v.ConsumeAmount = 0
+	v.ConsumeNum = 0
+	v.CustomerType = 0
+	v.Gender = 0
+	v.LevelNo = 0
+	v.State = 0
+	v.Growth = 0
+	v.Deleted = false
+	v.HasPassword = false
+	poolCustomerOpenInfo.Put(v)
 }

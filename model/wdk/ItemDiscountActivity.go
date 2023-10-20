@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ItemDiscountActivity 结构体
 type ItemDiscountActivity struct {
 	// 参加活动的渠道店ids
@@ -34,4 +38,36 @@ type ItemDiscountActivity struct {
 	PriorityValue int64 `json:"priority_value,omitempty" xml:"priority_value,omitempty"`
 	// coverBefore
 	CoverBefore bool `json:"cover_before,omitempty" xml:"cover_before,omitempty"`
+}
+
+var poolItemDiscountActivity = sync.Pool{
+	New: func() any {
+		return new(ItemDiscountActivity)
+	},
+}
+
+// GetItemDiscountActivity() 从对象池中获取ItemDiscountActivity
+func GetItemDiscountActivity() *ItemDiscountActivity {
+	return poolItemDiscountActivity.Get().(*ItemDiscountActivity)
+}
+
+// ReleaseItemDiscountActivity 释放ItemDiscountActivity
+func ReleaseItemDiscountActivity(v *ItemDiscountActivity) {
+	v.ShopIds = v.ShopIds[:0]
+	v.Terminals = v.Terminals[:0]
+	v.DiscountType = ""
+	v.ActivityName = ""
+	v.OutActId = ""
+	v.Description = ""
+	v.MerchantCrowdCode = ""
+	v.TxdCrowdCode = ""
+	v.ActivityChannel = ""
+	v.EndTime = 0
+	v.StartTime = 0
+	v.ActivityId = 0
+	v.MemberLimit = 0
+	v.PeriodConfig = nil
+	v.PriorityValue = 0
+	v.CoverBefore = false
+	poolItemDiscountActivity.Put(v)
 }

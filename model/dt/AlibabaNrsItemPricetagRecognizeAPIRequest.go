@@ -2,6 +2,7 @@ package dt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaNrsItemPricetagRecognizeAPIRequest struct {
 // NewAlibabaNrsItemPricetagRecognizeRequest 初始化AlibabaNrsItemPricetagRecognizeAPIRequest对象
 func NewAlibabaNrsItemPricetagRecognizeRequest() *AlibabaNrsItemPricetagRecognizeAPIRequest {
 	return &AlibabaNrsItemPricetagRecognizeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaNrsItemPricetagRecognizeAPIRequest) Reset() {
+	r._priceTagParam = nil
+	r._imgByteArr = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaNrsItemPricetagRecognizeAPIRequest) SetImgByteArr(_imgByteArr *m
 // GetImgByteArr ImgByteArr Getter
 func (r AlibabaNrsItemPricetagRecognizeAPIRequest) GetImgByteArr() *model.File {
 	return r._imgByteArr
+}
+
+var poolAlibabaNrsItemPricetagRecognizeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaNrsItemPricetagRecognizeRequest()
+	},
+}
+
+// GetAlibabaNrsItemPricetagRecognizeRequest 从 sync.Pool 获取 AlibabaNrsItemPricetagRecognizeAPIRequest
+func GetAlibabaNrsItemPricetagRecognizeAPIRequest() *AlibabaNrsItemPricetagRecognizeAPIRequest {
+	return poolAlibabaNrsItemPricetagRecognizeAPIRequest.Get().(*AlibabaNrsItemPricetagRecognizeAPIRequest)
+}
+
+// ReleaseAlibabaNrsItemPricetagRecognizeAPIRequest 将 AlibabaNrsItemPricetagRecognizeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaNrsItemPricetagRecognizeAPIRequest(v *AlibabaNrsItemPricetagRecognizeAPIRequest) {
+	v.Reset()
+	poolAlibabaNrsItemPricetagRecognizeAPIRequest.Put(v)
 }

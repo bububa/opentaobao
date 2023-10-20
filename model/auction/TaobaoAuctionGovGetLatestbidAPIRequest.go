@@ -2,6 +2,7 @@ package auction
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoAuctionGovGetLatestbidAPIRequest struct {
 // NewTaobaoAuctionGovGetLatestbidRequest 初始化TaobaoAuctionGovGetLatestbidAPIRequest对象
 func NewTaobaoAuctionGovGetLatestbidRequest() *TaobaoAuctionGovGetLatestbidAPIRequest {
 	return &TaobaoAuctionGovGetLatestbidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAuctionGovGetLatestbidAPIRequest) Reset() {
+	r._courtName = ""
+	r._maxCount = 0
+	r._containChild = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoAuctionGovGetLatestbidAPIRequest) SetContainChild(_containChild b
 // GetContainChild ContainChild Getter
 func (r TaobaoAuctionGovGetLatestbidAPIRequest) GetContainChild() bool {
 	return r._containChild
+}
+
+var poolTaobaoAuctionGovGetLatestbidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAuctionGovGetLatestbidRequest()
+	},
+}
+
+// GetTaobaoAuctionGovGetLatestbidRequest 从 sync.Pool 获取 TaobaoAuctionGovGetLatestbidAPIRequest
+func GetTaobaoAuctionGovGetLatestbidAPIRequest() *TaobaoAuctionGovGetLatestbidAPIRequest {
+	return poolTaobaoAuctionGovGetLatestbidAPIRequest.Get().(*TaobaoAuctionGovGetLatestbidAPIRequest)
+}
+
+// ReleaseTaobaoAuctionGovGetLatestbidAPIRequest 将 TaobaoAuctionGovGetLatestbidAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAuctionGovGetLatestbidAPIRequest(v *TaobaoAuctionGovGetLatestbidAPIRequest) {
+	v.Reset()
+	poolTaobaoAuctionGovGetLatestbidAPIRequest.Put(v)
 }

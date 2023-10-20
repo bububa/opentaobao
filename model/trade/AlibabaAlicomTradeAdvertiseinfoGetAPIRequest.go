@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlicomTradeAdvertiseinfoGetAPIRequest struct {
 // NewAlibabaAlicomTradeAdvertiseinfoGetRequest 初始化AlibabaAlicomTradeAdvertiseinfoGetAPIRequest对象
 func NewAlibabaAlicomTradeAdvertiseinfoGetRequest() *AlibabaAlicomTradeAdvertiseinfoGetAPIRequest {
 	return &AlibabaAlicomTradeAdvertiseinfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlicomTradeAdvertiseinfoGetAPIRequest) Reset() {
+	r._advertiseInfoQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlicomTradeAdvertiseinfoGetAPIRequest) SetAdvertiseInfoQuery(_ad
 // GetAdvertiseInfoQuery AdvertiseInfoQuery Getter
 func (r AlibabaAlicomTradeAdvertiseinfoGetAPIRequest) GetAdvertiseInfoQuery() *AdvertiseInfoQuery {
 	return r._advertiseInfoQuery
+}
+
+var poolAlibabaAlicomTradeAdvertiseinfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlicomTradeAdvertiseinfoGetRequest()
+	},
+}
+
+// GetAlibabaAlicomTradeAdvertiseinfoGetRequest 从 sync.Pool 获取 AlibabaAlicomTradeAdvertiseinfoGetAPIRequest
+func GetAlibabaAlicomTradeAdvertiseinfoGetAPIRequest() *AlibabaAlicomTradeAdvertiseinfoGetAPIRequest {
+	return poolAlibabaAlicomTradeAdvertiseinfoGetAPIRequest.Get().(*AlibabaAlicomTradeAdvertiseinfoGetAPIRequest)
+}
+
+// ReleaseAlibabaAlicomTradeAdvertiseinfoGetAPIRequest 将 AlibabaAlicomTradeAdvertiseinfoGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlicomTradeAdvertiseinfoGetAPIRequest(v *AlibabaAlicomTradeAdvertiseinfoGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAlicomTradeAdvertiseinfoGetAPIRequest.Put(v)
 }

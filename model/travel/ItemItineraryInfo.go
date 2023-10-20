@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // ItemItineraryInfo 结构体
 type ItemItineraryInfo struct {
 	// 小于等于30字
@@ -8,4 +12,23 @@ type ItemItineraryInfo struct {
 	Content string `json:"content,omitempty" xml:"content,omitempty"`
 	// 行程编号，第一天行程为1，第二天行程为2
 	ItineraryNo int64 `json:"itinerary_no,omitempty" xml:"itinerary_no,omitempty"`
+}
+
+var poolItemItineraryInfo = sync.Pool{
+	New: func() any {
+		return new(ItemItineraryInfo)
+	},
+}
+
+// GetItemItineraryInfo() 从对象池中获取ItemItineraryInfo
+func GetItemItineraryInfo() *ItemItineraryInfo {
+	return poolItemItineraryInfo.Get().(*ItemItineraryInfo)
+}
+
+// ReleaseItemItineraryInfo 释放ItemItineraryInfo
+func ReleaseItemItineraryInfo(v *ItemItineraryInfo) {
+	v.Title = ""
+	v.Content = ""
+	v.ItineraryNo = 0
+	poolItemItineraryInfo.Put(v)
 }

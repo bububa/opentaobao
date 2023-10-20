@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // ServiceTimeDataDo 结构体
 type ServiceTimeDataDo struct {
 	// supplier
@@ -40,4 +44,39 @@ type ServiceTimeDataDo struct {
 	DisplayItemInNonworkingTime int64 `json:"display_item_in_nonworking_time,omitempty" xml:"display_item_in_nonworking_time,omitempty"`
 	// id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolServiceTimeDataDo = sync.Pool{
+	New: func() any {
+		return new(ServiceTimeDataDo)
+	},
+}
+
+// GetServiceTimeDataDo() 从对象池中获取ServiceTimeDataDo
+func GetServiceTimeDataDo() *ServiceTimeDataDo {
+	return poolServiceTimeDataDo.Get().(*ServiceTimeDataDo)
+}
+
+// ReleaseServiceTimeDataDo 释放ServiceTimeDataDo
+func ReleaseServiceTimeDataDo(v *ServiceTimeDataDo) {
+	v.Supplier = ""
+	v.SellerNick = ""
+	v.BusinessType = ""
+	v.TimeZoneName = ""
+	v.FridayConfirmLocalTime = ""
+	v.MondayConfirmLocalTime = ""
+	v.TuesdayConfirmLocalTime = ""
+	v.WednesdayConfirmLocalTime = ""
+	v.SaturdayConfirmLocalTime = ""
+	v.Operator = ""
+	v.SundayConfirmLocalTime = ""
+	v.ThursdayConfirmLocalTime = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.SellerId = 0
+	v.BusinessId = 0
+	v.OrderConfirmType = 0
+	v.DisplayItemInNonworkingTime = 0
+	v.Id = 0
+	poolServiceTimeDataDo.Put(v)
 }

@@ -1,5 +1,9 @@
 package nrpos
 
+import (
+	"sync"
+)
+
 // MerchandiseInfoDto 结构体
 type MerchandiseInfoDto struct {
 	// 门店号
@@ -54,4 +58,46 @@ type MerchandiseInfoDto struct {
 	A0502 string `json:"a0502,omitempty" xml:"a0502,omitempty"`
 	// 商品编码
 	A0501 string `json:"a0501,omitempty" xml:"a0501,omitempty"`
+}
+
+var poolMerchandiseInfoDto = sync.Pool{
+	New: func() any {
+		return new(MerchandiseInfoDto)
+	},
+}
+
+// GetMerchandiseInfoDto() 从对象池中获取MerchandiseInfoDto
+func GetMerchandiseInfoDto() *MerchandiseInfoDto {
+	return poolMerchandiseInfoDto.Get().(*MerchandiseInfoDto)
+}
+
+// ReleaseMerchandiseInfoDto 释放MerchandiseInfoDto
+func ReleaseMerchandiseInfoDto(v *MerchandiseInfoDto) {
+	v.Storeno = ""
+	v.A0551 = ""
+	v.A0550 = ""
+	v.A0545 = ""
+	v.A0544 = ""
+	v.A0543 = ""
+	v.A0542 = ""
+	v.A0541 = ""
+	v.A0540 = ""
+	v.A0531 = ""
+	v.A0530 = ""
+	v.A0526 = ""
+	v.A0525 = ""
+	v.A0524 = ""
+	v.A0523 = ""
+	v.A0522 = ""
+	v.A0521 = ""
+	v.A0520 = ""
+	v.A0517 = ""
+	v.A0516 = ""
+	v.A0508 = ""
+	v.A0506 = ""
+	v.A0504 = ""
+	v.A0503 = ""
+	v.A0502 = ""
+	v.A0501 = ""
+	poolMerchandiseInfoDto.Put(v)
 }

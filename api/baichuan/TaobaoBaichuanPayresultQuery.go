@@ -9,11 +9,6 @@ import (
 // taobao.baichuan.payresult.query
 //
 // 百川支付完成回调
-func TaobaoBaichuanPayresultQuery(clt *core.SDKClient, req *baichuan.TaobaoBaichuanPayresultQueryAPIRequest, session string) (*baichuan.TaobaoBaichuanPayresultQueryAPIResponse, error) {
-	var resp baichuan.TaobaoBaichuanPayresultQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBaichuanPayresultQuery(clt *core.SDKClient, req *baichuan.TaobaoBaichuanPayresultQueryAPIRequest, resp *baichuan.TaobaoBaichuanPayresultQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

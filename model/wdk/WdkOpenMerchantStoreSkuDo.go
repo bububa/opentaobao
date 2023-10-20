@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WdkOpenMerchantStoreSkuDo 结构体
 type WdkOpenMerchantStoreSkuDo struct {
 	// 商家编码
@@ -44,4 +48,41 @@ type WdkOpenMerchantStoreSkuDo struct {
 	TestFlag int64 `json:"test_flag,omitempty" xml:"test_flag,omitempty"`
 	// 是否服务商品
 	ServiceFlag int64 `json:"service_flag,omitempty" xml:"service_flag,omitempty"`
+}
+
+var poolWdkOpenMerchantStoreSkuDo = sync.Pool{
+	New: func() any {
+		return new(WdkOpenMerchantStoreSkuDo)
+	},
+}
+
+// GetWdkOpenMerchantStoreSkuDo() 从对象池中获取WdkOpenMerchantStoreSkuDo
+func GetWdkOpenMerchantStoreSkuDo() *WdkOpenMerchantStoreSkuDo {
+	return poolWdkOpenMerchantStoreSkuDo.Get().(*WdkOpenMerchantStoreSkuDo)
+}
+
+// ReleaseWdkOpenMerchantStoreSkuDo 释放WdkOpenMerchantStoreSkuDo
+func ReleaseWdkOpenMerchantStoreSkuDo(v *WdkOpenMerchantStoreSkuDo) {
+	v.MerchantCode = ""
+	v.StoreId = ""
+	v.SupplierNo = ""
+	v.SkuCode = ""
+	v.SkuName = ""
+	v.ShortTitle = ""
+	v.LifeStatus = ""
+	v.Barcode = ""
+	v.ShopId = ""
+	v.SaleSpec = ""
+	v.BackCatCode = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.SkuPrice = 0
+	v.MemberPrice = 0
+	v.BusinessType = 0
+	v.OnlineSaleFlag = 0
+	v.ChannelCode = 0
+	v.ProcessingTime = 0
+	v.TestFlag = 0
+	v.ServiceFlag = 0
+	poolWdkOpenMerchantStoreSkuDo.Put(v)
 }

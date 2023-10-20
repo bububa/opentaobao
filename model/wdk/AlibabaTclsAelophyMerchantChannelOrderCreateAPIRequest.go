@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest struct {
 // NewAlibabaTclsAelophyMerchantChannelOrderCreateRequest 初始化AlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest对象
 func NewAlibabaTclsAelophyMerchantChannelOrderCreateRequest() *AlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest {
 	return &AlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest) Reset() {
+	r._orderInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest) SetOrderInfo(_o
 // GetOrderInfo OrderInfo Getter
 func (r AlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest) GetOrderInfo() *OrderInfo {
 	return r._orderInfo
+}
+
+var poolAlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsAelophyMerchantChannelOrderCreateRequest()
+	},
+}
+
+// GetAlibabaTclsAelophyMerchantChannelOrderCreateRequest 从 sync.Pool 获取 AlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest
+func GetAlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest() *AlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest {
+	return poolAlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest.Get().(*AlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest)
+}
+
+// ReleaseAlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest 将 AlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest(v *AlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest.Put(v)
 }

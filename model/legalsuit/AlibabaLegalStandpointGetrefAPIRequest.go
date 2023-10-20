@@ -2,6 +2,7 @@ package legalsuit
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaLegalStandpointGetrefAPIRequest struct {
 // NewAlibabaLegalStandpointGetrefRequest 初始化AlibabaLegalStandpointGetrefAPIRequest对象
 func NewAlibabaLegalStandpointGetrefRequest() *AlibabaLegalStandpointGetrefAPIRequest {
 	return &AlibabaLegalStandpointGetrefAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegalStandpointGetrefAPIRequest) Reset() {
+	r._busiId = ""
+	r._inputSystemCode = ""
+	r._pageNum = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaLegalStandpointGetrefAPIRequest) SetPageSize(_pageSize int64) er
 // GetPageSize PageSize Getter
 func (r AlibabaLegalStandpointGetrefAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaLegalStandpointGetrefAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegalStandpointGetrefRequest()
+	},
+}
+
+// GetAlibabaLegalStandpointGetrefRequest 从 sync.Pool 获取 AlibabaLegalStandpointGetrefAPIRequest
+func GetAlibabaLegalStandpointGetrefAPIRequest() *AlibabaLegalStandpointGetrefAPIRequest {
+	return poolAlibabaLegalStandpointGetrefAPIRequest.Get().(*AlibabaLegalStandpointGetrefAPIRequest)
+}
+
+// ReleaseAlibabaLegalStandpointGetrefAPIRequest 将 AlibabaLegalStandpointGetrefAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegalStandpointGetrefAPIRequest(v *AlibabaLegalStandpointGetrefAPIRequest) {
+	v.Reset()
+	poolAlibabaLegalStandpointGetrefAPIRequest.Put(v)
 }

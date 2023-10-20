@@ -1,5 +1,9 @@
 package tmallsc
 
+import (
+	"sync"
+)
+
 // ReserveOpenConditionDto 结构体
 type ReserveOpenConditionDto struct {
 	// 服务code
@@ -16,4 +20,27 @@ type ReserveOpenConditionDto struct {
 	CityId int64 `json:"city_id,omitempty" xml:"city_id,omitempty"`
 	// 身份id
 	ProvinceId int64 `json:"province_id,omitempty" xml:"province_id,omitempty"`
+}
+
+var poolReserveOpenConditionDto = sync.Pool{
+	New: func() any {
+		return new(ReserveOpenConditionDto)
+	},
+}
+
+// GetReserveOpenConditionDto() 从对象池中获取ReserveOpenConditionDto
+func GetReserveOpenConditionDto() *ReserveOpenConditionDto {
+	return poolReserveOpenConditionDto.Get().(*ReserveOpenConditionDto)
+}
+
+// ReleaseReserveOpenConditionDto 释放ReserveOpenConditionDto
+func ReleaseReserveOpenConditionDto(v *ReserveOpenConditionDto) {
+	v.ServiceCode = ""
+	v.ExcludeAreaIds = ""
+	v.AreaIds = ""
+	v.CategoryId = 0
+	v.BrandId = 0
+	v.CityId = 0
+	v.ProvinceId = 0
+	poolReserveOpenConditionDto.Put(v)
 }

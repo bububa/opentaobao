@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // TaobaoQimenTransferorderQueryStruct 结构体
 type TaobaoQimenTransferorderQueryStruct struct {
 	// 调拨单号
@@ -16,4 +20,27 @@ type TaobaoQimenTransferorderQueryStruct struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 调拨单细节
 	TransferOrderDetail *TransferOrderDetail `json:"transferOrderDetail,omitempty" xml:"transferOrderDetail,omitempty"`
+}
+
+var poolTaobaoQimenTransferorderQueryStruct = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenTransferorderQueryStruct)
+	},
+}
+
+// GetTaobaoQimenTransferorderQueryStruct() 从对象池中获取TaobaoQimenTransferorderQueryStruct
+func GetTaobaoQimenTransferorderQueryStruct() *TaobaoQimenTransferorderQueryStruct {
+	return poolTaobaoQimenTransferorderQueryStruct.Get().(*TaobaoQimenTransferorderQueryStruct)
+}
+
+// ReleaseTaobaoQimenTransferorderQueryStruct 释放TaobaoQimenTransferorderQueryStruct
+func ReleaseTaobaoQimenTransferorderQueryStruct(v *TaobaoQimenTransferorderQueryStruct) {
+	v.TransferOrderCode = ""
+	v.OwnerCode = ""
+	v.ErpOrderCode = ""
+	v.Flag = ""
+	v.Code = ""
+	v.Message = ""
+	v.TransferOrderDetail = nil
+	poolTaobaoQimenTransferorderQueryStruct.Put(v)
 }

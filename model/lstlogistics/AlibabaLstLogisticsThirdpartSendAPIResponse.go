@@ -2,6 +2,7 @@ package lstlogistics
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaLstLogisticsThirdpartSendAPIResponse struct {
 	AlibabaLstLogisticsThirdpartSendAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaLstLogisticsThirdpartSendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLstLogisticsThirdpartSendAPIResponseModel).Reset()
+}
+
 // AlibabaLstLogisticsThirdpartSendAPIResponseModel is 供应商-异云-使用第三方物流发货 成功返回结果
 type AlibabaLstLogisticsThirdpartSendAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lst_logistics_thirdpart_send_response"`
@@ -22,4 +29,27 @@ type AlibabaLstLogisticsThirdpartSendAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaLstLogisticsThirdpartSendResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLstLogisticsThirdpartSendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaLstLogisticsThirdpartSendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLstLogisticsThirdpartSendAPIResponse)
+	},
+}
+
+// GetAlibabaLstLogisticsThirdpartSendAPIResponse 从 sync.Pool 获取 AlibabaLstLogisticsThirdpartSendAPIResponse
+func GetAlibabaLstLogisticsThirdpartSendAPIResponse() *AlibabaLstLogisticsThirdpartSendAPIResponse {
+	return poolAlibabaLstLogisticsThirdpartSendAPIResponse.Get().(*AlibabaLstLogisticsThirdpartSendAPIResponse)
+}
+
+// ReleaseAlibabaLstLogisticsThirdpartSendAPIResponse 将 AlibabaLstLogisticsThirdpartSendAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLstLogisticsThirdpartSendAPIResponse(v *AlibabaLstLogisticsThirdpartSendAPIResponse) {
+	v.Reset()
+	poolAlibabaLstLogisticsThirdpartSendAPIResponse.Put(v)
 }

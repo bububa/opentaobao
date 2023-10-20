@@ -2,6 +2,7 @@ package scs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest struct {
 // NewTaobaoOnebpDkxCreativeCreativeReportRealtimeRequest 初始化TaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest对象
 func NewTaobaoOnebpDkxCreativeCreativeReportRealtimeRequest() *TaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest {
 	return &TaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest) Reset() {
+	r._apiServiceContext = nil
+	r._creativeBindQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest) SetCreativeBind
 // GetCreativeBindQuery CreativeBindQuery Getter
 func (r TaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest) GetCreativeBindQuery() *CreativeBindQueryTopDto {
 	return r._creativeBindQuery
+}
+
+var poolTaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOnebpDkxCreativeCreativeReportRealtimeRequest()
+	},
+}
+
+// GetTaobaoOnebpDkxCreativeCreativeReportRealtimeRequest 从 sync.Pool 获取 TaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest
+func GetTaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest() *TaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest {
+	return poolTaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest.Get().(*TaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest)
+}
+
+// ReleaseTaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest 将 TaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest(v *TaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest) {
+	v.Reset()
+	poolTaobaoOnebpDkxCreativeCreativeReportRealtimeAPIRequest.Put(v)
 }

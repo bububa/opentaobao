@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.corpop.apply.add
 //
 // 【商旅】isv添加审批单
-func AlitripBtripCorpopApplyAdd(clt *core.SDKClient, req *btrip.AlitripBtripCorpopApplyAddAPIRequest, session string) (*btrip.AlitripBtripCorpopApplyAddAPIResponse, error) {
-	var resp btrip.AlitripBtripCorpopApplyAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripCorpopApplyAdd(clt *core.SDKClient, req *btrip.AlitripBtripCorpopApplyAddAPIRequest, resp *btrip.AlitripBtripCorpopApplyAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

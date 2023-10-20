@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // AlibabaEinvoiceDeductGetResultSet 结构体
 type AlibabaEinvoiceDeductGetResultSet struct {
 	// errorMessage
@@ -18,4 +22,28 @@ type AlibabaEinvoiceDeductGetResultSet struct {
 	Deduct int64 `json:"deduct,omitempty" xml:"deduct,omitempty"`
 	// 应扣减
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
+}
+
+var poolAlibabaEinvoiceDeductGetResultSet = sync.Pool{
+	New: func() any {
+		return new(AlibabaEinvoiceDeductGetResultSet)
+	},
+}
+
+// GetAlibabaEinvoiceDeductGetResultSet() 从对象池中获取AlibabaEinvoiceDeductGetResultSet
+func GetAlibabaEinvoiceDeductGetResultSet() *AlibabaEinvoiceDeductGetResultSet {
+	return poolAlibabaEinvoiceDeductGetResultSet.Get().(*AlibabaEinvoiceDeductGetResultSet)
+}
+
+// ReleaseAlibabaEinvoiceDeductGetResultSet 释放AlibabaEinvoiceDeductGetResultSet
+func ReleaseAlibabaEinvoiceDeductGetResultSet(v *AlibabaEinvoiceDeductGetResultSet) {
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.BizDate = ""
+	v.PackageRegisterNo = ""
+	v.Result = nil
+	v.TotalCount = 0
+	v.Deduct = 0
+	v.Amount = 0
+	poolAlibabaEinvoiceDeductGetResultSet.Put(v)
 }

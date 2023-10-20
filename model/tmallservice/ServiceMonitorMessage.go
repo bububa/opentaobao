@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // ServiceMonitorMessage 结构体
 type ServiceMonitorMessage struct {
 	// 提醒文本
@@ -22,4 +26,30 @@ type ServiceMonitorMessage struct {
 	BizType int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
 	// 业务实体id
 	BizId int64 `json:"biz_id,omitempty" xml:"biz_id,omitempty"`
+}
+
+var poolServiceMonitorMessage = sync.Pool{
+	New: func() any {
+		return new(ServiceMonitorMessage)
+	},
+}
+
+// GetServiceMonitorMessage() 从对象池中获取ServiceMonitorMessage
+func GetServiceMonitorMessage() *ServiceMonitorMessage {
+	return poolServiceMonitorMessage.Get().(*ServiceMonitorMessage)
+}
+
+// ReleaseServiceMonitorMessage 释放ServiceMonitorMessage
+func ReleaseServiceMonitorMessage(v *ServiceMonitorMessage) {
+	v.Content = ""
+	v.Memo = ""
+	v.GmtCreate = ""
+	v.RuleId = ""
+	v.ServiceCode = ""
+	v.Id = 0
+	v.Level = 0
+	v.Status = 0
+	v.BizType = 0
+	v.BizId = 0
+	poolServiceMonitorMessage.Put(v)
 }

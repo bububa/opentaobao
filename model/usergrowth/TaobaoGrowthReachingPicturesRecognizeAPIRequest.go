@@ -2,6 +2,7 @@ package usergrowth
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoGrowthReachingPicturesRecognizeAPIRequest struct {
 // NewTaobaoGrowthReachingPicturesRecognizeRequest 初始化TaobaoGrowthReachingPicturesRecognizeAPIRequest对象
 func NewTaobaoGrowthReachingPicturesRecognizeRequest() *TaobaoGrowthReachingPicturesRecognizeAPIRequest {
 	return &TaobaoGrowthReachingPicturesRecognizeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoGrowthReachingPicturesRecognizeAPIRequest) Reset() {
+	r._recognitionParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoGrowthReachingPicturesRecognizeAPIRequest) SetRecognitionParam(_r
 // GetRecognitionParam RecognitionParam Getter
 func (r TaobaoGrowthReachingPicturesRecognizeAPIRequest) GetRecognitionParam() *RecognitionParam {
 	return r._recognitionParam
+}
+
+var poolTaobaoGrowthReachingPicturesRecognizeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoGrowthReachingPicturesRecognizeRequest()
+	},
+}
+
+// GetTaobaoGrowthReachingPicturesRecognizeRequest 从 sync.Pool 获取 TaobaoGrowthReachingPicturesRecognizeAPIRequest
+func GetTaobaoGrowthReachingPicturesRecognizeAPIRequest() *TaobaoGrowthReachingPicturesRecognizeAPIRequest {
+	return poolTaobaoGrowthReachingPicturesRecognizeAPIRequest.Get().(*TaobaoGrowthReachingPicturesRecognizeAPIRequest)
+}
+
+// ReleaseTaobaoGrowthReachingPicturesRecognizeAPIRequest 将 TaobaoGrowthReachingPicturesRecognizeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoGrowthReachingPicturesRecognizeAPIRequest(v *TaobaoGrowthReachingPicturesRecognizeAPIRequest) {
+	v.Reset()
+	poolTaobaoGrowthReachingPicturesRecognizeAPIRequest.Put(v)
 }

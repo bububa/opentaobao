@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoModifyorderOrderCheckAPIRequest struct {
 // NewTaobaoModifyorderOrderCheckRequest 初始化TaobaoModifyorderOrderCheckAPIRequest对象
 func NewTaobaoModifyorderOrderCheckRequest() *TaobaoModifyorderOrderCheckAPIRequest {
 	return &TaobaoModifyorderOrderCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoModifyorderOrderCheckAPIRequest) Reset() {
+	r._finalSkuId = ""
+	r._bizOrderId = ""
+	r._finalOuterId = ""
+	r._subBizOrderId = ""
+	r._oaid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoModifyorderOrderCheckAPIRequest) SetOaid(_oaid string) error {
 // GetOaid Oaid Getter
 func (r TaobaoModifyorderOrderCheckAPIRequest) GetOaid() string {
 	return r._oaid
+}
+
+var poolTaobaoModifyorderOrderCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoModifyorderOrderCheckRequest()
+	},
+}
+
+// GetTaobaoModifyorderOrderCheckRequest 从 sync.Pool 获取 TaobaoModifyorderOrderCheckAPIRequest
+func GetTaobaoModifyorderOrderCheckAPIRequest() *TaobaoModifyorderOrderCheckAPIRequest {
+	return poolTaobaoModifyorderOrderCheckAPIRequest.Get().(*TaobaoModifyorderOrderCheckAPIRequest)
+}
+
+// ReleaseTaobaoModifyorderOrderCheckAPIRequest 将 TaobaoModifyorderOrderCheckAPIRequest 放入 sync.Pool
+func ReleaseTaobaoModifyorderOrderCheckAPIRequest(v *TaobaoModifyorderOrderCheckAPIRequest) {
+	v.Reset()
+	poolTaobaoModifyorderOrderCheckAPIRequest.Put(v)
 }

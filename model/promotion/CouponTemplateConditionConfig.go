@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // CouponTemplateConditionConfig 结构体
 type CouponTemplateConditionConfig struct {
 	// 生效类目
@@ -30,4 +34,34 @@ type CouponTemplateConditionConfig struct {
 	CountAt bool `json:"count_at,omitempty" xml:"count_at,omitempty"`
 	// 是否限制本人使用
 	OnlyMemberSelf bool `json:"only_member_self,omitempty" xml:"only_member_self,omitempty"`
+}
+
+var poolCouponTemplateConditionConfig = sync.Pool{
+	New: func() any {
+		return new(CouponTemplateConditionConfig)
+	},
+}
+
+// GetCouponTemplateConditionConfig() 从对象池中获取CouponTemplateConditionConfig
+func GetCouponTemplateConditionConfig() *CouponTemplateConditionConfig {
+	return poolCouponTemplateConditionConfig.Get().(*CouponTemplateConditionConfig)
+}
+
+// ReleaseCouponTemplateConditionConfig 释放CouponTemplateConditionConfig
+func ReleaseCouponTemplateConditionConfig(v *CouponTemplateConditionConfig) {
+	v.Categories = v.Categories[:0]
+	v.ShopIds = v.ShopIds[:0]
+	v.Terminals = v.Terminals[:0]
+	v.ExcludeItemRules = v.ExcludeItemRules[:0]
+	v.MerchantCategories = v.MerchantCategories[:0]
+	v.Amount = 0
+	v.Count = 0
+	v.RangeType = 0
+	v.UserCrowdConfig = nil
+	v.MaxUseCountPerOrder = 0
+	v.MaxEffectAmount = 0
+	v.AmountAt = false
+	v.CountAt = false
+	v.OnlyMemberSelf = false
+	poolCouponTemplateConditionConfig.Put(v)
 }

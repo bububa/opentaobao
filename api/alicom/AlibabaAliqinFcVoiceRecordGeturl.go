@@ -9,11 +9,6 @@ import (
 // alibaba.aliqin.fc.voice.record.geturl
 //
 // 完成录音文件的下载地址获取操作
-func AlibabaAliqinFcVoiceRecordGeturl(clt *core.SDKClient, req *alicom.AlibabaAliqinFcVoiceRecordGeturlAPIRequest, session string) (*alicom.AlibabaAliqinFcVoiceRecordGeturlAPIResponse, error) {
-	var resp alicom.AlibabaAliqinFcVoiceRecordGeturlAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAliqinFcVoiceRecordGeturl(clt *core.SDKClient, req *alicom.AlibabaAliqinFcVoiceRecordGeturlAPIRequest, resp *alicom.AlibabaAliqinFcVoiceRecordGeturlAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

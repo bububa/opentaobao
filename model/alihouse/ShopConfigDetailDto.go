@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ShopConfigDetailDto 结构体
 type ShopConfigDetailDto struct {
 	// 推荐经纪人排序
@@ -20,4 +24,29 @@ type ShopConfigDetailDto struct {
 	JumpType int64 `json:"jump_type,omitempty" xml:"jump_type,omitempty"`
 	// 排序
 	OrderNo int64 `json:"order_no,omitempty" xml:"order_no,omitempty"`
+}
+
+var poolShopConfigDetailDto = sync.Pool{
+	New: func() any {
+		return new(ShopConfigDetailDto)
+	},
+}
+
+// GetShopConfigDetailDto() 从对象池中获取ShopConfigDetailDto
+func GetShopConfigDetailDto() *ShopConfigDetailDto {
+	return poolShopConfigDetailDto.Get().(*ShopConfigDetailDto)
+}
+
+// ReleaseShopConfigDetailDto 释放ShopConfigDetailDto
+func ReleaseShopConfigDetailDto(v *ShopConfigDetailDto) {
+	v.ExcellentBroker = v.ExcellentBroker[:0]
+	v.Title = ""
+	v.JumpValue = ""
+	v.OuterConfigDetailId = ""
+	v.ImageUrl = ""
+	v.Label = ""
+	v.SubTitle = ""
+	v.JumpType = 0
+	v.OrderNo = 0
+	poolShopConfigDetailDto.Put(v)
 }

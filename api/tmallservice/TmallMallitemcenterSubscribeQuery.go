@@ -9,11 +9,6 @@ import (
 // tmall.mallitemcenter.subscribe.query
 //
 // 查询商家服务订购信息
-func TmallMallitemcenterSubscribeQuery(clt *core.SDKClient, req *tmallservice.TmallMallitemcenterSubscribeQueryAPIRequest, session string) (*tmallservice.TmallMallitemcenterSubscribeQueryAPIResponse, error) {
-	var resp tmallservice.TmallMallitemcenterSubscribeQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallMallitemcenterSubscribeQuery(clt *core.SDKClient, req *tmallservice.TmallMallitemcenterSubscribeQueryAPIRequest, resp *tmallservice.TmallMallitemcenterSubscribeQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

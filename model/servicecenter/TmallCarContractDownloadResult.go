@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -18,4 +20,26 @@ type TmallCarContractDownloadResult struct {
 	CostTime int64 `json:"cost_time,omitempty" xml:"cost_time,omitempty"`
 	// 成功与否
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmallCarContractDownloadResult = sync.Pool{
+	New: func() any {
+		return new(TmallCarContractDownloadResult)
+	},
+}
+
+// GetTmallCarContractDownloadResult() 从对象池中获取TmallCarContractDownloadResult
+func GetTmallCarContractDownloadResult() *TmallCarContractDownloadResult {
+	return poolTmallCarContractDownloadResult.Get().(*TmallCarContractDownloadResult)
+}
+
+// ReleaseTmallCarContractDownloadResult 释放TmallCarContractDownloadResult
+func ReleaseTmallCarContractDownloadResult(v *TmallCarContractDownloadResult) {
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.GmtCurrentTime = 0
+	v.Objects = nil
+	v.CostTime = 0
+	v.Success = false
+	poolTmallCarContractDownloadResult.Put(v)
 }

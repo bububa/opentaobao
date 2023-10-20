@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // BusinessActivityDataDto 结构体
 type BusinessActivityDataDto struct {
 	// 分账数据
@@ -40,4 +44,39 @@ type BusinessActivityDataDto struct {
 	SettleId int64 `json:"settle_id,omitempty" xml:"settle_id,omitempty"`
 	// 是否确客
 	IsConfirmGuest int64 `json:"is_confirm_guest,omitempty" xml:"is_confirm_guest,omitempty"`
+}
+
+var poolBusinessActivityDataDto = sync.Pool{
+	New: func() any {
+		return new(BusinessActivityDataDto)
+	},
+}
+
+// GetBusinessActivityDataDto() 从对象池中获取BusinessActivityDataDto
+func GetBusinessActivityDataDto() *BusinessActivityDataDto {
+	return poolBusinessActivityDataDto.Get().(*BusinessActivityDataDto)
+}
+
+// ReleaseBusinessActivityDataDto 释放BusinessActivityDataDto
+func ReleaseBusinessActivityDataDto(v *BusinessActivityDataDto) {
+	v.AccountDivisionList = v.AccountDivisionList[:0]
+	v.OuterActivityId = ""
+	v.ActivityName = ""
+	v.DiscountValidTime = ""
+	v.OuterId = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.Contact = ""
+	v.OuterStoreId = ""
+	v.IsOpenPos = 0
+	v.AgreementId = 0
+	v.MerchantOpenId = 0
+	v.SettlementType = 0
+	v.DiscountMode = 0
+	v.DiscountTimeType = 0
+	v.ItemId = 0
+	v.SignatureId = 0
+	v.SettleId = 0
+	v.IsConfirmGuest = 0
+	poolBusinessActivityDataDto.Put(v)
 }

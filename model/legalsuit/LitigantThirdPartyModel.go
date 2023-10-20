@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // LitigantThirdPartyModel 结构体
 type LitigantThirdPartyModel struct {
 	// 承办律师联系方式
@@ -22,4 +26,30 @@ type LitigantThirdPartyModel struct {
 	SerialNumber int64 `json:"serial_number,omitempty" xml:"serial_number,omitempty"`
 	// 住所地
 	Address bool `json:"address,omitempty" xml:"address,omitempty"`
+}
+
+var poolLitigantThirdPartyModel = sync.Pool{
+	New: func() any {
+		return new(LitigantThirdPartyModel)
+	},
+}
+
+// GetLitigantThirdPartyModel() 从对象池中获取LitigantThirdPartyModel
+func GetLitigantThirdPartyModel() *LitigantThirdPartyModel {
+	return poolLitigantThirdPartyModel.Get().(*LitigantThirdPartyModel)
+}
+
+// ReleaseLitigantThirdPartyModel 释放LitigantThirdPartyModel
+func ReleaseLitigantThirdPartyModel(v *LitigantThirdPartyModel) {
+	v.LawyerContact = ""
+	v.LawyerName = ""
+	v.LawFirmName = ""
+	v.IsAlibabaCompany = ""
+	v.CertifyNumber = ""
+	v.CertifyType = ""
+	v.Contact = ""
+	v.Name = ""
+	v.SerialNumber = 0
+	v.Address = false
+	poolLitigantThirdPartyModel.Put(v)
 }

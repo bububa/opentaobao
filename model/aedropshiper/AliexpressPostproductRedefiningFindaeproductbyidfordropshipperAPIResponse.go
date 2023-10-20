@@ -2,6 +2,7 @@ package aedropshiper
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse s
 	AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponseModel).Reset()
+}
+
 // AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponseModel is Dropshipper查找商品信息接口 成功返回结果
 type AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_postproduct_redefining_findaeproductbyidfordropshipper_response"`
@@ -22,4 +29,27 @@ type AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponseMo
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *AeopFindProductResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse)
+	},
+}
+
+// GetAliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse 从 sync.Pool 获取 AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse
+func GetAliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse() *AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse {
+	return poolAliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse.Get().(*AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse)
+}
+
+// ReleaseAliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse 将 AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse(v *AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse) {
+	v.Reset()
+	poolAliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse.Put(v)
 }

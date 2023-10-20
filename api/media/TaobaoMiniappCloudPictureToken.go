@@ -18,11 +18,6 @@ import (
 //	&amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Submit &amp;quot;/&amp;gt;
 //
 // &amp;lt;/form&amp;gt;
-func TaobaoMiniappCloudPictureToken(clt *core.SDKClient, req *media.TaobaoMiniappCloudPictureTokenAPIRequest, session string) (*media.TaobaoMiniappCloudPictureTokenAPIResponse, error) {
-	var resp media.TaobaoMiniappCloudPictureTokenAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoMiniappCloudPictureToken(clt *core.SDKClient, req *media.TaobaoMiniappCloudPictureTokenAPIRequest, resp *media.TaobaoMiniappCloudPictureTokenAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

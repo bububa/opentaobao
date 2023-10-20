@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.activity.marketing.popup
 //
 // 星河=活动营销弹屏
-func AlitripMerchantGalaxyActivityMarketingPopup(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyActivityMarketingPopupAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyActivityMarketingPopupAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyActivityMarketingPopupAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyActivityMarketingPopup(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyActivityMarketingPopupAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyActivityMarketingPopupAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

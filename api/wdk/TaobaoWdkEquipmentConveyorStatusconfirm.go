@@ -9,11 +9,6 @@ import (
 // taobao.wdk.equipment.conveyor.statusconfirm
 //
 // 悬挂链状态回传确认
-func TaobaoWdkEquipmentConveyorStatusconfirm(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest, session string) (*wdk.TaobaoWdkEquipmentConveyorStatusconfirmAPIResponse, error) {
-	var resp wdk.TaobaoWdkEquipmentConveyorStatusconfirmAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWdkEquipmentConveyorStatusconfirm(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest, resp *wdk.TaobaoWdkEquipmentConveyorStatusconfirmAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

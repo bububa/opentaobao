@@ -2,6 +2,7 @@ package middleclaims
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaMiddleClaimsresultReceiveAPIResponse struct {
 	AlibabaMiddleClaimsresultReceiveAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaMiddleClaimsresultReceiveAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaMiddleClaimsresultReceiveAPIResponseModel).Reset()
+}
+
 // AlibabaMiddleClaimsresultReceiveAPIResponseModel is 国际化中台服务域接收理赔结果 成功返回结果
 type AlibabaMiddleClaimsresultReceiveAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_middle_claimsresult_receive_response"`
@@ -22,4 +29,27 @@ type AlibabaMiddleClaimsresultReceiveAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 调用结果
 	Result *AlibabaMiddleClaimsresultReceiveResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaMiddleClaimsresultReceiveAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaMiddleClaimsresultReceiveAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaMiddleClaimsresultReceiveAPIResponse)
+	},
+}
+
+// GetAlibabaMiddleClaimsresultReceiveAPIResponse 从 sync.Pool 获取 AlibabaMiddleClaimsresultReceiveAPIResponse
+func GetAlibabaMiddleClaimsresultReceiveAPIResponse() *AlibabaMiddleClaimsresultReceiveAPIResponse {
+	return poolAlibabaMiddleClaimsresultReceiveAPIResponse.Get().(*AlibabaMiddleClaimsresultReceiveAPIResponse)
+}
+
+// ReleaseAlibabaMiddleClaimsresultReceiveAPIResponse 将 AlibabaMiddleClaimsresultReceiveAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaMiddleClaimsresultReceiveAPIResponse(v *AlibabaMiddleClaimsresultReceiveAPIResponse) {
+	v.Reset()
+	poolAlibabaMiddleClaimsresultReceiveAPIResponse.Put(v)
 }

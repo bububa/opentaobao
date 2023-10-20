@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // Value 结构体
 type Value struct {
 	// 工单id列表
@@ -32,4 +36,35 @@ type Value struct {
 	Buyer *BuyerDto `json:"buyer,omitempty" xml:"buyer,omitempty"`
 	// 服务提供者信息
 	ServiceProvider *ServiceProviderDto `json:"service_provider,omitempty" xml:"service_provider,omitempty"`
+}
+
+var poolValue = sync.Pool{
+	New: func() any {
+		return new(Value)
+	},
+}
+
+// GetValue() 从对象池中获取Value
+func GetValue() *Value {
+	return poolValue.Get().(*Value)
+}
+
+// ReleaseValue 释放Value
+func ReleaseValue(v *Value) {
+	v.WorkcardIdList = v.WorkcardIdList[:0]
+	v.FulfilTypeCode = ""
+	v.GmtModify = ""
+	v.BizCode = ""
+	v.GmtNextContact = ""
+	v.Memo = ""
+	v.GmtCreate = ""
+	v.OuterId = ""
+	v.ReasonDesc = ""
+	v.StatusCode = ""
+	v.Reservation = nil
+	v.ReasonCode = 0
+	v.Id = 0
+	v.Buyer = nil
+	v.ServiceProvider = nil
+	poolValue.Put(v)
 }

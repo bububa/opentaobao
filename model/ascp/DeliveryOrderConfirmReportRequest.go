@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // DeliveryOrderConfirmReportRequest 结构体
 type DeliveryOrderConfirmReportRequest struct {
 	// 包裹信息
@@ -16,4 +20,27 @@ type DeliveryOrderConfirmReportRequest struct {
 	DeliveryOrder *DeliveryOrder `json:"delivery_order,omitempty" xml:"delivery_order,omitempty"`
 	// 业务请求时间（时间戳）
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
+}
+
+var poolDeliveryOrderConfirmReportRequest = sync.Pool{
+	New: func() any {
+		return new(DeliveryOrderConfirmReportRequest)
+	},
+}
+
+// GetDeliveryOrderConfirmReportRequest() 从对象池中获取DeliveryOrderConfirmReportRequest
+func GetDeliveryOrderConfirmReportRequest() *DeliveryOrderConfirmReportRequest {
+	return poolDeliveryOrderConfirmReportRequest.Get().(*DeliveryOrderConfirmReportRequest)
+}
+
+// ReleaseDeliveryOrderConfirmReportRequest 释放DeliveryOrderConfirmReportRequest
+func ReleaseDeliveryOrderConfirmReportRequest(v *DeliveryOrderConfirmReportRequest) {
+	v.Packages = v.Packages[:0]
+	v.OrderLines = v.OrderLines[:0]
+	v.RequestId = ""
+	v.ExtendProps = ""
+	v.OwnerCode = ""
+	v.DeliveryOrder = nil
+	v.RequestTime = 0
+	poolDeliveryOrderConfirmReportRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoWlbInventoryDetailGetAPIResponse struct {
 	TaobaoWlbInventoryDetailGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoWlbInventoryDetailGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWlbInventoryDetailGetAPIResponseModel).Reset()
+}
+
 // TaobaoWlbInventoryDetailGetAPIResponseModel is 查询库存详情 成功返回结果
 type TaobaoWlbInventoryDetailGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_inventory_detail_get_response"`
@@ -24,4 +31,28 @@ type TaobaoWlbInventoryDetailGetAPIResponseModel struct {
 	InventoryList []WlbInventory `json:"inventory_list,omitempty" xml:"inventory_list>wlb_inventory,omitempty"`
 	// 入参的item_id
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbInventoryDetailGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.InventoryList = m.InventoryList[:0]
+	m.ItemId = 0
+}
+
+var poolTaobaoWlbInventoryDetailGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbInventoryDetailGetAPIResponse)
+	},
+}
+
+// GetTaobaoWlbInventoryDetailGetAPIResponse 从 sync.Pool 获取 TaobaoWlbInventoryDetailGetAPIResponse
+func GetTaobaoWlbInventoryDetailGetAPIResponse() *TaobaoWlbInventoryDetailGetAPIResponse {
+	return poolTaobaoWlbInventoryDetailGetAPIResponse.Get().(*TaobaoWlbInventoryDetailGetAPIResponse)
+}
+
+// ReleaseTaobaoWlbInventoryDetailGetAPIResponse 将 TaobaoWlbInventoryDetailGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWlbInventoryDetailGetAPIResponse(v *TaobaoWlbInventoryDetailGetAPIResponse) {
+	v.Reset()
+	poolTaobaoWlbInventoryDetailGetAPIResponse.Put(v)
 }

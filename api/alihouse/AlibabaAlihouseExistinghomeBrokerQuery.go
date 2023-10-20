@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghome.broker.query
 //
 // 根据外部经纪人ID查询
-func AlibabaAlihouseExistinghomeBrokerQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeBrokerQueryAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeBrokerQueryAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeBrokerQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghomeBrokerQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeBrokerQueryAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeBrokerQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -43,8 +44,26 @@ type TaobaoFenxiaoDistributorProductsGetAPIRequest struct {
 // NewTaobaoFenxiaoDistributorProductsGetRequest 初始化TaobaoFenxiaoDistributorProductsGetAPIRequest对象
 func NewTaobaoFenxiaoDistributorProductsGetRequest() *TaobaoFenxiaoDistributorProductsGetAPIRequest {
 	return &TaobaoFenxiaoDistributorProductsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(13),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoDistributorProductsGetAPIRequest) Reset() {
+	r._pids = r._pids[:0]
+	r._itemIds = r._itemIds[:0]
+	r._fields = r._fields[:0]
+	r._supplierNick = ""
+	r._tradeType = ""
+	r._downloadStatus = ""
+	r._startTime = ""
+	r._endTime = ""
+	r._timeType = ""
+	r._orderBy = ""
+	r._productcatId = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -231,4 +250,21 @@ func (r *TaobaoFenxiaoDistributorProductsGetAPIRequest) SetPageSize(_pageSize in
 // GetPageSize PageSize Getter
 func (r TaobaoFenxiaoDistributorProductsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoFenxiaoDistributorProductsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoDistributorProductsGetRequest()
+	},
+}
+
+// GetTaobaoFenxiaoDistributorProductsGetRequest 从 sync.Pool 获取 TaobaoFenxiaoDistributorProductsGetAPIRequest
+func GetTaobaoFenxiaoDistributorProductsGetAPIRequest() *TaobaoFenxiaoDistributorProductsGetAPIRequest {
+	return poolTaobaoFenxiaoDistributorProductsGetAPIRequest.Get().(*TaobaoFenxiaoDistributorProductsGetAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoDistributorProductsGetAPIRequest 将 TaobaoFenxiaoDistributorProductsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoDistributorProductsGetAPIRequest(v *TaobaoFenxiaoDistributorProductsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoDistributorProductsGetAPIRequest.Put(v)
 }

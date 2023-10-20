@@ -9,11 +9,6 @@ import (
 // alitrip.ship.product.synccall
 //
 // 全量同步接口
-func AlitripShipProductSynccall(clt *core.SDKClient, req *ship.AlitripShipProductSynccallAPIRequest, session string) (*ship.AlitripShipProductSynccallAPIResponse, error) {
-	var resp ship.AlitripShipProductSynccallAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripShipProductSynccall(clt *core.SDKClient, req *ship.AlitripShipProductSynccallAPIRequest, resp *ship.AlitripShipProductSynccallAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

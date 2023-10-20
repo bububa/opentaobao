@@ -2,6 +2,7 @@ package aliexpresssumaitong
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressTaxationCalculateOpenQueryAPIRequest struct {
 // NewAliexpressTaxationCalculateOpenQueryRequest 初始化AliexpressTaxationCalculateOpenQueryAPIRequest对象
 func NewAliexpressTaxationCalculateOpenQueryRequest() *AliexpressTaxationCalculateOpenQueryAPIRequest {
 	return &AliexpressTaxationCalculateOpenQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressTaxationCalculateOpenQueryAPIRequest) Reset() {
+	r._orderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressTaxationCalculateOpenQueryAPIRequest) SetOrderId(_orderId str
 // GetOrderId OrderId Getter
 func (r AliexpressTaxationCalculateOpenQueryAPIRequest) GetOrderId() string {
 	return r._orderId
+}
+
+var poolAliexpressTaxationCalculateOpenQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressTaxationCalculateOpenQueryRequest()
+	},
+}
+
+// GetAliexpressTaxationCalculateOpenQueryRequest 从 sync.Pool 获取 AliexpressTaxationCalculateOpenQueryAPIRequest
+func GetAliexpressTaxationCalculateOpenQueryAPIRequest() *AliexpressTaxationCalculateOpenQueryAPIRequest {
+	return poolAliexpressTaxationCalculateOpenQueryAPIRequest.Get().(*AliexpressTaxationCalculateOpenQueryAPIRequest)
+}
+
+// ReleaseAliexpressTaxationCalculateOpenQueryAPIRequest 将 AliexpressTaxationCalculateOpenQueryAPIRequest 放入 sync.Pool
+func ReleaseAliexpressTaxationCalculateOpenQueryAPIRequest(v *AliexpressTaxationCalculateOpenQueryAPIRequest) {
+	v.Reset()
+	poolAliexpressTaxationCalculateOpenQueryAPIRequest.Put(v)
 }

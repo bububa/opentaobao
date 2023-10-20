@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // InsightWordsAreaDistributeDataDto 结构体
 type InsightWordsAreaDistributeDataDto struct {
 	// 省名称
@@ -42,4 +46,40 @@ type InsightWordsAreaDistributeDataDto struct {
 	Favshoptotal int64 `json:"favshoptotal,omitempty" xml:"favshoptotal,omitempty"`
 	// 竞争度
 	Competition int64 `json:"competition,omitempty" xml:"competition,omitempty"`
+}
+
+var poolInsightWordsAreaDistributeDataDto = sync.Pool{
+	New: func() any {
+		return new(InsightWordsAreaDistributeDataDto)
+	},
+}
+
+// GetInsightWordsAreaDistributeDataDto() 从对象池中获取InsightWordsAreaDistributeDataDto
+func GetInsightWordsAreaDistributeDataDto() *InsightWordsAreaDistributeDataDto {
+	return poolInsightWordsAreaDistributeDataDto.Get().(*InsightWordsAreaDistributeDataDto)
+}
+
+// ReleaseInsightWordsAreaDistributeDataDto 释放InsightWordsAreaDistributeDataDto
+func ReleaseInsightWordsAreaDistributeDataDto(v *InsightWordsAreaDistributeDataDto) {
+	v.Provincename = ""
+	v.Coverage = ""
+	v.Cpc = ""
+	v.Roi = ""
+	v.Cityname = ""
+	v.Bidword = ""
+	v.Ctr = ""
+	v.Impression = 0
+	v.Indirecttransaction = 0
+	v.Click = 0
+	v.Cost = 0
+	v.Directtransaction = 0
+	v.Favitemtotal = 0
+	v.Transactionshippingtotal = 0
+	v.Favtotal = 0
+	v.Transactiontotal = 0
+	v.Indirecttransactionshipping = 0
+	v.Directtransactionshipping = 0
+	v.Favshoptotal = 0
+	v.Competition = 0
+	poolInsightWordsAreaDistributeDataDto.Put(v)
 }

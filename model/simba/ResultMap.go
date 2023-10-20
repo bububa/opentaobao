@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // ResultMap 结构体
 type ResultMap struct {
 	// ctr
@@ -26,4 +30,32 @@ type ResultMap struct {
 	Coverage string `json:"coverage,omitempty" xml:"coverage,omitempty"`
 	// roi
 	Roi string `json:"roi,omitempty" xml:"roi,omitempty"`
+}
+
+var poolResultMap = sync.Pool{
+	New: func() any {
+		return new(ResultMap)
+	},
+}
+
+// GetResultMap() 从对象池中获取ResultMap
+func GetResultMap() *ResultMap {
+	return poolResultMap.Get().(*ResultMap)
+}
+
+// ReleaseResultMap 释放ResultMap
+func ReleaseResultMap(v *ResultMap) {
+	v.Ctr = ""
+	v.Cpm = ""
+	v.Cost = ""
+	v.Campaignid = ""
+	v.SubPackageName = ""
+	v.Click = ""
+	v.SubPackage = ""
+	v.Thedate = ""
+	v.Adgroupid = ""
+	v.Impression = ""
+	v.Coverage = ""
+	v.Roi = ""
+	poolResultMap.Put(v)
 }

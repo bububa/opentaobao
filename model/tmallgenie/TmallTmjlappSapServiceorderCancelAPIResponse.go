@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallTmjlappSapServiceorderCancelAPIResponse struct {
 	TmallTmjlappSapServiceorderCancelAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallTmjlappSapServiceorderCancelAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallTmjlappSapServiceorderCancelAPIResponseModel).Reset()
+}
+
 // TmallTmjlappSapServiceorderCancelAPIResponseModel is 取消售后服务单 成功返回结果
 type TmallTmjlappSapServiceorderCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_tmjlapp_sap_serviceorder_cancel_response"`
@@ -22,4 +29,27 @@ type TmallTmjlappSapServiceorderCancelAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 取消服务单返回
 	CancelResponse *Dtcancelresponse `json:"cancel_response,omitempty" xml:"cancel_response,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallTmjlappSapServiceorderCancelAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.CancelResponse = nil
+}
+
+var poolTmallTmjlappSapServiceorderCancelAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallTmjlappSapServiceorderCancelAPIResponse)
+	},
+}
+
+// GetTmallTmjlappSapServiceorderCancelAPIResponse 从 sync.Pool 获取 TmallTmjlappSapServiceorderCancelAPIResponse
+func GetTmallTmjlappSapServiceorderCancelAPIResponse() *TmallTmjlappSapServiceorderCancelAPIResponse {
+	return poolTmallTmjlappSapServiceorderCancelAPIResponse.Get().(*TmallTmjlappSapServiceorderCancelAPIResponse)
+}
+
+// ReleaseTmallTmjlappSapServiceorderCancelAPIResponse 将 TmallTmjlappSapServiceorderCancelAPIResponse 保存到 sync.Pool
+func ReleaseTmallTmjlappSapServiceorderCancelAPIResponse(v *TmallTmjlappSapServiceorderCancelAPIResponse) {
+	v.Reset()
+	poolTmallTmjlappSapServiceorderCancelAPIResponse.Put(v)
 }

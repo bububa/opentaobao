@@ -1,5 +1,9 @@
 package tuanhotel
 
+import (
+	"sync"
+)
+
 // TuanItemOnlineManagerVo 结构体
 type TuanItemOnlineManagerVo struct {
 	// sku
@@ -12,4 +16,25 @@ type TuanItemOnlineManagerVo struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 审核状态
 	OnlineStatus int64 `json:"online_status,omitempty" xml:"online_status,omitempty"`
+}
+
+var poolTuanItemOnlineManagerVo = sync.Pool{
+	New: func() any {
+		return new(TuanItemOnlineManagerVo)
+	},
+}
+
+// GetTuanItemOnlineManagerVo() 从对象池中获取TuanItemOnlineManagerVo
+func GetTuanItemOnlineManagerVo() *TuanItemOnlineManagerVo {
+	return poolTuanItemOnlineManagerVo.Get().(*TuanItemOnlineManagerVo)
+}
+
+// ReleaseTuanItemOnlineManagerVo 释放TuanItemOnlineManagerVo
+func ReleaseTuanItemOnlineManagerVo(v *TuanItemOnlineManagerVo) {
+	v.TuanItemOnlineSkus = v.TuanItemOnlineSkus[:0]
+	v.GmtCreate = ""
+	v.OnlineStatusDesc = ""
+	v.ItemId = 0
+	v.OnlineStatus = 0
+	poolTuanItemOnlineManagerVo.Put(v)
 }

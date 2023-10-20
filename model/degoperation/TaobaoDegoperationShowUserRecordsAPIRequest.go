@@ -2,6 +2,7 @@ package degoperation
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoDegoperationShowUserRecordsAPIRequest struct {
 // NewTaobaoDegoperationShowUserRecordsRequest 初始化TaobaoDegoperationShowUserRecordsAPIRequest对象
 func NewTaobaoDegoperationShowUserRecordsRequest() *TaobaoDegoperationShowUserRecordsAPIRequest {
 	return &TaobaoDegoperationShowUserRecordsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDegoperationShowUserRecordsAPIRequest) Reset() {
+	r._degAccessToken = ""
+	r._degAppKey = ""
+	r._eventKey = ""
+	r._pageNumber = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetPageSize(_pageSize int6
 // GetPageSize PageSize Getter
 func (r TaobaoDegoperationShowUserRecordsAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoDegoperationShowUserRecordsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDegoperationShowUserRecordsRequest()
+	},
+}
+
+// GetTaobaoDegoperationShowUserRecordsRequest 从 sync.Pool 获取 TaobaoDegoperationShowUserRecordsAPIRequest
+func GetTaobaoDegoperationShowUserRecordsAPIRequest() *TaobaoDegoperationShowUserRecordsAPIRequest {
+	return poolTaobaoDegoperationShowUserRecordsAPIRequest.Get().(*TaobaoDegoperationShowUserRecordsAPIRequest)
+}
+
+// ReleaseTaobaoDegoperationShowUserRecordsAPIRequest 将 TaobaoDegoperationShowUserRecordsAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDegoperationShowUserRecordsAPIRequest(v *TaobaoDegoperationShowUserRecordsAPIRequest) {
+	v.Reset()
+	poolTaobaoDegoperationShowUserRecordsAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // GoodsOutboundDto 结构体
 type GoodsOutboundDto struct {
 	// 出库明细
@@ -16,4 +20,27 @@ type GoodsOutboundDto struct {
 	SendOutTime string `json:"send_out_time,omitempty" xml:"send_out_time,omitempty"`
 	// OC订单号
 	TradeNo string `json:"trade_no,omitempty" xml:"trade_no,omitempty"`
+}
+
+var poolGoodsOutboundDto = sync.Pool{
+	New: func() any {
+		return new(GoodsOutboundDto)
+	},
+}
+
+// GetGoodsOutboundDto() 从对象池中获取GoodsOutboundDto
+func GetGoodsOutboundDto() *GoodsOutboundDto {
+	return poolGoodsOutboundDto.Get().(*GoodsOutboundDto)
+}
+
+// ReleaseGoodsOutboundDto 释放GoodsOutboundDto
+func ReleaseGoodsOutboundDto(v *GoodsOutboundDto) {
+	v.OutboundDetails = v.OutboundDetails[:0]
+	v.DelivererName = ""
+	v.DelivererPhone = ""
+	v.LogisticsCompanyCode = ""
+	v.LogisticsNo = ""
+	v.SendOutTime = ""
+	v.TradeNo = ""
+	poolGoodsOutboundDto.Put(v)
 }

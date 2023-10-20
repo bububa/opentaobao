@@ -2,6 +2,7 @@ package aligenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAilabsAligenieDeviceUnbindAPIRequest struct {
 // NewAlibabaAilabsAligenieDeviceUnbindRequest 初始化AlibabaAilabsAligenieDeviceUnbindAPIRequest对象
 func NewAlibabaAilabsAligenieDeviceUnbindRequest() *AlibabaAilabsAligenieDeviceUnbindAPIRequest {
 	return &AlibabaAilabsAligenieDeviceUnbindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsAligenieDeviceUnbindAPIRequest) Reset() {
+	r._ext = ""
+	r._userId = ""
+	r._schema = ""
+	r._uuid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAilabsAligenieDeviceUnbindAPIRequest) SetUuid(_uuid string) erro
 // GetUuid Uuid Getter
 func (r AlibabaAilabsAligenieDeviceUnbindAPIRequest) GetUuid() string {
 	return r._uuid
+}
+
+var poolAlibabaAilabsAligenieDeviceUnbindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsAligenieDeviceUnbindRequest()
+	},
+}
+
+// GetAlibabaAilabsAligenieDeviceUnbindRequest 从 sync.Pool 获取 AlibabaAilabsAligenieDeviceUnbindAPIRequest
+func GetAlibabaAilabsAligenieDeviceUnbindAPIRequest() *AlibabaAilabsAligenieDeviceUnbindAPIRequest {
+	return poolAlibabaAilabsAligenieDeviceUnbindAPIRequest.Get().(*AlibabaAilabsAligenieDeviceUnbindAPIRequest)
+}
+
+// ReleaseAlibabaAilabsAligenieDeviceUnbindAPIRequest 将 AlibabaAilabsAligenieDeviceUnbindAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsAligenieDeviceUnbindAPIRequest(v *AlibabaAilabsAligenieDeviceUnbindAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsAligenieDeviceUnbindAPIRequest.Put(v)
 }

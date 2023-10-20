@@ -2,6 +2,7 @@ package alihealthcrm
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthAlipaypfmOrderSyncAPIResponse struct {
 	AlibabaAlihealthAlipaypfmOrderSyncAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthAlipaypfmOrderSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthAlipaypfmOrderSyncAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthAlipaypfmOrderSyncAPIResponseModel is 订单数据回传接口 成功返回结果
 type AlibabaAlihealthAlipaypfmOrderSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_alipaypfm_order_sync_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihealthAlipaypfmOrderSyncAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 和三方交互最外层model对象
 	Result *TopResultModel `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthAlipaypfmOrderSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthAlipaypfmOrderSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthAlipaypfmOrderSyncAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthAlipaypfmOrderSyncAPIResponse 从 sync.Pool 获取 AlibabaAlihealthAlipaypfmOrderSyncAPIResponse
+func GetAlibabaAlihealthAlipaypfmOrderSyncAPIResponse() *AlibabaAlihealthAlipaypfmOrderSyncAPIResponse {
+	return poolAlibabaAlihealthAlipaypfmOrderSyncAPIResponse.Get().(*AlibabaAlihealthAlipaypfmOrderSyncAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthAlipaypfmOrderSyncAPIResponse 将 AlibabaAlihealthAlipaypfmOrderSyncAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthAlipaypfmOrderSyncAPIResponse(v *AlibabaAlihealthAlipaypfmOrderSyncAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthAlipaypfmOrderSyncAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaHappytripFreeloginGetusercontextAPIResponse struct {
 	AlibabaHappytripFreeloginGetusercontextAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaHappytripFreeloginGetusercontextAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaHappytripFreeloginGetusercontextAPIResponseModel).Reset()
+}
+
 // AlibabaHappytripFreeloginGetusercontextAPIResponseModel is 提供给外部系统的免登校验 成功返回结果
 type AlibabaHappytripFreeloginGetusercontextAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_happytrip_freelogin_getusercontext_response"`
@@ -22,4 +29,27 @@ type AlibabaHappytripFreeloginGetusercontextAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 请求响应
 	Rep *AlibabaHappytripFreeloginGetusercontextResult `json:"rep,omitempty" xml:"rep,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaHappytripFreeloginGetusercontextAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Rep = nil
+}
+
+var poolAlibabaHappytripFreeloginGetusercontextAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaHappytripFreeloginGetusercontextAPIResponse)
+	},
+}
+
+// GetAlibabaHappytripFreeloginGetusercontextAPIResponse 从 sync.Pool 获取 AlibabaHappytripFreeloginGetusercontextAPIResponse
+func GetAlibabaHappytripFreeloginGetusercontextAPIResponse() *AlibabaHappytripFreeloginGetusercontextAPIResponse {
+	return poolAlibabaHappytripFreeloginGetusercontextAPIResponse.Get().(*AlibabaHappytripFreeloginGetusercontextAPIResponse)
+}
+
+// ReleaseAlibabaHappytripFreeloginGetusercontextAPIResponse 将 AlibabaHappytripFreeloginGetusercontextAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaHappytripFreeloginGetusercontextAPIResponse(v *AlibabaHappytripFreeloginGetusercontextAPIResponse) {
+	v.Reset()
+	poolAlibabaHappytripFreeloginGetusercontextAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package user
 
+import (
+	"sync"
+)
+
 // TaobaoMessageaccountMesssageReplyResult 结构体
 type TaobaoMessageaccountMesssageReplyResult struct {
 	// model
@@ -10,4 +14,24 @@ type TaobaoMessageaccountMesssageReplyResult struct {
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// success
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+var poolTaobaoMessageaccountMesssageReplyResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoMessageaccountMesssageReplyResult)
+	},
+}
+
+// GetTaobaoMessageaccountMesssageReplyResult() 从对象池中获取TaobaoMessageaccountMesssageReplyResult
+func GetTaobaoMessageaccountMesssageReplyResult() *TaobaoMessageaccountMesssageReplyResult {
+	return poolTaobaoMessageaccountMesssageReplyResult.Get().(*TaobaoMessageaccountMesssageReplyResult)
+}
+
+// ReleaseTaobaoMessageaccountMesssageReplyResult 释放TaobaoMessageaccountMesssageReplyResult
+func ReleaseTaobaoMessageaccountMesssageReplyResult(v *TaobaoMessageaccountMesssageReplyResult) {
+	v.Model = ""
+	v.ErrMessage = ""
+	v.ErrCode = ""
+	v.Result = false
+	poolTaobaoMessageaccountMesssageReplyResult.Put(v)
 }

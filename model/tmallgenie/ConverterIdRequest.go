@@ -1,5 +1,9 @@
 package tmallgenie
 
+import (
+	"sync"
+)
+
 // ConverterIdRequest 结构体
 type ConverterIdRequest struct {
 	// idType相应的id内容
@@ -10,4 +14,24 @@ type ConverterIdRequest struct {
 	EncodeKey string `json:"encode_key,omitempty" xml:"encode_key,omitempty"`
 	// USER_ID/DEVICE_ID/OPEN_TAOBAO_ID
 	IdType string `json:"id_type,omitempty" xml:"id_type,omitempty"`
+}
+
+var poolConverterIdRequest = sync.Pool{
+	New: func() any {
+		return new(ConverterIdRequest)
+	},
+}
+
+// GetConverterIdRequest() 从对象池中获取ConverterIdRequest
+func GetConverterIdRequest() *ConverterIdRequest {
+	return poolConverterIdRequest.Get().(*ConverterIdRequest)
+}
+
+// ReleaseConverterIdRequest 释放ConverterIdRequest
+func ReleaseConverterIdRequest(v *ConverterIdRequest) {
+	v.Id = ""
+	v.EncodeType = ""
+	v.EncodeKey = ""
+	v.IdType = ""
+	poolConverterIdRequest.Put(v)
 }

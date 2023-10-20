@@ -2,6 +2,7 @@ package cainiaoncwl
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoNcwlJhorderQueryAPIRequest struct {
 // NewCainiaoNcwlJhorderQueryRequest 初始化CainiaoNcwlJhorderQueryAPIRequest对象
 func NewCainiaoNcwlJhorderQueryRequest() *CainiaoNcwlJhorderQueryAPIRequest {
 	return &CainiaoNcwlJhorderQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoNcwlJhorderQueryAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoNcwlJhorderQueryAPIRequest) SetParam0(_param0 *JhRequest) error 
 // GetParam0 Param0 Getter
 func (r CainiaoNcwlJhorderQueryAPIRequest) GetParam0() *JhRequest {
 	return r._param0
+}
+
+var poolCainiaoNcwlJhorderQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoNcwlJhorderQueryRequest()
+	},
+}
+
+// GetCainiaoNcwlJhorderQueryRequest 从 sync.Pool 获取 CainiaoNcwlJhorderQueryAPIRequest
+func GetCainiaoNcwlJhorderQueryAPIRequest() *CainiaoNcwlJhorderQueryAPIRequest {
+	return poolCainiaoNcwlJhorderQueryAPIRequest.Get().(*CainiaoNcwlJhorderQueryAPIRequest)
+}
+
+// ReleaseCainiaoNcwlJhorderQueryAPIRequest 将 CainiaoNcwlJhorderQueryAPIRequest 放入 sync.Pool
+func ReleaseCainiaoNcwlJhorderQueryAPIRequest(v *CainiaoNcwlJhorderQueryAPIRequest) {
+	v.Reset()
+	poolCainiaoNcwlJhorderQueryAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallNrFulfillLogisticsSyncAPIRequest struct {
 // NewTmallNrFulfillLogisticsSyncRequest 初始化TmallNrFulfillLogisticsSyncAPIRequest对象
 func NewTmallNrFulfillLogisticsSyncRequest() *TmallNrFulfillLogisticsSyncAPIRequest {
 	return &TmallNrFulfillLogisticsSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrFulfillLogisticsSyncAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallNrFulfillLogisticsSyncAPIRequest) SetParam0(_param0 *NrLogisticsIn
 // GetParam0 Param0 Getter
 func (r TmallNrFulfillLogisticsSyncAPIRequest) GetParam0() *NrLogisticsInfoSynReqDto {
 	return r._param0
+}
+
+var poolTmallNrFulfillLogisticsSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrFulfillLogisticsSyncRequest()
+	},
+}
+
+// GetTmallNrFulfillLogisticsSyncRequest 从 sync.Pool 获取 TmallNrFulfillLogisticsSyncAPIRequest
+func GetTmallNrFulfillLogisticsSyncAPIRequest() *TmallNrFulfillLogisticsSyncAPIRequest {
+	return poolTmallNrFulfillLogisticsSyncAPIRequest.Get().(*TmallNrFulfillLogisticsSyncAPIRequest)
+}
+
+// ReleaseTmallNrFulfillLogisticsSyncAPIRequest 将 TmallNrFulfillLogisticsSyncAPIRequest 放入 sync.Pool
+func ReleaseTmallNrFulfillLogisticsSyncAPIRequest(v *TmallNrFulfillLogisticsSyncAPIRequest) {
+	v.Reset()
+	poolTmallNrFulfillLogisticsSyncAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // SpaceGroup 结构体
 type SpaceGroup struct {
 	// attrs
@@ -52,4 +56,45 @@ type SpaceGroup struct {
 	GeoFloorId int64 `json:"geo_floor_id,omitempty" xml:"geo_floor_id,omitempty"`
 	// isDelete
 	IsDelete bool `json:"is_delete,omitempty" xml:"is_delete,omitempty"`
+}
+
+var poolSpaceGroup = sync.Pool{
+	New: func() any {
+		return new(SpaceGroup)
+	},
+}
+
+// GetSpaceGroup() 从对象池中获取SpaceGroup
+func GetSpaceGroup() *SpaceGroup {
+	return poolSpaceGroup.Get().(*SpaceGroup)
+}
+
+// ReleaseSpaceGroup 释放SpaceGroup
+func ReleaseSpaceGroup(v *SpaceGroup) {
+	v.Attrs = v.Attrs[:0]
+	v.CampusName = ""
+	v.TypeName = ""
+	v.TypeCode = ""
+	v.BigTypeName = ""
+	v.BuildingName = ""
+	v.Description = ""
+	v.FloorName = ""
+	v.Name = ""
+	v.Modifier = ""
+	v.Creator = ""
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.Code = ""
+	v.Uuid = ""
+	v.FtId = ""
+	v.CampusId = 0
+	v.TypeId = 0
+	v.BigTypeId = 0
+	v.BuildingId = 0
+	v.FloorId = 0
+	v.Id = 0
+	v.TypeWrap = nil
+	v.GeoFloorId = 0
+	v.IsDelete = false
+	poolSpaceGroup.Put(v)
 }

@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // VoucherItemInfo 结构体
 type VoucherItemInfo struct {
 	// sku规格id
@@ -10,4 +14,24 @@ type VoucherItemInfo struct {
 	SkuOutNo string `json:"sku_out_no,omitempty" xml:"sku_out_no,omitempty"`
 	// 外部菜品id
 	DishOutNo string `json:"dish_out_no,omitempty" xml:"dish_out_no,omitempty"`
+}
+
+var poolVoucherItemInfo = sync.Pool{
+	New: func() any {
+		return new(VoucherItemInfo)
+	},
+}
+
+// GetVoucherItemInfo() 从对象池中获取VoucherItemInfo
+func GetVoucherItemInfo() *VoucherItemInfo {
+	return poolVoucherItemInfo.Get().(*VoucherItemInfo)
+}
+
+// ReleaseVoucherItemInfo 释放VoucherItemInfo
+func ReleaseVoucherItemInfo(v *VoucherItemInfo) {
+	v.SkuId = ""
+	v.DishId = ""
+	v.SkuOutNo = ""
+	v.DishOutNo = ""
+	poolVoucherItemInfo.Put(v)
 }

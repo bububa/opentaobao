@@ -9,11 +9,6 @@ import (
 // alibaba.tjb.picture.upload
 //
 // 淘特图片空间上传单张图片
-func AlibabaTjbPictureUpload(clt *core.SDKClient, req *media.AlibabaTjbPictureUploadAPIRequest, session string) (*media.AlibabaTjbPictureUploadAPIResponse, error) {
-	var resp media.AlibabaTjbPictureUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTjbPictureUpload(clt *core.SDKClient, req *media.AlibabaTjbPictureUploadAPIRequest, resp *media.AlibabaTjbPictureUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

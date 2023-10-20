@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // CreateOrderParam 结构体
 type CreateOrderParam struct {
 	// 多房间参数
@@ -68,4 +72,53 @@ type CreateOrderParam struct {
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 	// 是否同意向境外提供个人信息
 	DataExportAgreement bool `json:"data_export_agreement,omitempty" xml:"data_export_agreement,omitempty"`
+}
+
+var poolCreateOrderParam = sync.Pool{
+	New: func() any {
+		return new(CreateOrderParam)
+	},
+}
+
+// GetCreateOrderParam() 从对象池中获取CreateOrderParam
+func GetCreateOrderParam() *CreateOrderParam {
+	return poolCreateOrderParam.Get().(*CreateOrderParam)
+}
+
+// ReleaseCreateOrderParam 释放CreateOrderParam
+func ReleaseCreateOrderParam(v *CreateOrderParam) {
+	v.GuestByRoomDtos = v.GuestByRoomDtos[:0]
+	v.BreakfastName = ""
+	v.MemberLevel = ""
+	v.HotelId = ""
+	v.HotelName = ""
+	v.CheckInDate = ""
+	v.PaymentChannel = ""
+	v.CustomerPhone = ""
+	v.CheckOutDate = ""
+	v.CustomerFirstName = ""
+	v.CustomerEmail = ""
+	v.CustomerLastName = ""
+	v.RpName = ""
+	v.OfferSourceChannel = ""
+	v.OfferId = ""
+	v.RpCode = ""
+	v.VoucherId = ""
+	v.AreaCode = ""
+	v.OutRoomId = 0
+	v.Gid = 0
+	v.RoomNumber = 0
+	v.Shid = 0
+	v.ChildrenNumber = 0
+	v.RpId = 0
+	v.PersonNumber = 0
+	v.AdultNumber = 0
+	v.RoomId = 0
+	v.RateId = 0
+	v.PaymentType = 0
+	v.CouponInstanceId = 0
+	v.DerbyVoucherUniversalDTO = nil
+	v.Version = 0
+	v.DataExportAgreement = false
+	poolCreateOrderParam.Put(v)
 }

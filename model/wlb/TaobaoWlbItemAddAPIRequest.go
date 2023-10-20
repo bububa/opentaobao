@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -59,8 +60,34 @@ type TaobaoWlbItemAddAPIRequest struct {
 // NewTaobaoWlbItemAddRequest 初始化TaobaoWlbItemAddAPIRequest对象
 func NewTaobaoWlbItemAddRequest() *TaobaoWlbItemAddAPIRequest {
 	return &TaobaoWlbItemAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(21),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbItemAddAPIRequest) Reset() {
+	r._name = ""
+	r._title = ""
+	r._itemCode = ""
+	r._remark = ""
+	r._type = ""
+	r._isSku = ""
+	r._proNameList = ""
+	r._proValueList = ""
+	r._color = ""
+	r._goodsCat = ""
+	r._pricingCat = ""
+	r._packageMaterial = ""
+	r._weight = 0
+	r._length = 0
+	r._width = 0
+	r._height = 0
+	r._volume = 0
+	r._price = 0
+	r._isFriable = false
+	r._isDangerous = false
+	r._supportBatch = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -351,4 +378,21 @@ func (r *TaobaoWlbItemAddAPIRequest) SetSupportBatch(_supportBatch bool) error {
 // GetSupportBatch SupportBatch Getter
 func (r TaobaoWlbItemAddAPIRequest) GetSupportBatch() bool {
 	return r._supportBatch
+}
+
+var poolTaobaoWlbItemAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbItemAddRequest()
+	},
+}
+
+// GetTaobaoWlbItemAddRequest 从 sync.Pool 获取 TaobaoWlbItemAddAPIRequest
+func GetTaobaoWlbItemAddAPIRequest() *TaobaoWlbItemAddAPIRequest {
+	return poolTaobaoWlbItemAddAPIRequest.Get().(*TaobaoWlbItemAddAPIRequest)
+}
+
+// ReleaseTaobaoWlbItemAddAPIRequest 将 TaobaoWlbItemAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbItemAddAPIRequest(v *TaobaoWlbItemAddAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbItemAddAPIRequest.Put(v)
 }

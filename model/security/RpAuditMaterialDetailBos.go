@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // RpAuditMaterialDetailBos 结构体
 type RpAuditMaterialDetailBos struct {
 	// 给用户的建议
@@ -18,4 +22,28 @@ type RpAuditMaterialDetailBos struct {
 	Security bool `json:"security,omitempty" xml:"security,omitempty"`
 	// intercept
 	Intercept bool `json:"intercept,omitempty" xml:"intercept,omitempty"`
+}
+
+var poolRpAuditMaterialDetailBos = sync.Pool{
+	New: func() any {
+		return new(RpAuditMaterialDetailBos)
+	},
+}
+
+// GetRpAuditMaterialDetailBos() 从对象池中获取RpAuditMaterialDetailBos
+func GetRpAuditMaterialDetailBos() *RpAuditMaterialDetailBos {
+	return poolRpAuditMaterialDetailBos.Get().(*RpAuditMaterialDetailBos)
+}
+
+// ReleaseRpAuditMaterialDetailBos 释放RpAuditMaterialDetailBos
+func ReleaseRpAuditMaterialDetailBos(v *RpAuditMaterialDetailBos) {
+	v.Suggestion = ""
+	v.Display = ""
+	v.Text = ""
+	v.Code = ""
+	v.Type = ""
+	v.MaterialType = ""
+	v.Security = false
+	v.Intercept = false
+	poolRpAuditMaterialDetailBos.Put(v)
 }

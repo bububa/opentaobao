@@ -1,5 +1,9 @@
 package alilabs
 
+import (
+	"sync"
+)
+
 // Status 结构体
 type Status struct {
 	// 开关状态
@@ -12,4 +16,25 @@ type Status struct {
 	Brightness string `json:"brightness,omitempty" xml:"brightness,omitempty"`
 	// 风速
 	Windspeed string `json:"windspeed,omitempty" xml:"windspeed,omitempty"`
+}
+
+var poolStatus = sync.Pool{
+	New: func() any {
+		return new(Status)
+	},
+}
+
+// GetStatus() 从对象池中获取Status
+func GetStatus() *Status {
+	return poolStatus.Get().(*Status)
+}
+
+// ReleaseStatus 释放Status
+func ReleaseStatus(v *Status) {
+	v.Powerstate = ""
+	v.Mode = ""
+	v.Temperature = ""
+	v.Brightness = ""
+	v.Windspeed = ""
+	poolStatus.Put(v)
 }

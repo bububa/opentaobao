@@ -1,5 +1,9 @@
 package tmallsc
 
+import (
+	"sync"
+)
+
 // ServiceInsuranceCallbackRequest 结构体
 type ServiceInsuranceCallbackRequest struct {
 	// 保单号
@@ -16,4 +20,27 @@ type ServiceInsuranceCallbackRequest struct {
 	InsuranceType int64 `json:"insurance_type,omitempty" xml:"insurance_type,omitempty"`
 	//  保单状态 1 投保成功； 99 投保失败
 	InsuranceOrderStatus int64 `json:"insurance_order_status,omitempty" xml:"insurance_order_status,omitempty"`
+}
+
+var poolServiceInsuranceCallbackRequest = sync.Pool{
+	New: func() any {
+		return new(ServiceInsuranceCallbackRequest)
+	},
+}
+
+// GetServiceInsuranceCallbackRequest() 从对象池中获取ServiceInsuranceCallbackRequest
+func GetServiceInsuranceCallbackRequest() *ServiceInsuranceCallbackRequest {
+	return poolServiceInsuranceCallbackRequest.Get().(*ServiceInsuranceCallbackRequest)
+}
+
+// ReleaseServiceInsuranceCallbackRequest 释放ServiceInsuranceCallbackRequest
+func ReleaseServiceInsuranceCallbackRequest(v *ServiceInsuranceCallbackRequest) {
+	v.InsuranceOrderNo = ""
+	v.InsuranceStartTime = ""
+	v.InsuranceRefundTime = ""
+	v.InsuranceCount = 0
+	v.InsuranceServiceOrderId = 0
+	v.InsuranceType = 0
+	v.InsuranceOrderStatus = 0
+	poolServiceInsuranceCallbackRequest.Put(v)
 }

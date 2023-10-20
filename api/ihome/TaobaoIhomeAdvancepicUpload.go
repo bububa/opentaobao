@@ -9,11 +9,6 @@ import (
 // taobao.ihome.advancepic.upload
 //
 // ihome 定制业务编辑器投稿素材上传
-func TaobaoIhomeAdvancepicUpload(clt *core.SDKClient, req *ihome.TaobaoIhomeAdvancepicUploadAPIRequest, session string) (*ihome.TaobaoIhomeAdvancepicUploadAPIResponse, error) {
-	var resp ihome.TaobaoIhomeAdvancepicUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoIhomeAdvancepicUpload(clt *core.SDKClient, req *ihome.TaobaoIhomeAdvancepicUploadAPIRequest, resp *ihome.TaobaoIhomeAdvancepicUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

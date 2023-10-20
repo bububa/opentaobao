@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // DerbyVoucherPolymerizationVo 结构体
 type DerbyVoucherPolymerizationVo struct {
 	// 1
@@ -34,4 +38,36 @@ type DerbyVoucherPolymerizationVo struct {
 	DiscountOff int64 `json:"discount_off,omitempty" xml:"discount_off,omitempty"`
 	// 1
 	Onoffline bool `json:"onoffline,omitempty" xml:"onoffline,omitempty"`
+}
+
+var poolDerbyVoucherPolymerizationVo = sync.Pool{
+	New: func() any {
+		return new(DerbyVoucherPolymerizationVo)
+	},
+}
+
+// GetDerbyVoucherPolymerizationVo() 从对象池中获取DerbyVoucherPolymerizationVo
+func GetDerbyVoucherPolymerizationVo() *DerbyVoucherPolymerizationVo {
+	return poolDerbyVoucherPolymerizationVo.Get().(*DerbyVoucherPolymerizationVo)
+}
+
+// ReleaseDerbyVoucherPolymerizationVo 释放DerbyVoucherPolymerizationVo
+func ReleaseDerbyVoucherPolymerizationVo(v *DerbyVoucherPolymerizationVo) {
+	v.MemberVoucherID = ""
+	v.Type = ""
+	v.Name = ""
+	v.Category = ""
+	v.Code = ""
+	v.VoucherPic = ""
+	v.ShortDes = ""
+	v.LongDes = ""
+	v.UsedDate = ""
+	v.Status = ""
+	v.QRCodeImage = ""
+	v.EndDate = ""
+	v.VoucherCode = ""
+	v.UseTimes = ""
+	v.DiscountOff = 0
+	v.Onoffline = false
+	poolDerbyVoucherPolymerizationVo.Put(v)
 }

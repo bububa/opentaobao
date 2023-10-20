@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -51,8 +52,30 @@ type AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest struct {
 // NewAlibabaAlihealthDrugKytSpeciaVaccinUploadretailRequest 初始化AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest对象
 func NewAlibabaAlihealthDrugKytSpeciaVaccinUploadretailRequest() *AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest {
 	return &AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(17),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest) Reset() {
+	r._traceCodes = r._traceCodes[:0]
+	r._billCode = ""
+	r._billTime = ""
+	r._refUserId = ""
+	r._fromUserId = ""
+	r._operIcCode = ""
+	r._operIcName = ""
+	r._customerIdType = ""
+	r._customerId = ""
+	r._userTel = ""
+	r._networkBillFlag = ""
+	r._medicDoctor = ""
+	r._medicDispenser = ""
+	r._userName = ""
+	r._userAgent = ""
+	r._billType = 0
+	r._physicType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -291,4 +314,21 @@ func (r *AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest) SetPhysicTyp
 // GetPhysicType PhysicType Getter
 func (r AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest) GetPhysicType() int64 {
 	return r._physicType
+}
+
+var poolAlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytSpeciaVaccinUploadretailRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytSpeciaVaccinUploadretailRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest
+func GetAlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest() *AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest {
+	return poolAlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest.Get().(*AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest 将 AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest(v *AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIRequest.Put(v)
 }

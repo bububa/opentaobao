@@ -1,5 +1,9 @@
 package alihealthoutflow
 
+import (
+	"sync"
+)
+
 // PrescriptionOutflowUpdateRequest 结构体
 type PrescriptionOutflowUpdateRequest struct {
 	// 诊断(非空)
@@ -78,4 +82,58 @@ type PrescriptionOutflowUpdateRequest struct {
 	SyncHisErrMsg string `json:"sync_his_err_msg,omitempty" xml:"sync_his_err_msg,omitempty"`
 	// 同步his结果(非空)
 	SyncHisResult bool `json:"sync_his_result,omitempty" xml:"sync_his_result,omitempty"`
+}
+
+var poolPrescriptionOutflowUpdateRequest = sync.Pool{
+	New: func() any {
+		return new(PrescriptionOutflowUpdateRequest)
+	},
+}
+
+// GetPrescriptionOutflowUpdateRequest() 从对象池中获取PrescriptionOutflowUpdateRequest
+func GetPrescriptionOutflowUpdateRequest() *PrescriptionOutflowUpdateRequest {
+	return poolPrescriptionOutflowUpdateRequest.Get().(*PrescriptionOutflowUpdateRequest)
+}
+
+// ReleasePrescriptionOutflowUpdateRequest 释放PrescriptionOutflowUpdateRequest
+func ReleasePrescriptionOutflowUpdateRequest(v *PrescriptionOutflowUpdateRequest) {
+	v.Diagnoses = v.Diagnoses[:0]
+	v.Drugs = v.Drugs[:0]
+	v.PatientName = ""
+	v.MobilePhone = ""
+	v.AlipayUserId = ""
+	v.Age = ""
+	v.Sex = ""
+	v.Address = ""
+	v.VisitId = ""
+	v.VisitType = ""
+	v.ChannelCode = ""
+	v.DetpId = ""
+	v.DeptName = ""
+	v.DoctorId = ""
+	v.DoctorName = ""
+	v.PatientId = ""
+	v.VisitTime = ""
+	v.MainTell = ""
+	v.ProblemNow = ""
+	v.BodyCheck = ""
+	v.DoctorAdvice = ""
+	v.RxNo = ""
+	v.RxType = ""
+	v.DrugType = ""
+	v.FeeType = ""
+	v.CardNumber = ""
+	v.PlatformCode = ""
+	v.Attributes = ""
+	v.IdCard = ""
+	v.ArchivesType = ""
+	v.Source = ""
+	v.Template = ""
+	v.ArchivesId = ""
+	v.PatientType = ""
+	v.PatientInsuredRegion = ""
+	v.InsuranceSettlementRegion = ""
+	v.SyncHisErrMsg = ""
+	v.SyncHisResult = false
+	poolPrescriptionOutflowUpdateRequest.Put(v)
 }

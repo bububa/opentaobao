@@ -1,5 +1,9 @@
 package mozi
 
+import (
+	"sync"
+)
+
 // CreateTenantEmployeeAndAccountResult 结构体
 type CreateTenantEmployeeAndAccountResult struct {
 	// 返回状态描述
@@ -14,4 +18,26 @@ type CreateTenantEmployeeAndAccountResult struct {
 	Data *EmployeeAccount `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolCreateTenantEmployeeAndAccountResult = sync.Pool{
+	New: func() any {
+		return new(CreateTenantEmployeeAndAccountResult)
+	},
+}
+
+// GetCreateTenantEmployeeAndAccountResult() 从对象池中获取CreateTenantEmployeeAndAccountResult
+func GetCreateTenantEmployeeAndAccountResult() *CreateTenantEmployeeAndAccountResult {
+	return poolCreateTenantEmployeeAndAccountResult.Get().(*CreateTenantEmployeeAndAccountResult)
+}
+
+// ReleaseCreateTenantEmployeeAndAccountResult 释放CreateTenantEmployeeAndAccountResult
+func ReleaseCreateTenantEmployeeAndAccountResult(v *CreateTenantEmployeeAndAccountResult) {
+	v.ResponseMessage = ""
+	v.ResponseMetaData = ""
+	v.ResponseCode = ""
+	v.RequestId = ""
+	v.Data = nil
+	v.Success = false
+	poolCreateTenantEmployeeAndAccountResult.Put(v)
 }

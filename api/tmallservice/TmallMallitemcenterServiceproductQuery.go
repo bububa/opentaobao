@@ -9,11 +9,6 @@ import (
 // tmall.mallitemcenter.serviceproduct.query
 //
 // 查询天猫服务的服务商发布的服务产品
-func TmallMallitemcenterServiceproductQuery(clt *core.SDKClient, req *tmallservice.TmallMallitemcenterServiceproductQueryAPIRequest, session string) (*tmallservice.TmallMallitemcenterServiceproductQueryAPIResponse, error) {
-	var resp tmallservice.TmallMallitemcenterServiceproductQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallMallitemcenterServiceproductQuery(clt *core.SDKClient, req *tmallservice.TmallMallitemcenterServiceproductQueryAPIRequest, resp *tmallservice.TmallMallitemcenterServiceproductQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

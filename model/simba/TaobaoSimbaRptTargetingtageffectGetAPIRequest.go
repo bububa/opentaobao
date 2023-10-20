@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoSimbaRptTargetingtageffectGetAPIRequest struct {
 // NewTaobaoSimbaRptTargetingtageffectGetRequest 初始化TaobaoSimbaRptTargetingtageffectGetAPIRequest对象
 func NewTaobaoSimbaRptTargetingtageffectGetRequest() *TaobaoSimbaRptTargetingtageffectGetAPIRequest {
 	return &TaobaoSimbaRptTargetingtageffectGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaRptTargetingtageffectGetAPIRequest) Reset() {
+	r._nick = ""
+	r._startTime = ""
+	r._endTime = ""
+	r._campaignId = 0
+	r._adgroupId = 0
+	r._pageSize = 0
+	r._pageNumber = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoSimbaRptTargetingtageffectGetAPIRequest) SetPageNumber(_pageNumbe
 // GetPageNumber PageNumber Getter
 func (r TaobaoSimbaRptTargetingtageffectGetAPIRequest) GetPageNumber() int64 {
 	return r._pageNumber
+}
+
+var poolTaobaoSimbaRptTargetingtageffectGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaRptTargetingtageffectGetRequest()
+	},
+}
+
+// GetTaobaoSimbaRptTargetingtageffectGetRequest 从 sync.Pool 获取 TaobaoSimbaRptTargetingtageffectGetAPIRequest
+func GetTaobaoSimbaRptTargetingtageffectGetAPIRequest() *TaobaoSimbaRptTargetingtageffectGetAPIRequest {
+	return poolTaobaoSimbaRptTargetingtageffectGetAPIRequest.Get().(*TaobaoSimbaRptTargetingtageffectGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaRptTargetingtageffectGetAPIRequest 将 TaobaoSimbaRptTargetingtageffectGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaRptTargetingtageffectGetAPIRequest(v *TaobaoSimbaRptTargetingtageffectGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaRptTargetingtageffectGetAPIRequest.Put(v)
 }

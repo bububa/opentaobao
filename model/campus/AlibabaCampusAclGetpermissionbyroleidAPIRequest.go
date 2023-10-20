@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaCampusAclGetpermissionbyroleidAPIRequest struct {
 // NewAlibabaCampusAclGetpermissionbyroleidRequest 初始化AlibabaCampusAclGetpermissionbyroleidAPIRequest对象
 func NewAlibabaCampusAclGetpermissionbyroleidRequest() *AlibabaCampusAclGetpermissionbyroleidAPIRequest {
 	return &AlibabaCampusAclGetpermissionbyroleidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusAclGetpermissionbyroleidAPIRequest) Reset() {
+	r._systemId = ""
+	r._roleId = ""
+	r._campusId = 0
+	r._companyId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaCampusAclGetpermissionbyroleidAPIRequest) SetCompanyId(_companyI
 // GetCompanyId CompanyId Getter
 func (r AlibabaCampusAclGetpermissionbyroleidAPIRequest) GetCompanyId() int64 {
 	return r._companyId
+}
+
+var poolAlibabaCampusAclGetpermissionbyroleidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusAclGetpermissionbyroleidRequest()
+	},
+}
+
+// GetAlibabaCampusAclGetpermissionbyroleidRequest 从 sync.Pool 获取 AlibabaCampusAclGetpermissionbyroleidAPIRequest
+func GetAlibabaCampusAclGetpermissionbyroleidAPIRequest() *AlibabaCampusAclGetpermissionbyroleidAPIRequest {
+	return poolAlibabaCampusAclGetpermissionbyroleidAPIRequest.Get().(*AlibabaCampusAclGetpermissionbyroleidAPIRequest)
+}
+
+// ReleaseAlibabaCampusAclGetpermissionbyroleidAPIRequest 将 AlibabaCampusAclGetpermissionbyroleidAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusAclGetpermissionbyroleidAPIRequest(v *AlibabaCampusAclGetpermissionbyroleidAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusAclGetpermissionbyroleidAPIRequest.Put(v)
 }

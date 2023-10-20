@@ -2,6 +2,7 @@ package idleisv
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleIsvOrderCloseAPIRequest struct {
 // NewAlibabaIdleIsvOrderCloseRequest 初始化AlibabaIdleIsvOrderCloseAPIRequest对象
 func NewAlibabaIdleIsvOrderCloseRequest() *AlibabaIdleIsvOrderCloseAPIRequest {
 	return &AlibabaIdleIsvOrderCloseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleIsvOrderCloseAPIRequest) Reset() {
+	r._isvAppraiseIsvOrderCloseDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleIsvOrderCloseAPIRequest) SetIsvAppraiseIsvOrderCloseDto(_isv
 // GetIsvAppraiseIsvOrderCloseDto IsvAppraiseIsvOrderCloseDto Getter
 func (r AlibabaIdleIsvOrderCloseAPIRequest) GetIsvAppraiseIsvOrderCloseDto() *AppraiseIsvOrderCloseDto {
 	return r._isvAppraiseIsvOrderCloseDto
+}
+
+var poolAlibabaIdleIsvOrderCloseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleIsvOrderCloseRequest()
+	},
+}
+
+// GetAlibabaIdleIsvOrderCloseRequest 从 sync.Pool 获取 AlibabaIdleIsvOrderCloseAPIRequest
+func GetAlibabaIdleIsvOrderCloseAPIRequest() *AlibabaIdleIsvOrderCloseAPIRequest {
+	return poolAlibabaIdleIsvOrderCloseAPIRequest.Get().(*AlibabaIdleIsvOrderCloseAPIRequest)
+}
+
+// ReleaseAlibabaIdleIsvOrderCloseAPIRequest 将 AlibabaIdleIsvOrderCloseAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleIsvOrderCloseAPIRequest(v *AlibabaIdleIsvOrderCloseAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleIsvOrderCloseAPIRequest.Put(v)
 }

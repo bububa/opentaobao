@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // AddressSearchDto 结构体
 type AddressSearchDto struct {
 	// 城市图片url
@@ -16,4 +20,27 @@ type AddressSearchDto struct {
 	CityCode int64 `json:"city_code,omitempty" xml:"city_code,omitempty"`
 	// 国家编码
 	CountryCode int64 `json:"country_code,omitempty" xml:"country_code,omitempty"`
+}
+
+var poolAddressSearchDto = sync.Pool{
+	New: func() any {
+		return new(AddressSearchDto)
+	},
+}
+
+// GetAddressSearchDto() 从对象池中获取AddressSearchDto
+func GetAddressSearchDto() *AddressSearchDto {
+	return poolAddressSearchDto.Get().(*AddressSearchDto)
+}
+
+// ReleaseAddressSearchDto 释放AddressSearchDto
+func ReleaseAddressSearchDto(v *AddressSearchDto) {
+	v.CityUrl = ""
+	v.CityPyHead = ""
+	v.CityCn = ""
+	v.CountryCn = ""
+	v.Domestic = 0
+	v.CityCode = 0
+	v.CountryCode = 0
+	poolAddressSearchDto.Put(v)
 }

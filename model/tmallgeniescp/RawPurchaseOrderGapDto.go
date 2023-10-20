@@ -1,5 +1,9 @@
 package tmallgeniescp
 
+import (
+	"sync"
+)
+
 // RawPurchaseOrderGapDto 结构体
 type RawPurchaseOrderGapDto struct {
 	// 扩展参数
@@ -16,4 +20,27 @@ type RawPurchaseOrderGapDto struct {
 	LocationCode string `json:"location_code,omitempty" xml:"location_code,omitempty"`
 	// 二级物料PO GAP数
 	RawPoGapQty int64 `json:"raw_po_gap_qty,omitempty" xml:"raw_po_gap_qty,omitempty"`
+}
+
+var poolRawPurchaseOrderGapDto = sync.Pool{
+	New: func() any {
+		return new(RawPurchaseOrderGapDto)
+	},
+}
+
+// GetRawPurchaseOrderGapDto() 从对象池中获取RawPurchaseOrderGapDto
+func GetRawPurchaseOrderGapDto() *RawPurchaseOrderGapDto {
+	return poolRawPurchaseOrderGapDto.Get().(*RawPurchaseOrderGapDto)
+}
+
+// ReleaseRawPurchaseOrderGapDto 释放RawPurchaseOrderGapDto
+func ReleaseRawPurchaseOrderGapDto(v *RawPurchaseOrderGapDto) {
+	v.ExtendJson = ""
+	v.Tenant = ""
+	v.KeyFigureDate = ""
+	v.MaterielCode = ""
+	v.LocationCodeTo = ""
+	v.LocationCode = ""
+	v.RawPoGapQty = 0
+	poolRawPurchaseOrderGapDto.Put(v)
 }

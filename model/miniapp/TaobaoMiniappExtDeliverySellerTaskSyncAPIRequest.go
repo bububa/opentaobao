@@ -2,6 +2,7 @@ package miniapp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoMiniappExtDeliverySellerTaskSyncAPIRequest struct {
 // NewTaobaoMiniappExtDeliverySellerTaskSyncRequest 初始化TaobaoMiniappExtDeliverySellerTaskSyncAPIRequest对象
 func NewTaobaoMiniappExtDeliverySellerTaskSyncRequest() *TaobaoMiniappExtDeliverySellerTaskSyncAPIRequest {
 	return &TaobaoMiniappExtDeliverySellerTaskSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappExtDeliverySellerTaskSyncAPIRequest) Reset() {
+	r._sellerDeliveryTask = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoMiniappExtDeliverySellerTaskSyncAPIRequest) SetSellerDeliveryTask
 // GetSellerDeliveryTask SellerDeliveryTask Getter
 func (r TaobaoMiniappExtDeliverySellerTaskSyncAPIRequest) GetSellerDeliveryTask() *SellerDeliveryTaskDto {
 	return r._sellerDeliveryTask
+}
+
+var poolTaobaoMiniappExtDeliverySellerTaskSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappExtDeliverySellerTaskSyncRequest()
+	},
+}
+
+// GetTaobaoMiniappExtDeliverySellerTaskSyncRequest 从 sync.Pool 获取 TaobaoMiniappExtDeliverySellerTaskSyncAPIRequest
+func GetTaobaoMiniappExtDeliverySellerTaskSyncAPIRequest() *TaobaoMiniappExtDeliverySellerTaskSyncAPIRequest {
+	return poolTaobaoMiniappExtDeliverySellerTaskSyncAPIRequest.Get().(*TaobaoMiniappExtDeliverySellerTaskSyncAPIRequest)
+}
+
+// ReleaseTaobaoMiniappExtDeliverySellerTaskSyncAPIRequest 将 TaobaoMiniappExtDeliverySellerTaskSyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappExtDeliverySellerTaskSyncAPIRequest(v *TaobaoMiniappExtDeliverySellerTaskSyncAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappExtDeliverySellerTaskSyncAPIRequest.Put(v)
 }

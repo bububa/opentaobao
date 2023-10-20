@@ -2,6 +2,7 @@ package ju
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaJhsCommunityWechatLoginAPIRequest struct {
 // NewAlibabaJhsCommunityWechatLoginRequest 初始化AlibabaJhsCommunityWechatLoginAPIRequest对象
 func NewAlibabaJhsCommunityWechatLoginRequest() *AlibabaJhsCommunityWechatLoginAPIRequest {
 	return &AlibabaJhsCommunityWechatLoginAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJhsCommunityWechatLoginAPIRequest) Reset() {
+	r._code = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaJhsCommunityWechatLoginAPIRequest) SetCode(_code string) error {
 // GetCode Code Getter
 func (r AlibabaJhsCommunityWechatLoginAPIRequest) GetCode() string {
 	return r._code
+}
+
+var poolAlibabaJhsCommunityWechatLoginAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJhsCommunityWechatLoginRequest()
+	},
+}
+
+// GetAlibabaJhsCommunityWechatLoginRequest 从 sync.Pool 获取 AlibabaJhsCommunityWechatLoginAPIRequest
+func GetAlibabaJhsCommunityWechatLoginAPIRequest() *AlibabaJhsCommunityWechatLoginAPIRequest {
+	return poolAlibabaJhsCommunityWechatLoginAPIRequest.Get().(*AlibabaJhsCommunityWechatLoginAPIRequest)
+}
+
+// ReleaseAlibabaJhsCommunityWechatLoginAPIRequest 将 AlibabaJhsCommunityWechatLoginAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJhsCommunityWechatLoginAPIRequest(v *AlibabaJhsCommunityWechatLoginAPIRequest) {
+	v.Reset()
+	poolAlibabaJhsCommunityWechatLoginAPIRequest.Put(v)
 }

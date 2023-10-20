@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // IeChangeItineraryVo 结构体
 type IeChangeItineraryVo struct {
 	// 改签航班信息
@@ -20,4 +24,29 @@ type IeChangeItineraryVo struct {
 	DepDate string `json:"dep_date,omitempty" xml:"dep_date,omitempty"`
 	// 航程序号
 	Index int64 `json:"index,omitempty" xml:"index,omitempty"`
+}
+
+var poolIeChangeItineraryVo = sync.Pool{
+	New: func() any {
+		return new(IeChangeItineraryVo)
+	},
+}
+
+// GetIeChangeItineraryVo() 从对象池中获取IeChangeItineraryVo
+func GetIeChangeItineraryVo() *IeChangeItineraryVo {
+	return poolIeChangeItineraryVo.Get().(*IeChangeItineraryVo)
+}
+
+// ReleaseIeChangeItineraryVo 释放IeChangeItineraryVo
+func ReleaseIeChangeItineraryVo(v *IeChangeItineraryVo) {
+	v.ChangeFlights = v.ChangeFlights[:0]
+	v.ArrAirPortCode = ""
+	v.ArrCityCode = ""
+	v.ArrCityName = ""
+	v.DepAirportCode = ""
+	v.DepCityCode = ""
+	v.DepCityName = ""
+	v.DepDate = ""
+	v.Index = 0
+	poolIeChangeItineraryVo.Put(v)
 }

@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosTvpubadminContentVideoSubmitauditresultAPIRequest struct {
 // NewYunosTvpubadminContentVideoSubmitauditresultRequest 初始化YunosTvpubadminContentVideoSubmitauditresultAPIRequest对象
 func NewYunosTvpubadminContentVideoSubmitauditresultRequest() *YunosTvpubadminContentVideoSubmitauditresultAPIRequest {
 	return &YunosTvpubadminContentVideoSubmitauditresultAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminContentVideoSubmitauditresultAPIRequest) Reset() {
+	r._licenseAuditResult = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosTvpubadminContentVideoSubmitauditresultAPIRequest) SetLicenseAudit
 // GetLicenseAuditResult LicenseAuditResult Getter
 func (r YunosTvpubadminContentVideoSubmitauditresultAPIRequest) GetLicenseAuditResult() string {
 	return r._licenseAuditResult
+}
+
+var poolYunosTvpubadminContentVideoSubmitauditresultAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminContentVideoSubmitauditresultRequest()
+	},
+}
+
+// GetYunosTvpubadminContentVideoSubmitauditresultRequest 从 sync.Pool 获取 YunosTvpubadminContentVideoSubmitauditresultAPIRequest
+func GetYunosTvpubadminContentVideoSubmitauditresultAPIRequest() *YunosTvpubadminContentVideoSubmitauditresultAPIRequest {
+	return poolYunosTvpubadminContentVideoSubmitauditresultAPIRequest.Get().(*YunosTvpubadminContentVideoSubmitauditresultAPIRequest)
+}
+
+// ReleaseYunosTvpubadminContentVideoSubmitauditresultAPIRequest 将 YunosTvpubadminContentVideoSubmitauditresultAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminContentVideoSubmitauditresultAPIRequest(v *YunosTvpubadminContentVideoSubmitauditresultAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminContentVideoSubmitauditresultAPIRequest.Put(v)
 }

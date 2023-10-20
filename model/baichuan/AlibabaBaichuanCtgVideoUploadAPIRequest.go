@@ -2,6 +2,7 @@ package baichuan
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -41,8 +42,25 @@ type AlibabaBaichuanCtgVideoUploadAPIRequest struct {
 // NewAlibabaBaichuanCtgVideoUploadRequest 初始化AlibabaBaichuanCtgVideoUploadAPIRequest对象
 func NewAlibabaBaichuanCtgVideoUploadRequest() *AlibabaBaichuanCtgVideoUploadAPIRequest {
 	return &AlibabaBaichuanCtgVideoUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(12),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) Reset() {
+	r._app = ""
+	r._type = ""
+	r._videoId = ""
+	r._tbUid = ""
+	r._ownerName = ""
+	r._publishTime = ""
+	r._uploadTime = ""
+	r._videoTitle = ""
+	r._videoInfo = ""
+	r._videoCategory = ""
+	r._videoTag = ""
+	r._source = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -216,4 +234,21 @@ func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetSource(_source string) erro
 // GetSource Source Getter
 func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetSource() string {
 	return r._source
+}
+
+var poolAlibabaBaichuanCtgVideoUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaBaichuanCtgVideoUploadRequest()
+	},
+}
+
+// GetAlibabaBaichuanCtgVideoUploadRequest 从 sync.Pool 获取 AlibabaBaichuanCtgVideoUploadAPIRequest
+func GetAlibabaBaichuanCtgVideoUploadAPIRequest() *AlibabaBaichuanCtgVideoUploadAPIRequest {
+	return poolAlibabaBaichuanCtgVideoUploadAPIRequest.Get().(*AlibabaBaichuanCtgVideoUploadAPIRequest)
+}
+
+// ReleaseAlibabaBaichuanCtgVideoUploadAPIRequest 将 AlibabaBaichuanCtgVideoUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaBaichuanCtgVideoUploadAPIRequest(v *AlibabaBaichuanCtgVideoUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaBaichuanCtgVideoUploadAPIRequest.Put(v)
 }

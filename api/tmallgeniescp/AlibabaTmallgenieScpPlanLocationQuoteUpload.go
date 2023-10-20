@@ -9,11 +9,6 @@ import (
 // alibaba.tmallgenie.scp.plan.location.quote.upload
 //
 // 同步地点配额
-func AlibabaTmallgenieScpPlanLocationQuoteUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse, error) {
-	var resp tmallgeniescp.AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTmallgenieScpPlanLocationQuoteUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

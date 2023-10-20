@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // LoginUser 结构体
 type LoginUser struct {
 	// 会员NICK
@@ -10,4 +14,24 @@ type LoginUser struct {
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
 	// 分销用户ID
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolLoginUser = sync.Pool{
+	New: func() any {
+		return new(LoginUser)
+	},
+}
+
+// GetLoginUser() 从对象池中获取LoginUser
+func GetLoginUser() *LoginUser {
+	return poolLoginUser.Get().(*LoginUser)
+}
+
+// ReleaseLoginUser 释放LoginUser
+func ReleaseLoginUser(v *LoginUser) {
+	v.Nick = ""
+	v.UserType = ""
+	v.CreateTime = ""
+	v.UserId = 0
+	poolLoginUser.Put(v)
 }

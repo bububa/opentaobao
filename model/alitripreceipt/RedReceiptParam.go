@@ -1,5 +1,9 @@
 package alitripreceipt
 
+import (
+	"sync"
+)
+
 // RedReceiptParam 结构体
 type RedReceiptParam struct {
 	// 发票备注
@@ -36,4 +40,37 @@ type RedReceiptParam struct {
 	OriginTpOrderId int64 `json:"origin_tp_order_id,omitempty" xml:"origin_tp_order_id,omitempty"`
 	// 发票金额(分)
 	ReceiptAmount int64 `json:"receipt_amount,omitempty" xml:"receipt_amount,omitempty"`
+}
+
+var poolRedReceiptParam = sync.Pool{
+	New: func() any {
+		return new(RedReceiptParam)
+	},
+}
+
+// GetRedReceiptParam() 从对象池中获取RedReceiptParam
+func GetRedReceiptParam() *RedReceiptParam {
+	return poolRedReceiptParam.Get().(*RedReceiptParam)
+}
+
+// ReleaseRedReceiptParam 释放RedReceiptParam
+func ReleaseRedReceiptParam(v *RedReceiptParam) {
+	v.ReceiptMemo = ""
+	v.Receiver = ""
+	v.ReceiveMail = ""
+	v.OriginReceiptNumber = ""
+	v.CompanyName = ""
+	v.AgentOrderNo = ""
+	v.ReceiptContent = ""
+	v.ReceiveBankName = ""
+	v.ReceiveBankAccount = ""
+	v.ExtMap = ""
+	v.ReceiptTitle = ""
+	v.CompanyTaxNo = ""
+	v.ReceiveMobile = ""
+	v.ReceiptTitleType = 0
+	v.AgentId = 0
+	v.OriginTpOrderId = 0
+	v.ReceiptAmount = 0
+	poolRedReceiptParam.Put(v)
 }

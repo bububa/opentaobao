@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,6 +20,12 @@ type TaobaoTradesSoldIncrementGetAPIResponse struct {
 	TaobaoTradesSoldIncrementGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTradesSoldIncrementGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTradesSoldIncrementGetAPIResponseModel).Reset()
+}
+
 // TaobaoTradesSoldIncrementGetAPIResponseModel is 查询卖家已卖出的增量交易数据（根据修改时间） 成功返回结果
 type TaobaoTradesSoldIncrementGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"trades_sold_increment_get_response"`
@@ -30,4 +37,29 @@ type TaobaoTradesSoldIncrementGetAPIResponseModel struct {
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// 是否存在下一页
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTradesSoldIncrementGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Trades = m.Trades[:0]
+	m.TotalResults = 0
+	m.HasNext = false
+}
+
+var poolTaobaoTradesSoldIncrementGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTradesSoldIncrementGetAPIResponse)
+	},
+}
+
+// GetTaobaoTradesSoldIncrementGetAPIResponse 从 sync.Pool 获取 TaobaoTradesSoldIncrementGetAPIResponse
+func GetTaobaoTradesSoldIncrementGetAPIResponse() *TaobaoTradesSoldIncrementGetAPIResponse {
+	return poolTaobaoTradesSoldIncrementGetAPIResponse.Get().(*TaobaoTradesSoldIncrementGetAPIResponse)
+}
+
+// ReleaseTaobaoTradesSoldIncrementGetAPIResponse 将 TaobaoTradesSoldIncrementGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTradesSoldIncrementGetAPIResponse(v *TaobaoTradesSoldIncrementGetAPIResponse) {
+	v.Reset()
+	poolTaobaoTradesSoldIncrementGetAPIResponse.Put(v)
 }

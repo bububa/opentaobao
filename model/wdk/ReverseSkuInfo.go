@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ReverseSkuInfo 结构体
 type ReverseSkuInfo struct {
 	// 仓内报损原因列表
@@ -18,4 +22,28 @@ type ReverseSkuInfo struct {
 	RelatedFulfillOrderId string `json:"related_fulfill_order_id,omitempty" xml:"related_fulfill_order_id,omitempty"`
 	// 关联的正向履约子单号
 	RelatedFulfillSubOrderId string `json:"related_fulfill_sub_order_id,omitempty" xml:"related_fulfill_sub_order_id,omitempty"`
+}
+
+var poolReverseSkuInfo = sync.Pool{
+	New: func() any {
+		return new(ReverseSkuInfo)
+	},
+}
+
+// GetReverseSkuInfo() 从对象池中获取ReverseSkuInfo
+func GetReverseSkuInfo() *ReverseSkuInfo {
+	return poolReverseSkuInfo.Get().(*ReverseSkuInfo)
+}
+
+// ReleaseReverseSkuInfo 释放ReverseSkuInfo
+func ReleaseReverseSkuInfo(v *ReverseSkuInfo) {
+	v.WarehouseLossReasonList = v.WarehouseLossReasonList[:0]
+	v.WarehouseLossStockQuantity = ""
+	v.ActualInBoundStockQuantity = ""
+	v.SkuCode = ""
+	v.ReverseFulfillOrderId = ""
+	v.ReverseFulfillSubOrderId = ""
+	v.RelatedFulfillOrderId = ""
+	v.RelatedFulfillSubOrderId = ""
+	poolReverseSkuInfo.Put(v)
 }

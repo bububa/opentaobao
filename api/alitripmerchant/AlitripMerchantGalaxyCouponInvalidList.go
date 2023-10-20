@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.coupon.invalid.list
 //
 // 雅高小程序用户失效优惠券列表
-func AlitripMerchantGalaxyCouponInvalidList(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyCouponInvalidListAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyCouponInvalidListAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyCouponInvalidListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyCouponInvalidList(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyCouponInvalidListAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyCouponInvalidListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

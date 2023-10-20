@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest struct {
 // NewTaobaoWdkEquipmentConveyorBatchconfirmRequest 初始化TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest对象
 func NewTaobaoWdkEquipmentConveyorBatchconfirmRequest() *TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest {
 	return &TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest) Reset() {
+	r._uuids = r._uuids[:0]
+	r._warehouseCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest) SetWarehouseCode(_war
 // GetWarehouseCode WarehouseCode Getter
 func (r TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest) GetWarehouseCode() string {
 	return r._warehouseCode
+}
+
+var poolTaobaoWdkEquipmentConveyorBatchconfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWdkEquipmentConveyorBatchconfirmRequest()
+	},
+}
+
+// GetTaobaoWdkEquipmentConveyorBatchconfirmRequest 从 sync.Pool 获取 TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest
+func GetTaobaoWdkEquipmentConveyorBatchconfirmAPIRequest() *TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest {
+	return poolTaobaoWdkEquipmentConveyorBatchconfirmAPIRequest.Get().(*TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest)
+}
+
+// ReleaseTaobaoWdkEquipmentConveyorBatchconfirmAPIRequest 将 TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWdkEquipmentConveyorBatchconfirmAPIRequest(v *TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoWdkEquipmentConveyorBatchconfirmAPIRequest.Put(v)
 }

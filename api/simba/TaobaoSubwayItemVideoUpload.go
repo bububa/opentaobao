@@ -9,11 +9,6 @@ import (
 // taobao.subway.item.video.upload
 //
 // 为用户提供视频上传的功能
-func TaobaoSubwayItemVideoUpload(clt *core.SDKClient, req *simba.TaobaoSubwayItemVideoUploadAPIRequest, session string) (*simba.TaobaoSubwayItemVideoUploadAPIResponse, error) {
-	var resp simba.TaobaoSubwayItemVideoUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSubwayItemVideoUpload(clt *core.SDKClient, req *simba.TaobaoSubwayItemVideoUploadAPIRequest, resp *simba.TaobaoSubwayItemVideoUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

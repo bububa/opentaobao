@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // SingleRefundInfo 结构体
 type SingleRefundInfo struct {
 	// 乘客身份证后四位
@@ -18,4 +22,28 @@ type SingleRefundInfo struct {
 	RefundTicketTime string `json:"refund_ticket_time,omitempty" xml:"refund_ticket_time,omitempty"`
 	// 代理商票ID
 	AgentTicketId string `json:"agent_ticket_id,omitempty" xml:"agent_ticket_id,omitempty"`
+}
+
+var poolSingleRefundInfo = sync.Pool{
+	New: func() any {
+		return new(SingleRefundInfo)
+	},
+}
+
+// GetSingleRefundInfo() 从对象池中获取SingleRefundInfo
+func GetSingleRefundInfo() *SingleRefundInfo {
+	return poolSingleRefundInfo.Get().(*SingleRefundInfo)
+}
+
+// ReleaseSingleRefundInfo 释放SingleRefundInfo
+func ReleaseSingleRefundInfo(v *SingleRefundInfo) {
+	v.CardNo = ""
+	v.RefundPrice = ""
+	v.PassengerName = ""
+	v.RefundProcedurePrice = ""
+	v.RefundDetail = ""
+	v.AgentOrderId = ""
+	v.RefundTicketTime = ""
+	v.AgentTicketId = ""
+	poolSingleRefundInfo.Put(v)
 }

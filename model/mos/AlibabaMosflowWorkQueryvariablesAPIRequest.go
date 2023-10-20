@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMosflowWorkQueryvariablesAPIRequest struct {
 // NewAlibabaMosflowWorkQueryvariablesRequest 初始化AlibabaMosflowWorkQueryvariablesAPIRequest对象
 func NewAlibabaMosflowWorkQueryvariablesRequest() *AlibabaMosflowWorkQueryvariablesAPIRequest {
 	return &AlibabaMosflowWorkQueryvariablesAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosflowWorkQueryvariablesAPIRequest) Reset() {
+	r._processInstanceId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMosflowWorkQueryvariablesAPIRequest) SetProcessInstanceId(_proce
 // GetProcessInstanceId ProcessInstanceId Getter
 func (r AlibabaMosflowWorkQueryvariablesAPIRequest) GetProcessInstanceId() string {
 	return r._processInstanceId
+}
+
+var poolAlibabaMosflowWorkQueryvariablesAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosflowWorkQueryvariablesRequest()
+	},
+}
+
+// GetAlibabaMosflowWorkQueryvariablesRequest 从 sync.Pool 获取 AlibabaMosflowWorkQueryvariablesAPIRequest
+func GetAlibabaMosflowWorkQueryvariablesAPIRequest() *AlibabaMosflowWorkQueryvariablesAPIRequest {
+	return poolAlibabaMosflowWorkQueryvariablesAPIRequest.Get().(*AlibabaMosflowWorkQueryvariablesAPIRequest)
+}
+
+// ReleaseAlibabaMosflowWorkQueryvariablesAPIRequest 将 AlibabaMosflowWorkQueryvariablesAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosflowWorkQueryvariablesAPIRequest(v *AlibabaMosflowWorkQueryvariablesAPIRequest) {
+	v.Reset()
+	poolAlibabaMosflowWorkQueryvariablesAPIRequest.Put(v)
 }

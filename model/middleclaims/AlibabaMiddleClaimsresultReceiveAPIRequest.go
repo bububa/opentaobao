@@ -2,6 +2,7 @@ package middleclaims
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMiddleClaimsresultReceiveAPIRequest struct {
 // NewAlibabaMiddleClaimsresultReceiveRequest 初始化AlibabaMiddleClaimsresultReceiveAPIRequest对象
 func NewAlibabaMiddleClaimsresultReceiveRequest() *AlibabaMiddleClaimsresultReceiveAPIRequest {
 	return &AlibabaMiddleClaimsresultReceiveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMiddleClaimsresultReceiveAPIRequest) Reset() {
+	r._claimsResultDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMiddleClaimsresultReceiveAPIRequest) SetClaimsResultDTO(_claimsR
 // GetClaimsResultDTO ClaimsResultDTO Getter
 func (r AlibabaMiddleClaimsresultReceiveAPIRequest) GetClaimsResultDTO() *ClaimsResultDto {
 	return r._claimsResultDTO
+}
+
+var poolAlibabaMiddleClaimsresultReceiveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMiddleClaimsresultReceiveRequest()
+	},
+}
+
+// GetAlibabaMiddleClaimsresultReceiveRequest 从 sync.Pool 获取 AlibabaMiddleClaimsresultReceiveAPIRequest
+func GetAlibabaMiddleClaimsresultReceiveAPIRequest() *AlibabaMiddleClaimsresultReceiveAPIRequest {
+	return poolAlibabaMiddleClaimsresultReceiveAPIRequest.Get().(*AlibabaMiddleClaimsresultReceiveAPIRequest)
+}
+
+// ReleaseAlibabaMiddleClaimsresultReceiveAPIRequest 将 AlibabaMiddleClaimsresultReceiveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMiddleClaimsresultReceiveAPIRequest(v *AlibabaMiddleClaimsresultReceiveAPIRequest) {
+	v.Reset()
+	poolAlibabaMiddleClaimsresultReceiveAPIRequest.Put(v)
 }

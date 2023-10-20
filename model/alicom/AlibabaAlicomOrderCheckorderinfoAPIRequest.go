@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaAlicomOrderCheckorderinfoAPIRequest struct {
 // NewAlibabaAlicomOrderCheckorderinfoRequest 初始化AlibabaAlicomOrderCheckorderinfoAPIRequest对象
 func NewAlibabaAlicomOrderCheckorderinfoRequest() *AlibabaAlicomOrderCheckorderinfoAPIRequest {
 	return &AlibabaAlicomOrderCheckorderinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlicomOrderCheckorderinfoAPIRequest) Reset() {
+	r._shopName = ""
+	r._userNick = ""
+	r._tradeStatus = 0
+	r._bizOrderId = 0
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaAlicomOrderCheckorderinfoAPIRequest) SetItemId(_itemId int64) er
 // GetItemId ItemId Getter
 func (r AlibabaAlicomOrderCheckorderinfoAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolAlibabaAlicomOrderCheckorderinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlicomOrderCheckorderinfoRequest()
+	},
+}
+
+// GetAlibabaAlicomOrderCheckorderinfoRequest 从 sync.Pool 获取 AlibabaAlicomOrderCheckorderinfoAPIRequest
+func GetAlibabaAlicomOrderCheckorderinfoAPIRequest() *AlibabaAlicomOrderCheckorderinfoAPIRequest {
+	return poolAlibabaAlicomOrderCheckorderinfoAPIRequest.Get().(*AlibabaAlicomOrderCheckorderinfoAPIRequest)
+}
+
+// ReleaseAlibabaAlicomOrderCheckorderinfoAPIRequest 将 AlibabaAlicomOrderCheckorderinfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlicomOrderCheckorderinfoAPIRequest(v *AlibabaAlicomOrderCheckorderinfoAPIRequest) {
+	v.Reset()
+	poolAlibabaAlicomOrderCheckorderinfoAPIRequest.Put(v)
 }

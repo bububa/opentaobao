@@ -1,5 +1,9 @@
 package ascpffo
 
+import (
+	"sync"
+)
+
 // ErpPurchaseOrderItemDto 结构体
 type ErpPurchaseOrderItemDto struct {
 	// 扩展字段
@@ -26,4 +30,32 @@ type ErpPurchaseOrderItemDto struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 货品Id
 	ScItemId int64 `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
+}
+
+var poolErpPurchaseOrderItemDto = sync.Pool{
+	New: func() any {
+		return new(ErpPurchaseOrderItemDto)
+	},
+}
+
+// GetErpPurchaseOrderItemDto() 从对象池中获取ErpPurchaseOrderItemDto
+func GetErpPurchaseOrderItemDto() *ErpPurchaseOrderItemDto {
+	return poolErpPurchaseOrderItemDto.Get().(*ErpPurchaseOrderItemDto)
+}
+
+// ReleaseErpPurchaseOrderItemDto 释放ErpPurchaseOrderItemDto
+func ReleaseErpPurchaseOrderItemDto(v *ErpPurchaseOrderItemDto) {
+	v.ExtendFields = ""
+	v.NoTaxPurchaseAmountDec = ""
+	v.PurchaseAmountDec = ""
+	v.NoTaxPurchasePriceDec = ""
+	v.PurchasePriceDec = ""
+	v.TaxRate = ""
+	v.Title = ""
+	v.PurchaseOrderNo = ""
+	v.ReceivedDefectiveQty = 0
+	v.ReceivedNormalQty = 0
+	v.Quantity = 0
+	v.ScItemId = 0
+	poolErpPurchaseOrderItemDto.Put(v)
 }

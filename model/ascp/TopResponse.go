@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // TopResponse 结构体
 type TopResponse struct {
 	// 操作码
@@ -12,4 +16,25 @@ type TopResponse struct {
 	Data *QueryDistributorResponse `json:"data,omitempty" xml:"data,omitempty"`
 	// 请求是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTopResponse = sync.Pool{
+	New: func() any {
+		return new(TopResponse)
+	},
+}
+
+// GetTopResponse() 从对象池中获取TopResponse
+func GetTopResponse() *TopResponse {
+	return poolTopResponse.Get().(*TopResponse)
+}
+
+// ReleaseTopResponse 释放TopResponse
+func ReleaseTopResponse(v *TopResponse) {
+	v.TraceId = ""
+	v.Code = ""
+	v.Message = ""
+	v.Data = nil
+	v.Success = false
+	poolTopResponse.Put(v)
 }

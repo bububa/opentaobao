@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoFenxiaoProductSkuUpdateAPIRequest struct {
 // NewTaobaoFenxiaoProductSkuUpdateRequest 初始化TaobaoFenxiaoProductSkuUpdateAPIRequest对象
 func NewTaobaoFenxiaoProductSkuUpdateRequest() *TaobaoFenxiaoProductSkuUpdateAPIRequest {
 	return &TaobaoFenxiaoProductSkuUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) Reset() {
+	r._standardPrice = ""
+	r._agentCostPrice = ""
+	r._dealerCostPrice = ""
+	r._skuNumber = ""
+	r._properties = ""
+	r._productId = 0
+	r._quantity = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetQuantity(_quantity int64) e
 // GetQuantity Quantity Getter
 func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetQuantity() int64 {
 	return r._quantity
+}
+
+var poolTaobaoFenxiaoProductSkuUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoProductSkuUpdateRequest()
+	},
+}
+
+// GetTaobaoFenxiaoProductSkuUpdateRequest 从 sync.Pool 获取 TaobaoFenxiaoProductSkuUpdateAPIRequest
+func GetTaobaoFenxiaoProductSkuUpdateAPIRequest() *TaobaoFenxiaoProductSkuUpdateAPIRequest {
+	return poolTaobaoFenxiaoProductSkuUpdateAPIRequest.Get().(*TaobaoFenxiaoProductSkuUpdateAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoProductSkuUpdateAPIRequest 将 TaobaoFenxiaoProductSkuUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoProductSkuUpdateAPIRequest(v *TaobaoFenxiaoProductSkuUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoProductSkuUpdateAPIRequest.Put(v)
 }

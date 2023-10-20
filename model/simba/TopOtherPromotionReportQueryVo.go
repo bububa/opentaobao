@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // TopOtherPromotionReportQueryVo 结构体
 type TopOtherPromotionReportQueryVo struct {
 	// 聚合维度，promotion-主体，date-时间
@@ -36,4 +40,37 @@ type TopOtherPromotionReportQueryVo struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 是否分页
 	ByPage bool `json:"by_page,omitempty" xml:"by_page,omitempty"`
+}
+
+var poolTopOtherPromotionReportQueryVo = sync.Pool{
+	New: func() any {
+		return new(TopOtherPromotionReportQueryVo)
+	},
+}
+
+// GetTopOtherPromotionReportQueryVo() 从对象池中获取TopOtherPromotionReportQueryVo
+func GetTopOtherPromotionReportQueryVo() *TopOtherPromotionReportQueryVo {
+	return poolTopOtherPromotionReportQueryVo.Get().(*TopOtherPromotionReportQueryVo)
+}
+
+// ReleaseTopOtherPromotionReportQueryVo 释放TopOtherPromotionReportQueryVo
+func ReleaseTopOtherPromotionReportQueryVo(v *TopOtherPromotionReportQueryVo) {
+	v.QueryDomains = v.QueryDomains[:0]
+	v.QueryFieldInList = v.QueryFieldInList[:0]
+	v.BizCodeInList = v.BizCodeInList[:0]
+	v.ProvinceIdInList = v.ProvinceIdInList[:0]
+	v.SubPromotionTypes = v.SubPromotionTypes[:0]
+	v.StrategyOptimizeTargetInList = v.StrategyOptimizeTargetInList[:0]
+	v.StrategyCampaignIdInList = v.StrategyCampaignIdInList[:0]
+	v.StrategyAdgroupIdInList = v.StrategyAdgroupIdInList[:0]
+	v.SplitType = ""
+	v.UnifyType = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.StrategyCampaignIdOrName = ""
+	v.EffectEqual = 0
+	v.Offset = 0
+	v.PageSize = 0
+	v.ByPage = false
+	poolTopOtherPromotionReportQueryVo.Put(v)
 }

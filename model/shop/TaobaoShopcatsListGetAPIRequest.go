@@ -2,6 +2,7 @@ package shop
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoShopcatsListGetAPIRequest struct {
 // NewTaobaoShopcatsListGetRequest 初始化TaobaoShopcatsListGetAPIRequest对象
 func NewTaobaoShopcatsListGetRequest() *TaobaoShopcatsListGetAPIRequest {
 	return &TaobaoShopcatsListGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoShopcatsListGetAPIRequest) Reset() {
+	r._fields = r._fields[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoShopcatsListGetAPIRequest) SetFields(_fields []string) error {
 // GetFields Fields Getter
 func (r TaobaoShopcatsListGetAPIRequest) GetFields() []string {
 	return r._fields
+}
+
+var poolTaobaoShopcatsListGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoShopcatsListGetRequest()
+	},
+}
+
+// GetTaobaoShopcatsListGetRequest 从 sync.Pool 获取 TaobaoShopcatsListGetAPIRequest
+func GetTaobaoShopcatsListGetAPIRequest() *TaobaoShopcatsListGetAPIRequest {
+	return poolTaobaoShopcatsListGetAPIRequest.Get().(*TaobaoShopcatsListGetAPIRequest)
+}
+
+// ReleaseTaobaoShopcatsListGetAPIRequest 将 TaobaoShopcatsListGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoShopcatsListGetAPIRequest(v *TaobaoShopcatsListGetAPIRequest) {
+	v.Reset()
+	poolTaobaoShopcatsListGetAPIRequest.Put(v)
 }

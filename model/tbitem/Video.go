@@ -1,5 +1,9 @@
 package tbitem
 
+import (
+	"sync"
+)
+
 // Video 结构体
 type Video struct {
 	// 视频关联记录创建时间（格式：yyyy-MM-dd HH:mm:ss）
@@ -12,4 +16,25 @@ type Video struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// video的id，对应于视频在淘秀的存储记录
 	VideoId int64 `json:"video_id,omitempty" xml:"video_id,omitempty"`
+}
+
+var poolVideo = sync.Pool{
+	New: func() any {
+		return new(Video)
+	},
+}
+
+// GetVideo() 从对象池中获取Video
+func GetVideo() *Video {
+	return poolVideo.Get().(*Video)
+}
+
+// ReleaseVideo 释放Video
+func ReleaseVideo(v *Video) {
+	v.Created = ""
+	v.Modified = ""
+	v.Url = ""
+	v.Id = 0
+	v.VideoId = 0
+	poolVideo.Put(v)
 }

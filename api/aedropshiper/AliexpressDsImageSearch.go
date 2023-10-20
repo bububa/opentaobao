@@ -9,11 +9,6 @@ import (
 // aliexpress.ds.image.search
 //
 // 图片搜索
-func AliexpressDsImageSearch(clt *core.SDKClient, req *aedropshiper.AliexpressDsImageSearchAPIRequest, session string) (*aedropshiper.AliexpressDsImageSearchAPIResponse, error) {
-	var resp aedropshiper.AliexpressDsImageSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressDsImageSearch(clt *core.SDKClient, req *aedropshiper.AliexpressDsImageSearchAPIRequest, resp *aedropshiper.AliexpressDsImageSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

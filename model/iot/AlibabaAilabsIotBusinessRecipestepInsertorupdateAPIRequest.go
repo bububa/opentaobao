@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest struct {
 // NewAlibabaAilabsIotBusinessRecipestepInsertorupdateRequest 初始化AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest对象
 func NewAlibabaAilabsIotBusinessRecipestepInsertorupdateRequest() *AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest {
 	return &AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest) Reset() {
+	r._paramBusinessRecipeStepOpenParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest) SetParamBus
 // GetParamBusinessRecipeStepOpenParam ParamBusinessRecipeStepOpenParam Getter
 func (r AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest) GetParamBusinessRecipeStepOpenParam() *BusinessRecipeStepOpenParam {
 	return r._paramBusinessRecipeStepOpenParam
+}
+
+var poolAlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsIotBusinessRecipestepInsertorupdateRequest()
+	},
+}
+
+// GetAlibabaAilabsIotBusinessRecipestepInsertorupdateRequest 从 sync.Pool 获取 AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest
+func GetAlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest() *AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest {
+	return poolAlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest.Get().(*AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest)
+}
+
+// ReleaseAlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest 将 AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest(v *AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest.Put(v)
 }

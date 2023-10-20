@@ -2,6 +2,7 @@ package alimember
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMemberMerchantLevelSettingSyncAPIRequest struct {
 // NewAlibabaMemberMerchantLevelSettingSyncRequest 初始化AlibabaMemberMerchantLevelSettingSyncAPIRequest对象
 func NewAlibabaMemberMerchantLevelSettingSyncRequest() *AlibabaMemberMerchantLevelSettingSyncAPIRequest {
 	return &AlibabaMemberMerchantLevelSettingSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMemberMerchantLevelSettingSyncAPIRequest) Reset() {
+	r._syncLevelSettingDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMemberMerchantLevelSettingSyncAPIRequest) SetSyncLevelSettingDto
 // GetSyncLevelSettingDto SyncLevelSettingDto Getter
 func (r AlibabaMemberMerchantLevelSettingSyncAPIRequest) GetSyncLevelSettingDto() *SyncLevelSettingDto {
 	return r._syncLevelSettingDto
+}
+
+var poolAlibabaMemberMerchantLevelSettingSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMemberMerchantLevelSettingSyncRequest()
+	},
+}
+
+// GetAlibabaMemberMerchantLevelSettingSyncRequest 从 sync.Pool 获取 AlibabaMemberMerchantLevelSettingSyncAPIRequest
+func GetAlibabaMemberMerchantLevelSettingSyncAPIRequest() *AlibabaMemberMerchantLevelSettingSyncAPIRequest {
+	return poolAlibabaMemberMerchantLevelSettingSyncAPIRequest.Get().(*AlibabaMemberMerchantLevelSettingSyncAPIRequest)
+}
+
+// ReleaseAlibabaMemberMerchantLevelSettingSyncAPIRequest 将 AlibabaMemberMerchantLevelSettingSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMemberMerchantLevelSettingSyncAPIRequest(v *AlibabaMemberMerchantLevelSettingSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaMemberMerchantLevelSettingSyncAPIRequest.Put(v)
 }

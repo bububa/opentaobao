@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoUniversalbpLabelFindconfiglistAPIResponse struct {
 	TaobaoUniversalbpLabelFindconfiglistAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoUniversalbpLabelFindconfiglistAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoUniversalbpLabelFindconfiglistAPIResponseModel).Reset()
+}
+
 // TaobaoUniversalbpLabelFindconfiglistAPIResponseModel is 查询可用标签id信息 成功返回结果
 type TaobaoUniversalbpLabelFindconfiglistAPIResponseModel struct {
 	XMLName xml.Name `xml:"universalbp_label_findconfiglist_response"`
@@ -22,4 +29,27 @@ type TaobaoUniversalbpLabelFindconfiglistAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
 	Result *TaobaoUniversalbpLabelFindconfiglistTopResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoUniversalbpLabelFindconfiglistAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoUniversalbpLabelFindconfiglistAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoUniversalbpLabelFindconfiglistAPIResponse)
+	},
+}
+
+// GetTaobaoUniversalbpLabelFindconfiglistAPIResponse 从 sync.Pool 获取 TaobaoUniversalbpLabelFindconfiglistAPIResponse
+func GetTaobaoUniversalbpLabelFindconfiglistAPIResponse() *TaobaoUniversalbpLabelFindconfiglistAPIResponse {
+	return poolTaobaoUniversalbpLabelFindconfiglistAPIResponse.Get().(*TaobaoUniversalbpLabelFindconfiglistAPIResponse)
+}
+
+// ReleaseTaobaoUniversalbpLabelFindconfiglistAPIResponse 将 TaobaoUniversalbpLabelFindconfiglistAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoUniversalbpLabelFindconfiglistAPIResponse(v *TaobaoUniversalbpLabelFindconfiglistAPIResponse) {
+	v.Reset()
+	poolTaobaoUniversalbpLabelFindconfiglistAPIResponse.Put(v)
 }

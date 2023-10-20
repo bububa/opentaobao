@@ -2,6 +2,7 @@ package foodscan
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaFootscanMiniQueryMobilereportAPIRequest struct {
 // NewAlibabaFootscanMiniQueryMobilereportRequest 初始化AlibabaFootscanMiniQueryMobilereportAPIRequest对象
 func NewAlibabaFootscanMiniQueryMobilereportRequest() *AlibabaFootscanMiniQueryMobilereportAPIRequest {
 	return &AlibabaFootscanMiniQueryMobilereportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaFootscanMiniQueryMobilereportAPIRequest) Reset() {
+	r._token = ""
+	r._scanId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaFootscanMiniQueryMobilereportAPIRequest) SetScanId(_scanId strin
 // GetScanId ScanId Getter
 func (r AlibabaFootscanMiniQueryMobilereportAPIRequest) GetScanId() string {
 	return r._scanId
+}
+
+var poolAlibabaFootscanMiniQueryMobilereportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaFootscanMiniQueryMobilereportRequest()
+	},
+}
+
+// GetAlibabaFootscanMiniQueryMobilereportRequest 从 sync.Pool 获取 AlibabaFootscanMiniQueryMobilereportAPIRequest
+func GetAlibabaFootscanMiniQueryMobilereportAPIRequest() *AlibabaFootscanMiniQueryMobilereportAPIRequest {
+	return poolAlibabaFootscanMiniQueryMobilereportAPIRequest.Get().(*AlibabaFootscanMiniQueryMobilereportAPIRequest)
+}
+
+// ReleaseAlibabaFootscanMiniQueryMobilereportAPIRequest 将 AlibabaFootscanMiniQueryMobilereportAPIRequest 放入 sync.Pool
+func ReleaseAlibabaFootscanMiniQueryMobilereportAPIRequest(v *AlibabaFootscanMiniQueryMobilereportAPIRequest) {
+	v.Reset()
+	poolAlibabaFootscanMiniQueryMobilereportAPIRequest.Put(v)
 }

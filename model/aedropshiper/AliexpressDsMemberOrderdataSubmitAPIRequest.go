@@ -2,6 +2,7 @@ package aedropshiper
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AliexpressDsMemberOrderdataSubmitAPIRequest struct {
 // NewAliexpressDsMemberOrderdataSubmitRequest 初始化AliexpressDsMemberOrderdataSubmitAPIRequest对象
 func NewAliexpressDsMemberOrderdataSubmitRequest() *AliexpressDsMemberOrderdataSubmitAPIRequest {
 	return &AliexpressDsMemberOrderdataSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressDsMemberOrderdataSubmitAPIRequest) Reset() {
+	r._aeProductId = ""
+	r._productAmount = ""
+	r._orderAmount = ""
+	r._paytime = ""
+	r._aeSkuInfo = ""
+	r._productUrl = ""
+	r._aeOrderid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AliexpressDsMemberOrderdataSubmitAPIRequest) SetAeOrderid(_aeOrderid st
 // GetAeOrderid AeOrderid Getter
 func (r AliexpressDsMemberOrderdataSubmitAPIRequest) GetAeOrderid() string {
 	return r._aeOrderid
+}
+
+var poolAliexpressDsMemberOrderdataSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressDsMemberOrderdataSubmitRequest()
+	},
+}
+
+// GetAliexpressDsMemberOrderdataSubmitRequest 从 sync.Pool 获取 AliexpressDsMemberOrderdataSubmitAPIRequest
+func GetAliexpressDsMemberOrderdataSubmitAPIRequest() *AliexpressDsMemberOrderdataSubmitAPIRequest {
+	return poolAliexpressDsMemberOrderdataSubmitAPIRequest.Get().(*AliexpressDsMemberOrderdataSubmitAPIRequest)
+}
+
+// ReleaseAliexpressDsMemberOrderdataSubmitAPIRequest 将 AliexpressDsMemberOrderdataSubmitAPIRequest 放入 sync.Pool
+func ReleaseAliexpressDsMemberOrderdataSubmitAPIRequest(v *AliexpressDsMemberOrderdataSubmitAPIRequest) {
+	v.Reset()
+	poolAliexpressDsMemberOrderdataSubmitAPIRequest.Put(v)
 }

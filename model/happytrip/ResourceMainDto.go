@@ -1,5 +1,9 @@
 package happytrip
 
+import (
+	"sync"
+)
+
 // ResourceMainDto 结构体
 type ResourceMainDto struct {
 	// 成人成本价
@@ -130,4 +134,84 @@ type ResourceMainDto struct {
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 资源类型  -1, &#34;未知资源类型&#34;  100110, &#34;飞猪机票国内直订&#34;  100210, &#34;飞猪机票国际直订&#34;  100211, &#34;飞猪机票国际询价单&#34;  101110, &#34;飞猪酒店国内直订&#34;  110210, &#34;GT机票国际直订&#34;  110211, &#34;GT机票国际酒店&#34;  110212, &#34;GT机票国际火车&#34;  110213, &#34;GT机票国际用车&#34;  121210, &#34;HRS酒店国际酒店直订&#34;  132110, &#34;滴滴国内预约用车&#34;  142110, &#34;曹操国内预约用车&#34;  152110, &#34;快滴国内预约用车&#34;
 	ResourceType int64 `json:"resource_type,omitempty" xml:"resource_type,omitempty"`
+}
+
+var poolResourceMainDto = sync.Pool{
+	New: func() any {
+		return new(ResourceMainDto)
+	},
+}
+
+// GetResourceMainDto() 从对象池中获取ResourceMainDto
+func GetResourceMainDto() *ResourceMainDto {
+	return poolResourceMainDto.Get().(*ResourceMainDto)
+}
+
+// ReleaseResourceMainDto 释放ResourceMainDto
+func ReleaseResourceMainDto(v *ResourceMainDto) {
+	v.AdultCost = ""
+	v.AdultPrice = ""
+	v.AgencyId = ""
+	v.AgencyName = ""
+	v.AgencyOrderId = ""
+	v.AlipayTradeNo = ""
+	v.BackCityCode = ""
+	v.BackCityName = ""
+	v.BackTime = ""
+	v.BaseAmount = ""
+	v.BaseAmountCurrencyCode = ""
+	v.BaseAmountDecimalPlaces = ""
+	v.BookCityCode = ""
+	v.BookCityName = ""
+	v.BookTime = ""
+	v.ContractPrice = ""
+	v.EndAddr = ""
+	v.EndCityCode = ""
+	v.EndCityName = ""
+	v.EndDate = ""
+	v.EndLatitude = ""
+	v.EndLongitude = ""
+	v.ExpireTime = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.LowerAmount = ""
+	v.LowerAmountCurrencyCode = ""
+	v.LowerAmountDecimalPlaces = ""
+	v.PlanTime = ""
+	v.Pnr = ""
+	v.PnrExpireTime = ""
+	v.Reason = ""
+	v.ReasonCode = ""
+	v.RefundReason = ""
+	v.RefundStatus = ""
+	v.RefundType = ""
+	v.ResourceId = ""
+	v.ResourceName = ""
+	v.ResourceStatus = ""
+	v.ResourceStatusDesc = ""
+	v.Rule = ""
+	v.SeatPrice = ""
+	v.SeatPriceCurrencyCode = ""
+	v.SeatPriceDecimalPlaces = ""
+	v.StartAddr = ""
+	v.StartCityCode = ""
+	v.StartCityName = ""
+	v.StartDate = ""
+	v.StartLatitude = ""
+	v.StartLongitude = ""
+	v.SubmitTime = ""
+	v.TaxAmount = ""
+	v.TaxAmountCurrencyCode = ""
+	v.TaxAmountDecimalPlaces = ""
+	v.TotalAmount = ""
+	v.TotalAmountCurrencyCode = ""
+	v.TotalAmountDecimalPlaces = ""
+	v.UpdateTime = ""
+	v.AdultCount = 0
+	v.B2gFlag = 0
+	v.ContractFlag = 0
+	v.Id = 0
+	v.OrderId = 0
+	v.ResourceType = 0
+	poolResourceMainDto.Put(v)
 }

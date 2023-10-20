@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoAilabAicloudTopDeviceControlCustomAPIRequest struct {
 // NewTaobaoAilabAicloudTopDeviceControlCustomRequest 初始化TaobaoAilabAicloudTopDeviceControlCustomAPIRequest对象
 func NewTaobaoAilabAicloudTopDeviceControlCustomRequest() *TaobaoAilabAicloudTopDeviceControlCustomAPIRequest {
 	return &TaobaoAilabAicloudTopDeviceControlCustomAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopDeviceControlCustomAPIRequest) Reset() {
+	r._param2 = r._param2[:0]
+	r._param1 = ""
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoAilabAicloudTopDeviceControlCustomAPIRequest) SetParam0(_param0 *
 // GetParam0 Param0 Getter
 func (r TaobaoAilabAicloudTopDeviceControlCustomAPIRequest) GetParam0() *OpenBaseInfo {
 	return r._param0
+}
+
+var poolTaobaoAilabAicloudTopDeviceControlCustomAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopDeviceControlCustomRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopDeviceControlCustomRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopDeviceControlCustomAPIRequest
+func GetTaobaoAilabAicloudTopDeviceControlCustomAPIRequest() *TaobaoAilabAicloudTopDeviceControlCustomAPIRequest {
+	return poolTaobaoAilabAicloudTopDeviceControlCustomAPIRequest.Get().(*TaobaoAilabAicloudTopDeviceControlCustomAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopDeviceControlCustomAPIRequest 将 TaobaoAilabAicloudTopDeviceControlCustomAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopDeviceControlCustomAPIRequest(v *TaobaoAilabAicloudTopDeviceControlCustomAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopDeviceControlCustomAPIRequest.Put(v)
 }

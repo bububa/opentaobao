@@ -9,11 +9,6 @@ import (
 // alibaba.campus.device.historydata.get
 //
 // 设备历史数据批量获取
-func AlibabaCampusDeviceHistorydataGet(clt *core.SDKClient, req *campus.AlibabaCampusDeviceHistorydataGetAPIRequest, session string) (*campus.AlibabaCampusDeviceHistorydataGetAPIResponse, error) {
-	var resp campus.AlibabaCampusDeviceHistorydataGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusDeviceHistorydataGet(clt *core.SDKClient, req *campus.AlibabaCampusDeviceHistorydataGetAPIRequest, resp *campus.AlibabaCampusDeviceHistorydataGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

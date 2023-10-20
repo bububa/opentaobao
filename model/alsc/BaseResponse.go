@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // BaseResponse 结构体
 type BaseResponse struct {
 	// 返回编码
@@ -24,4 +28,31 @@ type BaseResponse struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 可重试
 	CanRetry bool `json:"can_retry,omitempty" xml:"can_retry,omitempty"`
+}
+
+var poolBaseResponse = sync.Pool{
+	New: func() any {
+		return new(BaseResponse)
+	},
+}
+
+// GetBaseResponse() 从对象池中获取BaseResponse
+func GetBaseResponse() *BaseResponse {
+	return poolBaseResponse.Get().(*BaseResponse)
+}
+
+// ReleaseBaseResponse 释放BaseResponse
+func ReleaseBaseResponse(v *BaseResponse) {
+	v.Code = ""
+	v.Msg = ""
+	v.Data = ""
+	v.Message = ""
+	v.TraceId = ""
+	v.ResultCode = ""
+	v.ResultMsg = ""
+	v.ExtInfo = ""
+	v.ResultObj = nil
+	v.Success = false
+	v.CanRetry = false
+	poolBaseResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // CampaignKeywordQuery 结构体
 type CampaignKeywordQuery struct {
 	// 词id集合
@@ -22,4 +26,30 @@ type CampaignKeywordQuery struct {
 	OnlineStatus int64 `json:"online_status,omitempty" xml:"online_status,omitempty"`
 	// 产品id
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
+}
+
+var poolCampaignKeywordQuery = sync.Pool{
+	New: func() any {
+		return new(CampaignKeywordQuery)
+	},
+}
+
+// GetCampaignKeywordQuery() 从对象池中获取CampaignKeywordQuery
+func GetCampaignKeywordQuery() *CampaignKeywordQuery {
+	return poolCampaignKeywordQuery.Get().(*CampaignKeywordQuery)
+}
+
+// ReleaseCampaignKeywordQuery 释放CampaignKeywordQuery
+func ReleaseCampaignKeywordQuery(v *CampaignKeywordQuery) {
+	v.WordIdList = v.WordIdList[:0]
+	v.NormWord = ""
+	v.Type = ""
+	v.BeginDate = ""
+	v.EndDate = ""
+	v.SettingKey = ""
+	v.SettingValue = ""
+	v.CampaignId = 0
+	v.OnlineStatus = 0
+	v.ProductId = 0
+	poolCampaignKeywordQuery.Put(v)
 }

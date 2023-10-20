@@ -1,5 +1,9 @@
 package moscm
 
+import (
+	"sync"
+)
+
 // VirtualInventoryDto 结构体
 type VirtualInventoryDto struct {
 	// 可售库存数量
@@ -14,4 +18,26 @@ type VirtualInventoryDto struct {
 	OutId string `json:"out_id,omitempty" xml:"out_id,omitempty"`
 	// 在库数量
 	Quantity string `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolVirtualInventoryDto = sync.Pool{
+	New: func() any {
+		return new(VirtualInventoryDto)
+	},
+}
+
+// GetVirtualInventoryDto() 从对象池中获取VirtualInventoryDto
+func GetVirtualInventoryDto() *VirtualInventoryDto {
+	return poolVirtualInventoryDto.Get().(*VirtualInventoryDto)
+}
+
+// ReleaseVirtualInventoryDto 释放VirtualInventoryDto
+func ReleaseVirtualInventoryDto(v *VirtualInventoryDto) {
+	v.AvailableQuantity = ""
+	v.CounterId = ""
+	v.OccupyQty = ""
+	v.OutCounterId = ""
+	v.OutId = ""
+	v.Quantity = ""
+	poolVirtualInventoryDto.Put(v)
 }

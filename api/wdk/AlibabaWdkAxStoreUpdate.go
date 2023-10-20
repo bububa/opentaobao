@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.ax.store.update
 //
 // 翱翔经营店更新接口
-func AlibabaWdkAxStoreUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkAxStoreUpdateAPIRequest, session string) (*wdk.AlibabaWdkAxStoreUpdateAPIResponse, error) {
-	var resp wdk.AlibabaWdkAxStoreUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkAxStoreUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkAxStoreUpdateAPIRequest, resp *wdk.AlibabaWdkAxStoreUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

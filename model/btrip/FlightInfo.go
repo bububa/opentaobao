@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // FlightInfo 结构体
 type FlightInfo struct {
 	// 到达城市
@@ -34,4 +38,36 @@ type FlightInfo struct {
 	DepCityCode string `json:"dep_city_code,omitempty" xml:"dep_city_code,omitempty"`
 	// 飞行里程
 	FlightMile int64 `json:"flight_mile,omitempty" xml:"flight_mile,omitempty"`
+}
+
+var poolFlightInfo = sync.Pool{
+	New: func() any {
+		return new(FlightInfo)
+	},
+}
+
+// GetFlightInfo() 从对象池中获取FlightInfo
+func GetFlightInfo() *FlightInfo {
+	return poolFlightInfo.Get().(*FlightInfo)
+}
+
+// ReleaseFlightInfo 释放FlightInfo
+func ReleaseFlightInfo(v *FlightInfo) {
+	v.ArrCityName = ""
+	v.DepTime = ""
+	v.Cabin = ""
+	v.DepAirportCode = ""
+	v.CabinLevel = ""
+	v.FlightNo = ""
+	v.ArrCityCode = ""
+	v.DepCityName = ""
+	v.AirlineCode = ""
+	v.DepAirportName = ""
+	v.ArrAirportName = ""
+	v.ArrTime = ""
+	v.ArrAirportCode = ""
+	v.AirlineName = ""
+	v.DepCityCode = ""
+	v.FlightMile = 0
+	poolFlightInfo.Put(v)
 }

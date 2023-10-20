@@ -1,5 +1,9 @@
 package aedropshiper
 
+import (
+	"sync"
+)
+
 // AeItemBaseInfoDto 结构体
 type AeItemBaseInfoDto struct {
 	// The title of the product
@@ -30,4 +34,34 @@ type AeItemBaseInfoDto struct {
 	CategoryId int64 `json:"category_id,omitempty" xml:"category_id,omitempty"`
 	// Seller&#39;s master account ID
 	OwnerMemberSeqLong int64 `json:"owner_member_seq_long,omitempty" xml:"owner_member_seq_long,omitempty"`
+}
+
+var poolAeItemBaseInfoDto = sync.Pool{
+	New: func() any {
+		return new(AeItemBaseInfoDto)
+	},
+}
+
+// GetAeItemBaseInfoDto() 从对象池中获取AeItemBaseInfoDto
+func GetAeItemBaseInfoDto() *AeItemBaseInfoDto {
+	return poolAeItemBaseInfoDto.Get().(*AeItemBaseInfoDto)
+}
+
+// ReleaseAeItemBaseInfoDto 释放AeItemBaseInfoDto
+func ReleaseAeItemBaseInfoDto(v *AeItemBaseInfoDto) {
+	v.Subject = ""
+	v.CurrencyCode = ""
+	v.ProductStatusType = ""
+	v.WsDisplay = ""
+	v.WsOfflineDate = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.EvaluationCount = ""
+	v.AvgEvaluationRating = ""
+	v.Detail = ""
+	v.MobileDetail = ""
+	v.ProductId = 0
+	v.CategoryId = 0
+	v.OwnerMemberSeqLong = 0
+	poolAeItemBaseInfoDto.Put(v)
 }

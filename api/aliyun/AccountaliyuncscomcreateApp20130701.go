@@ -9,11 +9,6 @@ import (
 // account.aliyuncs.com.CreateApp.2013-07-01
 //
 // 为某个用户创建appkey
-func AccountAliyuncsComCreateApp20130701(clt *core.SDKClient, req *aliyun.AccountAliyuncsComCreateApp20130701APIRequest, session string) (*aliyun.AccountAliyuncsComCreateApp20130701APIResponse, error) {
-	var resp aliyun.AccountAliyuncsComCreateApp20130701APIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AccountAliyuncsComCreateApp20130701(clt *core.SDKClient, req *aliyun.AccountAliyuncsComCreateApp20130701APIRequest, resp *aliyun.AccountAliyuncsComCreateApp20130701APIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

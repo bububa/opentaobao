@@ -2,6 +2,7 @@ package tmalltrend
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallBrandItemUploadAPIResponse struct {
 	model.CommonResponse
 	TmallBrandItemUploadAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallBrandItemUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallBrandItemUploadAPIResponseModel).Reset()
 }
 
 // TmallBrandItemUploadAPIResponseModel is 天猫品牌新品同步API 成功返回结果
@@ -28,4 +35,30 @@ type TmallBrandItemUploadAPIResponseModel struct {
 	RespErrorCode int64 `json:"resp_error_code,omitempty" xml:"resp_error_code,omitempty"`
 	// 是否成功
 	RespSuccess bool `json:"resp_success,omitempty" xml:"resp_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallBrandItemUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Value = ""
+	m.ErrorMsg = ""
+	m.RespErrorCode = 0
+	m.RespSuccess = false
+}
+
+var poolTmallBrandItemUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallBrandItemUploadAPIResponse)
+	},
+}
+
+// GetTmallBrandItemUploadAPIResponse 从 sync.Pool 获取 TmallBrandItemUploadAPIResponse
+func GetTmallBrandItemUploadAPIResponse() *TmallBrandItemUploadAPIResponse {
+	return poolTmallBrandItemUploadAPIResponse.Get().(*TmallBrandItemUploadAPIResponse)
+}
+
+// ReleaseTmallBrandItemUploadAPIResponse 将 TmallBrandItemUploadAPIResponse 保存到 sync.Pool
+func ReleaseTmallBrandItemUploadAPIResponse(v *TmallBrandItemUploadAPIResponse) {
+	v.Reset()
+	poolTmallBrandItemUploadAPIResponse.Put(v)
 }

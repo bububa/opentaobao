@@ -1,5 +1,9 @@
 package perfect
 
+import (
+	"sync"
+)
+
 // PerfectPerformanceItemPublishReq 结构体
 type PerfectPerformanceItemPublishReq struct {
 	// 商品sku列表
@@ -16,4 +20,27 @@ type PerfectPerformanceItemPublishReq struct {
 	LogisticsInfo *PerfectItemLogisticsInfoDto `json:"logistics_info,omitempty" xml:"logistics_info,omitempty"`
 	// 产品信息
 	ProductInfo *PerfectItemProductInfoDto `json:"product_info,omitempty" xml:"product_info,omitempty"`
+}
+
+var poolPerfectPerformanceItemPublishReq = sync.Pool{
+	New: func() any {
+		return new(PerfectPerformanceItemPublishReq)
+	},
+}
+
+// GetPerfectPerformanceItemPublishReq() 从对象池中获取PerfectPerformanceItemPublishReq
+func GetPerfectPerformanceItemPublishReq() *PerfectPerformanceItemPublishReq {
+	return poolPerfectPerformanceItemPublishReq.Get().(*PerfectPerformanceItemPublishReq)
+}
+
+// ReleasePerfectPerformanceItemPublishReq 释放PerfectPerformanceItemPublishReq
+func ReleasePerfectPerformanceItemPublishReq(v *PerfectPerformanceItemPublishReq) {
+	v.ItemSkuInfos = v.ItemSkuInfos[:0]
+	v.ItemCode = ""
+	v.DescribeInfo = nil
+	v.ItemBaseInfo = nil
+	v.ItemTradeInfo = nil
+	v.LogisticsInfo = nil
+	v.ProductInfo = nil
+	poolPerfectPerformanceItemPublishReq.Put(v)
 }

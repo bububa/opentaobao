@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaScbpAdTargetTagEstimateUvAPIRequest struct {
 // NewAlibabaScbpAdTargetTagEstimateUvRequest 初始化AlibabaScbpAdTargetTagEstimateUvAPIRequest对象
 func NewAlibabaScbpAdTargetTagEstimateUvRequest() *AlibabaScbpAdTargetTagEstimateUvAPIRequest {
 	return &AlibabaScbpAdTargetTagEstimateUvAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdTargetTagEstimateUvAPIRequest) Reset() {
+	r._topContext = nil
+	r._tagEstimateOperation = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaScbpAdTargetTagEstimateUvAPIRequest) SetTagEstimateOperation(_ta
 // GetTagEstimateOperation TagEstimateOperation Getter
 func (r AlibabaScbpAdTargetTagEstimateUvAPIRequest) GetTagEstimateOperation() *TagEstimateOperationDto {
 	return r._tagEstimateOperation
+}
+
+var poolAlibabaScbpAdTargetTagEstimateUvAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdTargetTagEstimateUvRequest()
+	},
+}
+
+// GetAlibabaScbpAdTargetTagEstimateUvRequest 从 sync.Pool 获取 AlibabaScbpAdTargetTagEstimateUvAPIRequest
+func GetAlibabaScbpAdTargetTagEstimateUvAPIRequest() *AlibabaScbpAdTargetTagEstimateUvAPIRequest {
+	return poolAlibabaScbpAdTargetTagEstimateUvAPIRequest.Get().(*AlibabaScbpAdTargetTagEstimateUvAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdTargetTagEstimateUvAPIRequest 将 AlibabaScbpAdTargetTagEstimateUvAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdTargetTagEstimateUvAPIRequest(v *AlibabaScbpAdTargetTagEstimateUvAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdTargetTagEstimateUvAPIRequest.Put(v)
 }

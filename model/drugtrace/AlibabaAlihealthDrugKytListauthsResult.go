@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // AlibabaAlihealthDrugKytListauthsResult 结构体
 type AlibabaAlihealthDrugKytListauthsResult struct {
 	// 企业ID
@@ -24,4 +28,31 @@ type AlibabaAlihealthDrugKytListauthsResult struct {
 	IsNetwork string `json:"is_network,omitempty" xml:"is_network,omitempty"`
 	// 企业唯一标识
 	RefEntId string `json:"ref_ent_id,omitempty" xml:"ref_ent_id,omitempty"`
+}
+
+var poolAlibabaAlihealthDrugKytListauthsResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugKytListauthsResult)
+	},
+}
+
+// GetAlibabaAlihealthDrugKytListauthsResult() 从对象池中获取AlibabaAlihealthDrugKytListauthsResult
+func GetAlibabaAlihealthDrugKytListauthsResult() *AlibabaAlihealthDrugKytListauthsResult {
+	return poolAlibabaAlihealthDrugKytListauthsResult.Get().(*AlibabaAlihealthDrugKytListauthsResult)
+}
+
+// ReleaseAlibabaAlihealthDrugKytListauthsResult 释放AlibabaAlihealthDrugKytListauthsResult
+func ReleaseAlibabaAlihealthDrugKytListauthsResult(v *AlibabaAlihealthDrugKytListauthsResult) {
+	v.EntId = ""
+	v.EntCapitalName = ""
+	v.AreaName = ""
+	v.CityName = ""
+	v.DictRegionCode = ""
+	v.EntName = ""
+	v.ProvName = ""
+	v.RegRegionCode = ""
+	v.UserRoleType = ""
+	v.IsNetwork = ""
+	v.RefEntId = ""
+	poolAlibabaAlihealthDrugKytListauthsResult.Put(v)
 }

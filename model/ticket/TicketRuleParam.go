@@ -1,5 +1,9 @@
 package ticket
 
+import (
+	"sync"
+)
+
 // TicketRuleParam 结构体
 type TicketRuleParam struct {
 	// 商户景点编码
@@ -44,4 +48,41 @@ type TicketRuleParam struct {
 	EnterVoucherType int64 `json:"enter_voucher_type,omitempty" xml:"enter_voucher_type,omitempty"`
 	// 限购类型。0-身份证限购， 1-手机号限购
 	VisitorLimitType int64 `json:"visitor_limit_type,omitempty" xml:"visitor_limit_type,omitempty"`
+}
+
+var poolTicketRuleParam = sync.Pool{
+	New: func() any {
+		return new(TicketRuleParam)
+	},
+}
+
+// GetTicketRuleParam() 从对象池中获取TicketRuleParam
+func GetTicketRuleParam() *TicketRuleParam {
+	return poolTicketRuleParam.Get().(*TicketRuleParam)
+}
+
+// ReleaseTicketRuleParam 释放TicketRuleParam
+func ReleaseTicketRuleParam(v *TicketRuleParam) {
+	v.OutScenicId = ""
+	v.OutRuleId = ""
+	v.OutRuleName = ""
+	v.RefundDesc = ""
+	v.VisitorInfos = ""
+	v.EnterVoucherValue = ""
+	v.TicketChangeAdderss = ""
+	v.EnterAddress = ""
+	v.FeeInclude = ""
+	v.ExtraDesc = ""
+	v.AliScenicId = 0
+	v.RuleType = 0
+	v.RuleStatus = 0
+	v.RefundType = 0
+	v.VisitorRequire = 0
+	v.VisitorLimitAble = 0
+	v.VisitorLimitMode = 0
+	v.VisitorLimitNum = 0
+	v.EnterType = 0
+	v.EnterVoucherType = 0
+	v.VisitorLimitType = 0
+	poolTicketRuleParam.Put(v)
 }

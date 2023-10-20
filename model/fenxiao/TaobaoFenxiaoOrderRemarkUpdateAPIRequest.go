@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoFenxiaoOrderRemarkUpdateAPIRequest struct {
 // NewTaobaoFenxiaoOrderRemarkUpdateRequest 初始化TaobaoFenxiaoOrderRemarkUpdateAPIRequest对象
 func NewTaobaoFenxiaoOrderRemarkUpdateRequest() *TaobaoFenxiaoOrderRemarkUpdateAPIRequest {
 	return &TaobaoFenxiaoOrderRemarkUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoOrderRemarkUpdateAPIRequest) Reset() {
+	r._supplierMemo = ""
+	r._purchaseOrderId = 0
+	r._supplierMemoFlag = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoFenxiaoOrderRemarkUpdateAPIRequest) SetSupplierMemoFlag(_supplier
 // GetSupplierMemoFlag SupplierMemoFlag Getter
 func (r TaobaoFenxiaoOrderRemarkUpdateAPIRequest) GetSupplierMemoFlag() int64 {
 	return r._supplierMemoFlag
+}
+
+var poolTaobaoFenxiaoOrderRemarkUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoOrderRemarkUpdateRequest()
+	},
+}
+
+// GetTaobaoFenxiaoOrderRemarkUpdateRequest 从 sync.Pool 获取 TaobaoFenxiaoOrderRemarkUpdateAPIRequest
+func GetTaobaoFenxiaoOrderRemarkUpdateAPIRequest() *TaobaoFenxiaoOrderRemarkUpdateAPIRequest {
+	return poolTaobaoFenxiaoOrderRemarkUpdateAPIRequest.Get().(*TaobaoFenxiaoOrderRemarkUpdateAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoOrderRemarkUpdateAPIRequest 将 TaobaoFenxiaoOrderRemarkUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoOrderRemarkUpdateAPIRequest(v *TaobaoFenxiaoOrderRemarkUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoOrderRemarkUpdateAPIRequest.Put(v)
 }

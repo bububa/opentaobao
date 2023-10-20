@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // MaochaoWdkOrderDto 结构体
 type MaochaoWdkOrderDto struct {
 	// 订单状态
@@ -48,4 +52,43 @@ type MaochaoWdkOrderDto struct {
 	AuctionPrice int64 `json:"auction_price,omitempty" xml:"auction_price,omitempty"`
 	// 是否进货返利
 	PurchaseRebate bool `json:"purchase_rebate,omitempty" xml:"purchase_rebate,omitempty"`
+}
+
+var poolMaochaoWdkOrderDto = sync.Pool{
+	New: func() any {
+		return new(MaochaoWdkOrderDto)
+	},
+}
+
+// GetMaochaoWdkOrderDto() 从对象池中获取MaochaoWdkOrderDto
+func GetMaochaoWdkOrderDto() *MaochaoWdkOrderDto {
+	return poolMaochaoWdkOrderDto.Get().(*MaochaoWdkOrderDto)
+}
+
+// ReleaseMaochaoWdkOrderDto 释放MaochaoWdkOrderDto
+func ReleaseMaochaoWdkOrderDto(v *MaochaoWdkOrderDto) {
+	v.OrderStatus = ""
+	v.BuyAmountStock = ""
+	v.StoreId = ""
+	v.SaleUnit = ""
+	v.StockUnit = ""
+	v.SellUnit = ""
+	v.NsQuantity = ""
+	v.AuctionId = ""
+	v.MerchantCode = ""
+	v.AuctionTitle = ""
+	v.PayTime = ""
+	v.ShopId = ""
+	v.Attributes = ""
+	v.Barcode = ""
+	v.PurchaseRebateRatio = ""
+	v.UnRebateRatio = ""
+	v.Quantity = 0
+	v.BizSubOrderId = 0
+	v.TbSubOrderId = 0
+	v.TbOrderId = 0
+	v.BizOrderId = 0
+	v.AuctionPrice = 0
+	v.PurchaseRebate = false
+	poolMaochaoWdkOrderDto.Put(v)
 }

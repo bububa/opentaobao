@@ -2,6 +2,7 @@ package flightuppc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripFlightExternalAlipaySignAPIRequest struct {
 // NewAlitripFlightExternalAlipaySignRequest 初始化AlitripFlightExternalAlipaySignAPIRequest对象
 func NewAlitripFlightExternalAlipaySignRequest() *AlitripFlightExternalAlipaySignAPIRequest {
 	return &AlitripFlightExternalAlipaySignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripFlightExternalAlipaySignAPIRequest) Reset() {
+	r._alipaySignReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripFlightExternalAlipaySignAPIRequest) SetAlipaySignReq(_alipaySign
 // GetAlipaySignReq AlipaySignReq Getter
 func (r AlitripFlightExternalAlipaySignAPIRequest) GetAlipaySignReq() *AlipaySignReq {
 	return r._alipaySignReq
+}
+
+var poolAlitripFlightExternalAlipaySignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripFlightExternalAlipaySignRequest()
+	},
+}
+
+// GetAlitripFlightExternalAlipaySignRequest 从 sync.Pool 获取 AlitripFlightExternalAlipaySignAPIRequest
+func GetAlitripFlightExternalAlipaySignAPIRequest() *AlitripFlightExternalAlipaySignAPIRequest {
+	return poolAlitripFlightExternalAlipaySignAPIRequest.Get().(*AlitripFlightExternalAlipaySignAPIRequest)
+}
+
+// ReleaseAlitripFlightExternalAlipaySignAPIRequest 将 AlitripFlightExternalAlipaySignAPIRequest 放入 sync.Pool
+func ReleaseAlitripFlightExternalAlipaySignAPIRequest(v *AlitripFlightExternalAlipaySignAPIRequest) {
+	v.Reset()
+	poolAlitripFlightExternalAlipaySignAPIRequest.Put(v)
 }

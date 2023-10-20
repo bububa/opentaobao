@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // ReverseConsignOrderGiftRequest 结构体
 type ReverseConsignOrderGiftRequest struct {
 	// 赠品列表
@@ -44,4 +48,41 @@ type ReverseConsignOrderGiftRequest struct {
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
 	// 成功或者失败
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolReverseConsignOrderGiftRequest = sync.Pool{
+	New: func() any {
+		return new(ReverseConsignOrderGiftRequest)
+	},
+}
+
+// GetReverseConsignOrderGiftRequest() 从对象池中获取ReverseConsignOrderGiftRequest
+func GetReverseConsignOrderGiftRequest() *ReverseConsignOrderGiftRequest {
+	return poolReverseConsignOrderGiftRequest.Get().(*ReverseConsignOrderGiftRequest)
+}
+
+// ReleaseReverseConsignOrderGiftRequest 释放ReverseConsignOrderGiftRequest
+func ReleaseReverseConsignOrderGiftRequest(v *ReverseConsignOrderGiftRequest) {
+	v.GiftOrders = v.GiftOrders[:0]
+	v.DistributionType = ""
+	v.SourcePlatformCode = ""
+	v.TradeId = ""
+	v.ConsignOrderCode = ""
+	v.BuyerNick = ""
+	v.ProductType = ""
+	v.WarehouseCode = ""
+	v.SellerMessage = ""
+	v.BuyerMessage = ""
+	v.RequestId = ""
+	v.Currency = ""
+	v.Message = ""
+	v.Code = ""
+	v.TradeCreateTime = 0
+	v.TradePayTime = 0
+	v.OrderAmount = 0
+	v.Payment = 0
+	v.ReceiverInfo = nil
+	v.RequestTime = 0
+	v.Success = false
+	poolReverseConsignOrderGiftRequest.Put(v)
 }

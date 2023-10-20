@@ -2,6 +2,7 @@ package baichuan
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaBaichuanTaopasswordConfigAPIResponse struct {
 	AlibabaBaichuanTaopasswordConfigAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaBaichuanTaopasswordConfigAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaBaichuanTaopasswordConfigAPIResponseModel).Reset()
+}
+
 // AlibabaBaichuanTaopasswordConfigAPIResponseModel is 淘口令配置数据 成功返回结果
 type AlibabaBaichuanTaopasswordConfigAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_baichuan_taopassword_config_response"`
@@ -22,4 +29,27 @@ type AlibabaBaichuanTaopasswordConfigAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *ShareResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaBaichuanTaopasswordConfigAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaBaichuanTaopasswordConfigAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaBaichuanTaopasswordConfigAPIResponse)
+	},
+}
+
+// GetAlibabaBaichuanTaopasswordConfigAPIResponse 从 sync.Pool 获取 AlibabaBaichuanTaopasswordConfigAPIResponse
+func GetAlibabaBaichuanTaopasswordConfigAPIResponse() *AlibabaBaichuanTaopasswordConfigAPIResponse {
+	return poolAlibabaBaichuanTaopasswordConfigAPIResponse.Get().(*AlibabaBaichuanTaopasswordConfigAPIResponse)
+}
+
+// ReleaseAlibabaBaichuanTaopasswordConfigAPIResponse 将 AlibabaBaichuanTaopasswordConfigAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaBaichuanTaopasswordConfigAPIResponse(v *AlibabaBaichuanTaopasswordConfigAPIResponse) {
+	v.Reset()
+	poolAlibabaBaichuanTaopasswordConfigAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenApiTrainOrderDetailRs 结构体
 type OpenApiTrainOrderDetailRs struct {
 	// 订单费用列表
@@ -18,4 +22,28 @@ type OpenApiTrainOrderDetailRs struct {
 	InvoiceInfo *InvoiceInfo `json:"invoice_info,omitempty" xml:"invoice_info,omitempty"`
 	// 车次信息
 	TrainInfo *TrainInfo `json:"train_info,omitempty" xml:"train_info,omitempty"`
+}
+
+var poolOpenApiTrainOrderDetailRs = sync.Pool{
+	New: func() any {
+		return new(OpenApiTrainOrderDetailRs)
+	},
+}
+
+// GetOpenApiTrainOrderDetailRs() 从对象池中获取OpenApiTrainOrderDetailRs
+func GetOpenApiTrainOrderDetailRs() *OpenApiTrainOrderDetailRs {
+	return poolOpenApiTrainOrderDetailRs.Get().(*OpenApiTrainOrderDetailRs)
+}
+
+// ReleaseOpenApiTrainOrderDetailRs 释放OpenApiTrainOrderDetailRs
+func ReleaseOpenApiTrainOrderDetailRs(v *OpenApiTrainOrderDetailRs) {
+	v.PriceInfoList = v.PriceInfoList[:0]
+	v.ChangeTicketInfoList = v.ChangeTicketInfoList[:0]
+	v.RefundTicketInfoList = v.RefundTicketInfoList[:0]
+	v.TicketInfoList = v.TicketInfoList[:0]
+	v.PassengerInfoList = v.PassengerInfoList[:0]
+	v.OrderBaseInfo = nil
+	v.InvoiceInfo = nil
+	v.TrainInfo = nil
+	poolOpenApiTrainOrderDetailRs.Put(v)
 }

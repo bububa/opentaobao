@@ -11,11 +11,6 @@ import (
 // 多条件查询空间单元信息
 // HSF接口名称：com.alibaba.campus.api.space.service.top.SpaceUnitApiTopService
 // HSF方法名称：getList
-func AlibabaCampusSpaceUnitGetlist(clt *core.SDKClient, req *campus.AlibabaCampusSpaceUnitGetlistAPIRequest, session string) (*campus.AlibabaCampusSpaceUnitGetlistAPIResponse, error) {
-	var resp campus.AlibabaCampusSpaceUnitGetlistAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusSpaceUnitGetlist(clt *core.SDKClient, req *campus.AlibabaCampusSpaceUnitGetlistAPIRequest, resp *campus.AlibabaCampusSpaceUnitGetlistAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

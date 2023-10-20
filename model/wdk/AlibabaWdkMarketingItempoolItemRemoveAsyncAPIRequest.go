@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest struct {
 // NewAlibabaWdkMarketingItempoolItemRemoveAsyncRequest 初始化AlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest对象
 func NewAlibabaWdkMarketingItempoolItemRemoveAsyncRequest() *AlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest {
 	return &AlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest) Reset() {
+	r._param0 = r._param0[:0]
+	r._param1 = nil
+	r._version = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest) SetVersion(_versi
 // GetVersion Version Getter
 func (r AlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest) GetVersion() int64 {
 	return r._version
+}
+
+var poolAlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMarketingItempoolItemRemoveAsyncRequest()
+	},
+}
+
+// GetAlibabaWdkMarketingItempoolItemRemoveAsyncRequest 从 sync.Pool 获取 AlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest
+func GetAlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest() *AlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest {
+	return poolAlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest.Get().(*AlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest)
+}
+
+// ReleaseAlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest 将 AlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest(v *AlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMarketingItempoolItemRemoveAsyncAPIRequest.Put(v)
 }

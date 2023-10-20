@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // HotelMatchDto 结构体
 type HotelMatchDto struct {
 	// 酒店地址
@@ -16,4 +20,27 @@ type HotelMatchDto struct {
 	Longitude string `json:"longitude,omitempty" xml:"longitude,omitempty"`
 	// 酒店电话
 	Tel string `json:"tel,omitempty" xml:"tel,omitempty"`
+}
+
+var poolHotelMatchDto = sync.Pool{
+	New: func() any {
+		return new(HotelMatchDto)
+	},
+}
+
+// GetHotelMatchDto() 从对象池中获取HotelMatchDto
+func GetHotelMatchDto() *HotelMatchDto {
+	return poolHotelMatchDto.Get().(*HotelMatchDto)
+}
+
+// ReleaseHotelMatchDto 释放HotelMatchDto
+func ReleaseHotelMatchDto(v *HotelMatchDto) {
+	v.Address = ""
+	v.HotelEnName = ""
+	v.Latitude = ""
+	v.HotelName = ""
+	v.AddressEn = ""
+	v.Longitude = ""
+	v.Tel = ""
+	poolHotelMatchDto.Put(v)
 }

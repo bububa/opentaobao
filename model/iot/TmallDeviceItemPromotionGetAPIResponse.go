@@ -2,6 +2,7 @@ package iot
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallDeviceItemPromotionGetAPIResponse struct {
 	TmallDeviceItemPromotionGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallDeviceItemPromotionGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallDeviceItemPromotionGetAPIResponseModel).Reset()
+}
+
 // TmallDeviceItemPromotionGetAPIResponseModel is 智能硬件上商品优惠获取 成功返回结果
 type TmallDeviceItemPromotionGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_device_item_promotion_get_response"`
@@ -22,4 +29,27 @@ type TmallDeviceItemPromotionGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 优惠详细信息
 	Promotions *PromotionDisplayTop `json:"promotions,omitempty" xml:"promotions,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallDeviceItemPromotionGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Promotions = nil
+}
+
+var poolTmallDeviceItemPromotionGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallDeviceItemPromotionGetAPIResponse)
+	},
+}
+
+// GetTmallDeviceItemPromotionGetAPIResponse 从 sync.Pool 获取 TmallDeviceItemPromotionGetAPIResponse
+func GetTmallDeviceItemPromotionGetAPIResponse() *TmallDeviceItemPromotionGetAPIResponse {
+	return poolTmallDeviceItemPromotionGetAPIResponse.Get().(*TmallDeviceItemPromotionGetAPIResponse)
+}
+
+// ReleaseTmallDeviceItemPromotionGetAPIResponse 将 TmallDeviceItemPromotionGetAPIResponse 保存到 sync.Pool
+func ReleaseTmallDeviceItemPromotionGetAPIResponse(v *TmallDeviceItemPromotionGetAPIResponse) {
+	v.Reset()
+	poolTmallDeviceItemPromotionGetAPIResponse.Put(v)
 }

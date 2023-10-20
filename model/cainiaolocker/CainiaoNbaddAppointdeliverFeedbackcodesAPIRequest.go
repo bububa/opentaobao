@@ -2,6 +2,7 @@ package cainiaolocker
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest struct {
 // NewCainiaoNbaddAppointdeliverFeedbackcodesRequest 初始化CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest对象
 func NewCainiaoNbaddAppointdeliverFeedbackcodesRequest() *CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest {
 	return &CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest) GetApiParams(params u
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolCainiaoNbaddAppointdeliverFeedbackcodesAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoNbaddAppointdeliverFeedbackcodesRequest()
+	},
+}
+
+// GetCainiaoNbaddAppointdeliverFeedbackcodesRequest 从 sync.Pool 获取 CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest
+func GetCainiaoNbaddAppointdeliverFeedbackcodesAPIRequest() *CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest {
+	return poolCainiaoNbaddAppointdeliverFeedbackcodesAPIRequest.Get().(*CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest)
+}
+
+// ReleaseCainiaoNbaddAppointdeliverFeedbackcodesAPIRequest 将 CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest 放入 sync.Pool
+func ReleaseCainiaoNbaddAppointdeliverFeedbackcodesAPIRequest(v *CainiaoNbaddAppointdeliverFeedbackcodesAPIRequest) {
+	v.Reset()
+	poolCainiaoNbaddAppointdeliverFeedbackcodesAPIRequest.Put(v)
 }

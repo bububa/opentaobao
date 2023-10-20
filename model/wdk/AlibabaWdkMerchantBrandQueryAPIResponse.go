@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaWdkMerchantBrandQueryAPIResponse struct {
 	AlibabaWdkMerchantBrandQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaWdkMerchantBrandQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkMerchantBrandQueryAPIResponseModel).Reset()
+}
+
 // AlibabaWdkMerchantBrandQueryAPIResponseModel is 品牌查询接口 成功返回结果
 type AlibabaWdkMerchantBrandQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_merchant_brand_query_response"`
@@ -22,4 +29,27 @@ type AlibabaWdkMerchantBrandQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *AlibabaWdkMerchantBrandQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkMerchantBrandQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaWdkMerchantBrandQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkMerchantBrandQueryAPIResponse)
+	},
+}
+
+// GetAlibabaWdkMerchantBrandQueryAPIResponse 从 sync.Pool 获取 AlibabaWdkMerchantBrandQueryAPIResponse
+func GetAlibabaWdkMerchantBrandQueryAPIResponse() *AlibabaWdkMerchantBrandQueryAPIResponse {
+	return poolAlibabaWdkMerchantBrandQueryAPIResponse.Get().(*AlibabaWdkMerchantBrandQueryAPIResponse)
+}
+
+// ReleaseAlibabaWdkMerchantBrandQueryAPIResponse 将 AlibabaWdkMerchantBrandQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkMerchantBrandQueryAPIResponse(v *AlibabaWdkMerchantBrandQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkMerchantBrandQueryAPIResponse.Put(v)
 }

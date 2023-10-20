@@ -1,5 +1,9 @@
 package alscmerchant
 
+import (
+	"sync"
+)
+
 // TicketInfo 结构体
 type TicketInfo struct {
 	// 凭证ID。核销接口入参
@@ -16,4 +20,27 @@ type TicketInfo struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 购买时商品的原价（次卡是多次的总原价），单位分
 	OriginalPrice int64 `json:"original_price,omitempty" xml:"original_price,omitempty"`
+}
+
+var poolTicketInfo = sync.Pool{
+	New: func() any {
+		return new(TicketInfo)
+	},
+}
+
+// GetTicketInfo() 从对象池中获取TicketInfo
+func GetTicketInfo() *TicketInfo {
+	return poolTicketInfo.Get().(*TicketInfo)
+}
+
+// ReleaseTicketInfo 释放TicketInfo
+func ReleaseTicketInfo(v *TicketInfo) {
+	v.TicketId = ""
+	v.TicketName = ""
+	v.TicketCode = ""
+	v.TotalAmount = 0
+	v.RealAmount = 0
+	v.Quantity = 0
+	v.OriginalPrice = 0
+	poolTicketInfo.Put(v)
 }

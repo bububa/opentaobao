@@ -1,5 +1,9 @@
 package jst
 
+import (
+	"sync"
+)
+
 // TopModifySmsTemplateRequest 结构体
 type TopModifySmsTemplateRequest struct {
 	// 使用场景说明，可以修改
@@ -12,4 +16,25 @@ type TopModifySmsTemplateRequest struct {
 	TemplateContent string `json:"template_content,omitempty" xml:"template_content,omitempty"`
 	// 不能修改
 	TemplateType int64 `json:"template_type,omitempty" xml:"template_type,omitempty"`
+}
+
+var poolTopModifySmsTemplateRequest = sync.Pool{
+	New: func() any {
+		return new(TopModifySmsTemplateRequest)
+	},
+}
+
+// GetTopModifySmsTemplateRequest() 从对象池中获取TopModifySmsTemplateRequest
+func GetTopModifySmsTemplateRequest() *TopModifySmsTemplateRequest {
+	return poolTopModifySmsTemplateRequest.Get().(*TopModifySmsTemplateRequest)
+}
+
+// ReleaseTopModifySmsTemplateRequest 释放TopModifySmsTemplateRequest
+func ReleaseTopModifySmsTemplateRequest(v *TopModifySmsTemplateRequest) {
+	v.Remark = ""
+	v.TemplateCode = ""
+	v.TemplateName = ""
+	v.TemplateContent = ""
+	v.TemplateType = 0
+	poolTopModifySmsTemplateRequest.Put(v)
 }

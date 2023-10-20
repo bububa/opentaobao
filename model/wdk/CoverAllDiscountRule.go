@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // CoverAllDiscountRule 结构体
 type CoverAllDiscountRule struct {
 	// 每件商品一口价【分】
@@ -18,4 +22,28 @@ type CoverAllDiscountRule struct {
 	IsCoverAllDiscountRate bool `json:"is_cover_all_discount_rate,omitempty" xml:"is_cover_all_discount_rate,omitempty"`
 	// 是否每件一口价
 	IsEachFixPrice bool `json:"is_each_fix_price,omitempty" xml:"is_each_fix_price,omitempty"`
+}
+
+var poolCoverAllDiscountRule = sync.Pool{
+	New: func() any {
+		return new(CoverAllDiscountRule)
+	},
+}
+
+// GetCoverAllDiscountRule() 从对象池中获取CoverAllDiscountRule
+func GetCoverAllDiscountRule() *CoverAllDiscountRule {
+	return poolCoverAllDiscountRule.Get().(*CoverAllDiscountRule)
+}
+
+// ReleaseCoverAllDiscountRule 释放CoverAllDiscountRule
+func ReleaseCoverAllDiscountRule(v *CoverAllDiscountRule) {
+	v.EachFixPrice = 0
+	v.CoverAllDiscountRate = 0
+	v.CoverAllDecreaseMoney = 0
+	v.CoverAllFixPrice = 0
+	v.IsCoverAllFixPrice = false
+	v.IsCoverAllDecreaseMoney = false
+	v.IsCoverAllDiscountRate = false
+	v.IsEachFixPrice = false
+	poolCoverAllDiscountRule.Put(v)
 }

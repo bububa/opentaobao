@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // BatchQueryRequest 结构体
 type BatchQueryRequest struct {
 	// 店铺号列表，order_from=4时必填，其他非必填
@@ -26,4 +30,32 @@ type BatchQueryRequest struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 渠道来源，3：饿了么  4：盒马&amp;淘鲜达 18:大润发飞牛  19:欧尚外卖  20：商家自有渠道 ，必填
 	OrderFrom int64 `json:"order_from,omitempty" xml:"order_from,omitempty"`
+}
+
+var poolBatchQueryRequest = sync.Pool{
+	New: func() any {
+		return new(BatchQueryRequest)
+	},
+}
+
+// GetBatchQueryRequest() 从对象池中获取BatchQueryRequest
+func GetBatchQueryRequest() *BatchQueryRequest {
+	return poolBatchQueryRequest.Get().(*BatchQueryRequest)
+}
+
+// ReleaseBatchQueryRequest 释放BatchQueryRequest
+func ReleaseBatchQueryRequest(v *BatchQueryRequest) {
+	v.StoreIds = v.StoreIds[:0]
+	v.OrderStatus = v.OrderStatus[:0]
+	v.OrderClient = ""
+	v.SyncStatus = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.ShopId = ""
+	v.StoreId = ""
+	v.BizType = ""
+	v.PageIndex = 0
+	v.PageSize = 0
+	v.OrderFrom = 0
+	poolBatchQueryRequest.Put(v)
 }

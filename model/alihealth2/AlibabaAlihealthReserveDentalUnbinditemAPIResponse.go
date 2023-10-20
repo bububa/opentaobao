@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthReserveDentalUnbinditemAPIResponse struct {
 	AlibabaAlihealthReserveDentalUnbinditemAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthReserveDentalUnbinditemAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthReserveDentalUnbinditemAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthReserveDentalUnbinditemAPIResponseModel is 解绑商品信息 成功返回结果
 type AlibabaAlihealthReserveDentalUnbinditemAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_reserve_dental_unbinditem_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihealthReserveDentalUnbinditemAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *AlibabaAlihealthReserveDentalUnbinditemResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthReserveDentalUnbinditemAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthReserveDentalUnbinditemAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthReserveDentalUnbinditemAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthReserveDentalUnbinditemAPIResponse 从 sync.Pool 获取 AlibabaAlihealthReserveDentalUnbinditemAPIResponse
+func GetAlibabaAlihealthReserveDentalUnbinditemAPIResponse() *AlibabaAlihealthReserveDentalUnbinditemAPIResponse {
+	return poolAlibabaAlihealthReserveDentalUnbinditemAPIResponse.Get().(*AlibabaAlihealthReserveDentalUnbinditemAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthReserveDentalUnbinditemAPIResponse 将 AlibabaAlihealthReserveDentalUnbinditemAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthReserveDentalUnbinditemAPIResponse(v *AlibabaAlihealthReserveDentalUnbinditemAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthReserveDentalUnbinditemAPIResponse.Put(v)
 }

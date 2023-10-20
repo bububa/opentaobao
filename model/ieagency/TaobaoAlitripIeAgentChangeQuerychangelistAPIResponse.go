@@ -2,6 +2,7 @@ package ieagency
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAlitripIeAgentChangeQuerychangelistAPIResponse struct {
 	TaobaoAlitripIeAgentChangeQuerychangelistAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAlitripIeAgentChangeQuerychangelistAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAlitripIeAgentChangeQuerychangelistAPIResponseModel).Reset()
+}
+
 // TaobaoAlitripIeAgentChangeQuerychangelistAPIResponseModel is 卖家查询改签列表 成功返回结果
 type TaobaoAlitripIeAgentChangeQuerychangelistAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_ie_agent_change_querychangelist_response"`
@@ -22,4 +29,27 @@ type TaobaoAlitripIeAgentChangeQuerychangelistAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *QueryChangeAgentListRs `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAlitripIeAgentChangeQuerychangelistAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoAlitripIeAgentChangeQuerychangelistAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripIeAgentChangeQuerychangelistAPIResponse)
+	},
+}
+
+// GetTaobaoAlitripIeAgentChangeQuerychangelistAPIResponse 从 sync.Pool 获取 TaobaoAlitripIeAgentChangeQuerychangelistAPIResponse
+func GetTaobaoAlitripIeAgentChangeQuerychangelistAPIResponse() *TaobaoAlitripIeAgentChangeQuerychangelistAPIResponse {
+	return poolTaobaoAlitripIeAgentChangeQuerychangelistAPIResponse.Get().(*TaobaoAlitripIeAgentChangeQuerychangelistAPIResponse)
+}
+
+// ReleaseTaobaoAlitripIeAgentChangeQuerychangelistAPIResponse 将 TaobaoAlitripIeAgentChangeQuerychangelistAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAlitripIeAgentChangeQuerychangelistAPIResponse(v *TaobaoAlitripIeAgentChangeQuerychangelistAPIResponse) {
+	v.Reset()
+	poolTaobaoAlitripIeAgentChangeQuerychangelistAPIResponse.Put(v)
 }

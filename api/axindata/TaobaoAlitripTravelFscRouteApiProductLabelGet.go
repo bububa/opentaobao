@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.travel.fsc.route.api.product.label.get
 //
 // 获取线路主题
-func TaobaoAlitripTravelFscRouteApiProductLabelGet(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest, session string) (*axindata.TaobaoAlitripTravelFscRouteApiProductLabelGetAPIResponse, error) {
-	var resp axindata.TaobaoAlitripTravelFscRouteApiProductLabelGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripTravelFscRouteApiProductLabelGet(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest, resp *axindata.TaobaoAlitripTravelFscRouteApiProductLabelGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

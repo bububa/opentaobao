@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type WdkRexoutResourceListCheckAPIRequest struct {
 // NewWdkRexoutResourceListCheckRequest 初始化WdkRexoutResourceListCheckAPIRequest对象
 func NewWdkRexoutResourceListCheckRequest() *WdkRexoutResourceListCheckAPIRequest {
 	return &WdkRexoutResourceListCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *WdkRexoutResourceListCheckAPIRequest) Reset() {
+	r._packageName = ""
+	r._deviceId = ""
+	r._deviceType = ""
+	r._oldVersions = ""
+	r._orgInfo = ""
+	r._attributes = ""
+	r._versionCode = 0
+	r._tenantId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *WdkRexoutResourceListCheckAPIRequest) SetTenantId(_tenantId int64) erro
 // GetTenantId TenantId Getter
 func (r WdkRexoutResourceListCheckAPIRequest) GetTenantId() int64 {
 	return r._tenantId
+}
+
+var poolWdkRexoutResourceListCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewWdkRexoutResourceListCheckRequest()
+	},
+}
+
+// GetWdkRexoutResourceListCheckRequest 从 sync.Pool 获取 WdkRexoutResourceListCheckAPIRequest
+func GetWdkRexoutResourceListCheckAPIRequest() *WdkRexoutResourceListCheckAPIRequest {
+	return poolWdkRexoutResourceListCheckAPIRequest.Get().(*WdkRexoutResourceListCheckAPIRequest)
+}
+
+// ReleaseWdkRexoutResourceListCheckAPIRequest 将 WdkRexoutResourceListCheckAPIRequest 放入 sync.Pool
+func ReleaseWdkRexoutResourceListCheckAPIRequest(v *WdkRexoutResourceListCheckAPIRequest) {
+	v.Reset()
+	poolWdkRexoutResourceListCheckAPIRequest.Put(v)
 }

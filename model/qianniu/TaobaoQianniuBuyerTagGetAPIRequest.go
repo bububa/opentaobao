@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoQianniuBuyerTagGetAPIRequest struct {
 // NewTaobaoQianniuBuyerTagGetRequest 初始化TaobaoQianniuBuyerTagGetAPIRequest对象
 func NewTaobaoQianniuBuyerTagGetRequest() *TaobaoQianniuBuyerTagGetAPIRequest {
 	return &TaobaoQianniuBuyerTagGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQianniuBuyerTagGetAPIRequest) Reset() {
+	r._buyerNick = ""
+	r._tagList = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoQianniuBuyerTagGetAPIRequest) SetTagList(_tagList string) error {
 // GetTagList TagList Getter
 func (r TaobaoQianniuBuyerTagGetAPIRequest) GetTagList() string {
 	return r._tagList
+}
+
+var poolTaobaoQianniuBuyerTagGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQianniuBuyerTagGetRequest()
+	},
+}
+
+// GetTaobaoQianniuBuyerTagGetRequest 从 sync.Pool 获取 TaobaoQianniuBuyerTagGetAPIRequest
+func GetTaobaoQianniuBuyerTagGetAPIRequest() *TaobaoQianniuBuyerTagGetAPIRequest {
+	return poolTaobaoQianniuBuyerTagGetAPIRequest.Get().(*TaobaoQianniuBuyerTagGetAPIRequest)
+}
+
+// ReleaseTaobaoQianniuBuyerTagGetAPIRequest 将 TaobaoQianniuBuyerTagGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQianniuBuyerTagGetAPIRequest(v *TaobaoQianniuBuyerTagGetAPIRequest) {
+	v.Reset()
+	poolTaobaoQianniuBuyerTagGetAPIRequest.Put(v)
 }

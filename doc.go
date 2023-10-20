@@ -3,10 +3,10 @@ package opentaobao
 
 const (
 	// GitVersion git version from build flag
-	GitVersion = "v1.3.2"
+	GitVersion = "v1.3.3"
 
 	// GitCommit git commit from build flag
-	GitCommit = "d4c7bc91e"
+	GitCommit = "366558e0e"
 
 	// GitDate git date from build flag
 	GitDate = "<no value>"

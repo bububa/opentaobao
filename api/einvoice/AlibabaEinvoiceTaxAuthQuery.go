@@ -9,11 +9,6 @@ import (
 // alibaba.einvoice.tax.auth.query
 //
 // 发票中台授权信息获取
-func AlibabaEinvoiceTaxAuthQuery(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxAuthQueryAPIRequest, session string) (*einvoice.AlibabaEinvoiceTaxAuthQueryAPIResponse, error) {
-	var resp einvoice.AlibabaEinvoiceTaxAuthQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEinvoiceTaxAuthQuery(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxAuthQueryAPIRequest, resp *einvoice.AlibabaEinvoiceTaxAuthQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

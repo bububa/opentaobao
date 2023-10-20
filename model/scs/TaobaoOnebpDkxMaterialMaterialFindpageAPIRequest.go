@@ -2,6 +2,7 @@ package scs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOnebpDkxMaterialMaterialFindpageAPIRequest struct {
 // NewTaobaoOnebpDkxMaterialMaterialFindpageRequest 初始化TaobaoOnebpDkxMaterialMaterialFindpageAPIRequest对象
 func NewTaobaoOnebpDkxMaterialMaterialFindpageRequest() *TaobaoOnebpDkxMaterialMaterialFindpageAPIRequest {
 	return &TaobaoOnebpDkxMaterialMaterialFindpageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOnebpDkxMaterialMaterialFindpageAPIRequest) Reset() {
+	r._apiServiceContext = nil
+	r._materialQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOnebpDkxMaterialMaterialFindpageAPIRequest) SetMaterialQuery(_mat
 // GetMaterialQuery MaterialQuery Getter
 func (r TaobaoOnebpDkxMaterialMaterialFindpageAPIRequest) GetMaterialQuery() *MaterialQueryTopDto {
 	return r._materialQuery
+}
+
+var poolTaobaoOnebpDkxMaterialMaterialFindpageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOnebpDkxMaterialMaterialFindpageRequest()
+	},
+}
+
+// GetTaobaoOnebpDkxMaterialMaterialFindpageRequest 从 sync.Pool 获取 TaobaoOnebpDkxMaterialMaterialFindpageAPIRequest
+func GetTaobaoOnebpDkxMaterialMaterialFindpageAPIRequest() *TaobaoOnebpDkxMaterialMaterialFindpageAPIRequest {
+	return poolTaobaoOnebpDkxMaterialMaterialFindpageAPIRequest.Get().(*TaobaoOnebpDkxMaterialMaterialFindpageAPIRequest)
+}
+
+// ReleaseTaobaoOnebpDkxMaterialMaterialFindpageAPIRequest 将 TaobaoOnebpDkxMaterialMaterialFindpageAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOnebpDkxMaterialMaterialFindpageAPIRequest(v *TaobaoOnebpDkxMaterialMaterialFindpageAPIRequest) {
+	v.Reset()
+	poolTaobaoOnebpDkxMaterialMaterialFindpageAPIRequest.Put(v)
 }

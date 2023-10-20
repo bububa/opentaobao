@@ -1,5 +1,9 @@
 package tmallhk
 
+import (
+	"sync"
+)
+
 // AwdcNgtc 结构体
 type AwdcNgtc struct {
 	// 参数in
@@ -10,4 +14,24 @@ type AwdcNgtc struct {
 	ReportDate string `json:"report_date,omitempty" xml:"report_date,omitempty"`
 	// 参数reportNo
 	ReportNo string `json:"report_no,omitempty" xml:"report_no,omitempty"`
+}
+
+var poolAwdcNgtc = sync.Pool{
+	New: func() any {
+		return new(AwdcNgtc)
+	},
+}
+
+// GetAwdcNgtc() 从对象池中获取AwdcNgtc
+func GetAwdcNgtc() *AwdcNgtc {
+	return poolAwdcNgtc.Get().(*AwdcNgtc)
+}
+
+// ReleaseAwdcNgtc 释放AwdcNgtc
+func ReleaseAwdcNgtc(v *AwdcNgtc) {
+	v.In = ""
+	v.Out = ""
+	v.ReportDate = ""
+	v.ReportNo = ""
+	poolAwdcNgtc.Put(v)
 }

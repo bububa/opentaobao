@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // ItemSearchResult 结构体
 type ItemSearchResult struct {
 	// 商品ID
@@ -40,4 +44,39 @@ type ItemSearchResult struct {
 	Comment30DaySemantic string `json:"comment30_day_semantic,omitempty" xml:"comment30_day_semantic,omitempty"`
 	// 收藏数语义化信息
 	FavoriteCntSemantic string `json:"favorite_cnt_semantic,omitempty" xml:"favorite_cnt_semantic,omitempty"`
+}
+
+var poolItemSearchResult = sync.Pool{
+	New: func() any {
+		return new(ItemSearchResult)
+	},
+}
+
+// GetItemSearchResult() 从对象池中获取ItemSearchResult
+func GetItemSearchResult() *ItemSearchResult {
+	return poolItemSearchResult.Get().(*ItemSearchResult)
+}
+
+// ReleaseItemSearchResult 释放ItemSearchResult
+func ReleaseItemSearchResult(v *ItemSearchResult) {
+	v.ItemId = ""
+	v.ItemTitle = ""
+	v.ItemUrl = ""
+	v.ItemMainPic = ""
+	v.ItemOriginPriceMin = ""
+	v.ItemOriginPriceMax = ""
+	v.ItemPriceDiscountMin = ""
+	v.ItemPriceDiscountMax = ""
+	v.ItemDiscountRate = ""
+	v.PubTime = ""
+	v.CommentScore = ""
+	v.ShopUrl = ""
+	v.CommissionRate = ""
+	v.ItemPics = ""
+	v.ItemVideos = ""
+	v.SellerLayer = ""
+	v.Sales30DaySemantic = ""
+	v.Comment30DaySemantic = ""
+	v.FavoriteCntSemantic = ""
+	poolItemSearchResult.Put(v)
 }

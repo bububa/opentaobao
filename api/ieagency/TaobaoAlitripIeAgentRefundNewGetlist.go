@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.ie.agent.refund.new.getlist
 //
 // 查询商家国际机票退票申请单列表
-func TaobaoAlitripIeAgentRefundNewGetlist(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentRefundNewGetlistAPIRequest, session string) (*ieagency.TaobaoAlitripIeAgentRefundNewGetlistAPIResponse, error) {
-	var resp ieagency.TaobaoAlitripIeAgentRefundNewGetlistAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripIeAgentRefundNewGetlist(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentRefundNewGetlistAPIRequest, resp *ieagency.TaobaoAlitripIeAgentRefundNewGetlistAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

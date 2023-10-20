@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // OrderDeliverer 结构体
 type OrderDeliverer struct {
 	// 配送人员编码
@@ -44,4 +48,41 @@ type OrderDeliverer struct {
 	DeliveryFee int64 `json:"delivery_fee,omitempty" xml:"delivery_fee,omitempty"`
 	// 是否隐私号 0：非隐私号  1：隐私号
 	PrivacyPhoneFlag int64 `json:"privacy_phone_flag,omitempty" xml:"privacy_phone_flag,omitempty"`
+}
+
+var poolOrderDeliverer = sync.Pool{
+	New: func() any {
+		return new(OrderDeliverer)
+	},
+}
+
+// GetOrderDeliverer() 从对象池中获取OrderDeliverer
+func GetOrderDeliverer() *OrderDeliverer {
+	return poolOrderDeliverer.Get().(*OrderDeliverer)
+}
+
+// ReleaseOrderDeliverer 释放OrderDeliverer
+func ReleaseOrderDeliverer(v *OrderDeliverer) {
+	v.DelivererCode = ""
+	v.DelivererPhone = ""
+	v.DelivererName = ""
+	v.PickupEndTime = ""
+	v.PickupStartTime = ""
+	v.BatchEndTime = ""
+	v.BatchStartTime = ""
+	v.SignTime = ""
+	v.DispatchEndTime = ""
+	v.DispatchStartTime = ""
+	v.PackageEndTime = ""
+	v.PackageStartTime = ""
+	v.SignMemo = ""
+	v.DeliveryStartTime = ""
+	v.ConsigneeName = ""
+	v.DeliveryEndTime = ""
+	v.DeliveryGeo = ""
+	v.DeliveryAddress = ""
+	v.ConsigneePhone = ""
+	v.DeliveryFee = 0
+	v.PrivacyPhoneFlag = 0
+	poolOrderDeliverer.Put(v)
 }

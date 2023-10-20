@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PaymentInfo 结构体
 type PaymentInfo struct {
 	// 费用明细
@@ -22,4 +26,30 @@ type PaymentInfo struct {
 	SellerReceiveAmount int64 `json:"seller_receive_amount,omitempty" xml:"seller_receive_amount,omitempty"`
 	// 付款方实付金额
 	UserPayAmount int64 `json:"user_pay_amount,omitempty" xml:"user_pay_amount,omitempty"`
+}
+
+var poolPaymentInfo = sync.Pool{
+	New: func() any {
+		return new(PaymentInfo)
+	},
+}
+
+// GetPaymentInfo() 从对象池中获取PaymentInfo
+func GetPaymentInfo() *PaymentInfo {
+	return poolPaymentInfo.Get().(*PaymentInfo)
+}
+
+// ReleasePaymentInfo 释放PaymentInfo
+func ReleasePaymentInfo(v *PaymentInfo) {
+	v.FeeDetailList = v.FeeDetailList[:0]
+	v.OutPaymentNo = ""
+	v.PayChannel = ""
+	v.PayMethod = ""
+	v.PaymentStatus = ""
+	v.PaymentTime = ""
+	v.OrderTotalAmount = 0
+	v.OutPayer = nil
+	v.SellerReceiveAmount = 0
+	v.UserPayAmount = 0
+	poolPaymentInfo.Put(v)
 }

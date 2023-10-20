@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -49,8 +50,29 @@ type TaobaoQianniuTasksCountAPIRequest struct {
 // NewTaobaoQianniuTasksCountRequest 初始化TaobaoQianniuTasksCountAPIRequest对象
 func NewTaobaoQianniuTasksCountRequest() *TaobaoQianniuTasksCountAPIRequest {
 	return &TaobaoQianniuTasksCountAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(16),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQianniuTasksCountAPIRequest) Reset() {
+	r._bizType = ""
+	r._subBizType = ""
+	r._taskIds = ""
+	r._bizIds = ""
+	r._status = ""
+	r._subStatus = ""
+	r._metadataIds = ""
+	r._bizNick = ""
+	r._startDate = ""
+	r._endDate = ""
+	r._excludeBizType = ""
+	r._keyWord = ""
+	r._receiverUid = 0
+	r._senderUid = 0
+	r._remindFlag = 0
+	r._priority = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -276,4 +298,21 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetPriority(_priority int64) error {
 // GetPriority Priority Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetPriority() int64 {
 	return r._priority
+}
+
+var poolTaobaoQianniuTasksCountAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQianniuTasksCountRequest()
+	},
+}
+
+// GetTaobaoQianniuTasksCountRequest 从 sync.Pool 获取 TaobaoQianniuTasksCountAPIRequest
+func GetTaobaoQianniuTasksCountAPIRequest() *TaobaoQianniuTasksCountAPIRequest {
+	return poolTaobaoQianniuTasksCountAPIRequest.Get().(*TaobaoQianniuTasksCountAPIRequest)
+}
+
+// ReleaseTaobaoQianniuTasksCountAPIRequest 将 TaobaoQianniuTasksCountAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQianniuTasksCountAPIRequest(v *TaobaoQianniuTasksCountAPIRequest) {
+	v.Reset()
+	poolTaobaoQianniuTasksCountAPIRequest.Put(v)
 }

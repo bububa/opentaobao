@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.anomalyrecourse.homedecoration.querybyid
 //
 // 天猫服务平台服务商查询商家投诉单
-func TmallServicecenterAnomalyrecourseHomedecorationQuerybyid(clt *core.SDKClient, req *tmallservice.TmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest, session string) (*tmallservice.TmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterAnomalyrecourseHomedecorationQuerybyid(clt *core.SDKClient, req *tmallservice.TmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest, resp *tmallservice.TmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

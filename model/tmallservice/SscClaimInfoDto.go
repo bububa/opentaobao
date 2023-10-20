@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // SscClaimInfoDto 结构体
 type SscClaimInfoDto struct {
 	// 保单号
@@ -42,4 +46,40 @@ type SscClaimInfoDto struct {
 	AuctionSkuId int64 `json:"auction_sku_id,omitempty" xml:"auction_sku_id,omitempty"`
 	// 理赔金额（分)
 	ClaimFee int64 `json:"claim_fee,omitempty" xml:"claim_fee,omitempty"`
+}
+
+var poolSscClaimInfoDto = sync.Pool{
+	New: func() any {
+		return new(SscClaimInfoDto)
+	},
+}
+
+// GetSscClaimInfoDto() 从对象池中获取SscClaimInfoDto
+func GetSscClaimInfoDto() *SscClaimInfoDto {
+	return poolSscClaimInfoDto.Get().(*SscClaimInfoDto)
+}
+
+// ReleaseSscClaimInfoDto 释放SscClaimInfoDto
+func ReleaseSscClaimInfoDto(v *SscClaimInfoDto) {
+	v.InsuranceOrderNo = ""
+	v.ServiceName = ""
+	v.AuctionName = ""
+	v.AuctionSkuDesc = ""
+	v.SkuDesc = ""
+	v.GmtCreateWorkcard = ""
+	v.CompletionDate = ""
+	v.ProblemDesc = ""
+	v.BuyerNick = ""
+	v.Sn = ""
+	v.Recognizee = ""
+	v.RecognizeeUnityNumber = ""
+	v.TaskAttribute = ""
+	v.WorkcardId = 0
+	v.BizOrderId = 0
+	v.ServiceOrderId = 0
+	v.AuctionId = 0
+	v.SpServiceOrderId = 0
+	v.AuctionSkuId = 0
+	v.ClaimFee = 0
+	poolSscClaimInfoDto.Put(v)
 }

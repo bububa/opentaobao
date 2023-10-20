@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenApiSearchRq 结构体
 type OpenApiSearchRq struct {
 	// 第三方企业id
@@ -28,4 +32,33 @@ type OpenApiSearchRq struct {
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 	// false：仅搜索未报销的申请单
 	AllApply bool `json:"all_apply,omitempty" xml:"all_apply,omitempty"`
+}
+
+var poolOpenApiSearchRq = sync.Pool{
+	New: func() any {
+		return new(OpenApiSearchRq)
+	},
+}
+
+// GetOpenApiSearchRq() 从对象池中获取OpenApiSearchRq
+func GetOpenApiSearchRq() *OpenApiSearchRq {
+	return poolOpenApiSearchRq.Get().(*OpenApiSearchRq)
+}
+
+// ReleaseOpenApiSearchRq 释放OpenApiSearchRq
+func ReleaseOpenApiSearchRq(v *OpenApiSearchRq) {
+	v.CorpId = ""
+	v.DepartId = ""
+	v.EndTime = ""
+	v.StartTime = ""
+	v.ThirdpartApplyId = ""
+	v.UpdateEndTime = ""
+	v.UpdateStartTime = ""
+	v.UserId = ""
+	v.ApplyId = 0
+	v.Page = 0
+	v.PageSize = 0
+	v.Version = 0
+	v.AllApply = false
+	poolOpenApiSearchRq.Put(v)
 }

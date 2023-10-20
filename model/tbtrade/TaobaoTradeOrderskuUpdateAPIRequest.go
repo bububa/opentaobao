@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoTradeOrderskuUpdateAPIRequest struct {
 // NewTaobaoTradeOrderskuUpdateRequest 初始化TaobaoTradeOrderskuUpdateAPIRequest对象
 func NewTaobaoTradeOrderskuUpdateRequest() *TaobaoTradeOrderskuUpdateAPIRequest {
 	return &TaobaoTradeOrderskuUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTradeOrderskuUpdateAPIRequest) Reset() {
+	r._skuProps = ""
+	r._oid = 0
+	r._skuId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoTradeOrderskuUpdateAPIRequest) SetSkuId(_skuId int64) error {
 // GetSkuId SkuId Getter
 func (r TaobaoTradeOrderskuUpdateAPIRequest) GetSkuId() int64 {
 	return r._skuId
+}
+
+var poolTaobaoTradeOrderskuUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTradeOrderskuUpdateRequest()
+	},
+}
+
+// GetTaobaoTradeOrderskuUpdateRequest 从 sync.Pool 获取 TaobaoTradeOrderskuUpdateAPIRequest
+func GetTaobaoTradeOrderskuUpdateAPIRequest() *TaobaoTradeOrderskuUpdateAPIRequest {
+	return poolTaobaoTradeOrderskuUpdateAPIRequest.Get().(*TaobaoTradeOrderskuUpdateAPIRequest)
+}
+
+// ReleaseTaobaoTradeOrderskuUpdateAPIRequest 将 TaobaoTradeOrderskuUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTradeOrderskuUpdateAPIRequest(v *TaobaoTradeOrderskuUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoTradeOrderskuUpdateAPIRequest.Put(v)
 }

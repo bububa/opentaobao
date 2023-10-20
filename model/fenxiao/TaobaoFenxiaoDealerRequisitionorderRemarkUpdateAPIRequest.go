@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest struct {
 // NewTaobaoFenxiaoDealerRequisitionorderRemarkUpdateRequest 初始化TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest对象
 func NewTaobaoFenxiaoDealerRequisitionorderRemarkUpdateRequest() *TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest {
 	return &TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest) Reset() {
+	r._supplierMemo = ""
+	r._dealerOrderId = 0
+	r._supplierMemoFlag = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest) SetSupplierM
 // GetSupplierMemoFlag SupplierMemoFlag Getter
 func (r TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest) GetSupplierMemoFlag() int64 {
 	return r._supplierMemoFlag
+}
+
+var poolTaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoDealerRequisitionorderRemarkUpdateRequest()
+	},
+}
+
+// GetTaobaoFenxiaoDealerRequisitionorderRemarkUpdateRequest 从 sync.Pool 获取 TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest
+func GetTaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest() *TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest {
+	return poolTaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest.Get().(*TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest 将 TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest(v *TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest.Put(v)
 }

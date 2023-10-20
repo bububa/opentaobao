@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WarehouseSkuDo 结构体
 type WarehouseSkuDo struct {
 	// 商品条码
@@ -62,4 +66,50 @@ type WarehouseSkuDo struct {
 	ImportFlag bool `json:"import_flag,omitempty" xml:"import_flag,omitempty"`
 	// 是否称重商品
 	WeightFlag bool `json:"weight_flag,omitempty" xml:"weight_flag,omitempty"`
+}
+
+var poolWarehouseSkuDo = sync.Pool{
+	New: func() any {
+		return new(WarehouseSkuDo)
+	},
+}
+
+// GetWarehouseSkuDo() 从对象池中获取WarehouseSkuDo
+func GetWarehouseSkuDo() *WarehouseSkuDo {
+	return poolWarehouseSkuDo.Get().(*WarehouseSkuDo)
+}
+
+// ReleaseWarehouseSkuDo 释放WarehouseSkuDo
+func ReleaseWarehouseSkuDo(v *WarehouseSkuDo) {
+	v.Barcodes = v.Barcodes[:0]
+	v.BrandName = ""
+	v.Content = ""
+	v.DeliverySpec = ""
+	v.DeliveryUnit = ""
+	v.DeliveryWay = ""
+	v.GmtCreateTime = ""
+	v.InputTaxRate = ""
+	v.InventoryUnit = ""
+	v.LifeStatus = ""
+	v.MerchantCode = ""
+	v.OverloadRate = ""
+	v.ProducerName = ""
+	v.ProducerPlace = ""
+	v.PurchaseSpec = ""
+	v.PurchaseUnit = ""
+	v.ShortTitle = ""
+	v.SkuCode = ""
+	v.SkuName = ""
+	v.Storage = ""
+	v.SupplierNo = ""
+	v.TaxRate = ""
+	v.WarehouseCode = ""
+	v.ForbidReceiveDays = 0
+	v.ForbidSalesDays = 0
+	v.MerchantCatId = 0
+	v.Period = 0
+	v.WarnDays = 0
+	v.ImportFlag = false
+	v.WeightFlag = false
+	poolWarehouseSkuDo.Put(v)
 }

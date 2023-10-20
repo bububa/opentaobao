@@ -1,5 +1,9 @@
 package car
 
+import (
+	"sync"
+)
+
 // TransferFlightInfo 结构体
 type TransferFlightInfo struct {
 	// 航班号
@@ -14,4 +18,26 @@ type TransferFlightInfo struct {
 	DesAirPortCode string `json:"des_air_port_code,omitempty" xml:"des_air_port_code,omitempty"`
 	// 航班起飞日期
 	FlightFlyDate string `json:"flight_fly_date,omitempty" xml:"flight_fly_date,omitempty"`
+}
+
+var poolTransferFlightInfo = sync.Pool{
+	New: func() any {
+		return new(TransferFlightInfo)
+	},
+}
+
+// GetTransferFlightInfo() 从对象池中获取TransferFlightInfo
+func GetTransferFlightInfo() *TransferFlightInfo {
+	return poolTransferFlightInfo.Get().(*TransferFlightInfo)
+}
+
+// ReleaseTransferFlightInfo 释放TransferFlightInfo
+func ReleaseTransferFlightInfo(v *TransferFlightInfo) {
+	v.FlightNo = ""
+	v.AirportTerminal = ""
+	v.DepAirPortCode = ""
+	v.FlightArrivedDate = ""
+	v.DesAirPortCode = ""
+	v.FlightFlyDate = ""
+	poolTransferFlightInfo.Put(v)
 }

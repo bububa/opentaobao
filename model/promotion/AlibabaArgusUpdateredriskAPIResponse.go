@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaArgusUpdateredriskAPIResponse struct {
 	model.CommonResponse
 	AlibabaArgusUpdateredriskAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaArgusUpdateredriskAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaArgusUpdateredriskAPIResponseModel).Reset()
 }
 
 // AlibabaArgusUpdateredriskAPIResponseModel is 更新红线价格 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaArgusUpdateredriskAPIResponseModel struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 结果是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaArgusUpdateredriskAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorMessage = ""
+	m.ReturnCode = ""
+	m.TotalCount = 0
+	m.IsSuccess = false
+}
+
+var poolAlibabaArgusUpdateredriskAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaArgusUpdateredriskAPIResponse)
+	},
+}
+
+// GetAlibabaArgusUpdateredriskAPIResponse 从 sync.Pool 获取 AlibabaArgusUpdateredriskAPIResponse
+func GetAlibabaArgusUpdateredriskAPIResponse() *AlibabaArgusUpdateredriskAPIResponse {
+	return poolAlibabaArgusUpdateredriskAPIResponse.Get().(*AlibabaArgusUpdateredriskAPIResponse)
+}
+
+// ReleaseAlibabaArgusUpdateredriskAPIResponse 将 AlibabaArgusUpdateredriskAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaArgusUpdateredriskAPIResponse(v *AlibabaArgusUpdateredriskAPIResponse) {
+	v.Reset()
+	poolAlibabaArgusUpdateredriskAPIResponse.Put(v)
 }

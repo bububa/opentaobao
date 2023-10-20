@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallNrOrderLogisInfoAPIRequest struct {
 // NewTmallNrOrderLogisInfoRequest 初始化TmallNrOrderLogisInfoAPIRequest对象
 func NewTmallNrOrderLogisInfoRequest() *TmallNrOrderLogisInfoAPIRequest {
 	return &TmallNrOrderLogisInfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrOrderLogisInfoAPIRequest) Reset() {
+	r._mainOrderIds = r._mainOrderIds[:0]
+	r._channel = ""
+	r._sellerId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallNrOrderLogisInfoAPIRequest) SetSellerId(_sellerId int64) error {
 // GetSellerId SellerId Getter
 func (r TmallNrOrderLogisInfoAPIRequest) GetSellerId() int64 {
 	return r._sellerId
+}
+
+var poolTmallNrOrderLogisInfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrOrderLogisInfoRequest()
+	},
+}
+
+// GetTmallNrOrderLogisInfoRequest 从 sync.Pool 获取 TmallNrOrderLogisInfoAPIRequest
+func GetTmallNrOrderLogisInfoAPIRequest() *TmallNrOrderLogisInfoAPIRequest {
+	return poolTmallNrOrderLogisInfoAPIRequest.Get().(*TmallNrOrderLogisInfoAPIRequest)
+}
+
+// ReleaseTmallNrOrderLogisInfoAPIRequest 将 TmallNrOrderLogisInfoAPIRequest 放入 sync.Pool
+func ReleaseTmallNrOrderLogisInfoAPIRequest(v *TmallNrOrderLogisInfoAPIRequest) {
+	v.Reset()
+	poolTmallNrOrderLogisInfoAPIRequest.Put(v)
 }

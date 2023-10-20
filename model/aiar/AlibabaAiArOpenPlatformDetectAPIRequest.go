@@ -2,6 +2,7 @@ package aiar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaAiArOpenPlatformDetectAPIRequest struct {
 // NewAlibabaAiArOpenPlatformDetectRequest 初始化AlibabaAiArOpenPlatformDetectAPIRequest对象
 func NewAlibabaAiArOpenPlatformDetectRequest() *AlibabaAiArOpenPlatformDetectAPIRequest {
 	return &AlibabaAiArOpenPlatformDetectAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAiArOpenPlatformDetectAPIRequest) Reset() {
+	r._cachedTargets = ""
+	r._deviceInfo = ""
+	r._version = ""
+	r._imgData = nil
+	r._num = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaAiArOpenPlatformDetectAPIRequest) SetNum(_num int64) error {
 // GetNum Num Getter
 func (r AlibabaAiArOpenPlatformDetectAPIRequest) GetNum() int64 {
 	return r._num
+}
+
+var poolAlibabaAiArOpenPlatformDetectAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAiArOpenPlatformDetectRequest()
+	},
+}
+
+// GetAlibabaAiArOpenPlatformDetectRequest 从 sync.Pool 获取 AlibabaAiArOpenPlatformDetectAPIRequest
+func GetAlibabaAiArOpenPlatformDetectAPIRequest() *AlibabaAiArOpenPlatformDetectAPIRequest {
+	return poolAlibabaAiArOpenPlatformDetectAPIRequest.Get().(*AlibabaAiArOpenPlatformDetectAPIRequest)
+}
+
+// ReleaseAlibabaAiArOpenPlatformDetectAPIRequest 将 AlibabaAiArOpenPlatformDetectAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAiArOpenPlatformDetectAPIRequest(v *AlibabaAiArOpenPlatformDetectAPIRequest) {
+	v.Reset()
+	poolAlibabaAiArOpenPlatformDetectAPIRequest.Put(v)
 }

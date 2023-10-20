@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlisportsPassportAccountCheckmobileAPIResponse struct {
 	AlibabaAlisportsPassportAccountCheckmobileAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlisportsPassportAccountCheckmobileAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlisportsPassportAccountCheckmobileAPIResponseModel).Reset()
+}
+
 // AlibabaAlisportsPassportAccountCheckmobileAPIResponseModel is 阿里体育会员系统--手机号验证接口 成功返回结果
 type AlibabaAlisportsPassportAccountCheckmobileAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alisports_passport_account_checkmobile_response"`
@@ -26,4 +33,29 @@ type AlibabaAlisportsPassportAccountCheckmobileAPIResponseModel struct {
 	AlispCode int64 `json:"alisp_code,omitempty" xml:"alisp_code,omitempty"`
 	// alisp_data
 	AlispData *AlispData `json:"alisp_data,omitempty" xml:"alisp_data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlisportsPassportAccountCheckmobileAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.AlispMsg = ""
+	m.AlispCode = 0
+	m.AlispData = nil
+}
+
+var poolAlibabaAlisportsPassportAccountCheckmobileAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlisportsPassportAccountCheckmobileAPIResponse)
+	},
+}
+
+// GetAlibabaAlisportsPassportAccountCheckmobileAPIResponse 从 sync.Pool 获取 AlibabaAlisportsPassportAccountCheckmobileAPIResponse
+func GetAlibabaAlisportsPassportAccountCheckmobileAPIResponse() *AlibabaAlisportsPassportAccountCheckmobileAPIResponse {
+	return poolAlibabaAlisportsPassportAccountCheckmobileAPIResponse.Get().(*AlibabaAlisportsPassportAccountCheckmobileAPIResponse)
+}
+
+// ReleaseAlibabaAlisportsPassportAccountCheckmobileAPIResponse 将 AlibabaAlisportsPassportAccountCheckmobileAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlisportsPassportAccountCheckmobileAPIResponse(v *AlibabaAlisportsPassportAccountCheckmobileAPIResponse) {
+	v.Reset()
+	poolAlibabaAlisportsPassportAccountCheckmobileAPIResponse.Put(v)
 }

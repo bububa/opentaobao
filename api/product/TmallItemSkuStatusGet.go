@@ -9,11 +9,6 @@ import (
 // tmall.item.sku.status.get
 //
 // 商品sku上下架状态查询
-func TmallItemSkuStatusGet(clt *core.SDKClient, req *product.TmallItemSkuStatusGetAPIRequest, session string) (*product.TmallItemSkuStatusGetAPIResponse, error) {
-	var resp product.TmallItemSkuStatusGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallItemSkuStatusGet(clt *core.SDKClient, req *product.TmallItemSkuStatusGetAPIRequest, resp *product.TmallItemSkuStatusGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

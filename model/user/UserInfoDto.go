@@ -1,5 +1,9 @@
 package user
 
+import (
+	"sync"
+)
+
 // UserInfoDto 结构体
 type UserInfoDto struct {
 	// 返回数据签名，signature = sha1（raw_data 下所有字段 + appSecret，按字符串升级排列），用于校验关键数据是否被篡改
@@ -10,4 +14,24 @@ type UserInfoDto struct {
 	RawData *UserInfoBaseDto `json:"raw_data,omitempty" xml:"raw_data,omitempty"`
 	// 用户结果code
 	UserResultCode *UserResultCode `json:"user_result_code,omitempty" xml:"user_result_code,omitempty"`
+}
+
+var poolUserInfoDto = sync.Pool{
+	New: func() any {
+		return new(UserInfoDto)
+	},
+}
+
+// GetUserInfoDto() 从对象池中获取UserInfoDto
+func GetUserInfoDto() *UserInfoDto {
+	return poolUserInfoDto.Get().(*UserInfoDto)
+}
+
+// ReleaseUserInfoDto 释放UserInfoDto
+func ReleaseUserInfoDto(v *UserInfoDto) {
+	v.Signature = ""
+	v.OpenId = ""
+	v.RawData = nil
+	v.UserResultCode = nil
+	poolUserInfoDto.Put(v)
 }

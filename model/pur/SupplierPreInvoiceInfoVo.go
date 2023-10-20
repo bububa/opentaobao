@@ -1,6 +1,8 @@
 package pur
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -68,4 +70,51 @@ type SupplierPreInvoiceInfoVo struct {
 	SupplierName string `json:"supplier_name,omitempty" xml:"supplier_name,omitempty"`
 	// 供应商编码
 	SupplierCode string `json:"supplier_code,omitempty" xml:"supplier_code,omitempty"`
+}
+
+var poolSupplierPreInvoiceInfoVo = sync.Pool{
+	New: func() any {
+		return new(SupplierPreInvoiceInfoVo)
+	},
+}
+
+// GetSupplierPreInvoiceInfoVo() 从对象池中获取SupplierPreInvoiceInfoVo
+func GetSupplierPreInvoiceInfoVo() *SupplierPreInvoiceInfoVo {
+	return poolSupplierPreInvoiceInfoVo.Get().(*SupplierPreInvoiceInfoVo)
+}
+
+// ReleaseSupplierPreInvoiceInfoVo 释放SupplierPreInvoiceInfoVo
+func ReleaseSupplierPreInvoiceInfoVo(v *SupplierPreInvoiceInfoVo) {
+	v.InvoiceItemList = v.InvoiceItemList[:0]
+	v.Attachment = v.Attachment[:0]
+	v.CloseReason = ""
+	v.Status = ""
+	v.Remark = ""
+	v.Drawer = ""
+	v.Reviewer = ""
+	v.Payee = ""
+	v.Currency = ""
+	v.TotalAmount = ""
+	v.TaxAmount = ""
+	v.InvoiceSellerAccountNo = ""
+	v.InvoiceSellerBankNo = ""
+	v.InvoiceSellerPhone = ""
+	v.InvoiceSellerAddress = ""
+	v.InvoiceSellerTaxCode = ""
+	v.InvoiceSellerName = ""
+	v.InvoiceBuyerAccountNo = ""
+	v.InvoiceBuyerBankNo = ""
+	v.InvoiceBuyerPhone = ""
+	v.InvoiceBuyerAddress = ""
+	v.InvoiceBuyerTaxCode = ""
+	v.InvoiceBuyerName = ""
+	v.InvoiceType = ""
+	v.InvoiceCode = ""
+	v.InvoiceNo = ""
+	v.DayAfterInvoicing = ""
+	v.DemanderPurchaseOrgCode = ""
+	v.OuCode = ""
+	v.SupplierName = ""
+	v.SupplierCode = ""
+	poolSupplierPreInvoiceInfoVo.Put(v)
 }

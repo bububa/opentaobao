@@ -2,6 +2,7 @@ package alink
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlinkDeviceBindAPIRequest struct {
 // NewAlibabaAlinkDeviceBindRequest 初始化AlibabaAlinkDeviceBindAPIRequest对象
 func NewAlibabaAlinkDeviceBindRequest() *AlibabaAlinkDeviceBindAPIRequest {
 	return &AlibabaAlinkDeviceBindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlinkDeviceBindAPIRequest) Reset() {
+	r._uuid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlinkDeviceBindAPIRequest) SetUuid(_uuid string) error {
 // GetUuid Uuid Getter
 func (r AlibabaAlinkDeviceBindAPIRequest) GetUuid() string {
 	return r._uuid
+}
+
+var poolAlibabaAlinkDeviceBindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlinkDeviceBindRequest()
+	},
+}
+
+// GetAlibabaAlinkDeviceBindRequest 从 sync.Pool 获取 AlibabaAlinkDeviceBindAPIRequest
+func GetAlibabaAlinkDeviceBindAPIRequest() *AlibabaAlinkDeviceBindAPIRequest {
+	return poolAlibabaAlinkDeviceBindAPIRequest.Get().(*AlibabaAlinkDeviceBindAPIRequest)
+}
+
+// ReleaseAlibabaAlinkDeviceBindAPIRequest 将 AlibabaAlinkDeviceBindAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlinkDeviceBindAPIRequest(v *AlibabaAlinkDeviceBindAPIRequest) {
+	v.Reset()
+	poolAlibabaAlinkDeviceBindAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest struct {
 // NewAlibabaAlscGrowthInteractiveTaskPageviewtriggerRequest 初始化AlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest对象
 func NewAlibabaAlscGrowthInteractiveTaskPageviewtriggerRequest() *AlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest {
 	return &AlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest) Reset() {
+	r._pageViewRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest) SetPageViewR
 // GetPageViewRequest PageViewRequest Getter
 func (r AlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest) GetPageViewRequest() *PageViewRequest {
 	return r._pageViewRequest
+}
+
+var poolAlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscGrowthInteractiveTaskPageviewtriggerRequest()
+	},
+}
+
+// GetAlibabaAlscGrowthInteractiveTaskPageviewtriggerRequest 从 sync.Pool 获取 AlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest
+func GetAlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest() *AlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest {
+	return poolAlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest.Get().(*AlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest)
+}
+
+// ReleaseAlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest 将 AlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest(v *AlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscGrowthInteractiveTaskPageviewtriggerAPIRequest.Put(v)
 }

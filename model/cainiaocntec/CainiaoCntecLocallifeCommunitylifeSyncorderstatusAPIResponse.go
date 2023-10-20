@@ -2,6 +2,7 @@ package cainiaocntec
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse struct {
 	model.CommonResponse
 	CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponseModel).Reset()
 }
 
 // CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponseModel is 订单状态推送 成功返回结果
@@ -28,4 +35,30 @@ type CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponseModel struct {
 	EMsg string `json:"e_msg,omitempty" xml:"e_msg,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ECode = ""
+	m.Model = ""
+	m.EMsg = ""
+	m.IsSuccess = false
+}
+
+var poolCainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse)
+	},
+}
+
+// GetCainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse 从 sync.Pool 获取 CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse
+func GetCainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse() *CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse {
+	return poolCainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse.Get().(*CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse)
+}
+
+// ReleaseCainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse 将 CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse(v *CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse) {
+	v.Reset()
+	poolCainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse.Put(v)
 }

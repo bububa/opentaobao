@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.city.car.apply.approve
 //
 // 三方市内用车申请单审批
-func AlitripBtripCityCarApplyApprove(clt *core.SDKClient, req *btrip.AlitripBtripCityCarApplyApproveAPIRequest, session string) (*btrip.AlitripBtripCityCarApplyApproveAPIResponse, error) {
-	var resp btrip.AlitripBtripCityCarApplyApproveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripCityCarApplyApprove(clt *core.SDKClient, req *btrip.AlitripBtripCityCarApplyApproveAPIRequest, resp *btrip.AlitripBtripCityCarApplyApproveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

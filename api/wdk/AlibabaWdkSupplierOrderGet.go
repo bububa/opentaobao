@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.supplier.order.get
 //
 // 五道口按订单号批量查询供应商正向订单
-func AlibabaWdkSupplierOrderGet(clt *core.SDKClient, req *wdk.AlibabaWdkSupplierOrderGetAPIRequest, session string) (*wdk.AlibabaWdkSupplierOrderGetAPIResponse, error) {
-	var resp wdk.AlibabaWdkSupplierOrderGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkSupplierOrderGet(clt *core.SDKClient, req *wdk.AlibabaWdkSupplierOrderGetAPIRequest, resp *wdk.AlibabaWdkSupplierOrderGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

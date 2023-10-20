@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // CreativeRecord 结构体
 type CreativeRecord struct {
 	// 主人昵称
@@ -24,4 +28,31 @@ type CreativeRecord struct {
 	ModifiedTime string `json:"modified_time,omitempty" xml:"modified_time,omitempty"`
 	// 关键词id
 	CreativeId int64 `json:"creative_id,omitempty" xml:"creative_id,omitempty"`
+}
+
+var poolCreativeRecord = sync.Pool{
+	New: func() any {
+		return new(CreativeRecord)
+	},
+}
+
+// GetCreativeRecord() 从对象池中获取CreativeRecord
+func GetCreativeRecord() *CreativeRecord {
+	return poolCreativeRecord.Get().(*CreativeRecord)
+}
+
+// ReleaseCreativeRecord 释放CreativeRecord
+func ReleaseCreativeRecord(v *CreativeRecord) {
+	v.Nick = ""
+	v.Title = ""
+	v.OldTitle = ""
+	v.ImgUrl = ""
+	v.OldImgUrl = ""
+	v.AuditStatus = ""
+	v.AuditDesc = ""
+	v.ModifyTime = ""
+	v.CreateTime = ""
+	v.ModifiedTime = ""
+	v.CreativeId = 0
+	poolCreativeRecord.Put(v)
 }

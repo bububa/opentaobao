@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // CollectResourceDeleteRequest 结构体
 type CollectResourceDeleteRequest struct {
 	// 行政地址id（菜鸟地址库id）
@@ -24,4 +28,31 @@ type CollectResourceDeleteRequest struct {
 	RegionCode string `json:"region_code,omitempty" xml:"region_code,omitempty"`
 	// 时间戳（毫秒）
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
+}
+
+var poolCollectResourceDeleteRequest = sync.Pool{
+	New: func() any {
+		return new(CollectResourceDeleteRequest)
+	},
+}
+
+// GetCollectResourceDeleteRequest() 从对象池中获取CollectResourceDeleteRequest
+func GetCollectResourceDeleteRequest() *CollectResourceDeleteRequest {
+	return poolCollectResourceDeleteRequest.Get().(*CollectResourceDeleteRequest)
+}
+
+// ReleaseCollectResourceDeleteRequest 释放CollectResourceDeleteRequest
+func ReleaseCollectResourceDeleteRequest(v *CollectResourceDeleteRequest) {
+	v.AddressIds = v.AddressIds[:0]
+	v.AddressNames = v.AddressNames[:0]
+	v.RequestId = ""
+	v.SupplierId = ""
+	v.DeliveryCode = ""
+	v.ServiceType = ""
+	v.AbilityType = ""
+	v.ServiceScopeType = ""
+	v.AddressType = ""
+	v.RegionCode = ""
+	v.RequestTime = 0
+	poolCollectResourceDeleteRequest.Put(v)
 }

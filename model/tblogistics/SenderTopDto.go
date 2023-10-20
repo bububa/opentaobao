@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // SenderTopDto 结构体
 type SenderTopDto struct {
 	// 联系人姓名
@@ -12,4 +16,25 @@ type SenderTopDto struct {
 	Lat string `json:"lat,omitempty" xml:"lat,omitempty"`
 	// 经度（高德）
 	Lng string `json:"lng,omitempty" xml:"lng,omitempty"`
+}
+
+var poolSenderTopDto = sync.Pool{
+	New: func() any {
+		return new(SenderTopDto)
+	},
+}
+
+// GetSenderTopDto() 从对象池中获取SenderTopDto
+func GetSenderTopDto() *SenderTopDto {
+	return poolSenderTopDto.Get().(*SenderTopDto)
+}
+
+// ReleaseSenderTopDto 释放SenderTopDto
+func ReleaseSenderTopDto(v *SenderTopDto) {
+	v.Name = ""
+	v.Phone = ""
+	v.Address = ""
+	v.Lat = ""
+	v.Lng = ""
+	poolSenderTopDto.Put(v)
 }

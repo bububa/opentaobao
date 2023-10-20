@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // RecycleSpuTemplate 结构体
 type RecycleSpuTemplate struct {
 	// 可选， 回收V1版本：3C数码&#34;3C&#34;，奢侈品&#34;LUXURIES&#34;，大件&#34;BULKS&#34;，车&#34;CAR&#34;,母婴&#34;BABY&#34;，办公设备&#34;OFFICE&#34;，美妆&#34;MAKEUP&#34;，服装&#34;CLOTHING&#34;，低残值&#34;LOWVALUE&#34;，虚拟卡券&#34;VIRTUAL&#34;
@@ -14,4 +18,26 @@ type RecycleSpuTemplate struct {
 	SpuId int64 `json:"spu_id,omitempty" xml:"spu_id,omitempty"`
 	// 回收商类型：1：专业服务商  2：淘宝商家
 	RecycleType int64 `json:"recycle_type,omitempty" xml:"recycle_type,omitempty"`
+}
+
+var poolRecycleSpuTemplate = sync.Pool{
+	New: func() any {
+		return new(RecycleSpuTemplate)
+	},
+}
+
+// GetRecycleSpuTemplate() 从对象池中获取RecycleSpuTemplate
+func GetRecycleSpuTemplate() *RecycleSpuTemplate {
+	return poolRecycleSpuTemplate.Get().(*RecycleSpuTemplate)
+}
+
+// ReleaseRecycleSpuTemplate 释放RecycleSpuTemplate
+func ReleaseRecycleSpuTemplate(v *RecycleSpuTemplate) {
+	v.BizCode = ""
+	v.PdCode = ""
+	v.ActionType = 0
+	v.RecycleSupplierId = 0
+	v.SpuId = 0
+	v.RecycleType = 0
+	poolRecycleSpuTemplate.Put(v)
 }

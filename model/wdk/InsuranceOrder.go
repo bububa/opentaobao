@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // InsuranceOrder 结构体
 type InsuranceOrder struct {
 	// 签收时间
@@ -24,4 +28,31 @@ type InsuranceOrder struct {
 	ItemName string `json:"item_name,omitempty" xml:"item_name,omitempty"`
 	// 交易子订单ID
 	TbSubOrderId int64 `json:"tb_sub_order_id,omitempty" xml:"tb_sub_order_id,omitempty"`
+}
+
+var poolInsuranceOrder = sync.Pool{
+	New: func() any {
+		return new(InsuranceOrder)
+	},
+}
+
+// GetInsuranceOrder() 从对象池中获取InsuranceOrder
+func GetInsuranceOrder() *InsuranceOrder {
+	return poolInsuranceOrder.Get().(*InsuranceOrder)
+}
+
+// ReleaseInsuranceOrder 释放InsuranceOrder
+func ReleaseInsuranceOrder(v *InsuranceOrder) {
+	v.SignTime = ""
+	v.OrderCreateTime = ""
+	v.ExpressNo = ""
+	v.DeliveryAddress = ""
+	v.SendAddress = ""
+	v.OrderAmount = ""
+	v.ItemCategory = ""
+	v.ItemPrice = ""
+	v.ItemQuantity = ""
+	v.ItemName = ""
+	v.TbSubOrderId = 0
+	poolInsuranceOrder.Put(v)
 }

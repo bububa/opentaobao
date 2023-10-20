@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // InvoiceApplyDtlDto 结构体
 type InvoiceApplyDtlDto struct {
 	// 该申请单 请求开票的结果，拆单的场景下可能有多笔发票请求  当apply_status为creating_inv, inv_failed, inv_success, inv_part_success 时返回该字段
@@ -66,4 +70,52 @@ type InvoiceApplyDtlDto struct {
 	InvoiceKind int64 `json:"invoice_kind,omitempty" xml:"invoice_kind,omitempty"`
 	// 当前申请单是否为已终结状态。true: 是，false: 否。  主要用于区分inv_part_success状态下是终态还是中间态。
 	IsFinally bool `json:"is_finally,omitempty" xml:"is_finally,omitempty"`
+}
+
+var poolInvoiceApplyDtlDto = sync.Pool{
+	New: func() any {
+		return new(InvoiceApplyDtlDto)
+	},
+}
+
+// GetInvoiceApplyDtlDto() 从对象池中获取InvoiceApplyDtlDto
+func GetInvoiceApplyDtlDto() *InvoiceApplyDtlDto {
+	return poolInvoiceApplyDtlDto.Get().(*InvoiceApplyDtlDto)
+}
+
+// ReleaseInvoiceApplyDtlDto 释放InvoiceApplyDtlDto
+func ReleaseInvoiceApplyDtlDto(v *InvoiceApplyDtlDto) {
+	v.CreateInvResults = v.CreateInvResults[:0]
+	v.InvoiceItems = v.InvoiceItems[:0]
+	v.ApplyAmount = ""
+	v.ApplyId = ""
+	v.ApplyMode = ""
+	v.ApplyStatus = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.InvoiceMemo = ""
+	v.InvoiceType = ""
+	v.NormalInvoiceCode = ""
+	v.NormalInvoiceNo = ""
+	v.OuterId = ""
+	v.PayeeRegisterNo = ""
+	v.PayerAddress = ""
+	v.PayerBankAccountId = ""
+	v.PayerBankName = ""
+	v.PayerEmail = ""
+	v.PayerMemo = ""
+	v.PayerName = ""
+	v.PayerPhone = ""
+	v.PayerRegisterNo = ""
+	v.PayerUid = ""
+	v.PlatformBizFlag = ""
+	v.PlatformCode = ""
+	v.PlatformTid = ""
+	v.PlatformUserId = ""
+	v.RedNoticeNo = ""
+	v.BusinessType = 0
+	v.CreateInvPayeeInfo = nil
+	v.InvoiceKind = 0
+	v.IsFinally = false
+	poolInvoiceApplyDtlDto.Put(v)
 }

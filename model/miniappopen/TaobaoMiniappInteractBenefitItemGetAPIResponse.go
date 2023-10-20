@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoMiniappInteractBenefitItemGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappInteractBenefitItemGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappInteractBenefitItemGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMiniappInteractBenefitItemGetAPIResponseModel).Reset()
 }
 
 // TaobaoMiniappInteractBenefitItemGetAPIResponseModel is 读取实物权益奖池对应绑定的专属下单商品 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoMiniappInteractBenefitItemGetAPIResponseModel struct {
 	Model int64 `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功
 	InvokeSuccess bool `json:"invoke_success,omitempty" xml:"invoke_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappInteractBenefitItemGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.InvokeErrCode = ""
+	m.InvokeErrMessage = ""
+	m.Model = 0
+	m.InvokeSuccess = false
+}
+
+var poolTaobaoMiniappInteractBenefitItemGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMiniappInteractBenefitItemGetAPIResponse)
+	},
+}
+
+// GetTaobaoMiniappInteractBenefitItemGetAPIResponse 从 sync.Pool 获取 TaobaoMiniappInteractBenefitItemGetAPIResponse
+func GetTaobaoMiniappInteractBenefitItemGetAPIResponse() *TaobaoMiniappInteractBenefitItemGetAPIResponse {
+	return poolTaobaoMiniappInteractBenefitItemGetAPIResponse.Get().(*TaobaoMiniappInteractBenefitItemGetAPIResponse)
+}
+
+// ReleaseTaobaoMiniappInteractBenefitItemGetAPIResponse 将 TaobaoMiniappInteractBenefitItemGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMiniappInteractBenefitItemGetAPIResponse(v *TaobaoMiniappInteractBenefitItemGetAPIResponse) {
+	v.Reset()
+	poolTaobaoMiniappInteractBenefitItemGetAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.benefit.send
 //
 // 发奖接口
-func AlibabaBenefitSend(clt *core.SDKClient, req *user.AlibabaBenefitSendAPIRequest, session string) (*user.AlibabaBenefitSendAPIResponse, error) {
-	var resp user.AlibabaBenefitSendAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaBenefitSend(clt *core.SDKClient, req *user.AlibabaBenefitSendAPIRequest, resp *user.AlibabaBenefitSendAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

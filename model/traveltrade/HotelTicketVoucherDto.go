@@ -1,5 +1,9 @@
 package traveltrade
 
+import (
+	"sync"
+)
+
 // HotelTicketVoucherDto 结构体
 type HotelTicketVoucherDto struct {
 	// 凭证码
@@ -18,4 +22,28 @@ type HotelTicketVoucherDto struct {
 	BizType int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
 	// 凭证 可用/不可用
 	CanUse bool `json:"can_use,omitempty" xml:"can_use,omitempty"`
+}
+
+var poolHotelTicketVoucherDto = sync.Pool{
+	New: func() any {
+		return new(HotelTicketVoucherDto)
+	},
+}
+
+// GetHotelTicketVoucherDto() 从对象池中获取HotelTicketVoucherDto
+func GetHotelTicketVoucherDto() *HotelTicketVoucherDto {
+	return poolHotelTicketVoucherDto.Get().(*HotelTicketVoucherDto)
+}
+
+// ReleaseHotelTicketVoucherDto 释放HotelTicketVoucherDto
+func ReleaseHotelTicketVoucherDto(v *HotelTicketVoucherDto) {
+	v.Code = ""
+	v.CertificateId = ""
+	v.Url = ""
+	v.AvailableNums = 0
+	v.Type = 0
+	v.UsageNums = 0
+	v.BizType = 0
+	v.CanUse = false
+	poolHotelTicketVoucherDto.Put(v)
 }

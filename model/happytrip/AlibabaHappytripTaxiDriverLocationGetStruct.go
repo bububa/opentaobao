@@ -1,5 +1,9 @@
 package happytrip
 
+import (
+	"sync"
+)
+
 // AlibabaHappytripTaxiDriverLocationGetStruct 结构体
 type AlibabaHappytripTaxiDriverLocationGetStruct struct {
 	// 纬度
@@ -12,4 +16,25 @@ type AlibabaHappytripTaxiDriverLocationGetStruct struct {
 	Speed string `json:"speed,omitempty" xml:"speed,omitempty"`
 	// 更新时间
 	UpdateTime string `json:"update_time,omitempty" xml:"update_time,omitempty"`
+}
+
+var poolAlibabaHappytripTaxiDriverLocationGetStruct = sync.Pool{
+	New: func() any {
+		return new(AlibabaHappytripTaxiDriverLocationGetStruct)
+	},
+}
+
+// GetAlibabaHappytripTaxiDriverLocationGetStruct() 从对象池中获取AlibabaHappytripTaxiDriverLocationGetStruct
+func GetAlibabaHappytripTaxiDriverLocationGetStruct() *AlibabaHappytripTaxiDriverLocationGetStruct {
+	return poolAlibabaHappytripTaxiDriverLocationGetStruct.Get().(*AlibabaHappytripTaxiDriverLocationGetStruct)
+}
+
+// ReleaseAlibabaHappytripTaxiDriverLocationGetStruct 释放AlibabaHappytripTaxiDriverLocationGetStruct
+func ReleaseAlibabaHappytripTaxiDriverLocationGetStruct(v *AlibabaHappytripTaxiDriverLocationGetStruct) {
+	v.Lat = ""
+	v.Lng = ""
+	v.Direction = ""
+	v.Speed = ""
+	v.UpdateTime = ""
+	poolAlibabaHappytripTaxiDriverLocationGetStruct.Put(v)
 }

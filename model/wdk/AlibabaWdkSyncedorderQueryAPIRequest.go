@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaWdkSyncedorderQueryAPIRequest struct {
 // NewAlibabaWdkSyncedorderQueryRequest 初始化AlibabaWdkSyncedorderQueryAPIRequest对象
 func NewAlibabaWdkSyncedorderQueryRequest() *AlibabaWdkSyncedorderQueryAPIRequest {
 	return &AlibabaWdkSyncedorderQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkSyncedorderQueryAPIRequest) Reset() {
+	r._storeId = ""
+	r._serialNum = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaWdkSyncedorderQueryAPIRequest) SetSerialNum(_serialNum string) e
 // GetSerialNum SerialNum Getter
 func (r AlibabaWdkSyncedorderQueryAPIRequest) GetSerialNum() string {
 	return r._serialNum
+}
+
+var poolAlibabaWdkSyncedorderQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkSyncedorderQueryRequest()
+	},
+}
+
+// GetAlibabaWdkSyncedorderQueryRequest 从 sync.Pool 获取 AlibabaWdkSyncedorderQueryAPIRequest
+func GetAlibabaWdkSyncedorderQueryAPIRequest() *AlibabaWdkSyncedorderQueryAPIRequest {
+	return poolAlibabaWdkSyncedorderQueryAPIRequest.Get().(*AlibabaWdkSyncedorderQueryAPIRequest)
+}
+
+// ReleaseAlibabaWdkSyncedorderQueryAPIRequest 将 AlibabaWdkSyncedorderQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkSyncedorderQueryAPIRequest(v *AlibabaWdkSyncedorderQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkSyncedorderQueryAPIRequest.Put(v)
 }

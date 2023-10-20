@@ -2,6 +2,7 @@ package topoaid
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTopPackageQueryAPIResponse struct {
 	TaobaoTopPackageQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTopPackageQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTopPackageQueryAPIResponseModel).Reset()
+}
+
 // TaobaoTopPackageQueryAPIResponseModel is 淘系包裹查询 成功返回结果
 type TaobaoTopPackageQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"top_package_query_response"`
@@ -24,4 +31,28 @@ type TaobaoTopPackageQueryAPIResponseModel struct {
 	Data []PackageInfo `json:"data,omitempty" xml:"data>package_info,omitempty"`
 	// 面单总数量
 	TotalNum int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTopPackageQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = m.Data[:0]
+	m.TotalNum = 0
+}
+
+var poolTaobaoTopPackageQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTopPackageQueryAPIResponse)
+	},
+}
+
+// GetTaobaoTopPackageQueryAPIResponse 从 sync.Pool 获取 TaobaoTopPackageQueryAPIResponse
+func GetTaobaoTopPackageQueryAPIResponse() *TaobaoTopPackageQueryAPIResponse {
+	return poolTaobaoTopPackageQueryAPIResponse.Get().(*TaobaoTopPackageQueryAPIResponse)
+}
+
+// ReleaseTaobaoTopPackageQueryAPIResponse 将 TaobaoTopPackageQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTopPackageQueryAPIResponse(v *TaobaoTopPackageQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoTopPackageQueryAPIResponse.Put(v)
 }

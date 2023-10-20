@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallServicecenterAnomalyrecourseSearchAPIRequest struct {
 // NewTmallServicecenterAnomalyrecourseSearchRequest 初始化TmallServicecenterAnomalyrecourseSearchAPIRequest对象
 func NewTmallServicecenterAnomalyrecourseSearchRequest() *TmallServicecenterAnomalyrecourseSearchAPIRequest {
 	return &TmallServicecenterAnomalyrecourseSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterAnomalyrecourseSearchAPIRequest) Reset() {
+	r._start = 0
+	r._end = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallServicecenterAnomalyrecourseSearchAPIRequest) SetEnd(_end int64) e
 // GetEnd End Getter
 func (r TmallServicecenterAnomalyrecourseSearchAPIRequest) GetEnd() int64 {
 	return r._end
+}
+
+var poolTmallServicecenterAnomalyrecourseSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterAnomalyrecourseSearchRequest()
+	},
+}
+
+// GetTmallServicecenterAnomalyrecourseSearchRequest 从 sync.Pool 获取 TmallServicecenterAnomalyrecourseSearchAPIRequest
+func GetTmallServicecenterAnomalyrecourseSearchAPIRequest() *TmallServicecenterAnomalyrecourseSearchAPIRequest {
+	return poolTmallServicecenterAnomalyrecourseSearchAPIRequest.Get().(*TmallServicecenterAnomalyrecourseSearchAPIRequest)
+}
+
+// ReleaseTmallServicecenterAnomalyrecourseSearchAPIRequest 将 TmallServicecenterAnomalyrecourseSearchAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterAnomalyrecourseSearchAPIRequest(v *TmallServicecenterAnomalyrecourseSearchAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterAnomalyrecourseSearchAPIRequest.Put(v)
 }

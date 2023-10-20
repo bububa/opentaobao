@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeLinkInfoObtainAPIRequest struct {
 // NewAlibabaAlihouseNewhomeLinkInfoObtainRequest 初始化AlibabaAlihouseNewhomeLinkInfoObtainAPIRequest对象
 func NewAlibabaAlihouseNewhomeLinkInfoObtainRequest() *AlibabaAlihouseNewhomeLinkInfoObtainAPIRequest {
 	return &AlibabaAlihouseNewhomeLinkInfoObtainAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeLinkInfoObtainAPIRequest) Reset() {
+	r._linkInfoReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeLinkInfoObtainAPIRequest) SetLinkInfoReq(_linkInf
 // GetLinkInfoReq LinkInfoReq Getter
 func (r AlibabaAlihouseNewhomeLinkInfoObtainAPIRequest) GetLinkInfoReq() *LinkInfoReqDto {
 	return r._linkInfoReq
+}
+
+var poolAlibabaAlihouseNewhomeLinkInfoObtainAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeLinkInfoObtainRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeLinkInfoObtainRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeLinkInfoObtainAPIRequest
+func GetAlibabaAlihouseNewhomeLinkInfoObtainAPIRequest() *AlibabaAlihouseNewhomeLinkInfoObtainAPIRequest {
+	return poolAlibabaAlihouseNewhomeLinkInfoObtainAPIRequest.Get().(*AlibabaAlihouseNewhomeLinkInfoObtainAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeLinkInfoObtainAPIRequest 将 AlibabaAlihouseNewhomeLinkInfoObtainAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeLinkInfoObtainAPIRequest(v *AlibabaAlihouseNewhomeLinkInfoObtainAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeLinkInfoObtainAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaWdkCouponTemplateQueryumpactidApiResult 结构体
 type AlibabaWdkCouponTemplateQueryumpactidApiResult struct {
 	// 数据
@@ -10,4 +14,24 @@ type AlibabaWdkCouponTemplateQueryumpactidApiResult struct {
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// true为成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaWdkCouponTemplateQueryumpactidApiResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkCouponTemplateQueryumpactidApiResult)
+	},
+}
+
+// GetAlibabaWdkCouponTemplateQueryumpactidApiResult() 从对象池中获取AlibabaWdkCouponTemplateQueryumpactidApiResult
+func GetAlibabaWdkCouponTemplateQueryumpactidApiResult() *AlibabaWdkCouponTemplateQueryumpactidApiResult {
+	return poolAlibabaWdkCouponTemplateQueryumpactidApiResult.Get().(*AlibabaWdkCouponTemplateQueryumpactidApiResult)
+}
+
+// ReleaseAlibabaWdkCouponTemplateQueryumpactidApiResult 释放AlibabaWdkCouponTemplateQueryumpactidApiResult
+func ReleaseAlibabaWdkCouponTemplateQueryumpactidApiResult(v *AlibabaWdkCouponTemplateQueryumpactidApiResult) {
+	v.Models = v.Models[:0]
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Success = false
+	poolAlibabaWdkCouponTemplateQueryumpactidApiResult.Put(v)
 }

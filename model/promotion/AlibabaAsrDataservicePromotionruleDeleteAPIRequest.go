@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAsrDataservicePromotionruleDeleteAPIRequest struct {
 // NewAlibabaAsrDataservicePromotionruleDeleteRequest 初始化AlibabaAsrDataservicePromotionruleDeleteAPIRequest对象
 func NewAlibabaAsrDataservicePromotionruleDeleteRequest() *AlibabaAsrDataservicePromotionruleDeleteAPIRequest {
 	return &AlibabaAsrDataservicePromotionruleDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAsrDataservicePromotionruleDeleteAPIRequest) Reset() {
+	r._posKey = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAsrDataservicePromotionruleDeleteAPIRequest) SetPosKey(_posKey i
 // GetPosKey PosKey Getter
 func (r AlibabaAsrDataservicePromotionruleDeleteAPIRequest) GetPosKey() int64 {
 	return r._posKey
+}
+
+var poolAlibabaAsrDataservicePromotionruleDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAsrDataservicePromotionruleDeleteRequest()
+	},
+}
+
+// GetAlibabaAsrDataservicePromotionruleDeleteRequest 从 sync.Pool 获取 AlibabaAsrDataservicePromotionruleDeleteAPIRequest
+func GetAlibabaAsrDataservicePromotionruleDeleteAPIRequest() *AlibabaAsrDataservicePromotionruleDeleteAPIRequest {
+	return poolAlibabaAsrDataservicePromotionruleDeleteAPIRequest.Get().(*AlibabaAsrDataservicePromotionruleDeleteAPIRequest)
+}
+
+// ReleaseAlibabaAsrDataservicePromotionruleDeleteAPIRequest 将 AlibabaAsrDataservicePromotionruleDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAsrDataservicePromotionruleDeleteAPIRequest(v *AlibabaAsrDataservicePromotionruleDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaAsrDataservicePromotionruleDeleteAPIRequest.Put(v)
 }

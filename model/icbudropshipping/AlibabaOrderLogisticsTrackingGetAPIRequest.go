@@ -2,6 +2,7 @@ package icbudropshipping
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaOrderLogisticsTrackingGetAPIRequest struct {
 // NewAlibabaOrderLogisticsTrackingGetRequest 初始化AlibabaOrderLogisticsTrackingGetAPIRequest对象
 func NewAlibabaOrderLogisticsTrackingGetRequest() *AlibabaOrderLogisticsTrackingGetAPIRequest {
 	return &AlibabaOrderLogisticsTrackingGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaOrderLogisticsTrackingGetAPIRequest) Reset() {
+	r._tradeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaOrderLogisticsTrackingGetAPIRequest) SetTradeId(_tradeId int64) 
 // GetTradeId TradeId Getter
 func (r AlibabaOrderLogisticsTrackingGetAPIRequest) GetTradeId() int64 {
 	return r._tradeId
+}
+
+var poolAlibabaOrderLogisticsTrackingGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaOrderLogisticsTrackingGetRequest()
+	},
+}
+
+// GetAlibabaOrderLogisticsTrackingGetRequest 从 sync.Pool 获取 AlibabaOrderLogisticsTrackingGetAPIRequest
+func GetAlibabaOrderLogisticsTrackingGetAPIRequest() *AlibabaOrderLogisticsTrackingGetAPIRequest {
+	return poolAlibabaOrderLogisticsTrackingGetAPIRequest.Get().(*AlibabaOrderLogisticsTrackingGetAPIRequest)
+}
+
+// ReleaseAlibabaOrderLogisticsTrackingGetAPIRequest 将 AlibabaOrderLogisticsTrackingGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaOrderLogisticsTrackingGetAPIRequest(v *AlibabaOrderLogisticsTrackingGetAPIRequest) {
+	v.Reset()
+	poolAlibabaOrderLogisticsTrackingGetAPIRequest.Put(v)
 }

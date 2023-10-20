@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -71,8 +72,40 @@ type TaobaoXhotelRoomtypeUpdateAPIRequest struct {
 // NewTaobaoXhotelRoomtypeUpdateRequest 初始化TaobaoXhotelRoomtypeUpdateAPIRequest对象
 func NewTaobaoXhotelRoomtypeUpdateRequest() *TaobaoXhotelRoomtypeUpdateAPIRequest {
 	return &TaobaoXhotelRoomtypeUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(27),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) Reset() {
+	r._name = ""
+	r._area = ""
+	r._floor = ""
+	r._bedType = ""
+	r._bedSize = ""
+	r._internet = ""
+	r._service = ""
+	r._extend = ""
+	r._outerId = ""
+	r._vendor = ""
+	r._hotelCode = ""
+	r._pics = ""
+	r._nameE = ""
+	r._operator = ""
+	r._bedInfo = ""
+	r._newOuterId = ""
+	r._standardRoomFacilities = ""
+	r._windowDesc = ""
+	r._addBed = ""
+	r._childrenPolicy = ""
+	r._rid = 0
+	r._maxOccupancy = 0
+	r._windowType = 0
+	r._srid = 0
+	r._hid = 0
+	r._status = nil
+	r._connectionType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -441,4 +474,21 @@ func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetConnectionType(_connectionType
 // GetConnectionType ConnectionType Getter
 func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetConnectionType() int64 {
 	return r._connectionType
+}
+
+var poolTaobaoXhotelRoomtypeUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelRoomtypeUpdateRequest()
+	},
+}
+
+// GetTaobaoXhotelRoomtypeUpdateRequest 从 sync.Pool 获取 TaobaoXhotelRoomtypeUpdateAPIRequest
+func GetTaobaoXhotelRoomtypeUpdateAPIRequest() *TaobaoXhotelRoomtypeUpdateAPIRequest {
+	return poolTaobaoXhotelRoomtypeUpdateAPIRequest.Get().(*TaobaoXhotelRoomtypeUpdateAPIRequest)
+}
+
+// ReleaseTaobaoXhotelRoomtypeUpdateAPIRequest 将 TaobaoXhotelRoomtypeUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelRoomtypeUpdateAPIRequest(v *TaobaoXhotelRoomtypeUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelRoomtypeUpdateAPIRequest.Put(v)
 }

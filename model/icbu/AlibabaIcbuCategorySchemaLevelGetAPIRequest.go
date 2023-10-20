@@ -2,6 +2,7 @@ package icbu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaIcbuCategorySchemaLevelGetAPIRequest struct {
 // NewAlibabaIcbuCategorySchemaLevelGetRequest 初始化AlibabaIcbuCategorySchemaLevelGetAPIRequest对象
 func NewAlibabaIcbuCategorySchemaLevelGetRequest() *AlibabaIcbuCategorySchemaLevelGetAPIRequest {
 	return &AlibabaIcbuCategorySchemaLevelGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIcbuCategorySchemaLevelGetAPIRequest) Reset() {
+	r._language = ""
+	r._xml = ""
+	r._catId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaIcbuCategorySchemaLevelGetAPIRequest) SetCatId(_catId int64) err
 // GetCatId CatId Getter
 func (r AlibabaIcbuCategorySchemaLevelGetAPIRequest) GetCatId() int64 {
 	return r._catId
+}
+
+var poolAlibabaIcbuCategorySchemaLevelGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIcbuCategorySchemaLevelGetRequest()
+	},
+}
+
+// GetAlibabaIcbuCategorySchemaLevelGetRequest 从 sync.Pool 获取 AlibabaIcbuCategorySchemaLevelGetAPIRequest
+func GetAlibabaIcbuCategorySchemaLevelGetAPIRequest() *AlibabaIcbuCategorySchemaLevelGetAPIRequest {
+	return poolAlibabaIcbuCategorySchemaLevelGetAPIRequest.Get().(*AlibabaIcbuCategorySchemaLevelGetAPIRequest)
+}
+
+// ReleaseAlibabaIcbuCategorySchemaLevelGetAPIRequest 将 AlibabaIcbuCategorySchemaLevelGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIcbuCategorySchemaLevelGetAPIRequest(v *AlibabaIcbuCategorySchemaLevelGetAPIRequest) {
+	v.Reset()
+	poolAlibabaIcbuCategorySchemaLevelGetAPIRequest.Put(v)
 }

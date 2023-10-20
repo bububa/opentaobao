@@ -9,11 +9,6 @@ import (
 // taobao.logistics.trace.get
 //
 // 用户根据交易号查询物流流转信息
-func TaobaoLogisticsTraceGet(clt *core.SDKClient, req *tblogistics.TaobaoLogisticsTraceGetAPIRequest, session string) (*tblogistics.TaobaoLogisticsTraceGetAPIResponse, error) {
-	var resp tblogistics.TaobaoLogisticsTraceGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLogisticsTraceGet(clt *core.SDKClient, req *tblogistics.TaobaoLogisticsTraceGetAPIRequest, resp *tblogistics.TaobaoLogisticsTraceGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

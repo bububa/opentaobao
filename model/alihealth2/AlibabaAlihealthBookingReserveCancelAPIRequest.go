@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthBookingReserveCancelAPIRequest struct {
 // NewAlibabaAlihealthBookingReserveCancelRequest 初始化AlibabaAlihealthBookingReserveCancelAPIRequest对象
 func NewAlibabaAlihealthBookingReserveCancelRequest() *AlibabaAlihealthBookingReserveCancelAPIRequest {
 	return &AlibabaAlihealthBookingReserveCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthBookingReserveCancelAPIRequest) Reset() {
+	r._cancel = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthBookingReserveCancelAPIRequest) SetCancel(_cancel *IsvR
 // GetCancel Cancel Getter
 func (r AlibabaAlihealthBookingReserveCancelAPIRequest) GetCancel() *IsvReserveRequest {
 	return r._cancel
+}
+
+var poolAlibabaAlihealthBookingReserveCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthBookingReserveCancelRequest()
+	},
+}
+
+// GetAlibabaAlihealthBookingReserveCancelRequest 从 sync.Pool 获取 AlibabaAlihealthBookingReserveCancelAPIRequest
+func GetAlibabaAlihealthBookingReserveCancelAPIRequest() *AlibabaAlihealthBookingReserveCancelAPIRequest {
+	return poolAlibabaAlihealthBookingReserveCancelAPIRequest.Get().(*AlibabaAlihealthBookingReserveCancelAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthBookingReserveCancelAPIRequest 将 AlibabaAlihealthBookingReserveCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthBookingReserveCancelAPIRequest(v *AlibabaAlihealthBookingReserveCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthBookingReserveCancelAPIRequest.Put(v)
 }

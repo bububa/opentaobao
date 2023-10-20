@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // TenderItemListQry 结构体
 type TenderItemListQry struct {
 	// 商品id
@@ -16,4 +20,27 @@ type TenderItemListQry struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 用户id
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolTenderItemListQry = sync.Pool{
+	New: func() any {
+		return new(TenderItemListQry)
+	},
+}
+
+// GetTenderItemListQry() 从对象池中获取TenderItemListQry
+func GetTenderItemListQry() *TenderItemListQry {
+	return poolTenderItemListQry.Get().(*TenderItemListQry)
+}
+
+// ReleaseTenderItemListQry 释放TenderItemListQry
+func ReleaseTenderItemListQry(v *TenderItemListQry) {
+	v.ItemId = ""
+	v.ScheduleDate = ""
+	v.ScheduleNumber = ""
+	v.UserNick = ""
+	v.PageNumber = 0
+	v.PageSize = 0
+	v.UserId = 0
+	poolTenderItemListQry.Put(v)
 }

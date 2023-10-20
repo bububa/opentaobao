@@ -2,6 +2,7 @@ package aetools
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AliexpressAffiliateLinkGenerateAPIRequest struct {
 // NewAliexpressAffiliateLinkGenerateRequest 初始化AliexpressAffiliateLinkGenerateAPIRequest对象
 func NewAliexpressAffiliateLinkGenerateRequest() *AliexpressAffiliateLinkGenerateAPIRequest {
 	return &AliexpressAffiliateLinkGenerateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressAffiliateLinkGenerateAPIRequest) Reset() {
+	r._appSignature = ""
+	r._sourceValues = ""
+	r._trackingId = ""
+	r._promotionLinkType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AliexpressAffiliateLinkGenerateAPIRequest) SetPromotionLinkType(_promot
 // GetPromotionLinkType PromotionLinkType Getter
 func (r AliexpressAffiliateLinkGenerateAPIRequest) GetPromotionLinkType() int64 {
 	return r._promotionLinkType
+}
+
+var poolAliexpressAffiliateLinkGenerateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressAffiliateLinkGenerateRequest()
+	},
+}
+
+// GetAliexpressAffiliateLinkGenerateRequest 从 sync.Pool 获取 AliexpressAffiliateLinkGenerateAPIRequest
+func GetAliexpressAffiliateLinkGenerateAPIRequest() *AliexpressAffiliateLinkGenerateAPIRequest {
+	return poolAliexpressAffiliateLinkGenerateAPIRequest.Get().(*AliexpressAffiliateLinkGenerateAPIRequest)
+}
+
+// ReleaseAliexpressAffiliateLinkGenerateAPIRequest 将 AliexpressAffiliateLinkGenerateAPIRequest 放入 sync.Pool
+func ReleaseAliexpressAffiliateLinkGenerateAPIRequest(v *AliexpressAffiliateLinkGenerateAPIRequest) {
+	v.Reset()
+	poolAliexpressAffiliateLinkGenerateAPIRequest.Put(v)
 }

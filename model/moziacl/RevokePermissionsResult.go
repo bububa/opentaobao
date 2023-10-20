@@ -1,5 +1,9 @@
 package moziacl
 
+import (
+	"sync"
+)
+
 // RevokePermissionsResult 结构体
 type RevokePermissionsResult struct {
 	// 请求唯一id
@@ -12,4 +16,25 @@ type RevokePermissionsResult struct {
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
 	// 是否调用成功，成功则为true
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolRevokePermissionsResult = sync.Pool{
+	New: func() any {
+		return new(RevokePermissionsResult)
+	},
+}
+
+// GetRevokePermissionsResult() 从对象池中获取RevokePermissionsResult
+func GetRevokePermissionsResult() *RevokePermissionsResult {
+	return poolRevokePermissionsResult.Get().(*RevokePermissionsResult)
+}
+
+// ReleaseRevokePermissionsResult 释放RevokePermissionsResult
+func ReleaseRevokePermissionsResult(v *RevokePermissionsResult) {
+	v.RequestId = ""
+	v.ResponseMessage = ""
+	v.ResponseMetaData = ""
+	v.ResponseCode = ""
+	v.Success = false
+	poolRevokePermissionsResult.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.ailabs.aligenie.device.register
 //
 // 向天猫精灵inside平台注册设备mac地址，并获取设备的唯一密钥
-func AlibabaAilabsAligenieDeviceRegister(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieDeviceRegisterAPIRequest, session string) (*tmallgenie.AlibabaAilabsAligenieDeviceRegisterAPIResponse, error) {
-	var resp tmallgenie.AlibabaAilabsAligenieDeviceRegisterAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAilabsAligenieDeviceRegister(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieDeviceRegisterAPIRequest, resp *tmallgenie.AlibabaAilabsAligenieDeviceRegisterAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // yunos.pubadmin.common.operation
 //
 // 内部迎客松通用服务
-func YunosPubadminCommonOperation(clt *core.SDKClient, req *tvupadmin.YunosPubadminCommonOperationAPIRequest, session string) (*tvupadmin.YunosPubadminCommonOperationAPIResponse, error) {
-	var resp tvupadmin.YunosPubadminCommonOperationAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosPubadminCommonOperation(clt *core.SDKClient, req *tvupadmin.YunosPubadminCommonOperationAPIRequest, resp *tvupadmin.YunosPubadminCommonOperationAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

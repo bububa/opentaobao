@@ -1,5 +1,9 @@
 package lstvending
 
+import (
+	"sync"
+)
+
 // MultiResultDto 结构体
 type MultiResultDto struct {
 	// 执行成功结果集
@@ -12,4 +16,25 @@ type MultiResultDto struct {
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 执行是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolMultiResultDto = sync.Pool{
+	New: func() any {
+		return new(MultiResultDto)
+	},
+}
+
+// GetMultiResultDto() 从对象池中获取MultiResultDto
+func GetMultiResultDto() *MultiResultDto {
+	return poolMultiResultDto.Get().(*MultiResultDto)
+}
+
+// ReleaseMultiResultDto 释放MultiResultDto
+func ReleaseMultiResultDto(v *MultiResultDto) {
+	v.ModuleList = v.ModuleList[:0]
+	v.ErrorList = v.ErrorList[:0]
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.Success = false
+	poolMultiResultDto.Put(v)
 }

@@ -2,6 +2,7 @@ package aesolution
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressSolutionProductListGetAPIRequest struct {
 // NewAliexpressSolutionProductListGetRequest 初始化AliexpressSolutionProductListGetAPIRequest对象
 func NewAliexpressSolutionProductListGetRequest() *AliexpressSolutionProductListGetAPIRequest {
 	return &AliexpressSolutionProductListGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSolutionProductListGetAPIRequest) Reset() {
+	r._aeopAEProductListQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressSolutionProductListGetAPIRequest) SetAeopAEProductListQuery(_
 // GetAeopAEProductListQuery AeopAEProductListQuery Getter
 func (r AliexpressSolutionProductListGetAPIRequest) GetAeopAEProductListQuery() *ItemListQuery {
 	return r._aeopAEProductListQuery
+}
+
+var poolAliexpressSolutionProductListGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSolutionProductListGetRequest()
+	},
+}
+
+// GetAliexpressSolutionProductListGetRequest 从 sync.Pool 获取 AliexpressSolutionProductListGetAPIRequest
+func GetAliexpressSolutionProductListGetAPIRequest() *AliexpressSolutionProductListGetAPIRequest {
+	return poolAliexpressSolutionProductListGetAPIRequest.Get().(*AliexpressSolutionProductListGetAPIRequest)
+}
+
+// ReleaseAliexpressSolutionProductListGetAPIRequest 将 AliexpressSolutionProductListGetAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSolutionProductListGetAPIRequest(v *AliexpressSolutionProductListGetAPIRequest) {
+	v.Reset()
+	poolAliexpressSolutionProductListGetAPIRequest.Put(v)
 }

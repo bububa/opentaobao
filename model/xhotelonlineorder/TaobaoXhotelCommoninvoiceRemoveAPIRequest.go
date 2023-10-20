@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoXhotelCommoninvoiceRemoveAPIRequest struct {
 // NewTaobaoXhotelCommoninvoiceRemoveRequest 初始化TaobaoXhotelCommoninvoiceRemoveAPIRequest对象
 func NewTaobaoXhotelCommoninvoiceRemoveRequest() *TaobaoXhotelCommoninvoiceRemoveAPIRequest {
 	return &TaobaoXhotelCommoninvoiceRemoveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelCommoninvoiceRemoveAPIRequest) Reset() {
+	r._userNick = ""
+	r._invoiceId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoXhotelCommoninvoiceRemoveAPIRequest) SetInvoiceId(_invoiceId int6
 // GetInvoiceId InvoiceId Getter
 func (r TaobaoXhotelCommoninvoiceRemoveAPIRequest) GetInvoiceId() int64 {
 	return r._invoiceId
+}
+
+var poolTaobaoXhotelCommoninvoiceRemoveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelCommoninvoiceRemoveRequest()
+	},
+}
+
+// GetTaobaoXhotelCommoninvoiceRemoveRequest 从 sync.Pool 获取 TaobaoXhotelCommoninvoiceRemoveAPIRequest
+func GetTaobaoXhotelCommoninvoiceRemoveAPIRequest() *TaobaoXhotelCommoninvoiceRemoveAPIRequest {
+	return poolTaobaoXhotelCommoninvoiceRemoveAPIRequest.Get().(*TaobaoXhotelCommoninvoiceRemoveAPIRequest)
+}
+
+// ReleaseTaobaoXhotelCommoninvoiceRemoveAPIRequest 将 TaobaoXhotelCommoninvoiceRemoveAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelCommoninvoiceRemoveAPIRequest(v *TaobaoXhotelCommoninvoiceRemoveAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelCommoninvoiceRemoveAPIRequest.Put(v)
 }

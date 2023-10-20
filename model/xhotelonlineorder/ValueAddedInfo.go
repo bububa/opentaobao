@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // ValueAddedInfo 结构体
 type ValueAddedInfo struct {
 	// 电话
@@ -12,4 +16,25 @@ type ValueAddedInfo struct {
 	OpeningBank string `json:"opening_bank,omitempty" xml:"opening_bank,omitempty"`
 	// 税号
 	TaxNo string `json:"tax_no,omitempty" xml:"tax_no,omitempty"`
+}
+
+var poolValueAddedInfo = sync.Pool{
+	New: func() any {
+		return new(ValueAddedInfo)
+	},
+}
+
+// GetValueAddedInfo() 从对象池中获取ValueAddedInfo
+func GetValueAddedInfo() *ValueAddedInfo {
+	return poolValueAddedInfo.Get().(*ValueAddedInfo)
+}
+
+// ReleaseValueAddedInfo 释放ValueAddedInfo
+func ReleaseValueAddedInfo(v *ValueAddedInfo) {
+	v.Tel = ""
+	v.RegisterAddr = ""
+	v.AccountNo = ""
+	v.OpeningBank = ""
+	v.TaxNo = ""
+	poolValueAddedInfo.Put(v)
 }

@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ProjectPhoneDto 结构体
 type ProjectPhoneDto struct {
 	// 分机号
@@ -10,4 +14,24 @@ type ProjectPhoneDto struct {
 	PhoneType string `json:"phone_type,omitempty" xml:"phone_type,omitempty"`
 	// 外部楼盘ID
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
+}
+
+var poolProjectPhoneDto = sync.Pool{
+	New: func() any {
+		return new(ProjectPhoneDto)
+	},
+}
+
+// GetProjectPhoneDto() 从对象池中获取ProjectPhoneDto
+func GetProjectPhoneDto() *ProjectPhoneDto {
+	return poolProjectPhoneDto.Get().(*ProjectPhoneDto)
+}
+
+// ReleaseProjectPhoneDto 释放ProjectPhoneDto
+func ReleaseProjectPhoneDto(v *ProjectPhoneDto) {
+	v.SubPhone = ""
+	v.MainPhone = ""
+	v.PhoneType = ""
+	v.OuterId = ""
+	poolProjectPhoneDto.Put(v)
 }

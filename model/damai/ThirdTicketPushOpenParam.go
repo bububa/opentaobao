@@ -1,5 +1,9 @@
 package damai
 
+import (
+	"sync"
+)
+
 // ThirdTicketPushOpenParam 结构体
 type ThirdTicketPushOpenParam struct {
 	// 证件号
@@ -62,4 +66,50 @@ type ThirdTicketPushOpenParam struct {
 	MediumType int64 `json:"medium_type,omitempty" xml:"medium_type,omitempty"`
 	// 纸质票票单换票状态:1=未换，2=已换，
 	PrintStatus int64 `json:"print_status,omitempty" xml:"print_status,omitempty"`
+}
+
+var poolThirdTicketPushOpenParam = sync.Pool{
+	New: func() any {
+		return new(ThirdTicketPushOpenParam)
+	},
+}
+
+// GetThirdTicketPushOpenParam() 从对象池中获取ThirdTicketPushOpenParam
+func GetThirdTicketPushOpenParam() *ThirdTicketPushOpenParam {
+	return poolThirdTicketPushOpenParam.Get().(*ThirdTicketPushOpenParam)
+}
+
+// ReleaseThirdTicketPushOpenParam 释放ThirdTicketPushOpenParam
+func ReleaseThirdTicketPushOpenParam(v *ThirdTicketPushOpenParam) {
+	v.CertificateNo = ""
+	v.OrderUserMobile = ""
+	v.PayTime = ""
+	v.PushTime = ""
+	v.QrCode = ""
+	v.SupplierSecret = ""
+	v.TicketChangeCode = ""
+	v.UserName = ""
+	v.PriceContent = ""
+	v.Ext = ""
+	v.Rfid = ""
+	v.SeatNo = ""
+	v.SeatName = ""
+	v.SeatRow = ""
+	v.SeatCol = ""
+	v.CertificateType = 0
+	v.FaceId = 0
+	v.FloorId = 0
+	v.OrderId = 0
+	v.PerformId = 0
+	v.SeatColId = 0
+	v.SeatRowId = 0
+	v.SeatType = 0
+	v.StandId = 0
+	v.SystemId = 0
+	v.TicketItemId = 0
+	v.TicketType = 0
+	v.VoucherId = 0
+	v.MediumType = 0
+	v.PrintStatus = 0
+	poolThirdTicketPushOpenParam.Put(v)
 }

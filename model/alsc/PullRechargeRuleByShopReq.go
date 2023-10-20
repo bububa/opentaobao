@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PullRechargeRuleByShopReq 结构体
 type PullRechargeRuleByShopReq struct {
 	// 品牌id
@@ -14,4 +18,26 @@ type PullRechargeRuleByShopReq struct {
 	OutShopId string `json:"out_shop_id,omitempty" xml:"out_shop_id,omitempty"`
 	// 门店id
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
+}
+
+var poolPullRechargeRuleByShopReq = sync.Pool{
+	New: func() any {
+		return new(PullRechargeRuleByShopReq)
+	},
+}
+
+// GetPullRechargeRuleByShopReq() 从对象池中获取PullRechargeRuleByShopReq
+func GetPullRechargeRuleByShopReq() *PullRechargeRuleByShopReq {
+	return poolPullRechargeRuleByShopReq.Get().(*PullRechargeRuleByShopReq)
+}
+
+// ReleasePullRechargeRuleByShopReq 释放PullRechargeRuleByShopReq
+func ReleasePullRechargeRuleByShopReq(v *PullRechargeRuleByShopReq) {
+	v.BrandId = ""
+	v.CardTemplateId = ""
+	v.MaxUpdateTime = ""
+	v.OutBrandId = ""
+	v.OutShopId = ""
+	v.ShopId = ""
+	poolPullRechargeRuleByShopReq.Put(v)
 }

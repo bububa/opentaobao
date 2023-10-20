@@ -9,11 +9,6 @@ import (
 // aliexpress.logistics.abnormalorder.query
 //
 // 异常订单查询
-func AliexpressLogisticsAbnormalorderQuery(clt *core.SDKClient, req *aliexpress.AliexpressLogisticsAbnormalorderQueryAPIRequest, session string) (*aliexpress.AliexpressLogisticsAbnormalorderQueryAPIResponse, error) {
-	var resp aliexpress.AliexpressLogisticsAbnormalorderQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressLogisticsAbnormalorderQuery(clt *core.SDKClient, req *aliexpress.AliexpressLogisticsAbnormalorderQueryAPIRequest, resp *aliexpress.AliexpressLogisticsAbnormalorderQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

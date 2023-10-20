@@ -2,6 +2,7 @@ package paimai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoPaimaiNftCertificateApplycallbackAPIRequest struct {
 // NewTaobaoPaimaiNftCertificateApplycallbackRequest 初始化TaobaoPaimaiNftCertificateApplycallbackAPIRequest对象
 func NewTaobaoPaimaiNftCertificateApplycallbackRequest() *TaobaoPaimaiNftCertificateApplycallbackAPIRequest {
 	return &TaobaoPaimaiNftCertificateApplycallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPaimaiNftCertificateApplycallbackAPIRequest) Reset() {
+	r._nftCertificateApplyCallbackDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoPaimaiNftCertificateApplycallbackAPIRequest) SetNftCertificateApp
 // GetNftCertificateApplyCallbackDto NftCertificateApplyCallbackDto Getter
 func (r TaobaoPaimaiNftCertificateApplycallbackAPIRequest) GetNftCertificateApplyCallbackDto() *NftCertificateApplyCallbackDto {
 	return r._nftCertificateApplyCallbackDto
+}
+
+var poolTaobaoPaimaiNftCertificateApplycallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPaimaiNftCertificateApplycallbackRequest()
+	},
+}
+
+// GetTaobaoPaimaiNftCertificateApplycallbackRequest 从 sync.Pool 获取 TaobaoPaimaiNftCertificateApplycallbackAPIRequest
+func GetTaobaoPaimaiNftCertificateApplycallbackAPIRequest() *TaobaoPaimaiNftCertificateApplycallbackAPIRequest {
+	return poolTaobaoPaimaiNftCertificateApplycallbackAPIRequest.Get().(*TaobaoPaimaiNftCertificateApplycallbackAPIRequest)
+}
+
+// ReleaseTaobaoPaimaiNftCertificateApplycallbackAPIRequest 将 TaobaoPaimaiNftCertificateApplycallbackAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPaimaiNftCertificateApplycallbackAPIRequest(v *TaobaoPaimaiNftCertificateApplycallbackAPIRequest) {
+	v.Reset()
+	poolTaobaoPaimaiNftCertificateApplycallbackAPIRequest.Put(v)
 }

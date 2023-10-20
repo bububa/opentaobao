@@ -9,11 +9,6 @@ import (
 // taobao.dmp.crowd.template.apply
 //
 // 人群模版采纳并生成人群API
-func TaobaoDmpCrowdTemplateApply(clt *core.SDKClient, req *dmp.TaobaoDmpCrowdTemplateApplyAPIRequest, session string) (*dmp.TaobaoDmpCrowdTemplateApplyAPIResponse, error) {
-	var resp dmp.TaobaoDmpCrowdTemplateApplyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoDmpCrowdTemplateApply(clt *core.SDKClient, req *dmp.TaobaoDmpCrowdTemplateApplyAPIRequest, resp *dmp.TaobaoDmpCrowdTemplateApplyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaHappytripTaxiDriverBlacklistAddAPIResponse struct {
 	AlibabaHappytripTaxiDriverBlacklistAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaHappytripTaxiDriverBlacklistAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaHappytripTaxiDriverBlacklistAddAPIResponseModel).Reset()
+}
+
 // AlibabaHappytripTaxiDriverBlacklistAddAPIResponseModel is 添加司机黑名单 成功返回结果
 type AlibabaHappytripTaxiDriverBlacklistAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_happytrip_taxi_driver_blacklist_add_response"`
@@ -24,4 +31,28 @@ type AlibabaHappytripTaxiDriverBlacklistAddAPIResponseModel struct {
 	Errno string `json:"errno,omitempty" xml:"errno,omitempty"`
 	// 错误描述
 	Errmsg string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaHappytripTaxiDriverBlacklistAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Errno = ""
+	m.Errmsg = ""
+}
+
+var poolAlibabaHappytripTaxiDriverBlacklistAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaHappytripTaxiDriverBlacklistAddAPIResponse)
+	},
+}
+
+// GetAlibabaHappytripTaxiDriverBlacklistAddAPIResponse 从 sync.Pool 获取 AlibabaHappytripTaxiDriverBlacklistAddAPIResponse
+func GetAlibabaHappytripTaxiDriverBlacklistAddAPIResponse() *AlibabaHappytripTaxiDriverBlacklistAddAPIResponse {
+	return poolAlibabaHappytripTaxiDriverBlacklistAddAPIResponse.Get().(*AlibabaHappytripTaxiDriverBlacklistAddAPIResponse)
+}
+
+// ReleaseAlibabaHappytripTaxiDriverBlacklistAddAPIResponse 将 AlibabaHappytripTaxiDriverBlacklistAddAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaHappytripTaxiDriverBlacklistAddAPIResponse(v *AlibabaHappytripTaxiDriverBlacklistAddAPIResponse) {
+	v.Reset()
+	poolAlibabaHappytripTaxiDriverBlacklistAddAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // CainiaoReturnBillReturnorderinfo 结构体
 type CainiaoReturnBillReturnorderinfo struct {
 	// 订单商品信息列表
@@ -14,4 +18,26 @@ type CainiaoReturnBillReturnorderinfo struct {
 	PreCnOrderCode string `json:"pre_cn_order_code,omitempty" xml:"pre_cn_order_code,omitempty"`
 	// 单据类型： 501 退货入库
 	OrderType int64 `json:"order_type,omitempty" xml:"order_type,omitempty"`
+}
+
+var poolCainiaoReturnBillReturnorderinfo = sync.Pool{
+	New: func() any {
+		return new(CainiaoReturnBillReturnorderinfo)
+	},
+}
+
+// GetCainiaoReturnBillReturnorderinfo() 从对象池中获取CainiaoReturnBillReturnorderinfo
+func GetCainiaoReturnBillReturnorderinfo() *CainiaoReturnBillReturnorderinfo {
+	return poolCainiaoReturnBillReturnorderinfo.Get().(*CainiaoReturnBillReturnorderinfo)
+}
+
+// ReleaseCainiaoReturnBillReturnorderinfo 释放CainiaoReturnBillReturnorderinfo
+func ReleaseCainiaoReturnBillReturnorderinfo(v *CainiaoReturnBillReturnorderinfo) {
+	v.OrderItemList = v.OrderItemList[:0]
+	v.OrderCode = ""
+	v.CnOrderCode = ""
+	v.ConfirmTime = ""
+	v.PreCnOrderCode = ""
+	v.OrderType = 0
+	poolCainiaoReturnBillReturnorderinfo.Put(v)
 }

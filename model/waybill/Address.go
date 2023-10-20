@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // Address 结构体
 type Address struct {
 	// 市
@@ -12,4 +16,25 @@ type Address struct {
 	Province string `json:"province,omitempty" xml:"province,omitempty"`
 	// 街道
 	Town string `json:"town,omitempty" xml:"town,omitempty"`
+}
+
+var poolAddress = sync.Pool{
+	New: func() any {
+		return new(Address)
+	},
+}
+
+// GetAddress() 从对象池中获取Address
+func GetAddress() *Address {
+	return poolAddress.Get().(*Address)
+}
+
+// ReleaseAddress 释放Address
+func ReleaseAddress(v *Address) {
+	v.City = ""
+	v.Detail = ""
+	v.District = ""
+	v.Province = ""
+	v.Town = ""
+	poolAddress.Put(v)
 }

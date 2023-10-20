@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkPosTradePayAPIRequest struct {
 // NewAlibabaWdkPosTradePayRequest 初始化AlibabaWdkPosTradePayAPIRequest对象
 func NewAlibabaWdkPosTradePayRequest() *AlibabaWdkPosTradePayAPIRequest {
 	return &AlibabaWdkPosTradePayAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkPosTradePayAPIRequest) Reset() {
+	r._payRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkPosTradePayAPIRequest) SetPayRequest(_payRequest *FastBuyPosP
 // GetPayRequest PayRequest Getter
 func (r AlibabaWdkPosTradePayAPIRequest) GetPayRequest() *FastBuyPosPayRequest {
 	return r._payRequest
+}
+
+var poolAlibabaWdkPosTradePayAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkPosTradePayRequest()
+	},
+}
+
+// GetAlibabaWdkPosTradePayRequest 从 sync.Pool 获取 AlibabaWdkPosTradePayAPIRequest
+func GetAlibabaWdkPosTradePayAPIRequest() *AlibabaWdkPosTradePayAPIRequest {
+	return poolAlibabaWdkPosTradePayAPIRequest.Get().(*AlibabaWdkPosTradePayAPIRequest)
+}
+
+// ReleaseAlibabaWdkPosTradePayAPIRequest 将 AlibabaWdkPosTradePayAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkPosTradePayAPIRequest(v *AlibabaWdkPosTradePayAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkPosTradePayAPIRequest.Put(v)
 }

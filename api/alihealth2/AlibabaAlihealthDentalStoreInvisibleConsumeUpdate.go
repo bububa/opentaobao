@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.dental.store.invisible.consume.update
 //
 // 门店无隐形消费签约
-func AlibabaAlihealthDentalStoreInvisibleConsumeUpdate(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest, session string) (*alihealth2.AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDentalStoreInvisibleConsumeUpdate(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest, resp *alihealth2.AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

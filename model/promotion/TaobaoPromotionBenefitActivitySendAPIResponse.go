@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoPromotionBenefitActivitySendAPIResponse struct {
 	TaobaoPromotionBenefitActivitySendAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoPromotionBenefitActivitySendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPromotionBenefitActivitySendAPIResponseModel).Reset()
+}
+
 // TaobaoPromotionBenefitActivitySendAPIResponseModel is 活动权益发放接口 成功返回结果
 type TaobaoPromotionBenefitActivitySendAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotion_benefit_activity_send_response"`
@@ -26,4 +33,29 @@ type TaobaoPromotionBenefitActivitySendAPIResponseModel struct {
 	UniqueId string `json:"unique_id,omitempty" xml:"unique_id,omitempty"`
 	// 接口调用是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPromotionBenefitActivitySendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultList = m.ResultList[:0]
+	m.UniqueId = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoPromotionBenefitActivitySendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPromotionBenefitActivitySendAPIResponse)
+	},
+}
+
+// GetTaobaoPromotionBenefitActivitySendAPIResponse 从 sync.Pool 获取 TaobaoPromotionBenefitActivitySendAPIResponse
+func GetTaobaoPromotionBenefitActivitySendAPIResponse() *TaobaoPromotionBenefitActivitySendAPIResponse {
+	return poolTaobaoPromotionBenefitActivitySendAPIResponse.Get().(*TaobaoPromotionBenefitActivitySendAPIResponse)
+}
+
+// ReleaseTaobaoPromotionBenefitActivitySendAPIResponse 将 TaobaoPromotionBenefitActivitySendAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPromotionBenefitActivitySendAPIResponse(v *TaobaoPromotionBenefitActivitySendAPIResponse) {
+	v.Reset()
+	poolTaobaoPromotionBenefitActivitySendAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.damai.maitix.order.confirm
 //
 // 出票
-func AlibabaDamaiMaitixOrderConfirm(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOrderConfirmAPIRequest, session string) (*maitix.AlibabaDamaiMaitixOrderConfirmAPIResponse, error) {
-	var resp maitix.AlibabaDamaiMaitixOrderConfirmAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMaitixOrderConfirm(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOrderConfirmAPIRequest, resp *maitix.AlibabaDamaiMaitixOrderConfirmAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

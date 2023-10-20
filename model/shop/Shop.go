@@ -1,5 +1,9 @@
 package shop
 
+import (
+	"sync"
+)
+
 // Shop 结构体
 type Shop struct {
 	// 店铺标题
@@ -10,4 +14,24 @@ type Shop struct {
 	Modified string `json:"modified,omitempty" xml:"modified,omitempty"`
 	// 店铺编号
 	Sid int64 `json:"sid,omitempty" xml:"sid,omitempty"`
+}
+
+var poolShop = sync.Pool{
+	New: func() any {
+		return new(Shop)
+	},
+}
+
+// GetShop() 从对象池中获取Shop
+func GetShop() *Shop {
+	return poolShop.Get().(*Shop)
+}
+
+// ReleaseShop 释放Shop
+func ReleaseShop(v *Shop) {
+	v.Title = ""
+	v.PicPath = ""
+	v.Modified = ""
+	v.Sid = 0
+	poolShop.Put(v)
 }

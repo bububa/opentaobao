@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoXhotelCommoninvoiceUpdateAPIRequest struct {
 // NewTaobaoXhotelCommoninvoiceUpdateRequest 初始化TaobaoXhotelCommoninvoiceUpdateAPIRequest对象
 func NewTaobaoXhotelCommoninvoiceUpdateRequest() *TaobaoXhotelCommoninvoiceUpdateAPIRequest {
 	return &TaobaoXhotelCommoninvoiceUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelCommoninvoiceUpdateAPIRequest) Reset() {
+	r._commonInvoiceInfoParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoXhotelCommoninvoiceUpdateAPIRequest) SetCommonInvoiceInfoParam(_c
 // GetCommonInvoiceInfoParam CommonInvoiceInfoParam Getter
 func (r TaobaoXhotelCommoninvoiceUpdateAPIRequest) GetCommonInvoiceInfoParam() *CommonInvoiceInfo {
 	return r._commonInvoiceInfoParam
+}
+
+var poolTaobaoXhotelCommoninvoiceUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelCommoninvoiceUpdateRequest()
+	},
+}
+
+// GetTaobaoXhotelCommoninvoiceUpdateRequest 从 sync.Pool 获取 TaobaoXhotelCommoninvoiceUpdateAPIRequest
+func GetTaobaoXhotelCommoninvoiceUpdateAPIRequest() *TaobaoXhotelCommoninvoiceUpdateAPIRequest {
+	return poolTaobaoXhotelCommoninvoiceUpdateAPIRequest.Get().(*TaobaoXhotelCommoninvoiceUpdateAPIRequest)
+}
+
+// ReleaseTaobaoXhotelCommoninvoiceUpdateAPIRequest 将 TaobaoXhotelCommoninvoiceUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelCommoninvoiceUpdateAPIRequest(v *TaobaoXhotelCommoninvoiceUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelCommoninvoiceUpdateAPIRequest.Put(v)
 }

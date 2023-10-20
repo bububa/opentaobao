@@ -2,6 +2,7 @@ package alitripcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlitripCarOrderRefundAPIRequest struct {
 // NewTaobaoAlitripCarOrderRefundRequest 初始化TaobaoAlitripCarOrderRefundAPIRequest对象
 func NewTaobaoAlitripCarOrderRefundRequest() *TaobaoAlitripCarOrderRefundAPIRequest {
 	return &TaobaoAlitripCarOrderRefundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripCarOrderRefundAPIRequest) Reset() {
+	r._paramOrderRefund = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlitripCarOrderRefundAPIRequest) SetParamOrderRefund(_paramOrderR
 // GetParamOrderRefund ParamOrderRefund Getter
 func (r TaobaoAlitripCarOrderRefundAPIRequest) GetParamOrderRefund() *OrderRefund {
 	return r._paramOrderRefund
+}
+
+var poolTaobaoAlitripCarOrderRefundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripCarOrderRefundRequest()
+	},
+}
+
+// GetTaobaoAlitripCarOrderRefundRequest 从 sync.Pool 获取 TaobaoAlitripCarOrderRefundAPIRequest
+func GetTaobaoAlitripCarOrderRefundAPIRequest() *TaobaoAlitripCarOrderRefundAPIRequest {
+	return poolTaobaoAlitripCarOrderRefundAPIRequest.Get().(*TaobaoAlitripCarOrderRefundAPIRequest)
+}
+
+// ReleaseTaobaoAlitripCarOrderRefundAPIRequest 将 TaobaoAlitripCarOrderRefundAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripCarOrderRefundAPIRequest(v *TaobaoAlitripCarOrderRefundAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripCarOrderRefundAPIRequest.Put(v)
 }

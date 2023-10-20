@@ -2,6 +2,7 @@ package cainiaohandover
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type CainiaoGlobalLogisticOrderCreateAPIRequest struct {
 // NewCainiaoGlobalLogisticOrderCreateRequest 初始化CainiaoGlobalLogisticOrderCreateAPIRequest对象
 func NewCainiaoGlobalLogisticOrderCreateRequest() *CainiaoGlobalLogisticOrderCreateAPIRequest {
 	return &CainiaoGlobalLogisticOrderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalLogisticOrderCreateAPIRequest) Reset() {
+	r._locale = ""
+	r._orderParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *CainiaoGlobalLogisticOrderCreateAPIRequest) SetOrderParam(_orderParam *
 // GetOrderParam OrderParam Getter
 func (r CainiaoGlobalLogisticOrderCreateAPIRequest) GetOrderParam() *OpenOrderParam {
 	return r._orderParam
+}
+
+var poolCainiaoGlobalLogisticOrderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalLogisticOrderCreateRequest()
+	},
+}
+
+// GetCainiaoGlobalLogisticOrderCreateRequest 从 sync.Pool 获取 CainiaoGlobalLogisticOrderCreateAPIRequest
+func GetCainiaoGlobalLogisticOrderCreateAPIRequest() *CainiaoGlobalLogisticOrderCreateAPIRequest {
+	return poolCainiaoGlobalLogisticOrderCreateAPIRequest.Get().(*CainiaoGlobalLogisticOrderCreateAPIRequest)
+}
+
+// ReleaseCainiaoGlobalLogisticOrderCreateAPIRequest 将 CainiaoGlobalLogisticOrderCreateAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalLogisticOrderCreateAPIRequest(v *CainiaoGlobalLogisticOrderCreateAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalLogisticOrderCreateAPIRequest.Put(v)
 }

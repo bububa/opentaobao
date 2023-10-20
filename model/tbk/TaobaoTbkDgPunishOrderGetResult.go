@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // TaobaoTbkDgPunishOrderGetResult 结构体
 type TaobaoTbkDgPunishOrderGetResult struct {
 	// 淘宝联盟unionid（该字段不再支持）
@@ -26,4 +30,32 @@ type TaobaoTbkDgPunishOrderGetResult struct {
 	TkAdzoneId int64 `json:"tk_adzone_id,omitempty" xml:"tk_adzone_id,omitempty"`
 	// pid里的siteid
 	TkSiteId int64 `json:"tk_site_id,omitempty" xml:"tk_site_id,omitempty"`
+}
+
+var poolTaobaoTbkDgPunishOrderGetResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkDgPunishOrderGetResult)
+	},
+}
+
+// GetTaobaoTbkDgPunishOrderGetResult() 从对象池中获取TaobaoTbkDgPunishOrderGetResult
+func GetTaobaoTbkDgPunishOrderGetResult() *TaobaoTbkDgPunishOrderGetResult {
+	return poolTaobaoTbkDgPunishOrderGetResult.Get().(*TaobaoTbkDgPunishOrderGetResult)
+}
+
+// ReleaseTaobaoTbkDgPunishOrderGetResult 释放TaobaoTbkDgPunishOrderGetResult
+func ReleaseTaobaoTbkDgPunishOrderGetResult(v *TaobaoTbkDgPunishOrderGetResult) {
+	v.UnionId = ""
+	v.PunishStatus = ""
+	v.ViolationType = ""
+	v.TkTradeCreateTime = ""
+	v.TkPubId = ""
+	v.SpecialId = 0
+	v.RelationId = 0
+	v.SettleMonth = 0
+	v.TbTradeId = 0
+	v.TbTradeParentId = 0
+	v.TkAdzoneId = 0
+	v.TkSiteId = 0
+	poolTaobaoTbkDgPunishOrderGetResult.Put(v)
 }

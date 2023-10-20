@@ -2,6 +2,7 @@ package ju
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaJhsCommunityActivityListAPIResponse struct {
 	AlibabaJhsCommunityActivityListAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaJhsCommunityActivityListAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaJhsCommunityActivityListAPIResponseModel).Reset()
+}
+
 // AlibabaJhsCommunityActivityListAPIResponseModel is 聚划算用增淘外社群服务活动列表 成功返回结果
 type AlibabaJhsCommunityActivityListAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jhs_community_activity_list_response"`
@@ -24,4 +31,28 @@ type AlibabaJhsCommunityActivityListAPIResponseModel struct {
 	Data []CommunityActivityDto `json:"data,omitempty" xml:"data>community_activity_dto,omitempty"`
 	// 错误信息
 	Error string `json:"error,omitempty" xml:"error,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaJhsCommunityActivityListAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = m.Data[:0]
+	m.Error = ""
+}
+
+var poolAlibabaJhsCommunityActivityListAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaJhsCommunityActivityListAPIResponse)
+	},
+}
+
+// GetAlibabaJhsCommunityActivityListAPIResponse 从 sync.Pool 获取 AlibabaJhsCommunityActivityListAPIResponse
+func GetAlibabaJhsCommunityActivityListAPIResponse() *AlibabaJhsCommunityActivityListAPIResponse {
+	return poolAlibabaJhsCommunityActivityListAPIResponse.Get().(*AlibabaJhsCommunityActivityListAPIResponse)
+}
+
+// ReleaseAlibabaJhsCommunityActivityListAPIResponse 将 AlibabaJhsCommunityActivityListAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaJhsCommunityActivityListAPIResponse(v *AlibabaJhsCommunityActivityListAPIResponse) {
+	v.Reset()
+	poolAlibabaJhsCommunityActivityListAPIResponse.Put(v)
 }

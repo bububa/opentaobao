@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoFenxiaoOrderConfirmPaidAPIRequest struct {
 // NewTaobaoFenxiaoOrderConfirmPaidRequest 初始化TaobaoFenxiaoOrderConfirmPaidAPIRequest对象
 func NewTaobaoFenxiaoOrderConfirmPaidRequest() *TaobaoFenxiaoOrderConfirmPaidAPIRequest {
 	return &TaobaoFenxiaoOrderConfirmPaidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoOrderConfirmPaidAPIRequest) Reset() {
+	r._confirmRemark = ""
+	r._purchaseOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoFenxiaoOrderConfirmPaidAPIRequest) SetPurchaseOrderId(_purchaseOr
 // GetPurchaseOrderId PurchaseOrderId Getter
 func (r TaobaoFenxiaoOrderConfirmPaidAPIRequest) GetPurchaseOrderId() int64 {
 	return r._purchaseOrderId
+}
+
+var poolTaobaoFenxiaoOrderConfirmPaidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoOrderConfirmPaidRequest()
+	},
+}
+
+// GetTaobaoFenxiaoOrderConfirmPaidRequest 从 sync.Pool 获取 TaobaoFenxiaoOrderConfirmPaidAPIRequest
+func GetTaobaoFenxiaoOrderConfirmPaidAPIRequest() *TaobaoFenxiaoOrderConfirmPaidAPIRequest {
+	return poolTaobaoFenxiaoOrderConfirmPaidAPIRequest.Get().(*TaobaoFenxiaoOrderConfirmPaidAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoOrderConfirmPaidAPIRequest 将 TaobaoFenxiaoOrderConfirmPaidAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoOrderConfirmPaidAPIRequest(v *TaobaoFenxiaoOrderConfirmPaidAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoOrderConfirmPaidAPIRequest.Put(v)
 }

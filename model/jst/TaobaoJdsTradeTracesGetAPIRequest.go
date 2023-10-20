@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoJdsTradeTracesGetAPIRequest struct {
 // NewTaobaoJdsTradeTracesGetRequest 初始化TaobaoJdsTradeTracesGetAPIRequest对象
 func NewTaobaoJdsTradeTracesGetRequest() *TaobaoJdsTradeTracesGetAPIRequest {
 	return &TaobaoJdsTradeTracesGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJdsTradeTracesGetAPIRequest) Reset() {
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoJdsTradeTracesGetAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoJdsTradeTracesGetAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoJdsTradeTracesGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJdsTradeTracesGetRequest()
+	},
+}
+
+// GetTaobaoJdsTradeTracesGetRequest 从 sync.Pool 获取 TaobaoJdsTradeTracesGetAPIRequest
+func GetTaobaoJdsTradeTracesGetAPIRequest() *TaobaoJdsTradeTracesGetAPIRequest {
+	return poolTaobaoJdsTradeTracesGetAPIRequest.Get().(*TaobaoJdsTradeTracesGetAPIRequest)
+}
+
+// ReleaseTaobaoJdsTradeTracesGetAPIRequest 将 TaobaoJdsTradeTracesGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJdsTradeTracesGetAPIRequest(v *TaobaoJdsTradeTracesGetAPIRequest) {
+	v.Reset()
+	poolTaobaoJdsTradeTracesGetAPIRequest.Put(v)
 }

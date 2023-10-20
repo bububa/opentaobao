@@ -2,6 +2,7 @@ package ju
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaJhsCommunityIdentityStoreAPIRequest struct {
 // NewAlibabaJhsCommunityIdentityStoreRequest 初始化AlibabaJhsCommunityIdentityStoreAPIRequest对象
 func NewAlibabaJhsCommunityIdentityStoreRequest() *AlibabaJhsCommunityIdentityStoreAPIRequest {
 	return &AlibabaJhsCommunityIdentityStoreAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJhsCommunityIdentityStoreAPIRequest) Reset() {
+	r._token = ""
+	r._nickName = ""
+	r._avatarUrl = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaJhsCommunityIdentityStoreAPIRequest) SetAvatarUrl(_avatarUrl str
 // GetAvatarUrl AvatarUrl Getter
 func (r AlibabaJhsCommunityIdentityStoreAPIRequest) GetAvatarUrl() string {
 	return r._avatarUrl
+}
+
+var poolAlibabaJhsCommunityIdentityStoreAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJhsCommunityIdentityStoreRequest()
+	},
+}
+
+// GetAlibabaJhsCommunityIdentityStoreRequest 从 sync.Pool 获取 AlibabaJhsCommunityIdentityStoreAPIRequest
+func GetAlibabaJhsCommunityIdentityStoreAPIRequest() *AlibabaJhsCommunityIdentityStoreAPIRequest {
+	return poolAlibabaJhsCommunityIdentityStoreAPIRequest.Get().(*AlibabaJhsCommunityIdentityStoreAPIRequest)
+}
+
+// ReleaseAlibabaJhsCommunityIdentityStoreAPIRequest 将 AlibabaJhsCommunityIdentityStoreAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJhsCommunityIdentityStoreAPIRequest(v *AlibabaJhsCommunityIdentityStoreAPIRequest) {
+	v.Reset()
+	poolAlibabaJhsCommunityIdentityStoreAPIRequest.Put(v)
 }

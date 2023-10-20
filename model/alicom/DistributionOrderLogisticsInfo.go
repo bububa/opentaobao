@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // DistributionOrderLogisticsInfo 结构体
 type DistributionOrderLogisticsInfo struct {
 	// 区
@@ -20,4 +24,29 @@ type DistributionOrderLogisticsInfo struct {
 	ContactPhone string `json:"contact_phone,omitempty" xml:"contact_phone,omitempty"`
 	// 收货人地址
 	DeliveryAddress string `json:"delivery_address,omitempty" xml:"delivery_address,omitempty"`
+}
+
+var poolDistributionOrderLogisticsInfo = sync.Pool{
+	New: func() any {
+		return new(DistributionOrderLogisticsInfo)
+	},
+}
+
+// GetDistributionOrderLogisticsInfo() 从对象池中获取DistributionOrderLogisticsInfo
+func GetDistributionOrderLogisticsInfo() *DistributionOrderLogisticsInfo {
+	return poolDistributionOrderLogisticsInfo.Get().(*DistributionOrderLogisticsInfo)
+}
+
+// ReleaseDistributionOrderLogisticsInfo 释放DistributionOrderLogisticsInfo
+func ReleaseDistributionOrderLogisticsInfo(v *DistributionOrderLogisticsInfo) {
+	v.Area = ""
+	v.City = ""
+	v.Country = ""
+	v.Province = ""
+	v.RawAddress = ""
+	v.Town = ""
+	v.ConsigneeName = ""
+	v.ContactPhone = ""
+	v.DeliveryAddress = ""
+	poolDistributionOrderLogisticsInfo.Put(v)
 }

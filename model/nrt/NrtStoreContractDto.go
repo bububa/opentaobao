@@ -1,5 +1,9 @@
 package nrt
 
+import (
+	"sync"
+)
+
 // NrtStoreContractDto 结构体
 type NrtStoreContractDto struct {
 	// 业务身份
@@ -68,4 +72,53 @@ type NrtStoreContractDto struct {
 	StoreDingDeptId int64 `json:"store_ding_dept_id,omitempty" xml:"store_ding_dept_id,omitempty"`
 	// 省编码
 	ProvinceCode int64 `json:"province_code,omitempty" xml:"province_code,omitempty"`
+}
+
+var poolNrtStoreContractDto = sync.Pool{
+	New: func() any {
+		return new(NrtStoreContractDto)
+	},
+}
+
+// GetNrtStoreContractDto() 从对象池中获取NrtStoreContractDto
+func GetNrtStoreContractDto() *NrtStoreContractDto {
+	return poolNrtStoreContractDto.Get().(*NrtStoreContractDto)
+}
+
+// ReleaseNrtStoreContractDto 释放NrtStoreContractDto
+func ReleaseNrtStoreContractDto(v *NrtStoreContractDto) {
+	v.BizCode = ""
+	v.ShortAddress = ""
+	v.BrandName = ""
+	v.TownName = ""
+	v.ProvinceName = ""
+	v.StoreCode = ""
+	v.MallName = ""
+	v.OldStoreContractCode = ""
+	v.Code = ""
+	v.AgencyCode = ""
+	v.CategoryName = ""
+	v.CityName = ""
+	v.MallCode = ""
+	v.StoreName = ""
+	v.StartTime = ""
+	v.OutId = ""
+	v.DistrictName = ""
+	v.AgencyName = ""
+	v.OldCode = ""
+	v.EndTime = ""
+	v.ContactPhone = ""
+	v.OpType = ""
+	v.TownCode = 0
+	v.OldStoreDingDeptId = 0
+	v.Lat = 0
+	v.Lng = 0
+	v.BrandId = 0
+	v.Status = 0
+	v.DistrictCode = 0
+	v.CityCode = 0
+	v.MallDingDeptId = 0
+	v.StoreDingDeptId = 0
+	v.ProvinceCode = 0
+	poolNrtStoreContractDto.Put(v)
 }

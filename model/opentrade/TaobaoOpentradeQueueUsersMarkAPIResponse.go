@@ -2,6 +2,7 @@ package opentrade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoOpentradeQueueUsersMarkAPIResponse struct {
 	TaobaoOpentradeQueueUsersMarkAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOpentradeQueueUsersMarkAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOpentradeQueueUsersMarkAPIResponseModel).Reset()
+}
+
 // TaobaoOpentradeQueueUsersMarkAPIResponseModel is 尖货交易可购买用户标记 成功返回结果
 type TaobaoOpentradeQueueUsersMarkAPIResponseModel struct {
 	XMLName xml.Name `xml:"opentrade_queue_users_mark_response"`
@@ -22,4 +29,27 @@ type TaobaoOpentradeQueueUsersMarkAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 标记成功的用户数
 	Result int64 `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOpentradeQueueUsersMarkAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = 0
+}
+
+var poolTaobaoOpentradeQueueUsersMarkAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOpentradeQueueUsersMarkAPIResponse)
+	},
+}
+
+// GetTaobaoOpentradeQueueUsersMarkAPIResponse 从 sync.Pool 获取 TaobaoOpentradeQueueUsersMarkAPIResponse
+func GetTaobaoOpentradeQueueUsersMarkAPIResponse() *TaobaoOpentradeQueueUsersMarkAPIResponse {
+	return poolTaobaoOpentradeQueueUsersMarkAPIResponse.Get().(*TaobaoOpentradeQueueUsersMarkAPIResponse)
+}
+
+// ReleaseTaobaoOpentradeQueueUsersMarkAPIResponse 将 TaobaoOpentradeQueueUsersMarkAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOpentradeQueueUsersMarkAPIResponse(v *TaobaoOpentradeQueueUsersMarkAPIResponse) {
+	v.Reset()
+	poolTaobaoOpentradeQueueUsersMarkAPIResponse.Put(v)
 }

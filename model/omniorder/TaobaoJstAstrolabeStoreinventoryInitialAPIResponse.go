@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoJstAstrolabeStoreinventoryInitialAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstAstrolabeStoreinventoryInitialAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoJstAstrolabeStoreinventoryInitialAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoJstAstrolabeStoreinventoryInitialAPIResponseModel).Reset()
 }
 
 // TaobaoJstAstrolabeStoreinventoryInitialAPIResponseModel is 后端商品库存初始化 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoJstAstrolabeStoreinventoryInitialAPIResponseModel struct {
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 响应标示
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoJstAstrolabeStoreinventoryInitialAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorDescriptions = m.ErrorDescriptions[:0]
+	m.Message = ""
+	m.ResultCode = ""
+	m.Flag = ""
+}
+
+var poolTaobaoJstAstrolabeStoreinventoryInitialAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoJstAstrolabeStoreinventoryInitialAPIResponse)
+	},
+}
+
+// GetTaobaoJstAstrolabeStoreinventoryInitialAPIResponse 从 sync.Pool 获取 TaobaoJstAstrolabeStoreinventoryInitialAPIResponse
+func GetTaobaoJstAstrolabeStoreinventoryInitialAPIResponse() *TaobaoJstAstrolabeStoreinventoryInitialAPIResponse {
+	return poolTaobaoJstAstrolabeStoreinventoryInitialAPIResponse.Get().(*TaobaoJstAstrolabeStoreinventoryInitialAPIResponse)
+}
+
+// ReleaseTaobaoJstAstrolabeStoreinventoryInitialAPIResponse 将 TaobaoJstAstrolabeStoreinventoryInitialAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoJstAstrolabeStoreinventoryInitialAPIResponse(v *TaobaoJstAstrolabeStoreinventoryInitialAPIResponse) {
+	v.Reset()
+	poolTaobaoJstAstrolabeStoreinventoryInitialAPIResponse.Put(v)
 }

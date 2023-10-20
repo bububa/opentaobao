@@ -1,5 +1,9 @@
 package koubeimall
 
+import (
+	"sync"
+)
+
 // ItemDto 结构体
 type ItemDto struct {
 	// 图片相册
@@ -42,4 +46,40 @@ type ItemDto struct {
 	BuyLimit int64 `json:"buy_limit,omitempty" xml:"buy_limit,omitempty"`
 	// 商品所属门店信息模型
 	ItemStore *ItemStoreDto `json:"item_store,omitempty" xml:"item_store,omitempty"`
+}
+
+var poolItemDto = sync.Pool{
+	New: func() any {
+		return new(ItemDto)
+	},
+}
+
+// GetItemDto() 从对象池中获取ItemDto
+func GetItemDto() *ItemDto {
+	return poolItemDto.Get().(*ItemDto)
+}
+
+// ReleaseItemDto 释放ItemDto
+func ReleaseItemDto(v *ItemDto) {
+	v.ItemImageList = v.ItemImageList[:0]
+	v.ItemType = ""
+	v.SubItemType = ""
+	v.OriginalPrice = ""
+	v.Memo = ""
+	v.Discount = ""
+	v.SellPrice = ""
+	v.StoreId = ""
+	v.SoldQuantity = ""
+	v.ItemId = ""
+	v.ItemName = ""
+	v.SubTitle = ""
+	v.ItemCover = ""
+	v.ItemDetailUrl = ""
+	v.SavedMoney = ""
+	v.SavedMoneyInfo = ""
+	v.SalesInfo = ""
+	v.SellableQuantity = ""
+	v.BuyLimit = 0
+	v.ItemStore = nil
+	poolItemDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alitrip.travel.hotelticket.order.refund
 //
 // 退款结果通知
-func AlitripTravelHotelticketOrderRefund(clt *core.SDKClient, req *traveltrade.AlitripTravelHotelticketOrderRefundAPIRequest, session string) (*traveltrade.AlitripTravelHotelticketOrderRefundAPIResponse, error) {
-	var resp traveltrade.AlitripTravelHotelticketOrderRefundAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripTravelHotelticketOrderRefund(clt *core.SDKClient, req *traveltrade.AlitripTravelHotelticketOrderRefundAPIRequest, resp *traveltrade.AlitripTravelHotelticketOrderRefundAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package aesolution
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressSolutionBatchProductInventoryUpdateAPIRequest struct {
 // NewAliexpressSolutionBatchProductInventoryUpdateRequest 初始化AliexpressSolutionBatchProductInventoryUpdateAPIRequest对象
 func NewAliexpressSolutionBatchProductInventoryUpdateRequest() *AliexpressSolutionBatchProductInventoryUpdateAPIRequest {
 	return &AliexpressSolutionBatchProductInventoryUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSolutionBatchProductInventoryUpdateAPIRequest) Reset() {
+	r._mutipleProductUpdateList = r._mutipleProductUpdateList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressSolutionBatchProductInventoryUpdateAPIRequest) SetMutipleProd
 // GetMutipleProductUpdateList MutipleProductUpdateList Getter
 func (r AliexpressSolutionBatchProductInventoryUpdateAPIRequest) GetMutipleProductUpdateList() []SynchronizeProductRequestDto {
 	return r._mutipleProductUpdateList
+}
+
+var poolAliexpressSolutionBatchProductInventoryUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSolutionBatchProductInventoryUpdateRequest()
+	},
+}
+
+// GetAliexpressSolutionBatchProductInventoryUpdateRequest 从 sync.Pool 获取 AliexpressSolutionBatchProductInventoryUpdateAPIRequest
+func GetAliexpressSolutionBatchProductInventoryUpdateAPIRequest() *AliexpressSolutionBatchProductInventoryUpdateAPIRequest {
+	return poolAliexpressSolutionBatchProductInventoryUpdateAPIRequest.Get().(*AliexpressSolutionBatchProductInventoryUpdateAPIRequest)
+}
+
+// ReleaseAliexpressSolutionBatchProductInventoryUpdateAPIRequest 将 AliexpressSolutionBatchProductInventoryUpdateAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSolutionBatchProductInventoryUpdateAPIRequest(v *AliexpressSolutionBatchProductInventoryUpdateAPIRequest) {
+	v.Reset()
+	poolAliexpressSolutionBatchProductInventoryUpdateAPIRequest.Put(v)
 }

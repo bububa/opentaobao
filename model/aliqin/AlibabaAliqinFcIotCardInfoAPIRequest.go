@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAliqinFcIotCardInfoAPIRequest struct {
 // NewAlibabaAliqinFcIotCardInfoRequest 初始化AlibabaAliqinFcIotCardInfoAPIRequest对象
 func NewAlibabaAliqinFcIotCardInfoRequest() *AlibabaAliqinFcIotCardInfoAPIRequest {
 	return &AlibabaAliqinFcIotCardInfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFcIotCardInfoAPIRequest) Reset() {
+	r._iccid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAliqinFcIotCardInfoAPIRequest) SetIccid(_iccid string) error {
 // GetIccid Iccid Getter
 func (r AlibabaAliqinFcIotCardInfoAPIRequest) GetIccid() string {
 	return r._iccid
+}
+
+var poolAlibabaAliqinFcIotCardInfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFcIotCardInfoRequest()
+	},
+}
+
+// GetAlibabaAliqinFcIotCardInfoRequest 从 sync.Pool 获取 AlibabaAliqinFcIotCardInfoAPIRequest
+func GetAlibabaAliqinFcIotCardInfoAPIRequest() *AlibabaAliqinFcIotCardInfoAPIRequest {
+	return poolAlibabaAliqinFcIotCardInfoAPIRequest.Get().(*AlibabaAliqinFcIotCardInfoAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFcIotCardInfoAPIRequest 将 AlibabaAliqinFcIotCardInfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFcIotCardInfoAPIRequest(v *AlibabaAliqinFcIotCardInfoAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFcIotCardInfoAPIRequest.Put(v)
 }

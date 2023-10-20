@@ -2,6 +2,7 @@ package wenyuvideo
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type YoukuWenyuvideoPersionGetAPIRequest struct {
 // NewYoukuWenyuvideoPersionGetRequest 初始化YoukuWenyuvideoPersionGetAPIRequest对象
 func NewYoukuWenyuvideoPersionGetRequest() *YoukuWenyuvideoPersionGetAPIRequest {
 	return &YoukuWenyuvideoPersionGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuWenyuvideoPersionGetAPIRequest) Reset() {
+	r._systemInfo = ""
+	r._personId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *YoukuWenyuvideoPersionGetAPIRequest) SetPersonId(_personId int64) error
 // GetPersonId PersonId Getter
 func (r YoukuWenyuvideoPersionGetAPIRequest) GetPersonId() int64 {
 	return r._personId
+}
+
+var poolYoukuWenyuvideoPersionGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuWenyuvideoPersionGetRequest()
+	},
+}
+
+// GetYoukuWenyuvideoPersionGetRequest 从 sync.Pool 获取 YoukuWenyuvideoPersionGetAPIRequest
+func GetYoukuWenyuvideoPersionGetAPIRequest() *YoukuWenyuvideoPersionGetAPIRequest {
+	return poolYoukuWenyuvideoPersionGetAPIRequest.Get().(*YoukuWenyuvideoPersionGetAPIRequest)
+}
+
+// ReleaseYoukuWenyuvideoPersionGetAPIRequest 将 YoukuWenyuvideoPersionGetAPIRequest 放入 sync.Pool
+func ReleaseYoukuWenyuvideoPersionGetAPIRequest(v *YoukuWenyuvideoPersionGetAPIRequest) {
+	v.Reset()
+	poolYoukuWenyuvideoPersionGetAPIRequest.Put(v)
 }

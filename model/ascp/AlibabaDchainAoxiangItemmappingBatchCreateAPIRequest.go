@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangItemmappingBatchCreateAPIRequest struct {
 // NewAlibabaDchainAoxiangItemmappingBatchCreateRequest 初始化AlibabaDchainAoxiangItemmappingBatchCreateAPIRequest对象
 func NewAlibabaDchainAoxiangItemmappingBatchCreateRequest() *AlibabaDchainAoxiangItemmappingBatchCreateAPIRequest {
 	return &AlibabaDchainAoxiangItemmappingBatchCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangItemmappingBatchCreateAPIRequest) Reset() {
+	r._batchCreateItemMappingRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangItemmappingBatchCreateAPIRequest) SetBatchCreateIte
 // GetBatchCreateItemMappingRequest BatchCreateItemMappingRequest Getter
 func (r AlibabaDchainAoxiangItemmappingBatchCreateAPIRequest) GetBatchCreateItemMappingRequest() *BatchCreateItemMappingRequest {
 	return r._batchCreateItemMappingRequest
+}
+
+var poolAlibabaDchainAoxiangItemmappingBatchCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangItemmappingBatchCreateRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangItemmappingBatchCreateRequest 从 sync.Pool 获取 AlibabaDchainAoxiangItemmappingBatchCreateAPIRequest
+func GetAlibabaDchainAoxiangItemmappingBatchCreateAPIRequest() *AlibabaDchainAoxiangItemmappingBatchCreateAPIRequest {
+	return poolAlibabaDchainAoxiangItemmappingBatchCreateAPIRequest.Get().(*AlibabaDchainAoxiangItemmappingBatchCreateAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangItemmappingBatchCreateAPIRequest 将 AlibabaDchainAoxiangItemmappingBatchCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangItemmappingBatchCreateAPIRequest(v *AlibabaDchainAoxiangItemmappingBatchCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangItemmappingBatchCreateAPIRequest.Put(v)
 }

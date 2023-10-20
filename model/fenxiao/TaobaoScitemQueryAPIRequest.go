@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoScitemQueryAPIRequest struct {
 // NewTaobaoScitemQueryRequest 初始化TaobaoScitemQueryAPIRequest对象
 func NewTaobaoScitemQueryRequest() *TaobaoScitemQueryAPIRequest {
 	return &TaobaoScitemQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoScitemQueryAPIRequest) Reset() {
+	r._itemName = ""
+	r._outerCode = ""
+	r._wmsCode = ""
+	r._barCode = ""
+	r._itemType = 0
+	r._pageIndex = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoScitemQueryAPIRequest) SetPageSize(_pageSize int64) error {
 // GetPageSize PageSize Getter
 func (r TaobaoScitemQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoScitemQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoScitemQueryRequest()
+	},
+}
+
+// GetTaobaoScitemQueryRequest 从 sync.Pool 获取 TaobaoScitemQueryAPIRequest
+func GetTaobaoScitemQueryAPIRequest() *TaobaoScitemQueryAPIRequest {
+	return poolTaobaoScitemQueryAPIRequest.Get().(*TaobaoScitemQueryAPIRequest)
+}
+
+// ReleaseTaobaoScitemQueryAPIRequest 将 TaobaoScitemQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoScitemQueryAPIRequest(v *TaobaoScitemQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoScitemQueryAPIRequest.Put(v)
 }

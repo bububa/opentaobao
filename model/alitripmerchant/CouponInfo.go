@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // CouponInfo 结构体
 type CouponInfo struct {
 	// 使用描述
@@ -14,4 +18,26 @@ type CouponInfo struct {
 	ConditionDesc string `json:"condition_desc,omitempty" xml:"condition_desc,omitempty"`
 	// 状态
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolCouponInfo = sync.Pool{
+	New: func() any {
+		return new(CouponInfo)
+	},
+}
+
+// GetCouponInfo() 从对象池中获取CouponInfo
+func GetCouponInfo() *CouponInfo {
+	return poolCouponInfo.Get().(*CouponInfo)
+}
+
+// ReleaseCouponInfo 释放CouponInfo
+func ReleaseCouponInfo(v *CouponInfo) {
+	v.DetailDesc = ""
+	v.CouponName = ""
+	v.ExpiredTimeMin = ""
+	v.DiscountAmount = ""
+	v.ConditionDesc = ""
+	v.Status = ""
+	poolCouponInfo.Put(v)
 }

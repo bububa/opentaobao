@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstVasTradeflowSaveAPIRequest struct {
 // NewAlibabaLstVasTradeflowSaveRequest 初始化AlibabaLstVasTradeflowSaveAPIRequest对象
 func NewAlibabaLstVasTradeflowSaveRequest() *AlibabaLstVasTradeflowSaveAPIRequest {
 	return &AlibabaLstVasTradeflowSaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstVasTradeflowSaveAPIRequest) Reset() {
+	r._tradeFlowModelList = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstVasTradeflowSaveAPIRequest) SetTradeFlowModelList(_tradeFlowM
 // GetTradeFlowModelList TradeFlowModelList Getter
 func (r AlibabaLstVasTradeflowSaveAPIRequest) GetTradeFlowModelList() *TradeFlowModel {
 	return r._tradeFlowModelList
+}
+
+var poolAlibabaLstVasTradeflowSaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstVasTradeflowSaveRequest()
+	},
+}
+
+// GetAlibabaLstVasTradeflowSaveRequest 从 sync.Pool 获取 AlibabaLstVasTradeflowSaveAPIRequest
+func GetAlibabaLstVasTradeflowSaveAPIRequest() *AlibabaLstVasTradeflowSaveAPIRequest {
+	return poolAlibabaLstVasTradeflowSaveAPIRequest.Get().(*AlibabaLstVasTradeflowSaveAPIRequest)
+}
+
+// ReleaseAlibabaLstVasTradeflowSaveAPIRequest 将 AlibabaLstVasTradeflowSaveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstVasTradeflowSaveAPIRequest(v *AlibabaLstVasTradeflowSaveAPIRequest) {
+	v.Reset()
+	poolAlibabaLstVasTradeflowSaveAPIRequest.Put(v)
 }

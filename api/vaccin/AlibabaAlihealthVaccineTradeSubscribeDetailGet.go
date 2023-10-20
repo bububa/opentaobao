@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.vaccine.trade.subscribe.detail.get
 //
 // 私立疫苗交易-预约详情获取
-func AlibabaAlihealthVaccineTradeSubscribeDetailGet(clt *core.SDKClient, req *vaccin.AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest, session string) (*vaccin.AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIResponse, error) {
-	var resp vaccin.AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthVaccineTradeSubscribeDetailGet(clt *core.SDKClient, req *vaccin.AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest, resp *vaccin.AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

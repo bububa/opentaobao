@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.tracecodesearc.getinfomation.vivo
 //
 // 获取vivo banner  url
-func AlibabaAlihealthTracecodesearcGetinfomationVivo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest, session string) (*drugtrace.AlibabaAlihealthTracecodesearcGetinfomationVivoAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthTracecodesearcGetinfomationVivoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthTracecodesearcGetinfomationVivo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest, resp *drugtrace.AlibabaAlihealthTracecodesearcGetinfomationVivoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

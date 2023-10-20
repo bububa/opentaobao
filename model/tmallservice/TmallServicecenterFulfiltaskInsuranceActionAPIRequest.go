@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TmallServicecenterFulfiltaskInsuranceActionAPIRequest struct {
 // NewTmallServicecenterFulfiltaskInsuranceActionRequest 初始化TmallServicecenterFulfiltaskInsuranceActionAPIRequest对象
 func NewTmallServicecenterFulfiltaskInsuranceActionRequest() *TmallServicecenterFulfiltaskInsuranceActionAPIRequest {
 	return &TmallServicecenterFulfiltaskInsuranceActionAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterFulfiltaskInsuranceActionAPIRequest) Reset() {
+	r._taskAction = ""
+	r._taskContextData = ""
+	r._outerId = ""
+	r._workcardId = 0
+	r._fulfilTaskId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TmallServicecenterFulfiltaskInsuranceActionAPIRequest) SetFulfilTaskId(
 // GetFulfilTaskId FulfilTaskId Getter
 func (r TmallServicecenterFulfiltaskInsuranceActionAPIRequest) GetFulfilTaskId() int64 {
 	return r._fulfilTaskId
+}
+
+var poolTmallServicecenterFulfiltaskInsuranceActionAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterFulfiltaskInsuranceActionRequest()
+	},
+}
+
+// GetTmallServicecenterFulfiltaskInsuranceActionRequest 从 sync.Pool 获取 TmallServicecenterFulfiltaskInsuranceActionAPIRequest
+func GetTmallServicecenterFulfiltaskInsuranceActionAPIRequest() *TmallServicecenterFulfiltaskInsuranceActionAPIRequest {
+	return poolTmallServicecenterFulfiltaskInsuranceActionAPIRequest.Get().(*TmallServicecenterFulfiltaskInsuranceActionAPIRequest)
+}
+
+// ReleaseTmallServicecenterFulfiltaskInsuranceActionAPIRequest 将 TmallServicecenterFulfiltaskInsuranceActionAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterFulfiltaskInsuranceActionAPIRequest(v *TmallServicecenterFulfiltaskInsuranceActionAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterFulfiltaskInsuranceActionAPIRequest.Put(v)
 }

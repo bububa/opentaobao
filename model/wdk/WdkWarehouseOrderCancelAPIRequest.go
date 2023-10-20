@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type WdkWarehouseOrderCancelAPIRequest struct {
 // NewWdkWarehouseOrderCancelRequest 初始化WdkWarehouseOrderCancelAPIRequest对象
 func NewWdkWarehouseOrderCancelRequest() *WdkWarehouseOrderCancelAPIRequest {
 	return &WdkWarehouseOrderCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *WdkWarehouseOrderCancelAPIRequest) Reset() {
+	r._cancelRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *WdkWarehouseOrderCancelAPIRequest) SetCancelRequest(_cancelRequest *Can
 // GetCancelRequest CancelRequest Getter
 func (r WdkWarehouseOrderCancelAPIRequest) GetCancelRequest() *CancelRequest {
 	return r._cancelRequest
+}
+
+var poolWdkWarehouseOrderCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewWdkWarehouseOrderCancelRequest()
+	},
+}
+
+// GetWdkWarehouseOrderCancelRequest 从 sync.Pool 获取 WdkWarehouseOrderCancelAPIRequest
+func GetWdkWarehouseOrderCancelAPIRequest() *WdkWarehouseOrderCancelAPIRequest {
+	return poolWdkWarehouseOrderCancelAPIRequest.Get().(*WdkWarehouseOrderCancelAPIRequest)
+}
+
+// ReleaseWdkWarehouseOrderCancelAPIRequest 将 WdkWarehouseOrderCancelAPIRequest 放入 sync.Pool
+func ReleaseWdkWarehouseOrderCancelAPIRequest(v *WdkWarehouseOrderCancelAPIRequest) {
+	v.Reset()
+	poolWdkWarehouseOrderCancelAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package store
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoPlaceStoregroupCreateAPIRequest struct {
 // NewTaobaoPlaceStoregroupCreateRequest 初始化TaobaoPlaceStoregroupCreateAPIRequest对象
 func NewTaobaoPlaceStoregroupCreateRequest() *TaobaoPlaceStoregroupCreateAPIRequest {
 	return &TaobaoPlaceStoregroupCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPlaceStoregroupCreateAPIRequest) Reset() {
+	r._name = ""
+	r._desc = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoPlaceStoregroupCreateAPIRequest) SetDesc(_desc string) error {
 // GetDesc Desc Getter
 func (r TaobaoPlaceStoregroupCreateAPIRequest) GetDesc() string {
 	return r._desc
+}
+
+var poolTaobaoPlaceStoregroupCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPlaceStoregroupCreateRequest()
+	},
+}
+
+// GetTaobaoPlaceStoregroupCreateRequest 从 sync.Pool 获取 TaobaoPlaceStoregroupCreateAPIRequest
+func GetTaobaoPlaceStoregroupCreateAPIRequest() *TaobaoPlaceStoregroupCreateAPIRequest {
+	return poolTaobaoPlaceStoregroupCreateAPIRequest.Get().(*TaobaoPlaceStoregroupCreateAPIRequest)
+}
+
+// ReleaseTaobaoPlaceStoregroupCreateAPIRequest 将 TaobaoPlaceStoregroupCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPlaceStoregroupCreateAPIRequest(v *TaobaoPlaceStoregroupCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoPlaceStoregroupCreateAPIRequest.Put(v)
 }

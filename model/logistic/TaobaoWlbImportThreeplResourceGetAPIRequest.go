@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoWlbImportThreeplResourceGetAPIRequest struct {
 // NewTaobaoWlbImportThreeplResourceGetRequest 初始化TaobaoWlbImportThreeplResourceGetAPIRequest对象
 func NewTaobaoWlbImportThreeplResourceGetRequest() *TaobaoWlbImportThreeplResourceGetAPIRequest {
 	return &TaobaoWlbImportThreeplResourceGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbImportThreeplResourceGetAPIRequest) Reset() {
+	r._type = ""
+	r._fromId = 0
+	r._toAddress = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoWlbImportThreeplResourceGetAPIRequest) SetToAddress(_toAddress *A
 // GetToAddress ToAddress Getter
 func (r TaobaoWlbImportThreeplResourceGetAPIRequest) GetToAddress() *AddressDto {
 	return r._toAddress
+}
+
+var poolTaobaoWlbImportThreeplResourceGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbImportThreeplResourceGetRequest()
+	},
+}
+
+// GetTaobaoWlbImportThreeplResourceGetRequest 从 sync.Pool 获取 TaobaoWlbImportThreeplResourceGetAPIRequest
+func GetTaobaoWlbImportThreeplResourceGetAPIRequest() *TaobaoWlbImportThreeplResourceGetAPIRequest {
+	return poolTaobaoWlbImportThreeplResourceGetAPIRequest.Get().(*TaobaoWlbImportThreeplResourceGetAPIRequest)
+}
+
+// ReleaseTaobaoWlbImportThreeplResourceGetAPIRequest 将 TaobaoWlbImportThreeplResourceGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbImportThreeplResourceGetAPIRequest(v *TaobaoWlbImportThreeplResourceGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbImportThreeplResourceGetAPIRequest.Put(v)
 }

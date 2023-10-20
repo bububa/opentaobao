@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // MemberCardParamVo 结构体
 type MemberCardParamVo struct {
 	// 微信公众号会员卡模板 id
@@ -14,4 +18,26 @@ type MemberCardParamVo struct {
 	Signature string `json:"signature,omitempty" xml:"signature,omitempty"`
 	// 加密随机字符串
 	NonceStr string `json:"nonce_str,omitempty" xml:"nonce_str,omitempty"`
+}
+
+var poolMemberCardParamVo = sync.Pool{
+	New: func() any {
+		return new(MemberCardParamVo)
+	},
+}
+
+// GetMemberCardParamVo() 从对象池中获取MemberCardParamVo
+func GetMemberCardParamVo() *MemberCardParamVo {
+	return poolMemberCardParamVo.Get().(*MemberCardParamVo)
+}
+
+// ReleaseMemberCardParamVo 释放MemberCardParamVo
+func ReleaseMemberCardParamVo(v *MemberCardParamVo) {
+	v.CardId = ""
+	v.Code = ""
+	v.OpenId = ""
+	v.Timestamp = ""
+	v.Signature = ""
+	v.NonceStr = ""
+	poolMemberCardParamVo.Put(v)
 }

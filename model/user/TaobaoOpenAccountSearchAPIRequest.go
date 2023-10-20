@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoOpenAccountSearchAPIRequest struct {
 // NewTaobaoOpenAccountSearchRequest 初始化TaobaoOpenAccountSearchAPIRequest对象
 func NewTaobaoOpenAccountSearchRequest() *TaobaoOpenAccountSearchAPIRequest {
 	return &TaobaoOpenAccountSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenAccountSearchAPIRequest) Reset() {
+	r._query = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoOpenAccountSearchAPIRequest) SetQuery(_query string) error {
 // GetQuery Query Getter
 func (r TaobaoOpenAccountSearchAPIRequest) GetQuery() string {
 	return r._query
+}
+
+var poolTaobaoOpenAccountSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenAccountSearchRequest()
+	},
+}
+
+// GetTaobaoOpenAccountSearchRequest 从 sync.Pool 获取 TaobaoOpenAccountSearchAPIRequest
+func GetTaobaoOpenAccountSearchAPIRequest() *TaobaoOpenAccountSearchAPIRequest {
+	return poolTaobaoOpenAccountSearchAPIRequest.Get().(*TaobaoOpenAccountSearchAPIRequest)
+}
+
+// ReleaseTaobaoOpenAccountSearchAPIRequest 将 TaobaoOpenAccountSearchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenAccountSearchAPIRequest(v *TaobaoOpenAccountSearchAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenAccountSearchAPIRequest.Put(v)
 }

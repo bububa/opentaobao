@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // BindingConsignOrderGiftRequest 结构体
 type BindingConsignOrderGiftRequest struct {
 	// 主单包含的子单
@@ -46,4 +50,42 @@ type BindingConsignOrderGiftRequest struct {
 	Data *BindingConsignOrderGiftResult `json:"data,omitempty" xml:"data,omitempty"`
 	// 成功或者失败
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolBindingConsignOrderGiftRequest = sync.Pool{
+	New: func() any {
+		return new(BindingConsignOrderGiftRequest)
+	},
+}
+
+// GetBindingConsignOrderGiftRequest() 从对象池中获取BindingConsignOrderGiftRequest
+func GetBindingConsignOrderGiftRequest() *BindingConsignOrderGiftRequest {
+	return poolBindingConsignOrderGiftRequest.Get().(*BindingConsignOrderGiftRequest)
+}
+
+// ReleaseBindingConsignOrderGiftRequest 释放BindingConsignOrderGiftRequest
+func ReleaseBindingConsignOrderGiftRequest(v *BindingConsignOrderGiftRequest) {
+	v.SubTradeOrders = v.SubTradeOrders[:0]
+	v.DistributionType = ""
+	v.SourcePlatformCode = ""
+	v.TradeId = ""
+	v.ConsignOrderCode = ""
+	v.BuyerNick = ""
+	v.ProductType = ""
+	v.WarehouseCode = ""
+	v.SellerMessage = ""
+	v.BuyerMessage = ""
+	v.RequestId = ""
+	v.Currency = ""
+	v.Message = ""
+	v.Code = ""
+	v.TradeCreateTime = 0
+	v.TradePayTime = 0
+	v.OrderAmount = 0
+	v.Payment = 0
+	v.ReceiverInfo = nil
+	v.RequestTime = 0
+	v.Data = nil
+	v.Success = false
+	poolBindingConsignOrderGiftRequest.Put(v)
 }

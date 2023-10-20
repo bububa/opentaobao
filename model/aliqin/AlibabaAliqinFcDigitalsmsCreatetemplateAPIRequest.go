@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest struct {
 // NewAlibabaAliqinFcDigitalsmsCreatetemplateRequest 初始化AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest对象
 func NewAlibabaAliqinFcDigitalsmsCreatetemplateRequest() *AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest {
 	return &AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest) Reset() {
+	r._templateContents = r._templateContents[:0]
+	r._templateName = ""
+	r._applyRemark = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest) SetApplyRemark(_appl
 // GetApplyRemark ApplyRemark Getter
 func (r AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest) GetApplyRemark() string {
 	return r._applyRemark
+}
+
+var poolAlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFcDigitalsmsCreatetemplateRequest()
+	},
+}
+
+// GetAlibabaAliqinFcDigitalsmsCreatetemplateRequest 从 sync.Pool 获取 AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest
+func GetAlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest() *AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest {
+	return poolAlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest.Get().(*AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest 将 AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest(v *AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest.Put(v)
 }

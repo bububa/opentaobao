@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PullCardTemplateOpenReq 结构体
 type PullCardTemplateOpenReq struct {
 	// 品牌id
@@ -28,4 +32,33 @@ type PullCardTemplateOpenReq struct {
 	NeedCount bool `json:"need_count,omitempty" xml:"need_count,omitempty"`
 	// 是否查询详情,若需要详情,传true
 	DetailRequired bool `json:"detail_required,omitempty" xml:"detail_required,omitempty"`
+}
+
+var poolPullCardTemplateOpenReq = sync.Pool{
+	New: func() any {
+		return new(PullCardTemplateOpenReq)
+	},
+}
+
+// GetPullCardTemplateOpenReq() 从对象池中获取PullCardTemplateOpenReq
+func GetPullCardTemplateOpenReq() *PullCardTemplateOpenReq {
+	return poolPullCardTemplateOpenReq.Get().(*PullCardTemplateOpenReq)
+}
+
+// ReleasePullCardTemplateOpenReq 释放PullCardTemplateOpenReq
+func ReleasePullCardTemplateOpenReq(v *PullCardTemplateOpenReq) {
+	v.BrandId = ""
+	v.CardType = ""
+	v.GmtModified = ""
+	v.LastMaxId = ""
+	v.OutBrandId = ""
+	v.OutShopId = ""
+	v.ShopId = ""
+	v.Num = 0
+	v.PageNo = 0
+	v.PageSize = 0
+	v.Deleted = false
+	v.NeedCount = false
+	v.DetailRequired = false
+	poolPullCardTemplateOpenReq.Put(v)
 }

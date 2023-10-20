@@ -2,6 +2,7 @@ package alitrippoi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripPlatformPoiRawFeedAPIRequest struct {
 // NewAlitripPlatformPoiRawFeedRequest 初始化AlitripPlatformPoiRawFeedAPIRequest对象
 func NewAlitripPlatformPoiRawFeedRequest() *AlitripPlatformPoiRawFeedAPIRequest {
 	return &AlitripPlatformPoiRawFeedAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripPlatformPoiRawFeedAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripPlatformPoiRawFeedAPIRequest) SetParam0(_param0 *TripPoiRawSaveP
 // GetParam0 Param0 Getter
 func (r AlitripPlatformPoiRawFeedAPIRequest) GetParam0() *TripPoiRawSaveParam {
 	return r._param0
+}
+
+var poolAlitripPlatformPoiRawFeedAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripPlatformPoiRawFeedRequest()
+	},
+}
+
+// GetAlitripPlatformPoiRawFeedRequest 从 sync.Pool 获取 AlitripPlatformPoiRawFeedAPIRequest
+func GetAlitripPlatformPoiRawFeedAPIRequest() *AlitripPlatformPoiRawFeedAPIRequest {
+	return poolAlitripPlatformPoiRawFeedAPIRequest.Get().(*AlitripPlatformPoiRawFeedAPIRequest)
+}
+
+// ReleaseAlitripPlatformPoiRawFeedAPIRequest 将 AlitripPlatformPoiRawFeedAPIRequest 放入 sync.Pool
+func ReleaseAlitripPlatformPoiRawFeedAPIRequest(v *AlitripPlatformPoiRawFeedAPIRequest) {
+	v.Reset()
+	poolAlitripPlatformPoiRawFeedAPIRequest.Put(v)
 }

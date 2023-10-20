@@ -2,6 +2,7 @@ package feedflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest struct {
 // NewTaobaoFeedflowItemAdgroupCreativeAddBindRequest 初始化TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest对象
 func NewTaobaoFeedflowItemAdgroupCreativeAddBindRequest() *TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest {
 	return &TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest) Reset() {
+	r._creativeBindList = r._creativeBindList[:0]
+	r._adgroupId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest) SetAdgroupId(_adgro
 // GetAdgroupId AdgroupId Getter
 func (r TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
+}
+
+var poolTaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFeedflowItemAdgroupCreativeAddBindRequest()
+	},
+}
+
+// GetTaobaoFeedflowItemAdgroupCreativeAddBindRequest 从 sync.Pool 获取 TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest
+func GetTaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest() *TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest {
+	return poolTaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest.Get().(*TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest)
+}
+
+// ReleaseTaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest 将 TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest(v *TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest) {
+	v.Reset()
+	poolTaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest.Put(v)
 }

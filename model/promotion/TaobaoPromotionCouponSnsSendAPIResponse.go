@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoPromotionCouponSnsSendAPIResponse struct {
 	TaobaoPromotionCouponSnsSendAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoPromotionCouponSnsSendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPromotionCouponSnsSendAPIResponseModel).Reset()
+}
+
 // TaobaoPromotionCouponSnsSendAPIResponseModel is 微淘粉丝店铺优惠券发放接口 成功返回结果
 type TaobaoPromotionCouponSnsSendAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotion_coupon_sns_send_response"`
@@ -24,4 +31,28 @@ type TaobaoPromotionCouponSnsSendAPIResponseModel struct {
 	FailureBuyers []ErrorMessage `json:"failure_buyers,omitempty" xml:"failure_buyers>error_message,omitempty"`
 	// 发送成功的买家的昵称和优惠券的number
 	CouponResults []CouponResult `json:"coupon_results,omitempty" xml:"coupon_results>coupon_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPromotionCouponSnsSendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.FailureBuyers = m.FailureBuyers[:0]
+	m.CouponResults = m.CouponResults[:0]
+}
+
+var poolTaobaoPromotionCouponSnsSendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPromotionCouponSnsSendAPIResponse)
+	},
+}
+
+// GetTaobaoPromotionCouponSnsSendAPIResponse 从 sync.Pool 获取 TaobaoPromotionCouponSnsSendAPIResponse
+func GetTaobaoPromotionCouponSnsSendAPIResponse() *TaobaoPromotionCouponSnsSendAPIResponse {
+	return poolTaobaoPromotionCouponSnsSendAPIResponse.Get().(*TaobaoPromotionCouponSnsSendAPIResponse)
+}
+
+// ReleaseTaobaoPromotionCouponSnsSendAPIResponse 将 TaobaoPromotionCouponSnsSendAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPromotionCouponSnsSendAPIResponse(v *TaobaoPromotionCouponSnsSendAPIResponse) {
+	v.Reset()
+	poolTaobaoPromotionCouponSnsSendAPIResponse.Put(v)
 }

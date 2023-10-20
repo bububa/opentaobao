@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest struct {
 // NewAlibabaAscpLogisticsInstantsonlineCanceldeliveryRequest 初始化AlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest对象
 func NewAlibabaAscpLogisticsInstantsonlineCanceldeliveryRequest() *AlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest {
 	return &AlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest) Reset() {
+	r._bizType = ""
+	r._outOrderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest) SetOutOrder
 // GetOutOrderId OutOrderId Getter
 func (r AlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest) GetOutOrderId() string {
 	return r._outOrderId
+}
+
+var poolAlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpLogisticsInstantsonlineCanceldeliveryRequest()
+	},
+}
+
+// GetAlibabaAscpLogisticsInstantsonlineCanceldeliveryRequest 从 sync.Pool 获取 AlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest
+func GetAlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest() *AlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest {
+	return poolAlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest.Get().(*AlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest)
+}
+
+// ReleaseAlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest 将 AlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest(v *AlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpLogisticsInstantsonlineCanceldeliveryAPIRequest.Put(v)
 }

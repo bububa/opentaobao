@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeThreedimensionSyncRequest 初始化AlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest对象
 func NewAlibabaAlihouseExistinghomeThreedimensionSyncRequest() *AlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest {
 	return &AlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest) Reset() {
+	r._threeDimensionalDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest) SetThreeDimens
 // GetThreeDimensionalDto ThreeDimensionalDto Getter
 func (r AlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest) GetThreeDimensionalDto() *SyncExistingHouseThreeDimensionalDto {
 	return r._threeDimensionalDto
+}
+
+var poolAlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeThreedimensionSyncRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeThreedimensionSyncRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest
+func GetAlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest() *AlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest {
+	return poolAlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest.Get().(*AlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest 将 AlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest(v *AlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest.Put(v)
 }

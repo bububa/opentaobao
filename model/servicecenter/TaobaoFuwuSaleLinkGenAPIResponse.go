@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoFuwuSaleLinkGenAPIResponse struct {
 	TaobaoFuwuSaleLinkGenAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoFuwuSaleLinkGenAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFuwuSaleLinkGenAPIResponseModel).Reset()
+}
+
 // TaobaoFuwuSaleLinkGenAPIResponseModel is 服务平台营销链接生成接口 成功返回结果
 type TaobaoFuwuSaleLinkGenAPIResponseModel struct {
 	XMLName xml.Name `xml:"fuwu_sale_link_gen_response"`
@@ -22,4 +29,27 @@ type TaobaoFuwuSaleLinkGenAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 通过营销链接接口生成的营销链接短地址
 	Url string `json:"url,omitempty" xml:"url,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFuwuSaleLinkGenAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Url = ""
+}
+
+var poolTaobaoFuwuSaleLinkGenAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFuwuSaleLinkGenAPIResponse)
+	},
+}
+
+// GetTaobaoFuwuSaleLinkGenAPIResponse 从 sync.Pool 获取 TaobaoFuwuSaleLinkGenAPIResponse
+func GetTaobaoFuwuSaleLinkGenAPIResponse() *TaobaoFuwuSaleLinkGenAPIResponse {
+	return poolTaobaoFuwuSaleLinkGenAPIResponse.Get().(*TaobaoFuwuSaleLinkGenAPIResponse)
+}
+
+// ReleaseTaobaoFuwuSaleLinkGenAPIResponse 将 TaobaoFuwuSaleLinkGenAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFuwuSaleLinkGenAPIResponse(v *TaobaoFuwuSaleLinkGenAPIResponse) {
+	v.Reset()
+	poolTaobaoFuwuSaleLinkGenAPIResponse.Put(v)
 }

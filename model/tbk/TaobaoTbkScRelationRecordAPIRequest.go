@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoTbkScRelationRecordAPIRequest struct {
 // NewTaobaoTbkScRelationRecordRequest 初始化TaobaoTbkScRelationRecordAPIRequest对象
 func NewTaobaoTbkScRelationRecordRequest() *TaobaoTbkScRelationRecordAPIRequest {
 	return &TaobaoTbkScRelationRecordAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkScRelationRecordAPIRequest) Reset() {
+	r._externalId = ""
+	r._redirectUrl = ""
+	r._externalType = 0
+	r._opType = 0
+	r._ucrowdId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoTbkScRelationRecordAPIRequest) SetUcrowdId(_ucrowdId int64) error
 // GetUcrowdId UcrowdId Getter
 func (r TaobaoTbkScRelationRecordAPIRequest) GetUcrowdId() int64 {
 	return r._ucrowdId
+}
+
+var poolTaobaoTbkScRelationRecordAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkScRelationRecordRequest()
+	},
+}
+
+// GetTaobaoTbkScRelationRecordRequest 从 sync.Pool 获取 TaobaoTbkScRelationRecordAPIRequest
+func GetTaobaoTbkScRelationRecordAPIRequest() *TaobaoTbkScRelationRecordAPIRequest {
+	return poolTaobaoTbkScRelationRecordAPIRequest.Get().(*TaobaoTbkScRelationRecordAPIRequest)
+}
+
+// ReleaseTaobaoTbkScRelationRecordAPIRequest 将 TaobaoTbkScRelationRecordAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkScRelationRecordAPIRequest(v *TaobaoTbkScRelationRecordAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkScRelationRecordAPIRequest.Put(v)
 }

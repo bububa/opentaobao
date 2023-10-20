@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -43,8 +44,26 @@ type YunosTvpubadminContentSingleVideoGetlistAPIRequest struct {
 // NewYunosTvpubadminContentSingleVideoGetlistRequest 初始化YunosTvpubadminContentSingleVideoGetlistAPIRequest对象
 func NewYunosTvpubadminContentSingleVideoGetlistRequest() *YunosTvpubadminContentSingleVideoGetlistAPIRequest {
 	return &YunosTvpubadminContentSingleVideoGetlistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(13),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminContentSingleVideoGetlistAPIRequest) Reset() {
+	r._licenseStateList = r._licenseStateList[:0]
+	r._gmtEnd = ""
+	r._extVideoStrId = ""
+	r._gmtStart = ""
+	r._videoTitleLike = ""
+	r._extType = 0
+	r._licenseState = 0
+	r._pageSize = 0
+	r._dateType = 0
+	r._category = 0
+	r._pageNo = 0
+	r._license = 0
+	r._priority = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -231,4 +250,21 @@ func (r *YunosTvpubadminContentSingleVideoGetlistAPIRequest) SetPriority(_priori
 // GetPriority Priority Getter
 func (r YunosTvpubadminContentSingleVideoGetlistAPIRequest) GetPriority() int64 {
 	return r._priority
+}
+
+var poolYunosTvpubadminContentSingleVideoGetlistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminContentSingleVideoGetlistRequest()
+	},
+}
+
+// GetYunosTvpubadminContentSingleVideoGetlistRequest 从 sync.Pool 获取 YunosTvpubadminContentSingleVideoGetlistAPIRequest
+func GetYunosTvpubadminContentSingleVideoGetlistAPIRequest() *YunosTvpubadminContentSingleVideoGetlistAPIRequest {
+	return poolYunosTvpubadminContentSingleVideoGetlistAPIRequest.Get().(*YunosTvpubadminContentSingleVideoGetlistAPIRequest)
+}
+
+// ReleaseYunosTvpubadminContentSingleVideoGetlistAPIRequest 将 YunosTvpubadminContentSingleVideoGetlistAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminContentSingleVideoGetlistAPIRequest(v *YunosTvpubadminContentSingleVideoGetlistAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminContentSingleVideoGetlistAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package train
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoTrainPurchaseOrderPayurlAPIRequest struct {
 // NewTaobaoTrainPurchaseOrderPayurlRequest 初始化TaobaoTrainPurchaseOrderPayurlAPIRequest对象
 func NewTaobaoTrainPurchaseOrderPayurlRequest() *TaobaoTrainPurchaseOrderPayurlAPIRequest {
 	return &TaobaoTrainPurchaseOrderPayurlAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTrainPurchaseOrderPayurlAPIRequest) Reset() {
+	r._payChannel = ""
+	r._payType = 0
+	r._mainBizOrderId = 0
+	r._businessType = 0
+	r._changeApplyId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoTrainPurchaseOrderPayurlAPIRequest) SetChangeApplyId(_changeApply
 // GetChangeApplyId ChangeApplyId Getter
 func (r TaobaoTrainPurchaseOrderPayurlAPIRequest) GetChangeApplyId() int64 {
 	return r._changeApplyId
+}
+
+var poolTaobaoTrainPurchaseOrderPayurlAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTrainPurchaseOrderPayurlRequest()
+	},
+}
+
+// GetTaobaoTrainPurchaseOrderPayurlRequest 从 sync.Pool 获取 TaobaoTrainPurchaseOrderPayurlAPIRequest
+func GetTaobaoTrainPurchaseOrderPayurlAPIRequest() *TaobaoTrainPurchaseOrderPayurlAPIRequest {
+	return poolTaobaoTrainPurchaseOrderPayurlAPIRequest.Get().(*TaobaoTrainPurchaseOrderPayurlAPIRequest)
+}
+
+// ReleaseTaobaoTrainPurchaseOrderPayurlAPIRequest 将 TaobaoTrainPurchaseOrderPayurlAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTrainPurchaseOrderPayurlAPIRequest(v *TaobaoTrainPurchaseOrderPayurlAPIRequest) {
+	v.Reset()
+	poolTaobaoTrainPurchaseOrderPayurlAPIRequest.Put(v)
 }

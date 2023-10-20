@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ProjectVerifyTicketDto 结构体
 type ProjectVerifyTicketDto struct {
 	// 补贴赞助方全称
@@ -22,4 +26,30 @@ type ProjectVerifyTicketDto struct {
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 排序权重
 	Weight int64 `json:"weight,omitempty" xml:"weight,omitempty"`
+}
+
+var poolProjectVerifyTicketDto = sync.Pool{
+	New: func() any {
+		return new(ProjectVerifyTicketDto)
+	},
+}
+
+// GetProjectVerifyTicketDto() 从对象池中获取ProjectVerifyTicketDto
+func GetProjectVerifyTicketDto() *ProjectVerifyTicketDto {
+	return poolProjectVerifyTicketDto.Get().(*ProjectVerifyTicketDto)
+}
+
+// ReleaseProjectVerifyTicketDto 释放ProjectVerifyTicketDto
+func ReleaseProjectVerifyTicketDto(v *ProjectVerifyTicketDto) {
+	v.SubsidySponsor = ""
+	v.RebateRemark = ""
+	v.OuterId = ""
+	v.ItemId = 0
+	v.Type = 0
+	v.RebateTotalAmount = 0
+	v.StartTime = 0
+	v.EndTime = 0
+	v.Amount = 0
+	v.Weight = 0
+	poolProjectVerifyTicketDto.Put(v)
 }

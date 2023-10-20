@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // TvmBusOrderLineInfo 结构体
 type TvmBusOrderLineInfo struct {
 	// passengers
@@ -32,4 +36,35 @@ type TvmBusOrderLineInfo struct {
 	TotalPrice int64 `json:"total_price,omitempty" xml:"total_price,omitempty"`
 	// tvmBusLineInfo
 	TvmBusLineInfo *TvmBusLineInfo `json:"tvm_bus_line_info,omitempty" xml:"tvm_bus_line_info,omitempty"`
+}
+
+var poolTvmBusOrderLineInfo = sync.Pool{
+	New: func() any {
+		return new(TvmBusOrderLineInfo)
+	},
+}
+
+// GetTvmBusOrderLineInfo() 从对象池中获取TvmBusOrderLineInfo
+func GetTvmBusOrderLineInfo() *TvmBusOrderLineInfo {
+	return poolTvmBusOrderLineInfo.Get().(*TvmBusOrderLineInfo)
+}
+
+// ReleaseTvmBusOrderLineInfo 释放TvmBusOrderLineInfo
+func ReleaseTvmBusOrderLineInfo(v *TvmBusOrderLineInfo) {
+	v.Passengers = v.Passengers[:0]
+	v.Refunds = v.Refunds[:0]
+	v.AgentOrderId = ""
+	v.AlipayTradeNo = ""
+	v.AlitripOrderId = ""
+	v.GmtCreate = ""
+	v.IssueTime = ""
+	v.PayTime = ""
+	v.RealPayMode = ""
+	v.BuyerInfoUniqueKey = ""
+	v.AlitripTpOrderId = ""
+	v.OrderStatus = 0
+	v.TicketCount = 0
+	v.TotalPrice = 0
+	v.TvmBusLineInfo = nil
+	poolTvmBusOrderLineInfo.Put(v)
 }

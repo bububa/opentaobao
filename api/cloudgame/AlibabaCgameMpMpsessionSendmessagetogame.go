@@ -9,11 +9,6 @@ import (
 // alibaba.cgame.mp.mpsession.sendmessagetogame
 //
 // 发送消息给游戏
-func AlibabaCgameMpMpsessionSendmessagetogame(clt *core.SDKClient, req *cloudgame.AlibabaCgameMpMpsessionSendmessagetogameAPIRequest, session string) (*cloudgame.AlibabaCgameMpMpsessionSendmessagetogameAPIResponse, error) {
-	var resp cloudgame.AlibabaCgameMpMpsessionSendmessagetogameAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCgameMpMpsessionSendmessagetogame(clt *core.SDKClient, req *cloudgame.AlibabaCgameMpMpsessionSendmessagetogameAPIRequest, resp *cloudgame.AlibabaCgameMpMpsessionSendmessagetogameAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

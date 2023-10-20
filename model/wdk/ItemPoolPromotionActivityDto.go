@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ItemPoolPromotionActivityDto 结构体
 type ItemPoolPromotionActivityDto struct {
 	// 活动周几生效
@@ -40,4 +44,39 @@ type ItemPoolPromotionActivityDto struct {
 	Limit *LimitDto `json:"limit,omitempty" xml:"limit,omitempty"`
 	// 是否上不封顶
 	EnableMultiple bool `json:"enable_multiple,omitempty" xml:"enable_multiple,omitempty"`
+}
+
+var poolItemPoolPromotionActivityDto = sync.Pool{
+	New: func() any {
+		return new(ItemPoolPromotionActivityDto)
+	},
+}
+
+// GetItemPoolPromotionActivityDto() 从对象池中获取ItemPoolPromotionActivityDto
+func GetItemPoolPromotionActivityDto() *ItemPoolPromotionActivityDto {
+	return poolItemPoolPromotionActivityDto.Get().(*ItemPoolPromotionActivityDto)
+}
+
+// ReleaseItemPoolPromotionActivityDto 释放ItemPoolPromotionActivityDto
+func ReleaseItemPoolPromotionActivityDto(v *ItemPoolPromotionActivityDto) {
+	v.Weekdays = v.Weekdays[:0]
+	v.EveryDayPeriods = v.EveryDayPeriods[:0]
+	v.Terminals = v.Terminals[:0]
+	v.StoreIds = v.StoreIds[:0]
+	v.OuterStoreIds = v.OuterStoreIds[:0]
+	v.MemberCrowdCodes = v.MemberCrowdCodes[:0]
+	v.LogicGroups = v.LogicGroups[:0]
+	v.StairGroups = v.StairGroups[:0]
+	v.ItemPoolDiscountType = ""
+	v.OutActId = ""
+	v.ActivityName = ""
+	v.Description = ""
+	v.CreatorId = ""
+	v.CreatorName = ""
+	v.ActId = 0
+	v.StartTime = 0
+	v.EndTime = 0
+	v.Limit = nil
+	v.EnableMultiple = false
+	poolItemPoolPromotionActivityDto.Put(v)
 }

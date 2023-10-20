@@ -1,5 +1,9 @@
 package scs
 
+import (
+	"sync"
+)
+
 // MaterialQueryTopDto 结构体
 type MaterialQueryTopDto struct {
 	// 场景和bizCode的对应关系为：拉新快adStrategyDkx，上新快adStrategyShangXin ，货品加速adStrategyProductSpeed，入会快adStrategyRuHui，预热蓄水adStrategyYuRe，爆发收割adStrategyBaoFa
@@ -8,4 +12,23 @@ type MaterialQueryTopDto struct {
 	TagId int64 `json:"tag_id,omitempty" xml:"tag_id,omitempty"`
 	// 页码
 	Offset int64 `json:"offset,omitempty" xml:"offset,omitempty"`
+}
+
+var poolMaterialQueryTopDto = sync.Pool{
+	New: func() any {
+		return new(MaterialQueryTopDto)
+	},
+}
+
+// GetMaterialQueryTopDto() 从对象池中获取MaterialQueryTopDto
+func GetMaterialQueryTopDto() *MaterialQueryTopDto {
+	return poolMaterialQueryTopDto.Get().(*MaterialQueryTopDto)
+}
+
+// ReleaseMaterialQueryTopDto 释放MaterialQueryTopDto
+func ReleaseMaterialQueryTopDto(v *MaterialQueryTopDto) {
+	v.BizCode = ""
+	v.TagId = 0
+	v.Offset = 0
+	poolMaterialQueryTopDto.Put(v)
 }

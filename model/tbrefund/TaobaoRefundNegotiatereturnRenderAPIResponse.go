@@ -2,6 +2,7 @@ package tbrefund
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoRefundNegotiatereturnRenderAPIResponse struct {
 	model.CommonResponse
 	TaobaoRefundNegotiatereturnRenderAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoRefundNegotiatereturnRenderAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoRefundNegotiatereturnRenderAPIResponseModel).Reset()
 }
 
 // TaobaoRefundNegotiatereturnRenderAPIResponseModel is 协商退货退款渲染 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoRefundNegotiatereturnRenderAPIResponseModel struct {
 	RefundVersion int64 `json:"refund_version,omitempty" xml:"refund_version,omitempty"`
 	// 可以协商的最大退款金额
 	MaxRefundFee *MaxRefundFee `json:"max_refund_fee,omitempty" xml:"max_refund_fee,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoRefundNegotiatereturnRenderAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ReasonList = m.ReasonList[:0]
+	m.AddressList = m.AddressList[:0]
+	m.ApplyTips = ""
+	m.RefundVersion = 0
+	m.MaxRefundFee = nil
+}
+
+var poolTaobaoRefundNegotiatereturnRenderAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoRefundNegotiatereturnRenderAPIResponse)
+	},
+}
+
+// GetTaobaoRefundNegotiatereturnRenderAPIResponse 从 sync.Pool 获取 TaobaoRefundNegotiatereturnRenderAPIResponse
+func GetTaobaoRefundNegotiatereturnRenderAPIResponse() *TaobaoRefundNegotiatereturnRenderAPIResponse {
+	return poolTaobaoRefundNegotiatereturnRenderAPIResponse.Get().(*TaobaoRefundNegotiatereturnRenderAPIResponse)
+}
+
+// ReleaseTaobaoRefundNegotiatereturnRenderAPIResponse 将 TaobaoRefundNegotiatereturnRenderAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoRefundNegotiatereturnRenderAPIResponse(v *TaobaoRefundNegotiatereturnRenderAPIResponse) {
+	v.Reset()
+	poolTaobaoRefundNegotiatereturnRenderAPIResponse.Put(v)
 }

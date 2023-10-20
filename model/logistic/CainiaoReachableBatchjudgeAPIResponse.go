@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type CainiaoReachableBatchjudgeAPIResponse struct {
 	CainiaoReachableBatchjudgeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *CainiaoReachableBatchjudgeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoReachableBatchjudgeAPIResponseModel).Reset()
+}
+
 // CainiaoReachableBatchjudgeAPIResponseModel is 是否派送可达判定批量查询接口 成功返回结果
 type CainiaoReachableBatchjudgeAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_reachable_batchjudge_response"`
@@ -22,4 +29,27 @@ type CainiaoReachableBatchjudgeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果
 	Result *BaseResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoReachableBatchjudgeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolCainiaoReachableBatchjudgeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoReachableBatchjudgeAPIResponse)
+	},
+}
+
+// GetCainiaoReachableBatchjudgeAPIResponse 从 sync.Pool 获取 CainiaoReachableBatchjudgeAPIResponse
+func GetCainiaoReachableBatchjudgeAPIResponse() *CainiaoReachableBatchjudgeAPIResponse {
+	return poolCainiaoReachableBatchjudgeAPIResponse.Get().(*CainiaoReachableBatchjudgeAPIResponse)
+}
+
+// ReleaseCainiaoReachableBatchjudgeAPIResponse 将 CainiaoReachableBatchjudgeAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoReachableBatchjudgeAPIResponse(v *CainiaoReachableBatchjudgeAPIResponse) {
+	v.Reset()
+	poolCainiaoReachableBatchjudgeAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest struct {
 // NewAlibabaDchainAoxiangCombinescitemBatchCreateRequest 初始化AlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest对象
 func NewAlibabaDchainAoxiangCombinescitemBatchCreateRequest() *AlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest {
 	return &AlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest) Reset() {
+	r._batchCreateCombineScitemRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest) SetBatchCreateC
 // GetBatchCreateCombineScitemRequest BatchCreateCombineScitemRequest Getter
 func (r AlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest) GetBatchCreateCombineScitemRequest() *BatchCreateCombineScItemRequest {
 	return r._batchCreateCombineScitemRequest
+}
+
+var poolAlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangCombinescitemBatchCreateRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangCombinescitemBatchCreateRequest 从 sync.Pool 获取 AlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest
+func GetAlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest() *AlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest {
+	return poolAlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest.Get().(*AlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest 将 AlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest(v *AlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangCombinescitemBatchCreateAPIRequest.Put(v)
 }

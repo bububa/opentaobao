@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaMjOcOfflineMaxticketnoGetAPIRequest struct {
 // NewAlibabaMjOcOfflineMaxticketnoGetRequest 初始化AlibabaMjOcOfflineMaxticketnoGetAPIRequest对象
 func NewAlibabaMjOcOfflineMaxticketnoGetRequest() *AlibabaMjOcOfflineMaxticketnoGetAPIRequest {
 	return &AlibabaMjOcOfflineMaxticketnoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMjOcOfflineMaxticketnoGetAPIRequest) Reset() {
+	r._datetime = ""
+	r._posNo = ""
+	r._storeNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaMjOcOfflineMaxticketnoGetAPIRequest) SetStoreNo(_storeNo string)
 // GetStoreNo StoreNo Getter
 func (r AlibabaMjOcOfflineMaxticketnoGetAPIRequest) GetStoreNo() string {
 	return r._storeNo
+}
+
+var poolAlibabaMjOcOfflineMaxticketnoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMjOcOfflineMaxticketnoGetRequest()
+	},
+}
+
+// GetAlibabaMjOcOfflineMaxticketnoGetRequest 从 sync.Pool 获取 AlibabaMjOcOfflineMaxticketnoGetAPIRequest
+func GetAlibabaMjOcOfflineMaxticketnoGetAPIRequest() *AlibabaMjOcOfflineMaxticketnoGetAPIRequest {
+	return poolAlibabaMjOcOfflineMaxticketnoGetAPIRequest.Get().(*AlibabaMjOcOfflineMaxticketnoGetAPIRequest)
+}
+
+// ReleaseAlibabaMjOcOfflineMaxticketnoGetAPIRequest 将 AlibabaMjOcOfflineMaxticketnoGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMjOcOfflineMaxticketnoGetAPIRequest(v *AlibabaMjOcOfflineMaxticketnoGetAPIRequest) {
+	v.Reset()
+	poolAlibabaMjOcOfflineMaxticketnoGetAPIRequest.Put(v)
 }

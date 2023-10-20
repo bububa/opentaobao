@@ -9,11 +9,6 @@ import (
 // alibaba.hm.marketing.expire.promotion.delete
 //
 // 短保优惠删除
-func AlibabaHmMarketingExpirePromotionDelete(clt *core.SDKClient, req *wdk.AlibabaHmMarketingExpirePromotionDeleteAPIRequest, session string) (*wdk.AlibabaHmMarketingExpirePromotionDeleteAPIResponse, error) {
-	var resp wdk.AlibabaHmMarketingExpirePromotionDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHmMarketingExpirePromotionDelete(clt *core.SDKClient, req *wdk.AlibabaHmMarketingExpirePromotionDeleteAPIRequest, resp *wdk.AlibabaHmMarketingExpirePromotionDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alipay.baoxian.claim.uploadattachment
 //
 // 给合作伙伴上传申请理赔材料
-func AlipayBaoxianClaimUploadattachment(clt *core.SDKClient, req *baoxian.AlipayBaoxianClaimUploadattachmentAPIRequest, session string) (*baoxian.AlipayBaoxianClaimUploadattachmentAPIResponse, error) {
-	var resp baoxian.AlipayBaoxianClaimUploadattachmentAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlipayBaoxianClaimUploadattachment(clt *core.SDKClient, req *baoxian.AlipayBaoxianClaimUploadattachmentAPIRequest, resp *baoxian.AlipayBaoxianClaimUploadattachmentAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

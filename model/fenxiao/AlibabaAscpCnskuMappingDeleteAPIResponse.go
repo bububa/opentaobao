@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAscpCnskuMappingDeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpCnskuMappingDeleteAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAscpCnskuMappingDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAscpCnskuMappingDeleteAPIResponseModel).Reset()
 }
 
 // AlibabaAscpCnskuMappingDeleteAPIResponseModel is 货品关系解绑 成功返回结果
@@ -32,4 +39,32 @@ type AlibabaAscpCnskuMappingDeleteAPIResponseModel struct {
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 是否系统异常
 	IsSystemFailed bool `json:"is_system_failed,omitempty" xml:"is_system_failed,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAscpCnskuMappingDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SuccessResultMap = ""
+	m.EroCode = ""
+	m.FailResultMap = ""
+	m.EroMsg = ""
+	m.IsSuccess = false
+	m.IsSystemFailed = false
+}
+
+var poolAlibabaAscpCnskuMappingDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAscpCnskuMappingDeleteAPIResponse)
+	},
+}
+
+// GetAlibabaAscpCnskuMappingDeleteAPIResponse 从 sync.Pool 获取 AlibabaAscpCnskuMappingDeleteAPIResponse
+func GetAlibabaAscpCnskuMappingDeleteAPIResponse() *AlibabaAscpCnskuMappingDeleteAPIResponse {
+	return poolAlibabaAscpCnskuMappingDeleteAPIResponse.Get().(*AlibabaAscpCnskuMappingDeleteAPIResponse)
+}
+
+// ReleaseAlibabaAscpCnskuMappingDeleteAPIResponse 将 AlibabaAscpCnskuMappingDeleteAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAscpCnskuMappingDeleteAPIResponse(v *AlibabaAscpCnskuMappingDeleteAPIResponse) {
+	v.Reset()
+	poolAlibabaAscpCnskuMappingDeleteAPIResponse.Put(v)
 }

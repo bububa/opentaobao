@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleUserPermitAPIRequest struct {
 // NewAlibabaIdleUserPermitRequest 初始化AlibabaIdleUserPermitAPIRequest对象
 func NewAlibabaIdleUserPermitRequest() *AlibabaIdleUserPermitAPIRequest {
 	return &AlibabaIdleUserPermitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleUserPermitAPIRequest) Reset() {
+	r._paramUserGrantRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleUserPermitAPIRequest) SetParamUserGrantRequest(_paramUserGra
 // GetParamUserGrantRequest ParamUserGrantRequest Getter
 func (r AlibabaIdleUserPermitAPIRequest) GetParamUserGrantRequest() *UserGrantRequest {
 	return r._paramUserGrantRequest
+}
+
+var poolAlibabaIdleUserPermitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleUserPermitRequest()
+	},
+}
+
+// GetAlibabaIdleUserPermitRequest 从 sync.Pool 获取 AlibabaIdleUserPermitAPIRequest
+func GetAlibabaIdleUserPermitAPIRequest() *AlibabaIdleUserPermitAPIRequest {
+	return poolAlibabaIdleUserPermitAPIRequest.Get().(*AlibabaIdleUserPermitAPIRequest)
+}
+
+// ReleaseAlibabaIdleUserPermitAPIRequest 将 AlibabaIdleUserPermitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleUserPermitAPIRequest(v *AlibabaIdleUserPermitAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleUserPermitAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaAilabsTvsDeviceListAPIRequest struct {
 // NewAlibabaAilabsTvsDeviceListRequest 初始化AlibabaAilabsTvsDeviceListAPIRequest对象
 func NewAlibabaAilabsTvsDeviceListRequest() *AlibabaAilabsTvsDeviceListAPIRequest {
 	return &AlibabaAilabsTvsDeviceListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsTvsDeviceListAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaAilabsTvsDeviceListAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaAilabsTvsDeviceListAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaAilabsTvsDeviceListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsTvsDeviceListRequest()
+	},
+}
+
+// GetAlibabaAilabsTvsDeviceListRequest 从 sync.Pool 获取 AlibabaAilabsTvsDeviceListAPIRequest
+func GetAlibabaAilabsTvsDeviceListAPIRequest() *AlibabaAilabsTvsDeviceListAPIRequest {
+	return poolAlibabaAilabsTvsDeviceListAPIRequest.Get().(*AlibabaAilabsTvsDeviceListAPIRequest)
+}
+
+// ReleaseAlibabaAilabsTvsDeviceListAPIRequest 将 AlibabaAilabsTvsDeviceListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsTvsDeviceListAPIRequest(v *AlibabaAilabsTvsDeviceListAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsTvsDeviceListAPIRequest.Put(v)
 }

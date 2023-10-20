@@ -9,11 +9,6 @@ import (
 // alibaba.legal.suit.court.open.push
 //
 // 供ISV推送开庭信息给集团诉讼
-func AlibabaLegalSuitCourtOpenPush(clt *core.SDKClient, req *legalsuit.AlibabaLegalSuitCourtOpenPushAPIRequest, session string) (*legalsuit.AlibabaLegalSuitCourtOpenPushAPIResponse, error) {
-	var resp legalsuit.AlibabaLegalSuitCourtOpenPushAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLegalSuitCourtOpenPush(clt *core.SDKClient, req *legalsuit.AlibabaLegalSuitCourtOpenPushAPIRequest, resp *legalsuit.AlibabaLegalSuitCourtOpenPushAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponse struct {
 	AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponseModel).Reset()
+}
+
 // AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponseModel is 扫码激活设备 成功返回结果
 type AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_tmallgenie_auth_device_qrcode_activate_response"`
@@ -23,7 +30,32 @@ type AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponseModel struct {
 	// 结果消息
 	RetMsg string `json:"ret_msg,omitempty" xml:"ret_msg,omitempty"`
 	// 结果对象
-	Result *ScanQrCodeResultVo `json:"result,omitempty" xml:"result,omitempty"`
+	Result *SCanQrCodeResultVo `json:"result,omitempty" xml:"result,omitempty"`
 	// 结果码
 	RetCode int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RetMsg = ""
+	m.Result = nil
+	m.RetCode = 0
+}
+
+var poolAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponse)
+	},
+}
+
+// GetAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponse 从 sync.Pool 获取 AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponse
+func GetAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponse() *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponse {
+	return poolAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponse.Get().(*AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponse)
+}
+
+// ReleaseAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponse 将 AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponse(v *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponse) {
+	v.Reset()
+	poolAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIResponse.Put(v)
 }

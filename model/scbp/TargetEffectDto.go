@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // TargetEffectDto 结构体
 type TargetEffectDto struct {
 	// 标题
@@ -18,4 +22,28 @@ type TargetEffectDto struct {
 	Cost int64 `json:"cost,omitempty" xml:"cost,omitempty"`
 	// 推广时长
 	OnlineMin int64 `json:"online_min,omitempty" xml:"online_min,omitempty"`
+}
+
+var poolTargetEffectDto = sync.Pool{
+	New: func() any {
+		return new(TargetEffectDto)
+	},
+}
+
+// GetTargetEffectDto() 从对象池中获取TargetEffectDto
+func GetTargetEffectDto() *TargetEffectDto {
+	return poolTargetEffectDto.Get().(*TargetEffectDto)
+}
+
+// ReleaseTargetEffectDto 释放TargetEffectDto
+func ReleaseTargetEffectDto(v *TargetEffectDto) {
+	v.Subject = ""
+	v.OptionValue = ""
+	v.StatDate = ""
+	v.TagRefType = 0
+	v.Impr = 0
+	v.Click = 0
+	v.Cost = 0
+	v.OnlineMin = 0
+	poolTargetEffectDto.Put(v)
 }

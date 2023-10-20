@@ -9,11 +9,6 @@ import (
 // taobao.jst.sms.template.modify
 //
 // 淘宝短信模板修改
-func TaobaoJstSmsTemplateModify(clt *core.SDKClient, req *jst.TaobaoJstSmsTemplateModifyAPIRequest, session string) (*jst.TaobaoJstSmsTemplateModifyAPIResponse, error) {
-	var resp jst.TaobaoJstSmsTemplateModifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJstSmsTemplateModify(clt *core.SDKClient, req *jst.TaobaoJstSmsTemplateModifyAPIRequest, resp *jst.TaobaoJstSmsTemplateModifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

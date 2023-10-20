@@ -1,6 +1,8 @@
 package axindata
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -52,4 +54,43 @@ type StdHotelVo struct {
 	HotelType *model.File `json:"hotel_type,omitempty" xml:"hotel_type,omitempty"`
 	// 状态0-正常
 	Status *model.File `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolStdHotelVo = sync.Pool{
+	New: func() any {
+		return new(StdHotelVo)
+	},
+}
+
+// GetStdHotelVo() 从对象池中获取StdHotelVo
+func GetStdHotelVo() *StdHotelVo {
+	return poolStdHotelVo.Get().(*StdHotelVo)
+}
+
+// ReleaseStdHotelVo 释放StdHotelVo
+func ReleaseStdHotelVo(v *StdHotelVo) {
+	v.StdRoomTypeList = v.StdRoomTypeList[:0]
+	v.Name = ""
+	v.Address = ""
+	v.Services = ""
+	v.Longtitude = ""
+	v.Latitude = ""
+	v.RateScore = ""
+	v.HotelTel = ""
+	v.Type = ""
+	v.Star = ""
+	v.OpeningTime = ""
+	v.HotelFacilities = ""
+	v.Brand = ""
+	v.PetInfo = ""
+	v.DecorateTime = ""
+	v.Description = ""
+	v.CheckInfo = ""
+	v.BookingInfo = ""
+	v.Shid = 0
+	v.RateNumber = 0
+	v.CityCode = 0
+	v.HotelType = nil
+	v.Status = nil
+	poolStdHotelVo.Put(v)
 }

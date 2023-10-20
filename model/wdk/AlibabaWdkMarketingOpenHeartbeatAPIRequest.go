@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkMarketingOpenHeartbeatAPIRequest struct {
 // NewAlibabaWdkMarketingOpenHeartbeatRequest 初始化AlibabaWdkMarketingOpenHeartbeatAPIRequest对象
 func NewAlibabaWdkMarketingOpenHeartbeatRequest() *AlibabaWdkMarketingOpenHeartbeatAPIRequest {
 	return &AlibabaWdkMarketingOpenHeartbeatAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMarketingOpenHeartbeatAPIRequest) Reset() {
+	r._heartBeat = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkMarketingOpenHeartbeatAPIRequest) SetHeartBeat(_heartBeat *He
 // GetHeartBeat HeartBeat Getter
 func (r AlibabaWdkMarketingOpenHeartbeatAPIRequest) GetHeartBeat() *HeartBeatBo {
 	return r._heartBeat
+}
+
+var poolAlibabaWdkMarketingOpenHeartbeatAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMarketingOpenHeartbeatRequest()
+	},
+}
+
+// GetAlibabaWdkMarketingOpenHeartbeatRequest 从 sync.Pool 获取 AlibabaWdkMarketingOpenHeartbeatAPIRequest
+func GetAlibabaWdkMarketingOpenHeartbeatAPIRequest() *AlibabaWdkMarketingOpenHeartbeatAPIRequest {
+	return poolAlibabaWdkMarketingOpenHeartbeatAPIRequest.Get().(*AlibabaWdkMarketingOpenHeartbeatAPIRequest)
+}
+
+// ReleaseAlibabaWdkMarketingOpenHeartbeatAPIRequest 将 AlibabaWdkMarketingOpenHeartbeatAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMarketingOpenHeartbeatAPIRequest(v *AlibabaWdkMarketingOpenHeartbeatAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMarketingOpenHeartbeatAPIRequest.Put(v)
 }

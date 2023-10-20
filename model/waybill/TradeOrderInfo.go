@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // TradeOrderInfo 结构体
 type TradeOrderInfo struct {
 	// 物流服务能力集合
@@ -30,4 +34,34 @@ type TradeOrderInfo struct {
 	Volume int64 `json:"volume,omitempty" xml:"volume,omitempty"`
 	// 包裹重量（克）
 	Weight int64 `json:"weight,omitempty" xml:"weight,omitempty"`
+}
+
+var poolTradeOrderInfo = sync.Pool{
+	New: func() any {
+		return new(TradeOrderInfo)
+	},
+}
+
+// GetTradeOrderInfo() 从对象池中获取TradeOrderInfo
+func GetTradeOrderInfo() *TradeOrderInfo {
+	return poolTradeOrderInfo.Get().(*TradeOrderInfo)
+}
+
+// ReleaseTradeOrderInfo 释放TradeOrderInfo
+func ReleaseTradeOrderInfo(v *TradeOrderInfo) {
+	v.LogisticsServiceList = v.LogisticsServiceList[:0]
+	v.PackageItems = v.PackageItems[:0]
+	v.TradeOrderList = v.TradeOrderList[:0]
+	v.ConsigneeName = ""
+	v.ConsigneePhone = ""
+	v.OrderChannelsType = ""
+	v.ProductType = ""
+	v.SendName = ""
+	v.SendPhone = ""
+	v.PackageId = ""
+	v.ConsigneeAddress = nil
+	v.RealUserId = 0
+	v.Volume = 0
+	v.Weight = 0
+	poolTradeOrderInfo.Put(v)
 }

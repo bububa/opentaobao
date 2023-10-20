@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // TmsOrderUpdateRequest 结构体
 type TmsOrderUpdateRequest struct {
 	// 货品信息
@@ -34,4 +38,36 @@ type TmsOrderUpdateRequest struct {
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
 	// 是否拼单
 	Gather bool `json:"gather,omitempty" xml:"gather,omitempty"`
+}
+
+var poolTmsOrderUpdateRequest = sync.Pool{
+	New: func() any {
+		return new(TmsOrderUpdateRequest)
+	},
+}
+
+// GetTmsOrderUpdateRequest() 从对象池中获取TmsOrderUpdateRequest
+func GetTmsOrderUpdateRequest() *TmsOrderUpdateRequest {
+	return poolTmsOrderUpdateRequest.Get().(*TmsOrderUpdateRequest)
+}
+
+// ReleaseTmsOrderUpdateRequest 释放TmsOrderUpdateRequest
+func ReleaseTmsOrderUpdateRequest(v *TmsOrderUpdateRequest) {
+	v.ItemEditDtoList = v.ItemEditDtoList[:0]
+	v.SellerId = ""
+	v.ExpressCode = ""
+	v.CpCode = ""
+	v.Feature = ""
+	v.Remark = ""
+	v.BillPic = ""
+	v.Industry = ""
+	v.OutBizCode = ""
+	v.OperatorName = ""
+	v.TmsServiceType = 0
+	v.GatherNum = 0
+	v.SenderEditDto = nil
+	v.ReceiverEditDto = nil
+	v.RequestTime = 0
+	v.Gather = false
+	poolTmsOrderUpdateRequest.Put(v)
 }

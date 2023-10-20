@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // StairGroupDto 结构体
 type StairGroupDto struct {
 	// 逻辑分组1的number为1，逻辑分组2的number为2，示例值[1&amp;2]：代表同时满足逻辑分组1和逻辑分组2时才可享受优惠
@@ -12,4 +16,25 @@ type StairGroupDto struct {
 	Condition *Condition `json:"condition,omitempty" xml:"condition,omitempty"`
 	// 优惠效果
 	Action *Action `json:"action,omitempty" xml:"action,omitempty"`
+}
+
+var poolStairGroupDto = sync.Pool{
+	New: func() any {
+		return new(StairGroupDto)
+	},
+}
+
+// GetStairGroupDto() 从对象池中获取StairGroupDto
+func GetStairGroupDto() *StairGroupDto {
+	return poolStairGroupDto.Get().(*StairGroupDto)
+}
+
+// ReleaseStairGroupDto 释放StairGroupDto
+func ReleaseStairGroupDto(v *StairGroupDto) {
+	v.ConditionExpress = ""
+	v.ActionExpress = ""
+	v.Number = 0
+	v.Condition = nil
+	v.Action = nil
+	poolStairGroupDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.damai.mev.open.deletefloor
 //
 // deleteFloor
-func AlibabaDamaiMevOpenDeletefloor(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeletefloorAPIRequest, session string) (*damai.AlibabaDamaiMevOpenDeletefloorAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenDeletefloorAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMevOpenDeletefloor(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeletefloorAPIRequest, resp *damai.AlibabaDamaiMevOpenDeletefloorAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeCommunityBrokerSubmitRequest 初始化AlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest对象
 func NewAlibabaAlihouseExistinghomeCommunityBrokerSubmitRequest() *AlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest {
 	return &AlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest) Reset() {
+	r._relationDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest) SetRelation
 // GetRelationDto RelationDto Getter
 func (r AlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest) GetRelationDto() *SubmitCommunityAgentRelationDto {
 	return r._relationDto
+}
+
+var poolAlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeCommunityBrokerSubmitRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeCommunityBrokerSubmitRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest
+func GetAlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest() *AlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest {
+	return poolAlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest.Get().(*AlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest 将 AlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest(v *AlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeCommunityBrokerSubmitAPIRequest.Put(v)
 }

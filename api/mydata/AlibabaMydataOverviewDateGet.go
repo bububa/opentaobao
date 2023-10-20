@@ -9,11 +9,6 @@ import (
 // alibaba.mydata.overview.date.get
 //
 // 获取数据管家我的效果API可以使用的数据周期
-func AlibabaMydataOverviewDateGet(clt *core.SDKClient, req *mydata.AlibabaMydataOverviewDateGetAPIRequest, session string) (*mydata.AlibabaMydataOverviewDateGetAPIResponse, error) {
-	var resp mydata.AlibabaMydataOverviewDateGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMydataOverviewDateGet(clt *core.SDKClient, req *mydata.AlibabaMydataOverviewDateGetAPIRequest, resp *mydata.AlibabaMydataOverviewDateGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseBusinessActivityDeleteAPIRequest struct {
 // NewAlibabaAlihouseBusinessActivityDeleteRequest 初始化AlibabaAlihouseBusinessActivityDeleteAPIRequest对象
 func NewAlibabaAlihouseBusinessActivityDeleteRequest() *AlibabaAlihouseBusinessActivityDeleteAPIRequest {
 	return &AlibabaAlihouseBusinessActivityDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseBusinessActivityDeleteAPIRequest) Reset() {
+	r._baiYiActivityDataDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseBusinessActivityDeleteAPIRequest) SetBaiYiActivityDataDt
 // GetBaiYiActivityDataDto BaiYiActivityDataDto Getter
 func (r AlibabaAlihouseBusinessActivityDeleteAPIRequest) GetBaiYiActivityDataDto() *BusinessActivityDataDto {
 	return r._baiYiActivityDataDto
+}
+
+var poolAlibabaAlihouseBusinessActivityDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseBusinessActivityDeleteRequest()
+	},
+}
+
+// GetAlibabaAlihouseBusinessActivityDeleteRequest 从 sync.Pool 获取 AlibabaAlihouseBusinessActivityDeleteAPIRequest
+func GetAlibabaAlihouseBusinessActivityDeleteAPIRequest() *AlibabaAlihouseBusinessActivityDeleteAPIRequest {
+	return poolAlibabaAlihouseBusinessActivityDeleteAPIRequest.Get().(*AlibabaAlihouseBusinessActivityDeleteAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseBusinessActivityDeleteAPIRequest 将 AlibabaAlihouseBusinessActivityDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseBusinessActivityDeleteAPIRequest(v *AlibabaAlihouseBusinessActivityDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseBusinessActivityDeleteAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest struct {
 // NewAlibabaScbpAdCampaignDeleteForbiddenKeywordRequest 初始化AlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest对象
 func NewAlibabaScbpAdCampaignDeleteForbiddenKeywordRequest() *AlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest {
 	return &AlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest) Reset() {
+	r._topContext = nil
+	r._campaignId = 0
+	r._forbiddenKeywordBatchOperation = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest) SetForbiddenKeyw
 // GetForbiddenKeywordBatchOperation ForbiddenKeywordBatchOperation Getter
 func (r AlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest) GetForbiddenKeywordBatchOperation() *ForbiddenKeywordBatchOperationDto {
 	return r._forbiddenKeywordBatchOperation
+}
+
+var poolAlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdCampaignDeleteForbiddenKeywordRequest()
+	},
+}
+
+// GetAlibabaScbpAdCampaignDeleteForbiddenKeywordRequest 从 sync.Pool 获取 AlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest
+func GetAlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest() *AlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest {
+	return poolAlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest.Get().(*AlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest 将 AlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest(v *AlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdCampaignDeleteForbiddenKeywordAPIRequest.Put(v)
 }

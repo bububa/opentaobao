@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaEinvoicePaperPrintAPIRequest struct {
 // NewAlibabaEinvoicePaperPrintRequest 初始化AlibabaEinvoicePaperPrintAPIRequest对象
 func NewAlibabaEinvoicePaperPrintRequest() *AlibabaEinvoicePaperPrintAPIRequest {
 	return &AlibabaEinvoicePaperPrintAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoicePaperPrintAPIRequest) Reset() {
+	r._payeeRegisterNo = ""
+	r._serialNo = ""
+	r._dialogSettingFlag = 0
+	r._printFlag = 0
+	r._forcePrint = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaEinvoicePaperPrintAPIRequest) SetForcePrint(_forcePrint bool) er
 // GetForcePrint ForcePrint Getter
 func (r AlibabaEinvoicePaperPrintAPIRequest) GetForcePrint() bool {
 	return r._forcePrint
+}
+
+var poolAlibabaEinvoicePaperPrintAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoicePaperPrintRequest()
+	},
+}
+
+// GetAlibabaEinvoicePaperPrintRequest 从 sync.Pool 获取 AlibabaEinvoicePaperPrintAPIRequest
+func GetAlibabaEinvoicePaperPrintAPIRequest() *AlibabaEinvoicePaperPrintAPIRequest {
+	return poolAlibabaEinvoicePaperPrintAPIRequest.Get().(*AlibabaEinvoicePaperPrintAPIRequest)
+}
+
+// ReleaseAlibabaEinvoicePaperPrintAPIRequest 将 AlibabaEinvoicePaperPrintAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoicePaperPrintAPIRequest(v *AlibabaEinvoicePaperPrintAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoicePaperPrintAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package smartstore
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoSmartstoreDeviceStatusFeedbackAPIRequest struct {
 // NewTaobaoSmartstoreDeviceStatusFeedbackRequest 初始化TaobaoSmartstoreDeviceStatusFeedbackAPIRequest对象
 func NewTaobaoSmartstoreDeviceStatusFeedbackRequest() *TaobaoSmartstoreDeviceStatusFeedbackAPIRequest {
 	return &TaobaoSmartstoreDeviceStatusFeedbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSmartstoreDeviceStatusFeedbackAPIRequest) Reset() {
+	r._status = ""
+	r._deviceCode = ""
+	r._statusTime = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoSmartstoreDeviceStatusFeedbackAPIRequest) SetStatusTime(_statusTi
 // GetStatusTime StatusTime Getter
 func (r TaobaoSmartstoreDeviceStatusFeedbackAPIRequest) GetStatusTime() string {
 	return r._statusTime
+}
+
+var poolTaobaoSmartstoreDeviceStatusFeedbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSmartstoreDeviceStatusFeedbackRequest()
+	},
+}
+
+// GetTaobaoSmartstoreDeviceStatusFeedbackRequest 从 sync.Pool 获取 TaobaoSmartstoreDeviceStatusFeedbackAPIRequest
+func GetTaobaoSmartstoreDeviceStatusFeedbackAPIRequest() *TaobaoSmartstoreDeviceStatusFeedbackAPIRequest {
+	return poolTaobaoSmartstoreDeviceStatusFeedbackAPIRequest.Get().(*TaobaoSmartstoreDeviceStatusFeedbackAPIRequest)
+}
+
+// ReleaseTaobaoSmartstoreDeviceStatusFeedbackAPIRequest 将 TaobaoSmartstoreDeviceStatusFeedbackAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSmartstoreDeviceStatusFeedbackAPIRequest(v *TaobaoSmartstoreDeviceStatusFeedbackAPIRequest) {
+	v.Reset()
+	poolTaobaoSmartstoreDeviceStatusFeedbackAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoKoubeiTribeOpenUserQueryAPIRequest struct {
 // NewTaobaoKoubeiTribeOpenUserQueryRequest 初始化TaobaoKoubeiTribeOpenUserQueryAPIRequest对象
 func NewTaobaoKoubeiTribeOpenUserQueryRequest() *TaobaoKoubeiTribeOpenUserQueryAPIRequest {
 	return &TaobaoKoubeiTribeOpenUserQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoKoubeiTribeOpenUserQueryAPIRequest) Reset() {
+	r._verifyCode = ""
+	r._phone = ""
+	r._dataSetId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoKoubeiTribeOpenUserQueryAPIRequest) SetDataSetId(_dataSetId strin
 // GetDataSetId DataSetId Getter
 func (r TaobaoKoubeiTribeOpenUserQueryAPIRequest) GetDataSetId() string {
 	return r._dataSetId
+}
+
+var poolTaobaoKoubeiTribeOpenUserQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoKoubeiTribeOpenUserQueryRequest()
+	},
+}
+
+// GetTaobaoKoubeiTribeOpenUserQueryRequest 从 sync.Pool 获取 TaobaoKoubeiTribeOpenUserQueryAPIRequest
+func GetTaobaoKoubeiTribeOpenUserQueryAPIRequest() *TaobaoKoubeiTribeOpenUserQueryAPIRequest {
+	return poolTaobaoKoubeiTribeOpenUserQueryAPIRequest.Get().(*TaobaoKoubeiTribeOpenUserQueryAPIRequest)
+}
+
+// ReleaseTaobaoKoubeiTribeOpenUserQueryAPIRequest 将 TaobaoKoubeiTribeOpenUserQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoKoubeiTribeOpenUserQueryAPIRequest(v *TaobaoKoubeiTribeOpenUserQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoKoubeiTribeOpenUserQueryAPIRequest.Put(v)
 }

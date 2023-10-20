@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -55,8 +56,32 @@ type AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest struct {
 // NewAlibabaSecurityJaqSpamregisterpreventionResultFetchRequest 初始化AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest对象
 func NewAlibabaSecurityJaqSpamregisterpreventionResultFetchRequest() *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest {
 	return &AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(19),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) Reset() {
+	r._phoneNumber = ""
+	r._ip = ""
+	r._context = ""
+	r._email = ""
+	r._userId = ""
+	r._registerUrl = ""
+	r._agent = ""
+	r._cookie = ""
+	r._sessionId = ""
+	r._macAddress = ""
+	r._referer = ""
+	r._nickName = ""
+	r._companyName = ""
+	r._address = ""
+	r._idNumber = ""
+	r._bankCardNumber = ""
+	r._jsToken = ""
+	r._sdkToken = ""
+	r._source = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -321,4 +346,21 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetSourc
 // GetSource Source Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetSource() int64 {
 	return r._source
+}
+
+var poolAlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqSpamregisterpreventionResultFetchRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqSpamregisterpreventionResultFetchRequest 从 sync.Pool 获取 AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest
+func GetAlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest() *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest {
+	return poolAlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest.Get().(*AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest 将 AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest(v *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest.Put(v)
 }

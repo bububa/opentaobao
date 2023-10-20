@@ -9,11 +9,6 @@ import (
 // alibaba.health.vaccin.notice.replant.remind
 //
 // 支付宝疫苗补种提醒
-func AlibabaHealthVaccinNoticeReplantRemind(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinNoticeReplantRemindAPIRequest, session string) (*vaccin.AlibabaHealthVaccinNoticeReplantRemindAPIResponse, error) {
-	var resp vaccin.AlibabaHealthVaccinNoticeReplantRemindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHealthVaccinNoticeReplantRemind(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinNoticeReplantRemindAPIRequest, resp *vaccin.AlibabaHealthVaccinNoticeReplantRemindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

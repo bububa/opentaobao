@@ -2,6 +2,7 @@ package eticket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoVmarketEticketTimeExpandAPIRequest struct {
 // NewTaobaoVmarketEticketTimeExpandRequest 初始化TaobaoVmarketEticketTimeExpandAPIRequest对象
 func NewTaobaoVmarketEticketTimeExpandRequest() *TaobaoVmarketEticketTimeExpandAPIRequest {
 	return &TaobaoVmarketEticketTimeExpandAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoVmarketEticketTimeExpandAPIRequest) Reset() {
+	r._orderId = 0
+	r._expandDays = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoVmarketEticketTimeExpandAPIRequest) SetExpandDays(_expandDays int
 // GetExpandDays ExpandDays Getter
 func (r TaobaoVmarketEticketTimeExpandAPIRequest) GetExpandDays() int64 {
 	return r._expandDays
+}
+
+var poolTaobaoVmarketEticketTimeExpandAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoVmarketEticketTimeExpandRequest()
+	},
+}
+
+// GetTaobaoVmarketEticketTimeExpandRequest 从 sync.Pool 获取 TaobaoVmarketEticketTimeExpandAPIRequest
+func GetTaobaoVmarketEticketTimeExpandAPIRequest() *TaobaoVmarketEticketTimeExpandAPIRequest {
+	return poolTaobaoVmarketEticketTimeExpandAPIRequest.Get().(*TaobaoVmarketEticketTimeExpandAPIRequest)
+}
+
+// ReleaseTaobaoVmarketEticketTimeExpandAPIRequest 将 TaobaoVmarketEticketTimeExpandAPIRequest 放入 sync.Pool
+func ReleaseTaobaoVmarketEticketTimeExpandAPIRequest(v *TaobaoVmarketEticketTimeExpandAPIRequest) {
+	v.Reset()
+	poolTaobaoVmarketEticketTimeExpandAPIRequest.Put(v)
 }

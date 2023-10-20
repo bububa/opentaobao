@@ -2,6 +2,7 @@ package trade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoLifeReservationItemOrderChangeAPIResponse struct {
 	TaobaoLifeReservationItemOrderChangeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoLifeReservationItemOrderChangeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLifeReservationItemOrderChangeAPIResponseModel).Reset()
+}
+
 // TaobaoLifeReservationItemOrderChangeAPIResponseModel is 生服购后预约单外部发起变更 成功返回结果
 type TaobaoLifeReservationItemOrderChangeAPIResponseModel struct {
 	XMLName xml.Name `xml:"life_reservation_item_order_change_response"`
@@ -22,4 +29,27 @@ type TaobaoLifeReservationItemOrderChangeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *TaobaoLifeReservationItemOrderChangeResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLifeReservationItemOrderChangeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoLifeReservationItemOrderChangeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLifeReservationItemOrderChangeAPIResponse)
+	},
+}
+
+// GetTaobaoLifeReservationItemOrderChangeAPIResponse 从 sync.Pool 获取 TaobaoLifeReservationItemOrderChangeAPIResponse
+func GetTaobaoLifeReservationItemOrderChangeAPIResponse() *TaobaoLifeReservationItemOrderChangeAPIResponse {
+	return poolTaobaoLifeReservationItemOrderChangeAPIResponse.Get().(*TaobaoLifeReservationItemOrderChangeAPIResponse)
+}
+
+// ReleaseTaobaoLifeReservationItemOrderChangeAPIResponse 将 TaobaoLifeReservationItemOrderChangeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLifeReservationItemOrderChangeAPIResponse(v *TaobaoLifeReservationItemOrderChangeAPIResponse) {
+	v.Reset()
+	poolTaobaoLifeReservationItemOrderChangeAPIResponse.Put(v)
 }

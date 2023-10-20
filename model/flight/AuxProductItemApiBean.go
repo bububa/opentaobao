@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // AuxProductItemApiBean 结构体
 type AuxProductItemApiBean struct {
 	// 产品名称。 最大允许64个字符，不允许*·#|等特殊符号，也不允许带空格换行等符号
@@ -26,4 +30,32 @@ type AuxProductItemApiBean struct {
 	ProductType int64 `json:"product_type,omitempty" xml:"product_type,omitempty"`
 	// 选座说明，当productType=3或8 为必传
 	Seat *SeatApiBean `json:"seat,omitempty" xml:"seat,omitempty"`
+}
+
+var poolAuxProductItemApiBean = sync.Pool{
+	New: func() any {
+		return new(AuxProductItemApiBean)
+	},
+}
+
+// GetAuxProductItemApiBean() 从对象池中获取AuxProductItemApiBean
+func GetAuxProductItemApiBean() *AuxProductItemApiBean {
+	return poolAuxProductItemApiBean.Get().(*AuxProductItemApiBean)
+}
+
+// ReleaseAuxProductItemApiBean 释放AuxProductItemApiBean
+func ReleaseAuxProductItemApiBean(v *AuxProductItemApiBean) {
+	v.ProductName = ""
+	v.OuterId = ""
+	v.Baggage = nil
+	v.CounterPrice = 0
+	v.SaleType = 0
+	v.Service = nil
+	v.OnlinePrice = 0
+	v.SalesRule = nil
+	v.RefundRule = nil
+	v.BasePrice = 0
+	v.ProductType = 0
+	v.Seat = nil
+	poolAuxProductItemApiBean.Put(v)
 }

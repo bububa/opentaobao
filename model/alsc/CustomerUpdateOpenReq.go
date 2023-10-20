@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // CustomerUpdateOpenReq 结构体
 type CustomerUpdateOpenReq struct {
 	// 人群标签
@@ -40,4 +44,39 @@ type CustomerUpdateOpenReq struct {
 	Gender int64 `json:"gender,omitempty" xml:"gender,omitempty"`
 	// 0顾客，1会员
 	CustomerType int64 `json:"customer_type,omitempty" xml:"customer_type,omitempty"`
+}
+
+var poolCustomerUpdateOpenReq = sync.Pool{
+	New: func() any {
+		return new(CustomerUpdateOpenReq)
+	},
+}
+
+// GetCustomerUpdateOpenReq() 从对象池中获取CustomerUpdateOpenReq
+func GetCustomerUpdateOpenReq() *CustomerUpdateOpenReq {
+	return poolCustomerUpdateOpenReq.Get().(*CustomerUpdateOpenReq)
+}
+
+// ReleaseCustomerUpdateOpenReq 释放CustomerUpdateOpenReq
+func ReleaseCustomerUpdateOpenReq(v *CustomerUpdateOpenReq) {
+	v.TagIds = v.TagIds[:0]
+	v.Address = ""
+	v.Birthday = ""
+	v.BrandId = ""
+	v.CustomerId = ""
+	v.Email = ""
+	v.ExtInfo = ""
+	v.Invoice = ""
+	v.LevelId = ""
+	v.Mobile = ""
+	v.Name = ""
+	v.OperatorId = ""
+	v.OperatorName = ""
+	v.Phone = ""
+	v.Remark = ""
+	v.RequestId = ""
+	v.OutBrandId = ""
+	v.Gender = 0
+	v.CustomerType = 0
+	poolCustomerUpdateOpenReq.Put(v)
 }

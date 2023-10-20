@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // RoomTypeBedInfoDto 结构体
 type RoomTypeBedInfoDto struct {
 	// 价格列表
@@ -16,4 +20,27 @@ type RoomTypeBedInfoDto struct {
 	Desc string `json:"desc,omitempty" xml:"desc,omitempty"`
 	// 分组名
 	GroupName string `json:"group_name,omitempty" xml:"group_name,omitempty"`
+}
+
+var poolRoomTypeBedInfoDto = sync.Pool{
+	New: func() any {
+		return new(RoomTypeBedInfoDto)
+	},
+}
+
+// GetRoomTypeBedInfoDto() 从对象池中获取RoomTypeBedInfoDto
+func GetRoomTypeBedInfoDto() *RoomTypeBedInfoDto {
+	return poolRoomTypeBedInfoDto.Get().(*RoomTypeBedInfoDto)
+}
+
+// ReleaseRoomTypeBedInfoDto 释放RoomTypeBedInfoDto
+func ReleaseRoomTypeBedInfoDto(v *RoomTypeBedInfoDto) {
+	v.PriceInfoList = v.PriceInfoList[:0]
+	v.BriefDesc = ""
+	v.FuzzyDesc = ""
+	v.ClassificationDesc = ""
+	v.SimpleDesc = ""
+	v.Desc = ""
+	v.GroupName = ""
+	poolRoomTypeBedInfoDto.Put(v)
 }

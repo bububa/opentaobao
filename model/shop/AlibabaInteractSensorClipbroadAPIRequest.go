@@ -2,6 +2,7 @@ package shop
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaInteractSensorClipbroadAPIRequest struct {
 // NewAlibabaInteractSensorClipbroadRequest 初始化AlibabaInteractSensorClipbroadAPIRequest对象
 func NewAlibabaInteractSensorClipbroadRequest() *AlibabaInteractSensorClipbroadAPIRequest {
 	return &AlibabaInteractSensorClipbroadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractSensorClipbroadAPIRequest) Reset() {
+	r._unNamed = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaInteractSensorClipbroadAPIRequest) SetUnNamed(_unNamed string) e
 // GetUnNamed UnNamed Getter
 func (r AlibabaInteractSensorClipbroadAPIRequest) GetUnNamed() string {
 	return r._unNamed
+}
+
+var poolAlibabaInteractSensorClipbroadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractSensorClipbroadRequest()
+	},
+}
+
+// GetAlibabaInteractSensorClipbroadRequest 从 sync.Pool 获取 AlibabaInteractSensorClipbroadAPIRequest
+func GetAlibabaInteractSensorClipbroadAPIRequest() *AlibabaInteractSensorClipbroadAPIRequest {
+	return poolAlibabaInteractSensorClipbroadAPIRequest.Get().(*AlibabaInteractSensorClipbroadAPIRequest)
+}
+
+// ReleaseAlibabaInteractSensorClipbroadAPIRequest 将 AlibabaInteractSensorClipbroadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractSensorClipbroadAPIRequest(v *AlibabaInteractSensorClipbroadAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractSensorClipbroadAPIRequest.Put(v)
 }

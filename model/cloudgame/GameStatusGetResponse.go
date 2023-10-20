@@ -1,5 +1,9 @@
 package cloudgame
 
+import (
+	"sync"
+)
+
 // GameStatusGetResponse 结构体
 type GameStatusGetResponse struct {
 	// 玩家列表
@@ -18,4 +22,28 @@ type GameStatusGetResponse struct {
 	Game *OpenGameDto `json:"game,omitempty" xml:"game,omitempty"`
 	// 房间id
 	RoomId int64 `json:"room_id,omitempty" xml:"room_id,omitempty"`
+}
+
+var poolGameStatusGetResponse = sync.Pool{
+	New: func() any {
+		return new(GameStatusGetResponse)
+	},
+}
+
+// GetGameStatusGetResponse() 从对象池中获取GameStatusGetResponse
+func GetGameStatusGetResponse() *GameStatusGetResponse {
+	return poolGameStatusGetResponse.Get().(*GameStatusGetResponse)
+}
+
+// ReleaseGameStatusGetResponse 释放GameStatusGetResponse
+func ReleaseGameStatusGetResponse(v *GameStatusGetResponse) {
+	v.PlayerList = v.PlayerList[:0]
+	v.GameSession = ""
+	v.Status = ""
+	v.ExtInfo = ""
+	v.StatusData = ""
+	v.UserId = ""
+	v.Game = nil
+	v.RoomId = 0
+	poolGameStatusGetResponse.Put(v)
 }

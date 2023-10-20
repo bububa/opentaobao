@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkOrderSyncWithitemAPIRequest struct {
 // NewAlibabaWdkOrderSyncWithitemRequest 初始化AlibabaWdkOrderSyncWithitemAPIRequest对象
 func NewAlibabaWdkOrderSyncWithitemRequest() *AlibabaWdkOrderSyncWithitemAPIRequest {
 	return &AlibabaWdkOrderSyncWithitemAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkOrderSyncWithitemAPIRequest) Reset() {
+	r._posOrderAndItemSync = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkOrderSyncWithitemAPIRequest) SetPosOrderAndItemSync(_posOrder
 // GetPosOrderAndItemSync PosOrderAndItemSync Getter
 func (r AlibabaWdkOrderSyncWithitemAPIRequest) GetPosOrderAndItemSync() *PosOrderAndItemSyncDo {
 	return r._posOrderAndItemSync
+}
+
+var poolAlibabaWdkOrderSyncWithitemAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkOrderSyncWithitemRequest()
+	},
+}
+
+// GetAlibabaWdkOrderSyncWithitemRequest 从 sync.Pool 获取 AlibabaWdkOrderSyncWithitemAPIRequest
+func GetAlibabaWdkOrderSyncWithitemAPIRequest() *AlibabaWdkOrderSyncWithitemAPIRequest {
+	return poolAlibabaWdkOrderSyncWithitemAPIRequest.Get().(*AlibabaWdkOrderSyncWithitemAPIRequest)
+}
+
+// ReleaseAlibabaWdkOrderSyncWithitemAPIRequest 将 AlibabaWdkOrderSyncWithitemAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkOrderSyncWithitemAPIRequest(v *AlibabaWdkOrderSyncWithitemAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkOrderSyncWithitemAPIRequest.Put(v)
 }

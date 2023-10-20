@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Consignordershiprequest 结构体
 type Consignordershiprequest struct {
 	// 履约子单明细
@@ -22,4 +26,30 @@ type Consignordershiprequest struct {
 	SenderInfo *Senderinfo `json:"sender_info,omitempty" xml:"sender_info,omitempty"`
 	// 是否整单发货,目前只支持履约单整单发货回传
 	WholeSheetConsigned bool `json:"whole_sheet_consigned,omitempty" xml:"whole_sheet_consigned,omitempty"`
+}
+
+var poolConsignordershiprequest = sync.Pool{
+	New: func() any {
+		return new(Consignordershiprequest)
+	},
+}
+
+// GetConsignordershiprequest() 从对象池中获取Consignordershiprequest
+func GetConsignordershiprequest() *Consignordershiprequest {
+	return poolConsignordershiprequest.Get().(*Consignordershiprequest)
+}
+
+// ReleaseConsignordershiprequest 释放Consignordershiprequest
+func ReleaseConsignordershiprequest(v *Consignordershiprequest) {
+	v.OrderItems = v.OrderItems[:0]
+	v.TmsOrders = v.TmsOrders[:0]
+	v.SupplierId = ""
+	v.OutBizId = ""
+	v.BizOrderCode = ""
+	v.StoreCode = ""
+	v.StoreName = ""
+	v.BusinessModel = ""
+	v.SenderInfo = nil
+	v.WholeSheetConsigned = false
+	poolConsignordershiprequest.Put(v)
 }

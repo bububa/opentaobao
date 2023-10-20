@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallNrItemTagOpsAPIRequest struct {
 // NewTmallNrItemTagOpsRequest 初始化TmallNrItemTagOpsAPIRequest对象
 func NewTmallNrItemTagOpsRequest() *TmallNrItemTagOpsAPIRequest {
 	return &TmallNrItemTagOpsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrItemTagOpsAPIRequest) Reset() {
+	r._tagReqDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallNrItemTagOpsAPIRequest) SetTagReqDTO(_tagReqDTO *TagReqDto) error 
 // GetTagReqDTO TagReqDTO Getter
 func (r TmallNrItemTagOpsAPIRequest) GetTagReqDTO() *TagReqDto {
 	return r._tagReqDTO
+}
+
+var poolTmallNrItemTagOpsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrItemTagOpsRequest()
+	},
+}
+
+// GetTmallNrItemTagOpsRequest 从 sync.Pool 获取 TmallNrItemTagOpsAPIRequest
+func GetTmallNrItemTagOpsAPIRequest() *TmallNrItemTagOpsAPIRequest {
+	return poolTmallNrItemTagOpsAPIRequest.Get().(*TmallNrItemTagOpsAPIRequest)
+}
+
+// ReleaseTmallNrItemTagOpsAPIRequest 将 TmallNrItemTagOpsAPIRequest 放入 sync.Pool
+func ReleaseTmallNrItemTagOpsAPIRequest(v *TmallNrItemTagOpsAPIRequest) {
+	v.Reset()
+	poolTmallNrItemTagOpsAPIRequest.Put(v)
 }

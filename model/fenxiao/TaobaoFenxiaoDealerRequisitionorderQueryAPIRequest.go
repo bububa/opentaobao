@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoFenxiaoDealerRequisitionorderQueryAPIRequest struct {
 // NewTaobaoFenxiaoDealerRequisitionorderQueryRequest 初始化TaobaoFenxiaoDealerRequisitionorderQueryAPIRequest对象
 func NewTaobaoFenxiaoDealerRequisitionorderQueryRequest() *TaobaoFenxiaoDealerRequisitionorderQueryAPIRequest {
 	return &TaobaoFenxiaoDealerRequisitionorderQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoDealerRequisitionorderQueryAPIRequest) Reset() {
+	r._dealerOrderIds = r._dealerOrderIds[:0]
+	r._fields = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoFenxiaoDealerRequisitionorderQueryAPIRequest) SetFields(_fields s
 // GetFields Fields Getter
 func (r TaobaoFenxiaoDealerRequisitionorderQueryAPIRequest) GetFields() string {
 	return r._fields
+}
+
+var poolTaobaoFenxiaoDealerRequisitionorderQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoDealerRequisitionorderQueryRequest()
+	},
+}
+
+// GetTaobaoFenxiaoDealerRequisitionorderQueryRequest 从 sync.Pool 获取 TaobaoFenxiaoDealerRequisitionorderQueryAPIRequest
+func GetTaobaoFenxiaoDealerRequisitionorderQueryAPIRequest() *TaobaoFenxiaoDealerRequisitionorderQueryAPIRequest {
+	return poolTaobaoFenxiaoDealerRequisitionorderQueryAPIRequest.Get().(*TaobaoFenxiaoDealerRequisitionorderQueryAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoDealerRequisitionorderQueryAPIRequest 将 TaobaoFenxiaoDealerRequisitionorderQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoDealerRequisitionorderQueryAPIRequest(v *TaobaoFenxiaoDealerRequisitionorderQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoDealerRequisitionorderQueryAPIRequest.Put(v)
 }

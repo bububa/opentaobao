@@ -9,11 +9,6 @@ import (
 // alibaba.cgame.mp.mpproject.loginexistaccount
 //
 // 发送消息给游戏
-func AlibabaCgameMpMpprojectLoginexistaccount(clt *core.SDKClient, req *cloudgame.AlibabaCgameMpMpprojectLoginexistaccountAPIRequest, session string) (*cloudgame.AlibabaCgameMpMpprojectLoginexistaccountAPIResponse, error) {
-	var resp cloudgame.AlibabaCgameMpMpprojectLoginexistaccountAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCgameMpMpprojectLoginexistaccount(clt *core.SDKClient, req *cloudgame.AlibabaCgameMpMpprojectLoginexistaccountAPIRequest, resp *cloudgame.AlibabaCgameMpMpprojectLoginexistaccountAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

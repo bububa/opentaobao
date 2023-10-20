@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // ReceiverQuery 结构体
 type ReceiverQuery struct {
 	// 交易订单ID
@@ -10,4 +14,24 @@ type ReceiverQuery struct {
 	Scene string `json:"scene,omitempty" xml:"scene,omitempty"`
 	// 隐私号绑定天数
 	SecretNoDays int64 `json:"secret_no_days,omitempty" xml:"secret_no_days,omitempty"`
+}
+
+var poolReceiverQuery = sync.Pool{
+	New: func() any {
+		return new(ReceiverQuery)
+	},
+}
+
+// GetReceiverQuery() 从对象池中获取ReceiverQuery
+func GetReceiverQuery() *ReceiverQuery {
+	return poolReceiverQuery.Get().(*ReceiverQuery)
+}
+
+// ReleaseReceiverQuery 释放ReceiverQuery
+func ReleaseReceiverQuery(v *ReceiverQuery) {
+	v.Tid = ""
+	v.Oaid = ""
+	v.Scene = ""
+	v.SecretNoDays = 0
+	poolReceiverQuery.Put(v)
 }

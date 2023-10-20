@@ -9,11 +9,6 @@ import (
 // tmall.nr.seller.storerange.read
 //
 // 读取卖家所属门店的服务范围
-func TmallNrSellerStorerangeRead(clt *core.SDKClient, req *tmallnr.TmallNrSellerStorerangeReadAPIRequest, session string) (*tmallnr.TmallNrSellerStorerangeReadAPIResponse, error) {
-	var resp tmallnr.TmallNrSellerStorerangeReadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallNrSellerStorerangeRead(clt *core.SDKClient, req *tmallnr.TmallNrSellerStorerangeReadAPIRequest, resp *tmallnr.TmallNrSellerStorerangeReadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

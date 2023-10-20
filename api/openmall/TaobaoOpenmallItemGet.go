@@ -9,11 +9,6 @@ import (
 // taobao.openmall.item.get
 //
 // 获取联盟开放的openmall商品
-func TaobaoOpenmallItemGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallItemGetAPIRequest, session string) (*openmall.TaobaoOpenmallItemGetAPIResponse, error) {
-	var resp openmall.TaobaoOpenmallItemGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenmallItemGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallItemGetAPIRequest, resp *openmall.TaobaoOpenmallItemGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

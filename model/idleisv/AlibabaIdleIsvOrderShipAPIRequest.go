@@ -2,6 +2,7 @@ package idleisv
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AlibabaIdleIsvOrderShipAPIRequest struct {
 // NewAlibabaIdleIsvOrderShipRequest 初始化AlibabaIdleIsvOrderShipAPIRequest对象
 func NewAlibabaIdleIsvOrderShipRequest() *AlibabaIdleIsvOrderShipAPIRequest {
 	return &AlibabaIdleIsvOrderShipAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleIsvOrderShipAPIRequest) Reset() {
+	r._bizOrderId = ""
+	r._logisticsCompany = ""
+	r._shipMailNo = ""
+	r._senderPhone = ""
+	r._senderAddress = ""
+	r._senderName = ""
+	r._lcCode = ""
+	r._senderDivisionid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *AlibabaIdleIsvOrderShipAPIRequest) SetSenderDivisionid(_senderDivisioni
 // GetSenderDivisionid SenderDivisionid Getter
 func (r AlibabaIdleIsvOrderShipAPIRequest) GetSenderDivisionid() int64 {
 	return r._senderDivisionid
+}
+
+var poolAlibabaIdleIsvOrderShipAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleIsvOrderShipRequest()
+	},
+}
+
+// GetAlibabaIdleIsvOrderShipRequest 从 sync.Pool 获取 AlibabaIdleIsvOrderShipAPIRequest
+func GetAlibabaIdleIsvOrderShipAPIRequest() *AlibabaIdleIsvOrderShipAPIRequest {
+	return poolAlibabaIdleIsvOrderShipAPIRequest.Get().(*AlibabaIdleIsvOrderShipAPIRequest)
+}
+
+// ReleaseAlibabaIdleIsvOrderShipAPIRequest 将 AlibabaIdleIsvOrderShipAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleIsvOrderShipAPIRequest(v *AlibabaIdleIsvOrderShipAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleIsvOrderShipAPIRequest.Put(v)
 }

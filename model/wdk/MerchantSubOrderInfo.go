@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // MerchantSubOrderInfo 结构体
 type MerchantSubOrderInfo struct {
 	// 作用在单品的活动信息
@@ -22,4 +26,30 @@ type MerchantSubOrderInfo struct {
 	DiscountAmt int64 `json:"discount_amt,omitempty" xml:"discount_amt,omitempty"`
 	// 子订单总金额
 	TotalAmt int64 `json:"total_amt,omitempty" xml:"total_amt,omitempty"`
+}
+
+var poolMerchantSubOrderInfo = sync.Pool{
+	New: func() any {
+		return new(MerchantSubOrderInfo)
+	},
+}
+
+// GetMerchantSubOrderInfo() 从对象池中获取MerchantSubOrderInfo
+func GetMerchantSubOrderInfo() *MerchantSubOrderInfo {
+	return poolMerchantSubOrderInfo.Get().(*MerchantSubOrderInfo)
+}
+
+// ReleaseMerchantSubOrderInfo 释放MerchantSubOrderInfo
+func ReleaseMerchantSubOrderInfo(v *MerchantSubOrderInfo) {
+	v.ActivityInfo = ""
+	v.BarCode = ""
+	v.CouponInfo = ""
+	v.Quantity = ""
+	v.QuantityUnit = ""
+	v.SkuCode = ""
+	v.SubOrderId = ""
+	v.ActualAmt = 0
+	v.DiscountAmt = 0
+	v.TotalAmt = 0
+	poolMerchantSubOrderInfo.Put(v)
 }

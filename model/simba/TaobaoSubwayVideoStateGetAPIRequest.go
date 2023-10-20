@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoSubwayVideoStateGetAPIRequest struct {
 // NewTaobaoSubwayVideoStateGetRequest 初始化TaobaoSubwayVideoStateGetAPIRequest对象
 func NewTaobaoSubwayVideoStateGetRequest() *TaobaoSubwayVideoStateGetAPIRequest {
 	return &TaobaoSubwayVideoStateGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSubwayVideoStateGetAPIRequest) Reset() {
+	r._nick = ""
+	r._videoId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoSubwayVideoStateGetAPIRequest) SetVideoId(_videoId int64) error {
 // GetVideoId VideoId Getter
 func (r TaobaoSubwayVideoStateGetAPIRequest) GetVideoId() int64 {
 	return r._videoId
+}
+
+var poolTaobaoSubwayVideoStateGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSubwayVideoStateGetRequest()
+	},
+}
+
+// GetTaobaoSubwayVideoStateGetRequest 从 sync.Pool 获取 TaobaoSubwayVideoStateGetAPIRequest
+func GetTaobaoSubwayVideoStateGetAPIRequest() *TaobaoSubwayVideoStateGetAPIRequest {
+	return poolTaobaoSubwayVideoStateGetAPIRequest.Get().(*TaobaoSubwayVideoStateGetAPIRequest)
+}
+
+// ReleaseTaobaoSubwayVideoStateGetAPIRequest 将 TaobaoSubwayVideoStateGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSubwayVideoStateGetAPIRequest(v *TaobaoSubwayVideoStateGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSubwayVideoStateGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponse struct {
 	AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponseModel).Reset()
+}
+
 // AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponseModel is 更新服务进度 成功返回结果
 type AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_servicecenter_workcard_serviceprogress_update_response"`
@@ -26,4 +33,29 @@ type AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponseModel struct {
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.IsSuccess = false
+}
+
+var poolAlibabaServicecenterWorkcardServiceprogressUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponse)
+	},
+}
+
+// GetAlibabaServicecenterWorkcardServiceprogressUpdateAPIResponse 从 sync.Pool 获取 AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponse
+func GetAlibabaServicecenterWorkcardServiceprogressUpdateAPIResponse() *AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponse {
+	return poolAlibabaServicecenterWorkcardServiceprogressUpdateAPIResponse.Get().(*AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponse)
+}
+
+// ReleaseAlibabaServicecenterWorkcardServiceprogressUpdateAPIResponse 将 AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaServicecenterWorkcardServiceprogressUpdateAPIResponse(v *AlibabaServicecenterWorkcardServiceprogressUpdateAPIResponse) {
+	v.Reset()
+	poolAlibabaServicecenterWorkcardServiceprogressUpdateAPIResponse.Put(v)
 }

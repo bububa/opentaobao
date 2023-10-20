@@ -2,6 +2,7 @@ package idleisv
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaIdleIsvMediaUploadAPIRequest struct {
 // NewAlibabaIdleIsvMediaUploadRequest 初始化AlibabaIdleIsvMediaUploadAPIRequest对象
 func NewAlibabaIdleIsvMediaUploadRequest() *AlibabaIdleIsvMediaUploadAPIRequest {
 	return &AlibabaIdleIsvMediaUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleIsvMediaUploadAPIRequest) Reset() {
+	r._name = ""
+	r._data = nil
+	r._type = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaIdleIsvMediaUploadAPIRequest) SetType(_type int64) error {
 // GetType Type Getter
 func (r AlibabaIdleIsvMediaUploadAPIRequest) GetType() int64 {
 	return r._type
+}
+
+var poolAlibabaIdleIsvMediaUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleIsvMediaUploadRequest()
+	},
+}
+
+// GetAlibabaIdleIsvMediaUploadRequest 从 sync.Pool 获取 AlibabaIdleIsvMediaUploadAPIRequest
+func GetAlibabaIdleIsvMediaUploadAPIRequest() *AlibabaIdleIsvMediaUploadAPIRequest {
+	return poolAlibabaIdleIsvMediaUploadAPIRequest.Get().(*AlibabaIdleIsvMediaUploadAPIRequest)
+}
+
+// ReleaseAlibabaIdleIsvMediaUploadAPIRequest 将 AlibabaIdleIsvMediaUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleIsvMediaUploadAPIRequest(v *AlibabaIdleIsvMediaUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleIsvMediaUploadAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // aliexpress.solution.order.info.get
 //
 // get order detail info
-func AliexpressSolutionOrderInfoGet(clt *core.SDKClient, req *aesolution.AliexpressSolutionOrderInfoGetAPIRequest, session string) (*aesolution.AliexpressSolutionOrderInfoGetAPIResponse, error) {
-	var resp aesolution.AliexpressSolutionOrderInfoGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressSolutionOrderInfoGet(clt *core.SDKClient, req *aesolution.AliexpressSolutionOrderInfoGetAPIRequest, resp *aesolution.AliexpressSolutionOrderInfoGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

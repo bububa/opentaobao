@@ -2,6 +2,7 @@ package baodian
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoBaodianServerSdkConfigGetAPIRequest struct {
 // NewTaobaoBaodianServerSdkConfigGetRequest 初始化TaobaoBaodianServerSdkConfigGetAPIRequest对象
 func NewTaobaoBaodianServerSdkConfigGetRequest() *TaobaoBaodianServerSdkConfigGetAPIRequest {
 	return &TaobaoBaodianServerSdkConfigGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBaodianServerSdkConfigGetAPIRequest) Reset() {
+	r._appkey = ""
+	r._channel = ""
+	r._sdkVer = ""
+	r._type = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoBaodianServerSdkConfigGetAPIRequest) SetType(_type int64) error {
 // GetType Type Getter
 func (r TaobaoBaodianServerSdkConfigGetAPIRequest) GetType() int64 {
 	return r._type
+}
+
+var poolTaobaoBaodianServerSdkConfigGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBaodianServerSdkConfigGetRequest()
+	},
+}
+
+// GetTaobaoBaodianServerSdkConfigGetRequest 从 sync.Pool 获取 TaobaoBaodianServerSdkConfigGetAPIRequest
+func GetTaobaoBaodianServerSdkConfigGetAPIRequest() *TaobaoBaodianServerSdkConfigGetAPIRequest {
+	return poolTaobaoBaodianServerSdkConfigGetAPIRequest.Get().(*TaobaoBaodianServerSdkConfigGetAPIRequest)
+}
+
+// ReleaseTaobaoBaodianServerSdkConfigGetAPIRequest 将 TaobaoBaodianServerSdkConfigGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBaodianServerSdkConfigGetAPIRequest(v *TaobaoBaodianServerSdkConfigGetAPIRequest) {
+	v.Reset()
+	poolTaobaoBaodianServerSdkConfigGetAPIRequest.Put(v)
 }

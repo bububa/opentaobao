@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // Item 结构体
 type Item struct {
 	// test
@@ -15,7 +19,7 @@ type Item struct {
 	// test
 	Sn string `json:"sn,omitempty" xml:"sn,omitempty"`
 	// test
-	IsSnmgmt string `json:"isSNMgmt,omitempty" xml:"isSNMgmt,omitempty"`
+	IsSNMgmt string `json:"isSNMgmt,omitempty" xml:"isSNMgmt,omitempty"`
 	// test
 	BarCode string `json:"barCode,omitempty" xml:"barCode,omitempty"`
 	// test
@@ -218,4 +222,128 @@ type Item struct {
 	PriceAdjustment *PriceAdjustment `json:"priceAdjustment,omitempty" xml:"priceAdjustment,omitempty"`
 	// 库存商品总量
 	TotalQty int64 `json:"totalQty,omitempty" xml:"totalQty,omitempty"`
+}
+
+var poolItem = sync.Pool{
+	New: func() any {
+		return new(Item)
+	},
+}
+
+// GetItem() 从对象池中获取Item
+func GetItem() *Item {
+	return poolItem.Get().(*Item)
+}
+
+// ReleaseItem 释放Item
+func ReleaseItem(v *Item) {
+	v.Batchs = v.Batchs[:0]
+	v.ItemCode = ""
+	v.ItemId = ""
+	v.OwnerCode = ""
+	v.BrandName = ""
+	v.Sn = ""
+	v.IsSNMgmt = ""
+	v.BarCode = ""
+	v.Color = ""
+	v.Size = ""
+	v.Length = ""
+	v.Width = ""
+	v.Height = ""
+	v.Volume = ""
+	v.GrossWeight = ""
+	v.NetWeight = ""
+	v.TareWeight = ""
+	v.SafetyStock = ""
+	v.StockUnit = ""
+	v.StockStatus = ""
+	v.ProductDate = ""
+	v.ExpireDate = ""
+	v.IsShelfLifeMgmt = ""
+	v.ShelfLife = ""
+	v.RejectLifecycle = ""
+	v.LockupLifecycle = ""
+	v.AdventLifecycle = ""
+	v.BatchCode = ""
+	v.BatchRemark = ""
+	v.IsBatchMgmt = ""
+	v.PackCode = ""
+	v.Pcs = ""
+	v.OriginAddress = ""
+	v.ApprovalNumber = ""
+	v.IsFragile = ""
+	v.IsHazardous = ""
+	v.PricingCategory = ""
+	v.IsSku = ""
+	v.PackageMaterial = ""
+	v.Price = ""
+	v.IsAreaSale = ""
+	v.NormalQty = ""
+	v.DefectiveQty = ""
+	v.ReceiveQty = ""
+	v.ExCode = ""
+	v.DiscountPrice = ""
+	v.InventoryType = ""
+	v.PlanQty = ""
+	v.SourceOrderCode = ""
+	v.SubSourceOrderCode = ""
+	v.ProduceCode = ""
+	v.OrderLineNo = ""
+	v.ActualQty = ""
+	v.Amount = ""
+	v.Unit = ""
+	v.WarehouseCode = ""
+	v.LockQuantity = ""
+	v.OrderCode = ""
+	v.OrderType = ""
+	v.OutBizCode = ""
+	v.ProductCode = ""
+	v.PaperQty = ""
+	v.DiffQuantity = ""
+	v.ExtCode = ""
+	v.LackQty = ""
+	v.Reason = ""
+	v.SnCode = ""
+	v.GoodsCode = ""
+	v.StandardPrice = ""
+	v.ReferencePrice = ""
+	v.Discount = ""
+	v.ActualAmount = ""
+	v.LatestUpdateTime = ""
+	v.ChangeTime = ""
+	v.TempRequirement = ""
+	v.ChannelCode = ""
+	v.OriginCode = ""
+	v.ItemName = ""
+	v.Remark = ""
+	v.ShortName = ""
+	v.EnglishName = ""
+	v.SkuProperty = ""
+	v.Title = ""
+	v.CategoryId = ""
+	v.CategoryName = ""
+	v.ItemType = ""
+	v.TagPrice = ""
+	v.RetailPrice = ""
+	v.CostPrice = ""
+	v.PurchasePrice = ""
+	v.SeasonCode = ""
+	v.SeasonName = ""
+	v.BrandCode = ""
+	v.CreateTime = ""
+	v.UpdateTime = ""
+	v.IsValid = ""
+	v.LogisticsType = ""
+	v.IsLiquid = ""
+	v.Status = ""
+	v.SupplierCode = ""
+	v.IsLocked = ""
+	v.ScItemCode = ""
+	v.PlanCount = ""
+	v.OutCount = ""
+	v.InCount = ""
+	v.Quantity = 0
+	v.PriceAdjustment = nil
+	v.TotalQty = 0
+	poolItem.Put(v)
 }

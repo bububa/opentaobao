@@ -2,6 +2,7 @@ package lsttrade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaLstTradeOrderRefundListQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstTradeOrderRefundListQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaLstTradeOrderRefundListQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLstTradeOrderRefundListQueryAPIResponseModel).Reset()
 }
 
 // AlibabaLstTradeOrderRefundListQueryAPIResponseModel is 查询退款单列表(卖家视角) 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaLstTradeOrderRefundListQueryAPIResponseModel struct {
 	Size int64 `json:"size,omitempty" xml:"size,omitempty"`
 	// 当前页
 	Page int64 `json:"page,omitempty" xml:"page,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLstTradeOrderRefundListQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ContentList = m.ContentList[:0]
+	m.Total = 0
+	m.Size = 0
+	m.Page = 0
+}
+
+var poolAlibabaLstTradeOrderRefundListQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLstTradeOrderRefundListQueryAPIResponse)
+	},
+}
+
+// GetAlibabaLstTradeOrderRefundListQueryAPIResponse 从 sync.Pool 获取 AlibabaLstTradeOrderRefundListQueryAPIResponse
+func GetAlibabaLstTradeOrderRefundListQueryAPIResponse() *AlibabaLstTradeOrderRefundListQueryAPIResponse {
+	return poolAlibabaLstTradeOrderRefundListQueryAPIResponse.Get().(*AlibabaLstTradeOrderRefundListQueryAPIResponse)
+}
+
+// ReleaseAlibabaLstTradeOrderRefundListQueryAPIResponse 将 AlibabaLstTradeOrderRefundListQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLstTradeOrderRefundListQueryAPIResponse(v *AlibabaLstTradeOrderRefundListQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaLstTradeOrderRefundListQueryAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // AlitripMerchantGalaxyBrandSearchResult 结构体
 type AlitripMerchantGalaxyBrandSearchResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type AlitripMerchantGalaxyBrandSearchResult struct {
 	Brands *Content `json:"brands,omitempty" xml:"brands,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlitripMerchantGalaxyBrandSearchResult = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyBrandSearchResult)
+	},
+}
+
+// GetAlitripMerchantGalaxyBrandSearchResult() 从对象池中获取AlitripMerchantGalaxyBrandSearchResult
+func GetAlitripMerchantGalaxyBrandSearchResult() *AlitripMerchantGalaxyBrandSearchResult {
+	return poolAlitripMerchantGalaxyBrandSearchResult.Get().(*AlitripMerchantGalaxyBrandSearchResult)
+}
+
+// ReleaseAlitripMerchantGalaxyBrandSearchResult 释放AlitripMerchantGalaxyBrandSearchResult
+func ReleaseAlitripMerchantGalaxyBrandSearchResult(v *AlitripMerchantGalaxyBrandSearchResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Brands = nil
+	v.Success = false
+	poolAlitripMerchantGalaxyBrandSearchResult.Put(v)
 }

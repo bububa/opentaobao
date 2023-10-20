@@ -2,6 +2,7 @@ package traveltrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlitripTravelHotelticketOrderCreateAPIRequest struct {
 // NewAlitripTravelHotelticketOrderCreateRequest 初始化AlitripTravelHotelticketOrderCreateAPIRequest对象
 func NewAlitripTravelHotelticketOrderCreateRequest() *AlitripTravelHotelticketOrderCreateAPIRequest {
 	return &AlitripTravelHotelticketOrderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTravelHotelticketOrderCreateAPIRequest) Reset() {
+	r._extendParams = ""
+	r._orderId = ""
+	r._failMsg = ""
+	r._fliggyOrderId = ""
+	r._vouchers = nil
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlitripTravelHotelticketOrderCreateAPIRequest) SetStatus(_status int64)
 // GetStatus Status Getter
 func (r AlitripTravelHotelticketOrderCreateAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolAlitripTravelHotelticketOrderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTravelHotelticketOrderCreateRequest()
+	},
+}
+
+// GetAlitripTravelHotelticketOrderCreateRequest 从 sync.Pool 获取 AlitripTravelHotelticketOrderCreateAPIRequest
+func GetAlitripTravelHotelticketOrderCreateAPIRequest() *AlitripTravelHotelticketOrderCreateAPIRequest {
+	return poolAlitripTravelHotelticketOrderCreateAPIRequest.Get().(*AlitripTravelHotelticketOrderCreateAPIRequest)
+}
+
+// ReleaseAlitripTravelHotelticketOrderCreateAPIRequest 将 AlitripTravelHotelticketOrderCreateAPIRequest 放入 sync.Pool
+func ReleaseAlitripTravelHotelticketOrderCreateAPIRequest(v *AlitripTravelHotelticketOrderCreateAPIRequest) {
+	v.Reset()
+	poolAlitripTravelHotelticketOrderCreateAPIRequest.Put(v)
 }

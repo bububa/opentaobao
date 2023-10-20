@@ -2,6 +2,7 @@ package examination
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaAlihealthExaminationReserveReportAPIRequest struct {
 // NewAlibabaAlihealthExaminationReserveReportRequest 初始化AlibabaAlihealthExaminationReserveReportAPIRequest对象
 func NewAlibabaAlihealthExaminationReserveReportRequest() *AlibabaAlihealthExaminationReserveReportAPIRequest {
 	return &AlibabaAlihealthExaminationReserveReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthExaminationReserveReportAPIRequest) Reset() {
+	r._merchantCode = ""
+	r._reserveNumber = ""
+	r._checkNo = ""
+	r._uniqReserveCode = ""
+	r._searchNo = ""
+	r._searchPwd = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaAlihealthExaminationReserveReportAPIRequest) SetSearchPwd(_searc
 // GetSearchPwd SearchPwd Getter
 func (r AlibabaAlihealthExaminationReserveReportAPIRequest) GetSearchPwd() string {
 	return r._searchPwd
+}
+
+var poolAlibabaAlihealthExaminationReserveReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthExaminationReserveReportRequest()
+	},
+}
+
+// GetAlibabaAlihealthExaminationReserveReportRequest 从 sync.Pool 获取 AlibabaAlihealthExaminationReserveReportAPIRequest
+func GetAlibabaAlihealthExaminationReserveReportAPIRequest() *AlibabaAlihealthExaminationReserveReportAPIRequest {
+	return poolAlibabaAlihealthExaminationReserveReportAPIRequest.Get().(*AlibabaAlihealthExaminationReserveReportAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthExaminationReserveReportAPIRequest 将 AlibabaAlihealthExaminationReserveReportAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthExaminationReserveReportAPIRequest(v *AlibabaAlihealthExaminationReserveReportAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationReserveReportAPIRequest.Put(v)
 }

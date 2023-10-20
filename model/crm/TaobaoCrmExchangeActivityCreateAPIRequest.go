@@ -2,6 +2,7 @@ package crm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoCrmExchangeActivityCreateAPIRequest struct {
 // NewTaobaoCrmExchangeActivityCreateRequest 初始化TaobaoCrmExchangeActivityCreateAPIRequest对象
 func NewTaobaoCrmExchangeActivityCreateRequest() *TaobaoCrmExchangeActivityCreateAPIRequest {
 	return &TaobaoCrmExchangeActivityCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCrmExchangeActivityCreateAPIRequest) Reset() {
+	r._exchangeActivityCreateDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoCrmExchangeActivityCreateAPIRequest) SetExchangeActivityCreateDto
 // GetExchangeActivityCreateDto ExchangeActivityCreateDto Getter
 func (r TaobaoCrmExchangeActivityCreateAPIRequest) GetExchangeActivityCreateDto() *ExchangeActivityCreateDto {
 	return r._exchangeActivityCreateDto
+}
+
+var poolTaobaoCrmExchangeActivityCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCrmExchangeActivityCreateRequest()
+	},
+}
+
+// GetTaobaoCrmExchangeActivityCreateRequest 从 sync.Pool 获取 TaobaoCrmExchangeActivityCreateAPIRequest
+func GetTaobaoCrmExchangeActivityCreateAPIRequest() *TaobaoCrmExchangeActivityCreateAPIRequest {
+	return poolTaobaoCrmExchangeActivityCreateAPIRequest.Get().(*TaobaoCrmExchangeActivityCreateAPIRequest)
+}
+
+// ReleaseTaobaoCrmExchangeActivityCreateAPIRequest 将 TaobaoCrmExchangeActivityCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCrmExchangeActivityCreateAPIRequest(v *TaobaoCrmExchangeActivityCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoCrmExchangeActivityCreateAPIRequest.Put(v)
 }

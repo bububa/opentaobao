@@ -1,5 +1,9 @@
 package media
 
+import (
+	"sync"
+)
+
 // TopPictureDto 结构体
 type TopPictureDto struct {
 	// 图片名
@@ -22,4 +26,30 @@ type TopPictureDto struct {
 	FolderId int64 `json:"folder_id,omitempty" xml:"folder_id,omitempty"`
 	// 图片的大小，单位为字节
 	Size int64 `json:"size,omitempty" xml:"size,omitempty"`
+}
+
+var poolTopPictureDto = sync.Pool{
+	New: func() any {
+		return new(TopPictureDto)
+	},
+}
+
+// GetTopPictureDto() 从对象池中获取TopPictureDto
+func GetTopPictureDto() *TopPictureDto {
+	return poolTopPictureDto.Get().(*TopPictureDto)
+}
+
+// ReleaseTopPictureDto 释放TopPictureDto
+func ReleaseTopPictureDto(v *TopPictureDto) {
+	v.FileName = ""
+	v.BizStatus = ""
+	v.DeletedStatus = ""
+	v.FullUrl = ""
+	v.Pixel = ""
+	v.ExtensionName = ""
+	v.CompressPictureUrl = ""
+	v.FileId = 0
+	v.FolderId = 0
+	v.Size = 0
+	poolTopPictureDto.Put(v)
 }

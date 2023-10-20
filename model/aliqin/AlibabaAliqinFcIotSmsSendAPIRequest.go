@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaAliqinFcIotSmsSendAPIRequest struct {
 // NewAlibabaAliqinFcIotSmsSendRequest 初始化AlibabaAliqinFcIotSmsSendAPIRequest对象
 func NewAlibabaAliqinFcIotSmsSendRequest() *AlibabaAliqinFcIotSmsSendAPIRequest {
 	return &AlibabaAliqinFcIotSmsSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFcIotSmsSendAPIRequest) Reset() {
+	r._recNum = ""
+	r._smsTemplateCode = ""
+	r._extend = ""
+	r._smsParam = ""
+	r._smsType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaAliqinFcIotSmsSendAPIRequest) SetSmsType(_smsType string) error 
 // GetSmsType SmsType Getter
 func (r AlibabaAliqinFcIotSmsSendAPIRequest) GetSmsType() string {
 	return r._smsType
+}
+
+var poolAlibabaAliqinFcIotSmsSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFcIotSmsSendRequest()
+	},
+}
+
+// GetAlibabaAliqinFcIotSmsSendRequest 从 sync.Pool 获取 AlibabaAliqinFcIotSmsSendAPIRequest
+func GetAlibabaAliqinFcIotSmsSendAPIRequest() *AlibabaAliqinFcIotSmsSendAPIRequest {
+	return poolAlibabaAliqinFcIotSmsSendAPIRequest.Get().(*AlibabaAliqinFcIotSmsSendAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFcIotSmsSendAPIRequest 将 AlibabaAliqinFcIotSmsSendAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFcIotSmsSendAPIRequest(v *AlibabaAliqinFcIotSmsSendAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFcIotSmsSendAPIRequest.Put(v)
 }

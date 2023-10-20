@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -38,8 +39,16 @@ type TmallServicecenterWorkerDeleteAPIRequest struct {
 // NewTmallServicecenterWorkerDeleteRequest 初始化TmallServicecenterWorkerDeleteAPIRequest对象
 func NewTmallServicecenterWorkerDeleteRequest() *TmallServicecenterWorkerDeleteAPIRequest {
 	return &TmallServicecenterWorkerDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkerDeleteAPIRequest) Reset() {
+	r._name = ""
+	r._bizType = ""
+	r._phone = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +105,21 @@ func (r *TmallServicecenterWorkerDeleteAPIRequest) SetPhone(_phone int64) error 
 // GetPhone Phone Getter
 func (r TmallServicecenterWorkerDeleteAPIRequest) GetPhone() int64 {
 	return r._phone
+}
+
+var poolTmallServicecenterWorkerDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkerDeleteRequest()
+	},
+}
+
+// GetTmallServicecenterWorkerDeleteRequest 从 sync.Pool 获取 TmallServicecenterWorkerDeleteAPIRequest
+func GetTmallServicecenterWorkerDeleteAPIRequest() *TmallServicecenterWorkerDeleteAPIRequest {
+	return poolTmallServicecenterWorkerDeleteAPIRequest.Get().(*TmallServicecenterWorkerDeleteAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkerDeleteAPIRequest 将 TmallServicecenterWorkerDeleteAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkerDeleteAPIRequest(v *TmallServicecenterWorkerDeleteAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkerDeleteAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoAilabAicloudTopMemoNoteListAPIRequest struct {
 // NewTaobaoAilabAicloudTopMemoNoteListRequest 初始化TaobaoAilabAicloudTopMemoNoteListAPIRequest对象
 func NewTaobaoAilabAicloudTopMemoNoteListRequest() *TaobaoAilabAicloudTopMemoNoteListAPIRequest {
 	return &TaobaoAilabAicloudTopMemoNoteListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopMemoNoteListAPIRequest) Reset() {
+	r._schema = ""
+	r._userId = ""
+	r._utdId = ""
+	r._ext = ""
+	r._memoId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoAilabAicloudTopMemoNoteListAPIRequest) SetMemoId(_memoId int64) e
 // GetMemoId MemoId Getter
 func (r TaobaoAilabAicloudTopMemoNoteListAPIRequest) GetMemoId() int64 {
 	return r._memoId
+}
+
+var poolTaobaoAilabAicloudTopMemoNoteListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopMemoNoteListRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopMemoNoteListRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopMemoNoteListAPIRequest
+func GetTaobaoAilabAicloudTopMemoNoteListAPIRequest() *TaobaoAilabAicloudTopMemoNoteListAPIRequest {
+	return poolTaobaoAilabAicloudTopMemoNoteListAPIRequest.Get().(*TaobaoAilabAicloudTopMemoNoteListAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopMemoNoteListAPIRequest 将 TaobaoAilabAicloudTopMemoNoteListAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopMemoNoteListAPIRequest(v *TaobaoAilabAicloudTopMemoNoteListAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopMemoNoteListAPIRequest.Put(v)
 }

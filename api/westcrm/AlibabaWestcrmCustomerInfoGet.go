@@ -9,11 +9,6 @@ import (
 // alibaba.westcrm.customer.info.get
 //
 // 会员信息查询接口
-func AlibabaWestcrmCustomerInfoGet(clt *core.SDKClient, req *westcrm.AlibabaWestcrmCustomerInfoGetAPIRequest, session string) (*westcrm.AlibabaWestcrmCustomerInfoGetAPIResponse, error) {
-	var resp westcrm.AlibabaWestcrmCustomerInfoGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWestcrmCustomerInfoGet(clt *core.SDKClient, req *westcrm.AlibabaWestcrmCustomerInfoGetAPIRequest, resp *westcrm.AlibabaWestcrmCustomerInfoGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

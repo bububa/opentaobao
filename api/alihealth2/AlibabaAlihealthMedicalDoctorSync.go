@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.medical.doctor.sync
 //
 // 阿里健康预约挂号医生同步接口
-func AlibabaAlihealthMedicalDoctorSync(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthMedicalDoctorSyncAPIRequest, session string) (*alihealth2.AlibabaAlihealthMedicalDoctorSyncAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthMedicalDoctorSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthMedicalDoctorSync(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthMedicalDoctorSyncAPIRequest, resp *alihealth2.AlibabaAlihealthMedicalDoctorSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

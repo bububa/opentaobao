@@ -9,11 +9,6 @@ import (
 // alitrip.bp.channel.crow.query
 //
 // 判断用户是否在圈选的人群中
-func AlitripBpChannelCrowQuery(clt *core.SDKClient, req *alitripbp.AlitripBpChannelCrowQueryAPIRequest, session string) (*alitripbp.AlitripBpChannelCrowQueryAPIResponse, error) {
-	var resp alitripbp.AlitripBpChannelCrowQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBpChannelCrowQuery(clt *core.SDKClient, req *alitripbp.AlitripBpChannelCrowQueryAPIRequest, resp *alitripbp.AlitripBpChannelCrowQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

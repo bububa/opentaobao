@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SupplierRefundQueryRequest 结构体
 type SupplierRefundQueryRequest struct {
 	// 经营店id
@@ -22,4 +26,30 @@ type SupplierRefundQueryRequest struct {
 	OrderFrom int64 `json:"order_from,omitempty" xml:"order_from,omitempty"`
 	// 1:售中退款  2:售后退款
 	DisputeType int64 `json:"dispute_type,omitempty" xml:"dispute_type,omitempty"`
+}
+
+var poolSupplierRefundQueryRequest = sync.Pool{
+	New: func() any {
+		return new(SupplierRefundQueryRequest)
+	},
+}
+
+// GetSupplierRefundQueryRequest() 从对象池中获取SupplierRefundQueryRequest
+func GetSupplierRefundQueryRequest() *SupplierRefundQueryRequest {
+	return poolSupplierRefundQueryRequest.Get().(*SupplierRefundQueryRequest)
+}
+
+// ReleaseSupplierRefundQueryRequest 释放SupplierRefundQueryRequest
+func ReleaseSupplierRefundQueryRequest(v *SupplierRefundQueryRequest) {
+	v.StoreId = ""
+	v.SourceMerchantCode = ""
+	v.EndTime = ""
+	v.StartTime = ""
+	v.OrderClient = ""
+	v.ShopId = ""
+	v.PageSize = 0
+	v.PageIndex = 0
+	v.OrderFrom = 0
+	v.DisputeType = 0
+	poolSupplierRefundQueryRequest.Put(v)
 }

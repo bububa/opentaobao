@@ -2,6 +2,7 @@ package brandhub
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoBrandStartshopRptWordpackageGetAPIResponse struct {
 	TaobaoBrandStartshopRptWordpackageGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoBrandStartshopRptWordpackageGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoBrandStartshopRptWordpackageGetAPIResponseModel).Reset()
+}
+
 // TaobaoBrandStartshopRptWordpackageGetAPIResponseModel is 明星店铺品牌流量包报表数据查询 成功返回结果
 type TaobaoBrandStartshopRptWordpackageGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"brand_startshop_rpt_wordpackage_get_response"`
@@ -24,4 +31,28 @@ type TaobaoBrandStartshopRptWordpackageGetAPIResponseModel struct {
 	CampaignRptList []TaobaoBrandStartshopRptWordpackageGetResult `json:"campaign_rpt_list,omitempty" xml:"campaign_rpt_list>taobao_brand_startshop_rpt_wordpackage_get_result,omitempty"`
 	// 错误信息
 	ErrorParam string `json:"error_param,omitempty" xml:"error_param,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoBrandStartshopRptWordpackageGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.CampaignRptList = m.CampaignRptList[:0]
+	m.ErrorParam = ""
+}
+
+var poolTaobaoBrandStartshopRptWordpackageGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoBrandStartshopRptWordpackageGetAPIResponse)
+	},
+}
+
+// GetTaobaoBrandStartshopRptWordpackageGetAPIResponse 从 sync.Pool 获取 TaobaoBrandStartshopRptWordpackageGetAPIResponse
+func GetTaobaoBrandStartshopRptWordpackageGetAPIResponse() *TaobaoBrandStartshopRptWordpackageGetAPIResponse {
+	return poolTaobaoBrandStartshopRptWordpackageGetAPIResponse.Get().(*TaobaoBrandStartshopRptWordpackageGetAPIResponse)
+}
+
+// ReleaseTaobaoBrandStartshopRptWordpackageGetAPIResponse 将 TaobaoBrandStartshopRptWordpackageGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoBrandStartshopRptWordpackageGetAPIResponse(v *TaobaoBrandStartshopRptWordpackageGetAPIResponse) {
+	v.Reset()
+	poolTaobaoBrandStartshopRptWordpackageGetAPIResponse.Put(v)
 }

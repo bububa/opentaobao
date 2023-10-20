@@ -1,5 +1,9 @@
 package viapi
 
+import (
+	"sync"
+)
+
 // Elements 结构体
 type Elements struct {
 	// 检测框坐标，格式为[left, top, right, bottom]
@@ -18,4 +22,28 @@ type Elements struct {
 	Width int64 `json:"width,omitempty" xml:"width,omitempty"`
 	// 检测框的分数（置信度），范围为[0,1]
 	Score int64 `json:"score,omitempty" xml:"score,omitempty"`
+}
+
+var poolElements = sync.Pool{
+	New: func() any {
+		return new(Elements)
+	},
+}
+
+// GetElements() 从对象池中获取Elements
+func GetElements() *Elements {
+	return poolElements.Get().(*Elements)
+}
+
+// ReleaseElements 释放Elements
+func ReleaseElements(v *Elements) {
+	v.Boxes = v.Boxes[:0]
+	v.ImageURL = ""
+	v.Type = ""
+	v.X = 0
+	v.Y = 0
+	v.Height = 0
+	v.Width = 0
+	v.Score = 0
+	poolElements.Put(v)
 }

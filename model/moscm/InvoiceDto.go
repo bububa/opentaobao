@@ -1,5 +1,9 @@
 package moscm
 
+import (
+	"sync"
+)
+
 // InvoiceDto 结构体
 type InvoiceDto struct {
 	// 发票类型:普通发票、电子发票、增值税发票
@@ -12,4 +16,25 @@ type InvoiceDto struct {
 	TitleType string `json:"title_type,omitempty" xml:"title_type,omitempty"`
 	// 税号
 	TaxNumber string `json:"tax_number,omitempty" xml:"tax_number,omitempty"`
+}
+
+var poolInvoiceDto = sync.Pool{
+	New: func() any {
+		return new(InvoiceDto)
+	},
+}
+
+// GetInvoiceDto() 从对象池中获取InvoiceDto
+func GetInvoiceDto() *InvoiceDto {
+	return poolInvoiceDto.Get().(*InvoiceDto)
+}
+
+// ReleaseInvoiceDto 释放InvoiceDto
+func ReleaseInvoiceDto(v *InvoiceDto) {
+	v.Kind = ""
+	v.Title = ""
+	v.Content = ""
+	v.TitleType = ""
+	v.TaxNumber = ""
+	poolInvoiceDto.Put(v)
 }

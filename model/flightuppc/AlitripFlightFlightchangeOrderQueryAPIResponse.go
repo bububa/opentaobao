@@ -2,6 +2,7 @@ package flightuppc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripFlightFlightchangeOrderQueryAPIResponse struct {
 	AlitripFlightFlightchangeOrderQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripFlightFlightchangeOrderQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripFlightFlightchangeOrderQueryAPIResponseModel).Reset()
+}
+
 // AlitripFlightFlightchangeOrderQueryAPIResponseModel is 订单维度航变查询 成功返回结果
 type AlitripFlightFlightchangeOrderQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_flight_flightchange_order_query_response"`
@@ -26,4 +33,29 @@ type AlitripFlightFlightchangeOrderQueryAPIResponseModel struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 调用成功标志
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripFlightFlightchangeOrderQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = m.Result[:0]
+	m.ErrorMsg = ""
+	m.IsSuccess = false
+}
+
+var poolAlitripFlightFlightchangeOrderQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripFlightFlightchangeOrderQueryAPIResponse)
+	},
+}
+
+// GetAlitripFlightFlightchangeOrderQueryAPIResponse 从 sync.Pool 获取 AlitripFlightFlightchangeOrderQueryAPIResponse
+func GetAlitripFlightFlightchangeOrderQueryAPIResponse() *AlitripFlightFlightchangeOrderQueryAPIResponse {
+	return poolAlitripFlightFlightchangeOrderQueryAPIResponse.Get().(*AlitripFlightFlightchangeOrderQueryAPIResponse)
+}
+
+// ReleaseAlitripFlightFlightchangeOrderQueryAPIResponse 将 AlitripFlightFlightchangeOrderQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlitripFlightFlightchangeOrderQueryAPIResponse(v *AlitripFlightFlightchangeOrderQueryAPIResponse) {
+	v.Reset()
+	poolAlitripFlightFlightchangeOrderQueryAPIResponse.Put(v)
 }

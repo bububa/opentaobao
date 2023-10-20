@@ -2,6 +2,7 @@ package film
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoFilmDataThirdPartyRefundOrderAPIRequest struct {
 // NewTaobaoFilmDataThirdPartyRefundOrderRequest 初始化TaobaoFilmDataThirdPartyRefundOrderAPIRequest对象
 func NewTaobaoFilmDataThirdPartyRefundOrderRequest() *TaobaoFilmDataThirdPartyRefundOrderAPIRequest {
 	return &TaobaoFilmDataThirdPartyRefundOrderAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) Reset() {
+	r._extUserId = ""
+	r._extOrderId = ""
+	r._params = ""
+	r._userId = 0
+	r._platform = 0
+	r._tbOrderId = 0
+	r._refundAmount = 0
+	r._refundServiceFee = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetRefundServiceFee(_ref
 // GetRefundServiceFee RefundServiceFee Getter
 func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetRefundServiceFee() int64 {
 	return r._refundServiceFee
+}
+
+var poolTaobaoFilmDataThirdPartyRefundOrderAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFilmDataThirdPartyRefundOrderRequest()
+	},
+}
+
+// GetTaobaoFilmDataThirdPartyRefundOrderRequest 从 sync.Pool 获取 TaobaoFilmDataThirdPartyRefundOrderAPIRequest
+func GetTaobaoFilmDataThirdPartyRefundOrderAPIRequest() *TaobaoFilmDataThirdPartyRefundOrderAPIRequest {
+	return poolTaobaoFilmDataThirdPartyRefundOrderAPIRequest.Get().(*TaobaoFilmDataThirdPartyRefundOrderAPIRequest)
+}
+
+// ReleaseTaobaoFilmDataThirdPartyRefundOrderAPIRequest 将 TaobaoFilmDataThirdPartyRefundOrderAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFilmDataThirdPartyRefundOrderAPIRequest(v *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) {
+	v.Reset()
+	poolTaobaoFilmDataThirdPartyRefundOrderAPIRequest.Put(v)
 }

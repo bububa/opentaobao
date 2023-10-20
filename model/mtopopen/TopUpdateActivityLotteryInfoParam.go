@@ -1,5 +1,9 @@
 package mtopopen
 
+import (
+	"sync"
+)
+
 // TopUpdateActivityLotteryInfoParam 结构体
 type TopUpdateActivityLotteryInfoParam struct {
 	// 商家通过isv创建的活动id
@@ -48,4 +52,43 @@ type TopUpdateActivityLotteryInfoParam struct {
 	WinPermissionActivityCount int64 `json:"win_permission_activity_count,omitempty" xml:"win_permission_activity_count,omitempty"`
 	// 用户每天总共中奖次数限制
 	WinPermissionDayCount int64 `json:"win_permission_day_count,omitempty" xml:"win_permission_day_count,omitempty"`
+}
+
+var poolTopUpdateActivityLotteryInfoParam = sync.Pool{
+	New: func() any {
+		return new(TopUpdateActivityLotteryInfoParam)
+	},
+}
+
+// GetTopUpdateActivityLotteryInfoParam() 从对象池中获取TopUpdateActivityLotteryInfoParam
+func GetTopUpdateActivityLotteryInfoParam() *TopUpdateActivityLotteryInfoParam {
+	return poolTopUpdateActivityLotteryInfoParam.Get().(*TopUpdateActivityLotteryInfoParam)
+}
+
+// ReleaseTopUpdateActivityLotteryInfoParam 释放TopUpdateActivityLotteryInfoParam
+func ReleaseTopUpdateActivityLotteryInfoParam(v *TopUpdateActivityLotteryInfoParam) {
+	v.ActivityBizId = ""
+	v.AppKey = ""
+	v.BannerUrl = ""
+	v.BenefitAmount = ""
+	v.BenefitAttribute = ""
+	v.BenefitType = ""
+	v.BizType = ""
+	v.EndTime = ""
+	v.Name = ""
+	v.PrizeExtAttribute = ""
+	v.PrizeName = ""
+	v.PrizeParamAttribute = ""
+	v.PrizeQuantity = ""
+	v.PrizeRemainQuantity = ""
+	v.PrizeType = ""
+	v.Probability = ""
+	v.StartTime = ""
+	v.BenefitDenomination = 0
+	v.BenefitId = 0
+	v.LotteryActivityEndDate = 0
+	v.LotteryActivityStartDate = 0
+	v.WinPermissionActivityCount = 0
+	v.WinPermissionDayCount = 0
+	poolTopUpdateActivityLotteryInfoParam.Put(v)
 }

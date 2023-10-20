@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // InsightWordSubDataDto 结构体
 type InsightWordSubDataDto struct {
 	// 点击转化率
@@ -42,4 +46,40 @@ type InsightWordSubDataDto struct {
 	Favshoptotal int64 `json:"favshoptotal,omitempty" xml:"favshoptotal,omitempty"`
 	// 竞争度
 	Competition int64 `json:"competition,omitempty" xml:"competition,omitempty"`
+}
+
+var poolInsightWordSubDataDto = sync.Pool{
+	New: func() any {
+		return new(InsightWordSubDataDto)
+	},
+}
+
+// GetInsightWordSubDataDto() 从对象池中获取InsightWordSubDataDto
+func GetInsightWordSubDataDto() *InsightWordSubDataDto {
+	return poolInsightWordSubDataDto.Get().(*InsightWordSubDataDto)
+}
+
+// ReleaseInsightWordSubDataDto 释放InsightWordSubDataDto
+func ReleaseInsightWordSubDataDto(v *InsightWordSubDataDto) {
+	v.Coverage = ""
+	v.Cpc = ""
+	v.Roi = ""
+	v.Bidword = ""
+	v.Ctr = ""
+	v.Impression = 0
+	v.Indirecttransaction = 0
+	v.Mechanism = 0
+	v.Click = 0
+	v.Cost = 0
+	v.Network = 0
+	v.Directtransaction = 0
+	v.Favitemtotal = 0
+	v.Transactionshippingtotal = 0
+	v.Favtotal = 0
+	v.Transactiontotal = 0
+	v.Indirecttransactionshipping = 0
+	v.Directtransactionshipping = 0
+	v.Favshoptotal = 0
+	v.Competition = 0
+	poolInsightWordSubDataDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrDeliveryBriefStatusDto 结构体
 type NrDeliveryBriefStatusDto struct {
 	// 状态产生时间
@@ -18,4 +22,28 @@ type NrDeliveryBriefStatusDto struct {
 	LogisticsStatusName string `json:"logistics_status_name,omitempty" xml:"logistics_status_name,omitempty"`
 	// 包含[CREATE,GRASP,GOT,DELIVERYED]
 	LogisticsStatus string `json:"logistics_status,omitempty" xml:"logistics_status,omitempty"`
+}
+
+var poolNrDeliveryBriefStatusDto = sync.Pool{
+	New: func() any {
+		return new(NrDeliveryBriefStatusDto)
+	},
+}
+
+// GetNrDeliveryBriefStatusDto() 从对象池中获取NrDeliveryBriefStatusDto
+func GetNrDeliveryBriefStatusDto() *NrDeliveryBriefStatusDto {
+	return poolNrDeliveryBriefStatusDto.Get().(*NrDeliveryBriefStatusDto)
+}
+
+// ReleaseNrDeliveryBriefStatusDto 释放NrDeliveryBriefStatusDto
+func ReleaseNrDeliveryBriefStatusDto(v *NrDeliveryBriefStatusDto) {
+	v.LogisticsTime = ""
+	v.FailCode = ""
+	v.FailReason = ""
+	v.DelivererPhone = ""
+	v.DelivererName = ""
+	v.SpName = ""
+	v.LogisticsStatusName = ""
+	v.LogisticsStatus = ""
+	poolNrDeliveryBriefStatusDto.Put(v)
 }

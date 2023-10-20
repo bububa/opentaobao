@@ -1,5 +1,9 @@
 package ticket
 
+import (
+	"sync"
+)
+
 // Product 结构体
 type Product struct {
 	// 标准收费项目ID
@@ -14,4 +18,26 @@ type Product struct {
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 商品名称
 	ItemName string `json:"item_name,omitempty" xml:"item_name,omitempty"`
+}
+
+var poolProduct = sync.Pool{
+	New: func() any {
+		return new(Product)
+	},
+}
+
+// GetProduct() 从对象池中获取Product
+func GetProduct() *Product {
+	return poolProduct.Get().(*Product)
+}
+
+// ReleaseProduct 释放Product
+func ReleaseProduct(v *Product) {
+	v.AliProductId = ""
+	v.AliProductName = ""
+	v.OutProductId = ""
+	v.OutProductName = ""
+	v.ItemId = ""
+	v.ItemName = ""
+	poolProduct.Put(v)
 }

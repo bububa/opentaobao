@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoSimbaKeywordidsChangedGetAPIRequest struct {
 // NewTaobaoSimbaKeywordidsChangedGetRequest 初始化TaobaoSimbaKeywordidsChangedGetAPIRequest对象
 func NewTaobaoSimbaKeywordidsChangedGetRequest() *TaobaoSimbaKeywordidsChangedGetAPIRequest {
 	return &TaobaoSimbaKeywordidsChangedGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaKeywordidsChangedGetAPIRequest) Reset() {
+	r._nick = ""
+	r._startTime = ""
+	r._pageSize = 0
+	r._pageNo = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoSimbaKeywordidsChangedGetAPIRequest) SetPageNo(_pageNo int64) err
 // GetPageNo PageNo Getter
 func (r TaobaoSimbaKeywordidsChangedGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
+}
+
+var poolTaobaoSimbaKeywordidsChangedGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaKeywordidsChangedGetRequest()
+	},
+}
+
+// GetTaobaoSimbaKeywordidsChangedGetRequest 从 sync.Pool 获取 TaobaoSimbaKeywordidsChangedGetAPIRequest
+func GetTaobaoSimbaKeywordidsChangedGetAPIRequest() *TaobaoSimbaKeywordidsChangedGetAPIRequest {
+	return poolTaobaoSimbaKeywordidsChangedGetAPIRequest.Get().(*TaobaoSimbaKeywordidsChangedGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaKeywordidsChangedGetAPIRequest 将 TaobaoSimbaKeywordidsChangedGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaKeywordidsChangedGetAPIRequest(v *TaobaoSimbaKeywordidsChangedGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaKeywordidsChangedGetAPIRequest.Put(v)
 }

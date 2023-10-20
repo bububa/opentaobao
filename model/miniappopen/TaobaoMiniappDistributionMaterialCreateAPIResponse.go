@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoMiniappDistributionMaterialCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappDistributionMaterialCreateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappDistributionMaterialCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMiniappDistributionMaterialCreateAPIResponseModel).Reset()
 }
 
 // TaobaoMiniappDistributionMaterialCreateAPIResponseModel is 小程序投放--新建投放素材 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoMiniappDistributionMaterialCreateAPIResponseModel struct {
 	Model int64 `json:"model,omitempty" xml:"model,omitempty"`
 	// 调用是否成功
 	MaterialSuccess bool `json:"material_success,omitempty" xml:"material_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappDistributionMaterialCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MaterialErrorCode = ""
+	m.MaterialErrorMessage = ""
+	m.Model = 0
+	m.MaterialSuccess = false
+}
+
+var poolTaobaoMiniappDistributionMaterialCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMiniappDistributionMaterialCreateAPIResponse)
+	},
+}
+
+// GetTaobaoMiniappDistributionMaterialCreateAPIResponse 从 sync.Pool 获取 TaobaoMiniappDistributionMaterialCreateAPIResponse
+func GetTaobaoMiniappDistributionMaterialCreateAPIResponse() *TaobaoMiniappDistributionMaterialCreateAPIResponse {
+	return poolTaobaoMiniappDistributionMaterialCreateAPIResponse.Get().(*TaobaoMiniappDistributionMaterialCreateAPIResponse)
+}
+
+// ReleaseTaobaoMiniappDistributionMaterialCreateAPIResponse 将 TaobaoMiniappDistributionMaterialCreateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMiniappDistributionMaterialCreateAPIResponse(v *TaobaoMiniappDistributionMaterialCreateAPIResponse) {
+	v.Reset()
+	poolTaobaoMiniappDistributionMaterialCreateAPIResponse.Put(v)
 }

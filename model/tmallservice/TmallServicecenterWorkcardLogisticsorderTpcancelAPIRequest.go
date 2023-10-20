@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest struct {
 // NewTmallServicecenterWorkcardLogisticsorderTpcancelRequest 初始化TmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest对象
 func NewTmallServicecenterWorkcardLogisticsorderTpcancelRequest() *TmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest {
 	return &TmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest) Reset() {
+	r._realTpNick = ""
+	r._comment = ""
+	r._workcardIdList = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest) SetWorkcard
 // GetWorkcardIdList WorkcardIdList Getter
 func (r TmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest) GetWorkcardIdList() int64 {
 	return r._workcardIdList
+}
+
+var poolTmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkcardLogisticsorderTpcancelRequest()
+	},
+}
+
+// GetTmallServicecenterWorkcardLogisticsorderTpcancelRequest 从 sync.Pool 获取 TmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest
+func GetTmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest() *TmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest {
+	return poolTmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest.Get().(*TmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest 将 TmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest(v *TmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkcardLogisticsorderTpcancelAPIRequest.Put(v)
 }

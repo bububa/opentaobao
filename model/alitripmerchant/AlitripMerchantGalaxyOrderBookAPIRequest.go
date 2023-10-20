@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlitripMerchantGalaxyOrderBookAPIRequest struct {
 // NewAlitripMerchantGalaxyOrderBookRequest 初始化AlitripMerchantGalaxyOrderBookAPIRequest对象
 func NewAlitripMerchantGalaxyOrderBookRequest() *AlitripMerchantGalaxyOrderBookAPIRequest {
 	return &AlitripMerchantGalaxyOrderBookAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyOrderBookAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r._orderCode = ""
+	r._sourceQuery = ""
+	r._orderParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlitripMerchantGalaxyOrderBookAPIRequest) SetOrderParam(_orderParam *Cr
 // GetOrderParam OrderParam Getter
 func (r AlitripMerchantGalaxyOrderBookAPIRequest) GetOrderParam() *CreateOrderParam {
 	return r._orderParam
+}
+
+var poolAlitripMerchantGalaxyOrderBookAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyOrderBookRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyOrderBookRequest 从 sync.Pool 获取 AlitripMerchantGalaxyOrderBookAPIRequest
+func GetAlitripMerchantGalaxyOrderBookAPIRequest() *AlitripMerchantGalaxyOrderBookAPIRequest {
+	return poolAlitripMerchantGalaxyOrderBookAPIRequest.Get().(*AlitripMerchantGalaxyOrderBookAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyOrderBookAPIRequest 将 AlitripMerchantGalaxyOrderBookAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyOrderBookAPIRequest(v *AlitripMerchantGalaxyOrderBookAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyOrderBookAPIRequest.Put(v)
 }

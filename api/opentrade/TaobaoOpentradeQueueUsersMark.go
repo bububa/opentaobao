@@ -9,11 +9,6 @@ import (
 // taobao.opentrade.queue.users.mark
 //
 // 尖货交易用户标记信息回传，根据openId标记用户可购买商品
-func TaobaoOpentradeQueueUsersMark(clt *core.SDKClient, req *opentrade.TaobaoOpentradeQueueUsersMarkAPIRequest, session string) (*opentrade.TaobaoOpentradeQueueUsersMarkAPIResponse, error) {
-	var resp opentrade.TaobaoOpentradeQueueUsersMarkAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpentradeQueueUsersMark(clt *core.SDKClient, req *opentrade.TaobaoOpentradeQueueUsersMarkAPIRequest, resp *opentrade.TaobaoOpentradeQueueUsersMarkAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpChannelSubRefundCreateAPIRequest struct {
 // NewAlibabaAscpChannelSubRefundCreateRequest 初始化AlibabaAscpChannelSubRefundCreateAPIRequest对象
 func NewAlibabaAscpChannelSubRefundCreateRequest() *AlibabaAscpChannelSubRefundCreateAPIRequest {
 	return &AlibabaAscpChannelSubRefundCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpChannelSubRefundCreateAPIRequest) Reset() {
+	r._subRefundCreateReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpChannelSubRefundCreateAPIRequest) SetSubRefundCreateReq(_sub
 // GetSubRefundCreateReq SubRefundCreateReq Getter
 func (r AlibabaAscpChannelSubRefundCreateAPIRequest) GetSubRefundCreateReq() *ExternalCreateRefundOrderDetailRequest {
 	return r._subRefundCreateReq
+}
+
+var poolAlibabaAscpChannelSubRefundCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpChannelSubRefundCreateRequest()
+	},
+}
+
+// GetAlibabaAscpChannelSubRefundCreateRequest 从 sync.Pool 获取 AlibabaAscpChannelSubRefundCreateAPIRequest
+func GetAlibabaAscpChannelSubRefundCreateAPIRequest() *AlibabaAscpChannelSubRefundCreateAPIRequest {
+	return poolAlibabaAscpChannelSubRefundCreateAPIRequest.Get().(*AlibabaAscpChannelSubRefundCreateAPIRequest)
+}
+
+// ReleaseAlibabaAscpChannelSubRefundCreateAPIRequest 将 AlibabaAscpChannelSubRefundCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpChannelSubRefundCreateAPIRequest(v *AlibabaAscpChannelSubRefundCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpChannelSubRefundCreateAPIRequest.Put(v)
 }

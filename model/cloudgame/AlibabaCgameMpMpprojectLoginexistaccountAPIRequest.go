@@ -2,6 +2,7 @@ package cloudgame
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type AlibabaCgameMpMpprojectLoginexistaccountAPIRequest struct {
 // NewAlibabaCgameMpMpprojectLoginexistaccountRequest 初始化AlibabaCgameMpMpprojectLoginexistaccountAPIRequest对象
 func NewAlibabaCgameMpMpprojectLoginexistaccountRequest() *AlibabaCgameMpMpprojectLoginexistaccountAPIRequest {
 	return &AlibabaCgameMpMpprojectLoginexistaccountAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCgameMpMpprojectLoginexistaccountAPIRequest) Reset() {
+	r._deviceId = ""
+	r._userId = ""
+	r._userToken = ""
+	r._userAccessToken = ""
+	r._instanceId = ""
+	r._gameId = ""
+	r._gameProjectKey = ""
+	r._customerAccountId = ""
+	r._accountType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *AlibabaCgameMpMpprojectLoginexistaccountAPIRequest) SetAccountType(_acc
 // GetAccountType AccountType Getter
 func (r AlibabaCgameMpMpprojectLoginexistaccountAPIRequest) GetAccountType() int64 {
 	return r._accountType
+}
+
+var poolAlibabaCgameMpMpprojectLoginexistaccountAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCgameMpMpprojectLoginexistaccountRequest()
+	},
+}
+
+// GetAlibabaCgameMpMpprojectLoginexistaccountRequest 从 sync.Pool 获取 AlibabaCgameMpMpprojectLoginexistaccountAPIRequest
+func GetAlibabaCgameMpMpprojectLoginexistaccountAPIRequest() *AlibabaCgameMpMpprojectLoginexistaccountAPIRequest {
+	return poolAlibabaCgameMpMpprojectLoginexistaccountAPIRequest.Get().(*AlibabaCgameMpMpprojectLoginexistaccountAPIRequest)
+}
+
+// ReleaseAlibabaCgameMpMpprojectLoginexistaccountAPIRequest 将 AlibabaCgameMpMpprojectLoginexistaccountAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCgameMpMpprojectLoginexistaccountAPIRequest(v *AlibabaCgameMpMpprojectLoginexistaccountAPIRequest) {
+	v.Reset()
+	poolAlibabaCgameMpMpprojectLoginexistaccountAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // DeviceDataApiDto 结构体
 type DeviceDataApiDto struct {
 	// 设备id
@@ -20,4 +24,29 @@ type DeviceDataApiDto struct {
 	ValueType int64 `json:"value_type,omitempty" xml:"value_type,omitempty"`
 	// 单位id
 	UnitId int64 `json:"unit_id,omitempty" xml:"unit_id,omitempty"`
+}
+
+var poolDeviceDataApiDto = sync.Pool{
+	New: func() any {
+		return new(DeviceDataApiDto)
+	},
+}
+
+// GetDeviceDataApiDto() 从对象池中获取DeviceDataApiDto
+func GetDeviceDataApiDto() *DeviceDataApiDto {
+	return poolDeviceDataApiDto.Get().(*DeviceDataApiDto)
+}
+
+// ReleaseDeviceDataApiDto 释放DeviceDataApiDto
+func ReleaseDeviceDataApiDto(v *DeviceDataApiDto) {
+	v.DeviceId = ""
+	v.DeviceCode = ""
+	v.PropertyCode = ""
+	v.Value = ""
+	v.ValueTypeName = ""
+	v.UnitCode = ""
+	v.Timestamp = 0
+	v.ValueType = 0
+	v.UnitId = 0
+	poolDeviceDataApiDto.Put(v)
 }

@@ -2,6 +2,7 @@ package hotelhstdf
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripHotelHstdfBusinessareaGetAPIResponse struct {
 	AlitripHotelHstdfBusinessareaGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripHotelHstdfBusinessareaGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripHotelHstdfBusinessareaGetAPIResponseModel).Reset()
+}
+
 // AlitripHotelHstdfBusinessareaGetAPIResponseModel is 根据城市查询商圈 成功返回结果
 type AlitripHotelHstdfBusinessareaGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_hotel_hstdf_businessarea_get_response"`
@@ -22,4 +29,27 @@ type AlitripHotelHstdfBusinessareaGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// top返回结果
 	Result *TopStdResultSet `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripHotelHstdfBusinessareaGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripHotelHstdfBusinessareaGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripHotelHstdfBusinessareaGetAPIResponse)
+	},
+}
+
+// GetAlitripHotelHstdfBusinessareaGetAPIResponse 从 sync.Pool 获取 AlitripHotelHstdfBusinessareaGetAPIResponse
+func GetAlitripHotelHstdfBusinessareaGetAPIResponse() *AlitripHotelHstdfBusinessareaGetAPIResponse {
+	return poolAlitripHotelHstdfBusinessareaGetAPIResponse.Get().(*AlitripHotelHstdfBusinessareaGetAPIResponse)
+}
+
+// ReleaseAlitripHotelHstdfBusinessareaGetAPIResponse 将 AlitripHotelHstdfBusinessareaGetAPIResponse 保存到 sync.Pool
+func ReleaseAlitripHotelHstdfBusinessareaGetAPIResponse(v *AlitripHotelHstdfBusinessareaGetAPIResponse) {
+	v.Reset()
+	poolAlitripHotelHstdfBusinessareaGetAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // Serializable 结构体
 type Serializable struct {
 	// 明细
@@ -130,4 +134,84 @@ type Serializable struct {
 	ZfbDk bool `json:"zfb_dk,omitempty" xml:"zfb_dk,omitempty"`
 	// 是否为返现订单
 	CashOrder bool `json:"cash_order,omitempty" xml:"cash_order,omitempty"`
+}
+
+var poolSerializable = sync.Pool{
+	New: func() any {
+		return new(Serializable)
+	},
+}
+
+// GetSerializable() 从对象池中获取Serializable
+func GetSerializable() *Serializable {
+	return poolSerializable.Get().(*Serializable)
+}
+
+// ReleaseSerializable 释放Serializable
+func ReleaseSerializable(v *Serializable) {
+	v.PayDetails = v.PayDetails[:0]
+	v.PlanIds = v.PlanIds[:0]
+	v.BizOrderId = ""
+	v.PlanId = ""
+	v.AlipayTradeNo = ""
+	v.PayTime = ""
+	v.PayStatus = ""
+	v.PayBizCode = ""
+	v.PayStatusDesc = ""
+	v.AppKey = ""
+	v.BuyerNick = ""
+	v.SellerNick = ""
+	v.SellerAlipayUserId = ""
+	v.SellerAlipayAccount = ""
+	v.SellerAddress = ""
+	v.SellerPhone = ""
+	v.ShipType = ""
+	v.ShipTime = ""
+	v.SellerRealName = ""
+	v.ZfbDkCode = ""
+	v.ApprizeId = ""
+	v.City = ""
+	v.Province = ""
+	v.Area = ""
+	v.Country = ""
+	v.ZmScore = ""
+	v.CouponId = ""
+	v.CouponFee = ""
+	v.CouponRule = ""
+	v.Channel = ""
+	v.RateGrade = ""
+	v.RateContent = ""
+	v.CloseReason = ""
+	v.BuyerCloseReason = ""
+	v.RefundReason = ""
+	v.Env = ""
+	v.GmtCreate = ""
+	v.ZmLevel = ""
+	v.IdlePayType = ""
+	v.ChannelData = ""
+	v.SpuId = ""
+	v.DkType = ""
+	v.ShipMailNo = ""
+	v.ApprizeIdList = ""
+	v.SpuIdList = ""
+	v.CashFee = ""
+	v.QuoteVersion = ""
+	v.SceneType = ""
+	v.ShipTimeEnd = ""
+	v.DkStatus = ""
+	v.Town = ""
+	v.AlipayOrderId = ""
+	v.Amount = ""
+	v.OuterId = ""
+	v.TotalAmount = 0
+	v.ReceiptAmount = 0
+	v.OrderStatus = 0
+	v.BuyerId = 0
+	v.SellerId = 0
+	v.CreditPayAmount = 0
+	v.ApprizeAmount = 0
+	v.CreditPay = false
+	v.ZfbDk = false
+	v.CashOrder = false
+	poolSerializable.Put(v)
 }

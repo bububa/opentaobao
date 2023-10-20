@@ -9,11 +9,6 @@ import (
 // taobao.singletreasure.activity.item.delete
 //
 // 删除单品优惠接口
-func TaobaoSingletreasureActivityItemDelete(clt *core.SDKClient, req *singletreasure.TaobaoSingletreasureActivityItemDeleteAPIRequest, session string) (*singletreasure.TaobaoSingletreasureActivityItemDeleteAPIResponse, error) {
-	var resp singletreasure.TaobaoSingletreasureActivityItemDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSingletreasureActivityItemDelete(clt *core.SDKClient, req *singletreasure.TaobaoSingletreasureActivityItemDeleteAPIRequest, resp *singletreasure.TaobaoSingletreasureActivityItemDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // aliexpress.affiliate.image.search
 //
 // 图片搜索接口
-func AliexpressAffiliateImageSearch(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateImageSearchAPIRequest, session string) (*aecreatives.AliexpressAffiliateImageSearchAPIResponse, error) {
-	var resp aecreatives.AliexpressAffiliateImageSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressAffiliateImageSearch(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateImageSearchAPIRequest, resp *aecreatives.AliexpressAffiliateImageSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

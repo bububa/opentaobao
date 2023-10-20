@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallPromotagTagFindAPIRequest struct {
 // NewTmallPromotagTagFindRequest 初始化TmallPromotagTagFindAPIRequest对象
 func NewTmallPromotagTagFindRequest() *TmallPromotagTagFindAPIRequest {
 	return &TmallPromotagTagFindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallPromotagTagFindAPIRequest) Reset() {
+	r._tagName = ""
+	r._pageSize = 0
+	r._pageNo = 0
+	r._tagId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallPromotagTagFindAPIRequest) SetTagId(_tagId int64) error {
 // GetTagId TagId Getter
 func (r TmallPromotagTagFindAPIRequest) GetTagId() int64 {
 	return r._tagId
+}
+
+var poolTmallPromotagTagFindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallPromotagTagFindRequest()
+	},
+}
+
+// GetTmallPromotagTagFindRequest 从 sync.Pool 获取 TmallPromotagTagFindAPIRequest
+func GetTmallPromotagTagFindAPIRequest() *TmallPromotagTagFindAPIRequest {
+	return poolTmallPromotagTagFindAPIRequest.Get().(*TmallPromotagTagFindAPIRequest)
+}
+
+// ReleaseTmallPromotagTagFindAPIRequest 将 TmallPromotagTagFindAPIRequest 放入 sync.Pool
+func ReleaseTmallPromotagTagFindAPIRequest(v *TmallPromotagTagFindAPIRequest) {
+	v.Reset()
+	poolTmallPromotagTagFindAPIRequest.Put(v)
 }

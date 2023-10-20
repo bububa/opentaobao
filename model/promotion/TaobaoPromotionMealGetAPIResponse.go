@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoPromotionMealGetAPIResponse struct {
 	TaobaoPromotionMealGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoPromotionMealGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPromotionMealGetAPIResponseModel).Reset()
+}
+
 // TaobaoPromotionMealGetAPIResponseModel is 搭配套餐查询 成功返回结果
 type TaobaoPromotionMealGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotion_meal_get_response"`
@@ -22,4 +29,27 @@ type TaobaoPromotionMealGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 搭配套餐列表。
 	MealList []Meal `json:"meal_list,omitempty" xml:"meal_list>meal,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPromotionMealGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MealList = m.MealList[:0]
+}
+
+var poolTaobaoPromotionMealGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPromotionMealGetAPIResponse)
+	},
+}
+
+// GetTaobaoPromotionMealGetAPIResponse 从 sync.Pool 获取 TaobaoPromotionMealGetAPIResponse
+func GetTaobaoPromotionMealGetAPIResponse() *TaobaoPromotionMealGetAPIResponse {
+	return poolTaobaoPromotionMealGetAPIResponse.Get().(*TaobaoPromotionMealGetAPIResponse)
+}
+
+// ReleaseTaobaoPromotionMealGetAPIResponse 将 TaobaoPromotionMealGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPromotionMealGetAPIResponse(v *TaobaoPromotionMealGetAPIResponse) {
+	v.Reset()
+	poolTaobaoPromotionMealGetAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest struct {
 // NewAlibabaAlihouseNewhomeShopconfigDetailSubmitRequest 初始化AlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest对象
 func NewAlibabaAlihouseNewhomeShopconfigDetailSubmitRequest() *AlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest {
 	return &AlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest) Reset() {
+	r._shopConfig = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest) SetShopConfig(_
 // GetShopConfig ShopConfig Getter
 func (r AlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest) GetShopConfig() *ShopConfigDto {
 	return r._shopConfig
+}
+
+var poolAlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeShopconfigDetailSubmitRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeShopconfigDetailSubmitRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest
+func GetAlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest() *AlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest {
+	return poolAlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest.Get().(*AlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest 将 AlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest(v *AlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeShopconfigDetailSubmitAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.trade.drug.get
 //
 // 可以按商家或是店铺维度的进行查询买家付款卖家未确认订单，一次返回不大于20条订单
-func TaobaoTradeDrugGet(clt *core.SDKClient, req *alihealth2.TaobaoTradeDrugGetAPIRequest, session string) (*alihealth2.TaobaoTradeDrugGetAPIResponse, error) {
-	var resp alihealth2.TaobaoTradeDrugGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTradeDrugGet(clt *core.SDKClient, req *alihealth2.TaobaoTradeDrugGetAPIRequest, resp *alihealth2.TaobaoTradeDrugGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

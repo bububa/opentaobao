@@ -9,11 +9,6 @@ import (
 // alibaba.idle.isv.pv.query
 //
 // 查询pv属性
-func AlibabaIdleIsvPvQuery(clt *core.SDKClient, req *idleisv.AlibabaIdleIsvPvQueryAPIRequest, session string) (*idleisv.AlibabaIdleIsvPvQueryAPIResponse, error) {
-	var resp idleisv.AlibabaIdleIsvPvQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleIsvPvQuery(clt *core.SDKClient, req *idleisv.AlibabaIdleIsvPvQueryAPIRequest, resp *idleisv.AlibabaIdleIsvPvQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

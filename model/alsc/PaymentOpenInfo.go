@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PaymentOpenInfo 结构体
 type PaymentOpenInfo struct {
 	// 支付单业务上下文
@@ -18,4 +22,28 @@ type PaymentOpenInfo struct {
 	TradeType string `json:"trade_type,omitempty" xml:"trade_type,omitempty"`
 	// 支付单资金明细
 	FundOpenInfo *FundOpenInfo `json:"fund_open_info,omitempty" xml:"fund_open_info,omitempty"`
+}
+
+var poolPaymentOpenInfo = sync.Pool{
+	New: func() any {
+		return new(PaymentOpenInfo)
+	},
+}
+
+// GetPaymentOpenInfo() 从对象池中获取PaymentOpenInfo
+func GetPaymentOpenInfo() *PaymentOpenInfo {
+	return poolPaymentOpenInfo.Get().(*PaymentOpenInfo)
+}
+
+// ReleasePaymentOpenInfo 释放PaymentOpenInfo
+func ReleasePaymentOpenInfo(v *PaymentOpenInfo) {
+	v.BizContext = ""
+	v.ExtInfo = ""
+	v.PayTime = ""
+	v.PayerAccountNo = ""
+	v.Status = ""
+	v.TradeNo = ""
+	v.TradeType = ""
+	v.FundOpenInfo = nil
+	poolPaymentOpenInfo.Put(v)
 }

@@ -2,6 +2,7 @@ package lstlogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaLstLogisticsThirdpartCompanyListAPIRequest struct {
 // NewAlibabaLstLogisticsThirdpartCompanyListRequest 初始化AlibabaLstLogisticsThirdpartCompanyListAPIRequest对象
 func NewAlibabaLstLogisticsThirdpartCompanyListRequest() *AlibabaLstLogisticsThirdpartCompanyListAPIRequest {
 	return &AlibabaLstLogisticsThirdpartCompanyListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstLogisticsThirdpartCompanyListAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaLstLogisticsThirdpartCompanyListAPIRequest) GetApiParams(params u
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaLstLogisticsThirdpartCompanyListAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaLstLogisticsThirdpartCompanyListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstLogisticsThirdpartCompanyListRequest()
+	},
+}
+
+// GetAlibabaLstLogisticsThirdpartCompanyListRequest 从 sync.Pool 获取 AlibabaLstLogisticsThirdpartCompanyListAPIRequest
+func GetAlibabaLstLogisticsThirdpartCompanyListAPIRequest() *AlibabaLstLogisticsThirdpartCompanyListAPIRequest {
+	return poolAlibabaLstLogisticsThirdpartCompanyListAPIRequest.Get().(*AlibabaLstLogisticsThirdpartCompanyListAPIRequest)
+}
+
+// ReleaseAlibabaLstLogisticsThirdpartCompanyListAPIRequest 将 AlibabaLstLogisticsThirdpartCompanyListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstLogisticsThirdpartCompanyListAPIRequest(v *AlibabaLstLogisticsThirdpartCompanyListAPIRequest) {
+	v.Reset()
+	poolAlibabaLstLogisticsThirdpartCompanyListAPIRequest.Put(v)
 }

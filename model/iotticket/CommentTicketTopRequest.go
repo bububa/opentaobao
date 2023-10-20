@@ -1,5 +1,9 @@
 package iotticket
 
+import (
+	"sync"
+)
+
 // CommentTicketTopRequest 结构体
 type CommentTicketTopRequest struct {
 	// 快递凭证照片
@@ -20,4 +24,29 @@ type CommentTicketTopRequest struct {
 	MailNo string `json:"mail_no,omitempty" xml:"mail_no,omitempty"`
 	// 工单Id
 	TicketId int64 `json:"ticket_id,omitempty" xml:"ticket_id,omitempty"`
+}
+
+var poolCommentTicketTopRequest = sync.Pool{
+	New: func() any {
+		return new(CommentTicketTopRequest)
+	},
+}
+
+// GetCommentTicketTopRequest() 从对象池中获取CommentTicketTopRequest
+func GetCommentTicketTopRequest() *CommentTicketTopRequest {
+	return poolCommentTicketTopRequest.Get().(*CommentTicketTopRequest)
+}
+
+// ReleaseCommentTicketTopRequest 释放CommentTicketTopRequest
+func ReleaseCommentTicketTopRequest(v *CommentTicketTopRequest) {
+	v.SendProof = v.SendProof[:0]
+	v.Feature = ""
+	v.OperatorPhone = ""
+	v.OperatorId = ""
+	v.OperatorName = ""
+	v.SpCode = ""
+	v.Comment = ""
+	v.MailNo = ""
+	v.TicketId = 0
+	poolCommentTicketTopRequest.Put(v)
 }

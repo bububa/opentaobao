@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // DiscountDetail 结构体
 type DiscountDetail struct {
 	// 折扣类型:GRADE（按会员等级优惠）、DISTRIBUTOR（按分销商优惠）
@@ -18,4 +22,28 @@ type DiscountDetail struct {
 	TargetId int64 `json:"target_id,omitempty" xml:"target_id,omitempty"`
 	// 优惠比率或者优惠价格 10%或10
 	DiscountValue int64 `json:"discount_value,omitempty" xml:"discount_value,omitempty"`
+}
+
+var poolDiscountDetail = sync.Pool{
+	New: func() any {
+		return new(DiscountDetail)
+	},
+}
+
+// GetDiscountDetail() 从对象池中获取DiscountDetail
+func GetDiscountDetail() *DiscountDetail {
+	return poolDiscountDetail.Get().(*DiscountDetail)
+}
+
+// ReleaseDiscountDetail 释放DiscountDetail
+func ReleaseDiscountDetail(v *DiscountDetail) {
+	v.TargetType = ""
+	v.TargetName = ""
+	v.DiscountType = ""
+	v.Created = ""
+	v.Modified = ""
+	v.DetailId = 0
+	v.TargetId = 0
+	v.DiscountValue = 0
+	poolDiscountDetail.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.lbs.message.upload
 //
 // lbs数据采集
-func TaobaoLbsMessageUpload(clt *core.SDKClient, req *lbs.TaobaoLbsMessageUploadAPIRequest, session string) (*lbs.TaobaoLbsMessageUploadAPIResponse, error) {
-	var resp lbs.TaobaoLbsMessageUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLbsMessageUpload(clt *core.SDKClient, req *lbs.TaobaoLbsMessageUploadAPIRequest, resp *lbs.TaobaoLbsMessageUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

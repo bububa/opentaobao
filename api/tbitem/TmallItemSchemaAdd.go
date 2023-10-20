@@ -9,11 +9,6 @@ import (
 // tmall.item.schema.add
 //
 // 天猫TopSchema发布商品。
-func TmallItemSchemaAdd(clt *core.SDKClient, req *tbitem.TmallItemSchemaAddAPIRequest, session string) (*tbitem.TmallItemSchemaAddAPIResponse, error) {
-	var resp tbitem.TmallItemSchemaAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallItemSchemaAdd(clt *core.SDKClient, req *tbitem.TmallItemSchemaAddAPIRequest, resp *tbitem.TmallItemSchemaAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest struct {
 // NewAlibabaAliqinAxbVendorExceptionNoSyncRequest 初始化AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest对象
 func NewAlibabaAliqinAxbVendorExceptionNoSyncRequest() *AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest {
 	return &AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest) Reset() {
+	r._secretNo = ""
+	r._exceptionMsg = ""
+	r._vendorKey = ""
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest) SetStatus(_status int6
 // GetStatus Status Getter
 func (r AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolAlibabaAliqinAxbVendorExceptionNoSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinAxbVendorExceptionNoSyncRequest()
+	},
+}
+
+// GetAlibabaAliqinAxbVendorExceptionNoSyncRequest 从 sync.Pool 获取 AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest
+func GetAlibabaAliqinAxbVendorExceptionNoSyncAPIRequest() *AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest {
+	return poolAlibabaAliqinAxbVendorExceptionNoSyncAPIRequest.Get().(*AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest)
+}
+
+// ReleaseAlibabaAliqinAxbVendorExceptionNoSyncAPIRequest 将 AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinAxbVendorExceptionNoSyncAPIRequest(v *AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinAxbVendorExceptionNoSyncAPIRequest.Put(v)
 }

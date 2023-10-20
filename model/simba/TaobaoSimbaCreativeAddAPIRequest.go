@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoSimbaCreativeAddAPIRequest struct {
 // NewTaobaoSimbaCreativeAddRequest 初始化TaobaoSimbaCreativeAddAPIRequest对象
 func NewTaobaoSimbaCreativeAddRequest() *TaobaoSimbaCreativeAddAPIRequest {
 	return &TaobaoSimbaCreativeAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaCreativeAddAPIRequest) Reset() {
+	r._nick = ""
+	r._title = ""
+	r._imgUrl = ""
+	r._adExaminationCode = ""
+	r._adgroupId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoSimbaCreativeAddAPIRequest) SetAdgroupId(_adgroupId int64) error 
 // GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaCreativeAddAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
+}
+
+var poolTaobaoSimbaCreativeAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaCreativeAddRequest()
+	},
+}
+
+// GetTaobaoSimbaCreativeAddRequest 从 sync.Pool 获取 TaobaoSimbaCreativeAddAPIRequest
+func GetTaobaoSimbaCreativeAddAPIRequest() *TaobaoSimbaCreativeAddAPIRequest {
+	return poolTaobaoSimbaCreativeAddAPIRequest.Get().(*TaobaoSimbaCreativeAddAPIRequest)
+}
+
+// ReleaseTaobaoSimbaCreativeAddAPIRequest 将 TaobaoSimbaCreativeAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaCreativeAddAPIRequest(v *TaobaoSimbaCreativeAddAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaCreativeAddAPIRequest.Put(v)
 }

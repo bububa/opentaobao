@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // Page 结构体
 type Page struct {
 	// 结果
@@ -18,4 +22,28 @@ type Page struct {
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
 	// 总记录数
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+}
+
+var poolPage = sync.Pool{
+	New: func() any {
+		return new(Page)
+	},
+}
+
+// GetPage() 从对象池中获取Page
+func GetPage() *Page {
+	return poolPage.Get().(*Page)
+}
+
+// ReleasePage 释放Page
+func ReleasePage(v *Page) {
+	v.Datas = v.Datas[:0]
+	v.ActivityList = v.ActivityList[:0]
+	v.DataList = v.DataList[:0]
+	v.Total = 0
+	v.PageSize = 0
+	v.PageNo = 0
+	v.CurrentPage = 0
+	v.TotalCount = 0
+	poolPage.Put(v)
 }

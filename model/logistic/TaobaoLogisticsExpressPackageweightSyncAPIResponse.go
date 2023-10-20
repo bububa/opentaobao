@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoLogisticsExpressPackageweightSyncAPIResponse struct {
 	model.CommonResponse
 	TaobaoLogisticsExpressPackageweightSyncAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsExpressPackageweightSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLogisticsExpressPackageweightSyncAPIResponseModel).Reset()
 }
 
 // TaobaoLogisticsExpressPackageweightSyncAPIResponseModel is TMS包裹重量回传 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoLogisticsExpressPackageweightSyncAPIResponseModel struct {
 	Suc bool `json:"suc,omitempty" xml:"suc,omitempty"`
 	// 是否可重试
 	Retry bool `json:"retry,omitempty" xml:"retry,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsExpressPackageweightSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.BizErrorMessage = ""
+	m.BizErrorCode = ""
+	m.Suc = false
+	m.Retry = false
+}
+
+var poolTaobaoLogisticsExpressPackageweightSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLogisticsExpressPackageweightSyncAPIResponse)
+	},
+}
+
+// GetTaobaoLogisticsExpressPackageweightSyncAPIResponse 从 sync.Pool 获取 TaobaoLogisticsExpressPackageweightSyncAPIResponse
+func GetTaobaoLogisticsExpressPackageweightSyncAPIResponse() *TaobaoLogisticsExpressPackageweightSyncAPIResponse {
+	return poolTaobaoLogisticsExpressPackageweightSyncAPIResponse.Get().(*TaobaoLogisticsExpressPackageweightSyncAPIResponse)
+}
+
+// ReleaseTaobaoLogisticsExpressPackageweightSyncAPIResponse 将 TaobaoLogisticsExpressPackageweightSyncAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLogisticsExpressPackageweightSyncAPIResponse(v *TaobaoLogisticsExpressPackageweightSyncAPIResponse) {
+	v.Reset()
+	poolTaobaoLogisticsExpressPackageweightSyncAPIResponse.Put(v)
 }

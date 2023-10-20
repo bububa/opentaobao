@@ -1,5 +1,9 @@
 package cainiaolocker
 
+import (
+	"sync"
+)
+
 // WaybillCloudPrintNewResponse 结构体
 type WaybillCloudPrintNewResponse struct {
 	// 云打印内容（encryptedData表示加密结果，data表示非加密结果）;模板内容,具体解释见&lt;a href=&#34;http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.8cf9Nj&amp;treeId=17&amp;articleId=105085&amp;docType=1#12&#34;&gt;链接&lt;/a&gt;
@@ -22,4 +26,30 @@ type WaybillCloudPrintNewResponse struct {
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 本单请求是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+var poolWaybillCloudPrintNewResponse = sync.Pool{
+	New: func() any {
+		return new(WaybillCloudPrintNewResponse)
+	},
+}
+
+// GetWaybillCloudPrintNewResponse() 从对象池中获取WaybillCloudPrintNewResponse
+func GetWaybillCloudPrintNewResponse() *WaybillCloudPrintNewResponse {
+	return poolWaybillCloudPrintNewResponse.Get().(*WaybillCloudPrintNewResponse)
+}
+
+// ReleaseWaybillCloudPrintNewResponse 释放WaybillCloudPrintNewResponse
+func ReleaseWaybillCloudPrintNewResponse(v *WaybillCloudPrintNewResponse) {
+	v.PrintData = ""
+	v.WaybillCode = ""
+	v.ParentWaybillCode = ""
+	v.ExtraInfo = ""
+	v.CpCode = ""
+	v.RealCpCode = ""
+	v.ObjectId = ""
+	v.ErrorCode = ""
+	v.ErrorMessage = ""
+	v.IsSuccess = false
+	poolWaybillCloudPrintNewResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // YunosTvpubadminManageTopicAddTopResult 结构体
 type YunosTvpubadminManageTopicAddTopResult struct {
 	// errorCode
@@ -12,4 +16,25 @@ type YunosTvpubadminManageTopicAddTopResult struct {
 	RetCode int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolYunosTvpubadminManageTopicAddTopResult = sync.Pool{
+	New: func() any {
+		return new(YunosTvpubadminManageTopicAddTopResult)
+	},
+}
+
+// GetYunosTvpubadminManageTopicAddTopResult() 从对象池中获取YunosTvpubadminManageTopicAddTopResult
+func GetYunosTvpubadminManageTopicAddTopResult() *YunosTvpubadminManageTopicAddTopResult {
+	return poolYunosTvpubadminManageTopicAddTopResult.Get().(*YunosTvpubadminManageTopicAddTopResult)
+}
+
+// ReleaseYunosTvpubadminManageTopicAddTopResult 释放YunosTvpubadminManageTopicAddTopResult
+func ReleaseYunosTvpubadminManageTopicAddTopResult(v *YunosTvpubadminManageTopicAddTopResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Object = ""
+	v.RetCode = 0
+	v.Success = false
+	poolYunosTvpubadminManageTopicAddTopResult.Put(v)
 }

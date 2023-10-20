@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // Process 结构体
 type Process struct {
 	// 包裹确认出库的时候必填
@@ -24,4 +28,31 @@ type Process struct {
 	OperateTime int64 `json:"operate_time,omitempty" xml:"operate_time,omitempty"`
 	// 条件必填，如果多批次出库，则必填 多次发货后确认时;0表示发货单最终状态确认;1表示发货单中间状态确认
 	ConfirmType int64 `json:"confirm_type,omitempty" xml:"confirm_type,omitempty"`
+}
+
+var poolProcess = sync.Pool{
+	New: func() any {
+		return new(Process)
+	},
+}
+
+// GetProcess() 从对象池中获取Process
+func GetProcess() *Process {
+	return poolProcess.Get().(*Process)
+}
+
+// ReleaseProcess 释放Process
+func ReleaseProcess(v *Process) {
+	v.Packages = v.Packages[:0]
+	v.ProcessStatus = ""
+	v.LogisticsCode = ""
+	v.OperatorCode = ""
+	v.OperatorName = ""
+	v.OperateInfo = ""
+	v.Remark = ""
+	v.ExpressCode = ""
+	v.LogisticsType = ""
+	v.OperateTime = 0
+	v.ConfirmType = 0
+	poolProcess.Put(v)
 }

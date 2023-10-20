@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoNextoneLogisticsSignUpdateAPIRequest struct {
 // NewTaobaoNextoneLogisticsSignUpdateRequest 初始化TaobaoNextoneLogisticsSignUpdateAPIRequest对象
 func NewTaobaoNextoneLogisticsSignUpdateRequest() *TaobaoNextoneLogisticsSignUpdateAPIRequest {
 	return &TaobaoNextoneLogisticsSignUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoNextoneLogisticsSignUpdateAPIRequest) Reset() {
+	r._refundId = 0
+	r._signStatus = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoNextoneLogisticsSignUpdateAPIRequest) SetSignStatus(_signStatus i
 // GetSignStatus SignStatus Getter
 func (r TaobaoNextoneLogisticsSignUpdateAPIRequest) GetSignStatus() int64 {
 	return r._signStatus
+}
+
+var poolTaobaoNextoneLogisticsSignUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoNextoneLogisticsSignUpdateRequest()
+	},
+}
+
+// GetTaobaoNextoneLogisticsSignUpdateRequest 从 sync.Pool 获取 TaobaoNextoneLogisticsSignUpdateAPIRequest
+func GetTaobaoNextoneLogisticsSignUpdateAPIRequest() *TaobaoNextoneLogisticsSignUpdateAPIRequest {
+	return poolTaobaoNextoneLogisticsSignUpdateAPIRequest.Get().(*TaobaoNextoneLogisticsSignUpdateAPIRequest)
+}
+
+// ReleaseTaobaoNextoneLogisticsSignUpdateAPIRequest 将 TaobaoNextoneLogisticsSignUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoNextoneLogisticsSignUpdateAPIRequest(v *TaobaoNextoneLogisticsSignUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoNextoneLogisticsSignUpdateAPIRequest.Put(v)
 }

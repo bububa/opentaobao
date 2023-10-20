@@ -2,6 +2,7 @@ package nlife
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaNlifeB2cItemDetailGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaNlifeB2cItemDetailGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaNlifeB2cItemDetailGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaNlifeB2cItemDetailGetAPIResponseModel).Reset()
 }
 
 // AlibabaNlifeB2cItemDetailGetAPIResponseModel is b2c码详情查询 成功返回结果
@@ -60,4 +67,46 @@ type AlibabaNlifeB2cItemDetailGetAPIResponseModel struct {
 	CurrentInventory string `json:"current_inventory,omitempty" xml:"current_inventory,omitempty"`
 	// 结算码是否可变
 	CodeChangeable bool `json:"code_changeable,omitempty" xml:"code_changeable,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaNlifeB2cItemDetailGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.PicUrl = ""
+	m.Name = ""
+	m.Price = ""
+	m.OrgPrice = ""
+	m.DetailUrl = ""
+	m.ItemId = ""
+	m.SkuId = ""
+	m.BarCode = ""
+	m.UniqueCode = ""
+	m.BrandId = ""
+	m.BrandName = ""
+	m.SupplierId = ""
+	m.SupplierName = ""
+	m.GoodsNo = ""
+	m.SettleCode = ""
+	m.Property = ""
+	m.CatId = ""
+	m.CatName = ""
+	m.CurrentInventory = ""
+	m.CodeChangeable = false
+}
+
+var poolAlibabaNlifeB2cItemDetailGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaNlifeB2cItemDetailGetAPIResponse)
+	},
+}
+
+// GetAlibabaNlifeB2cItemDetailGetAPIResponse 从 sync.Pool 获取 AlibabaNlifeB2cItemDetailGetAPIResponse
+func GetAlibabaNlifeB2cItemDetailGetAPIResponse() *AlibabaNlifeB2cItemDetailGetAPIResponse {
+	return poolAlibabaNlifeB2cItemDetailGetAPIResponse.Get().(*AlibabaNlifeB2cItemDetailGetAPIResponse)
+}
+
+// ReleaseAlibabaNlifeB2cItemDetailGetAPIResponse 将 AlibabaNlifeB2cItemDetailGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaNlifeB2cItemDetailGetAPIResponse(v *AlibabaNlifeB2cItemDetailGetAPIResponse) {
+	v.Reset()
+	poolAlibabaNlifeB2cItemDetailGetAPIResponse.Put(v)
 }

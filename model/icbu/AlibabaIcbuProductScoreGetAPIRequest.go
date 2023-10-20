@@ -2,6 +2,7 @@ package icbu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIcbuProductScoreGetAPIRequest struct {
 // NewAlibabaIcbuProductScoreGetRequest 初始化AlibabaIcbuProductScoreGetAPIRequest对象
 func NewAlibabaIcbuProductScoreGetRequest() *AlibabaIcbuProductScoreGetAPIRequest {
 	return &AlibabaIcbuProductScoreGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIcbuProductScoreGetAPIRequest) Reset() {
+	r._productId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIcbuProductScoreGetAPIRequest) SetProductId(_productId string) e
 // GetProductId ProductId Getter
 func (r AlibabaIcbuProductScoreGetAPIRequest) GetProductId() string {
 	return r._productId
+}
+
+var poolAlibabaIcbuProductScoreGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIcbuProductScoreGetRequest()
+	},
+}
+
+// GetAlibabaIcbuProductScoreGetRequest 从 sync.Pool 获取 AlibabaIcbuProductScoreGetAPIRequest
+func GetAlibabaIcbuProductScoreGetAPIRequest() *AlibabaIcbuProductScoreGetAPIRequest {
+	return poolAlibabaIcbuProductScoreGetAPIRequest.Get().(*AlibabaIcbuProductScoreGetAPIRequest)
+}
+
+// ReleaseAlibabaIcbuProductScoreGetAPIRequest 将 AlibabaIcbuProductScoreGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIcbuProductScoreGetAPIRequest(v *AlibabaIcbuProductScoreGetAPIRequest) {
+	v.Reset()
+	poolAlibabaIcbuProductScoreGetAPIRequest.Put(v)
 }

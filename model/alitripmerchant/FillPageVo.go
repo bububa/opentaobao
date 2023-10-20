@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // FillPageVo 结构体
 type FillPageVo struct {
 	// 订房必读
@@ -42,4 +46,40 @@ type FillPageVo struct {
 	TotalDay int64 `json:"total_day,omitempty" xml:"total_day,omitempty"`
 	// 最大入住人数
 	MaxOccupancy int64 `json:"max_occupancy,omitempty" xml:"max_occupancy,omitempty"`
+}
+
+var poolFillPageVo = sync.Pool{
+	New: func() any {
+		return new(FillPageVo)
+	},
+}
+
+// GetFillPageVo() 从对象池中获取FillPageVo
+func GetFillPageVo() *FillPageVo {
+	return poolFillPageVo.Get().(*FillPageVo)
+}
+
+// ReleaseFillPageVo 释放FillPageVo
+func ReleaseFillPageVo(v *FillPageVo) {
+	v.ReservationNotice = ""
+	v.CheckOutHour = ""
+	v.CheckInHour = ""
+	v.CheckOutWeek = ""
+	v.CheckInWeek = ""
+	v.CheckOutDate = ""
+	v.CheckInDate = ""
+	v.FileUrl = ""
+	v.RpTitle = ""
+	v.WindowType = ""
+	v.BedType = ""
+	v.RoomArea = ""
+	v.RoomName = ""
+	v.Address = ""
+	v.HotelName = ""
+	v.HotelUrl = ""
+	v.UniversalCancelPolicyDesc = ""
+	v.UniversalCancelPolicyName = ""
+	v.TotalDay = 0
+	v.MaxOccupancy = 0
+	poolFillPageVo.Put(v)
 }

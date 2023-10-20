@@ -9,11 +9,6 @@ import (
 // tmall.ascp.pricing.scm.tof
 //
 // TOF&amp;SCM营销域对接-成本录入设置
-func TmallAscpPricingScmTof(clt *core.SDKClient, req *ascp.TmallAscpPricingScmTofAPIRequest, session string) (*ascp.TmallAscpPricingScmTofAPIResponse, error) {
-	var resp ascp.TmallAscpPricingScmTofAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallAscpPricingScmTof(clt *core.SDKClient, req *ascp.TmallAscpPricingScmTofAPIRequest, resp *ascp.TmallAscpPricingScmTofAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

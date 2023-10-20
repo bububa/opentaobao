@@ -1,5 +1,9 @@
 package auction
 
+import (
+	"sync"
+)
+
 // CourtsBidStatSum 结构体
 type CourtsBidStatSum struct {
 	// 发拍次数
@@ -28,4 +32,33 @@ type CourtsBidStatSum struct {
 	StartCount int64 `json:"start_count,omitempty" xml:"start_count,omitempty"`
 	// 报名人数（含交保失败）
 	ApplyCount int64 `json:"apply_count,omitempty" xml:"apply_count,omitempty"`
+}
+
+var poolCourtsBidStatSum = sync.Pool{
+	New: func() any {
+		return new(CourtsBidStatSum)
+	},
+}
+
+// GetCourtsBidStatSum() 从对象池中获取CourtsBidStatSum
+func GetCourtsBidStatSum() *CourtsBidStatSum {
+	return poolCourtsBidStatSum.Get().(*CourtsBidStatSum)
+}
+
+// ReleaseCourtsBidStatSum 释放CourtsBidStatSum
+func ReleaseCourtsBidStatSum(v *CourtsBidStatSum) {
+	v.PublishCount = 0
+	v.HammerPrice = 0
+	v.HammerCount = 0
+	v.EndCount = 0
+	v.EndCountDist = 0
+	v.AvgAddvPercent = 0
+	v.PublishCountDist = 0
+	v.StartCountDist = 0
+	v.BidCount = 0
+	v.StartPrice = 0
+	v.InterestCount = 0
+	v.StartCount = 0
+	v.ApplyCount = 0
+	poolCourtsBidStatSum.Put(v)
 }

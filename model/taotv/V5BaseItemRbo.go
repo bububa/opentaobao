@@ -1,7 +1,11 @@
 package taotv
 
-// V5baseItemRbo 结构体
-type V5baseItemRbo struct {
+import (
+	"sync"
+)
+
+// V5BaseItemRbo 结构体
+type V5BaseItemRbo struct {
 	// 坑位标题
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 坑位子标题
@@ -28,4 +32,33 @@ type V5baseItemRbo struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 推荐主题ID
 	RecommendRuleId int64 `json:"recommend_rule_id,omitempty" xml:"recommend_rule_id,omitempty"`
+}
+
+var poolV5BaseItemRbo = sync.Pool{
+	New: func() any {
+		return new(V5BaseItemRbo)
+	},
+}
+
+// GetV5BaseItemRbo() 从对象池中获取V5BaseItemRbo
+func GetV5BaseItemRbo() *V5BaseItemRbo {
+	return poolV5BaseItemRbo.Get().(*V5BaseItemRbo)
+}
+
+// ReleaseV5BaseItemRbo 释放V5BaseItemRbo
+func ReleaseV5BaseItemRbo(v *V5BaseItemRbo) {
+	v.Title = ""
+	v.Subtitle = ""
+	v.CenterPic = ""
+	v.BgPic = ""
+	v.BgPicGif = ""
+	v.BizType = ""
+	v.Extra = ""
+	v.ExtraStr = ""
+	v.ItemType = ""
+	v.Score = ""
+	v.RecommendReason = ""
+	v.Id = 0
+	v.RecommendRuleId = 0
+	poolV5BaseItemRbo.Put(v)
 }

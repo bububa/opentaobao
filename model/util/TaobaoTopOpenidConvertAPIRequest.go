@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTopOpenidConvertAPIRequest struct {
 // NewTaobaoTopOpenidConvertRequest 初始化TaobaoTopOpenidConvertAPIRequest对象
 func NewTaobaoTopOpenidConvertRequest() *TaobaoTopOpenidConvertAPIRequest {
 	return &TaobaoTopOpenidConvertAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTopOpenidConvertAPIRequest) Reset() {
+	r._mixNick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTopOpenidConvertAPIRequest) SetMixNick(_mixNick string) error {
 // GetMixNick MixNick Getter
 func (r TaobaoTopOpenidConvertAPIRequest) GetMixNick() string {
 	return r._mixNick
+}
+
+var poolTaobaoTopOpenidConvertAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTopOpenidConvertRequest()
+	},
+}
+
+// GetTaobaoTopOpenidConvertRequest 从 sync.Pool 获取 TaobaoTopOpenidConvertAPIRequest
+func GetTaobaoTopOpenidConvertAPIRequest() *TaobaoTopOpenidConvertAPIRequest {
+	return poolTaobaoTopOpenidConvertAPIRequest.Get().(*TaobaoTopOpenidConvertAPIRequest)
+}
+
+// ReleaseTaobaoTopOpenidConvertAPIRequest 将 TaobaoTopOpenidConvertAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTopOpenidConvertAPIRequest(v *TaobaoTopOpenidConvertAPIRequest) {
+	v.Reset()
+	poolTaobaoTopOpenidConvertAPIRequest.Put(v)
 }

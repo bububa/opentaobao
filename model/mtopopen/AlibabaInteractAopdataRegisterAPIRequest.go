@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaInteractAopdataRegisterAPIRequest struct {
 // NewAlibabaInteractAopdataRegisterRequest 初始化AlibabaInteractAopdataRegisterAPIRequest对象
 func NewAlibabaInteractAopdataRegisterRequest() *AlibabaInteractAopdataRegisterAPIRequest {
 	return &AlibabaInteractAopdataRegisterAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractAopdataRegisterAPIRequest) Reset() {
+	r._paramTopIsvDecorateParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaInteractAopdataRegisterAPIRequest) SetParamTopIsvDecorateParam(_
 // GetParamTopIsvDecorateParam ParamTopIsvDecorateParam Getter
 func (r AlibabaInteractAopdataRegisterAPIRequest) GetParamTopIsvDecorateParam() *TopIsvDecorateParam {
 	return r._paramTopIsvDecorateParam
+}
+
+var poolAlibabaInteractAopdataRegisterAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractAopdataRegisterRequest()
+	},
+}
+
+// GetAlibabaInteractAopdataRegisterRequest 从 sync.Pool 获取 AlibabaInteractAopdataRegisterAPIRequest
+func GetAlibabaInteractAopdataRegisterAPIRequest() *AlibabaInteractAopdataRegisterAPIRequest {
+	return poolAlibabaInteractAopdataRegisterAPIRequest.Get().(*AlibabaInteractAopdataRegisterAPIRequest)
+}
+
+// ReleaseAlibabaInteractAopdataRegisterAPIRequest 将 AlibabaInteractAopdataRegisterAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractAopdataRegisterAPIRequest(v *AlibabaInteractAopdataRegisterAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractAopdataRegisterAPIRequest.Put(v)
 }

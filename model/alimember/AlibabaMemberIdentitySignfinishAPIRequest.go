@@ -2,6 +2,7 @@ package alimember
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMemberIdentitySignfinishAPIRequest struct {
 // NewAlibabaMemberIdentitySignfinishRequest 初始化AlibabaMemberIdentitySignfinishAPIRequest对象
 func NewAlibabaMemberIdentitySignfinishRequest() *AlibabaMemberIdentitySignfinishAPIRequest {
 	return &AlibabaMemberIdentitySignfinishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMemberIdentitySignfinishAPIRequest) Reset() {
+	r._signFinish = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMemberIdentitySignfinishAPIRequest) SetSignFinish(_signFinish *S
 // GetSignFinish SignFinish Getter
 func (r AlibabaMemberIdentitySignfinishAPIRequest) GetSignFinish() *SignIdentityFinishRequest {
 	return r._signFinish
+}
+
+var poolAlibabaMemberIdentitySignfinishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMemberIdentitySignfinishRequest()
+	},
+}
+
+// GetAlibabaMemberIdentitySignfinishRequest 从 sync.Pool 获取 AlibabaMemberIdentitySignfinishAPIRequest
+func GetAlibabaMemberIdentitySignfinishAPIRequest() *AlibabaMemberIdentitySignfinishAPIRequest {
+	return poolAlibabaMemberIdentitySignfinishAPIRequest.Get().(*AlibabaMemberIdentitySignfinishAPIRequest)
+}
+
+// ReleaseAlibabaMemberIdentitySignfinishAPIRequest 将 AlibabaMemberIdentitySignfinishAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMemberIdentitySignfinishAPIRequest(v *AlibabaMemberIdentitySignfinishAPIRequest) {
+	v.Reset()
+	poolAlibabaMemberIdentitySignfinishAPIRequest.Put(v)
 }

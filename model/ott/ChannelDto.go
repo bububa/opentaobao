@@ -1,5 +1,9 @@
 package ott
 
+import (
+	"sync"
+)
+
 // ChannelDto 结构体
 type ChannelDto struct {
 	// itemList
@@ -16,4 +20,27 @@ type ChannelDto struct {
 	SkipHours string `json:"skip_hours,omitempty" xml:"skip_hours,omitempty"`
 	// Name of Content Provider
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
+}
+
+var poolChannelDto = sync.Pool{
+	New: func() any {
+		return new(ChannelDto)
+	},
+}
+
+// GetChannelDto() 从对象池中获取ChannelDto
+func GetChannelDto() *ChannelDto {
+	return poolChannelDto.Get().(*ChannelDto)
+}
+
+// ReleaseChannelDto 释放ChannelDto
+func ReleaseChannelDto(v *ChannelDto) {
+	v.ItemList = v.ItemList[:0]
+	v.Description = ""
+	v.Link = ""
+	v.PubDate = ""
+	v.SkipDays = ""
+	v.SkipHours = ""
+	v.Title = ""
+	poolChannelDto.Put(v)
 }

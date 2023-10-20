@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaSecurityJaqRpStatusAPIRequest struct {
 // NewAlibabaSecurityJaqRpStatusRequest 初始化AlibabaSecurityJaqRpStatusAPIRequest对象
 func NewAlibabaSecurityJaqRpStatusRequest() *AlibabaSecurityJaqRpStatusAPIRequest {
 	return &AlibabaSecurityJaqRpStatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqRpStatusAPIRequest) Reset() {
+	r._accountId = ""
+	r._ticketId = ""
+	r._source = ""
+	r._biz = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaSecurityJaqRpStatusAPIRequest) SetBiz(_biz string) error {
 // GetBiz Biz Getter
 func (r AlibabaSecurityJaqRpStatusAPIRequest) GetBiz() string {
 	return r._biz
+}
+
+var poolAlibabaSecurityJaqRpStatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqRpStatusRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqRpStatusRequest 从 sync.Pool 获取 AlibabaSecurityJaqRpStatusAPIRequest
+func GetAlibabaSecurityJaqRpStatusAPIRequest() *AlibabaSecurityJaqRpStatusAPIRequest {
+	return poolAlibabaSecurityJaqRpStatusAPIRequest.Get().(*AlibabaSecurityJaqRpStatusAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqRpStatusAPIRequest 将 AlibabaSecurityJaqRpStatusAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqRpStatusAPIRequest(v *AlibabaSecurityJaqRpStatusAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqRpStatusAPIRequest.Put(v)
 }

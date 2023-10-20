@@ -9,11 +9,6 @@ import (
 // alibaba.charity.useraction.sync
 //
 // 外部公益活动，用户公益行为同步
-func AlibabaCharityUseractionSync(clt *core.SDKClient, req *charity.AlibabaCharityUseractionSyncAPIRequest, session string) (*charity.AlibabaCharityUseractionSyncAPIResponse, error) {
-	var resp charity.AlibabaCharityUseractionSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCharityUseractionSync(clt *core.SDKClient, req *charity.AlibabaCharityUseractionSyncAPIRequest, resp *charity.AlibabaCharityUseractionSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

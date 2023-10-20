@@ -1,5 +1,9 @@
 package traveltrade
 
+import (
+	"sync"
+)
+
 // TravellerInfo 结构体
 type TravellerInfo struct {
 	// 出生日期，格式yyyy-mm-dd
@@ -42,4 +46,40 @@ type TravellerInfo struct {
 	CredentialType int64 `json:"credential_type,omitempty" xml:"credential_type,omitempty"`
 	// 性别。0-男，1-女
 	Sex int64 `json:"sex,omitempty" xml:"sex,omitempty"`
+}
+
+var poolTravellerInfo = sync.Pool{
+	New: func() any {
+		return new(TravellerInfo)
+	},
+}
+
+// GetTravellerInfo() 从对象池中获取TravellerInfo
+func GetTravellerInfo() *TravellerInfo {
+	return poolTravellerInfo.Get().(*TravellerInfo)
+}
+
+// ReleaseTravellerInfo 释放TravellerInfo
+func ReleaseTravellerInfo(v *TravellerInfo) {
+	v.Birthday = ""
+	v.CredentialNo = ""
+	v.Email = ""
+	v.ExtendAttributes = ""
+	v.IssueCountry = ""
+	v.IssuePlace = ""
+	v.Name = ""
+	v.NamePinyin = ""
+	v.Nationality = ""
+	v.Phone = ""
+	v.PostAddress = ""
+	v.PostArea = ""
+	v.PostCity = ""
+	v.PostProvince = ""
+	v.ValidDate = ""
+	v.SurnamePinyin = ""
+	v.GivenNamePinyin = ""
+	v.ExtendAttributesJson = ""
+	v.CredentialType = 0
+	v.Sex = 0
+	poolTravellerInfo.Put(v)
 }

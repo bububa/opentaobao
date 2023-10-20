@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // LogisticsInfo 结构体
 type LogisticsInfo struct {
 	// 货品仓储id
@@ -66,4 +70,52 @@ type LogisticsInfo struct {
 	ItemRatio int64 `json:"item_ratio,omitempty" xml:"item_ratio,omitempty"`
 	// 订单推荐配送类型      * 0：子单无配建议；ERP按照自己的逻辑进行择配。      * 1：子单有推荐配list，erp可按需参考。      * 2：子单有推荐配list，erp必须在推荐配list中选择配品牌。      * 3：子单有禁用配list，erp需要过滤配品牌。
 	BizDeliveryType int64 `json:"biz_delivery_type,omitempty" xml:"biz_delivery_type,omitempty"`
+}
+
+var poolLogisticsInfo = sync.Pool{
+	New: func() any {
+		return new(LogisticsInfo)
+	},
+}
+
+// GetLogisticsInfo() 从对象池中获取LogisticsInfo
+func GetLogisticsInfo() *LogisticsInfo {
+	return poolLogisticsInfo.Get().(*LogisticsInfo)
+}
+
+// ReleaseLogisticsInfo 释放LogisticsInfo
+func ReleaseLogisticsInfo(v *LogisticsInfo) {
+	v.ItemId = ""
+	v.ItemCode = ""
+	v.StoreCode = ""
+	v.Type = ""
+	v.SkuId = ""
+	v.ConsignType = ""
+	v.CombineItemId = ""
+	v.CombineItemCode = ""
+	v.BarCode = ""
+	v.DeliveryCps = ""
+	v.BizDeliveryCode = ""
+	v.BizStoreCode = ""
+	v.BizSdType = ""
+	v.SendCountry = ""
+	v.SendState = ""
+	v.SendCity = ""
+	v.SendDistrict = ""
+	v.SendTown = ""
+	v.SendDivisionCode = ""
+	v.BlackDeliveryCps = ""
+	v.WhiteDeliveryCps = ""
+	v.UnusedWarehouseErrorMsg = ""
+	v.UnusedDeliveryErrorMsg = ""
+	v.UsedBlackDeliveryErrorMsg = ""
+	v.PromiseOutboundTime = ""
+	v.PromiseCollectTime = ""
+	v.TradeId = 0
+	v.SubTradeId = 0
+	v.NeedConsignNum = 0
+	v.NumIid = 0
+	v.ItemRatio = 0
+	v.BizDeliveryType = 0
+	poolLogisticsInfo.Put(v)
 }

@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripMerchantGalaxyMemberCardAPIRequest struct {
 // NewAlitripMerchantGalaxyMemberCardRequest 初始化AlitripMerchantGalaxyMemberCardAPIRequest对象
 func NewAlitripMerchantGalaxyMemberCardRequest() *AlitripMerchantGalaxyMemberCardAPIRequest {
 	return &AlitripMerchantGalaxyMemberCardAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyMemberCardAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._fliggyLevel = ""
+	r._cardType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripMerchantGalaxyMemberCardAPIRequest) SetCardType(_cardType string
 // GetCardType CardType Getter
 func (r AlitripMerchantGalaxyMemberCardAPIRequest) GetCardType() string {
 	return r._cardType
+}
+
+var poolAlitripMerchantGalaxyMemberCardAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyMemberCardRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyMemberCardRequest 从 sync.Pool 获取 AlitripMerchantGalaxyMemberCardAPIRequest
+func GetAlitripMerchantGalaxyMemberCardAPIRequest() *AlitripMerchantGalaxyMemberCardAPIRequest {
+	return poolAlitripMerchantGalaxyMemberCardAPIRequest.Get().(*AlitripMerchantGalaxyMemberCardAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyMemberCardAPIRequest 将 AlitripMerchantGalaxyMemberCardAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyMemberCardAPIRequest(v *AlitripMerchantGalaxyMemberCardAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyMemberCardAPIRequest.Put(v)
 }

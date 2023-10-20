@@ -9,11 +9,6 @@ import (
 // alibaba.seller.vendor.trade.purchase
 //
 // 查看购买人的订单记录以及授权时间
-func AlibabaSellerVendorTradePurchase(clt *core.SDKClient, req *icbuseller.AlibabaSellerVendorTradePurchaseAPIRequest, session string) (*icbuseller.AlibabaSellerVendorTradePurchaseAPIResponse, error) {
-	var resp icbuseller.AlibabaSellerVendorTradePurchaseAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSellerVendorTradePurchase(clt *core.SDKClient, req *icbuseller.AlibabaSellerVendorTradePurchaseAPIRequest, resp *icbuseller.AlibabaSellerVendorTradePurchaseAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package dutyfree
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDutyfreeStockQueryAPIRequest struct {
 // NewAlibabaDutyfreeStockQueryRequest 初始化AlibabaDutyfreeStockQueryAPIRequest对象
 func NewAlibabaDutyfreeStockQueryRequest() *AlibabaDutyfreeStockQueryAPIRequest {
 	return &AlibabaDutyfreeStockQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDutyfreeStockQueryAPIRequest) Reset() {
+	r._barCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDutyfreeStockQueryAPIRequest) SetBarCode(_barCode string) error 
 // GetBarCode BarCode Getter
 func (r AlibabaDutyfreeStockQueryAPIRequest) GetBarCode() string {
 	return r._barCode
+}
+
+var poolAlibabaDutyfreeStockQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDutyfreeStockQueryRequest()
+	},
+}
+
+// GetAlibabaDutyfreeStockQueryRequest 从 sync.Pool 获取 AlibabaDutyfreeStockQueryAPIRequest
+func GetAlibabaDutyfreeStockQueryAPIRequest() *AlibabaDutyfreeStockQueryAPIRequest {
+	return poolAlibabaDutyfreeStockQueryAPIRequest.Get().(*AlibabaDutyfreeStockQueryAPIRequest)
+}
+
+// ReleaseAlibabaDutyfreeStockQueryAPIRequest 将 AlibabaDutyfreeStockQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDutyfreeStockQueryAPIRequest(v *AlibabaDutyfreeStockQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaDutyfreeStockQueryAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // DeviceHistoryBatchApiDto 结构体
 type DeviceHistoryBatchApiDto struct {
 	// 设备参数code
@@ -14,4 +18,26 @@ type DeviceHistoryBatchApiDto struct {
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 当前设备运行参数时间切片历史数据
 	DeviceIntervalValue string `json:"device_interval_value,omitempty" xml:"device_interval_value,omitempty"`
+}
+
+var poolDeviceHistoryBatchApiDto = sync.Pool{
+	New: func() any {
+		return new(DeviceHistoryBatchApiDto)
+	},
+}
+
+// GetDeviceHistoryBatchApiDto() 从对象池中获取DeviceHistoryBatchApiDto
+func GetDeviceHistoryBatchApiDto() *DeviceHistoryBatchApiDto {
+	return poolDeviceHistoryBatchApiDto.Get().(*DeviceHistoryBatchApiDto)
+}
+
+// ReleaseDeviceHistoryBatchApiDto 释放DeviceHistoryBatchApiDto
+func ReleaseDeviceHistoryBatchApiDto(v *DeviceHistoryBatchApiDto) {
+	v.PropertyCode = ""
+	v.DeviceId = ""
+	v.Success = ""
+	v.ErrorMsg = ""
+	v.ErrCode = ""
+	v.DeviceIntervalValue = ""
+	poolDeviceHistoryBatchApiDto.Put(v)
 }

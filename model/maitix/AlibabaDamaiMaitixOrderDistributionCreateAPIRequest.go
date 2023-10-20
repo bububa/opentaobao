@@ -2,6 +2,7 @@ package maitix
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDamaiMaitixOrderDistributionCreateAPIRequest struct {
 // NewAlibabaDamaiMaitixOrderDistributionCreateRequest 初始化AlibabaDamaiMaitixOrderDistributionCreateAPIRequest对象
 func NewAlibabaDamaiMaitixOrderDistributionCreateRequest() *AlibabaDamaiMaitixOrderDistributionCreateAPIRequest {
 	return &AlibabaDamaiMaitixOrderDistributionCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiMaitixOrderDistributionCreateAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDamaiMaitixOrderDistributionCreateAPIRequest) SetParam(_param *M
 // GetParam Param Getter
 func (r AlibabaDamaiMaitixOrderDistributionCreateAPIRequest) GetParam() *MoaOrderParam {
 	return r._param
+}
+
+var poolAlibabaDamaiMaitixOrderDistributionCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiMaitixOrderDistributionCreateRequest()
+	},
+}
+
+// GetAlibabaDamaiMaitixOrderDistributionCreateRequest 从 sync.Pool 获取 AlibabaDamaiMaitixOrderDistributionCreateAPIRequest
+func GetAlibabaDamaiMaitixOrderDistributionCreateAPIRequest() *AlibabaDamaiMaitixOrderDistributionCreateAPIRequest {
+	return poolAlibabaDamaiMaitixOrderDistributionCreateAPIRequest.Get().(*AlibabaDamaiMaitixOrderDistributionCreateAPIRequest)
+}
+
+// ReleaseAlibabaDamaiMaitixOrderDistributionCreateAPIRequest 将 AlibabaDamaiMaitixOrderDistributionCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiMaitixOrderDistributionCreateAPIRequest(v *AlibabaDamaiMaitixOrderDistributionCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiMaitixOrderDistributionCreateAPIRequest.Put(v)
 }

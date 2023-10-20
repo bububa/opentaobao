@@ -9,11 +9,6 @@ import (
 // taobao.uscesl.biz.esl.unbind
 //
 // 电子价签解绑接口
-func TaobaoUsceslBizEslUnbind(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizEslUnbindAPIRequest, session string) (*uscesl.TaobaoUsceslBizEslUnbindAPIResponse, error) {
-	var resp uscesl.TaobaoUsceslBizEslUnbindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUsceslBizEslUnbind(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizEslUnbindAPIRequest, resp *uscesl.TaobaoUsceslBizEslUnbindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

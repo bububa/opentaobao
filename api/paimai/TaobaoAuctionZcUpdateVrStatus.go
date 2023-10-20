@@ -9,11 +9,6 @@ import (
 // taobao.auction.zc.update.vr.status
 //
 // 如视VR更新活跃状态
-func TaobaoAuctionZcUpdateVrStatus(clt *core.SDKClient, req *paimai.TaobaoAuctionZcUpdateVrStatusAPIRequest, session string) (*paimai.TaobaoAuctionZcUpdateVrStatusAPIResponse, error) {
-	var resp paimai.TaobaoAuctionZcUpdateVrStatusAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAuctionZcUpdateVrStatus(clt *core.SDKClient, req *paimai.TaobaoAuctionZcUpdateVrStatusAPIRequest, resp *paimai.TaobaoAuctionZcUpdateVrStatusAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

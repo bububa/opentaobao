@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihouseAdminThemeCreateAPIResponse struct {
 	AlibabaAlihouseAdminThemeCreateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihouseAdminThemeCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihouseAdminThemeCreateAPIResponseModel).Reset()
+}
+
 // AlibabaAlihouseAdminThemeCreateAPIResponseModel is 创建云主题 成功返回结果
 type AlibabaAlihouseAdminThemeCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_admin_theme_create_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihouseAdminThemeCreateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Result *AlibabaAlihouseAdminThemeCreateResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihouseAdminThemeCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihouseAdminThemeCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihouseAdminThemeCreateAPIResponse)
+	},
+}
+
+// GetAlibabaAlihouseAdminThemeCreateAPIResponse 从 sync.Pool 获取 AlibabaAlihouseAdminThemeCreateAPIResponse
+func GetAlibabaAlihouseAdminThemeCreateAPIResponse() *AlibabaAlihouseAdminThemeCreateAPIResponse {
+	return poolAlibabaAlihouseAdminThemeCreateAPIResponse.Get().(*AlibabaAlihouseAdminThemeCreateAPIResponse)
+}
+
+// ReleaseAlibabaAlihouseAdminThemeCreateAPIResponse 将 AlibabaAlihouseAdminThemeCreateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihouseAdminThemeCreateAPIResponse(v *AlibabaAlihouseAdminThemeCreateAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihouseAdminThemeCreateAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package alihealthoutflow
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse struct {
 	AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponseModel is 处方ca认证 成功返回结果
 type AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_rx_ca_prescribe_signed_status_save_response"`
@@ -26,4 +33,29 @@ type AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponseModel struct {
 	ExceptionMessage string `json:"exception_message,omitempty" xml:"exception_message,omitempty"`
 	// 出参
 	Data *YwxCommonVo `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ExceptionCode = ""
+	m.ExceptionMessage = ""
+	m.Data = nil
+}
+
+var poolAlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse 从 sync.Pool 获取 AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse
+func GetAlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse() *AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse {
+	return poolAlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse.Get().(*AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse 将 AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse(v *AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthDentalBindAuditQueryAPIRequest struct {
 // NewAlibabaAlihealthDentalBindAuditQueryRequest 初始化AlibabaAlihealthDentalBindAuditQueryAPIRequest对象
 func NewAlibabaAlihealthDentalBindAuditQueryRequest() *AlibabaAlihealthDentalBindAuditQueryAPIRequest {
 	return &AlibabaAlihealthDentalBindAuditQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDentalBindAuditQueryAPIRequest) Reset() {
+	r._bindIds = r._bindIds[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthDentalBindAuditQueryAPIRequest) SetBindIds(_bindIds []s
 // GetBindIds BindIds Getter
 func (r AlibabaAlihealthDentalBindAuditQueryAPIRequest) GetBindIds() []string {
 	return r._bindIds
+}
+
+var poolAlibabaAlihealthDentalBindAuditQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDentalBindAuditQueryRequest()
+	},
+}
+
+// GetAlibabaAlihealthDentalBindAuditQueryRequest 从 sync.Pool 获取 AlibabaAlihealthDentalBindAuditQueryAPIRequest
+func GetAlibabaAlihealthDentalBindAuditQueryAPIRequest() *AlibabaAlihealthDentalBindAuditQueryAPIRequest {
+	return poolAlibabaAlihealthDentalBindAuditQueryAPIRequest.Get().(*AlibabaAlihealthDentalBindAuditQueryAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDentalBindAuditQueryAPIRequest 将 AlibabaAlihealthDentalBindAuditQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDentalBindAuditQueryAPIRequest(v *AlibabaAlihealthDentalBindAuditQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDentalBindAuditQueryAPIRequest.Put(v)
 }

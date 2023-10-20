@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ExpirePromotionResult 结构体
 type ExpirePromotionResult struct {
 	// errorMsg
@@ -16,4 +20,27 @@ type ExpirePromotionResult struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolExpirePromotionResult = sync.Pool{
+	New: func() any {
+		return new(ExpirePromotionResult)
+	},
+}
+
+// GetExpirePromotionResult() 从对象池中获取ExpirePromotionResult
+func GetExpirePromotionResult() *ExpirePromotionResult {
+	return poolExpirePromotionResult.Get().(*ExpirePromotionResult)
+}
+
+// ReleaseExpirePromotionResult 释放ExpirePromotionResult
+func ReleaseExpirePromotionResult(v *ExpirePromotionResult) {
+	v.ErrorMsg = ""
+	v.ErrorCode = ""
+	v.SkuCode = ""
+	v.MerchantCode = ""
+	v.ShopId = ""
+	v.ItemId = 0
+	v.Success = false
+	poolExpirePromotionResult.Put(v)
 }

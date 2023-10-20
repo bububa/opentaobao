@@ -2,6 +2,7 @@ package shop
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDataItemGetAPIRequest struct {
 // NewAlibabaDataItemGetRequest 初始化AlibabaDataItemGetAPIRequest对象
 func NewAlibabaDataItemGetRequest() *AlibabaDataItemGetAPIRequest {
 	return &AlibabaDataItemGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDataItemGetAPIRequest) Reset() {
+	r._unNamed = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDataItemGetAPIRequest) SetUnNamed(_unNamed string) error {
 // GetUnNamed UnNamed Getter
 func (r AlibabaDataItemGetAPIRequest) GetUnNamed() string {
 	return r._unNamed
+}
+
+var poolAlibabaDataItemGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDataItemGetRequest()
+	},
+}
+
+// GetAlibabaDataItemGetRequest 从 sync.Pool 获取 AlibabaDataItemGetAPIRequest
+func GetAlibabaDataItemGetAPIRequest() *AlibabaDataItemGetAPIRequest {
+	return poolAlibabaDataItemGetAPIRequest.Get().(*AlibabaDataItemGetAPIRequest)
+}
+
+// ReleaseAlibabaDataItemGetAPIRequest 将 AlibabaDataItemGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDataItemGetAPIRequest(v *AlibabaDataItemGetAPIRequest) {
+	v.Reset()
+	poolAlibabaDataItemGetAPIRequest.Put(v)
 }

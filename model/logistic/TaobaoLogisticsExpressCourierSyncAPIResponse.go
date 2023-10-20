@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoLogisticsExpressCourierSyncAPIResponse struct {
 	model.CommonResponse
 	TaobaoLogisticsExpressCourierSyncAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsExpressCourierSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLogisticsExpressCourierSyncAPIResponseModel).Reset()
 }
 
 // TaobaoLogisticsExpressCourierSyncAPIResponseModel is 快递公司同步小件员信息 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoLogisticsExpressCourierSyncAPIResponseModel struct {
 	Suc bool `json:"suc,omitempty" xml:"suc,omitempty"`
 	// 是否可重试
 	Retry bool `json:"retry,omitempty" xml:"retry,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsExpressCourierSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.BizErrorMessage = ""
+	m.BizErrorCode = ""
+	m.Suc = false
+	m.Retry = false
+}
+
+var poolTaobaoLogisticsExpressCourierSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLogisticsExpressCourierSyncAPIResponse)
+	},
+}
+
+// GetTaobaoLogisticsExpressCourierSyncAPIResponse 从 sync.Pool 获取 TaobaoLogisticsExpressCourierSyncAPIResponse
+func GetTaobaoLogisticsExpressCourierSyncAPIResponse() *TaobaoLogisticsExpressCourierSyncAPIResponse {
+	return poolTaobaoLogisticsExpressCourierSyncAPIResponse.Get().(*TaobaoLogisticsExpressCourierSyncAPIResponse)
+}
+
+// ReleaseTaobaoLogisticsExpressCourierSyncAPIResponse 将 TaobaoLogisticsExpressCourierSyncAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLogisticsExpressCourierSyncAPIResponse(v *TaobaoLogisticsExpressCourierSyncAPIResponse) {
+	v.Reset()
+	poolTaobaoLogisticsExpressCourierSyncAPIResponse.Put(v)
 }

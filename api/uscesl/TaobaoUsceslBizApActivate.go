@@ -9,11 +9,6 @@ import (
 // taobao.uscesl.biz.ap.activate
 //
 // 激活AP价签通讯模块
-func TaobaoUsceslBizApActivate(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizApActivateAPIRequest, session string) (*uscesl.TaobaoUsceslBizApActivateAPIResponse, error) {
-	var resp uscesl.TaobaoUsceslBizApActivateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUsceslBizApActivate(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizApActivateAPIRequest, resp *uscesl.TaobaoUsceslBizApActivateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

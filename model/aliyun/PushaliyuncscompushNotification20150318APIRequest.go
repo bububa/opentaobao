@@ -2,6 +2,7 @@ package aliyun
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -61,8 +62,35 @@ type PushAliyuncsComPushNotification20150318APIRequest struct {
 // NewPushAliyuncsComPushNotification20150318Request 初始化PushAliyuncsComPushNotification20150318APIRequest对象
 func NewPushAliyuncsComPushNotification20150318Request() *PushAliyuncsComPushNotification20150318APIRequest {
 	return &PushAliyuncsComPushNotification20150318APIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(22),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *PushAliyuncsComPushNotification20150318APIRequest) Reset() {
+	r._account = ""
+	r._androidExtraMap = ""
+	r._androidMusic = ""
+	r._androidOpenActivity = ""
+	r._androidOpenUrl = ""
+	r._batchNumber = ""
+	r._deviceId = ""
+	r._iosExtraMap = ""
+	r._iosMusic = ""
+	r._pushTime = ""
+	r._summary = ""
+	r._tag = ""
+	r._title = ""
+	r._androidNotifyType = 0
+	r._androidOpenType = 0
+	r._antiHarassDuration = 0
+	r._antiHarassStartTime = 0
+	r._appId = 0
+	r._deviceType = 0
+	r._iosFooter = 0
+	r._sendType = 0
+	r._timeout = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -366,4 +394,21 @@ func (r *PushAliyuncsComPushNotification20150318APIRequest) SetTimeout(_timeout 
 // GetTimeout Timeout Getter
 func (r PushAliyuncsComPushNotification20150318APIRequest) GetTimeout() int64 {
 	return r._timeout
+}
+
+var poolPushAliyuncsComPushNotification20150318APIRequest = sync.Pool{
+	New: func() any {
+		return NewPushAliyuncsComPushNotification20150318Request()
+	},
+}
+
+// GetPushAliyuncsComPushNotification20150318Request 从 sync.Pool 获取 PushAliyuncsComPushNotification20150318APIRequest
+func GetPushAliyuncsComPushNotification20150318APIRequest() *PushAliyuncsComPushNotification20150318APIRequest {
+	return poolPushAliyuncsComPushNotification20150318APIRequest.Get().(*PushAliyuncsComPushNotification20150318APIRequest)
+}
+
+// ReleasePushAliyuncsComPushNotification20150318APIRequest 将 PushAliyuncsComPushNotification20150318APIRequest 放入 sync.Pool
+func ReleasePushAliyuncsComPushNotification20150318APIRequest(v *PushAliyuncsComPushNotification20150318APIRequest) {
+	v.Reset()
+	poolPushAliyuncsComPushNotification20150318APIRequest.Put(v)
 }

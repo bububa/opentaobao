@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest struct {
 // NewAlibabaAlihealthDrugKytWesUpbillDetailwithcodeRequest 初始化AlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest对象
 func NewAlibabaAlihealthDrugKytWesUpbillDetailwithcodeRequest() *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest {
 	return &AlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest) Reset() {
+	r._refEntId = ""
+	r._licenseToken = ""
+	r._billCode = ""
+	r._fromRefUserId = ""
+	r._toRefUserId = ""
+	r._agentRefEntId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest) SetAgentRefEn
 // GetAgentRefEntId AgentRefEntId Getter
 func (r AlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest) GetAgentRefEntId() string {
 	return r._agentRefEntId
+}
+
+var poolAlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytWesUpbillDetailwithcodeRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytWesUpbillDetailwithcodeRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest
+func GetAlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest() *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest {
+	return poolAlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest.Get().(*AlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest 将 AlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest(v *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest.Put(v)
 }

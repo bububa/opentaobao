@@ -2,6 +2,7 @@ package perfect
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTcwmsOutboundPickReceiveAPIRequest struct {
 // NewAlibabaTcwmsOutboundPickReceiveRequest 初始化AlibabaTcwmsOutboundPickReceiveAPIRequest对象
 func NewAlibabaTcwmsOutboundPickReceiveRequest() *AlibabaTcwmsOutboundPickReceiveAPIRequest {
 	return &AlibabaTcwmsOutboundPickReceiveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTcwmsOutboundPickReceiveAPIRequest) Reset() {
+	r._pickReceiveRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTcwmsOutboundPickReceiveAPIRequest) SetPickReceiveRequest(_pickR
 // GetPickReceiveRequest PickReceiveRequest Getter
 func (r AlibabaTcwmsOutboundPickReceiveAPIRequest) GetPickReceiveRequest() *PickReceiveRequest {
 	return r._pickReceiveRequest
+}
+
+var poolAlibabaTcwmsOutboundPickReceiveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTcwmsOutboundPickReceiveRequest()
+	},
+}
+
+// GetAlibabaTcwmsOutboundPickReceiveRequest 从 sync.Pool 获取 AlibabaTcwmsOutboundPickReceiveAPIRequest
+func GetAlibabaTcwmsOutboundPickReceiveAPIRequest() *AlibabaTcwmsOutboundPickReceiveAPIRequest {
+	return poolAlibabaTcwmsOutboundPickReceiveAPIRequest.Get().(*AlibabaTcwmsOutboundPickReceiveAPIRequest)
+}
+
+// ReleaseAlibabaTcwmsOutboundPickReceiveAPIRequest 将 AlibabaTcwmsOutboundPickReceiveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTcwmsOutboundPickReceiveAPIRequest(v *AlibabaTcwmsOutboundPickReceiveAPIRequest) {
+	v.Reset()
+	poolAlibabaTcwmsOutboundPickReceiveAPIRequest.Put(v)
 }

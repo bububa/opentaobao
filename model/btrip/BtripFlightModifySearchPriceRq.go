@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripFlightModifySearchPriceRq 结构体
 type BtripFlightModifySearchPriceRq struct {
 	// 乘客列表
@@ -22,4 +26,30 @@ type BtripFlightModifySearchPriceRq struct {
 	SupplierCode string `json:"supplier_code,omitempty" xml:"supplier_code,omitempty"`
 	// 0:非自愿 1:自愿
 	IsVoluntary int64 `json:"is_voluntary,omitempty" xml:"is_voluntary,omitempty"`
+}
+
+var poolBtripFlightModifySearchPriceRq = sync.Pool{
+	New: func() any {
+		return new(BtripFlightModifySearchPriceRq)
+	},
+}
+
+// GetBtripFlightModifySearchPriceRq() 从对象池中获取BtripFlightModifySearchPriceRq
+func GetBtripFlightModifySearchPriceRq() *BtripFlightModifySearchPriceRq {
+	return poolBtripFlightModifySearchPriceRq.Get().(*BtripFlightModifySearchPriceRq)
+}
+
+// ReleaseBtripFlightModifySearchPriceRq 释放BtripFlightModifySearchPriceRq
+func ReleaseBtripFlightModifySearchPriceRq(v *BtripFlightModifySearchPriceRq) {
+	v.TravelerInfoList = v.TravelerInfoList[:0]
+	v.ArrCity = ""
+	v.CabinClass = ""
+	v.DepCity = ""
+	v.DepDate = ""
+	v.FlightNo = ""
+	v.DisOrderId = ""
+	v.SubChannel = ""
+	v.SupplierCode = ""
+	v.IsVoluntary = 0
+	poolBtripFlightModifySearchPriceRq.Put(v)
 }

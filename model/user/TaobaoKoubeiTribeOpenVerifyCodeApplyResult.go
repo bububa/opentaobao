@@ -1,5 +1,9 @@
 package user
 
+import (
+	"sync"
+)
+
 // TaobaoKoubeiTribeOpenVerifyCodeApplyResult 结构体
 type TaobaoKoubeiTribeOpenVerifyCodeApplyResult struct {
 	// traceId
@@ -10,4 +14,24 @@ type TaobaoKoubeiTribeOpenVerifyCodeApplyResult struct {
 	Data *UserInfoDto `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoKoubeiTribeOpenVerifyCodeApplyResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoKoubeiTribeOpenVerifyCodeApplyResult)
+	},
+}
+
+// GetTaobaoKoubeiTribeOpenVerifyCodeApplyResult() 从对象池中获取TaobaoKoubeiTribeOpenVerifyCodeApplyResult
+func GetTaobaoKoubeiTribeOpenVerifyCodeApplyResult() *TaobaoKoubeiTribeOpenVerifyCodeApplyResult {
+	return poolTaobaoKoubeiTribeOpenVerifyCodeApplyResult.Get().(*TaobaoKoubeiTribeOpenVerifyCodeApplyResult)
+}
+
+// ReleaseTaobaoKoubeiTribeOpenVerifyCodeApplyResult 释放TaobaoKoubeiTribeOpenVerifyCodeApplyResult
+func ReleaseTaobaoKoubeiTribeOpenVerifyCodeApplyResult(v *TaobaoKoubeiTribeOpenVerifyCodeApplyResult) {
+	v.TraceId = ""
+	v.Error = ""
+	v.Data = nil
+	v.Success = false
+	poolTaobaoKoubeiTribeOpenVerifyCodeApplyResult.Put(v)
 }

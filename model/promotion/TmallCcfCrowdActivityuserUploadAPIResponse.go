@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallCcfCrowdActivityuserUploadAPIResponse struct {
 	model.CommonResponse
 	TmallCcfCrowdActivityuserUploadAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallCcfCrowdActivityuserUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallCcfCrowdActivityuserUploadAPIResponseModel).Reset()
 }
 
 // TmallCcfCrowdActivityuserUploadAPIResponseModel is 品牌营销活动用户上传 成功返回结果
@@ -30,4 +37,31 @@ type TmallCcfCrowdActivityuserUploadAPIResponseModel struct {
 	Failed bool `json:"failed,omitempty" xml:"failed,omitempty"`
 	// 是否成功
 	Suc bool `json:"suc,omitempty" xml:"suc,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallCcfCrowdActivityuserUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ECode = ""
+	m.EMsg = ""
+	m.Data = false
+	m.Failed = false
+	m.Suc = false
+}
+
+var poolTmallCcfCrowdActivityuserUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallCcfCrowdActivityuserUploadAPIResponse)
+	},
+}
+
+// GetTmallCcfCrowdActivityuserUploadAPIResponse 从 sync.Pool 获取 TmallCcfCrowdActivityuserUploadAPIResponse
+func GetTmallCcfCrowdActivityuserUploadAPIResponse() *TmallCcfCrowdActivityuserUploadAPIResponse {
+	return poolTmallCcfCrowdActivityuserUploadAPIResponse.Get().(*TmallCcfCrowdActivityuserUploadAPIResponse)
+}
+
+// ReleaseTmallCcfCrowdActivityuserUploadAPIResponse 将 TmallCcfCrowdActivityuserUploadAPIResponse 保存到 sync.Pool
+func ReleaseTmallCcfCrowdActivityuserUploadAPIResponse(v *TmallCcfCrowdActivityuserUploadAPIResponse) {
+	v.Reset()
+	poolTmallCcfCrowdActivityuserUploadAPIResponse.Put(v)
 }

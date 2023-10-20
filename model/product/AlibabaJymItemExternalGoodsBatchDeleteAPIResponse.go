@@ -2,6 +2,7 @@ package product
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaJymItemExternalGoodsBatchDeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaJymItemExternalGoodsBatchDeleteAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymItemExternalGoodsBatchDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaJymItemExternalGoodsBatchDeleteAPIResponseModel).Reset()
 }
 
 // AlibabaJymItemExternalGoodsBatchDeleteAPIResponseModel is 交易猫外部商家批量删除商品接口 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaJymItemExternalGoodsBatchDeleteAPIResponseModel struct {
 	Result *GoodsBatchResultDto `json:"result,omitempty" xml:"result,omitempty"`
 	// 是否成功
 	Succeed bool `json:"succeed,omitempty" xml:"succeed,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymItemExternalGoodsBatchDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.StateCode = ""
+	m.ExtraErrMsg = ""
+	m.Result = nil
+	m.Succeed = false
+}
+
+var poolAlibabaJymItemExternalGoodsBatchDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaJymItemExternalGoodsBatchDeleteAPIResponse)
+	},
+}
+
+// GetAlibabaJymItemExternalGoodsBatchDeleteAPIResponse 从 sync.Pool 获取 AlibabaJymItemExternalGoodsBatchDeleteAPIResponse
+func GetAlibabaJymItemExternalGoodsBatchDeleteAPIResponse() *AlibabaJymItemExternalGoodsBatchDeleteAPIResponse {
+	return poolAlibabaJymItemExternalGoodsBatchDeleteAPIResponse.Get().(*AlibabaJymItemExternalGoodsBatchDeleteAPIResponse)
+}
+
+// ReleaseAlibabaJymItemExternalGoodsBatchDeleteAPIResponse 将 AlibabaJymItemExternalGoodsBatchDeleteAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaJymItemExternalGoodsBatchDeleteAPIResponse(v *AlibabaJymItemExternalGoodsBatchDeleteAPIResponse) {
+	v.Reset()
+	poolAlibabaJymItemExternalGoodsBatchDeleteAPIResponse.Put(v)
 }

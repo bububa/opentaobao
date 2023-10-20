@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -30,6 +31,12 @@ type TmallServicecenterWorkerUpdateAPIResponse struct {
 	TmallServicecenterWorkerUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallServicecenterWorkerUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServicecenterWorkerUpdateAPIResponseModel).Reset()
+}
+
 // TmallServicecenterWorkerUpdateAPIResponseModel is 修改工人信息 成功返回结果
 type TmallServicecenterWorkerUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_worker_update_response"`
@@ -37,4 +44,27 @@ type TmallServicecenterWorkerUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterWorkerUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallServicecenterWorkerUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterWorkerUpdateAPIResponse)
+	},
+}
+
+// GetTmallServicecenterWorkerUpdateAPIResponse 从 sync.Pool 获取 TmallServicecenterWorkerUpdateAPIResponse
+func GetTmallServicecenterWorkerUpdateAPIResponse() *TmallServicecenterWorkerUpdateAPIResponse {
+	return poolTmallServicecenterWorkerUpdateAPIResponse.Get().(*TmallServicecenterWorkerUpdateAPIResponse)
+}
+
+// ReleaseTmallServicecenterWorkerUpdateAPIResponse 将 TmallServicecenterWorkerUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTmallServicecenterWorkerUpdateAPIResponse(v *TmallServicecenterWorkerUpdateAPIResponse) {
+	v.Reset()
+	poolTmallServicecenterWorkerUpdateAPIResponse.Put(v)
 }

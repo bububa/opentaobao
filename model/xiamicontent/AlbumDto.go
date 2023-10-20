@@ -1,5 +1,9 @@
 package xiamicontent
 
+import (
+	"sync"
+)
+
 // AlbumDto 结构体
 type AlbumDto struct {
 	// 专辑封面
@@ -18,4 +22,28 @@ type AlbumDto struct {
 	AlbumStatus int64 `json:"album_status,omitempty" xml:"album_status,omitempty"`
 	// 专辑id
 	AlbumId int64 `json:"album_id,omitempty" xml:"album_id,omitempty"`
+}
+
+var poolAlbumDto = sync.Pool{
+	New: func() any {
+		return new(AlbumDto)
+	},
+}
+
+// GetAlbumDto() 从对象池中获取AlbumDto
+func GetAlbumDto() *AlbumDto {
+	return poolAlbumDto.Get().(*AlbumDto)
+}
+
+// ReleaseAlbumDto 释放AlbumDto
+func ReleaseAlbumDto(v *AlbumDto) {
+	v.AlbumLogo = ""
+	v.AlbumName = ""
+	v.SubName = ""
+	v.GmtPublish = ""
+	v.Language = ""
+	v.CompanyId = 0
+	v.AlbumStatus = 0
+	v.AlbumId = 0
+	poolAlbumDto.Put(v)
 }

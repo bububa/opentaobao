@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // FscTripDivisionApiResponse 结构体
 type FscTripDivisionApiResponse struct {
 	// 返回数据
@@ -10,4 +14,24 @@ type FscTripDivisionApiResponse struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 页码
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
+}
+
+var poolFscTripDivisionApiResponse = sync.Pool{
+	New: func() any {
+		return new(FscTripDivisionApiResponse)
+	},
+}
+
+// GetFscTripDivisionApiResponse() 从对象池中获取FscTripDivisionApiResponse
+func GetFscTripDivisionApiResponse() *FscTripDivisionApiResponse {
+	return poolFscTripDivisionApiResponse.Get().(*FscTripDivisionApiResponse)
+}
+
+// ReleaseFscTripDivisionApiResponse 释放FscTripDivisionApiResponse
+func ReleaseFscTripDivisionApiResponse(v *FscTripDivisionApiResponse) {
+	v.Data = v.Data[:0]
+	v.Total = 0
+	v.PageSize = 0
+	v.PageIndex = 0
+	poolFscTripDivisionApiResponse.Put(v)
 }

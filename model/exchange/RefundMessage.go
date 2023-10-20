@@ -1,5 +1,9 @@
 package exchange
 
+import (
+	"sync"
+)
+
 // RefundMessage 结构体
 type RefundMessage struct {
 	// 凭证信息
@@ -22,4 +26,30 @@ type RefundMessage struct {
 	RefundId int64 `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
 	// 留言者ID
 	OwnerId int64 `json:"owner_id,omitempty" xml:"owner_id,omitempty"`
+}
+
+var poolRefundMessage = sync.Pool{
+	New: func() any {
+		return new(RefundMessage)
+	},
+}
+
+// GetRefundMessage() 从对象池中获取RefundMessage
+func GetRefundMessage() *RefundMessage {
+	return poolRefundMessage.Get().(*RefundMessage)
+}
+
+// ReleaseRefundMessage 释放RefundMessage
+func ReleaseRefundMessage(v *RefundMessage) {
+	v.PicUrls = v.PicUrls[:0]
+	v.OwnerNick = ""
+	v.Content = ""
+	v.Created = ""
+	v.MessageType = ""
+	v.OwnerRole = ""
+	v.OpenUid = ""
+	v.Id = 0
+	v.RefundId = 0
+	v.OwnerId = 0
+	poolRefundMessage.Put(v)
 }

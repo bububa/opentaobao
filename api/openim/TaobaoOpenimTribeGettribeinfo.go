@@ -9,11 +9,6 @@ import (
 // taobao.openim.tribe.gettribeinfo
 //
 // 获取群信息
-func TaobaoOpenimTribeGettribeinfo(clt *core.SDKClient, req *openim.TaobaoOpenimTribeGettribeinfoAPIRequest, session string) (*openim.TaobaoOpenimTribeGettribeinfoAPIResponse, error) {
-	var resp openim.TaobaoOpenimTribeGettribeinfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenimTribeGettribeinfo(clt *core.SDKClient, req *openim.TaobaoOpenimTribeGettribeinfoAPIRequest, resp *openim.TaobaoOpenimTribeGettribeinfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

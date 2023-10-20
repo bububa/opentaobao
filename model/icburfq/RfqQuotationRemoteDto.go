@@ -1,5 +1,9 @@
 package icburfq
 
+import (
+	"sync"
+)
+
 // RfqQuotationRemoteDto 结构体
 type RfqQuotationRemoteDto struct {
 	// 报价列表
@@ -18,4 +22,28 @@ type RfqQuotationRemoteDto struct {
 	Sample *RfqQuotationPriceRemoteDto `json:"sample,omitempty" xml:"sample,omitempty"`
 	// 报价ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolRfqQuotationRemoteDto = sync.Pool{
+	New: func() any {
+		return new(RfqQuotationRemoteDto)
+	},
+}
+
+// GetRfqQuotationRemoteDto() 从对象池中获取RfqQuotationRemoteDto
+func GetRfqQuotationRemoteDto() *RfqQuotationRemoteDto {
+	return poolRfqQuotationRemoteDto.Get().(*RfqQuotationRemoteDto)
+}
+
+// ReleaseRfqQuotationRemoteDto 释放RfqQuotationRemoteDto
+func ReleaseRfqQuotationRemoteDto(v *RfqQuotationRemoteDto) {
+	v.PriceList = v.PriceList[:0]
+	v.Details = ""
+	v.AnnexFilesStr = ""
+	v.RfqId = ""
+	v.PaymentTerms = ""
+	v.ExpiryDate = ""
+	v.Sample = nil
+	v.Id = 0
+	poolRfqQuotationRemoteDto.Put(v)
 }

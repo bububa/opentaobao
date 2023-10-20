@@ -2,6 +2,7 @@ package train
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoTrainAgentHandleticketConfirmVtwoAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentHandleticketConfirmVtwoAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoTrainAgentHandleticketConfirmVtwoAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTrainAgentHandleticketConfirmVtwoAPIResponseModel).Reset()
 }
 
 // TaobaoTrainAgentHandleticketConfirmVtwoAPIResponseModel is 代理商出票中v2--增加鉴权校验 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoTrainAgentHandleticketConfirmVtwoAPIResponseModel struct {
 	ExtendParams string `json:"extend_params,omitempty" xml:"extend_params,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTrainAgentHandleticketConfirmVtwoAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TrainErrorCode = ""
+	m.TrainErrorMsg = ""
+	m.ExtendParams = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoTrainAgentHandleticketConfirmVtwoAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTrainAgentHandleticketConfirmVtwoAPIResponse)
+	},
+}
+
+// GetTaobaoTrainAgentHandleticketConfirmVtwoAPIResponse 从 sync.Pool 获取 TaobaoTrainAgentHandleticketConfirmVtwoAPIResponse
+func GetTaobaoTrainAgentHandleticketConfirmVtwoAPIResponse() *TaobaoTrainAgentHandleticketConfirmVtwoAPIResponse {
+	return poolTaobaoTrainAgentHandleticketConfirmVtwoAPIResponse.Get().(*TaobaoTrainAgentHandleticketConfirmVtwoAPIResponse)
+}
+
+// ReleaseTaobaoTrainAgentHandleticketConfirmVtwoAPIResponse 将 TaobaoTrainAgentHandleticketConfirmVtwoAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTrainAgentHandleticketConfirmVtwoAPIResponse(v *TaobaoTrainAgentHandleticketConfirmVtwoAPIResponse) {
+	v.Reset()
+	poolTaobaoTrainAgentHandleticketConfirmVtwoAPIResponse.Put(v)
 }

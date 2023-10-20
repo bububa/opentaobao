@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripAccountPrestoreRs 结构体
 type BtripAccountPrestoreRs struct {
 	// 错误信息
@@ -14,4 +18,26 @@ type BtripAccountPrestoreRs struct {
 	BtripCrediAmountRs *BtripCrediAmountRs `json:"btrip_credi_amount_rs,omitempty" xml:"btrip_credi_amount_rs,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolBtripAccountPrestoreRs = sync.Pool{
+	New: func() any {
+		return new(BtripAccountPrestoreRs)
+	},
+}
+
+// GetBtripAccountPrestoreRs() 从对象池中获取BtripAccountPrestoreRs
+func GetBtripAccountPrestoreRs() *BtripAccountPrestoreRs {
+	return poolBtripAccountPrestoreRs.Get().(*BtripAccountPrestoreRs)
+}
+
+// ReleaseBtripAccountPrestoreRs 释放BtripAccountPrestoreRs
+func ReleaseBtripAccountPrestoreRs(v *BtripAccountPrestoreRs) {
+	v.ResultMsg = ""
+	v.Module = nil
+	v.ResultCode = 0
+	v.BtripAccountPrestoreRs = nil
+	v.BtripCrediAmountRs = nil
+	v.Success = false
+	poolBtripAccountPrestoreRs.Put(v)
 }

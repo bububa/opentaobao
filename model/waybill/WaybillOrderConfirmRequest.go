@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // WaybillOrderConfirmRequest 结构体
 type WaybillOrderConfirmRequest struct {
 	// 物流单号信息
@@ -28,4 +32,33 @@ type WaybillOrderConfirmRequest struct {
 	TotalWeight int64 `json:"total_weight,omitempty" xml:"total_weight,omitempty"`
 	// 预约上门收件
 	CallDoorPickUp bool `json:"call_door_pick_up,omitempty" xml:"call_door_pick_up,omitempty"`
+}
+
+var poolWaybillOrderConfirmRequest = sync.Pool{
+	New: func() any {
+		return new(WaybillOrderConfirmRequest)
+	},
+}
+
+// GetWaybillOrderConfirmRequest() 从对象池中获取WaybillOrderConfirmRequest
+func GetWaybillOrderConfirmRequest() *WaybillOrderConfirmRequest {
+	return poolWaybillOrderConfirmRequest.Get().(*WaybillOrderConfirmRequest)
+}
+
+// ReleaseWaybillOrderConfirmRequest 释放WaybillOrderConfirmRequest
+func ReleaseWaybillOrderConfirmRequest(v *WaybillOrderConfirmRequest) {
+	v.WaybillInfo = v.WaybillInfo[:0]
+	v.CpCode = ""
+	v.DoorPickUpEndTime = ""
+	v.DoorPickUpTime = ""
+	v.ExtraInfo = ""
+	v.LogisticsServices = ""
+	v.ProductCode = ""
+	v.TotalHeight = 0
+	v.TotalLength = 0
+	v.TotalWidth = 0
+	v.TotalVolume = 0
+	v.TotalWeight = 0
+	v.CallDoorPickUp = false
+	poolWaybillOrderConfirmRequest.Put(v)
 }

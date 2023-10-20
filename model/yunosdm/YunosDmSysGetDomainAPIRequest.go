@@ -2,6 +2,7 @@ package yunosdm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type YunosDmSysGetDomainAPIRequest struct {
 // NewYunosDmSysGetDomainRequest 初始化YunosDmSysGetDomainAPIRequest对象
 func NewYunosDmSysGetDomainRequest() *YunosDmSysGetDomainAPIRequest {
 	return &YunosDmSysGetDomainAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosDmSysGetDomainAPIRequest) Reset() {
+	r._make = ""
+	r._model = ""
+	r._sn = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *YunosDmSysGetDomainAPIRequest) SetSn(_sn string) error {
 // GetSn Sn Getter
 func (r YunosDmSysGetDomainAPIRequest) GetSn() string {
 	return r._sn
+}
+
+var poolYunosDmSysGetDomainAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosDmSysGetDomainRequest()
+	},
+}
+
+// GetYunosDmSysGetDomainRequest 从 sync.Pool 获取 YunosDmSysGetDomainAPIRequest
+func GetYunosDmSysGetDomainAPIRequest() *YunosDmSysGetDomainAPIRequest {
+	return poolYunosDmSysGetDomainAPIRequest.Get().(*YunosDmSysGetDomainAPIRequest)
+}
+
+// ReleaseYunosDmSysGetDomainAPIRequest 将 YunosDmSysGetDomainAPIRequest 放入 sync.Pool
+func ReleaseYunosDmSysGetDomainAPIRequest(v *YunosDmSysGetDomainAPIRequest) {
+	v.Reset()
+	poolYunosDmSysGetDomainAPIRequest.Put(v)
 }

@@ -10,11 +10,6 @@ import (
 //
 // 查询标准地址区域代码信息。可以直接参考最新的行政区域代码：
 // &lt;a href=&#34;http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/index.html&#34;&gt;http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/index.html&lt;/a&gt;
-func TaobaoIstoreAreasGet(clt *core.SDKClient, req *smartstore.TaobaoIstoreAreasGetAPIRequest, session string) (*smartstore.TaobaoIstoreAreasGetAPIResponse, error) {
-	var resp smartstore.TaobaoIstoreAreasGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoIstoreAreasGet(clt *core.SDKClient, req *smartstore.TaobaoIstoreAreasGetAPIRequest, resp *smartstore.TaobaoIstoreAreasGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

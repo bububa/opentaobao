@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest struct
 // NewAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyRequest 初始化AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest对象
 func NewAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyRequest() *AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest {
 	return &AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r._derbyVoucherCardApplyReceiptDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest) S
 // GetDerbyVoucherCardApplyReceiptDTO DerbyVoucherCardApplyReceiptDTO Getter
 func (r AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest) GetDerbyVoucherCardApplyReceiptDTO() *DerbyVoucherCardApplyReceiptDto {
 	return r._derbyVoucherCardApplyReceiptDTO
+}
+
+var poolAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyRequest 从 sync.Pool 获取 AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest
+func GetAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest() *AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest {
+	return poolAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest.Get().(*AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest 将 AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest(v *AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsApplyAPIRequest.Put(v)
 }

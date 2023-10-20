@@ -1,5 +1,9 @@
 package lstvending
 
+import (
+	"sync"
+)
+
 // OpenTradeFlowQuery 结构体
 type OpenTradeFlowQuery struct {
 	// 排序条件
@@ -14,4 +18,26 @@ type OpenTradeFlowQuery struct {
 	GmtCreateRange *Range `json:"gmt_create_range,omitempty" xml:"gmt_create_range,omitempty"`
 	// 页码
 	PageNum int64 `json:"page_num,omitempty" xml:"page_num,omitempty"`
+}
+
+var poolOpenTradeFlowQuery = sync.Pool{
+	New: func() any {
+		return new(OpenTradeFlowQuery)
+	},
+}
+
+// GetOpenTradeFlowQuery() 从对象池中获取OpenTradeFlowQuery
+func GetOpenTradeFlowQuery() *OpenTradeFlowQuery {
+	return poolOpenTradeFlowQuery.Get().(*OpenTradeFlowQuery)
+}
+
+// ReleaseOpenTradeFlowQuery 释放OpenTradeFlowQuery
+func ReleaseOpenTradeFlowQuery(v *OpenTradeFlowQuery) {
+	v.SortParamList = v.SortParamList[:0]
+	v.GmtModifiedRange = nil
+	v.PageRows = 0
+	v.EquipmentId = 0
+	v.GmtCreateRange = nil
+	v.PageNum = 0
+	poolOpenTradeFlowQuery.Put(v)
 }

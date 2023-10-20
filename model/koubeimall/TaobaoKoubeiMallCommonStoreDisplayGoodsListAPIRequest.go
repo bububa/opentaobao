@@ -2,6 +2,7 @@ package koubeimall
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest struct {
 // NewTaobaoKoubeiMallCommonStoreDisplayGoodsListRequest 初始化TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest对象
 func NewTaobaoKoubeiMallCommonStoreDisplayGoodsListRequest() *TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest {
 	return &TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) Reset() {
+	r._mallId = ""
+	r._storeId = ""
+	r._dataSetId = ""
+	r._cityCode = ""
+	r._longitude = ""
+	r._latitude = ""
+	r._terminalType = ""
+	r._appVersion = ""
+	r._displayChannel = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) SetDisplayChanne
 // GetDisplayChannel DisplayChannel Getter
 func (r TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) GetDisplayChannel() string {
 	return r._displayChannel
+}
+
+var poolTaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoKoubeiMallCommonStoreDisplayGoodsListRequest()
+	},
+}
+
+// GetTaobaoKoubeiMallCommonStoreDisplayGoodsListRequest 从 sync.Pool 获取 TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest
+func GetTaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest() *TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest {
+	return poolTaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest.Get().(*TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest)
+}
+
+// ReleaseTaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest 将 TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest 放入 sync.Pool
+func ReleaseTaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest(v *TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) {
+	v.Reset()
+	poolTaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest.Put(v)
 }

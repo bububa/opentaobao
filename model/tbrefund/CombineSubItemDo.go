@@ -1,5 +1,9 @@
 package tbrefund
 
+import (
+	"sync"
+)
+
 // CombineSubItemDo 结构体
 type CombineSubItemDo struct {
 	// 商品数字编号
@@ -14,4 +18,26 @@ type CombineSubItemDo struct {
 	OuterSkuId string `json:"outer_sku_id,omitempty" xml:"outer_sku_id,omitempty"`
 	// 数量
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolCombineSubItemDo = sync.Pool{
+	New: func() any {
+		return new(CombineSubItemDo)
+	},
+}
+
+// GetCombineSubItemDo() 从对象池中获取CombineSubItemDo
+func GetCombineSubItemDo() *CombineSubItemDo {
+	return poolCombineSubItemDo.Get().(*CombineSubItemDo)
+}
+
+// ReleaseCombineSubItemDo 释放CombineSubItemDo
+func ReleaseCombineSubItemDo(v *CombineSubItemDo) {
+	v.NumIid = ""
+	v.ItemName = ""
+	v.SkuId = ""
+	v.OuterIid = ""
+	v.OuterSkuId = ""
+	v.Quantity = 0
+	poolCombineSubItemDo.Put(v)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // TopApiResult 结构体
 type TopApiResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type TopApiResult struct {
 	Data *WarehouseNetworkResultDto `json:"data,omitempty" xml:"data,omitempty"`
 	// 请求成功或失败
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTopApiResult = sync.Pool{
+	New: func() any {
+		return new(TopApiResult)
+	},
+}
+
+// GetTopApiResult() 从对象池中获取TopApiResult
+func GetTopApiResult() *TopApiResult {
+	return poolTopApiResult.Get().(*TopApiResult)
+}
+
+// ReleaseTopApiResult 释放TopApiResult
+func ReleaseTopApiResult(v *TopApiResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Data = nil
+	v.Success = false
+	poolTopApiResult.Put(v)
 }

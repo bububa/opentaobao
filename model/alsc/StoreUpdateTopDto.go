@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // StoreUpdateTopDto 结构体
 type StoreUpdateTopDto struct {
 	// 门店标
@@ -54,4 +58,46 @@ type StoreUpdateTopDto struct {
 	AllDay bool `json:"all_day,omitempty" xml:"all_day,omitempty"`
 	// 是否v3
 	IsV3 bool `json:"is_v3,omitempty" xml:"is_v3,omitempty"`
+}
+
+var poolStoreUpdateTopDto = sync.Pool{
+	New: func() any {
+		return new(StoreUpdateTopDto)
+	},
+}
+
+// GetStoreUpdateTopDto() 从对象池中获取StoreUpdateTopDto
+func GetStoreUpdateTopDto() *StoreUpdateTopDto {
+	return poolStoreUpdateTopDto.Get().(*StoreUpdateTopDto)
+}
+
+// ReleaseStoreUpdateTopDto 释放StoreUpdateTopDto
+func ReleaseStoreUpdateTopDto(v *StoreUpdateTopDto) {
+	v.Tags = v.Tags[:0]
+	v.Attributes = v.Attributes[:0]
+	v.CategoryPropertyValues = v.CategoryPropertyValues[:0]
+	v.BizAttributes = v.BizAttributes[:0]
+	v.Week = v.Week[:0]
+	v.Description = ""
+	v.Status = ""
+	v.EndTime = ""
+	v.StartTime = ""
+	v.Name = ""
+	v.OuterCode = ""
+	v.StoreType = ""
+	v.SubName = ""
+	v.StandardCategoryId = ""
+	v.BizCode = ""
+	v.Logo = ""
+	v.Pic = ""
+	v.StoreKeeper = nil
+	v.StoreAdress = nil
+	v.MainCategory = 0
+	v.ShopId = 0
+	v.BizType = 0
+	v.AuthenStatus = 0
+	v.StoreId = 0
+	v.AllDay = false
+	v.IsV3 = false
+	poolStoreUpdateTopDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.fulfill.batch.query.by.batchids
 //
 // 根据节点等条件查询履约单小票信息
-func AlibabaWdkFulfillBatchQueryByBatchids(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest, session string) (*wdk.AlibabaWdkFulfillBatchQueryByBatchidsAPIResponse, error) {
-	var resp wdk.AlibabaWdkFulfillBatchQueryByBatchidsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkFulfillBatchQueryByBatchids(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest, resp *wdk.AlibabaWdkFulfillBatchQueryByBatchidsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

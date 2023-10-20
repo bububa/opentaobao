@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest struct {
 // NewTaobaoWdkEquipmentConveyorContainerinfoGetRequest 初始化TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest对象
 func NewTaobaoWdkEquipmentConveyorContainerinfoGetRequest() *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest {
 	return &TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) Reset() {
+	r._containerCode = ""
+	r._batchCode = ""
+	r._waveCode = ""
+	r._warehouseId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) SetWarehouseId(_w
 // GetWarehouseId WarehouseId Getter
 func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetWarehouseId() int64 {
 	return r._warehouseId
+}
+
+var poolTaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWdkEquipmentConveyorContainerinfoGetRequest()
+	},
+}
+
+// GetTaobaoWdkEquipmentConveyorContainerinfoGetRequest 从 sync.Pool 获取 TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest
+func GetTaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest() *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest {
+	return poolTaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest.Get().(*TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest)
+}
+
+// ReleaseTaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest 将 TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest(v *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest.Put(v)
 }

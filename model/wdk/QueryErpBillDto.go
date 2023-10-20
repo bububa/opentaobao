@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // QueryErpBillDto 结构体
 type QueryErpBillDto struct {
 	// 单据创建的开始时间点
@@ -14,4 +18,26 @@ type QueryErpBillDto struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 单据类型
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolQueryErpBillDto = sync.Pool{
+	New: func() any {
+		return new(QueryErpBillDto)
+	},
+}
+
+// GetQueryErpBillDto() 从对象池中获取QueryErpBillDto
+func GetQueryErpBillDto() *QueryErpBillDto {
+	return poolQueryErpBillDto.Get().(*QueryErpBillDto)
+}
+
+// ReleaseQueryErpBillDto 释放QueryErpBillDto
+func ReleaseQueryErpBillDto(v *QueryErpBillDto) {
+	v.BeginDate = ""
+	v.EndDate = ""
+	v.WarehouseCode = ""
+	v.PageNo = 0
+	v.PageSize = 0
+	v.Type = 0
+	poolQueryErpBillDto.Put(v)
 }

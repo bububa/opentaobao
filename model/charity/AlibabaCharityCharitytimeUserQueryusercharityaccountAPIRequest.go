@@ -2,6 +2,7 @@ package charity
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest struct {
 // NewAlibabaCharityCharitytimeUserQueryusercharityaccountRequest 初始化AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest对象
 func NewAlibabaCharityCharitytimeUserQueryusercharityaccountRequest() *AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest {
 	return &AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest) Reset() {
+	r._queryCharityTimeTopApiHsfRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest) SetQuer
 // GetQueryCharityTimeTopApiHsfRequest QueryCharityTimeTopApiHsfRequest Getter
 func (r AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest) GetQueryCharityTimeTopApiHsfRequest() *QueryCharityTimeTopApiHsfRequest {
 	return r._queryCharityTimeTopApiHsfRequest
+}
+
+var poolAlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCharityCharitytimeUserQueryusercharityaccountRequest()
+	},
+}
+
+// GetAlibabaCharityCharitytimeUserQueryusercharityaccountRequest 从 sync.Pool 获取 AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest
+func GetAlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest() *AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest {
+	return poolAlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest.Get().(*AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest)
+}
+
+// ReleaseAlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest 将 AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest(v *AlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest) {
+	v.Reset()
+	poolAlibabaCharityCharitytimeUserQueryusercharityaccountAPIRequest.Put(v)
 }

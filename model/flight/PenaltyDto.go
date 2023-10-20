@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // PenaltyDto 结构体
 type PenaltyDto struct {
 	// 币种
@@ -28,4 +32,33 @@ type PenaltyDto struct {
 	TicketSegmentsStatus int64 `json:"ticket_segments_status,omitempty" xml:"ticket_segments_status,omitempty"`
 	// 时间单位，0小时，1天，默认0小时
 	TimeUnit int64 `json:"time_unit,omitempty" xml:"time_unit,omitempty"`
+}
+
+var poolPenaltyDto = sync.Pool{
+	New: func() any {
+		return new(PenaltyDto)
+	},
+}
+
+// GetPenaltyDto() 从对象池中获取PenaltyDto
+func GetPenaltyDto() *PenaltyDto {
+	return poolPenaltyDto.Get().(*PenaltyDto)
+}
+
+// ReleasePenaltyDto 释放PenaltyDto
+func ReleasePenaltyDto(v *PenaltyDto) {
+	v.Currency = ""
+	v.Descs = ""
+	v.EndTime = 0
+	v.Fee = 0
+	v.OdIndex = 0
+	v.PassengerType = 0
+	v.PenaltySupportType = 0
+	v.PenaltyType = 0
+	v.Percent = 0
+	v.SegmentIndex = 0
+	v.StartTime = 0
+	v.TicketSegmentsStatus = 0
+	v.TimeUnit = 0
+	poolPenaltyDto.Put(v)
 }

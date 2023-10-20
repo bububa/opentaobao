@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaWdkMarketingPriceAPIRequest struct {
 // NewAlibabaWdkMarketingPriceRequest 初始化AlibabaWdkMarketingPriceAPIRequest对象
 func NewAlibabaWdkMarketingPriceRequest() *AlibabaWdkMarketingPriceAPIRequest {
 	return &AlibabaWdkMarketingPriceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMarketingPriceAPIRequest) Reset() {
+	r._skuCodes = r._skuCodes[:0]
+	r._shopIds = r._shopIds[:0]
+	r._endTime = ""
+	r._beginTime = ""
+	r._pageSize = 0
+	r._pageIndex = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaWdkMarketingPriceAPIRequest) SetPageIndex(_pageIndex int64) erro
 // GetPageIndex PageIndex Getter
 func (r AlibabaWdkMarketingPriceAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
+}
+
+var poolAlibabaWdkMarketingPriceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMarketingPriceRequest()
+	},
+}
+
+// GetAlibabaWdkMarketingPriceRequest 从 sync.Pool 获取 AlibabaWdkMarketingPriceAPIRequest
+func GetAlibabaWdkMarketingPriceAPIRequest() *AlibabaWdkMarketingPriceAPIRequest {
+	return poolAlibabaWdkMarketingPriceAPIRequest.Get().(*AlibabaWdkMarketingPriceAPIRequest)
+}
+
+// ReleaseAlibabaWdkMarketingPriceAPIRequest 将 AlibabaWdkMarketingPriceAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMarketingPriceAPIRequest(v *AlibabaWdkMarketingPriceAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMarketingPriceAPIRequest.Put(v)
 }

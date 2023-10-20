@@ -9,11 +9,6 @@ import (
 // alitrip.policy.rule.compression.upload
 //
 // 大批量上传规则类型的单程/往返政策
-func AlitripPolicyRuleCompressionUpload(clt *core.SDKClient, req *flight.AlitripPolicyRuleCompressionUploadAPIRequest, session string) (*flight.AlitripPolicyRuleCompressionUploadAPIResponse, error) {
-	var resp flight.AlitripPolicyRuleCompressionUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripPolicyRuleCompressionUpload(clt *core.SDKClient, req *flight.AlitripPolicyRuleCompressionUploadAPIRequest, resp *flight.AlitripPolicyRuleCompressionUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

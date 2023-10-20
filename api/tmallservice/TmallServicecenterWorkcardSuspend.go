@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.workcard.suspend
 //
 // 工单挂起
-func TmallServicecenterWorkcardSuspend(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardSuspendAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardSuspendAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkcardSuspendAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkcardSuspend(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardSuspendAPIRequest, resp *tmallservice.TmallServicecenterWorkcardSuspendAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

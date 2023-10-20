@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaHmMarketingCouponEndactivityAPIRequest struct {
 // NewAlibabaHmMarketingCouponEndactivityRequest 初始化AlibabaHmMarketingCouponEndactivityAPIRequest对象
 func NewAlibabaHmMarketingCouponEndactivityRequest() *AlibabaHmMarketingCouponEndactivityAPIRequest {
 	return &AlibabaHmMarketingCouponEndactivityAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHmMarketingCouponEndactivityAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaHmMarketingCouponEndactivityAPIRequest) SetParam(_param *CommonA
 // GetParam Param Getter
 func (r AlibabaHmMarketingCouponEndactivityAPIRequest) GetParam() *CommonActivityParam {
 	return r._param
+}
+
+var poolAlibabaHmMarketingCouponEndactivityAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHmMarketingCouponEndactivityRequest()
+	},
+}
+
+// GetAlibabaHmMarketingCouponEndactivityRequest 从 sync.Pool 获取 AlibabaHmMarketingCouponEndactivityAPIRequest
+func GetAlibabaHmMarketingCouponEndactivityAPIRequest() *AlibabaHmMarketingCouponEndactivityAPIRequest {
+	return poolAlibabaHmMarketingCouponEndactivityAPIRequest.Get().(*AlibabaHmMarketingCouponEndactivityAPIRequest)
+}
+
+// ReleaseAlibabaHmMarketingCouponEndactivityAPIRequest 将 AlibabaHmMarketingCouponEndactivityAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHmMarketingCouponEndactivityAPIRequest(v *AlibabaHmMarketingCouponEndactivityAPIRequest) {
+	v.Reset()
+	poolAlibabaHmMarketingCouponEndactivityAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.legal.suit.court.lawyer.push
 //
 // 为诉讼系统推荐律师
-func AlibabaLegalSuitCourtLawyerPush(clt *core.SDKClient, req *legalsuit.AlibabaLegalSuitCourtLawyerPushAPIRequest, session string) (*legalsuit.AlibabaLegalSuitCourtLawyerPushAPIResponse, error) {
-	var resp legalsuit.AlibabaLegalSuitCourtLawyerPushAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLegalSuitCourtLawyerPush(clt *core.SDKClient, req *legalsuit.AlibabaLegalSuitCourtLawyerPushAPIRequest, resp *legalsuit.AlibabaLegalSuitCourtLawyerPushAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package rhino
 
+import (
+	"sync"
+)
+
 // ClothingInboundConfirmDto 结构体
 type ClothingInboundConfirmDto struct {
 	// 物料描述，对应WMS002：ItemName
@@ -28,4 +32,33 @@ type ClothingInboundConfirmDto struct {
 	SkuBO *SkuBo `json:"sku_b_o,omitempty" xml:"sku_b_o,omitempty"`
 	// 入库单类型
 	InboundType int64 `json:"inbound_type,omitempty" xml:"inbound_type,omitempty"`
+}
+
+var poolClothingInboundConfirmDto = sync.Pool{
+	New: func() any {
+		return new(ClothingInboundConfirmDto)
+	},
+}
+
+// GetClothingInboundConfirmDto() 从对象池中获取ClothingInboundConfirmDto
+func GetClothingInboundConfirmDto() *ClothingInboundConfirmDto {
+	return poolClothingInboundConfirmDto.Get().(*ClothingInboundConfirmDto)
+}
+
+// ReleaseClothingInboundConfirmDto 释放ClothingInboundConfirmDto
+func ReleaseClothingInboundConfirmDto(v *ClothingInboundConfirmDto) {
+	v.MaterialDesc = ""
+	v.EcOrderCode = ""
+	v.InboundDate = ""
+	v.MesOrderId = ""
+	v.Rfid = ""
+	v.DesiredId = ""
+	v.Amount = 0
+	v.FactoryId = 0
+	v.MaterialId = 0
+	v.InboundId = 0
+	v.WarehouseId = 0
+	v.SkuBO = nil
+	v.InboundType = 0
+	poolClothingInboundConfirmDto.Put(v)
 }

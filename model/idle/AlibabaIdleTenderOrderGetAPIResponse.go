@@ -2,6 +2,7 @@ package idle
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaIdleTenderOrderGetAPIResponse struct {
 	AlibabaIdleTenderOrderGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaIdleTenderOrderGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIdleTenderOrderGetAPIResponseModel).Reset()
+}
+
 // AlibabaIdleTenderOrderGetAPIResponseModel is 暗拍读取订单 成功返回结果
 type AlibabaIdleTenderOrderGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_tender_order_get_response"`
@@ -22,4 +29,27 @@ type AlibabaIdleTenderOrderGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果信息
 	Result *AlibabaIdleTenderOrderGetResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIdleTenderOrderGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaIdleTenderOrderGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleTenderOrderGetAPIResponse)
+	},
+}
+
+// GetAlibabaIdleTenderOrderGetAPIResponse 从 sync.Pool 获取 AlibabaIdleTenderOrderGetAPIResponse
+func GetAlibabaIdleTenderOrderGetAPIResponse() *AlibabaIdleTenderOrderGetAPIResponse {
+	return poolAlibabaIdleTenderOrderGetAPIResponse.Get().(*AlibabaIdleTenderOrderGetAPIResponse)
+}
+
+// ReleaseAlibabaIdleTenderOrderGetAPIResponse 将 AlibabaIdleTenderOrderGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIdleTenderOrderGetAPIResponse(v *AlibabaIdleTenderOrderGetAPIResponse) {
+	v.Reset()
+	poolAlibabaIdleTenderOrderGetAPIResponse.Put(v)
 }

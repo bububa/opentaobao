@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type TaobaoInventoryInitialAPIResponse struct {
 	TaobaoInventoryInitialAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoInventoryInitialAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoInventoryInitialAPIResponseModel).Reset()
+}
+
 // TaobaoInventoryInitialAPIResponseModel is 库存初始化 成功返回结果
 type TaobaoInventoryInitialAPIResponseModel struct {
 	XMLName xml.Name `xml:"inventory_initial_response"`
@@ -23,4 +30,27 @@ type TaobaoInventoryInitialAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 提示信息
 	TipInfos []TipInfo `json:"tip_infos,omitempty" xml:"tip_infos>tip_info,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoInventoryInitialAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TipInfos = m.TipInfos[:0]
+}
+
+var poolTaobaoInventoryInitialAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoInventoryInitialAPIResponse)
+	},
+}
+
+// GetTaobaoInventoryInitialAPIResponse 从 sync.Pool 获取 TaobaoInventoryInitialAPIResponse
+func GetTaobaoInventoryInitialAPIResponse() *TaobaoInventoryInitialAPIResponse {
+	return poolTaobaoInventoryInitialAPIResponse.Get().(*TaobaoInventoryInitialAPIResponse)
+}
+
+// ReleaseTaobaoInventoryInitialAPIResponse 将 TaobaoInventoryInitialAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoInventoryInitialAPIResponse(v *TaobaoInventoryInitialAPIResponse) {
+	v.Reset()
+	poolTaobaoInventoryInitialAPIResponse.Put(v)
 }

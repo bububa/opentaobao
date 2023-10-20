@@ -2,6 +2,7 @@ package crm
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoCrmMemberinfoUpdateAPIResponse struct {
 	TaobaoCrmMemberinfoUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoCrmMemberinfoUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCrmMemberinfoUpdateAPIResponseModel).Reset()
+}
+
 // TaobaoCrmMemberinfoUpdateAPIResponseModel is 编辑会员资料 成功返回结果
 type TaobaoCrmMemberinfoUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"crm_memberinfo_update_response"`
@@ -22,4 +29,27 @@ type TaobaoCrmMemberinfoUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 会员信息修改是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCrmMemberinfoUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoCrmMemberinfoUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCrmMemberinfoUpdateAPIResponse)
+	},
+}
+
+// GetTaobaoCrmMemberinfoUpdateAPIResponse 从 sync.Pool 获取 TaobaoCrmMemberinfoUpdateAPIResponse
+func GetTaobaoCrmMemberinfoUpdateAPIResponse() *TaobaoCrmMemberinfoUpdateAPIResponse {
+	return poolTaobaoCrmMemberinfoUpdateAPIResponse.Get().(*TaobaoCrmMemberinfoUpdateAPIResponse)
+}
+
+// ReleaseTaobaoCrmMemberinfoUpdateAPIResponse 将 TaobaoCrmMemberinfoUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCrmMemberinfoUpdateAPIResponse(v *TaobaoCrmMemberinfoUpdateAPIResponse) {
+	v.Reset()
+	poolTaobaoCrmMemberinfoUpdateAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package charity
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCharityBindCancelAPIRequest struct {
 // NewAlibabaCharityBindCancelRequest 初始化AlibabaCharityBindCancelAPIRequest对象
 func NewAlibabaCharityBindCancelRequest() *AlibabaCharityBindCancelAPIRequest {
 	return &AlibabaCharityBindCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCharityBindCancelAPIRequest) Reset() {
+	r._userKey = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCharityBindCancelAPIRequest) SetUserKey(_userKey string) error {
 // GetUserKey UserKey Getter
 func (r AlibabaCharityBindCancelAPIRequest) GetUserKey() string {
 	return r._userKey
+}
+
+var poolAlibabaCharityBindCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCharityBindCancelRequest()
+	},
+}
+
+// GetAlibabaCharityBindCancelRequest 从 sync.Pool 获取 AlibabaCharityBindCancelAPIRequest
+func GetAlibabaCharityBindCancelAPIRequest() *AlibabaCharityBindCancelAPIRequest {
+	return poolAlibabaCharityBindCancelAPIRequest.Get().(*AlibabaCharityBindCancelAPIRequest)
+}
+
+// ReleaseAlibabaCharityBindCancelAPIRequest 将 AlibabaCharityBindCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCharityBindCancelAPIRequest(v *AlibabaCharityBindCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaCharityBindCancelAPIRequest.Put(v)
 }

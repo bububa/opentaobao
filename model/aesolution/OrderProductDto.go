@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // OrderProductDto 结构体
 type OrderProductDto struct {
 	// child order status
@@ -66,4 +70,52 @@ type OrderProductDto struct {
 	MoneyBack3x bool `json:"money_back3x,omitempty" xml:"money_back3x,omitempty"`
 	// Whether child orders can submit disputes
 	CanSubmitIssue bool `json:"can_submit_issue,omitempty" xml:"can_submit_issue,omitempty"`
+}
+
+var poolOrderProductDto = sync.Pool{
+	New: func() any {
+		return new(OrderProductDto)
+	},
+}
+
+// GetOrderProductDto() 从对象池中获取OrderProductDto
+func GetOrderProductDto() *OrderProductDto {
+	return poolOrderProductDto.Get().(*OrderProductDto)
+}
+
+// ReleaseOrderProductDto 释放OrderProductDto
+func ReleaseOrderProductDto(v *OrderProductDto) {
+	v.SonOrderStatus = ""
+	v.SkuCode = ""
+	v.ShowStatus = ""
+	v.SendGoodsTime = ""
+	v.SendGoodsOperator = ""
+	v.ProductUnit = ""
+	v.ProductStandard = ""
+	v.ProductSnapUrl = ""
+	v.ProductName = ""
+	v.ProductImgUrl = ""
+	v.Memo = ""
+	v.LogisticsType = ""
+	v.LogisticsServiceName = ""
+	v.IssueStatus = ""
+	v.IssueMode = ""
+	v.FundStatus = ""
+	v.FreightCommitDay = ""
+	v.EscrowFeeRate = ""
+	v.DeliveryTime = ""
+	v.BuyerSignerLastName = ""
+	v.BuyerSignerFirstName = ""
+	v.AfflicateFeeRate = ""
+	v.TotalProductAmount = nil
+	v.ProductUnitPrice = nil
+	v.ProductId = 0
+	v.ProductCount = 0
+	v.OrderId = 0
+	v.LogisticsAmount = nil
+	v.GoodsPrepareTime = 0
+	v.ChildId = 0
+	v.MoneyBack3x = false
+	v.CanSubmitIssue = false
+	poolOrderProductDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // TaobaoQimenTransferorderCreateStruct 结构体
 type TaobaoQimenTransferorderCreateStruct struct {
 	// 项目集
@@ -30,4 +34,34 @@ type TaobaoQimenTransferorderCreateStruct struct {
 	ExpectInStoreTime string `json:"expectInStoreTime,omitempty" xml:"expectInStoreTime,omitempty"`
 	// 调拨单信息
 	TransferExecuteInfo *TaobaoQimenTransferorderCreateStruct `json:"transferExecuteInfo,omitempty" xml:"transferExecuteInfo,omitempty"`
+}
+
+var poolTaobaoQimenTransferorderCreateStruct = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenTransferorderCreateStruct)
+	},
+}
+
+// GetTaobaoQimenTransferorderCreateStruct() 从对象池中获取TaobaoQimenTransferorderCreateStruct
+func GetTaobaoQimenTransferorderCreateStruct() *TaobaoQimenTransferorderCreateStruct {
+	return poolTaobaoQimenTransferorderCreateStruct.Get().(*TaobaoQimenTransferorderCreateStruct)
+}
+
+// ReleaseTaobaoQimenTransferorderCreateStruct 释放TaobaoQimenTransferorderCreateStruct
+func ReleaseTaobaoQimenTransferorderCreateStruct(v *TaobaoQimenTransferorderCreateStruct) {
+	v.TransferItems = v.TransferItems[:0]
+	v.ErpOrderCode = ""
+	v.FromStoreCode = ""
+	v.ToStoreCode = ""
+	v.ExpectStartTime = ""
+	v.Attributes = ""
+	v.OwnerCode = ""
+	v.Flag = ""
+	v.Code = ""
+	v.Message = ""
+	v.TransferOrderCode = ""
+	v.ExpectOutStoreTime = ""
+	v.ExpectInStoreTime = ""
+	v.TransferExecuteInfo = nil
+	poolTaobaoQimenTransferorderCreateStruct.Put(v)
 }

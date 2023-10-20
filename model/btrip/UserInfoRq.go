@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // UserInfoRq 结构体
 type UserInfoRq struct {
 	// 第三方用户ID（注册签约时必填）
@@ -20,4 +24,29 @@ type UserInfoRq struct {
 	PositionLevel string `json:"position_level,omitempty" xml:"position_level,omitempty"`
 	// 用户所在部门ID（注册签约时必填）
 	DepartId int64 `json:"depart_id,omitempty" xml:"depart_id,omitempty"`
+}
+
+var poolUserInfoRq = sync.Pool{
+	New: func() any {
+		return new(UserInfoRq)
+	},
+}
+
+// GetUserInfoRq() 从对象池中获取UserInfoRq
+func GetUserInfoRq() *UserInfoRq {
+	return poolUserInfoRq.Get().(*UserInfoRq)
+}
+
+// ReleaseUserInfoRq 释放UserInfoRq
+func ReleaseUserInfoRq(v *UserInfoRq) {
+	v.UserId = ""
+	v.Position = ""
+	v.RealName = ""
+	v.RealNameEn = ""
+	v.Phone = ""
+	v.JobNo = ""
+	v.Email = ""
+	v.PositionLevel = ""
+	v.DepartId = 0
+	poolUserInfoRq.Put(v)
 }

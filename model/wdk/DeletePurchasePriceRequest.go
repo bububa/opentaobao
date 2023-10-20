@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // DeletePurchasePriceRequest 结构体
 type DeletePurchasePriceRequest struct {
 	// 请求幂等ID
@@ -10,4 +14,24 @@ type DeletePurchasePriceRequest struct {
 	OuCode string `json:"ou_code,omitempty" xml:"ou_code,omitempty"`
 	// 渠道
 	ChannelCodes string `json:"channel_codes,omitempty" xml:"channel_codes,omitempty"`
+}
+
+var poolDeletePurchasePriceRequest = sync.Pool{
+	New: func() any {
+		return new(DeletePurchasePriceRequest)
+	},
+}
+
+// GetDeletePurchasePriceRequest() 从对象池中获取DeletePurchasePriceRequest
+func GetDeletePurchasePriceRequest() *DeletePurchasePriceRequest {
+	return poolDeletePurchasePriceRequest.Get().(*DeletePurchasePriceRequest)
+}
+
+// ReleaseDeletePurchasePriceRequest 释放DeletePurchasePriceRequest
+func ReleaseDeletePurchasePriceRequest(v *DeletePurchasePriceRequest) {
+	v.OutId = ""
+	v.SkuCode = ""
+	v.OuCode = ""
+	v.ChannelCodes = ""
+	poolDeletePurchasePriceRequest.Put(v)
 }

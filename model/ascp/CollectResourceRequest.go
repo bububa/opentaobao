@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // CollectResourceRequest 结构体
 type CollectResourceRequest struct {
 	// 行政地址id（菜鸟地址库id）
@@ -42,4 +46,40 @@ type CollectResourceRequest struct {
 	ImmediateCollectAbility int64 `json:"immediate_collect_ability,omitempty" xml:"immediate_collect_ability,omitempty"`
 	// 日常预约单上门能力，枚举： 1 - 1小时预约单可上门 2 - 2小时预约单可上门 3 - 半天预约单（上下午）可上门 4 - 当天预约单可上门
 	ReservationAbility int64 `json:"reservation_ability,omitempty" xml:"reservation_ability,omitempty"`
+}
+
+var poolCollectResourceRequest = sync.Pool{
+	New: func() any {
+		return new(CollectResourceRequest)
+	},
+}
+
+// GetCollectResourceRequest() 从对象池中获取CollectResourceRequest
+func GetCollectResourceRequest() *CollectResourceRequest {
+	return poolCollectResourceRequest.Get().(*CollectResourceRequest)
+}
+
+// ReleaseCollectResourceRequest 释放CollectResourceRequest
+func ReleaseCollectResourceRequest(v *CollectResourceRequest) {
+	v.AddressIds = v.AddressIds[:0]
+	v.AddressNames = v.AddressNames[:0]
+	v.RegionIds = v.RegionIds[:0]
+	v.SpecifyDateWorkAbility = v.SpecifyDateWorkAbility[:0]
+	v.RequestId = ""
+	v.SupplierId = ""
+	v.DeliveryCode = ""
+	v.SiteCode = ""
+	v.SiteName = ""
+	v.ServiceType = ""
+	v.AbilityType = ""
+	v.ServiceScopeType = ""
+	v.AddressType = ""
+	v.RegionCode = ""
+	v.RegionAddressId = ""
+	v.BeginTime = ""
+	v.EndTime = ""
+	v.RequestTime = 0
+	v.ImmediateCollectAbility = 0
+	v.ReservationAbility = 0
+	poolCollectResourceRequest.Put(v)
 }

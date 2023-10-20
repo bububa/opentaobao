@@ -9,11 +9,6 @@ import (
 // alibaba.ele.enterprise.restaurant.multispecmenu
 //
 // 查询餐厅菜单
-func AlibabaEleEnterpriseRestaurantMultispecmenu(clt *core.SDKClient, req *eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest, session string) (*eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantMultispecmenuAPIResponse, error) {
-	var resp eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantMultispecmenuAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEleEnterpriseRestaurantMultispecmenu(clt *core.SDKClient, req *eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest, resp *eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantMultispecmenuAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

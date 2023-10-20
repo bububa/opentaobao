@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type TaobaoProductUpdateAPIRequest struct {
 // NewTaobaoProductUpdateRequest 初始化TaobaoProductUpdateAPIRequest对象
 func NewTaobaoProductUpdateRequest() *TaobaoProductUpdateAPIRequest {
 	return &TaobaoProductUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoProductUpdateAPIRequest) Reset() {
+	r._outerId = ""
+	r._binds = ""
+	r._saleProps = ""
+	r._name = ""
+	r._price = ""
+	r._desc = ""
+	r._nativeUnkeyprops = ""
+	r._productId = 0
+	r._image = nil
+	r._major = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *TaobaoProductUpdateAPIRequest) SetMajor(_major bool) error {
 // GetMajor Major Getter
 func (r TaobaoProductUpdateAPIRequest) GetMajor() bool {
 	return r._major
+}
+
+var poolTaobaoProductUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoProductUpdateRequest()
+	},
+}
+
+// GetTaobaoProductUpdateRequest 从 sync.Pool 获取 TaobaoProductUpdateAPIRequest
+func GetTaobaoProductUpdateAPIRequest() *TaobaoProductUpdateAPIRequest {
+	return poolTaobaoProductUpdateAPIRequest.Get().(*TaobaoProductUpdateAPIRequest)
+}
+
+// ReleaseTaobaoProductUpdateAPIRequest 将 TaobaoProductUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoProductUpdateAPIRequest(v *TaobaoProductUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoProductUpdateAPIRequest.Put(v)
 }

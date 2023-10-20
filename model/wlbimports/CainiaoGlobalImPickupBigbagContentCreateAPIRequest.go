@@ -2,6 +2,7 @@ package wlbimports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoGlobalImPickupBigbagContentCreateAPIRequest struct {
 // NewCainiaoGlobalImPickupBigbagContentCreateRequest 初始化CainiaoGlobalImPickupBigbagContentCreateAPIRequest对象
 func NewCainiaoGlobalImPickupBigbagContentCreateRequest() *CainiaoGlobalImPickupBigbagContentCreateAPIRequest {
 	return &CainiaoGlobalImPickupBigbagContentCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalImPickupBigbagContentCreateAPIRequest) Reset() {
+	r._bigbagCreateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoGlobalImPickupBigbagContentCreateAPIRequest) SetBigbagCreateRequ
 // GetBigbagCreateRequest BigbagCreateRequest Getter
 func (r CainiaoGlobalImPickupBigbagContentCreateAPIRequest) GetBigbagCreateRequest() *BigbagCreateRequest {
 	return r._bigbagCreateRequest
+}
+
+var poolCainiaoGlobalImPickupBigbagContentCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalImPickupBigbagContentCreateRequest()
+	},
+}
+
+// GetCainiaoGlobalImPickupBigbagContentCreateRequest 从 sync.Pool 获取 CainiaoGlobalImPickupBigbagContentCreateAPIRequest
+func GetCainiaoGlobalImPickupBigbagContentCreateAPIRequest() *CainiaoGlobalImPickupBigbagContentCreateAPIRequest {
+	return poolCainiaoGlobalImPickupBigbagContentCreateAPIRequest.Get().(*CainiaoGlobalImPickupBigbagContentCreateAPIRequest)
+}
+
+// ReleaseCainiaoGlobalImPickupBigbagContentCreateAPIRequest 将 CainiaoGlobalImPickupBigbagContentCreateAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalImPickupBigbagContentCreateAPIRequest(v *CainiaoGlobalImPickupBigbagContentCreateAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalImPickupBigbagContentCreateAPIRequest.Put(v)
 }

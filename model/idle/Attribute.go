@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // Attribute 结构体
 type Attribute struct {
 	// 结构化一级结论枚举值 新品：&#39;CERTIFIED_FLAW&#39;：真货有瑕疵；&#39;CERTIFIED_NO_FLAW&#39;：真货无瑕疵；&#39;FAKE&#39;：假货。 二手：&#39;CERTIFIED_FLAW&#39;：真货有瑕疵；&#39;FAKE&#39;：假货 主状态为4 ac已收货后，服务商调用履约接口传入
@@ -94,4 +98,66 @@ type Attribute struct {
 	CompensationFee string `json:"compensation_fee,omitempty" xml:"compensation_fee,omitempty"`
 	// 是否允许用户修改地址
 	AgreeUseAddressChange string `json:"agree_use_address_change,omitempty" xml:"agree_use_address_change,omitempty"`
+}
+
+var poolAttribute = sync.Pool{
+	New: func() any {
+		return new(Attribute)
+	},
+}
+
+// GetAttribute() 从对象池中获取Attribute
+func GetAttribute() *Attribute {
+	return poolAttribute.Get().(*Attribute)
+}
+
+// ReleaseAttribute 释放Attribute
+func ReleaseAttribute(v *Attribute) {
+	v.Conclusion1 = ""
+	v.Conclusion2 = ""
+	v.Degree = ""
+	v.ReportUrl = ""
+	v.Summary = ""
+	v.Ac2sellerMailNo = ""
+	v.Ac2buyerMailNo = ""
+	v.IdleAppraiseCheckpointsResult = ""
+	v.RefuseReasonCode = ""
+	v.PlatformSalePaidZfbId = ""
+	v.PayOrderId = ""
+	v.ForfeitFee = ""
+	v.ServiceFee = ""
+	v.DealAmt = ""
+	v.EndTime = ""
+	v.AuctionId = ""
+	v.CloseReason = ""
+	v.ConfirmAmt = ""
+	v.MailNo = ""
+	v.PayAmt = ""
+	v.MaxDealAmt = ""
+	v.RateContent = ""
+	v.RateGrade = ""
+	v.ConfirmFee = ""
+	v.Seller2AcMailNo = ""
+	v.ReferenceRecyclePrice = ""
+	v.RefundMailNo = ""
+	v.ItemId = ""
+	v.SellerReceiptAddressId = ""
+	v.Reason = ""
+	v.ArrearageFee = ""
+	v.AgreementNo = ""
+	v.AlipayUserId = ""
+	v.ArrearageLink = ""
+	v.Quantity = ""
+	v.AlipayTradeNo = ""
+	v.ContactName = ""
+	v.ContactMobile = ""
+	v.RecycleSupplierId = ""
+	v.IsvReceiveTime = ""
+	v.RealModel = ""
+	v.SpuMatch = ""
+	v.CloseReasonCode = ""
+	v.RefundLogisticsFee = ""
+	v.CompensationFee = ""
+	v.AgreeUseAddressChange = ""
+	poolAttribute.Put(v)
 }

@@ -1,5 +1,9 @@
 package tanx
 
+import (
+	"sync"
+)
+
 // NativeTemplateDto 结构体
 type NativeTemplateDto struct {
 	// 区域列表
@@ -12,4 +16,25 @@ type NativeTemplateDto struct {
 	Size string `json:"size,omitempty" xml:"size,omitempty"`
 	// 模板ID
 	TmplId int64 `json:"tmpl_id,omitempty" xml:"tmpl_id,omitempty"`
+}
+
+var poolNativeTemplateDto = sync.Pool{
+	New: func() any {
+		return new(NativeTemplateDto)
+	},
+}
+
+// GetNativeTemplateDto() 从对象池中获取NativeTemplateDto
+func GetNativeTemplateDto() *NativeTemplateDto {
+	return poolNativeTemplateDto.Get().(*NativeTemplateDto)
+}
+
+// ReleaseNativeTemplateDto 释放NativeTemplateDto
+func ReleaseNativeTemplateDto(v *NativeTemplateDto) {
+	v.Areas = v.Areas[:0]
+	v.Preview = ""
+	v.Description = ""
+	v.Size = ""
+	v.TmplId = 0
+	poolNativeTemplateDto.Put(v)
 }

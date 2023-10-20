@@ -2,6 +2,7 @@ package oversea
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaOverseaTranslateGetAPIRequest struct {
 // NewAlibabaOverseaTranslateGetRequest 初始化AlibabaOverseaTranslateGetAPIRequest对象
 func NewAlibabaOverseaTranslateGetRequest() *AlibabaOverseaTranslateGetAPIRequest {
 	return &AlibabaOverseaTranslateGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaOverseaTranslateGetAPIRequest) Reset() {
+	r._text = ""
+	r._sourceLang = ""
+	r._targetLang = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaOverseaTranslateGetAPIRequest) SetTargetLang(_targetLang string)
 // GetTargetLang TargetLang Getter
 func (r AlibabaOverseaTranslateGetAPIRequest) GetTargetLang() string {
 	return r._targetLang
+}
+
+var poolAlibabaOverseaTranslateGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaOverseaTranslateGetRequest()
+	},
+}
+
+// GetAlibabaOverseaTranslateGetRequest 从 sync.Pool 获取 AlibabaOverseaTranslateGetAPIRequest
+func GetAlibabaOverseaTranslateGetAPIRequest() *AlibabaOverseaTranslateGetAPIRequest {
+	return poolAlibabaOverseaTranslateGetAPIRequest.Get().(*AlibabaOverseaTranslateGetAPIRequest)
+}
+
+// ReleaseAlibabaOverseaTranslateGetAPIRequest 将 AlibabaOverseaTranslateGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaOverseaTranslateGetAPIRequest(v *AlibabaOverseaTranslateGetAPIRequest) {
+	v.Reset()
+	poolAlibabaOverseaTranslateGetAPIRequest.Put(v)
 }

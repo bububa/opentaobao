@@ -2,6 +2,7 @@ package examination
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type AlibabaAlihealthExaminationServiceareaCheckAPIRequest struct {
 // NewAlibabaAlihealthExaminationServiceareaCheckRequest 初始化AlibabaAlihealthExaminationServiceareaCheckAPIRequest对象
 func NewAlibabaAlihealthExaminationServiceareaCheckRequest() *AlibabaAlihealthExaminationServiceareaCheckAPIRequest {
 	return &AlibabaAlihealthExaminationServiceareaCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) Reset() {
+	r._packageCode = ""
+	r._address = ""
+	r._latitude = ""
+	r._longitude = ""
+	r._province = ""
+	r._provinceCode = ""
+	r._city = ""
+	r._cityCode = ""
+	r._district = ""
+	r._districtCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetDistrictCode(
 // GetDistrictCode DistrictCode Getter
 func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetDistrictCode() string {
 	return r._districtCode
+}
+
+var poolAlibabaAlihealthExaminationServiceareaCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthExaminationServiceareaCheckRequest()
+	},
+}
+
+// GetAlibabaAlihealthExaminationServiceareaCheckRequest 从 sync.Pool 获取 AlibabaAlihealthExaminationServiceareaCheckAPIRequest
+func GetAlibabaAlihealthExaminationServiceareaCheckAPIRequest() *AlibabaAlihealthExaminationServiceareaCheckAPIRequest {
+	return poolAlibabaAlihealthExaminationServiceareaCheckAPIRequest.Get().(*AlibabaAlihealthExaminationServiceareaCheckAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthExaminationServiceareaCheckAPIRequest 将 AlibabaAlihealthExaminationServiceareaCheckAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthExaminationServiceareaCheckAPIRequest(v *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationServiceareaCheckAPIRequest.Put(v)
 }

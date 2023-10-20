@@ -9,11 +9,6 @@ import (
 // alibaba.ailabs.user.speech.guide
 //
 // 根据用户的语音query，返回相应的引导语推荐
-func AlibabaAilabsUserSpeechGuide(clt *core.SDKClient, req *user.AlibabaAilabsUserSpeechGuideAPIRequest, session string) (*user.AlibabaAilabsUserSpeechGuideAPIResponse, error) {
-	var resp user.AlibabaAilabsUserSpeechGuideAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAilabsUserSpeechGuide(clt *core.SDKClient, req *user.AlibabaAilabsUserSpeechGuideAPIRequest, resp *user.AlibabaAilabsUserSpeechGuideAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

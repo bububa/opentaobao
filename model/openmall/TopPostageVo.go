@@ -1,5 +1,9 @@
 package openmall
 
+import (
+	"sync"
+)
+
 // TopPostageVo 结构体
 type TopPostageVo struct {
 	// 增费：支持0.00-999.99（最多包含两位小数）
@@ -16,4 +20,27 @@ type TopPostageVo struct {
 	StartStandard string `json:"start_standard,omitempty" xml:"start_standard,omitempty"`
 	// 运费计算方式，可选值：0（件数）、1（重量）、3（体积）。
 	Valuation int64 `json:"valuation,omitempty" xml:"valuation,omitempty"`
+}
+
+var poolTopPostageVo = sync.Pool{
+	New: func() any {
+		return new(TopPostageVo)
+	},
+}
+
+// GetTopPostageVo() 从对象池中获取TopPostageVo
+func GetTopPostageVo() *TopPostageVo {
+	return poolTopPostageVo.Get().(*TopPostageVo)
+}
+
+// ReleaseTopPostageVo 释放TopPostageVo
+func ReleaseTopPostageVo(v *TopPostageVo) {
+	v.AddFee = ""
+	v.AddStandard = ""
+	v.PostArea = ""
+	v.PostType = ""
+	v.StartFee = ""
+	v.StartStandard = ""
+	v.Valuation = 0
+	poolTopPostageVo.Put(v)
 }

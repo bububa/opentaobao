@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaAlihealthMsAreaProvinceListAPIRequest struct {
 // NewAlibabaAlihealthMsAreaProvinceListRequest 初始化AlibabaAlihealthMsAreaProvinceListAPIRequest对象
 func NewAlibabaAlihealthMsAreaProvinceListRequest() *AlibabaAlihealthMsAreaProvinceListAPIRequest {
 	return &AlibabaAlihealthMsAreaProvinceListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthMsAreaProvinceListAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaAlihealthMsAreaProvinceListAPIRequest) GetApiParams(params url.Va
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaAlihealthMsAreaProvinceListAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaAlihealthMsAreaProvinceListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthMsAreaProvinceListRequest()
+	},
+}
+
+// GetAlibabaAlihealthMsAreaProvinceListRequest 从 sync.Pool 获取 AlibabaAlihealthMsAreaProvinceListAPIRequest
+func GetAlibabaAlihealthMsAreaProvinceListAPIRequest() *AlibabaAlihealthMsAreaProvinceListAPIRequest {
+	return poolAlibabaAlihealthMsAreaProvinceListAPIRequest.Get().(*AlibabaAlihealthMsAreaProvinceListAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthMsAreaProvinceListAPIRequest 将 AlibabaAlihealthMsAreaProvinceListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthMsAreaProvinceListAPIRequest(v *AlibabaAlihealthMsAreaProvinceListAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthMsAreaProvinceListAPIRequest.Put(v)
 }

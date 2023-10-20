@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // RefundDetailDto 结构体
 type RefundDetailDto struct {
 	// 退票数据集
@@ -40,4 +44,39 @@ type RefundDetailDto struct {
 	RefundWayType int64 `json:"refund_way_type,omitempty" xml:"refund_way_type,omitempty"`
 	//    1:&#34;单程&#34;,     2:&#34;往返&#34;,     3:&#34;多程&#34;
 	TripType int64 `json:"trip_type,omitempty" xml:"trip_type,omitempty"`
+}
+
+var poolRefundDetailDto = sync.Pool{
+	New: func() any {
+		return new(RefundDetailDto)
+	},
+}
+
+// GetRefundDetailDto() 从对象池中获取RefundDetailDto
+func GetRefundDetailDto() *RefundDetailDto {
+	return poolRefundDetailDto.Get().(*RefundDetailDto)
+}
+
+// ReleaseRefundDetailDto 释放RefundDetailDto
+func ReleaseRefundDetailDto(v *RefundDetailDto) {
+	v.RefundList = v.RefundList[:0]
+	v.Tags = v.Tags[:0]
+	v.Attachment = v.Attachment[:0]
+	v.ApplyId = ""
+	v.Reason = ""
+	v.OrderId = ""
+	v.Sla = ""
+	v.Currency = ""
+	v.ApplyTime = ""
+	v.RefuseReason = ""
+	v.CorrelationOrderId = ""
+	v.Voluntary = 0
+	v.AgentId = 0
+	v.DomesticIntl = 0
+	v.Status = 0
+	v.ApplyReasonType = 0
+	v.Supplement = 0
+	v.RefundWayType = 0
+	v.TripType = 0
+	poolRefundDetailDto.Put(v)
 }

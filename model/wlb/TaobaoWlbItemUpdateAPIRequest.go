@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -53,8 +54,31 @@ type TaobaoWlbItemUpdateAPIRequest struct {
 // NewTaobaoWlbItemUpdateRequest 初始化TaobaoWlbItemUpdateAPIRequest对象
 func NewTaobaoWlbItemUpdateRequest() *TaobaoWlbItemUpdateAPIRequest {
 	return &TaobaoWlbItemUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(18),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbItemUpdateAPIRequest) Reset() {
+	r._name = ""
+	r._title = ""
+	r._remark = ""
+	r._updatePropertyKeyList = ""
+	r._updatePropertyValueList = ""
+	r._deletePropertyKeyList = ""
+	r._color = ""
+	r._goodsCat = ""
+	r._pricingCat = ""
+	r._packageMaterial = ""
+	r._id = 0
+	r._weight = 0
+	r._length = 0
+	r._width = 0
+	r._height = 0
+	r._volume = 0
+	r._isFriable = false
+	r._isDangerous = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -306,4 +330,21 @@ func (r *TaobaoWlbItemUpdateAPIRequest) SetIsDangerous(_isDangerous bool) error 
 // GetIsDangerous IsDangerous Getter
 func (r TaobaoWlbItemUpdateAPIRequest) GetIsDangerous() bool {
 	return r._isDangerous
+}
+
+var poolTaobaoWlbItemUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbItemUpdateRequest()
+	},
+}
+
+// GetTaobaoWlbItemUpdateRequest 从 sync.Pool 获取 TaobaoWlbItemUpdateAPIRequest
+func GetTaobaoWlbItemUpdateAPIRequest() *TaobaoWlbItemUpdateAPIRequest {
+	return poolTaobaoWlbItemUpdateAPIRequest.Get().(*TaobaoWlbItemUpdateAPIRequest)
+}
+
+// ReleaseTaobaoWlbItemUpdateAPIRequest 将 TaobaoWlbItemUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbItemUpdateAPIRequest(v *TaobaoWlbItemUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbItemUpdateAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package flight
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFliggyFlightAgentAuxproductPushAPIRequest struct {
 // NewTaobaoFliggyFlightAgentAuxproductPushRequest 初始化TaobaoFliggyFlightAgentAuxproductPushAPIRequest对象
 func NewTaobaoFliggyFlightAgentAuxproductPushRequest() *TaobaoFliggyFlightAgentAuxproductPushAPIRequest {
 	return &TaobaoFliggyFlightAgentAuxproductPushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFliggyFlightAgentAuxproductPushAPIRequest) Reset() {
+	r._pushAuxProductsRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFliggyFlightAgentAuxproductPushAPIRequest) SetPushAuxProductsRq(_
 // GetPushAuxProductsRq PushAuxProductsRq Getter
 func (r TaobaoFliggyFlightAgentAuxproductPushAPIRequest) GetPushAuxProductsRq() *PushAuxProductsRq {
 	return r._pushAuxProductsRq
+}
+
+var poolTaobaoFliggyFlightAgentAuxproductPushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFliggyFlightAgentAuxproductPushRequest()
+	},
+}
+
+// GetTaobaoFliggyFlightAgentAuxproductPushRequest 从 sync.Pool 获取 TaobaoFliggyFlightAgentAuxproductPushAPIRequest
+func GetTaobaoFliggyFlightAgentAuxproductPushAPIRequest() *TaobaoFliggyFlightAgentAuxproductPushAPIRequest {
+	return poolTaobaoFliggyFlightAgentAuxproductPushAPIRequest.Get().(*TaobaoFliggyFlightAgentAuxproductPushAPIRequest)
+}
+
+// ReleaseTaobaoFliggyFlightAgentAuxproductPushAPIRequest 将 TaobaoFliggyFlightAgentAuxproductPushAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFliggyFlightAgentAuxproductPushAPIRequest(v *TaobaoFliggyFlightAgentAuxproductPushAPIRequest) {
+	v.Reset()
+	poolTaobaoFliggyFlightAgentAuxproductPushAPIRequest.Put(v)
 }

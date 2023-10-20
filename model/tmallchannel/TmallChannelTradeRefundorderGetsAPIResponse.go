@@ -2,6 +2,7 @@ package tmallchannel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallChannelTradeRefundorderGetsAPIResponse struct {
 	model.CommonResponse
 	TmallChannelTradeRefundorderGetsAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallChannelTradeRefundorderGetsAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallChannelTradeRefundorderGetsAPIResponseModel).Reset()
 }
 
 // TmallChannelTradeRefundorderGetsAPIResponseModel is 供应商查询退款单 成功返回结果
@@ -28,4 +35,30 @@ type TmallChannelTradeRefundorderGetsAPIResponseModel struct {
 	PageNumber int64 `json:"page_number,omitempty" xml:"page_number,omitempty"`
 	// 所有元素个数
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallChannelTradeRefundorderGetsAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.PageElements = m.PageElements[:0]
+	m.PageSize = 0
+	m.PageNumber = 0
+	m.TotalCount = 0
+}
+
+var poolTmallChannelTradeRefundorderGetsAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallChannelTradeRefundorderGetsAPIResponse)
+	},
+}
+
+// GetTmallChannelTradeRefundorderGetsAPIResponse 从 sync.Pool 获取 TmallChannelTradeRefundorderGetsAPIResponse
+func GetTmallChannelTradeRefundorderGetsAPIResponse() *TmallChannelTradeRefundorderGetsAPIResponse {
+	return poolTmallChannelTradeRefundorderGetsAPIResponse.Get().(*TmallChannelTradeRefundorderGetsAPIResponse)
+}
+
+// ReleaseTmallChannelTradeRefundorderGetsAPIResponse 将 TmallChannelTradeRefundorderGetsAPIResponse 保存到 sync.Pool
+func ReleaseTmallChannelTradeRefundorderGetsAPIResponse(v *TmallChannelTradeRefundorderGetsAPIResponse) {
+	v.Reset()
+	poolTmallChannelTradeRefundorderGetsAPIResponse.Put(v)
 }

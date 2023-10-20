@@ -2,6 +2,7 @@ package cloudgame
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCloudgameInteractiveGameStartAPIRequest struct {
 // NewAlibabaCloudgameInteractiveGameStartRequest 初始化AlibabaCloudgameInteractiveGameStartAPIRequest对象
 func NewAlibabaCloudgameInteractiveGameStartRequest() *AlibabaCloudgameInteractiveGameStartAPIRequest {
 	return &AlibabaCloudgameInteractiveGameStartAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCloudgameInteractiveGameStartAPIRequest) Reset() {
+	r._startGameRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCloudgameInteractiveGameStartAPIRequest) SetStartGameRequest(_st
 // GetStartGameRequest StartGameRequest Getter
 func (r AlibabaCloudgameInteractiveGameStartAPIRequest) GetStartGameRequest() *StartGameRequest {
 	return r._startGameRequest
+}
+
+var poolAlibabaCloudgameInteractiveGameStartAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCloudgameInteractiveGameStartRequest()
+	},
+}
+
+// GetAlibabaCloudgameInteractiveGameStartRequest 从 sync.Pool 获取 AlibabaCloudgameInteractiveGameStartAPIRequest
+func GetAlibabaCloudgameInteractiveGameStartAPIRequest() *AlibabaCloudgameInteractiveGameStartAPIRequest {
+	return poolAlibabaCloudgameInteractiveGameStartAPIRequest.Get().(*AlibabaCloudgameInteractiveGameStartAPIRequest)
+}
+
+// ReleaseAlibabaCloudgameInteractiveGameStartAPIRequest 将 AlibabaCloudgameInteractiveGameStartAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCloudgameInteractiveGameStartAPIRequest(v *AlibabaCloudgameInteractiveGameStartAPIRequest) {
+	v.Reset()
+	poolAlibabaCloudgameInteractiveGameStartAPIRequest.Put(v)
 }

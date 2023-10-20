@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaIdleIsvItemRechargeEditAPIRequest struct {
 // NewAlibabaIdleIsvItemRechargeEditRequest 初始化AlibabaIdleIsvItemRechargeEditAPIRequest对象
 func NewAlibabaIdleIsvItemRechargeEditRequest() *AlibabaIdleIsvItemRechargeEditAPIRequest {
 	return &AlibabaIdleIsvItemRechargeEditAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleIsvItemRechargeEditAPIRequest) Reset() {
+	r._itemId = 0
+	r._idleItemApiAutoRechargeDo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaIdleIsvItemRechargeEditAPIRequest) SetIdleItemApiAutoRechargeDo(
 // GetIdleItemApiAutoRechargeDo IdleItemApiAutoRechargeDo Getter
 func (r AlibabaIdleIsvItemRechargeEditAPIRequest) GetIdleItemApiAutoRechargeDo() *IdleItemApiAutoRechargeDo {
 	return r._idleItemApiAutoRechargeDo
+}
+
+var poolAlibabaIdleIsvItemRechargeEditAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleIsvItemRechargeEditRequest()
+	},
+}
+
+// GetAlibabaIdleIsvItemRechargeEditRequest 从 sync.Pool 获取 AlibabaIdleIsvItemRechargeEditAPIRequest
+func GetAlibabaIdleIsvItemRechargeEditAPIRequest() *AlibabaIdleIsvItemRechargeEditAPIRequest {
+	return poolAlibabaIdleIsvItemRechargeEditAPIRequest.Get().(*AlibabaIdleIsvItemRechargeEditAPIRequest)
+}
+
+// ReleaseAlibabaIdleIsvItemRechargeEditAPIRequest 将 AlibabaIdleIsvItemRechargeEditAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleIsvItemRechargeEditAPIRequest(v *AlibabaIdleIsvItemRechargeEditAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleIsvItemRechargeEditAPIRequest.Put(v)
 }

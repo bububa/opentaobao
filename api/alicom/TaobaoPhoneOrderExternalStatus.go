@@ -9,11 +9,6 @@ import (
 // taobao.phone.order.external.status
 //
 // 话费外放订单状态接口
-func TaobaoPhoneOrderExternalStatus(clt *core.SDKClient, req *alicom.TaobaoPhoneOrderExternalStatusAPIRequest, session string) (*alicom.TaobaoPhoneOrderExternalStatusAPIResponse, error) {
-	var resp alicom.TaobaoPhoneOrderExternalStatusAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPhoneOrderExternalStatus(clt *core.SDKClient, req *alicom.TaobaoPhoneOrderExternalStatusAPIRequest, resp *alicom.TaobaoPhoneOrderExternalStatusAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

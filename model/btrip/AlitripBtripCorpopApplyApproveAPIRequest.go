@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripCorpopApplyApproveAPIRequest struct {
 // NewAlitripBtripCorpopApplyApproveRequest 初始化AlitripBtripCorpopApplyApproveAPIRequest对象
 func NewAlitripBtripCorpopApplyApproveRequest() *AlitripBtripCorpopApplyApproveAPIRequest {
 	return &AlitripBtripCorpopApplyApproveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripCorpopApplyApproveAPIRequest) Reset() {
+	r._rq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripCorpopApplyApproveAPIRequest) SetRq(_rq *OpenApiUpdateApply
 // GetRq Rq Getter
 func (r AlitripBtripCorpopApplyApproveAPIRequest) GetRq() *OpenApiUpdateApplyRq {
 	return r._rq
+}
+
+var poolAlitripBtripCorpopApplyApproveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripCorpopApplyApproveRequest()
+	},
+}
+
+// GetAlitripBtripCorpopApplyApproveRequest 从 sync.Pool 获取 AlitripBtripCorpopApplyApproveAPIRequest
+func GetAlitripBtripCorpopApplyApproveAPIRequest() *AlitripBtripCorpopApplyApproveAPIRequest {
+	return poolAlitripBtripCorpopApplyApproveAPIRequest.Get().(*AlitripBtripCorpopApplyApproveAPIRequest)
+}
+
+// ReleaseAlitripBtripCorpopApplyApproveAPIRequest 将 AlitripBtripCorpopApplyApproveAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripCorpopApplyApproveAPIRequest(v *AlitripBtripCorpopApplyApproveAPIRequest) {
+	v.Reset()
+	poolAlitripBtripCorpopApplyApproveAPIRequest.Put(v)
 }

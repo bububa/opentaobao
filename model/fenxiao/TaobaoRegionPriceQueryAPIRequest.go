@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoRegionPriceQueryAPIRequest struct {
 // NewTaobaoRegionPriceQueryRequest 初始化TaobaoRegionPriceQueryAPIRequest对象
 func NewTaobaoRegionPriceQueryRequest() *TaobaoRegionPriceQueryAPIRequest {
 	return &TaobaoRegionPriceQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRegionPriceQueryAPIRequest) Reset() {
+	r._regionalPriceDtos = r._regionalPriceDtos[:0]
+	r._itemId = 0
+	r._skuId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoRegionPriceQueryAPIRequest) SetSkuId(_skuId int64) error {
 // GetSkuId SkuId Getter
 func (r TaobaoRegionPriceQueryAPIRequest) GetSkuId() int64 {
 	return r._skuId
+}
+
+var poolTaobaoRegionPriceQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRegionPriceQueryRequest()
+	},
+}
+
+// GetTaobaoRegionPriceQueryRequest 从 sync.Pool 获取 TaobaoRegionPriceQueryAPIRequest
+func GetTaobaoRegionPriceQueryAPIRequest() *TaobaoRegionPriceQueryAPIRequest {
+	return poolTaobaoRegionPriceQueryAPIRequest.Get().(*TaobaoRegionPriceQueryAPIRequest)
+}
+
+// ReleaseTaobaoRegionPriceQueryAPIRequest 将 TaobaoRegionPriceQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRegionPriceQueryAPIRequest(v *TaobaoRegionPriceQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoRegionPriceQueryAPIRequest.Put(v)
 }

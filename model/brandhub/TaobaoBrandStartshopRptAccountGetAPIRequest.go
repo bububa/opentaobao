@@ -2,6 +2,7 @@ package brandhub
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoBrandStartshopRptAccountGetAPIRequest struct {
 // NewTaobaoBrandStartshopRptAccountGetRequest 初始化TaobaoBrandStartshopRptAccountGetAPIRequest对象
 func NewTaobaoBrandStartshopRptAccountGetRequest() *TaobaoBrandStartshopRptAccountGetAPIRequest {
 	return &TaobaoBrandStartshopRptAccountGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBrandStartshopRptAccountGetAPIRequest) Reset() {
+	r._trafficType = ""
+	r._effect = ""
+	r._endDate = ""
+	r._startDate = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoBrandStartshopRptAccountGetAPIRequest) SetStartDate(_startDate st
 // GetStartDate StartDate Getter
 func (r TaobaoBrandStartshopRptAccountGetAPIRequest) GetStartDate() string {
 	return r._startDate
+}
+
+var poolTaobaoBrandStartshopRptAccountGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBrandStartshopRptAccountGetRequest()
+	},
+}
+
+// GetTaobaoBrandStartshopRptAccountGetRequest 从 sync.Pool 获取 TaobaoBrandStartshopRptAccountGetAPIRequest
+func GetTaobaoBrandStartshopRptAccountGetAPIRequest() *TaobaoBrandStartshopRptAccountGetAPIRequest {
+	return poolTaobaoBrandStartshopRptAccountGetAPIRequest.Get().(*TaobaoBrandStartshopRptAccountGetAPIRequest)
+}
+
+// ReleaseTaobaoBrandStartshopRptAccountGetAPIRequest 将 TaobaoBrandStartshopRptAccountGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBrandStartshopRptAccountGetAPIRequest(v *TaobaoBrandStartshopRptAccountGetAPIRequest) {
+	v.Reset()
+	poolTaobaoBrandStartshopRptAccountGetAPIRequest.Put(v)
 }

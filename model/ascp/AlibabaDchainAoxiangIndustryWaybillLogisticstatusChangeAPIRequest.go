@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest struct {
 // NewAlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeRequest 初始化AlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest对象
 func NewAlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeRequest() *AlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest {
 	return &AlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest) Reset() {
+	r._tmsOrderConfirmRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest) SetT
 // GetTmsOrderConfirmRequest TmsOrderConfirmRequest Getter
 func (r AlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest) GetTmsOrderConfirmRequest() *TmsOrderConfirmRequest {
 	return r._tmsOrderConfirmRequest
+}
+
+var poolAlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeRequest 从 sync.Pool 获取 AlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest
+func GetAlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest() *AlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest {
+	return poolAlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest.Get().(*AlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest 将 AlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest(v *AlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangIndustryWaybillLogisticstatusChangeAPIRequest.Put(v)
 }

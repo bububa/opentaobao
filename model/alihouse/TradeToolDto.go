@@ -1,6 +1,8 @@
 package alihouse
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -32,4 +34,33 @@ type TradeToolDto struct {
 	IsTest *model.File `json:"is_test,omitempty" xml:"is_test,omitempty"`
 	// ETC请求时间版本
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolTradeToolDto = sync.Pool{
+	New: func() any {
+		return new(TradeToolDto)
+	},
+}
+
+// GetTradeToolDto() 从对象池中获取TradeToolDto
+func GetTradeToolDto() *TradeToolDto {
+	return poolTradeToolDto.Get().(*TradeToolDto)
+}
+
+// ReleaseTradeToolDto 释放TradeToolDto
+func ReleaseTradeToolDto(v *TradeToolDto) {
+	v.OuterToolId = ""
+	v.ProjectName = ""
+	v.LinkName = ""
+	v.LinkUrl = ""
+	v.StatusShowName = ""
+	v.BeginTime = ""
+	v.EndTime = ""
+	v.OuterStoreId = ""
+	v.IsShow = nil
+	v.ToolType = nil
+	v.ProjectStatus = nil
+	v.IsTest = nil
+	v.Version = 0
+	poolTradeToolDto.Put(v)
 }

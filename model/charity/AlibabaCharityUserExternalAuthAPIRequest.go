@@ -2,6 +2,7 @@ package charity
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaCharityUserExternalAuthAPIRequest struct {
 // NewAlibabaCharityUserExternalAuthRequest 初始化AlibabaCharityUserExternalAuthAPIRequest对象
 func NewAlibabaCharityUserExternalAuthRequest() *AlibabaCharityUserExternalAuthAPIRequest {
 	return &AlibabaCharityUserExternalAuthAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCharityUserExternalAuthAPIRequest) Reset() {
+	r._avatar = ""
+	r._nick = ""
+	r._userKey = ""
+	r._userType = ""
+	r._scopeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaCharityUserExternalAuthAPIRequest) SetScopeId(_scopeId int64) er
 // GetScopeId ScopeId Getter
 func (r AlibabaCharityUserExternalAuthAPIRequest) GetScopeId() int64 {
 	return r._scopeId
+}
+
+var poolAlibabaCharityUserExternalAuthAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCharityUserExternalAuthRequest()
+	},
+}
+
+// GetAlibabaCharityUserExternalAuthRequest 从 sync.Pool 获取 AlibabaCharityUserExternalAuthAPIRequest
+func GetAlibabaCharityUserExternalAuthAPIRequest() *AlibabaCharityUserExternalAuthAPIRequest {
+	return poolAlibabaCharityUserExternalAuthAPIRequest.Get().(*AlibabaCharityUserExternalAuthAPIRequest)
+}
+
+// ReleaseAlibabaCharityUserExternalAuthAPIRequest 将 AlibabaCharityUserExternalAuthAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCharityUserExternalAuthAPIRequest(v *AlibabaCharityUserExternalAuthAPIRequest) {
+	v.Reset()
+	poolAlibabaCharityUserExternalAuthAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package miniapp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoSmartappSmartformDataWriteAPIRequest struct {
 // NewTaobaoSmartappSmartformDataWriteRequest 初始化TaobaoSmartappSmartformDataWriteAPIRequest对象
 func NewTaobaoSmartappSmartformDataWriteRequest() *TaobaoSmartappSmartformDataWriteAPIRequest {
 	return &TaobaoSmartappSmartformDataWriteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSmartappSmartformDataWriteAPIRequest) Reset() {
+	r._formData = ""
+	r._recordId = ""
+	r._formIdentifier = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoSmartappSmartformDataWriteAPIRequest) SetFormIdentifier(_formIden
 // GetFormIdentifier FormIdentifier Getter
 func (r TaobaoSmartappSmartformDataWriteAPIRequest) GetFormIdentifier() string {
 	return r._formIdentifier
+}
+
+var poolTaobaoSmartappSmartformDataWriteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSmartappSmartformDataWriteRequest()
+	},
+}
+
+// GetTaobaoSmartappSmartformDataWriteRequest 从 sync.Pool 获取 TaobaoSmartappSmartformDataWriteAPIRequest
+func GetTaobaoSmartappSmartformDataWriteAPIRequest() *TaobaoSmartappSmartformDataWriteAPIRequest {
+	return poolTaobaoSmartappSmartformDataWriteAPIRequest.Get().(*TaobaoSmartappSmartformDataWriteAPIRequest)
+}
+
+// ReleaseTaobaoSmartappSmartformDataWriteAPIRequest 将 TaobaoSmartappSmartformDataWriteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSmartappSmartformDataWriteAPIRequest(v *TaobaoSmartappSmartformDataWriteAPIRequest) {
+	v.Reset()
+	poolTaobaoSmartappSmartformDataWriteAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package dmp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoDmpCrowdTemplateApplyAPIRequest struct {
 // NewTaobaoDmpCrowdTemplateApplyRequest 初始化TaobaoDmpCrowdTemplateApplyAPIRequest对象
 func NewTaobaoDmpCrowdTemplateApplyRequest() *TaobaoDmpCrowdTemplateApplyAPIRequest {
 	return &TaobaoDmpCrowdTemplateApplyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDmpCrowdTemplateApplyAPIRequest) Reset() {
+	r._apiContext = nil
+	r._templateContext = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoDmpCrowdTemplateApplyAPIRequest) SetTemplateContext(_templateCont
 // GetTemplateContext TemplateContext Getter
 func (r TaobaoDmpCrowdTemplateApplyAPIRequest) GetTemplateContext() *TemplateContextDto {
 	return r._templateContext
+}
+
+var poolTaobaoDmpCrowdTemplateApplyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDmpCrowdTemplateApplyRequest()
+	},
+}
+
+// GetTaobaoDmpCrowdTemplateApplyRequest 从 sync.Pool 获取 TaobaoDmpCrowdTemplateApplyAPIRequest
+func GetTaobaoDmpCrowdTemplateApplyAPIRequest() *TaobaoDmpCrowdTemplateApplyAPIRequest {
+	return poolTaobaoDmpCrowdTemplateApplyAPIRequest.Get().(*TaobaoDmpCrowdTemplateApplyAPIRequest)
+}
+
+// ReleaseTaobaoDmpCrowdTemplateApplyAPIRequest 将 TaobaoDmpCrowdTemplateApplyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDmpCrowdTemplateApplyAPIRequest(v *TaobaoDmpCrowdTemplateApplyAPIRequest) {
+	v.Reset()
+	poolTaobaoDmpCrowdTemplateApplyAPIRequest.Put(v)
 }

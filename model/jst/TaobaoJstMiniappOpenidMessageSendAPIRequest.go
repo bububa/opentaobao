@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoJstMiniappOpenidMessageSendAPIRequest struct {
 // NewTaobaoJstMiniappOpenidMessageSendRequest 初始化TaobaoJstMiniappOpenidMessageSendAPIRequest对象
 func NewTaobaoJstMiniappOpenidMessageSendRequest() *TaobaoJstMiniappOpenidMessageSendAPIRequest {
 	return &TaobaoJstMiniappOpenidMessageSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJstMiniappOpenidMessageSendAPIRequest) Reset() {
+	r._signName = ""
+	r._openId = ""
+	r._templateCode = ""
+	r._content = ""
+	r._url = ""
+	r._sellerAppKey = ""
+	r._crowdCode = ""
+	r._extendNum = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoJstMiniappOpenidMessageSendAPIRequest) SetExtendNum(_extendNum st
 // GetExtendNum ExtendNum Getter
 func (r TaobaoJstMiniappOpenidMessageSendAPIRequest) GetExtendNum() string {
 	return r._extendNum
+}
+
+var poolTaobaoJstMiniappOpenidMessageSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJstMiniappOpenidMessageSendRequest()
+	},
+}
+
+// GetTaobaoJstMiniappOpenidMessageSendRequest 从 sync.Pool 获取 TaobaoJstMiniappOpenidMessageSendAPIRequest
+func GetTaobaoJstMiniappOpenidMessageSendAPIRequest() *TaobaoJstMiniappOpenidMessageSendAPIRequest {
+	return poolTaobaoJstMiniappOpenidMessageSendAPIRequest.Get().(*TaobaoJstMiniappOpenidMessageSendAPIRequest)
+}
+
+// ReleaseTaobaoJstMiniappOpenidMessageSendAPIRequest 将 TaobaoJstMiniappOpenidMessageSendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJstMiniappOpenidMessageSendAPIRequest(v *TaobaoJstMiniappOpenidMessageSendAPIRequest) {
+	v.Reset()
+	poolTaobaoJstMiniappOpenidMessageSendAPIRequest.Put(v)
 }

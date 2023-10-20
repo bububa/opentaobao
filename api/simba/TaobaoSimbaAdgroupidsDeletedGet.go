@@ -9,11 +9,6 @@ import (
 // taobao.simba.adgroupids.deleted.get
 //
 // 获取删除的推广组ID
-func TaobaoSimbaAdgroupidsDeletedGet(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupidsDeletedGetAPIRequest, session string) (*simba.TaobaoSimbaAdgroupidsDeletedGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaAdgroupidsDeletedGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaAdgroupidsDeletedGet(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupidsDeletedGetAPIRequest, resp *simba.TaobaoSimbaAdgroupidsDeletedGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

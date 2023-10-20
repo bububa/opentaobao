@@ -9,11 +9,6 @@ import (
 // alibaba.member.sync
 //
 // 会员信息同步
-func AlibabaMemberSync(clt *core.SDKClient, req *alimember.AlibabaMemberSyncAPIRequest, session string) (*alimember.AlibabaMemberSyncAPIResponse, error) {
-	var resp alimember.AlibabaMemberSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMemberSync(clt *core.SDKClient, req *alimember.AlibabaMemberSyncAPIRequest, resp *alimember.AlibabaMemberSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

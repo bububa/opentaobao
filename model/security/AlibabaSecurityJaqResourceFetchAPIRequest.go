@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaSecurityJaqResourceFetchAPIRequest struct {
 // NewAlibabaSecurityJaqResourceFetchRequest 初始化AlibabaSecurityJaqResourceFetchAPIRequest对象
 func NewAlibabaSecurityJaqResourceFetchRequest() *AlibabaSecurityJaqResourceFetchAPIRequest {
 	return &AlibabaSecurityJaqResourceFetchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqResourceFetchAPIRequest) Reset() {
+	r._deviceType = ""
+	r._dpi = ""
+	r._lang = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaSecurityJaqResourceFetchAPIRequest) SetLang(_lang string) error 
 // GetLang Lang Getter
 func (r AlibabaSecurityJaqResourceFetchAPIRequest) GetLang() string {
 	return r._lang
+}
+
+var poolAlibabaSecurityJaqResourceFetchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqResourceFetchRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqResourceFetchRequest 从 sync.Pool 获取 AlibabaSecurityJaqResourceFetchAPIRequest
+func GetAlibabaSecurityJaqResourceFetchAPIRequest() *AlibabaSecurityJaqResourceFetchAPIRequest {
+	return poolAlibabaSecurityJaqResourceFetchAPIRequest.Get().(*AlibabaSecurityJaqResourceFetchAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqResourceFetchAPIRequest 将 AlibabaSecurityJaqResourceFetchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqResourceFetchAPIRequest(v *AlibabaSecurityJaqResourceFetchAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqResourceFetchAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoFulfillmentOrderAssembleAPIRequest struct {
 // NewTaobaoFulfillmentOrderAssembleRequest 初始化TaobaoFulfillmentOrderAssembleAPIRequest对象
 func NewTaobaoFulfillmentOrderAssembleRequest() *TaobaoFulfillmentOrderAssembleAPIRequest {
 	return &TaobaoFulfillmentOrderAssembleAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFulfillmentOrderAssembleAPIRequest) Reset() {
+	r._type = ""
+	r._assembleOrders = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoFulfillmentOrderAssembleAPIRequest) SetAssembleOrders(_assembleOr
 // GetAssembleOrders AssembleOrders Getter
 func (r TaobaoFulfillmentOrderAssembleAPIRequest) GetAssembleOrders() *AssembleOrder {
 	return r._assembleOrders
+}
+
+var poolTaobaoFulfillmentOrderAssembleAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFulfillmentOrderAssembleRequest()
+	},
+}
+
+// GetTaobaoFulfillmentOrderAssembleRequest 从 sync.Pool 获取 TaobaoFulfillmentOrderAssembleAPIRequest
+func GetTaobaoFulfillmentOrderAssembleAPIRequest() *TaobaoFulfillmentOrderAssembleAPIRequest {
+	return poolTaobaoFulfillmentOrderAssembleAPIRequest.Get().(*TaobaoFulfillmentOrderAssembleAPIRequest)
+}
+
+// ReleaseTaobaoFulfillmentOrderAssembleAPIRequest 将 TaobaoFulfillmentOrderAssembleAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFulfillmentOrderAssembleAPIRequest(v *TaobaoFulfillmentOrderAssembleAPIRequest) {
+	v.Reset()
+	poolTaobaoFulfillmentOrderAssembleAPIRequest.Put(v)
 }

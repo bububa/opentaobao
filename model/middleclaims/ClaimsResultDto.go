@@ -1,5 +1,9 @@
 package middleclaims
 
+import (
+	"sync"
+)
+
 // ClaimsResultDto 结构体
 type ClaimsResultDto struct {
 	// 报案号
@@ -26,4 +30,32 @@ type ClaimsResultDto struct {
 	ExtensionMap *Extensionmap `json:"extension_map,omitempty" xml:"extension_map,omitempty"`
 	// 理赔结果
 	ClaimsResult bool `json:"claims_result,omitempty" xml:"claims_result,omitempty"`
+}
+
+var poolClaimsResultDto = sync.Pool{
+	New: func() any {
+		return new(ClaimsResultDto)
+	},
+}
+
+// GetClaimsResultDto() 从对象池中获取ClaimsResultDto
+func GetClaimsResultDto() *ClaimsResultDto {
+	return poolClaimsResultDto.Get().(*ClaimsResultDto)
+}
+
+// ReleaseClaimsResultDto 释放ClaimsResultDto
+func ReleaseClaimsResultDto(v *ClaimsResultDto) {
+	v.ReportNo = ""
+	v.TakeGoodsStatus = ""
+	v.ClaimsResultDesc = ""
+	v.ClaimCurrency = ""
+	v.CompensationRatio = ""
+	v.PackageStatus = ""
+	v.ServiceWorkOrderId = 0
+	v.OrderId = 0
+	v.SubOrderId = 0
+	v.ClaimAmount = 0
+	v.ExtensionMap = nil
+	v.ClaimsResult = false
+	poolClaimsResultDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ProjectPictureDto 结构体
 type ProjectPictureDto struct {
 	// 是否删除
@@ -38,4 +42,38 @@ type ProjectPictureDto struct {
 	Category int64 `json:"category,omitempty" xml:"category,omitempty"`
 	// 图片顺序
 	OrderTag int64 `json:"order_tag,omitempty" xml:"order_tag,omitempty"`
+}
+
+var poolProjectPictureDto = sync.Pool{
+	New: func() any {
+		return new(ProjectPictureDto)
+	},
+}
+
+// GetProjectPictureDto() 从对象池中获取ProjectPictureDto
+func GetProjectPictureDto() *ProjectPictureDto {
+	return poolProjectPictureDto.Get().(*ProjectPictureDto)
+}
+
+// ReleaseProjectPictureDto 释放ProjectPictureDto
+func ReleaseProjectPictureDto(v *ProjectPictureDto) {
+	v.IsDeleted = ""
+	v.Description = ""
+	v.PicData = ""
+	v.OuterHouseId = ""
+	v.OuterHouseBaseId = ""
+	v.OuterLayoutId = ""
+	v.OuterPictureId = ""
+	v.OuterId = ""
+	v.PicName = ""
+	v.OuterLayoutTid = ""
+	v.OuterBuildingId = ""
+	v.OuterStoreId = ""
+	v.OuterSalesTimeId = ""
+	v.IsCover = 0
+	v.IsFocus = 0
+	v.SourceType = 0
+	v.Category = 0
+	v.OrderTag = 0
+	poolProjectPictureDto.Put(v)
 }

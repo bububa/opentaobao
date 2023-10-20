@@ -2,6 +2,7 @@ package kbalgo
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaKbalgoAlscpoisGetAPIRequest struct {
 // NewAlibabaKbalgoAlscpoisGetRequest 初始化AlibabaKbalgoAlscpoisGetAPIRequest对象
 func NewAlibabaKbalgoAlscpoisGetRequest() *AlibabaKbalgoAlscpoisGetAPIRequest {
 	return &AlibabaKbalgoAlscpoisGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaKbalgoAlscpoisGetAPIRequest) Reset() {
+	r._pageNum = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaKbalgoAlscpoisGetAPIRequest) SetPageSize(_pageSize int64) error 
 // GetPageSize PageSize Getter
 func (r AlibabaKbalgoAlscpoisGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaKbalgoAlscpoisGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaKbalgoAlscpoisGetRequest()
+	},
+}
+
+// GetAlibabaKbalgoAlscpoisGetRequest 从 sync.Pool 获取 AlibabaKbalgoAlscpoisGetAPIRequest
+func GetAlibabaKbalgoAlscpoisGetAPIRequest() *AlibabaKbalgoAlscpoisGetAPIRequest {
+	return poolAlibabaKbalgoAlscpoisGetAPIRequest.Get().(*AlibabaKbalgoAlscpoisGetAPIRequest)
+}
+
+// ReleaseAlibabaKbalgoAlscpoisGetAPIRequest 将 AlibabaKbalgoAlscpoisGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaKbalgoAlscpoisGetAPIRequest(v *AlibabaKbalgoAlscpoisGetAPIRequest) {
+	v.Reset()
+	poolAlibabaKbalgoAlscpoisGetAPIRequest.Put(v)
 }

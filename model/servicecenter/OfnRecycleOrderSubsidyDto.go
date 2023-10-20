@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // OfnRecycleOrderSubsidyDto 结构体
 type OfnRecycleOrderSubsidyDto struct {
 	// 旧品主订单号
@@ -28,4 +32,33 @@ type OfnRecycleOrderSubsidyDto struct {
 	NewItemPlatformBenefitAmount int64 `json:"new_item_platform_benefit_amount,omitempty" xml:"new_item_platform_benefit_amount,omitempty"`
 	// 新品回收商补贴金额，单位：分
 	NewItemSupplyBenefitAmount int64 `json:"new_item_supply_benefit_amount,omitempty" xml:"new_item_supply_benefit_amount,omitempty"`
+}
+
+var poolOfnRecycleOrderSubsidyDto = sync.Pool{
+	New: func() any {
+		return new(OfnRecycleOrderSubsidyDto)
+	},
+}
+
+// GetOfnRecycleOrderSubsidyDto() 从对象池中获取OfnRecycleOrderSubsidyDto
+func GetOfnRecycleOrderSubsidyDto() *OfnRecycleOrderSubsidyDto {
+	return poolOfnRecycleOrderSubsidyDto.Get().(*OfnRecycleOrderSubsidyDto)
+}
+
+// ReleaseOfnRecycleOrderSubsidyDto 释放OfnRecycleOrderSubsidyDto
+func ReleaseOfnRecycleOrderSubsidyDto(v *OfnRecycleOrderSubsidyDto) {
+	v.OldOrderId = ""
+	v.NewOrderId = ""
+	v.SubsidyStatus = ""
+	v.NewOrderPayStatus = ""
+	v.NewOrderShopName = ""
+	v.KitchenApplianceSettleNewOrderId = ""
+	v.OldItemPreRedPacket = nil
+	v.OldItemEndRedPacket = nil
+	v.OldItemSubsidyRedPacket = nil
+	v.SupplyActivity = nil
+	v.NewItemSellerBenefitAmount = 0
+	v.NewItemPlatformBenefitAmount = 0
+	v.NewItemSupplyBenefitAmount = 0
+	poolOfnRecycleOrderSubsidyDto.Put(v)
 }

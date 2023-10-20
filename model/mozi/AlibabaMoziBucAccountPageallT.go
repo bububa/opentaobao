@@ -1,5 +1,9 @@
 package mozi
 
+import (
+	"sync"
+)
+
 // AlibabaMoziBucAccountPageallT 结构体
 type AlibabaMoziBucAccountPageallT struct {
 	// 账号名
@@ -42,4 +46,40 @@ type AlibabaMoziBucAccountPageallT struct {
 	TenantId int64 `json:"tenant_id,omitempty" xml:"tenant_id,omitempty"`
 	// 是否激活
 	ActiveLevel int64 `json:"active_level,omitempty" xml:"active_level,omitempty"`
+}
+
+var poolAlibabaMoziBucAccountPageallT = sync.Pool{
+	New: func() any {
+		return new(AlibabaMoziBucAccountPageallT)
+	},
+}
+
+// GetAlibabaMoziBucAccountPageallT() 从对象池中获取AlibabaMoziBucAccountPageallT
+func GetAlibabaMoziBucAccountPageallT() *AlibabaMoziBucAccountPageallT {
+	return poolAlibabaMoziBucAccountPageallT.Get().(*AlibabaMoziBucAccountPageallT)
+}
+
+// ReleaseAlibabaMoziBucAccountPageallT 释放AlibabaMoziBucAccountPageallT
+func ReleaseAlibabaMoziBucAccountPageallT(v *AlibabaMoziBucAccountPageallT) {
+	v.Account = ""
+	v.Namespace = ""
+	v.ReferId = ""
+	v.ReferAccount = ""
+	v.SiteLanguage = ""
+	v.Status = ""
+	v.AccountType = ""
+	v.Mainland = ""
+	v.Available = ""
+	v.HrStatus = ""
+	v.NickNameCn = ""
+	v.NameEn = ""
+	v.NameCn = ""
+	v.LastName = ""
+	v.FirstName = ""
+	v.EmpId = ""
+	v.Avatar = ""
+	v.Id = 0
+	v.TenantId = 0
+	v.ActiveLevel = 0
+	poolAlibabaMoziBucAccountPageallT.Put(v)
 }

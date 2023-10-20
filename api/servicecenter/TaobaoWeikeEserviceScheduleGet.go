@@ -9,11 +9,6 @@ import (
 // taobao.weike.eservice.schedule.get
 //
 // 客服排班信息查询接口
-func TaobaoWeikeEserviceScheduleGet(clt *core.SDKClient, req *servicecenter.TaobaoWeikeEserviceScheduleGetAPIRequest, session string) (*servicecenter.TaobaoWeikeEserviceScheduleGetAPIResponse, error) {
-	var resp servicecenter.TaobaoWeikeEserviceScheduleGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWeikeEserviceScheduleGet(clt *core.SDKClient, req *servicecenter.TaobaoWeikeEserviceScheduleGetAPIRequest, resp *servicecenter.TaobaoWeikeEserviceScheduleGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

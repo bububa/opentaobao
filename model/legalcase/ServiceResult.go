@@ -1,5 +1,9 @@
 package legalcase
 
+import (
+	"sync"
+)
+
 // ServiceResult 结构体
 type ServiceResult struct {
 	// 内容
@@ -18,4 +22,28 @@ type ServiceResult struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+var poolServiceResult = sync.Pool{
+	New: func() any {
+		return new(ServiceResult)
+	},
+}
+
+// GetServiceResult() 从对象池中获取ServiceResult
+func GetServiceResult() *ServiceResult {
+	return poolServiceResult.Get().(*ServiceResult)
+}
+
+// ReleaseServiceResult 释放ServiceResult
+func ReleaseServiceResult(v *ServiceResult) {
+	v.Contents = v.Contents[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Content = ""
+	v.Errcode = ""
+	v.Errmsg = ""
+	v.Success = false
+	v.IsSuccess = false
+	poolServiceResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // UnchargeCheckOpenReq 结构体
 type UnchargeCheckOpenReq struct {
 	// 品牌Id(不能和outbrandid同时为空)
@@ -18,4 +22,28 @@ type UnchargeCheckOpenReq struct {
 	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
 	// CS是辰森，KRY是客如云
 	BizChannel string `json:"biz_channel,omitempty" xml:"biz_channel,omitempty"`
+}
+
+var poolUnchargeCheckOpenReq = sync.Pool{
+	New: func() any {
+		return new(UnchargeCheckOpenReq)
+	},
+}
+
+// GetUnchargeCheckOpenReq() 从对象池中获取UnchargeCheckOpenReq
+func GetUnchargeCheckOpenReq() *UnchargeCheckOpenReq {
+	return poolUnchargeCheckOpenReq.Get().(*UnchargeCheckOpenReq)
+}
+
+// ReleaseUnchargeCheckOpenReq 释放UnchargeCheckOpenReq
+func ReleaseUnchargeCheckOpenReq(v *UnchargeCheckOpenReq) {
+	v.BrandId = ""
+	v.CardId = ""
+	v.CustomerId = ""
+	v.ShopId = ""
+	v.SrcOuterOrderId = ""
+	v.OutShopId = ""
+	v.OutBrandId = ""
+	v.BizChannel = ""
+	poolUnchargeCheckOpenReq.Put(v)
 }

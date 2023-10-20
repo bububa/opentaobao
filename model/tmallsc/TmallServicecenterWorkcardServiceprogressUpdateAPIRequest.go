@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallServicecenterWorkcardServiceprogressUpdateAPIRequest struct {
 // NewTmallServicecenterWorkcardServiceprogressUpdateRequest 初始化TmallServicecenterWorkcardServiceprogressUpdateAPIRequest对象
 func NewTmallServicecenterWorkcardServiceprogressUpdateRequest() *TmallServicecenterWorkcardServiceprogressUpdateAPIRequest {
 	return &TmallServicecenterWorkcardServiceprogressUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkcardServiceprogressUpdateAPIRequest) Reset() {
+	r._updateServiceProgressRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallServicecenterWorkcardServiceprogressUpdateAPIRequest) SetUpdateSer
 // GetUpdateServiceProgressRequest UpdateServiceProgressRequest Getter
 func (r TmallServicecenterWorkcardServiceprogressUpdateAPIRequest) GetUpdateServiceProgressRequest() *UpdateServiceProgressRequest {
 	return r._updateServiceProgressRequest
+}
+
+var poolTmallServicecenterWorkcardServiceprogressUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkcardServiceprogressUpdateRequest()
+	},
+}
+
+// GetTmallServicecenterWorkcardServiceprogressUpdateRequest 从 sync.Pool 获取 TmallServicecenterWorkcardServiceprogressUpdateAPIRequest
+func GetTmallServicecenterWorkcardServiceprogressUpdateAPIRequest() *TmallServicecenterWorkcardServiceprogressUpdateAPIRequest {
+	return poolTmallServicecenterWorkcardServiceprogressUpdateAPIRequest.Get().(*TmallServicecenterWorkcardServiceprogressUpdateAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkcardServiceprogressUpdateAPIRequest 将 TmallServicecenterWorkcardServiceprogressUpdateAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkcardServiceprogressUpdateAPIRequest(v *TmallServicecenterWorkcardServiceprogressUpdateAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkcardServiceprogressUpdateAPIRequest.Put(v)
 }

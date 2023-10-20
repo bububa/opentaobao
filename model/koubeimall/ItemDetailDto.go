@@ -1,5 +1,9 @@
 package koubeimall
 
+import (
+	"sync"
+)
+
 // ItemDetailDto 结构体
 type ItemDetailDto struct {
 	// 详情内容
@@ -14,4 +18,26 @@ type ItemDetailDto struct {
 	ItemBuyNotes *ItemBuyNotes `json:"item_buy_notes,omitempty" xml:"item_buy_notes,omitempty"`
 	// 商品服务
 	ItemServices *ItemServices `json:"item_services,omitempty" xml:"item_services,omitempty"`
+}
+
+var poolItemDetailDto = sync.Pool{
+	New: func() any {
+		return new(ItemDetailDto)
+	},
+}
+
+// GetItemDetailDto() 从对象池中获取ItemDetailDto
+func GetItemDetailDto() *ItemDetailDto {
+	return poolItemDetailDto.Get().(*ItemDetailDto)
+}
+
+// ReleaseItemDetailDto 释放ItemDetailDto
+func ReleaseItemDetailDto(v *ItemDetailDto) {
+	v.ItemGroupDetailList = v.ItemGroupDetailList[:0]
+	v.ItemImageDetailList = v.ItemImageDetailList[:0]
+	v.MemoList = v.MemoList[:0]
+	v.ItemRule = nil
+	v.ItemBuyNotes = nil
+	v.ItemServices = nil
+	poolItemDetailDto.Put(v)
 }

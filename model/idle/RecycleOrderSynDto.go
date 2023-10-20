@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // RecycleOrderSynDto 结构体
 type RecycleOrderSynDto struct {
 	// 订单号
@@ -10,4 +14,24 @@ type RecycleOrderSynDto struct {
 	PartnerKey string `json:"partner_key,omitempty" xml:"partner_key,omitempty"`
 	// 属性入参
 	Attribute *Attribute `json:"attribute,omitempty" xml:"attribute,omitempty"`
+}
+
+var poolRecycleOrderSynDto = sync.Pool{
+	New: func() any {
+		return new(RecycleOrderSynDto)
+	},
+}
+
+// GetRecycleOrderSynDto() 从对象池中获取RecycleOrderSynDto
+func GetRecycleOrderSynDto() *RecycleOrderSynDto {
+	return poolRecycleOrderSynDto.Get().(*RecycleOrderSynDto)
+}
+
+// ReleaseRecycleOrderSynDto 释放RecycleOrderSynDto
+func ReleaseRecycleOrderSynDto(v *RecycleOrderSynDto) {
+	v.BizOrderId = ""
+	v.OrderStatus = ""
+	v.PartnerKey = ""
+	v.Attribute = nil
+	poolRecycleOrderSynDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // PontusTravelGatherPlaceInfo 结构体
 type PontusTravelGatherPlaceInfo struct {
 	// 地点名称
@@ -8,4 +12,23 @@ type PontusTravelGatherPlaceInfo struct {
 	Poi string `json:"poi,omitempty" xml:"poi,omitempty"`
 	// POI来源，AMAP/GOOGLE。境内为高德（AMAP） 境外为GOOGLE
 	PoiResource string `json:"poi_resource,omitempty" xml:"poi_resource,omitempty"`
+}
+
+var poolPontusTravelGatherPlaceInfo = sync.Pool{
+	New: func() any {
+		return new(PontusTravelGatherPlaceInfo)
+	},
+}
+
+// GetPontusTravelGatherPlaceInfo() 从对象池中获取PontusTravelGatherPlaceInfo
+func GetPontusTravelGatherPlaceInfo() *PontusTravelGatherPlaceInfo {
+	return poolPontusTravelGatherPlaceInfo.Get().(*PontusTravelGatherPlaceInfo)
+}
+
+// ReleasePontusTravelGatherPlaceInfo 释放PontusTravelGatherPlaceInfo
+func ReleasePontusTravelGatherPlaceInfo(v *PontusTravelGatherPlaceInfo) {
+	v.Name = ""
+	v.Poi = ""
+	v.PoiResource = ""
+	poolPontusTravelGatherPlaceInfo.Put(v)
 }

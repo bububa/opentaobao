@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // SpecifyDistributionRequest 结构体
 type SpecifyDistributionRequest struct {
 	// 【必传】指定分销商铺货详情
@@ -24,4 +28,31 @@ type SpecifyDistributionRequest struct {
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
 	// 【必传】运费模板id， 可以通过alibaba.dchain.aoxiang.deliverytemplate.query 这个接口进行获取
 	LogisticsCostTemplateId int64 `json:"logistics_cost_template_id,omitempty" xml:"logistics_cost_template_id,omitempty"`
+}
+
+var poolSpecifyDistributionRequest = sync.Pool{
+	New: func() any {
+		return new(SpecifyDistributionRequest)
+	},
+}
+
+// GetSpecifyDistributionRequest() 从对象池中获取SpecifyDistributionRequest
+func GetSpecifyDistributionRequest() *SpecifyDistributionRequest {
+	return poolSpecifyDistributionRequest.Get().(*SpecifyDistributionRequest)
+}
+
+// ReleaseSpecifyDistributionRequest 释放SpecifyDistributionRequest
+func ReleaseSpecifyDistributionRequest(v *SpecifyDistributionRequest) {
+	v.DistributionInfoList = v.DistributionInfoList[:0]
+	v.RequestId = ""
+	v.ItemId = ""
+	v.ItemCode = ""
+	v.ItemTitle = ""
+	v.SkuId = ""
+	v.SkuCode = ""
+	v.SkuTitle = ""
+	v.ScItemId = ""
+	v.RequestTime = 0
+	v.LogisticsCostTemplateId = 0
+	poolSpecifyDistributionRequest.Put(v)
 }

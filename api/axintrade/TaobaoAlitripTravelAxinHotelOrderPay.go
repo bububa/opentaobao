@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.travel.axin.hotel.order.pay
 //
 // 阿信酒店分销订单支付
-func TaobaoAlitripTravelAxinHotelOrderPay(clt *core.SDKClient, req *axintrade.TaobaoAlitripTravelAxinHotelOrderPayAPIRequest, session string) (*axintrade.TaobaoAlitripTravelAxinHotelOrderPayAPIResponse, error) {
-	var resp axintrade.TaobaoAlitripTravelAxinHotelOrderPayAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripTravelAxinHotelOrderPay(clt *core.SDKClient, req *axintrade.TaobaoAlitripTravelAxinHotelOrderPayAPIRequest, resp *axintrade.TaobaoAlitripTravelAxinHotelOrderPayAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

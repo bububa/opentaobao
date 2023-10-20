@@ -9,11 +9,6 @@ import (
 // alibaba.einvoice.createreq
 //
 // ERP发起开票请求
-func AlibabaEinvoiceCreatereq(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceCreatereqAPIRequest, session string) (*einvoice.AlibabaEinvoiceCreatereqAPIResponse, error) {
-	var resp einvoice.AlibabaEinvoiceCreatereqAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEinvoiceCreatereq(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceCreatereqAPIRequest, resp *einvoice.AlibabaEinvoiceCreatereqAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

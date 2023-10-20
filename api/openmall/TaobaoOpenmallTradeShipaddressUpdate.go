@@ -9,11 +9,6 @@ import (
 // taobao.openmall.trade.shipaddress.update
 //
 // Openmall订单收货地址修改
-func TaobaoOpenmallTradeShipaddressUpdate(clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeShipaddressUpdateAPIRequest, session string) (*openmall.TaobaoOpenmallTradeShipaddressUpdateAPIResponse, error) {
-	var resp openmall.TaobaoOpenmallTradeShipaddressUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenmallTradeShipaddressUpdate(clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeShipaddressUpdateAPIRequest, resp *openmall.TaobaoOpenmallTradeShipaddressUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

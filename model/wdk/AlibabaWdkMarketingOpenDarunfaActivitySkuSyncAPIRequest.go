@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest struct {
 // NewAlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest 初始化AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest对象
 func NewAlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest() *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest {
 	return &AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) Reset() {
+	r._activitySkuList = r._activitySkuList[:0]
+	r._activityId = ""
+	r._shopId = ""
+	r._versionId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) SetVersionId(_
 // GetVersionId VersionId Getter
 func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) GetVersionId() int64 {
 	return r._versionId
+}
+
+var poolAlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest()
+	},
+}
+
+// GetAlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest 从 sync.Pool 获取 AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest
+func GetAlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest() *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest {
+	return poolAlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest.Get().(*AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest)
+}
+
+// ReleaseAlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest 将 AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest(v *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest.Put(v)
 }

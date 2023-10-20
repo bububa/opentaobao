@@ -2,6 +2,7 @@ package customizemarket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTaobaoIndustryPetProfileQueryAPIRequest struct {
 // NewAlibabaTaobaoIndustryPetProfileQueryRequest 初始化AlibabaTaobaoIndustryPetProfileQueryAPIRequest对象
 func NewAlibabaTaobaoIndustryPetProfileQueryRequest() *AlibabaTaobaoIndustryPetProfileQueryAPIRequest {
 	return &AlibabaTaobaoIndustryPetProfileQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTaobaoIndustryPetProfileQueryAPIRequest) Reset() {
+	r._profileQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTaobaoIndustryPetProfileQueryAPIRequest) SetProfileQuery(_profil
 // GetProfileQuery ProfileQuery Getter
 func (r AlibabaTaobaoIndustryPetProfileQueryAPIRequest) GetProfileQuery() *ProfileQuery {
 	return r._profileQuery
+}
+
+var poolAlibabaTaobaoIndustryPetProfileQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTaobaoIndustryPetProfileQueryRequest()
+	},
+}
+
+// GetAlibabaTaobaoIndustryPetProfileQueryRequest 从 sync.Pool 获取 AlibabaTaobaoIndustryPetProfileQueryAPIRequest
+func GetAlibabaTaobaoIndustryPetProfileQueryAPIRequest() *AlibabaTaobaoIndustryPetProfileQueryAPIRequest {
+	return poolAlibabaTaobaoIndustryPetProfileQueryAPIRequest.Get().(*AlibabaTaobaoIndustryPetProfileQueryAPIRequest)
+}
+
+// ReleaseAlibabaTaobaoIndustryPetProfileQueryAPIRequest 将 AlibabaTaobaoIndustryPetProfileQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTaobaoIndustryPetProfileQueryAPIRequest(v *AlibabaTaobaoIndustryPetProfileQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaTaobaoIndustryPetProfileQueryAPIRequest.Put(v)
 }

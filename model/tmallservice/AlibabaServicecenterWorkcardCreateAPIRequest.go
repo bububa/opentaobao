@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaServicecenterWorkcardCreateAPIRequest struct {
 // NewAlibabaServicecenterWorkcardCreateRequest 初始化AlibabaServicecenterWorkcardCreateAPIRequest对象
 func NewAlibabaServicecenterWorkcardCreateRequest() *AlibabaServicecenterWorkcardCreateAPIRequest {
 	return &AlibabaServicecenterWorkcardCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaServicecenterWorkcardCreateAPIRequest) Reset() {
+	r._attributes = ""
+	r._outerId = ""
+	r._spServiceOrderId = 0
+	r._serviceSequence = 0
+	r._serviceCount = 0
+	r._serviceProvider = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetServiceProvider(_servi
 // GetServiceProvider ServiceProvider Getter
 func (r AlibabaServicecenterWorkcardCreateAPIRequest) GetServiceProvider() *ServiceProviderDto {
 	return r._serviceProvider
+}
+
+var poolAlibabaServicecenterWorkcardCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaServicecenterWorkcardCreateRequest()
+	},
+}
+
+// GetAlibabaServicecenterWorkcardCreateRequest 从 sync.Pool 获取 AlibabaServicecenterWorkcardCreateAPIRequest
+func GetAlibabaServicecenterWorkcardCreateAPIRequest() *AlibabaServicecenterWorkcardCreateAPIRequest {
+	return poolAlibabaServicecenterWorkcardCreateAPIRequest.Get().(*AlibabaServicecenterWorkcardCreateAPIRequest)
+}
+
+// ReleaseAlibabaServicecenterWorkcardCreateAPIRequest 将 AlibabaServicecenterWorkcardCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaServicecenterWorkcardCreateAPIRequest(v *AlibabaServicecenterWorkcardCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaServicecenterWorkcardCreateAPIRequest.Put(v)
 }

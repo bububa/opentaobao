@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaEinvoiceUnitorderCheckAPIRequest struct {
 // NewAlibabaEinvoiceUnitorderCheckRequest 初始化AlibabaEinvoiceUnitorderCheckAPIRequest对象
 func NewAlibabaEinvoiceUnitorderCheckRequest() *AlibabaEinvoiceUnitorderCheckAPIRequest {
 	return &AlibabaEinvoiceUnitorderCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceUnitorderCheckAPIRequest) Reset() {
+	r._orders = r._orders[:0]
+	r._begin = ""
+	r._end = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaEinvoiceUnitorderCheckAPIRequest) SetEnd(_end string) error {
 // GetEnd End Getter
 func (r AlibabaEinvoiceUnitorderCheckAPIRequest) GetEnd() string {
 	return r._end
+}
+
+var poolAlibabaEinvoiceUnitorderCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceUnitorderCheckRequest()
+	},
+}
+
+// GetAlibabaEinvoiceUnitorderCheckRequest 从 sync.Pool 获取 AlibabaEinvoiceUnitorderCheckAPIRequest
+func GetAlibabaEinvoiceUnitorderCheckAPIRequest() *AlibabaEinvoiceUnitorderCheckAPIRequest {
+	return poolAlibabaEinvoiceUnitorderCheckAPIRequest.Get().(*AlibabaEinvoiceUnitorderCheckAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceUnitorderCheckAPIRequest 将 AlibabaEinvoiceUnitorderCheckAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceUnitorderCheckAPIRequest(v *AlibabaEinvoiceUnitorderCheckAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceUnitorderCheckAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // StdHotelDto 结构体
 type StdHotelDto struct {
 	// 标准酒店名称
@@ -42,4 +46,40 @@ type StdHotelDto struct {
 	Province *DivisionDto `json:"province,omitempty" xml:"province,omitempty"`
 	// 国家信息
 	Country *DivisionDto `json:"country,omitempty" xml:"country,omitempty"`
+}
+
+var poolStdHotelDto = sync.Pool{
+	New: func() any {
+		return new(StdHotelDto)
+	},
+}
+
+// GetStdHotelDto() 从对象池中获取StdHotelDto
+func GetStdHotelDto() *StdHotelDto {
+	return poolStdHotelDto.Get().(*StdHotelDto)
+}
+
+// ReleaseStdHotelDto 释放StdHotelDto
+func ReleaseStdHotelDto(v *StdHotelDto) {
+	v.Name = ""
+	v.NameEn = ""
+	v.Address = ""
+	v.AddressEn = ""
+	v.Longtitude = ""
+	v.Latitude = ""
+	v.Star = ""
+	v.OpeningTime = ""
+	v.DecorateTime = ""
+	v.Description = ""
+	v.DescriptionEn = ""
+	v.HotelTel = ""
+	v.Shid = 0
+	v.PositionType = 0
+	v.HotelType = 0
+	v.Domestic = 0
+	v.Status = 0
+	v.City = nil
+	v.Province = nil
+	v.Country = nil
+	poolStdHotelDto.Put(v)
 }

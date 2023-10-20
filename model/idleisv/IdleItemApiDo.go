@@ -1,5 +1,9 @@
 package idleisv
 
+import (
+	"sync"
+)
+
 // IdleItemApiDo 结构体
 type IdleItemApiDo struct {
 	// 属性的键值对信息，包括品牌、型号、内存大小（手机）等，(不传入则不修改)
@@ -80,4 +84,59 @@ type IdleItemApiDo struct {
 	WareHouseTime int64 `json:"ware_house_time,omitempty" xml:"ware_house_time,omitempty"`
 	// 国际分销业务独有数据
 	DistributionData *IdleItemDistributionDo `json:"distribution_data,omitempty" xml:"distribution_data,omitempty"`
+}
+
+var poolIdleItemApiDo = sync.Pool{
+	New: func() any {
+		return new(IdleItemApiDo)
+	},
+}
+
+// GetIdleItemApiDo() 从对象池中获取IdleItemApiDo
+func GetIdleItemApiDo() *IdleItemApiDo {
+	return poolIdleItemApiDo.Get().(*IdleItemApiDo)
+}
+
+// ReleaseIdleItemApiDo 释放IdleItemApiDo
+func ReleaseIdleItemApiDo(v *IdleItemApiDo) {
+	v.PvList = v.PvList[:0]
+	v.ItemSkuList = v.ItemSkuList[:0]
+	v.Images = v.Images[:0]
+	v.WhiteBgImgs = v.WhiteBgImgs[:0]
+	v.ImgUrls = v.ImgUrls[:0]
+	v.ItemTags = v.ItemTags[:0]
+	v.WhiteBgImgUrls = v.WhiteBgImgUrls[:0]
+	v.Desc = ""
+	v.OriginalPrice = ""
+	v.ReservePrice = ""
+	v.Title = ""
+	v.TransportFee = ""
+	v.OuterId = ""
+	v.AuctionType = ""
+	v.SpGuarantee = ""
+	v.CategoryId = ""
+	v.ChannelCatId = ""
+	v.InspectReport = ""
+	v.SpBizType = ""
+	v.ItemBizType = ""
+	v.WareHouseCity = ""
+	v.SellerNick = ""
+	v.EncryptionSellerId = ""
+	v.ItemId = 0
+	v.BookData = nil
+	v.StuffStatus = 0
+	v.DivisionId = 0
+	v.Latitude = 0
+	v.Longitude = 0
+	v.InspectedData = nil
+	v.Quantity = 0
+	v.TemplateId = 0
+	v.BidData = nil
+	v.AfterSalesData = nil
+	v.IdleItemApiAutoRechargeDo = nil
+	v.Status = 0
+	v.TradeType = 0
+	v.WareHouseTime = 0
+	v.DistributionData = nil
+	poolIdleItemApiDo.Put(v)
 }

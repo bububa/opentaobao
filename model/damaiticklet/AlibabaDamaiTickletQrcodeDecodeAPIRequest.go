@@ -2,6 +2,7 @@ package damaiticklet
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaDamaiTickletQrcodeDecodeAPIRequest struct {
 // NewAlibabaDamaiTickletQrcodeDecodeRequest 初始化AlibabaDamaiTickletQrcodeDecodeAPIRequest对象
 func NewAlibabaDamaiTickletQrcodeDecodeRequest() *AlibabaDamaiTickletQrcodeDecodeAPIRequest {
 	return &AlibabaDamaiTickletQrcodeDecodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiTickletQrcodeDecodeAPIRequest) Reset() {
+	r._encryptedQrCode = ""
+	r._productSystemId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaDamaiTickletQrcodeDecodeAPIRequest) SetProductSystemId(_productS
 // GetProductSystemId ProductSystemId Getter
 func (r AlibabaDamaiTickletQrcodeDecodeAPIRequest) GetProductSystemId() string {
 	return r._productSystemId
+}
+
+var poolAlibabaDamaiTickletQrcodeDecodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiTickletQrcodeDecodeRequest()
+	},
+}
+
+// GetAlibabaDamaiTickletQrcodeDecodeRequest 从 sync.Pool 获取 AlibabaDamaiTickletQrcodeDecodeAPIRequest
+func GetAlibabaDamaiTickletQrcodeDecodeAPIRequest() *AlibabaDamaiTickletQrcodeDecodeAPIRequest {
+	return poolAlibabaDamaiTickletQrcodeDecodeAPIRequest.Get().(*AlibabaDamaiTickletQrcodeDecodeAPIRequest)
+}
+
+// ReleaseAlibabaDamaiTickletQrcodeDecodeAPIRequest 将 AlibabaDamaiTickletQrcodeDecodeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiTickletQrcodeDecodeAPIRequest(v *AlibabaDamaiTickletQrcodeDecodeAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiTickletQrcodeDecodeAPIRequest.Put(v)
 }

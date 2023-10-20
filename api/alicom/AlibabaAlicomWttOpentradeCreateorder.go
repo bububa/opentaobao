@@ -9,11 +9,6 @@ import (
 // alibaba.alicom.wtt.opentrade.createorder
 //
 // 提供给话费宝创建淘宝订单
-func AlibabaAlicomWttOpentradeCreateorder(clt *core.SDKClient, req *alicom.AlibabaAlicomWttOpentradeCreateorderAPIRequest, session string) (*alicom.AlibabaAlicomWttOpentradeCreateorderAPIResponse, error) {
-	var resp alicom.AlibabaAlicomWttOpentradeCreateorderAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlicomWttOpentradeCreateorder(clt *core.SDKClient, req *alicom.AlibabaAlicomWttOpentradeCreateorderAPIRequest, resp *alicom.AlibabaAlicomWttOpentradeCreateorderAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

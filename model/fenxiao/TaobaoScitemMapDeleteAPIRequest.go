@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoScitemMapDeleteAPIRequest struct {
 // NewTaobaoScitemMapDeleteRequest 初始化TaobaoScitemMapDeleteAPIRequest对象
 func NewTaobaoScitemMapDeleteRequest() *TaobaoScitemMapDeleteAPIRequest {
 	return &TaobaoScitemMapDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoScitemMapDeleteAPIRequest) Reset() {
+	r._userNick = ""
+	r._scItemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoScitemMapDeleteAPIRequest) SetScItemId(_scItemId int64) error {
 // GetScItemId ScItemId Getter
 func (r TaobaoScitemMapDeleteAPIRequest) GetScItemId() int64 {
 	return r._scItemId
+}
+
+var poolTaobaoScitemMapDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoScitemMapDeleteRequest()
+	},
+}
+
+// GetTaobaoScitemMapDeleteRequest 从 sync.Pool 获取 TaobaoScitemMapDeleteAPIRequest
+func GetTaobaoScitemMapDeleteAPIRequest() *TaobaoScitemMapDeleteAPIRequest {
+	return poolTaobaoScitemMapDeleteAPIRequest.Get().(*TaobaoScitemMapDeleteAPIRequest)
+}
+
+// ReleaseTaobaoScitemMapDeleteAPIRequest 将 TaobaoScitemMapDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoScitemMapDeleteAPIRequest(v *TaobaoScitemMapDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoScitemMapDeleteAPIRequest.Put(v)
 }

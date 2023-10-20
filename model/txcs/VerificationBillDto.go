@@ -1,5 +1,9 @@
 package txcs
 
+import (
+	"sync"
+)
+
 // VerificationBillDto 结构体
 type VerificationBillDto struct {
 	// 发票信息列表
@@ -20,4 +24,29 @@ type VerificationBillDto struct {
 	Currency string `json:"currency,omitempty" xml:"currency,omitempty"`
 	// 操作人ID
 	OperatorId string `json:"operator_id,omitempty" xml:"operator_id,omitempty"`
+}
+
+var poolVerificationBillDto = sync.Pool{
+	New: func() any {
+		return new(VerificationBillDto)
+	},
+}
+
+// GetVerificationBillDto() 从对象池中获取VerificationBillDto
+func GetVerificationBillDto() *VerificationBillDto {
+	return poolVerificationBillDto.Get().(*VerificationBillDto)
+}
+
+// ReleaseVerificationBillDto 释放VerificationBillDto
+func ReleaseVerificationBillDto(v *VerificationBillDto) {
+	v.InvoiceInfoDTOs = v.InvoiceInfoDTOs[:0]
+	v.StatementBillCodes = v.StatementBillCodes[:0]
+	v.SettlementCompanyCode = ""
+	v.Memo = ""
+	v.OperatorName = ""
+	v.RequestId = ""
+	v.VerificationType = ""
+	v.Currency = ""
+	v.OperatorId = ""
+	poolVerificationBillDto.Put(v)
 }

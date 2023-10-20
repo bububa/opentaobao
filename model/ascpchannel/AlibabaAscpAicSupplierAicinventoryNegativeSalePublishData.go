@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // AlibabaAscpAicSupplierAicinventoryNegativeSalePublishData 结构体
 type AlibabaAscpAicSupplierAicinventoryNegativeSalePublishData struct {
 	// 外部交易号(子)
@@ -22,4 +26,30 @@ type AlibabaAscpAicSupplierAicinventoryNegativeSalePublishData struct {
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 调用接口是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaAscpAicSupplierAicinventoryNegativeSalePublishData = sync.Pool{
+	New: func() any {
+		return new(AlibabaAscpAicSupplierAicinventoryNegativeSalePublishData)
+	},
+}
+
+// GetAlibabaAscpAicSupplierAicinventoryNegativeSalePublishData() 从对象池中获取AlibabaAscpAicSupplierAicinventoryNegativeSalePublishData
+func GetAlibabaAscpAicSupplierAicinventoryNegativeSalePublishData() *AlibabaAscpAicSupplierAicinventoryNegativeSalePublishData {
+	return poolAlibabaAscpAicSupplierAicinventoryNegativeSalePublishData.Get().(*AlibabaAscpAicSupplierAicinventoryNegativeSalePublishData)
+}
+
+// ReleaseAlibabaAscpAicSupplierAicinventoryNegativeSalePublishData 释放AlibabaAscpAicSupplierAicinventoryNegativeSalePublishData
+func ReleaseAlibabaAscpAicSupplierAicinventoryNegativeSalePublishData(v *AlibabaAscpAicSupplierAicinventoryNegativeSalePublishData) {
+	v.ExtSubOrderId = ""
+	v.ExtOrderId = ""
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.AicChannelInvId = ""
+	v.ChannelCode = ""
+	v.StoreCode = ""
+	v.ScItemId = 0
+	v.UserId = 0
+	v.Success = false
+	poolAlibabaAscpAicSupplierAicinventoryNegativeSalePublishData.Put(v)
 }

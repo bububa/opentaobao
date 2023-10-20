@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthSecondardNodeCodeShowurlAPIRequest struct {
 // NewAlibabaAlihealthSecondardNodeCodeShowurlRequest 初始化AlibabaAlihealthSecondardNodeCodeShowurlAPIRequest对象
 func NewAlibabaAlihealthSecondardNodeCodeShowurlRequest() *AlibabaAlihealthSecondardNodeCodeShowurlAPIRequest {
 	return &AlibabaAlihealthSecondardNodeCodeShowurlAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthSecondardNodeCodeShowurlAPIRequest) Reset() {
+	r._userName = ""
+	r._code = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthSecondardNodeCodeShowurlAPIRequest) SetCode(_code strin
 // GetCode Code Getter
 func (r AlibabaAlihealthSecondardNodeCodeShowurlAPIRequest) GetCode() string {
 	return r._code
+}
+
+var poolAlibabaAlihealthSecondardNodeCodeShowurlAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthSecondardNodeCodeShowurlRequest()
+	},
+}
+
+// GetAlibabaAlihealthSecondardNodeCodeShowurlRequest 从 sync.Pool 获取 AlibabaAlihealthSecondardNodeCodeShowurlAPIRequest
+func GetAlibabaAlihealthSecondardNodeCodeShowurlAPIRequest() *AlibabaAlihealthSecondardNodeCodeShowurlAPIRequest {
+	return poolAlibabaAlihealthSecondardNodeCodeShowurlAPIRequest.Get().(*AlibabaAlihealthSecondardNodeCodeShowurlAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthSecondardNodeCodeShowurlAPIRequest 将 AlibabaAlihealthSecondardNodeCodeShowurlAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthSecondardNodeCodeShowurlAPIRequest(v *AlibabaAlihealthSecondardNodeCodeShowurlAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthSecondardNodeCodeShowurlAPIRequest.Put(v)
 }

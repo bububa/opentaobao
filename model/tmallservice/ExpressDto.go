@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // ExpressDto 结构体
 type ExpressDto struct {
 	// 子物流单号
@@ -38,4 +42,38 @@ type ExpressDto struct {
 	Sender *CustomerInfo `json:"sender,omitempty" xml:"sender,omitempty"`
 	// 收件人信息
 	Receiver *CustomerInfo `json:"receiver,omitempty" xml:"receiver,omitempty"`
+}
+
+var poolExpressDto = sync.Pool{
+	New: func() any {
+		return new(ExpressDto)
+	},
+}
+
+// GetExpressDto() 从对象池中获取ExpressDto
+func GetExpressDto() *ExpressDto {
+	return poolExpressDto.Get().(*ExpressDto)
+}
+
+// ReleaseExpressDto 释放ExpressDto
+func ReleaseExpressDto(v *ExpressDto) {
+	v.SubMailNos = v.SubMailNos[:0]
+	v.CourierName = ""
+	v.CourierMobile = ""
+	v.ExpressOrderId = ""
+	v.MailNo = ""
+	v.CompanyName = ""
+	v.PrintInfo = ""
+	v.GoodsInfo = ""
+	v.ReserveEndTime = ""
+	v.ReserveStartTime = ""
+	v.StatusCode = ""
+	v.GoodsType = ""
+	v.ValueAddedServiceDemand = ""
+	v.ExtendInfo = ""
+	v.LogisticsOrderId = 0
+	v.LogisticsTpId = 0
+	v.Sender = nil
+	v.Receiver = nil
+	poolExpressDto.Put(v)
 }

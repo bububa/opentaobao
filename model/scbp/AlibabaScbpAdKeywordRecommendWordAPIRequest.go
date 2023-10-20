@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaScbpAdKeywordRecommendWordAPIRequest struct {
 // NewAlibabaScbpAdKeywordRecommendWordRequest 初始化AlibabaScbpAdKeywordRecommendWordAPIRequest对象
 func NewAlibabaScbpAdKeywordRecommendWordRequest() *AlibabaScbpAdKeywordRecommendWordAPIRequest {
 	return &AlibabaScbpAdKeywordRecommendWordAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdKeywordRecommendWordAPIRequest) Reset() {
+	r._topContext = nil
+	r._recommendQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaScbpAdKeywordRecommendWordAPIRequest) SetRecommendQuery(_recomme
 // GetRecommendQuery RecommendQuery Getter
 func (r AlibabaScbpAdKeywordRecommendWordAPIRequest) GetRecommendQuery() *RecommendKeywordQueryDto {
 	return r._recommendQuery
+}
+
+var poolAlibabaScbpAdKeywordRecommendWordAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdKeywordRecommendWordRequest()
+	},
+}
+
+// GetAlibabaScbpAdKeywordRecommendWordRequest 从 sync.Pool 获取 AlibabaScbpAdKeywordRecommendWordAPIRequest
+func GetAlibabaScbpAdKeywordRecommendWordAPIRequest() *AlibabaScbpAdKeywordRecommendWordAPIRequest {
+	return poolAlibabaScbpAdKeywordRecommendWordAPIRequest.Get().(*AlibabaScbpAdKeywordRecommendWordAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdKeywordRecommendWordAPIRequest 将 AlibabaScbpAdKeywordRecommendWordAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdKeywordRecommendWordAPIRequest(v *AlibabaScbpAdKeywordRecommendWordAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdKeywordRecommendWordAPIRequest.Put(v)
 }

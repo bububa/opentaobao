@@ -1,5 +1,9 @@
 package train
 
+import (
+	"sync"
+)
+
 // TapSubOrderVo 结构体
 type TapSubOrderVo struct {
 	// 出发站
@@ -46,4 +50,42 @@ type TapSubOrderVo struct {
 	SegmentIndex int64 `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
 	// 是否为紧急单
 	Emergency bool `json:"emergency,omitempty" xml:"emergency,omitempty"`
+}
+
+var poolTapSubOrderVo = sync.Pool{
+	New: func() any {
+		return new(TapSubOrderVo)
+	},
+}
+
+// GetTapSubOrderVo() 从对象池中获取TapSubOrderVo
+func GetTapSubOrderVo() *TapSubOrderVo {
+	return poolTapSubOrderVo.Get().(*TapSubOrderVo)
+}
+
+// ReleaseTapSubOrderVo 释放TapSubOrderVo
+func ReleaseTapSubOrderVo(v *TapSubOrderVo) {
+	v.FromStationName = ""
+	v.FromStationTelecode = ""
+	v.ToStationName = ""
+	v.ToStationTelecode = ""
+	v.TrainDate = ""
+	v.TrainCode = ""
+	v.SeatTypeCode = ""
+	v.SeatTypeName = ""
+	v.OnlineBookSeat = ""
+	v.InterChangeStationTelecode = ""
+	v.InterChangeStationName = ""
+	v.FromTime = ""
+	v.ToTime = ""
+	v.StatusName = ""
+	v.LastIssueTime = ""
+	v.TtpOrderId = 0
+	v.SubOrderId = 0
+	v.TicketPrice = 0
+	v.VipCustomType = 0
+	v.SegmentId = 0
+	v.SegmentIndex = 0
+	v.Emergency = false
+	poolTapSubOrderVo.Put(v)
 }

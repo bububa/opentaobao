@@ -9,11 +9,6 @@ import (
 // alibaba.ele.enterprise.ordernew.paymentstatus
 //
 // 设置订单支付成功
-func AlibabaEleEnterpriseOrdernewPaymentstatus(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest, session string) (*eleenterpriseordernew.AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse, error) {
-	var resp eleenterpriseordernew.AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEleEnterpriseOrdernewPaymentstatus(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest, resp *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

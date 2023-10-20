@@ -1,5 +1,9 @@
 package nlife
 
+import (
+	"sync"
+)
+
 // Order 结构体
 type Order struct {
 	// 商品列表
@@ -38,4 +42,38 @@ type Order struct {
 	RefundedAmount int64 `json:"refunded_amount,omitempty" xml:"refunded_amount,omitempty"`
 	// 0：门店订单；1：全渠道订单；3：网直供订单
 	TradeBizType int64 `json:"trade_biz_type,omitempty" xml:"trade_biz_type,omitempty"`
+}
+
+var poolOrder = sync.Pool{
+	New: func() any {
+		return new(Order)
+	},
+}
+
+// GetOrder() 从对象池中获取Order
+func GetOrder() *Order {
+	return poolOrder.Get().(*Order)
+}
+
+// ReleaseOrder 释放Order
+func ReleaseOrder(v *Order) {
+	v.GoodsList = v.GoodsList[:0]
+	v.RefundedGoods = v.RefundedGoods[:0]
+	v.SalesName = ""
+	v.TradeStatus = ""
+	v.GmtPay = ""
+	v.GmtCreate = ""
+	v.StoreName = ""
+	v.TradeNo = ""
+	v.PayChannel = ""
+	v.RefundStatus = ""
+	v.SalesId = ""
+	v.OmniTradeNo = ""
+	v.OutTradeNo = ""
+	v.ActualPayAmount = 0
+	v.TotalAmount = 0
+	v.StoreId = 0
+	v.RefundedAmount = 0
+	v.TradeBizType = 0
+	poolOrder.Put(v)
 }

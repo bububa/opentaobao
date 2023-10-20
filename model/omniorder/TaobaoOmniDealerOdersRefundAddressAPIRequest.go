@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoOmniDealerOdersRefundAddressAPIRequest struct {
 // NewTaobaoOmniDealerOdersRefundAddressRequest 初始化TaobaoOmniDealerOdersRefundAddressAPIRequest对象
 func NewTaobaoOmniDealerOdersRefundAddressRequest() *TaobaoOmniDealerOdersRefundAddressAPIRequest {
 	return &TaobaoOmniDealerOdersRefundAddressAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOmniDealerOdersRefundAddressAPIRequest) Reset() {
+	r._orderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoOmniDealerOdersRefundAddressAPIRequest) SetOrderId(_orderId int64
 // GetOrderId OrderId Getter
 func (r TaobaoOmniDealerOdersRefundAddressAPIRequest) GetOrderId() int64 {
 	return r._orderId
+}
+
+var poolTaobaoOmniDealerOdersRefundAddressAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOmniDealerOdersRefundAddressRequest()
+	},
+}
+
+// GetTaobaoOmniDealerOdersRefundAddressRequest 从 sync.Pool 获取 TaobaoOmniDealerOdersRefundAddressAPIRequest
+func GetTaobaoOmniDealerOdersRefundAddressAPIRequest() *TaobaoOmniDealerOdersRefundAddressAPIRequest {
+	return poolTaobaoOmniDealerOdersRefundAddressAPIRequest.Get().(*TaobaoOmniDealerOdersRefundAddressAPIRequest)
+}
+
+// ReleaseTaobaoOmniDealerOdersRefundAddressAPIRequest 将 TaobaoOmniDealerOdersRefundAddressAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOmniDealerOdersRefundAddressAPIRequest(v *TaobaoOmniDealerOdersRefundAddressAPIRequest) {
+	v.Reset()
+	poolTaobaoOmniDealerOdersRefundAddressAPIRequest.Put(v)
 }

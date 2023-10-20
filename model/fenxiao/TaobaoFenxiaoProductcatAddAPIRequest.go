@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoFenxiaoProductcatAddAPIRequest struct {
 // NewTaobaoFenxiaoProductcatAddRequest 初始化TaobaoFenxiaoProductcatAddAPIRequest对象
 func NewTaobaoFenxiaoProductcatAddRequest() *TaobaoFenxiaoProductcatAddAPIRequest {
 	return &TaobaoFenxiaoProductcatAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoProductcatAddAPIRequest) Reset() {
+	r._name = ""
+	r._retailLowPercent = 0
+	r._retailHighPercent = 0
+	r._agentCostPercent = 0
+	r._dealerCostPercent = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoFenxiaoProductcatAddAPIRequest) SetDealerCostPercent(_dealerCostP
 // GetDealerCostPercent DealerCostPercent Getter
 func (r TaobaoFenxiaoProductcatAddAPIRequest) GetDealerCostPercent() int64 {
 	return r._dealerCostPercent
+}
+
+var poolTaobaoFenxiaoProductcatAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoProductcatAddRequest()
+	},
+}
+
+// GetTaobaoFenxiaoProductcatAddRequest 从 sync.Pool 获取 TaobaoFenxiaoProductcatAddAPIRequest
+func GetTaobaoFenxiaoProductcatAddAPIRequest() *TaobaoFenxiaoProductcatAddAPIRequest {
+	return poolTaobaoFenxiaoProductcatAddAPIRequest.Get().(*TaobaoFenxiaoProductcatAddAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoProductcatAddAPIRequest 将 TaobaoFenxiaoProductcatAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoProductcatAddAPIRequest(v *TaobaoFenxiaoProductcatAddAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoProductcatAddAPIRequest.Put(v)
 }

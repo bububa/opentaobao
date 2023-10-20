@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallNrtSmsCodeSendAPIRequest struct {
 // NewTmallNrtSmsCodeSendRequest 初始化TmallNrtSmsCodeSendAPIRequest对象
 func NewTmallNrtSmsCodeSendRequest() *TmallNrtSmsCodeSendAPIRequest {
 	return &TmallNrtSmsCodeSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtSmsCodeSendAPIRequest) Reset() {
+	r._phone = ""
+	r._bizCode = ""
+	r._type = ""
+	r._smsParam = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallNrtSmsCodeSendAPIRequest) SetSmsParam(_smsParam string) error {
 // GetSmsParam SmsParam Getter
 func (r TmallNrtSmsCodeSendAPIRequest) GetSmsParam() string {
 	return r._smsParam
+}
+
+var poolTmallNrtSmsCodeSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtSmsCodeSendRequest()
+	},
+}
+
+// GetTmallNrtSmsCodeSendRequest 从 sync.Pool 获取 TmallNrtSmsCodeSendAPIRequest
+func GetTmallNrtSmsCodeSendAPIRequest() *TmallNrtSmsCodeSendAPIRequest {
+	return poolTmallNrtSmsCodeSendAPIRequest.Get().(*TmallNrtSmsCodeSendAPIRequest)
+}
+
+// ReleaseTmallNrtSmsCodeSendAPIRequest 将 TmallNrtSmsCodeSendAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtSmsCodeSendAPIRequest(v *TmallNrtSmsCodeSendAPIRequest) {
+	v.Reset()
+	poolTmallNrtSmsCodeSendAPIRequest.Put(v)
 }

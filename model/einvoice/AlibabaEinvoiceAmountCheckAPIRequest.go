@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaEinvoiceAmountCheckAPIRequest struct {
 // NewAlibabaEinvoiceAmountCheckRequest 初始化AlibabaEinvoiceAmountCheckAPIRequest对象
 func NewAlibabaEinvoiceAmountCheckRequest() *AlibabaEinvoiceAmountCheckAPIRequest {
 	return &AlibabaEinvoiceAmountCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceAmountCheckAPIRequest) Reset() {
+	r._payeeRegisterNo = ""
+	r._startDate = ""
+	r._endDate = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaEinvoiceAmountCheckAPIRequest) SetEndDate(_endDate string) error
 // GetEndDate EndDate Getter
 func (r AlibabaEinvoiceAmountCheckAPIRequest) GetEndDate() string {
 	return r._endDate
+}
+
+var poolAlibabaEinvoiceAmountCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceAmountCheckRequest()
+	},
+}
+
+// GetAlibabaEinvoiceAmountCheckRequest 从 sync.Pool 获取 AlibabaEinvoiceAmountCheckAPIRequest
+func GetAlibabaEinvoiceAmountCheckAPIRequest() *AlibabaEinvoiceAmountCheckAPIRequest {
+	return poolAlibabaEinvoiceAmountCheckAPIRequest.Get().(*AlibabaEinvoiceAmountCheckAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceAmountCheckAPIRequest 将 AlibabaEinvoiceAmountCheckAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceAmountCheckAPIRequest(v *AlibabaEinvoiceAmountCheckAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceAmountCheckAPIRequest.Put(v)
 }

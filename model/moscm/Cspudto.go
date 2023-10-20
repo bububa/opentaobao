@@ -1,5 +1,9 @@
 package moscm
 
+import (
+	"sync"
+)
+
 // Cspudto 结构体
 type Cspudto struct {
 	// 商品属性
@@ -38,4 +42,38 @@ type Cspudto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 是否标准产品
 	Standard bool `json:"standard,omitempty" xml:"standard,omitempty"`
+}
+
+var poolCspudto = sync.Pool{
+	New: func() any {
+		return new(Cspudto)
+	},
+}
+
+// GetCspudto() 从对象池中获取Cspudto
+func GetCspudto() *Cspudto {
+	return poolCspudto.Get().(*Cspudto)
+}
+
+// ReleaseCspudto 释放Cspudto
+func ReleaseCspudto(v *Cspudto) {
+	v.Properties = v.Properties[:0]
+	v.ArtNo = ""
+	v.Barcode = ""
+	v.Created = ""
+	v.CreatorId = ""
+	v.Id = ""
+	v.Modified = ""
+	v.ModifierId = ""
+	v.OutId = ""
+	v.StyleNo = ""
+	v.SubTitle = ""
+	v.TagPrice = ""
+	v.Title = ""
+	v.UserType = ""
+	v.Level = 0
+	v.Spu = nil
+	v.Status = 0
+	v.Standard = false
+	poolCspudto.Put(v)
 }

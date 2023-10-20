@@ -2,6 +2,7 @@ package maitix
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaDamaiMaitixSeatTokenQueryAPIRequest struct {
 // NewAlibabaDamaiMaitixSeatTokenQueryRequest 初始化AlibabaDamaiMaitixSeatTokenQueryAPIRequest对象
 func NewAlibabaDamaiMaitixSeatTokenQueryRequest() *AlibabaDamaiMaitixSeatTokenQueryAPIRequest {
 	return &AlibabaDamaiMaitixSeatTokenQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiMaitixSeatTokenQueryAPIRequest) Reset() {
+	r._callbackUrl = ""
+	r._requestId = ""
+	r._performId = 0
+	r._projectId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaDamaiMaitixSeatTokenQueryAPIRequest) SetProjectId(_projectId int
 // GetProjectId ProjectId Getter
 func (r AlibabaDamaiMaitixSeatTokenQueryAPIRequest) GetProjectId() int64 {
 	return r._projectId
+}
+
+var poolAlibabaDamaiMaitixSeatTokenQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiMaitixSeatTokenQueryRequest()
+	},
+}
+
+// GetAlibabaDamaiMaitixSeatTokenQueryRequest 从 sync.Pool 获取 AlibabaDamaiMaitixSeatTokenQueryAPIRequest
+func GetAlibabaDamaiMaitixSeatTokenQueryAPIRequest() *AlibabaDamaiMaitixSeatTokenQueryAPIRequest {
+	return poolAlibabaDamaiMaitixSeatTokenQueryAPIRequest.Get().(*AlibabaDamaiMaitixSeatTokenQueryAPIRequest)
+}
+
+// ReleaseAlibabaDamaiMaitixSeatTokenQueryAPIRequest 将 AlibabaDamaiMaitixSeatTokenQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiMaitixSeatTokenQueryAPIRequest(v *AlibabaDamaiMaitixSeatTokenQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiMaitixSeatTokenQueryAPIRequest.Put(v)
 }

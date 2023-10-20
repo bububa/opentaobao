@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest struct {
 // NewAlibabaAlihealthDrugKytWesQueryUpbillcodeRequest 初始化AlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest对象
 func NewAlibabaAlihealthDrugKytWesQueryUpbillcodeRequest() *AlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest {
 	return &AlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest) Reset() {
+	r._refEntId = ""
+	r._licenseToken = ""
+	r._code = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest) SetCode(_code stri
 // GetCode Code Getter
 func (r AlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest) GetCode() string {
 	return r._code
+}
+
+var poolAlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytWesQueryUpbillcodeRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytWesQueryUpbillcodeRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest
+func GetAlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest() *AlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest {
+	return poolAlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest.Get().(*AlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest 将 AlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest(v *AlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytWesQueryUpbillcodeAPIRequest.Put(v)
 }

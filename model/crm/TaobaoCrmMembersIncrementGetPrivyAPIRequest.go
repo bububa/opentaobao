@@ -2,6 +2,7 @@ package crm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoCrmMembersIncrementGetPrivyAPIRequest struct {
 // NewTaobaoCrmMembersIncrementGetPrivyRequest 初始化TaobaoCrmMembersIncrementGetPrivyAPIRequest对象
 func NewTaobaoCrmMembersIncrementGetPrivyRequest() *TaobaoCrmMembersIncrementGetPrivyAPIRequest {
 	return &TaobaoCrmMembersIncrementGetPrivyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCrmMembersIncrementGetPrivyAPIRequest) Reset() {
+	r._startModify = ""
+	r._endModify = ""
+	r._pageSize = 0
+	r._grade = 0
+	r._currentPage = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoCrmMembersIncrementGetPrivyAPIRequest) SetCurrentPage(_currentPag
 // GetCurrentPage CurrentPage Getter
 func (r TaobaoCrmMembersIncrementGetPrivyAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
+}
+
+var poolTaobaoCrmMembersIncrementGetPrivyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCrmMembersIncrementGetPrivyRequest()
+	},
+}
+
+// GetTaobaoCrmMembersIncrementGetPrivyRequest 从 sync.Pool 获取 TaobaoCrmMembersIncrementGetPrivyAPIRequest
+func GetTaobaoCrmMembersIncrementGetPrivyAPIRequest() *TaobaoCrmMembersIncrementGetPrivyAPIRequest {
+	return poolTaobaoCrmMembersIncrementGetPrivyAPIRequest.Get().(*TaobaoCrmMembersIncrementGetPrivyAPIRequest)
+}
+
+// ReleaseTaobaoCrmMembersIncrementGetPrivyAPIRequest 将 TaobaoCrmMembersIncrementGetPrivyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCrmMembersIncrementGetPrivyAPIRequest(v *TaobaoCrmMembersIncrementGetPrivyAPIRequest) {
+	v.Reset()
+	poolTaobaoCrmMembersIncrementGetPrivyAPIRequest.Put(v)
 }

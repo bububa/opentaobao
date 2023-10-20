@@ -9,11 +9,6 @@ import (
 // alibaba.cfda.xtpt.app.getshowurl
 //
 // 协同平台码查询页面url
-func AlibabaCfdaXtptAppGetshowurl(clt *core.SDKClient, req *drugtrace.AlibabaCfdaXtptAppGetshowurlAPIRequest, session string) (*drugtrace.AlibabaCfdaXtptAppGetshowurlAPIResponse, error) {
-	var resp drugtrace.AlibabaCfdaXtptAppGetshowurlAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCfdaXtptAppGetshowurl(clt *core.SDKClient, req *drugtrace.AlibabaCfdaXtptAppGetshowurlAPIRequest, resp *drugtrace.AlibabaCfdaXtptAppGetshowurlAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

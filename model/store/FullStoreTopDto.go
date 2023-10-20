@@ -1,5 +1,9 @@
 package store
 
+import (
+	"sync"
+)
+
 // FullStoreTopDto 结构体
 type FullStoreTopDto struct {
 	// 业务TAGS
@@ -44,4 +48,41 @@ type FullStoreTopDto struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 门店的商家id
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolFullStoreTopDto = sync.Pool{
+	New: func() any {
+		return new(FullStoreTopDto)
+	},
+}
+
+// GetFullStoreTopDto() 从对象池中获取FullStoreTopDto
+func GetFullStoreTopDto() *FullStoreTopDto {
+	return poolFullStoreTopDto.Get().(*FullStoreTopDto)
+}
+
+// ReleaseFullStoreTopDto 释放FullStoreTopDto
+func ReleaseFullStoreTopDto(v *FullStoreTopDto) {
+	v.Tags = v.Tags[:0]
+	v.BizCode = ""
+	v.BizOuterId = ""
+	v.CompanyName = ""
+	v.Description = ""
+	v.Logo = ""
+	v.Name = ""
+	v.OuterCode = ""
+	v.Status = ""
+	v.StoreType = ""
+	v.Subname = ""
+	v.Pic = ""
+	v.AuthenStatus = 0
+	v.Belong = 0
+	v.BizType = 0
+	v.PoiInfo = nil
+	v.ShopId = 0
+	v.StandardCategoryId = 0
+	v.StoreId = 0
+	v.Type = 0
+	v.UserId = 0
+	poolFullStoreTopDto.Put(v)
 }

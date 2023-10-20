@@ -2,6 +2,7 @@ package cainiaolocker
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type CainiaoEndpointLockerTopOrderNoticeAPIRequest struct {
 // NewCainiaoEndpointLockerTopOrderNoticeRequest 初始化CainiaoEndpointLockerTopOrderNoticeAPIRequest对象
 func NewCainiaoEndpointLockerTopOrderNoticeRequest() *CainiaoEndpointLockerTopOrderNoticeAPIRequest {
 	return &CainiaoEndpointLockerTopOrderNoticeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoEndpointLockerTopOrderNoticeAPIRequest) Reset() {
+	r._orderCode = ""
+	r._stationId = ""
+	r._mailNo = ""
+	r._sceneCode = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *CainiaoEndpointLockerTopOrderNoticeAPIRequest) SetSceneCode(_sceneCode 
 // GetSceneCode SceneCode Getter
 func (r CainiaoEndpointLockerTopOrderNoticeAPIRequest) GetSceneCode() int64 {
 	return r._sceneCode
+}
+
+var poolCainiaoEndpointLockerTopOrderNoticeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoEndpointLockerTopOrderNoticeRequest()
+	},
+}
+
+// GetCainiaoEndpointLockerTopOrderNoticeRequest 从 sync.Pool 获取 CainiaoEndpointLockerTopOrderNoticeAPIRequest
+func GetCainiaoEndpointLockerTopOrderNoticeAPIRequest() *CainiaoEndpointLockerTopOrderNoticeAPIRequest {
+	return poolCainiaoEndpointLockerTopOrderNoticeAPIRequest.Get().(*CainiaoEndpointLockerTopOrderNoticeAPIRequest)
+}
+
+// ReleaseCainiaoEndpointLockerTopOrderNoticeAPIRequest 将 CainiaoEndpointLockerTopOrderNoticeAPIRequest 放入 sync.Pool
+func ReleaseCainiaoEndpointLockerTopOrderNoticeAPIRequest(v *CainiaoEndpointLockerTopOrderNoticeAPIRequest) {
+	v.Reset()
+	poolCainiaoEndpointLockerTopOrderNoticeAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // SubOrderList 结构体
 type SubOrderList struct {
 	// 建议废弃 Feature对象列表目前已有的属性： attr_key为 www，attr_value为1 表示是www子订单； attr_key为 wwwStoreCode，attr_value是www子订单发货的仓库编码； attr_key为 isWt，attr_value为1 表示是网厅子订单； attr_key为wtInfo,attr_value为网厅相关合约信息； attr_key为shipper,attr_value为cn表示菜鸟发货； attr_key为 storeCode，attr_value为仓库信息； attr_key为 erpHold，attr_value为1表示强管控中， attr_value为2表示分单完成；
@@ -88,4 +92,63 @@ type SubOrderList struct {
 	SecondarySupplierId int64 `json:"secondary_supplier_id,omitempty" xml:"secondary_supplier_id,omitempty"`
 	// tp单创单时间点的货品采购价
 	TpCreateTimePrice float64 `json:"tp_create_time_price,omitempty" xml:"tp_create_time_price,omitempty"`
+}
+
+var poolSubOrderList = sync.Pool{
+	New: func() any {
+		return new(SubOrderList)
+	},
+}
+
+// GetSubOrderList() 从对象池中获取SubOrderList
+func GetSubOrderList() *SubOrderList {
+	return poolSubOrderList.Get().(*SubOrderList)
+}
+
+// ReleaseSubOrderList 释放SubOrderList
+func ReleaseSubOrderList(v *SubOrderList) {
+	v.Features = v.Features[:0]
+	v.BuyerPayPrice = ""
+	v.DiscountFeeYuan = ""
+	v.SkuPropertyVal = ""
+	v.DistributorPayPriceYuan = ""
+	v.Title = ""
+	v.RefundFeeYuan = ""
+	v.ConfirmPaidFeeYuan = ""
+	v.BuyerPayPriceYuan = ""
+	v.PromotionType = ""
+	v.GmtCreate = ""
+	v.TcPreferentialType = ""
+	v.BillFeeYuan = ""
+	v.AuctionPrice = ""
+	v.PriceYuan = ""
+	v.Order200Status = ""
+	v.DistributorPriceYuan = ""
+	v.SubOrderStatusCode = ""
+	v.RefundStatusCode = ""
+	v.AuctionOutId = ""
+	v.AuctionOutSkuId = ""
+	v.RefundFee = 0
+	v.BuyNum = 0
+	v.DiscountFee = 0
+	v.SubTcOrderId = 0
+	v.ConfirmPaidFee = 0
+	v.BillFee = 0
+	v.RealAuctionId = 0
+	v.RealAuctionSkuId = 0
+	v.SubOrderId = 0
+	v.Price = 0
+	v.TcDiscountFee = 0
+	v.DistributorPrice = 0
+	v.ScItemId = 0
+	v.FenxiaoId = 0
+	v.TcAdjustFee = 0
+	v.AuctionId = 0
+	v.AuctionSkuId = 0
+	v.DistributorPayPrice = 0
+	v.SubOrderStatus = 0
+	v.RefundStatus = 0
+	v.SecondarySupplierId = 0
+	v.TpCreateTimePrice = 0
+	poolSubOrderList.Put(v)
 }

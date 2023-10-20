@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest struct {
 // NewAlibabaServicecenterWorkcardServiceprogressUpdateRequest 初始化AlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest对象
 func NewAlibabaServicecenterWorkcardServiceprogressUpdateRequest() *AlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest {
 	return &AlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest) Reset() {
+	r._picUrlList = r._picUrlList[:0]
+	r._extendInfo = ""
+	r._action = ""
+	r._realTpNick = ""
+	r._workcardId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest) SetWorkcar
 // GetWorkcardId WorkcardId Getter
 func (r AlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
+}
+
+var poolAlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaServicecenterWorkcardServiceprogressUpdateRequest()
+	},
+}
+
+// GetAlibabaServicecenterWorkcardServiceprogressUpdateRequest 从 sync.Pool 获取 AlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest
+func GetAlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest() *AlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest {
+	return poolAlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest.Get().(*AlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest)
+}
+
+// ReleaseAlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest 将 AlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest(v *AlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaServicecenterWorkcardServiceprogressUpdateAPIRequest.Put(v)
 }

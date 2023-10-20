@@ -2,6 +2,7 @@ package bill
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoBillAccountsGetAPIResponse struct {
 	TaobaoBillAccountsGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoBillAccountsGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoBillAccountsGetAPIResponseModel).Reset()
+}
+
 // TaobaoBillAccountsGetAPIResponseModel is 查询费用科目信息(限自研商家) 成功返回结果
 type TaobaoBillAccountsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"bill_accounts_get_response"`
@@ -24,4 +31,28 @@ type TaobaoBillAccountsGetAPIResponseModel struct {
 	Accounts []Account `json:"accounts,omitempty" xml:"accounts>account,omitempty"`
 	// 返回记录行数
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoBillAccountsGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Accounts = m.Accounts[:0]
+	m.TotalResults = 0
+}
+
+var poolTaobaoBillAccountsGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoBillAccountsGetAPIResponse)
+	},
+}
+
+// GetTaobaoBillAccountsGetAPIResponse 从 sync.Pool 获取 TaobaoBillAccountsGetAPIResponse
+func GetTaobaoBillAccountsGetAPIResponse() *TaobaoBillAccountsGetAPIResponse {
+	return poolTaobaoBillAccountsGetAPIResponse.Get().(*TaobaoBillAccountsGetAPIResponse)
+}
+
+// ReleaseTaobaoBillAccountsGetAPIResponse 将 TaobaoBillAccountsGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoBillAccountsGetAPIResponse(v *TaobaoBillAccountsGetAPIResponse) {
+	v.Reset()
+	poolTaobaoBillAccountsGetAPIResponse.Put(v)
 }

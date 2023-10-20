@@ -9,11 +9,6 @@ import (
 // alibaba.alsc.growth.interactive.task.receivetask
 //
 // 领取任务
-func AlibabaAlscGrowthInteractiveTaskReceivetask(clt *core.SDKClient, req *alsc.AlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest, session string) (*alsc.AlibabaAlscGrowthInteractiveTaskReceivetaskAPIResponse, error) {
-	var resp alsc.AlibabaAlscGrowthInteractiveTaskReceivetaskAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlscGrowthInteractiveTaskReceivetask(clt *core.SDKClient, req *alsc.AlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest, resp *alsc.AlibabaAlscGrowthInteractiveTaskReceivetaskAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

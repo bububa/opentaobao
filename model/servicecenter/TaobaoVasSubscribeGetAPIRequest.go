@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoVasSubscribeGetAPIRequest struct {
 // NewTaobaoVasSubscribeGetRequest 初始化TaobaoVasSubscribeGetAPIRequest对象
 func NewTaobaoVasSubscribeGetRequest() *TaobaoVasSubscribeGetAPIRequest {
 	return &TaobaoVasSubscribeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoVasSubscribeGetAPIRequest) Reset() {
+	r._articleCode = ""
+	r._nick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoVasSubscribeGetAPIRequest) SetNick(_nick string) error {
 // GetNick Nick Getter
 func (r TaobaoVasSubscribeGetAPIRequest) GetNick() string {
 	return r._nick
+}
+
+var poolTaobaoVasSubscribeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoVasSubscribeGetRequest()
+	},
+}
+
+// GetTaobaoVasSubscribeGetRequest 从 sync.Pool 获取 TaobaoVasSubscribeGetAPIRequest
+func GetTaobaoVasSubscribeGetAPIRequest() *TaobaoVasSubscribeGetAPIRequest {
+	return poolTaobaoVasSubscribeGetAPIRequest.Get().(*TaobaoVasSubscribeGetAPIRequest)
+}
+
+// ReleaseTaobaoVasSubscribeGetAPIRequest 将 TaobaoVasSubscribeGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoVasSubscribeGetAPIRequest(v *TaobaoVasSubscribeGetAPIRequest) {
+	v.Reset()
+	poolTaobaoVasSubscribeGetAPIRequest.Put(v)
 }

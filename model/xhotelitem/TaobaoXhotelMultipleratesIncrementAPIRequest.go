@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,14 @@ type TaobaoXhotelMultipleratesIncrementAPIRequest struct {
 // NewTaobaoXhotelMultipleratesIncrementRequest 初始化TaobaoXhotelMultipleratesIncrementAPIRequest对象
 func NewTaobaoXhotelMultipleratesIncrementRequest() *TaobaoXhotelMultipleratesIncrementAPIRequest {
 	return &TaobaoXhotelMultipleratesIncrementAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelMultipleratesIncrementAPIRequest) Reset() {
+	r._rateQuotaMap = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *TaobaoXhotelMultipleratesIncrementAPIRequest) SetRateQuotaMap(_rateQuot
 // GetRateQuotaMap RateQuotaMap Getter
 func (r TaobaoXhotelMultipleratesIncrementAPIRequest) GetRateQuotaMap() string {
 	return r._rateQuotaMap
+}
+
+var poolTaobaoXhotelMultipleratesIncrementAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelMultipleratesIncrementRequest()
+	},
+}
+
+// GetTaobaoXhotelMultipleratesIncrementRequest 从 sync.Pool 获取 TaobaoXhotelMultipleratesIncrementAPIRequest
+func GetTaobaoXhotelMultipleratesIncrementAPIRequest() *TaobaoXhotelMultipleratesIncrementAPIRequest {
+	return poolTaobaoXhotelMultipleratesIncrementAPIRequest.Get().(*TaobaoXhotelMultipleratesIncrementAPIRequest)
+}
+
+// ReleaseTaobaoXhotelMultipleratesIncrementAPIRequest 将 TaobaoXhotelMultipleratesIncrementAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelMultipleratesIncrementAPIRequest(v *TaobaoXhotelMultipleratesIncrementAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelMultipleratesIncrementAPIRequest.Put(v)
 }

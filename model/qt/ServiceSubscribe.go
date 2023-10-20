@@ -1,5 +1,9 @@
 package qt
 
+import (
+	"sync"
+)
+
 // ServiceSubscribe 结构体
 type ServiceSubscribe struct {
 	// 该用户该收费项目下面的所有的订购记录详情
@@ -20,4 +24,29 @@ type ServiceSubscribe struct {
 	FutureSubId int64 `json:"future_sub_id,omitempty" xml:"future_sub_id,omitempty"`
 	// 可用数量
 	AvaliableNum int64 `json:"avaliable_num,omitempty" xml:"avaliable_num,omitempty"`
+}
+
+var poolServiceSubscribe = sync.Pool{
+	New: func() any {
+		return new(ServiceSubscribe)
+	},
+}
+
+// GetServiceSubscribe() 从对象池中获取ServiceSubscribe
+func GetServiceSubscribe() *ServiceSubscribe {
+	return poolServiceSubscribe.Get().(*ServiceSubscribe)
+}
+
+// ReleaseServiceSubscribe 释放ServiceSubscribe
+func ReleaseServiceSubscribe(v *ServiceSubscribe) {
+	v.UsageDetailList = v.UsageDetailList[:0]
+	v.ServiceItemCode = ""
+	v.Nick = ""
+	v.GmtExpiry = ""
+	v.FuturePrice = ""
+	v.AllNum = 0
+	v.UsedNum = 0
+	v.FutureSubId = 0
+	v.AvaliableNum = 0
+	poolServiceSubscribe.Put(v)
 }

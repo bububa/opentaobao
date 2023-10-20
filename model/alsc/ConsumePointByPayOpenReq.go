@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // ConsumePointByPayOpenReq 结构体
 type ConsumePointByPayOpenReq struct {
 	// 品牌id
@@ -14,4 +18,26 @@ type ConsumePointByPayOpenReq struct {
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 变更积分
 	ChangePoint int64 `json:"change_point,omitempty" xml:"change_point,omitempty"`
+}
+
+var poolConsumePointByPayOpenReq = sync.Pool{
+	New: func() any {
+		return new(ConsumePointByPayOpenReq)
+	},
+}
+
+// GetConsumePointByPayOpenReq() 从对象池中获取ConsumePointByPayOpenReq
+func GetConsumePointByPayOpenReq() *ConsumePointByPayOpenReq {
+	return poolConsumePointByPayOpenReq.Get().(*ConsumePointByPayOpenReq)
+}
+
+// ReleaseConsumePointByPayOpenReq 释放ConsumePointByPayOpenReq
+func ReleaseConsumePointByPayOpenReq(v *ConsumePointByPayOpenReq) {
+	v.BrandId = ""
+	v.CustomerId = ""
+	v.OutShopId = ""
+	v.OutBrandId = ""
+	v.ShopId = ""
+	v.ChangePoint = 0
+	poolConsumePointByPayOpenReq.Put(v)
 }

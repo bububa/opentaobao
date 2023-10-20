@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // OrderSenderEdit 结构体
 type OrderSenderEdit struct {
 	// 联系人姓名
@@ -16,4 +20,27 @@ type OrderSenderEdit struct {
 	Town string `json:"town,omitempty" xml:"town,omitempty"`
 	// 详细地址
 	DetailAddress string `json:"detail_address,omitempty" xml:"detail_address,omitempty"`
+}
+
+var poolOrderSenderEdit = sync.Pool{
+	New: func() any {
+		return new(OrderSenderEdit)
+	},
+}
+
+// GetOrderSenderEdit() 从对象池中获取OrderSenderEdit
+func GetOrderSenderEdit() *OrderSenderEdit {
+	return poolOrderSenderEdit.Get().(*OrderSenderEdit)
+}
+
+// ReleaseOrderSenderEdit 释放OrderSenderEdit
+func ReleaseOrderSenderEdit(v *OrderSenderEdit) {
+	v.Name = ""
+	v.Mobile = ""
+	v.Province = ""
+	v.City = ""
+	v.Area = ""
+	v.Town = ""
+	v.DetailAddress = ""
+	poolOrderSenderEdit.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.qimen.inventory.query
 //
 // taobao.qimen.inventory.query
-func TaobaoQimenInventoryQuery(clt *core.SDKClient, req *qimen.TaobaoQimenInventoryQueryAPIRequest, session string) (*qimen.TaobaoQimenInventoryQueryAPIResponse, error) {
-	var resp qimen.TaobaoQimenInventoryQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQimenInventoryQuery(clt *core.SDKClient, req *qimen.TaobaoQimenInventoryQueryAPIRequest, resp *qimen.TaobaoQimenInventoryQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

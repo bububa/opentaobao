@@ -1,5 +1,9 @@
 package miniappopen
 
+import (
+	"sync"
+)
+
 // MiniAppInstanceVersionDto 结构体
 type MiniAppInstanceVersionDto struct {
 	// 小程序版本号
@@ -20,4 +24,29 @@ type MiniAppInstanceVersionDto struct {
 	AppUrl string `json:"app_url,omitempty" xml:"app_url,omitempty"`
 	// 实例版本
 	Version string `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolMiniAppInstanceVersionDto = sync.Pool{
+	New: func() any {
+		return new(MiniAppInstanceVersionDto)
+	},
+}
+
+// GetMiniAppInstanceVersionDto() 从对象池中获取MiniAppInstanceVersionDto
+func GetMiniAppInstanceVersionDto() *MiniAppInstanceVersionDto {
+	return poolMiniAppInstanceVersionDto.Get().(*MiniAppInstanceVersionDto)
+}
+
+// ReleaseMiniAppInstanceVersionDto 释放MiniAppInstanceVersionDto
+func ReleaseMiniAppInstanceVersionDto(v *MiniAppInstanceVersionDto) {
+	v.AppVersion = ""
+	v.Client = ""
+	v.AppId = ""
+	v.Status = ""
+	v.TemplateId = ""
+	v.TemplateVersion = ""
+	v.ExtJson = ""
+	v.AppUrl = ""
+	v.Version = ""
+	poolMiniAppInstanceVersionDto.Put(v)
 }

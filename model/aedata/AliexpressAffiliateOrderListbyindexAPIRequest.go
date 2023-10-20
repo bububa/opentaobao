@@ -2,6 +2,7 @@ package aedata
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AliexpressAffiliateOrderListbyindexAPIRequest struct {
 // NewAliexpressAffiliateOrderListbyindexRequest 初始化AliexpressAffiliateOrderListbyindexAPIRequest对象
 func NewAliexpressAffiliateOrderListbyindexRequest() *AliexpressAffiliateOrderListbyindexAPIRequest {
 	return &AliexpressAffiliateOrderListbyindexAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressAffiliateOrderListbyindexAPIRequest) Reset() {
+	r._startTime = ""
+	r._startQueryIndexId = ""
+	r._endTime = ""
+	r._status = ""
+	r._fields = ""
+	r._appSignature = ""
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AliexpressAffiliateOrderListbyindexAPIRequest) SetPageSize(_pageSize in
 // GetPageSize PageSize Getter
 func (r AliexpressAffiliateOrderListbyindexAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAliexpressAffiliateOrderListbyindexAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressAffiliateOrderListbyindexRequest()
+	},
+}
+
+// GetAliexpressAffiliateOrderListbyindexRequest 从 sync.Pool 获取 AliexpressAffiliateOrderListbyindexAPIRequest
+func GetAliexpressAffiliateOrderListbyindexAPIRequest() *AliexpressAffiliateOrderListbyindexAPIRequest {
+	return poolAliexpressAffiliateOrderListbyindexAPIRequest.Get().(*AliexpressAffiliateOrderListbyindexAPIRequest)
+}
+
+// ReleaseAliexpressAffiliateOrderListbyindexAPIRequest 将 AliexpressAffiliateOrderListbyindexAPIRequest 放入 sync.Pool
+func ReleaseAliexpressAffiliateOrderListbyindexAPIRequest(v *AliexpressAffiliateOrderListbyindexAPIRequest) {
+	v.Reset()
+	poolAliexpressAffiliateOrderListbyindexAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.usergrowth.ad.material.data.sync
 //
 // 创意维度广告效果数据回传
-func TaobaoUsergrowthAdMaterialDataSync(clt *core.SDKClient, req *usergrowth2.TaobaoUsergrowthAdMaterialDataSyncAPIRequest, session string) (*usergrowth2.TaobaoUsergrowthAdMaterialDataSyncAPIResponse, error) {
-	var resp usergrowth2.TaobaoUsergrowthAdMaterialDataSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUsergrowthAdMaterialDataSync(clt *core.SDKClient, req *usergrowth2.TaobaoUsergrowthAdMaterialDataSyncAPIRequest, resp *usergrowth2.TaobaoUsergrowthAdMaterialDataSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

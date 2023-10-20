@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghome.house.trade.query.status
 //
 // 查询房源状态接口
-func AlibabaAlihouseExistinghomeHouseTradeQueryStatus(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghomeHouseTradeQueryStatus(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

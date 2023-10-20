@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type TaobaoInventoryStoreManageAPIRequest struct {
 // NewTaobaoInventoryStoreManageRequest 初始化TaobaoInventoryStoreManageAPIRequest对象
 func NewTaobaoInventoryStoreManageRequest() *TaobaoInventoryStoreManageAPIRequest {
 	return &TaobaoInventoryStoreManageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoInventoryStoreManageAPIRequest) Reset() {
+	r._operateType = ""
+	r._storeCode = ""
+	r._storeName = ""
+	r._storeType = ""
+	r._aliasName = ""
+	r._address = ""
+	r._contact = ""
+	r._phone = ""
+	r._addressAreaName = ""
+	r._postcode = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *TaobaoInventoryStoreManageAPIRequest) SetPostcode(_postcode int64) erro
 // GetPostcode Postcode Getter
 func (r TaobaoInventoryStoreManageAPIRequest) GetPostcode() int64 {
 	return r._postcode
+}
+
+var poolTaobaoInventoryStoreManageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoInventoryStoreManageRequest()
+	},
+}
+
+// GetTaobaoInventoryStoreManageRequest 从 sync.Pool 获取 TaobaoInventoryStoreManageAPIRequest
+func GetTaobaoInventoryStoreManageAPIRequest() *TaobaoInventoryStoreManageAPIRequest {
+	return poolTaobaoInventoryStoreManageAPIRequest.Get().(*TaobaoInventoryStoreManageAPIRequest)
+}
+
+// ReleaseTaobaoInventoryStoreManageAPIRequest 将 TaobaoInventoryStoreManageAPIRequest 放入 sync.Pool
+func ReleaseTaobaoInventoryStoreManageAPIRequest(v *TaobaoInventoryStoreManageAPIRequest) {
+	v.Reset()
+	poolTaobaoInventoryStoreManageAPIRequest.Put(v)
 }

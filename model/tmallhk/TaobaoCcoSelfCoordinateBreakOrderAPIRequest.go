@@ -2,6 +2,7 @@ package tmallhk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoCcoSelfCoordinateBreakOrderAPIRequest struct {
 // NewTaobaoCcoSelfCoordinateBreakOrderRequest 初始化TaobaoCcoSelfCoordinateBreakOrderAPIRequest对象
 func NewTaobaoCcoSelfCoordinateBreakOrderRequest() *TaobaoCcoSelfCoordinateBreakOrderAPIRequest {
 	return &TaobaoCcoSelfCoordinateBreakOrderAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCcoSelfCoordinateBreakOrderAPIRequest) Reset() {
+	r._supplierBreakOrderRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoCcoSelfCoordinateBreakOrderAPIRequest) SetSupplierBreakOrderReque
 // GetSupplierBreakOrderRequest SupplierBreakOrderRequest Getter
 func (r TaobaoCcoSelfCoordinateBreakOrderAPIRequest) GetSupplierBreakOrderRequest() *SupplierBreakOrderRequest {
 	return r._supplierBreakOrderRequest
+}
+
+var poolTaobaoCcoSelfCoordinateBreakOrderAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCcoSelfCoordinateBreakOrderRequest()
+	},
+}
+
+// GetTaobaoCcoSelfCoordinateBreakOrderRequest 从 sync.Pool 获取 TaobaoCcoSelfCoordinateBreakOrderAPIRequest
+func GetTaobaoCcoSelfCoordinateBreakOrderAPIRequest() *TaobaoCcoSelfCoordinateBreakOrderAPIRequest {
+	return poolTaobaoCcoSelfCoordinateBreakOrderAPIRequest.Get().(*TaobaoCcoSelfCoordinateBreakOrderAPIRequest)
+}
+
+// ReleaseTaobaoCcoSelfCoordinateBreakOrderAPIRequest 将 TaobaoCcoSelfCoordinateBreakOrderAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCcoSelfCoordinateBreakOrderAPIRequest(v *TaobaoCcoSelfCoordinateBreakOrderAPIRequest) {
+	v.Reset()
+	poolTaobaoCcoSelfCoordinateBreakOrderAPIRequest.Put(v)
 }

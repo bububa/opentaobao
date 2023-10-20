@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type TaobaoTradePostageUpdateAPIResponse struct {
 	TaobaoTradePostageUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTradePostageUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTradePostageUpdateAPIResponseModel).Reset()
+}
+
 // TaobaoTradePostageUpdateAPIResponseModel is 修改交易邮费价格 成功返回结果
 type TaobaoTradePostageUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"trade_postage_update_response"`
@@ -23,4 +30,27 @@ type TaobaoTradePostageUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回trade类型，其中包含修改时间modified，修改邮费post_fee，修改后的总费用total_fee和买家实付款payment
 	Trade *Trade `json:"trade,omitempty" xml:"trade,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTradePostageUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Trade = nil
+}
+
+var poolTaobaoTradePostageUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTradePostageUpdateAPIResponse)
+	},
+}
+
+// GetTaobaoTradePostageUpdateAPIResponse 从 sync.Pool 获取 TaobaoTradePostageUpdateAPIResponse
+func GetTaobaoTradePostageUpdateAPIResponse() *TaobaoTradePostageUpdateAPIResponse {
+	return poolTaobaoTradePostageUpdateAPIResponse.Get().(*TaobaoTradePostageUpdateAPIResponse)
+}
+
+// ReleaseTaobaoTradePostageUpdateAPIResponse 将 TaobaoTradePostageUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTradePostageUpdateAPIResponse(v *TaobaoTradePostageUpdateAPIResponse) {
+	v.Reset()
+	poolTaobaoTradePostageUpdateAPIResponse.Put(v)
 }

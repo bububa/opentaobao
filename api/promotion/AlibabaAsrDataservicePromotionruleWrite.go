@@ -9,11 +9,6 @@ import (
 // alibaba.asr.dataservice.promotionrule.write
 //
 // 星巴克优惠规则写入
-func AlibabaAsrDataservicePromotionruleWrite(clt *core.SDKClient, req *promotion.AlibabaAsrDataservicePromotionruleWriteAPIRequest, session string) (*promotion.AlibabaAsrDataservicePromotionruleWriteAPIResponse, error) {
-	var resp promotion.AlibabaAsrDataservicePromotionruleWriteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAsrDataservicePromotionruleWrite(clt *core.SDKClient, req *promotion.AlibabaAsrDataservicePromotionruleWriteAPIRequest, resp *promotion.AlibabaAsrDataservicePromotionruleWriteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

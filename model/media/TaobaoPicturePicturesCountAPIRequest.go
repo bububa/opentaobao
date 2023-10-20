@@ -2,6 +2,7 @@ package media
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoPicturePicturesCountAPIRequest struct {
 // NewTaobaoPicturePicturesCountRequest 初始化TaobaoPicturePicturesCountAPIRequest对象
 func NewTaobaoPicturePicturesCountRequest() *TaobaoPicturePicturesCountAPIRequest {
 	return &TaobaoPicturePicturesCountAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPicturePicturesCountAPIRequest) Reset() {
+	r._deleted = ""
+	r._startModifiedDate = ""
+	r._startDate = ""
+	r._endDate = ""
+	r._clientType = ""
+	r._title = ""
+	r._pictureId = 0
+	r._pictureCategoryId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoPicturePicturesCountAPIRequest) SetPictureCategoryId(_pictureCate
 // GetPictureCategoryId PictureCategoryId Getter
 func (r TaobaoPicturePicturesCountAPIRequest) GetPictureCategoryId() int64 {
 	return r._pictureCategoryId
+}
+
+var poolTaobaoPicturePicturesCountAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPicturePicturesCountRequest()
+	},
+}
+
+// GetTaobaoPicturePicturesCountRequest 从 sync.Pool 获取 TaobaoPicturePicturesCountAPIRequest
+func GetTaobaoPicturePicturesCountAPIRequest() *TaobaoPicturePicturesCountAPIRequest {
+	return poolTaobaoPicturePicturesCountAPIRequest.Get().(*TaobaoPicturePicturesCountAPIRequest)
+}
+
+// ReleaseTaobaoPicturePicturesCountAPIRequest 将 TaobaoPicturePicturesCountAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPicturePicturesCountAPIRequest(v *TaobaoPicturePicturesCountAPIRequest) {
+	v.Reset()
+	poolTaobaoPicturePicturesCountAPIRequest.Put(v)
 }

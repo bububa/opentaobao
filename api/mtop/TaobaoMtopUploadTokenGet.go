@@ -9,11 +9,6 @@ import (
 // taobao.mtop.upload.token.get
 //
 // 获取mtop文件上传授权
-func TaobaoMtopUploadTokenGet(clt *core.SDKClient, req *mtop.TaobaoMtopUploadTokenGetAPIRequest, session string) (*mtop.TaobaoMtopUploadTokenGetAPIResponse, error) {
-	var resp mtop.TaobaoMtopUploadTokenGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoMtopUploadTokenGet(clt *core.SDKClient, req *mtop.TaobaoMtopUploadTokenGetAPIRequest, resp *mtop.TaobaoMtopUploadTokenGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

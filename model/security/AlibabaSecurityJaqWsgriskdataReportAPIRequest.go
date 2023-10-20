@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaSecurityJaqWsgriskdataReportAPIRequest struct {
 // NewAlibabaSecurityJaqWsgriskdataReportRequest 初始化AlibabaSecurityJaqWsgriskdataReportAPIRequest对象
 func NewAlibabaSecurityJaqWsgriskdataReportRequest() *AlibabaSecurityJaqWsgriskdataReportAPIRequest {
 	return &AlibabaSecurityJaqWsgriskdataReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqWsgriskdataReportAPIRequest) Reset() {
+	r._wua = ""
+	r._extParam = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaSecurityJaqWsgriskdataReportAPIRequest) SetExtParam(_extParam st
 // GetExtParam ExtParam Getter
 func (r AlibabaSecurityJaqWsgriskdataReportAPIRequest) GetExtParam() string {
 	return r._extParam
+}
+
+var poolAlibabaSecurityJaqWsgriskdataReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqWsgriskdataReportRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqWsgriskdataReportRequest 从 sync.Pool 获取 AlibabaSecurityJaqWsgriskdataReportAPIRequest
+func GetAlibabaSecurityJaqWsgriskdataReportAPIRequest() *AlibabaSecurityJaqWsgriskdataReportAPIRequest {
+	return poolAlibabaSecurityJaqWsgriskdataReportAPIRequest.Get().(*AlibabaSecurityJaqWsgriskdataReportAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqWsgriskdataReportAPIRequest 将 AlibabaSecurityJaqWsgriskdataReportAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqWsgriskdataReportAPIRequest(v *AlibabaSecurityJaqWsgriskdataReportAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqWsgriskdataReportAPIRequest.Put(v)
 }

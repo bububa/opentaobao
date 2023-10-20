@@ -9,11 +9,6 @@ import (
 // tmall.supplychain.channel.product.price.get
 //
 // 渠道价格查询接口
-func TmallSupplychainChannelProductPriceGet(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductPriceGetAPIRequest, session string) (*fenxiao.TmallSupplychainChannelProductPriceGetAPIResponse, error) {
-	var resp fenxiao.TmallSupplychainChannelProductPriceGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallSupplychainChannelProductPriceGet(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductPriceGetAPIRequest, resp *fenxiao.TmallSupplychainChannelProductPriceGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

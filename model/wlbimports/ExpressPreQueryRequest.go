@@ -1,5 +1,9 @@
 package wlbimports
 
+import (
+	"sync"
+)
+
 // ExpressPreQueryRequest 结构体
 type ExpressPreQueryRequest struct {
 	// packages
@@ -16,4 +20,27 @@ type ExpressPreQueryRequest struct {
 	ReceiverInfo *ContactInfoRequest `json:"receiver_info,omitempty" xml:"receiver_info,omitempty"`
 	// 商家id
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
+}
+
+var poolExpressPreQueryRequest = sync.Pool{
+	New: func() any {
+		return new(ExpressPreQueryRequest)
+	},
+}
+
+// GetExpressPreQueryRequest() 从对象池中获取ExpressPreQueryRequest
+func GetExpressPreQueryRequest() *ExpressPreQueryRequest {
+	return poolExpressPreQueryRequest.Get().(*ExpressPreQueryRequest)
+}
+
+// ReleaseExpressPreQueryRequest 释放ExpressPreQueryRequest
+func ReleaseExpressPreQueryRequest(v *ExpressPreQueryRequest) {
+	v.Packages = v.Packages[:0]
+	v.PlannedShippingDateAndTime = ""
+	v.ScitemInfo = ""
+	v.ReceiveCpCode = ""
+	v.SenderInfo = nil
+	v.ReceiverInfo = nil
+	v.SellerId = 0
+	poolExpressPreQueryRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.wlb.waybill.shengxian.get
 //
 // 商家通过交易订单号获取电子面单接口
-func TaobaoWlbWaybillShengxianGet(clt *core.SDKClient, req *wlb.TaobaoWlbWaybillShengxianGetAPIRequest, session string) (*wlb.TaobaoWlbWaybillShengxianGetAPIResponse, error) {
-	var resp wlb.TaobaoWlbWaybillShengxianGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWlbWaybillShengxianGet(clt *core.SDKClient, req *wlb.TaobaoWlbWaybillShengxianGetAPIRequest, resp *wlb.TaobaoWlbWaybillShengxianGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package icbulogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest struct {
 // NewAlibabaOnetouchLogisticsExpressChargeCalculateRequest 初始化AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest对象
 func NewAlibabaOnetouchLogisticsExpressChargeCalculateRequest() *AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest {
 	return &AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest) Reset() {
+	r._paramnQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest) SetParamnQuer
 // GetParamnQuery ParamnQuery Getter
 func (r AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest) GetParamnQuery() *PlaceOrderDto {
 	return r._paramnQuery
+}
+
+var poolAlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaOnetouchLogisticsExpressChargeCalculateRequest()
+	},
+}
+
+// GetAlibabaOnetouchLogisticsExpressChargeCalculateRequest 从 sync.Pool 获取 AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest
+func GetAlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest() *AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest {
+	return poolAlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest.Get().(*AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest)
+}
+
+// ReleaseAlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest 将 AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest(v *AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest) {
+	v.Reset()
+	poolAlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // tmall.store.order.create
 //
 // 门店订单创建api
-func TmallStoreOrderCreate(clt *core.SDKClient, req *retail.TmallStoreOrderCreateAPIRequest, session string) (*retail.TmallStoreOrderCreateAPIResponse, error) {
-	var resp retail.TmallStoreOrderCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallStoreOrderCreate(clt *core.SDKClient, req *retail.TmallStoreOrderCreateAPIRequest, resp *retail.TmallStoreOrderCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

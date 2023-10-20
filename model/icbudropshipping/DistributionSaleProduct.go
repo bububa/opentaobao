@@ -1,5 +1,9 @@
 package icbudropshipping
 
+import (
+	"sync"
+)
+
 // DistributionSaleProduct 结构体
 type DistributionSaleProduct struct {
 	// product keywords
@@ -32,4 +36,35 @@ type DistributionSaleProduct struct {
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// Determine whether this product can be ordered
 	IsCanPlaceOrder bool `json:"is_can_place_order,omitempty" xml:"is_can_place_order,omitempty"`
+}
+
+var poolDistributionSaleProduct = sync.Pool{
+	New: func() any {
+		return new(DistributionSaleProduct)
+	},
+}
+
+// GetDistributionSaleProduct() 从对象池中获取DistributionSaleProduct
+func GetDistributionSaleProduct() *DistributionSaleProduct {
+	return poolDistributionSaleProduct.Get().(*DistributionSaleProduct)
+}
+
+// ReleaseDistributionSaleProduct 释放DistributionSaleProduct
+func ReleaseDistributionSaleProduct(v *DistributionSaleProduct) {
+	v.Keywords = v.Keywords[:0]
+	v.LadderPeriodList = v.LadderPeriodList[:0]
+	v.ProductSkuList = v.ProductSkuList[:0]
+	v.ImageUrlList = v.ImageUrlList[:0]
+	v.Description = ""
+	v.DetailUrl = ""
+	v.MainImageUrl = ""
+	v.Name = ""
+	v.PriceRange = ""
+	v.ECompanyId = ""
+	v.TopCategoryName = ""
+	v.LeafCategoryName = ""
+	v.MoqAndPrice = nil
+	v.ProductId = 0
+	v.IsCanPlaceOrder = false
+	poolDistributionSaleProduct.Put(v)
 }

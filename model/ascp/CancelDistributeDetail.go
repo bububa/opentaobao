@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // CancelDistributeDetail 结构体
 type CancelDistributeDetail struct {
 	// 传入的商品id
@@ -16,4 +20,27 @@ type CancelDistributeDetail struct {
 	DistributorShopUserId int64 `json:"distributor_shop_user_id,omitempty" xml:"distributor_shop_user_id,omitempty"`
 	// 处理结果
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolCancelDistributeDetail = sync.Pool{
+	New: func() any {
+		return new(CancelDistributeDetail)
+	},
+}
+
+// GetCancelDistributeDetail() 从对象池中获取CancelDistributeDetail
+func GetCancelDistributeDetail() *CancelDistributeDetail {
+	return poolCancelDistributeDetail.Get().(*CancelDistributeDetail)
+}
+
+// ReleaseCancelDistributeDetail 释放CancelDistributeDetail
+func ReleaseCancelDistributeDetail(v *CancelDistributeDetail) {
+	v.ItemId = ""
+	v.SkuId = ""
+	v.DistributorCompanyName = ""
+	v.ErrorCode = ""
+	v.ErrorMessage = ""
+	v.DistributorShopUserId = 0
+	v.Success = false
+	poolCancelDistributeDetail.Put(v)
 }

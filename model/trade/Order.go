@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // Order 结构体
 type Order struct {
 	// 商品价格。精确到2位小数;单位:元。如:200.07，表示:200元7分
@@ -116,4 +120,77 @@ type Order struct {
 	IsDevalueFee bool `json:"is_devalue_fee,omitempty" xml:"is_devalue_fee,omitempty"`
 	// 是否超卖
 	IsOversold bool `json:"is_oversold,omitempty" xml:"is_oversold,omitempty"`
+}
+
+var poolOrder = sync.Pool{
+	New: func() any {
+		return new(Order)
+	},
+}
+
+// GetOrder() 从对象池中获取Order
+func GetOrder() *Order {
+	return poolOrder.Get().(*Order)
+}
+
+// ReleaseOrder 释放Order
+func ReleaseOrder(v *Order) {
+	v.Price = ""
+	v.SkuId = ""
+	v.Status = ""
+	v.Oid = ""
+	v.TotalFee = ""
+	v.OuterSkuId = ""
+	v.OuterIid = ""
+	v.PicPath = ""
+	v.Title = ""
+	v.Customization = ""
+	v.Payment = ""
+	v.DiscountFee = ""
+	v.DivideOrderFee = ""
+	v.PartMjzDiscount = ""
+	v.RefundStatus = ""
+	v.AdjustFee = ""
+	v.SkuPropertiesName = ""
+	v.ItemMealName = ""
+	v.SellerType = ""
+	v.TicketOuterId = ""
+	v.TicketExpdateKey = ""
+	v.StoreCode = ""
+	v.TmserSpuCode = ""
+	v.EtSerTime = ""
+	v.EtShopName = ""
+	v.EtVerifiedShopName = ""
+	v.EtPlateNumber = ""
+	v.SubOrderTaxFee = ""
+	v.SubOrderTaxRate = ""
+	v.ZhengjiStatus = ""
+	v.SubOrderTaxPromotionFee = ""
+	v.TaxCouponDiscount = ""
+	v.SpecialRefundType = ""
+	v.SnapshotUrl = ""
+	v.TimeoutActionTime = ""
+	v.EndTime = ""
+	v.OrderFrom = ""
+	v.ConsignTime = ""
+	v.ShippingType = ""
+	v.LogisticsCompany = ""
+	v.InvoiceNo = ""
+	v.BindOids = ""
+	v.ItemMealId = ""
+	v.ExpandCardExpandPriceUsedSuborder = ""
+	v.ExpandCardBasicPriceUsedSuborder = ""
+	v.IsIdle = ""
+	v.NumIid = 0
+	v.Num = 0
+	v.RefundId = 0
+	v.Cid = 0
+	v.BuyerRate = false
+	v.SellerRate = false
+	v.IsDaixiao = false
+	v.IsWww = false
+	v.TaxFree = false
+	v.IsDevalueFee = false
+	v.IsOversold = false
+	poolOrder.Put(v)
 }

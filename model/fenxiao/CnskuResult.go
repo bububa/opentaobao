@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // CnskuResult 结构体
 type CnskuResult struct {
 	// 对应货品信息
@@ -18,4 +22,28 @@ type CnskuResult struct {
 	IsSystemFailed bool `json:"is_system_failed,omitempty" xml:"is_system_failed,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+var poolCnskuResult = sync.Pool{
+	New: func() any {
+		return new(CnskuResult)
+	},
+}
+
+// GetCnskuResult() 从对象池中获取CnskuResult
+func GetCnskuResult() *CnskuResult {
+	return poolCnskuResult.Get().(*CnskuResult)
+}
+
+// ReleaseCnskuResult 释放CnskuResult
+func ReleaseCnskuResult(v *CnskuResult) {
+	v.Data = v.Data[:0]
+	v.SysErrorCode = ""
+	v.ErrorMSG = ""
+	v.PageIndex = 0
+	v.TotalNum = 0
+	v.PageSize = 0
+	v.IsSystemFailed = false
+	v.IsSuccess = false
+	poolCnskuResult.Put(v)
 }

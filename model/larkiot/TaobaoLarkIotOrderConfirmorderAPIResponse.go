@@ -2,6 +2,7 @@ package larkiot
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoLarkIotOrderConfirmorderAPIResponse struct {
 	TaobaoLarkIotOrderConfirmorderAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoLarkIotOrderConfirmorderAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLarkIotOrderConfirmorderAPIResponseModel).Reset()
+}
+
 // TaobaoLarkIotOrderConfirmorderAPIResponseModel is iot渠道卖品落单 成功返回结果
 type TaobaoLarkIotOrderConfirmorderAPIResponseModel struct {
 	XMLName xml.Name `xml:"lark_iot_order_confirmorder_response"`
@@ -22,4 +29,27 @@ type TaobaoLarkIotOrderConfirmorderAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回下单结果
 	Data *BizSingleResult `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLarkIotOrderConfirmorderAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = nil
+}
+
+var poolTaobaoLarkIotOrderConfirmorderAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLarkIotOrderConfirmorderAPIResponse)
+	},
+}
+
+// GetTaobaoLarkIotOrderConfirmorderAPIResponse 从 sync.Pool 获取 TaobaoLarkIotOrderConfirmorderAPIResponse
+func GetTaobaoLarkIotOrderConfirmorderAPIResponse() *TaobaoLarkIotOrderConfirmorderAPIResponse {
+	return poolTaobaoLarkIotOrderConfirmorderAPIResponse.Get().(*TaobaoLarkIotOrderConfirmorderAPIResponse)
+}
+
+// ReleaseTaobaoLarkIotOrderConfirmorderAPIResponse 将 TaobaoLarkIotOrderConfirmorderAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLarkIotOrderConfirmorderAPIResponse(v *TaobaoLarkIotOrderConfirmorderAPIResponse) {
+	v.Reset()
+	poolTaobaoLarkIotOrderConfirmorderAPIResponse.Put(v)
 }

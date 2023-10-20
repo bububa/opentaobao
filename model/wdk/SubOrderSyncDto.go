@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SubOrderSyncDto 结构体
 type SubOrderSyncDto struct {
 	// 履约时间
@@ -42,4 +46,40 @@ type SubOrderSyncDto struct {
 	TbBizOrderId int64 `json:"tb_biz_order_id,omitempty" xml:"tb_biz_order_id,omitempty"`
 	// 盒马订单号
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
+}
+
+var poolSubOrderSyncDto = sync.Pool{
+	New: func() any {
+		return new(SubOrderSyncDto)
+	},
+}
+
+// GetSubOrderSyncDto() 从对象池中获取SubOrderSyncDto
+func GetSubOrderSyncDto() *SubOrderSyncDto {
+	return poolSubOrderSyncDto.Get().(*SubOrderSyncDto)
+}
+
+// ReleaseSubOrderSyncDto 释放SubOrderSyncDto
+func ReleaseSubOrderSyncDto(v *SubOrderSyncDto) {
+	v.StatusChangeTime = ""
+	v.OrderStatus = ""
+	v.OrderType = ""
+	v.BuyAmountStock = ""
+	v.PickAmountStock = ""
+	v.OutOrderId = ""
+	v.SaleUnit = ""
+	v.StockUnit = ""
+	v.TradeSubAttributes = ""
+	v.SkuCode = ""
+	v.OutSkuCode = ""
+	v.PromotionInfo = ""
+	v.MemberDiscountAmt = 0
+	v.PromotionDiscountAmt = 0
+	v.OriginalAmt = 0
+	v.Price = 0
+	v.TxdPmtAmt = 0
+	v.PickAmt = 0
+	v.TbBizOrderId = 0
+	v.BizOrderId = 0
+	poolSubOrderSyncDto.Put(v)
 }

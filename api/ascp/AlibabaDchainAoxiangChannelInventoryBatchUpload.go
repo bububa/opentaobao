@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.channel.inventory.batch.upload
 //
 // ERP全量同步销售库存数量
-func AlibabaDchainAoxiangChannelInventoryBatchUpload(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest, session string) (*ascp.AlibabaDchainAoxiangChannelInventoryBatchUploadAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangChannelInventoryBatchUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangChannelInventoryBatchUpload(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest, resp *ascp.AlibabaDchainAoxiangChannelInventoryBatchUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -103,8 +104,56 @@ type TaobaoTbkDgMaterialOptionalAPIRequest struct {
 // NewTaobaoTbkDgMaterialOptionalRequest 初始化TaobaoTbkDgMaterialOptionalAPIRequest对象
 func NewTaobaoTbkDgMaterialOptionalRequest() *TaobaoTbkDgMaterialOptionalAPIRequest {
 	return &TaobaoTbkDgMaterialOptionalAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(43),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkDgMaterialOptionalAPIRequest) Reset() {
+	r._ucrowdRankItems = r._ucrowdRankItems[:0]
+	r._sort = ""
+	r._itemloc = ""
+	r._cat = ""
+	r._q = ""
+	r._ip = ""
+	r._deviceEncrypt = ""
+	r._deviceValue = ""
+	r._deviceType = ""
+	r._longitude = ""
+	r._latitude = ""
+	r._cityCode = ""
+	r._sellerIds = ""
+	r._specialId = ""
+	r._relationId = ""
+	r._pageResultKey = ""
+	r._bizSceneId = ""
+	r._promotionType = ""
+	r._startDsr = 0
+	r._pageSize = 0
+	r._pageNo = 0
+	r._platform = 0
+	r._endTkRate = 0
+	r._startTkRate = 0
+	r._endPrice = 0
+	r._startPrice = 0
+	r._materialId = 0
+	r._adzoneId = 0
+	r._npxLevel = 0
+	r._endKaTkRate = 0
+	r._startKaTkRate = 0
+	r._lockRateEndTime = 0
+	r._lockRateStartTime = 0
+	r._ucrowdId = 0
+	r._getTopnRate = 0
+	r._isOverseas = false
+	r._isTmall = false
+	r._hasCoupon = false
+	r._needFreeShipment = false
+	r._needPrepay = false
+	r._includePayRate30 = false
+	r._includeGoodRate = false
+	r._includeRfdRate = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -681,4 +730,21 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetIncludeRfdRate(_includeRfdRat
 // GetIncludeRfdRate IncludeRfdRate Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetIncludeRfdRate() bool {
 	return r._includeRfdRate
+}
+
+var poolTaobaoTbkDgMaterialOptionalAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkDgMaterialOptionalRequest()
+	},
+}
+
+// GetTaobaoTbkDgMaterialOptionalRequest 从 sync.Pool 获取 TaobaoTbkDgMaterialOptionalAPIRequest
+func GetTaobaoTbkDgMaterialOptionalAPIRequest() *TaobaoTbkDgMaterialOptionalAPIRequest {
+	return poolTaobaoTbkDgMaterialOptionalAPIRequest.Get().(*TaobaoTbkDgMaterialOptionalAPIRequest)
+}
+
+// ReleaseTaobaoTbkDgMaterialOptionalAPIRequest 将 TaobaoTbkDgMaterialOptionalAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkDgMaterialOptionalAPIRequest(v *TaobaoTbkDgMaterialOptionalAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkDgMaterialOptionalAPIRequest.Put(v)
 }

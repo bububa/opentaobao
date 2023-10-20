@@ -2,6 +2,7 @@ package tbrefund
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoRefundStatusGetAPIResponse struct {
 	TaobaoRefundStatusGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoRefundStatusGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoRefundStatusGetAPIResponseModel).Reset()
+}
+
 // TaobaoRefundStatusGetAPIResponseModel is 查询退款状态 成功返回结果
 type TaobaoRefundStatusGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"refund_status_get_response"`
@@ -22,4 +29,27 @@ type TaobaoRefundStatusGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 出参对象
 	ResultPackage *TaobaoRefundStatusGetResultSet `json:"result_package,omitempty" xml:"result_package,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoRefundStatusGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultPackage = nil
+}
+
+var poolTaobaoRefundStatusGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoRefundStatusGetAPIResponse)
+	},
+}
+
+// GetTaobaoRefundStatusGetAPIResponse 从 sync.Pool 获取 TaobaoRefundStatusGetAPIResponse
+func GetTaobaoRefundStatusGetAPIResponse() *TaobaoRefundStatusGetAPIResponse {
+	return poolTaobaoRefundStatusGetAPIResponse.Get().(*TaobaoRefundStatusGetAPIResponse)
+}
+
+// ReleaseTaobaoRefundStatusGetAPIResponse 将 TaobaoRefundStatusGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoRefundStatusGetAPIResponse(v *TaobaoRefundStatusGetAPIResponse) {
+	v.Reset()
+	poolTaobaoRefundStatusGetAPIResponse.Put(v)
 }

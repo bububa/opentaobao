@@ -2,6 +2,7 @@ package opentrade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ import (
 type TaobaoOpentradeActivitySyncAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpentradeActivitySyncAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoOpentradeActivitySyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOpentradeActivitySyncAPIResponseModel).Reset()
 }
 
 // TaobaoOpentradeActivitySyncAPIResponseModel is 尖货交易活动信息同步 成功返回结果
@@ -37,4 +44,33 @@ type TaobaoOpentradeActivitySyncAPIResponseModel struct {
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 活动结束时间
 	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOpentradeActivitySyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.StartTime = ""
+	m.ItemIds = ""
+	m.ActivityName = ""
+	m.Appkey = ""
+	m.ActivityId = ""
+	m.GmtModified = ""
+	m.EndTime = ""
+}
+
+var poolTaobaoOpentradeActivitySyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOpentradeActivitySyncAPIResponse)
+	},
+}
+
+// GetTaobaoOpentradeActivitySyncAPIResponse 从 sync.Pool 获取 TaobaoOpentradeActivitySyncAPIResponse
+func GetTaobaoOpentradeActivitySyncAPIResponse() *TaobaoOpentradeActivitySyncAPIResponse {
+	return poolTaobaoOpentradeActivitySyncAPIResponse.Get().(*TaobaoOpentradeActivitySyncAPIResponse)
+}
+
+// ReleaseTaobaoOpentradeActivitySyncAPIResponse 将 TaobaoOpentradeActivitySyncAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOpentradeActivitySyncAPIResponse(v *TaobaoOpentradeActivitySyncAPIResponse) {
+	v.Reset()
+	poolTaobaoOpentradeActivitySyncAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.bnbpromo.delete
 //
 // 民宿删除营销活动
-func TaobaoXhotelBnbpromoDelete(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbpromoDeleteAPIRequest, session string) (*xhotelitem.TaobaoXhotelBnbpromoDeleteAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelBnbpromoDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelBnbpromoDelete(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbpromoDeleteAPIRequest, resp *xhotelitem.TaobaoXhotelBnbpromoDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlscCrmOpenAssertRefundAPIResponse struct {
 	AlibabaAlscCrmOpenAssertRefundAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlscCrmOpenAssertRefundAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlscCrmOpenAssertRefundAPIResponseModel).Reset()
+}
+
 // AlibabaAlscCrmOpenAssertRefundAPIResponseModel is 资产核销回退接口 成功返回结果
 type AlibabaAlscCrmOpenAssertRefundAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_open_assert_refund_response"`
@@ -22,4 +29,27 @@ type AlibabaAlscCrmOpenAssertRefundAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口结果
 	Result *CommonResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlscCrmOpenAssertRefundAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlscCrmOpenAssertRefundAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlscCrmOpenAssertRefundAPIResponse)
+	},
+}
+
+// GetAlibabaAlscCrmOpenAssertRefundAPIResponse 从 sync.Pool 获取 AlibabaAlscCrmOpenAssertRefundAPIResponse
+func GetAlibabaAlscCrmOpenAssertRefundAPIResponse() *AlibabaAlscCrmOpenAssertRefundAPIResponse {
+	return poolAlibabaAlscCrmOpenAssertRefundAPIResponse.Get().(*AlibabaAlscCrmOpenAssertRefundAPIResponse)
+}
+
+// ReleaseAlibabaAlscCrmOpenAssertRefundAPIResponse 将 AlibabaAlscCrmOpenAssertRefundAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlscCrmOpenAssertRefundAPIResponse(v *AlibabaAlscCrmOpenAssertRefundAPIResponse) {
+	v.Reset()
+	poolAlibabaAlscCrmOpenAssertRefundAPIResponse.Put(v)
 }

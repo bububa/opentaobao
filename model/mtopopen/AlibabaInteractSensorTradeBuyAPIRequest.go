@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaInteractSensorTradeBuyAPIRequest struct {
 // NewAlibabaInteractSensorTradeBuyRequest 初始化AlibabaInteractSensorTradeBuyAPIRequest对象
 func NewAlibabaInteractSensorTradeBuyRequest() *AlibabaInteractSensorTradeBuyAPIRequest {
 	return &AlibabaInteractSensorTradeBuyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractSensorTradeBuyAPIRequest) Reset() {
+	r._id = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaInteractSensorTradeBuyAPIRequest) SetId(_id string) error {
 // GetId Id Getter
 func (r AlibabaInteractSensorTradeBuyAPIRequest) GetId() string {
 	return r._id
+}
+
+var poolAlibabaInteractSensorTradeBuyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractSensorTradeBuyRequest()
+	},
+}
+
+// GetAlibabaInteractSensorTradeBuyRequest 从 sync.Pool 获取 AlibabaInteractSensorTradeBuyAPIRequest
+func GetAlibabaInteractSensorTradeBuyAPIRequest() *AlibabaInteractSensorTradeBuyAPIRequest {
+	return poolAlibabaInteractSensorTradeBuyAPIRequest.Get().(*AlibabaInteractSensorTradeBuyAPIRequest)
+}
+
+// ReleaseAlibabaInteractSensorTradeBuyAPIRequest 将 AlibabaInteractSensorTradeBuyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractSensorTradeBuyAPIRequest(v *AlibabaInteractSensorTradeBuyAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractSensorTradeBuyAPIRequest.Put(v)
 }

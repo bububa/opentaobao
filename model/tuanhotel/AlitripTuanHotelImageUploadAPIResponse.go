@@ -2,6 +2,7 @@ package tuanhotel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlitripTuanHotelImageUploadAPIResponse struct {
 	model.CommonResponse
 	AlitripTuanHotelImageUploadAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlitripTuanHotelImageUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripTuanHotelImageUploadAPIResponseModel).Reset()
 }
 
 // AlitripTuanHotelImageUploadAPIResponseModel is 图片上传接口 成功返回结果
@@ -28,4 +35,30 @@ type AlitripTuanHotelImageUploadAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 上传操作是否成功
 	Status bool `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripTuanHotelImageUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ImagePathResultList = m.ImagePathResultList[:0]
+	m.MsgCode = ""
+	m.Message = ""
+	m.Status = false
+}
+
+var poolAlitripTuanHotelImageUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripTuanHotelImageUploadAPIResponse)
+	},
+}
+
+// GetAlitripTuanHotelImageUploadAPIResponse 从 sync.Pool 获取 AlitripTuanHotelImageUploadAPIResponse
+func GetAlitripTuanHotelImageUploadAPIResponse() *AlitripTuanHotelImageUploadAPIResponse {
+	return poolAlitripTuanHotelImageUploadAPIResponse.Get().(*AlitripTuanHotelImageUploadAPIResponse)
+}
+
+// ReleaseAlitripTuanHotelImageUploadAPIResponse 将 AlitripTuanHotelImageUploadAPIResponse 保存到 sync.Pool
+func ReleaseAlitripTuanHotelImageUploadAPIResponse(v *AlitripTuanHotelImageUploadAPIResponse) {
+	v.Reset()
+	poolAlitripTuanHotelImageUploadAPIResponse.Put(v)
 }

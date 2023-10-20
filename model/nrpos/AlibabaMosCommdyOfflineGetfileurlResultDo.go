@@ -1,5 +1,9 @@
 package nrpos
 
+import (
+	"sync"
+)
+
 // AlibabaMosCommdyOfflineGetfileurlResultDo 结构体
 type AlibabaMosCommdyOfflineGetfileurlResultDo struct {
 	// 返回结果合集
@@ -18,4 +22,28 @@ type AlibabaMosCommdyOfflineGetfileurlResultDo struct {
 	HttpStatusCode int64 `json:"http_status_code,omitempty" xml:"http_status_code,omitempty"`
 	// 调用是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaMosCommdyOfflineGetfileurlResultDo = sync.Pool{
+	New: func() any {
+		return new(AlibabaMosCommdyOfflineGetfileurlResultDo)
+	},
+}
+
+// GetAlibabaMosCommdyOfflineGetfileurlResultDo() 从对象池中获取AlibabaMosCommdyOfflineGetfileurlResultDo
+func GetAlibabaMosCommdyOfflineGetfileurlResultDo() *AlibabaMosCommdyOfflineGetfileurlResultDo {
+	return poolAlibabaMosCommdyOfflineGetfileurlResultDo.Get().(*AlibabaMosCommdyOfflineGetfileurlResultDo)
+}
+
+// ReleaseAlibabaMosCommdyOfflineGetfileurlResultDo 释放AlibabaMosCommdyOfflineGetfileurlResultDo
+func ReleaseAlibabaMosCommdyOfflineGetfileurlResultDo(v *AlibabaMosCommdyOfflineGetfileurlResultDo) {
+	v.Datas = v.Datas[:0]
+	v.Headers = ""
+	v.MappingCode = ""
+	v.BizExtMap = ""
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.HttpStatusCode = 0
+	v.Success = false
+	poolAlibabaMosCommdyOfflineGetfileurlResultDo.Put(v)
 }

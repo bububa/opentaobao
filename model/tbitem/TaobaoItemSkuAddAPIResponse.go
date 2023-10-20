@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoItemSkuAddAPIResponse struct {
 	TaobaoItemSkuAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoItemSkuAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoItemSkuAddAPIResponseModel).Reset()
+}
+
 // TaobaoItemSkuAddAPIResponseModel is 添加SKU 成功返回结果
 type TaobaoItemSkuAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"item_sku_add_response"`
@@ -22,4 +29,27 @@ type TaobaoItemSkuAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// sku
 	Sku *Sku `json:"sku,omitempty" xml:"sku,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoItemSkuAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Sku = nil
+}
+
+var poolTaobaoItemSkuAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoItemSkuAddAPIResponse)
+	},
+}
+
+// GetTaobaoItemSkuAddAPIResponse 从 sync.Pool 获取 TaobaoItemSkuAddAPIResponse
+func GetTaobaoItemSkuAddAPIResponse() *TaobaoItemSkuAddAPIResponse {
+	return poolTaobaoItemSkuAddAPIResponse.Get().(*TaobaoItemSkuAddAPIResponse)
+}
+
+// ReleaseTaobaoItemSkuAddAPIResponse 将 TaobaoItemSkuAddAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoItemSkuAddAPIResponse(v *TaobaoItemSkuAddAPIResponse) {
+	v.Reset()
+	poolTaobaoItemSkuAddAPIResponse.Put(v)
 }

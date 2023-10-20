@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoMiniappDistributionMaterialDeleteAPIRequest struct {
 // NewTaobaoMiniappDistributionMaterialDeleteRequest 初始化TaobaoMiniappDistributionMaterialDeleteAPIRequest对象
 func NewTaobaoMiniappDistributionMaterialDeleteRequest() *TaobaoMiniappDistributionMaterialDeleteAPIRequest {
 	return &TaobaoMiniappDistributionMaterialDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappDistributionMaterialDeleteAPIRequest) Reset() {
+	r._materialRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoMiniappDistributionMaterialDeleteAPIRequest) SetMaterialRequest(_
 // GetMaterialRequest MaterialRequest Getter
 func (r TaobaoMiniappDistributionMaterialDeleteAPIRequest) GetMaterialRequest() *MiniAppEntranceMaterialBizOpenDto {
 	return r._materialRequest
+}
+
+var poolTaobaoMiniappDistributionMaterialDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappDistributionMaterialDeleteRequest()
+	},
+}
+
+// GetTaobaoMiniappDistributionMaterialDeleteRequest 从 sync.Pool 获取 TaobaoMiniappDistributionMaterialDeleteAPIRequest
+func GetTaobaoMiniappDistributionMaterialDeleteAPIRequest() *TaobaoMiniappDistributionMaterialDeleteAPIRequest {
+	return poolTaobaoMiniappDistributionMaterialDeleteAPIRequest.Get().(*TaobaoMiniappDistributionMaterialDeleteAPIRequest)
+}
+
+// ReleaseTaobaoMiniappDistributionMaterialDeleteAPIRequest 将 TaobaoMiniappDistributionMaterialDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappDistributionMaterialDeleteAPIRequest(v *TaobaoMiniappDistributionMaterialDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappDistributionMaterialDeleteAPIRequest.Put(v)
 }

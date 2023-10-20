@@ -2,6 +2,7 @@ package alihealthcrm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihealthAlipaypfmDietRecordAPIRequest struct {
 // NewAlibabaAlihealthAlipaypfmDietRecordRequest 初始化AlibabaAlihealthAlipaypfmDietRecordAPIRequest对象
 func NewAlibabaAlihealthAlipaypfmDietRecordRequest() *AlibabaAlihealthAlipaypfmDietRecordAPIRequest {
 	return &AlibabaAlihealthAlipaypfmDietRecordAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthAlipaypfmDietRecordAPIRequest) Reset() {
+	r._date = ""
+	r._userId = 0
+	r._energy = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihealthAlipaypfmDietRecordAPIRequest) SetEnergy(_energy int64)
 // GetEnergy Energy Getter
 func (r AlibabaAlihealthAlipaypfmDietRecordAPIRequest) GetEnergy() int64 {
 	return r._energy
+}
+
+var poolAlibabaAlihealthAlipaypfmDietRecordAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthAlipaypfmDietRecordRequest()
+	},
+}
+
+// GetAlibabaAlihealthAlipaypfmDietRecordRequest 从 sync.Pool 获取 AlibabaAlihealthAlipaypfmDietRecordAPIRequest
+func GetAlibabaAlihealthAlipaypfmDietRecordAPIRequest() *AlibabaAlihealthAlipaypfmDietRecordAPIRequest {
+	return poolAlibabaAlihealthAlipaypfmDietRecordAPIRequest.Get().(*AlibabaAlihealthAlipaypfmDietRecordAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthAlipaypfmDietRecordAPIRequest 将 AlibabaAlihealthAlipaypfmDietRecordAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthAlipaypfmDietRecordAPIRequest(v *AlibabaAlihealthAlipaypfmDietRecordAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthAlipaypfmDietRecordAPIRequest.Put(v)
 }

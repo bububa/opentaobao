@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseMerchantTradeConfigBindAPIRequest struct {
 // NewAlibabaAlihouseMerchantTradeConfigBindRequest 初始化AlibabaAlihouseMerchantTradeConfigBindAPIRequest对象
 func NewAlibabaAlihouseMerchantTradeConfigBindRequest() *AlibabaAlihouseMerchantTradeConfigBindAPIRequest {
 	return &AlibabaAlihouseMerchantTradeConfigBindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseMerchantTradeConfigBindAPIRequest) Reset() {
+	r._cis = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseMerchantTradeConfigBindAPIRequest) SetCis(_cis *TradeSce
 // GetCis Cis Getter
 func (r AlibabaAlihouseMerchantTradeConfigBindAPIRequest) GetCis() *TradeSceneAddInfoDto {
 	return r._cis
+}
+
+var poolAlibabaAlihouseMerchantTradeConfigBindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseMerchantTradeConfigBindRequest()
+	},
+}
+
+// GetAlibabaAlihouseMerchantTradeConfigBindRequest 从 sync.Pool 获取 AlibabaAlihouseMerchantTradeConfigBindAPIRequest
+func GetAlibabaAlihouseMerchantTradeConfigBindAPIRequest() *AlibabaAlihouseMerchantTradeConfigBindAPIRequest {
+	return poolAlibabaAlihouseMerchantTradeConfigBindAPIRequest.Get().(*AlibabaAlihouseMerchantTradeConfigBindAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseMerchantTradeConfigBindAPIRequest 将 AlibabaAlihouseMerchantTradeConfigBindAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseMerchantTradeConfigBindAPIRequest(v *AlibabaAlihouseMerchantTradeConfigBindAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseMerchantTradeConfigBindAPIRequest.Put(v)
 }

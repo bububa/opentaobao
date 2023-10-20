@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoXhotelPmsGuestbillGetVtwoAPIRequest struct {
 // NewTaobaoXhotelPmsGuestbillGetVtwoRequest 初始化TaobaoXhotelPmsGuestbillGetVtwoAPIRequest对象
 func NewTaobaoXhotelPmsGuestbillGetVtwoRequest() *TaobaoXhotelPmsGuestbillGetVtwoAPIRequest {
 	return &TaobaoXhotelPmsGuestbillGetVtwoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) Reset() {
+	r._taxNum = ""
+	r._shortIdNum = ""
+	r._roomNum = ""
+	r._requestId = ""
+	r._userChannel = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) SetUserChannel(_userChannel 
 // GetUserChannel UserChannel Getter
 func (r TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) GetUserChannel() int64 {
 	return r._userChannel
+}
+
+var poolTaobaoXhotelPmsGuestbillGetVtwoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelPmsGuestbillGetVtwoRequest()
+	},
+}
+
+// GetTaobaoXhotelPmsGuestbillGetVtwoRequest 从 sync.Pool 获取 TaobaoXhotelPmsGuestbillGetVtwoAPIRequest
+func GetTaobaoXhotelPmsGuestbillGetVtwoAPIRequest() *TaobaoXhotelPmsGuestbillGetVtwoAPIRequest {
+	return poolTaobaoXhotelPmsGuestbillGetVtwoAPIRequest.Get().(*TaobaoXhotelPmsGuestbillGetVtwoAPIRequest)
+}
+
+// ReleaseTaobaoXhotelPmsGuestbillGetVtwoAPIRequest 将 TaobaoXhotelPmsGuestbillGetVtwoAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelPmsGuestbillGetVtwoAPIRequest(v *TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelPmsGuestbillGetVtwoAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest struct {
 // NewAlibabaCampusAdminmapPoiinfoGetlistbygroupRequest 初始化AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest对象
 func NewAlibabaCampusAdminmapPoiinfoGetlistbygroupRequest() *AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest {
 	return &AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest) Reset() {
+	r._context = nil
+	r._query = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest) SetQuery(_query *
 // GetQuery Query Getter
 func (r AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest) GetQuery() *SpaceUnitQuery {
 	return r._query
+}
+
+var poolAlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusAdminmapPoiinfoGetlistbygroupRequest()
+	},
+}
+
+// GetAlibabaCampusAdminmapPoiinfoGetlistbygroupRequest 从 sync.Pool 获取 AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest
+func GetAlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest() *AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest {
+	return poolAlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest.Get().(*AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest)
+}
+
+// ReleaseAlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest 将 AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest(v *AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest.Put(v)
 }

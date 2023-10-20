@@ -9,11 +9,6 @@ import (
 // taobao.fivee.company.get
 //
 // 资质共享平台查询商信息
-func TaobaoFiveeCompanyGet(clt *core.SDKClient, req *fivee.TaobaoFiveeCompanyGetAPIRequest, session string) (*fivee.TaobaoFiveeCompanyGetAPIResponse, error) {
-	var resp fivee.TaobaoFiveeCompanyGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFiveeCompanyGet(clt *core.SDKClient, req *fivee.TaobaoFiveeCompanyGetAPIRequest, resp *fivee.TaobaoFiveeCompanyGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

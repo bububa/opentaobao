@@ -9,11 +9,6 @@ import (
 // alibaba.cfo.incoming.invoice.pyt.image.upload
 //
 // 票易通发票影像上传
-func AlibabaCfoIncomingInvoicePytImageUpload(clt *core.SDKClient, req *fpm.AlibabaCfoIncomingInvoicePytImageUploadAPIRequest, session string) (*fpm.AlibabaCfoIncomingInvoicePytImageUploadAPIResponse, error) {
-	var resp fpm.AlibabaCfoIncomingInvoicePytImageUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCfoIncomingInvoicePytImageUpload(clt *core.SDKClient, req *fpm.AlibabaCfoIncomingInvoicePytImageUploadAPIRequest, resp *fpm.AlibabaCfoIncomingInvoicePytImageUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

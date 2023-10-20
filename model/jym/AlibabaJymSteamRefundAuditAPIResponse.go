@@ -2,6 +2,7 @@ package jym
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaJymSteamRefundAuditAPIResponse struct {
 	model.CommonResponse
 	AlibabaJymSteamRefundAuditAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymSteamRefundAuditAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaJymSteamRefundAuditAPIResponseModel).Reset()
 }
 
 // AlibabaJymSteamRefundAuditAPIResponseModel is 交易猫steam逆向单审核 成功返回结果
@@ -32,4 +39,32 @@ type AlibabaJymSteamRefundAuditAPIResponseModel struct {
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
 	// 调用结果
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymSteamRefundAuditAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SubCodeType = ""
+	m.SubExtraErrMsg = ""
+	m.StateCode = ""
+	m.ExtraErrMsg = ""
+	m.Result = false
+	m.IsSuccess = false
+}
+
+var poolAlibabaJymSteamRefundAuditAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaJymSteamRefundAuditAPIResponse)
+	},
+}
+
+// GetAlibabaJymSteamRefundAuditAPIResponse 从 sync.Pool 获取 AlibabaJymSteamRefundAuditAPIResponse
+func GetAlibabaJymSteamRefundAuditAPIResponse() *AlibabaJymSteamRefundAuditAPIResponse {
+	return poolAlibabaJymSteamRefundAuditAPIResponse.Get().(*AlibabaJymSteamRefundAuditAPIResponse)
+}
+
+// ReleaseAlibabaJymSteamRefundAuditAPIResponse 将 AlibabaJymSteamRefundAuditAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaJymSteamRefundAuditAPIResponse(v *AlibabaJymSteamRefundAuditAPIResponse) {
+	v.Reset()
+	poolAlibabaJymSteamRefundAuditAPIResponse.Put(v)
 }

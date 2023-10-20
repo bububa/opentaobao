@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaWdkOldposRefundCreateAPIResponse struct {
 	AlibabaWdkOldposRefundCreateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaWdkOldposRefundCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkOldposRefundCreateAPIResponseModel).Reset()
+}
+
 // AlibabaWdkOldposRefundCreateAPIResponseModel is 五道口外部商户老pos机产生的退款单同步进盒马 成功返回结果
 type AlibabaWdkOldposRefundCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_oldpos_refund_create_response"`
@@ -22,4 +29,27 @@ type AlibabaWdkOldposRefundCreateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *PosRefundCreateResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkOldposRefundCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaWdkOldposRefundCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkOldposRefundCreateAPIResponse)
+	},
+}
+
+// GetAlibabaWdkOldposRefundCreateAPIResponse 从 sync.Pool 获取 AlibabaWdkOldposRefundCreateAPIResponse
+func GetAlibabaWdkOldposRefundCreateAPIResponse() *AlibabaWdkOldposRefundCreateAPIResponse {
+	return poolAlibabaWdkOldposRefundCreateAPIResponse.Get().(*AlibabaWdkOldposRefundCreateAPIResponse)
+}
+
+// ReleaseAlibabaWdkOldposRefundCreateAPIResponse 将 AlibabaWdkOldposRefundCreateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkOldposRefundCreateAPIResponse(v *AlibabaWdkOldposRefundCreateAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkOldposRefundCreateAPIResponse.Put(v)
 }

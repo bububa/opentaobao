@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // ArticleSub 结构体
 type ArticleSub struct {
 	// 淘宝会员名
@@ -20,4 +24,29 @@ type ArticleSub struct {
 	Autosub bool `json:"autosub,omitempty" xml:"autosub,omitempty"`
 	// 是否到期提醒
 	ExpireNotice bool `json:"expire_notice,omitempty" xml:"expire_notice,omitempty"`
+}
+
+var poolArticleSub = sync.Pool{
+	New: func() any {
+		return new(ArticleSub)
+	},
+}
+
+// GetArticleSub() 从对象池中获取ArticleSub
+func GetArticleSub() *ArticleSub {
+	return poolArticleSub.Get().(*ArticleSub)
+}
+
+// ReleaseArticleSub 释放ArticleSub
+func ReleaseArticleSub(v *ArticleSub) {
+	v.Nick = ""
+	v.ArticleName = ""
+	v.ArticleCode = ""
+	v.ItemName = ""
+	v.ItemCode = ""
+	v.Deadline = ""
+	v.Status = 0
+	v.Autosub = false
+	v.ExpireNotice = false
+	poolArticleSub.Put(v)
 }

@@ -2,6 +2,7 @@ package mozi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMoziVdsTenantApiServiceDismissAPIRequest struct {
 // NewAlibabaMoziVdsTenantApiServiceDismissRequest 初始化AlibabaMoziVdsTenantApiServiceDismissAPIRequest对象
 func NewAlibabaMoziVdsTenantApiServiceDismissRequest() *AlibabaMoziVdsTenantApiServiceDismissAPIRequest {
 	return &AlibabaMoziVdsTenantApiServiceDismissAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMoziVdsTenantApiServiceDismissAPIRequest) Reset() {
+	r._par0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMoziVdsTenantApiServiceDismissAPIRequest) SetPar0(_par0 *Dismiss
 // GetPar0 Par0 Getter
 func (r AlibabaMoziVdsTenantApiServiceDismissAPIRequest) GetPar0() *DismissOrganizationSupervisorRequest {
 	return r._par0
+}
+
+var poolAlibabaMoziVdsTenantApiServiceDismissAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMoziVdsTenantApiServiceDismissRequest()
+	},
+}
+
+// GetAlibabaMoziVdsTenantApiServiceDismissRequest 从 sync.Pool 获取 AlibabaMoziVdsTenantApiServiceDismissAPIRequest
+func GetAlibabaMoziVdsTenantApiServiceDismissAPIRequest() *AlibabaMoziVdsTenantApiServiceDismissAPIRequest {
+	return poolAlibabaMoziVdsTenantApiServiceDismissAPIRequest.Get().(*AlibabaMoziVdsTenantApiServiceDismissAPIRequest)
+}
+
+// ReleaseAlibabaMoziVdsTenantApiServiceDismissAPIRequest 将 AlibabaMoziVdsTenantApiServiceDismissAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMoziVdsTenantApiServiceDismissAPIRequest(v *AlibabaMoziVdsTenantApiServiceDismissAPIRequest) {
+	v.Reset()
+	poolAlibabaMoziVdsTenantApiServiceDismissAPIRequest.Put(v)
 }

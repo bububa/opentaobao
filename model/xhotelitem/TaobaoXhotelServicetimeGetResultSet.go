@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // TaobaoXhotelServicetimeGetResultSet 结构体
 type TaobaoXhotelServicetimeGetResultSet struct {
 	// firstResult
@@ -18,4 +22,28 @@ type TaobaoXhotelServicetimeGetResultSet struct {
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// hasNext
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
+}
+
+var poolTaobaoXhotelServicetimeGetResultSet = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelServicetimeGetResultSet)
+	},
+}
+
+// GetTaobaoXhotelServicetimeGetResultSet() 从对象池中获取TaobaoXhotelServicetimeGetResultSet
+func GetTaobaoXhotelServicetimeGetResultSet() *TaobaoXhotelServicetimeGetResultSet {
+	return poolTaobaoXhotelServicetimeGetResultSet.Get().(*TaobaoXhotelServicetimeGetResultSet)
+}
+
+// ReleaseTaobaoXhotelServicetimeGetResultSet 释放TaobaoXhotelServicetimeGetResultSet
+func ReleaseTaobaoXhotelServicetimeGetResultSet(v *TaobaoXhotelServicetimeGetResultSet) {
+	v.FirstResults = v.FirstResults[:0]
+	v.Results = v.Results[:0]
+	v.Exception = ""
+	v.ErrorCode = ""
+	v.WarnMessage = ""
+	v.ErrorMsg = ""
+	v.TotalResults = 0
+	v.HasNext = false
+	poolTaobaoXhotelServicetimeGetResultSet.Put(v)
 }

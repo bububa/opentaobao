@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // TenderItemListVo 结构体
 type TenderItemListVo struct {
 	// 商品id
@@ -26,4 +30,32 @@ type TenderItemListVo struct {
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 	// 订单信息
 	OrderInfo *TenderOrderInfoVo `json:"order_info,omitempty" xml:"order_info,omitempty"`
+}
+
+var poolTenderItemListVo = sync.Pool{
+	New: func() any {
+		return new(TenderItemListVo)
+	},
+}
+
+// GetTenderItemListVo() 从对象池中获取TenderItemListVo
+func GetTenderItemListVo() *TenderItemListVo {
+	return poolTenderItemListVo.Get().(*TenderItemListVo)
+}
+
+// ReleaseTenderItemListVo 释放TenderItemListVo
+func ReleaseTenderItemListVo(v *TenderItemListVo) {
+	v.ItemId = ""
+	v.OrderId = ""
+	v.ItemName = ""
+	v.Status = ""
+	v.Schedule = ""
+	v.Degree = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.OutId = ""
+	v.StartPrice = 0
+	v.Price = 0
+	v.OrderInfo = nil
+	poolTenderItemListVo.Put(v)
 }

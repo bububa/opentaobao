@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type CainiaoWaybillAddressReachableQueryAPIRequest struct {
 // NewCainiaoWaybillAddressReachableQueryRequest 初始化CainiaoWaybillAddressReachableQueryAPIRequest对象
 func NewCainiaoWaybillAddressReachableQueryRequest() *CainiaoWaybillAddressReachableQueryAPIRequest {
 	return &CainiaoWaybillAddressReachableQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoWaybillAddressReachableQueryAPIRequest) Reset() {
+	r._reachableRecommendRequestDto = nil
+	r._clientInfoDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *CainiaoWaybillAddressReachableQueryAPIRequest) SetClientInfoDto(_client
 // GetClientInfoDto ClientInfoDto Getter
 func (r CainiaoWaybillAddressReachableQueryAPIRequest) GetClientInfoDto() *ClientInfoDto {
 	return r._clientInfoDto
+}
+
+var poolCainiaoWaybillAddressReachableQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoWaybillAddressReachableQueryRequest()
+	},
+}
+
+// GetCainiaoWaybillAddressReachableQueryRequest 从 sync.Pool 获取 CainiaoWaybillAddressReachableQueryAPIRequest
+func GetCainiaoWaybillAddressReachableQueryAPIRequest() *CainiaoWaybillAddressReachableQueryAPIRequest {
+	return poolCainiaoWaybillAddressReachableQueryAPIRequest.Get().(*CainiaoWaybillAddressReachableQueryAPIRequest)
+}
+
+// ReleaseCainiaoWaybillAddressReachableQueryAPIRequest 将 CainiaoWaybillAddressReachableQueryAPIRequest 放入 sync.Pool
+func ReleaseCainiaoWaybillAddressReachableQueryAPIRequest(v *CainiaoWaybillAddressReachableQueryAPIRequest) {
+	v.Reset()
+	poolCainiaoWaybillAddressReachableQueryAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.sku.warehousesku.query
 //
 // 提供指定仓商品编码查询
-func AlibabaWdkSkuWarehouseskuQuery(clt *core.SDKClient, req *wdk.AlibabaWdkSkuWarehouseskuQueryAPIRequest, session string) (*wdk.AlibabaWdkSkuWarehouseskuQueryAPIResponse, error) {
-	var resp wdk.AlibabaWdkSkuWarehouseskuQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkSkuWarehouseskuQuery(clt *core.SDKClient, req *wdk.AlibabaWdkSkuWarehouseskuQueryAPIRequest, resp *wdk.AlibabaWdkSkuWarehouseskuQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

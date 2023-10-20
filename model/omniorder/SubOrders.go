@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // SubOrders 结构体
 type SubOrders struct {
 	// 子单修改时间
@@ -30,4 +34,34 @@ type SubOrders struct {
 	ActualFee int64 `json:"actual_fee,omitempty" xml:"actual_fee,omitempty"`
 	// sku id
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolSubOrders = sync.Pool{
+	New: func() any {
+		return new(SubOrders)
+	},
+}
+
+// GetSubOrders() 从对象池中获取SubOrders
+func GetSubOrders() *SubOrders {
+	return poolSubOrders.Get().(*SubOrders)
+}
+
+// ReleaseSubOrders 释放SubOrders
+func ReleaseSubOrders(v *SubOrders) {
+	v.GmtModified = ""
+	v.RefundStatus = ""
+	v.Title = ""
+	v.GmtCreate = ""
+	v.DealerScItemId = ""
+	v.OuterId = ""
+	v.EndTime = ""
+	v.Status = ""
+	v.Num = 0
+	v.ItemId = 0
+	v.SubOrderId = 0
+	v.AuctionPrice = 0
+	v.ActualFee = 0
+	v.SkuId = 0
+	poolSubOrders.Put(v)
 }

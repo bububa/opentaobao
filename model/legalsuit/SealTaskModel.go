@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // SealTaskModel 结构体
 type SealTaskModel struct {
 	// 参数对象
@@ -14,4 +18,26 @@ type SealTaskModel struct {
 	SuitId int64 `json:"suit_id,omitempty" xml:"suit_id,omitempty"`
 	// 委托id
 	EntrustId int64 `json:"entrust_id,omitempty" xml:"entrust_id,omitempty"`
+}
+
+var poolSealTaskModel = sync.Pool{
+	New: func() any {
+		return new(SealTaskModel)
+	},
+}
+
+// GetSealTaskModel() 从对象池中获取SealTaskModel
+func GetSealTaskModel() *SealTaskModel {
+	return poolSealTaskModel.Get().(*SealTaskModel)
+}
+
+// ReleaseSealTaskModel 释放SealTaskModel
+func ReleaseSealTaskModel(v *SealTaskModel) {
+	v.SealFileModels = v.SealFileModels[:0]
+	v.PushPeople = ""
+	v.SealType = ""
+	v.HandlerWorkNo = ""
+	v.SuitId = 0
+	v.EntrustId = 0
+	poolSealTaskModel.Put(v)
 }

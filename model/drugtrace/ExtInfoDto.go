@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // ExtInfoDto 结构体
 type ExtInfoDto struct {
 	// 生产信息模块
@@ -22,4 +26,30 @@ type ExtInfoDto struct {
 	PlantingInfoDto *PlantingInfoDto `json:"planting_info_dto,omitempty" xml:"planting_info_dto,omitempty"`
 	// 企业信息
 	EntInfoDto *EntInfoDto `json:"ent_info_dto,omitempty" xml:"ent_info_dto,omitempty"`
+}
+
+var poolExtInfoDto = sync.Pool{
+	New: func() any {
+		return new(ExtInfoDto)
+	},
+}
+
+// GetExtInfoDto() 从对象池中获取ExtInfoDto
+func GetExtInfoDto() *ExtInfoDto {
+	return poolExtInfoDto.Get().(*ExtInfoDto)
+}
+
+// ReleaseExtInfoDto 释放ExtInfoDto
+func ReleaseExtInfoDto(v *ExtInfoDto) {
+	v.ProduceInfoDto = nil
+	v.SeedlingsBaseInfoDto = nil
+	v.PiecesDetectionDto = nil
+	v.MaterialsDetectionDto = nil
+	v.PurchaseInfoDto = nil
+	v.ProcessInfoDto = nil
+	v.PiecesProduceInfoDto = nil
+	v.WarehouseInfoDto = nil
+	v.PlantingInfoDto = nil
+	v.EntInfoDto = nil
+	poolExtInfoDto.Put(v)
 }

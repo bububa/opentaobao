@@ -9,11 +9,6 @@ import (
 // tmall.ssc.supplyplatform.capacity.edit
 //
 // 容量编辑
-func TmallSscSupplyplatformCapacityEdit(clt *core.SDKClient, req *tmallservice.TmallSscSupplyplatformCapacityEditAPIRequest, session string) (*tmallservice.TmallSscSupplyplatformCapacityEditAPIResponse, error) {
-	var resp tmallservice.TmallSscSupplyplatformCapacityEditAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallSscSupplyplatformCapacityEdit(clt *core.SDKClient, req *tmallservice.TmallSscSupplyplatformCapacityEditAPIRequest, resp *tmallservice.TmallSscSupplyplatformCapacityEditAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

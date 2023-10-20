@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // PolicyResponseDto 结构体
 type PolicyResponseDto struct {
 	// 运价渠道
@@ -66,4 +70,52 @@ type PolicyResponseDto struct {
 	IsWhite int64 `json:"is_white,omitempty" xml:"is_white,omitempty"`
 	// 政策状态
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolPolicyResponseDto = sync.Pool{
+	New: func() any {
+		return new(PolicyResponseDto)
+	},
+}
+
+// GetPolicyResponseDto() 从对象池中获取PolicyResponseDto
+func GetPolicyResponseDto() *PolicyResponseDto {
+	return poolPolicyResponseDto.Get().(*PolicyResponseDto)
+}
+
+// ReleasePolicyResponseDto 释放PolicyResponseDto
+func ReleasePolicyResponseDto(v *PolicyResponseDto) {
+	v.FareSources = v.FareSources[:0]
+	v.Flights = v.Flights[:0]
+	v.GmtModified = ""
+	v.PolicyCode = ""
+	v.CodeShareAirline = ""
+	v.ArrAirport = ""
+	v.Airline = ""
+	v.AccountCode = ""
+	v.GmtCreate = ""
+	v.DepAirport = ""
+	v.FareBasis = ""
+	v.ErrCode = ""
+	v.OfficeNo = ""
+	v.ErrMsg = ""
+	v.AgentId = 0
+	v.Down = 0
+	v.CreatePnrLimit = 0
+	v.CodeShare = 0
+	v.Price = nil
+	v.Up = 0
+	v.Stock = nil
+	v.PolicySource = 0
+	v.FloatUnit = 0
+	v.FarePrice = 0
+	v.Pata = 0
+	v.CreatePnr = 0
+	v.TripType = 0
+	v.Sale = nil
+	v.Passenger = nil
+	v.PolicyType = 0
+	v.IsWhite = 0
+	v.Status = 0
+	poolPolicyResponseDto.Put(v)
 }

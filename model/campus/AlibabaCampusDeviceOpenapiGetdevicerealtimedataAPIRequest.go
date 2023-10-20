@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest struct {
 // NewAlibabaCampusDeviceOpenapiGetdevicerealtimedataRequest 初始化AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest对象
 func NewAlibabaCampusDeviceOpenapiGetdevicerealtimedataRequest() *AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest {
 	return &AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest) Reset() {
+	r._uuid = ""
+	r._propertyCode = ""
+	r._workBenchContext = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest) SetWorkBench
 // GetWorkBenchContext WorkBenchContext Getter
 func (r AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest) GetWorkBenchContext() *WorkBenchContext {
 	return r._workBenchContext
+}
+
+var poolAlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusDeviceOpenapiGetdevicerealtimedataRequest()
+	},
+}
+
+// GetAlibabaCampusDeviceOpenapiGetdevicerealtimedataRequest 从 sync.Pool 获取 AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest
+func GetAlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest() *AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest {
+	return poolAlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest.Get().(*AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest)
+}
+
+// ReleaseAlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest 将 AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest(v *AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest.Put(v)
 }

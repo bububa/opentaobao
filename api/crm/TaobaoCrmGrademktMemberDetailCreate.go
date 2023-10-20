@@ -9,11 +9,6 @@ import (
 // taobao.crm.grademkt.member.detail.create
 //
 // 创建商品等级营销明细
-func TaobaoCrmGrademktMemberDetailCreate(clt *core.SDKClient, req *crm.TaobaoCrmGrademktMemberDetailCreateAPIRequest, session string) (*crm.TaobaoCrmGrademktMemberDetailCreateAPIResponse, error) {
-	var resp crm.TaobaoCrmGrademktMemberDetailCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoCrmGrademktMemberDetailCreate(clt *core.SDKClient, req *crm.TaobaoCrmGrademktMemberDetailCreateAPIRequest, resp *crm.TaobaoCrmGrademktMemberDetailCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

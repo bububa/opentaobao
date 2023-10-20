@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsShunfengModifydataSaveAPIRequest struct {
 // NewTaobaoLogisticsShunfengModifydataSaveRequest 初始化TaobaoLogisticsShunfengModifydataSaveAPIRequest对象
 func NewTaobaoLogisticsShunfengModifydataSaveRequest() *TaobaoLogisticsShunfengModifydataSaveAPIRequest {
 	return &TaobaoLogisticsShunfengModifydataSaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsShunfengModifydataSaveAPIRequest) Reset() {
+	r._modifyRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsShunfengModifydataSaveAPIRequest) SetModifyRequest(_modi
 // GetModifyRequest ModifyRequest Getter
 func (r TaobaoLogisticsShunfengModifydataSaveAPIRequest) GetModifyRequest() *ModifyRequest {
 	return r._modifyRequest
+}
+
+var poolTaobaoLogisticsShunfengModifydataSaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsShunfengModifydataSaveRequest()
+	},
+}
+
+// GetTaobaoLogisticsShunfengModifydataSaveRequest 从 sync.Pool 获取 TaobaoLogisticsShunfengModifydataSaveAPIRequest
+func GetTaobaoLogisticsShunfengModifydataSaveAPIRequest() *TaobaoLogisticsShunfengModifydataSaveAPIRequest {
+	return poolTaobaoLogisticsShunfengModifydataSaveAPIRequest.Get().(*TaobaoLogisticsShunfengModifydataSaveAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsShunfengModifydataSaveAPIRequest 将 TaobaoLogisticsShunfengModifydataSaveAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsShunfengModifydataSaveAPIRequest(v *TaobaoLogisticsShunfengModifydataSaveAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsShunfengModifydataSaveAPIRequest.Put(v)
 }

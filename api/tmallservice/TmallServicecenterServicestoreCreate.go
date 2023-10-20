@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.servicestore.create
 //
 // 用于创建门店/网点。多个业务共用
-func TmallServicecenterServicestoreCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreCreateAPIRequest, session string) (*tmallservice.TmallServicecenterServicestoreCreateAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterServicestoreCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterServicestoreCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreCreateAPIRequest, resp *tmallservice.TmallServicecenterServicestoreCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

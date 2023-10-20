@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.kyt.yy.uploadretail
 //
 // 医院上传出库信息接口
-func AlibabaAlihealthDrugKytYyUploadretail(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytYyUploadretailAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytYyUploadretailAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytYyUploadretailAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugKytYyUploadretail(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytYyUploadretailAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytYyUploadretailAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

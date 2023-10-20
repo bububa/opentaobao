@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // BatchActiveCardOpenReq 结构体
 type BatchActiveCardOpenReq struct {
 	// 实体卡列表
@@ -16,4 +20,27 @@ type BatchActiveCardOpenReq struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 门店id
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
+}
+
+var poolBatchActiveCardOpenReq = sync.Pool{
+	New: func() any {
+		return new(BatchActiveCardOpenReq)
+	},
+}
+
+// GetBatchActiveCardOpenReq() 从对象池中获取BatchActiveCardOpenReq
+func GetBatchActiveCardOpenReq() *BatchActiveCardOpenReq {
+	return poolBatchActiveCardOpenReq.Get().(*BatchActiveCardOpenReq)
+}
+
+// ReleaseBatchActiveCardOpenReq 释放BatchActiveCardOpenReq
+func ReleaseBatchActiveCardOpenReq(v *BatchActiveCardOpenReq) {
+	v.PhysicalCardIds = v.PhysicalCardIds[:0]
+	v.BrandId = ""
+	v.OperatorId = ""
+	v.OutBrandId = ""
+	v.OutShopId = ""
+	v.RequestId = ""
+	v.ShopId = ""
+	poolBatchActiveCardOpenReq.Put(v)
 }

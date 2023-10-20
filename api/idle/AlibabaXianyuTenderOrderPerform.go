@@ -9,11 +9,6 @@ import (
 // alibaba.xianyu.tender.order.perform
 //
 // 闲鱼暗拍订单履约
-func AlibabaXianyuTenderOrderPerform(clt *core.SDKClient, req *idle.AlibabaXianyuTenderOrderPerformAPIRequest, session string) (*idle.AlibabaXianyuTenderOrderPerformAPIResponse, error) {
-	var resp idle.AlibabaXianyuTenderOrderPerformAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaXianyuTenderOrderPerform(clt *core.SDKClient, req *idle.AlibabaXianyuTenderOrderPerformAPIRequest, resp *idle.AlibabaXianyuTenderOrderPerformAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

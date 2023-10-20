@@ -1,5 +1,9 @@
 package wdklogistics
 
+import (
+	"sync"
+)
+
 // LogisticsResult 结构体
 type LogisticsResult struct {
 	// 内容节点
@@ -10,4 +14,24 @@ type LogisticsResult struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolLogisticsResult = sync.Pool{
+	New: func() any {
+		return new(LogisticsResult)
+	},
+}
+
+// GetLogisticsResult() 从对象池中获取LogisticsResult
+func GetLogisticsResult() *LogisticsResult {
+	return poolLogisticsResult.Get().(*LogisticsResult)
+}
+
+// ReleaseLogisticsResult 释放LogisticsResult
+func ReleaseLogisticsResult(v *LogisticsResult) {
+	v.Datas = v.Datas[:0]
+	v.Code = ""
+	v.Message = ""
+	v.Success = false
+	poolLogisticsResult.Put(v)
 }

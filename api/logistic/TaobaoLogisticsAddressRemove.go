@@ -9,11 +9,6 @@ import (
 // taobao.logistics.address.remove
 //
 // 用此接口删除卖家地址库
-func TaobaoLogisticsAddressRemove(clt *core.SDKClient, req *logistic.TaobaoLogisticsAddressRemoveAPIRequest, session string) (*logistic.TaobaoLogisticsAddressRemoveAPIResponse, error) {
-	var resp logistic.TaobaoLogisticsAddressRemoveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLogisticsAddressRemove(clt *core.SDKClient, req *logistic.TaobaoLogisticsAddressRemoveAPIRequest, resp *logistic.TaobaoLogisticsAddressRemoveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

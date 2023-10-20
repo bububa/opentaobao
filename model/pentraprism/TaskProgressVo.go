@@ -1,5 +1,9 @@
 package pentraprism
 
+import (
+	"sync"
+)
+
 // TaskProgressVo 结构体
 type TaskProgressVo struct {
 	// 任务完成时间
@@ -22,4 +26,30 @@ type TaskProgressVo struct {
 	Times int64 `json:"times,omitempty" xml:"times,omitempty"`
 	// 是否达到任务上限
 	ReachLimit bool `json:"reach_limit,omitempty" xml:"reach_limit,omitempty"`
+}
+
+var poolTaskProgressVo = sync.Pool{
+	New: func() any {
+		return new(TaskProgressVo)
+	},
+}
+
+// GetTaskProgressVo() 从对象池中获取TaskProgressVo
+func GetTaskProgressVo() *TaskProgressVo {
+	return poolTaskProgressVo.Get().(*TaskProgressVo)
+}
+
+// ReleaseTaskProgressVo 释放TaskProgressVo
+func ReleaseTaskProgressVo(v *TaskProgressVo) {
+	v.FinishedTime = ""
+	v.Status = ""
+	v.CdTime = 0
+	v.Index = 0
+	v.LoopTimes = 0
+	v.MaxTimes = 0
+	v.NeedTimes = 0
+	v.Period = 0
+	v.Times = 0
+	v.ReachLimit = false
+	poolTaskProgressVo.Put(v)
 }

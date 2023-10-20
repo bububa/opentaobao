@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripHotelDistributionOrderPayAPIRequest struct {
 // NewAlitripBtripHotelDistributionOrderPayRequest 初始化AlitripBtripHotelDistributionOrderPayAPIRequest对象
 func NewAlitripBtripHotelDistributionOrderPayRequest() *AlitripBtripHotelDistributionOrderPayAPIRequest {
 	return &AlitripBtripHotelDistributionOrderPayAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripHotelDistributionOrderPayAPIRequest) Reset() {
+	r._paramBtripHotelOrderOperateRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripHotelDistributionOrderPayAPIRequest) SetParamBtripHotelOrde
 // GetParamBtripHotelOrderOperateRq ParamBtripHotelOrderOperateRq Getter
 func (r AlitripBtripHotelDistributionOrderPayAPIRequest) GetParamBtripHotelOrderOperateRq() *BtripHotelOrderOperateRq {
 	return r._paramBtripHotelOrderOperateRq
+}
+
+var poolAlitripBtripHotelDistributionOrderPayAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripHotelDistributionOrderPayRequest()
+	},
+}
+
+// GetAlitripBtripHotelDistributionOrderPayRequest 从 sync.Pool 获取 AlitripBtripHotelDistributionOrderPayAPIRequest
+func GetAlitripBtripHotelDistributionOrderPayAPIRequest() *AlitripBtripHotelDistributionOrderPayAPIRequest {
+	return poolAlitripBtripHotelDistributionOrderPayAPIRequest.Get().(*AlitripBtripHotelDistributionOrderPayAPIRequest)
+}
+
+// ReleaseAlitripBtripHotelDistributionOrderPayAPIRequest 将 AlitripBtripHotelDistributionOrderPayAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripHotelDistributionOrderPayAPIRequest(v *AlitripBtripHotelDistributionOrderPayAPIRequest) {
+	v.Reset()
+	poolAlitripBtripHotelDistributionOrderPayAPIRequest.Put(v)
 }

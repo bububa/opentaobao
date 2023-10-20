@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // InvoiceTaxFlowCreateDto 结构体
 type InvoiceTaxFlowCreateDto struct {
 	// 外部业务方创建税控开通工单的唯一幂等ID（即：相同outer_id 会被视为同一个请求，被幂等处理）, 由业务方自己生成。  只能由字母数字组成
@@ -16,4 +20,27 @@ type InvoiceTaxFlowCreateDto struct {
 	InvoiceContact *InvoiceContactDto `json:"invoice_contact,omitempty" xml:"invoice_contact,omitempty"`
 	// 服务的有效天数，单位为天。  阿里发票服务周期计算规则为：服务起始时间=部署完成时的系统时间，服务截止时间=服务起始时间+serviceValidDays
 	ServiceValidDays int64 `json:"service_valid_days,omitempty" xml:"service_valid_days,omitempty"`
+}
+
+var poolInvoiceTaxFlowCreateDto = sync.Pool{
+	New: func() any {
+		return new(InvoiceTaxFlowCreateDto)
+	},
+}
+
+// GetInvoiceTaxFlowCreateDto() 从对象池中获取InvoiceTaxFlowCreateDto
+func GetInvoiceTaxFlowCreateDto() *InvoiceTaxFlowCreateDto {
+	return poolInvoiceTaxFlowCreateDto.Get().(*InvoiceTaxFlowCreateDto)
+}
+
+// ReleaseInvoiceTaxFlowCreateDto 释放InvoiceTaxFlowCreateDto
+func ReleaseInvoiceTaxFlowCreateDto(v *InvoiceTaxFlowCreateDto) {
+	v.OuterId = ""
+	v.PlatformCode = ""
+	v.PlatformUserId = ""
+	v.ProductCode = ""
+	v.InvoiceCompany = nil
+	v.InvoiceContact = nil
+	v.ServiceValidDays = 0
+	poolInvoiceTaxFlowCreateDto.Put(v)
 }

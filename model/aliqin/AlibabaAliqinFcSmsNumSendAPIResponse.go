@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type AlibabaAliqinFcSmsNumSendAPIResponse struct {
 	AlibabaAliqinFcSmsNumSendAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAliqinFcSmsNumSendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAliqinFcSmsNumSendAPIResponseModel).Reset()
+}
+
 // AlibabaAliqinFcSmsNumSendAPIResponseModel is 短信发送 成功返回结果
 type AlibabaAliqinFcSmsNumSendAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_aliqin_fc_sms_num_send_response"`
@@ -23,4 +30,27 @@ type AlibabaAliqinFcSmsNumSendAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回值
 	Result *AlibabaAliqinFcSmsNumSendBizResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAliqinFcSmsNumSendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAliqinFcSmsNumSendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAliqinFcSmsNumSendAPIResponse)
+	},
+}
+
+// GetAlibabaAliqinFcSmsNumSendAPIResponse 从 sync.Pool 获取 AlibabaAliqinFcSmsNumSendAPIResponse
+func GetAlibabaAliqinFcSmsNumSendAPIResponse() *AlibabaAliqinFcSmsNumSendAPIResponse {
+	return poolAlibabaAliqinFcSmsNumSendAPIResponse.Get().(*AlibabaAliqinFcSmsNumSendAPIResponse)
+}
+
+// ReleaseAlibabaAliqinFcSmsNumSendAPIResponse 将 AlibabaAliqinFcSmsNumSendAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAliqinFcSmsNumSendAPIResponse(v *AlibabaAliqinFcSmsNumSendAPIResponse) {
+	v.Reset()
+	poolAlibabaAliqinFcSmsNumSendAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package alihealthpw
 
+import (
+	"sync"
+)
+
 // ApplyDetailResp 结构体
 type ApplyDetailResp struct {
 	// 审核时间
@@ -14,4 +18,26 @@ type ApplyDetailResp struct {
 	ApplyType string `json:"apply_type,omitempty" xml:"apply_type,omitempty"`
 	// 申请信息
 	ApplyInfo *ApplyInfo `json:"apply_info,omitempty" xml:"apply_info,omitempty"`
+}
+
+var poolApplyDetailResp = sync.Pool{
+	New: func() any {
+		return new(ApplyDetailResp)
+	},
+}
+
+// GetApplyDetailResp() 从对象池中获取ApplyDetailResp
+func GetApplyDetailResp() *ApplyDetailResp {
+	return poolApplyDetailResp.Get().(*ApplyDetailResp)
+}
+
+// ReleaseApplyDetailResp 释放ApplyDetailResp
+func ReleaseApplyDetailResp(v *ApplyDetailResp) {
+	v.AuditTime = ""
+	v.ApplyTime = ""
+	v.ApplyStatusDesc = ""
+	v.ApplyStatus = ""
+	v.ApplyType = ""
+	v.ApplyInfo = nil
+	poolApplyDetailResp.Put(v)
 }

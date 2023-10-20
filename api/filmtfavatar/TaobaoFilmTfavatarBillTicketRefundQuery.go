@@ -10,11 +10,6 @@ import (
 //
 // 获取影院票务账单-支付订单
 // data字段为加密字段, 不可分拆.
-func TaobaoFilmTfavatarBillTicketRefundQuery(clt *core.SDKClient, req *filmtfavatar.TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest, session string) (*filmtfavatar.TaobaoFilmTfavatarBillTicketRefundQueryAPIResponse, error) {
-	var resp filmtfavatar.TaobaoFilmTfavatarBillTicketRefundQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFilmTfavatarBillTicketRefundQuery(clt *core.SDKClient, req *filmtfavatar.TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest, resp *filmtfavatar.TaobaoFilmTfavatarBillTicketRefundQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

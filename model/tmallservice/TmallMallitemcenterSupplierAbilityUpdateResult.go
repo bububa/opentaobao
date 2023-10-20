@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // TmallMallitemcenterSupplierAbilityUpdateResult 结构体
 type TmallMallitemcenterSupplierAbilityUpdateResult struct {
 	// message
@@ -12,4 +16,25 @@ type TmallMallitemcenterSupplierAbilityUpdateResult struct {
 	ResultData bool `json:"result_data,omitempty" xml:"result_data,omitempty"`
 	// true或false
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmallMallitemcenterSupplierAbilityUpdateResult = sync.Pool{
+	New: func() any {
+		return new(TmallMallitemcenterSupplierAbilityUpdateResult)
+	},
+}
+
+// GetTmallMallitemcenterSupplierAbilityUpdateResult() 从对象池中获取TmallMallitemcenterSupplierAbilityUpdateResult
+func GetTmallMallitemcenterSupplierAbilityUpdateResult() *TmallMallitemcenterSupplierAbilityUpdateResult {
+	return poolTmallMallitemcenterSupplierAbilityUpdateResult.Get().(*TmallMallitemcenterSupplierAbilityUpdateResult)
+}
+
+// ReleaseTmallMallitemcenterSupplierAbilityUpdateResult 释放TmallMallitemcenterSupplierAbilityUpdateResult
+func ReleaseTmallMallitemcenterSupplierAbilityUpdateResult(v *TmallMallitemcenterSupplierAbilityUpdateResult) {
+	v.Message = ""
+	v.ErrorCode = ""
+	v.ErrorType = 0
+	v.ResultData = false
+	v.Success = false
+	poolTmallMallitemcenterSupplierAbilityUpdateResult.Put(v)
 }

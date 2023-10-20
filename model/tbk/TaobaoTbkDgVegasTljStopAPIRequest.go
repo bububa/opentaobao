@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTbkDgVegasTljStopAPIRequest struct {
 // NewTaobaoTbkDgVegasTljStopRequest 初始化TaobaoTbkDgVegasTljStopAPIRequest对象
 func NewTaobaoTbkDgVegasTljStopRequest() *TaobaoTbkDgVegasTljStopAPIRequest {
 	return &TaobaoTbkDgVegasTljStopAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkDgVegasTljStopAPIRequest) Reset() {
+	r._rightsId = ""
+	r._adzoneId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTbkDgVegasTljStopAPIRequest) SetAdzoneId(_adzoneId int64) error {
 // GetAdzoneId AdzoneId Getter
 func (r TaobaoTbkDgVegasTljStopAPIRequest) GetAdzoneId() int64 {
 	return r._adzoneId
+}
+
+var poolTaobaoTbkDgVegasTljStopAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkDgVegasTljStopRequest()
+	},
+}
+
+// GetTaobaoTbkDgVegasTljStopRequest 从 sync.Pool 获取 TaobaoTbkDgVegasTljStopAPIRequest
+func GetTaobaoTbkDgVegasTljStopAPIRequest() *TaobaoTbkDgVegasTljStopAPIRequest {
+	return poolTaobaoTbkDgVegasTljStopAPIRequest.Get().(*TaobaoTbkDgVegasTljStopAPIRequest)
+}
+
+// ReleaseTaobaoTbkDgVegasTljStopAPIRequest 将 TaobaoTbkDgVegasTljStopAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkDgVegasTljStopAPIRequest(v *TaobaoTbkDgVegasTljStopAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkDgVegasTljStopAPIRequest.Put(v)
 }

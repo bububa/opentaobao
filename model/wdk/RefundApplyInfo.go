@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // RefundApplyInfo 结构体
 type RefundApplyInfo struct {
 	// 逆向子单列表
@@ -28,4 +32,33 @@ type RefundApplyInfo struct {
 	OrderFrom int64 `json:"order_from,omitempty" xml:"order_from,omitempty"`
 	// 退款类型，1:仅退款。2.仅退货。3.退货退款
 	RefundType int64 `json:"refund_type,omitempty" xml:"refund_type,omitempty"`
+}
+
+var poolRefundApplyInfo = sync.Pool{
+	New: func() any {
+		return new(RefundApplyInfo)
+	},
+}
+
+// GetRefundApplyInfo() 从对象池中获取RefundApplyInfo
+func GetRefundApplyInfo() *RefundApplyInfo {
+	return poolRefundApplyInfo.Get().(*RefundApplyInfo)
+}
+
+// ReleaseRefundApplyInfo 释放RefundApplyInfo
+func ReleaseRefundApplyInfo(v *RefundApplyInfo) {
+	v.SubRefundOrders = v.SubRefundOrders[:0]
+	v.RefundPics = v.RefundPics[:0]
+	v.OutOrderId = ""
+	v.OutShopId = ""
+	v.OutRefundId = ""
+	v.RefundReason = ""
+	v.ShopId = ""
+	v.RefundNote = ""
+	v.RefundFee = 0
+	v.RefundPostFee = 0
+	v.RefundPackageFee = 0
+	v.OrderFrom = 0
+	v.RefundType = 0
+	poolRefundApplyInfo.Put(v)
 }

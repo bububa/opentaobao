@@ -1,5 +1,9 @@
 package util
 
+import (
+	"sync"
+)
+
 // AiotOpenDeviceBaseDto 结构体
 type AiotOpenDeviceBaseDto struct {
 	// 设备业务标识
@@ -20,4 +24,29 @@ type AiotOpenDeviceBaseDto struct {
 	Platform int64 `json:"platform,omitempty" xml:"platform,omitempty"`
 	// 状态
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolAiotOpenDeviceBaseDto = sync.Pool{
+	New: func() any {
+		return new(AiotOpenDeviceBaseDto)
+	},
+}
+
+// GetAiotOpenDeviceBaseDto() 从对象池中获取AiotOpenDeviceBaseDto
+func GetAiotOpenDeviceBaseDto() *AiotOpenDeviceBaseDto {
+	return poolAiotOpenDeviceBaseDto.Get().(*AiotOpenDeviceBaseDto)
+}
+
+// ReleaseAiotOpenDeviceBaseDto 释放AiotOpenDeviceBaseDto
+func ReleaseAiotOpenDeviceBaseDto(v *AiotOpenDeviceBaseDto) {
+	v.Utdid = ""
+	v.DeviceName = ""
+	v.Manufacturer = ""
+	v.BrandCode = ""
+	v.HardCode = ""
+	v.DeviceType = ""
+	v.DeviceSn = ""
+	v.Platform = 0
+	v.Status = 0
+	poolAiotOpenDeviceBaseDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // HouseBaseDto 结构体
 type HouseBaseDto struct {
 	// 图片信息
@@ -54,4 +58,46 @@ type HouseBaseDto struct {
 	PowerType int64 `json:"power_type,omitempty" xml:"power_type,omitempty"`
 	// 燃气
 	GasType int64 `json:"gas_type,omitempty" xml:"gas_type,omitempty"`
+}
+
+var poolHouseBaseDto = sync.Pool{
+	New: func() any {
+		return new(HouseBaseDto)
+	},
+}
+
+// GetHouseBaseDto() 从对象池中获取HouseBaseDto
+func GetHouseBaseDto() *HouseBaseDto {
+	return poolHouseBaseDto.Get().(*HouseBaseDto)
+}
+
+// ReleaseHouseBaseDto 释放HouseBaseDto
+func ReleaseHouseBaseDto(v *HouseBaseDto) {
+	v.Pictures = v.Pictures[:0]
+	v.OuterCommunityId = ""
+	v.OuterHouseBaseId = ""
+	v.OuterCompanyId = ""
+	v.OuterStoreId = ""
+	v.ECode = ""
+	v.BuildingNo = ""
+	v.UnitNo = ""
+	v.RoomNo = ""
+	v.InsideArea = ""
+	v.BuildingArea = ""
+	v.Room = 0
+	v.Hall = 0
+	v.Toilet = 0
+	v.Kitchen = 0
+	v.Balcony = 0
+	v.Floor = 0
+	v.TotalFloor = 0
+	v.Fitment = 0
+	v.HeatingType = 0
+	v.Direction = 0
+	v.HouseTypeStructure = 0
+	v.ParkingType = 0
+	v.WaterType = 0
+	v.PowerType = 0
+	v.GasType = 0
+	poolHouseBaseDto.Put(v)
 }

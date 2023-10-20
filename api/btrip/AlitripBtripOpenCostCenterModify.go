@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.open.cost.center.modify
 //
 // 修改成本中心
-func AlitripBtripOpenCostCenterModify(clt *core.SDKClient, req *btrip.AlitripBtripOpenCostCenterModifyAPIRequest, session string) (*btrip.AlitripBtripOpenCostCenterModifyAPIResponse, error) {
-	var resp btrip.AlitripBtripOpenCostCenterModifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripOpenCostCenterModify(clt *core.SDKClient, req *btrip.AlitripBtripOpenCostCenterModifyAPIRequest, resp *btrip.AlitripBtripOpenCostCenterModifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

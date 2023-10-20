@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderSyncRefundListResult 结构体
 type OrderSyncRefundListResult struct {
 	// 退款单具体详情
@@ -14,4 +18,26 @@ type OrderSyncRefundListResult struct {
 	TotalNumber int64 `json:"total_number,omitempty" xml:"total_number,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolOrderSyncRefundListResult = sync.Pool{
+	New: func() any {
+		return new(OrderSyncRefundListResult)
+	},
+}
+
+// GetOrderSyncRefundListResult() 从对象池中获取OrderSyncRefundListResult
+func GetOrderSyncRefundListResult() *OrderSyncRefundListResult {
+	return poolOrderSyncRefundListResult.Get().(*OrderSyncRefundListResult)
+}
+
+// ReleaseOrderSyncRefundListResult 释放OrderSyncRefundListResult
+func ReleaseOrderSyncRefundListResult(v *OrderSyncRefundListResult) {
+	v.Orders = v.Orders[:0]
+	v.ReturnCode = ""
+	v.ReturnMsg = ""
+	v.NextIndex = 0
+	v.TotalNumber = 0
+	v.Success = false
+	poolOrderSyncRefundListResult.Put(v)
 }

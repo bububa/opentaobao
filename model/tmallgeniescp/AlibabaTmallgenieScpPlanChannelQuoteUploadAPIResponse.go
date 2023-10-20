@@ -2,6 +2,7 @@ package tmallgeniescp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponseModel).Reset()
 }
 
 // AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponseModel is 9.1-同步渠道配额 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponseModel struct {
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 返回码
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.DataList = m.DataList[:0]
+	m.ResultMsg = ""
+	m.TraceId = ""
+	m.ResultCode = ""
+}
+
+var poolAlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse)
+	},
+}
+
+// GetAlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse 从 sync.Pool 获取 AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse
+func GetAlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse() *AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse {
+	return poolAlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse.Get().(*AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse)
+}
+
+// ReleaseAlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse 将 AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse(v *AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse) {
+	v.Reset()
+	poolAlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // CarSubOrderDetailDto 结构体
 type CarSubOrderDetailDto struct {
 	// 商家昵称
@@ -28,4 +32,33 @@ type CarSubOrderDetailDto struct {
 	RefundStatus int64 `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// 支付状态：1未付款；2已付款；4已退款(交易关闭)；6交易成功；8未支付订单关闭
 	PayStatus int64 `json:"pay_status,omitempty" xml:"pay_status,omitempty"`
+}
+
+var poolCarSubOrderDetailDto = sync.Pool{
+	New: func() any {
+		return new(CarSubOrderDetailDto)
+	},
+}
+
+// GetCarSubOrderDetailDto() 从对象池中获取CarSubOrderDetailDto
+func GetCarSubOrderDetailDto() *CarSubOrderDetailDto {
+	return poolCarSubOrderDetailDto.Get().(*CarSubOrderDetailDto)
+}
+
+// ReleaseCarSubOrderDetailDto 释放CarSubOrderDetailDto
+func ReleaseCarSubOrderDetailDto(v *CarSubOrderDetailDto) {
+	v.SellerNick = ""
+	v.BuyerNick = ""
+	v.EtShopId = ""
+	v.SellerDefinitionField = ""
+	v.EtShopName = ""
+	v.ConsumeShopName = ""
+	v.ConsumeShopId = ""
+	v.ConsumeTime = ""
+	v.OptionList = ""
+	v.OrderId = 0
+	v.ActualPaidFee = 0
+	v.RefundStatus = 0
+	v.PayStatus = 0
+	poolCarSubOrderDetailDto.Put(v)
 }

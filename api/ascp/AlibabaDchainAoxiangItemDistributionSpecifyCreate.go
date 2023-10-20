@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.item.distribution.specify.create
 //
 // 选择店铺的商品进行指定分销商铺货。 可以指定对应的分销商对应的价格
-func AlibabaDchainAoxiangItemDistributionSpecifyCreate(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest, session string) (*ascp.AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangItemDistributionSpecifyCreate(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest, resp *ascp.AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

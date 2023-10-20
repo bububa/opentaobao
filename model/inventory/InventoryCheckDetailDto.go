@@ -1,5 +1,9 @@
 package inventory
 
+import (
+	"sync"
+)
+
 // InventoryCheckDetailDto 结构体
 type InventoryCheckDetailDto struct {
 	// 如果是门店类型,则为必填。 ONLINE_INVENTORY  线上可售库存，  SHARE_INVENTORY 线下可售库存
@@ -12,4 +16,25 @@ type InventoryCheckDetailDto struct {
 	ScItemId int64 `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
 	// 调整商品对应的SKUID，如果商品为货品，则为0
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolInventoryCheckDetailDto = sync.Pool{
+	New: func() any {
+		return new(InventoryCheckDetailDto)
+	},
+}
+
+// GetInventoryCheckDetailDto() 从对象池中获取InventoryCheckDetailDto
+func GetInventoryCheckDetailDto() *InventoryCheckDetailDto {
+	return poolInventoryCheckDetailDto.Get().(*InventoryCheckDetailDto)
+}
+
+// ReleaseInventoryCheckDetailDto 释放InventoryCheckDetailDto
+func ReleaseInventoryCheckDetailDto(v *InventoryCheckDetailDto) {
+	v.InvBizCode = ""
+	v.SubOrderId = ""
+	v.Quantity = 0
+	v.ScItemId = 0
+	v.SkuId = 0
+	poolInventoryCheckDetailDto.Put(v)
 }

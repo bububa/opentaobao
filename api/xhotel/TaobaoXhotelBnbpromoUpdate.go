@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.bnbpromo.update
 //
 // 全量更新对应外部活动code相关的营销活动信息
-func TaobaoXhotelBnbpromoUpdate(clt *core.SDKClient, req *xhotel.TaobaoXhotelBnbpromoUpdateAPIRequest, session string) (*xhotel.TaobaoXhotelBnbpromoUpdateAPIResponse, error) {
-	var resp xhotel.TaobaoXhotelBnbpromoUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelBnbpromoUpdate(clt *core.SDKClient, req *xhotel.TaobaoXhotelBnbpromoUpdateAPIRequest, resp *xhotel.TaobaoXhotelBnbpromoUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

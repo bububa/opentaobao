@@ -1,5 +1,9 @@
 package aliospay
 
+import (
+	"sync"
+)
+
 // QueryTradeResponse 结构体
 type QueryTradeResponse struct {
 	// 支付结果状态,取值为:INIT初始，WAIT_BUYER_PAY : 等待用户付款。TRADE_SUCCESS:支付已经成功。 TRADE_CLOSED:未付款交易超时关闭，或支付完成后全额退款。TRADE_FINISHED交易结束，不可退款
@@ -28,4 +32,33 @@ type QueryTradeResponse struct {
 	RefundFee int64 `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// 补差金额，单位为分
 	ReplenishAmount int64 `json:"replenish_amount,omitempty" xml:"replenish_amount,omitempty"`
+}
+
+var poolQueryTradeResponse = sync.Pool{
+	New: func() any {
+		return new(QueryTradeResponse)
+	},
+}
+
+// GetQueryTradeResponse() 从对象池中获取QueryTradeResponse
+func GetQueryTradeResponse() *QueryTradeResponse {
+	return poolQueryTradeResponse.Get().(*QueryTradeResponse)
+}
+
+// ReleaseQueryTradeResponse 释放QueryTradeResponse
+func ReleaseQueryTradeResponse(v *QueryTradeResponse) {
+	v.PayResult = ""
+	v.PayWay = ""
+	v.PayOrderId = ""
+	v.BizOrderId = ""
+	v.PayChannel = ""
+	v.ExtraTradeNo = ""
+	v.PaymentTime = 0
+	v.ReceiptAmount = 0
+	v.TotalAmount = 0
+	v.OrderTime = 0
+	v.GmtRefund = 0
+	v.RefundFee = 0
+	v.ReplenishAmount = 0
+	poolQueryTradeResponse.Put(v)
 }

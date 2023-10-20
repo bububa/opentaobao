@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest struct {
 // NewTmallServicecenterAnomalyrecourseHomedecorationCloseRequest 初始化TmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest对象
 func NewTmallServicecenterAnomalyrecourseHomedecorationCloseRequest() *TmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest {
 	return &TmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest) Reset() {
+	r._remark = ""
+	r._images = ""
+	r._id = 0
+	r._isAgreement = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest) SetIsAg
 // GetIsAgreement IsAgreement Getter
 func (r TmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest) GetIsAgreement() int64 {
 	return r._isAgreement
+}
+
+var poolTmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterAnomalyrecourseHomedecorationCloseRequest()
+	},
+}
+
+// GetTmallServicecenterAnomalyrecourseHomedecorationCloseRequest 从 sync.Pool 获取 TmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest
+func GetTmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest() *TmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest {
+	return poolTmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest.Get().(*TmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest)
+}
+
+// ReleaseTmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest 将 TmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest(v *TmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterAnomalyrecourseHomedecorationCloseAPIRequest.Put(v)
 }

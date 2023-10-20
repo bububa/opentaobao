@@ -9,11 +9,6 @@ import (
 // taobao.tanx.qualification.find
 //
 // 资质查询接口
-func TaobaoTanxQualificationFind(clt *core.SDKClient, req *tanx.TaobaoTanxQualificationFindAPIRequest, session string) (*tanx.TaobaoTanxQualificationFindAPIResponse, error) {
-	var resp tanx.TaobaoTanxQualificationFindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTanxQualificationFind(clt *core.SDKClient, req *tanx.TaobaoTanxQualificationFindAPIRequest, resp *tanx.TaobaoTanxQualificationFindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

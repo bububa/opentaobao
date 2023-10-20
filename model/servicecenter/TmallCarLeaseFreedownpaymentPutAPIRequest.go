@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TmallCarLeaseFreedownpaymentPutAPIRequest struct {
 // NewTmallCarLeaseFreedownpaymentPutRequest 初始化TmallCarLeaseFreedownpaymentPutAPIRequest对象
 func NewTmallCarLeaseFreedownpaymentPutRequest() *TmallCarLeaseFreedownpaymentPutAPIRequest {
 	return &TmallCarLeaseFreedownpaymentPutAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarLeaseFreedownpaymentPutAPIRequest) Reset() {
+	r._preEndTime = ""
+	r._preStartTime = ""
+	r._timeRangeList = ""
+	r._refActivityId = ""
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TmallCarLeaseFreedownpaymentPutAPIRequest) SetItemId(_itemId int64) err
 // GetItemId ItemId Getter
 func (r TmallCarLeaseFreedownpaymentPutAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTmallCarLeaseFreedownpaymentPutAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarLeaseFreedownpaymentPutRequest()
+	},
+}
+
+// GetTmallCarLeaseFreedownpaymentPutRequest 从 sync.Pool 获取 TmallCarLeaseFreedownpaymentPutAPIRequest
+func GetTmallCarLeaseFreedownpaymentPutAPIRequest() *TmallCarLeaseFreedownpaymentPutAPIRequest {
+	return poolTmallCarLeaseFreedownpaymentPutAPIRequest.Get().(*TmallCarLeaseFreedownpaymentPutAPIRequest)
+}
+
+// ReleaseTmallCarLeaseFreedownpaymentPutAPIRequest 将 TmallCarLeaseFreedownpaymentPutAPIRequest 放入 sync.Pool
+func ReleaseTmallCarLeaseFreedownpaymentPutAPIRequest(v *TmallCarLeaseFreedownpaymentPutAPIRequest) {
+	v.Reset()
+	poolTmallCarLeaseFreedownpaymentPutAPIRequest.Put(v)
 }

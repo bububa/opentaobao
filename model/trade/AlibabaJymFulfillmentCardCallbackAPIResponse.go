@@ -2,6 +2,7 @@ package trade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaJymFulfillmentCardCallbackAPIResponse struct {
 	AlibabaJymFulfillmentCardCallbackAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaJymFulfillmentCardCallbackAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaJymFulfillmentCardCallbackAPIResponseModel).Reset()
+}
+
 // AlibabaJymFulfillmentCardCallbackAPIResponseModel is 外部商家卡密结果回调 成功返回结果
 type AlibabaJymFulfillmentCardCallbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_fulfillment_card_callback_response"`
@@ -26,4 +33,29 @@ type AlibabaJymFulfillmentCardCallbackAPIResponseModel struct {
 	FailedReason string `json:"failed_reason,omitempty" xml:"failed_reason,omitempty"`
 	// 交易猫订单是否成功，true-成功，false-失败
 	JymOrderSuccess string `json:"jym_order_success,omitempty" xml:"jym_order_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymFulfillmentCardCallbackAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.FailedCode = ""
+	m.FailedReason = ""
+	m.JymOrderSuccess = ""
+}
+
+var poolAlibabaJymFulfillmentCardCallbackAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaJymFulfillmentCardCallbackAPIResponse)
+	},
+}
+
+// GetAlibabaJymFulfillmentCardCallbackAPIResponse 从 sync.Pool 获取 AlibabaJymFulfillmentCardCallbackAPIResponse
+func GetAlibabaJymFulfillmentCardCallbackAPIResponse() *AlibabaJymFulfillmentCardCallbackAPIResponse {
+	return poolAlibabaJymFulfillmentCardCallbackAPIResponse.Get().(*AlibabaJymFulfillmentCardCallbackAPIResponse)
+}
+
+// ReleaseAlibabaJymFulfillmentCardCallbackAPIResponse 将 AlibabaJymFulfillmentCardCallbackAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaJymFulfillmentCardCallbackAPIResponse(v *AlibabaJymFulfillmentCardCallbackAPIResponse) {
+	v.Reset()
+	poolAlibabaJymFulfillmentCardCallbackAPIResponse.Put(v)
 }

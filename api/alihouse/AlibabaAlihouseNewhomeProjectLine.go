@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.project.line
 //
 // 上下架楼盘
-func AlibabaAlihouseNewhomeProjectLine(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectLineAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeProjectLineAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeProjectLineAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeProjectLine(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectLineAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeProjectLineAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

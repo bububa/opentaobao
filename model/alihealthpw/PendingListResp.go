@@ -1,5 +1,9 @@
 package alihealthpw
 
+import (
+	"sync"
+)
+
 // PendingListResp 结构体
 type PendingListResp struct {
 	// 列表
@@ -12,4 +16,25 @@ type PendingListResp struct {
 	PageNumber int64 `json:"page_number,omitempty" xml:"page_number,omitempty"`
 	// 每页大小
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolPendingListResp = sync.Pool{
+	New: func() any {
+		return new(PendingListResp)
+	},
+}
+
+// GetPendingListResp() 从对象池中获取PendingListResp
+func GetPendingListResp() *PendingListResp {
+	return poolPendingListResp.Get().(*PendingListResp)
+}
+
+// ReleasePendingListResp 释放PendingListResp
+func ReleasePendingListResp(v *PendingListResp) {
+	v.List = v.List[:0]
+	v.ApplyType = ""
+	v.Total = 0
+	v.PageNumber = 0
+	v.PageSize = 0
+	poolPendingListResp.Put(v)
 }

@@ -2,6 +2,7 @@ package car
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripTransferOrderDetailAPIRequest struct {
 // NewAlitripTransferOrderDetailRequest 初始化AlitripTransferOrderDetailAPIRequest对象
 func NewAlitripTransferOrderDetailRequest() *AlitripTransferOrderDetailAPIRequest {
 	return &AlitripTransferOrderDetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTransferOrderDetailAPIRequest) Reset() {
+	r._orderId = ""
+	r._providerId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripTransferOrderDetailAPIRequest) SetProviderId(_providerId string)
 // GetProviderId ProviderId Getter
 func (r AlitripTransferOrderDetailAPIRequest) GetProviderId() string {
 	return r._providerId
+}
+
+var poolAlitripTransferOrderDetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTransferOrderDetailRequest()
+	},
+}
+
+// GetAlitripTransferOrderDetailRequest 从 sync.Pool 获取 AlitripTransferOrderDetailAPIRequest
+func GetAlitripTransferOrderDetailAPIRequest() *AlitripTransferOrderDetailAPIRequest {
+	return poolAlitripTransferOrderDetailAPIRequest.Get().(*AlitripTransferOrderDetailAPIRequest)
+}
+
+// ReleaseAlitripTransferOrderDetailAPIRequest 将 AlitripTransferOrderDetailAPIRequest 放入 sync.Pool
+func ReleaseAlitripTransferOrderDetailAPIRequest(v *AlitripTransferOrderDetailAPIRequest) {
+	v.Reset()
+	poolAlitripTransferOrderDetailAPIRequest.Put(v)
 }

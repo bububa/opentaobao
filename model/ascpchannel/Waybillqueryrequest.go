@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Waybillqueryrequest 结构体
 type Waybillqueryrequest struct {
 	// 包裹列表
@@ -16,4 +20,27 @@ type Waybillqueryrequest struct {
 	ConsignLpOrderCode string `json:"consign_lp_order_code,omitempty" xml:"consign_lp_order_code,omitempty"`
 	// 自营接口配业务模式，默认为1代表商家仓自营配 (为1时会强制校验发货的配CP和单号必须与取号时一致，且多包裹必须一次性发货)
 	BusinessModel string `json:"business_model,omitempty" xml:"business_model,omitempty"`
+}
+
+var poolWaybillqueryrequest = sync.Pool{
+	New: func() any {
+		return new(Waybillqueryrequest)
+	},
+}
+
+// GetWaybillqueryrequest() 从对象池中获取Waybillqueryrequest
+func GetWaybillqueryrequest() *Waybillqueryrequest {
+	return poolWaybillqueryrequest.Get().(*Waybillqueryrequest)
+}
+
+// ReleaseWaybillqueryrequest 释放Waybillqueryrequest
+func ReleaseWaybillqueryrequest(v *Waybillqueryrequest) {
+	v.Packages = v.Packages[:0]
+	v.Operator = ""
+	v.OperatorName = ""
+	v.SupplierId = ""
+	v.ServiceCode = ""
+	v.ConsignLpOrderCode = ""
+	v.BusinessModel = ""
+	poolWaybillqueryrequest.Put(v)
 }

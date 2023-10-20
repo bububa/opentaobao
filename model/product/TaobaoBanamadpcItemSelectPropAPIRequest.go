@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoBanamadpcItemSelectPropAPIRequest struct {
 // NewTaobaoBanamadpcItemSelectPropRequest 初始化TaobaoBanamadpcItemSelectPropAPIRequest对象
 func NewTaobaoBanamadpcItemSelectPropRequest() *TaobaoBanamadpcItemSelectPropAPIRequest {
 	return &TaobaoBanamadpcItemSelectPropAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBanamadpcItemSelectPropAPIRequest) Reset() {
+	r._xml = ""
+	r._catId = 0
+	r._propId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoBanamadpcItemSelectPropAPIRequest) SetPropId(_propId int64) error
 // GetPropId PropId Getter
 func (r TaobaoBanamadpcItemSelectPropAPIRequest) GetPropId() int64 {
 	return r._propId
+}
+
+var poolTaobaoBanamadpcItemSelectPropAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBanamadpcItemSelectPropRequest()
+	},
+}
+
+// GetTaobaoBanamadpcItemSelectPropRequest 从 sync.Pool 获取 TaobaoBanamadpcItemSelectPropAPIRequest
+func GetTaobaoBanamadpcItemSelectPropAPIRequest() *TaobaoBanamadpcItemSelectPropAPIRequest {
+	return poolTaobaoBanamadpcItemSelectPropAPIRequest.Get().(*TaobaoBanamadpcItemSelectPropAPIRequest)
+}
+
+// ReleaseTaobaoBanamadpcItemSelectPropAPIRequest 将 TaobaoBanamadpcItemSelectPropAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBanamadpcItemSelectPropAPIRequest(v *TaobaoBanamadpcItemSelectPropAPIRequest) {
+	v.Reset()
+	poolTaobaoBanamadpcItemSelectPropAPIRequest.Put(v)
 }

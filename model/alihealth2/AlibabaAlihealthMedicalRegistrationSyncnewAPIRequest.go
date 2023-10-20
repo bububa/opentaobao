@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,14 +14,20 @@ import (
 type AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest struct {
 	model.Params
 	// 接口入参
-	_saveRequest *CommonRequest4top
+	_saveRequest *CommonRequest4Top
 }
 
 // NewAlibabaAlihealthMedicalRegistrationSyncnewRequest 初始化AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest对象
 func NewAlibabaAlihealthMedicalRegistrationSyncnewRequest() *AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest {
 	return &AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest) Reset() {
+	r._saveRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -42,13 +49,30 @@ func (r AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest) GetRawParams() mod
 
 // SetSaveRequest is SaveRequest Setter
 // 接口入参
-func (r *AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest) SetSaveRequest(_saveRequest *CommonRequest4top) error {
+func (r *AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest) SetSaveRequest(_saveRequest *CommonRequest4Top) error {
 	r._saveRequest = _saveRequest
 	r.Set("save_request", _saveRequest)
 	return nil
 }
 
 // GetSaveRequest SaveRequest Getter
-func (r AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest) GetSaveRequest() *CommonRequest4top {
+func (r AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest) GetSaveRequest() *CommonRequest4Top {
 	return r._saveRequest
+}
+
+var poolAlibabaAlihealthMedicalRegistrationSyncnewAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthMedicalRegistrationSyncnewRequest()
+	},
+}
+
+// GetAlibabaAlihealthMedicalRegistrationSyncnewRequest 从 sync.Pool 获取 AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest
+func GetAlibabaAlihealthMedicalRegistrationSyncnewAPIRequest() *AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest {
+	return poolAlibabaAlihealthMedicalRegistrationSyncnewAPIRequest.Get().(*AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthMedicalRegistrationSyncnewAPIRequest 将 AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthMedicalRegistrationSyncnewAPIRequest(v *AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthMedicalRegistrationSyncnewAPIRequest.Put(v)
 }

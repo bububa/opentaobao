@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // BaseMetroLineDto 结构体
 type BaseMetroLineDto struct {
 	// 站点出口经纬度
@@ -30,4 +34,34 @@ type BaseMetroLineDto struct {
 	CityId int64 `json:"city_id,omitempty" xml:"city_id,omitempty"`
 	// 数据源类型（1-新房 2-二手房）
 	SourceType int64 `json:"source_type,omitempty" xml:"source_type,omitempty"`
+}
+
+var poolBaseMetroLineDto = sync.Pool{
+	New: func() any {
+		return new(BaseMetroLineDto)
+	},
+}
+
+// GetBaseMetroLineDto() 从对象池中获取BaseMetroLineDto
+func GetBaseMetroLineDto() *BaseMetroLineDto {
+	return poolBaseMetroLineDto.Get().(*BaseMetroLineDto)
+}
+
+// ReleaseBaseMetroLineDto 释放BaseMetroLineDto
+func ReleaseBaseMetroLineDto(v *BaseMetroLineDto) {
+	v.ExitPoi = ""
+	v.BusinessDistrict = ""
+	v.SiteCode = ""
+	v.LineCode = ""
+	v.MetroLine = ""
+	v.MetroName = ""
+	v.MetroCode = ""
+	v.OuterMetroId = ""
+	v.GaodeLatitude = ""
+	v.GaodeLongitude = ""
+	v.IsDeleted = ""
+	v.AreaId = 0
+	v.CityId = 0
+	v.SourceType = 0
+	poolBaseMetroLineDto.Put(v)
 }

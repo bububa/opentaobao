@@ -2,6 +2,7 @@ package eleenterprisecoupon
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaEleEnterpriseCouponSendAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseCouponSendAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleEnterpriseCouponSendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEleEnterpriseCouponSendAPIResponseModel).Reset()
 }
 
 // AlibabaEleEnterpriseCouponSendAPIResponseModel is 发放优惠券 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaEleEnterpriseCouponSendAPIResponseModel struct {
 	EnterpriseMsg string `json:"enterprise_msg,omitempty" xml:"enterprise_msg,omitempty"`
 	// 请求id
 	EnterpriseRequestid string `json:"enterprise_requestid,omitempty" xml:"enterprise_requestid,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleEnterpriseCouponSendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.EnterpriseDatas = m.EnterpriseDatas[:0]
+	m.EnterpriseCode = ""
+	m.EnterpriseMsg = ""
+	m.EnterpriseRequestid = ""
+}
+
+var poolAlibabaEleEnterpriseCouponSendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEleEnterpriseCouponSendAPIResponse)
+	},
+}
+
+// GetAlibabaEleEnterpriseCouponSendAPIResponse 从 sync.Pool 获取 AlibabaEleEnterpriseCouponSendAPIResponse
+func GetAlibabaEleEnterpriseCouponSendAPIResponse() *AlibabaEleEnterpriseCouponSendAPIResponse {
+	return poolAlibabaEleEnterpriseCouponSendAPIResponse.Get().(*AlibabaEleEnterpriseCouponSendAPIResponse)
+}
+
+// ReleaseAlibabaEleEnterpriseCouponSendAPIResponse 将 AlibabaEleEnterpriseCouponSendAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEleEnterpriseCouponSendAPIResponse(v *AlibabaEleEnterpriseCouponSendAPIResponse) {
+	v.Reset()
+	poolAlibabaEleEnterpriseCouponSendAPIResponse.Put(v)
 }

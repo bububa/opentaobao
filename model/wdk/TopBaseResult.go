@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // TopBaseResult 结构体
 type TopBaseResult struct {
 	// 错误码
@@ -14,4 +18,26 @@ type TopBaseResult struct {
 	Model *OrderResponse `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTopBaseResult = sync.Pool{
+	New: func() any {
+		return new(TopBaseResult)
+	},
+}
+
+// GetTopBaseResult() 从对象池中获取TopBaseResult
+func GetTopBaseResult() *TopBaseResult {
+	return poolTopBaseResult.Get().(*TopBaseResult)
+}
+
+// ReleaseTopBaseResult 释放TopBaseResult
+func ReleaseTopBaseResult(v *TopBaseResult) {
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.ReturnMsg = ""
+	v.ReturnCode = ""
+	v.Model = nil
+	v.Success = false
+	poolTopBaseResult.Put(v)
 }

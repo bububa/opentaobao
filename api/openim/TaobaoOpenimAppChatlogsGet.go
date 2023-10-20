@@ -9,11 +9,6 @@ import (
 // taobao.openim.app.chatlogs.get
 //
 // 查询openim应用的聊天记录
-func TaobaoOpenimAppChatlogsGet(clt *core.SDKClient, req *openim.TaobaoOpenimAppChatlogsGetAPIRequest, session string) (*openim.TaobaoOpenimAppChatlogsGetAPIResponse, error) {
-	var resp openim.TaobaoOpenimAppChatlogsGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenimAppChatlogsGet(clt *core.SDKClient, req *openim.TaobaoOpenimAppChatlogsGetAPIRequest, resp *openim.TaobaoOpenimAppChatlogsGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

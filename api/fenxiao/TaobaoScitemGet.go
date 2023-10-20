@@ -9,11 +9,6 @@ import (
 // taobao.scitem.get
 //
 // 根据id查询商品
-func TaobaoScitemGet(clt *core.SDKClient, req *fenxiao.TaobaoScitemGetAPIRequest, session string) (*fenxiao.TaobaoScitemGetAPIResponse, error) {
-	var resp fenxiao.TaobaoScitemGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoScitemGet(clt *core.SDKClient, req *fenxiao.TaobaoScitemGetAPIRequest, resp *fenxiao.TaobaoScitemGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

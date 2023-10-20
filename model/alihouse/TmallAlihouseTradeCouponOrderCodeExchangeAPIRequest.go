@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallAlihouseTradeCouponOrderCodeExchangeAPIRequest struct {
 // NewTmallAlihouseTradeCouponOrderCodeExchangeRequest 初始化TmallAlihouseTradeCouponOrderCodeExchangeAPIRequest对象
 func NewTmallAlihouseTradeCouponOrderCodeExchangeRequest() *TmallAlihouseTradeCouponOrderCodeExchangeAPIRequest {
 	return &TmallAlihouseTradeCouponOrderCodeExchangeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallAlihouseTradeCouponOrderCodeExchangeAPIRequest) Reset() {
+	r._exchangeCodeDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallAlihouseTradeCouponOrderCodeExchangeAPIRequest) SetExchangeCodeDto
 // GetExchangeCodeDto ExchangeCodeDto Getter
 func (r TmallAlihouseTradeCouponOrderCodeExchangeAPIRequest) GetExchangeCodeDto() *ExchangeCodeDto {
 	return r._exchangeCodeDto
+}
+
+var poolTmallAlihouseTradeCouponOrderCodeExchangeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallAlihouseTradeCouponOrderCodeExchangeRequest()
+	},
+}
+
+// GetTmallAlihouseTradeCouponOrderCodeExchangeRequest 从 sync.Pool 获取 TmallAlihouseTradeCouponOrderCodeExchangeAPIRequest
+func GetTmallAlihouseTradeCouponOrderCodeExchangeAPIRequest() *TmallAlihouseTradeCouponOrderCodeExchangeAPIRequest {
+	return poolTmallAlihouseTradeCouponOrderCodeExchangeAPIRequest.Get().(*TmallAlihouseTradeCouponOrderCodeExchangeAPIRequest)
+}
+
+// ReleaseTmallAlihouseTradeCouponOrderCodeExchangeAPIRequest 将 TmallAlihouseTradeCouponOrderCodeExchangeAPIRequest 放入 sync.Pool
+func ReleaseTmallAlihouseTradeCouponOrderCodeExchangeAPIRequest(v *TmallAlihouseTradeCouponOrderCodeExchangeAPIRequest) {
+	v.Reset()
+	poolTmallAlihouseTradeCouponOrderCodeExchangeAPIRequest.Put(v)
 }

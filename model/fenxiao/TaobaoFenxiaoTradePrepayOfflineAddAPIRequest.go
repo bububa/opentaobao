@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFenxiaoTradePrepayOfflineAddAPIRequest struct {
 // NewTaobaoFenxiaoTradePrepayOfflineAddRequest 初始化TaobaoFenxiaoTradePrepayOfflineAddAPIRequest对象
 func NewTaobaoFenxiaoTradePrepayOfflineAddRequest() *TaobaoFenxiaoTradePrepayOfflineAddAPIRequest {
 	return &TaobaoFenxiaoTradePrepayOfflineAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoTradePrepayOfflineAddAPIRequest) Reset() {
+	r._offlineAddPrepayParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFenxiaoTradePrepayOfflineAddAPIRequest) SetOfflineAddPrepayParam(
 // GetOfflineAddPrepayParam OfflineAddPrepayParam Getter
 func (r TaobaoFenxiaoTradePrepayOfflineAddAPIRequest) GetOfflineAddPrepayParam() *TopOfflineAddPrepayDto {
 	return r._offlineAddPrepayParam
+}
+
+var poolTaobaoFenxiaoTradePrepayOfflineAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoTradePrepayOfflineAddRequest()
+	},
+}
+
+// GetTaobaoFenxiaoTradePrepayOfflineAddRequest 从 sync.Pool 获取 TaobaoFenxiaoTradePrepayOfflineAddAPIRequest
+func GetTaobaoFenxiaoTradePrepayOfflineAddAPIRequest() *TaobaoFenxiaoTradePrepayOfflineAddAPIRequest {
+	return poolTaobaoFenxiaoTradePrepayOfflineAddAPIRequest.Get().(*TaobaoFenxiaoTradePrepayOfflineAddAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoTradePrepayOfflineAddAPIRequest 将 TaobaoFenxiaoTradePrepayOfflineAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoTradePrepayOfflineAddAPIRequest(v *TaobaoFenxiaoTradePrepayOfflineAddAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoTradePrepayOfflineAddAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // DisplayCouponTemplateVo 结构体
 type DisplayCouponTemplateVo struct {
 	// 关联活动id
@@ -44,4 +48,41 @@ type DisplayCouponTemplateVo struct {
 	LeftAmount int64 `json:"left_amount,omitempty" xml:"left_amount,omitempty"`
 	// 关联商品
 	ReplaceRpCode *ReplaceRpCode `json:"replace_rp_code,omitempty" xml:"replace_rp_code,omitempty"`
+}
+
+var poolDisplayCouponTemplateVo = sync.Pool{
+	New: func() any {
+		return new(DisplayCouponTemplateVo)
+	},
+}
+
+// GetDisplayCouponTemplateVo() 从对象池中获取DisplayCouponTemplateVo
+func GetDisplayCouponTemplateVo() *DisplayCouponTemplateVo {
+	return poolDisplayCouponTemplateVo.Get().(*DisplayCouponTemplateVo)
+}
+
+// ReleaseDisplayCouponTemplateVo 释放DisplayCouponTemplateVo
+func ReleaseDisplayCouponTemplateVo(v *DisplayCouponTemplateVo) {
+	v.RelateActivityIdList = v.RelateActivityIdList[:0]
+	v.ConditionAmount = ""
+	v.DiscountAmount = ""
+	v.CouponName = ""
+	v.ConditionDesc = ""
+	v.DetailDesc = ""
+	v.BookStartTime = ""
+	v.BookEndTime = ""
+	v.CheckInTime = ""
+	v.CheckOutTime = ""
+	v.Status = ""
+	v.ExpiredTime = ""
+	v.CouponType = ""
+	v.CouponTemplateId = 0
+	v.ExpiredTimeDay = 0
+	v.ExpiredTimeHour = 0
+	v.ExpiredTimeMin = 0
+	v.TotalAmount = 0
+	v.ReceivedAmount = 0
+	v.LeftAmount = 0
+	v.ReplaceRpCode = nil
+	poolDisplayCouponTemplateVo.Put(v)
 }

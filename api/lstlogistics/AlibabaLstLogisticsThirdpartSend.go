@@ -9,11 +9,6 @@ import (
 // alibaba.lst.logistics.thirdpart.send
 //
 // 异地云仓的订单，使用第三方物流的发货方式来变更订单发货状态
-func AlibabaLstLogisticsThirdpartSend(clt *core.SDKClient, req *lstlogistics.AlibabaLstLogisticsThirdpartSendAPIRequest, session string) (*lstlogistics.AlibabaLstLogisticsThirdpartSendAPIResponse, error) {
-	var resp lstlogistics.AlibabaLstLogisticsThirdpartSendAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLstLogisticsThirdpartSend(clt *core.SDKClient, req *lstlogistics.AlibabaLstLogisticsThirdpartSendAPIRequest, resp *lstlogistics.AlibabaLstLogisticsThirdpartSendAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

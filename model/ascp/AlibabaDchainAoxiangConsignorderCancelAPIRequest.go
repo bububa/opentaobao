@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangConsignorderCancelAPIRequest struct {
 // NewAlibabaDchainAoxiangConsignorderCancelRequest 初始化AlibabaDchainAoxiangConsignorderCancelAPIRequest对象
 func NewAlibabaDchainAoxiangConsignorderCancelRequest() *AlibabaDchainAoxiangConsignorderCancelAPIRequest {
 	return &AlibabaDchainAoxiangConsignorderCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangConsignorderCancelAPIRequest) Reset() {
+	r._cancelConsignorderRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangConsignorderCancelAPIRequest) SetCancelConsignorder
 // GetCancelConsignorderRequest CancelConsignorderRequest Getter
 func (r AlibabaDchainAoxiangConsignorderCancelAPIRequest) GetCancelConsignorderRequest() *CancelConsignOrderRequest {
 	return r._cancelConsignorderRequest
+}
+
+var poolAlibabaDchainAoxiangConsignorderCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangConsignorderCancelRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangConsignorderCancelRequest 从 sync.Pool 获取 AlibabaDchainAoxiangConsignorderCancelAPIRequest
+func GetAlibabaDchainAoxiangConsignorderCancelAPIRequest() *AlibabaDchainAoxiangConsignorderCancelAPIRequest {
+	return poolAlibabaDchainAoxiangConsignorderCancelAPIRequest.Get().(*AlibabaDchainAoxiangConsignorderCancelAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangConsignorderCancelAPIRequest 将 AlibabaDchainAoxiangConsignorderCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangConsignorderCancelAPIRequest(v *AlibabaDchainAoxiangConsignorderCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangConsignorderCancelAPIRequest.Put(v)
 }

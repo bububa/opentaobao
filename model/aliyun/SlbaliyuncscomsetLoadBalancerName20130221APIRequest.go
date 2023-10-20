@@ -2,6 +2,7 @@ package aliyun
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type SlbAliyuncsComSetLoadBalancerName20130221APIRequest struct {
 // NewSlbAliyuncsComSetLoadBalancerName20130221Request 初始化SlbAliyuncsComSetLoadBalancerName20130221APIRequest对象
 func NewSlbAliyuncsComSetLoadBalancerName20130221Request() *SlbAliyuncsComSetLoadBalancerName20130221APIRequest {
 	return &SlbAliyuncsComSetLoadBalancerName20130221APIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *SlbAliyuncsComSetLoadBalancerName20130221APIRequest) Reset() {
+	r._loadBalancerId = ""
+	r._loadBalancerName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *SlbAliyuncsComSetLoadBalancerName20130221APIRequest) SetLoadBalancerNam
 // GetLoadBalancerName LoadBalancerName Getter
 func (r SlbAliyuncsComSetLoadBalancerName20130221APIRequest) GetLoadBalancerName() string {
 	return r._loadBalancerName
+}
+
+var poolSlbAliyuncsComSetLoadBalancerName20130221APIRequest = sync.Pool{
+	New: func() any {
+		return NewSlbAliyuncsComSetLoadBalancerName20130221Request()
+	},
+}
+
+// GetSlbAliyuncsComSetLoadBalancerName20130221Request 从 sync.Pool 获取 SlbAliyuncsComSetLoadBalancerName20130221APIRequest
+func GetSlbAliyuncsComSetLoadBalancerName20130221APIRequest() *SlbAliyuncsComSetLoadBalancerName20130221APIRequest {
+	return poolSlbAliyuncsComSetLoadBalancerName20130221APIRequest.Get().(*SlbAliyuncsComSetLoadBalancerName20130221APIRequest)
+}
+
+// ReleaseSlbAliyuncsComSetLoadBalancerName20130221APIRequest 将 SlbAliyuncsComSetLoadBalancerName20130221APIRequest 放入 sync.Pool
+func ReleaseSlbAliyuncsComSetLoadBalancerName20130221APIRequest(v *SlbAliyuncsComSetLoadBalancerName20130221APIRequest) {
+	v.Reset()
+	poolSlbAliyuncsComSetLoadBalancerName20130221APIRequest.Put(v)
 }

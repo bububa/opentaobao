@@ -1,5 +1,9 @@
 package rail
 
+import (
+	"sync"
+)
+
 // Modules 结构体
 type Modules struct {
 	// 坐席code
@@ -12,4 +16,25 @@ type Modules struct {
 	SeatName string `json:"seat_name,omitempty" xml:"seat_name,omitempty"`
 	// 业务类型，6代表境外火车票
 	BizType int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
+}
+
+var poolModules = sync.Pool{
+	New: func() any {
+		return new(Modules)
+	},
+}
+
+// GetModules() 从对象池中获取Modules
+func GetModules() *Modules {
+	return poolModules.Get().(*Modules)
+}
+
+// ReleaseModules 释放Modules
+func ReleaseModules(v *Modules) {
+	v.SeatCode = ""
+	v.SeatDetail = ""
+	v.SeatImage = ""
+	v.SeatName = ""
+	v.BizType = 0
+	poolModules.Put(v)
 }

@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // SupplierOrder 结构体
 type SupplierOrder struct {
 	// 外部门店ID
@@ -60,4 +64,49 @@ type SupplierOrder struct {
 	ActivityId int64 `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
 	// 实付金额，单位为分
 	ActualTotalFee int64 `json:"actual_total_fee,omitempty" xml:"actual_total_fee,omitempty"`
+}
+
+var poolSupplierOrder = sync.Pool{
+	New: func() any {
+		return new(SupplierOrder)
+	},
+}
+
+// GetSupplierOrder() 从对象池中获取SupplierOrder
+func GetSupplierOrder() *SupplierOrder {
+	return poolSupplierOrder.Get().(*SupplierOrder)
+}
+
+// ReleaseSupplierOrder 释放SupplierOrder
+func ReleaseSupplierOrder(v *SupplierOrder) {
+	v.OuterStoreId = ""
+	v.BuyerNick = ""
+	v.ItemTitle = ""
+	v.City = ""
+	v.RefundStatus = ""
+	v.TradeEndTime = ""
+	v.BuyerId = ""
+	v.TradeCreateTime = ""
+	v.SubOrderId = ""
+	v.OuterItemId = ""
+	v.TradeStatus = ""
+	v.Supplier = ""
+	v.RefundEndTime = ""
+	v.StationName = ""
+	v.StoreName = ""
+	v.MainOrderId = ""
+	v.ActivityStartTime = ""
+	v.ActivityAttributes = ""
+	v.ActivityType = ""
+	v.ActivityName = ""
+	v.ActivityEndTime = ""
+	v.ModifiedTime = ""
+	v.RefundFee = 0
+	v.ItemTotalPrice = 0
+	v.BuyAmount = 0
+	v.ItemPrice = 0
+	v.StationId = 0
+	v.ActivityId = 0
+	v.ActualTotalFee = 0
+	poolSupplierOrder.Put(v)
 }

@@ -2,6 +2,7 @@ package beehive
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoBeehiveItemCpsUrlAPIRequest struct {
 // NewTaobaoBeehiveItemCpsUrlRequest 初始化TaobaoBeehiveItemCpsUrlAPIRequest对象
 func NewTaobaoBeehiveItemCpsUrlRequest() *TaobaoBeehiveItemCpsUrlAPIRequest {
 	return &TaobaoBeehiveItemCpsUrlAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBeehiveItemCpsUrlAPIRequest) Reset() {
+	r._platform = ""
+	r._bizType = ""
+	r._itemId = 0
+	r._adUserId = 0
+	r._sourceType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetSourceType(_sourceType int64) err
 // GetSourceType SourceType Getter
 func (r TaobaoBeehiveItemCpsUrlAPIRequest) GetSourceType() int64 {
 	return r._sourceType
+}
+
+var poolTaobaoBeehiveItemCpsUrlAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBeehiveItemCpsUrlRequest()
+	},
+}
+
+// GetTaobaoBeehiveItemCpsUrlRequest 从 sync.Pool 获取 TaobaoBeehiveItemCpsUrlAPIRequest
+func GetTaobaoBeehiveItemCpsUrlAPIRequest() *TaobaoBeehiveItemCpsUrlAPIRequest {
+	return poolTaobaoBeehiveItemCpsUrlAPIRequest.Get().(*TaobaoBeehiveItemCpsUrlAPIRequest)
+}
+
+// ReleaseTaobaoBeehiveItemCpsUrlAPIRequest 将 TaobaoBeehiveItemCpsUrlAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBeehiveItemCpsUrlAPIRequest(v *TaobaoBeehiveItemCpsUrlAPIRequest) {
+	v.Reset()
+	poolTaobaoBeehiveItemCpsUrlAPIRequest.Put(v)
 }

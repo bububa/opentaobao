@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // RefundChangeRuleItem 结构体
 type RefundChangeRuleItem struct {
 	// 说明文案
@@ -16,4 +20,27 @@ type RefundChangeRuleItem struct {
 	Index int64 `json:"index,omitempty" xml:"index,omitempty"`
 	// 内容类型(0退票/1改期)
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolRefundChangeRuleItem = sync.Pool{
+	New: func() any {
+		return new(RefundChangeRuleItem)
+	},
+}
+
+// GetRefundChangeRuleItem() 从对象池中获取RefundChangeRuleItem
+func GetRefundChangeRuleItem() *RefundChangeRuleItem {
+	return poolRefundChangeRuleItem.Get().(*RefundChangeRuleItem)
+}
+
+// ReleaseRefundChangeRuleItem 释放RefundChangeRuleItem
+func ReleaseRefundChangeRuleItem(v *RefundChangeRuleItem) {
+	v.ExtraContents = v.ExtraContents[:0]
+	v.SubTableHead = v.SubTableHead[:0]
+	v.RefundSubItems = v.RefundSubItems[:0]
+	v.TableHead = ""
+	v.Title = ""
+	v.Index = 0
+	v.Type = 0
+	poolRefundChangeRuleItem.Put(v)
 }

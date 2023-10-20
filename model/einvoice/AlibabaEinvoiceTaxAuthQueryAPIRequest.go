@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEinvoiceTaxAuthQueryAPIRequest struct {
 // NewAlibabaEinvoiceTaxAuthQueryRequest 初始化AlibabaEinvoiceTaxAuthQueryAPIRequest对象
 func NewAlibabaEinvoiceTaxAuthQueryRequest() *AlibabaEinvoiceTaxAuthQueryAPIRequest {
 	return &AlibabaEinvoiceTaxAuthQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceTaxAuthQueryAPIRequest) Reset() {
+	r._taxAuthTokenQueryDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEinvoiceTaxAuthQueryAPIRequest) SetTaxAuthTokenQueryDto(_taxAuth
 // GetTaxAuthTokenQueryDto TaxAuthTokenQueryDto Getter
 func (r AlibabaEinvoiceTaxAuthQueryAPIRequest) GetTaxAuthTokenQueryDto() *TaxAuthTokenQueryDto {
 	return r._taxAuthTokenQueryDto
+}
+
+var poolAlibabaEinvoiceTaxAuthQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceTaxAuthQueryRequest()
+	},
+}
+
+// GetAlibabaEinvoiceTaxAuthQueryRequest 从 sync.Pool 获取 AlibabaEinvoiceTaxAuthQueryAPIRequest
+func GetAlibabaEinvoiceTaxAuthQueryAPIRequest() *AlibabaEinvoiceTaxAuthQueryAPIRequest {
+	return poolAlibabaEinvoiceTaxAuthQueryAPIRequest.Get().(*AlibabaEinvoiceTaxAuthQueryAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceTaxAuthQueryAPIRequest 将 AlibabaEinvoiceTaxAuthQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceTaxAuthQueryAPIRequest(v *AlibabaEinvoiceTaxAuthQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceTaxAuthQueryAPIRequest.Put(v)
 }

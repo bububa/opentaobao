@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,14 @@ type AlibabaEinvoiceFlowTaxGetAPIRequest struct {
 // NewAlibabaEinvoiceFlowTaxGetRequest 初始化AlibabaEinvoiceFlowTaxGetAPIRequest对象
 func NewAlibabaEinvoiceFlowTaxGetRequest() *AlibabaEinvoiceFlowTaxGetAPIRequest {
 	return &AlibabaEinvoiceFlowTaxGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceFlowTaxGetAPIRequest) Reset() {
+	r._flowId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *AlibabaEinvoiceFlowTaxGetAPIRequest) SetFlowId(_flowId string) error {
 // GetFlowId FlowId Getter
 func (r AlibabaEinvoiceFlowTaxGetAPIRequest) GetFlowId() string {
 	return r._flowId
+}
+
+var poolAlibabaEinvoiceFlowTaxGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceFlowTaxGetRequest()
+	},
+}
+
+// GetAlibabaEinvoiceFlowTaxGetRequest 从 sync.Pool 获取 AlibabaEinvoiceFlowTaxGetAPIRequest
+func GetAlibabaEinvoiceFlowTaxGetAPIRequest() *AlibabaEinvoiceFlowTaxGetAPIRequest {
+	return poolAlibabaEinvoiceFlowTaxGetAPIRequest.Get().(*AlibabaEinvoiceFlowTaxGetAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceFlowTaxGetAPIRequest 将 AlibabaEinvoiceFlowTaxGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceFlowTaxGetAPIRequest(v *AlibabaEinvoiceFlowTaxGetAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceFlowTaxGetAPIRequest.Put(v)
 }

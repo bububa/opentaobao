@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.project.add
 //
 // 添加项目
-func AlitripBtripProjectAdd(clt *core.SDKClient, req *btrip.AlitripBtripProjectAddAPIRequest, session string) (*btrip.AlitripBtripProjectAddAPIResponse, error) {
-	var resp btrip.AlitripBtripProjectAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripProjectAdd(clt *core.SDKClient, req *btrip.AlitripBtripProjectAddAPIRequest, resp *btrip.AlitripBtripProjectAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

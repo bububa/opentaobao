@@ -2,6 +2,7 @@ package legalsuit
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLegalSuitDominationPushAPIRequest struct {
 // NewAlibabaLegalSuitDominationPushRequest 初始化AlibabaLegalSuitDominationPushAPIRequest对象
 func NewAlibabaLegalSuitDominationPushRequest() *AlibabaLegalSuitDominationPushAPIRequest {
 	return &AlibabaLegalSuitDominationPushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegalSuitDominationPushAPIRequest) Reset() {
+	r._dominationDissentModel = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLegalSuitDominationPushAPIRequest) SetDominationDissentModel(_do
 // GetDominationDissentModel DominationDissentModel Getter
 func (r AlibabaLegalSuitDominationPushAPIRequest) GetDominationDissentModel() *DominationDissentModel {
 	return r._dominationDissentModel
+}
+
+var poolAlibabaLegalSuitDominationPushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegalSuitDominationPushRequest()
+	},
+}
+
+// GetAlibabaLegalSuitDominationPushRequest 从 sync.Pool 获取 AlibabaLegalSuitDominationPushAPIRequest
+func GetAlibabaLegalSuitDominationPushAPIRequest() *AlibabaLegalSuitDominationPushAPIRequest {
+	return poolAlibabaLegalSuitDominationPushAPIRequest.Get().(*AlibabaLegalSuitDominationPushAPIRequest)
+}
+
+// ReleaseAlibabaLegalSuitDominationPushAPIRequest 将 AlibabaLegalSuitDominationPushAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegalSuitDominationPushAPIRequest(v *AlibabaLegalSuitDominationPushAPIRequest) {
+	v.Reset()
+	poolAlibabaLegalSuitDominationPushAPIRequest.Put(v)
 }

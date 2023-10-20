@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthDrugDownloadGetentauthentAPIRequest struct {
 // NewAlibabaAlihealthDrugDownloadGetentauthentRequest 初始化AlibabaAlihealthDrugDownloadGetentauthentAPIRequest对象
 func NewAlibabaAlihealthDrugDownloadGetentauthentRequest() *AlibabaAlihealthDrugDownloadGetentauthentAPIRequest {
 	return &AlibabaAlihealthDrugDownloadGetentauthentAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) Reset() {
+	r._authBeginDate = ""
+	r._authEndDate = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) SetAuthEndDate(_au
 // GetAuthEndDate AuthEndDate Getter
 func (r AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) GetAuthEndDate() string {
 	return r._authEndDate
+}
+
+var poolAlibabaAlihealthDrugDownloadGetentauthentAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugDownloadGetentauthentRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugDownloadGetentauthentRequest 从 sync.Pool 获取 AlibabaAlihealthDrugDownloadGetentauthentAPIRequest
+func GetAlibabaAlihealthDrugDownloadGetentauthentAPIRequest() *AlibabaAlihealthDrugDownloadGetentauthentAPIRequest {
+	return poolAlibabaAlihealthDrugDownloadGetentauthentAPIRequest.Get().(*AlibabaAlihealthDrugDownloadGetentauthentAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugDownloadGetentauthentAPIRequest 将 AlibabaAlihealthDrugDownloadGetentauthentAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugDownloadGetentauthentAPIRequest(v *AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugDownloadGetentauthentAPIRequest.Put(v)
 }

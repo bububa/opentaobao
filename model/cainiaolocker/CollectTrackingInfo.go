@@ -1,5 +1,9 @@
 package cainiaolocker
 
+import (
+	"sync"
+)
+
 // CollectTrackingInfo 结构体
 type CollectTrackingInfo struct {
 	// 站点id
@@ -24,4 +28,31 @@ type CollectTrackingInfo struct {
 	OrderType int64 `json:"order_type,omitempty" xml:"order_type,omitempty"`
 	// 动作发生时间戳，单位：毫秒
 	ActionTime int64 `json:"action_time,omitempty" xml:"action_time,omitempty"`
+}
+
+var poolCollectTrackingInfo = sync.Pool{
+	New: func() any {
+		return new(CollectTrackingInfo)
+	},
+}
+
+// GetCollectTrackingInfo() 从对象池中获取CollectTrackingInfo
+func GetCollectTrackingInfo() *CollectTrackingInfo {
+	return poolCollectTrackingInfo.Get().(*CollectTrackingInfo)
+}
+
+// ReleaseCollectTrackingInfo 释放CollectTrackingInfo
+func ReleaseCollectTrackingInfo(v *CollectTrackingInfo) {
+	v.StationId = ""
+	v.GetterPhone = ""
+	v.PostPhone = ""
+	v.Extra = ""
+	v.StationNo = ""
+	v.MailNo = ""
+	v.ActionCode = ""
+	v.OrderCode = ""
+	v.CpCode = ""
+	v.OrderType = 0
+	v.ActionTime = 0
+	poolCollectTrackingInfo.Put(v)
 }

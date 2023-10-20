@@ -1,5 +1,9 @@
 package alihealthpw
 
+import (
+	"sync"
+)
+
 // PatientInfo 结构体
 type PatientInfo struct {
 	// 生日
@@ -10,4 +14,24 @@ type PatientInfo struct {
 	PatientSex string `json:"patient_sex,omitempty" xml:"patient_sex,omitempty"`
 	// 姓名
 	PatientName string `json:"patient_name,omitempty" xml:"patient_name,omitempty"`
+}
+
+var poolPatientInfo = sync.Pool{
+	New: func() any {
+		return new(PatientInfo)
+	},
+}
+
+// GetPatientInfo() 从对象池中获取PatientInfo
+func GetPatientInfo() *PatientInfo {
+	return poolPatientInfo.Get().(*PatientInfo)
+}
+
+// ReleasePatientInfo 释放PatientInfo
+func ReleasePatientInfo(v *PatientInfo) {
+	v.Birthday = ""
+	v.PatientCard = ""
+	v.PatientSex = ""
+	v.PatientName = ""
+	poolPatientInfo.Put(v)
 }

@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // BillInOutDetailDto 结构体
 type BillInOutDetailDto struct {
 	// 单据详情
@@ -28,4 +32,33 @@ type BillInOutDetailDto struct {
 	BillCode string `json:"bill_code,omitempty" xml:"bill_code,omitempty"`
 	// 上传文件名称
 	UploadFileName string `json:"upload_file_name,omitempty" xml:"upload_file_name,omitempty"`
+}
+
+var poolBillInOutDetailDto = sync.Pool{
+	New: func() any {
+		return new(BillInOutDetailDto)
+	},
+}
+
+// GetBillInOutDetailDto() 从对象池中获取BillInOutDetailDto
+func GetBillInOutDetailDto() *BillInOutDetailDto {
+	return poolBillInOutDetailDto.Get().(*BillInOutDetailDto)
+}
+
+// ReleaseBillInOutDetailDto 释放BillInOutDetailDto
+func ReleaseBillInOutDetailDto(v *BillInOutDetailDto) {
+	v.BillChkInOutDetailListDTOList = v.BillChkInOutDetailListDTOList[:0]
+	v.Codes = v.Codes[:0]
+	v.ModDate = ""
+	v.ProcessDate = ""
+	v.BillTime = ""
+	v.ToUserId = ""
+	v.ToEntName = ""
+	v.FromUserId = ""
+	v.FromEntName = ""
+	v.BillTypeName = ""
+	v.BillType = ""
+	v.BillCode = ""
+	v.UploadFileName = ""
+	poolBillInOutDetailDto.Put(v)
 }

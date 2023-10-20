@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // SingleBenefitRequest 结构体
 type SingleBenefitRequest struct {
 	// 事务id
@@ -20,4 +24,29 @@ type SingleBenefitRequest struct {
 	PurchaserId int64 `json:"purchaser_id,omitempty" xml:"purchaser_id,omitempty"`
 	// 活动详情id
 	DetailId int64 `json:"detail_id,omitempty" xml:"detail_id,omitempty"`
+}
+
+var poolSingleBenefitRequest = sync.Pool{
+	New: func() any {
+		return new(SingleBenefitRequest)
+	},
+}
+
+// GetSingleBenefitRequest() 从对象池中获取SingleBenefitRequest
+func GetSingleBenefitRequest() *SingleBenefitRequest {
+	return poolSingleBenefitRequest.Get().(*SingleBenefitRequest)
+}
+
+// ReleaseSingleBenefitRequest 释放SingleBenefitRequest
+func ReleaseSingleBenefitRequest(v *SingleBenefitRequest) {
+	v.UniqueId = ""
+	v.TraceId = ""
+	v.BizId = ""
+	v.CardType = ""
+	v.BenefitType = 0
+	v.SendCount = 0
+	v.RelationId = 0
+	v.PurchaserId = 0
+	v.DetailId = 0
+	poolSingleBenefitRequest.Put(v)
 }

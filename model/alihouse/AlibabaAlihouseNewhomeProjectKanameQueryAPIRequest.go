@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeProjectKanameQueryAPIRequest struct {
 // NewAlibabaAlihouseNewhomeProjectKanameQueryRequest 初始化AlibabaAlihouseNewhomeProjectKanameQueryAPIRequest对象
 func NewAlibabaAlihouseNewhomeProjectKanameQueryRequest() *AlibabaAlihouseNewhomeProjectKanameQueryAPIRequest {
 	return &AlibabaAlihouseNewhomeProjectKanameQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeProjectKanameQueryAPIRequest) Reset() {
+	r._kaProjectMid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeProjectKanameQueryAPIRequest) SetKaProjectMid(_ka
 // GetKaProjectMid KaProjectMid Getter
 func (r AlibabaAlihouseNewhomeProjectKanameQueryAPIRequest) GetKaProjectMid() int64 {
 	return r._kaProjectMid
+}
+
+var poolAlibabaAlihouseNewhomeProjectKanameQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeProjectKanameQueryRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeProjectKanameQueryRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeProjectKanameQueryAPIRequest
+func GetAlibabaAlihouseNewhomeProjectKanameQueryAPIRequest() *AlibabaAlihouseNewhomeProjectKanameQueryAPIRequest {
+	return poolAlibabaAlihouseNewhomeProjectKanameQueryAPIRequest.Get().(*AlibabaAlihouseNewhomeProjectKanameQueryAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeProjectKanameQueryAPIRequest 将 AlibabaAlihouseNewhomeProjectKanameQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeProjectKanameQueryAPIRequest(v *AlibabaAlihouseNewhomeProjectKanameQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeProjectKanameQueryAPIRequest.Put(v)
 }

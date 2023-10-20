@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TmallServicecenterWorkcardCompleteAPIRequest struct {
 // NewTmallServicecenterWorkcardCompleteRequest 初始化TmallServicecenterWorkcardCompleteAPIRequest对象
 func NewTmallServicecenterWorkcardCompleteRequest() *TmallServicecenterWorkcardCompleteAPIRequest {
 	return &TmallServicecenterWorkcardCompleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkcardCompleteAPIRequest) Reset() {
+	r._extJson = ""
+	r._latitude = ""
+	r._longitude = ""
+	r._picUrls = ""
+	r._workcardId = 0
+	r._completeCount = 0
+	r._sequence = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetSequence(_sequence int
 // GetSequence Sequence Getter
 func (r TmallServicecenterWorkcardCompleteAPIRequest) GetSequence() int64 {
 	return r._sequence
+}
+
+var poolTmallServicecenterWorkcardCompleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkcardCompleteRequest()
+	},
+}
+
+// GetTmallServicecenterWorkcardCompleteRequest 从 sync.Pool 获取 TmallServicecenterWorkcardCompleteAPIRequest
+func GetTmallServicecenterWorkcardCompleteAPIRequest() *TmallServicecenterWorkcardCompleteAPIRequest {
+	return poolTmallServicecenterWorkcardCompleteAPIRequest.Get().(*TmallServicecenterWorkcardCompleteAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkcardCompleteAPIRequest 将 TmallServicecenterWorkcardCompleteAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkcardCompleteAPIRequest(v *TmallServicecenterWorkcardCompleteAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkcardCompleteAPIRequest.Put(v)
 }

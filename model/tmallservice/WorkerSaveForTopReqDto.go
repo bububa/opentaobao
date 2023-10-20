@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // WorkerSaveForTopReqDto 结构体
 type WorkerSaveForTopReqDto struct {
 	// 身份证号码
@@ -16,4 +20,27 @@ type WorkerSaveForTopReqDto struct {
 	WorkerServiceAbility *WorkerServiceAbility `json:"worker_service_ability,omitempty" xml:"worker_service_ability,omitempty"`
 	// 加入的网点参数
 	JoinedStore *JoinedStore `json:"joined_store,omitempty" xml:"joined_store,omitempty"`
+}
+
+var poolWorkerSaveForTopReqDto = sync.Pool{
+	New: func() any {
+		return new(WorkerSaveForTopReqDto)
+	},
+}
+
+// GetWorkerSaveForTopReqDto() 从对象池中获取WorkerSaveForTopReqDto
+func GetWorkerSaveForTopReqDto() *WorkerSaveForTopReqDto {
+	return poolWorkerSaveForTopReqDto.Get().(*WorkerSaveForTopReqDto)
+}
+
+// ReleaseWorkerSaveForTopReqDto 释放WorkerSaveForTopReqDto
+func ReleaseWorkerSaveForTopReqDto(v *WorkerSaveForTopReqDto) {
+	v.IdNumber = ""
+	v.Address = ""
+	v.RealName = ""
+	v.Phone = ""
+	v.AddressId = 0
+	v.WorkerServiceAbility = nil
+	v.JoinedStore = nil
+	poolWorkerSaveForTopReqDto.Put(v)
 }

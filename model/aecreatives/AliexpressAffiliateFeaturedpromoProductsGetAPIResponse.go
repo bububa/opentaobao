@@ -2,6 +2,7 @@ package aecreatives
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliexpressAffiliateFeaturedpromoProductsGetAPIResponse struct {
 	AliexpressAffiliateFeaturedpromoProductsGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliexpressAffiliateFeaturedpromoProductsGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressAffiliateFeaturedpromoProductsGetAPIResponseModel).Reset()
+}
+
 // AliexpressAffiliateFeaturedpromoProductsGetAPIResponseModel is 联盟主题推广活动商品信息获取 成功返回结果
 type AliexpressAffiliateFeaturedpromoProductsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_affiliate_featuredpromo_products_get_response"`
@@ -22,4 +29,27 @@ type AliexpressAffiliateFeaturedpromoProductsGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	RespResult *ResponseDto `json:"resp_result,omitempty" xml:"resp_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressAffiliateFeaturedpromoProductsGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RespResult = nil
+}
+
+var poolAliexpressAffiliateFeaturedpromoProductsGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressAffiliateFeaturedpromoProductsGetAPIResponse)
+	},
+}
+
+// GetAliexpressAffiliateFeaturedpromoProductsGetAPIResponse 从 sync.Pool 获取 AliexpressAffiliateFeaturedpromoProductsGetAPIResponse
+func GetAliexpressAffiliateFeaturedpromoProductsGetAPIResponse() *AliexpressAffiliateFeaturedpromoProductsGetAPIResponse {
+	return poolAliexpressAffiliateFeaturedpromoProductsGetAPIResponse.Get().(*AliexpressAffiliateFeaturedpromoProductsGetAPIResponse)
+}
+
+// ReleaseAliexpressAffiliateFeaturedpromoProductsGetAPIResponse 将 AliexpressAffiliateFeaturedpromoProductsGetAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressAffiliateFeaturedpromoProductsGetAPIResponse(v *AliexpressAffiliateFeaturedpromoProductsGetAPIResponse) {
+	v.Reset()
+	poolAliexpressAffiliateFeaturedpromoProductsGetAPIResponse.Put(v)
 }

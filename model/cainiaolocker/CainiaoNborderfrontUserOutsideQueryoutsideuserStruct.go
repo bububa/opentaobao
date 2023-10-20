@@ -1,5 +1,9 @@
 package cainiaolocker
 
+import (
+	"sync"
+)
+
 // CainiaoNborderfrontUserOutsideQueryoutsideuserStruct 结构体
 type CainiaoNborderfrontUserOutsideQueryoutsideuserStruct struct {
 	// cpUserId
@@ -20,4 +24,29 @@ type CainiaoNborderfrontUserOutsideQueryoutsideuserStruct struct {
 	CityName string `json:"city_name,omitempty" xml:"city_name,omitempty"`
 	// 321000
 	CityCode string `json:"city_code,omitempty" xml:"city_code,omitempty"`
+}
+
+var poolCainiaoNborderfrontUserOutsideQueryoutsideuserStruct = sync.Pool{
+	New: func() any {
+		return new(CainiaoNborderfrontUserOutsideQueryoutsideuserStruct)
+	},
+}
+
+// GetCainiaoNborderfrontUserOutsideQueryoutsideuserStruct() 从对象池中获取CainiaoNborderfrontUserOutsideQueryoutsideuserStruct
+func GetCainiaoNborderfrontUserOutsideQueryoutsideuserStruct() *CainiaoNborderfrontUserOutsideQueryoutsideuserStruct {
+	return poolCainiaoNborderfrontUserOutsideQueryoutsideuserStruct.Get().(*CainiaoNborderfrontUserOutsideQueryoutsideuserStruct)
+}
+
+// ReleaseCainiaoNborderfrontUserOutsideQueryoutsideuserStruct 释放CainiaoNborderfrontUserOutsideQueryoutsideuserStruct
+func ReleaseCainiaoNborderfrontUserOutsideQueryoutsideuserStruct(v *CainiaoNborderfrontUserOutsideQueryoutsideuserStruct) {
+	v.CpUserId = ""
+	v.CpCode = ""
+	v.WorkStationName = ""
+	v.WorkStationCode = ""
+	v.AlipayAccount = ""
+	v.Name = ""
+	v.Mobile = ""
+	v.CityName = ""
+	v.CityCode = ""
+	poolCainiaoNborderfrontUserOutsideQueryoutsideuserStruct.Put(v)
 }

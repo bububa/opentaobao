@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // OrderReceiverCreate 结构体
 type OrderReceiverCreate struct {
 	// 体积，单位mm3
@@ -20,4 +24,29 @@ type OrderReceiverCreate struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 包裹数量
 	PackNum int64 `json:"pack_num,omitempty" xml:"pack_num,omitempty"`
+}
+
+var poolOrderReceiverCreate = sync.Pool{
+	New: func() any {
+		return new(OrderReceiverCreate)
+	},
+}
+
+// GetOrderReceiverCreate() 从对象池中获取OrderReceiverCreate
+func GetOrderReceiverCreate() *OrderReceiverCreate {
+	return poolOrderReceiverCreate.Get().(*OrderReceiverCreate)
+}
+
+// ReleaseOrderReceiverCreate 释放OrderReceiverCreate
+func ReleaseOrderReceiverCreate(v *OrderReceiverCreate) {
+	v.Volume = ""
+	v.LeafCatId = ""
+	v.ItemName = ""
+	v.Feature = ""
+	v.Weight = ""
+	v.Property = ""
+	v.AssembleType = ""
+	v.Quantity = 0
+	v.PackNum = 0
+	poolOrderReceiverCreate.Put(v)
 }

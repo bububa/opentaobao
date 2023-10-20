@@ -2,6 +2,7 @@ package alihealthmedical
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthMedicalImDataUploadAPIRequest struct {
 // NewAlibabaAlihealthMedicalImDataUploadRequest 初始化AlibabaAlihealthMedicalImDataUploadAPIRequest对象
 func NewAlibabaAlihealthMedicalImDataUploadRequest() *AlibabaAlihealthMedicalImDataUploadAPIRequest {
 	return &AlibabaAlihealthMedicalImDataUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthMedicalImDataUploadAPIRequest) Reset() {
+	r._uploadDataRequest = nil
+	r._file = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthMedicalImDataUploadAPIRequest) SetFile(_file *model.Fil
 // GetFile File Getter
 func (r AlibabaAlihealthMedicalImDataUploadAPIRequest) GetFile() *model.File {
 	return r._file
+}
+
+var poolAlibabaAlihealthMedicalImDataUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthMedicalImDataUploadRequest()
+	},
+}
+
+// GetAlibabaAlihealthMedicalImDataUploadRequest 从 sync.Pool 获取 AlibabaAlihealthMedicalImDataUploadAPIRequest
+func GetAlibabaAlihealthMedicalImDataUploadAPIRequest() *AlibabaAlihealthMedicalImDataUploadAPIRequest {
+	return poolAlibabaAlihealthMedicalImDataUploadAPIRequest.Get().(*AlibabaAlihealthMedicalImDataUploadAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthMedicalImDataUploadAPIRequest 将 AlibabaAlihealthMedicalImDataUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthMedicalImDataUploadAPIRequest(v *AlibabaAlihealthMedicalImDataUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthMedicalImDataUploadAPIRequest.Put(v)
 }

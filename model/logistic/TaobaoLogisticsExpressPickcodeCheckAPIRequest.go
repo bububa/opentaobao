@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsExpressPickcodeCheckAPIRequest struct {
 // NewTaobaoLogisticsExpressPickcodeCheckRequest 初始化TaobaoLogisticsExpressPickcodeCheckAPIRequest对象
 func NewTaobaoLogisticsExpressPickcodeCheckRequest() *TaobaoLogisticsExpressPickcodeCheckAPIRequest {
 	return &TaobaoLogisticsExpressPickcodeCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsExpressPickcodeCheckAPIRequest) Reset() {
+	r._tmsPickCodeRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsExpressPickcodeCheckAPIRequest) SetTmsPickCodeRequest(_t
 // GetTmsPickCodeRequest TmsPickCodeRequest Getter
 func (r TaobaoLogisticsExpressPickcodeCheckAPIRequest) GetTmsPickCodeRequest() *TmsPickCodeRequest {
 	return r._tmsPickCodeRequest
+}
+
+var poolTaobaoLogisticsExpressPickcodeCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsExpressPickcodeCheckRequest()
+	},
+}
+
+// GetTaobaoLogisticsExpressPickcodeCheckRequest 从 sync.Pool 获取 TaobaoLogisticsExpressPickcodeCheckAPIRequest
+func GetTaobaoLogisticsExpressPickcodeCheckAPIRequest() *TaobaoLogisticsExpressPickcodeCheckAPIRequest {
+	return poolTaobaoLogisticsExpressPickcodeCheckAPIRequest.Get().(*TaobaoLogisticsExpressPickcodeCheckAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsExpressPickcodeCheckAPIRequest 将 TaobaoLogisticsExpressPickcodeCheckAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsExpressPickcodeCheckAPIRequest(v *TaobaoLogisticsExpressPickcodeCheckAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsExpressPickcodeCheckAPIRequest.Put(v)
 }

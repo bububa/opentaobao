@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // IdleAdvMaterialUploadDetailTopParam 结构体
 type IdleAdvMaterialUploadDetailTopParam struct {
 	// 素材地址，必传字段, 如果链接有有效期，尽量有效期放开到1个小时
@@ -14,4 +18,26 @@ type IdleAdvMaterialUploadDetailTopParam struct {
 	Width int64 `json:"width,omitempty" xml:"width,omitempty"`
 	// 必填项,如果是视频素材，需要传当前视频的封面图的宽,如果是图片素材，需要传当前图片的高
 	Height int64 `json:"height,omitempty" xml:"height,omitempty"`
+}
+
+var poolIdleAdvMaterialUploadDetailTopParam = sync.Pool{
+	New: func() any {
+		return new(IdleAdvMaterialUploadDetailTopParam)
+	},
+}
+
+// GetIdleAdvMaterialUploadDetailTopParam() 从对象池中获取IdleAdvMaterialUploadDetailTopParam
+func GetIdleAdvMaterialUploadDetailTopParam() *IdleAdvMaterialUploadDetailTopParam {
+	return poolIdleAdvMaterialUploadDetailTopParam.Get().(*IdleAdvMaterialUploadDetailTopParam)
+}
+
+// ReleaseIdleAdvMaterialUploadDetailTopParam 释放IdleAdvMaterialUploadDetailTopParam
+func ReleaseIdleAdvMaterialUploadDetailTopParam(v *IdleAdvMaterialUploadDetailTopParam) {
+	v.Url = ""
+	v.Title = ""
+	v.CoverUrl = ""
+	v.Type = 0
+	v.Width = 0
+	v.Height = 0
+	poolIdleAdvMaterialUploadDetailTopParam.Put(v)
 }

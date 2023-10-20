@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // InvoiceDto 结构体
 type InvoiceDto struct {
 	// 3-digit number
@@ -12,4 +16,25 @@ type InvoiceDto struct {
 	InvoiceTotalValue string `json:"invoice_total_value,omitempty" xml:"invoice_total_value,omitempty"`
 	// 44-digit number
 	InvoiceKey string `json:"invoice_key,omitempty" xml:"invoice_key,omitempty"`
+}
+
+var poolInvoiceDto = sync.Pool{
+	New: func() any {
+		return new(InvoiceDto)
+	},
+}
+
+// GetInvoiceDto() 从对象池中获取InvoiceDto
+func GetInvoiceDto() *InvoiceDto {
+	return poolInvoiceDto.Get().(*InvoiceDto)
+}
+
+// ReleaseInvoiceDto 释放InvoiceDto
+func ReleaseInvoiceDto(v *InvoiceDto) {
+	v.InvoiceSeries = ""
+	v.InvoiceNumber = ""
+	v.InvoiceDate = ""
+	v.InvoiceTotalValue = ""
+	v.InvoiceKey = ""
+	poolInvoiceDto.Put(v)
 }

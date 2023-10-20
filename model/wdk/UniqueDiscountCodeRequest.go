@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // UniqueDiscountCodeRequest 结构体
 type UniqueDiscountCodeRequest struct {
 	// 过期时间。不传默认为当前时间+90天。最大支持有效期为90天后。
@@ -14,4 +18,26 @@ type UniqueDiscountCodeRequest struct {
 	DiscountPrice int64 `json:"discount_price,omitempty" xml:"discount_price,omitempty"`
 	// 折扣码类型, 7为折扣率码，8为一口价码
 	DiscountType int64 `json:"discount_type,omitempty" xml:"discount_type,omitempty"`
+}
+
+var poolUniqueDiscountCodeRequest = sync.Pool{
+	New: func() any {
+		return new(UniqueDiscountCodeRequest)
+	},
+}
+
+// GetUniqueDiscountCodeRequest() 从对象池中获取UniqueDiscountCodeRequest
+func GetUniqueDiscountCodeRequest() *UniqueDiscountCodeRequest {
+	return poolUniqueDiscountCodeRequest.Get().(*UniqueDiscountCodeRequest)
+}
+
+// ReleaseUniqueDiscountCodeRequest 释放UniqueDiscountCodeRequest
+func ReleaseUniqueDiscountCodeRequest(v *UniqueDiscountCodeRequest) {
+	v.ExpireTime = ""
+	v.StoreId = ""
+	v.SkuCode = ""
+	v.DiscountRate = 0
+	v.DiscountPrice = 0
+	v.DiscountType = 0
+	poolUniqueDiscountCodeRequest.Put(v)
 }

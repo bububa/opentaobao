@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoTbkItemInfoGetAPIRequest struct {
 // NewTaobaoTbkItemInfoGetRequest 初始化TaobaoTbkItemInfoGetAPIRequest对象
 func NewTaobaoTbkItemInfoGetRequest() *TaobaoTbkItemInfoGetAPIRequest {
 	return &TaobaoTbkItemInfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkItemInfoGetAPIRequest) Reset() {
+	r._numIids = ""
+	r._ip = ""
+	r._bizSceneId = ""
+	r._promotionType = ""
+	r._relationId = ""
+	r._platform = 0
+	r._manageItemPubId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoTbkItemInfoGetAPIRequest) SetManageItemPubId(_manageItemPubId int
 // GetManageItemPubId ManageItemPubId Getter
 func (r TaobaoTbkItemInfoGetAPIRequest) GetManageItemPubId() int64 {
 	return r._manageItemPubId
+}
+
+var poolTaobaoTbkItemInfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkItemInfoGetRequest()
+	},
+}
+
+// GetTaobaoTbkItemInfoGetRequest 从 sync.Pool 获取 TaobaoTbkItemInfoGetAPIRequest
+func GetTaobaoTbkItemInfoGetAPIRequest() *TaobaoTbkItemInfoGetAPIRequest {
+	return poolTaobaoTbkItemInfoGetAPIRequest.Get().(*TaobaoTbkItemInfoGetAPIRequest)
+}
+
+// ReleaseTaobaoTbkItemInfoGetAPIRequest 将 TaobaoTbkItemInfoGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkItemInfoGetAPIRequest(v *TaobaoTbkItemInfoGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkItemInfoGetAPIRequest.Put(v)
 }

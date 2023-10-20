@@ -1,5 +1,9 @@
 package exchange
 
+import (
+	"sync"
+)
+
 // ExchangeBaseResponse 结构体
 type ExchangeBaseResponse struct {
 	// 返回结果说明
@@ -10,4 +14,24 @@ type ExchangeBaseResponse struct {
 	Exchange *Exchange `json:"exchange,omitempty" xml:"exchange,omitempty"`
 	// 是否成功调用
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolExchangeBaseResponse = sync.Pool{
+	New: func() any {
+		return new(ExchangeBaseResponse)
+	},
+}
+
+// GetExchangeBaseResponse() 从对象池中获取ExchangeBaseResponse
+func GetExchangeBaseResponse() *ExchangeBaseResponse {
+	return poolExchangeBaseResponse.Get().(*ExchangeBaseResponse)
+}
+
+// ReleaseExchangeBaseResponse 释放ExchangeBaseResponse
+func ReleaseExchangeBaseResponse(v *ExchangeBaseResponse) {
+	v.Message = ""
+	v.MsgCode = ""
+	v.Exchange = nil
+	v.Success = false
+	poolExchangeBaseResponse.Put(v)
 }

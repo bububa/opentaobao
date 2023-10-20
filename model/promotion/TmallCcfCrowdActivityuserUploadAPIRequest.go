@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallCcfCrowdActivityuserUploadAPIRequest struct {
 // NewTmallCcfCrowdActivityuserUploadRequest 初始化TmallCcfCrowdActivityuserUploadAPIRequest对象
 func NewTmallCcfCrowdActivityuserUploadRequest() *TmallCcfCrowdActivityuserUploadAPIRequest {
 	return &TmallCcfCrowdActivityuserUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCcfCrowdActivityuserUploadAPIRequest) Reset() {
+	r._crowdTypes = r._crowdTypes[:0]
+	r._taobaoOpenId = ""
+	r._taobaoAppKey = ""
+	r._activityId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallCcfCrowdActivityuserUploadAPIRequest) SetActivityId(_activityId in
 // GetActivityId ActivityId Getter
 func (r TmallCcfCrowdActivityuserUploadAPIRequest) GetActivityId() int64 {
 	return r._activityId
+}
+
+var poolTmallCcfCrowdActivityuserUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCcfCrowdActivityuserUploadRequest()
+	},
+}
+
+// GetTmallCcfCrowdActivityuserUploadRequest 从 sync.Pool 获取 TmallCcfCrowdActivityuserUploadAPIRequest
+func GetTmallCcfCrowdActivityuserUploadAPIRequest() *TmallCcfCrowdActivityuserUploadAPIRequest {
+	return poolTmallCcfCrowdActivityuserUploadAPIRequest.Get().(*TmallCcfCrowdActivityuserUploadAPIRequest)
+}
+
+// ReleaseTmallCcfCrowdActivityuserUploadAPIRequest 将 TmallCcfCrowdActivityuserUploadAPIRequest 放入 sync.Pool
+func ReleaseTmallCcfCrowdActivityuserUploadAPIRequest(v *TmallCcfCrowdActivityuserUploadAPIRequest) {
+	v.Reset()
+	poolTmallCcfCrowdActivityuserUploadAPIRequest.Put(v)
 }

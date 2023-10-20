@@ -9,11 +9,6 @@ import (
 // alibaba.jym.item.external.goods.batch.synoffsale
 //
 // 同步下架接口
-func AlibabaJymItemExternalGoodsBatchSynoffsale(clt *core.SDKClient, req *jym.AlibabaJymItemExternalGoodsBatchSynoffsaleAPIRequest, session string) (*jym.AlibabaJymItemExternalGoodsBatchSynoffsaleAPIResponse, error) {
-	var resp jym.AlibabaJymItemExternalGoodsBatchSynoffsaleAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaJymItemExternalGoodsBatchSynoffsale(clt *core.SDKClient, req *jym.AlibabaJymItemExternalGoodsBatchSynoffsaleAPIRequest, resp *jym.AlibabaJymItemExternalGoodsBatchSynoffsaleAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

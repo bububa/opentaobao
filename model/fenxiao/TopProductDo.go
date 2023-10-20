@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // TopProductDo 结构体
 type TopProductDo struct {
 	// 分销产品SKU列表
@@ -60,4 +64,49 @@ type TopProductDo struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 累计采购次数
 	OrdersCount int64 `json:"orders_count,omitempty" xml:"orders_count,omitempty"`
+}
+
+var poolTopProductDo = sync.Pool{
+	New: func() any {
+		return new(TopProductDo)
+	},
+}
+
+// GetTopProductDo() 从对象池中获取TopProductDo
+func GetTopProductDo() *TopProductDo {
+	return poolTopProductDo.Get().(*TopProductDo)
+}
+
+// ReleaseTopProductDo 释放TopProductDo
+func ReleaseTopProductDo(v *TopProductDo) {
+	v.Skus = v.Skus[:0]
+	v.City = ""
+	v.CostPriceYuan = ""
+	v.DescPath = ""
+	v.Created = ""
+	v.Modified = ""
+	v.PostageEms = ""
+	v.PostageFast = ""
+	v.PostageOrdinary = ""
+	v.OuterId = ""
+	v.Prov = ""
+	v.RetailPriceHigh = ""
+	v.RetailPriceLow = ""
+	v.StandardPrice = ""
+	v.Name = ""
+	v.Pictures = ""
+	v.HaveInvoice = 0
+	v.HaveQuarantee = 0
+	v.AuctionId = 0
+	v.ItemsCount = 0
+	v.PostageId = 0
+	v.PostageType = 0
+	v.Pid = 0
+	v.ProductLineId = 0
+	v.Quantity = 0
+	v.ScItemId = 0
+	v.SpuId = 0
+	v.Status = 0
+	v.OrdersCount = 0
+	poolTopProductDo.Put(v)
 }

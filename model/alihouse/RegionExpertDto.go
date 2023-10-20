@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // RegionExpertDto 结构体
 type RegionExpertDto struct {
 	// 经纪人信息
@@ -14,4 +18,26 @@ type RegionExpertDto struct {
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 	// 负责业务1-新房 2-二手房
 	BusinessType int64 `json:"business_type,omitempty" xml:"business_type,omitempty"`
+}
+
+var poolRegionExpertDto = sync.Pool{
+	New: func() any {
+		return new(RegionExpertDto)
+	},
+}
+
+// GetRegionExpertDto() 从对象池中获取RegionExpertDto
+func GetRegionExpertDto() *RegionExpertDto {
+	return poolRegionExpertDto.Get().(*RegionExpertDto)
+}
+
+// ReleaseRegionExpertDto 释放RegionExpertDto
+func ReleaseRegionExpertDto(v *RegionExpertDto) {
+	v.OuterConsultantInfos = v.OuterConsultantInfos[:0]
+	v.OuterRegionId = ""
+	v.RegionType = 0
+	v.IsTest = 0
+	v.Version = 0
+	v.BusinessType = 0
+	poolRegionExpertDto.Put(v)
 }

@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoServindustryFinanceGeexOrderUpdateAPIRequest struct {
 // NewTaobaoServindustryFinanceGeexOrderUpdateRequest 初始化TaobaoServindustryFinanceGeexOrderUpdateAPIRequest对象
 func NewTaobaoServindustryFinanceGeexOrderUpdateRequest() *TaobaoServindustryFinanceGeexOrderUpdateAPIRequest {
 	return &TaobaoServindustryFinanceGeexOrderUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoServindustryFinanceGeexOrderUpdateAPIRequest) Reset() {
+	r._reason = ""
+	r._alscOrderId = ""
+	r._applyStatus = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoServindustryFinanceGeexOrderUpdateAPIRequest) SetApplyStatus(_app
 // GetApplyStatus ApplyStatus Getter
 func (r TaobaoServindustryFinanceGeexOrderUpdateAPIRequest) GetApplyStatus() string {
 	return r._applyStatus
+}
+
+var poolTaobaoServindustryFinanceGeexOrderUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoServindustryFinanceGeexOrderUpdateRequest()
+	},
+}
+
+// GetTaobaoServindustryFinanceGeexOrderUpdateRequest 从 sync.Pool 获取 TaobaoServindustryFinanceGeexOrderUpdateAPIRequest
+func GetTaobaoServindustryFinanceGeexOrderUpdateAPIRequest() *TaobaoServindustryFinanceGeexOrderUpdateAPIRequest {
+	return poolTaobaoServindustryFinanceGeexOrderUpdateAPIRequest.Get().(*TaobaoServindustryFinanceGeexOrderUpdateAPIRequest)
+}
+
+// ReleaseTaobaoServindustryFinanceGeexOrderUpdateAPIRequest 将 TaobaoServindustryFinanceGeexOrderUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoServindustryFinanceGeexOrderUpdateAPIRequest(v *TaobaoServindustryFinanceGeexOrderUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoServindustryFinanceGeexOrderUpdateAPIRequest.Put(v)
 }

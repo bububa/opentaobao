@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // ReceiptDo 结构体
 type ReceiptDo struct {
 	// 开票时间
@@ -16,4 +20,27 @@ type ReceiptDo struct {
 	AgentId int64 `json:"agent_id,omitempty" xml:"agent_id,omitempty"`
 	// 发票状态1成功0失败-1异常
 	ReceiptStatus int64 `json:"receipt_status,omitempty" xml:"receipt_status,omitempty"`
+}
+
+var poolReceiptDo = sync.Pool{
+	New: func() any {
+		return new(ReceiptDo)
+	},
+}
+
+// GetReceiptDo() 从对象池中获取ReceiptDo
+func GetReceiptDo() *ReceiptDo {
+	return poolReceiptDo.Get().(*ReceiptDo)
+}
+
+// ReleaseReceiptDo 释放ReceiptDo
+func ReleaseReceiptDo(v *ReceiptDo) {
+	v.ReceiptDateTime = ""
+	v.ReceiptNumber = ""
+	v.ReceiptUrl = ""
+	v.FailReason = ""
+	v.FailCode = ""
+	v.AgentId = 0
+	v.ReceiptStatus = 0
+	poolReceiptDo.Put(v)
 }

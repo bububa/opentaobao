@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Presalesorder 结构体
 type Presalesorder struct {
 	// 包裹信息
@@ -14,4 +18,26 @@ type Presalesorder struct {
 	StoreCode string `json:"store_code,omitempty" xml:"store_code,omitempty"`
 	// 扩展属性(JSON格式)
 	ExtendFields string `json:"extend_fields,omitempty" xml:"extend_fields,omitempty"`
+}
+
+var poolPresalesorder = sync.Pool{
+	New: func() any {
+		return new(Presalesorder)
+	},
+}
+
+// GetPresalesorder() 从对象池中获取Presalesorder
+func GetPresalesorder() *Presalesorder {
+	return poolPresalesorder.Get().(*Presalesorder)
+}
+
+// ReleasePresalesorder 释放Presalesorder
+func ReleasePresalesorder(v *Presalesorder) {
+	v.Packages = v.Packages[:0]
+	v.OrderConfirmTime = ""
+	v.PresalesOrderId = ""
+	v.PresalesOrderCode = ""
+	v.StoreCode = ""
+	v.ExtendFields = ""
+	poolPresalesorder.Put(v)
 }

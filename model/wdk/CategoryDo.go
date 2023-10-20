@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // CategoryDo 结构体
 type CategoryDo struct {
 	// 类目编码
@@ -16,4 +20,27 @@ type CategoryDo struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 是否是叶子节点（叶子类目则不允许再添加子类目,非叶子类目不允许添加商品，默认false）
 	Leaf bool `json:"leaf,omitempty" xml:"leaf,omitempty"`
+}
+
+var poolCategoryDo = sync.Pool{
+	New: func() any {
+		return new(CategoryDo)
+	},
+}
+
+// GetCategoryDo() 从对象池中获取CategoryDo
+func GetCategoryDo() *CategoryDo {
+	return poolCategoryDo.Get().(*CategoryDo)
+}
+
+// ReleaseCategoryDo 释放CategoryDo
+func ReleaseCategoryDo(v *CategoryDo) {
+	v.Code = ""
+	v.Name = ""
+	v.ParentCode = ""
+	v.Desc = ""
+	v.SortOrder = 0
+	v.Status = 0
+	v.Leaf = false
+	poolCategoryDo.Put(v)
 }

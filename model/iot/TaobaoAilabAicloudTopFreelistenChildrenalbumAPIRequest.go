@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest struct {
 // NewTaobaoAilabAicloudTopFreelistenChildrenalbumRequest 初始化TaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest对象
 func NewTaobaoAilabAicloudTopFreelistenChildrenalbumRequest() *TaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest {
 	return &TaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest) Reset() {
+	r._schema = ""
+	r._userId = ""
+	r._utdId = ""
+	r._ext = ""
+	r._param1 = ""
+	r._param2 = 0
+	r._param3 = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest) SetParam3(_para
 // GetParam3 Param3 Getter
 func (r TaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest) GetParam3() int64 {
 	return r._param3
+}
+
+var poolTaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopFreelistenChildrenalbumRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopFreelistenChildrenalbumRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest
+func GetTaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest() *TaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest {
+	return poolTaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest.Get().(*TaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest 将 TaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest(v *TaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alitrip.agent.flight.sell.ticketing.issue
 //
 // 销售出票
-func AlitripAgentFlightSellTicketingIssue(clt *core.SDKClient, req *flight.AlitripAgentFlightSellTicketingIssueAPIRequest, session string) (*flight.AlitripAgentFlightSellTicketingIssueAPIResponse, error) {
-	var resp flight.AlitripAgentFlightSellTicketingIssueAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripAgentFlightSellTicketingIssue(clt *core.SDKClient, req *flight.AlitripAgentFlightSellTicketingIssueAPIRequest, resp *flight.AlitripAgentFlightSellTicketingIssueAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

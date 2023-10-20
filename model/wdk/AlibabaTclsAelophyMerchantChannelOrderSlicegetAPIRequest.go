@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest struct {
 // NewAlibabaTclsAelophyMerchantChannelOrderSlicegetRequest 初始化AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest对象
 func NewAlibabaTclsAelophyMerchantChannelOrderSlicegetRequest() *AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest {
 	return &AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest) Reset() {
+	r._timeSliceGetRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest) SetTimeSliceG
 // GetTimeSliceGetRequest TimeSliceGetRequest Getter
 func (r AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest) GetTimeSliceGetRequest() *TimeSliceGetRequest {
 	return r._timeSliceGetRequest
+}
+
+var poolAlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsAelophyMerchantChannelOrderSlicegetRequest()
+	},
+}
+
+// GetAlibabaTclsAelophyMerchantChannelOrderSlicegetRequest 从 sync.Pool 获取 AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest
+func GetAlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest() *AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest {
+	return poolAlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest.Get().(*AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest)
+}
+
+// ReleaseAlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest 将 AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest(v *AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest.Put(v)
 }

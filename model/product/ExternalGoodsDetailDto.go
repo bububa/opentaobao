@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // ExternalGoodsDetailDto 结构体
 type ExternalGoodsDetailDto struct {
 	// 商品图片url列表
@@ -18,4 +22,28 @@ type ExternalGoodsDetailDto struct {
 	SupportRetrieveCompensation bool `json:"support_retrieve_compensation,omitempty" xml:"support_retrieve_compensation,omitempty"`
 	// 是否支持议价
 	CanBargain bool `json:"can_bargain,omitempty" xml:"can_bargain,omitempty"`
+}
+
+var poolExternalGoodsDetailDto = sync.Pool{
+	New: func() any {
+		return new(ExternalGoodsDetailDto)
+	},
+}
+
+// GetExternalGoodsDetailDto() 从对象池中获取ExternalGoodsDetailDto
+func GetExternalGoodsDetailDto() *ExternalGoodsDetailDto {
+	return poolExternalGoodsDetailDto.Get().(*ExternalGoodsDetailDto)
+}
+
+// ReleaseExternalGoodsDetailDto 释放ExternalGoodsDetailDto
+func ReleaseExternalGoodsDetailDto(v *ExternalGoodsDetailDto) {
+	v.ImageList = v.ImageList[:0]
+	v.GoodsPropertyList = v.GoodsPropertyList[:0]
+	v.SellerAccountPropertyList = v.SellerAccountPropertyList[:0]
+	v.GoodsBaseInfo = nil
+	v.Category = nil
+	v.GameProperty = nil
+	v.SupportRetrieveCompensation = false
+	v.CanBargain = false
+	poolExternalGoodsDetailDto.Put(v)
 }

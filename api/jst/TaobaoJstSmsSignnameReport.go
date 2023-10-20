@@ -9,11 +9,6 @@ import (
 // taobao.jst.sms.signname.report
 //
 // 用于上传目前已经在阿里通信申请到的且正在使用的签名数据，确保签名数据正确，否则会导致短信发送失败！！！
-func TaobaoJstSmsSignnameReport(clt *core.SDKClient, req *jst.TaobaoJstSmsSignnameReportAPIRequest, session string) (*jst.TaobaoJstSmsSignnameReportAPIResponse, error) {
-	var resp jst.TaobaoJstSmsSignnameReportAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJstSmsSignnameReport(clt *core.SDKClient, req *jst.TaobaoJstSmsSignnameReportAPIRequest, resp *jst.TaobaoJstSmsSignnameReportAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

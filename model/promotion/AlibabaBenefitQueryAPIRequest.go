@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,16 @@ type AlibabaBenefitQueryAPIRequest struct {
 // NewAlibabaBenefitQueryRequest 初始化AlibabaBenefitQueryAPIRequest对象
 func NewAlibabaBenefitQueryRequest() *AlibabaBenefitQueryAPIRequest {
 	return &AlibabaBenefitQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaBenefitQueryAPIRequest) Reset() {
+	r._ename = ""
+	r._awardType = ""
+	r._appName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -87,4 +96,21 @@ func (r *AlibabaBenefitQueryAPIRequest) SetAppName(_appName string) error {
 // GetAppName AppName Getter
 func (r AlibabaBenefitQueryAPIRequest) GetAppName() string {
 	return r._appName
+}
+
+var poolAlibabaBenefitQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaBenefitQueryRequest()
+	},
+}
+
+// GetAlibabaBenefitQueryRequest 从 sync.Pool 获取 AlibabaBenefitQueryAPIRequest
+func GetAlibabaBenefitQueryAPIRequest() *AlibabaBenefitQueryAPIRequest {
+	return poolAlibabaBenefitQueryAPIRequest.Get().(*AlibabaBenefitQueryAPIRequest)
+}
+
+// ReleaseAlibabaBenefitQueryAPIRequest 将 AlibabaBenefitQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaBenefitQueryAPIRequest(v *AlibabaBenefitQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaBenefitQueryAPIRequest.Put(v)
 }

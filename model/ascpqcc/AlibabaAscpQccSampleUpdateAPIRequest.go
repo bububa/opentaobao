@@ -2,6 +2,7 @@ package ascpqcc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpQccSampleUpdateAPIRequest struct {
 // NewAlibabaAscpQccSampleUpdateRequest 初始化AlibabaAscpQccSampleUpdateAPIRequest对象
 func NewAlibabaAscpQccSampleUpdateRequest() *AlibabaAscpQccSampleUpdateAPIRequest {
 	return &AlibabaAscpQccSampleUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpQccSampleUpdateAPIRequest) Reset() {
+	r._updateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpQccSampleUpdateAPIRequest) SetUpdateRequest(_updateRequest *
 // GetUpdateRequest UpdateRequest Getter
 func (r AlibabaAscpQccSampleUpdateAPIRequest) GetUpdateRequest() *UpdateSampleRequest {
 	return r._updateRequest
+}
+
+var poolAlibabaAscpQccSampleUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpQccSampleUpdateRequest()
+	},
+}
+
+// GetAlibabaAscpQccSampleUpdateRequest 从 sync.Pool 获取 AlibabaAscpQccSampleUpdateAPIRequest
+func GetAlibabaAscpQccSampleUpdateAPIRequest() *AlibabaAscpQccSampleUpdateAPIRequest {
+	return poolAlibabaAscpQccSampleUpdateAPIRequest.Get().(*AlibabaAscpQccSampleUpdateAPIRequest)
+}
+
+// ReleaseAlibabaAscpQccSampleUpdateAPIRequest 将 AlibabaAscpQccSampleUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpQccSampleUpdateAPIRequest(v *AlibabaAscpQccSampleUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpQccSampleUpdateAPIRequest.Put(v)
 }

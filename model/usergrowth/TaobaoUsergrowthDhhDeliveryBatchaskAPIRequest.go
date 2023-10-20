@@ -2,6 +2,7 @@ package usergrowth
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest struct {
 // NewTaobaoUsergrowthDhhDeliveryBatchaskRequest 初始化TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest对象
 func NewTaobaoUsergrowthDhhDeliveryBatchaskRequest() *TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest {
 	return &TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) Reset() {
+	r._oaidMd5 = ""
+	r._idfaMd5 = ""
+	r._imeiMd5 = ""
+	r._advertisingSpaceId = ""
+	r._channel = ""
+	r._caidMd5 = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) SetCaidMd5(_caidMd5 stri
 // GetCaidMd5 CaidMd5 Getter
 func (r TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) GetCaidMd5() string {
 	return r._caidMd5
+}
+
+var poolTaobaoUsergrowthDhhDeliveryBatchaskAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUsergrowthDhhDeliveryBatchaskRequest()
+	},
+}
+
+// GetTaobaoUsergrowthDhhDeliveryBatchaskRequest 从 sync.Pool 获取 TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest
+func GetTaobaoUsergrowthDhhDeliveryBatchaskAPIRequest() *TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest {
+	return poolTaobaoUsergrowthDhhDeliveryBatchaskAPIRequest.Get().(*TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest)
+}
+
+// ReleaseTaobaoUsergrowthDhhDeliveryBatchaskAPIRequest 将 TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUsergrowthDhhDeliveryBatchaskAPIRequest(v *TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) {
+	v.Reset()
+	poolTaobaoUsergrowthDhhDeliveryBatchaskAPIRequest.Put(v)
 }

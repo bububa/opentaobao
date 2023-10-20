@@ -1,5 +1,9 @@
 package cainiaoncwl
 
+import (
+	"sync"
+)
+
 // JhReceiverInfo 结构体
 type JhReceiverInfo struct {
 	// 收货城市
@@ -20,4 +24,29 @@ type JhReceiverInfo struct {
 	ReceiverZip string `json:"receiver_zip,omitempty" xml:"receiver_zip,omitempty"`
 	// 收货镇或者街区
 	Street string `json:"street,omitempty" xml:"street,omitempty"`
+}
+
+var poolJhReceiverInfo = sync.Pool{
+	New: func() any {
+		return new(JhReceiverInfo)
+	},
+}
+
+// GetJhReceiverInfo() 从对象池中获取JhReceiverInfo
+func GetJhReceiverInfo() *JhReceiverInfo {
+	return poolJhReceiverInfo.Get().(*JhReceiverInfo)
+}
+
+// ReleaseJhReceiverInfo 释放JhReceiverInfo
+func ReleaseJhReceiverInfo(v *JhReceiverInfo) {
+	v.City = ""
+	v.District = ""
+	v.Province = ""
+	v.ReceiverAddress = ""
+	v.ReceiverMobile = ""
+	v.ReceiverName = ""
+	v.ReceiverPhone = ""
+	v.ReceiverZip = ""
+	v.Street = ""
+	poolJhReceiverInfo.Put(v)
 }

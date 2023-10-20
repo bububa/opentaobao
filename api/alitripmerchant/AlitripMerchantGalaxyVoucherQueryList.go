@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.voucher.query.list
 //
 // 查询代金券列表
-func AlitripMerchantGalaxyVoucherQueryList(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyVoucherQueryListAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyVoucherQueryListAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyVoucherQueryListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyVoucherQueryList(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyVoucherQueryListAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyVoucherQueryListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

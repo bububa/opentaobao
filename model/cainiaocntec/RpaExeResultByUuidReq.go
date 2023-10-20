@@ -1,5 +1,9 @@
 package cainiaocntec
 
+import (
+	"sync"
+)
+
 // RpaExeResultByUuidReq 结构体
 type RpaExeResultByUuidReq struct {
 	// 执行结果code
@@ -12,4 +16,25 @@ type RpaExeResultByUuidReq struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// uuid
 	Uuid string `json:"uuid,omitempty" xml:"uuid,omitempty"`
+}
+
+var poolRpaExeResultByUuidReq = sync.Pool{
+	New: func() any {
+		return new(RpaExeResultByUuidReq)
+	},
+}
+
+// GetRpaExeResultByUuidReq() 从对象池中获取RpaExeResultByUuidReq
+func GetRpaExeResultByUuidReq() *RpaExeResultByUuidReq {
+	return poolRpaExeResultByUuidReq.Get().(*RpaExeResultByUuidReq)
+}
+
+// ReleaseRpaExeResultByUuidReq 释放RpaExeResultByUuidReq
+func ReleaseRpaExeResultByUuidReq(v *RpaExeResultByUuidReq) {
+	v.Code = ""
+	v.Data = ""
+	v.SecretKey = ""
+	v.Message = ""
+	v.Uuid = ""
+	poolRpaExeResultByUuidReq.Put(v)
 }

@@ -2,6 +2,7 @@ package xiami
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaXiamiApiRadioMyselfGetAPIRequest struct {
 // NewAlibabaXiamiApiRadioMyselfGetRequest 初始化AlibabaXiamiApiRadioMyselfGetAPIRequest对象
 func NewAlibabaXiamiApiRadioMyselfGetRequest() *AlibabaXiamiApiRadioMyselfGetAPIRequest {
 	return &AlibabaXiamiApiRadioMyselfGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaXiamiApiRadioMyselfGetAPIRequest) Reset() {
+	r._limit = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaXiamiApiRadioMyselfGetAPIRequest) SetLimit(_limit int64) error {
 // GetLimit Limit Getter
 func (r AlibabaXiamiApiRadioMyselfGetAPIRequest) GetLimit() int64 {
 	return r._limit
+}
+
+var poolAlibabaXiamiApiRadioMyselfGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaXiamiApiRadioMyselfGetRequest()
+	},
+}
+
+// GetAlibabaXiamiApiRadioMyselfGetRequest 从 sync.Pool 获取 AlibabaXiamiApiRadioMyselfGetAPIRequest
+func GetAlibabaXiamiApiRadioMyselfGetAPIRequest() *AlibabaXiamiApiRadioMyselfGetAPIRequest {
+	return poolAlibabaXiamiApiRadioMyselfGetAPIRequest.Get().(*AlibabaXiamiApiRadioMyselfGetAPIRequest)
+}
+
+// ReleaseAlibabaXiamiApiRadioMyselfGetAPIRequest 将 AlibabaXiamiApiRadioMyselfGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaXiamiApiRadioMyselfGetAPIRequest(v *AlibabaXiamiApiRadioMyselfGetAPIRequest) {
+	v.Reset()
+	poolAlibabaXiamiApiRadioMyselfGetAPIRequest.Put(v)
 }

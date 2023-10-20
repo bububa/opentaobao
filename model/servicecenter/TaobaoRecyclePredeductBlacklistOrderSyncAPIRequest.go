@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoRecyclePredeductBlacklistOrderSyncAPIRequest struct {
 // NewTaobaoRecyclePredeductBlacklistOrderSyncRequest 初始化TaobaoRecyclePredeductBlacklistOrderSyncAPIRequest对象
 func NewTaobaoRecyclePredeductBlacklistOrderSyncRequest() *TaobaoRecyclePredeductBlacklistOrderSyncAPIRequest {
 	return &TaobaoRecyclePredeductBlacklistOrderSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRecyclePredeductBlacklistOrderSyncAPIRequest) Reset() {
+	r._blackOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoRecyclePredeductBlacklistOrderSyncAPIRequest) SetBlackOrderId(_bl
 // GetBlackOrderId BlackOrderId Getter
 func (r TaobaoRecyclePredeductBlacklistOrderSyncAPIRequest) GetBlackOrderId() int64 {
 	return r._blackOrderId
+}
+
+var poolTaobaoRecyclePredeductBlacklistOrderSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRecyclePredeductBlacklistOrderSyncRequest()
+	},
+}
+
+// GetTaobaoRecyclePredeductBlacklistOrderSyncRequest 从 sync.Pool 获取 TaobaoRecyclePredeductBlacklistOrderSyncAPIRequest
+func GetTaobaoRecyclePredeductBlacklistOrderSyncAPIRequest() *TaobaoRecyclePredeductBlacklistOrderSyncAPIRequest {
+	return poolTaobaoRecyclePredeductBlacklistOrderSyncAPIRequest.Get().(*TaobaoRecyclePredeductBlacklistOrderSyncAPIRequest)
+}
+
+// ReleaseTaobaoRecyclePredeductBlacklistOrderSyncAPIRequest 将 TaobaoRecyclePredeductBlacklistOrderSyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRecyclePredeductBlacklistOrderSyncAPIRequest(v *TaobaoRecyclePredeductBlacklistOrderSyncAPIRequest) {
+	v.Reset()
+	poolTaobaoRecyclePredeductBlacklistOrderSyncAPIRequest.Put(v)
 }

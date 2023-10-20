@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.content.advert.gettypes
 //
 // 获取广告位类型
-func YunosTvpubadminContentAdvertGettypes(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentAdvertGettypesAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentAdvertGettypesAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminContentAdvertGettypesAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminContentAdvertGettypes(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentAdvertGettypesAPIRequest, resp *tvupadmin.YunosTvpubadminContentAdvertGettypesAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

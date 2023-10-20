@@ -2,6 +2,7 @@ package security
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaSecurityJaqAppRisksummaryGetAPIResponse struct {
 	AlibabaSecurityJaqAppRisksummaryGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaSecurityJaqAppRisksummaryGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaSecurityJaqAppRisksummaryGetAPIResponseModel).Reset()
+}
+
 // AlibabaSecurityJaqAppRisksummaryGetAPIResponseModel is 应用风险概要信息查询接口 成功返回结果
 type AlibabaSecurityJaqAppRisksummaryGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_security_jaq_app_risksummary_get_response"`
@@ -22,4 +29,27 @@ type AlibabaSecurityJaqAppRisksummaryGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 应用扫描概要信息
 	Result *RiskSummary `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaSecurityJaqAppRisksummaryGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaSecurityJaqAppRisksummaryGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaSecurityJaqAppRisksummaryGetAPIResponse)
+	},
+}
+
+// GetAlibabaSecurityJaqAppRisksummaryGetAPIResponse 从 sync.Pool 获取 AlibabaSecurityJaqAppRisksummaryGetAPIResponse
+func GetAlibabaSecurityJaqAppRisksummaryGetAPIResponse() *AlibabaSecurityJaqAppRisksummaryGetAPIResponse {
+	return poolAlibabaSecurityJaqAppRisksummaryGetAPIResponse.Get().(*AlibabaSecurityJaqAppRisksummaryGetAPIResponse)
+}
+
+// ReleaseAlibabaSecurityJaqAppRisksummaryGetAPIResponse 将 AlibabaSecurityJaqAppRisksummaryGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaSecurityJaqAppRisksummaryGetAPIResponse(v *AlibabaSecurityJaqAppRisksummaryGetAPIResponse) {
+	v.Reset()
+	poolAlibabaSecurityJaqAppRisksummaryGetAPIResponse.Put(v)
 }

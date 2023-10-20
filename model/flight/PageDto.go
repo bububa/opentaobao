@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // PageDto 结构体
 type PageDto struct {
 	// 结果集
@@ -14,4 +18,26 @@ type PageDto struct {
 	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 	// 成功标示
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolPageDto = sync.Pool{
+	New: func() any {
+		return new(PageDto)
+	},
+}
+
+// GetPageDto() 从对象池中获取PageDto
+func GetPageDto() *PageDto {
+	return poolPageDto.Get().(*PageDto)
+}
+
+// ReleasePageDto 释放PageDto
+func ReleasePageDto(v *PageDto) {
+	v.DataList = v.DataList[:0]
+	v.Data = v.Data[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Total = 0
+	v.Success = false
+	poolPageDto.Put(v)
 }

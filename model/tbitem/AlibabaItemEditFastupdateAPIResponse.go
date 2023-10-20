@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,6 +18,12 @@ type AlibabaItemEditFastupdateAPIResponse struct {
 	AlibabaItemEditFastupdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaItemEditFastupdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaItemEditFastupdateAPIResponseModel).Reset()
+}
+
 // AlibabaItemEditFastupdateAPIResponseModel is 商品编辑增量更新 成功返回结果
 type AlibabaItemEditFastupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_item_edit_fastupdate_response"`
@@ -28,4 +35,29 @@ type AlibabaItemEditFastupdateAPIResponseModel struct {
 	Market string `json:"market,omitempty" xml:"market,omitempty"`
 	// 商品ID
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaItemEditFastupdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.UpdateTime = ""
+	m.Market = ""
+	m.ItemId = 0
+}
+
+var poolAlibabaItemEditFastupdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaItemEditFastupdateAPIResponse)
+	},
+}
+
+// GetAlibabaItemEditFastupdateAPIResponse 从 sync.Pool 获取 AlibabaItemEditFastupdateAPIResponse
+func GetAlibabaItemEditFastupdateAPIResponse() *AlibabaItemEditFastupdateAPIResponse {
+	return poolAlibabaItemEditFastupdateAPIResponse.Get().(*AlibabaItemEditFastupdateAPIResponse)
+}
+
+// ReleaseAlibabaItemEditFastupdateAPIResponse 将 AlibabaItemEditFastupdateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaItemEditFastupdateAPIResponse(v *AlibabaItemEditFastupdateAPIResponse) {
+	v.Reset()
+	poolAlibabaItemEditFastupdateAPIResponse.Put(v)
 }

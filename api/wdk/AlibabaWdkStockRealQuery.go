@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.stock.real.query
 //
 // 查询仓内实时库存信息
-func AlibabaWdkStockRealQuery(clt *core.SDKClient, req *wdk.AlibabaWdkStockRealQueryAPIRequest, session string) (*wdk.AlibabaWdkStockRealQueryAPIResponse, error) {
-	var resp wdk.AlibabaWdkStockRealQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkStockRealQuery(clt *core.SDKClient, req *wdk.AlibabaWdkStockRealQueryAPIRequest, resp *wdk.AlibabaWdkStockRealQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

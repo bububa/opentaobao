@@ -2,6 +2,7 @@ package baichuanctg
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaBaichuanCtgToutiaoContentAPIRequest struct {
 // NewAlibabaBaichuanCtgToutiaoContentRequest 初始化AlibabaBaichuanCtgToutiaoContentAPIRequest对象
 func NewAlibabaBaichuanCtgToutiaoContentRequest() *AlibabaBaichuanCtgToutiaoContentAPIRequest {
 	return &AlibabaBaichuanCtgToutiaoContentAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaBaichuanCtgToutiaoContentAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaBaichuanCtgToutiaoContentAPIRequest) SetParam0(_param0 *CtgReque
 // GetParam0 Param0 Getter
 func (r AlibabaBaichuanCtgToutiaoContentAPIRequest) GetParam0() *CtgRequest {
 	return r._param0
+}
+
+var poolAlibabaBaichuanCtgToutiaoContentAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaBaichuanCtgToutiaoContentRequest()
+	},
+}
+
+// GetAlibabaBaichuanCtgToutiaoContentRequest 从 sync.Pool 获取 AlibabaBaichuanCtgToutiaoContentAPIRequest
+func GetAlibabaBaichuanCtgToutiaoContentAPIRequest() *AlibabaBaichuanCtgToutiaoContentAPIRequest {
+	return poolAlibabaBaichuanCtgToutiaoContentAPIRequest.Get().(*AlibabaBaichuanCtgToutiaoContentAPIRequest)
+}
+
+// ReleaseAlibabaBaichuanCtgToutiaoContentAPIRequest 将 AlibabaBaichuanCtgToutiaoContentAPIRequest 放入 sync.Pool
+func ReleaseAlibabaBaichuanCtgToutiaoContentAPIRequest(v *AlibabaBaichuanCtgToutiaoContentAPIRequest) {
+	v.Reset()
+	poolAlibabaBaichuanCtgToutiaoContentAPIRequest.Put(v)
 }

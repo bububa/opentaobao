@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WdkOpenMerchantSkuDo 结构体
 type WdkOpenMerchantSkuDo struct {
 	// 条码
@@ -98,4 +102,68 @@ type WdkOpenMerchantSkuDo struct {
 	Period int64 `json:"period,omitempty" xml:"period,omitempty"`
 	// 重量（单位统一为g）。称重品（weight_flag为1）该字段不填。
 	Weight int64 `json:"weight,omitempty" xml:"weight,omitempty"`
+}
+
+var poolWdkOpenMerchantSkuDo = sync.Pool{
+	New: func() any {
+		return new(WdkOpenMerchantSkuDo)
+	},
+}
+
+// GetWdkOpenMerchantSkuDo() 从对象池中获取WdkOpenMerchantSkuDo
+func GetWdkOpenMerchantSkuDo() *WdkOpenMerchantSkuDo {
+	return poolWdkOpenMerchantSkuDo.Get().(*WdkOpenMerchantSkuDo)
+}
+
+// ReleaseWdkOpenMerchantSkuDo 释放WdkOpenMerchantSkuDo
+func ReleaseWdkOpenMerchantSkuDo(v *WdkOpenMerchantSkuDo) {
+	v.Barcodes = v.Barcodes[:0]
+	v.MerchantCode = ""
+	v.OrgainzaNo = ""
+	v.SkuCode = ""
+	v.SkuName = ""
+	v.ShortTitle = ""
+	v.LifeStatus = ""
+	v.BackCatCode = ""
+	v.RetailerCatCode = ""
+	v.InvoiceContent = ""
+	v.TaxRate = ""
+	v.BrandCode = ""
+	v.SupplierNo = ""
+	v.ProducerName = ""
+	v.ProducerAddress = ""
+	v.ProductCode = ""
+	v.FactoryNo = ""
+	v.Component = ""
+	v.SaleSpec = ""
+	v.SaleUnit = ""
+	v.Content = ""
+	v.Storage = ""
+	v.ProducerPlace = ""
+	v.Length = ""
+	v.Width = ""
+	v.Height = ""
+	v.PicUrl = ""
+	v.SkuPicUrls = ""
+	v.RichTxtTfs = ""
+	v.SubTitle = ""
+	v.Title1 = ""
+	v.Subtitle1 = ""
+	v.Title2 = ""
+	v.Subtitle2 = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.BrandName = ""
+	v.ItemType = 0
+	v.SaleFlag = 0
+	v.HangdlingFlag = 0
+	v.GoodsNature = 0
+	v.SuggestedPrice = 0
+	v.AllowAppSale = 0
+	v.BigFlag = 0
+	v.WeightFlag = 0
+	v.ImportFlag = 0
+	v.Period = 0
+	v.Weight = 0
+	poolWdkOpenMerchantSkuDo.Put(v)
 }

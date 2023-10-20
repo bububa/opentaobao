@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripMerchantGalaxyPaymentParamQueryAPIResponse struct {
 	AlitripMerchantGalaxyPaymentParamQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyPaymentParamQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripMerchantGalaxyPaymentParamQueryAPIResponseModel).Reset()
+}
+
 // AlitripMerchantGalaxyPaymentParamQueryAPIResponseModel is 星河-支付参数查询接口 成功返回结果
 type AlitripMerchantGalaxyPaymentParamQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_merchant_galaxy_payment_param_query_response"`
@@ -22,4 +29,27 @@ type AlitripMerchantGalaxyPaymentParamQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 默认描述
 	Result *AlitripMerchantGalaxyPaymentParamQueryResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyPaymentParamQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripMerchantGalaxyPaymentParamQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyPaymentParamQueryAPIResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyPaymentParamQueryAPIResponse 从 sync.Pool 获取 AlitripMerchantGalaxyPaymentParamQueryAPIResponse
+func GetAlitripMerchantGalaxyPaymentParamQueryAPIResponse() *AlitripMerchantGalaxyPaymentParamQueryAPIResponse {
+	return poolAlitripMerchantGalaxyPaymentParamQueryAPIResponse.Get().(*AlitripMerchantGalaxyPaymentParamQueryAPIResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyPaymentParamQueryAPIResponse 将 AlitripMerchantGalaxyPaymentParamQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlitripMerchantGalaxyPaymentParamQueryAPIResponse(v *AlitripMerchantGalaxyPaymentParamQueryAPIResponse) {
+	v.Reset()
+	poolAlitripMerchantGalaxyPaymentParamQueryAPIResponse.Put(v)
 }

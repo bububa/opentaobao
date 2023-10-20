@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.line.sync
 //
 // 环线数据同步
-func AlibabaAlihouseNewhomeLineSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeLineSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeLineSyncAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeLineSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeLineSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeLineSyncAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeLineSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

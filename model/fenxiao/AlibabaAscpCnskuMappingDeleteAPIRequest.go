@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAscpCnskuMappingDeleteAPIRequest struct {
 // NewAlibabaAscpCnskuMappingDeleteRequest 初始化AlibabaAscpCnskuMappingDeleteAPIRequest对象
 func NewAlibabaAscpCnskuMappingDeleteRequest() *AlibabaAscpCnskuMappingDeleteAPIRequest {
 	return &AlibabaAscpCnskuMappingDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpCnskuMappingDeleteAPIRequest) Reset() {
+	r._cnskuRelationDto = nil
+	r._cnskuRelationOperateOption = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAscpCnskuMappingDeleteAPIRequest) SetCnskuRelationOperateOption(
 // GetCnskuRelationOperateOption CnskuRelationOperateOption Getter
 func (r AlibabaAscpCnskuMappingDeleteAPIRequest) GetCnskuRelationOperateOption() *CnskuRelationOperateOption {
 	return r._cnskuRelationOperateOption
+}
+
+var poolAlibabaAscpCnskuMappingDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpCnskuMappingDeleteRequest()
+	},
+}
+
+// GetAlibabaAscpCnskuMappingDeleteRequest 从 sync.Pool 获取 AlibabaAscpCnskuMappingDeleteAPIRequest
+func GetAlibabaAscpCnskuMappingDeleteAPIRequest() *AlibabaAscpCnskuMappingDeleteAPIRequest {
+	return poolAlibabaAscpCnskuMappingDeleteAPIRequest.Get().(*AlibabaAscpCnskuMappingDeleteAPIRequest)
+}
+
+// ReleaseAlibabaAscpCnskuMappingDeleteAPIRequest 将 AlibabaAscpCnskuMappingDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpCnskuMappingDeleteAPIRequest(v *AlibabaAscpCnskuMappingDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpCnskuMappingDeleteAPIRequest.Put(v)
 }

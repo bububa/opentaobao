@@ -1,5 +1,9 @@
 package tmallsc
 
+import (
+	"sync"
+)
+
 // AlibabaServicecenterWorkcardConfirmedskuQueryResult 结构体
 type AlibabaServicecenterWorkcardConfirmedskuQueryResult struct {
 	// 服务项
@@ -10,4 +14,24 @@ type AlibabaServicecenterWorkcardConfirmedskuQueryResult struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaServicecenterWorkcardConfirmedskuQueryResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaServicecenterWorkcardConfirmedskuQueryResult)
+	},
+}
+
+// GetAlibabaServicecenterWorkcardConfirmedskuQueryResult() 从对象池中获取AlibabaServicecenterWorkcardConfirmedskuQueryResult
+func GetAlibabaServicecenterWorkcardConfirmedskuQueryResult() *AlibabaServicecenterWorkcardConfirmedskuQueryResult {
+	return poolAlibabaServicecenterWorkcardConfirmedskuQueryResult.Get().(*AlibabaServicecenterWorkcardConfirmedskuQueryResult)
+}
+
+// ReleaseAlibabaServicecenterWorkcardConfirmedskuQueryResult 释放AlibabaServicecenterWorkcardConfirmedskuQueryResult
+func ReleaseAlibabaServicecenterWorkcardConfirmedskuQueryResult(v *AlibabaServicecenterWorkcardConfirmedskuQueryResult) {
+	v.Values = v.Values[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Success = false
+	poolAlibabaServicecenterWorkcardConfirmedskuQueryResult.Put(v)
 }

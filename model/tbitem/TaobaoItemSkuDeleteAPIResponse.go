@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoItemSkuDeleteAPIResponse struct {
 	TaobaoItemSkuDeleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoItemSkuDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoItemSkuDeleteAPIResponseModel).Reset()
+}
+
 // TaobaoItemSkuDeleteAPIResponseModel is 删除SKU 成功返回结果
 type TaobaoItemSkuDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"item_sku_delete_response"`
@@ -22,4 +29,27 @@ type TaobaoItemSkuDeleteAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// Sku结构
 	Sku *Sku `json:"sku,omitempty" xml:"sku,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoItemSkuDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Sku = nil
+}
+
+var poolTaobaoItemSkuDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoItemSkuDeleteAPIResponse)
+	},
+}
+
+// GetTaobaoItemSkuDeleteAPIResponse 从 sync.Pool 获取 TaobaoItemSkuDeleteAPIResponse
+func GetTaobaoItemSkuDeleteAPIResponse() *TaobaoItemSkuDeleteAPIResponse {
+	return poolTaobaoItemSkuDeleteAPIResponse.Get().(*TaobaoItemSkuDeleteAPIResponse)
+}
+
+// ReleaseTaobaoItemSkuDeleteAPIResponse 将 TaobaoItemSkuDeleteAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoItemSkuDeleteAPIResponse(v *TaobaoItemSkuDeleteAPIResponse) {
+	v.Reset()
+	poolTaobaoItemSkuDeleteAPIResponse.Put(v)
 }

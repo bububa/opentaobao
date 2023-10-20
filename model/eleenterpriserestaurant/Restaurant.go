@@ -1,5 +1,9 @@
 package eleenterpriserestaurant
 
+import (
+	"sync"
+)
+
 // Restaurant 结构体
 type Restaurant struct {
 	// 活动详情
@@ -46,4 +50,42 @@ type Restaurant struct {
 	IsNew int64 `json:"is_new,omitempty" xml:"is_new,omitempty"`
 	// 是否支持预定. 0 不支持预定, 1 支持预定
 	IsBookable int64 `json:"is_bookable,omitempty" xml:"is_bookable,omitempty"`
+}
+
+var poolRestaurant = sync.Pool{
+	New: func() any {
+		return new(Restaurant)
+	},
+}
+
+// GetRestaurant() 从对象池中获取Restaurant
+func GetRestaurant() *Restaurant {
+	return poolRestaurant.Get().(*Restaurant)
+}
+
+// ReleaseRestaurant 释放Restaurant
+func ReleaseRestaurant(v *Restaurant) {
+	v.Activities = v.Activities[:0]
+	v.Distance = ""
+	v.Rating = ""
+	v.OnlyRestaurantCode = ""
+	v.PromotionInfo = ""
+	v.AgentFee = ""
+	v.RestaurantName = ""
+	v.ImageUrl = ""
+	v.DeliverAmount = ""
+	v.ErestaurantId = ""
+	v.AverageCost = ""
+	v.SerialNumber = ""
+	v.TotalStatus = ""
+	v.RecentOrderNum = 0
+	v.DeliverSpent = 0
+	v.IsOpen = 0
+	v.IsDistRst = 0
+	v.Invoice = 0
+	v.IsPremium = 0
+	v.IsInsurance = 0
+	v.IsNew = 0
+	v.IsBookable = 0
+	poolRestaurant.Put(v)
 }

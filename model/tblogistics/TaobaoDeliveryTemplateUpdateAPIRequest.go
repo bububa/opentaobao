@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type TaobaoDeliveryTemplateUpdateAPIRequest struct {
 // NewTaobaoDeliveryTemplateUpdateRequest 初始化TaobaoDeliveryTemplateUpdateAPIRequest对象
 func NewTaobaoDeliveryTemplateUpdateRequest() *TaobaoDeliveryTemplateUpdateAPIRequest {
 	return &TaobaoDeliveryTemplateUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDeliveryTemplateUpdateAPIRequest) Reset() {
+	r._name = ""
+	r._templateTypes = ""
+	r._templateDests = ""
+	r._templateStartStandards = ""
+	r._templateStartFees = ""
+	r._templateAddStandards = ""
+	r._templateAddFees = ""
+	r._templateId = 0
+	r._assumer = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *TaobaoDeliveryTemplateUpdateAPIRequest) SetAssumer(_assumer int64) erro
 // GetAssumer Assumer Getter
 func (r TaobaoDeliveryTemplateUpdateAPIRequest) GetAssumer() int64 {
 	return r._assumer
+}
+
+var poolTaobaoDeliveryTemplateUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDeliveryTemplateUpdateRequest()
+	},
+}
+
+// GetTaobaoDeliveryTemplateUpdateRequest 从 sync.Pool 获取 TaobaoDeliveryTemplateUpdateAPIRequest
+func GetTaobaoDeliveryTemplateUpdateAPIRequest() *TaobaoDeliveryTemplateUpdateAPIRequest {
+	return poolTaobaoDeliveryTemplateUpdateAPIRequest.Get().(*TaobaoDeliveryTemplateUpdateAPIRequest)
+}
+
+// ReleaseTaobaoDeliveryTemplateUpdateAPIRequest 将 TaobaoDeliveryTemplateUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDeliveryTemplateUpdateAPIRequest(v *TaobaoDeliveryTemplateUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoDeliveryTemplateUpdateAPIRequest.Put(v)
 }

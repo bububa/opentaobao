@@ -9,11 +9,6 @@ import (
 // taobao.open.account.search
 //
 // open account数据搜索
-func TaobaoOpenAccountSearch(clt *core.SDKClient, req *user.TaobaoOpenAccountSearchAPIRequest, session string) (*user.TaobaoOpenAccountSearchAPIResponse, error) {
-	var resp user.TaobaoOpenAccountSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenAccountSearch(clt *core.SDKClient, req *user.TaobaoOpenAccountSearchAPIRequest, resp *user.TaobaoOpenAccountSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

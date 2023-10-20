@@ -1,5 +1,9 @@
 package mozi
 
+import (
+	"sync"
+)
+
 // ReEntryTenantEmployeeAndAccountRequest 结构体
 type ReEntryTenantEmployeeAndAccountRequest struct {
 	// 证件号码
@@ -36,4 +40,37 @@ type ReEntryTenantEmployeeAndAccountRequest struct {
 	Avatar string `json:"avatar,omitempty" xml:"avatar,omitempty"`
 	// 租户ID
 	TenantId int64 `json:"tenant_id,omitempty" xml:"tenant_id,omitempty"`
+}
+
+var poolReEntryTenantEmployeeAndAccountRequest = sync.Pool{
+	New: func() any {
+		return new(ReEntryTenantEmployeeAndAccountRequest)
+	},
+}
+
+// GetReEntryTenantEmployeeAndAccountRequest() 从对象池中获取ReEntryTenantEmployeeAndAccountRequest
+func GetReEntryTenantEmployeeAndAccountRequest() *ReEntryTenantEmployeeAndAccountRequest {
+	return poolReEntryTenantEmployeeAndAccountRequest.Get().(*ReEntryTenantEmployeeAndAccountRequest)
+}
+
+// ReleaseReEntryTenantEmployeeAndAccountRequest 释放ReEntryTenantEmployeeAndAccountRequest
+func ReleaseReEntryTenantEmployeeAndAccountRequest(v *ReEntryTenantEmployeeAndAccountRequest) {
+	v.CertificateCode = ""
+	v.RequestMetaData = ""
+	v.Nickname = ""
+	v.CertificateType = ""
+	v.EmployeeCode = ""
+	v.Password = ""
+	v.Operator = ""
+	v.EmployeeName = ""
+	v.Namespace = ""
+	v.Email = ""
+	v.Account = ""
+	v.Language = ""
+	v.SecMobileAreaCode = ""
+	v.EmployeeNumber = ""
+	v.SecMobile = ""
+	v.Avatar = ""
+	v.TenantId = 0
+	poolReEntryTenantEmployeeAndAccountRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.wlb.imports.order.cancel
 //
 // 商家在发货后，需要对订单进行取消，如果仓库已经收货则无法取消。
-func TaobaoWlbImportsOrderCancel(clt *core.SDKClient, req *wlbimports.TaobaoWlbImportsOrderCancelAPIRequest, session string) (*wlbimports.TaobaoWlbImportsOrderCancelAPIResponse, error) {
-	var resp wlbimports.TaobaoWlbImportsOrderCancelAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWlbImportsOrderCancel(clt *core.SDKClient, req *wlbimports.TaobaoWlbImportsOrderCancelAPIRequest, resp *wlbimports.TaobaoWlbImportsOrderCancelAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

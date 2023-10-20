@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // TransferOrderDetail 结构体
 type TransferOrderDetail struct {
 	// 调拨单货品明细记录集
@@ -26,4 +30,32 @@ type TransferOrderDetail struct {
 	ToWarehouseCode string `json:"toWarehouseCode,omitempty" xml:"toWarehouseCode,omitempty"`
 	// 1111
 	OwnerCode string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
+}
+
+var poolTransferOrderDetail = sync.Pool{
+	New: func() any {
+		return new(TransferOrderDetail)
+	},
+}
+
+// GetTransferOrderDetail() 从对象池中获取TransferOrderDetail
+func GetTransferOrderDetail() *TransferOrderDetail {
+	return poolTransferOrderDetail.Get().(*TransferOrderDetail)
+}
+
+// ReleaseTransferOrderDetail 释放TransferOrderDetail
+func ReleaseTransferOrderDetail(v *TransferOrderDetail) {
+	v.Items = v.Items[:0]
+	v.TransferOrderCode = ""
+	v.ErpOrderCode = ""
+	v.OrderStatus = ""
+	v.TransferOutOrderCode = ""
+	v.TransferInOrderCode = ""
+	v.CreateTime = ""
+	v.ConfirmOutTime = ""
+	v.ConfirmInTime = ""
+	v.FromWarehouseCode = ""
+	v.ToWarehouseCode = ""
+	v.OwnerCode = ""
+	poolTransferOrderDetail.Put(v)
 }

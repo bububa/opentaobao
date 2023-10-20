@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // BindPhysicalCardOpenReq 结构体
 type BindPhysicalCardOpenReq struct {
 	// 外部品牌ID,brand_id与out_brand_id不可同时为空
@@ -20,4 +24,29 @@ type BindPhysicalCardOpenReq struct {
 	CustomerId string `json:"customer_id,omitempty" xml:"customer_id,omitempty"`
 	// 卡号
 	CardId string `json:"card_id,omitempty" xml:"card_id,omitempty"`
+}
+
+var poolBindPhysicalCardOpenReq = sync.Pool{
+	New: func() any {
+		return new(BindPhysicalCardOpenReq)
+	},
+}
+
+// GetBindPhysicalCardOpenReq() 从对象池中获取BindPhysicalCardOpenReq
+func GetBindPhysicalCardOpenReq() *BindPhysicalCardOpenReq {
+	return poolBindPhysicalCardOpenReq.Get().(*BindPhysicalCardOpenReq)
+}
+
+// ReleaseBindPhysicalCardOpenReq 释放BindPhysicalCardOpenReq
+func ReleaseBindPhysicalCardOpenReq(v *BindPhysicalCardOpenReq) {
+	v.OutBrandId = ""
+	v.PhysicalCardId = ""
+	v.RequestId = ""
+	v.BrandId = ""
+	v.OutShopId = ""
+	v.ShopId = ""
+	v.OperatorId = ""
+	v.CustomerId = ""
+	v.CardId = ""
+	poolBindPhysicalCardOpenReq.Put(v)
 }

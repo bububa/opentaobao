@@ -1,5 +1,9 @@
 package perfect
 
+import (
+	"sync"
+)
+
 // PickOutboundOrderRequest 结构体
 type PickOutboundOrderRequest struct {
 	// 1
@@ -24,4 +28,31 @@ type PickOutboundOrderRequest struct {
 	BusinessType string `json:"business_type,omitempty" xml:"business_type,omitempty"`
 	// 1
 	ChannelCode string `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
+}
+
+var poolPickOutboundOrderRequest = sync.Pool{
+	New: func() any {
+		return new(PickOutboundOrderRequest)
+	},
+}
+
+// GetPickOutboundOrderRequest() 从对象池中获取PickOutboundOrderRequest
+func GetPickOutboundOrderRequest() *PickOutboundOrderRequest {
+	return poolPickOutboundOrderRequest.Get().(*PickOutboundOrderRequest)
+}
+
+// ReleasePickOutboundOrderRequest 释放PickOutboundOrderRequest
+func ReleasePickOutboundOrderRequest(v *PickOutboundOrderRequest) {
+	v.OutboundOrderDetails = v.OutboundOrderDetails[:0]
+	v.StationCode = ""
+	v.OutboundOrderCode = ""
+	v.BatchCode = ""
+	v.PromiseTimeType = ""
+	v.OutboundOrderType = ""
+	v.LatestOutboundTime = ""
+	v.StationName = ""
+	v.Attributes = ""
+	v.BusinessType = ""
+	v.ChannelCode = ""
+	poolPickOutboundOrderRequest.Put(v)
 }

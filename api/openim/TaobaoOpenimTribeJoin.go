@@ -9,11 +9,6 @@ import (
 // taobao.openim.tribe.join
 //
 // OPENIM群主动加入
-func TaobaoOpenimTribeJoin(clt *core.SDKClient, req *openim.TaobaoOpenimTribeJoinAPIRequest, session string) (*openim.TaobaoOpenimTribeJoinAPIResponse, error) {
-	var resp openim.TaobaoOpenimTribeJoinAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenimTribeJoin(clt *core.SDKClient, req *openim.TaobaoOpenimTribeJoinAPIRequest, resp *openim.TaobaoOpenimTribeJoinAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

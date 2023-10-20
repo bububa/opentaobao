@@ -1,5 +1,9 @@
 package tmallhk
 
+import (
+	"sync"
+)
+
 // CertifyQueryResult 结构体
 type CertifyQueryResult struct {
 	// 错误原因
@@ -10,4 +14,24 @@ type CertifyQueryResult struct {
 	Module *ConsigneeCertifyInfo `json:"module,omitempty" xml:"module,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolCertifyQueryResult = sync.Pool{
+	New: func() any {
+		return new(CertifyQueryResult)
+	},
+}
+
+// GetCertifyQueryResult() 从对象池中获取CertifyQueryResult
+func GetCertifyQueryResult() *CertifyQueryResult {
+	return poolCertifyQueryResult.Get().(*CertifyQueryResult)
+}
+
+// ReleaseCertifyQueryResult 释放CertifyQueryResult
+func ReleaseCertifyQueryResult(v *CertifyQueryResult) {
+	v.ErrMsg = ""
+	v.ErrCode = ""
+	v.Module = nil
+	v.Success = false
+	poolCertifyQueryResult.Put(v)
 }

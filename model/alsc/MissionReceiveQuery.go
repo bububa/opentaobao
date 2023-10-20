@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // MissionReceiveQuery 结构体
 type MissionReceiveQuery struct {
 	// 位置信息
@@ -18,4 +22,28 @@ type MissionReceiveQuery struct {
 	MissionDefId int64 `json:"mission_def_id,omitempty" xml:"mission_def_id,omitempty"`
 	// 用户信息
 	UserInfo *UserInfo `json:"user_info,omitempty" xml:"user_info,omitempty"`
+}
+
+var poolMissionReceiveQuery = sync.Pool{
+	New: func() any {
+		return new(MissionReceiveQuery)
+	},
+}
+
+// GetMissionReceiveQuery() 从对象池中获取MissionReceiveQuery
+func GetMissionReceiveQuery() *MissionReceiveQuery {
+	return poolMissionReceiveQuery.Get().(*MissionReceiveQuery)
+}
+
+// ReleaseMissionReceiveQuery 释放MissionReceiveQuery
+func ReleaseMissionReceiveQuery(v *MissionReceiveQuery) {
+	v.LocationInfos = v.LocationInfos[:0]
+	v.BizScene = ""
+	v.MissionXId = ""
+	v.SortGroupId = ""
+	v.DeviceInfo = nil
+	v.MissionCollectionId = 0
+	v.MissionDefId = 0
+	v.UserInfo = nil
+	poolMissionReceiveQuery.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTmallSparepartsDetailsCreateAPIRequest struct {
 // NewAlibabaTmallSparepartsDetailsCreateRequest 初始化AlibabaTmallSparepartsDetailsCreateAPIRequest对象
 func NewAlibabaTmallSparepartsDetailsCreateRequest() *AlibabaTmallSparepartsDetailsCreateAPIRequest {
 	return &AlibabaTmallSparepartsDetailsCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTmallSparepartsDetailsCreateAPIRequest) Reset() {
+	r._sparePartsDetailsSaveRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTmallSparepartsDetailsCreateAPIRequest) SetSparePartsDetailsSave
 // GetSparePartsDetailsSaveRequest SparePartsDetailsSaveRequest Getter
 func (r AlibabaTmallSparepartsDetailsCreateAPIRequest) GetSparePartsDetailsSaveRequest() *SparePartsDetailsSaveRequest {
 	return r._sparePartsDetailsSaveRequest
+}
+
+var poolAlibabaTmallSparepartsDetailsCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTmallSparepartsDetailsCreateRequest()
+	},
+}
+
+// GetAlibabaTmallSparepartsDetailsCreateRequest 从 sync.Pool 获取 AlibabaTmallSparepartsDetailsCreateAPIRequest
+func GetAlibabaTmallSparepartsDetailsCreateAPIRequest() *AlibabaTmallSparepartsDetailsCreateAPIRequest {
+	return poolAlibabaTmallSparepartsDetailsCreateAPIRequest.Get().(*AlibabaTmallSparepartsDetailsCreateAPIRequest)
+}
+
+// ReleaseAlibabaTmallSparepartsDetailsCreateAPIRequest 将 AlibabaTmallSparepartsDetailsCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTmallSparepartsDetailsCreateAPIRequest(v *AlibabaTmallSparepartsDetailsCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaTmallSparepartsDetailsCreateAPIRequest.Put(v)
 }

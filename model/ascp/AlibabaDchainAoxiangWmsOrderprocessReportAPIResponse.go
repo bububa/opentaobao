@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaDchainAoxiangWmsOrderprocessReportAPIResponse struct {
 	AlibabaDchainAoxiangWmsOrderprocessReportAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaDchainAoxiangWmsOrderprocessReportAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaDchainAoxiangWmsOrderprocessReportAPIResponseModel).Reset()
+}
+
 // AlibabaDchainAoxiangWmsOrderprocessReportAPIResponseModel is 回传发货单流水通知 成功返回结果
 type AlibabaDchainAoxiangWmsOrderprocessReportAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_dchain_aoxiang_wms_orderprocess_report_response"`
@@ -22,4 +29,27 @@ type AlibabaDchainAoxiangWmsOrderprocessReportAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 回传结果
 	OrderProcessReportResponse *OrderProcessReportReponse `json:"order_process_report_response,omitempty" xml:"order_process_report_response,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaDchainAoxiangWmsOrderprocessReportAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.OrderProcessReportResponse = nil
+}
+
+var poolAlibabaDchainAoxiangWmsOrderprocessReportAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaDchainAoxiangWmsOrderprocessReportAPIResponse)
+	},
+}
+
+// GetAlibabaDchainAoxiangWmsOrderprocessReportAPIResponse 从 sync.Pool 获取 AlibabaDchainAoxiangWmsOrderprocessReportAPIResponse
+func GetAlibabaDchainAoxiangWmsOrderprocessReportAPIResponse() *AlibabaDchainAoxiangWmsOrderprocessReportAPIResponse {
+	return poolAlibabaDchainAoxiangWmsOrderprocessReportAPIResponse.Get().(*AlibabaDchainAoxiangWmsOrderprocessReportAPIResponse)
+}
+
+// ReleaseAlibabaDchainAoxiangWmsOrderprocessReportAPIResponse 将 AlibabaDchainAoxiangWmsOrderprocessReportAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaDchainAoxiangWmsOrderprocessReportAPIResponse(v *AlibabaDchainAoxiangWmsOrderprocessReportAPIResponse) {
+	v.Reset()
+	poolAlibabaDchainAoxiangWmsOrderprocessReportAPIResponse.Put(v)
 }

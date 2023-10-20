@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoOmniitemSkuGetAPIRequest struct {
 // NewTaobaoOmniitemSkuGetRequest 初始化TaobaoOmniitemSkuGetAPIRequest对象
 func NewTaobaoOmniitemSkuGetRequest() *TaobaoOmniitemSkuGetAPIRequest {
 	return &TaobaoOmniitemSkuGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOmniitemSkuGetAPIRequest) Reset() {
+	r._skuOuterId = ""
+	r._itemId = 0
+	r._skuId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoOmniitemSkuGetAPIRequest) SetSkuId(_skuId int64) error {
 // GetSkuId SkuId Getter
 func (r TaobaoOmniitemSkuGetAPIRequest) GetSkuId() int64 {
 	return r._skuId
+}
+
+var poolTaobaoOmniitemSkuGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOmniitemSkuGetRequest()
+	},
+}
+
+// GetTaobaoOmniitemSkuGetRequest 从 sync.Pool 获取 TaobaoOmniitemSkuGetAPIRequest
+func GetTaobaoOmniitemSkuGetAPIRequest() *TaobaoOmniitemSkuGetAPIRequest {
+	return poolTaobaoOmniitemSkuGetAPIRequest.Get().(*TaobaoOmniitemSkuGetAPIRequest)
+}
+
+// ReleaseTaobaoOmniitemSkuGetAPIRequest 将 TaobaoOmniitemSkuGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOmniitemSkuGetAPIRequest(v *TaobaoOmniitemSkuGetAPIRequest) {
+	v.Reset()
+	poolTaobaoOmniitemSkuGetAPIRequest.Put(v)
 }

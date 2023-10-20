@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type AlibabaRetailDeviceVendingRegisterAPIRequest struct {
 // NewAlibabaRetailDeviceVendingRegisterRequest 初始化AlibabaRetailDeviceVendingRegisterAPIRequest对象
 func NewAlibabaRetailDeviceVendingRegisterRequest() *AlibabaRetailDeviceVendingRegisterAPIRequest {
 	return &AlibabaRetailDeviceVendingRegisterAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) Reset() {
+	r._deviceName = ""
+	r._address = ""
+	r._deviceSn = ""
+	r._bizCode = ""
+	r._deviceUuid = ""
+	r._deviceModel = ""
+	r._scene = ""
+	r._siteName = ""
+	r._floor = ""
+	r._layer = ""
+	r._location = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetLocation(_location str
 // GetLocation Location Getter
 func (r AlibabaRetailDeviceVendingRegisterAPIRequest) GetLocation() string {
 	return r._location
+}
+
+var poolAlibabaRetailDeviceVendingRegisterAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaRetailDeviceVendingRegisterRequest()
+	},
+}
+
+// GetAlibabaRetailDeviceVendingRegisterRequest 从 sync.Pool 获取 AlibabaRetailDeviceVendingRegisterAPIRequest
+func GetAlibabaRetailDeviceVendingRegisterAPIRequest() *AlibabaRetailDeviceVendingRegisterAPIRequest {
+	return poolAlibabaRetailDeviceVendingRegisterAPIRequest.Get().(*AlibabaRetailDeviceVendingRegisterAPIRequest)
+}
+
+// ReleaseAlibabaRetailDeviceVendingRegisterAPIRequest 将 AlibabaRetailDeviceVendingRegisterAPIRequest 放入 sync.Pool
+func ReleaseAlibabaRetailDeviceVendingRegisterAPIRequest(v *AlibabaRetailDeviceVendingRegisterAPIRequest) {
+	v.Reset()
+	poolAlibabaRetailDeviceVendingRegisterAPIRequest.Put(v)
 }

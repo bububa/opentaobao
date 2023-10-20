@@ -2,6 +2,7 @@ package dt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAdsDataImportAPIRequest struct {
 // NewTaobaoAdsDataImportRequest 初始化TaobaoAdsDataImportAPIRequest对象
 func NewTaobaoAdsDataImportRequest() *TaobaoAdsDataImportAPIRequest {
 	return &TaobaoAdsDataImportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAdsDataImportAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAdsDataImportAPIRequest) SetParam0(_param0 *RequesterDataJobSaveC
 // GetParam0 Param0 Getter
 func (r TaobaoAdsDataImportAPIRequest) GetParam0() *RequesterDataJobSaveCmd {
 	return r._param0
+}
+
+var poolTaobaoAdsDataImportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAdsDataImportRequest()
+	},
+}
+
+// GetTaobaoAdsDataImportRequest 从 sync.Pool 获取 TaobaoAdsDataImportAPIRequest
+func GetTaobaoAdsDataImportAPIRequest() *TaobaoAdsDataImportAPIRequest {
+	return poolTaobaoAdsDataImportAPIRequest.Get().(*TaobaoAdsDataImportAPIRequest)
+}
+
+// ReleaseTaobaoAdsDataImportAPIRequest 将 TaobaoAdsDataImportAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAdsDataImportAPIRequest(v *TaobaoAdsDataImportAPIRequest) {
+	v.Reset()
+	poolTaobaoAdsDataImportAPIRequest.Put(v)
 }

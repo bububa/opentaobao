@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // ServiceAttributeDto 结构体
 type ServiceAttributeDto struct {
 	// 属性的值，用户实际传入的值
@@ -10,4 +14,24 @@ type ServiceAttributeDto struct {
 	AttributeType string `json:"attribute_type,omitempty" xml:"attribute_type,omitempty"`
 	// 枚举类型的枚举值，key为用户选中的需要传值的数据，value为对应的描述，可以作为前端的展示
 	TypeDesc string `json:"type_desc,omitempty" xml:"type_desc,omitempty"`
+}
+
+var poolServiceAttributeDto = sync.Pool{
+	New: func() any {
+		return new(ServiceAttributeDto)
+	},
+}
+
+// GetServiceAttributeDto() 从对象池中获取ServiceAttributeDto
+func GetServiceAttributeDto() *ServiceAttributeDto {
+	return poolServiceAttributeDto.Get().(*ServiceAttributeDto)
+}
+
+// ReleaseServiceAttributeDto 释放ServiceAttributeDto
+func ReleaseServiceAttributeDto(v *ServiceAttributeDto) {
+	v.AttributeCode = ""
+	v.AttributeName = ""
+	v.AttributeType = ""
+	v.TypeDesc = ""
+	poolServiceAttributeDto.Put(v)
 }

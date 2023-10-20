@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // WordPackageVo 结构体
 type WordPackageVo struct {
 	// 词包策略信息
@@ -18,4 +22,28 @@ type WordPackageVo struct {
 	WordPackageType int64 `json:"word_package_type,omitempty" xml:"word_package_type,omitempty"`
 	// 词包状态,1:在线,0:下线
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolWordPackageVo = sync.Pool{
+	New: func() any {
+		return new(WordPackageVo)
+	},
+}
+
+// GetWordPackageVo() 从对象池中获取WordPackageVo
+func GetWordPackageVo() *WordPackageVo {
+	return poolWordPackageVo.Get().(*WordPackageVo)
+}
+
+// ReleaseWordPackageVo 释放WordPackageVo
+func ReleaseWordPackageVo(v *WordPackageVo) {
+	v.StrategyList = v.StrategyList[:0]
+	v.WordPackageName = ""
+	v.BidPrice = ""
+	v.CampaignId = 0
+	v.AdgroupId = 0
+	v.WordPackageId = 0
+	v.WordPackageType = 0
+	v.Status = 0
+	poolWordPackageVo.Put(v)
 }

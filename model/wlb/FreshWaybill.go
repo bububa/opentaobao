@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // FreshWaybill 结构体
 type FreshWaybill struct {
 	// 预计到达时间
@@ -14,4 +18,26 @@ type FreshWaybill struct {
 	Feature string `json:"feature,omitempty" xml:"feature,omitempty"`
 	// 获取的所有电子面单号，以“;”分隔
 	WaybillCode string `json:"waybill_code,omitempty" xml:"waybill_code,omitempty"`
+}
+
+var poolFreshWaybill = sync.Pool{
+	New: func() any {
+		return new(FreshWaybill)
+	},
+}
+
+// GetFreshWaybill() 从对象池中获取FreshWaybill
+func GetFreshWaybill() *FreshWaybill {
+	return poolFreshWaybill.Get().(*FreshWaybill)
+}
+
+// ReleaseFreshWaybill 释放FreshWaybill
+func ReleaseFreshWaybill(v *FreshWaybill) {
+	v.Time = ""
+	v.Alias = ""
+	v.ShortAddress = ""
+	v.TradeId = ""
+	v.Feature = ""
+	v.WaybillCode = ""
+	poolFreshWaybill.Put(v)
 }

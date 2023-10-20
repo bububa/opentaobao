@@ -1,5 +1,9 @@
 package examination
 
+import (
+	"sync"
+)
+
 // ReportOrderStatusRequest 结构体
 type ReportOrderStatusRequest struct {
 	// 备注
@@ -12,4 +16,25 @@ type ReportOrderStatusRequest struct {
 	OuterOrderId string `json:"outer_order_id,omitempty" xml:"outer_order_id,omitempty"`
 	// 医生ID
 	DoctorId string `json:"doctor_id,omitempty" xml:"doctor_id,omitempty"`
+}
+
+var poolReportOrderStatusRequest = sync.Pool{
+	New: func() any {
+		return new(ReportOrderStatusRequest)
+	},
+}
+
+// GetReportOrderStatusRequest() 从对象池中获取ReportOrderStatusRequest
+func GetReportOrderStatusRequest() *ReportOrderStatusRequest {
+	return poolReportOrderStatusRequest.Get().(*ReportOrderStatusRequest)
+}
+
+// ReleaseReportOrderStatusRequest 释放ReportOrderStatusRequest
+func ReleaseReportOrderStatusRequest(v *ReportOrderStatusRequest) {
+	v.Note = ""
+	v.Status = ""
+	v.OrderId = ""
+	v.OuterOrderId = ""
+	v.DoctorId = ""
+	poolReportOrderStatusRequest.Put(v)
 }

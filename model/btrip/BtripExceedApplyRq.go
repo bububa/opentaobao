@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripExceedApplyRq 结构体
 type BtripExceedApplyRq struct {
 	// 第三方流程实例id
@@ -16,4 +20,27 @@ type BtripExceedApplyRq struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 审批单业务类型，3：超标审批，5：机票改签审批，6：机票退票审批，默认为超标审批
 	BizCategory int64 `json:"biz_category,omitempty" xml:"biz_category,omitempty"`
+}
+
+var poolBtripExceedApplyRq = sync.Pool{
+	New: func() any {
+		return new(BtripExceedApplyRq)
+	},
+}
+
+// GetBtripExceedApplyRq() 从对象池中获取BtripExceedApplyRq
+func GetBtripExceedApplyRq() *BtripExceedApplyRq {
+	return poolBtripExceedApplyRq.Get().(*BtripExceedApplyRq)
+}
+
+// ReleaseBtripExceedApplyRq 释放BtripExceedApplyRq
+func ReleaseBtripExceedApplyRq(v *BtripExceedApplyRq) {
+	v.ThirdpartyFlowId = ""
+	v.CorpId = ""
+	v.UserId = ""
+	v.Remark = ""
+	v.ApplyId = 0
+	v.Status = 0
+	v.BizCategory = 0
+	poolBtripExceedApplyRq.Put(v)
 }

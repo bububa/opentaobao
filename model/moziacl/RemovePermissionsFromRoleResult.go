@@ -1,5 +1,9 @@
 package moziacl
 
+import (
+	"sync"
+)
+
 // RemovePermissionsFromRoleResult 结构体
 type RemovePermissionsFromRoleResult struct {
 	// 返回数据，这个接口返回数据为空
@@ -14,4 +18,26 @@ type RemovePermissionsFromRoleResult struct {
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
 	// 是否处理成功，若成功则返回true
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolRemovePermissionsFromRoleResult = sync.Pool{
+	New: func() any {
+		return new(RemovePermissionsFromRoleResult)
+	},
+}
+
+// GetRemovePermissionsFromRoleResult() 从对象池中获取RemovePermissionsFromRoleResult
+func GetRemovePermissionsFromRoleResult() *RemovePermissionsFromRoleResult {
+	return poolRemovePermissionsFromRoleResult.Get().(*RemovePermissionsFromRoleResult)
+}
+
+// ReleaseRemovePermissionsFromRoleResult 释放RemovePermissionsFromRoleResult
+func ReleaseRemovePermissionsFromRoleResult(v *RemovePermissionsFromRoleResult) {
+	v.Data = ""
+	v.RequestId = ""
+	v.ResponseMessage = ""
+	v.ResponseMetaData = ""
+	v.ResponseCode = ""
+	v.Success = false
+	poolRemovePermissionsFromRoleResult.Put(v)
 }

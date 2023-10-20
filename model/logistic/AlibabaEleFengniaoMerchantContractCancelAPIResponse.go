@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaEleFengniaoMerchantContractCancelAPIResponse struct {
 	AlibabaEleFengniaoMerchantContractCancelAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaEleFengniaoMerchantContractCancelAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEleFengniaoMerchantContractCancelAPIResponseModel).Reset()
+}
+
 // AlibabaEleFengniaoMerchantContractCancelAPIResponseModel is 蜂鸟商户解约接口 成功返回结果
 type AlibabaEleFengniaoMerchantContractCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ele_fengniao_merchant_contract_cancel_response"`
@@ -22,4 +29,27 @@ type AlibabaEleFengniaoMerchantContractCancelAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 出参
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleFengniaoMerchantContractCancelAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+}
+
+var poolAlibabaEleFengniaoMerchantContractCancelAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEleFengniaoMerchantContractCancelAPIResponse)
+	},
+}
+
+// GetAlibabaEleFengniaoMerchantContractCancelAPIResponse 从 sync.Pool 获取 AlibabaEleFengniaoMerchantContractCancelAPIResponse
+func GetAlibabaEleFengniaoMerchantContractCancelAPIResponse() *AlibabaEleFengniaoMerchantContractCancelAPIResponse {
+	return poolAlibabaEleFengniaoMerchantContractCancelAPIResponse.Get().(*AlibabaEleFengniaoMerchantContractCancelAPIResponse)
+}
+
+// ReleaseAlibabaEleFengniaoMerchantContractCancelAPIResponse 将 AlibabaEleFengniaoMerchantContractCancelAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEleFengniaoMerchantContractCancelAPIResponse(v *AlibabaEleFengniaoMerchantContractCancelAPIResponse) {
+	v.Reset()
+	poolAlibabaEleFengniaoMerchantContractCancelAPIResponse.Put(v)
 }

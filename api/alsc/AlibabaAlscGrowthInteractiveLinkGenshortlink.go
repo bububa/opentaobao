@@ -9,11 +9,6 @@ import (
 // alibaba.alsc.growth.interactive.link.genshortlink
 //
 // 短链接口
-func AlibabaAlscGrowthInteractiveLinkGenshortlink(clt *core.SDKClient, req *alsc.AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest, session string) (*alsc.AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIResponse, error) {
-	var resp alsc.AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlscGrowthInteractiveLinkGenshortlink(clt *core.SDKClient, req *alsc.AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest, resp *alsc.AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

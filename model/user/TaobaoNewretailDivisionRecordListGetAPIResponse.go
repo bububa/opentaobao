@@ -2,6 +2,7 @@ package user
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoNewretailDivisionRecordListGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoNewretailDivisionRecordListGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoNewretailDivisionRecordListGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoNewretailDivisionRecordListGetAPIResponseModel).Reset()
 }
 
 // TaobaoNewretailDivisionRecordListGetAPIResponseModel is 导购分佣明细列表 成功返回结果
@@ -38,4 +45,35 @@ type TaobaoNewretailDivisionRecordListGetAPIResponseModel struct {
 	HasNextPage bool `json:"has_next_page,omitempty" xml:"has_next_page,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoNewretailDivisionRecordListGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.DataList = m.DataList[:0]
+	m.ResCode = ""
+	m.Message = ""
+	m.Total = 0
+	m.PageNo = 0
+	m.PageSize = 0
+	m.HasPrevPage = false
+	m.HasNextPage = false
+	m.IsSuccess = false
+}
+
+var poolTaobaoNewretailDivisionRecordListGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoNewretailDivisionRecordListGetAPIResponse)
+	},
+}
+
+// GetTaobaoNewretailDivisionRecordListGetAPIResponse 从 sync.Pool 获取 TaobaoNewretailDivisionRecordListGetAPIResponse
+func GetTaobaoNewretailDivisionRecordListGetAPIResponse() *TaobaoNewretailDivisionRecordListGetAPIResponse {
+	return poolTaobaoNewretailDivisionRecordListGetAPIResponse.Get().(*TaobaoNewretailDivisionRecordListGetAPIResponse)
+}
+
+// ReleaseTaobaoNewretailDivisionRecordListGetAPIResponse 将 TaobaoNewretailDivisionRecordListGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoNewretailDivisionRecordListGetAPIResponse(v *TaobaoNewretailDivisionRecordListGetAPIResponse) {
+	v.Reset()
+	poolTaobaoNewretailDivisionRecordListGetAPIResponse.Put(v)
 }

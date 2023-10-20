@@ -2,6 +2,7 @@ package usergrowth
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoGrowthReachingBrowserSearchAPIResponse struct {
 	TaobaoGrowthReachingBrowserSearchAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoGrowthReachingBrowserSearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoGrowthReachingBrowserSearchAPIResponseModel).Reset()
+}
+
 // TaobaoGrowthReachingBrowserSearchAPIResponseModel is 查询搜索关联 成功返回结果
 type TaobaoGrowthReachingBrowserSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"growth_reaching_browser_search_response"`
@@ -26,4 +33,29 @@ type TaobaoGrowthReachingBrowserSearchAPIResponseModel struct {
 	ExposureUrl string `json:"exposure_url,omitempty" xml:"exposure_url,omitempty"`
 	// 是否参竞
 	Offering bool `json:"offering,omitempty" xml:"offering,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoGrowthReachingBrowserSearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Products = m.Products[:0]
+	m.ExposureUrl = ""
+	m.Offering = false
+}
+
+var poolTaobaoGrowthReachingBrowserSearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoGrowthReachingBrowserSearchAPIResponse)
+	},
+}
+
+// GetTaobaoGrowthReachingBrowserSearchAPIResponse 从 sync.Pool 获取 TaobaoGrowthReachingBrowserSearchAPIResponse
+func GetTaobaoGrowthReachingBrowserSearchAPIResponse() *TaobaoGrowthReachingBrowserSearchAPIResponse {
+	return poolTaobaoGrowthReachingBrowserSearchAPIResponse.Get().(*TaobaoGrowthReachingBrowserSearchAPIResponse)
+}
+
+// ReleaseTaobaoGrowthReachingBrowserSearchAPIResponse 将 TaobaoGrowthReachingBrowserSearchAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoGrowthReachingBrowserSearchAPIResponse(v *TaobaoGrowthReachingBrowserSearchAPIResponse) {
+	v.Reset()
+	poolTaobaoGrowthReachingBrowserSearchAPIResponse.Put(v)
 }

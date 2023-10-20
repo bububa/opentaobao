@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoXhotelOrderUpdateConfirmcodeAPIResponse struct {
 	TaobaoXhotelOrderUpdateConfirmcodeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderUpdateConfirmcodeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelOrderUpdateConfirmcodeAPIResponseModel).Reset()
+}
+
 // TaobaoXhotelOrderUpdateConfirmcodeAPIResponseModel is 推送及更新订单确认号 成功返回结果
 type TaobaoXhotelOrderUpdateConfirmcodeAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_update_confirmcode_response"`
@@ -26,4 +33,29 @@ type TaobaoXhotelOrderUpdateConfirmcodeAPIResponseModel struct {
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
 	// 是否操作成功
 	Error bool `json:"error,omitempty" xml:"error,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderUpdateConfirmcodeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorMsg = ""
+	m.Result = ""
+	m.Error = false
+}
+
+var poolTaobaoXhotelOrderUpdateConfirmcodeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelOrderUpdateConfirmcodeAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelOrderUpdateConfirmcodeAPIResponse 从 sync.Pool 获取 TaobaoXhotelOrderUpdateConfirmcodeAPIResponse
+func GetTaobaoXhotelOrderUpdateConfirmcodeAPIResponse() *TaobaoXhotelOrderUpdateConfirmcodeAPIResponse {
+	return poolTaobaoXhotelOrderUpdateConfirmcodeAPIResponse.Get().(*TaobaoXhotelOrderUpdateConfirmcodeAPIResponse)
+}
+
+// ReleaseTaobaoXhotelOrderUpdateConfirmcodeAPIResponse 将 TaobaoXhotelOrderUpdateConfirmcodeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelOrderUpdateConfirmcodeAPIResponse(v *TaobaoXhotelOrderUpdateConfirmcodeAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelOrderUpdateConfirmcodeAPIResponse.Put(v)
 }

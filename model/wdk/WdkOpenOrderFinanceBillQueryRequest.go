@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WdkOpenOrderFinanceBillQueryRequest 结构体
 type WdkOpenOrderFinanceBillQueryRequest struct {
 	// 经营店id
@@ -12,4 +16,25 @@ type WdkOpenOrderFinanceBillQueryRequest struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 传入上一次查询结果的next_id，第一次查询时传0
 	NextId int64 `json:"next_id,omitempty" xml:"next_id,omitempty"`
+}
+
+var poolWdkOpenOrderFinanceBillQueryRequest = sync.Pool{
+	New: func() any {
+		return new(WdkOpenOrderFinanceBillQueryRequest)
+	},
+}
+
+// GetWdkOpenOrderFinanceBillQueryRequest() 从对象池中获取WdkOpenOrderFinanceBillQueryRequest
+func GetWdkOpenOrderFinanceBillQueryRequest() *WdkOpenOrderFinanceBillQueryRequest {
+	return poolWdkOpenOrderFinanceBillQueryRequest.Get().(*WdkOpenOrderFinanceBillQueryRequest)
+}
+
+// ReleaseWdkOpenOrderFinanceBillQueryRequest 释放WdkOpenOrderFinanceBillQueryRequest
+func ReleaseWdkOpenOrderFinanceBillQueryRequest(v *WdkOpenOrderFinanceBillQueryRequest) {
+	v.StoreId = ""
+	v.Dt = ""
+	v.SellerMerchantCode = ""
+	v.PageSize = 0
+	v.NextId = 0
+	poolWdkOpenOrderFinanceBillQueryRequest.Put(v)
 }

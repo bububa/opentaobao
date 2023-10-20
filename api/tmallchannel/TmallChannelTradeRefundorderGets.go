@@ -9,11 +9,6 @@ import (
 // tmall.channel.trade.refundorder.gets
 //
 // 供应商分页查询退款单
-func TmallChannelTradeRefundorderGets(clt *core.SDKClient, req *tmallchannel.TmallChannelTradeRefundorderGetsAPIRequest, session string) (*tmallchannel.TmallChannelTradeRefundorderGetsAPIResponse, error) {
-	var resp tmallchannel.TmallChannelTradeRefundorderGetsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallChannelTradeRefundorderGets(clt *core.SDKClient, req *tmallchannel.TmallChannelTradeRefundorderGetsAPIRequest, resp *tmallchannel.TmallChannelTradeRefundorderGetsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

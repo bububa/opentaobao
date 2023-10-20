@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // DeliveryStrategyInfo 结构体
 type DeliveryStrategyInfo struct {
 	// 合作CP信息
@@ -12,4 +16,25 @@ type DeliveryStrategyInfo struct {
 	BuyerMessageRule int64 `json:"buyer_message_rule,omitempty" xml:"buyer_message_rule,omitempty"`
 	// 仓id
 	WarehouseId int64 `json:"warehouse_id,omitempty" xml:"warehouse_id,omitempty"`
+}
+
+var poolDeliveryStrategyInfo = sync.Pool{
+	New: func() any {
+		return new(DeliveryStrategyInfo)
+	},
+}
+
+// GetDeliveryStrategyInfo() 从对象池中获取DeliveryStrategyInfo
+func GetDeliveryStrategyInfo() *DeliveryStrategyInfo {
+	return poolDeliveryStrategyInfo.Get().(*DeliveryStrategyInfo)
+}
+
+// ReleaseDeliveryStrategyInfo 释放DeliveryStrategyInfo
+func ReleaseDeliveryStrategyInfo(v *DeliveryStrategyInfo) {
+	v.CocpInfoList = v.CocpInfoList[:0]
+	v.SpecialRouteInfoList = v.SpecialRouteInfoList[:0]
+	v.WarehouseName = ""
+	v.BuyerMessageRule = 0
+	v.WarehouseId = 0
+	poolDeliveryStrategyInfo.Put(v)
 }

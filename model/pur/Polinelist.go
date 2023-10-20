@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // Polinelist 结构体
 type Polinelist struct {
 	// BOM节点列表，节点之间使用父节点id维护层级关系
@@ -42,4 +46,40 @@ type Polinelist struct {
 	GoodsCurrencyCode string `json:"goods_currency_code,omitempty" xml:"goods_currency_code,omitempty"`
 	// lineNum
 	LineNum int64 `json:"line_num,omitempty" xml:"line_num,omitempty"`
+}
+
+var poolPolinelist = sync.Pool{
+	New: func() any {
+		return new(Polinelist)
+	},
+}
+
+// GetPolinelist() 从对象池中获取Polinelist
+func GetPolinelist() *Polinelist {
+	return poolPolinelist.Get().(*Polinelist)
+}
+
+// ReleasePolinelist 释放Polinelist
+func ReleasePolinelist(v *Polinelist) {
+	v.ItemList = v.ItemList[:0]
+	v.GoodsName = ""
+	v.Description = ""
+	v.Uom = ""
+	v.Quantity = ""
+	v.TaxRate = ""
+	v.IsWhtRelated = ""
+	v.TaxPrice = ""
+	v.CurrencyCode = ""
+	v.TaxAmount = ""
+	v.DeliveryLocation = ""
+	v.NeedByDate = ""
+	v.NeedByDateEnd = ""
+	v.Receiver = ""
+	v.ReceiverPhone = ""
+	v.ReceiverMobile = ""
+	v.AdditionalInfo = ""
+	v.ExchangeRate = ""
+	v.GoodsCurrencyCode = ""
+	v.LineNum = 0
+	poolPolinelist.Put(v)
 }

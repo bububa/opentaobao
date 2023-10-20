@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaBaseOrderSupplierNotifyAPIRequest struct {
 // NewAlibabaBaseOrderSupplierNotifyRequest 初始化AlibabaBaseOrderSupplierNotifyAPIRequest对象
 func NewAlibabaBaseOrderSupplierNotifyRequest() *AlibabaBaseOrderSupplierNotifyAPIRequest {
 	return &AlibabaBaseOrderSupplierNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaBaseOrderSupplierNotifyAPIRequest) Reset() {
+	r._paramFlowSuppllierNotifyModel = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaBaseOrderSupplierNotifyAPIRequest) SetParamFlowSuppllierNotifyMo
 // GetParamFlowSuppllierNotifyModel ParamFlowSuppllierNotifyModel Getter
 func (r AlibabaBaseOrderSupplierNotifyAPIRequest) GetParamFlowSuppllierNotifyModel() *FlowSuppllierNotifyModel {
 	return r._paramFlowSuppllierNotifyModel
+}
+
+var poolAlibabaBaseOrderSupplierNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaBaseOrderSupplierNotifyRequest()
+	},
+}
+
+// GetAlibabaBaseOrderSupplierNotifyRequest 从 sync.Pool 获取 AlibabaBaseOrderSupplierNotifyAPIRequest
+func GetAlibabaBaseOrderSupplierNotifyAPIRequest() *AlibabaBaseOrderSupplierNotifyAPIRequest {
+	return poolAlibabaBaseOrderSupplierNotifyAPIRequest.Get().(*AlibabaBaseOrderSupplierNotifyAPIRequest)
+}
+
+// ReleaseAlibabaBaseOrderSupplierNotifyAPIRequest 将 AlibabaBaseOrderSupplierNotifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaBaseOrderSupplierNotifyAPIRequest(v *AlibabaBaseOrderSupplierNotifyAPIRequest) {
+	v.Reset()
+	poolAlibabaBaseOrderSupplierNotifyAPIRequest.Put(v)
 }

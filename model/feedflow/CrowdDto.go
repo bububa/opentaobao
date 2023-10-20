@@ -1,5 +1,9 @@
 package feedflow
 
+import (
+	"sync"
+)
+
 // CrowdDto 结构体
 type CrowdDto struct {
 	// 人群描述
@@ -22,4 +26,30 @@ type CrowdDto struct {
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
 	// 单元id
 	AdgroupId int64 `json:"adgroup_id,omitempty" xml:"adgroup_id,omitempty"`
+}
+
+var poolCrowdDto = sync.Pool{
+	New: func() any {
+		return new(CrowdDto)
+	},
+}
+
+// GetCrowdDto() 从对象池中获取CrowdDto
+func GetCrowdDto() *CrowdDto {
+	return poolCrowdDto.Get().(*CrowdDto)
+}
+
+// ReleaseCrowdDto 释放CrowdDto
+func ReleaseCrowdDto(v *CrowdDto) {
+	v.CrowdDesc = ""
+	v.CrowdName = ""
+	v.Status = ""
+	v.Price = 0
+	v.TargetLabel = nil
+	v.AveragePrice = 0
+	v.SuggestPrice = 0
+	v.CrowdId = 0
+	v.CampaignId = 0
+	v.AdgroupId = 0
+	poolCrowdDto.Put(v)
 }

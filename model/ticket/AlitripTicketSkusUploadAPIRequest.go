@@ -2,6 +2,7 @@ package ticket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -34,8 +35,20 @@ type AlitripTicketSkusUploadAPIRequest struct {
 // NewAlitripTicketSkusUploadRequest 初始化AlitripTicketSkusUploadAPIRequest对象
 func NewAlitripTicketSkusUploadRequest() *AlitripTicketSkusUploadAPIRequest {
 	return &AlitripTicketSkusUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTicketSkusUploadAPIRequest) Reset() {
+	r._priceRules = r._priceRules[:0]
+	r._ticketType = ""
+	r._outProductId = ""
+	r._ticketSeason = ""
+	r._ticketArea = ""
+	r._itemId = 0
+	r._aliProductId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -144,4 +157,21 @@ func (r *AlitripTicketSkusUploadAPIRequest) SetAliProductId(_aliProductId int64)
 // GetAliProductId AliProductId Getter
 func (r AlitripTicketSkusUploadAPIRequest) GetAliProductId() int64 {
 	return r._aliProductId
+}
+
+var poolAlitripTicketSkusUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTicketSkusUploadRequest()
+	},
+}
+
+// GetAlitripTicketSkusUploadRequest 从 sync.Pool 获取 AlitripTicketSkusUploadAPIRequest
+func GetAlitripTicketSkusUploadAPIRequest() *AlitripTicketSkusUploadAPIRequest {
+	return poolAlitripTicketSkusUploadAPIRequest.Get().(*AlitripTicketSkusUploadAPIRequest)
+}
+
+// ReleaseAlitripTicketSkusUploadAPIRequest 将 AlitripTicketSkusUploadAPIRequest 放入 sync.Pool
+func ReleaseAlitripTicketSkusUploadAPIRequest(v *AlitripTicketSkusUploadAPIRequest) {
+	v.Reset()
+	poolAlitripTicketSkusUploadAPIRequest.Put(v)
 }

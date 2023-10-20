@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.pw.special.synchronode
 //
 // 合作方同步状态至阿里健康
-func AlibabaAlihealthPwSpecialSynchronode(clt *core.SDKClient, req *alihealthpw.AlibabaAlihealthPwSpecialSynchronodeAPIRequest, session string) (*alihealthpw.AlibabaAlihealthPwSpecialSynchronodeAPIResponse, error) {
-	var resp alihealthpw.AlibabaAlihealthPwSpecialSynchronodeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthPwSpecialSynchronode(clt *core.SDKClient, req *alihealthpw.AlibabaAlihealthPwSpecialSynchronodeAPIRequest, resp *alihealthpw.AlibabaAlihealthPwSpecialSynchronodeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

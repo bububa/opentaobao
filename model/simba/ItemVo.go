@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // ItemVo 结构体
 type ItemVo struct {
 	// 商品标题
@@ -24,4 +28,31 @@ type ItemVo struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 是否定时上架,true:是,false:否
 	Timing bool `json:"timing,omitempty" xml:"timing,omitempty"`
+}
+
+var poolItemVo = sync.Pool{
+	New: func() any {
+		return new(ItemVo)
+	},
+}
+
+// GetItemVo() 从对象池中获取ItemVo
+func GetItemVo() *ItemVo {
+	return poolItemVo.Get().(*ItemVo)
+}
+
+// ReleaseItemVo 释放ItemVo
+func ReleaseItemVo(v *ItemVo) {
+	v.Title = ""
+	v.ImgUrl = ""
+	v.LinkUrl = ""
+	v.FirstStartsTime = ""
+	v.Starts = ""
+	v.CategoryId = ""
+	v.ItemId = 0
+	v.Price = 0
+	v.BidCount = 0
+	v.Quantity = 0
+	v.Timing = false
+	poolItemVo.Put(v)
 }

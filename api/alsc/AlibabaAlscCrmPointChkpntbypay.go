@@ -9,11 +9,6 @@ import (
 // alibaba.alsc.crm.point.chkpntbypay
 //
 // 校验支付链路中的积分抵扣是否合法
-func AlibabaAlscCrmPointChkpntbypay(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointChkpntbypayAPIRequest, session string) (*alsc.AlibabaAlscCrmPointChkpntbypayAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmPointChkpntbypayAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlscCrmPointChkpntbypay(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointChkpntbypayAPIRequest, resp *alsc.AlibabaAlscCrmPointChkpntbypayAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

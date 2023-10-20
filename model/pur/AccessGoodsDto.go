@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // AccessGoodsDto 结构体
 type AccessGoodsDto struct {
 	// 报价明细
@@ -18,4 +22,28 @@ type AccessGoodsDto struct {
 	SupplierId int64 `json:"supplier_id,omitempty" xml:"supplier_id,omitempty"`
 	// 税率，如6%则为6
 	TaxRate float64 `json:"tax_rate,omitempty" xml:"tax_rate,omitempty"`
+}
+
+var poolAccessGoodsDto = sync.Pool{
+	New: func() any {
+		return new(AccessGoodsDto)
+	},
+}
+
+// GetAccessGoodsDto() 从对象池中获取AccessGoodsDto
+func GetAccessGoodsDto() *AccessGoodsDto {
+	return poolAccessGoodsDto.Get().(*AccessGoodsDto)
+}
+
+// ReleaseAccessGoodsDto 释放AccessGoodsDto
+func ReleaseAccessGoodsDto(v *AccessGoodsDto) {
+	v.QuotationList = v.QuotationList[:0]
+	v.ContractCode = ""
+	v.DataSource = ""
+	v.IsApplyDirectoryMall = ""
+	v.SourceValue = ""
+	v.MinimumPurchaseQuantity = 0
+	v.SupplierId = 0
+	v.TaxRate = 0
+	poolAccessGoodsDto.Put(v)
 }

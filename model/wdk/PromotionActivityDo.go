@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // PromotionActivityDo 结构体
 type PromotionActivityDo struct {
 	// 店群机构编码
@@ -24,4 +28,31 @@ type PromotionActivityDo struct {
 	Creator string `json:"creator,omitempty" xml:"creator,omitempty"`
 	// 创建人ID
 	CreatorId int64 `json:"creator_id,omitempty" xml:"creator_id,omitempty"`
+}
+
+var poolPromotionActivityDo = sync.Pool{
+	New: func() any {
+		return new(PromotionActivityDo)
+	},
+}
+
+// GetPromotionActivityDo() 从对象池中获取PromotionActivityDo
+func GetPromotionActivityDo() *PromotionActivityDo {
+	return poolPromotionActivityDo.Get().(*PromotionActivityDo)
+}
+
+// ReleasePromotionActivityDo 释放PromotionActivityDo
+func ReleasePromotionActivityDo(v *PromotionActivityDo) {
+	v.SupplyGroupCodes = v.SupplyGroupCodes[:0]
+	v.StartTime = ""
+	v.CreateTime = ""
+	v.PromotionName = ""
+	v.PromotionDesc = ""
+	v.SupplierCode = ""
+	v.EndTime = ""
+	v.OuterPromotionCode = ""
+	v.MerchantCode = ""
+	v.Creator = ""
+	v.CreatorId = 0
+	poolPromotionActivityDo.Put(v)
 }

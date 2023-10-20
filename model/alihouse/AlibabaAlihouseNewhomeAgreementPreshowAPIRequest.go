@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihouseNewhomeAgreementPreshowAPIRequest struct {
 // NewAlibabaAlihouseNewhomeAgreementPreshowRequest 初始化AlibabaAlihouseNewhomeAgreementPreshowAPIRequest对象
 func NewAlibabaAlihouseNewhomeAgreementPreshowRequest() *AlibabaAlihouseNewhomeAgreementPreshowAPIRequest {
 	return &AlibabaAlihouseNewhomeAgreementPreshowAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeAgreementPreshowAPIRequest) Reset() {
+	r._id = 0
+	r._type = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihouseNewhomeAgreementPreshowAPIRequest) SetType(_type int64) 
 // GetType Type Getter
 func (r AlibabaAlihouseNewhomeAgreementPreshowAPIRequest) GetType() int64 {
 	return r._type
+}
+
+var poolAlibabaAlihouseNewhomeAgreementPreshowAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeAgreementPreshowRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeAgreementPreshowRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeAgreementPreshowAPIRequest
+func GetAlibabaAlihouseNewhomeAgreementPreshowAPIRequest() *AlibabaAlihouseNewhomeAgreementPreshowAPIRequest {
+	return poolAlibabaAlihouseNewhomeAgreementPreshowAPIRequest.Get().(*AlibabaAlihouseNewhomeAgreementPreshowAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeAgreementPreshowAPIRequest 将 AlibabaAlihouseNewhomeAgreementPreshowAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeAgreementPreshowAPIRequest(v *AlibabaAlihouseNewhomeAgreementPreshowAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeAgreementPreshowAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // AgentConfirmRefundRq 结构体
 type AgentConfirmRefundRq struct {
 	// 商家单号
@@ -22,4 +26,30 @@ type AgentConfirmRefundRq struct {
 	MainBizOrderId int64 `json:"main_biz_order_id,omitempty" xml:"main_biz_order_id,omitempty"`
 	// 退款类型 0-退票
 	RefundType int64 `json:"refund_type,omitempty" xml:"refund_type,omitempty"`
+}
+
+var poolAgentConfirmRefundRq = sync.Pool{
+	New: func() any {
+		return new(AgentConfirmRefundRq)
+	},
+}
+
+// GetAgentConfirmRefundRq() 从对象池中获取AgentConfirmRefundRq
+func GetAgentConfirmRefundRq() *AgentConfirmRefundRq {
+	return poolAgentConfirmRefundRq.Get().(*AgentConfirmRefundRq)
+}
+
+// ReleaseAgentConfirmRefundRq 释放AgentConfirmRefundRq
+func ReleaseAgentConfirmRefundRq(v *AgentConfirmRefundRq) {
+	v.AgentOrderId = ""
+	v.AgentTicketId = ""
+	v.DepartDate = ""
+	v.PassengerIdNum = ""
+	v.PassengerPhone = ""
+	v.RefundFee = ""
+	v.RefundTime = ""
+	v.RefundTransId = ""
+	v.MainBizOrderId = 0
+	v.RefundType = 0
+	poolAgentConfirmRefundRq.Put(v)
 }

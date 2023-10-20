@@ -9,11 +9,6 @@ import (
 // tmall.traderate.itemtags.get
 //
 // 通过商品ID获取标签详细信息
-func TmallTraderateItemtagsGet(clt *core.SDKClient, req *traderate.TmallTraderateItemtagsGetAPIRequest, session string) (*traderate.TmallTraderateItemtagsGetAPIResponse, error) {
-	var resp traderate.TmallTraderateItemtagsGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallTraderateItemtagsGet(clt *core.SDKClient, req *traderate.TmallTraderateItemtagsGetAPIRequest, resp *traderate.TmallTraderateItemtagsGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

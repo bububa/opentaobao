@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoJstSmsSignnameCreateAPIRequest struct {
 // NewTaobaoJstSmsSignnameCreateRequest 初始化TaobaoJstSmsSignnameCreateAPIRequest对象
 func NewTaobaoJstSmsSignnameCreateRequest() *TaobaoJstSmsSignnameCreateAPIRequest {
 	return &TaobaoJstSmsSignnameCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJstSmsSignnameCreateAPIRequest) Reset() {
+	r._addSmsSignRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoJstSmsSignnameCreateAPIRequest) SetAddSmsSignRequest(_addSmsSignR
 // GetAddSmsSignRequest AddSmsSignRequest Getter
 func (r TaobaoJstSmsSignnameCreateAPIRequest) GetAddSmsSignRequest() *TopAddSmsSignRequest {
 	return r._addSmsSignRequest
+}
+
+var poolTaobaoJstSmsSignnameCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJstSmsSignnameCreateRequest()
+	},
+}
+
+// GetTaobaoJstSmsSignnameCreateRequest 从 sync.Pool 获取 TaobaoJstSmsSignnameCreateAPIRequest
+func GetTaobaoJstSmsSignnameCreateAPIRequest() *TaobaoJstSmsSignnameCreateAPIRequest {
+	return poolTaobaoJstSmsSignnameCreateAPIRequest.Get().(*TaobaoJstSmsSignnameCreateAPIRequest)
+}
+
+// ReleaseTaobaoJstSmsSignnameCreateAPIRequest 将 TaobaoJstSmsSignnameCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJstSmsSignnameCreateAPIRequest(v *TaobaoJstSmsSignnameCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoJstSmsSignnameCreateAPIRequest.Put(v)
 }

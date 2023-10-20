@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // TakeoutShopSummaryInfo 结构体
 type TakeoutShopSummaryInfo struct {
 	// 店铺分店名
@@ -24,4 +28,31 @@ type TakeoutShopSummaryInfo struct {
 	WaitRefund int64 `json:"wait_refund,omitempty" xml:"wait_refund,omitempty"`
 	// 店铺营业状态，歇业：0，营业：1
 	IsOpen int64 `json:"is_open,omitempty" xml:"is_open,omitempty"`
+}
+
+var poolTakeoutShopSummaryInfo = sync.Pool{
+	New: func() any {
+		return new(TakeoutShopSummaryInfo)
+	},
+}
+
+// GetTakeoutShopSummaryInfo() 从对象池中获取TakeoutShopSummaryInfo
+func GetTakeoutShopSummaryInfo() *TakeoutShopSummaryInfo {
+	return poolTakeoutShopSummaryInfo.Get().(*TakeoutShopSummaryInfo)
+}
+
+// ReleaseTakeoutShopSummaryInfo 释放TakeoutShopSummaryInfo
+func ReleaseTakeoutShopSummaryInfo(v *TakeoutShopSummaryInfo) {
+	v.SubName = ""
+	v.Name = ""
+	v.City = ""
+	v.Address = ""
+	v.Phone = ""
+	v.Shopoutid = ""
+	v.Shopid = 0
+	v.WaitConfirm = 0
+	v.DigitalWaitConfirm = 0
+	v.WaitRefund = 0
+	v.IsOpen = 0
+	poolTakeoutShopSummaryInfo.Put(v)
 }

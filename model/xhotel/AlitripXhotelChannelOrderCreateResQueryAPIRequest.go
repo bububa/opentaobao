@@ -2,6 +2,7 @@ package xhotel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripXhotelChannelOrderCreateResQueryAPIRequest struct {
 // NewAlitripXhotelChannelOrderCreateResQueryRequest 初始化AlitripXhotelChannelOrderCreateResQueryAPIRequest对象
 func NewAlitripXhotelChannelOrderCreateResQueryRequest() *AlitripXhotelChannelOrderCreateResQueryAPIRequest {
 	return &AlitripXhotelChannelOrderCreateResQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripXhotelChannelOrderCreateResQueryAPIRequest) Reset() {
+	r._outSourceOrderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripXhotelChannelOrderCreateResQueryAPIRequest) SetOutSourceOrderId(
 // GetOutSourceOrderId OutSourceOrderId Getter
 func (r AlitripXhotelChannelOrderCreateResQueryAPIRequest) GetOutSourceOrderId() string {
 	return r._outSourceOrderId
+}
+
+var poolAlitripXhotelChannelOrderCreateResQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripXhotelChannelOrderCreateResQueryRequest()
+	},
+}
+
+// GetAlitripXhotelChannelOrderCreateResQueryRequest 从 sync.Pool 获取 AlitripXhotelChannelOrderCreateResQueryAPIRequest
+func GetAlitripXhotelChannelOrderCreateResQueryAPIRequest() *AlitripXhotelChannelOrderCreateResQueryAPIRequest {
+	return poolAlitripXhotelChannelOrderCreateResQueryAPIRequest.Get().(*AlitripXhotelChannelOrderCreateResQueryAPIRequest)
+}
+
+// ReleaseAlitripXhotelChannelOrderCreateResQueryAPIRequest 将 AlitripXhotelChannelOrderCreateResQueryAPIRequest 放入 sync.Pool
+func ReleaseAlitripXhotelChannelOrderCreateResQueryAPIRequest(v *AlitripXhotelChannelOrderCreateResQueryAPIRequest) {
+	v.Reset()
+	poolAlitripXhotelChannelOrderCreateResQueryAPIRequest.Put(v)
 }

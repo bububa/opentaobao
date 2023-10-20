@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpCreativeHorizontalFindpageAPIRequest struct {
 // NewTaobaoUniversalbpCreativeHorizontalFindpageRequest 初始化TaobaoUniversalbpCreativeHorizontalFindpageAPIRequest对象
 func NewTaobaoUniversalbpCreativeHorizontalFindpageRequest() *TaobaoUniversalbpCreativeHorizontalFindpageAPIRequest {
 	return &TaobaoUniversalbpCreativeHorizontalFindpageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpCreativeHorizontalFindpageAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._creativeQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpCreativeHorizontalFindpageAPIRequest) SetCreativeQuery
 // GetCreativeQueryVO CreativeQueryVO Getter
 func (r TaobaoUniversalbpCreativeHorizontalFindpageAPIRequest) GetCreativeQueryVO() *CreativeQueryVo {
 	return r._creativeQueryVO
+}
+
+var poolTaobaoUniversalbpCreativeHorizontalFindpageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpCreativeHorizontalFindpageRequest()
+	},
+}
+
+// GetTaobaoUniversalbpCreativeHorizontalFindpageRequest 从 sync.Pool 获取 TaobaoUniversalbpCreativeHorizontalFindpageAPIRequest
+func GetTaobaoUniversalbpCreativeHorizontalFindpageAPIRequest() *TaobaoUniversalbpCreativeHorizontalFindpageAPIRequest {
+	return poolTaobaoUniversalbpCreativeHorizontalFindpageAPIRequest.Get().(*TaobaoUniversalbpCreativeHorizontalFindpageAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpCreativeHorizontalFindpageAPIRequest 将 TaobaoUniversalbpCreativeHorizontalFindpageAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpCreativeHorizontalFindpageAPIRequest(v *TaobaoUniversalbpCreativeHorizontalFindpageAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpCreativeHorizontalFindpageAPIRequest.Put(v)
 }

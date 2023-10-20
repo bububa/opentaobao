@@ -9,11 +9,6 @@ import (
 // taobao.uscesl.biz.ap.add
 //
 // 根据门店和ap的MAC地址新增
-func TaobaoUsceslBizApAdd(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizApAddAPIRequest, session string) (*uscesl.TaobaoUsceslBizApAddAPIResponse, error) {
-	var resp uscesl.TaobaoUsceslBizApAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUsceslBizApAdd(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizApAddAPIRequest, resp *uscesl.TaobaoUsceslBizApAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

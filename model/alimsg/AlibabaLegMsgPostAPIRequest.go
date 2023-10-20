@@ -2,6 +2,7 @@ package alimsg
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -41,8 +42,25 @@ type AlibabaLegMsgPostAPIRequest struct {
 // NewAlibabaLegMsgPostRequest 初始化AlibabaLegMsgPostAPIRequest对象
 func NewAlibabaLegMsgPostRequest() *AlibabaLegMsgPostAPIRequest {
 	return &AlibabaLegMsgPostAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(12),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegMsgPostAPIRequest) Reset() {
+	r._appId = ""
+	r._accessKey = ""
+	r._messageDefinitionCode = ""
+	r._receiverType = ""
+	r._receivers = ""
+	r._messageBodyListStr = ""
+	r._businessId = ""
+	r._businessType = ""
+	r._messageParams = ""
+	r._corpId = ""
+	r._sendTime = ""
+	r._expandParamsMapStr = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -216,4 +234,21 @@ func (r *AlibabaLegMsgPostAPIRequest) SetExpandParamsMapStr(_expandParamsMapStr 
 // GetExpandParamsMapStr ExpandParamsMapStr Getter
 func (r AlibabaLegMsgPostAPIRequest) GetExpandParamsMapStr() string {
 	return r._expandParamsMapStr
+}
+
+var poolAlibabaLegMsgPostAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegMsgPostRequest()
+	},
+}
+
+// GetAlibabaLegMsgPostRequest 从 sync.Pool 获取 AlibabaLegMsgPostAPIRequest
+func GetAlibabaLegMsgPostAPIRequest() *AlibabaLegMsgPostAPIRequest {
+	return poolAlibabaLegMsgPostAPIRequest.Get().(*AlibabaLegMsgPostAPIRequest)
+}
+
+// ReleaseAlibabaLegMsgPostAPIRequest 将 AlibabaLegMsgPostAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegMsgPostAPIRequest(v *AlibabaLegMsgPostAPIRequest) {
+	v.Reset()
+	poolAlibabaLegMsgPostAPIRequest.Put(v)
 }

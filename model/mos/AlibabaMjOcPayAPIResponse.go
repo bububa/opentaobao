@@ -2,6 +2,7 @@ package mos
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaMjOcPayAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjOcPayAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaMjOcPayAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaMjOcPayAPIResponseModel).Reset()
 }
 
 // AlibabaMjOcPayAPIResponseModel is POS收银成功后订单同步 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaMjOcPayAPIResponseModel struct {
 	ExCode int64 `json:"ex_code,omitempty" xml:"ex_code,omitempty"`
 	// success
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaMjOcPayAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.OutTradeNo = ""
+	m.ExMsg = ""
+	m.ExCode = 0
+	m.IsSuccess = false
+}
+
+var poolAlibabaMjOcPayAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaMjOcPayAPIResponse)
+	},
+}
+
+// GetAlibabaMjOcPayAPIResponse 从 sync.Pool 获取 AlibabaMjOcPayAPIResponse
+func GetAlibabaMjOcPayAPIResponse() *AlibabaMjOcPayAPIResponse {
+	return poolAlibabaMjOcPayAPIResponse.Get().(*AlibabaMjOcPayAPIResponse)
+}
+
+// ReleaseAlibabaMjOcPayAPIResponse 将 AlibabaMjOcPayAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaMjOcPayAPIResponse(v *AlibabaMjOcPayAPIResponse) {
+	v.Reset()
+	poolAlibabaMjOcPayAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAliqinAxbVendorExceptionNoSyncAPIResponse struct {
 	AlibabaAliqinAxbVendorExceptionNoSyncAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAliqinAxbVendorExceptionNoSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAliqinAxbVendorExceptionNoSyncAPIResponseModel).Reset()
+}
+
 // AlibabaAliqinAxbVendorExceptionNoSyncAPIResponseModel is 中心化供应商异常号码状态同步接口 成功返回结果
 type AlibabaAliqinAxbVendorExceptionNoSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_aliqin_axb_vendor_exception_no_sync_response"`
@@ -22,4 +29,27 @@ type AlibabaAliqinAxbVendorExceptionNoSyncAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *AlibabaAliqinAxbVendorExceptionNoSyncResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAliqinAxbVendorExceptionNoSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAliqinAxbVendorExceptionNoSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAliqinAxbVendorExceptionNoSyncAPIResponse)
+	},
+}
+
+// GetAlibabaAliqinAxbVendorExceptionNoSyncAPIResponse 从 sync.Pool 获取 AlibabaAliqinAxbVendorExceptionNoSyncAPIResponse
+func GetAlibabaAliqinAxbVendorExceptionNoSyncAPIResponse() *AlibabaAliqinAxbVendorExceptionNoSyncAPIResponse {
+	return poolAlibabaAliqinAxbVendorExceptionNoSyncAPIResponse.Get().(*AlibabaAliqinAxbVendorExceptionNoSyncAPIResponse)
+}
+
+// ReleaseAlibabaAliqinAxbVendorExceptionNoSyncAPIResponse 将 AlibabaAliqinAxbVendorExceptionNoSyncAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAliqinAxbVendorExceptionNoSyncAPIResponse(v *AlibabaAliqinAxbVendorExceptionNoSyncAPIResponse) {
+	v.Reset()
+	poolAlibabaAliqinAxbVendorExceptionNoSyncAPIResponse.Put(v)
 }

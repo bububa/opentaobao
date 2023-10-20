@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // PullPackageOrderRequest 结构体
 type PullPackageOrderRequest struct {
 	// 业务类型，取值：JYPKZXCK(集运包裹正向出库)、JYPKNXCK(集运包裹逆向出库)
@@ -14,4 +18,26 @@ type PullPackageOrderRequest struct {
 	SupplierId string `json:"supplier_id,omitempty" xml:"supplier_id,omitempty"`
 	// 快递单号
 	MailNo string `json:"mail_no,omitempty" xml:"mail_no,omitempty"`
+}
+
+var poolPullPackageOrderRequest = sync.Pool{
+	New: func() any {
+		return new(PullPackageOrderRequest)
+	},
+}
+
+// GetPullPackageOrderRequest() 从对象池中获取PullPackageOrderRequest
+func GetPullPackageOrderRequest() *PullPackageOrderRequest {
+	return poolPullPackageOrderRequest.Get().(*PullPackageOrderRequest)
+}
+
+// ReleasePullPackageOrderRequest 释放PullPackageOrderRequest
+func ReleasePullPackageOrderRequest(v *PullPackageOrderRequest) {
+	v.OrderType = ""
+	v.LogisticsOwner = ""
+	v.WarehouseCode = ""
+	v.PackageOwnerCode = ""
+	v.SupplierId = ""
+	v.MailNo = ""
+	poolPullPackageOrderRequest.Put(v)
 }

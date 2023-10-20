@@ -1,5 +1,9 @@
 package iot
 
+import (
+	"sync"
+)
+
 // VideoUrlParam 结构体
 type VideoUrlParam struct {
 	// 默认播放链接
@@ -16,4 +20,27 @@ type VideoUrlParam struct {
 	Height int64 `json:"height,omitempty" xml:"height,omitempty"`
 	// 视频宽度
 	Width int64 `json:"width,omitempty" xml:"width,omitempty"`
+}
+
+var poolVideoUrlParam = sync.Pool{
+	New: func() any {
+		return new(VideoUrlParam)
+	},
+}
+
+// GetVideoUrlParam() 从对象池中获取VideoUrlParam
+func GetVideoUrlParam() *VideoUrlParam {
+	return poolVideoUrlParam.Get().(*VideoUrlParam)
+}
+
+// ReleaseVideoUrlParam 释放VideoUrlParam
+func ReleaseVideoUrlParam(v *VideoUrlParam) {
+	v.DefaultUrl = ""
+	v.High = ""
+	v.Standard = ""
+	v.Ultra = ""
+	v.Cover = nil
+	v.Height = 0
+	v.Width = 0
+	poolVideoUrlParam.Put(v)
 }

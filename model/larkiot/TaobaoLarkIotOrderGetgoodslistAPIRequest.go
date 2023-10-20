@@ -2,6 +2,7 @@ package larkiot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoLarkIotOrderGetgoodslistAPIRequest struct {
 // NewTaobaoLarkIotOrderGetgoodslistRequest 初始化TaobaoLarkIotOrderGetgoodslistAPIRequest对象
 func NewTaobaoLarkIotOrderGetgoodslistRequest() *TaobaoLarkIotOrderGetgoodslistAPIRequest {
 	return &TaobaoLarkIotOrderGetgoodslistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLarkIotOrderGetgoodslistAPIRequest) Reset() {
+	r._channelCode = ""
+	r._cinemaLinkId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoLarkIotOrderGetgoodslistAPIRequest) SetCinemaLinkId(_cinemaLinkId
 // GetCinemaLinkId CinemaLinkId Getter
 func (r TaobaoLarkIotOrderGetgoodslistAPIRequest) GetCinemaLinkId() string {
 	return r._cinemaLinkId
+}
+
+var poolTaobaoLarkIotOrderGetgoodslistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLarkIotOrderGetgoodslistRequest()
+	},
+}
+
+// GetTaobaoLarkIotOrderGetgoodslistRequest 从 sync.Pool 获取 TaobaoLarkIotOrderGetgoodslistAPIRequest
+func GetTaobaoLarkIotOrderGetgoodslistAPIRequest() *TaobaoLarkIotOrderGetgoodslistAPIRequest {
+	return poolTaobaoLarkIotOrderGetgoodslistAPIRequest.Get().(*TaobaoLarkIotOrderGetgoodslistAPIRequest)
+}
+
+// ReleaseTaobaoLarkIotOrderGetgoodslistAPIRequest 将 TaobaoLarkIotOrderGetgoodslistAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLarkIotOrderGetgoodslistAPIRequest(v *TaobaoLarkIotOrderGetgoodslistAPIRequest) {
+	v.Reset()
+	poolTaobaoLarkIotOrderGetgoodslistAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package tbitem
 
+import (
+	"sync"
+)
+
 // PaimaiInfo 结构体
 type PaimaiInfo struct {
 	// 增价幅度或降价幅度
@@ -32,4 +36,35 @@ type PaimaiInfo struct {
 	Period int64 `json:"period,omitempty" xml:"period,omitempty"`
 	// 降价时间周期（分钟）
 	Frequency int64 `json:"frequency,omitempty" xml:"frequency,omitempty"`
+}
+
+var poolPaimaiInfo = sync.Pool{
+	New: func() any {
+		return new(PaimaiInfo)
+	},
+}
+
+// GetPaimaiInfo() 从对象池中获取PaimaiInfo
+func GetPaimaiInfo() *PaimaiInfo {
+	return poolPaimaiInfo.Get().(*PaimaiInfo)
+}
+
+// ReleasePaimaiInfo 释放PaimaiInfo
+func ReleasePaimaiInfo(v *PaimaiInfo) {
+	v.Increment = ""
+	v.Reserve = ""
+	v.Start = ""
+	v.End = ""
+	v.Deposit = 0
+	v.Interval = 0
+	v.Mode = 0
+	v.ValidHour = 0
+	v.ValidMinute = 0
+	v.Repeat = 0
+	v.StartPrice = 0
+	v.CeilPrice = 0
+	v.DelayInMinute = 0
+	v.Period = 0
+	v.Frequency = 0
+	poolPaimaiInfo.Put(v)
 }

@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // TopAccountReportQueryVo 结构体
 type TopAccountReportQueryVo struct {
 	// 聚合维度可以传空的list，date-时间，scene-营销场景
@@ -24,4 +28,31 @@ type TopAccountReportQueryVo struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 是否分页
 	ByPage bool `json:"by_page,omitempty" xml:"by_page,omitempty"`
+}
+
+var poolTopAccountReportQueryVo = sync.Pool{
+	New: func() any {
+		return new(TopAccountReportQueryVo)
+	},
+}
+
+// GetTopAccountReportQueryVo() 从对象池中获取TopAccountReportQueryVo
+func GetTopAccountReportQueryVo() *TopAccountReportQueryVo {
+	return poolTopAccountReportQueryVo.Get().(*TopAccountReportQueryVo)
+}
+
+// ReleaseTopAccountReportQueryVo 释放TopAccountReportQueryVo
+func ReleaseTopAccountReportQueryVo(v *TopAccountReportQueryVo) {
+	v.QueryDomains = v.QueryDomains[:0]
+	v.QueryFieldInList = v.QueryFieldInList[:0]
+	v.BizCodeInList = v.BizCodeInList[:0]
+	v.SplitType = ""
+	v.UnifyType = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.EffectEqual = 0
+	v.Offset = 0
+	v.PageSize = 0
+	v.ByPage = false
+	poolTopAccountReportQueryVo.Put(v)
 }

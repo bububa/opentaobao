@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtriphomeResultSupport 结构体
 type BtriphomeResultSupport struct {
 	// module
@@ -18,4 +22,28 @@ type BtriphomeResultSupport struct {
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 审批单详情
 	Apply *OpenApplyRs `json:"apply,omitempty" xml:"apply,omitempty"`
+}
+
+var poolBtriphomeResultSupport = sync.Pool{
+	New: func() any {
+		return new(BtriphomeResultSupport)
+	},
+}
+
+// GetBtriphomeResultSupport() 从对象池中获取BtriphomeResultSupport
+func GetBtriphomeResultSupport() *BtriphomeResultSupport {
+	return poolBtriphomeResultSupport.Get().(*BtriphomeResultSupport)
+}
+
+// ReleaseBtriphomeResultSupport 释放BtriphomeResultSupport
+func ReleaseBtriphomeResultSupport(v *BtriphomeResultSupport) {
+	v.ApplyList = v.ApplyList[:0]
+	v.FlightOrderList = v.FlightOrderList[:0]
+	v.HotelOrderList = v.HotelOrderList[:0]
+	v.TrainOrderList = v.TrainOrderList[:0]
+	v.Success = ""
+	v.ResultMsg = ""
+	v.ResultCode = ""
+	v.Apply = nil
+	poolBtriphomeResultSupport.Put(v)
 }

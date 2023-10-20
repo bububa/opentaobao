@@ -1,5 +1,9 @@
 package moziacl
 
+import (
+	"sync"
+)
+
 // CreateRoleResult 结构体
 type CreateRoleResult struct {
 	// 创建角色返回data，此处无数据返回
@@ -14,4 +18,26 @@ type CreateRoleResult struct {
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
 	// 接口调用是否成功，若成功则为true
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolCreateRoleResult = sync.Pool{
+	New: func() any {
+		return new(CreateRoleResult)
+	},
+}
+
+// GetCreateRoleResult() 从对象池中获取CreateRoleResult
+func GetCreateRoleResult() *CreateRoleResult {
+	return poolCreateRoleResult.Get().(*CreateRoleResult)
+}
+
+// ReleaseCreateRoleResult 释放CreateRoleResult
+func ReleaseCreateRoleResult(v *CreateRoleResult) {
+	v.Data = ""
+	v.RequestId = ""
+	v.ResponseMessage = ""
+	v.ResponseMetaData = ""
+	v.ResponseCode = ""
+	v.Success = false
+	poolCreateRoleResult.Put(v)
 }

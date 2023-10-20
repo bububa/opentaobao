@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ExistingHouseQuotationReqDto 结构体
 type ExistingHouseQuotationReqDto struct {
 	// 发布时间
@@ -18,4 +22,28 @@ type ExistingHouseQuotationReqDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 毫秒级时间戳
 	EtcVersion int64 `json:"etc_version,omitempty" xml:"etc_version,omitempty"`
+}
+
+var poolExistingHouseQuotationReqDto = sync.Pool{
+	New: func() any {
+		return new(ExistingHouseQuotationReqDto)
+	},
+}
+
+// GetExistingHouseQuotationReqDto() 从对象池中获取ExistingHouseQuotationReqDto
+func GetExistingHouseQuotationReqDto() *ExistingHouseQuotationReqDto {
+	return poolExistingHouseQuotationReqDto.Get().(*ExistingHouseQuotationReqDto)
+}
+
+// ReleaseExistingHouseQuotationReqDto 释放ExistingHouseQuotationReqDto
+func ReleaseExistingHouseQuotationReqDto(v *ExistingHouseQuotationReqDto) {
+	v.PublishTime = ""
+	v.TargetId = ""
+	v.ContentJson = ""
+	v.BizType = 0
+	v.IsTest = 0
+	v.Type = 0
+	v.Status = 0
+	v.EtcVersion = 0
+	poolExistingHouseQuotationReqDto.Put(v)
 }

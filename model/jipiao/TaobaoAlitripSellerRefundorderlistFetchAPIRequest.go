@@ -2,6 +2,7 @@ package jipiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoAlitripSellerRefundorderlistFetchAPIRequest struct {
 // NewTaobaoAlitripSellerRefundorderlistFetchRequest 初始化TaobaoAlitripSellerRefundorderlistFetchAPIRequest对象
 func NewTaobaoAlitripSellerRefundorderlistFetchRequest() *TaobaoAlitripSellerRefundorderlistFetchAPIRequest {
 	return &TaobaoAlitripSellerRefundorderlistFetchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripSellerRefundorderlistFetchAPIRequest) Reset() {
+	r._endDate = ""
+	r._startDate = ""
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoAlitripSellerRefundorderlistFetchAPIRequest) SetStatus(_status in
 // GetStatus Status Getter
 func (r TaobaoAlitripSellerRefundorderlistFetchAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolTaobaoAlitripSellerRefundorderlistFetchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripSellerRefundorderlistFetchRequest()
+	},
+}
+
+// GetTaobaoAlitripSellerRefundorderlistFetchRequest 从 sync.Pool 获取 TaobaoAlitripSellerRefundorderlistFetchAPIRequest
+func GetTaobaoAlitripSellerRefundorderlistFetchAPIRequest() *TaobaoAlitripSellerRefundorderlistFetchAPIRequest {
+	return poolTaobaoAlitripSellerRefundorderlistFetchAPIRequest.Get().(*TaobaoAlitripSellerRefundorderlistFetchAPIRequest)
+}
+
+// ReleaseTaobaoAlitripSellerRefundorderlistFetchAPIRequest 将 TaobaoAlitripSellerRefundorderlistFetchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripSellerRefundorderlistFetchAPIRequest(v *TaobaoAlitripSellerRefundorderlistFetchAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripSellerRefundorderlistFetchAPIRequest.Put(v)
 }

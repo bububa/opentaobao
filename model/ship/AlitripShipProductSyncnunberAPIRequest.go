@@ -2,6 +2,7 @@ package ship
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlitripShipProductSyncnunberAPIRequest struct {
 // NewAlitripShipProductSyncnunberRequest 初始化AlitripShipProductSyncnunberAPIRequest对象
 func NewAlitripShipProductSyncnunberRequest() *AlitripShipProductSyncnunberAPIRequest {
 	return &AlitripShipProductSyncnunberAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripShipProductSyncnunberAPIRequest) Reset() {
+	r._cityName = ""
+	r._cityCode = ""
+	r._fromStationName = ""
+	r._fromStationCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlitripShipProductSyncnunberAPIRequest) SetFromStationCode(_fromStation
 // GetFromStationCode FromStationCode Getter
 func (r AlitripShipProductSyncnunberAPIRequest) GetFromStationCode() string {
 	return r._fromStationCode
+}
+
+var poolAlitripShipProductSyncnunberAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripShipProductSyncnunberRequest()
+	},
+}
+
+// GetAlitripShipProductSyncnunberRequest 从 sync.Pool 获取 AlitripShipProductSyncnunberAPIRequest
+func GetAlitripShipProductSyncnunberAPIRequest() *AlitripShipProductSyncnunberAPIRequest {
+	return poolAlitripShipProductSyncnunberAPIRequest.Get().(*AlitripShipProductSyncnunberAPIRequest)
+}
+
+// ReleaseAlitripShipProductSyncnunberAPIRequest 将 AlitripShipProductSyncnunberAPIRequest 放入 sync.Pool
+func ReleaseAlitripShipProductSyncnunberAPIRequest(v *AlitripShipProductSyncnunberAPIRequest) {
+	v.Reset()
+	poolAlitripShipProductSyncnunberAPIRequest.Put(v)
 }

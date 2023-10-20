@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // CainiaoWaybillPrivacySubscriptionGetResult 结构体
 type CainiaoWaybillPrivacySubscriptionGetResult struct {
 	// 错误code列表
@@ -20,4 +24,29 @@ type CainiaoWaybillPrivacySubscriptionGetResult struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 商家是否订购
 	Subscription bool `json:"subscription,omitempty" xml:"subscription,omitempty"`
+}
+
+var poolCainiaoWaybillPrivacySubscriptionGetResult = sync.Pool{
+	New: func() any {
+		return new(CainiaoWaybillPrivacySubscriptionGetResult)
+	},
+}
+
+// GetCainiaoWaybillPrivacySubscriptionGetResult() 从对象池中获取CainiaoWaybillPrivacySubscriptionGetResult
+func GetCainiaoWaybillPrivacySubscriptionGetResult() *CainiaoWaybillPrivacySubscriptionGetResult {
+	return poolCainiaoWaybillPrivacySubscriptionGetResult.Get().(*CainiaoWaybillPrivacySubscriptionGetResult)
+}
+
+// ReleaseCainiaoWaybillPrivacySubscriptionGetResult 释放CainiaoWaybillPrivacySubscriptionGetResult
+func ReleaseCainiaoWaybillPrivacySubscriptionGetResult(v *CainiaoWaybillPrivacySubscriptionGetResult) {
+	v.ErrorCodeList = v.ErrorCodeList[:0]
+	v.ErrorInfoList = v.ErrorInfoList[:0]
+	v.OneErrorInfo = ""
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.ObjectId = ""
+	v.Failure = false
+	v.Success = false
+	v.Subscription = false
+	poolCainiaoWaybillPrivacySubscriptionGetResult.Put(v)
 }

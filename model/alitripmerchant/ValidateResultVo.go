@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // ValidateResultVo 结构体
 type ValidateResultVo struct {
 	// 每日价格列表
@@ -28,4 +32,33 @@ type ValidateResultVo struct {
 	IsAmountChanged bool `json:"is_amount_changed,omitempty" xml:"is_amount_changed,omitempty"`
 	// 是否为外币支付
 	ForeignCurrencyPayment bool `json:"foreign_currency_payment,omitempty" xml:"foreign_currency_payment,omitempty"`
+}
+
+var poolValidateResultVo = sync.Pool{
+	New: func() any {
+		return new(ValidateResultVo)
+	},
+}
+
+// GetValidateResultVo() 从对象池中获取ValidateResultVo
+func GetValidateResultVo() *ValidateResultVo {
+	return poolValidateResultVo.Get().(*ValidateResultVo)
+}
+
+// ReleaseValidateResultVo 释放ValidateResultVo
+func ReleaseValidateResultVo(v *ValidateResultVo) {
+	v.DailyPriceList = v.DailyPriceList[:0]
+	v.DiningPolicyList = v.DiningPolicyList[:0]
+	v.OrderCode = ""
+	v.AmountChangedDisplay = ""
+	v.TotalTax = ""
+	v.TotalPriceExcludeTax = ""
+	v.TotalAmount = ""
+	v.PaymentType = ""
+	v.CancelPolicy = nil
+	v.MarkupInfo = nil
+	v.ForeignCurrency = nil
+	v.IsAmountChanged = false
+	v.ForeignCurrencyPayment = false
+	poolValidateResultVo.Put(v)
 }

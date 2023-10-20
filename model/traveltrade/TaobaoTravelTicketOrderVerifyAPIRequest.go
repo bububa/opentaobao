@@ -2,6 +2,7 @@ package traveltrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoTravelTicketOrderVerifyAPIRequest struct {
 // NewTaobaoTravelTicketOrderVerifyRequest 初始化TaobaoTravelTicketOrderVerifyAPIRequest对象
 func NewTaobaoTravelTicketOrderVerifyRequest() *TaobaoTravelTicketOrderVerifyAPIRequest {
 	return &TaobaoTravelTicketOrderVerifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTravelTicketOrderVerifyAPIRequest) Reset() {
+	r._voucherInfos = r._voucherInfos[:0]
+	r._outOrderId = ""
+	r._confirmCode = ""
+	r._checkNum = 0
+	r._orderId = 0
+	r._returnNum = 0
+	r._totalNum = 0
+	r._writeOffType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoTravelTicketOrderVerifyAPIRequest) SetWriteOffType(_writeOffType 
 // GetWriteOffType WriteOffType Getter
 func (r TaobaoTravelTicketOrderVerifyAPIRequest) GetWriteOffType() int64 {
 	return r._writeOffType
+}
+
+var poolTaobaoTravelTicketOrderVerifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTravelTicketOrderVerifyRequest()
+	},
+}
+
+// GetTaobaoTravelTicketOrderVerifyRequest 从 sync.Pool 获取 TaobaoTravelTicketOrderVerifyAPIRequest
+func GetTaobaoTravelTicketOrderVerifyAPIRequest() *TaobaoTravelTicketOrderVerifyAPIRequest {
+	return poolTaobaoTravelTicketOrderVerifyAPIRequest.Get().(*TaobaoTravelTicketOrderVerifyAPIRequest)
+}
+
+// ReleaseTaobaoTravelTicketOrderVerifyAPIRequest 将 TaobaoTravelTicketOrderVerifyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTravelTicketOrderVerifyAPIRequest(v *TaobaoTravelTicketOrderVerifyAPIRequest) {
+	v.Reset()
+	poolTaobaoTravelTicketOrderVerifyAPIRequest.Put(v)
 }

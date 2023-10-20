@@ -9,11 +9,6 @@ import (
 // aliexpress.local.logistic.label.print
 //
 // 物流打印面单
-func AliexpressLocalLogisticLabelPrint(clt *core.SDKClient, req *logistic.AliexpressLocalLogisticLabelPrintAPIRequest, session string) (*logistic.AliexpressLocalLogisticLabelPrintAPIResponse, error) {
-	var resp logistic.AliexpressLocalLogisticLabelPrintAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressLocalLogisticLabelPrint(clt *core.SDKClient, req *logistic.AliexpressLocalLogisticLabelPrintAPIRequest, resp *logistic.AliexpressLocalLogisticLabelPrintAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

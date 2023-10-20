@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // FscPoiApplyApiDto 结构体
 type FscPoiApplyApiDto struct {
 	// POI外部编号（供应商侧编号）
@@ -22,4 +26,30 @@ type FscPoiApplyApiDto struct {
 	CountryId string `json:"country_id,omitempty" xml:"country_id,omitempty"`
 	// 国家名称
 	CountryName string `json:"country_name,omitempty" xml:"country_name,omitempty"`
+}
+
+var poolFscPoiApplyApiDto = sync.Pool{
+	New: func() any {
+		return new(FscPoiApplyApiDto)
+	},
+}
+
+// GetFscPoiApplyApiDto() 从对象池中获取FscPoiApplyApiDto
+func GetFscPoiApplyApiDto() *FscPoiApplyApiDto {
+	return poolFscPoiApplyApiDto.Get().(*FscPoiApplyApiDto)
+}
+
+// ReleaseFscPoiApplyApiDto 释放FscPoiApplyApiDto
+func ReleaseFscPoiApplyApiDto(v *FscPoiApplyApiDto) {
+	v.PoiOuterId = ""
+	v.PoiName = ""
+	v.PoiNameEn = ""
+	v.Description = ""
+	v.CityId = ""
+	v.CityName = ""
+	v.ProvinceId = ""
+	v.ProvinceName = ""
+	v.CountryId = ""
+	v.CountryName = ""
+	poolFscPoiApplyApiDto.Put(v)
 }

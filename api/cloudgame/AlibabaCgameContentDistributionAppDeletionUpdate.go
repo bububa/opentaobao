@@ -9,11 +9,6 @@ import (
 // alibaba.cgame.content.distribution.app.deletion.update
 //
 // 游戏删除回调
-func AlibabaCgameContentDistributionAppDeletionUpdate(clt *core.SDKClient, req *cloudgame.AlibabaCgameContentDistributionAppDeletionUpdateAPIRequest, session string) (*cloudgame.AlibabaCgameContentDistributionAppDeletionUpdateAPIResponse, error) {
-	var resp cloudgame.AlibabaCgameContentDistributionAppDeletionUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCgameContentDistributionAppDeletionUpdate(clt *core.SDKClient, req *cloudgame.AlibabaCgameContentDistributionAppDeletionUpdateAPIRequest, resp *cloudgame.AlibabaCgameContentDistributionAppDeletionUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

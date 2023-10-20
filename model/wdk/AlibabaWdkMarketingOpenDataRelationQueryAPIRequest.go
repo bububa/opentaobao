@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaWdkMarketingOpenDataRelationQueryAPIRequest struct {
 // NewAlibabaWdkMarketingOpenDataRelationQueryRequest 初始化AlibabaWdkMarketingOpenDataRelationQueryAPIRequest对象
 func NewAlibabaWdkMarketingOpenDataRelationQueryRequest() *AlibabaWdkMarketingOpenDataRelationQueryAPIRequest {
 	return &AlibabaWdkMarketingOpenDataRelationQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) Reset() {
+	r._outDataIds = r._outDataIds[:0]
+	r._bizCode = ""
+	r._subBizCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) SetSubBizCode(_subB
 // GetSubBizCode SubBizCode Getter
 func (r AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) GetSubBizCode() string {
 	return r._subBizCode
+}
+
+var poolAlibabaWdkMarketingOpenDataRelationQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMarketingOpenDataRelationQueryRequest()
+	},
+}
+
+// GetAlibabaWdkMarketingOpenDataRelationQueryRequest 从 sync.Pool 获取 AlibabaWdkMarketingOpenDataRelationQueryAPIRequest
+func GetAlibabaWdkMarketingOpenDataRelationQueryAPIRequest() *AlibabaWdkMarketingOpenDataRelationQueryAPIRequest {
+	return poolAlibabaWdkMarketingOpenDataRelationQueryAPIRequest.Get().(*AlibabaWdkMarketingOpenDataRelationQueryAPIRequest)
+}
+
+// ReleaseAlibabaWdkMarketingOpenDataRelationQueryAPIRequest 将 AlibabaWdkMarketingOpenDataRelationQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMarketingOpenDataRelationQueryAPIRequest(v *AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMarketingOpenDataRelationQueryAPIRequest.Put(v)
 }

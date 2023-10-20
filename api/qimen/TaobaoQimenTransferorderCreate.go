@@ -9,11 +9,6 @@ import (
 // taobao.qimen.transferorder.create
 //
 // 调拨单创建
-func TaobaoQimenTransferorderCreate(clt *core.SDKClient, req *qimen.TaobaoQimenTransferorderCreateAPIRequest, session string) (*qimen.TaobaoQimenTransferorderCreateAPIResponse, error) {
-	var resp qimen.TaobaoQimenTransferorderCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQimenTransferorderCreate(clt *core.SDKClient, req *qimen.TaobaoQimenTransferorderCreateAPIRequest, resp *qimen.TaobaoQimenTransferorderCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

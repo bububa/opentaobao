@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // StoreInvetoryDto 结构体
 type StoreInvetoryDto struct {
 	// 商家的外部商品编码，写入值。
@@ -16,4 +20,27 @@ type StoreInvetoryDto struct {
 	ScItemId int64 `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
 	// 库存数量
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolStoreInvetoryDto = sync.Pool{
+	New: func() any {
+		return new(StoreInvetoryDto)
+	},
+}
+
+// GetStoreInvetoryDto() 从对象池中获取StoreInvetoryDto
+func GetStoreInvetoryDto() *StoreInvetoryDto {
+	return poolStoreInvetoryDto.Get().(*StoreInvetoryDto)
+}
+
+// ReleaseStoreInvetoryDto 释放StoreInvetoryDto
+func ReleaseStoreInvetoryDto(v *StoreInvetoryDto) {
+	v.OuterId = ""
+	v.BillNum = ""
+	v.InventoryType = ""
+	v.SkuId = 0
+	v.ItemId = 0
+	v.ScItemId = 0
+	v.Quantity = 0
+	poolStoreInvetoryDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // AgentConfirmBookPassengerInfo 结构体
 type AgentConfirmBookPassengerInfo struct {
 	// 票ID
@@ -12,4 +16,25 @@ type AgentConfirmBookPassengerInfo struct {
 	PassengerName string `json:"passenger_name,omitempty" xml:"passenger_name,omitempty"`
 	// 座位号
 	SeatNo string `json:"seat_no,omitempty" xml:"seat_no,omitempty"`
+}
+
+var poolAgentConfirmBookPassengerInfo = sync.Pool{
+	New: func() any {
+		return new(AgentConfirmBookPassengerInfo)
+	},
+}
+
+// GetAgentConfirmBookPassengerInfo() 从对象池中获取AgentConfirmBookPassengerInfo
+func GetAgentConfirmBookPassengerInfo() *AgentConfirmBookPassengerInfo {
+	return poolAgentConfirmBookPassengerInfo.Get().(*AgentConfirmBookPassengerInfo)
+}
+
+// ReleaseAgentConfirmBookPassengerInfo 释放AgentConfirmBookPassengerInfo
+func ReleaseAgentConfirmBookPassengerInfo(v *AgentConfirmBookPassengerInfo) {
+	v.AgentTicketId = ""
+	v.PassengerCertNo = ""
+	v.PassengerCertType = ""
+	v.PassengerName = ""
+	v.SeatNo = ""
+	poolAgentConfirmBookPassengerInfo.Put(v)
 }

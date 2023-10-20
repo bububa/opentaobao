@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoWlbWaybillIQuerydetailAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWaybillIQuerydetailAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbWaybillIQuerydetailAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWlbWaybillIQuerydetailAPIResponseModel).Reset()
 }
 
 // TaobaoWlbWaybillIQuerydetailAPIResponseModel is 查面单号状态v1.0 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoWlbWaybillIQuerydetailAPIResponseModel struct {
 	WaybillDetails []WaybillDetailQueryInfo `json:"waybill_details,omitempty" xml:"waybill_details>waybill_detail_query_info,omitempty"`
 	// 查询是否成功
 	QuerySuccess bool `json:"query_success,omitempty" xml:"query_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbWaybillIQuerydetailAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorCodes = m.ErrorCodes[:0]
+	m.InexistentWaybillCodes = m.InexistentWaybillCodes[:0]
+	m.WaybillDetails = m.WaybillDetails[:0]
+	m.QuerySuccess = false
+}
+
+var poolTaobaoWlbWaybillIQuerydetailAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbWaybillIQuerydetailAPIResponse)
+	},
+}
+
+// GetTaobaoWlbWaybillIQuerydetailAPIResponse 从 sync.Pool 获取 TaobaoWlbWaybillIQuerydetailAPIResponse
+func GetTaobaoWlbWaybillIQuerydetailAPIResponse() *TaobaoWlbWaybillIQuerydetailAPIResponse {
+	return poolTaobaoWlbWaybillIQuerydetailAPIResponse.Get().(*TaobaoWlbWaybillIQuerydetailAPIResponse)
+}
+
+// ReleaseTaobaoWlbWaybillIQuerydetailAPIResponse 将 TaobaoWlbWaybillIQuerydetailAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWlbWaybillIQuerydetailAPIResponse(v *TaobaoWlbWaybillIQuerydetailAPIResponse) {
+	v.Reset()
+	poolTaobaoWlbWaybillIQuerydetailAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package moscm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaMosIsvInventoryScrollqueryAPIRequest struct {
 // NewAlibabaMosIsvInventoryScrollqueryRequest 初始化AlibabaMosIsvInventoryScrollqueryAPIRequest对象
 func NewAlibabaMosIsvInventoryScrollqueryRequest() *AlibabaMosIsvInventoryScrollqueryAPIRequest {
 	return &AlibabaMosIsvInventoryScrollqueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosIsvInventoryScrollqueryAPIRequest) Reset() {
+	r._counterId = ""
+	r._scrollId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaMosIsvInventoryScrollqueryAPIRequest) SetScrollId(_scrollId stri
 // GetScrollId ScrollId Getter
 func (r AlibabaMosIsvInventoryScrollqueryAPIRequest) GetScrollId() string {
 	return r._scrollId
+}
+
+var poolAlibabaMosIsvInventoryScrollqueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosIsvInventoryScrollqueryRequest()
+	},
+}
+
+// GetAlibabaMosIsvInventoryScrollqueryRequest 从 sync.Pool 获取 AlibabaMosIsvInventoryScrollqueryAPIRequest
+func GetAlibabaMosIsvInventoryScrollqueryAPIRequest() *AlibabaMosIsvInventoryScrollqueryAPIRequest {
+	return poolAlibabaMosIsvInventoryScrollqueryAPIRequest.Get().(*AlibabaMosIsvInventoryScrollqueryAPIRequest)
+}
+
+// ReleaseAlibabaMosIsvInventoryScrollqueryAPIRequest 将 AlibabaMosIsvInventoryScrollqueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosIsvInventoryScrollqueryAPIRequest(v *AlibabaMosIsvInventoryScrollqueryAPIRequest) {
+	v.Reset()
+	poolAlibabaMosIsvInventoryScrollqueryAPIRequest.Put(v)
 }

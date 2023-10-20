@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // RtRptResultEntityDto 结构体
 type RtRptResultEntityDto struct {
 	// 日期
@@ -62,4 +66,50 @@ type RtRptResultEntityDto struct {
 	Creativeid string `json:"creativeid,omitempty" xml:"creativeid,omitempty"`
 	// 流量类型 1: PC站内, 2: PC站外 , 4: 无线站内, 5: 无线站外
 	Traffictype string `json:"traffictype,omitempty" xml:"traffictype,omitempty"`
+}
+
+var poolRtRptResultEntityDto = sync.Pool{
+	New: func() any {
+		return new(RtRptResultEntityDto)
+	},
+}
+
+// GetRtRptResultEntityDto() 从对象池中获取RtRptResultEntityDto
+func GetRtRptResultEntityDto() *RtRptResultEntityDto {
+	return poolRtRptResultEntityDto.Get().(*RtRptResultEntityDto)
+}
+
+// ReleaseRtRptResultEntityDto 释放RtRptResultEntityDto
+func ReleaseRtRptResultEntityDto(v *RtRptResultEntityDto) {
+	v.Thedate = ""
+	v.Impression = ""
+	v.Cost = ""
+	v.Click = ""
+	v.Ctr = ""
+	v.Cpc = ""
+	v.Cpm = ""
+	v.Roi = ""
+	v.Coverage = ""
+	v.Directtransactionshipping = ""
+	v.Indirecttransactionshipping = ""
+	v.Transactionshippingtotal = ""
+	v.Directtransaction = ""
+	v.Indirecttransaction = ""
+	v.Transactiontotal = ""
+	v.Favshoptotal = ""
+	v.Favitemtotal = ""
+	v.Favtotal = ""
+	v.Directcarttotal = ""
+	v.Indirectcarttotal = ""
+	v.Carttotal = ""
+	v.Campaignid = ""
+	v.Adgroupid = ""
+	v.Crowdid = ""
+	v.Source = ""
+	v.SearchType = ""
+	v.Crowdtitle = ""
+	v.Bidwordid = ""
+	v.Creativeid = ""
+	v.Traffictype = ""
+	poolRtRptResultEntityDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package car
 
+import (
+	"sync"
+)
+
 // RentCarOrderDetailRsp 结构体
 type RentCarOrderDetailRsp struct {
 	// errorCode
@@ -16,4 +20,27 @@ type RentCarOrderDetailRsp struct {
 	SellerInfo *SellerInfo `json:"seller_info,omitempty" xml:"seller_info,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolRentCarOrderDetailRsp = sync.Pool{
+	New: func() any {
+		return new(RentCarOrderDetailRsp)
+	},
+}
+
+// GetRentCarOrderDetailRsp() 从对象池中获取RentCarOrderDetailRsp
+func GetRentCarOrderDetailRsp() *RentCarOrderDetailRsp {
+	return poolRentCarOrderDetailRsp.Get().(*RentCarOrderDetailRsp)
+}
+
+// ReleaseRentCarOrderDetailRsp 释放RentCarOrderDetailRsp
+func ReleaseRentCarOrderDetailRsp(v *RentCarOrderDetailRsp) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.BuyerInfo = nil
+	v.DepositInfo = nil
+	v.OrderInfo = nil
+	v.SellerInfo = nil
+	v.Success = false
+	poolRentCarOrderDetailRsp.Put(v)
 }

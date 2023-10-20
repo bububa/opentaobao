@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest struct
 // NewAlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddRequest 初始化AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest对象
 func NewAlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddRequest() *AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest {
 	return &AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest) Reset() {
+	r._tmsOrderRemarkRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest) S
 // GetTmsOrderRemarkRequest TmsOrderRemarkRequest Getter
 func (r AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest) GetTmsOrderRemarkRequest() *TmsOrderRemarkRequest {
 	return r._tmsOrderRemarkRequest
+}
+
+var poolAlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddRequest 从 sync.Pool 获取 AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest
+func GetAlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest() *AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest {
+	return poolAlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest.Get().(*AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest 将 AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest(v *AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest.Put(v)
 }

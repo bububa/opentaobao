@@ -9,11 +9,6 @@ import (
 // taobao.ads.data.query
 //
 // 导入数据查询
-func TaobaoAdsDataQuery(clt *core.SDKClient, req *dt.TaobaoAdsDataQueryAPIRequest, session string) (*dt.TaobaoAdsDataQueryAPIResponse, error) {
-	var resp dt.TaobaoAdsDataQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAdsDataQuery(clt *core.SDKClient, req *dt.TaobaoAdsDataQueryAPIRequest, resp *dt.TaobaoAdsDataQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

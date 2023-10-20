@@ -1,5 +1,9 @@
 package lstvending
 
+import (
+	"sync"
+)
+
 // VendingOrderDto 结构体
 type VendingOrderDto struct {
 	// 发货清单
@@ -20,4 +24,29 @@ type VendingOrderDto struct {
 	GmtCreate int64 `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 发货时间
 	DeliveryTime int64 `json:"delivery_time,omitempty" xml:"delivery_time,omitempty"`
+}
+
+var poolVendingOrderDto = sync.Pool{
+	New: func() any {
+		return new(VendingOrderDto)
+	},
+}
+
+// GetVendingOrderDto() 从对象池中获取VendingOrderDto
+func GetVendingOrderDto() *VendingOrderDto {
+	return poolVendingOrderDto.Get().(*VendingOrderDto)
+}
+
+// ReleaseVendingOrderDto 释放VendingOrderDto
+func ReleaseVendingOrderDto(v *VendingOrderDto) {
+	v.ShippedEquipmentList = v.ShippedEquipmentList[:0]
+	v.TrackingNo = ""
+	v.ShippingContact = ""
+	v.IsvOrderNo = ""
+	v.ShippingContactTel = ""
+	v.GmtModified = 0
+	v.Id = 0
+	v.GmtCreate = 0
+	v.DeliveryTime = 0
+	poolVendingOrderDto.Put(v)
 }

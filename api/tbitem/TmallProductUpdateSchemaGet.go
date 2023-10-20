@@ -9,11 +9,6 @@ import (
 // tmall.product.update.schema.get
 //
 // 获取用户更新产品的规则
-func TmallProductUpdateSchemaGet(clt *core.SDKClient, req *tbitem.TmallProductUpdateSchemaGetAPIRequest, session string) (*tbitem.TmallProductUpdateSchemaGetAPIResponse, error) {
-	var resp tbitem.TmallProductUpdateSchemaGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallProductUpdateSchemaGet(clt *core.SDKClient, req *tbitem.TmallProductUpdateSchemaGetAPIRequest, resp *tbitem.TmallProductUpdateSchemaGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

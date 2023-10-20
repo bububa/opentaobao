@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // CosumeCodeReqDto 结构体
 type CosumeCodeReqDto struct {
 	// 业务id
@@ -18,4 +22,28 @@ type CosumeCodeReqDto struct {
 	Vin string `json:"vin,omitempty" xml:"vin,omitempty"`
 	// 门店id
 	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
+}
+
+var poolCosumeCodeReqDto = sync.Pool{
+	New: func() any {
+		return new(CosumeCodeReqDto)
+	},
+}
+
+// GetCosumeCodeReqDto() 从对象池中获取CosumeCodeReqDto
+func GetCosumeCodeReqDto() *CosumeCodeReqDto {
+	return poolCosumeCodeReqDto.Get().(*CosumeCodeReqDto)
+}
+
+// ReleaseCosumeCodeReqDto 释放CosumeCodeReqDto
+func ReleaseCosumeCodeReqDto(v *CosumeCodeReqDto) {
+	v.BizId = ""
+	v.BizType = ""
+	v.CarNo = ""
+	v.Code = ""
+	v.IdentityNo = ""
+	v.StoreName = ""
+	v.Vin = ""
+	v.StoreId = 0
+	poolCosumeCodeReqDto.Put(v)
 }

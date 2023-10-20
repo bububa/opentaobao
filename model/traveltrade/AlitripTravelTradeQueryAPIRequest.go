@@ -2,6 +2,7 @@ package traveltrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripTravelTradeQueryAPIRequest struct {
 // NewAlitripTravelTradeQueryRequest 初始化AlitripTravelTradeQueryAPIRequest对象
 func NewAlitripTravelTradeQueryRequest() *AlitripTravelTradeQueryAPIRequest {
 	return &AlitripTravelTradeQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTravelTradeQueryAPIRequest) Reset() {
+	r._orderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripTravelTradeQueryAPIRequest) SetOrderId(_orderId int64) error {
 // GetOrderId OrderId Getter
 func (r AlitripTravelTradeQueryAPIRequest) GetOrderId() int64 {
 	return r._orderId
+}
+
+var poolAlitripTravelTradeQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTravelTradeQueryRequest()
+	},
+}
+
+// GetAlitripTravelTradeQueryRequest 从 sync.Pool 获取 AlitripTravelTradeQueryAPIRequest
+func GetAlitripTravelTradeQueryAPIRequest() *AlitripTravelTradeQueryAPIRequest {
+	return poolAlitripTravelTradeQueryAPIRequest.Get().(*AlitripTravelTradeQueryAPIRequest)
+}
+
+// ReleaseAlitripTravelTradeQueryAPIRequest 将 AlitripTravelTradeQueryAPIRequest 放入 sync.Pool
+func ReleaseAlitripTravelTradeQueryAPIRequest(v *AlitripTravelTradeQueryAPIRequest) {
+	v.Reset()
+	poolAlitripTravelTradeQueryAPIRequest.Put(v)
 }

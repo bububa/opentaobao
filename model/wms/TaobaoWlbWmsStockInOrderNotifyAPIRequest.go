@@ -2,6 +2,7 @@ package wms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -57,8 +58,33 @@ type TaobaoWlbWmsStockInOrderNotifyAPIRequest struct {
 // NewTaobaoWlbWmsStockInOrderNotifyRequest 初始化TaobaoWlbWmsStockInOrderNotifyAPIRequest对象
 func NewTaobaoWlbWmsStockInOrderNotifyRequest() *TaobaoWlbWmsStockInOrderNotifyAPIRequest {
 	return &TaobaoWlbWmsStockInOrderNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(20),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) Reset() {
+	r._orderItemList = r._orderItemList[:0]
+	r._orderCode = ""
+	r._storeCode = ""
+	r._inboundTypeDesc = ""
+	r._orderFlag = ""
+	r._orderCreateTime = ""
+	r._supplierCode = ""
+	r._supplierName = ""
+	r._tmsServiceCode = ""
+	r._tmsServiceName = ""
+	r._tmsOrderCode = ""
+	r._prevOrderCode = ""
+	r._returnReason = ""
+	r._expectStartTime = ""
+	r._expectEndTime = ""
+	r._extendFields = ""
+	r._remark = ""
+	r._orderType = 0
+	r._senderInfo = nil
+	r._receiverInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -336,4 +362,21 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetReceiverInfo(_receiverInfo
 // GetReceiverInfo ReceiverInfo Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetReceiverInfo() *Receiverinfowlbwmsstockinordernotifywl {
 	return r._receiverInfo
+}
+
+var poolTaobaoWlbWmsStockInOrderNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWmsStockInOrderNotifyRequest()
+	},
+}
+
+// GetTaobaoWlbWmsStockInOrderNotifyRequest 从 sync.Pool 获取 TaobaoWlbWmsStockInOrderNotifyAPIRequest
+func GetTaobaoWlbWmsStockInOrderNotifyAPIRequest() *TaobaoWlbWmsStockInOrderNotifyAPIRequest {
+	return poolTaobaoWlbWmsStockInOrderNotifyAPIRequest.Get().(*TaobaoWlbWmsStockInOrderNotifyAPIRequest)
+}
+
+// ReleaseTaobaoWlbWmsStockInOrderNotifyAPIRequest 将 TaobaoWlbWmsStockInOrderNotifyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWmsStockInOrderNotifyAPIRequest(v *TaobaoWlbWmsStockInOrderNotifyAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWmsStockInOrderNotifyAPIRequest.Put(v)
 }

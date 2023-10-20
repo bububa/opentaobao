@@ -2,6 +2,7 @@ package cmns
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type YunosServiceCmnsCoaMessageAckAPIRequest struct {
 // NewYunosServiceCmnsCoaMessageAckRequest 初始化YunosServiceCmnsCoaMessageAckAPIRequest对象
 func NewYunosServiceCmnsCoaMessageAckRequest() *YunosServiceCmnsCoaMessageAckAPIRequest {
 	return &YunosServiceCmnsCoaMessageAckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosServiceCmnsCoaMessageAckAPIRequest) Reset() {
+	r._deviceToken = ""
+	r._imei = ""
+	r._uuid = ""
+	r._mid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *YunosServiceCmnsCoaMessageAckAPIRequest) SetMid(_mid int64) error {
 // GetMid Mid Getter
 func (r YunosServiceCmnsCoaMessageAckAPIRequest) GetMid() int64 {
 	return r._mid
+}
+
+var poolYunosServiceCmnsCoaMessageAckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosServiceCmnsCoaMessageAckRequest()
+	},
+}
+
+// GetYunosServiceCmnsCoaMessageAckRequest 从 sync.Pool 获取 YunosServiceCmnsCoaMessageAckAPIRequest
+func GetYunosServiceCmnsCoaMessageAckAPIRequest() *YunosServiceCmnsCoaMessageAckAPIRequest {
+	return poolYunosServiceCmnsCoaMessageAckAPIRequest.Get().(*YunosServiceCmnsCoaMessageAckAPIRequest)
+}
+
+// ReleaseYunosServiceCmnsCoaMessageAckAPIRequest 将 YunosServiceCmnsCoaMessageAckAPIRequest 放入 sync.Pool
+func ReleaseYunosServiceCmnsCoaMessageAckAPIRequest(v *YunosServiceCmnsCoaMessageAckAPIRequest) {
+	v.Reset()
+	poolYunosServiceCmnsCoaMessageAckAPIRequest.Put(v)
 }

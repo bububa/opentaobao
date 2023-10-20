@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // VegasCpaReportDto 结构体
 type VegasCpaReportDto struct {
 	// 奖励金额；按入参是预估/结算，区分获得金额为预估or可结算结果；
@@ -16,4 +20,27 @@ type VegasCpaReportDto struct {
 	RelationId int64 `json:"relation_id,omitempty" xml:"relation_id,omitempty"`
 	// 数据类型:1预估 2结算
 	QueryType int64 `json:"query_type,omitempty" xml:"query_type,omitempty"`
+}
+
+var poolVegasCpaReportDto = sync.Pool{
+	New: func() any {
+		return new(VegasCpaReportDto)
+	},
+}
+
+// GetVegasCpaReportDto() 从对象池中获取VegasCpaReportDto
+func GetVegasCpaReportDto() *VegasCpaReportDto {
+	return poolVegasCpaReportDto.Get().(*VegasCpaReportDto)
+}
+
+// ReleaseVegasCpaReportDto 释放VegasCpaReportDto
+func ReleaseVegasCpaReportDto(v *VegasCpaReportDto) {
+	v.RewardAmount = ""
+	v.BizDate = ""
+	v.Pid = ""
+	v.ExtInfo = ""
+	v.Union30dLxUv = 0
+	v.RelationId = 0
+	v.QueryType = 0
+	poolVegasCpaReportDto.Put(v)
 }

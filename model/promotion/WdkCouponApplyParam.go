@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // WdkCouponApplyParam 结构体
 type WdkCouponApplyParam struct {
 	// 申请渠道
@@ -20,4 +24,29 @@ type WdkCouponApplyParam struct {
 	IdempotentKey string `json:"idempotent_key,omitempty" xml:"idempotent_key,omitempty"`
 	// 领取淘系id
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolWdkCouponApplyParam = sync.Pool{
+	New: func() any {
+		return new(WdkCouponApplyParam)
+	},
+}
+
+// GetWdkCouponApplyParam() 从对象池中获取WdkCouponApplyParam
+func GetWdkCouponApplyParam() *WdkCouponApplyParam {
+	return poolWdkCouponApplyParam.Get().(*WdkCouponApplyParam)
+}
+
+// ReleaseWdkCouponApplyParam 释放WdkCouponApplyParam
+func ReleaseWdkCouponApplyParam(v *WdkCouponApplyParam) {
+	v.ApplyChannel = ""
+	v.ApplySource = ""
+	v.CouponSource = ""
+	v.Features = ""
+	v.OutBizNo = ""
+	v.TemplateId = ""
+	v.Uuid = ""
+	v.IdempotentKey = ""
+	v.UserId = 0
+	poolWdkCouponApplyParam.Put(v)
 }

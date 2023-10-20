@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest struct {
 // NewAlibabaAlihealthTracecodesellerProductAttrSearchRequest 初始化AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest对象
 func NewAlibabaAlihealthTracecodesellerProductAttrSearchRequest() *AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest {
 	return &AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest) Reset() {
+	r._entInfoId = 0
+	r._tracUserProductInfoId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest) SetTracUser
 // GetTracUserProductInfoId TracUserProductInfoId Getter
 func (r AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest) GetTracUserProductInfoId() int64 {
 	return r._tracUserProductInfoId
+}
+
+var poolAlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthTracecodesellerProductAttrSearchRequest()
+	},
+}
+
+// GetAlibabaAlihealthTracecodesellerProductAttrSearchRequest 从 sync.Pool 获取 AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest
+func GetAlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest() *AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest {
+	return poolAlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest.Get().(*AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest 将 AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest(v *AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest.Put(v)
 }

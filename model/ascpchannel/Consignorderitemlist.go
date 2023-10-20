@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Consignorderitemlist 结构体
 type Consignorderitemlist struct {
 	// 包件明细( 包件为包裹信息)
@@ -26,4 +30,32 @@ type Consignorderitemlist struct {
 	PackageQty int64 `json:"package_qty,omitempty" xml:"package_qty,omitempty"`
 	// 货品数量
 	GoodsQty int64 `json:"goods_qty,omitempty" xml:"goods_qty,omitempty"`
+}
+
+var poolConsignorderitemlist = sync.Pool{
+	New: func() any {
+		return new(Consignorderitemlist)
+	},
+}
+
+// GetConsignorderitemlist() 从对象池中获取Consignorderitemlist
+func GetConsignorderitemlist() *Consignorderitemlist {
+	return poolConsignorderitemlist.Get().(*Consignorderitemlist)
+}
+
+// ReleaseConsignorderitemlist 释放Consignorderitemlist
+func ReleaseConsignorderitemlist(v *Consignorderitemlist) {
+	v.PackageDetailList = v.PackageDetailList[:0]
+	v.OrderSourceCode = ""
+	v.SubSourceCode = ""
+	v.GoodsName = ""
+	v.GoodsVolume = ""
+	v.GoodsWeight = ""
+	v.InstallType = ""
+	v.ItemName = ""
+	v.ItemCode = ""
+	v.Feature = ""
+	v.PackageQty = 0
+	v.GoodsQty = 0
+	poolConsignorderitemlist.Put(v)
 }

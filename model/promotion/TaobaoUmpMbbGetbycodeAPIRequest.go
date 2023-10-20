@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoUmpMbbGetbycodeAPIRequest struct {
 // NewTaobaoUmpMbbGetbycodeRequest 初始化TaobaoUmpMbbGetbycodeAPIRequest对象
 func NewTaobaoUmpMbbGetbycodeRequest() *TaobaoUmpMbbGetbycodeAPIRequest {
 	return &TaobaoUmpMbbGetbycodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUmpMbbGetbycodeAPIRequest) Reset() {
+	r._code = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoUmpMbbGetbycodeAPIRequest) SetCode(_code string) error {
 // GetCode Code Getter
 func (r TaobaoUmpMbbGetbycodeAPIRequest) GetCode() string {
 	return r._code
+}
+
+var poolTaobaoUmpMbbGetbycodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUmpMbbGetbycodeRequest()
+	},
+}
+
+// GetTaobaoUmpMbbGetbycodeRequest 从 sync.Pool 获取 TaobaoUmpMbbGetbycodeAPIRequest
+func GetTaobaoUmpMbbGetbycodeAPIRequest() *TaobaoUmpMbbGetbycodeAPIRequest {
+	return poolTaobaoUmpMbbGetbycodeAPIRequest.Get().(*TaobaoUmpMbbGetbycodeAPIRequest)
+}
+
+// ReleaseTaobaoUmpMbbGetbycodeAPIRequest 将 TaobaoUmpMbbGetbycodeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUmpMbbGetbycodeAPIRequest(v *TaobaoUmpMbbGetbycodeAPIRequest) {
+	v.Reset()
+	poolTaobaoUmpMbbGetbycodeAPIRequest.Put(v)
 }

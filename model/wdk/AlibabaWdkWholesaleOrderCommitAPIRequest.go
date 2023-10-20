@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkWholesaleOrderCommitAPIRequest struct {
 // NewAlibabaWdkWholesaleOrderCommitRequest 初始化AlibabaWdkWholesaleOrderCommitAPIRequest对象
 func NewAlibabaWdkWholesaleOrderCommitRequest() *AlibabaWdkWholesaleOrderCommitAPIRequest {
 	return &AlibabaWdkWholesaleOrderCommitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkWholesaleOrderCommitAPIRequest) Reset() {
+	r._orderCommitReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkWholesaleOrderCommitAPIRequest) SetOrderCommitReq(_orderCommi
 // GetOrderCommitReq OrderCommitReq Getter
 func (r AlibabaWdkWholesaleOrderCommitAPIRequest) GetOrderCommitReq() *OrderCommitReq {
 	return r._orderCommitReq
+}
+
+var poolAlibabaWdkWholesaleOrderCommitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkWholesaleOrderCommitRequest()
+	},
+}
+
+// GetAlibabaWdkWholesaleOrderCommitRequest 从 sync.Pool 获取 AlibabaWdkWholesaleOrderCommitAPIRequest
+func GetAlibabaWdkWholesaleOrderCommitAPIRequest() *AlibabaWdkWholesaleOrderCommitAPIRequest {
+	return poolAlibabaWdkWholesaleOrderCommitAPIRequest.Get().(*AlibabaWdkWholesaleOrderCommitAPIRequest)
+}
+
+// ReleaseAlibabaWdkWholesaleOrderCommitAPIRequest 将 AlibabaWdkWholesaleOrderCommitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkWholesaleOrderCommitAPIRequest(v *AlibabaWdkWholesaleOrderCommitAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkWholesaleOrderCommitAPIRequest.Put(v)
 }

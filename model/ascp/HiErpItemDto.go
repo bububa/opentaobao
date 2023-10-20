@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // HiErpItemDto 结构体
 type HiErpItemDto struct {
 	// 外部订单明细唯一标识
@@ -16,4 +20,27 @@ type HiErpItemDto struct {
 	ItemAmount int64 `json:"item_amount,omitempty" xml:"item_amount,omitempty"`
 	// 货品数量
 	ItemQty int64 `json:"item_qty,omitempty" xml:"item_qty,omitempty"`
+}
+
+var poolHiErpItemDto = sync.Pool{
+	New: func() any {
+		return new(HiErpItemDto)
+	},
+}
+
+// GetHiErpItemDto() 从对象池中获取HiErpItemDto
+func GetHiErpItemDto() *HiErpItemDto {
+	return poolHiErpItemDto.Get().(*HiErpItemDto)
+}
+
+// ReleaseHiErpItemDto 释放HiErpItemDto
+func ReleaseHiErpItemDto(v *HiErpItemDto) {
+	v.OutOrderItemId = ""
+	v.ScItemCode = ""
+	v.Feature = ""
+	v.SubTradeId = ""
+	v.ScItemId = 0
+	v.ItemAmount = 0
+	v.ItemQty = 0
+	poolHiErpItemDto.Put(v)
 }

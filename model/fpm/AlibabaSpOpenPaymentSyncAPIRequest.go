@@ -2,6 +2,7 @@ package fpm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaSpOpenPaymentSyncAPIRequest struct {
 // NewAlibabaSpOpenPaymentSyncRequest 初始化AlibabaSpOpenPaymentSyncAPIRequest对象
 func NewAlibabaSpOpenPaymentSyncRequest() *AlibabaSpOpenPaymentSyncAPIRequest {
 	return &AlibabaSpOpenPaymentSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSpOpenPaymentSyncAPIRequest) Reset() {
+	r._appCode = ""
+	r._data = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaSpOpenPaymentSyncAPIRequest) SetData(_data string) error {
 // GetData Data Getter
 func (r AlibabaSpOpenPaymentSyncAPIRequest) GetData() string {
 	return r._data
+}
+
+var poolAlibabaSpOpenPaymentSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSpOpenPaymentSyncRequest()
+	},
+}
+
+// GetAlibabaSpOpenPaymentSyncRequest 从 sync.Pool 获取 AlibabaSpOpenPaymentSyncAPIRequest
+func GetAlibabaSpOpenPaymentSyncAPIRequest() *AlibabaSpOpenPaymentSyncAPIRequest {
+	return poolAlibabaSpOpenPaymentSyncAPIRequest.Get().(*AlibabaSpOpenPaymentSyncAPIRequest)
+}
+
+// ReleaseAlibabaSpOpenPaymentSyncAPIRequest 将 AlibabaSpOpenPaymentSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSpOpenPaymentSyncAPIRequest(v *AlibabaSpOpenPaymentSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaSpOpenPaymentSyncAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest struct {
 // NewAlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeRequest 初始化AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest对象
 func NewAlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeRequest() *AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest {
 	return &AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r._code = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest) SetCode
 // GetCode Code Getter
 func (r AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest) GetCode() string {
 	return r._code
+}
+
+var poolAlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeRequest 从 sync.Pool 获取 AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest
+func GetAlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest() *AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest {
+	return poolAlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest.Get().(*AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest 将 AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest(v *AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeAPIRequest.Put(v)
 }

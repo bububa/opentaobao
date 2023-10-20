@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WdkOpenOrderFinanceBillQueryResult 结构体
 type WdkOpenOrderFinanceBillQueryResult struct {
 	// 账单列表
@@ -14,4 +18,26 @@ type WdkOpenOrderFinanceBillQueryResult struct {
 	NextId int64 `json:"next_id,omitempty" xml:"next_id,omitempty"`
 	// 成功或失败，调用方需要根据该状态判断是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolWdkOpenOrderFinanceBillQueryResult = sync.Pool{
+	New: func() any {
+		return new(WdkOpenOrderFinanceBillQueryResult)
+	},
+}
+
+// GetWdkOpenOrderFinanceBillQueryResult() 从对象池中获取WdkOpenOrderFinanceBillQueryResult
+func GetWdkOpenOrderFinanceBillQueryResult() *WdkOpenOrderFinanceBillQueryResult {
+	return poolWdkOpenOrderFinanceBillQueryResult.Get().(*WdkOpenOrderFinanceBillQueryResult)
+}
+
+// ReleaseWdkOpenOrderFinanceBillQueryResult 释放WdkOpenOrderFinanceBillQueryResult
+func ReleaseWdkOpenOrderFinanceBillQueryResult(v *WdkOpenOrderFinanceBillQueryResult) {
+	v.Bills = v.Bills[:0]
+	v.ReturnMsg = ""
+	v.ReturnCode = ""
+	v.TotalNumber = 0
+	v.NextId = 0
+	v.Success = false
+	poolWdkOpenOrderFinanceBillQueryResult.Put(v)
 }

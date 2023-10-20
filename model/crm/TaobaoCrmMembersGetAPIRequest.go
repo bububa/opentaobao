@@ -2,6 +2,7 @@ package crm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type TaobaoCrmMembersGetAPIRequest struct {
 // NewTaobaoCrmMembersGetRequest 初始化TaobaoCrmMembersGetAPIRequest对象
 func NewTaobaoCrmMembersGetRequest() *TaobaoCrmMembersGetAPIRequest {
 	return &TaobaoCrmMembersGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCrmMembersGetAPIRequest) Reset() {
+	r._buyerNick = ""
+	r._maxLastTradeTime = ""
+	r._minLastTradeTime = ""
+	r._openUid = ""
+	r._grade = 0
+	r._pageSize = 0
+	r._currentPage = 0
+	r._maxTradeAmount = 0
+	r._minTradeAmount = 0
+	r._minTradeCount = 0
+	r._maxTradeCount = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *TaobaoCrmMembersGetAPIRequest) SetMaxTradeCount(_maxTradeCount int64) e
 // GetMaxTradeCount MaxTradeCount Getter
 func (r TaobaoCrmMembersGetAPIRequest) GetMaxTradeCount() int64 {
 	return r._maxTradeCount
+}
+
+var poolTaobaoCrmMembersGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCrmMembersGetRequest()
+	},
+}
+
+// GetTaobaoCrmMembersGetRequest 从 sync.Pool 获取 TaobaoCrmMembersGetAPIRequest
+func GetTaobaoCrmMembersGetAPIRequest() *TaobaoCrmMembersGetAPIRequest {
+	return poolTaobaoCrmMembersGetAPIRequest.Get().(*TaobaoCrmMembersGetAPIRequest)
+}
+
+// ReleaseTaobaoCrmMembersGetAPIRequest 将 TaobaoCrmMembersGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCrmMembersGetAPIRequest(v *TaobaoCrmMembersGetAPIRequest) {
+	v.Reset()
+	poolTaobaoCrmMembersGetAPIRequest.Put(v)
 }

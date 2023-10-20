@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // XsHotel 结构体
 type XsHotel struct {
 	// 酒店地址
@@ -50,4 +54,44 @@ type XsHotel struct {
 	Rooms int64 `json:"rooms,omitempty" xml:"rooms,omitempty"`
 	// position_type
 	PositionType int64 `json:"position_type,omitempty" xml:"position_type,omitempty"`
+}
+
+var poolXsHotel = sync.Pool{
+	New: func() any {
+		return new(XsHotel)
+	},
+}
+
+// GetXsHotel() 从对象池中获取XsHotel
+func GetXsHotel() *XsHotel {
+	return poolXsHotel.Get().(*XsHotel)
+}
+
+// ReleaseXsHotel 释放XsHotel
+func ReleaseXsHotel(v *XsHotel) {
+	v.Address = ""
+	v.Business = ""
+	v.Country = ""
+	v.Name = ""
+	v.NameE = ""
+	v.Brand = ""
+	v.Pics = ""
+	v.Service = ""
+	v.HotelFacilities = ""
+	v.Description = ""
+	v.Floors = ""
+	v.DecorateTime = ""
+	v.OpeningTime = ""
+	v.Tel = ""
+	v.Latitude = ""
+	v.Longitude = ""
+	v.District = 0
+	v.City = 0
+	v.Province = 0
+	v.Domestic = 0
+	v.Shid = 0
+	v.Status = 0
+	v.Rooms = 0
+	v.PositionType = 0
+	poolXsHotel.Put(v)
 }

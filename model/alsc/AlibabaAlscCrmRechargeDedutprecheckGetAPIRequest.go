@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest struct {
 // NewAlibabaAlscCrmRechargeDedutprecheckGetRequest 初始化AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest对象
 func NewAlibabaAlscCrmRechargeDedutprecheckGetRequest() *AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest {
 	return &AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest) Reset() {
+	r._paramDeductPreCheckOpenReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest) SetParamDeductPreChec
 // GetParamDeductPreCheckOpenReq ParamDeductPreCheckOpenReq Getter
 func (r AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest) GetParamDeductPreCheckOpenReq() *DeductPreCheckOpenReq {
 	return r._paramDeductPreCheckOpenReq
+}
+
+var poolAlibabaAlscCrmRechargeDedutprecheckGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmRechargeDedutprecheckGetRequest()
+	},
+}
+
+// GetAlibabaAlscCrmRechargeDedutprecheckGetRequest 从 sync.Pool 获取 AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest
+func GetAlibabaAlscCrmRechargeDedutprecheckGetAPIRequest() *AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest {
+	return poolAlibabaAlscCrmRechargeDedutprecheckGetAPIRequest.Get().(*AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmRechargeDedutprecheckGetAPIRequest 将 AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmRechargeDedutprecheckGetAPIRequest(v *AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmRechargeDedutprecheckGetAPIRequest.Put(v)
 }

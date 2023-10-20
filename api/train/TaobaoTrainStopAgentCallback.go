@@ -9,11 +9,6 @@ import (
 // taobao.train.stop.agent.callback
 //
 // 火车票车次停运信息商家回调接口
-func TaobaoTrainStopAgentCallback(clt *core.SDKClient, req *train.TaobaoTrainStopAgentCallbackAPIRequest, session string) (*train.TaobaoTrainStopAgentCallbackAPIResponse, error) {
-	var resp train.TaobaoTrainStopAgentCallbackAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTrainStopAgentCallback(clt *core.SDKClient, req *train.TaobaoTrainStopAgentCallbackAPIRequest, resp *train.TaobaoTrainStopAgentCallbackAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

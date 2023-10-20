@@ -9,11 +9,6 @@ import (
 // alibaba.hm.marketing.fullrange.addexchangeitem
 //
 // 全场增加换购品
-func AlibabaHmMarketingFullrangeAddexchangeitem(clt *core.SDKClient, req *wdk.AlibabaHmMarketingFullrangeAddexchangeitemAPIRequest, session string) (*wdk.AlibabaHmMarketingFullrangeAddexchangeitemAPIResponse, error) {
-	var resp wdk.AlibabaHmMarketingFullrangeAddexchangeitemAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHmMarketingFullrangeAddexchangeitem(clt *core.SDKClient, req *wdk.AlibabaHmMarketingFullrangeAddexchangeitemAPIRequest, resp *wdk.AlibabaHmMarketingFullrangeAddexchangeitemAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

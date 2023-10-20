@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripBtripSupplychainBusIndustrySearchAPIResponse struct {
 	AlitripBtripSupplychainBusIndustrySearchAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripBtripSupplychainBusIndustrySearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripBtripSupplychainBusIndustrySearchAPIResponseModel).Reset()
+}
+
 // AlitripBtripSupplychainBusIndustrySearchAPIResponseModel is 汽车票行业搜索接口 成功返回结果
 type AlitripBtripSupplychainBusIndustrySearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_supplychain_bus_industry_search_response"`
@@ -22,4 +29,27 @@ type AlitripBtripSupplychainBusIndustrySearchAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 出参
 	Result *HisvResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripBtripSupplychainBusIndustrySearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripBtripSupplychainBusIndustrySearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripBtripSupplychainBusIndustrySearchAPIResponse)
+	},
+}
+
+// GetAlitripBtripSupplychainBusIndustrySearchAPIResponse 从 sync.Pool 获取 AlitripBtripSupplychainBusIndustrySearchAPIResponse
+func GetAlitripBtripSupplychainBusIndustrySearchAPIResponse() *AlitripBtripSupplychainBusIndustrySearchAPIResponse {
+	return poolAlitripBtripSupplychainBusIndustrySearchAPIResponse.Get().(*AlitripBtripSupplychainBusIndustrySearchAPIResponse)
+}
+
+// ReleaseAlitripBtripSupplychainBusIndustrySearchAPIResponse 将 AlitripBtripSupplychainBusIndustrySearchAPIResponse 保存到 sync.Pool
+func ReleaseAlitripBtripSupplychainBusIndustrySearchAPIResponse(v *AlitripBtripSupplychainBusIndustrySearchAPIResponse) {
+	v.Reset()
+	poolAlitripBtripSupplychainBusIndustrySearchAPIResponse.Put(v)
 }

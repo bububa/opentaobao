@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest struct {
 // NewTaobaoSimbaAdgroupOnlineitemsvonGetRequest 初始化TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest对象
 func NewTaobaoSimbaAdgroupOnlineitemsvonGetRequest() *TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest {
 	return &TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest) Reset() {
+	r._nick = ""
+	r._orderField = ""
+	r._productId = 0
+	r._pageSize = 0
+	r._pageNo = 0
+	r._orderBy = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest) SetOrderBy(_orderBy bool
 // GetOrderBy OrderBy Getter
 func (r TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest) GetOrderBy() bool {
 	return r._orderBy
+}
+
+var poolTaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaAdgroupOnlineitemsvonGetRequest()
+	},
+}
+
+// GetTaobaoSimbaAdgroupOnlineitemsvonGetRequest 从 sync.Pool 获取 TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest
+func GetTaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest() *TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest {
+	return poolTaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest.Get().(*TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest 将 TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest(v *TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest.Put(v)
 }

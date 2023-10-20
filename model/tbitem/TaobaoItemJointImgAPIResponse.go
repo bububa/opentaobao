@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoItemJointImgAPIResponse struct {
 	TaobaoItemJointImgAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoItemJointImgAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoItemJointImgAPIResponseModel).Reset()
+}
+
 // TaobaoItemJointImgAPIResponseModel is 商品关联子图 成功返回结果
 type TaobaoItemJointImgAPIResponseModel struct {
 	XMLName xml.Name `xml:"item_joint_img_response"`
@@ -22,4 +29,27 @@ type TaobaoItemJointImgAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 商品图片信息
 	ItemImg *ItemImg `json:"item_img,omitempty" xml:"item_img,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoItemJointImgAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ItemImg = nil
+}
+
+var poolTaobaoItemJointImgAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoItemJointImgAPIResponse)
+	},
+}
+
+// GetTaobaoItemJointImgAPIResponse 从 sync.Pool 获取 TaobaoItemJointImgAPIResponse
+func GetTaobaoItemJointImgAPIResponse() *TaobaoItemJointImgAPIResponse {
+	return poolTaobaoItemJointImgAPIResponse.Get().(*TaobaoItemJointImgAPIResponse)
+}
+
+// ReleaseTaobaoItemJointImgAPIResponse 将 TaobaoItemJointImgAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoItemJointImgAPIResponse(v *TaobaoItemJointImgAPIResponse) {
+	v.Reset()
+	poolTaobaoItemJointImgAPIResponse.Put(v)
 }

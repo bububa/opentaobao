@@ -1,5 +1,9 @@
 package fundplatform
 
+import (
+	"sync"
+)
+
 // ChargeRequest 结构体
 type ChargeRequest struct {
 	// 描述信息
@@ -16,4 +20,27 @@ type ChargeRequest struct {
 	SubBizType int64 `json:"sub_biz_type,omitempty" xml:"sub_biz_type,omitempty"`
 	// 用户ID,两个userId请保持一致
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolChargeRequest = sync.Pool{
+	New: func() any {
+		return new(ChargeRequest)
+	},
+}
+
+// GetChargeRequest() 从对象池中获取ChargeRequest
+func GetChargeRequest() *ChargeRequest {
+	return poolChargeRequest.Get().(*ChargeRequest)
+}
+
+// ReleaseChargeRequest 释放ChargeRequest
+func ReleaseChargeRequest(v *ChargeRequest) {
+	v.Description = ""
+	v.OutBizId = ""
+	v.PayerAlipayEmail = ""
+	v.PayerAlipayNo = ""
+	v.Amount = 0
+	v.SubBizType = 0
+	v.UserId = 0
+	poolChargeRequest.Put(v)
 }

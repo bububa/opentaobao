@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // FreeTourPackageInfo 结构体
 type FreeTourPackageInfo struct {
 	// 包含元素-景区门票，如果该套餐包含景区门票，则需要传这个参数
@@ -30,4 +34,34 @@ type FreeTourPackageInfo struct {
 	FromLocations string `json:"from_locations,omitempty" xml:"from_locations,omitempty"`
 	// 套餐操作类型，(0:套餐覆盖修改,1:增加套餐,2:删除套餐)===默认为0===
 	PackageOperation int64 `json:"package_operation,omitempty" xml:"package_operation,omitempty"`
+}
+
+var poolFreeTourPackageInfo = sync.Pool{
+	New: func() any {
+		return new(FreeTourPackageInfo)
+	},
+}
+
+// GetFreeTourPackageInfo() 从对象池中获取FreeTourPackageInfo
+func GetFreeTourPackageInfo() *FreeTourPackageInfo {
+	return poolFreeTourPackageInfo.Get().(*FreeTourPackageInfo)
+}
+
+// ReleaseFreeTourPackageInfo 释放FreeTourPackageInfo
+func ReleaseFreeTourPackageInfo(v *FreeTourPackageInfo) {
+	v.FreeTourScenicInfoList = v.FreeTourScenicInfoList[:0]
+	v.BackTrafficInfoList = v.BackTrafficInfoList[:0]
+	v.FeeExclude = v.FeeExclude[:0]
+	v.GoTrafficInfoList = v.GoTrafficInfoList[:0]
+	v.OrderInfo = v.OrderInfo[:0]
+	v.ItemResourceInfoList = v.ItemResourceInfoList[:0]
+	v.FeeInclude = v.FeeInclude[:0]
+	v.FreeTourHotelInfoList = v.FreeTourHotelInfoList[:0]
+	v.OutProductId = ""
+	v.PackageName = ""
+	v.ToLocations = ""
+	v.ScenicDesc = ""
+	v.FromLocations = ""
+	v.PackageOperation = 0
+	poolFreeTourPackageInfo.Put(v)
 }

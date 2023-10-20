@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrtCrmActivityDetailDto 结构体
 type NrtCrmActivityDetailDto struct {
 	// 状态
@@ -40,4 +44,39 @@ type NrtCrmActivityDetailDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 直播对象
 	NrtCrmLiveDTO *NrtCrmLiveDto `json:"nrt_crm_live_d_t_o,omitempty" xml:"nrt_crm_live_d_t_o,omitempty"`
+}
+
+var poolNrtCrmActivityDetailDto = sync.Pool{
+	New: func() any {
+		return new(NrtCrmActivityDetailDto)
+	},
+}
+
+// GetNrtCrmActivityDetailDto() 从对象池中获取NrtCrmActivityDetailDto
+func GetNrtCrmActivityDetailDto() *NrtCrmActivityDetailDto {
+	return poolNrtCrmActivityDetailDto.Get().(*NrtCrmActivityDetailDto)
+}
+
+// ReleaseNrtCrmActivityDetailDto 释放NrtCrmActivityDetailDto
+func ReleaseNrtCrmActivityDetailDto(v *NrtCrmActivityDetailDto) {
+	v.StatusStr = ""
+	v.EndTimeStr = ""
+	v.StartTimeStr = ""
+	v.Rule = ""
+	v.StoreName = ""
+	v.GuiderName = ""
+	v.Title = ""
+	v.StoreAddress = ""
+	v.TmpSceneActivityIdList = ""
+	v.BannerUrl = ""
+	v.GuiderCustomerNum = 0
+	v.TotalCustomerNum = 0
+	v.TotalUv = 0
+	v.TotalPv = 0
+	v.StoreId = 0
+	v.GuiderId = 0
+	v.Id = 0
+	v.Status = 0
+	v.NrtCrmLiveDTO = nil
+	poolNrtCrmActivityDetailDto.Put(v)
 }

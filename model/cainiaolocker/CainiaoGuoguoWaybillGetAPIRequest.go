@@ -2,6 +2,7 @@ package cainiaolocker
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoGuoguoWaybillGetAPIRequest struct {
 // NewCainiaoGuoguoWaybillGetRequest 初始化CainiaoGuoguoWaybillGetAPIRequest对象
 func NewCainiaoGuoguoWaybillGetRequest() *CainiaoGuoguoWaybillGetAPIRequest {
 	return &CainiaoGuoguoWaybillGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGuoguoWaybillGetAPIRequest) Reset() {
+	r._paramWaybillCloudPrintApplyNewRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoGuoguoWaybillGetAPIRequest) SetParamWaybillCloudPrintApplyNewReq
 // GetParamWaybillCloudPrintApplyNewRequest ParamWaybillCloudPrintApplyNewRequest Getter
 func (r CainiaoGuoguoWaybillGetAPIRequest) GetParamWaybillCloudPrintApplyNewRequest() *WaybillCloudPrintApplyNewRequest {
 	return r._paramWaybillCloudPrintApplyNewRequest
+}
+
+var poolCainiaoGuoguoWaybillGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGuoguoWaybillGetRequest()
+	},
+}
+
+// GetCainiaoGuoguoWaybillGetRequest 从 sync.Pool 获取 CainiaoGuoguoWaybillGetAPIRequest
+func GetCainiaoGuoguoWaybillGetAPIRequest() *CainiaoGuoguoWaybillGetAPIRequest {
+	return poolCainiaoGuoguoWaybillGetAPIRequest.Get().(*CainiaoGuoguoWaybillGetAPIRequest)
+}
+
+// ReleaseCainiaoGuoguoWaybillGetAPIRequest 将 CainiaoGuoguoWaybillGetAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGuoguoWaybillGetAPIRequest(v *CainiaoGuoguoWaybillGetAPIRequest) {
+	v.Reset()
+	poolCainiaoGuoguoWaybillGetAPIRequest.Put(v)
 }

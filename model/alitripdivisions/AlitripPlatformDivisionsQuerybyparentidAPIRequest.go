@@ -2,6 +2,7 @@ package alitripdivisions
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripPlatformDivisionsQuerybyparentidAPIRequest struct {
 // NewAlitripPlatformDivisionsQuerybyparentidRequest 初始化AlitripPlatformDivisionsQuerybyparentidAPIRequest对象
 func NewAlitripPlatformDivisionsQuerybyparentidRequest() *AlitripPlatformDivisionsQuerybyparentidAPIRequest {
 	return &AlitripPlatformDivisionsQuerybyparentidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripPlatformDivisionsQuerybyparentidAPIRequest) Reset() {
+	r._paramLong = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripPlatformDivisionsQuerybyparentidAPIRequest) SetParamLong(_paramL
 // GetParamLong ParamLong Getter
 func (r AlitripPlatformDivisionsQuerybyparentidAPIRequest) GetParamLong() int64 {
 	return r._paramLong
+}
+
+var poolAlitripPlatformDivisionsQuerybyparentidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripPlatformDivisionsQuerybyparentidRequest()
+	},
+}
+
+// GetAlitripPlatformDivisionsQuerybyparentidRequest 从 sync.Pool 获取 AlitripPlatformDivisionsQuerybyparentidAPIRequest
+func GetAlitripPlatformDivisionsQuerybyparentidAPIRequest() *AlitripPlatformDivisionsQuerybyparentidAPIRequest {
+	return poolAlitripPlatformDivisionsQuerybyparentidAPIRequest.Get().(*AlitripPlatformDivisionsQuerybyparentidAPIRequest)
+}
+
+// ReleaseAlitripPlatformDivisionsQuerybyparentidAPIRequest 将 AlitripPlatformDivisionsQuerybyparentidAPIRequest 放入 sync.Pool
+func ReleaseAlitripPlatformDivisionsQuerybyparentidAPIRequest(v *AlitripPlatformDivisionsQuerybyparentidAPIRequest) {
+	v.Reset()
+	poolAlitripPlatformDivisionsQuerybyparentidAPIRequest.Put(v)
 }

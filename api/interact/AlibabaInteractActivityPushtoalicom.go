@@ -9,11 +9,6 @@ import (
 // alibaba.interact.activity.pushtoalicom
 //
 // 涉及到流量包的小铺isv，将活动推送到流量聚乐部
-func AlibabaInteractActivityPushtoalicom(clt *core.SDKClient, req *interact.AlibabaInteractActivityPushtoalicomAPIRequest, session string) (*interact.AlibabaInteractActivityPushtoalicomAPIResponse, error) {
-	var resp interact.AlibabaInteractActivityPushtoalicomAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaInteractActivityPushtoalicom(clt *core.SDKClient, req *interact.AlibabaInteractActivityPushtoalicomAPIRequest, resp *interact.AlibabaInteractActivityPushtoalicomAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

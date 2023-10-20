@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscConsumerecordSyncAPIRequest struct {
 // NewAlibabaAlscConsumerecordSyncRequest 初始化AlibabaAlscConsumerecordSyncAPIRequest对象
 func NewAlibabaAlscConsumerecordSyncRequest() *AlibabaAlscConsumerecordSyncAPIRequest {
 	return &AlibabaAlscConsumerecordSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscConsumerecordSyncAPIRequest) Reset() {
+	r._paramRecordOpenSyncRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscConsumerecordSyncAPIRequest) SetParamRecordOpenSyncRequest(_
 // GetParamRecordOpenSyncRequest ParamRecordOpenSyncRequest Getter
 func (r AlibabaAlscConsumerecordSyncAPIRequest) GetParamRecordOpenSyncRequest() *RecordOpenSyncRequest {
 	return r._paramRecordOpenSyncRequest
+}
+
+var poolAlibabaAlscConsumerecordSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscConsumerecordSyncRequest()
+	},
+}
+
+// GetAlibabaAlscConsumerecordSyncRequest 从 sync.Pool 获取 AlibabaAlscConsumerecordSyncAPIRequest
+func GetAlibabaAlscConsumerecordSyncAPIRequest() *AlibabaAlscConsumerecordSyncAPIRequest {
+	return poolAlibabaAlscConsumerecordSyncAPIRequest.Get().(*AlibabaAlscConsumerecordSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlscConsumerecordSyncAPIRequest 将 AlibabaAlscConsumerecordSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscConsumerecordSyncAPIRequest(v *AlibabaAlscConsumerecordSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscConsumerecordSyncAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest stru
 // NewTaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorRequest 初始化TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest对象
 func NewTaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorRequest() *TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest {
 	return &TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest) Reset() {
+	r._warehouseCode = ""
+	r._wcsNum = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest)
 // GetWcsNum WcsNum Getter
 func (r TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest) GetWcsNum() int64 {
 	return r._wcsNum
+}
+
+var poolTaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorRequest()
+	},
+}
+
+// GetTaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorRequest 从 sync.Pool 获取 TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest
+func GetTaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest() *TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest {
+	return poolTaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest.Get().(*TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest)
+}
+
+// ReleaseTaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest 将 TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest(v *TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest) {
+	v.Reset()
+	poolTaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package yunosappstore
 
+import (
+	"sync"
+)
+
 // YunosAppstorePadHpApplistResult 结构体
 type YunosAppstorePadHpApplistResult struct {
 	// icon
@@ -20,4 +24,29 @@ type YunosAppstorePadHpApplistResult struct {
 	Intro string `json:"intro,omitempty" xml:"intro,omitempty"`
 	// versionCode
 	VersionCode int64 `json:"version_code,omitempty" xml:"version_code,omitempty"`
+}
+
+var poolYunosAppstorePadHpApplistResult = sync.Pool{
+	New: func() any {
+		return new(YunosAppstorePadHpApplistResult)
+	},
+}
+
+// GetYunosAppstorePadHpApplistResult() 从对象池中获取YunosAppstorePadHpApplistResult
+func GetYunosAppstorePadHpApplistResult() *YunosAppstorePadHpApplistResult {
+	return poolYunosAppstorePadHpApplistResult.Get().(*YunosAppstorePadHpApplistResult)
+}
+
+// ReleaseYunosAppstorePadHpApplistResult 释放YunosAppstorePadHpApplistResult
+func ReleaseYunosAppstorePadHpApplistResult(v *YunosAppstorePadHpApplistResult) {
+	v.Icon = ""
+	v.GmtCreate = ""
+	v.PackageName = ""
+	v.Name = ""
+	v.DeveloperName = ""
+	v.Uri = ""
+	v.Url = ""
+	v.Intro = ""
+	v.VersionCode = 0
+	poolYunosAppstorePadHpApplistResult.Put(v)
 }

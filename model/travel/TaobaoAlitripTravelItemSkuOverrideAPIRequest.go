@@ -2,6 +2,7 @@ package travel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoAlitripTravelItemSkuOverrideAPIRequest struct {
 // NewTaobaoAlitripTravelItemSkuOverrideRequest 初始化TaobaoAlitripTravelItemSkuOverrideAPIRequest对象
 func NewTaobaoAlitripTravelItemSkuOverrideRequest() *TaobaoAlitripTravelItemSkuOverrideAPIRequest {
 	return &TaobaoAlitripTravelItemSkuOverrideAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelItemSkuOverrideAPIRequest) Reset() {
+	r._skus = r._skus[:0]
+	r._outProductId = ""
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoAlitripTravelItemSkuOverrideAPIRequest) SetItemId(_itemId int64) 
 // GetItemId ItemId Getter
 func (r TaobaoAlitripTravelItemSkuOverrideAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTaobaoAlitripTravelItemSkuOverrideAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelItemSkuOverrideRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelItemSkuOverrideRequest 从 sync.Pool 获取 TaobaoAlitripTravelItemSkuOverrideAPIRequest
+func GetTaobaoAlitripTravelItemSkuOverrideAPIRequest() *TaobaoAlitripTravelItemSkuOverrideAPIRequest {
+	return poolTaobaoAlitripTravelItemSkuOverrideAPIRequest.Get().(*TaobaoAlitripTravelItemSkuOverrideAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelItemSkuOverrideAPIRequest 将 TaobaoAlitripTravelItemSkuOverrideAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelItemSkuOverrideAPIRequest(v *TaobaoAlitripTravelItemSkuOverrideAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelItemSkuOverrideAPIRequest.Put(v)
 }

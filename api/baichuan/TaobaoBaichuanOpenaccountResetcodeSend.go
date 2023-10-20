@@ -9,11 +9,6 @@ import (
 // taobao.baichuan.openaccount.resetcode.send
 //
 // 百川发送找回密码验证码
-func TaobaoBaichuanOpenaccountResetcodeSend(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountResetcodeSendAPIRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountResetcodeSendAPIResponse, error) {
-	var resp baichuan.TaobaoBaichuanOpenaccountResetcodeSendAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBaichuanOpenaccountResetcodeSend(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountResetcodeSendAPIRequest, resp *baichuan.TaobaoBaichuanOpenaccountResetcodeSendAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

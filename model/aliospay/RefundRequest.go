@@ -1,5 +1,9 @@
 package aliospay
 
+import (
+	"sync"
+)
+
 // RefundRequest 结构体
 type RefundRequest struct {
 	// 请求唯一id，不可重复，服务端会根据此参数防重放
@@ -16,4 +20,27 @@ type RefundRequest struct {
 	OutRequestNo string `json:"out_request_no,omitempty" xml:"out_request_no,omitempty"`
 	// 退款金额，单位分
 	RefundAmount int64 `json:"refund_amount,omitempty" xml:"refund_amount,omitempty"`
+}
+
+var poolRefundRequest = sync.Pool{
+	New: func() any {
+		return new(RefundRequest)
+	},
+}
+
+// GetRefundRequest() 从对象池中获取RefundRequest
+func GetRefundRequest() *RefundRequest {
+	return poolRefundRequest.Get().(*RefundRequest)
+}
+
+// ReleaseRefundRequest 释放RefundRequest
+func ReleaseRefundRequest(v *RefundRequest) {
+	v.TraceId = ""
+	v.Lang = ""
+	v.Time = ""
+	v.BizOrderId = ""
+	v.RefundReason = ""
+	v.OutRequestNo = ""
+	v.RefundAmount = 0
+	poolRefundRequest.Put(v)
 }

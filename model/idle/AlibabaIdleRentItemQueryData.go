@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // AlibabaIdleRentItemQueryData 结构体
 type AlibabaIdleRentItemQueryData struct {
 	// 商品sku信息
@@ -22,4 +26,30 @@ type AlibabaIdleRentItemQueryData struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 运费模板id
 	TemplateId int64 `json:"template_id,omitempty" xml:"template_id,omitempty"`
+}
+
+var poolAlibabaIdleRentItemQueryData = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleRentItemQueryData)
+	},
+}
+
+// GetAlibabaIdleRentItemQueryData() 从对象池中获取AlibabaIdleRentItemQueryData
+func GetAlibabaIdleRentItemQueryData() *AlibabaIdleRentItemQueryData {
+	return poolAlibabaIdleRentItemQueryData.Get().(*AlibabaIdleRentItemQueryData)
+}
+
+// ReleaseAlibabaIdleRentItemQueryData 释放AlibabaIdleRentItemQueryData
+func ReleaseAlibabaIdleRentItemQueryData(v *AlibabaIdleRentItemQueryData) {
+	v.ItemSkuList = v.ItemSkuList[:0]
+	v.Title = ""
+	v.Desc = ""
+	v.UsedLevel = 0
+	v.Quantity = 0
+	v.Address = nil
+	v.ItemId = 0
+	v.PriceInfo = nil
+	v.Status = 0
+	v.TemplateId = 0
+	poolAlibabaIdleRentItemQueryData.Put(v)
 }

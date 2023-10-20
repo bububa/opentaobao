@@ -9,11 +9,6 @@ import (
 // taobao.train.agent.order.ignore
 //
 // 忽略订单
-func TaobaoTrainAgentOrderIgnore(clt *core.SDKClient, req *train.TaobaoTrainAgentOrderIgnoreAPIRequest, session string) (*train.TaobaoTrainAgentOrderIgnoreAPIResponse, error) {
-	var resp train.TaobaoTrainAgentOrderIgnoreAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTrainAgentOrderIgnore(clt *core.SDKClient, req *train.TaobaoTrainAgentOrderIgnoreAPIRequest, resp *train.TaobaoTrainAgentOrderIgnoreAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

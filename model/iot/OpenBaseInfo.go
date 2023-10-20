@@ -1,5 +1,9 @@
 package iot
 
+import (
+	"sync"
+)
+
 // OpenBaseInfo 结构体
 type OpenBaseInfo struct {
 	// 账户体系隔离
@@ -10,4 +14,24 @@ type OpenBaseInfo struct {
 	UtdId string `json:"utd_id,omitempty" xml:"utd_id,omitempty"`
 	// 扩展信息，用于存放APP类型等
 	Ext string `json:"ext,omitempty" xml:"ext,omitempty"`
+}
+
+var poolOpenBaseInfo = sync.Pool{
+	New: func() any {
+		return new(OpenBaseInfo)
+	},
+}
+
+// GetOpenBaseInfo() 从对象池中获取OpenBaseInfo
+func GetOpenBaseInfo() *OpenBaseInfo {
+	return poolOpenBaseInfo.Get().(*OpenBaseInfo)
+}
+
+// ReleaseOpenBaseInfo 释放OpenBaseInfo
+func ReleaseOpenBaseInfo(v *OpenBaseInfo) {
+	v.Schema = ""
+	v.UserId = ""
+	v.UtdId = ""
+	v.Ext = ""
+	poolOpenBaseInfo.Put(v)
 }

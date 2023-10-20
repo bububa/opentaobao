@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drugtrace.top.lsyd.service.getenddate
 //
 // 获取企业服务截止时间
-func AlibabaAlihealthDrugtraceTopLsydServiceGetenddate(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopLsydServiceGetenddateAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugtraceTopLsydServiceGetenddateAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugtraceTopLsydServiceGetenddateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugtraceTopLsydServiceGetenddate(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopLsydServiceGetenddateAPIRequest, resp *drugtrace.AlibabaAlihealthDrugtraceTopLsydServiceGetenddateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

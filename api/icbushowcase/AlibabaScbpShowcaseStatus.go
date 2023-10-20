@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.showcase.status
 //
 // 查询橱窗状态，如总数、可用数量
-func AlibabaScbpShowcaseStatus(clt *core.SDKClient, req *icbushowcase.AlibabaScbpShowcaseStatusAPIRequest, session string) (*icbushowcase.AlibabaScbpShowcaseStatusAPIResponse, error) {
-	var resp icbushowcase.AlibabaScbpShowcaseStatusAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpShowcaseStatus(clt *core.SDKClient, req *icbushowcase.AlibabaScbpShowcaseStatusAPIRequest, resp *icbushowcase.AlibabaScbpShowcaseStatusAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

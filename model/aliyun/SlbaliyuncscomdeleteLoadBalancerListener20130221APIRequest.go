@@ -2,6 +2,7 @@ package aliyun
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type SlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest struct {
 // NewSlbAliyuncsComDeleteLoadBalancerListener20130221Request 初始化SlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest对象
 func NewSlbAliyuncsComDeleteLoadBalancerListener20130221Request() *SlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest {
 	return &SlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *SlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest) Reset() {
+	r._loadBalancerId = ""
+	r._listenerPort = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *SlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest) SetListener
 // GetListenerPort ListenerPort Getter
 func (r SlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest) GetListenerPort() int64 {
 	return r._listenerPort
+}
+
+var poolSlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest = sync.Pool{
+	New: func() any {
+		return NewSlbAliyuncsComDeleteLoadBalancerListener20130221Request()
+	},
+}
+
+// GetSlbAliyuncsComDeleteLoadBalancerListener20130221Request 从 sync.Pool 获取 SlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest
+func GetSlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest() *SlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest {
+	return poolSlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest.Get().(*SlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest)
+}
+
+// ReleaseSlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest 将 SlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest 放入 sync.Pool
+func ReleaseSlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest(v *SlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest) {
+	v.Reset()
+	poolSlbAliyuncsComDeleteLoadBalancerListener20130221APIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -62,8 +63,35 @@ type TaobaoXhotelMultiplerateUpdateAPIRequest struct {
 // NewTaobaoXhotelMultiplerateUpdateRequest 初始化TaobaoXhotelMultiplerateUpdateAPIRequest对象
 func NewTaobaoXhotelMultiplerateUpdateRequest() *TaobaoXhotelMultiplerateUpdateAPIRequest {
 	return &TaobaoXhotelMultiplerateUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(22),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) Reset() {
+	r._outRid = ""
+	r._rateSwitchCal = ""
+	r._currencyCode = ""
+	r._ratePlanCode = ""
+	r._inventoryPrice = ""
+	r._name = ""
+	r._vendor = ""
+	r._lockEndTime = ""
+	r._lockStartTime = ""
+	r._onlineBookingBindingInfo = ""
+	r._cancelPolicy = ""
+	r._breakfastCal = ""
+	r._cancelPolicyCal = ""
+	r._hotelXitemInfos = ""
+	r._rpid = 0
+	r._status = 0
+	r._lengthofstay = 0
+	r._occupancy = 0
+	r._gid = 0
+	r._childnum = 0
+	r._infantnum = 0
+	r._breakfast = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -368,4 +396,21 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetBreakfast(_breakfast int64
 // GetBreakfast Breakfast Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetBreakfast() int64 {
 	return r._breakfast
+}
+
+var poolTaobaoXhotelMultiplerateUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelMultiplerateUpdateRequest()
+	},
+}
+
+// GetTaobaoXhotelMultiplerateUpdateRequest 从 sync.Pool 获取 TaobaoXhotelMultiplerateUpdateAPIRequest
+func GetTaobaoXhotelMultiplerateUpdateAPIRequest() *TaobaoXhotelMultiplerateUpdateAPIRequest {
+	return poolTaobaoXhotelMultiplerateUpdateAPIRequest.Get().(*TaobaoXhotelMultiplerateUpdateAPIRequest)
+}
+
+// ReleaseTaobaoXhotelMultiplerateUpdateAPIRequest 将 TaobaoXhotelMultiplerateUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelMultiplerateUpdateAPIRequest(v *TaobaoXhotelMultiplerateUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelMultiplerateUpdateAPIRequest.Put(v)
 }

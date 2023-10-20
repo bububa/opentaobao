@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse struct {
 	AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponseModel).Reset()
+}
+
 // AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponseModel is 单明细发薪受理 成功返回结果
 type AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_tax_opt_salaryrequest_singleaccept_response"`
@@ -22,4 +29,27 @@ type AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果类
 	Result *TaxOptimizationSingleDetailPaymentAccessResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse)
+	},
+}
+
+// GetAlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse 从 sync.Pool 获取 AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse
+func GetAlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse() *AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse {
+	return poolAlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse.Get().(*AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse)
+}
+
+// ReleaseAlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse 将 AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse(v *AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse) {
+	v.Reset()
+	poolAlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse.Put(v)
 }

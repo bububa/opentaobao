@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // InvoiceOrderSimpleDto 结构体
 type InvoiceOrderSimpleDto struct {
 	// 所绑定的税控设备ID;  入驻成功 &amp; 单机版税控产品时，包含该字段。
@@ -12,4 +16,25 @@ type InvoiceOrderSimpleDto struct {
 	ServEndTime string `json:"serv_end_time,omitempty" xml:"serv_end_time,omitempty"`
 	// 服务起始时间，格式yyyy-MM-dd HH:mm:ss  当flow_status=success时必选；
 	ServStartTime string `json:"serv_start_time,omitempty" xml:"serv_start_time,omitempty"`
+}
+
+var poolInvoiceOrderSimpleDto = sync.Pool{
+	New: func() any {
+		return new(InvoiceOrderSimpleDto)
+	},
+}
+
+// GetInvoiceOrderSimpleDto() 从对象池中获取InvoiceOrderSimpleDto
+func GetInvoiceOrderSimpleDto() *InvoiceOrderSimpleDto {
+	return poolInvoiceOrderSimpleDto.Get().(*InvoiceOrderSimpleDto)
+}
+
+// ReleaseInvoiceOrderSimpleDto 释放InvoiceOrderSimpleDto
+func ReleaseInvoiceOrderSimpleDto(v *InvoiceOrderSimpleDto) {
+	v.DeviceId = ""
+	v.OrderId = ""
+	v.ProductCode = ""
+	v.ServEndTime = ""
+	v.ServStartTime = ""
+	poolInvoiceOrderSimpleDto.Put(v)
 }

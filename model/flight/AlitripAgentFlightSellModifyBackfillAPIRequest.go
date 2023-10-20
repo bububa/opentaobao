@@ -2,6 +2,7 @@ package flight
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripAgentFlightSellModifyBackfillAPIRequest struct {
 // NewAlitripAgentFlightSellModifyBackfillRequest 初始化AlitripAgentFlightSellModifyBackfillAPIRequest对象
 func NewAlitripAgentFlightSellModifyBackfillRequest() *AlitripAgentFlightSellModifyBackfillAPIRequest {
 	return &AlitripAgentFlightSellModifyBackfillAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripAgentFlightSellModifyBackfillAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripAgentFlightSellModifyBackfillAPIRequest) SetParam(_param *Modify
 // GetParam Param Getter
 func (r AlitripAgentFlightSellModifyBackfillAPIRequest) GetParam() *ModifyBackFillRequestDto {
 	return r._param
+}
+
+var poolAlitripAgentFlightSellModifyBackfillAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripAgentFlightSellModifyBackfillRequest()
+	},
+}
+
+// GetAlitripAgentFlightSellModifyBackfillRequest 从 sync.Pool 获取 AlitripAgentFlightSellModifyBackfillAPIRequest
+func GetAlitripAgentFlightSellModifyBackfillAPIRequest() *AlitripAgentFlightSellModifyBackfillAPIRequest {
+	return poolAlitripAgentFlightSellModifyBackfillAPIRequest.Get().(*AlitripAgentFlightSellModifyBackfillAPIRequest)
+}
+
+// ReleaseAlitripAgentFlightSellModifyBackfillAPIRequest 将 AlitripAgentFlightSellModifyBackfillAPIRequest 放入 sync.Pool
+func ReleaseAlitripAgentFlightSellModifyBackfillAPIRequest(v *AlitripAgentFlightSellModifyBackfillAPIRequest) {
+	v.Reset()
+	poolAlitripAgentFlightSellModifyBackfillAPIRequest.Put(v)
 }

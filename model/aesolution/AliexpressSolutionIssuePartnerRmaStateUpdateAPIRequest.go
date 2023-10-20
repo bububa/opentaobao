@@ -2,6 +2,7 @@ package aesolution
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest struct {
 // NewAliexpressSolutionIssuePartnerRmaStateUpdateRequest 初始化AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest对象
 func NewAliexpressSolutionIssuePartnerRmaStateUpdateRequest() *AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest {
 	return &AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest) Reset() {
+	r._rmaStateUpdateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest) SetRmaStateUpda
 // GetRmaStateUpdateRequest RmaStateUpdateRequest Getter
 func (r AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest) GetRmaStateUpdateRequest() *RmaStateUpdateRequest {
 	return r._rmaStateUpdateRequest
+}
+
+var poolAliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSolutionIssuePartnerRmaStateUpdateRequest()
+	},
+}
+
+// GetAliexpressSolutionIssuePartnerRmaStateUpdateRequest 从 sync.Pool 获取 AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest
+func GetAliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest() *AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest {
+	return poolAliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest.Get().(*AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest)
+}
+
+// ReleaseAliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest 将 AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest(v *AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest) {
+	v.Reset()
+	poolAliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest.Put(v)
 }

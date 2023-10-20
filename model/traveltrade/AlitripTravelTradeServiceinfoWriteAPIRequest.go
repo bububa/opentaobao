@@ -2,6 +2,7 @@ package traveltrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripTravelTradeServiceinfoWriteAPIRequest struct {
 // NewAlitripTravelTradeServiceinfoWriteRequest 初始化AlitripTravelTradeServiceinfoWriteAPIRequest对象
 func NewAlitripTravelTradeServiceinfoWriteRequest() *AlitripTravelTradeServiceinfoWriteAPIRequest {
 	return &AlitripTravelTradeServiceinfoWriteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTravelTradeServiceinfoWriteAPIRequest) Reset() {
+	r._tipValue = ""
+	r._subTcOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripTravelTradeServiceinfoWriteAPIRequest) SetSubTcOrderId(_subTcOrd
 // GetSubTcOrderId SubTcOrderId Getter
 func (r AlitripTravelTradeServiceinfoWriteAPIRequest) GetSubTcOrderId() int64 {
 	return r._subTcOrderId
+}
+
+var poolAlitripTravelTradeServiceinfoWriteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTravelTradeServiceinfoWriteRequest()
+	},
+}
+
+// GetAlitripTravelTradeServiceinfoWriteRequest 从 sync.Pool 获取 AlitripTravelTradeServiceinfoWriteAPIRequest
+func GetAlitripTravelTradeServiceinfoWriteAPIRequest() *AlitripTravelTradeServiceinfoWriteAPIRequest {
+	return poolAlitripTravelTradeServiceinfoWriteAPIRequest.Get().(*AlitripTravelTradeServiceinfoWriteAPIRequest)
+}
+
+// ReleaseAlitripTravelTradeServiceinfoWriteAPIRequest 将 AlitripTravelTradeServiceinfoWriteAPIRequest 放入 sync.Pool
+func ReleaseAlitripTravelTradeServiceinfoWriteAPIRequest(v *AlitripTravelTradeServiceinfoWriteAPIRequest) {
+	v.Reset()
+	poolAlitripTravelTradeServiceinfoWriteAPIRequest.Put(v)
 }

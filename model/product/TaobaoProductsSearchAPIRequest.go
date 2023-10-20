@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -49,8 +50,25 @@ type TaobaoProductsSearchAPIRequest struct {
 // NewTaobaoProductsSearchRequest 初始化TaobaoProductsSearchAPIRequest对象
 func NewTaobaoProductsSearchRequest() *TaobaoProductsSearchAPIRequest {
 	return &TaobaoProductsSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(12),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoProductsSearchAPIRequest) Reset() {
+	r._fields = r._fields[:0]
+	r._q = ""
+	r._props = ""
+	r._status = ""
+	r._customerProps = ""
+	r._suiteItemsStr = ""
+	r._barcodeStr = ""
+	r._marketId = ""
+	r._cid = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r._verticalMarket = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -224,4 +242,21 @@ func (r *TaobaoProductsSearchAPIRequest) SetVerticalMarket(_verticalMarket int64
 // GetVerticalMarket VerticalMarket Getter
 func (r TaobaoProductsSearchAPIRequest) GetVerticalMarket() int64 {
 	return r._verticalMarket
+}
+
+var poolTaobaoProductsSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoProductsSearchRequest()
+	},
+}
+
+// GetTaobaoProductsSearchRequest 从 sync.Pool 获取 TaobaoProductsSearchAPIRequest
+func GetTaobaoProductsSearchAPIRequest() *TaobaoProductsSearchAPIRequest {
+	return poolTaobaoProductsSearchAPIRequest.Get().(*TaobaoProductsSearchAPIRequest)
+}
+
+// ReleaseTaobaoProductsSearchAPIRequest 将 TaobaoProductsSearchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoProductsSearchAPIRequest(v *TaobaoProductsSearchAPIRequest) {
+	v.Reset()
+	poolTaobaoProductsSearchAPIRequest.Put(v)
 }

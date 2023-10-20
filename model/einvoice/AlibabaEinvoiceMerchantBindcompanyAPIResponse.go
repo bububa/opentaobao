@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaEinvoiceMerchantBindcompanyAPIResponse struct {
 	AlibabaEinvoiceMerchantBindcompanyAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaEinvoiceMerchantBindcompanyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEinvoiceMerchantBindcompanyAPIResponseModel).Reset()
+}
+
 // AlibabaEinvoiceMerchantBindcompanyAPIResponseModel is 发票中台-跨平台绑定已入驻税号与商户 成功返回结果
 type AlibabaEinvoiceMerchantBindcompanyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_merchant_bindcompany_response"`
@@ -22,4 +29,27 @@ type AlibabaEinvoiceMerchantBindcompanyAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// token，此token用于税号适用门店新增和删除接口，需要业务方保存
 	TaxToken string `json:"tax_token,omitempty" xml:"tax_token,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEinvoiceMerchantBindcompanyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TaxToken = ""
+}
+
+var poolAlibabaEinvoiceMerchantBindcompanyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEinvoiceMerchantBindcompanyAPIResponse)
+	},
+}
+
+// GetAlibabaEinvoiceMerchantBindcompanyAPIResponse 从 sync.Pool 获取 AlibabaEinvoiceMerchantBindcompanyAPIResponse
+func GetAlibabaEinvoiceMerchantBindcompanyAPIResponse() *AlibabaEinvoiceMerchantBindcompanyAPIResponse {
+	return poolAlibabaEinvoiceMerchantBindcompanyAPIResponse.Get().(*AlibabaEinvoiceMerchantBindcompanyAPIResponse)
+}
+
+// ReleaseAlibabaEinvoiceMerchantBindcompanyAPIResponse 将 AlibabaEinvoiceMerchantBindcompanyAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEinvoiceMerchantBindcompanyAPIResponse(v *AlibabaEinvoiceMerchantBindcompanyAPIResponse) {
+	v.Reset()
+	poolAlibabaEinvoiceMerchantBindcompanyAPIResponse.Put(v)
 }

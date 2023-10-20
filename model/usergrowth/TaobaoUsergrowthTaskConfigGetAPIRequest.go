@@ -2,6 +2,7 @@ package usergrowth
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoUsergrowthTaskConfigGetAPIRequest struct {
 // NewTaobaoUsergrowthTaskConfigGetRequest 初始化TaobaoUsergrowthTaskConfigGetAPIRequest对象
 func NewTaobaoUsergrowthTaskConfigGetRequest() *TaobaoUsergrowthTaskConfigGetAPIRequest {
 	return &TaobaoUsergrowthTaskConfigGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUsergrowthTaskConfigGetAPIRequest) Reset() {
+	r._businessId = ""
+	r._command = ""
+	r._extra = ""
+	r._openId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoUsergrowthTaskConfigGetAPIRequest) SetOpenId(_openId string) erro
 // GetOpenId OpenId Getter
 func (r TaobaoUsergrowthTaskConfigGetAPIRequest) GetOpenId() string {
 	return r._openId
+}
+
+var poolTaobaoUsergrowthTaskConfigGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUsergrowthTaskConfigGetRequest()
+	},
+}
+
+// GetTaobaoUsergrowthTaskConfigGetRequest 从 sync.Pool 获取 TaobaoUsergrowthTaskConfigGetAPIRequest
+func GetTaobaoUsergrowthTaskConfigGetAPIRequest() *TaobaoUsergrowthTaskConfigGetAPIRequest {
+	return poolTaobaoUsergrowthTaskConfigGetAPIRequest.Get().(*TaobaoUsergrowthTaskConfigGetAPIRequest)
+}
+
+// ReleaseTaobaoUsergrowthTaskConfigGetAPIRequest 将 TaobaoUsergrowthTaskConfigGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUsergrowthTaskConfigGetAPIRequest(v *TaobaoUsergrowthTaskConfigGetAPIRequest) {
+	v.Reset()
+	poolTaobaoUsergrowthTaskConfigGetAPIRequest.Put(v)
 }

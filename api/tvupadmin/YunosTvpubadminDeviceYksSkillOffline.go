@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.device.yks.skill.offline
 //
 // 迎客松平台技能下架
-func YunosTvpubadminDeviceYksSkillOffline(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceYksSkillOfflineAPIRequest, session string) (*tvupadmin.YunosTvpubadminDeviceYksSkillOfflineAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminDeviceYksSkillOfflineAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminDeviceYksSkillOffline(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceYksSkillOfflineAPIRequest, resp *tvupadmin.YunosTvpubadminDeviceYksSkillOfflineAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

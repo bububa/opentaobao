@@ -1,5 +1,9 @@
 package ascpffo
 
+import (
+	"sync"
+)
+
 // AliexpressAscpFfoItemQueryData 结构体
 type AliexpressAscpFfoItemQueryData struct {
 	// 库存数量
@@ -24,4 +28,31 @@ type AliexpressAscpFfoItemQueryData struct {
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 扩展字段
 	ExtendFields string `json:"extend_fields,omitempty" xml:"extend_fields,omitempty"`
+}
+
+var poolAliexpressAscpFfoItemQueryData = sync.Pool{
+	New: func() any {
+		return new(AliexpressAscpFfoItemQueryData)
+	},
+}
+
+// GetAliexpressAscpFfoItemQueryData() 从对象池中获取AliexpressAscpFfoItemQueryData
+func GetAliexpressAscpFfoItemQueryData() *AliexpressAscpFfoItemQueryData {
+	return poolAliexpressAscpFfoItemQueryData.Get().(*AliexpressAscpFfoItemQueryData)
+}
+
+// ReleaseAliexpressAscpFfoItemQueryData 释放AliexpressAscpFfoItemQueryData
+func ReleaseAliexpressAscpFfoItemQueryData(v *AliexpressAscpFfoItemQueryData) {
+	v.AicInventory = ""
+	v.SkuActualPaidAmount = ""
+	v.SkuDiscountAmount = ""
+	v.UnitPrice = ""
+	v.OrderLineQty = ""
+	v.Barcode = ""
+	v.ScItemId = ""
+	v.SkuId = ""
+	v.ItemTitle = ""
+	v.ItemId = ""
+	v.ExtendFields = ""
+	poolAliexpressAscpFfoItemQueryData.Put(v)
 }

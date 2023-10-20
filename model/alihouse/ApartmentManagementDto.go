@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ApartmentManagementDto 结构体
 type ApartmentManagementDto struct {
 	// 服务设施
@@ -20,4 +24,29 @@ type ApartmentManagementDto struct {
 	ApartmentDesc string `json:"apartment_desc,omitempty" xml:"apartment_desc,omitempty"`
 	// 营业状态
 	BusinessStatus int64 `json:"business_status,omitempty" xml:"business_status,omitempty"`
+}
+
+var poolApartmentManagementDto = sync.Pool{
+	New: func() any {
+		return new(ApartmentManagementDto)
+	},
+}
+
+// GetApartmentManagementDto() 从对象池中获取ApartmentManagementDto
+func GetApartmentManagementDto() *ApartmentManagementDto {
+	return poolApartmentManagementDto.Get().(*ApartmentManagementDto)
+}
+
+// ReleaseApartmentManagementDto 释放ApartmentManagementDto
+func ReleaseApartmentManagementDto(v *ApartmentManagementDto) {
+	v.ServiceFacilitys = v.ServiceFacilitys[:0]
+	v.OuterManageId = ""
+	v.OuterCompanyId = ""
+	v.OuterStoreId = ""
+	v.OuterBrokerId = ""
+	v.OuterBrandId = ""
+	v.VerificationCode = ""
+	v.ApartmentDesc = ""
+	v.BusinessStatus = 0
+	poolApartmentManagementDto.Put(v)
 }

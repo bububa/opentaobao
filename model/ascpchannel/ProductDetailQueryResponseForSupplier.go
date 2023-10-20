@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // ProductDetailQueryResponseForSupplier 结构体
 type ProductDetailQueryResponseForSupplier struct {
 	// sku 列表
@@ -26,4 +30,32 @@ type ProductDetailQueryResponseForSupplier struct {
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// 产品货品 id
 	ScItemId int64 `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
+}
+
+var poolProductDetailQueryResponseForSupplier = sync.Pool{
+	New: func() any {
+		return new(ProductDetailQueryResponseForSupplier)
+	},
+}
+
+// GetProductDetailQueryResponseForSupplier() 从对象池中获取ProductDetailQueryResponseForSupplier
+func GetProductDetailQueryResponseForSupplier() *ProductDetailQueryResponseForSupplier {
+	return poolProductDetailQueryResponseForSupplier.Get().(*ProductDetailQueryResponseForSupplier)
+}
+
+// ReleaseProductDetailQueryResponseForSupplier 释放ProductDetailQueryResponseForSupplier
+func ReleaseProductDetailQueryResponseForSupplier(v *ProductDetailQueryResponseForSupplier) {
+	v.SkuList = v.SkuList[:0]
+	v.SalesModeList = v.SalesModeList[:0]
+	v.PictureList = v.PictureList[:0]
+	v.PropertyList = v.PropertyList[:0]
+	v.SubChannelCode = ""
+	v.ProductTitle = ""
+	v.Category = ""
+	v.OutNo = ""
+	v.Brand = ""
+	v.ChannelCode = ""
+	v.ProductId = 0
+	v.ScItemId = 0
+	poolProductDetailQueryResponseForSupplier.Put(v)
 }

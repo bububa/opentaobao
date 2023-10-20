@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // CourtEntrustModel 结构体
 type CourtEntrustModel struct {
 	// 附件列表
@@ -30,4 +34,34 @@ type CourtEntrustModel struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 附件数量
 	AttachmentCount int64 `json:"attachment_count,omitempty" xml:"attachment_count,omitempty"`
+}
+
+var poolCourtEntrustModel = sync.Pool{
+	New: func() any {
+		return new(CourtEntrustModel)
+	},
+}
+
+// GetCourtEntrustModel() 从对象池中获取CourtEntrustModel
+func GetCourtEntrustModel() *CourtEntrustModel {
+	return poolCourtEntrustModel.Get().(*CourtEntrustModel)
+}
+
+// ReleaseCourtEntrustModel 释放CourtEntrustModel
+func ReleaseCourtEntrustModel(v *CourtEntrustModel) {
+	v.AttachmentList = v.AttachmentList[:0]
+	v.EntrustTime = ""
+	v.EntrustName = ""
+	v.Reason = ""
+	v.EntrustType = ""
+	v.SupplierCode = ""
+	v.EntrustingParty = ""
+	v.FirmBusinessLicNum = ""
+	v.Description = ""
+	v.Objective = ""
+	v.Suggest = ""
+	v.EntrustOrderNumber = 0
+	v.Id = 0
+	v.AttachmentCount = 0
+	poolCourtEntrustModel.Put(v)
 }

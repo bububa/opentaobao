@@ -9,11 +9,6 @@ import (
 // cainiao.global.handover.content.subbag.add
 //
 // 预约单下追加大包
-func CainiaoGlobalHandoverContentSubbagAdd(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverContentSubbagAddAPIRequest, session string) (*cainiaohandover.CainiaoGlobalHandoverContentSubbagAddAPIResponse, error) {
-	var resp cainiaohandover.CainiaoGlobalHandoverContentSubbagAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoGlobalHandoverContentSubbagAdd(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverContentSubbagAddAPIRequest, resp *cainiaohandover.CainiaoGlobalHandoverContentSubbagAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // RefundDetail 结构体
 type RefundDetail struct {
 	// 退款明细项，记录退款涉及的订单
@@ -52,4 +56,45 @@ type RefundDetail struct {
 	IsReturnGoods bool `json:"is_return_goods,omitempty" xml:"is_return_goods,omitempty"`
 	// 是否退货
 	ReturnGoods bool `json:"return_goods,omitempty" xml:"return_goods,omitempty"`
+}
+
+var poolRefundDetail = sync.Pool{
+	New: func() any {
+		return new(RefundDetail)
+	},
+}
+
+// GetRefundDetail() 从对象池中获取RefundDetail
+func GetRefundDetail() *RefundDetail {
+	return poolRefundDetail.Get().(*RefundDetail)
+}
+
+// ReleaseRefundDetail 释放RefundDetail
+func ReleaseRefundDetail(v *RefundDetail) {
+	v.ReturnLogistics = v.ReturnLogistics[:0]
+	v.RefundItems = v.RefundItems[:0]
+	v.RefundCreateTime = ""
+	v.RefundFee = ""
+	v.PaySupFee = ""
+	v.RefundReason = ""
+	v.RefundDesc = ""
+	v.DistributorNick = ""
+	v.SupplierNick = ""
+	v.Modified = ""
+	v.Timeout = ""
+	v.GmtModified = ""
+	v.RefundFeeYuan = ""
+	v.PaySupFeeYuan = ""
+	v.RefundStatusCode = ""
+	v.SubOrderId = 0
+	v.RefundStatus = 0
+	v.PurchaseOrderId = 0
+	v.RefundFlowType = 0
+	v.ToType = 0
+	v.BuyerRefund = nil
+	v.RefundId = 0
+	v.RefundType = 0
+	v.IsReturnGoods = false
+	v.ReturnGoods = false
+	poolRefundDetail.Put(v)
 }

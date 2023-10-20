@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -43,8 +44,26 @@ type TaobaoLogisticsAddressModifyAPIRequest struct {
 // NewTaobaoLogisticsAddressModifyRequest 初始化TaobaoLogisticsAddressModifyAPIRequest对象
 func NewTaobaoLogisticsAddressModifyRequest() *TaobaoLogisticsAddressModifyAPIRequest {
 	return &TaobaoLogisticsAddressModifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(13),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsAddressModifyAPIRequest) Reset() {
+	r._contactName = ""
+	r._province = ""
+	r._city = ""
+	r._country = ""
+	r._addr = ""
+	r._zipCode = ""
+	r._phone = ""
+	r._mobilePhone = ""
+	r._sellerCompany = ""
+	r._memo = ""
+	r._contactId = 0
+	r._getDef = false
+	r._cancelDef = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -231,4 +250,21 @@ func (r *TaobaoLogisticsAddressModifyAPIRequest) SetCancelDef(_cancelDef bool) e
 // GetCancelDef CancelDef Getter
 func (r TaobaoLogisticsAddressModifyAPIRequest) GetCancelDef() bool {
 	return r._cancelDef
+}
+
+var poolTaobaoLogisticsAddressModifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsAddressModifyRequest()
+	},
+}
+
+// GetTaobaoLogisticsAddressModifyRequest 从 sync.Pool 获取 TaobaoLogisticsAddressModifyAPIRequest
+func GetTaobaoLogisticsAddressModifyAPIRequest() *TaobaoLogisticsAddressModifyAPIRequest {
+	return poolTaobaoLogisticsAddressModifyAPIRequest.Get().(*TaobaoLogisticsAddressModifyAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsAddressModifyAPIRequest 将 TaobaoLogisticsAddressModifyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsAddressModifyAPIRequest(v *TaobaoLogisticsAddressModifyAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsAddressModifyAPIRequest.Put(v)
 }

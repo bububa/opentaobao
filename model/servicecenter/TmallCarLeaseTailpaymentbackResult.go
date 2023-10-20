@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // TmallCarLeaseTailpaymentbackResult 结构体
 type TmallCarLeaseTailpaymentbackResult struct {
 	// errorCode
@@ -18,4 +22,28 @@ type TmallCarLeaseTailpaymentbackResult struct {
 	Object bool `json:"object,omitempty" xml:"object,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmallCarLeaseTailpaymentbackResult = sync.Pool{
+	New: func() any {
+		return new(TmallCarLeaseTailpaymentbackResult)
+	},
+}
+
+// GetTmallCarLeaseTailpaymentbackResult() 从对象池中获取TmallCarLeaseTailpaymentbackResult
+func GetTmallCarLeaseTailpaymentbackResult() *TmallCarLeaseTailpaymentbackResult {
+	return poolTmallCarLeaseTailpaymentbackResult.Get().(*TmallCarLeaseTailpaymentbackResult)
+}
+
+// ReleaseTmallCarLeaseTailpaymentbackResult 释放TmallCarLeaseTailpaymentbackResult
+func ReleaseTmallCarLeaseTailpaymentbackResult(v *TmallCarLeaseTailpaymentbackResult) {
+	v.ErrorCode = ""
+	v.ErrorMessage = ""
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.CostTime = 0
+	v.GmtCurrentTime = 0
+	v.Object = false
+	v.Success = false
+	poolTmallCarLeaseTailpaymentbackResult.Put(v)
 }

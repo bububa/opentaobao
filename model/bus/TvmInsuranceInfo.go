@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // TvmInsuranceInfo 结构体
 type TvmInsuranceInfo struct {
 	// 保险名称
@@ -10,4 +14,24 @@ type TvmInsuranceInfo struct {
 	InsurePrice int64 `json:"insure_price,omitempty" xml:"insure_price,omitempty"`
 	// 保险状态: -1下单失败 0初始化 1已取消 2已关闭 3已挂起 4已挂起  5未知状态  6未生效 7保障中  8已失效  9退保中 10已退保 11未生效或保障中
 	InsureStatus int64 `json:"insure_status,omitempty" xml:"insure_status,omitempty"`
+}
+
+var poolTvmInsuranceInfo = sync.Pool{
+	New: func() any {
+		return new(TvmInsuranceInfo)
+	},
+}
+
+// GetTvmInsuranceInfo() 从对象池中获取TvmInsuranceInfo
+func GetTvmInsuranceInfo() *TvmInsuranceInfo {
+	return poolTvmInsuranceInfo.Get().(*TvmInsuranceInfo)
+}
+
+// ReleaseTvmInsuranceInfo 释放TvmInsuranceInfo
+func ReleaseTvmInsuranceInfo(v *TvmInsuranceInfo) {
+	v.InsureName = ""
+	v.ProductNo = ""
+	v.InsurePrice = 0
+	v.InsureStatus = 0
+	poolTvmInsuranceInfo.Put(v)
 }

@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpProductPreferentialUpdateAPIRequest struct {
 // NewAlibabaScbpProductPreferentialUpdateRequest 初始化AlibabaScbpProductPreferentialUpdateAPIRequest对象
 func NewAlibabaScbpProductPreferentialUpdateRequest() *AlibabaScbpProductPreferentialUpdateAPIRequest {
 	return &AlibabaScbpProductPreferentialUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpProductPreferentialUpdateAPIRequest) Reset() {
+	r._status = ""
+	r._keywordId = 0
+	r._productId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpProductPreferentialUpdateAPIRequest) SetProductId(_productId
 // GetProductId ProductId Getter
 func (r AlibabaScbpProductPreferentialUpdateAPIRequest) GetProductId() int64 {
 	return r._productId
+}
+
+var poolAlibabaScbpProductPreferentialUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpProductPreferentialUpdateRequest()
+	},
+}
+
+// GetAlibabaScbpProductPreferentialUpdateRequest 从 sync.Pool 获取 AlibabaScbpProductPreferentialUpdateAPIRequest
+func GetAlibabaScbpProductPreferentialUpdateAPIRequest() *AlibabaScbpProductPreferentialUpdateAPIRequest {
+	return poolAlibabaScbpProductPreferentialUpdateAPIRequest.Get().(*AlibabaScbpProductPreferentialUpdateAPIRequest)
+}
+
+// ReleaseAlibabaScbpProductPreferentialUpdateAPIRequest 将 AlibabaScbpProductPreferentialUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpProductPreferentialUpdateAPIRequest(v *AlibabaScbpProductPreferentialUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpProductPreferentialUpdateAPIRequest.Put(v)
 }

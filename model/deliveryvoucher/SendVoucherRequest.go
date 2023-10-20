@@ -1,5 +1,9 @@
 package deliveryvoucher
 
+import (
+	"sync"
+)
+
 // SendVoucherRequest 结构体
 type SendVoucherRequest struct {
 	// 券信息,券信息,最多100条券记录
@@ -26,4 +30,32 @@ type SendVoucherRequest struct {
 	LogisticsName string `json:"logistics_name,omitempty" xml:"logistics_name,omitempty"`
 	// 主订单id
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolSendVoucherRequest = sync.Pool{
+	New: func() any {
+		return new(SendVoucherRequest)
+	},
+}
+
+// GetSendVoucherRequest() 从对象池中获取SendVoucherRequest
+func GetSendVoucherRequest() *SendVoucherRequest {
+	return poolSendVoucherRequest.Get().(*SendVoucherRequest)
+}
+
+// ReleaseSendVoucherRequest 释放SendVoucherRequest
+func ReleaseSendVoucherRequest(v *SendVoucherRequest) {
+	v.VoucherInfos = v.VoucherInfos[:0]
+	v.OperateDate = ""
+	v.Extend = ""
+	v.OpId = ""
+	v.Provider = ""
+	v.ReceiverMobile = ""
+	v.Receiver = ""
+	v.Address = ""
+	v.LogisticsCode = ""
+	v.LogisticsNo = ""
+	v.LogisticsName = ""
+	v.OrderId = 0
+	poolSendVoucherRequest.Put(v)
 }

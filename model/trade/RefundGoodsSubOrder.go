@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // RefundGoodsSubOrder 结构体
 type RefundGoodsSubOrder struct {
 	// 退货商品子订单号
@@ -24,4 +28,31 @@ type RefundGoodsSubOrder struct {
 	Gift bool `json:"gift,omitempty" xml:"gift,omitempty"`
 	// 是否离开货架
 	LeftWarehouse bool `json:"left_warehouse,omitempty" xml:"left_warehouse,omitempty"`
+}
+
+var poolRefundGoodsSubOrder = sync.Pool{
+	New: func() any {
+		return new(RefundGoodsSubOrder)
+	},
+}
+
+// GetRefundGoodsSubOrder() 从对象池中获取RefundGoodsSubOrder
+func GetRefundGoodsSubOrder() *RefundGoodsSubOrder {
+	return poolRefundGoodsSubOrder.Get().(*RefundGoodsSubOrder)
+}
+
+// ReleaseRefundGoodsSubOrder 释放RefundGoodsSubOrder
+func ReleaseRefundGoodsSubOrder(v *RefundGoodsSubOrder) {
+	v.SubBizOrderId = ""
+	v.GoodsAmount = ""
+	v.FulfillAmount = ""
+	v.SkuCode = ""
+	v.FulfillEndTime = ""
+	v.FulfillStartTime = ""
+	v.RefundId = ""
+	v.RefundFee = 0
+	v.WeightItem = false
+	v.Gift = false
+	v.LeftWarehouse = false
+	poolRefundGoodsSubOrder.Put(v)
 }

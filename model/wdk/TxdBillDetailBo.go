@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // TxdBillDetailBo 结构体
 type TxdBillDetailBo struct {
 	// 平台补贴
@@ -60,4 +64,49 @@ type TxdBillDetailBo struct {
 	PlatSendSubsidyFee float64 `json:"plat_send_subsidy_fee,omitempty" xml:"plat_send_subsidy_fee,omitempty"`
 	// 申诉赔付金
 	DisputeFee float64 `json:"dispute_fee,omitempty" xml:"dispute_fee,omitempty"`
+}
+
+var poolTxdBillDetailBo = sync.Pool{
+	New: func() any {
+		return new(TxdBillDetailBo)
+	},
+}
+
+// GetTxdBillDetailBo() 从对象池中获取TxdBillDetailBo
+func GetTxdBillDetailBo() *TxdBillDetailBo {
+	return poolTxdBillDetailBo.Get().(*TxdBillDetailBo)
+}
+
+// ReleaseTxdBillDetailBo 释放TxdBillDetailBo
+func ReleaseTxdBillDetailBo(v *TxdBillDetailBo) {
+	v.PlatformSubsidyFee = ""
+	v.DistributionFee = ""
+	v.HandleFee = ""
+	v.TechnicalServiceFee = ""
+	v.TransportFee = ""
+	v.ChargeBase = ""
+	v.PayAmount = ""
+	v.TradeChannel = ""
+	v.BizOrderId = ""
+	v.OrderType = ""
+	v.ShopName = ""
+	v.ShopCode = ""
+	v.SettleCompanyName = ""
+	v.SettleCompanyCode = ""
+	v.MerchantName = ""
+	v.MerchantCode = ""
+	v.BizDate = ""
+	v.BillDate = ""
+	v.BillNo = ""
+	v.MerchantSubsidyFee = ""
+	v.BrandSubsidyFee = ""
+	v.ReceivableAmount = ""
+	v.PTradeId = ""
+	v.SrcSettleCompanyName = ""
+	v.PlatformVoucherSubsidyFee = 0
+	v.MerchantVoucherSubsidyFee = 0
+	v.MerchantSendSubsidyFee = 0
+	v.PlatSendSubsidyFee = 0
+	v.DisputeFee = 0
+	poolTxdBillDetailBo.Put(v)
 }

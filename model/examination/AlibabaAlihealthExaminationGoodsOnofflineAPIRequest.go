@@ -2,6 +2,7 @@ package examination
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihealthExaminationGoodsOnofflineAPIRequest struct {
 // NewAlibabaAlihealthExaminationGoodsOnofflineRequest 初始化AlibabaAlihealthExaminationGoodsOnofflineAPIRequest对象
 func NewAlibabaAlihealthExaminationGoodsOnofflineRequest() *AlibabaAlihealthExaminationGoodsOnofflineAPIRequest {
 	return &AlibabaAlihealthExaminationGoodsOnofflineAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) Reset() {
+	r._groupId = ""
+	r._hospitalCodes = ""
+	r._type = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) SetType(_type stri
 // GetType Type Getter
 func (r AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) GetType() string {
 	return r._type
+}
+
+var poolAlibabaAlihealthExaminationGoodsOnofflineAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthExaminationGoodsOnofflineRequest()
+	},
+}
+
+// GetAlibabaAlihealthExaminationGoodsOnofflineRequest 从 sync.Pool 获取 AlibabaAlihealthExaminationGoodsOnofflineAPIRequest
+func GetAlibabaAlihealthExaminationGoodsOnofflineAPIRequest() *AlibabaAlihealthExaminationGoodsOnofflineAPIRequest {
+	return poolAlibabaAlihealthExaminationGoodsOnofflineAPIRequest.Get().(*AlibabaAlihealthExaminationGoodsOnofflineAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthExaminationGoodsOnofflineAPIRequest 将 AlibabaAlihealthExaminationGoodsOnofflineAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthExaminationGoodsOnofflineAPIRequest(v *AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationGoodsOnofflineAPIRequest.Put(v)
 }

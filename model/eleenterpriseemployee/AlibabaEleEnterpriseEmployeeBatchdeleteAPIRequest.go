@@ -2,6 +2,7 @@ package eleenterpriseemployee
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest struct {
 // NewAlibabaEleEnterpriseEmployeeBatchdeleteRequest 初始化AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest对象
 func NewAlibabaEleEnterpriseEmployeeBatchdeleteRequest() *AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest {
 	return &AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest) Reset() {
+	r._employeeNos = r._employeeNos[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest) SetEmployeeNos(_empl
 // GetEmployeeNos EmployeeNos Getter
 func (r AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest) GetEmployeeNos() []string {
 	return r._employeeNos
+}
+
+var poolAlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleEnterpriseEmployeeBatchdeleteRequest()
+	},
+}
+
+// GetAlibabaEleEnterpriseEmployeeBatchdeleteRequest 从 sync.Pool 获取 AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest
+func GetAlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest() *AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest {
+	return poolAlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest.Get().(*AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest)
+}
+
+// ReleaseAlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest 将 AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest(v *AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest.Put(v)
 }

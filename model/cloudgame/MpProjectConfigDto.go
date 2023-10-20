@@ -1,5 +1,9 @@
 package cloudgame
 
+import (
+	"sync"
+)
+
 // MpProjectConfigDto 结构体
 type MpProjectConfigDto struct {
 	// user在mp上的accountid
@@ -20,4 +24,29 @@ type MpProjectConfigDto struct {
 	DefaultMpBlockId int64 `json:"default_mp_block_id,omitempty" xml:"default_mp_block_id,omitempty"`
 	// mpprojectid
 	MpProjectId int64 `json:"mp_project_id,omitempty" xml:"mp_project_id,omitempty"`
+}
+
+var poolMpProjectConfigDto = sync.Pool{
+	New: func() any {
+		return new(MpProjectConfigDto)
+	},
+}
+
+// GetMpProjectConfigDto() 从对象池中获取MpProjectConfigDto
+func GetMpProjectConfigDto() *MpProjectConfigDto {
+	return poolMpProjectConfigDto.Get().(*MpProjectConfigDto)
+}
+
+// ReleaseMpProjectConfigDto 释放MpProjectConfigDto
+func ReleaseMpProjectConfigDto(v *MpProjectConfigDto) {
+	v.ConfigKey = ""
+	v.CustomerUniqueId = ""
+	v.CustomeEnv = ""
+	v.CustomerProjectId = ""
+	v.CustomeId = 0
+	v.CheckUserToken = 0
+	v.OnlyOneBlock = 0
+	v.DefaultMpBlockId = 0
+	v.MpProjectId = 0
+	poolMpProjectConfigDto.Put(v)
 }

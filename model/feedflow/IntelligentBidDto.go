@@ -1,5 +1,9 @@
 package feedflow
 
+import (
+	"sync"
+)
+
 // IntelligentBidDto 结构体
 type IntelligentBidDto struct {
 	// 溢价范围
@@ -8,4 +12,23 @@ type IntelligentBidDto struct {
 	Strategy int64 `json:"strategy,omitempty" xml:"strategy,omitempty"`
 	// 是否打开
 	Open bool `json:"open,omitempty" xml:"open,omitempty"`
+}
+
+var poolIntelligentBidDto = sync.Pool{
+	New: func() any {
+		return new(IntelligentBidDto)
+	},
+}
+
+// GetIntelligentBidDto() 从对象池中获取IntelligentBidDto
+func GetIntelligentBidDto() *IntelligentBidDto {
+	return poolIntelligentBidDto.Get().(*IntelligentBidDto)
+}
+
+// ReleaseIntelligentBidDto 释放IntelligentBidDto
+func ReleaseIntelligentBidDto(v *IntelligentBidDto) {
+	v.ScopePercent = 0
+	v.Strategy = 0
+	v.Open = false
+	poolIntelligentBidDto.Put(v)
 }

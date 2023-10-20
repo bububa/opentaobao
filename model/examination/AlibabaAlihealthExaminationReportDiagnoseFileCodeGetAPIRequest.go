@@ -2,6 +2,7 @@ package examination
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest struct {
 // NewAlibabaAlihealthExaminationReportDiagnoseFileCodeGetRequest 初始化AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest对象
 func NewAlibabaAlihealthExaminationReportDiagnoseFileCodeGetRequest() *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest {
 	return &AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) Reset() {
+	r._orderId = ""
+	r._doctorId = ""
+	r._reportId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) SetRepo
 // GetReportId ReportId Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) GetReportId() int64 {
 	return r._reportId
+}
+
+var poolAlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthExaminationReportDiagnoseFileCodeGetRequest()
+	},
+}
+
+// GetAlibabaAlihealthExaminationReportDiagnoseFileCodeGetRequest 从 sync.Pool 获取 AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest
+func GetAlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest() *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest {
+	return poolAlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest.Get().(*AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest 将 AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest(v *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest.Put(v)
 }

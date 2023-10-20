@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.examination.report.diagnose.order.doctor.refund
 //
 // 报告解读订单医生退款
-func AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefund(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIRequest, session string) (*examination.AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse, error) {
-	var resp examination.AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefund(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIRequest, resp *examination.AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

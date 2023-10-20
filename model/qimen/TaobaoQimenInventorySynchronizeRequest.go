@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // TaobaoQimenInventorySynchronizeRequest 结构体
 type TaobaoQimenInventorySynchronizeRequest struct {
 	// 货主编码,货主编码,string(50),,
@@ -18,4 +22,28 @@ type TaobaoQimenInventorySynchronizeRequest struct {
 	RelatedOrders *RelatedOrders `json:"relatedOrders,omitempty" xml:"relatedOrders,omitempty"`
 	// 商品列表
 	Items *Items `json:"items,omitempty" xml:"items,omitempty"`
+}
+
+var poolTaobaoQimenInventorySynchronizeRequest = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenInventorySynchronizeRequest)
+	},
+}
+
+// GetTaobaoQimenInventorySynchronizeRequest() 从对象池中获取TaobaoQimenInventorySynchronizeRequest
+func GetTaobaoQimenInventorySynchronizeRequest() *TaobaoQimenInventorySynchronizeRequest {
+	return poolTaobaoQimenInventorySynchronizeRequest.Get().(*TaobaoQimenInventorySynchronizeRequest)
+}
+
+// ReleaseTaobaoQimenInventorySynchronizeRequest 释放TaobaoQimenInventorySynchronizeRequest
+func ReleaseTaobaoQimenInventorySynchronizeRequest(v *TaobaoQimenInventorySynchronizeRequest) {
+	v.OwnerCode = ""
+	v.WarehouseCode = ""
+	v.AdjustOrderCode = ""
+	v.AdjustTime = ""
+	v.AdjustType = ""
+	v.Remark = ""
+	v.RelatedOrders = nil
+	v.Items = nil
+	poolTaobaoQimenInventorySynchronizeRequest.Put(v)
 }

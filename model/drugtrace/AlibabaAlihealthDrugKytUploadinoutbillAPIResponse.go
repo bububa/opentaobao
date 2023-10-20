@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -18,6 +19,12 @@ type AlibabaAlihealthDrugKytUploadinoutbillAPIResponse struct {
 	AlibabaAlihealthDrugKytUploadinoutbillAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugKytUploadinoutbillAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugKytUploadinoutbillAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthDrugKytUploadinoutbillAPIResponseModel is 企业上传出入库信息 成功返回结果
 type AlibabaAlihealthDrugKytUploadinoutbillAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_kyt_uploadinoutbill_response"`
@@ -31,4 +38,30 @@ type AlibabaAlihealthDrugKytUploadinoutbillAPIResponseModel struct {
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 是否成功(true 成功 false 失败)
 	ResponseSuccess bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugKytUploadinoutbillAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Model = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.ResponseSuccess = false
+}
+
+var poolAlibabaAlihealthDrugKytUploadinoutbillAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugKytUploadinoutbillAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugKytUploadinoutbillAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugKytUploadinoutbillAPIResponse
+func GetAlibabaAlihealthDrugKytUploadinoutbillAPIResponse() *AlibabaAlihealthDrugKytUploadinoutbillAPIResponse {
+	return poolAlibabaAlihealthDrugKytUploadinoutbillAPIResponse.Get().(*AlibabaAlihealthDrugKytUploadinoutbillAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugKytUploadinoutbillAPIResponse 将 AlibabaAlihealthDrugKytUploadinoutbillAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytUploadinoutbillAPIResponse(v *AlibabaAlihealthDrugKytUploadinoutbillAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytUploadinoutbillAPIResponse.Put(v)
 }

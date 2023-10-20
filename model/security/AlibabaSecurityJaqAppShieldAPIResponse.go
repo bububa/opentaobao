@@ -2,6 +2,7 @@ package security
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaSecurityJaqAppShieldAPIResponse struct {
 	AlibabaSecurityJaqAppShieldAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaSecurityJaqAppShieldAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaSecurityJaqAppShieldAPIResponseModel).Reset()
+}
+
 // AlibabaSecurityJaqAppShieldAPIResponseModel is 应用加固接口 成功返回结果
 type AlibabaSecurityJaqAppShieldAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_security_jaq_app_shield_response"`
@@ -22,4 +29,27 @@ type AlibabaSecurityJaqAppShieldAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 加固任务信息
 	Result *ScanTaskInfo `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaSecurityJaqAppShieldAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaSecurityJaqAppShieldAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaSecurityJaqAppShieldAPIResponse)
+	},
+}
+
+// GetAlibabaSecurityJaqAppShieldAPIResponse 从 sync.Pool 获取 AlibabaSecurityJaqAppShieldAPIResponse
+func GetAlibabaSecurityJaqAppShieldAPIResponse() *AlibabaSecurityJaqAppShieldAPIResponse {
+	return poolAlibabaSecurityJaqAppShieldAPIResponse.Get().(*AlibabaSecurityJaqAppShieldAPIResponse)
+}
+
+// ReleaseAlibabaSecurityJaqAppShieldAPIResponse 将 AlibabaSecurityJaqAppShieldAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaSecurityJaqAppShieldAPIResponse(v *AlibabaSecurityJaqAppShieldAPIResponse) {
+	v.Reset()
+	poolAlibabaSecurityJaqAppShieldAPIResponse.Put(v)
 }

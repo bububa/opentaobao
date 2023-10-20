@@ -9,11 +9,6 @@ import (
 // alitrip.travel.trade.template.query
 //
 // 通过订单ID获取标注模版信息，商家可以根据模版来填充行业信息
-func AlitripTravelTradeTemplateQuery(clt *core.SDKClient, req *traveltrade.AlitripTravelTradeTemplateQueryAPIRequest, session string) (*traveltrade.AlitripTravelTradeTemplateQueryAPIResponse, error) {
-	var resp traveltrade.AlitripTravelTradeTemplateQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripTravelTradeTemplateQuery(clt *core.SDKClient, req *traveltrade.AlitripTravelTradeTemplateQueryAPIRequest, resp *traveltrade.AlitripTravelTradeTemplateQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

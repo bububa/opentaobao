@@ -2,6 +2,7 @@ package guoguo
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type CainiaoGuoguoCpBackupAssigncourierAPIResponse struct {
 	CainiaoGuoguoCpBackupAssigncourierAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *CainiaoGuoguoCpBackupAssigncourierAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoGuoguoCpBackupAssigncourierAPIResponseModel).Reset()
+}
+
 // CainiaoGuoguoCpBackupAssigncourierAPIResponseModel is CP兜底后指定接单的小件员 成功返回结果
 type CainiaoGuoguoCpBackupAssigncourierAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_guoguo_cp_backup_assigncourier_response"`
@@ -26,4 +33,29 @@ type CainiaoGuoguoCpBackupAssigncourierAPIResponseModel struct {
 	StatusMessage string `json:"status_message,omitempty" xml:"status_message,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoGuoguoCpBackupAssigncourierAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.StatusCode = ""
+	m.StatusMessage = ""
+	m.IsSuccess = false
+}
+
+var poolCainiaoGuoguoCpBackupAssigncourierAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoGuoguoCpBackupAssigncourierAPIResponse)
+	},
+}
+
+// GetCainiaoGuoguoCpBackupAssigncourierAPIResponse 从 sync.Pool 获取 CainiaoGuoguoCpBackupAssigncourierAPIResponse
+func GetCainiaoGuoguoCpBackupAssigncourierAPIResponse() *CainiaoGuoguoCpBackupAssigncourierAPIResponse {
+	return poolCainiaoGuoguoCpBackupAssigncourierAPIResponse.Get().(*CainiaoGuoguoCpBackupAssigncourierAPIResponse)
+}
+
+// ReleaseCainiaoGuoguoCpBackupAssigncourierAPIResponse 将 CainiaoGuoguoCpBackupAssigncourierAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoGuoguoCpBackupAssigncourierAPIResponse(v *CainiaoGuoguoCpBackupAssigncourierAPIResponse) {
+	v.Reset()
+	poolCainiaoGuoguoCpBackupAssigncourierAPIResponse.Put(v)
 }

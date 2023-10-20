@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // VoucherSendOpenReq 结构体
 type VoucherSendOpenReq struct {
 	// 外部品牌ID
@@ -20,4 +24,29 @@ type VoucherSendOpenReq struct {
 	VoucherId string `json:"voucher_id,omitempty" xml:"voucher_id,omitempty"`
 	// 发券数量
 	VoucherNum int64 `json:"voucher_num,omitempty" xml:"voucher_num,omitempty"`
+}
+
+var poolVoucherSendOpenReq = sync.Pool{
+	New: func() any {
+		return new(VoucherSendOpenReq)
+	},
+}
+
+// GetVoucherSendOpenReq() 从对象池中获取VoucherSendOpenReq
+func GetVoucherSendOpenReq() *VoucherSendOpenReq {
+	return poolVoucherSendOpenReq.Get().(*VoucherSendOpenReq)
+}
+
+// ReleaseVoucherSendOpenReq 释放VoucherSendOpenReq
+func ReleaseVoucherSendOpenReq(v *VoucherSendOpenReq) {
+	v.OutBrandId = ""
+	v.RequestId = ""
+	v.BrandId = ""
+	v.OutShopId = ""
+	v.CustomerId = ""
+	v.ShopId = ""
+	v.OperatorId = ""
+	v.VoucherId = ""
+	v.VoucherNum = 0
+	poolVoucherSendOpenReq.Put(v)
 }

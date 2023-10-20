@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // TmallServicecenterWorkcardDesensitizationQueryResult 结构体
 type TmallServicecenterWorkcardDesensitizationQueryResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type TmallServicecenterWorkcardDesensitizationQueryResult struct {
 	ResultData *Paged `json:"result_data,omitempty" xml:"result_data,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmallServicecenterWorkcardDesensitizationQueryResult = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterWorkcardDesensitizationQueryResult)
+	},
+}
+
+// GetTmallServicecenterWorkcardDesensitizationQueryResult() 从对象池中获取TmallServicecenterWorkcardDesensitizationQueryResult
+func GetTmallServicecenterWorkcardDesensitizationQueryResult() *TmallServicecenterWorkcardDesensitizationQueryResult {
+	return poolTmallServicecenterWorkcardDesensitizationQueryResult.Get().(*TmallServicecenterWorkcardDesensitizationQueryResult)
+}
+
+// ReleaseTmallServicecenterWorkcardDesensitizationQueryResult 释放TmallServicecenterWorkcardDesensitizationQueryResult
+func ReleaseTmallServicecenterWorkcardDesensitizationQueryResult(v *TmallServicecenterWorkcardDesensitizationQueryResult) {
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.ResultData = nil
+	v.Success = false
+	poolTmallServicecenterWorkcardDesensitizationQueryResult.Put(v)
 }

@@ -2,6 +2,7 @@ package foodscan
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaFootscanMiniReportFragmentFirstAPIRequest struct {
 // NewAlibabaFootscanMiniReportFragmentFirstRequest 初始化AlibabaFootscanMiniReportFragmentFirstAPIRequest对象
 func NewAlibabaFootscanMiniReportFragmentFirstRequest() *AlibabaFootscanMiniReportFragmentFirstAPIRequest {
 	return &AlibabaFootscanMiniReportFragmentFirstAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaFootscanMiniReportFragmentFirstAPIRequest) Reset() {
+	r._token = ""
+	r._reqData = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaFootscanMiniReportFragmentFirstAPIRequest) SetReqData(_reqData *
 // GetReqData ReqData Getter
 func (r AlibabaFootscanMiniReportFragmentFirstAPIRequest) GetReqData() *FilePackageRequest {
 	return r._reqData
+}
+
+var poolAlibabaFootscanMiniReportFragmentFirstAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaFootscanMiniReportFragmentFirstRequest()
+	},
+}
+
+// GetAlibabaFootscanMiniReportFragmentFirstRequest 从 sync.Pool 获取 AlibabaFootscanMiniReportFragmentFirstAPIRequest
+func GetAlibabaFootscanMiniReportFragmentFirstAPIRequest() *AlibabaFootscanMiniReportFragmentFirstAPIRequest {
+	return poolAlibabaFootscanMiniReportFragmentFirstAPIRequest.Get().(*AlibabaFootscanMiniReportFragmentFirstAPIRequest)
+}
+
+// ReleaseAlibabaFootscanMiniReportFragmentFirstAPIRequest 将 AlibabaFootscanMiniReportFragmentFirstAPIRequest 放入 sync.Pool
+func ReleaseAlibabaFootscanMiniReportFragmentFirstAPIRequest(v *AlibabaFootscanMiniReportFragmentFirstAPIRequest) {
+	v.Reset()
+	poolAlibabaFootscanMiniReportFragmentFirstAPIRequest.Put(v)
 }

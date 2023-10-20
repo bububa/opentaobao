@@ -1,5 +1,9 @@
 package feedflow
 
+import (
+	"sync"
+)
+
 // CreativeBindDto 结构体
 type CreativeBindDto struct {
 	// 创意图片地址
@@ -18,4 +22,28 @@ type CreativeBindDto struct {
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
 	// 单元id
 	AdgroupId int64 `json:"adgroup_id,omitempty" xml:"adgroup_id,omitempty"`
+}
+
+var poolCreativeBindDto = sync.Pool{
+	New: func() any {
+		return new(CreativeBindDto)
+	},
+}
+
+// GetCreativeBindDto() 从对象池中获取CreativeBindDto
+func GetCreativeBindDto() *CreativeBindDto {
+	return poolCreativeBindDto.Get().(*CreativeBindDto)
+}
+
+// ReleaseCreativeBindDto 释放CreativeBindDto
+func ReleaseCreativeBindDto(v *CreativeBindDto) {
+	v.ImgUrl = ""
+	v.CreativeName = ""
+	v.Title = ""
+	v.AuditStatus = ""
+	v.AuditReason = ""
+	v.CreativeId = 0
+	v.CampaignId = 0
+	v.AdgroupId = 0
+	poolCreativeBindDto.Put(v)
 }

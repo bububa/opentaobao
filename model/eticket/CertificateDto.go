@@ -1,5 +1,9 @@
 package eticket
 
+import (
+	"sync"
+)
+
 // CertificateDto 结构体
 type CertificateDto struct {
 	// code
@@ -26,4 +30,32 @@ type CertificateDto struct {
 	LockedNum int64 `json:"locked_num,omitempty" xml:"locked_num,omitempty"`
 	// usedNum
 	UsedNum int64 `json:"used_num,omitempty" xml:"used_num,omitempty"`
+}
+
+var poolCertificateDto = sync.Pool{
+	New: func() any {
+		return new(CertificateDto)
+	},
+}
+
+// GetCertificateDto() 从对象池中获取CertificateDto
+func GetCertificateDto() *CertificateDto {
+	return poolCertificateDto.Get().(*CertificateDto)
+}
+
+// ReleaseCertificateDto 释放CertificateDto
+func ReleaseCertificateDto(v *CertificateDto) {
+	v.Code = ""
+	v.EndTime = ""
+	v.OuterId = ""
+	v.QrCodeUrl = ""
+	v.StartTime = ""
+	v.Attributes = nil
+	v.AvailableNum = 0
+	v.BizType = 0
+	v.CodeStatus = 0
+	v.InitialNum = 0
+	v.LockedNum = 0
+	v.UsedNum = 0
+	poolCertificateDto.Put(v)
 }

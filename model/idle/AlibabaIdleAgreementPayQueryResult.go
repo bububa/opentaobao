@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // AlibabaIdleAgreementPayQueryResult 结构体
 type AlibabaIdleAgreementPayQueryResult struct {
 	// err_code
@@ -10,4 +14,24 @@ type AlibabaIdleAgreementPayQueryResult struct {
 	Module *Serializable `json:"module,omitempty" xml:"module,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaIdleAgreementPayQueryResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleAgreementPayQueryResult)
+	},
+}
+
+// GetAlibabaIdleAgreementPayQueryResult() 从对象池中获取AlibabaIdleAgreementPayQueryResult
+func GetAlibabaIdleAgreementPayQueryResult() *AlibabaIdleAgreementPayQueryResult {
+	return poolAlibabaIdleAgreementPayQueryResult.Get().(*AlibabaIdleAgreementPayQueryResult)
+}
+
+// ReleaseAlibabaIdleAgreementPayQueryResult 释放AlibabaIdleAgreementPayQueryResult
+func ReleaseAlibabaIdleAgreementPayQueryResult(v *AlibabaIdleAgreementPayQueryResult) {
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Module = nil
+	v.Success = false
+	poolAlibabaIdleAgreementPayQueryResult.Put(v)
 }

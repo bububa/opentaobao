@@ -1,5 +1,9 @@
 package happytrip
 
+import (
+	"sync"
+)
+
 // ContactDto 结构体
 type ContactDto struct {
 	// 联系人国家码
@@ -22,4 +26,30 @@ type ContactDto struct {
 	RelationId int64 `json:"relation_id,omitempty" xml:"relation_id,omitempty"`
 	// 联系人的常用联系人id对应航旅常用联系人应用upc中的id,用于信息回流upc
 	UpcId int64 `json:"upc_id,omitempty" xml:"upc_id,omitempty"`
+}
+
+var poolContactDto = sync.Pool{
+	New: func() any {
+		return new(ContactDto)
+	},
+}
+
+// GetContactDto() 从对象池中获取ContactDto
+func GetContactDto() *ContactDto {
+	return poolContactDto.Get().(*ContactDto)
+}
+
+// ReleaseContactDto 释放ContactDto
+func ReleaseContactDto(v *ContactDto) {
+	v.CountryCode = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Name = ""
+	v.UserId = ""
+	v.DefaultFlag = 0
+	v.Id = 0
+	v.OrderId = 0
+	v.RelationId = 0
+	v.UpcId = 0
+	poolContactDto.Put(v)
 }

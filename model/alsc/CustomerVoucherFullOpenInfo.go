@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // CustomerVoucherFullOpenInfo 结构体
 type CustomerVoucherFullOpenInfo struct {
 	// 券失效时间
@@ -30,4 +34,34 @@ type CustomerVoucherFullOpenInfo struct {
 	StartFee int64 `json:"start_fee,omitempty" xml:"start_fee,omitempty"`
 	// 券实例有效点数
 	GiftPoint int64 `json:"gift_point,omitempty" xml:"gift_point,omitempty"`
+}
+
+var poolCustomerVoucherFullOpenInfo = sync.Pool{
+	New: func() any {
+		return new(CustomerVoucherFullOpenInfo)
+	},
+}
+
+// GetCustomerVoucherFullOpenInfo() 从对象池中获取CustomerVoucherFullOpenInfo
+func GetCustomerVoucherFullOpenInfo() *CustomerVoucherFullOpenInfo {
+	return poolCustomerVoucherFullOpenInfo.Get().(*CustomerVoucherFullOpenInfo)
+}
+
+// ReleaseCustomerVoucherFullOpenInfo 释放CustomerVoucherFullOpenInfo
+func ReleaseCustomerVoucherFullOpenInfo(v *CustomerVoucherFullOpenInfo) {
+	v.EndTime = ""
+	v.GmtCreated = ""
+	v.StartTime = ""
+	v.Status = ""
+	v.Title = ""
+	v.VoucherId = ""
+	v.VoucherType = ""
+	v.DiscountRate = ""
+	v.VoucherTemplateId = ""
+	v.Amount = 0
+	v.CustomerId = 0
+	v.ShopId = 0
+	v.StartFee = 0
+	v.GiftPoint = 0
+	poolCustomerVoucherFullOpenInfo.Put(v)
 }

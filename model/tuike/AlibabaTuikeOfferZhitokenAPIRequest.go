@@ -2,6 +2,7 @@ package tuike
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type AlibabaTuikeOfferZhitokenAPIRequest struct {
 // NewAlibabaTuikeOfferZhitokenRequest 初始化AlibabaTuikeOfferZhitokenAPIRequest对象
 func NewAlibabaTuikeOfferZhitokenRequest() *AlibabaTuikeOfferZhitokenAPIRequest {
 	return &AlibabaTuikeOfferZhitokenAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTuikeOfferZhitokenAPIRequest) Reset() {
+	r._title = ""
+	r._desc = ""
+	r._iconLink = ""
+	r._bizType = ""
+	r._source = ""
+	r._leftBtnText = ""
+	r._leftBtnLink = ""
+	r._rightBtnText = ""
+	r._rightBtnLink = ""
+	r._startTime = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *AlibabaTuikeOfferZhitokenAPIRequest) SetStartTime(_startTime int64) err
 // GetStartTime StartTime Getter
 func (r AlibabaTuikeOfferZhitokenAPIRequest) GetStartTime() int64 {
 	return r._startTime
+}
+
+var poolAlibabaTuikeOfferZhitokenAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTuikeOfferZhitokenRequest()
+	},
+}
+
+// GetAlibabaTuikeOfferZhitokenRequest 从 sync.Pool 获取 AlibabaTuikeOfferZhitokenAPIRequest
+func GetAlibabaTuikeOfferZhitokenAPIRequest() *AlibabaTuikeOfferZhitokenAPIRequest {
+	return poolAlibabaTuikeOfferZhitokenAPIRequest.Get().(*AlibabaTuikeOfferZhitokenAPIRequest)
+}
+
+// ReleaseAlibabaTuikeOfferZhitokenAPIRequest 将 AlibabaTuikeOfferZhitokenAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTuikeOfferZhitokenAPIRequest(v *AlibabaTuikeOfferZhitokenAPIRequest) {
+	v.Reset()
+	poolAlibabaTuikeOfferZhitokenAPIRequest.Put(v)
 }

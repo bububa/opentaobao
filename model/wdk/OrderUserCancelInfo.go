@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderUserCancelInfo 结构体
 type OrderUserCancelInfo struct {
 	// 外部订单ID
@@ -14,4 +18,26 @@ type OrderUserCancelInfo struct {
 	StoreId string `json:"store_id,omitempty" xml:"store_id,omitempty"`
 	// 渠道来源(选填out_shop_id时该值必填)
 	OrderFrom int64 `json:"order_from,omitempty" xml:"order_from,omitempty"`
+}
+
+var poolOrderUserCancelInfo = sync.Pool{
+	New: func() any {
+		return new(OrderUserCancelInfo)
+	},
+}
+
+// GetOrderUserCancelInfo() 从对象池中获取OrderUserCancelInfo
+func GetOrderUserCancelInfo() *OrderUserCancelInfo {
+	return poolOrderUserCancelInfo.Get().(*OrderUserCancelInfo)
+}
+
+// ReleaseOrderUserCancelInfo 释放OrderUserCancelInfo
+func ReleaseOrderUserCancelInfo(v *OrderUserCancelInfo) {
+	v.OutOrderId = ""
+	v.OutShopId = ""
+	v.ShopId = ""
+	v.BizOrderId = ""
+	v.StoreId = ""
+	v.OrderFrom = 0
+	poolOrderUserCancelInfo.Put(v)
 }

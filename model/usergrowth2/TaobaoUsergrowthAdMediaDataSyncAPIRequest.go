@@ -2,6 +2,7 @@ package usergrowth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type TaobaoUsergrowthAdMediaDataSyncAPIRequest struct {
 // NewTaobaoUsergrowthAdMediaDataSyncRequest 初始化TaobaoUsergrowthAdMediaDataSyncAPIRequest对象
 func NewTaobaoUsergrowthAdMediaDataSyncRequest() *TaobaoUsergrowthAdMediaDataSyncAPIRequest {
 	return &TaobaoUsergrowthAdMediaDataSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUsergrowthAdMediaDataSyncAPIRequest) Reset() {
+	r._statDate = ""
+	r._otherMedia = ""
+	r._adPlacement = ""
+	r._mediaCode = ""
+	r._transform = 0
+	r._cost = 0
+	r._exposure = 0
+	r._deviceOs = 0
+	r._click = 0
+	r._taskId = 0
+	r._channelId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *TaobaoUsergrowthAdMediaDataSyncAPIRequest) SetChannelId(_channelId int6
 // GetChannelId ChannelId Getter
 func (r TaobaoUsergrowthAdMediaDataSyncAPIRequest) GetChannelId() int64 {
 	return r._channelId
+}
+
+var poolTaobaoUsergrowthAdMediaDataSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUsergrowthAdMediaDataSyncRequest()
+	},
+}
+
+// GetTaobaoUsergrowthAdMediaDataSyncRequest 从 sync.Pool 获取 TaobaoUsergrowthAdMediaDataSyncAPIRequest
+func GetTaobaoUsergrowthAdMediaDataSyncAPIRequest() *TaobaoUsergrowthAdMediaDataSyncAPIRequest {
+	return poolTaobaoUsergrowthAdMediaDataSyncAPIRequest.Get().(*TaobaoUsergrowthAdMediaDataSyncAPIRequest)
+}
+
+// ReleaseTaobaoUsergrowthAdMediaDataSyncAPIRequest 将 TaobaoUsergrowthAdMediaDataSyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUsergrowthAdMediaDataSyncAPIRequest(v *TaobaoUsergrowthAdMediaDataSyncAPIRequest) {
+	v.Reset()
+	poolTaobaoUsergrowthAdMediaDataSyncAPIRequest.Put(v)
 }

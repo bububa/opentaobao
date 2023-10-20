@@ -9,11 +9,6 @@ import (
 // alibaba.campus.acl.getmenubyempid
 //
 // 查询用户的菜单
-func AlibabaCampusAclGetmenubyempid(clt *core.SDKClient, req *campus.AlibabaCampusAclGetmenubyempidAPIRequest, session string) (*campus.AlibabaCampusAclGetmenubyempidAPIResponse, error) {
-	var resp campus.AlibabaCampusAclGetmenubyempidAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusAclGetmenubyempid(clt *core.SDKClient, req *campus.AlibabaCampusAclGetmenubyempidAPIRequest, resp *campus.AlibabaCampusAclGetmenubyempidAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

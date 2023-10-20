@@ -9,11 +9,6 @@ import (
 // taobao.logistics.express.delivery.resource.create
 //
 // 新建/更新配资源
-func TaobaoLogisticsExpressDeliveryResourceCreate(clt *core.SDKClient, req *ascp.TaobaoLogisticsExpressDeliveryResourceCreateAPIRequest, session string) (*ascp.TaobaoLogisticsExpressDeliveryResourceCreateAPIResponse, error) {
-	var resp ascp.TaobaoLogisticsExpressDeliveryResourceCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLogisticsExpressDeliveryResourceCreate(clt *core.SDKClient, req *ascp.TaobaoLogisticsExpressDeliveryResourceCreateAPIRequest, resp *ascp.TaobaoLogisticsExpressDeliveryResourceCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

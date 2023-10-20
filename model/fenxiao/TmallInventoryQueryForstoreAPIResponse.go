@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallInventoryQueryForstoreAPIResponse struct {
 	model.CommonResponse
 	TmallInventoryQueryForstoreAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallInventoryQueryForstoreAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallInventoryQueryForstoreAPIResponseModel).Reset()
 }
 
 // TmallInventoryQueryForstoreAPIResponseModel is 查询后端商品仓库库存 成功返回结果
@@ -28,4 +35,30 @@ type TmallInventoryQueryForstoreAPIResponseModel struct {
 	Result *InventoryQueryResult `json:"result,omitempty" xml:"result,omitempty"`
 	// 整体成功或失败
 	Issuccess bool `json:"issuccess,omitempty" xml:"issuccess,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallInventoryQueryForstoreAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Errorcode = ""
+	m.Errormessage = ""
+	m.Result = nil
+	m.Issuccess = false
+}
+
+var poolTmallInventoryQueryForstoreAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallInventoryQueryForstoreAPIResponse)
+	},
+}
+
+// GetTmallInventoryQueryForstoreAPIResponse 从 sync.Pool 获取 TmallInventoryQueryForstoreAPIResponse
+func GetTmallInventoryQueryForstoreAPIResponse() *TmallInventoryQueryForstoreAPIResponse {
+	return poolTmallInventoryQueryForstoreAPIResponse.Get().(*TmallInventoryQueryForstoreAPIResponse)
+}
+
+// ReleaseTmallInventoryQueryForstoreAPIResponse 将 TmallInventoryQueryForstoreAPIResponse 保存到 sync.Pool
+func ReleaseTmallInventoryQueryForstoreAPIResponse(v *TmallInventoryQueryForstoreAPIResponse) {
+	v.Reset()
+	poolTmallInventoryQueryForstoreAPIResponse.Put(v)
 }

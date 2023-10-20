@@ -1,5 +1,9 @@
 package nazca
 
+import (
+	"sync"
+)
+
 // ActionResult 结构体
 type ActionResult struct {
 	// error
@@ -12,4 +16,25 @@ type ActionResult struct {
 	RetValue *AuthApplyDoneCallBackDo `json:"ret_value,omitempty" xml:"ret_value,omitempty"`
 	// 成功状态
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolActionResult = sync.Pool{
+	New: func() any {
+		return new(ActionResult)
+	},
+}
+
+// GetActionResult() 从对象池中获取ActionResult
+func GetActionResult() *ActionResult {
+	return poolActionResult.Get().(*ActionResult)
+}
+
+// ReleaseActionResult 释放ActionResult
+func ReleaseActionResult(v *ActionResult) {
+	v.Error = ""
+	v.Message = ""
+	v.SubErrorMessage = ""
+	v.RetValue = nil
+	v.Success = false
+	poolActionResult.Put(v)
 }

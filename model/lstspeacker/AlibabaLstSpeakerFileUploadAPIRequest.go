@@ -2,6 +2,7 @@ package lstspeacker
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaLstSpeakerFileUploadAPIRequest struct {
 // NewAlibabaLstSpeakerFileUploadRequest 初始化AlibabaLstSpeakerFileUploadAPIRequest对象
 func NewAlibabaLstSpeakerFileUploadRequest() *AlibabaLstSpeakerFileUploadAPIRequest {
 	return &AlibabaLstSpeakerFileUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstSpeakerFileUploadAPIRequest) Reset() {
+	r._fileType = ""
+	r._fileId = ""
+	r._md5 = ""
+	r._fileBytes = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaLstSpeakerFileUploadAPIRequest) SetFileBytes(_fileBytes *model.F
 // GetFileBytes FileBytes Getter
 func (r AlibabaLstSpeakerFileUploadAPIRequest) GetFileBytes() *model.File {
 	return r._fileBytes
+}
+
+var poolAlibabaLstSpeakerFileUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstSpeakerFileUploadRequest()
+	},
+}
+
+// GetAlibabaLstSpeakerFileUploadRequest 从 sync.Pool 获取 AlibabaLstSpeakerFileUploadAPIRequest
+func GetAlibabaLstSpeakerFileUploadAPIRequest() *AlibabaLstSpeakerFileUploadAPIRequest {
+	return poolAlibabaLstSpeakerFileUploadAPIRequest.Get().(*AlibabaLstSpeakerFileUploadAPIRequest)
+}
+
+// ReleaseAlibabaLstSpeakerFileUploadAPIRequest 将 AlibabaLstSpeakerFileUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstSpeakerFileUploadAPIRequest(v *AlibabaLstSpeakerFileUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaLstSpeakerFileUploadAPIRequest.Put(v)
 }

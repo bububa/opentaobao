@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // Sku 结构体
 type Sku struct {
 	// sku的销售属性组合字符串（颜色，大小，等等，可通过类目API获取某类目下的销售属性）,格式是p1:v1;p2:v2
@@ -18,4 +22,28 @@ type Sku struct {
 	PicUrl string `json:"pic_url,omitempty" xml:"pic_url,omitempty"`
 	// sku的id
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolSku = sync.Pool{
+	New: func() any {
+		return new(Sku)
+	},
+}
+
+// GetSku() 从对象池中获取Sku
+func GetSku() *Sku {
+	return poolSku.Get().(*Sku)
+}
+
+// ReleaseSku 释放Sku
+func ReleaseSku(v *Sku) {
+	v.Properties = ""
+	v.PropertiesName = ""
+	v.Price = ""
+	v.OuterId = ""
+	v.Barcode = ""
+	v.PromotedPrice = ""
+	v.PicUrl = ""
+	v.SkuId = 0
+	poolSku.Put(v)
 }

@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // HotelPriceVo 结构体
 type HotelPriceVo struct {
 	// 报价信息
@@ -10,4 +14,24 @@ type HotelPriceVo struct {
 	CheckOut string `json:"check_out,omitempty" xml:"check_out,omitempty"`
 	// 标准酒店id
 	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
+}
+
+var poolHotelPriceVo = sync.Pool{
+	New: func() any {
+		return new(HotelPriceVo)
+	},
+}
+
+// GetHotelPriceVo() 从对象池中获取HotelPriceVo
+func GetHotelPriceVo() *HotelPriceVo {
+	return poolHotelPriceVo.Get().(*HotelPriceVo)
+}
+
+// ReleaseHotelPriceVo 释放HotelPriceVo
+func ReleaseHotelPriceVo(v *HotelPriceVo) {
+	v.RoomList = v.RoomList[:0]
+	v.CheckIn = ""
+	v.CheckOut = ""
+	v.Shid = 0
+	poolHotelPriceVo.Put(v)
 }

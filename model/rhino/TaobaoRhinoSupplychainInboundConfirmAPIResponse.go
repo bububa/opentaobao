@@ -2,6 +2,7 @@ package rhino
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoRhinoSupplychainInboundConfirmAPIResponse struct {
 	TaobaoRhinoSupplychainInboundConfirmAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoRhinoSupplychainInboundConfirmAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoRhinoSupplychainInboundConfirmAPIResponseModel).Reset()
+}
+
 // TaobaoRhinoSupplychainInboundConfirmAPIResponseModel is WMS003成衣入库确认 成功返回结果
 type TaobaoRhinoSupplychainInboundConfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"rhino_supplychain_inbound_confirm_response"`
@@ -26,4 +33,29 @@ type TaobaoRhinoSupplychainInboundConfirmAPIResponseModel struct {
 	RetCode int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 	// success
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoRhinoSupplychainInboundConfirmAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.RetCode = 0
+	m.IsSuccess = false
+}
+
+var poolTaobaoRhinoSupplychainInboundConfirmAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoRhinoSupplychainInboundConfirmAPIResponse)
+	},
+}
+
+// GetTaobaoRhinoSupplychainInboundConfirmAPIResponse 从 sync.Pool 获取 TaobaoRhinoSupplychainInboundConfirmAPIResponse
+func GetTaobaoRhinoSupplychainInboundConfirmAPIResponse() *TaobaoRhinoSupplychainInboundConfirmAPIResponse {
+	return poolTaobaoRhinoSupplychainInboundConfirmAPIResponse.Get().(*TaobaoRhinoSupplychainInboundConfirmAPIResponse)
+}
+
+// ReleaseTaobaoRhinoSupplychainInboundConfirmAPIResponse 将 TaobaoRhinoSupplychainInboundConfirmAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoRhinoSupplychainInboundConfirmAPIResponse(v *TaobaoRhinoSupplychainInboundConfirmAPIResponse) {
+	v.Reset()
+	poolTaobaoRhinoSupplychainInboundConfirmAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package pur
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaPurCmallGoodsSyncAPIRequest struct {
 // NewAlibabaPurCmallGoodsSyncRequest 初始化AlibabaPurCmallGoodsSyncAPIRequest对象
 func NewAlibabaPurCmallGoodsSyncRequest() *AlibabaPurCmallGoodsSyncAPIRequest {
 	return &AlibabaPurCmallGoodsSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaPurCmallGoodsSyncAPIRequest) Reset() {
+	r._accessProductDto = nil
+	r._accessGoodsDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaPurCmallGoodsSyncAPIRequest) SetAccessGoodsDto(_accessGoodsDto *
 // GetAccessGoodsDto AccessGoodsDto Getter
 func (r AlibabaPurCmallGoodsSyncAPIRequest) GetAccessGoodsDto() *AccessGoodsDto {
 	return r._accessGoodsDto
+}
+
+var poolAlibabaPurCmallGoodsSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaPurCmallGoodsSyncRequest()
+	},
+}
+
+// GetAlibabaPurCmallGoodsSyncRequest 从 sync.Pool 获取 AlibabaPurCmallGoodsSyncAPIRequest
+func GetAlibabaPurCmallGoodsSyncAPIRequest() *AlibabaPurCmallGoodsSyncAPIRequest {
+	return poolAlibabaPurCmallGoodsSyncAPIRequest.Get().(*AlibabaPurCmallGoodsSyncAPIRequest)
+}
+
+// ReleaseAlibabaPurCmallGoodsSyncAPIRequest 将 AlibabaPurCmallGoodsSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaPurCmallGoodsSyncAPIRequest(v *AlibabaPurCmallGoodsSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaPurCmallGoodsSyncAPIRequest.Put(v)
 }

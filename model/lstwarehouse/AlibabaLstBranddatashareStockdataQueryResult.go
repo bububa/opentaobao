@@ -1,5 +1,9 @@
 package lstwarehouse
 
+import (
+	"sync"
+)
+
 // AlibabaLstBranddatashareStockdataQueryResult 结构体
 type AlibabaLstBranddatashareStockdataQueryResult struct {
 	// 返回内容
@@ -16,4 +20,27 @@ type AlibabaLstBranddatashareStockdataQueryResult struct {
 	Page int64 `json:"page,omitempty" xml:"page,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaLstBranddatashareStockdataQueryResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaLstBranddatashareStockdataQueryResult)
+	},
+}
+
+// GetAlibabaLstBranddatashareStockdataQueryResult() 从对象池中获取AlibabaLstBranddatashareStockdataQueryResult
+func GetAlibabaLstBranddatashareStockdataQueryResult() *AlibabaLstBranddatashareStockdataQueryResult {
+	return poolAlibabaLstBranddatashareStockdataQueryResult.Get().(*AlibabaLstBranddatashareStockdataQueryResult)
+}
+
+// ReleaseAlibabaLstBranddatashareStockdataQueryResult 释放AlibabaLstBranddatashareStockdataQueryResult
+func ReleaseAlibabaLstBranddatashareStockdataQueryResult(v *AlibabaLstBranddatashareStockdataQueryResult) {
+	v.ContentList = v.ContentList[:0]
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.Total = 0
+	v.Size = 0
+	v.Page = 0
+	v.Success = false
+	poolAlibabaLstBranddatashareStockdataQueryResult.Put(v)
 }

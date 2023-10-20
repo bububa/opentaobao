@@ -1,5 +1,9 @@
 package exchange
 
+import (
+	"sync"
+)
+
 // Exchange 结构体
 type Exchange struct {
 	// 修改时间
@@ -70,4 +74,54 @@ type Exchange struct {
 	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
 	// 小二托管状态
 	CsStatus int64 `json:"cs_status,omitempty" xml:"cs_status,omitempty"`
+}
+
+var poolExchange = sync.Pool{
+	New: func() any {
+		return new(Exchange)
+	},
+}
+
+// GetExchange() 从对象池中获取Exchange
+func GetExchange() *Exchange {
+	return poolExchange.Get().(*Exchange)
+}
+
+// ReleaseExchange 释放Exchange
+func ReleaseExchange(v *Exchange) {
+	v.Modified = ""
+	v.DisputeId = ""
+	v.Status = ""
+	v.BizOrderId = ""
+	v.BuyerLogisticNo = ""
+	v.AlipayNo = ""
+	v.Desc = ""
+	v.Reason = ""
+	v.Attributes = ""
+	v.RefundPhase = ""
+	v.ExchangeSku = ""
+	v.BuyerAddress = ""
+	v.OperationContraint = ""
+	v.Title = ""
+	v.Created = ""
+	v.SellerNick = ""
+	v.BuyerNick = ""
+	v.BuyerLogisticName = ""
+	v.SellerLogisticName = ""
+	v.BoughtSku = ""
+	v.SellerLogisticNo = ""
+	v.Price = ""
+	v.TimeOut = ""
+	v.Address = ""
+	v.GoodStatus = ""
+	v.BuyerPhone = ""
+	v.BuyerName = ""
+	v.Oaid = ""
+	v.BuyerOpenUid = ""
+	v.Payment = ""
+	v.AdvanceStatus = 0
+	v.RefundVersion = 0
+	v.Num = 0
+	v.CsStatus = 0
+	poolExchange.Put(v)
 }

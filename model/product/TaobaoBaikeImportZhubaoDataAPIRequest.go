@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBaikeImportZhubaoDataAPIRequest struct {
 // NewTaobaoBaikeImportZhubaoDataRequest 初始化TaobaoBaikeImportZhubaoDataAPIRequest对象
 func NewTaobaoBaikeImportZhubaoDataRequest() *TaobaoBaikeImportZhubaoDataAPIRequest {
 	return &TaobaoBaikeImportZhubaoDataAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBaikeImportZhubaoDataAPIRequest) Reset() {
+	r._dataJsonStr = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBaikeImportZhubaoDataAPIRequest) SetDataJsonStr(_dataJsonStr stri
 // GetDataJsonStr DataJsonStr Getter
 func (r TaobaoBaikeImportZhubaoDataAPIRequest) GetDataJsonStr() string {
 	return r._dataJsonStr
+}
+
+var poolTaobaoBaikeImportZhubaoDataAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBaikeImportZhubaoDataRequest()
+	},
+}
+
+// GetTaobaoBaikeImportZhubaoDataRequest 从 sync.Pool 获取 TaobaoBaikeImportZhubaoDataAPIRequest
+func GetTaobaoBaikeImportZhubaoDataAPIRequest() *TaobaoBaikeImportZhubaoDataAPIRequest {
+	return poolTaobaoBaikeImportZhubaoDataAPIRequest.Get().(*TaobaoBaikeImportZhubaoDataAPIRequest)
+}
+
+// ReleaseTaobaoBaikeImportZhubaoDataAPIRequest 将 TaobaoBaikeImportZhubaoDataAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBaikeImportZhubaoDataAPIRequest(v *TaobaoBaikeImportZhubaoDataAPIRequest) {
+	v.Reset()
+	poolTaobaoBaikeImportZhubaoDataAPIRequest.Put(v)
 }

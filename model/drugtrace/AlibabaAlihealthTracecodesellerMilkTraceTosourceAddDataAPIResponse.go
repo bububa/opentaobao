@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse struct {
 	AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponseModel is 奶粉溯源-同步数据 成功返回结果
 type AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_tracecodeseller_milk_trace_tosource_add_data_response"`
@@ -26,4 +33,29 @@ type AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponseModel str
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 服务出参true
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.Model = false
+}
+
+var poolAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse 从 sync.Pool 获取 AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse
+func GetAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse() *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse {
+	return poolAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse.Get().(*AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse 将 AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse(v *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse.Put(v)
 }

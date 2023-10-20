@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // StoreDeliverConfig 结构体
 type StoreDeliverConfig struct {
 	// 当activity为true时返回,活动开始时间
@@ -16,4 +20,27 @@ type StoreDeliverConfig struct {
 	DeliverThreshold int64 `json:"deliver_threshold,omitempty" xml:"deliver_threshold,omitempty"`
 	// 是否是活动期
 	Activity bool `json:"activity,omitempty" xml:"activity,omitempty"`
+}
+
+var poolStoreDeliverConfig = sync.Pool{
+	New: func() any {
+		return new(StoreDeliverConfig)
+	},
+}
+
+// GetStoreDeliverConfig() 从对象池中获取StoreDeliverConfig
+func GetStoreDeliverConfig() *StoreDeliverConfig {
+	return poolStoreDeliverConfig.Get().(*StoreDeliverConfig)
+}
+
+// ReleaseStoreDeliverConfig 释放StoreDeliverConfig
+func ReleaseStoreDeliverConfig(v *StoreDeliverConfig) {
+	v.ActivityStartTime = ""
+	v.ActivityEndTime = ""
+	v.WorkingTime = ""
+	v.DispatchTimeRange = ""
+	v.Priority = 0
+	v.DeliverThreshold = 0
+	v.Activity = false
+	poolStoreDeliverConfig.Put(v)
 }

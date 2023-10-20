@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest struct {
 // NewAlibabaDchainAoxiangItemDistributionBatchCancelRequest 初始化AlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest对象
 func NewAlibabaDchainAoxiangItemDistributionBatchCancelRequest() *AlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest {
 	return &AlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest) Reset() {
+	r._cancelDistributeRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest) SetCancelDis
 // GetCancelDistributeRequest CancelDistributeRequest Getter
 func (r AlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest) GetCancelDistributeRequest() *CancelDistributeRequest {
 	return r._cancelDistributeRequest
+}
+
+var poolAlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangItemDistributionBatchCancelRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangItemDistributionBatchCancelRequest 从 sync.Pool 获取 AlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest
+func GetAlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest() *AlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest {
+	return poolAlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest.Get().(*AlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest 将 AlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest(v *AlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoXhotelOrderFutureInfoPutAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelOrderFutureInfoPutAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderFutureInfoPutAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelOrderFutureInfoPutAPIResponseModel).Reset()
 }
 
 // TaobaoXhotelOrderFutureInfoPutAPIResponseModel is 订单信息上传更新 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoXhotelOrderFutureInfoPutAPIResponseModel struct {
 	Issuccess bool `json:"issuccess,omitempty" xml:"issuccess,omitempty"`
 	// 是否更新失败。返回false表示更新成功。否则请读取错误码与错误描述
 	Error bool `json:"error,omitempty" xml:"error,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderFutureInfoPutAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Errcode = ""
+	m.Eerrmsg = ""
+	m.Issuccess = false
+	m.Error = false
+}
+
+var poolTaobaoXhotelOrderFutureInfoPutAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelOrderFutureInfoPutAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelOrderFutureInfoPutAPIResponse 从 sync.Pool 获取 TaobaoXhotelOrderFutureInfoPutAPIResponse
+func GetTaobaoXhotelOrderFutureInfoPutAPIResponse() *TaobaoXhotelOrderFutureInfoPutAPIResponse {
+	return poolTaobaoXhotelOrderFutureInfoPutAPIResponse.Get().(*TaobaoXhotelOrderFutureInfoPutAPIResponse)
+}
+
+// ReleaseTaobaoXhotelOrderFutureInfoPutAPIResponse 将 TaobaoXhotelOrderFutureInfoPutAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelOrderFutureInfoPutAPIResponse(v *TaobaoXhotelOrderFutureInfoPutAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelOrderFutureInfoPutAPIResponse.Put(v)
 }

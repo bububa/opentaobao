@@ -9,11 +9,6 @@ import (
 // tmall.hk.clearance.certification.get
 //
 // 获取订单清关材料实名信息
-func TmallHkClearanceCertificationGet(clt *core.SDKClient, req *tmallhk.TmallHkClearanceCertificationGetAPIRequest, session string) (*tmallhk.TmallHkClearanceCertificationGetAPIResponse, error) {
-	var resp tmallhk.TmallHkClearanceCertificationGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallHkClearanceCertificationGet(clt *core.SDKClient, req *tmallhk.TmallHkClearanceCertificationGetAPIRequest, resp *tmallhk.TmallHkClearanceCertificationGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

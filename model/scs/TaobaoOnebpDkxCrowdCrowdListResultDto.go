@@ -1,5 +1,9 @@
 package scs
 
+import (
+	"sync"
+)
+
 // TaobaoOnebpDkxCrowdCrowdListResultDto 结构体
 type TaobaoOnebpDkxCrowdCrowdListResultDto struct {
 	// 返回结果
@@ -12,4 +16,25 @@ type TaobaoOnebpDkxCrowdCrowdListResultDto struct {
 	ResultCode *ResultCode `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoOnebpDkxCrowdCrowdListResultDto = sync.Pool{
+	New: func() any {
+		return new(TaobaoOnebpDkxCrowdCrowdListResultDto)
+	},
+}
+
+// GetTaobaoOnebpDkxCrowdCrowdListResultDto() 从对象池中获取TaobaoOnebpDkxCrowdCrowdListResultDto
+func GetTaobaoOnebpDkxCrowdCrowdListResultDto() *TaobaoOnebpDkxCrowdCrowdListResultDto {
+	return poolTaobaoOnebpDkxCrowdCrowdListResultDto.Get().(*TaobaoOnebpDkxCrowdCrowdListResultDto)
+}
+
+// ReleaseTaobaoOnebpDkxCrowdCrowdListResultDto 释放TaobaoOnebpDkxCrowdCrowdListResultDto
+func ReleaseTaobaoOnebpDkxCrowdCrowdListResultDto(v *TaobaoOnebpDkxCrowdCrowdListResultDto) {
+	v.DmpCrowdResultTopDTOList = v.DmpCrowdResultTopDTOList[:0]
+	v.Message = ""
+	v.TotalCount = 0
+	v.ResultCode = nil
+	v.Success = false
+	poolTaobaoOnebpDkxCrowdCrowdListResultDto.Put(v)
 }

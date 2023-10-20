@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -46,8 +47,25 @@ type TaobaoFenxiaoOrdersGetAPIRequest struct {
 // NewTaobaoFenxiaoOrdersGetRequest 初始化TaobaoFenxiaoOrdersGetAPIRequest对象
 func NewTaobaoFenxiaoOrdersGetRequest() *TaobaoFenxiaoOrdersGetAPIRequest {
 	return &TaobaoFenxiaoOrdersGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(12),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoOrdersGetAPIRequest) Reset() {
+	r._channelCodes = r._channelCodes[:0]
+	r._tradeTypes = r._tradeTypes[:0]
+	r._status = ""
+	r._startCreated = ""
+	r._endCreated = ""
+	r._timeType = ""
+	r._fields = ""
+	r._purchaseOrderId = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r._tcOrderId = 0
+	r._userRoleType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -221,4 +239,21 @@ func (r *TaobaoFenxiaoOrdersGetAPIRequest) SetUserRoleType(_userRoleType int64) 
 // GetUserRoleType UserRoleType Getter
 func (r TaobaoFenxiaoOrdersGetAPIRequest) GetUserRoleType() int64 {
 	return r._userRoleType
+}
+
+var poolTaobaoFenxiaoOrdersGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoOrdersGetRequest()
+	},
+}
+
+// GetTaobaoFenxiaoOrdersGetRequest 从 sync.Pool 获取 TaobaoFenxiaoOrdersGetAPIRequest
+func GetTaobaoFenxiaoOrdersGetAPIRequest() *TaobaoFenxiaoOrdersGetAPIRequest {
+	return poolTaobaoFenxiaoOrdersGetAPIRequest.Get().(*TaobaoFenxiaoOrdersGetAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoOrdersGetAPIRequest 将 TaobaoFenxiaoOrdersGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoOrdersGetAPIRequest(v *TaobaoFenxiaoOrdersGetAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoOrdersGetAPIRequest.Put(v)
 }

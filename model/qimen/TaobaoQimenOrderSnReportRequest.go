@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // TaobaoQimenOrderSnReportRequest 结构体
 type TaobaoQimenOrderSnReportRequest struct {
 	// 总页数
@@ -14,4 +18,26 @@ type TaobaoQimenOrderSnReportRequest struct {
 	Items *Items `json:"items,omitempty" xml:"items,omitempty"`
 	// 扩展属性
 	ExtendProps *TaobaoQimenOrderSnReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+}
+
+var poolTaobaoQimenOrderSnReportRequest = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenOrderSnReportRequest)
+	},
+}
+
+// GetTaobaoQimenOrderSnReportRequest() 从对象池中获取TaobaoQimenOrderSnReportRequest
+func GetTaobaoQimenOrderSnReportRequest() *TaobaoQimenOrderSnReportRequest {
+	return poolTaobaoQimenOrderSnReportRequest.Get().(*TaobaoQimenOrderSnReportRequest)
+}
+
+// ReleaseTaobaoQimenOrderSnReportRequest 释放TaobaoQimenOrderSnReportRequest
+func ReleaseTaobaoQimenOrderSnReportRequest(v *TaobaoQimenOrderSnReportRequest) {
+	v.TotalPage = 0
+	v.CurrentPage = 0
+	v.PageSize = 0
+	v.Order = nil
+	v.Items = nil
+	v.ExtendProps = nil
+	poolTaobaoQimenOrderSnReportRequest.Put(v)
 }

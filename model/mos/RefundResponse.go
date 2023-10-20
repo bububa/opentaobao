@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // RefundResponse 结构体
 type RefundResponse struct {
 	// 退款资金渠道列表
@@ -20,4 +24,29 @@ type RefundResponse struct {
 	BuyerNick string `json:"buyer_nick,omitempty" xml:"buyer_nick,omitempty"`
 	// 总退款金额。单位为人民币（分）
 	RefundAmount int64 `json:"refund_amount,omitempty" xml:"refund_amount,omitempty"`
+}
+
+var poolRefundResponse = sync.Pool{
+	New: func() any {
+		return new(RefundResponse)
+	},
+}
+
+// GetRefundResponse() 从对象池中获取RefundResponse
+func GetRefundResponse() *RefundResponse {
+	return poolRefundResponse.Get().(*RefundResponse)
+}
+
+// ReleaseRefundResponse 释放RefundResponse
+func ReleaseRefundResponse(v *RefundResponse) {
+	v.FundBillList = v.FundBillList[:0]
+	v.TradeNo = ""
+	v.OutTradeNo = ""
+	v.OutRequestNo = ""
+	v.RefundStatus = ""
+	v.BuyerAlipayId = ""
+	v.AuthCodeSource = ""
+	v.BuyerNick = ""
+	v.RefundAmount = 0
+	poolRefundResponse.Put(v)
 }

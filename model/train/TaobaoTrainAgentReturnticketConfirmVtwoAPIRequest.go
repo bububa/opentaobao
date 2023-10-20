@@ -2,6 +2,7 @@ package train
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoTrainAgentReturnticketConfirmVtwoAPIRequest struct {
 // NewTaobaoTrainAgentReturnticketConfirmVtwoRequest 初始化TaobaoTrainAgentReturnticketConfirmVtwoAPIRequest对象
 func NewTaobaoTrainAgentReturnticketConfirmVtwoRequest() *TaobaoTrainAgentReturnticketConfirmVtwoAPIRequest {
 	return &TaobaoTrainAgentReturnticketConfirmVtwoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTrainAgentReturnticketConfirmVtwoAPIRequest) Reset() {
+	r._refuseReturnReason = ""
+	r._buyerId = 0
+	r._refundFee = 0
+	r._mainBizOrderId = 0
+	r._agentId = 0
+	r._subBizOrderId = 0
+	r._agreeReturn = false
+	r._closeRefundNotify = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoTrainAgentReturnticketConfirmVtwoAPIRequest) SetCloseRefundNotify
 // GetCloseRefundNotify CloseRefundNotify Getter
 func (r TaobaoTrainAgentReturnticketConfirmVtwoAPIRequest) GetCloseRefundNotify() bool {
 	return r._closeRefundNotify
+}
+
+var poolTaobaoTrainAgentReturnticketConfirmVtwoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTrainAgentReturnticketConfirmVtwoRequest()
+	},
+}
+
+// GetTaobaoTrainAgentReturnticketConfirmVtwoRequest 从 sync.Pool 获取 TaobaoTrainAgentReturnticketConfirmVtwoAPIRequest
+func GetTaobaoTrainAgentReturnticketConfirmVtwoAPIRequest() *TaobaoTrainAgentReturnticketConfirmVtwoAPIRequest {
+	return poolTaobaoTrainAgentReturnticketConfirmVtwoAPIRequest.Get().(*TaobaoTrainAgentReturnticketConfirmVtwoAPIRequest)
+}
+
+// ReleaseTaobaoTrainAgentReturnticketConfirmVtwoAPIRequest 将 TaobaoTrainAgentReturnticketConfirmVtwoAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTrainAgentReturnticketConfirmVtwoAPIRequest(v *TaobaoTrainAgentReturnticketConfirmVtwoAPIRequest) {
+	v.Reset()
+	poolTaobaoTrainAgentReturnticketConfirmVtwoAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package media
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoPictureIsreferencedGetAPIRequest struct {
 // NewTaobaoPictureIsreferencedGetRequest 初始化TaobaoPictureIsreferencedGetAPIRequest对象
 func NewTaobaoPictureIsreferencedGetRequest() *TaobaoPictureIsreferencedGetAPIRequest {
 	return &TaobaoPictureIsreferencedGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPictureIsreferencedGetAPIRequest) Reset() {
+	r._pictureId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoPictureIsreferencedGetAPIRequest) SetPictureId(_pictureId int64) 
 // GetPictureId PictureId Getter
 func (r TaobaoPictureIsreferencedGetAPIRequest) GetPictureId() int64 {
 	return r._pictureId
+}
+
+var poolTaobaoPictureIsreferencedGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPictureIsreferencedGetRequest()
+	},
+}
+
+// GetTaobaoPictureIsreferencedGetRequest 从 sync.Pool 获取 TaobaoPictureIsreferencedGetAPIRequest
+func GetTaobaoPictureIsreferencedGetAPIRequest() *TaobaoPictureIsreferencedGetAPIRequest {
+	return poolTaobaoPictureIsreferencedGetAPIRequest.Get().(*TaobaoPictureIsreferencedGetAPIRequest)
+}
+
+// ReleaseTaobaoPictureIsreferencedGetAPIRequest 将 TaobaoPictureIsreferencedGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPictureIsreferencedGetAPIRequest(v *TaobaoPictureIsreferencedGetAPIRequest) {
+	v.Reset()
+	poolTaobaoPictureIsreferencedGetAPIRequest.Put(v)
 }

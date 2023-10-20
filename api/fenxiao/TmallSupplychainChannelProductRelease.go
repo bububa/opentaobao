@@ -9,11 +9,6 @@ import (
 // tmall.supplychain.channel.product.release
 //
 // 供应商渠道铺货接口
-func TmallSupplychainChannelProductRelease(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductReleaseAPIRequest, session string) (*fenxiao.TmallSupplychainChannelProductReleaseAPIResponse, error) {
-	var resp fenxiao.TmallSupplychainChannelProductReleaseAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallSupplychainChannelProductRelease(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductReleaseAPIRequest, resp *fenxiao.TmallSupplychainChannelProductReleaseAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

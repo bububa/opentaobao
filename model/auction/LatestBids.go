@@ -1,5 +1,9 @@
 package auction
 
+import (
+	"sync"
+)
+
 // LatestBids 结构体
 type LatestBids struct {
 	// 竞买号
@@ -22,4 +26,30 @@ type LatestBids struct {
 	InitPrice int64 `json:"init_price,omitempty" xml:"init_price,omitempty"`
 	// 拍品id
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+}
+
+var poolLatestBids = sync.Pool{
+	New: func() any {
+		return new(LatestBids)
+	},
+}
+
+// GetLatestBids() 从对象池中获取LatestBids
+func GetLatestBids() *LatestBids {
+	return poolLatestBids.Get().(*LatestBids)
+}
+
+// ReleaseLatestBids 释放LatestBids
+func ReleaseLatestBids(v *LatestBids) {
+	v.AliasName = ""
+	v.CatName = ""
+	v.CourtName = ""
+	v.ItemTitle = ""
+	v.PicUrl = ""
+	v.BidPrice = 0
+	v.BidTime = 0
+	v.ConsultPrice = 0
+	v.InitPrice = 0
+	v.ItemId = 0
+	poolLatestBids.Put(v)
 }

@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -58,8 +59,17 @@ type TmallItemShiptimeUpdateAPIRequest struct {
 // NewTmallItemShiptimeUpdateRequest 初始化TmallItemShiptimeUpdateAPIRequest对象
 func NewTmallItemShiptimeUpdateRequest() *TmallItemShiptimeUpdateAPIRequest {
 	return &TmallItemShiptimeUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallItemShiptimeUpdateAPIRequest) Reset() {
+	r._skuShipTimes = r._skuShipTimes[:0]
+	r._shipTime = ""
+	r._itemId = 0
+	r._option = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -129,4 +139,21 @@ func (r *TmallItemShiptimeUpdateAPIRequest) SetOption(_option *UpdateItemShipTim
 // GetOption Option Getter
 func (r TmallItemShiptimeUpdateAPIRequest) GetOption() *UpdateItemShipTimeOption {
 	return r._option
+}
+
+var poolTmallItemShiptimeUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallItemShiptimeUpdateRequest()
+	},
+}
+
+// GetTmallItemShiptimeUpdateRequest 从 sync.Pool 获取 TmallItemShiptimeUpdateAPIRequest
+func GetTmallItemShiptimeUpdateAPIRequest() *TmallItemShiptimeUpdateAPIRequest {
+	return poolTmallItemShiptimeUpdateAPIRequest.Get().(*TmallItemShiptimeUpdateAPIRequest)
+}
+
+// ReleaseTmallItemShiptimeUpdateAPIRequest 将 TmallItemShiptimeUpdateAPIRequest 放入 sync.Pool
+func ReleaseTmallItemShiptimeUpdateAPIRequest(v *TmallItemShiptimeUpdateAPIRequest) {
+	v.Reset()
+	poolTmallItemShiptimeUpdateAPIRequest.Put(v)
 }

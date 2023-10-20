@@ -9,11 +9,6 @@ import (
 // taobao.baodian.deposit.get
 //
 // 查询用户宝点帐户信息及当前宝点价格
-func TaobaoBaodianDepositGet(clt *core.SDKClient, req *baodian.TaobaoBaodianDepositGetAPIRequest, session string) (*baodian.TaobaoBaodianDepositGetAPIResponse, error) {
-	var resp baodian.TaobaoBaodianDepositGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBaodianDepositGet(clt *core.SDKClient, req *baodian.TaobaoBaodianDepositGetAPIRequest, resp *baodian.TaobaoBaodianDepositGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

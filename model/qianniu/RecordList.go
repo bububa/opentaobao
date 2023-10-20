@@ -1,5 +1,9 @@
 package qianniu
 
+import (
+	"sync"
+)
+
 // RecordList 结构体
 type RecordList struct {
 	// 变更时间
@@ -18,4 +22,28 @@ type RecordList struct {
 	AccountId int64 `json:"account_id,omitempty" xml:"account_id,omitempty"`
 	// 变更时间戳
 	ChangeTimeTs int64 `json:"change_time_ts,omitempty" xml:"change_time_ts,omitempty"`
+}
+
+var poolRecordList = sync.Pool{
+	New: func() any {
+		return new(RecordList)
+	},
+}
+
+// GetRecordList() 从对象池中获取RecordList
+func GetRecordList() *RecordList {
+	return poolRecordList.Get().(*RecordList)
+}
+
+// ReleaseRecordList 释放RecordList
+func ReleaseRecordList(v *RecordList) {
+	v.ChangeTime = ""
+	v.Domain = ""
+	v.GmtCreate = ""
+	v.MainAccountId = 0
+	v.Status = 0
+	v.Type = 0
+	v.AccountId = 0
+	v.ChangeTimeTs = 0
+	poolRecordList.Put(v)
 }

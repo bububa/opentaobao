@@ -2,6 +2,7 @@ package caipiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type TaobaoCaipiaoGoodsInfoInputAPIRequest struct {
 // NewTaobaoCaipiaoGoodsInfoInputRequest 初始化TaobaoCaipiaoGoodsInfoInputAPIRequest对象
 func NewTaobaoCaipiaoGoodsInfoInputRequest() *TaobaoCaipiaoGoodsInfoInputAPIRequest {
 	return &TaobaoCaipiaoGoodsInfoInputAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCaipiaoGoodsInfoInputAPIRequest) Reset() {
+	r._goodsTitle = ""
+	r._goodsImage = ""
+	r._actStartDate = ""
+	r._actEndDate = ""
+	r._goodsDesc = ""
+	r._goodsId = 0
+	r._goodsPrice = 0
+	r._presentType = 0
+	r._goodsType = 0
+	r._lotteryTypeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *TaobaoCaipiaoGoodsInfoInputAPIRequest) SetLotteryTypeId(_lotteryTypeId 
 // GetLotteryTypeId LotteryTypeId Getter
 func (r TaobaoCaipiaoGoodsInfoInputAPIRequest) GetLotteryTypeId() int64 {
 	return r._lotteryTypeId
+}
+
+var poolTaobaoCaipiaoGoodsInfoInputAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCaipiaoGoodsInfoInputRequest()
+	},
+}
+
+// GetTaobaoCaipiaoGoodsInfoInputRequest 从 sync.Pool 获取 TaobaoCaipiaoGoodsInfoInputAPIRequest
+func GetTaobaoCaipiaoGoodsInfoInputAPIRequest() *TaobaoCaipiaoGoodsInfoInputAPIRequest {
+	return poolTaobaoCaipiaoGoodsInfoInputAPIRequest.Get().(*TaobaoCaipiaoGoodsInfoInputAPIRequest)
+}
+
+// ReleaseTaobaoCaipiaoGoodsInfoInputAPIRequest 将 TaobaoCaipiaoGoodsInfoInputAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCaipiaoGoodsInfoInputAPIRequest(v *TaobaoCaipiaoGoodsInfoInputAPIRequest) {
+	v.Reset()
+	poolTaobaoCaipiaoGoodsInfoInputAPIRequest.Put(v)
 }

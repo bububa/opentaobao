@@ -9,11 +9,6 @@ import (
 // alibaba.aliqin.fc.iot.cardInfo
 //
 // 物联卡信息查询
-func AlibabaAliqinFcIotCardInfo(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotCardInfoAPIRequest, session string) (*aliqin.AlibabaAliqinFcIotCardInfoAPIResponse, error) {
-	var resp aliqin.AlibabaAliqinFcIotCardInfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAliqinFcIotCardInfo(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotCardInfoAPIRequest, resp *aliqin.AlibabaAliqinFcIotCardInfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

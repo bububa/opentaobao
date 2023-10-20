@@ -2,6 +2,7 @@ package axindata
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest struct {
 // NewTaobaoAlitripTravelFscRouteApiPoiApplyRequest 初始化TaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest对象
 func NewTaobaoAlitripTravelFscRouteApiPoiApplyRequest() *TaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest {
 	return &TaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest) Reset() {
+	r._fscPoiApplyRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest) SetFscPoiApplyRequest
 // GetFscPoiApplyRequest FscPoiApplyRequest Getter
 func (r TaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest) GetFscPoiApplyRequest() *FscPoiApplyRequest {
 	return r._fscPoiApplyRequest
+}
+
+var poolTaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelFscRouteApiPoiApplyRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelFscRouteApiPoiApplyRequest 从 sync.Pool 获取 TaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest
+func GetTaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest() *TaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest {
+	return poolTaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest.Get().(*TaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest 将 TaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest(v *TaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelFscRouteApiPoiApplyAPIRequest.Put(v)
 }

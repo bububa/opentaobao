@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,14 +14,20 @@ import (
 type TaobaoLogisticsExpressOrderPayTmsQueryAPIRequest struct {
 	model.Params
 	// 查询入参
-	_tms2MscPayQueryRequest *Tms2mscPayQueryRequest
+	_tms2MscPayQueryRequest *Tms2MscPayQueryRequest
 }
 
 // NewTaobaoLogisticsExpressOrderPayTmsQueryRequest 初始化TaobaoLogisticsExpressOrderPayTmsQueryAPIRequest对象
 func NewTaobaoLogisticsExpressOrderPayTmsQueryRequest() *TaobaoLogisticsExpressOrderPayTmsQueryAPIRequest {
 	return &TaobaoLogisticsExpressOrderPayTmsQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsExpressOrderPayTmsQueryAPIRequest) Reset() {
+	r._tms2MscPayQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -42,13 +49,30 @@ func (r TaobaoLogisticsExpressOrderPayTmsQueryAPIRequest) GetRawParams() model.P
 
 // SetTms2MscPayQueryRequest is Tms2MscPayQueryRequest Setter
 // 查询入参
-func (r *TaobaoLogisticsExpressOrderPayTmsQueryAPIRequest) SetTms2MscPayQueryRequest(_tms2MscPayQueryRequest *Tms2mscPayQueryRequest) error {
+func (r *TaobaoLogisticsExpressOrderPayTmsQueryAPIRequest) SetTms2MscPayQueryRequest(_tms2MscPayQueryRequest *Tms2MscPayQueryRequest) error {
 	r._tms2MscPayQueryRequest = _tms2MscPayQueryRequest
 	r.Set("tms2_msc_pay_query_request", _tms2MscPayQueryRequest)
 	return nil
 }
 
 // GetTms2MscPayQueryRequest Tms2MscPayQueryRequest Getter
-func (r TaobaoLogisticsExpressOrderPayTmsQueryAPIRequest) GetTms2MscPayQueryRequest() *Tms2mscPayQueryRequest {
+func (r TaobaoLogisticsExpressOrderPayTmsQueryAPIRequest) GetTms2MscPayQueryRequest() *Tms2MscPayQueryRequest {
 	return r._tms2MscPayQueryRequest
+}
+
+var poolTaobaoLogisticsExpressOrderPayTmsQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsExpressOrderPayTmsQueryRequest()
+	},
+}
+
+// GetTaobaoLogisticsExpressOrderPayTmsQueryRequest 从 sync.Pool 获取 TaobaoLogisticsExpressOrderPayTmsQueryAPIRequest
+func GetTaobaoLogisticsExpressOrderPayTmsQueryAPIRequest() *TaobaoLogisticsExpressOrderPayTmsQueryAPIRequest {
+	return poolTaobaoLogisticsExpressOrderPayTmsQueryAPIRequest.Get().(*TaobaoLogisticsExpressOrderPayTmsQueryAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsExpressOrderPayTmsQueryAPIRequest 将 TaobaoLogisticsExpressOrderPayTmsQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsExpressOrderPayTmsQueryAPIRequest(v *TaobaoLogisticsExpressOrderPayTmsQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsExpressOrderPayTmsQueryAPIRequest.Put(v)
 }

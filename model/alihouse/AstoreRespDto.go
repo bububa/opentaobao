@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // AstoreRespDto 结构体
 type AstoreRespDto struct {
 	// 链接
@@ -14,4 +18,26 @@ type AstoreRespDto struct {
 	ShopId int64 `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 外部目标ID
 	OuterTargetType int64 `json:"outer_target_type,omitempty" xml:"outer_target_type,omitempty"`
+}
+
+var poolAstoreRespDto = sync.Pool{
+	New: func() any {
+		return new(AstoreRespDto)
+	},
+}
+
+// GetAstoreRespDto() 从对象池中获取AstoreRespDto
+func GetAstoreRespDto() *AstoreRespDto {
+	return poolAstoreRespDto.Get().(*AstoreRespDto)
+}
+
+// ReleaseAstoreRespDto 释放AstoreRespDto
+func ReleaseAstoreRespDto(v *AstoreRespDto) {
+	v.ShopUrl = ""
+	v.DecorationUrl = ""
+	v.DecorationName = ""
+	v.OuterTargetId = ""
+	v.ShopId = 0
+	v.OuterTargetType = 0
+	poolAstoreRespDto.Put(v)
 }

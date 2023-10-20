@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // BuyGiftActivityOperateRequest 结构体
 type BuyGiftActivityOperateRequest struct {
 	// 活动终端：1-APP
@@ -28,4 +32,33 @@ type BuyGiftActivityOperateRequest struct {
 	EndTime int64 `json:"end_time,omitempty" xml:"end_time,omitempty"`
 	// 活动ID
 	ActId int64 `json:"act_id,omitempty" xml:"act_id,omitempty"`
+}
+
+var poolBuyGiftActivityOperateRequest = sync.Pool{
+	New: func() any {
+		return new(BuyGiftActivityOperateRequest)
+	},
+}
+
+// GetBuyGiftActivityOperateRequest() 从对象池中获取BuyGiftActivityOperateRequest
+func GetBuyGiftActivityOperateRequest() *BuyGiftActivityOperateRequest {
+	return poolBuyGiftActivityOperateRequest.Get().(*BuyGiftActivityOperateRequest)
+}
+
+// ReleaseBuyGiftActivityOperateRequest 释放BuyGiftActivityOperateRequest
+func ReleaseBuyGiftActivityOperateRequest(v *BuyGiftActivityOperateRequest) {
+	v.Terminals = v.Terminals[:0]
+	v.StoreIds = v.StoreIds[:0]
+	v.MemberCrowdCode = v.MemberCrowdCode[:0]
+	v.Channels = v.Channels[:0]
+	v.ActivityName = ""
+	v.CreatorId = ""
+	v.CreatorName = ""
+	v.Description = ""
+	v.OutActId = ""
+	v.Attributes = ""
+	v.StartTime = 0
+	v.EndTime = 0
+	v.ActId = 0
+	poolBuyGiftActivityOperateRequest.Put(v)
 }

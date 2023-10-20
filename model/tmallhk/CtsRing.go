@@ -1,5 +1,9 @@
 package tmallhk
 
+import (
+	"sync"
+)
+
 // CtsRing 结构体
 type CtsRing struct {
 	// 成品生产完成时间
@@ -18,4 +22,28 @@ type CtsRing struct {
 	RingTime string `json:"ring_time,omitempty" xml:"ring_time,omitempty"`
 	// 戒托子订单号
 	SubOrderNo string `json:"sub_order_no,omitempty" xml:"sub_order_no,omitempty"`
+}
+
+var poolCtsRing = sync.Pool{
+	New: func() any {
+		return new(CtsRing)
+	},
+}
+
+// GetCtsRing() 从对象池中获取CtsRing
+func GetCtsRing() *CtsRing {
+	return poolCtsRing.Get().(*CtsRing)
+}
+
+// ReleaseCtsRing 释放CtsRing
+func ReleaseCtsRing(v *CtsRing) {
+	v.CompletedTime = ""
+	v.ExtInfo = ""
+	v.ItemId = ""
+	v.MountTime = ""
+	v.OrderNo = ""
+	v.ProductId = ""
+	v.RingTime = ""
+	v.SubOrderNo = ""
+	poolCtsRing.Put(v)
 }

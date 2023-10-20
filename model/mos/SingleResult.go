@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // SingleResult 结构体
 type SingleResult struct {
 	// 系统错误
@@ -10,4 +14,24 @@ type SingleResult struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 成功返回
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+var poolSingleResult = sync.Pool{
+	New: func() any {
+		return new(SingleResult)
+	},
+}
+
+// GetSingleResult() 从对象池中获取SingleResult
+func GetSingleResult() *SingleResult {
+	return poolSingleResult.Get().(*SingleResult)
+}
+
+// ReleaseSingleResult 释放SingleResult
+func ReleaseSingleResult(v *SingleResult) {
+	v.ErrMessage = ""
+	v.ErrCode = ""
+	v.Success = false
+	v.Data = false
+	poolSingleResult.Put(v)
 }

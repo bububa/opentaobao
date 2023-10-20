@@ -1,5 +1,9 @@
 package mtopopen
 
+import (
+	"sync"
+)
+
 // ModifyDeliveryRequest 结构体
 type ModifyDeliveryRequest struct {
 	// 订单ID
@@ -14,4 +18,26 @@ type ModifyDeliveryRequest struct {
 	Channel string `json:"channel,omitempty" xml:"channel,omitempty"`
 	// 收货方式「送货上门：0，快递柜/代收点：1，指定地点：2，找人代收：3，其他：-1」
 	ReceiveType int64 `json:"receive_type,omitempty" xml:"receive_type,omitempty"`
+}
+
+var poolModifyDeliveryRequest = sync.Pool{
+	New: func() any {
+		return new(ModifyDeliveryRequest)
+	},
+}
+
+// GetModifyDeliveryRequest() 从对象池中获取ModifyDeliveryRequest
+func GetModifyDeliveryRequest() *ModifyDeliveryRequest {
+	return poolModifyDeliveryRequest.Get().(*ModifyDeliveryRequest)
+}
+
+// ReleaseModifyDeliveryRequest 释放ModifyDeliveryRequest
+func ReleaseModifyDeliveryRequest(v *ModifyDeliveryRequest) {
+	v.OrderCode = ""
+	v.CpCode = ""
+	v.MailNo = ""
+	v.ExtendParam = ""
+	v.Channel = ""
+	v.ReceiveType = 0
+	poolModifyDeliveryRequest.Put(v)
 }

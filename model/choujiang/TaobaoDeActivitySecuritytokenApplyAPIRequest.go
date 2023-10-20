@@ -2,6 +2,7 @@ package choujiang
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoDeActivitySecuritytokenApplyAPIRequest struct {
 // NewTaobaoDeActivitySecuritytokenApplyRequest 初始化TaobaoDeActivitySecuritytokenApplyAPIRequest对象
 func NewTaobaoDeActivitySecuritytokenApplyRequest() *TaobaoDeActivitySecuritytokenApplyAPIRequest {
 	return &TaobaoDeActivitySecuritytokenApplyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDeActivitySecuritytokenApplyAPIRequest) Reset() {
+	r._eventKey = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoDeActivitySecuritytokenApplyAPIRequest) SetEventKey(_eventKey str
 // GetEventKey EventKey Getter
 func (r TaobaoDeActivitySecuritytokenApplyAPIRequest) GetEventKey() string {
 	return r._eventKey
+}
+
+var poolTaobaoDeActivitySecuritytokenApplyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDeActivitySecuritytokenApplyRequest()
+	},
+}
+
+// GetTaobaoDeActivitySecuritytokenApplyRequest 从 sync.Pool 获取 TaobaoDeActivitySecuritytokenApplyAPIRequest
+func GetTaobaoDeActivitySecuritytokenApplyAPIRequest() *TaobaoDeActivitySecuritytokenApplyAPIRequest {
+	return poolTaobaoDeActivitySecuritytokenApplyAPIRequest.Get().(*TaobaoDeActivitySecuritytokenApplyAPIRequest)
+}
+
+// ReleaseTaobaoDeActivitySecuritytokenApplyAPIRequest 将 TaobaoDeActivitySecuritytokenApplyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDeActivitySecuritytokenApplyAPIRequest(v *TaobaoDeActivitySecuritytokenApplyAPIRequest) {
+	v.Reset()
+	poolTaobaoDeActivitySecuritytokenApplyAPIRequest.Put(v)
 }

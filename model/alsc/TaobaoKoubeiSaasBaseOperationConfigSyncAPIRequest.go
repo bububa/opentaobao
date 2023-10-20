@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest struct {
 // NewTaobaoKoubeiSaasBaseOperationConfigSyncRequest 初始化TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest对象
 func NewTaobaoKoubeiSaasBaseOperationConfigSyncRequest() *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest {
 	return &TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) Reset() {
+	r._merchantId = ""
+	r._requestId = ""
+	r._outerOperatorId = ""
+	r._bizType = ""
+	r._operationConfig = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) SetOperationConfig(_
 // GetOperationConfig OperationConfig Getter
 func (r TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) GetOperationConfig() string {
 	return r._operationConfig
+}
+
+var poolTaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoKoubeiSaasBaseOperationConfigSyncRequest()
+	},
+}
+
+// GetTaobaoKoubeiSaasBaseOperationConfigSyncRequest 从 sync.Pool 获取 TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest
+func GetTaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest() *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest {
+	return poolTaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest.Get().(*TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest)
+}
+
+// ReleaseTaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest 将 TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest(v *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) {
+	v.Reset()
+	poolTaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest.Put(v)
 }

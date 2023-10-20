@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.apply.search
 //
 // 外部企业调用获取本企业审批单列表数据
-func AlitripBtripApplySearch(clt *core.SDKClient, req *btrip.AlitripBtripApplySearchAPIRequest, session string) (*btrip.AlitripBtripApplySearchAPIResponse, error) {
-	var resp btrip.AlitripBtripApplySearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripApplySearch(clt *core.SDKClient, req *btrip.AlitripBtripApplySearchAPIRequest, resp *btrip.AlitripBtripApplySearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

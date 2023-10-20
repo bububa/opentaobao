@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeRentTradeBindItemRequest 初始化AlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest对象
 func NewAlibabaAlihouseExistinghomeRentTradeBindItemRequest() *AlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest {
 	return &AlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest) Reset() {
+	r._syncHouseTradeItemDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest) SetSyncHouseTra
 // GetSyncHouseTradeItemDto SyncHouseTradeItemDto Getter
 func (r AlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest) GetSyncHouseTradeItemDto() *SyncHouseTradeItemDto {
 	return r._syncHouseTradeItemDto
+}
+
+var poolAlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeRentTradeBindItemRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeRentTradeBindItemRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest
+func GetAlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest() *AlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest {
+	return poolAlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest.Get().(*AlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest 将 AlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest(v *AlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse struct {
 	AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponseModel).Reset()
+}
+
 // AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponseModel is 末端配配送作业回传 成功返回结果
 type AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_fulfill_dms_delivery_work_order_callback_response"`
@@ -26,4 +33,29 @@ type AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponseModel struct {
 	RespCode string `json:"resp_code,omitempty" xml:"resp_code,omitempty"`
 	// 是否成功：true 调用成功； false 调用失败
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RespMessage = ""
+	m.RespCode = ""
+	m.IsSuccess = false
+}
+
+var poolAlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse)
+	},
+}
+
+// GetAlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse 从 sync.Pool 获取 AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse
+func GetAlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse() *AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse {
+	return poolAlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse.Get().(*AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse)
+}
+
+// ReleaseAlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse 将 AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse(v *AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse.Put(v)
 }

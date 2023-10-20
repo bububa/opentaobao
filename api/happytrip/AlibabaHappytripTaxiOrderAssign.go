@@ -9,11 +9,6 @@ import (
 // alibaba.happytrip.taxi.order.assign
 //
 // 通知供应商订单指派成功
-func AlibabaHappytripTaxiOrderAssign(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiOrderAssignAPIRequest, session string) (*happytrip.AlibabaHappytripTaxiOrderAssignAPIResponse, error) {
-	var resp happytrip.AlibabaHappytripTaxiOrderAssignAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHappytripTaxiOrderAssign(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiOrderAssignAPIRequest, resp *happytrip.AlibabaHappytripTaxiOrderAssignAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

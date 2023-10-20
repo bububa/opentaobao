@@ -1,9 +1,13 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // TaobaoXhotelInfoListGetForHelloResultSet 结构体
 type TaobaoXhotelInfoListGetForHelloResultSet struct {
 	// 每个标准酒店及房型信息集合
-	Results []ShotelVo `json:"results,omitempty" xml:"results>shotel_vo,omitempty"`
+	Results []SHotelVo `json:"results,omitempty" xml:"results>s_hotel_vo,omitempty"`
 	// 渠道id
 	ChannelId string `json:"channel_id,omitempty" xml:"channel_id,omitempty"`
 	// errorCode，error=true时有值
@@ -30,4 +34,34 @@ type TaobaoXhotelInfoListGetForHelloResultSet struct {
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
 	// 是否成功标记
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoXhotelInfoListGetForHelloResultSet = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelInfoListGetForHelloResultSet)
+	},
+}
+
+// GetTaobaoXhotelInfoListGetForHelloResultSet() 从对象池中获取TaobaoXhotelInfoListGetForHelloResultSet
+func GetTaobaoXhotelInfoListGetForHelloResultSet() *TaobaoXhotelInfoListGetForHelloResultSet {
+	return poolTaobaoXhotelInfoListGetForHelloResultSet.Get().(*TaobaoXhotelInfoListGetForHelloResultSet)
+}
+
+// ReleaseTaobaoXhotelInfoListGetForHelloResultSet 释放TaobaoXhotelInfoListGetForHelloResultSet
+func ReleaseTaobaoXhotelInfoListGetForHelloResultSet(v *TaobaoXhotelInfoListGetForHelloResultSet) {
+	v.Results = v.Results[:0]
+	v.ChannelId = ""
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.H5ListUrl = ""
+	v.HotelListUrl = ""
+	v.RequestId = ""
+	v.SuccessFlag = 0
+	v.TotalResults = 0
+	v.Version = 0
+	v.LastId = 0
+	v.Error = false
+	v.HasNext = false
+	v.Success = false
+	poolTaobaoXhotelInfoListGetForHelloResultSet.Put(v)
 }

@@ -2,6 +2,7 @@ package store
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoPlaceStoreUpdateLabelAPIRequest struct {
 // NewTaobaoPlaceStoreUpdateLabelRequest 初始化TaobaoPlaceStoreUpdateLabelAPIRequest对象
 func NewTaobaoPlaceStoreUpdateLabelRequest() *TaobaoPlaceStoreUpdateLabelAPIRequest {
 	return &TaobaoPlaceStoreUpdateLabelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPlaceStoreUpdateLabelAPIRequest) Reset() {
+	r._labelIdList = r._labelIdList[:0]
+	r._businessCode = ""
+	r._labelType = ""
+	r._storeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoPlaceStoreUpdateLabelAPIRequest) SetStoreId(_storeId int64) error
 // GetStoreId StoreId Getter
 func (r TaobaoPlaceStoreUpdateLabelAPIRequest) GetStoreId() int64 {
 	return r._storeId
+}
+
+var poolTaobaoPlaceStoreUpdateLabelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPlaceStoreUpdateLabelRequest()
+	},
+}
+
+// GetTaobaoPlaceStoreUpdateLabelRequest 从 sync.Pool 获取 TaobaoPlaceStoreUpdateLabelAPIRequest
+func GetTaobaoPlaceStoreUpdateLabelAPIRequest() *TaobaoPlaceStoreUpdateLabelAPIRequest {
+	return poolTaobaoPlaceStoreUpdateLabelAPIRequest.Get().(*TaobaoPlaceStoreUpdateLabelAPIRequest)
+}
+
+// ReleaseTaobaoPlaceStoreUpdateLabelAPIRequest 将 TaobaoPlaceStoreUpdateLabelAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPlaceStoreUpdateLabelAPIRequest(v *TaobaoPlaceStoreUpdateLabelAPIRequest) {
+	v.Reset()
+	poolTaobaoPlaceStoreUpdateLabelAPIRequest.Put(v)
 }

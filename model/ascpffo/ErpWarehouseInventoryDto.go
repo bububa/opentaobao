@@ -1,5 +1,9 @@
 package ascpffo
 
+import (
+	"sync"
+)
+
 // ErpWarehouseInventoryDto 结构体
 type ErpWarehouseInventoryDto struct {
 	// 仓名称
@@ -22,4 +26,30 @@ type ErpWarehouseInventoryDto struct {
 	ScItemId int64 `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
 	// 库存类型(1 良品，101 残品)
 	InventoryType int64 `json:"inventory_type,omitempty" xml:"inventory_type,omitempty"`
+}
+
+var poolErpWarehouseInventoryDto = sync.Pool{
+	New: func() any {
+		return new(ErpWarehouseInventoryDto)
+	},
+}
+
+// GetErpWarehouseInventoryDto() 从对象池中获取ErpWarehouseInventoryDto
+func GetErpWarehouseInventoryDto() *ErpWarehouseInventoryDto {
+	return poolErpWarehouseInventoryDto.Get().(*ErpWarehouseInventoryDto)
+}
+
+// ReleaseErpWarehouseInventoryDto 释放ErpWarehouseInventoryDto
+func ReleaseErpWarehouseInventoryDto(v *ErpWarehouseInventoryDto) {
+	v.StoreName = ""
+	v.StoreCode = ""
+	v.WhcBarCode = ""
+	v.ScItemCode = ""
+	v.ScItemName = ""
+	v.LockQuantity = ""
+	v.Quantity = ""
+	v.Feature = ""
+	v.ScItemId = 0
+	v.InventoryType = 0
+	poolErpWarehouseInventoryDto.Put(v)
 }

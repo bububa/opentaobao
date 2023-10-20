@@ -1,5 +1,9 @@
 package refund
 
+import (
+	"sync"
+)
+
 // Refund 结构体
 type Refund struct {
 	// 退款单号
@@ -60,4 +64,49 @@ type Refund struct {
 	RefundVersion int64 `json:"refund_version,omitempty" xml:"refund_version,omitempty"`
 	// 买家是否需要退货。可选值:true(是),false(否)
 	HasGoodReturn bool `json:"has_good_return,omitempty" xml:"has_good_return,omitempty"`
+}
+
+var poolRefund = sync.Pool{
+	New: func() any {
+		return new(Refund)
+	},
+}
+
+// GetRefund() 从对象池中获取Refund
+func GetRefund() *Refund {
+	return poolRefund.Get().(*Refund)
+}
+
+// ReleaseRefund 释放Refund
+func ReleaseRefund(v *Refund) {
+	v.RefundId = ""
+	v.Modified = ""
+	v.Status = ""
+	v.TotalFee = ""
+	v.SellerNick = ""
+	v.Created = ""
+	v.OrderStatus = ""
+	v.GoodStatus = ""
+	v.RefundFee = ""
+	v.Payment = ""
+	v.Reason = ""
+	v.Desc = ""
+	v.Title = ""
+	v.CompanyName = ""
+	v.Sid = ""
+	v.RefundPhase = ""
+	v.Sku = ""
+	v.Attribute = ""
+	v.OuterId = ""
+	v.OperationContraint = ""
+	v.Ouid = ""
+	v.BuyerOpenUid = ""
+	v.BuyerNick = ""
+	v.DisputeType = ""
+	v.Tid = 0
+	v.Oid = 0
+	v.Num = 0
+	v.RefundVersion = 0
+	v.HasGoodReturn = false
+	poolRefund.Put(v)
 }

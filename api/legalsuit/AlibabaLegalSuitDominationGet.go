@@ -9,11 +9,6 @@ import (
 // alibaba.legal.suit.domination.get
 //
 // 查询管辖信息
-func AlibabaLegalSuitDominationGet(clt *core.SDKClient, req *legalsuit.AlibabaLegalSuitDominationGetAPIRequest, session string) (*legalsuit.AlibabaLegalSuitDominationGetAPIResponse, error) {
-	var resp legalsuit.AlibabaLegalSuitDominationGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLegalSuitDominationGet(clt *core.SDKClient, req *legalsuit.AlibabaLegalSuitDominationGetAPIRequest, resp *legalsuit.AlibabaLegalSuitDominationGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

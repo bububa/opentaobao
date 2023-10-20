@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // MemberRight 结构体
 type MemberRight struct {
 	// 会员权益名称
@@ -14,4 +18,26 @@ type MemberRight struct {
 	IfLock bool `json:"if_lock,omitempty" xml:"if_lock,omitempty"`
 	// 是否标识为 new 权益
 	IfNew bool `json:"if_new,omitempty" xml:"if_new,omitempty"`
+}
+
+var poolMemberRight = sync.Pool{
+	New: func() any {
+		return new(MemberRight)
+	},
+}
+
+// GetMemberRight() 从对象池中获取MemberRight
+func GetMemberRight() *MemberRight {
+	return poolMemberRight.Get().(*MemberRight)
+}
+
+// ReleaseMemberRight 释放MemberRight
+func ReleaseMemberRight(v *MemberRight) {
+	v.MemberRightDesc = ""
+	v.MemberRightContent = ""
+	v.IconCodePoint = ""
+	v.Order = ""
+	v.IfLock = false
+	v.IfNew = false
+	poolMemberRight.Put(v)
 }

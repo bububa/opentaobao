@@ -9,11 +9,6 @@ import (
 // taobao.cityretail.wmfl.convert.warehouse
 //
 // 同城零售完美履约转仓
-func TaobaoCityretailWmflConvertWarehouse(clt *core.SDKClient, req *cityretail.TaobaoCityretailWmflConvertWarehouseAPIRequest, session string) (*cityretail.TaobaoCityretailWmflConvertWarehouseAPIResponse, error) {
-	var resp cityretail.TaobaoCityretailWmflConvertWarehouseAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoCityretailWmflConvertWarehouse(clt *core.SDKClient, req *cityretail.TaobaoCityretailWmflConvertWarehouseAPIRequest, resp *cityretail.TaobaoCityretailWmflConvertWarehouseAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

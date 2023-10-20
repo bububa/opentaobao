@@ -9,11 +9,6 @@ import (
 // alibaba.sp.open.payment.repay
 //
 // 智付重新打款
-func AlibabaSpOpenPaymentRepay(clt *core.SDKClient, req *fpm.AlibabaSpOpenPaymentRepayAPIRequest, session string) (*fpm.AlibabaSpOpenPaymentRepayAPIResponse, error) {
-	var resp fpm.AlibabaSpOpenPaymentRepayAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSpOpenPaymentRepay(clt *core.SDKClient, req *fpm.AlibabaSpOpenPaymentRepayAPIRequest, resp *fpm.AlibabaSpOpenPaymentRepayAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

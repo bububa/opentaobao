@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // StoreEntrustDto 结构体
 type StoreEntrustDto struct {
 	// 房源委托版本
@@ -32,4 +36,35 @@ type StoreEntrustDto struct {
 	IsExist bool `json:"is_exist,omitempty" xml:"is_exist,omitempty"`
 	// 是否存在委托
 	IsCommission bool `json:"is_commission,omitempty" xml:"is_commission,omitempty"`
+}
+
+var poolStoreEntrustDto = sync.Pool{
+	New: func() any {
+		return new(StoreEntrustDto)
+	},
+}
+
+// GetStoreEntrustDto() 从对象池中获取StoreEntrustDto
+func GetStoreEntrustDto() *StoreEntrustDto {
+	return poolStoreEntrustDto.Get().(*StoreEntrustDto)
+}
+
+// ReleaseStoreEntrustDto 释放StoreEntrustDto
+func ReleaseStoreEntrustDto(v *StoreEntrustDto) {
+	v.EntrustVersion = ""
+	v.InsideArea = ""
+	v.BuildingArea = ""
+	v.RoomNo = ""
+	v.UnitNo = ""
+	v.BuildingNo = ""
+	v.HouseAddress = ""
+	v.CommunityName = ""
+	v.EntrustItemId = 0
+	v.EntrustId = 0
+	v.CommunityItemId = 0
+	v.CommunityId = 0
+	v.TradeStatus = 0
+	v.IsExist = false
+	v.IsCommission = false
+	poolStoreEntrustDto.Put(v)
 }

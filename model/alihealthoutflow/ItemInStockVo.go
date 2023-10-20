@@ -1,5 +1,9 @@
 package alihealthoutflow
 
+import (
+	"sync"
+)
+
 // ItemInStockVo 结构体
 type ItemInStockVo struct {
 	// tab名
@@ -24,4 +28,31 @@ type ItemInStockVo struct {
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
 	// 商品id
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+}
+
+var poolItemInStockVo = sync.Pool{
+	New: func() any {
+		return new(ItemInStockVo)
+	},
+}
+
+// GetItemInStockVo() 从对象池中获取ItemInStockVo
+func GetItemInStockVo() *ItemInStockVo {
+	return poolItemInStockVo.Get().(*ItemInStockVo)
+}
+
+// ReleaseItemInStockVo 释放ItemInStockVo
+func ReleaseItemInStockVo(v *ItemInStockVo) {
+	v.TabName = ""
+	v.Address = ""
+	v.ClientName = ""
+	v.OriginPrice = ""
+	v.Source = ""
+	v.Title = ""
+	v.Tags = ""
+	v.EntryId = ""
+	v.ImgUrl = ""
+	v.Price = ""
+	v.ItemId = 0
+	poolItemInStockVo.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.flight.distribution.account
 //
 // 机票分销企业或者tmc企业预存or月结账户查询
-func AlitripBtripFlightDistributionAccount(clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionAccountAPIRequest, session string) (*btrip.AlitripBtripFlightDistributionAccountAPIResponse, error) {
-	var resp btrip.AlitripBtripFlightDistributionAccountAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripFlightDistributionAccount(clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionAccountAPIRequest, resp *btrip.AlitripBtripFlightDistributionAccountAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

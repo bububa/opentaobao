@@ -2,6 +2,7 @@ package user
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoKoubeiTribeOpenUserQueryAPIResponse struct {
 	TaobaoKoubeiTribeOpenUserQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoKoubeiTribeOpenUserQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoKoubeiTribeOpenUserQueryAPIResponseModel).Reset()
+}
+
 // TaobaoKoubeiTribeOpenUserQueryAPIResponseModel is 获取用户openId 成功返回结果
 type TaobaoKoubeiTribeOpenUserQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"koubei_tribe_open_user_query_response"`
@@ -22,4 +29,27 @@ type TaobaoKoubeiTribeOpenUserQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *TaobaoKoubeiTribeOpenUserQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoKoubeiTribeOpenUserQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoKoubeiTribeOpenUserQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoKoubeiTribeOpenUserQueryAPIResponse)
+	},
+}
+
+// GetTaobaoKoubeiTribeOpenUserQueryAPIResponse 从 sync.Pool 获取 TaobaoKoubeiTribeOpenUserQueryAPIResponse
+func GetTaobaoKoubeiTribeOpenUserQueryAPIResponse() *TaobaoKoubeiTribeOpenUserQueryAPIResponse {
+	return poolTaobaoKoubeiTribeOpenUserQueryAPIResponse.Get().(*TaobaoKoubeiTribeOpenUserQueryAPIResponse)
+}
+
+// ReleaseTaobaoKoubeiTribeOpenUserQueryAPIResponse 将 TaobaoKoubeiTribeOpenUserQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoKoubeiTribeOpenUserQueryAPIResponse(v *TaobaoKoubeiTribeOpenUserQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoKoubeiTribeOpenUserQueryAPIResponse.Put(v)
 }

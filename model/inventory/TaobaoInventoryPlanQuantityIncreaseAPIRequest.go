@@ -2,6 +2,7 @@ package inventory
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoInventoryPlanQuantityIncreaseAPIRequest struct {
 // NewTaobaoInventoryPlanQuantityIncreaseRequest 初始化TaobaoInventoryPlanQuantityIncreaseAPIRequest对象
 func NewTaobaoInventoryPlanQuantityIncreaseRequest() *TaobaoInventoryPlanQuantityIncreaseAPIRequest {
 	return &TaobaoInventoryPlanQuantityIncreaseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoInventoryPlanQuantityIncreaseAPIRequest) Reset() {
+	r._planInvAdjustTop = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoInventoryPlanQuantityIncreaseAPIRequest) SetPlanInvAdjustTop(_pla
 // GetPlanInvAdjustTop PlanInvAdjustTop Getter
 func (r TaobaoInventoryPlanQuantityIncreaseAPIRequest) GetPlanInvAdjustTop() *PlanInvAdjustTopDto {
 	return r._planInvAdjustTop
+}
+
+var poolTaobaoInventoryPlanQuantityIncreaseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoInventoryPlanQuantityIncreaseRequest()
+	},
+}
+
+// GetTaobaoInventoryPlanQuantityIncreaseRequest 从 sync.Pool 获取 TaobaoInventoryPlanQuantityIncreaseAPIRequest
+func GetTaobaoInventoryPlanQuantityIncreaseAPIRequest() *TaobaoInventoryPlanQuantityIncreaseAPIRequest {
+	return poolTaobaoInventoryPlanQuantityIncreaseAPIRequest.Get().(*TaobaoInventoryPlanQuantityIncreaseAPIRequest)
+}
+
+// ReleaseTaobaoInventoryPlanQuantityIncreaseAPIRequest 将 TaobaoInventoryPlanQuantityIncreaseAPIRequest 放入 sync.Pool
+func ReleaseTaobaoInventoryPlanQuantityIncreaseAPIRequest(v *TaobaoInventoryPlanQuantityIncreaseAPIRequest) {
+	v.Reset()
+	poolTaobaoInventoryPlanQuantityIncreaseAPIRequest.Put(v)
 }

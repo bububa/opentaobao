@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.kyt.updatebillcode
 //
 // 零售修改出入库单追溯码
-func AlibabaAlihealthDrugKytUpdatebillcode(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytUpdatebillcodeAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytUpdatebillcodeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugKytUpdatebillcode(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytUpdatebillcodeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

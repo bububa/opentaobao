@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrtCrmActivityDto 结构体
 type NrtCrmActivityDto struct {
 	// 有价券DTO
@@ -36,4 +40,37 @@ type NrtCrmActivityDto struct {
 	NrtCrmLiveDto *NrtCrmLiveDto `json:"nrt_crm_live_dto,omitempty" xml:"nrt_crm_live_dto,omitempty"`
 	// 卖场ID
 	MallId int64 `json:"mall_id,omitempty" xml:"mall_id,omitempty"`
+}
+
+var poolNrtCrmActivityDto = sync.Pool{
+	New: func() any {
+		return new(NrtCrmActivityDto)
+	},
+}
+
+// GetNrtCrmActivityDto() 从对象池中获取NrtCrmActivityDto
+func GetNrtCrmActivityDto() *NrtCrmActivityDto {
+	return poolNrtCrmActivityDto.Get().(*NrtCrmActivityDto)
+}
+
+// ReleaseNrtCrmActivityDto 释放NrtCrmActivityDto
+func ReleaseNrtCrmActivityDto(v *NrtCrmActivityDto) {
+	v.SceneActivityList = v.SceneActivityList[:0]
+	v.BannerUrl = ""
+	v.StatusStr = ""
+	v.EndTime = ""
+	v.StartTime = ""
+	v.Title = ""
+	v.Description = ""
+	v.Rule = ""
+	v.CertificateRights = ""
+	v.CityId = 0
+	v.Status = 0
+	v.SellerId = 0
+	v.ActivityId = 0
+	v.PageId = 0
+	v.TmpCertificateId = 0
+	v.NrtCrmLiveDto = nil
+	v.MallId = 0
+	poolNrtCrmActivityDto.Put(v)
 }

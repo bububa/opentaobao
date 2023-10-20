@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // CapacityRuleUpdateRequest 结构体
 type CapacityRuleUpdateRequest struct {
 	// 特殊日期产能（组），最多20条
@@ -16,4 +20,27 @@ type CapacityRuleUpdateRequest struct {
 	NormalCapacity string `json:"normal_capacity,omitempty" xml:"normal_capacity,omitempty"`
 	// 业务请求时间戳（毫秒）
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
+}
+
+var poolCapacityRuleUpdateRequest = sync.Pool{
+	New: func() any {
+		return new(CapacityRuleUpdateRequest)
+	},
+}
+
+// GetCapacityRuleUpdateRequest() 从对象池中获取CapacityRuleUpdateRequest
+func GetCapacityRuleUpdateRequest() *CapacityRuleUpdateRequest {
+	return poolCapacityRuleUpdateRequest.Get().(*CapacityRuleUpdateRequest)
+}
+
+// ReleaseCapacityRuleUpdateRequest 释放CapacityRuleUpdateRequest
+func ReleaseCapacityRuleUpdateRequest(v *CapacityRuleUpdateRequest) {
+	v.SpecialDateCapacitys = v.SpecialDateCapacitys[:0]
+	v.SpecialTimeCapacitys = v.SpecialTimeCapacitys[:0]
+	v.RequestId = ""
+	v.SupplierId = ""
+	v.WarehouseCode = ""
+	v.NormalCapacity = ""
+	v.RequestTime = 0
+	poolCapacityRuleUpdateRequest.Put(v)
 }

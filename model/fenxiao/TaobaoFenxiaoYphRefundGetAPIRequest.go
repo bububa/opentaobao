@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoFenxiaoYphRefundGetAPIRequest struct {
 // NewTaobaoFenxiaoYphRefundGetRequest 初始化TaobaoFenxiaoYphRefundGetAPIRequest对象
 func NewTaobaoFenxiaoYphRefundGetRequest() *TaobaoFenxiaoYphRefundGetAPIRequest {
 	return &TaobaoFenxiaoYphRefundGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoYphRefundGetAPIRequest) Reset() {
+	r._refundId = 0
+	r._queryB2cRefund = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoFenxiaoYphRefundGetAPIRequest) SetQueryB2cRefund(_queryB2cRefund 
 // GetQueryB2cRefund QueryB2cRefund Getter
 func (r TaobaoFenxiaoYphRefundGetAPIRequest) GetQueryB2cRefund() bool {
 	return r._queryB2cRefund
+}
+
+var poolTaobaoFenxiaoYphRefundGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoYphRefundGetRequest()
+	},
+}
+
+// GetTaobaoFenxiaoYphRefundGetRequest 从 sync.Pool 获取 TaobaoFenxiaoYphRefundGetAPIRequest
+func GetTaobaoFenxiaoYphRefundGetAPIRequest() *TaobaoFenxiaoYphRefundGetAPIRequest {
+	return poolTaobaoFenxiaoYphRefundGetAPIRequest.Get().(*TaobaoFenxiaoYphRefundGetAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoYphRefundGetAPIRequest 将 TaobaoFenxiaoYphRefundGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoYphRefundGetAPIRequest(v *TaobaoFenxiaoYphRefundGetAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoYphRefundGetAPIRequest.Put(v)
 }

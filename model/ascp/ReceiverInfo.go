@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // ReceiverInfo 结构体
 type ReceiverInfo struct {
 	// 收件人国家(地区)二字码。https://www.ufsoo.com/news/detail-59307681-b5e1-4328-a6e6-20fddd6c5ec6.html
@@ -32,4 +36,35 @@ type ReceiverInfo struct {
 	Oaid string `json:"oaid,omitempty" xml:"oaid,omitempty"`
 	// 是否虚拟号
 	Privacy string `json:"privacy,omitempty" xml:"privacy,omitempty"`
+}
+
+var poolReceiverInfo = sync.Pool{
+	New: func() any {
+		return new(ReceiverInfo)
+	},
+}
+
+// GetReceiverInfo() 从对象池中获取ReceiverInfo
+func GetReceiverInfo() *ReceiverInfo {
+	return poolReceiverInfo.Get().(*ReceiverInfo)
+}
+
+// ReleaseReceiverInfo 释放ReceiverInfo
+func ReleaseReceiverInfo(v *ReceiverInfo) {
+	v.Country = ""
+	v.Province = ""
+	v.City = ""
+	v.Area = ""
+	v.Town = ""
+	v.Company = ""
+	v.Name = ""
+	v.ZipCode = ""
+	v.Tel = ""
+	v.Mobile = ""
+	v.Email = ""
+	v.CountryCode = ""
+	v.DetailAddress = ""
+	v.Oaid = ""
+	v.Privacy = ""
+	poolReceiverInfo.Put(v)
 }

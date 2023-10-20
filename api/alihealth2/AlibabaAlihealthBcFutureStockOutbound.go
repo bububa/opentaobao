@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.bc.future.stock.outbound
 //
 // 供应商期货出库
-func AlibabaAlihealthBcFutureStockOutbound(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthBcFutureStockOutboundAPIRequest, session string) (*alihealth2.AlibabaAlihealthBcFutureStockOutboundAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthBcFutureStockOutboundAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthBcFutureStockOutbound(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthBcFutureStockOutboundAPIRequest, resp *alihealth2.AlibabaAlihealthBcFutureStockOutboundAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

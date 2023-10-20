@@ -9,11 +9,6 @@ import (
 // taobao.miniapp.widget.template.instance.update
 //
 // 小部件版本更新
-func TaobaoMiniappWidgetTemplateInstanceUpdate(clt *core.SDKClient, req *miniappopen.TaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest, session string) (*miniappopen.TaobaoMiniappWidgetTemplateInstanceUpdateAPIResponse, error) {
-	var resp miniappopen.TaobaoMiniappWidgetTemplateInstanceUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoMiniappWidgetTemplateInstanceUpdate(clt *core.SDKClient, req *miniappopen.TaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest, resp *miniappopen.TaobaoMiniappWidgetTemplateInstanceUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

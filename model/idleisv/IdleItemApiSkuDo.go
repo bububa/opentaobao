@@ -1,5 +1,9 @@
 package idleisv
 
+import (
+	"sync"
+)
+
 // IdleItemApiSkuDo 结构体
 type IdleItemApiSkuDo struct {
 	// 销售属性列表(最多2个销售属性,每一个的属性值个数为2～10)
@@ -12,4 +16,25 @@ type IdleItemApiSkuDo struct {
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 	// 库存
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolIdleItemApiSkuDo = sync.Pool{
+	New: func() any {
+		return new(IdleItemApiSkuDo)
+	},
+}
+
+// GetIdleItemApiSkuDo() 从对象池中获取IdleItemApiSkuDo
+func GetIdleItemApiSkuDo() *IdleItemApiSkuDo {
+	return poolIdleItemApiSkuDo.Get().(*IdleItemApiSkuDo)
+}
+
+// ReleaseIdleItemApiSkuDo 释放IdleItemApiSkuDo
+func ReleaseIdleItemApiSkuDo(v *IdleItemApiSkuDo) {
+	v.PropertyList = v.PropertyList[:0]
+	v.OuterId = ""
+	v.SkuId = 0
+	v.Price = 0
+	v.Quantity = 0
+	poolIdleItemApiSkuDo.Put(v)
 }

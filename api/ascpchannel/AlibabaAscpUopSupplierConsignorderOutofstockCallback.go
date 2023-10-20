@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.uop.supplier.consignorder.outofstock.callback
 //
 // 商家仓履约单纬度的仓缺货回告接口
-func AlibabaAscpUopSupplierConsignorderOutofstockCallback(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest, session string) (*ascpchannel.AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpUopSupplierConsignorderOutofstockCallback(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest, resp *ascpchannel.AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

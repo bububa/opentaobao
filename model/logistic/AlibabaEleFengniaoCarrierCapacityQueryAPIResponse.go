@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaEleFengniaoCarrierCapacityQueryAPIResponse struct {
 	AlibabaEleFengniaoCarrierCapacityQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaEleFengniaoCarrierCapacityQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEleFengniaoCarrierCapacityQueryAPIResponseModel).Reset()
+}
+
 // AlibabaEleFengniaoCarrierCapacityQueryAPIResponseModel is 按照门店查询骑手运力状态查询 成功返回结果
 type AlibabaEleFengniaoCarrierCapacityQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ele_fengniao_carrier_capacity_query_response"`
@@ -22,4 +29,27 @@ type AlibabaEleFengniaoCarrierCapacityQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 系统自动生成
 	Results []Capacities `json:"results,omitempty" xml:"results>capacities,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleFengniaoCarrierCapacityQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Results = m.Results[:0]
+}
+
+var poolAlibabaEleFengniaoCarrierCapacityQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEleFengniaoCarrierCapacityQueryAPIResponse)
+	},
+}
+
+// GetAlibabaEleFengniaoCarrierCapacityQueryAPIResponse 从 sync.Pool 获取 AlibabaEleFengniaoCarrierCapacityQueryAPIResponse
+func GetAlibabaEleFengniaoCarrierCapacityQueryAPIResponse() *AlibabaEleFengniaoCarrierCapacityQueryAPIResponse {
+	return poolAlibabaEleFengniaoCarrierCapacityQueryAPIResponse.Get().(*AlibabaEleFengniaoCarrierCapacityQueryAPIResponse)
+}
+
+// ReleaseAlibabaEleFengniaoCarrierCapacityQueryAPIResponse 将 AlibabaEleFengniaoCarrierCapacityQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEleFengniaoCarrierCapacityQueryAPIResponse(v *AlibabaEleFengniaoCarrierCapacityQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaEleFengniaoCarrierCapacityQueryAPIResponse.Put(v)
 }

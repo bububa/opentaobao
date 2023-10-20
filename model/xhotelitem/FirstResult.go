@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // FirstResult 结构体
 type FirstResult struct {
 	// 未通过时的拒绝原因等。
@@ -87,7 +91,7 @@ type FirstResult struct {
 	// 酒店状态：0: 正常;-2:停售；-1：删除
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 淘宝标准酒店信息
-	SHotel *Shotel `json:"s_hotel,omitempty" xml:"s_hotel,omitempty"`
+	SHotel *SHotel `json:"s_hotel,omitempty" xml:"s_hotel,omitempty"`
 	// hotel匹配状态: 0：待系统匹配 1：已系统匹配，匹配成功，待卖家确认 2：已系统匹配，匹配失败，待人工匹配 3：已人工匹配，匹配成功，待卖家确认 4：已人工匹配，匹配失败 5：卖家已确认，确认&amp;ldquo;YES&amp;rdquo; 6：卖家已确认，确认&amp;ldquo;NO&amp;rdquo; 7:已系统匹配，但是匹配重复，待人工确认
 	MatchStatus int64 `json:"match_status,omitempty" xml:"match_status,omitempty"`
 	// 0:国内;1:国外
@@ -116,4 +120,77 @@ type FirstResult struct {
 	HasReceipt bool `json:"has_receipt,omitempty" xml:"has_receipt,omitempty"`
 	// 橱窗推荐
 	Recommend bool `json:"recommend,omitempty" xml:"recommend,omitempty"`
+}
+
+var poolFirstResult = sync.Pool{
+	New: func() any {
+		return new(FirstResult)
+	},
+}
+
+// GetFirstResult() 从对象池中获取FirstResult
+func GetFirstResult() *FirstResult {
+	return poolFirstResult.Get().(*FirstResult)
+}
+
+// ReleaseFirstResult 释放FirstResult
+func ReleaseFirstResult(v *FirstResult) {
+	v.ErrorInfo = ""
+	v.CreatedTime = ""
+	v.ModifiedTime = ""
+	v.OuterId = ""
+	v.Name = ""
+	v.UsedName = ""
+	v.Country = ""
+	v.Business = ""
+	v.Address = ""
+	v.Longitude = ""
+	v.Latitude = ""
+	v.PositionType = ""
+	v.Tel = ""
+	v.Extend = ""
+	v.DataConfirmStr = ""
+	v.CreditCardTypes = ""
+	v.NameE = ""
+	v.Vendor = ""
+	v.CurrencyCodeName = ""
+	v.TagJson = ""
+	v.AliNick = ""
+	v.StandardRoomFacilities = ""
+	v.StandardHotelService = ""
+	v.StandardHotelFacilities = ""
+	v.StandardBookingNotice = ""
+	v.StandardAmuseFacilities = ""
+	v.ReceiptOtherTypeDesc = ""
+	v.ReceiptType = ""
+	v.PicUrls = ""
+	v.Desc = ""
+	v.Guide = ""
+	v.Title = ""
+	v.ReceiptInfo = ""
+	v.Inventory = ""
+	v.ExtendInfo1 = ""
+	v.ExtendInfo2 = ""
+	v.ExtendInfo3 = ""
+	v.OutRid = ""
+	v.DownReason = ""
+	v.SwitchCalendar = ""
+	v.Hid = 0
+	v.Status = 0
+	v.SHotel = nil
+	v.MatchStatus = 0
+	v.Domestic = 0
+	v.Province = 0
+	v.City = 0
+	v.District = 0
+	v.BillingProcessType = 0
+	v.OnSale = 0
+	v.HotSearch = 0
+	v.HotSale = 0
+	v.Rid = 0
+	v.Iid = 0
+	v.Gid = 0
+	v.HasReceipt = false
+	v.Recommend = false
+	poolFirstResult.Put(v)
 }

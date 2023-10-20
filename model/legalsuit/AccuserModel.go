@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // AccuserModel 结构体
 type AccuserModel struct {
 	// 承办律师联系方式
@@ -22,4 +26,30 @@ type AccuserModel struct {
 	SerialNumber int64 `json:"serial_number,omitempty" xml:"serial_number,omitempty"`
 	// 是否为集团公司
 	IsAlibabaCompany bool `json:"is_alibaba_company,omitempty" xml:"is_alibaba_company,omitempty"`
+}
+
+var poolAccuserModel = sync.Pool{
+	New: func() any {
+		return new(AccuserModel)
+	},
+}
+
+// GetAccuserModel() 从对象池中获取AccuserModel
+func GetAccuserModel() *AccuserModel {
+	return poolAccuserModel.Get().(*AccuserModel)
+}
+
+// ReleaseAccuserModel 释放AccuserModel
+func ReleaseAccuserModel(v *AccuserModel) {
+	v.LawyerContact = ""
+	v.LawyerName = ""
+	v.LawFirmName = ""
+	v.Address = ""
+	v.CertifyNumber = ""
+	v.CertifyType = ""
+	v.Contact = ""
+	v.Name = ""
+	v.SerialNumber = 0
+	v.IsAlibabaCompany = false
+	poolAccuserModel.Put(v)
 }

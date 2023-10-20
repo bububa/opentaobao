@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.increment.info.get
 //
 // 酒店状态增量查询接口
-func TaobaoXhotelIncrementInfoGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelIncrementInfoGetAPIRequest, session string) (*xhotelitem.TaobaoXhotelIncrementInfoGetAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelIncrementInfoGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelIncrementInfoGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelIncrementInfoGetAPIRequest, resp *xhotelitem.TaobaoXhotelIncrementInfoGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

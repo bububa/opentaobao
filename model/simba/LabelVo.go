@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // LabelVo 结构体
 type LabelVo struct {
 	// 标签选项分组
@@ -26,4 +30,32 @@ type LabelVo struct {
 	LabelOptionProperties *LabelOptionProperties `json:"label_option_properties,omitempty" xml:"label_option_properties,omitempty"`
 	// 是否可以绑定多个定向,获取不到 默认为否,true:是 false:否
 	IsMulti bool `json:"is_multi,omitempty" xml:"is_multi,omitempty"`
+}
+
+var poolLabelVo = sync.Pool{
+	New: func() any {
+		return new(LabelVo)
+	},
+}
+
+// GetLabelVo() 从对象池中获取LabelVo
+func GetLabelVo() *LabelVo {
+	return poolLabelVo.Get().(*LabelVo)
+}
+
+// ReleaseLabelVo 释放LabelVo
+func ReleaseLabelVo(v *LabelVo) {
+	v.OptionGroupList = v.OptionGroupList[:0]
+	v.OptionList = v.OptionList[:0]
+	v.ShowTagList = v.ShowTagList[:0]
+	v.LabelName = ""
+	v.LabelDesc = ""
+	v.LabelValue = ""
+	v.PriceDimension = ""
+	v.LabelGroupName = ""
+	v.TargetType = 0
+	v.LabelId = 0
+	v.LabelOptionProperties = nil
+	v.IsMulti = false
+	poolLabelVo.Put(v)
 }

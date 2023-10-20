@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoSubwayCreativeofflineFindAPIResponse struct {
 	TaobaoSubwayCreativeofflineFindAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoSubwayCreativeofflineFindAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSubwayCreativeofflineFindAPIResponseModel).Reset()
+}
+
 // TaobaoSubwayCreativeofflineFindAPIResponseModel is 获取创意离线多日汇总报表 成功返回结果
 type TaobaoSubwayCreativeofflineFindAPIResponseModel struct {
 	XMLName xml.Name `xml:"subway_creativeoffline_find_response"`
@@ -26,4 +33,29 @@ type TaobaoSubwayCreativeofflineFindAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 总条数
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSubwayCreativeofflineFindAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = m.Result[:0]
+	m.Message = ""
+	m.TotalCount = 0
+}
+
+var poolTaobaoSubwayCreativeofflineFindAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSubwayCreativeofflineFindAPIResponse)
+	},
+}
+
+// GetTaobaoSubwayCreativeofflineFindAPIResponse 从 sync.Pool 获取 TaobaoSubwayCreativeofflineFindAPIResponse
+func GetTaobaoSubwayCreativeofflineFindAPIResponse() *TaobaoSubwayCreativeofflineFindAPIResponse {
+	return poolTaobaoSubwayCreativeofflineFindAPIResponse.Get().(*TaobaoSubwayCreativeofflineFindAPIResponse)
+}
+
+// ReleaseTaobaoSubwayCreativeofflineFindAPIResponse 将 TaobaoSubwayCreativeofflineFindAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSubwayCreativeofflineFindAPIResponse(v *TaobaoSubwayCreativeofflineFindAPIResponse) {
+	v.Reset()
+	poolTaobaoSubwayCreativeofflineFindAPIResponse.Put(v)
 }

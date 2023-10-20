@@ -1,5 +1,9 @@
 package tanx
 
+import (
+	"sync"
+)
+
 // CreativeAuditDto 结构体
 type CreativeAuditDto struct {
 	// 媒体审核列表
@@ -18,4 +22,28 @@ type CreativeAuditDto struct {
 	Level int64 `json:"level,omitempty" xml:"level,omitempty"`
 	// DSP用户ID
 	DspId int64 `json:"dsp_id,omitempty" xml:"dsp_id,omitempty"`
+}
+
+var poolCreativeAuditDto = sync.Pool{
+	New: func() any {
+		return new(CreativeAuditDto)
+	},
+}
+
+// GetCreativeAuditDto() 从对象池中获取CreativeAuditDto
+func GetCreativeAuditDto() *CreativeAuditDto {
+	return poolCreativeAuditDto.Get().(*CreativeAuditDto)
+}
+
+// ReleaseCreativeAuditDto 释放CreativeAuditDto
+func ReleaseCreativeAuditDto(v *CreativeAuditDto) {
+	v.PublishersAuditInfoList = v.PublishersAuditInfoList[:0]
+	v.CreativeId = ""
+	v.Status = ""
+	v.RefuseCause = ""
+	v.AdboardData = ""
+	v.AdvertiserIds = ""
+	v.Level = 0
+	v.DspId = 0
+	poolCreativeAuditDto.Put(v)
 }

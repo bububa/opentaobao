@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // ShotelPropertiesSetVo 结构体
 type ShotelPropertiesSetVo struct {
 	// 预订须知
@@ -14,4 +18,26 @@ type ShotelPropertiesSetVo struct {
 	ShotelNomalPictures []ShotelPropertiesVo `json:"shotel_nomal_pictures,omitempty" xml:"shotel_nomal_pictures>shotel_properties_vo,omitempty"`
 	// 酒店维度的房间设施
 	ShotelRoomFacilities []ShotelPropertiesVo `json:"shotel_room_facilities,omitempty" xml:"shotel_room_facilities>shotel_properties_vo,omitempty"`
+}
+
+var poolShotelPropertiesSetVo = sync.Pool{
+	New: func() any {
+		return new(ShotelPropertiesSetVo)
+	},
+}
+
+// GetShotelPropertiesSetVo() 从对象池中获取ShotelPropertiesSetVo
+func GetShotelPropertiesSetVo() *ShotelPropertiesSetVo {
+	return poolShotelPropertiesSetVo.Get().(*ShotelPropertiesSetVo)
+}
+
+// ReleaseShotelPropertiesSetVo 释放ShotelPropertiesSetVo
+func ReleaseShotelPropertiesSetVo(v *ShotelPropertiesSetVo) {
+	v.ShotelBookingNotics = v.ShotelBookingNotics[:0]
+	v.ShotelFunFacilities = v.ShotelFunFacilities[:0]
+	v.ShotelHotelFacilities = v.ShotelHotelFacilities[:0]
+	v.ShotelHotelServices = v.ShotelHotelServices[:0]
+	v.ShotelNomalPictures = v.ShotelNomalPictures[:0]
+	v.ShotelRoomFacilities = v.ShotelRoomFacilities[:0]
+	poolShotelPropertiesSetVo.Put(v)
 }

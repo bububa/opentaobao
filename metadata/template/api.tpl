@@ -9,11 +9,6 @@ import (
 // {{ .ApiName }}
 //
 {{ html .Desc }}
-func {{ .Name }}(clt *core.SDKClient, req *{{ .Pkg }}.{{ .Name }}APIRequest, session string) (*{{ .Pkg }}.{{ .Name }}APIResponse, error) {
-    var resp {{ .Pkg }}.{{ .Name }}APIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+func {{ .Name }}(clt *core.SDKClient, req *{{ .Pkg }}.{{ .Name }}APIRequest, resp *{{ .Pkg }}.{{ .Name }}APIResponse, session string) error {
+    return clt.Post(req, resp, session)
 }

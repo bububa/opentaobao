@@ -2,6 +2,7 @@ package icbu
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaIcbuPhotobankGroupOperateAPIResponse struct {
 	AlibabaIcbuPhotobankGroupOperateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaIcbuPhotobankGroupOperateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIcbuPhotobankGroupOperateAPIResponseModel).Reset()
+}
+
 // AlibabaIcbuPhotobankGroupOperateAPIResponseModel is 图片银行分组操作接口 成功返回结果
 type AlibabaIcbuPhotobankGroupOperateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_icbu_photobank_group_operate_response"`
@@ -22,4 +29,27 @@ type AlibabaIcbuPhotobankGroupOperateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回的数据结果
 	PhotoGroupResult *PhotoGroupResult `json:"photo_group_result,omitempty" xml:"photo_group_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIcbuPhotobankGroupOperateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.PhotoGroupResult = nil
+}
+
+var poolAlibabaIcbuPhotobankGroupOperateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIcbuPhotobankGroupOperateAPIResponse)
+	},
+}
+
+// GetAlibabaIcbuPhotobankGroupOperateAPIResponse 从 sync.Pool 获取 AlibabaIcbuPhotobankGroupOperateAPIResponse
+func GetAlibabaIcbuPhotobankGroupOperateAPIResponse() *AlibabaIcbuPhotobankGroupOperateAPIResponse {
+	return poolAlibabaIcbuPhotobankGroupOperateAPIResponse.Get().(*AlibabaIcbuPhotobankGroupOperateAPIResponse)
+}
+
+// ReleaseAlibabaIcbuPhotobankGroupOperateAPIResponse 将 AlibabaIcbuPhotobankGroupOperateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIcbuPhotobankGroupOperateAPIResponse(v *AlibabaIcbuPhotobankGroupOperateAPIResponse) {
+	v.Reset()
+	poolAlibabaIcbuPhotobankGroupOperateAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package eleenterpriserestaurant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -47,8 +48,28 @@ type AlibabaEleEnterpriseRestaurantMixAPIRequest struct {
 // NewAlibabaEleEnterpriseRestaurantMixRequest 初始化AlibabaEleEnterpriseRestaurantMixAPIRequest对象
 func NewAlibabaEleEnterpriseRestaurantMixRequest() *AlibabaEleEnterpriseRestaurantMixAPIRequest {
 	return &AlibabaEleEnterpriseRestaurantMixAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(15),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) Reset() {
+	r._categoryIds = r._categoryIds[:0]
+	r._geo = ""
+	r._rankId = ""
+	r._keyword = ""
+	r._start = 0
+	r._limit = 0
+	r._costTo = 0
+	r._costFrom = 0
+	r._insurance = 0
+	r._invoice = 0
+	r._isPremium = 0
+	r._newRestaurant = 0
+	r._deliveryMode = 0
+	r._orderBy = 0
+	r._isBookable = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -261,4 +282,21 @@ func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetIsBookable(_isBookable 
 // GetIsBookable IsBookable Getter
 func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetIsBookable() int64 {
 	return r._isBookable
+}
+
+var poolAlibabaEleEnterpriseRestaurantMixAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleEnterpriseRestaurantMixRequest()
+	},
+}
+
+// GetAlibabaEleEnterpriseRestaurantMixRequest 从 sync.Pool 获取 AlibabaEleEnterpriseRestaurantMixAPIRequest
+func GetAlibabaEleEnterpriseRestaurantMixAPIRequest() *AlibabaEleEnterpriseRestaurantMixAPIRequest {
+	return poolAlibabaEleEnterpriseRestaurantMixAPIRequest.Get().(*AlibabaEleEnterpriseRestaurantMixAPIRequest)
+}
+
+// ReleaseAlibabaEleEnterpriseRestaurantMixAPIRequest 将 AlibabaEleEnterpriseRestaurantMixAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleEnterpriseRestaurantMixAPIRequest(v *AlibabaEleEnterpriseRestaurantMixAPIRequest) {
+	v.Reset()
+	poolAlibabaEleEnterpriseRestaurantMixAPIRequest.Put(v)
 }

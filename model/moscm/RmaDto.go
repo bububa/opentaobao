@@ -1,5 +1,9 @@
 package moscm
 
+import (
+	"sync"
+)
+
 // RmaDto 结构体
 type RmaDto struct {
 	// 商品明细
@@ -38,4 +42,38 @@ type RmaDto struct {
 	OutCounterId string `json:"out_counter_id,omitempty" xml:"out_counter_id,omitempty"`
 	// 银泰专柜Id
 	CounterId string `json:"counter_id,omitempty" xml:"counter_id,omitempty"`
+}
+
+var poolRmaDto = sync.Pool{
+	New: func() any {
+		return new(RmaDto)
+	},
+}
+
+// GetRmaDto() 从对象池中获取RmaDto
+func GetRmaDto() *RmaDto {
+	return poolRmaDto.Get().(*RmaDto)
+}
+
+// ReleaseRmaDto 释放RmaDto
+func ReleaseRmaDto(v *RmaDto) {
+	v.RmaItems = v.RmaItems[:0]
+	v.ExpressNo = ""
+	v.ExpressName = ""
+	v.Type = ""
+	v.Status = ""
+	v.LastUpdated = ""
+	v.RefundDate = ""
+	v.DateCreated = ""
+	v.Desc = ""
+	v.Reason = ""
+	v.ReturnTheWay = ""
+	v.Freight = ""
+	v.Amount = ""
+	v.OrderNumber = ""
+	v.RmaNumber = ""
+	v.Refunds = ""
+	v.OutCounterId = ""
+	v.CounterId = ""
+	poolRmaDto.Put(v)
 }

@@ -2,6 +2,7 @@ package ioti
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaItEslSendledAPIRequest struct {
 // NewAlibabaItEslSendledRequest 初始化AlibabaItEslSendledAPIRequest对象
 func NewAlibabaItEslSendledRequest() *AlibabaItEslSendledAPIRequest {
 	return &AlibabaItEslSendledAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaItEslSendledAPIRequest) Reset() {
+	r._macAp = ""
+	r._type = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaItEslSendledAPIRequest) SetType(_type string) error {
 // GetType Type Getter
 func (r AlibabaItEslSendledAPIRequest) GetType() string {
 	return r._type
+}
+
+var poolAlibabaItEslSendledAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaItEslSendledRequest()
+	},
+}
+
+// GetAlibabaItEslSendledRequest 从 sync.Pool 获取 AlibabaItEslSendledAPIRequest
+func GetAlibabaItEslSendledAPIRequest() *AlibabaItEslSendledAPIRequest {
+	return poolAlibabaItEslSendledAPIRequest.Get().(*AlibabaItEslSendledAPIRequest)
+}
+
+// ReleaseAlibabaItEslSendledAPIRequest 将 AlibabaItEslSendledAPIRequest 放入 sync.Pool
+func ReleaseAlibabaItEslSendledAPIRequest(v *AlibabaItEslSendledAPIRequest) {
+	v.Reset()
+	poolAlibabaItEslSendledAPIRequest.Put(v)
 }

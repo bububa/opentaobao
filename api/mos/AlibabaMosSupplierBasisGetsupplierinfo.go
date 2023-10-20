@@ -9,11 +9,6 @@ import (
 // alibaba.mos.supplier.basis.getsupplierinfo
 //
 // 基于供应商id获取供应商基础脱敏信息
-func AlibabaMosSupplierBasisGetsupplierinfo(clt *core.SDKClient, req *mos.AlibabaMosSupplierBasisGetsupplierinfoAPIRequest, session string) (*mos.AlibabaMosSupplierBasisGetsupplierinfoAPIResponse, error) {
-	var resp mos.AlibabaMosSupplierBasisGetsupplierinfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMosSupplierBasisGetsupplierinfo(clt *core.SDKClient, req *mos.AlibabaMosSupplierBasisGetsupplierinfoAPIRequest, resp *mos.AlibabaMosSupplierBasisGetsupplierinfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

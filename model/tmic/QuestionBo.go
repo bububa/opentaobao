@@ -1,5 +1,9 @@
 package tmic
 
+import (
+	"sync"
+)
+
 // QuestionBo 结构体
 type QuestionBo struct {
 	// 此问题唯一编码
@@ -26,4 +30,32 @@ type QuestionBo struct {
 	SubQuestionBO *SubQuestionBo `json:"sub_question_b_o,omitempty" xml:"sub_question_b_o,omitempty"`
 	// 该题是否必答，true-必答，false-选答
 	Required bool `json:"required,omitempty" xml:"required,omitempty"`
+}
+
+var poolQuestionBo = sync.Pool{
+	New: func() any {
+		return new(QuestionBo)
+	},
+}
+
+// GetQuestionBo() 从对象池中获取QuestionBo
+func GetQuestionBo() *QuestionBo {
+	return poolQuestionBo.Get().(*QuestionBo)
+}
+
+// ReleaseQuestionBo 释放QuestionBo
+func ReleaseQuestionBo(v *QuestionBo) {
+	v.Code = ""
+	v.Type = ""
+	v.Description = ""
+	v.Tip = ""
+	v.ErrTip = ""
+	v.Placeholder = ""
+	v.Options = nil
+	v.OrderNumber = 0
+	v.OptionLimit = 0
+	v.OptionBo = nil
+	v.SubQuestionBO = nil
+	v.Required = false
+	poolQuestionBo.Put(v)
 }

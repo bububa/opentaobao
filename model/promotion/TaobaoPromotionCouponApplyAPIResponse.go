@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoPromotionCouponApplyAPIResponse struct {
 	model.CommonResponse
 	TaobaoPromotionCouponApplyAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoPromotionCouponApplyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPromotionCouponApplyAPIResponseModel).Reset()
 }
 
 // TaobaoPromotionCouponApplyAPIResponseModel is 优惠券领取 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoPromotionCouponApplyAPIResponseModel struct {
 	ApplyResult bool `json:"apply_result,omitempty" xml:"apply_result,omitempty"`
 	// 接口调用结果，调用成功为true，否则为false
 	InvokeResult bool `json:"invoke_result,omitempty" xml:"invoke_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPromotionCouponApplyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorMsg = ""
+	m.ResultCode = ""
+	m.ApplyResult = false
+	m.InvokeResult = false
+}
+
+var poolTaobaoPromotionCouponApplyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPromotionCouponApplyAPIResponse)
+	},
+}
+
+// GetTaobaoPromotionCouponApplyAPIResponse 从 sync.Pool 获取 TaobaoPromotionCouponApplyAPIResponse
+func GetTaobaoPromotionCouponApplyAPIResponse() *TaobaoPromotionCouponApplyAPIResponse {
+	return poolTaobaoPromotionCouponApplyAPIResponse.Get().(*TaobaoPromotionCouponApplyAPIResponse)
+}
+
+// ReleaseTaobaoPromotionCouponApplyAPIResponse 将 TaobaoPromotionCouponApplyAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPromotionCouponApplyAPIResponse(v *TaobaoPromotionCouponApplyAPIResponse) {
+	v.Reset()
+	poolTaobaoPromotionCouponApplyAPIResponse.Put(v)
 }

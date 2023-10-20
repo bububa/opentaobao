@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // TpFundsSendResultDo 结构体
 type TpFundsSendResultDo struct {
 	// 红包ID
@@ -14,4 +18,26 @@ type TpFundsSendResultDo struct {
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 状态，true表示发放成功
 	Status bool `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolTpFundsSendResultDo = sync.Pool{
+	New: func() any {
+		return new(TpFundsSendResultDo)
+	},
+}
+
+// GetTpFundsSendResultDo() 从对象池中获取TpFundsSendResultDo
+func GetTpFundsSendResultDo() *TpFundsSendResultDo {
+	return poolTpFundsSendResultDo.Get().(*TpFundsSendResultDo)
+}
+
+// ReleaseTpFundsSendResultDo 释放TpFundsSendResultDo
+func ReleaseTpFundsSendResultDo(v *TpFundsSendResultDo) {
+	v.RedPacketsId = ""
+	v.ReceiveTime = ""
+	v.Amount = 0
+	v.FundsType = 0
+	v.BizOrderId = 0
+	v.Status = false
+	poolTpFundsSendResultDo.Put(v)
 }

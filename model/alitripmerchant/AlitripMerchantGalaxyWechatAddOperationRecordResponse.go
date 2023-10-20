@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // AlitripMerchantGalaxyWechatAddOperationRecordResponse 结构体
 type AlitripMerchantGalaxyWechatAddOperationRecordResponse struct {
 	// 状态码
@@ -10,4 +14,24 @@ type AlitripMerchantGalaxyWechatAddOperationRecordResponse struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 消息体
 	Content bool `json:"content,omitempty" xml:"content,omitempty"`
+}
+
+var poolAlitripMerchantGalaxyWechatAddOperationRecordResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyWechatAddOperationRecordResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyWechatAddOperationRecordResponse() 从对象池中获取AlitripMerchantGalaxyWechatAddOperationRecordResponse
+func GetAlitripMerchantGalaxyWechatAddOperationRecordResponse() *AlitripMerchantGalaxyWechatAddOperationRecordResponse {
+	return poolAlitripMerchantGalaxyWechatAddOperationRecordResponse.Get().(*AlitripMerchantGalaxyWechatAddOperationRecordResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyWechatAddOperationRecordResponse 释放AlitripMerchantGalaxyWechatAddOperationRecordResponse
+func ReleaseAlitripMerchantGalaxyWechatAddOperationRecordResponse(v *AlitripMerchantGalaxyWechatAddOperationRecordResponse) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Success = false
+	v.Content = false
+	poolAlitripMerchantGalaxyWechatAddOperationRecordResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.inventory.store.manage
 //
 // 创建商家仓或者更新商家仓信息
-func TaobaoInventoryStoreManage(clt *core.SDKClient, req *fenxiao.TaobaoInventoryStoreManageAPIRequest, session string) (*fenxiao.TaobaoInventoryStoreManageAPIResponse, error) {
-	var resp fenxiao.TaobaoInventoryStoreManageAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoInventoryStoreManage(clt *core.SDKClient, req *fenxiao.TaobaoInventoryStoreManageAPIRequest, resp *fenxiao.TaobaoInventoryStoreManageAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

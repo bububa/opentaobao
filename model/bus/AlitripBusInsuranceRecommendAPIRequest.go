@@ -2,6 +2,7 @@ package bus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBusInsuranceRecommendAPIRequest struct {
 // NewAlitripBusInsuranceRecommendRequest 初始化AlitripBusInsuranceRecommendAPIRequest对象
 func NewAlitripBusInsuranceRecommendRequest() *AlitripBusInsuranceRecommendAPIRequest {
 	return &AlitripBusInsuranceRecommendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBusInsuranceRecommendAPIRequest) Reset() {
+	r._insuranceRecommendRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBusInsuranceRecommendAPIRequest) SetInsuranceRecommendRq(_insura
 // GetInsuranceRecommendRq InsuranceRecommendRq Getter
 func (r AlitripBusInsuranceRecommendAPIRequest) GetInsuranceRecommendRq() *InsuranceRecommendRq {
 	return r._insuranceRecommendRq
+}
+
+var poolAlitripBusInsuranceRecommendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBusInsuranceRecommendRequest()
+	},
+}
+
+// GetAlitripBusInsuranceRecommendRequest 从 sync.Pool 获取 AlitripBusInsuranceRecommendAPIRequest
+func GetAlitripBusInsuranceRecommendAPIRequest() *AlitripBusInsuranceRecommendAPIRequest {
+	return poolAlitripBusInsuranceRecommendAPIRequest.Get().(*AlitripBusInsuranceRecommendAPIRequest)
+}
+
+// ReleaseAlitripBusInsuranceRecommendAPIRequest 将 AlitripBusInsuranceRecommendAPIRequest 放入 sync.Pool
+func ReleaseAlitripBusInsuranceRecommendAPIRequest(v *AlitripBusInsuranceRecommendAPIRequest) {
+	v.Reset()
+	poolAlitripBusInsuranceRecommendAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.legal.standpoint.draftstandpoint.insert
 //
 // 编辑后新增草稿口径
-func AlibabaLegalStandpointDraftstandpointInsert(clt *core.SDKClient, req *legalsuit.AlibabaLegalStandpointDraftstandpointInsertAPIRequest, session string) (*legalsuit.AlibabaLegalStandpointDraftstandpointInsertAPIResponse, error) {
-	var resp legalsuit.AlibabaLegalStandpointDraftstandpointInsertAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLegalStandpointDraftstandpointInsert(clt *core.SDKClient, req *legalsuit.AlibabaLegalStandpointDraftstandpointInsertAPIRequest, resp *legalsuit.AlibabaLegalStandpointDraftstandpointInsertAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

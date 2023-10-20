@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAilabAicloudTopMessagePushUnicastAPIRequest struct {
 // NewTaobaoAilabAicloudTopMessagePushUnicastRequest 初始化TaobaoAilabAicloudTopMessagePushUnicastAPIRequest对象
 func NewTaobaoAilabAicloudTopMessagePushUnicastRequest() *TaobaoAilabAicloudTopMessagePushUnicastAPIRequest {
 	return &TaobaoAilabAicloudTopMessagePushUnicastAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopMessagePushUnicastAPIRequest) Reset() {
+	r._messageUnicastRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAilabAicloudTopMessagePushUnicastAPIRequest) SetMessageUnicastReq
 // GetMessageUnicastRequest MessageUnicastRequest Getter
 func (r TaobaoAilabAicloudTopMessagePushUnicastAPIRequest) GetMessageUnicastRequest() *MessageUnicastRequest {
 	return r._messageUnicastRequest
+}
+
+var poolTaobaoAilabAicloudTopMessagePushUnicastAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopMessagePushUnicastRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopMessagePushUnicastRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopMessagePushUnicastAPIRequest
+func GetTaobaoAilabAicloudTopMessagePushUnicastAPIRequest() *TaobaoAilabAicloudTopMessagePushUnicastAPIRequest {
+	return poolTaobaoAilabAicloudTopMessagePushUnicastAPIRequest.Get().(*TaobaoAilabAicloudTopMessagePushUnicastAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopMessagePushUnicastAPIRequest 将 TaobaoAilabAicloudTopMessagePushUnicastAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopMessagePushUnicastAPIRequest(v *TaobaoAilabAicloudTopMessagePushUnicastAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopMessagePushUnicastAPIRequest.Put(v)
 }

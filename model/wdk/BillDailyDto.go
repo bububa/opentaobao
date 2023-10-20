@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // BillDailyDto 结构体
 type BillDailyDto struct {
 	// 商家编码
@@ -50,4 +54,44 @@ type BillDailyDto struct {
 	PlatPackageFee float64 `json:"plat_package_fee,omitempty" xml:"plat_package_fee,omitempty"`
 	// 用户实付金额
 	UserPayAmount float64 `json:"user_pay_amount,omitempty" xml:"user_pay_amount,omitempty"`
+}
+
+var poolBillDailyDto = sync.Pool{
+	New: func() any {
+		return new(BillDailyDto)
+	},
+}
+
+// GetBillDailyDto() 从对象池中获取BillDailyDto
+func GetBillDailyDto() *BillDailyDto {
+	return poolBillDailyDto.Get().(*BillDailyDto)
+}
+
+// ReleaseBillDailyDto 释放BillDailyDto
+func ReleaseBillDailyDto(v *BillDailyDto) {
+	v.MerchantCode = ""
+	v.StoreId = ""
+	v.OrderFrom = ""
+	v.SettleBizId = ""
+	v.BillDate = ""
+	v.ExtendInfo = ""
+	v.SettleAmount = 0
+	v.SkuAmount = 0
+	v.ChargeBaseAmount = 0
+	v.PackageAmount = 0
+	v.SendAmount = 0
+	v.MerchantSubsidyAmount = 0
+	v.PlatSubsidyAmount = 0
+	v.BrandSubsidyAmount = 0
+	v.AgentSubsidyAmount = 0
+	v.ChannelCommissionAmount = 0
+	v.BaseLogisticsAmount = 0
+	v.AddedValueAmount = 0
+	v.OtherFeeAmount = 0
+	v.HandleFeeAmount = 0
+	v.PlatformVoucherSubsidyFee = 0
+	v.MerchantVoucherSubsidyFee = 0
+	v.PlatPackageFee = 0
+	v.UserPayAmount = 0
+	poolBillDailyDto.Put(v)
 }

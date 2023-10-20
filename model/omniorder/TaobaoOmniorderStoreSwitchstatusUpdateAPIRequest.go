@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest struct {
 // NewTaobaoOmniorderStoreSwitchstatusUpdateRequest 初始化TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest对象
 func NewTaobaoOmniorderStoreSwitchstatusUpdateRequest() *TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest {
 	return &TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) Reset() {
+	r._status = ""
+	r._storeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) SetStoreId(_storeId i
 // GetStoreId StoreId Getter
 func (r TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) GetStoreId() int64 {
 	return r._storeId
+}
+
+var poolTaobaoOmniorderStoreSwitchstatusUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOmniorderStoreSwitchstatusUpdateRequest()
+	},
+}
+
+// GetTaobaoOmniorderStoreSwitchstatusUpdateRequest 从 sync.Pool 获取 TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest
+func GetTaobaoOmniorderStoreSwitchstatusUpdateAPIRequest() *TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest {
+	return poolTaobaoOmniorderStoreSwitchstatusUpdateAPIRequest.Get().(*TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest)
+}
+
+// ReleaseTaobaoOmniorderStoreSwitchstatusUpdateAPIRequest 将 TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOmniorderStoreSwitchstatusUpdateAPIRequest(v *TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoOmniorderStoreSwitchstatusUpdateAPIRequest.Put(v)
 }

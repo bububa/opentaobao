@@ -2,6 +2,7 @@ package itpolicy
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoAlitripItPolicyGetAPIRequest struct {
 // NewTaobaoAlitripItPolicyGetRequest 初始化TaobaoAlitripItPolicyGetAPIRequest对象
 func NewTaobaoAlitripItPolicyGetRequest() *TaobaoAlitripItPolicyGetAPIRequest {
 	return &TaobaoAlitripItPolicyGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripItPolicyGetAPIRequest) Reset() {
+	r._extendAttributes = ""
+	r._outId = ""
+	r._taobaoId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoAlitripItPolicyGetAPIRequest) SetTaobaoId(_taobaoId int64) error 
 // GetTaobaoId TaobaoId Getter
 func (r TaobaoAlitripItPolicyGetAPIRequest) GetTaobaoId() int64 {
 	return r._taobaoId
+}
+
+var poolTaobaoAlitripItPolicyGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripItPolicyGetRequest()
+	},
+}
+
+// GetTaobaoAlitripItPolicyGetRequest 从 sync.Pool 获取 TaobaoAlitripItPolicyGetAPIRequest
+func GetTaobaoAlitripItPolicyGetAPIRequest() *TaobaoAlitripItPolicyGetAPIRequest {
+	return poolTaobaoAlitripItPolicyGetAPIRequest.Get().(*TaobaoAlitripItPolicyGetAPIRequest)
+}
+
+// ReleaseTaobaoAlitripItPolicyGetAPIRequest 将 TaobaoAlitripItPolicyGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripItPolicyGetAPIRequest(v *TaobaoAlitripItPolicyGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripItPolicyGetAPIRequest.Put(v)
 }

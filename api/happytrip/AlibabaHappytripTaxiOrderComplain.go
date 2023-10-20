@@ -25,11 +25,6 @@ import (
 // 11	骚扰乘客；
 // 12	危险驾驶；
 // 13	不是订单显示车辆或司机；
-func AlibabaHappytripTaxiOrderComplain(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiOrderComplainAPIRequest, session string) (*happytrip.AlibabaHappytripTaxiOrderComplainAPIResponse, error) {
-	var resp happytrip.AlibabaHappytripTaxiOrderComplainAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHappytripTaxiOrderComplain(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiOrderComplainAPIRequest, resp *happytrip.AlibabaHappytripTaxiOrderComplainAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package xhotel
 
+import (
+	"sync"
+)
+
 // TaobaoXhotelDataServiceHotelServiceindexResultSet 结构体
 type TaobaoXhotelDataServiceHotelServiceindexResultSet struct {
 	// errorMsg
@@ -10,4 +14,24 @@ type TaobaoXhotelDataServiceHotelServiceindexResultSet struct {
 	FirstResult *TopAdsHtlDataQueryResult `json:"first_result,omitempty" xml:"first_result,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoXhotelDataServiceHotelServiceindexResultSet = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelDataServiceHotelServiceindexResultSet)
+	},
+}
+
+// GetTaobaoXhotelDataServiceHotelServiceindexResultSet() 从对象池中获取TaobaoXhotelDataServiceHotelServiceindexResultSet
+func GetTaobaoXhotelDataServiceHotelServiceindexResultSet() *TaobaoXhotelDataServiceHotelServiceindexResultSet {
+	return poolTaobaoXhotelDataServiceHotelServiceindexResultSet.Get().(*TaobaoXhotelDataServiceHotelServiceindexResultSet)
+}
+
+// ReleaseTaobaoXhotelDataServiceHotelServiceindexResultSet 释放TaobaoXhotelDataServiceHotelServiceindexResultSet
+func ReleaseTaobaoXhotelDataServiceHotelServiceindexResultSet(v *TaobaoXhotelDataServiceHotelServiceindexResultSet) {
+	v.ErrorMsg = ""
+	v.ErrorCode = ""
+	v.FirstResult = nil
+	v.Success = false
+	poolTaobaoXhotelDataServiceHotelServiceindexResultSet.Put(v)
 }

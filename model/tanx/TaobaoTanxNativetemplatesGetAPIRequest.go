@@ -2,6 +2,7 @@ package tanx
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoTanxNativetemplatesGetAPIRequest struct {
 // NewTaobaoTanxNativetemplatesGetRequest 初始化TaobaoTanxNativetemplatesGetAPIRequest对象
 func NewTaobaoTanxNativetemplatesGetRequest() *TaobaoTanxNativetemplatesGetAPIRequest {
 	return &TaobaoTanxNativetemplatesGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTanxNativetemplatesGetAPIRequest) Reset() {
+	r._templateIds = r._templateIds[:0]
+	r._token = ""
+	r._memberId = 0
+	r._signTime = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoTanxNativetemplatesGetAPIRequest) SetSignTime(_signTime int64) er
 // GetSignTime SignTime Getter
 func (r TaobaoTanxNativetemplatesGetAPIRequest) GetSignTime() int64 {
 	return r._signTime
+}
+
+var poolTaobaoTanxNativetemplatesGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTanxNativetemplatesGetRequest()
+	},
+}
+
+// GetTaobaoTanxNativetemplatesGetRequest 从 sync.Pool 获取 TaobaoTanxNativetemplatesGetAPIRequest
+func GetTaobaoTanxNativetemplatesGetAPIRequest() *TaobaoTanxNativetemplatesGetAPIRequest {
+	return poolTaobaoTanxNativetemplatesGetAPIRequest.Get().(*TaobaoTanxNativetemplatesGetAPIRequest)
+}
+
+// ReleaseTaobaoTanxNativetemplatesGetAPIRequest 将 TaobaoTanxNativetemplatesGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTanxNativetemplatesGetAPIRequest(v *TaobaoTanxNativetemplatesGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTanxNativetemplatesGetAPIRequest.Put(v)
 }

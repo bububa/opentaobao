@@ -9,11 +9,6 @@ import (
 // taobao.jst.sms.template.create
 //
 // 聚石塔短信模板创建
-func TaobaoJstSmsTemplateCreate(clt *core.SDKClient, req *jst.TaobaoJstSmsTemplateCreateAPIRequest, session string) (*jst.TaobaoJstSmsTemplateCreateAPIResponse, error) {
-	var resp jst.TaobaoJstSmsTemplateCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJstSmsTemplateCreate(clt *core.SDKClient, req *jst.TaobaoJstSmsTemplateCreateAPIRequest, resp *jst.TaobaoJstSmsTemplateCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

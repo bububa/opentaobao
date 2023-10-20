@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkSkuCombineskuAddAPIRequest struct {
 // NewAlibabaWdkSkuCombineskuAddRequest 初始化AlibabaWdkSkuCombineskuAddAPIRequest对象
 func NewAlibabaWdkSkuCombineskuAddRequest() *AlibabaWdkSkuCombineskuAddAPIRequest {
 	return &AlibabaWdkSkuCombineskuAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkSkuCombineskuAddAPIRequest) Reset() {
+	r._paramList = r._paramList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkSkuCombineskuAddAPIRequest) SetParamList(_paramList []SkuDo) 
 // GetParamList ParamList Getter
 func (r AlibabaWdkSkuCombineskuAddAPIRequest) GetParamList() []SkuDo {
 	return r._paramList
+}
+
+var poolAlibabaWdkSkuCombineskuAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkSkuCombineskuAddRequest()
+	},
+}
+
+// GetAlibabaWdkSkuCombineskuAddRequest 从 sync.Pool 获取 AlibabaWdkSkuCombineskuAddAPIRequest
+func GetAlibabaWdkSkuCombineskuAddAPIRequest() *AlibabaWdkSkuCombineskuAddAPIRequest {
+	return poolAlibabaWdkSkuCombineskuAddAPIRequest.Get().(*AlibabaWdkSkuCombineskuAddAPIRequest)
+}
+
+// ReleaseAlibabaWdkSkuCombineskuAddAPIRequest 将 AlibabaWdkSkuCombineskuAddAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkSkuCombineskuAddAPIRequest(v *AlibabaWdkSkuCombineskuAddAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkSkuCombineskuAddAPIRequest.Put(v)
 }

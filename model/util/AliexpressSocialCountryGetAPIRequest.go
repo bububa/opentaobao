@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressSocialCountryGetAPIRequest struct {
 // NewAliexpressSocialCountryGetRequest 初始化AliexpressSocialCountryGetAPIRequest对象
 func NewAliexpressSocialCountryGetRequest() *AliexpressSocialCountryGetAPIRequest {
 	return &AliexpressSocialCountryGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSocialCountryGetAPIRequest) Reset() {
+	r._language = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressSocialCountryGetAPIRequest) SetLanguage(_language string) err
 // GetLanguage Language Getter
 func (r AliexpressSocialCountryGetAPIRequest) GetLanguage() string {
 	return r._language
+}
+
+var poolAliexpressSocialCountryGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSocialCountryGetRequest()
+	},
+}
+
+// GetAliexpressSocialCountryGetRequest 从 sync.Pool 获取 AliexpressSocialCountryGetAPIRequest
+func GetAliexpressSocialCountryGetAPIRequest() *AliexpressSocialCountryGetAPIRequest {
+	return poolAliexpressSocialCountryGetAPIRequest.Get().(*AliexpressSocialCountryGetAPIRequest)
+}
+
+// ReleaseAliexpressSocialCountryGetAPIRequest 将 AliexpressSocialCountryGetAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSocialCountryGetAPIRequest(v *AliexpressSocialCountryGetAPIRequest) {
+	v.Reset()
+	poolAliexpressSocialCountryGetAPIRequest.Put(v)
 }

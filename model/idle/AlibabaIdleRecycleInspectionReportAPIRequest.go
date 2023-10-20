@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleRecycleInspectionReportAPIRequest struct {
 // NewAlibabaIdleRecycleInspectionReportRequest 初始化AlibabaIdleRecycleInspectionReportAPIRequest对象
 func NewAlibabaIdleRecycleInspectionReportRequest() *AlibabaIdleRecycleInspectionReportAPIRequest {
 	return &AlibabaIdleRecycleInspectionReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleRecycleInspectionReportAPIRequest) Reset() {
+	r._inspectionReport = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleRecycleInspectionReportAPIRequest) SetInspectionReport(_insp
 // GetInspectionReport InspectionReport Getter
 func (r AlibabaIdleRecycleInspectionReportAPIRequest) GetInspectionReport() *InspectionReport {
 	return r._inspectionReport
+}
+
+var poolAlibabaIdleRecycleInspectionReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleRecycleInspectionReportRequest()
+	},
+}
+
+// GetAlibabaIdleRecycleInspectionReportRequest 从 sync.Pool 获取 AlibabaIdleRecycleInspectionReportAPIRequest
+func GetAlibabaIdleRecycleInspectionReportAPIRequest() *AlibabaIdleRecycleInspectionReportAPIRequest {
+	return poolAlibabaIdleRecycleInspectionReportAPIRequest.Get().(*AlibabaIdleRecycleInspectionReportAPIRequest)
+}
+
+// ReleaseAlibabaIdleRecycleInspectionReportAPIRequest 将 AlibabaIdleRecycleInspectionReportAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleRecycleInspectionReportAPIRequest(v *AlibabaIdleRecycleInspectionReportAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleRecycleInspectionReportAPIRequest.Put(v)
 }

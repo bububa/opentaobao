@@ -2,6 +2,7 @@ package alihealthmedical
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthMedicalOrderRefuseAPIRequest struct {
 // NewAlibabaAlihealthMedicalOrderRefuseRequest 初始化AlibabaAlihealthMedicalOrderRefuseAPIRequest对象
 func NewAlibabaAlihealthMedicalOrderRefuseRequest() *AlibabaAlihealthMedicalOrderRefuseAPIRequest {
 	return &AlibabaAlihealthMedicalOrderRefuseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthMedicalOrderRefuseAPIRequest) Reset() {
+	r._requestInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthMedicalOrderRefuseAPIRequest) SetRequestInfo(_requestIn
 // GetRequestInfo RequestInfo Getter
 func (r AlibabaAlihealthMedicalOrderRefuseAPIRequest) GetRequestInfo() *RefuseOrderRequestDto {
 	return r._requestInfo
+}
+
+var poolAlibabaAlihealthMedicalOrderRefuseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthMedicalOrderRefuseRequest()
+	},
+}
+
+// GetAlibabaAlihealthMedicalOrderRefuseRequest 从 sync.Pool 获取 AlibabaAlihealthMedicalOrderRefuseAPIRequest
+func GetAlibabaAlihealthMedicalOrderRefuseAPIRequest() *AlibabaAlihealthMedicalOrderRefuseAPIRequest {
+	return poolAlibabaAlihealthMedicalOrderRefuseAPIRequest.Get().(*AlibabaAlihealthMedicalOrderRefuseAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthMedicalOrderRefuseAPIRequest 将 AlibabaAlihealthMedicalOrderRefuseAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthMedicalOrderRefuseAPIRequest(v *AlibabaAlihealthMedicalOrderRefuseAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthMedicalOrderRefuseAPIRequest.Put(v)
 }

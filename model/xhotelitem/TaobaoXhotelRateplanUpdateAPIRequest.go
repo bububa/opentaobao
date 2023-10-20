@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -139,8 +140,74 @@ type TaobaoXhotelRateplanUpdateAPIRequest struct {
 // NewTaobaoXhotelRateplanUpdateRequest 初始化TaobaoXhotelRateplanUpdateAPIRequest对象
 func NewTaobaoXhotelRateplanUpdateRequest() *TaobaoXhotelRateplanUpdateAPIRequest {
 	return &TaobaoXhotelRateplanUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(61),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelRateplanUpdateAPIRequest) Reset() {
+	r._name = ""
+	r._englishName = ""
+	r._startTime = ""
+	r._endTime = ""
+	r._cancelPolicy = ""
+	r._guaranteeStartTime = ""
+	r._memberLevel = ""
+	r._channel = ""
+	r._vendor = ""
+	r._rateplanCode = ""
+	r._breakfastCal = ""
+	r._cancelPolicyCal = ""
+	r._guaranteeCal = ""
+	r._effectiveTime = ""
+	r._deadlineTime = ""
+	r._rpType = ""
+	r._hourage = ""
+	r._canCheckinEnd = ""
+	r._canCheckinStart = ""
+	r._outRid = ""
+	r._outHid = ""
+	r._operator = ""
+	r._parentRpCode = ""
+	r._tagJson = ""
+	r._allotmentReleaseTime = ""
+	r._packRoomFlag = ""
+	r._bottomPriceFlag = ""
+	r._displayName = ""
+	r._commonAllotReleaseTime = ""
+	r._hotelCompanyMappingDOS = ""
+	r._resourceType = ""
+	r._canCheckoutEnd = ""
+	r._memberDiscountCal = ""
+	r._benefits = ""
+	r._activityType = ""
+	r._guestLimit = ""
+	r._onlineBookingBindingInfo = ""
+	r._rights = ""
+	r._freeRoomChargeDstRole = ""
+	r._rpid = 0
+	r._breakfastCount = 0
+	r._minDays = 0
+	r._maxDays = 0
+	r._minAmount = 0
+	r._minAdvHours = 0
+	r._maxAdvHours = 0
+	r._status = 0
+	r._guaranteeType = 0
+	r._firstStay = 0
+	r._agreement = 0
+	r._paymentType = 0
+	r._isStudent = 0
+	r._hid = 0
+	r._rid = 0
+	r._superRpFlag = 0
+	r._baseRpFlag = 0
+	r._guaranteeMode = 0
+	r._parentRpid = 0
+	r._source = 0
+	r._companyAssist = 0
+	r._memDiscFlag = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -951,4 +1018,21 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMemDiscFlag(_memDiscFlag int64
 // GetMemDiscFlag MemDiscFlag Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetMemDiscFlag() int64 {
 	return r._memDiscFlag
+}
+
+var poolTaobaoXhotelRateplanUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelRateplanUpdateRequest()
+	},
+}
+
+// GetTaobaoXhotelRateplanUpdateRequest 从 sync.Pool 获取 TaobaoXhotelRateplanUpdateAPIRequest
+func GetTaobaoXhotelRateplanUpdateAPIRequest() *TaobaoXhotelRateplanUpdateAPIRequest {
+	return poolTaobaoXhotelRateplanUpdateAPIRequest.Get().(*TaobaoXhotelRateplanUpdateAPIRequest)
+}
+
+// ReleaseTaobaoXhotelRateplanUpdateAPIRequest 将 TaobaoXhotelRateplanUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelRateplanUpdateAPIRequest(v *TaobaoXhotelRateplanUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelRateplanUpdateAPIRequest.Put(v)
 }

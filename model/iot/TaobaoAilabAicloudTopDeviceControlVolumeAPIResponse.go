@@ -2,6 +2,7 @@ package iot
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopDeviceControlVolumeAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAilabAicloudTopDeviceControlVolumeAPIResponseModel).Reset()
 }
 
 // TaobaoAilabAicloudTopDeviceControlVolumeAPIResponseModel is 设备音量 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoAilabAicloudTopDeviceControlVolumeAPIResponseModel struct {
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
 	// 网络请求是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopDeviceControlVolumeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.Model = false
+	m.IsSuccess = false
+}
+
+var poolTaobaoAilabAicloudTopDeviceControlVolumeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse)
+	},
+}
+
+// GetTaobaoAilabAicloudTopDeviceControlVolumeAPIResponse 从 sync.Pool 获取 TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse
+func GetTaobaoAilabAicloudTopDeviceControlVolumeAPIResponse() *TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse {
+	return poolTaobaoAilabAicloudTopDeviceControlVolumeAPIResponse.Get().(*TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse)
+}
+
+// ReleaseTaobaoAilabAicloudTopDeviceControlVolumeAPIResponse 将 TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAilabAicloudTopDeviceControlVolumeAPIResponse(v *TaobaoAilabAicloudTopDeviceControlVolumeAPIResponse) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopDeviceControlVolumeAPIResponse.Put(v)
 }

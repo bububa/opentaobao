@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.outflow.drug.supervision.query
 //
 // 获取监管平台药品数据
-func AlibabaAlihealthOutflowDrugSupervisionQuery(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthOutflowDrugSupervisionQueryAPIResponse, error) {
-	var resp alihealthoutflow.AlibabaAlihealthOutflowDrugSupervisionQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthOutflowDrugSupervisionQuery(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest, resp *alihealthoutflow.AlibabaAlihealthOutflowDrugSupervisionQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

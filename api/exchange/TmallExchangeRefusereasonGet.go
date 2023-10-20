@@ -9,11 +9,6 @@ import (
 // tmall.exchange.refusereason.get
 //
 // 获取拒绝换货原因列表
-func TmallExchangeRefusereasonGet(clt *core.SDKClient, req *exchange.TmallExchangeRefusereasonGetAPIRequest, session string) (*exchange.TmallExchangeRefusereasonGetAPIResponse, error) {
-	var resp exchange.TmallExchangeRefusereasonGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallExchangeRefusereasonGet(clt *core.SDKClient, req *exchange.TmallExchangeRefusereasonGetAPIRequest, resp *exchange.TmallExchangeRefusereasonGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

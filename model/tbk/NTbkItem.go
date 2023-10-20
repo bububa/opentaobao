@@ -1,7 +1,11 @@
 package tbk
 
-// NtbkItem 结构体
-type NtbkItem struct {
+import (
+	"sync"
+)
+
+// NTbkItem 结构体
+type NTbkItem struct {
 	// 商品小图列表
 	SmallImages []string `json:"small_images,omitempty" xml:"small_images>string,omitempty"`
 	// 一级类目名称
@@ -86,4 +90,62 @@ type NtbkItem struct {
 	HPayRate30 bool `json:"h_pay_rate30,omitempty" xml:"h_pay_rate30,omitempty"`
 	// 是否包邮
 	FreeShipment bool `json:"free_shipment,omitempty" xml:"free_shipment,omitempty"`
+}
+
+var poolNTbkItem = sync.Pool{
+	New: func() any {
+		return new(NTbkItem)
+	},
+}
+
+// GetNTbkItem() 从对象池中获取NTbkItem
+func GetNTbkItem() *NTbkItem {
+	return poolNTbkItem.Get().(*NTbkItem)
+}
+
+// ReleaseNTbkItem 释放NTbkItem
+func ReleaseNTbkItem(v *NTbkItem) {
+	v.SmallImages = v.SmallImages[:0]
+	v.CatName = ""
+	v.NumIid = ""
+	v.Title = ""
+	v.PictUrl = ""
+	v.ReservePrice = ""
+	v.ZkFinalPrice = ""
+	v.Provcity = ""
+	v.ItemUrl = ""
+	v.Nick = ""
+	v.CatLeafName = ""
+	v.MaterialLibType = ""
+	v.PresaleDiscountFeeText = ""
+	v.PresaleDeposit = ""
+	v.PlayInfo = ""
+	v.JuOnlineStartTime = ""
+	v.JuOnlineEndTime = ""
+	v.JuPreShowStartTime = ""
+	v.JuPreShowEndTime = ""
+	v.SalePrice = ""
+	v.KuadianPromotionInfo = ""
+	v.SuperiorBrand = ""
+	v.HotFlag = ""
+	v.InputNumIid = ""
+	v.UserType = 0
+	v.SellerId = 0
+	v.Volume = 0
+	v.ShopDsr = 0
+	v.Ratesum = 0
+	v.PresaleTailEndTime = 0
+	v.PresaleTailStartTime = 0
+	v.PresaleEndTime = 0
+	v.PresaleStartTime = 0
+	v.JuPlayEndTime = 0
+	v.JuPlayStartTime = 0
+	v.TmallPlayActivityEndTime = 0
+	v.TmallPlayActivityStartTime = 0
+	v.IsPrepay = false
+	v.IRfdRate = false
+	v.HGoodRate = false
+	v.HPayRate30 = false
+	v.FreeShipment = false
+	poolNTbkItem.Put(v)
 }

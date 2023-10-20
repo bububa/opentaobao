@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // WlbItemInventoryLog 结构体
 type WlbItemInventoryLog struct {
 	// 库存操作作类型CHU_KU 1-出库RU_KU 2-入库FREEZE 3-冻结THAW 4-解冻CHECK_FREEZE 5-冻结确认CHANGE_KU 6-库存类型变更
@@ -30,4 +34,34 @@ type WlbItemInventoryLog struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 结果值
 	ResultQuantity int64 `json:"result_quantity,omitempty" xml:"result_quantity,omitempty"`
+}
+
+var poolWlbItemInventoryLog = sync.Pool{
+	New: func() any {
+		return new(WlbItemInventoryLog)
+	},
+}
+
+// GetWlbItemInventoryLog() 从对象池中获取WlbItemInventoryLog
+func GetWlbItemInventoryLog() *WlbItemInventoryLog {
+	return poolWlbItemInventoryLog.Get().(*WlbItemInventoryLog)
+}
+
+// ReleaseWlbItemInventoryLog 释放WlbItemInventoryLog
+func ReleaseWlbItemInventoryLog(v *WlbItemInventoryLog) {
+	v.OpType = ""
+	v.BatchCode = ""
+	v.StoreCode = ""
+	v.Remark = ""
+	v.OrderCode = ""
+	v.GmtCreate = ""
+	v.InventType = ""
+	v.Id = 0
+	v.UserId = 0
+	v.OpUserId = 0
+	v.ItemId = 0
+	v.OrderItemId = 0
+	v.Quantity = 0
+	v.ResultQuantity = 0
+	poolWlbItemInventoryLog.Put(v)
 }

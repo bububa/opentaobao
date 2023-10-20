@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallServicecenterServicemonitormessageInfoAPIRequest struct {
 // NewTmallServicecenterServicemonitormessageInfoRequest 初始化TmallServicecenterServicemonitormessageInfoAPIRequest对象
 func NewTmallServicecenterServicemonitormessageInfoRequest() *TmallServicecenterServicemonitormessageInfoAPIRequest {
 	return &TmallServicecenterServicemonitormessageInfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterServicemonitormessageInfoAPIRequest) Reset() {
+	r._id = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallServicecenterServicemonitormessageInfoAPIRequest) SetId(_id int64)
 // GetId Id Getter
 func (r TmallServicecenterServicemonitormessageInfoAPIRequest) GetId() int64 {
 	return r._id
+}
+
+var poolTmallServicecenterServicemonitormessageInfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterServicemonitormessageInfoRequest()
+	},
+}
+
+// GetTmallServicecenterServicemonitormessageInfoRequest 从 sync.Pool 获取 TmallServicecenterServicemonitormessageInfoAPIRequest
+func GetTmallServicecenterServicemonitormessageInfoAPIRequest() *TmallServicecenterServicemonitormessageInfoAPIRequest {
+	return poolTmallServicecenterServicemonitormessageInfoAPIRequest.Get().(*TmallServicecenterServicemonitormessageInfoAPIRequest)
+}
+
+// ReleaseTmallServicecenterServicemonitormessageInfoAPIRequest 将 TmallServicecenterServicemonitormessageInfoAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterServicemonitormessageInfoAPIRequest(v *TmallServicecenterServicemonitormessageInfoAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterServicemonitormessageInfoAPIRequest.Put(v)
 }

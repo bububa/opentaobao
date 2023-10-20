@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // ResourceGroupDto 结构体
 type ResourceGroupDto struct {
 	// 区块编码
@@ -34,4 +38,36 @@ type ResourceGroupDto struct {
 	ToResourceType string `json:"to_resource_type,omitempty" xml:"to_resource_type,omitempty"`
 	// 是否测试
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
+}
+
+var poolResourceGroupDto = sync.Pool{
+	New: func() any {
+		return new(ResourceGroupDto)
+	},
+}
+
+// GetResourceGroupDto() 从对象池中获取ResourceGroupDto
+func GetResourceGroupDto() *ResourceGroupDto {
+	return poolResourceGroupDto.Get().(*ResourceGroupDto)
+}
+
+// ReleaseResourceGroupDto 释放ResourceGroupDto
+func ReleaseResourceGroupDto(v *ResourceGroupDto) {
+	v.AreaCode = ""
+	v.AreaName = ""
+	v.FromOrgResourceCode = ""
+	v.FromOrgSource = ""
+	v.FromResourceCode = ""
+	v.FromResourceName = ""
+	v.FromResourceType = ""
+	v.MerchantCode = ""
+	v.NetworkCode = ""
+	v.PickupPointAddress = ""
+	v.ToOrgResourceCode = ""
+	v.ToOrgSource = ""
+	v.ToResourceCode = ""
+	v.ToResourceName = ""
+	v.ToResourceType = ""
+	v.IsTest = 0
+	poolResourceGroupDto.Put(v)
 }

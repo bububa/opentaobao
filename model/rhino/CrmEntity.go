@@ -1,5 +1,9 @@
 package rhino
 
+import (
+	"sync"
+)
+
 // CrmEntity 结构体
 type CrmEntity struct {
 	// 修改时间
@@ -18,4 +22,28 @@ type CrmEntity struct {
 	Modifier string `json:"modifier,omitempty" xml:"modifier,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
+}
+
+var poolCrmEntity = sync.Pool{
+	New: func() any {
+		return new(CrmEntity)
+	},
+}
+
+// GetCrmEntity() 从对象池中获取CrmEntity
+func GetCrmEntity() *CrmEntity {
+	return poolCrmEntity.Get().(*CrmEntity)
+}
+
+// ReleaseCrmEntity 释放CrmEntity
+func ReleaseCrmEntity(v *CrmEntity) {
+	v.GmtModified = ""
+	v.Creator = ""
+	v.InstanceId = ""
+	v.CreatorDingUserId = ""
+	v.Data = ""
+	v.ModifierDingUserId = ""
+	v.Modifier = ""
+	v.GmtCreate = ""
+	poolCrmEntity.Put(v)
 }

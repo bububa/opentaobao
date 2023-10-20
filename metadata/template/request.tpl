@@ -2,6 +2,7 @@ package {{ .Pkg }}
 
 import (
     "net/url"
+    "sync"
 
     "github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,26 @@ type {{ .Name }}APIRequest struct {
 // New{{ .Name }}Request 初始化{{ .Name }}APIRequest对象
 func New{{ .Name }}Request() *{{ .Name }}APIRequest{
     return &{{ .Name }}APIRequest{
-        Params: model.NewParams(),
+        Params: model.NewParams({{ len .RequestParams }}),
     }
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *{{ .Name }}APIRequest) Reset() {
+{{- range $v := .RequestParams }}
+    {{- if and (eq $v.IsList true) }}
+      r._{{ $v.Label }} = r._{{ $v.Label }}[:0] 
+    {{- else if and (eq $v.IsObject true) }}
+      r._{{ $v.Label }} = nil
+    {{- else if and (eq $v.IsNumber true) }}
+      r._{{ $v.Label }} = 0
+    {{- else if and (eq $v.IsBool true) }}
+      r._{{ $v.Label }} = false
+    {{- else }}
+      r._{{ $v.Label }} = ""
+    {{- end }}
+{{- end }}
+    r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -56,3 +75,21 @@ func (r {{ $.Name }}APIRequest) Get{{ $v.Name }}() {{ $v.Type }} {
     return r._{{ $v.Label }}
 }
 {{- end }}
+
+var pool{{ .Name }}APIRequest = sync.Pool{
+    New: func() any {
+      return New{{ .Name }}Request()
+    },
+}
+
+// Get{{ .Name }}Request 从 sync.Pool 获取 {{ .Name }}APIRequest
+func Get{{ .Name }}APIRequest() *{{ .Name }}APIRequest {
+    return pool{{ .Name }}APIRequest.Get().(*{{ .Name }}APIRequest)
+}
+
+// Release{{ .Name }}APIRequest 将 {{ .Name }}APIRequest 放入 sync.Pool
+func Release{{ .Name }}APIRequest(v *{{ .Name }}APIRequest) {
+    v.Reset()
+    pool{{ .Name }}APIRequest.Put(v)
+}
+

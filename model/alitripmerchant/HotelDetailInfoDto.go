@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -86,4 +88,60 @@ type HotelDetailInfoDto struct {
 	ProvinceCode int64 `json:"province_code,omitempty" xml:"province_code,omitempty"`
 	// 0-营业中；-1，筹建中；-2，暂停营业；-3，已停业；-4，失效，-5 ，需电话咨询；默认为0
 	Status *model.File `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolHotelDetailInfoDto = sync.Pool{
+	New: func() any {
+		return new(HotelDetailInfoDto)
+	},
+}
+
+// GetHotelDetailInfoDto() 从对象池中获取HotelDetailInfoDto
+func GetHotelDetailInfoDto() *HotelDetailInfoDto {
+	return poolHotelDetailInfoDto.Get().(*HotelDetailInfoDto)
+}
+
+// ReleaseHotelDetailInfoDto 释放HotelDetailInfoDto
+func ReleaseHotelDetailInfoDto(v *HotelDetailInfoDto) {
+	v.HotelPictures = v.HotelPictures[:0]
+	v.FunFacilitys = v.FunFacilitys[:0]
+	v.HotelFacilitys = v.HotelFacilitys[:0]
+	v.HotelServices = v.HotelServices[:0]
+	v.RoomDetails = v.RoomDetails[:0]
+	v.HotelPolicys = v.HotelPolicys[:0]
+	v.OpeningTime = ""
+	v.PostalCode = ""
+	v.Latitude = ""
+	v.Description = ""
+	v.Floors = ""
+	v.Province = ""
+	v.CityCn = ""
+	v.Fax = ""
+	v.BrandCode = ""
+	v.Facilitys = ""
+	v.Longitude = ""
+	v.BrandName = ""
+	v.Address = ""
+	v.Star = ""
+	v.DecorateTime = ""
+	v.NameCn = ""
+	v.HotelId = ""
+	v.CheckIn = ""
+	v.Phone = ""
+	v.District = ""
+	v.CheckOut = ""
+	v.CountryCn = ""
+	v.RatingAverage = ""
+	v.CountryEn = ""
+	v.Rooms = 0
+	v.Hid = 0
+	v.DistrictCode = 0
+	v.PositionType = nil
+	v.Shid = 0
+	v.CityCode = 0
+	v.Domestic = nil
+	v.CountryCode = 0
+	v.ProvinceCode = 0
+	v.Status = nil
+	poolHotelDetailInfoDto.Put(v)
 }

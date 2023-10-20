@@ -1,7 +1,11 @@
 package tmallcar
 
-// XcarSysModelDto 结构体
-type XcarSysModelDto struct {
+import (
+	"sync"
+)
+
+// XCarSysModelDto 结构体
+type XCarSysModelDto struct {
 	// 车型最高降幅
 	CarModelMaximumDecline string `json:"car_model_maximum_decline,omitempty" xml:"car_model_maximum_decline,omitempty"`
 	// 燃油费用
@@ -38,4 +42,38 @@ type XcarSysModelDto struct {
 	YearPid int64 `json:"year_pid,omitempty" xml:"year_pid,omitempty"`
 	// 年款值id
 	YearVid int64 `json:"year_vid,omitempty" xml:"year_vid,omitempty"`
+}
+
+var poolXCarSysModelDto = sync.Pool{
+	New: func() any {
+		return new(XCarSysModelDto)
+	},
+}
+
+// GetXCarSysModelDto() 从对象池中获取XCarSysModelDto
+func GetXCarSysModelDto() *XCarSysModelDto {
+	return poolXCarSysModelDto.Get().(*XCarSysModelDto)
+}
+
+// ReleaseXCarSysModelDto 释放XCarSysModelDto
+func ReleaseXCarSysModelDto(v *XCarSysModelDto) {
+	v.CarModelMaximumDecline = ""
+	v.FuelCost = ""
+	v.InsuranceFree = ""
+	v.KeepCarFree = ""
+	v.LocalRefPriceRange = ""
+	v.MaintainCost = ""
+	v.ManuGuiPrice = ""
+	v.MediaConfig = ""
+	v.BrandPid = 0
+	v.BrandVid = 0
+	v.LinePid = 0
+	v.LineVid = 0
+	v.ModelPid = 0
+	v.ModelVid = 0
+	v.NewCarModel = 0
+	v.Status = 0
+	v.YearPid = 0
+	v.YearVid = 0
+	poolXCarSysModelDto.Put(v)
 }

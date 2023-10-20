@@ -2,6 +2,7 @@ package crm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoCrmGrademktMemberDetailDeleteAPIRequest struct {
 // NewTaobaoCrmGrademktMemberDetailDeleteRequest 初始化TaobaoCrmGrademktMemberDetailDeleteAPIRequest对象
 func NewTaobaoCrmGrademktMemberDetailDeleteRequest() *TaobaoCrmGrademktMemberDetailDeleteAPIRequest {
 	return &TaobaoCrmGrademktMemberDetailDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCrmGrademktMemberDetailDeleteAPIRequest) Reset() {
+	r._parameter = ""
+	r._feather = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoCrmGrademktMemberDetailDeleteAPIRequest) SetFeather(_feather stri
 // GetFeather Feather Getter
 func (r TaobaoCrmGrademktMemberDetailDeleteAPIRequest) GetFeather() string {
 	return r._feather
+}
+
+var poolTaobaoCrmGrademktMemberDetailDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCrmGrademktMemberDetailDeleteRequest()
+	},
+}
+
+// GetTaobaoCrmGrademktMemberDetailDeleteRequest 从 sync.Pool 获取 TaobaoCrmGrademktMemberDetailDeleteAPIRequest
+func GetTaobaoCrmGrademktMemberDetailDeleteAPIRequest() *TaobaoCrmGrademktMemberDetailDeleteAPIRequest {
+	return poolTaobaoCrmGrademktMemberDetailDeleteAPIRequest.Get().(*TaobaoCrmGrademktMemberDetailDeleteAPIRequest)
+}
+
+// ReleaseTaobaoCrmGrademktMemberDetailDeleteAPIRequest 将 TaobaoCrmGrademktMemberDetailDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCrmGrademktMemberDetailDeleteAPIRequest(v *TaobaoCrmGrademktMemberDetailDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoCrmGrademktMemberDetailDeleteAPIRequest.Put(v)
 }

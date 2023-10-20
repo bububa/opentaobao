@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest struct {
 // NewAlibabaAlscGrowthInteractiveLinkGenshortlinkRequest 初始化AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest对象
 func NewAlibabaAlscGrowthInteractiveLinkGenshortlinkRequest() *AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest {
 	return &AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest) SetParam(_param
 // GetParam Param Getter
 func (r AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest) GetParam() *GenShortLinkRequest {
 	return r._param
+}
+
+var poolAlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscGrowthInteractiveLinkGenshortlinkRequest()
+	},
+}
+
+// GetAlibabaAlscGrowthInteractiveLinkGenshortlinkRequest 从 sync.Pool 获取 AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest
+func GetAlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest() *AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest {
+	return poolAlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest.Get().(*AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest)
+}
+
+// ReleaseAlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest 将 AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest(v *AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest.Put(v)
 }

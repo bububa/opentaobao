@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoSimbaAdgroupidsDeletedGetAPIRequest struct {
 // NewTaobaoSimbaAdgroupidsDeletedGetRequest 初始化TaobaoSimbaAdgroupidsDeletedGetAPIRequest对象
 func NewTaobaoSimbaAdgroupidsDeletedGetRequest() *TaobaoSimbaAdgroupidsDeletedGetAPIRequest {
 	return &TaobaoSimbaAdgroupidsDeletedGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaAdgroupidsDeletedGetAPIRequest) Reset() {
+	r._nick = ""
+	r._startTime = ""
+	r._pageSize = 0
+	r._pageNo = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoSimbaAdgroupidsDeletedGetAPIRequest) SetPageNo(_pageNo int64) err
 // GetPageNo PageNo Getter
 func (r TaobaoSimbaAdgroupidsDeletedGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
+}
+
+var poolTaobaoSimbaAdgroupidsDeletedGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaAdgroupidsDeletedGetRequest()
+	},
+}
+
+// GetTaobaoSimbaAdgroupidsDeletedGetRequest 从 sync.Pool 获取 TaobaoSimbaAdgroupidsDeletedGetAPIRequest
+func GetTaobaoSimbaAdgroupidsDeletedGetAPIRequest() *TaobaoSimbaAdgroupidsDeletedGetAPIRequest {
+	return poolTaobaoSimbaAdgroupidsDeletedGetAPIRequest.Get().(*TaobaoSimbaAdgroupidsDeletedGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaAdgroupidsDeletedGetAPIRequest 将 TaobaoSimbaAdgroupidsDeletedGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaAdgroupidsDeletedGetAPIRequest(v *TaobaoSimbaAdgroupidsDeletedGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaAdgroupidsDeletedGetAPIRequest.Put(v)
 }

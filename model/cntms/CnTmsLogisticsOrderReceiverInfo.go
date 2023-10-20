@@ -1,5 +1,9 @@
 package cntms
 
+import (
+	"sync"
+)
+
 // CnTmsLogisticsOrderReceiverInfo 结构体
 type CnTmsLogisticsOrderReceiverInfo struct {
 	// 收件人省份
@@ -20,4 +24,29 @@ type CnTmsLogisticsOrderReceiverInfo struct {
 	ReceiverMobile string `json:"receiver_mobile,omitempty" xml:"receiver_mobile,omitempty"`
 	// 收件人电话，手机与电话必须有一值不为空
 	ReceiverPhone string `json:"receiver_phone,omitempty" xml:"receiver_phone,omitempty"`
+}
+
+var poolCnTmsLogisticsOrderReceiverInfo = sync.Pool{
+	New: func() any {
+		return new(CnTmsLogisticsOrderReceiverInfo)
+	},
+}
+
+// GetCnTmsLogisticsOrderReceiverInfo() 从对象池中获取CnTmsLogisticsOrderReceiverInfo
+func GetCnTmsLogisticsOrderReceiverInfo() *CnTmsLogisticsOrderReceiverInfo {
+	return poolCnTmsLogisticsOrderReceiverInfo.Get().(*CnTmsLogisticsOrderReceiverInfo)
+}
+
+// ReleaseCnTmsLogisticsOrderReceiverInfo 释放CnTmsLogisticsOrderReceiverInfo
+func ReleaseCnTmsLogisticsOrderReceiverInfo(v *CnTmsLogisticsOrderReceiverInfo) {
+	v.ReceiverProvince = ""
+	v.ReceiverCity = ""
+	v.ReceiverArea = ""
+	v.ReceiverAddress = ""
+	v.ReceiverZipCode = ""
+	v.ReceiverName = ""
+	v.ReceiverNick = ""
+	v.ReceiverMobile = ""
+	v.ReceiverPhone = ""
+	poolCnTmsLogisticsOrderReceiverInfo.Put(v)
 }

@@ -2,6 +2,7 @@ package wdkitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaWdkItemFuturepriceQueryAPIRequest struct {
 // NewAlibabaWdkItemFuturepriceQueryRequest 初始化AlibabaWdkItemFuturepriceQueryAPIRequest对象
 func NewAlibabaWdkItemFuturepriceQueryRequest() *AlibabaWdkItemFuturepriceQueryAPIRequest {
 	return &AlibabaWdkItemFuturepriceQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) Reset() {
+	r._skuCode = ""
+	r._orderChannelCode = ""
+	r._startTime = ""
+	r._endTime = ""
+	r._shopId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetShopId(_shopId int64) erro
 // GetShopId ShopId Getter
 func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetShopId() int64 {
 	return r._shopId
+}
+
+var poolAlibabaWdkItemFuturepriceQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkItemFuturepriceQueryRequest()
+	},
+}
+
+// GetAlibabaWdkItemFuturepriceQueryRequest 从 sync.Pool 获取 AlibabaWdkItemFuturepriceQueryAPIRequest
+func GetAlibabaWdkItemFuturepriceQueryAPIRequest() *AlibabaWdkItemFuturepriceQueryAPIRequest {
+	return poolAlibabaWdkItemFuturepriceQueryAPIRequest.Get().(*AlibabaWdkItemFuturepriceQueryAPIRequest)
+}
+
+// ReleaseAlibabaWdkItemFuturepriceQueryAPIRequest 将 AlibabaWdkItemFuturepriceQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkItemFuturepriceQueryAPIRequest(v *AlibabaWdkItemFuturepriceQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkItemFuturepriceQueryAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // OrderList 结构体
 type OrderList struct {
 	// 子采购单详情
@@ -84,4 +88,61 @@ type OrderList struct {
 	LogisTypeCode int64 `json:"logis_type_code,omitempty" xml:"logis_type_code,omitempty"`
 	// 消费者详细信息（收货人姓名、收货人手机、收货人电话、收货人邮编、收货人省份、收货人详细地址）
 	DpBuyerDetail *DpBuyerDetail `json:"dp_buyer_detail,omitempty" xml:"dp_buyer_detail,omitempty"`
+}
+
+var poolOrderList = sync.Pool{
+	New: func() any {
+		return new(OrderList)
+	},
+}
+
+// GetOrderList() 从对象池中获取OrderList
+func GetOrderList() *OrderList {
+	return poolOrderList.Get().(*OrderList)
+}
+
+// ReleaseOrderList 释放OrderList
+func ReleaseOrderList(v *OrderList) {
+	v.SubOrderDetailYphList = v.SubOrderDetailYphList[:0]
+	v.Features = v.Features[:0]
+	v.AlipayNo = ""
+	v.LogisticsId = ""
+	v.PayTime = ""
+	v.Memo = ""
+	v.BuyerActualPayYuan = ""
+	v.ConsignTime = ""
+	v.LogisticsCompanyName = ""
+	v.DistributorNick = ""
+	v.PostageYuan = ""
+	v.SupplierMemo = ""
+	v.BizOrderId = ""
+	v.GmtModified = ""
+	v.DistributorPayPriceYuan = ""
+	v.SupplierNick = ""
+	v.ConfirmPaidFeeYuan = ""
+	v.GmtCreate = ""
+	v.DistributorFromSys = ""
+	v.EndTime = ""
+	v.TotalPriceYuan = ""
+	v.OrderStatusCode = ""
+	v.RefundStatusCode = ""
+	v.LogisType = ""
+	v.TpCreateTime = ""
+	v.PayType = 0
+	v.Shipping = 0
+	v.TotalPrice = 0
+	v.TcOrderId = 0
+	v.OrderStatus = 0
+	v.ConfirmPaidFee = 0
+	v.TradeType = 0
+	v.ChannelCode = 0
+	v.BuyerActualPay = 0
+	v.FenxiaoId = 0
+	v.Postage = 0
+	v.SupplierFromSys = 0
+	v.DistributorPayPrice = 0
+	v.RefundStatus = 0
+	v.LogisTypeCode = 0
+	v.DpBuyerDetail = nil
+	poolOrderList.Put(v)
 }

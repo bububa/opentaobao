@@ -2,6 +2,7 @@ package lstwarehouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstBranddatashareStockdataQueryAPIRequest struct {
 // NewAlibabaLstBranddatashareStockdataQueryRequest 初始化AlibabaLstBranddatashareStockdataQueryAPIRequest对象
 func NewAlibabaLstBranddatashareStockdataQueryRequest() *AlibabaLstBranddatashareStockdataQueryAPIRequest {
 	return &AlibabaLstBranddatashareStockdataQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstBranddatashareStockdataQueryAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstBranddatashareStockdataQueryAPIRequest) SetParam(_param *BmSu
 // GetParam Param Getter
 func (r AlibabaLstBranddatashareStockdataQueryAPIRequest) GetParam() *BmSupplierStockDataParam {
 	return r._param
+}
+
+var poolAlibabaLstBranddatashareStockdataQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstBranddatashareStockdataQueryRequest()
+	},
+}
+
+// GetAlibabaLstBranddatashareStockdataQueryRequest 从 sync.Pool 获取 AlibabaLstBranddatashareStockdataQueryAPIRequest
+func GetAlibabaLstBranddatashareStockdataQueryAPIRequest() *AlibabaLstBranddatashareStockdataQueryAPIRequest {
+	return poolAlibabaLstBranddatashareStockdataQueryAPIRequest.Get().(*AlibabaLstBranddatashareStockdataQueryAPIRequest)
+}
+
+// ReleaseAlibabaLstBranddatashareStockdataQueryAPIRequest 将 AlibabaLstBranddatashareStockdataQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstBranddatashareStockdataQueryAPIRequest(v *AlibabaLstBranddatashareStockdataQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaLstBranddatashareStockdataQueryAPIRequest.Put(v)
 }

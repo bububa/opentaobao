@@ -2,6 +2,7 @@ package shenjing
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest struct {
 // NewAlibabaIbShenjingVisitorPadGetqrcodelinkRequest 初始化AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest对象
 func NewAlibabaIbShenjingVisitorPadGetqrcodelinkRequest() *AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest {
 	return &AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest) Reset() {
+	r._termId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest) SetTermId(_termId s
 // GetTermId TermId Getter
 func (r AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest) GetTermId() string {
 	return r._termId
+}
+
+var poolAlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIbShenjingVisitorPadGetqrcodelinkRequest()
+	},
+}
+
+// GetAlibabaIbShenjingVisitorPadGetqrcodelinkRequest 从 sync.Pool 获取 AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest
+func GetAlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest() *AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest {
+	return poolAlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest.Get().(*AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest)
+}
+
+// ReleaseAlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest 将 AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest(v *AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest) {
+	v.Reset()
+	poolAlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // TvmRefundApply 结构体
 type TvmRefundApply struct {
 	// 创建时间
@@ -16,4 +20,27 @@ type TvmRefundApply struct {
 	RefundStatus int64 `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// 淘宝退款申请单id
 	RpApplyId int64 `json:"rp_apply_id,omitempty" xml:"rp_apply_id,omitempty"`
+}
+
+var poolTvmRefundApply = sync.Pool{
+	New: func() any {
+		return new(TvmRefundApply)
+	},
+}
+
+// GetTvmRefundApply() 从对象池中获取TvmRefundApply
+func GetTvmRefundApply() *TvmRefundApply {
+	return poolTvmRefundApply.Get().(*TvmRefundApply)
+}
+
+// ReleaseTvmRefundApply 释放TvmRefundApply
+func ReleaseTvmRefundApply(v *TvmRefundApply) {
+	v.GmtCreate = ""
+	v.GmtRefundSuccTime = ""
+	v.OutTradeNo = ""
+	v.ApplyId = 0
+	v.RefundAmount = 0
+	v.RefundStatus = 0
+	v.RpApplyId = 0
+	poolTvmRefundApply.Put(v)
 }

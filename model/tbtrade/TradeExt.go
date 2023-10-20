@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // TradeExt 结构体
 type TradeExt struct {
 	// 第三方个性化数据
@@ -24,4 +28,31 @@ type TradeExt struct {
 	BeforeModifyFlag int64 `json:"before_modify_flag,omitempty" xml:"before_modify_flag,omitempty"`
 	// 第三方状态，第三方自由定义
 	ThirdPartyStatus int64 `json:"third_party_status,omitempty" xml:"third_party_status,omitempty"`
+}
+
+var poolTradeExt = sync.Pool{
+	New: func() any {
+		return new(TradeExt)
+	},
+}
+
+// GetTradeExt() 从对象池中获取TradeExt
+func GetTradeExt() *TradeExt {
+	return poolTradeExt.Get().(*TradeExt)
+}
+
+// ReleaseTradeExt 释放TradeExt
+func ReleaseTradeExt(v *TradeExt) {
+	v.ExtraData = ""
+	v.ExtAttributes = ""
+	v.BeforeEnableFlag = 0
+	v.BeforeCloseFlag = 0
+	v.BeforePayFlag = 0
+	v.BeforeShipFlag = 0
+	v.BeforeConfirmFlag = 0
+	v.BeforeRateFlag = 0
+	v.BeforeRefundFlag = 0
+	v.BeforeModifyFlag = 0
+	v.ThirdPartyStatus = 0
+	poolTradeExt.Put(v)
 }

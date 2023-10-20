@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // PerformanceInfoDto 结构体
 type PerformanceInfoDto struct {
 	// 首次相应时间
@@ -30,4 +34,34 @@ type PerformanceInfoDto struct {
 	SalesBonus string `json:"sales_bonus,omitempty" xml:"sales_bonus,omitempty"`
 	// 平均响应时间
 	AvgResponseTime string `json:"avg_response_time,omitempty" xml:"avg_response_time,omitempty"`
+}
+
+var poolPerformanceInfoDto = sync.Pool{
+	New: func() any {
+		return new(PerformanceInfoDto)
+	},
+}
+
+// GetPerformanceInfoDto() 从对象池中获取PerformanceInfoDto
+func GetPerformanceInfoDto() *PerformanceInfoDto {
+	return poolPerformanceInfoDto.Get().(*PerformanceInfoDto)
+}
+
+// ReleasePerformanceInfoDto 释放PerformanceInfoDto
+func ReleasePerformanceInfoDto(v *PerformanceInfoDto) {
+	v.FirstResponseTime = ""
+	v.AvgLastOnlineTime = ""
+	v.AvgOnlineTimePerDay = ""
+	v.ConversionRateOfSer = ""
+	v.SalesQuantity = ""
+	v.SalesAmount = ""
+	v.TotalOnlineTime = ""
+	v.OnlineDays = ""
+	v.UnitPriceOfSer = ""
+	v.ResponseRate = ""
+	v.SubAccountName = ""
+	v.AvgOnlineTime = ""
+	v.SalesBonus = ""
+	v.AvgResponseTime = ""
+	poolPerformanceInfoDto.Put(v)
 }

@@ -2,6 +2,7 @@ package scs
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,6 +21,12 @@ type TaobaoOnebpDkxReportReportCampaignOfflineAPIResponse struct {
 	TaobaoOnebpDkxReportReportCampaignOfflineAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOnebpDkxReportReportCampaignOfflineAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOnebpDkxReportReportCampaignOfflineAPIResponseModel).Reset()
+}
+
 // TaobaoOnebpDkxReportReportCampaignOfflineAPIResponseModel is 查询某计划离线列表 成功返回结果
 type TaobaoOnebpDkxReportReportCampaignOfflineAPIResponseModel struct {
 	XMLName xml.Name `xml:"onebp_dkx_report_report_campaign_offline_response"`
@@ -27,4 +34,27 @@ type TaobaoOnebpDkxReportReportCampaignOfflineAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
 	Result *TaobaoOnebpDkxReportReportCampaignOfflineResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOnebpDkxReportReportCampaignOfflineAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoOnebpDkxReportReportCampaignOfflineAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOnebpDkxReportReportCampaignOfflineAPIResponse)
+	},
+}
+
+// GetTaobaoOnebpDkxReportReportCampaignOfflineAPIResponse 从 sync.Pool 获取 TaobaoOnebpDkxReportReportCampaignOfflineAPIResponse
+func GetTaobaoOnebpDkxReportReportCampaignOfflineAPIResponse() *TaobaoOnebpDkxReportReportCampaignOfflineAPIResponse {
+	return poolTaobaoOnebpDkxReportReportCampaignOfflineAPIResponse.Get().(*TaobaoOnebpDkxReportReportCampaignOfflineAPIResponse)
+}
+
+// ReleaseTaobaoOnebpDkxReportReportCampaignOfflineAPIResponse 将 TaobaoOnebpDkxReportReportCampaignOfflineAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOnebpDkxReportReportCampaignOfflineAPIResponse(v *TaobaoOnebpDkxReportReportCampaignOfflineAPIResponse) {
+	v.Reset()
+	poolTaobaoOnebpDkxReportReportCampaignOfflineAPIResponse.Put(v)
 }

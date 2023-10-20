@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // SpuStatistics 结构体
 type SpuStatistics struct {
 	// 开始时间（预留）
@@ -20,4 +24,29 @@ type SpuStatistics struct {
 	SpuId int64 `json:"spu_id,omitempty" xml:"spu_id,omitempty"`
 	// 版本号（预留）
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolSpuStatistics = sync.Pool{
+	New: func() any {
+		return new(SpuStatistics)
+	},
+}
+
+// GetSpuStatistics() 从对象池中获取SpuStatistics
+func GetSpuStatistics() *SpuStatistics {
+	return poolSpuStatistics.Get().(*SpuStatistics)
+}
+
+// ReleaseSpuStatistics 释放SpuStatistics
+func ReleaseSpuStatistics(v *SpuStatistics) {
+	v.StartTime = ""
+	v.SceneType = ""
+	v.SkuId = ""
+	v.Descr = ""
+	v.EndTime = ""
+	v.SpuData = ""
+	v.Status = 0
+	v.SpuId = 0
+	v.Version = 0
+	poolSpuStatistics.Put(v)
 }

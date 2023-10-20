@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AliexpressLocalLogisticsShippingMethodQueryAPIResponse struct {
 	model.CommonResponse
 	AliexpressLocalLogisticsShippingMethodQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AliexpressLocalLogisticsShippingMethodQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressLocalLogisticsShippingMethodQueryAPIResponseModel).Reset()
 }
 
 // AliexpressLocalLogisticsShippingMethodQueryAPIResponseModel is query shipping method 成功返回结果
@@ -28,4 +35,30 @@ type AliexpressLocalLogisticsShippingMethodQueryAPIResponseModel struct {
 	ErrorResultCode string `json:"error_result_code,omitempty" xml:"error_result_code,omitempty"`
 	// method data
 	Data *QueryShippingMethodResponseDto `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressLocalLogisticsShippingMethodQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.IsSuccess = ""
+	m.ErrorResultMessage = ""
+	m.ErrorResultCode = ""
+	m.Data = nil
+}
+
+var poolAliexpressLocalLogisticsShippingMethodQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressLocalLogisticsShippingMethodQueryAPIResponse)
+	},
+}
+
+// GetAliexpressLocalLogisticsShippingMethodQueryAPIResponse 从 sync.Pool 获取 AliexpressLocalLogisticsShippingMethodQueryAPIResponse
+func GetAliexpressLocalLogisticsShippingMethodQueryAPIResponse() *AliexpressLocalLogisticsShippingMethodQueryAPIResponse {
+	return poolAliexpressLocalLogisticsShippingMethodQueryAPIResponse.Get().(*AliexpressLocalLogisticsShippingMethodQueryAPIResponse)
+}
+
+// ReleaseAliexpressLocalLogisticsShippingMethodQueryAPIResponse 将 AliexpressLocalLogisticsShippingMethodQueryAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressLocalLogisticsShippingMethodQueryAPIResponse(v *AliexpressLocalLogisticsShippingMethodQueryAPIResponse) {
+	v.Reset()
+	poolAliexpressLocalLogisticsShippingMethodQueryAPIResponse.Put(v)
 }

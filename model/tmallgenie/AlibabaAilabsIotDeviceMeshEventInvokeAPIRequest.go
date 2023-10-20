@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaAilabsIotDeviceMeshEventInvokeAPIRequest struct {
 // NewAlibabaAilabsIotDeviceMeshEventInvokeRequest 初始化AlibabaAilabsIotDeviceMeshEventInvokeAPIRequest对象
 func NewAlibabaAilabsIotDeviceMeshEventInvokeRequest() *AlibabaAilabsIotDeviceMeshEventInvokeAPIRequest {
 	return &AlibabaAilabsIotDeviceMeshEventInvokeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsIotDeviceMeshEventInvokeAPIRequest) Reset() {
+	r._traceId = ""
+	r._userType = ""
+	r._serverEventRequestId = ""
+	r._uuid = ""
+	r._event = nil
+	r._userId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaAilabsIotDeviceMeshEventInvokeAPIRequest) SetUserId(_userId int6
 // GetUserId UserId Getter
 func (r AlibabaAilabsIotDeviceMeshEventInvokeAPIRequest) GetUserId() int64 {
 	return r._userId
+}
+
+var poolAlibabaAilabsIotDeviceMeshEventInvokeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsIotDeviceMeshEventInvokeRequest()
+	},
+}
+
+// GetAlibabaAilabsIotDeviceMeshEventInvokeRequest 从 sync.Pool 获取 AlibabaAilabsIotDeviceMeshEventInvokeAPIRequest
+func GetAlibabaAilabsIotDeviceMeshEventInvokeAPIRequest() *AlibabaAilabsIotDeviceMeshEventInvokeAPIRequest {
+	return poolAlibabaAilabsIotDeviceMeshEventInvokeAPIRequest.Get().(*AlibabaAilabsIotDeviceMeshEventInvokeAPIRequest)
+}
+
+// ReleaseAlibabaAilabsIotDeviceMeshEventInvokeAPIRequest 将 AlibabaAilabsIotDeviceMeshEventInvokeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsIotDeviceMeshEventInvokeAPIRequest(v *AlibabaAilabsIotDeviceMeshEventInvokeAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsIotDeviceMeshEventInvokeAPIRequest.Put(v)
 }

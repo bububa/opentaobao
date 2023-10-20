@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // CodeActiveInfoDto 结构体
 type CodeActiveInfoDto struct {
 	// 处理标志
@@ -48,4 +52,43 @@ type CodeActiveInfoDto struct {
 	OtherNum int64 `json:"other_num,omitempty" xml:"other_num,omitempty"`
 	// 小码数量
 	SmallNum int64 `json:"small_num,omitempty" xml:"small_num,omitempty"`
+}
+
+var poolCodeActiveInfoDto = sync.Pool{
+	New: func() any {
+		return new(CodeActiveInfoDto)
+	},
+}
+
+// GetCodeActiveInfoDto() 从对象池中获取CodeActiveInfoDto
+func GetCodeActiveInfoDto() *CodeActiveInfoDto {
+	return poolCodeActiveInfoDto.Get().(*CodeActiveInfoDto)
+}
+
+// ReleaseCodeActiveInfoDto 释放CodeActiveInfoDto
+func ReleaseCodeActiveInfoDto(v *CodeActiveInfoDto) {
+	v.ProcessFlag = ""
+	v.Status = ""
+	v.RelationType = ""
+	v.UserCert = ""
+	v.ProdCode = ""
+	v.OperIcName = ""
+	v.UploadFileName = ""
+	v.UploadFilePath = ""
+	v.ActiveDate = ""
+	v.RefEntId = ""
+	v.EntId = ""
+	v.ProcessDate = ""
+	v.ProcessEndDate = ""
+	v.OperIcCode = ""
+	v.UploadFlag = ""
+	v.CrtDate = ""
+	v.ProcessCount = ""
+	v.CrtDateString = ""
+	v.BillInId = ""
+	v.CodeActiveInfoId = ""
+	v.ActiveCount = 0
+	v.OtherNum = 0
+	v.SmallNum = 0
+	poolCodeActiveInfoDto.Put(v)
 }

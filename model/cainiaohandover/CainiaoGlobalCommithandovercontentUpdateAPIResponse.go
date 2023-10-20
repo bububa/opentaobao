@@ -2,6 +2,7 @@ package cainiaohandover
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type CainiaoGlobalCommithandovercontentUpdateAPIResponse struct {
 	model.CommonResponse
 	CainiaoGlobalCommithandovercontentUpdateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *CainiaoGlobalCommithandovercontentUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoGlobalCommithandovercontentUpdateAPIResponseModel).Reset()
 }
 
 // CainiaoGlobalCommithandovercontentUpdateAPIResponseModel is 修改已经提交的交接单 成功返回结果
@@ -28,4 +35,30 @@ type CainiaoGlobalCommithandovercontentUpdateAPIResponseModel struct {
 	Data *OpenHandoverContentUpdateResponse `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功同result字段
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoGlobalCommithandovercontentUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.InternalErrorCode = ""
+	m.ErrorMsg = ""
+	m.Data = nil
+	m.IsSuccess = false
+}
+
+var poolCainiaoGlobalCommithandovercontentUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoGlobalCommithandovercontentUpdateAPIResponse)
+	},
+}
+
+// GetCainiaoGlobalCommithandovercontentUpdateAPIResponse 从 sync.Pool 获取 CainiaoGlobalCommithandovercontentUpdateAPIResponse
+func GetCainiaoGlobalCommithandovercontentUpdateAPIResponse() *CainiaoGlobalCommithandovercontentUpdateAPIResponse {
+	return poolCainiaoGlobalCommithandovercontentUpdateAPIResponse.Get().(*CainiaoGlobalCommithandovercontentUpdateAPIResponse)
+}
+
+// ReleaseCainiaoGlobalCommithandovercontentUpdateAPIResponse 将 CainiaoGlobalCommithandovercontentUpdateAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoGlobalCommithandovercontentUpdateAPIResponse(v *CainiaoGlobalCommithandovercontentUpdateAPIResponse) {
+	v.Reset()
+	poolCainiaoGlobalCommithandovercontentUpdateAPIResponse.Put(v)
 }

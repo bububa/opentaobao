@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // InvoiceInfoParam 结构体
 type InvoiceInfoParam struct {
 	// 请求id 唯一值(同极速开票开票请求回传request_id值)
@@ -34,4 +38,36 @@ type InvoiceInfoParam struct {
 	PlanInvoiceOtherPrice int64 `json:"plan_invoice_other_price,omitempty" xml:"plan_invoice_other_price,omitempty"`
 	// 用户渠道(0:未知,1:淘宝)
 	UserChannel int64 `json:"user_channel,omitempty" xml:"user_channel,omitempty"`
+}
+
+var poolInvoiceInfoParam = sync.Pool{
+	New: func() any {
+		return new(InvoiceInfoParam)
+	},
+}
+
+// GetInvoiceInfoParam() 从对象池中获取InvoiceInfoParam
+func GetInvoiceInfoParam() *InvoiceInfoParam {
+	return poolInvoiceInfoParam.Get().(*InvoiceInfoParam)
+}
+
+// ReleaseInvoiceInfoParam 释放InvoiceInfoParam
+func ReleaseInvoiceInfoParam(v *InvoiceInfoParam) {
+	v.RequestId = ""
+	v.TaxNum = ""
+	v.ShortIdNumber = ""
+	v.CompanyTitle = ""
+	v.RoomNum = ""
+	v.WantTime = ""
+	v.UserNick = ""
+	v.OutOrderNum = ""
+	v.InvoiceRoomPrice = 0
+	v.InvoiceOtherPrice = 0
+	v.InvoiceType = 0
+	v.ValueAddedInfo = nil
+	v.PostType = 0
+	v.PlanInvoiceRoomPrice = 0
+	v.PlanInvoiceOtherPrice = 0
+	v.UserChannel = 0
+	poolInvoiceInfoParam.Put(v)
 }

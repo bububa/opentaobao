@@ -9,11 +9,6 @@ import (
 // alibaba.damai.mev.open.pushfloor
 //
 // pushFloor
-func AlibabaDamaiMevOpenPushfloor(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushfloorAPIRequest, session string) (*damai.AlibabaDamaiMevOpenPushfloorAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenPushfloorAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMevOpenPushfloor(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushfloorAPIRequest, resp *damai.AlibabaDamaiMevOpenPushfloorAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

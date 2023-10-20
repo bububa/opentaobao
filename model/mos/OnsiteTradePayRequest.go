@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // OnsiteTradePayRequest 结构体
 type OnsiteTradePayRequest struct {
 	// 商品明细列表。订单包含的商品列表信息
@@ -42,4 +46,40 @@ type OnsiteTradePayRequest struct {
 	MemberMobile string `json:"member_mobile,omitempty" xml:"member_mobile,omitempty"`
 	// 支付场景，条码支付：bar_code，刷脸支付：security_code
 	Scene string `json:"scene,omitempty" xml:"scene,omitempty"`
+}
+
+var poolOnsiteTradePayRequest = sync.Pool{
+	New: func() any {
+		return new(OnsiteTradePayRequest)
+	},
+}
+
+// GetOnsiteTradePayRequest() 从对象池中获取OnsiteTradePayRequest
+func GetOnsiteTradePayRequest() *OnsiteTradePayRequest {
+	return poolOnsiteTradePayRequest.Get().(*OnsiteTradePayRequest)
+}
+
+// ReleaseOnsiteTradePayRequest 释放OnsiteTradePayRequest
+func ReleaseOnsiteTradePayRequest(v *OnsiteTradePayRequest) {
+	v.GoodsDetailList = v.GoodsDetailList[:0]
+	v.OutTradeNo = ""
+	v.AuthCode = ""
+	v.TotalAmount = ""
+	v.UndiscountableAmount = ""
+	v.AllowablePayChannels = ""
+	v.BuyerAutoConfirm = ""
+	v.Subject = ""
+	v.Body = ""
+	v.StoreIdType = ""
+	v.StoreId = ""
+	v.OperatorId = ""
+	v.TerminalId = ""
+	v.TimeExpire = ""
+	v.ExtendParams = ""
+	v.StoreAlipayAccount = ""
+	v.SceneNo = ""
+	v.MemberAccountId = ""
+	v.MemberMobile = ""
+	v.Scene = ""
+	poolOnsiteTradePayRequest.Put(v)
 }

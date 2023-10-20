@@ -2,6 +2,7 @@ package charity
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaCharityCharitytimeListAPIResponse struct {
 	model.CommonResponse
 	AlibabaCharityCharitytimeListAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaCharityCharitytimeListAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaCharityCharitytimeListAPIResponseModel).Reset()
 }
 
 // AlibabaCharityCharitytimeListAPIResponseModel is 授权用户的公益时记录查询 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaCharityCharitytimeListAPIResponseModel struct {
 	ResultCode int64 `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaCharityCharitytimeListAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = m.Data[:0]
+	m.ErrorMsg = ""
+	m.ResultCode = 0
+	m.IsSuccess = false
+}
+
+var poolAlibabaCharityCharitytimeListAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaCharityCharitytimeListAPIResponse)
+	},
+}
+
+// GetAlibabaCharityCharitytimeListAPIResponse 从 sync.Pool 获取 AlibabaCharityCharitytimeListAPIResponse
+func GetAlibabaCharityCharitytimeListAPIResponse() *AlibabaCharityCharitytimeListAPIResponse {
+	return poolAlibabaCharityCharitytimeListAPIResponse.Get().(*AlibabaCharityCharitytimeListAPIResponse)
+}
+
+// ReleaseAlibabaCharityCharitytimeListAPIResponse 将 AlibabaCharityCharitytimeListAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaCharityCharitytimeListAPIResponse(v *AlibabaCharityCharitytimeListAPIResponse) {
+	v.Reset()
+	poolAlibabaCharityCharitytimeListAPIResponse.Put(v)
 }

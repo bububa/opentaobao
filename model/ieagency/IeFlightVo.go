@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // IeFlightVo 结构体
 type IeFlightVo struct {
 	// 到达机场
@@ -52,4 +56,45 @@ type IeFlightVo struct {
 	StopQuantity int64 `json:"stop_quantity,omitempty" xml:"stop_quantity,omitempty"`
 	// mainSegment
 	MainSegment bool `json:"main_segment,omitempty" xml:"main_segment,omitempty"`
+}
+
+var poolIeFlightVo = sync.Pool{
+	New: func() any {
+		return new(IeFlightVo)
+	},
+}
+
+// GetIeFlightVo() 从对象池中获取IeFlightVo
+func GetIeFlightVo() *IeFlightVo {
+	return poolIeFlightVo.Get().(*IeFlightVo)
+}
+
+// ReleaseIeFlightVo 释放IeFlightVo
+func ReleaseIeFlightVo(v *IeFlightVo) {
+	v.ArrAirport = ""
+	v.ArrTerminal = ""
+	v.ArrTime = ""
+	v.CabinClass = ""
+	v.CabinClassCode = ""
+	v.DepAirport = ""
+	v.DepTerminal = ""
+	v.DepTime = ""
+	v.EquipType = ""
+	v.FlightCabin = ""
+	v.FlightNumber = ""
+	v.MarketingAirline = ""
+	v.OperatingAirLine = ""
+	v.OperatingFlightNumber = ""
+	v.StopAirport = ""
+	v.TransVisa = ""
+	v.InfantCabinClassCode = ""
+	v.InfantCabinClass = ""
+	v.InfantFlightCabin = ""
+	v.ElapsedMinute = 0
+	v.ItineraryType = 0
+	v.SegmentRph = 0
+	v.StopMinute = 0
+	v.StopQuantity = 0
+	v.MainSegment = false
+	poolIeFlightVo.Put(v)
 }

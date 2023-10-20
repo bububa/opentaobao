@@ -2,6 +2,7 @@ package eticket
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoEticketMerchantMaFailsendAPIResponse struct {
 	TaobaoEticketMerchantMaFailsendAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoEticketMerchantMaFailsendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoEticketMerchantMaFailsendAPIResponseModel).Reset()
+}
+
 // TaobaoEticketMerchantMaFailsendAPIResponseModel is 码商发码失败回调接口 成功返回结果
 type TaobaoEticketMerchantMaFailsendAPIResponseModel struct {
 	XMLName xml.Name `xml:"eticket_merchant_ma_failsend_response"`
@@ -26,4 +33,29 @@ type TaobaoEticketMerchantMaFailsendAPIResponseModel struct {
 	RetMsg string `json:"ret_msg,omitempty" xml:"ret_msg,omitempty"`
 	// 回复参数
 	RespBody *SendFailCallbackResp `json:"resp_body,omitempty" xml:"resp_body,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoEticketMerchantMaFailsendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RetCode = ""
+	m.RetMsg = ""
+	m.RespBody = nil
+}
+
+var poolTaobaoEticketMerchantMaFailsendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoEticketMerchantMaFailsendAPIResponse)
+	},
+}
+
+// GetTaobaoEticketMerchantMaFailsendAPIResponse 从 sync.Pool 获取 TaobaoEticketMerchantMaFailsendAPIResponse
+func GetTaobaoEticketMerchantMaFailsendAPIResponse() *TaobaoEticketMerchantMaFailsendAPIResponse {
+	return poolTaobaoEticketMerchantMaFailsendAPIResponse.Get().(*TaobaoEticketMerchantMaFailsendAPIResponse)
+}
+
+// ReleaseTaobaoEticketMerchantMaFailsendAPIResponse 将 TaobaoEticketMerchantMaFailsendAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoEticketMerchantMaFailsendAPIResponse(v *TaobaoEticketMerchantMaFailsendAPIResponse) {
+	v.Reset()
+	poolTaobaoEticketMerchantMaFailsendAPIResponse.Put(v)
 }

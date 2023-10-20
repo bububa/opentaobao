@@ -1,5 +1,9 @@
 package fpm
 
+import (
+	"sync"
+)
+
 // InvoiceRegisterRequest 结构体
 type InvoiceRegisterRequest struct {
 	// 操作人
@@ -10,4 +14,24 @@ type InvoiceRegisterRequest struct {
 	PlatformCode string `json:"platform_code,omitempty" xml:"platform_code,omitempty"`
 	// 发票信息
 	InvoiceDTO *RegisterInvoiceDto `json:"invoice_d_t_o,omitempty" xml:"invoice_d_t_o,omitempty"`
+}
+
+var poolInvoiceRegisterRequest = sync.Pool{
+	New: func() any {
+		return new(InvoiceRegisterRequest)
+	},
+}
+
+// GetInvoiceRegisterRequest() 从对象池中获取InvoiceRegisterRequest
+func GetInvoiceRegisterRequest() *InvoiceRegisterRequest {
+	return poolInvoiceRegisterRequest.Get().(*InvoiceRegisterRequest)
+}
+
+// ReleaseInvoiceRegisterRequest 释放InvoiceRegisterRequest
+func ReleaseInvoiceRegisterRequest(v *InvoiceRegisterRequest) {
+	v.OperateBy = ""
+	v.RequestNo = ""
+	v.PlatformCode = ""
+	v.InvoiceDTO = nil
+	poolInvoiceRegisterRequest.Put(v)
 }

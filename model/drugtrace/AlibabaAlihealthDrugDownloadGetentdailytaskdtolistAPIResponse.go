@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponseModel is 码上放心数据落地-获取每天日报 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponseModel struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// http状态
 	HttpStatusCode int64 `json:"http_status_code,omitempty" xml:"http_status_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Model = m.Model[:0]
+	m.Headers = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.HttpStatusCode = 0
+}
+
+var poolAlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse
+func GetAlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse() *AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse {
+	return poolAlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse.Get().(*AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse 将 AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse(v *AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse.Put(v)
 }

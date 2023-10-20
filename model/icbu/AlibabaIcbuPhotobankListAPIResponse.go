@@ -2,6 +2,7 @@ package icbu
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaIcbuPhotobankListAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuPhotobankListAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaIcbuPhotobankListAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIcbuPhotobankListAPIResponseModel).Reset()
 }
 
 // AlibabaIcbuPhotobankListAPIResponseModel is 国际站图片银行查询接口 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaIcbuPhotobankListAPIResponseModel struct {
 	Errormsg string `json:"errormsg,omitempty" xml:"errormsg,omitempty"`
 	// PaginationQueryList
 	PaginationQueryList *PaginationQueryList `json:"pagination_query_list,omitempty" xml:"pagination_query_list,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIcbuPhotobankListAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TraceId = ""
+	m.Errorcode = ""
+	m.Errormsg = ""
+	m.PaginationQueryList = nil
+}
+
+var poolAlibabaIcbuPhotobankListAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIcbuPhotobankListAPIResponse)
+	},
+}
+
+// GetAlibabaIcbuPhotobankListAPIResponse 从 sync.Pool 获取 AlibabaIcbuPhotobankListAPIResponse
+func GetAlibabaIcbuPhotobankListAPIResponse() *AlibabaIcbuPhotobankListAPIResponse {
+	return poolAlibabaIcbuPhotobankListAPIResponse.Get().(*AlibabaIcbuPhotobankListAPIResponse)
+}
+
+// ReleaseAlibabaIcbuPhotobankListAPIResponse 将 AlibabaIcbuPhotobankListAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIcbuPhotobankListAPIResponse(v *AlibabaIcbuPhotobankListAPIResponse) {
+	v.Reset()
+	poolAlibabaIcbuPhotobankListAPIResponse.Put(v)
 }

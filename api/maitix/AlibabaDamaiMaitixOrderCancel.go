@@ -9,11 +9,6 @@ import (
 // alibaba.damai.maitix.order.cancel
 //
 // 库存释放
-func AlibabaDamaiMaitixOrderCancel(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOrderCancelAPIRequest, session string) (*maitix.AlibabaDamaiMaitixOrderCancelAPIResponse, error) {
-	var resp maitix.AlibabaDamaiMaitixOrderCancelAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMaitixOrderCancel(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOrderCancelAPIRequest, resp *maitix.AlibabaDamaiMaitixOrderCancelAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

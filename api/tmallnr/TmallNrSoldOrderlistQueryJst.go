@@ -9,11 +9,6 @@ import (
 // tmall.nr.sold.orderlist.query.jst
 //
 // 该服务用于已入聚石塔的商家，获取订单列表信息；
-func TmallNrSoldOrderlistQueryJst(clt *core.SDKClient, req *tmallnr.TmallNrSoldOrderlistQueryJstAPIRequest, session string) (*tmallnr.TmallNrSoldOrderlistQueryJstAPIResponse, error) {
-	var resp tmallnr.TmallNrSoldOrderlistQueryJstAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallNrSoldOrderlistQueryJst(clt *core.SDKClient, req *tmallnr.TmallNrSoldOrderlistQueryJstAPIRequest, resp *tmallnr.TmallNrSoldOrderlistQueryJstAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

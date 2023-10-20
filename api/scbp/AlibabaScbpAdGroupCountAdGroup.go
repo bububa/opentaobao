@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.ad.group.count.ad.group
 //
 // 统计adgroup数量
-func AlibabaScbpAdGroupCountAdGroup(clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupCountAdGroupAPIRequest, session string) (*scbp.AlibabaScbpAdGroupCountAdGroupAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdGroupCountAdGroupAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAdGroupCountAdGroup(clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupCountAdGroupAPIRequest, resp *scbp.AlibabaScbpAdGroupCountAdGroupAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

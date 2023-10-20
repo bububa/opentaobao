@@ -1,5 +1,9 @@
 package aedropshiper
 
+import (
+	"sync"
+)
+
 // AeItemProperty 结构体
 type AeItemProperty struct {
 	// Attribute name
@@ -16,4 +20,27 @@ type AeItemProperty struct {
 	AttrNameId int64 `json:"attr_name_id,omitempty" xml:"attr_name_id,omitempty"`
 	// Attribute ID
 	AttrValueId int64 `json:"attr_value_id,omitempty" xml:"attr_value_id,omitempty"`
+}
+
+var poolAeItemProperty = sync.Pool{
+	New: func() any {
+		return new(AeItemProperty)
+	},
+}
+
+// GetAeItemProperty() 从对象池中获取AeItemProperty
+func GetAeItemProperty() *AeItemProperty {
+	return poolAeItemProperty.Get().(*AeItemProperty)
+}
+
+// ReleaseAeItemProperty 释放AeItemProperty
+func ReleaseAeItemProperty(v *AeItemProperty) {
+	v.AttrName = ""
+	v.AttrValue = ""
+	v.AttrValueStart = ""
+	v.AttrValueEnd = ""
+	v.AttrValueUnit = ""
+	v.AttrNameId = 0
+	v.AttrValueId = 0
+	poolAeItemProperty.Put(v)
 }

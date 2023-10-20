@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // TopOrderDetailApiResDto 结构体
 type TopOrderDetailApiResDto struct {
 	// 分销商订单号
@@ -36,4 +40,37 @@ type TopOrderDetailApiResDto struct {
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// 购买数量
 	BuyAmount int64 `json:"buy_amount,omitempty" xml:"buy_amount,omitempty"`
+}
+
+var poolTopOrderDetailApiResDto = sync.Pool{
+	New: func() any {
+		return new(TopOrderDetailApiResDto)
+	},
+}
+
+// GetTopOrderDetailApiResDto() 从对象池中获取TopOrderDetailApiResDto
+func GetTopOrderDetailApiResDto() *TopOrderDetailApiResDto {
+	return poolTopOrderDetailApiResDto.Get().(*TopOrderDetailApiResDto)
+}
+
+// ReleaseTopOrderDetailApiResDto 释放TopOrderDetailApiResDto
+func ReleaseTopOrderDetailApiResDto(v *TopOrderDetailApiResDto) {
+	v.OuterOrderId = ""
+	v.OrderStatusDesc = ""
+	v.GmtCreate = ""
+	v.ConfirmInfo = ""
+	v.ProductName = ""
+	v.ProductDescription = ""
+	v.ServiceStartTime = ""
+	v.ServiceEndTime = ""
+	v.UseTime = ""
+	v.PurchaseSubOrderId = 0
+	v.OrderStatus = 0
+	v.ProductPrice = 0
+	v.TotalPrice = 0
+	v.RefundFee = 0
+	v.FundOrderId = 0
+	v.ProductId = 0
+	v.BuyAmount = 0
+	poolTopOrderDetailApiResDto.Put(v)
 }

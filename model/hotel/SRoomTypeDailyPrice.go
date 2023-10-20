@@ -1,7 +1,11 @@
 package hotel
 
-// SroomTypeDailyPrice 结构体
-type SroomTypeDailyPrice struct {
+import (
+	"sync"
+)
+
+// SRoomTypeDailyPrice 结构体
+type SRoomTypeDailyPrice struct {
 	// 当前标准房型下所有库价集合
 	RoomTypeDailyPriceList []RoomTypeDailyPrice `json:"room_type_daily_price_list,omitempty" xml:"room_type_daily_price_list>room_type_daily_price,omitempty"`
 	// 离店日期
@@ -20,4 +24,29 @@ type SroomTypeDailyPrice struct {
 	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
 	// 标准房型id
 	Srid int64 `json:"srid,omitempty" xml:"srid,omitempty"`
+}
+
+var poolSRoomTypeDailyPrice = sync.Pool{
+	New: func() any {
+		return new(SRoomTypeDailyPrice)
+	},
+}
+
+// GetSRoomTypeDailyPrice() 从对象池中获取SRoomTypeDailyPrice
+func GetSRoomTypeDailyPrice() *SRoomTypeDailyPrice {
+	return poolSRoomTypeDailyPrice.Get().(*SRoomTypeDailyPrice)
+}
+
+// ReleaseSRoomTypeDailyPrice 释放SRoomTypeDailyPrice
+func ReleaseSRoomTypeDailyPrice(v *SRoomTypeDailyPrice) {
+	v.RoomTypeDailyPriceList = v.RoomTypeDailyPriceList[:0]
+	v.End = ""
+	v.Start = ""
+	v.BedTypeString = ""
+	v.Name = ""
+	v.WindowType = ""
+	v.LowPrice = 0
+	v.Shid = 0
+	v.Srid = 0
+	poolSRoomTypeDailyPrice.Put(v)
 }

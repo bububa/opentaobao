@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -41,8 +42,25 @@ type AlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest struct {
 // NewAlibabaAlihealthDrugKytSpeciaVaccinSearchstatusRequest 初始化AlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest对象
 func NewAlibabaAlihealthDrugKytSpeciaVaccinSearchstatusRequest() *AlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest {
 	return &AlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(12),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest) Reset() {
+	r._refEntId = ""
+	r._beginDate = ""
+	r._endDate = ""
+	r._billType = ""
+	r._billCode = ""
+	r._drugType = ""
+	r._dealStatus = ""
+	r._fromUserId = ""
+	r._toUserId = ""
+	r._agentRefUserId = ""
+	r._pageSize = 0
+	r._page = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -216,4 +234,21 @@ func (r *AlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest) SetPage(_pag
 // GetPage Page Getter
 func (r AlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest) GetPage() int64 {
 	return r._page
+}
+
+var poolAlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytSpeciaVaccinSearchstatusRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytSpeciaVaccinSearchstatusRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest
+func GetAlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest() *AlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest {
+	return poolAlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest.Get().(*AlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest 将 AlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest(v *AlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytSpeciaVaccinSearchstatusAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // AuxRefundApiBean 结构体
 type AuxRefundApiBean struct {
 	// 改规则。 最多允许200个字符。 禁止空格等特殊符号。
@@ -14,4 +18,26 @@ type AuxRefundApiBean struct {
 	CanModifyIndependent bool `json:"can_modify_independent,omitempty" xml:"can_modify_independent,omitempty"`
 	// 是否可退 true 可以，false不可以
 	CanRefund bool `json:"can_refund,omitempty" xml:"can_refund,omitempty"`
+}
+
+var poolAuxRefundApiBean = sync.Pool{
+	New: func() any {
+		return new(AuxRefundApiBean)
+	},
+}
+
+// GetAuxRefundApiBean() 从对象池中获取AuxRefundApiBean
+func GetAuxRefundApiBean() *AuxRefundApiBean {
+	return poolAuxRefundApiBean.Get().(*AuxRefundApiBean)
+}
+
+// ReleaseAuxRefundApiBean 释放AuxRefundApiBean
+func ReleaseAuxRefundApiBean(v *AuxRefundApiBean) {
+	v.ModifyRule = ""
+	v.RefundRule = ""
+	v.CanRefundIndependent = false
+	v.CanModify = false
+	v.CanModifyIndependent = false
+	v.CanRefund = false
+	poolAuxRefundApiBean.Put(v)
 }

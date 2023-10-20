@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // MemberPointDeductionRuleOpenInfo 结构体
 type MemberPointDeductionRuleOpenInfo struct {
 	// 会员等级ID
@@ -14,4 +18,26 @@ type MemberPointDeductionRuleOpenInfo struct {
 	Enable bool `json:"enable,omitempty" xml:"enable,omitempty"`
 	// 单次使用是否有抵扣上限
 	HasUpperLimit bool `json:"has_upper_limit,omitempty" xml:"has_upper_limit,omitempty"`
+}
+
+var poolMemberPointDeductionRuleOpenInfo = sync.Pool{
+	New: func() any {
+		return new(MemberPointDeductionRuleOpenInfo)
+	},
+}
+
+// GetMemberPointDeductionRuleOpenInfo() 从对象池中获取MemberPointDeductionRuleOpenInfo
+func GetMemberPointDeductionRuleOpenInfo() *MemberPointDeductionRuleOpenInfo {
+	return poolMemberPointDeductionRuleOpenInfo.Get().(*MemberPointDeductionRuleOpenInfo)
+}
+
+// ReleaseMemberPointDeductionRuleOpenInfo 释放MemberPointDeductionRuleOpenInfo
+func ReleaseMemberPointDeductionRuleOpenInfo(v *MemberPointDeductionRuleOpenInfo) {
+	v.LevelId = ""
+	v.ConsumeMoney = 0
+	v.DeductedPoint = 0
+	v.MaxPoint = 0
+	v.Enable = false
+	v.HasUpperLimit = false
+	poolMemberPointDeductionRuleOpenInfo.Put(v)
 }

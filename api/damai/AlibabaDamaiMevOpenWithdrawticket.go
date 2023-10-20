@@ -9,11 +9,6 @@ import (
 // alibaba.damai.mev.open.withdrawticket
 //
 // 开放接口退票
-func AlibabaDamaiMevOpenWithdrawticket(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenWithdrawticketAPIRequest, session string) (*damai.AlibabaDamaiMevOpenWithdrawticketAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenWithdrawticketAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMevOpenWithdrawticket(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenWithdrawticketAPIRequest, resp *damai.AlibabaDamaiMevOpenWithdrawticketAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

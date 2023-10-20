@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // IeItemVo 结构体
 type IeItemVo struct {
 	// 航班信息
@@ -34,4 +38,36 @@ type IeItemVo struct {
 	InfantTax int64 `json:"infant_tax,omitempty" xml:"infant_tax,omitempty"`
 	// 婴儿价格
 	InfantPrice int64 `json:"infant_price,omitempty" xml:"infant_price,omitempty"`
+}
+
+var poolIeItemVo = sync.Pool{
+	New: func() any {
+		return new(IeItemVo)
+	},
+}
+
+// GetIeItemVo() 从对象池中获取IeItemVo
+func GetIeItemVo() *IeItemVo {
+	return poolIeItemVo.Get().(*IeItemVo)
+}
+
+// ReleaseIeItemVo 释放IeItemVo
+func ReleaseIeItemVo(v *IeItemVo) {
+	v.Flights = v.Flights[:0]
+	v.BaggageRule = ""
+	v.BonusId = ""
+	v.FareItemId = ""
+	v.OfficeNo = ""
+	v.ResourceCode = ""
+	v.Restriction = ""
+	v.TicketingAirline = ""
+	v.TripType = ""
+	v.OriginBonusId = ""
+	v.AdultPrice = 0
+	v.AdultTax = 0
+	v.ChildPrice = 0
+	v.ChildTax = 0
+	v.InfantTax = 0
+	v.InfantPrice = 0
+	poolIeItemVo.Put(v)
 }

@@ -2,6 +2,7 @@ package exchange
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallExchangeMessageAddAPIRequest struct {
 // NewTmallExchangeMessageAddRequest 初始化TmallExchangeMessageAddAPIRequest对象
 func NewTmallExchangeMessageAddRequest() *TmallExchangeMessageAddAPIRequest {
 	return &TmallExchangeMessageAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallExchangeMessageAddAPIRequest) Reset() {
+	r._fields = r._fields[:0]
+	r._content = ""
+	r._disputeId = 0
+	r._messagePics = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallExchangeMessageAddAPIRequest) SetMessagePics(_messagePics *model.F
 // GetMessagePics MessagePics Getter
 func (r TmallExchangeMessageAddAPIRequest) GetMessagePics() *model.File {
 	return r._messagePics
+}
+
+var poolTmallExchangeMessageAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallExchangeMessageAddRequest()
+	},
+}
+
+// GetTmallExchangeMessageAddRequest 从 sync.Pool 获取 TmallExchangeMessageAddAPIRequest
+func GetTmallExchangeMessageAddAPIRequest() *TmallExchangeMessageAddAPIRequest {
+	return poolTmallExchangeMessageAddAPIRequest.Get().(*TmallExchangeMessageAddAPIRequest)
+}
+
+// ReleaseTmallExchangeMessageAddAPIRequest 将 TmallExchangeMessageAddAPIRequest 放入 sync.Pool
+func ReleaseTmallExchangeMessageAddAPIRequest(v *TmallExchangeMessageAddAPIRequest) {
+	v.Reset()
+	poolTmallExchangeMessageAddAPIRequest.Put(v)
 }

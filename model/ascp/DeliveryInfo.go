@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // DeliveryInfo 结构体
 type DeliveryInfo struct {
 	// 商家编码，商家在erp维护的编码
@@ -16,4 +20,27 @@ type DeliveryInfo struct {
 	ErpCode string `json:"erp_code,omitempty" xml:"erp_code,omitempty"`
 	// 状态：0=停用；1=启用
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolDeliveryInfo = sync.Pool{
+	New: func() any {
+		return new(DeliveryInfo)
+	},
+}
+
+// GetDeliveryInfo() 从对象池中获取DeliveryInfo
+func GetDeliveryInfo() *DeliveryInfo {
+	return poolDeliveryInfo.Get().(*DeliveryInfo)
+}
+
+// ReleaseDeliveryInfo 释放DeliveryInfo
+func ReleaseDeliveryInfo(v *DeliveryInfo) {
+	v.ErpDeliveryBizCode = ""
+	v.Name = ""
+	v.PlatformCode = ""
+	v.ConName = ""
+	v.ConPhone = ""
+	v.ErpCode = ""
+	v.Status = ""
+	poolDeliveryInfo.Put(v)
 }

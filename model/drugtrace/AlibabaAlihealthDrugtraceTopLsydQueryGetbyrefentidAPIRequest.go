@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest struct {
 // NewAlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidRequest 初始化AlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest对象
 func NewAlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidRequest() *AlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest {
 	return &AlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest) Reset() {
+	r._refEntId = ""
+	r._destRefEntId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest) SetDestRe
 // GetDestRefEntId DestRefEntId Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest) GetDestRefEntId() string {
 	return r._destRefEntId
+}
+
+var poolAlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidRequest 从 sync.Pool 获取 AlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest
+func GetAlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest() *AlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest {
+	return poolAlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest.Get().(*AlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest 将 AlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest(v *AlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugtraceTopLsydQueryGetbyrefentidAPIRequest.Put(v)
 }

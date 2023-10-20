@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SkuDo 结构体
 type SkuDo struct {
 	// 供货商信息
@@ -278,4 +282,158 @@ type SkuDo struct {
 	CleanSkuMemberPrice int64 `json:"clean_sku_member_price,omitempty" xml:"clean_sku_member_price,omitempty"`
 	// 修改条码策略，默认为策略3。&lt;br/&gt;如商品现有主条码barcode1、非主条码barcode2&lt;br/&gt;1、新增barcodes指定了新的主条码barcode3,会将原主条码barcde1改为非主条码,最终商品有三个条码,即:非主条码barcde1、非主条码barcode2、主条码barcode3&lt;br/&gt; 2、删除barcodes对应条码，除了主条码&lt;br/&gt; 3、替换主条码 则会将现有主条码删除,新增指定主条码,只认barcodes中第一个条码，商品最终结果条码个数为两个条码:非主条码barcode2、主条码barcode3&lt;br/&gt; 4、除主条码外,所有条码替换为指定barcodes,不支持主条码修改。如果barcodes中为barcode3,barcode4,则商品最终条码为:主条码barcode1,非barcode3,barcode4。其中非主条码barcode2被删除
 	BarcodeUpdateType int64 `json:"barcode_update_type,omitempty" xml:"barcode_update_type,omitempty"`
+}
+
+var poolSkuDo = sync.Pool{
+	New: func() any {
+		return new(SkuDo)
+	},
+}
+
+// GetSkuDo() 从对象池中获取SkuDo
+func GetSkuDo() *SkuDo {
+	return poolSkuDo.Get().(*SkuDo)
+}
+
+// ReleaseSkuDo 释放SkuDo
+func ReleaseSkuDo(v *SkuDo) {
+	v.SkuSuppliers = v.SkuSuppliers[:0]
+	v.ChannelProps = v.ChannelProps[:0]
+	v.SubSkus = v.SubSkus[:0]
+	v.Barcodes = ""
+	v.BrandName = ""
+	v.CategoryCode = ""
+	v.OuCode = ""
+	v.Height = ""
+	v.InventoryUnit = ""
+	v.Length = ""
+	v.MainPicUrls = ""
+	v.ManufacturerAddress = ""
+	v.ManufacturerName = ""
+	v.DetailPicUrls = ""
+	v.ProducerPlace = ""
+	v.SkuCode = ""
+	v.SkuName = ""
+	v.StandardNo = ""
+	v.SuggestedPrice = ""
+	v.TaxRate = ""
+	v.Weight = ""
+	v.Width = ""
+	v.HmCategoryCode = ""
+	v.ShortTitle = ""
+	v.TxtDesc = ""
+	v.InvoiceContent = ""
+	v.InputInvoiceContent = ""
+	v.AccountingCategory = ""
+	v.NetContent = ""
+	v.SaleUnit = ""
+	v.SalePrice = ""
+	v.LifeStatus = ""
+	v.SaleSpec = ""
+	v.AvgWeight = ""
+	v.PreMinusWeight = ""
+	v.SkuLabelType = ""
+	v.SubTitle = ""
+	v.SubTitle1 = ""
+	v.SubTitle2 = ""
+	v.Title1 = ""
+	v.Title2 = ""
+	v.DeliveryUnit = ""
+	v.DeliverySpec = ""
+	v.DeliveryWay = ""
+	v.Logistics = ""
+	v.DeliveryWarehouse = ""
+	v.MemberPrice = ""
+	v.CostUnit = ""
+	v.CostNoPrice = ""
+	v.CostTaxPrice = ""
+	v.CostExchangeRate = ""
+	v.MassOutputRate = ""
+	v.ProcessingUnit = ""
+	v.ProcsExchangeRate = ""
+	v.Storage = ""
+	v.PickFloatRate = ""
+	v.OverloadRate = ""
+	v.PurchaseSpec = ""
+	v.PurchaseUnit = ""
+	v.LabelStyleType = ""
+	v.RichText = ""
+	v.BackCatCode = ""
+	v.SkuPrice = ""
+	v.MerchantCatCode = ""
+	v.SkuPicUrls = ""
+	v.TaxCode = ""
+	v.DeliveryStorage = ""
+	v.FlagshipStoreItemInfo = ""
+	v.ProductIdentity = ""
+	v.BizType = ""
+	v.SpecType = ""
+	v.TransRatio = ""
+	v.ParentSkuCode = ""
+	v.AppEffectBeginTime = ""
+	v.AppEffectEndTime = ""
+	v.ShopId = ""
+	v.OrgNo = ""
+	v.AliasName = ""
+	v.ProducerName = ""
+	v.FactoryNo = ""
+	v.Component = ""
+	v.Grade = ""
+	v.EatWay = ""
+	v.OriginCode = ""
+	v.InputTaxRate = ""
+	v.InputTaxRateCode = ""
+	v.FinanceTypeCode = ""
+	v.TaxRateCode = ""
+	v.PurchaseUnitCode = ""
+	v.InventoryUnitCode = ""
+	v.AcceptanceCriteria = ""
+	v.DeliveryUnitCode = ""
+	v.ProcessingUnitCode = ""
+	v.CostUnitCode = ""
+	v.SkuLabelTypeCode = ""
+	v.SaleUnitCode = ""
+	v.LabelPriceTypeCode = ""
+	v.StoreId = ""
+	v.StoreName = ""
+	v.ChannelCodes = ""
+	v.SupplierNo = ""
+	v.SupplierName = ""
+	v.LogisticsName = ""
+	v.DeliveryWarehouseName = ""
+	v.ReturnWarehouse = ""
+	v.ReturnWarehouseName = ""
+	v.DeliveryWayName = ""
+	v.ServiceItems = ""
+	v.DefaultSkuPrice = ""
+	v.StorageCode = ""
+	v.ChannelCode = ""
+	v.ShelfLife = 0
+	v.SkuType = 0
+	v.StorageType = 0
+	v.WeightFlag = 0
+	v.ImportFlag = 0
+	v.StepQuantity = 0
+	v.PurchaseQuantity = 0
+	v.AllowAppSale = 0
+	v.OnlineSaleFlag = 0
+	v.ForbidReceiveDays = 0
+	v.ForbidSalesDays = 0
+	v.WarnDays = 0
+	v.FrontDisplayFlag = 0
+	v.FixedFlag = 0
+	v.Period = 0
+	v.ItemTypeNew = 0
+	v.IndustryProps = nil
+	v.ForestCateId = 0
+	v.FragileFlag = 0
+	v.TemporaryFlag = 0
+	v.IsOnline = 0
+	v.SalePriceUnitCent = 0
+	v.ItemSaleType = 0
+	v.ProcessingTime = 0
+	v.SaleFlagForQuery = 0
+	v.CleanSkuMemberPrice = 0
+	v.BarcodeUpdateType = 0
+	poolSkuDo.Put(v)
 }

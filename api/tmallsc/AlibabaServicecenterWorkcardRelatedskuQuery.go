@@ -9,11 +9,6 @@ import (
 // alibaba.servicecenter.workcard.relatedsku.query
 //
 // 查询工单关联的服务项
-func AlibabaServicecenterWorkcardRelatedskuQuery(clt *core.SDKClient, req *tmallsc.AlibabaServicecenterWorkcardRelatedskuQueryAPIRequest, session string) (*tmallsc.AlibabaServicecenterWorkcardRelatedskuQueryAPIResponse, error) {
-	var resp tmallsc.AlibabaServicecenterWorkcardRelatedskuQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaServicecenterWorkcardRelatedskuQuery(clt *core.SDKClient, req *tmallsc.AlibabaServicecenterWorkcardRelatedskuQueryAPIRequest, resp *tmallsc.AlibabaServicecenterWorkcardRelatedskuQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

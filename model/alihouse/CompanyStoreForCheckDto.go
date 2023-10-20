@@ -1,6 +1,8 @@
 package alihouse
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -64,4 +66,49 @@ type CompanyStoreForCheckDto struct {
 	VirtualType int64 `json:"virtual_type,omitempty" xml:"virtual_type,omitempty"`
 	// 测试标
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
+}
+
+var poolCompanyStoreForCheckDto = sync.Pool{
+	New: func() any {
+		return new(CompanyStoreForCheckDto)
+	},
+}
+
+// GetCompanyStoreForCheckDto() 从对象池中获取CompanyStoreForCheckDto
+func GetCompanyStoreForCheckDto() *CompanyStoreForCheckDto {
+	return poolCompanyStoreForCheckDto.Get().(*CompanyStoreForCheckDto)
+}
+
+// ReleaseCompanyStoreForCheckDto 释放CompanyStoreForCheckDto
+func ReleaseCompanyStoreForCheckDto(v *CompanyStoreForCheckDto) {
+	v.OuterStoreId = ""
+	v.OuterCompanyId = ""
+	v.OuterCompanyBrandId = ""
+	v.OuterShopId = ""
+	v.StoreName = ""
+	v.StoreNameShort = ""
+	v.StoreInfo = ""
+	v.ContactMan = ""
+	v.ContactPhone = ""
+	v.MainPhone = ""
+	v.SubPhone = ""
+	v.GaodeLongitude = ""
+	v.GaodeLatitude = ""
+	v.Address = ""
+	v.StoreBizType = ""
+	v.CompanyLicenseNo = ""
+	v.CompanyLegalPerson = ""
+	v.CompanyLicensePhoto = ""
+	v.CompanyLicenseExpireTime = ""
+	v.CompanyName = ""
+	v.CompanyLicenseUrl = ""
+	v.PartakeBusiness = ""
+	v.TagCodes = ""
+	v.CityId = 0
+	v.StoreStatus = 0
+	v.CompanyLicenseStatus = nil
+	v.IsSmallKa = nil
+	v.VirtualType = 0
+	v.IsTest = 0
+	poolCompanyStoreForCheckDto.Put(v)
 }

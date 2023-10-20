@@ -2,6 +2,7 @@ package mei
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,6 +18,12 @@ type TmallMeiCrmMemberSyncPrivyAPIResponse struct {
 	TmallMeiCrmMemberSyncPrivyAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallMeiCrmMemberSyncPrivyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallMeiCrmMemberSyncPrivyAPIResponseModel).Reset()
+}
+
 // TmallMeiCrmMemberSyncPrivyAPIResponseModel is 同步推送会员信息(隐私号版本) 成功返回结果
 type TmallMeiCrmMemberSyncPrivyAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_mei_crm_member_sync_privy_response"`
@@ -24,4 +31,27 @@ type TmallMeiCrmMemberSyncPrivyAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 处理的其他信息
 	MeiExtraInfo string `json:"mei_extra_info,omitempty" xml:"mei_extra_info,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallMeiCrmMemberSyncPrivyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MeiExtraInfo = ""
+}
+
+var poolTmallMeiCrmMemberSyncPrivyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallMeiCrmMemberSyncPrivyAPIResponse)
+	},
+}
+
+// GetTmallMeiCrmMemberSyncPrivyAPIResponse 从 sync.Pool 获取 TmallMeiCrmMemberSyncPrivyAPIResponse
+func GetTmallMeiCrmMemberSyncPrivyAPIResponse() *TmallMeiCrmMemberSyncPrivyAPIResponse {
+	return poolTmallMeiCrmMemberSyncPrivyAPIResponse.Get().(*TmallMeiCrmMemberSyncPrivyAPIResponse)
+}
+
+// ReleaseTmallMeiCrmMemberSyncPrivyAPIResponse 将 TmallMeiCrmMemberSyncPrivyAPIResponse 保存到 sync.Pool
+func ReleaseTmallMeiCrmMemberSyncPrivyAPIResponse(v *TmallMeiCrmMemberSyncPrivyAPIResponse) {
+	v.Reset()
+	poolTmallMeiCrmMemberSyncPrivyAPIResponse.Put(v)
 }

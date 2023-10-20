@@ -1,5 +1,9 @@
 package xhotel
 
+import (
+	"sync"
+)
+
 // DailyBookingInfo 结构体
 type DailyBookingInfo struct {
 	// 一个星期内有效性约束。1-7 对应周一到周日，传入的值比如[1,6]，就表示星期一和星期六营销生效
@@ -12,4 +16,25 @@ type DailyBookingInfo struct {
 	CheckInTo string `json:"check_in_to,omitempty" xml:"check_in_to,omitempty"`
 	// 折扣比例，填30就意味着原价的30%，也就是打3折。数字范围限定在10-95之间
 	InvestmentNumber int64 `json:"investment_number,omitempty" xml:"investment_number,omitempty"`
+}
+
+var poolDailyBookingInfo = sync.Pool{
+	New: func() any {
+		return new(DailyBookingInfo)
+	},
+}
+
+// GetDailyBookingInfo() 从对象池中获取DailyBookingInfo
+func GetDailyBookingInfo() *DailyBookingInfo {
+	return poolDailyBookingInfo.Get().(*DailyBookingInfo)
+}
+
+// ReleaseDailyBookingInfo 释放DailyBookingInfo
+func ReleaseDailyBookingInfo(v *DailyBookingInfo) {
+	v.ValidWeeks = v.ValidWeeks[:0]
+	v.InvalidDates = v.InvalidDates[:0]
+	v.CheckInFrom = ""
+	v.CheckInTo = ""
+	v.InvestmentNumber = 0
+	poolDailyBookingInfo.Put(v)
 }

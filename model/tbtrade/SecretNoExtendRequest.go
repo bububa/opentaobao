@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // SecretNoExtendRequest 结构体
 type SecretNoExtendRequest struct {
 	// 收件人ID (Open Addressee ID)，长度在128个字符之内。
@@ -10,4 +14,24 @@ type SecretNoExtendRequest struct {
 	ExtendDays int64 `json:"extend_days,omitempty" xml:"extend_days,omitempty"`
 	// 交易订单ID
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolSecretNoExtendRequest = sync.Pool{
+	New: func() any {
+		return new(SecretNoExtendRequest)
+	},
+}
+
+// GetSecretNoExtendRequest() 从对象池中获取SecretNoExtendRequest
+func GetSecretNoExtendRequest() *SecretNoExtendRequest {
+	return poolSecretNoExtendRequest.Get().(*SecretNoExtendRequest)
+}
+
+// ReleaseSecretNoExtendRequest 释放SecretNoExtendRequest
+func ReleaseSecretNoExtendRequest(v *SecretNoExtendRequest) {
+	v.Oaid = ""
+	v.Scene = ""
+	v.ExtendDays = 0
+	v.OrderId = 0
+	poolSecretNoExtendRequest.Put(v)
 }

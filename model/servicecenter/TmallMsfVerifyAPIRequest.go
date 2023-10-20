@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallMsfVerifyAPIRequest struct {
 // NewTmallMsfVerifyRequest 初始化TmallMsfVerifyAPIRequest对象
 func NewTmallMsfVerifyRequest() *TmallMsfVerifyAPIRequest {
 	return &TmallMsfVerifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallMsfVerifyAPIRequest) Reset() {
+	r._shopId = ""
+	r._bizType = ""
+	r._code = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallMsfVerifyAPIRequest) SetCode(_code string) error {
 // GetCode Code Getter
 func (r TmallMsfVerifyAPIRequest) GetCode() string {
 	return r._code
+}
+
+var poolTmallMsfVerifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallMsfVerifyRequest()
+	},
+}
+
+// GetTmallMsfVerifyRequest 从 sync.Pool 获取 TmallMsfVerifyAPIRequest
+func GetTmallMsfVerifyAPIRequest() *TmallMsfVerifyAPIRequest {
+	return poolTmallMsfVerifyAPIRequest.Get().(*TmallMsfVerifyAPIRequest)
+}
+
+// ReleaseTmallMsfVerifyAPIRequest 将 TmallMsfVerifyAPIRequest 放入 sync.Pool
+func ReleaseTmallMsfVerifyAPIRequest(v *TmallMsfVerifyAPIRequest) {
+	v.Reset()
+	poolTmallMsfVerifyAPIRequest.Put(v)
 }

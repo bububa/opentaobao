@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.open.supplychain.hotel.trade
 //
 // 【商旅】酒店交易查询流水接口——杭州市政府
-func AlitripBtripOpenSupplychainHotelTrade(clt *core.SDKClient, req *btrip.AlitripBtripOpenSupplychainHotelTradeAPIRequest, session string) (*btrip.AlitripBtripOpenSupplychainHotelTradeAPIResponse, error) {
-	var resp btrip.AlitripBtripOpenSupplychainHotelTradeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripOpenSupplychainHotelTrade(clt *core.SDKClient, req *btrip.AlitripBtripOpenSupplychainHotelTradeAPIRequest, resp *btrip.AlitripBtripOpenSupplychainHotelTradeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

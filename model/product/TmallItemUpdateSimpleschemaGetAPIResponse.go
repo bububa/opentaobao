@@ -2,6 +2,7 @@ package product
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallItemUpdateSimpleschemaGetAPIResponse struct {
 	TmallItemUpdateSimpleschemaGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallItemUpdateSimpleschemaGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallItemUpdateSimpleschemaGetAPIResponseModel).Reset()
+}
+
 // TmallItemUpdateSimpleschemaGetAPIResponseModel is 官网同购编辑商品的get接口 成功返回结果
 type TmallItemUpdateSimpleschemaGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_item_update_simpleschema_get_response"`
@@ -26,4 +33,29 @@ type TmallItemUpdateSimpleschemaGetAPIResponseModel struct {
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
 	// 返回结果
 	Error bool `json:"error,omitempty" xml:"error,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallItemUpdateSimpleschemaGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorMsg = ""
+	m.Result = ""
+	m.Error = false
+}
+
+var poolTmallItemUpdateSimpleschemaGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallItemUpdateSimpleschemaGetAPIResponse)
+	},
+}
+
+// GetTmallItemUpdateSimpleschemaGetAPIResponse 从 sync.Pool 获取 TmallItemUpdateSimpleschemaGetAPIResponse
+func GetTmallItemUpdateSimpleschemaGetAPIResponse() *TmallItemUpdateSimpleschemaGetAPIResponse {
+	return poolTmallItemUpdateSimpleschemaGetAPIResponse.Get().(*TmallItemUpdateSimpleschemaGetAPIResponse)
+}
+
+// ReleaseTmallItemUpdateSimpleschemaGetAPIResponse 将 TmallItemUpdateSimpleschemaGetAPIResponse 保存到 sync.Pool
+func ReleaseTmallItemUpdateSimpleschemaGetAPIResponse(v *TmallItemUpdateSimpleschemaGetAPIResponse) {
+	v.Reset()
+	poolTmallItemUpdateSimpleschemaGetAPIResponse.Put(v)
 }

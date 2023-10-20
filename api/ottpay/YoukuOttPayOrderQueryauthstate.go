@@ -9,11 +9,6 @@ import (
 // youku.ott.pay.order.queryauthstate
 //
 // 查询CP用户连包商品签约状态
-func YoukuOttPayOrderQueryauthstate(clt *core.SDKClient, req *ottpay.YoukuOttPayOrderQueryauthstateAPIRequest, session string) (*ottpay.YoukuOttPayOrderQueryauthstateAPIResponse, error) {
-	var resp ottpay.YoukuOttPayOrderQueryauthstateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YoukuOttPayOrderQueryauthstate(clt *core.SDKClient, req *ottpay.YoukuOttPayOrderQueryauthstateAPIRequest, resp *ottpay.YoukuOttPayOrderQueryauthstateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

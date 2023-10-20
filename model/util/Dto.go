@@ -1,5 +1,9 @@
 package util
 
+import (
+	"sync"
+)
+
 // Dto 结构体
 type Dto struct {
 	// 自定义配置信息
@@ -32,4 +36,35 @@ type Dto struct {
 	VersionCode int64 `json:"version_code,omitempty" xml:"version_code,omitempty"`
 	// 是否自动安装
 	AutoInstall bool `json:"auto_install,omitempty" xml:"auto_install,omitempty"`
+}
+
+var poolDto = sync.Pool{
+	New: func() any {
+		return new(Dto)
+	},
+}
+
+// GetDto() 从对象池中获取Dto
+func GetDto() *Dto {
+	return poolDto.Get().(*Dto)
+}
+
+// ReleaseDto 释放Dto
+func ReleaseDto(v *Dto) {
+	v.ConfigJson = ""
+	v.DownloadUrl = ""
+	v.Qrcode = ""
+	v.UpdateDesc = ""
+	v.VersionName = ""
+	v.IconUrl = ""
+	v.Md5 = ""
+	v.AppName = ""
+	v.PackageName = ""
+	v.OldPackageName = ""
+	v.Identifier = ""
+	v.Status = 0
+	v.Size = 0
+	v.VersionCode = 0
+	v.AutoInstall = false
+	poolDto.Put(v)
 }

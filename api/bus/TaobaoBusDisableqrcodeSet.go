@@ -9,11 +9,6 @@ import (
 // taobao.bus.disableqrcode.set
 //
 // 使创建的二维码失效
-func TaobaoBusDisableqrcodeSet(clt *core.SDKClient, req *bus.TaobaoBusDisableqrcodeSetAPIRequest, session string) (*bus.TaobaoBusDisableqrcodeSetAPIResponse, error) {
-	var resp bus.TaobaoBusDisableqrcodeSetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBusDisableqrcodeSet(clt *core.SDKClient, req *bus.TaobaoBusDisableqrcodeSetAPIRequest, resp *bus.TaobaoBusDisableqrcodeSetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

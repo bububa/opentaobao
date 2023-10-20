@@ -1,5 +1,9 @@
 package icbu
 
+import (
+	"sync"
+)
+
 // AttributeValue 结构体
 type AttributeValue struct {
 	// 该属性值的子属性id
@@ -14,4 +18,26 @@ type AttributeValue struct {
 	CatId int64 `json:"cat_id,omitempty" xml:"cat_id,omitempty"`
 	// 是否SKU属性值
 	SkuValue bool `json:"sku_value,omitempty" xml:"sku_value,omitempty"`
+}
+
+var poolAttributeValue = sync.Pool{
+	New: func() any {
+		return new(AttributeValue)
+	},
+}
+
+// GetAttributeValue() 从对象池中获取AttributeValue
+func GetAttributeValue() *AttributeValue {
+	return poolAttributeValue.Get().(*AttributeValue)
+}
+
+// ReleaseAttributeValue 释放AttributeValue
+func ReleaseAttributeValue(v *AttributeValue) {
+	v.ChildAttrs = v.ChildAttrs[:0]
+	v.EnName = ""
+	v.AttrValueId = 0
+	v.AttrId = 0
+	v.CatId = 0
+	v.SkuValue = false
+	poolAttributeValue.Put(v)
 }

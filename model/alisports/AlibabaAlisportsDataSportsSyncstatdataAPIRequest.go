@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type AlibabaAlisportsDataSportsSyncstatdataAPIRequest struct {
 // NewAlibabaAlisportsDataSportsSyncstatdataRequest 初始化AlibabaAlisportsDataSportsSyncstatdataAPIRequest对象
 func NewAlibabaAlisportsDataSportsSyncstatdataRequest() *AlibabaAlisportsDataSportsSyncstatdataAPIRequest {
 	return &AlibabaAlisportsDataSportsSyncstatdataAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlisportsDataSportsSyncstatdataAPIRequest) Reset() {
+	r._alispAppKey = ""
+	r._alispTime = ""
+	r._alispSign = ""
+	r._aliuid = ""
+	r._steps = ""
+	r._calorie = ""
+	r._distance = ""
+	r._time = ""
+	r._deviceType = ""
+	r._deviceName = ""
+	r._deviceModel = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *AlibabaAlisportsDataSportsSyncstatdataAPIRequest) SetDeviceModel(_devic
 // GetDeviceModel DeviceModel Getter
 func (r AlibabaAlisportsDataSportsSyncstatdataAPIRequest) GetDeviceModel() string {
 	return r._deviceModel
+}
+
+var poolAlibabaAlisportsDataSportsSyncstatdataAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlisportsDataSportsSyncstatdataRequest()
+	},
+}
+
+// GetAlibabaAlisportsDataSportsSyncstatdataRequest 从 sync.Pool 获取 AlibabaAlisportsDataSportsSyncstatdataAPIRequest
+func GetAlibabaAlisportsDataSportsSyncstatdataAPIRequest() *AlibabaAlisportsDataSportsSyncstatdataAPIRequest {
+	return poolAlibabaAlisportsDataSportsSyncstatdataAPIRequest.Get().(*AlibabaAlisportsDataSportsSyncstatdataAPIRequest)
+}
+
+// ReleaseAlibabaAlisportsDataSportsSyncstatdataAPIRequest 将 AlibabaAlisportsDataSportsSyncstatdataAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlisportsDataSportsSyncstatdataAPIRequest(v *AlibabaAlisportsDataSportsSyncstatdataAPIRequest) {
+	v.Reset()
+	poolAlibabaAlisportsDataSportsSyncstatdataAPIRequest.Put(v)
 }

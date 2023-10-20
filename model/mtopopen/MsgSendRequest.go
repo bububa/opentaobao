@@ -1,5 +1,9 @@
 package mtopopen
 
+import (
+	"sync"
+)
+
 // MsgSendRequest 结构体
 type MsgSendRequest struct {
 	// 快递公司编码
@@ -12,4 +16,25 @@ type MsgSendRequest struct {
 	OccurTime int64 `json:"occur_time,omitempty" xml:"occur_time,omitempty"`
 	// 类型（1-RETENTION-滞留即将收费、2-TAKEOUT-快递员取出）
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolMsgSendRequest = sync.Pool{
+	New: func() any {
+		return new(MsgSendRequest)
+	},
+}
+
+// GetMsgSendRequest() 从对象池中获取MsgSendRequest
+func GetMsgSendRequest() *MsgSendRequest {
+	return poolMsgSendRequest.Get().(*MsgSendRequest)
+}
+
+// ReleaseMsgSendRequest 释放MsgSendRequest
+func ReleaseMsgSendRequest(v *MsgSendRequest) {
+	v.CpCode = ""
+	v.MailNo = ""
+	v.ExtParams = ""
+	v.OccurTime = 0
+	v.Type = 0
+	poolMsgSendRequest.Put(v)
 }

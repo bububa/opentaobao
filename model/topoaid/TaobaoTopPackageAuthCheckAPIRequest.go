@@ -2,6 +2,7 @@ package topoaid
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTopPackageAuthCheckAPIRequest struct {
 // NewTaobaoTopPackageAuthCheckRequest 初始化TaobaoTopPackageAuthCheckAPIRequest对象
 func NewTaobaoTopPackageAuthCheckRequest() *TaobaoTopPackageAuthCheckAPIRequest {
 	return &TaobaoTopPackageAuthCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTopPackageAuthCheckAPIRequest) Reset() {
+	r._authScopeCheckRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTopPackageAuthCheckAPIRequest) SetAuthScopeCheckRequest(_authScop
 // GetAuthScopeCheckRequest AuthScopeCheckRequest Getter
 func (r TaobaoTopPackageAuthCheckAPIRequest) GetAuthScopeCheckRequest() *AuthScopeCheckRequest {
 	return r._authScopeCheckRequest
+}
+
+var poolTaobaoTopPackageAuthCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTopPackageAuthCheckRequest()
+	},
+}
+
+// GetTaobaoTopPackageAuthCheckRequest 从 sync.Pool 获取 TaobaoTopPackageAuthCheckAPIRequest
+func GetTaobaoTopPackageAuthCheckAPIRequest() *TaobaoTopPackageAuthCheckAPIRequest {
+	return poolTaobaoTopPackageAuthCheckAPIRequest.Get().(*TaobaoTopPackageAuthCheckAPIRequest)
+}
+
+// ReleaseTaobaoTopPackageAuthCheckAPIRequest 将 TaobaoTopPackageAuthCheckAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTopPackageAuthCheckAPIRequest(v *TaobaoTopPackageAuthCheckAPIRequest) {
+	v.Reset()
+	poolTaobaoTopPackageAuthCheckAPIRequest.Put(v)
 }

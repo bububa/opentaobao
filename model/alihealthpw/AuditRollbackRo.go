@@ -1,5 +1,9 @@
 package alihealthpw
 
+import (
+	"sync"
+)
+
 // AuditRollbackRo 结构体
 type AuditRollbackRo struct {
 	// 医院列表
@@ -28,4 +32,33 @@ type AuditRollbackRo struct {
 	PatientName string `json:"patient_name,omitempty" xml:"patient_name,omitempty"`
 	// 选择医院
 	HospitalInfo *HospitalInfoDto `json:"hospital_info,omitempty" xml:"hospital_info,omitempty"`
+}
+
+var poolAuditRollbackRo = sync.Pool{
+	New: func() any {
+		return new(AuditRollbackRo)
+	},
+}
+
+// GetAuditRollbackRo() 从对象池中获取AuditRollbackRo
+func GetAuditRollbackRo() *AuditRollbackRo {
+	return poolAuditRollbackRo.Get().(*AuditRollbackRo)
+}
+
+// ReleaseAuditRollbackRo 释放AuditRollbackRo
+func ReleaseAuditRollbackRo(v *AuditRollbackRo) {
+	v.HospitalsDesc = v.HospitalsDesc[:0]
+	v.ReceiptDate = ""
+	v.UserUniqueCode = ""
+	v.ApplyAuditTime = ""
+	v.CheckRemark = ""
+	v.Url = ""
+	v.ReceiptName = ""
+	v.ReceiptAccount = ""
+	v.ApplyAuditStatus = ""
+	v.ProjectThirdId = ""
+	v.ReceiptMoney = ""
+	v.PatientName = ""
+	v.HospitalInfo = nil
+	poolAuditRollbackRo.Put(v)
 }

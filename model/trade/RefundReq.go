@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // RefundReq 结构体
 type RefundReq struct {
 	// 代理商订单号
@@ -20,4 +24,29 @@ type RefundReq struct {
 	TpOrderId int64 `json:"tp_order_id,omitempty" xml:"tp_order_id,omitempty"`
 	// 退票成功标志
 	Status bool `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolRefundReq = sync.Pool{
+	New: func() any {
+		return new(RefundReq)
+	},
+}
+
+// GetRefundReq() 从对象池中获取RefundReq
+func GetRefundReq() *RefundReq {
+	return poolRefundReq.Get().(*RefundReq)
+}
+
+// ReleaseRefundReq 释放RefundReq
+func ReleaseRefundReq(v *RefundReq) {
+	v.AgentOrderId = ""
+	v.FailCode = ""
+	v.FailReason = ""
+	v.AgentId = 0
+	v.ApplyId = 0
+	v.ChargeFee = 0
+	v.RefundFee = 0
+	v.TpOrderId = 0
+	v.Status = false
+	poolRefundReq.Put(v)
 }

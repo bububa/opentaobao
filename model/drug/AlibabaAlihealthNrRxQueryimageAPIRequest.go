@@ -2,6 +2,7 @@ package drug
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthNrRxQueryimageAPIRequest struct {
 // NewAlibabaAlihealthNrRxQueryimageRequest 初始化AlibabaAlihealthNrRxQueryimageAPIRequest对象
 func NewAlibabaAlihealthNrRxQueryimageRequest() *AlibabaAlihealthNrRxQueryimageAPIRequest {
 	return &AlibabaAlihealthNrRxQueryimageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthNrRxQueryimageAPIRequest) Reset() {
+	r._orderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthNrRxQueryimageAPIRequest) SetOrderId(_orderId int64) er
 // GetOrderId OrderId Getter
 func (r AlibabaAlihealthNrRxQueryimageAPIRequest) GetOrderId() int64 {
 	return r._orderId
+}
+
+var poolAlibabaAlihealthNrRxQueryimageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthNrRxQueryimageRequest()
+	},
+}
+
+// GetAlibabaAlihealthNrRxQueryimageRequest 从 sync.Pool 获取 AlibabaAlihealthNrRxQueryimageAPIRequest
+func GetAlibabaAlihealthNrRxQueryimageAPIRequest() *AlibabaAlihealthNrRxQueryimageAPIRequest {
+	return poolAlibabaAlihealthNrRxQueryimageAPIRequest.Get().(*AlibabaAlihealthNrRxQueryimageAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthNrRxQueryimageAPIRequest 将 AlibabaAlihealthNrRxQueryimageAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthNrRxQueryimageAPIRequest(v *AlibabaAlihealthNrRxQueryimageAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthNrRxQueryimageAPIRequest.Put(v)
 }

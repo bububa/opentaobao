@@ -2,6 +2,7 @@ package product
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoItemCarturlGetAPIResponse struct {
 	TaobaoItemCarturlGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoItemCarturlGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoItemCarturlGetAPIResponseModel).Reset()
+}
+
 // TaobaoItemCarturlGetAPIResponseModel is 加购URL获取 成功返回结果
 type TaobaoItemCarturlGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"item_carturl_get_response"`
@@ -22,4 +29,27 @@ type TaobaoItemCarturlGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 加购的URL地址
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoItemCarturlGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = ""
+}
+
+var poolTaobaoItemCarturlGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoItemCarturlGetAPIResponse)
+	},
+}
+
+// GetTaobaoItemCarturlGetAPIResponse 从 sync.Pool 获取 TaobaoItemCarturlGetAPIResponse
+func GetTaobaoItemCarturlGetAPIResponse() *TaobaoItemCarturlGetAPIResponse {
+	return poolTaobaoItemCarturlGetAPIResponse.Get().(*TaobaoItemCarturlGetAPIResponse)
+}
+
+// ReleaseTaobaoItemCarturlGetAPIResponse 将 TaobaoItemCarturlGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoItemCarturlGetAPIResponse(v *TaobaoItemCarturlGetAPIResponse) {
+	v.Reset()
+	poolTaobaoItemCarturlGetAPIResponse.Put(v)
 }

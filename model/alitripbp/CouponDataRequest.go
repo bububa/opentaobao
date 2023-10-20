@@ -1,5 +1,9 @@
 package alitripbp
 
+import (
+	"sync"
+)
+
 // CouponDataRequest 结构体
 type CouponDataRequest struct {
 	// 券id
@@ -22,4 +26,30 @@ type CouponDataRequest struct {
 	ExtInfo string `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
 	// 券状态
 	CouponStatus int64 `json:"coupon_status,omitempty" xml:"coupon_status,omitempty"`
+}
+
+var poolCouponDataRequest = sync.Pool{
+	New: func() any {
+		return new(CouponDataRequest)
+	},
+}
+
+// GetCouponDataRequest() 从对象池中获取CouponDataRequest
+func GetCouponDataRequest() *CouponDataRequest {
+	return poolCouponDataRequest.Get().(*CouponDataRequest)
+}
+
+// ReleaseCouponDataRequest 释放CouponDataRequest
+func ReleaseCouponDataRequest(v *CouponDataRequest) {
+	v.CouponId = ""
+	v.CouponName = ""
+	v.CouponPrice = ""
+	v.EndTime = ""
+	v.Scene = ""
+	v.StartTime = ""
+	v.UserId = ""
+	v.CouponTemplateId = ""
+	v.ExtInfo = ""
+	v.CouponStatus = 0
+	poolCouponDataRequest.Put(v)
 }

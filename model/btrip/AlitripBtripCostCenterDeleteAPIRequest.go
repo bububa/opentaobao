@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripCostCenterDeleteAPIRequest struct {
 // NewAlitripBtripCostCenterDeleteRequest 初始化AlitripBtripCostCenterDeleteAPIRequest对象
 func NewAlitripBtripCostCenterDeleteRequest() *AlitripBtripCostCenterDeleteAPIRequest {
 	return &AlitripBtripCostCenterDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripCostCenterDeleteAPIRequest) Reset() {
+	r._rq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripCostCenterDeleteAPIRequest) SetRq(_rq *OpenCostCenterDelete
 // GetRq Rq Getter
 func (r AlitripBtripCostCenterDeleteAPIRequest) GetRq() *OpenCostCenterDeleteRq {
 	return r._rq
+}
+
+var poolAlitripBtripCostCenterDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripCostCenterDeleteRequest()
+	},
+}
+
+// GetAlitripBtripCostCenterDeleteRequest 从 sync.Pool 获取 AlitripBtripCostCenterDeleteAPIRequest
+func GetAlitripBtripCostCenterDeleteAPIRequest() *AlitripBtripCostCenterDeleteAPIRequest {
+	return poolAlitripBtripCostCenterDeleteAPIRequest.Get().(*AlitripBtripCostCenterDeleteAPIRequest)
+}
+
+// ReleaseAlitripBtripCostCenterDeleteAPIRequest 将 AlitripBtripCostCenterDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripCostCenterDeleteAPIRequest(v *AlitripBtripCostCenterDeleteAPIRequest) {
+	v.Reset()
+	poolAlitripBtripCostCenterDeleteAPIRequest.Put(v)
 }

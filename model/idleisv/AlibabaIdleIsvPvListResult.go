@@ -1,5 +1,9 @@
 package idleisv
 
+import (
+	"sync"
+)
+
 // AlibabaIdleIsvPvListResult 结构体
 type AlibabaIdleIsvPvListResult struct {
 	// 品牌/型号两级属性
@@ -10,4 +14,24 @@ type AlibabaIdleIsvPvListResult struct {
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaIdleIsvPvListResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleIsvPvListResult)
+	},
+}
+
+// GetAlibabaIdleIsvPvListResult() 从对象池中获取AlibabaIdleIsvPvListResult
+func GetAlibabaIdleIsvPvListResult() *AlibabaIdleIsvPvListResult {
+	return poolAlibabaIdleIsvPvListResult.Get().(*AlibabaIdleIsvPvListResult)
+}
+
+// ReleaseAlibabaIdleIsvPvListResult 释放AlibabaIdleIsvPvListResult
+func ReleaseAlibabaIdleIsvPvListResult(v *AlibabaIdleIsvPvListResult) {
+	v.PropertyList = v.PropertyList[:0]
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Success = false
+	poolAlibabaIdleIsvPvListResult.Put(v)
 }

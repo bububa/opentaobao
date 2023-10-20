@@ -2,6 +2,7 @@ package ascm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest struct {
 // NewAlibabaAscmSettlementInvoiceSynchronizationImRequest 初始化AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest对象
 func NewAlibabaAscmSettlementInvoiceSynchronizationImRequest() *AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest {
 	return &AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest) Reset() {
+	r._xmlDataSlot = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest) SetXmlDataSlot
 // GetXmlDataSlot XmlDataSlot Getter
 func (r AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest) GetXmlDataSlot() string {
 	return r._xmlDataSlot
+}
+
+var poolAlibabaAscmSettlementInvoiceSynchronizationImAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscmSettlementInvoiceSynchronizationImRequest()
+	},
+}
+
+// GetAlibabaAscmSettlementInvoiceSynchronizationImRequest 从 sync.Pool 获取 AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest
+func GetAlibabaAscmSettlementInvoiceSynchronizationImAPIRequest() *AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest {
+	return poolAlibabaAscmSettlementInvoiceSynchronizationImAPIRequest.Get().(*AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest)
+}
+
+// ReleaseAlibabaAscmSettlementInvoiceSynchronizationImAPIRequest 将 AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscmSettlementInvoiceSynchronizationImAPIRequest(v *AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest) {
+	v.Reset()
+	poolAlibabaAscmSettlementInvoiceSynchronizationImAPIRequest.Put(v)
 }

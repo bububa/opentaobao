@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpAccountStatusUpdateAPIRequest struct {
 // NewAlibabaScbpAccountStatusUpdateRequest 初始化AlibabaScbpAccountStatusUpdateAPIRequest对象
 func NewAlibabaScbpAccountStatusUpdateRequest() *AlibabaScbpAccountStatusUpdateAPIRequest {
 	return &AlibabaScbpAccountStatusUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAccountStatusUpdateAPIRequest) Reset() {
+	r._status = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpAccountStatusUpdateAPIRequest) SetStatus(_status string) err
 // GetStatus Status Getter
 func (r AlibabaScbpAccountStatusUpdateAPIRequest) GetStatus() string {
 	return r._status
+}
+
+var poolAlibabaScbpAccountStatusUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAccountStatusUpdateRequest()
+	},
+}
+
+// GetAlibabaScbpAccountStatusUpdateRequest 从 sync.Pool 获取 AlibabaScbpAccountStatusUpdateAPIRequest
+func GetAlibabaScbpAccountStatusUpdateAPIRequest() *AlibabaScbpAccountStatusUpdateAPIRequest {
+	return poolAlibabaScbpAccountStatusUpdateAPIRequest.Get().(*AlibabaScbpAccountStatusUpdateAPIRequest)
+}
+
+// ReleaseAlibabaScbpAccountStatusUpdateAPIRequest 将 AlibabaScbpAccountStatusUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAccountStatusUpdateAPIRequest(v *AlibabaScbpAccountStatusUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAccountStatusUpdateAPIRequest.Put(v)
 }

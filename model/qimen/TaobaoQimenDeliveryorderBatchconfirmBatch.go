@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // TaobaoQimenDeliveryorderBatchconfirmBatch 结构体
 type TaobaoQimenDeliveryorderBatchconfirmBatch struct {
 	// 批次编号
@@ -14,4 +18,26 @@ type TaobaoQimenDeliveryorderBatchconfirmBatch struct {
 	InventoryType string `json:"inventoryType,omitempty" xml:"inventoryType,omitempty"`
 	// 实发数量(要求batchs节点下所有的实发数量之和等于orderline中的实发数量)
 	ActualQty int64 `json:"actualQty,omitempty" xml:"actualQty,omitempty"`
+}
+
+var poolTaobaoQimenDeliveryorderBatchconfirmBatch = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenDeliveryorderBatchconfirmBatch)
+	},
+}
+
+// GetTaobaoQimenDeliveryorderBatchconfirmBatch() 从对象池中获取TaobaoQimenDeliveryorderBatchconfirmBatch
+func GetTaobaoQimenDeliveryorderBatchconfirmBatch() *TaobaoQimenDeliveryorderBatchconfirmBatch {
+	return poolTaobaoQimenDeliveryorderBatchconfirmBatch.Get().(*TaobaoQimenDeliveryorderBatchconfirmBatch)
+}
+
+// ReleaseTaobaoQimenDeliveryorderBatchconfirmBatch 释放TaobaoQimenDeliveryorderBatchconfirmBatch
+func ReleaseTaobaoQimenDeliveryorderBatchconfirmBatch(v *TaobaoQimenDeliveryorderBatchconfirmBatch) {
+	v.BatchCode = ""
+	v.ProductDate = ""
+	v.ExpireDate = ""
+	v.ProduceCode = ""
+	v.InventoryType = ""
+	v.ActualQty = 0
+	poolTaobaoQimenDeliveryorderBatchconfirmBatch.Put(v)
 }

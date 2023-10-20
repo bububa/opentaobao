@@ -2,6 +2,7 @@ package product
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoUmpPromotionSkuGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoUmpPromotionSkuGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoUmpPromotionSkuGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoUmpPromotionSkuGetAPIResponseModel).Reset()
 }
 
 // TaobaoUmpPromotionSkuGetAPIResponseModel is 商品优惠详情查询 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoUmpPromotionSkuGetAPIResponseModel struct {
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 是否调用成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoUmpPromotionSkuGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Models = ""
+	m.DefaultModelKey = ""
+	m.ErrorMessage = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoUmpPromotionSkuGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoUmpPromotionSkuGetAPIResponse)
+	},
+}
+
+// GetTaobaoUmpPromotionSkuGetAPIResponse 从 sync.Pool 获取 TaobaoUmpPromotionSkuGetAPIResponse
+func GetTaobaoUmpPromotionSkuGetAPIResponse() *TaobaoUmpPromotionSkuGetAPIResponse {
+	return poolTaobaoUmpPromotionSkuGetAPIResponse.Get().(*TaobaoUmpPromotionSkuGetAPIResponse)
+}
+
+// ReleaseTaobaoUmpPromotionSkuGetAPIResponse 将 TaobaoUmpPromotionSkuGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoUmpPromotionSkuGetAPIResponse(v *TaobaoUmpPromotionSkuGetAPIResponse) {
+	v.Reset()
+	poolTaobaoUmpPromotionSkuGetAPIResponse.Put(v)
 }

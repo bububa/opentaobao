@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // FlightRule 结构体
 type FlightRule struct {
 	// 行李额描述
@@ -22,4 +26,30 @@ type FlightRule struct {
 	RefundRuleItem *RefundChangeRuleItem `json:"refund_rule_item,omitempty" xml:"refund_rule_item,omitempty"`
 	// 行李规则
 	BaggageItem *BaggageItem `json:"baggage_item,omitempty" xml:"baggage_item,omitempty"`
+}
+
+var poolFlightRule = sync.Pool{
+	New: func() any {
+		return new(FlightRule)
+	},
+}
+
+// GetFlightRule() 从对象池中获取FlightRule
+func GetFlightRule() *FlightRule {
+	return poolFlightRule.Get().(*FlightRule)
+}
+
+// ReleaseFlightRule 释放FlightRule
+func ReleaseFlightRule(v *FlightRule) {
+	v.BaggageInfo = ""
+	v.Extra = ""
+	v.TuigaiqianInfo = ""
+	v.ChangeRule = nil
+	v.RefundRule = nil
+	v.SignRule = nil
+	v.UpgradeRule = nil
+	v.ChangeRuleItem = nil
+	v.RefundRuleItem = nil
+	v.BaggageItem = nil
+	poolFlightRule.Put(v)
 }

@@ -1,9 +1,13 @@
 package wdk
 
-// EbeecakeO2ocallbackOrder 结构体
-type EbeecakeO2ocallbackOrder struct {
+import (
+	"sync"
+)
+
+// EbeecakeO2OCallbackOrder 结构体
+type EbeecakeO2OCallbackOrder struct {
 	// 作业单元列表
-	CallbackUnits []EbeecakeO2ocallbackUnit `json:"callback_units,omitempty" xml:"callback_units>ebeecake_o2ocallback_unit,omitempty"`
+	CallbackUnits []EbeecakeO2OCallbackUnit `json:"callback_units,omitempty" xml:"callback_units>ebeecake_o2o_callback_unit,omitempty"`
 	// 作业单号
 	WorkOrderId string `json:"work_order_id,omitempty" xml:"work_order_id,omitempty"`
 	// 作业单类型： BATCH(&#34;批次&#34;), ORDER(&#34;物流单&#34;)
@@ -14,4 +18,26 @@ type EbeecakeO2ocallbackOrder struct {
 	StatusChangeTime string `json:"status_change_time,omitempty" xml:"status_change_time,omitempty"`
 	// 配送员
 	Postman *Postman `json:"postman,omitempty" xml:"postman,omitempty"`
+}
+
+var poolEbeecakeO2OCallbackOrder = sync.Pool{
+	New: func() any {
+		return new(EbeecakeO2OCallbackOrder)
+	},
+}
+
+// GetEbeecakeO2OCallbackOrder() 从对象池中获取EbeecakeO2OCallbackOrder
+func GetEbeecakeO2OCallbackOrder() *EbeecakeO2OCallbackOrder {
+	return poolEbeecakeO2OCallbackOrder.Get().(*EbeecakeO2OCallbackOrder)
+}
+
+// ReleaseEbeecakeO2OCallbackOrder 释放EbeecakeO2OCallbackOrder
+func ReleaseEbeecakeO2OCallbackOrder(v *EbeecakeO2OCallbackOrder) {
+	v.CallbackUnits = v.CallbackUnits[:0]
+	v.WorkOrderId = ""
+	v.WorkOrderType = ""
+	v.StatusChangeType = ""
+	v.StatusChangeTime = ""
+	v.Postman = nil
+	poolEbeecakeO2OCallbackOrder.Put(v)
 }

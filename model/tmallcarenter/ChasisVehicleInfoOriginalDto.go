@@ -1,5 +1,9 @@
 package tmallcarenter
 
+import (
+	"sync"
+)
+
 // ChasisVehicleInfoOriginalDto 结构体
 type ChasisVehicleInfoOriginalDto struct {
 	// 换代
@@ -32,4 +36,35 @@ type ChasisVehicleInfoOriginalDto struct {
 	EndYear int64 `json:"end_year,omitempty" xml:"end_year,omitempty"`
 	// 生产年份
 	ProductiveYear int64 `json:"productive_year,omitempty" xml:"productive_year,omitempty"`
+}
+
+var poolChasisVehicleInfoOriginalDto = sync.Pool{
+	New: func() any {
+		return new(ChasisVehicleInfoOriginalDto)
+	},
+}
+
+// GetChasisVehicleInfoOriginalDto() 从对象池中获取ChasisVehicleInfoOriginalDto
+func GetChasisVehicleInfoOriginalDto() *ChasisVehicleInfoOriginalDto {
+	return poolChasisVehicleInfoOriginalDto.Get().(*ChasisVehicleInfoOriginalDto)
+}
+
+// ReleaseChasisVehicleInfoOriginalDto 释放ChasisVehicleInfoOriginalDto
+func ReleaseChasisVehicleInfoOriginalDto(v *ChasisVehicleInfoOriginalDto) {
+	v.Replacement = ""
+	v.Origin = ""
+	v.BrandName = ""
+	v.MaxPower = ""
+	v.ManufactureName = ""
+	v.EngineNo = ""
+	v.ModelName = ""
+	v.FuelType = ""
+	v.Displacement = ""
+	v.DriveModel = ""
+	v.ChasisCid = ""
+	v.ChassisNum = ""
+	v.LineName = ""
+	v.EndYear = 0
+	v.ProductiveYear = 0
+	poolChasisVehicleInfoOriginalDto.Put(v)
 }

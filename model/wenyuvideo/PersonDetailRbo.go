@@ -1,5 +1,9 @@
 package wenyuvideo
 
+import (
+	"sync"
+)
+
 // PersonDetailRbo 结构体
 type PersonDetailRbo struct {
 	// 人物类型：unknow,director,starring,performer,singer,lyricswriter,composer,screenwriter,producer,host,voice,      * executive_producer,teacher,original, interview,paike
@@ -44,4 +48,41 @@ type PersonDetailRbo struct {
 	Constellation string `json:"constellation,omitempty" xml:"constellation,omitempty"`
 	// 主键(优酷人物ID)
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolPersonDetailRbo = sync.Pool{
+	New: func() any {
+		return new(PersonDetailRbo)
+	},
+}
+
+// GetPersonDetailRbo() 从对象池中获取PersonDetailRbo
+func GetPersonDetailRbo() *PersonDetailRbo {
+	return poolPersonDetailRbo.Get().(*PersonDetailRbo)
+}
+
+// ReleasePersonDetailRbo 释放PersonDetailRbo
+func ReleasePersonDetailRbo(v *PersonDetailRbo) {
+	v.PersonTypeList = v.PersonTypeList[:0]
+	v.NationalityList = v.NationalityList[:0]
+	v.OccupationList = v.OccupationList[:0]
+	v.PersonKindList = v.PersonKindList[:0]
+	v.MemberList = v.MemberList[:0]
+	v.RefShows = v.RefShows[:0]
+	v.RefPersons = v.RefPersons[:0]
+	v.Name = ""
+	v.ThumbUrl = ""
+	v.ThumbUrlLg = ""
+	v.PosterUrl = ""
+	v.PosterUrlH = ""
+	v.PersonDesc = ""
+	v.Gender = ""
+	v.Birthday = ""
+	v.Deathday = ""
+	v.Homeplace = ""
+	v.Height = ""
+	v.BloodType = ""
+	v.Constellation = ""
+	v.Id = 0
+	poolPersonDetailRbo.Put(v)
 }

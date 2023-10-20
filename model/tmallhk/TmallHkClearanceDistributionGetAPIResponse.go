@@ -2,6 +2,7 @@ package tmallhk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallHkClearanceDistributionGetAPIResponse struct {
 	TmallHkClearanceDistributionGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallHkClearanceDistributionGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallHkClearanceDistributionGetAPIResponseModel).Reset()
+}
+
 // TmallHkClearanceDistributionGetAPIResponseModel is 分销供应商获取清关材料 成功返回结果
 type TmallHkClearanceDistributionGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_hk_clearance_distribution_get_response"`
@@ -22,4 +29,27 @@ type TmallHkClearanceDistributionGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 查询结果对象
 	Result *CertifyQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallHkClearanceDistributionGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallHkClearanceDistributionGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallHkClearanceDistributionGetAPIResponse)
+	},
+}
+
+// GetTmallHkClearanceDistributionGetAPIResponse 从 sync.Pool 获取 TmallHkClearanceDistributionGetAPIResponse
+func GetTmallHkClearanceDistributionGetAPIResponse() *TmallHkClearanceDistributionGetAPIResponse {
+	return poolTmallHkClearanceDistributionGetAPIResponse.Get().(*TmallHkClearanceDistributionGetAPIResponse)
+}
+
+// ReleaseTmallHkClearanceDistributionGetAPIResponse 将 TmallHkClearanceDistributionGetAPIResponse 保存到 sync.Pool
+func ReleaseTmallHkClearanceDistributionGetAPIResponse(v *TmallHkClearanceDistributionGetAPIResponse) {
+	v.Reset()
+	poolTmallHkClearanceDistributionGetAPIResponse.Put(v)
 }

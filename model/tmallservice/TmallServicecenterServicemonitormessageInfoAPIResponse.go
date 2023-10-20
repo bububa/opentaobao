@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallServicecenterServicemonitormessageInfoAPIResponse struct {
 	model.CommonResponse
 	TmallServicecenterServicemonitormessageInfoAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterServicemonitormessageInfoAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServicecenterServicemonitormessageInfoAPIResponseModel).Reset()
 }
 
 // TmallServicecenterServicemonitormessageInfoAPIResponseModel is 服务预警单查询接口 成功返回结果
@@ -40,4 +47,36 @@ type TmallServicecenterServicemonitormessageInfoAPIResponseModel struct {
 	BizId int64 `json:"biz_id,omitempty" xml:"biz_id,omitempty"`
 	// 预警单主键id ，反馈处理进度和备注时需要回传此ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterServicemonitormessageInfoAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.BizType = ""
+	m.Level = ""
+	m.ServiceCode = ""
+	m.Memo = ""
+	m.GmtCreate = ""
+	m.RuleId = ""
+	m.Content = ""
+	m.Status = ""
+	m.BizId = 0
+	m.Id = 0
+}
+
+var poolTmallServicecenterServicemonitormessageInfoAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterServicemonitormessageInfoAPIResponse)
+	},
+}
+
+// GetTmallServicecenterServicemonitormessageInfoAPIResponse 从 sync.Pool 获取 TmallServicecenterServicemonitormessageInfoAPIResponse
+func GetTmallServicecenterServicemonitormessageInfoAPIResponse() *TmallServicecenterServicemonitormessageInfoAPIResponse {
+	return poolTmallServicecenterServicemonitormessageInfoAPIResponse.Get().(*TmallServicecenterServicemonitormessageInfoAPIResponse)
+}
+
+// ReleaseTmallServicecenterServicemonitormessageInfoAPIResponse 将 TmallServicecenterServicemonitormessageInfoAPIResponse 保存到 sync.Pool
+func ReleaseTmallServicecenterServicemonitormessageInfoAPIResponse(v *TmallServicecenterServicemonitormessageInfoAPIResponse) {
+	v.Reset()
+	poolTmallServicecenterServicemonitormessageInfoAPIResponse.Put(v)
 }

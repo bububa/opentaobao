@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // TargetReportOperationDto 结构体
 type TargetReportOperationDto struct {
 	// crowd/region
@@ -12,4 +16,25 @@ type TargetReportOperationDto struct {
 	CampaignType int64 `json:"campaign_type,omitempty" xml:"campaign_type,omitempty"`
 	// 计划ID
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
+}
+
+var poolTargetReportOperationDto = sync.Pool{
+	New: func() any {
+		return new(TargetReportOperationDto)
+	},
+}
+
+// GetTargetReportOperationDto() 从对象池中获取TargetReportOperationDto
+func GetTargetReportOperationDto() *TargetReportOperationDto {
+	return poolTargetReportOperationDto.Get().(*TargetReportOperationDto)
+}
+
+// ReleaseTargetReportOperationDto 释放TargetReportOperationDto
+func ReleaseTargetReportOperationDto(v *TargetReportOperationDto) {
+	v.Type = ""
+	v.DateBegin = ""
+	v.DateEnd = ""
+	v.CampaignType = 0
+	v.CampaignId = 0
+	poolTargetReportOperationDto.Put(v)
 }

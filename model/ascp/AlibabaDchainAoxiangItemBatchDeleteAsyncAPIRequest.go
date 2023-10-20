@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest struct {
 // NewAlibabaDchainAoxiangItemBatchDeleteAsyncRequest 初始化AlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest对象
 func NewAlibabaDchainAoxiangItemBatchDeleteAsyncRequest() *AlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest {
 	return &AlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest) Reset() {
+	r._itemDeleteRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest) SetItemDeleteReques
 // GetItemDeleteRequest ItemDeleteRequest Getter
 func (r AlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest) GetItemDeleteRequest() *ItemBatchDeleteAsyncRequest {
 	return r._itemDeleteRequest
+}
+
+var poolAlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangItemBatchDeleteAsyncRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangItemBatchDeleteAsyncRequest 从 sync.Pool 获取 AlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest
+func GetAlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest() *AlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest {
+	return poolAlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest.Get().(*AlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest 将 AlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest(v *AlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangItemBatchDeleteAsyncAPIRequest.Put(v)
 }

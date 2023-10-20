@@ -2,6 +2,7 @@ package aedropshiper
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AliexpressDsImageSearchAPIResponse struct {
 	model.CommonResponse
 	AliexpressDsImageSearchAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AliexpressDsImageSearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressDsImageSearchAPIResponseModel).Reset()
 }
 
 // AliexpressDsImageSearchAPIResponseModel is 图片搜索 成功返回结果
@@ -28,4 +35,30 @@ type AliexpressDsImageSearchAPIResponseModel struct {
 	Data *TrafficImageSearchResultDto `json:"data,omitempty" xml:"data,omitempty"`
 	// total record count
 	TotalRecordCount int64 `json:"total_record_count,omitempty" xml:"total_record_count,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressDsImageSearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RspCode = ""
+	m.RspMsg = ""
+	m.Data = nil
+	m.TotalRecordCount = 0
+}
+
+var poolAliexpressDsImageSearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressDsImageSearchAPIResponse)
+	},
+}
+
+// GetAliexpressDsImageSearchAPIResponse 从 sync.Pool 获取 AliexpressDsImageSearchAPIResponse
+func GetAliexpressDsImageSearchAPIResponse() *AliexpressDsImageSearchAPIResponse {
+	return poolAliexpressDsImageSearchAPIResponse.Get().(*AliexpressDsImageSearchAPIResponse)
+}
+
+// ReleaseAliexpressDsImageSearchAPIResponse 将 AliexpressDsImageSearchAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressDsImageSearchAPIResponse(v *AliexpressDsImageSearchAPIResponse) {
+	v.Reset()
+	poolAliexpressDsImageSearchAPIResponse.Put(v)
 }

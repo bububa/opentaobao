@@ -2,6 +2,7 @@ package lstvending
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstVendingOrderUpdateAPIRequest struct {
 // NewAlibabaLstVendingOrderUpdateRequest 初始化AlibabaLstVendingOrderUpdateAPIRequest对象
 func NewAlibabaLstVendingOrderUpdateRequest() *AlibabaLstVendingOrderUpdateAPIRequest {
 	return &AlibabaLstVendingOrderUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstVendingOrderUpdateAPIRequest) Reset() {
+	r._vendingOrderDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstVendingOrderUpdateAPIRequest) SetVendingOrderDTO(_vendingOrde
 // GetVendingOrderDTO VendingOrderDTO Getter
 func (r AlibabaLstVendingOrderUpdateAPIRequest) GetVendingOrderDTO() *VendingOrderDto {
 	return r._vendingOrderDTO
+}
+
+var poolAlibabaLstVendingOrderUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstVendingOrderUpdateRequest()
+	},
+}
+
+// GetAlibabaLstVendingOrderUpdateRequest 从 sync.Pool 获取 AlibabaLstVendingOrderUpdateAPIRequest
+func GetAlibabaLstVendingOrderUpdateAPIRequest() *AlibabaLstVendingOrderUpdateAPIRequest {
+	return poolAlibabaLstVendingOrderUpdateAPIRequest.Get().(*AlibabaLstVendingOrderUpdateAPIRequest)
+}
+
+// ReleaseAlibabaLstVendingOrderUpdateAPIRequest 将 AlibabaLstVendingOrderUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstVendingOrderUpdateAPIRequest(v *AlibabaLstVendingOrderUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaLstVendingOrderUpdateAPIRequest.Put(v)
 }

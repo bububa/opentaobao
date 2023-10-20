@@ -2,6 +2,7 @@ package ioti
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaItEslEslinfoGeteslinfoAPIRequest struct {
 // NewAlibabaItEslEslinfoGeteslinfoRequest 初始化AlibabaItEslEslinfoGeteslinfoAPIRequest对象
 func NewAlibabaItEslEslinfoGeteslinfoRequest() *AlibabaItEslEslinfoGeteslinfoAPIRequest {
 	return &AlibabaItEslEslinfoGeteslinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaItEslEslinfoGeteslinfoAPIRequest) Reset() {
+	r._mac = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaItEslEslinfoGeteslinfoAPIRequest) SetMac(_mac string) error {
 // GetMac Mac Getter
 func (r AlibabaItEslEslinfoGeteslinfoAPIRequest) GetMac() string {
 	return r._mac
+}
+
+var poolAlibabaItEslEslinfoGeteslinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaItEslEslinfoGeteslinfoRequest()
+	},
+}
+
+// GetAlibabaItEslEslinfoGeteslinfoRequest 从 sync.Pool 获取 AlibabaItEslEslinfoGeteslinfoAPIRequest
+func GetAlibabaItEslEslinfoGeteslinfoAPIRequest() *AlibabaItEslEslinfoGeteslinfoAPIRequest {
+	return poolAlibabaItEslEslinfoGeteslinfoAPIRequest.Get().(*AlibabaItEslEslinfoGeteslinfoAPIRequest)
+}
+
+// ReleaseAlibabaItEslEslinfoGeteslinfoAPIRequest 将 AlibabaItEslEslinfoGeteslinfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaItEslEslinfoGeteslinfoAPIRequest(v *AlibabaItEslEslinfoGeteslinfoAPIRequest) {
+	v.Reset()
+	poolAlibabaItEslEslinfoGeteslinfoAPIRequest.Put(v)
 }

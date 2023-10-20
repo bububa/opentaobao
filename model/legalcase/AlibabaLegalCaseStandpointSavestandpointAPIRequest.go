@@ -2,6 +2,7 @@ package legalcase
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaLegalCaseStandpointSavestandpointAPIRequest struct {
 // NewAlibabaLegalCaseStandpointSavestandpointRequest 初始化AlibabaLegalCaseStandpointSavestandpointAPIRequest对象
 func NewAlibabaLegalCaseStandpointSavestandpointRequest() *AlibabaLegalCaseStandpointSavestandpointAPIRequest {
 	return &AlibabaLegalCaseStandpointSavestandpointAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegalCaseStandpointSavestandpointAPIRequest) Reset() {
+	r._defenseCaliber = ""
+	r._standpointDesc = ""
+	r._submitPeople = ""
+	r._suitId = 0
+	r._entrustId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaLegalCaseStandpointSavestandpointAPIRequest) SetEntrustId(_entru
 // GetEntrustId EntrustId Getter
 func (r AlibabaLegalCaseStandpointSavestandpointAPIRequest) GetEntrustId() int64 {
 	return r._entrustId
+}
+
+var poolAlibabaLegalCaseStandpointSavestandpointAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegalCaseStandpointSavestandpointRequest()
+	},
+}
+
+// GetAlibabaLegalCaseStandpointSavestandpointRequest 从 sync.Pool 获取 AlibabaLegalCaseStandpointSavestandpointAPIRequest
+func GetAlibabaLegalCaseStandpointSavestandpointAPIRequest() *AlibabaLegalCaseStandpointSavestandpointAPIRequest {
+	return poolAlibabaLegalCaseStandpointSavestandpointAPIRequest.Get().(*AlibabaLegalCaseStandpointSavestandpointAPIRequest)
+}
+
+// ReleaseAlibabaLegalCaseStandpointSavestandpointAPIRequest 将 AlibabaLegalCaseStandpointSavestandpointAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegalCaseStandpointSavestandpointAPIRequest(v *AlibabaLegalCaseStandpointSavestandpointAPIRequest) {
+	v.Reset()
+	poolAlibabaLegalCaseStandpointSavestandpointAPIRequest.Put(v)
 }

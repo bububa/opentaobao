@@ -1,5 +1,9 @@
 package tmalltrend
 
+import (
+	"sync"
+)
+
 // TmallBrandChannelNewItem 结构体
 type TmallBrandChannelNewItem struct {
 	// 商品sku在渠道的图片
@@ -36,4 +40,37 @@ type TmallBrandChannelNewItem struct {
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 是否天猫同款
 	TmallSame bool `json:"tmall_same,omitempty" xml:"tmall_same,omitempty"`
+}
+
+var poolTmallBrandChannelNewItem = sync.Pool{
+	New: func() any {
+		return new(TmallBrandChannelNewItem)
+	},
+}
+
+// GetTmallBrandChannelNewItem() 从对象池中获取TmallBrandChannelNewItem
+func GetTmallBrandChannelNewItem() *TmallBrandChannelNewItem {
+	return poolTmallBrandChannelNewItem.Get().(*TmallBrandChannelNewItem)
+}
+
+// ReleaseTmallBrandChannelNewItem 释放TmallBrandChannelNewItem
+func ReleaseTmallBrandChannelNewItem(v *TmallBrandChannelNewItem) {
+	v.ChannelItemPicts = v.ChannelItemPicts[:0]
+	v.BrandName = ""
+	v.Channel = ""
+	v.ChannelPublishTime = ""
+	v.ItemName = ""
+	v.ChannelItemName = ""
+	v.ChannelProperties = ""
+	v.ChannelItemPrice = ""
+	v.Barcode = ""
+	v.ChannelPublishArea = ""
+	v.ChannelQuantity = 0
+	v.ChannelItemId = 0
+	v.ChannelSkuId = 0
+	v.ItemId = 0
+	v.BrandId = 0
+	v.SkuId = 0
+	v.TmallSame = false
+	poolTmallBrandChannelNewItem.Put(v)
 }

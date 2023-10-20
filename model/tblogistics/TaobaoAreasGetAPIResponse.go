@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type TaobaoAreasGetAPIResponse struct {
 	TaobaoAreasGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAreasGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAreasGetAPIResponseModel).Reset()
+}
+
 // TaobaoAreasGetAPIResponseModel is 查询地址区域 成功返回结果
 type TaobaoAreasGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"areas_get_response"`
@@ -23,4 +30,27 @@ type TaobaoAreasGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 地址区域信息列表.返回的Area包含的具体信息为入参fields请求的字段信息 。
 	Areas []Area `json:"areas,omitempty" xml:"areas>area,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAreasGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Areas = m.Areas[:0]
+}
+
+var poolTaobaoAreasGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAreasGetAPIResponse)
+	},
+}
+
+// GetTaobaoAreasGetAPIResponse 从 sync.Pool 获取 TaobaoAreasGetAPIResponse
+func GetTaobaoAreasGetAPIResponse() *TaobaoAreasGetAPIResponse {
+	return poolTaobaoAreasGetAPIResponse.Get().(*TaobaoAreasGetAPIResponse)
+}
+
+// ReleaseTaobaoAreasGetAPIResponse 将 TaobaoAreasGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAreasGetAPIResponse(v *TaobaoAreasGetAPIResponse) {
+	v.Reset()
+	poolTaobaoAreasGetAPIResponse.Put(v)
 }

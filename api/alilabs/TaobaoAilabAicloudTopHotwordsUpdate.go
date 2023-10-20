@@ -9,11 +9,6 @@ import (
 // taobao.ailab.aicloud.top.hotwords.update
 //
 // 更新ASR热词
-func TaobaoAilabAicloudTopHotwordsUpdate(clt *core.SDKClient, req *alilabs.TaobaoAilabAicloudTopHotwordsUpdateAPIRequest, session string) (*alilabs.TaobaoAilabAicloudTopHotwordsUpdateAPIResponse, error) {
-	var resp alilabs.TaobaoAilabAicloudTopHotwordsUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAilabAicloudTopHotwordsUpdate(clt *core.SDKClient, req *alilabs.TaobaoAilabAicloudTopHotwordsUpdateAPIRequest, resp *alilabs.TaobaoAilabAicloudTopHotwordsUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

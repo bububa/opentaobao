@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PrizeItemInfo 结构体
 type PrizeItemInfo struct {
 	// 券id
@@ -14,4 +18,26 @@ type PrizeItemInfo struct {
 	VoucherType string `json:"voucher_type,omitempty" xml:"voucher_type,omitempty"`
 	// 几等奖
 	PrizeLevel int64 `json:"prize_level,omitempty" xml:"prize_level,omitempty"`
+}
+
+var poolPrizeItemInfo = sync.Pool{
+	New: func() any {
+		return new(PrizeItemInfo)
+	},
+}
+
+// GetPrizeItemInfo() 从对象池中获取PrizeItemInfo
+func GetPrizeItemInfo() *PrizeItemInfo {
+	return poolPrizeItemInfo.Get().(*PrizeItemInfo)
+}
+
+// ReleasePrizeItemInfo 释放PrizeItemInfo
+func ReleasePrizeItemInfo(v *PrizeItemInfo) {
+	v.VoucherIds = v.VoucherIds[:0]
+	v.Denomination = ""
+	v.PrizeName = ""
+	v.VoucherName = ""
+	v.VoucherType = ""
+	v.PrizeLevel = 0
+	poolPrizeItemInfo.Put(v)
 }

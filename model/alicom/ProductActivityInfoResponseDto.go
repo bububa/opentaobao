@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // ProductActivityInfoResponseDto 结构体
 type ProductActivityInfoResponseDto struct {
 	// 产品ID
@@ -16,4 +20,27 @@ type ProductActivityInfoResponseDto struct {
 	ActivityName string `json:"activity_name,omitempty" xml:"activity_name,omitempty"`
 	// activityGiftInfos
 	ActivityGiftInfos *ActivityGiftInfos `json:"activity_gift_infos,omitempty" xml:"activity_gift_infos,omitempty"`
+}
+
+var poolProductActivityInfoResponseDto = sync.Pool{
+	New: func() any {
+		return new(ProductActivityInfoResponseDto)
+	},
+}
+
+// GetProductActivityInfoResponseDto() 从对象池中获取ProductActivityInfoResponseDto
+func GetProductActivityInfoResponseDto() *ProductActivityInfoResponseDto {
+	return poolProductActivityInfoResponseDto.Get().(*ProductActivityInfoResponseDto)
+}
+
+// ReleaseProductActivityInfoResponseDto 释放ProductActivityInfoResponseDto
+func ReleaseProductActivityInfoResponseDto(v *ProductActivityInfoResponseDto) {
+	v.ProductId = ""
+	v.ProductName = ""
+	v.SellerNick = ""
+	v.Price = ""
+	v.ActivityId = ""
+	v.ActivityName = ""
+	v.ActivityGiftInfos = nil
+	poolProductActivityInfoResponseDto.Put(v)
 }

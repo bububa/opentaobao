@@ -2,6 +2,7 @@ package alihealthcrm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -73,8 +74,41 @@ type AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest struct {
 // NewAlibabaAlihealthMedicalbaseHospitalSyncRequest 初始化AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest对象
 func NewAlibabaAlihealthMedicalbaseHospitalSyncRequest() *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest {
 	return &AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(28),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) Reset() {
+	r._isAuth = ""
+	r._functions = ""
+	r._lat = ""
+	r._lon = ""
+	r._hosAddress = ""
+	r._telephone = ""
+	r._regionName = ""
+	r._isPublic = ""
+	r._serviceInfo = ""
+	r._special = ""
+	r._serviceWindowUrl = ""
+	r._descriptionUrl = ""
+	r._isInsurance = ""
+	r._grade = ""
+	r._category = ""
+	r._shortName = ""
+	r._pid = ""
+	r._unifyCode = ""
+	r._cityCode = ""
+	r._hosName = ""
+	r._companyName = ""
+	r._aliInterfaceMan = ""
+	r._email = ""
+	r._technicalMan = ""
+	r._phone = ""
+	r._hosType = ""
+	r._isvHosCode = ""
+	r._deliveryChannel = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -456,4 +490,21 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetDeliveryChannel(_
 // GetDeliveryChannel DeliveryChannel Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetDeliveryChannel() string {
 	return r._deliveryChannel
+}
+
+var poolAlibabaAlihealthMedicalbaseHospitalSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthMedicalbaseHospitalSyncRequest()
+	},
+}
+
+// GetAlibabaAlihealthMedicalbaseHospitalSyncRequest 从 sync.Pool 获取 AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest
+func GetAlibabaAlihealthMedicalbaseHospitalSyncAPIRequest() *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest {
+	return poolAlibabaAlihealthMedicalbaseHospitalSyncAPIRequest.Get().(*AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthMedicalbaseHospitalSyncAPIRequest 将 AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthMedicalbaseHospitalSyncAPIRequest(v *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthMedicalbaseHospitalSyncAPIRequest.Put(v)
 }

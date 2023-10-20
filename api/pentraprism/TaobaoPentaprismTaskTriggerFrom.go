@@ -9,11 +9,6 @@ import (
 // taobao.pentaprism.task.trigger.from
 //
 // 外网用户推进单条五棱镜任务进度
-func TaobaoPentaprismTaskTriggerFrom(clt *core.SDKClient, req *pentraprism.TaobaoPentaprismTaskTriggerFromAPIRequest, session string) (*pentraprism.TaobaoPentaprismTaskTriggerFromAPIResponse, error) {
-	var resp pentraprism.TaobaoPentaprismTaskTriggerFromAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPentaprismTaskTriggerFrom(clt *core.SDKClient, req *pentraprism.TaobaoPentaprismTaskTriggerFromAPIRequest, resp *pentraprism.TaobaoPentaprismTaskTriggerFromAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

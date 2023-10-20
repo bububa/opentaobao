@@ -1,5 +1,9 @@
 package nlife
 
+import (
+	"sync"
+)
+
 // LogisticsInfo 结构体
 type LogisticsInfo struct {
 	// 货流详细信息
@@ -10,4 +14,24 @@ type LogisticsInfo struct {
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 收货人联系电话
 	PhoneNo string `json:"phone_no,omitempty" xml:"phone_no,omitempty"`
+}
+
+var poolLogisticsInfo = sync.Pool{
+	New: func() any {
+		return new(LogisticsInfo)
+	},
+}
+
+// GetLogisticsInfo() 从对象池中获取LogisticsInfo
+func GetLogisticsInfo() *LogisticsInfo {
+	return poolLogisticsInfo.Get().(*LogisticsInfo)
+}
+
+// ReleaseLogisticsInfo 释放LogisticsInfo
+func ReleaseLogisticsInfo(v *LogisticsInfo) {
+	v.LogisticsInfoDetails = v.LogisticsInfoDetails[:0]
+	v.Receiver = ""
+	v.Address = ""
+	v.PhoneNo = ""
+	poolLogisticsInfo.Put(v)
 }

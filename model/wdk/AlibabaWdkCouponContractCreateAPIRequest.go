@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkCouponContractCreateAPIRequest struct {
 // NewAlibabaWdkCouponContractCreateRequest 初始化AlibabaWdkCouponContractCreateAPIRequest对象
 func NewAlibabaWdkCouponContractCreateRequest() *AlibabaWdkCouponContractCreateAPIRequest {
 	return &AlibabaWdkCouponContractCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkCouponContractCreateAPIRequest) Reset() {
+	r._createContractInstanceRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkCouponContractCreateAPIRequest) SetCreateContractInstanceRequ
 // GetCreateContractInstanceRequest CreateContractInstanceRequest Getter
 func (r AlibabaWdkCouponContractCreateAPIRequest) GetCreateContractInstanceRequest() *CreateContractInstanceRequest {
 	return r._createContractInstanceRequest
+}
+
+var poolAlibabaWdkCouponContractCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkCouponContractCreateRequest()
+	},
+}
+
+// GetAlibabaWdkCouponContractCreateRequest 从 sync.Pool 获取 AlibabaWdkCouponContractCreateAPIRequest
+func GetAlibabaWdkCouponContractCreateAPIRequest() *AlibabaWdkCouponContractCreateAPIRequest {
+	return poolAlibabaWdkCouponContractCreateAPIRequest.Get().(*AlibabaWdkCouponContractCreateAPIRequest)
+}
+
+// ReleaseAlibabaWdkCouponContractCreateAPIRequest 将 AlibabaWdkCouponContractCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkCouponContractCreateAPIRequest(v *AlibabaWdkCouponContractCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkCouponContractCreateAPIRequest.Put(v)
 }

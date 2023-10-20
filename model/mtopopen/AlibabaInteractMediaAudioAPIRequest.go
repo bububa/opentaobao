@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaInteractMediaAudioAPIRequest struct {
 // NewAlibabaInteractMediaAudioRequest 初始化AlibabaInteractMediaAudioAPIRequest对象
 func NewAlibabaInteractMediaAudioRequest() *AlibabaInteractMediaAudioAPIRequest {
 	return &AlibabaInteractMediaAudioAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractMediaAudioAPIRequest) Reset() {
+	r._id = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaInteractMediaAudioAPIRequest) SetId(_id string) error {
 // GetId Id Getter
 func (r AlibabaInteractMediaAudioAPIRequest) GetId() string {
 	return r._id
+}
+
+var poolAlibabaInteractMediaAudioAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractMediaAudioRequest()
+	},
+}
+
+// GetAlibabaInteractMediaAudioRequest 从 sync.Pool 获取 AlibabaInteractMediaAudioAPIRequest
+func GetAlibabaInteractMediaAudioAPIRequest() *AlibabaInteractMediaAudioAPIRequest {
+	return poolAlibabaInteractMediaAudioAPIRequest.Get().(*AlibabaInteractMediaAudioAPIRequest)
+}
+
+// ReleaseAlibabaInteractMediaAudioAPIRequest 将 AlibabaInteractMediaAudioAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractMediaAudioAPIRequest(v *AlibabaInteractMediaAudioAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractMediaAudioAPIRequest.Put(v)
 }

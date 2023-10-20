@@ -2,6 +2,7 @@ package ship
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripShipOrderNotifyAPIResponse struct {
 	AlitripShipOrderNotifyAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripShipOrderNotifyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripShipOrderNotifyAPIResponseModel).Reset()
+}
+
 // AlitripShipOrderNotifyAPIResponseModel is 订单信息回填(出票回调) 成功返回结果
 type AlitripShipOrderNotifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_ship_order_notify_response"`
@@ -26,4 +33,29 @@ type AlitripShipOrderNotifyAPIResponseModel struct {
 	RetMsg string `json:"ret_msg,omitempty" xml:"ret_msg,omitempty"`
 	// 是否成功
 	RetSuccess bool `json:"ret_success,omitempty" xml:"ret_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripShipOrderNotifyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RetCode = ""
+	m.RetMsg = ""
+	m.RetSuccess = false
+}
+
+var poolAlitripShipOrderNotifyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripShipOrderNotifyAPIResponse)
+	},
+}
+
+// GetAlitripShipOrderNotifyAPIResponse 从 sync.Pool 获取 AlitripShipOrderNotifyAPIResponse
+func GetAlitripShipOrderNotifyAPIResponse() *AlitripShipOrderNotifyAPIResponse {
+	return poolAlitripShipOrderNotifyAPIResponse.Get().(*AlitripShipOrderNotifyAPIResponse)
+}
+
+// ReleaseAlitripShipOrderNotifyAPIResponse 将 AlitripShipOrderNotifyAPIResponse 保存到 sync.Pool
+func ReleaseAlitripShipOrderNotifyAPIResponse(v *AlitripShipOrderNotifyAPIResponse) {
+	v.Reset()
+	poolAlitripShipOrderNotifyAPIResponse.Put(v)
 }

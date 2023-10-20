@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // AlibabaCampusSpaceUnitGetlistmapbygroupidMapResult 结构体
 type AlibabaCampusSpaceUnitGetlistmapbygroupidMapResult struct {
 	// content
@@ -14,4 +18,26 @@ type AlibabaCampusSpaceUnitGetlistmapbygroupidMapResult struct {
 	ErrorLevel string `json:"error_level,omitempty" xml:"error_level,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaCampusSpaceUnitGetlistmapbygroupidMapResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaCampusSpaceUnitGetlistmapbygroupidMapResult)
+	},
+}
+
+// GetAlibabaCampusSpaceUnitGetlistmapbygroupidMapResult() 从对象池中获取AlibabaCampusSpaceUnitGetlistmapbygroupidMapResult
+func GetAlibabaCampusSpaceUnitGetlistmapbygroupidMapResult() *AlibabaCampusSpaceUnitGetlistmapbygroupidMapResult {
+	return poolAlibabaCampusSpaceUnitGetlistmapbygroupidMapResult.Get().(*AlibabaCampusSpaceUnitGetlistmapbygroupidMapResult)
+}
+
+// ReleaseAlibabaCampusSpaceUnitGetlistmapbygroupidMapResult 释放AlibabaCampusSpaceUnitGetlistmapbygroupidMapResult
+func ReleaseAlibabaCampusSpaceUnitGetlistmapbygroupidMapResult(v *AlibabaCampusSpaceUnitGetlistmapbygroupidMapResult) {
+	v.Content = ""
+	v.RequestId = ""
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.ErrorLevel = ""
+	v.Success = false
+	poolAlibabaCampusSpaceUnitGetlistmapbygroupidMapResult.Put(v)
 }

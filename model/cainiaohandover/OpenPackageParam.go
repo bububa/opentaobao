@@ -1,5 +1,9 @@
 package cainiaohandover
 
+import (
+	"sync"
+)
+
 // OpenPackageParam 结构体
 type OpenPackageParam struct {
 	// 商品参数
@@ -16,4 +20,27 @@ type OpenPackageParam struct {
 	Weight int64 `json:"weight,omitempty" xml:"weight,omitempty"`
 	// 包裹价格
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
+}
+
+var poolOpenPackageParam = sync.Pool{
+	New: func() any {
+		return new(OpenPackageParam)
+	},
+}
+
+// GetOpenPackageParam() 从对象池中获取OpenPackageParam
+func GetOpenPackageParam() *OpenPackageParam {
+	return poolOpenPackageParam.Get().(*OpenPackageParam)
+}
+
+// ReleaseOpenPackageParam 释放OpenPackageParam
+func ReleaseOpenPackageParam(v *OpenPackageParam) {
+	v.ItemParams = v.ItemParams[:0]
+	v.Currency = ""
+	v.Length = 0
+	v.Width = 0
+	v.Height = 0
+	v.Weight = 0
+	v.Price = 0
+	poolOpenPackageParam.Put(v)
 }

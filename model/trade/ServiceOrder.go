@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // ServiceOrder 结构体
 type ServiceOrder struct {
 	// 服务详情的URL地址
@@ -28,4 +32,33 @@ type ServiceOrder struct {
 	ServiceId int64 `json:"service_id,omitempty" xml:"service_id,omitempty"`
 	// 购买数量，取值范围为大于0的整数
 	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
+}
+
+var poolServiceOrder = sync.Pool{
+	New: func() any {
+		return new(ServiceOrder)
+	},
+}
+
+// GetServiceOrder() 从对象池中获取ServiceOrder
+func GetServiceOrder() *ServiceOrder {
+	return poolServiceOrder.Get().(*ServiceOrder)
+}
+
+// ReleaseServiceOrder 释放ServiceOrder
+func ReleaseServiceOrder(v *ServiceOrder) {
+	v.ServiceDetailUrl = ""
+	v.Price = ""
+	v.Payment = ""
+	v.Title = ""
+	v.TotalFee = ""
+	v.RefundId = ""
+	v.SellerNick = ""
+	v.PicPath = ""
+	v.TmserSpuCode = ""
+	v.Oid = 0
+	v.ItemOid = 0
+	v.ServiceId = 0
+	v.Num = 0
+	poolServiceOrder.Put(v)
 }

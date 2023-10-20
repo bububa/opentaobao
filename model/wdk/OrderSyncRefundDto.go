@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderSyncRefundDto 结构体
 type OrderSyncRefundDto struct {
 	// 退款渠道列表
@@ -96,4 +100,67 @@ type OrderSyncRefundDto struct {
 	DisputeType int64 `json:"dispute_type,omitempty" xml:"dispute_type,omitempty"`
 	// 退款销售数量
 	RefundSaleQuantity int64 `json:"refund_sale_quantity,omitempty" xml:"refund_sale_quantity,omitempty"`
+}
+
+var poolOrderSyncRefundDto = sync.Pool{
+	New: func() any {
+		return new(OrderSyncRefundDto)
+	},
+}
+
+// GetOrderSyncRefundDto() 从对象池中获取OrderSyncRefundDto
+func GetOrderSyncRefundDto() *OrderSyncRefundDto {
+	return poolOrderSyncRefundDto.Get().(*OrderSyncRefundDto)
+}
+
+// ReleaseOrderSyncRefundDto 释放OrderSyncRefundDto
+func ReleaseOrderSyncRefundDto(v *OrderSyncRefundDto) {
+	v.RefundChannelList = v.RefundChannelList[:0]
+	v.BuyAmountStock = ""
+	v.ItemCode = ""
+	v.MerchantCode = ""
+	v.NsQuantity = ""
+	v.OperatorId = ""
+	v.OperatorName = ""
+	v.PickAmountStock = ""
+	v.RefundQuantity = ""
+	v.RefundTime = ""
+	v.SellUnit = ""
+	v.StoreId = ""
+	v.SyncStatus = ""
+	v.BatchTime = ""
+	v.ActualPickQuantity = ""
+	v.ActualRefundQuantity = ""
+	v.PromiseStatus = ""
+	v.StockUnit = ""
+	v.SaleUnit = ""
+	v.Attributes = ""
+	v.TradeAttributes = ""
+	v.SkuCode = ""
+	v.OpenUid = ""
+	v.OutOrderId = ""
+	v.OutMianOrderId = ""
+	v.ShopId = ""
+	v.OutSkuCode = ""
+	v.OutRefundId = ""
+	v.OutShopId = ""
+	v.BizMainRefundId = ""
+	v.OutMainRefundId = ""
+	v.RefundStatus = ""
+	v.RefundAttributes = ""
+	v.SourceMerchantCode = ""
+	v.OriginOrderId = 0
+	v.OriginParentId = 0
+	v.Quantity = 0
+	v.RefundAmount = 0
+	v.RefundOrderId = 0
+	v.RefundType = 0
+	v.TbBizOrderId = 0
+	v.RefundPostFee = 0
+	v.TbBizParentId = 0
+	v.OrderClient = 0
+	v.OrderFrom = 0
+	v.DisputeType = 0
+	v.RefundSaleQuantity = 0
+	poolOrderSyncRefundDto.Put(v)
 }

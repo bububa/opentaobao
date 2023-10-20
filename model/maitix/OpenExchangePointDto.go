@@ -1,5 +1,9 @@
 package maitix
 
+import (
+	"sync"
+)
+
 // OpenExchangePointDto 结构体
 type OpenExchangePointDto struct {
 	// 换票点名称
@@ -22,4 +26,30 @@ type OpenExchangePointDto struct {
 	ValidPeriod string `json:"valid_period,omitempty" xml:"valid_period,omitempty"`
 	// 换票点id
 	PointId int64 `json:"point_id,omitempty" xml:"point_id,omitempty"`
+}
+
+var poolOpenExchangePointDto = sync.Pool{
+	New: func() any {
+		return new(OpenExchangePointDto)
+	},
+}
+
+// GetOpenExchangePointDto() 从对象池中获取OpenExchangePointDto
+func GetOpenExchangePointDto() *OpenExchangePointDto {
+	return poolOpenExchangePointDto.Get().(*OpenExchangePointDto)
+}
+
+// ReleaseOpenExchangePointDto 释放OpenExchangePointDto
+func ReleaseOpenExchangePointDto(v *OpenExchangePointDto) {
+	v.PointName = ""
+	v.PointAddr = ""
+	v.Longitude = ""
+	v.Latitude = ""
+	v.BizTimeShow = ""
+	v.Remark = ""
+	v.PointType = ""
+	v.ExchangeType = ""
+	v.ValidPeriod = ""
+	v.PointId = 0
+	poolOpenExchangePointDto.Put(v)
 }

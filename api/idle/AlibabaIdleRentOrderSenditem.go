@@ -9,11 +9,6 @@ import (
 // alibaba.idle.rent.order.senditem
 //
 // 确认发货
-func AlibabaIdleRentOrderSenditem(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderSenditemAPIRequest, session string) (*idle.AlibabaIdleRentOrderSenditemAPIResponse, error) {
-	var resp idle.AlibabaIdleRentOrderSenditemAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleRentOrderSenditem(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderSenditemAPIRequest, resp *idle.AlibabaIdleRentOrderSenditemAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

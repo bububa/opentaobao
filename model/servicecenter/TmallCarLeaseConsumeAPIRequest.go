@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallCarLeaseConsumeAPIRequest struct {
 // NewTmallCarLeaseConsumeRequest 初始化TmallCarLeaseConsumeAPIRequest对象
 func NewTmallCarLeaseConsumeRequest() *TmallCarLeaseConsumeAPIRequest {
 	return &TmallCarLeaseConsumeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarLeaseConsumeAPIRequest) Reset() {
+	r._cosumeCodeReqDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallCarLeaseConsumeAPIRequest) SetCosumeCodeReqDTO(_cosumeCodeReqDTO *
 // GetCosumeCodeReqDTO CosumeCodeReqDTO Getter
 func (r TmallCarLeaseConsumeAPIRequest) GetCosumeCodeReqDTO() *CosumeCodeReqDto {
 	return r._cosumeCodeReqDTO
+}
+
+var poolTmallCarLeaseConsumeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarLeaseConsumeRequest()
+	},
+}
+
+// GetTmallCarLeaseConsumeRequest 从 sync.Pool 获取 TmallCarLeaseConsumeAPIRequest
+func GetTmallCarLeaseConsumeAPIRequest() *TmallCarLeaseConsumeAPIRequest {
+	return poolTmallCarLeaseConsumeAPIRequest.Get().(*TmallCarLeaseConsumeAPIRequest)
+}
+
+// ReleaseTmallCarLeaseConsumeAPIRequest 将 TmallCarLeaseConsumeAPIRequest 放入 sync.Pool
+func ReleaseTmallCarLeaseConsumeAPIRequest(v *TmallCarLeaseConsumeAPIRequest) {
+	v.Reset()
+	poolTmallCarLeaseConsumeAPIRequest.Put(v)
 }

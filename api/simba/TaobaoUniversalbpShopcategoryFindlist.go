@@ -9,11 +9,6 @@ import (
 // taobao.universalbp.shopcategory.findlist
 //
 // 查询店铺所属的类目信息
-func TaobaoUniversalbpShopcategoryFindlist(clt *core.SDKClient, req *simba.TaobaoUniversalbpShopcategoryFindlistAPIRequest, session string) (*simba.TaobaoUniversalbpShopcategoryFindlistAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpShopcategoryFindlistAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUniversalbpShopcategoryFindlist(clt *core.SDKClient, req *simba.TaobaoUniversalbpShopcategoryFindlistAPIRequest, resp *simba.TaobaoUniversalbpShopcategoryFindlistAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

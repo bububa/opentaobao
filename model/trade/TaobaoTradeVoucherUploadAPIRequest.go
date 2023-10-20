@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoTradeVoucherUploadAPIRequest struct {
 // NewTaobaoTradeVoucherUploadRequest 初始化TaobaoTradeVoucherUploadAPIRequest对象
 func NewTaobaoTradeVoucherUploadRequest() *TaobaoTradeVoucherUploadAPIRequest {
 	return &TaobaoTradeVoucherUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTradeVoucherUploadAPIRequest) Reset() {
+	r._fileName = ""
+	r._sellerNick = ""
+	r._buyerNick = ""
+	r._fileData = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoTradeVoucherUploadAPIRequest) SetFileData(_fileData *model.File) 
 // GetFileData FileData Getter
 func (r TaobaoTradeVoucherUploadAPIRequest) GetFileData() *model.File {
 	return r._fileData
+}
+
+var poolTaobaoTradeVoucherUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTradeVoucherUploadRequest()
+	},
+}
+
+// GetTaobaoTradeVoucherUploadRequest 从 sync.Pool 获取 TaobaoTradeVoucherUploadAPIRequest
+func GetTaobaoTradeVoucherUploadAPIRequest() *TaobaoTradeVoucherUploadAPIRequest {
+	return poolTaobaoTradeVoucherUploadAPIRequest.Get().(*TaobaoTradeVoucherUploadAPIRequest)
+}
+
+// ReleaseTaobaoTradeVoucherUploadAPIRequest 将 TaobaoTradeVoucherUploadAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTradeVoucherUploadAPIRequest(v *TaobaoTradeVoucherUploadAPIRequest) {
+	v.Reset()
+	poolTaobaoTradeVoucherUploadAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // AirportInfo 结构体
 type AirportInfo struct {
 	// 机场编码
@@ -12,4 +16,25 @@ type AirportInfo struct {
 	CityCode string `json:"city_code,omitempty" xml:"city_code,omitempty"`
 	// 城市名称
 	CityName string `json:"city_name,omitempty" xml:"city_name,omitempty"`
+}
+
+var poolAirportInfo = sync.Pool{
+	New: func() any {
+		return new(AirportInfo)
+	},
+}
+
+// GetAirportInfo() 从对象池中获取AirportInfo
+func GetAirportInfo() *AirportInfo {
+	return poolAirportInfo.Get().(*AirportInfo)
+}
+
+// ReleaseAirportInfo 释放AirportInfo
+func ReleaseAirportInfo(v *AirportInfo) {
+	v.AirportCode = ""
+	v.AirportName = ""
+	v.Terminal = ""
+	v.CityCode = ""
+	v.CityName = ""
+	poolAirportInfo.Put(v)
 }

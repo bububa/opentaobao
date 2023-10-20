@@ -9,11 +9,6 @@ import (
 // taobao.vmarket.eticket.flow.consume
 //
 // 无交易类凭证核销
-func TaobaoVmarketEticketFlowConsume(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketFlowConsumeAPIRequest, session string) (*eticket.TaobaoVmarketEticketFlowConsumeAPIResponse, error) {
-	var resp eticket.TaobaoVmarketEticketFlowConsumeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoVmarketEticketFlowConsume(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketFlowConsumeAPIRequest, resp *eticket.TaobaoVmarketEticketFlowConsumeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaHealthVaccinUserRegisterRemindAPIRequest struct {
 // NewAlibabaHealthVaccinUserRegisterRemindRequest 初始化AlibabaHealthVaccinUserRegisterRemindAPIRequest对象
 func NewAlibabaHealthVaccinUserRegisterRemindRequest() *AlibabaHealthVaccinUserRegisterRemindAPIRequest {
 	return &AlibabaHealthVaccinUserRegisterRemindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHealthVaccinUserRegisterRemindAPIRequest) Reset() {
+	r._isvVcAvailableRemindRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaHealthVaccinUserRegisterRemindAPIRequest) SetIsvVcAvailableRemin
 // GetIsvVcAvailableRemindRequest IsvVcAvailableRemindRequest Getter
 func (r AlibabaHealthVaccinUserRegisterRemindAPIRequest) GetIsvVcAvailableRemindRequest() *IsvVcAvailableRemindRequest {
 	return r._isvVcAvailableRemindRequest
+}
+
+var poolAlibabaHealthVaccinUserRegisterRemindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHealthVaccinUserRegisterRemindRequest()
+	},
+}
+
+// GetAlibabaHealthVaccinUserRegisterRemindRequest 从 sync.Pool 获取 AlibabaHealthVaccinUserRegisterRemindAPIRequest
+func GetAlibabaHealthVaccinUserRegisterRemindAPIRequest() *AlibabaHealthVaccinUserRegisterRemindAPIRequest {
+	return poolAlibabaHealthVaccinUserRegisterRemindAPIRequest.Get().(*AlibabaHealthVaccinUserRegisterRemindAPIRequest)
+}
+
+// ReleaseAlibabaHealthVaccinUserRegisterRemindAPIRequest 将 AlibabaHealthVaccinUserRegisterRemindAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHealthVaccinUserRegisterRemindAPIRequest(v *AlibabaHealthVaccinUserRegisterRemindAPIRequest) {
+	v.Reset()
+	poolAlibabaHealthVaccinUserRegisterRemindAPIRequest.Put(v)
 }

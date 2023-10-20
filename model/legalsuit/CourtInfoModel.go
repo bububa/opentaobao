@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // CourtInfoModel 结构体
 type CourtInfoModel struct {
 	// 反馈附件
@@ -82,4 +86,60 @@ type CourtInfoModel struct {
 	FormalAttachmentCount int64 `json:"formal_attachment_count,omitempty" xml:"formal_attachment_count,omitempty"`
 	// 反馈ID
 	FeedbackId int64 `json:"feedback_id,omitempty" xml:"feedback_id,omitempty"`
+}
+
+var poolCourtInfoModel = sync.Pool{
+	New: func() any {
+		return new(CourtInfoModel)
+	},
+}
+
+// GetCourtInfoModel() 从对象池中获取CourtInfoModel
+func GetCourtInfoModel() *CourtInfoModel {
+	return poolCourtInfoModel.Get().(*CourtInfoModel)
+}
+
+// ReleaseCourtInfoModel 释放CourtInfoModel
+func ReleaseCourtInfoModel(v *CourtInfoModel) {
+	v.FeedbackAttachmentList = v.FeedbackAttachmentList[:0]
+	v.QuestionList = v.QuestionList[:0]
+	v.FormalAttachmentList = v.FormalAttachmentList[:0]
+	v.InclusionOriDefList = v.InclusionOriDefList[:0]
+	v.AccuserList = v.AccuserList[:0]
+	v.InformalAttachmentList = v.InformalAttachmentList[:0]
+	v.DefendantList = v.DefendantList[:0]
+	v.Summary = ""
+	v.CreateTime = ""
+	v.FullCourt = ""
+	v.Show = ""
+	v.JudgePosition = ""
+	v.CourtQuestionAndAnswer = ""
+	v.IsOnline = ""
+	v.FeedbackContent = ""
+	v.DisputeSummary = ""
+	v.CourtTime = ""
+	v.Judge = ""
+	v.Founder = ""
+	v.Updater = ""
+	v.SueAliReason = ""
+	v.IsKnowComplainWay = ""
+	v.InformalReason = ""
+	v.UpdateTime = ""
+	v.RiskFeedback = ""
+	v.Content = ""
+	v.Plan = ""
+	v.CourtWay = ""
+	v.OperationType = ""
+	v.AccuserDefendantIsCourt = ""
+	v.CallingTime = ""
+	v.IsComplain = ""
+	v.OtherSpecialPosition = ""
+	v.CourtGeographyName = ""
+	v.CourtId = 0
+	v.SuitId = 0
+	v.EntrustId = 0
+	v.InformalAttachmentCount = 0
+	v.FormalAttachmentCount = 0
+	v.FeedbackId = 0
+	poolCourtInfoModel.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.medical.registration.syncnew
 //
 // 阿里健康新挂号记录回传接口
-func AlibabaAlihealthMedicalRegistrationSyncnew(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest, session string) (*alihealth2.AlibabaAlihealthMedicalRegistrationSyncnewAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthMedicalRegistrationSyncnewAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthMedicalRegistrationSyncnew(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthMedicalRegistrationSyncnewAPIRequest, resp *alihealth2.AlibabaAlihealthMedicalRegistrationSyncnewAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

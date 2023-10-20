@@ -2,6 +2,7 @@ package idleisv
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleIsvItemDownshelfAPIRequest struct {
 // NewAlibabaIdleIsvItemDownshelfRequest 初始化AlibabaIdleIsvItemDownshelfAPIRequest对象
 func NewAlibabaIdleIsvItemDownshelfRequest() *AlibabaIdleIsvItemDownshelfAPIRequest {
 	return &AlibabaIdleIsvItemDownshelfAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleIsvItemDownshelfAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleIsvItemDownshelfAPIRequest) SetParam(_param *IdleItemBaseApi
 // GetParam Param Getter
 func (r AlibabaIdleIsvItemDownshelfAPIRequest) GetParam() *IdleItemBaseApiDo {
 	return r._param
+}
+
+var poolAlibabaIdleIsvItemDownshelfAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleIsvItemDownshelfRequest()
+	},
+}
+
+// GetAlibabaIdleIsvItemDownshelfRequest 从 sync.Pool 获取 AlibabaIdleIsvItemDownshelfAPIRequest
+func GetAlibabaIdleIsvItemDownshelfAPIRequest() *AlibabaIdleIsvItemDownshelfAPIRequest {
+	return poolAlibabaIdleIsvItemDownshelfAPIRequest.Get().(*AlibabaIdleIsvItemDownshelfAPIRequest)
+}
+
+// ReleaseAlibabaIdleIsvItemDownshelfAPIRequest 将 AlibabaIdleIsvItemDownshelfAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleIsvItemDownshelfAPIRequest(v *AlibabaIdleIsvItemDownshelfAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleIsvItemDownshelfAPIRequest.Put(v)
 }

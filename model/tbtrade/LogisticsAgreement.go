@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // LogisticsAgreement 结构体
 type LogisticsAgreement struct {
 	// 服务承诺/异常文案
@@ -18,4 +22,28 @@ type LogisticsAgreement struct {
 	NoDetailPartConsign string `json:"no_detail_part_consign,omitempty" xml:"no_detail_part_consign,omitempty"`
 	// 1：代表该订单是预售下沉订单类型为前置表达
 	SinkType string `json:"sink_type,omitempty" xml:"sink_type,omitempty"`
+}
+
+var poolLogisticsAgreement = sync.Pool{
+	New: func() any {
+		return new(LogisticsAgreement)
+	},
+}
+
+// GetLogisticsAgreement() 从对象池中获取LogisticsAgreement
+func GetLogisticsAgreement() *LogisticsAgreement {
+	return poolLogisticsAgreement.Get().(*LogisticsAgreement)
+}
+
+// ReleaseLogisticsAgreement 释放LogisticsAgreement
+func ReleaseLogisticsAgreement(v *LogisticsAgreement) {
+	v.LogisticsServiceMsg = ""
+	v.AsdpBizType = ""
+	v.AsdpAds = ""
+	v.SignTime = ""
+	v.PromiseSignTime = ""
+	v.PushTime = ""
+	v.NoDetailPartConsign = ""
+	v.SinkType = ""
+	poolLogisticsAgreement.Put(v)
 }

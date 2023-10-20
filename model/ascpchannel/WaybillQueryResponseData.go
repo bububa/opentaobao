@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // WaybillQueryResponseData 结构体
 type WaybillQueryResponseData struct {
 	// 电子面单信息
@@ -12,4 +16,25 @@ type WaybillQueryResponseData struct {
 	CpBrandCode string `json:"cp_brand_code,omitempty" xml:"cp_brand_code,omitempty"`
 	// 物流公司名称
 	LogisticsCompany string `json:"logistics_company,omitempty" xml:"logistics_company,omitempty"`
+}
+
+var poolWaybillQueryResponseData = sync.Pool{
+	New: func() any {
+		return new(WaybillQueryResponseData)
+	},
+}
+
+// GetWaybillQueryResponseData() 从对象池中获取WaybillQueryResponseData
+func GetWaybillQueryResponseData() *WaybillQueryResponseData {
+	return poolWaybillQueryResponseData.Get().(*WaybillQueryResponseData)
+}
+
+// ReleaseWaybillQueryResponseData 释放WaybillQueryResponseData
+func ReleaseWaybillQueryResponseData(v *WaybillQueryResponseData) {
+	v.WaybillCloudPrintDtoList = v.WaybillCloudPrintDtoList[:0]
+	v.CpResCode = ""
+	v.CpResName = ""
+	v.CpBrandCode = ""
+	v.LogisticsCompany = ""
+	poolWaybillQueryResponseData.Put(v)
 }

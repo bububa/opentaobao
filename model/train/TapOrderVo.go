@@ -1,5 +1,9 @@
 package train
 
+import (
+	"sync"
+)
+
 // TapOrderVo 结构体
 type TapOrderVo struct {
 	// 最晚出票时间
@@ -16,4 +20,27 @@ type TapOrderVo struct {
 	TpOrderId int64 `json:"tp_order_id,omitempty" xml:"tp_order_id,omitempty"`
 	// 是否为紧急单
 	Emergency bool `json:"emergency,omitempty" xml:"emergency,omitempty"`
+}
+
+var poolTapOrderVo = sync.Pool{
+	New: func() any {
+		return new(TapOrderVo)
+	},
+}
+
+// GetTapOrderVo() 从对象池中获取TapOrderVo
+func GetTapOrderVo() *TapOrderVo {
+	return poolTapOrderVo.Get().(*TapOrderVo)
+}
+
+// ReleaseTapOrderVo 释放TapOrderVo
+func ReleaseTapOrderVo(v *TapOrderVo) {
+	v.LastIssueTime = ""
+	v.OrderStatusName = ""
+	v.TtpOrderId = 0
+	v.TicketNum = 0
+	v.VipSettleMode = 0
+	v.TpOrderId = 0
+	v.Emergency = false
+	poolTapOrderVo.Put(v)
 }

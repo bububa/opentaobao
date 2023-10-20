@@ -1,5 +1,9 @@
 package user
 
+import (
+	"sync"
+)
+
 // OpenAccount 结构体
 type OpenAccount struct {
 	// 登录名
@@ -66,4 +70,52 @@ type OpenAccount struct {
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 	// 数据域
 	DomainId int64 `json:"domain_id,omitempty" xml:"domain_id,omitempty"`
+}
+
+var poolOpenAccount = sync.Pool{
+	New: func() any {
+		return new(OpenAccount)
+	},
+}
+
+// GetOpenAccount() 从对象池中获取OpenAccount
+func GetOpenAccount() *OpenAccount {
+	return poolOpenAccount.Get().(*OpenAccount)
+}
+
+// ReleaseOpenAccount 释放OpenAccount
+func ReleaseOpenAccount(v *OpenAccount) {
+	v.LoginId = ""
+	v.CreateDeviceId = ""
+	v.AlipayId = ""
+	v.Locale = ""
+	v.BankCardNo = ""
+	v.IsvAccountId = ""
+	v.Email = ""
+	v.AvatarUrl = ""
+	v.BankCardOwnerName = ""
+	v.DisplayName = ""
+	v.LoginPwdSalt = ""
+	v.LoginPwd = ""
+	v.OpenId = ""
+	v.Mobile = ""
+	v.CreateLocation = ""
+	v.ExtInfos = ""
+	v.Name = ""
+	v.Birthday = ""
+	v.Wangwang = ""
+	v.Weixin = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.CreateAppKey = ""
+	v.LoginPwdIntensity = 0
+	v.Type = 0
+	v.Status = 0
+	v.LoginPwdEncryption = 0
+	v.Gender = 0
+	v.OauthPlateform = 0
+	v.Id = 0
+	v.Version = 0
+	v.DomainId = 0
+	poolOpenAccount.Put(v)
 }

@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // AttractionPackageDto 结构体
 type AttractionPackageDto struct {
 	// 产品价格
@@ -40,4 +44,39 @@ type AttractionPackageDto struct {
 	TouristPolicy *TouristPolicyDto `json:"tourist_policy,omitempty" xml:"tourist_policy,omitempty"`
 	// 套餐位置信息
 	AreaInfo *ProductAreaInfoDto `json:"area_info,omitempty" xml:"area_info,omitempty"`
+}
+
+var poolAttractionPackageDto = sync.Pool{
+	New: func() any {
+		return new(AttractionPackageDto)
+	},
+}
+
+// GetAttractionPackageDto() 从对象池中获取AttractionPackageDto
+func GetAttractionPackageDto() *AttractionPackageDto {
+	return poolAttractionPackageDto.Get().(*AttractionPackageDto)
+}
+
+// ReleaseAttractionPackageDto 释放AttractionPackageDto
+func ReleaseAttractionPackageDto(v *AttractionPackageDto) {
+	v.Prices = v.Prices[:0]
+	v.Inventories = v.Inventories[:0]
+	v.HotelRates = v.HotelRates[:0]
+	v.TicketInfos = v.TicketInfos[:0]
+	v.CateringInfos = v.CateringInfos[:0]
+	v.OtherProducts = v.OtherProducts[:0]
+	v.HotelPolicies = v.HotelPolicies[:0]
+	v.TicketPolicies = v.TicketPolicies[:0]
+	v.CateringPolicies = v.CateringPolicies[:0]
+	v.OtherPolicies = v.OtherPolicies[:0]
+	v.PackageName = ""
+	v.PackageDesc = ""
+	v.CostNotInclude = ""
+	v.ProductId = 0
+	v.RefundPolicy = nil
+	v.BookingPolicy = nil
+	v.LimitPolicy = nil
+	v.TouristPolicy = nil
+	v.AreaInfo = nil
+	poolAttractionPackageDto.Put(v)
 }

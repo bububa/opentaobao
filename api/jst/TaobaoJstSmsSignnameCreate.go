@@ -9,11 +9,6 @@ import (
 // taobao.jst.sms.signname.create
 //
 // 聚石塔短信签名创建接口
-func TaobaoJstSmsSignnameCreate(clt *core.SDKClient, req *jst.TaobaoJstSmsSignnameCreateAPIRequest, session string) (*jst.TaobaoJstSmsSignnameCreateAPIResponse, error) {
-	var resp jst.TaobaoJstSmsSignnameCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJstSmsSignnameCreate(clt *core.SDKClient, req *jst.TaobaoJstSmsSignnameCreateAPIRequest, resp *jst.TaobaoJstSmsSignnameCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // WareHouseDto 结构体
 type WareHouseDto struct {
 	// 详细地址描述
@@ -20,4 +24,29 @@ type WareHouseDto struct {
 	StoreName string `json:"store_name,omitempty" xml:"store_name,omitempty"`
 	// 操作类型，新增:ADD;修改:UPDATE
 	OperateType string `json:"operate_type,omitempty" xml:"operate_type,omitempty"`
+}
+
+var poolWareHouseDto = sync.Pool{
+	New: func() any {
+		return new(WareHouseDto)
+	},
+}
+
+// GetWareHouseDto() 从对象池中获取WareHouseDto
+func GetWareHouseDto() *WareHouseDto {
+	return poolWareHouseDto.Get().(*WareHouseDto)
+}
+
+// ReleaseWareHouseDto 释放WareHouseDto
+func ReleaseWareHouseDto(v *WareHouseDto) {
+	v.Address = ""
+	v.AddressAreaName = ""
+	v.AliasName = ""
+	v.Contact = ""
+	v.Phone = ""
+	v.PostCode = ""
+	v.StoreCode = ""
+	v.StoreName = ""
+	v.OperateType = ""
+	poolWareHouseDto.Put(v)
 }

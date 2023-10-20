@@ -9,11 +9,6 @@ import (
 // alibaba.ele.enterprise.restaurant.checkaddress
 //
 // 检查地址是否在餐厅配送范围内
-func AlibabaEleEnterpriseRestaurantCheckaddress(clt *core.SDKClient, req *eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest, session string) (*eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantCheckaddressAPIResponse, error) {
-	var resp eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantCheckaddressAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEleEnterpriseRestaurantCheckaddress(clt *core.SDKClient, req *eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest, resp *eleenterpriserestaurant.AlibabaEleEnterpriseRestaurantCheckaddressAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

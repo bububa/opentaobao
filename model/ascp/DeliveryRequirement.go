@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // DeliveryRequirement 结构体
 type DeliveryRequirement struct {
 	// 投递时延要求(1=工作日;2=节假日;101=当日达;102=次晨达;103=次日达;104=预约达;105=隔日达)
@@ -12,4 +16,25 @@ type DeliveryRequirement struct {
 	ScheduleEndTime string `json:"schedule_end_time,omitempty" xml:"schedule_end_time,omitempty"`
 	// 发货服务类型(PTPS:普通配送;LLPS:冷链配送;HBP:环保配)
 	DeliveryType string `json:"delivery_type,omitempty" xml:"delivery_type,omitempty"`
+}
+
+var poolDeliveryRequirement = sync.Pool{
+	New: func() any {
+		return new(DeliveryRequirement)
+	},
+}
+
+// GetDeliveryRequirement() 从对象池中获取DeliveryRequirement
+func GetDeliveryRequirement() *DeliveryRequirement {
+	return poolDeliveryRequirement.Get().(*DeliveryRequirement)
+}
+
+// ReleaseDeliveryRequirement 释放DeliveryRequirement
+func ReleaseDeliveryRequirement(v *DeliveryRequirement) {
+	v.ScheduleType = ""
+	v.ScheduleDay = ""
+	v.ScheduleStartTime = ""
+	v.ScheduleEndTime = ""
+	v.DeliveryType = ""
+	poolDeliveryRequirement.Put(v)
 }

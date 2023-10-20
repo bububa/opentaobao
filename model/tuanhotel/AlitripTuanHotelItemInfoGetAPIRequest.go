@@ -2,6 +2,7 @@ package tuanhotel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripTuanHotelItemInfoGetAPIRequest struct {
 // NewAlitripTuanHotelItemInfoGetRequest 初始化AlitripTuanHotelItemInfoGetAPIRequest对象
 func NewAlitripTuanHotelItemInfoGetRequest() *AlitripTuanHotelItemInfoGetAPIRequest {
 	return &AlitripTuanHotelItemInfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTuanHotelItemInfoGetAPIRequest) Reset() {
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripTuanHotelItemInfoGetAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r AlitripTuanHotelItemInfoGetAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolAlitripTuanHotelItemInfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTuanHotelItemInfoGetRequest()
+	},
+}
+
+// GetAlitripTuanHotelItemInfoGetRequest 从 sync.Pool 获取 AlitripTuanHotelItemInfoGetAPIRequest
+func GetAlitripTuanHotelItemInfoGetAPIRequest() *AlitripTuanHotelItemInfoGetAPIRequest {
+	return poolAlitripTuanHotelItemInfoGetAPIRequest.Get().(*AlitripTuanHotelItemInfoGetAPIRequest)
+}
+
+// ReleaseAlitripTuanHotelItemInfoGetAPIRequest 将 AlitripTuanHotelItemInfoGetAPIRequest 放入 sync.Pool
+func ReleaseAlitripTuanHotelItemInfoGetAPIRequest(v *AlitripTuanHotelItemInfoGetAPIRequest) {
+	v.Reset()
+	poolAlitripTuanHotelItemInfoGetAPIRequest.Put(v)
 }

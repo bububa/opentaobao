@@ -2,6 +2,7 @@ package maitix
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest struct {
 // NewAlibabaDamaiMaitixOpengatewayTicketItemStatusQueryRequest 初始化AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest对象
 func NewAlibabaDamaiMaitixOpengatewayTicketItemStatusQueryRequest() *AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest {
 	return &AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest) Reset() {
+	r._disTicketItemStatusQueryParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest) SetDisTic
 // GetDisTicketItemStatusQueryParam DisTicketItemStatusQueryParam Getter
 func (r AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest) GetDisTicketItemStatusQueryParam() *DisTicketItemStatusQueryDto {
 	return r._disTicketItemStatusQueryParam
+}
+
+var poolAlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiMaitixOpengatewayTicketItemStatusQueryRequest()
+	},
+}
+
+// GetAlibabaDamaiMaitixOpengatewayTicketItemStatusQueryRequest 从 sync.Pool 获取 AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest
+func GetAlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest() *AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest {
+	return poolAlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest.Get().(*AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest)
+}
+
+// ReleaseAlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest 将 AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest(v *AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest.Put(v)
 }

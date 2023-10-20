@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleAppraiseOrderPerformAPIRequest struct {
 // NewAlibabaIdleAppraiseOrderPerformRequest 初始化AlibabaIdleAppraiseOrderPerformAPIRequest对象
 func NewAlibabaIdleAppraiseOrderPerformRequest() *AlibabaIdleAppraiseOrderPerformAPIRequest {
 	return &AlibabaIdleAppraiseOrderPerformAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleAppraiseOrderPerformAPIRequest) Reset() {
+	r._appraiseOrderSynDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleAppraiseOrderPerformAPIRequest) SetAppraiseOrderSynDto(_appr
 // GetAppraiseOrderSynDto AppraiseOrderSynDto Getter
 func (r AlibabaIdleAppraiseOrderPerformAPIRequest) GetAppraiseOrderSynDto() *AppraiseOrderSynDto {
 	return r._appraiseOrderSynDto
+}
+
+var poolAlibabaIdleAppraiseOrderPerformAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleAppraiseOrderPerformRequest()
+	},
+}
+
+// GetAlibabaIdleAppraiseOrderPerformRequest 从 sync.Pool 获取 AlibabaIdleAppraiseOrderPerformAPIRequest
+func GetAlibabaIdleAppraiseOrderPerformAPIRequest() *AlibabaIdleAppraiseOrderPerformAPIRequest {
+	return poolAlibabaIdleAppraiseOrderPerformAPIRequest.Get().(*AlibabaIdleAppraiseOrderPerformAPIRequest)
+}
+
+// ReleaseAlibabaIdleAppraiseOrderPerformAPIRequest 将 AlibabaIdleAppraiseOrderPerformAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleAppraiseOrderPerformAPIRequest(v *AlibabaIdleAppraiseOrderPerformAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleAppraiseOrderPerformAPIRequest.Put(v)
 }

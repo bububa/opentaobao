@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -24,8 +25,16 @@ type TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest struct {
 // NewTaobaoQianniuCloudkefuOnlinestatuslogGetRequest 初始化TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest对象
 func NewTaobaoQianniuCloudkefuOnlinestatuslogGetRequest() *TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest {
 	return &TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) Reset() {
+	r._accountIds = r._accountIds[:0]
+	r._startDate = ""
+	r._endDate = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -82,4 +91,21 @@ func (r *TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) SetEndDate(_endDate
 // GetEndDate EndDate Getter
 func (r TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) GetEndDate() string {
 	return r._endDate
+}
+
+var poolTaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQianniuCloudkefuOnlinestatuslogGetRequest()
+	},
+}
+
+// GetTaobaoQianniuCloudkefuOnlinestatuslogGetRequest 从 sync.Pool 获取 TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest
+func GetTaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest() *TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest {
+	return poolTaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest.Get().(*TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest)
+}
+
+// ReleaseTaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest 将 TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest(v *TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) {
+	v.Reset()
+	poolTaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest.Put(v)
 }

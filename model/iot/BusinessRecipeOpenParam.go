@@ -1,5 +1,9 @@
 package iot
 
+import (
+	"sync"
+)
+
 // BusinessRecipeOpenParam 结构体
 type BusinessRecipeOpenParam struct {
 	// 重量及单位
@@ -24,4 +28,31 @@ type BusinessRecipeOpenParam struct {
 	RecipeType int64 `json:"recipe_type,omitempty" xml:"recipe_type,omitempty"`
 	// 食谱视频
 	RecipeVideo *VideoUrlParam `json:"recipe_video,omitempty" xml:"recipe_video,omitempty"`
+}
+
+var poolBusinessRecipeOpenParam = sync.Pool{
+	New: func() any {
+		return new(BusinessRecipeOpenParam)
+	},
+}
+
+// GetBusinessRecipeOpenParam() 从对象池中获取BusinessRecipeOpenParam
+func GetBusinessRecipeOpenParam() *BusinessRecipeOpenParam {
+	return poolBusinessRecipeOpenParam.Get().(*BusinessRecipeOpenParam)
+}
+
+// ReleaseBusinessRecipeOpenParam 释放BusinessRecipeOpenParam
+func ReleaseBusinessRecipeOpenParam(v *BusinessRecipeOpenParam) {
+	v.RecipeIngredientList = v.RecipeIngredientList[:0]
+	v.TagIdList = v.TagIdList[:0]
+	v.Description = ""
+	v.OpenAccountId = ""
+	v.RecipeNameCn = ""
+	v.Tips = ""
+	v.DevTypeId = 0
+	v.RecipeId = 0
+	v.RecipeImage = nil
+	v.RecipeType = 0
+	v.RecipeVideo = nil
+	poolBusinessRecipeOpenParam.Put(v)
 }

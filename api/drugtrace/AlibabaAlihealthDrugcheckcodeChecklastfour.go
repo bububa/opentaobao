@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drugcheckcode.checklastfour
 //
 // 校验追溯码的后4位是否正确
-func AlibabaAlihealthDrugcheckcodeChecklastfour(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugcheckcodeChecklastfourAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugcheckcodeChecklastfourAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugcheckcodeChecklastfour(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest, resp *drugtrace.AlibabaAlihealthDrugcheckcodeChecklastfourAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

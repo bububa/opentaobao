@@ -2,6 +2,7 @@ package mydata
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMydataOverviewIndustryGetAPIRequest struct {
 // NewAlibabaMydataOverviewIndustryGetRequest 初始化AlibabaMydataOverviewIndustryGetAPIRequest对象
 func NewAlibabaMydataOverviewIndustryGetRequest() *AlibabaMydataOverviewIndustryGetAPIRequest {
 	return &AlibabaMydataOverviewIndustryGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMydataOverviewIndustryGetAPIRequest) Reset() {
+	r._dateRange = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMydataOverviewIndustryGetAPIRequest) SetDateRange(_dateRange *Da
 // GetDateRange DateRange Getter
 func (r AlibabaMydataOverviewIndustryGetAPIRequest) GetDateRange() *DateRange {
 	return r._dateRange
+}
+
+var poolAlibabaMydataOverviewIndustryGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMydataOverviewIndustryGetRequest()
+	},
+}
+
+// GetAlibabaMydataOverviewIndustryGetRequest 从 sync.Pool 获取 AlibabaMydataOverviewIndustryGetAPIRequest
+func GetAlibabaMydataOverviewIndustryGetAPIRequest() *AlibabaMydataOverviewIndustryGetAPIRequest {
+	return poolAlibabaMydataOverviewIndustryGetAPIRequest.Get().(*AlibabaMydataOverviewIndustryGetAPIRequest)
+}
+
+// ReleaseAlibabaMydataOverviewIndustryGetAPIRequest 将 AlibabaMydataOverviewIndustryGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMydataOverviewIndustryGetAPIRequest(v *AlibabaMydataOverviewIndustryGetAPIRequest) {
+	v.Reset()
+	poolAlibabaMydataOverviewIndustryGetAPIRequest.Put(v)
 }

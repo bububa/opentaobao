@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.kyt.dr.getbyentid
 //
 // 根据企业主键查看企业详细信息
-func AlibabaAlihealthDrugKytDrGetbyentid(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrGetbyentidAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytDrGetbyentidAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytDrGetbyentidAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugKytDrGetbyentid(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrGetbyentidAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytDrGetbyentidAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

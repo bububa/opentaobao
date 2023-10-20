@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // WlbItem 结构体
 type WlbItem struct {
 	// 商品所有人淘宝nick
@@ -64,4 +68,51 @@ type WlbItem struct {
 	IsFriable bool `json:"is_friable,omitempty" xml:"is_friable,omitempty"`
 	// 是否危险品
 	IsDangerous bool `json:"is_dangerous,omitempty" xml:"is_dangerous,omitempty"`
+}
+
+var poolWlbItem = sync.Pool{
+	New: func() any {
+		return new(WlbItem)
+	},
+}
+
+// GetWlbItem() 从对象池中获取WlbItem
+func GetWlbItem() *WlbItem {
+	return poolWlbItem.Get().(*WlbItem)
+}
+
+// ReleaseWlbItem 释放WlbItem
+func ReleaseWlbItem(v *WlbItem) {
+	v.UserNick = ""
+	v.Name = ""
+	v.Title = ""
+	v.ItemCode = ""
+	v.Flag = ""
+	v.Type = ""
+	v.Remark = ""
+	v.Status = ""
+	v.Creator = ""
+	v.GmtCreate = ""
+	v.LastModifier = ""
+	v.GmtModified = ""
+	v.Properties = ""
+	v.Color = ""
+	v.GoodsCat = ""
+	v.PricingCat = ""
+	v.PackageMaterial = ""
+	v.Id = 0
+	v.UserId = 0
+	v.ParentId = 0
+	v.PublishVersion = 0
+	v.BrandId = 0
+	v.Weight = 0
+	v.Length = 0
+	v.Width = 0
+	v.Height = 0
+	v.Volume = 0
+	v.Price = 0
+	v.IsSku = false
+	v.IsFriable = false
+	v.IsDangerous = false
+	poolWlbItem.Put(v)
 }

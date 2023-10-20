@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // MqttDeviceInfoDto 结构体
 type MqttDeviceInfoDto struct {
 	// mqtt设备名
@@ -16,4 +20,27 @@ type MqttDeviceInfoDto struct {
 	ExpireTime int64 `json:"expire_time,omitempty" xml:"expire_time,omitempty"`
 	// 创建令牌的服务端时间戳
 	Timestamp int64 `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
+}
+
+var poolMqttDeviceInfoDto = sync.Pool{
+	New: func() any {
+		return new(MqttDeviceInfoDto)
+	},
+}
+
+// GetMqttDeviceInfoDto() 从对象池中获取MqttDeviceInfoDto
+func GetMqttDeviceInfoDto() *MqttDeviceInfoDto {
+	return poolMqttDeviceInfoDto.Get().(*MqttDeviceInfoDto)
+}
+
+// ReleaseMqttDeviceInfoDto 释放MqttDeviceInfoDto
+func ReleaseMqttDeviceInfoDto(v *MqttDeviceInfoDto) {
+	v.DeviceName = ""
+	v.DeviceSecret = ""
+	v.ProductKey = ""
+	v.AccessKey = ""
+	v.AccessToken = ""
+	v.ExpireTime = 0
+	v.Timestamp = 0
+	poolMqttDeviceInfoDto.Put(v)
 }

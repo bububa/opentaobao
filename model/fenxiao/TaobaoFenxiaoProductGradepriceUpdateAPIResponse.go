@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoFenxiaoProductGradepriceUpdateAPIResponse struct {
 	TaobaoFenxiaoProductGradepriceUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoFenxiaoProductGradepriceUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFenxiaoProductGradepriceUpdateAPIResponseModel).Reset()
+}
+
 // TaobaoFenxiaoProductGradepriceUpdateAPIResponseModel is 根据sku设置折扣价 成功返回结果
 type TaobaoFenxiaoProductGradepriceUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_product_gradeprice_update_response"`
@@ -22,4 +29,27 @@ type TaobaoFenxiaoProductGradepriceUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回操作结果：成功或失败
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFenxiaoProductGradepriceUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoFenxiaoProductGradepriceUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFenxiaoProductGradepriceUpdateAPIResponse)
+	},
+}
+
+// GetTaobaoFenxiaoProductGradepriceUpdateAPIResponse 从 sync.Pool 获取 TaobaoFenxiaoProductGradepriceUpdateAPIResponse
+func GetTaobaoFenxiaoProductGradepriceUpdateAPIResponse() *TaobaoFenxiaoProductGradepriceUpdateAPIResponse {
+	return poolTaobaoFenxiaoProductGradepriceUpdateAPIResponse.Get().(*TaobaoFenxiaoProductGradepriceUpdateAPIResponse)
+}
+
+// ReleaseTaobaoFenxiaoProductGradepriceUpdateAPIResponse 将 TaobaoFenxiaoProductGradepriceUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFenxiaoProductGradepriceUpdateAPIResponse(v *TaobaoFenxiaoProductGradepriceUpdateAPIResponse) {
+	v.Reset()
+	poolTaobaoFenxiaoProductGradepriceUpdateAPIResponse.Put(v)
 }

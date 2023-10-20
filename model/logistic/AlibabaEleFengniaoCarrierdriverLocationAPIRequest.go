@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaEleFengniaoCarrierdriverLocationAPIRequest struct {
 // NewAlibabaEleFengniaoCarrierdriverLocationRequest 初始化AlibabaEleFengniaoCarrierdriverLocationAPIRequest对象
 func NewAlibabaEleFengniaoCarrierdriverLocationRequest() *AlibabaEleFengniaoCarrierdriverLocationAPIRequest {
 	return &AlibabaEleFengniaoCarrierdriverLocationAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleFengniaoCarrierdriverLocationAPIRequest) Reset() {
+	r._appId = ""
+	r._partnerOrderCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaEleFengniaoCarrierdriverLocationAPIRequest) SetPartnerOrderCode(
 // GetPartnerOrderCode PartnerOrderCode Getter
 func (r AlibabaEleFengniaoCarrierdriverLocationAPIRequest) GetPartnerOrderCode() string {
 	return r._partnerOrderCode
+}
+
+var poolAlibabaEleFengniaoCarrierdriverLocationAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleFengniaoCarrierdriverLocationRequest()
+	},
+}
+
+// GetAlibabaEleFengniaoCarrierdriverLocationRequest 从 sync.Pool 获取 AlibabaEleFengniaoCarrierdriverLocationAPIRequest
+func GetAlibabaEleFengniaoCarrierdriverLocationAPIRequest() *AlibabaEleFengniaoCarrierdriverLocationAPIRequest {
+	return poolAlibabaEleFengniaoCarrierdriverLocationAPIRequest.Get().(*AlibabaEleFengniaoCarrierdriverLocationAPIRequest)
+}
+
+// ReleaseAlibabaEleFengniaoCarrierdriverLocationAPIRequest 将 AlibabaEleFengniaoCarrierdriverLocationAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleFengniaoCarrierdriverLocationAPIRequest(v *AlibabaEleFengniaoCarrierdriverLocationAPIRequest) {
+	v.Reset()
+	poolAlibabaEleFengniaoCarrierdriverLocationAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package iotticket
 
+import (
+	"sync"
+)
+
 // UpdateMaintainPlanTopRequest 结构体
 type UpdateMaintainPlanTopRequest struct {
 	// 维修项
@@ -36,4 +40,37 @@ type UpdateMaintainPlanTopRequest struct {
 	WarrantyType string `json:"warranty_type,omitempty" xml:"warranty_type,omitempty"`
 	// 工单Id
 	TicketId int64 `json:"ticket_id,omitempty" xml:"ticket_id,omitempty"`
+}
+
+var poolUpdateMaintainPlanTopRequest = sync.Pool{
+	New: func() any {
+		return new(UpdateMaintainPlanTopRequest)
+	},
+}
+
+// GetUpdateMaintainPlanTopRequest() 从对象池中获取UpdateMaintainPlanTopRequest
+func GetUpdateMaintainPlanTopRequest() *UpdateMaintainPlanTopRequest {
+	return poolUpdateMaintainPlanTopRequest.Get().(*UpdateMaintainPlanTopRequest)
+}
+
+// ReleaseUpdateMaintainPlanTopRequest 释放UpdateMaintainPlanTopRequest
+func ReleaseUpdateMaintainPlanTopRequest(v *UpdateMaintainPlanTopRequest) {
+	v.IotMaintainPlanItemList = v.IotMaintainPlanItemList[:0]
+	v.EventTypeList = v.EventTypeList[:0]
+	v.OperatorPhone = ""
+	v.OperatorId = ""
+	v.OperatorName = ""
+	v.SpCode = ""
+	v.MaintainAbilities = ""
+	v.ReceiverName = ""
+	v.OtherFee = ""
+	v.ReceiverAddress = ""
+	v.Features = ""
+	v.MaintainMethod = ""
+	v.ReceiverPhone = ""
+	v.PayMethod = ""
+	v.FeeRemark = ""
+	v.WarrantyType = ""
+	v.TicketId = 0
+	poolUpdateMaintainPlanTopRequest.Put(v)
 }

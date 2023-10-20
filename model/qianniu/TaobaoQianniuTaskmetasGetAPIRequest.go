@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -41,8 +42,25 @@ type TaobaoQianniuTaskmetasGetAPIRequest struct {
 // NewTaobaoQianniuTaskmetasGetRequest 初始化TaobaoQianniuTaskmetasGetAPIRequest对象
 func NewTaobaoQianniuTaskmetasGetRequest() *TaobaoQianniuTaskmetasGetAPIRequest {
 	return &TaobaoQianniuTaskmetasGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(12),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQianniuTaskmetasGetAPIRequest) Reset() {
+	r._fields = ""
+	r._orderBy = ""
+	r._orderType = ""
+	r._bizType = ""
+	r._keyWord = ""
+	r._clientInfo = ""
+	r._metaIds = ""
+	r._senderUid = 0
+	r._pageSize = 0
+	r._currentPage = 0
+	r._status = 0
+	r._receiverUid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -216,4 +234,21 @@ func (r *TaobaoQianniuTaskmetasGetAPIRequest) SetReceiverUid(_receiverUid int64)
 // GetReceiverUid ReceiverUid Getter
 func (r TaobaoQianniuTaskmetasGetAPIRequest) GetReceiverUid() int64 {
 	return r._receiverUid
+}
+
+var poolTaobaoQianniuTaskmetasGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQianniuTaskmetasGetRequest()
+	},
+}
+
+// GetTaobaoQianniuTaskmetasGetRequest 从 sync.Pool 获取 TaobaoQianniuTaskmetasGetAPIRequest
+func GetTaobaoQianniuTaskmetasGetAPIRequest() *TaobaoQianniuTaskmetasGetAPIRequest {
+	return poolTaobaoQianniuTaskmetasGetAPIRequest.Get().(*TaobaoQianniuTaskmetasGetAPIRequest)
+}
+
+// ReleaseTaobaoQianniuTaskmetasGetAPIRequest 将 TaobaoQianniuTaskmetasGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQianniuTaskmetasGetAPIRequest(v *TaobaoQianniuTaskmetasGetAPIRequest) {
+	v.Reset()
+	poolTaobaoQianniuTaskmetasGetAPIRequest.Put(v)
 }

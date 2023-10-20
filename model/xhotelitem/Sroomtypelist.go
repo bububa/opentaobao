@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // Sroomtypelist 结构体
 type Sroomtypelist struct {
 	// 窗型
@@ -56,4 +60,47 @@ type Sroomtypelist struct {
 	Source int64 `json:"source,omitempty" xml:"source,omitempty"`
 	// 最大入住人数
 	MaxOccupancy int64 `json:"max_occupancy,omitempty" xml:"max_occupancy,omitempty"`
+}
+
+var poolSroomtypelist = sync.Pool{
+	New: func() any {
+		return new(Sroomtypelist)
+	},
+}
+
+// GetSroomtypelist() 从对象池中获取Sroomtypelist
+func GetSroomtypelist() *Sroomtypelist {
+	return poolSroomtypelist.Get().(*Sroomtypelist)
+}
+
+// ReleaseSroomtypelist 释放Sroomtypelist
+func ReleaseSroomtypelist(v *Sroomtypelist) {
+	v.WindowType = ""
+	v.PicsInfo = ""
+	v.NetworkService = ""
+	v.LastModify = ""
+	v.IncludeTypes = ""
+	v.Auditor = ""
+	v.OriginalPics = ""
+	v.Pics = ""
+	v.PicsExt = ""
+	v.Area = ""
+	v.Facility = ""
+	v.Name = ""
+	v.PropertiesDOs = ""
+	v.NameE = ""
+	v.Extend = ""
+	v.Bed = ""
+	v.TransferPics = ""
+	v.Floor = ""
+	v.BedList = ""
+	v.OuterId = ""
+	v.Shid = 0
+	v.Version = 0
+	v.Srid = 0
+	v.AddBed = 0
+	v.Status = 0
+	v.Source = 0
+	v.MaxOccupancy = 0
+	poolSroomtypelist.Put(v)
 }

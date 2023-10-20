@@ -2,6 +2,7 @@ package tmc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTmcMessagesProduceAPIRequest struct {
 // NewTaobaoTmcMessagesProduceRequest 初始化TaobaoTmcMessagesProduceAPIRequest对象
 func NewTaobaoTmcMessagesProduceRequest() *TaobaoTmcMessagesProduceAPIRequest {
 	return &TaobaoTmcMessagesProduceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTmcMessagesProduceAPIRequest) Reset() {
+	r._messages = r._messages[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTmcMessagesProduceAPIRequest) SetMessages(_messages []TmcPublishM
 // GetMessages Messages Getter
 func (r TaobaoTmcMessagesProduceAPIRequest) GetMessages() []TmcPublishMessage {
 	return r._messages
+}
+
+var poolTaobaoTmcMessagesProduceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTmcMessagesProduceRequest()
+	},
+}
+
+// GetTaobaoTmcMessagesProduceRequest 从 sync.Pool 获取 TaobaoTmcMessagesProduceAPIRequest
+func GetTaobaoTmcMessagesProduceAPIRequest() *TaobaoTmcMessagesProduceAPIRequest {
+	return poolTaobaoTmcMessagesProduceAPIRequest.Get().(*TaobaoTmcMessagesProduceAPIRequest)
+}
+
+// ReleaseTaobaoTmcMessagesProduceAPIRequest 将 TaobaoTmcMessagesProduceAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTmcMessagesProduceAPIRequest(v *TaobaoTmcMessagesProduceAPIRequest) {
+	v.Reset()
+	poolTaobaoTmcMessagesProduceAPIRequest.Put(v)
 }

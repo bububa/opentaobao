@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // AfterCourtInfoModel 结构体
 type AfterCourtInfoModel struct {
 	// 附件列表
@@ -50,4 +54,44 @@ type AfterCourtInfoModel struct {
 	EntrustId int64 `json:"entrust_id,omitempty" xml:"entrust_id,omitempty"`
 	// 庭后信息ID,更新时不能为空
 	AfterCourtId int64 `json:"after_court_id,omitempty" xml:"after_court_id,omitempty"`
+}
+
+var poolAfterCourtInfoModel = sync.Pool{
+	New: func() any {
+		return new(AfterCourtInfoModel)
+	},
+}
+
+// GetAfterCourtInfoModel() 从对象池中获取AfterCourtInfoModel
+func GetAfterCourtInfoModel() *AfterCourtInfoModel {
+	return poolAfterCourtInfoModel.Get().(*AfterCourtInfoModel)
+}
+
+// ReleaseAfterCourtInfoModel 释放AfterCourtInfoModel
+func ReleaseAfterCourtInfoModel(v *AfterCourtInfoModel) {
+	v.AttachmentList = v.AttachmentList[:0]
+	v.PartyList = v.PartyList[:0]
+	v.CourtsList = v.CourtsList[:0]
+	v.NonEvidenceList = v.NonEvidenceList[:0]
+	v.EvidenceList = v.EvidenceList[:0]
+	v.FeedbackAttachmentList = v.FeedbackAttachmentList[:0]
+	v.PredictionResult = ""
+	v.CommunicationDate = ""
+	v.FeedbackContent = ""
+	v.UpdateTime = ""
+	v.Updater = ""
+	v.CreateTime = ""
+	v.Founder = ""
+	v.Summary = ""
+	v.AgentWord = ""
+	v.CallingTime = ""
+	v.OperationType = ""
+	v.Discription = ""
+	v.AttachmentCount = 0
+	v.FeedbackAttachmentCount = 0
+	v.FeedbackId = 0
+	v.SuitId = 0
+	v.EntrustId = 0
+	v.AfterCourtId = 0
+	poolAfterCourtInfoModel.Put(v)
 }

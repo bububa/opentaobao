@@ -1,5 +1,9 @@
 package scs
 
+import (
+	"sync"
+)
+
 // GroupQueryTopDto 结构体
 type GroupQueryTopDto struct {
 	// 营销场景
@@ -14,4 +18,26 @@ type GroupQueryTopDto struct {
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
 	// 页码
 	Offset int64 `json:"offset,omitempty" xml:"offset,omitempty"`
+}
+
+var poolGroupQueryTopDto = sync.Pool{
+	New: func() any {
+		return new(GroupQueryTopDto)
+	},
+}
+
+// GetGroupQueryTopDto() 从对象池中获取GroupQueryTopDto
+func GetGroupQueryTopDto() *GroupQueryTopDto {
+	return poolGroupQueryTopDto.Get().(*GroupQueryTopDto)
+}
+
+// ReleaseGroupQueryTopDto 释放GroupQueryTopDto
+func ReleaseGroupQueryTopDto(v *GroupQueryTopDto) {
+	v.MarketScene = ""
+	v.TemplateId = 0
+	v.GroupId = 0
+	v.CrowdId = 0
+	v.CampaignId = 0
+	v.Offset = 0
+	poolGroupQueryTopDto.Put(v)
 }

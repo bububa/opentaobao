@@ -9,11 +9,6 @@ import (
 // tmall.channel.trade.order.gets
 //
 // 分页查询采购单
-func TmallChannelTradeOrderGets(clt *core.SDKClient, req *tmallchannel.TmallChannelTradeOrderGetsAPIRequest, session string) (*tmallchannel.TmallChannelTradeOrderGetsAPIResponse, error) {
-	var resp tmallchannel.TmallChannelTradeOrderGetsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallChannelTradeOrderGets(clt *core.SDKClient, req *tmallchannel.TmallChannelTradeOrderGetsAPIRequest, resp *tmallchannel.TmallChannelTradeOrderGetsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

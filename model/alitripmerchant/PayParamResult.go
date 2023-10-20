@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // PayParamResult 结构体
 type PayParamResult struct {
 	// 签名
@@ -18,4 +22,28 @@ type PayParamResult struct {
 	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
 	// 预订结果
 	BookResult bool `json:"book_result,omitempty" xml:"book_result,omitempty"`
+}
+
+var poolPayParamResult = sync.Pool{
+	New: func() any {
+		return new(PayParamResult)
+	},
+}
+
+// GetPayParamResult() 从对象池中获取PayParamResult
+func GetPayParamResult() *PayParamResult {
+	return poolPayParamResult.Get().(*PayParamResult)
+}
+
+// ReleasePayParamResult 释放PayParamResult
+func ReleasePayParamResult(v *PayParamResult) {
+	v.PaySign = ""
+	v.SignType = ""
+	v.PackageStr = ""
+	v.NonceStr = ""
+	v.TimeStamp = ""
+	v.AppId = ""
+	v.OrderCode = ""
+	v.BookResult = false
+	poolPayParamResult.Put(v)
 }

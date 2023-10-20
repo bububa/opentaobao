@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoItemPropimgDeleteAPIResponse struct {
 	TaobaoItemPropimgDeleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoItemPropimgDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoItemPropimgDeleteAPIResponseModel).Reset()
+}
+
 // TaobaoItemPropimgDeleteAPIResponseModel is 删除属性图片 成功返回结果
 type TaobaoItemPropimgDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"item_propimg_delete_response"`
@@ -22,4 +29,27 @@ type TaobaoItemPropimgDeleteAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 属性图片结构
 	PropImg *PropImg `json:"prop_img,omitempty" xml:"prop_img,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoItemPropimgDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.PropImg = nil
+}
+
+var poolTaobaoItemPropimgDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoItemPropimgDeleteAPIResponse)
+	},
+}
+
+// GetTaobaoItemPropimgDeleteAPIResponse 从 sync.Pool 获取 TaobaoItemPropimgDeleteAPIResponse
+func GetTaobaoItemPropimgDeleteAPIResponse() *TaobaoItemPropimgDeleteAPIResponse {
+	return poolTaobaoItemPropimgDeleteAPIResponse.Get().(*TaobaoItemPropimgDeleteAPIResponse)
+}
+
+// ReleaseTaobaoItemPropimgDeleteAPIResponse 将 TaobaoItemPropimgDeleteAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoItemPropimgDeleteAPIResponse(v *TaobaoItemPropimgDeleteAPIResponse) {
+	v.Reset()
+	poolTaobaoItemPropimgDeleteAPIResponse.Put(v)
 }

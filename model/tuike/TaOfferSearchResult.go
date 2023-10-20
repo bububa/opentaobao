@@ -1,5 +1,9 @@
 package tuike
 
+import (
+	"sync"
+)
+
 // TaOfferSearchResult 结构体
 type TaOfferSearchResult struct {
 	// 数据
@@ -16,4 +20,27 @@ type TaOfferSearchResult struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 当前页
 	PageNum int64 `json:"page_num,omitempty" xml:"page_num,omitempty"`
+}
+
+var poolTaOfferSearchResult = sync.Pool{
+	New: func() any {
+		return new(TaOfferSearchResult)
+	},
+}
+
+// GetTaOfferSearchResult() 从对象池中获取TaOfferSearchResult
+func GetTaOfferSearchResult() *TaOfferSearchResult {
+	return poolTaOfferSearchResult.Get().(*TaOfferSearchResult)
+}
+
+// ReleaseTaOfferSearchResult 释放TaOfferSearchResult
+func ReleaseTaOfferSearchResult(v *TaOfferSearchResult) {
+	v.DataList = v.DataList[:0]
+	v.Errors = ""
+	v.Status = ""
+	v.Total = 0
+	v.Num = 0
+	v.PageSize = 0
+	v.PageNum = 0
+	poolTaOfferSearchResult.Put(v)
 }

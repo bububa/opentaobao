@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // IssueList 结构体
 type IssueList struct {
 	// 票号
@@ -42,4 +46,40 @@ type IssueList struct {
 	Promotion int64 `json:"promotion,omitempty" xml:"promotion,omitempty"`
 	// 乘机人性别:1表示男性，2表示女性
 	Gender int64 `json:"gender,omitempty" xml:"gender,omitempty"`
+}
+
+var poolIssueList = sync.Pool{
+	New: func() any {
+		return new(IssueList)
+	},
+}
+
+// GetIssueList() 从对象池中获取IssueList
+func GetIssueList() *IssueList {
+	return poolIssueList.Get().(*IssueList)
+}
+
+// ReleaseIssueList 释放IssueList
+func ReleaseIssueList(v *IssueList) {
+	v.Tickets = v.Tickets[:0]
+	v.Taxes = v.Taxes[:0]
+	v.Segments = v.Segments[:0]
+	v.SellPolicyList = v.SellPolicyList[:0]
+	v.CertNo = ""
+	v.PassengerName = ""
+	v.Pnr = ""
+	v.Mobile = ""
+	v.Birthday = ""
+	v.BigPnr = ""
+	v.SurName = ""
+	v.GivenName = ""
+	v.CertPeriod = ""
+	v.Nationality = ""
+	v.CertIssueCountry = ""
+	v.CertType = 0
+	v.PassengerType = 0
+	v.TicketPrice = 0
+	v.Promotion = 0
+	v.Gender = 0
+	poolIssueList.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // wdk.logistic.network.warehouse.resource.relation.query.from
 //
 // 盒马集市，中心仓查询网格仓
-func WdkLogisticNetworkWarehouseResourceRelationQueryFrom(clt *core.SDKClient, req *logistic.WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest, session string) (*logistic.WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIResponse, error) {
-	var resp logistic.WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func WdkLogisticNetworkWarehouseResourceRelationQueryFrom(clt *core.SDKClient, req *logistic.WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest, resp *logistic.WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

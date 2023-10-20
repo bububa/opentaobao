@@ -25,6 +25,10 @@ type CommonResponse struct {
 	ErrorResponse *ErrorResponse `json:"error_response,omitempty" xml:"error_response,omitempty"` // 请求访问失败时返回的根节点
 }
 
+func (r *CommonResponse) Reset() {
+	r.ErrorResponse = nil
+}
+
 // B043C16EB094F65A787F22E6AE0A10BCB7ABDE6D implement IResponse interface
 func (c CommonResponse) B043C16EB094F65A787F22E6AE0A10BCB7ABDE6D() error {
 	if c.ErrorResponse == nil {

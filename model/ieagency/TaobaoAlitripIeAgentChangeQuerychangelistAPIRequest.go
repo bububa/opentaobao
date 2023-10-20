@@ -2,6 +2,7 @@ package ieagency
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest struct {
 // NewTaobaoAlitripIeAgentChangeQuerychangelistRequest 初始化TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest对象
 func NewTaobaoAlitripIeAgentChangeQuerychangelistRequest() *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest {
 	return &TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) Reset() {
+	r._changeBizStatusEnum = ""
+	r._changeReasonType = ""
+	r._endCreateDate = ""
+	r._startCreateDate = ""
+	r._changeOrderId = 0
+	r._orderId = 0
+	r._pageIndex = 0
+	r._pageSize = 0
+	r._sortField = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetSortField(_sort
 // GetSortField SortField Getter
 func (r TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) GetSortField() int64 {
 	return r._sortField
+}
+
+var poolTaobaoAlitripIeAgentChangeQuerychangelistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripIeAgentChangeQuerychangelistRequest()
+	},
+}
+
+// GetTaobaoAlitripIeAgentChangeQuerychangelistRequest 从 sync.Pool 获取 TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest
+func GetTaobaoAlitripIeAgentChangeQuerychangelistAPIRequest() *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest {
+	return poolTaobaoAlitripIeAgentChangeQuerychangelistAPIRequest.Get().(*TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest)
+}
+
+// ReleaseTaobaoAlitripIeAgentChangeQuerychangelistAPIRequest 将 TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripIeAgentChangeQuerychangelistAPIRequest(v *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripIeAgentChangeQuerychangelistAPIRequest.Put(v)
 }

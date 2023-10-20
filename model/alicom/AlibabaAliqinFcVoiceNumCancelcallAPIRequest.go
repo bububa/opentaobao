@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAliqinFcVoiceNumCancelcallAPIRequest struct {
 // NewAlibabaAliqinFcVoiceNumCancelcallRequest 初始化AlibabaAliqinFcVoiceNumCancelcallAPIRequest对象
 func NewAlibabaAliqinFcVoiceNumCancelcallRequest() *AlibabaAliqinFcVoiceNumCancelcallAPIRequest {
 	return &AlibabaAliqinFcVoiceNumCancelcallAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFcVoiceNumCancelcallAPIRequest) Reset() {
+	r._callId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAliqinFcVoiceNumCancelcallAPIRequest) SetCallId(_callId string) 
 // GetCallId CallId Getter
 func (r AlibabaAliqinFcVoiceNumCancelcallAPIRequest) GetCallId() string {
 	return r._callId
+}
+
+var poolAlibabaAliqinFcVoiceNumCancelcallAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFcVoiceNumCancelcallRequest()
+	},
+}
+
+// GetAlibabaAliqinFcVoiceNumCancelcallRequest 从 sync.Pool 获取 AlibabaAliqinFcVoiceNumCancelcallAPIRequest
+func GetAlibabaAliqinFcVoiceNumCancelcallAPIRequest() *AlibabaAliqinFcVoiceNumCancelcallAPIRequest {
+	return poolAlibabaAliqinFcVoiceNumCancelcallAPIRequest.Get().(*AlibabaAliqinFcVoiceNumCancelcallAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFcVoiceNumCancelcallAPIRequest 将 AlibabaAliqinFcVoiceNumCancelcallAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFcVoiceNumCancelcallAPIRequest(v *AlibabaAliqinFcVoiceNumCancelcallAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFcVoiceNumCancelcallAPIRequest.Put(v)
 }

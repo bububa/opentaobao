@@ -1,5 +1,9 @@
 package hotelalliance
 
+import (
+	"sync"
+)
+
 // HmsTopResultSet 结构体
 type HmsTopResultSet struct {
 	// 错误code
@@ -10,4 +14,24 @@ type HmsTopResultSet struct {
 	Result *AllianceInfoResult `json:"result,omitempty" xml:"result,omitempty"`
 	// 操作是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolHmsTopResultSet = sync.Pool{
+	New: func() any {
+		return new(HmsTopResultSet)
+	},
+}
+
+// GetHmsTopResultSet() 从对象池中获取HmsTopResultSet
+func GetHmsTopResultSet() *HmsTopResultSet {
+	return poolHmsTopResultSet.Get().(*HmsTopResultSet)
+}
+
+// ReleaseHmsTopResultSet 释放HmsTopResultSet
+func ReleaseHmsTopResultSet(v *HmsTopResultSet) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Result = nil
+	v.Success = false
+	poolHmsTopResultSet.Put(v)
 }

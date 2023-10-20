@@ -1,5 +1,9 @@
 package charity
 
+import (
+	"sync"
+)
+
 // CharityTimeDto 结构体
 type CharityTimeDto struct {
 	// SPREAD_PUBLIC_WELFARE:公益传播,OFFLINE_PUBLIC_WELFARE:线下公益,PAN_PUBLIC_WELFARE:互联网公益,PUBLIC_DONATION::公益捐赠,WALK_DONATION:益起来,ENVIRONMENTAL_PROTECTION:ENVIRONMENTAL_PROTECTION
@@ -20,4 +24,29 @@ type CharityTimeDto struct {
 	CharityTime int64 `json:"charity_time,omitempty" xml:"charity_time,omitempty"`
 	// 活动
 	Activity *ActivityDto `json:"activity,omitempty" xml:"activity,omitempty"`
+}
+
+var poolCharityTimeDto = sync.Pool{
+	New: func() any {
+		return new(CharityTimeDto)
+	},
+}
+
+// GetCharityTimeDto() 从对象池中获取CharityTimeDto
+func GetCharityTimeDto() *CharityTimeDto {
+	return poolCharityTimeDto.Get().(*CharityTimeDto)
+}
+
+// ReleaseCharityTimeDto 释放CharityTimeDto
+func ReleaseCharityTimeDto(v *CharityTimeDto) {
+	v.CharityType = ""
+	v.CharityTypeName = ""
+	v.ApproveDate = ""
+	v.MainTitle = ""
+	v.SubTitle = ""
+	v.GmtCreateTime = ""
+	v.Id = 0
+	v.CharityTime = 0
+	v.Activity = nil
+	poolCharityTimeDto.Put(v)
 }

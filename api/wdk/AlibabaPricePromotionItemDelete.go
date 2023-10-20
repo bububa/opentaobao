@@ -9,11 +9,6 @@ import (
 // alibaba.price.promotion.item.delete
 //
 // 盒马帮批量删除档期商品
-func AlibabaPricePromotionItemDelete(clt *core.SDKClient, req *wdk.AlibabaPricePromotionItemDeleteAPIRequest, session string) (*wdk.AlibabaPricePromotionItemDeleteAPIResponse, error) {
-	var resp wdk.AlibabaPricePromotionItemDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaPricePromotionItemDelete(clt *core.SDKClient, req *wdk.AlibabaPricePromotionItemDeleteAPIRequest, resp *wdk.AlibabaPricePromotionItemDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

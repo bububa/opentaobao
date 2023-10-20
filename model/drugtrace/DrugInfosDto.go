@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // DrugInfosDto 结构体
 type DrugInfosDto struct {
 	// 码信息
@@ -30,4 +34,34 @@ type DrugInfosDto struct {
 	LeastPrepnAmount string `json:"least_prepn_amount,omitempty" xml:"least_prepn_amount,omitempty"`
 	// 批准文号
 	ApprovalNo string `json:"approval_no,omitempty" xml:"approval_no,omitempty"`
+}
+
+var poolDrugInfosDto = sync.Pool{
+	New: func() any {
+		return new(DrugInfosDto)
+	},
+}
+
+// GetDrugInfosDto() 从对象池中获取DrugInfosDto
+func GetDrugInfosDto() *DrugInfosDto {
+	return poolDrugInfosDto.Get().(*DrugInfosDto)
+}
+
+// ReleaseDrugInfosDto 释放DrugInfosDto
+func ReleaseDrugInfosDto(v *DrugInfosDto) {
+	v.CodeInfoListDtoList = v.CodeInfoListDtoList[:0]
+	v.ProduceDate = ""
+	v.ProductEntName = ""
+	v.PackageSpec = ""
+	v.ProdName = ""
+	v.PrepnSpec = ""
+	v.PrepnUnit = ""
+	v.ProduceBatchNo = ""
+	v.ProdSeqNo = ""
+	v.DrugEntBaseInfoId = ""
+	v.ValidEndDate = ""
+	v.LeastPkgAmount = ""
+	v.LeastPrepnAmount = ""
+	v.ApprovalNo = ""
+	poolDrugInfosDto.Put(v)
 }

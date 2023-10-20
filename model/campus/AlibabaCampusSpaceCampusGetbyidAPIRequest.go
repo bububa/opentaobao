@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,15 @@ type AlibabaCampusSpaceCampusGetbyidAPIRequest struct {
 // NewAlibabaCampusSpaceCampusGetbyidRequest 初始化AlibabaCampusSpaceCampusGetbyidAPIRequest对象
 func NewAlibabaCampusSpaceCampusGetbyidRequest() *AlibabaCampusSpaceCampusGetbyidAPIRequest {
 	return &AlibabaCampusSpaceCampusGetbyidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusSpaceCampusGetbyidAPIRequest) Reset() {
+	r._param0 = nil
+	r._param1 = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -68,4 +76,21 @@ func (r *AlibabaCampusSpaceCampusGetbyidAPIRequest) SetParam1(_param1 int64) err
 // GetParam1 Param1 Getter
 func (r AlibabaCampusSpaceCampusGetbyidAPIRequest) GetParam1() int64 {
 	return r._param1
+}
+
+var poolAlibabaCampusSpaceCampusGetbyidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusSpaceCampusGetbyidRequest()
+	},
+}
+
+// GetAlibabaCampusSpaceCampusGetbyidRequest 从 sync.Pool 获取 AlibabaCampusSpaceCampusGetbyidAPIRequest
+func GetAlibabaCampusSpaceCampusGetbyidAPIRequest() *AlibabaCampusSpaceCampusGetbyidAPIRequest {
+	return poolAlibabaCampusSpaceCampusGetbyidAPIRequest.Get().(*AlibabaCampusSpaceCampusGetbyidAPIRequest)
+}
+
+// ReleaseAlibabaCampusSpaceCampusGetbyidAPIRequest 将 AlibabaCampusSpaceCampusGetbyidAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusSpaceCampusGetbyidAPIRequest(v *AlibabaCampusSpaceCampusGetbyidAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusSpaceCampusGetbyidAPIRequest.Put(v)
 }

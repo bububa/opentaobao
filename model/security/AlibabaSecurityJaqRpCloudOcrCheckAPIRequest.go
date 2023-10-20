@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaSecurityJaqRpCloudOcrCheckAPIRequest struct {
 // NewAlibabaSecurityJaqRpCloudOcrCheckRequest 初始化AlibabaSecurityJaqRpCloudOcrCheckAPIRequest对象
 func NewAlibabaSecurityJaqRpCloudOcrCheckRequest() *AlibabaSecurityJaqRpCloudOcrCheckAPIRequest {
 	return &AlibabaSecurityJaqRpCloudOcrCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqRpCloudOcrCheckAPIRequest) Reset() {
+	r._verifyToken = ""
+	r._imageUrls = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaSecurityJaqRpCloudOcrCheckAPIRequest) SetImageUrls(_imageUrls st
 // GetImageUrls ImageUrls Getter
 func (r AlibabaSecurityJaqRpCloudOcrCheckAPIRequest) GetImageUrls() string {
 	return r._imageUrls
+}
+
+var poolAlibabaSecurityJaqRpCloudOcrCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqRpCloudOcrCheckRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqRpCloudOcrCheckRequest 从 sync.Pool 获取 AlibabaSecurityJaqRpCloudOcrCheckAPIRequest
+func GetAlibabaSecurityJaqRpCloudOcrCheckAPIRequest() *AlibabaSecurityJaqRpCloudOcrCheckAPIRequest {
+	return poolAlibabaSecurityJaqRpCloudOcrCheckAPIRequest.Get().(*AlibabaSecurityJaqRpCloudOcrCheckAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqRpCloudOcrCheckAPIRequest 将 AlibabaSecurityJaqRpCloudOcrCheckAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqRpCloudOcrCheckAPIRequest(v *AlibabaSecurityJaqRpCloudOcrCheckAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqRpCloudOcrCheckAPIRequest.Put(v)
 }

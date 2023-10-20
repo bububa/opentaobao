@@ -2,6 +2,7 @@ package alihealthpw
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthPwGmPendingListAPIRequest struct {
 // NewAlibabaAlihealthPwGmPendingListRequest 初始化AlibabaAlihealthPwGmPendingListAPIRequest对象
 func NewAlibabaAlihealthPwGmPendingListRequest() *AlibabaAlihealthPwGmPendingListAPIRequest {
 	return &AlibabaAlihealthPwGmPendingListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthPwGmPendingListAPIRequest) Reset() {
+	r._body = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthPwGmPendingListAPIRequest) SetBody(_body *PendingListRe
 // GetBody Body Getter
 func (r AlibabaAlihealthPwGmPendingListAPIRequest) GetBody() *PendingListReq {
 	return r._body
+}
+
+var poolAlibabaAlihealthPwGmPendingListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthPwGmPendingListRequest()
+	},
+}
+
+// GetAlibabaAlihealthPwGmPendingListRequest 从 sync.Pool 获取 AlibabaAlihealthPwGmPendingListAPIRequest
+func GetAlibabaAlihealthPwGmPendingListAPIRequest() *AlibabaAlihealthPwGmPendingListAPIRequest {
+	return poolAlibabaAlihealthPwGmPendingListAPIRequest.Get().(*AlibabaAlihealthPwGmPendingListAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthPwGmPendingListAPIRequest 将 AlibabaAlihealthPwGmPendingListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthPwGmPendingListAPIRequest(v *AlibabaAlihealthPwGmPendingListAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthPwGmPendingListAPIRequest.Put(v)
 }

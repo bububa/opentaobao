@@ -9,11 +9,6 @@ import (
 // alibaba.campus.acl.new.listuserbymenu
 //
 // 查询拥有菜单权限的用户
-func AlibabaCampusAclNewListuserbymenu(clt *core.SDKClient, req *campus.AlibabaCampusAclNewListuserbymenuAPIRequest, session string) (*campus.AlibabaCampusAclNewListuserbymenuAPIResponse, error) {
-	var resp campus.AlibabaCampusAclNewListuserbymenuAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusAclNewListuserbymenu(clt *core.SDKClient, req *campus.AlibabaCampusAclNewListuserbymenuAPIRequest, resp *campus.AlibabaCampusAclNewListuserbymenuAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

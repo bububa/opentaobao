@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.kyt.scqy.putpackage
 //
 // 码拼箱接口
-func AlibabaAlihealthDrugKytScqyPutpackage(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytScqyPutpackageAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytScqyPutpackageAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytScqyPutpackageAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugKytScqyPutpackage(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytScqyPutpackageAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytScqyPutpackageAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

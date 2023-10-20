@@ -9,11 +9,6 @@ import (
 // taobao.simba.hour.report.campaign.get
 //
 // 计划维度小时报表获取
-func TaobaoSimbaHourReportCampaignGet(clt *core.SDKClient, req *simba.TaobaoSimbaHourReportCampaignGetAPIRequest, session string) (*simba.TaobaoSimbaHourReportCampaignGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaHourReportCampaignGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaHourReportCampaignGet(clt *core.SDKClient, req *simba.TaobaoSimbaHourReportCampaignGetAPIRequest, resp *simba.TaobaoSimbaHourReportCampaignGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

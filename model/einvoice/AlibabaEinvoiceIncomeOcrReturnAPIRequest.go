@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -43,8 +44,26 @@ type AlibabaEinvoiceIncomeOcrReturnAPIRequest struct {
 // NewAlibabaEinvoiceIncomeOcrReturnRequest 初始化AlibabaEinvoiceIncomeOcrReturnAPIRequest对象
 func NewAlibabaEinvoiceIncomeOcrReturnRequest() *AlibabaEinvoiceIncomeOcrReturnAPIRequest {
 	return &AlibabaEinvoiceIncomeOcrReturnAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(13),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) Reset() {
+	r._checksum = ""
+	r._errorCode = ""
+	r._errorMessage = ""
+	r._imageId = ""
+	r._invoiceCode = ""
+	r._invoiceDate = ""
+	r._invoiceNo = ""
+	r._reqIndex = ""
+	r._sumPrice = ""
+	r._imageData = nil
+	r._invoiceKind = 0
+	r._type = 0
+	r._success = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -231,4 +250,21 @@ func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetSuccess(_success bool) err
 // GetSuccess Success Getter
 func (r AlibabaEinvoiceIncomeOcrReturnAPIRequest) GetSuccess() bool {
 	return r._success
+}
+
+var poolAlibabaEinvoiceIncomeOcrReturnAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceIncomeOcrReturnRequest()
+	},
+}
+
+// GetAlibabaEinvoiceIncomeOcrReturnRequest 从 sync.Pool 获取 AlibabaEinvoiceIncomeOcrReturnAPIRequest
+func GetAlibabaEinvoiceIncomeOcrReturnAPIRequest() *AlibabaEinvoiceIncomeOcrReturnAPIRequest {
+	return poolAlibabaEinvoiceIncomeOcrReturnAPIRequest.Get().(*AlibabaEinvoiceIncomeOcrReturnAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceIncomeOcrReturnAPIRequest 将 AlibabaEinvoiceIncomeOcrReturnAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceIncomeOcrReturnAPIRequest(v *AlibabaEinvoiceIncomeOcrReturnAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceIncomeOcrReturnAPIRequest.Put(v)
 }

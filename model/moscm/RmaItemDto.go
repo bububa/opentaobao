@@ -1,5 +1,9 @@
 package moscm
 
+import (
+	"sync"
+)
+
 // RmaItemDto 结构体
 type RmaItemDto struct {
 	// 商品类型,可选值：普通商品(NORMAL),赠品(GIFT)
@@ -28,4 +32,33 @@ type RmaItemDto struct {
 	DiscCode string `json:"disc_code,omitempty" xml:"disc_code,omitempty"`
 	// 商品编码
 	SettlementCode string `json:"settlement_code,omitempty" xml:"settlement_code,omitempty"`
+}
+
+var poolRmaItemDto = sync.Pool{
+	New: func() any {
+		return new(RmaItemDto)
+	},
+}
+
+// GetRmaItemDto() 从对象池中获取RmaItemDto
+func GetRmaItemDto() *RmaItemDto {
+	return poolRmaItemDto.Get().(*RmaItemDto)
+}
+
+// ReleaseRmaItemDto 释放RmaItemDto
+func ReleaseRmaItemDto(v *RmaItemDto) {
+	v.ProductType = ""
+	v.Desc = ""
+	v.Reason = ""
+	v.Discount = ""
+	v.Price = ""
+	v.Quantity = ""
+	v.Properties = ""
+	v.Title = ""
+	v.OutId = ""
+	v.SkuId = ""
+	v.ActualAmount = ""
+	v.DiscCode = ""
+	v.SettlementCode = ""
+	poolRmaItemDto.Put(v)
 }

@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoLogisticsWmsGoodsInfoSyncAPIResponse struct {
 	model.CommonResponse
 	TaobaoLogisticsWmsGoodsInfoSyncAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsWmsGoodsInfoSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLogisticsWmsGoodsInfoSyncAPIResponseModel).Reset()
 }
 
 // TaobaoLogisticsWmsGoodsInfoSyncAPIResponseModel is WMS回传货品长宽高图片等信息 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoLogisticsWmsGoodsInfoSyncAPIResponseModel struct {
 	Suc bool `json:"suc,omitempty" xml:"suc,omitempty"`
 	// 是否支持重试
 	Retry bool `json:"retry,omitempty" xml:"retry,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsWmsGoodsInfoSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.BizErrorMessage = ""
+	m.BizErrorCode = ""
+	m.Suc = false
+	m.Retry = false
+}
+
+var poolTaobaoLogisticsWmsGoodsInfoSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLogisticsWmsGoodsInfoSyncAPIResponse)
+	},
+}
+
+// GetTaobaoLogisticsWmsGoodsInfoSyncAPIResponse 从 sync.Pool 获取 TaobaoLogisticsWmsGoodsInfoSyncAPIResponse
+func GetTaobaoLogisticsWmsGoodsInfoSyncAPIResponse() *TaobaoLogisticsWmsGoodsInfoSyncAPIResponse {
+	return poolTaobaoLogisticsWmsGoodsInfoSyncAPIResponse.Get().(*TaobaoLogisticsWmsGoodsInfoSyncAPIResponse)
+}
+
+// ReleaseTaobaoLogisticsWmsGoodsInfoSyncAPIResponse 将 TaobaoLogisticsWmsGoodsInfoSyncAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLogisticsWmsGoodsInfoSyncAPIResponse(v *TaobaoLogisticsWmsGoodsInfoSyncAPIResponse) {
+	v.Reset()
+	poolTaobaoLogisticsWmsGoodsInfoSyncAPIResponse.Put(v)
 }

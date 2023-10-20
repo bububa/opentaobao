@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type TaobaoTbkScOrderDetailsGetAPIRequest struct {
 // NewTaobaoTbkScOrderDetailsGetRequest 初始化TaobaoTbkScOrderDetailsGetAPIRequest对象
 func NewTaobaoTbkScOrderDetailsGetRequest() *TaobaoTbkScOrderDetailsGetAPIRequest {
 	return &TaobaoTbkScOrderDetailsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkScOrderDetailsGetAPIRequest) Reset() {
+	r._positionIndex = ""
+	r._endTime = ""
+	r._startTime = ""
+	r._queryType = 0
+	r._pageSize = 0
+	r._memberType = 0
+	r._tkStatus = 0
+	r._jumpType = 0
+	r._pageNo = 0
+	r._orderScene = 0
+	r._memberGroupId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *TaobaoTbkScOrderDetailsGetAPIRequest) SetMemberGroupId(_memberGroupId i
 // GetMemberGroupId MemberGroupId Getter
 func (r TaobaoTbkScOrderDetailsGetAPIRequest) GetMemberGroupId() int64 {
 	return r._memberGroupId
+}
+
+var poolTaobaoTbkScOrderDetailsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkScOrderDetailsGetRequest()
+	},
+}
+
+// GetTaobaoTbkScOrderDetailsGetRequest 从 sync.Pool 获取 TaobaoTbkScOrderDetailsGetAPIRequest
+func GetTaobaoTbkScOrderDetailsGetAPIRequest() *TaobaoTbkScOrderDetailsGetAPIRequest {
+	return poolTaobaoTbkScOrderDetailsGetAPIRequest.Get().(*TaobaoTbkScOrderDetailsGetAPIRequest)
+}
+
+// ReleaseTaobaoTbkScOrderDetailsGetAPIRequest 将 TaobaoTbkScOrderDetailsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkScOrderDetailsGetAPIRequest(v *TaobaoTbkScOrderDetailsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkScOrderDetailsGetAPIRequest.Put(v)
 }

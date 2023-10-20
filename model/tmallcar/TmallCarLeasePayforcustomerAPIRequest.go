@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TmallCarLeasePayforcustomerAPIRequest struct {
 // NewTmallCarLeasePayforcustomerRequest 初始化TmallCarLeasePayforcustomerAPIRequest对象
 func NewTmallCarLeasePayforcustomerRequest() *TmallCarLeasePayforcustomerAPIRequest {
 	return &TmallCarLeasePayforcustomerAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarLeasePayforcustomerAPIRequest) Reset() {
+	r._custIproleId = ""
+	r._date = ""
+	r._loanArNo = ""
+	r._prinAmt = ""
+	r._requestId = ""
+	r._orderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TmallCarLeasePayforcustomerAPIRequest) SetOrderId(_orderId int64) error
 // GetOrderId OrderId Getter
 func (r TmallCarLeasePayforcustomerAPIRequest) GetOrderId() int64 {
 	return r._orderId
+}
+
+var poolTmallCarLeasePayforcustomerAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarLeasePayforcustomerRequest()
+	},
+}
+
+// GetTmallCarLeasePayforcustomerRequest 从 sync.Pool 获取 TmallCarLeasePayforcustomerAPIRequest
+func GetTmallCarLeasePayforcustomerAPIRequest() *TmallCarLeasePayforcustomerAPIRequest {
+	return poolTmallCarLeasePayforcustomerAPIRequest.Get().(*TmallCarLeasePayforcustomerAPIRequest)
+}
+
+// ReleaseTmallCarLeasePayforcustomerAPIRequest 将 TmallCarLeasePayforcustomerAPIRequest 放入 sync.Pool
+func ReleaseTmallCarLeasePayforcustomerAPIRequest(v *TmallCarLeasePayforcustomerAPIRequest) {
+	v.Reset()
+	poolTmallCarLeasePayforcustomerAPIRequest.Put(v)
 }

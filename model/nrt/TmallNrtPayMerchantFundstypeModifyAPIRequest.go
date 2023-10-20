@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallNrtPayMerchantFundstypeModifyAPIRequest struct {
 // NewTmallNrtPayMerchantFundstypeModifyRequest 初始化TmallNrtPayMerchantFundstypeModifyAPIRequest对象
 func NewTmallNrtPayMerchantFundstypeModifyRequest() *TmallNrtPayMerchantFundstypeModifyAPIRequest {
 	return &TmallNrtPayMerchantFundstypeModifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtPayMerchantFundstypeModifyAPIRequest) Reset() {
+	r._modifyFundsTypeReqDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallNrtPayMerchantFundstypeModifyAPIRequest) SetModifyFundsTypeReqDto(
 // GetModifyFundsTypeReqDto ModifyFundsTypeReqDto Getter
 func (r TmallNrtPayMerchantFundstypeModifyAPIRequest) GetModifyFundsTypeReqDto() *ModifyFundsTypeReqDto {
 	return r._modifyFundsTypeReqDto
+}
+
+var poolTmallNrtPayMerchantFundstypeModifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtPayMerchantFundstypeModifyRequest()
+	},
+}
+
+// GetTmallNrtPayMerchantFundstypeModifyRequest 从 sync.Pool 获取 TmallNrtPayMerchantFundstypeModifyAPIRequest
+func GetTmallNrtPayMerchantFundstypeModifyAPIRequest() *TmallNrtPayMerchantFundstypeModifyAPIRequest {
+	return poolTmallNrtPayMerchantFundstypeModifyAPIRequest.Get().(*TmallNrtPayMerchantFundstypeModifyAPIRequest)
+}
+
+// ReleaseTmallNrtPayMerchantFundstypeModifyAPIRequest 将 TmallNrtPayMerchantFundstypeModifyAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtPayMerchantFundstypeModifyAPIRequest(v *TmallNrtPayMerchantFundstypeModifyAPIRequest) {
+	v.Reset()
+	poolTmallNrtPayMerchantFundstypeModifyAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package drug
 
+import (
+	"sync"
+)
+
 // StoreDto 结构体
 type StoreDto struct {
 	// shopId
@@ -46,4 +50,42 @@ type StoreDto struct {
 	DeliveryAccount int64 `json:"delivery_account,omitempty" xml:"delivery_account,omitempty"`
 	// deliveryType
 	DeliveryType int64 `json:"delivery_type,omitempty" xml:"delivery_type,omitempty"`
+}
+
+var poolStoreDto = sync.Pool{
+	New: func() any {
+		return new(StoreDto)
+	},
+}
+
+// GetStoreDto() 从对象池中获取StoreDto
+func GetStoreDto() *StoreDto {
+	return poolStoreDto.Get().(*StoreDto)
+}
+
+// ReleaseStoreDto 释放StoreDto
+func ReleaseStoreDto(v *StoreDto) {
+	v.ShopId = ""
+	v.StoreId = ""
+	v.StoreName = ""
+	v.PicUrl = ""
+	v.BusinessStatus = ""
+	v.OrderCountDesc = ""
+	v.Notice = ""
+	v.DeliveryTime = ""
+	v.Address = ""
+	v.Tele = ""
+	v.Latitude = ""
+	v.Longitude = ""
+	v.EarliestTimeOfDelivery = ""
+	v.PunctualityRate = ""
+	v.Dpavgscore = ""
+	v.Areas = ""
+	v.SellerNick = ""
+	v.DeliveryTypeDesc = ""
+	v.OrderCount = 0
+	v.MinimumAccount = 0
+	v.DeliveryAccount = 0
+	v.DeliveryType = 0
+	poolStoreDto.Put(v)
 }

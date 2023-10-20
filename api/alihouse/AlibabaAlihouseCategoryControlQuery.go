@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.category.control.query
 //
 // 类目权限查询
-func AlibabaAlihouseCategoryControlQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseCategoryControlQueryAPIRequest, session string) (*alihouse.AlibabaAlihouseCategoryControlQueryAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseCategoryControlQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseCategoryControlQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseCategoryControlQueryAPIRequest, resp *alihouse.AlibabaAlihouseCategoryControlQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaSecurityJaqAppShieldAPIRequest struct {
 // NewAlibabaSecurityJaqAppShieldRequest 初始化AlibabaSecurityJaqAppShieldAPIRequest对象
 func NewAlibabaSecurityJaqAppShieldRequest() *AlibabaSecurityJaqAppShieldAPIRequest {
 	return &AlibabaSecurityJaqAppShieldAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqAppShieldAPIRequest) Reset() {
+	r._appInfo = nil
+	r._channel = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaSecurityJaqAppShieldAPIRequest) SetChannel(_channel *ShieldChann
 // GetChannel Channel Getter
 func (r AlibabaSecurityJaqAppShieldAPIRequest) GetChannel() *ShieldChannel {
 	return r._channel
+}
+
+var poolAlibabaSecurityJaqAppShieldAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqAppShieldRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqAppShieldRequest 从 sync.Pool 获取 AlibabaSecurityJaqAppShieldAPIRequest
+func GetAlibabaSecurityJaqAppShieldAPIRequest() *AlibabaSecurityJaqAppShieldAPIRequest {
+	return poolAlibabaSecurityJaqAppShieldAPIRequest.Get().(*AlibabaSecurityJaqAppShieldAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqAppShieldAPIRequest 将 AlibabaSecurityJaqAppShieldAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqAppShieldAPIRequest(v *AlibabaSecurityJaqAppShieldAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqAppShieldAPIRequest.Put(v)
 }

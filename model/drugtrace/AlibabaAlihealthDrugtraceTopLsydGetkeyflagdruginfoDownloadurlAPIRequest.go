@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest str
 // NewAlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlRequest 初始化AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest对象
 func NewAlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlRequest() *AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest {
 	return &AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest) Reset() {
+	r._refEntId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest
 // GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest) GetRefEntId() string {
 	return r._refEntId
+}
+
+var poolAlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlRequest 从 sync.Pool 获取 AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest
+func GetAlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest() *AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest {
+	return poolAlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest.Get().(*AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest 将 AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest(v *AlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugtraceTopLsydGetkeyflagdruginfoDownloadurlAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // BenefitTemplateVo 结构体
 type BenefitTemplateVo struct {
 	// 结束时间
@@ -22,4 +26,30 @@ type BenefitTemplateVo struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 可用总数
 	ValidTotalNum int64 `json:"valid_total_num,omitempty" xml:"valid_total_num,omitempty"`
+}
+
+var poolBenefitTemplateVo = sync.Pool{
+	New: func() any {
+		return new(BenefitTemplateVo)
+	},
+}
+
+// GetBenefitTemplateVo() 从对象池中获取BenefitTemplateVo
+func GetBenefitTemplateVo() *BenefitTemplateVo {
+	return poolBenefitTemplateVo.Get().(*BenefitTemplateVo)
+}
+
+// ReleaseBenefitTemplateVo 释放BenefitTemplateVo
+func ReleaseBenefitTemplateVo(v *BenefitTemplateVo) {
+	v.EndTime = ""
+	v.ExtendFeature = ""
+	v.OutObjectId = ""
+	v.OutObjectName = ""
+	v.StartTime = ""
+	v.BenefitId = 0
+	v.Denomination = 0
+	v.RelateActivityNum = 0
+	v.Status = 0
+	v.ValidTotalNum = 0
+	poolBenefitTemplateVo.Put(v)
 }

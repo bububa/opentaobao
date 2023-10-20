@@ -2,6 +2,7 @@ package tmc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaLsyMiniappMsgPushAPIRequest struct {
 // NewAlibabaLsyMiniappMsgPushRequest 初始化AlibabaLsyMiniappMsgPushAPIRequest对象
 func NewAlibabaLsyMiniappMsgPushRequest() *AlibabaLsyMiniappMsgPushAPIRequest {
 	return &AlibabaLsyMiniappMsgPushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLsyMiniappMsgPushAPIRequest) Reset() {
+	r._appId = ""
+	r._templateId = ""
+	r._params = ""
+	r._msgId = 0
+	r._storeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaLsyMiniappMsgPushAPIRequest) SetStoreId(_storeId int64) error {
 // GetStoreId StoreId Getter
 func (r AlibabaLsyMiniappMsgPushAPIRequest) GetStoreId() int64 {
 	return r._storeId
+}
+
+var poolAlibabaLsyMiniappMsgPushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLsyMiniappMsgPushRequest()
+	},
+}
+
+// GetAlibabaLsyMiniappMsgPushRequest 从 sync.Pool 获取 AlibabaLsyMiniappMsgPushAPIRequest
+func GetAlibabaLsyMiniappMsgPushAPIRequest() *AlibabaLsyMiniappMsgPushAPIRequest {
+	return poolAlibabaLsyMiniappMsgPushAPIRequest.Get().(*AlibabaLsyMiniappMsgPushAPIRequest)
+}
+
+// ReleaseAlibabaLsyMiniappMsgPushAPIRequest 将 AlibabaLsyMiniappMsgPushAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLsyMiniappMsgPushAPIRequest(v *AlibabaLsyMiniappMsgPushAPIRequest) {
+	v.Reset()
+	poolAlibabaLsyMiniappMsgPushAPIRequest.Put(v)
 }

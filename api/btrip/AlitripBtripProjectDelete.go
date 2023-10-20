@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.project.delete
 //
 // 删除项目
-func AlitripBtripProjectDelete(clt *core.SDKClient, req *btrip.AlitripBtripProjectDeleteAPIRequest, session string) (*btrip.AlitripBtripProjectDeleteAPIResponse, error) {
-	var resp btrip.AlitripBtripProjectDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripProjectDelete(clt *core.SDKClient, req *btrip.AlitripBtripProjectDeleteAPIRequest, resp *btrip.AlitripBtripProjectDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

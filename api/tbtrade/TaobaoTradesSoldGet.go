@@ -13,11 +13,6 @@ import (
 // &lt;br/&gt;2. 返回的数据结果只包含了订单的部分数据，可通过taobao.trade.fullinfo.get获取订单详情。
 // &lt;br/&gt;注意：type字段的说明，如果该字段不传，接口默认只查4种类型订单，非默认查询的订单是不返回。遇到订单查不到的情况的，解决办法就是type加上订单类型就可正常返回了。
 // &lt;br/&gt;&lt;strong&gt;&lt;a href=&#34;https://console.open.taobao.com/dingWeb.htm?from=tradeapi&#34; target=&#34;_blank&#34;&gt;点击查看更多交易API说明&lt;/a&gt;&lt;/strong&gt;
-func TaobaoTradesSoldGet(clt *core.SDKClient, req *tbtrade.TaobaoTradesSoldGetAPIRequest, session string) (*tbtrade.TaobaoTradesSoldGetAPIResponse, error) {
-	var resp tbtrade.TaobaoTradesSoldGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTradesSoldGet(clt *core.SDKClient, req *tbtrade.TaobaoTradesSoldGetAPIRequest, resp *tbtrade.TaobaoTradesSoldGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

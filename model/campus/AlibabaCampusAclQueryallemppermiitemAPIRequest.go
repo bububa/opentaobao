@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaCampusAclQueryallemppermiitemAPIRequest struct {
 // NewAlibabaCampusAclQueryallemppermiitemRequest 初始化AlibabaCampusAclQueryallemppermiitemAPIRequest对象
 func NewAlibabaCampusAclQueryallemppermiitemRequest() *AlibabaCampusAclQueryallemppermiitemAPIRequest {
 	return &AlibabaCampusAclQueryallemppermiitemAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusAclQueryallemppermiitemAPIRequest) Reset() {
+	r._systemId = ""
+	r._accountId = ""
+	r._companyId = 0
+	r._campusId = 0
+	r._page = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaCampusAclQueryallemppermiitemAPIRequest) SetPageSize(_pageSize i
 // GetPageSize PageSize Getter
 func (r AlibabaCampusAclQueryallemppermiitemAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaCampusAclQueryallemppermiitemAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusAclQueryallemppermiitemRequest()
+	},
+}
+
+// GetAlibabaCampusAclQueryallemppermiitemRequest 从 sync.Pool 获取 AlibabaCampusAclQueryallemppermiitemAPIRequest
+func GetAlibabaCampusAclQueryallemppermiitemAPIRequest() *AlibabaCampusAclQueryallemppermiitemAPIRequest {
+	return poolAlibabaCampusAclQueryallemppermiitemAPIRequest.Get().(*AlibabaCampusAclQueryallemppermiitemAPIRequest)
+}
+
+// ReleaseAlibabaCampusAclQueryallemppermiitemAPIRequest 将 AlibabaCampusAclQueryallemppermiitemAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusAclQueryallemppermiitemAPIRequest(v *AlibabaCampusAclQueryallemppermiitemAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusAclQueryallemppermiitemAPIRequest.Put(v)
 }

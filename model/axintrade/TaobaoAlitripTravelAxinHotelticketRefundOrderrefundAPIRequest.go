@@ -2,6 +2,7 @@ package axintrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest struct {
 // NewTaobaoAlitripTravelAxinHotelticketRefundOrderrefundRequest 初始化TaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest对象
 func NewTaobaoAlitripTravelAxinHotelticketRefundOrderrefundRequest() *TaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest {
 	return &TaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest) Reset() {
+	r._remark = ""
+	r._reason = ""
+	r._distributorTid = 0
+	r._purchaseSubOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest) SetPurch
 // GetPurchaseSubOrderId PurchaseSubOrderId Getter
 func (r TaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest) GetPurchaseSubOrderId() int64 {
 	return r._purchaseSubOrderId
+}
+
+var poolTaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelAxinHotelticketRefundOrderrefundRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelAxinHotelticketRefundOrderrefundRequest 从 sync.Pool 获取 TaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest
+func GetTaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest() *TaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest {
+	return poolTaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest.Get().(*TaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest 将 TaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest(v *TaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelAxinHotelticketRefundOrderrefundAPIRequest.Put(v)
 }

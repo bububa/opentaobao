@@ -1,5 +1,9 @@
 package cloudgame
 
+import (
+	"sync"
+)
+
 // GameEndPoint 结构体
 type GameEndPoint struct {
 	// H5或者Native的访问点
@@ -20,4 +24,29 @@ type GameEndPoint struct {
 	H5Domain string `json:"h5_domain,omitempty" xml:"h5_domain,omitempty"`
 	// area_id
 	AreaId int64 `json:"area_id,omitempty" xml:"area_id,omitempty"`
+}
+
+var poolGameEndPoint = sync.Pool{
+	New: func() any {
+		return new(GameEndPoint)
+	},
+}
+
+// GetGameEndPoint() 从对象池中获取GameEndPoint
+func GetGameEndPoint() *GameEndPoint {
+	return poolGameEndPoint.Get().(*GameEndPoint)
+}
+
+// ReleaseGameEndPoint 释放GameEndPoint
+func ReleaseGameEndPoint(v *GameEndPoint) {
+	v.Type = ""
+	v.Provider = ""
+	v.WsServer = ""
+	v.WsPort = ""
+	v.WsToken = ""
+	v.Isp = ""
+	v.RegionId = ""
+	v.H5Domain = ""
+	v.AreaId = 0
+	poolGameEndPoint.Put(v)
 }

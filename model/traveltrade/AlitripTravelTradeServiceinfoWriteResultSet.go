@@ -1,5 +1,9 @@
 package traveltrade
 
+import (
+	"sync"
+)
+
 // AlitripTravelTradeServiceinfoWriteResultSet 结构体
 type AlitripTravelTradeServiceinfoWriteResultSet struct {
 	// 错误码信息
@@ -10,4 +14,24 @@ type AlitripTravelTradeServiceinfoWriteResultSet struct {
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 订单标注服务信息是否成功
 	Error bool `json:"error,omitempty" xml:"error,omitempty"`
+}
+
+var poolAlitripTravelTradeServiceinfoWriteResultSet = sync.Pool{
+	New: func() any {
+		return new(AlitripTravelTradeServiceinfoWriteResultSet)
+	},
+}
+
+// GetAlitripTravelTradeServiceinfoWriteResultSet() 从对象池中获取AlitripTravelTradeServiceinfoWriteResultSet
+func GetAlitripTravelTradeServiceinfoWriteResultSet() *AlitripTravelTradeServiceinfoWriteResultSet {
+	return poolAlitripTravelTradeServiceinfoWriteResultSet.Get().(*AlitripTravelTradeServiceinfoWriteResultSet)
+}
+
+// ReleaseAlitripTravelTradeServiceinfoWriteResultSet 释放AlitripTravelTradeServiceinfoWriteResultSet
+func ReleaseAlitripTravelTradeServiceinfoWriteResultSet(v *AlitripTravelTradeServiceinfoWriteResultSet) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.IsSuccess = false
+	v.Error = false
+	poolAlitripTravelTradeServiceinfoWriteResultSet.Put(v)
 }

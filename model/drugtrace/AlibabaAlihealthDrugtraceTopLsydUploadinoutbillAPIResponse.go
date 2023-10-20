@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,6 +18,12 @@ type AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse struct {
 	AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponseModel is 出入库单据上传 成功返回结果
 type AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drugtrace_top_lsyd_uploadinoutbill_response"`
@@ -30,4 +37,30 @@ type AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponseModel struct {
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 是否成功(true 成功 false 失败)
 	ResponseSuccess bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Model = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.ResponseSuccess = false
+}
+
+var poolAlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse
+func GetAlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse() *AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse {
+	return poolAlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse.Get().(*AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse 将 AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse(v *AlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugtraceTopLsydUploadinoutbillAPIResponse.Put(v)
 }

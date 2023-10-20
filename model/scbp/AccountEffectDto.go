@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // AccountEffectDto 结构体
 type AccountEffectDto struct {
 	// 日期(yyyy-MM-dd)
@@ -22,4 +26,30 @@ type AccountEffectDto struct {
 	ImpressionCnt string `json:"impression_cnt,omitempty" xml:"impression_cnt,omitempty"`
 	// 单位小时，保留一位小数，例如13.5表示13.5小时
 	OnlineTime string `json:"online_time,omitempty" xml:"online_time,omitempty"`
+}
+
+var poolAccountEffectDto = sync.Pool{
+	New: func() any {
+		return new(AccountEffectDto)
+	},
+}
+
+// GetAccountEffectDto() 从对象池中获取AccountEffectDto
+func GetAccountEffectDto() *AccountEffectDto {
+	return poolAccountEffectDto.Get().(*AccountEffectDto)
+}
+
+// ReleaseAccountEffectDto 释放AccountEffectDto
+func ReleaseAccountEffectDto(v *AccountEffectDto) {
+	v.StatDate = ""
+	v.Impr = ""
+	v.Click = ""
+	v.Cost = ""
+	v.OnlineMin = ""
+	v.ClickCnt = ""
+	v.ClickCostAvg = ""
+	v.Ctr = ""
+	v.ImpressionCnt = ""
+	v.OnlineTime = ""
+	poolAccountEffectDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package train
 
+import (
+	"sync"
+)
+
 // ToAgentTicketInfo 结构体
 type ToAgentTicketInfo struct {
 	// 淘宝火车票子订单id.
@@ -52,4 +56,45 @@ type ToAgentTicketInfo struct {
 	RealTicketPrice int64 `json:"real_ticket_price,omitempty" xml:"real_ticket_price,omitempty"`
 	// 是否支持无座
 	SupportNoSeat bool `json:"support_no_seat,omitempty" xml:"support_no_seat,omitempty"`
+}
+
+var poolToAgentTicketInfo = sync.Pool{
+	New: func() any {
+		return new(ToAgentTicketInfo)
+	},
+}
+
+// GetToAgentTicketInfo() 从对象池中获取ToAgentTicketInfo
+func GetToAgentTicketInfo() *ToAgentTicketInfo {
+	return poolToAgentTicketInfo.Get().(*ToAgentTicketInfo)
+}
+
+// ReleaseToAgentTicketInfo 释放ToAgentTicketInfo
+func ReleaseToAgentTicketInfo(v *ToAgentTicketInfo) {
+	v.SubOrderId = ""
+	v.FromStation = ""
+	v.FromTime = ""
+	v.ToStation = ""
+	v.TrainNum = ""
+	v.PassengerName = ""
+	v.CertificateNum = ""
+	v.CertificateType = ""
+	v.Birthday = ""
+	v.ToTime = ""
+	v.ValidUntil = ""
+	v.NationalityCode = ""
+	v.Nationality = ""
+	v.Gender = ""
+	v.Telephone = ""
+	v.StudentInfo = nil
+	v.Seat = 0
+	v.InsurancePrice = 0
+	v.TicketPrice = 0
+	v.Tag = 0
+	v.InsuranceUnitPrice = 0
+	v.PassengerType = 0
+	v.SegmentIndex = 0
+	v.RealTicketPrice = 0
+	v.SupportNoSeat = false
+	poolToAgentTicketInfo.Put(v)
 }

@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmCustomerResetppwAPIRequest struct {
 // NewAlibabaAlscCrmCustomerResetppwRequest 初始化AlibabaAlscCrmCustomerResetppwAPIRequest对象
 func NewAlibabaAlscCrmCustomerResetppwRequest() *AlibabaAlscCrmCustomerResetppwAPIRequest {
 	return &AlibabaAlscCrmCustomerResetppwAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmCustomerResetppwAPIRequest) Reset() {
+	r._resetPayPwdRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmCustomerResetppwAPIRequest) SetResetPayPwdRequest(_resetP
 // GetResetPayPwdRequest ResetPayPwdRequest Getter
 func (r AlibabaAlscCrmCustomerResetppwAPIRequest) GetResetPayPwdRequest() *ResetPayPasswdOpenReq {
 	return r._resetPayPwdRequest
+}
+
+var poolAlibabaAlscCrmCustomerResetppwAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmCustomerResetppwRequest()
+	},
+}
+
+// GetAlibabaAlscCrmCustomerResetppwRequest 从 sync.Pool 获取 AlibabaAlscCrmCustomerResetppwAPIRequest
+func GetAlibabaAlscCrmCustomerResetppwAPIRequest() *AlibabaAlscCrmCustomerResetppwAPIRequest {
+	return poolAlibabaAlscCrmCustomerResetppwAPIRequest.Get().(*AlibabaAlscCrmCustomerResetppwAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmCustomerResetppwAPIRequest 将 AlibabaAlscCrmCustomerResetppwAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmCustomerResetppwAPIRequest(v *AlibabaAlscCrmCustomerResetppwAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmCustomerResetppwAPIRequest.Put(v)
 }

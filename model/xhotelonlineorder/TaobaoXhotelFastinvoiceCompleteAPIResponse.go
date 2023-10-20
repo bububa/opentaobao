@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoXhotelFastinvoiceCompleteAPIResponse struct {
 	TaobaoXhotelFastinvoiceCompleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoXhotelFastinvoiceCompleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelFastinvoiceCompleteAPIResponseModel).Reset()
+}
+
 // TaobaoXhotelFastinvoiceCompleteAPIResponseModel is 极速开票开票请求完成 成功返回结果
 type TaobaoXhotelFastinvoiceCompleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_fastinvoice_complete_response"`
@@ -26,4 +33,29 @@ type TaobaoXhotelFastinvoiceCompleteAPIResponseModel struct {
 	Errmsg string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
 	// success
 	Issuccess bool `json:"issuccess,omitempty" xml:"issuccess,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelFastinvoiceCompleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Errcode = ""
+	m.Errmsg = ""
+	m.Issuccess = false
+}
+
+var poolTaobaoXhotelFastinvoiceCompleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelFastinvoiceCompleteAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelFastinvoiceCompleteAPIResponse 从 sync.Pool 获取 TaobaoXhotelFastinvoiceCompleteAPIResponse
+func GetTaobaoXhotelFastinvoiceCompleteAPIResponse() *TaobaoXhotelFastinvoiceCompleteAPIResponse {
+	return poolTaobaoXhotelFastinvoiceCompleteAPIResponse.Get().(*TaobaoXhotelFastinvoiceCompleteAPIResponse)
+}
+
+// ReleaseTaobaoXhotelFastinvoiceCompleteAPIResponse 将 TaobaoXhotelFastinvoiceCompleteAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelFastinvoiceCompleteAPIResponse(v *TaobaoXhotelFastinvoiceCompleteAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelFastinvoiceCompleteAPIResponse.Put(v)
 }

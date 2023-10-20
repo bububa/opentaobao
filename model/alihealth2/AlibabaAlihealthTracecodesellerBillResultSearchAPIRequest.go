@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest struct {
 // NewAlibabaAlihealthTracecodesellerBillResultSearchRequest 初始化AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest对象
 func NewAlibabaAlihealthTracecodesellerBillResultSearchRequest() *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest {
 	return &AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) Reset() {
+	r._skeyCode = ""
+	r._billCode = ""
+	r._beginDate = ""
+	r._endDate = ""
+	r._sellerName = ""
+	r._entInfoId = 0
+	r._page = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetPageSize(
 // GetPageSize PageSize Getter
 func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaAlihealthTracecodesellerBillResultSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthTracecodesellerBillResultSearchRequest()
+	},
+}
+
+// GetAlibabaAlihealthTracecodesellerBillResultSearchRequest 从 sync.Pool 获取 AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest
+func GetAlibabaAlihealthTracecodesellerBillResultSearchAPIRequest() *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest {
+	return poolAlibabaAlihealthTracecodesellerBillResultSearchAPIRequest.Get().(*AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthTracecodesellerBillResultSearchAPIRequest 将 AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthTracecodesellerBillResultSearchAPIRequest(v *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthTracecodesellerBillResultSearchAPIRequest.Put(v)
 }

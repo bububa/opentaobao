@@ -2,6 +2,7 @@ package eticket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoEticketMerchantImgUploadAPIRequest struct {
 // NewTaobaoEticketMerchantImgUploadRequest 初始化TaobaoEticketMerchantImgUploadAPIRequest对象
 func NewTaobaoEticketMerchantImgUploadRequest() *TaobaoEticketMerchantImgUploadAPIRequest {
 	return &TaobaoEticketMerchantImgUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoEticketMerchantImgUploadAPIRequest) Reset() {
+	r._imgBytes = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoEticketMerchantImgUploadAPIRequest) SetImgBytes(_imgBytes *model.
 // GetImgBytes ImgBytes Getter
 func (r TaobaoEticketMerchantImgUploadAPIRequest) GetImgBytes() *model.File {
 	return r._imgBytes
+}
+
+var poolTaobaoEticketMerchantImgUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoEticketMerchantImgUploadRequest()
+	},
+}
+
+// GetTaobaoEticketMerchantImgUploadRequest 从 sync.Pool 获取 TaobaoEticketMerchantImgUploadAPIRequest
+func GetTaobaoEticketMerchantImgUploadAPIRequest() *TaobaoEticketMerchantImgUploadAPIRequest {
+	return poolTaobaoEticketMerchantImgUploadAPIRequest.Get().(*TaobaoEticketMerchantImgUploadAPIRequest)
+}
+
+// ReleaseTaobaoEticketMerchantImgUploadAPIRequest 将 TaobaoEticketMerchantImgUploadAPIRequest 放入 sync.Pool
+func ReleaseTaobaoEticketMerchantImgUploadAPIRequest(v *TaobaoEticketMerchantImgUploadAPIRequest) {
+	v.Reset()
+	poolTaobaoEticketMerchantImgUploadAPIRequest.Put(v)
 }

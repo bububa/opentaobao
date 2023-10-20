@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // RightsList 结构体
 type RightsList struct {
 	// 券名称
@@ -14,4 +18,26 @@ type RightsList struct {
 	SnapshotId int64 `json:"snapshot_id,omitempty" xml:"snapshot_id,omitempty"`
 	// 券使用门槛
 	EntryAmount int64 `json:"entry_amount,omitempty" xml:"entry_amount,omitempty"`
+}
+
+var poolRightsList = sync.Pool{
+	New: func() any {
+		return new(RightsList)
+	},
+}
+
+// GetRightsList() 从对象池中获取RightsList
+func GetRightsList() *RightsList {
+	return poolRightsList.Get().(*RightsList)
+}
+
+// ReleaseRightsList 释放RightsList
+func ReleaseRightsList(v *RightsList) {
+	v.Name = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.CouponAmount = 0
+	v.SnapshotId = 0
+	v.EntryAmount = 0
+	poolRightsList.Put(v)
 }

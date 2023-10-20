@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WcsContainerScannedByConveyorDto 结构体
 type WcsContainerScannedByConveyorDto struct {
 	// warehouseCode
@@ -18,4 +22,28 @@ type WcsContainerScannedByConveyorDto struct {
 	ScannedTime string `json:"scanned_time,omitempty" xml:"scanned_time,omitempty"`
 	// uuid
 	Uuid string `json:"uuid,omitempty" xml:"uuid,omitempty"`
+}
+
+var poolWcsContainerScannedByConveyorDto = sync.Pool{
+	New: func() any {
+		return new(WcsContainerScannedByConveyorDto)
+	},
+}
+
+// GetWcsContainerScannedByConveyorDto() 从对象池中获取WcsContainerScannedByConveyorDto
+func GetWcsContainerScannedByConveyorDto() *WcsContainerScannedByConveyorDto {
+	return poolWcsContainerScannedByConveyorDto.Get().(*WcsContainerScannedByConveyorDto)
+}
+
+// ReleaseWcsContainerScannedByConveyorDto 释放WcsContainerScannedByConveyorDto
+func ReleaseWcsContainerScannedByConveyorDto(v *WcsContainerScannedByConveyorDto) {
+	v.WarehouseCode = ""
+	v.WarehouseId = ""
+	v.BatchCode = ""
+	v.ContainerCode = ""
+	v.WaveCode = ""
+	v.ConveyorId = ""
+	v.ScannedTime = ""
+	v.Uuid = ""
+	poolWcsContainerScannedByConveyorDto.Put(v)
 }

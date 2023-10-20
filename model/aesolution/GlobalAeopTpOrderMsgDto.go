@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // GlobalAeopTpOrderMsgDto 结构体
 type GlobalAeopTpOrderMsgDto struct {
 	// order creation time
@@ -36,4 +40,37 @@ type GlobalAeopTpOrderMsgDto struct {
 	ReceiverSeq int64 `json:"receiver_seq,omitempty" xml:"receiver_seq,omitempty"`
 	// receiver admin account seq
 	ReceiverAdminSeq int64 `json:"receiver_admin_seq,omitempty" xml:"receiver_admin_seq,omitempty"`
+}
+
+var poolGlobalAeopTpOrderMsgDto = sync.Pool{
+	New: func() any {
+		return new(GlobalAeopTpOrderMsgDto)
+	},
+}
+
+// GetGlobalAeopTpOrderMsgDto() 从对象池中获取GlobalAeopTpOrderMsgDto
+func GetGlobalAeopTpOrderMsgDto() *GlobalAeopTpOrderMsgDto {
+	return poolGlobalAeopTpOrderMsgDto.Get().(*GlobalAeopTpOrderMsgDto)
+}
+
+// ReleaseGlobalAeopTpOrderMsgDto 释放GlobalAeopTpOrderMsgDto
+func ReleaseGlobalAeopTpOrderMsgDto(v *GlobalAeopTpOrderMsgDto) {
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Status = ""
+	v.Content = ""
+	v.Poster = ""
+	v.SenderLoginId = ""
+	v.SenderFirstName = ""
+	v.SenderLastName = ""
+	v.ReceiverLoginId = ""
+	v.ReceiverFirstName = ""
+	v.ReceiverLastName = ""
+	v.Id = 0
+	v.BusinessOrderId = 0
+	v.SenderSeq = 0
+	v.SenderAdminSeq = 0
+	v.ReceiverSeq = 0
+	v.ReceiverAdminSeq = 0
+	poolGlobalAeopTpOrderMsgDto.Put(v)
 }

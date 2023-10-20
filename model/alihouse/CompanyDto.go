@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // CompanyDto 结构体
 type CompanyDto struct {
 	// 公司logo
@@ -40,4 +44,39 @@ type CompanyDto struct {
 	IsDeleted int64 `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
 	// 是否测试 0-否 1-是
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
+}
+
+var poolCompanyDto = sync.Pool{
+	New: func() any {
+		return new(CompanyDto)
+	},
+}
+
+// GetCompanyDto() 从对象池中获取CompanyDto
+func GetCompanyDto() *CompanyDto {
+	return poolCompanyDto.Get().(*CompanyDto)
+}
+
+// ReleaseCompanyDto 释放CompanyDto
+func ReleaseCompanyDto(v *CompanyDto) {
+	v.CompanyLogo = ""
+	v.CompanyLicenseExpireTime = ""
+	v.CompanyLicensePhoto = ""
+	v.CompanyLegalPerson = ""
+	v.CompanyLicenseNo = ""
+	v.CompanyNameShort = ""
+	v.CompanyName = ""
+	v.OuterCompanyId = ""
+	v.Address = ""
+	v.GaodeLatitude = ""
+	v.GaodeLongitude = ""
+	v.ContactPhone = ""
+	v.ContactMan = ""
+	v.CompanyCertificatePhoto = ""
+	v.CompanyCertificateNo = ""
+	v.CompanyLicenseStatus = 0
+	v.CityId = 0
+	v.IsDeleted = 0
+	v.IsTest = 0
+	poolCompanyDto.Put(v)
 }

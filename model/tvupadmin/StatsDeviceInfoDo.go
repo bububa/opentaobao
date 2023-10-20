@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // StatsDeviceInfoDo 结构体
 type StatsDeviceInfoDo struct {
 	// factoryName
@@ -16,4 +20,27 @@ type StatsDeviceInfoDo struct {
 	UserActiveTotal int64 `json:"user_active_total,omitempty" xml:"user_active_total,omitempty"`
 	// userSignDaily
 	UserSignDaily int64 `json:"user_sign_daily,omitempty" xml:"user_sign_daily,omitempty"`
+}
+
+var poolStatsDeviceInfoDo = sync.Pool{
+	New: func() any {
+		return new(StatsDeviceInfoDo)
+	},
+}
+
+// GetStatsDeviceInfoDo() 从对象池中获取StatsDeviceInfoDo
+func GetStatsDeviceInfoDo() *StatsDeviceInfoDo {
+	return poolStatsDeviceInfoDo.Get().(*StatsDeviceInfoDo)
+}
+
+// ReleaseStatsDeviceInfoDo 释放StatsDeviceInfoDo
+func ReleaseStatsDeviceInfoDo(v *StatsDeviceInfoDo) {
+	v.FactoryName = ""
+	v.DeviceModel = ""
+	v.StatsDateStr = ""
+	v.StatsDate = ""
+	v.Id = 0
+	v.UserActiveTotal = 0
+	v.UserSignDaily = 0
+	poolStatsDeviceInfoDo.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.mixnick.wetoplay
 //
 // 微淘应用的混淆nick转为互动类型混淆nick
-func TaobaoMixnickWetoplay(clt *core.SDKClient, req *interact.TaobaoMixnickWetoplayAPIRequest, session string) (*interact.TaobaoMixnickWetoplayAPIResponse, error) {
-	var resp interact.TaobaoMixnickWetoplayAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoMixnickWetoplay(clt *core.SDKClient, req *interact.TaobaoMixnickWetoplayAPIRequest, resp *interact.TaobaoMixnickWetoplayAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package openim
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOpenimTribeGetmembersAPIRequest struct {
 // NewTaobaoOpenimTribeGetmembersRequest 初始化TaobaoOpenimTribeGetmembersAPIRequest对象
 func NewTaobaoOpenimTribeGetmembersRequest() *TaobaoOpenimTribeGetmembersAPIRequest {
 	return &TaobaoOpenimTribeGetmembersAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenimTribeGetmembersAPIRequest) Reset() {
+	r._user = nil
+	r._tribeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOpenimTribeGetmembersAPIRequest) SetTribeId(_tribeId int64) error
 // GetTribeId TribeId Getter
 func (r TaobaoOpenimTribeGetmembersAPIRequest) GetTribeId() int64 {
 	return r._tribeId
+}
+
+var poolTaobaoOpenimTribeGetmembersAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenimTribeGetmembersRequest()
+	},
+}
+
+// GetTaobaoOpenimTribeGetmembersRequest 从 sync.Pool 获取 TaobaoOpenimTribeGetmembersAPIRequest
+func GetTaobaoOpenimTribeGetmembersAPIRequest() *TaobaoOpenimTribeGetmembersAPIRequest {
+	return poolTaobaoOpenimTribeGetmembersAPIRequest.Get().(*TaobaoOpenimTribeGetmembersAPIRequest)
+}
+
+// ReleaseTaobaoOpenimTribeGetmembersAPIRequest 将 TaobaoOpenimTribeGetmembersAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenimTribeGetmembersAPIRequest(v *TaobaoOpenimTribeGetmembersAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenimTribeGetmembersAPIRequest.Put(v)
 }

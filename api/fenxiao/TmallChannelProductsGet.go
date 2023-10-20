@@ -17,11 +17,6 @@ import (
 // * 入参fields仅对传入pids生效（只有按ID查询时，才能查询额外的数据）
 // * 查询结果按照产品发布时间倒序，即时间近的数据在前。
 // * 传入channel 渠道，会只返回相应渠道的产品
-func TmallChannelProductsGet(clt *core.SDKClient, req *fenxiao.TmallChannelProductsGetAPIRequest, session string) (*fenxiao.TmallChannelProductsGetAPIResponse, error) {
-	var resp fenxiao.TmallChannelProductsGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallChannelProductsGet(clt *core.SDKClient, req *fenxiao.TmallChannelProductsGetAPIRequest, resp *fenxiao.TmallChannelProductsGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

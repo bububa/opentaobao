@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // CommonInvoiceInfo 结构体
 type CommonInvoiceInfo struct {
 	// 发票抬头
@@ -20,4 +24,29 @@ type CommonInvoiceInfo struct {
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 发票id
 	InvoiceId int64 `json:"invoice_id,omitempty" xml:"invoice_id,omitempty"`
+}
+
+var poolCommonInvoiceInfo = sync.Pool{
+	New: func() any {
+		return new(CommonInvoiceInfo)
+	},
+}
+
+// GetCommonInvoiceInfo() 从对象池中获取CommonInvoiceInfo
+func GetCommonInvoiceInfo() *CommonInvoiceInfo {
+	return poolCommonInvoiceInfo.Get().(*CommonInvoiceInfo)
+}
+
+// ReleaseCommonInvoiceInfo 释放CommonInvoiceInfo
+func ReleaseCommonInvoiceInfo(v *CommonInvoiceInfo) {
+	v.CompanyTitle = ""
+	v.Email = ""
+	v.Phone = ""
+	v.UserNick = ""
+	v.ValueAddedInfo = nil
+	v.InvoiceType = 0
+	v.InvoiceAttr = 0
+	v.UserId = 0
+	v.InvoiceId = 0
+	poolCommonInvoiceInfo.Put(v)
 }

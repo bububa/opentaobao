@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // OrderItems 结构体
 type OrderItems struct {
 	// 明细对应主单的交易单号
@@ -24,4 +28,31 @@ type OrderItems struct {
 	ItemQuantity int64 `json:"item_quantity,omitempty" xml:"item_quantity,omitempty"`
 	// 商品金额 123.33元，单位：分
 	ItemAmount int64 `json:"item_amount,omitempty" xml:"item_amount,omitempty"`
+}
+
+var poolOrderItems = sync.Pool{
+	New: func() any {
+		return new(OrderItems)
+	},
+}
+
+// GetOrderItems() 从对象池中获取OrderItems
+func GetOrderItems() *OrderItems {
+	return poolOrderItems.Get().(*OrderItems)
+}
+
+// ReleaseOrderItems 释放OrderItems
+func ReleaseOrderItems(v *OrderItems) {
+	v.TradeId = ""
+	v.TradeItemId = ""
+	v.ItemTag = ""
+	v.ScItemId = ""
+	v.ItemCode = ""
+	v.ItemId = ""
+	v.SkuId = ""
+	v.ScItemCode = ""
+	v.OrderItemId = 0
+	v.ItemQuantity = 0
+	v.ItemAmount = 0
+	poolOrderItems.Put(v)
 }

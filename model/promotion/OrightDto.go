@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // OrightDto 结构体
 type OrightDto struct {
 	// 模板名称
@@ -32,4 +36,35 @@ type OrightDto struct {
 	PrizeQuantity int64 `json:"prize_quantity,omitempty" xml:"prize_quantity,omitempty"`
 	// 可发放数
 	RemainPrizeQuantity int64 `json:"remain_prize_quantity,omitempty" xml:"remain_prize_quantity,omitempty"`
+}
+
+var poolOrightDto = sync.Pool{
+	New: func() any {
+		return new(OrightDto)
+	},
+}
+
+// GetOrightDto() 从对象池中获取OrightDto
+func GetOrightDto() *OrightDto {
+	return poolOrightDto.Get().(*OrightDto)
+}
+
+// ReleaseOrightDto 释放OrightDto
+func ReleaseOrightDto(v *OrightDto) {
+	v.TemplateName = ""
+	v.BenefitName = ""
+	v.RightTypeName = ""
+	v.StartDate = ""
+	v.EndDate = ""
+	v.Probability = ""
+	v.Amount = ""
+	v.UseStartTime = ""
+	v.UseEndTime = ""
+	v.Condition = ""
+	v.ExtAttribute = ""
+	v.PrizeId = 0
+	v.RightTypeId = 0
+	v.PrizeQuantity = 0
+	v.RemainPrizeQuantity = 0
+	poolOrightDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // HotelVo 结构体
 type HotelVo struct {
 	// 品牌名
@@ -20,4 +24,29 @@ type HotelVo struct {
 	HotelFeature *HotelFeatureVo `json:"hotel_feature,omitempty" xml:"hotel_feature,omitempty"`
 	// 飞猪旗舰店的ID
 	Hid int64 `json:"hid,omitempty" xml:"hid,omitempty"`
+}
+
+var poolHotelVo = sync.Pool{
+	New: func() any {
+		return new(HotelVo)
+	},
+}
+
+// GetHotelVo() 从对象池中获取HotelVo
+func GetHotelVo() *HotelVo {
+	return poolHotelVo.Get().(*HotelVo)
+}
+
+// ReleaseHotelVo 释放HotelVo
+func ReleaseHotelVo(v *HotelVo) {
+	v.BrandName = ""
+	v.Star = ""
+	v.Phone = ""
+	v.Description = ""
+	v.HotelId = ""
+	v.BrandCode = ""
+	v.Shid = 0
+	v.HotelFeature = nil
+	v.Hid = 0
+	poolHotelVo.Put(v)
 }

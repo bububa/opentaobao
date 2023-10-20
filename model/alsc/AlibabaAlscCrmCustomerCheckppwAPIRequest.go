@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmCustomerCheckppwAPIRequest struct {
 // NewAlibabaAlscCrmCustomerCheckppwRequest 初始化AlibabaAlscCrmCustomerCheckppwAPIRequest对象
 func NewAlibabaAlscCrmCustomerCheckppwRequest() *AlibabaAlscCrmCustomerCheckppwAPIRequest {
 	return &AlibabaAlscCrmCustomerCheckppwAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmCustomerCheckppwAPIRequest) Reset() {
+	r._checkRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmCustomerCheckppwAPIRequest) SetCheckRequest(_checkRequest
 // GetCheckRequest CheckRequest Getter
 func (r AlibabaAlscCrmCustomerCheckppwAPIRequest) GetCheckRequest() *CheckPayPasswdReq {
 	return r._checkRequest
+}
+
+var poolAlibabaAlscCrmCustomerCheckppwAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmCustomerCheckppwRequest()
+	},
+}
+
+// GetAlibabaAlscCrmCustomerCheckppwRequest 从 sync.Pool 获取 AlibabaAlscCrmCustomerCheckppwAPIRequest
+func GetAlibabaAlscCrmCustomerCheckppwAPIRequest() *AlibabaAlscCrmCustomerCheckppwAPIRequest {
+	return poolAlibabaAlscCrmCustomerCheckppwAPIRequest.Get().(*AlibabaAlscCrmCustomerCheckppwAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmCustomerCheckppwAPIRequest 将 AlibabaAlscCrmCustomerCheckppwAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmCustomerCheckppwAPIRequest(v *AlibabaAlscCrmCustomerCheckppwAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmCustomerCheckppwAPIRequest.Put(v)
 }

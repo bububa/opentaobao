@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // DrfHalfDayCcCallbackContent 结构体
 type DrfHalfDayCcCallbackContent struct {
 	// 子单出库关联的同城令牌
@@ -22,4 +26,30 @@ type DrfHalfDayCcCallbackContent struct {
 	Attribute string `json:"attribute,omitempty" xml:"attribute,omitempty"`
 	// 是否缺货出
 	IsShortage bool `json:"is_shortage,omitempty" xml:"is_shortage,omitempty"`
+}
+
+var poolDrfHalfDayCcCallbackContent = sync.Pool{
+	New: func() any {
+		return new(DrfHalfDayCcCallbackContent)
+	},
+}
+
+// GetDrfHalfDayCcCallbackContent() 从对象池中获取DrfHalfDayCcCallbackContent
+func GetDrfHalfDayCcCallbackContent() *DrfHalfDayCcCallbackContent {
+	return poolDrfHalfDayCcCallbackContent.Get().(*DrfHalfDayCcCallbackContent)
+}
+
+// ReleaseDrfHalfDayCcCallbackContent 释放DrfHalfDayCcCallbackContent
+func ReleaseDrfHalfDayCcCallbackContent(v *DrfHalfDayCcCallbackContent) {
+	v.SameTownPackages = v.SameTownPackages[:0]
+	v.SkuName = ""
+	v.SkuCode = ""
+	v.OutOfStockStockQuantity = ""
+	v.OutOfStockSaleQuantity = ""
+	v.ActualStockQuantity = ""
+	v.ActualSaleQuantity = ""
+	v.WorkUnitContentId = ""
+	v.Attribute = ""
+	v.IsShortage = false
+	poolDrfHalfDayCcCallbackContent.Put(v)
 }

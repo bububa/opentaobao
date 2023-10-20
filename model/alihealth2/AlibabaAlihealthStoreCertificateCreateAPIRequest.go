@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAlihealthStoreCertificateCreateAPIRequest struct {
 // NewAlibabaAlihealthStoreCertificateCreateRequest 初始化AlibabaAlihealthStoreCertificateCreateAPIRequest对象
 func NewAlibabaAlihealthStoreCertificateCreateRequest() *AlibabaAlihealthStoreCertificateCreateAPIRequest {
 	return &AlibabaAlihealthStoreCertificateCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) Reset() {
+	r._storeCode = ""
+	r._auditType = ""
+	r._content = ""
+	r._bizNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) SetBizNo(_bizNo strin
 // GetBizNo BizNo Getter
 func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetBizNo() string {
 	return r._bizNo
+}
+
+var poolAlibabaAlihealthStoreCertificateCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthStoreCertificateCreateRequest()
+	},
+}
+
+// GetAlibabaAlihealthStoreCertificateCreateRequest 从 sync.Pool 获取 AlibabaAlihealthStoreCertificateCreateAPIRequest
+func GetAlibabaAlihealthStoreCertificateCreateAPIRequest() *AlibabaAlihealthStoreCertificateCreateAPIRequest {
+	return poolAlibabaAlihealthStoreCertificateCreateAPIRequest.Get().(*AlibabaAlihealthStoreCertificateCreateAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthStoreCertificateCreateAPIRequest 将 AlibabaAlihealthStoreCertificateCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthStoreCertificateCreateAPIRequest(v *AlibabaAlihealthStoreCertificateCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthStoreCertificateCreateAPIRequest.Put(v)
 }

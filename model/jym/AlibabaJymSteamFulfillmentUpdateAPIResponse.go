@@ -2,6 +2,7 @@ package jym
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaJymSteamFulfillmentUpdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaJymSteamFulfillmentUpdateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymSteamFulfillmentUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaJymSteamFulfillmentUpdateAPIResponseModel).Reset()
 }
 
 // AlibabaJymSteamFulfillmentUpdateAPIResponseModel is 交易猫Steam类目发履约态变更 成功返回结果
@@ -32,4 +39,32 @@ type AlibabaJymSteamFulfillmentUpdateAPIResponseModel struct {
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
 	// 调用结果
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymSteamFulfillmentUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SubCodeType = ""
+	m.SubExtraErrMsg = ""
+	m.StateCode = ""
+	m.ExtraErrMsg = ""
+	m.Result = false
+	m.IsSuccess = false
+}
+
+var poolAlibabaJymSteamFulfillmentUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaJymSteamFulfillmentUpdateAPIResponse)
+	},
+}
+
+// GetAlibabaJymSteamFulfillmentUpdateAPIResponse 从 sync.Pool 获取 AlibabaJymSteamFulfillmentUpdateAPIResponse
+func GetAlibabaJymSteamFulfillmentUpdateAPIResponse() *AlibabaJymSteamFulfillmentUpdateAPIResponse {
+	return poolAlibabaJymSteamFulfillmentUpdateAPIResponse.Get().(*AlibabaJymSteamFulfillmentUpdateAPIResponse)
+}
+
+// ReleaseAlibabaJymSteamFulfillmentUpdateAPIResponse 将 AlibabaJymSteamFulfillmentUpdateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaJymSteamFulfillmentUpdateAPIResponse(v *AlibabaJymSteamFulfillmentUpdateAPIResponse) {
+	v.Reset()
+	poolAlibabaJymSteamFulfillmentUpdateAPIResponse.Put(v)
 }

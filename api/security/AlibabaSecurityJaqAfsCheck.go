@@ -9,11 +9,6 @@ import (
 // alibaba.security.jaq.afs.check
 //
 // 反欺诈二次验证接口
-func AlibabaSecurityJaqAfsCheck(clt *core.SDKClient, req *security.AlibabaSecurityJaqAfsCheckAPIRequest, session string) (*security.AlibabaSecurityJaqAfsCheckAPIResponse, error) {
-	var resp security.AlibabaSecurityJaqAfsCheckAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSecurityJaqAfsCheck(clt *core.SDKClient, req *security.AlibabaSecurityJaqAfsCheckAPIRequest, resp *security.AlibabaSecurityJaqAfsCheckAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

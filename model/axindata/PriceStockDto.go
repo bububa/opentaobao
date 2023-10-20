@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // PriceStockDto 结构体
 type PriceStockDto struct {
 	// 当前价库日期
@@ -18,4 +22,28 @@ type PriceStockDto struct {
 	EndDate int64 `json:"end_date,omitempty" xml:"end_date,omitempty"`
 	// 人民币金额（国际外币场景使用）
 	CnyPrice int64 `json:"cny_price,omitempty" xml:"cny_price,omitempty"`
+}
+
+var poolPriceStockDto = sync.Pool{
+	New: func() any {
+		return new(PriceStockDto)
+	},
+}
+
+// GetPriceStockDto() 从对象池中获取PriceStockDto
+func GetPriceStockDto() *PriceStockDto {
+	return poolPriceStockDto.Get().(*PriceStockDto)
+}
+
+// ReleasePriceStockDto 释放PriceStockDto
+func ReleasePriceStockDto(v *PriceStockDto) {
+	v.Date = 0
+	v.Price = 0
+	v.Quota = 0
+	v.PromotionPrice = 0
+	v.RateSwitch = 0
+	v.StartDate = 0
+	v.EndDate = 0
+	v.CnyPrice = 0
+	poolPriceStockDto.Put(v)
 }

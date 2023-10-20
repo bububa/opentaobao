@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaWdkSkuCategoryAddApiResult 结构体
 type AlibabaWdkSkuCategoryAddApiResult struct {
 	// 错误码（只有有异常才有值）
@@ -10,4 +14,24 @@ type AlibabaWdkSkuCategoryAddApiResult struct {
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// 接口返回成功标志
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaWdkSkuCategoryAddApiResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkSkuCategoryAddApiResult)
+	},
+}
+
+// GetAlibabaWdkSkuCategoryAddApiResult() 从对象池中获取AlibabaWdkSkuCategoryAddApiResult
+func GetAlibabaWdkSkuCategoryAddApiResult() *AlibabaWdkSkuCategoryAddApiResult {
+	return poolAlibabaWdkSkuCategoryAddApiResult.Get().(*AlibabaWdkSkuCategoryAddApiResult)
+}
+
+// ReleaseAlibabaWdkSkuCategoryAddApiResult 释放AlibabaWdkSkuCategoryAddApiResult
+func ReleaseAlibabaWdkSkuCategoryAddApiResult(v *AlibabaWdkSkuCategoryAddApiResult) {
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Model = ""
+	v.Success = false
+	poolAlibabaWdkSkuCategoryAddApiResult.Put(v)
 }

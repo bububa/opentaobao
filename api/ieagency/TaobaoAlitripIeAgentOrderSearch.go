@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.ie.agent.order.search
 //
 // 根据指定条件查询国际机票订单列表
-func TaobaoAlitripIeAgentOrderSearch(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentOrderSearchAPIRequest, session string) (*ieagency.TaobaoAlitripIeAgentOrderSearchAPIResponse, error) {
-	var resp ieagency.TaobaoAlitripIeAgentOrderSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripIeAgentOrderSearch(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentOrderSearchAPIRequest, resp *ieagency.TaobaoAlitripIeAgentOrderSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

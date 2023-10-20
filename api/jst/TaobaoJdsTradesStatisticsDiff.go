@@ -9,11 +9,6 @@ import (
 // taobao.jds.trades.statistics.diff
 //
 // 订单全链路状态统计差异比较
-func TaobaoJdsTradesStatisticsDiff(clt *core.SDKClient, req *jst.TaobaoJdsTradesStatisticsDiffAPIRequest, session string) (*jst.TaobaoJdsTradesStatisticsDiffAPIResponse, error) {
-	var resp jst.TaobaoJdsTradesStatisticsDiffAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJdsTradesStatisticsDiff(clt *core.SDKClient, req *jst.TaobaoJdsTradesStatisticsDiffAPIRequest, resp *jst.TaobaoJdsTradesStatisticsDiffAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

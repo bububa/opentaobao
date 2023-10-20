@@ -1,5 +1,9 @@
 package traderate
 
+import (
+	"sync"
+)
+
 // GetMixRateListResult 结构体
 type GetMixRateListResult struct {
 	// 评价明细信息
@@ -14,4 +18,26 @@ type GetMixRateListResult struct {
 	TotalNum int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolGetMixRateListResult = sync.Pool{
+	New: func() any {
+		return new(GetMixRateListResult)
+	},
+}
+
+// GetGetMixRateListResult() 从对象池中获取GetMixRateListResult
+func GetGetMixRateListResult() *GetMixRateListResult {
+	return poolGetMixRateListResult.Get().(*GetMixRateListResult)
+}
+
+// ReleaseGetMixRateListResult 释放GetMixRateListResult
+func ReleaseGetMixRateListResult(v *GetMixRateListResult) {
+	v.MixRates = v.MixRates[:0]
+	v.ErrMsg = ""
+	v.HasNextPage = 0
+	v.ItemStatistic = nil
+	v.TotalNum = 0
+	v.Success = false
+	poolGetMixRateListResult.Put(v)
 }

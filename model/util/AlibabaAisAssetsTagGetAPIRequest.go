@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAisAssetsTagGetAPIRequest struct {
 // NewAlibabaAisAssetsTagGetRequest 初始化AlibabaAisAssetsTagGetAPIRequest对象
 func NewAlibabaAisAssetsTagGetRequest() *AlibabaAisAssetsTagGetAPIRequest {
 	return &AlibabaAisAssetsTagGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAisAssetsTagGetAPIRequest) Reset() {
+	r._uNonce = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAisAssetsTagGetAPIRequest) SetUNonce(_uNonce string) error {
 // GetUNonce UNonce Getter
 func (r AlibabaAisAssetsTagGetAPIRequest) GetUNonce() string {
 	return r._uNonce
+}
+
+var poolAlibabaAisAssetsTagGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAisAssetsTagGetRequest()
+	},
+}
+
+// GetAlibabaAisAssetsTagGetRequest 从 sync.Pool 获取 AlibabaAisAssetsTagGetAPIRequest
+func GetAlibabaAisAssetsTagGetAPIRequest() *AlibabaAisAssetsTagGetAPIRequest {
+	return poolAlibabaAisAssetsTagGetAPIRequest.Get().(*AlibabaAisAssetsTagGetAPIRequest)
+}
+
+// ReleaseAlibabaAisAssetsTagGetAPIRequest 将 AlibabaAisAssetsTagGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAisAssetsTagGetAPIRequest(v *AlibabaAisAssetsTagGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAisAssetsTagGetAPIRequest.Put(v)
 }

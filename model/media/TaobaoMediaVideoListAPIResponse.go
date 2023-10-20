@@ -2,6 +2,7 @@ package media
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoMediaVideoListAPIResponse struct {
 	TaobaoMediaVideoListAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoMediaVideoListAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMediaVideoListAPIResponseModel).Reset()
+}
+
 // TaobaoMediaVideoListAPIResponseModel is 获取商家视频列表 成功返回结果
 type TaobaoMediaVideoListAPIResponseModel struct {
 	XMLName xml.Name `xml:"media_video_list_response"`
@@ -22,4 +29,27 @@ type TaobaoMediaVideoListAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Result *SearchResultDo `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMediaVideoListAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoMediaVideoListAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMediaVideoListAPIResponse)
+	},
+}
+
+// GetTaobaoMediaVideoListAPIResponse 从 sync.Pool 获取 TaobaoMediaVideoListAPIResponse
+func GetTaobaoMediaVideoListAPIResponse() *TaobaoMediaVideoListAPIResponse {
+	return poolTaobaoMediaVideoListAPIResponse.Get().(*TaobaoMediaVideoListAPIResponse)
+}
+
+// ReleaseTaobaoMediaVideoListAPIResponse 将 TaobaoMediaVideoListAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMediaVideoListAPIResponse(v *TaobaoMediaVideoListAPIResponse) {
+	v.Reset()
+	poolTaobaoMediaVideoListAPIResponse.Put(v)
 }

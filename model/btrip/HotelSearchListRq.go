@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // HotelSearchListRq 结构体
 type HotelSearchListRq struct {
 	// 入住时间
@@ -22,4 +26,30 @@ type HotelSearchListRq struct {
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 分页大小，不能超过50
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolHotelSearchListRq = sync.Pool{
+	New: func() any {
+		return new(HotelSearchListRq)
+	},
+}
+
+// GetHotelSearchListRq() 从对象池中获取HotelSearchListRq
+func GetHotelSearchListRq() *HotelSearchListRq {
+	return poolHotelSearchListRq.Get().(*HotelSearchListRq)
+}
+
+// ReleaseHotelSearchListRq 释放HotelSearchListRq
+func ReleaseHotelSearchListRq(v *HotelSearchListRq) {
+	v.CheckIn = ""
+	v.CheckOut = ""
+	v.CityCode = ""
+	v.CityName = ""
+	v.SubChannel = ""
+	v.Shids = ""
+	v.Order = 0
+	v.Dir = 0
+	v.PageNo = 0
+	v.PageSize = 0
+	poolHotelSearchListRq.Put(v)
 }

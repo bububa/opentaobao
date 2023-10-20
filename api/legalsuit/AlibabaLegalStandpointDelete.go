@@ -9,11 +9,6 @@ import (
 // alibaba.legal.standpoint.delete
 //
 // 删除关联口径
-func AlibabaLegalStandpointDelete(clt *core.SDKClient, req *legalsuit.AlibabaLegalStandpointDeleteAPIRequest, session string) (*legalsuit.AlibabaLegalStandpointDeleteAPIResponse, error) {
-	var resp legalsuit.AlibabaLegalStandpointDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLegalStandpointDelete(clt *core.SDKClient, req *legalsuit.AlibabaLegalStandpointDeleteAPIRequest, resp *legalsuit.AlibabaLegalStandpointDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

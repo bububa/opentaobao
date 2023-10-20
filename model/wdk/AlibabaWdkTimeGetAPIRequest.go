@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaWdkTimeGetAPIRequest struct {
 // NewAlibabaWdkTimeGetRequest 初始化AlibabaWdkTimeGetAPIRequest对象
 func NewAlibabaWdkTimeGetRequest() *AlibabaWdkTimeGetAPIRequest {
 	return &AlibabaWdkTimeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkTimeGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaWdkTimeGetAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaWdkTimeGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaWdkTimeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkTimeGetRequest()
+	},
+}
+
+// GetAlibabaWdkTimeGetRequest 从 sync.Pool 获取 AlibabaWdkTimeGetAPIRequest
+func GetAlibabaWdkTimeGetAPIRequest() *AlibabaWdkTimeGetAPIRequest {
+	return poolAlibabaWdkTimeGetAPIRequest.Get().(*AlibabaWdkTimeGetAPIRequest)
+}
+
+// ReleaseAlibabaWdkTimeGetAPIRequest 将 AlibabaWdkTimeGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkTimeGetAPIRequest(v *AlibabaWdkTimeGetAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkTimeGetAPIRequest.Put(v)
 }

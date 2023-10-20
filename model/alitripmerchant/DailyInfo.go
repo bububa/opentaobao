@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // DailyInfo 结构体
 type DailyInfo struct {
 	// 日期
@@ -18,4 +22,28 @@ type DailyInfo struct {
 	OutPrice int64 `json:"out_price,omitempty" xml:"out_price,omitempty"`
 	// 外币每天的税，单位分
 	OutTax int64 `json:"out_tax,omitempty" xml:"out_tax,omitempty"`
+}
+
+var poolDailyInfo = sync.Pool{
+	New: func() any {
+		return new(DailyInfo)
+	},
+}
+
+// GetDailyInfo() 从对象池中获取DailyInfo
+func GetDailyInfo() *DailyInfo {
+	return poolDailyInfo.Get().(*DailyInfo)
+}
+
+// ReleaseDailyInfo 释放DailyInfo
+func ReleaseDailyInfo(v *DailyInfo) {
+	v.Day = ""
+	v.DayStr = ""
+	v.BreakfastName = ""
+	v.Price = 0
+	v.Tax = 0
+	v.BreakfastCount = 0
+	v.OutPrice = 0
+	v.OutTax = 0
+	poolDailyInfo.Put(v)
 }

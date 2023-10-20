@@ -12,11 +12,6 @@ import (
 // 需要自己处理好幂等逻辑。
 // 要先查询当前库存值，并基于返回结果做编辑操作。
 // 参考alibaba.ssc.supplyplatform.service.inventory.query和alibaba.ssc.supplyplatform.servicecapacity.save
-func AlibabaSscSupplyplatformServiceInventoryEdit(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceInventoryEditAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServiceInventoryEditAPIResponse, error) {
-	var resp tmallservice.AlibabaSscSupplyplatformServiceInventoryEditAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSscSupplyplatformServiceInventoryEdit(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceInventoryEditAPIRequest, resp *tmallservice.AlibabaSscSupplyplatformServiceInventoryEditAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

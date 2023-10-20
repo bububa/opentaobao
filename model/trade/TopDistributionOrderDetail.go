@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // TopDistributionOrderDetail 结构体
 type TopDistributionOrderDetail struct {
 	// 买家昵称
@@ -54,4 +58,46 @@ type TopDistributionOrderDetail struct {
 	Nights int64 `json:"nights,omitempty" xml:"nights,omitempty"`
 	// 商品id
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+}
+
+var poolTopDistributionOrderDetail = sync.Pool{
+	New: func() any {
+		return new(TopDistributionOrderDetail)
+	},
+}
+
+// GetTopDistributionOrderDetail() 从对象池中获取TopDistributionOrderDetail
+func GetTopDistributionOrderDetail() *TopDistributionOrderDetail {
+	return poolTopDistributionOrderDetail.Get().(*TopDistributionOrderDetail)
+}
+
+// ReleaseTopDistributionOrderDetail 释放TopDistributionOrderDetail
+func ReleaseTopDistributionOrderDetail(v *TopDistributionOrderDetail) {
+	v.BuyerNick = ""
+	v.OrderStatusDesc = ""
+	v.RoomTypeName = ""
+	v.CheckoutDate = ""
+	v.RpName = ""
+	v.GmtModified = ""
+	v.TypeName = ""
+	v.SellerNick = ""
+	v.HotelName = ""
+	v.PayTime = ""
+	v.CheckinDate = ""
+	v.ContactName = ""
+	v.Created = ""
+	v.DisOid = ""
+	v.MultiTids = ""
+	v.Rid = 0
+	v.Type = 0
+	v.Payment = 0
+	v.TotalRoomPrice = 0
+	v.OrderStatusCode = 0
+	v.Hid = 0
+	v.Tid = 0
+	v.RoomNumber = 0
+	v.Rpid = 0
+	v.Nights = 0
+	v.ItemId = 0
+	poolTopDistributionOrderDetail.Put(v)
 }

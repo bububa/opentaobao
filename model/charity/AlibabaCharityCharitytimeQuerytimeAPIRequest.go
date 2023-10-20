@@ -2,6 +2,7 @@ package charity
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaCharityCharitytimeQuerytimeAPIRequest struct {
 // NewAlibabaCharityCharitytimeQuerytimeRequest 初始化AlibabaCharityCharitytimeQuerytimeAPIRequest对象
 func NewAlibabaCharityCharitytimeQuerytimeRequest() *AlibabaCharityCharitytimeQuerytimeAPIRequest {
 	return &AlibabaCharityCharitytimeQuerytimeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCharityCharitytimeQuerytimeAPIRequest) Reset() {
+	r._endTime = ""
+	r._startTime = ""
+	r._userKey = ""
+	r._userType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaCharityCharitytimeQuerytimeAPIRequest) SetUserType(_userType str
 // GetUserType UserType Getter
 func (r AlibabaCharityCharitytimeQuerytimeAPIRequest) GetUserType() string {
 	return r._userType
+}
+
+var poolAlibabaCharityCharitytimeQuerytimeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCharityCharitytimeQuerytimeRequest()
+	},
+}
+
+// GetAlibabaCharityCharitytimeQuerytimeRequest 从 sync.Pool 获取 AlibabaCharityCharitytimeQuerytimeAPIRequest
+func GetAlibabaCharityCharitytimeQuerytimeAPIRequest() *AlibabaCharityCharitytimeQuerytimeAPIRequest {
+	return poolAlibabaCharityCharitytimeQuerytimeAPIRequest.Get().(*AlibabaCharityCharitytimeQuerytimeAPIRequest)
+}
+
+// ReleaseAlibabaCharityCharitytimeQuerytimeAPIRequest 将 AlibabaCharityCharitytimeQuerytimeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCharityCharitytimeQuerytimeAPIRequest(v *AlibabaCharityCharitytimeQuerytimeAPIRequest) {
+	v.Reset()
+	poolAlibabaCharityCharitytimeQuerytimeAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAilabsAligenieOpencontentPushAPIRequest struct {
 // NewAlibabaAilabsAligenieOpencontentPushRequest 初始化AlibabaAilabsAligenieOpencontentPushAPIRequest对象
 func NewAlibabaAilabsAligenieOpencontentPushRequest() *AlibabaAilabsAligenieOpencontentPushAPIRequest {
 	return &AlibabaAilabsAligenieOpencontentPushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsAligenieOpencontentPushAPIRequest) Reset() {
+	r._skillId = 0
+	r._contents = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAilabsAligenieOpencontentPushAPIRequest) SetContents(_contents *
 // GetContents Contents Getter
 func (r AlibabaAilabsAligenieOpencontentPushAPIRequest) GetContents() *BatchContent {
 	return r._contents
+}
+
+var poolAlibabaAilabsAligenieOpencontentPushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsAligenieOpencontentPushRequest()
+	},
+}
+
+// GetAlibabaAilabsAligenieOpencontentPushRequest 从 sync.Pool 获取 AlibabaAilabsAligenieOpencontentPushAPIRequest
+func GetAlibabaAilabsAligenieOpencontentPushAPIRequest() *AlibabaAilabsAligenieOpencontentPushAPIRequest {
+	return poolAlibabaAilabsAligenieOpencontentPushAPIRequest.Get().(*AlibabaAilabsAligenieOpencontentPushAPIRequest)
+}
+
+// ReleaseAlibabaAilabsAligenieOpencontentPushAPIRequest 将 AlibabaAilabsAligenieOpencontentPushAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsAligenieOpencontentPushAPIRequest(v *AlibabaAilabsAligenieOpencontentPushAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsAligenieOpencontentPushAPIRequest.Put(v)
 }

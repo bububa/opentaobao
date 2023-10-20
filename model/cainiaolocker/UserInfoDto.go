@@ -1,5 +1,9 @@
 package cainiaolocker
 
+import (
+	"sync"
+)
+
 // UserInfoDto 结构体
 type UserInfoDto struct {
 	// 手机号码（手机号和固定电话不能同时为空），长度小于20
@@ -16,4 +20,27 @@ type UserInfoDto struct {
 	Tid string `json:"tid,omitempty" xml:"tid,omitempty"`
 	// 发货地址需要通过&lt;a href=&#34;http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.3OFCPk&amp;treeId=17&amp;articleId=104860&amp;docType=1&#34;&gt;search接口&lt;/a&gt;
 	Address *AddressDto `json:"address,omitempty" xml:"address,omitempty"`
+}
+
+var poolUserInfoDto = sync.Pool{
+	New: func() any {
+		return new(UserInfoDto)
+	},
+}
+
+// GetUserInfoDto() 从对象池中获取UserInfoDto
+func GetUserInfoDto() *UserInfoDto {
+	return poolUserInfoDto.Get().(*UserInfoDto)
+}
+
+// ReleaseUserInfoDto 释放UserInfoDto
+func ReleaseUserInfoDto(v *UserInfoDto) {
+	v.Mobile = ""
+	v.Name = ""
+	v.Phone = ""
+	v.Caid = ""
+	v.Oaid = ""
+	v.Tid = ""
+	v.Address = nil
+	poolUserInfoDto.Put(v)
 }

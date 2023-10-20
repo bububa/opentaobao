@@ -1,5 +1,9 @@
 package tuanhotel
 
+import (
+	"sync"
+)
+
 // TopSkuCalendarInfo 结构体
 type TopSkuCalendarInfo struct {
 	// 日历库存价格信息
@@ -10,4 +14,24 @@ type TopSkuCalendarInfo struct {
 	End string `json:"end,omitempty" xml:"end,omitempty"`
 	// 日历库存范围开始日期
 	Begin string `json:"begin,omitempty" xml:"begin,omitempty"`
+}
+
+var poolTopSkuCalendarInfo = sync.Pool{
+	New: func() any {
+		return new(TopSkuCalendarInfo)
+	},
+}
+
+// GetTopSkuCalendarInfo() 从对象池中获取TopSkuCalendarInfo
+func GetTopSkuCalendarInfo() *TopSkuCalendarInfo {
+	return poolTopSkuCalendarInfo.Get().(*TopSkuCalendarInfo)
+}
+
+// ReleaseTopSkuCalendarInfo 释放TopSkuCalendarInfo
+func ReleaseTopSkuCalendarInfo(v *TopSkuCalendarInfo) {
+	v.Diffs = v.Diffs[:0]
+	v.Diff = v.Diff[:0]
+	v.End = ""
+	v.Begin = ""
+	poolTopSkuCalendarInfo.Put(v)
 }

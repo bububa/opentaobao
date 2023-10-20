@@ -1,5 +1,9 @@
 package car
 
+import (
+	"sync"
+)
+
 // CrsDriverArrangeParam 结构体
 type CrsDriverArrangeParam struct {
 	// 城市
@@ -24,4 +28,31 @@ type CrsDriverArrangeParam struct {
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 是否改派司机
 	IsChangeDriver bool `json:"is_change_driver,omitempty" xml:"is_change_driver,omitempty"`
+}
+
+var poolCrsDriverArrangeParam = sync.Pool{
+	New: func() any {
+		return new(CrsDriverArrangeParam)
+	},
+}
+
+// GetCrsDriverArrangeParam() 从对象池中获取CrsDriverArrangeParam
+func GetCrsDriverArrangeParam() *CrsDriverArrangeParam {
+	return poolCrsDriverArrangeParam.Get().(*CrsDriverArrangeParam)
+}
+
+// ReleaseCrsDriverArrangeParam 释放CrsDriverArrangeParam
+func ReleaseCrsDriverArrangeParam(v *CrsDriverArrangeParam) {
+	v.CityName = ""
+	v.CarTypeName = ""
+	v.DriverName = ""
+	v.DriverPhoneNum = ""
+	v.DriverIdCard = ""
+	v.PhoneAreaCode = ""
+	v.CarType = ""
+	v.CarNumber = ""
+	v.CarBrand = ""
+	v.OrderId = 0
+	v.IsChangeDriver = false
+	poolCrsDriverArrangeParam.Put(v)
 }

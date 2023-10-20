@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.payment.method.sync
 //
 // 付款方式上翻
-func AlibabaAlihouseNewhomePaymentMethodSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomePaymentMethodSyncAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomePaymentMethodSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomePaymentMethodSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest, resp *alihouse.AlibabaAlihouseNewhomePaymentMethodSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

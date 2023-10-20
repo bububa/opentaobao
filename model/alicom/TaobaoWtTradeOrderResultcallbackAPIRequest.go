@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoWtTradeOrderResultcallbackAPIRequest struct {
 // NewTaobaoWtTradeOrderResultcallbackRequest 初始化TaobaoWtTradeOrderResultcallbackAPIRequest对象
 func NewTaobaoWtTradeOrderResultcallbackRequest() *TaobaoWtTradeOrderResultcallbackAPIRequest {
 	return &TaobaoWtTradeOrderResultcallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWtTradeOrderResultcallbackAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoWtTradeOrderResultcallbackAPIRequest) SetParam0(_param0 *OrderRes
 // GetParam0 Param0 Getter
 func (r TaobaoWtTradeOrderResultcallbackAPIRequest) GetParam0() *OrderResultDto {
 	return r._param0
+}
+
+var poolTaobaoWtTradeOrderResultcallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWtTradeOrderResultcallbackRequest()
+	},
+}
+
+// GetTaobaoWtTradeOrderResultcallbackRequest 从 sync.Pool 获取 TaobaoWtTradeOrderResultcallbackAPIRequest
+func GetTaobaoWtTradeOrderResultcallbackAPIRequest() *TaobaoWtTradeOrderResultcallbackAPIRequest {
+	return poolTaobaoWtTradeOrderResultcallbackAPIRequest.Get().(*TaobaoWtTradeOrderResultcallbackAPIRequest)
+}
+
+// ReleaseTaobaoWtTradeOrderResultcallbackAPIRequest 将 TaobaoWtTradeOrderResultcallbackAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWtTradeOrderResultcallbackAPIRequest(v *TaobaoWtTradeOrderResultcallbackAPIRequest) {
+	v.Reset()
+	poolTaobaoWtTradeOrderResultcallbackAPIRequest.Put(v)
 }

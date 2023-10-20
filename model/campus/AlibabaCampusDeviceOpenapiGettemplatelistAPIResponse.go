@@ -2,6 +2,7 @@ package campus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaCampusDeviceOpenapiGettemplatelistAPIResponse struct {
 	AlibabaCampusDeviceOpenapiGettemplatelistAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaCampusDeviceOpenapiGettemplatelistAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaCampusDeviceOpenapiGettemplatelistAPIResponseModel).Reset()
+}
+
 // AlibabaCampusDeviceOpenapiGettemplatelistAPIResponseModel is 查询设备模板 成功返回结果
 type AlibabaCampusDeviceOpenapiGettemplatelistAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_campus_device_openapi_gettemplatelist_response"`
@@ -22,4 +29,27 @@ type AlibabaCampusDeviceOpenapiGettemplatelistAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Result *PageResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaCampusDeviceOpenapiGettemplatelistAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaCampusDeviceOpenapiGettemplatelistAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaCampusDeviceOpenapiGettemplatelistAPIResponse)
+	},
+}
+
+// GetAlibabaCampusDeviceOpenapiGettemplatelistAPIResponse 从 sync.Pool 获取 AlibabaCampusDeviceOpenapiGettemplatelistAPIResponse
+func GetAlibabaCampusDeviceOpenapiGettemplatelistAPIResponse() *AlibabaCampusDeviceOpenapiGettemplatelistAPIResponse {
+	return poolAlibabaCampusDeviceOpenapiGettemplatelistAPIResponse.Get().(*AlibabaCampusDeviceOpenapiGettemplatelistAPIResponse)
+}
+
+// ReleaseAlibabaCampusDeviceOpenapiGettemplatelistAPIResponse 将 AlibabaCampusDeviceOpenapiGettemplatelistAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaCampusDeviceOpenapiGettemplatelistAPIResponse(v *AlibabaCampusDeviceOpenapiGettemplatelistAPIResponse) {
+	v.Reset()
+	poolAlibabaCampusDeviceOpenapiGettemplatelistAPIResponse.Put(v)
 }

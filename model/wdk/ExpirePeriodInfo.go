@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ExpirePeriodInfo 结构体
 type ExpirePeriodInfo struct {
 	// 优惠具体折扣，1到1000
@@ -10,4 +14,24 @@ type ExpirePeriodInfo struct {
 	StartHour int64 `json:"start_hour,omitempty" xml:"start_hour,omitempty"`
 	// 外部商家id
 	OutId int64 `json:"out_id,omitempty" xml:"out_id,omitempty"`
+}
+
+var poolExpirePeriodInfo = sync.Pool{
+	New: func() any {
+		return new(ExpirePeriodInfo)
+	},
+}
+
+// GetExpirePeriodInfo() 从对象池中获取ExpirePeriodInfo
+func GetExpirePeriodInfo() *ExpirePeriodInfo {
+	return poolExpirePeriodInfo.Get().(*ExpirePeriodInfo)
+}
+
+// ReleaseExpirePeriodInfo 释放ExpirePeriodInfo
+func ReleaseExpirePeriodInfo(v *ExpirePeriodInfo) {
+	v.PromotionValue = 0
+	v.EndHour = 0
+	v.StartHour = 0
+	v.OutId = 0
+	poolExpirePeriodInfo.Put(v)
 }

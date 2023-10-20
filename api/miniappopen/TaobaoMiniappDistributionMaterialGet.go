@@ -9,11 +9,6 @@ import (
 // taobao.miniapp.distribution.material.get
 //
 // 读取已录入的投放入口素材信息。
-func TaobaoMiniappDistributionMaterialGet(clt *core.SDKClient, req *miniappopen.TaobaoMiniappDistributionMaterialGetAPIRequest, session string) (*miniappopen.TaobaoMiniappDistributionMaterialGetAPIResponse, error) {
-	var resp miniappopen.TaobaoMiniappDistributionMaterialGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoMiniappDistributionMaterialGet(clt *core.SDKClient, req *miniappopen.TaobaoMiniappDistributionMaterialGetAPIRequest, resp *miniappopen.TaobaoMiniappDistributionMaterialGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

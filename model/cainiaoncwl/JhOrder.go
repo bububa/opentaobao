@@ -1,5 +1,9 @@
 package cainiaoncwl
 
+import (
+	"sync"
+)
+
 // JhOrder 结构体
 type JhOrder struct {
 	// 此集货单商品列表
@@ -20,4 +24,29 @@ type JhOrder struct {
 	JhFee *JhFee `json:"jh_fee,omitempty" xml:"jh_fee,omitempty"`
 	// 是否是补货
 	ReplenishFlag bool `json:"replenish_flag,omitempty" xml:"replenish_flag,omitempty"`
+}
+
+var poolJhOrder = sync.Pool{
+	New: func() any {
+		return new(JhOrder)
+	},
+}
+
+// GetJhOrder() 从对象池中获取JhOrder
+func GetJhOrder() *JhOrder {
+	return poolJhOrder.Get().(*JhOrder)
+}
+
+// ReleaseJhOrder 释放JhOrder
+func ReleaseJhOrder(v *JhOrder) {
+	v.ItemInfoList = v.ItemInfoList[:0]
+	v.BeginTime = ""
+	v.FinishTime = ""
+	v.OrderCode = ""
+	v.OriginalOrder = ""
+	v.Status = ""
+	v.JhReceiverInfo = nil
+	v.JhFee = nil
+	v.ReplenishFlag = false
+	poolJhOrder.Put(v)
 }

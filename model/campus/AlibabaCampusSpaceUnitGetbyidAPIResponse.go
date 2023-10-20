@@ -2,6 +2,7 @@ package campus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,6 +18,12 @@ type AlibabaCampusSpaceUnitGetbyidAPIResponse struct {
 	AlibabaCampusSpaceUnitGetbyidAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaCampusSpaceUnitGetbyidAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaCampusSpaceUnitGetbyidAPIResponseModel).Reset()
+}
+
 // AlibabaCampusSpaceUnitGetbyidAPIResponseModel is 根据ID查询指定空间单元信息 成功返回结果
 type AlibabaCampusSpaceUnitGetbyidAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_campus_space_unit_getbyid_response"`
@@ -24,4 +31,27 @@ type AlibabaCampusSpaceUnitGetbyidAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *PojoResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaCampusSpaceUnitGetbyidAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaCampusSpaceUnitGetbyidAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaCampusSpaceUnitGetbyidAPIResponse)
+	},
+}
+
+// GetAlibabaCampusSpaceUnitGetbyidAPIResponse 从 sync.Pool 获取 AlibabaCampusSpaceUnitGetbyidAPIResponse
+func GetAlibabaCampusSpaceUnitGetbyidAPIResponse() *AlibabaCampusSpaceUnitGetbyidAPIResponse {
+	return poolAlibabaCampusSpaceUnitGetbyidAPIResponse.Get().(*AlibabaCampusSpaceUnitGetbyidAPIResponse)
+}
+
+// ReleaseAlibabaCampusSpaceUnitGetbyidAPIResponse 将 AlibabaCampusSpaceUnitGetbyidAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaCampusSpaceUnitGetbyidAPIResponse(v *AlibabaCampusSpaceUnitGetbyidAPIResponse) {
+	v.Reset()
+	poolAlibabaCampusSpaceUnitGetbyidAPIResponse.Put(v)
 }

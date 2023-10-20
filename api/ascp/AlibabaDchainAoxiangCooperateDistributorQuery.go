@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.cooperate.distributor.query
 //
 // 商家关系查询分销商
-func AlibabaDchainAoxiangCooperateDistributorQuery(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangCooperateDistributorQueryAPIRequest, session string) (*ascp.AlibabaDchainAoxiangCooperateDistributorQueryAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangCooperateDistributorQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangCooperateDistributorQuery(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangCooperateDistributorQueryAPIRequest, resp *ascp.AlibabaDchainAoxiangCooperateDistributorQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

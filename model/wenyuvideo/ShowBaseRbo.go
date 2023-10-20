@@ -1,5 +1,9 @@
 package wenyuvideo
 
+import (
+	"sync"
+)
+
 // ShowBaseRbo 结构体
 type ShowBaseRbo struct {
 	// 节目名称
@@ -36,4 +40,37 @@ type ShowBaseRbo struct {
 	EpisodeLast int64 `json:"episode_last,omitempty" xml:"episode_last,omitempty"`
 	// 是否预告片
 	Prevue bool `json:"prevue,omitempty" xml:"prevue,omitempty"`
+}
+
+var poolShowBaseRbo = sync.Pool{
+	New: func() any {
+		return new(ShowBaseRbo)
+	},
+}
+
+// GetShowBaseRbo() 从对象池中获取ShowBaseRbo
+func GetShowBaseRbo() *ShowBaseRbo {
+	return poolShowBaseRbo.Get().(*ShowBaseRbo)
+}
+
+// ReleaseShowBaseRbo 释放ShowBaseRbo
+func ReleaseShowBaseRbo(v *ShowBaseRbo) {
+	v.ShowName = ""
+	v.ShowThumbUrl = ""
+	v.ShowVthumbUrl = ""
+	v.Score = ""
+	v.Mark = ""
+	v.ReleaseDate = ""
+	v.ViewTag = ""
+	v.Tips = ""
+	v.ShowSubtitle = ""
+	v.ShowType = 0
+	v.ShowCategory = 0
+	v.IsDynTotal = 0
+	v.LastSequence = 0
+	v.EpisodeTotal = 0
+	v.ProgramId = 0
+	v.EpisodeLast = 0
+	v.Prevue = false
+	poolShowBaseRbo.Put(v)
 }

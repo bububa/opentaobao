@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenEmployeeQueryRequest 结构体
 type OpenEmployeeQueryRequest struct {
 	// 游标分页的游标值，用来标记当前分页的开始位置，第一次请求不填表示从头开始遍历；分页查询还有更多数据项时会同时返回下一页起始游标值page_token，遍历下一页时用该page_token获取查询结果。
@@ -12,4 +16,25 @@ type OpenEmployeeQueryRequest struct {
 	ModifiedTimeGreaterOrEqualThan string `json:"modified_time_greater_or_equal_than,omitempty" xml:"modified_time_greater_or_equal_than,omitempty"`
 	// 每页的最大数据记录数量；默认10，该值要求大于0且小于等于1000。
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolOpenEmployeeQueryRequest = sync.Pool{
+	New: func() any {
+		return new(OpenEmployeeQueryRequest)
+	},
+}
+
+// GetOpenEmployeeQueryRequest() 从对象池中获取OpenEmployeeQueryRequest
+func GetOpenEmployeeQueryRequest() *OpenEmployeeQueryRequest {
+	return poolOpenEmployeeQueryRequest.Get().(*OpenEmployeeQueryRequest)
+}
+
+// ReleaseOpenEmployeeQueryRequest 释放OpenEmployeeQueryRequest
+func ReleaseOpenEmployeeQueryRequest(v *OpenEmployeeQueryRequest) {
+	v.PageToken = ""
+	v.ThirdPartCorpId = ""
+	v.ThirdPartJobNo = ""
+	v.ModifiedTimeGreaterOrEqualThan = ""
+	v.PageSize = 0
+	poolOpenEmployeeQueryRequest.Put(v)
 }

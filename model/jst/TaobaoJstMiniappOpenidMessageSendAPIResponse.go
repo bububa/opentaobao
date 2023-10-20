@@ -2,6 +2,7 @@ package jst
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoJstMiniappOpenidMessageSendAPIResponse struct {
 	TaobaoJstMiniappOpenidMessageSendAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoJstMiniappOpenidMessageSendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoJstMiniappOpenidMessageSendAPIResponseModel).Reset()
+}
+
 // TaobaoJstMiniappOpenidMessageSendAPIResponseModel is 单个openId用户短信发送 成功返回结果
 type TaobaoJstMiniappOpenidMessageSendAPIResponseModel struct {
 	XMLName xml.Name `xml:"jst_miniapp_openid_message_send_response"`
@@ -26,4 +33,29 @@ type TaobaoJstMiniappOpenidMessageSendAPIResponseModel struct {
 	RErrMsg string `json:"r_err_msg,omitempty" xml:"r_err_msg,omitempty"`
 	// 请求code
 	RCode int64 `json:"r_code,omitempty" xml:"r_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoJstMiniappOpenidMessageSendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = ""
+	m.RErrMsg = ""
+	m.RCode = 0
+}
+
+var poolTaobaoJstMiniappOpenidMessageSendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoJstMiniappOpenidMessageSendAPIResponse)
+	},
+}
+
+// GetTaobaoJstMiniappOpenidMessageSendAPIResponse 从 sync.Pool 获取 TaobaoJstMiniappOpenidMessageSendAPIResponse
+func GetTaobaoJstMiniappOpenidMessageSendAPIResponse() *TaobaoJstMiniappOpenidMessageSendAPIResponse {
+	return poolTaobaoJstMiniappOpenidMessageSendAPIResponse.Get().(*TaobaoJstMiniappOpenidMessageSendAPIResponse)
+}
+
+// ReleaseTaobaoJstMiniappOpenidMessageSendAPIResponse 将 TaobaoJstMiniappOpenidMessageSendAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoJstMiniappOpenidMessageSendAPIResponse(v *TaobaoJstMiniappOpenidMessageSendAPIResponse) {
+	v.Reset()
+	poolTaobaoJstMiniappOpenidMessageSendAPIResponse.Put(v)
 }

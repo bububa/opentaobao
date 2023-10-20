@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.dental.store.insertorupdate
 //
 // ISV新增/修改口腔门店
-func AlibabaAlihealthDentalStoreInsertorupdate(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDentalStoreInsertorupdateAPIRequest, session string) (*alihealth2.AlibabaAlihealthDentalStoreInsertorupdateAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthDentalStoreInsertorupdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDentalStoreInsertorupdate(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDentalStoreInsertorupdateAPIRequest, resp *alihealth2.AlibabaAlihealthDentalStoreInsertorupdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

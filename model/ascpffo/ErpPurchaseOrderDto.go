@@ -1,5 +1,9 @@
 package ascpffo
 
+import (
+	"sync"
+)
+
 // ErpPurchaseOrderDto 结构体
 type ErpPurchaseOrderDto struct {
 	// 预约单号
@@ -40,4 +44,39 @@ type ErpPurchaseOrderDto struct {
 	TotalQuantity int64 `json:"total_quantity,omitempty" xml:"total_quantity,omitempty"`
 	// 采购单SKU数量
 	TotalSkuCount int64 `json:"total_sku_count,omitempty" xml:"total_sku_count,omitempty"`
+}
+
+var poolErpPurchaseOrderDto = sync.Pool{
+	New: func() any {
+		return new(ErpPurchaseOrderDto)
+	},
+}
+
+// GetErpPurchaseOrderDto() 从对象池中获取ErpPurchaseOrderDto
+func GetErpPurchaseOrderDto() *ErpPurchaseOrderDto {
+	return poolErpPurchaseOrderDto.Get().(*ErpPurchaseOrderDto)
+}
+
+// ReleaseErpPurchaseOrderDto 释放ErpPurchaseOrderDto
+func ReleaseErpPurchaseOrderDto(v *ErpPurchaseOrderDto) {
+	v.AppointOrderNo = ""
+	v.Creator = ""
+	v.ExtendFields = ""
+	v.LbxNo = ""
+	v.PurchaseOrderNo = ""
+	v.StatusDesc = ""
+	v.StoreCode = ""
+	v.StoreName = ""
+	v.SupplierName = ""
+	v.TotalAmount = ""
+	v.ActualInboundTime = 0
+	v.GmtCreate = 0
+	v.GmtExpiration = 0
+	v.PreArriveTime = 0
+	v.ReceivedQuantity = 0
+	v.Status = 0
+	v.SupplierId = 0
+	v.TotalQuantity = 0
+	v.TotalSkuCount = 0
+	poolErpPurchaseOrderDto.Put(v)
 }

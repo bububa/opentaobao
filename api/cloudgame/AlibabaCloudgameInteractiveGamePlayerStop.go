@@ -9,11 +9,6 @@ import (
 // alibaba.cloudgame.interactive.game.player.stop
 //
 // 用户停止游戏
-func AlibabaCloudgameInteractiveGamePlayerStop(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGamePlayerStopAPIRequest, session string) (*cloudgame.AlibabaCloudgameInteractiveGamePlayerStopAPIResponse, error) {
-	var resp cloudgame.AlibabaCloudgameInteractiveGamePlayerStopAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCloudgameInteractiveGamePlayerStop(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGamePlayerStopAPIRequest, resp *cloudgame.AlibabaCloudgameInteractiveGamePlayerStopAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

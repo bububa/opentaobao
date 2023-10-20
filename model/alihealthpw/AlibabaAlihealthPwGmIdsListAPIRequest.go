@@ -2,6 +2,7 @@ package alihealthpw
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,14 +14,20 @@ import (
 type AlibabaAlihealthPwGmIdsListAPIRequest struct {
 	model.Params
 	// 入参
-	_body *ListByApplyIdsForBreq
+	_body *ListByApplyIdsForBReq
 }
 
 // NewAlibabaAlihealthPwGmIdsListRequest 初始化AlibabaAlihealthPwGmIdsListAPIRequest对象
 func NewAlibabaAlihealthPwGmIdsListRequest() *AlibabaAlihealthPwGmIdsListAPIRequest {
 	return &AlibabaAlihealthPwGmIdsListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthPwGmIdsListAPIRequest) Reset() {
+	r._body = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -42,13 +49,30 @@ func (r AlibabaAlihealthPwGmIdsListAPIRequest) GetRawParams() model.Params {
 
 // SetBody is Body Setter
 // 入参
-func (r *AlibabaAlihealthPwGmIdsListAPIRequest) SetBody(_body *ListByApplyIdsForBreq) error {
+func (r *AlibabaAlihealthPwGmIdsListAPIRequest) SetBody(_body *ListByApplyIdsForBReq) error {
 	r._body = _body
 	r.Set("body", _body)
 	return nil
 }
 
 // GetBody Body Getter
-func (r AlibabaAlihealthPwGmIdsListAPIRequest) GetBody() *ListByApplyIdsForBreq {
+func (r AlibabaAlihealthPwGmIdsListAPIRequest) GetBody() *ListByApplyIdsForBReq {
 	return r._body
+}
+
+var poolAlibabaAlihealthPwGmIdsListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthPwGmIdsListRequest()
+	},
+}
+
+// GetAlibabaAlihealthPwGmIdsListRequest 从 sync.Pool 获取 AlibabaAlihealthPwGmIdsListAPIRequest
+func GetAlibabaAlihealthPwGmIdsListAPIRequest() *AlibabaAlihealthPwGmIdsListAPIRequest {
+	return poolAlibabaAlihealthPwGmIdsListAPIRequest.Get().(*AlibabaAlihealthPwGmIdsListAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthPwGmIdsListAPIRequest 将 AlibabaAlihealthPwGmIdsListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthPwGmIdsListAPIRequest(v *AlibabaAlihealthPwGmIdsListAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthPwGmIdsListAPIRequest.Put(v)
 }

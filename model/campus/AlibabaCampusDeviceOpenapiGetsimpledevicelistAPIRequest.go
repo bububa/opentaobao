@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest struct {
 // NewAlibabaCampusDeviceOpenapiGetsimpledevicelistRequest 初始化AlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest对象
 func NewAlibabaCampusDeviceOpenapiGetsimpledevicelistRequest() *AlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest {
 	return &AlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest) Reset() {
+	r._workBenchContext = nil
+	r._query = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest) SetQuery(_quer
 // GetQuery Query Getter
 func (r AlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest) GetQuery() *DeviceApiQuery {
 	return r._query
+}
+
+var poolAlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusDeviceOpenapiGetsimpledevicelistRequest()
+	},
+}
+
+// GetAlibabaCampusDeviceOpenapiGetsimpledevicelistRequest 从 sync.Pool 获取 AlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest
+func GetAlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest() *AlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest {
+	return poolAlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest.Get().(*AlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest)
+}
+
+// ReleaseAlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest 将 AlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest(v *AlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusDeviceOpenapiGetsimpledevicelistAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // OfficialAppApplyRequest 结构体
 type OfficialAppApplyRequest struct {
 	// 应用下载地址
@@ -18,4 +22,28 @@ type OfficialAppApplyRequest struct {
 	CertMd5 string `json:"cert_md5,omitempty" xml:"cert_md5,omitempty"`
 	// 官方版本类型 1-官方正式 2-官方开发版本
 	OfficialType int64 `json:"official_type,omitempty" xml:"official_type,omitempty"`
+}
+
+var poolOfficialAppApplyRequest = sync.Pool{
+	New: func() any {
+		return new(OfficialAppApplyRequest)
+	},
+}
+
+// GetOfficialAppApplyRequest() 从对象池中获取OfficialAppApplyRequest
+func GetOfficialAppApplyRequest() *OfficialAppApplyRequest {
+	return poolOfficialAppApplyRequest.Get().(*OfficialAppApplyRequest)
+}
+
+// ReleaseOfficialAppApplyRequest 释放OfficialAppApplyRequest
+func ReleaseOfficialAppApplyRequest(v *OfficialAppApplyRequest) {
+	v.AppUrl = ""
+	v.AppName = ""
+	v.PkgName = ""
+	v.Website = ""
+	v.Developer = ""
+	v.AppHash = ""
+	v.CertMd5 = ""
+	v.OfficialType = 0
+	poolOfficialAppApplyRequest.Put(v)
 }

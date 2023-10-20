@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // TopConsignPkgRequest 结构体
 type TopConsignPkgRequest struct {
 	// 包裹中商品信息
@@ -10,4 +14,24 @@ type TopConsignPkgRequest struct {
 	OutSid string `json:"out_sid,omitempty" xml:"out_sid,omitempty"`
 	// 快递子单运单号
 	SubOutSid string `json:"sub_out_sid,omitempty" xml:"sub_out_sid,omitempty"`
+}
+
+var poolTopConsignPkgRequest = sync.Pool{
+	New: func() any {
+		return new(TopConsignPkgRequest)
+	},
+}
+
+// GetTopConsignPkgRequest() 从对象池中获取TopConsignPkgRequest
+func GetTopConsignPkgRequest() *TopConsignPkgRequest {
+	return poolTopConsignPkgRequest.Get().(*TopConsignPkgRequest)
+}
+
+// ReleaseTopConsignPkgRequest 释放TopConsignPkgRequest
+func ReleaseTopConsignPkgRequest(v *TopConsignPkgRequest) {
+	v.Goods = v.Goods[:0]
+	v.CompanyCode = ""
+	v.OutSid = ""
+	v.SubOutSid = ""
+	poolTopConsignPkgRequest.Put(v)
 }

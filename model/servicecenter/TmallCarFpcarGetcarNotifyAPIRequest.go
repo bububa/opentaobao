@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallCarFpcarGetcarNotifyAPIRequest struct {
 // NewTmallCarFpcarGetcarNotifyRequest 初始化TmallCarFpcarGetcarNotifyAPIRequest对象
 func NewTmallCarFpcarGetcarNotifyRequest() *TmallCarFpcarGetcarNotifyAPIRequest {
 	return &TmallCarFpcarGetcarNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarFpcarGetcarNotifyAPIRequest) Reset() {
+	r._itemId = 0
+	r._orderId = 0
+	r._sellerId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallCarFpcarGetcarNotifyAPIRequest) SetSellerId(_sellerId int64) error
 // GetSellerId SellerId Getter
 func (r TmallCarFpcarGetcarNotifyAPIRequest) GetSellerId() int64 {
 	return r._sellerId
+}
+
+var poolTmallCarFpcarGetcarNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarFpcarGetcarNotifyRequest()
+	},
+}
+
+// GetTmallCarFpcarGetcarNotifyRequest 从 sync.Pool 获取 TmallCarFpcarGetcarNotifyAPIRequest
+func GetTmallCarFpcarGetcarNotifyAPIRequest() *TmallCarFpcarGetcarNotifyAPIRequest {
+	return poolTmallCarFpcarGetcarNotifyAPIRequest.Get().(*TmallCarFpcarGetcarNotifyAPIRequest)
+}
+
+// ReleaseTmallCarFpcarGetcarNotifyAPIRequest 将 TmallCarFpcarGetcarNotifyAPIRequest 放入 sync.Pool
+func ReleaseTmallCarFpcarGetcarNotifyAPIRequest(v *TmallCarFpcarGetcarNotifyAPIRequest) {
+	v.Reset()
+	poolTmallCarFpcarGetcarNotifyAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alihealthoutflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest struct {
 // NewAlibabaAlihealthAsyncprescribePrescriptionDetailRequest 初始化AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest对象
 func NewAlibabaAlihealthAsyncprescribePrescriptionDetailRequest() *AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest {
 	return &AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest) Reset() {
+	r._detailRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest) SetDetailRe
 // GetDetailRequest DetailRequest Getter
 func (r AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest) GetDetailRequest() *AsyncPrescribeDetailRequest {
 	return r._detailRequest
+}
+
+var poolAlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthAsyncprescribePrescriptionDetailRequest()
+	},
+}
+
+// GetAlibabaAlihealthAsyncprescribePrescriptionDetailRequest 从 sync.Pool 获取 AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest
+func GetAlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest() *AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest {
+	return poolAlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest.Get().(*AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest 将 AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest(v *AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest.Put(v)
 }

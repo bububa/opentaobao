@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,14 +14,20 @@ import (
 type AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest struct {
 	model.Params
 	// 作业单回传对象
-	_callbackOrder *SfB2cfmsCallbackOrder
+	_callbackOrder *SfB2CFmsCallbackOrder
 }
 
 // NewAlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest 初始化AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest对象
 func NewAlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest() *AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest {
 	return &AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest) Reset() {
+	r._callbackOrder = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -42,13 +49,30 @@ func (r AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest) GetRawParams()
 
 // SetCallbackOrder is CallbackOrder Setter
 // 作业单回传对象
-func (r *AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest) SetCallbackOrder(_callbackOrder *SfB2cfmsCallbackOrder) error {
+func (r *AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest) SetCallbackOrder(_callbackOrder *SfB2CFmsCallbackOrder) error {
 	r._callbackOrder = _callbackOrder
 	r.Set("callback_order", _callbackOrder)
 	return nil
 }
 
 // GetCallbackOrder CallbackOrder Getter
-func (r AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest) GetCallbackOrder() *SfB2cfmsCallbackOrder {
+func (r AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest) GetCallbackOrder() *SfB2CFmsCallbackOrder {
 	return r._callbackOrder
+}
+
+var poolAlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest()
+	},
+}
+
+// GetAlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest 从 sync.Pool 获取 AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest
+func GetAlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest() *AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest {
+	return poolAlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest.Get().(*AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest)
+}
+
+// ReleaseAlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest 将 AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest(v *AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIRequest.Put(v)
 }

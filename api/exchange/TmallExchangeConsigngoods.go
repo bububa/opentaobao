@@ -9,11 +9,6 @@ import (
 // tmall.exchange.consigngoods
 //
 // 卖家发货
-func TmallExchangeConsigngoods(clt *core.SDKClient, req *exchange.TmallExchangeConsigngoodsAPIRequest, session string) (*exchange.TmallExchangeConsigngoodsAPIResponse, error) {
-	var resp exchange.TmallExchangeConsigngoodsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallExchangeConsigngoods(clt *core.SDKClient, req *exchange.TmallExchangeConsigngoodsAPIRequest, resp *exchange.TmallExchangeConsigngoodsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

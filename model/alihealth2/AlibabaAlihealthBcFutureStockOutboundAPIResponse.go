@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlihealthBcFutureStockOutboundAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthBcFutureStockOutboundAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthBcFutureStockOutboundAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthBcFutureStockOutboundAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthBcFutureStockOutboundAPIResponseModel is 供应商期货出库 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaAlihealthBcFutureStockOutboundAPIResponseModel struct {
 	CanRetry bool `json:"can_retry,omitempty" xml:"can_retry,omitempty"`
 	// 当前请求是否成功-所有明细都成功才算成功
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthBcFutureStockOutboundAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TraceId = ""
+	m.ErrorNo = ""
+	m.ErrorMsg = ""
+	m.CanRetry = false
+	m.Succ = false
+}
+
+var poolAlibabaAlihealthBcFutureStockOutboundAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthBcFutureStockOutboundAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthBcFutureStockOutboundAPIResponse 从 sync.Pool 获取 AlibabaAlihealthBcFutureStockOutboundAPIResponse
+func GetAlibabaAlihealthBcFutureStockOutboundAPIResponse() *AlibabaAlihealthBcFutureStockOutboundAPIResponse {
+	return poolAlibabaAlihealthBcFutureStockOutboundAPIResponse.Get().(*AlibabaAlihealthBcFutureStockOutboundAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthBcFutureStockOutboundAPIResponse 将 AlibabaAlihealthBcFutureStockOutboundAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthBcFutureStockOutboundAPIResponse(v *AlibabaAlihealthBcFutureStockOutboundAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthBcFutureStockOutboundAPIResponse.Put(v)
 }

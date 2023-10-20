@@ -1,5 +1,9 @@
 package nlife
 
+import (
+	"sync"
+)
+
 // LogisticsStatus 结构体
 type LogisticsStatus struct {
 	// 更新日志列表
@@ -16,4 +20,27 @@ type LogisticsStatus struct {
 	LogisticsId string `json:"logistics_id,omitempty" xml:"logistics_id,omitempty"`
 	// 更新时间
 	ModifyedTime string `json:"modifyed_time,omitempty" xml:"modifyed_time,omitempty"`
+}
+
+var poolLogisticsStatus = sync.Pool{
+	New: func() any {
+		return new(LogisticsStatus)
+	},
+}
+
+// GetLogisticsStatus() 从对象池中获取LogisticsStatus
+func GetLogisticsStatus() *LogisticsStatus {
+	return poolLogisticsStatus.Get().(*LogisticsStatus)
+}
+
+// ReleaseLogisticsStatus 释放LogisticsStatus
+func ReleaseLogisticsStatus(v *LogisticsStatus) {
+	v.LogisticsLogList = v.LogisticsLogList[:0]
+	v.GoodsId = ""
+	v.Status = ""
+	v.LogisticsCompanyName = ""
+	v.LogisticsCompanyId = ""
+	v.LogisticsId = ""
+	v.ModifyedTime = ""
+	poolLogisticsStatus.Put(v)
 }

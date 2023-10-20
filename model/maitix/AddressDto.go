@@ -1,5 +1,9 @@
 package maitix
 
+import (
+	"sync"
+)
+
 // AddressDto 结构体
 type AddressDto struct {
 	// 区域国标ID-可以不填
@@ -10,4 +14,24 @@ type AddressDto struct {
 	ProvinceId int64 `json:"province_id,omitempty" xml:"province_id,omitempty"`
 	// 国家国标ID-可以不填
 	CountryId int64 `json:"country_id,omitempty" xml:"country_id,omitempty"`
+}
+
+var poolAddressDto = sync.Pool{
+	New: func() any {
+		return new(AddressDto)
+	},
+}
+
+// GetAddressDto() 从对象池中获取AddressDto
+func GetAddressDto() *AddressDto {
+	return poolAddressDto.Get().(*AddressDto)
+}
+
+// ReleaseAddressDto 释放AddressDto
+func ReleaseAddressDto(v *AddressDto) {
+	v.AreaId = 0
+	v.CityId = 0
+	v.ProvinceId = 0
+	v.CountryId = 0
+	poolAddressDto.Put(v)
 }

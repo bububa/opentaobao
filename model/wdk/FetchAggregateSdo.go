@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // FetchAggregateSdo 结构体
 type FetchAggregateSdo struct {
 	// 主单号
@@ -18,4 +22,28 @@ type FetchAggregateSdo struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 取货类型
 	FetchType int64 `json:"fetch_type,omitempty" xml:"fetch_type,omitempty"`
+}
+
+var poolFetchAggregateSdo = sync.Pool{
+	New: func() any {
+		return new(FetchAggregateSdo)
+	},
+}
+
+// GetFetchAggregateSdo() 从对象池中获取FetchAggregateSdo
+func GetFetchAggregateSdo() *FetchAggregateSdo {
+	return poolFetchAggregateSdo.Get().(*FetchAggregateSdo)
+}
+
+// ReleaseFetchAggregateSdo 释放FetchAggregateSdo
+func ReleaseFetchAggregateSdo(v *FetchAggregateSdo) {
+	v.MainOutOrderId = ""
+	v.SubOutOrderId = ""
+	v.ExpectFetchQuantity = ""
+	v.ActualFetchQuantity = ""
+	v.FetchEndTime = ""
+	v.ExpectRefundQuantity = ""
+	v.Status = 0
+	v.FetchType = 0
+	poolFetchAggregateSdo.Put(v)
 }

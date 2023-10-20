@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripMerchantGalaxyBrandSearchAPIRequest struct {
 // NewAlitripMerchantGalaxyBrandSearchRequest 初始化AlitripMerchantGalaxyBrandSearchAPIRequest对象
 func NewAlitripMerchantGalaxyBrandSearchRequest() *AlitripMerchantGalaxyBrandSearchAPIRequest {
 	return &AlitripMerchantGalaxyBrandSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyBrandSearchAPIRequest) Reset() {
+	r._tenantKey = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripMerchantGalaxyBrandSearchAPIRequest) SetTenantKey(_tenantKey str
 // GetTenantKey TenantKey Getter
 func (r AlitripMerchantGalaxyBrandSearchAPIRequest) GetTenantKey() string {
 	return r._tenantKey
+}
+
+var poolAlitripMerchantGalaxyBrandSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyBrandSearchRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyBrandSearchRequest 从 sync.Pool 获取 AlitripMerchantGalaxyBrandSearchAPIRequest
+func GetAlitripMerchantGalaxyBrandSearchAPIRequest() *AlitripMerchantGalaxyBrandSearchAPIRequest {
+	return poolAlitripMerchantGalaxyBrandSearchAPIRequest.Get().(*AlitripMerchantGalaxyBrandSearchAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyBrandSearchAPIRequest 将 AlitripMerchantGalaxyBrandSearchAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyBrandSearchAPIRequest(v *AlitripMerchantGalaxyBrandSearchAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyBrandSearchAPIRequest.Put(v)
 }

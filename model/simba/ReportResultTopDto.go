@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // ReportResultTopDto 结构体
 type ReportResultTopDto struct {
 	// 时间
@@ -218,4 +222,128 @@ type ReportResultTopDto struct {
 	CampaignBudget int64 `json:"campaign_budget,omitempty" xml:"campaign_budget,omitempty"`
 	// 关键词ID
 	BidwordId int64 `json:"bidword_id,omitempty" xml:"bidword_id,omitempty"`
+}
+
+var poolReportResultTopDto = sync.Pool{
+	New: func() any {
+		return new(ReportResultTopDto)
+	},
+}
+
+// GetReportResultTopDto() 从对象池中获取ReportResultTopDto
+func GetReportResultTopDto() *ReportResultTopDto {
+	return poolReportResultTopDto.Get().(*ReportResultTopDto)
+}
+
+// ReleaseReportResultTopDto 释放ReportResultTopDto
+func ReleaseReportResultTopDto(v *ReportResultTopDto) {
+	v.Thedate = ""
+	v.CtrStr = ""
+	v.CpcStr = ""
+	v.FavItemTotalCoverageStr = ""
+	v.CartTotalCoverageStr = ""
+	v.RoiStr = ""
+	v.CoverageStr = ""
+	v.DirectTransactionShippingCoverageStr = ""
+	v.TransactionTotalInYuanStr = ""
+	v.CpmInYuanStr = ""
+	v.IndirEprePayAmtInYuanStr = ""
+	v.CpcInYuanStr = ""
+	v.DirEprePayAmtInYuanStr = ""
+	v.ClickShoppingAmtInYuanStr = ""
+	v.HfhYsAmtInYuanStr = ""
+	v.CartTotalCostInYuanStr = ""
+	v.DirectTransactionInYuanStr = ""
+	v.IndirectTransactionInYuanStr = ""
+	v.FavItemTotalCostInYuanStr = ""
+	v.EprePayAmtInYuanStr = ""
+	v.HfhYkjAmtInYuanStr = ""
+	v.CostInYuanStr = ""
+	v.SearchTransactionInYuanStr = ""
+	v.HfhDjAmtInStr = ""
+	v.HfhDjAmtInYuanStr = ""
+	v.AvgRankStr = ""
+	v.CampaignId = ""
+	v.CampaignTitle = ""
+	v.CampaignTypeName = ""
+	v.AdgroupTitle = ""
+	v.Linkurl = ""
+	v.ImgUrl = ""
+	v.CrowdName = ""
+	v.AdgroupImgUrl = ""
+	v.CreativeTitle = ""
+	v.Creativetype = ""
+	v.BidwordStr = ""
+	v.Impression = 0
+	v.Click = 0
+	v.Cost = 0
+	v.Ctr = 0
+	v.Cpc = 0
+	v.Cpm = 0
+	v.FavTotal = 0
+	v.FavItemTotal = 0
+	v.FavShopTotal = 0
+	v.CartTotal = 0
+	v.DirectCartTotal = 0
+	v.IndirectCartTotal = 0
+	v.CartTotalCost = 0
+	v.FavItemTotalCost = 0
+	v.FavItemTotalCoverage = 0
+	v.CartTotalCoverage = 0
+	v.EprePayAmt = 0
+	v.EprePayCnt = 0
+	v.DirEprePayAmt = 0
+	v.DirEprePayCnt = 0
+	v.IndirEprePayAmt = 0
+	v.IndirEprePayCnt = 0
+	v.TransactionTotal = 0
+	v.DirectTransaction = 0
+	v.IndirectTransaction = 0
+	v.TransactionShippingTotal = 0
+	v.DirectTransactionShipping = 0
+	v.IndirectTransactionShipping = 0
+	v.Roi = 0
+	v.Coverage = 0
+	v.DirectTransactionShippingCoverage = 0
+	v.ClickShoppingNum = 0
+	v.ClickShoppingAmt = 0
+	v.SearchImpression = 0
+	v.SearchTransaction = 0
+	v.WwCnt = 0
+	v.HfhDjCnt = 0
+	v.HfhDjAmt = 0
+	v.HfhYsCnt = 0
+	v.HfhYsAmt = 0
+	v.HfhYkjCnt = 0
+	v.HfhYkjAmt = 0
+	v.RhCnt = 0
+	v.LzCnt = 0
+	v.TransactionTotalInYuan = 0
+	v.CpmInYuan = 0
+	v.IndirEprePayAmtInYuan = 0
+	v.CpcInYuan = 0
+	v.DirEprePayAmtInYuan = 0
+	v.ClickShoppingAmtInYuan = 0
+	v.HfhYsAmtInYuan = 0
+	v.CartTotalCostInYuan = 0
+	v.DirectTransactionInYuan = 0
+	v.IndirectTransactionInYuan = 0
+	v.FavItemTotalCostInYuan = 0
+	v.EprePayAmtInYuan = 0
+	v.HfhYkjAmtInYuan = 0
+	v.CostInYuan = 0
+	v.SearchTransactionInYuan = 0
+	v.HfhDjAmtInYuan = 0
+	v.CampaignType = 0
+	v.AdgroupId = 0
+	v.ItemId = 0
+	v.HfhDjAmtIn = 0
+	v.CrowdId = 0
+	v.Creativeid = 0
+	v.WirelessPrice = 0
+	v.AvgRank = 0
+	v.PcPrice = 0
+	v.CampaignBudget = 0
+	v.BidwordId = 0
+	poolReportResultTopDto.Put(v)
 }

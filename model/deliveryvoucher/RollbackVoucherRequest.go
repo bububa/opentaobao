@@ -1,5 +1,9 @@
 package deliveryvoucher
 
+import (
+	"sync"
+)
+
 // RollbackVoucherRequest 结构体
 type RollbackVoucherRequest struct {
 	// 券信息,最多100条券记录
@@ -14,4 +18,26 @@ type RollbackVoucherRequest struct {
 	Provider string `json:"provider,omitempty" xml:"provider,omitempty"`
 	// 主订单id
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolRollbackVoucherRequest = sync.Pool{
+	New: func() any {
+		return new(RollbackVoucherRequest)
+	},
+}
+
+// GetRollbackVoucherRequest() 从对象池中获取RollbackVoucherRequest
+func GetRollbackVoucherRequest() *RollbackVoucherRequest {
+	return poolRollbackVoucherRequest.Get().(*RollbackVoucherRequest)
+}
+
+// ReleaseRollbackVoucherRequest 释放RollbackVoucherRequest
+func ReleaseRollbackVoucherRequest(v *RollbackVoucherRequest) {
+	v.VoucherInfos = v.VoucherInfos[:0]
+	v.OperateDate = ""
+	v.Extend = ""
+	v.OpId = ""
+	v.Provider = ""
+	v.OrderId = 0
+	poolRollbackVoucherRequest.Put(v)
 }

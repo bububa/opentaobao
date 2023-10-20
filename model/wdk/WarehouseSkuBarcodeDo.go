@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WarehouseSkuBarcodeDo 结构体
 type WarehouseSkuBarcodeDo struct {
 	// 条码
@@ -18,4 +22,28 @@ type WarehouseSkuBarcodeDo struct {
 	Weight int64 `json:"weight,omitempty" xml:"weight,omitempty"`
 	// 是否主条码
 	MainFlag bool `json:"main_flag,omitempty" xml:"main_flag,omitempty"`
+}
+
+var poolWarehouseSkuBarcodeDo = sync.Pool{
+	New: func() any {
+		return new(WarehouseSkuBarcodeDo)
+	},
+}
+
+// GetWarehouseSkuBarcodeDo() 从对象池中获取WarehouseSkuBarcodeDo
+func GetWarehouseSkuBarcodeDo() *WarehouseSkuBarcodeDo {
+	return poolWarehouseSkuBarcodeDo.Get().(*WarehouseSkuBarcodeDo)
+}
+
+// ReleaseWarehouseSkuBarcodeDo 释放WarehouseSkuBarcodeDo
+func ReleaseWarehouseSkuBarcodeDo(v *WarehouseSkuBarcodeDo) {
+	v.Barcode = ""
+	v.Height = ""
+	v.Length = ""
+	v.SpuSpec = ""
+	v.Unit = ""
+	v.Width = ""
+	v.Weight = 0
+	v.MainFlag = false
+	poolWarehouseSkuBarcodeDo.Put(v)
 }

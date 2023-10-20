@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest struct {
 // NewTaobaoUniversalbpReportQueryNotItemPromotionRequest 初始化TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest对象
 func NewTaobaoUniversalbpReportQueryNotItemPromotionRequest() *TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest {
 	return &TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._topOtherPromotionReportQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest) SetTopOtherProm
 // GetTopOtherPromotionReportQueryVO TopOtherPromotionReportQueryVO Getter
 func (r TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest) GetTopOtherPromotionReportQueryVO() *TopOtherPromotionReportQueryVo {
 	return r._topOtherPromotionReportQueryVO
+}
+
+var poolTaobaoUniversalbpReportQueryNotItemPromotionAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpReportQueryNotItemPromotionRequest()
+	},
+}
+
+// GetTaobaoUniversalbpReportQueryNotItemPromotionRequest 从 sync.Pool 获取 TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest
+func GetTaobaoUniversalbpReportQueryNotItemPromotionAPIRequest() *TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest {
+	return poolTaobaoUniversalbpReportQueryNotItemPromotionAPIRequest.Get().(*TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpReportQueryNotItemPromotionAPIRequest 将 TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpReportQueryNotItemPromotionAPIRequest(v *TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpReportQueryNotItemPromotionAPIRequest.Put(v)
 }

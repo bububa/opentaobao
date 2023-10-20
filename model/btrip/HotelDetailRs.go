@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // HotelDetailRs 结构体
 type HotelDetailRs struct {
 	// 房型列表
@@ -14,4 +18,26 @@ type HotelDetailRs struct {
 	SearchId string `json:"search_id,omitempty" xml:"search_id,omitempty"`
 	// 酒店标准ID
 	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
+}
+
+var poolHotelDetailRs = sync.Pool{
+	New: func() any {
+		return new(HotelDetailRs)
+	},
+}
+
+// GetHotelDetailRs() 从对象池中获取HotelDetailRs
+func GetHotelDetailRs() *HotelDetailRs {
+	return poolHotelDetailRs.Get().(*HotelDetailRs)
+}
+
+// ReleaseHotelDetailRs 释放HotelDetailRs
+func ReleaseHotelDetailRs(v *HotelDetailRs) {
+	v.Rooms = v.Rooms[:0]
+	v.CheckIn = ""
+	v.CheckOut = ""
+	v.EagleTraceId = ""
+	v.SearchId = ""
+	v.Shid = 0
+	poolHotelDetailRs.Put(v)
 }

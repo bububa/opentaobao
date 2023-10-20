@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // FlightTicketInfo 结构体
 type FlightTicketInfo struct {
 	// 更新时间
@@ -26,4 +30,32 @@ type FlightTicketInfo struct {
 	TicketStatusCode int64 `json:"ticket_status_code,omitempty" xml:"ticket_status_code,omitempty"`
 	// 是否改签
 	Changed bool `json:"changed,omitempty" xml:"changed,omitempty"`
+}
+
+var poolFlightTicketInfo = sync.Pool{
+	New: func() any {
+		return new(FlightTicketInfo)
+	},
+}
+
+// GetFlightTicketInfo() 从对象池中获取FlightTicketInfo
+func GetFlightTicketInfo() *FlightTicketInfo {
+	return poolFlightTicketInfo.Get().(*FlightTicketInfo)
+}
+
+// ReleaseFlightTicketInfo 释放FlightTicketInfo
+func ReleaseFlightTicketInfo(v *FlightTicketInfo) {
+	v.GmtModify = ""
+	v.GmtCreate = ""
+	v.UserId = ""
+	v.TicketNo = ""
+	v.TicketStatus = ""
+	v.TicketPrice = 0
+	v.Discount = 0
+	v.OilPrice = 0
+	v.PayType = 0
+	v.BuildPrice = 0
+	v.TicketStatusCode = 0
+	v.Changed = false
+	poolFlightTicketInfo.Put(v)
 }

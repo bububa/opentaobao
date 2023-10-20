@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.worker.querypage
 //
 // 服务商查询工人列表
-func TmallServicecenterWorkerQuerypage(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerQuerypageAPIRequest, session string) (*tmallservice.TmallServicecenterWorkerQuerypageAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkerQuerypageAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkerQuerypage(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerQuerypageAPIRequest, resp *tmallservice.TmallServicecenterWorkerQuerypageAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

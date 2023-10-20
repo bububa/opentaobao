@@ -1,5 +1,9 @@
 package itpolicy
 
+import (
+	"sync"
+)
+
 // TopPolicyDo 结构体
 type TopPolicyDo struct {
 	// 产品编号，内容可空，支持字母和数字,最多50个字符
@@ -158,4 +162,98 @@ type TopPolicyDo struct {
 	ChildRefundFeePartUnused string `json:"child_refund_fee_part_unused,omitempty" xml:"child_refund_fee_part_unused,omitempty"`
 	// 儿童全部未使用退票费用，格式同成人，【全部未使用可否退票】为是时，此项为必填项。 可输入格式如：200-72-300-48-1000-0-*，表示72小时前退票手续费200；48小时到72小时，退票手续费300；飞机起飞不足48小时；退票手续费1000；飞机起飞后不予改期（输入*）； 或 10%-72-30%-48-50%-0-*，表示72小时前退票手续费为票面价的10%；48小时到72小时，退票手续费为票面价的30%；飞机起飞不足48小时；退票手续费为票面价的50%；飞机起飞后不予退票（输入*）；
 	ChildRefundFeeAllUnused string `json:"child_refund_fee_all_unused,omitempty" xml:"child_refund_fee_all_unused,omitempty"`
+}
+
+var poolTopPolicyDo = sync.Pool{
+	New: func() any {
+		return new(TopPolicyDo)
+	},
+}
+
+// GetTopPolicyDo() 从对象池中获取TopPolicyDo
+func GetTopPolicyDo() *TopPolicyDo {
+	return poolTopPolicyDo.Get().(*TopPolicyDo)
+}
+
+// ReleaseTopPolicyDo 释放TopPolicyDo
+func ReleaseTopPolicyDo(v *TopPolicyDo) {
+	v.PolicyId = ""
+	v.RtCommissionFormula = ""
+	v.Airline = ""
+	v.TransferType = ""
+	v.TravelType = ""
+	v.DepCities = ""
+	v.ArrCities = ""
+	v.ExcludeDepCities = ""
+	v.ExcludeArrCities = ""
+	v.TransferCities = ""
+	v.Remark = ""
+	v.SaleDate = ""
+	v.DepDate = ""
+	v.RetDate = ""
+	v.CabinRestrictType = ""
+	v.CabinRestrict = ""
+	v.ServiceLevel = ""
+	v.FareBasisAllowed = ""
+	v.FareBasisForbidden = ""
+	v.FlightRestrict = ""
+	v.CodeSharingType = ""
+	v.PassengerType = ""
+	v.FareSource = ""
+	v.FareType = ""
+	v.AllowPriceRange = ""
+	v.OfficeNo = ""
+	v.SaleRetention = ""
+	v.SaleRebase = ""
+	v.ChildSaleRetention = ""
+	v.ChildSaleRebase = ""
+	v.IsSupportRt = ""
+	v.IsAllowUnionAirline = ""
+	v.RefundRule = ""
+	v.ReissueRule = ""
+	v.NoshowRule = ""
+	v.LuggageRule = ""
+	v.BuyTicketNotice = ""
+	v.WorkingTime = ""
+	v.ProductType = ""
+	v.ChannelIdDesc = ""
+	v.ExtendAttributes = ""
+	v.IsCanAllRefund = ""
+	v.RefundFeeAllUnused = ""
+	v.RefundCurrencyAllUnused = ""
+	v.RefundFeeTypeAllUnused = ""
+	v.IsCanPartRefund = ""
+	v.RefundFeePartUnused = ""
+	v.RefundCurrencyPartUnused = ""
+	v.RefundFeeTypePartUnused = ""
+	v.CanDepChange = ""
+	v.DepChangeFee = ""
+	v.DepChangeCurrency = ""
+	v.DepChangeFeeType = ""
+	v.NoshowRestrict = ""
+	v.NoshowTimeRestrict = ""
+	v.NoshowTimeRestrictUnit = ""
+	v.NoshowRuleType = ""
+	v.NoshowFee = ""
+	v.NoshowCurrency = ""
+	v.CanRetChange = ""
+	v.RetChangeFee = ""
+	v.RetChangeCurrency = ""
+	v.RetChangeFeeType = ""
+	v.VipCode = ""
+	v.Gv2ChildRule = ""
+	v.Nationality = ""
+	v.ExcludeNationality = ""
+	v.PassengerAge = ""
+	v.PresalePeriod = ""
+	v.Receipts = ""
+	v.SupplySource = ""
+	v.CanOj = ""
+	v.DefaultOdDeny = ""
+	v.AirlineCodeSharing = ""
+	v.ChildChangeFeeInUnused = ""
+	v.ChildChangeFeeOutUnused = ""
+	v.ChildRefundFeePartUnused = ""
+	v.ChildRefundFeeAllUnused = ""
+	poolTopPolicyDo.Put(v)
 }

@@ -1,5 +1,9 @@
 package txcs
 
+import (
+	"sync"
+)
+
 // InvoiceInputDto 结构体
 type InvoiceInputDto struct {
 	// 结算公司
@@ -28,4 +32,33 @@ type InvoiceInputDto struct {
 	TaxAmount string `json:"tax_amount,omitempty" xml:"tax_amount,omitempty"`
 	// 操作人员ID
 	OperatorId string `json:"operator_id,omitempty" xml:"operator_id,omitempty"`
+}
+
+var poolInvoiceInputDto = sync.Pool{
+	New: func() any {
+		return new(InvoiceInputDto)
+	},
+}
+
+// GetInvoiceInputDto() 从对象池中获取InvoiceInputDto
+func GetInvoiceInputDto() *InvoiceInputDto {
+	return poolInvoiceInputDto.Get().(*InvoiceInputDto)
+}
+
+// ReleaseInvoiceInputDto 释放InvoiceInputDto
+func ReleaseInvoiceInputDto(v *InvoiceInputDto) {
+	v.SettlementCompanyCode = ""
+	v.InvoiceDate = ""
+	v.InvoiceCode = ""
+	v.OperatorName = ""
+	v.TaxRate = ""
+	v.TotalAmount = ""
+	v.RequestId = ""
+	v.InvoiceType = ""
+	v.UntaxAmount = ""
+	v.Currency = ""
+	v.InvoiceNo = ""
+	v.TaxAmount = ""
+	v.OperatorId = ""
+	poolInvoiceInputDto.Put(v)
 }

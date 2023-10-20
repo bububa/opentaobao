@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WdkOrderSyncBo 结构体
 type WdkOrderSyncBo struct {
 	// 子单列表
@@ -44,4 +48,41 @@ type WdkOrderSyncBo struct {
 	DiscountPlatformFee int64 `json:"discount_platform_fee,omitempty" xml:"discount_platform_fee,omitempty"`
 	// 包装费
 	PackageFee int64 `json:"package_fee,omitempty" xml:"package_fee,omitempty"`
+}
+
+var poolWdkOrderSyncBo = sync.Pool{
+	New: func() any {
+		return new(WdkOrderSyncBo)
+	},
+}
+
+// GetWdkOrderSyncBo() 从对象池中获取WdkOrderSyncBo
+func GetWdkOrderSyncBo() *WdkOrderSyncBo {
+	return poolWdkOrderSyncBo.Get().(*WdkOrderSyncBo)
+}
+
+// ReleaseWdkOrderSyncBo 释放WdkOrderSyncBo
+func ReleaseWdkOrderSyncBo(v *WdkOrderSyncBo) {
+	v.SubOrders = v.SubOrders[:0]
+	v.Promotions = v.Promotions[:0]
+	v.OutOrderId = ""
+	v.StoreId = ""
+	v.ShopId = ""
+	v.MerchantCode = ""
+	v.OpenUid = ""
+	v.PayTime = ""
+	v.ExpectArriveTime = ""
+	v.OrderNo = ""
+	v.BizOrderId = 0
+	v.OrderFrom = 0
+	v.PayFee = 0
+	v.OriginFee = 0
+	v.DiscountFee = 0
+	v.PostFee = 0
+	v.OrderStatus = 0
+	v.ArriveType = 0
+	v.DiscountMerchantFee = 0
+	v.DiscountPlatformFee = 0
+	v.PackageFee = 0
+	poolWdkOrderSyncBo.Put(v)
 }

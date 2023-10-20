@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTbkScRelationRecordAPIResponse struct {
 	TaobaoTbkScRelationRecordAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTbkScRelationRecordAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkScRelationRecordAPIResponseModel).Reset()
+}
+
 // TaobaoTbkScRelationRecordAPIResponseModel is 淘宝客-服务商-私域会员标记 成功返回结果
 type TaobaoTbkScRelationRecordAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_sc_relation_record_response"`
@@ -22,4 +29,27 @@ type TaobaoTbkScRelationRecordAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// data
 	Data *TaobaoTbkScRelationRecordMapData `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkScRelationRecordAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = nil
+}
+
+var poolTaobaoTbkScRelationRecordAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkScRelationRecordAPIResponse)
+	},
+}
+
+// GetTaobaoTbkScRelationRecordAPIResponse 从 sync.Pool 获取 TaobaoTbkScRelationRecordAPIResponse
+func GetTaobaoTbkScRelationRecordAPIResponse() *TaobaoTbkScRelationRecordAPIResponse {
+	return poolTaobaoTbkScRelationRecordAPIResponse.Get().(*TaobaoTbkScRelationRecordAPIResponse)
+}
+
+// ReleaseTaobaoTbkScRelationRecordAPIResponse 将 TaobaoTbkScRelationRecordAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkScRelationRecordAPIResponse(v *TaobaoTbkScRelationRecordAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkScRelationRecordAPIResponse.Put(v)
 }

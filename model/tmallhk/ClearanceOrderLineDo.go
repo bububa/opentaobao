@@ -1,5 +1,9 @@
 package tmallhk
 
+import (
+	"sync"
+)
+
 // ClearanceOrderLineDo 结构体
 type ClearanceOrderLineDo struct {
 	// 税费封装，示例：&#34;declaration&#34;: {             &#34;品牌&#34;: &#34;1&#34;,             &#34;用途&#34;: &#34;1&#34;,             &#34;品名&#34;: &#34;1&#34;,             &#34;包装规格&#34;: &#34;1&#34;           }
@@ -18,4 +22,28 @@ type ClearanceOrderLineDo struct {
 	ScItemId int64 `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
 	// 淘系商品id
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+}
+
+var poolClearanceOrderLineDo = sync.Pool{
+	New: func() any {
+		return new(ClearanceOrderLineDo)
+	},
+}
+
+// GetClearanceOrderLineDo() 从对象池中获取ClearanceOrderLineDo
+func GetClearanceOrderLineDo() *ClearanceOrderLineDo {
+	return poolClearanceOrderLineDo.Get().(*ClearanceOrderLineDo)
+}
+
+// ReleaseClearanceOrderLineDo 释放ClearanceOrderLineDo
+func ReleaseClearanceOrderLineDo(v *ClearanceOrderLineDo) {
+	v.Declaration = ""
+	v.SellProperty = ""
+	v.SaleUnit = ""
+	v.TaxDO = nil
+	v.ActualValue = 0
+	v.UnitDO = nil
+	v.ScItemId = 0
+	v.ItemId = 0
+	poolClearanceOrderLineDo.Put(v)
 }

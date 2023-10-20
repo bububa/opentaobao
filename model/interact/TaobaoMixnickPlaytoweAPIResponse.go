@@ -2,6 +2,7 @@ package interact
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoMixnickPlaytoweAPIResponse struct {
 	TaobaoMixnickPlaytoweAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoMixnickPlaytoweAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMixnickPlaytoweAPIResponseModel).Reset()
+}
+
 // TaobaoMixnickPlaytoweAPIResponseModel is 互动mixNick转微淘 成功返回结果
 type TaobaoMixnickPlaytoweAPIResponseModel struct {
 	XMLName xml.Name `xml:"mixnick_playtowe_response"`
@@ -22,4 +29,27 @@ type TaobaoMixnickPlaytoweAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 微淘混淆nick
 	WeMixnick string `json:"we_mixnick,omitempty" xml:"we_mixnick,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMixnickPlaytoweAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.WeMixnick = ""
+}
+
+var poolTaobaoMixnickPlaytoweAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMixnickPlaytoweAPIResponse)
+	},
+}
+
+// GetTaobaoMixnickPlaytoweAPIResponse 从 sync.Pool 获取 TaobaoMixnickPlaytoweAPIResponse
+func GetTaobaoMixnickPlaytoweAPIResponse() *TaobaoMixnickPlaytoweAPIResponse {
+	return poolTaobaoMixnickPlaytoweAPIResponse.Get().(*TaobaoMixnickPlaytoweAPIResponse)
+}
+
+// ReleaseTaobaoMixnickPlaytoweAPIResponse 将 TaobaoMixnickPlaytoweAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMixnickPlaytoweAPIResponse(v *TaobaoMixnickPlaytoweAPIResponse) {
+	v.Reset()
+	poolTaobaoMixnickPlaytoweAPIResponse.Put(v)
 }

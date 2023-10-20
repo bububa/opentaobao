@@ -2,6 +2,7 @@ package alihealthpw
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthPwSpecialSynchrosmsAPIResponse struct {
 	AlibabaAlihealthPwSpecialSynchrosmsAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthPwSpecialSynchrosmsAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthPwSpecialSynchrosmsAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthPwSpecialSynchrosmsAPIResponseModel is 同步短信信息至阿里健康 成功返回结果
 type AlibabaAlihealthPwSpecialSynchrosmsAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_pw_special_synchrosms_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihealthPwSpecialSynchrosmsAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回值
 	Result *ResponseMessage `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthPwSpecialSynchrosmsAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthPwSpecialSynchrosmsAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthPwSpecialSynchrosmsAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthPwSpecialSynchrosmsAPIResponse 从 sync.Pool 获取 AlibabaAlihealthPwSpecialSynchrosmsAPIResponse
+func GetAlibabaAlihealthPwSpecialSynchrosmsAPIResponse() *AlibabaAlihealthPwSpecialSynchrosmsAPIResponse {
+	return poolAlibabaAlihealthPwSpecialSynchrosmsAPIResponse.Get().(*AlibabaAlihealthPwSpecialSynchrosmsAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthPwSpecialSynchrosmsAPIResponse 将 AlibabaAlihealthPwSpecialSynchrosmsAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthPwSpecialSynchrosmsAPIResponse(v *AlibabaAlihealthPwSpecialSynchrosmsAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthPwSpecialSynchrosmsAPIResponse.Put(v)
 }

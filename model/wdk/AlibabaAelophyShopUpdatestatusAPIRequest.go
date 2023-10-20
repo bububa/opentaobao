@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAelophyShopUpdatestatusAPIRequest struct {
 // NewAlibabaAelophyShopUpdatestatusRequest 初始化AlibabaAelophyShopUpdatestatusAPIRequest对象
 func NewAlibabaAelophyShopUpdatestatusRequest() *AlibabaAelophyShopUpdatestatusAPIRequest {
 	return &AlibabaAelophyShopUpdatestatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAelophyShopUpdatestatusAPIRequest) Reset() {
+	r._shopStatusUpdateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAelophyShopUpdatestatusAPIRequest) SetShopStatusUpdateRequest(_s
 // GetShopStatusUpdateRequest ShopStatusUpdateRequest Getter
 func (r AlibabaAelophyShopUpdatestatusAPIRequest) GetShopStatusUpdateRequest() *ShopStatusUpdateRequest {
 	return r._shopStatusUpdateRequest
+}
+
+var poolAlibabaAelophyShopUpdatestatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAelophyShopUpdatestatusRequest()
+	},
+}
+
+// GetAlibabaAelophyShopUpdatestatusRequest 从 sync.Pool 获取 AlibabaAelophyShopUpdatestatusAPIRequest
+func GetAlibabaAelophyShopUpdatestatusAPIRequest() *AlibabaAelophyShopUpdatestatusAPIRequest {
+	return poolAlibabaAelophyShopUpdatestatusAPIRequest.Get().(*AlibabaAelophyShopUpdatestatusAPIRequest)
+}
+
+// ReleaseAlibabaAelophyShopUpdatestatusAPIRequest 将 AlibabaAelophyShopUpdatestatusAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAelophyShopUpdatestatusAPIRequest(v *AlibabaAelophyShopUpdatestatusAPIRequest) {
+	v.Reset()
+	poolAlibabaAelophyShopUpdatestatusAPIRequest.Put(v)
 }

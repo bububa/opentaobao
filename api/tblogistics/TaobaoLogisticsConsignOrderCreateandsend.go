@@ -9,11 +9,6 @@ import (
 // taobao.logistics.consign.order.createandsend
 //
 // 创建物流订单，并发货。
-func TaobaoLogisticsConsignOrderCreateandsend(clt *core.SDKClient, req *tblogistics.TaobaoLogisticsConsignOrderCreateandsendAPIRequest, session string) (*tblogistics.TaobaoLogisticsConsignOrderCreateandsendAPIResponse, error) {
-	var resp tblogistics.TaobaoLogisticsConsignOrderCreateandsendAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLogisticsConsignOrderCreateandsend(clt *core.SDKClient, req *tblogistics.TaobaoLogisticsConsignOrderCreateandsendAPIRequest, resp *tblogistics.TaobaoLogisticsConsignOrderCreateandsendAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WorkResult 结构体
 type WorkResult struct {
 	// 错误信息
@@ -18,4 +22,28 @@ type WorkResult struct {
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 返回结果
 	ResultData bool `json:"result_data,omitempty" xml:"result_data,omitempty"`
+}
+
+var poolWorkResult = sync.Pool{
+	New: func() any {
+		return new(WorkResult)
+	},
+}
+
+// GetWorkResult() 从对象池中获取WorkResult
+func GetWorkResult() *WorkResult {
+	return poolWorkResult.Get().(*WorkResult)
+}
+
+// ReleaseWorkResult 释放WorkResult
+func ReleaseWorkResult(v *WorkResult) {
+	v.Message = ""
+	v.Code = ""
+	v.ErrorCode = ""
+	v.ErrorMessage = ""
+	v.Data = nil
+	v.Success = false
+	v.IsSuccess = false
+	v.ResultData = false
+	poolWorkResult.Put(v)
 }

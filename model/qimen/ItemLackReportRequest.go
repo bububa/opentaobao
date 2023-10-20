@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // ItemLackReportRequest 结构体
 type ItemLackReportRequest struct {
 	// 缺货商品列表
@@ -18,4 +22,28 @@ type ItemLackReportRequest struct {
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 扩展属性
 	ExtendProps *TaobaoQimenItemlackReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+}
+
+var poolItemLackReportRequest = sync.Pool{
+	New: func() any {
+		return new(ItemLackReportRequest)
+	},
+}
+
+// GetItemLackReportRequest() 从对象池中获取ItemLackReportRequest
+func GetItemLackReportRequest() *ItemLackReportRequest {
+	return poolItemLackReportRequest.Get().(*ItemLackReportRequest)
+}
+
+// ReleaseItemLackReportRequest 释放ItemLackReportRequest
+func ReleaseItemLackReportRequest(v *ItemLackReportRequest) {
+	v.Items = v.Items[:0]
+	v.WarehouseCode = ""
+	v.DeliveryOrderCode = ""
+	v.DeliveryOrderId = ""
+	v.CreateTime = ""
+	v.OutBizCode = ""
+	v.Remark = ""
+	v.ExtendProps = nil
+	poolItemLackReportRequest.Put(v)
 }

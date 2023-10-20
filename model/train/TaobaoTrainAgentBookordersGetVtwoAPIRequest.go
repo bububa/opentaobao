@@ -2,6 +2,7 @@ package train
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTrainAgentBookordersGetVtwoAPIRequest struct {
 // NewTaobaoTrainAgentBookordersGetVtwoRequest 初始化TaobaoTrainAgentBookordersGetVtwoAPIRequest对象
 func NewTaobaoTrainAgentBookordersGetVtwoRequest() *TaobaoTrainAgentBookordersGetVtwoAPIRequest {
 	return &TaobaoTrainAgentBookordersGetVtwoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTrainAgentBookordersGetVtwoAPIRequest) Reset() {
+	r._agentId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTrainAgentBookordersGetVtwoAPIRequest) SetAgentId(_agentId int64)
 // GetAgentId AgentId Getter
 func (r TaobaoTrainAgentBookordersGetVtwoAPIRequest) GetAgentId() int64 {
 	return r._agentId
+}
+
+var poolTaobaoTrainAgentBookordersGetVtwoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTrainAgentBookordersGetVtwoRequest()
+	},
+}
+
+// GetTaobaoTrainAgentBookordersGetVtwoRequest 从 sync.Pool 获取 TaobaoTrainAgentBookordersGetVtwoAPIRequest
+func GetTaobaoTrainAgentBookordersGetVtwoAPIRequest() *TaobaoTrainAgentBookordersGetVtwoAPIRequest {
+	return poolTaobaoTrainAgentBookordersGetVtwoAPIRequest.Get().(*TaobaoTrainAgentBookordersGetVtwoAPIRequest)
+}
+
+// ReleaseTaobaoTrainAgentBookordersGetVtwoAPIRequest 将 TaobaoTrainAgentBookordersGetVtwoAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTrainAgentBookordersGetVtwoAPIRequest(v *TaobaoTrainAgentBookordersGetVtwoAPIRequest) {
+	v.Reset()
+	poolTaobaoTrainAgentBookordersGetVtwoAPIRequest.Put(v)
 }

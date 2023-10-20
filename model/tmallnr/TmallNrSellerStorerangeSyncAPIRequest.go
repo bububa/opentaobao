@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallNrSellerStorerangeSyncAPIRequest struct {
 // NewTmallNrSellerStorerangeSyncRequest 初始化TmallNrSellerStorerangeSyncAPIRequest对象
 func NewTmallNrSellerStorerangeSyncRequest() *TmallNrSellerStorerangeSyncAPIRequest {
 	return &TmallNrSellerStorerangeSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrSellerStorerangeSyncAPIRequest) Reset() {
+	r._reqDTOList = r._reqDTOList[:0]
+	r._bizIdentity = ""
+	r._sellerId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallNrSellerStorerangeSyncAPIRequest) SetSellerId(_sellerId int64) err
 // GetSellerId SellerId Getter
 func (r TmallNrSellerStorerangeSyncAPIRequest) GetSellerId() int64 {
 	return r._sellerId
+}
+
+var poolTmallNrSellerStorerangeSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrSellerStorerangeSyncRequest()
+	},
+}
+
+// GetTmallNrSellerStorerangeSyncRequest 从 sync.Pool 获取 TmallNrSellerStorerangeSyncAPIRequest
+func GetTmallNrSellerStorerangeSyncAPIRequest() *TmallNrSellerStorerangeSyncAPIRequest {
+	return poolTmallNrSellerStorerangeSyncAPIRequest.Get().(*TmallNrSellerStorerangeSyncAPIRequest)
+}
+
+// ReleaseTmallNrSellerStorerangeSyncAPIRequest 将 TmallNrSellerStorerangeSyncAPIRequest 放入 sync.Pool
+func ReleaseTmallNrSellerStorerangeSyncAPIRequest(v *TmallNrSellerStorerangeSyncAPIRequest) {
+	v.Reset()
+	poolTmallNrSellerStorerangeSyncAPIRequest.Put(v)
 }

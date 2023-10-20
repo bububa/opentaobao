@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaHealthVaccinNoticeOrderSignAPIRequest struct {
 // NewAlibabaHealthVaccinNoticeOrderSignRequest 初始化AlibabaHealthVaccinNoticeOrderSignAPIRequest对象
 func NewAlibabaHealthVaccinNoticeOrderSignRequest() *AlibabaHealthVaccinNoticeOrderSignAPIRequest {
 	return &AlibabaHealthVaccinNoticeOrderSignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHealthVaccinNoticeOrderSignAPIRequest) Reset() {
+	r._alipayUserId = ""
+	r._orderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaHealthVaccinNoticeOrderSignAPIRequest) SetOrderId(_orderId strin
 // GetOrderId OrderId Getter
 func (r AlibabaHealthVaccinNoticeOrderSignAPIRequest) GetOrderId() string {
 	return r._orderId
+}
+
+var poolAlibabaHealthVaccinNoticeOrderSignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHealthVaccinNoticeOrderSignRequest()
+	},
+}
+
+// GetAlibabaHealthVaccinNoticeOrderSignRequest 从 sync.Pool 获取 AlibabaHealthVaccinNoticeOrderSignAPIRequest
+func GetAlibabaHealthVaccinNoticeOrderSignAPIRequest() *AlibabaHealthVaccinNoticeOrderSignAPIRequest {
+	return poolAlibabaHealthVaccinNoticeOrderSignAPIRequest.Get().(*AlibabaHealthVaccinNoticeOrderSignAPIRequest)
+}
+
+// ReleaseAlibabaHealthVaccinNoticeOrderSignAPIRequest 将 AlibabaHealthVaccinNoticeOrderSignAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHealthVaccinNoticeOrderSignAPIRequest(v *AlibabaHealthVaccinNoticeOrderSignAPIRequest) {
+	v.Reset()
+	poolAlibabaHealthVaccinNoticeOrderSignAPIRequest.Put(v)
 }

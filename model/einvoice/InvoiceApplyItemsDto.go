@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // InvoiceApplyItemsDto 结构体
 type InvoiceApplyItemsDto struct {
 	// 交易金额（含税）=?单价*数量。单位：元，格式为2位小数，精度2位小数。开红票时传正数。
@@ -28,4 +32,33 @@ type InvoiceApplyItemsDto struct {
 	Unit string `json:"unit,omitempty" xml:"unit,omitempty"`
 	// 0税率标识，只有税率为0的情况才有值，0=出口零税率，1=免税，2=不征收，3=普通零税率
 	ZeroRateFlag string `json:"zero_rate_flag,omitempty" xml:"zero_rate_flag,omitempty"`
+}
+
+var poolInvoiceApplyItemsDto = sync.Pool{
+	New: func() any {
+		return new(InvoiceApplyItemsDto)
+	},
+}
+
+// GetInvoiceApplyItemsDto() 从对象池中获取InvoiceApplyItemsDto
+func GetInvoiceApplyItemsDto() *InvoiceApplyItemsDto {
+	return poolInvoiceApplyItemsDto.Get().(*InvoiceApplyItemsDto)
+}
+
+// ReleaseInvoiceApplyItemsDto 释放InvoiceApplyItemsDto
+func ReleaseInvoiceApplyItemsDto(v *InvoiceApplyItemsDto) {
+	v.Amount = ""
+	v.BizMemo = ""
+	v.Discount = ""
+	v.ItemId = ""
+	v.ItemName = ""
+	v.ItemNo = ""
+	v.ItemType = ""
+	v.Quantity = ""
+	v.Specification = ""
+	v.TaxPrice = ""
+	v.TaxRate = ""
+	v.Unit = ""
+	v.ZeroRateFlag = ""
+	poolInvoiceApplyItemsDto.Put(v)
 }

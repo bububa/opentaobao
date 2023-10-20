@@ -9,11 +9,6 @@ import (
 // taobao.place.store.modify
 //
 // 用于商家修改线下门店信息
-func TaobaoPlaceStoreModify(clt *core.SDKClient, req *alsc.TaobaoPlaceStoreModifyAPIRequest, session string) (*alsc.TaobaoPlaceStoreModifyAPIResponse, error) {
-	var resp alsc.TaobaoPlaceStoreModifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPlaceStoreModify(clt *core.SDKClient, req *alsc.TaobaoPlaceStoreModifyAPIRequest, resp *alsc.TaobaoPlaceStoreModifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

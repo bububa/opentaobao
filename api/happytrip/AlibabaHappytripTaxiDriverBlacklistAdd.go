@@ -9,11 +9,6 @@ import (
 // alibaba.happytrip.taxi.driver.blacklist.add
 //
 // 实现用户1对1永久拉黑司机，如果不支持永久拉黑，则在自动解禁黑名单司机时需回调通知欢行
-func AlibabaHappytripTaxiDriverBlacklistAdd(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiDriverBlacklistAddAPIRequest, session string) (*happytrip.AlibabaHappytripTaxiDriverBlacklistAddAPIResponse, error) {
-	var resp happytrip.AlibabaHappytripTaxiDriverBlacklistAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHappytripTaxiDriverBlacklistAdd(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiDriverBlacklistAddAPIRequest, resp *happytrip.AlibabaHappytripTaxiDriverBlacklistAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

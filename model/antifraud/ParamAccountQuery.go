@@ -1,5 +1,9 @@
 package antifraud
 
+import (
+	"sync"
+)
+
 // ParamAccountQuery 结构体
 type ParamAccountQuery struct {
 	// 反欺诈服务AppKey
@@ -16,4 +20,27 @@ type ParamAccountQuery struct {
 	Ip string `json:"ip,omitempty" xml:"ip,omitempty"`
 	// 透传参数，是一个json形式的字符串
 	Trans string `json:"trans,omitempty" xml:"trans,omitempty"`
+}
+
+var poolParamAccountQuery = sync.Pool{
+	New: func() any {
+		return new(ParamAccountQuery)
+	},
+}
+
+// GetParamAccountQuery() 从对象池中获取ParamAccountQuery
+func GetParamAccountQuery() *ParamAccountQuery {
+	return poolParamAccountQuery.Get().(*ParamAccountQuery)
+}
+
+// ReleaseParamAccountQuery 释放ParamAccountQuery
+func ReleaseParamAccountQuery(v *ParamAccountQuery) {
+	v.AppKey = ""
+	v.Timestamp = ""
+	v.AppToken = ""
+	v.SceneId = ""
+	v.PhoneNumber = ""
+	v.Ip = ""
+	v.Trans = ""
+	poolParamAccountQuery.Put(v)
 }

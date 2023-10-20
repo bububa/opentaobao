@@ -1,5 +1,9 @@
 package util
 
+import (
+	"sync"
+)
+
 // Event 结构体
 type Event struct {
 	// 淘宝订单号
@@ -20,4 +24,29 @@ type Event struct {
 	EventTime string `json:"event_time,omitempty" xml:"event_time,omitempty"`
 	// 订单创建时间,数字
 	Create int64 `json:"create,omitempty" xml:"create,omitempty"`
+}
+
+var poolEvent = sync.Pool{
+	New: func() any {
+		return new(Event)
+	},
+}
+
+// GetEvent() 从对象池中获取Event
+func GetEvent() *Event {
+	return poolEvent.Get().(*Event)
+}
+
+// ReleaseEvent 释放Event
+func ReleaseEvent(v *Event) {
+	v.Tid = ""
+	v.Ext = ""
+	v.Status = ""
+	v.Platform = ""
+	v.Nick = ""
+	v.ErpOrderId = ""
+	v.TaobaoSubOrderIds = ""
+	v.EventTime = ""
+	v.Create = 0
+	poolEvent.Put(v)
 }

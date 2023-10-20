@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -30,6 +31,12 @@ type TmallServicecenterWorkerDeleteAPIResponse struct {
 	TmallServicecenterWorkerDeleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallServicecenterWorkerDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServicecenterWorkerDeleteAPIResponseModel).Reset()
+}
+
 // TmallServicecenterWorkerDeleteAPIResponseModel is 删除工人 成功返回结果
 type TmallServicecenterWorkerDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_worker_delete_response"`
@@ -37,4 +44,27 @@ type TmallServicecenterWorkerDeleteAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterWorkerDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallServicecenterWorkerDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterWorkerDeleteAPIResponse)
+	},
+}
+
+// GetTmallServicecenterWorkerDeleteAPIResponse 从 sync.Pool 获取 TmallServicecenterWorkerDeleteAPIResponse
+func GetTmallServicecenterWorkerDeleteAPIResponse() *TmallServicecenterWorkerDeleteAPIResponse {
+	return poolTmallServicecenterWorkerDeleteAPIResponse.Get().(*TmallServicecenterWorkerDeleteAPIResponse)
+}
+
+// ReleaseTmallServicecenterWorkerDeleteAPIResponse 将 TmallServicecenterWorkerDeleteAPIResponse 保存到 sync.Pool
+func ReleaseTmallServicecenterWorkerDeleteAPIResponse(v *TmallServicecenterWorkerDeleteAPIResponse) {
+	v.Reset()
+	poolTmallServicecenterWorkerDeleteAPIResponse.Put(v)
 }

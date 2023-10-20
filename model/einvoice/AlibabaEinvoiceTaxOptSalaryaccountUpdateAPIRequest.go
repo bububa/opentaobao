@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest struct {
 // NewAlibabaEinvoiceTaxOptSalaryaccountUpdateRequest 初始化AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest对象
 func NewAlibabaEinvoiceTaxOptSalaryaccountUpdateRequest() *AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest {
 	return &AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest) Reset() {
+	r._paramTaxOptimizationEmployeeAssetUpdateDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest) SetParamTaxOptimiza
 // GetParamTaxOptimizationEmployeeAssetUpdateDTO ParamTaxOptimizationEmployeeAssetUpdateDTO Getter
 func (r AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest) GetParamTaxOptimizationEmployeeAssetUpdateDTO() *TaxOptimizationEmployeeAssetUpdateDto {
 	return r._paramTaxOptimizationEmployeeAssetUpdateDTO
+}
+
+var poolAlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceTaxOptSalaryaccountUpdateRequest()
+	},
+}
+
+// GetAlibabaEinvoiceTaxOptSalaryaccountUpdateRequest 从 sync.Pool 获取 AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest
+func GetAlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest() *AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest {
+	return poolAlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest.Get().(*AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest 将 AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest(v *AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest.Put(v)
 }

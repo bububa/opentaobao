@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,11 +16,40 @@ type TaobaoQianniuTasksGetAPIResponse struct {
 	TaobaoQianniuTasksGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoQianniuTasksGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoQianniuTasksGetAPIResponseModel).Reset()
+}
+
 // TaobaoQianniuTasksGetAPIResponseModel is 获取指定的任务 成功返回结果
 type TaobaoQianniuTasksGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"qianniu_tasks_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回的任务列表
-	Tasks []Qtask `json:"tasks,omitempty" xml:"tasks>qtask,omitempty"`
+	Tasks []QTask `json:"tasks,omitempty" xml:"tasks>q_task,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoQianniuTasksGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Tasks = m.Tasks[:0]
+}
+
+var poolTaobaoQianniuTasksGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoQianniuTasksGetAPIResponse)
+	},
+}
+
+// GetTaobaoQianniuTasksGetAPIResponse 从 sync.Pool 获取 TaobaoQianniuTasksGetAPIResponse
+func GetTaobaoQianniuTasksGetAPIResponse() *TaobaoQianniuTasksGetAPIResponse {
+	return poolTaobaoQianniuTasksGetAPIResponse.Get().(*TaobaoQianniuTasksGetAPIResponse)
+}
+
+// ReleaseTaobaoQianniuTasksGetAPIResponse 将 TaobaoQianniuTasksGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoQianniuTasksGetAPIResponse(v *TaobaoQianniuTasksGetAPIResponse) {
+	v.Reset()
+	poolTaobaoQianniuTasksGetAPIResponse.Put(v)
 }

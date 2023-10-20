@@ -2,6 +2,7 @@ package degoperation
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoDegoperationShowTopRecordsAPIRequest struct {
 // NewTaobaoDegoperationShowTopRecordsRequest 初始化TaobaoDegoperationShowTopRecordsAPIRequest对象
 func NewTaobaoDegoperationShowTopRecordsRequest() *TaobaoDegoperationShowTopRecordsAPIRequest {
 	return &TaobaoDegoperationShowTopRecordsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDegoperationShowTopRecordsAPIRequest) Reset() {
+	r._degAppKey = ""
+	r._degEventKey = ""
+	r._topN = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoDegoperationShowTopRecordsAPIRequest) SetTopN(_topN int64) error 
 // GetTopN TopN Getter
 func (r TaobaoDegoperationShowTopRecordsAPIRequest) GetTopN() int64 {
 	return r._topN
+}
+
+var poolTaobaoDegoperationShowTopRecordsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDegoperationShowTopRecordsRequest()
+	},
+}
+
+// GetTaobaoDegoperationShowTopRecordsRequest 从 sync.Pool 获取 TaobaoDegoperationShowTopRecordsAPIRequest
+func GetTaobaoDegoperationShowTopRecordsAPIRequest() *TaobaoDegoperationShowTopRecordsAPIRequest {
+	return poolTaobaoDegoperationShowTopRecordsAPIRequest.Get().(*TaobaoDegoperationShowTopRecordsAPIRequest)
+}
+
+// ReleaseTaobaoDegoperationShowTopRecordsAPIRequest 将 TaobaoDegoperationShowTopRecordsAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDegoperationShowTopRecordsAPIRequest(v *TaobaoDegoperationShowTopRecordsAPIRequest) {
+	v.Reset()
+	poolTaobaoDegoperationShowTopRecordsAPIRequest.Put(v)
 }

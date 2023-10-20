@@ -9,11 +9,6 @@ import (
 // alibaba.damai.maitix.opengateway.project.status.query
 //
 // queryProjectStatusByProjectId
-func AlibabaDamaiMaitixOpengatewayProjectStatusQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest, session string) (*maitix.AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIResponse, error) {
-	var resp maitix.AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMaitixOpengatewayProjectStatusQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest, resp *maitix.AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

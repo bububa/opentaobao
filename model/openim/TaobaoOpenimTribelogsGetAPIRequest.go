@@ -2,6 +2,7 @@ package openim
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoOpenimTribelogsGetAPIRequest struct {
 // NewTaobaoOpenimTribelogsGetRequest 初始化TaobaoOpenimTribelogsGetAPIRequest对象
 func NewTaobaoOpenimTribelogsGetRequest() *TaobaoOpenimTribelogsGetAPIRequest {
 	return &TaobaoOpenimTribelogsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenimTribelogsGetAPIRequest) Reset() {
+	r._tribeId = ""
+	r._next = ""
+	r._begin = 0
+	r._end = 0
+	r._count = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoOpenimTribelogsGetAPIRequest) SetCount(_count int64) error {
 // GetCount Count Getter
 func (r TaobaoOpenimTribelogsGetAPIRequest) GetCount() int64 {
 	return r._count
+}
+
+var poolTaobaoOpenimTribelogsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenimTribelogsGetRequest()
+	},
+}
+
+// GetTaobaoOpenimTribelogsGetRequest 从 sync.Pool 获取 TaobaoOpenimTribelogsGetAPIRequest
+func GetTaobaoOpenimTribelogsGetAPIRequest() *TaobaoOpenimTribelogsGetAPIRequest {
+	return poolTaobaoOpenimTribelogsGetAPIRequest.Get().(*TaobaoOpenimTribelogsGetAPIRequest)
+}
+
+// ReleaseTaobaoOpenimTribelogsGetAPIRequest 将 TaobaoOpenimTribelogsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenimTribelogsGetAPIRequest(v *TaobaoOpenimTribelogsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenimTribelogsGetAPIRequest.Put(v)
 }

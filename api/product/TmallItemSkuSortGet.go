@@ -9,11 +9,6 @@ import (
 // tmall.item.sku.sort.get
 //
 // sku销售属性顺序获取
-func TmallItemSkuSortGet(clt *core.SDKClient, req *product.TmallItemSkuSortGetAPIRequest, session string) (*product.TmallItemSkuSortGetAPIResponse, error) {
-	var resp product.TmallItemSkuSortGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallItemSkuSortGet(clt *core.SDKClient, req *product.TmallItemSkuSortGetAPIRequest, resp *product.TmallItemSkuSortGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

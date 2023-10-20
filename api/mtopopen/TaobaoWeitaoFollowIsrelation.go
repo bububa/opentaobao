@@ -9,11 +9,6 @@ import (
 // taobao.weitao.follow.isrelation
 //
 // 判断用户是否关注对应的公共账号
-func TaobaoWeitaoFollowIsrelation(clt *core.SDKClient, req *mtopopen.TaobaoWeitaoFollowIsrelationAPIRequest, session string) (*mtopopen.TaobaoWeitaoFollowIsrelationAPIResponse, error) {
-	var resp mtopopen.TaobaoWeitaoFollowIsrelationAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWeitaoFollowIsrelation(clt *core.SDKClient, req *mtopopen.TaobaoWeitaoFollowIsrelationAPIRequest, resp *mtopopen.TaobaoWeitaoFollowIsrelationAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

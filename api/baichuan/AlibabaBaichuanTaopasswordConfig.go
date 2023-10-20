@@ -9,11 +9,6 @@ import (
 // alibaba.baichuan.taopassword.config
 //
 // 百川淘口令规则配置接口
-func AlibabaBaichuanTaopasswordConfig(clt *core.SDKClient, req *baichuan.AlibabaBaichuanTaopasswordConfigAPIRequest, session string) (*baichuan.AlibabaBaichuanTaopasswordConfigAPIResponse, error) {
-	var resp baichuan.AlibabaBaichuanTaopasswordConfigAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaBaichuanTaopasswordConfig(clt *core.SDKClient, req *baichuan.AlibabaBaichuanTaopasswordConfigAPIRequest, resp *baichuan.AlibabaBaichuanTaopasswordConfigAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

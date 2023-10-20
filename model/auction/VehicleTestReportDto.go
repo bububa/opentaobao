@@ -1,5 +1,9 @@
 package auction
 
+import (
+	"sync"
+)
+
 // VehicleTestReportDto 结构体
 type VehicleTestReportDto struct {
 	// 复核vin码
@@ -14,4 +18,26 @@ type VehicleTestReportDto struct {
 	Datestamp int64 `json:"datestamp,omitempty" xml:"datestamp,omitempty"`
 	// 是否有生成报告，true 有，false 未生成
 	HasReport bool `json:"has_report,omitempty" xml:"has_report,omitempty"`
+}
+
+var poolVehicleTestReportDto = sync.Pool{
+	New: func() any {
+		return new(VehicleTestReportDto)
+	},
+}
+
+// GetVehicleTestReportDto() 从对象池中获取VehicleTestReportDto
+func GetVehicleTestReportDto() *VehicleTestReportDto {
+	return poolVehicleTestReportDto.Get().(*VehicleTestReportDto)
+}
+
+// ReleaseVehicleTestReportDto 释放VehicleTestReportDto
+func ReleaseVehicleTestReportDto(v *VehicleTestReportDto) {
+	v.ReviewVin = ""
+	v.OriginVin = ""
+	v.ReportUrl = ""
+	v.Attribute = ""
+	v.Datestamp = 0
+	v.HasReport = false
+	poolVehicleTestReportDto.Put(v)
 }

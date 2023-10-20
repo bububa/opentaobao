@@ -1,5 +1,9 @@
 package eleenterpriseordernew
 
+import (
+	"sync"
+)
+
 // StandardOrderTrackingInfoDto 结构体
 type StandardOrderTrackingInfoDto struct {
 	// 餐品
@@ -58,4 +62,48 @@ type StandardOrderTrackingInfoDto struct {
 	ButtonCode int64 `json:"button_code,omitempty" xml:"button_code,omitempty"`
 	// 状态-兼容旧版本
 	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
+}
+
+var poolStandardOrderTrackingInfoDto = sync.Pool{
+	New: func() any {
+		return new(StandardOrderTrackingInfoDto)
+	},
+}
+
+// GetStandardOrderTrackingInfoDto() 从对象池中获取StandardOrderTrackingInfoDto
+func GetStandardOrderTrackingInfoDto() *StandardOrderTrackingInfoDto {
+	return poolStandardOrderTrackingInfoDto.Get().(*StandardOrderTrackingInfoDto)
+}
+
+// ReleaseStandardOrderTrackingInfoDto 释放StandardOrderTrackingInfoDto
+func ReleaseStandardOrderTrackingInfoDto(v *StandardOrderTrackingInfoDto) {
+	v.FoodsInfos = v.FoodsInfos[:0]
+	v.OrderExtras = v.OrderExtras[:0]
+	v.BNo = ""
+	v.SerialNumber = ""
+	v.OrderId = ""
+	v.EntFee = ""
+	v.Remark = ""
+	v.TotalFee = ""
+	v.CostCenterName = ""
+	v.TaxFee = ""
+	v.ReceivePlanTime = ""
+	v.EmployeeFee = ""
+	v.ButtonText = ""
+	v.ButtonUrl = ""
+	v.DeliveryanPhone = ""
+	v.Extra = ""
+	v.UNo = ""
+	v.OrderNo = ""
+	v.DeliverymanName = ""
+	v.DeliverymanPhone = ""
+	v.AddressInfo = nil
+	v.RestaurantInfo = nil
+	v.CreatedAt = 0
+	v.Status = 0
+	v.DeliveryDate = 0
+	v.ShowButton = 0
+	v.ButtonCode = 0
+	v.StatusCode = 0
+	poolStandardOrderTrackingInfoDto.Put(v)
 }

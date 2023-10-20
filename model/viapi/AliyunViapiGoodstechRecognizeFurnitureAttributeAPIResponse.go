@@ -2,6 +2,7 @@ package viapi
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponse struct {
 	AliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponseModel).Reset()
+}
+
 // AliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponseModel is 家居属性识别 成功返回结果
 type AliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliyun_viapi_goodstech_recognize_furniture_attribute_response"`
@@ -24,4 +31,28 @@ type AliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponseModel struct {
 	TaobaoRequestId string `json:"taobao_request_id,omitempty" xml:"taobao_request_id,omitempty"`
 	// 系统自动生成
 	Data *AliyunViapiGoodstechRecognizeFurnitureAttributeData `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TaobaoRequestId = ""
+	m.Data = nil
+}
+
+var poolAliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponse)
+	},
+}
+
+// GetAliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponse 从 sync.Pool 获取 AliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponse
+func GetAliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponse() *AliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponse {
+	return poolAliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponse.Get().(*AliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponse)
+}
+
+// ReleaseAliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponse 将 AliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponse 保存到 sync.Pool
+func ReleaseAliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponse(v *AliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponse) {
+	v.Reset()
+	poolAliyunViapiGoodstechRecognizeFurnitureAttributeAPIResponse.Put(v)
 }

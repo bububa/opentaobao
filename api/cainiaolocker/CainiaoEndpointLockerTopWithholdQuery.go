@@ -9,11 +9,6 @@ import (
 // cainiao.endpoint.locker.top.withhold.query
 //
 // 查询是否有代扣欠款，是否签署代扣协议。
-func CainiaoEndpointLockerTopWithholdQuery(clt *core.SDKClient, req *cainiaolocker.CainiaoEndpointLockerTopWithholdQueryAPIRequest, session string) (*cainiaolocker.CainiaoEndpointLockerTopWithholdQueryAPIResponse, error) {
-	var resp cainiaolocker.CainiaoEndpointLockerTopWithholdQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoEndpointLockerTopWithholdQuery(clt *core.SDKClient, req *cainiaolocker.CainiaoEndpointLockerTopWithholdQueryAPIRequest, resp *cainiaolocker.CainiaoEndpointLockerTopWithholdQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

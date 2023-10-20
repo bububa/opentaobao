@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // SupplierTopQueryModel 结构体
 type SupplierTopQueryModel struct {
 	// 订单状态列表:1-未订购,2-订购中,3-订购中,4-订购失败,5-订购成功,6-订购取消
@@ -20,4 +24,29 @@ type SupplierTopQueryModel struct {
 	PageNum int64 `json:"page_num,omitempty" xml:"page_num,omitempty"`
 	// 分页数量
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolSupplierTopQueryModel = sync.Pool{
+	New: func() any {
+		return new(SupplierTopQueryModel)
+	},
+}
+
+// GetSupplierTopQueryModel() 从对象池中获取SupplierTopQueryModel
+func GetSupplierTopQueryModel() *SupplierTopQueryModel {
+	return poolSupplierTopQueryModel.Get().(*SupplierTopQueryModel)
+}
+
+// ReleaseSupplierTopQueryModel 释放SupplierTopQueryModel
+func ReleaseSupplierTopQueryModel(v *SupplierTopQueryModel) {
+	v.OrderStatusList = v.OrderStatusList[:0]
+	v.BizType = ""
+	v.DistributorName = ""
+	v.EndTime = ""
+	v.OrderNo = ""
+	v.PhoneNo = ""
+	v.StartTime = ""
+	v.PageNum = 0
+	v.PageSize = 0
+	poolSupplierTopQueryModel.Put(v)
 }

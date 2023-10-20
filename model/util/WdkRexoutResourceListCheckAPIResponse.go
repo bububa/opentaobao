@@ -2,6 +2,7 @@ package util
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type WdkRexoutResourceListCheckAPIResponse struct {
 	model.CommonResponse
 	WdkRexoutResourceListCheckAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *WdkRexoutResourceListCheckAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.WdkRexoutResourceListCheckAPIResponseModel).Reset()
 }
 
 // WdkRexoutResourceListCheckAPIResponseModel is ReX应用中心资源更新检测-外部 成功返回结果
@@ -28,4 +35,30 @@ type WdkRexoutResourceListCheckAPIResponseModel struct {
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 错误码
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *WdkRexoutResourceListCheckAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = m.Data[:0]
+	m.Succeed = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+}
+
+var poolWdkRexoutResourceListCheckAPIResponse = sync.Pool{
+	New: func() any {
+		return new(WdkRexoutResourceListCheckAPIResponse)
+	},
+}
+
+// GetWdkRexoutResourceListCheckAPIResponse 从 sync.Pool 获取 WdkRexoutResourceListCheckAPIResponse
+func GetWdkRexoutResourceListCheckAPIResponse() *WdkRexoutResourceListCheckAPIResponse {
+	return poolWdkRexoutResourceListCheckAPIResponse.Get().(*WdkRexoutResourceListCheckAPIResponse)
+}
+
+// ReleaseWdkRexoutResourceListCheckAPIResponse 将 WdkRexoutResourceListCheckAPIResponse 保存到 sync.Pool
+func ReleaseWdkRexoutResourceListCheckAPIResponse(v *WdkRexoutResourceListCheckAPIResponse) {
+	v.Reset()
+	poolWdkRexoutResourceListCheckAPIResponse.Put(v)
 }

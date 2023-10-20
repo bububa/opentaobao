@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // Floor 结构体
 type Floor struct {
 	// 面积
@@ -46,4 +50,42 @@ type Floor struct {
 	GeoFloorId int64 `json:"geo_floor_id,omitempty" xml:"geo_floor_id,omitempty"`
 	// isDelete
 	IsDelete bool `json:"is_delete,omitempty" xml:"is_delete,omitempty"`
+}
+
+var poolFloor = sync.Pool{
+	New: func() any {
+		return new(Floor)
+	},
+}
+
+// GetFloor() 从对象池中获取Floor
+func GetFloor() *Floor {
+	return poolFloor.Get().(*Floor)
+}
+
+// ReleaseFloor 释放Floor
+func ReleaseFloor(v *Floor) {
+	v.Area = ""
+	v.Height = ""
+	v.Description = ""
+	v.BuildingName = ""
+	v.CampusName = ""
+	v.Code = ""
+	v.Name = ""
+	v.Modifier = ""
+	v.Creator = ""
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.Uuid = ""
+	v.HeightStr = ""
+	v.AreaStr = ""
+	v.OrderNo = 0
+	v.BuildingId = 0
+	v.CampusId = 0
+	v.CompanyId = 0
+	v.Id = 0
+	v.Status = 0
+	v.GeoFloorId = 0
+	v.IsDelete = false
+	poolFloor.Put(v)
 }

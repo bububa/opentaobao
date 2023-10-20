@@ -9,11 +9,6 @@ import (
 // alibaba.legal.standpoint.collectionstandpoint.query
 //
 // 查询收藏口径
-func AlibabaLegalStandpointCollectionstandpointQuery(clt *core.SDKClient, req *legalsuit.AlibabaLegalStandpointCollectionstandpointQueryAPIRequest, session string) (*legalsuit.AlibabaLegalStandpointCollectionstandpointQueryAPIResponse, error) {
-	var resp legalsuit.AlibabaLegalStandpointCollectionstandpointQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLegalStandpointCollectionstandpointQuery(clt *core.SDKClient, req *legalsuit.AlibabaLegalStandpointCollectionstandpointQueryAPIRequest, resp *legalsuit.AlibabaLegalStandpointCollectionstandpointQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

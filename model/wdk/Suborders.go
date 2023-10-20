@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // Suborders 结构体
 type Suborders struct {
 	// 组合品列表
@@ -36,4 +40,37 @@ type Suborders struct {
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 	// 是否为组合品
 	CombineItem bool `json:"combine_item,omitempty" xml:"combine_item,omitempty"`
+}
+
+var poolSuborders = sync.Pool{
+	New: func() any {
+		return new(Suborders)
+	},
+}
+
+// GetSuborders() 从对象池中获取Suborders
+func GetSuborders() *Suborders {
+	return poolSuborders.Get().(*Suborders)
+}
+
+// ReleaseSuborders 释放Suborders
+func ReleaseSuborders(v *Suborders) {
+	v.CombineItemList = v.CombineItemList[:0]
+	v.OutSubOrderId = ""
+	v.SkuCode = ""
+	v.AuctionTitle = ""
+	v.BuyAmountStock = ""
+	v.SaleUnit = ""
+	v.StockUnit = ""
+	v.BizSubOrderId = 0
+	v.AuctionPrice = 0
+	v.BuyAmountSale = 0
+	v.PayFee = 0
+	v.OriginFee = 0
+	v.DiscountFee = 0
+	v.DiscountMerchantFee = 0
+	v.DiscountPlatformFee = 0
+	v.Price = 0
+	v.CombineItem = false
+	poolSuborders.Put(v)
 }

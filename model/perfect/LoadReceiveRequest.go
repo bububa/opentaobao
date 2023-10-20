@@ -1,5 +1,9 @@
 package perfect
 
+import (
+	"sync"
+)
+
 // LoadReceiveRequest 结构体
 type LoadReceiveRequest struct {
 	// 装箱单
@@ -12,4 +16,25 @@ type LoadReceiveRequest struct {
 	OperatorCode string `json:"operator_code,omitempty" xml:"operator_code,omitempty"`
 	// 仓code
 	WarehouseCode string `json:"warehouse_code,omitempty" xml:"warehouse_code,omitempty"`
+}
+
+var poolLoadReceiveRequest = sync.Pool{
+	New: func() any {
+		return new(LoadReceiveRequest)
+	},
+}
+
+// GetLoadReceiveRequest() 从对象池中获取LoadReceiveRequest
+func GetLoadReceiveRequest() *LoadReceiveRequest {
+	return poolLoadReceiveRequest.Get().(*LoadReceiveRequest)
+}
+
+// ReleaseLoadReceiveRequest 释放LoadReceiveRequest
+func ReleaseLoadReceiveRequest(v *LoadReceiveRequest) {
+	v.ContainerOrders = v.ContainerOrders[:0]
+	v.OperateTime = ""
+	v.Attributes = ""
+	v.OperatorCode = ""
+	v.WarehouseCode = ""
+	poolLoadReceiveRequest.Put(v)
 }

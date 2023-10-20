@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest struct {
 // NewAlibabaScbpAdTargetTagGetAllEnableTagListRequest 初始化AlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest对象
 func NewAlibabaScbpAdTargetTagGetAllEnableTagListRequest() *AlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest {
 	return &AlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest) Reset() {
+	r._type = ""
+	r._topContext = nil
+	r._campaignId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest) SetCampaignId(_cam
 // GetCampaignId CampaignId Getter
 func (r AlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
+}
+
+var poolAlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdTargetTagGetAllEnableTagListRequest()
+	},
+}
+
+// GetAlibabaScbpAdTargetTagGetAllEnableTagListRequest 从 sync.Pool 获取 AlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest
+func GetAlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest() *AlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest {
+	return poolAlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest.Get().(*AlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest 将 AlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest(v *AlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest.Put(v)
 }

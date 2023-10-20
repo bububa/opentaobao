@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // MaterialRequest 结构体
 type MaterialRequest struct {
 	// 【创建时必传】图片URL [建议不超过5个图片，第一个为主图，每个URL不超过256字节]
@@ -16,4 +20,27 @@ type MaterialRequest struct {
 	MobileItemDescribeText string `json:"mobile_item_describe_text,omitempty" xml:"mobile_item_describe_text,omitempty"`
 	// 业务请求时间。时间戳。 毫秒
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
+}
+
+var poolMaterialRequest = sync.Pool{
+	New: func() any {
+		return new(MaterialRequest)
+	},
+}
+
+// GetMaterialRequest() 从对象池中获取MaterialRequest
+func GetMaterialRequest() *MaterialRequest {
+	return poolMaterialRequest.Get().(*MaterialRequest)
+}
+
+// ReleaseMaterialRequest 释放MaterialRequest
+func ReleaseMaterialRequest(v *MaterialRequest) {
+	v.ImgUrl = v.ImgUrl[:0]
+	v.RequestId = ""
+	v.ItemId = ""
+	v.Title = ""
+	v.ItemDescribeText = ""
+	v.MobileItemDescribeText = ""
+	v.RequestTime = 0
+	poolMaterialRequest.Put(v)
 }

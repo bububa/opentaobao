@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.member.add.agreement
 //
 // 记录用户是否授权协议
-func AlitripMerchantGalaxyMemberAddAgreement(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyMemberAddAgreementAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyMemberAddAgreementAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyMemberAddAgreementAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyMemberAddAgreement(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyMemberAddAgreementAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyMemberAddAgreementAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

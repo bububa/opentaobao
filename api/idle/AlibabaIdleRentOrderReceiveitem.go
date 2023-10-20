@@ -9,11 +9,6 @@ import (
 // alibaba.idle.rent.order.receiveitem
 //
 // 确认揽收/签收
-func AlibabaIdleRentOrderReceiveitem(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderReceiveitemAPIRequest, session string) (*idle.AlibabaIdleRentOrderReceiveitemAPIResponse, error) {
-	var resp idle.AlibabaIdleRentOrderReceiveitemAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleRentOrderReceiveitem(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderReceiveitemAPIRequest, resp *idle.AlibabaIdleRentOrderReceiveitemAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.idle.appraise.order.query
 //
 // 鉴定商调用该接口获取订单状态
-func AlibabaIdleAppraiseOrderQuery(clt *core.SDKClient, req *idle.AlibabaIdleAppraiseOrderQueryAPIRequest, session string) (*idle.AlibabaIdleAppraiseOrderQueryAPIResponse, error) {
-	var resp idle.AlibabaIdleAppraiseOrderQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleAppraiseOrderQuery(clt *core.SDKClient, req *idle.AlibabaIdleAppraiseOrderQueryAPIRequest, resp *idle.AlibabaIdleAppraiseOrderQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

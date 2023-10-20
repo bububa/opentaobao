@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // ApiReturnningWrap 结构体
 type ApiReturnningWrap struct {
 	// version
@@ -26,4 +30,32 @@ type ApiReturnningWrap struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 地图楼层id
 	GeoFloorId int64 `json:"geo_floor_id,omitempty" xml:"geo_floor_id,omitempty"`
+}
+
+var poolApiReturnningWrap = sync.Pool{
+	New: func() any {
+		return new(ApiReturnningWrap)
+	},
+}
+
+// GetApiReturnningWrap() 从对象池中获取ApiReturnningWrap
+func GetApiReturnningWrap() *ApiReturnningWrap {
+	return poolApiReturnningWrap.Get().(*ApiReturnningWrap)
+}
+
+// ReleaseApiReturnningWrap 释放ApiReturnningWrap
+func ReleaseApiReturnningWrap(v *ApiReturnningWrap) {
+	v.Version = ""
+	v.Uuid = ""
+	v.LastUpdateTime = ""
+	v.Name = ""
+	v.Code = ""
+	v.SpaceType = ""
+	v.TypeName = ""
+	v.TypeCode = ""
+	v.FtId = ""
+	v.TypeId = 0
+	v.Id = 0
+	v.GeoFloorId = 0
+	poolApiReturnningWrap.Put(v)
 }

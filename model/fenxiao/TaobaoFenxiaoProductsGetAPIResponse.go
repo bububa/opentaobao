@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoFenxiaoProductsGetAPIResponse struct {
 	TaobaoFenxiaoProductsGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoFenxiaoProductsGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFenxiaoProductsGetAPIResponseModel).Reset()
+}
+
 // TaobaoFenxiaoProductsGetAPIResponseModel is 查询产品列表 成功返回结果
 type TaobaoFenxiaoProductsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_products_get_response"`
@@ -24,4 +31,28 @@ type TaobaoFenxiaoProductsGetAPIResponseModel struct {
 	Products []FenxiaoProduct `json:"products,omitempty" xml:"products>fenxiao_product,omitempty"`
 	// 查询结果记录数
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFenxiaoProductsGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Products = m.Products[:0]
+	m.TotalResults = 0
+}
+
+var poolTaobaoFenxiaoProductsGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFenxiaoProductsGetAPIResponse)
+	},
+}
+
+// GetTaobaoFenxiaoProductsGetAPIResponse 从 sync.Pool 获取 TaobaoFenxiaoProductsGetAPIResponse
+func GetTaobaoFenxiaoProductsGetAPIResponse() *TaobaoFenxiaoProductsGetAPIResponse {
+	return poolTaobaoFenxiaoProductsGetAPIResponse.Get().(*TaobaoFenxiaoProductsGetAPIResponse)
+}
+
+// ReleaseTaobaoFenxiaoProductsGetAPIResponse 将 TaobaoFenxiaoProductsGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFenxiaoProductsGetAPIResponse(v *TaobaoFenxiaoProductsGetAPIResponse) {
+	v.Reset()
+	poolTaobaoFenxiaoProductsGetAPIResponse.Put(v)
 }

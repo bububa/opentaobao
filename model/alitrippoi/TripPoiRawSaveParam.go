@@ -1,5 +1,9 @@
 package alitrippoi
 
+import (
+	"sync"
+)
+
 // TripPoiRawSaveParam 结构体
 type TripPoiRawSaveParam struct {
 	// 图片urls
@@ -52,4 +56,45 @@ type TripPoiRawSaveParam struct {
 	Lat string `json:"lat,omitempty" xml:"lat,omitempty"`
 	// poi状态
 	OpenStatus int64 `json:"open_status,omitempty" xml:"open_status,omitempty"`
+}
+
+var poolTripPoiRawSaveParam = sync.Pool{
+	New: func() any {
+		return new(TripPoiRawSaveParam)
+	},
+}
+
+// GetTripPoiRawSaveParam() 从对象池中获取TripPoiRawSaveParam
+func GetTripPoiRawSaveParam() *TripPoiRawSaveParam {
+	return poolTripPoiRawSaveParam.Get().(*TripPoiRawSaveParam)
+}
+
+// ReleaseTripPoiRawSaveParam 释放TripPoiRawSaveParam
+func ReleaseTripPoiRawSaveParam(v *TripPoiRawSaveParam) {
+	v.PhotoUrls = v.PhotoUrls[:0]
+	v.CountryName = ""
+	v.LocalName = ""
+	v.AlternativePhone = ""
+	v.NameEn = ""
+	v.VideoUrl = ""
+	v.CountryCode = ""
+	v.Lng = ""
+	v.Bios = ""
+	v.City = ""
+	v.BusinessHour = ""
+	v.Category = ""
+	v.SourceBizId = ""
+	v.ExtendMap = ""
+	v.PostalCode = ""
+	v.MainPhone = ""
+	v.Source = ""
+	v.Address = ""
+	v.LocalLanguage = ""
+	v.Description = ""
+	v.Name = ""
+	v.Province = ""
+	v.WebSiteUrl = ""
+	v.Lat = ""
+	v.OpenStatus = 0
+	poolTripPoiRawSaveParam.Put(v)
 }

@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type TaobaoLogisticsOnlineConfirmAPIResponse struct {
 	TaobaoLogisticsOnlineConfirmAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoLogisticsOnlineConfirmAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLogisticsOnlineConfirmAPIResponseModel).Reset()
+}
+
 // TaobaoLogisticsOnlineConfirmAPIResponseModel is 确认发货通知接口 成功返回结果
 type TaobaoLogisticsOnlineConfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_online_confirm_response"`
@@ -23,4 +30,27 @@ type TaobaoLogisticsOnlineConfirmAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 只返回is_success：是否成功。
 	Shipping *Shipping `json:"shipping,omitempty" xml:"shipping,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsOnlineConfirmAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Shipping = nil
+}
+
+var poolTaobaoLogisticsOnlineConfirmAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLogisticsOnlineConfirmAPIResponse)
+	},
+}
+
+// GetTaobaoLogisticsOnlineConfirmAPIResponse 从 sync.Pool 获取 TaobaoLogisticsOnlineConfirmAPIResponse
+func GetTaobaoLogisticsOnlineConfirmAPIResponse() *TaobaoLogisticsOnlineConfirmAPIResponse {
+	return poolTaobaoLogisticsOnlineConfirmAPIResponse.Get().(*TaobaoLogisticsOnlineConfirmAPIResponse)
+}
+
+// ReleaseTaobaoLogisticsOnlineConfirmAPIResponse 将 TaobaoLogisticsOnlineConfirmAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLogisticsOnlineConfirmAPIResponse(v *TaobaoLogisticsOnlineConfirmAPIResponse) {
+	v.Reset()
+	poolTaobaoLogisticsOnlineConfirmAPIResponse.Put(v)
 }

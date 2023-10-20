@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest struct {
 // NewAlibabaAlihealthDrugtraceTopYljgQueryListpartsRequest 初始化AlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest对象
 func NewAlibabaAlihealthDrugtraceTopYljgQueryListpartsRequest() *AlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest {
 	return &AlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest) Reset() {
+	r._refEntId = ""
+	r._entName = ""
+	r._refPartnerId = ""
+	r._beginDate = ""
+	r._endDate = ""
+	r._pageSize = 0
+	r._page = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest) SetPage(_page
 // GetPage Page Getter
 func (r AlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest) GetPage() int64 {
 	return r._page
+}
+
+var poolAlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugtraceTopYljgQueryListpartsRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugtraceTopYljgQueryListpartsRequest 从 sync.Pool 获取 AlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest
+func GetAlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest() *AlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest {
+	return poolAlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest.Get().(*AlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest 将 AlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest(v *AlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugtraceTopYljgQueryListpartsAPIRequest.Put(v)
 }

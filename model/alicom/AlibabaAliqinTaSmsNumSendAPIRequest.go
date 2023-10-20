@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AlibabaAliqinTaSmsNumSendAPIRequest struct {
 // NewAlibabaAliqinTaSmsNumSendRequest 初始化AlibabaAliqinTaSmsNumSendAPIRequest对象
 func NewAlibabaAliqinTaSmsNumSendRequest() *AlibabaAliqinTaSmsNumSendAPIRequest {
 	return &AlibabaAliqinTaSmsNumSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinTaSmsNumSendAPIRequest) Reset() {
+	r._recNum = ""
+	r._smsTemplateCode = ""
+	r._extend = ""
+	r._smsFreeSignName = ""
+	r._smsParam = ""
+	r._smsType = ""
+	r._extendCode = ""
+	r._extendName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *AlibabaAliqinTaSmsNumSendAPIRequest) SetExtendName(_extendName string) 
 // GetExtendName ExtendName Getter
 func (r AlibabaAliqinTaSmsNumSendAPIRequest) GetExtendName() string {
 	return r._extendName
+}
+
+var poolAlibabaAliqinTaSmsNumSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinTaSmsNumSendRequest()
+	},
+}
+
+// GetAlibabaAliqinTaSmsNumSendRequest 从 sync.Pool 获取 AlibabaAliqinTaSmsNumSendAPIRequest
+func GetAlibabaAliqinTaSmsNumSendAPIRequest() *AlibabaAliqinTaSmsNumSendAPIRequest {
+	return poolAlibabaAliqinTaSmsNumSendAPIRequest.Get().(*AlibabaAliqinTaSmsNumSendAPIRequest)
+}
+
+// ReleaseAlibabaAliqinTaSmsNumSendAPIRequest 将 AlibabaAliqinTaSmsNumSendAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinTaSmsNumSendAPIRequest(v *AlibabaAliqinTaSmsNumSendAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinTaSmsNumSendAPIRequest.Put(v)
 }

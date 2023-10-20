@@ -2,6 +2,7 @@ package mei
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TmallCrmMemberPointChangeAPIRequest struct {
 // NewTmallCrmMemberPointChangeRequest 初始化TmallCrmMemberPointChangeAPIRequest对象
 func NewTmallCrmMemberPointChangeRequest() *TmallCrmMemberPointChangeAPIRequest {
 	return &TmallCrmMemberPointChangeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCrmMemberPointChangeAPIRequest) Reset() {
+	r._type = ""
+	r._bizCode = ""
+	r._bizDetail = ""
+	r._userNick = ""
+	r._point = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TmallCrmMemberPointChangeAPIRequest) SetPoint(_point int64) error {
 // GetPoint Point Getter
 func (r TmallCrmMemberPointChangeAPIRequest) GetPoint() int64 {
 	return r._point
+}
+
+var poolTmallCrmMemberPointChangeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCrmMemberPointChangeRequest()
+	},
+}
+
+// GetTmallCrmMemberPointChangeRequest 从 sync.Pool 获取 TmallCrmMemberPointChangeAPIRequest
+func GetTmallCrmMemberPointChangeAPIRequest() *TmallCrmMemberPointChangeAPIRequest {
+	return poolTmallCrmMemberPointChangeAPIRequest.Get().(*TmallCrmMemberPointChangeAPIRequest)
+}
+
+// ReleaseTmallCrmMemberPointChangeAPIRequest 将 TmallCrmMemberPointChangeAPIRequest 放入 sync.Pool
+func ReleaseTmallCrmMemberPointChangeAPIRequest(v *TmallCrmMemberPointChangeAPIRequest) {
+	v.Reset()
+	poolTmallCrmMemberPointChangeAPIRequest.Put(v)
 }

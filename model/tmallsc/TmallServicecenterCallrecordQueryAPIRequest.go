@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallServicecenterCallrecordQueryAPIRequest struct {
 // NewTmallServicecenterCallrecordQueryRequest 初始化TmallServicecenterCallrecordQueryAPIRequest对象
 func NewTmallServicecenterCallrecordQueryRequest() *TmallServicecenterCallrecordQueryAPIRequest {
 	return &TmallServicecenterCallrecordQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterCallrecordQueryAPIRequest) Reset() {
+	r._bizIdentifyType = ""
+	r._bizIdentify = ""
+	r._pageNum = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallServicecenterCallrecordQueryAPIRequest) SetPageSize(_pageSize int6
 // GetPageSize PageSize Getter
 func (r TmallServicecenterCallrecordQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTmallServicecenterCallrecordQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterCallrecordQueryRequest()
+	},
+}
+
+// GetTmallServicecenterCallrecordQueryRequest 从 sync.Pool 获取 TmallServicecenterCallrecordQueryAPIRequest
+func GetTmallServicecenterCallrecordQueryAPIRequest() *TmallServicecenterCallrecordQueryAPIRequest {
+	return poolTmallServicecenterCallrecordQueryAPIRequest.Get().(*TmallServicecenterCallrecordQueryAPIRequest)
+}
+
+// ReleaseTmallServicecenterCallrecordQueryAPIRequest 将 TmallServicecenterCallrecordQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterCallrecordQueryAPIRequest(v *TmallServicecenterCallrecordQueryAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterCallrecordQueryAPIRequest.Put(v)
 }

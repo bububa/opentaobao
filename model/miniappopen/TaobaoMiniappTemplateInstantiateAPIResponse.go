@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoMiniappTemplateInstantiateAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappTemplateInstantiateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappTemplateInstantiateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMiniappTemplateInstantiateAPIResponseModel).Reset()
 }
 
 // TaobaoMiniappTemplateInstantiateAPIResponseModel is 构建实例化应用 成功返回结果
@@ -36,4 +43,34 @@ type TaobaoMiniappTemplateInstantiateAPIResponseModel struct {
 	PreViewUrl string `json:"pre_view_url,omitempty" xml:"pre_view_url,omitempty"`
 	// 小程序简称。在小程序Loading动画、首页标题、「更多」菜单标题上优先展示简称。
 	AppAlias string `json:"app_alias,omitempty" xml:"app_alias,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappTemplateInstantiateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Appkey = ""
+	m.AppId = ""
+	m.AppName = ""
+	m.AppDescription = ""
+	m.AppIcon = ""
+	m.AppVersion = ""
+	m.PreViewUrl = ""
+	m.AppAlias = ""
+}
+
+var poolTaobaoMiniappTemplateInstantiateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMiniappTemplateInstantiateAPIResponse)
+	},
+}
+
+// GetTaobaoMiniappTemplateInstantiateAPIResponse 从 sync.Pool 获取 TaobaoMiniappTemplateInstantiateAPIResponse
+func GetTaobaoMiniappTemplateInstantiateAPIResponse() *TaobaoMiniappTemplateInstantiateAPIResponse {
+	return poolTaobaoMiniappTemplateInstantiateAPIResponse.Get().(*TaobaoMiniappTemplateInstantiateAPIResponse)
+}
+
+// ReleaseTaobaoMiniappTemplateInstantiateAPIResponse 将 TaobaoMiniappTemplateInstantiateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMiniappTemplateInstantiateAPIResponse(v *TaobaoMiniappTemplateInstantiateAPIResponse) {
+	v.Reset()
+	poolTaobaoMiniappTemplateInstantiateAPIResponse.Put(v)
 }

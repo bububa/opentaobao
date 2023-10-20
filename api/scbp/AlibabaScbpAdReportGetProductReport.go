@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.ad.report.get.product.report
 //
 // 产品报告
-func AlibabaScbpAdReportGetProductReport(clt *core.SDKClient, req *scbp.AlibabaScbpAdReportGetProductReportAPIRequest, session string) (*scbp.AlibabaScbpAdReportGetProductReportAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdReportGetProductReportAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAdReportGetProductReport(clt *core.SDKClient, req *scbp.AlibabaScbpAdReportGetProductReportAPIRequest, resp *scbp.AlibabaScbpAdReportGetProductReportAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

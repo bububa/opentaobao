@@ -1,5 +1,9 @@
 package fpm
 
+import (
+	"sync"
+)
+
 // RegisterInvoiceDto 结构体
 type RegisterInvoiceDto struct {
 	// 发票行列表
@@ -106,4 +110,72 @@ type RegisterInvoiceDto struct {
 	RegBizIdentityId int64 `json:"reg_biz_identity_id,omitempty" xml:"reg_biz_identity_id,omitempty"`
 	// 纸票是否到票才认证
 	PaperOwnCertifyFlag bool `json:"paper_own_certify_flag,omitempty" xml:"paper_own_certify_flag,omitempty"`
+}
+
+var poolRegisterInvoiceDto = sync.Pool{
+	New: func() any {
+		return new(RegisterInvoiceDto)
+	},
+}
+
+// GetRegisterInvoiceDto() 从对象池中获取RegisterInvoiceDto
+func GetRegisterInvoiceDto() *RegisterInvoiceDto {
+	return poolRegisterInvoiceDto.Get().(*RegisterInvoiceDto)
+}
+
+// ReleaseRegisterInvoiceDto 释放RegisterInvoiceDto
+func ReleaseRegisterInvoiceDto(v *RegisterInvoiceDto) {
+	v.LineList = v.LineList[:0]
+	v.InvoiceRemark = ""
+	v.SellerCountryCode = ""
+	v.PurchaserBankInfo = ""
+	v.SellerBankInfo = ""
+	v.PurchaserRegionCode = ""
+	v.PurchaserCode = ""
+	v.CipherText = ""
+	v.QrCodeCipherText = ""
+	v.InvoiceType = ""
+	v.InvoiceNo = ""
+	v.FileDownloadHttpUrl = ""
+	v.MachineCode = ""
+	v.ImageId = ""
+	v.InvoiceCode = ""
+	v.PurchaserName = ""
+	v.ScanAccount = ""
+	v.TaxRate = ""
+	v.ElectronicType = ""
+	v.SellerTaxNo = ""
+	v.IssueCountryType = ""
+	v.RegTime = ""
+	v.RelatedOrder = ""
+	v.PurchaserTaxNo = ""
+	v.ImageFileName = ""
+	v.RegisterChannel = ""
+	v.CheckSum = ""
+	v.TaxAmount = ""
+	v.IssuedSellerName = ""
+	v.ExcludingTaxAmount = ""
+	v.RegPlatformCode = ""
+	v.QrCodeFlag = ""
+	v.RegBizIdentityOu = ""
+	v.SellerName = ""
+	v.RegUser = ""
+	v.SellerCode = ""
+	v.PurchaserCountryCode = ""
+	v.Currency = ""
+	v.IssuedTaxNo = ""
+	v.EffectiveTaxAmount = ""
+	v.PurchaserContactInfo = ""
+	v.Amount = ""
+	v.SellerRegionCode = ""
+	v.InvoiceDate = ""
+	v.InvoiceMaterial = ""
+	v.SellerContactInfo = ""
+	v.AuthorizedDealer = ""
+	v.RegBizIdentityCode = ""
+	v.WaybillNo = ""
+	v.InvoiceTypeCode = ""
+	v.RegBizIdentityId = 0
+	v.PaperOwnCertifyFlag = false
+	poolRegisterInvoiceDto.Put(v)
 }

@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoTradeMemoAddAPIRequest struct {
 // NewTaobaoTradeMemoAddRequest 初始化TaobaoTradeMemoAddAPIRequest对象
 func NewTaobaoTradeMemoAddRequest() *TaobaoTradeMemoAddAPIRequest {
 	return &TaobaoTradeMemoAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTradeMemoAddAPIRequest) Reset() {
+	r._memo = ""
+	r._tid = 0
+	r._flag = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoTradeMemoAddAPIRequest) SetFlag(_flag int64) error {
 // GetFlag Flag Getter
 func (r TaobaoTradeMemoAddAPIRequest) GetFlag() int64 {
 	return r._flag
+}
+
+var poolTaobaoTradeMemoAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTradeMemoAddRequest()
+	},
+}
+
+// GetTaobaoTradeMemoAddRequest 从 sync.Pool 获取 TaobaoTradeMemoAddAPIRequest
+func GetTaobaoTradeMemoAddAPIRequest() *TaobaoTradeMemoAddAPIRequest {
+	return poolTaobaoTradeMemoAddAPIRequest.Get().(*TaobaoTradeMemoAddAPIRequest)
+}
+
+// ReleaseTaobaoTradeMemoAddAPIRequest 将 TaobaoTradeMemoAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTradeMemoAddAPIRequest(v *TaobaoTradeMemoAddAPIRequest) {
+	v.Reset()
+	poolTaobaoTradeMemoAddAPIRequest.Put(v)
 }

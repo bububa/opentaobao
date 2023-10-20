@@ -9,11 +9,6 @@ import (
 // alibaba.legal.suit.domination.push
 //
 // ISV推送管辖信息到诉讼平台
-func AlibabaLegalSuitDominationPush(clt *core.SDKClient, req *legalsuit.AlibabaLegalSuitDominationPushAPIRequest, session string) (*legalsuit.AlibabaLegalSuitDominationPushAPIResponse, error) {
-	var resp legalsuit.AlibabaLegalSuitDominationPushAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLegalSuitDominationPush(clt *core.SDKClient, req *legalsuit.AlibabaLegalSuitDominationPushAPIRequest, resp *legalsuit.AlibabaLegalSuitDominationPushAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

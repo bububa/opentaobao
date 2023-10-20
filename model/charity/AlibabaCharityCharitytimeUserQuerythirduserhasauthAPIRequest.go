@@ -2,6 +2,7 @@ package charity
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest struct {
 // NewAlibabaCharityCharitytimeUserQuerythirduserhasauthRequest 初始化AlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest对象
 func NewAlibabaCharityCharitytimeUserQuerythirduserhasauthRequest() *AlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest {
 	return &AlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest) Reset() {
+	r._queryThirdUserHasAuthHsfRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest) SetQueryT
 // GetQueryThirdUserHasAuthHsfRequest QueryThirdUserHasAuthHsfRequest Getter
 func (r AlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest) GetQueryThirdUserHasAuthHsfRequest() *QueryThirdUserHasAuthHsfRequest {
 	return r._queryThirdUserHasAuthHsfRequest
+}
+
+var poolAlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCharityCharitytimeUserQuerythirduserhasauthRequest()
+	},
+}
+
+// GetAlibabaCharityCharitytimeUserQuerythirduserhasauthRequest 从 sync.Pool 获取 AlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest
+func GetAlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest() *AlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest {
+	return poolAlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest.Get().(*AlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest)
+}
+
+// ReleaseAlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest 将 AlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest(v *AlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest) {
+	v.Reset()
+	poolAlibabaCharityCharitytimeUserQuerythirduserhasauthAPIRequest.Put(v)
 }

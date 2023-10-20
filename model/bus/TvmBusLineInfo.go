@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // TvmBusLineInfo 结构体
 type TvmBusLineInfo struct {
 	// 车次编号
@@ -42,4 +46,40 @@ type TvmBusLineInfo struct {
 	Distance int64 `json:"distance,omitempty" xml:"distance,omitempty"`
 	// 运行时长（分）
 	Runtime int64 `json:"runtime,omitempty" xml:"runtime,omitempty"`
+}
+
+var poolTvmBusLineInfo = sync.Pool{
+	New: func() any {
+		return new(TvmBusLineInfo)
+	},
+}
+
+// GetTvmBusLineInfo() 从对象池中获取TvmBusLineInfo
+func GetTvmBusLineInfo() *TvmBusLineInfo {
+	return poolTvmBusLineInfo.Get().(*TvmBusLineInfo)
+}
+
+// ReleaseTvmBusLineInfo 释放TvmBusLineInfo
+func ReleaseTvmBusLineInfo(v *TvmBusLineInfo) {
+	v.BusNumber = ""
+	v.BusType = ""
+	v.DepTime = ""
+	v.LastPlaceName = ""
+	v.StartCityName = ""
+	v.StartProvinceName = ""
+	v.StartStationAddress = ""
+	v.StartStationId = ""
+	v.StartStationName = ""
+	v.Terminal = ""
+	v.ToStationCityName = ""
+	v.ToStationId = ""
+	v.ToStationName = ""
+	v.ToStationProvinceName = ""
+	v.StartProvinceCode = ""
+	v.StartCityCode = ""
+	v.ToStationProvinceCode = ""
+	v.ToStationCityCode = ""
+	v.Distance = 0
+	v.Runtime = 0
+	poolTvmBusLineInfo.Put(v)
 }

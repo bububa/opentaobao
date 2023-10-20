@@ -9,11 +9,6 @@ import (
 // alibaba.alsc.crm.card.query.template
 //
 // 查询卡模板详情
-func AlibabaAlscCrmCardQueryTemplate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCardQueryTemplateAPIRequest, session string) (*alsc.AlibabaAlscCrmCardQueryTemplateAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmCardQueryTemplateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlscCrmCardQueryTemplate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCardQueryTemplateAPIRequest, resp *alsc.AlibabaAlscCrmCardQueryTemplateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

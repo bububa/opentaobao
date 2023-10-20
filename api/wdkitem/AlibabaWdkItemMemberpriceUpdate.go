@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.item.memberprice.update
 //
 // 商品售价会员价修改
-func AlibabaWdkItemMemberpriceUpdate(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemMemberpriceUpdateAPIRequest, session string) (*wdkitem.AlibabaWdkItemMemberpriceUpdateAPIResponse, error) {
-	var resp wdkitem.AlibabaWdkItemMemberpriceUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkItemMemberpriceUpdate(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemMemberpriceUpdateAPIRequest, resp *wdkitem.AlibabaWdkItemMemberpriceUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

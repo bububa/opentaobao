@@ -2,6 +2,7 @@ package tmallgeniescp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaTmallgenieScpLocationGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpLocationGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaTmallgenieScpLocationGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaTmallgenieScpLocationGetAPIResponseModel).Reset()
 }
 
 // AlibabaTmallgenieScpLocationGetAPIResponseModel is 2-IBP查询CDC和RDC数据接口 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaTmallgenieScpLocationGetAPIResponseModel struct {
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 返回码
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaTmallgenieScpLocationGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.DataList = m.DataList[:0]
+	m.ResultMsg = ""
+	m.TraceId = ""
+	m.ResultCode = ""
+}
+
+var poolAlibabaTmallgenieScpLocationGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaTmallgenieScpLocationGetAPIResponse)
+	},
+}
+
+// GetAlibabaTmallgenieScpLocationGetAPIResponse 从 sync.Pool 获取 AlibabaTmallgenieScpLocationGetAPIResponse
+func GetAlibabaTmallgenieScpLocationGetAPIResponse() *AlibabaTmallgenieScpLocationGetAPIResponse {
+	return poolAlibabaTmallgenieScpLocationGetAPIResponse.Get().(*AlibabaTmallgenieScpLocationGetAPIResponse)
+}
+
+// ReleaseAlibabaTmallgenieScpLocationGetAPIResponse 将 AlibabaTmallgenieScpLocationGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaTmallgenieScpLocationGetAPIResponse(v *AlibabaTmallgenieScpLocationGetAPIResponse) {
+	v.Reset()
+	poolAlibabaTmallgenieScpLocationGetAPIResponse.Put(v)
 }

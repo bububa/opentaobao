@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // RefundOrderVo 结构体
 type RefundOrderVo struct {
 	// 乘机人费用列表
@@ -32,4 +36,35 @@ type RefundOrderVo struct {
 	ChangeSimpleVo *ChangeSimpleVo `json:"change_simple_vo,omitempty" xml:"change_simple_vo,omitempty"`
 	// 催退
 	UrgentRefundVo *UrgentRefundVo `json:"urgent_refund_vo,omitempty" xml:"urgent_refund_vo,omitempty"`
+}
+
+var poolRefundOrderVo = sync.Pool{
+	New: func() any {
+		return new(RefundOrderVo)
+	},
+}
+
+// GetRefundOrderVo() 从对象池中获取RefundOrderVo
+func GetRefundOrderVo() *RefundOrderVo {
+	return poolRefundOrderVo.Get().(*RefundOrderVo)
+}
+
+// ReleaseRefundOrderVo 释放RefundOrderVo
+func ReleaseRefundOrderVo(v *RefundOrderVo) {
+	v.RefundPassengerFeeVos = v.RefundPassengerFeeVos[:0]
+	v.RefundPassengerVos = v.RefundPassengerVos[:0]
+	v.AgentId = 0
+	v.OrderId = 0
+	v.RefundBizStatus = 0
+	v.RefundItemVo = nil
+	v.RefundOrderDetailVo = nil
+	v.RefundOrderId = 0
+	v.RefundOrderStatus = 0
+	v.RefundPayStatus = 0
+	v.RefundReasonDo = nil
+	v.TotalRefundToBuyerMoney = 0
+	v.TotalTakeBackActivityMoney = 0
+	v.ChangeSimpleVo = nil
+	v.UrgentRefundVo = nil
+	poolRefundOrderVo.Put(v)
 }

@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // WlbInventory 结构体
 type WlbInventory struct {
 	// 仓库编码，关联到仓库类型服务的编码非托管库存(卖家自己管理的库存，物流宝不可见又称自有库存)的所在仓库编码: STORE_SYS_PRIVATE
@@ -18,4 +22,28 @@ type WlbInventory struct {
 	ReserveQuantity int64 `json:"reserve_quantity,omitempty" xml:"reserve_quantity,omitempty"`
 	// 系统自动生成
 	OccupyQuantity int64 `json:"occupy_quantity,omitempty" xml:"occupy_quantity,omitempty"`
+}
+
+var poolWlbInventory = sync.Pool{
+	New: func() any {
+		return new(WlbInventory)
+	},
+}
+
+// GetWlbInventory() 从对象池中获取WlbInventory
+func GetWlbInventory() *WlbInventory {
+	return poolWlbInventory.Get().(*WlbInventory)
+}
+
+// ReleaseWlbInventory 释放WlbInventory
+func ReleaseWlbInventory(v *WlbInventory) {
+	v.StoreCode = ""
+	v.Type = ""
+	v.UserId = 0
+	v.ItemId = 0
+	v.Quantity = 0
+	v.LockQuantity = 0
+	v.ReserveQuantity = 0
+	v.OccupyQuantity = 0
+	poolWlbInventory.Put(v)
 }

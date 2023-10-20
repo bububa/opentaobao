@@ -2,6 +2,7 @@ package legalcase
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaLegalCaseCourtTimeUpdateAPIResponse struct {
 	AlibabaLegalCaseCourtTimeUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaLegalCaseCourtTimeUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLegalCaseCourtTimeUpdateAPIResponseModel).Reset()
+}
+
 // AlibabaLegalCaseCourtTimeUpdateAPIResponseModel is 开庭时间变更 成功返回结果
 type AlibabaLegalCaseCourtTimeUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_legal_case_court_time_update_response"`
@@ -22,4 +29,27 @@ type AlibabaLegalCaseCourtTimeUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// alinkappserver系统返回的通用结果类
 	Result *ServiceResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLegalCaseCourtTimeUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaLegalCaseCourtTimeUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLegalCaseCourtTimeUpdateAPIResponse)
+	},
+}
+
+// GetAlibabaLegalCaseCourtTimeUpdateAPIResponse 从 sync.Pool 获取 AlibabaLegalCaseCourtTimeUpdateAPIResponse
+func GetAlibabaLegalCaseCourtTimeUpdateAPIResponse() *AlibabaLegalCaseCourtTimeUpdateAPIResponse {
+	return poolAlibabaLegalCaseCourtTimeUpdateAPIResponse.Get().(*AlibabaLegalCaseCourtTimeUpdateAPIResponse)
+}
+
+// ReleaseAlibabaLegalCaseCourtTimeUpdateAPIResponse 将 AlibabaLegalCaseCourtTimeUpdateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLegalCaseCourtTimeUpdateAPIResponse(v *AlibabaLegalCaseCourtTimeUpdateAPIResponse) {
+	v.Reset()
+	poolAlibabaLegalCaseCourtTimeUpdateAPIResponse.Put(v)
 }

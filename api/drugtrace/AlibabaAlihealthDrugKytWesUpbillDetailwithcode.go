@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.kyt.wes.upbill.detailwithcode
 //
 // 查询上游出库单明细(带追溯码信息)
-func AlibabaAlihealthDrugKytWesUpbillDetailwithcode(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugKytWesUpbillDetailwithcode(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytWesUpbillDetailwithcodeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

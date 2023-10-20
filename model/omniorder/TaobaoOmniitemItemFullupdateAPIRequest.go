@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,15 @@ type TaobaoOmniitemItemFullupdateAPIRequest struct {
 // NewTaobaoOmniitemItemFullupdateRequest 初始化TaobaoOmniitemItemFullupdateAPIRequest对象
 func NewTaobaoOmniitemItemFullupdateRequest() *TaobaoOmniitemItemFullupdateAPIRequest {
 	return &TaobaoOmniitemItemFullupdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOmniitemItemFullupdateAPIRequest) Reset() {
+	r._operateType = ""
+	r._lightPublishInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -68,4 +76,21 @@ func (r *TaobaoOmniitemItemFullupdateAPIRequest) SetLightPublishInfo(_lightPubli
 // GetLightPublishInfo LightPublishInfo Getter
 func (r TaobaoOmniitemItemFullupdateAPIRequest) GetLightPublishInfo() *ItemLightPublishDto {
 	return r._lightPublishInfo
+}
+
+var poolTaobaoOmniitemItemFullupdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOmniitemItemFullupdateRequest()
+	},
+}
+
+// GetTaobaoOmniitemItemFullupdateRequest 从 sync.Pool 获取 TaobaoOmniitemItemFullupdateAPIRequest
+func GetTaobaoOmniitemItemFullupdateAPIRequest() *TaobaoOmniitemItemFullupdateAPIRequest {
+	return poolTaobaoOmniitemItemFullupdateAPIRequest.Get().(*TaobaoOmniitemItemFullupdateAPIRequest)
+}
+
+// ReleaseTaobaoOmniitemItemFullupdateAPIRequest 将 TaobaoOmniitemItemFullupdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOmniitemItemFullupdateAPIRequest(v *TaobaoOmniitemItemFullupdateAPIRequest) {
+	v.Reset()
+	poolTaobaoOmniitemItemFullupdateAPIRequest.Put(v)
 }

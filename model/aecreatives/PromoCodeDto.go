@@ -1,5 +1,9 @@
 package aecreatives
 
+import (
+	"sync"
+)
+
 // PromoCodeDto 结构体
 type PromoCodeDto struct {
 	// 专属绑定PID的code码
@@ -18,4 +22,28 @@ type PromoCodeDto struct {
 	CodeQuantity string `json:"code_quantity,omitempty" xml:"code_quantity,omitempty"`
 	// 品code合一url
 	CodePromotionurl string `json:"code_promotionurl,omitempty" xml:"code_promotionurl,omitempty"`
+}
+
+var poolPromoCodeDto = sync.Pool{
+	New: func() any {
+		return new(PromoCodeDto)
+	},
+}
+
+// GetPromoCodeDto() 从对象池中获取PromoCodeDto
+func GetPromoCodeDto() *PromoCodeDto {
+	return poolPromoCodeDto.Get().(*PromoCodeDto)
+}
+
+// ReleasePromoCodeDto 释放PromoCodeDto
+func ReleasePromoCodeDto(v *PromoCodeDto) {
+	v.PromoCode = ""
+	v.CodeCampaigntype = ""
+	v.CodeValue = ""
+	v.CodeAvailabletimeStart = ""
+	v.CodeAvailabletimeEnd = ""
+	v.CodeMiniSpend = ""
+	v.CodeQuantity = ""
+	v.CodePromotionurl = ""
+	poolPromoCodeDto.Put(v)
 }

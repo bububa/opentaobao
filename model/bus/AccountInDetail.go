@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // AccountInDetail 结构体
 type AccountInDetail struct {
 	// 支付宝账号
@@ -8,4 +12,23 @@ type AccountInDetail struct {
 	AlipayAccountId string `json:"alipay_account_id,omitempty" xml:"alipay_account_id,omitempty"`
 	// 单位分
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
+}
+
+var poolAccountInDetail = sync.Pool{
+	New: func() any {
+		return new(AccountInDetail)
+	},
+}
+
+// GetAccountInDetail() 从对象池中获取AccountInDetail
+func GetAccountInDetail() *AccountInDetail {
+	return poolAccountInDetail.Get().(*AccountInDetail)
+}
+
+// ReleaseAccountInDetail 释放AccountInDetail
+func ReleaseAccountInDetail(v *AccountInDetail) {
+	v.AlipayAccount = ""
+	v.AlipayAccountId = ""
+	v.Amount = 0
+	poolAccountInDetail.Put(v)
 }

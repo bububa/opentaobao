@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // LotteryRatioDto 结构体
 type LotteryRatioDto struct {
 	// 人才入围条件
@@ -38,4 +42,38 @@ type LotteryRatioDto struct {
 	NoRoomShortlistedNumber int64 `json:"no_room_shortlisted_number,omitempty" xml:"no_room_shortlisted_number,omitempty"`
 	// 有房入围人数
 	YesRoomShortlistedNumber int64 `json:"yes_room_shortlisted_number,omitempty" xml:"yes_room_shortlisted_number,omitempty"`
+}
+
+var poolLotteryRatioDto = sync.Pool{
+	New: func() any {
+		return new(LotteryRatioDto)
+	},
+}
+
+// GetLotteryRatioDto() 从对象池中获取LotteryRatioDto
+func GetLotteryRatioDto() *LotteryRatioDto {
+	return poolLotteryRatioDto.Get().(*LotteryRatioDto)
+}
+
+// ReleaseLotteryRatioDto 释放LotteryRatioDto
+func ReleaseLotteryRatioDto(v *LotteryRatioDto) {
+	v.TalentShortlisted = ""
+	v.NoRoomShortlisted = ""
+	v.YesRoomShortlisted = ""
+	v.TotalSuccessRate = ""
+	v.TalentSuccessRate = ""
+	v.NoRoomSuccessRate = ""
+	v.YesRoomSuccessRate = ""
+	v.Type = 0
+	v.HasExistenceTalent = 0
+	v.HasShortlisted = 0
+	v.TotalHouseNumber = 0
+	v.TalentHouseNumber = 0
+	v.NoRoomHouseNumber = 0
+	v.YesRoomHouseNumber = 0
+	v.TotalShortlistedNumber = 0
+	v.TalentShortlistedNumber = 0
+	v.NoRoomShortlistedNumber = 0
+	v.YesRoomShortlistedNumber = 0
+	poolLotteryRatioDto.Put(v)
 }

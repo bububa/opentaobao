@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // ChannelProductAuthRequest 结构体
 type ChannelProductAuthRequest struct {
 	// 分销商名称，指定用户传值
@@ -12,4 +16,25 @@ type ChannelProductAuthRequest struct {
 	DimensionType int64 `json:"dimension_type,omitempty" xml:"dimension_type,omitempty"`
 	// 渠道产品id
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
+}
+
+var poolChannelProductAuthRequest = sync.Pool{
+	New: func() any {
+		return new(ChannelProductAuthRequest)
+	},
+}
+
+// GetChannelProductAuthRequest() 从对象池中获取ChannelProductAuthRequest
+func GetChannelProductAuthRequest() *ChannelProductAuthRequest {
+	return poolChannelProductAuthRequest.Get().(*ChannelProductAuthRequest)
+}
+
+// ReleaseChannelProductAuthRequest 释放ChannelProductAuthRequest
+func ReleaseChannelProductAuthRequest(v *ChannelProductAuthRequest) {
+	v.DistributorNick = ""
+	v.SubChannelCode = ""
+	v.ChannelCode = ""
+	v.DimensionType = 0
+	v.ProductId = 0
+	poolChannelProductAuthRequest.Put(v)
 }

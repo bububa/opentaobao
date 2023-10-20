@@ -1,5 +1,9 @@
 package happytrip
 
+import (
+	"sync"
+)
+
 // OrderExtendsDto 结构体
 type OrderExtendsDto struct {
 	// 供应商拒绝原因
@@ -22,4 +26,30 @@ type OrderExtendsDto struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 所属订单id
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolOrderExtendsDto = sync.Pool{
+	New: func() any {
+		return new(OrderExtendsDto)
+	},
+}
+
+// GetOrderExtendsDto() 从对象池中获取OrderExtendsDto
+func GetOrderExtendsDto() *OrderExtendsDto {
+	return poolOrderExtendsDto.Get().(*OrderExtendsDto)
+}
+
+// ReleaseOrderExtendsDto 释放OrderExtendsDto
+func ReleaseOrderExtendsDto(v *OrderExtendsDto) {
+	v.AgentFail = ""
+	v.BuyerFail = ""
+	v.ErrorMessage = ""
+	v.ErrorsCode = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Reason = ""
+	v.TripPurpose = ""
+	v.Id = 0
+	v.OrderId = 0
+	poolOrderExtendsDto.Put(v)
 }

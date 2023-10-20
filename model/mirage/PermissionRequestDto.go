@@ -1,5 +1,9 @@
 package mirage
 
+import (
+	"sync"
+)
+
 // PermissionRequestDto 结构体
 type PermissionRequestDto struct {
 	// 资源id
@@ -46,4 +50,42 @@ type PermissionRequestDto struct {
 	NeedDrmConfig bool `json:"need_drm_config,omitempty" xml:"need_drm_config,omitempty"`
 	// 苹果
 	IsFromApple bool `json:"is_from_apple,omitempty" xml:"is_from_apple,omitempty"`
+}
+
+var poolPermissionRequestDto = sync.Pool{
+	New: func() any {
+		return new(PermissionRequestDto)
+	},
+}
+
+// GetPermissionRequestDto() 从对象池中获取PermissionRequestDto
+func GetPermissionRequestDto() *PermissionRequestDto {
+	return poolPermissionRequestDto.Get().(*PermissionRequestDto)
+}
+
+// ReleasePermissionRequestDto 释放PermissionRequestDto
+func ReleasePermissionRequestDto(v *PermissionRequestDto) {
+	v.ResourceIds = v.ResourceIds[:0]
+	v.DisplayScene = ""
+	v.Pid = ""
+	v.ClientDrmAbility = ""
+	v.AppVersion = ""
+	v.UserIdentity = ""
+	v.Ccode = ""
+	v.Ytid = ""
+	v.UserIp = ""
+	v.Ua = ""
+	v.UserAgent = ""
+	v.DeviceType = ""
+	v.DmaCode = ""
+	v.AreaCode = ""
+	v.CountryCode = ""
+	v.Site = ""
+	v.ResourceType = ""
+	v.Caller = ""
+	v.Signature = ""
+	v.NeedDisplayConfig = false
+	v.NeedDrmConfig = false
+	v.IsFromApple = false
+	poolPermissionRequestDto.Put(v)
 }

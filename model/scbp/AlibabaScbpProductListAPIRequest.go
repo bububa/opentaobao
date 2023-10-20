@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpProductListAPIRequest struct {
 // NewAlibabaScbpProductListRequest 初始化AlibabaScbpProductListAPIRequest对象
 func NewAlibabaScbpProductListRequest() *AlibabaScbpProductListAPIRequest {
 	return &AlibabaScbpProductListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpProductListAPIRequest) Reset() {
+	r._groupId = ""
+	r._perPageSize = 0
+	r._toPage = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpProductListAPIRequest) SetToPage(_toPage int64) error {
 // GetToPage ToPage Getter
 func (r AlibabaScbpProductListAPIRequest) GetToPage() int64 {
 	return r._toPage
+}
+
+var poolAlibabaScbpProductListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpProductListRequest()
+	},
+}
+
+// GetAlibabaScbpProductListRequest 从 sync.Pool 获取 AlibabaScbpProductListAPIRequest
+func GetAlibabaScbpProductListAPIRequest() *AlibabaScbpProductListAPIRequest {
+	return poolAlibabaScbpProductListAPIRequest.Get().(*AlibabaScbpProductListAPIRequest)
+}
+
+// ReleaseAlibabaScbpProductListAPIRequest 将 AlibabaScbpProductListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpProductListAPIRequest(v *AlibabaScbpProductListAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpProductListAPIRequest.Put(v)
 }

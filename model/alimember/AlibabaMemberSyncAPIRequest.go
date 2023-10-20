@@ -2,6 +2,7 @@ package alimember
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMemberSyncAPIRequest struct {
 // NewAlibabaMemberSyncRequest 初始化AlibabaMemberSyncAPIRequest对象
 func NewAlibabaMemberSyncRequest() *AlibabaMemberSyncAPIRequest {
 	return &AlibabaMemberSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMemberSyncAPIRequest) Reset() {
+	r._syncMember = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMemberSyncAPIRequest) SetSyncMember(_syncMember *SyncMemberDto) 
 // GetSyncMember SyncMember Getter
 func (r AlibabaMemberSyncAPIRequest) GetSyncMember() *SyncMemberDto {
 	return r._syncMember
+}
+
+var poolAlibabaMemberSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMemberSyncRequest()
+	},
+}
+
+// GetAlibabaMemberSyncRequest 从 sync.Pool 获取 AlibabaMemberSyncAPIRequest
+func GetAlibabaMemberSyncAPIRequest() *AlibabaMemberSyncAPIRequest {
+	return poolAlibabaMemberSyncAPIRequest.Get().(*AlibabaMemberSyncAPIRequest)
+}
+
+// ReleaseAlibabaMemberSyncAPIRequest 将 AlibabaMemberSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMemberSyncAPIRequest(v *AlibabaMemberSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaMemberSyncAPIRequest.Put(v)
 }

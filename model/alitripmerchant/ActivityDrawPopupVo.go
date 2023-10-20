@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // ActivityDrawPopupVo 结构体
 type ActivityDrawPopupVo struct {
 	// 弹窗点击文本
@@ -20,4 +24,29 @@ type ActivityDrawPopupVo struct {
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 抽奖类型
 	PopupType int64 `json:"popup_type,omitempty" xml:"popup_type,omitempty"`
+}
+
+var poolActivityDrawPopupVo = sync.Pool{
+	New: func() any {
+		return new(ActivityDrawPopupVo)
+	},
+}
+
+// GetActivityDrawPopupVo() 从对象池中获取ActivityDrawPopupVo
+func GetActivityDrawPopupVo() *ActivityDrawPopupVo {
+	return poolActivityDrawPopupVo.Get().(*ActivityDrawPopupVo)
+}
+
+// ReleaseActivityDrawPopupVo 释放ActivityDrawPopupVo
+func ReleaseActivityDrawPopupVo(v *ActivityDrawPopupVo) {
+	v.PopupDoText = ""
+	v.PopupTitle = ""
+	v.PopupSubText = ""
+	v.TopTitle = ""
+	v.OfferId = ""
+	v.PopupExitText = ""
+	v.PopupText = ""
+	v.Title = ""
+	v.PopupType = 0
+	poolActivityDrawPopupVo.Put(v)
 }

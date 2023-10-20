@@ -2,6 +2,7 @@ package yunosad
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type YunosAdAuditCreativeGetlistAPIResponse struct {
 	model.CommonResponse
 	YunosAdAuditCreativeGetlistAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *YunosAdAuditCreativeGetlistAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.YunosAdAuditCreativeGetlistAPIResponseModel).Reset()
 }
 
 // YunosAdAuditCreativeGetlistAPIResponseModel is 批量获取创意审核状态 成功返回结果
@@ -28,4 +35,30 @@ type YunosAdAuditCreativeGetlistAPIResponseModel struct {
 	IsOk string `json:"is_ok,omitempty" xml:"is_ok,omitempty"`
 	// errorCode
 	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *YunosAdAuditCreativeGetlistAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Results = m.Results[:0]
+	m.Message = ""
+	m.IsOk = ""
+	m.StatusCode = 0
+}
+
+var poolYunosAdAuditCreativeGetlistAPIResponse = sync.Pool{
+	New: func() any {
+		return new(YunosAdAuditCreativeGetlistAPIResponse)
+	},
+}
+
+// GetYunosAdAuditCreativeGetlistAPIResponse 从 sync.Pool 获取 YunosAdAuditCreativeGetlistAPIResponse
+func GetYunosAdAuditCreativeGetlistAPIResponse() *YunosAdAuditCreativeGetlistAPIResponse {
+	return poolYunosAdAuditCreativeGetlistAPIResponse.Get().(*YunosAdAuditCreativeGetlistAPIResponse)
+}
+
+// ReleaseYunosAdAuditCreativeGetlistAPIResponse 将 YunosAdAuditCreativeGetlistAPIResponse 保存到 sync.Pool
+func ReleaseYunosAdAuditCreativeGetlistAPIResponse(v *YunosAdAuditCreativeGetlistAPIResponse) {
+	v.Reset()
+	poolYunosAdAuditCreativeGetlistAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // SmsInterceptRequest 结构体
 type SmsInterceptRequest struct {
 	// 中间号
@@ -16,4 +20,27 @@ type SmsInterceptRequest struct {
 	SubsId string `json:"subs_id,omitempty" xml:"subs_id,omitempty"`
 	// 分配给供应商的KEY
 	VendorKey string `json:"vendor_key,omitempty" xml:"vendor_key,omitempty"`
+}
+
+var poolSmsInterceptRequest = sync.Pool{
+	New: func() any {
+		return new(SmsInterceptRequest)
+	},
+}
+
+// GetSmsInterceptRequest() 从对象池中获取SmsInterceptRequest
+func GetSmsInterceptRequest() *SmsInterceptRequest {
+	return poolSmsInterceptRequest.Get().(*SmsInterceptRequest)
+}
+
+// ReleaseSmsInterceptRequest 释放SmsInterceptRequest
+func ReleaseSmsInterceptRequest(v *SmsInterceptRequest) {
+	v.SecretNo = ""
+	v.CallNo = ""
+	v.SmsContent = ""
+	v.MtTime = ""
+	v.CallId = ""
+	v.SubsId = ""
+	v.VendorKey = ""
+	poolSmsInterceptRequest.Put(v)
 }

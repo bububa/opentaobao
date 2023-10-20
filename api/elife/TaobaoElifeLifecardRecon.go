@@ -9,11 +9,6 @@ import (
 // taobao.elife.lifecard.recon
 //
 // 查询对账文件地址接口
-func TaobaoElifeLifecardRecon(clt *core.SDKClient, req *elife.TaobaoElifeLifecardReconAPIRequest, session string) (*elife.TaobaoElifeLifecardReconAPIResponse, error) {
-	var resp elife.TaobaoElifeLifecardReconAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoElifeLifecardRecon(clt *core.SDKClient, req *elife.TaobaoElifeLifecardReconAPIRequest, resp *elife.TaobaoElifeLifecardReconAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // TaobaoBanamadpcItemSelectPropApiResult 结构体
 type TaobaoBanamadpcItemSelectPropApiResult struct {
 	// 错误信息
@@ -10,4 +14,24 @@ type TaobaoBanamadpcItemSelectPropApiResult struct {
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
 	// 成功
 	Error bool `json:"error,omitempty" xml:"error,omitempty"`
+}
+
+var poolTaobaoBanamadpcItemSelectPropApiResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoBanamadpcItemSelectPropApiResult)
+	},
+}
+
+// GetTaobaoBanamadpcItemSelectPropApiResult() 从对象池中获取TaobaoBanamadpcItemSelectPropApiResult
+func GetTaobaoBanamadpcItemSelectPropApiResult() *TaobaoBanamadpcItemSelectPropApiResult {
+	return poolTaobaoBanamadpcItemSelectPropApiResult.Get().(*TaobaoBanamadpcItemSelectPropApiResult)
+}
+
+// ReleaseTaobaoBanamadpcItemSelectPropApiResult 释放TaobaoBanamadpcItemSelectPropApiResult
+func ReleaseTaobaoBanamadpcItemSelectPropApiResult(v *TaobaoBanamadpcItemSelectPropApiResult) {
+	v.ErMsg = ""
+	v.ErCode = ""
+	v.Result = ""
+	v.Error = false
+	poolTaobaoBanamadpcItemSelectPropApiResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // PosLogDto 结构体
 type PosLogDto struct {
 	// IP地址
@@ -56,4 +60,47 @@ type PosLogDto struct {
 	BizAlarmLevel string `json:"biz_alarm_level,omitempty" xml:"biz_alarm_level,omitempty"`
 	// 请求状态码
 	HttpStatus int64 `json:"http_status,omitempty" xml:"http_status,omitempty"`
+}
+
+var poolPosLogDto = sync.Pool{
+	New: func() any {
+		return new(PosLogDto)
+	},
+}
+
+// GetPosLogDto() 从对象池中获取PosLogDto
+func GetPosLogDto() *PosLogDto {
+	return poolPosLogDto.Get().(*PosLogDto)
+}
+
+// ReleasePosLogDto 释放PosLogDto
+func ReleasePosLogDto(v *PosLogDto) {
+	v.IpAddr = ""
+	v.OperStep = ""
+	v.OutTradeNo = ""
+	v.PosType = ""
+	v.Version = ""
+	v.StoreNo = ""
+	v.CounterId = ""
+	v.NetStat = ""
+	v.LogLevel = ""
+	v.OperResult = ""
+	v.UploadTime = ""
+	v.HappenTime = ""
+	v.Sn = ""
+	v.ReceiptNo = ""
+	v.ErrCode = ""
+	v.ErrSource = ""
+	v.Extension = ""
+	v.DataType = ""
+	v.ErrMsg = ""
+	v.MacAddr = ""
+	v.ApiUrl = ""
+	v.PosNo = ""
+	v.LogType = ""
+	v.Cashier = ""
+	v.RequestContent = ""
+	v.BizAlarmLevel = ""
+	v.HttpStatus = 0
+	poolPosLogDto.Put(v)
 }

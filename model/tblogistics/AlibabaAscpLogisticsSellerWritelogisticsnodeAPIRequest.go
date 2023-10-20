@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest struct {
 // NewAlibabaAscpLogisticsSellerWritelogisticsnodeRequest 初始化AlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest对象
 func NewAlibabaAscpLogisticsSellerWritelogisticsnodeRequest() *AlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest {
 	return &AlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest) Reset() {
+	r._nodes = r._nodes[:0]
+	r._lpOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest) SetLpOrderId(_l
 // GetLpOrderId LpOrderId Getter
 func (r AlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest) GetLpOrderId() int64 {
 	return r._lpOrderId
+}
+
+var poolAlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpLogisticsSellerWritelogisticsnodeRequest()
+	},
+}
+
+// GetAlibabaAscpLogisticsSellerWritelogisticsnodeRequest 从 sync.Pool 获取 AlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest
+func GetAlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest() *AlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest {
+	return poolAlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest.Get().(*AlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest)
+}
+
+// ReleaseAlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest 将 AlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest(v *AlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpLogisticsSellerWritelogisticsnodeAPIRequest.Put(v)
 }

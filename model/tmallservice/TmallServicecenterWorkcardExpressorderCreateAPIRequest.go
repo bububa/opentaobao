@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallServicecenterWorkcardExpressorderCreateAPIRequest struct {
 // NewTmallServicecenterWorkcardExpressorderCreateRequest 初始化TmallServicecenterWorkcardExpressorderCreateAPIRequest对象
 func NewTmallServicecenterWorkcardExpressorderCreateRequest() *TmallServicecenterWorkcardExpressorderCreateAPIRequest {
 	return &TmallServicecenterWorkcardExpressorderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkcardExpressorderCreateAPIRequest) Reset() {
+	r._workcardIdList = r._workcardIdList[:0]
+	r._realTpNick = ""
+	r._externalLogisticsOrderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallServicecenterWorkcardExpressorderCreateAPIRequest) SetExternalLogi
 // GetExternalLogisticsOrderId ExternalLogisticsOrderId Getter
 func (r TmallServicecenterWorkcardExpressorderCreateAPIRequest) GetExternalLogisticsOrderId() string {
 	return r._externalLogisticsOrderId
+}
+
+var poolTmallServicecenterWorkcardExpressorderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkcardExpressorderCreateRequest()
+	},
+}
+
+// GetTmallServicecenterWorkcardExpressorderCreateRequest 从 sync.Pool 获取 TmallServicecenterWorkcardExpressorderCreateAPIRequest
+func GetTmallServicecenterWorkcardExpressorderCreateAPIRequest() *TmallServicecenterWorkcardExpressorderCreateAPIRequest {
+	return poolTmallServicecenterWorkcardExpressorderCreateAPIRequest.Get().(*TmallServicecenterWorkcardExpressorderCreateAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkcardExpressorderCreateAPIRequest 将 TmallServicecenterWorkcardExpressorderCreateAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkcardExpressorderCreateAPIRequest(v *TmallServicecenterWorkcardExpressorderCreateAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkcardExpressorderCreateAPIRequest.Put(v)
 }

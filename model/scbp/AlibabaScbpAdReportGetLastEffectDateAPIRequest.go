@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpAdReportGetLastEffectDateAPIRequest struct {
 // NewAlibabaScbpAdReportGetLastEffectDateRequest 初始化AlibabaScbpAdReportGetLastEffectDateAPIRequest对象
 func NewAlibabaScbpAdReportGetLastEffectDateRequest() *AlibabaScbpAdReportGetLastEffectDateAPIRequest {
 	return &AlibabaScbpAdReportGetLastEffectDateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdReportGetLastEffectDateAPIRequest) Reset() {
+	r._topContext = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpAdReportGetLastEffectDateAPIRequest) SetTopContext(_topConte
 // GetTopContext TopContext Getter
 func (r AlibabaScbpAdReportGetLastEffectDateAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
+}
+
+var poolAlibabaScbpAdReportGetLastEffectDateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdReportGetLastEffectDateRequest()
+	},
+}
+
+// GetAlibabaScbpAdReportGetLastEffectDateRequest 从 sync.Pool 获取 AlibabaScbpAdReportGetLastEffectDateAPIRequest
+func GetAlibabaScbpAdReportGetLastEffectDateAPIRequest() *AlibabaScbpAdReportGetLastEffectDateAPIRequest {
+	return poolAlibabaScbpAdReportGetLastEffectDateAPIRequest.Get().(*AlibabaScbpAdReportGetLastEffectDateAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdReportGetLastEffectDateAPIRequest 将 AlibabaScbpAdReportGetLastEffectDateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdReportGetLastEffectDateAPIRequest(v *AlibabaScbpAdReportGetLastEffectDateAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdReportGetLastEffectDateAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package ioti
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaItEslEslinfoGeteslinfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaItEslEslinfoGeteslinfoAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaItEslEslinfoGeteslinfoAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaItEslEslinfoGeteslinfoAPIResponseModel).Reset()
 }
 
 // AlibabaItEslEslinfoGeteslinfoAPIResponseModel is 厂测查询价签当前信息 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaItEslEslinfoGeteslinfoAPIResponseModel struct {
 	Content *EslTopEngineAssetsDo `json:"content,omitempty" xml:"content,omitempty"`
 	// 成功标识
 	EslSuccess bool `json:"esl_success,omitempty" xml:"esl_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaItEslEslinfoGeteslinfoAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.EslErrorCode = ""
+	m.EslErrorMsg = ""
+	m.Content = nil
+	m.EslSuccess = false
+}
+
+var poolAlibabaItEslEslinfoGeteslinfoAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaItEslEslinfoGeteslinfoAPIResponse)
+	},
+}
+
+// GetAlibabaItEslEslinfoGeteslinfoAPIResponse 从 sync.Pool 获取 AlibabaItEslEslinfoGeteslinfoAPIResponse
+func GetAlibabaItEslEslinfoGeteslinfoAPIResponse() *AlibabaItEslEslinfoGeteslinfoAPIResponse {
+	return poolAlibabaItEslEslinfoGeteslinfoAPIResponse.Get().(*AlibabaItEslEslinfoGeteslinfoAPIResponse)
+}
+
+// ReleaseAlibabaItEslEslinfoGeteslinfoAPIResponse 将 AlibabaItEslEslinfoGeteslinfoAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaItEslEslinfoGeteslinfoAPIResponse(v *AlibabaItEslEslinfoGeteslinfoAPIResponse) {
+	v.Reset()
+	poolAlibabaItEslEslinfoGeteslinfoAPIResponse.Put(v)
 }

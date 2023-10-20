@@ -1,5 +1,9 @@
 package ascpffo
 
+import (
+	"sync"
+)
+
 // FulfillmentReverseOrderQueryDto 结构体
 type FulfillmentReverseOrderQueryDto struct {
 	// 用户订单号列表
@@ -12,4 +16,25 @@ type FulfillmentReverseOrderQueryDto struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 分页大小
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolFulfillmentReverseOrderQueryDto = sync.Pool{
+	New: func() any {
+		return new(FulfillmentReverseOrderQueryDto)
+	},
+}
+
+// GetFulfillmentReverseOrderQueryDto() 从对象池中获取FulfillmentReverseOrderQueryDto
+func GetFulfillmentReverseOrderQueryDto() *FulfillmentReverseOrderQueryDto {
+	return poolFulfillmentReverseOrderQueryDto.Get().(*FulfillmentReverseOrderQueryDto)
+}
+
+// ReleaseFulfillmentReverseOrderQueryDto 释放FulfillmentReverseOrderQueryDto
+func ReleaseFulfillmentReverseOrderQueryDto(v *FulfillmentReverseOrderQueryDto) {
+	v.CustomerOrderNumberList = v.CustomerOrderNumberList[:0]
+	v.FulfillmentOrderNo = ""
+	v.BizType = 0
+	v.PageIndex = 0
+	v.PageSize = 0
+	poolFulfillmentReverseOrderQueryDto.Put(v)
 }

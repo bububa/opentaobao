@@ -9,11 +9,6 @@ import (
 // taobao.simba.bidword.pricetools
 //
 // 关键词出价指导工具（新）
-func TaobaoSimbaBidwordPricetools(clt *core.SDKClient, req *simba.TaobaoSimbaBidwordPricetoolsAPIRequest, session string) (*simba.TaobaoSimbaBidwordPricetoolsAPIResponse, error) {
-	var resp simba.TaobaoSimbaBidwordPricetoolsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaBidwordPricetools(clt *core.SDKClient, req *simba.TaobaoSimbaBidwordPricetoolsAPIRequest, resp *simba.TaobaoSimbaBidwordPricetoolsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

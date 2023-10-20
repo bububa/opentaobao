@@ -9,11 +9,6 @@ import (
 // alibaba.koubeishops.property.get
 //
 // 推荐用户附近的美食门店
-func AlibabaKoubeishopsPropertyGet(clt *core.SDKClient, req *shop.AlibabaKoubeishopsPropertyGetAPIRequest, session string) (*shop.AlibabaKoubeishopsPropertyGetAPIResponse, error) {
-	var resp shop.AlibabaKoubeishopsPropertyGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaKoubeishopsPropertyGet(clt *core.SDKClient, req *shop.AlibabaKoubeishopsPropertyGetAPIRequest, resp *shop.AlibabaKoubeishopsPropertyGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

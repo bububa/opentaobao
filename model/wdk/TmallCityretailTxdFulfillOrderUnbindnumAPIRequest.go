@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallCityretailTxdFulfillOrderUnbindnumAPIRequest struct {
 // NewTmallCityretailTxdFulfillOrderUnbindnumRequest 初始化TmallCityretailTxdFulfillOrderUnbindnumAPIRequest对象
 func NewTmallCityretailTxdFulfillOrderUnbindnumRequest() *TmallCityretailTxdFulfillOrderUnbindnumAPIRequest {
 	return &TmallCityretailTxdFulfillOrderUnbindnumAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCityretailTxdFulfillOrderUnbindnumAPIRequest) Reset() {
+	r._sourceOrderId = ""
+	r._subId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallCityretailTxdFulfillOrderUnbindnumAPIRequest) SetSubId(_subId stri
 // GetSubId SubId Getter
 func (r TmallCityretailTxdFulfillOrderUnbindnumAPIRequest) GetSubId() string {
 	return r._subId
+}
+
+var poolTmallCityretailTxdFulfillOrderUnbindnumAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCityretailTxdFulfillOrderUnbindnumRequest()
+	},
+}
+
+// GetTmallCityretailTxdFulfillOrderUnbindnumRequest 从 sync.Pool 获取 TmallCityretailTxdFulfillOrderUnbindnumAPIRequest
+func GetTmallCityretailTxdFulfillOrderUnbindnumAPIRequest() *TmallCityretailTxdFulfillOrderUnbindnumAPIRequest {
+	return poolTmallCityretailTxdFulfillOrderUnbindnumAPIRequest.Get().(*TmallCityretailTxdFulfillOrderUnbindnumAPIRequest)
+}
+
+// ReleaseTmallCityretailTxdFulfillOrderUnbindnumAPIRequest 将 TmallCityretailTxdFulfillOrderUnbindnumAPIRequest 放入 sync.Pool
+func ReleaseTmallCityretailTxdFulfillOrderUnbindnumAPIRequest(v *TmallCityretailTxdFulfillOrderUnbindnumAPIRequest) {
+	v.Reset()
+	poolTmallCityretailTxdFulfillOrderUnbindnumAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // PostProductRequestDto 结构体
 type PostProductRequestDto struct {
 	// marketing images for product. Currently supported 2 types: 1 represents 3:4 rectangle(resolution at least 750*1000) image while 2 represents 1:1 square image(Resolution at least 800*800). The image url needs to be obtained via uploading the image through Aliexpress API: aliexpress.photobank.redefining.uploadimageforsdk(https://developers.aliexpress.com/en/doc.htm?docId=30186&amp;docType=2)
@@ -56,4 +60,47 @@ type PostProductRequestDto struct {
 	SizeChartId int64 `json:"size_chart_id,omitempty" xml:"size_chart_id,omitempty"`
 	// Product Unit ID, Most common-used ID: 100000015 piece/pieces; 100000000:bag/bags; 100000001:barrel/barrels; 100000002:bushel/bushels; 100078580:carton; 100078581:centimeter; 100000003:cubic meter; 100000004:dozen; 100078584:feet; 100000005:gallon; 100000006:gram; 100078587:inch; 100000007:kilogram; 100078589:kiloliter; 100000008:kilometer; 100078559:liter/liters; 100000009:long ton; 100000010:meter; 100000011:metric ton; 100078560:milligram; 100078596:milliliter; 100078597:millimeter; 100000012:ounce; 100000014:pack/packs; 100000013:pair; 100000016:pound; 100078603:quart; 100000017:set/sets; 100000018:short ton; 100078606:square feet; 100078607:square inch; 100000019:square meter; 100078609:square yard; 100000020:ton; 100078558:yard/yards
 	ProductUnit int64 `json:"product_unit,omitempty" xml:"product_unit,omitempty"`
+}
+
+var poolPostProductRequestDto = sync.Pool{
+	New: func() any {
+		return new(PostProductRequestDto)
+	},
+}
+
+// GetPostProductRequestDto() 从对象池中获取PostProductRequestDto
+func GetPostProductRequestDto() *PostProductRequestDto {
+	return poolPostProductRequestDto.Get().(*PostProductRequestDto)
+}
+
+// ReleasePostProductRequestDto 释放PostProductRequestDto
+func ReleasePostProductRequestDto(v *PostProductRequestDto) {
+	v.MarketingImages = v.MarketingImages[:0]
+	v.MainImageUrlsList = v.MainImageUrlsList[:0]
+	v.AttributeList = v.AttributeList[:0]
+	v.SkuInfoList = v.SkuInfoList[:0]
+	v.MultiLanguageSubjectList = v.MultiLanguageSubjectList[:0]
+	v.MultiLanguageDescriptionList = v.MultiLanguageDescriptionList[:0]
+	v.ExtraParams = ""
+	v.DeveloperFeatures = ""
+	v.CategoryId = ""
+	v.BrandName = ""
+	v.Weight = ""
+	v.InventoryDeductionStrategy = ""
+	v.Subject = ""
+	v.Description = ""
+	v.Language = ""
+	v.ProductId = 0
+	v.GroupId = 0
+	v.AliexpressCategoryId = 0
+	v.PackageHeight = 0
+	v.PackageLength = 0
+	v.PackageWidth = 0
+	v.MultiCountryPriceConfiguration = nil
+	v.FreightTemplateId = 0
+	v.ShippingLeadTime = 0
+	v.ServicePolicyId = 0
+	v.SizeChartId = 0
+	v.ProductUnit = 0
+	poolPostProductRequestDto.Put(v)
 }

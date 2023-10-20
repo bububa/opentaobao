@@ -2,6 +2,7 @@ package trade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,6 +20,12 @@ type TaobaoTradesSoldHistoryGetAPIResponse struct {
 	TaobaoTradesSoldHistoryGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTradesSoldHistoryGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTradesSoldHistoryGetAPIResponseModel).Reset()
+}
+
 // TaobaoTradesSoldHistoryGetAPIResponseModel is 卖家历史库订单查询 成功返回结果
 type TaobaoTradesSoldHistoryGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"trades_sold_history_get_response"`
@@ -28,4 +35,28 @@ type TaobaoTradesSoldHistoryGetAPIResponseModel struct {
 	Trades []Trade `json:"trades,omitempty" xml:"trades>trade,omitempty"`
 	// 是否存在下一页
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTradesSoldHistoryGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Trades = m.Trades[:0]
+	m.HasNext = false
+}
+
+var poolTaobaoTradesSoldHistoryGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTradesSoldHistoryGetAPIResponse)
+	},
+}
+
+// GetTaobaoTradesSoldHistoryGetAPIResponse 从 sync.Pool 获取 TaobaoTradesSoldHistoryGetAPIResponse
+func GetTaobaoTradesSoldHistoryGetAPIResponse() *TaobaoTradesSoldHistoryGetAPIResponse {
+	return poolTaobaoTradesSoldHistoryGetAPIResponse.Get().(*TaobaoTradesSoldHistoryGetAPIResponse)
+}
+
+// ReleaseTaobaoTradesSoldHistoryGetAPIResponse 将 TaobaoTradesSoldHistoryGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTradesSoldHistoryGetAPIResponse(v *TaobaoTradesSoldHistoryGetAPIResponse) {
+	v.Reset()
+	poolTaobaoTradesSoldHistoryGetAPIResponse.Put(v)
 }

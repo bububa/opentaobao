@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // ItemLightPublishSkuDto 结构体
 type ItemLightPublishSkuDto struct {
 	// salePropsDTO
@@ -24,4 +28,31 @@ type ItemLightPublishSkuDto struct {
 	CustomCode string `json:"custom_code,omitempty" xml:"custom_code,omitempty"`
 	// skuId
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolItemLightPublishSkuDto = sync.Pool{
+	New: func() any {
+		return new(ItemLightPublishSkuDto)
+	},
+}
+
+// GetItemLightPublishSkuDto() 从对象池中获取ItemLightPublishSkuDto
+func GetItemLightPublishSkuDto() *ItemLightPublishSkuDto {
+	return poolItemLightPublishSkuDto.Get().(*ItemLightPublishSkuDto)
+}
+
+// ReleaseItemLightPublishSkuDto 释放ItemLightPublishSkuDto
+func ReleaseItemLightPublishSkuDto(v *ItemLightPublishSkuDto) {
+	v.SalePropsDTOs = v.SalePropsDTOs[:0]
+	v.SkuImages = v.SkuImages[:0]
+	v.SaleProps = v.SaleProps[:0]
+	v.Barcode = ""
+	v.ExtendAttr = ""
+	v.Pretium = ""
+	v.Price = ""
+	v.SkuOuterId = ""
+	v.SkuBarcode = ""
+	v.CustomCode = ""
+	v.SkuId = 0
+	poolItemLightPublishSkuDto.Put(v)
 }

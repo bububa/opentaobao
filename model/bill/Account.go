@@ -1,5 +1,9 @@
 package bill
 
+import (
+	"sync"
+)
+
 // Account 结构体
 type Account struct {
 	// 创建时间
@@ -18,4 +22,28 @@ type Account struct {
 	AccountType int64 `json:"account_type,omitempty" xml:"account_type,omitempty"`
 	// 是否订单相关:0-订单无关 1-订单相关
 	RelatedOrder int64 `json:"related_order,omitempty" xml:"related_order,omitempty"`
+}
+
+var poolAccount = sync.Pool{
+	New: func() any {
+		return new(Account)
+	},
+}
+
+// GetAccount() 从对象池中获取Account
+func GetAccount() *Account {
+	return poolAccount.Get().(*Account)
+}
+
+// ReleaseAccount 释放Account
+func ReleaseAccount(v *Account) {
+	v.GmtCreate = ""
+	v.AccountCode = ""
+	v.GmtModified = ""
+	v.AccountName = ""
+	v.AccountId = 0
+	v.Status = 0
+	v.AccountType = 0
+	v.RelatedOrder = 0
+	poolAccount.Put(v)
 }

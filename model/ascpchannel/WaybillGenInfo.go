@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // WaybillGenInfo 结构体
 type WaybillGenInfo struct {
 	// 总体积
@@ -22,4 +26,30 @@ type WaybillGenInfo struct {
 	RemarkPicture *RemarkPicture `json:"remark_picture,omitempty" xml:"remark_picture,omitempty"`
 	// 交易渠道：1为淘宝/天猫，2为其它，3为抖音，4为拼多多，5为京东，6为唯品会
 	OrderChannel int64 `json:"order_channel,omitempty" xml:"order_channel,omitempty"`
+}
+
+var poolWaybillGenInfo = sync.Pool{
+	New: func() any {
+		return new(WaybillGenInfo)
+	},
+}
+
+// GetWaybillGenInfo() 从对象池中获取WaybillGenInfo
+func GetWaybillGenInfo() *WaybillGenInfo {
+	return poolWaybillGenInfo.Get().(*WaybillGenInfo)
+}
+
+// ReleaseWaybillGenInfo 释放WaybillGenInfo
+func ReleaseWaybillGenInfo(v *WaybillGenInfo) {
+	v.TotalVolume = ""
+	v.RelatedOrderCode = ""
+	v.Remark = ""
+	v.MainTradeNo = ""
+	v.SellerId = ""
+	v.GatherNum = 0
+	v.Gather = 0
+	v.TotalPackNum = 0
+	v.RemarkPicture = nil
+	v.OrderChannel = 0
+	poolWaybillGenInfo.Put(v)
 }

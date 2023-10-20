@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -45,8 +46,27 @@ type AlibabaAlihealthDrugKytScqyCodeprocessAPIRequest struct {
 // NewAlibabaAlihealthDrugKytScqyCodeprocessRequest 初始化AlibabaAlihealthDrugKytScqyCodeprocessAPIRequest对象
 func NewAlibabaAlihealthDrugKytScqyCodeprocessRequest() *AlibabaAlihealthDrugKytScqyCodeprocessAPIRequest {
 	return &AlibabaAlihealthDrugKytScqyCodeprocessAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(14),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytScqyCodeprocessAPIRequest) Reset() {
+	r._startDate = ""
+	r._endDate = ""
+	r._uploadFlag = ""
+	r._processFlag = ""
+	r._produceBatchNo = ""
+	r._queryFlag = ""
+	r._physicType = ""
+	r._prodSeqNo = ""
+	r._drugEntBaseInfoId = ""
+	r._pkgSpec = ""
+	r._refEntId = ""
+	r._clientType = ""
+	r._page = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -246,4 +266,21 @@ func (r *AlibabaAlihealthDrugKytScqyCodeprocessAPIRequest) SetPageSize(_pageSize
 // GetPageSize PageSize Getter
 func (r AlibabaAlihealthDrugKytScqyCodeprocessAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaAlihealthDrugKytScqyCodeprocessAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytScqyCodeprocessRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytScqyCodeprocessRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytScqyCodeprocessAPIRequest
+func GetAlibabaAlihealthDrugKytScqyCodeprocessAPIRequest() *AlibabaAlihealthDrugKytScqyCodeprocessAPIRequest {
+	return poolAlibabaAlihealthDrugKytScqyCodeprocessAPIRequest.Get().(*AlibabaAlihealthDrugKytScqyCodeprocessAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytScqyCodeprocessAPIRequest 将 AlibabaAlihealthDrugKytScqyCodeprocessAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytScqyCodeprocessAPIRequest(v *AlibabaAlihealthDrugKytScqyCodeprocessAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytScqyCodeprocessAPIRequest.Put(v)
 }

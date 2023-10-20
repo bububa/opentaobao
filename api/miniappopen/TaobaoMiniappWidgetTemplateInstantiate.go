@@ -9,11 +9,6 @@ import (
 // taobao.miniapp.widget.template.instantiate
 //
 // 小部件实例化接口
-func TaobaoMiniappWidgetTemplateInstantiate(clt *core.SDKClient, req *miniappopen.TaobaoMiniappWidgetTemplateInstantiateAPIRequest, session string) (*miniappopen.TaobaoMiniappWidgetTemplateInstantiateAPIResponse, error) {
-	var resp miniappopen.TaobaoMiniappWidgetTemplateInstantiateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoMiniappWidgetTemplateInstantiate(clt *core.SDKClient, req *miniappopen.TaobaoMiniappWidgetTemplateInstantiateAPIRequest, resp *miniappopen.TaobaoMiniappWidgetTemplateInstantiateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

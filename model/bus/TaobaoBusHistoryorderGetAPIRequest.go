@@ -2,6 +2,7 @@ package bus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoBusHistoryorderGetAPIRequest struct {
 // NewTaobaoBusHistoryorderGetRequest 初始化TaobaoBusHistoryorderGetAPIRequest对象
 func NewTaobaoBusHistoryorderGetRequest() *TaobaoBusHistoryorderGetAPIRequest {
 	return &TaobaoBusHistoryorderGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBusHistoryorderGetAPIRequest) Reset() {
+	r._fromDate = ""
+	r._toDate = ""
+	r._type = ""
+	r._pageSize = 0
+	r._pageIndex = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoBusHistoryorderGetAPIRequest) SetPageIndex(_pageIndex int64) erro
 // GetPageIndex PageIndex Getter
 func (r TaobaoBusHistoryorderGetAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
+}
+
+var poolTaobaoBusHistoryorderGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBusHistoryorderGetRequest()
+	},
+}
+
+// GetTaobaoBusHistoryorderGetRequest 从 sync.Pool 获取 TaobaoBusHistoryorderGetAPIRequest
+func GetTaobaoBusHistoryorderGetAPIRequest() *TaobaoBusHistoryorderGetAPIRequest {
+	return poolTaobaoBusHistoryorderGetAPIRequest.Get().(*TaobaoBusHistoryorderGetAPIRequest)
+}
+
+// ReleaseTaobaoBusHistoryorderGetAPIRequest 将 TaobaoBusHistoryorderGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBusHistoryorderGetAPIRequest(v *TaobaoBusHistoryorderGetAPIRequest) {
+	v.Reset()
+	poolTaobaoBusHistoryorderGetAPIRequest.Put(v)
 }

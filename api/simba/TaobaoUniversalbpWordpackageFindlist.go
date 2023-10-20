@@ -9,11 +9,6 @@ import (
 // taobao.universalbp.wordpackage.findlist
 //
 // 根据计划+单元id，查绑定的词包列表
-func TaobaoUniversalbpWordpackageFindlist(clt *core.SDKClient, req *simba.TaobaoUniversalbpWordpackageFindlistAPIRequest, session string) (*simba.TaobaoUniversalbpWordpackageFindlistAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpWordpackageFindlistAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUniversalbpWordpackageFindlist(clt *core.SDKClient, req *simba.TaobaoUniversalbpWordpackageFindlistAPIRequest, resp *simba.TaobaoUniversalbpWordpackageFindlistAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

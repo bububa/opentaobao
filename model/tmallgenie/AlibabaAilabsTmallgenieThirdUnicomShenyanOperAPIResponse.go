@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponse struct {
 	AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponseModel).Reset()
+}
+
 // AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponseModel is 联通神眼注册操作 成功返回结果
 type AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_tmallgenie_third_unicom_shenyan_oper_response"`
@@ -22,4 +29,27 @@ type AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 响应码（0000表示成功，其他表示失败）
 	Result *AlibabaAilabsTmallgenieThirdUnicomShenyanOperResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponse)
+	},
+}
+
+// GetAlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponse 从 sync.Pool 获取 AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponse
+func GetAlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponse() *AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponse {
+	return poolAlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponse.Get().(*AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponse)
+}
+
+// ReleaseAlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponse 将 AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponse(v *AlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponse) {
+	v.Reset()
+	poolAlibabaAilabsTmallgenieThirdUnicomShenyanOperAPIResponse.Put(v)
 }

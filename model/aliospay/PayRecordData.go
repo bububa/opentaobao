@@ -1,5 +1,9 @@
 package aliospay
 
+import (
+	"sync"
+)
+
 // PayRecordData 结构体
 type PayRecordData struct {
 	// 业务订单号
@@ -22,4 +26,30 @@ type PayRecordData struct {
 	OrderTime int64 `json:"order_time,omitempty" xml:"order_time,omitempty"`
 	// 交易支付时间，未进行支付无值，时间戳
 	PaymentTime int64 `json:"payment_time,omitempty" xml:"payment_time,omitempty"`
+}
+
+var poolPayRecordData = sync.Pool{
+	New: func() any {
+		return new(PayRecordData)
+	},
+}
+
+// GetPayRecordData() 从对象池中获取PayRecordData
+func GetPayRecordData() *PayRecordData {
+	return poolPayRecordData.Get().(*PayRecordData)
+}
+
+// ReleasePayRecordData 释放PayRecordData
+func ReleasePayRecordData(v *PayRecordData) {
+	v.BizOrderId = ""
+	v.PayOrderId = ""
+	v.AlipayTradeId = ""
+	v.Subject = ""
+	v.PayResult = ""
+	v.TotalAmount = 0
+	v.ReceiptAmount = 0
+	v.RefundFee = 0
+	v.OrderTime = 0
+	v.PaymentTime = 0
+	poolPayRecordData.Put(v)
 }

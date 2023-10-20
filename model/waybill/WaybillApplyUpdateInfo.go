@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // WaybillApplyUpdateInfo 结构体
 type WaybillApplyUpdateInfo struct {
 	// 挑拣规则（大头笔信息）
@@ -16,4 +20,27 @@ type WaybillApplyUpdateInfo struct {
 	PackageCenterCode string `json:"package_center_code,omitempty" xml:"package_center_code,omitempty"`
 	// --
 	TradeOrderInfo *TradeOrderInfo `json:"trade_order_info,omitempty" xml:"trade_order_info,omitempty"`
+}
+
+var poolWaybillApplyUpdateInfo = sync.Pool{
+	New: func() any {
+		return new(WaybillApplyUpdateInfo)
+	},
+}
+
+// GetWaybillApplyUpdateInfo() 从对象池中获取WaybillApplyUpdateInfo
+func GetWaybillApplyUpdateInfo() *WaybillApplyUpdateInfo {
+	return poolWaybillApplyUpdateInfo.Get().(*WaybillApplyUpdateInfo)
+}
+
+// ReleaseWaybillApplyUpdateInfo 释放WaybillApplyUpdateInfo
+func ReleaseWaybillApplyUpdateInfo(v *WaybillApplyUpdateInfo) {
+	v.ShortAddress = ""
+	v.ConsigneeBranchName = ""
+	v.ConsigneeBranchCode = ""
+	v.WaybillCode = ""
+	v.PackageCenterName = ""
+	v.PackageCenterCode = ""
+	v.TradeOrderInfo = nil
+	poolWaybillApplyUpdateInfo.Put(v)
 }

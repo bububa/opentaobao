@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFuwuSpBillreordAddAPIRequest struct {
 // NewTaobaoFuwuSpBillreordAddRequest 初始化TaobaoFuwuSpBillreordAddAPIRequest对象
 func NewTaobaoFuwuSpBillreordAddRequest() *TaobaoFuwuSpBillreordAddAPIRequest {
 	return &TaobaoFuwuSpBillreordAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFuwuSpBillreordAddAPIRequest) Reset() {
+	r._paramBillRecordDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFuwuSpBillreordAddAPIRequest) SetParamBillRecordDTO(_paramBillRec
 // GetParamBillRecordDTO ParamBillRecordDTO Getter
 func (r TaobaoFuwuSpBillreordAddAPIRequest) GetParamBillRecordDTO() *BillRecordDto {
 	return r._paramBillRecordDTO
+}
+
+var poolTaobaoFuwuSpBillreordAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFuwuSpBillreordAddRequest()
+	},
+}
+
+// GetTaobaoFuwuSpBillreordAddRequest 从 sync.Pool 获取 TaobaoFuwuSpBillreordAddAPIRequest
+func GetTaobaoFuwuSpBillreordAddAPIRequest() *TaobaoFuwuSpBillreordAddAPIRequest {
+	return poolTaobaoFuwuSpBillreordAddAPIRequest.Get().(*TaobaoFuwuSpBillreordAddAPIRequest)
+}
+
+// ReleaseTaobaoFuwuSpBillreordAddAPIRequest 将 TaobaoFuwuSpBillreordAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFuwuSpBillreordAddAPIRequest(v *TaobaoFuwuSpBillreordAddAPIRequest) {
+	v.Reset()
+	poolTaobaoFuwuSpBillreordAddAPIRequest.Put(v)
 }

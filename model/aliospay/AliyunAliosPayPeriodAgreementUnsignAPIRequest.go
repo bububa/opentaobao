@@ -2,6 +2,7 @@ package aliospay
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliyunAliosPayPeriodAgreementUnsignAPIRequest struct {
 // NewAliyunAliosPayPeriodAgreementUnsignRequest 初始化AliyunAliosPayPeriodAgreementUnsignAPIRequest对象
 func NewAliyunAliosPayPeriodAgreementUnsignRequest() *AliyunAliosPayPeriodAgreementUnsignAPIRequest {
 	return &AliyunAliosPayPeriodAgreementUnsignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunAliosPayPeriodAgreementUnsignAPIRequest) Reset() {
+	r._periodAgreementUnsignRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliyunAliosPayPeriodAgreementUnsignAPIRequest) SetPeriodAgreementUnsign
 // GetPeriodAgreementUnsignRequest PeriodAgreementUnsignRequest Getter
 func (r AliyunAliosPayPeriodAgreementUnsignAPIRequest) GetPeriodAgreementUnsignRequest() *PeriodAgreementUnsignRequest {
 	return r._periodAgreementUnsignRequest
+}
+
+var poolAliyunAliosPayPeriodAgreementUnsignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunAliosPayPeriodAgreementUnsignRequest()
+	},
+}
+
+// GetAliyunAliosPayPeriodAgreementUnsignRequest 从 sync.Pool 获取 AliyunAliosPayPeriodAgreementUnsignAPIRequest
+func GetAliyunAliosPayPeriodAgreementUnsignAPIRequest() *AliyunAliosPayPeriodAgreementUnsignAPIRequest {
+	return poolAliyunAliosPayPeriodAgreementUnsignAPIRequest.Get().(*AliyunAliosPayPeriodAgreementUnsignAPIRequest)
+}
+
+// ReleaseAliyunAliosPayPeriodAgreementUnsignAPIRequest 将 AliyunAliosPayPeriodAgreementUnsignAPIRequest 放入 sync.Pool
+func ReleaseAliyunAliosPayPeriodAgreementUnsignAPIRequest(v *AliyunAliosPayPeriodAgreementUnsignAPIRequest) {
+	v.Reset()
+	poolAliyunAliosPayPeriodAgreementUnsignAPIRequest.Put(v)
 }

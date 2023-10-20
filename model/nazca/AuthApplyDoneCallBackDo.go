@@ -1,5 +1,9 @@
 package nazca
 
+import (
+	"sync"
+)
+
 // AuthApplyDoneCallBackDo 结构体
 type AuthApplyDoneCallBackDo struct {
 	// 身份证
@@ -42,4 +46,40 @@ type AuthApplyDoneCallBackDo struct {
 	ThreeCertNumber string `json:"three_cert_number,omitempty" xml:"three_cert_number,omitempty"`
 	// 证件类型 1：旧版三证 2：新版三证合一
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolAuthApplyDoneCallBackDo = sync.Pool{
+	New: func() any {
+		return new(AuthApplyDoneCallBackDo)
+	},
+}
+
+// GetAuthApplyDoneCallBackDo() 从对象池中获取AuthApplyDoneCallBackDo
+func GetAuthApplyDoneCallBackDo() *AuthApplyDoneCallBackDo {
+	return poolAuthApplyDoneCallBackDo.Get().(*AuthApplyDoneCallBackDo)
+}
+
+// ReleaseAuthApplyDoneCallBackDo 释放AuthApplyDoneCallBackDo
+func ReleaseAuthApplyDoneCallBackDo(v *AuthApplyDoneCallBackDo) {
+	v.Id = ""
+	v.AlipayAccount = ""
+	v.AlipayUserId = ""
+	v.ApplicantType = ""
+	v.Dn = ""
+	v.Email = ""
+	v.EndTime = ""
+	v.EnterpriseName = ""
+	v.License = ""
+	v.Organization = ""
+	v.PersonName = ""
+	v.Pfx = ""
+	v.PfxKey = ""
+	v.Phone = ""
+	v.PlatformUserId = ""
+	v.SequenceNo = ""
+	v.StartTime = ""
+	v.Status = ""
+	v.ThreeCertNumber = ""
+	v.Type = 0
+	poolAuthApplyDoneCallBackDo.Put(v)
 }

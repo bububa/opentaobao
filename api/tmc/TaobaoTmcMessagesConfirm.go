@@ -9,11 +9,6 @@ import (
 // taobao.tmc.messages.confirm
 //
 // 确认消费消息的状态
-func TaobaoTmcMessagesConfirm(clt *core.SDKClient, req *tmc.TaobaoTmcMessagesConfirmAPIRequest, session string) (*tmc.TaobaoTmcMessagesConfirmAPIResponse, error) {
-	var resp tmc.TaobaoTmcMessagesConfirmAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTmcMessagesConfirm(clt *core.SDKClient, req *tmc.TaobaoTmcMessagesConfirmAPIRequest, resp *tmc.TaobaoTmcMessagesConfirmAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

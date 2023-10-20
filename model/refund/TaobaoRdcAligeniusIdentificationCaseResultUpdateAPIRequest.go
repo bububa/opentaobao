@@ -2,6 +2,7 @@ package refund
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest struct {
 // NewTaobaoRdcAligeniusIdentificationCaseResultUpdateRequest 初始化TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest对象
 func NewTaobaoRdcAligeniusIdentificationCaseResultUpdateRequest() *TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest {
 	return &TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest) SetParam(_p
 // GetParam Param Getter
 func (r TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest) GetParam() *SyncIdentifyRefundCaseResultDto {
 	return r._param
+}
+
+var poolTaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRdcAligeniusIdentificationCaseResultUpdateRequest()
+	},
+}
+
+// GetTaobaoRdcAligeniusIdentificationCaseResultUpdateRequest 从 sync.Pool 获取 TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest
+func GetTaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest() *TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest {
+	return poolTaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest.Get().(*TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest)
+}
+
+// ReleaseTaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest 将 TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest(v *TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest.Put(v)
 }

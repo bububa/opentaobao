@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // DeliveryPlan 结构体
 type DeliveryPlan struct {
 	// 外部物流单号
@@ -46,4 +50,42 @@ type DeliveryPlan struct {
 	PlanStatus int64 `json:"plan_status,omitempty" xml:"plan_status,omitempty"`
 	// 计划退款状态
 	PlanRefundStatus int64 `json:"plan_refund_status,omitempty" xml:"plan_refund_status,omitempty"`
+}
+
+var poolDeliveryPlan = sync.Pool{
+	New: func() any {
+		return new(DeliveryPlan)
+	},
+}
+
+// GetDeliveryPlan() 从对象池中获取DeliveryPlan
+func GetDeliveryPlan() *DeliveryPlan {
+	return poolDeliveryPlan.Get().(*DeliveryPlan)
+}
+
+// ReleaseDeliveryPlan 释放DeliveryPlan
+func ReleaseDeliveryPlan(v *DeliveryPlan) {
+	v.OutLogisticsId = ""
+	v.PrepareTimeBegin = ""
+	v.ShipTimeBegin = ""
+	v.ActualShipTime = ""
+	v.ReceiverName = ""
+	v.ReceiverMobile = ""
+	v.ReceiverPhone = ""
+	v.ReceiverAddress = ""
+	v.Oaid = ""
+	v.PrivacyNum = ""
+	v.PrivacyExpireTime = ""
+	v.ReceiverTown = ""
+	v.ReceiverDistrict = ""
+	v.ReceiverCity = ""
+	v.ReceiverState = ""
+	v.ReceiverCountry = ""
+	v.PlanId = 0
+	v.OrderId = 0
+	v.CurrPhase = 0
+	v.GoodsNum = 0
+	v.PlanStatus = 0
+	v.PlanRefundStatus = 0
+	poolDeliveryPlan.Put(v)
 }

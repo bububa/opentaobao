@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkBillListAPIRequest struct {
 // NewAlibabaWdkBillListRequest 初始化AlibabaWdkBillListAPIRequest对象
 func NewAlibabaWdkBillListRequest() *AlibabaWdkBillListAPIRequest {
 	return &AlibabaWdkBillListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkBillListAPIRequest) Reset() {
+	r._txdBillListGetRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkBillListAPIRequest) SetTxdBillListGetRequest(_txdBillListGetR
 // GetTxdBillListGetRequest TxdBillListGetRequest Getter
 func (r AlibabaWdkBillListAPIRequest) GetTxdBillListGetRequest() *TxdBillListGetRequest {
 	return r._txdBillListGetRequest
+}
+
+var poolAlibabaWdkBillListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkBillListRequest()
+	},
+}
+
+// GetAlibabaWdkBillListRequest 从 sync.Pool 获取 AlibabaWdkBillListAPIRequest
+func GetAlibabaWdkBillListAPIRequest() *AlibabaWdkBillListAPIRequest {
+	return poolAlibabaWdkBillListAPIRequest.Get().(*AlibabaWdkBillListAPIRequest)
+}
+
+// ReleaseAlibabaWdkBillListAPIRequest 将 AlibabaWdkBillListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkBillListAPIRequest(v *AlibabaWdkBillListAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkBillListAPIRequest.Put(v)
 }

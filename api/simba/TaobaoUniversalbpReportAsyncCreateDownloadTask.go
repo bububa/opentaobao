@@ -9,11 +9,6 @@ import (
 // taobao.universalbp.report.async.create.download.task
 //
 // 入参报表查询信息，出参下载任务id
-func TaobaoUniversalbpReportAsyncCreateDownloadTask(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest, session string) (*simba.TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUniversalbpReportAsyncCreateDownloadTask(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest, resp *simba.TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

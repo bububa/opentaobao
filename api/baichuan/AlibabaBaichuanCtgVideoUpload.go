@@ -9,11 +9,6 @@ import (
 // alibaba.baichuan.ctg.video.upload
 //
 // 提供优酷的短视频入淘API
-func AlibabaBaichuanCtgVideoUpload(clt *core.SDKClient, req *baichuan.AlibabaBaichuanCtgVideoUploadAPIRequest, session string) (*baichuan.AlibabaBaichuanCtgVideoUploadAPIResponse, error) {
-	var resp baichuan.AlibabaBaichuanCtgVideoUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaBaichuanCtgVideoUpload(clt *core.SDKClient, req *baichuan.AlibabaBaichuanCtgVideoUploadAPIRequest, resp *baichuan.AlibabaBaichuanCtgVideoUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

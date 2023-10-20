@@ -1,5 +1,9 @@
 package tmallhk
 
+import (
+	"sync"
+)
+
 // OrderCertify 结构体
 type OrderCertify struct {
 	// 订购人身份证号加密而成的加密串
@@ -12,4 +16,25 @@ type OrderCertify struct {
 	Phone string `json:"phone,omitempty" xml:"phone,omitempty"`
 	// 订单编号
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolOrderCertify = sync.Pool{
+	New: func() any {
+		return new(OrderCertify)
+	},
+}
+
+// GetOrderCertify() 从对象池中获取OrderCertify
+func GetOrderCertify() *OrderCertify {
+	return poolOrderCertify.Get().(*OrderCertify)
+}
+
+// ReleaseOrderCertify 释放OrderCertify
+func ReleaseOrderCertify(v *OrderCertify) {
+	v.OcrId = ""
+	v.OcrName = ""
+	v.Idempotent = ""
+	v.Phone = ""
+	v.OrderId = 0
+	poolOrderCertify.Put(v)
 }

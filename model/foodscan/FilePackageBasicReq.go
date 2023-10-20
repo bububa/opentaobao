@@ -1,5 +1,9 @@
 package foodscan
 
+import (
+	"sync"
+)
+
 // FilePackageBasicReq 结构体
 type FilePackageBasicReq struct {
 	// 脚型报告的唯一标识
@@ -14,4 +18,26 @@ type FilePackageBasicReq struct {
 	FileName3 string `json:"file_name3,omitempty" xml:"file_name3,omitempty"`
 	// 1左脚 2右脚
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolFilePackageBasicReq = sync.Pool{
+	New: func() any {
+		return new(FilePackageBasicReq)
+	},
+}
+
+// GetFilePackageBasicReq() 从对象池中获取FilePackageBasicReq
+func GetFilePackageBasicReq() *FilePackageBasicReq {
+	return poolFilePackageBasicReq.Get().(*FilePackageBasicReq)
+}
+
+// ReleaseFilePackageBasicReq 释放FilePackageBasicReq
+func ReleaseFilePackageBasicReq(v *FilePackageBasicReq) {
+	v.ScanId = ""
+	v.FileName1 = ""
+	v.FileName2 = ""
+	v.UserId = ""
+	v.FileName3 = ""
+	v.Type = 0
+	poolFilePackageBasicReq.Put(v)
 }

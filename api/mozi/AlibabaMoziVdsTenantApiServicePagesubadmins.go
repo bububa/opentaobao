@@ -9,11 +9,6 @@ import (
 // alibaba.mozi.vds.tenant.api.service.pagesubadmins
 //
 // 分页查询租户子管理员
-func AlibabaMoziVdsTenantApiServicePagesubadmins(clt *core.SDKClient, req *mozi.AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest, session string) (*mozi.AlibabaMoziVdsTenantApiServicePagesubadminsAPIResponse, error) {
-	var resp mozi.AlibabaMoziVdsTenantApiServicePagesubadminsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMoziVdsTenantApiServicePagesubadmins(clt *core.SDKClient, req *mozi.AlibabaMoziVdsTenantApiServicePagesubadminsAPIRequest, resp *mozi.AlibabaMoziVdsTenantApiServicePagesubadminsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

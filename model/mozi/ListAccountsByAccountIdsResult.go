@@ -1,5 +1,9 @@
 package mozi
 
+import (
+	"sync"
+)
+
 // ListAccountsByAccountIdsResult 结构体
 type ListAccountsByAccountIdsResult struct {
 	// 返回的数据
@@ -14,4 +18,26 @@ type ListAccountsByAccountIdsResult struct {
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolListAccountsByAccountIdsResult = sync.Pool{
+	New: func() any {
+		return new(ListAccountsByAccountIdsResult)
+	},
+}
+
+// GetListAccountsByAccountIdsResult() 从对象池中获取ListAccountsByAccountIdsResult
+func GetListAccountsByAccountIdsResult() *ListAccountsByAccountIdsResult {
+	return poolListAccountsByAccountIdsResult.Get().(*ListAccountsByAccountIdsResult)
+}
+
+// ReleaseListAccountsByAccountIdsResult 释放ListAccountsByAccountIdsResult
+func ReleaseListAccountsByAccountIdsResult(v *ListAccountsByAccountIdsResult) {
+	v.Data = ""
+	v.RequestId = ""
+	v.ResponseMessage = ""
+	v.ResponseMetaData = ""
+	v.ResponseCode = ""
+	v.Success = false
+	poolListAccountsByAccountIdsResult.Put(v)
 }

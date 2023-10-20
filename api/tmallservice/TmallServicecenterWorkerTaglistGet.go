@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.worker.taglist.get
 //
 // 服务商获取对应工人的标签
-func TmallServicecenterWorkerTaglistGet(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerTaglistGetAPIRequest, session string) (*tmallservice.TmallServicecenterWorkerTaglistGetAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkerTaglistGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkerTaglistGet(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerTaglistGetAPIRequest, resp *tmallservice.TmallServicecenterWorkerTaglistGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

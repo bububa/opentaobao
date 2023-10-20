@@ -9,11 +9,6 @@ import (
 // alibaba.idle.adv.material.upload
 //
 // 闲鱼用户增长素材中心素材上传接口
-func AlibabaIdleAdvMaterialUpload(clt *core.SDKClient, req *idle.AlibabaIdleAdvMaterialUploadAPIRequest, session string) (*idle.AlibabaIdleAdvMaterialUploadAPIResponse, error) {
-	var resp idle.AlibabaIdleAdvMaterialUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleAdvMaterialUpload(clt *core.SDKClient, req *idle.AlibabaIdleAdvMaterialUploadAPIRequest, resp *idle.AlibabaIdleAdvMaterialUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

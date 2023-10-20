@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTradeOrderskuUpdateAPIResponse struct {
 	TaobaoTradeOrderskuUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTradeOrderskuUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTradeOrderskuUpdateAPIResponseModel).Reset()
+}
+
 // TaobaoTradeOrderskuUpdateAPIResponseModel is 更新交易的销售属性 成功返回结果
 type TaobaoTradeOrderskuUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"trade_ordersku_update_response"`
@@ -22,4 +29,27 @@ type TaobaoTradeOrderskuUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 只返回oid和modified
 	Order *Order `json:"order,omitempty" xml:"order,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTradeOrderskuUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Order = nil
+}
+
+var poolTaobaoTradeOrderskuUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTradeOrderskuUpdateAPIResponse)
+	},
+}
+
+// GetTaobaoTradeOrderskuUpdateAPIResponse 从 sync.Pool 获取 TaobaoTradeOrderskuUpdateAPIResponse
+func GetTaobaoTradeOrderskuUpdateAPIResponse() *TaobaoTradeOrderskuUpdateAPIResponse {
+	return poolTaobaoTradeOrderskuUpdateAPIResponse.Get().(*TaobaoTradeOrderskuUpdateAPIResponse)
+}
+
+// ReleaseTaobaoTradeOrderskuUpdateAPIResponse 将 TaobaoTradeOrderskuUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTradeOrderskuUpdateAPIResponse(v *TaobaoTradeOrderskuUpdateAPIResponse) {
+	v.Reset()
+	poolTaobaoTradeOrderskuUpdateAPIResponse.Put(v)
 }

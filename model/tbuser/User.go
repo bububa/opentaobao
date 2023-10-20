@@ -1,5 +1,9 @@
 package tbuser
 
+import (
+	"sync"
+)
+
 // User 结构体
 type User struct {
 	// 用户昵称
@@ -58,4 +62,48 @@ type User struct {
 	IsGoldenSeller bool `json:"is_golden_seller,omitempty" xml:"is_golden_seller,omitempty"`
 	// 是否是特价版商家，需要field查询
 	IsTjbSeller bool `json:"is_tjb_seller,omitempty" xml:"is_tjb_seller,omitempty"`
+}
+
+var poolUser = sync.Pool{
+	New: func() any {
+		return new(User)
+	},
+}
+
+// GetUser() 从对象池中获取User
+func GetUser() *User {
+	return poolUser.Get().(*User)
+}
+
+// ReleaseUser 释放User
+func ReleaseUser(v *User) {
+	v.Nick = ""
+	v.Avatar = ""
+	v.Sex = ""
+	v.OpenUid = ""
+	v.Type = ""
+	v.AutoRepost = ""
+	v.PromotedType = ""
+	v.Status = ""
+	v.AlipayBind = ""
+	v.VipInfo = ""
+	v.VerticalMarket = ""
+	v.UserId = 0
+	v.SellerCredit = nil
+	v.ItemImgNum = 0
+	v.ItemImgSize = 0
+	v.PropImgNum = 0
+	v.PropImgSize = 0
+	v.HasMorePic = false
+	v.ConsumerProtection = false
+	v.MagazineSubscribe = false
+	v.OnlineGaming = false
+	v.Liangpin = false
+	v.SignFoodSellerPromise = false
+	v.HasShop = false
+	v.IsLightningConsignment = false
+	v.HasSubStock = false
+	v.IsGoldenSeller = false
+	v.IsTjbSeller = false
+	poolUser.Put(v)
 }

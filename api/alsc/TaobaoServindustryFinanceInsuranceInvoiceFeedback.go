@@ -9,11 +9,6 @@ import (
 // taobao.servindustry.finance.insurance.invoice.feedback
 //
 // 保险-开票结果反馈
-func TaobaoServindustryFinanceInsuranceInvoiceFeedback(clt *core.SDKClient, req *alsc.TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest, session string) (*alsc.TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIResponse, error) {
-	var resp alsc.TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoServindustryFinanceInsuranceInvoiceFeedback(clt *core.SDKClient, req *alsc.TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIRequest, resp *alsc.TaobaoServindustryFinanceInsuranceInvoiceFeedbackAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

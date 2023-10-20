@@ -9,11 +9,6 @@ import (
 // alibaba.wdkorder.sharestock.insurance.getorder
 //
 // 共享库存订单投保消息获取
-func AlibabaWdkorderSharestockInsuranceGetorder(clt *core.SDKClient, req *wdk.AlibabaWdkorderSharestockInsuranceGetorderAPIRequest, session string) (*wdk.AlibabaWdkorderSharestockInsuranceGetorderAPIResponse, error) {
-	var resp wdk.AlibabaWdkorderSharestockInsuranceGetorderAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkorderSharestockInsuranceGetorder(clt *core.SDKClient, req *wdk.AlibabaWdkorderSharestockInsuranceGetorderAPIRequest, resp *wdk.AlibabaWdkorderSharestockInsuranceGetorderAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

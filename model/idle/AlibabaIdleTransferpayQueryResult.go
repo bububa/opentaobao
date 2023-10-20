@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // AlibabaIdleTransferpayQueryResult 结构体
 type AlibabaIdleTransferpayQueryResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type AlibabaIdleTransferpayQueryResult struct {
 	Module *Serializable `json:"module,omitempty" xml:"module,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaIdleTransferpayQueryResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleTransferpayQueryResult)
+	},
+}
+
+// GetAlibabaIdleTransferpayQueryResult() 从对象池中获取AlibabaIdleTransferpayQueryResult
+func GetAlibabaIdleTransferpayQueryResult() *AlibabaIdleTransferpayQueryResult {
+	return poolAlibabaIdleTransferpayQueryResult.Get().(*AlibabaIdleTransferpayQueryResult)
+}
+
+// ReleaseAlibabaIdleTransferpayQueryResult 释放AlibabaIdleTransferpayQueryResult
+func ReleaseAlibabaIdleTransferpayQueryResult(v *AlibabaIdleTransferpayQueryResult) {
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Module = nil
+	v.Success = false
+	poolAlibabaIdleTransferpayQueryResult.Put(v)
 }

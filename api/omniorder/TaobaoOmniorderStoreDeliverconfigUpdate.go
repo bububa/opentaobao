@@ -9,11 +9,6 @@ import (
 // taobao.omniorder.store.deliverconfig.update
 //
 // 修改门店发货配置内容
-func TaobaoOmniorderStoreDeliverconfigUpdate(clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreDeliverconfigUpdateAPIRequest, session string) (*omniorder.TaobaoOmniorderStoreDeliverconfigUpdateAPIResponse, error) {
-	var resp omniorder.TaobaoOmniorderStoreDeliverconfigUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOmniorderStoreDeliverconfigUpdate(clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreDeliverconfigUpdateAPIRequest, resp *omniorder.TaobaoOmniorderStoreDeliverconfigUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

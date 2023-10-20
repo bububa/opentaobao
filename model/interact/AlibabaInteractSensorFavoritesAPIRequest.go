@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaInteractSensorFavoritesAPIRequest struct {
 // NewAlibabaInteractSensorFavoritesRequest 初始化AlibabaInteractSensorFavoritesAPIRequest对象
 func NewAlibabaInteractSensorFavoritesRequest() *AlibabaInteractSensorFavoritesAPIRequest {
 	return &AlibabaInteractSensorFavoritesAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractSensorFavoritesAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaInteractSensorFavoritesAPIRequest) GetApiParams(params url.Values
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaInteractSensorFavoritesAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaInteractSensorFavoritesAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractSensorFavoritesRequest()
+	},
+}
+
+// GetAlibabaInteractSensorFavoritesRequest 从 sync.Pool 获取 AlibabaInteractSensorFavoritesAPIRequest
+func GetAlibabaInteractSensorFavoritesAPIRequest() *AlibabaInteractSensorFavoritesAPIRequest {
+	return poolAlibabaInteractSensorFavoritesAPIRequest.Get().(*AlibabaInteractSensorFavoritesAPIRequest)
+}
+
+// ReleaseAlibabaInteractSensorFavoritesAPIRequest 将 AlibabaInteractSensorFavoritesAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractSensorFavoritesAPIRequest(v *AlibabaInteractSensorFavoritesAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractSensorFavoritesAPIRequest.Put(v)
 }

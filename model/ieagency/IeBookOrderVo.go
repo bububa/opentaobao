@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // IeBookOrderVo 结构体
 type IeBookOrderVo struct {
 	// 2
@@ -42,4 +46,40 @@ type IeBookOrderVo struct {
 	TotalTaxPrice int64 `json:"total_tax_price,omitempty" xml:"total_tax_price,omitempty"`
 	// 12
 	TotalTicketPrice int64 `json:"total_ticket_price,omitempty" xml:"total_ticket_price,omitempty"`
+}
+
+var poolIeBookOrderVo = sync.Pool{
+	New: func() any {
+		return new(IeBookOrderVo)
+	},
+}
+
+// GetIeBookOrderVo() 从对象池中获取IeBookOrderVo
+func GetIeBookOrderVo() *IeBookOrderVo {
+	return poolIeBookOrderVo.Get().(*IeBookOrderVo)
+}
+
+// ReleaseIeBookOrderVo 释放IeBookOrderVo
+func ReleaseIeBookOrderVo(v *IeBookOrderVo) {
+	v.BookFlightVos = v.BookFlightVos[:0]
+	v.BookPnrVos = v.BookPnrVos[:0]
+	v.BookTicketVos = v.BookTicketVos[:0]
+	v.BookStatus = ""
+	v.BookType = ""
+	v.IssueTicketType = ""
+	v.TaxType = ""
+	v.TerminalFileName = ""
+	v.TerminalUrl = ""
+	v.TicketAuthenticStatus = ""
+	v.AdtTaxPrice = 0
+	v.AdtTicketPrice = 0
+	v.ChdTaxPrice = 0
+	v.ChdTicketPrice = 0
+	v.FareSource = 0
+	v.OriginTotalPrice = 0
+	v.PassengerCount = 0
+	v.TotalOrderPirce = 0
+	v.TotalTaxPrice = 0
+	v.TotalTicketPrice = 0
+	poolIeBookOrderVo.Put(v)
 }

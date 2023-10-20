@@ -9,11 +9,6 @@ import (
 // alibaba.retail.marketing.itemdiscount.activity.create
 //
 // 同城零售单品特价活动创建
-func AlibabaRetailMarketingItemdiscountActivityCreate(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingItemdiscountActivityCreateAPIRequest, session string) (*wdk.AlibabaRetailMarketingItemdiscountActivityCreateAPIResponse, error) {
-	var resp wdk.AlibabaRetailMarketingItemdiscountActivityCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaRetailMarketingItemdiscountActivityCreate(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingItemdiscountActivityCreateAPIRequest, resp *wdk.AlibabaRetailMarketingItemdiscountActivityCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

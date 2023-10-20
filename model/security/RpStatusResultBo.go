@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // RpStatusResultBo 结构体
 type RpStatusResultBo struct {
 	// 对应的bizId
@@ -18,4 +22,28 @@ type RpStatusResultBo struct {
 	GradeCertified bool `json:"grade_certified,omitempty" xml:"grade_certified,omitempty"`
 	// 复核状态被置位
 	ReviewStatus bool `json:"review_status,omitempty" xml:"review_status,omitempty"`
+}
+
+var poolRpStatusResultBo = sync.Pool{
+	New: func() any {
+		return new(RpStatusResultBo)
+	},
+}
+
+// GetRpStatusResultBo() 从对象池中获取RpStatusResultBo
+func GetRpStatusResultBo() *RpStatusResultBo {
+	return poolRpStatusResultBo.Get().(*RpStatusResultBo)
+}
+
+// ReleaseRpStatusResultBo 释放RpStatusResultBo
+func ReleaseRpStatusResultBo(v *RpStatusResultBo) {
+	v.Biz = ""
+	v.ReviewType = ""
+	v.CurGrade = nil
+	v.RequireGrade = nil
+	v.RpAuditDetails = nil
+	v.RpAuditStatus = nil
+	v.GradeCertified = false
+	v.ReviewStatus = false
+	poolRpStatusResultBo.Put(v)
 }

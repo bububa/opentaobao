@@ -1,7 +1,11 @@
 package tuanhotel
 
-// TopTuanItemSkuVolist 结构体
-type TopTuanItemSkuVolist struct {
+import (
+	"sync"
+)
+
+// TopTuanItemSkuVOList 结构体
+type TopTuanItemSkuVOList struct {
 	// 宝贝标题
 	ItemTitle string `json:"item_title,omitempty" xml:"item_title,omitempty"`
 	// 套餐原价
@@ -26,4 +30,32 @@ type TopTuanItemSkuVolist struct {
 	CalendarInfo *TopSkuCalendarInfo `json:"calendar_info,omitempty" xml:"calendar_info,omitempty"`
 	// skuId
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolTopTuanItemSkuVOList = sync.Pool{
+	New: func() any {
+		return new(TopTuanItemSkuVOList)
+	},
+}
+
+// GetTopTuanItemSkuVOList() 从对象池中获取TopTuanItemSkuVOList
+func GetTopTuanItemSkuVOList() *TopTuanItemSkuVOList {
+	return poolTopTuanItemSkuVOList.Get().(*TopTuanItemSkuVOList)
+}
+
+// ReleaseTopTuanItemSkuVOList 释放TopTuanItemSkuVOList
+func ReleaseTopTuanItemSkuVOList(v *TopTuanItemSkuVOList) {
+	v.ItemTitle = ""
+	v.OrigPrice = ""
+	v.Price = ""
+	v.Name = ""
+	v.OuterId = ""
+	v.NightCount = 0
+	v.Quantity = 0
+	v.ItemId = 0
+	v.SellerId = 0
+	v.PeopleCount = 0
+	v.CalendarInfo = nil
+	v.SkuId = 0
+	poolTopTuanItemSkuVOList.Put(v)
 }

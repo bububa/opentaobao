@@ -9,11 +9,6 @@ import (
 // tmall.industry.baby.authprofile.backflow
 //
 // 孕校云回流档案
-func TmallIndustryBabyAuthprofileBackflow(clt *core.SDKClient, req *customizemarket.TmallIndustryBabyAuthprofileBackflowAPIRequest, session string) (*customizemarket.TmallIndustryBabyAuthprofileBackflowAPIResponse, error) {
-	var resp customizemarket.TmallIndustryBabyAuthprofileBackflowAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallIndustryBabyAuthprofileBackflow(clt *core.SDKClient, req *customizemarket.TmallIndustryBabyAuthprofileBackflowAPIRequest, resp *customizemarket.TmallIndustryBabyAuthprofileBackflowAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

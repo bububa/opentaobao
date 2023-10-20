@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenUserInfo 结构体
 type OpenUserInfo struct {
 	// 酒店城市费用列表
@@ -24,4 +28,31 @@ type OpenUserInfo struct {
 	ReserveType int64 `json:"reserve_type,omitempty" xml:"reserve_type,omitempty"`
 	// 超级经济舱折扣。1到10的整数
 	PremiumEconomyDiscount int64 `json:"premium_economy_discount,omitempty" xml:"premium_economy_discount,omitempty"`
+}
+
+var poolOpenUserInfo = sync.Pool{
+	New: func() any {
+		return new(OpenUserInfo)
+	},
+}
+
+// GetOpenUserInfo() 从对象池中获取OpenUserInfo
+func GetOpenUserInfo() *OpenUserInfo {
+	return poolOpenUserInfo.Get().(*OpenUserInfo)
+}
+
+// ReleaseOpenUserInfo 释放OpenUserInfo
+func ReleaseOpenUserInfo(v *OpenUserInfo) {
+	v.HotelCitys = v.HotelCitys[:0]
+	v.UserName = ""
+	v.UserId = ""
+	v.FlightCabins = ""
+	v.TrainSeats = ""
+	v.InternationalFlightCabins = ""
+	v.EconomyDiscount = 0
+	v.BusinessDiscount = 0
+	v.FirstDiscount = 0
+	v.ReserveType = 0
+	v.PremiumEconomyDiscount = 0
+	poolOpenUserInfo.Put(v)
 }

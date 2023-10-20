@@ -2,6 +2,7 @@ package tmalltrend
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallBrandItemCouponProtectAPIRequest struct {
 // NewTmallBrandItemCouponProtectRequest 初始化TmallBrandItemCouponProtectAPIRequest对象
 func NewTmallBrandItemCouponProtectRequest() *TmallBrandItemCouponProtectAPIRequest {
 	return &TmallBrandItemCouponProtectAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallBrandItemCouponProtectAPIRequest) Reset() {
+	r._protectionPeriod = ""
+	r._itemId = 0
+	r._brandId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallBrandItemCouponProtectAPIRequest) SetBrandId(_brandId int64) error
 // GetBrandId BrandId Getter
 func (r TmallBrandItemCouponProtectAPIRequest) GetBrandId() int64 {
 	return r._brandId
+}
+
+var poolTmallBrandItemCouponProtectAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallBrandItemCouponProtectRequest()
+	},
+}
+
+// GetTmallBrandItemCouponProtectRequest 从 sync.Pool 获取 TmallBrandItemCouponProtectAPIRequest
+func GetTmallBrandItemCouponProtectAPIRequest() *TmallBrandItemCouponProtectAPIRequest {
+	return poolTmallBrandItemCouponProtectAPIRequest.Get().(*TmallBrandItemCouponProtectAPIRequest)
+}
+
+// ReleaseTmallBrandItemCouponProtectAPIRequest 将 TmallBrandItemCouponProtectAPIRequest 放入 sync.Pool
+func ReleaseTmallBrandItemCouponProtectAPIRequest(v *TmallBrandItemCouponProtectAPIRequest) {
+	v.Reset()
+	poolTmallBrandItemCouponProtectAPIRequest.Put(v)
 }

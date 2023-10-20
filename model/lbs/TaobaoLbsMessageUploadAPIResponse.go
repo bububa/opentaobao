@@ -2,6 +2,7 @@ package lbs
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoLbsMessageUploadAPIResponse struct {
 	TaobaoLbsMessageUploadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoLbsMessageUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLbsMessageUploadAPIResponseModel).Reset()
+}
+
 // TaobaoLbsMessageUploadAPIResponseModel is lbs数据采集 成功返回结果
 type TaobaoLbsMessageUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"lbs_message_upload_response"`
@@ -26,4 +33,29 @@ type TaobaoLbsMessageUploadAPIResponseModel struct {
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// result
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLbsMessageUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultMsg = ""
+	m.ResultCode = ""
+	m.Result = false
+}
+
+var poolTaobaoLbsMessageUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLbsMessageUploadAPIResponse)
+	},
+}
+
+// GetTaobaoLbsMessageUploadAPIResponse 从 sync.Pool 获取 TaobaoLbsMessageUploadAPIResponse
+func GetTaobaoLbsMessageUploadAPIResponse() *TaobaoLbsMessageUploadAPIResponse {
+	return poolTaobaoLbsMessageUploadAPIResponse.Get().(*TaobaoLbsMessageUploadAPIResponse)
+}
+
+// ReleaseTaobaoLbsMessageUploadAPIResponse 将 TaobaoLbsMessageUploadAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLbsMessageUploadAPIResponse(v *TaobaoLbsMessageUploadAPIResponse) {
+	v.Reset()
+	poolTaobaoLbsMessageUploadAPIResponse.Put(v)
 }

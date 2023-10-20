@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMjOcWritesaleslipAPIRequest struct {
 // NewAlibabaMjOcWritesaleslipRequest 初始化AlibabaMjOcWritesaleslipAPIRequest对象
 func NewAlibabaMjOcWritesaleslipRequest() *AlibabaMjOcWritesaleslipAPIRequest {
 	return &AlibabaMjOcWritesaleslipAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMjOcWritesaleslipAPIRequest) Reset() {
+	r._posSaleOrder = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMjOcWritesaleslipAPIRequest) SetPosSaleOrder(_posSaleOrder *PosS
 // GetPosSaleOrder PosSaleOrder Getter
 func (r AlibabaMjOcWritesaleslipAPIRequest) GetPosSaleOrder() *PosSaleOrderDto {
 	return r._posSaleOrder
+}
+
+var poolAlibabaMjOcWritesaleslipAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMjOcWritesaleslipRequest()
+	},
+}
+
+// GetAlibabaMjOcWritesaleslipRequest 从 sync.Pool 获取 AlibabaMjOcWritesaleslipAPIRequest
+func GetAlibabaMjOcWritesaleslipAPIRequest() *AlibabaMjOcWritesaleslipAPIRequest {
+	return poolAlibabaMjOcWritesaleslipAPIRequest.Get().(*AlibabaMjOcWritesaleslipAPIRequest)
+}
+
+// ReleaseAlibabaMjOcWritesaleslipAPIRequest 将 AlibabaMjOcWritesaleslipAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMjOcWritesaleslipAPIRequest(v *AlibabaMjOcWritesaleslipAPIRequest) {
+	v.Reset()
+	poolAlibabaMjOcWritesaleslipAPIRequest.Put(v)
 }

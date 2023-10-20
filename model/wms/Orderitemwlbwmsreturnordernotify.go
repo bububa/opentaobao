@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // Orderitemwlbwmsreturnordernotify 结构体
 type Orderitemwlbwmsreturnordernotify struct {
 	// 平台交易订单编码,淘系交易请传入交易单号
@@ -16,4 +20,27 @@ type Orderitemwlbwmsreturnordernotify struct {
 	ItemName string `json:"item_name,omitempty" xml:"item_name,omitempty"`
 	// 商品数量
 	ItemQuantity int64 `json:"item_quantity,omitempty" xml:"item_quantity,omitempty"`
+}
+
+var poolOrderitemwlbwmsreturnordernotify = sync.Pool{
+	New: func() any {
+		return new(Orderitemwlbwmsreturnordernotify)
+	},
+}
+
+// GetOrderitemwlbwmsreturnordernotify() 从对象池中获取Orderitemwlbwmsreturnordernotify
+func GetOrderitemwlbwmsreturnordernotify() *Orderitemwlbwmsreturnordernotify {
+	return poolOrderitemwlbwmsreturnordernotify.Get().(*Orderitemwlbwmsreturnordernotify)
+}
+
+// ReleaseOrderitemwlbwmsreturnordernotify 释放Orderitemwlbwmsreturnordernotify
+func ReleaseOrderitemwlbwmsreturnordernotify(v *Orderitemwlbwmsreturnordernotify) {
+	v.OrderItemId = ""
+	v.OrderSourceCode = ""
+	v.SubSourceCode = ""
+	v.ItemId = ""
+	v.ExtendFields = ""
+	v.ItemName = ""
+	v.ItemQuantity = 0
+	poolOrderitemwlbwmsreturnordernotify.Put(v)
 }

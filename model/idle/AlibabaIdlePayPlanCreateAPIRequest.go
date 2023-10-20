@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,14 @@ type AlibabaIdlePayPlanCreateAPIRequest struct {
 // NewAlibabaIdlePayPlanCreateRequest 初始化AlibabaIdlePayPlanCreateAPIRequest对象
 func NewAlibabaIdlePayPlanCreateRequest() *AlibabaIdlePayPlanCreateAPIRequest {
 	return &AlibabaIdlePayPlanCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdlePayPlanCreateAPIRequest) Reset() {
+	r._agreementPayPlanParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -53,4 +60,21 @@ func (r *AlibabaIdlePayPlanCreateAPIRequest) SetAgreementPayPlanParam(_agreement
 // GetAgreementPayPlanParam AgreementPayPlanParam Getter
 func (r AlibabaIdlePayPlanCreateAPIRequest) GetAgreementPayPlanParam() *AgreementPayPlanParam {
 	return r._agreementPayPlanParam
+}
+
+var poolAlibabaIdlePayPlanCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdlePayPlanCreateRequest()
+	},
+}
+
+// GetAlibabaIdlePayPlanCreateRequest 从 sync.Pool 获取 AlibabaIdlePayPlanCreateAPIRequest
+func GetAlibabaIdlePayPlanCreateAPIRequest() *AlibabaIdlePayPlanCreateAPIRequest {
+	return poolAlibabaIdlePayPlanCreateAPIRequest.Get().(*AlibabaIdlePayPlanCreateAPIRequest)
+}
+
+// ReleaseAlibabaIdlePayPlanCreateAPIRequest 将 AlibabaIdlePayPlanCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdlePayPlanCreateAPIRequest(v *AlibabaIdlePayPlanCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaIdlePayPlanCreateAPIRequest.Put(v)
 }

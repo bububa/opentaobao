@@ -9,11 +9,6 @@ import (
 // taobao.promotionmisc.activity.range.all.remove
 //
 // 清空活动参与的商品
-func TaobaoPromotionmiscActivityRangeAllRemove(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscActivityRangeAllRemoveAPIRequest, session string) (*promotion.TaobaoPromotionmiscActivityRangeAllRemoveAPIResponse, error) {
-	var resp promotion.TaobaoPromotionmiscActivityRangeAllRemoveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPromotionmiscActivityRangeAllRemove(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscActivityRangeAllRemoveAPIRequest, resp *promotion.TaobaoPromotionmiscActivityRangeAllRemoveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

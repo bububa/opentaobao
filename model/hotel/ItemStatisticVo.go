@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // ItemStatisticVo 结构体
 type ItemStatisticVo struct {
 	// tab信息
@@ -36,4 +40,37 @@ type ItemStatisticVo struct {
 	TravelItemId int64 `json:"travel_item_id,omitempty" xml:"travel_item_id,omitempty"`
 	// tripAdv评论数
 	TripAdvateCnt int64 `json:"trip_advate_cnt,omitempty" xml:"trip_advate_cnt,omitempty"`
+}
+
+var poolItemStatisticVo = sync.Pool{
+	New: func() any {
+		return new(ItemStatisticVo)
+	},
+}
+
+// GetItemStatisticVo() 从对象池中获取ItemStatisticVo
+func GetItemStatisticVo() *ItemStatisticVo {
+	return poolItemStatisticVo.Get().(*ItemStatisticVo)
+}
+
+// ReleaseItemStatisticVo 释放ItemStatisticVo
+func ReleaseItemStatisticVo(v *ItemStatisticVo) {
+	v.RoomTabInfos = v.RoomTabInfos[:0]
+	v.ScoreInfos = v.ScoreInfos[:0]
+	v.TabInfos = v.TabInfos[:0]
+	v.BestItem = ""
+	v.RecommendStr = ""
+	v.ScoreDesc = ""
+	v.ScoreDetail = ""
+	v.TotalScore = ""
+	v.TravelItemInfo = ""
+	v.IsFiveGrade = 0
+	v.RateCnt = 0
+	v.RatePicCnt = 0
+	v.ScoreLevel = 0
+	v.Source = 0
+	v.TabShowLines = 0
+	v.TravelItemId = 0
+	v.TripAdvateCnt = 0
+	poolItemStatisticVo.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AlibabaAilabsAligenieSkillMessagePushAPIRequest struct {
 // NewAlibabaAilabsAligenieSkillMessagePushRequest 初始化AlibabaAilabsAligenieSkillMessagePushAPIRequest对象
 func NewAlibabaAilabsAligenieSkillMessagePushRequest() *AlibabaAilabsAligenieSkillMessagePushAPIRequest {
 	return &AlibabaAilabsAligenieSkillMessagePushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) Reset() {
+	r._authAccountType = ""
+	r._content = ""
+	r._accountType = ""
+	r._pushType = ""
+	r._userId = ""
+	r._uuid = ""
+	r._skillId = 0
+	r._test = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetTest(_test bool) er
 // GetTest Test Getter
 func (r AlibabaAilabsAligenieSkillMessagePushAPIRequest) GetTest() bool {
 	return r._test
+}
+
+var poolAlibabaAilabsAligenieSkillMessagePushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsAligenieSkillMessagePushRequest()
+	},
+}
+
+// GetAlibabaAilabsAligenieSkillMessagePushRequest 从 sync.Pool 获取 AlibabaAilabsAligenieSkillMessagePushAPIRequest
+func GetAlibabaAilabsAligenieSkillMessagePushAPIRequest() *AlibabaAilabsAligenieSkillMessagePushAPIRequest {
+	return poolAlibabaAilabsAligenieSkillMessagePushAPIRequest.Get().(*AlibabaAilabsAligenieSkillMessagePushAPIRequest)
+}
+
+// ReleaseAlibabaAilabsAligenieSkillMessagePushAPIRequest 将 AlibabaAilabsAligenieSkillMessagePushAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsAligenieSkillMessagePushAPIRequest(v *AlibabaAilabsAligenieSkillMessagePushAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsAligenieSkillMessagePushAPIRequest.Put(v)
 }

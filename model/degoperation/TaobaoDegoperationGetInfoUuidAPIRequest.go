@@ -2,6 +2,7 @@ package degoperation
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoDegoperationGetInfoUuidAPIRequest struct {
 // NewTaobaoDegoperationGetInfoUuidRequest 初始化TaobaoDegoperationGetInfoUuidAPIRequest对象
 func NewTaobaoDegoperationGetInfoUuidRequest() *TaobaoDegoperationGetInfoUuidAPIRequest {
 	return &TaobaoDegoperationGetInfoUuidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDegoperationGetInfoUuidAPIRequest) Reset() {
+	r._degAppKey = ""
+	r._degEventKey = ""
+	r._uuid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoDegoperationGetInfoUuidAPIRequest) SetUuid(_uuid string) error {
 // GetUuid Uuid Getter
 func (r TaobaoDegoperationGetInfoUuidAPIRequest) GetUuid() string {
 	return r._uuid
+}
+
+var poolTaobaoDegoperationGetInfoUuidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDegoperationGetInfoUuidRequest()
+	},
+}
+
+// GetTaobaoDegoperationGetInfoUuidRequest 从 sync.Pool 获取 TaobaoDegoperationGetInfoUuidAPIRequest
+func GetTaobaoDegoperationGetInfoUuidAPIRequest() *TaobaoDegoperationGetInfoUuidAPIRequest {
+	return poolTaobaoDegoperationGetInfoUuidAPIRequest.Get().(*TaobaoDegoperationGetInfoUuidAPIRequest)
+}
+
+// ReleaseTaobaoDegoperationGetInfoUuidAPIRequest 将 TaobaoDegoperationGetInfoUuidAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDegoperationGetInfoUuidAPIRequest(v *TaobaoDegoperationGetInfoUuidAPIRequest) {
+	v.Reset()
+	poolTaobaoDegoperationGetInfoUuidAPIRequest.Put(v)
 }

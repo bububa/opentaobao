@@ -2,6 +2,7 @@ package aesolution
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressSolutionBatchProductDeleteAPIRequest struct {
 // NewAliexpressSolutionBatchProductDeleteRequest 初始化AliexpressSolutionBatchProductDeleteAPIRequest对象
 func NewAliexpressSolutionBatchProductDeleteRequest() *AliexpressSolutionBatchProductDeleteAPIRequest {
 	return &AliexpressSolutionBatchProductDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSolutionBatchProductDeleteAPIRequest) Reset() {
+	r._productIds = r._productIds[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressSolutionBatchProductDeleteAPIRequest) SetProductIds(_productI
 // GetProductIds ProductIds Getter
 func (r AliexpressSolutionBatchProductDeleteAPIRequest) GetProductIds() []int64 {
 	return r._productIds
+}
+
+var poolAliexpressSolutionBatchProductDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSolutionBatchProductDeleteRequest()
+	},
+}
+
+// GetAliexpressSolutionBatchProductDeleteRequest 从 sync.Pool 获取 AliexpressSolutionBatchProductDeleteAPIRequest
+func GetAliexpressSolutionBatchProductDeleteAPIRequest() *AliexpressSolutionBatchProductDeleteAPIRequest {
+	return poolAliexpressSolutionBatchProductDeleteAPIRequest.Get().(*AliexpressSolutionBatchProductDeleteAPIRequest)
+}
+
+// ReleaseAliexpressSolutionBatchProductDeleteAPIRequest 将 AliexpressSolutionBatchProductDeleteAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSolutionBatchProductDeleteAPIRequest(v *AliexpressSolutionBatchProductDeleteAPIRequest) {
+	v.Reset()
+	poolAliexpressSolutionBatchProductDeleteAPIRequest.Put(v)
 }

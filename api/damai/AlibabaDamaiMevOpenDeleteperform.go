@@ -9,11 +9,6 @@ import (
 // alibaba.damai.mev.open.deleteperform
 //
 // deletePerform
-func AlibabaDamaiMevOpenDeleteperform(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeleteperformAPIRequest, session string) (*damai.AlibabaDamaiMevOpenDeleteperformAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenDeleteperformAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMevOpenDeleteperform(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeleteperformAPIRequest, resp *damai.AlibabaDamaiMevOpenDeleteperformAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

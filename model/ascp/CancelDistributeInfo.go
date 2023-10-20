@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // CancelDistributeInfo 结构体
 type CancelDistributeInfo struct {
 	// 要取消铺货的分销商ID列表,如果 cancelAll = true, 则不需要设置此字段,如果 cancelAll = false， 则此字段必填
@@ -10,4 +14,24 @@ type CancelDistributeInfo struct {
 	SkuId string `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 【必传】取消所有铺货,如果设置为false，则需要设置  distributorShopUserIdList
 	CancelAll bool `json:"cancel_all,omitempty" xml:"cancel_all,omitempty"`
+}
+
+var poolCancelDistributeInfo = sync.Pool{
+	New: func() any {
+		return new(CancelDistributeInfo)
+	},
+}
+
+// GetCancelDistributeInfo() 从对象池中获取CancelDistributeInfo
+func GetCancelDistributeInfo() *CancelDistributeInfo {
+	return poolCancelDistributeInfo.Get().(*CancelDistributeInfo)
+}
+
+// ReleaseCancelDistributeInfo 释放CancelDistributeInfo
+func ReleaseCancelDistributeInfo(v *CancelDistributeInfo) {
+	v.DistributorShopUserIdList = v.DistributorShopUserIdList[:0]
+	v.ItemId = ""
+	v.SkuId = ""
+	v.CancelAll = false
+	poolCancelDistributeInfo.Put(v)
 }

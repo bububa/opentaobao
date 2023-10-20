@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallItemHscodeAuditResultsQueryAPIResponse struct {
 	TmallItemHscodeAuditResultsQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallItemHscodeAuditResultsQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallItemHscodeAuditResultsQueryAPIResponseModel).Reset()
+}
+
 // TmallItemHscodeAuditResultsQueryAPIResponseModel is 商品hscode信息审核状态查询接口 成功返回结果
 type TmallItemHscodeAuditResultsQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_item_hscode_audit_results_query_response"`
@@ -22,4 +29,27 @@ type TmallItemHscodeAuditResultsQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 商品或sku的hscode信息审核状态。
 	ResultList []HscodeAuditInfo `json:"result_list,omitempty" xml:"result_list>hscode_audit_info,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallItemHscodeAuditResultsQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultList = m.ResultList[:0]
+}
+
+var poolTmallItemHscodeAuditResultsQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallItemHscodeAuditResultsQueryAPIResponse)
+	},
+}
+
+// GetTmallItemHscodeAuditResultsQueryAPIResponse 从 sync.Pool 获取 TmallItemHscodeAuditResultsQueryAPIResponse
+func GetTmallItemHscodeAuditResultsQueryAPIResponse() *TmallItemHscodeAuditResultsQueryAPIResponse {
+	return poolTmallItemHscodeAuditResultsQueryAPIResponse.Get().(*TmallItemHscodeAuditResultsQueryAPIResponse)
+}
+
+// ReleaseTmallItemHscodeAuditResultsQueryAPIResponse 将 TmallItemHscodeAuditResultsQueryAPIResponse 保存到 sync.Pool
+func ReleaseTmallItemHscodeAuditResultsQueryAPIResponse(v *TmallItemHscodeAuditResultsQueryAPIResponse) {
+	v.Reset()
+	poolTmallItemHscodeAuditResultsQueryAPIResponse.Put(v)
 }

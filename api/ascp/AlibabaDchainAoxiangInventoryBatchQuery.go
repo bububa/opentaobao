@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.inventory.batch.query
 //
 // 批量查询库存
-func AlibabaDchainAoxiangInventoryBatchQuery(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangInventoryBatchQueryAPIRequest, session string) (*ascp.AlibabaDchainAoxiangInventoryBatchQueryAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangInventoryBatchQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangInventoryBatchQuery(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangInventoryBatchQueryAPIRequest, resp *ascp.AlibabaDchainAoxiangInventoryBatchQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

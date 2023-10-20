@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoAilabAicloudTopLikeListAPIRequest struct {
 // NewTaobaoAilabAicloudTopLikeListRequest 初始化TaobaoAilabAicloudTopLikeListAPIRequest对象
 func NewTaobaoAilabAicloudTopLikeListRequest() *TaobaoAilabAicloudTopLikeListAPIRequest {
 	return &TaobaoAilabAicloudTopLikeListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopLikeListAPIRequest) Reset() {
+	r._schema = ""
+	r._userId = ""
+	r._utdId = ""
+	r._ext = ""
+	r._param1 = ""
+	r._param2 = 0
+	r._param3 = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetParam3(_param3 int64) error
 // GetParam3 Param3 Getter
 func (r TaobaoAilabAicloudTopLikeListAPIRequest) GetParam3() int64 {
 	return r._param3
+}
+
+var poolTaobaoAilabAicloudTopLikeListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopLikeListRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopLikeListRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopLikeListAPIRequest
+func GetTaobaoAilabAicloudTopLikeListAPIRequest() *TaobaoAilabAicloudTopLikeListAPIRequest {
+	return poolTaobaoAilabAicloudTopLikeListAPIRequest.Get().(*TaobaoAilabAicloudTopLikeListAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopLikeListAPIRequest 将 TaobaoAilabAicloudTopLikeListAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopLikeListAPIRequest(v *TaobaoAilabAicloudTopLikeListAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopLikeListAPIRequest.Put(v)
 }

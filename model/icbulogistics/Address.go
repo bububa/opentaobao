@@ -1,5 +1,9 @@
 package icbulogistics
 
+import (
+	"sync"
+)
+
 // Address 结构体
 type Address struct {
 	// 邮编
@@ -18,4 +22,28 @@ type Address struct {
 	City *City `json:"city,omitempty" xml:"city,omitempty"`
 	// 地区
 	District *District `json:"district,omitempty" xml:"district,omitempty"`
+}
+
+var poolAddress = sync.Pool{
+	New: func() any {
+		return new(Address)
+	},
+}
+
+// GetAddress() 从对象池中获取Address
+func GetAddress() *Address {
+	return poolAddress.Get().(*Address)
+}
+
+// ReleaseAddress 释放Address
+func ReleaseAddress(v *Address) {
+	v.Zip = ""
+	v.Address = ""
+	v.Address2 = ""
+	v.Country = nil
+	v.Town = nil
+	v.Province = nil
+	v.City = nil
+	v.District = nil
+	poolAddress.Put(v)
 }

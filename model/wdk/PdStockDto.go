@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // PdStockDto 结构体
 type PdStockDto struct {
 	// itemList
@@ -14,4 +18,26 @@ type PdStockDto struct {
 	Uuid string `json:"uuid,omitempty" xml:"uuid,omitempty"`
 	// 盘点类型，可选值：1：大盘  2：周盘 ；
 	PdType int64 `json:"pd_type,omitempty" xml:"pd_type,omitempty"`
+}
+
+var poolPdStockDto = sync.Pool{
+	New: func() any {
+		return new(PdStockDto)
+	},
+}
+
+// GetPdStockDto() 从对象池中获取PdStockDto
+func GetPdStockDto() *PdStockDto {
+	return poolPdStockDto.Get().(*PdStockDto)
+}
+
+// ReleasePdStockDto 释放PdStockDto
+func ReleasePdStockDto(v *PdStockDto) {
+	v.ItemList = v.ItemList[:0]
+	v.Remark = ""
+	v.PdOrderCode = ""
+	v.WarehouseCode = ""
+	v.Uuid = ""
+	v.PdType = 0
+	poolPdStockDto.Put(v)
 }

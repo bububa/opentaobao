@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // Campus 结构体
 type Campus struct {
 	// gmtCreate
@@ -48,4 +52,43 @@ type Campus struct {
 	CompanyId int64 `json:"company_id,omitempty" xml:"company_id,omitempty"`
 	// 是否删除，0未删除，1删除
 	IsDelete bool `json:"is_delete,omitempty" xml:"is_delete,omitempty"`
+}
+
+var poolCampus = sync.Pool{
+	New: func() any {
+		return new(Campus)
+	},
+}
+
+// GetCampus() 从对象池中获取Campus
+func GetCampus() *Campus {
+	return poolCampus.Get().(*Campus)
+}
+
+// ReleaseCampus 释放Campus
+func ReleaseCampus(v *Campus) {
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Creator = ""
+	v.Modifier = ""
+	v.Address = ""
+	v.CityCode = ""
+	v.CityName = ""
+	v.ProvinceCode = ""
+	v.ProvinceName = ""
+	v.CountryCode = ""
+	v.CountryName = ""
+	v.Code = ""
+	v.EnName = ""
+	v.Name = ""
+	v.CompanyName = ""
+	v.IndoorArea = ""
+	v.Id = 0
+	v.Type = 0
+	v.Status = 0
+	v.Area = 0
+	v.OrderNo = 0
+	v.CompanyId = 0
+	v.IsDelete = false
+	poolCampus.Put(v)
 }

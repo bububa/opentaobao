@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type TaobaoWlbOutInventoryChangeNotifyAPIRequest struct {
 // NewTaobaoWlbOutInventoryChangeNotifyRequest 初始化TaobaoWlbOutInventoryChangeNotifyAPIRequest对象
 func NewTaobaoWlbOutInventoryChangeNotifyRequest() *TaobaoWlbOutInventoryChangeNotifyAPIRequest {
 	return &TaobaoWlbOutInventoryChangeNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbOutInventoryChangeNotifyAPIRequest) Reset() {
+	r._type = ""
+	r._opType = ""
+	r._source = ""
+	r._orderSourceCode = ""
+	r._outBizCode = ""
+	r._storeCode = ""
+	r._itemId = 0
+	r._changeCount = 0
+	r._resultCount = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *TaobaoWlbOutInventoryChangeNotifyAPIRequest) SetResultCount(_resultCoun
 // GetResultCount ResultCount Getter
 func (r TaobaoWlbOutInventoryChangeNotifyAPIRequest) GetResultCount() int64 {
 	return r._resultCount
+}
+
+var poolTaobaoWlbOutInventoryChangeNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbOutInventoryChangeNotifyRequest()
+	},
+}
+
+// GetTaobaoWlbOutInventoryChangeNotifyRequest 从 sync.Pool 获取 TaobaoWlbOutInventoryChangeNotifyAPIRequest
+func GetTaobaoWlbOutInventoryChangeNotifyAPIRequest() *TaobaoWlbOutInventoryChangeNotifyAPIRequest {
+	return poolTaobaoWlbOutInventoryChangeNotifyAPIRequest.Get().(*TaobaoWlbOutInventoryChangeNotifyAPIRequest)
+}
+
+// ReleaseTaobaoWlbOutInventoryChangeNotifyAPIRequest 将 TaobaoWlbOutInventoryChangeNotifyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbOutInventoryChangeNotifyAPIRequest(v *TaobaoWlbOutInventoryChangeNotifyAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbOutInventoryChangeNotifyAPIRequest.Put(v)
 }

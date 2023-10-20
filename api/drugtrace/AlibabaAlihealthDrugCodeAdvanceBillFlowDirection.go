@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.code.advance.bill.flow.direction
 //
 // 单据流向查询
-func AlibabaAlihealthDrugCodeAdvanceBillFlowDirection(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugCodeAdvanceBillFlowDirection(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest, resp *drugtrace.AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

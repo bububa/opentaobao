@@ -9,11 +9,6 @@ import (
 // taobao.trade.drug.order.get
 //
 // 商家查看订单详情
-func TaobaoTradeDrugOrderGet(clt *core.SDKClient, req *alihealth2.TaobaoTradeDrugOrderGetAPIRequest, session string) (*alihealth2.TaobaoTradeDrugOrderGetAPIResponse, error) {
-	var resp alihealth2.TaobaoTradeDrugOrderGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTradeDrugOrderGet(clt *core.SDKClient, req *alihealth2.TaobaoTradeDrugOrderGetAPIRequest, resp *alihealth2.TaobaoTradeDrugOrderGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

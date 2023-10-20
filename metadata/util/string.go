@@ -16,17 +16,22 @@ func PrintableString(s string) string {
 	}, s)
 }
 
+// Title converts a string into camel case starting with a upper case letter and keep uppercase letter.
+func Title(s string) string {
+	return camelCase(s, true, true)
+}
+
 // UpperCamelCase converts a string into camel case starting with a upper case letter.
 func UpperCamelCase(s string) string {
-	return camelCase(s, true)
+	return camelCase(s, true, false)
 }
 
 // LowerCamelCase converts a string into camel case starting with a lower case letter.
 func LowerCamelCase(s string) string {
-	return camelCase(s, false)
+	return camelCase(s, false, false)
 }
 
-func camelCase(s string, upper bool) string {
+func camelCase(s string, upper bool, keepUpper bool) string {
 	s = strings.TrimSpace(s)
 	buffer := make([]rune, 0, len(s))
 
@@ -34,7 +39,7 @@ func camelCase(s string, upper bool) string {
 		if !isDelimiter(curr) {
 			if isDelimiter(prev) || (upper && prev == 0) {
 				buffer = append(buffer, toUpper(curr))
-			} else if isLower(prev) {
+			} else if isLower(prev) || keepUpper {
 				buffer = append(buffer, curr)
 			} else {
 				buffer = append(buffer, toLower(curr))

@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaSecurityJaqRpQueryAPIRequest struct {
 // NewAlibabaSecurityJaqRpQueryRequest 初始化AlibabaSecurityJaqRpQueryAPIRequest对象
 func NewAlibabaSecurityJaqRpQueryRequest() *AlibabaSecurityJaqRpQueryAPIRequest {
 	return &AlibabaSecurityJaqRpQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqRpQueryAPIRequest) Reset() {
+	r._verifyToken = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaSecurityJaqRpQueryAPIRequest) SetVerifyToken(_verifyToken string
 // GetVerifyToken VerifyToken Getter
 func (r AlibabaSecurityJaqRpQueryAPIRequest) GetVerifyToken() string {
 	return r._verifyToken
+}
+
+var poolAlibabaSecurityJaqRpQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqRpQueryRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqRpQueryRequest 从 sync.Pool 获取 AlibabaSecurityJaqRpQueryAPIRequest
+func GetAlibabaSecurityJaqRpQueryAPIRequest() *AlibabaSecurityJaqRpQueryAPIRequest {
+	return poolAlibabaSecurityJaqRpQueryAPIRequest.Get().(*AlibabaSecurityJaqRpQueryAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqRpQueryAPIRequest 将 AlibabaSecurityJaqRpQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqRpQueryAPIRequest(v *AlibabaSecurityJaqRpQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqRpQueryAPIRequest.Put(v)
 }

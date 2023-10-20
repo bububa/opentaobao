@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // VoucherOrderVo 结构体
 type VoucherOrderVo struct {
 	// 订单编号
@@ -44,4 +48,41 @@ type VoucherOrderVo struct {
 	PayRemainTime int64 `json:"pay_remain_time,omitempty" xml:"pay_remain_time,omitempty"`
 	// 支付类型
 	PayType int64 `json:"pay_type,omitempty" xml:"pay_type,omitempty"`
+}
+
+var poolVoucherOrderVo = sync.Pool{
+	New: func() any {
+		return new(VoucherOrderVo)
+	},
+}
+
+// GetVoucherOrderVo() 从对象池中获取VoucherOrderVo
+func GetVoucherOrderVo() *VoucherOrderVo {
+	return poolVoucherOrderVo.Get().(*VoucherOrderVo)
+}
+
+// ReleaseVoucherOrderVo 释放VoucherOrderVo
+func ReleaseVoucherOrderVo(v *VoucherOrderVo) {
+	v.OrderId = ""
+	v.PmsCode = ""
+	v.OrderStatus = ""
+	v.OrderStatusDesc = ""
+	v.BookDate = ""
+	v.PaymentChannel = ""
+	v.TotalPrice = ""
+	v.Currency = ""
+	v.RefundCostAmount = ""
+	v.BreakfastType = ""
+	v.BreakfastDec = ""
+	v.ContactLastName = ""
+	v.ContactFirstName = ""
+	v.ContactPhone = ""
+	v.ContactEmail = ""
+	v.VoucherName = ""
+	v.PlaceOrderType = ""
+	v.VoucherId = ""
+	v.AreaCode = ""
+	v.PayRemainTime = 0
+	v.PayType = 0
+	poolVoucherOrderVo.Put(v)
 }

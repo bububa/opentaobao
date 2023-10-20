@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WarehouseOrderResponse 结构体
 type WarehouseOrderResponse struct {
 	// 子单列表
@@ -50,4 +54,44 @@ type WarehouseOrderResponse struct {
 	WarehouseStatus int64 `json:"warehouse_status,omitempty" xml:"warehouse_status,omitempty"`
 	// 订单配送时效  1 = 自提 / 2 = 小时达
 	DeliveryTimeMind int64 `json:"delivery_time_mind,omitempty" xml:"delivery_time_mind,omitempty"`
+}
+
+var poolWarehouseOrderResponse = sync.Pool{
+	New: func() any {
+		return new(WarehouseOrderResponse)
+	},
+}
+
+// GetWarehouseOrderResponse() 从对象池中获取WarehouseOrderResponse
+func GetWarehouseOrderResponse() *WarehouseOrderResponse {
+	return poolWarehouseOrderResponse.Get().(*WarehouseOrderResponse)
+}
+
+// ReleaseWarehouseOrderResponse 释放WarehouseOrderResponse
+func ReleaseWarehouseOrderResponse(v *WarehouseOrderResponse) {
+	v.SubOrders = v.SubOrders[:0]
+	v.MerchantCode = ""
+	v.StoreId = ""
+	v.OutOrderId = ""
+	v.WarehouseStatusDesc = ""
+	v.ExcStatusDesc = ""
+	v.TaskDispatchedTime = ""
+	v.TaskGenerateTime = ""
+	v.PickWorkerId = ""
+	v.PickWorkerName = ""
+	v.PickStartTime = ""
+	v.PickFinishTime = ""
+	v.PackWorkerId = ""
+	v.PackWorkerName = ""
+	v.PackStartTime = ""
+	v.PackFinishTime = ""
+	v.LatestArrivalTime = ""
+	v.LatestOutboundTime = ""
+	v.ActualOutboundTime = ""
+	v.CancelTime = ""
+	v.BizOrderId = 0
+	v.OrderFrom = 0
+	v.WarehouseStatus = 0
+	v.DeliveryTimeMind = 0
+	poolWarehouseOrderResponse.Put(v)
 }

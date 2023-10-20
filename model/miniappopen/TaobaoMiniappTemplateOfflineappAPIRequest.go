@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoMiniappTemplateOfflineappAPIRequest struct {
 // NewTaobaoMiniappTemplateOfflineappRequest 初始化TaobaoMiniappTemplateOfflineappAPIRequest对象
 func NewTaobaoMiniappTemplateOfflineappRequest() *TaobaoMiniappTemplateOfflineappAPIRequest {
 	return &TaobaoMiniappTemplateOfflineappAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappTemplateOfflineappAPIRequest) Reset() {
+	r._clients = r._clients[:0]
+	r._appId = ""
+	r._appVersion = ""
+	r._templateId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoMiniappTemplateOfflineappAPIRequest) SetTemplateId(_templateId st
 // GetTemplateId TemplateId Getter
 func (r TaobaoMiniappTemplateOfflineappAPIRequest) GetTemplateId() string {
 	return r._templateId
+}
+
+var poolTaobaoMiniappTemplateOfflineappAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappTemplateOfflineappRequest()
+	},
+}
+
+// GetTaobaoMiniappTemplateOfflineappRequest 从 sync.Pool 获取 TaobaoMiniappTemplateOfflineappAPIRequest
+func GetTaobaoMiniappTemplateOfflineappAPIRequest() *TaobaoMiniappTemplateOfflineappAPIRequest {
+	return poolTaobaoMiniappTemplateOfflineappAPIRequest.Get().(*TaobaoMiniappTemplateOfflineappAPIRequest)
+}
+
+// ReleaseTaobaoMiniappTemplateOfflineappAPIRequest 将 TaobaoMiniappTemplateOfflineappAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappTemplateOfflineappAPIRequest(v *TaobaoMiniappTemplateOfflineappAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappTemplateOfflineappAPIRequest.Put(v)
 }

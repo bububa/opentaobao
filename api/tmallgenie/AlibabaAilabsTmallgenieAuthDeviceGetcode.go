@@ -9,11 +9,6 @@ import (
 // alibaba.ailabs.tmallgenie.auth.device.getcode
 //
 // 获取绑定的authcode
-func AlibabaAilabsTmallgenieAuthDeviceGetcode(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIRequest, session string) (*tmallgenie.AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIResponse, error) {
-	var resp tmallgenie.AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAilabsTmallgenieAuthDeviceGetcode(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIRequest, resp *tmallgenie.AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

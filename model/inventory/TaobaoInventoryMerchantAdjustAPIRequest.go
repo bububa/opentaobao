@@ -2,6 +2,7 @@ package inventory
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoInventoryMerchantAdjustAPIRequest struct {
 // NewTaobaoInventoryMerchantAdjustRequest 初始化TaobaoInventoryMerchantAdjustAPIRequest对象
 func NewTaobaoInventoryMerchantAdjustRequest() *TaobaoInventoryMerchantAdjustAPIRequest {
 	return &TaobaoInventoryMerchantAdjustAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoInventoryMerchantAdjustAPIRequest) Reset() {
+	r._inventoryCheck = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoInventoryMerchantAdjustAPIRequest) SetInventoryCheck(_inventoryCh
 // GetInventoryCheck InventoryCheck Getter
 func (r TaobaoInventoryMerchantAdjustAPIRequest) GetInventoryCheck() *InventoryCheckDto {
 	return r._inventoryCheck
+}
+
+var poolTaobaoInventoryMerchantAdjustAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoInventoryMerchantAdjustRequest()
+	},
+}
+
+// GetTaobaoInventoryMerchantAdjustRequest 从 sync.Pool 获取 TaobaoInventoryMerchantAdjustAPIRequest
+func GetTaobaoInventoryMerchantAdjustAPIRequest() *TaobaoInventoryMerchantAdjustAPIRequest {
+	return poolTaobaoInventoryMerchantAdjustAPIRequest.Get().(*TaobaoInventoryMerchantAdjustAPIRequest)
+}
+
+// ReleaseTaobaoInventoryMerchantAdjustAPIRequest 将 TaobaoInventoryMerchantAdjustAPIRequest 放入 sync.Pool
+func ReleaseTaobaoInventoryMerchantAdjustAPIRequest(v *TaobaoInventoryMerchantAdjustAPIRequest) {
+	v.Reset()
+	poolTaobaoInventoryMerchantAdjustAPIRequest.Put(v)
 }

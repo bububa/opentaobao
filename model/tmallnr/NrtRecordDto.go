@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrtRecordDto 结构体
 type NrtRecordDto struct {
 	// 券信息集合
@@ -14,4 +18,26 @@ type NrtRecordDto struct {
 	OpenIdStr string `json:"open_id_str,omitempty" xml:"open_id_str,omitempty"`
 	// 会员openId-废弃
 	OpenId int64 `json:"open_id,omitempty" xml:"open_id,omitempty"`
+}
+
+var poolNrtRecordDto = sync.Pool{
+	New: func() any {
+		return new(NrtRecordDto)
+	},
+}
+
+// GetNrtRecordDto() 从对象池中获取NrtRecordDto
+func GetNrtRecordDto() *NrtRecordDto {
+	return poolNrtRecordDto.Get().(*NrtRecordDto)
+}
+
+// ReleaseNrtRecordDto 释放NrtRecordDto
+func ReleaseNrtRecordDto(v *NrtRecordDto) {
+	v.CouponList = v.CouponList[:0]
+	v.CertificateEndTime = ""
+	v.CertificateStartTime = ""
+	v.CertificateCode = ""
+	v.OpenIdStr = ""
+	v.OpenId = 0
+	poolNrtRecordDto.Put(v)
 }

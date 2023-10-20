@@ -1,5 +1,9 @@
 package alimember
 
+import (
+	"sync"
+)
+
 // SyncMemberDto 结构体
 type SyncMemberDto struct {
 	// 生日，格式yyyy-mm-dd
@@ -36,4 +40,37 @@ type SyncMemberDto struct {
 	LevelNum int64 `json:"level_num,omitempty" xml:"level_num,omitempty"`
 	// 消费积分
 	ConsumePoint int64 `json:"consume_point,omitempty" xml:"consume_point,omitempty"`
+}
+
+var poolSyncMemberDto = sync.Pool{
+	New: func() any {
+		return new(SyncMemberDto)
+	},
+}
+
+// GetSyncMemberDto() 从对象池中获取SyncMemberDto
+func GetSyncMemberDto() *SyncMemberDto {
+	return poolSyncMemberDto.Get().(*SyncMemberDto)
+}
+
+// ReleaseSyncMemberDto 释放SyncMemberDto
+func ReleaseSyncMemberDto(v *SyncMemberDto) {
+	v.Birthday = ""
+	v.City = ""
+	v.Sex = ""
+	v.Mobile = ""
+	v.OuterMemberId = ""
+	v.UserId = ""
+	v.OpenMerchantId = ""
+	v.UserSite = ""
+	v.Province = ""
+	v.OuterCardNo = ""
+	v.Name = ""
+	v.Email = ""
+	v.UidType = ""
+	v.Version = 0
+	v.LevelPoint = 0
+	v.LevelNum = 0
+	v.ConsumePoint = 0
+	poolSyncMemberDto.Put(v)
 }

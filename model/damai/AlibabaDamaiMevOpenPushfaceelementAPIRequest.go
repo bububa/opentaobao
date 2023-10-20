@@ -2,6 +2,7 @@ package damai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDamaiMevOpenPushfaceelementAPIRequest struct {
 // NewAlibabaDamaiMevOpenPushfaceelementRequest 初始化AlibabaDamaiMevOpenPushfaceelementAPIRequest对象
 func NewAlibabaDamaiMevOpenPushfaceelementRequest() *AlibabaDamaiMevOpenPushfaceelementAPIRequest {
 	return &AlibabaDamaiMevOpenPushfaceelementAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiMevOpenPushfaceelementAPIRequest) Reset() {
+	r._pushFaceElementParamList = r._pushFaceElementParamList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDamaiMevOpenPushfaceelementAPIRequest) SetPushFaceElementParamLi
 // GetPushFaceElementParamList PushFaceElementParamList Getter
 func (r AlibabaDamaiMevOpenPushfaceelementAPIRequest) GetPushFaceElementParamList() []ThirdFaceElementPushOpenParam {
 	return r._pushFaceElementParamList
+}
+
+var poolAlibabaDamaiMevOpenPushfaceelementAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiMevOpenPushfaceelementRequest()
+	},
+}
+
+// GetAlibabaDamaiMevOpenPushfaceelementRequest 从 sync.Pool 获取 AlibabaDamaiMevOpenPushfaceelementAPIRequest
+func GetAlibabaDamaiMevOpenPushfaceelementAPIRequest() *AlibabaDamaiMevOpenPushfaceelementAPIRequest {
+	return poolAlibabaDamaiMevOpenPushfaceelementAPIRequest.Get().(*AlibabaDamaiMevOpenPushfaceelementAPIRequest)
+}
+
+// ReleaseAlibabaDamaiMevOpenPushfaceelementAPIRequest 将 AlibabaDamaiMevOpenPushfaceelementAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiMevOpenPushfaceelementAPIRequest(v *AlibabaDamaiMevOpenPushfaceelementAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiMevOpenPushfaceelementAPIRequest.Put(v)
 }

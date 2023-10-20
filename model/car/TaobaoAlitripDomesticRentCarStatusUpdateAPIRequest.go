@@ -2,6 +2,7 @@ package car
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest struct {
 // NewTaobaoAlitripDomesticRentCarStatusUpdateRequest 初始化TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest对象
 func NewTaobaoAlitripDomesticRentCarStatusUpdateRequest() *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest {
 	return &TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) Reset() {
+	r._thirdOrderId = ""
+	r._orderId = ""
+	r._providerId = ""
+	r._carNumber = ""
+	r._extra = ""
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) SetStatus(_status i
 // GetStatus Status Getter
 func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolTaobaoAlitripDomesticRentCarStatusUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripDomesticRentCarStatusUpdateRequest()
+	},
+}
+
+// GetTaobaoAlitripDomesticRentCarStatusUpdateRequest 从 sync.Pool 获取 TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest
+func GetTaobaoAlitripDomesticRentCarStatusUpdateAPIRequest() *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest {
+	return poolTaobaoAlitripDomesticRentCarStatusUpdateAPIRequest.Get().(*TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest)
+}
+
+// ReleaseTaobaoAlitripDomesticRentCarStatusUpdateAPIRequest 将 TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripDomesticRentCarStatusUpdateAPIRequest(v *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripDomesticRentCarStatusUpdateAPIRequest.Put(v)
 }

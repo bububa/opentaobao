@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.uop.tob.package.query
 //
 // 供应链中台TOB包裹查询接口
-func AlibabaAscpUopTobPackageQuery(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopTobPackageQueryAPIRequest, session string) (*ascpchannel.AlibabaAscpUopTobPackageQueryAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpUopTobPackageQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpUopTobPackageQuery(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopTobPackageQueryAPIRequest, resp *ascpchannel.AlibabaAscpUopTobPackageQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

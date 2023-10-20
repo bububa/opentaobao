@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // TmsPackageWeightRequest 结构体
 type TmsPackageWeightRequest struct {
 	// 运单号
@@ -24,4 +28,31 @@ type TmsPackageWeightRequest struct {
 	Width string `json:"width,omitempty" xml:"width,omitempty"`
 	// 包裹高度（单位：cm)，小数点后2位
 	Height string `json:"height,omitempty" xml:"height,omitempty"`
+}
+
+var poolTmsPackageWeightRequest = sync.Pool{
+	New: func() any {
+		return new(TmsPackageWeightRequest)
+	},
+}
+
+// GetTmsPackageWeightRequest() 从对象池中获取TmsPackageWeightRequest
+func GetTmsPackageWeightRequest() *TmsPackageWeightRequest {
+	return poolTmsPackageWeightRequest.Get().(*TmsPackageWeightRequest)
+}
+
+// ReleaseTmsPackageWeightRequest 释放TmsPackageWeightRequest
+func ReleaseTmsPackageWeightRequest(v *TmsPackageWeightRequest) {
+	v.MailNo = ""
+	v.BizCode = ""
+	v.Weight = ""
+	v.TmsCpCode = ""
+	v.AbnormalType = ""
+	v.AbnormalDesc = ""
+	v.ChargingWeight = ""
+	v.ThrowingWeight = ""
+	v.Length = ""
+	v.Width = ""
+	v.Height = ""
+	poolTmsPackageWeightRequest.Put(v)
 }

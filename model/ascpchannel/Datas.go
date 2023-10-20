@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Datas 结构体
 type Datas struct {
 	// 占用库存
@@ -16,4 +20,27 @@ type Datas struct {
 	ScItemId int64 `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
 	// 供应链中台货主ID
 	SourceUserId int64 `json:"source_user_id,omitempty" xml:"source_user_id,omitempty"`
+}
+
+var poolDatas = sync.Pool{
+	New: func() any {
+		return new(Datas)
+	},
+}
+
+// GetDatas() 从对象池中获取Datas
+func GetDatas() *Datas {
+	return poolDatas.Get().(*Datas)
+}
+
+// ReleaseDatas 释放Datas
+func ReleaseDatas(v *Datas) {
+	v.LockQuantity = ""
+	v.ChannelCode = ""
+	v.Quantity = ""
+	v.StoreCode = ""
+	v.InventoryType = 0
+	v.ScItemId = 0
+	v.SourceUserId = 0
+	poolDatas.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.order.sync
 //
 // 外部商户使用自助POS下单订单同步到五道口
-func AlibabaWdkOrderSync(clt *core.SDKClient, req *wdk.AlibabaWdkOrderSyncAPIRequest, session string) (*wdk.AlibabaWdkOrderSyncAPIResponse, error) {
-	var resp wdk.AlibabaWdkOrderSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkOrderSync(clt *core.SDKClient, req *wdk.AlibabaWdkOrderSyncAPIRequest, resp *wdk.AlibabaWdkOrderSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package c2m
 
+import (
+	"sync"
+)
+
 // OrganizationInviteInfoVo 结构体
 type OrganizationInviteInfoVo struct {
 	// 加密后的邀请者ID
@@ -52,4 +56,45 @@ type OrganizationInviteInfoVo struct {
 	OrgCommissionFee int64 `json:"org_commission_fee,omitempty" xml:"org_commission_fee,omitempty"`
 	// sku id
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolOrganizationInviteInfoVo = sync.Pool{
+	New: func() any {
+		return new(OrganizationInviteInfoVo)
+	},
+}
+
+// GetOrganizationInviteInfoVo() 从对象池中获取OrganizationInviteInfoVo
+func GetOrganizationInviteInfoVo() *OrganizationInviteInfoVo {
+	return poolOrganizationInviteInfoVo.Get().(*OrganizationInviteInfoVo)
+}
+
+// ReleaseOrganizationInviteInfoVo 释放OrganizationInviteInfoVo
+func ReleaseOrganizationInviteInfoVo(v *OrganizationInviteInfoVo) {
+	v.EncryptInvitorId = ""
+	v.ModifyDate = ""
+	v.EncryptDistributorId = ""
+	v.AuctionTitle = ""
+	v.EncryptBuyerId = ""
+	v.SuccDate = ""
+	v.MordProv = ""
+	v.MordCity = ""
+	v.MordArea = ""
+	v.EncryptItemTag = ""
+	v.EncryptMordMobilePhone = ""
+	v.Status = 0
+	v.RefundFee = 0
+	v.CommissionFee = 0
+	v.PayTime = 0
+	v.GmtCreate = 0
+	v.AuctionId = 0
+	v.Delegate = 0
+	v.BuyAmount = 0
+	v.BizOrderId = 0
+	v.TotalFee = 0
+	v.AuctionType = 0
+	v.RuleId = 0
+	v.OrgCommissionFee = 0
+	v.SkuId = 0
+	poolOrganizationInviteInfoVo.Put(v)
 }

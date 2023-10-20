@@ -2,6 +2,7 @@ package tmallchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -43,8 +44,26 @@ type TmallChannelTradeOrderGetsAPIRequest struct {
 // NewTmallChannelTradeOrderGetsRequest 初始化TmallChannelTradeOrderGetsAPIRequest对象
 func NewTmallChannelTradeOrderGetsRequest() *TmallChannelTradeOrderGetsAPIRequest {
 	return &TmallChannelTradeOrderGetsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(13),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallChannelTradeOrderGetsAPIRequest) Reset() {
+	r._distributorNick = ""
+	r._createTimeStart = ""
+	r._createTimeEnd = ""
+	r._pageSize = 0
+	r._pageNumber = 0
+	r._mainPurchaseOrderNo = 0
+	r._channel = 0
+	r._tradeType = 0
+	r._orderStatus = 0
+	r._isIncludeSubOrder = false
+	r._isIncludeMainOrder = false
+	r._isIncludeLogistics = false
+	r._needPagination = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -231,4 +250,21 @@ func (r *TmallChannelTradeOrderGetsAPIRequest) SetNeedPagination(_needPagination
 // GetNeedPagination NeedPagination Getter
 func (r TmallChannelTradeOrderGetsAPIRequest) GetNeedPagination() bool {
 	return r._needPagination
+}
+
+var poolTmallChannelTradeOrderGetsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallChannelTradeOrderGetsRequest()
+	},
+}
+
+// GetTmallChannelTradeOrderGetsRequest 从 sync.Pool 获取 TmallChannelTradeOrderGetsAPIRequest
+func GetTmallChannelTradeOrderGetsAPIRequest() *TmallChannelTradeOrderGetsAPIRequest {
+	return poolTmallChannelTradeOrderGetsAPIRequest.Get().(*TmallChannelTradeOrderGetsAPIRequest)
+}
+
+// ReleaseTmallChannelTradeOrderGetsAPIRequest 将 TmallChannelTradeOrderGetsAPIRequest 放入 sync.Pool
+func ReleaseTmallChannelTradeOrderGetsAPIRequest(v *TmallChannelTradeOrderGetsAPIRequest) {
+	v.Reset()
+	poolTmallChannelTradeOrderGetsAPIRequest.Put(v)
 }

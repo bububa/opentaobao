@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // Order 结构体
 type Order struct {
 	// 发货信息，目前只记录了发货方式
@@ -318,4 +322,178 @@ type Order struct {
 	NeedReturn bool `json:"need_return,omitempty" xml:"need_return,omitempty"`
 	// 是否家装分销订单，入参fields中传入orders.is_jzfx时返回
 	IsJzfx bool `json:"is_jzfx,omitempty" xml:"is_jzfx,omitempty"`
+}
+
+var poolOrder = sync.Pool{
+	New: func() any {
+		return new(Order)
+	},
+}
+
+// GetOrder() 从对象池中获取Order
+func GetOrder() *Order {
+	return poolOrder.Get().(*Order)
+}
+
+// ReleaseOrder 释放Order
+func ReleaseOrder(v *Order) {
+	v.ShipInfo = v.ShipInfo[:0]
+	v.CombineItemInfo = v.CombineItemInfo[:0]
+	v.ShpInfo = v.ShpInfo[:0]
+	v.Title = ""
+	v.PicPath = ""
+	v.Price = ""
+	v.SkuId = ""
+	v.OuterIid = ""
+	v.OuterSkuId = ""
+	v.RefundStatus = ""
+	v.Status = ""
+	v.TotalFee = ""
+	v.Payment = ""
+	v.DiscountFee = ""
+	v.AdjustFee = ""
+	v.DivideOrderFee = ""
+	v.PartMjzDiscount = ""
+	v.SkuPropertiesName = ""
+	v.ItemMealName = ""
+	v.SnapshotUrl = ""
+	v.TimeoutActionTime = ""
+	v.ItemMemo = ""
+	v.RefundId = ""
+	v.SellerType = ""
+	v.EndTime = ""
+	v.OrderFrom = ""
+	v.ConsignTime = ""
+	v.ShippingType = ""
+	v.LogisticsCompany = ""
+	v.InvoiceNo = ""
+	v.TicketOuterId = ""
+	v.TicketExpdateKey = ""
+	v.StoreCode = ""
+	v.TmserSpuCode = ""
+	v.SubOrderTaxFee = ""
+	v.SubOrderTaxRate = ""
+	v.EtSerTime = ""
+	v.EtShopName = ""
+	v.EtVerifiedShopName = ""
+	v.EtPlateNumber = ""
+	v.EstimateConTime = ""
+	v.BindOids = ""
+	v.ZhengjiStatus = ""
+	v.MdQualification = ""
+	v.MdFee = ""
+	v.Customization = ""
+	v.InvType = ""
+	v.Shipper = ""
+	v.FType = ""
+	v.FStatus = ""
+	v.FTerm = ""
+	v.ComboId = ""
+	v.OrderAttr = ""
+	v.AssemblyRela = ""
+	v.AssemblyPrice = ""
+	v.AssemblyItem = ""
+	v.SubOrderTaxPromotionFee = ""
+	v.DownPayment = ""
+	v.DownPaymentRatio = ""
+	v.MonthPayment = ""
+	v.TailPayment = ""
+	v.InstallmentNum = ""
+	v.Penalty = ""
+	v.ServiceFee = ""
+	v.CarTaker = ""
+	v.CarTakerPhone = ""
+	v.CarTakerId = ""
+	v.CarStoreCode = ""
+	v.CarStoreName = ""
+	v.OutUniqueId = ""
+	v.WsBankApplyNo = ""
+	v.OidStr = ""
+	v.TaxCouponDiscount = ""
+	v.NrReduceInvFail = ""
+	v.NrOuterIid = ""
+	v.BindOidsAllStatus = ""
+	v.O2oGuideId = ""
+	v.O2oGuideName = ""
+	v.O2oShopId = ""
+	v.O2oShopName = ""
+	v.BizCode = ""
+	v.CloudStore = ""
+	v.HjSettleNoCommission = ""
+	v.OrderTaking = ""
+	v.CloudStoreToken = ""
+	v.CloudStoreBindPos = ""
+	v.RetailStoreId = ""
+	v.OutItemId = ""
+	v.RtOmniOuterScId = ""
+	v.RtOmniScId = ""
+	v.ModifyAddress = ""
+	v.TiModifyAddressTime = ""
+	v.CreditBuy = ""
+	v.STariffFee = ""
+	v.TimingPromise = ""
+	v.PromiseService = ""
+	v.EsDate = ""
+	v.EsRange = ""
+	v.OsDate = ""
+	v.OsRange = ""
+	v.CutoffMinutes = ""
+	v.EsTime = ""
+	v.DeliveryTime = ""
+	v.CollectTime = ""
+	v.DispatchTime = ""
+	v.SignTime = ""
+	v.PromiseEndTime = ""
+	v.OsActivityId = ""
+	v.OsFgItemId = ""
+	v.OsGiftCount = ""
+	v.OsSortNum = ""
+	v.Propoint = ""
+	v.SpecialRefundType = ""
+	v.ExtendInfo = ""
+	v.BrandLightShopStoreId = ""
+	v.BrandLightShopSource = ""
+	v.ServiceOrderType = ""
+	v.ServiceOuterId = ""
+	v.ExpandCardExpandPriceUsedSuborder = ""
+	v.ExpandCardBasicPriceUsedSuborder = ""
+	v.Lijian = ""
+	v.AutoFlow = ""
+	v.DistributeStatus = ""
+	v.IsIdle = ""
+	v.GiftMids = ""
+	v.PromiseCollectTime = ""
+	v.B2bDaixiao = ""
+	v.BundleId = ""
+	v.BundleOutName = ""
+	v.OneYuanReservationOrders = ""
+	v.JewccNo = ""
+	v.Modified = ""
+	v.NumIid = 0
+	v.Oid = 0
+	v.ItemMealId = 0
+	v.Num = 0
+	v.Cid = 0
+	v.BindOid = 0
+	v.FqgNum = 0
+	v.SortInfo = nil
+	v.TradeFulfillmentType = 0
+	v.BundleType = 0
+	v.BuyerRate = false
+	v.SellerRate = false
+	v.IsOversold = false
+	v.IsServiceOrder = false
+	v.IsDaixiao = false
+	v.IsWww = false
+	v.IsShShip = false
+	v.IsFqgSFee = false
+	v.TaxFree = false
+	v.IsKaola = false
+	v.IsDevalueFee = false
+	v.IsFreeGift = false
+	v.HasGift = false
+	v.IsForceDc = false
+	v.NeedReturn = false
+	v.IsJzfx = false
+	poolOrder.Put(v)
 }

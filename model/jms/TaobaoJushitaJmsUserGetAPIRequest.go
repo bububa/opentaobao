@@ -2,6 +2,7 @@ package jms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoJushitaJmsUserGetAPIRequest struct {
 // NewTaobaoJushitaJmsUserGetRequest 初始化TaobaoJushitaJmsUserGetAPIRequest对象
 func NewTaobaoJushitaJmsUserGetRequest() *TaobaoJushitaJmsUserGetAPIRequest {
 	return &TaobaoJushitaJmsUserGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJushitaJmsUserGetAPIRequest) Reset() {
+	r._userNick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoJushitaJmsUserGetAPIRequest) SetUserNick(_userNick string) error 
 // GetUserNick UserNick Getter
 func (r TaobaoJushitaJmsUserGetAPIRequest) GetUserNick() string {
 	return r._userNick
+}
+
+var poolTaobaoJushitaJmsUserGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJushitaJmsUserGetRequest()
+	},
+}
+
+// GetTaobaoJushitaJmsUserGetRequest 从 sync.Pool 获取 TaobaoJushitaJmsUserGetAPIRequest
+func GetTaobaoJushitaJmsUserGetAPIRequest() *TaobaoJushitaJmsUserGetAPIRequest {
+	return poolTaobaoJushitaJmsUserGetAPIRequest.Get().(*TaobaoJushitaJmsUserGetAPIRequest)
+}
+
+// ReleaseTaobaoJushitaJmsUserGetAPIRequest 将 TaobaoJushitaJmsUserGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJushitaJmsUserGetAPIRequest(v *TaobaoJushitaJmsUserGetAPIRequest) {
+	v.Reset()
+	poolTaobaoJushitaJmsUserGetAPIRequest.Put(v)
 }

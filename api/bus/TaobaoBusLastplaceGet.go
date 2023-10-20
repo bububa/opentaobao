@@ -9,11 +9,6 @@ import (
 // taobao.bus.lastplace.get
 //
 // 传入城市 获取对应的目的地
-func TaobaoBusLastplaceGet(clt *core.SDKClient, req *bus.TaobaoBusLastplaceGetAPIRequest, session string) (*bus.TaobaoBusLastplaceGetAPIResponse, error) {
-	var resp bus.TaobaoBusLastplaceGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBusLastplaceGet(clt *core.SDKClient, req *bus.TaobaoBusLastplaceGetAPIRequest, resp *bus.TaobaoBusLastplaceGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

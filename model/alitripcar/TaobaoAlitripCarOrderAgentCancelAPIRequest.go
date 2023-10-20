@@ -2,6 +2,7 @@ package alitripcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlitripCarOrderAgentCancelAPIRequest struct {
 // NewTaobaoAlitripCarOrderAgentCancelRequest 初始化TaobaoAlitripCarOrderAgentCancelAPIRequest对象
 func NewTaobaoAlitripCarOrderAgentCancelRequest() *TaobaoAlitripCarOrderAgentCancelAPIRequest {
 	return &TaobaoAlitripCarOrderAgentCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripCarOrderAgentCancelAPIRequest) Reset() {
+	r._paramOrderCancel = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlitripCarOrderAgentCancelAPIRequest) SetParamOrderCancel(_paramO
 // GetParamOrderCancel ParamOrderCancel Getter
 func (r TaobaoAlitripCarOrderAgentCancelAPIRequest) GetParamOrderCancel() *OrderCancel {
 	return r._paramOrderCancel
+}
+
+var poolTaobaoAlitripCarOrderAgentCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripCarOrderAgentCancelRequest()
+	},
+}
+
+// GetTaobaoAlitripCarOrderAgentCancelRequest 从 sync.Pool 获取 TaobaoAlitripCarOrderAgentCancelAPIRequest
+func GetTaobaoAlitripCarOrderAgentCancelAPIRequest() *TaobaoAlitripCarOrderAgentCancelAPIRequest {
+	return poolTaobaoAlitripCarOrderAgentCancelAPIRequest.Get().(*TaobaoAlitripCarOrderAgentCancelAPIRequest)
+}
+
+// ReleaseTaobaoAlitripCarOrderAgentCancelAPIRequest 将 TaobaoAlitripCarOrderAgentCancelAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripCarOrderAgentCancelAPIRequest(v *TaobaoAlitripCarOrderAgentCancelAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripCarOrderAgentCancelAPIRequest.Put(v)
 }

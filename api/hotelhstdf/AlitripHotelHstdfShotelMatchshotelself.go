@@ -9,11 +9,6 @@ import (
 // alitrip.hotel.hstdf.shotel.matchshotelself
 //
 // 商家通过指定的标准酒店id和卖家酒店id进行匹配
-func AlitripHotelHstdfShotelMatchshotelself(clt *core.SDKClient, req *hotelhstdf.AlitripHotelHstdfShotelMatchshotelselfAPIRequest, session string) (*hotelhstdf.AlitripHotelHstdfShotelMatchshotelselfAPIResponse, error) {
-	var resp hotelhstdf.AlitripHotelHstdfShotelMatchshotelselfAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripHotelHstdfShotelMatchshotelself(clt *core.SDKClient, req *hotelhstdf.AlitripHotelHstdfShotelMatchshotelselfAPIRequest, resp *hotelhstdf.AlitripHotelHstdfShotelMatchshotelselfAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

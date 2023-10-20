@@ -2,6 +2,7 @@ package travel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAlitripTravelBaseinfoScenicsGetAPIResponse struct {
 	TaobaoAlitripTravelBaseinfoScenicsGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAlitripTravelBaseinfoScenicsGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAlitripTravelBaseinfoScenicsGetAPIResponseModel).Reset()
+}
+
 // TaobaoAlitripTravelBaseinfoScenicsGetAPIResponseModel is 【API3.0】基础信息获取接口：景点数据查询 成功返回结果
 type TaobaoAlitripTravelBaseinfoScenicsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_baseinfo_scenics_get_response"`
@@ -22,4 +29,27 @@ type TaobaoAlitripTravelBaseinfoScenicsGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回详细景点信息，返回数据为json数组结构的字符串
 	ScenicInfos string `json:"scenic_infos,omitempty" xml:"scenic_infos,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAlitripTravelBaseinfoScenicsGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ScenicInfos = ""
+}
+
+var poolTaobaoAlitripTravelBaseinfoScenicsGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripTravelBaseinfoScenicsGetAPIResponse)
+	},
+}
+
+// GetTaobaoAlitripTravelBaseinfoScenicsGetAPIResponse 从 sync.Pool 获取 TaobaoAlitripTravelBaseinfoScenicsGetAPIResponse
+func GetTaobaoAlitripTravelBaseinfoScenicsGetAPIResponse() *TaobaoAlitripTravelBaseinfoScenicsGetAPIResponse {
+	return poolTaobaoAlitripTravelBaseinfoScenicsGetAPIResponse.Get().(*TaobaoAlitripTravelBaseinfoScenicsGetAPIResponse)
+}
+
+// ReleaseTaobaoAlitripTravelBaseinfoScenicsGetAPIResponse 将 TaobaoAlitripTravelBaseinfoScenicsGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAlitripTravelBaseinfoScenicsGetAPIResponse(v *TaobaoAlitripTravelBaseinfoScenicsGetAPIResponse) {
+	v.Reset()
+	poolTaobaoAlitripTravelBaseinfoScenicsGetAPIResponse.Put(v)
 }

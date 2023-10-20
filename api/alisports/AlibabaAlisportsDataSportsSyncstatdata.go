@@ -9,11 +9,6 @@ import (
 // alibaba.alisports.data.sports.syncstatdata
 //
 // 阿里体育数据中心用户当天累积数据同步接口
-func AlibabaAlisportsDataSportsSyncstatdata(clt *core.SDKClient, req *alisports.AlibabaAlisportsDataSportsSyncstatdataAPIRequest, session string) (*alisports.AlibabaAlisportsDataSportsSyncstatdataAPIResponse, error) {
-	var resp alisports.AlibabaAlisportsDataSportsSyncstatdataAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlisportsDataSportsSyncstatdata(clt *core.SDKClient, req *alisports.AlibabaAlisportsDataSportsSyncstatdataAPIRequest, resp *alisports.AlibabaAlisportsDataSportsSyncstatdataAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

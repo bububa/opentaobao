@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // TmsPhoneCallInfoDto 结构体
 type TmsPhoneCallInfoDto struct {
 	// 电联人员名称（小件员）
@@ -26,4 +30,32 @@ type TmsPhoneCallInfoDto struct {
 	PhoneChatUrl string `json:"phone_chat_url,omitempty" xml:"phone_chat_url,omitempty"`
 	// 接通时长,  单位s
 	ConnectTimeLength int64 `json:"connect_time_length,omitempty" xml:"connect_time_length,omitempty"`
+}
+
+var poolTmsPhoneCallInfoDto = sync.Pool{
+	New: func() any {
+		return new(TmsPhoneCallInfoDto)
+	},
+}
+
+// GetTmsPhoneCallInfoDto() 从对象池中获取TmsPhoneCallInfoDto
+func GetTmsPhoneCallInfoDto() *TmsPhoneCallInfoDto {
+	return poolTmsPhoneCallInfoDto.Get().(*TmsPhoneCallInfoDto)
+}
+
+// ReleaseTmsPhoneCallInfoDto 释放TmsPhoneCallInfoDto
+func ReleaseTmsPhoneCallInfoDto(v *TmsPhoneCallInfoDto) {
+	v.PhoneCallOperatorName = ""
+	v.PhoneCallOperatorPhone = ""
+	v.PhoneCallConsumerPhone = ""
+	v.PhoneCallResultRemark = ""
+	v.ConnectionStatus = ""
+	v.CallTime = ""
+	v.ConnectTime = ""
+	v.HangUpTime = ""
+	v.PhoneCallType = ""
+	v.HangUpType = ""
+	v.PhoneChatUrl = ""
+	v.ConnectTimeLength = 0
+	poolTmsPhoneCallInfoDto.Put(v)
 }

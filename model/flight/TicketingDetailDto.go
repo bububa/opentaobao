@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // TicketingDetailDto 结构体
 type TicketingDetailDto struct {
 	// 出票对象
@@ -40,4 +44,39 @@ type TicketingDetailDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	//    1:&#34;单程&#34;,     2:&#34;往返&#34;,     3:&#34;多程&#34;
 	TripType int64 `json:"trip_type,omitempty" xml:"trip_type,omitempty"`
+}
+
+var poolTicketingDetailDto = sync.Pool{
+	New: func() any {
+		return new(TicketingDetailDto)
+	},
+}
+
+// GetTicketingDetailDto() 从对象池中获取TicketingDetailDto
+func GetTicketingDetailDto() *TicketingDetailDto {
+	return poolTicketingDetailDto.Get().(*TicketingDetailDto)
+}
+
+// ReleaseTicketingDetailDto 释放TicketingDetailDto
+func ReleaseTicketingDetailDto(v *TicketingDetailDto) {
+	v.IssueList = v.IssueList[:0]
+	v.Tags = v.Tags[:0]
+	v.BaggageList = v.BaggageList[:0]
+	v.OrderId = ""
+	v.PayTime = ""
+	v.IssueTime = ""
+	v.Sla = ""
+	v.Currency = ""
+	v.RefundModifyRule = ""
+	v.IntentionId = ""
+	v.SlaDesc = ""
+	v.CorrelationOutId = ""
+	v.UrgeSla = ""
+	v.UrgeSlaDesc = ""
+	v.AgentId = 0
+	v.DomesticIntl = 0
+	v.Commission = 0
+	v.Status = 0
+	v.TripType = 0
+	poolTicketingDetailDto.Put(v)
 }

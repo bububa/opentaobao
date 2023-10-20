@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest struct {
 // NewAlibabaRetailMarketingBuygiftActivityUpdateRequest 初始化AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest对象
 func NewAlibabaRetailMarketingBuygiftActivityUpdateRequest() *AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest {
 	return &AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest) SetParam(_param 
 // GetParam Param Getter
 func (r AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest) GetParam() *BuyGiftActivityOperateRequest {
 	return r._param
+}
+
+var poolAlibabaRetailMarketingBuygiftActivityUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaRetailMarketingBuygiftActivityUpdateRequest()
+	},
+}
+
+// GetAlibabaRetailMarketingBuygiftActivityUpdateRequest 从 sync.Pool 获取 AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest
+func GetAlibabaRetailMarketingBuygiftActivityUpdateAPIRequest() *AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest {
+	return poolAlibabaRetailMarketingBuygiftActivityUpdateAPIRequest.Get().(*AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest)
+}
+
+// ReleaseAlibabaRetailMarketingBuygiftActivityUpdateAPIRequest 将 AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaRetailMarketingBuygiftActivityUpdateAPIRequest(v *AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaRetailMarketingBuygiftActivityUpdateAPIRequest.Put(v)
 }

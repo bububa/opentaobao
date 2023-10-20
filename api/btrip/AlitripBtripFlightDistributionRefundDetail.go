@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.flight.distribution.refund.detail
 //
 // 商旅机票分销退票详情
-func AlitripBtripFlightDistributionRefundDetail(clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionRefundDetailAPIRequest, session string) (*btrip.AlitripBtripFlightDistributionRefundDetailAPIResponse, error) {
-	var resp btrip.AlitripBtripFlightDistributionRefundDetailAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripFlightDistributionRefundDetail(clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionRefundDetailAPIRequest, resp *btrip.AlitripBtripFlightDistributionRefundDetailAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

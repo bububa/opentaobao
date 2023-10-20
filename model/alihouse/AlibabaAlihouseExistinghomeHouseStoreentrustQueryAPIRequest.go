@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeHouseStoreentrustQueryRequest 初始化AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest对象
 func NewAlibabaAlihouseExistinghomeHouseStoreentrustQueryRequest() *AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest {
 	return &AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest) Reset() {
+	r._outerCommunityId = ""
+	r._outerHouseId = ""
+	r._storeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest) SetStoreId
 // GetStoreId StoreId Getter
 func (r AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest) GetStoreId() int64 {
 	return r._storeId
+}
+
+var poolAlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeHouseStoreentrustQueryRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeHouseStoreentrustQueryRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest
+func GetAlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest() *AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest {
+	return poolAlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest.Get().(*AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest 将 AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest(v *AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest.Put(v)
 }

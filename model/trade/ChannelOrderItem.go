@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // ChannelOrderItem 结构体
 type ChannelOrderItem struct {
 	// 条形码
@@ -16,4 +20,27 @@ type ChannelOrderItem struct {
 	DistributionPrice int64 `json:"distribution_price,omitempty" xml:"distribution_price,omitempty"`
 	// 数量
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolChannelOrderItem = sync.Pool{
+	New: func() any {
+		return new(ChannelOrderItem)
+	},
+}
+
+// GetChannelOrderItem() 从对象池中获取ChannelOrderItem
+func GetChannelOrderItem() *ChannelOrderItem {
+	return poolChannelOrderItem.Get().(*ChannelOrderItem)
+}
+
+// ReleaseChannelOrderItem 释放ChannelOrderItem
+func ReleaseChannelOrderItem(v *ChannelOrderItem) {
+	v.Barcode = ""
+	v.SkuId = ""
+	v.ItemId = ""
+	v.InventoryNo = ""
+	v.ItemName = ""
+	v.DistributionPrice = 0
+	v.Quantity = 0
+	poolChannelOrderItem.Put(v)
 }

@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoUniversalbpBidwordFindlistAPIResponse struct {
 	TaobaoUniversalbpBidwordFindlistAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoUniversalbpBidwordFindlistAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoUniversalbpBidwordFindlistAPIResponseModel).Reset()
+}
+
 // TaobaoUniversalbpBidwordFindlistAPIResponseModel is 词列表查询 成功返回结果
 type TaobaoUniversalbpBidwordFindlistAPIResponseModel struct {
 	XMLName xml.Name `xml:"universalbp_bidword_findlist_response"`
@@ -22,4 +29,27 @@ type TaobaoUniversalbpBidwordFindlistAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
 	Result *TaobaoUniversalbpBidwordFindlistTopResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoUniversalbpBidwordFindlistAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoUniversalbpBidwordFindlistAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoUniversalbpBidwordFindlistAPIResponse)
+	},
+}
+
+// GetTaobaoUniversalbpBidwordFindlistAPIResponse 从 sync.Pool 获取 TaobaoUniversalbpBidwordFindlistAPIResponse
+func GetTaobaoUniversalbpBidwordFindlistAPIResponse() *TaobaoUniversalbpBidwordFindlistAPIResponse {
+	return poolTaobaoUniversalbpBidwordFindlistAPIResponse.Get().(*TaobaoUniversalbpBidwordFindlistAPIResponse)
+}
+
+// ReleaseTaobaoUniversalbpBidwordFindlistAPIResponse 将 TaobaoUniversalbpBidwordFindlistAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoUniversalbpBidwordFindlistAPIResponse(v *TaobaoUniversalbpBidwordFindlistAPIResponse) {
+	v.Reset()
+	poolTaobaoUniversalbpBidwordFindlistAPIResponse.Put(v)
 }

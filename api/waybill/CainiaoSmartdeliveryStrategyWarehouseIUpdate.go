@@ -9,11 +9,6 @@ import (
 // cainiao.smartdelivery.strategy.warehouse.i.update
 //
 // 智能发货引擎发货策略设置仓维度
-func CainiaoSmartdeliveryStrategyWarehouseIUpdate(clt *core.SDKClient, req *waybill.CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest, session string) (*waybill.CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIResponse, error) {
-	var resp waybill.CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoSmartdeliveryStrategyWarehouseIUpdate(clt *core.SDKClient, req *waybill.CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest, resp *waybill.CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

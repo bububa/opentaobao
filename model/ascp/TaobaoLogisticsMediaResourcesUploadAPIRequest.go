@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoLogisticsMediaResourcesUploadAPIRequest struct {
 // NewTaobaoLogisticsMediaResourcesUploadRequest 初始化TaobaoLogisticsMediaResourcesUploadAPIRequest对象
 func NewTaobaoLogisticsMediaResourcesUploadRequest() *TaobaoLogisticsMediaResourcesUploadAPIRequest {
 	return &TaobaoLogisticsMediaResourcesUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsMediaResourcesUploadAPIRequest) Reset() {
+	r._name = ""
+	r._supplierId = 0
+	r._type = 0
+	r._data = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoLogisticsMediaResourcesUploadAPIRequest) SetData(_data *model.Fil
 // GetData Data Getter
 func (r TaobaoLogisticsMediaResourcesUploadAPIRequest) GetData() *model.File {
 	return r._data
+}
+
+var poolTaobaoLogisticsMediaResourcesUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsMediaResourcesUploadRequest()
+	},
+}
+
+// GetTaobaoLogisticsMediaResourcesUploadRequest 从 sync.Pool 获取 TaobaoLogisticsMediaResourcesUploadAPIRequest
+func GetTaobaoLogisticsMediaResourcesUploadAPIRequest() *TaobaoLogisticsMediaResourcesUploadAPIRequest {
+	return poolTaobaoLogisticsMediaResourcesUploadAPIRequest.Get().(*TaobaoLogisticsMediaResourcesUploadAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsMediaResourcesUploadAPIRequest 将 TaobaoLogisticsMediaResourcesUploadAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsMediaResourcesUploadAPIRequest(v *TaobaoLogisticsMediaResourcesUploadAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsMediaResourcesUploadAPIRequest.Put(v)
 }

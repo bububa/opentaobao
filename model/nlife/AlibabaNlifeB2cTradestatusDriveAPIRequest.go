@@ -2,6 +2,7 @@ package nlife
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaNlifeB2cTradestatusDriveAPIRequest struct {
 // NewAlibabaNlifeB2cTradestatusDriveRequest 初始化AlibabaNlifeB2cTradestatusDriveAPIRequest对象
 func NewAlibabaNlifeB2cTradestatusDriveRequest() *AlibabaNlifeB2cTradestatusDriveAPIRequest {
 	return &AlibabaNlifeB2cTradestatusDriveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaNlifeB2cTradestatusDriveAPIRequest) Reset() {
+	r._storeId = ""
+	r._channel = ""
+	r._outTradeNo = ""
+	r._tradeNo = ""
+	r._action = ""
+	r._extendParams = ""
+	r._logisticsInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaNlifeB2cTradestatusDriveAPIRequest) SetLogisticsInfo(_logisticsI
 // GetLogisticsInfo LogisticsInfo Getter
 func (r AlibabaNlifeB2cTradestatusDriveAPIRequest) GetLogisticsInfo() *LogisticsInfo {
 	return r._logisticsInfo
+}
+
+var poolAlibabaNlifeB2cTradestatusDriveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaNlifeB2cTradestatusDriveRequest()
+	},
+}
+
+// GetAlibabaNlifeB2cTradestatusDriveRequest 从 sync.Pool 获取 AlibabaNlifeB2cTradestatusDriveAPIRequest
+func GetAlibabaNlifeB2cTradestatusDriveAPIRequest() *AlibabaNlifeB2cTradestatusDriveAPIRequest {
+	return poolAlibabaNlifeB2cTradestatusDriveAPIRequest.Get().(*AlibabaNlifeB2cTradestatusDriveAPIRequest)
+}
+
+// ReleaseAlibabaNlifeB2cTradestatusDriveAPIRequest 将 AlibabaNlifeB2cTradestatusDriveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaNlifeB2cTradestatusDriveAPIRequest(v *AlibabaNlifeB2cTradestatusDriveAPIRequest) {
+	v.Reset()
+	poolAlibabaNlifeB2cTradestatusDriveAPIRequest.Put(v)
 }

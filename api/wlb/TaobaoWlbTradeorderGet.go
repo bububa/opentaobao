@@ -9,11 +9,6 @@ import (
 // taobao.wlb.tradeorder.get
 //
 // 根据交易类型和交易id查询物流宝订单详情
-func TaobaoWlbTradeorderGet(clt *core.SDKClient, req *wlb.TaobaoWlbTradeorderGetAPIRequest, session string) (*wlb.TaobaoWlbTradeorderGetAPIResponse, error) {
-	var resp wlb.TaobaoWlbTradeorderGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWlbTradeorderGet(clt *core.SDKClient, req *wlb.TaobaoWlbTradeorderGetAPIRequest, resp *wlb.TaobaoWlbTradeorderGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

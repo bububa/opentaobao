@@ -1,5 +1,9 @@
 package jst
 
+import (
+	"sync"
+)
+
 // SendMessageRequest 结构体
 type SendMessageRequest struct {
 	// 拓展Name
@@ -28,4 +32,33 @@ type SendMessageRequest struct {
 	SmsType string `json:"sms_type,omitempty" xml:"sms_type,omitempty"`
 	// 标记字段
 	ToolFlag string `json:"tool_flag,omitempty" xml:"tool_flag,omitempty"`
+}
+
+var poolSendMessageRequest = sync.Pool{
+	New: func() any {
+		return new(SendMessageRequest)
+	},
+}
+
+// GetSendMessageRequest() 从对象池中获取SendMessageRequest
+func GetSendMessageRequest() *SendMessageRequest {
+	return poolSendMessageRequest.Get().(*SendMessageRequest)
+}
+
+// ReleaseSendMessageRequest 释放SendMessageRequest
+func ReleaseSendMessageRequest(v *SendMessageRequest) {
+	v.ExtendName = ""
+	v.ExtendCode = ""
+	v.SmsFreeSignName = ""
+	v.ChannelType = ""
+	v.TemplateCode = ""
+	v.Params = ""
+	v.Url = ""
+	v.Extend = ""
+	v.PhoneNumber = ""
+	v.Tag = ""
+	v.BatchNumber = ""
+	v.SmsType = ""
+	v.ToolFlag = ""
+	poolSendMessageRequest.Put(v)
 }

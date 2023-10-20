@@ -1,5 +1,9 @@
 package tbitem
 
+import (
+	"sync"
+)
+
 // MpicVideo 结构体
 type MpicVideo struct {
 	// 主图视频的缩略图URL
@@ -12,4 +16,25 @@ type MpicVideo struct {
 	VideoId int64 `json:"video_id,omitempty" xml:"video_id,omitempty"`
 	// 主图视频的状态
 	VideoStatus int64 `json:"video_status,omitempty" xml:"video_status,omitempty"`
+}
+
+var poolMpicVideo = sync.Pool{
+	New: func() any {
+		return new(MpicVideo)
+	},
+}
+
+// GetMpicVideo() 从对象池中获取MpicVideo
+func GetMpicVideo() *MpicVideo {
+	return poolMpicVideo.Get().(*MpicVideo)
+}
+
+// ReleaseMpicVideo 释放MpicVideo
+func ReleaseMpicVideo(v *MpicVideo) {
+	v.VideoPic = ""
+	v.NumIid = 0
+	v.VideoDuaration = 0
+	v.VideoId = 0
+	v.VideoStatus = 0
+	poolMpicVideo.Put(v)
 }

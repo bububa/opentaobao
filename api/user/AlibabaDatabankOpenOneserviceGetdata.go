@@ -9,11 +9,6 @@ import (
 // alibaba.databank.open.oneservice.getdata
 //
 // 瓴羊DaaS消费者运营CGP取数接口
-func AlibabaDatabankOpenOneserviceGetdata(clt *core.SDKClient, req *user.AlibabaDatabankOpenOneserviceGetdataAPIRequest, session string) (*user.AlibabaDatabankOpenOneserviceGetdataAPIResponse, error) {
-	var resp user.AlibabaDatabankOpenOneserviceGetdataAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDatabankOpenOneserviceGetdata(clt *core.SDKClient, req *user.AlibabaDatabankOpenOneserviceGetdataAPIRequest, resp *user.AlibabaDatabankOpenOneserviceGetdataAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

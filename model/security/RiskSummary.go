@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // RiskSummary 结构体
 type RiskSummary struct {
 	// 仿冒应用信息
@@ -12,4 +16,25 @@ type RiskSummary struct {
 	TaskStatus int64 `json:"task_status,omitempty" xml:"task_status,omitempty"`
 	// 漏洞信息
 	VulnInfo *VulnSummary `json:"vuln_info,omitempty" xml:"vuln_info,omitempty"`
+}
+
+var poolRiskSummary = sync.Pool{
+	New: func() any {
+		return new(RiskSummary)
+	},
+}
+
+// GetRiskSummary() 从对象池中获取RiskSummary
+func GetRiskSummary() *RiskSummary {
+	return poolRiskSummary.Get().(*RiskSummary)
+}
+
+// ReleaseRiskSummary 释放RiskSummary
+func ReleaseRiskSummary(v *RiskSummary) {
+	v.FakeInfo = nil
+	v.MalwareInfo = nil
+	v.PluginInfo = nil
+	v.TaskStatus = 0
+	v.VulnInfo = nil
+	poolRiskSummary.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alitrip.rentcar.order.detail.query
 //
 // 租车订单详情查询
-func AlitripRentcarOrderDetailQuery(clt *core.SDKClient, req *car.AlitripRentcarOrderDetailQueryAPIRequest, session string) (*car.AlitripRentcarOrderDetailQueryAPIResponse, error) {
-	var resp car.AlitripRentcarOrderDetailQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripRentcarOrderDetailQuery(clt *core.SDKClient, req *car.AlitripRentcarOrderDetailQueryAPIRequest, resp *car.AlitripRentcarOrderDetailQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

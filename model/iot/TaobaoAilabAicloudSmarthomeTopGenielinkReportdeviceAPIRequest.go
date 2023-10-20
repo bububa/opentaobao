@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest struct {
 // NewTaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest 初始化TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest对象
 func NewTaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest() *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest {
 	return &TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) Reset() {
+	r._deviceId = ""
+	r._status = ""
+	r._extensions = ""
+	r._vendorId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) SetVendo
 // GetVendorId VendorId Getter
 func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) GetVendorId() int64 {
 	return r._vendorId
+}
+
+var poolTaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest 从 sync.Pool 获取 TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest
+func GetTaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest() *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest {
+	return poolTaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest.Get().(*TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest 将 TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest(v *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest.Put(v)
 }

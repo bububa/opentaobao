@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // SdtStationDto 结构体
 type SdtStationDto struct {
 	// 站点操作时间
@@ -18,4 +22,28 @@ type SdtStationDto struct {
 	StationName string `json:"station_name,omitempty" xml:"station_name,omitempty"`
 	// 站点类别（推荐站点、派送站点、揽收站点）
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolSdtStationDto = sync.Pool{
+	New: func() any {
+		return new(SdtStationDto)
+	},
+}
+
+// GetSdtStationDto() 从对象池中获取SdtStationDto
+func GetSdtStationDto() *SdtStationDto {
+	return poolSdtStationDto.Get().(*SdtStationDto)
+}
+
+// ReleaseSdtStationDto 释放SdtStationDto
+func ReleaseSdtStationDto(v *SdtStationDto) {
+	v.ActionTime = ""
+	v.CpCode = ""
+	v.CpName = ""
+	v.StationCode = ""
+	v.StationContact = ""
+	v.StationMaster = ""
+	v.StationName = ""
+	v.Type = ""
+	poolSdtStationDto.Put(v)
 }

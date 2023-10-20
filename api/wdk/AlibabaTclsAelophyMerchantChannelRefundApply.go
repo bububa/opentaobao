@@ -9,11 +9,6 @@ import (
 // alibaba.tcls.aelophy.merchant.channel.refund.apply
 //
 // 翱象小程序 用户逆向单申请
-func AlibabaTclsAelophyMerchantChannelRefundApply(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelRefundApplyAPIRequest, session string) (*wdk.AlibabaTclsAelophyMerchantChannelRefundApplyAPIResponse, error) {
-	var resp wdk.AlibabaTclsAelophyMerchantChannelRefundApplyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTclsAelophyMerchantChannelRefundApply(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelRefundApplyAPIRequest, resp *wdk.AlibabaTclsAelophyMerchantChannelRefundApplyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaMjPresaleSettlementStatisticsAPIRequest struct {
 // NewAlibabaMjPresaleSettlementStatisticsRequest 初始化AlibabaMjPresaleSettlementStatisticsAPIRequest对象
 func NewAlibabaMjPresaleSettlementStatisticsRequest() *AlibabaMjPresaleSettlementStatisticsAPIRequest {
 	return &AlibabaMjPresaleSettlementStatisticsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMjPresaleSettlementStatisticsAPIRequest) Reset() {
+	r._storeNo = ""
+	r._actionNo = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaMjPresaleSettlementStatisticsAPIRequest) SetActionNo(_actionNo i
 // GetActionNo ActionNo Getter
 func (r AlibabaMjPresaleSettlementStatisticsAPIRequest) GetActionNo() int64 {
 	return r._actionNo
+}
+
+var poolAlibabaMjPresaleSettlementStatisticsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMjPresaleSettlementStatisticsRequest()
+	},
+}
+
+// GetAlibabaMjPresaleSettlementStatisticsRequest 从 sync.Pool 获取 AlibabaMjPresaleSettlementStatisticsAPIRequest
+func GetAlibabaMjPresaleSettlementStatisticsAPIRequest() *AlibabaMjPresaleSettlementStatisticsAPIRequest {
+	return poolAlibabaMjPresaleSettlementStatisticsAPIRequest.Get().(*AlibabaMjPresaleSettlementStatisticsAPIRequest)
+}
+
+// ReleaseAlibabaMjPresaleSettlementStatisticsAPIRequest 将 AlibabaMjPresaleSettlementStatisticsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMjPresaleSettlementStatisticsAPIRequest(v *AlibabaMjPresaleSettlementStatisticsAPIRequest) {
+	v.Reset()
+	poolAlibabaMjPresaleSettlementStatisticsAPIRequest.Put(v)
 }

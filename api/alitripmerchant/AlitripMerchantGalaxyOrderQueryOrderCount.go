@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.order.query.order.count
 //
 // 调用查询接口整合各个订单类型总数
-func AlitripMerchantGalaxyOrderQueryOrderCount(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyOrderQueryOrderCountAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyOrderQueryOrderCountAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyOrderQueryOrderCountAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyOrderQueryOrderCount(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyOrderQueryOrderCountAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyOrderQueryOrderCountAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

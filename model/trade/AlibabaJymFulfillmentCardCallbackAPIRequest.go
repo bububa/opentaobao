@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaJymFulfillmentCardCallbackAPIRequest struct {
 // NewAlibabaJymFulfillmentCardCallbackRequest 初始化AlibabaJymFulfillmentCardCallbackAPIRequest对象
 func NewAlibabaJymFulfillmentCardCallbackRequest() *AlibabaJymFulfillmentCardCallbackAPIRequest {
 	return &AlibabaJymFulfillmentCardCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJymFulfillmentCardCallbackAPIRequest) Reset() {
+	r._cardChargeCallbackRequestDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaJymFulfillmentCardCallbackAPIRequest) SetCardChargeCallbackReque
 // GetCardChargeCallbackRequestDto CardChargeCallbackRequestDto Getter
 func (r AlibabaJymFulfillmentCardCallbackAPIRequest) GetCardChargeCallbackRequestDto() *CardChargeCallbackRequestDto {
 	return r._cardChargeCallbackRequestDto
+}
+
+var poolAlibabaJymFulfillmentCardCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJymFulfillmentCardCallbackRequest()
+	},
+}
+
+// GetAlibabaJymFulfillmentCardCallbackRequest 从 sync.Pool 获取 AlibabaJymFulfillmentCardCallbackAPIRequest
+func GetAlibabaJymFulfillmentCardCallbackAPIRequest() *AlibabaJymFulfillmentCardCallbackAPIRequest {
+	return poolAlibabaJymFulfillmentCardCallbackAPIRequest.Get().(*AlibabaJymFulfillmentCardCallbackAPIRequest)
+}
+
+// ReleaseAlibabaJymFulfillmentCardCallbackAPIRequest 将 AlibabaJymFulfillmentCardCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJymFulfillmentCardCallbackAPIRequest(v *AlibabaJymFulfillmentCardCallbackAPIRequest) {
+	v.Reset()
+	poolAlibabaJymFulfillmentCardCallbackAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallAliautoServiceItemGetAPIRequest struct {
 // NewTmallAliautoServiceItemGetRequest 初始化TmallAliautoServiceItemGetAPIRequest对象
 func NewTmallAliautoServiceItemGetRequest() *TmallAliautoServiceItemGetAPIRequest {
 	return &TmallAliautoServiceItemGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallAliautoServiceItemGetAPIRequest) Reset() {
+	r._outerShopId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallAliautoServiceItemGetAPIRequest) SetOuterShopId(_outerShopId strin
 // GetOuterShopId OuterShopId Getter
 func (r TmallAliautoServiceItemGetAPIRequest) GetOuterShopId() string {
 	return r._outerShopId
+}
+
+var poolTmallAliautoServiceItemGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallAliautoServiceItemGetRequest()
+	},
+}
+
+// GetTmallAliautoServiceItemGetRequest 从 sync.Pool 获取 TmallAliautoServiceItemGetAPIRequest
+func GetTmallAliautoServiceItemGetAPIRequest() *TmallAliautoServiceItemGetAPIRequest {
+	return poolTmallAliautoServiceItemGetAPIRequest.Get().(*TmallAliautoServiceItemGetAPIRequest)
+}
+
+// ReleaseTmallAliautoServiceItemGetAPIRequest 将 TmallAliautoServiceItemGetAPIRequest 放入 sync.Pool
+func ReleaseTmallAliautoServiceItemGetAPIRequest(v *TmallAliautoServiceItemGetAPIRequest) {
+	v.Reset()
+	poolTmallAliautoServiceItemGetAPIRequest.Put(v)
 }

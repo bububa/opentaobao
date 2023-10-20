@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleConsignmentOrderPerformAPIRequest struct {
 // NewAlibabaIdleConsignmentOrderPerformRequest 初始化AlibabaIdleConsignmentOrderPerformAPIRequest对象
 func NewAlibabaIdleConsignmentOrderPerformRequest() *AlibabaIdleConsignmentOrderPerformAPIRequest {
 	return &AlibabaIdleConsignmentOrderPerformAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleConsignmentOrderPerformAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleConsignmentOrderPerformAPIRequest) SetParam(_param *Consignm
 // GetParam Param Getter
 func (r AlibabaIdleConsignmentOrderPerformAPIRequest) GetParam() *ConsignmentOrderSynDto {
 	return r._param
+}
+
+var poolAlibabaIdleConsignmentOrderPerformAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleConsignmentOrderPerformRequest()
+	},
+}
+
+// GetAlibabaIdleConsignmentOrderPerformRequest 从 sync.Pool 获取 AlibabaIdleConsignmentOrderPerformAPIRequest
+func GetAlibabaIdleConsignmentOrderPerformAPIRequest() *AlibabaIdleConsignmentOrderPerformAPIRequest {
+	return poolAlibabaIdleConsignmentOrderPerformAPIRequest.Get().(*AlibabaIdleConsignmentOrderPerformAPIRequest)
+}
+
+// ReleaseAlibabaIdleConsignmentOrderPerformAPIRequest 将 AlibabaIdleConsignmentOrderPerformAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleConsignmentOrderPerformAPIRequest(v *AlibabaIdleConsignmentOrderPerformAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleConsignmentOrderPerformAPIRequest.Put(v)
 }

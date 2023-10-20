@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SameTownBox 结构体
 type SameTownBox struct {
 	// 同城包裹列表
@@ -14,4 +18,26 @@ type SameTownBox struct {
 	ContainerType string `json:"container_type,omitempty" xml:"container_type,omitempty"`
 	// 箱号
 	MaterialCode string `json:"material_code,omitempty" xml:"material_code,omitempty"`
+}
+
+var poolSameTownBox = sync.Pool{
+	New: func() any {
+		return new(SameTownBox)
+	},
+}
+
+// GetSameTownBox() 从对象池中获取SameTownBox
+func GetSameTownBox() *SameTownBox {
+	return poolSameTownBox.Get().(*SameTownBox)
+}
+
+// ReleaseSameTownBox 释放SameTownBox
+func ReleaseSameTownBox(v *SameTownBox) {
+	v.SameTownPackages = v.SameTownPackages[:0]
+	v.IsTest = ""
+	v.Attribute = ""
+	v.ContainerCode = ""
+	v.ContainerType = ""
+	v.MaterialCode = ""
+	poolSameTownBox.Put(v)
 }

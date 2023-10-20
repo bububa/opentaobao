@@ -2,6 +2,7 @@ package eleenterpriseordernew
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -47,8 +48,28 @@ type AlibabaEleEnterpriseOrdernewCreateAPIRequest struct {
 // NewAlibabaEleEnterpriseOrdernewCreateRequest 初始化AlibabaEleEnterpriseOrdernewCreateAPIRequest对象
 func NewAlibabaEleEnterpriseOrdernewCreateRequest() *AlibabaEleEnterpriseOrdernewCreateAPIRequest {
 	return &AlibabaEleEnterpriseOrdernewCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(15),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) Reset() {
+	r._longitude = ""
+	r._erestaurantId = ""
+	r._couponSn = ""
+	r._description = ""
+	r._phones = ""
+	r._ip = ""
+	r._latitude = ""
+	r._cartId = ""
+	r._tpOrderId = ""
+	r._address = ""
+	r._consignee = ""
+	r._deliverTime = ""
+	r._invoiceNumber = ""
+	r._invoice = ""
+	r._invoiceType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -261,4 +282,21 @@ func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetInvoiceType(_invoiceTy
 // GetInvoiceType InvoiceType Getter
 func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetInvoiceType() int64 {
 	return r._invoiceType
+}
+
+var poolAlibabaEleEnterpriseOrdernewCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleEnterpriseOrdernewCreateRequest()
+	},
+}
+
+// GetAlibabaEleEnterpriseOrdernewCreateRequest 从 sync.Pool 获取 AlibabaEleEnterpriseOrdernewCreateAPIRequest
+func GetAlibabaEleEnterpriseOrdernewCreateAPIRequest() *AlibabaEleEnterpriseOrdernewCreateAPIRequest {
+	return poolAlibabaEleEnterpriseOrdernewCreateAPIRequest.Get().(*AlibabaEleEnterpriseOrdernewCreateAPIRequest)
+}
+
+// ReleaseAlibabaEleEnterpriseOrdernewCreateAPIRequest 将 AlibabaEleEnterpriseOrdernewCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleEnterpriseOrdernewCreateAPIRequest(v *AlibabaEleEnterpriseOrdernewCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaEleEnterpriseOrdernewCreateAPIRequest.Put(v)
 }

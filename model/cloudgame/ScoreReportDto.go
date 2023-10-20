@@ -1,5 +1,9 @@
 package cloudgame
 
+import (
+	"sync"
+)
+
 // ScoreReportDto 结构体
 type ScoreReportDto struct {
 	// 游戏结果
@@ -16,4 +20,27 @@ type ScoreReportDto struct {
 	OverwriteMethod int64 `json:"overwrite_method,omitempty" xml:"overwrite_method,omitempty"`
 	// 上报时间戳
 	ReportTimestamp int64 `json:"report_timestamp,omitempty" xml:"report_timestamp,omitempty"`
+}
+
+var poolScoreReportDto = sync.Pool{
+	New: func() any {
+		return new(ScoreReportDto)
+	},
+}
+
+// GetScoreReportDto() 从对象池中获取ScoreReportDto
+func GetScoreReportDto() *ScoreReportDto {
+	return poolScoreReportDto.Get().(*ScoreReportDto)
+}
+
+// ReleaseScoreReportDto 释放ScoreReportDto
+func ReleaseScoreReportDto(v *ScoreReportDto) {
+	v.Score = ""
+	v.GameSessionId = ""
+	v.MixUserId = ""
+	v.Uuid = ""
+	v.ExtInfo = ""
+	v.OverwriteMethod = 0
+	v.ReportTimestamp = 0
+	poolScoreReportDto.Put(v)
 }

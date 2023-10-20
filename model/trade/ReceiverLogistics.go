@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // ReceiverLogistics 结构体
 type ReceiverLogistics struct {
 	// 手机号码
@@ -24,4 +28,31 @@ type ReceiverLogistics struct {
 	ProvinceCode int64 `json:"province_code,omitempty" xml:"province_code,omitempty"`
 	// 城市码
 	CityCode int64 `json:"city_code,omitempty" xml:"city_code,omitempty"`
+}
+
+var poolReceiverLogistics = sync.Pool{
+	New: func() any {
+		return new(ReceiverLogistics)
+	},
+}
+
+// GetReceiverLogistics() 从对象池中获取ReceiverLogistics
+func GetReceiverLogistics() *ReceiverLogistics {
+	return poolReceiverLogistics.Get().(*ReceiverLogistics)
+}
+
+// ReleaseReceiverLogistics 释放ReceiverLogistics
+func ReleaseReceiverLogistics(v *ReceiverLogistics) {
+	v.MobilePhone = ""
+	v.AreaName = ""
+	v.CityName = ""
+	v.ReceiverFullName = ""
+	v.ProvinceName = ""
+	v.WholeAddress = ""
+	v.DetailAddress = ""
+	v.AreaCode = 0
+	v.DivisionId = 0
+	v.ProvinceCode = 0
+	v.CityCode = 0
+	poolReceiverLogistics.Put(v)
 }

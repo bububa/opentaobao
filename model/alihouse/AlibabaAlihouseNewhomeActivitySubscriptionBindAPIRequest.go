@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest struct {
 // NewAlibabaAlihouseNewhomeActivitySubscriptionBindRequest 初始化AlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest对象
 func NewAlibabaAlihouseNewhomeActivitySubscriptionBindRequest() *AlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest {
 	return &AlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest) Reset() {
+	r._subscriptionItemDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest) SetSubscripti
 // GetSubscriptionItemDto SubscriptionItemDto Getter
 func (r AlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest) GetSubscriptionItemDto() *SubscriptionItemDto {
 	return r._subscriptionItemDto
+}
+
+var poolAlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeActivitySubscriptionBindRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeActivitySubscriptionBindRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest
+func GetAlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest() *AlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest {
+	return poolAlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest.Get().(*AlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest 将 AlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest(v *AlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeActivitySubscriptionBindAPIRequest.Put(v)
 }

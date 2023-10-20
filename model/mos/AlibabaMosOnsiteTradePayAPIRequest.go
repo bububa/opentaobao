@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMosOnsiteTradePayAPIRequest struct {
 // NewAlibabaMosOnsiteTradePayRequest 初始化AlibabaMosOnsiteTradePayAPIRequest对象
 func NewAlibabaMosOnsiteTradePayRequest() *AlibabaMosOnsiteTradePayAPIRequest {
 	return &AlibabaMosOnsiteTradePayAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosOnsiteTradePayAPIRequest) Reset() {
+	r._onsiteTradePayRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMosOnsiteTradePayAPIRequest) SetOnsiteTradePayRequest(_onsiteTra
 // GetOnsiteTradePayRequest OnsiteTradePayRequest Getter
 func (r AlibabaMosOnsiteTradePayAPIRequest) GetOnsiteTradePayRequest() *OnsiteTradePayRequest {
 	return r._onsiteTradePayRequest
+}
+
+var poolAlibabaMosOnsiteTradePayAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosOnsiteTradePayRequest()
+	},
+}
+
+// GetAlibabaMosOnsiteTradePayRequest 从 sync.Pool 获取 AlibabaMosOnsiteTradePayAPIRequest
+func GetAlibabaMosOnsiteTradePayAPIRequest() *AlibabaMosOnsiteTradePayAPIRequest {
+	return poolAlibabaMosOnsiteTradePayAPIRequest.Get().(*AlibabaMosOnsiteTradePayAPIRequest)
+}
+
+// ReleaseAlibabaMosOnsiteTradePayAPIRequest 将 AlibabaMosOnsiteTradePayAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosOnsiteTradePayAPIRequest(v *AlibabaMosOnsiteTradePayAPIRequest) {
+	v.Reset()
+	poolAlibabaMosOnsiteTradePayAPIRequest.Put(v)
 }

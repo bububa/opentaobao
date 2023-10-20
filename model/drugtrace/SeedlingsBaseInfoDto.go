@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // SeedlingsBaseInfoDto 结构体
 type SeedlingsBaseInfoDto struct {
 	// 基地图片（上传图片）图片建议尺寸：height: 310px;width: 670px;
@@ -20,4 +24,29 @@ type SeedlingsBaseInfoDto struct {
 	BaseName string `json:"base_name,omitempty" xml:"base_name,omitempty"`
 	// 基地认证（文字+图片）图片建议尺寸：height: 310px;width: 670px;
 	BaseCertification *RichTextDto `json:"base_certification,omitempty" xml:"base_certification,omitempty"`
+}
+
+var poolSeedlingsBaseInfoDto = sync.Pool{
+	New: func() any {
+		return new(SeedlingsBaseInfoDto)
+	},
+}
+
+// GetSeedlingsBaseInfoDto() 从对象池中获取SeedlingsBaseInfoDto
+func GetSeedlingsBaseInfoDto() *SeedlingsBaseInfoDto {
+	return poolSeedlingsBaseInfoDto.Get().(*SeedlingsBaseInfoDto)
+}
+
+// ReleaseSeedlingsBaseInfoDto 释放SeedlingsBaseInfoDto
+func ReleaseSeedlingsBaseInfoDto(v *SeedlingsBaseInfoDto) {
+	v.BasePictures = v.BasePictures[:0]
+	v.Variety = ""
+	v.BreedingSite = ""
+	v.SeedlingSource = ""
+	v.GeographicLocation = ""
+	v.BaseArea = ""
+	v.BaseLocation = ""
+	v.BaseName = ""
+	v.BaseCertification = nil
+	poolSeedlingsBaseInfoDto.Put(v)
 }

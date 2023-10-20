@@ -2,6 +2,7 @@ package cloudpush
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoCloudpushNoticeIosAPIRequest struct {
 // NewTaobaoCloudpushNoticeIosRequest 初始化TaobaoCloudpushNoticeIosAPIRequest对象
 func NewTaobaoCloudpushNoticeIosRequest() *TaobaoCloudpushNoticeIosAPIRequest {
 	return &TaobaoCloudpushNoticeIosAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCloudpushNoticeIosAPIRequest) Reset() {
+	r._summary = ""
+	r._target = ""
+	r._targetValue = ""
+	r._env = ""
+	r._ext = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoCloudpushNoticeIosAPIRequest) SetExt(_ext string) error {
 // GetExt Ext Getter
 func (r TaobaoCloudpushNoticeIosAPIRequest) GetExt() string {
 	return r._ext
+}
+
+var poolTaobaoCloudpushNoticeIosAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCloudpushNoticeIosRequest()
+	},
+}
+
+// GetTaobaoCloudpushNoticeIosRequest 从 sync.Pool 获取 TaobaoCloudpushNoticeIosAPIRequest
+func GetTaobaoCloudpushNoticeIosAPIRequest() *TaobaoCloudpushNoticeIosAPIRequest {
+	return poolTaobaoCloudpushNoticeIosAPIRequest.Get().(*TaobaoCloudpushNoticeIosAPIRequest)
+}
+
+// ReleaseTaobaoCloudpushNoticeIosAPIRequest 将 TaobaoCloudpushNoticeIosAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCloudpushNoticeIosAPIRequest(v *TaobaoCloudpushNoticeIosAPIRequest) {
+	v.Reset()
+	poolTaobaoCloudpushNoticeIosAPIRequest.Put(v)
 }

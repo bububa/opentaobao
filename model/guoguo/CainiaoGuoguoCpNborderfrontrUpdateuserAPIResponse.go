@@ -2,6 +2,7 @@ package guoguo
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse struct {
 	CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponseModel).Reset()
+}
+
 // CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponseModel is 小件员信息变更 成功返回结果
 type CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_guoguo_cp_nborderfrontr_updateuser_response"`
@@ -26,4 +33,29 @@ type CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponseModel struct {
 	StatusCode string `json:"status_code,omitempty" xml:"status_code,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.StatusMessage = ""
+	m.StatusCode = ""
+	m.IsSuccess = false
+}
+
+var poolCainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse)
+	},
+}
+
+// GetCainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse 从 sync.Pool 获取 CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse
+func GetCainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse() *CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse {
+	return poolCainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse.Get().(*CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse)
+}
+
+// ReleaseCainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse 将 CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse(v *CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse) {
+	v.Reset()
+	poolCainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse.Put(v)
 }

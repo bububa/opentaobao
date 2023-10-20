@@ -9,11 +9,6 @@ import (
 // alibaba.lst.logistics.trace.query
 //
 // 查询LP单物流追踪信息
-func AlibabaLstLogisticsTraceQuery(clt *core.SDKClient, req *lstlogistics.AlibabaLstLogisticsTraceQueryAPIRequest, session string) (*lstlogistics.AlibabaLstLogisticsTraceQueryAPIResponse, error) {
-	var resp lstlogistics.AlibabaLstLogisticsTraceQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLstLogisticsTraceQuery(clt *core.SDKClient, req *lstlogistics.AlibabaLstLogisticsTraceQueryAPIRequest, resp *lstlogistics.AlibabaLstLogisticsTraceQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

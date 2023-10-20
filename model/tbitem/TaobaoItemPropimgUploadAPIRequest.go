@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoItemPropimgUploadAPIRequest struct {
 // NewTaobaoItemPropimgUploadRequest 初始化TaobaoItemPropimgUploadAPIRequest对象
 func NewTaobaoItemPropimgUploadRequest() *TaobaoItemPropimgUploadAPIRequest {
 	return &TaobaoItemPropimgUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoItemPropimgUploadAPIRequest) Reset() {
+	r._properties = ""
+	r._numIid = 0
+	r._id = 0
+	r._position = 0
+	r._image = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoItemPropimgUploadAPIRequest) SetImage(_image *model.File) error {
 // GetImage Image Getter
 func (r TaobaoItemPropimgUploadAPIRequest) GetImage() *model.File {
 	return r._image
+}
+
+var poolTaobaoItemPropimgUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoItemPropimgUploadRequest()
+	},
+}
+
+// GetTaobaoItemPropimgUploadRequest 从 sync.Pool 获取 TaobaoItemPropimgUploadAPIRequest
+func GetTaobaoItemPropimgUploadAPIRequest() *TaobaoItemPropimgUploadAPIRequest {
+	return poolTaobaoItemPropimgUploadAPIRequest.Get().(*TaobaoItemPropimgUploadAPIRequest)
+}
+
+// ReleaseTaobaoItemPropimgUploadAPIRequest 将 TaobaoItemPropimgUploadAPIRequest 放入 sync.Pool
+func ReleaseTaobaoItemPropimgUploadAPIRequest(v *TaobaoItemPropimgUploadAPIRequest) {
+	v.Reset()
+	poolTaobaoItemPropimgUploadAPIRequest.Put(v)
 }

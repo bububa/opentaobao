@@ -2,6 +2,7 @@ package feedflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoFeedflowItemAdgroupDeleteAPIRequest struct {
 // NewTaobaoFeedflowItemAdgroupDeleteRequest 初始化TaobaoFeedflowItemAdgroupDeleteAPIRequest对象
 func NewTaobaoFeedflowItemAdgroupDeleteRequest() *TaobaoFeedflowItemAdgroupDeleteAPIRequest {
 	return &TaobaoFeedflowItemAdgroupDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFeedflowItemAdgroupDeleteAPIRequest) Reset() {
+	r._adgroupIdList = r._adgroupIdList[:0]
+	r._campaignId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoFeedflowItemAdgroupDeleteAPIRequest) SetCampaignId(_campaignId in
 // GetCampaignId CampaignId Getter
 func (r TaobaoFeedflowItemAdgroupDeleteAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
+}
+
+var poolTaobaoFeedflowItemAdgroupDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFeedflowItemAdgroupDeleteRequest()
+	},
+}
+
+// GetTaobaoFeedflowItemAdgroupDeleteRequest 从 sync.Pool 获取 TaobaoFeedflowItemAdgroupDeleteAPIRequest
+func GetTaobaoFeedflowItemAdgroupDeleteAPIRequest() *TaobaoFeedflowItemAdgroupDeleteAPIRequest {
+	return poolTaobaoFeedflowItemAdgroupDeleteAPIRequest.Get().(*TaobaoFeedflowItemAdgroupDeleteAPIRequest)
+}
+
+// ReleaseTaobaoFeedflowItemAdgroupDeleteAPIRequest 将 TaobaoFeedflowItemAdgroupDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFeedflowItemAdgroupDeleteAPIRequest(v *TaobaoFeedflowItemAdgroupDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoFeedflowItemAdgroupDeleteAPIRequest.Put(v)
 }

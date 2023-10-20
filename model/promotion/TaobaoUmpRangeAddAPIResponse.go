@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoUmpRangeAddAPIResponse struct {
 	TaobaoUmpRangeAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoUmpRangeAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoUmpRangeAddAPIResponseModel).Reset()
+}
+
 // TaobaoUmpRangeAddAPIResponseModel is 添加活动范围 成功返回结果
 type TaobaoUmpRangeAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"ump_range_add_response"`
@@ -22,4 +29,27 @@ type TaobaoUmpRangeAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoUmpRangeAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoUmpRangeAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoUmpRangeAddAPIResponse)
+	},
+}
+
+// GetTaobaoUmpRangeAddAPIResponse 从 sync.Pool 获取 TaobaoUmpRangeAddAPIResponse
+func GetTaobaoUmpRangeAddAPIResponse() *TaobaoUmpRangeAddAPIResponse {
+	return poolTaobaoUmpRangeAddAPIResponse.Get().(*TaobaoUmpRangeAddAPIResponse)
+}
+
+// ReleaseTaobaoUmpRangeAddAPIResponse 将 TaobaoUmpRangeAddAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoUmpRangeAddAPIResponse(v *TaobaoUmpRangeAddAPIResponse) {
+	v.Reset()
+	poolTaobaoUmpRangeAddAPIResponse.Put(v)
 }

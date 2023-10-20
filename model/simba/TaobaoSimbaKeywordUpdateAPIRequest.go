@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoSimbaKeywordUpdateAPIRequest struct {
 // NewTaobaoSimbaKeywordUpdateRequest 初始化TaobaoSimbaKeywordUpdateAPIRequest对象
 func NewTaobaoSimbaKeywordUpdateRequest() *TaobaoSimbaKeywordUpdateAPIRequest {
 	return &TaobaoSimbaKeywordUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaKeywordUpdateAPIRequest) Reset() {
+	r._bidwords = r._bidwords[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoSimbaKeywordUpdateAPIRequest) SetBidwords(_bidwords []SiriusBidwo
 // GetBidwords Bidwords Getter
 func (r TaobaoSimbaKeywordUpdateAPIRequest) GetBidwords() []SiriusBidwordDto {
 	return r._bidwords
+}
+
+var poolTaobaoSimbaKeywordUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaKeywordUpdateRequest()
+	},
+}
+
+// GetTaobaoSimbaKeywordUpdateRequest 从 sync.Pool 获取 TaobaoSimbaKeywordUpdateAPIRequest
+func GetTaobaoSimbaKeywordUpdateAPIRequest() *TaobaoSimbaKeywordUpdateAPIRequest {
+	return poolTaobaoSimbaKeywordUpdateAPIRequest.Get().(*TaobaoSimbaKeywordUpdateAPIRequest)
+}
+
+// ReleaseTaobaoSimbaKeywordUpdateAPIRequest 将 TaobaoSimbaKeywordUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaKeywordUpdateAPIRequest(v *TaobaoSimbaKeywordUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaKeywordUpdateAPIRequest.Put(v)
 }

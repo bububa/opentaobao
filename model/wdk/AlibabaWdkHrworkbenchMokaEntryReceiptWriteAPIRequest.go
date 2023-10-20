@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest struct {
 // NewAlibabaWdkHrworkbenchMokaEntryReceiptWriteRequest 初始化AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest对象
 func NewAlibabaWdkHrworkbenchMokaEntryReceiptWriteRequest() *AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest {
 	return &AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest) Reset() {
+	r._paramSyncEntryReceiptRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest) SetParamSyncEntry
 // GetParamSyncEntryReceiptRequest ParamSyncEntryReceiptRequest Getter
 func (r AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest) GetParamSyncEntryReceiptRequest() *SyncEntryReceiptRequest {
 	return r._paramSyncEntryReceiptRequest
+}
+
+var poolAlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkHrworkbenchMokaEntryReceiptWriteRequest()
+	},
+}
+
+// GetAlibabaWdkHrworkbenchMokaEntryReceiptWriteRequest 从 sync.Pool 获取 AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest
+func GetAlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest() *AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest {
+	return poolAlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest.Get().(*AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest)
+}
+
+// ReleaseAlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest 将 AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest(v *AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest.Put(v)
 }

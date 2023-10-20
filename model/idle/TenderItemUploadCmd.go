@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // TenderItemUploadCmd 结构体
 type TenderItemUploadCmd struct {
 	// 商品id
@@ -16,4 +20,27 @@ type TenderItemUploadCmd struct {
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 货源类型，RECYCLE（回收）, OTHER（其他，服务商自有）
 	SourceType string `json:"source_type,omitempty" xml:"source_type,omitempty"`
+}
+
+var poolTenderItemUploadCmd = sync.Pool{
+	New: func() any {
+		return new(TenderItemUploadCmd)
+	},
+}
+
+// GetTenderItemUploadCmd() 从对象池中获取TenderItemUploadCmd
+func GetTenderItemUploadCmd() *TenderItemUploadCmd {
+	return poolTenderItemUploadCmd.Get().(*TenderItemUploadCmd)
+}
+
+// ReleaseTenderItemUploadCmd 释放TenderItemUploadCmd
+func ReleaseTenderItemUploadCmd(v *TenderItemUploadCmd) {
+	v.ItemId = ""
+	v.Report = ""
+	v.ScheduleDate = ""
+	v.OutId = ""
+	v.ScheduleNumber = ""
+	v.Type = ""
+	v.SourceType = ""
+	poolTenderItemUploadCmd.Put(v)
 }

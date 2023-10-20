@@ -2,6 +2,7 @@ package fpm
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponse struct {
 	model.CommonResponse
 	AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponseModel).Reset()
 }
 
 // AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponseModel is 票易通发票ocr信息同步 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponseModel struct {
 	ResponseMsg string `json:"response_msg,omitempty" xml:"response_msg,omitempty"`
 	// 是否成功
 	Succeeded bool `json:"succeeded,omitempty" xml:"succeeded,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = ""
+	m.ResponseCode = ""
+	m.ResponseMsg = ""
+	m.Succeeded = false
+}
+
+var poolAlibabaCfoIncomingInvoicePytInvoiceScanAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponse)
+	},
+}
+
+// GetAlibabaCfoIncomingInvoicePytInvoiceScanAPIResponse 从 sync.Pool 获取 AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponse
+func GetAlibabaCfoIncomingInvoicePytInvoiceScanAPIResponse() *AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponse {
+	return poolAlibabaCfoIncomingInvoicePytInvoiceScanAPIResponse.Get().(*AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponse)
+}
+
+// ReleaseAlibabaCfoIncomingInvoicePytInvoiceScanAPIResponse 将 AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaCfoIncomingInvoicePytInvoiceScanAPIResponse(v *AlibabaCfoIncomingInvoicePytInvoiceScanAPIResponse) {
+	v.Reset()
+	poolAlibabaCfoIncomingInvoicePytInvoiceScanAPIResponse.Put(v)
 }

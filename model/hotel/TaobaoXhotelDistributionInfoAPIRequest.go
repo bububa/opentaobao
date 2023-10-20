@@ -2,6 +2,7 @@ package hotel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoXhotelDistributionInfoAPIRequest struct {
 // NewTaobaoXhotelDistributionInfoRequest 初始化TaobaoXhotelDistributionInfoAPIRequest对象
 func NewTaobaoXhotelDistributionInfoRequest() *TaobaoXhotelDistributionInfoAPIRequest {
 	return &TaobaoXhotelDistributionInfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelDistributionInfoAPIRequest) Reset() {
+	r._pid = ""
+	r._cityCode = 0
+	r._shid = 0
+	r._currentPage = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoXhotelDistributionInfoAPIRequest) SetPageSize(_pageSize int64) er
 // GetPageSize PageSize Getter
 func (r TaobaoXhotelDistributionInfoAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoXhotelDistributionInfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelDistributionInfoRequest()
+	},
+}
+
+// GetTaobaoXhotelDistributionInfoRequest 从 sync.Pool 获取 TaobaoXhotelDistributionInfoAPIRequest
+func GetTaobaoXhotelDistributionInfoAPIRequest() *TaobaoXhotelDistributionInfoAPIRequest {
+	return poolTaobaoXhotelDistributionInfoAPIRequest.Get().(*TaobaoXhotelDistributionInfoAPIRequest)
+}
+
+// ReleaseTaobaoXhotelDistributionInfoAPIRequest 将 TaobaoXhotelDistributionInfoAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelDistributionInfoAPIRequest(v *TaobaoXhotelDistributionInfoAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelDistributionInfoAPIRequest.Put(v)
 }

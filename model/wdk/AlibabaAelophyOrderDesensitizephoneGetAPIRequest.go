@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAelophyOrderDesensitizephoneGetAPIRequest struct {
 // NewAlibabaAelophyOrderDesensitizephoneGetRequest 初始化AlibabaAelophyOrderDesensitizephoneGetAPIRequest对象
 func NewAlibabaAelophyOrderDesensitizephoneGetRequest() *AlibabaAelophyOrderDesensitizephoneGetAPIRequest {
 	return &AlibabaAelophyOrderDesensitizephoneGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAelophyOrderDesensitizephoneGetAPIRequest) Reset() {
+	r._orderDesensitizePhoneRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAelophyOrderDesensitizephoneGetAPIRequest) SetOrderDesensitizePh
 // GetOrderDesensitizePhoneRequest OrderDesensitizePhoneRequest Getter
 func (r AlibabaAelophyOrderDesensitizephoneGetAPIRequest) GetOrderDesensitizePhoneRequest() *OrderDesensitizePhoneRequest {
 	return r._orderDesensitizePhoneRequest
+}
+
+var poolAlibabaAelophyOrderDesensitizephoneGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAelophyOrderDesensitizephoneGetRequest()
+	},
+}
+
+// GetAlibabaAelophyOrderDesensitizephoneGetRequest 从 sync.Pool 获取 AlibabaAelophyOrderDesensitizephoneGetAPIRequest
+func GetAlibabaAelophyOrderDesensitizephoneGetAPIRequest() *AlibabaAelophyOrderDesensitizephoneGetAPIRequest {
+	return poolAlibabaAelophyOrderDesensitizephoneGetAPIRequest.Get().(*AlibabaAelophyOrderDesensitizephoneGetAPIRequest)
+}
+
+// ReleaseAlibabaAelophyOrderDesensitizephoneGetAPIRequest 将 AlibabaAelophyOrderDesensitizephoneGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAelophyOrderDesensitizephoneGetAPIRequest(v *AlibabaAelophyOrderDesensitizephoneGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAelophyOrderDesensitizephoneGetAPIRequest.Put(v)
 }

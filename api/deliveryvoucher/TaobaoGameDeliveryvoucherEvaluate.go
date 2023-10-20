@@ -9,11 +9,6 @@ import (
 // taobao.game.deliveryvoucher.evaluate
 //
 // 卡券ISV回传商品评价
-func TaobaoGameDeliveryvoucherEvaluate(clt *core.SDKClient, req *deliveryvoucher.TaobaoGameDeliveryvoucherEvaluateAPIRequest, session string) (*deliveryvoucher.TaobaoGameDeliveryvoucherEvaluateAPIResponse, error) {
-	var resp deliveryvoucher.TaobaoGameDeliveryvoucherEvaluateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoGameDeliveryvoucherEvaluate(clt *core.SDKClient, req *deliveryvoucher.TaobaoGameDeliveryvoucherEvaluateAPIRequest, resp *deliveryvoucher.TaobaoGameDeliveryvoucherEvaluateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

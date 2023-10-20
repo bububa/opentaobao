@@ -9,11 +9,6 @@ import (
 // alibaba.interact.sensor.clipbroad
 //
 // Weex页面设置或读取剪切板
-func AlibabaInteractSensorClipbroad(clt *core.SDKClient, req *shop.AlibabaInteractSensorClipbroadAPIRequest, session string) (*shop.AlibabaInteractSensorClipbroadAPIResponse, error) {
-	var resp shop.AlibabaInteractSensorClipbroadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaInteractSensorClipbroad(clt *core.SDKClient, req *shop.AlibabaInteractSensorClipbroadAPIRequest, resp *shop.AlibabaInteractSensorClipbroadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

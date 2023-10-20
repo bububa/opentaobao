@@ -9,11 +9,6 @@ import (
 // alibaba.txcs.brandmarketing.coupon.statistics.get
 //
 // 请求券统计数据回流
-func AlibabaTxcsBrandmarketingCouponStatisticsGet(clt *core.SDKClient, req *wdk.AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest, session string) (*wdk.AlibabaTxcsBrandmarketingCouponStatisticsGetAPIResponse, error) {
-	var resp wdk.AlibabaTxcsBrandmarketingCouponStatisticsGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTxcsBrandmarketingCouponStatisticsGet(clt *core.SDKClient, req *wdk.AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest, resp *wdk.AlibabaTxcsBrandmarketingCouponStatisticsGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // ConsignmentOrderSynDto 结构体
 type ConsignmentOrderSynDto struct {
 	// 订单二级状态,一级状态的子状态,对于没有二级状态的场景该字段为空。一级状态为2已取件: 21:已取件; 22:已收件; 一级状态为3已质检: 31:已质检; 32:用户已确认; 201:一次挂拍; 一级状态为20竞拍中: 202:一次竞拍中; 203:一次竞拍成交; 204:一次拍卖违约; 205:一次竞拍流拍; 211:二次挂拍; 212:二次竞拍中; 213:二次竞拍成交; 214:二次拍卖违约; 215:二次竞拍流拍; 一级状态为5服务商确认交易完成: 51:拍卖成功/订单成功; 58:回收商确认交易/拍卖流拍成交; 59:服务商(兜底)确认交易/支付;
@@ -10,4 +14,24 @@ type ConsignmentOrderSynDto struct {
 	BizOrderId string `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 履约节点数据
 	Attribute *Attribute `json:"attribute,omitempty" xml:"attribute,omitempty"`
+}
+
+var poolConsignmentOrderSynDto = sync.Pool{
+	New: func() any {
+		return new(ConsignmentOrderSynDto)
+	},
+}
+
+// GetConsignmentOrderSynDto() 从对象池中获取ConsignmentOrderSynDto
+func GetConsignmentOrderSynDto() *ConsignmentOrderSynDto {
+	return poolConsignmentOrderSynDto.Get().(*ConsignmentOrderSynDto)
+}
+
+// ReleaseConsignmentOrderSynDto 释放ConsignmentOrderSynDto
+func ReleaseConsignmentOrderSynDto(v *ConsignmentOrderSynDto) {
+	v.OrderSubStatus = ""
+	v.OrderStatus = ""
+	v.BizOrderId = ""
+	v.Attribute = nil
+	poolConsignmentOrderSynDto.Put(v)
 }

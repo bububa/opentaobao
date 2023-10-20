@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // Ticket 结构体
 type Ticket struct {
 	// 审核原因
@@ -18,4 +22,28 @@ type Ticket struct {
 	AuditSellerId int64 `json:"audit_seller_id,omitempty" xml:"audit_seller_id,omitempty"`
 	// 1, &#34;商家确认&#34;&lt;br/&gt;2, &#34;商家拒绝&#34;&lt;br/&gt;3, &#34;小二确认&#34;&lt;br/&gt;4, &#34;小二拒绝&#34;&lt;br/&gt;5, &#34;待商家处理&#34;&lt;br/&gt;6, &#34;商家审核超时&#34;&lt;br/&gt;7, &#34;待小二审核&#34;&lt;br/&gt;9, &#34;品牌商确认&#34;&lt;br/&gt;10, &#34;免审通过&#34;&lt;br/&gt;14, &#34;免审拒绝&#34;
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolTicket = sync.Pool{
+	New: func() any {
+		return new(Ticket)
+	},
+}
+
+// GetTicket() 从对象池中获取Ticket
+func GetTicket() *Ticket {
+	return poolTicket.Get().(*Ticket)
+}
+
+// ReleaseTicket 释放Ticket
+func ReleaseTicket(v *Ticket) {
+	v.Reason = ""
+	v.Memo = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.SpecId = 0
+	v.CreateUserId = 0
+	v.AuditSellerId = 0
+	v.Status = 0
+	poolTicket.Put(v)
 }

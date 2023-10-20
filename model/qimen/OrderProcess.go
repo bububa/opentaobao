@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // OrderProcess 结构体
 type OrderProcess struct {
 	// 处理流程
@@ -12,4 +16,25 @@ type OrderProcess struct {
 	OrderType string `json:"orderType,omitempty" xml:"orderType,omitempty"`
 	// 仓库编码
 	WarehouseCode string `json:"warehouseCode,omitempty" xml:"warehouseCode,omitempty"`
+}
+
+var poolOrderProcess = sync.Pool{
+	New: func() any {
+		return new(OrderProcess)
+	},
+}
+
+// GetOrderProcess() 从对象池中获取OrderProcess
+func GetOrderProcess() *OrderProcess {
+	return poolOrderProcess.Get().(*OrderProcess)
+}
+
+// ReleaseOrderProcess 释放OrderProcess
+func ReleaseOrderProcess(v *OrderProcess) {
+	v.Processes = v.Processes[:0]
+	v.OrderCode = ""
+	v.OrderId = ""
+	v.OrderType = ""
+	v.WarehouseCode = ""
+	poolOrderProcess.Put(v)
 }

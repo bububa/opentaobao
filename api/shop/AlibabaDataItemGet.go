@@ -9,11 +9,6 @@ import (
 // alibaba.data.item.get
 //
 // 获取商品信息，作为客户端Weex鉴权的虚拟api
-func AlibabaDataItemGet(clt *core.SDKClient, req *shop.AlibabaDataItemGetAPIRequest, session string) (*shop.AlibabaDataItemGetAPIResponse, error) {
-	var resp shop.AlibabaDataItemGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDataItemGet(clt *core.SDKClient, req *shop.AlibabaDataItemGetAPIRequest, resp *shop.AlibabaDataItemGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenIsvBillSettlementBtripTrainRs 结构体
 type OpenIsvBillSettlementBtripTrainRs struct {
 	// 出行人名称
@@ -104,4 +108,71 @@ type OpenIsvBillSettlementBtripTrainRs struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 票据类型，枚举详见语雀
 	VoucherType int64 `json:"voucher_type,omitempty" xml:"voucher_type,omitempty"`
+}
+
+var poolOpenIsvBillSettlementBtripTrainRs = sync.Pool{
+	New: func() any {
+		return new(OpenIsvBillSettlementBtripTrainRs)
+	},
+}
+
+// GetOpenIsvBillSettlementBtripTrainRs() 从对象池中获取OpenIsvBillSettlementBtripTrainRs
+func GetOpenIsvBillSettlementBtripTrainRs() *OpenIsvBillSettlementBtripTrainRs {
+	return poolOpenIsvBillSettlementBtripTrainRs.Get().(*OpenIsvBillSettlementBtripTrainRs)
+}
+
+// ReleaseOpenIsvBillSettlementBtripTrainRs 释放OpenIsvBillSettlementBtripTrainRs
+func ReleaseOpenIsvBillSettlementBtripTrainRs(v *OpenIsvBillSettlementBtripTrainRs) {
+	v.TravelerName = ""
+	v.RefundFee = ""
+	v.DeptStation = ""
+	v.ArrDate = ""
+	v.TrainType = ""
+	v.OrderId = ""
+	v.DeptTime = ""
+	v.DepartmentId = ""
+	v.TrainNo = ""
+	v.ChangeFee = ""
+	v.OverApplyId = ""
+	v.ApplyId = ""
+	v.SeatType = ""
+	v.TicketNo = ""
+	v.BookerId = ""
+	v.ProjectCode = ""
+	v.CascadeDepartment = ""
+	v.OrderPrice = ""
+	v.RunTime = ""
+	v.CostCenterNumber = ""
+	v.SeatNo = ""
+	v.Department = ""
+	v.InvoiceTitle = ""
+	v.ServiceFee = ""
+	v.SettlementType = ""
+	v.TicketPrice = ""
+	v.Coupon = ""
+	v.ArrStation = ""
+	v.CostCenter = ""
+	v.AlipayTradeNo = ""
+	v.SettlementFee = ""
+	v.Index = ""
+	v.BookTime = ""
+	v.BookerName = ""
+	v.FeeType = ""
+	v.TravelerId = ""
+	v.CapitalDirection = ""
+	v.SettlementTime = ""
+	v.ProjectName = ""
+	v.ArrTime = ""
+	v.DeptDate = ""
+	v.BookerJobNo = ""
+	v.TravelerJobNo = ""
+	v.BillRecordTime = ""
+	v.SettlementGrantFee = ""
+	v.Remark = ""
+	v.CoachNo = ""
+	v.ShortTicketNo = ""
+	v.PrimaryId = 0
+	v.Status = 0
+	v.VoucherType = 0
+	poolOpenIsvBillSettlementBtripTrainRs.Put(v)
 }

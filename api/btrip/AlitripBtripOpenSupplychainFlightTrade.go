@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.open.supplychain.flight.trade
 //
 // 【商旅】杭州市政府机票交易流水接口查询
-func AlitripBtripOpenSupplychainFlightTrade(clt *core.SDKClient, req *btrip.AlitripBtripOpenSupplychainFlightTradeAPIRequest, session string) (*btrip.AlitripBtripOpenSupplychainFlightTradeAPIResponse, error) {
-	var resp btrip.AlitripBtripOpenSupplychainFlightTradeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripOpenSupplychainFlightTrade(clt *core.SDKClient, req *btrip.AlitripBtripOpenSupplychainFlightTradeAPIRequest, resp *btrip.AlitripBtripOpenSupplychainFlightTradeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

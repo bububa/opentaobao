@@ -9,11 +9,6 @@ import (
 // taobao.tvpay.auth.apply
 //
 // 为用户在指定设备上申请支付授权
-func TaobaoTvpayAuthApply(clt *core.SDKClient, req *tvpay.TaobaoTvpayAuthApplyAPIRequest, session string) (*tvpay.TaobaoTvpayAuthApplyAPIResponse, error) {
-	var resp tvpay.TaobaoTvpayAuthApplyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTvpayAuthApply(clt *core.SDKClient, req *tvpay.TaobaoTvpayAuthApplyAPIRequest, resp *tvpay.TaobaoTvpayAuthApplyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // BnbPictureDto 结构体
 type BnbPictureDto struct {
 	// 图片属性 取值范围只能是：[普通图, 平面图, 全景图]
@@ -12,4 +16,25 @@ type BnbPictureDto struct {
 	Des string `json:"des,omitempty" xml:"des,omitempty"`
 	// 是否主图  主图只能有一个，如果有多个或者没有，则会报错
 	Ismain bool `json:"ismain,omitempty" xml:"ismain,omitempty"`
+}
+
+var poolBnbPictureDto = sync.Pool{
+	New: func() any {
+		return new(BnbPictureDto)
+	},
+}
+
+// GetBnbPictureDto() 从对象池中获取BnbPictureDto
+func GetBnbPictureDto() *BnbPictureDto {
+	return poolBnbPictureDto.Get().(*BnbPictureDto)
+}
+
+// ReleaseBnbPictureDto 释放BnbPictureDto
+func ReleaseBnbPictureDto(v *BnbPictureDto) {
+	v.Attribute = ""
+	v.Type = ""
+	v.Url = ""
+	v.Des = ""
+	v.Ismain = false
+	poolBnbPictureDto.Put(v)
 }

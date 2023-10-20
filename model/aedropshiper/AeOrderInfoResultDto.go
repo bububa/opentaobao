@@ -1,5 +1,9 @@
 package aedropshiper
 
+import (
+	"sync"
+)
+
 // AeOrderInfoResultDto 结构体
 type AeOrderInfoResultDto struct {
 	// Order logistics information list
@@ -16,4 +20,27 @@ type AeOrderInfoResultDto struct {
 	OrderAmount *SimpleMoney `json:"order_amount,omitempty" xml:"order_amount,omitempty"`
 	// Store Information
 	StoreInfo *AeStoreSimpleInfo `json:"store_info,omitempty" xml:"store_info,omitempty"`
+}
+
+var poolAeOrderInfoResultDto = sync.Pool{
+	New: func() any {
+		return new(AeOrderInfoResultDto)
+	},
+}
+
+// GetAeOrderInfoResultDto() 从对象池中获取AeOrderInfoResultDto
+func GetAeOrderInfoResultDto() *AeOrderInfoResultDto {
+	return poolAeOrderInfoResultDto.Get().(*AeOrderInfoResultDto)
+}
+
+// ReleaseAeOrderInfoResultDto 释放AeOrderInfoResultDto
+func ReleaseAeOrderInfoResultDto(v *AeOrderInfoResultDto) {
+	v.LogisticsInfoList = v.LogisticsInfoList[:0]
+	v.ChildOrderList = v.ChildOrderList[:0]
+	v.GmtCreate = ""
+	v.LogisticsStatus = ""
+	v.OrderStatus = ""
+	v.OrderAmount = nil
+	v.StoreInfo = nil
+	poolAeOrderInfoResultDto.Put(v)
 }

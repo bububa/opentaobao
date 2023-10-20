@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // StandpointDeriveDraftEpaasDto 结构体
 type StandpointDeriveDraftEpaasDto struct {
 	// 业务id
@@ -28,4 +32,33 @@ type StandpointDeriveDraftEpaasDto struct {
 	SourceStandpointIds string `json:"source_standpoint_ids,omitempty" xml:"source_standpoint_ids,omitempty"`
 	// 口径描述
 	StandpointDesc string `json:"standpoint_desc,omitempty" xml:"standpoint_desc,omitempty"`
+}
+
+var poolStandpointDeriveDraftEpaasDto = sync.Pool{
+	New: func() any {
+		return new(StandpointDeriveDraftEpaasDto)
+	},
+}
+
+// GetStandpointDeriveDraftEpaasDto() 从对象池中获取StandpointDeriveDraftEpaasDto
+func GetStandpointDeriveDraftEpaasDto() *StandpointDeriveDraftEpaasDto {
+	return poolStandpointDeriveDraftEpaasDto.Get().(*StandpointDeriveDraftEpaasDto)
+}
+
+// ReleaseStandpointDeriveDraftEpaasDto 释放StandpointDeriveDraftEpaasDto
+func ReleaseStandpointDeriveDraftEpaasDto(v *StandpointDeriveDraftEpaasDto) {
+	v.BusId = ""
+	v.DraftSource = ""
+	v.ExtendJson = ""
+	v.SceneName = ""
+	v.BusName = ""
+	v.Remark = ""
+	v.InputSystemCode = ""
+	v.CaseNo = ""
+	v.CaseType = ""
+	v.SubmitPeople = ""
+	v.DefenseCaliber = ""
+	v.SourceStandpointIds = ""
+	v.StandpointDesc = ""
+	poolStandpointDeriveDraftEpaasDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package alihealthpw
 
+import (
+	"sync"
+)
+
 // SynchroSmsDto 结构体
 type SynchroSmsDto struct {
 	// 患者姓名
@@ -22,4 +26,30 @@ type SynchroSmsDto struct {
 	HospitalAddress string `json:"hospital_address,omitempty" xml:"hospital_address,omitempty"`
 	// 医院电话
 	HospitalPhone string `json:"hospital_phone,omitempty" xml:"hospital_phone,omitempty"`
+}
+
+var poolSynchroSmsDto = sync.Pool{
+	New: func() any {
+		return new(SynchroSmsDto)
+	},
+}
+
+// GetSynchroSmsDto() 从对象池中获取SynchroSmsDto
+func GetSynchroSmsDto() *SynchroSmsDto {
+	return poolSynchroSmsDto.Get().(*SynchroSmsDto)
+}
+
+// ReleaseSynchroSmsDto 释放SynchroSmsDto
+func ReleaseSynchroSmsDto(v *SynchroSmsDto) {
+	v.PatientName = ""
+	v.SmsPhone = ""
+	v.TreatHospital = ""
+	v.UserUniqueCode = ""
+	v.ProjectThirdId = ""
+	v.HospitalAddressee = ""
+	v.HospitalEmsPhone = ""
+	v.HospitalEmsAddress = ""
+	v.HospitalAddress = ""
+	v.HospitalPhone = ""
+	poolSynchroSmsDto.Put(v)
 }

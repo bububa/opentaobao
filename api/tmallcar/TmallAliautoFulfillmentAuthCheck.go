@@ -9,11 +9,6 @@ import (
 // tmall.aliauto.fulfillment.auth.check
 //
 // 商家鉴权
-func TmallAliautoFulfillmentAuthCheck(clt *core.SDKClient, req *tmallcar.TmallAliautoFulfillmentAuthCheckAPIRequest, session string) (*tmallcar.TmallAliautoFulfillmentAuthCheckAPIResponse, error) {
-	var resp tmallcar.TmallAliautoFulfillmentAuthCheckAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallAliautoFulfillmentAuthCheck(clt *core.SDKClient, req *tmallcar.TmallAliautoFulfillmentAuthCheckAPIRequest, resp *tmallcar.TmallAliautoFulfillmentAuthCheckAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

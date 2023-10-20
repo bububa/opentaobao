@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -45,8 +46,27 @@ type AlibabaEinvoicePartnerUploadAPIRequest struct {
 // NewAlibabaEinvoicePartnerUploadRequest 初始化AlibabaEinvoicePartnerUploadAPIRequest对象
 func NewAlibabaEinvoicePartnerUploadRequest() *AlibabaEinvoicePartnerUploadAPIRequest {
 	return &AlibabaEinvoicePartnerUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(14),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoicePartnerUploadAPIRequest) Reset() {
+	r._normalInvoiceNo = ""
+	r._normalInvoiceCode = ""
+	r._payeeRegisterNo = ""
+	r._invoiceNo = ""
+	r._invoiceCode = ""
+	r._invoiceDate = ""
+	r._cipherText = ""
+	r._deviceNo = ""
+	r._antiFakeCode = ""
+	r._fileDataType = ""
+	r._reqIndex = ""
+	r._invoiceFileData = nil
+	r._invoiceKind = 0
+	r._uploadType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -246,4 +266,21 @@ func (r *AlibabaEinvoicePartnerUploadAPIRequest) SetUploadType(_uploadType int64
 // GetUploadType UploadType Getter
 func (r AlibabaEinvoicePartnerUploadAPIRequest) GetUploadType() int64 {
 	return r._uploadType
+}
+
+var poolAlibabaEinvoicePartnerUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoicePartnerUploadRequest()
+	},
+}
+
+// GetAlibabaEinvoicePartnerUploadRequest 从 sync.Pool 获取 AlibabaEinvoicePartnerUploadAPIRequest
+func GetAlibabaEinvoicePartnerUploadAPIRequest() *AlibabaEinvoicePartnerUploadAPIRequest {
+	return poolAlibabaEinvoicePartnerUploadAPIRequest.Get().(*AlibabaEinvoicePartnerUploadAPIRequest)
+}
+
+// ReleaseAlibabaEinvoicePartnerUploadAPIRequest 将 AlibabaEinvoicePartnerUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoicePartnerUploadAPIRequest(v *AlibabaEinvoicePartnerUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoicePartnerUploadAPIRequest.Put(v)
 }

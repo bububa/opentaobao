@@ -2,6 +2,7 @@ package cainiaohandover
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type CainiaoGlobalHandoverUpdateAPIRequest struct {
 // NewCainiaoGlobalHandoverUpdateRequest 初始化CainiaoGlobalHandoverUpdateAPIRequest对象
 func NewCainiaoGlobalHandoverUpdateRequest() *CainiaoGlobalHandoverUpdateAPIRequest {
 	return &CainiaoGlobalHandoverUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalHandoverUpdateAPIRequest) Reset() {
+	r._orderCodeList = r._orderCodeList[:0]
+	r._weightUnit = ""
+	r._remark = ""
+	r._type = ""
+	r._client = ""
+	r._locale = ""
+	r._userInfo = nil
+	r._weight = 0
+	r._handoverOrderId = 0
+	r._returnInfo = nil
+	r._pickupInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetPickupInfo(_pickupInfo *Picku
 // GetPickupInfo PickupInfo Getter
 func (r CainiaoGlobalHandoverUpdateAPIRequest) GetPickupInfo() *PickupDto {
 	return r._pickupInfo
+}
+
+var poolCainiaoGlobalHandoverUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalHandoverUpdateRequest()
+	},
+}
+
+// GetCainiaoGlobalHandoverUpdateRequest 从 sync.Pool 获取 CainiaoGlobalHandoverUpdateAPIRequest
+func GetCainiaoGlobalHandoverUpdateAPIRequest() *CainiaoGlobalHandoverUpdateAPIRequest {
+	return poolCainiaoGlobalHandoverUpdateAPIRequest.Get().(*CainiaoGlobalHandoverUpdateAPIRequest)
+}
+
+// ReleaseCainiaoGlobalHandoverUpdateAPIRequest 将 CainiaoGlobalHandoverUpdateAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalHandoverUpdateAPIRequest(v *CainiaoGlobalHandoverUpdateAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalHandoverUpdateAPIRequest.Put(v)
 }

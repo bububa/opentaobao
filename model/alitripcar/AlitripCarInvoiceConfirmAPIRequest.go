@@ -2,6 +2,7 @@ package alitripcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripCarInvoiceConfirmAPIRequest struct {
 // NewAlitripCarInvoiceConfirmRequest 初始化AlitripCarInvoiceConfirmAPIRequest对象
 func NewAlitripCarInvoiceConfirmRequest() *AlitripCarInvoiceConfirmAPIRequest {
 	return &AlitripCarInvoiceConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripCarInvoiceConfirmAPIRequest) Reset() {
+	r._receiptDo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripCarInvoiceConfirmAPIRequest) SetReceiptDo(_receiptDo *ReceiptDo)
 // GetReceiptDo ReceiptDo Getter
 func (r AlitripCarInvoiceConfirmAPIRequest) GetReceiptDo() *ReceiptDo {
 	return r._receiptDo
+}
+
+var poolAlitripCarInvoiceConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripCarInvoiceConfirmRequest()
+	},
+}
+
+// GetAlitripCarInvoiceConfirmRequest 从 sync.Pool 获取 AlitripCarInvoiceConfirmAPIRequest
+func GetAlitripCarInvoiceConfirmAPIRequest() *AlitripCarInvoiceConfirmAPIRequest {
+	return poolAlitripCarInvoiceConfirmAPIRequest.Get().(*AlitripCarInvoiceConfirmAPIRequest)
+}
+
+// ReleaseAlitripCarInvoiceConfirmAPIRequest 将 AlitripCarInvoiceConfirmAPIRequest 放入 sync.Pool
+func ReleaseAlitripCarInvoiceConfirmAPIRequest(v *AlitripCarInvoiceConfirmAPIRequest) {
+	v.Reset()
+	poolAlitripCarInvoiceConfirmAPIRequest.Put(v)
 }

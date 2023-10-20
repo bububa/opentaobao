@@ -2,6 +2,7 @@ package train
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest struct {
 // NewTaobaoTrainAgentChangeorderdetailQueryVtwoRequest 初始化TaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest对象
 func NewTaobaoTrainAgentChangeorderdetailQueryVtwoRequest() *TaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest {
 	return &TaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest) Reset() {
+	r._queryChangeDetailRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest) SetQueryChangeDet
 // GetQueryChangeDetailRq QueryChangeDetailRq Getter
 func (r TaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest) GetQueryChangeDetailRq() *QueryChangeDetailRq {
 	return r._queryChangeDetailRq
+}
+
+var poolTaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTrainAgentChangeorderdetailQueryVtwoRequest()
+	},
+}
+
+// GetTaobaoTrainAgentChangeorderdetailQueryVtwoRequest 从 sync.Pool 获取 TaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest
+func GetTaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest() *TaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest {
+	return poolTaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest.Get().(*TaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest)
+}
+
+// ReleaseTaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest 将 TaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest(v *TaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest) {
+	v.Reset()
+	poolTaobaoTrainAgentChangeorderdetailQueryVtwoAPIRequest.Put(v)
 }

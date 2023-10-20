@@ -2,6 +2,7 @@ package user
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoRdcAligeniusAccountValidateAPIResponse struct {
 	TaobaoRdcAligeniusAccountValidateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoRdcAligeniusAccountValidateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoRdcAligeniusAccountValidateAPIResponseModel).Reset()
+}
+
 // TaobaoRdcAligeniusAccountValidateAPIResponseModel is AG商家账号校验 成功返回结果
 type TaobaoRdcAligeniusAccountValidateAPIResponseModel struct {
 	XMLName xml.Name `xml:"rdc_aligenius_account_validate_response"`
@@ -22,4 +29,27 @@ type TaobaoRdcAligeniusAccountValidateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *TaobaoRdcAligeniusAccountValidateResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoRdcAligeniusAccountValidateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoRdcAligeniusAccountValidateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoRdcAligeniusAccountValidateAPIResponse)
+	},
+}
+
+// GetTaobaoRdcAligeniusAccountValidateAPIResponse 从 sync.Pool 获取 TaobaoRdcAligeniusAccountValidateAPIResponse
+func GetTaobaoRdcAligeniusAccountValidateAPIResponse() *TaobaoRdcAligeniusAccountValidateAPIResponse {
+	return poolTaobaoRdcAligeniusAccountValidateAPIResponse.Get().(*TaobaoRdcAligeniusAccountValidateAPIResponse)
+}
+
+// ReleaseTaobaoRdcAligeniusAccountValidateAPIResponse 将 TaobaoRdcAligeniusAccountValidateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoRdcAligeniusAccountValidateAPIResponse(v *TaobaoRdcAligeniusAccountValidateAPIResponse) {
+	v.Reset()
+	poolTaobaoRdcAligeniusAccountValidateAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // ListSearchParam 结构体
 type ListSearchParam struct {
 	// 星级筛选
@@ -38,4 +42,38 @@ type ListSearchParam struct {
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 版本号
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolListSearchParam = sync.Pool{
+	New: func() any {
+		return new(ListSearchParam)
+	},
+}
+
+// GetListSearchParam() 从对象池中获取ListSearchParam
+func GetListSearchParam() *ListSearchParam {
+	return poolListSearchParam.Get().(*ListSearchParam)
+}
+
+// ReleaseListSearchParam 释放ListSearchParam
+func ReleaseListSearchParam(v *ListSearchParam) {
+	v.Star = ""
+	v.CityCode = ""
+	v.ChildrenAges = ""
+	v.CheckIn = ""
+	v.CheckOut = ""
+	v.Brand = ""
+	v.Token = ""
+	v.MemberLevel = ""
+	v.VoucherId = ""
+	v.PriceMax = 0
+	v.AdultNum = 0
+	v.ChildNum = 0
+	v.Offset = 0
+	v.PageSize = 0
+	v.Dir = 0
+	v.PriceMin = 0
+	v.PageNo = 0
+	v.Version = 0
+	poolListSearchParam.Put(v)
 }

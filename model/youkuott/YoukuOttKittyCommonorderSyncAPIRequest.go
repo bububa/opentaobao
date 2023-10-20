@@ -2,6 +2,7 @@ package youkuott
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type YoukuOttKittyCommonorderSyncAPIRequest struct {
 // NewYoukuOttKittyCommonorderSyncRequest 初始化YoukuOttKittyCommonorderSyncAPIRequest对象
 func NewYoukuOttKittyCommonorderSyncRequest() *YoukuOttKittyCommonorderSyncAPIRequest {
 	return &YoukuOttKittyCommonorderSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuOttKittyCommonorderSyncAPIRequest) Reset() {
+	r._orderId = ""
+	r._productId = ""
+	r._syncTime = ""
+	r._channelId = ""
+	r._accountId = ""
+	r._type = ""
+	r._extInfo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *YoukuOttKittyCommonorderSyncAPIRequest) SetExtInfo(_extInfo string) err
 // GetExtInfo ExtInfo Getter
 func (r YoukuOttKittyCommonorderSyncAPIRequest) GetExtInfo() string {
 	return r._extInfo
+}
+
+var poolYoukuOttKittyCommonorderSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuOttKittyCommonorderSyncRequest()
+	},
+}
+
+// GetYoukuOttKittyCommonorderSyncRequest 从 sync.Pool 获取 YoukuOttKittyCommonorderSyncAPIRequest
+func GetYoukuOttKittyCommonorderSyncAPIRequest() *YoukuOttKittyCommonorderSyncAPIRequest {
+	return poolYoukuOttKittyCommonorderSyncAPIRequest.Get().(*YoukuOttKittyCommonorderSyncAPIRequest)
+}
+
+// ReleaseYoukuOttKittyCommonorderSyncAPIRequest 将 YoukuOttKittyCommonorderSyncAPIRequest 放入 sync.Pool
+func ReleaseYoukuOttKittyCommonorderSyncAPIRequest(v *YoukuOttKittyCommonorderSyncAPIRequest) {
+	v.Reset()
+	poolYoukuOttKittyCommonorderSyncAPIRequest.Put(v)
 }

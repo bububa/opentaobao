@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // CabinInfo 结构体
 type CabinInfo struct {
 	// 改签费用信息
@@ -20,4 +24,29 @@ type CabinInfo struct {
 	ChangeOtaItemRuleRq *ChangeOtaItemRuleRq `json:"change_ota_item_rule_rq,omitempty" xml:"change_ota_item_rule_rq,omitempty"`
 	// 舱位折扣
 	CabinDiscount int64 `json:"cabin_discount,omitempty" xml:"cabin_discount,omitempty"`
+}
+
+var poolCabinInfo = sync.Pool{
+	New: func() any {
+		return new(CabinInfo)
+	},
+}
+
+// GetCabinInfo() 从对象池中获取CabinInfo
+func GetCabinInfo() *CabinInfo {
+	return poolCabinInfo.Get().(*CabinInfo)
+}
+
+// ReleaseCabinInfo 释放CabinInfo
+func ReleaseCabinInfo(v *CabinInfo) {
+	v.ModifyPriceList = v.ModifyPriceList[:0]
+	v.LeftNum = ""
+	v.Cabin = ""
+	v.CabinClass = ""
+	v.CabinDesc = ""
+	v.ChildCabin = ""
+	v.OtaItemid = ""
+	v.ChangeOtaItemRuleRq = nil
+	v.CabinDiscount = 0
+	poolCabinInfo.Put(v)
 }

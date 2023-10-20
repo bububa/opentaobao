@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoTbkDgVegasTljStopAPIResponse struct {
 	model.CommonResponse
 	TaobaoTbkDgVegasTljStopAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkDgVegasTljStopAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkDgVegasTljStopAPIResponseModel).Reset()
 }
 
 // TaobaoTbkDgVegasTljStopAPIResponseModel is 淘宝客-推广者-淘礼金暂停发放 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoTbkDgVegasTljStopAPIResponseModel struct {
 	Model *UpdateStatusResult `json:"model,omitempty" xml:"model,omitempty"`
 	// 调用接口是否成功
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkDgVegasTljStopAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.Model = nil
+	m.ResultSuccess = false
+}
+
+var poolTaobaoTbkDgVegasTljStopAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkDgVegasTljStopAPIResponse)
+	},
+}
+
+// GetTaobaoTbkDgVegasTljStopAPIResponse 从 sync.Pool 获取 TaobaoTbkDgVegasTljStopAPIResponse
+func GetTaobaoTbkDgVegasTljStopAPIResponse() *TaobaoTbkDgVegasTljStopAPIResponse {
+	return poolTaobaoTbkDgVegasTljStopAPIResponse.Get().(*TaobaoTbkDgVegasTljStopAPIResponse)
+}
+
+// ReleaseTaobaoTbkDgVegasTljStopAPIResponse 将 TaobaoTbkDgVegasTljStopAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkDgVegasTljStopAPIResponse(v *TaobaoTbkDgVegasTljStopAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkDgVegasTljStopAPIResponse.Put(v)
 }

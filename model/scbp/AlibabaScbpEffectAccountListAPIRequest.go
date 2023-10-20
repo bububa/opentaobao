@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpEffectAccountListAPIRequest struct {
 // NewAlibabaScbpEffectAccountListRequest 初始化AlibabaScbpEffectAccountListAPIRequest对象
 func NewAlibabaScbpEffectAccountListRequest() *AlibabaScbpEffectAccountListAPIRequest {
 	return &AlibabaScbpEffectAccountListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpEffectAccountListAPIRequest) Reset() {
+	r._p4pAccountReportQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpEffectAccountListAPIRequest) SetP4pAccountReportQuery(_p4pAc
 // GetP4pAccountReportQuery P4pAccountReportQuery Getter
 func (r AlibabaScbpEffectAccountListAPIRequest) GetP4pAccountReportQuery() *AccountQuery {
 	return r._p4pAccountReportQuery
+}
+
+var poolAlibabaScbpEffectAccountListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpEffectAccountListRequest()
+	},
+}
+
+// GetAlibabaScbpEffectAccountListRequest 从 sync.Pool 获取 AlibabaScbpEffectAccountListAPIRequest
+func GetAlibabaScbpEffectAccountListAPIRequest() *AlibabaScbpEffectAccountListAPIRequest {
+	return poolAlibabaScbpEffectAccountListAPIRequest.Get().(*AlibabaScbpEffectAccountListAPIRequest)
+}
+
+// ReleaseAlibabaScbpEffectAccountListAPIRequest 将 AlibabaScbpEffectAccountListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpEffectAccountListAPIRequest(v *AlibabaScbpEffectAccountListAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpEffectAccountListAPIRequest.Put(v)
 }

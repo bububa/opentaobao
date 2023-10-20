@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoAilabAicloudTopAuthGetAPIRequest struct {
 // NewTaobaoAilabAicloudTopAuthGetRequest 初始化TaobaoAilabAicloudTopAuthGetAPIRequest对象
 func NewTaobaoAilabAicloudTopAuthGetRequest() *TaobaoAilabAicloudTopAuthGetAPIRequest {
 	return &TaobaoAilabAicloudTopAuthGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopAuthGetAPIRequest) Reset() {
+	r._userId = ""
+	r._utdId = ""
+	r._schema = ""
+	r._appType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoAilabAicloudTopAuthGetAPIRequest) SetAppType(_appType string) err
 // GetAppType AppType Getter
 func (r TaobaoAilabAicloudTopAuthGetAPIRequest) GetAppType() string {
 	return r._appType
+}
+
+var poolTaobaoAilabAicloudTopAuthGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopAuthGetRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopAuthGetRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopAuthGetAPIRequest
+func GetTaobaoAilabAicloudTopAuthGetAPIRequest() *TaobaoAilabAicloudTopAuthGetAPIRequest {
+	return poolTaobaoAilabAicloudTopAuthGetAPIRequest.Get().(*TaobaoAilabAicloudTopAuthGetAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopAuthGetAPIRequest 将 TaobaoAilabAicloudTopAuthGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopAuthGetAPIRequest(v *TaobaoAilabAicloudTopAuthGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopAuthGetAPIRequest.Put(v)
 }

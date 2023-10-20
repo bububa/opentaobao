@@ -1,5 +1,9 @@
 package flightuppc
 
+import (
+	"sync"
+)
+
 // InsOrderOpenDto 结构体
 type InsOrderOpenDto struct {
 	// 订单详情列表
@@ -34,4 +38,36 @@ type InsOrderOpenDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 保险产品id
 	PremiumId int64 `json:"premium_id,omitempty" xml:"premium_id,omitempty"`
+}
+
+var poolInsOrderOpenDto = sync.Pool{
+	New: func() any {
+		return new(InsOrderOpenDto)
+	},
+}
+
+// GetInsOrderOpenDto() 从对象池中获取InsOrderOpenDto
+func GetInsOrderOpenDto() *InsOrderOpenDto {
+	return poolInsOrderOpenDto.Get().(*InsOrderOpenDto)
+}
+
+// ReleaseInsOrderOpenDto 释放InsOrderOpenDto
+func ReleaseInsOrderOpenDto(v *InsOrderOpenDto) {
+	v.InsOrderDetailList = v.InsOrderDetailList[:0]
+	v.SellerNick = ""
+	v.GmtModified = ""
+	v.PolicyDetailUrl = ""
+	v.PolicyNo = ""
+	v.GmtCreate = ""
+	v.ProductName = ""
+	v.Features = ""
+	v.ProductNo = ""
+	v.TcOrderId = 0
+	v.SellerId = 0
+	v.Copies = 0
+	v.Price = 0
+	v.OutOrderId = 0
+	v.Status = 0
+	v.PremiumId = 0
+	poolInsOrderOpenDto.Put(v)
 }

@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest struct {
 // NewTaobaoUniversalbpWordpackageSuggestkrlistRequest 初始化TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest对象
 func NewTaobaoUniversalbpWordpackageSuggestkrlistRequest() *TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest {
 	return &TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._wordPackageSuggestQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest) SetWordPackageSugg
 // GetWordPackageSuggestQueryVO WordPackageSuggestQueryVO Getter
 func (r TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest) GetWordPackageSuggestQueryVO() *WordPackageSuggestQueryVo {
 	return r._wordPackageSuggestQueryVO
+}
+
+var poolTaobaoUniversalbpWordpackageSuggestkrlistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpWordpackageSuggestkrlistRequest()
+	},
+}
+
+// GetTaobaoUniversalbpWordpackageSuggestkrlistRequest 从 sync.Pool 获取 TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest
+func GetTaobaoUniversalbpWordpackageSuggestkrlistAPIRequest() *TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest {
+	return poolTaobaoUniversalbpWordpackageSuggestkrlistAPIRequest.Get().(*TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpWordpackageSuggestkrlistAPIRequest 将 TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpWordpackageSuggestkrlistAPIRequest(v *TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpWordpackageSuggestkrlistAPIRequest.Put(v)
 }

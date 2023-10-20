@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // Hoteldynamicinfo 结构体
 type Hoteldynamicinfo struct {
 	// 不可售原因
@@ -42,4 +46,40 @@ type Hoteldynamicinfo struct {
 	UnsaleType int64 `json:"unsale_type,omitempty" xml:"unsale_type,omitempty"`
 	// 酒店匹配
 	DataConfirm int64 `json:"data_confirm,omitempty" xml:"data_confirm,omitempty"`
+}
+
+var poolHoteldynamicinfo = sync.Pool{
+	New: func() any {
+		return new(Hoteldynamicinfo)
+	},
+}
+
+// GetHoteldynamicinfo() 从对象池中获取Hoteldynamicinfo
+func GetHoteldynamicinfo() *Hoteldynamicinfo {
+	return poolHoteldynamicinfo.Get().(*Hoteldynamicinfo)
+}
+
+// ReleaseHoteldynamicinfo 释放Hoteldynamicinfo
+func ReleaseHoteldynamicinfo(v *Hoteldynamicinfo) {
+	v.UnsaleReason = ""
+	v.Vendor = ""
+	v.Tel = ""
+	v.CityStr = ""
+	v.SellerNick = ""
+	v.Address = ""
+	v.Name = ""
+	v.CalculateDate = ""
+	v.OuterId = ""
+	v.Hid = 0
+	v.Status = 0
+	v.KsHeathyRoomNum = 0
+	v.Shid = 0
+	v.City = 0
+	v.Id = 0
+	v.RoomNun = 0
+	v.KsRoomNum = 0
+	v.SellerId = 0
+	v.UnsaleType = 0
+	v.DataConfirm = 0
+	poolHoteldynamicinfo.Put(v)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaWdkItemCurrentpriceQueryModel 结构体
 type AlibabaWdkItemCurrentpriceQueryModel struct {
 	// 单品促销，finalPrice对应的促销活动
@@ -34,4 +38,36 @@ type AlibabaWdkItemCurrentpriceQueryModel struct {
 	AuctionPrice int64 `json:"auction_price,omitempty" xml:"auction_price,omitempty"`
 	// 渠道店ID
 	ShopId int64 `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
+}
+
+var poolAlibabaWdkItemCurrentpriceQueryModel = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkItemCurrentpriceQueryModel)
+	},
+}
+
+// GetAlibabaWdkItemCurrentpriceQueryModel() 从对象池中获取AlibabaWdkItemCurrentpriceQueryModel
+func GetAlibabaWdkItemCurrentpriceQueryModel() *AlibabaWdkItemCurrentpriceQueryModel {
+	return poolAlibabaWdkItemCurrentpriceQueryModel.Get().(*AlibabaWdkItemCurrentpriceQueryModel)
+}
+
+// ReleaseAlibabaWdkItemCurrentpriceQueryModel 释放AlibabaWdkItemCurrentpriceQueryModel
+func ReleaseAlibabaWdkItemCurrentpriceQueryModel(v *AlibabaWdkItemCurrentpriceQueryModel) {
+	v.ItemPromotionList = v.ItemPromotionList[:0]
+	v.ShopPromotionList = v.ShopPromotionList[:0]
+	v.MemberItemPromotionList = v.MemberItemPromotionList[:0]
+	v.MerchantCode = ""
+	v.StoreId = ""
+	v.BarCode = ""
+	v.ItemName = ""
+	v.SkuCode = ""
+	v.OrderChannelCode = ""
+	v.MemberPrice = 0
+	v.FinalPrice = 0
+	v.MzPromotion = nil
+	v.MemberFinalPrice = 0
+	v.ItemId = 0
+	v.AuctionPrice = 0
+	v.ShopId = 0
+	poolAlibabaWdkItemCurrentpriceQueryModel.Put(v)
 }

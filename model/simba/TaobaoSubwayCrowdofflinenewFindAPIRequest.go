@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoSubwayCrowdofflinenewFindAPIRequest struct {
 // NewTaobaoSubwayCrowdofflinenewFindRequest 初始化TaobaoSubwayCrowdofflinenewFindAPIRequest对象
 func NewTaobaoSubwayCrowdofflinenewFindRequest() *TaobaoSubwayCrowdofflinenewFindAPIRequest {
 	return &TaobaoSubwayCrowdofflinenewFindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSubwayCrowdofflinenewFindAPIRequest) Reset() {
+	r._startTime = ""
+	r._endTime = ""
+	r._pvTypeIn = 0
+	r._crowdIdEqual = 0
+	r._offset = 0
+	r._pageSize = 0
+	r._effect = 0
+	r._campaignIdEqual = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoSubwayCrowdofflinenewFindAPIRequest) SetCampaignIdEqual(_campaign
 // GetCampaignIdEqual CampaignIdEqual Getter
 func (r TaobaoSubwayCrowdofflinenewFindAPIRequest) GetCampaignIdEqual() int64 {
 	return r._campaignIdEqual
+}
+
+var poolTaobaoSubwayCrowdofflinenewFindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSubwayCrowdofflinenewFindRequest()
+	},
+}
+
+// GetTaobaoSubwayCrowdofflinenewFindRequest 从 sync.Pool 获取 TaobaoSubwayCrowdofflinenewFindAPIRequest
+func GetTaobaoSubwayCrowdofflinenewFindAPIRequest() *TaobaoSubwayCrowdofflinenewFindAPIRequest {
+	return poolTaobaoSubwayCrowdofflinenewFindAPIRequest.Get().(*TaobaoSubwayCrowdofflinenewFindAPIRequest)
+}
+
+// ReleaseTaobaoSubwayCrowdofflinenewFindAPIRequest 将 TaobaoSubwayCrowdofflinenewFindAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSubwayCrowdofflinenewFindAPIRequest(v *TaobaoSubwayCrowdofflinenewFindAPIRequest) {
+	v.Reset()
+	poolTaobaoSubwayCrowdofflinenewFindAPIRequest.Put(v)
 }

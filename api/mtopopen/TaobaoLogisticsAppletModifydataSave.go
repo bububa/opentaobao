@@ -9,11 +9,6 @@ import (
 // taobao.logistics.applet.modifydata.save
 //
 // 物流小程序修改物流信息回传接口
-func TaobaoLogisticsAppletModifydataSave(clt *core.SDKClient, req *mtopopen.TaobaoLogisticsAppletModifydataSaveAPIRequest, session string) (*mtopopen.TaobaoLogisticsAppletModifydataSaveAPIResponse, error) {
-	var resp mtopopen.TaobaoLogisticsAppletModifydataSaveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLogisticsAppletModifydataSave(clt *core.SDKClient, req *mtopopen.TaobaoLogisticsAppletModifydataSaveAPIRequest, resp *mtopopen.TaobaoLogisticsAppletModifydataSaveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

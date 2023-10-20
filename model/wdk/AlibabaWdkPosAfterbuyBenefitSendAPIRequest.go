@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkPosAfterbuyBenefitSendAPIRequest struct {
 // NewAlibabaWdkPosAfterbuyBenefitSendRequest 初始化AlibabaWdkPosAfterbuyBenefitSendAPIRequest对象
 func NewAlibabaWdkPosAfterbuyBenefitSendRequest() *AlibabaWdkPosAfterbuyBenefitSendAPIRequest {
 	return &AlibabaWdkPosAfterbuyBenefitSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkPosAfterbuyBenefitSendAPIRequest) Reset() {
+	r._sendBenefitParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkPosAfterbuyBenefitSendAPIRequest) SetSendBenefitParam(_sendBe
 // GetSendBenefitParam SendBenefitParam Getter
 func (r AlibabaWdkPosAfterbuyBenefitSendAPIRequest) GetSendBenefitParam() *IsvSendBenefitParam {
 	return r._sendBenefitParam
+}
+
+var poolAlibabaWdkPosAfterbuyBenefitSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkPosAfterbuyBenefitSendRequest()
+	},
+}
+
+// GetAlibabaWdkPosAfterbuyBenefitSendRequest 从 sync.Pool 获取 AlibabaWdkPosAfterbuyBenefitSendAPIRequest
+func GetAlibabaWdkPosAfterbuyBenefitSendAPIRequest() *AlibabaWdkPosAfterbuyBenefitSendAPIRequest {
+	return poolAlibabaWdkPosAfterbuyBenefitSendAPIRequest.Get().(*AlibabaWdkPosAfterbuyBenefitSendAPIRequest)
+}
+
+// ReleaseAlibabaWdkPosAfterbuyBenefitSendAPIRequest 将 AlibabaWdkPosAfterbuyBenefitSendAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkPosAfterbuyBenefitSendAPIRequest(v *AlibabaWdkPosAfterbuyBenefitSendAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkPosAfterbuyBenefitSendAPIRequest.Put(v)
 }

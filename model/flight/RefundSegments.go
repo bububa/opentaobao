@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // RefundSegments 结构体
 type RefundSegments struct {
 	// 舱等: F:头等舱, C:商务舱, Y:经济舱, S:超级经济舱, P:超值经济舱, M:标准经济舱, W:超级经济舱
@@ -24,4 +28,31 @@ type RefundSegments struct {
 	SegmentIndex int64 `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
 	// 航程序号
 	OdIndex int64 `json:"od_index,omitempty" xml:"od_index,omitempty"`
+}
+
+var poolRefundSegments = sync.Pool{
+	New: func() any {
+		return new(RefundSegments)
+	},
+}
+
+// GetRefundSegments() 从对象池中获取RefundSegments
+func GetRefundSegments() *RefundSegments {
+	return poolRefundSegments.Get().(*RefundSegments)
+}
+
+// ReleaseRefundSegments 释放RefundSegments
+func ReleaseRefundSegments(v *RefundSegments) {
+	v.CabinClass = ""
+	v.FlightNo = ""
+	v.DepTime = ""
+	v.ArrCity = ""
+	v.DepCity = ""
+	v.Cabin = ""
+	v.ArrAirport = ""
+	v.DepAirport = ""
+	v.ArrTime = ""
+	v.SegmentIndex = 0
+	v.OdIndex = 0
+	poolRefundSegments.Put(v)
 }

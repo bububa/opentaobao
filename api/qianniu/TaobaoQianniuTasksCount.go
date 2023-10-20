@@ -9,11 +9,6 @@ import (
 // taobao.qianniu.tasks.count
 //
 // 任务查询条数接口
-func TaobaoQianniuTasksCount(clt *core.SDKClient, req *qianniu.TaobaoQianniuTasksCountAPIRequest, session string) (*qianniu.TaobaoQianniuTasksCountAPIResponse, error) {
-	var resp qianniu.TaobaoQianniuTasksCountAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQianniuTasksCount(clt *core.SDKClient, req *qianniu.TaobaoQianniuTasksCountAPIRequest, resp *qianniu.TaobaoQianniuTasksCountAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package baodian
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoBaodianServerDateGetAPIRequest struct {
 // NewTaobaoBaodianServerDateGetRequest 初始化TaobaoBaodianServerDateGetAPIRequest对象
 func NewTaobaoBaodianServerDateGetRequest() *TaobaoBaodianServerDateGetAPIRequest {
 	return &TaobaoBaodianServerDateGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBaodianServerDateGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoBaodianServerDateGetAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoBaodianServerDateGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoBaodianServerDateGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBaodianServerDateGetRequest()
+	},
+}
+
+// GetTaobaoBaodianServerDateGetRequest 从 sync.Pool 获取 TaobaoBaodianServerDateGetAPIRequest
+func GetTaobaoBaodianServerDateGetAPIRequest() *TaobaoBaodianServerDateGetAPIRequest {
+	return poolTaobaoBaodianServerDateGetAPIRequest.Get().(*TaobaoBaodianServerDateGetAPIRequest)
+}
+
+// ReleaseTaobaoBaodianServerDateGetAPIRequest 将 TaobaoBaodianServerDateGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBaodianServerDateGetAPIRequest(v *TaobaoBaodianServerDateGetAPIRequest) {
+	v.Reset()
+	poolTaobaoBaodianServerDateGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAilabsIotDeviceStatusUpdateAPIResponse struct {
 	AlibabaAilabsIotDeviceStatusUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAilabsIotDeviceStatusUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAilabsIotDeviceStatusUpdateAPIResponseModel).Reset()
+}
+
 // AlibabaAilabsIotDeviceStatusUpdateAPIResponseModel is ailabs iot 设备状态更新 成功返回结果
 type AlibabaAilabsIotDeviceStatusUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_iot_device_status_update_response"`
@@ -22,4 +29,27 @@ type AlibabaAilabsIotDeviceStatusUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 设备状态更新是否成功
 	Result *AlibabaAilabsIotDeviceStatusUpdateResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAilabsIotDeviceStatusUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAilabsIotDeviceStatusUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAilabsIotDeviceStatusUpdateAPIResponse)
+	},
+}
+
+// GetAlibabaAilabsIotDeviceStatusUpdateAPIResponse 从 sync.Pool 获取 AlibabaAilabsIotDeviceStatusUpdateAPIResponse
+func GetAlibabaAilabsIotDeviceStatusUpdateAPIResponse() *AlibabaAilabsIotDeviceStatusUpdateAPIResponse {
+	return poolAlibabaAilabsIotDeviceStatusUpdateAPIResponse.Get().(*AlibabaAilabsIotDeviceStatusUpdateAPIResponse)
+}
+
+// ReleaseAlibabaAilabsIotDeviceStatusUpdateAPIResponse 将 AlibabaAilabsIotDeviceStatusUpdateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAilabsIotDeviceStatusUpdateAPIResponse(v *AlibabaAilabsIotDeviceStatusUpdateAPIResponse) {
+	v.Reset()
+	poolAlibabaAilabsIotDeviceStatusUpdateAPIResponse.Put(v)
 }

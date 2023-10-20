@@ -9,11 +9,6 @@ import (
 // taobao.logistics.online.cancel
 //
 // 调此接口取消发货的订单，重新选择物流公司发货。前提是物流公司未揽收货物。对未发货和已经被物流公司揽收的物流订单，是不能取消的。
-func TaobaoLogisticsOnlineCancel(clt *core.SDKClient, req *tblogistics.TaobaoLogisticsOnlineCancelAPIRequest, session string) (*tblogistics.TaobaoLogisticsOnlineCancelAPIResponse, error) {
-	var resp tblogistics.TaobaoLogisticsOnlineCancelAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLogisticsOnlineCancel(clt *core.SDKClient, req *tblogistics.TaobaoLogisticsOnlineCancelAPIRequest, resp *tblogistics.TaobaoLogisticsOnlineCancelAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

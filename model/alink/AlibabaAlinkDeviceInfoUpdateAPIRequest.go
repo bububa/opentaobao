@@ -2,6 +2,7 @@ package alink
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlinkDeviceInfoUpdateAPIRequest struct {
 // NewAlibabaAlinkDeviceInfoUpdateRequest 初始化AlibabaAlinkDeviceInfoUpdateAPIRequest对象
 func NewAlibabaAlinkDeviceInfoUpdateRequest() *AlibabaAlinkDeviceInfoUpdateAPIRequest {
 	return &AlibabaAlinkDeviceInfoUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlinkDeviceInfoUpdateAPIRequest) Reset() {
+	r._uuid = ""
+	r._nickName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlinkDeviceInfoUpdateAPIRequest) SetNickName(_nickName string) e
 // GetNickName NickName Getter
 func (r AlibabaAlinkDeviceInfoUpdateAPIRequest) GetNickName() string {
 	return r._nickName
+}
+
+var poolAlibabaAlinkDeviceInfoUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlinkDeviceInfoUpdateRequest()
+	},
+}
+
+// GetAlibabaAlinkDeviceInfoUpdateRequest 从 sync.Pool 获取 AlibabaAlinkDeviceInfoUpdateAPIRequest
+func GetAlibabaAlinkDeviceInfoUpdateAPIRequest() *AlibabaAlinkDeviceInfoUpdateAPIRequest {
+	return poolAlibabaAlinkDeviceInfoUpdateAPIRequest.Get().(*AlibabaAlinkDeviceInfoUpdateAPIRequest)
+}
+
+// ReleaseAlibabaAlinkDeviceInfoUpdateAPIRequest 将 AlibabaAlinkDeviceInfoUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlinkDeviceInfoUpdateAPIRequest(v *AlibabaAlinkDeviceInfoUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlinkDeviceInfoUpdateAPIRequest.Put(v)
 }

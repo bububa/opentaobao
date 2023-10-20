@@ -1,5 +1,9 @@
 package tmallgenie
 
+import (
+	"sync"
+)
+
 // CloudReportParam 结构体
 type CloudReportParam struct {
 	// 设备状态或者事件Map组成的Json字符串
@@ -24,4 +28,31 @@ type CloudReportParam struct {
 	PayloadVersion int64 `json:"payload_version,omitempty" xml:"payload_version,omitempty"`
 	// 上报类型，1：属性上报 2：在离线上报 3：事件上报
 	ReportType int64 `json:"report_type,omitempty" xml:"report_type,omitempty"`
+}
+
+var poolCloudReportParam = sync.Pool{
+	New: func() any {
+		return new(CloudReportParam)
+	},
+}
+
+// GetCloudReportParam() 从对象池中获取CloudReportParam
+func GetCloudReportParam() *CloudReportParam {
+	return poolCloudReportParam.Get().(*CloudReportParam)
+}
+
+// ReleaseCloudReportParam 释放CloudReportParam
+func ReleaseCloudReportParam(v *CloudReportParam) {
+	v.Payload = ""
+	v.DeviceId = ""
+	v.UserAccessToken = ""
+	v.OpenUserId = ""
+	v.MessageId = ""
+	v.Extension = ""
+	v.AccountType = 0
+	v.SkillId = 0
+	v.TimeStamp = 0
+	v.PayloadVersion = 0
+	v.ReportType = 0
+	poolCloudReportParam.Put(v)
 }

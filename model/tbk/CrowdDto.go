@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // CrowdDto 结构体
 type CrowdDto struct {
 	// 人群描述
@@ -20,4 +24,29 @@ type CrowdDto struct {
 	UcrowdId int64 `json:"ucrowd_id,omitempty" xml:"ucrowd_id,omitempty"`
 	// 覆盖会员数量
 	MemberSize int64 `json:"member_size,omitempty" xml:"member_size,omitempty"`
+}
+
+var poolCrowdDto = sync.Pool{
+	New: func() any {
+		return new(CrowdDto)
+	},
+}
+
+// GetCrowdDto() 从对象池中获取CrowdDto
+func GetCrowdDto() *CrowdDto {
+	return poolCrowdDto.Get().(*CrowdDto)
+}
+
+// ReleaseCrowdDto 释放CrowdDto
+func ReleaseCrowdDto(v *CrowdDto) {
+	v.Desc = ""
+	v.ExternalCrowdCode = ""
+	v.UcrowdName = ""
+	v.UpdateTime = ""
+	v.CreateTime = ""
+	v.Status = 0
+	v.UcrowdType = 0
+	v.UcrowdId = 0
+	v.MemberSize = 0
+	poolCrowdDto.Put(v)
 }

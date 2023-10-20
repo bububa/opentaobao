@@ -1,5 +1,9 @@
 package wlbimports
 
+import (
+	"sync"
+)
+
 // TaobaoWlbImportsVasIdentityResultTopResult 结构体
 type TaobaoWlbImportsVasIdentityResultTopResult struct {
 	// 返回错误信息
@@ -16,4 +20,27 @@ type TaobaoWlbImportsVasIdentityResultTopResult struct {
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoWlbImportsVasIdentityResultTopResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbImportsVasIdentityResultTopResult)
+	},
+}
+
+// GetTaobaoWlbImportsVasIdentityResultTopResult() 从对象池中获取TaobaoWlbImportsVasIdentityResultTopResult
+func GetTaobaoWlbImportsVasIdentityResultTopResult() *TaobaoWlbImportsVasIdentityResultTopResult {
+	return poolTaobaoWlbImportsVasIdentityResultTopResult.Get().(*TaobaoWlbImportsVasIdentityResultTopResult)
+}
+
+// ReleaseTaobaoWlbImportsVasIdentityResultTopResult 释放TaobaoWlbImportsVasIdentityResultTopResult
+func ReleaseTaobaoWlbImportsVasIdentityResultTopResult(v *TaobaoWlbImportsVasIdentityResultTopResult) {
+	v.SubErrorMsg = ""
+	v.ErrorCode = ""
+	v.SubErrorCode = ""
+	v.ErrorMsg = ""
+	v.Result = nil
+	v.TotalResults = 0
+	v.Success = false
+	poolTaobaoWlbImportsVasIdentityResultTopResult.Put(v)
 }

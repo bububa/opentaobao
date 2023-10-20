@@ -1,5 +1,9 @@
 package car
 
+import (
+	"sync"
+)
+
 // TransferUseCarInfo 结构体
 type TransferUseCarInfo struct {
 	// 用车时间
@@ -28,4 +32,33 @@ type TransferUseCarInfo struct {
 	FromLocation string `json:"from_location,omitempty" xml:"from_location,omitempty"`
 	// 出发城市三字码
 	OriginCityCode string `json:"origin_city_code,omitempty" xml:"origin_city_code,omitempty"`
+}
+
+var poolTransferUseCarInfo = sync.Pool{
+	New: func() any {
+		return new(TransferUseCarInfo)
+	},
+}
+
+// GetTransferUseCarInfo() 从对象池中获取TransferUseCarInfo
+func GetTransferUseCarInfo() *TransferUseCarInfo {
+	return poolTransferUseCarInfo.Get().(*TransferUseCarInfo)
+}
+
+// ReleaseTransferUseCarInfo 释放TransferUseCarInfo
+func ReleaseTransferUseCarInfo(v *TransferUseCarInfo) {
+	v.CarUseTime = ""
+	v.AbroadCustomerServicePhone = ""
+	v.OriginAddress = ""
+	v.CancelRule = ""
+	v.CarTypeId = ""
+	v.DomesticCustomerServicePhone = ""
+	v.ToLocation = ""
+	v.ArriveCity = ""
+	v.ArriveCityCode = ""
+	v.ArriveAddress = ""
+	v.OriginCity = ""
+	v.FromLocation = ""
+	v.OriginCityCode = ""
+	poolTransferUseCarInfo.Put(v)
 }

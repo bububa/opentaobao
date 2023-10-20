@@ -1,5 +1,9 @@
 package moscm
 
+import (
+	"sync"
+)
+
 // DeliveryDto 结构体
 type DeliveryDto struct {
 	// 商品明细
@@ -16,4 +20,27 @@ type DeliveryDto struct {
 	WaybillNumber string `json:"waybill_number,omitempty" xml:"waybill_number,omitempty"`
 	// 备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
+}
+
+var poolDeliveryDto = sync.Pool{
+	New: func() any {
+		return new(DeliveryDto)
+	},
+}
+
+// GetDeliveryDto() 从对象池中获取DeliveryDto
+func GetDeliveryDto() *DeliveryDto {
+	return poolDeliveryDto.Get().(*DeliveryDto)
+}
+
+// ReleaseDeliveryDto 释放DeliveryDto
+func ReleaseDeliveryDto(v *DeliveryDto) {
+	v.ShipItems = v.ShipItems[:0]
+	v.CompanyName = ""
+	v.OrderNumber = ""
+	v.CompanyCode = ""
+	v.OutboundDate = ""
+	v.WaybillNumber = ""
+	v.Remark = ""
+	poolDeliveryDto.Put(v)
 }

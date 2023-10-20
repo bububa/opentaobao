@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // ArticleItemViewUnit 结构体
 type ArticleItemViewUnit struct {
 	// 需要支付的价格，单位：元
@@ -24,4 +28,31 @@ type ArticleItemViewUnit struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 用户是否可以购买
 	CanSub bool `json:"can_sub,omitempty" xml:"can_sub,omitempty"`
+}
+
+var poolArticleItemViewUnit = sync.Pool{
+	New: func() any {
+		return new(ArticleItemViewUnit)
+	},
+}
+
+// GetArticleItemViewUnit() 从对象池中获取ArticleItemViewUnit
+func GetArticleItemViewUnit() *ArticleItemViewUnit {
+	return poolArticleItemViewUnit.Get().(*ArticleItemViewUnit)
+}
+
+// ReleaseArticleItemViewUnit 释放ArticleItemViewUnit
+func ReleaseArticleItemViewUnit(v *ArticleItemViewUnit) {
+	v.ActualPrice = ""
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.ItemCode = ""
+	v.ItemName = ""
+	v.OriginPrice = ""
+	v.PromPrice = ""
+	v.CycNum = 0
+	v.CycUnit = 0
+	v.Quantity = 0
+	v.CanSub = false
+	poolArticleItemViewUnit.Put(v)
 }

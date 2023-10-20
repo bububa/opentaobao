@@ -2,6 +2,7 @@ package jym
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponse struct {
 	model.CommonResponse
 	AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponseModel).Reset()
 }
 
 // AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponseModel is 基于游戏id临时上下架智能发布入口 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponseModel struct {
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
 	// 代表调用成功
 	Succeed bool `json:"succeed,omitempty" xml:"succeed,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.StateCode = ""
+	m.ExtraErrMsg = ""
+	m.Result = ""
+	m.Succeed = false
+}
+
+var poolAlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponse)
+	},
+}
+
+// GetAlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponse 从 sync.Pool 获取 AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponse
+func GetAlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponse() *AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponse {
+	return poolAlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponse.Get().(*AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponse)
+}
+
+// ReleaseAlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponse 将 AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponse(v *AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponse) {
+	v.Reset()
+	poolAlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest struct {
 // NewAlibabaAlihealthDrugcheckcodeChecklastfourRequest 初始化AlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest对象
 func NewAlibabaAlihealthDrugcheckcodeChecklastfourRequest() *AlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest {
 	return &AlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest) Reset() {
+	r._code = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest) SetCode(_code str
 // GetCode Code Getter
 func (r AlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest) GetCode() string {
 	return r._code
+}
+
+var poolAlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugcheckcodeChecklastfourRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugcheckcodeChecklastfourRequest 从 sync.Pool 获取 AlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest
+func GetAlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest() *AlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest {
+	return poolAlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest.Get().(*AlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest 将 AlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest(v *AlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugcheckcodeChecklastfourAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest struct {
 // NewTaobaoAilabAicloudTopDeviceControlHibernationRequest 初始化TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest对象
 func NewTaobaoAilabAicloudTopDeviceControlHibernationRequest() *TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest {
 	return &TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest) Reset() {
+	r._param1 = ""
+	r._param2 = ""
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest) SetParam0(_par
 // GetParam0 Param0 Getter
 func (r TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest) GetParam0() *OpenBaseInfo {
 	return r._param0
+}
+
+var poolTaobaoAilabAicloudTopDeviceControlHibernationAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopDeviceControlHibernationRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopDeviceControlHibernationRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest
+func GetTaobaoAilabAicloudTopDeviceControlHibernationAPIRequest() *TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest {
+	return poolTaobaoAilabAicloudTopDeviceControlHibernationAPIRequest.Get().(*TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopDeviceControlHibernationAPIRequest 将 TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopDeviceControlHibernationAPIRequest(v *TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopDeviceControlHibernationAPIRequest.Put(v)
 }

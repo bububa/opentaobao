@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.talent.bind.store
 //
 // 达人号门店关系绑定
-func AlibabaAlihouseNewhomeTalentBindStore(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeTalentBindStoreAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeTalentBindStoreAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeTalentBindStoreAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeTalentBindStore(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeTalentBindStoreAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeTalentBindStoreAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

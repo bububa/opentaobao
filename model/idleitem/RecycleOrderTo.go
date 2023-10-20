@@ -1,5 +1,9 @@
 package idleitem
 
+import (
+	"sync"
+)
+
 // RecycleOrderTo 结构体
 type RecycleOrderTo struct {
 	// 回收商appkey
@@ -86,4 +90,62 @@ type RecycleOrderTo struct {
 	QaAmount int64 `json:"qa_amount,omitempty" xml:"qa_amount,omitempty"`
 	// true：是信用预付订单，false：普通订单
 	CreditPay bool `json:"credit_pay,omitempty" xml:"credit_pay,omitempty"`
+}
+
+var poolRecycleOrderTo = sync.Pool{
+	New: func() any {
+		return new(RecycleOrderTo)
+	},
+}
+
+// GetRecycleOrderTo() 从对象池中获取RecycleOrderTo
+func GetRecycleOrderTo() *RecycleOrderTo {
+	return poolRecycleOrderTo.Get().(*RecycleOrderTo)
+}
+
+// ReleaseRecycleOrderTo 释放RecycleOrderTo
+func ReleaseRecycleOrderTo(v *RecycleOrderTo) {
+	v.AppKey = ""
+	v.ApprizeId = ""
+	v.Area = ""
+	v.BizOrderId = ""
+	v.BuyerCloseReason = ""
+	v.SellerCloseReason = ""
+	v.BuyerNick = ""
+	v.Channel = ""
+	v.ChannelData = ""
+	v.City = ""
+	v.Country = ""
+	v.CouponFee = ""
+	v.CouponId = ""
+	v.CouponRule = ""
+	v.Env = ""
+	v.GmtCreate = ""
+	v.IdlePayType = ""
+	v.Province = ""
+	v.RateContent = ""
+	v.RateGrade = ""
+	v.RefundReason = ""
+	v.SellerAddress = ""
+	v.SellerNick = ""
+	v.SellerPhone = ""
+	v.SellerRealName = ""
+	v.ShipTime = ""
+	v.ShipType = ""
+	v.SubChannel = ""
+	v.PayStatus = ""
+	v.PayTime = ""
+	v.EndTime = ""
+	v.RecoveryPayId = ""
+	v.RecoveryPayTime = ""
+	v.MakeupPayId = ""
+	v.MakeupPayTime = ""
+	v.MainPayId = ""
+	v.QuoteVersion = ""
+	v.ApprizeAmount = 0
+	v.CreditPayAmount = 0
+	v.OrderStatus = 0
+	v.QaAmount = 0
+	v.CreditPay = false
+	poolRecycleOrderTo.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // AlibabaSscSupplyplatformServiceworkerAvailableworkerResult 结构体
 type AlibabaSscSupplyplatformServiceworkerAvailableworkerResult struct {
 	// 可用工人列表
@@ -12,4 +16,25 @@ type AlibabaSscSupplyplatformServiceworkerAvailableworkerResult struct {
 	DisplayMsg string `json:"display_msg,omitempty" xml:"display_msg,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaSscSupplyplatformServiceworkerAvailableworkerResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaSscSupplyplatformServiceworkerAvailableworkerResult)
+	},
+}
+
+// GetAlibabaSscSupplyplatformServiceworkerAvailableworkerResult() 从对象池中获取AlibabaSscSupplyplatformServiceworkerAvailableworkerResult
+func GetAlibabaSscSupplyplatformServiceworkerAvailableworkerResult() *AlibabaSscSupplyplatformServiceworkerAvailableworkerResult {
+	return poolAlibabaSscSupplyplatformServiceworkerAvailableworkerResult.Get().(*AlibabaSscSupplyplatformServiceworkerAvailableworkerResult)
+}
+
+// ReleaseAlibabaSscSupplyplatformServiceworkerAvailableworkerResult 释放AlibabaSscSupplyplatformServiceworkerAvailableworkerResult
+func ReleaseAlibabaSscSupplyplatformServiceworkerAvailableworkerResult(v *AlibabaSscSupplyplatformServiceworkerAvailableworkerResult) {
+	v.Value = v.Value[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.DisplayMsg = ""
+	v.Success = false
+	poolAlibabaSscSupplyplatformServiceworkerAvailableworkerResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package damai
 
+import (
+	"sync"
+)
+
 // AlibabaDamaiMevOpenDeletevenueResult 结构体
 type AlibabaDamaiMevOpenDeletevenueResult struct {
 	// 错误内容
@@ -10,4 +14,24 @@ type AlibabaDamaiMevOpenDeletevenueResult struct {
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaDamaiMevOpenDeletevenueResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaDamaiMevOpenDeletevenueResult)
+	},
+}
+
+// GetAlibabaDamaiMevOpenDeletevenueResult() 从对象池中获取AlibabaDamaiMevOpenDeletevenueResult
+func GetAlibabaDamaiMevOpenDeletevenueResult() *AlibabaDamaiMevOpenDeletevenueResult {
+	return poolAlibabaDamaiMevOpenDeletevenueResult.Get().(*AlibabaDamaiMevOpenDeletevenueResult)
+}
+
+// ReleaseAlibabaDamaiMevOpenDeletevenueResult 释放AlibabaDamaiMevOpenDeletevenueResult
+func ReleaseAlibabaDamaiMevOpenDeletevenueResult(v *AlibabaDamaiMevOpenDeletevenueResult) {
+	v.ErrorMsg = ""
+	v.ErrorCode = 0
+	v.Model = false
+	v.Success = false
+	poolAlibabaDamaiMevOpenDeletevenueResult.Put(v)
 }

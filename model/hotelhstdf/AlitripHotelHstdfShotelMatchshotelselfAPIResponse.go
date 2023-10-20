@@ -2,6 +2,7 @@ package hotelhstdf
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripHotelHstdfShotelMatchshotelselfAPIResponse struct {
 	AlitripHotelHstdfShotelMatchshotelselfAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripHotelHstdfShotelMatchshotelselfAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripHotelHstdfShotelMatchshotelselfAPIResponseModel).Reset()
+}
+
 // AlitripHotelHstdfShotelMatchshotelselfAPIResponseModel is 自主匹配标准酒店以及卖家酒店 成功返回结果
 type AlitripHotelHstdfShotelMatchshotelselfAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_hotel_hstdf_shotel_matchshotelself_response"`
@@ -26,4 +33,29 @@ type AlitripHotelHstdfShotelMatchshotelselfAPIResponseModel struct {
 	Errormsg string `json:"errormsg,omitempty" xml:"errormsg,omitempty"`
 	// 是否成功
 	Status bool `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripHotelHstdfShotelMatchshotelselfAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Errorcode = ""
+	m.Errormsg = ""
+	m.Status = false
+}
+
+var poolAlitripHotelHstdfShotelMatchshotelselfAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripHotelHstdfShotelMatchshotelselfAPIResponse)
+	},
+}
+
+// GetAlitripHotelHstdfShotelMatchshotelselfAPIResponse 从 sync.Pool 获取 AlitripHotelHstdfShotelMatchshotelselfAPIResponse
+func GetAlitripHotelHstdfShotelMatchshotelselfAPIResponse() *AlitripHotelHstdfShotelMatchshotelselfAPIResponse {
+	return poolAlitripHotelHstdfShotelMatchshotelselfAPIResponse.Get().(*AlitripHotelHstdfShotelMatchshotelselfAPIResponse)
+}
+
+// ReleaseAlitripHotelHstdfShotelMatchshotelselfAPIResponse 将 AlitripHotelHstdfShotelMatchshotelselfAPIResponse 保存到 sync.Pool
+func ReleaseAlitripHotelHstdfShotelMatchshotelselfAPIResponse(v *AlitripHotelHstdfShotelMatchshotelselfAPIResponse) {
+	v.Reset()
+	poolAlitripHotelHstdfShotelMatchshotelselfAPIResponse.Put(v)
 }

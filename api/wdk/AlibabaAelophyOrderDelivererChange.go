@@ -9,11 +9,6 @@ import (
 // alibaba.aelophy.order.deliverer.change
 //
 // 配送员信息变更接口
-func AlibabaAelophyOrderDelivererChange(clt *core.SDKClient, req *wdk.AlibabaAelophyOrderDelivererChangeAPIRequest, session string) (*wdk.AlibabaAelophyOrderDelivererChangeAPIResponse, error) {
-	var resp wdk.AlibabaAelophyOrderDelivererChangeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAelophyOrderDelivererChange(clt *core.SDKClient, req *wdk.AlibabaAelophyOrderDelivererChangeAPIRequest, resp *wdk.AlibabaAelophyOrderDelivererChangeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

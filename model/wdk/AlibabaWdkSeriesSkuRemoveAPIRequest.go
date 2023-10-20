@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkSeriesSkuRemoveAPIRequest struct {
 // NewAlibabaWdkSeriesSkuRemoveRequest 初始化AlibabaWdkSeriesSkuRemoveAPIRequest对象
 func NewAlibabaWdkSeriesSkuRemoveRequest() *AlibabaWdkSeriesSkuRemoveAPIRequest {
 	return &AlibabaWdkSeriesSkuRemoveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkSeriesSkuRemoveAPIRequest) Reset() {
+	r._seriesSkus = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkSeriesSkuRemoveAPIRequest) SetSeriesSkus(_seriesSkus *SeriesS
 // GetSeriesSkus SeriesSkus Getter
 func (r AlibabaWdkSeriesSkuRemoveAPIRequest) GetSeriesSkus() *SeriesSkuRequest {
 	return r._seriesSkus
+}
+
+var poolAlibabaWdkSeriesSkuRemoveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkSeriesSkuRemoveRequest()
+	},
+}
+
+// GetAlibabaWdkSeriesSkuRemoveRequest 从 sync.Pool 获取 AlibabaWdkSeriesSkuRemoveAPIRequest
+func GetAlibabaWdkSeriesSkuRemoveAPIRequest() *AlibabaWdkSeriesSkuRemoveAPIRequest {
+	return poolAlibabaWdkSeriesSkuRemoveAPIRequest.Get().(*AlibabaWdkSeriesSkuRemoveAPIRequest)
+}
+
+// ReleaseAlibabaWdkSeriesSkuRemoveAPIRequest 将 AlibabaWdkSeriesSkuRemoveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkSeriesSkuRemoveAPIRequest(v *AlibabaWdkSeriesSkuRemoveAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkSeriesSkuRemoveAPIRequest.Put(v)
 }

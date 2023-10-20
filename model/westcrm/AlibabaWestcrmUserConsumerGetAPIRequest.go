@@ -2,6 +2,7 @@ package westcrm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaWestcrmUserConsumerGetAPIRequest struct {
 // NewAlibabaWestcrmUserConsumerGetRequest 初始化AlibabaWestcrmUserConsumerGetAPIRequest对象
 func NewAlibabaWestcrmUserConsumerGetRequest() *AlibabaWestcrmUserConsumerGetAPIRequest {
 	return &AlibabaWestcrmUserConsumerGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWestcrmUserConsumerGetAPIRequest) Reset() {
+	r._timeBegin = ""
+	r._timeEnd = ""
+	r._campusId = 0
+	r._ibUserId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetIbUserId(_ibUserId int64) e
 // GetIbUserId IbUserId Getter
 func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetIbUserId() int64 {
 	return r._ibUserId
+}
+
+var poolAlibabaWestcrmUserConsumerGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWestcrmUserConsumerGetRequest()
+	},
+}
+
+// GetAlibabaWestcrmUserConsumerGetRequest 从 sync.Pool 获取 AlibabaWestcrmUserConsumerGetAPIRequest
+func GetAlibabaWestcrmUserConsumerGetAPIRequest() *AlibabaWestcrmUserConsumerGetAPIRequest {
+	return poolAlibabaWestcrmUserConsumerGetAPIRequest.Get().(*AlibabaWestcrmUserConsumerGetAPIRequest)
+}
+
+// ReleaseAlibabaWestcrmUserConsumerGetAPIRequest 将 AlibabaWestcrmUserConsumerGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWestcrmUserConsumerGetAPIRequest(v *AlibabaWestcrmUserConsumerGetAPIRequest) {
+	v.Reset()
+	poolAlibabaWestcrmUserConsumerGetAPIRequest.Put(v)
 }

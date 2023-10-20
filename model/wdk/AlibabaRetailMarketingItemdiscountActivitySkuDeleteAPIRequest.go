@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest struct {
 // NewAlibabaRetailMarketingItemdiscountActivitySkuDeleteRequest 初始化AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest对象
 func NewAlibabaRetailMarketingItemdiscountActivitySkuDeleteRequest() *AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest {
 	return &AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest) SetParam
 // GetParam Param Getter
 func (r AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest) GetParam() *ItemDiscountActivityElementOperateRequest {
 	return r._param
+}
+
+var poolAlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaRetailMarketingItemdiscountActivitySkuDeleteRequest()
+	},
+}
+
+// GetAlibabaRetailMarketingItemdiscountActivitySkuDeleteRequest 从 sync.Pool 获取 AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest
+func GetAlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest() *AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest {
+	return poolAlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest.Get().(*AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest)
+}
+
+// ReleaseAlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest 将 AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest(v *AlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaRetailMarketingItemdiscountActivitySkuDeleteAPIRequest.Put(v)
 }

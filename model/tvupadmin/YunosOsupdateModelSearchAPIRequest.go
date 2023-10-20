@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type YunosOsupdateModelSearchAPIRequest struct {
 // NewYunosOsupdateModelSearchRequest 初始化YunosOsupdateModelSearchAPIRequest对象
 func NewYunosOsupdateModelSearchRequest() *YunosOsupdateModelSearchAPIRequest {
 	return &YunosOsupdateModelSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosOsupdateModelSearchAPIRequest) Reset() {
+	r._name = ""
+	r._appId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *YunosOsupdateModelSearchAPIRequest) SetAppId(_appId int64) error {
 // GetAppId AppId Getter
 func (r YunosOsupdateModelSearchAPIRequest) GetAppId() int64 {
 	return r._appId
+}
+
+var poolYunosOsupdateModelSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosOsupdateModelSearchRequest()
+	},
+}
+
+// GetYunosOsupdateModelSearchRequest 从 sync.Pool 获取 YunosOsupdateModelSearchAPIRequest
+func GetYunosOsupdateModelSearchAPIRequest() *YunosOsupdateModelSearchAPIRequest {
+	return poolYunosOsupdateModelSearchAPIRequest.Get().(*YunosOsupdateModelSearchAPIRequest)
+}
+
+// ReleaseYunosOsupdateModelSearchAPIRequest 将 YunosOsupdateModelSearchAPIRequest 放入 sync.Pool
+func ReleaseYunosOsupdateModelSearchAPIRequest(v *YunosOsupdateModelSearchAPIRequest) {
+	v.Reset()
+	poolYunosOsupdateModelSearchAPIRequest.Put(v)
 }

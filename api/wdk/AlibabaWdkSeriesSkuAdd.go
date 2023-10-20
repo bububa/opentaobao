@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.series.sku.add
 //
 // 系列品商品变更-添加商品
-func AlibabaWdkSeriesSkuAdd(clt *core.SDKClient, req *wdk.AlibabaWdkSeriesSkuAddAPIRequest, session string) (*wdk.AlibabaWdkSeriesSkuAddAPIResponse, error) {
-	var resp wdk.AlibabaWdkSeriesSkuAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkSeriesSkuAdd(clt *core.SDKClient, req *wdk.AlibabaWdkSeriesSkuAddAPIRequest, resp *wdk.AlibabaWdkSeriesSkuAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

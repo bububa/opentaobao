@@ -2,6 +2,7 @@ package elife
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoElifeLifecardReconAPIResponse struct {
 	model.CommonResponse
 	TaobaoElifeLifecardReconAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoElifeLifecardReconAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoElifeLifecardReconAPIResponseModel).Reset()
 }
 
 // TaobaoElifeLifecardReconAPIResponseModel is 查询对账文件地址接口 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoElifeLifecardReconAPIResponseModel struct {
 	ReconFileUrl string `json:"recon_file_url,omitempty" xml:"recon_file_url,omitempty"`
 	// 成功标志
 	Successed bool `json:"successed,omitempty" xml:"successed,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoElifeLifecardReconAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultMsg = ""
+	m.OpDate = ""
+	m.ResultCode = ""
+	m.ReconFileUrl = ""
+	m.Successed = false
+}
+
+var poolTaobaoElifeLifecardReconAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoElifeLifecardReconAPIResponse)
+	},
+}
+
+// GetTaobaoElifeLifecardReconAPIResponse 从 sync.Pool 获取 TaobaoElifeLifecardReconAPIResponse
+func GetTaobaoElifeLifecardReconAPIResponse() *TaobaoElifeLifecardReconAPIResponse {
+	return poolTaobaoElifeLifecardReconAPIResponse.Get().(*TaobaoElifeLifecardReconAPIResponse)
+}
+
+// ReleaseTaobaoElifeLifecardReconAPIResponse 将 TaobaoElifeLifecardReconAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoElifeLifecardReconAPIResponse(v *TaobaoElifeLifecardReconAPIResponse) {
+	v.Reset()
+	poolTaobaoElifeLifecardReconAPIResponse.Put(v)
 }

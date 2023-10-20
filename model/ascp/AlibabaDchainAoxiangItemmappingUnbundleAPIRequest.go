@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangItemmappingUnbundleAPIRequest struct {
 // NewAlibabaDchainAoxiangItemmappingUnbundleRequest 初始化AlibabaDchainAoxiangItemmappingUnbundleAPIRequest对象
 func NewAlibabaDchainAoxiangItemmappingUnbundleRequest() *AlibabaDchainAoxiangItemmappingUnbundleAPIRequest {
 	return &AlibabaDchainAoxiangItemmappingUnbundleAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangItemmappingUnbundleAPIRequest) Reset() {
+	r._unbundleItemmappingRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangItemmappingUnbundleAPIRequest) SetUnbundleItemmappi
 // GetUnbundleItemmappingRequest UnbundleItemmappingRequest Getter
 func (r AlibabaDchainAoxiangItemmappingUnbundleAPIRequest) GetUnbundleItemmappingRequest() *UnbundleItemmappingRequest {
 	return r._unbundleItemmappingRequest
+}
+
+var poolAlibabaDchainAoxiangItemmappingUnbundleAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangItemmappingUnbundleRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangItemmappingUnbundleRequest 从 sync.Pool 获取 AlibabaDchainAoxiangItemmappingUnbundleAPIRequest
+func GetAlibabaDchainAoxiangItemmappingUnbundleAPIRequest() *AlibabaDchainAoxiangItemmappingUnbundleAPIRequest {
+	return poolAlibabaDchainAoxiangItemmappingUnbundleAPIRequest.Get().(*AlibabaDchainAoxiangItemmappingUnbundleAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangItemmappingUnbundleAPIRequest 将 AlibabaDchainAoxiangItemmappingUnbundleAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangItemmappingUnbundleAPIRequest(v *AlibabaDchainAoxiangItemmappingUnbundleAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangItemmappingUnbundleAPIRequest.Put(v)
 }

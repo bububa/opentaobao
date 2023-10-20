@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest struct {
 // NewAlibabaAlihouseNewhomeProjectPhoneSubmitRequest 初始化AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest对象
 func NewAlibabaAlihouseNewhomeProjectPhoneSubmitRequest() *AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest {
 	return &AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) Reset() {
+	r._outerStoreId = ""
+	r._projectPhoneDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) SetProjectPhoneDto(
 // GetProjectPhoneDto ProjectPhoneDto Getter
 func (r AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) GetProjectPhoneDto() *ProjectPhoneDto {
 	return r._projectPhoneDto
+}
+
+var poolAlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeProjectPhoneSubmitRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeProjectPhoneSubmitRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest
+func GetAlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest() *AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest {
+	return poolAlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest.Get().(*AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest 将 AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest(v *AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest.Put(v)
 }

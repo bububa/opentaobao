@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WdkOpenPurchasePrice 结构体
 type WdkOpenPurchasePrice struct {
 	// 子单信息
@@ -10,4 +14,24 @@ type WdkOpenPurchasePrice struct {
 	TbOrderId string `json:"tb_order_id,omitempty" xml:"tb_order_id,omitempty"`
 	// 渠道标识45=猫超，100=共享零售
 	OrderFrom int64 `json:"order_from,omitempty" xml:"order_from,omitempty"`
+}
+
+var poolWdkOpenPurchasePrice = sync.Pool{
+	New: func() any {
+		return new(WdkOpenPurchasePrice)
+	},
+}
+
+// GetWdkOpenPurchasePrice() 从对象池中获取WdkOpenPurchasePrice
+func GetWdkOpenPurchasePrice() *WdkOpenPurchasePrice {
+	return poolWdkOpenPurchasePrice.Get().(*WdkOpenPurchasePrice)
+}
+
+// ReleaseWdkOpenPurchasePrice 释放WdkOpenPurchasePrice
+func ReleaseWdkOpenPurchasePrice(v *WdkOpenPurchasePrice) {
+	v.WdkOpenPurchasePriceSubs = v.WdkOpenPurchasePriceSubs[:0]
+	v.StoreId = ""
+	v.TbOrderId = ""
+	v.OrderFrom = 0
+	poolWdkOpenPurchasePrice.Put(v)
 }

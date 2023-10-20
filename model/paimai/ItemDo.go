@@ -1,5 +1,9 @@
 package paimai
 
+import (
+	"sync"
+)
+
 // ItemDo 结构体
 type ItemDo struct {
 	// 小区参考均价（单位：元）Double
@@ -70,4 +74,54 @@ type ItemDo struct {
 	TotalFloor int64 `json:"total_floor,omitempty" xml:"total_floor,omitempty"`
 	// 在租房屋套数
 	HousesForRent int64 `json:"houses_for_rent,omitempty" xml:"houses_for_rent,omitempty"`
+}
+
+var poolItemDo = sync.Pool{
+	New: func() any {
+		return new(ItemDo)
+	},
+}
+
+// GetItemDo() 从对象池中获取ItemDo
+func GetItemDo() *ItemDo {
+	return poolItemDo.Get().(*ItemDo)
+}
+
+// ReleaseItemDo 释放ItemDo
+func ReleaseItemDo(v *ItemDo) {
+	v.RefUnitPrice = ""
+	v.City = ""
+	v.TotalPrice = ""
+	v.Title = ""
+	v.HousePurpose = ""
+	v.TransOwnership = ""
+	v.CommunityScore = ""
+	v.Feature = ""
+	v.PropertyManagement = ""
+	v.CommunityAlias = ""
+	v.BrokerTele = ""
+	v.HouseArea = ""
+	v.HouseToward = ""
+	v.FloorDesc = ""
+	v.Prov = ""
+	v.PropertyUnitPrice = ""
+	v.Lat = ""
+	v.ParkingRatio = ""
+	v.UnitPrice = ""
+	v.Address = ""
+	v.Lng = ""
+	v.HouseType = ""
+	v.Community = ""
+	v.VolumeRate = ""
+	v.ImgUrl = ""
+	v.District = ""
+	v.Location = ""
+	v.GreeningRate = ""
+	v.BuildingType = ""
+	v.BuildingTime = 0
+	v.HousesForSale = 0
+	v.ItemId = 0
+	v.TotalFloor = 0
+	v.HousesForRent = 0
+	poolItemDo.Put(v)
 }

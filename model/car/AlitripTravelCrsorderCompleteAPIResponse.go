@@ -2,6 +2,7 @@ package car
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripTravelCrsorderCompleteAPIResponse struct {
 	AlitripTravelCrsorderCompleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripTravelCrsorderCompleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripTravelCrsorderCompleteAPIResponseModel).Reset()
+}
+
 // AlitripTravelCrsorderCompleteAPIResponseModel is CRS接送机商家服务完成接口 成功返回结果
 type AlitripTravelCrsorderCompleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_crsorder_complete_response"`
@@ -24,4 +31,28 @@ type AlitripTravelCrsorderCompleteAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 返回结果code
 	MessageCode int64 `json:"message_code,omitempty" xml:"message_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripTravelCrsorderCompleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.MessageCode = 0
+}
+
+var poolAlitripTravelCrsorderCompleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripTravelCrsorderCompleteAPIResponse)
+	},
+}
+
+// GetAlitripTravelCrsorderCompleteAPIResponse 从 sync.Pool 获取 AlitripTravelCrsorderCompleteAPIResponse
+func GetAlitripTravelCrsorderCompleteAPIResponse() *AlitripTravelCrsorderCompleteAPIResponse {
+	return poolAlitripTravelCrsorderCompleteAPIResponse.Get().(*AlitripTravelCrsorderCompleteAPIResponse)
+}
+
+// ReleaseAlitripTravelCrsorderCompleteAPIResponse 将 AlitripTravelCrsorderCompleteAPIResponse 保存到 sync.Pool
+func ReleaseAlitripTravelCrsorderCompleteAPIResponse(v *AlitripTravelCrsorderCompleteAPIResponse) {
+	v.Reset()
+	poolAlitripTravelCrsorderCompleteAPIResponse.Put(v)
 }

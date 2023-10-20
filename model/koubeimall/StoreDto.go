@@ -1,5 +1,9 @@
 package koubeimall
 
+import (
+	"sync"
+)
+
 // StoreDto 结构体
 type StoreDto struct {
 	// 门店服务 预定、点餐、排号、外卖
@@ -34,4 +38,36 @@ type StoreDto struct {
 	AveragePrice string `json:"average_price,omitempty" xml:"average_price,omitempty"`
 	// 地理位置信息模型
 	DistrictInfo *DistrictInfo `json:"district_info,omitempty" xml:"district_info,omitempty"`
+}
+
+var poolStoreDto = sync.Pool{
+	New: func() any {
+		return new(StoreDto)
+	},
+}
+
+// GetStoreDto() 从对象池中获取StoreDto
+func GetStoreDto() *StoreDto {
+	return poolStoreDto.Get().(*StoreDto)
+}
+
+// ReleaseStoreDto 释放StoreDto
+func ReleaseStoreDto(v *StoreDto) {
+	v.ServiceTagList = v.ServiceTagList[:0]
+	v.BrandName = ""
+	v.ContactInfo = ""
+	v.MallId = ""
+	v.CommentTotalCount = ""
+	v.CommentScore = ""
+	v.BusinessTime = ""
+	v.StoreId = ""
+	v.Billboard = ""
+	v.CategoryName = ""
+	v.Score = ""
+	v.StoreDetailUrl = ""
+	v.StoreLogo = ""
+	v.StoreName = ""
+	v.AveragePrice = ""
+	v.DistrictInfo = nil
+	poolStoreDto.Put(v)
 }

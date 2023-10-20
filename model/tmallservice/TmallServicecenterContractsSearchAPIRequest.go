@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallServicecenterContractsSearchAPIRequest struct {
 // NewTmallServicecenterContractsSearchRequest 初始化TmallServicecenterContractsSearchAPIRequest对象
 func NewTmallServicecenterContractsSearchRequest() *TmallServicecenterContractsSearchAPIRequest {
 	return &TmallServicecenterContractsSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterContractsSearchAPIRequest) Reset() {
+	r._start = 0
+	r._end = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallServicecenterContractsSearchAPIRequest) SetEnd(_end int64) error {
 // GetEnd End Getter
 func (r TmallServicecenterContractsSearchAPIRequest) GetEnd() int64 {
 	return r._end
+}
+
+var poolTmallServicecenterContractsSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterContractsSearchRequest()
+	},
+}
+
+// GetTmallServicecenterContractsSearchRequest 从 sync.Pool 获取 TmallServicecenterContractsSearchAPIRequest
+func GetTmallServicecenterContractsSearchAPIRequest() *TmallServicecenterContractsSearchAPIRequest {
+	return poolTmallServicecenterContractsSearchAPIRequest.Get().(*TmallServicecenterContractsSearchAPIRequest)
+}
+
+// ReleaseTmallServicecenterContractsSearchAPIRequest 将 TmallServicecenterContractsSearchAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterContractsSearchAPIRequest(v *TmallServicecenterContractsSearchAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterContractsSearchAPIRequest.Put(v)
 }

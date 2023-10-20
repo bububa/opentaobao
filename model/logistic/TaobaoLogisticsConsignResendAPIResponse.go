@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,6 +18,12 @@ type TaobaoLogisticsConsignResendAPIResponse struct {
 	TaobaoLogisticsConsignResendAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoLogisticsConsignResendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLogisticsConsignResendAPIResponseModel).Reset()
+}
+
 // TaobaoLogisticsConsignResendAPIResponseModel is 修改物流公司和运单号 成功返回结果
 type TaobaoLogisticsConsignResendAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_consign_resend_response"`
@@ -24,4 +31,27 @@ type TaobaoLogisticsConsignResendAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回发货是否成功is_success
 	Shipping *Shipping `json:"shipping,omitempty" xml:"shipping,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsConsignResendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Shipping = nil
+}
+
+var poolTaobaoLogisticsConsignResendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLogisticsConsignResendAPIResponse)
+	},
+}
+
+// GetTaobaoLogisticsConsignResendAPIResponse 从 sync.Pool 获取 TaobaoLogisticsConsignResendAPIResponse
+func GetTaobaoLogisticsConsignResendAPIResponse() *TaobaoLogisticsConsignResendAPIResponse {
+	return poolTaobaoLogisticsConsignResendAPIResponse.Get().(*TaobaoLogisticsConsignResendAPIResponse)
+}
+
+// ReleaseTaobaoLogisticsConsignResendAPIResponse 将 TaobaoLogisticsConsignResendAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLogisticsConsignResendAPIResponse(v *TaobaoLogisticsConsignResendAPIResponse) {
+	v.Reset()
+	poolTaobaoLogisticsConsignResendAPIResponse.Put(v)
 }

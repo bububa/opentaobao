@@ -9,11 +9,6 @@ import (
 // alibaba.htcoupon.fulu.phonecharge.callback
 //
 // 话费充值为异步操作，此接口用于充值成功后，供应商回调。
-func AlibabaHtcouponFuluPhonechargeCallback(clt *core.SDKClient, req *happytrip.AlibabaHtcouponFuluPhonechargeCallbackAPIRequest, session string) (*happytrip.AlibabaHtcouponFuluPhonechargeCallbackAPIResponse, error) {
-	var resp happytrip.AlibabaHtcouponFuluPhonechargeCallbackAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHtcouponFuluPhonechargeCallback(clt *core.SDKClient, req *happytrip.AlibabaHtcouponFuluPhonechargeCallbackAPIRequest, resp *happytrip.AlibabaHtcouponFuluPhonechargeCallbackAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

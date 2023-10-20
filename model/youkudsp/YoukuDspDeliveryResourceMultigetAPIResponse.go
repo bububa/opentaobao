@@ -2,6 +2,7 @@ package youkudsp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type YoukuDspDeliveryResourceMultigetAPIResponse struct {
 	model.CommonResponse
 	YoukuDspDeliveryResourceMultigetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *YoukuDspDeliveryResourceMultigetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.YoukuDspDeliveryResourceMultigetAPIResponseModel).Reset()
 }
 
 // YoukuDspDeliveryResourceMultigetAPIResponseModel is 优酷实时批量获取可投放设备资源 成功返回结果
@@ -30,4 +37,31 @@ type YoukuDspDeliveryResourceMultigetAPIResponseModel struct {
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 是否成功
 	SuccessFlag bool `json:"success_flag,omitempty" xml:"success_flag,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *YoukuDspDeliveryResourceMultigetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Models = m.Models[:0]
+	m.MsgCode = ""
+	m.ExtraInfo = ""
+	m.MsgInfo = ""
+	m.SuccessFlag = false
+}
+
+var poolYoukuDspDeliveryResourceMultigetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(YoukuDspDeliveryResourceMultigetAPIResponse)
+	},
+}
+
+// GetYoukuDspDeliveryResourceMultigetAPIResponse 从 sync.Pool 获取 YoukuDspDeliveryResourceMultigetAPIResponse
+func GetYoukuDspDeliveryResourceMultigetAPIResponse() *YoukuDspDeliveryResourceMultigetAPIResponse {
+	return poolYoukuDspDeliveryResourceMultigetAPIResponse.Get().(*YoukuDspDeliveryResourceMultigetAPIResponse)
+}
+
+// ReleaseYoukuDspDeliveryResourceMultigetAPIResponse 将 YoukuDspDeliveryResourceMultigetAPIResponse 保存到 sync.Pool
+func ReleaseYoukuDspDeliveryResourceMultigetAPIResponse(v *YoukuDspDeliveryResourceMultigetAPIResponse) {
+	v.Reset()
+	poolYoukuDspDeliveryResourceMultigetAPIResponse.Put(v)
 }

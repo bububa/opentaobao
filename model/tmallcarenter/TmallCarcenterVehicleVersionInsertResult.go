@@ -1,5 +1,9 @@
 package tmallcarenter
 
+import (
+	"sync"
+)
+
 // TmallCarcenterVehicleVersionInsertResult 结构体
 type TmallCarcenterVehicleVersionInsertResult struct {
 	// msgCode
@@ -14,4 +18,26 @@ type TmallCarcenterVehicleVersionInsertResult struct {
 	CostTime int64 `json:"cost_time,omitempty" xml:"cost_time,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmallCarcenterVehicleVersionInsertResult = sync.Pool{
+	New: func() any {
+		return new(TmallCarcenterVehicleVersionInsertResult)
+	},
+}
+
+// GetTmallCarcenterVehicleVersionInsertResult() 从对象池中获取TmallCarcenterVehicleVersionInsertResult
+func GetTmallCarcenterVehicleVersionInsertResult() *TmallCarcenterVehicleVersionInsertResult {
+	return poolTmallCarcenterVehicleVersionInsertResult.Get().(*TmallCarcenterVehicleVersionInsertResult)
+}
+
+// ReleaseTmallCarcenterVehicleVersionInsertResult 释放TmallCarcenterVehicleVersionInsertResult
+func ReleaseTmallCarcenterVehicleVersionInsertResult(v *TmallCarcenterVehicleVersionInsertResult) {
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.Object = ""
+	v.GmtCurrentTime = 0
+	v.CostTime = 0
+	v.Success = false
+	poolTmallCarcenterVehicleVersionInsertResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package util
 
+import (
+	"sync"
+)
+
 // ItemPickPagingResult 结构体
 type ItemPickPagingResult struct {
 	// 返回数据集合
@@ -16,4 +20,27 @@ type ItemPickPagingResult struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolItemPickPagingResult = sync.Pool{
+	New: func() any {
+		return new(ItemPickPagingResult)
+	},
+}
+
+// GetItemPickPagingResult() 从对象池中获取ItemPickPagingResult
+func GetItemPickPagingResult() *ItemPickPagingResult {
+	return poolItemPickPagingResult.Get().(*ItemPickPagingResult)
+}
+
+// ReleaseItemPickPagingResult 释放ItemPickPagingResult
+func ReleaseItemPickPagingResult(v *ItemPickPagingResult) {
+	v.Results = v.Results[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.PageNo = 0
+	v.PageSize = 0
+	v.TotalCount = 0
+	v.Success = false
+	poolItemPickPagingResult.Put(v)
 }

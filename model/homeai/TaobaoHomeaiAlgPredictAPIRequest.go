@@ -2,6 +2,7 @@ package homeai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoHomeaiAlgPredictAPIRequest struct {
 // NewTaobaoHomeaiAlgPredictRequest 初始化TaobaoHomeaiAlgPredictAPIRequest对象
 func NewTaobaoHomeaiAlgPredictRequest() *TaobaoHomeaiAlgPredictAPIRequest {
 	return &TaobaoHomeaiAlgPredictAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoHomeaiAlgPredictAPIRequest) Reset() {
+	r._fromCase = ""
+	r._toCase = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoHomeaiAlgPredictAPIRequest) SetToCase(_toCase string) error {
 // GetToCase ToCase Getter
 func (r TaobaoHomeaiAlgPredictAPIRequest) GetToCase() string {
 	return r._toCase
+}
+
+var poolTaobaoHomeaiAlgPredictAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoHomeaiAlgPredictRequest()
+	},
+}
+
+// GetTaobaoHomeaiAlgPredictRequest 从 sync.Pool 获取 TaobaoHomeaiAlgPredictAPIRequest
+func GetTaobaoHomeaiAlgPredictAPIRequest() *TaobaoHomeaiAlgPredictAPIRequest {
+	return poolTaobaoHomeaiAlgPredictAPIRequest.Get().(*TaobaoHomeaiAlgPredictAPIRequest)
+}
+
+// ReleaseTaobaoHomeaiAlgPredictAPIRequest 将 TaobaoHomeaiAlgPredictAPIRequest 放入 sync.Pool
+func ReleaseTaobaoHomeaiAlgPredictAPIRequest(v *TaobaoHomeaiAlgPredictAPIRequest) {
+	v.Reset()
+	poolTaobaoHomeaiAlgPredictAPIRequest.Put(v)
 }

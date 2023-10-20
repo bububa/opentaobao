@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // BunkSimpleDto 结构体
 type BunkSimpleDto struct {
 	// 门店号
@@ -20,4 +24,29 @@ type BunkSimpleDto struct {
 	ContractId string `json:"contract_id,omitempty" xml:"contract_id,omitempty"`
 	// 铺位类型
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolBunkSimpleDto = sync.Pool{
+	New: func() any {
+		return new(BunkSimpleDto)
+	},
+}
+
+// GetBunkSimpleDto() 从对象池中获取BunkSimpleDto
+func GetBunkSimpleDto() *BunkSimpleDto {
+	return poolBunkSimpleDto.Get().(*BunkSimpleDto)
+}
+
+// ReleaseBunkSimpleDto 释放BunkSimpleDto
+func ReleaseBunkSimpleDto(v *BunkSimpleDto) {
+	v.StoreNo = ""
+	v.Acreage = ""
+	v.Number = ""
+	v.CpId = ""
+	v.ContractCode = ""
+	v.FloorName = ""
+	v.FloorId = ""
+	v.ContractId = ""
+	v.Type = 0
+	poolBunkSimpleDto.Put(v)
 }

@@ -2,6 +2,7 @@ package legalcase
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaLegalCaseCommonEnumdataAPIRequest struct {
 // NewAlibabaLegalCaseCommonEnumdataRequest 初始化AlibabaLegalCaseCommonEnumdataAPIRequest对象
 func NewAlibabaLegalCaseCommonEnumdataRequest() *AlibabaLegalCaseCommonEnumdataAPIRequest {
 	return &AlibabaLegalCaseCommonEnumdataAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegalCaseCommonEnumdataAPIRequest) Reset() {
+	r._key = ""
+	r._lang = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaLegalCaseCommonEnumdataAPIRequest) SetLang(_lang string) error {
 // GetLang Lang Getter
 func (r AlibabaLegalCaseCommonEnumdataAPIRequest) GetLang() string {
 	return r._lang
+}
+
+var poolAlibabaLegalCaseCommonEnumdataAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegalCaseCommonEnumdataRequest()
+	},
+}
+
+// GetAlibabaLegalCaseCommonEnumdataRequest 从 sync.Pool 获取 AlibabaLegalCaseCommonEnumdataAPIRequest
+func GetAlibabaLegalCaseCommonEnumdataAPIRequest() *AlibabaLegalCaseCommonEnumdataAPIRequest {
+	return poolAlibabaLegalCaseCommonEnumdataAPIRequest.Get().(*AlibabaLegalCaseCommonEnumdataAPIRequest)
+}
+
+// ReleaseAlibabaLegalCaseCommonEnumdataAPIRequest 将 AlibabaLegalCaseCommonEnumdataAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegalCaseCommonEnumdataAPIRequest(v *AlibabaLegalCaseCommonEnumdataAPIRequest) {
+	v.Reset()
+	poolAlibabaLegalCaseCommonEnumdataAPIRequest.Put(v)
 }

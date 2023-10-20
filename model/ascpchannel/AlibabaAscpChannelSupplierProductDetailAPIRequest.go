@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpChannelSupplierProductDetailAPIRequest struct {
 // NewAlibabaAscpChannelSupplierProductDetailRequest 初始化AlibabaAscpChannelSupplierProductDetailAPIRequest对象
 func NewAlibabaAscpChannelSupplierProductDetailRequest() *AlibabaAscpChannelSupplierProductDetailAPIRequest {
 	return &AlibabaAscpChannelSupplierProductDetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpChannelSupplierProductDetailAPIRequest) Reset() {
+	r._productDetailRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpChannelSupplierProductDetailAPIRequest) SetProductDetailRequ
 // GetProductDetailRequest ProductDetailRequest Getter
 func (r AlibabaAscpChannelSupplierProductDetailAPIRequest) GetProductDetailRequest() *ProductDetailQueryRequestForSupplier {
 	return r._productDetailRequest
+}
+
+var poolAlibabaAscpChannelSupplierProductDetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpChannelSupplierProductDetailRequest()
+	},
+}
+
+// GetAlibabaAscpChannelSupplierProductDetailRequest 从 sync.Pool 获取 AlibabaAscpChannelSupplierProductDetailAPIRequest
+func GetAlibabaAscpChannelSupplierProductDetailAPIRequest() *AlibabaAscpChannelSupplierProductDetailAPIRequest {
+	return poolAlibabaAscpChannelSupplierProductDetailAPIRequest.Get().(*AlibabaAscpChannelSupplierProductDetailAPIRequest)
+}
+
+// ReleaseAlibabaAscpChannelSupplierProductDetailAPIRequest 将 AlibabaAscpChannelSupplierProductDetailAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpChannelSupplierProductDetailAPIRequest(v *AlibabaAscpChannelSupplierProductDetailAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpChannelSupplierProductDetailAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaWdkMerchantCategoryQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkMerchantCategoryQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkMerchantCategoryQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkMerchantCategoryQueryAPIResponseModel).Reset()
 }
 
 // AlibabaWdkMerchantCategoryQueryAPIResponseModel is 三江erp对接类目查询接口 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaWdkMerchantCategoryQueryAPIResponseModel struct {
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
 	// success
 	Suc bool `json:"suc,omitempty" xml:"suc,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkMerchantCategoryQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Errorcode = ""
+	m.Errordesc = ""
+	m.Result = ""
+	m.Suc = false
+}
+
+var poolAlibabaWdkMerchantCategoryQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkMerchantCategoryQueryAPIResponse)
+	},
+}
+
+// GetAlibabaWdkMerchantCategoryQueryAPIResponse 从 sync.Pool 获取 AlibabaWdkMerchantCategoryQueryAPIResponse
+func GetAlibabaWdkMerchantCategoryQueryAPIResponse() *AlibabaWdkMerchantCategoryQueryAPIResponse {
+	return poolAlibabaWdkMerchantCategoryQueryAPIResponse.Get().(*AlibabaWdkMerchantCategoryQueryAPIResponse)
+}
+
+// ReleaseAlibabaWdkMerchantCategoryQueryAPIResponse 将 AlibabaWdkMerchantCategoryQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkMerchantCategoryQueryAPIResponse(v *AlibabaWdkMerchantCategoryQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkMerchantCategoryQueryAPIResponse.Put(v)
 }

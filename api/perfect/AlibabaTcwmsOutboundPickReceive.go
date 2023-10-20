@@ -9,11 +9,6 @@ import (
 // alibaba.tcwms.outbound.pick.receive
 //
 // 拣货接单
-func AlibabaTcwmsOutboundPickReceive(clt *core.SDKClient, req *perfect.AlibabaTcwmsOutboundPickReceiveAPIRequest, session string) (*perfect.AlibabaTcwmsOutboundPickReceiveAPIResponse, error) {
-	var resp perfect.AlibabaTcwmsOutboundPickReceiveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTcwmsOutboundPickReceive(clt *core.SDKClient, req *perfect.AlibabaTcwmsOutboundPickReceiveAPIRequest, resp *perfect.AlibabaTcwmsOutboundPickReceiveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

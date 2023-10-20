@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMsfserviceAuditsUpdateAPIRequest struct {
 // NewAlibabaMsfserviceAuditsUpdateRequest 初始化AlibabaMsfserviceAuditsUpdateAPIRequest对象
 func NewAlibabaMsfserviceAuditsUpdateRequest() *AlibabaMsfserviceAuditsUpdateAPIRequest {
 	return &AlibabaMsfserviceAuditsUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMsfserviceAuditsUpdateAPIRequest) Reset() {
+	r._reserveAuditRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMsfserviceAuditsUpdateAPIRequest) SetReserveAuditRequest(_reserv
 // GetReserveAuditRequest ReserveAuditRequest Getter
 func (r AlibabaMsfserviceAuditsUpdateAPIRequest) GetReserveAuditRequest() *ReserveAuditRequest {
 	return r._reserveAuditRequest
+}
+
+var poolAlibabaMsfserviceAuditsUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMsfserviceAuditsUpdateRequest()
+	},
+}
+
+// GetAlibabaMsfserviceAuditsUpdateRequest 从 sync.Pool 获取 AlibabaMsfserviceAuditsUpdateAPIRequest
+func GetAlibabaMsfserviceAuditsUpdateAPIRequest() *AlibabaMsfserviceAuditsUpdateAPIRequest {
+	return poolAlibabaMsfserviceAuditsUpdateAPIRequest.Get().(*AlibabaMsfserviceAuditsUpdateAPIRequest)
+}
+
+// ReleaseAlibabaMsfserviceAuditsUpdateAPIRequest 将 AlibabaMsfserviceAuditsUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMsfserviceAuditsUpdateAPIRequest(v *AlibabaMsfserviceAuditsUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaMsfserviceAuditsUpdateAPIRequest.Put(v)
 }

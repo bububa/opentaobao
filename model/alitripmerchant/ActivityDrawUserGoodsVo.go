@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // ActivityDrawUserGoodsVo 结构体
 type ActivityDrawUserGoodsVo struct {
 	// 奖品图片
@@ -16,4 +20,27 @@ type ActivityDrawUserGoodsVo struct {
 	GoodsStatus int64 `json:"goods_status,omitempty" xml:"goods_status,omitempty"`
 	// 奖品邮寄信息
 	ActivityDrawGoodsPostInfo *ActivityDrawGoodsPostInfoVo `json:"activity_draw_goods_post_info,omitempty" xml:"activity_draw_goods_post_info,omitempty"`
+}
+
+var poolActivityDrawUserGoodsVo = sync.Pool{
+	New: func() any {
+		return new(ActivityDrawUserGoodsVo)
+	},
+}
+
+// GetActivityDrawUserGoodsVo() 从对象池中获取ActivityDrawUserGoodsVo
+func GetActivityDrawUserGoodsVo() *ActivityDrawUserGoodsVo {
+	return poolActivityDrawUserGoodsVo.Get().(*ActivityDrawUserGoodsVo)
+}
+
+// ReleaseActivityDrawUserGoodsVo 释放ActivityDrawUserGoodsVo
+func ReleaseActivityDrawUserGoodsVo(v *ActivityDrawUserGoodsVo) {
+	v.Image = ""
+	v.Name = ""
+	v.RecordId = ""
+	v.Id = 0
+	v.OfferId = 0
+	v.GoodsStatus = 0
+	v.ActivityDrawGoodsPostInfo = nil
+	poolActivityDrawUserGoodsVo.Put(v)
 }

@@ -2,6 +2,7 @@ package ticket
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -18,6 +19,12 @@ type AlitripTicketSkusUploadAPIResponse struct {
 	AlitripTicketSkusUploadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripTicketSkusUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripTicketSkusUploadAPIResponseModel).Reset()
+}
+
 // AlitripTicketSkusUploadAPIResponseModel is 【门票API2.0】门票价格库存同步接口 成功返回结果
 type AlitripTicketSkusUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_ticket_skus_upload_response"`
@@ -25,4 +32,27 @@ type AlitripTicketSkusUploadAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 价格库存同步结果
 	FirstResult *TicketItemResult `json:"first_result,omitempty" xml:"first_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripTicketSkusUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.FirstResult = nil
+}
+
+var poolAlitripTicketSkusUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripTicketSkusUploadAPIResponse)
+	},
+}
+
+// GetAlitripTicketSkusUploadAPIResponse 从 sync.Pool 获取 AlitripTicketSkusUploadAPIResponse
+func GetAlitripTicketSkusUploadAPIResponse() *AlitripTicketSkusUploadAPIResponse {
+	return poolAlitripTicketSkusUploadAPIResponse.Get().(*AlitripTicketSkusUploadAPIResponse)
+}
+
+// ReleaseAlitripTicketSkusUploadAPIResponse 将 AlitripTicketSkusUploadAPIResponse 保存到 sync.Pool
+func ReleaseAlitripTicketSkusUploadAPIResponse(v *AlitripTicketSkusUploadAPIResponse) {
+	v.Reset()
+	poolAlitripTicketSkusUploadAPIResponse.Put(v)
 }

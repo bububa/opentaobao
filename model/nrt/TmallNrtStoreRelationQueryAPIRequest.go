@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallNrtStoreRelationQueryAPIRequest struct {
 // NewTmallNrtStoreRelationQueryRequest 初始化TmallNrtStoreRelationQueryAPIRequest对象
 func NewTmallNrtStoreRelationQueryRequest() *TmallNrtStoreRelationQueryAPIRequest {
 	return &TmallNrtStoreRelationQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtStoreRelationQueryAPIRequest) Reset() {
+	r._storeQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallNrtStoreRelationQueryAPIRequest) SetStoreQuery(_storeQuery *StoreQ
 // GetStoreQuery StoreQuery Getter
 func (r TmallNrtStoreRelationQueryAPIRequest) GetStoreQuery() *StoreQuery {
 	return r._storeQuery
+}
+
+var poolTmallNrtStoreRelationQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtStoreRelationQueryRequest()
+	},
+}
+
+// GetTmallNrtStoreRelationQueryRequest 从 sync.Pool 获取 TmallNrtStoreRelationQueryAPIRequest
+func GetTmallNrtStoreRelationQueryAPIRequest() *TmallNrtStoreRelationQueryAPIRequest {
+	return poolTmallNrtStoreRelationQueryAPIRequest.Get().(*TmallNrtStoreRelationQueryAPIRequest)
+}
+
+// ReleaseTmallNrtStoreRelationQueryAPIRequest 将 TmallNrtStoreRelationQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtStoreRelationQueryAPIRequest(v *TmallNrtStoreRelationQueryAPIRequest) {
+	v.Reset()
+	poolTmallNrtStoreRelationQueryAPIRequest.Put(v)
 }

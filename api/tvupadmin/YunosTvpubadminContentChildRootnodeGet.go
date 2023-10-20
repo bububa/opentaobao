@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.content.child.rootnode.get
 //
 // 通过此接口可获取少儿大厅根类目列表
-func YunosTvpubadminContentChildRootnodeGet(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChildRootnodeGetAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentChildRootnodeGetAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminContentChildRootnodeGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminContentChildRootnodeGet(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChildRootnodeGetAPIRequest, resp *tvupadmin.YunosTvpubadminContentChildRootnodeGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

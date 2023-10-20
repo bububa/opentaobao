@@ -1,5 +1,9 @@
 package icburfq
 
+import (
+	"sync"
+)
+
 // Requestlist 结构体
 type Requestlist struct {
 	// 附件
@@ -34,4 +38,36 @@ type Requestlist struct {
 	ExpirateTime int64 `json:"expirate_time,omitempty" xml:"expirate_time,omitempty"`
 	// 开始时间
 	OpenTime int64 `json:"open_time,omitempty" xml:"open_time,omitempty"`
+}
+
+var poolRequestlist = sync.Pool{
+	New: func() any {
+		return new(Requestlist)
+	},
+}
+
+// GetRequestlist() 从对象池中获取Requestlist
+func GetRequestlist() *Requestlist {
+	return poolRequestlist.Get().(*Requestlist)
+}
+
+// ReleaseRequestlist 释放Requestlist
+func ReleaseRequestlist(v *Requestlist) {
+	v.AnnexFiles = v.AnnexFiles[:0]
+	v.RfqId = ""
+	v.Subject = ""
+	v.Description = ""
+	v.QuantityUnit = ""
+	v.CountrySimple = ""
+	v.AnnexNames = ""
+	v.LangSrc = ""
+	v.ImageUrl = ""
+	v.SupplierCountrys = ""
+	v.UniqueRfqId = ""
+	v.CategoryId = 0
+	v.Quantity = 0
+	v.LeftCount = 0
+	v.ExpirateTime = 0
+	v.OpenTime = 0
+	poolRequestlist.Put(v)
 }

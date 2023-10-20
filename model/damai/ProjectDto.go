@@ -1,5 +1,9 @@
 package damai
 
+import (
+	"sync"
+)
+
 // ProjectDto 结构体
 type ProjectDto struct {
 	// 演出城市
@@ -54,4 +58,46 @@ type ProjectDto struct {
 	ExtraInfoMap *Extrainfomap `json:"extra_info_map,omitempty" xml:"extra_info_map,omitempty"`
 	// 演出场馆id
 	VenueId int64 `json:"venue_id,omitempty" xml:"venue_id,omitempty"`
+}
+
+var poolProjectDto = sync.Pool{
+	New: func() any {
+		return new(ProjectDto)
+	},
+}
+
+// GetProjectDto() 从对象池中获取ProjectDto
+func GetProjectDto() *ProjectDto {
+	return poolProjectDto.Get().(*ProjectDto)
+}
+
+// ReleaseProjectDto 释放ProjectDto
+func ReleaseProjectDto(v *ProjectDto) {
+	v.CityName = ""
+	v.ShowTime = ""
+	v.CategoryName = ""
+	v.PerformStartTime = ""
+	v.VerticalPic = ""
+	v.Name = ""
+	v.Actors = ""
+	v.VenueCity = ""
+	v.VenueName = ""
+	v.PromotionPrice = ""
+	v.UpTime = ""
+	v.ArtistName = ""
+	v.SubCategoryName = ""
+	v.Tours = ""
+	v.BrandName = ""
+	v.SiteStatus = ""
+	v.SubHead = ""
+	v.IsETicket = ""
+	v.IsSelectSeat = ""
+	v.SubTitle = ""
+	v.PriceStr = ""
+	v.Latitude = ""
+	v.Longitude = ""
+	v.SellEndTime = 0
+	v.ExtraInfoMap = nil
+	v.VenueId = 0
+	poolProjectDto.Put(v)
 }

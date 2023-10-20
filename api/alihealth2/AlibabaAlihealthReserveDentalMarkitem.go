@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.reserve.dental.markitem
 //
 // 标记商品是否可预约
-func AlibabaAlihealthReserveDentalMarkitem(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthReserveDentalMarkitemAPIRequest, session string) (*alihealth2.AlibabaAlihealthReserveDentalMarkitemAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthReserveDentalMarkitemAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthReserveDentalMarkitem(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthReserveDentalMarkitemAPIRequest, resp *alihealth2.AlibabaAlihealthReserveDentalMarkitemAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

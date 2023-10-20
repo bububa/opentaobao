@@ -9,11 +9,6 @@ import (
 // wdk.warehouse.order.dispatch
 //
 // 牵牛花仓作业下发接口提供
-func WdkWarehouseOrderDispatch(clt *core.SDKClient, req *wdk.WdkWarehouseOrderDispatchAPIRequest, session string) (*wdk.WdkWarehouseOrderDispatchAPIResponse, error) {
-	var resp wdk.WdkWarehouseOrderDispatchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func WdkWarehouseOrderDispatch(clt *core.SDKClient, req *wdk.WdkWarehouseOrderDispatchAPIRequest, resp *wdk.WdkWarehouseOrderDispatchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

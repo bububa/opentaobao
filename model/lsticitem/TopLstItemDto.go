@@ -1,5 +1,9 @@
 package lsticitem
 
+import (
+	"sync"
+)
+
 // TopLstItemDto 结构体
 type TopLstItemDto struct {
 	// 条码列表
@@ -40,4 +44,39 @@ type TopLstItemDto struct {
 	ShortItemTitle string `json:"short_item_title,omitempty" xml:"short_item_title,omitempty"`
 	// 商品Id
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+}
+
+var poolTopLstItemDto = sync.Pool{
+	New: func() any {
+		return new(TopLstItemDto)
+	},
+}
+
+// GetTopLstItemDto() 从对象池中获取TopLstItemDto
+func GetTopLstItemDto() *TopLstItemDto {
+	return poolTopLstItemDto.Get().(*TopLstItemDto)
+}
+
+// ReleaseTopLstItemDto 释放TopLstItemDto
+func ReleaseTopLstItemDto(v *TopLstItemDto) {
+	v.BarCodeList = v.BarCodeList[:0]
+	v.ImgList = v.ImgList[:0]
+	v.AvailableStockList = v.AvailableStockList[:0]
+	v.ItemType = ""
+	v.BrandName = ""
+	v.DataType = ""
+	v.CspuId = ""
+	v.CargoNumber = ""
+	v.Unit = ""
+	v.ModifyTime = ""
+	v.OnSaleTime = ""
+	v.CreateTime = ""
+	v.ItemStatus = ""
+	v.SecondCategoryName = ""
+	v.FullItemTitle = ""
+	v.WarehouseType = ""
+	v.SecondCategoryId = ""
+	v.ShortItemTitle = ""
+	v.ItemId = 0
+	poolTopLstItemDto.Put(v)
 }

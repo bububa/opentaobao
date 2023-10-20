@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaHmMarketingFullrangeRemoveitemAPIResponse struct {
 	AlibabaHmMarketingFullrangeRemoveitemAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaHmMarketingFullrangeRemoveitemAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaHmMarketingFullrangeRemoveitemAPIResponseModel).Reset()
+}
+
 // AlibabaHmMarketingFullrangeRemoveitemAPIResponseModel is 全场活动删除购品 成功返回结果
 type AlibabaHmMarketingFullrangeRemoveitemAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_hm_marketing_fullrange_removeitem_response"`
@@ -22,4 +29,27 @@ type AlibabaHmMarketingFullrangeRemoveitemAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *MarketResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaHmMarketingFullrangeRemoveitemAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaHmMarketingFullrangeRemoveitemAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaHmMarketingFullrangeRemoveitemAPIResponse)
+	},
+}
+
+// GetAlibabaHmMarketingFullrangeRemoveitemAPIResponse 从 sync.Pool 获取 AlibabaHmMarketingFullrangeRemoveitemAPIResponse
+func GetAlibabaHmMarketingFullrangeRemoveitemAPIResponse() *AlibabaHmMarketingFullrangeRemoveitemAPIResponse {
+	return poolAlibabaHmMarketingFullrangeRemoveitemAPIResponse.Get().(*AlibabaHmMarketingFullrangeRemoveitemAPIResponse)
+}
+
+// ReleaseAlibabaHmMarketingFullrangeRemoveitemAPIResponse 将 AlibabaHmMarketingFullrangeRemoveitemAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaHmMarketingFullrangeRemoveitemAPIResponse(v *AlibabaHmMarketingFullrangeRemoveitemAPIResponse) {
+	v.Reset()
+	poolAlibabaHmMarketingFullrangeRemoveitemAPIResponse.Put(v)
 }

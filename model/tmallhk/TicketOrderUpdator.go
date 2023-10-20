@@ -1,5 +1,9 @@
 package tmallhk
 
+import (
+	"sync"
+)
+
 // TicketOrderUpdator 结构体
 type TicketOrderUpdator struct {
 	// 买手护照截图
@@ -26,4 +30,32 @@ type TicketOrderUpdator struct {
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 是否锁扣，1是0否
 	Locker int64 `json:"locker,omitempty" xml:"locker,omitempty"`
+}
+
+var poolTicketOrderUpdator = sync.Pool{
+	New: func() any {
+		return new(TicketOrderUpdator)
+	},
+}
+
+// GetTicketOrderUpdator() 从对象池中获取TicketOrderUpdator
+func GetTicketOrderUpdator() *TicketOrderUpdator {
+	return poolTicketOrderUpdator.Get().(*TicketOrderUpdator)
+}
+
+// ReleaseTicketOrderUpdator 释放TicketOrderUpdator
+func ReleaseTicketOrderUpdator(v *TicketOrderUpdator) {
+	v.AgentPassportsArrList = v.AgentPassportsArrList[:0]
+	v.LockerPicturesArrList = v.LockerPicturesArrList[:0]
+	v.PaymentRecordsArrList = v.PaymentRecordsArrList[:0]
+	v.PurchasedPlacePicturesArrList = v.PurchasedPlacePicturesArrList[:0]
+	v.TicketsArrList = v.TicketsArrList[:0]
+	v.BrandName = ""
+	v.AgentName = ""
+	v.AgentPassportExpDate = ""
+	v.AgentPayTime = ""
+	v.PurchasedPlace = ""
+	v.BizOrderId = 0
+	v.Locker = 0
+	poolTicketOrderUpdator.Put(v)
 }

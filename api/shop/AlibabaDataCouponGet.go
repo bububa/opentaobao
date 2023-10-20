@@ -9,11 +9,6 @@ import (
 // alibaba.data.coupon.get
 //
 // 获取优惠券信息，仅作客户端鉴权虚拟api使用
-func AlibabaDataCouponGet(clt *core.SDKClient, req *shop.AlibabaDataCouponGetAPIRequest, session string) (*shop.AlibabaDataCouponGetAPIResponse, error) {
-	var resp shop.AlibabaDataCouponGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDataCouponGet(clt *core.SDKClient, req *shop.AlibabaDataCouponGetAPIRequest, resp *shop.AlibabaDataCouponGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

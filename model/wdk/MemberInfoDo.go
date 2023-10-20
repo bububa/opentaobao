@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // MemberInfoDo 结构体
 type MemberInfoDo struct {
 	// 会员卡号
@@ -16,4 +20,27 @@ type MemberInfoDo struct {
 	CardLevel int64 `json:"card_level,omitempty" xml:"card_level,omitempty"`
 	// 如果卡长期有效，值为true，为true时，默认不校验endTime
 	Forever bool `json:"forever,omitempty" xml:"forever,omitempty"`
+}
+
+var poolMemberInfoDo = sync.Pool{
+	New: func() any {
+		return new(MemberInfoDo)
+	},
+}
+
+// GetMemberInfoDo() 从对象池中获取MemberInfoDo
+func GetMemberInfoDo() *MemberInfoDo {
+	return poolMemberInfoDo.Get().(*MemberInfoDo)
+}
+
+// ReleaseMemberInfoDo 释放MemberInfoDo
+func ReleaseMemberInfoDo(v *MemberInfoDo) {
+	v.CardNum = ""
+	v.State = ""
+	v.EndTime = ""
+	v.MemberAttributes = ""
+	v.CardType = ""
+	v.CardLevel = 0
+	v.Forever = false
+	poolMemberInfoDo.Put(v)
 }

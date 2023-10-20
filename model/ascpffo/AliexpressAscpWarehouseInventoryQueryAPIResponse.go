@@ -2,6 +2,7 @@ package ascpffo
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliexpressAscpWarehouseInventoryQueryAPIResponse struct {
 	AliexpressAscpWarehouseInventoryQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliexpressAscpWarehouseInventoryQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressAscpWarehouseInventoryQueryAPIResponseModel).Reset()
+}
+
 // AliexpressAscpWarehouseInventoryQueryAPIResponseModel is AliExpress在仓库存查询API 成功返回结果
 type AliexpressAscpWarehouseInventoryQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_ascp_warehouse_inventory_query_response"`
@@ -22,4 +29,27 @@ type AliexpressAscpWarehouseInventoryQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 分页查询结果
 	Result *PageQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressAscpWarehouseInventoryQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAliexpressAscpWarehouseInventoryQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressAscpWarehouseInventoryQueryAPIResponse)
+	},
+}
+
+// GetAliexpressAscpWarehouseInventoryQueryAPIResponse 从 sync.Pool 获取 AliexpressAscpWarehouseInventoryQueryAPIResponse
+func GetAliexpressAscpWarehouseInventoryQueryAPIResponse() *AliexpressAscpWarehouseInventoryQueryAPIResponse {
+	return poolAliexpressAscpWarehouseInventoryQueryAPIResponse.Get().(*AliexpressAscpWarehouseInventoryQueryAPIResponse)
+}
+
+// ReleaseAliexpressAscpWarehouseInventoryQueryAPIResponse 将 AliexpressAscpWarehouseInventoryQueryAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressAscpWarehouseInventoryQueryAPIResponse(v *AliexpressAscpWarehouseInventoryQueryAPIResponse) {
+	v.Reset()
+	poolAliexpressAscpWarehouseInventoryQueryAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package aeusergrowth
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AliexpressUsergrowthRecommendItemsGetAPIRequest struct {
 // NewAliexpressUsergrowthRecommendItemsGetRequest 初始化AliexpressUsergrowthRecommendItemsGetAPIRequest对象
 func NewAliexpressUsergrowthRecommendItemsGetRequest() *AliexpressUsergrowthRecommendItemsGetAPIRequest {
 	return &AliexpressUsergrowthRecommendItemsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressUsergrowthRecommendItemsGetAPIRequest) Reset() {
+	r._trackingId = ""
+	r._currencyCode = ""
+	r._language = ""
+	r._userTypeCode = ""
+	r._pageIndex = ""
+	r._pageSize = ""
+	r._countryCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AliexpressUsergrowthRecommendItemsGetAPIRequest) SetCountryCode(_countr
 // GetCountryCode CountryCode Getter
 func (r AliexpressUsergrowthRecommendItemsGetAPIRequest) GetCountryCode() string {
 	return r._countryCode
+}
+
+var poolAliexpressUsergrowthRecommendItemsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressUsergrowthRecommendItemsGetRequest()
+	},
+}
+
+// GetAliexpressUsergrowthRecommendItemsGetRequest 从 sync.Pool 获取 AliexpressUsergrowthRecommendItemsGetAPIRequest
+func GetAliexpressUsergrowthRecommendItemsGetAPIRequest() *AliexpressUsergrowthRecommendItemsGetAPIRequest {
+	return poolAliexpressUsergrowthRecommendItemsGetAPIRequest.Get().(*AliexpressUsergrowthRecommendItemsGetAPIRequest)
+}
+
+// ReleaseAliexpressUsergrowthRecommendItemsGetAPIRequest 将 AliexpressUsergrowthRecommendItemsGetAPIRequest 放入 sync.Pool
+func ReleaseAliexpressUsergrowthRecommendItemsGetAPIRequest(v *AliexpressUsergrowthRecommendItemsGetAPIRequest) {
+	v.Reset()
+	poolAliexpressUsergrowthRecommendItemsGetAPIRequest.Put(v)
 }

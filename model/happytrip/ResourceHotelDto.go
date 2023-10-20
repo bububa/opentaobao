@@ -1,5 +1,9 @@
 package happytrip
 
+import (
+	"sync"
+)
+
 // ResourceHotelDto 结构体
 type ResourceHotelDto struct {
 	// 入住时间
@@ -56,4 +60,47 @@ type ResourceHotelDto struct {
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 资源表主键
 	ResourceMainId int64 `json:"resource_main_id,omitempty" xml:"resource_main_id,omitempty"`
+}
+
+var poolResourceHotelDto = sync.Pool{
+	New: func() any {
+		return new(ResourceHotelDto)
+	},
+}
+
+// GetResourceHotelDto() 从对象池中获取ResourceHotelDto
+func GetResourceHotelDto() *ResourceHotelDto {
+	return poolResourceHotelDto.Get().(*ResourceHotelDto)
+}
+
+// ReleaseResourceHotelDto 释放ResourceHotelDto
+func ReleaseResourceHotelDto(v *ResourceHotelDto) {
+	v.CheckIn = ""
+	v.CheckOut = ""
+	v.CityChineseName = ""
+	v.CityCode = ""
+	v.CityName = ""
+	v.Country = ""
+	v.District = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.HotelAddress = ""
+	v.HotelChineseName = ""
+	v.HotelEnglishName = ""
+	v.HotelName = ""
+	v.HotelTel = ""
+	v.Latitude = ""
+	v.Longitude = ""
+	v.OutHotelId = ""
+	v.Province = ""
+	v.ResourceId = ""
+	v.RoomCount = ""
+	v.RoomTypeId = ""
+	v.RoomTypeName = ""
+	v.HotelId = 0
+	v.Id = 0
+	v.Nights = 0
+	v.OrderId = 0
+	v.ResourceMainId = 0
+	poolResourceHotelDto.Put(v)
 }

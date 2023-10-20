@@ -1,5 +1,9 @@
 package hotelhstdf
 
+import (
+	"sync"
+)
+
 // TopResultSet 结构体
 type TopResultSet struct {
 	// 结果集合
@@ -20,4 +24,29 @@ type TopResultSet struct {
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTopResultSet = sync.Pool{
+	New: func() any {
+		return new(TopResultSet)
+	},
+}
+
+// GetTopResultSet() 从对象池中获取TopResultSet
+func GetTopResultSet() *TopResultSet {
+	return poolTopResultSet.Get().(*TopResultSet)
+}
+
+// ReleaseTopResultSet 释放TopResultSet
+func ReleaseTopResultSet(v *TopResultSet) {
+	v.ModuleList = v.ModuleList[:0]
+	v.Results = v.Results[:0]
+	v.ResultCode = ""
+	v.ResultMsg = ""
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.TotalResults = 0
+	v.HasNext = false
+	v.Success = false
+	poolTopResultSet.Put(v)
 }

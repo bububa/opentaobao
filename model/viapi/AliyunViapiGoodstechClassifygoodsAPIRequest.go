@@ -2,6 +2,7 @@ package viapi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliyunViapiGoodstechClassifygoodsAPIRequest struct {
 // NewAliyunViapiGoodstechClassifygoodsRequest 初始化AliyunViapiGoodstechClassifygoodsAPIRequest对象
 func NewAliyunViapiGoodstechClassifygoodsRequest() *AliyunViapiGoodstechClassifygoodsAPIRequest {
 	return &AliyunViapiGoodstechClassifygoodsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunViapiGoodstechClassifygoodsAPIRequest) Reset() {
+	r._imageUrl = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliyunViapiGoodstechClassifygoodsAPIRequest) SetImageUrl(_imageUrl stri
 // GetImageUrl ImageUrl Getter
 func (r AliyunViapiGoodstechClassifygoodsAPIRequest) GetImageUrl() string {
 	return r._imageUrl
+}
+
+var poolAliyunViapiGoodstechClassifygoodsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunViapiGoodstechClassifygoodsRequest()
+	},
+}
+
+// GetAliyunViapiGoodstechClassifygoodsRequest 从 sync.Pool 获取 AliyunViapiGoodstechClassifygoodsAPIRequest
+func GetAliyunViapiGoodstechClassifygoodsAPIRequest() *AliyunViapiGoodstechClassifygoodsAPIRequest {
+	return poolAliyunViapiGoodstechClassifygoodsAPIRequest.Get().(*AliyunViapiGoodstechClassifygoodsAPIRequest)
+}
+
+// ReleaseAliyunViapiGoodstechClassifygoodsAPIRequest 将 AliyunViapiGoodstechClassifygoodsAPIRequest 放入 sync.Pool
+func ReleaseAliyunViapiGoodstechClassifygoodsAPIRequest(v *AliyunViapiGoodstechClassifygoodsAPIRequest) {
+	v.Reset()
+	poolAliyunViapiGoodstechClassifygoodsAPIRequest.Put(v)
 }

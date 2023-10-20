@@ -2,6 +2,7 @@ package iot
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAilabAicloudTopLikeListAPIResponse struct {
 	TaobaoAilabAicloudTopLikeListAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopLikeListAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAilabAicloudTopLikeListAPIResponseModel).Reset()
+}
+
 // TaobaoAilabAicloudTopLikeListAPIResponseModel is 列出收藏列表 成功返回结果
 type TaobaoAilabAicloudTopLikeListAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_like_list_response"`
@@ -22,4 +29,27 @@ type TaobaoAilabAicloudTopLikeListAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *AiCloudResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopLikeListAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoAilabAicloudTopLikeListAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAilabAicloudTopLikeListAPIResponse)
+	},
+}
+
+// GetTaobaoAilabAicloudTopLikeListAPIResponse 从 sync.Pool 获取 TaobaoAilabAicloudTopLikeListAPIResponse
+func GetTaobaoAilabAicloudTopLikeListAPIResponse() *TaobaoAilabAicloudTopLikeListAPIResponse {
+	return poolTaobaoAilabAicloudTopLikeListAPIResponse.Get().(*TaobaoAilabAicloudTopLikeListAPIResponse)
+}
+
+// ReleaseTaobaoAilabAicloudTopLikeListAPIResponse 将 TaobaoAilabAicloudTopLikeListAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAilabAicloudTopLikeListAPIResponse(v *TaobaoAilabAicloudTopLikeListAPIResponse) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopLikeListAPIResponse.Put(v)
 }

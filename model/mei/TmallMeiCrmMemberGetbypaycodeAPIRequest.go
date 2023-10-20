@@ -2,6 +2,7 @@ package mei
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallMeiCrmMemberGetbypaycodeAPIRequest struct {
 // NewTmallMeiCrmMemberGetbypaycodeRequest 初始化TmallMeiCrmMemberGetbypaycodeAPIRequest对象
 func NewTmallMeiCrmMemberGetbypaycodeRequest() *TmallMeiCrmMemberGetbypaycodeAPIRequest {
 	return &TmallMeiCrmMemberGetbypaycodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallMeiCrmMemberGetbypaycodeAPIRequest) Reset() {
+	r._payCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallMeiCrmMemberGetbypaycodeAPIRequest) SetPayCode(_payCode string) er
 // GetPayCode PayCode Getter
 func (r TmallMeiCrmMemberGetbypaycodeAPIRequest) GetPayCode() string {
 	return r._payCode
+}
+
+var poolTmallMeiCrmMemberGetbypaycodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallMeiCrmMemberGetbypaycodeRequest()
+	},
+}
+
+// GetTmallMeiCrmMemberGetbypaycodeRequest 从 sync.Pool 获取 TmallMeiCrmMemberGetbypaycodeAPIRequest
+func GetTmallMeiCrmMemberGetbypaycodeAPIRequest() *TmallMeiCrmMemberGetbypaycodeAPIRequest {
+	return poolTmallMeiCrmMemberGetbypaycodeAPIRequest.Get().(*TmallMeiCrmMemberGetbypaycodeAPIRequest)
+}
+
+// ReleaseTmallMeiCrmMemberGetbypaycodeAPIRequest 将 TmallMeiCrmMemberGetbypaycodeAPIRequest 放入 sync.Pool
+func ReleaseTmallMeiCrmMemberGetbypaycodeAPIRequest(v *TmallMeiCrmMemberGetbypaycodeAPIRequest) {
+	v.Reset()
+	poolTmallMeiCrmMemberGetbypaycodeAPIRequest.Put(v)
 }

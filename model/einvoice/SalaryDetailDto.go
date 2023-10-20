@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // SalaryDetailDto 结构体
 type SalaryDetailDto struct {
 	// 账期
@@ -26,4 +30,32 @@ type SalaryDetailDto struct {
 	ApplyAmount int64 `json:"apply_amount,omitempty" xml:"apply_amount,omitempty"`
 	// 已发金额
 	SalaryAmount int64 `json:"salary_amount,omitempty" xml:"salary_amount,omitempty"`
+}
+
+var poolSalaryDetailDto = sync.Pool{
+	New: func() any {
+		return new(SalaryDetailDto)
+	},
+}
+
+// GetSalaryDetailDto() 从对象池中获取SalaryDetailDto
+func GetSalaryDetailDto() *SalaryDetailDto {
+	return poolSalaryDetailDto.Get().(*SalaryDetailDto)
+}
+
+// ReleaseSalaryDetailDto 释放SalaryDetailDto
+func ReleaseSalaryDetailDto(v *SalaryDetailDto) {
+	v.AccountDate = ""
+	v.AssetSymbol = ""
+	v.AssetType = ""
+	v.CreateTime = ""
+	v.DetailId = ""
+	v.EmployerCode = ""
+	v.ErrorCode = ""
+	v.IdentificationInBelongingEmployer = ""
+	v.ProcessTime = ""
+	v.Status = ""
+	v.ApplyAmount = 0
+	v.SalaryAmount = 0
+	poolSalaryDetailDto.Put(v)
 }

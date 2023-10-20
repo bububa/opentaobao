@@ -2,6 +2,7 @@ package store
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoPlaceStoreQueryAPIResponse struct {
 	TaobaoPlaceStoreQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoPlaceStoreQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPlaceStoreQueryAPIResponseModel).Reset()
+}
+
 // TaobaoPlaceStoreQueryAPIResponseModel is 门店信息查询接口 成功返回结果
 type TaobaoPlaceStoreQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"place_store_query_response"`
@@ -22,4 +29,27 @@ type TaobaoPlaceStoreQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// Top返回对象
 	Result *TopResultDo `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPlaceStoreQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoPlaceStoreQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPlaceStoreQueryAPIResponse)
+	},
+}
+
+// GetTaobaoPlaceStoreQueryAPIResponse 从 sync.Pool 获取 TaobaoPlaceStoreQueryAPIResponse
+func GetTaobaoPlaceStoreQueryAPIResponse() *TaobaoPlaceStoreQueryAPIResponse {
+	return poolTaobaoPlaceStoreQueryAPIResponse.Get().(*TaobaoPlaceStoreQueryAPIResponse)
+}
+
+// ReleaseTaobaoPlaceStoreQueryAPIResponse 将 TaobaoPlaceStoreQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPlaceStoreQueryAPIResponse(v *TaobaoPlaceStoreQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoPlaceStoreQueryAPIResponse.Put(v)
 }

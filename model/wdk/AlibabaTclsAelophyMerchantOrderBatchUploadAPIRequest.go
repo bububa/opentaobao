@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest struct {
 // NewAlibabaTclsAelophyMerchantOrderBatchUploadRequest 初始化AlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest对象
 func NewAlibabaTclsAelophyMerchantOrderBatchUploadRequest() *AlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest {
 	return &AlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest) Reset() {
+	r._orderInfoList = r._orderInfoList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest) SetOrderInfoList(
 // GetOrderInfoList OrderInfoList Getter
 func (r AlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest) GetOrderInfoList() []MerchantOrderInfo {
 	return r._orderInfoList
+}
+
+var poolAlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsAelophyMerchantOrderBatchUploadRequest()
+	},
+}
+
+// GetAlibabaTclsAelophyMerchantOrderBatchUploadRequest 从 sync.Pool 获取 AlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest
+func GetAlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest() *AlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest {
+	return poolAlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest.Get().(*AlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest)
+}
+
+// ReleaseAlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest 将 AlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest(v *AlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsAelophyMerchantOrderBatchUploadAPIRequest.Put(v)
 }

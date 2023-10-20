@@ -9,11 +9,6 @@ import (
 // alibaba.lst.speaker.configure.adjustvolume
 //
 // 音箱音量调节
-func AlibabaLstSpeakerConfigureAdjustvolume(clt *core.SDKClient, req *lstspeacker.AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest, session string) (*lstspeacker.AlibabaLstSpeakerConfigureAdjustvolumeAPIResponse, error) {
-	var resp lstspeacker.AlibabaLstSpeakerConfigureAdjustvolumeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLstSpeakerConfigureAdjustvolume(clt *core.SDKClient, req *lstspeacker.AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest, resp *lstspeacker.AlibabaLstSpeakerConfigureAdjustvolumeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

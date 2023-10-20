@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrResult 结构体
 type NrResult struct {
 	// 系统自动生成
@@ -18,4 +22,28 @@ type NrResult struct {
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 是否成功
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
+}
+
+var poolNrResult = sync.Pool{
+	New: func() any {
+		return new(NrResult)
+	},
+}
+
+// GetNrResult() 从对象池中获取NrResult
+func GetNrResult() *NrResult {
+	return poolNrResult.Get().(*NrResult)
+}
+
+// ReleaseNrResult 释放NrResult
+func ReleaseNrResult(v *NrResult) {
+	v.ResultDatas = v.ResultDatas[:0]
+	v.ErrorMessage = ""
+	v.ErrorCode2 = ""
+	v.ErrorCode = ""
+	v.ResultData = false
+	v.Success = false
+	v.IsSuccess = false
+	v.Succ = false
+	poolNrResult.Put(v)
 }

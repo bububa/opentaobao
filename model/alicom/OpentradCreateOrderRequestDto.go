@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // OpentradCreateOrderRequestDto 结构体
 type OpentradCreateOrderRequestDto struct {
 	// 交易请求流水号
@@ -28,4 +32,33 @@ type OpentradCreateOrderRequestDto struct {
 	AlipayId int64 `json:"alipay_id,omitempty" xml:"alipay_id,omitempty"`
 	// 礼包ID
 	GiftId int64 `json:"gift_id,omitempty" xml:"gift_id,omitempty"`
+}
+
+var poolOpentradCreateOrderRequestDto = sync.Pool{
+	New: func() any {
+		return new(OpentradCreateOrderRequestDto)
+	},
+}
+
+// GetOpentradCreateOrderRequestDto() 从对象池中获取OpentradCreateOrderRequestDto
+func GetOpentradCreateOrderRequestDto() *OpentradCreateOrderRequestDto {
+	return poolOpentradCreateOrderRequestDto.Get().(*OpentradCreateOrderRequestDto)
+}
+
+// ReleaseOpentradCreateOrderRequestDto 释放OpentradCreateOrderRequestDto
+func ReleaseOpentradCreateOrderRequestDto(v *OpentradCreateOrderRequestDto) {
+	v.TransferId = ""
+	v.Phone = ""
+	v.Price = ""
+	v.Source = ""
+	v.SellerNick = ""
+	v.TaobaoNick = ""
+	v.TaobaoToken = ""
+	v.ProductName = ""
+	v.Ext = ""
+	v.ProductId = ""
+	v.ActivityId = 0
+	v.AlipayId = 0
+	v.GiftId = 0
+	poolOpentradCreateOrderRequestDto.Put(v)
 }

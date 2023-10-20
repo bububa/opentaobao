@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // CommentCreateInfo 结构体
 type CommentCreateInfo struct {
 	// 商家评价Id
@@ -34,4 +38,36 @@ type CommentCreateInfo struct {
 	ReviewReason string `json:"review_reason,omitempty" xml:"review_reason,omitempty"`
 	// 商品金额
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
+}
+
+var poolCommentCreateInfo = sync.Pool{
+	New: func() any {
+		return new(CommentCreateInfo)
+	},
+}
+
+// GetCommentCreateInfo() 从对象池中获取CommentCreateInfo
+func GetCommentCreateInfo() *CommentCreateInfo {
+	return poolCommentCreateInfo.Get().(*CommentCreateInfo)
+}
+
+// ReleaseCommentCreateInfo 释放CommentCreateInfo
+func ReleaseCommentCreateInfo(v *CommentCreateInfo) {
+	v.OutCommentId = ""
+	v.StoreName = ""
+	v.StoreId = ""
+	v.BizOrderId = ""
+	v.SubBizOrderId = ""
+	v.Category = ""
+	v.SkuName = ""
+	v.SkuCode = ""
+	v.CommentDate = ""
+	v.CommentStar = ""
+	v.CommentContent = ""
+	v.CommentPics = ""
+	v.CommentTag = ""
+	v.CommentReason = ""
+	v.ReviewReason = ""
+	v.Price = 0
+	poolCommentCreateInfo.Put(v)
 }

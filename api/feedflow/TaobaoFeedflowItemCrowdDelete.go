@@ -9,11 +9,6 @@ import (
 // taobao.feedflow.item.crowd.delete
 //
 // 删除单品人群
-func TaobaoFeedflowItemCrowdDelete(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCrowdDeleteAPIRequest, session string) (*feedflow.TaobaoFeedflowItemCrowdDeleteAPIResponse, error) {
-	var resp feedflow.TaobaoFeedflowItemCrowdDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFeedflowItemCrowdDelete(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCrowdDeleteAPIRequest, resp *feedflow.TaobaoFeedflowItemCrowdDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

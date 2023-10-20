@@ -2,6 +2,7 @@ package wlbimports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -36,8 +37,21 @@ type TaobaoWlbImportsGeneralConsignAPIRequest struct {
 // NewTaobaoWlbImportsGeneralConsignRequest 初始化TaobaoWlbImportsGeneralConsignAPIRequest对象
 func NewTaobaoWlbImportsGeneralConsignRequest() *TaobaoWlbImportsGeneralConsignAPIRequest {
 	return &TaobaoWlbImportsGeneralConsignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbImportsGeneralConsignAPIRequest) Reset() {
+	r._storeCode = ""
+	r._firstLogistics = ""
+	r._firstWaybillno = ""
+	r._vasCode = ""
+	r._tradeOrderId = 0
+	r._resourceId = 0
+	r._senderId = 0
+	r._cancelId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -159,4 +173,21 @@ func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetCancelId(_cancelId int64) 
 // GetCancelId CancelId Getter
 func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetCancelId() int64 {
 	return r._cancelId
+}
+
+var poolTaobaoWlbImportsGeneralConsignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbImportsGeneralConsignRequest()
+	},
+}
+
+// GetTaobaoWlbImportsGeneralConsignRequest 从 sync.Pool 获取 TaobaoWlbImportsGeneralConsignAPIRequest
+func GetTaobaoWlbImportsGeneralConsignAPIRequest() *TaobaoWlbImportsGeneralConsignAPIRequest {
+	return poolTaobaoWlbImportsGeneralConsignAPIRequest.Get().(*TaobaoWlbImportsGeneralConsignAPIRequest)
+}
+
+// ReleaseTaobaoWlbImportsGeneralConsignAPIRequest 将 TaobaoWlbImportsGeneralConsignAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbImportsGeneralConsignAPIRequest(v *TaobaoWlbImportsGeneralConsignAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbImportsGeneralConsignAPIRequest.Put(v)
 }

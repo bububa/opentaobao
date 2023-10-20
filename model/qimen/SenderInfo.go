@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // SenderInfo 结构体
 type SenderInfo struct {
 	// 公司名称
@@ -30,4 +34,34 @@ type SenderInfo struct {
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 证件号
 	Id string `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolSenderInfo = sync.Pool{
+	New: func() any {
+		return new(SenderInfo)
+	},
+}
+
+// GetSenderInfo() 从对象池中获取SenderInfo
+func GetSenderInfo() *SenderInfo {
+	return poolSenderInfo.Get().(*SenderInfo)
+}
+
+// ReleaseSenderInfo 释放SenderInfo
+func ReleaseSenderInfo(v *SenderInfo) {
+	v.Company = ""
+	v.Name = ""
+	v.ZipCode = ""
+	v.Tel = ""
+	v.Mobile = ""
+	v.Email = ""
+	v.CountryCode = ""
+	v.Province = ""
+	v.City = ""
+	v.Area = ""
+	v.Town = ""
+	v.DetailAddress = ""
+	v.Remark = ""
+	v.Id = ""
+	poolSenderInfo.Put(v)
 }

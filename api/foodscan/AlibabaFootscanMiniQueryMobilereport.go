@@ -9,11 +9,6 @@ import (
 // alibaba.footscan.mini.query.mobilereport
 //
 // 根据scanId查询报告
-func AlibabaFootscanMiniQueryMobilereport(clt *core.SDKClient, req *foodscan.AlibabaFootscanMiniQueryMobilereportAPIRequest, session string) (*foodscan.AlibabaFootscanMiniQueryMobilereportAPIResponse, error) {
-	var resp foodscan.AlibabaFootscanMiniQueryMobilereportAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaFootscanMiniQueryMobilereport(clt *core.SDKClient, req *foodscan.AlibabaFootscanMiniQueryMobilereportAPIRequest, resp *foodscan.AlibabaFootscanMiniQueryMobilereportAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

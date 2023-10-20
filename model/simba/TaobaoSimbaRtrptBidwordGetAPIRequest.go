@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoSimbaRtrptBidwordGetAPIRequest struct {
 // NewTaobaoSimbaRtrptBidwordGetRequest 初始化TaobaoSimbaRtrptBidwordGetAPIRequest对象
 func NewTaobaoSimbaRtrptBidwordGetRequest() *TaobaoSimbaRtrptBidwordGetAPIRequest {
 	return &TaobaoSimbaRtrptBidwordGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaRtrptBidwordGetAPIRequest) Reset() {
+	r._nick = ""
+	r._theDate = ""
+	r._campaignId = 0
+	r._adgroupId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoSimbaRtrptBidwordGetAPIRequest) SetAdgroupId(_adgroupId int64) er
 // GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaRtrptBidwordGetAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
+}
+
+var poolTaobaoSimbaRtrptBidwordGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaRtrptBidwordGetRequest()
+	},
+}
+
+// GetTaobaoSimbaRtrptBidwordGetRequest 从 sync.Pool 获取 TaobaoSimbaRtrptBidwordGetAPIRequest
+func GetTaobaoSimbaRtrptBidwordGetAPIRequest() *TaobaoSimbaRtrptBidwordGetAPIRequest {
+	return poolTaobaoSimbaRtrptBidwordGetAPIRequest.Get().(*TaobaoSimbaRtrptBidwordGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaRtrptBidwordGetAPIRequest 将 TaobaoSimbaRtrptBidwordGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaRtrptBidwordGetAPIRequest(v *TaobaoSimbaRtrptBidwordGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaRtrptBidwordGetAPIRequest.Put(v)
 }

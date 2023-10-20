@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripFlightDistributionOrderNewcreateAPIRequest struct {
 // NewAlitripBtripFlightDistributionOrderNewcreateRequest 初始化AlitripBtripFlightDistributionOrderNewcreateAPIRequest对象
 func NewAlitripBtripFlightDistributionOrderNewcreateRequest() *AlitripBtripFlightDistributionOrderNewcreateAPIRequest {
 	return &AlitripBtripFlightDistributionOrderNewcreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripFlightDistributionOrderNewcreateAPIRequest) Reset() {
+	r._paramBtripFlightCreateOrderRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripFlightDistributionOrderNewcreateAPIRequest) SetParamBtripFl
 // GetParamBtripFlightCreateOrderRq ParamBtripFlightCreateOrderRq Getter
 func (r AlitripBtripFlightDistributionOrderNewcreateAPIRequest) GetParamBtripFlightCreateOrderRq() *BtripFlightCreateOrderRq {
 	return r._paramBtripFlightCreateOrderRq
+}
+
+var poolAlitripBtripFlightDistributionOrderNewcreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripFlightDistributionOrderNewcreateRequest()
+	},
+}
+
+// GetAlitripBtripFlightDistributionOrderNewcreateRequest 从 sync.Pool 获取 AlitripBtripFlightDistributionOrderNewcreateAPIRequest
+func GetAlitripBtripFlightDistributionOrderNewcreateAPIRequest() *AlitripBtripFlightDistributionOrderNewcreateAPIRequest {
+	return poolAlitripBtripFlightDistributionOrderNewcreateAPIRequest.Get().(*AlitripBtripFlightDistributionOrderNewcreateAPIRequest)
+}
+
+// ReleaseAlitripBtripFlightDistributionOrderNewcreateAPIRequest 将 AlitripBtripFlightDistributionOrderNewcreateAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripFlightDistributionOrderNewcreateAPIRequest(v *AlitripBtripFlightDistributionOrderNewcreateAPIRequest) {
+	v.Reset()
+	poolAlitripBtripFlightDistributionOrderNewcreateAPIRequest.Put(v)
 }

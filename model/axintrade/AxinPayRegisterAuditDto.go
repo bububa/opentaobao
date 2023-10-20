@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // AxinPayRegisterAuditDto 结构体
 type AxinPayRegisterAuditDto struct {
 	// 商户code
@@ -18,4 +22,28 @@ type AxinPayRegisterAuditDto struct {
 	PayMerchantCode string `json:"pay_merchant_code,omitempty" xml:"pay_merchant_code,omitempty"`
 	// 审核结果
 	AuditResult bool `json:"audit_result,omitempty" xml:"audit_result,omitempty"`
+}
+
+var poolAxinPayRegisterAuditDto = sync.Pool{
+	New: func() any {
+		return new(AxinPayRegisterAuditDto)
+	},
+}
+
+// GetAxinPayRegisterAuditDto() 从对象池中获取AxinPayRegisterAuditDto
+func GetAxinPayRegisterAuditDto() *AxinPayRegisterAuditDto {
+	return poolAxinPayRegisterAuditDto.Get().(*AxinPayRegisterAuditDto)
+}
+
+// ReleaseAxinPayRegisterAuditDto 释放AxinPayRegisterAuditDto
+func ReleaseAxinPayRegisterAuditDto(v *AxinPayRegisterAuditDto) {
+	v.ExternalId = ""
+	v.Memo = ""
+	v.PayPlatformApplyOrder = ""
+	v.PayRegisterOrderNo = ""
+	v.RejectReasonCode = ""
+	v.RejectReasonDesc = ""
+	v.PayMerchantCode = ""
+	v.AuditResult = false
+	poolAxinPayRegisterAuditDto.Put(v)
 }

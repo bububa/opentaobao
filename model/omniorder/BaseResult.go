@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // BaseResult 结构体
 type BaseResult struct {
 	// 返回的数据实体
@@ -16,4 +20,27 @@ type BaseResult struct {
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 是否执行成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolBaseResult = sync.Pool{
+	New: func() any {
+		return new(BaseResult)
+	},
+}
+
+// GetBaseResult() 从对象池中获取BaseResult
+func GetBaseResult() *BaseResult {
+	return poolBaseResult.Get().(*BaseResult)
+}
+
+// ReleaseBaseResult 释放BaseResult
+func ReleaseBaseResult(v *BaseResult) {
+	v.CommissionResultList = v.CommissionResultList[:0]
+	v.Message = ""
+	v.Code = ""
+	v.Total = 0
+	v.PageSize = 0
+	v.PageNo = 0
+	v.Success = false
+	poolBaseResult.Put(v)
 }

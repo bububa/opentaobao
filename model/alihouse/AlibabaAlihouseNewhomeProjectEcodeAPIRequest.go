@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihouseNewhomeProjectEcodeAPIRequest struct {
 // NewAlibabaAlihouseNewhomeProjectEcodeRequest 初始化AlibabaAlihouseNewhomeProjectEcodeAPIRequest对象
 func NewAlibabaAlihouseNewhomeProjectEcodeRequest() *AlibabaAlihouseNewhomeProjectEcodeAPIRequest {
 	return &AlibabaAlihouseNewhomeProjectEcodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeProjectEcodeAPIRequest) Reset() {
+	r._outerId = ""
+	r._eCode = ""
+	r._outerStoreId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihouseNewhomeProjectEcodeAPIRequest) SetOuterStoreId(_outerSto
 // GetOuterStoreId OuterStoreId Getter
 func (r AlibabaAlihouseNewhomeProjectEcodeAPIRequest) GetOuterStoreId() string {
 	return r._outerStoreId
+}
+
+var poolAlibabaAlihouseNewhomeProjectEcodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeProjectEcodeRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeProjectEcodeRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeProjectEcodeAPIRequest
+func GetAlibabaAlihouseNewhomeProjectEcodeAPIRequest() *AlibabaAlihouseNewhomeProjectEcodeAPIRequest {
+	return poolAlibabaAlihouseNewhomeProjectEcodeAPIRequest.Get().(*AlibabaAlihouseNewhomeProjectEcodeAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeProjectEcodeAPIRequest 将 AlibabaAlihouseNewhomeProjectEcodeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeProjectEcodeAPIRequest(v *AlibabaAlihouseNewhomeProjectEcodeAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeProjectEcodeAPIRequest.Put(v)
 }

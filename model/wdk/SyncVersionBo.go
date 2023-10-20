@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SyncVersionBo 结构体
 type SyncVersionBo struct {
 	// 外部唯一ID
@@ -18,4 +22,28 @@ type SyncVersionBo struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 版本号
 	VersionId int64 `json:"version_id,omitempty" xml:"version_id,omitempty"`
+}
+
+var poolSyncVersionBo = sync.Pool{
+	New: func() any {
+		return new(SyncVersionBo)
+	},
+}
+
+// GetSyncVersionBo() 从对象池中获取SyncVersionBo
+func GetSyncVersionBo() *SyncVersionBo {
+	return poolSyncVersionBo.Get().(*SyncVersionBo)
+}
+
+// ReleaseSyncVersionBo 释放SyncVersionBo
+func ReleaseSyncVersionBo(v *SyncVersionBo) {
+	v.OutUniqueId = ""
+	v.TableName = ""
+	v.OperateId = ""
+	v.BizCode = ""
+	v.RangeEndTime = 0
+	v.RangeStartTime = 0
+	v.TotalCount = 0
+	v.VersionId = 0
+	poolSyncVersionBo.Put(v)
 }

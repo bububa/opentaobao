@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // SkuInfoDto 结构体
 type SkuInfoDto struct {
 	// sku attribute list. Some categories don&#39;t have sku attributes, then sku_attributes_list should be empty.When there are more than one sku in the sku_info_list, sku_attributes_list is required for each of them, please do not let them empty
@@ -18,4 +22,28 @@ type SkuInfoDto struct {
 	BarCode string `json:"bar_code,omitempty" xml:"bar_code,omitempty"`
 	// stock. Maximum:999999, minumum:1
 	Inventory int64 `json:"inventory,omitempty" xml:"inventory,omitempty"`
+}
+
+var poolSkuInfoDto = sync.Pool{
+	New: func() any {
+		return new(SkuInfoDto)
+	},
+}
+
+// GetSkuInfoDto() 从对象池中获取SkuInfoDto
+func GetSkuInfoDto() *SkuInfoDto {
+	return poolSkuInfoDto.Get().(*SkuInfoDto)
+}
+
+// ReleaseSkuInfoDto 释放SkuInfoDto
+func ReleaseSkuInfoDto(v *SkuInfoDto) {
+	v.SkuAttributesList = v.SkuAttributesList[:0]
+	v.ExtraParams = ""
+	v.EanCode = ""
+	v.Price = ""
+	v.SkuCode = ""
+	v.DiscountPrice = ""
+	v.BarCode = ""
+	v.Inventory = 0
+	poolSkuInfoDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.miniapp.cloud.mongo.update
 //
 // 更新MongoDB中的数据
-func TaobaoMiniappCloudMongoUpdate(clt *core.SDKClient, req *miniappcloud.TaobaoMiniappCloudMongoUpdateAPIRequest, session string) (*miniappcloud.TaobaoMiniappCloudMongoUpdateAPIResponse, error) {
-	var resp miniappcloud.TaobaoMiniappCloudMongoUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoMiniappCloudMongoUpdate(clt *core.SDKClient, req *miniappcloud.TaobaoMiniappCloudMongoUpdateAPIRequest, resp *miniappcloud.TaobaoMiniappCloudMongoUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

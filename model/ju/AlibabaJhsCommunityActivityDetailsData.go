@@ -1,5 +1,9 @@
 package ju
 
+import (
+	"sync"
+)
+
 // AlibabaJhsCommunityActivityDetailsData 结构体
 type AlibabaJhsCommunityActivityDetailsData struct {
 	// 开幕时间
@@ -24,4 +28,31 @@ type AlibabaJhsCommunityActivityDetailsData struct {
 	ActivityStatus string `json:"activity_status,omitempty" xml:"activity_status,omitempty"`
 	// 活动类型
 	ActivityType int64 `json:"activity_type,omitempty" xml:"activity_type,omitempty"`
+}
+
+var poolAlibabaJhsCommunityActivityDetailsData = sync.Pool{
+	New: func() any {
+		return new(AlibabaJhsCommunityActivityDetailsData)
+	},
+}
+
+// GetAlibabaJhsCommunityActivityDetailsData() 从对象池中获取AlibabaJhsCommunityActivityDetailsData
+func GetAlibabaJhsCommunityActivityDetailsData() *AlibabaJhsCommunityActivityDetailsData {
+	return poolAlibabaJhsCommunityActivityDetailsData.Get().(*AlibabaJhsCommunityActivityDetailsData)
+}
+
+// ReleaseAlibabaJhsCommunityActivityDetailsData 释放AlibabaJhsCommunityActivityDetailsData
+func ReleaseAlibabaJhsCommunityActivityDetailsData(v *AlibabaJhsCommunityActivityDetailsData) {
+	v.OpeningTime = ""
+	v.TaoToken = ""
+	v.Reservation = ""
+	v.Id = ""
+	v.ActivityTitle = ""
+	v.ActivityContent = ""
+	v.ActivityBackUrl = ""
+	v.SpreadTitle = ""
+	v.SpreadPicUrl = ""
+	v.ActivityStatus = ""
+	v.ActivityType = 0
+	poolAlibabaJhsCommunityActivityDetailsData.Put(v)
 }

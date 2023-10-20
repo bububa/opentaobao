@@ -2,6 +2,7 @@ package category
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,15 @@ type AlibabaImapCategoryPredictAPIRequest struct {
 // NewAlibabaImapCategoryPredictRequest 初始化AlibabaImapCategoryPredictAPIRequest对象
 func NewAlibabaImapCategoryPredictRequest() *AlibabaImapCategoryPredictAPIRequest {
 	return &AlibabaImapCategoryPredictAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaImapCategoryPredictAPIRequest) Reset() {
+	r._fixedMappingAppInfo = nil
+	r._topImapItemDo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -68,4 +76,21 @@ func (r *AlibabaImapCategoryPredictAPIRequest) SetTopImapItemDo(_topImapItemDo *
 // GetTopImapItemDo TopImapItemDo Getter
 func (r AlibabaImapCategoryPredictAPIRequest) GetTopImapItemDo() *TopImapItemDo {
 	return r._topImapItemDo
+}
+
+var poolAlibabaImapCategoryPredictAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaImapCategoryPredictRequest()
+	},
+}
+
+// GetAlibabaImapCategoryPredictRequest 从 sync.Pool 获取 AlibabaImapCategoryPredictAPIRequest
+func GetAlibabaImapCategoryPredictAPIRequest() *AlibabaImapCategoryPredictAPIRequest {
+	return poolAlibabaImapCategoryPredictAPIRequest.Get().(*AlibabaImapCategoryPredictAPIRequest)
+}
+
+// ReleaseAlibabaImapCategoryPredictAPIRequest 将 AlibabaImapCategoryPredictAPIRequest 放入 sync.Pool
+func ReleaseAlibabaImapCategoryPredictAPIRequest(v *AlibabaImapCategoryPredictAPIRequest) {
+	v.Reset()
+	poolAlibabaImapCategoryPredictAPIRequest.Put(v)
 }

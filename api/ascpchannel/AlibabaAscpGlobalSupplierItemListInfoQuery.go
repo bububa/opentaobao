@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.global.supplier.item.list.info.query
 //
 // 供应商供品信息查询
-func AlibabaAscpGlobalSupplierItemListInfoQuery(clt *core.SDKClient, req *ascpchannel.AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest, session string) (*ascpchannel.AlibabaAscpGlobalSupplierItemListInfoQueryAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpGlobalSupplierItemListInfoQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpGlobalSupplierItemListInfoQuery(clt *core.SDKClient, req *ascpchannel.AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest, resp *ascpchannel.AlibabaAscpGlobalSupplierItemListInfoQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

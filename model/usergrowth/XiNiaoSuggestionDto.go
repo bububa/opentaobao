@@ -1,5 +1,9 @@
 package usergrowth
 
+import (
+	"sync"
+)
+
 // XiNiaoSuggestionDto 结构体
 type XiNiaoSuggestionDto struct {
 	// 图片URL
@@ -10,4 +14,24 @@ type XiNiaoSuggestionDto struct {
 	ExposureUrl string `json:"exposure_url,omitempty" xml:"exposure_url,omitempty"`
 	// 点击上报链接
 	ClickUrl string `json:"click_url,omitempty" xml:"click_url,omitempty"`
+}
+
+var poolXiNiaoSuggestionDto = sync.Pool{
+	New: func() any {
+		return new(XiNiaoSuggestionDto)
+	},
+}
+
+// GetXiNiaoSuggestionDto() 从对象池中获取XiNiaoSuggestionDto
+func GetXiNiaoSuggestionDto() *XiNiaoSuggestionDto {
+	return poolXiNiaoSuggestionDto.Get().(*XiNiaoSuggestionDto)
+}
+
+// ReleaseXiNiaoSuggestionDto 释放XiNiaoSuggestionDto
+func ReleaseXiNiaoSuggestionDto(v *XiNiaoSuggestionDto) {
+	v.ImageUrl = ""
+	v.LandingUrl = ""
+	v.ExposureUrl = ""
+	v.ClickUrl = ""
+	poolXiNiaoSuggestionDto.Put(v)
 }

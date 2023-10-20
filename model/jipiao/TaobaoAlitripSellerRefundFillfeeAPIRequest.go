@@ -2,6 +2,7 @@ package jipiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoAlitripSellerRefundFillfeeAPIRequest struct {
 // NewTaobaoAlitripSellerRefundFillfeeRequest 初始化TaobaoAlitripSellerRefundFillfeeAPIRequest对象
 func NewTaobaoAlitripSellerRefundFillfeeRequest() *TaobaoAlitripSellerRefundFillfeeAPIRequest {
 	return &TaobaoAlitripSellerRefundFillfeeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripSellerRefundFillfeeAPIRequest) Reset() {
+	r._feePriceMap = ""
+	r._modifyFee = ""
+	r._ticketPriceMap = ""
+	r._upgradeFee = ""
+	r._applyId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoAlitripSellerRefundFillfeeAPIRequest) SetApplyId(_applyId int64) 
 // GetApplyId ApplyId Getter
 func (r TaobaoAlitripSellerRefundFillfeeAPIRequest) GetApplyId() int64 {
 	return r._applyId
+}
+
+var poolTaobaoAlitripSellerRefundFillfeeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripSellerRefundFillfeeRequest()
+	},
+}
+
+// GetTaobaoAlitripSellerRefundFillfeeRequest 从 sync.Pool 获取 TaobaoAlitripSellerRefundFillfeeAPIRequest
+func GetTaobaoAlitripSellerRefundFillfeeAPIRequest() *TaobaoAlitripSellerRefundFillfeeAPIRequest {
+	return poolTaobaoAlitripSellerRefundFillfeeAPIRequest.Get().(*TaobaoAlitripSellerRefundFillfeeAPIRequest)
+}
+
+// ReleaseTaobaoAlitripSellerRefundFillfeeAPIRequest 将 TaobaoAlitripSellerRefundFillfeeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripSellerRefundFillfeeAPIRequest(v *TaobaoAlitripSellerRefundFillfeeAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripSellerRefundFillfeeAPIRequest.Put(v)
 }

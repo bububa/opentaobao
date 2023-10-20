@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // TmsCourierRequest 结构体
 type TmsCourierRequest struct {
 	// 服务类型
@@ -20,4 +24,29 @@ type TmsCourierRequest struct {
 	Reason string `json:"reason,omitempty" xml:"reason,omitempty"`
 	// 小件员信息
 	TmsCourierInfo *TmsCourierInfoRequest `json:"tms_courier_info,omitempty" xml:"tms_courier_info,omitempty"`
+}
+
+var poolTmsCourierRequest = sync.Pool{
+	New: func() any {
+		return new(TmsCourierRequest)
+	},
+}
+
+// GetTmsCourierRequest() 从对象池中获取TmsCourierRequest
+func GetTmsCourierRequest() *TmsCourierRequest {
+	return poolTmsCourierRequest.Get().(*TmsCourierRequest)
+}
+
+// ReleaseTmsCourierRequest 释放TmsCourierRequest
+func ReleaseTmsCourierRequest(v *TmsCourierRequest) {
+	v.ServiceType = ""
+	v.BizCode = ""
+	v.ServiceFlag = ""
+	v.TmsCpCode = ""
+	v.SupplierId = ""
+	v.DeliveryCode = ""
+	v.UpdateType = ""
+	v.Reason = ""
+	v.TmsCourierInfo = nil
+	poolTmsCourierRequest.Put(v)
 }

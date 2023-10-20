@@ -1,7 +1,11 @@
 package qianniu
 
-// QtaskMetadata 结构体
-type QtaskMetadata struct {
+import (
+	"sync"
+)
+
+// QTaskMetadata 结构体
+type QTaskMetadata struct {
 	// 任务标题
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 任务摘要内容
@@ -68,4 +72,53 @@ type QtaskMetadata struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 当前任务的评论数
 	CommentCount int64 `json:"comment_count,omitempty" xml:"comment_count,omitempty"`
+}
+
+var poolQTaskMetadata = sync.Pool{
+	New: func() any {
+		return new(QTaskMetadata)
+	},
+}
+
+// GetQTaskMetadata() 从对象池中获取QTaskMetadata
+func GetQTaskMetadata() *QTaskMetadata {
+	return poolQTaskMetadata.Get().(*QTaskMetadata)
+}
+
+// ReleaseQTaskMetadata 释放QTaskMetadata
+func ReleaseQTaskMetadata(v *QTaskMetadata) {
+	v.Title = ""
+	v.Content = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.SenderNick = ""
+	v.Memo = ""
+	v.Attachments = ""
+	v.BizRemindTime = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.BizType = ""
+	v.BizTypeStr = ""
+	v.Action = ""
+	v.VoiceFile = ""
+	v.Receiver = ""
+	v.NewYunpanAttachments = ""
+	v.Id = 0
+	v.BizSysId = 0
+	v.BizSysTaskType = 0
+	v.SenderUid = 0
+	v.ReminderFlag = 0
+	v.FinishStrategy = 0
+	v.Priority = 0
+	v.TaskCount = 0
+	v.BizRemindTimeLong = 0
+	v.FinishCount = 0
+	v.StartTimeLong = 0
+	v.EndTimeLong = 0
+	v.GmtCreateLong = 0
+	v.GmtModifiedLong = 0
+	v.TotalCount = 0
+	v.Status = 0
+	v.CommentCount = 0
+	poolQTaskMetadata.Put(v)
 }

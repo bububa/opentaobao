@@ -2,6 +2,7 @@ package consignplatform
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoConsignplatformOrderCreateAPIRequest struct {
 // NewCainiaoConsignplatformOrderCreateRequest 初始化CainiaoConsignplatformOrderCreateAPIRequest对象
 func NewCainiaoConsignplatformOrderCreateRequest() *CainiaoConsignplatformOrderCreateAPIRequest {
 	return &CainiaoConsignplatformOrderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoConsignplatformOrderCreateAPIRequest) Reset() {
+	r._createRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoConsignplatformOrderCreateAPIRequest) SetCreateRequest(_createRe
 // GetCreateRequest CreateRequest Getter
 func (r CainiaoConsignplatformOrderCreateAPIRequest) GetCreateRequest() *OrderCreateRequest {
 	return r._createRequest
+}
+
+var poolCainiaoConsignplatformOrderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoConsignplatformOrderCreateRequest()
+	},
+}
+
+// GetCainiaoConsignplatformOrderCreateRequest 从 sync.Pool 获取 CainiaoConsignplatformOrderCreateAPIRequest
+func GetCainiaoConsignplatformOrderCreateAPIRequest() *CainiaoConsignplatformOrderCreateAPIRequest {
+	return poolCainiaoConsignplatformOrderCreateAPIRequest.Get().(*CainiaoConsignplatformOrderCreateAPIRequest)
+}
+
+// ReleaseCainiaoConsignplatformOrderCreateAPIRequest 将 CainiaoConsignplatformOrderCreateAPIRequest 放入 sync.Pool
+func ReleaseCainiaoConsignplatformOrderCreateAPIRequest(v *CainiaoConsignplatformOrderCreateAPIRequest) {
+	v.Reset()
+	poolCainiaoConsignplatformOrderCreateAPIRequest.Put(v)
 }

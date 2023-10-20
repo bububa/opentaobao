@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenAddApplyRq 结构体
 type OpenAddApplyRq struct {
 	// 行程列表
@@ -30,4 +34,34 @@ type OpenAddApplyRq struct {
 	TripDay int64 `json:"trip_day,omitempty" xml:"trip_day,omitempty"`
 	// 审批单状态，不传入默认为0：0审批中，1同意，2拒绝
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolOpenAddApplyRq = sync.Pool{
+	New: func() any {
+		return new(OpenAddApplyRq)
+	},
+}
+
+// GetOpenAddApplyRq() 从对象池中获取OpenAddApplyRq
+func GetOpenAddApplyRq() *OpenAddApplyRq {
+	return poolOpenAddApplyRq.Get().(*OpenAddApplyRq)
+}
+
+// ReleaseOpenAddApplyRq 释放OpenAddApplyRq
+func ReleaseOpenAddApplyRq(v *OpenAddApplyRq) {
+	v.ItineraryList = v.ItineraryList[:0]
+	v.TravelerList = v.TravelerList[:0]
+	v.TripTitle = ""
+	v.ApplyId = ""
+	v.DepartName = ""
+	v.CorpName = ""
+	v.UserId = ""
+	v.UserName = ""
+	v.DepartId = ""
+	v.TripCause = ""
+	v.CorpId = ""
+	v.ApplyShowId = ""
+	v.TripDay = 0
+	v.Status = 0
+	poolOpenAddApplyRq.Put(v)
 }

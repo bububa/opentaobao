@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoXhotelRoomGetAPIRequest struct {
 // NewTaobaoXhotelRoomGetRequest 初始化TaobaoXhotelRoomGetAPIRequest对象
 func NewTaobaoXhotelRoomGetRequest() *TaobaoXhotelRoomGetAPIRequest {
 	return &TaobaoXhotelRoomGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelRoomGetAPIRequest) Reset() {
+	r._vendor = ""
+	r._outRid = ""
+	r._gid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoXhotelRoomGetAPIRequest) SetGid(_gid int64) error {
 // GetGid Gid Getter
 func (r TaobaoXhotelRoomGetAPIRequest) GetGid() int64 {
 	return r._gid
+}
+
+var poolTaobaoXhotelRoomGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelRoomGetRequest()
+	},
+}
+
+// GetTaobaoXhotelRoomGetRequest 从 sync.Pool 获取 TaobaoXhotelRoomGetAPIRequest
+func GetTaobaoXhotelRoomGetAPIRequest() *TaobaoXhotelRoomGetAPIRequest {
+	return poolTaobaoXhotelRoomGetAPIRequest.Get().(*TaobaoXhotelRoomGetAPIRequest)
+}
+
+// ReleaseTaobaoXhotelRoomGetAPIRequest 将 TaobaoXhotelRoomGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelRoomGetAPIRequest(v *TaobaoXhotelRoomGetAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelRoomGetAPIRequest.Put(v)
 }

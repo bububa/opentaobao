@@ -2,6 +2,7 @@ package dt
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaNrsItemRtdataBackflowAPIResponse struct {
 	AlibabaNrsItemRtdataBackflowAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaNrsItemRtdataBackflowAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaNrsItemRtdataBackflowAPIResponseModel).Reset()
+}
+
 // AlibabaNrsItemRtdataBackflowAPIResponseModel is RT竞价数据回流 成功返回结果
 type AlibabaNrsItemRtdataBackflowAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_nrs_item_rtdata_backflow_response"`
@@ -22,4 +29,27 @@ type AlibabaNrsItemRtdataBackflowAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 出参
 	Result *NrsResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaNrsItemRtdataBackflowAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaNrsItemRtdataBackflowAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaNrsItemRtdataBackflowAPIResponse)
+	},
+}
+
+// GetAlibabaNrsItemRtdataBackflowAPIResponse 从 sync.Pool 获取 AlibabaNrsItemRtdataBackflowAPIResponse
+func GetAlibabaNrsItemRtdataBackflowAPIResponse() *AlibabaNrsItemRtdataBackflowAPIResponse {
+	return poolAlibabaNrsItemRtdataBackflowAPIResponse.Get().(*AlibabaNrsItemRtdataBackflowAPIResponse)
+}
+
+// ReleaseAlibabaNrsItemRtdataBackflowAPIResponse 将 AlibabaNrsItemRtdataBackflowAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaNrsItemRtdataBackflowAPIResponse(v *AlibabaNrsItemRtdataBackflowAPIResponse) {
+	v.Reset()
+	poolAlibabaNrsItemRtdataBackflowAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // RefundDetailList 结构体
 type RefundDetailList struct {
 	// 退货的物流信息
@@ -36,4 +40,37 @@ type RefundDetailList struct {
 	RefundId int64 `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
 	// 是否退货
 	ReturnGoods bool `json:"return_goods,omitempty" xml:"return_goods,omitempty"`
+}
+
+var poolRefundDetailList = sync.Pool{
+	New: func() any {
+		return new(RefundDetailList)
+	},
+}
+
+// GetRefundDetailList() 从对象池中获取RefundDetailList
+func GetRefundDetailList() *RefundDetailList {
+	return poolRefundDetailList.Get().(*RefundDetailList)
+}
+
+// ReleaseRefundDetailList 释放RefundDetailList
+func ReleaseRefundDetailList(v *RefundDetailList) {
+	v.ReturnLogistics = v.ReturnLogistics[:0]
+	v.RefundItems = v.RefundItems[:0]
+	v.GmtModified = ""
+	v.RefundDesc = ""
+	v.RefundFeeYuan = ""
+	v.PaySupFeeYuan = ""
+	v.RefundCreateTime = ""
+	v.RefundStatusCode = ""
+	v.RefundFee = 0
+	v.RefundStatus = 0
+	v.SubOrderId = 0
+	v.BuyerRefund = nil
+	v.PurchaseOrderId = 0
+	v.PaySupFee = 0
+	v.RefundType = 0
+	v.RefundId = 0
+	v.ReturnGoods = false
+	poolRefundDetailList.Put(v)
 }

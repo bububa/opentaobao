@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // ConsignmentOrderTo 结构体
 type ConsignmentOrderTo struct {
 	// 订单创建时间，格式为&#34;yyyy-MM-dd HH:mm:ss&#34;
@@ -64,4 +68,51 @@ type ConsignmentOrderTo struct {
 	OrderSubStatus int64 `json:"order_sub_status,omitempty" xml:"order_sub_status,omitempty"`
 	// 订单一级状态。1:已下单; 2:已取件; 3:已质检; 20:竞拍中; 5:交易成功; 6:卖家已评价; 7:服务商已评价; 100:申请退货; 101:已退货; 102:卖家取消订单关闭; 103:服务商取消订单关闭;
 	OrderStatus int64 `json:"order_status,omitempty" xml:"order_status,omitempty"`
+}
+
+var poolConsignmentOrderTo = sync.Pool{
+	New: func() any {
+		return new(ConsignmentOrderTo)
+	},
+}
+
+// GetConsignmentOrderTo() 从对象池中获取ConsignmentOrderTo
+func GetConsignmentOrderTo() *ConsignmentOrderTo {
+	return poolConsignmentOrderTo.Get().(*ConsignmentOrderTo)
+}
+
+// ReleaseConsignmentOrderTo 释放ConsignmentOrderTo
+func ReleaseConsignmentOrderTo(v *ConsignmentOrderTo) {
+	v.GmtCreate = ""
+	v.IdlePayType = ""
+	v.Env = ""
+	v.RefundReason = ""
+	v.BuyerCloseReason = ""
+	v.SellerCloseReason = ""
+	v.RateContent = ""
+	v.RateGrade = ""
+	v.ChannelData = ""
+	v.SubChannel = ""
+	v.Channel = ""
+	v.Country = ""
+	v.Area = ""
+	v.Province = ""
+	v.City = ""
+	v.ApprizeId = ""
+	v.SellerRealName = ""
+	v.ShipTime = ""
+	v.ShipType = ""
+	v.SellerPhone = ""
+	v.SellerAddress = ""
+	v.SellerAlipayAccount = ""
+	v.SellerAlipayUserId = ""
+	v.SellerNick = ""
+	v.BuyerNick = ""
+	v.BizOrderId = ""
+	v.AppKey = ""
+	v.ServiceRule = ""
+	v.ApprizeAmount = 0
+	v.OrderSubStatus = 0
+	v.OrderStatus = 0
+	poolConsignmentOrderTo.Put(v)
 }

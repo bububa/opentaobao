@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoJdsHluserUpdateAPIRequest struct {
 // NewTaobaoJdsHluserUpdateRequest 初始化TaobaoJdsHluserUpdateAPIRequest对象
 func NewTaobaoJdsHluserUpdateRequest() *TaobaoJdsHluserUpdateAPIRequest {
 	return &TaobaoJdsHluserUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJdsHluserUpdateAPIRequest) Reset() {
+	r._openForBuyer = ""
+	r._openNodes = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoJdsHluserUpdateAPIRequest) SetOpenNodes(_openNodes string) error 
 // GetOpenNodes OpenNodes Getter
 func (r TaobaoJdsHluserUpdateAPIRequest) GetOpenNodes() string {
 	return r._openNodes
+}
+
+var poolTaobaoJdsHluserUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJdsHluserUpdateRequest()
+	},
+}
+
+// GetTaobaoJdsHluserUpdateRequest 从 sync.Pool 获取 TaobaoJdsHluserUpdateAPIRequest
+func GetTaobaoJdsHluserUpdateAPIRequest() *TaobaoJdsHluserUpdateAPIRequest {
+	return poolTaobaoJdsHluserUpdateAPIRequest.Get().(*TaobaoJdsHluserUpdateAPIRequest)
+}
+
+// ReleaseTaobaoJdsHluserUpdateAPIRequest 将 TaobaoJdsHluserUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJdsHluserUpdateAPIRequest(v *TaobaoJdsHluserUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoJdsHluserUpdateAPIRequest.Put(v)
 }

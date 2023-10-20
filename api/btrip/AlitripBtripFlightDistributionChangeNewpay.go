@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.flight.distribution.change.newpay
 //
 // 商旅机票改签支付V2
-func AlitripBtripFlightDistributionChangeNewpay(clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionChangeNewpayAPIRequest, session string) (*btrip.AlitripBtripFlightDistributionChangeNewpayAPIResponse, error) {
-	var resp btrip.AlitripBtripFlightDistributionChangeNewpayAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripFlightDistributionChangeNewpay(clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionChangeNewpayAPIRequest, resp *btrip.AlitripBtripFlightDistributionChangeNewpayAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

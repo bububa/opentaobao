@@ -2,6 +2,7 @@ package icbulogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest struct {
 // NewAlibabaOnetouchLogisticsExpressAddressDivisionListRequest 初始化AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest对象
 func NewAlibabaOnetouchLogisticsExpressAddressDivisionListRequest() *AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest {
 	return &AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest) Reset() {
+	r._paramQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest) SetParamQ
 // GetParamQuery ParamQuery Getter
 func (r AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest) GetParamQuery() *AddressQueryDto {
 	return r._paramQuery
+}
+
+var poolAlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaOnetouchLogisticsExpressAddressDivisionListRequest()
+	},
+}
+
+// GetAlibabaOnetouchLogisticsExpressAddressDivisionListRequest 从 sync.Pool 获取 AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest
+func GetAlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest() *AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest {
+	return poolAlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest.Get().(*AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest)
+}
+
+// ReleaseAlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest 将 AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest(v *AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest) {
+	v.Reset()
+	poolAlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest.Put(v)
 }

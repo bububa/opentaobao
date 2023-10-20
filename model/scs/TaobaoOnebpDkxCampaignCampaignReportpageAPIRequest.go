@@ -2,6 +2,7 @@ package scs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOnebpDkxCampaignCampaignReportpageAPIRequest struct {
 // NewTaobaoOnebpDkxCampaignCampaignReportpageRequest 初始化TaobaoOnebpDkxCampaignCampaignReportpageAPIRequest对象
 func NewTaobaoOnebpDkxCampaignCampaignReportpageRequest() *TaobaoOnebpDkxCampaignCampaignReportpageAPIRequest {
 	return &TaobaoOnebpDkxCampaignCampaignReportpageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOnebpDkxCampaignCampaignReportpageAPIRequest) Reset() {
+	r._apiServiceContext = nil
+	r._campaignQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOnebpDkxCampaignCampaignReportpageAPIRequest) SetCampaignQuery(_c
 // GetCampaignQuery CampaignQuery Getter
 func (r TaobaoOnebpDkxCampaignCampaignReportpageAPIRequest) GetCampaignQuery() *CampaignQueryTopDto {
 	return r._campaignQuery
+}
+
+var poolTaobaoOnebpDkxCampaignCampaignReportpageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOnebpDkxCampaignCampaignReportpageRequest()
+	},
+}
+
+// GetTaobaoOnebpDkxCampaignCampaignReportpageRequest 从 sync.Pool 获取 TaobaoOnebpDkxCampaignCampaignReportpageAPIRequest
+func GetTaobaoOnebpDkxCampaignCampaignReportpageAPIRequest() *TaobaoOnebpDkxCampaignCampaignReportpageAPIRequest {
+	return poolTaobaoOnebpDkxCampaignCampaignReportpageAPIRequest.Get().(*TaobaoOnebpDkxCampaignCampaignReportpageAPIRequest)
+}
+
+// ReleaseTaobaoOnebpDkxCampaignCampaignReportpageAPIRequest 将 TaobaoOnebpDkxCampaignCampaignReportpageAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOnebpDkxCampaignCampaignReportpageAPIRequest(v *TaobaoOnebpDkxCampaignCampaignReportpageAPIRequest) {
+	v.Reset()
+	poolTaobaoOnebpDkxCampaignCampaignReportpageAPIRequest.Put(v)
 }

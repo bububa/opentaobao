@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponse struct {
 	model.CommonResponse
 	AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponseModel).Reset()
 }
 
 // AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponseModel is 天猫精灵商业化获取三方连续包会员状态 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponseModel struct {
 	RetCode int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 	// 三方小会员连续包状态：true-连续包中  false-非连续包
 	RetValue bool `json:"ret_value,omitempty" xml:"ret_value,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RetMsg = ""
+	m.ErrorLevel = ""
+	m.RetCode = 0
+	m.RetValue = false
+}
+
+var poolAlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponse)
+	},
+}
+
+// GetAlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponse 从 sync.Pool 获取 AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponse
+func GetAlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponse() *AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponse {
+	return poolAlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponse.Get().(*AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponse)
+}
+
+// ReleaseAlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponse 将 AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponse(v *AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponse) {
+	v.Reset()
+	poolAlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponse.Put(v)
 }

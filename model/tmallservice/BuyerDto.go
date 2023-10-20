@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // BuyerDto 结构体
 type BuyerDto struct {
 	// 省
@@ -24,4 +28,31 @@ type BuyerDto struct {
 	AddressCity string `json:"address_city,omitempty" xml:"address_city,omitempty"`
 	// 地区编码
 	Location int64 `json:"location,omitempty" xml:"location,omitempty"`
+}
+
+var poolBuyerDto = sync.Pool{
+	New: func() any {
+		return new(BuyerDto)
+	},
+}
+
+// GetBuyerDto() 从对象池中获取BuyerDto
+func GetBuyerDto() *BuyerDto {
+	return poolBuyerDto.Get().(*BuyerDto)
+}
+
+// ReleaseBuyerDto 释放BuyerDto
+func ReleaseBuyerDto(v *BuyerDto) {
+	v.AddressProvince = ""
+	v.BuyerNick = ""
+	v.Mobile = ""
+	v.BuyerName = ""
+	v.AddressTown = ""
+	v.AddressDetail = ""
+	v.Phone = ""
+	v.FullAddress = ""
+	v.AddressDistrict = ""
+	v.AddressCity = ""
+	v.Location = 0
+	poolBuyerDto.Put(v)
 }

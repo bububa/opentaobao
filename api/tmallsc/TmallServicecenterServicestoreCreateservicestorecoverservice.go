@@ -12,11 +12,6 @@ import (
 // 前提是网点要存在，
 // 如果需要新增的网点覆盖的服务已存在，会新增失败。
 // 网点覆盖的服务包含了业务类型(比如电器预约安装)、天猫服务的servicecode列表、授权的类目和品牌
-func TmallServicecenterServicestoreCreateservicestorecoverservice(clt *core.SDKClient, req *tmallsc.TmallServicecenterServicestoreCreateservicestorecoverserviceAPIRequest, session string) (*tmallsc.TmallServicecenterServicestoreCreateservicestorecoverserviceAPIResponse, error) {
-	var resp tmallsc.TmallServicecenterServicestoreCreateservicestorecoverserviceAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterServicestoreCreateservicestorecoverservice(clt *core.SDKClient, req *tmallsc.TmallServicecenterServicestoreCreateservicestorecoverserviceAPIRequest, resp *tmallsc.TmallServicecenterServicestoreCreateservicestorecoverserviceAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

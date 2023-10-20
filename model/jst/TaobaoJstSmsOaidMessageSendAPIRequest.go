@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoJstSmsOaidMessageSendAPIRequest struct {
 // NewTaobaoJstSmsOaidMessageSendRequest 初始化TaobaoJstSmsOaidMessageSendAPIRequest对象
 func NewTaobaoJstSmsOaidMessageSendRequest() *TaobaoJstSmsOaidMessageSendAPIRequest {
 	return &TaobaoJstSmsOaidMessageSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJstSmsOaidMessageSendAPIRequest) Reset() {
+	r._paramSendMessageByOAIDRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoJstSmsOaidMessageSendAPIRequest) SetParamSendMessageByOAIDRequest
 // GetParamSendMessageByOAIDRequest ParamSendMessageByOAIDRequest Getter
 func (r TaobaoJstSmsOaidMessageSendAPIRequest) GetParamSendMessageByOAIDRequest() *SendMessageByOaidRequest {
 	return r._paramSendMessageByOAIDRequest
+}
+
+var poolTaobaoJstSmsOaidMessageSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJstSmsOaidMessageSendRequest()
+	},
+}
+
+// GetTaobaoJstSmsOaidMessageSendRequest 从 sync.Pool 获取 TaobaoJstSmsOaidMessageSendAPIRequest
+func GetTaobaoJstSmsOaidMessageSendAPIRequest() *TaobaoJstSmsOaidMessageSendAPIRequest {
+	return poolTaobaoJstSmsOaidMessageSendAPIRequest.Get().(*TaobaoJstSmsOaidMessageSendAPIRequest)
+}
+
+// ReleaseTaobaoJstSmsOaidMessageSendAPIRequest 将 TaobaoJstSmsOaidMessageSendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJstSmsOaidMessageSendAPIRequest(v *TaobaoJstSmsOaidMessageSendAPIRequest) {
+	v.Reset()
+	poolTaobaoJstSmsOaidMessageSendAPIRequest.Put(v)
 }

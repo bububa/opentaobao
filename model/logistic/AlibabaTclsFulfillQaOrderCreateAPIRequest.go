@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaTclsFulfillQaOrderCreateAPIRequest struct {
 // NewAlibabaTclsFulfillQaOrderCreateRequest 初始化AlibabaTclsFulfillQaOrderCreateAPIRequest对象
 func NewAlibabaTclsFulfillQaOrderCreateRequest() *AlibabaTclsFulfillQaOrderCreateAPIRequest {
 	return &AlibabaTclsFulfillQaOrderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsFulfillQaOrderCreateAPIRequest) Reset() {
+	r._fulfillOrderId = ""
+	r._targetIp = ""
+	r._creator = ""
+	r._jobNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaTclsFulfillQaOrderCreateAPIRequest) SetJobNo(_jobNo string) erro
 // GetJobNo JobNo Getter
 func (r AlibabaTclsFulfillQaOrderCreateAPIRequest) GetJobNo() string {
 	return r._jobNo
+}
+
+var poolAlibabaTclsFulfillQaOrderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsFulfillQaOrderCreateRequest()
+	},
+}
+
+// GetAlibabaTclsFulfillQaOrderCreateRequest 从 sync.Pool 获取 AlibabaTclsFulfillQaOrderCreateAPIRequest
+func GetAlibabaTclsFulfillQaOrderCreateAPIRequest() *AlibabaTclsFulfillQaOrderCreateAPIRequest {
+	return poolAlibabaTclsFulfillQaOrderCreateAPIRequest.Get().(*AlibabaTclsFulfillQaOrderCreateAPIRequest)
+}
+
+// ReleaseAlibabaTclsFulfillQaOrderCreateAPIRequest 将 AlibabaTclsFulfillQaOrderCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsFulfillQaOrderCreateAPIRequest(v *AlibabaTclsFulfillQaOrderCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsFulfillQaOrderCreateAPIRequest.Put(v)
 }

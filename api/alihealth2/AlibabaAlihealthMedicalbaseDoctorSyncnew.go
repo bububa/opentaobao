@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.medicalbase.doctor.syncnew
 //
 // 直连医生上传
-func AlibabaAlihealthMedicalbaseDoctorSyncnew(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthMedicalbaseDoctorSyncnewAPIRequest, session string) (*alihealth2.AlibabaAlihealthMedicalbaseDoctorSyncnewAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthMedicalbaseDoctorSyncnewAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthMedicalbaseDoctorSyncnew(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthMedicalbaseDoctorSyncnewAPIRequest, resp *alihealth2.AlibabaAlihealthMedicalbaseDoctorSyncnewAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

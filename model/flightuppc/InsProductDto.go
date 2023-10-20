@@ -1,5 +1,9 @@
 package flightuppc
 
+import (
+	"sync"
+)
+
 // InsProductDto 结构体
 type InsProductDto struct {
 	// 副标题：同一保险在不同页面可以有不同副标题
@@ -20,4 +24,29 @@ type InsProductDto struct {
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 	// 保险产品唯一标识
 	InsurancePremiumId int64 `json:"insurance_premium_id,omitempty" xml:"insurance_premium_id,omitempty"`
+}
+
+var poolInsProductDto = sync.Pool{
+	New: func() any {
+		return new(InsProductDto)
+	},
+}
+
+// GetInsProductDto() 从对象池中获取InsProductDto
+func GetInsProductDto() *InsProductDto {
+	return poolInsProductDto.Get().(*InsProductDto)
+}
+
+// ReleaseInsProductDto 释放InsProductDto
+func ReleaseInsProductDto(v *InsProductDto) {
+	v.SubTitles = ""
+	v.Bubble = ""
+	v.Description = ""
+	v.Interests = ""
+	v.Title = ""
+	v.ProductName = ""
+	v.Labels = ""
+	v.Price = 0
+	v.InsurancePremiumId = 0
+	poolInsProductDto.Put(v)
 }

@@ -2,6 +2,7 @@ package admarket
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type YunosAdmarketAdBidAPIResponse struct {
 	model.CommonResponse
 	YunosAdmarketAdBidAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *YunosAdmarketAdBidAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.YunosAdmarketAdBidAPIResponseModel).Reset()
 }
 
 // YunosAdmarketAdBidAPIResponseModel is 广告竞价服务 成功返回结果
@@ -30,4 +37,31 @@ type YunosAdmarketAdBidAPIResponseModel struct {
 	Result *BidResponse `json:"result,omitempty" xml:"result,omitempty"`
 	// 是否操作成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *YunosAdmarketAdBidAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Id = ""
+	m.ResultMsg = ""
+	m.ResultCode = ""
+	m.Result = nil
+	m.IsSuccess = false
+}
+
+var poolYunosAdmarketAdBidAPIResponse = sync.Pool{
+	New: func() any {
+		return new(YunosAdmarketAdBidAPIResponse)
+	},
+}
+
+// GetYunosAdmarketAdBidAPIResponse 从 sync.Pool 获取 YunosAdmarketAdBidAPIResponse
+func GetYunosAdmarketAdBidAPIResponse() *YunosAdmarketAdBidAPIResponse {
+	return poolYunosAdmarketAdBidAPIResponse.Get().(*YunosAdmarketAdBidAPIResponse)
+}
+
+// ReleaseYunosAdmarketAdBidAPIResponse 将 YunosAdmarketAdBidAPIResponse 保存到 sync.Pool
+func ReleaseYunosAdmarketAdBidAPIResponse(v *YunosAdmarketAdBidAPIResponse) {
+	v.Reset()
+	poolYunosAdmarketAdBidAPIResponse.Put(v)
 }

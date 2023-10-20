@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripBtripOpenCostCenterNewAPIResponse struct {
 	AlitripBtripOpenCostCenterNewAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripBtripOpenCostCenterNewAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripBtripOpenCostCenterNewAPIResponseModel).Reset()
+}
+
 // AlitripBtripOpenCostCenterNewAPIResponseModel is 新增成本中心 成功返回结果
 type AlitripBtripOpenCostCenterNewAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_open_cost_center_new_response"`
@@ -26,4 +33,29 @@ type AlitripBtripOpenCostCenterNewAPIResponseModel struct {
 	Module *OpenCostCenterSaveRs `json:"module,omitempty" xml:"module,omitempty"`
 	// 结果码
 	ResultCode int64 `json:"result_code,omitempty" xml:"result_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripBtripOpenCostCenterNewAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultMsg = ""
+	m.Module = nil
+	m.ResultCode = 0
+}
+
+var poolAlitripBtripOpenCostCenterNewAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripBtripOpenCostCenterNewAPIResponse)
+	},
+}
+
+// GetAlitripBtripOpenCostCenterNewAPIResponse 从 sync.Pool 获取 AlitripBtripOpenCostCenterNewAPIResponse
+func GetAlitripBtripOpenCostCenterNewAPIResponse() *AlitripBtripOpenCostCenterNewAPIResponse {
+	return poolAlitripBtripOpenCostCenterNewAPIResponse.Get().(*AlitripBtripOpenCostCenterNewAPIResponse)
+}
+
+// ReleaseAlitripBtripOpenCostCenterNewAPIResponse 将 AlitripBtripOpenCostCenterNewAPIResponse 保存到 sync.Pool
+func ReleaseAlitripBtripOpenCostCenterNewAPIResponse(v *AlitripBtripOpenCostCenterNewAPIResponse) {
+	v.Reset()
+	poolAlitripBtripOpenCostCenterNewAPIResponse.Put(v)
 }

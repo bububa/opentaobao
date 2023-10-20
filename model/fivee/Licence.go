@@ -1,5 +1,9 @@
 package fivee
 
+import (
+	"sync"
+)
+
 // Licence 结构体
 type Licence struct {
 	// 附件下载地址列表
@@ -16,4 +20,27 @@ type Licence struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 类型
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolLicence = sync.Pool{
+	New: func() any {
+		return new(Licence)
+	},
+}
+
+// GetLicence() 从对象池中获取Licence
+func GetLicence() *Licence {
+	return poolLicence.Get().(*Licence)
+}
+
+// ReleaseLicence 释放Licence
+func ReleaseLicence(v *Licence) {
+	v.Urls = v.Urls[:0]
+	v.CertificationBody = ""
+	v.Code = ""
+	v.DueDate = ""
+	v.EffectiveDate = ""
+	v.Name = ""
+	v.Type = 0
+	poolLicence.Put(v)
 }

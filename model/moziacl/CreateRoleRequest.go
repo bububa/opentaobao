@@ -1,5 +1,9 @@
 package moziacl
 
+import (
+	"sync"
+)
+
 // CreateRoleRequest 结构体
 type CreateRoleRequest struct {
 	// 角色包含的权限name列表
@@ -40,4 +44,39 @@ type CreateRoleRequest struct {
 	OwnerUserId int64 `json:"owner_user_id,omitempty" xml:"owner_user_id,omitempty"`
 	// 是否数据权限，角色没有挂载数据权限，则为false
 	IsData bool `json:"is_data,omitempty" xml:"is_data,omitempty"`
+}
+
+var poolCreateRoleRequest = sync.Pool{
+	New: func() any {
+		return new(CreateRoleRequest)
+	},
+}
+
+// GetCreateRoleRequest() 从对象池中获取CreateRoleRequest
+func GetCreateRoleRequest() *CreateRoleRequest {
+	return poolCreateRoleRequest.Get().(*CreateRoleRequest)
+}
+
+// ReleaseCreateRoleRequest 释放CreateRoleRequest
+func ReleaseCreateRoleRequest(v *CreateRoleRequest) {
+	v.AddPermissionNames = v.AddPermissionNames[:0]
+	v.ApproverUserIds = v.ApproverUserIds[:0]
+	v.TargetAppName = ""
+	v.Description = ""
+	v.Title = ""
+	v.Type = ""
+	v.RequestMetaData = ""
+	v.DataPermissionJsonStr = ""
+	v.TitleEN = ""
+	v.RuleType = ""
+	v.PublicAttri = ""
+	v.AssignLevel = ""
+	v.Name = ""
+	v.RevokeRule = ""
+	v.ExtentionMap = ""
+	v.PrincipalParam = nil
+	v.OperatorUserId = 0
+	v.OwnerUserId = 0
+	v.IsData = false
+	poolCreateRoleRequest.Put(v)
 }

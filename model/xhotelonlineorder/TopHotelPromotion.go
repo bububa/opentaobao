@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // TopHotelPromotion 结构体
 type TopHotelPromotion struct {
 	// 订单命中的优惠计算规则描述(由优惠计算规则解析后的文本形式)
@@ -40,4 +44,39 @@ type TopHotelPromotion struct {
 	InvestorType int64 `json:"investor_type,omitempty" xml:"investor_type,omitempty"`
 	// 是否&#34;积分加钱购&#34;类型活动
 	IntegralActivity bool `json:"integral_activity,omitempty" xml:"integral_activity,omitempty"`
+}
+
+var poolTopHotelPromotion = sync.Pool{
+	New: func() any {
+		return new(TopHotelPromotion)
+	},
+}
+
+// GetTopHotelPromotion() 从对象池中获取TopHotelPromotion
+func GetTopHotelPromotion() *TopHotelPromotion {
+	return poolTopHotelPromotion.Get().(*TopHotelPromotion)
+}
+
+// ReleaseTopHotelPromotion 释放TopHotelPromotion
+func ReleaseTopHotelPromotion(v *TopHotelPromotion) {
+	v.RuleDesc = ""
+	v.PromotionDesc = ""
+	v.ActivityIconDesc = ""
+	v.ActivityGroupName = ""
+	v.ActivityCode = ""
+	v.RuleCode = ""
+	v.ActivityName = ""
+	v.ConsumeMileage = 0
+	v.Amount = 0
+	v.SellerAmount = 0
+	v.Times = 0
+	v.Priority = 0
+	v.Tid = 0
+	v.AmountType = 0
+	v.Discount = 0
+	v.RuleType = 0
+	v.RuleTarget = 0
+	v.InvestorType = 0
+	v.IntegralActivity = false
+	poolTopHotelPromotion.Put(v)
 }

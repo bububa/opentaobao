@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest struct {
 // NewAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateRequest 初始化AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest对象
 func NewAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateRequest() *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest {
 	return &AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) Reset() {
+	r._code = ""
+	r._clientId = ""
+	r._taobaoUserOpenid = ""
+	r._extInfo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) SetExtInfo(_
 // GetExtInfo ExtInfo Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) GetExtInfo() string {
 	return r._extInfo
+}
+
+var poolAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateRequest()
+	},
+}
+
+// GetAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateRequest 从 sync.Pool 获取 AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest
+func GetAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest() *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest {
+	return poolAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest.Get().(*AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest)
+}
+
+// ReleaseAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest 将 AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest(v *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest.Put(v)
 }

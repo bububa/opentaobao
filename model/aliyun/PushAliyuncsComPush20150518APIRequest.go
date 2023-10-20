@@ -2,6 +2,7 @@ package aliyun
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,11 +32,11 @@ type PushAliyuncsComPush20150518APIRequest struct {
 	// 推送接收设备，多个以逗号分隔
 	_deviceId string
 	// iOS应用图标右上角角标
-	_iosbadge string
+	_iOSBadge string
 	// 自定义的kv结构,开发者扩展用 针对iOS设备
-	_iosextParameters string
+	_iOSExtParameters string
 	// iOS通知声音
-	_iosmusic string
+	_iOSMusic string
 	// 推送时间,若空表示立即推送,推送时间不能早于当前时间
 	_pushTime string
 	// 通知的摘要
@@ -63,8 +64,36 @@ type PushAliyuncsComPush20150518APIRequest struct {
 // NewPushAliyuncsComPush20150518Request 初始化PushAliyuncsComPush20150518APIRequest对象
 func NewPushAliyuncsComPush20150518Request() *PushAliyuncsComPush20150518APIRequest {
 	return &PushAliyuncsComPush20150518APIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(23),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *PushAliyuncsComPush20150518APIRequest) Reset() {
+	r._account = ""
+	r._androidActivity = ""
+	r._androidExtParameters = ""
+	r._androidMusic = ""
+	r._androidOpenType = ""
+	r._androidOpenUrl = ""
+	r._batchNumber = ""
+	r._body = ""
+	r._deviceId = ""
+	r._iOSBadge = ""
+	r._iOSExtParameters = ""
+	r._iOSMusic = ""
+	r._pushTime = ""
+	r._summery = ""
+	r._title = ""
+	r._antiHarassDuration = 0
+	r._antiHarassStartTime = 0
+	r._appId = 0
+	r._deviceType = 0
+	r._sendType = 0
+	r._timeout = 0
+	r._remind = false
+	r._storeOffline = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,43 +230,43 @@ func (r PushAliyuncsComPush20150518APIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// SetIosbadge is Iosbadge Setter
+// SetIOSBadge is IOSBadge Setter
 // iOS应用图标右上角角标
-func (r *PushAliyuncsComPush20150518APIRequest) SetIosbadge(_iosbadge string) error {
-	r._iosbadge = _iosbadge
-	r.Set("IOSBadge", _iosbadge)
+func (r *PushAliyuncsComPush20150518APIRequest) SetIOSBadge(_iOSBadge string) error {
+	r._iOSBadge = _iOSBadge
+	r.Set("IOSBadge", _iOSBadge)
 	return nil
 }
 
-// GetIosbadge Iosbadge Getter
-func (r PushAliyuncsComPush20150518APIRequest) GetIosbadge() string {
-	return r._iosbadge
+// GetIOSBadge IOSBadge Getter
+func (r PushAliyuncsComPush20150518APIRequest) GetIOSBadge() string {
+	return r._iOSBadge
 }
 
-// SetIosextParameters is IosextParameters Setter
+// SetIOSExtParameters is IOSExtParameters Setter
 // 自定义的kv结构,开发者扩展用 针对iOS设备
-func (r *PushAliyuncsComPush20150518APIRequest) SetIosextParameters(_iosextParameters string) error {
-	r._iosextParameters = _iosextParameters
-	r.Set("IOSExtParameters", _iosextParameters)
+func (r *PushAliyuncsComPush20150518APIRequest) SetIOSExtParameters(_iOSExtParameters string) error {
+	r._iOSExtParameters = _iOSExtParameters
+	r.Set("IOSExtParameters", _iOSExtParameters)
 	return nil
 }
 
-// GetIosextParameters IosextParameters Getter
-func (r PushAliyuncsComPush20150518APIRequest) GetIosextParameters() string {
-	return r._iosextParameters
+// GetIOSExtParameters IOSExtParameters Getter
+func (r PushAliyuncsComPush20150518APIRequest) GetIOSExtParameters() string {
+	return r._iOSExtParameters
 }
 
-// SetIosmusic is Iosmusic Setter
+// SetIOSMusic is IOSMusic Setter
 // iOS通知声音
-func (r *PushAliyuncsComPush20150518APIRequest) SetIosmusic(_iosmusic string) error {
-	r._iosmusic = _iosmusic
-	r.Set("IOSMusic", _iosmusic)
+func (r *PushAliyuncsComPush20150518APIRequest) SetIOSMusic(_iOSMusic string) error {
+	r._iOSMusic = _iOSMusic
+	r.Set("IOSMusic", _iOSMusic)
 	return nil
 }
 
-// GetIosmusic Iosmusic Getter
-func (r PushAliyuncsComPush20150518APIRequest) GetIosmusic() string {
-	return r._iosmusic
+// GetIOSMusic IOSMusic Getter
+func (r PushAliyuncsComPush20150518APIRequest) GetIOSMusic() string {
+	return r._iOSMusic
 }
 
 // SetPushTime is PushTime Setter
@@ -381,4 +410,21 @@ func (r *PushAliyuncsComPush20150518APIRequest) SetStoreOffline(_storeOffline bo
 // GetStoreOffline StoreOffline Getter
 func (r PushAliyuncsComPush20150518APIRequest) GetStoreOffline() bool {
 	return r._storeOffline
+}
+
+var poolPushAliyuncsComPush20150518APIRequest = sync.Pool{
+	New: func() any {
+		return NewPushAliyuncsComPush20150518Request()
+	},
+}
+
+// GetPushAliyuncsComPush20150518Request 从 sync.Pool 获取 PushAliyuncsComPush20150518APIRequest
+func GetPushAliyuncsComPush20150518APIRequest() *PushAliyuncsComPush20150518APIRequest {
+	return poolPushAliyuncsComPush20150518APIRequest.Get().(*PushAliyuncsComPush20150518APIRequest)
+}
+
+// ReleasePushAliyuncsComPush20150518APIRequest 将 PushAliyuncsComPush20150518APIRequest 放入 sync.Pool
+func ReleasePushAliyuncsComPush20150518APIRequest(v *PushAliyuncsComPush20150518APIRequest) {
+	v.Reset()
+	poolPushAliyuncsComPush20150518APIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package cainiaohandover
 
+import (
+	"sync"
+)
+
 // Features 结构体
 type Features struct {
 	// 容器类型(1、托盘;2、大包或盒子3、散装)
@@ -26,4 +30,32 @@ type Features struct {
 	PalletQuantity int64 `json:"pallet_quantity,omitempty" xml:"pallet_quantity,omitempty"`
 	// 是否需要预约
 	NeedAppointment bool `json:"need_appointment,omitempty" xml:"need_appointment,omitempty"`
+}
+
+var poolFeatures = sync.Pool{
+	New: func() any {
+		return new(Features)
+	},
+}
+
+// GetFeatures() 从对象池中获取Features
+func GetFeatures() *Features {
+	return poolFeatures.Get().(*Features)
+}
+
+// ReleaseFeatures 释放Features
+func ReleaseFeatures(v *Features) {
+	v.ContainerType = ""
+	v.PrePackage = ""
+	v.WarehouseCode = ""
+	v.ServiceResourceCode = ""
+	v.ExpressMailNo = ""
+	v.ExpressCompanyId = ""
+	v.ExpressCompanyName = ""
+	v.AppointmentProcess = ""
+	v.PickupWorkTime = ""
+	v.GmtReadyToShip = 0
+	v.PalletQuantity = 0
+	v.NeedAppointment = false
+	poolFeatures.Put(v)
 }

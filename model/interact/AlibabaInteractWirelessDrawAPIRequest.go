@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaInteractWirelessDrawAPIRequest struct {
 // NewAlibabaInteractWirelessDrawRequest 初始化AlibabaInteractWirelessDrawAPIRequest对象
 func NewAlibabaInteractWirelessDrawRequest() *AlibabaInteractWirelessDrawAPIRequest {
 	return &AlibabaInteractWirelessDrawAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractWirelessDrawAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaInteractWirelessDrawAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaInteractWirelessDrawAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaInteractWirelessDrawAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractWirelessDrawRequest()
+	},
+}
+
+// GetAlibabaInteractWirelessDrawRequest 从 sync.Pool 获取 AlibabaInteractWirelessDrawAPIRequest
+func GetAlibabaInteractWirelessDrawAPIRequest() *AlibabaInteractWirelessDrawAPIRequest {
+	return poolAlibabaInteractWirelessDrawAPIRequest.Get().(*AlibabaInteractWirelessDrawAPIRequest)
+}
+
+// ReleaseAlibabaInteractWirelessDrawAPIRequest 将 AlibabaInteractWirelessDrawAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractWirelessDrawAPIRequest(v *AlibabaInteractWirelessDrawAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractWirelessDrawAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest struct {
 // NewAlitripMerchantGalaxyDerbyMemberVoucherReceiptShowRequest 初始化AlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest对象
 func NewAlitripMerchantGalaxyDerbyMemberVoucherReceiptShowRequest() *AlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest {
 	return &AlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._orderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest) SetOrderI
 // GetOrderId OrderId Getter
 func (r AlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest) GetOrderId() string {
 	return r._orderId
+}
+
+var poolAlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyDerbyMemberVoucherReceiptShowRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyDerbyMemberVoucherReceiptShowRequest 从 sync.Pool 获取 AlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest
+func GetAlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest() *AlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest {
+	return poolAlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest.Get().(*AlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest 将 AlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest(v *AlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyDerbyMemberVoucherReceiptShowAPIRequest.Put(v)
 }

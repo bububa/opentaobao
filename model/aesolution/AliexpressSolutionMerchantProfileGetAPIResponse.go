@@ -2,6 +2,7 @@ package aesolution
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AliexpressSolutionMerchantProfileGetAPIResponse struct {
 	model.CommonResponse
 	AliexpressSolutionMerchantProfileGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AliexpressSolutionMerchantProfileGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressSolutionMerchantProfileGetAPIResponseModel).Reset()
 }
 
 // AliexpressSolutionMerchantProfileGetAPIResponseModel is aliexpress.solution.merchant.profile.get 成功返回结果
@@ -34,4 +41,33 @@ type AliexpressSolutionMerchantProfileGetAPIResponseModel struct {
 	ShopId int64 `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// Indicate whether the mechant could post product or not. FALSE means the merchant could normally post product.
 	ProductPostingForbidden bool `json:"product_posting_forbidden,omitempty" xml:"product_posting_forbidden,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressSolutionMerchantProfileGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.CountryCode = ""
+	m.MerchantLoginId = ""
+	m.ShopName = ""
+	m.ShopType = ""
+	m.ShopUrl = ""
+	m.ShopId = 0
+	m.ProductPostingForbidden = false
+}
+
+var poolAliexpressSolutionMerchantProfileGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressSolutionMerchantProfileGetAPIResponse)
+	},
+}
+
+// GetAliexpressSolutionMerchantProfileGetAPIResponse 从 sync.Pool 获取 AliexpressSolutionMerchantProfileGetAPIResponse
+func GetAliexpressSolutionMerchantProfileGetAPIResponse() *AliexpressSolutionMerchantProfileGetAPIResponse {
+	return poolAliexpressSolutionMerchantProfileGetAPIResponse.Get().(*AliexpressSolutionMerchantProfileGetAPIResponse)
+}
+
+// ReleaseAliexpressSolutionMerchantProfileGetAPIResponse 将 AliexpressSolutionMerchantProfileGetAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressSolutionMerchantProfileGetAPIResponse(v *AliexpressSolutionMerchantProfileGetAPIResponse) {
+	v.Reset()
+	poolAliexpressSolutionMerchantProfileGetAPIResponse.Put(v)
 }

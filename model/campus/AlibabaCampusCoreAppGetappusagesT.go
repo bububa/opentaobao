@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // AlibabaCampusCoreAppGetappusagesT 结构体
 type AlibabaCampusCoreAppGetappusagesT struct {
 	// 应用名称
@@ -30,4 +34,34 @@ type AlibabaCampusCoreAppGetappusagesT struct {
 	AppOrder int64 `json:"app_order,omitempty" xml:"app_order,omitempty"`
 	// 是否收费类应用
 	IsCharge bool `json:"is_charge,omitempty" xml:"is_charge,omitempty"`
+}
+
+var poolAlibabaCampusCoreAppGetappusagesT = sync.Pool{
+	New: func() any {
+		return new(AlibabaCampusCoreAppGetappusagesT)
+	},
+}
+
+// GetAlibabaCampusCoreAppGetappusagesT() 从对象池中获取AlibabaCampusCoreAppGetappusagesT
+func GetAlibabaCampusCoreAppGetappusagesT() *AlibabaCampusCoreAppGetappusagesT {
+	return poolAlibabaCampusCoreAppGetappusagesT.Get().(*AlibabaCampusCoreAppGetappusagesT)
+}
+
+// ReleaseAlibabaCampusCoreAppGetappusagesT 释放AlibabaCampusCoreAppGetappusagesT
+func ReleaseAlibabaCampusCoreAppGetappusagesT(v *AlibabaCampusCoreAppGetappusagesT) {
+	v.AppName = ""
+	v.Icon = ""
+	v.Description = ""
+	v.OpenMode = ""
+	v.Url = ""
+	v.AdminUrl = ""
+	v.AppKey = ""
+	v.NotifyUrl = ""
+	v.Id = 0
+	v.AppId = 0
+	v.CampusId = 0
+	v.Status = 0
+	v.AppOrder = 0
+	v.IsCharge = false
+	poolAlibabaCampusCoreAppGetappusagesT.Put(v)
 }

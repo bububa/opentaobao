@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest struct {
 // NewAlibabaWdkMarketingOpenDarunfaActivitySyncRequest 初始化AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest对象
 func NewAlibabaWdkMarketingOpenDarunfaActivitySyncRequest() *AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest {
 	return &AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) Reset() {
+	r._activityList = r._activityList[:0]
+	r._shopId = ""
+	r._versionId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) SetVersionId(_ver
 // GetVersionId VersionId Getter
 func (r AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) GetVersionId() int64 {
 	return r._versionId
+}
+
+var poolAlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMarketingOpenDarunfaActivitySyncRequest()
+	},
+}
+
+// GetAlibabaWdkMarketingOpenDarunfaActivitySyncRequest 从 sync.Pool 获取 AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest
+func GetAlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest() *AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest {
+	return poolAlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest.Get().(*AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest)
+}
+
+// ReleaseAlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest 将 AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest(v *AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest.Put(v)
 }

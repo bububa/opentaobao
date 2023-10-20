@@ -2,6 +2,7 @@ package interact
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaInteractIsvGatewayAPIResponse struct {
 	AlibabaInteractIsvGatewayAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaInteractIsvGatewayAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaInteractIsvGatewayAPIResponseModel).Reset()
+}
+
 // AlibabaInteractIsvGatewayAPIResponseModel is isv调用gateway 成功返回结果
 type AlibabaInteractIsvGatewayAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_isv_gateway_response"`
@@ -22,4 +29,27 @@ type AlibabaInteractIsvGatewayAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// ret=0
 	Ret string `json:"ret,omitempty" xml:"ret,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaInteractIsvGatewayAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Ret = ""
+}
+
+var poolAlibabaInteractIsvGatewayAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaInteractIsvGatewayAPIResponse)
+	},
+}
+
+// GetAlibabaInteractIsvGatewayAPIResponse 从 sync.Pool 获取 AlibabaInteractIsvGatewayAPIResponse
+func GetAlibabaInteractIsvGatewayAPIResponse() *AlibabaInteractIsvGatewayAPIResponse {
+	return poolAlibabaInteractIsvGatewayAPIResponse.Get().(*AlibabaInteractIsvGatewayAPIResponse)
+}
+
+// ReleaseAlibabaInteractIsvGatewayAPIResponse 将 AlibabaInteractIsvGatewayAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaInteractIsvGatewayAPIResponse(v *AlibabaInteractIsvGatewayAPIResponse) {
+	v.Reset()
+	poolAlibabaInteractIsvGatewayAPIResponse.Put(v)
 }

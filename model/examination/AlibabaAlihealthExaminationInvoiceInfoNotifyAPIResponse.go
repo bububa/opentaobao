@@ -2,6 +2,7 @@ package examination
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse struct {
 	AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponseModel is 体检机构同步发票信息给阿里健康 成功返回结果
 type AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_examination_invoice_info_notify_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// alinkappserver系统返回的通用结果类
 	Result *ServiceResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse 从 sync.Pool 获取 AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse
+func GetAlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse() *AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse {
+	return poolAlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse.Get().(*AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse 将 AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse(v *AlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationInvoiceInfoNotifyAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package icbuseller
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaSellerVendorOrderDetailAPIRequest struct {
 // NewAlibabaSellerVendorOrderDetailRequest 初始化AlibabaSellerVendorOrderDetailAPIRequest对象
 func NewAlibabaSellerVendorOrderDetailRequest() *AlibabaSellerVendorOrderDetailAPIRequest {
 	return &AlibabaSellerVendorOrderDetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSellerVendorOrderDetailAPIRequest) Reset() {
+	r._orderNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaSellerVendorOrderDetailAPIRequest) SetOrderNo(_orderNo string) e
 // GetOrderNo OrderNo Getter
 func (r AlibabaSellerVendorOrderDetailAPIRequest) GetOrderNo() string {
 	return r._orderNo
+}
+
+var poolAlibabaSellerVendorOrderDetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSellerVendorOrderDetailRequest()
+	},
+}
+
+// GetAlibabaSellerVendorOrderDetailRequest 从 sync.Pool 获取 AlibabaSellerVendorOrderDetailAPIRequest
+func GetAlibabaSellerVendorOrderDetailAPIRequest() *AlibabaSellerVendorOrderDetailAPIRequest {
+	return poolAlibabaSellerVendorOrderDetailAPIRequest.Get().(*AlibabaSellerVendorOrderDetailAPIRequest)
+}
+
+// ReleaseAlibabaSellerVendorOrderDetailAPIRequest 将 AlibabaSellerVendorOrderDetailAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSellerVendorOrderDetailAPIRequest(v *AlibabaSellerVendorOrderDetailAPIRequest) {
+	v.Reset()
+	poolAlibabaSellerVendorOrderDetailAPIRequest.Put(v)
 }

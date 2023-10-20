@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // AddressDto 结构体
 type AddressDto struct {
 	// 镇/街道
@@ -24,4 +28,31 @@ type AddressDto struct {
 	Town string `json:"town,omitempty" xml:"town,omitempty"`
 	// 订购关系id
 	WaybillAddressId string `json:"waybill_address_id,omitempty" xml:"waybill_address_id,omitempty"`
+}
+
+var poolAddressDto = sync.Pool{
+	New: func() any {
+		return new(AddressDto)
+	},
+}
+
+// GetAddressDto() 从对象池中获取AddressDto
+func GetAddressDto() *AddressDto {
+	return poolAddressDto.Get().(*AddressDto)
+}
+
+// ReleaseAddressDto 释放AddressDto
+func ReleaseAddressDto(v *AddressDto) {
+	v.TownName = ""
+	v.AddressDetail = ""
+	v.CityName = ""
+	v.AreaName = ""
+	v.ProvinceName = ""
+	v.City = ""
+	v.Detail = ""
+	v.District = ""
+	v.Province = ""
+	v.Town = ""
+	v.WaybillAddressId = ""
+	poolAddressDto.Put(v)
 }

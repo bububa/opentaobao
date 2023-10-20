@@ -2,6 +2,7 @@ package baoxian
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest struct {
 // NewAlipayBaoxianClaimReturngoodsstatusUpdateRequest 初始化AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest对象
 func NewAlipayBaoxianClaimReturngoodsstatusUpdateRequest() *AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest {
 	return &AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest) Reset() {
+	r._claimNo = ""
+	r._goodsStatus = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest) SetGoodsStatus(_go
 // GetGoodsStatus GoodsStatus Getter
 func (r AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest) GetGoodsStatus() string {
 	return r._goodsStatus
+}
+
+var poolAlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlipayBaoxianClaimReturngoodsstatusUpdateRequest()
+	},
+}
+
+// GetAlipayBaoxianClaimReturngoodsstatusUpdateRequest 从 sync.Pool 获取 AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest
+func GetAlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest() *AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest {
+	return poolAlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest.Get().(*AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest)
+}
+
+// ReleaseAlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest 将 AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest(v *AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest) {
+	v.Reset()
+	poolAlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest.Put(v)
 }

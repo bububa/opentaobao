@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // BaseResult 结构体
 type BaseResult struct {
 	// 错误码
@@ -14,4 +18,26 @@ type BaseResult struct {
 	Process bool `json:"process,omitempty" xml:"process,omitempty"`
 	// 是否执行成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolBaseResult = sync.Pool{
+	New: func() any {
+		return new(BaseResult)
+	},
+}
+
+// GetBaseResult() 从对象池中获取BaseResult
+func GetBaseResult() *BaseResult {
+	return poolBaseResult.Get().(*BaseResult)
+}
+
+// ReleaseBaseResult 释放BaseResult
+func ReleaseBaseResult(v *BaseResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Status = 0
+	v.Fail = false
+	v.Process = false
+	v.Success = false
+	poolBaseResult.Put(v)
 }

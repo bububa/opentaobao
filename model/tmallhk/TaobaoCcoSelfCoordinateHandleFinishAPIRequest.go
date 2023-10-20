@@ -2,6 +2,7 @@ package tmallhk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoCcoSelfCoordinateHandleFinishAPIRequest struct {
 // NewTaobaoCcoSelfCoordinateHandleFinishRequest 初始化TaobaoCcoSelfCoordinateHandleFinishAPIRequest对象
 func NewTaobaoCcoSelfCoordinateHandleFinishRequest() *TaobaoCcoSelfCoordinateHandleFinishAPIRequest {
 	return &TaobaoCcoSelfCoordinateHandleFinishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCcoSelfCoordinateHandleFinishAPIRequest) Reset() {
+	r._operator = ""
+	r._replyData = ""
+	r._caseId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoCcoSelfCoordinateHandleFinishAPIRequest) SetCaseId(_caseId int64)
 // GetCaseId CaseId Getter
 func (r TaobaoCcoSelfCoordinateHandleFinishAPIRequest) GetCaseId() int64 {
 	return r._caseId
+}
+
+var poolTaobaoCcoSelfCoordinateHandleFinishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCcoSelfCoordinateHandleFinishRequest()
+	},
+}
+
+// GetTaobaoCcoSelfCoordinateHandleFinishRequest 从 sync.Pool 获取 TaobaoCcoSelfCoordinateHandleFinishAPIRequest
+func GetTaobaoCcoSelfCoordinateHandleFinishAPIRequest() *TaobaoCcoSelfCoordinateHandleFinishAPIRequest {
+	return poolTaobaoCcoSelfCoordinateHandleFinishAPIRequest.Get().(*TaobaoCcoSelfCoordinateHandleFinishAPIRequest)
+}
+
+// ReleaseTaobaoCcoSelfCoordinateHandleFinishAPIRequest 将 TaobaoCcoSelfCoordinateHandleFinishAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCcoSelfCoordinateHandleFinishAPIRequest(v *TaobaoCcoSelfCoordinateHandleFinishAPIRequest) {
+	v.Reset()
+	poolTaobaoCcoSelfCoordinateHandleFinishAPIRequest.Put(v)
 }

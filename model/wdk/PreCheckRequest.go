@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // PreCheckRequest 结构体
 type PreCheckRequest struct {
 	// 购买商品列表
@@ -14,4 +18,26 @@ type PreCheckRequest struct {
 	TimeSliceDate string `json:"time_slice_date,omitempty" xml:"time_slice_date,omitempty"`
 	// 选择时间片时间段, PostOrderScene场景必填
 	TimeSlice string `json:"time_slice,omitempty" xml:"time_slice,omitempty"`
+}
+
+var poolPreCheckRequest = sync.Pool{
+	New: func() any {
+		return new(PreCheckRequest)
+	},
+}
+
+// GetPreCheckRequest() 从对象池中获取PreCheckRequest
+func GetPreCheckRequest() *PreCheckRequest {
+	return poolPreCheckRequest.Get().(*PreCheckRequest)
+}
+
+// ReleasePreCheckRequest 释放PreCheckRequest
+func ReleasePreCheckRequest(v *PreCheckRequest) {
+	v.SkuList = v.SkuList[:0]
+	v.ShopId = ""
+	v.Geo = ""
+	v.Scene = ""
+	v.TimeSliceDate = ""
+	v.TimeSlice = ""
+	poolPreCheckRequest.Put(v)
 }

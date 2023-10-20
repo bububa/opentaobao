@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoSkusCustomGetAPIRequest struct {
 // NewTaobaoSkusCustomGetRequest 初始化TaobaoSkusCustomGetAPIRequest对象
 func NewTaobaoSkusCustomGetRequest() *TaobaoSkusCustomGetAPIRequest {
 	return &TaobaoSkusCustomGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSkusCustomGetAPIRequest) Reset() {
+	r._fields = ""
+	r._outerId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoSkusCustomGetAPIRequest) SetOuterId(_outerId string) error {
 // GetOuterId OuterId Getter
 func (r TaobaoSkusCustomGetAPIRequest) GetOuterId() string {
 	return r._outerId
+}
+
+var poolTaobaoSkusCustomGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSkusCustomGetRequest()
+	},
+}
+
+// GetTaobaoSkusCustomGetRequest 从 sync.Pool 获取 TaobaoSkusCustomGetAPIRequest
+func GetTaobaoSkusCustomGetAPIRequest() *TaobaoSkusCustomGetAPIRequest {
+	return poolTaobaoSkusCustomGetAPIRequest.Get().(*TaobaoSkusCustomGetAPIRequest)
+}
+
+// ReleaseTaobaoSkusCustomGetAPIRequest 将 TaobaoSkusCustomGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSkusCustomGetAPIRequest(v *TaobaoSkusCustomGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSkusCustomGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type AlibabaOmniSaasOrderCreateAPIRequest struct {
 // NewAlibabaOmniSaasOrderCreateRequest 初始化AlibabaOmniSaasOrderCreateAPIRequest对象
 func NewAlibabaOmniSaasOrderCreateRequest() *AlibabaOmniSaasOrderCreateAPIRequest {
 	return &AlibabaOmniSaasOrderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaOmniSaasOrderCreateAPIRequest) Reset() {
+	r._goodsDetails = r._goodsDetails[:0]
+	r._couponInfos = r._couponInfos[:0]
+	r._buyerId = ""
+	r._buyerIdType = ""
+	r._storeId = ""
+	r._device = ""
+	r._deviceNo = ""
+	r._operatorId = ""
+	r._payChannel = ""
+	r._storeIdType = ""
+	r._requestNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *AlibabaOmniSaasOrderCreateAPIRequest) SetRequestNo(_requestNo string) e
 // GetRequestNo RequestNo Getter
 func (r AlibabaOmniSaasOrderCreateAPIRequest) GetRequestNo() string {
 	return r._requestNo
+}
+
+var poolAlibabaOmniSaasOrderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaOmniSaasOrderCreateRequest()
+	},
+}
+
+// GetAlibabaOmniSaasOrderCreateRequest 从 sync.Pool 获取 AlibabaOmniSaasOrderCreateAPIRequest
+func GetAlibabaOmniSaasOrderCreateAPIRequest() *AlibabaOmniSaasOrderCreateAPIRequest {
+	return poolAlibabaOmniSaasOrderCreateAPIRequest.Get().(*AlibabaOmniSaasOrderCreateAPIRequest)
+}
+
+// ReleaseAlibabaOmniSaasOrderCreateAPIRequest 将 AlibabaOmniSaasOrderCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaOmniSaasOrderCreateAPIRequest(v *AlibabaOmniSaasOrderCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaOmniSaasOrderCreateAPIRequest.Put(v)
 }

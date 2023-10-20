@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenApiFlightOrderRs 结构体
 type OpenApiFlightOrderRs struct {
 	// 价目信息
@@ -74,4 +78,56 @@ type OpenApiFlightOrderRs struct {
 	CostCenter *OpenCostCenterDo `json:"cost_center,omitempty" xml:"cost_center,omitempty"`
 	// 项目id
 	ProjectId int64 `json:"project_id,omitempty" xml:"project_id,omitempty"`
+}
+
+var poolOpenApiFlightOrderRs = sync.Pool{
+	New: func() any {
+		return new(OpenApiFlightOrderRs)
+	},
+}
+
+// GetOpenApiFlightOrderRs() 从对象池中获取OpenApiFlightOrderRs
+func GetOpenApiFlightOrderRs() *OpenApiFlightOrderRs {
+	return poolOpenApiFlightOrderRs.Get().(*OpenApiFlightOrderRs)
+}
+
+// ReleaseOpenApiFlightOrderRs 释放OpenApiFlightOrderRs
+func ReleaseOpenApiFlightOrderRs(v *OpenApiFlightOrderRs) {
+	v.PriceInfoList = v.PriceInfoList[:0]
+	v.InsureInfoList = v.InsureInfoList[:0]
+	v.UserAffiliateList = v.UserAffiliateList[:0]
+	v.GmtModified = ""
+	v.UserId = ""
+	v.CorpName = ""
+	v.CorpId = ""
+	v.GmtCreate = ""
+	v.UserName = ""
+	v.DepartId = ""
+	v.DepartName = ""
+	v.ApplyId = ""
+	v.ContactName = ""
+	v.DepCity = ""
+	v.ArrCity = ""
+	v.DepDate = ""
+	v.RetDate = ""
+	v.CabinClass = ""
+	v.Discount = ""
+	v.FlightNo = ""
+	v.PassengerName = ""
+	v.DepAirport = ""
+	v.ArrAirport = ""
+	v.ThirdpartItineraryId = ""
+	v.ThirdpartApplyId = ""
+	v.BtripTitle = ""
+	v.ProjectCode = ""
+	v.ProjectTitle = ""
+	v.ThirdPartProjectId = ""
+	v.Id = 0
+	v.TripType = 0
+	v.PassengerCount = 0
+	v.Status = 0
+	v.Invoice = nil
+	v.CostCenter = nil
+	v.ProjectId = 0
+	poolOpenApiFlightOrderRs.Put(v)
 }

@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // OrderOpenInfo 结构体
 type OrderOpenInfo struct {
 	// 行动点模型
@@ -22,4 +26,30 @@ type OrderOpenInfo struct {
 	Subject string `json:"subject,omitempty" xml:"subject,omitempty"`
 	// 主单资金明细
 	FundOpenInfo *FundOpenInfo `json:"fund_open_info,omitempty" xml:"fund_open_info,omitempty"`
+}
+
+var poolOrderOpenInfo = sync.Pool{
+	New: func() any {
+		return new(OrderOpenInfo)
+	},
+}
+
+// GetOrderOpenInfo() 从对象池中获取OrderOpenInfo
+func GetOrderOpenInfo() *OrderOpenInfo {
+	return poolOrderOpenInfo.Get().(*OrderOpenInfo)
+}
+
+// ReleaseOrderOpenInfo 释放OrderOpenInfo
+func ReleaseOrderOpenInfo(v *OrderOpenInfo) {
+	v.ActionOpenInfos = v.ActionOpenInfos[:0]
+	v.BizContext = ""
+	v.BizStatus = ""
+	v.BizStatusDesc = ""
+	v.ExtInfo = ""
+	v.OrderChannel = ""
+	v.OrderDetailUrl = ""
+	v.OrderSubChannel = ""
+	v.Subject = ""
+	v.FundOpenInfo = nil
+	poolOrderOpenInfo.Put(v)
 }

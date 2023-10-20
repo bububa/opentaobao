@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaAilabsAligenieIotDeviceControlResultAPIRequest struct {
 // NewAlibabaAilabsAligenieIotDeviceControlResultRequest 初始化AlibabaAilabsAligenieIotDeviceControlResultAPIRequest对象
 func NewAlibabaAilabsAligenieIotDeviceControlResultRequest() *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest {
 	return &AlibabaAilabsAligenieIotDeviceControlResultAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) Reset() {
+	r._requestToken = ""
+	r._deviceId = ""
+	r._ackCode = ""
+	r._type = 0
+	r._control = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) SetControl(_cont
 // GetControl Control Getter
 func (r AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) GetControl() bool {
 	return r._control
+}
+
+var poolAlibabaAilabsAligenieIotDeviceControlResultAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsAligenieIotDeviceControlResultRequest()
+	},
+}
+
+// GetAlibabaAilabsAligenieIotDeviceControlResultRequest 从 sync.Pool 获取 AlibabaAilabsAligenieIotDeviceControlResultAPIRequest
+func GetAlibabaAilabsAligenieIotDeviceControlResultAPIRequest() *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest {
+	return poolAlibabaAilabsAligenieIotDeviceControlResultAPIRequest.Get().(*AlibabaAilabsAligenieIotDeviceControlResultAPIRequest)
+}
+
+// ReleaseAlibabaAilabsAligenieIotDeviceControlResultAPIRequest 将 AlibabaAilabsAligenieIotDeviceControlResultAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsAligenieIotDeviceControlResultAPIRequest(v *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsAligenieIotDeviceControlResultAPIRequest.Put(v)
 }

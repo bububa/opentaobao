@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpCnskuSearchAPIRequest struct {
 // NewAlibabaAscpCnskuSearchRequest 初始化AlibabaAscpCnskuSearchAPIRequest对象
 func NewAlibabaAscpCnskuSearchRequest() *AlibabaAscpCnskuSearchAPIRequest {
 	return &AlibabaAscpCnskuSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpCnskuSearchAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpCnskuSearchAPIRequest) SetParam0(_param0 *ScItemSearchDto) e
 // GetParam0 Param0 Getter
 func (r AlibabaAscpCnskuSearchAPIRequest) GetParam0() *ScItemSearchDto {
 	return r._param0
+}
+
+var poolAlibabaAscpCnskuSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpCnskuSearchRequest()
+	},
+}
+
+// GetAlibabaAscpCnskuSearchRequest 从 sync.Pool 获取 AlibabaAscpCnskuSearchAPIRequest
+func GetAlibabaAscpCnskuSearchAPIRequest() *AlibabaAscpCnskuSearchAPIRequest {
+	return poolAlibabaAscpCnskuSearchAPIRequest.Get().(*AlibabaAscpCnskuSearchAPIRequest)
+}
+
+// ReleaseAlibabaAscpCnskuSearchAPIRequest 将 AlibabaAscpCnskuSearchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpCnskuSearchAPIRequest(v *AlibabaAscpCnskuSearchAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpCnskuSearchAPIRequest.Put(v)
 }

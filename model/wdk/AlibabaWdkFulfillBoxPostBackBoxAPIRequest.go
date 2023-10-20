@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkFulfillBoxPostBackBoxAPIRequest struct {
 // NewAlibabaWdkFulfillBoxPostBackBoxRequest 初始化AlibabaWdkFulfillBoxPostBackBoxAPIRequest对象
 func NewAlibabaWdkFulfillBoxPostBackBoxRequest() *AlibabaWdkFulfillBoxPostBackBoxAPIRequest {
 	return &AlibabaWdkFulfillBoxPostBackBoxAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkFulfillBoxPostBackBoxAPIRequest) Reset() {
+	r._returnBoxContainerRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkFulfillBoxPostBackBoxAPIRequest) SetReturnBoxContainerRequest
 // GetReturnBoxContainerRequest ReturnBoxContainerRequest Getter
 func (r AlibabaWdkFulfillBoxPostBackBoxAPIRequest) GetReturnBoxContainerRequest() *ReturnBoxContainerRequest {
 	return r._returnBoxContainerRequest
+}
+
+var poolAlibabaWdkFulfillBoxPostBackBoxAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkFulfillBoxPostBackBoxRequest()
+	},
+}
+
+// GetAlibabaWdkFulfillBoxPostBackBoxRequest 从 sync.Pool 获取 AlibabaWdkFulfillBoxPostBackBoxAPIRequest
+func GetAlibabaWdkFulfillBoxPostBackBoxAPIRequest() *AlibabaWdkFulfillBoxPostBackBoxAPIRequest {
+	return poolAlibabaWdkFulfillBoxPostBackBoxAPIRequest.Get().(*AlibabaWdkFulfillBoxPostBackBoxAPIRequest)
+}
+
+// ReleaseAlibabaWdkFulfillBoxPostBackBoxAPIRequest 将 AlibabaWdkFulfillBoxPostBackBoxAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkFulfillBoxPostBackBoxAPIRequest(v *AlibabaWdkFulfillBoxPostBackBoxAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkFulfillBoxPostBackBoxAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlscCrmPromotionListAPIResponse struct {
 	AlibabaAlscCrmPromotionListAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlscCrmPromotionListAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlscCrmPromotionListAPIResponseModel).Reset()
+}
+
 // AlibabaAlscCrmPromotionListAPIResponseModel is 获取促销规则列表 成功返回结果
 type AlibabaAlscCrmPromotionListAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_promotion_list_response"`
@@ -22,4 +29,27 @@ type AlibabaAlscCrmPromotionListAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 分页返回模型
 	Result *CommonPageResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlscCrmPromotionListAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlscCrmPromotionListAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlscCrmPromotionListAPIResponse)
+	},
+}
+
+// GetAlibabaAlscCrmPromotionListAPIResponse 从 sync.Pool 获取 AlibabaAlscCrmPromotionListAPIResponse
+func GetAlibabaAlscCrmPromotionListAPIResponse() *AlibabaAlscCrmPromotionListAPIResponse {
+	return poolAlibabaAlscCrmPromotionListAPIResponse.Get().(*AlibabaAlscCrmPromotionListAPIResponse)
+}
+
+// ReleaseAlibabaAlscCrmPromotionListAPIResponse 将 AlibabaAlscCrmPromotionListAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlscCrmPromotionListAPIResponse(v *AlibabaAlscCrmPromotionListAPIResponse) {
+	v.Reset()
+	poolAlibabaAlscCrmPromotionListAPIResponse.Put(v)
 }

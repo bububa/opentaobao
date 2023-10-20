@@ -9,11 +9,6 @@ import (
 // taobao.recycle.prededuct.settle.sync
 //
 // 同步回收单线下打款明细
-func TaobaoRecyclePredeductSettleSync(clt *core.SDKClient, req *servicecenter.TaobaoRecyclePredeductSettleSyncAPIRequest, session string) (*servicecenter.TaobaoRecyclePredeductSettleSyncAPIResponse, error) {
-	var resp servicecenter.TaobaoRecyclePredeductSettleSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoRecyclePredeductSettleSync(clt *core.SDKClient, req *servicecenter.TaobaoRecyclePredeductSettleSyncAPIRequest, resp *servicecenter.TaobaoRecyclePredeductSettleSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

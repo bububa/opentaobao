@@ -2,6 +2,7 @@ package category
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoItemCatpropsModificationGetAPIRequest struct {
 // NewTaobaoItemCatpropsModificationGetRequest 初始化TaobaoItemCatpropsModificationGetAPIRequest对象
 func NewTaobaoItemCatpropsModificationGetRequest() *TaobaoItemCatpropsModificationGetAPIRequest {
 	return &TaobaoItemCatpropsModificationGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoItemCatpropsModificationGetAPIRequest) Reset() {
+	r._itemId = ""
+	r._startTime = ""
+	r._categoryId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoItemCatpropsModificationGetAPIRequest) SetCategoryId(_categoryId 
 // GetCategoryId CategoryId Getter
 func (r TaobaoItemCatpropsModificationGetAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
+}
+
+var poolTaobaoItemCatpropsModificationGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoItemCatpropsModificationGetRequest()
+	},
+}
+
+// GetTaobaoItemCatpropsModificationGetRequest 从 sync.Pool 获取 TaobaoItemCatpropsModificationGetAPIRequest
+func GetTaobaoItemCatpropsModificationGetAPIRequest() *TaobaoItemCatpropsModificationGetAPIRequest {
+	return poolTaobaoItemCatpropsModificationGetAPIRequest.Get().(*TaobaoItemCatpropsModificationGetAPIRequest)
+}
+
+// ReleaseTaobaoItemCatpropsModificationGetAPIRequest 将 TaobaoItemCatpropsModificationGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoItemCatpropsModificationGetAPIRequest(v *TaobaoItemCatpropsModificationGetAPIRequest) {
+	v.Reset()
+	poolTaobaoItemCatpropsModificationGetAPIRequest.Put(v)
 }

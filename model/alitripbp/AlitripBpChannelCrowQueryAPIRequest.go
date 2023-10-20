@@ -2,6 +2,7 @@ package alitripbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBpChannelCrowQueryAPIRequest struct {
 // NewAlitripBpChannelCrowQueryRequest 初始化AlitripBpChannelCrowQueryAPIRequest对象
 func NewAlitripBpChannelCrowQueryRequest() *AlitripBpChannelCrowQueryAPIRequest {
 	return &AlitripBpChannelCrowQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBpChannelCrowQueryAPIRequest) Reset() {
+	r._queryParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBpChannelCrowQueryAPIRequest) SetQueryParam(_queryParam *Examine
 // GetQueryParam QueryParam Getter
 func (r AlitripBpChannelCrowQueryAPIRequest) GetQueryParam() *ExamineOuterUserRequest {
 	return r._queryParam
+}
+
+var poolAlitripBpChannelCrowQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBpChannelCrowQueryRequest()
+	},
+}
+
+// GetAlitripBpChannelCrowQueryRequest 从 sync.Pool 获取 AlitripBpChannelCrowQueryAPIRequest
+func GetAlitripBpChannelCrowQueryAPIRequest() *AlitripBpChannelCrowQueryAPIRequest {
+	return poolAlitripBpChannelCrowQueryAPIRequest.Get().(*AlitripBpChannelCrowQueryAPIRequest)
+}
+
+// ReleaseAlitripBpChannelCrowQueryAPIRequest 将 AlitripBpChannelCrowQueryAPIRequest 放入 sync.Pool
+func ReleaseAlitripBpChannelCrowQueryAPIRequest(v *AlitripBpChannelCrowQueryAPIRequest) {
+	v.Reset()
+	poolAlitripBpChannelCrowQueryAPIRequest.Put(v)
 }

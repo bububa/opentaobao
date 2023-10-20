@@ -2,6 +2,7 @@ package wms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoWlbWmsInventoryProfitlossGetAPIRequest struct {
 // NewTaobaoWlbWmsInventoryProfitlossGetRequest 初始化TaobaoWlbWmsInventoryProfitlossGetAPIRequest对象
 func NewTaobaoWlbWmsInventoryProfitlossGetRequest() *TaobaoWlbWmsInventoryProfitlossGetAPIRequest {
 	return &TaobaoWlbWmsInventoryProfitlossGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWmsInventoryProfitlossGetAPIRequest) Reset() {
+	r._cnOrderCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoWlbWmsInventoryProfitlossGetAPIRequest) SetCnOrderCode(_cnOrderCo
 // GetCnOrderCode CnOrderCode Getter
 func (r TaobaoWlbWmsInventoryProfitlossGetAPIRequest) GetCnOrderCode() string {
 	return r._cnOrderCode
+}
+
+var poolTaobaoWlbWmsInventoryProfitlossGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWmsInventoryProfitlossGetRequest()
+	},
+}
+
+// GetTaobaoWlbWmsInventoryProfitlossGetRequest 从 sync.Pool 获取 TaobaoWlbWmsInventoryProfitlossGetAPIRequest
+func GetTaobaoWlbWmsInventoryProfitlossGetAPIRequest() *TaobaoWlbWmsInventoryProfitlossGetAPIRequest {
+	return poolTaobaoWlbWmsInventoryProfitlossGetAPIRequest.Get().(*TaobaoWlbWmsInventoryProfitlossGetAPIRequest)
+}
+
+// ReleaseTaobaoWlbWmsInventoryProfitlossGetAPIRequest 将 TaobaoWlbWmsInventoryProfitlossGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWmsInventoryProfitlossGetAPIRequest(v *TaobaoWlbWmsInventoryProfitlossGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWmsInventoryProfitlossGetAPIRequest.Put(v)
 }

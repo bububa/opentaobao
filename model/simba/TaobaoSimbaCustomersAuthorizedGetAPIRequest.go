@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoSimbaCustomersAuthorizedGetAPIRequest struct {
 // NewTaobaoSimbaCustomersAuthorizedGetRequest 初始化TaobaoSimbaCustomersAuthorizedGetAPIRequest对象
 func NewTaobaoSimbaCustomersAuthorizedGetRequest() *TaobaoSimbaCustomersAuthorizedGetAPIRequest {
 	return &TaobaoSimbaCustomersAuthorizedGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaCustomersAuthorizedGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoSimbaCustomersAuthorizedGetAPIRequest) GetApiParams(params url.Val
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoSimbaCustomersAuthorizedGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoSimbaCustomersAuthorizedGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaCustomersAuthorizedGetRequest()
+	},
+}
+
+// GetTaobaoSimbaCustomersAuthorizedGetRequest 从 sync.Pool 获取 TaobaoSimbaCustomersAuthorizedGetAPIRequest
+func GetTaobaoSimbaCustomersAuthorizedGetAPIRequest() *TaobaoSimbaCustomersAuthorizedGetAPIRequest {
+	return poolTaobaoSimbaCustomersAuthorizedGetAPIRequest.Get().(*TaobaoSimbaCustomersAuthorizedGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaCustomersAuthorizedGetAPIRequest 将 TaobaoSimbaCustomersAuthorizedGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaCustomersAuthorizedGetAPIRequest(v *TaobaoSimbaCustomersAuthorizedGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaCustomersAuthorizedGetAPIRequest.Put(v)
 }

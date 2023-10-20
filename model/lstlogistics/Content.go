@@ -1,5 +1,9 @@
 package lstlogistics
 
+import (
+	"sync"
+)
+
 // Content 结构体
 type Content struct {
 	// 子订单列表
@@ -18,4 +22,28 @@ type Content struct {
 	Time string `json:"time,omitempty" xml:"time,omitempty"`
 	// 描述
 	StanderdDesc string `json:"standerd_desc,omitempty" xml:"standerd_desc,omitempty"`
+}
+
+var poolContent = sync.Pool{
+	New: func() any {
+		return new(Content)
+	},
+}
+
+// GetContent() 从对象池中获取Content
+func GetContent() *Content {
+	return poolContent.Get().(*Content)
+}
+
+// ReleaseContent 释放Content
+func ReleaseContent(v *Content) {
+	v.SubOrderIdList = v.SubOrderIdList[:0]
+	v.LogisticsId = ""
+	v.MailNo = ""
+	v.CpCompanyCode = ""
+	v.CpCompanyName = ""
+	v.StatusDesc = ""
+	v.Time = ""
+	v.StanderdDesc = ""
+	poolContent.Put(v)
 }

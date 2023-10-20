@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.invoice.get
 //
 // 差旅申请用户获取可用发票列表
-func AlitripBtripInvoiceGet(clt *core.SDKClient, req *btrip.AlitripBtripInvoiceGetAPIRequest, session string) (*btrip.AlitripBtripInvoiceGetAPIResponse, error) {
-	var resp btrip.AlitripBtripInvoiceGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripInvoiceGet(clt *core.SDKClient, req *btrip.AlitripBtripInvoiceGetAPIRequest, resp *btrip.AlitripBtripInvoiceGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

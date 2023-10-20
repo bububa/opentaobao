@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoNextoneLogisticsWarehouseUpdateAPIRequest struct {
 // NewTaobaoNextoneLogisticsWarehouseUpdateRequest 初始化TaobaoNextoneLogisticsWarehouseUpdateAPIRequest对象
 func NewTaobaoNextoneLogisticsWarehouseUpdateRequest() *TaobaoNextoneLogisticsWarehouseUpdateAPIRequest {
 	return &TaobaoNextoneLogisticsWarehouseUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoNextoneLogisticsWarehouseUpdateAPIRequest) Reset() {
+	r._refundId = 0
+	r._warehouseStatus = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoNextoneLogisticsWarehouseUpdateAPIRequest) SetWarehouseStatus(_wa
 // GetWarehouseStatus WarehouseStatus Getter
 func (r TaobaoNextoneLogisticsWarehouseUpdateAPIRequest) GetWarehouseStatus() int64 {
 	return r._warehouseStatus
+}
+
+var poolTaobaoNextoneLogisticsWarehouseUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoNextoneLogisticsWarehouseUpdateRequest()
+	},
+}
+
+// GetTaobaoNextoneLogisticsWarehouseUpdateRequest 从 sync.Pool 获取 TaobaoNextoneLogisticsWarehouseUpdateAPIRequest
+func GetTaobaoNextoneLogisticsWarehouseUpdateAPIRequest() *TaobaoNextoneLogisticsWarehouseUpdateAPIRequest {
+	return poolTaobaoNextoneLogisticsWarehouseUpdateAPIRequest.Get().(*TaobaoNextoneLogisticsWarehouseUpdateAPIRequest)
+}
+
+// ReleaseTaobaoNextoneLogisticsWarehouseUpdateAPIRequest 将 TaobaoNextoneLogisticsWarehouseUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoNextoneLogisticsWarehouseUpdateAPIRequest(v *TaobaoNextoneLogisticsWarehouseUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoNextoneLogisticsWarehouseUpdateAPIRequest.Put(v)
 }

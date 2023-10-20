@@ -1,5 +1,9 @@
 package cainiaohandover
 
+import (
+	"sync"
+)
+
 // OpenFeeDto 结构体
 type OpenFeeDto struct {
 	// 费用详细列表
@@ -10,4 +14,24 @@ type OpenFeeDto struct {
 	FeeType string `json:"fee_type,omitempty" xml:"fee_type,omitempty"`
 	// 总费用
 	TotalFee int64 `json:"total_fee,omitempty" xml:"total_fee,omitempty"`
+}
+
+var poolOpenFeeDto = sync.Pool{
+	New: func() any {
+		return new(OpenFeeDto)
+	},
+}
+
+// GetOpenFeeDto() 从对象池中获取OpenFeeDto
+func GetOpenFeeDto() *OpenFeeDto {
+	return poolOpenFeeDto.Get().(*OpenFeeDto)
+}
+
+// ReleaseOpenFeeDto 释放OpenFeeDto
+func ReleaseOpenFeeDto(v *OpenFeeDto) {
+	v.FeeDetailList = v.FeeDetailList[:0]
+	v.Currency = ""
+	v.FeeType = ""
+	v.TotalFee = 0
+	poolOpenFeeDto.Put(v)
 }

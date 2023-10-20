@@ -1,9 +1,13 @@
 package wdk
 
-// DrfB2ccallbackOrder 结构体
-type DrfB2ccallbackOrder struct {
+import (
+	"sync"
+)
+
+// DrfB2CCallbackOrder 结构体
+type DrfB2CCallbackOrder struct {
 	// 作业单元
-	CallbackUnits []DrfB2ccallbackUnit `json:"callback_units,omitempty" xml:"callback_units>drf_b2ccallback_unit,omitempty"`
+	CallbackUnits []DrfB2CCallbackUnit `json:"callback_units,omitempty" xml:"callback_units>drf_b2c_callback_unit,omitempty"`
 	// 容器列表
 	Containers []Container `json:"containers,omitempty" xml:"containers>container,omitempty"`
 	// 作业状态变更时间
@@ -20,4 +24,29 @@ type DrfB2ccallbackOrder struct {
 	Operator *Operator `json:"operator,omitempty" xml:"operator,omitempty"`
 	// 是否作业节点终态
 	IsFinal bool `json:"is_final,omitempty" xml:"is_final,omitempty"`
+}
+
+var poolDrfB2CCallbackOrder = sync.Pool{
+	New: func() any {
+		return new(DrfB2CCallbackOrder)
+	},
+}
+
+// GetDrfB2CCallbackOrder() 从对象池中获取DrfB2CCallbackOrder
+func GetDrfB2CCallbackOrder() *DrfB2CCallbackOrder {
+	return poolDrfB2CCallbackOrder.Get().(*DrfB2CCallbackOrder)
+}
+
+// ReleaseDrfB2CCallbackOrder 释放DrfB2CCallbackOrder
+func ReleaseDrfB2CCallbackOrder(v *DrfB2CCallbackOrder) {
+	v.CallbackUnits = v.CallbackUnits[:0]
+	v.Containers = v.Containers[:0]
+	v.StatusChangeTime = ""
+	v.StatusChangeType = ""
+	v.NodeCode = ""
+	v.WorkOrderType = ""
+	v.WorkOrderId = ""
+	v.Operator = nil
+	v.IsFinal = false
+	poolDrfB2CCallbackOrder.Put(v)
 }

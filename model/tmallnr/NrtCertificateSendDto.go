@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrtCertificateSendDto 结构体
 type NrtCertificateSendDto struct {
 	// 淘系加密ID
@@ -10,4 +14,24 @@ type NrtCertificateSendDto struct {
 	Channel int64 `json:"channel,omitempty" xml:"channel,omitempty"`
 	// 电子凭证模版id
 	OutId int64 `json:"out_id,omitempty" xml:"out_id,omitempty"`
+}
+
+var poolNrtCertificateSendDto = sync.Pool{
+	New: func() any {
+		return new(NrtCertificateSendDto)
+	},
+}
+
+// GetNrtCertificateSendDto() 从对象池中获取NrtCertificateSendDto
+func GetNrtCertificateSendDto() *NrtCertificateSendDto {
+	return poolNrtCertificateSendDto.Get().(*NrtCertificateSendDto)
+}
+
+// ReleaseNrtCertificateSendDto 释放NrtCertificateSendDto
+func ReleaseNrtCertificateSendDto(v *NrtCertificateSendDto) {
+	v.OpenId = ""
+	v.BizCode = ""
+	v.Channel = 0
+	v.OutId = 0
+	poolNrtCertificateSendDto.Put(v)
 }

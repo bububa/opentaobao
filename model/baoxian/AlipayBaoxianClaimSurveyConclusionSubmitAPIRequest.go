@@ -2,6 +2,7 @@ package baoxian
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest struct {
 // NewAlipayBaoxianClaimSurveyConclusionSubmitRequest 初始化AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest对象
 func NewAlipayBaoxianClaimSurveyConclusionSubmitRequest() *AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest {
 	return &AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest) Reset() {
+	r._facilitatorSurveyConclusions = r._facilitatorSurveyConclusions[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest) SetFacilitatorSurve
 // GetFacilitatorSurveyConclusions FacilitatorSurveyConclusions Getter
 func (r AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest) GetFacilitatorSurveyConclusions() []InsFacilitatorSurveyConclusionDto {
 	return r._facilitatorSurveyConclusions
+}
+
+var poolAlipayBaoxianClaimSurveyConclusionSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlipayBaoxianClaimSurveyConclusionSubmitRequest()
+	},
+}
+
+// GetAlipayBaoxianClaimSurveyConclusionSubmitRequest 从 sync.Pool 获取 AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest
+func GetAlipayBaoxianClaimSurveyConclusionSubmitAPIRequest() *AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest {
+	return poolAlipayBaoxianClaimSurveyConclusionSubmitAPIRequest.Get().(*AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest)
+}
+
+// ReleaseAlipayBaoxianClaimSurveyConclusionSubmitAPIRequest 将 AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest 放入 sync.Pool
+func ReleaseAlipayBaoxianClaimSurveyConclusionSubmitAPIRequest(v *AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest) {
+	v.Reset()
+	poolAlipayBaoxianClaimSurveyConclusionSubmitAPIRequest.Put(v)
 }

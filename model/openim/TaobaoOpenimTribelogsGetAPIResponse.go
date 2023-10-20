@@ -2,6 +2,7 @@ package openim
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoOpenimTribelogsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoOpenimTribelogsGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoOpenimTribelogsGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOpenimTribelogsGetAPIResponseModel).Reset()
 }
 
 // TaobaoOpenimTribelogsGetAPIResponseModel is openim 群聊天记录导出接口 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoOpenimTribelogsGetAPIResponseModel struct {
 	Data *TribeMessageResult `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOpenimTribelogsGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.Reason = ""
+	m.RetCode = 0
+	m.Data = nil
+	m.Succ = false
+}
+
+var poolTaobaoOpenimTribelogsGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOpenimTribelogsGetAPIResponse)
+	},
+}
+
+// GetTaobaoOpenimTribelogsGetAPIResponse 从 sync.Pool 获取 TaobaoOpenimTribelogsGetAPIResponse
+func GetTaobaoOpenimTribelogsGetAPIResponse() *TaobaoOpenimTribelogsGetAPIResponse {
+	return poolTaobaoOpenimTribelogsGetAPIResponse.Get().(*TaobaoOpenimTribelogsGetAPIResponse)
+}
+
+// ReleaseTaobaoOpenimTribelogsGetAPIResponse 将 TaobaoOpenimTribelogsGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOpenimTribelogsGetAPIResponse(v *TaobaoOpenimTribelogsGetAPIResponse) {
+	v.Reset()
+	poolTaobaoOpenimTribelogsGetAPIResponse.Put(v)
 }

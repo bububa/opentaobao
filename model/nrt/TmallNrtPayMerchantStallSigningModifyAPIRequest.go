@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallNrtPayMerchantStallSigningModifyAPIRequest struct {
 // NewTmallNrtPayMerchantStallSigningModifyRequest 初始化TmallNrtPayMerchantStallSigningModifyAPIRequest对象
 func NewTmallNrtPayMerchantStallSigningModifyRequest() *TmallNrtPayMerchantStallSigningModifyAPIRequest {
 	return &TmallNrtPayMerchantStallSigningModifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtPayMerchantStallSigningModifyAPIRequest) Reset() {
+	r._req = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallNrtPayMerchantStallSigningModifyAPIRequest) SetReq(_req *StallSign
 // GetReq Req Getter
 func (r TmallNrtPayMerchantStallSigningModifyAPIRequest) GetReq() *StallSigningReqDto {
 	return r._req
+}
+
+var poolTmallNrtPayMerchantStallSigningModifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtPayMerchantStallSigningModifyRequest()
+	},
+}
+
+// GetTmallNrtPayMerchantStallSigningModifyRequest 从 sync.Pool 获取 TmallNrtPayMerchantStallSigningModifyAPIRequest
+func GetTmallNrtPayMerchantStallSigningModifyAPIRequest() *TmallNrtPayMerchantStallSigningModifyAPIRequest {
+	return poolTmallNrtPayMerchantStallSigningModifyAPIRequest.Get().(*TmallNrtPayMerchantStallSigningModifyAPIRequest)
+}
+
+// ReleaseTmallNrtPayMerchantStallSigningModifyAPIRequest 将 TmallNrtPayMerchantStallSigningModifyAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtPayMerchantStallSigningModifyAPIRequest(v *TmallNrtPayMerchantStallSigningModifyAPIRequest) {
+	v.Reset()
+	poolTmallNrtPayMerchantStallSigningModifyAPIRequest.Put(v)
 }

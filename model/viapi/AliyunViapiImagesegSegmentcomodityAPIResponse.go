@@ -2,6 +2,7 @@ package viapi
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliyunViapiImagesegSegmentcomodityAPIResponse struct {
 	AliyunViapiImagesegSegmentcomodityAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliyunViapiImagesegSegmentcomodityAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliyunViapiImagesegSegmentcomodityAPIResponseModel).Reset()
+}
+
 // AliyunViapiImagesegSegmentcomodityAPIResponseModel is 商品分割 成功返回结果
 type AliyunViapiImagesegSegmentcomodityAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliyun_viapi_imageseg_segmentcomodity_response"`
@@ -24,4 +31,28 @@ type AliyunViapiImagesegSegmentcomodityAPIResponseModel struct {
 	TaobaoRequestId string `json:"taobao_request_id,omitempty" xml:"taobao_request_id,omitempty"`
 	// 系统自动生成
 	Data *AliyunViapiImagesegSegmentcomodityData `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliyunViapiImagesegSegmentcomodityAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TaobaoRequestId = ""
+	m.Data = nil
+}
+
+var poolAliyunViapiImagesegSegmentcomodityAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliyunViapiImagesegSegmentcomodityAPIResponse)
+	},
+}
+
+// GetAliyunViapiImagesegSegmentcomodityAPIResponse 从 sync.Pool 获取 AliyunViapiImagesegSegmentcomodityAPIResponse
+func GetAliyunViapiImagesegSegmentcomodityAPIResponse() *AliyunViapiImagesegSegmentcomodityAPIResponse {
+	return poolAliyunViapiImagesegSegmentcomodityAPIResponse.Get().(*AliyunViapiImagesegSegmentcomodityAPIResponse)
+}
+
+// ReleaseAliyunViapiImagesegSegmentcomodityAPIResponse 将 AliyunViapiImagesegSegmentcomodityAPIResponse 保存到 sync.Pool
+func ReleaseAliyunViapiImagesegSegmentcomodityAPIResponse(v *AliyunViapiImagesegSegmentcomodityAPIResponse) {
+	v.Reset()
+	poolAliyunViapiImagesegSegmentcomodityAPIResponse.Put(v)
 }

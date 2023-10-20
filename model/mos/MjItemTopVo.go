@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // MjItemTopVo 结构体
 type MjItemTopVo struct {
 	// 商品图片，数组中只有一个值
@@ -22,4 +26,30 @@ type MjItemTopVo struct {
 	RequiredUserType int64 `json:"required_user_type,omitempty" xml:"required_user_type,omitempty"`
 	// 是否独享365会员
 	ItemTag365 bool `json:"item_tag365,omitempty" xml:"item_tag365,omitempty"`
+}
+
+var poolMjItemTopVo = sync.Pool{
+	New: func() any {
+		return new(MjItemTopVo)
+	},
+}
+
+// GetMjItemTopVo() 从对象池中获取MjItemTopVo
+func GetMjItemTopVo() *MjItemTopVo {
+	return poolMjItemTopVo.Get().(*MjItemTopVo)
+}
+
+// ReleaseMjItemTopVo 释放MjItemTopVo
+func ReleaseMjItemTopVo(v *MjItemTopVo) {
+	v.Pics = v.Pics[:0]
+	v.MarketingActivityTag = ""
+	v.ItemName = ""
+	v.BrandName = ""
+	v.ItemId = 0
+	v.MinPromotionPrice = 0
+	v.MinPrice = 0
+	v.MaxPrice = 0
+	v.RequiredUserType = 0
+	v.ItemTag365 = false
+	poolMjItemTopVo.Put(v)
 }

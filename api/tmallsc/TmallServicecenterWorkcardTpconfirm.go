@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.workcard.tpconfirm
 //
 // 服务商确认服务完成
-func TmallServicecenterWorkcardTpconfirm(clt *core.SDKClient, req *tmallsc.TmallServicecenterWorkcardTpconfirmAPIRequest, session string) (*tmallsc.TmallServicecenterWorkcardTpconfirmAPIResponse, error) {
-	var resp tmallsc.TmallServicecenterWorkcardTpconfirmAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkcardTpconfirm(clt *core.SDKClient, req *tmallsc.TmallServicecenterWorkcardTpconfirmAPIRequest, resp *tmallsc.TmallServicecenterWorkcardTpconfirmAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

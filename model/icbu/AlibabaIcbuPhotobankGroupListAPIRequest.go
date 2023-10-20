@@ -2,6 +2,7 @@ package icbu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaIcbuPhotobankGroupListAPIRequest struct {
 // NewAlibabaIcbuPhotobankGroupListRequest 初始化AlibabaIcbuPhotobankGroupListAPIRequest对象
 func NewAlibabaIcbuPhotobankGroupListRequest() *AlibabaIcbuPhotobankGroupListAPIRequest {
 	return &AlibabaIcbuPhotobankGroupListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIcbuPhotobankGroupListAPIRequest) Reset() {
+	r._extraContext = ""
+	r._id = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaIcbuPhotobankGroupListAPIRequest) SetId(_id int64) error {
 // GetId Id Getter
 func (r AlibabaIcbuPhotobankGroupListAPIRequest) GetId() int64 {
 	return r._id
+}
+
+var poolAlibabaIcbuPhotobankGroupListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIcbuPhotobankGroupListRequest()
+	},
+}
+
+// GetAlibabaIcbuPhotobankGroupListRequest 从 sync.Pool 获取 AlibabaIcbuPhotobankGroupListAPIRequest
+func GetAlibabaIcbuPhotobankGroupListAPIRequest() *AlibabaIcbuPhotobankGroupListAPIRequest {
+	return poolAlibabaIcbuPhotobankGroupListAPIRequest.Get().(*AlibabaIcbuPhotobankGroupListAPIRequest)
+}
+
+// ReleaseAlibabaIcbuPhotobankGroupListAPIRequest 将 AlibabaIcbuPhotobankGroupListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIcbuPhotobankGroupListAPIRequest(v *AlibabaIcbuPhotobankGroupListAPIRequest) {
+	v.Reset()
+	poolAlibabaIcbuPhotobankGroupListAPIRequest.Put(v)
 }

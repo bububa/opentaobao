@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // IdentityInfo 结构体
 type IdentityInfo struct {
 	// 身份证背面图片
@@ -30,4 +34,34 @@ type IdentityInfo struct {
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 是否长期有效
 	LongTerm bool `json:"long_term,omitempty" xml:"long_term,omitempty"`
+}
+
+var poolIdentityInfo = sync.Pool{
+	New: func() any {
+		return new(IdentityInfo)
+	},
+}
+
+// GetIdentityInfo() 从对象池中获取IdentityInfo
+func GetIdentityInfo() *IdentityInfo {
+	return poolIdentityInfo.Get().(*IdentityInfo)
+}
+
+// ReleaseIdentityInfo 释放IdentityInfo
+func ReleaseIdentityInfo(v *IdentityInfo) {
+	v.BackImageUrl = ""
+	v.CardNum = ""
+	v.FrontImageUrl = ""
+	v.HoldImageUrl = ""
+	v.Name = ""
+	v.Address = ""
+	v.CardType = ""
+	v.CardExpireDate = ""
+	v.StartDate = ""
+	v.EndDate = ""
+	v.BiometricSeq = ""
+	v.ContactInfo = ""
+	v.BizOrderId = 0
+	v.LongTerm = false
+	poolIdentityInfo.Put(v)
 }

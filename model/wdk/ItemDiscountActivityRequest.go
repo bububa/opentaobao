@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ItemDiscountActivityRequest 结构体
 type ItemDiscountActivityRequest struct {
 	// 优惠适用场景[APP|POS|POS+APP分别对应的值为1|2|1,2]
@@ -36,4 +40,37 @@ type ItemDiscountActivityRequest struct {
 	CoverBefore bool `json:"cover_before,omitempty" xml:"cover_before,omitempty"`
 	// 是否自定义渠道同步
 	ByChannel bool `json:"by_channel,omitempty" xml:"by_channel,omitempty"`
+}
+
+var poolItemDiscountActivityRequest = sync.Pool{
+	New: func() any {
+		return new(ItemDiscountActivityRequest)
+	},
+}
+
+// GetItemDiscountActivityRequest() 从对象池中获取ItemDiscountActivityRequest
+func GetItemDiscountActivityRequest() *ItemDiscountActivityRequest {
+	return poolItemDiscountActivityRequest.Get().(*ItemDiscountActivityRequest)
+}
+
+// ReleaseItemDiscountActivityRequest 释放ItemDiscountActivityRequest
+func ReleaseItemDiscountActivityRequest(v *ItemDiscountActivityRequest) {
+	v.Terminals = v.Terminals[:0]
+	v.ShopIds = v.ShopIds[:0]
+	v.ChannelConfigList = v.ChannelConfigList[:0]
+	v.DiscountType = ""
+	v.Description = ""
+	v.OutActId = ""
+	v.ActivityName = ""
+	v.MerchantCrowdCode = ""
+	v.TxdCrowdCode = ""
+	v.ActivityChannel = ""
+	v.StartTime = 0
+	v.EndTime = 0
+	v.MemberLimit = 0
+	v.PeriodConfig = nil
+	v.PriorityValue = 0
+	v.CoverBefore = false
+	v.ByChannel = false
+	poolItemDiscountActivityRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package bill
 
+import (
+	"sync"
+)
+
 // Bill 结构体
 type Bill struct {
 	// 目标支付宝账户编号
@@ -42,4 +46,40 @@ type Bill struct {
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 账单编号
 	Bid int64 `json:"bid,omitempty" xml:"bid,omitempty"`
+}
+
+var poolBill = sync.Pool{
+	New: func() any {
+		return new(Bill)
+	},
+}
+
+// GetBill() 从对象池中获取Bill
+func GetBill() *Bill {
+	return poolBill.Get().(*Bill)
+}
+
+// ReleaseBill 释放Bill
+func ReleaseBill(v *Bill) {
+	v.ObjAlipayId = ""
+	v.BookTime = ""
+	v.GmtModified = ""
+	v.AlipayNotice = ""
+	v.PayTime = ""
+	v.OrderId = ""
+	v.BizTime = ""
+	v.ObjAlipayMail = ""
+	v.GmtCreate = ""
+	v.TradeId = ""
+	v.AlipayOutno = ""
+	v.AlipayMail = ""
+	v.AlipayId = ""
+	v.NumIid = ""
+	v.AlipayNo = ""
+	v.TotalAmount = 0
+	v.AccountId = 0
+	v.Status = 0
+	v.Amount = 0
+	v.Bid = 0
+	poolBill.Put(v)
 }

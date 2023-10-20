@@ -1,5 +1,9 @@
 package damai
 
+import (
+	"sync"
+)
+
 // AlibabaDamaiMevOpenPushitemResult 结构体
 type AlibabaDamaiMevOpenPushitemResult struct {
 	// 错误信息
@@ -10,4 +14,24 @@ type AlibabaDamaiMevOpenPushitemResult struct {
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaDamaiMevOpenPushitemResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaDamaiMevOpenPushitemResult)
+	},
+}
+
+// GetAlibabaDamaiMevOpenPushitemResult() 从对象池中获取AlibabaDamaiMevOpenPushitemResult
+func GetAlibabaDamaiMevOpenPushitemResult() *AlibabaDamaiMevOpenPushitemResult {
+	return poolAlibabaDamaiMevOpenPushitemResult.Get().(*AlibabaDamaiMevOpenPushitemResult)
+}
+
+// ReleaseAlibabaDamaiMevOpenPushitemResult 释放AlibabaDamaiMevOpenPushitemResult
+func ReleaseAlibabaDamaiMevOpenPushitemResult(v *AlibabaDamaiMevOpenPushitemResult) {
+	v.ErrorMsg = ""
+	v.ErrorCode = 0
+	v.Model = false
+	v.Success = false
+	poolAlibabaDamaiMevOpenPushitemResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // TopConsignGoodsRequest 结构体
 type TopConsignGoodsRequest struct {
 	// 子订单id
@@ -12,4 +16,25 @@ type TopConsignGoodsRequest struct {
 	ItemType int64 `json:"item_type,omitempty" xml:"item_type,omitempty"`
 	// 商品数量，不传默认为子单上的商品数量；支持不传，但不能传0或负值
 	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
+}
+
+var poolTopConsignGoodsRequest = sync.Pool{
+	New: func() any {
+		return new(TopConsignGoodsRequest)
+	},
+}
+
+// GetTopConsignGoodsRequest() 从对象池中获取TopConsignGoodsRequest
+func GetTopConsignGoodsRequest() *TopConsignGoodsRequest {
+	return poolTopConsignGoodsRequest.Get().(*TopConsignGoodsRequest)
+}
+
+// ReleaseTopConsignGoodsRequest 释放TopConsignGoodsRequest
+func ReleaseTopConsignGoodsRequest(v *TopConsignGoodsRequest) {
+	v.SubTid = ""
+	v.CompItemId = ""
+	v.CompSkuId = ""
+	v.ItemType = 0
+	v.Num = 0
+	poolTopConsignGoodsRequest.Put(v)
 }

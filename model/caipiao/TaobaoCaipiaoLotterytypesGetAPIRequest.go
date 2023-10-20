@@ -2,6 +2,7 @@ package caipiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoCaipiaoLotterytypesGetAPIRequest struct {
 // NewTaobaoCaipiaoLotterytypesGetRequest 初始化TaobaoCaipiaoLotterytypesGetAPIRequest对象
 func NewTaobaoCaipiaoLotterytypesGetRequest() *TaobaoCaipiaoLotterytypesGetAPIRequest {
 	return &TaobaoCaipiaoLotterytypesGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCaipiaoLotterytypesGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoCaipiaoLotterytypesGetAPIRequest) GetApiParams(params url.Values) 
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoCaipiaoLotterytypesGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoCaipiaoLotterytypesGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCaipiaoLotterytypesGetRequest()
+	},
+}
+
+// GetTaobaoCaipiaoLotterytypesGetRequest 从 sync.Pool 获取 TaobaoCaipiaoLotterytypesGetAPIRequest
+func GetTaobaoCaipiaoLotterytypesGetAPIRequest() *TaobaoCaipiaoLotterytypesGetAPIRequest {
+	return poolTaobaoCaipiaoLotterytypesGetAPIRequest.Get().(*TaobaoCaipiaoLotterytypesGetAPIRequest)
+}
+
+// ReleaseTaobaoCaipiaoLotterytypesGetAPIRequest 将 TaobaoCaipiaoLotterytypesGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCaipiaoLotterytypesGetAPIRequest(v *TaobaoCaipiaoLotterytypesGetAPIRequest) {
+	v.Reset()
+	poolTaobaoCaipiaoLotterytypesGetAPIRequest.Put(v)
 }

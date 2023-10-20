@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoXhotelRoomsIncrementAPIRequest struct {
 // NewTaobaoXhotelRoomsIncrementRequest 初始化TaobaoXhotelRoomsIncrementAPIRequest对象
 func NewTaobaoXhotelRoomsIncrementRequest() *TaobaoXhotelRoomsIncrementAPIRequest {
 	return &TaobaoXhotelRoomsIncrementAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelRoomsIncrementAPIRequest) Reset() {
+	r._roomQuotaMap = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoXhotelRoomsIncrementAPIRequest) SetRoomQuotaMap(_roomQuotaMap str
 // GetRoomQuotaMap RoomQuotaMap Getter
 func (r TaobaoXhotelRoomsIncrementAPIRequest) GetRoomQuotaMap() string {
 	return r._roomQuotaMap
+}
+
+var poolTaobaoXhotelRoomsIncrementAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelRoomsIncrementRequest()
+	},
+}
+
+// GetTaobaoXhotelRoomsIncrementRequest 从 sync.Pool 获取 TaobaoXhotelRoomsIncrementAPIRequest
+func GetTaobaoXhotelRoomsIncrementAPIRequest() *TaobaoXhotelRoomsIncrementAPIRequest {
+	return poolTaobaoXhotelRoomsIncrementAPIRequest.Get().(*TaobaoXhotelRoomsIncrementAPIRequest)
+}
+
+// ReleaseTaobaoXhotelRoomsIncrementAPIRequest 将 TaobaoXhotelRoomsIncrementAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelRoomsIncrementAPIRequest(v *TaobaoXhotelRoomsIncrementAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelRoomsIncrementAPIRequest.Put(v)
 }

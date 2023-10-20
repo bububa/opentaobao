@@ -2,6 +2,7 @@ package alscmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscDaodianTicketConsultAPIRequest struct {
 // NewAlibabaAlscDaodianTicketConsultRequest 初始化AlibabaAlscDaodianTicketConsultAPIRequest对象
 func NewAlibabaAlscDaodianTicketConsultRequest() *AlibabaAlscDaodianTicketConsultAPIRequest {
 	return &AlibabaAlscDaodianTicketConsultAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscDaodianTicketConsultAPIRequest) Reset() {
+	r._consultRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscDaodianTicketConsultAPIRequest) SetConsultRequest(_consultRe
 // GetConsultRequest ConsultRequest Getter
 func (r AlibabaAlscDaodianTicketConsultAPIRequest) GetConsultRequest() *TicketConsultTopRequest {
 	return r._consultRequest
+}
+
+var poolAlibabaAlscDaodianTicketConsultAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscDaodianTicketConsultRequest()
+	},
+}
+
+// GetAlibabaAlscDaodianTicketConsultRequest 从 sync.Pool 获取 AlibabaAlscDaodianTicketConsultAPIRequest
+func GetAlibabaAlscDaodianTicketConsultAPIRequest() *AlibabaAlscDaodianTicketConsultAPIRequest {
+	return poolAlibabaAlscDaodianTicketConsultAPIRequest.Get().(*AlibabaAlscDaodianTicketConsultAPIRequest)
+}
+
+// ReleaseAlibabaAlscDaodianTicketConsultAPIRequest 将 AlibabaAlscDaodianTicketConsultAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscDaodianTicketConsultAPIRequest(v *AlibabaAlscDaodianTicketConsultAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscDaodianTicketConsultAPIRequest.Put(v)
 }

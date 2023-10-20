@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // KeywordRankPriceDto 结构体
 type KeywordRankPriceDto struct {
 	// 关键词前五名排价
@@ -18,4 +22,28 @@ type KeywordRankPriceDto struct {
 	CompanyId int64 `json:"company_id,omitempty" xml:"company_id,omitempty"`
 	// 计划ID
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
+}
+
+var poolKeywordRankPriceDto = sync.Pool{
+	New: func() any {
+		return new(KeywordRankPriceDto)
+	},
+}
+
+// GetKeywordRankPriceDto() 从对象池中获取KeywordRankPriceDto
+func GetKeywordRankPriceDto() *KeywordRankPriceDto {
+	return poolKeywordRankPriceDto.Get().(*KeywordRankPriceDto)
+}
+
+// ReleaseKeywordRankPriceDto 释放KeywordRankPriceDto
+func ReleaseKeywordRankPriceDto(v *KeywordRankPriceDto) {
+	v.PriceArray = v.PriceArray[:0]
+	v.PriceList = v.PriceList[:0]
+	v.CustPriceList = v.CustPriceList[:0]
+	v.CustPriceArray = v.CustPriceArray[:0]
+	v.RankPriceList = v.RankPriceList[:0]
+	v.Keyword = ""
+	v.CompanyId = 0
+	v.CampaignId = 0
+	poolKeywordRankPriceDto.Put(v)
 }

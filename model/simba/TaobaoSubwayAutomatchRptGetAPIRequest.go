@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoSubwayAutomatchRptGetAPIRequest struct {
 // NewTaobaoSubwayAutomatchRptGetRequest 初始化TaobaoSubwayAutomatchRptGetAPIRequest对象
 func NewTaobaoSubwayAutomatchRptGetRequest() *TaobaoSubwayAutomatchRptGetAPIRequest {
 	return &TaobaoSubwayAutomatchRptGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSubwayAutomatchRptGetAPIRequest) Reset() {
+	r._nick = ""
+	r._startDate = ""
+	r._endDate = ""
+	r._campaignId = 0
+	r._adgroupId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoSubwayAutomatchRptGetAPIRequest) SetAdgroupId(_adgroupId int64) e
 // GetAdgroupId AdgroupId Getter
 func (r TaobaoSubwayAutomatchRptGetAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
+}
+
+var poolTaobaoSubwayAutomatchRptGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSubwayAutomatchRptGetRequest()
+	},
+}
+
+// GetTaobaoSubwayAutomatchRptGetRequest 从 sync.Pool 获取 TaobaoSubwayAutomatchRptGetAPIRequest
+func GetTaobaoSubwayAutomatchRptGetAPIRequest() *TaobaoSubwayAutomatchRptGetAPIRequest {
+	return poolTaobaoSubwayAutomatchRptGetAPIRequest.Get().(*TaobaoSubwayAutomatchRptGetAPIRequest)
+}
+
+// ReleaseTaobaoSubwayAutomatchRptGetAPIRequest 将 TaobaoSubwayAutomatchRptGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSubwayAutomatchRptGetAPIRequest(v *TaobaoSubwayAutomatchRptGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSubwayAutomatchRptGetAPIRequest.Put(v)
 }

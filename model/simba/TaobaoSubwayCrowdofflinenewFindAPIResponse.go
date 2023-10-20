@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoSubwayCrowdofflinenewFindAPIResponse struct {
 	TaobaoSubwayCrowdofflinenewFindAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoSubwayCrowdofflinenewFindAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSubwayCrowdofflinenewFindAPIResponseModel).Reset()
+}
+
 // TaobaoSubwayCrowdofflinenewFindAPIResponseModel is 获取人群离线多日汇总报表 成功返回结果
 type TaobaoSubwayCrowdofflinenewFindAPIResponseModel struct {
 	XMLName xml.Name `xml:"subway_crowdofflinenew_find_response"`
@@ -26,4 +33,29 @@ type TaobaoSubwayCrowdofflinenewFindAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 总条数
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSubwayCrowdofflinenewFindAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = m.Result[:0]
+	m.Message = ""
+	m.TotalCount = 0
+}
+
+var poolTaobaoSubwayCrowdofflinenewFindAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSubwayCrowdofflinenewFindAPIResponse)
+	},
+}
+
+// GetTaobaoSubwayCrowdofflinenewFindAPIResponse 从 sync.Pool 获取 TaobaoSubwayCrowdofflinenewFindAPIResponse
+func GetTaobaoSubwayCrowdofflinenewFindAPIResponse() *TaobaoSubwayCrowdofflinenewFindAPIResponse {
+	return poolTaobaoSubwayCrowdofflinenewFindAPIResponse.Get().(*TaobaoSubwayCrowdofflinenewFindAPIResponse)
+}
+
+// ReleaseTaobaoSubwayCrowdofflinenewFindAPIResponse 将 TaobaoSubwayCrowdofflinenewFindAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSubwayCrowdofflinenewFindAPIResponse(v *TaobaoSubwayCrowdofflinenewFindAPIResponse) {
+	v.Reset()
+	poolTaobaoSubwayCrowdofflinenewFindAPIResponse.Put(v)
 }

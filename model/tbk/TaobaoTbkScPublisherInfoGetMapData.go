@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // TaobaoTbkScPublisherInfoGetMapData 结构体
 type TaobaoTbkScPublisherInfoGetMapData struct {
 	// 共享字段 - 备案场景：common（通用备案），etao（一淘备案），minietao（一淘小程序备案），offlineShop（线下门店备案），offlinePerson（线下个人备案）
@@ -32,4 +36,35 @@ type TaobaoTbkScPublisherInfoGetMapData struct {
 	OfflineInfo *RegisterInfoDto `json:"offline_info,omitempty" xml:"offline_info,omitempty"`
 	// 会员独有 - 会员运营ID
 	SpecialId int64 `json:"special_id,omitempty" xml:"special_id,omitempty"`
+}
+
+var poolTaobaoTbkScPublisherInfoGetMapData = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkScPublisherInfoGetMapData)
+	},
+}
+
+// GetTaobaoTbkScPublisherInfoGetMapData() 从对象池中获取TaobaoTbkScPublisherInfoGetMapData
+func GetTaobaoTbkScPublisherInfoGetMapData() *TaobaoTbkScPublisherInfoGetMapData {
+	return poolTaobaoTbkScPublisherInfoGetMapData.Get().(*TaobaoTbkScPublisherInfoGetMapData)
+}
+
+// ReleaseTaobaoTbkScPublisherInfoGetMapData 释放TaobaoTbkScPublisherInfoGetMapData
+func ReleaseTaobaoTbkScPublisherInfoGetMapData(v *TaobaoTbkScPublisherInfoGetMapData) {
+	v.RelationApp = ""
+	v.CreateDate = ""
+	v.AccountName = ""
+	v.RealName = ""
+	v.OfflineScene = ""
+	v.OnlineScene = ""
+	v.Note = ""
+	v.RootPid = ""
+	v.Rtag = ""
+	v.PunishStatus = ""
+	v.ExternalId = ""
+	v.ExternalType = ""
+	v.RelationId = 0
+	v.OfflineInfo = nil
+	v.SpecialId = 0
+	poolTaobaoTbkScPublisherInfoGetMapData.Put(v)
 }

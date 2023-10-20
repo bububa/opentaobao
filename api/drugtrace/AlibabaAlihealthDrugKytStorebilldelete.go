@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.kyt.storebilldelete
 //
 // 零售端单据删除
-func AlibabaAlihealthDrugKytStorebilldelete(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytStorebilldeleteAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytStorebilldeleteAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytStorebilldeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugKytStorebilldelete(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytStorebilldeleteAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytStorebilldeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

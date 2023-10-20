@@ -1,5 +1,9 @@
 package newretail
 
+import (
+	"sync"
+)
+
 // ApAddressInfo 结构体
 type ApAddressInfo struct {
 	// ap mac
@@ -34,4 +38,36 @@ type ApAddressInfo struct {
 	Language string `json:"language,omitempty" xml:"language,omitempty"`
 	// 空间单元id
 	ApUnitId int64 `json:"ap_unit_id,omitempty" xml:"ap_unit_id,omitempty"`
+}
+
+var poolApAddressInfo = sync.Pool{
+	New: func() any {
+		return new(ApAddressInfo)
+	},
+}
+
+// GetApAddressInfo() 从对象池中获取ApAddressInfo
+func GetApAddressInfo() *ApAddressInfo {
+	return poolApAddressInfo.Get().(*ApAddressInfo)
+}
+
+// ReleaseApAddressInfo 释放ApAddressInfo
+func ReleaseApAddressInfo(v *ApAddressInfo) {
+	v.Mac = ""
+	v.ApName = ""
+	v.ApGroup = ""
+	v.ApNationName = ""
+	v.ApProvinceName = ""
+	v.ApCityName = ""
+	v.ApAreaName = ""
+	v.ApCampusName = ""
+	v.ApBuildingName = ""
+	v.ApFloor = ""
+	v.ApUnitName = ""
+	v.Direction = ""
+	v.Lng = ""
+	v.Lat = ""
+	v.Language = ""
+	v.ApUnitId = 0
+	poolApAddressInfo.Put(v)
 }

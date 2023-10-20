@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.pms.guestbill.get.vtwo
 //
 // 从pms获取客人账单信息
-func TaobaoXhotelPmsGuestbillGetVtwo(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelPmsGuestbillGetVtwoAPIRequest, session string) (*xhotelonlineorder.TaobaoXhotelPmsGuestbillGetVtwoAPIResponse, error) {
-	var resp xhotelonlineorder.TaobaoXhotelPmsGuestbillGetVtwoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelPmsGuestbillGetVtwo(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelPmsGuestbillGetVtwoAPIRequest, resp *xhotelonlineorder.TaobaoXhotelPmsGuestbillGetVtwoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

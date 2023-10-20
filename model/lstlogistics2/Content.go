@@ -1,5 +1,9 @@
 package lstlogistics2
 
+import (
+	"sync"
+)
+
 // Content 结构体
 type Content struct {
 	// 子订单
@@ -24,4 +28,31 @@ type Content struct {
 	SupplierUserId int64 `json:"supplier_user_id,omitempty" xml:"supplier_user_id,omitempty"`
 	// 零售通订单id
 	LstOrderId int64 `json:"lst_order_id,omitempty" xml:"lst_order_id,omitempty"`
+}
+
+var poolContent = sync.Pool{
+	New: func() any {
+		return new(Content)
+	},
+}
+
+// GetContent() 从对象池中获取Content
+func GetContent() *Content {
+	return poolContent.Get().(*Content)
+}
+
+// ReleaseContent 释放Content
+func ReleaseContent(v *Content) {
+	v.SubOrders = v.SubOrders[:0]
+	v.PickTime = ""
+	v.SignTime = ""
+	v.OutOrderId = ""
+	v.VehicleInfo = ""
+	v.DriverMobile = ""
+	v.DriverName = ""
+	v.ShipStatus = ""
+	v.OutBoundTime = ""
+	v.SupplierUserId = 0
+	v.LstOrderId = 0
+	poolContent.Put(v)
 }

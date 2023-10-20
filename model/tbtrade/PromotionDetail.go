@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // PromotionDetail 结构体
 type PromotionDetail struct {
 	// 优惠信息的名称
@@ -22,4 +26,30 @@ type PromotionDetail struct {
 	KdChildDiscountFee string `json:"kd_child_discount_fee,omitempty" xml:"kd_child_discount_fee,omitempty"`
 	// 交易的主订单或子订单号
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolPromotionDetail = sync.Pool{
+	New: func() any {
+		return new(PromotionDetail)
+	},
+}
+
+// GetPromotionDetail() 从对象池中获取PromotionDetail
+func GetPromotionDetail() *PromotionDetail {
+	return poolPromotionDetail.Get().(*PromotionDetail)
+}
+
+// ReleasePromotionDetail 释放PromotionDetail
+func ReleasePromotionDetail(v *PromotionDetail) {
+	v.PromotionName = ""
+	v.DiscountFee = ""
+	v.GiftItemName = ""
+	v.GiftItemId = ""
+	v.GiftItemNum = ""
+	v.PromotionDesc = ""
+	v.PromotionId = ""
+	v.KdDiscountFee = ""
+	v.KdChildDiscountFee = ""
+	v.Id = 0
+	poolPromotionDetail.Put(v)
 }

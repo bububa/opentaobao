@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // AppraiseOrderInfoDto 结构体
 type AppraiseOrderInfoDto struct {
 	// 鉴定商发货给买家的单号 主状态&gt;=7，验货中心已发货时填写
@@ -108,4 +112,73 @@ type AppraiseOrderInfoDto struct {
 	AppraiseFromNewPublisher bool `json:"appraise_from_new_publisher,omitempty" xml:"appraise_from_new_publisher,omitempty"`
 	// true 表示交易成功卖家包验货费模式
 	TradeSuccessSellerAssume bool `json:"trade_success_seller_assume,omitempty" xml:"trade_success_seller_assume,omitempty"`
+}
+
+var poolAppraiseOrderInfoDto = sync.Pool{
+	New: func() any {
+		return new(AppraiseOrderInfoDto)
+	},
+}
+
+// GetAppraiseOrderInfoDto() 从对象池中获取AppraiseOrderInfoDto
+func GetAppraiseOrderInfoDto() *AppraiseOrderInfoDto {
+	return poolAppraiseOrderInfoDto.Get().(*AppraiseOrderInfoDto)
+}
+
+// ReleaseAppraiseOrderInfoDto 释放AppraiseOrderInfoDto
+func ReleaseAppraiseOrderInfoDto(v *AppraiseOrderInfoDto) {
+	v.Ac2buyerMailNo = ""
+	v.Ac2sellerMailNo = ""
+	v.AppKey = ""
+	v.BizOrderId = ""
+	v.BrandId = ""
+	v.BuyerAddress = ""
+	v.BuyerAlipayUserId = ""
+	v.BuyerArea = ""
+	v.BuyerCity = ""
+	v.BuyerCloseReason = ""
+	v.BuyerCountry = ""
+	v.BuyerPhone = ""
+	v.BuyerProvince = ""
+	v.BuyerReceiptName = ""
+	v.CateAggScene = ""
+	v.Channel = ""
+	v.ChannelData = ""
+	v.Env = ""
+	v.GmtCreate = ""
+	v.IdleAppraiseCheckpoints = ""
+	v.IdleAppraiseScene = ""
+	v.ItemDetailInfo = ""
+	v.OrderStatus = ""
+	v.OrderSubStatus = ""
+	v.Seller2acMailNo = ""
+	v.SellerArea = ""
+	v.SellerCity = ""
+	v.SellerCloseReason = ""
+	v.SellerCountry = ""
+	v.SellerPhone = ""
+	v.SellerProvince = ""
+	v.SellerReceiptAddress = ""
+	v.SellerReceiptName = ""
+	v.SpuId = ""
+	v.SpuInfo = ""
+	v.BuyerConfirmReceiptTimeout = ""
+	v.SellerConfirmBackAddressTime = ""
+	v.YhbVersion = ""
+	v.BuyerInspectionZfbId = ""
+	v.BuyerInspectionOrderId = ""
+	v.SellerInspectionZfbId = ""
+	v.SellerInspectionOrderId = ""
+	v.DisputeConclusion = ""
+	v.SellerAlipayPid = ""
+	v.AcStorageId = ""
+	v.InspectionCouponFee = ""
+	v.Compensation2buyer = 0
+	v.SupplierChargeFeeCent = 0
+	v.ActualPaidFeeCent = 0
+	v.BuyerInspectionFee = 0
+	v.SellerInspectionFee = 0
+	v.AppraiseFromNewPublisher = false
+	v.TradeSuccessSellerAssume = false
+	poolAppraiseOrderInfoDto.Put(v)
 }

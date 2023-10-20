@@ -1,5 +1,9 @@
 package cloudgame
 
+import (
+	"sync"
+)
+
 // GetSlotResponse 结构体
 type GetSlotResponse struct {
 	// 联机码
@@ -34,4 +38,36 @@ type GetSlotResponse struct {
 	Host bool `json:"host,omitempty" xml:"host,omitempty"`
 	// 是否是强制264
 	ForceH264 bool `json:"force_h264,omitempty" xml:"force_h264,omitempty"`
+}
+
+var poolGetSlotResponse = sync.Pool{
+	New: func() any {
+		return new(GetSlotResponse)
+	},
+}
+
+// GetGetSlotResponse() 从对象池中获取GetSlotResponse
+func GetGetSlotResponse() *GetSlotResponse {
+	return poolGetSlotResponse.Get().(*GetSlotResponse)
+}
+
+// ReleaseGetSlotResponse 释放GetSlotResponse
+func ReleaseGetSlotResponse(v *GetSlotResponse) {
+	v.JoinCode = v.JoinCode[:0]
+	v.Endpoints = v.Endpoints[:0]
+	v.EndpointServer = v.EndpointServer[:0]
+	v.MixGameId = ""
+	v.GameSession = ""
+	v.GameToken = ""
+	v.QueueStateDesc = ""
+	v.LinkMark = ""
+	v.MixUserId = ""
+	v.SchedType = ""
+	v.QueueState = 0
+	v.UserLevel = 0
+	v.VipLevel = 0
+	v.PollingInterval = 0
+	v.Host = false
+	v.ForceH264 = false
+	poolGetSlotResponse.Put(v)
 }

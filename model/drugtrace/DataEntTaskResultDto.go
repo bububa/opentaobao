@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // DataEntTaskResultDto 结构体
 type DataEntTaskResultDto struct {
 	// 诊断原因
@@ -10,4 +14,24 @@ type DataEntTaskResultDto struct {
 	HttpStatusCode int64 `json:"http_status_code,omitempty" xml:"http_status_code,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolDataEntTaskResultDto = sync.Pool{
+	New: func() any {
+		return new(DataEntTaskResultDto)
+	},
+}
+
+// GetDataEntTaskResultDto() 从对象池中获取DataEntTaskResultDto
+func GetDataEntTaskResultDto() *DataEntTaskResultDto {
+	return poolDataEntTaskResultDto.Get().(*DataEntTaskResultDto)
+}
+
+// ReleaseDataEntTaskResultDto 释放DataEntTaskResultDto
+func ReleaseDataEntTaskResultDto(v *DataEntTaskResultDto) {
+	v.Model = ""
+	v.MsgInfo = ""
+	v.HttpStatusCode = 0
+	v.Success = false
+	poolDataEntTaskResultDto.Put(v)
 }

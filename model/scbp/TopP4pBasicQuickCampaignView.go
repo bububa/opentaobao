@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // TopP4pBasicQuickCampaignView 结构体
 type TopP4pBasicQuickCampaignView struct {
 	// 屏蔽词列表
@@ -18,4 +22,28 @@ type TopP4pBasicQuickCampaignView struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 定向推广计划ID
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
+}
+
+var poolTopP4pBasicQuickCampaignView = sync.Pool{
+	New: func() any {
+		return new(TopP4pBasicQuickCampaignView)
+	},
+}
+
+// GetTopP4pBasicQuickCampaignView() 从对象池中获取TopP4pBasicQuickCampaignView
+func GetTopP4pBasicQuickCampaignView() *TopP4pBasicQuickCampaignView {
+	return poolTopP4pBasicQuickCampaignView.Get().(*TopP4pBasicQuickCampaignView)
+}
+
+// ReleaseTopP4pBasicQuickCampaignView 释放TopP4pBasicQuickCampaignView
+func ReleaseTopP4pBasicQuickCampaignView(v *TopP4pBasicQuickCampaignView) {
+	v.ForbiddenWords = v.ForbiddenWords[:0]
+	v.MaxPrice = ""
+	v.MinPrice = ""
+	v.Title = ""
+	v.Budget = 0
+	v.ProductCount = 0
+	v.Status = 0
+	v.CampaignId = 0
+	poolTopP4pBasicQuickCampaignView.Put(v)
 }

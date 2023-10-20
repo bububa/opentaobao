@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // SellerStatSummaryResult 结构体
 type SellerStatSummaryResult struct {
 	// 曝光率
@@ -38,4 +42,38 @@ type SellerStatSummaryResult struct {
 	CanSaleAmount string `json:"can_sale_amount,omitempty" xml:"can_sale_amount,omitempty"`
 	// 选品保留商品数量
 	SelectedAmount string `json:"selected_amount,omitempty" xml:"selected_amount,omitempty"`
+}
+
+var poolSellerStatSummaryResult = sync.Pool{
+	New: func() any {
+		return new(SellerStatSummaryResult)
+	},
+}
+
+// GetSellerStatSummaryResult() 从对象池中获取SellerStatSummaryResult
+func GetSellerStatSummaryResult() *SellerStatSummaryResult {
+	return poolSellerStatSummaryResult.Get().(*SellerStatSummaryResult)
+}
+
+// ReleaseSellerStatSummaryResult 释放SellerStatSummaryResult
+func ReleaseSellerStatSummaryResult(v *SellerStatSummaryResult) {
+	v.ExposedPercent = ""
+	v.SupplierParam = ""
+	v.ShidTotalAmount = ""
+	v.HidParam = ""
+	v.MinRateScore = ""
+	v.UnsaleReseasonInfo = ""
+	v.MaxRateScore = ""
+	v.SelectionMessageInfo = ""
+	v.AvgRateScore = ""
+	v.DateParam = ""
+	v.TotalAmount = ""
+	v.VendorParam = ""
+	v.ExposedAmount = ""
+	v.SelectionMessageInfoJson = ""
+	v.UnsaleReasonInfoJson = ""
+	v.SellerIdParam = ""
+	v.CanSaleAmount = ""
+	v.SelectedAmount = ""
+	poolSellerStatSummaryResult.Put(v)
 }

@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest struct {
 // NewAlitripMerchantGalaxyWechatUserAuthorizeLoginRequest 初始化AlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest对象
 func NewAlitripMerchantGalaxyWechatUserAuthorizeLoginRequest() *AlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest {
 	return &AlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._loginParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest) SetLoginParam(
 // GetLoginParam LoginParam Getter
 func (r AlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest) GetLoginParam() *LoginParam {
 	return r._loginParam
+}
+
+var poolAlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyWechatUserAuthorizeLoginRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyWechatUserAuthorizeLoginRequest 从 sync.Pool 获取 AlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest
+func GetAlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest() *AlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest {
+	return poolAlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest.Get().(*AlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest 将 AlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest(v *AlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest.Put(v)
 }

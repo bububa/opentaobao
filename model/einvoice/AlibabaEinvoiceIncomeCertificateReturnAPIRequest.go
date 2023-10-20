@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaEinvoiceIncomeCertificateReturnAPIRequest struct {
 // NewAlibabaEinvoiceIncomeCertificateReturnRequest 初始化AlibabaEinvoiceIncomeCertificateReturnAPIRequest对象
 func NewAlibabaEinvoiceIncomeCertificateReturnRequest() *AlibabaEinvoiceIncomeCertificateReturnAPIRequest {
 	return &AlibabaEinvoiceIncomeCertificateReturnAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceIncomeCertificateReturnAPIRequest) Reset() {
+	r._errorCode = ""
+	r._errorMessage = ""
+	r._reqIndex = ""
+	r._step = 0
+	r._success = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaEinvoiceIncomeCertificateReturnAPIRequest) SetSuccess(_success b
 // GetSuccess Success Getter
 func (r AlibabaEinvoiceIncomeCertificateReturnAPIRequest) GetSuccess() bool {
 	return r._success
+}
+
+var poolAlibabaEinvoiceIncomeCertificateReturnAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceIncomeCertificateReturnRequest()
+	},
+}
+
+// GetAlibabaEinvoiceIncomeCertificateReturnRequest 从 sync.Pool 获取 AlibabaEinvoiceIncomeCertificateReturnAPIRequest
+func GetAlibabaEinvoiceIncomeCertificateReturnAPIRequest() *AlibabaEinvoiceIncomeCertificateReturnAPIRequest {
+	return poolAlibabaEinvoiceIncomeCertificateReturnAPIRequest.Get().(*AlibabaEinvoiceIncomeCertificateReturnAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceIncomeCertificateReturnAPIRequest 将 AlibabaEinvoiceIncomeCertificateReturnAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceIncomeCertificateReturnAPIRequest(v *AlibabaEinvoiceIncomeCertificateReturnAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceIncomeCertificateReturnAPIRequest.Put(v)
 }

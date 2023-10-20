@@ -9,11 +9,6 @@ import (
 // tmall.popupstore.activity.query
 //
 // 提供给ISV查询某一时间段内包含指定appKey的活动列表
-func TmallPopupstoreActivityQuery(clt *core.SDKClient, req *smartstore.TmallPopupstoreActivityQueryAPIRequest, session string) (*smartstore.TmallPopupstoreActivityQueryAPIResponse, error) {
-	var resp smartstore.TmallPopupstoreActivityQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallPopupstoreActivityQuery(clt *core.SDKClient, req *smartstore.TmallPopupstoreActivityQueryAPIRequest, resp *smartstore.TmallPopupstoreActivityQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

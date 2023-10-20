@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallCarFinanceDetailGetAPIRequest struct {
 // NewTmallCarFinanceDetailGetRequest 初始化TmallCarFinanceDetailGetAPIRequest对象
 func NewTmallCarFinanceDetailGetRequest() *TmallCarFinanceDetailGetAPIRequest {
 	return &TmallCarFinanceDetailGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarFinanceDetailGetAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallCarFinanceDetailGetAPIRequest) SetParam0(_param0 *FinanceDetailQue
 // GetParam0 Param0 Getter
 func (r TmallCarFinanceDetailGetAPIRequest) GetParam0() *FinanceDetailQueryReq {
 	return r._param0
+}
+
+var poolTmallCarFinanceDetailGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarFinanceDetailGetRequest()
+	},
+}
+
+// GetTmallCarFinanceDetailGetRequest 从 sync.Pool 获取 TmallCarFinanceDetailGetAPIRequest
+func GetTmallCarFinanceDetailGetAPIRequest() *TmallCarFinanceDetailGetAPIRequest {
+	return poolTmallCarFinanceDetailGetAPIRequest.Get().(*TmallCarFinanceDetailGetAPIRequest)
+}
+
+// ReleaseTmallCarFinanceDetailGetAPIRequest 将 TmallCarFinanceDetailGetAPIRequest 放入 sync.Pool
+func ReleaseTmallCarFinanceDetailGetAPIRequest(v *TmallCarFinanceDetailGetAPIRequest) {
+	v.Reset()
+	poolTmallCarFinanceDetailGetAPIRequest.Put(v)
 }

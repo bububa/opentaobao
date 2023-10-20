@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripHotelOrderMainInfoDto 结构体
 type BtripHotelOrderMainInfoDto struct {
 	// 入住时间
@@ -38,4 +42,38 @@ type BtripHotelOrderMainInfoDto struct {
 	TotalActualPrice int64 `json:"total_actual_price,omitempty" xml:"total_actual_price,omitempty"`
 	// 总房费
 	TotalRoomPrice int64 `json:"total_room_price,omitempty" xml:"total_room_price,omitempty"`
+}
+
+var poolBtripHotelOrderMainInfoDto = sync.Pool{
+	New: func() any {
+		return new(BtripHotelOrderMainInfoDto)
+	},
+}
+
+// GetBtripHotelOrderMainInfoDto() 从对象池中获取BtripHotelOrderMainInfoDto
+func GetBtripHotelOrderMainInfoDto() *BtripHotelOrderMainInfoDto {
+	return poolBtripHotelOrderMainInfoDto.Get().(*BtripHotelOrderMainInfoDto)
+}
+
+// ReleaseBtripHotelOrderMainInfoDto 释放BtripHotelOrderMainInfoDto
+func ReleaseBtripHotelOrderMainInfoDto(v *BtripHotelOrderMainInfoDto) {
+	v.CheckIn = ""
+	v.CheckOut = ""
+	v.DisOrderId = ""
+	v.LateArriveTime = ""
+	v.OrderCreateDate = ""
+	v.OrderStatusDesc = ""
+	v.SupplierOrderId = ""
+	v.RealCheckinTime = ""
+	v.RealCheckoutTime = ""
+	v.BtripOrderId = 0
+	v.BuyerRealRefund = 0
+	v.DiscountFee = 0
+	v.Nights = 0
+	v.OrderStatus = 0
+	v.PlatformPromotionAmt = 0
+	v.RoomNumber = 0
+	v.TotalActualPrice = 0
+	v.TotalRoomPrice = 0
+	poolBtripHotelOrderMainInfoDto.Put(v)
 }

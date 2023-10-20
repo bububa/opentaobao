@@ -2,6 +2,7 @@ package tuanhotel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlitripTuanHotelShopCategoryGetAPIResponse struct {
 	model.CommonResponse
 	AlitripTuanHotelShopCategoryGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlitripTuanHotelShopCategoryGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripTuanHotelShopCategoryGetAPIResponseModel).Reset()
 }
 
 // AlitripTuanHotelShopCategoryGetAPIResponseModel is 商家店铺类目查询 成功返回结果
@@ -28,4 +35,30 @@ type AlitripTuanHotelShopCategoryGetAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 是否成功
 	Status bool `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripTuanHotelShopCategoryGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TopRootShopCategoryList = m.TopRootShopCategoryList[:0]
+	m.MsgCode = ""
+	m.Message = ""
+	m.Status = false
+}
+
+var poolAlitripTuanHotelShopCategoryGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripTuanHotelShopCategoryGetAPIResponse)
+	},
+}
+
+// GetAlitripTuanHotelShopCategoryGetAPIResponse 从 sync.Pool 获取 AlitripTuanHotelShopCategoryGetAPIResponse
+func GetAlitripTuanHotelShopCategoryGetAPIResponse() *AlitripTuanHotelShopCategoryGetAPIResponse {
+	return poolAlitripTuanHotelShopCategoryGetAPIResponse.Get().(*AlitripTuanHotelShopCategoryGetAPIResponse)
+}
+
+// ReleaseAlitripTuanHotelShopCategoryGetAPIResponse 将 AlitripTuanHotelShopCategoryGetAPIResponse 保存到 sync.Pool
+func ReleaseAlitripTuanHotelShopCategoryGetAPIResponse(v *AlitripTuanHotelShopCategoryGetAPIResponse) {
+	v.Reset()
+	poolAlitripTuanHotelShopCategoryGetAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenInventoryruleCreateAPIRequest struct {
 // NewTaobaoQimenInventoryruleCreateRequest 初始化TaobaoQimenInventoryruleCreateAPIRequest对象
 func NewTaobaoQimenInventoryruleCreateRequest() *TaobaoQimenInventoryruleCreateAPIRequest {
 	return &TaobaoQimenInventoryruleCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenInventoryruleCreateAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -50,4 +57,21 @@ func (r *TaobaoQimenInventoryruleCreateAPIRequest) SetRequest(_request *RequestD
 // GetRequest Request Getter
 func (r TaobaoQimenInventoryruleCreateAPIRequest) GetRequest() *RequestDo {
 	return r._request
+}
+
+var poolTaobaoQimenInventoryruleCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenInventoryruleCreateRequest()
+	},
+}
+
+// GetTaobaoQimenInventoryruleCreateRequest 从 sync.Pool 获取 TaobaoQimenInventoryruleCreateAPIRequest
+func GetTaobaoQimenInventoryruleCreateAPIRequest() *TaobaoQimenInventoryruleCreateAPIRequest {
+	return poolTaobaoQimenInventoryruleCreateAPIRequest.Get().(*TaobaoQimenInventoryruleCreateAPIRequest)
+}
+
+// ReleaseTaobaoQimenInventoryruleCreateAPIRequest 将 TaobaoQimenInventoryruleCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenInventoryruleCreateAPIRequest(v *TaobaoQimenInventoryruleCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenInventoryruleCreateAPIRequest.Put(v)
 }

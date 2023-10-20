@@ -9,11 +9,6 @@ import (
 // taobao.omniorder.store.sdtstatus
 //
 // 提供给商家查询运力单的状态。
-func TaobaoOmniorderStoreSdtstatus(clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreSdtstatusAPIRequest, session string) (*omniorder.TaobaoOmniorderStoreSdtstatusAPIResponse, error) {
-	var resp omniorder.TaobaoOmniorderStoreSdtstatusAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOmniorderStoreSdtstatus(clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreSdtstatusAPIRequest, resp *omniorder.TaobaoOmniorderStoreSdtstatusAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

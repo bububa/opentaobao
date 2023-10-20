@@ -9,11 +9,6 @@ import (
 // aliexpress.solution.product.post
 //
 // Product posting API for Oversea merchants, simplifying the complexity of integration that sellers and merchants face. For example, these sellers can use their own category and attributes instead of mapping those from AE.
-func AliexpressSolutionProductPost(clt *core.SDKClient, req *aesolution.AliexpressSolutionProductPostAPIRequest, session string) (*aesolution.AliexpressSolutionProductPostAPIResponse, error) {
-	var resp aesolution.AliexpressSolutionProductPostAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressSolutionProductPost(clt *core.SDKClient, req *aesolution.AliexpressSolutionProductPostAPIRequest, resp *aesolution.AliexpressSolutionProductPostAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

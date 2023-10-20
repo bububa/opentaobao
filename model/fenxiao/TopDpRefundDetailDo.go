@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // TopDpRefundDetailDo 结构体
 type TopDpRefundDetailDo struct {
 	// 退货的物流信息
@@ -40,4 +44,39 @@ type TopDpRefundDetailDo struct {
 	RefundId int64 `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
 	// 是否退货,如果是已发货退货退款/售后退货退款，就是true
 	IsReturnGoods bool `json:"is_return_goods,omitempty" xml:"is_return_goods,omitempty"`
+}
+
+var poolTopDpRefundDetailDo = sync.Pool{
+	New: func() any {
+		return new(TopDpRefundDetailDo)
+	},
+}
+
+// GetTopDpRefundDetailDo() 从对象池中获取TopDpRefundDetailDo
+func GetTopDpRefundDetailDo() *TopDpRefundDetailDo {
+	return poolTopDpRefundDetailDo.Get().(*TopDpRefundDetailDo)
+}
+
+// ReleaseTopDpRefundDetailDo 释放TopDpRefundDetailDo
+func ReleaseTopDpRefundDetailDo(v *TopDpRefundDetailDo) {
+	v.ReturnLogistics = v.ReturnLogistics[:0]
+	v.RefundItems = v.RefundItems[:0]
+	v.RefundCreateTime = ""
+	v.RefundFee = ""
+	v.PaySupFee = ""
+	v.RefundReason = ""
+	v.RefundDesc = ""
+	v.DistributorNick = ""
+	v.SupplierNick = ""
+	v.Modified = ""
+	v.Timeout = ""
+	v.SubOrderId = 0
+	v.RefundStatus = 0
+	v.PurchaseOrderId = 0
+	v.RefundFlowType = 0
+	v.ToType = 0
+	v.BuyerRefund = nil
+	v.RefundId = 0
+	v.IsReturnGoods = false
+	poolTopDpRefundDetailDo.Put(v)
 }

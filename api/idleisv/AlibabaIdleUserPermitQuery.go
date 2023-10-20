@@ -9,11 +9,6 @@ import (
 // alibaba.idle.user.permit.query
 //
 // 查询服务商与卖家之间的订单消息绑定关系
-func AlibabaIdleUserPermitQuery(clt *core.SDKClient, req *idleisv.AlibabaIdleUserPermitQueryAPIRequest, session string) (*idleisv.AlibabaIdleUserPermitQueryAPIResponse, error) {
-	var resp idleisv.AlibabaIdleUserPermitQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleUserPermitQuery(clt *core.SDKClient, req *idleisv.AlibabaIdleUserPermitQueryAPIRequest, resp *idleisv.AlibabaIdleUserPermitQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

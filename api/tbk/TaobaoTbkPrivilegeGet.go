@@ -9,11 +9,6 @@ import (
 // taobao.tbk.privilege.get
 //
 // 单品券高效转链API
-func TaobaoTbkPrivilegeGet(clt *core.SDKClient, req *tbk.TaobaoTbkPrivilegeGetAPIRequest, session string) (*tbk.TaobaoTbkPrivilegeGetAPIResponse, error) {
-	var resp tbk.TaobaoTbkPrivilegeGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTbkPrivilegeGet(clt *core.SDKClient, req *tbk.TaobaoTbkPrivilegeGetAPIRequest, resp *tbk.TaobaoTbkPrivilegeGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

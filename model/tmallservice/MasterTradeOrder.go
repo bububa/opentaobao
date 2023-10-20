@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // MasterTradeOrder 结构体
 type MasterTradeOrder struct {
 	// 签收时间
@@ -42,4 +46,40 @@ type MasterTradeOrder struct {
 	BuyAmount int64 `json:"buy_amount,omitempty" xml:"buy_amount,omitempty"`
 	// 实物主订单号
 	ParentOrderId int64 `json:"parent_order_id,omitempty" xml:"parent_order_id,omitempty"`
+}
+
+var poolMasterTradeOrder = sync.Pool{
+	New: func() any {
+		return new(MasterTradeOrder)
+	},
+}
+
+// GetMasterTradeOrder() 从对象池中获取MasterTradeOrder
+func GetMasterTradeOrder() *MasterTradeOrder {
+	return poolMasterTradeOrder.Get().(*MasterTradeOrder)
+}
+
+// ReleaseMasterTradeOrder 释放MasterTradeOrder
+func ReleaseMasterTradeOrder(v *MasterTradeOrder) {
+	v.GmtArrival = ""
+	v.GmtExpectArrival = ""
+	v.OuterIdSku = ""
+	v.SkuDesc = ""
+	v.SellerNick = ""
+	v.ShopName = ""
+	v.AuctionTitle = ""
+	v.Attributes = ""
+	v.GmtShipped = ""
+	v.GmtPay = ""
+	v.OuterIdP = ""
+	v.CategoryId = 0
+	v.SpuId = 0
+	v.BrandId = 0
+	v.Price = 0
+	v.SkuId = 0
+	v.AuctionId = 0
+	v.OrderId = 0
+	v.BuyAmount = 0
+	v.ParentOrderId = 0
+	poolMasterTradeOrder.Put(v)
 }

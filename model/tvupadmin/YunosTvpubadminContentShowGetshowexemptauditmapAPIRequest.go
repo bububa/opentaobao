@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest struct {
 // NewYunosTvpubadminContentShowGetshowexemptauditmapRequest 初始化YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest对象
 func NewYunosTvpubadminContentShowGetshowexemptauditmapRequest() *YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest {
 	return &YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest) Reset() {
+	r._showLongIds = ""
+	r._license = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest) SetLicense(_
 // GetLicense License Getter
 func (r YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest) GetLicense() int64 {
 	return r._license
+}
+
+var poolYunosTvpubadminContentShowGetshowexemptauditmapAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminContentShowGetshowexemptauditmapRequest()
+	},
+}
+
+// GetYunosTvpubadminContentShowGetshowexemptauditmapRequest 从 sync.Pool 获取 YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest
+func GetYunosTvpubadminContentShowGetshowexemptauditmapAPIRequest() *YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest {
+	return poolYunosTvpubadminContentShowGetshowexemptauditmapAPIRequest.Get().(*YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest)
+}
+
+// ReleaseYunosTvpubadminContentShowGetshowexemptauditmapAPIRequest 将 YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminContentShowGetshowexemptauditmapAPIRequest(v *YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminContentShowGetshowexemptauditmapAPIRequest.Put(v)
 }

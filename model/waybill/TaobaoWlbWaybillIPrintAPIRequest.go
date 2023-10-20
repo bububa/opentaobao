@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoWlbWaybillIPrintAPIRequest struct {
 // NewTaobaoWlbWaybillIPrintRequest 初始化TaobaoWlbWaybillIPrintAPIRequest对象
 func NewTaobaoWlbWaybillIPrintRequest() *TaobaoWlbWaybillIPrintAPIRequest {
 	return &TaobaoWlbWaybillIPrintAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWaybillIPrintAPIRequest) Reset() {
+	r._waybillApplyPrintCheckRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoWlbWaybillIPrintAPIRequest) SetWaybillApplyPrintCheckRequest(_way
 // GetWaybillApplyPrintCheckRequest WaybillApplyPrintCheckRequest Getter
 func (r TaobaoWlbWaybillIPrintAPIRequest) GetWaybillApplyPrintCheckRequest() *WaybillApplyPrintCheckRequest {
 	return r._waybillApplyPrintCheckRequest
+}
+
+var poolTaobaoWlbWaybillIPrintAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWaybillIPrintRequest()
+	},
+}
+
+// GetTaobaoWlbWaybillIPrintRequest 从 sync.Pool 获取 TaobaoWlbWaybillIPrintAPIRequest
+func GetTaobaoWlbWaybillIPrintAPIRequest() *TaobaoWlbWaybillIPrintAPIRequest {
+	return poolTaobaoWlbWaybillIPrintAPIRequest.Get().(*TaobaoWlbWaybillIPrintAPIRequest)
+}
+
+// ReleaseTaobaoWlbWaybillIPrintAPIRequest 将 TaobaoWlbWaybillIPrintAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWaybillIPrintAPIRequest(v *TaobaoWlbWaybillIPrintAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWaybillIPrintAPIRequest.Put(v)
 }

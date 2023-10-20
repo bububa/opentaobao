@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoNewretailDivisionRecordListGetAPIRequest struct {
 // NewTaobaoNewretailDivisionRecordListGetRequest 初始化TaobaoNewretailDivisionRecordListGetAPIRequest对象
 func NewTaobaoNewretailDivisionRecordListGetRequest() *TaobaoNewretailDivisionRecordListGetAPIRequest {
 	return &TaobaoNewretailDivisionRecordListGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoNewretailDivisionRecordListGetAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoNewretailDivisionRecordListGetAPIRequest) SetParam(_param *TopDiv
 // GetParam Param Getter
 func (r TaobaoNewretailDivisionRecordListGetAPIRequest) GetParam() *TopDivisionRecordReqDto {
 	return r._param
+}
+
+var poolTaobaoNewretailDivisionRecordListGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoNewretailDivisionRecordListGetRequest()
+	},
+}
+
+// GetTaobaoNewretailDivisionRecordListGetRequest 从 sync.Pool 获取 TaobaoNewretailDivisionRecordListGetAPIRequest
+func GetTaobaoNewretailDivisionRecordListGetAPIRequest() *TaobaoNewretailDivisionRecordListGetAPIRequest {
+	return poolTaobaoNewretailDivisionRecordListGetAPIRequest.Get().(*TaobaoNewretailDivisionRecordListGetAPIRequest)
+}
+
+// ReleaseTaobaoNewretailDivisionRecordListGetAPIRequest 将 TaobaoNewretailDivisionRecordListGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoNewretailDivisionRecordListGetAPIRequest(v *TaobaoNewretailDivisionRecordListGetAPIRequest) {
+	v.Reset()
+	poolTaobaoNewretailDivisionRecordListGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest struct {
 // NewAlibabaTclsAelophyMerchantChannelRefundCompleteRequest 初始化AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest对象
 func NewAlibabaTclsAelophyMerchantChannelRefundCompleteRequest() *AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest {
 	return &AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest) Reset() {
+	r._refundCompleteInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest) SetRefundCom
 // GetRefundCompleteInfo RefundCompleteInfo Getter
 func (r AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest) GetRefundCompleteInfo() *RefundCompleteInfo {
 	return r._refundCompleteInfo
+}
+
+var poolAlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsAelophyMerchantChannelRefundCompleteRequest()
+	},
+}
+
+// GetAlibabaTclsAelophyMerchantChannelRefundCompleteRequest 从 sync.Pool 获取 AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest
+func GetAlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest() *AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest {
+	return poolAlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest.Get().(*AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest)
+}
+
+// ReleaseAlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest 将 AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest(v *AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest.Put(v)
 }

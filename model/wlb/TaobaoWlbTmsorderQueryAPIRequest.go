@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoWlbTmsorderQueryAPIRequest struct {
 // NewTaobaoWlbTmsorderQueryRequest 初始化TaobaoWlbTmsorderQueryAPIRequest对象
 func NewTaobaoWlbTmsorderQueryRequest() *TaobaoWlbTmsorderQueryAPIRequest {
 	return &TaobaoWlbTmsorderQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbTmsorderQueryAPIRequest) Reset() {
+	r._orderCode = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoWlbTmsorderQueryAPIRequest) SetPageSize(_pageSize int64) error {
 // GetPageSize PageSize Getter
 func (r TaobaoWlbTmsorderQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoWlbTmsorderQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbTmsorderQueryRequest()
+	},
+}
+
+// GetTaobaoWlbTmsorderQueryRequest 从 sync.Pool 获取 TaobaoWlbTmsorderQueryAPIRequest
+func GetTaobaoWlbTmsorderQueryAPIRequest() *TaobaoWlbTmsorderQueryAPIRequest {
+	return poolTaobaoWlbTmsorderQueryAPIRequest.Get().(*TaobaoWlbTmsorderQueryAPIRequest)
+}
+
+// ReleaseTaobaoWlbTmsorderQueryAPIRequest 将 TaobaoWlbTmsorderQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbTmsorderQueryAPIRequest(v *TaobaoWlbTmsorderQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbTmsorderQueryAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaAlisportsPassportParterSynccardAPIRequest struct {
 // NewAlibabaAlisportsPassportParterSynccardRequest 初始化AlibabaAlisportsPassportParterSynccardAPIRequest对象
 func NewAlibabaAlisportsPassportParterSynccardRequest() *AlibabaAlisportsPassportParterSynccardAPIRequest {
 	return &AlibabaAlisportsPassportParterSynccardAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlisportsPassportParterSynccardAPIRequest) Reset() {
+	r._aliuid = ""
+	r._type = ""
+	r._oldCardNum = ""
+	r._alispTime = ""
+	r._alispAppKey = ""
+	r._alispSign = ""
+	r._centerNum = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaAlisportsPassportParterSynccardAPIRequest) SetCenterNum(_centerN
 // GetCenterNum CenterNum Getter
 func (r AlibabaAlisportsPassportParterSynccardAPIRequest) GetCenterNum() string {
 	return r._centerNum
+}
+
+var poolAlibabaAlisportsPassportParterSynccardAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlisportsPassportParterSynccardRequest()
+	},
+}
+
+// GetAlibabaAlisportsPassportParterSynccardRequest 从 sync.Pool 获取 AlibabaAlisportsPassportParterSynccardAPIRequest
+func GetAlibabaAlisportsPassportParterSynccardAPIRequest() *AlibabaAlisportsPassportParterSynccardAPIRequest {
+	return poolAlibabaAlisportsPassportParterSynccardAPIRequest.Get().(*AlibabaAlisportsPassportParterSynccardAPIRequest)
+}
+
+// ReleaseAlibabaAlisportsPassportParterSynccardAPIRequest 将 AlibabaAlisportsPassportParterSynccardAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlisportsPassportParterSynccardAPIRequest(v *AlibabaAlisportsPassportParterSynccardAPIRequest) {
+	v.Reset()
+	poolAlibabaAlisportsPassportParterSynccardAPIRequest.Put(v)
 }

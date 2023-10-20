@@ -2,6 +2,7 @@ package hotelhstdf
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoXhotelHotelMessageReceiveAPIRequest struct {
 // NewTaobaoXhotelHotelMessageReceiveRequest 初始化TaobaoXhotelHotelMessageReceiveAPIRequest对象
 func NewTaobaoXhotelHotelMessageReceiveRequest() *TaobaoXhotelHotelMessageReceiveAPIRequest {
 	return &TaobaoXhotelHotelMessageReceiveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelHotelMessageReceiveAPIRequest) Reset() {
+	r._ossPath = ""
+	r._fileCount = 0
+	r._recordCount = 0
+	r._dataType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoXhotelHotelMessageReceiveAPIRequest) SetDataType(_dataType int64)
 // GetDataType DataType Getter
 func (r TaobaoXhotelHotelMessageReceiveAPIRequest) GetDataType() int64 {
 	return r._dataType
+}
+
+var poolTaobaoXhotelHotelMessageReceiveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelHotelMessageReceiveRequest()
+	},
+}
+
+// GetTaobaoXhotelHotelMessageReceiveRequest 从 sync.Pool 获取 TaobaoXhotelHotelMessageReceiveAPIRequest
+func GetTaobaoXhotelHotelMessageReceiveAPIRequest() *TaobaoXhotelHotelMessageReceiveAPIRequest {
+	return poolTaobaoXhotelHotelMessageReceiveAPIRequest.Get().(*TaobaoXhotelHotelMessageReceiveAPIRequest)
+}
+
+// ReleaseTaobaoXhotelHotelMessageReceiveAPIRequest 将 TaobaoXhotelHotelMessageReceiveAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelHotelMessageReceiveAPIRequest(v *TaobaoXhotelHotelMessageReceiveAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelHotelMessageReceiveAPIRequest.Put(v)
 }

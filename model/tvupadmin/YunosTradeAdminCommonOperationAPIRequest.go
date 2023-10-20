@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type YunosTradeAdminCommonOperationAPIRequest struct {
 // NewYunosTradeAdminCommonOperationRequest 初始化YunosTradeAdminCommonOperationAPIRequest对象
 func NewYunosTradeAdminCommonOperationRequest() *YunosTradeAdminCommonOperationAPIRequest {
 	return &YunosTradeAdminCommonOperationAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTradeAdminCommonOperationAPIRequest) Reset() {
+	r._parameter = ""
+	r._methodName = ""
+	r._interfaceName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *YunosTradeAdminCommonOperationAPIRequest) SetInterfaceName(_interfaceNa
 // GetInterfaceName InterfaceName Getter
 func (r YunosTradeAdminCommonOperationAPIRequest) GetInterfaceName() string {
 	return r._interfaceName
+}
+
+var poolYunosTradeAdminCommonOperationAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTradeAdminCommonOperationRequest()
+	},
+}
+
+// GetYunosTradeAdminCommonOperationRequest 从 sync.Pool 获取 YunosTradeAdminCommonOperationAPIRequest
+func GetYunosTradeAdminCommonOperationAPIRequest() *YunosTradeAdminCommonOperationAPIRequest {
+	return poolYunosTradeAdminCommonOperationAPIRequest.Get().(*YunosTradeAdminCommonOperationAPIRequest)
+}
+
+// ReleaseYunosTradeAdminCommonOperationAPIRequest 将 YunosTradeAdminCommonOperationAPIRequest 放入 sync.Pool
+func ReleaseYunosTradeAdminCommonOperationAPIRequest(v *YunosTradeAdminCommonOperationAPIRequest) {
+	v.Reset()
+	poolYunosTradeAdminCommonOperationAPIRequest.Put(v)
 }

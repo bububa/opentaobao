@@ -2,6 +2,7 @@ package ioti
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaItEslSendotaAPIRequest struct {
 // NewAlibabaItEslSendotaRequest 初始化AlibabaItEslSendotaAPIRequest对象
 func NewAlibabaItEslSendotaRequest() *AlibabaItEslSendotaAPIRequest {
 	return &AlibabaItEslSendotaAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaItEslSendotaAPIRequest) Reset() {
+	r._macAp = ""
+	r._otaDataBase64String = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaItEslSendotaAPIRequest) SetOtaDataBase64String(_otaDataBase64Str
 // GetOtaDataBase64String OtaDataBase64String Getter
 func (r AlibabaItEslSendotaAPIRequest) GetOtaDataBase64String() string {
 	return r._otaDataBase64String
+}
+
+var poolAlibabaItEslSendotaAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaItEslSendotaRequest()
+	},
+}
+
+// GetAlibabaItEslSendotaRequest 从 sync.Pool 获取 AlibabaItEslSendotaAPIRequest
+func GetAlibabaItEslSendotaAPIRequest() *AlibabaItEslSendotaAPIRequest {
+	return poolAlibabaItEslSendotaAPIRequest.Get().(*AlibabaItEslSendotaAPIRequest)
+}
+
+// ReleaseAlibabaItEslSendotaAPIRequest 将 AlibabaItEslSendotaAPIRequest 放入 sync.Pool
+func ReleaseAlibabaItEslSendotaAPIRequest(v *AlibabaItEslSendotaAPIRequest) {
+	v.Reset()
+	poolAlibabaItEslSendotaAPIRequest.Put(v)
 }

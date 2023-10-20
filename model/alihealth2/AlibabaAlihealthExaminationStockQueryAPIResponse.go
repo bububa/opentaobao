@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlihealthExaminationStockQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthExaminationStockQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthExaminationStockQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthExaminationStockQueryAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthExaminationStockQueryAPIResponseModel is 体检机构对接_体检套餐库存查询 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaAlihealthExaminationStockQueryAPIResponseModel struct {
 	ReservationMinAheadHours string `json:"reservation_min_ahead_hours,omitempty" xml:"reservation_min_ahead_hours,omitempty"`
 	// 是否支持分时能力
 	TimeSharingEnable bool `json:"time_sharing_enable,omitempty" xml:"time_sharing_enable,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthExaminationStockQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.StorageList = m.StorageList[:0]
+	m.Message = ""
+	m.ResponseCode = ""
+	m.ReservationMinAheadHours = ""
+	m.TimeSharingEnable = false
+}
+
+var poolAlibabaAlihealthExaminationStockQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthExaminationStockQueryAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthExaminationStockQueryAPIResponse 从 sync.Pool 获取 AlibabaAlihealthExaminationStockQueryAPIResponse
+func GetAlibabaAlihealthExaminationStockQueryAPIResponse() *AlibabaAlihealthExaminationStockQueryAPIResponse {
+	return poolAlibabaAlihealthExaminationStockQueryAPIResponse.Get().(*AlibabaAlihealthExaminationStockQueryAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthExaminationStockQueryAPIResponse 将 AlibabaAlihealthExaminationStockQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthExaminationStockQueryAPIResponse(v *AlibabaAlihealthExaminationStockQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationStockQueryAPIResponse.Put(v)
 }

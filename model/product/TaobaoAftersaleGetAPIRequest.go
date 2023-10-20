@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoAftersaleGetAPIRequest struct {
 // NewTaobaoAftersaleGetRequest 初始化TaobaoAftersaleGetAPIRequest对象
 func NewTaobaoAftersaleGetRequest() *TaobaoAftersaleGetAPIRequest {
 	return &TaobaoAftersaleGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAftersaleGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoAftersaleGetAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoAftersaleGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoAftersaleGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAftersaleGetRequest()
+	},
+}
+
+// GetTaobaoAftersaleGetRequest 从 sync.Pool 获取 TaobaoAftersaleGetAPIRequest
+func GetTaobaoAftersaleGetAPIRequest() *TaobaoAftersaleGetAPIRequest {
+	return poolTaobaoAftersaleGetAPIRequest.Get().(*TaobaoAftersaleGetAPIRequest)
+}
+
+// ReleaseTaobaoAftersaleGetAPIRequest 将 TaobaoAftersaleGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAftersaleGetAPIRequest(v *TaobaoAftersaleGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAftersaleGetAPIRequest.Put(v)
 }

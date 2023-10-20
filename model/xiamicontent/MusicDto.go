@@ -1,5 +1,9 @@
 package xiamicontent
 
+import (
+	"sync"
+)
+
 // MusicDto 结构体
 type MusicDto struct {
 	// 演唱者
@@ -36,4 +40,37 @@ type MusicDto struct {
 	PublishStatus int64 `json:"publish_status,omitempty" xml:"publish_status,omitempty"`
 	// 是否删除
 	DeletedStatus int64 `json:"deleted_status,omitempty" xml:"deleted_status,omitempty"`
+}
+
+var poolMusicDto = sync.Pool{
+	New: func() any {
+		return new(MusicDto)
+	},
+}
+
+// GetMusicDto() 从对象池中获取MusicDto
+func GetMusicDto() *MusicDto {
+	return poolMusicDto.Get().(*MusicDto)
+}
+
+// ReleaseMusicDto 释放MusicDto
+func ReleaseMusicDto(v *MusicDto) {
+	v.Singers = v.Singers[:0]
+	v.Tags = v.Tags[:0]
+	v.Audios = v.Audios[:0]
+	v.Lyrics = v.Lyrics[:0]
+	v.SongName = ""
+	v.CoverUrl = ""
+	v.WaveformUrl = ""
+	v.SongSubName = ""
+	v.RecommendSceneId = ""
+	v.Album = nil
+	v.ShowStatus = 0
+	v.Duration = 0
+	v.CopyrightStatus = 0
+	v.SongId = 0
+	v.MusicType = 0
+	v.PublishStatus = 0
+	v.DeletedStatus = 0
+	poolMusicDto.Put(v)
 }

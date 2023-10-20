@@ -1,5 +1,9 @@
 package traveltrade
 
+import (
+	"sync"
+)
+
 // BuyItemInfo 结构体
 type BuyItemInfo struct {
 	// 商品类目相关的扩展信息（不再推荐使用，建议使用category_ext_infos_json替代）。KV对形式，多个KV对以英文封号分隔，k1:v1;k2:v2。各类目支持的枚举key详见：https://open.alitrip.com/docs/doc.htm?docType=1&amp;articleId=107548
@@ -34,4 +38,36 @@ type BuyItemInfo struct {
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 	// 用户所购买的商品上sku的id
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolBuyItemInfo = sync.Pool{
+	New: func() any {
+		return new(BuyItemInfo)
+	},
+}
+
+// GetBuyItemInfo() 从对象池中获取BuyItemInfo
+func GetBuyItemInfo() *BuyItemInfo {
+	return poolBuyItemInfo.Get().(*BuyItemInfo)
+}
+
+// ReleaseBuyItemInfo 释放BuyItemInfo
+func ReleaseBuyItemInfo(v *BuyItemInfo) {
+	v.CategoryExtInfos = ""
+	v.ItemTitle = ""
+	v.OutProductId = ""
+	v.OutSkuId = ""
+	v.SkuProperties = ""
+	v.TripEndDate = ""
+	v.TripStartDate = ""
+	v.ItemImage = ""
+	v.CategoryExtInfosJson = ""
+	v.FsEndTime = ""
+	v.FsStartTime = ""
+	v.CategoryId = 0
+	v.ItemId = 0
+	v.Num = 0
+	v.Price = 0
+	v.SkuId = 0
+	poolBuyItemInfo.Put(v)
 }

@@ -1,5 +1,9 @@
 package alilabs
 
+import (
+	"sync"
+)
+
 // AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult 结构体
 type AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult struct {
 	// message
@@ -16,4 +20,27 @@ type AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult struct {
 	Result *AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult `json:"result,omitempty" xml:"result,omitempty"`
 	// code
 	Code int64 `json:"code,omitempty" xml:"code,omitempty"`
+}
+
+var poolAlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult)
+	},
+}
+
+// GetAlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult() 从对象池中获取AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult
+func GetAlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult() *AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult {
+	return poolAlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult.Get().(*AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult)
+}
+
+// ReleaseAlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult 释放AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult
+func ReleaseAlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult(v *AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult) {
+	v.Message = ""
+	v.UserOpenId = ""
+	v.Name = ""
+	v.Uuid = ""
+	v.DeviceId = ""
+	v.Result = nil
+	v.Code = 0
+	poolAlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult.Put(v)
 }

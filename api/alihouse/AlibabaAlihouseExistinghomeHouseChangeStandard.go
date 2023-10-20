@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghome.house.change.standard
 //
 // 委托房源变更标准房源
-func AlibabaAlihouseExistinghomeHouseChangeStandard(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeHouseChangeStandardAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeHouseChangeStandardAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeHouseChangeStandardAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghomeHouseChangeStandard(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeHouseChangeStandardAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeHouseChangeStandardAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

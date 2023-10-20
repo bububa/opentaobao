@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoTbkDgVegasSendStatusAPIRequest struct {
 // NewTaobaoTbkDgVegasSendStatusRequest 初始化TaobaoTbkDgVegasSendStatusAPIRequest对象
 func NewTaobaoTbkDgVegasSendStatusRequest() *TaobaoTbkDgVegasSendStatusAPIRequest {
 	return &TaobaoTbkDgVegasSendStatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkDgVegasSendStatusAPIRequest) Reset() {
+	r._relationId = ""
+	r._specialId = ""
+	r._deviceValue = ""
+	r._deviceType = ""
+	r._thorBizCode = ""
+	r._pid = ""
+	r._activityCategory = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoTbkDgVegasSendStatusAPIRequest) SetActivityCategory(_activityCate
 // GetActivityCategory ActivityCategory Getter
 func (r TaobaoTbkDgVegasSendStatusAPIRequest) GetActivityCategory() int64 {
 	return r._activityCategory
+}
+
+var poolTaobaoTbkDgVegasSendStatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkDgVegasSendStatusRequest()
+	},
+}
+
+// GetTaobaoTbkDgVegasSendStatusRequest 从 sync.Pool 获取 TaobaoTbkDgVegasSendStatusAPIRequest
+func GetTaobaoTbkDgVegasSendStatusAPIRequest() *TaobaoTbkDgVegasSendStatusAPIRequest {
+	return poolTaobaoTbkDgVegasSendStatusAPIRequest.Get().(*TaobaoTbkDgVegasSendStatusAPIRequest)
+}
+
+// ReleaseTaobaoTbkDgVegasSendStatusAPIRequest 将 TaobaoTbkDgVegasSendStatusAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkDgVegasSendStatusAPIRequest(v *TaobaoTbkDgVegasSendStatusAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkDgVegasSendStatusAPIRequest.Put(v)
 }

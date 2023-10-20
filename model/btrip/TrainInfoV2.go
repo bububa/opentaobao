@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // TrainInfoV2 结构体
 type TrainInfoV2 struct {
 	// 票信息
@@ -20,4 +24,29 @@ type TrainInfoV2 struct {
 	ToCityName string `json:"to_city_name,omitempty" xml:"to_city_name,omitempty"`
 	// 运行时长
 	RunTime int64 `json:"run_time,omitempty" xml:"run_time,omitempty"`
+}
+
+var poolTrainInfoV2 = sync.Pool{
+	New: func() any {
+		return new(TrainInfoV2)
+	},
+}
+
+// GetTrainInfoV2() 从对象池中获取TrainInfoV2
+func GetTrainInfoV2() *TrainInfoV2 {
+	return poolTrainInfoV2.Get().(*TrainInfoV2)
+}
+
+// ReleaseTrainInfoV2 释放TrainInfoV2
+func ReleaseTrainInfoV2(v *TrainInfoV2) {
+	v.TrainTicketInfos = v.TrainTicketInfos[:0]
+	v.FromStationName = ""
+	v.ToStationName = ""
+	v.DepTime = ""
+	v.TrainNo = ""
+	v.ArrTime = ""
+	v.FromCityName = ""
+	v.ToCityName = ""
+	v.RunTime = 0
+	poolTrainInfoV2.Put(v)
 }

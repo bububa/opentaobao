@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drugtrace.top.lsyd.uploadretail
 //
 // 快易通多融零售上传接口
-func AlibabaAlihealthDrugtraceTopLsydUploadretail(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugtraceTopLsydUploadretailAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugtraceTopLsydUploadretailAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugtraceTopLsydUploadretail(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest, resp *drugtrace.AlibabaAlihealthDrugtraceTopLsydUploadretailAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

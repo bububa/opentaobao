@@ -1,5 +1,9 @@
 package dt
 
+import (
+	"sync"
+)
+
 // RtItemResearchPriceParam 结构体
 type RtItemResearchPriceParam struct {
 	// 流水号
@@ -42,4 +46,40 @@ type RtItemResearchPriceParam struct {
 	PromotionPrice int64 `json:"promotion_price,omitempty" xml:"promotion_price,omitempty"`
 	// 正常价格
 	SalePrice int64 `json:"sale_price,omitempty" xml:"sale_price,omitempty"`
+}
+
+var poolRtItemResearchPriceParam = sync.Pool{
+	New: func() any {
+		return new(RtItemResearchPriceParam)
+	},
+}
+
+// GetRtItemResearchPriceParam() 从对象池中获取RtItemResearchPriceParam
+func GetRtItemResearchPriceParam() *RtItemResearchPriceParam {
+	return poolRtItemResearchPriceParam.Get().(*RtItemResearchPriceParam)
+}
+
+// ReleaseRtItemResearchPriceParam 释放RtItemResearchPriceParam
+func ReleaseRtItemResearchPriceParam(v *RtItemResearchPriceParam) {
+	v.SerialNo = ""
+	v.Source = ""
+	v.ExtMap = ""
+	v.StoreName = ""
+	v.AreaName = ""
+	v.OriginPlace = ""
+	v.PromotionEndTime = ""
+	v.PromotionStartTime = ""
+	v.SpecDesc = ""
+	v.PromotionDesc = ""
+	v.BarCode = ""
+	v.BrandName = ""
+	v.Title = ""
+	v.RtItemNo = ""
+	v.StoreId = 0
+	v.AreaId = 0
+	v.PromotionType = 0
+	v.InPromotion = 0
+	v.PromotionPrice = 0
+	v.SalePrice = 0
+	poolRtItemResearchPriceParam.Put(v)
 }

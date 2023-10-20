@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoXhotelOrderAlipayfaceSettleAPIResponse struct {
 	TaobaoXhotelOrderAlipayfaceSettleAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderAlipayfaceSettleAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelOrderAlipayfaceSettleAPIResponseModel).Reset()
+}
+
 // TaobaoXhotelOrderAlipayfaceSettleAPIResponseModel is 信用住订单结账接口 成功返回结果
 type TaobaoXhotelOrderAlipayfaceSettleAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_alipayface_settle_response"`
@@ -22,4 +29,27 @@ type TaobaoXhotelOrderAlipayfaceSettleAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderAlipayfaceSettleAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = ""
+}
+
+var poolTaobaoXhotelOrderAlipayfaceSettleAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelOrderAlipayfaceSettleAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelOrderAlipayfaceSettleAPIResponse 从 sync.Pool 获取 TaobaoXhotelOrderAlipayfaceSettleAPIResponse
+func GetTaobaoXhotelOrderAlipayfaceSettleAPIResponse() *TaobaoXhotelOrderAlipayfaceSettleAPIResponse {
+	return poolTaobaoXhotelOrderAlipayfaceSettleAPIResponse.Get().(*TaobaoXhotelOrderAlipayfaceSettleAPIResponse)
+}
+
+// ReleaseTaobaoXhotelOrderAlipayfaceSettleAPIResponse 将 TaobaoXhotelOrderAlipayfaceSettleAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelOrderAlipayfaceSettleAPIResponse(v *TaobaoXhotelOrderAlipayfaceSettleAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelOrderAlipayfaceSettleAPIResponse.Put(v)
 }

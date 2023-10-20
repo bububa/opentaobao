@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaScbpAdCampaignFindCampaignEffectAPIRequest struct {
 // NewAlibabaScbpAdCampaignFindCampaignEffectRequest 初始化AlibabaScbpAdCampaignFindCampaignEffectAPIRequest对象
 func NewAlibabaScbpAdCampaignFindCampaignEffectRequest() *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest {
 	return &AlibabaScbpAdCampaignFindCampaignEffectAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) Reset() {
+	r._campaignIdList = r._campaignIdList[:0]
+	r._beginDate = ""
+	r._endDate = ""
+	r._topContext = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) SetTopContext(_topCo
 // GetTopContext TopContext Getter
 func (r AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
+}
+
+var poolAlibabaScbpAdCampaignFindCampaignEffectAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdCampaignFindCampaignEffectRequest()
+	},
+}
+
+// GetAlibabaScbpAdCampaignFindCampaignEffectRequest 从 sync.Pool 获取 AlibabaScbpAdCampaignFindCampaignEffectAPIRequest
+func GetAlibabaScbpAdCampaignFindCampaignEffectAPIRequest() *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest {
+	return poolAlibabaScbpAdCampaignFindCampaignEffectAPIRequest.Get().(*AlibabaScbpAdCampaignFindCampaignEffectAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdCampaignFindCampaignEffectAPIRequest 将 AlibabaScbpAdCampaignFindCampaignEffectAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdCampaignFindCampaignEffectAPIRequest(v *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdCampaignFindCampaignEffectAPIRequest.Put(v)
 }

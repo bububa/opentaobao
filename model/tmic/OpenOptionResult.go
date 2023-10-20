@@ -1,5 +1,9 @@
 package tmic
 
+import (
+	"sync"
+)
+
 // OpenOptionResult 结构体
 type OpenOptionResult struct {
 	// 业务错误提示
@@ -16,4 +20,27 @@ type OpenOptionResult struct {
 	HasNextQuestion bool `json:"has_next_question,omitempty" xml:"has_next_question,omitempty"`
 	// 业务是否调用成功
 	BizSuccess bool `json:"biz_success,omitempty" xml:"biz_success,omitempty"`
+}
+
+var poolOpenOptionResult = sync.Pool{
+	New: func() any {
+		return new(OpenOptionResult)
+	},
+}
+
+// GetOpenOptionResult() 从对象池中获取OpenOptionResult
+func GetOpenOptionResult() *OpenOptionResult {
+	return poolOpenOptionResult.Get().(*OpenOptionResult)
+}
+
+// ReleaseOpenOptionResult 释放OpenOptionResult
+func ReleaseOpenOptionResult(v *OpenOptionResult) {
+	v.BizErrInfo = ""
+	v.BizErrCode = ""
+	v.RecordId = 0
+	v.Question = nil
+	v.Version = 0
+	v.HasNextQuestion = false
+	v.BizSuccess = false
+	poolOpenOptionResult.Put(v)
 }

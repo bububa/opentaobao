@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BusSearchRs 结构体
 type BusSearchRs struct {
 	// 查询结果
@@ -26,4 +30,32 @@ type BusSearchRs struct {
 	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 	// 是否是预约购票订单
 	PreOrder bool `json:"pre_order,omitempty" xml:"pre_order,omitempty"`
+}
+
+var poolBusSearchRs = sync.Pool{
+	New: func() any {
+		return new(BusSearchRs)
+	},
+}
+
+// GetBusSearchRs() 从对象池中获取BusSearchRs
+func GetBusSearchRs() *BusSearchRs {
+	return poolBusSearchRs.Get().(*BusSearchRs)
+}
+
+// ReleaseBusSearchRs 释放BusSearchRs
+func ReleaseBusSearchRs(v *BusSearchRs) {
+	v.BusLines = v.BusLines[:0]
+	v.DepStations = v.DepStations[:0]
+	v.RecommendRoutes = v.RecommendRoutes[:0]
+	v.StationLatitudeLongitudes = v.StationLatitudeLongitudes[:0]
+	v.ToStationNames = v.ToStationNames[:0]
+	v.ArrCity = ""
+	v.DepCity = ""
+	v.DepDate = ""
+	v.EnLarge = 0
+	v.NameSameCity = nil
+	v.Total = 0
+	v.PreOrder = false
+	poolBusSearchRs.Put(v)
 }

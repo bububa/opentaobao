@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -71,8 +72,40 @@ type TaobaoLogisticsConsignOrderCreateandsendAPIRequest struct {
 // NewTaobaoLogisticsConsignOrderCreateandsendRequest 初始化TaobaoLogisticsConsignOrderCreateandsendAPIRequest对象
 func NewTaobaoLogisticsConsignOrderCreateandsendRequest() *TaobaoLogisticsConsignOrderCreateandsendAPIRequest {
 	return &TaobaoLogisticsConsignOrderCreateandsendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(27),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) Reset() {
+	r._sAddress = ""
+	r._sCityName = ""
+	r._sName = ""
+	r._sProvName = ""
+	r._sDistName = ""
+	r._sTelephone = ""
+	r._sMobilePhone = ""
+	r._sZipCode = ""
+	r._rTelephone = ""
+	r._rProvName = ""
+	r._rAddress = ""
+	r._rCityName = ""
+	r._rMobilePhone = ""
+	r._rDistName = ""
+	r._rZipCode = ""
+	r._rName = ""
+	r._mailNo = ""
+	r._shipping = ""
+	r._itemJsonString = ""
+	r._sAreaId = 0
+	r._companyId = 0
+	r._rAreaId = 0
+	r._tradeId = 0
+	r._orderSource = 0
+	r._userId = 0
+	r._logisType = 0
+	r._orderType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -441,4 +474,21 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetOrderType(_order
 // GetOrderType OrderType Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetOrderType() int64 {
 	return r._orderType
+}
+
+var poolTaobaoLogisticsConsignOrderCreateandsendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsConsignOrderCreateandsendRequest()
+	},
+}
+
+// GetTaobaoLogisticsConsignOrderCreateandsendRequest 从 sync.Pool 获取 TaobaoLogisticsConsignOrderCreateandsendAPIRequest
+func GetTaobaoLogisticsConsignOrderCreateandsendAPIRequest() *TaobaoLogisticsConsignOrderCreateandsendAPIRequest {
+	return poolTaobaoLogisticsConsignOrderCreateandsendAPIRequest.Get().(*TaobaoLogisticsConsignOrderCreateandsendAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsConsignOrderCreateandsendAPIRequest 将 TaobaoLogisticsConsignOrderCreateandsendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsConsignOrderCreateandsendAPIRequest(v *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsConsignOrderCreateandsendAPIRequest.Put(v)
 }

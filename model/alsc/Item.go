@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // Item 结构体
 type Item struct {
 	// 商品名称
@@ -24,4 +28,31 @@ type Item struct {
 	PromFee int64 `json:"prom_fee,omitempty" xml:"prom_fee,omitempty"`
 	// 总金额
 	TotalFee int64 `json:"total_fee,omitempty" xml:"total_fee,omitempty"`
+}
+
+var poolItem = sync.Pool{
+	New: func() any {
+		return new(Item)
+	},
+}
+
+// GetItem() 从对象池中获取Item
+func GetItem() *Item {
+	return poolItem.Get().(*Item)
+}
+
+// ReleaseItem 释放Item
+func ReleaseItem(v *Item) {
+	v.GoodsName = ""
+	v.Sku = ""
+	v.Spu = ""
+	v.Unit = ""
+	v.Quantity = ""
+	v.PrimaryClass = ""
+	v.SecondaryClass = ""
+	v.ActualFee = 0
+	v.Price = 0
+	v.PromFee = 0
+	v.TotalFee = 0
+	poolItem.Put(v)
 }

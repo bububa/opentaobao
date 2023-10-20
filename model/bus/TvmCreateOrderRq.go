@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // TvmCreateOrderRq 结构体
 type TvmCreateOrderRq struct {
 	// 分润账户明细列表，是个数组，有几个分账，写几个。 注意 只有需要分润到多账号才需要填，否则为空。分账总和等于订单总价。
@@ -34,4 +38,36 @@ type TvmCreateOrderRq struct {
 	RealName bool `json:"real_name,omitempty" xml:"real_name,omitempty"`
 	// true:切换为自助机小程序订单;false:普通自助机订单
 	TvmOnline bool `json:"tvm_online,omitempty" xml:"tvm_online,omitempty"`
+}
+
+var poolTvmCreateOrderRq = sync.Pool{
+	New: func() any {
+		return new(TvmCreateOrderRq)
+	},
+}
+
+// GetTvmCreateOrderRq() 从对象池中获取TvmCreateOrderRq
+func GetTvmCreateOrderRq() *TvmCreateOrderRq {
+	return poolTvmCreateOrderRq.Get().(*TvmCreateOrderRq)
+}
+
+// ReleaseTvmCreateOrderRq 释放TvmCreateOrderRq
+func ReleaseTvmCreateOrderRq(v *TvmCreateOrderRq) {
+	v.AccountInDetails = v.AccountInDetails[:0]
+	v.Passengers = v.Passengers[:0]
+	v.AgentOrderId = ""
+	v.MachineNumber = ""
+	v.ServiceProviderId = ""
+	v.TradeSource = ""
+	v.CreateDeadline = ""
+	v.PayMode = ""
+	v.TicketCount = 0
+	v.TotalPrice = 0
+	v.TvmBusLineInfo = nil
+	v.PayTimeout = 0
+	v.IssueTimeout = 0
+	v.ContactInfo = nil
+	v.RealName = false
+	v.TvmOnline = false
+	poolTvmCreateOrderRq.Put(v)
 }

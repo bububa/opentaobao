@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // DrfHalfDayCcCallbackOrder 结构体
 type DrfHalfDayCcCallbackOrder struct {
 	// 作业单元
@@ -22,4 +26,30 @@ type DrfHalfDayCcCallbackOrder struct {
 	Operator *Operator `json:"operator,omitempty" xml:"operator,omitempty"`
 	// 是否作业节点终态
 	IsFinal bool `json:"is_final,omitempty" xml:"is_final,omitempty"`
+}
+
+var poolDrfHalfDayCcCallbackOrder = sync.Pool{
+	New: func() any {
+		return new(DrfHalfDayCcCallbackOrder)
+	},
+}
+
+// GetDrfHalfDayCcCallbackOrder() 从对象池中获取DrfHalfDayCcCallbackOrder
+func GetDrfHalfDayCcCallbackOrder() *DrfHalfDayCcCallbackOrder {
+	return poolDrfHalfDayCcCallbackOrder.Get().(*DrfHalfDayCcCallbackOrder)
+}
+
+// ReleaseDrfHalfDayCcCallbackOrder 释放DrfHalfDayCcCallbackOrder
+func ReleaseDrfHalfDayCcCallbackOrder(v *DrfHalfDayCcCallbackOrder) {
+	v.CallbackUnits = v.CallbackUnits[:0]
+	v.Containers = v.Containers[:0]
+	v.StatusChangeTime = ""
+	v.StatusChangeType = ""
+	v.NodeCode = ""
+	v.WorkOrderType = ""
+	v.WorkOrderId = ""
+	v.Attribute = ""
+	v.Operator = nil
+	v.IsFinal = false
+	poolDrfHalfDayCcCallbackOrder.Put(v)
 }

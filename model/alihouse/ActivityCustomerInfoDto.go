@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ActivityCustomerInfoDto 结构体
 type ActivityCustomerInfoDto struct {
 	// 团队名称
@@ -18,4 +22,28 @@ type ActivityCustomerInfoDto struct {
 	OuterCustomerId string `json:"outer_customer_id,omitempty" xml:"outer_customer_id,omitempty"`
 	// 是否删除
 	IsDeleted int64 `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
+}
+
+var poolActivityCustomerInfoDto = sync.Pool{
+	New: func() any {
+		return new(ActivityCustomerInfoDto)
+	},
+}
+
+// GetActivityCustomerInfoDto() 从对象池中获取ActivityCustomerInfoDto
+func GetActivityCustomerInfoDto() *ActivityCustomerInfoDto {
+	return poolActivityCustomerInfoDto.Get().(*ActivityCustomerInfoDto)
+}
+
+// ReleaseActivityCustomerInfoDto 释放ActivityCustomerInfoDto
+func ReleaseActivityCustomerInfoDto(v *ActivityCustomerInfoDto) {
+	v.TeamName = ""
+	v.EmployeeName = ""
+	v.CustomerCertNo = ""
+	v.OuterEmployeeId = ""
+	v.CustomerMobile = ""
+	v.CustomerName = ""
+	v.OuterCustomerId = ""
+	v.IsDeleted = 0
+	poolActivityCustomerInfoDto.Put(v)
 }

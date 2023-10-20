@@ -1,5 +1,9 @@
 package brandhub
 
+import (
+	"sync"
+)
+
 // TaobaoBrandhubSpecialshowRptAdgroupGetResult 结构体
 type TaobaoBrandhubSpecialshowRptAdgroupGetResult struct {
 	// 日期
@@ -26,4 +30,32 @@ type TaobaoBrandhubSpecialshowRptAdgroupGetResult struct {
 	SolutionId int64 `json:"solution_id,omitempty" xml:"solution_id,omitempty"`
 	// 单元id
 	TaskId int64 `json:"task_id,omitempty" xml:"task_id,omitempty"`
+}
+
+var poolTaobaoBrandhubSpecialshowRptAdgroupGetResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoBrandhubSpecialshowRptAdgroupGetResult)
+	},
+}
+
+// GetTaobaoBrandhubSpecialshowRptAdgroupGetResult() 从对象池中获取TaobaoBrandhubSpecialshowRptAdgroupGetResult
+func GetTaobaoBrandhubSpecialshowRptAdgroupGetResult() *TaobaoBrandhubSpecialshowRptAdgroupGetResult {
+	return poolTaobaoBrandhubSpecialshowRptAdgroupGetResult.Get().(*TaobaoBrandhubSpecialshowRptAdgroupGetResult)
+}
+
+// ReleaseTaobaoBrandhubSpecialshowRptAdgroupGetResult 释放TaobaoBrandhubSpecialshowRptAdgroupGetResult
+func ReleaseTaobaoBrandhubSpecialshowRptAdgroupGetResult(v *TaobaoBrandhubSpecialshowRptAdgroupGetResult) {
+	v.Thedate = ""
+	v.SolutionName = ""
+	v.TargetName = ""
+	v.TaskName = ""
+	v.Impression = ""
+	v.Click = ""
+	v.Uv = ""
+	v.ClickUv = ""
+	v.Ctr = ""
+	v.UvCtr = ""
+	v.SolutionId = 0
+	v.TaskId = 0
+	poolTaobaoBrandhubSpecialshowRptAdgroupGetResult.Put(v)
 }

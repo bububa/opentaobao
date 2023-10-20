@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type CainiaoWaybillIiCancelAPIRequest struct {
 // NewCainiaoWaybillIiCancelRequest 初始化CainiaoWaybillIiCancelAPIRequest对象
 func NewCainiaoWaybillIiCancelRequest() *CainiaoWaybillIiCancelAPIRequest {
 	return &CainiaoWaybillIiCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoWaybillIiCancelAPIRequest) Reset() {
+	r._cpCode = ""
+	r._waybillCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *CainiaoWaybillIiCancelAPIRequest) SetWaybillCode(_waybillCode string) e
 // GetWaybillCode WaybillCode Getter
 func (r CainiaoWaybillIiCancelAPIRequest) GetWaybillCode() string {
 	return r._waybillCode
+}
+
+var poolCainiaoWaybillIiCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoWaybillIiCancelRequest()
+	},
+}
+
+// GetCainiaoWaybillIiCancelRequest 从 sync.Pool 获取 CainiaoWaybillIiCancelAPIRequest
+func GetCainiaoWaybillIiCancelAPIRequest() *CainiaoWaybillIiCancelAPIRequest {
+	return poolCainiaoWaybillIiCancelAPIRequest.Get().(*CainiaoWaybillIiCancelAPIRequest)
+}
+
+// ReleaseCainiaoWaybillIiCancelAPIRequest 将 CainiaoWaybillIiCancelAPIRequest 放入 sync.Pool
+func ReleaseCainiaoWaybillIiCancelAPIRequest(v *CainiaoWaybillIiCancelAPIRequest) {
+	v.Reset()
+	poolCainiaoWaybillIiCancelAPIRequest.Put(v)
 }

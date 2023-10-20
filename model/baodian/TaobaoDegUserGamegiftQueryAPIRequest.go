@@ -2,6 +2,7 @@ package baodian
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoDegUserGamegiftQueryAPIRequest struct {
 // NewTaobaoDegUserGamegiftQueryRequest 初始化TaobaoDegUserGamegiftQueryAPIRequest对象
 func NewTaobaoDegUserGamegiftQueryRequest() *TaobaoDegUserGamegiftQueryAPIRequest {
 	return &TaobaoDegUserGamegiftQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDegUserGamegiftQueryAPIRequest) Reset() {
+	r._cpItemIds = r._cpItemIds[:0]
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoDegUserGamegiftQueryAPIRequest) SetStatus(_status int64) error {
 // GetStatus Status Getter
 func (r TaobaoDegUserGamegiftQueryAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolTaobaoDegUserGamegiftQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDegUserGamegiftQueryRequest()
+	},
+}
+
+// GetTaobaoDegUserGamegiftQueryRequest 从 sync.Pool 获取 TaobaoDegUserGamegiftQueryAPIRequest
+func GetTaobaoDegUserGamegiftQueryAPIRequest() *TaobaoDegUserGamegiftQueryAPIRequest {
+	return poolTaobaoDegUserGamegiftQueryAPIRequest.Get().(*TaobaoDegUserGamegiftQueryAPIRequest)
+}
+
+// ReleaseTaobaoDegUserGamegiftQueryAPIRequest 将 TaobaoDegUserGamegiftQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDegUserGamegiftQueryAPIRequest(v *TaobaoDegUserGamegiftQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoDegUserGamegiftQueryAPIRequest.Put(v)
 }

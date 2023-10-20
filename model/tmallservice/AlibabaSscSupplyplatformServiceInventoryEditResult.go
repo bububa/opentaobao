@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // AlibabaSscSupplyplatformServiceInventoryEditResult 结构体
 type AlibabaSscSupplyplatformServiceInventoryEditResult struct {
 	// 对外展示的错误信息
@@ -10,4 +14,24 @@ type AlibabaSscSupplyplatformServiceInventoryEditResult struct {
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaSscSupplyplatformServiceInventoryEditResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaSscSupplyplatformServiceInventoryEditResult)
+	},
+}
+
+// GetAlibabaSscSupplyplatformServiceInventoryEditResult() 从对象池中获取AlibabaSscSupplyplatformServiceInventoryEditResult
+func GetAlibabaSscSupplyplatformServiceInventoryEditResult() *AlibabaSscSupplyplatformServiceInventoryEditResult {
+	return poolAlibabaSscSupplyplatformServiceInventoryEditResult.Get().(*AlibabaSscSupplyplatformServiceInventoryEditResult)
+}
+
+// ReleaseAlibabaSscSupplyplatformServiceInventoryEditResult 释放AlibabaSscSupplyplatformServiceInventoryEditResult
+func ReleaseAlibabaSscSupplyplatformServiceInventoryEditResult(v *AlibabaSscSupplyplatformServiceInventoryEditResult) {
+	v.DisplayMsg = ""
+	v.ErrorMsg = ""
+	v.ErrorCode = ""
+	v.Success = false
+	poolAlibabaSscSupplyplatformServiceInventoryEditResult.Put(v)
 }

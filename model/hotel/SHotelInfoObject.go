@@ -1,9 +1,13 @@
 package hotel
 
-// ShotelInfoObject 结构体
-type ShotelInfoObject struct {
+import (
+	"sync"
+)
+
+// SHotelInfoObject 结构体
+type SHotelInfoObject struct {
 	// 房型信息
-	Rooms []SroomType `json:"rooms,omitempty" xml:"rooms>sroom_type,omitempty"`
+	Rooms []SRoomType `json:"rooms,omitempty" xml:"rooms>s_room_type,omitempty"`
 	// 酒店名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 酒店类型
@@ -62,4 +66,50 @@ type ShotelInfoObject struct {
 	ForeignType int64 `json:"foreign_type,omitempty" xml:"foreign_type,omitempty"`
 	// 是否为民宿类型
 	BnbHotel bool `json:"bnb_hotel,omitempty" xml:"bnb_hotel,omitempty"`
+}
+
+var poolSHotelInfoObject = sync.Pool{
+	New: func() any {
+		return new(SHotelInfoObject)
+	},
+}
+
+// GetSHotelInfoObject() 从对象池中获取SHotelInfoObject
+func GetSHotelInfoObject() *SHotelInfoObject {
+	return poolSHotelInfoObject.Get().(*SHotelInfoObject)
+}
+
+// ReleaseSHotelInfoObject 释放SHotelInfoObject
+func ReleaseSHotelInfoObject(v *SHotelInfoObject) {
+	v.Rooms = v.Rooms[:0]
+	v.Name = ""
+	v.Type = ""
+	v.Address = ""
+	v.Lat = ""
+	v.Lng = ""
+	v.Star = ""
+	v.OpeningTime = ""
+	v.DecorateTime = ""
+	v.Tel = ""
+	v.RateScore = ""
+	v.Description = ""
+	v.PicUrls = ""
+	v.HotelFacilities = ""
+	v.Services = ""
+	v.Brand = ""
+	v.H5DetailUrl = ""
+	v.PcDetailUrl = ""
+	v.CheckInTime = ""
+	v.CheckOutTime = ""
+	v.PetInfo = ""
+	v.ForeignDesc = ""
+	v.Shid = 0
+	v.Province = 0
+	v.City = 0
+	v.District = 0
+	v.RateNumber = 0
+	v.Status = 0
+	v.ForeignType = 0
+	v.BnbHotel = false
+	poolSHotelInfoObject.Put(v)
 }

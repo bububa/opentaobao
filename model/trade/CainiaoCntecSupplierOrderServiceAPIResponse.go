@@ -2,6 +2,7 @@ package trade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type CainiaoCntecSupplierOrderServiceAPIResponse struct {
 	CainiaoCntecSupplierOrderServiceAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *CainiaoCntecSupplierOrderServiceAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoCntecSupplierOrderServiceAPIResponseModel).Reset()
+}
+
 // CainiaoCntecSupplierOrderServiceAPIResponseModel is 供货商查询订单数据接口 成功返回结果
 type CainiaoCntecSupplierOrderServiceAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_cntec_supplier_order_service_response"`
@@ -23,4 +30,27 @@ type CainiaoCntecSupplierOrderServiceAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *CainiaoCntecSupplierOrderServiceResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoCntecSupplierOrderServiceAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolCainiaoCntecSupplierOrderServiceAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoCntecSupplierOrderServiceAPIResponse)
+	},
+}
+
+// GetCainiaoCntecSupplierOrderServiceAPIResponse 从 sync.Pool 获取 CainiaoCntecSupplierOrderServiceAPIResponse
+func GetCainiaoCntecSupplierOrderServiceAPIResponse() *CainiaoCntecSupplierOrderServiceAPIResponse {
+	return poolCainiaoCntecSupplierOrderServiceAPIResponse.Get().(*CainiaoCntecSupplierOrderServiceAPIResponse)
+}
+
+// ReleaseCainiaoCntecSupplierOrderServiceAPIResponse 将 CainiaoCntecSupplierOrderServiceAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoCntecSupplierOrderServiceAPIResponse(v *CainiaoCntecSupplierOrderServiceAPIResponse) {
+	v.Reset()
+	poolCainiaoCntecSupplierOrderServiceAPIResponse.Put(v)
 }

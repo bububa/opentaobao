@@ -2,6 +2,7 @@ package caipiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoCaipiaoPresentStatGetAPIResponse struct {
 	TaobaoCaipiaoPresentStatGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoCaipiaoPresentStatGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCaipiaoPresentStatGetAPIResponseModel).Reset()
+}
+
 // TaobaoCaipiaoPresentStatGetAPIResponseModel is 获取卖家按天统计的彩票赠送数据 成功返回结果
 type TaobaoCaipiaoPresentStatGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"caipiao_present_stat_get_response"`
@@ -24,4 +31,28 @@ type TaobaoCaipiaoPresentStatGetAPIResponseModel struct {
 	Results []LotteryWangcaiPresentStat `json:"results,omitempty" xml:"results>lottery_wangcai_present_stat,omitempty"`
 	// 查询的结果集大小
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCaipiaoPresentStatGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Results = m.Results[:0]
+	m.TotalResults = 0
+}
+
+var poolTaobaoCaipiaoPresentStatGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCaipiaoPresentStatGetAPIResponse)
+	},
+}
+
+// GetTaobaoCaipiaoPresentStatGetAPIResponse 从 sync.Pool 获取 TaobaoCaipiaoPresentStatGetAPIResponse
+func GetTaobaoCaipiaoPresentStatGetAPIResponse() *TaobaoCaipiaoPresentStatGetAPIResponse {
+	return poolTaobaoCaipiaoPresentStatGetAPIResponse.Get().(*TaobaoCaipiaoPresentStatGetAPIResponse)
+}
+
+// ReleaseTaobaoCaipiaoPresentStatGetAPIResponse 将 TaobaoCaipiaoPresentStatGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCaipiaoPresentStatGetAPIResponse(v *TaobaoCaipiaoPresentStatGetAPIResponse) {
+	v.Reset()
+	poolTaobaoCaipiaoPresentStatGetAPIResponse.Put(v)
 }

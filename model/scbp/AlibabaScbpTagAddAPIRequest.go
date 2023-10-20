@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpTagAddAPIRequest struct {
 // NewAlibabaScbpTagAddRequest 初始化AlibabaScbpTagAddAPIRequest对象
 func NewAlibabaScbpTagAddRequest() *AlibabaScbpTagAddAPIRequest {
 	return &AlibabaScbpTagAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpTagAddAPIRequest) Reset() {
+	r._tagName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpTagAddAPIRequest) SetTagName(_tagName string) error {
 // GetTagName TagName Getter
 func (r AlibabaScbpTagAddAPIRequest) GetTagName() string {
 	return r._tagName
+}
+
+var poolAlibabaScbpTagAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpTagAddRequest()
+	},
+}
+
+// GetAlibabaScbpTagAddRequest 从 sync.Pool 获取 AlibabaScbpTagAddAPIRequest
+func GetAlibabaScbpTagAddAPIRequest() *AlibabaScbpTagAddAPIRequest {
+	return poolAlibabaScbpTagAddAPIRequest.Get().(*AlibabaScbpTagAddAPIRequest)
+}
+
+// ReleaseAlibabaScbpTagAddAPIRequest 将 AlibabaScbpTagAddAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpTagAddAPIRequest(v *AlibabaScbpTagAddAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpTagAddAPIRequest.Put(v)
 }

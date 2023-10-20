@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // LimitDto 结构体
 type LimitDto struct {
 	// 活动总限购
@@ -12,4 +16,25 @@ type LimitDto struct {
 	UserDailyLimitCnt int64 `json:"user_daily_limit_cnt,omitempty" xml:"user_daily_limit_cnt,omitempty"`
 	// 每单限购
 	OrderLimitCnt int64 `json:"order_limit_cnt,omitempty" xml:"order_limit_cnt,omitempty"`
+}
+
+var poolLimitDto = sync.Pool{
+	New: func() any {
+		return new(LimitDto)
+	},
+}
+
+// GetLimitDto() 从对象池中获取LimitDto
+func GetLimitDto() *LimitDto {
+	return poolLimitDto.Get().(*LimitDto)
+}
+
+// ReleaseLimitDto 释放LimitDto
+func ReleaseLimitDto(v *LimitDto) {
+	v.TotalLimitCnt = 0
+	v.DailyTotalLimitCnt = 0
+	v.UserTotalLimitCnt = 0
+	v.UserDailyLimitCnt = 0
+	v.OrderLimitCnt = 0
+	poolLimitDto.Put(v)
 }

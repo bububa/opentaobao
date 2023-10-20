@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoOpenAccountTokenApplyAPIRequest struct {
 // NewTaobaoOpenAccountTokenApplyRequest 初始化TaobaoOpenAccountTokenApplyAPIRequest对象
 func NewTaobaoOpenAccountTokenApplyRequest() *TaobaoOpenAccountTokenApplyAPIRequest {
 	return &TaobaoOpenAccountTokenApplyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenAccountTokenApplyAPIRequest) Reset() {
+	r._isvAccountId = ""
+	r._uuid = ""
+	r._ext = ""
+	r._loginStateExpireIn = 0
+	r._openAccountId = 0
+	r._tokenTimestamp = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoOpenAccountTokenApplyAPIRequest) SetTokenTimestamp(_tokenTimestam
 // GetTokenTimestamp TokenTimestamp Getter
 func (r TaobaoOpenAccountTokenApplyAPIRequest) GetTokenTimestamp() int64 {
 	return r._tokenTimestamp
+}
+
+var poolTaobaoOpenAccountTokenApplyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenAccountTokenApplyRequest()
+	},
+}
+
+// GetTaobaoOpenAccountTokenApplyRequest 从 sync.Pool 获取 TaobaoOpenAccountTokenApplyAPIRequest
+func GetTaobaoOpenAccountTokenApplyAPIRequest() *TaobaoOpenAccountTokenApplyAPIRequest {
+	return poolTaobaoOpenAccountTokenApplyAPIRequest.Get().(*TaobaoOpenAccountTokenApplyAPIRequest)
+}
+
+// ReleaseTaobaoOpenAccountTokenApplyAPIRequest 将 TaobaoOpenAccountTokenApplyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenAccountTokenApplyAPIRequest(v *TaobaoOpenAccountTokenApplyAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenAccountTokenApplyAPIRequest.Put(v)
 }

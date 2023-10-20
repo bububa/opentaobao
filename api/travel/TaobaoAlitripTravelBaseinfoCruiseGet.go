@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.travel.baseinfo.cruise.get
 //
 // 旅行度假新商品发布时可用的扩展接口，用于获取邮轮类目相关扩展信息。
-func TaobaoAlitripTravelBaseinfoCruiseGet(clt *core.SDKClient, req *travel.TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest, session string) (*travel.TaobaoAlitripTravelBaseinfoCruiseGetAPIResponse, error) {
-	var resp travel.TaobaoAlitripTravelBaseinfoCruiseGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripTravelBaseinfoCruiseGet(clt *core.SDKClient, req *travel.TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest, resp *travel.TaobaoAlitripTravelBaseinfoCruiseGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

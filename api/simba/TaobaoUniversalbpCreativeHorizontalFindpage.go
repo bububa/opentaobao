@@ -9,11 +9,6 @@ import (
 // taobao.universalbp.creative.horizontal.findpage
 //
 // 横向管理创意分页查询
-func TaobaoUniversalbpCreativeHorizontalFindpage(clt *core.SDKClient, req *simba.TaobaoUniversalbpCreativeHorizontalFindpageAPIRequest, session string) (*simba.TaobaoUniversalbpCreativeHorizontalFindpageAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpCreativeHorizontalFindpageAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUniversalbpCreativeHorizontalFindpage(clt *core.SDKClient, req *simba.TaobaoUniversalbpCreativeHorizontalFindpageAPIRequest, resp *simba.TaobaoUniversalbpCreativeHorizontalFindpageAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

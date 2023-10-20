@@ -9,11 +9,6 @@ import (
 // alibaba.msfservice.audits.update
 //
 // 操作改约审批单
-func AlibabaMsfserviceAuditsUpdate(clt *core.SDKClient, req *tmallsc.AlibabaMsfserviceAuditsUpdateAPIRequest, session string) (*tmallsc.AlibabaMsfserviceAuditsUpdateAPIResponse, error) {
-	var resp tmallsc.AlibabaMsfserviceAuditsUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMsfserviceAuditsUpdate(clt *core.SDKClient, req *tmallsc.AlibabaMsfserviceAuditsUpdateAPIRequest, resp *tmallsc.AlibabaMsfserviceAuditsUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

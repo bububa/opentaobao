@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // GroupItemExt 结构体
 type GroupItemExt struct {
 	// 集合地信息
@@ -12,4 +16,25 @@ type GroupItemExt struct {
 	RouteType int64 `json:"route_type,omitempty" xml:"route_type,omitempty"`
 	// 是否支持电子合同，默认不支持
 	Electronic bool `json:"electronic,omitempty" xml:"electronic,omitempty"`
+}
+
+var poolGroupItemExt = sync.Pool{
+	New: func() any {
+		return new(GroupItemExt)
+	},
+}
+
+// GetGroupItemExt() 从对象池中获取GroupItemExt
+func GetGroupItemExt() *GroupItemExt {
+	return poolGroupItemExt.Get().(*GroupItemExt)
+}
+
+// ReleaseGroupItemExt 释放GroupItemExt
+func ReleaseGroupItemExt(v *GroupItemExt) {
+	v.GatherPlaces = v.GatherPlaces[:0]
+	v.BackTrafficInfo = nil
+	v.GoTrafficInfo = nil
+	v.RouteType = 0
+	v.Electronic = false
+	poolGroupItemExt.Put(v)
 }

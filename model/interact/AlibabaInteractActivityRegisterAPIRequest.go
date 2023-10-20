@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AlibabaInteractActivityRegisterAPIRequest struct {
 // NewAlibabaInteractActivityRegisterRequest 初始化AlibabaInteractActivityRegisterAPIRequest对象
 func NewAlibabaInteractActivityRegisterRequest() *AlibabaInteractActivityRegisterAPIRequest {
 	return &AlibabaInteractActivityRegisterAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractActivityRegisterAPIRequest) Reset() {
+	r._entryUrl = ""
+	r._bizId = ""
+	r._description = ""
+	r._endTime = ""
+	r._name = ""
+	r._picture = ""
+	r._startTime = ""
+	r._hasValidTime = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *AlibabaInteractActivityRegisterAPIRequest) SetHasValidTime(_hasValidTim
 // GetHasValidTime HasValidTime Getter
 func (r AlibabaInteractActivityRegisterAPIRequest) GetHasValidTime() bool {
 	return r._hasValidTime
+}
+
+var poolAlibabaInteractActivityRegisterAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractActivityRegisterRequest()
+	},
+}
+
+// GetAlibabaInteractActivityRegisterRequest 从 sync.Pool 获取 AlibabaInteractActivityRegisterAPIRequest
+func GetAlibabaInteractActivityRegisterAPIRequest() *AlibabaInteractActivityRegisterAPIRequest {
+	return poolAlibabaInteractActivityRegisterAPIRequest.Get().(*AlibabaInteractActivityRegisterAPIRequest)
+}
+
+// ReleaseAlibabaInteractActivityRegisterAPIRequest 将 AlibabaInteractActivityRegisterAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractActivityRegisterAPIRequest(v *AlibabaInteractActivityRegisterAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractActivityRegisterAPIRequest.Put(v)
 }

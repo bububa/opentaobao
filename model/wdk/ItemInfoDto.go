@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ItemInfoDto 结构体
 type ItemInfoDto struct {
 	// 加工服务
@@ -28,4 +32,33 @@ type ItemInfoDto struct {
 	StorageMode int64 `json:"storage_mode,omitempty" xml:"storage_mode,omitempty"`
 	// 是否标品
 	StandardSku bool `json:"standard_sku,omitempty" xml:"standard_sku,omitempty"`
+}
+
+var poolItemInfoDto = sync.Pool{
+	New: func() any {
+		return new(ItemInfoDto)
+	},
+}
+
+// GetItemInfoDto() 从对象池中获取ItemInfoDto
+func GetItemInfoDto() *ItemInfoDto {
+	return poolItemInfoDto.Get().(*ItemInfoDto)
+}
+
+// ReleaseItemInfoDto 释放ItemInfoDto
+func ReleaseItemInfoDto(v *ItemInfoDto) {
+	v.ServiceNames = v.ServiceNames[:0]
+	v.SkuStockUnit = ""
+	v.ItemUnitPrice = ""
+	v.ItemCode = ""
+	v.NonstandardItemCount = ""
+	v.TotalAmount = ""
+	v.ExpectStockQuantity = ""
+	v.ItemName = ""
+	v.Barcode = ""
+	v.OutOfStockItemCount = 0
+	v.ExpectItemCount = 0
+	v.StorageMode = 0
+	v.StandardSku = false
+	poolItemInfoDto.Put(v)
 }

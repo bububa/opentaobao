@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // BnbChargeDto 结构体
 type BnbChargeDto struct {
 	// 允许加人数
@@ -10,4 +14,24 @@ type BnbChargeDto struct {
 	AddPeople int64 `json:"add_people,omitempty" xml:"add_people,omitempty"`
 	// 最小收费年龄
 	MinChargingAge int64 `json:"min_charging_age,omitempty" xml:"min_charging_age,omitempty"`
+}
+
+var poolBnbChargeDto = sync.Pool{
+	New: func() any {
+		return new(BnbChargeDto)
+	},
+}
+
+// GetBnbChargeDto() 从对象池中获取BnbChargeDto
+func GetBnbChargeDto() *BnbChargeDto {
+	return poolBnbChargeDto.Get().(*BnbChargeDto)
+}
+
+// ReleaseBnbChargeDto 释放BnbChargeDto
+func ReleaseBnbChargeDto(v *BnbChargeDto) {
+	v.Num = 0
+	v.Fee = 0
+	v.AddPeople = 0
+	v.MinChargingAge = 0
+	poolBnbChargeDto.Put(v)
 }

@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest struct {
 // NewTaobaoRdcAligeniusWarehouseResendUpdateRequest 初始化TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest对象
 func NewTaobaoRdcAligeniusWarehouseResendUpdateRequest() *TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest {
 	return &TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest) SetParam0(_param0 *U
 // GetParam0 Param0 Getter
 func (r TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest) GetParam0() *UpdateResendStatusDto {
 	return r._param0
+}
+
+var poolTaobaoRdcAligeniusWarehouseResendUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRdcAligeniusWarehouseResendUpdateRequest()
+	},
+}
+
+// GetTaobaoRdcAligeniusWarehouseResendUpdateRequest 从 sync.Pool 获取 TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest
+func GetTaobaoRdcAligeniusWarehouseResendUpdateAPIRequest() *TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest {
+	return poolTaobaoRdcAligeniusWarehouseResendUpdateAPIRequest.Get().(*TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest)
+}
+
+// ReleaseTaobaoRdcAligeniusWarehouseResendUpdateAPIRequest 将 TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRdcAligeniusWarehouseResendUpdateAPIRequest(v *TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoRdcAligeniusWarehouseResendUpdateAPIRequest.Put(v)
 }

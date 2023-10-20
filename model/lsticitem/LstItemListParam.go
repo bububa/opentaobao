@@ -1,5 +1,9 @@
 package lsticitem
 
+import (
+	"sync"
+)
+
 // LstItemListParam 结构体
 type LstItemListParam struct {
 	// 商品类型列表 normal：通常商品 gift：赠品
@@ -26,4 +30,32 @@ type LstItemListParam struct {
 	Size int64 `json:"size,omitempty" xml:"size,omitempty"`
 	// 页码。取值范围:大于零的整数;默认值为1，即返回第一页数据。
 	Page int64 `json:"page,omitempty" xml:"page,omitempty"`
+}
+
+var poolLstItemListParam = sync.Pool{
+	New: func() any {
+		return new(LstItemListParam)
+	},
+}
+
+// GetLstItemListParam() 从对象池中获取LstItemListParam
+func GetLstItemListParam() *LstItemListParam {
+	return poolLstItemListParam.Get().(*LstItemListParam)
+}
+
+// ReleaseLstItemListParam 释放LstItemListParam
+func ReleaseLstItemListParam(v *LstItemListParam) {
+	v.ItemTypeList = v.ItemTypeList[:0]
+	v.CargoNumberList = v.CargoNumberList[:0]
+	v.StatusList = v.StatusList[:0]
+	v.ItemIdList = v.ItemIdList[:0]
+	v.GmtCreateStart = ""
+	v.GmtOnSaleStart = ""
+	v.GmtModifiedEnd = ""
+	v.GmtModifiedStart = ""
+	v.GmtOnSaleEnd = ""
+	v.GmtCreateEnd = ""
+	v.Size = 0
+	v.Page = 0
+	poolLstItemListParam.Put(v)
 }

@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // CourtModel 结构体
 type CourtModel struct {
 	// 审判员联系方式
@@ -20,4 +24,29 @@ type CourtModel struct {
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 受理机关ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolCourtModel = sync.Pool{
+	New: func() any {
+		return new(CourtModel)
+	},
+}
+
+// GetCourtModel() 从对象池中获取CourtModel
+func GetCourtModel() *CourtModel {
+	return poolCourtModel.Get().(*CourtModel)
+}
+
+// ReleaseCourtModel 释放CourtModel
+func ReleaseCourtModel(v *CourtModel) {
+	v.JudgeContact = ""
+	v.JudgeName = ""
+	v.Address = ""
+	v.CountyCode = ""
+	v.CityCode = ""
+	v.ProvinceCode = ""
+	v.Name = ""
+	v.Code = ""
+	v.Id = 0
+	poolCourtModel.Put(v)
 }

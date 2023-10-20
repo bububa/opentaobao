@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAlihouseChangeStoreTypeAPIRequest struct {
 // NewAlibabaAlihouseChangeStoreTypeRequest 初始化AlibabaAlihouseChangeStoreTypeAPIRequest对象
 func NewAlibabaAlihouseChangeStoreTypeRequest() *AlibabaAlihouseChangeStoreTypeAPIRequest {
 	return &AlibabaAlihouseChangeStoreTypeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseChangeStoreTypeAPIRequest) Reset() {
+	r._outerStoreId = ""
+	r._outerCompanyId = ""
+	r._storeType = 0
+	r._subType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAlihouseChangeStoreTypeAPIRequest) SetSubType(_subType int64) er
 // GetSubType SubType Getter
 func (r AlibabaAlihouseChangeStoreTypeAPIRequest) GetSubType() int64 {
 	return r._subType
+}
+
+var poolAlibabaAlihouseChangeStoreTypeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseChangeStoreTypeRequest()
+	},
+}
+
+// GetAlibabaAlihouseChangeStoreTypeRequest 从 sync.Pool 获取 AlibabaAlihouseChangeStoreTypeAPIRequest
+func GetAlibabaAlihouseChangeStoreTypeAPIRequest() *AlibabaAlihouseChangeStoreTypeAPIRequest {
+	return poolAlibabaAlihouseChangeStoreTypeAPIRequest.Get().(*AlibabaAlihouseChangeStoreTypeAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseChangeStoreTypeAPIRequest 将 AlibabaAlihouseChangeStoreTypeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseChangeStoreTypeAPIRequest(v *AlibabaAlihouseChangeStoreTypeAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseChangeStoreTypeAPIRequest.Put(v)
 }

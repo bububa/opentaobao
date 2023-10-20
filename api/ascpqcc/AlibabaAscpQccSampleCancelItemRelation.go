@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.qcc.sample.cancel.item.relation
 //
 // 品控中心魅力惠样品解除父子商品关系
-func AlibabaAscpQccSampleCancelItemRelation(clt *core.SDKClient, req *ascpqcc.AlibabaAscpQccSampleCancelItemRelationAPIRequest, session string) (*ascpqcc.AlibabaAscpQccSampleCancelItemRelationAPIResponse, error) {
-	var resp ascpqcc.AlibabaAscpQccSampleCancelItemRelationAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpQccSampleCancelItemRelation(clt *core.SDKClient, req *ascpqcc.AlibabaAscpQccSampleCancelItemRelationAPIRequest, resp *ascpqcc.AlibabaAscpQccSampleCancelItemRelationAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

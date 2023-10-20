@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoFenxiaoDiscountsGetAPIRequest struct {
 // NewTaobaoFenxiaoDiscountsGetRequest 初始化TaobaoFenxiaoDiscountsGetAPIRequest对象
 func NewTaobaoFenxiaoDiscountsGetRequest() *TaobaoFenxiaoDiscountsGetAPIRequest {
 	return &TaobaoFenxiaoDiscountsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoDiscountsGetAPIRequest) Reset() {
+	r._extFields = ""
+	r._discountId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoFenxiaoDiscountsGetAPIRequest) SetDiscountId(_discountId int64) e
 // GetDiscountId DiscountId Getter
 func (r TaobaoFenxiaoDiscountsGetAPIRequest) GetDiscountId() int64 {
 	return r._discountId
+}
+
+var poolTaobaoFenxiaoDiscountsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoDiscountsGetRequest()
+	},
+}
+
+// GetTaobaoFenxiaoDiscountsGetRequest 从 sync.Pool 获取 TaobaoFenxiaoDiscountsGetAPIRequest
+func GetTaobaoFenxiaoDiscountsGetAPIRequest() *TaobaoFenxiaoDiscountsGetAPIRequest {
+	return poolTaobaoFenxiaoDiscountsGetAPIRequest.Get().(*TaobaoFenxiaoDiscountsGetAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoDiscountsGetAPIRequest 将 TaobaoFenxiaoDiscountsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoDiscountsGetAPIRequest(v *TaobaoFenxiaoDiscountsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoDiscountsGetAPIRequest.Put(v)
 }

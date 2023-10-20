@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // CiaConfig 结构体
 type CiaConfig struct {
 	// 目标点击量
@@ -14,4 +18,26 @@ type CiaConfig struct {
 	IsCirculation bool `json:"is_circulation,omitempty" xml:"is_circulation,omitempty"`
 	// 是否开启智能出价
 	IsSmartBidding bool `json:"is_smart_bidding,omitempty" xml:"is_smart_bidding,omitempty"`
+}
+
+var poolCiaConfig = sync.Pool{
+	New: func() any {
+		return new(CiaConfig)
+	},
+}
+
+// GetCiaConfig() 从对象池中获取CiaConfig
+func GetCiaConfig() *CiaConfig {
+	return poolCiaConfig.Get().(*CiaConfig)
+}
+
+// ReleaseCiaConfig 释放CiaConfig
+func ReleaseCiaConfig(v *CiaConfig) {
+	v.TargetClick = 0
+	v.BidTargetType = 0
+	v.MaxPremium = 0
+	v.AdGroupId = 0
+	v.IsCirculation = false
+	v.IsSmartBidding = false
+	poolCiaConfig.Put(v)
 }

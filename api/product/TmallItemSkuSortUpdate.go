@@ -9,11 +9,6 @@ import (
 // tmall.item.sku.sort.update
 //
 // 商品销售属性排序更新
-func TmallItemSkuSortUpdate(clt *core.SDKClient, req *product.TmallItemSkuSortUpdateAPIRequest, session string) (*product.TmallItemSkuSortUpdateAPIResponse, error) {
-	var resp product.TmallItemSkuSortUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallItemSkuSortUpdate(clt *core.SDKClient, req *product.TmallItemSkuSortUpdateAPIRequest, resp *product.TmallItemSkuSortUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

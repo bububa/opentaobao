@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest struct {
 // NewAlibabaAlihealthDrugDownloadGetentdailytaskdtolistRequest 初始化AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest对象
 func NewAlibabaAlihealthDrugDownloadGetentdailytaskdtolistRequest() *AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest {
 	return &AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest) Reset() {
+	r._appKeyN = ""
+	r._startTime = ""
+	r._endTime = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest) SetEndTim
 // GetEndTime EndTime Getter
 func (r AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest) GetEndTime() string {
 	return r._endTime
+}
+
+var poolAlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugDownloadGetentdailytaskdtolistRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugDownloadGetentdailytaskdtolistRequest 从 sync.Pool 获取 AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest
+func GetAlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest() *AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest {
+	return poolAlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest.Get().(*AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest 将 AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest(v *AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest.Put(v)
 }

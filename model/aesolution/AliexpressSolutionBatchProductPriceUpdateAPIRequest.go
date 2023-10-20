@@ -2,6 +2,7 @@ package aesolution
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressSolutionBatchProductPriceUpdateAPIRequest struct {
 // NewAliexpressSolutionBatchProductPriceUpdateRequest 初始化AliexpressSolutionBatchProductPriceUpdateAPIRequest对象
 func NewAliexpressSolutionBatchProductPriceUpdateRequest() *AliexpressSolutionBatchProductPriceUpdateAPIRequest {
 	return &AliexpressSolutionBatchProductPriceUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSolutionBatchProductPriceUpdateAPIRequest) Reset() {
+	r._mutipleProductUpdateList = r._mutipleProductUpdateList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressSolutionBatchProductPriceUpdateAPIRequest) SetMutipleProductU
 // GetMutipleProductUpdateList MutipleProductUpdateList Getter
 func (r AliexpressSolutionBatchProductPriceUpdateAPIRequest) GetMutipleProductUpdateList() []SynchronizeProductRequestDto {
 	return r._mutipleProductUpdateList
+}
+
+var poolAliexpressSolutionBatchProductPriceUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSolutionBatchProductPriceUpdateRequest()
+	},
+}
+
+// GetAliexpressSolutionBatchProductPriceUpdateRequest 从 sync.Pool 获取 AliexpressSolutionBatchProductPriceUpdateAPIRequest
+func GetAliexpressSolutionBatchProductPriceUpdateAPIRequest() *AliexpressSolutionBatchProductPriceUpdateAPIRequest {
+	return poolAliexpressSolutionBatchProductPriceUpdateAPIRequest.Get().(*AliexpressSolutionBatchProductPriceUpdateAPIRequest)
+}
+
+// ReleaseAliexpressSolutionBatchProductPriceUpdateAPIRequest 将 AliexpressSolutionBatchProductPriceUpdateAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSolutionBatchProductPriceUpdateAPIRequest(v *AliexpressSolutionBatchProductPriceUpdateAPIRequest) {
+	v.Reset()
+	poolAliexpressSolutionBatchProductPriceUpdateAPIRequest.Put(v)
 }

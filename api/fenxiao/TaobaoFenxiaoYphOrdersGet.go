@@ -9,11 +9,6 @@ import (
 // taobao.fenxiao.yph.orders.get
 //
 // 一盘货商家批量查询采购单信息
-func TaobaoFenxiaoYphOrdersGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoYphOrdersGetAPIRequest, session string) (*fenxiao.TaobaoFenxiaoYphOrdersGetAPIResponse, error) {
-	var resp fenxiao.TaobaoFenxiaoYphOrdersGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFenxiaoYphOrdersGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoYphOrdersGetAPIRequest, resp *fenxiao.TaobaoFenxiaoYphOrdersGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

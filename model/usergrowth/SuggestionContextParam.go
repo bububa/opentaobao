@@ -1,5 +1,9 @@
 package usergrowth
 
+import (
+	"sync"
+)
+
 // SuggestionContextParam 结构体
 type SuggestionContextParam struct {
 	// 不同媒体资源位
@@ -18,4 +22,28 @@ type SuggestionContextParam struct {
 	Age int64 `json:"age,omitempty" xml:"age,omitempty"`
 	// 温度，包括最高和最低
 	Temperature *Temperature `json:"temperature,omitempty" xml:"temperature,omitempty"`
+}
+
+var poolSuggestionContextParam = sync.Pool{
+	New: func() any {
+		return new(SuggestionContextParam)
+	},
+}
+
+// GetSuggestionContextParam() 从对象池中获取SuggestionContextParam
+func GetSuggestionContextParam() *SuggestionContextParam {
+	return poolSuggestionContextParam.Get().(*SuggestionContextParam)
+}
+
+// ReleaseSuggestionContextParam 释放SuggestionContextParam
+func ReleaseSuggestionContextParam(v *SuggestionContextParam) {
+	v.SiteId = ""
+	v.Weather = ""
+	v.Region = ""
+	v.Sex = ""
+	v.Extra = ""
+	v.DeviceId = nil
+	v.Age = 0
+	v.Temperature = nil
+	poolSuggestionContextParam.Put(v)
 }

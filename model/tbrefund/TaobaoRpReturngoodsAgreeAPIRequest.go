@@ -2,6 +2,7 @@ package tbrefund
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -41,8 +42,25 @@ type TaobaoRpReturngoodsAgreeAPIRequest struct {
 // NewTaobaoRpReturngoodsAgreeRequest 初始化TaobaoRpReturngoodsAgreeAPIRequest对象
 func NewTaobaoRpReturngoodsAgreeRequest() *TaobaoRpReturngoodsAgreeAPIRequest {
 	return &TaobaoRpReturngoodsAgreeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(12),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRpReturngoodsAgreeAPIRequest) Reset() {
+	r._refundPhase = ""
+	r._remark = ""
+	r._address = ""
+	r._mobile = ""
+	r._post = ""
+	r._name = ""
+	r._tel = ""
+	r._refundId = 0
+	r._refundVersion = 0
+	r._sellerAddressId = 0
+	r._postFeeBearRole = 0
+	r._virtualReturnGoods = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -216,4 +234,21 @@ func (r *TaobaoRpReturngoodsAgreeAPIRequest) SetVirtualReturnGoods(_virtualRetur
 // GetVirtualReturnGoods VirtualReturnGoods Getter
 func (r TaobaoRpReturngoodsAgreeAPIRequest) GetVirtualReturnGoods() bool {
 	return r._virtualReturnGoods
+}
+
+var poolTaobaoRpReturngoodsAgreeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRpReturngoodsAgreeRequest()
+	},
+}
+
+// GetTaobaoRpReturngoodsAgreeRequest 从 sync.Pool 获取 TaobaoRpReturngoodsAgreeAPIRequest
+func GetTaobaoRpReturngoodsAgreeAPIRequest() *TaobaoRpReturngoodsAgreeAPIRequest {
+	return poolTaobaoRpReturngoodsAgreeAPIRequest.Get().(*TaobaoRpReturngoodsAgreeAPIRequest)
+}
+
+// ReleaseTaobaoRpReturngoodsAgreeAPIRequest 将 TaobaoRpReturngoodsAgreeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRpReturngoodsAgreeAPIRequest(v *TaobaoRpReturngoodsAgreeAPIRequest) {
+	v.Reset()
+	poolTaobaoRpReturngoodsAgreeAPIRequest.Put(v)
 }

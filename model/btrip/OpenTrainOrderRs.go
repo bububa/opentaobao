@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenTrainOrderRs 结构体
 type OpenTrainOrderRs struct {
 	// 价目信息
@@ -64,4 +68,51 @@ type OpenTrainOrderRs struct {
 	CostCenter *OpenCostCenterDo `json:"cost_center,omitempty" xml:"cost_center,omitempty"`
 	// 发票信息对象
 	Invoice *OpenInvoiceDo `json:"invoice,omitempty" xml:"invoice,omitempty"`
+}
+
+var poolOpenTrainOrderRs = sync.Pool{
+	New: func() any {
+		return new(OpenTrainOrderRs)
+	},
+}
+
+// GetOpenTrainOrderRs() 从对象池中获取OpenTrainOrderRs
+func GetOpenTrainOrderRs() *OpenTrainOrderRs {
+	return poolOpenTrainOrderRs.Get().(*OpenTrainOrderRs)
+}
+
+// ReleaseOpenTrainOrderRs 释放OpenTrainOrderRs
+func ReleaseOpenTrainOrderRs(v *OpenTrainOrderRs) {
+	v.PriceInfoList = v.PriceInfoList[:0]
+	v.UserAffiliateList = v.UserAffiliateList[:0]
+	v.GmtCreate = ""
+	v.CorpId = ""
+	v.GmtModified = ""
+	v.CorpName = ""
+	v.UserId = ""
+	v.UserName = ""
+	v.DepartId = ""
+	v.DepartName = ""
+	v.ContactName = ""
+	v.ContactPhone = ""
+	v.DepStation = ""
+	v.ArrStation = ""
+	v.DepTime = ""
+	v.ArrTime = ""
+	v.TrainNumber = ""
+	v.TrainType = ""
+	v.SeatType = ""
+	v.RunTime = ""
+	v.DepCity = ""
+	v.TicketNo12306 = ""
+	v.ArrCity = ""
+	v.RiderName = ""
+	v.ThirdpartItineraryId = ""
+	v.Id = 0
+	v.ApplyId = 0
+	v.TicketCount = 0
+	v.Status = 0
+	v.CostCenter = nil
+	v.Invoice = nil
+	poolOpenTrainOrderRs.Put(v)
 }

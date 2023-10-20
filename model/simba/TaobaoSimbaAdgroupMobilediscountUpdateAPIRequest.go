@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest struct {
 // NewTaobaoSimbaAdgroupMobilediscountUpdateRequest 初始化TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest对象
 func NewTaobaoSimbaAdgroupMobilediscountUpdateRequest() *TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest {
 	return &TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest) Reset() {
+	r._adgroupIds = r._adgroupIds[:0]
+	r._nick = ""
+	r._mobileDiscount = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest) SetMobileDiscount(_mo
 // GetMobileDiscount MobileDiscount Getter
 func (r TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest) GetMobileDiscount() int64 {
 	return r._mobileDiscount
+}
+
+var poolTaobaoSimbaAdgroupMobilediscountUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaAdgroupMobilediscountUpdateRequest()
+	},
+}
+
+// GetTaobaoSimbaAdgroupMobilediscountUpdateRequest 从 sync.Pool 获取 TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest
+func GetTaobaoSimbaAdgroupMobilediscountUpdateAPIRequest() *TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest {
+	return poolTaobaoSimbaAdgroupMobilediscountUpdateAPIRequest.Get().(*TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest)
+}
+
+// ReleaseTaobaoSimbaAdgroupMobilediscountUpdateAPIRequest 将 TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaAdgroupMobilediscountUpdateAPIRequest(v *TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaAdgroupMobilediscountUpdateAPIRequest.Put(v)
 }

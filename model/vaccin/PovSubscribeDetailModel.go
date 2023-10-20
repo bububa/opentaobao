@@ -1,5 +1,9 @@
 package vaccin
 
+import (
+	"sync"
+)
+
 // PovSubscribeDetailModel 结构体
 type PovSubscribeDetailModel struct {
 	// 预约者姓名
@@ -26,4 +30,32 @@ type PovSubscribeDetailModel struct {
 	PovCityCode int64 `json:"pov_city_code,omitempty" xml:"pov_city_code,omitempty"`
 	// 区code
 	AreaCode int64 `json:"area_code,omitempty" xml:"area_code,omitempty"`
+}
+
+var poolPovSubscribeDetailModel = sync.Pool{
+	New: func() any {
+		return new(PovSubscribeDetailModel)
+	},
+}
+
+// GetPovSubscribeDetailModel() 从对象池中获取PovSubscribeDetailModel
+func GetPovSubscribeDetailModel() *PovSubscribeDetailModel {
+	return poolPovSubscribeDetailModel.Get().(*PovSubscribeDetailModel)
+}
+
+// ReleasePovSubscribeDetailModel 释放PovSubscribeDetailModel
+func ReleasePovSubscribeDetailModel(v *PovSubscribeDetailModel) {
+	v.SubscriberName = ""
+	v.SubscriberMobile = ""
+	v.IdCardMd5 = ""
+	v.GmtCreate = ""
+	v.SubscribeTime = ""
+	v.CancelTime = ""
+	v.PovName = ""
+	v.IsvOrderId = ""
+	v.PovId = 0
+	v.PovProvinceCode = 0
+	v.PovCityCode = 0
+	v.AreaCode = 0
+	poolPovSubscribeDetailModel.Put(v)
 }

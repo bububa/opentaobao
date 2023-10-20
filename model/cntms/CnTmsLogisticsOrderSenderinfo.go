@@ -1,5 +1,9 @@
 package cntms
 
+import (
+	"sync"
+)
+
 // CnTmsLogisticsOrderSenderinfo 结构体
 type CnTmsLogisticsOrderSenderinfo struct {
 	// 发件人省份
@@ -18,4 +22,28 @@ type CnTmsLogisticsOrderSenderinfo struct {
 	SenderMobile string `json:"sender_mobile,omitempty" xml:"sender_mobile,omitempty"`
 	// 发件人电话，手机与电话必须有一值不为空
 	SenderPhone string `json:"sender_phone,omitempty" xml:"sender_phone,omitempty"`
+}
+
+var poolCnTmsLogisticsOrderSenderinfo = sync.Pool{
+	New: func() any {
+		return new(CnTmsLogisticsOrderSenderinfo)
+	},
+}
+
+// GetCnTmsLogisticsOrderSenderinfo() 从对象池中获取CnTmsLogisticsOrderSenderinfo
+func GetCnTmsLogisticsOrderSenderinfo() *CnTmsLogisticsOrderSenderinfo {
+	return poolCnTmsLogisticsOrderSenderinfo.Get().(*CnTmsLogisticsOrderSenderinfo)
+}
+
+// ReleaseCnTmsLogisticsOrderSenderinfo 释放CnTmsLogisticsOrderSenderinfo
+func ReleaseCnTmsLogisticsOrderSenderinfo(v *CnTmsLogisticsOrderSenderinfo) {
+	v.SenderProvince = ""
+	v.SenderCity = ""
+	v.SenderArea = ""
+	v.SenderAddress = ""
+	v.SenderZipCode = ""
+	v.SenderName = ""
+	v.SenderMobile = ""
+	v.SenderPhone = ""
+	poolCnTmsLogisticsOrderSenderinfo.Put(v)
 }

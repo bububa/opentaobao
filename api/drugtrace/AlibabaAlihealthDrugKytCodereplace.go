@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.kyt.codereplace
 //
 // 单码替换
-func AlibabaAlihealthDrugKytCodereplace(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytCodereplaceAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytCodereplaceAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytCodereplaceAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugKytCodereplace(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytCodereplaceAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytCodereplaceAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

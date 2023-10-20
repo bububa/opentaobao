@@ -9,11 +9,6 @@ import (
 // alibaba.alsc.crm.recharge.qryrule
 //
 // 储值规则下行
-func AlibabaAlscCrmRechargeQryrule(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRechargeQryruleAPIRequest, session string) (*alsc.AlibabaAlscCrmRechargeQryruleAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmRechargeQryruleAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlscCrmRechargeQryrule(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRechargeQryruleAPIRequest, resp *alsc.AlibabaAlscCrmRechargeQryruleAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

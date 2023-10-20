@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // DelivererChangeRequest 结构体
 type DelivererChangeRequest struct {
 	// 经营店编码
@@ -14,4 +18,26 @@ type DelivererChangeRequest struct {
 	LogisticsNo string `json:"logistics_no,omitempty" xml:"logistics_no,omitempty"`
 	// 订单编码
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
+}
+
+var poolDelivererChangeRequest = sync.Pool{
+	New: func() any {
+		return new(DelivererChangeRequest)
+	},
+}
+
+// GetDelivererChangeRequest() 从对象池中获取DelivererChangeRequest
+func GetDelivererChangeRequest() *DelivererChangeRequest {
+	return poolDelivererChangeRequest.Get().(*DelivererChangeRequest)
+}
+
+// ReleaseDelivererChangeRequest 释放DelivererChangeRequest
+func ReleaseDelivererChangeRequest(v *DelivererChangeRequest) {
+	v.StoreId = ""
+	v.DelivererName = ""
+	v.DelivererPhone = ""
+	v.DelivererCompany = ""
+	v.LogisticsNo = ""
+	v.BizOrderId = 0
+	poolDelivererChangeRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // Store 结构体
 type Store struct {
 	// 联系电话
@@ -20,4 +24,29 @@ type Store struct {
 	AddressAreaName string `json:"address_area_name,omitempty" xml:"address_area_name,omitempty"`
 	// 仓库简称
 	AliasName string `json:"alias_name,omitempty" xml:"alias_name,omitempty"`
+}
+
+var poolStore = sync.Pool{
+	New: func() any {
+		return new(Store)
+	},
+}
+
+// GetStore() 从对象池中获取Store
+func GetStore() *Store {
+	return poolStore.Get().(*Store)
+}
+
+// ReleaseStore 释放Store
+func ReleaseStore(v *Store) {
+	v.Phone = ""
+	v.StoreCode = ""
+	v.Address = ""
+	v.StoreType = ""
+	v.PostCode = ""
+	v.Contact = ""
+	v.StoreName = ""
+	v.AddressAreaName = ""
+	v.AliasName = ""
+	poolStore.Put(v)
 }

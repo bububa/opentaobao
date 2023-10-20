@@ -1,5 +1,9 @@
 package moziacl
 
+import (
+	"sync"
+)
+
 // PageRolePermissionRequest 结构体
 type PageRolePermissionRequest struct {
 	// 角色所在的应用app name
@@ -18,4 +22,28 @@ type PageRolePermissionRequest struct {
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 是否返回数据总数量
 	ReturnTotalSize bool `json:"return_total_size,omitempty" xml:"return_total_size,omitempty"`
+}
+
+var poolPageRolePermissionRequest = sync.Pool{
+	New: func() any {
+		return new(PageRolePermissionRequest)
+	},
+}
+
+// GetPageRolePermissionRequest() 从对象池中获取PageRolePermissionRequest
+func GetPageRolePermissionRequest() *PageRolePermissionRequest {
+	return poolPageRolePermissionRequest.Get().(*PageRolePermissionRequest)
+}
+
+// ReleasePageRolePermissionRequest 释放PageRolePermissionRequest
+func ReleasePageRolePermissionRequest(v *PageRolePermissionRequest) {
+	v.TargetAppName = ""
+	v.RequestMetaData = ""
+	v.FuzzyName = ""
+	v.RoleName = ""
+	v.PrincipalParam = nil
+	v.PageSize = 0
+	v.PageNo = 0
+	v.ReturnTotalSize = false
+	poolPageRolePermissionRequest.Put(v)
 }

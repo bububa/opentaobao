@@ -9,11 +9,6 @@ import (
 // alibaba.baichuan.aso.activate
 //
 // 设备安装活动激活
-func AlibabaBaichuanAsoActivate(clt *core.SDKClient, req *baichuan.AlibabaBaichuanAsoActivateAPIRequest, session string) (*baichuan.AlibabaBaichuanAsoActivateAPIResponse, error) {
-	var resp baichuan.AlibabaBaichuanAsoActivateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaBaichuanAsoActivate(clt *core.SDKClient, req *baichuan.AlibabaBaichuanAsoActivateAPIRequest, resp *baichuan.AlibabaBaichuanAsoActivateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

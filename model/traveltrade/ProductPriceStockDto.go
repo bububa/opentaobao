@@ -1,5 +1,9 @@
 package traveltrade
 
+import (
+	"sync"
+)
+
 // ProductPriceStockDto 结构体
 type ProductPriceStockDto struct {
 	// 场次价库信息
@@ -14,4 +18,26 @@ type ProductPriceStockDto struct {
 	RetailPrice int64 `json:"retail_price,omitempty" xml:"retail_price,omitempty"`
 	// 是否可售卖；true：可售卖
 	CanSell bool `json:"can_sell,omitempty" xml:"can_sell,omitempty"`
+}
+
+var poolProductPriceStockDto = sync.Pool{
+	New: func() any {
+		return new(ProductPriceStockDto)
+	},
+}
+
+// GetProductPriceStockDto() 从对象池中获取ProductPriceStockDto
+func GetProductPriceStockDto() *ProductPriceStockDto {
+	return poolProductPriceStockDto.Get().(*ProductPriceStockDto)
+}
+
+// ReleaseProductPriceStockDto 释放ProductPriceStockDto
+func ReleaseProductPriceStockDto(v *ProductPriceStockDto) {
+	v.Sessions = v.Sessions[:0]
+	v.Date = ""
+	v.Stock = 0
+	v.WholesalePrice = 0
+	v.RetailPrice = 0
+	v.CanSell = false
+	poolProductPriceStockDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // PullPackageOrderResponse 结构体
 type PullPackageOrderResponse struct {
 	// 包裹出库单号
@@ -18,4 +22,28 @@ type PullPackageOrderResponse struct {
 	LogisticsOwner string `json:"logistics_owner,omitempty" xml:"logistics_owner,omitempty"`
 	// 收件人信息，逆向出库时下发
 	ReceiverInfo *ContactInfo `json:"receiver_info,omitempty" xml:"receiver_info,omitempty"`
+}
+
+var poolPullPackageOrderResponse = sync.Pool{
+	New: func() any {
+		return new(PullPackageOrderResponse)
+	},
+}
+
+// GetPullPackageOrderResponse() 从对象池中获取PullPackageOrderResponse
+func GetPullPackageOrderResponse() *PullPackageOrderResponse {
+	return poolPullPackageOrderResponse.Get().(*PullPackageOrderResponse)
+}
+
+// ReleasePullPackageOrderResponse 释放PullPackageOrderResponse
+func ReleasePullPackageOrderResponse(v *PullPackageOrderResponse) {
+	v.DeliveryOrderCode = ""
+	v.MailNo = ""
+	v.OaidOrderSourceCode = ""
+	v.ExtendProps = ""
+	v.TmsCpCode = ""
+	v.EntryOrderCode = ""
+	v.LogisticsOwner = ""
+	v.ReceiverInfo = nil
+	poolPullPackageOrderResponse.Put(v)
 }

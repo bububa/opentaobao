@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // CrowdRecQueryVo 结构体
 type CrowdRecQueryVo struct {
 	// 推荐场景,bd_sys:系统推荐人群,bd_ctr:行业榜单-点击率,bd_col_cart_rate:行业榜单-收藏加购,bd_cvr:行业榜单-转化率,bd_assist:行业榜单-助攻率,recSceneNew:关键词推广-新建流程,recSceneEffect:效果榜单,recSceneHeat:热度榜单,recSceneActivity:大促人群推荐,recSceneHomePage:首页榜单,recSceneAdgroupQualityOptions:单元列表智能拉新人群-优质组合推荐
@@ -22,4 +26,30 @@ type CrowdRecQueryVo struct {
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
 	// 类目查询
 	Category *CategoryQueryVo `json:"category,omitempty" xml:"category,omitempty"`
+}
+
+var poolCrowdRecQueryVo = sync.Pool{
+	New: func() any {
+		return new(CrowdRecQueryVo)
+	},
+}
+
+// GetCrowdRecQueryVo() 从对象池中获取CrowdRecQueryVo
+func GetCrowdRecQueryVo() *CrowdRecQueryVo {
+	return poolCrowdRecQueryVo.Get().(*CrowdRecQueryVo)
+}
+
+// ReleaseCrowdRecQueryVo 释放CrowdRecQueryVo
+func ReleaseCrowdRecQueryVo(v *CrowdRecQueryVo) {
+	v.RecSceneList = v.RecSceneList[:0]
+	v.MaterialIdList = v.MaterialIdList[:0]
+	v.ItemSelectedMode = ""
+	v.ShopItemType = ""
+	v.PromotionType = ""
+	v.SubPromotionType = ""
+	v.OptimizeTarget = ""
+	v.PromotionScene = ""
+	v.CampaignId = 0
+	v.Category = nil
+	poolCrowdRecQueryVo.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallsc
 
+import (
+	"sync"
+)
+
 // TmallWorkcardIdentifyResult 结构体
 type TmallWorkcardIdentifyResult struct {
 	// gmtModified
@@ -14,4 +18,26 @@ type TmallWorkcardIdentifyResult struct {
 	ErrorCode int64 `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmallWorkcardIdentifyResult = sync.Pool{
+	New: func() any {
+		return new(TmallWorkcardIdentifyResult)
+	},
+}
+
+// GetTmallWorkcardIdentifyResult() 从对象池中获取TmallWorkcardIdentifyResult
+func GetTmallWorkcardIdentifyResult() *TmallWorkcardIdentifyResult {
+	return poolTmallWorkcardIdentifyResult.Get().(*TmallWorkcardIdentifyResult)
+}
+
+// ReleaseTmallWorkcardIdentifyResult 释放TmallWorkcardIdentifyResult
+func ReleaseTmallWorkcardIdentifyResult(v *TmallWorkcardIdentifyResult) {
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.Value = ""
+	v.ErrorMsg = ""
+	v.ErrorCode = 0
+	v.Success = false
+	poolTmallWorkcardIdentifyResult.Put(v)
 }

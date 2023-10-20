@@ -1,5 +1,9 @@
 package taotv
 
+import (
+	"sync"
+)
+
 // TaobaoTaotvVideoPlaylistPageModel 结构体
 type TaobaoTaotvVideoPlaylistPageModel struct {
 	// 播单对象
@@ -12,4 +16,25 @@ type TaobaoTaotvVideoPlaylistPageModel struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 总共页数
 	TotalPage int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
+}
+
+var poolTaobaoTaotvVideoPlaylistPageModel = sync.Pool{
+	New: func() any {
+		return new(TaobaoTaotvVideoPlaylistPageModel)
+	},
+}
+
+// GetTaobaoTaotvVideoPlaylistPageModel() 从对象池中获取TaobaoTaotvVideoPlaylistPageModel
+func GetTaobaoTaotvVideoPlaylistPageModel() *TaobaoTaotvVideoPlaylistPageModel {
+	return poolTaobaoTaotvVideoPlaylistPageModel.Get().(*TaobaoTaotvVideoPlaylistPageModel)
+}
+
+// ReleaseTaobaoTaotvVideoPlaylistPageModel 释放TaobaoTaotvVideoPlaylistPageModel
+func ReleaseTaobaoTaotvVideoPlaylistPageModel(v *TaobaoTaotvVideoPlaylistPageModel) {
+	v.DataList = v.DataList[:0]
+	v.PageNo = 0
+	v.PageSize = 0
+	v.TotalCount = 0
+	v.TotalPage = 0
+	poolTaobaoTaotvVideoPlaylistPageModel.Put(v)
 }

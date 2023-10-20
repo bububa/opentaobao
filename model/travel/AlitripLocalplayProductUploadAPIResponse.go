@@ -2,6 +2,7 @@ package travel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -18,6 +19,12 @@ type AlitripLocalplayProductUploadAPIResponse struct {
 	AlitripLocalplayProductUploadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripLocalplayProductUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripLocalplayProductUploadAPIResponseModel).Reset()
+}
+
 // AlitripLocalplayProductUploadAPIResponseModel is 当地玩乐 产品维护接口 成功返回结果
 type AlitripLocalplayProductUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_localplay_product_upload_response"`
@@ -25,4 +32,27 @@ type AlitripLocalplayProductUploadAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 商品发布/更新结果
 	FirstResult *TopTravelItem `json:"first_result,omitempty" xml:"first_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripLocalplayProductUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.FirstResult = nil
+}
+
+var poolAlitripLocalplayProductUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripLocalplayProductUploadAPIResponse)
+	},
+}
+
+// GetAlitripLocalplayProductUploadAPIResponse 从 sync.Pool 获取 AlitripLocalplayProductUploadAPIResponse
+func GetAlitripLocalplayProductUploadAPIResponse() *AlitripLocalplayProductUploadAPIResponse {
+	return poolAlitripLocalplayProductUploadAPIResponse.Get().(*AlitripLocalplayProductUploadAPIResponse)
+}
+
+// ReleaseAlitripLocalplayProductUploadAPIResponse 将 AlitripLocalplayProductUploadAPIResponse 保存到 sync.Pool
+func ReleaseAlitripLocalplayProductUploadAPIResponse(v *AlitripLocalplayProductUploadAPIResponse) {
+	v.Reset()
+	poolAlitripLocalplayProductUploadAPIResponse.Put(v)
 }

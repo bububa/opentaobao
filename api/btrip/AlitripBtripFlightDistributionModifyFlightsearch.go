@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.flight.distribution.modify.flightsearch
 //
 // 商旅分销改签航班列表
-func AlitripBtripFlightDistributionModifyFlightsearch(clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionModifyFlightsearchAPIRequest, session string) (*btrip.AlitripBtripFlightDistributionModifyFlightsearchAPIResponse, error) {
-	var resp btrip.AlitripBtripFlightDistributionModifyFlightsearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripFlightDistributionModifyFlightsearch(clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionModifyFlightsearchAPIRequest, resp *btrip.AlitripBtripFlightDistributionModifyFlightsearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

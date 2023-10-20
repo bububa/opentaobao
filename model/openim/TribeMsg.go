@@ -1,5 +1,9 @@
 package openim
 
+import (
+	"sync"
+)
+
 // TribeMsg 结构体
 type TribeMsg struct {
 	// 当at_flag=1时，必须指定at的用户
@@ -16,4 +20,27 @@ type TribeMsg struct {
 	MsgType int64 `json:"msg_type,omitempty" xml:"msg_type,omitempty"`
 	// 该消息是否需要push
 	Push bool `json:"push,omitempty" xml:"push,omitempty"`
+}
+
+var poolTribeMsg = sync.Pool{
+	New: func() any {
+		return new(TribeMsg)
+	},
+}
+
+// GetTribeMsg() 从对象池中获取TribeMsg
+func GetTribeMsg() *TribeMsg {
+	return poolTribeMsg.Get().(*TribeMsg)
+}
+
+// ReleaseTribeMsg 释放TribeMsg
+func ReleaseTribeMsg(v *TribeMsg) {
+	v.Atmembers = v.Atmembers[:0]
+	v.CustomPush = ""
+	v.MediaAttrs = ""
+	v.MsgContent = ""
+	v.AtFlag = 0
+	v.MsgType = 0
+	v.Push = false
+	poolTribeMsg.Put(v)
 }

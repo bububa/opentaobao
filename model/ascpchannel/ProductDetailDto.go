@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // ProductDetailDto 结构体
 type ProductDetailDto struct {
 	// sku 列表
@@ -32,4 +36,35 @@ type ProductDetailDto struct {
 	CategoryId string `json:"category_id,omitempty" xml:"category_id,omitempty"`
 	// 素材扩展信息
 	MaterialsMap string `json:"materials_map,omitempty" xml:"materials_map,omitempty"`
+}
+
+var poolProductDetailDto = sync.Pool{
+	New: func() any {
+		return new(ProductDetailDto)
+	},
+}
+
+// GetProductDetailDto() 从对象池中获取ProductDetailDto
+func GetProductDetailDto() *ProductDetailDto {
+	return poolProductDetailDto.Get().(*ProductDetailDto)
+}
+
+// ReleaseProductDetailDto 释放ProductDetailDto
+func ReleaseProductDetailDto(v *ProductDetailDto) {
+	v.ProductSkuDetail = v.ProductSkuDetail[:0]
+	v.SalesModes = v.SalesModes[:0]
+	v.Pictures = v.Pictures[:0]
+	v.Properties = v.Properties[:0]
+	v.WhiteBgPicture = ""
+	v.ProductId = ""
+	v.DescRichText = ""
+	v.SubChannelCode = ""
+	v.ProductTitle = ""
+	v.Category = ""
+	v.Brand = ""
+	v.ChannelCode = ""
+	v.BrandId = ""
+	v.CategoryId = ""
+	v.MaterialsMap = ""
+	poolProductDetailDto.Put(v)
 }

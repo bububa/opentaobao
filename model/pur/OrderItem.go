@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // OrderItem 结构体
 type OrderItem struct {
 	// 币种
@@ -28,4 +32,33 @@ type OrderItem struct {
 	ItemDescription string `json:"item_description,omitempty" xml:"item_description,omitempty"`
 	// 数量
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolOrderItem = sync.Pool{
+	New: func() any {
+		return new(OrderItem)
+	},
+}
+
+// GetOrderItem() 从对象池中获取OrderItem
+func GetOrderItem() *OrderItem {
+	return poolOrderItem.Get().(*OrderItem)
+}
+
+// ReleaseOrderItem 释放OrderItem
+func ReleaseOrderItem(v *OrderItem) {
+	v.CurrencyCode = ""
+	v.TaxRate = ""
+	v.SupplierId = ""
+	v.MallCategoryId = ""
+	v.Uom = ""
+	v.SubPurReqId = ""
+	v.SkuId = ""
+	v.ItemName = ""
+	v.UnitPrice = ""
+	v.ContractId = ""
+	v.ItemId = ""
+	v.ItemDescription = ""
+	v.Quantity = 0
+	poolOrderItem.Put(v)
 }

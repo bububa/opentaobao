@@ -9,11 +9,6 @@ import (
 // alibaba.interact.sensor.takephoto
 //
 // 客户端takePhoto
-func AlibabaInteractSensorTakephoto(clt *core.SDKClient, req *interact.AlibabaInteractSensorTakephotoAPIRequest, session string) (*interact.AlibabaInteractSensorTakephotoAPIResponse, error) {
-	var resp interact.AlibabaInteractSensorTakephotoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaInteractSensorTakephoto(clt *core.SDKClient, req *interact.AlibabaInteractSensorTakephotoAPIRequest, resp *interact.AlibabaInteractSensorTakephotoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

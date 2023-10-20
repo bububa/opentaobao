@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.tasks.search
 //
 // 查询任务类工单信息
-func TmallServicecenterTasksSearch(clt *core.SDKClient, req *tmallservice.TmallServicecenterTasksSearchAPIRequest, session string) (*tmallservice.TmallServicecenterTasksSearchAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterTasksSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterTasksSearch(clt *core.SDKClient, req *tmallservice.TmallServicecenterTasksSearchAPIRequest, resp *tmallservice.TmallServicecenterTasksSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // SupplierBasisInfoDto 结构体
 type SupplierBasisInfoDto struct {
 	// 类型名
@@ -60,4 +64,49 @@ type SupplierBasisInfoDto struct {
 	StartTime int64 `json:"start_time,omitempty" xml:"start_time,omitempty"`
 	// 供应商状态，0：未入库，1：已入库，2：已转正
 	SupplierStatus int64 `json:"supplier_status,omitempty" xml:"supplier_status,omitempty"`
+}
+
+var poolSupplierBasisInfoDto = sync.Pool{
+	New: func() any {
+		return new(SupplierBasisInfoDto)
+	},
+}
+
+// GetSupplierBasisInfoDto() 从对象池中获取SupplierBasisInfoDto
+func GetSupplierBasisInfoDto() *SupplierBasisInfoDto {
+	return poolSupplierBasisInfoDto.Get().(*SupplierBasisInfoDto)
+}
+
+// ReleaseSupplierBasisInfoDto 释放SupplierBasisInfoDto
+func ReleaseSupplierBasisInfoDto(v *SupplierBasisInfoDto) {
+	v.AppName = ""
+	v.BusinessScope = ""
+	v.CertRecordId = ""
+	v.CompanyName = ""
+	v.CompanyType = ""
+	v.EstablishDate = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.OperateId = ""
+	v.OperateName = ""
+	v.OperatingEnd = ""
+	v.OperatingStart = ""
+	v.OperatorId = ""
+	v.OperatorName = ""
+	v.ProcessInstanceId = ""
+	v.RegisteredCapital = ""
+	v.RelationId = ""
+	v.SupplierId = ""
+	v.ApprovalStatus = 0
+	v.ChangeType = 0
+	v.CompanyNature = 0
+	v.EndTime = 0
+	v.Id = 0
+	v.Offset = 0
+	v.Page = 0
+	v.PageSize = 0
+	v.Source = 0
+	v.StartTime = 0
+	v.SupplierStatus = 0
+	poolSupplierBasisInfoDto.Put(v)
 }

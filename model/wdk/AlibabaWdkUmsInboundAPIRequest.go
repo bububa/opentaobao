@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkUmsInboundAPIRequest struct {
 // NewAlibabaWdkUmsInboundRequest 初始化AlibabaWdkUmsInboundAPIRequest对象
 func NewAlibabaWdkUmsInboundRequest() *AlibabaWdkUmsInboundAPIRequest {
 	return &AlibabaWdkUmsInboundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkUmsInboundAPIRequest) Reset() {
+	r._erpArrivalnoticeDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkUmsInboundAPIRequest) SetErpArrivalnoticeDto(_erpArrivalnotic
 // GetErpArrivalnoticeDto ErpArrivalnoticeDto Getter
 func (r AlibabaWdkUmsInboundAPIRequest) GetErpArrivalnoticeDto() *ErpArrivalNoticeDto {
 	return r._erpArrivalnoticeDto
+}
+
+var poolAlibabaWdkUmsInboundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkUmsInboundRequest()
+	},
+}
+
+// GetAlibabaWdkUmsInboundRequest 从 sync.Pool 获取 AlibabaWdkUmsInboundAPIRequest
+func GetAlibabaWdkUmsInboundAPIRequest() *AlibabaWdkUmsInboundAPIRequest {
+	return poolAlibabaWdkUmsInboundAPIRequest.Get().(*AlibabaWdkUmsInboundAPIRequest)
+}
+
+// ReleaseAlibabaWdkUmsInboundAPIRequest 将 AlibabaWdkUmsInboundAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkUmsInboundAPIRequest(v *AlibabaWdkUmsInboundAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkUmsInboundAPIRequest.Put(v)
 }

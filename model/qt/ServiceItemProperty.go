@@ -1,5 +1,9 @@
 package qt
 
+import (
+	"sync"
+)
+
 // ServiceItemProperty 结构体
 type ServiceItemProperty struct {
 	// 属性列表
@@ -16,4 +20,27 @@ type ServiceItemProperty struct {
 	Nick string `json:"nick,omitempty" xml:"nick,omitempty"`
 	// 质检服务简介
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
+}
+
+var poolServiceItemProperty = sync.Pool{
+	New: func() any {
+		return new(ServiceItemProperty)
+	},
+}
+
+// GetServiceItemProperty() 从对象池中获取ServiceItemProperty
+func GetServiceItemProperty() *ServiceItemProperty {
+	return poolServiceItemProperty.Get().(*ServiceItemProperty)
+}
+
+// ReleaseServiceItemProperty 释放ServiceItemProperty
+func ReleaseServiceItemProperty(v *ServiceItemProperty) {
+	v.ItemPropertyValues = v.ItemPropertyValues[:0]
+	v.ServiceName = ""
+	v.ServiceItemName = ""
+	v.ServiceItemCode = ""
+	v.BasicPrice = ""
+	v.Nick = ""
+	v.Description = ""
+	poolServiceItemProperty.Put(v)
 }

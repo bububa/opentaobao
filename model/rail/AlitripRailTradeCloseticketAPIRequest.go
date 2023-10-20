@@ -2,6 +2,7 @@ package rail
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlitripRailTradeCloseticketAPIRequest struct {
 // NewAlitripRailTradeCloseticketRequest 初始化AlitripRailTradeCloseticketAPIRequest对象
 func NewAlitripRailTradeCloseticketRequest() *AlitripRailTradeCloseticketAPIRequest {
 	return &AlitripRailTradeCloseticketAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripRailTradeCloseticketAPIRequest) Reset() {
+	r._errorMsg = ""
+	r._errorCode = ""
+	r._tpOrderId = 0
+	r._agentId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlitripRailTradeCloseticketAPIRequest) SetAgentId(_agentId int64) error
 // GetAgentId AgentId Getter
 func (r AlitripRailTradeCloseticketAPIRequest) GetAgentId() int64 {
 	return r._agentId
+}
+
+var poolAlitripRailTradeCloseticketAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripRailTradeCloseticketRequest()
+	},
+}
+
+// GetAlitripRailTradeCloseticketRequest 从 sync.Pool 获取 AlitripRailTradeCloseticketAPIRequest
+func GetAlitripRailTradeCloseticketAPIRequest() *AlitripRailTradeCloseticketAPIRequest {
+	return poolAlitripRailTradeCloseticketAPIRequest.Get().(*AlitripRailTradeCloseticketAPIRequest)
+}
+
+// ReleaseAlitripRailTradeCloseticketAPIRequest 将 AlitripRailTradeCloseticketAPIRequest 放入 sync.Pool
+func ReleaseAlitripRailTradeCloseticketAPIRequest(v *AlitripRailTradeCloseticketAPIRequest) {
+	v.Reset()
+	poolAlitripRailTradeCloseticketAPIRequest.Put(v)
 }

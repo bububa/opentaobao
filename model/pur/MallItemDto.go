@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // MallItemDto 结构体
 type MallItemDto struct {
 	// 合同单号
@@ -32,4 +36,35 @@ type MallItemDto struct {
 	ItemUrl string `json:"item_url,omitempty" xml:"item_url,omitempty"`
 	// 数量
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolMallItemDto = sync.Pool{
+	New: func() any {
+		return new(MallItemDto)
+	},
+}
+
+// GetMallItemDto() 从对象池中获取MallItemDto
+func GetMallItemDto() *MallItemDto {
+	return poolMallItemDto.Get().(*MallItemDto)
+}
+
+// ReleaseMallItemDto 释放MallItemDto
+func ReleaseMallItemDto(v *MallItemDto) {
+	v.ContractCode = ""
+	v.CurrencyCode = ""
+	v.ImgUrl = ""
+	v.ItemDescription = ""
+	v.ItemId = ""
+	v.ItemName = ""
+	v.MallCategoryId = ""
+	v.SkuId = ""
+	v.SubPurReqId = ""
+	v.SupplierId = ""
+	v.TaxRate = ""
+	v.UnitPrice = ""
+	v.Uom = ""
+	v.ItemUrl = ""
+	v.Quantity = 0
+	poolMallItemDto.Put(v)
 }

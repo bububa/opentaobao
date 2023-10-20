@@ -1,9 +1,31 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ExchangeRuleDto 结构体
 type ExchangeRuleDto struct {
 	// 每组最大购买数量, 单次下单可换购的不同sku商品数。换购分组该字段为必填
 	MaxBuyNum int64 `json:"max_buy_num,omitempty" xml:"max_buy_num,omitempty"`
 	// 换购分组顺序
 	OrderNum int64 `json:"order_num,omitempty" xml:"order_num,omitempty"`
+}
+
+var poolExchangeRuleDto = sync.Pool{
+	New: func() any {
+		return new(ExchangeRuleDto)
+	},
+}
+
+// GetExchangeRuleDto() 从对象池中获取ExchangeRuleDto
+func GetExchangeRuleDto() *ExchangeRuleDto {
+	return poolExchangeRuleDto.Get().(*ExchangeRuleDto)
+}
+
+// ReleaseExchangeRuleDto 释放ExchangeRuleDto
+func ReleaseExchangeRuleDto(v *ExchangeRuleDto) {
+	v.MaxBuyNum = 0
+	v.OrderNum = 0
+	poolExchangeRuleDto.Put(v)
 }

@@ -2,6 +2,7 @@ package flightuppc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripFlightInsuranceOrderSearchAPIResponse struct {
 	AlitripFlightInsuranceOrderSearchAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripFlightInsuranceOrderSearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripFlightInsuranceOrderSearchAPIResponseModel).Reset()
+}
+
 // AlitripFlightInsuranceOrderSearchAPIResponseModel is 查询保险订单详情 成功返回结果
 type AlitripFlightInsuranceOrderSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_flight_insurance_order_search_response"`
@@ -26,4 +33,29 @@ type AlitripFlightInsuranceOrderSearchAPIResponseModel struct {
 	ErrMsgForClient string `json:"err_msg_for_client,omitempty" xml:"err_msg_for_client,omitempty"`
 	// 是否调用成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripFlightInsuranceOrderSearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.InsOrders = m.InsOrders[:0]
+	m.ErrMsgForClient = ""
+	m.IsSuccess = false
+}
+
+var poolAlitripFlightInsuranceOrderSearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripFlightInsuranceOrderSearchAPIResponse)
+	},
+}
+
+// GetAlitripFlightInsuranceOrderSearchAPIResponse 从 sync.Pool 获取 AlitripFlightInsuranceOrderSearchAPIResponse
+func GetAlitripFlightInsuranceOrderSearchAPIResponse() *AlitripFlightInsuranceOrderSearchAPIResponse {
+	return poolAlitripFlightInsuranceOrderSearchAPIResponse.Get().(*AlitripFlightInsuranceOrderSearchAPIResponse)
+}
+
+// ReleaseAlitripFlightInsuranceOrderSearchAPIResponse 将 AlitripFlightInsuranceOrderSearchAPIResponse 保存到 sync.Pool
+func ReleaseAlitripFlightInsuranceOrderSearchAPIResponse(v *AlitripFlightInsuranceOrderSearchAPIResponse) {
+	v.Reset()
+	poolAlitripFlightInsuranceOrderSearchAPIResponse.Put(v)
 }

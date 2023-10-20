@@ -2,6 +2,7 @@ package ottpay
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YoukuOttPayOrderQueryorderbycpAPIRequest struct {
 // NewYoukuOttPayOrderQueryorderbycpRequest 初始化YoukuOttPayOrderQueryorderbycpAPIRequest对象
 func NewYoukuOttPayOrderQueryorderbycpRequest() *YoukuOttPayOrderQueryorderbycpAPIRequest {
 	return &YoukuOttPayOrderQueryorderbycpAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuOttPayOrderQueryorderbycpAPIRequest) Reset() {
+	r._cpOrderNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YoukuOttPayOrderQueryorderbycpAPIRequest) SetCpOrderNo(_cpOrderNo strin
 // GetCpOrderNo CpOrderNo Getter
 func (r YoukuOttPayOrderQueryorderbycpAPIRequest) GetCpOrderNo() string {
 	return r._cpOrderNo
+}
+
+var poolYoukuOttPayOrderQueryorderbycpAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuOttPayOrderQueryorderbycpRequest()
+	},
+}
+
+// GetYoukuOttPayOrderQueryorderbycpRequest 从 sync.Pool 获取 YoukuOttPayOrderQueryorderbycpAPIRequest
+func GetYoukuOttPayOrderQueryorderbycpAPIRequest() *YoukuOttPayOrderQueryorderbycpAPIRequest {
+	return poolYoukuOttPayOrderQueryorderbycpAPIRequest.Get().(*YoukuOttPayOrderQueryorderbycpAPIRequest)
+}
+
+// ReleaseYoukuOttPayOrderQueryorderbycpAPIRequest 将 YoukuOttPayOrderQueryorderbycpAPIRequest 放入 sync.Pool
+func ReleaseYoukuOttPayOrderQueryorderbycpAPIRequest(v *YoukuOttPayOrderQueryorderbycpAPIRequest) {
+	v.Reset()
+	poolYoukuOttPayOrderQueryorderbycpAPIRequest.Put(v)
 }

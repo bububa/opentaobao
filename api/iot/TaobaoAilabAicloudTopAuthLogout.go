@@ -9,11 +9,6 @@ import (
 // taobao.ailab.aicloud.top.auth.logout
 //
 // 登出
-func TaobaoAilabAicloudTopAuthLogout(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopAuthLogoutAPIRequest, session string) (*iot.TaobaoAilabAicloudTopAuthLogoutAPIResponse, error) {
-	var resp iot.TaobaoAilabAicloudTopAuthLogoutAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAilabAicloudTopAuthLogout(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopAuthLogoutAPIRequest, resp *iot.TaobaoAilabAicloudTopAuthLogoutAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

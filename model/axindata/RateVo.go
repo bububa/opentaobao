@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // RateVo 结构体
 type RateVo struct {
 	// 售卖政策名称
@@ -54,4 +58,46 @@ type RateVo struct {
 	InstantConfirm bool `json:"instant_confirm,omitempty" xml:"instant_confirm,omitempty"`
 	// 是否小时房,不为空且为true时标识小时房，否则全日房
 	HourRoom bool `json:"hour_room,omitempty" xml:"hour_room,omitempty"`
+}
+
+var poolRateVo = sync.Pool{
+	New: func() any {
+		return new(RateVo)
+	},
+}
+
+// GetRateVo() 从对象池中获取RateVo
+func GetRateVo() *RateVo {
+	return poolRateVo.Get().(*RateVo)
+}
+
+// ReleaseRateVo 释放RateVo
+func ReleaseRateVo(v *RateVo) {
+	v.RatePlanName = ""
+	v.EndTimeDaily = ""
+	v.CurrencyCode = ""
+	v.CancelPolicyDesc = ""
+	v.Breakfast = ""
+	v.CommissionFeeRate = ""
+	v.ResourceTag = ""
+	v.DistributeMode = ""
+	v.RatePlanId = 0
+	v.ItemId = 0
+	v.RateId = 0
+	v.MinAdvHours = 0
+	v.Quota = 0
+	v.Price = 0
+	v.PromotionPrice = 0
+	v.CancelPolicyVO = nil
+	v.BreakfastCount = 0
+	v.DawnBookingVo = nil
+	v.MinDays = 0
+	v.MaxDays = 0
+	v.MaxAdvHours = 0
+	v.HourRoomInfo = nil
+	v.HourRoomInfoDto = nil
+	v.InvoicingMode = 0
+	v.InstantConfirm = false
+	v.HourRoom = false
+	poolRateVo.Put(v)
 }

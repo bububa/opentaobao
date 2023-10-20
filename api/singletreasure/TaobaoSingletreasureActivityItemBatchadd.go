@@ -9,11 +9,6 @@ import (
 // taobao.singletreasure.activity.item.batchadd
 //
 // 向活动中批量添加商品优惠
-func TaobaoSingletreasureActivityItemBatchadd(clt *core.SDKClient, req *singletreasure.TaobaoSingletreasureActivityItemBatchaddAPIRequest, session string) (*singletreasure.TaobaoSingletreasureActivityItemBatchaddAPIResponse, error) {
-	var resp singletreasure.TaobaoSingletreasureActivityItemBatchaddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSingletreasureActivityItemBatchadd(clt *core.SDKClient, req *singletreasure.TaobaoSingletreasureActivityItemBatchaddAPIRequest, resp *singletreasure.TaobaoSingletreasureActivityItemBatchaddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

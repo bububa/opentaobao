@@ -2,6 +2,7 @@ package xhotelcrm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoXhotelMemberDerbyCouponSendAPIRequest struct {
 // NewTaobaoXhotelMemberDerbyCouponSendRequest 初始化TaobaoXhotelMemberDerbyCouponSendAPIRequest对象
 func NewTaobaoXhotelMemberDerbyCouponSendRequest() *TaobaoXhotelMemberDerbyCouponSendAPIRequest {
 	return &TaobaoXhotelMemberDerbyCouponSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelMemberDerbyCouponSendAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoXhotelMemberDerbyCouponSendAPIRequest) SetParam(_param *SendCoupo
 // GetParam Param Getter
 func (r TaobaoXhotelMemberDerbyCouponSendAPIRequest) GetParam() *SendCouponParam {
 	return r._param
+}
+
+var poolTaobaoXhotelMemberDerbyCouponSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelMemberDerbyCouponSendRequest()
+	},
+}
+
+// GetTaobaoXhotelMemberDerbyCouponSendRequest 从 sync.Pool 获取 TaobaoXhotelMemberDerbyCouponSendAPIRequest
+func GetTaobaoXhotelMemberDerbyCouponSendAPIRequest() *TaobaoXhotelMemberDerbyCouponSendAPIRequest {
+	return poolTaobaoXhotelMemberDerbyCouponSendAPIRequest.Get().(*TaobaoXhotelMemberDerbyCouponSendAPIRequest)
+}
+
+// ReleaseTaobaoXhotelMemberDerbyCouponSendAPIRequest 将 TaobaoXhotelMemberDerbyCouponSendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelMemberDerbyCouponSendAPIRequest(v *TaobaoXhotelMemberDerbyCouponSendAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelMemberDerbyCouponSendAPIRequest.Put(v)
 }

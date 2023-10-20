@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaWdkSeriesSkuRemoveApiResult 结构体
 type AlibabaWdkSeriesSkuRemoveApiResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type AlibabaWdkSeriesSkuRemoveApiResult struct {
 	Model *SkuSeriesEditResult `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaWdkSeriesSkuRemoveApiResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkSeriesSkuRemoveApiResult)
+	},
+}
+
+// GetAlibabaWdkSeriesSkuRemoveApiResult() 从对象池中获取AlibabaWdkSeriesSkuRemoveApiResult
+func GetAlibabaWdkSeriesSkuRemoveApiResult() *AlibabaWdkSeriesSkuRemoveApiResult {
+	return poolAlibabaWdkSeriesSkuRemoveApiResult.Get().(*AlibabaWdkSeriesSkuRemoveApiResult)
+}
+
+// ReleaseAlibabaWdkSeriesSkuRemoveApiResult 释放AlibabaWdkSeriesSkuRemoveApiResult
+func ReleaseAlibabaWdkSeriesSkuRemoveApiResult(v *AlibabaWdkSeriesSkuRemoveApiResult) {
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Model = nil
+	v.Success = false
+	poolAlibabaWdkSeriesSkuRemoveApiResult.Put(v)
 }

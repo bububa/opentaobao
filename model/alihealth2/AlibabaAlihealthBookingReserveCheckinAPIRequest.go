@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthBookingReserveCheckinAPIRequest struct {
 // NewAlibabaAlihealthBookingReserveCheckinRequest 初始化AlibabaAlihealthBookingReserveCheckinAPIRequest对象
 func NewAlibabaAlihealthBookingReserveCheckinRequest() *AlibabaAlihealthBookingReserveCheckinAPIRequest {
 	return &AlibabaAlihealthBookingReserveCheckinAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthBookingReserveCheckinAPIRequest) Reset() {
+	r._checkIn = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthBookingReserveCheckinAPIRequest) SetCheckIn(_checkIn *I
 // GetCheckIn CheckIn Getter
 func (r AlibabaAlihealthBookingReserveCheckinAPIRequest) GetCheckIn() *IsvReserveRequest {
 	return r._checkIn
+}
+
+var poolAlibabaAlihealthBookingReserveCheckinAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthBookingReserveCheckinRequest()
+	},
+}
+
+// GetAlibabaAlihealthBookingReserveCheckinRequest 从 sync.Pool 获取 AlibabaAlihealthBookingReserveCheckinAPIRequest
+func GetAlibabaAlihealthBookingReserveCheckinAPIRequest() *AlibabaAlihealthBookingReserveCheckinAPIRequest {
+	return poolAlibabaAlihealthBookingReserveCheckinAPIRequest.Get().(*AlibabaAlihealthBookingReserveCheckinAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthBookingReserveCheckinAPIRequest 将 AlibabaAlihealthBookingReserveCheckinAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthBookingReserveCheckinAPIRequest(v *AlibabaAlihealthBookingReserveCheckinAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthBookingReserveCheckinAPIRequest.Put(v)
 }

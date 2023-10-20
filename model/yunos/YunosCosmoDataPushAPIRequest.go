@@ -2,6 +2,7 @@ package yunos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type YunosCosmoDataPushAPIRequest struct {
 // NewYunosCosmoDataPushRequest 初始化YunosCosmoDataPushAPIRequest对象
 func NewYunosCosmoDataPushRequest() *YunosCosmoDataPushAPIRequest {
 	return &YunosCosmoDataPushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosCosmoDataPushAPIRequest) Reset() {
+	r._appId = ""
+	r._jsonModel = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *YunosCosmoDataPushAPIRequest) SetJsonModel(_jsonModel string) error {
 // GetJsonModel JsonModel Getter
 func (r YunosCosmoDataPushAPIRequest) GetJsonModel() string {
 	return r._jsonModel
+}
+
+var poolYunosCosmoDataPushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosCosmoDataPushRequest()
+	},
+}
+
+// GetYunosCosmoDataPushRequest 从 sync.Pool 获取 YunosCosmoDataPushAPIRequest
+func GetYunosCosmoDataPushAPIRequest() *YunosCosmoDataPushAPIRequest {
+	return poolYunosCosmoDataPushAPIRequest.Get().(*YunosCosmoDataPushAPIRequest)
+}
+
+// ReleaseYunosCosmoDataPushAPIRequest 将 YunosCosmoDataPushAPIRequest 放入 sync.Pool
+func ReleaseYunosCosmoDataPushAPIRequest(v *YunosCosmoDataPushAPIRequest) {
+	v.Reset()
+	poolYunosCosmoDataPushAPIRequest.Put(v)
 }

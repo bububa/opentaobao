@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ChannelSkuDo 结构体
 type ChannelSkuDo struct {
 	// 门店或DC编码
@@ -36,4 +40,37 @@ type ChannelSkuDo struct {
 	SaleBeforePurchase bool `json:"sale_before_purchase,omitempty" xml:"sale_before_purchase,omitempty"`
 	// 是否toB渠道（默认true）
 	ToBChannel bool `json:"to_b_channel,omitempty" xml:"to_b_channel,omitempty"`
+}
+
+var poolChannelSkuDo = sync.Pool{
+	New: func() any {
+		return new(ChannelSkuDo)
+	},
+}
+
+// GetChannelSkuDo() 从对象池中获取ChannelSkuDo
+func GetChannelSkuDo() *ChannelSkuDo {
+	return poolChannelSkuDo.Get().(*ChannelSkuDo)
+}
+
+// ReleaseChannelSkuDo 释放ChannelSkuDo
+func ReleaseChannelSkuDo(v *ChannelSkuDo) {
+	v.OuCode = ""
+	v.SkuCode = ""
+	v.SalePrice = ""
+	v.ReturnFlag = ""
+	v.SaleUnit = ""
+	v.SaleSpec = ""
+	v.LifeStatus = ""
+	v.DeliverWarehouse = ""
+	v.OriginalSupplierNo = ""
+	v.CustomerMerchantCode = ""
+	v.ShopId = ""
+	v.SaleMinimum = 0
+	v.ChannelCode = 0
+	v.TimeStamp = 0
+	v.OnlineSaleFlag = 0
+	v.SaleBeforePurchase = false
+	v.ToBChannel = false
+	poolChannelSkuDo.Put(v)
 }

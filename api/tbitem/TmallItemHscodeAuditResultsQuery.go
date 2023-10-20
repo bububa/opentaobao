@@ -9,11 +9,6 @@ import (
 // tmall.item.hscode.audit.results.query
 //
 // 通过此接口查询天猫跨境商品的hscode信息审核状态，卖家可以参考返回结果判断是否需要调整商品hscode相关信息。
-func TmallItemHscodeAuditResultsQuery(clt *core.SDKClient, req *tbitem.TmallItemHscodeAuditResultsQueryAPIRequest, session string) (*tbitem.TmallItemHscodeAuditResultsQueryAPIResponse, error) {
-	var resp tbitem.TmallItemHscodeAuditResultsQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallItemHscodeAuditResultsQuery(clt *core.SDKClient, req *tbitem.TmallItemHscodeAuditResultsQueryAPIRequest, resp *tbitem.TmallItemHscodeAuditResultsQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

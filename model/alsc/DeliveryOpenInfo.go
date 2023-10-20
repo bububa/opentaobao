@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // DeliveryOpenInfo 结构体
 type DeliveryOpenInfo struct {
 	// 配送员名称
@@ -12,4 +16,25 @@ type DeliveryOpenInfo struct {
 	Phone string `json:"phone,omitempty" xml:"phone,omitempty"`
 	// 物流费
 	Fee int64 `json:"fee,omitempty" xml:"fee,omitempty"`
+}
+
+var poolDeliveryOpenInfo = sync.Pool{
+	New: func() any {
+		return new(DeliveryOpenInfo)
+	},
+}
+
+// GetDeliveryOpenInfo() 从对象池中获取DeliveryOpenInfo
+func GetDeliveryOpenInfo() *DeliveryOpenInfo {
+	return poolDeliveryOpenInfo.Get().(*DeliveryOpenInfo)
+}
+
+// ReleaseDeliveryOpenInfo 释放DeliveryOpenInfo
+func ReleaseDeliveryOpenInfo(v *DeliveryOpenInfo) {
+	v.DeliverMan = ""
+	v.DeliverTime = ""
+	v.ExtInfo = ""
+	v.Phone = ""
+	v.Fee = 0
+	poolDeliveryOpenInfo.Put(v)
 }

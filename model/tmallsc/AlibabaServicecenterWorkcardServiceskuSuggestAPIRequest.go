@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest struct {
 // NewAlibabaServicecenterWorkcardServiceskuSuggestRequest 初始化AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest对象
 func NewAlibabaServicecenterWorkcardServiceskuSuggestRequest() *AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest {
 	return &AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest) Reset() {
+	r._tpSuggestServiceSkuInfos = r._tpSuggestServiceSkuInfos[:0]
+	r._realTpNick = ""
+	r._extendInfo = ""
+	r._workcardId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest) SetWorkcardId(
 // GetWorkcardId WorkcardId Getter
 func (r AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
+}
+
+var poolAlibabaServicecenterWorkcardServiceskuSuggestAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaServicecenterWorkcardServiceskuSuggestRequest()
+	},
+}
+
+// GetAlibabaServicecenterWorkcardServiceskuSuggestRequest 从 sync.Pool 获取 AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest
+func GetAlibabaServicecenterWorkcardServiceskuSuggestAPIRequest() *AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest {
+	return poolAlibabaServicecenterWorkcardServiceskuSuggestAPIRequest.Get().(*AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest)
+}
+
+// ReleaseAlibabaServicecenterWorkcardServiceskuSuggestAPIRequest 将 AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest 放入 sync.Pool
+func ReleaseAlibabaServicecenterWorkcardServiceskuSuggestAPIRequest(v *AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest) {
+	v.Reset()
+	poolAlibabaServicecenterWorkcardServiceskuSuggestAPIRequest.Put(v)
 }

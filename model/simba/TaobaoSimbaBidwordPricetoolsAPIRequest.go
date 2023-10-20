@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoSimbaBidwordPricetoolsAPIRequest struct {
 // NewTaobaoSimbaBidwordPricetoolsRequest 初始化TaobaoSimbaBidwordPricetoolsAPIRequest对象
 func NewTaobaoSimbaBidwordPricetoolsRequest() *TaobaoSimbaBidwordPricetoolsAPIRequest {
 	return &TaobaoSimbaBidwordPricetoolsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaBidwordPricetoolsAPIRequest) Reset() {
+	r._trafficType = ""
+	r._adgroupId = 0
+	r._bidwordId = 0
+	r._type = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoSimbaBidwordPricetoolsAPIRequest) SetType(_type int64) error {
 // GetType Type Getter
 func (r TaobaoSimbaBidwordPricetoolsAPIRequest) GetType() int64 {
 	return r._type
+}
+
+var poolTaobaoSimbaBidwordPricetoolsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaBidwordPricetoolsRequest()
+	},
+}
+
+// GetTaobaoSimbaBidwordPricetoolsRequest 从 sync.Pool 获取 TaobaoSimbaBidwordPricetoolsAPIRequest
+func GetTaobaoSimbaBidwordPricetoolsAPIRequest() *TaobaoSimbaBidwordPricetoolsAPIRequest {
+	return poolTaobaoSimbaBidwordPricetoolsAPIRequest.Get().(*TaobaoSimbaBidwordPricetoolsAPIRequest)
+}
+
+// ReleaseTaobaoSimbaBidwordPricetoolsAPIRequest 将 TaobaoSimbaBidwordPricetoolsAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaBidwordPricetoolsAPIRequest(v *TaobaoSimbaBidwordPricetoolsAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaBidwordPricetoolsAPIRequest.Put(v)
 }

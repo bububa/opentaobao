@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoFuwuSaleLinkGenAPIRequest struct {
 // NewTaobaoFuwuSaleLinkGenRequest 初始化TaobaoFuwuSaleLinkGenAPIRequest对象
 func NewTaobaoFuwuSaleLinkGenRequest() *TaobaoFuwuSaleLinkGenAPIRequest {
 	return &TaobaoFuwuSaleLinkGenAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFuwuSaleLinkGenAPIRequest) Reset() {
+	r._nick = ""
+	r._paramStr = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoFuwuSaleLinkGenAPIRequest) SetParamStr(_paramStr string) error {
 // GetParamStr ParamStr Getter
 func (r TaobaoFuwuSaleLinkGenAPIRequest) GetParamStr() string {
 	return r._paramStr
+}
+
+var poolTaobaoFuwuSaleLinkGenAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFuwuSaleLinkGenRequest()
+	},
+}
+
+// GetTaobaoFuwuSaleLinkGenRequest 从 sync.Pool 获取 TaobaoFuwuSaleLinkGenAPIRequest
+func GetTaobaoFuwuSaleLinkGenAPIRequest() *TaobaoFuwuSaleLinkGenAPIRequest {
+	return poolTaobaoFuwuSaleLinkGenAPIRequest.Get().(*TaobaoFuwuSaleLinkGenAPIRequest)
+}
+
+// ReleaseTaobaoFuwuSaleLinkGenAPIRequest 将 TaobaoFuwuSaleLinkGenAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFuwuSaleLinkGenAPIRequest(v *TaobaoFuwuSaleLinkGenAPIRequest) {
+	v.Reset()
+	poolTaobaoFuwuSaleLinkGenAPIRequest.Put(v)
 }

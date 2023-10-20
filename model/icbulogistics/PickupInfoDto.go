@@ -1,5 +1,9 @@
 package icbulogistics
 
+import (
+	"sync"
+)
+
 // PickupInfoDto 结构体
 type PickupInfoDto struct {
 	// 备用字段（上门揽收服务商），目前为空
@@ -10,4 +14,24 @@ type PickupInfoDto struct {
 	PickupTypeName string `json:"pickup_type_name,omitempty" xml:"pickup_type_name,omitempty"`
 	// 能否上门揽收
 	CanPickup bool `json:"can_pickup,omitempty" xml:"can_pickup,omitempty"`
+}
+
+var poolPickupInfoDto = sync.Pool{
+	New: func() any {
+		return new(PickupInfoDto)
+	},
+}
+
+// GetPickupInfoDto() 从对象池中获取PickupInfoDto
+func GetPickupInfoDto() *PickupInfoDto {
+	return poolPickupInfoDto.Get().(*PickupInfoDto)
+}
+
+// ReleasePickupInfoDto 释放PickupInfoDto
+func ReleasePickupInfoDto(v *PickupInfoDto) {
+	v.ServiceProvider = ""
+	v.PickupType = ""
+	v.PickupTypeName = ""
+	v.CanPickup = false
+	poolPickupInfoDto.Put(v)
 }

@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaUnitCampusSpaceBookinfoQueryAPIRequest struct {
 // NewAlibabaUnitCampusSpaceBookinfoQueryRequest 初始化AlibabaUnitCampusSpaceBookinfoQueryAPIRequest对象
 func NewAlibabaUnitCampusSpaceBookinfoQueryRequest() *AlibabaUnitCampusSpaceBookinfoQueryAPIRequest {
 	return &AlibabaUnitCampusSpaceBookinfoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaUnitCampusSpaceBookinfoQueryAPIRequest) Reset() {
+	r._workBenchContext = nil
+	r._getResourceBookInfoRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaUnitCampusSpaceBookinfoQueryAPIRequest) SetGetResourceBookInfoRe
 // GetGetResourceBookInfoRequest GetResourceBookInfoRequest Getter
 func (r AlibabaUnitCampusSpaceBookinfoQueryAPIRequest) GetGetResourceBookInfoRequest() *GetResourceBookInfoRequest {
 	return r._getResourceBookInfoRequest
+}
+
+var poolAlibabaUnitCampusSpaceBookinfoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaUnitCampusSpaceBookinfoQueryRequest()
+	},
+}
+
+// GetAlibabaUnitCampusSpaceBookinfoQueryRequest 从 sync.Pool 获取 AlibabaUnitCampusSpaceBookinfoQueryAPIRequest
+func GetAlibabaUnitCampusSpaceBookinfoQueryAPIRequest() *AlibabaUnitCampusSpaceBookinfoQueryAPIRequest {
+	return poolAlibabaUnitCampusSpaceBookinfoQueryAPIRequest.Get().(*AlibabaUnitCampusSpaceBookinfoQueryAPIRequest)
+}
+
+// ReleaseAlibabaUnitCampusSpaceBookinfoQueryAPIRequest 将 AlibabaUnitCampusSpaceBookinfoQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaUnitCampusSpaceBookinfoQueryAPIRequest(v *AlibabaUnitCampusSpaceBookinfoQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaUnitCampusSpaceBookinfoQueryAPIRequest.Put(v)
 }

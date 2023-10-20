@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaWdkSkuUpdateApiResult 结构体
 type AlibabaWdkSkuUpdateApiResult struct {
 	// sku编码
@@ -12,4 +16,25 @@ type AlibabaWdkSkuUpdateApiResult struct {
 	ProductId string `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// sku商品操作成功标志
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaWdkSkuUpdateApiResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkSkuUpdateApiResult)
+	},
+}
+
+// GetAlibabaWdkSkuUpdateApiResult() 从对象池中获取AlibabaWdkSkuUpdateApiResult
+func GetAlibabaWdkSkuUpdateApiResult() *AlibabaWdkSkuUpdateApiResult {
+	return poolAlibabaWdkSkuUpdateApiResult.Get().(*AlibabaWdkSkuUpdateApiResult)
+}
+
+// ReleaseAlibabaWdkSkuUpdateApiResult 释放AlibabaWdkSkuUpdateApiResult
+func ReleaseAlibabaWdkSkuUpdateApiResult(v *AlibabaWdkSkuUpdateApiResult) {
+	v.Model = ""
+	v.ErrMsg = ""
+	v.ErrCode = ""
+	v.ProductId = ""
+	v.Success = false
+	poolAlibabaWdkSkuUpdateApiResult.Put(v)
 }

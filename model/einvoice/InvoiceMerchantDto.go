@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // InvoiceMerchantDto 结构体
 type InvoiceMerchantDto struct {
 	// 企业所在区
@@ -40,4 +44,39 @@ type InvoiceMerchantDto struct {
 	ZeroTaxRateFlag string `json:"zero_tax_rate_flag,omitempty" xml:"zero_tax_rate_flag,omitempty"`
 	// 企业类型，可选值：  一般纳税人：1;  小规模纳税人：2;  起征点以下纳税人：3;
 	CompanyType int64 `json:"company_type,omitempty" xml:"company_type,omitempty"`
+}
+
+var poolInvoiceMerchantDto = sync.Pool{
+	New: func() any {
+		return new(InvoiceMerchantDto)
+	},
+}
+
+// GetInvoiceMerchantDto() 从对象池中获取InvoiceMerchantDto
+func GetInvoiceMerchantDto() *InvoiceMerchantDto {
+	return poolInvoiceMerchantDto.Get().(*InvoiceMerchantDto)
+}
+
+// ReleaseInvoiceMerchantDto 释放InvoiceMerchantDto
+func ReleaseInvoiceMerchantDto(v *InvoiceMerchantDto) {
+	v.Area = ""
+	v.BankAccountId = ""
+	v.BankName = ""
+	v.City = ""
+	v.CompanyName = ""
+	v.CompanyPlatformCode = ""
+	v.DefaultItemName = ""
+	v.DefaultTaxCode = ""
+	v.DefaultTaxRate = ""
+	v.DetailedAddress = ""
+	v.InvoicePhone = ""
+	v.PayeeChecker = ""
+	v.PayeeOperator = ""
+	v.PayeeReceiver = ""
+	v.PayeeRegisterNo = ""
+	v.Province = ""
+	v.TaxToken = ""
+	v.ZeroTaxRateFlag = ""
+	v.CompanyType = 0
+	poolInvoiceMerchantDto.Put(v)
 }

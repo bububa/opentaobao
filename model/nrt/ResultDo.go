@@ -1,5 +1,9 @@
 package nrt
 
+import (
+	"sync"
+)
+
 // ResultDo 结构体
 type ResultDo struct {
 	// 错误码
@@ -16,4 +20,27 @@ type ResultDo struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 调用是否成功
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
+}
+
+var poolResultDo = sync.Pool{
+	New: func() any {
+		return new(ResultDo)
+	},
+}
+
+// GetResultDo() 从对象池中获取ResultDo
+func GetResultDo() *ResultDo {
+	return poolResultDo.Get().(*ResultDo)
+}
+
+// ReleaseResultDo 释放ResultDo
+func ReleaseResultDo(v *ResultDo) {
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Errcode = ""
+	v.Errmsg = ""
+	v.Data = nil
+	v.Success = false
+	v.Succ = false
+	poolResultDo.Put(v)
 }

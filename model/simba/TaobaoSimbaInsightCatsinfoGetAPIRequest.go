@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoSimbaInsightCatsinfoGetAPIRequest struct {
 // NewTaobaoSimbaInsightCatsinfoGetRequest 初始化TaobaoSimbaInsightCatsinfoGetAPIRequest对象
 func NewTaobaoSimbaInsightCatsinfoGetRequest() *TaobaoSimbaInsightCatsinfoGetAPIRequest {
 	return &TaobaoSimbaInsightCatsinfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaInsightCatsinfoGetAPIRequest) Reset() {
+	r._categoryIdList = r._categoryIdList[:0]
+	r._type = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoSimbaInsightCatsinfoGetAPIRequest) SetType(_type int64) error {
 // GetType Type Getter
 func (r TaobaoSimbaInsightCatsinfoGetAPIRequest) GetType() int64 {
 	return r._type
+}
+
+var poolTaobaoSimbaInsightCatsinfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaInsightCatsinfoGetRequest()
+	},
+}
+
+// GetTaobaoSimbaInsightCatsinfoGetRequest 从 sync.Pool 获取 TaobaoSimbaInsightCatsinfoGetAPIRequest
+func GetTaobaoSimbaInsightCatsinfoGetAPIRequest() *TaobaoSimbaInsightCatsinfoGetAPIRequest {
+	return poolTaobaoSimbaInsightCatsinfoGetAPIRequest.Get().(*TaobaoSimbaInsightCatsinfoGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaInsightCatsinfoGetAPIRequest 将 TaobaoSimbaInsightCatsinfoGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaInsightCatsinfoGetAPIRequest(v *TaobaoSimbaInsightCatsinfoGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaInsightCatsinfoGetAPIRequest.Put(v)
 }

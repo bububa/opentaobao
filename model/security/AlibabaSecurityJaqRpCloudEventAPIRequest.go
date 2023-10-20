@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaSecurityJaqRpCloudEventAPIRequest struct {
 // NewAlibabaSecurityJaqRpCloudEventRequest 初始化AlibabaSecurityJaqRpCloudEventAPIRequest对象
 func NewAlibabaSecurityJaqRpCloudEventRequest() *AlibabaSecurityJaqRpCloudEventAPIRequest {
 	return &AlibabaSecurityJaqRpCloudEventAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqRpCloudEventAPIRequest) Reset() {
+	r._verifyToken = ""
+	r._eventCode = ""
+	r._eventData = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaSecurityJaqRpCloudEventAPIRequest) SetEventData(_eventData strin
 // GetEventData EventData Getter
 func (r AlibabaSecurityJaqRpCloudEventAPIRequest) GetEventData() string {
 	return r._eventData
+}
+
+var poolAlibabaSecurityJaqRpCloudEventAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqRpCloudEventRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqRpCloudEventRequest 从 sync.Pool 获取 AlibabaSecurityJaqRpCloudEventAPIRequest
+func GetAlibabaSecurityJaqRpCloudEventAPIRequest() *AlibabaSecurityJaqRpCloudEventAPIRequest {
+	return poolAlibabaSecurityJaqRpCloudEventAPIRequest.Get().(*AlibabaSecurityJaqRpCloudEventAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqRpCloudEventAPIRequest 将 AlibabaSecurityJaqRpCloudEventAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqRpCloudEventAPIRequest(v *AlibabaSecurityJaqRpCloudEventAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqRpCloudEventAPIRequest.Put(v)
 }

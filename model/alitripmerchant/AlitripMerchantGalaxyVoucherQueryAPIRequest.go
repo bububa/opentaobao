@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripMerchantGalaxyVoucherQueryAPIRequest struct {
 // NewAlitripMerchantGalaxyVoucherQueryRequest 初始化AlitripMerchantGalaxyVoucherQueryAPIRequest对象
 func NewAlitripMerchantGalaxyVoucherQueryRequest() *AlitripMerchantGalaxyVoucherQueryAPIRequest {
 	return &AlitripMerchantGalaxyVoucherQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyVoucherQueryAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r._voucherId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripMerchantGalaxyVoucherQueryAPIRequest) SetVoucherId(_voucherId st
 // GetVoucherId VoucherId Getter
 func (r AlitripMerchantGalaxyVoucherQueryAPIRequest) GetVoucherId() string {
 	return r._voucherId
+}
+
+var poolAlitripMerchantGalaxyVoucherQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyVoucherQueryRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyVoucherQueryRequest 从 sync.Pool 获取 AlitripMerchantGalaxyVoucherQueryAPIRequest
+func GetAlitripMerchantGalaxyVoucherQueryAPIRequest() *AlitripMerchantGalaxyVoucherQueryAPIRequest {
+	return poolAlitripMerchantGalaxyVoucherQueryAPIRequest.Get().(*AlitripMerchantGalaxyVoucherQueryAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyVoucherQueryAPIRequest 将 AlitripMerchantGalaxyVoucherQueryAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyVoucherQueryAPIRequest(v *AlitripMerchantGalaxyVoucherQueryAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyVoucherQueryAPIRequest.Put(v)
 }

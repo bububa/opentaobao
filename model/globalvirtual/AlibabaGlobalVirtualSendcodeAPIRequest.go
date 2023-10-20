@@ -2,6 +2,7 @@ package globalvirtual
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaGlobalVirtualSendcodeAPIRequest struct {
 // NewAlibabaGlobalVirtualSendcodeRequest 初始化AlibabaGlobalVirtualSendcodeAPIRequest对象
 func NewAlibabaGlobalVirtualSendcodeRequest() *AlibabaGlobalVirtualSendcodeAPIRequest {
 	return &AlibabaGlobalVirtualSendcodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaGlobalVirtualSendcodeAPIRequest) Reset() {
+	r._codeList = r._codeList[:0]
+	r._tradeOrderLineId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaGlobalVirtualSendcodeAPIRequest) SetTradeOrderLineId(_tradeOrder
 // GetTradeOrderLineId TradeOrderLineId Getter
 func (r AlibabaGlobalVirtualSendcodeAPIRequest) GetTradeOrderLineId() int64 {
 	return r._tradeOrderLineId
+}
+
+var poolAlibabaGlobalVirtualSendcodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaGlobalVirtualSendcodeRequest()
+	},
+}
+
+// GetAlibabaGlobalVirtualSendcodeRequest 从 sync.Pool 获取 AlibabaGlobalVirtualSendcodeAPIRequest
+func GetAlibabaGlobalVirtualSendcodeAPIRequest() *AlibabaGlobalVirtualSendcodeAPIRequest {
+	return poolAlibabaGlobalVirtualSendcodeAPIRequest.Get().(*AlibabaGlobalVirtualSendcodeAPIRequest)
+}
+
+// ReleaseAlibabaGlobalVirtualSendcodeAPIRequest 将 AlibabaGlobalVirtualSendcodeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaGlobalVirtualSendcodeAPIRequest(v *AlibabaGlobalVirtualSendcodeAPIRequest) {
+	v.Reset()
+	poolAlibabaGlobalVirtualSendcodeAPIRequest.Put(v)
 }

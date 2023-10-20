@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest struct {
 // NewAlibabaScbpAdGroupDeleteAdGroupBatchRequest 初始化AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest对象
 func NewAlibabaScbpAdGroupDeleteAdGroupBatchRequest() *AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest {
 	return &AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) Reset() {
+	r._topContext = nil
+	r._campaignId = 0
+	r._adGroupBatchOperation = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) SetAdGroupBatchOperatio
 // GetAdGroupBatchOperation AdGroupBatchOperation Getter
 func (r AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) GetAdGroupBatchOperation() *AdGroupBatchOperationDto {
 	return r._adGroupBatchOperation
+}
+
+var poolAlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdGroupDeleteAdGroupBatchRequest()
+	},
+}
+
+// GetAlibabaScbpAdGroupDeleteAdGroupBatchRequest 从 sync.Pool 获取 AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest
+func GetAlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest() *AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest {
+	return poolAlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest.Get().(*AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest 将 AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest(v *AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest.Put(v)
 }

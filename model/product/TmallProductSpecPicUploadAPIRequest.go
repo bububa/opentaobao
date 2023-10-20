@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallProductSpecPicUploadAPIRequest struct {
 // NewTmallProductSpecPicUploadRequest 初始化TmallProductSpecPicUploadAPIRequest对象
 func NewTmallProductSpecPicUploadRequest() *TmallProductSpecPicUploadAPIRequest {
 	return &TmallProductSpecPicUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallProductSpecPicUploadAPIRequest) Reset() {
+	r._certifyType = 0
+	r._certifyPic = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallProductSpecPicUploadAPIRequest) SetCertifyPic(_certifyPic *model.F
 // GetCertifyPic CertifyPic Getter
 func (r TmallProductSpecPicUploadAPIRequest) GetCertifyPic() *model.File {
 	return r._certifyPic
+}
+
+var poolTmallProductSpecPicUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallProductSpecPicUploadRequest()
+	},
+}
+
+// GetTmallProductSpecPicUploadRequest 从 sync.Pool 获取 TmallProductSpecPicUploadAPIRequest
+func GetTmallProductSpecPicUploadAPIRequest() *TmallProductSpecPicUploadAPIRequest {
+	return poolTmallProductSpecPicUploadAPIRequest.Get().(*TmallProductSpecPicUploadAPIRequest)
+}
+
+// ReleaseTmallProductSpecPicUploadAPIRequest 将 TmallProductSpecPicUploadAPIRequest 放入 sync.Pool
+func ReleaseTmallProductSpecPicUploadAPIRequest(v *TmallProductSpecPicUploadAPIRequest) {
+	v.Reset()
+	poolTmallProductSpecPicUploadAPIRequest.Put(v)
 }

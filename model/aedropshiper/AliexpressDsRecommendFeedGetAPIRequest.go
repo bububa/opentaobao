@@ -2,6 +2,7 @@ package aedropshiper
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AliexpressDsRecommendFeedGetAPIRequest struct {
 // NewAliexpressDsRecommendFeedGetRequest 初始化AliexpressDsRecommendFeedGetAPIRequest对象
 func NewAliexpressDsRecommendFeedGetRequest() *AliexpressDsRecommendFeedGetAPIRequest {
 	return &AliexpressDsRecommendFeedGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressDsRecommendFeedGetAPIRequest) Reset() {
+	r._country = ""
+	r._targetCurrency = ""
+	r._targetLanguage = ""
+	r._sort = ""
+	r._categoryId = ""
+	r._feedName = ""
+	r._pageSize = 0
+	r._pageNo = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *AliexpressDsRecommendFeedGetAPIRequest) SetPageNo(_pageNo int64) error 
 // GetPageNo PageNo Getter
 func (r AliexpressDsRecommendFeedGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
+}
+
+var poolAliexpressDsRecommendFeedGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressDsRecommendFeedGetRequest()
+	},
+}
+
+// GetAliexpressDsRecommendFeedGetRequest 从 sync.Pool 获取 AliexpressDsRecommendFeedGetAPIRequest
+func GetAliexpressDsRecommendFeedGetAPIRequest() *AliexpressDsRecommendFeedGetAPIRequest {
+	return poolAliexpressDsRecommendFeedGetAPIRequest.Get().(*AliexpressDsRecommendFeedGetAPIRequest)
+}
+
+// ReleaseAliexpressDsRecommendFeedGetAPIRequest 将 AliexpressDsRecommendFeedGetAPIRequest 放入 sync.Pool
+func ReleaseAliexpressDsRecommendFeedGetAPIRequest(v *AliexpressDsRecommendFeedGetAPIRequest) {
+	v.Reset()
+	poolAliexpressDsRecommendFeedGetAPIRequest.Put(v)
 }

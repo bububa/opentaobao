@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest struct {
 // NewAlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailRequest 初始化AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest对象
 func NewAlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailRequest() *AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest {
 	return &AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest) Reset() {
+	r._billCode = ""
+	r._refEntId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest) SetRefEntI
 // GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest) GetRefEntId() string {
 	return r._refEntId
+}
+
+var poolAlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailRequest 从 sync.Pool 获取 AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest
+func GetAlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest() *AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest {
+	return poolAlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest.Get().(*AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest 将 AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest(v *AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest.Put(v)
 }

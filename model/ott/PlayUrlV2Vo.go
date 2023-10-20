@@ -1,7 +1,11 @@
 package ott
 
-// PlayUrlV2vo 结构体
-type PlayUrlV2vo struct {
+import (
+	"sync"
+)
+
+// PlayUrlV2Vo 结构体
+type PlayUrlV2Vo struct {
 	// hlsContent
 	HlsContent string `json:"hls_content,omitempty" xml:"hls_content,omitempty"`
 	// hlsContentUrl
@@ -42,4 +46,40 @@ type PlayUrlV2vo struct {
 	Live bool `json:"live,omitempty" xml:"live,omitempty"`
 	// vr
 	Vr bool `json:"vr,omitempty" xml:"vr,omitempty"`
+}
+
+var poolPlayUrlV2Vo = sync.Pool{
+	New: func() any {
+		return new(PlayUrlV2Vo)
+	},
+}
+
+// GetPlayUrlV2Vo() 从对象池中获取PlayUrlV2Vo
+func GetPlayUrlV2Vo() *PlayUrlV2Vo {
+	return poolPlayUrlV2Vo.Get().(*PlayUrlV2Vo)
+}
+
+// ReleasePlayUrlV2Vo 释放PlayUrlV2Vo
+func ReleasePlayUrlV2Vo(v *PlayUrlV2Vo) {
+	v.HlsContent = ""
+	v.HlsContentUrl = ""
+	v.DashContent = ""
+	v.DrmToken = ""
+	v.OrderStatus = 0
+	v.Ytid = 0
+	v.ErrCode = 0
+	v.Duration = 0
+	v.ProgramId = 0
+	v.ProductType = 0
+	v.SourceInfo = nil
+	v.HttpDns = nil
+	v.StartTime = 0
+	v.EndTime = 0
+	v.Trial = false
+	v.TokenValid = false
+	v.Free = false
+	v.OverDeviceLimit = false
+	v.Live = false
+	v.Vr = false
+	poolPlayUrlV2Vo.Put(v)
 }

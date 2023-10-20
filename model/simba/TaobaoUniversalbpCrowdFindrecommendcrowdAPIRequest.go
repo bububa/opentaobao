@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest struct {
 // NewTaobaoUniversalbpCrowdFindrecommendcrowdRequest 初始化TaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest对象
 func NewTaobaoUniversalbpCrowdFindrecommendcrowdRequest() *TaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest {
 	return &TaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._crowdRecQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest) SetCrowdRecQueryVO(
 // GetCrowdRecQueryVO CrowdRecQueryVO Getter
 func (r TaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest) GetCrowdRecQueryVO() *CrowdRecQueryVo {
 	return r._crowdRecQueryVO
+}
+
+var poolTaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpCrowdFindrecommendcrowdRequest()
+	},
+}
+
+// GetTaobaoUniversalbpCrowdFindrecommendcrowdRequest 从 sync.Pool 获取 TaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest
+func GetTaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest() *TaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest {
+	return poolTaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest.Get().(*TaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest 将 TaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest(v *TaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpCrowdFindrecommendcrowdAPIRequest.Put(v)
 }

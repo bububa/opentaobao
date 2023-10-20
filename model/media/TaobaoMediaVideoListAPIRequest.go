@@ -2,6 +2,7 @@ package media
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoMediaVideoListAPIRequest struct {
 // NewTaobaoMediaVideoListRequest 初始化TaobaoMediaVideoListAPIRequest对象
 func NewTaobaoMediaVideoListRequest() *TaobaoMediaVideoListAPIRequest {
 	return &TaobaoMediaVideoListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMediaVideoListAPIRequest) Reset() {
+	r._searchCondition = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoMediaVideoListAPIRequest) SetSearchCondition(_searchCondition *Vi
 // GetSearchCondition SearchCondition Getter
 func (r TaobaoMediaVideoListAPIRequest) GetSearchCondition() *VideoSearchCondition2 {
 	return r._searchCondition
+}
+
+var poolTaobaoMediaVideoListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMediaVideoListRequest()
+	},
+}
+
+// GetTaobaoMediaVideoListRequest 从 sync.Pool 获取 TaobaoMediaVideoListAPIRequest
+func GetTaobaoMediaVideoListAPIRequest() *TaobaoMediaVideoListAPIRequest {
+	return poolTaobaoMediaVideoListAPIRequest.Get().(*TaobaoMediaVideoListAPIRequest)
+}
+
+// ReleaseTaobaoMediaVideoListAPIRequest 将 TaobaoMediaVideoListAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMediaVideoListAPIRequest(v *TaobaoMediaVideoListAPIRequest) {
+	v.Reset()
+	poolTaobaoMediaVideoListAPIRequest.Put(v)
 }

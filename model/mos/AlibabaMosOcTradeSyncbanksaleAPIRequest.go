@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMosOcTradeSyncbanksaleAPIRequest struct {
 // NewAlibabaMosOcTradeSyncbanksaleRequest 初始化AlibabaMosOcTradeSyncbanksaleAPIRequest对象
 func NewAlibabaMosOcTradeSyncbanksaleRequest() *AlibabaMosOcTradeSyncbanksaleAPIRequest {
 	return &AlibabaMosOcTradeSyncbanksaleAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosOcTradeSyncbanksaleAPIRequest) Reset() {
+	r._posBankSaleInfoDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMosOcTradeSyncbanksaleAPIRequest) SetPosBankSaleInfoDto(_posBank
 // GetPosBankSaleInfoDto PosBankSaleInfoDto Getter
 func (r AlibabaMosOcTradeSyncbanksaleAPIRequest) GetPosBankSaleInfoDto() *PosBankSaleInfoDto {
 	return r._posBankSaleInfoDto
+}
+
+var poolAlibabaMosOcTradeSyncbanksaleAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosOcTradeSyncbanksaleRequest()
+	},
+}
+
+// GetAlibabaMosOcTradeSyncbanksaleRequest 从 sync.Pool 获取 AlibabaMosOcTradeSyncbanksaleAPIRequest
+func GetAlibabaMosOcTradeSyncbanksaleAPIRequest() *AlibabaMosOcTradeSyncbanksaleAPIRequest {
+	return poolAlibabaMosOcTradeSyncbanksaleAPIRequest.Get().(*AlibabaMosOcTradeSyncbanksaleAPIRequest)
+}
+
+// ReleaseAlibabaMosOcTradeSyncbanksaleAPIRequest 将 AlibabaMosOcTradeSyncbanksaleAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosOcTradeSyncbanksaleAPIRequest(v *AlibabaMosOcTradeSyncbanksaleAPIRequest) {
+	v.Reset()
+	poolAlibabaMosOcTradeSyncbanksaleAPIRequest.Put(v)
 }

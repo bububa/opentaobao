@@ -2,6 +2,7 @@ package itpolicy
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoAlitripItFareGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripItFareGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoAlitripItFareGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAlitripItFareGetAPIResponseModel).Reset()
 }
 
 // TaobaoAlitripItFareGetAPIResponseModel is 【国际机票自有政策】单条查询 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoAlitripItFareGetAPIResponseModel struct {
 	FareType int64 `json:"fare_type,omitempty" xml:"fare_type,omitempty"`
 	// 0：未发布 1：已发布 2：已过期
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAlitripItFareGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ExtendAttributes = ""
+	m.FareJson = ""
+	m.FareId = 0
+	m.FareType = 0
+	m.Status = 0
+}
+
+var poolTaobaoAlitripItFareGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripItFareGetAPIResponse)
+	},
+}
+
+// GetTaobaoAlitripItFareGetAPIResponse 从 sync.Pool 获取 TaobaoAlitripItFareGetAPIResponse
+func GetTaobaoAlitripItFareGetAPIResponse() *TaobaoAlitripItFareGetAPIResponse {
+	return poolTaobaoAlitripItFareGetAPIResponse.Get().(*TaobaoAlitripItFareGetAPIResponse)
+}
+
+// ReleaseTaobaoAlitripItFareGetAPIResponse 将 TaobaoAlitripItFareGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAlitripItFareGetAPIResponse(v *TaobaoAlitripItFareGetAPIResponse) {
+	v.Reset()
+	poolTaobaoAlitripItFareGetAPIResponse.Put(v)
 }

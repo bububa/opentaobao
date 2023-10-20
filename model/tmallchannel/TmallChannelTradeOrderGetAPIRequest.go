@@ -2,6 +2,7 @@ package tmallchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallChannelTradeOrderGetAPIRequest struct {
 // NewTmallChannelTradeOrderGetRequest 初始化TmallChannelTradeOrderGetAPIRequest对象
 func NewTmallChannelTradeOrderGetRequest() *TmallChannelTradeOrderGetAPIRequest {
 	return &TmallChannelTradeOrderGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallChannelTradeOrderGetAPIRequest) Reset() {
+	r._mainPurchaseOrderNo = 0
+	r._isIncludeSubOrder = false
+	r._isIncludeMainOrder = false
+	r._isIncludeLogistics = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallChannelTradeOrderGetAPIRequest) SetIsIncludeLogistics(_isIncludeLo
 // GetIsIncludeLogistics IsIncludeLogistics Getter
 func (r TmallChannelTradeOrderGetAPIRequest) GetIsIncludeLogistics() bool {
 	return r._isIncludeLogistics
+}
+
+var poolTmallChannelTradeOrderGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallChannelTradeOrderGetRequest()
+	},
+}
+
+// GetTmallChannelTradeOrderGetRequest 从 sync.Pool 获取 TmallChannelTradeOrderGetAPIRequest
+func GetTmallChannelTradeOrderGetAPIRequest() *TmallChannelTradeOrderGetAPIRequest {
+	return poolTmallChannelTradeOrderGetAPIRequest.Get().(*TmallChannelTradeOrderGetAPIRequest)
+}
+
+// ReleaseTmallChannelTradeOrderGetAPIRequest 将 TmallChannelTradeOrderGetAPIRequest 放入 sync.Pool
+func ReleaseTmallChannelTradeOrderGetAPIRequest(v *TmallChannelTradeOrderGetAPIRequest) {
+	v.Reset()
+	poolTmallChannelTradeOrderGetAPIRequest.Put(v)
 }

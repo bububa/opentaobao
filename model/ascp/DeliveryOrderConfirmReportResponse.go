@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // DeliveryOrderConfirmReportResponse 结构体
 type DeliveryOrderConfirmReportResponse struct {
 	// traceId，类似于requestId
@@ -10,4 +14,24 @@ type DeliveryOrderConfirmReportResponse struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 成功或者失败
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolDeliveryOrderConfirmReportResponse = sync.Pool{
+	New: func() any {
+		return new(DeliveryOrderConfirmReportResponse)
+	},
+}
+
+// GetDeliveryOrderConfirmReportResponse() 从对象池中获取DeliveryOrderConfirmReportResponse
+func GetDeliveryOrderConfirmReportResponse() *DeliveryOrderConfirmReportResponse {
+	return poolDeliveryOrderConfirmReportResponse.Get().(*DeliveryOrderConfirmReportResponse)
+}
+
+// ReleaseDeliveryOrderConfirmReportResponse 释放DeliveryOrderConfirmReportResponse
+func ReleaseDeliveryOrderConfirmReportResponse(v *DeliveryOrderConfirmReportResponse) {
+	v.TraceId = ""
+	v.Code = ""
+	v.Message = ""
+	v.Success = false
+	poolDeliveryOrderConfirmReportResponse.Put(v)
 }

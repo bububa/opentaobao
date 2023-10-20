@@ -2,6 +2,7 @@ package aesolution
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressSolutionSkuAttributeQueryAPIRequest struct {
 // NewAliexpressSolutionSkuAttributeQueryRequest 初始化AliexpressSolutionSkuAttributeQueryAPIRequest对象
 func NewAliexpressSolutionSkuAttributeQueryRequest() *AliexpressSolutionSkuAttributeQueryAPIRequest {
 	return &AliexpressSolutionSkuAttributeQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSolutionSkuAttributeQueryAPIRequest) Reset() {
+	r._querySkuAttributeInfoRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressSolutionSkuAttributeQueryAPIRequest) SetQuerySkuAttributeInfo
 // GetQuerySkuAttributeInfoRequest QuerySkuAttributeInfoRequest Getter
 func (r AliexpressSolutionSkuAttributeQueryAPIRequest) GetQuerySkuAttributeInfoRequest() *SkuAttributeInfoQueryRequest {
 	return r._querySkuAttributeInfoRequest
+}
+
+var poolAliexpressSolutionSkuAttributeQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSolutionSkuAttributeQueryRequest()
+	},
+}
+
+// GetAliexpressSolutionSkuAttributeQueryRequest 从 sync.Pool 获取 AliexpressSolutionSkuAttributeQueryAPIRequest
+func GetAliexpressSolutionSkuAttributeQueryAPIRequest() *AliexpressSolutionSkuAttributeQueryAPIRequest {
+	return poolAliexpressSolutionSkuAttributeQueryAPIRequest.Get().(*AliexpressSolutionSkuAttributeQueryAPIRequest)
+}
+
+// ReleaseAliexpressSolutionSkuAttributeQueryAPIRequest 将 AliexpressSolutionSkuAttributeQueryAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSolutionSkuAttributeQueryAPIRequest(v *AliexpressSolutionSkuAttributeQueryAPIRequest) {
+	v.Reset()
+	poolAliexpressSolutionSkuAttributeQueryAPIRequest.Put(v)
 }

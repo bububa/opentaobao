@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // OrderQuery 结构体
 type OrderQuery struct {
 	// Query order information in multiple order status. For specific order status, see order_status description.
@@ -20,4 +24,29 @@ type OrderQuery struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// the current page
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
+}
+
+var poolOrderQuery = sync.Pool{
+	New: func() any {
+		return new(OrderQuery)
+	},
+}
+
+// GetOrderQuery() 从对象池中获取OrderQuery
+func GetOrderQuery() *OrderQuery {
+	return poolOrderQuery.Get().(*OrderQuery)
+}
+
+// ReleaseOrderQuery 释放OrderQuery
+func ReleaseOrderQuery(v *OrderQuery) {
+	v.OrderStatusList = v.OrderStatusList[:0]
+	v.CreateDateEnd = ""
+	v.CreateDateStart = ""
+	v.ModifiedDateStart = ""
+	v.BuyerLoginId = ""
+	v.ModifiedDateEnd = ""
+	v.OrderStatus = ""
+	v.PageSize = 0
+	v.CurrentPage = 0
+	poolOrderQuery.Put(v)
 }

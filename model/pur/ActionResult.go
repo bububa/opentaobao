@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // ActionResult 结构体
 type ActionResult struct {
 	// 系统自动生成
@@ -24,4 +28,31 @@ type ActionResult struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+var poolActionResult = sync.Pool{
+	New: func() any {
+		return new(ActionResult)
+	},
+}
+
+// GetActionResult() 从对象池中获取ActionResult
+func GetActionResult() *ActionResult {
+	return poolActionResult.Get().(*ActionResult)
+}
+
+// ReleaseActionResult 释放ActionResult
+func ReleaseActionResult(v *ActionResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.RedirectUrl = ""
+	v.Message = ""
+	v.ProductUrl = ""
+	v.PackageId = ""
+	v.Content = ""
+	v.Error = ""
+	v.RetValue = ""
+	v.Success = false
+	v.IsSuccess = false
+	poolActionResult.Put(v)
 }

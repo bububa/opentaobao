@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest struct {
 // NewAlibabaAlihouseNewhomeAdviserSubmitAccountRequest 初始化AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest对象
 func NewAlibabaAlihouseNewhomeAdviserSubmitAccountRequest() *AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest {
 	return &AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest) Reset() {
+	r._outerConsultantId = ""
+	r._outerShopId = ""
+	r._status = 0
+	r._version = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest) SetVersion(_versi
 // GetVersion Version Getter
 func (r AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest) GetVersion() int64 {
 	return r._version
+}
+
+var poolAlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeAdviserSubmitAccountRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeAdviserSubmitAccountRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest
+func GetAlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest() *AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest {
+	return poolAlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest.Get().(*AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest 将 AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest(v *AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest.Put(v)
 }

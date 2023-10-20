@@ -1,5 +1,9 @@
 package alimember
 
+import (
+	"sync"
+)
+
 // SyncMemberPointChangeDto 结构体
 type SyncMemberPointChangeDto struct {
 	// 主账号使用main，子账号使用sub
@@ -28,4 +32,33 @@ type SyncMemberPointChangeDto struct {
 	PointType int64 `json:"point_type,omitempty" xml:"point_type,omitempty"`
 	// 成长值变更发生时间，毫秒级时间戳，一般早于同步时间
 	ChangeTime int64 `json:"change_time,omitempty" xml:"change_time,omitempty"`
+}
+
+var poolSyncMemberPointChangeDto = sync.Pool{
+	New: func() any {
+		return new(SyncMemberPointChangeDto)
+	},
+}
+
+// GetSyncMemberPointChangeDto() 从对象池中获取SyncMemberPointChangeDto
+func GetSyncMemberPointChangeDto() *SyncMemberPointChangeDto {
+	return poolSyncMemberPointChangeDto.Get().(*SyncMemberPointChangeDto)
+}
+
+// ReleaseSyncMemberPointChangeDto 释放SyncMemberPointChangeDto
+func ReleaseSyncMemberPointChangeDto(v *SyncMemberPointChangeDto) {
+	v.UidType = ""
+	v.OrderId = ""
+	v.OuterMemberId = ""
+	v.RawQuantity = ""
+	v.SerialNo = ""
+	v.Ouid = ""
+	v.OldTotalPoint = ""
+	v.TotalPoint = ""
+	v.OperateType = 0
+	v.Channel = 0
+	v.BizScene = 0
+	v.PointType = 0
+	v.ChangeTime = 0
+	poolSyncMemberPointChangeDto.Put(v)
 }

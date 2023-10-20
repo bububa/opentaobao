@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLsyCrmActivityUpdateAPIRequest struct {
 // NewAlibabaLsyCrmActivityUpdateRequest 初始化AlibabaLsyCrmActivityUpdateAPIRequest对象
 func NewAlibabaLsyCrmActivityUpdateRequest() *AlibabaLsyCrmActivityUpdateAPIRequest {
 	return &AlibabaLsyCrmActivityUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLsyCrmActivityUpdateAPIRequest) Reset() {
+	r._nrtUpdateActivityReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLsyCrmActivityUpdateAPIRequest) SetNrtUpdateActivityReq(_nrtUpda
 // GetNrtUpdateActivityReq NrtUpdateActivityReq Getter
 func (r AlibabaLsyCrmActivityUpdateAPIRequest) GetNrtUpdateActivityReq() *NrtUpdateActivityReq {
 	return r._nrtUpdateActivityReq
+}
+
+var poolAlibabaLsyCrmActivityUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLsyCrmActivityUpdateRequest()
+	},
+}
+
+// GetAlibabaLsyCrmActivityUpdateRequest 从 sync.Pool 获取 AlibabaLsyCrmActivityUpdateAPIRequest
+func GetAlibabaLsyCrmActivityUpdateAPIRequest() *AlibabaLsyCrmActivityUpdateAPIRequest {
+	return poolAlibabaLsyCrmActivityUpdateAPIRequest.Get().(*AlibabaLsyCrmActivityUpdateAPIRequest)
+}
+
+// ReleaseAlibabaLsyCrmActivityUpdateAPIRequest 将 AlibabaLsyCrmActivityUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLsyCrmActivityUpdateAPIRequest(v *AlibabaLsyCrmActivityUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaLsyCrmActivityUpdateAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package bus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBusTvmcancelorderSetAPIRequest struct {
 // NewTaobaoBusTvmcancelorderSetRequest 初始化TaobaoBusTvmcancelorderSetAPIRequest对象
 func NewTaobaoBusTvmcancelorderSetRequest() *TaobaoBusTvmcancelorderSetAPIRequest {
 	return &TaobaoBusTvmcancelorderSetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBusTvmcancelorderSetAPIRequest) Reset() {
+	r._alitripOrderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBusTvmcancelorderSetAPIRequest) SetAlitripOrderId(_alitripOrderId
 // GetAlitripOrderId AlitripOrderId Getter
 func (r TaobaoBusTvmcancelorderSetAPIRequest) GetAlitripOrderId() string {
 	return r._alitripOrderId
+}
+
+var poolTaobaoBusTvmcancelorderSetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBusTvmcancelorderSetRequest()
+	},
+}
+
+// GetTaobaoBusTvmcancelorderSetRequest 从 sync.Pool 获取 TaobaoBusTvmcancelorderSetAPIRequest
+func GetTaobaoBusTvmcancelorderSetAPIRequest() *TaobaoBusTvmcancelorderSetAPIRequest {
+	return poolTaobaoBusTvmcancelorderSetAPIRequest.Get().(*TaobaoBusTvmcancelorderSetAPIRequest)
+}
+
+// ReleaseTaobaoBusTvmcancelorderSetAPIRequest 将 TaobaoBusTvmcancelorderSetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBusTvmcancelorderSetAPIRequest(v *TaobaoBusTvmcancelorderSetAPIRequest) {
+	v.Reset()
+	poolTaobaoBusTvmcancelorderSetAPIRequest.Put(v)
 }

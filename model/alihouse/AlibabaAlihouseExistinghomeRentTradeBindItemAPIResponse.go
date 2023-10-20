@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse struct {
 	AlibabaAlihouseExistinghomeRentTradeBindItemAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihouseExistinghomeRentTradeBindItemAPIResponseModel).Reset()
+}
+
 // AlibabaAlihouseExistinghomeRentTradeBindItemAPIResponseModel is 交易绑定商品 成功返回结果
 type AlibabaAlihouseExistinghomeRentTradeBindItemAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_existinghome_rent_trade_bind_item_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihouseExistinghomeRentTradeBindItemAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回值对象
 	Result *AlibabaAlihouseExistinghomeRentTradeBindItemResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihouseExistinghomeRentTradeBindItemAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse)
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse 从 sync.Pool 获取 AlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse
+func GetAlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse() *AlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse {
+	return poolAlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse.Get().(*AlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse 将 AlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse(v *AlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse.Put(v)
 }

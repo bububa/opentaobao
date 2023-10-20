@@ -2,6 +2,7 @@ package openmall
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -28,8 +29,18 @@ type TaobaoOpenmallTradeBatchGetAPIRequest struct {
 // NewTaobaoOpenmallTradeBatchGetRequest 初始化TaobaoOpenmallTradeBatchGetAPIRequest对象
 func NewTaobaoOpenmallTradeBatchGetRequest() *TaobaoOpenmallTradeBatchGetAPIRequest {
 	return &TaobaoOpenmallTradeBatchGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenmallTradeBatchGetAPIRequest) Reset() {
+	r._endCreated = ""
+	r._distributor = ""
+	r._startCreated = ""
+	r._pageIndex = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -112,4 +123,21 @@ func (r *TaobaoOpenmallTradeBatchGetAPIRequest) SetPageSize(_pageSize int64) err
 // GetPageSize PageSize Getter
 func (r TaobaoOpenmallTradeBatchGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoOpenmallTradeBatchGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenmallTradeBatchGetRequest()
+	},
+}
+
+// GetTaobaoOpenmallTradeBatchGetRequest 从 sync.Pool 获取 TaobaoOpenmallTradeBatchGetAPIRequest
+func GetTaobaoOpenmallTradeBatchGetAPIRequest() *TaobaoOpenmallTradeBatchGetAPIRequest {
+	return poolTaobaoOpenmallTradeBatchGetAPIRequest.Get().(*TaobaoOpenmallTradeBatchGetAPIRequest)
+}
+
+// ReleaseTaobaoOpenmallTradeBatchGetAPIRequest 将 TaobaoOpenmallTradeBatchGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenmallTradeBatchGetAPIRequest(v *TaobaoOpenmallTradeBatchGetAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenmallTradeBatchGetAPIRequest.Put(v)
 }

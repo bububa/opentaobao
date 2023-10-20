@@ -9,11 +9,6 @@ import (
 // alitrip.travel.gereralproduct.update
 //
 // 提供给飞猪供销平台供应商发布编辑通用类目产品的API
-func AlitripTravelGereralproductUpdate(clt *core.SDKClient, req *travel.AlitripTravelGereralproductUpdateAPIRequest, session string) (*travel.AlitripTravelGereralproductUpdateAPIResponse, error) {
-	var resp travel.AlitripTravelGereralproductUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripTravelGereralproductUpdate(clt *core.SDKClient, req *travel.AlitripTravelGereralproductUpdateAPIRequest, resp *travel.AlitripTravelGereralproductUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

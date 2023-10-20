@@ -1,5 +1,9 @@
 package koubeimall
 
+import (
+	"sync"
+)
+
 // CommentTag 结构体
 type CommentTag struct {
 	// 标签内容
@@ -8,4 +12,23 @@ type CommentTag struct {
 	Emotion int64 `json:"emotion,omitempty" xml:"emotion,omitempty"`
 	// 标签数量
 	TagCount int64 `json:"tag_count,omitempty" xml:"tag_count,omitempty"`
+}
+
+var poolCommentTag = sync.Pool{
+	New: func() any {
+		return new(CommentTag)
+	},
+}
+
+// GetCommentTag() 从对象池中获取CommentTag
+func GetCommentTag() *CommentTag {
+	return poolCommentTag.Get().(*CommentTag)
+}
+
+// ReleaseCommentTag 释放CommentTag
+func ReleaseCommentTag(v *CommentTag) {
+	v.TagContent = ""
+	v.Emotion = 0
+	v.TagCount = 0
+	poolCommentTag.Put(v)
 }

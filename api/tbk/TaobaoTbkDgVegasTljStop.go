@@ -9,11 +9,6 @@ import (
 // taobao.tbk.dg.vegas.tlj.stop
 //
 // 淘宝客推广者可对已经创建的淘礼金暂停发放
-func TaobaoTbkDgVegasTljStop(clt *core.SDKClient, req *tbk.TaobaoTbkDgVegasTljStopAPIRequest, session string) (*tbk.TaobaoTbkDgVegasTljStopAPIResponse, error) {
-	var resp tbk.TaobaoTbkDgVegasTljStopAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTbkDgVegasTljStop(clt *core.SDKClient, req *tbk.TaobaoTbkDgVegasTljStopAPIRequest, resp *tbk.TaobaoTbkDgVegasTljStopAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

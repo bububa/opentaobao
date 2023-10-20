@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ErpArrivalNoticeDto 结构体
 type ErpArrivalNoticeDto struct {
 	// 1
@@ -24,4 +28,31 @@ type ErpArrivalNoticeDto struct {
 	SubOrderType int64 `json:"sub_order_type,omitempty" xml:"sub_order_type,omitempty"`
 	// 如部分商品不存在，是否允许其他商品入库(1：允许，其他：不允许)
 	Bypass int64 `json:"bypass,omitempty" xml:"bypass,omitempty"`
+}
+
+var poolErpArrivalNoticeDto = sync.Pool{
+	New: func() any {
+		return new(ErpArrivalNoticeDto)
+	},
+}
+
+// GetErpArrivalNoticeDto() 从对象池中获取ErpArrivalNoticeDto
+func GetErpArrivalNoticeDto() *ErpArrivalNoticeDto {
+	return poolErpArrivalNoticeDto.Get().(*ErpArrivalNoticeDto)
+}
+
+// ReleaseErpArrivalNoticeDto 释放ErpArrivalNoticeDto
+func ReleaseErpArrivalNoticeDto(v *ErpArrivalNoticeDto) {
+	v.ItemList = v.ItemList[:0]
+	v.OriginalBillCode = ""
+	v.SupplierCode = ""
+	v.InvalidDate = ""
+	v.BizOrderCode = ""
+	v.WarehouseCode = ""
+	v.ContactInfo = ""
+	v.ArrivalDate = ""
+	v.BizOrderType = 0
+	v.SubOrderType = 0
+	v.Bypass = 0
+	poolErpArrivalNoticeDto.Put(v)
 }

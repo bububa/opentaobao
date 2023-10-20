@@ -9,11 +9,6 @@ import (
 // alibaba.hm.marketing.itempool.stair.removeitem
 //
 // 删除换购商品
-func AlibabaHmMarketingItempoolStairRemoveitem(clt *core.SDKClient, req *wdk.AlibabaHmMarketingItempoolStairRemoveitemAPIRequest, session string) (*wdk.AlibabaHmMarketingItempoolStairRemoveitemAPIResponse, error) {
-	var resp wdk.AlibabaHmMarketingItempoolStairRemoveitemAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHmMarketingItempoolStairRemoveitem(clt *core.SDKClient, req *wdk.AlibabaHmMarketingItempoolStairRemoveitemAPIRequest, resp *wdk.AlibabaHmMarketingItempoolStairRemoveitemAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

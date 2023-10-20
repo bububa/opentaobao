@@ -1,5 +1,9 @@
 package car
 
+import (
+	"sync"
+)
+
 // RentCarDepositInfo 结构体
 type RentCarDepositInfo struct {
 	// 免押节点
@@ -20,4 +24,29 @@ type RentCarDepositInfo struct {
 	LegalDepositExpireTime int64 `json:"legal_deposit_expire_time,omitempty" xml:"legal_deposit_expire_time,omitempty"`
 	// 是否信用免押
 	EnableDeposit bool `json:"enable_deposit,omitempty" xml:"enable_deposit,omitempty"`
+}
+
+var poolRentCarDepositInfo = sync.Pool{
+	New: func() any {
+		return new(RentCarDepositInfo)
+	},
+}
+
+// GetRentCarDepositInfo() 从对象池中获取RentCarDepositInfo
+func GetRentCarDepositInfo() *RentCarDepositInfo {
+	return poolRentCarDepositInfo.Get().(*RentCarDepositInfo)
+}
+
+// ReleaseRentCarDepositInfo 释放RentCarDepositInfo
+func ReleaseRentCarDepositInfo(v *RentCarDepositInfo) {
+	v.DepositNodes = v.DepositNodes[:0]
+	v.CarPreDeposit = ""
+	v.DepositNum = ""
+	v.DepositStatus = ""
+	v.DepositType = ""
+	v.LegalPreDeposit = ""
+	v.CarDepositExpireTime = 0
+	v.LegalDepositExpireTime = 0
+	v.EnableDeposit = false
+	poolRentCarDepositInfo.Put(v)
 }

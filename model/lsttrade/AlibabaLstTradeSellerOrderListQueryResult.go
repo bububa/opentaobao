@@ -1,5 +1,9 @@
 package lsttrade
 
+import (
+	"sync"
+)
+
 // AlibabaLstTradeSellerOrderListQueryResult 结构体
 type AlibabaLstTradeSellerOrderListQueryResult struct {
 	// 信息
@@ -16,4 +20,27 @@ type AlibabaLstTradeSellerOrderListQueryResult struct {
 	Page int64 `json:"page,omitempty" xml:"page,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaLstTradeSellerOrderListQueryResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaLstTradeSellerOrderListQueryResult)
+	},
+}
+
+// GetAlibabaLstTradeSellerOrderListQueryResult() 从对象池中获取AlibabaLstTradeSellerOrderListQueryResult
+func GetAlibabaLstTradeSellerOrderListQueryResult() *AlibabaLstTradeSellerOrderListQueryResult {
+	return poolAlibabaLstTradeSellerOrderListQueryResult.Get().(*AlibabaLstTradeSellerOrderListQueryResult)
+}
+
+// ReleaseAlibabaLstTradeSellerOrderListQueryResult 释放AlibabaLstTradeSellerOrderListQueryResult
+func ReleaseAlibabaLstTradeSellerOrderListQueryResult(v *AlibabaLstTradeSellerOrderListQueryResult) {
+	v.ContentList = v.ContentList[:0]
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.Total = 0
+	v.Size = 0
+	v.Page = 0
+	v.Success = false
+	poolAlibabaLstTradeSellerOrderListQueryResult.Put(v)
 }

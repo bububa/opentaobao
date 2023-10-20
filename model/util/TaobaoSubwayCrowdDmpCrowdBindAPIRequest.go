@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoSubwayCrowdDmpCrowdBindAPIRequest struct {
 // NewTaobaoSubwayCrowdDmpCrowdBindRequest 初始化TaobaoSubwayCrowdDmpCrowdBindAPIRequest对象
 func NewTaobaoSubwayCrowdDmpCrowdBindRequest() *TaobaoSubwayCrowdDmpCrowdBindAPIRequest {
 	return &TaobaoSubwayCrowdDmpCrowdBindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSubwayCrowdDmpCrowdBindAPIRequest) Reset() {
+	r._crowdRefDTOs = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoSubwayCrowdDmpCrowdBindAPIRequest) SetCrowdRefDTOs(_crowdRefDTOs 
 // GetCrowdRefDTOs CrowdRefDTOs Getter
 func (r TaobaoSubwayCrowdDmpCrowdBindAPIRequest) GetCrowdRefDTOs() *CrowdRefTopDto {
 	return r._crowdRefDTOs
+}
+
+var poolTaobaoSubwayCrowdDmpCrowdBindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSubwayCrowdDmpCrowdBindRequest()
+	},
+}
+
+// GetTaobaoSubwayCrowdDmpCrowdBindRequest 从 sync.Pool 获取 TaobaoSubwayCrowdDmpCrowdBindAPIRequest
+func GetTaobaoSubwayCrowdDmpCrowdBindAPIRequest() *TaobaoSubwayCrowdDmpCrowdBindAPIRequest {
+	return poolTaobaoSubwayCrowdDmpCrowdBindAPIRequest.Get().(*TaobaoSubwayCrowdDmpCrowdBindAPIRequest)
+}
+
+// ReleaseTaobaoSubwayCrowdDmpCrowdBindAPIRequest 将 TaobaoSubwayCrowdDmpCrowdBindAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSubwayCrowdDmpCrowdBindAPIRequest(v *TaobaoSubwayCrowdDmpCrowdBindAPIRequest) {
+	v.Reset()
+	poolTaobaoSubwayCrowdDmpCrowdBindAPIRequest.Put(v)
 }

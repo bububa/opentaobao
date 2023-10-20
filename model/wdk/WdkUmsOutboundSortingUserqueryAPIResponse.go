@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type WdkUmsOutboundSortingUserqueryAPIResponse struct {
 	WdkUmsOutboundSortingUserqueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *WdkUmsOutboundSortingUserqueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.WdkUmsOutboundSortingUserqueryAPIResponseModel).Reset()
+}
+
 // WdkUmsOutboundSortingUserqueryAPIResponseModel is dps-查询分货作业人员信息 成功返回结果
 type WdkUmsOutboundSortingUserqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"wdk_ums_outbound_sorting_userquery_response"`
@@ -22,4 +29,27 @@ type WdkUmsOutboundSortingUserqueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果
 	Result *UmsResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *WdkUmsOutboundSortingUserqueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolWdkUmsOutboundSortingUserqueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(WdkUmsOutboundSortingUserqueryAPIResponse)
+	},
+}
+
+// GetWdkUmsOutboundSortingUserqueryAPIResponse 从 sync.Pool 获取 WdkUmsOutboundSortingUserqueryAPIResponse
+func GetWdkUmsOutboundSortingUserqueryAPIResponse() *WdkUmsOutboundSortingUserqueryAPIResponse {
+	return poolWdkUmsOutboundSortingUserqueryAPIResponse.Get().(*WdkUmsOutboundSortingUserqueryAPIResponse)
+}
+
+// ReleaseWdkUmsOutboundSortingUserqueryAPIResponse 将 WdkUmsOutboundSortingUserqueryAPIResponse 保存到 sync.Pool
+func ReleaseWdkUmsOutboundSortingUserqueryAPIResponse(v *WdkUmsOutboundSortingUserqueryAPIResponse) {
+	v.Reset()
+	poolWdkUmsOutboundSortingUserqueryAPIResponse.Put(v)
 }

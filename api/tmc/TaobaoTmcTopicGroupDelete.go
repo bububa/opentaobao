@@ -9,11 +9,6 @@ import (
 // taobao.tmc.topic.group.delete
 //
 // 删除根据topic名称路由消息到不同的分组关系
-func TaobaoTmcTopicGroupDelete(clt *core.SDKClient, req *tmc.TaobaoTmcTopicGroupDeleteAPIRequest, session string) (*tmc.TaobaoTmcTopicGroupDeleteAPIResponse, error) {
-	var resp tmc.TaobaoTmcTopicGroupDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTmcTopicGroupDelete(clt *core.SDKClient, req *tmc.TaobaoTmcTopicGroupDeleteAPIRequest, resp *tmc.TaobaoTmcTopicGroupDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

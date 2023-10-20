@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaInteractAllsparkisvDrawAPIRequest struct {
 // NewAlibabaInteractAllsparkisvDrawRequest 初始化AlibabaInteractAllsparkisvDrawAPIRequest对象
 func NewAlibabaInteractAllsparkisvDrawRequest() *AlibabaInteractAllsparkisvDrawAPIRequest {
 	return &AlibabaInteractAllsparkisvDrawAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractAllsparkisvDrawAPIRequest) Reset() {
+	r._test = ""
+	r._ddd = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaInteractAllsparkisvDrawAPIRequest) SetDdd(_ddd string) error {
 // GetDdd Ddd Getter
 func (r AlibabaInteractAllsparkisvDrawAPIRequest) GetDdd() string {
 	return r._ddd
+}
+
+var poolAlibabaInteractAllsparkisvDrawAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractAllsparkisvDrawRequest()
+	},
+}
+
+// GetAlibabaInteractAllsparkisvDrawRequest 从 sync.Pool 获取 AlibabaInteractAllsparkisvDrawAPIRequest
+func GetAlibabaInteractAllsparkisvDrawAPIRequest() *AlibabaInteractAllsparkisvDrawAPIRequest {
+	return poolAlibabaInteractAllsparkisvDrawAPIRequest.Get().(*AlibabaInteractAllsparkisvDrawAPIRequest)
+}
+
+// ReleaseAlibabaInteractAllsparkisvDrawAPIRequest 将 AlibabaInteractAllsparkisvDrawAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractAllsparkisvDrawAPIRequest(v *AlibabaInteractAllsparkisvDrawAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractAllsparkisvDrawAPIRequest.Put(v)
 }

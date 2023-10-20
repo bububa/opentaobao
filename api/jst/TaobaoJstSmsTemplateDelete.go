@@ -9,11 +9,6 @@ import (
 // taobao.jst.sms.template.delete
 //
 // 淘宝短信模板删除
-func TaobaoJstSmsTemplateDelete(clt *core.SDKClient, req *jst.TaobaoJstSmsTemplateDeleteAPIRequest, session string) (*jst.TaobaoJstSmsTemplateDeleteAPIResponse, error) {
-	var resp jst.TaobaoJstSmsTemplateDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJstSmsTemplateDelete(clt *core.SDKClient, req *jst.TaobaoJstSmsTemplateDeleteAPIRequest, resp *jst.TaobaoJstSmsTemplateDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,14 @@ type TaobaoAreasGetAPIRequest struct {
 // NewTaobaoAreasGetRequest 初始化TaobaoAreasGetAPIRequest对象
 func NewTaobaoAreasGetRequest() *TaobaoAreasGetAPIRequest {
 	return &TaobaoAreasGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAreasGetAPIRequest) Reset() {
+	r._fields = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *TaobaoAreasGetAPIRequest) SetFields(_fields string) error {
 // GetFields Fields Getter
 func (r TaobaoAreasGetAPIRequest) GetFields() string {
 	return r._fields
+}
+
+var poolTaobaoAreasGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAreasGetRequest()
+	},
+}
+
+// GetTaobaoAreasGetRequest 从 sync.Pool 获取 TaobaoAreasGetAPIRequest
+func GetTaobaoAreasGetAPIRequest() *TaobaoAreasGetAPIRequest {
+	return poolTaobaoAreasGetAPIRequest.Get().(*TaobaoAreasGetAPIRequest)
+}
+
+// ReleaseTaobaoAreasGetAPIRequest 将 TaobaoAreasGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAreasGetAPIRequest(v *TaobaoAreasGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAreasGetAPIRequest.Put(v)
 }

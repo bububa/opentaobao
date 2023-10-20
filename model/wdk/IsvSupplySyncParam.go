@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // IsvSupplySyncParam 结构体
 type IsvSupplySyncParam struct {
 	// 商品条码
@@ -22,4 +26,30 @@ type IsvSupplySyncParam struct {
 	ModifyQuantity int64 `json:"modify_quantity,omitempty" xml:"modify_quantity,omitempty"`
 	// 派样活动id
 	SampleActivityId int64 `json:"sample_activity_id,omitempty" xml:"sample_activity_id,omitempty"`
+}
+
+var poolIsvSupplySyncParam = sync.Pool{
+	New: func() any {
+		return new(IsvSupplySyncParam)
+	},
+}
+
+// GetIsvSupplySyncParam() 从对象池中获取IsvSupplySyncParam
+func GetIsvSupplySyncParam() *IsvSupplySyncParam {
+	return poolIsvSupplySyncParam.Get().(*IsvSupplySyncParam)
+}
+
+// ReleaseIsvSupplySyncParam 释放IsvSupplySyncParam
+func ReleaseIsvSupplySyncParam(v *IsvSupplySyncParam) {
+	v.Barcode = ""
+	v.WarehouseType = ""
+	v.WarehouseCode = ""
+	v.Warehouse = ""
+	v.ModifyType = ""
+	v.ModifyTime = ""
+	v.Operator = ""
+	v.OrderId = 0
+	v.ModifyQuantity = 0
+	v.SampleActivityId = 0
+	poolIsvSupplySyncParam.Put(v)
 }

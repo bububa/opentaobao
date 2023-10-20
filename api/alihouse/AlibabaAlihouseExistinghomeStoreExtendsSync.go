@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghome.store.extends.sync
 //
 // 门店扩展信息变更
-func AlibabaAlihouseExistinghomeStoreExtendsSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeStoreExtendsSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghomeStoreExtendsSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeStoreExtendsSyncAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

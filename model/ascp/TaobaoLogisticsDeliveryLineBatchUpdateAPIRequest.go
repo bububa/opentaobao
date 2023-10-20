@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsDeliveryLineBatchUpdateAPIRequest struct {
 // NewTaobaoLogisticsDeliveryLineBatchUpdateRequest 初始化TaobaoLogisticsDeliveryLineBatchUpdateAPIRequest对象
 func NewTaobaoLogisticsDeliveryLineBatchUpdateRequest() *TaobaoLogisticsDeliveryLineBatchUpdateAPIRequest {
 	return &TaobaoLogisticsDeliveryLineBatchUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsDeliveryLineBatchUpdateAPIRequest) Reset() {
+	r._deliveryLineBatchUpdateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsDeliveryLineBatchUpdateAPIRequest) SetDeliveryLineBatchU
 // GetDeliveryLineBatchUpdateRequest DeliveryLineBatchUpdateRequest Getter
 func (r TaobaoLogisticsDeliveryLineBatchUpdateAPIRequest) GetDeliveryLineBatchUpdateRequest() *DeliveryLineBatchUpdateRequest {
 	return r._deliveryLineBatchUpdateRequest
+}
+
+var poolTaobaoLogisticsDeliveryLineBatchUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsDeliveryLineBatchUpdateRequest()
+	},
+}
+
+// GetTaobaoLogisticsDeliveryLineBatchUpdateRequest 从 sync.Pool 获取 TaobaoLogisticsDeliveryLineBatchUpdateAPIRequest
+func GetTaobaoLogisticsDeliveryLineBatchUpdateAPIRequest() *TaobaoLogisticsDeliveryLineBatchUpdateAPIRequest {
+	return poolTaobaoLogisticsDeliveryLineBatchUpdateAPIRequest.Get().(*TaobaoLogisticsDeliveryLineBatchUpdateAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsDeliveryLineBatchUpdateAPIRequest 将 TaobaoLogisticsDeliveryLineBatchUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsDeliveryLineBatchUpdateAPIRequest(v *TaobaoLogisticsDeliveryLineBatchUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsDeliveryLineBatchUpdateAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.uop.self.supplier.waybill.query
 //
 // ERP调用打印面单取号接口
-func AlibabaAscpUopSelfSupplierWaybillQuery(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopSelfSupplierWaybillQueryAPIRequest, session string) (*ascpchannel.AlibabaAscpUopSelfSupplierWaybillQueryAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpUopSelfSupplierWaybillQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpUopSelfSupplierWaybillQuery(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopSelfSupplierWaybillQueryAPIRequest, resp *ascpchannel.AlibabaAscpUopSelfSupplierWaybillQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

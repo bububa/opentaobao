@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // ItemMapping 结构体
 type ItemMapping struct {
 	// 奇门仓储字段,C123,string(50),
@@ -14,4 +18,26 @@ type ItemMapping struct {
 	ShopItemId string `json:"shopItemId,omitempty" xml:"shopItemId,omitempty"`
 	// 奇门仓储字段,C123,string(50),
 	SkuId string `json:"skuId,omitempty" xml:"skuId,omitempty"`
+}
+
+var poolItemMapping = sync.Pool{
+	New: func() any {
+		return new(ItemMapping)
+	},
+}
+
+// GetItemMapping() 从对象池中获取ItemMapping
+func GetItemMapping() *ItemMapping {
+	return poolItemMapping.Get().(*ItemMapping)
+}
+
+// ReleaseItemMapping 释放ItemMapping
+func ReleaseItemMapping(v *ItemMapping) {
+	v.OwnerCode = ""
+	v.ShopNick = ""
+	v.ItemSource = ""
+	v.ItemId = ""
+	v.ShopItemId = ""
+	v.SkuId = ""
+	poolItemMapping.Put(v)
 }

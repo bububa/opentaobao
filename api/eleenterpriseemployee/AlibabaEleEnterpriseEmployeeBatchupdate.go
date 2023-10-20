@@ -9,11 +9,6 @@ import (
 // alibaba.ele.enterprise.employee.batchupdate
 //
 // 批量新增更新员工
-func AlibabaEleEnterpriseEmployeeBatchupdate(clt *core.SDKClient, req *eleenterpriseemployee.AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest, session string) (*eleenterpriseemployee.AlibabaEleEnterpriseEmployeeBatchupdateAPIResponse, error) {
-	var resp eleenterpriseemployee.AlibabaEleEnterpriseEmployeeBatchupdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEleEnterpriseEmployeeBatchupdate(clt *core.SDKClient, req *eleenterpriseemployee.AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest, resp *eleenterpriseemployee.AlibabaEleEnterpriseEmployeeBatchupdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.pictures.dengta.wbaccount.price.change
 //
 // 微博公众号推广价格变更通知接口
-func AlibabaPicturesDengtaWbaccountPriceChange(clt *core.SDKClient, req *dengta.AlibabaPicturesDengtaWbaccountPriceChangeAPIRequest, session string) (*dengta.AlibabaPicturesDengtaWbaccountPriceChangeAPIResponse, error) {
-	var resp dengta.AlibabaPicturesDengtaWbaccountPriceChangeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaPicturesDengtaWbaccountPriceChange(clt *core.SDKClient, req *dengta.AlibabaPicturesDengtaWbaccountPriceChangeAPIRequest, resp *dengta.AlibabaPicturesDengtaWbaccountPriceChangeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

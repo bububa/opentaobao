@@ -9,11 +9,6 @@ import (
 // cainiao.bim.tradeorder.consign
 //
 // 驱动保税交易订单发货
-func CainiaoBimTradeorderConsign(clt *core.SDKClient, req *wms.CainiaoBimTradeorderConsignAPIRequest, session string) (*wms.CainiaoBimTradeorderConsignAPIResponse, error) {
-	var resp wms.CainiaoBimTradeorderConsignAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoBimTradeorderConsign(clt *core.SDKClient, req *wms.CainiaoBimTradeorderConsignAPIRequest, resp *wms.CainiaoBimTradeorderConsignAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

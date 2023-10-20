@@ -1,5 +1,9 @@
 package maitix
 
+import (
+	"sync"
+)
+
 // PriceInfoDto 结构体
 type PriceInfoDto struct {
 	// 套票构成
@@ -22,4 +26,30 @@ type PriceInfoDto struct {
 	SubStatus int64 `json:"sub_status,omitempty" xml:"sub_status,omitempty"`
 	// 是否可售 true可售 false不可售
 	AbleSell bool `json:"able_sell,omitempty" xml:"able_sell,omitempty"`
+}
+
+var poolPriceInfoDto = sync.Pool{
+	New: func() any {
+		return new(PriceInfoDto)
+	},
+}
+
+// GetPriceInfoDto() 从对象池中获取PriceInfoDto
+func GetPriceInfoDto() *PriceInfoDto {
+	return poolPriceInfoDto.Get().(*PriceInfoDto)
+}
+
+// ReleasePriceInfoDto 释放PriceInfoDto
+func ReleasePriceInfoDto(v *PriceInfoDto) {
+	v.OpenCombinePrices = v.OpenCombinePrices[:0]
+	v.PriceName = ""
+	v.PriceId = 0
+	v.PriceType = 0
+	v.Price = nil
+	v.MaxStock = 0
+	v.ProjectId = 0
+	v.PerformId = 0
+	v.SubStatus = 0
+	v.AbleSell = false
+	poolPriceInfoDto.Put(v)
 }

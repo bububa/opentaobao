@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAilabsAligenieDeviceRegisterAPIRequest struct {
 // NewAlibabaAilabsAligenieDeviceRegisterRequest 初始化AlibabaAilabsAligenieDeviceRegisterAPIRequest对象
 func NewAlibabaAilabsAligenieDeviceRegisterRequest() *AlibabaAilabsAligenieDeviceRegisterAPIRequest {
 	return &AlibabaAilabsAligenieDeviceRegisterAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsAligenieDeviceRegisterAPIRequest) Reset() {
+	r._macSections = ""
+	r._deviceId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAilabsAligenieDeviceRegisterAPIRequest) SetDeviceId(_deviceId in
 // GetDeviceId DeviceId Getter
 func (r AlibabaAilabsAligenieDeviceRegisterAPIRequest) GetDeviceId() int64 {
 	return r._deviceId
+}
+
+var poolAlibabaAilabsAligenieDeviceRegisterAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsAligenieDeviceRegisterRequest()
+	},
+}
+
+// GetAlibabaAilabsAligenieDeviceRegisterRequest 从 sync.Pool 获取 AlibabaAilabsAligenieDeviceRegisterAPIRequest
+func GetAlibabaAilabsAligenieDeviceRegisterAPIRequest() *AlibabaAilabsAligenieDeviceRegisterAPIRequest {
+	return poolAlibabaAilabsAligenieDeviceRegisterAPIRequest.Get().(*AlibabaAilabsAligenieDeviceRegisterAPIRequest)
+}
+
+// ReleaseAlibabaAilabsAligenieDeviceRegisterAPIRequest 将 AlibabaAilabsAligenieDeviceRegisterAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsAligenieDeviceRegisterAPIRequest(v *AlibabaAilabsAligenieDeviceRegisterAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsAligenieDeviceRegisterAPIRequest.Put(v)
 }

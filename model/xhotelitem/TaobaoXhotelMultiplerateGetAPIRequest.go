@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoXhotelMultiplerateGetAPIRequest struct {
 // NewTaobaoXhotelMultiplerateGetRequest 初始化TaobaoXhotelMultiplerateGetAPIRequest对象
 func NewTaobaoXhotelMultiplerateGetRequest() *TaobaoXhotelMultiplerateGetAPIRequest {
 	return &TaobaoXhotelMultiplerateGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelMultiplerateGetAPIRequest) Reset() {
+	r._ratePlanCode = ""
+	r._outRid = ""
+	r._vendor = ""
+	r._nod = 0
+	r._nop = 0
+	r._ratePlanId = 0
+	r._gid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoXhotelMultiplerateGetAPIRequest) SetGid(_gid int64) error {
 // GetGid Gid Getter
 func (r TaobaoXhotelMultiplerateGetAPIRequest) GetGid() int64 {
 	return r._gid
+}
+
+var poolTaobaoXhotelMultiplerateGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelMultiplerateGetRequest()
+	},
+}
+
+// GetTaobaoXhotelMultiplerateGetRequest 从 sync.Pool 获取 TaobaoXhotelMultiplerateGetAPIRequest
+func GetTaobaoXhotelMultiplerateGetAPIRequest() *TaobaoXhotelMultiplerateGetAPIRequest {
+	return poolTaobaoXhotelMultiplerateGetAPIRequest.Get().(*TaobaoXhotelMultiplerateGetAPIRequest)
+}
+
+// ReleaseTaobaoXhotelMultiplerateGetAPIRequest 将 TaobaoXhotelMultiplerateGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelMultiplerateGetAPIRequest(v *TaobaoXhotelMultiplerateGetAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelMultiplerateGetAPIRequest.Put(v)
 }

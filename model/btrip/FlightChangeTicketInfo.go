@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // FlightChangeTicketInfo 结构体
 type FlightChangeTicketInfo struct {
 	// 改签票号
@@ -30,4 +34,34 @@ type FlightChangeTicketInfo struct {
 	ChangeFee float64 `json:"change_fee,omitempty" xml:"change_fee,omitempty"`
 	// 机票升舱费
 	UpgradeFee float64 `json:"upgrade_fee,omitempty" xml:"upgrade_fee,omitempty"`
+}
+
+var poolFlightChangeTicketInfo = sync.Pool{
+	New: func() any {
+		return new(FlightChangeTicketInfo)
+	},
+}
+
+// GetFlightChangeTicketInfo() 从对象池中获取FlightChangeTicketInfo
+func GetFlightChangeTicketInfo() *FlightChangeTicketInfo {
+	return poolFlightChangeTicketInfo.Get().(*FlightChangeTicketInfo)
+}
+
+// ReleaseFlightChangeTicketInfo 释放FlightChangeTicketInfo
+func ReleaseFlightChangeTicketInfo(v *FlightChangeTicketInfo) {
+	v.TicketNo = ""
+	v.GmtCreate = ""
+	v.GmtModify = ""
+	v.OriginTicketNo = ""
+	v.ChangeFlightNo = ""
+	v.ChangeCabin = ""
+	v.ChangeCabinLevel = ""
+	v.DepTime = ""
+	v.ArrTime = ""
+	v.ChangeReason = ""
+	v.ChangeOrderId = 0
+	v.ChangeType = 0
+	v.ChangeFee = 0
+	v.UpgradeFee = 0
+	poolFlightChangeTicketInfo.Put(v)
 }

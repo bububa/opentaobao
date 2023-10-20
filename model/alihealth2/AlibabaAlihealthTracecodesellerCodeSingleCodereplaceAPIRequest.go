@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest struct {
 // NewAlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest 初始化AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest对象
 func NewAlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest() *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest {
 	return &AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) Reset() {
+	r._entInfoId = ""
+	r._newCode = ""
+	r._oldCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) SetOldC
 // GetOldCode OldCode Getter
 func (r AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) GetOldCode() string {
 	return r._oldCode
+}
+
+var poolAlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest()
+	},
+}
+
+// GetAlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest 从 sync.Pool 获取 AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest
+func GetAlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest() *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest {
+	return poolAlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest.Get().(*AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest 将 AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest(v *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest.Put(v)
 }

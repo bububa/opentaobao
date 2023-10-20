@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest struct {
 // NewAlibabaTclsAelophyMerchantChannelRefundCancelRequest 初始化AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest对象
 func NewAlibabaTclsAelophyMerchantChannelRefundCancelRequest() *AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest {
 	return &AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest) Reset() {
+	r._refundCancelInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest) SetRefundCance
 // GetRefundCancelInfo RefundCancelInfo Getter
 func (r AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest) GetRefundCancelInfo() *RefundCancelInfo {
 	return r._refundCancelInfo
+}
+
+var poolAlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsAelophyMerchantChannelRefundCancelRequest()
+	},
+}
+
+// GetAlibabaTclsAelophyMerchantChannelRefundCancelRequest 从 sync.Pool 获取 AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest
+func GetAlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest() *AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest {
+	return poolAlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest.Get().(*AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest)
+}
+
+// ReleaseAlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest 将 AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest(v *AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest.Put(v)
 }

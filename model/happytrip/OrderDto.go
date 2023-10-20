@@ -1,5 +1,9 @@
 package happytrip
 
+import (
+	"sync"
+)
+
 // OrderDto 结构体
 type OrderDto struct {
 	// 航旅交易号
@@ -74,4 +78,56 @@ type OrderDto struct {
 	OrderClassSecondId int64 `json:"order_class_second_id,omitempty" xml:"order_class_second_id,omitempty"`
 	// 是否有效订单0无效，1有效
 	ValidFlag int64 `json:"valid_flag,omitempty" xml:"valid_flag,omitempty"`
+}
+
+var poolOrderDto = sync.Pool{
+	New: func() any {
+		return new(OrderDto)
+	},
+}
+
+// GetOrderDto() 从对象池中获取OrderDto
+func GetOrderDto() *OrderDto {
+	return poolOrderDto.Get().(*OrderDto)
+}
+
+// ReleaseOrderDto 释放OrderDto
+func ReleaseOrderDto(v *OrderDto) {
+	v.AlipayTradeNo = ""
+	v.BizTypeDesc = ""
+	v.BookTime = ""
+	v.BuyerUserId = ""
+	v.BuyerUserMemo = ""
+	v.BuyerUserName = ""
+	v.CloseTime = ""
+	v.CurrentStatus = ""
+	v.CurrentStatusDesc = ""
+	v.ExpireTime = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.IssueTime = ""
+	v.Memo = ""
+	v.OrderClassName = ""
+	v.OrderClassSecondName = ""
+	v.OutOrderId = ""
+	v.OutOrderStatus = ""
+	v.OutOrderStatusDesc = ""
+	v.OuterTravelHeadId = ""
+	v.PayStatus = ""
+	v.PayStatusDesc = ""
+	v.PayTime = ""
+	v.PayType = ""
+	v.PlanTime = ""
+	v.Source = ""
+	v.TotalPrice = ""
+	v.TotalPriceCurrencyCode = ""
+	v.TotalPriceDecimalPlaces = ""
+	v.B2gFlag = 0
+	v.BizType = 0
+	v.Id = 0
+	v.OnlineFlag = 0
+	v.OrderClassId = 0
+	v.OrderClassSecondId = 0
+	v.ValidFlag = 0
+	poolOrderDto.Put(v)
 }

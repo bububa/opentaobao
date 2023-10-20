@@ -9,11 +9,6 @@ import (
 // taobao.baodian.server.sdk.config.get
 //
 // 获取SDK各种配置项（已迁移）
-func TaobaoBaodianServerSdkConfigGet(clt *core.SDKClient, req *baodian.TaobaoBaodianServerSdkConfigGetAPIRequest, session string) (*baodian.TaobaoBaodianServerSdkConfigGetAPIResponse, error) {
-	var resp baodian.TaobaoBaodianServerSdkConfigGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBaodianServerSdkConfigGet(clt *core.SDKClient, req *baodian.TaobaoBaodianServerSdkConfigGetAPIRequest, resp *baodian.TaobaoBaodianServerSdkConfigGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

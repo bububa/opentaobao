@@ -2,6 +2,7 @@ package train
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTrainAgentOrderFailAPIRequest struct {
 // NewTaobaoTrainAgentOrderFailRequest 初始化TaobaoTrainAgentOrderFailAPIRequest对象
 func NewTaobaoTrainAgentOrderFailRequest() *TaobaoTrainAgentOrderFailAPIRequest {
 	return &TaobaoTrainAgentOrderFailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTrainAgentOrderFailAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTrainAgentOrderFailAPIRequest) SetParam(_param *BookTicketFailRq)
 // GetParam Param Getter
 func (r TaobaoTrainAgentOrderFailAPIRequest) GetParam() *BookTicketFailRq {
 	return r._param
+}
+
+var poolTaobaoTrainAgentOrderFailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTrainAgentOrderFailRequest()
+	},
+}
+
+// GetTaobaoTrainAgentOrderFailRequest 从 sync.Pool 获取 TaobaoTrainAgentOrderFailAPIRequest
+func GetTaobaoTrainAgentOrderFailAPIRequest() *TaobaoTrainAgentOrderFailAPIRequest {
+	return poolTaobaoTrainAgentOrderFailAPIRequest.Get().(*TaobaoTrainAgentOrderFailAPIRequest)
+}
+
+// ReleaseTaobaoTrainAgentOrderFailAPIRequest 将 TaobaoTrainAgentOrderFailAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTrainAgentOrderFailAPIRequest(v *TaobaoTrainAgentOrderFailAPIRequest) {
+	v.Reset()
+	poolTaobaoTrainAgentOrderFailAPIRequest.Put(v)
 }

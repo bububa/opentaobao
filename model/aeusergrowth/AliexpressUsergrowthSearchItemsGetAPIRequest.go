@@ -2,6 +2,7 @@ package aeusergrowth
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AliexpressUsergrowthSearchItemsGetAPIRequest struct {
 // NewAliexpressUsergrowthSearchItemsGetRequest 初始化AliexpressUsergrowthSearchItemsGetAPIRequest对象
 func NewAliexpressUsergrowthSearchItemsGetRequest() *AliexpressUsergrowthSearchItemsGetAPIRequest {
 	return &AliexpressUsergrowthSearchItemsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressUsergrowthSearchItemsGetAPIRequest) Reset() {
+	r._keywords = ""
+	r._trackingId = ""
+	r._currencyCode = ""
+	r._language = ""
+	r._pageSize = ""
+	r._pageIndex = ""
+	r._countryCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AliexpressUsergrowthSearchItemsGetAPIRequest) SetCountryCode(_countryCo
 // GetCountryCode CountryCode Getter
 func (r AliexpressUsergrowthSearchItemsGetAPIRequest) GetCountryCode() string {
 	return r._countryCode
+}
+
+var poolAliexpressUsergrowthSearchItemsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressUsergrowthSearchItemsGetRequest()
+	},
+}
+
+// GetAliexpressUsergrowthSearchItemsGetRequest 从 sync.Pool 获取 AliexpressUsergrowthSearchItemsGetAPIRequest
+func GetAliexpressUsergrowthSearchItemsGetAPIRequest() *AliexpressUsergrowthSearchItemsGetAPIRequest {
+	return poolAliexpressUsergrowthSearchItemsGetAPIRequest.Get().(*AliexpressUsergrowthSearchItemsGetAPIRequest)
+}
+
+// ReleaseAliexpressUsergrowthSearchItemsGetAPIRequest 将 AliexpressUsergrowthSearchItemsGetAPIRequest 放入 sync.Pool
+func ReleaseAliexpressUsergrowthSearchItemsGetAPIRequest(v *AliexpressUsergrowthSearchItemsGetAPIRequest) {
+	v.Reset()
+	poolAliexpressUsergrowthSearchItemsGetAPIRequest.Put(v)
 }

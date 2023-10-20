@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.hotel.list.search
 //
 // 星河产品=酒店列表页搜索
-func AlitripMerchantGalaxyHotelListSearch(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyHotelListSearchAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyHotelListSearchAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyHotelListSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyHotelListSearch(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyHotelListSearchAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyHotelListSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

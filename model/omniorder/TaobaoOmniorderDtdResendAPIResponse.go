@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoOmniorderDtdResendAPIResponse struct {
 	TaobaoOmniorderDtdResendAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOmniorderDtdResendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOmniorderDtdResendAPIResponseModel).Reset()
+}
+
 // TaobaoOmniorderDtdResendAPIResponseModel is 门店自送重发码 成功返回结果
 type TaobaoOmniorderDtdResendAPIResponseModel struct {
 	XMLName xml.Name `xml:"omniorder_dtd_resend_response"`
@@ -24,4 +31,28 @@ type TaobaoOmniorderDtdResendAPIResponseModel struct {
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 错误信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOmniorderDtdResendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.Message = ""
+}
+
+var poolTaobaoOmniorderDtdResendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOmniorderDtdResendAPIResponse)
+	},
+}
+
+// GetTaobaoOmniorderDtdResendAPIResponse 从 sync.Pool 获取 TaobaoOmniorderDtdResendAPIResponse
+func GetTaobaoOmniorderDtdResendAPIResponse() *TaobaoOmniorderDtdResendAPIResponse {
+	return poolTaobaoOmniorderDtdResendAPIResponse.Get().(*TaobaoOmniorderDtdResendAPIResponse)
+}
+
+// ReleaseTaobaoOmniorderDtdResendAPIResponse 将 TaobaoOmniorderDtdResendAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOmniorderDtdResendAPIResponse(v *TaobaoOmniorderDtdResendAPIResponse) {
+	v.Reset()
+	poolTaobaoOmniorderDtdResendAPIResponse.Put(v)
 }

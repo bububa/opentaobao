@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // AdKeywordEffectDto 结构体
 type AdKeywordEffectDto struct {
 	// 点击量
@@ -16,4 +20,27 @@ type AdKeywordEffectDto struct {
 	Keyword string `json:"keyword,omitempty" xml:"keyword,omitempty"`
 	// 单位小时，保留一位小数，例如13.5表示13.5小时
 	OnlineTime string `json:"online_time,omitempty" xml:"online_time,omitempty"`
+}
+
+var poolAdKeywordEffectDto = sync.Pool{
+	New: func() any {
+		return new(AdKeywordEffectDto)
+	},
+}
+
+// GetAdKeywordEffectDto() 从对象池中获取AdKeywordEffectDto
+func GetAdKeywordEffectDto() *AdKeywordEffectDto {
+	return poolAdKeywordEffectDto.Get().(*AdKeywordEffectDto)
+}
+
+// ReleaseAdKeywordEffectDto 释放AdKeywordEffectDto
+func ReleaseAdKeywordEffectDto(v *AdKeywordEffectDto) {
+	v.ClickCnt = ""
+	v.ClickCostAvg = ""
+	v.Cost = ""
+	v.Ctr = ""
+	v.ImpressionCnt = ""
+	v.Keyword = ""
+	v.OnlineTime = ""
+	poolAdKeywordEffectDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // AddOwnerParam 结构体
 type AddOwnerParam struct {
 	// 房东头像地址，大小不超过3M，格式格式限制&#34;png&#34;, &#34;jpg&#34;, &#34;jpeg&#34;
@@ -68,4 +72,53 @@ type AddOwnerParam struct {
 	Validate int64 `json:"validate,omitempty" xml:"validate,omitempty"`
 	// 房东血型，0:未知,1:A型,2:B型,3:AB型,4:O型
 	BloodType int64 `json:"blood_type,omitempty" xml:"blood_type,omitempty"`
+}
+
+var poolAddOwnerParam = sync.Pool{
+	New: func() any {
+		return new(AddOwnerParam)
+	},
+}
+
+// GetAddOwnerParam() 从对象池中获取AddOwnerParam
+func GetAddOwnerParam() *AddOwnerParam {
+	return poolAddOwnerParam.Get().(*AddOwnerParam)
+}
+
+// ReleaseAddOwnerParam 释放AddOwnerParam
+func ReleaseAddOwnerParam(v *AddOwnerParam) {
+	v.AvatarUrl = ""
+	v.Birthday = ""
+	v.Country = ""
+	v.Description = ""
+	v.Email = ""
+	v.Gender = ""
+	v.Hobbies = ""
+	v.IdNumber = ""
+	v.Labels = ""
+	v.LicenseName = ""
+	v.LicenseNo = ""
+	v.MobilePhone = ""
+	v.NickName = ""
+	v.OuterId = ""
+	v.Profession = ""
+	v.RealContact = ""
+	v.RealName = ""
+	v.Story = ""
+	v.Telephone = ""
+	v.Vendor = ""
+	v.AvgConfirmTime = 0
+	v.City = 0
+	v.ConfirmRate = 0
+	v.Constellation = 0
+	v.Level = 0
+	v.LicenseType = 0
+	v.OwnerType = 0
+	v.PositiveFeedback = 0
+	v.Province = 0
+	v.Qualification = 0
+	v.ResponseRate = 0
+	v.Validate = 0
+	v.BloodType = 0
+	poolAddOwnerParam.Put(v)
 }

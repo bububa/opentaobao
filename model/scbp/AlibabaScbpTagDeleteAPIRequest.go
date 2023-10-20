@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpTagDeleteAPIRequest struct {
 // NewAlibabaScbpTagDeleteRequest 初始化AlibabaScbpTagDeleteAPIRequest对象
 func NewAlibabaScbpTagDeleteRequest() *AlibabaScbpTagDeleteAPIRequest {
 	return &AlibabaScbpTagDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpTagDeleteAPIRequest) Reset() {
+	r._tagName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpTagDeleteAPIRequest) SetTagName(_tagName string) error {
 // GetTagName TagName Getter
 func (r AlibabaScbpTagDeleteAPIRequest) GetTagName() string {
 	return r._tagName
+}
+
+var poolAlibabaScbpTagDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpTagDeleteRequest()
+	},
+}
+
+// GetAlibabaScbpTagDeleteRequest 从 sync.Pool 获取 AlibabaScbpTagDeleteAPIRequest
+func GetAlibabaScbpTagDeleteAPIRequest() *AlibabaScbpTagDeleteAPIRequest {
+	return poolAlibabaScbpTagDeleteAPIRequest.Get().(*AlibabaScbpTagDeleteAPIRequest)
+}
+
+// ReleaseAlibabaScbpTagDeleteAPIRequest 将 AlibabaScbpTagDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpTagDeleteAPIRequest(v *AlibabaScbpTagDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpTagDeleteAPIRequest.Put(v)
 }

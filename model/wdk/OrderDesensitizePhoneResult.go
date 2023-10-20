@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderDesensitizePhoneResult 结构体
 type OrderDesensitizePhoneResult struct {
 	// 商家编码
@@ -16,4 +20,27 @@ type OrderDesensitizePhoneResult struct {
 	BuyerVirtualNumber string `json:"buyer_virtual_number,omitempty" xml:"buyer_virtual_number,omitempty"`
 	// 预计过期时间
 	ExpirationTime int64 `json:"expiration_time,omitempty" xml:"expiration_time,omitempty"`
+}
+
+var poolOrderDesensitizePhoneResult = sync.Pool{
+	New: func() any {
+		return new(OrderDesensitizePhoneResult)
+	},
+}
+
+// GetOrderDesensitizePhoneResult() 从对象池中获取OrderDesensitizePhoneResult
+func GetOrderDesensitizePhoneResult() *OrderDesensitizePhoneResult {
+	return poolOrderDesensitizePhoneResult.Get().(*OrderDesensitizePhoneResult)
+}
+
+// ReleaseOrderDesensitizePhoneResult 释放OrderDesensitizePhoneResult
+func ReleaseOrderDesensitizePhoneResult(v *OrderDesensitizePhoneResult) {
+	v.MerchantCode = ""
+	v.BizOrderId = ""
+	v.StoreCode = ""
+	v.ReceiverPrivacyPhone = ""
+	v.VirtualNumber = ""
+	v.BuyerVirtualNumber = ""
+	v.ExpirationTime = 0
+	poolOrderDesensitizePhoneResult.Put(v)
 }

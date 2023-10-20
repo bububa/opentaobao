@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.uop.supplier.consignorder.ship
 //
 // ERP通过该接口通知商家仓声明销售订单出库信息,支持履约单纬度全部发货的回传（目前不支持分批回传)
-func AlibabaAscpUopSupplierConsignorderShip(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopSupplierConsignorderShipAPIRequest, session string) (*ascpchannel.AlibabaAscpUopSupplierConsignorderShipAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpUopSupplierConsignorderShipAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpUopSupplierConsignorderShip(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopSupplierConsignorderShipAPIRequest, resp *ascpchannel.AlibabaAscpUopSupplierConsignorderShipAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

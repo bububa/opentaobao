@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleOnespuRegisterUpdateAPIRequest struct {
 // NewAlibabaIdleOnespuRegisterUpdateRequest 初始化AlibabaIdleOnespuRegisterUpdateAPIRequest对象
 func NewAlibabaIdleOnespuRegisterUpdateRequest() *AlibabaIdleOnespuRegisterUpdateAPIRequest {
 	return &AlibabaIdleOnespuRegisterUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleOnespuRegisterUpdateAPIRequest) Reset() {
+	r._oneSpuSpRegisterUpdateParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleOnespuRegisterUpdateAPIRequest) SetOneSpuSpRegisterUpdatePar
 // GetOneSpuSpRegisterUpdateParam OneSpuSpRegisterUpdateParam Getter
 func (r AlibabaIdleOnespuRegisterUpdateAPIRequest) GetOneSpuSpRegisterUpdateParam() *OneSpuSpRegisterUpdateParam {
 	return r._oneSpuSpRegisterUpdateParam
+}
+
+var poolAlibabaIdleOnespuRegisterUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleOnespuRegisterUpdateRequest()
+	},
+}
+
+// GetAlibabaIdleOnespuRegisterUpdateRequest 从 sync.Pool 获取 AlibabaIdleOnespuRegisterUpdateAPIRequest
+func GetAlibabaIdleOnespuRegisterUpdateAPIRequest() *AlibabaIdleOnespuRegisterUpdateAPIRequest {
+	return poolAlibabaIdleOnespuRegisterUpdateAPIRequest.Get().(*AlibabaIdleOnespuRegisterUpdateAPIRequest)
+}
+
+// ReleaseAlibabaIdleOnespuRegisterUpdateAPIRequest 将 AlibabaIdleOnespuRegisterUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleOnespuRegisterUpdateAPIRequest(v *AlibabaIdleOnespuRegisterUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleOnespuRegisterUpdateAPIRequest.Put(v)
 }

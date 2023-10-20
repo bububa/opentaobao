@@ -2,6 +2,7 @@ package iot
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAilabsAligenieIotDeviceControlResultAPIResponse struct {
 	AlibabaAilabsAligenieIotDeviceControlResultAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAilabsAligenieIotDeviceControlResultAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAilabsAligenieIotDeviceControlResultAPIResponseModel).Reset()
+}
+
 // AlibabaAilabsAligenieIotDeviceControlResultAPIResponseModel is 设备控制结果 成功返回结果
 type AlibabaAilabsAligenieIotDeviceControlResultAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_aligenie_iot_device_control_result_response"`
@@ -26,4 +33,29 @@ type AlibabaAilabsAligenieIotDeviceControlResultAPIResponseModel struct {
 	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
 	// result
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAilabsAligenieIotDeviceControlResultAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.StatusCode = 0
+	m.Result = false
+}
+
+var poolAlibabaAilabsAligenieIotDeviceControlResultAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAilabsAligenieIotDeviceControlResultAPIResponse)
+	},
+}
+
+// GetAlibabaAilabsAligenieIotDeviceControlResultAPIResponse 从 sync.Pool 获取 AlibabaAilabsAligenieIotDeviceControlResultAPIResponse
+func GetAlibabaAilabsAligenieIotDeviceControlResultAPIResponse() *AlibabaAilabsAligenieIotDeviceControlResultAPIResponse {
+	return poolAlibabaAilabsAligenieIotDeviceControlResultAPIResponse.Get().(*AlibabaAilabsAligenieIotDeviceControlResultAPIResponse)
+}
+
+// ReleaseAlibabaAilabsAligenieIotDeviceControlResultAPIResponse 将 AlibabaAilabsAligenieIotDeviceControlResultAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAilabsAligenieIotDeviceControlResultAPIResponse(v *AlibabaAilabsAligenieIotDeviceControlResultAPIResponse) {
+	v.Reset()
+	poolAlibabaAilabsAligenieIotDeviceControlResultAPIResponse.Put(v)
 }

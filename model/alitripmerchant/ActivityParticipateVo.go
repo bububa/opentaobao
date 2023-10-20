@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // ActivityParticipateVo 结构体
 type ActivityParticipateVo struct {
 	// 奖品名称
@@ -18,4 +22,28 @@ type ActivityParticipateVo struct {
 	GoodAmount int64 `json:"good_amount,omitempty" xml:"good_amount,omitempty"`
 	// 参与结果记录id
 	RecordId int64 `json:"record_id,omitempty" xml:"record_id,omitempty"`
+}
+
+var poolActivityParticipateVo = sync.Pool{
+	New: func() any {
+		return new(ActivityParticipateVo)
+	},
+}
+
+// GetActivityParticipateVo() 从对象池中获取ActivityParticipateVo
+func GetActivityParticipateVo() *ActivityParticipateVo {
+	return poolActivityParticipateVo.Get().(*ActivityParticipateVo)
+}
+
+// ReleaseActivityParticipateVo 释放ActivityParticipateVo
+func ReleaseActivityParticipateVo(v *ActivityParticipateVo) {
+	v.GoodName = ""
+	v.GoodImage = ""
+	v.GoodSendType = 0
+	v.ParticipateStatus = 0
+	v.GoodType = 0
+	v.GoodsId = 0
+	v.GoodAmount = 0
+	v.RecordId = 0
+	poolActivityParticipateVo.Put(v)
 }

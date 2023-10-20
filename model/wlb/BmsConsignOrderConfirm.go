@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // BmsConsignOrderConfirm 结构体
 type BmsConsignOrderConfirm struct {
 	// 运单信息列表
@@ -30,4 +34,34 @@ type BmsConsignOrderConfirm struct {
 	OrderSoruce int64 `json:"order_soruce,omitempty" xml:"order_soruce,omitempty"`
 	// 操作子类型(201 一般交易出库单,502 换货出库单,503 补发出库单)
 	OrderType int64 `json:"order_type,omitempty" xml:"order_type,omitempty"`
+}
+
+var poolBmsConsignOrderConfirm = sync.Pool{
+	New: func() any {
+		return new(BmsConsignOrderConfirm)
+	},
+}
+
+// GetBmsConsignOrderConfirm() 从对象池中获取BmsConsignOrderConfirm
+func GetBmsConsignOrderConfirm() *BmsConsignOrderConfirm {
+	return poolBmsConsignOrderConfirm.Get().(*BmsConsignOrderConfirm)
+}
+
+// ReleaseBmsConsignOrderConfirm 释放BmsConsignOrderConfirm
+func ReleaseBmsConsignOrderConfirm(v *BmsConsignOrderConfirm) {
+	v.TmsOrders = v.TmsOrders[:0]
+	v.OrderItems = v.OrderItems[:0]
+	v.ConsignTime = ""
+	v.StoreOrderCode = ""
+	v.StoreCode = ""
+	v.ShopId = ""
+	v.ErpOrderCode = ""
+	v.ConsignCode = ""
+	v.OrderCode = ""
+	v.OwnerUserId = ""
+	v.OrderPostFee = 0
+	v.OrderAmount = 0
+	v.OrderSoruce = 0
+	v.OrderType = 0
+	poolBmsConsignOrderConfirm.Put(v)
 }

@@ -2,6 +2,7 @@ package caipiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoCaipiaoShopInfoInputAPIRequest struct {
 // NewTaobaoCaipiaoShopInfoInputRequest 初始化TaobaoCaipiaoShopInfoInputAPIRequest对象
 func NewTaobaoCaipiaoShopInfoInputRequest() *TaobaoCaipiaoShopInfoInputAPIRequest {
 	return &TaobaoCaipiaoShopInfoInputAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCaipiaoShopInfoInputAPIRequest) Reset() {
+	r._shopName = ""
+	r._actStartDate = ""
+	r._actEndDate = ""
+	r._shopDesc = ""
+	r._presentType = 0
+	r._shopType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoCaipiaoShopInfoInputAPIRequest) SetShopType(_shopType int64) erro
 // GetShopType ShopType Getter
 func (r TaobaoCaipiaoShopInfoInputAPIRequest) GetShopType() int64 {
 	return r._shopType
+}
+
+var poolTaobaoCaipiaoShopInfoInputAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCaipiaoShopInfoInputRequest()
+	},
+}
+
+// GetTaobaoCaipiaoShopInfoInputRequest 从 sync.Pool 获取 TaobaoCaipiaoShopInfoInputAPIRequest
+func GetTaobaoCaipiaoShopInfoInputAPIRequest() *TaobaoCaipiaoShopInfoInputAPIRequest {
+	return poolTaobaoCaipiaoShopInfoInputAPIRequest.Get().(*TaobaoCaipiaoShopInfoInputAPIRequest)
+}
+
+// ReleaseTaobaoCaipiaoShopInfoInputAPIRequest 将 TaobaoCaipiaoShopInfoInputAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCaipiaoShopInfoInputAPIRequest(v *TaobaoCaipiaoShopInfoInputAPIRequest) {
+	v.Reset()
+	poolTaobaoCaipiaoShopInfoInputAPIRequest.Put(v)
 }

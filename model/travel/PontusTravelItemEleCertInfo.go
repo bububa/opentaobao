@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // PontusTravelItemEleCertInfo 结构体
 type PontusTravelItemEleCertInfo struct {
 	// 电子凭证 有效期 开始时间
@@ -16,4 +20,27 @@ type PontusTravelItemEleCertInfo struct {
 	AutoRefundRate int64 `json:"auto_refund_rate,omitempty" xml:"auto_refund_rate,omitempty"`
 	// 过期自动退款比例
 	ExpiredRefundRate int64 `json:"expired_refund_rate,omitempty" xml:"expired_refund_rate,omitempty"`
+}
+
+var poolPontusTravelItemEleCertInfo = sync.Pool{
+	New: func() any {
+		return new(PontusTravelItemEleCertInfo)
+	},
+}
+
+// GetPontusTravelItemEleCertInfo() 从对象池中获取PontusTravelItemEleCertInfo
+func GetPontusTravelItemEleCertInfo() *PontusTravelItemEleCertInfo {
+	return poolPontusTravelItemEleCertInfo.Get().(*PontusTravelItemEleCertInfo)
+}
+
+// ReleasePontusTravelItemEleCertInfo 释放PontusTravelItemEleCertInfo
+func ReleasePontusTravelItemEleCertInfo(v *PontusTravelItemEleCertInfo) {
+	v.ExpiryDateStart = ""
+	v.ExpiryDateEnd = ""
+	v.ExpiryDateType = 0
+	v.ExpiryDays = 0
+	v.PackageId = 0
+	v.AutoRefundRate = 0
+	v.ExpiredRefundRate = 0
+	poolPontusTravelItemEleCertInfo.Put(v)
 }

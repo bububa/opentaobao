@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // ControlRespDto 结构体
 type ControlRespDto struct {
 	// 接续控制信息:CONTINUE(接续),REJECT(拦截),IVR(收取用户键盘输入内容)
@@ -20,4 +24,29 @@ type ControlRespDto struct {
 	CallDuration int64 `json:"call_duration,omitempty" xml:"call_duration,omitempty"`
 	// 是否媒体资源降级,放弃录音放音功能；接入方无此相关功能，可忽略
 	MediaDegrade bool `json:"media_degrade,omitempty" xml:"media_degrade,omitempty"`
+}
+
+var poolControlRespDto = sync.Pool{
+	New: func() any {
+		return new(ControlRespDto)
+	},
+}
+
+// GetControlRespDto() 从对象池中获取ControlRespDto
+func GetControlRespDto() *ControlRespDto {
+	return poolControlRespDto.Get().(*ControlRespDto)
+}
+
+// ReleaseControlRespDto 释放ControlRespDto
+func ReleaseControlRespDto(v *ControlRespDto) {
+	v.ControlOperate = ""
+	v.ControlMsg = ""
+	v.ProductType = ""
+	v.CallNoPlayCode = ""
+	v.CalledNoPlayCode = ""
+	v.CalledNoCallerPlayCode = ""
+	v.Subs = nil
+	v.CallDuration = 0
+	v.MediaDegrade = false
+	poolControlRespDto.Put(v)
 }

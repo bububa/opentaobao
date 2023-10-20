@@ -2,6 +2,7 @@ package media
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoPictureCategoryAddAPIResponse struct {
 	TaobaoPictureCategoryAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoPictureCategoryAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPictureCategoryAddAPIResponseModel).Reset()
+}
+
 // TaobaoPictureCategoryAddAPIResponseModel is 新增图片分类信息 成功返回结果
 type TaobaoPictureCategoryAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"picture_category_add_response"`
@@ -22,4 +29,27 @@ type TaobaoPictureCategoryAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 图片分类信息
 	PictureCategory *PictureCategory `json:"picture_category,omitempty" xml:"picture_category,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPictureCategoryAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.PictureCategory = nil
+}
+
+var poolTaobaoPictureCategoryAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPictureCategoryAddAPIResponse)
+	},
+}
+
+// GetTaobaoPictureCategoryAddAPIResponse 从 sync.Pool 获取 TaobaoPictureCategoryAddAPIResponse
+func GetTaobaoPictureCategoryAddAPIResponse() *TaobaoPictureCategoryAddAPIResponse {
+	return poolTaobaoPictureCategoryAddAPIResponse.Get().(*TaobaoPictureCategoryAddAPIResponse)
+}
+
+// ReleaseTaobaoPictureCategoryAddAPIResponse 将 TaobaoPictureCategoryAddAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPictureCategoryAddAPIResponse(v *TaobaoPictureCategoryAddAPIResponse) {
+	v.Reset()
+	poolTaobaoPictureCategoryAddAPIResponse.Put(v)
 }

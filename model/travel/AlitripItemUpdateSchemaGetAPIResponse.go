@@ -2,6 +2,7 @@ package travel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripItemUpdateSchemaGetAPIResponse struct {
 	AlitripItemUpdateSchemaGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripItemUpdateSchemaGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripItemUpdateSchemaGetAPIResponseModel).Reset()
+}
+
 // AlitripItemUpdateSchemaGetAPIResponseModel is 获取编辑商品的schema模板 成功返回结果
 type AlitripItemUpdateSchemaGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_item_update_schema_get_response"`
@@ -22,4 +29,27 @@ type AlitripItemUpdateSchemaGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// schema数据
 	SchemaXmlFields string `json:"schema_xml_fields,omitempty" xml:"schema_xml_fields,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripItemUpdateSchemaGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SchemaXmlFields = ""
+}
+
+var poolAlitripItemUpdateSchemaGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripItemUpdateSchemaGetAPIResponse)
+	},
+}
+
+// GetAlitripItemUpdateSchemaGetAPIResponse 从 sync.Pool 获取 AlitripItemUpdateSchemaGetAPIResponse
+func GetAlitripItemUpdateSchemaGetAPIResponse() *AlitripItemUpdateSchemaGetAPIResponse {
+	return poolAlitripItemUpdateSchemaGetAPIResponse.Get().(*AlitripItemUpdateSchemaGetAPIResponse)
+}
+
+// ReleaseAlitripItemUpdateSchemaGetAPIResponse 将 AlitripItemUpdateSchemaGetAPIResponse 保存到 sync.Pool
+func ReleaseAlitripItemUpdateSchemaGetAPIResponse(v *AlitripItemUpdateSchemaGetAPIResponse) {
+	v.Reset()
+	poolAlitripItemUpdateSchemaGetAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -65,8 +66,37 @@ type TaobaoXhotelRoomtypeAddAPIRequest struct {
 // NewTaobaoXhotelRoomtypeAddRequest 初始化TaobaoXhotelRoomtypeAddAPIRequest对象
 func NewTaobaoXhotelRoomtypeAddRequest() *TaobaoXhotelRoomtypeAddAPIRequest {
 	return &TaobaoXhotelRoomtypeAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(24),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelRoomtypeAddAPIRequest) Reset() {
+	r._name = ""
+	r._area = ""
+	r._floor = ""
+	r._bedType = ""
+	r._bedSize = ""
+	r._internet = ""
+	r._service = ""
+	r._extend = ""
+	r._outerId = ""
+	r._vendor = ""
+	r._outHid = ""
+	r._pics = ""
+	r._nameE = ""
+	r._operator = ""
+	r._bedInfo = ""
+	r._standardRoomFacilities = ""
+	r._windowDesc = ""
+	r._addBed = ""
+	r._childrenPolicy = ""
+	r._hid = 0
+	r._maxOccupancy = 0
+	r._windowType = 0
+	r._srid = 0
+	r._connectionType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -396,4 +426,21 @@ func (r *TaobaoXhotelRoomtypeAddAPIRequest) SetConnectionType(_connectionType in
 // GetConnectionType ConnectionType Getter
 func (r TaobaoXhotelRoomtypeAddAPIRequest) GetConnectionType() int64 {
 	return r._connectionType
+}
+
+var poolTaobaoXhotelRoomtypeAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelRoomtypeAddRequest()
+	},
+}
+
+// GetTaobaoXhotelRoomtypeAddRequest 从 sync.Pool 获取 TaobaoXhotelRoomtypeAddAPIRequest
+func GetTaobaoXhotelRoomtypeAddAPIRequest() *TaobaoXhotelRoomtypeAddAPIRequest {
+	return poolTaobaoXhotelRoomtypeAddAPIRequest.Get().(*TaobaoXhotelRoomtypeAddAPIRequest)
+}
+
+// ReleaseTaobaoXhotelRoomtypeAddAPIRequest 将 TaobaoXhotelRoomtypeAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelRoomtypeAddAPIRequest(v *TaobaoXhotelRoomtypeAddAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelRoomtypeAddAPIRequest.Put(v)
 }

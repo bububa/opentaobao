@@ -9,11 +9,6 @@ import (
 // alibaba.lsy.crm.activity.getbaseinfo
 //
 // ISV查询活动
-func AlibabaLsyCrmActivityGetbaseinfo(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmActivityGetbaseinfoAPIRequest, session string) (*tmallnr.AlibabaLsyCrmActivityGetbaseinfoAPIResponse, error) {
-	var resp tmallnr.AlibabaLsyCrmActivityGetbaseinfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLsyCrmActivityGetbaseinfo(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmActivityGetbaseinfoAPIRequest, resp *tmallnr.AlibabaLsyCrmActivityGetbaseinfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }
