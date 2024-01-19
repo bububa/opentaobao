@@ -1,0 +1,65 @@
+{
+    "name": "taobao.crm.member.joinurl.get",
+    "apiChineseName": "会员入会地址获取",
+    "description": "会员入会地址获取",
+    "id": 35156,
+    "requestParams": [
+        {
+            "name": "callback_url",
+            "type": "String",
+            "description": "回调url",
+            "required": false
+        },
+        {
+            "name": "extra_info",
+            "type": "String",
+            "description": "扩展参数为JSON字符串，用于埋点统计，source为来源字段固定值 isvapp可录入的其他参数，活动ID：activityId三方招募来源：entrance",
+            "required": true
+        }
+    ],
+    "responseParams": [
+        {
+            "name": "result",
+            "type": "Result",
+            "description": "result",
+            "required": false,
+            "subParams": [
+                {
+                    "name": "total",
+                    "type": "Number",
+                    "description": "total",
+                    "required": false
+                },
+                {
+                    "name": "result",
+                    "type": "String",
+                    "description": "返回入会地址URL，需自行判断协议头，如返回结果为\/\/建议使用https:\/\/",
+                    "required": false
+                },
+                {
+                    "name": "error_code",
+                    "type": "Number",
+                    "description": "errorCode",
+                    "required": false
+                },
+                {
+                    "name": "error_msg",
+                    "type": "String",
+                    "required": false
+                },
+                {
+                    "name": "success",
+                    "type": "Boolean",
+                    "description": "success",
+                    "required": false
+                },
+                {
+                    "name": "exception_code",
+                    "type": "String",
+                    "description": "exceptionCode",
+                    "required": false
+                }
+            ]
+        }
+    ]
+}

@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"strconv"
+	"strings"
 )
 
 // File 用于上传文件，对应淘宝API中byte[]类型
@@ -117,6 +118,8 @@ func AnyToString(val interface{}) (string, error) {
 		}
 	case float64:
 		str = strconv.FormatFloat(val.(float64), 'f', -1, 64)
+	case []string:
+		str = strings.Join(val.([]string), ",")
 	case *File:
 		if val == nil {
 			return "file", nil
