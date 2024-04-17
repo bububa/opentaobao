@@ -232,7 +232,11 @@ func (c *SDKClient) sign(ret url.Values, commonReq *model.CommonRequest, req mod
 	commonReq.GetParams(ret)
 	req.GetApiParams(ret)
 	keys := make([]string, 0, len(ret))
+	params := req.GetRawParams()
 	for k := range ret {
+		if v, ok := params[k]; ok && v.IsFile() {
+			continue
+		}
 		keys = append(keys, k)
 	}
 	sort.Strings(keys)
