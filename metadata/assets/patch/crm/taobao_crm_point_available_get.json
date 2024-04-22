@@ -1,0 +1,34 @@
+{
+    "name": "taobao.crm.point.available.get",
+    "apiChineseName": "CRM会员积分查询开放接口",
+    "description": "查询用户在某个商家的可用积分数",
+    "id": 42617,
+    "requestParams": [
+        {
+            "name": "buyer_nick",
+            "description": "明文nick，可不填，直接填混淆昵称",
+            "type": "String",
+            "required": false
+        },
+        {
+            "name": "mix_nick",
+            "description": "混淆昵称",
+            "type": "String",
+            "required": false
+        },
+        {
+            "name": "open_uid",
+            "description": "买家openid",
+            "type": "String",
+            "required": false
+        }
+    ],
+    "responseParams": [
+        {
+            "name": "result",
+            "description": "积分数",
+            "type": "Number",
+            "required": false
+        }
+    ]
+}

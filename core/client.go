@@ -25,6 +25,7 @@ type SDKClient struct {
 	signMethod model.SignMethod // API 签名方法
 	debug      bool             // debug
 	sandbox    bool             // 是否沙箱环境
+	gateway    string           // 自定义网关
 }
 
 // NewSDKClient 新建SDKClient
@@ -72,6 +73,11 @@ func (c *SDKClient) SetSignMethod(method model.SignMethod) {
 	c.signMethod = method
 }
 
+// SetGateway 设置gateway
+func (c *SDKClient) SetGateway(gateway string) {
+	c.gateway = gateway
+}
+
 // Post 发起请求
 func (c *SDKClient) Post(req model.IRequest, resp model.IResponse, session string) error {
 	// 新建API请求通用参数
@@ -96,7 +102,9 @@ func (c *SDKClient) Post(req model.IRequest, resp model.IResponse, session strin
 // post application/xml-www-form-urlencode
 func (c *SDKClient) post(req url.Values, resp model.IResponse) error {
 	reqUrl := PRODUCT_GATEWAY
-	if c.sandbox {
+	if c.gateway != "" {
+		reqUrl = c.gateway
+	} else if c.sandbox {
 		reqUrl = SANDBOX_GATEWAY
 	}
 	debug.PrintPostJSONRequest(reqUrl, req.Encode(), c.debug)
@@ -224,7 +232,11 @@ func (c *SDKClient) sign(ret url.Values, commonReq *model.CommonRequest, req mod
 	commonReq.GetParams(ret)
 	req.GetApiParams(ret)
 	keys := make([]string, 0, len(ret))
+	params := req.GetRawParams()
 	for k := range ret {
+		if v, ok := params[k]; ok && v.IsFile() {
+			continue
+		}
 		keys = append(keys, k)
 	}
 	sort.Strings(keys)

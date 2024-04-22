@@ -1,0 +1,98 @@
+{
+    "name": "taobao.crm.member.identity.get",
+    "apiChineseName": "会员身份识别",
+    "description": "用来识别该用户是否是商家会员",
+    "id": 34436,
+    "requestParams": [
+        {
+            "name": "extra_info",
+            "type": "String",
+            "description": "扩展参数为JSON字符串，用于埋点统计，source为来源字段固定值 paiyangji代表来源派样机类型设备，deviceId 为设备id，itemId 相关商品id",
+            "required": false
+        },
+        {
+            "name": "mix_nick",
+            "type": "String",
+            "description": "混淆昵称，",
+            "required": false
+        },
+        {
+            "name": "nick",
+            "type": "String",
+            "description": "明文nick，可不填，直接填混淆昵称",
+            "required": false
+        },
+        {
+            "name": "open_id",
+            "type": "String",
+            "description": "open_id",
+            "required": false
+        }
+    ],
+    "responseParams": [
+        {
+            "name": "result",
+            "description": "result",
+            "subParams": [
+                {
+                    "name": "total",
+                    "type": "Number",
+                    "description": "total",
+                    "required": false
+                },
+                {
+                    "name": "member_info",
+                    "description": "result",
+                    "subParams": [
+                        {
+                            "name": "grade",
+                            "type": "Number",
+                            "description": "等级编号",
+                            "subParams": [],
+                            "required": false
+                        },
+                        {
+                            "name": "grade_name",
+                            "type": "String",
+                            "description": "等级名称",
+                            "subParams": [],
+                            "required": false
+                        },
+                        {
+                            "name": "gmt_create",
+                            "type": "String",
+                            "description": "gmtCreate",
+                            "subParams": [],
+                            "required": false
+                        },
+                        {
+                            "name": "bind_status",
+                            "type": "Number",
+                            "description": "bindStatus 1：绑卡（已经是线下会员线上未绑定，或者解绑后再绑定），2：注册",
+                            "subParams": [],
+                            "required": false
+                        }
+                    ],
+                    "type": "MemberAccountDto",
+                    "required": false
+                },
+                {
+                    "name": "code",
+                    "type": "String",
+                    "description": "code",
+                    "subParams": [],
+                    "required": false
+                },
+                {
+                    "name": "msg",
+                    "type": "String",
+                    "description": "msg",
+                    "subParams": [],
+                    "required": false
+                }
+            ],
+            "type": "ResultDto",
+            "required": false
+        }
+    ]
+}

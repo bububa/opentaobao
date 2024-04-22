@@ -1,0 +1,35 @@
+{
+    "name": "taobao.qianniu.auto.task.config.check",
+    "apiChineseName": "自动化任务设置校验",
+    "description": "校验自动化任务配置",
+    "id": 53528,
+    "requestParams": [
+        {
+            "name": "auto_task",
+            "type": "String",
+            "description": "场景，例如：催拍= RemindBuyBot"
+        }
+    ],
+    "responseParams": [
+        {
+            "description": "是否成功",
+            "name": "rpc_success",
+            "type": "Boolean"
+        },
+        {
+            "description": "success",
+            "name": "module",
+            "type": "Boolean"
+        },
+        {
+            "description": "错误信息",
+            "name": "rpc_error_message",
+            "type": "String"
+        },
+        {
+            "description": "错误码",
+            "name": "rpc_error_code",
+            "type": "Number"
+        }
+    ]
+}
