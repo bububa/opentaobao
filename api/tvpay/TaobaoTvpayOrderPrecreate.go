@@ -1,6 +1,8 @@
 package tvpay
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tvpay"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.tvpay.order.precreate
 //
 // tv支付预下单
-func TaobaoTvpayOrderPrecreate(clt *core.SDKClient, req *tvpay.TaobaoTvpayOrderPrecreateAPIRequest, resp *tvpay.TaobaoTvpayOrderPrecreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTvpayOrderPrecreate(ctx context.Context, clt *core.SDKClient, req *tvpay.TaobaoTvpayOrderPrecreateAPIRequest, resp *tvpay.TaobaoTvpayOrderPrecreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

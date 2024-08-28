@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.bm.trade.activity.query
 //
 // 品牌营销的订单活动信息查询
-func AlibabaWdkBmTradeActivityQuery(clt *core.SDKClient, req *wdk.AlibabaWdkBmTradeActivityQueryAPIRequest, resp *wdk.AlibabaWdkBmTradeActivityQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkBmTradeActivityQuery(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkBmTradeActivityQueryAPIRequest, resp *wdk.AlibabaWdkBmTradeActivityQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

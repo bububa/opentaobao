@@ -1,6 +1,8 @@
 package xhotel
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhotel"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.xhotel.data.service.hotel.serviceindex
 //
 // 酒店服务指数
-func TaobaoXhotelDataServiceHotelServiceindex(clt *core.SDKClient, req *xhotel.TaobaoXhotelDataServiceHotelServiceindexAPIRequest, resp *xhotel.TaobaoXhotelDataServiceHotelServiceindexAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelDataServiceHotelServiceindex(ctx context.Context, clt *core.SDKClient, req *xhotel.TaobaoXhotelDataServiceHotelServiceindexAPIRequest, resp *xhotel.TaobaoXhotelDataServiceHotelServiceindexAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

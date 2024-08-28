@@ -1,6 +1,8 @@
 package interact
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/interact"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.interact.sensor.wangwang
 //
 // 手淘开放专用接口，没有数据返回，仅用于手淘容器中jssdk接口鉴权。手淘开放旺旺拉起功能给ISV。
-func AlibabaInteractSensorWangwang(clt *core.SDKClient, req *interact.AlibabaInteractSensorWangwangAPIRequest, resp *interact.AlibabaInteractSensorWangwangAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaInteractSensorWangwang(ctx context.Context, clt *core.SDKClient, req *interact.AlibabaInteractSensorWangwangAPIRequest, resp *interact.AlibabaInteractSensorWangwangAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

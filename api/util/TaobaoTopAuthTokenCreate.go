@@ -1,6 +1,8 @@
 package util
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/util"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.top.auth.token.create
 //
 // 用户通过code换获取access_token，https only
-func TaobaoTopAuthTokenCreate(clt *core.SDKClient, req *util.TaobaoTopAuthTokenCreateAPIRequest, resp *util.TaobaoTopAuthTokenCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTopAuthTokenCreate(ctx context.Context, clt *core.SDKClient, req *util.TaobaoTopAuthTokenCreateAPIRequest, resp *util.TaobaoTopAuthTokenCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

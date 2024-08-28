@@ -1,6 +1,8 @@
 package degoperation
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/degoperation"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.degoperation.show.user.records
 //
 // 用户中奖记录
-func TaobaoDegoperationShowUserRecords(clt *core.SDKClient, req *degoperation.TaobaoDegoperationShowUserRecordsAPIRequest, resp *degoperation.TaobaoDegoperationShowUserRecordsAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoDegoperationShowUserRecords(ctx context.Context, clt *core.SDKClient, req *degoperation.TaobaoDegoperationShowUserRecordsAPIRequest, resp *degoperation.TaobaoDegoperationShowUserRecordsAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

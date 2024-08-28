@@ -1,6 +1,8 @@
 package nrt
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/nrt"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.nrt.coupon.template.syn
 //
 // 查询券模版
-func TmallNrtCouponTemplateSyn(clt *core.SDKClient, req *nrt.TmallNrtCouponTemplateSynAPIRequest, resp *nrt.TmallNrtCouponTemplateSynAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallNrtCouponTemplateSyn(ctx context.Context, clt *core.SDKClient, req *nrt.TmallNrtCouponTemplateSynAPIRequest, resp *nrt.TmallNrtCouponTemplateSynAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

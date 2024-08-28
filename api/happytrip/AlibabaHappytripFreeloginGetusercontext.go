@@ -1,6 +1,8 @@
 package happytrip
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/happytrip"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.happytrip.freelogin.getusercontext
 //
 // 免登融合，提供免登相关接口给外部供应商做登录验证
-func AlibabaHappytripFreeloginGetusercontext(clt *core.SDKClient, req *happytrip.AlibabaHappytripFreeloginGetusercontextAPIRequest, resp *happytrip.AlibabaHappytripFreeloginGetusercontextAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaHappytripFreeloginGetusercontext(ctx context.Context, clt *core.SDKClient, req *happytrip.AlibabaHappytripFreeloginGetusercontextAPIRequest, resp *happytrip.AlibabaHappytripFreeloginGetusercontextAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

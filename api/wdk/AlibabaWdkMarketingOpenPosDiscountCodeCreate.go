@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.marketing.open.pos.discount.code.create
 //
 // pos一物一码创建
-func AlibabaWdkMarketingOpenPosDiscountCodeCreate(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest, resp *wdk.AlibabaWdkMarketingOpenPosDiscountCodeCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkMarketingOpenPosDiscountCodeCreate(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest, resp *wdk.AlibabaWdkMarketingOpenPosDiscountCodeCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

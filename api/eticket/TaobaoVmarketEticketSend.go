@@ -1,6 +1,8 @@
 package eticket
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/eticket"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.vmarket.eticket.send
 //
 // 外部商家成功发码回调接口
-func TaobaoVmarketEticketSend(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketSendAPIRequest, resp *eticket.TaobaoVmarketEticketSendAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoVmarketEticketSend(ctx context.Context, clt *core.SDKClient, req *eticket.TaobaoVmarketEticketSendAPIRequest, resp *eticket.TaobaoVmarketEticketSendAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

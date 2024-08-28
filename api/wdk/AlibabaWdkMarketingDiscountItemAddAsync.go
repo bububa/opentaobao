@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.marketing.discount.item.add.async
 //
 // 新分组模型下新增商品
-func AlibabaWdkMarketingDiscountItemAddAsync(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingDiscountItemAddAsyncAPIRequest, resp *wdk.AlibabaWdkMarketingDiscountItemAddAsyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkMarketingDiscountItemAddAsync(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkMarketingDiscountItemAddAsyncAPIRequest, resp *wdk.AlibabaWdkMarketingDiscountItemAddAsyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

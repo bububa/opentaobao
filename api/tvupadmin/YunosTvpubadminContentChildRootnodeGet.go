@@ -1,6 +1,8 @@
 package tvupadmin
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.tvpubadmin.content.child.rootnode.get
 //
 // 通过此接口可获取少儿大厅根类目列表
-func YunosTvpubadminContentChildRootnodeGet(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChildRootnodeGetAPIRequest, resp *tvupadmin.YunosTvpubadminContentChildRootnodeGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosTvpubadminContentChildRootnodeGet(ctx context.Context, clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChildRootnodeGetAPIRequest, resp *tvupadmin.YunosTvpubadminContentChildRootnodeGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package store
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/store"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.place.store.itemstore.band
 //
 // 商品和多个门店关系绑定接口
-func TaobaoPlaceStoreItemstoreBand(clt *core.SDKClient, req *store.TaobaoPlaceStoreItemstoreBandAPIRequest, resp *store.TaobaoPlaceStoreItemstoreBandAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoPlaceStoreItemstoreBand(ctx context.Context, clt *core.SDKClient, req *store.TaobaoPlaceStoreItemstoreBandAPIRequest, resp *store.TaobaoPlaceStoreItemstoreBandAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

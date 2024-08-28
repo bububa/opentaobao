@@ -1,6 +1,8 @@
 package wlb
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wlb"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.wlb.waybill.shengxian.get
 //
 // 商家通过交易订单号获取电子面单接口
-func TaobaoWlbWaybillShengxianGet(clt *core.SDKClient, req *wlb.TaobaoWlbWaybillShengxianGetAPIRequest, resp *wlb.TaobaoWlbWaybillShengxianGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWlbWaybillShengxianGet(ctx context.Context, clt *core.SDKClient, req *wlb.TaobaoWlbWaybillShengxianGetAPIRequest, resp *wlb.TaobaoWlbWaybillShengxianGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

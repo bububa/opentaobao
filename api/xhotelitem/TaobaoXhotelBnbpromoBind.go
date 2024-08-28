@@ -1,6 +1,8 @@
 package xhotelitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.xhotel.bnbpromo.bind
 //
 // 自促活动绑定接口
-func TaobaoXhotelBnbpromoBind(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbpromoBindAPIRequest, resp *xhotelitem.TaobaoXhotelBnbpromoBindAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelBnbpromoBind(ctx context.Context, clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbpromoBindAPIRequest, resp *xhotelitem.TaobaoXhotelBnbpromoBindAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

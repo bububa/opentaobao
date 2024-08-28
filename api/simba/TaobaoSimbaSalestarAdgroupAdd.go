@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.simba.salestar.adgroup.add
 //
 // 创建一个推广组
-func TaobaoSimbaSalestarAdgroupAdd(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarAdgroupAddAPIRequest, resp *simba.TaobaoSimbaSalestarAdgroupAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSimbaSalestarAdgroupAdd(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSimbaSalestarAdgroupAddAPIRequest, resp *simba.TaobaoSimbaSalestarAdgroupAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

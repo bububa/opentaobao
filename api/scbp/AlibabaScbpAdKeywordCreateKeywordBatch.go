@@ -1,6 +1,8 @@
 package scbp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/scbp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.scbp.ad.keyword.create.keyword.batch
 //
 // 关键词添加
-func AlibabaScbpAdKeywordCreateKeywordBatch(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest, resp *scbp.AlibabaScbpAdKeywordCreateKeywordBatchAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaScbpAdKeywordCreateKeywordBatch(ctx context.Context, clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest, resp *scbp.AlibabaScbpAdKeywordCreateKeywordBatchAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

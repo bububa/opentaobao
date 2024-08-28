@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -14,6 +16,6 @@ import (
 // 3、接口文档中写的 优酷会员卡--2 写错了，正确的是13（已接口返回为准）&lt;br/&gt;
 // 4、step=2用config_id查，即1，4，13，14  &lt;br/&gt;
 // 5、step=3权益id指具体采购的权益id，可以认为是采购的主键（权益id 可以通过step=2 获得 ）  &lt;br/&gt;
-func TaobaoPromotionBenefitSelector(clt *core.SDKClient, req *promotion.TaobaoPromotionBenefitSelectorAPIRequest, resp *promotion.TaobaoPromotionBenefitSelectorAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoPromotionBenefitSelector(ctx context.Context, clt *core.SDKClient, req *promotion.TaobaoPromotionBenefitSelectorAPIRequest, resp *promotion.TaobaoPromotionBenefitSelectorAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

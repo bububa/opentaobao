@@ -1,6 +1,8 @@
 package campus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/campus"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.campus.acl.cancelrolesfromuser
 //
 // 撤销用户授予的角色
-func AlibabaCampusAclCancelrolesfromuser(clt *core.SDKClient, req *campus.AlibabaCampusAclCancelrolesfromuserAPIRequest, resp *campus.AlibabaCampusAclCancelrolesfromuserAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCampusAclCancelrolesfromuser(ctx context.Context, clt *core.SDKClient, req *campus.AlibabaCampusAclCancelrolesfromuserAPIRequest, resp *campus.AlibabaCampusAclCancelrolesfromuserAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

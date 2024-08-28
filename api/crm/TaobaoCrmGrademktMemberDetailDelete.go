@@ -1,6 +1,8 @@
 package crm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/crm"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.crm.grademkt.member.detail.delete
 //
 // 删除商品等级营销明细
-func TaobaoCrmGrademktMemberDetailDelete(clt *core.SDKClient, req *crm.TaobaoCrmGrademktMemberDetailDeleteAPIRequest, resp *crm.TaobaoCrmGrademktMemberDetailDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoCrmGrademktMemberDetailDelete(ctx context.Context, clt *core.SDKClient, req *crm.TaobaoCrmGrademktMemberDetailDeleteAPIRequest, resp *crm.TaobaoCrmGrademktMemberDetailDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

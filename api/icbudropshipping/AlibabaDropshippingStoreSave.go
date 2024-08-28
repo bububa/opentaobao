@@ -1,6 +1,8 @@
 package icbudropshipping
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/icbudropshipping"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.dropshipping.store.save
 //
 // 阿里巴巴dropshipping店铺数据保存
-func AlibabaDropshippingStoreSave(clt *core.SDKClient, req *icbudropshipping.AlibabaDropshippingStoreSaveAPIRequest, resp *icbudropshipping.AlibabaDropshippingStoreSaveAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaDropshippingStoreSave(ctx context.Context, clt *core.SDKClient, req *icbudropshipping.AlibabaDropshippingStoreSaveAPIRequest, resp *icbudropshipping.AlibabaDropshippingStoreSaveAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

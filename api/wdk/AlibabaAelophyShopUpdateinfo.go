@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.aelophy.shop.updateinfo
 //
 // 更新渠道店基础信息
-func AlibabaAelophyShopUpdateinfo(clt *core.SDKClient, req *wdk.AlibabaAelophyShopUpdateinfoAPIRequest, resp *wdk.AlibabaAelophyShopUpdateinfoAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAelophyShopUpdateinfo(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaAelophyShopUpdateinfoAPIRequest, resp *wdk.AlibabaAelophyShopUpdateinfoAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

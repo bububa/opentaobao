@@ -1,6 +1,8 @@
 package fivee
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fivee"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.fivee.company.upload
 //
 // 资质共享平台上传资质证照
-func TaobaoFiveeCompanyUpload(clt *core.SDKClient, req *fivee.TaobaoFiveeCompanyUploadAPIRequest, resp *fivee.TaobaoFiveeCompanyUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFiveeCompanyUpload(ctx context.Context, clt *core.SDKClient, req *fivee.TaobaoFiveeCompanyUploadAPIRequest, resp *fivee.TaobaoFiveeCompanyUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

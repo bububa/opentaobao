@@ -1,6 +1,8 @@
 package alitripreceipt
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripreceipt"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.receipt.issueresult.notify
 //
 // 飞猪发票开票结果通知
-func AlitripReceiptIssueresultNotify(clt *core.SDKClient, req *alitripreceipt.AlitripReceiptIssueresultNotifyAPIRequest, resp *alitripreceipt.AlitripReceiptIssueresultNotifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripReceiptIssueresultNotify(ctx context.Context, clt *core.SDKClient, req *alitripreceipt.AlitripReceiptIssueresultNotifyAPIRequest, resp *alitripreceipt.AlitripReceiptIssueresultNotifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

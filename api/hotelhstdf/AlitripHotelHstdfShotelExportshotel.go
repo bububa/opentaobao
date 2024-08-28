@@ -1,6 +1,8 @@
 package hotelhstdf
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/hotelhstdf"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.hotel.hstdf.shotel.exportshotel
 //
 // 商家通过给出自己的卖家酒店信息，通过接口可以返回相似度高的标准酒店信息
-func AlitripHotelHstdfShotelExportshotel(clt *core.SDKClient, req *hotelhstdf.AlitripHotelHstdfShotelExportshotelAPIRequest, resp *hotelhstdf.AlitripHotelHstdfShotelExportshotelAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripHotelHstdfShotelExportshotel(ctx context.Context, clt *core.SDKClient, req *hotelhstdf.AlitripHotelHstdfShotelExportshotelAPIRequest, resp *hotelhstdf.AlitripHotelHstdfShotelExportshotelAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

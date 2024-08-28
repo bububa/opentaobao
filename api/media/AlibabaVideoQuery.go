@@ -1,6 +1,8 @@
 package media
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/media"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.video.query
 //
 // 查询视频信息
-func AlibabaVideoQuery(clt *core.SDKClient, req *media.AlibabaVideoQueryAPIRequest, resp *media.AlibabaVideoQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaVideoQuery(ctx context.Context, clt *core.SDKClient, req *media.AlibabaVideoQueryAPIRequest, resp *media.AlibabaVideoQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

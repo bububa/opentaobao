@@ -1,6 +1,8 @@
 package alitrippoi
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitrippoi"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.platform.poi.raw.poiout
 //
 // 输出指定城市poi指定信息
-func AlitripPlatformPoiRawPoiout(clt *core.SDKClient, req *alitrippoi.AlitripPlatformPoiRawPoioutAPIRequest, resp *alitrippoi.AlitripPlatformPoiRawPoioutAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripPlatformPoiRawPoiout(ctx context.Context, clt *core.SDKClient, req *alitrippoi.AlitripPlatformPoiRawPoioutAPIRequest, resp *alitrippoi.AlitripPlatformPoiRawPoioutAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.car.lease.item.activity.get
 //
 // 查询汽车租赁活动信息
-func TmallCarLeaseItemActivityGet(clt *core.SDKClient, req *servicecenter.TmallCarLeaseItemActivityGetAPIRequest, resp *servicecenter.TmallCarLeaseItemActivityGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallCarLeaseItemActivityGet(ctx context.Context, clt *core.SDKClient, req *servicecenter.TmallCarLeaseItemActivityGetAPIRequest, resp *servicecenter.TmallCarLeaseItemActivityGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

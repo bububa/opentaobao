@@ -1,6 +1,8 @@
 package uscesl
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/uscesl"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.uscesl.biz.store.insert
 //
 // 新增电子价签商家门店接口
-func TaobaoUsceslBizStoreInsert(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizStoreInsertAPIRequest, resp *uscesl.TaobaoUsceslBizStoreInsertAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoUsceslBizStoreInsert(ctx context.Context, clt *core.SDKClient, req *uscesl.TaobaoUsceslBizStoreInsertAPIRequest, resp *uscesl.TaobaoUsceslBizStoreInsertAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

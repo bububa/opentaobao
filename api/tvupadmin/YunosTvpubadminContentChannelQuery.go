@@ -1,6 +1,8 @@
 package tvupadmin
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.tvpubadmin.content.channel.query
 //
 // 迎客松影视频道查询
-func YunosTvpubadminContentChannelQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChannelQueryAPIRequest, resp *tvupadmin.YunosTvpubadminContentChannelQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosTvpubadminContentChannelQuery(ctx context.Context, clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChannelQueryAPIRequest, resp *tvupadmin.YunosTvpubadminContentChannelQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

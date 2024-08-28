@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.tcls.aelophy.merchant.channel.order.create
 //
 // 翱象小程序渠道订单创建
-func AlibabaTclsAelophyMerchantChannelOrderCreate(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest, resp *wdk.AlibabaTclsAelophyMerchantChannelOrderCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaTclsAelophyMerchantChannelOrderCreate(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelOrderCreateAPIRequest, resp *wdk.AlibabaTclsAelophyMerchantChannelOrderCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

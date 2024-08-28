@@ -1,6 +1,8 @@
 package wlbimports
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wlbimports"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.global.im.pickup.bigbag.info
 //
 // 大包状态查询
-func CainiaoGlobalImPickupBigbagInfo(clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupBigbagInfoAPIRequest, resp *wlbimports.CainiaoGlobalImPickupBigbagInfoAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoGlobalImPickupBigbagInfo(ctx context.Context, clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupBigbagInfoAPIRequest, resp *wlbimports.CainiaoGlobalImPickupBigbagInfoAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

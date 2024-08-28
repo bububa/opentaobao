@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.wdk.equipment.conveyor.batchconfirm
 //
 // 批量消息确认
-func TaobaoWdkEquipmentConveyorBatchconfirm(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest, resp *wdk.TaobaoWdkEquipmentConveyorBatchconfirmAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWdkEquipmentConveyorBatchconfirm(ctx context.Context, clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest, resp *wdk.TaobaoWdkEquipmentConveyorBatchconfirmAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

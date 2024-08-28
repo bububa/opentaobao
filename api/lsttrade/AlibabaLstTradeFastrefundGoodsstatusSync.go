@@ -1,6 +1,8 @@
 package lsttrade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/lsttrade"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.lst.trade.fastrefund.goodsstatus.sync
 //
 // 卖家退款单商品状态同步
-func AlibabaLstTradeFastrefundGoodsstatusSync(clt *core.SDKClient, req *lsttrade.AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest, resp *lsttrade.AlibabaLstTradeFastrefundGoodsstatusSyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLstTradeFastrefundGoodsstatusSync(ctx context.Context, clt *core.SDKClient, req *lsttrade.AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest, resp *lsttrade.AlibabaLstTradeFastrefundGoodsstatusSyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

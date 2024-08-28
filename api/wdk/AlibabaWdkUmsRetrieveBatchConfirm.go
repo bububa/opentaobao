@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.ums.retrieve.batch.confirm
 //
 // 批量消息确认
-func AlibabaWdkUmsRetrieveBatchConfirm(clt *core.SDKClient, req *wdk.AlibabaWdkUmsRetrieveBatchConfirmAPIRequest, resp *wdk.AlibabaWdkUmsRetrieveBatchConfirmAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkUmsRetrieveBatchConfirm(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkUmsRetrieveBatchConfirmAPIRequest, resp *wdk.AlibabaWdkUmsRetrieveBatchConfirmAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

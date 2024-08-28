@@ -1,6 +1,8 @@
 package ascp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ascp"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.logistics.express.capacity.tms.async
 //
 // 上门取退产能信息同步/更新
-func TaobaoLogisticsExpressCapacityTmsAsync(clt *core.SDKClient, req *ascp.TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest, resp *ascp.TaobaoLogisticsExpressCapacityTmsAsyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoLogisticsExpressCapacityTmsAsync(ctx context.Context, clt *core.SDKClient, req *ascp.TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest, resp *ascp.TaobaoLogisticsExpressCapacityTmsAsyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

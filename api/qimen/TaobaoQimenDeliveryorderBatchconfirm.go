@@ -1,6 +1,8 @@
 package qimen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qimen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qimen.deliveryorder.batchconfirm
 //
 // taobao.qimen.deliveryorder.batchconfirm
-func TaobaoQimenDeliveryorderBatchconfirm(clt *core.SDKClient, req *qimen.TaobaoQimenDeliveryorderBatchconfirmAPIRequest, resp *qimen.TaobaoQimenDeliveryorderBatchconfirmAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQimenDeliveryorderBatchconfirm(ctx context.Context, clt *core.SDKClient, req *qimen.TaobaoQimenDeliveryorderBatchconfirmAPIRequest, resp *qimen.TaobaoQimenDeliveryorderBatchconfirmAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

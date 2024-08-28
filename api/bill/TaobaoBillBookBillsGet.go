@@ -1,6 +1,8 @@
 package bill
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/bill"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.bill.book.bills.get
 //
 // 查询虚拟账户明细数据
-func TaobaoBillBookBillsGet(clt *core.SDKClient, req *bill.TaobaoBillBookBillsGetAPIRequest, resp *bill.TaobaoBillBookBillsGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBillBookBillsGet(ctx context.Context, clt *core.SDKClient, req *bill.TaobaoBillBookBillsGetAPIRequest, resp *bill.TaobaoBillBookBillsGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

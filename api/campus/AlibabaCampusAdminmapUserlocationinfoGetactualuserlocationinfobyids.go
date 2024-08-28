@@ -1,6 +1,8 @@
 package campus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/campus"
 )
@@ -11,6 +13,6 @@ import (
 // 根据userId(支持单个或批量)获取用户实时位置信息
 // HSF接口名称：com.alibaba.campus.api.adminmap.service.top.UserLocationQueryApiTopService
 // HSF方法名称：getActualUserLocationInfoByIds
-func AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyids(clt *core.SDKClient, req *campus.AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest, resp *campus.AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyids(ctx context.Context, clt *core.SDKClient, req *campus.AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest, resp *campus.AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

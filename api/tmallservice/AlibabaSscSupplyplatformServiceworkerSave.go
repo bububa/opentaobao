@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ssc.supplyplatform.serviceworker.save
 //
 // 服务商将上传工人与服务商自己建立关系，需要将工人的服务区域和住址回传
-func AlibabaSscSupplyplatformServiceworkerSave(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceworkerSaveAPIRequest, resp *tmallservice.AlibabaSscSupplyplatformServiceworkerSaveAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaSscSupplyplatformServiceworkerSave(ctx context.Context, clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceworkerSaveAPIRequest, resp *tmallservice.AlibabaSscSupplyplatformServiceworkerSaveAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

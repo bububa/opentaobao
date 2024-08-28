@@ -1,6 +1,8 @@
 package seaking
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/seaking"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.seaking.diagnosistitle
 //
 // 标题诊断
-func AlibabaSeakingDiagnosistitle(clt *core.SDKClient, req *seaking.AlibabaSeakingDiagnosistitleAPIRequest, resp *seaking.AlibabaSeakingDiagnosistitleAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaSeakingDiagnosistitle(ctx context.Context, clt *core.SDKClient, req *seaking.AlibabaSeakingDiagnosistitleAPIRequest, resp *seaking.AlibabaSeakingDiagnosistitleAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

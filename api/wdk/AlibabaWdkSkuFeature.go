@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.sku.feature
 //
 // 给淘鲜达商品属性之外的打标通用能力，满足商品一些特殊的需求，比如是否参加营销。
-func AlibabaWdkSkuFeature(clt *core.SDKClient, req *wdk.AlibabaWdkSkuFeatureAPIRequest, resp *wdk.AlibabaWdkSkuFeatureAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkSkuFeature(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkSkuFeatureAPIRequest, resp *wdk.AlibabaWdkSkuFeatureAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

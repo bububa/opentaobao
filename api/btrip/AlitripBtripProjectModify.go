@@ -1,6 +1,8 @@
 package btrip
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/btrip"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.btrip.project.modify
 //
 // 变更项目
-func AlitripBtripProjectModify(clt *core.SDKClient, req *btrip.AlitripBtripProjectModifyAPIRequest, resp *btrip.AlitripBtripProjectModifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripBtripProjectModify(ctx context.Context, clt *core.SDKClient, req *btrip.AlitripBtripProjectModifyAPIRequest, resp *btrip.AlitripBtripProjectModifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

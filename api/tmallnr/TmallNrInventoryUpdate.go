@@ -1,6 +1,8 @@
 package tmallnr
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallnr"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.nr.inventory.update
 //
 // 用于商家每日同步更新门店库存
-func TmallNrInventoryUpdate(clt *core.SDKClient, req *tmallnr.TmallNrInventoryUpdateAPIRequest, resp *tmallnr.TmallNrInventoryUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallNrInventoryUpdate(ctx context.Context, clt *core.SDKClient, req *tmallnr.TmallNrInventoryUpdateAPIRequest, resp *tmallnr.TmallNrInventoryUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

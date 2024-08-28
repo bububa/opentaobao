@@ -1,6 +1,8 @@
 package icbulogistics
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/icbulogistics"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.onetouch.logistics.express.address.division.list
 //
 // 四级地址库-区
-func AlibabaOnetouchLogisticsExpressAddressDivisionList(clt *core.SDKClient, req *icbulogistics.AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest, resp *icbulogistics.AlibabaOnetouchLogisticsExpressAddressDivisionListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaOnetouchLogisticsExpressAddressDivisionList(ctx context.Context, clt *core.SDKClient, req *icbulogistics.AlibabaOnetouchLogisticsExpressAddressDivisionListAPIRequest, resp *icbulogistics.AlibabaOnetouchLogisticsExpressAddressDivisionListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

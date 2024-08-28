@@ -1,6 +1,8 @@
 package util
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/util"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.picture.qnaigc.upload
 //
 // qnaigc业务线图片上传
-func TaobaoPictureQnaigcUpload(clt *core.SDKClient, req *util.TaobaoPictureQnaigcUploadAPIRequest, resp *util.TaobaoPictureQnaigcUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoPictureQnaigcUpload(ctx context.Context, clt *core.SDKClient, req *util.TaobaoPictureQnaigcUploadAPIRequest, resp *util.TaobaoPictureQnaigcUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

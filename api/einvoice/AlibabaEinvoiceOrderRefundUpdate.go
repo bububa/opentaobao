@@ -1,6 +1,8 @@
 package einvoice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/einvoice"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.einvoice.order.refund.update
 //
 // ISV回传订单退款审核结果
-func AlibabaEinvoiceOrderRefundUpdate(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceOrderRefundUpdateAPIRequest, resp *einvoice.AlibabaEinvoiceOrderRefundUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaEinvoiceOrderRefundUpdate(ctx context.Context, clt *core.SDKClient, req *einvoice.AlibabaEinvoiceOrderRefundUpdateAPIRequest, resp *einvoice.AlibabaEinvoiceOrderRefundUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

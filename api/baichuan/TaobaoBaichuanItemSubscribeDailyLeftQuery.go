@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/baichuan"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.baichuan.item.subscribe.daily.left.query
 //
 // 查询当天可添加的余量
-func TaobaoBaichuanItemSubscribeDailyLeftQuery(clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest, resp *baichuan.TaobaoBaichuanItemSubscribeDailyLeftQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBaichuanItemSubscribeDailyLeftQuery(ctx context.Context, clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest, resp *baichuan.TaobaoBaichuanItemSubscribeDailyLeftQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

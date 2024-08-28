@@ -1,6 +1,8 @@
 package iot
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/iot"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.ailab.aicloud.top.auth.logout
 //
 // 登出
-func TaobaoAilabAicloudTopAuthLogout(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopAuthLogoutAPIRequest, resp *iot.TaobaoAilabAicloudTopAuthLogoutAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAilabAicloudTopAuthLogout(ctx context.Context, clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopAuthLogoutAPIRequest, resp *iot.TaobaoAilabAicloudTopAuthLogoutAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

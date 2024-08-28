@@ -1,6 +1,8 @@
 package damai
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/damai"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.damai.mev.open.changeticket
 //
 // 开放接口 换票
-func AlibabaDamaiMevOpenChangeticket(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenChangeticketAPIRequest, resp *damai.AlibabaDamaiMevOpenChangeticketAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaDamaiMevOpenChangeticket(ctx context.Context, clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenChangeticketAPIRequest, resp *damai.AlibabaDamaiMevOpenChangeticketAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

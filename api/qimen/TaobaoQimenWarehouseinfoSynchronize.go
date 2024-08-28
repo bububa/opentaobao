@@ -1,6 +1,8 @@
 package qimen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qimen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qimen.warehouseinfo.synchronize
 //
 // 仓库同步接口
-func TaobaoQimenWarehouseinfoSynchronize(clt *core.SDKClient, req *qimen.TaobaoQimenWarehouseinfoSynchronizeAPIRequest, resp *qimen.TaobaoQimenWarehouseinfoSynchronizeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQimenWarehouseinfoSynchronize(ctx context.Context, clt *core.SDKClient, req *qimen.TaobaoQimenWarehouseinfoSynchronizeAPIRequest, resp *qimen.TaobaoQimenWarehouseinfoSynchronizeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

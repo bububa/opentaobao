@@ -1,6 +1,8 @@
 package idle
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idle"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.tender.aftersale.order.perform
 //
 // 闲鱼帮卖售后订单履约
-func AlibabaIdleTenderAftersaleOrderPerform(clt *core.SDKClient, req *idle.AlibabaIdleTenderAftersaleOrderPerformAPIRequest, resp *idle.AlibabaIdleTenderAftersaleOrderPerformAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleTenderAftersaleOrderPerform(ctx context.Context, clt *core.SDKClient, req *idle.AlibabaIdleTenderAftersaleOrderPerformAPIRequest, resp *idle.AlibabaIdleTenderAftersaleOrderPerformAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

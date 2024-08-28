@@ -1,6 +1,8 @@
 package ascpchannel
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ascpchannel"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ascp.uop.self.supplier.waybill.query
 //
 // ERP调用打印面单取号接口
-func AlibabaAscpUopSelfSupplierWaybillQuery(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopSelfSupplierWaybillQueryAPIRequest, resp *ascpchannel.AlibabaAscpUopSelfSupplierWaybillQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAscpUopSelfSupplierWaybillQuery(ctx context.Context, clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopSelfSupplierWaybillQueryAPIRequest, resp *ascpchannel.AlibabaAscpUopSelfSupplierWaybillQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

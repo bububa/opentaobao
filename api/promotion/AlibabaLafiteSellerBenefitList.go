@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.lafite.seller.benefit.list
 //
 // 小程序isv可使用该接口获取权益列表
-func AlibabaLafiteSellerBenefitList(clt *core.SDKClient, req *promotion.AlibabaLafiteSellerBenefitListAPIRequest, resp *promotion.AlibabaLafiteSellerBenefitListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLafiteSellerBenefitList(ctx context.Context, clt *core.SDKClient, req *promotion.AlibabaLafiteSellerBenefitListAPIRequest, resp *promotion.AlibabaLafiteSellerBenefitListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

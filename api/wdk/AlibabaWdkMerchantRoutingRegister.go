@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.merchant.routing.register
 //
 // 商家注册更新路由信息
-func AlibabaWdkMerchantRoutingRegister(clt *core.SDKClient, req *wdk.AlibabaWdkMerchantRoutingRegisterAPIRequest, resp *wdk.AlibabaWdkMerchantRoutingRegisterAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkMerchantRoutingRegister(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkMerchantRoutingRegisterAPIRequest, resp *wdk.AlibabaWdkMerchantRoutingRegisterAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package qimen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qimen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qimen.entryorder.confirm
 //
 // WMS调用接口，回传入库单信息;
-func TaobaoQimenEntryorderConfirm(clt *core.SDKClient, req *qimen.TaobaoQimenEntryorderConfirmAPIRequest, resp *qimen.TaobaoQimenEntryorderConfirmAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQimenEntryorderConfirm(ctx context.Context, clt *core.SDKClient, req *qimen.TaobaoQimenEntryorderConfirmAPIRequest, resp *qimen.TaobaoQimenEntryorderConfirmAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

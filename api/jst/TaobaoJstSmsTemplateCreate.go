@@ -1,6 +1,8 @@
 package jst
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/jst"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.jst.sms.template.create
 //
 // 聚石塔短信模板创建
-func TaobaoJstSmsTemplateCreate(clt *core.SDKClient, req *jst.TaobaoJstSmsTemplateCreateAPIRequest, resp *jst.TaobaoJstSmsTemplateCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoJstSmsTemplateCreate(ctx context.Context, clt *core.SDKClient, req *jst.TaobaoJstSmsTemplateCreateAPIRequest, resp *jst.TaobaoJstSmsTemplateCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

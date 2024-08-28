@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.ump.detail.get
 //
 // 查询活动详情
-func TaobaoUmpDetailGet(clt *core.SDKClient, req *promotion.TaobaoUmpDetailGetAPIRequest, resp *promotion.TaobaoUmpDetailGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoUmpDetailGet(ctx context.Context, clt *core.SDKClient, req *promotion.TaobaoUmpDetailGetAPIRequest, resp *promotion.TaobaoUmpDetailGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

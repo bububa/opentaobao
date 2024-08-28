@@ -1,6 +1,8 @@
 package omniorder
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/omniorder"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.omni.dealer.oders.refund.address
 //
 // 经销商查询逆向退货地址
-func TaobaoOmniDealerOdersRefundAddress(clt *core.SDKClient, req *omniorder.TaobaoOmniDealerOdersRefundAddressAPIRequest, resp *omniorder.TaobaoOmniDealerOdersRefundAddressAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOmniDealerOdersRefundAddress(ctx context.Context, clt *core.SDKClient, req *omniorder.TaobaoOmniDealerOdersRefundAddressAPIRequest, resp *omniorder.TaobaoOmniDealerOdersRefundAddressAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

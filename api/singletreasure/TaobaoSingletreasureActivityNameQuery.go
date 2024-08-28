@@ -1,6 +1,8 @@
 package singletreasure
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/singletreasure"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.singletreasure.activity.name.query
 //
 // 查询官方的活动名称列表接口
-func TaobaoSingletreasureActivityNameQuery(clt *core.SDKClient, req *singletreasure.TaobaoSingletreasureActivityNameQueryAPIRequest, resp *singletreasure.TaobaoSingletreasureActivityNameQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSingletreasureActivityNameQuery(ctx context.Context, clt *core.SDKClient, req *singletreasure.TaobaoSingletreasureActivityNameQueryAPIRequest, resp *singletreasure.TaobaoSingletreasureActivityNameQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

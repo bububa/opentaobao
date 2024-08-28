@@ -1,6 +1,8 @@
 package idleparttime
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idleparttime"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.parttime.synclog
 //
 // 提供给供应商查询的接口
-func AlibabaIdleParttimeSynclog(clt *core.SDKClient, req *idleparttime.AlibabaIdleParttimeSynclogAPIRequest, resp *idleparttime.AlibabaIdleParttimeSynclogAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleParttimeSynclog(ctx context.Context, clt *core.SDKClient, req *idleparttime.AlibabaIdleParttimeSynclogAPIRequest, resp *idleparttime.AlibabaIdleParttimeSynclogAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

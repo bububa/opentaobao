@@ -1,6 +1,8 @@
 package security
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/security"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.security.jaq.ocr.image.sync.detect
 //
 // 图像字符识别同步检测接口
-func AlibabaSecurityJaqOcrImageSyncDetect(clt *core.SDKClient, req *security.AlibabaSecurityJaqOcrImageSyncDetectAPIRequest, resp *security.AlibabaSecurityJaqOcrImageSyncDetectAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaSecurityJaqOcrImageSyncDetect(ctx context.Context, clt *core.SDKClient, req *security.AlibabaSecurityJaqOcrImageSyncDetectAPIRequest, resp *security.AlibabaSecurityJaqOcrImageSyncDetectAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

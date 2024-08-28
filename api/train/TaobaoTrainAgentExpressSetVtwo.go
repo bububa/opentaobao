@@ -1,6 +1,8 @@
 package train
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/train"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.train.agent.express.set.vtwo
 //
 // 线下票回填物流信息服务
-func TaobaoTrainAgentExpressSetVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentExpressSetVtwoAPIRequest, resp *train.TaobaoTrainAgentExpressSetVtwoAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTrainAgentExpressSetVtwo(ctx context.Context, clt *core.SDKClient, req *train.TaobaoTrainAgentExpressSetVtwoAPIRequest, resp *train.TaobaoTrainAgentExpressSetVtwoAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

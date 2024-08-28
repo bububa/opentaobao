@@ -1,6 +1,8 @@
 package product
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/product"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.gsp.supply.image.upload
 //
 // 上传图片至目标海外平台的素材空间
-func AlibabaGspSupplyImageUpload(clt *core.SDKClient, req *product.AlibabaGspSupplyImageUploadAPIRequest, resp *product.AlibabaGspSupplyImageUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaGspSupplyImageUpload(ctx context.Context, clt *core.SDKClient, req *product.AlibabaGspSupplyImageUploadAPIRequest, resp *product.AlibabaGspSupplyImageUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

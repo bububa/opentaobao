@@ -1,6 +1,8 @@
 package trade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/trade"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.refund.refundactions.display
 //
 // 退货退款操作的展示信息(展现给买家)
-func CainiaoRefundRefundactionsDisplay(clt *core.SDKClient, req *trade.CainiaoRefundRefundactionsDisplayAPIRequest, resp *trade.CainiaoRefundRefundactionsDisplayAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoRefundRefundactionsDisplay(ctx context.Context, clt *core.SDKClient, req *trade.CainiaoRefundRefundactionsDisplayAPIRequest, resp *trade.CainiaoRefundRefundactionsDisplayAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

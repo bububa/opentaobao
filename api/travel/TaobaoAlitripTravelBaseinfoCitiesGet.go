@@ -1,6 +1,8 @@
 package travel
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/travel"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.travel.baseinfo.cities.get
 //
 // 旅行度假新商品发布时可用的扩展接口，用于获取可用的出发地或目的地城市列表。
-func TaobaoAlitripTravelBaseinfoCitiesGet(clt *core.SDKClient, req *travel.TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest, resp *travel.TaobaoAlitripTravelBaseinfoCitiesGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripTravelBaseinfoCitiesGet(ctx context.Context, clt *core.SDKClient, req *travel.TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest, resp *travel.TaobaoAlitripTravelBaseinfoCitiesGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

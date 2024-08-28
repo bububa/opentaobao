@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.fenxiao.distributor.products.get
 //
 // 分销商查询供应商产品信息
-func TaobaoFenxiaoDistributorProductsGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoDistributorProductsGetAPIRequest, resp *fenxiao.TaobaoFenxiaoDistributorProductsGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFenxiaoDistributorProductsGet(ctx context.Context, clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoDistributorProductsGetAPIRequest, resp *fenxiao.TaobaoFenxiaoDistributorProductsGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package tblogistics
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tblogistics"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.logistics.partners.get
 //
 // 查询物流公司信息（可以查询目的地可不可达情况）
-func TaobaoLogisticsPartnersGet(clt *core.SDKClient, req *tblogistics.TaobaoLogisticsPartnersGetAPIRequest, resp *tblogistics.TaobaoLogisticsPartnersGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoLogisticsPartnersGet(ctx context.Context, clt *core.SDKClient, req *tblogistics.TaobaoLogisticsPartnersGetAPIRequest, resp *tblogistics.TaobaoLogisticsPartnersGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

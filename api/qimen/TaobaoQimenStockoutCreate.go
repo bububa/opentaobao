@@ -1,6 +1,8 @@
 package qimen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qimen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qimen.stockout.create
 //
 // taobao.qimen.returnorder.create
-func TaobaoQimenStockoutCreate(clt *core.SDKClient, req *qimen.TaobaoQimenStockoutCreateAPIRequest, resp *qimen.TaobaoQimenStockoutCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQimenStockoutCreate(ctx context.Context, clt *core.SDKClient, req *qimen.TaobaoQimenStockoutCreateAPIRequest, resp *qimen.TaobaoQimenStockoutCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

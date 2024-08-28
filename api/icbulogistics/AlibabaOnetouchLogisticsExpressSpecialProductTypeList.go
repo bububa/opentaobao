@@ -1,6 +1,8 @@
 package icbulogistics
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/icbulogistics"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.onetouch.logistics.express.special.product.type.list
 //
 // 获取商品类型配置项
-func AlibabaOnetouchLogisticsExpressSpecialProductTypeList(clt *core.SDKClient, req *icbulogistics.AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest, resp *icbulogistics.AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaOnetouchLogisticsExpressSpecialProductTypeList(ctx context.Context, clt *core.SDKClient, req *icbulogistics.AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest, resp *icbulogistics.AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

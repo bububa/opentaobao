@@ -1,6 +1,8 @@
 package antifraud
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/antifraud"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.antifraud.riskuser.get
 //
 // 根据用户基础信息，核实平台上的用户是否存在欺诈风险
-func TaobaoAntifraudRiskuserGet(clt *core.SDKClient, req *antifraud.TaobaoAntifraudRiskuserGetAPIRequest, resp *antifraud.TaobaoAntifraudRiskuserGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAntifraudRiskuserGet(ctx context.Context, clt *core.SDKClient, req *antifraud.TaobaoAntifraudRiskuserGetAPIRequest, resp *antifraud.TaobaoAntifraudRiskuserGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

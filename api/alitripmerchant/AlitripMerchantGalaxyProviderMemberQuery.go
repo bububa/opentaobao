@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.merchant.galaxy.provider.member.query
 //
 // 星河产品=提供会查询服务
-func AlitripMerchantGalaxyProviderMemberQuery(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyProviderMemberQueryAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyProviderMemberQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripMerchantGalaxyProviderMemberQuery(ctx context.Context, clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyProviderMemberQueryAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyProviderMemberQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

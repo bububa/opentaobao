@@ -1,6 +1,8 @@
 package alsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alsc.crm.rule.queryjoinmrule
 //
 // 查询品牌下的成为会员规则
-func AlibabaAlscCrmRuleQueryjoinmrule(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRuleQueryjoinmruleAPIRequest, resp *alsc.AlibabaAlscCrmRuleQueryjoinmruleAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlscCrmRuleQueryjoinmrule(ctx context.Context, clt *core.SDKClient, req *alsc.AlibabaAlscCrmRuleQueryjoinmruleAPIRequest, resp *alsc.AlibabaAlscCrmRuleQueryjoinmruleAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

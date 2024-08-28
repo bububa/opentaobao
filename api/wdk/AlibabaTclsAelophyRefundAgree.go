@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.tcls.aelophy.refund.agree
 //
 // saas 售后逆向 商户同意用户逆向申请
-func AlibabaTclsAelophyRefundAgree(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyRefundAgreeAPIRequest, resp *wdk.AlibabaTclsAelophyRefundAgreeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaTclsAelophyRefundAgree(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaTclsAelophyRefundAgreeAPIRequest, resp *wdk.AlibabaTclsAelophyRefundAgreeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

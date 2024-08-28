@@ -1,6 +1,8 @@
 package larkiot
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/larkiot"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.lark.iot.order.confirmorder
 //
 // 云智对接无人超市，接收无人超市订单信息
-func TaobaoLarkIotOrderConfirmorder(clt *core.SDKClient, req *larkiot.TaobaoLarkIotOrderConfirmorderAPIRequest, resp *larkiot.TaobaoLarkIotOrderConfirmorderAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoLarkIotOrderConfirmorder(ctx context.Context, clt *core.SDKClient, req *larkiot.TaobaoLarkIotOrderConfirmorderAPIRequest, resp *larkiot.TaobaoLarkIotOrderConfirmorderAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

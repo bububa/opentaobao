@@ -1,6 +1,8 @@
 package alihealthpw
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihealthpw"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.pw.gm.audit
 //
 // 同情用药审核接口，提供给合作方审核申请单
-func AlibabaAlihealthPwGmAudit(clt *core.SDKClient, req *alihealthpw.AlibabaAlihealthPwGmAuditAPIRequest, resp *alihealthpw.AlibabaAlihealthPwGmAuditAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthPwGmAudit(ctx context.Context, clt *core.SDKClient, req *alihealthpw.AlibabaAlihealthPwGmAuditAPIRequest, resp *alihealthpw.AlibabaAlihealthPwGmAuditAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

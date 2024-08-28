@@ -1,6 +1,8 @@
 package alihouse
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihouse"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihouse.newhome.layout.ecode.update
 //
 // 新房户型变更E码
-func AlibabaAlihouseNewhomeLayoutEcodeUpdate(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeLayoutEcodeUpdateAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeLayoutEcodeUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihouseNewhomeLayoutEcodeUpdate(ctx context.Context, clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeLayoutEcodeUpdateAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeLayoutEcodeUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package bus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/bus"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.bus.refund.set
 //
 // B2B业务支持退票
-func TaobaoBusRefundSet(clt *core.SDKClient, req *bus.TaobaoBusRefundSetAPIRequest, resp *bus.TaobaoBusRefundSetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBusRefundSet(ctx context.Context, clt *core.SDKClient, req *bus.TaobaoBusRefundSetAPIRequest, resp *bus.TaobaoBusRefundSetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

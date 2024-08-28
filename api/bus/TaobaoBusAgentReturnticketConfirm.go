@@ -1,6 +1,8 @@
 package bus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/bus"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.bus.agent.returnticket.confirm
 //
 // 商家通过TOP接口调用来回传退票状态
-func TaobaoBusAgentReturnticketConfirm(clt *core.SDKClient, req *bus.TaobaoBusAgentReturnticketConfirmAPIRequest, resp *bus.TaobaoBusAgentReturnticketConfirmAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBusAgentReturnticketConfirm(ctx context.Context, clt *core.SDKClient, req *bus.TaobaoBusAgentReturnticketConfirmAPIRequest, resp *bus.TaobaoBusAgentReturnticketConfirmAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

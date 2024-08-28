@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.merchant.galaxy.share.get
 //
 // 获取 雅高微信小程序分享素材文案和图片。
-func AlitripMerchantGalaxyShareGet(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyShareGetAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyShareGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripMerchantGalaxyShareGet(ctx context.Context, clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyShareGetAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyShareGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package tbtrade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbtrade"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.top.secret.extend
 //
 // 虚拟号延期
-func TaobaoTopSecretExtend(clt *core.SDKClient, req *tbtrade.TaobaoTopSecretExtendAPIRequest, resp *tbtrade.TaobaoTopSecretExtendAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTopSecretExtend(ctx context.Context, clt *core.SDKClient, req *tbtrade.TaobaoTopSecretExtendAPIRequest, resp *tbtrade.TaobaoTopSecretExtendAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

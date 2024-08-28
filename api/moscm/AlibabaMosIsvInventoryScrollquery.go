@@ -1,6 +1,8 @@
 package moscm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/moscm"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.mos.isv.inventory.scrollquery
 //
 // 按专柜滚动查询有库存商品
-func AlibabaMosIsvInventoryScrollquery(clt *core.SDKClient, req *moscm.AlibabaMosIsvInventoryScrollqueryAPIRequest, resp *moscm.AlibabaMosIsvInventoryScrollqueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMosIsvInventoryScrollquery(ctx context.Context, clt *core.SDKClient, req *moscm.AlibabaMosIsvInventoryScrollqueryAPIRequest, resp *moscm.AlibabaMosIsvInventoryScrollqueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

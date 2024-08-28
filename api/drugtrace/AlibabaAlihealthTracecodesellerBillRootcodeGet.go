@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.tracecodeseller.bill.rootcode.get
 //
 // 获取最外层包装码
-func AlibabaAlihealthTracecodesellerBillRootcodeGet(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest, resp *drugtrace.AlibabaAlihealthTracecodesellerBillRootcodeGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthTracecodesellerBillRootcodeGet(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest, resp *drugtrace.AlibabaAlihealthTracecodesellerBillRootcodeGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package alihouse
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihouse"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihouse.store.punish.info.query
 //
 // 门店处罚信息查询
-func AlibabaAlihouseStorePunishInfoQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseStorePunishInfoQueryAPIRequest, resp *alihouse.AlibabaAlihouseStorePunishInfoQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihouseStorePunishInfoQuery(ctx context.Context, clt *core.SDKClient, req *alihouse.AlibabaAlihouseStorePunishInfoQueryAPIRequest, resp *alihouse.AlibabaAlihouseStorePunishInfoQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

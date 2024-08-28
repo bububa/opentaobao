@@ -1,6 +1,8 @@
 package ascpchannel
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ascpchannel"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ascp.channel.refund.cancel
 //
 // 售后申请的撤回接口
-func AlibabaAscpChannelRefundCancel(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelRefundCancelAPIRequest, resp *ascpchannel.AlibabaAscpChannelRefundCancelAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAscpChannelRefundCancel(ctx context.Context, clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelRefundCancelAPIRequest, resp *ascpchannel.AlibabaAscpChannelRefundCancelAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

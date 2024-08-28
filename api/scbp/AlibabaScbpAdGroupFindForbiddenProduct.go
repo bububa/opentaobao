@@ -1,6 +1,8 @@
 package scbp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/scbp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.scbp.ad.group.find.forbidden.product
 //
 // 查询屏蔽品
-func AlibabaScbpAdGroupFindForbiddenProduct(clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupFindForbiddenProductAPIRequest, resp *scbp.AlibabaScbpAdGroupFindForbiddenProductAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaScbpAdGroupFindForbiddenProduct(ctx context.Context, clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupFindForbiddenProductAPIRequest, resp *scbp.AlibabaScbpAdGroupFindForbiddenProductAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

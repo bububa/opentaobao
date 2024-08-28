@@ -1,6 +1,8 @@
 package xhotelitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.xhotel.bnbcommon.add
 //
 // 通用调用top接口
-func TaobaoXhotelBnbcommonAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbcommonAddAPIRequest, resp *xhotelitem.TaobaoXhotelBnbcommonAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelBnbcommonAdd(ctx context.Context, clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbcommonAddAPIRequest, resp *xhotelitem.TaobaoXhotelBnbcommonAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

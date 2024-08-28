@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.fulfill.missfresh.warehouse.work.order.callback
 //
 // 家乐福仓作业单回传接口
-func AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallback(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackAPIRequest, resp *wdk.AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallback(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackAPIRequest, resp *wdk.AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

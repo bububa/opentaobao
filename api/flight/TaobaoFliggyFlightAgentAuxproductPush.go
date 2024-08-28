@@ -1,6 +1,8 @@
 package flight
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/flight"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.fliggy.flight.agent.auxproduct.push
 //
 // 廉航辅营产品投放接口
-func TaobaoFliggyFlightAgentAuxproductPush(clt *core.SDKClient, req *flight.TaobaoFliggyFlightAgentAuxproductPushAPIRequest, resp *flight.TaobaoFliggyFlightAgentAuxproductPushAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFliggyFlightAgentAuxproductPush(ctx context.Context, clt *core.SDKClient, req *flight.TaobaoFliggyFlightAgentAuxproductPushAPIRequest, resp *flight.TaobaoFliggyFlightAgentAuxproductPushAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

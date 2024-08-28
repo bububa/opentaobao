@@ -1,6 +1,8 @@
 package btrip
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/btrip"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.btrip.approval.new
 //
 // 用户新建审批单
-func AlitripBtripApprovalNew(clt *core.SDKClient, req *btrip.AlitripBtripApprovalNewAPIRequest, resp *btrip.AlitripBtripApprovalNewAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripBtripApprovalNew(ctx context.Context, clt *core.SDKClient, req *btrip.AlitripBtripApprovalNewAPIRequest, resp *btrip.AlitripBtripApprovalNewAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

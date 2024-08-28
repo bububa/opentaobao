@@ -1,6 +1,8 @@
 package lstwarehouse
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/lstwarehouse"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.lst.branddatashare.stockdata.query
 //
 // 品牌商查询授权供应商实仓库存数据
-func AlibabaLstBranddatashareStockdataQuery(clt *core.SDKClient, req *lstwarehouse.AlibabaLstBranddatashareStockdataQueryAPIRequest, resp *lstwarehouse.AlibabaLstBranddatashareStockdataQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLstBranddatashareStockdataQuery(ctx context.Context, clt *core.SDKClient, req *lstwarehouse.AlibabaLstBranddatashareStockdataQueryAPIRequest, resp *lstwarehouse.AlibabaLstBranddatashareStockdataQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

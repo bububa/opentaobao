@@ -1,6 +1,8 @@
 package util
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/util"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.mos.falcon.pos.counter.query
 //
 // 银泰商业获取专柜是否支持小数等属性查看
-func AlibabaMosFalconPosCounterQuery(clt *core.SDKClient, req *util.AlibabaMosFalconPosCounterQueryAPIRequest, resp *util.AlibabaMosFalconPosCounterQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMosFalconPosCounterQuery(ctx context.Context, clt *core.SDKClient, req *util.AlibabaMosFalconPosCounterQueryAPIRequest, resp *util.AlibabaMosFalconPosCounterQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

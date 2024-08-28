@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/baichuan"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.baichuan.taopassword.config
 //
 // 百川淘口令规则配置接口
-func AlibabaBaichuanTaopasswordConfig(clt *core.SDKClient, req *baichuan.AlibabaBaichuanTaopasswordConfigAPIRequest, resp *baichuan.AlibabaBaichuanTaopasswordConfigAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaBaichuanTaopasswordConfig(ctx context.Context, clt *core.SDKClient, req *baichuan.AlibabaBaichuanTaopasswordConfigAPIRequest, resp *baichuan.AlibabaBaichuanTaopasswordConfigAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

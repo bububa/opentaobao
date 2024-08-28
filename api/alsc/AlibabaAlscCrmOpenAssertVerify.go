@@ -1,6 +1,8 @@
 package alsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alsc.crm.open.assert.verify
 //
 // 核销储值，积分，券资产
-func AlibabaAlscCrmOpenAssertVerify(clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenAssertVerifyAPIRequest, resp *alsc.AlibabaAlscCrmOpenAssertVerifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlscCrmOpenAssertVerify(ctx context.Context, clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenAssertVerifyAPIRequest, resp *alsc.AlibabaAlscCrmOpenAssertVerifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

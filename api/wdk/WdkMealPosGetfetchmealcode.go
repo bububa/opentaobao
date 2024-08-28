@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // wdk.meal.pos.getfetchmealcode
 //
 // pos机创建订单前获取餐饮取餐号
-func WdkMealPosGetfetchmealcode(clt *core.SDKClient, req *wdk.WdkMealPosGetfetchmealcodeAPIRequest, resp *wdk.WdkMealPosGetfetchmealcodeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func WdkMealPosGetfetchmealcode(ctx context.Context, clt *core.SDKClient, req *wdk.WdkMealPosGetfetchmealcodeAPIRequest, resp *wdk.WdkMealPosGetfetchmealcodeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package miniappopen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/miniappopen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.miniapp.widget.template.instance.query
 //
 // 小部件实例化版本查询
-func TaobaoMiniappWidgetTemplateInstanceQuery(clt *core.SDKClient, req *miniappopen.TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest, resp *miniappopen.TaobaoMiniappWidgetTemplateInstanceQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoMiniappWidgetTemplateInstanceQuery(ctx context.Context, clt *core.SDKClient, req *miniappopen.TaobaoMiniappWidgetTemplateInstanceQueryAPIRequest, resp *miniappopen.TaobaoMiniappWidgetTemplateInstanceQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

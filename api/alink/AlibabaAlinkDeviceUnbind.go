@@ -1,6 +1,8 @@
 package alink
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alink"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alink.device.unbind
 //
 // 阿里智能解绑设备
-func AlibabaAlinkDeviceUnbind(clt *core.SDKClient, req *alink.AlibabaAlinkDeviceUnbindAPIRequest, resp *alink.AlibabaAlinkDeviceUnbindAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlinkDeviceUnbind(ctx context.Context, clt *core.SDKClient, req *alink.AlibabaAlinkDeviceUnbindAPIRequest, resp *alink.AlibabaAlinkDeviceUnbindAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

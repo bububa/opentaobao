@@ -1,6 +1,8 @@
 package product
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/product"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.jym.item.external.goods.batch.modifyprice
 //
 // 供外部B端商家接入，提交批量商品改价请求，返回批量改价任务结果
-func AlibabaJymItemExternalGoodsBatchModifyprice(clt *core.SDKClient, req *product.AlibabaJymItemExternalGoodsBatchModifypriceAPIRequest, resp *product.AlibabaJymItemExternalGoodsBatchModifypriceAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaJymItemExternalGoodsBatchModifyprice(ctx context.Context, clt *core.SDKClient, req *product.AlibabaJymItemExternalGoodsBatchModifypriceAPIRequest, resp *product.AlibabaJymItemExternalGoodsBatchModifypriceAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

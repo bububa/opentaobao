@@ -1,6 +1,8 @@
 package alisports
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alisports"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alisports.passport.account.bindthirdid
 //
 // 阿里体育三方ID绑定接口
-func AlibabaAlisportsPassportAccountBindthirdid(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountBindthirdidAPIRequest, resp *alisports.AlibabaAlisportsPassportAccountBindthirdidAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlisportsPassportAccountBindthirdid(ctx context.Context, clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountBindthirdidAPIRequest, resp *alisports.AlibabaAlisportsPassportAccountBindthirdidAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

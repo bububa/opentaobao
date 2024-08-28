@@ -1,6 +1,8 @@
 package yunosdm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/yunosdm"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.dm.sys.get.domain
 //
 // 返回alios ucp后端域名
-func YunosDmSysGetDomain(clt *core.SDKClient, req *yunosdm.YunosDmSysGetDomainAPIRequest, resp *yunosdm.YunosDmSysGetDomainAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosDmSysGetDomain(ctx context.Context, clt *core.SDKClient, req *yunosdm.YunosDmSysGetDomainAPIRequest, resp *yunosdm.YunosDmSysGetDomainAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

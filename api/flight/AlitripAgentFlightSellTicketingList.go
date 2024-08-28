@@ -1,6 +1,8 @@
 package flight
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/flight"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.agent.flight.sell.ticketing.list
 //
 // 销售出票列表
-func AlitripAgentFlightSellTicketingList(clt *core.SDKClient, req *flight.AlitripAgentFlightSellTicketingListAPIRequest, resp *flight.AlitripAgentFlightSellTicketingListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripAgentFlightSellTicketingList(ctx context.Context, clt *core.SDKClient, req *flight.AlitripAgentFlightSellTicketingListAPIRequest, resp *flight.AlitripAgentFlightSellTicketingListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

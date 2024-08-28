@@ -1,6 +1,8 @@
 package alink
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alink"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alink.message.history.list
 //
 // 查询消息列表
-func AlibabaAlinkMessageHistoryList(clt *core.SDKClient, req *alink.AlibabaAlinkMessageHistoryListAPIRequest, resp *alink.AlibabaAlinkMessageHistoryListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlinkMessageHistoryList(ctx context.Context, clt *core.SDKClient, req *alink.AlibabaAlinkMessageHistoryListAPIRequest, resp *alink.AlibabaAlinkMessageHistoryListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

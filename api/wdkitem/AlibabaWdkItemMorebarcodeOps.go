@@ -1,6 +1,8 @@
 package wdkitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdkitem"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.item.morebarcode.ops
 //
 // 商品一品多码维护操作
-func AlibabaWdkItemMorebarcodeOps(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemMorebarcodeOpsAPIRequest, resp *wdkitem.AlibabaWdkItemMorebarcodeOpsAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkItemMorebarcodeOps(ctx context.Context, clt *core.SDKClient, req *wdkitem.AlibabaWdkItemMorebarcodeOpsAPIRequest, resp *wdkitem.AlibabaWdkItemMorebarcodeOpsAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

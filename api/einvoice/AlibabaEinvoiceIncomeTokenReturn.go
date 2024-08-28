@@ -1,6 +1,8 @@
 package einvoice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/einvoice"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.einvoice.income.token.return
 //
 // 服务商回传税号token，用来勾选抵扣认证
-func AlibabaEinvoiceIncomeTokenReturn(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceIncomeTokenReturnAPIRequest, resp *einvoice.AlibabaEinvoiceIncomeTokenReturnAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaEinvoiceIncomeTokenReturn(ctx context.Context, clt *core.SDKClient, req *einvoice.AlibabaEinvoiceIncomeTokenReturnAPIRequest, resp *einvoice.AlibabaEinvoiceIncomeTokenReturnAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

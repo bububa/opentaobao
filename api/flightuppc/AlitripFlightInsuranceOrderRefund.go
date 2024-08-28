@@ -1,6 +1,8 @@
 package flightuppc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/flightuppc"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.flight.insurance.order.refund
 //
 // 保险订单退保
-func AlitripFlightInsuranceOrderRefund(clt *core.SDKClient, req *flightuppc.AlitripFlightInsuranceOrderRefundAPIRequest, resp *flightuppc.AlitripFlightInsuranceOrderRefundAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripFlightInsuranceOrderRefund(ctx context.Context, clt *core.SDKClient, req *flightuppc.AlitripFlightInsuranceOrderRefundAPIRequest, resp *flightuppc.AlitripFlightInsuranceOrderRefundAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

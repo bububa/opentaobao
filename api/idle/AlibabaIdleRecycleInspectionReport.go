@@ -1,6 +1,8 @@
 package idle
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idle"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.recycle.inspection.report
 //
 // 回收商鉴定报告
-func AlibabaIdleRecycleInspectionReport(clt *core.SDKClient, req *idle.AlibabaIdleRecycleInspectionReportAPIRequest, resp *idle.AlibabaIdleRecycleInspectionReportAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleRecycleInspectionReport(ctx context.Context, clt *core.SDKClient, req *idle.AlibabaIdleRecycleInspectionReportAPIRequest, resp *idle.AlibabaIdleRecycleInspectionReportAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

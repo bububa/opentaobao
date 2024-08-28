@@ -1,6 +1,8 @@
 package flight
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/flight"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.policy.normal.upload
 //
 // 上传普通类型的单程/往返政策
-func AlitripPolicyNormalUpload(clt *core.SDKClient, req *flight.AlitripPolicyNormalUploadAPIRequest, resp *flight.AlitripPolicyNormalUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripPolicyNormalUpload(ctx context.Context, clt *core.SDKClient, req *flight.AlitripPolicyNormalUploadAPIRequest, resp *flight.AlitripPolicyNormalUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.sku.category.delete
 //
 // 商家类目删除接口
-func AlibabaWdkSkuCategoryDelete(clt *core.SDKClient, req *wdk.AlibabaWdkSkuCategoryDeleteAPIRequest, resp *wdk.AlibabaWdkSkuCategoryDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkSkuCategoryDelete(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkSkuCategoryDeleteAPIRequest, resp *wdk.AlibabaWdkSkuCategoryDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

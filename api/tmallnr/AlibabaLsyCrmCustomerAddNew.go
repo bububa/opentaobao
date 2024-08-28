@@ -1,6 +1,8 @@
 package tmallnr
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallnr"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.lsy.crm.customer.add.new
 //
 // 导购域提供留资入口
-func AlibabaLsyCrmCustomerAddNew(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmCustomerAddNewAPIRequest, resp *tmallnr.AlibabaLsyCrmCustomerAddNewAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLsyCrmCustomerAddNew(ctx context.Context, clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmCustomerAddNewAPIRequest, resp *tmallnr.AlibabaLsyCrmCustomerAddNewAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

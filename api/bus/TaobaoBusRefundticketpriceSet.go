@@ -1,6 +1,8 @@
 package bus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/bus"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.bus.refundticketprice.set
 //
 // 汽车票代理商利用该接口申请退票
-func TaobaoBusRefundticketpriceSet(clt *core.SDKClient, req *bus.TaobaoBusRefundticketpriceSetAPIRequest, resp *bus.TaobaoBusRefundticketpriceSetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBusRefundticketpriceSet(ctx context.Context, clt *core.SDKClient, req *bus.TaobaoBusRefundticketpriceSetAPIRequest, resp *bus.TaobaoBusRefundticketpriceSetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package util
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/util"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qimen.event.produce
 //
 // 当订单被处理时，用于通知奇门系统。
-func TaobaoQimenEventProduce(clt *core.SDKClient, req *util.TaobaoQimenEventProduceAPIRequest, resp *util.TaobaoQimenEventProduceAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQimenEventProduce(ctx context.Context, clt *core.SDKClient, req *util.TaobaoQimenEventProduceAPIRequest, resp *util.TaobaoQimenEventProduceAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

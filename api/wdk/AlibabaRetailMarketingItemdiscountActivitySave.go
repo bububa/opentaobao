@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.retail.marketing.itemdiscount.activity.save
 //
 // 【同城零售】单品活动保存
-func AlibabaRetailMarketingItemdiscountActivitySave(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingItemdiscountActivitySaveAPIRequest, resp *wdk.AlibabaRetailMarketingItemdiscountActivitySaveAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaRetailMarketingItemdiscountActivitySave(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaRetailMarketingItemdiscountActivitySaveAPIRequest, resp *wdk.AlibabaRetailMarketingItemdiscountActivitySaveAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

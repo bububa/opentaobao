@@ -1,6 +1,8 @@
 package legalsuit
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/legalsuit"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.legal.suit.case.get
 //
 // 获取案件信息
-func AlibabaLegalSuitCaseGet(clt *core.SDKClient, req *legalsuit.AlibabaLegalSuitCaseGetAPIRequest, resp *legalsuit.AlibabaLegalSuitCaseGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLegalSuitCaseGet(ctx context.Context, clt *core.SDKClient, req *legalsuit.AlibabaLegalSuitCaseGetAPIRequest, resp *legalsuit.AlibabaLegalSuitCaseGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

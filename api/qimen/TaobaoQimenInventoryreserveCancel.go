@@ -1,6 +1,8 @@
 package qimen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qimen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qimen.inventoryreserve.cancel
 //
 // 库存预占取消
-func TaobaoQimenInventoryreserveCancel(clt *core.SDKClient, req *qimen.TaobaoQimenInventoryreserveCancelAPIRequest, resp *qimen.TaobaoQimenInventoryreserveCancelAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQimenInventoryreserveCancel(ctx context.Context, clt *core.SDKClient, req *qimen.TaobaoQimenInventoryreserveCancelAPIRequest, resp *qimen.TaobaoQimenInventoryreserveCancelAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

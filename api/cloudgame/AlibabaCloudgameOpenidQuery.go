@@ -1,6 +1,8 @@
 package cloudgame
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/cloudgame"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.cloudgame.openid.query
 //
 // 云游戏业务需要提供查询用户信息的TOP能力
-func AlibabaCloudgameOpenidQuery(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameOpenidQueryAPIRequest, resp *cloudgame.AlibabaCloudgameOpenidQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCloudgameOpenidQuery(ctx context.Context, clt *core.SDKClient, req *cloudgame.AlibabaCloudgameOpenidQueryAPIRequest, resp *cloudgame.AlibabaCloudgameOpenidQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

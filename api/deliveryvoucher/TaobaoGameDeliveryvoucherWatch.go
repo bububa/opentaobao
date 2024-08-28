@@ -1,6 +1,8 @@
 package deliveryvoucher
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/deliveryvoucher"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.game.deliveryvoucher.watch
 //
 // 监控预约数据
-func TaobaoGameDeliveryvoucherWatch(clt *core.SDKClient, req *deliveryvoucher.TaobaoGameDeliveryvoucherWatchAPIRequest, resp *deliveryvoucher.TaobaoGameDeliveryvoucherWatchAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoGameDeliveryvoucherWatch(ctx context.Context, clt *core.SDKClient, req *deliveryvoucher.TaobaoGameDeliveryvoucherWatchAPIRequest, resp *deliveryvoucher.TaobaoGameDeliveryvoucherWatchAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

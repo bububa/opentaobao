@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.tcls.aelophy.bill.verificate.callback
 //
 // 翱象ERP核销回调
-func AlibabaTclsAelophyBillVerificateCallback(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyBillVerificateCallbackAPIRequest, resp *wdk.AlibabaTclsAelophyBillVerificateCallbackAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaTclsAelophyBillVerificateCallback(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaTclsAelophyBillVerificateCallbackAPIRequest, resp *wdk.AlibabaTclsAelophyBillVerificateCallbackAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

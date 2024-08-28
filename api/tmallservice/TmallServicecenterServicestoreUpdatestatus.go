@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.servicecenter.servicestore.updatestatus
 //
 // 修改网点/门店状态
-func TmallServicecenterServicestoreUpdatestatus(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreUpdatestatusAPIRequest, resp *tmallservice.TmallServicecenterServicestoreUpdatestatusAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallServicecenterServicestoreUpdatestatus(ctx context.Context, clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreUpdatestatusAPIRequest, resp *tmallservice.TmallServicecenterServicestoreUpdatestatusAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

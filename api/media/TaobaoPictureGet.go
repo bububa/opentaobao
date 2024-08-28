@@ -1,6 +1,8 @@
 package media
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/media"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.picture.get
 //
 // 获取图片信息
-func TaobaoPictureGet(clt *core.SDKClient, req *media.TaobaoPictureGetAPIRequest, resp *media.TaobaoPictureGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoPictureGet(ctx context.Context, clt *core.SDKClient, req *media.TaobaoPictureGetAPIRequest, resp *media.TaobaoPictureGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

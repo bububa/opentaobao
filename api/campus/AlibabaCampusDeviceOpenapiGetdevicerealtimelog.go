@@ -1,6 +1,8 @@
 package campus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/campus"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.campus.device.openapi.getdevicerealtimelog
 //
 // 根据设备uuid获取设备采集信息
-func AlibabaCampusDeviceOpenapiGetdevicerealtimelog(clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest, resp *campus.AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCampusDeviceOpenapiGetdevicerealtimelog(ctx context.Context, clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest, resp *campus.AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

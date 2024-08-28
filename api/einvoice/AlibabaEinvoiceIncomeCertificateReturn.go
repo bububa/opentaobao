@@ -1,6 +1,8 @@
 package einvoice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/einvoice"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.einvoice.income.certificate.return
 //
 // 服务商回传客户端agent所处环境的设备列表，比如扫描仪
-func AlibabaEinvoiceIncomeCertificateReturn(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceIncomeCertificateReturnAPIRequest, resp *einvoice.AlibabaEinvoiceIncomeCertificateReturnAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaEinvoiceIncomeCertificateReturn(ctx context.Context, clt *core.SDKClient, req *einvoice.AlibabaEinvoiceIncomeCertificateReturnAPIRequest, resp *einvoice.AlibabaEinvoiceIncomeCertificateReturnAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

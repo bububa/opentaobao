@@ -1,6 +1,8 @@
 package qianniu
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qianniu"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qncopilot.picture.audit
 //
 // AIGC创作图片审核
-func TaobaoQncopilotPictureAudit(clt *core.SDKClient, req *qianniu.TaobaoQncopilotPictureAuditAPIRequest, resp *qianniu.TaobaoQncopilotPictureAuditAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQncopilotPictureAudit(ctx context.Context, clt *core.SDKClient, req *qianniu.TaobaoQncopilotPictureAuditAPIRequest, resp *qianniu.TaobaoQncopilotPictureAuditAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

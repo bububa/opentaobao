@@ -1,6 +1,8 @@
 package tbk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbk"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.tbk.cart.coupon.expire.user.query
 //
 // 购物车催付根据对应规则查询用户信息。
-func TaobaoTbkCartCouponExpireUserQuery(clt *core.SDKClient, req *tbk.TaobaoTbkCartCouponExpireUserQueryAPIRequest, resp *tbk.TaobaoTbkCartCouponExpireUserQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTbkCartCouponExpireUserQuery(ctx context.Context, clt *core.SDKClient, req *tbk.TaobaoTbkCartCouponExpireUserQueryAPIRequest, resp *tbk.TaobaoTbkCartCouponExpireUserQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

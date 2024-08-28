@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.marketing.open.darunfa.activity.sku.sync
 //
 // 大润发营销商品数据同步
-func AlibabaWdkMarketingOpenDarunfaActivitySkuSync(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest, resp *wdk.AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkMarketingOpenDarunfaActivitySkuSync(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest, resp *wdk.AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package nrt
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/nrt"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.nrt.pay.merchant.stall.signing.modify
 //
 // 三级商户进件修改
-func TmallNrtPayMerchantStallSigningModify(clt *core.SDKClient, req *nrt.TmallNrtPayMerchantStallSigningModifyAPIRequest, resp *nrt.TmallNrtPayMerchantStallSigningModifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallNrtPayMerchantStallSigningModify(ctx context.Context, clt *core.SDKClient, req *nrt.TmallNrtPayMerchantStallSigningModifyAPIRequest, resp *nrt.TmallNrtPayMerchantStallSigningModifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

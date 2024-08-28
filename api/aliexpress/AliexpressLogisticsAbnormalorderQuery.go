@@ -1,6 +1,8 @@
 package aliexpress
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/aliexpress"
 )
@@ -9,6 +11,6 @@ import (
 // aliexpress.logistics.abnormalorder.query
 //
 // 异常订单查询
-func AliexpressLogisticsAbnormalorderQuery(clt *core.SDKClient, req *aliexpress.AliexpressLogisticsAbnormalorderQueryAPIRequest, resp *aliexpress.AliexpressLogisticsAbnormalorderQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliexpressLogisticsAbnormalorderQuery(ctx context.Context, clt *core.SDKClient, req *aliexpress.AliexpressLogisticsAbnormalorderQueryAPIRequest, resp *aliexpress.AliexpressLogisticsAbnormalorderQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

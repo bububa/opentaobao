@@ -1,6 +1,8 @@
 package einvoice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/einvoice"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.einvoice.merchant.createreq
 //
 // 商家自研ERP发起开票请求，无需授权，API只能使用商家入驻的税号进行开票
-func AlibabaEinvoiceMerchantCreatereq(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceMerchantCreatereqAPIRequest, resp *einvoice.AlibabaEinvoiceMerchantCreatereqAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaEinvoiceMerchantCreatereq(ctx context.Context, clt *core.SDKClient, req *einvoice.AlibabaEinvoiceMerchantCreatereqAPIRequest, resp *einvoice.AlibabaEinvoiceMerchantCreatereqAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

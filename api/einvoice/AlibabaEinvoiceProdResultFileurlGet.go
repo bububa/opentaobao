@@ -1,6 +1,8 @@
 package einvoice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/einvoice"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.einvoice.prod.result.fileurl.get
 //
 // 发票文件下载地址查询，外部ISV通过该接口可以查对应发票文件
-func AlibabaEinvoiceProdResultFileurlGet(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceProdResultFileurlGetAPIRequest, resp *einvoice.AlibabaEinvoiceProdResultFileurlGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaEinvoiceProdResultFileurlGet(ctx context.Context, clt *core.SDKClient, req *einvoice.AlibabaEinvoiceProdResultFileurlGetAPIRequest, resp *einvoice.AlibabaEinvoiceProdResultFileurlGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

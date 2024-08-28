@@ -1,6 +1,8 @@
 package alidoc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alidoc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.alidoc.drug.store.update
 //
 // 药店信息更新接口
-func AlibabaAlihealthAlidocDrugStoreUpdate(clt *core.SDKClient, req *alidoc.AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest, resp *alidoc.AlibabaAlihealthAlidocDrugStoreUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthAlidocDrugStoreUpdate(ctx context.Context, clt *core.SDKClient, req *alidoc.AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest, resp *alidoc.AlibabaAlihealthAlidocDrugStoreUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

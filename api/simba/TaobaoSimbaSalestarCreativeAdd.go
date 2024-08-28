@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.simba.salestar.creative.add
 //
 // 创建一个创意
-func TaobaoSimbaSalestarCreativeAdd(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarCreativeAddAPIRequest, resp *simba.TaobaoSimbaSalestarCreativeAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSimbaSalestarCreativeAdd(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSimbaSalestarCreativeAddAPIRequest, resp *simba.TaobaoSimbaSalestarCreativeAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

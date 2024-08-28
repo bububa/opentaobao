@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.syncedorder.query
 //
 // 外部商户查询同步到五道口的订单
-func AlibabaWdkSyncedorderQuery(clt *core.SDKClient, req *wdk.AlibabaWdkSyncedorderQueryAPIRequest, resp *wdk.AlibabaWdkSyncedorderQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkSyncedorderQuery(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkSyncedorderQueryAPIRequest, resp *wdk.AlibabaWdkSyncedorderQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

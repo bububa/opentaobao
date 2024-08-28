@@ -1,6 +1,8 @@
 package crm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/crm"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.crm.member.joinurl.get
 //
 // 会员入会地址获取
-func TaobaoCrmMemberJoinurlGet(clt *core.SDKClient, req *crm.TaobaoCrmMemberJoinurlGetAPIRequest, resp *crm.TaobaoCrmMemberJoinurlGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoCrmMemberJoinurlGet(ctx context.Context, clt *core.SDKClient, req *crm.TaobaoCrmMemberJoinurlGetAPIRequest, resp *crm.TaobaoCrmMemberJoinurlGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

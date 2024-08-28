@@ -1,6 +1,8 @@
 package jst
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/jst"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.jst.sms.message.shorturl.create
 //
 // 聚石塔生成淘短链接口
-func TaobaoJstSmsMessageShorturlCreate(clt *core.SDKClient, req *jst.TaobaoJstSmsMessageShorturlCreateAPIRequest, resp *jst.TaobaoJstSmsMessageShorturlCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoJstSmsMessageShorturlCreate(ctx context.Context, clt *core.SDKClient, req *jst.TaobaoJstSmsMessageShorturlCreateAPIRequest, resp *jst.TaobaoJstSmsMessageShorturlCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package charity
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/charity"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.charity.useraction.sync
 //
 // 外部公益活动，用户公益行为同步
-func AlibabaCharityUseractionSync(clt *core.SDKClient, req *charity.AlibabaCharityUseractionSyncAPIRequest, resp *charity.AlibabaCharityUseractionSyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCharityUseractionSync(ctx context.Context, clt *core.SDKClient, req *charity.AlibabaCharityUseractionSyncAPIRequest, resp *charity.AlibabaCharityUseractionSyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package alicom
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alicom"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.base.order.supplier.notify
 //
 // 接收阿里通信流量运营商信息回传
-func AlibabaBaseOrderSupplierNotify(clt *core.SDKClient, req *alicom.AlibabaBaseOrderSupplierNotifyAPIRequest, resp *alicom.AlibabaBaseOrderSupplierNotifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaBaseOrderSupplierNotify(ctx context.Context, clt *core.SDKClient, req *alicom.AlibabaBaseOrderSupplierNotifyAPIRequest, resp *alicom.AlibabaBaseOrderSupplierNotifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

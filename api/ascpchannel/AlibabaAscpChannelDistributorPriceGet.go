@@ -1,6 +1,8 @@
 package ascpchannel
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ascpchannel"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ascp.channel.distributor.price.get
 //
 // 此api为淘外分销的渠道产品价格查询标准api，淘外分销商专用
-func AlibabaAscpChannelDistributorPriceGet(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelDistributorPriceGetAPIRequest, resp *ascpchannel.AlibabaAscpChannelDistributorPriceGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAscpChannelDistributorPriceGet(ctx context.Context, clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelDistributorPriceGetAPIRequest, resp *ascpchannel.AlibabaAscpChannelDistributorPriceGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

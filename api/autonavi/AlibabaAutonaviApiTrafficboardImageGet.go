@@ -1,6 +1,8 @@
 package autonavi
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/autonavi"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.autonavi.api.trafficboard.image.get
 //
 // 获取指定情报板ID的二进制数据（图片）
-func AlibabaAutonaviApiTrafficboardImageGet(clt *core.SDKClient, req *autonavi.AlibabaAutonaviApiTrafficboardImageGetAPIRequest, resp *autonavi.AlibabaAutonaviApiTrafficboardImageGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAutonaviApiTrafficboardImageGet(ctx context.Context, clt *core.SDKClient, req *autonavi.AlibabaAutonaviApiTrafficboardImageGetAPIRequest, resp *autonavi.AlibabaAutonaviApiTrafficboardImageGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

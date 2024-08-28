@@ -1,6 +1,8 @@
 package tmallnr
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallnr"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.nr.item.tag.ops
 //
 // 参加区域零售的商品，需要批量打标或去标，方便后续设置商品库存
-func TmallNrItemTagOps(clt *core.SDKClient, req *tmallnr.TmallNrItemTagOpsAPIRequest, resp *tmallnr.TmallNrItemTagOpsAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallNrItemTagOps(ctx context.Context, clt *core.SDKClient, req *tmallnr.TmallNrItemTagOpsAPIRequest, resp *tmallnr.TmallNrItemTagOpsAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

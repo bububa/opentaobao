@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.channel.order.refund.confirm
 //
 // 退款确认
-func AlibabaWdkChannelOrderRefundConfirm(clt *core.SDKClient, req *wdk.AlibabaWdkChannelOrderRefundConfirmAPIRequest, resp *wdk.AlibabaWdkChannelOrderRefundConfirmAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkChannelOrderRefundConfirm(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkChannelOrderRefundConfirmAPIRequest, resp *wdk.AlibabaWdkChannelOrderRefundConfirmAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

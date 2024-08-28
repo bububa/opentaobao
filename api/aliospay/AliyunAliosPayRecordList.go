@@ -1,6 +1,8 @@
 package aliospay
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/aliospay"
 )
@@ -9,6 +11,6 @@ import (
 // aliyun.alios.pay.record.list
 //
 // 商户用来对账的接口
-func AliyunAliosPayRecordList(clt *core.SDKClient, req *aliospay.AliyunAliosPayRecordListAPIRequest, resp *aliospay.AliyunAliosPayRecordListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliyunAliosPayRecordList(ctx context.Context, clt *core.SDKClient, req *aliospay.AliyunAliosPayRecordListAPIRequest, resp *aliospay.AliyunAliosPayRecordListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.secondard.node.code.showurl
 //
 // 二级节点查询码信息url
-func AlibabaAlihealthSecondardNodeCodeShowurl(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthSecondardNodeCodeShowurlAPIRequest, resp *drugtrace.AlibabaAlihealthSecondardNodeCodeShowurlAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthSecondardNodeCodeShowurl(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthSecondardNodeCodeShowurlAPIRequest, resp *drugtrace.AlibabaAlihealthSecondardNodeCodeShowurlAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

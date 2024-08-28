@@ -1,6 +1,8 @@
 package scbp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/scbp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.scbp.ad.keyword.query.keyword.rank.price
 //
 // 查询关键词前五名排价
-func AlibabaScbpAdKeywordQueryKeywordRankPrice(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordQueryKeywordRankPriceAPIRequest, resp *scbp.AlibabaScbpAdKeywordQueryKeywordRankPriceAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaScbpAdKeywordQueryKeywordRankPrice(ctx context.Context, clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordQueryKeywordRankPriceAPIRequest, resp *scbp.AlibabaScbpAdKeywordQueryKeywordRankPriceAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

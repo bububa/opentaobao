@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.promotag.tag.apply
 //
 // 创建优惠标签
-func TmallPromotagTagApply(clt *core.SDKClient, req *promotion.TmallPromotagTagApplyAPIRequest, resp *promotion.TmallPromotagTagApplyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallPromotagTagApply(ctx context.Context, clt *core.SDKClient, req *promotion.TmallPromotagTagApplyAPIRequest, resp *promotion.TmallPromotagTagApplyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package koubeimall
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/koubeimall"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.koubei.mall.common.store.comment.page
 //
 // 查询口碑综合体内的门店评论信息
-func TaobaoKoubeiMallCommonStoreCommentPage(clt *core.SDKClient, req *koubeimall.TaobaoKoubeiMallCommonStoreCommentPageAPIRequest, resp *koubeimall.TaobaoKoubeiMallCommonStoreCommentPageAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoKoubeiMallCommonStoreCommentPage(ctx context.Context, clt *core.SDKClient, req *koubeimall.TaobaoKoubeiMallCommonStoreCommentPageAPIRequest, resp *koubeimall.TaobaoKoubeiMallCommonStoreCommentPageAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

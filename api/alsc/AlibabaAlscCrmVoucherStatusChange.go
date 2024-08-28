@@ -1,6 +1,8 @@
 package alsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alsc.crm.voucher.status.change
 //
 // 核销优惠券
-func AlibabaAlscCrmVoucherStatusChange(clt *core.SDKClient, req *alsc.AlibabaAlscCrmVoucherStatusChangeAPIRequest, resp *alsc.AlibabaAlscCrmVoucherStatusChangeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlscCrmVoucherStatusChange(ctx context.Context, clt *core.SDKClient, req *alsc.AlibabaAlscCrmVoucherStatusChangeAPIRequest, resp *alsc.AlibabaAlscCrmVoucherStatusChangeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

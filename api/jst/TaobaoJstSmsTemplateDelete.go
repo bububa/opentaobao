@@ -1,6 +1,8 @@
 package jst
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/jst"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.jst.sms.template.delete
 //
 // 淘宝短信模板删除
-func TaobaoJstSmsTemplateDelete(clt *core.SDKClient, req *jst.TaobaoJstSmsTemplateDeleteAPIRequest, resp *jst.TaobaoJstSmsTemplateDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoJstSmsTemplateDelete(ctx context.Context, clt *core.SDKClient, req *jst.TaobaoJstSmsTemplateDeleteAPIRequest, resp *jst.TaobaoJstSmsTemplateDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package openim
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/openim"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.openim.tribe.getalltribes
 //
 // OPENIM群服务获取用户群列表
-func TaobaoOpenimTribeGetalltribes(clt *core.SDKClient, req *openim.TaobaoOpenimTribeGetalltribesAPIRequest, resp *openim.TaobaoOpenimTribeGetalltribesAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOpenimTribeGetalltribes(ctx context.Context, clt *core.SDKClient, req *openim.TaobaoOpenimTribeGetalltribesAPIRequest, resp *openim.TaobaoOpenimTribeGetalltribesAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package openim
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/openim"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.openim.tribe.unsetmanager
 //
 // OPENIM群取消管理员
-func TaobaoOpenimTribeUnsetmanager(clt *core.SDKClient, req *openim.TaobaoOpenimTribeUnsetmanagerAPIRequest, resp *openim.TaobaoOpenimTribeUnsetmanagerAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOpenimTribeUnsetmanager(ctx context.Context, clt *core.SDKClient, req *openim.TaobaoOpenimTribeUnsetmanagerAPIRequest, resp *openim.TaobaoOpenimTribeUnsetmanagerAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

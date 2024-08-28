@@ -1,6 +1,8 @@
 package brandhub
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/brandhub"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.brandhub.specialshow.rpt.adgroup.get
 //
 // 获取品牌号品牌特秀广告adgroup分日报表数据，只能查询近90天内的数据，包括展现量，点击量等
-func TaobaoBrandhubSpecialshowRptAdgroupGet(clt *core.SDKClient, req *brandhub.TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest, resp *brandhub.TaobaoBrandhubSpecialshowRptAdgroupGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBrandhubSpecialshowRptAdgroupGet(ctx context.Context, clt *core.SDKClient, req *brandhub.TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest, resp *brandhub.TaobaoBrandhubSpecialshowRptAdgroupGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

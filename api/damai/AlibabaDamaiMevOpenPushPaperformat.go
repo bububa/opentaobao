@@ -1,6 +1,8 @@
 package damai
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/damai"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.damai.mev.open.push.paperformat
 //
 // pushPaperFormat
-func AlibabaDamaiMevOpenPushPaperformat(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushPaperformatAPIRequest, resp *damai.AlibabaDamaiMevOpenPushPaperformatAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaDamaiMevOpenPushPaperformat(ctx context.Context, clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushPaperformatAPIRequest, resp *damai.AlibabaDamaiMevOpenPushPaperformatAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

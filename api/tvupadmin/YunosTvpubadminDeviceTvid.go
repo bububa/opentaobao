@@ -1,6 +1,8 @@
 package tvupadmin
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.tvpubadmin.device.tvid
 //
 // 通过UUID查询终端信息
-func YunosTvpubadminDeviceTvid(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceTvidAPIRequest, resp *tvupadmin.YunosTvpubadminDeviceTvidAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosTvpubadminDeviceTvid(ctx context.Context, clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceTvidAPIRequest, resp *tvupadmin.YunosTvpubadminDeviceTvidAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

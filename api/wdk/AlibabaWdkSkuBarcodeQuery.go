@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.sku.barcode.query
 //
 // 查询商品编码，支持一品多码
-func AlibabaWdkSkuBarcodeQuery(clt *core.SDKClient, req *wdk.AlibabaWdkSkuBarcodeQueryAPIRequest, resp *wdk.AlibabaWdkSkuBarcodeQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkSkuBarcodeQuery(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkSkuBarcodeQueryAPIRequest, resp *wdk.AlibabaWdkSkuBarcodeQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

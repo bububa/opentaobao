@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.universalbp.report.query.area
 //
 // 地域报表查询
-func TaobaoUniversalbpReportQueryArea(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryAreaAPIRequest, resp *simba.TaobaoUniversalbpReportQueryAreaAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoUniversalbpReportQueryArea(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryAreaAPIRequest, resp *simba.TaobaoUniversalbpReportQueryAreaAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

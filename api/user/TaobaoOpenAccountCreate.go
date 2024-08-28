@@ -1,6 +1,8 @@
 package user
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/user"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.open.account.create
 //
 // Open Account导入数据
-func TaobaoOpenAccountCreate(clt *core.SDKClient, req *user.TaobaoOpenAccountCreateAPIRequest, resp *user.TaobaoOpenAccountCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOpenAccountCreate(ctx context.Context, clt *core.SDKClient, req *user.TaobaoOpenAccountCreateAPIRequest, resp *user.TaobaoOpenAccountCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

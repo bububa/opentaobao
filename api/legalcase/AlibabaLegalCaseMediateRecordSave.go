@@ -1,6 +1,8 @@
 package legalcase
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/legalcase"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.legal.case.mediate.record.save
 //
 // 增加调解沟通记录
-func AlibabaLegalCaseMediateRecordSave(clt *core.SDKClient, req *legalcase.AlibabaLegalCaseMediateRecordSaveAPIRequest, resp *legalcase.AlibabaLegalCaseMediateRecordSaveAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLegalCaseMediateRecordSave(ctx context.Context, clt *core.SDKClient, req *legalcase.AlibabaLegalCaseMediateRecordSaveAPIRequest, resp *legalcase.AlibabaLegalCaseMediateRecordSaveAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

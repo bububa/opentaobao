@@ -1,6 +1,8 @@
 package alihouse
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihouse"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihouse.newhome.vr.sync
 //
 // 对接易居VR关系数据迁移
-func AlibabaAlihouseNewhomeVrSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeVrSyncAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeVrSyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihouseNewhomeVrSync(ctx context.Context, clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeVrSyncAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeVrSyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

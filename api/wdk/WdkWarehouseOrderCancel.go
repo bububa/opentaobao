@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // wdk.warehouse.order.cancel
 //
 // 仓作业取消下发
-func WdkWarehouseOrderCancel(clt *core.SDKClient, req *wdk.WdkWarehouseOrderCancelAPIRequest, resp *wdk.WdkWarehouseOrderCancelAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func WdkWarehouseOrderCancel(ctx context.Context, clt *core.SDKClient, req *wdk.WdkWarehouseOrderCancelAPIRequest, resp *wdk.WdkWarehouseOrderCancelAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package scbp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/scbp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.scbp.account.status.update
 //
 // 修改账户级别关键词推广状态
-func AlibabaScbpAccountStatusUpdate(clt *core.SDKClient, req *scbp.AlibabaScbpAccountStatusUpdateAPIRequest, resp *scbp.AlibabaScbpAccountStatusUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaScbpAccountStatusUpdate(ctx context.Context, clt *core.SDKClient, req *scbp.AlibabaScbpAccountStatusUpdateAPIRequest, resp *scbp.AlibabaScbpAccountStatusUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

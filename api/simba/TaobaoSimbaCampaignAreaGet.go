@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.simba.campaign.area.get
 //
 // 取得一个推广计划的投放地域设置
-func TaobaoSimbaCampaignAreaGet(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignAreaGetAPIRequest, resp *simba.TaobaoSimbaCampaignAreaGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSimbaCampaignAreaGet(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSimbaCampaignAreaGetAPIRequest, resp *simba.TaobaoSimbaCampaignAreaGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

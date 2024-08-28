@@ -1,6 +1,8 @@
 package alsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alsc.crm.open.recharge.operate
 //
 // 储值操作接口
-func AlibabaAlscCrmOpenRechargeOperate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenRechargeOperateAPIRequest, resp *alsc.AlibabaAlscCrmOpenRechargeOperateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlscCrmOpenRechargeOperate(ctx context.Context, clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenRechargeOperateAPIRequest, resp *alsc.AlibabaAlscCrmOpenRechargeOperateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package perfect
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/perfect"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.tcwms.outbound.load.container.receive
 //
 // 装箱接单
-func AlibabaTcwmsOutboundLoadContainerReceive(clt *core.SDKClient, req *perfect.AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest, resp *perfect.AlibabaTcwmsOutboundLoadContainerReceiveAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaTcwmsOutboundLoadContainerReceive(ctx context.Context, clt *core.SDKClient, req *perfect.AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest, resp *perfect.AlibabaTcwmsOutboundLoadContainerReceiveAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

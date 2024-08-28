@@ -1,6 +1,8 @@
 package icbu
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/icbu"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.icbu.product.score.get
 //
 // 产品质量分查询
-func AlibabaIcbuProductScoreGet(clt *core.SDKClient, req *icbu.AlibabaIcbuProductScoreGetAPIRequest, resp *icbu.AlibabaIcbuProductScoreGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIcbuProductScoreGet(ctx context.Context, clt *core.SDKClient, req *icbu.AlibabaIcbuProductScoreGetAPIRequest, resp *icbu.AlibabaIcbuProductScoreGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

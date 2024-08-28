@@ -1,6 +1,8 @@
 package jstinteractive
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/jstinteractive"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.jst.interactive.activity.update
 //
 // 互动任务活动修改接口
-func TaobaoJstInteractiveActivityUpdate(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractiveActivityUpdateAPIRequest, resp *jstinteractive.TaobaoJstInteractiveActivityUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoJstInteractiveActivityUpdate(ctx context.Context, clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractiveActivityUpdateAPIRequest, resp *jstinteractive.TaobaoJstInteractiveActivityUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

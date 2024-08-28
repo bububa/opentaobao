@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.fenxiao.product.skus.get
 //
 // 产品sku查询
-func TaobaoFenxiaoProductSkusGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductSkusGetAPIRequest, resp *fenxiao.TaobaoFenxiaoProductSkusGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFenxiaoProductSkusGet(ctx context.Context, clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductSkusGetAPIRequest, resp *fenxiao.TaobaoFenxiaoProductSkusGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

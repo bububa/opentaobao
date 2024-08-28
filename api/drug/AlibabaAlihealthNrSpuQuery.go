@@ -1,6 +1,8 @@
 package drug
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drug"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.nr.spu.query
 //
 // 提供给ERP使用的，获取健康标品库信息
-func AlibabaAlihealthNrSpuQuery(clt *core.SDKClient, req *drug.AlibabaAlihealthNrSpuQueryAPIRequest, resp *drug.AlibabaAlihealthNrSpuQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthNrSpuQuery(ctx context.Context, clt *core.SDKClient, req *drug.AlibabaAlihealthNrSpuQueryAPIRequest, resp *drug.AlibabaAlihealthNrSpuQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

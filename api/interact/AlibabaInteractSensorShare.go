@@ -1,6 +1,8 @@
 package interact
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/interact"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.interact.sensor.share
 //
 // 客户端分享
-func AlibabaInteractSensorShare(clt *core.SDKClient, req *interact.AlibabaInteractSensorShareAPIRequest, resp *interact.AlibabaInteractSensorShareAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaInteractSensorShare(ctx context.Context, clt *core.SDKClient, req *interact.AlibabaInteractSensorShareAPIRequest, resp *interact.AlibabaInteractSensorShareAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

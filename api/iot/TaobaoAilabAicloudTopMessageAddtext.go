@@ -1,6 +1,8 @@
 package iot
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/iot"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.ailab.aicloud.top.message.addtext
 //
 // 精灵代说
-func TaobaoAilabAicloudTopMessageAddtext(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopMessageAddtextAPIRequest, resp *iot.TaobaoAilabAicloudTopMessageAddtextAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAilabAicloudTopMessageAddtext(ctx context.Context, clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopMessageAddtextAPIRequest, resp *iot.TaobaoAilabAicloudTopMessageAddtextAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

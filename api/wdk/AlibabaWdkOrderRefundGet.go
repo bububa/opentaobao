@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.order.refund.get
 //
 // 按照退款ID或者五道口中台订单ID查询退款信息详情
-func AlibabaWdkOrderRefundGet(clt *core.SDKClient, req *wdk.AlibabaWdkOrderRefundGetAPIRequest, resp *wdk.AlibabaWdkOrderRefundGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkOrderRefundGet(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkOrderRefundGetAPIRequest, resp *wdk.AlibabaWdkOrderRefundGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

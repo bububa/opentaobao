@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.subway.account.offline.find
 //
 // 获取账户历史报表
-func TaobaoSubwayAccountOfflineFind(clt *core.SDKClient, req *simba.TaobaoSubwayAccountOfflineFindAPIRequest, resp *simba.TaobaoSubwayAccountOfflineFindAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSubwayAccountOfflineFind(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSubwayAccountOfflineFindAPIRequest, resp *simba.TaobaoSubwayAccountOfflineFindAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

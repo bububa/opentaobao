@@ -1,6 +1,8 @@
 package itpolicy
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/itpolicy"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.it.policy.add
 //
 // 销售规则新增，成功返回taobaoId
-func TaobaoAlitripItPolicyAdd(clt *core.SDKClient, req *itpolicy.TaobaoAlitripItPolicyAddAPIRequest, resp *itpolicy.TaobaoAlitripItPolicyAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripItPolicyAdd(ctx context.Context, clt *core.SDKClient, req *itpolicy.TaobaoAlitripItPolicyAddAPIRequest, resp *itpolicy.TaobaoAlitripItPolicyAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

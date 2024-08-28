@@ -1,6 +1,8 @@
 package einvoice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/einvoice"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.einvoice.device.order.query
 //
 // 查询税控设备订购单详情
-func AlibabaEinvoiceDeviceOrderQuery(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceDeviceOrderQueryAPIRequest, resp *einvoice.AlibabaEinvoiceDeviceOrderQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaEinvoiceDeviceOrderQuery(ctx context.Context, clt *core.SDKClient, req *einvoice.AlibabaEinvoiceDeviceOrderQueryAPIRequest, resp *einvoice.AlibabaEinvoiceDeviceOrderQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

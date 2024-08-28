@@ -1,6 +1,8 @@
 package scbp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/scbp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.scbp.ad.report.get.product.report
 //
 // 产品报告
-func AlibabaScbpAdReportGetProductReport(clt *core.SDKClient, req *scbp.AlibabaScbpAdReportGetProductReportAPIRequest, resp *scbp.AlibabaScbpAdReportGetProductReportAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaScbpAdReportGetProductReport(ctx context.Context, clt *core.SDKClient, req *scbp.AlibabaScbpAdReportGetProductReportAPIRequest, resp *scbp.AlibabaScbpAdReportGetProductReportAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

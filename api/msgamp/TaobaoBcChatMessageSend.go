@@ -1,6 +1,8 @@
 package msgamp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/msgamp"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.bc.chat.message.send
 //
 // 小程序资源授权-消息订阅
-func TaobaoBcChatMessageSend(clt *core.SDKClient, req *msgamp.TaobaoBcChatMessageSendAPIRequest, resp *msgamp.TaobaoBcChatMessageSendAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBcChatMessageSend(ctx context.Context, clt *core.SDKClient, req *msgamp.TaobaoBcChatMessageSendAPIRequest, resp *msgamp.TaobaoBcChatMessageSendAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

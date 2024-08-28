@@ -1,6 +1,8 @@
 package ju
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ju"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.jhs.community.identity.store
 //
 // 用户信息存储
-func AlibabaJhsCommunityIdentityStore(clt *core.SDKClient, req *ju.AlibabaJhsCommunityIdentityStoreAPIRequest, resp *ju.AlibabaJhsCommunityIdentityStoreAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaJhsCommunityIdentityStore(ctx context.Context, clt *core.SDKClient, req *ju.AlibabaJhsCommunityIdentityStoreAPIRequest, resp *ju.AlibabaJhsCommunityIdentityStoreAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

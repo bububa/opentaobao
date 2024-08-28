@@ -1,6 +1,8 @@
 package scbp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/scbp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.scbp.ad.keyword.add
 //
 // 外贸直通车加词服务
-func AlibabaScbpAdKeywordAdd(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordAddAPIRequest, resp *scbp.AlibabaScbpAdKeywordAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaScbpAdKeywordAdd(ctx context.Context, clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordAddAPIRequest, resp *scbp.AlibabaScbpAdKeywordAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

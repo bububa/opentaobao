@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.ump.mbbs.list.get
 //
 // 通过营销积木id列表来获取营销积木块列表。
-func TaobaoUmpMbbsListGet(clt *core.SDKClient, req *promotion.TaobaoUmpMbbsListGetAPIRequest, resp *promotion.TaobaoUmpMbbsListGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoUmpMbbsListGet(ctx context.Context, clt *core.SDKClient, req *promotion.TaobaoUmpMbbsListGetAPIRequest, resp *promotion.TaobaoUmpMbbsListGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

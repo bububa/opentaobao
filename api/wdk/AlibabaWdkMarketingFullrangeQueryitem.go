@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.marketing.fullrange.queryitem
 //
 // 全场活动查询换购品
-func AlibabaWdkMarketingFullrangeQueryitem(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingFullrangeQueryitemAPIRequest, resp *wdk.AlibabaWdkMarketingFullrangeQueryitemAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkMarketingFullrangeQueryitem(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkMarketingFullrangeQueryitemAPIRequest, resp *wdk.AlibabaWdkMarketingFullrangeQueryitemAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package wlb
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wlb"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.wlb.wlborder.get
 //
 // 根据物流宝订单编号查询物流宝订单概要信息
-func TaobaoWlbWlborderGet(clt *core.SDKClient, req *wlb.TaobaoWlbWlborderGetAPIRequest, resp *wlb.TaobaoWlbWlborderGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWlbWlborderGet(ctx context.Context, clt *core.SDKClient, req *wlb.TaobaoWlbWlborderGetAPIRequest, resp *wlb.TaobaoWlbWlborderGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

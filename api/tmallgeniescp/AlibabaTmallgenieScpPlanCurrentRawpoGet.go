@@ -1,6 +1,8 @@
 package tmallgeniescp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallgeniescp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.tmallgenie.scp.plan.current.rawpo.get
 //
 // 二级物料-PO数据同步（WO-W[TL])
-func AlibabaTmallgenieScpPlanCurrentRawpoGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanCurrentRawpoGetAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanCurrentRawpoGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaTmallgenieScpPlanCurrentRawpoGet(ctx context.Context, clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanCurrentRawpoGetAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanCurrentRawpoGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

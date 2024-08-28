@@ -1,6 +1,8 @@
 package inventory
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/inventory"
 )
@@ -10,6 +12,6 @@ import (
 //
 // 地点关联关系查询
 // 门店和仓库关联关系查询
-func TaobaoLocationRelationQuery(clt *core.SDKClient, req *inventory.TaobaoLocationRelationQueryAPIRequest, resp *inventory.TaobaoLocationRelationQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoLocationRelationQuery(ctx context.Context, clt *core.SDKClient, req *inventory.TaobaoLocationRelationQueryAPIRequest, resp *inventory.TaobaoLocationRelationQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

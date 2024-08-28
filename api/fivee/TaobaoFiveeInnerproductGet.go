@@ -1,6 +1,8 @@
 package fivee
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fivee"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.fivee.innerproduct.get
 //
 // 资质共享平台，国产商品查询
-func TaobaoFiveeInnerproductGet(clt *core.SDKClient, req *fivee.TaobaoFiveeInnerproductGetAPIRequest, resp *fivee.TaobaoFiveeInnerproductGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFiveeInnerproductGet(ctx context.Context, clt *core.SDKClient, req *fivee.TaobaoFiveeInnerproductGetAPIRequest, resp *fivee.TaobaoFiveeInnerproductGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

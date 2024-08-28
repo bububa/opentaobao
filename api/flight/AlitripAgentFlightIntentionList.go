@@ -1,6 +1,8 @@
 package flight
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/flight"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.agent.flight.intention.list
 //
 // 意向单列表
-func AlitripAgentFlightIntentionList(clt *core.SDKClient, req *flight.AlitripAgentFlightIntentionListAPIRequest, resp *flight.AlitripAgentFlightIntentionListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripAgentFlightIntentionList(ctx context.Context, clt *core.SDKClient, req *flight.AlitripAgentFlightIntentionListAPIRequest, resp *flight.AlitripAgentFlightIntentionListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

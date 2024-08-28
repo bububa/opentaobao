@@ -1,6 +1,8 @@
 package alihouse
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihouse"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihouse.newhome.dynamicdata.submit
 //
 // 提交小区动态信息
-func AlibabaAlihouseNewhomeDynamicdataSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeDynamicdataSubmitAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeDynamicdataSubmitAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihouseNewhomeDynamicdataSubmit(ctx context.Context, clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeDynamicdataSubmitAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeDynamicdataSubmitAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

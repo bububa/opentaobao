@@ -1,6 +1,8 @@
 package opentrade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/opentrade"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.opentrade.tools.items.unbind
 //
 // 交易开放商品解绑
-func TaobaoOpentradeToolsItemsUnbind(clt *core.SDKClient, req *opentrade.TaobaoOpentradeToolsItemsUnbindAPIRequest, resp *opentrade.TaobaoOpentradeToolsItemsUnbindAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOpentradeToolsItemsUnbind(ctx context.Context, clt *core.SDKClient, req *opentrade.TaobaoOpentradeToolsItemsUnbindAPIRequest, resp *opentrade.TaobaoOpentradeToolsItemsUnbindAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

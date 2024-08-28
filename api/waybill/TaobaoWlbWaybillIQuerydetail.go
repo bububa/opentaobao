@@ -1,6 +1,8 @@
 package waybill
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/waybill"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.wlb.waybill.i.querydetail
 //
 // 查看面单号的当前状态，如签收、发货、失效等。
-func TaobaoWlbWaybillIQuerydetail(clt *core.SDKClient, req *waybill.TaobaoWlbWaybillIQuerydetailAPIRequest, resp *waybill.TaobaoWlbWaybillIQuerydetailAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWlbWaybillIQuerydetail(ctx context.Context, clt *core.SDKClient, req *waybill.TaobaoWlbWaybillIQuerydetailAPIRequest, resp *waybill.TaobaoWlbWaybillIQuerydetailAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

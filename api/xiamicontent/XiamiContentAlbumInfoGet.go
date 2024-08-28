@@ -1,6 +1,8 @@
 package xiamicontent
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xiamicontent"
 )
@@ -9,6 +11,6 @@ import (
 // xiami.content.album.info.get
 //
 // 获取专辑信息
-func XiamiContentAlbumInfoGet(clt *core.SDKClient, req *xiamicontent.XiamiContentAlbumInfoGetAPIRequest, resp *xiamicontent.XiamiContentAlbumInfoGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func XiamiContentAlbumInfoGet(ctx context.Context, clt *core.SDKClient, req *xiamicontent.XiamiContentAlbumInfoGetAPIRequest, resp *xiamicontent.XiamiContentAlbumInfoGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

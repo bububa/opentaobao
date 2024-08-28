@@ -1,6 +1,8 @@
 package wdkitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdkitem"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.item.futureprice.query
 //
 // 查询单个商品未来价，融合了未来基础售价+未来促销价
-func AlibabaWdkItemFuturepriceQuery(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemFuturepriceQueryAPIRequest, resp *wdkitem.AlibabaWdkItemFuturepriceQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkItemFuturepriceQuery(ctx context.Context, clt *core.SDKClient, req *wdkitem.AlibabaWdkItemFuturepriceQueryAPIRequest, resp *wdkitem.AlibabaWdkItemFuturepriceQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

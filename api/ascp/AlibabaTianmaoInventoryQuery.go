@@ -1,6 +1,8 @@
 package ascp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ascp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.tianmao.inventory.query
 //
 // 阿里巴巴.天猫.aic库存.查询
-func AlibabaTianmaoInventoryQuery(clt *core.SDKClient, req *ascp.AlibabaTianmaoInventoryQueryAPIRequest, resp *ascp.AlibabaTianmaoInventoryQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaTianmaoInventoryQuery(ctx context.Context, clt *core.SDKClient, req *ascp.AlibabaTianmaoInventoryQueryAPIRequest, resp *ascp.AlibabaTianmaoInventoryQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package cloudgame
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/cloudgame"
 )
@@ -9,6 +11,6 @@ import (
 // youku.cgame.score.report
 //
 // 云游戏战绩上传API
-func YoukuCgameScoreReport(clt *core.SDKClient, req *cloudgame.YoukuCgameScoreReportAPIRequest, resp *cloudgame.YoukuCgameScoreReportAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YoukuCgameScoreReport(ctx context.Context, clt *core.SDKClient, req *cloudgame.YoukuCgameScoreReportAPIRequest, resp *cloudgame.YoukuCgameScoreReportAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

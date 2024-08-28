@@ -1,6 +1,8 @@
 package examination
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/examination"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.examination.agreement.list
 //
 // isv协议获取
-func AlibabaAlihealthExaminationAgreementList(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationAgreementListAPIRequest, resp *examination.AlibabaAlihealthExaminationAgreementListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthExaminationAgreementList(ctx context.Context, clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationAgreementListAPIRequest, resp *examination.AlibabaAlihealthExaminationAgreementListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

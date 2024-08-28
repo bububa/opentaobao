@@ -1,6 +1,8 @@
 package train
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/train"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.train.agent.bookorders.get.vtwo
 //
 // 代理商获取待出票订单列表，只返回订单号
-func TaobaoTrainAgentBookordersGetVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentBookordersGetVtwoAPIRequest, resp *train.TaobaoTrainAgentBookordersGetVtwoAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTrainAgentBookordersGetVtwo(ctx context.Context, clt *core.SDKClient, req *train.TaobaoTrainAgentBookordersGetVtwoAPIRequest, resp *train.TaobaoTrainAgentBookordersGetVtwoAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

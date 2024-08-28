@@ -1,6 +1,8 @@
 package product
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/product"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.item.add.schema.get
 //
 // 通过类目以及productId获取商品发布规则；
-func TmallItemAddSchemaGet(clt *core.SDKClient, req *product.TmallItemAddSchemaGetAPIRequest, resp *product.TmallItemAddSchemaGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallItemAddSchemaGet(ctx context.Context, clt *core.SDKClient, req *product.TmallItemAddSchemaGetAPIRequest, resp *product.TmallItemAddSchemaGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package alsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alsc.crm.point.chkpntbypay
 //
 // 校验支付链路中的积分抵扣是否合法
-func AlibabaAlscCrmPointChkpntbypay(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointChkpntbypayAPIRequest, resp *alsc.AlibabaAlscCrmPointChkpntbypayAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlscCrmPointChkpntbypay(ctx context.Context, clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointChkpntbypayAPIRequest, resp *alsc.AlibabaAlscCrmPointChkpntbypayAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

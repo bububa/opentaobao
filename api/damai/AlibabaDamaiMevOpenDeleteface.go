@@ -1,6 +1,8 @@
 package damai
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/damai"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.damai.mev.open.deleteface
 //
 // deleteFace
-func AlibabaDamaiMevOpenDeleteface(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeletefaceAPIRequest, resp *damai.AlibabaDamaiMevOpenDeletefaceAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaDamaiMevOpenDeleteface(ctx context.Context, clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeletefaceAPIRequest, resp *damai.AlibabaDamaiMevOpenDeletefaceAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

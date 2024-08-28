@@ -1,6 +1,8 @@
 package qimen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qimen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qimen.expressinfo.query
 //
 // 配送公司信息查询
-func TaobaoQimenExpressinfoQuery(clt *core.SDKClient, req *qimen.TaobaoQimenExpressinfoQueryAPIRequest, resp *qimen.TaobaoQimenExpressinfoQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQimenExpressinfoQuery(ctx context.Context, clt *core.SDKClient, req *qimen.TaobaoQimenExpressinfoQueryAPIRequest, resp *qimen.TaobaoQimenExpressinfoQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

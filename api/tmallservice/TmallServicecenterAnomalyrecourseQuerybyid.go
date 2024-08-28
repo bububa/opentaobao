@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.servicecenter.anomalyrecourse.querybyid
 //
 // 根据一键求助id查询指定服务商的一键求助单
-func TmallServicecenterAnomalyrecourseQuerybyid(clt *core.SDKClient, req *tmallservice.TmallServicecenterAnomalyrecourseQuerybyidAPIRequest, resp *tmallservice.TmallServicecenterAnomalyrecourseQuerybyidAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallServicecenterAnomalyrecourseQuerybyid(ctx context.Context, clt *core.SDKClient, req *tmallservice.TmallServicecenterAnomalyrecourseQuerybyidAPIRequest, resp *tmallservice.TmallServicecenterAnomalyrecourseQuerybyidAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

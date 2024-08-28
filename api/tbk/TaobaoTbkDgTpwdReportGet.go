@@ -1,6 +1,8 @@
 package tbk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbk"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.tbk.dg.tpwd.report.get
 //
 // 淘宝客获取单个淘口令的回流PV、UV数据。
-func TaobaoTbkDgTpwdReportGet(clt *core.SDKClient, req *tbk.TaobaoTbkDgTpwdReportGetAPIRequest, resp *tbk.TaobaoTbkDgTpwdReportGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTbkDgTpwdReportGet(ctx context.Context, clt *core.SDKClient, req *tbk.TaobaoTbkDgTpwdReportGetAPIRequest, resp *tbk.TaobaoTbkDgTpwdReportGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.coupon.abandon
 //
 // 优惠券废弃
-func AlibabaWdkCouponAbandon(clt *core.SDKClient, req *promotion.AlibabaWdkCouponAbandonAPIRequest, resp *promotion.AlibabaWdkCouponAbandonAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkCouponAbandon(ctx context.Context, clt *core.SDKClient, req *promotion.AlibabaWdkCouponAbandonAPIRequest, resp *promotion.AlibabaWdkCouponAbandonAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

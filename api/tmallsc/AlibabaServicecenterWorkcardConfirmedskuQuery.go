@@ -1,6 +1,8 @@
 package tmallsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.servicecenter.workcard.confirmedsku.query
 //
 // 查询确认履行的服务项
-func AlibabaServicecenterWorkcardConfirmedskuQuery(clt *core.SDKClient, req *tmallsc.AlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest, resp *tmallsc.AlibabaServicecenterWorkcardConfirmedskuQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaServicecenterWorkcardConfirmedskuQuery(ctx context.Context, clt *core.SDKClient, req *tmallsc.AlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest, resp *tmallsc.AlibabaServicecenterWorkcardConfirmedskuQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

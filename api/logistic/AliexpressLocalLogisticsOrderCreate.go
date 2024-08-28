@@ -1,6 +1,8 @@
 package logistic
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/logistic"
 )
@@ -9,6 +11,6 @@ import (
 // aliexpress.local.logistics.order.create
 //
 // create logistics order
-func AliexpressLocalLogisticsOrderCreate(clt *core.SDKClient, req *logistic.AliexpressLocalLogisticsOrderCreateAPIRequest, resp *logistic.AliexpressLocalLogisticsOrderCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliexpressLocalLogisticsOrderCreate(ctx context.Context, clt *core.SDKClient, req *logistic.AliexpressLocalLogisticsOrderCreateAPIRequest, resp *logistic.AliexpressLocalLogisticsOrderCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

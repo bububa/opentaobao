@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -24,6 +26,6 @@ import (
 // 11000, category_id 无效
 // 11001, biz_type 无效
 // 20001,已查询到最后一页
-func TmallServicecenterWorkerDelete(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerDeleteAPIRequest, resp *tmallservice.TmallServicecenterWorkerDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallServicecenterWorkerDelete(ctx context.Context, clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerDeleteAPIRequest, resp *tmallservice.TmallServicecenterWorkerDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

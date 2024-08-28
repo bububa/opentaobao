@@ -1,6 +1,8 @@
 package interact
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/interact"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.interact.isvlottery.isvdraw
 //
 // 鉴权接口，为tida.isvdraw接口鉴权
-func AlibabaInteractIsvlotteryIsvdraw(clt *core.SDKClient, req *interact.AlibabaInteractIsvlotteryIsvdrawAPIRequest, resp *interact.AlibabaInteractIsvlotteryIsvdrawAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaInteractIsvlotteryIsvdraw(ctx context.Context, clt *core.SDKClient, req *interact.AlibabaInteractIsvlotteryIsvdrawAPIRequest, resp *interact.AlibabaInteractIsvlotteryIsvdrawAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

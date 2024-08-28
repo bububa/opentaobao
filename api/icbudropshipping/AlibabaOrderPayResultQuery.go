@@ -1,6 +1,8 @@
 package icbudropshipping
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/icbudropshipping"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.order.pay.result.query
 //
 // alibaba查询订单支付结果
-func AlibabaOrderPayResultQuery(clt *core.SDKClient, req *icbudropshipping.AlibabaOrderPayResultQueryAPIRequest, resp *icbudropshipping.AlibabaOrderPayResultQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaOrderPayResultQuery(ctx context.Context, clt *core.SDKClient, req *icbudropshipping.AlibabaOrderPayResultQueryAPIRequest, resp *icbudropshipping.AlibabaOrderPayResultQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

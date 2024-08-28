@@ -1,6 +1,8 @@
 package user
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/user"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.beneift.draw
 //
 // 抽奖接口
-func AlibabaBeneiftDraw(clt *core.SDKClient, req *user.AlibabaBeneiftDrawAPIRequest, resp *user.AlibabaBeneiftDrawAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaBeneiftDraw(ctx context.Context, clt *core.SDKClient, req *user.AlibabaBeneiftDrawAPIRequest, resp *user.AlibabaBeneiftDrawAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

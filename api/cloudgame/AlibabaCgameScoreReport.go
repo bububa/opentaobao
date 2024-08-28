@@ -1,6 +1,8 @@
 package cloudgame
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/cloudgame"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.cgame.score.report
 //
 // 阿里云游戏, CP游戏合作方通用游戏结果回传接口
-func AlibabaCgameScoreReport(clt *core.SDKClient, req *cloudgame.AlibabaCgameScoreReportAPIRequest, resp *cloudgame.AlibabaCgameScoreReportAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCgameScoreReport(ctx context.Context, clt *core.SDKClient, req *cloudgame.AlibabaCgameScoreReportAPIRequest, resp *cloudgame.AlibabaCgameScoreReportAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

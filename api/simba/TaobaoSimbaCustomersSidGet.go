@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.simba.customers.sid.get
 //
 // 查询用户是否拥有某个功能权限
-func TaobaoSimbaCustomersSidGet(clt *core.SDKClient, req *simba.TaobaoSimbaCustomersSidGetAPIRequest, resp *simba.TaobaoSimbaCustomersSidGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSimbaCustomersSidGet(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSimbaCustomersSidGetAPIRequest, resp *simba.TaobaoSimbaCustomersSidGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

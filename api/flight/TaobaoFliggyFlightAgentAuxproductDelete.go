@@ -1,6 +1,8 @@
 package flight
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/flight"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.fliggy.flight.agent.auxproduct.delete
 //
 // 廉航辅营产品删除接口
-func TaobaoFliggyFlightAgentAuxproductDelete(clt *core.SDKClient, req *flight.TaobaoFliggyFlightAgentAuxproductDeleteAPIRequest, resp *flight.TaobaoFliggyFlightAgentAuxproductDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFliggyFlightAgentAuxproductDelete(ctx context.Context, clt *core.SDKClient, req *flight.TaobaoFliggyFlightAgentAuxproductDeleteAPIRequest, resp *flight.TaobaoFliggyFlightAgentAuxproductDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

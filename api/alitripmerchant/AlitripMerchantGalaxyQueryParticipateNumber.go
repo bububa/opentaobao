@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.merchant.galaxy.query.participate.number
 //
 // 雅高小程序抽奖活动，查询用户抽奖次数
-func AlitripMerchantGalaxyQueryParticipateNumber(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyQueryParticipateNumberAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyQueryParticipateNumberAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripMerchantGalaxyQueryParticipateNumber(ctx context.Context, clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyQueryParticipateNumberAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyQueryParticipateNumberAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

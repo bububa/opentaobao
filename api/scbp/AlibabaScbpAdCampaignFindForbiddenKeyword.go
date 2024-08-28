@@ -1,6 +1,8 @@
 package scbp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/scbp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.scbp.ad.campaign.find.forbidden.keyword
 //
 // 查询屏蔽词
-func AlibabaScbpAdCampaignFindForbiddenKeyword(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest, resp *scbp.AlibabaScbpAdCampaignFindForbiddenKeywordAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaScbpAdCampaignFindForbiddenKeyword(ctx context.Context, clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest, resp *scbp.AlibabaScbpAdCampaignFindForbiddenKeywordAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

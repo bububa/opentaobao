@@ -1,6 +1,8 @@
 package alihealth2
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihealth2"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.tracecodeseller.code.single.codereplace
 //
 // 提供非药追溯码单码替换功能
-func AlibabaAlihealthTracecodesellerCodeSingleCodereplace(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest, resp *alihealth2.AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthTracecodesellerCodeSingleCodereplace(ctx context.Context, clt *core.SDKClient, req *alihealth2.AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest, resp *alihealth2.AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

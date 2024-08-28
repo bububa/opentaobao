@@ -1,6 +1,8 @@
 package tvupadmin
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.tvpubadmin.common.file.upload
 //
 // 文件上传服务
-func YunosTvpubadminCommonFileUpload(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminCommonFileUploadAPIRequest, resp *tvupadmin.YunosTvpubadminCommonFileUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosTvpubadminCommonFileUpload(ctx context.Context, clt *core.SDKClient, req *tvupadmin.YunosTvpubadminCommonFileUploadAPIRequest, resp *tvupadmin.YunosTvpubadminCommonFileUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

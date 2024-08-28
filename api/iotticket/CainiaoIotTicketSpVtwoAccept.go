@@ -1,6 +1,8 @@
 package iotticket
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/iotticket"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.iot.ticket.sp.vtwo.accept
 //
 // IoT售后服务商确认接单
-func CainiaoIotTicketSpVtwoAccept(clt *core.SDKClient, req *iotticket.CainiaoIotTicketSpVtwoAcceptAPIRequest, resp *iotticket.CainiaoIotTicketSpVtwoAcceptAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoIotTicketSpVtwoAccept(ctx context.Context, clt *core.SDKClient, req *iotticket.CainiaoIotTicketSpVtwoAcceptAPIRequest, resp *iotticket.CainiaoIotTicketSpVtwoAcceptAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

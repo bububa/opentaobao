@@ -1,6 +1,8 @@
 package jstinteractive
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/jstinteractive"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.jst.interactive.task.query
 //
 // 查询用户的互动任务列表
-func TaobaoJstInteractiveTaskQuery(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractiveTaskQueryAPIRequest, resp *jstinteractive.TaobaoJstInteractiveTaskQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoJstInteractiveTaskQuery(ctx context.Context, clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractiveTaskQueryAPIRequest, resp *jstinteractive.TaobaoJstInteractiveTaskQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

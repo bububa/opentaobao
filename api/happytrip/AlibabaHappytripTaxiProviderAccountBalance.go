@@ -1,6 +1,8 @@
 package happytrip
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/happytrip"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.happytrip.taxi.provider.account.balance
 //
 // 查询不同供应商不同渠道账户余额
-func AlibabaHappytripTaxiProviderAccountBalance(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiProviderAccountBalanceAPIRequest, resp *happytrip.AlibabaHappytripTaxiProviderAccountBalanceAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaHappytripTaxiProviderAccountBalance(ctx context.Context, clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiProviderAccountBalanceAPIRequest, resp *happytrip.AlibabaHappytripTaxiProviderAccountBalanceAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

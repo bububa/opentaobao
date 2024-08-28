@@ -1,6 +1,8 @@
 package cainiaolocker
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/cainiaolocker"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.endpoint.locker.top.station.addorupdate
 //
 // 新增或者修改代收点相关信息
-func CainiaoEndpointLockerTopStationAddorupdate(clt *core.SDKClient, req *cainiaolocker.CainiaoEndpointLockerTopStationAddorupdateAPIRequest, resp *cainiaolocker.CainiaoEndpointLockerTopStationAddorupdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoEndpointLockerTopStationAddorupdate(ctx context.Context, clt *core.SDKClient, req *cainiaolocker.CainiaoEndpointLockerTopStationAddorupdateAPIRequest, resp *cainiaolocker.CainiaoEndpointLockerTopStationAddorupdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.servicecenter.spserviceorder.epoc.receive
 //
 // 电子保单数据回传接口
-func TmallServicecenterSpserviceorderEpocReceive(clt *core.SDKClient, req *tmallservice.TmallServicecenterSpserviceorderEpocReceiveAPIRequest, resp *tmallservice.TmallServicecenterSpserviceorderEpocReceiveAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallServicecenterSpserviceorderEpocReceive(ctx context.Context, clt *core.SDKClient, req *tmallservice.TmallServicecenterSpserviceorderEpocReceiveAPIRequest, resp *tmallservice.TmallServicecenterSpserviceorderEpocReceiveAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

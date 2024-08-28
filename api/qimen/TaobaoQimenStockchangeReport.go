@@ -1,6 +1,8 @@
 package qimen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qimen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qimen.stockchange.report
 //
 // taobao.qimen.stockchange.report
-func TaobaoQimenStockchangeReport(clt *core.SDKClient, req *qimen.TaobaoQimenStockchangeReportAPIRequest, resp *qimen.TaobaoQimenStockchangeReportAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQimenStockchangeReport(ctx context.Context, clt *core.SDKClient, req *qimen.TaobaoQimenStockchangeReportAPIRequest, resp *qimen.TaobaoQimenStockchangeReportAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

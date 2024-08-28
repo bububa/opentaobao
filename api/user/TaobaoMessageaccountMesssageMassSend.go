@@ -1,6 +1,8 @@
 package user
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/user"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.messageaccount.messsage.mass.send
 //
 // 外部 isv 调用该进口来进行消息号消息的群发
-func TaobaoMessageaccountMesssageMassSend(clt *core.SDKClient, req *user.TaobaoMessageaccountMesssageMassSendAPIRequest, resp *user.TaobaoMessageaccountMesssageMassSendAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoMessageaccountMesssageMassSend(ctx context.Context, clt *core.SDKClient, req *user.TaobaoMessageaccountMesssageMassSendAPIRequest, resp *user.TaobaoMessageaccountMesssageMassSendAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

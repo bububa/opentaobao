@@ -1,6 +1,8 @@
 package mc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/mc"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.mc.record.order.sync
 //
 // 订单信息同步(零售云接口)
-func TmallMcRecordOrderSync(clt *core.SDKClient, req *mc.TmallMcRecordOrderSyncAPIRequest, resp *mc.TmallMcRecordOrderSyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallMcRecordOrderSync(ctx context.Context, clt *core.SDKClient, req *mc.TmallMcRecordOrderSyncAPIRequest, resp *mc.TmallMcRecordOrderSyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

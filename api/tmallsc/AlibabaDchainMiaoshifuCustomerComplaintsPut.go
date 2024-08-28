@@ -1,6 +1,8 @@
 package tmallsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.dchain.miaoshifu.customer.complaints.put
 //
 // 数字服务供应链平台提供给服务商上传工人客诉数据
-func AlibabaDchainMiaoshifuCustomerComplaintsPut(clt *core.SDKClient, req *tmallsc.AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest, resp *tmallsc.AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaDchainMiaoshifuCustomerComplaintsPut(ctx context.Context, clt *core.SDKClient, req *tmallsc.AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest, resp *tmallsc.AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.bm.stock.publish
 //
 // 用于操作sku的库存
-func AlibabaWdkBmStockPublish(clt *core.SDKClient, req *wdk.AlibabaWdkBmStockPublishAPIRequest, resp *wdk.AlibabaWdkBmStockPublishAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkBmStockPublish(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkBmStockPublishAPIRequest, resp *wdk.AlibabaWdkBmStockPublishAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

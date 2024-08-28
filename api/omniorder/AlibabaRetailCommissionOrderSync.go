@@ -1,6 +1,8 @@
 package omniorder
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/omniorder"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.retail.commission.order.sync
 //
 // 同步分佣结果
-func AlibabaRetailCommissionOrderSync(clt *core.SDKClient, req *omniorder.AlibabaRetailCommissionOrderSyncAPIRequest, resp *omniorder.AlibabaRetailCommissionOrderSyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaRetailCommissionOrderSync(ctx context.Context, clt *core.SDKClient, req *omniorder.AlibabaRetailCommissionOrderSyncAPIRequest, resp *omniorder.AlibabaRetailCommissionOrderSyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

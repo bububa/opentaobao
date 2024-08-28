@@ -1,6 +1,8 @@
 package mtopopen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/mtopopen"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.interact.sensor.trade.buy
 //
 // 交易流程鉴权
-func AlibabaInteractSensorTradeBuy(clt *core.SDKClient, req *mtopopen.AlibabaInteractSensorTradeBuyAPIRequest, resp *mtopopen.AlibabaInteractSensorTradeBuyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaInteractSensorTradeBuy(ctx context.Context, clt *core.SDKClient, req *mtopopen.AlibabaInteractSensorTradeBuyAPIRequest, resp *mtopopen.AlibabaInteractSensorTradeBuyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

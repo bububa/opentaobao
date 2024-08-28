@@ -1,6 +1,8 @@
 package yunosappstore
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/yunosappstore"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.appstore.pad.hp.applist
 //
 // 提供hp pad应用群数据
-func YunosAppstorePadHpApplist(clt *core.SDKClient, req *yunosappstore.YunosAppstorePadHpApplistAPIRequest, resp *yunosappstore.YunosAppstorePadHpApplistAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosAppstorePadHpApplist(ctx context.Context, clt *core.SDKClient, req *yunosappstore.YunosAppstorePadHpApplistAPIRequest, resp *yunosappstore.YunosAppstorePadHpApplistAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

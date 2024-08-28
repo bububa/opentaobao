@@ -1,6 +1,8 @@
 package xhotelitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.xhotel.roomtype.update
 //
 // 酒店房型更新或添加
-func TaobaoXhotelRoomtypeUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRoomtypeUpdateAPIRequest, resp *xhotelitem.TaobaoXhotelRoomtypeUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelRoomtypeUpdate(ctx context.Context, clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRoomtypeUpdateAPIRequest, resp *xhotelitem.TaobaoXhotelRoomtypeUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

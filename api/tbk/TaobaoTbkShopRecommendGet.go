@@ -1,6 +1,8 @@
 package tbk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbk"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.tbk.shop.recommend.get
 //
 // 入参卖家id，可推荐与此店铺相关联的相关店铺。
-func TaobaoTbkShopRecommendGet(clt *core.SDKClient, req *tbk.TaobaoTbkShopRecommendGetAPIRequest, resp *tbk.TaobaoTbkShopRecommendGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTbkShopRecommendGet(ctx context.Context, clt *core.SDKClient, req *tbk.TaobaoTbkShopRecommendGetAPIRequest, resp *tbk.TaobaoTbkShopRecommendGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

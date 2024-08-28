@@ -1,6 +1,8 @@
 package iot
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/iot"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ailabs.iot.business.recipe.getpage
 //
 // 分页查询食谱数据
-func AlibabaAilabsIotBusinessRecipeGetpage(clt *core.SDKClient, req *iot.AlibabaAilabsIotBusinessRecipeGetpageAPIRequest, resp *iot.AlibabaAilabsIotBusinessRecipeGetpageAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAilabsIotBusinessRecipeGetpage(ctx context.Context, clt *core.SDKClient, req *iot.AlibabaAilabsIotBusinessRecipeGetpageAPIRequest, resp *iot.AlibabaAilabsIotBusinessRecipeGetpageAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

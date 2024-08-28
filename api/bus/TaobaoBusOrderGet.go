@@ -1,6 +1,8 @@
 package bus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/bus"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.bus.order.get
 //
 // 商家汽车票订单查询
-func TaobaoBusOrderGet(clt *core.SDKClient, req *bus.TaobaoBusOrderGetAPIRequest, resp *bus.TaobaoBusOrderGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBusOrderGet(ctx context.Context, clt *core.SDKClient, req *bus.TaobaoBusOrderGetAPIRequest, resp *bus.TaobaoBusOrderGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

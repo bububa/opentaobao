@@ -1,6 +1,8 @@
 package ascpchannel
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ascpchannel"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ascp.channel.supplier.product.list
 //
 // 供应商查询渠道产品列表
-func AlibabaAscpChannelSupplierProductList(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelSupplierProductListAPIRequest, resp *ascpchannel.AlibabaAscpChannelSupplierProductListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAscpChannelSupplierProductList(ctx context.Context, clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelSupplierProductListAPIRequest, resp *ascpchannel.AlibabaAscpChannelSupplierProductListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

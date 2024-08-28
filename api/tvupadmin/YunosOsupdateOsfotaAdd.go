@@ -1,6 +1,8 @@
 package tvupadmin
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.osupdate.osfota.add
 //
 // 添加osupdate系统升级任务
-func YunosOsupdateOsfotaAdd(clt *core.SDKClient, req *tvupadmin.YunosOsupdateOsfotaAddAPIRequest, resp *tvupadmin.YunosOsupdateOsfotaAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosOsupdateOsfotaAdd(ctx context.Context, clt *core.SDKClient, req *tvupadmin.YunosOsupdateOsfotaAddAPIRequest, resp *tvupadmin.YunosOsupdateOsfotaAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

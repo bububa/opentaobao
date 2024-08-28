@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.hm.marketing.version.generate
 //
 // 生成发布使用的版本号
-func AlibabaHmMarketingVersionGenerate(clt *core.SDKClient, req *wdk.AlibabaHmMarketingVersionGenerateAPIRequest, resp *wdk.AlibabaHmMarketingVersionGenerateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaHmMarketingVersionGenerate(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaHmMarketingVersionGenerateAPIRequest, resp *wdk.AlibabaHmMarketingVersionGenerateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package icbu
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/icbu"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.icbu.category.schema.level.get
 //
 // 将表单中层级属性的子属性返回
-func AlibabaIcbuCategorySchemaLevelGet(clt *core.SDKClient, req *icbu.AlibabaIcbuCategorySchemaLevelGetAPIRequest, resp *icbu.AlibabaIcbuCategorySchemaLevelGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIcbuCategorySchemaLevelGet(ctx context.Context, clt *core.SDKClient, req *icbu.AlibabaIcbuCategorySchemaLevelGetAPIRequest, resp *icbu.AlibabaIcbuCategorySchemaLevelGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

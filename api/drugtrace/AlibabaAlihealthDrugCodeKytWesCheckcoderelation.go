@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drug.code.kyt.wes.checkcoderelation
 //
 // 检查输入的码之间是否有上下级关系
-func AlibabaAlihealthDrugCodeKytWesCheckcoderelation(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIRequest, resp *drugtrace.AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugCodeKytWesCheckcoderelation(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIRequest, resp *drugtrace.AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

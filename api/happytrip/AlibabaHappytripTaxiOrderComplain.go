@@ -1,6 +1,8 @@
 package happytrip
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/happytrip"
 )
@@ -25,6 +27,6 @@ import (
 // 11	骚扰乘客；
 // 12	危险驾驶；
 // 13	不是订单显示车辆或司机；
-func AlibabaHappytripTaxiOrderComplain(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiOrderComplainAPIRequest, resp *happytrip.AlibabaHappytripTaxiOrderComplainAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaHappytripTaxiOrderComplain(ctx context.Context, clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiOrderComplainAPIRequest, resp *happytrip.AlibabaHappytripTaxiOrderComplainAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

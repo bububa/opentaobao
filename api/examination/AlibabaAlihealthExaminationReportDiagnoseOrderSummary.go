@@ -1,6 +1,8 @@
 package examination
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/examination"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.examination.report.diagnose.order.summary
 //
 // 记录体检报告人工解读总结
-func AlibabaAlihealthExaminationReportDiagnoseOrderSummary(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest, resp *examination.AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthExaminationReportDiagnoseOrderSummary(ctx context.Context, clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest, resp *examination.AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

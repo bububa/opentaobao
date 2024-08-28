@@ -1,6 +1,8 @@
 package xiamicontent
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xiamicontent"
 )
@@ -9,6 +11,6 @@ import (
 // xiami.content.songs.info.query
 //
 // 多维度查询歌曲列表
-func XiamiContentSongsInfoQuery(clt *core.SDKClient, req *xiamicontent.XiamiContentSongsInfoQueryAPIRequest, resp *xiamicontent.XiamiContentSongsInfoQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func XiamiContentSongsInfoQuery(ctx context.Context, clt *core.SDKClient, req *xiamicontent.XiamiContentSongsInfoQueryAPIRequest, resp *xiamicontent.XiamiContentSongsInfoQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

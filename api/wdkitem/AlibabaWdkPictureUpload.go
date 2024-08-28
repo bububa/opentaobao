@@ -1,6 +1,8 @@
 package wdkitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdkitem"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.picture.upload
 //
 // 上传图片
-func AlibabaWdkPictureUpload(clt *core.SDKClient, req *wdkitem.AlibabaWdkPictureUploadAPIRequest, resp *wdkitem.AlibabaWdkPictureUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkPictureUpload(ctx context.Context, clt *core.SDKClient, req *wdkitem.AlibabaWdkPictureUploadAPIRequest, resp *wdkitem.AlibabaWdkPictureUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package yunosad
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/yunosad"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.ad.audit.creative.getlist
 //
 // 批量获取创意审核状态
-func YunosAdAuditCreativeGetlist(clt *core.SDKClient, req *yunosad.YunosAdAuditCreativeGetlistAPIRequest, resp *yunosad.YunosAdAuditCreativeGetlistAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosAdAuditCreativeGetlist(ctx context.Context, clt *core.SDKClient, req *yunosad.YunosAdAuditCreativeGetlistAPIRequest, resp *yunosad.YunosAdAuditCreativeGetlistAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

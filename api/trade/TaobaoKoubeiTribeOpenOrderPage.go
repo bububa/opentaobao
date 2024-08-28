@@ -1,6 +1,8 @@
 package trade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/trade"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.koubei.tribe.open.order.page
 //
 // 查询口碑商圈用户的订单列表信息
-func TaobaoKoubeiTribeOpenOrderPage(clt *core.SDKClient, req *trade.TaobaoKoubeiTribeOpenOrderPageAPIRequest, resp *trade.TaobaoKoubeiTribeOpenOrderPageAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoKoubeiTribeOpenOrderPage(ctx context.Context, clt *core.SDKClient, req *trade.TaobaoKoubeiTribeOpenOrderPageAPIRequest, resp *trade.TaobaoKoubeiTribeOpenOrderPageAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

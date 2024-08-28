@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/baichuan"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.baichuan.item.subscribe.relation.query
 //
 // 查询单个订阅关系
-func TaobaoBaichuanItemSubscribeRelationQuery(clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemSubscribeRelationQueryAPIRequest, resp *baichuan.TaobaoBaichuanItemSubscribeRelationQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBaichuanItemSubscribeRelationQuery(ctx context.Context, clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemSubscribeRelationQueryAPIRequest, resp *baichuan.TaobaoBaichuanItemSubscribeRelationQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package alihealthcert
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihealthcert"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.examination.reserve.certificate.notify
 //
 // 当ISV执行完健康证预约成功之后， 调用通知阿里健康
-func AlibabaAlihealthExaminationReserveCertificateNotify(clt *core.SDKClient, req *alihealthcert.AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest, resp *alihealthcert.AlibabaAlihealthExaminationReserveCertificateNotifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthExaminationReserveCertificateNotify(ctx context.Context, clt *core.SDKClient, req *alihealthcert.AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest, resp *alihealthcert.AlibabaAlihealthExaminationReserveCertificateNotifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

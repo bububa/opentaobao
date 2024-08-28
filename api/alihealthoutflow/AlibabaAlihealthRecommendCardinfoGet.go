@@ -1,6 +1,8 @@
 package alihealthoutflow
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihealthoutflow"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.recommend.cardinfo.get
 //
 // 快应用卡片信息
-func AlibabaAlihealthRecommendCardinfoGet(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthRecommendCardinfoGetAPIRequest, resp *alihealthoutflow.AlibabaAlihealthRecommendCardinfoGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthRecommendCardinfoGet(ctx context.Context, clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthRecommendCardinfoGetAPIRequest, resp *alihealthoutflow.AlibabaAlihealthRecommendCardinfoGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

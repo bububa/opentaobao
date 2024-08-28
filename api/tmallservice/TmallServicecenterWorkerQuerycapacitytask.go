@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.servicecenter.worker.querycapacitytask
 //
 // 查询需求容量
-func TmallServicecenterWorkerQuerycapacitytask(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerQuerycapacitytaskAPIRequest, resp *tmallservice.TmallServicecenterWorkerQuerycapacitytaskAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallServicecenterWorkerQuerycapacitytask(ctx context.Context, clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerQuerycapacitytaskAPIRequest, resp *tmallservice.TmallServicecenterWorkerQuerycapacitytaskAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

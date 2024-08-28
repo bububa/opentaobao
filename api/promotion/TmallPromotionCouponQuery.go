@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.promotion.coupon.query
 //
 // 查询用户的可用优惠券列表，仅包含优惠券基本信息和用户nick
-func TmallPromotionCouponQuery(clt *core.SDKClient, req *promotion.TmallPromotionCouponQueryAPIRequest, resp *promotion.TmallPromotionCouponQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallPromotionCouponQuery(ctx context.Context, clt *core.SDKClient, req *promotion.TmallPromotionCouponQueryAPIRequest, resp *promotion.TmallPromotionCouponQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.recycle.order.fulfill.sync
 //
 // 同步回收单最终履约方式
-func TaobaoRecycleOrderFulfillSync(clt *core.SDKClient, req *servicecenter.TaobaoRecycleOrderFulfillSyncAPIRequest, resp *servicecenter.TaobaoRecycleOrderFulfillSyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoRecycleOrderFulfillSync(ctx context.Context, clt *core.SDKClient, req *servicecenter.TaobaoRecycleOrderFulfillSyncAPIRequest, resp *servicecenter.TaobaoRecycleOrderFulfillSyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

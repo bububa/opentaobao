@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.inventory.query.forstore
 //
 // 商家查询后端商品仓库库存
-func TmallInventoryQueryForstore(clt *core.SDKClient, req *fenxiao.TmallInventoryQueryForstoreAPIRequest, resp *fenxiao.TmallInventoryQueryForstoreAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallInventoryQueryForstore(ctx context.Context, clt *core.SDKClient, req *fenxiao.TmallInventoryQueryForstoreAPIRequest, resp *fenxiao.TmallInventoryQueryForstoreAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.marketing.discount.item.remove.async
 //
 // 特价批量移除商品
-func AlibabaWdkMarketingDiscountItemRemoveAsync(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingDiscountItemRemoveAsyncAPIRequest, resp *wdk.AlibabaWdkMarketingDiscountItemRemoveAsyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkMarketingDiscountItemRemoveAsync(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkMarketingDiscountItemRemoveAsyncAPIRequest, resp *wdk.AlibabaWdkMarketingDiscountItemRemoveAsyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

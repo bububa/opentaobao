@@ -1,6 +1,8 @@
 package moziacl
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/moziacl"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.mozi.acl.userroles.revoke
 //
 // 调用此接口，会根据入参回收该账户下的该批角色
-func AlibabaMoziAclUserrolesRevoke(clt *core.SDKClient, req *moziacl.AlibabaMoziAclUserrolesRevokeAPIRequest, resp *moziacl.AlibabaMoziAclUserrolesRevokeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMoziAclUserrolesRevoke(ctx context.Context, clt *core.SDKClient, req *moziacl.AlibabaMoziAclUserrolesRevokeAPIRequest, resp *moziacl.AlibabaMoziAclUserrolesRevokeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

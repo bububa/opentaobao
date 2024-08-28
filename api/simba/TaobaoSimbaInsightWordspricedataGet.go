@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.simba.insight.wordspricedata.get
 //
 // 获取关键词按竞价区间进行细分的数据
-func TaobaoSimbaInsightWordspricedataGet(clt *core.SDKClient, req *simba.TaobaoSimbaInsightWordspricedataGetAPIRequest, resp *simba.TaobaoSimbaInsightWordspricedataGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSimbaInsightWordspricedataGet(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSimbaInsightWordspricedataGetAPIRequest, resp *simba.TaobaoSimbaInsightWordspricedataGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package idleisv
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idleisv"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.isv.refund.query
 //
 // 闲鱼服务商交易订单退款信息查询-单个退款查询
-func AlibabaIdleIsvRefundQuery(clt *core.SDKClient, req *idleisv.AlibabaIdleIsvRefundQueryAPIRequest, resp *idleisv.AlibabaIdleIsvRefundQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleIsvRefundQuery(ctx context.Context, clt *core.SDKClient, req *idleisv.AlibabaIdleIsvRefundQueryAPIRequest, resp *idleisv.AlibabaIdleIsvRefundQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

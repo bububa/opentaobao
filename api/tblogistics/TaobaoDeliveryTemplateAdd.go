@@ -1,6 +1,8 @@
 package tblogistics
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tblogistics"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.delivery.template.add
 //
 // 增加运费模板的外部接口
-func TaobaoDeliveryTemplateAdd(clt *core.SDKClient, req *tblogistics.TaobaoDeliveryTemplateAddAPIRequest, resp *tblogistics.TaobaoDeliveryTemplateAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoDeliveryTemplateAdd(ctx context.Context, clt *core.SDKClient, req *tblogistics.TaobaoDeliveryTemplateAddAPIRequest, resp *tblogistics.TaobaoDeliveryTemplateAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

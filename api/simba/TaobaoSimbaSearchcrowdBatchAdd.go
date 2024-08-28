@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.simba.searchcrowd.batch.add
 //
 // 推广单元新增搜索人群
-func TaobaoSimbaSearchcrowdBatchAdd(clt *core.SDKClient, req *simba.TaobaoSimbaSearchcrowdBatchAddAPIRequest, resp *simba.TaobaoSimbaSearchcrowdBatchAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSimbaSearchcrowdBatchAdd(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSimbaSearchcrowdBatchAddAPIRequest, resp *simba.TaobaoSimbaSearchcrowdBatchAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

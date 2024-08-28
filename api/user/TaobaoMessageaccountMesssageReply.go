@@ -1,6 +1,8 @@
 package user
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/user"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.messageaccount.messsage.reply
 //
 // 外部 isv 调用该进口来进行消息号消息的回复
-func TaobaoMessageaccountMesssageReply(clt *core.SDKClient, req *user.TaobaoMessageaccountMesssageReplyAPIRequest, resp *user.TaobaoMessageaccountMesssageReplyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoMessageaccountMesssageReply(ctx context.Context, clt *core.SDKClient, req *user.TaobaoMessageaccountMesssageReplyAPIRequest, resp *user.TaobaoMessageaccountMesssageReplyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package charity
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/charity"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.charity.user.external.auth
 //
 // 外部用户授权
-func AlibabaCharityUserExternalAuth(clt *core.SDKClient, req *charity.AlibabaCharityUserExternalAuthAPIRequest, resp *charity.AlibabaCharityUserExternalAuthAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCharityUserExternalAuth(ctx context.Context, clt *core.SDKClient, req *charity.AlibabaCharityUserExternalAuthAPIRequest, resp *charity.AlibabaCharityUserExternalAuthAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

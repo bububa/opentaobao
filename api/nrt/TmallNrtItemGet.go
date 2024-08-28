@@ -1,6 +1,8 @@
 package nrt
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/nrt"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.nrt.item.get
 //
 // 查询新零售商品信息
-func TmallNrtItemGet(clt *core.SDKClient, req *nrt.TmallNrtItemGetAPIRequest, resp *nrt.TmallNrtItemGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallNrtItemGet(ctx context.Context, clt *core.SDKClient, req *nrt.TmallNrtItemGetAPIRequest, resp *nrt.TmallNrtItemGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

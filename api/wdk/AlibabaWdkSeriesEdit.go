@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.series.edit
 //
 // 系列品变更-更新系列
-func AlibabaWdkSeriesEdit(clt *core.SDKClient, req *wdk.AlibabaWdkSeriesEditAPIRequest, resp *wdk.AlibabaWdkSeriesEditAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkSeriesEdit(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkSeriesEditAPIRequest, resp *wdk.AlibabaWdkSeriesEditAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

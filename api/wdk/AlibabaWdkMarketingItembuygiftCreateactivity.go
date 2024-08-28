@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.marketing.itembuygift.createactivity
 //
 // 创建买赠活动
-func AlibabaWdkMarketingItembuygiftCreateactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItembuygiftCreateactivityAPIRequest, resp *wdk.AlibabaWdkMarketingItembuygiftCreateactivityAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkMarketingItembuygiftCreateactivity(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItembuygiftCreateactivityAPIRequest, resp *wdk.AlibabaWdkMarketingItembuygiftCreateactivityAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.fenxiao.login.user.get
 //
 // 获取用户登录信息
-func TaobaoFenxiaoLoginUserGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoLoginUserGetAPIRequest, resp *fenxiao.TaobaoFenxiaoLoginUserGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFenxiaoLoginUserGet(ctx context.Context, clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoLoginUserGetAPIRequest, resp *fenxiao.TaobaoFenxiaoLoginUserGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

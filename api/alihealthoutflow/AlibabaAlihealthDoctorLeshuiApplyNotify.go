@@ -1,6 +1,8 @@
 package alihealthoutflow
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihealthoutflow"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.doctor.leshui.apply.notify
 //
 // 申请单审核结果通知
-func AlibabaAlihealthDoctorLeshuiApplyNotify(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest, resp *alihealthoutflow.AlibabaAlihealthDoctorLeshuiApplyNotifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDoctorLeshuiApplyNotify(ctx context.Context, clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest, resp *alihealthoutflow.AlibabaAlihealthDoctorLeshuiApplyNotifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

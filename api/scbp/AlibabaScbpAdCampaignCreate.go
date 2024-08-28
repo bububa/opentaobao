@@ -1,6 +1,8 @@
 package scbp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/scbp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.scbp.ad.campaign.create
 //
 // 创建计划
-func AlibabaScbpAdCampaignCreate(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignCreateAPIRequest, resp *scbp.AlibabaScbpAdCampaignCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaScbpAdCampaignCreate(ctx context.Context, clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignCreateAPIRequest, resp *scbp.AlibabaScbpAdCampaignCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

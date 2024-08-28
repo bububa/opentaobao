@@ -1,6 +1,8 @@
 package tbk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbk"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.tbk.dg.vegas.tlj.report
 //
 // 淘宝客推广者可查询淘礼金发放和使用等效果数据，只提供近150天的数据
-func TaobaoTbkDgVegasTljReport(clt *core.SDKClient, req *tbk.TaobaoTbkDgVegasTljReportAPIRequest, resp *tbk.TaobaoTbkDgVegasTljReportAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTbkDgVegasTljReport(ctx context.Context, clt *core.SDKClient, req *tbk.TaobaoTbkDgVegasTljReportAPIRequest, resp *tbk.TaobaoTbkDgVegasTljReportAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

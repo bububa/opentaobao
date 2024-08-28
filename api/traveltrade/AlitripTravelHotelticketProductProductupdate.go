@@ -1,6 +1,8 @@
 package traveltrade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/traveltrade"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.travel.hotelticket.product.productupdate
 //
 // 产品批量变更通知
-func AlitripTravelHotelticketProductProductupdate(clt *core.SDKClient, req *traveltrade.AlitripTravelHotelticketProductProductupdateAPIRequest, resp *traveltrade.AlitripTravelHotelticketProductProductupdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripTravelHotelticketProductProductupdate(ctx context.Context, clt *core.SDKClient, req *traveltrade.AlitripTravelHotelticketProductProductupdateAPIRequest, resp *traveltrade.AlitripTravelHotelticketProductProductupdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.servicecenter.workcard.create
 //
 // 创建服务平台工单
-func AlibabaServicecenterWorkcardCreate(clt *core.SDKClient, req *tmallservice.AlibabaServicecenterWorkcardCreateAPIRequest, resp *tmallservice.AlibabaServicecenterWorkcardCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaServicecenterWorkcardCreate(ctx context.Context, clt *core.SDKClient, req *tmallservice.AlibabaServicecenterWorkcardCreateAPIRequest, resp *tmallservice.AlibabaServicecenterWorkcardCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

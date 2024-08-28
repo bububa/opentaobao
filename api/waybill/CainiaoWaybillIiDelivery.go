@@ -1,6 +1,8 @@
 package waybill
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/waybill"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.waybill.ii.delivery
 //
 // 极效前置场景下的使用此接口，通知进行派件
-func CainiaoWaybillIiDelivery(clt *core.SDKClient, req *waybill.CainiaoWaybillIiDeliveryAPIRequest, resp *waybill.CainiaoWaybillIiDeliveryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoWaybillIiDelivery(ctx context.Context, clt *core.SDKClient, req *waybill.CainiaoWaybillIiDeliveryAPIRequest, resp *waybill.CainiaoWaybillIiDeliveryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

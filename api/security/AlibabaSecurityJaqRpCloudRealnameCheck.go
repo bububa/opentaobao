@@ -1,6 +1,8 @@
 package security
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/security"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.security.jaq.rp.cloud.realname.check
 //
 // 验证姓名和证件号
-func AlibabaSecurityJaqRpCloudRealnameCheck(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest, resp *security.AlibabaSecurityJaqRpCloudRealnameCheckAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaSecurityJaqRpCloudRealnameCheck(ctx context.Context, clt *core.SDKClient, req *security.AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest, resp *security.AlibabaSecurityJaqRpCloudRealnameCheckAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -15,6 +17,6 @@ import (
 //   - 返回活动开始时间在 startTime&lt;=活动开始时间&lt;endTime 之间的所有单品促销单据
 //   - 传入QueryPriceChangeTypeEnum.SKU_PROMOTION_END,
 //   - 返回活动结束时间在 startTime&lt;=活动结束时间&lt;endTime 之间的所有单品促销单据
-func AlibabaWdkItemChangepriceQuery(clt *core.SDKClient, req *wdk.AlibabaWdkItemChangepriceQueryAPIRequest, resp *wdk.AlibabaWdkItemChangepriceQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkItemChangepriceQuery(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkItemChangepriceQueryAPIRequest, resp *wdk.AlibabaWdkItemChangepriceQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

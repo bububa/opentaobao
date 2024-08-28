@@ -1,6 +1,8 @@
 package openmall
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/openmall"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.openmall.refund.modify
 //
 // 修改OpenMall退款申请
-func TaobaoOpenmallRefundModify(clt *core.SDKClient, req *openmall.TaobaoOpenmallRefundModifyAPIRequest, resp *openmall.TaobaoOpenmallRefundModifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOpenmallRefundModify(ctx context.Context, clt *core.SDKClient, req *openmall.TaobaoOpenmallRefundModifyAPIRequest, resp *openmall.TaobaoOpenmallRefundModifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

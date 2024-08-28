@@ -1,6 +1,8 @@
 package tbtrade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbtrade"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.fulfillment.order.assemble
 //
 // 拆合单结果回传接口
-func TaobaoFulfillmentOrderAssemble(clt *core.SDKClient, req *tbtrade.TaobaoFulfillmentOrderAssembleAPIRequest, resp *tbtrade.TaobaoFulfillmentOrderAssembleAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFulfillmentOrderAssemble(ctx context.Context, clt *core.SDKClient, req *tbtrade.TaobaoFulfillmentOrderAssembleAPIRequest, resp *tbtrade.TaobaoFulfillmentOrderAssembleAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

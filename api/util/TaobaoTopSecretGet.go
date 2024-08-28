@@ -1,6 +1,8 @@
 package util
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/util"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.top.secret.get
 //
 // top sdk通过api获取对应解密秘钥
-func TaobaoTopSecretGet(clt *core.SDKClient, req *util.TaobaoTopSecretGetAPIRequest, resp *util.TaobaoTopSecretGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTopSecretGet(ctx context.Context, clt *core.SDKClient, req *util.TaobaoTopSecretGetAPIRequest, resp *util.TaobaoTopSecretGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

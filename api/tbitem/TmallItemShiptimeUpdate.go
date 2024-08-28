@@ -1,6 +1,8 @@
 package tbitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbitem"
 )
@@ -42,6 +44,6 @@ import (
 //	    &#34;updateType&#34;: 1 --更新商品
 //	},
 //	删除商品级的发货时间
-func TmallItemShiptimeUpdate(clt *core.SDKClient, req *tbitem.TmallItemShiptimeUpdateAPIRequest, resp *tbitem.TmallItemShiptimeUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallItemShiptimeUpdate(ctx context.Context, clt *core.SDKClient, req *tbitem.TmallItemShiptimeUpdateAPIRequest, resp *tbitem.TmallItemShiptimeUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

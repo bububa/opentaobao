@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/baichuan"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.baichuan.taoke.trace
 //
 // 百川淘客打点
-func TaobaoBaichuanTaokeTrace(clt *core.SDKClient, req *baichuan.TaobaoBaichuanTaokeTraceAPIRequest, resp *baichuan.TaobaoBaichuanTaokeTraceAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBaichuanTaokeTrace(ctx context.Context, clt *core.SDKClient, req *baichuan.TaobaoBaichuanTaokeTraceAPIRequest, resp *baichuan.TaobaoBaichuanTaokeTraceAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

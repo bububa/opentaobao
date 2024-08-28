@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.sku.warehousesku.scroll.query
 //
 // 提供仓商品数据接口查询
-func AlibabaWdkSkuWarehouseskuScrollQuery(clt *core.SDKClient, req *wdk.AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest, resp *wdk.AlibabaWdkSkuWarehouseskuScrollQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkSkuWarehouseskuScrollQuery(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest, resp *wdk.AlibabaWdkSkuWarehouseskuScrollQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

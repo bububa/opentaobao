@@ -1,6 +1,8 @@
 package wlb
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wlb"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.waybill.cloudprint.netprint.print
 //
 // 打印接口
-func CainiaoWaybillCloudprintNetprintPrint(clt *core.SDKClient, req *wlb.CainiaoWaybillCloudprintNetprintPrintAPIRequest, resp *wlb.CainiaoWaybillCloudprintNetprintPrintAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoWaybillCloudprintNetprintPrint(ctx context.Context, clt *core.SDKClient, req *wlb.CainiaoWaybillCloudprintNetprintPrintAPIRequest, resp *wlb.CainiaoWaybillCloudprintNetprintPrintAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

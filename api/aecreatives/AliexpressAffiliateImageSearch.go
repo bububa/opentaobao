@@ -1,6 +1,8 @@
 package aecreatives
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/aecreatives"
 )
@@ -9,6 +11,6 @@ import (
 // aliexpress.affiliate.image.search
 //
 // 图片搜索接口
-func AliexpressAffiliateImageSearch(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateImageSearchAPIRequest, resp *aecreatives.AliexpressAffiliateImageSearchAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliexpressAffiliateImageSearch(ctx context.Context, clt *core.SDKClient, req *aecreatives.AliexpressAffiliateImageSearchAPIRequest, resp *aecreatives.AliexpressAffiliateImageSearchAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

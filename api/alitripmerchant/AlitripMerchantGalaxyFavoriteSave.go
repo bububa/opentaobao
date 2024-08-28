@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.merchant.galaxy.favorite.save
 //
 // 用户可以点击收藏酒店，再次点击移除收藏的酒店
-func AlitripMerchantGalaxyFavoriteSave(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyFavoriteSaveAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyFavoriteSaveAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripMerchantGalaxyFavoriteSave(ctx context.Context, clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyFavoriteSaveAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyFavoriteSaveAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

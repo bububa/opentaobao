@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.merchant.galaxy.payment.param.query
 //
 // 获取微信小程序的支付参数，供微信小程序调起支付请求。参数都为校验字段，不涉及用户隐私数据
-func AlitripMerchantGalaxyPaymentParamQuery(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyPaymentParamQueryAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyPaymentParamQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripMerchantGalaxyPaymentParamQuery(ctx context.Context, clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyPaymentParamQueryAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyPaymentParamQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

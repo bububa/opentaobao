@@ -1,6 +1,8 @@
 package util
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/util"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.openuid.get.bymixnick
 //
 // 通过mixnick转换openuid
-func TaobaoOpenuidGetBymixnick(clt *core.SDKClient, req *util.TaobaoOpenuidGetBymixnickAPIRequest, resp *util.TaobaoOpenuidGetBymixnickAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOpenuidGetBymixnick(ctx context.Context, clt *core.SDKClient, req *util.TaobaoOpenuidGetBymixnickAPIRequest, resp *util.TaobaoOpenuidGetBymixnickAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

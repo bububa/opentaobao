@@ -1,6 +1,8 @@
 package alimsg
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alimsg"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.order.msg.send
 //
 // 用户下单后服务商期望自动发货，该接口用于给用户发送文本消息，主要用于卡券类等虚拟商品场景
-func AlibabaIdleOrderMsgSend(clt *core.SDKClient, req *alimsg.AlibabaIdleOrderMsgSendAPIRequest, resp *alimsg.AlibabaIdleOrderMsgSendAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleOrderMsgSend(ctx context.Context, clt *core.SDKClient, req *alimsg.AlibabaIdleOrderMsgSendAPIRequest, resp *alimsg.AlibabaIdleOrderMsgSendAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

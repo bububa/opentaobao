@@ -1,6 +1,8 @@
 package tvupadmin
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.tvpubadmin.content.show.setexemptaudit
 //
 // 迎客松节目设置免审开关
-func YunosTvpubadminContentShowSetexemptaudit(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentShowSetexemptauditAPIRequest, resp *tvupadmin.YunosTvpubadminContentShowSetexemptauditAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosTvpubadminContentShowSetexemptaudit(ctx context.Context, clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentShowSetexemptauditAPIRequest, resp *tvupadmin.YunosTvpubadminContentShowSetexemptauditAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

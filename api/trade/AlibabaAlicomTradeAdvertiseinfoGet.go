@@ -1,6 +1,8 @@
 package trade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/trade"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alicom.trade.advertiseinfo.get
 //
 // 获取订单上的在信息流投放信息
-func AlibabaAlicomTradeAdvertiseinfoGet(clt *core.SDKClient, req *trade.AlibabaAlicomTradeAdvertiseinfoGetAPIRequest, resp *trade.AlibabaAlicomTradeAdvertiseinfoGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlicomTradeAdvertiseinfoGet(ctx context.Context, clt *core.SDKClient, req *trade.AlibabaAlicomTradeAdvertiseinfoGetAPIRequest, resp *trade.AlibabaAlicomTradeAdvertiseinfoGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

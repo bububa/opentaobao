@@ -1,6 +1,8 @@
 package fpm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fpm"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.sp.open.payment.repay
 //
 // 智付重新打款
-func AlibabaSpOpenPaymentRepay(clt *core.SDKClient, req *fpm.AlibabaSpOpenPaymentRepayAPIRequest, resp *fpm.AlibabaSpOpenPaymentRepayAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaSpOpenPaymentRepay(ctx context.Context, clt *core.SDKClient, req *fpm.AlibabaSpOpenPaymentRepayAPIRequest, resp *fpm.AlibabaSpOpenPaymentRepayAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

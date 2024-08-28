@@ -1,6 +1,8 @@
 package tmallhk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallhk"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.traceplatform.ticket.picture.upload
 //
 // uploadPicture
-func TmallTraceplatformTicketPictureUpload(clt *core.SDKClient, req *tmallhk.TmallTraceplatformTicketPictureUploadAPIRequest, resp *tmallhk.TmallTraceplatformTicketPictureUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallTraceplatformTicketPictureUpload(ctx context.Context, clt *core.SDKClient, req *tmallhk.TmallTraceplatformTicketPictureUploadAPIRequest, resp *tmallhk.TmallTraceplatformTicketPictureUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

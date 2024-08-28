@@ -1,6 +1,8 @@
 package media
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/media"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.tjb.picture.upload
 //
 // 淘特图片空间上传单张图片
-func AlibabaTjbPictureUpload(clt *core.SDKClient, req *media.AlibabaTjbPictureUploadAPIRequest, resp *media.AlibabaTjbPictureUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaTjbPictureUpload(ctx context.Context, clt *core.SDKClient, req *media.AlibabaTjbPictureUploadAPIRequest, resp *media.AlibabaTjbPictureUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

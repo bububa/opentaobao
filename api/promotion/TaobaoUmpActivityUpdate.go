@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.ump.activity.update
 //
 // 修改营销活动
-func TaobaoUmpActivityUpdate(clt *core.SDKClient, req *promotion.TaobaoUmpActivityUpdateAPIRequest, resp *promotion.TaobaoUmpActivityUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoUmpActivityUpdate(ctx context.Context, clt *core.SDKClient, req *promotion.TaobaoUmpActivityUpdateAPIRequest, resp *promotion.TaobaoUmpActivityUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

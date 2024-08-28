@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.servicecenter.workcard.reassign
 //
 // 工单改派门店
-func TmallServicecenterWorkcardReassign(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardReassignAPIRequest, resp *tmallservice.TmallServicecenterWorkcardReassignAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallServicecenterWorkcardReassign(ctx context.Context, clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardReassignAPIRequest, resp *tmallservice.TmallServicecenterWorkcardReassignAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

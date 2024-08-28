@@ -1,6 +1,8 @@
 package campus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/campus"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.campus.guardant.gateway.callback
 //
 // 门禁供应商回调平台通知同步结果
-func AlibabaCampusGuardantGatewayCallback(clt *core.SDKClient, req *campus.AlibabaCampusGuardantGatewayCallbackAPIRequest, resp *campus.AlibabaCampusGuardantGatewayCallbackAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCampusGuardantGatewayCallback(ctx context.Context, clt *core.SDKClient, req *campus.AlibabaCampusGuardantGatewayCallbackAPIRequest, resp *campus.AlibabaCampusGuardantGatewayCallbackAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

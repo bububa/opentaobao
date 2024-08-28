@@ -1,6 +1,8 @@
 package tmallgenie
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallgenie"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ailabs.iot.device.list.get
 //
 // 通过此接口获取用户名下的iot设备列表
-func AlibabaAilabsIotDeviceListGet(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsIotDeviceListGetAPIRequest, resp *tmallgenie.AlibabaAilabsIotDeviceListGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAilabsIotDeviceListGet(ctx context.Context, clt *core.SDKClient, req *tmallgenie.AlibabaAilabsIotDeviceListGetAPIRequest, resp *tmallgenie.AlibabaAilabsIotDeviceListGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

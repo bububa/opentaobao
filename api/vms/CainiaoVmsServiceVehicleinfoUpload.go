@@ -1,6 +1,8 @@
 package vms
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/vms"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.vms.service.vehicleinfo.upload
 //
 // 新能源车--外部车辆信息回传
-func CainiaoVmsServiceVehicleinfoUpload(clt *core.SDKClient, req *vms.CainiaoVmsServiceVehicleinfoUploadAPIRequest, resp *vms.CainiaoVmsServiceVehicleinfoUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoVmsServiceVehicleinfoUpload(ctx context.Context, clt *core.SDKClient, req *vms.CainiaoVmsServiceVehicleinfoUploadAPIRequest, resp *vms.CainiaoVmsServiceVehicleinfoUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

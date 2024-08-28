@@ -1,6 +1,8 @@
 package scbp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/scbp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.scbp.target.ad.campaign.product.effect
 //
 // 定向推广-获取计划中产品推广效果
-func AlibabaScbpTargetAdCampaignProductEffect(clt *core.SDKClient, req *scbp.AlibabaScbpTargetAdCampaignProductEffectAPIRequest, resp *scbp.AlibabaScbpTargetAdCampaignProductEffectAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaScbpTargetAdCampaignProductEffect(ctx context.Context, clt *core.SDKClient, req *scbp.AlibabaScbpTargetAdCampaignProductEffectAPIRequest, resp *scbp.AlibabaScbpTargetAdCampaignProductEffectAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

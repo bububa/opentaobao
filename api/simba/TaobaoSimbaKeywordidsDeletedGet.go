@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.simba.keywordids.deleted.get
 //
 // 获取删除的词ID
-func TaobaoSimbaKeywordidsDeletedGet(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordidsDeletedGetAPIRequest, resp *simba.TaobaoSimbaKeywordidsDeletedGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSimbaKeywordidsDeletedGet(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSimbaKeywordidsDeletedGetAPIRequest, resp *simba.TaobaoSimbaKeywordidsDeletedGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

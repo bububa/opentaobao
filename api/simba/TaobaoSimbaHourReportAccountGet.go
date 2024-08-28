@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.simba.hour.report.account.get
 //
 // 获取账户小时实时报表数据
-func TaobaoSimbaHourReportAccountGet(clt *core.SDKClient, req *simba.TaobaoSimbaHourReportAccountGetAPIRequest, resp *simba.TaobaoSimbaHourReportAccountGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSimbaHourReportAccountGet(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSimbaHourReportAccountGetAPIRequest, resp *simba.TaobaoSimbaHourReportAccountGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

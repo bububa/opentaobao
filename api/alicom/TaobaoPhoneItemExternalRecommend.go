@@ -1,6 +1,8 @@
 package alicom
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alicom"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.phone.item.external.recommend
 //
 // 话费选品能力外放
-func TaobaoPhoneItemExternalRecommend(clt *core.SDKClient, req *alicom.TaobaoPhoneItemExternalRecommendAPIRequest, resp *alicom.TaobaoPhoneItemExternalRecommendAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoPhoneItemExternalRecommend(ctx context.Context, clt *core.SDKClient, req *alicom.TaobaoPhoneItemExternalRecommendAPIRequest, resp *alicom.TaobaoPhoneItemExternalRecommendAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

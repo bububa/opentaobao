@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drug.wxinfo.upload
 //
 // 小程序数据回传
-func AlibabaAlihealthDrugWxinfoUpload(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugWxinfoUploadAPIRequest, resp *drugtrace.AlibabaAlihealthDrugWxinfoUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugWxinfoUpload(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugWxinfoUploadAPIRequest, resp *drugtrace.AlibabaAlihealthDrugWxinfoUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

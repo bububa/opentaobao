@@ -1,6 +1,8 @@
 package scbp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/scbp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.scbp.ad.keyword.delete.keyword.batch
 //
 // 删除关键词
-func AlibabaScbpAdKeywordDeleteKeywordBatch(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest, resp *scbp.AlibabaScbpAdKeywordDeleteKeywordBatchAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaScbpAdKeywordDeleteKeywordBatch(ctx context.Context, clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest, resp *scbp.AlibabaScbpAdKeywordDeleteKeywordBatchAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

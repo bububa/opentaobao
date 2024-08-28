@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.retail.marketing.itempool.activity.update
 //
 // 同城零售商品池活动更新
-func AlibabaRetailMarketingItempoolActivityUpdate(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingItempoolActivityUpdateAPIRequest, resp *wdk.AlibabaRetailMarketingItempoolActivityUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaRetailMarketingItempoolActivityUpdate(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaRetailMarketingItempoolActivityUpdateAPIRequest, resp *wdk.AlibabaRetailMarketingItempoolActivityUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

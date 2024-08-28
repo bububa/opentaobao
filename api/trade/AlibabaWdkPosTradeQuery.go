@@ -1,6 +1,8 @@
 package trade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/trade"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.pos.trade.query
 //
 // 轻pos品牌营销场景，外部商家查询营销信息
-func AlibabaWdkPosTradeQuery(clt *core.SDKClient, req *trade.AlibabaWdkPosTradeQueryAPIRequest, resp *trade.AlibabaWdkPosTradeQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkPosTradeQuery(ctx context.Context, clt *core.SDKClient, req *trade.AlibabaWdkPosTradeQueryAPIRequest, resp *trade.AlibabaWdkPosTradeQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

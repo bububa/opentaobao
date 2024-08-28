@@ -1,6 +1,8 @@
 package tmallsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.servicecenter.workcard.evaluate
 //
 // 服务商售后鉴定服务,提供给服务商针对售后场景上门鉴定服务，鉴定成功则服务商完成履约，鉴定失败则取消工单
-func AlibabaServicecenterWorkcardEvaluate(clt *core.SDKClient, req *tmallsc.AlibabaServicecenterWorkcardEvaluateAPIRequest, resp *tmallsc.AlibabaServicecenterWorkcardEvaluateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaServicecenterWorkcardEvaluate(ctx context.Context, clt *core.SDKClient, req *tmallsc.AlibabaServicecenterWorkcardEvaluateAPIRequest, resp *tmallsc.AlibabaServicecenterWorkcardEvaluateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

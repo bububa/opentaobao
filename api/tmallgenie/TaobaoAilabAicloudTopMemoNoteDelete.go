@@ -1,6 +1,8 @@
 package tmallgenie
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallgenie"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.ailab.aicloud.top.memo.note.delete
 //
 // 删除天猫精灵用户设置的备忘录
-func TaobaoAilabAicloudTopMemoNoteDelete(clt *core.SDKClient, req *tmallgenie.TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest, resp *tmallgenie.TaobaoAilabAicloudTopMemoNoteDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAilabAicloudTopMemoNoteDelete(ctx context.Context, clt *core.SDKClient, req *tmallgenie.TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest, resp *tmallgenie.TaobaoAilabAicloudTopMemoNoteDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

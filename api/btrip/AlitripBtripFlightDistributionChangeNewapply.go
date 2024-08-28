@@ -1,6 +1,8 @@
 package btrip
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/btrip"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.btrip.flight.distribution.change.newapply
 //
 // 商旅机票改签申请
-func AlitripBtripFlightDistributionChangeNewapply(clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionChangeNewapplyAPIRequest, resp *btrip.AlitripBtripFlightDistributionChangeNewapplyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripBtripFlightDistributionChangeNewapply(ctx context.Context, clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionChangeNewapplyAPIRequest, resp *btrip.AlitripBtripFlightDistributionChangeNewapplyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

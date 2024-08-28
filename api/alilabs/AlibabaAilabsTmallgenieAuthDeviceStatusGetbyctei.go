@@ -1,6 +1,8 @@
 package alilabs
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alilabs"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ailabs.tmallgenie.auth.device.status.getbyctei
 //
 // 提供给电信查询设备在线状态值
-func AlibabaAilabsTmallgenieAuthDeviceStatusGetbyctei(clt *core.SDKClient, req *alilabs.AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest, resp *alilabs.AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAilabsTmallgenieAuthDeviceStatusGetbyctei(ctx context.Context, clt *core.SDKClient, req *alilabs.AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest, resp *alilabs.AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

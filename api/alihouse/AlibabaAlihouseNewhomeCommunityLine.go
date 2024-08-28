@@ -1,6 +1,8 @@
 package alihouse
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihouse"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihouse.newhome.community.line
 //
 // 小区上下架
-func AlibabaAlihouseNewhomeCommunityLine(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeCommunityLineAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeCommunityLineAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihouseNewhomeCommunityLine(ctx context.Context, clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeCommunityLineAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeCommunityLineAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

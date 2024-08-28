@@ -1,6 +1,8 @@
 package cloudgame
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/cloudgame"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.cgame.mp.mpproject.initnewproject
 //
 // 发送消息给游戏
-func AlibabaCgameMpMpprojectInitnewproject(clt *core.SDKClient, req *cloudgame.AlibabaCgameMpMpprojectInitnewprojectAPIRequest, resp *cloudgame.AlibabaCgameMpMpprojectInitnewprojectAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCgameMpMpprojectInitnewproject(ctx context.Context, clt *core.SDKClient, req *cloudgame.AlibabaCgameMpMpprojectInitnewprojectAPIRequest, resp *cloudgame.AlibabaCgameMpMpprojectInitnewprojectAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

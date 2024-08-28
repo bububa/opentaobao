@@ -1,6 +1,8 @@
 package wenyuvideo
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wenyuvideo"
 )
@@ -9,6 +11,6 @@ import (
 // youku.wenyuvideo.seeta.get
 //
 // 只看Ta对外输出
-func YoukuWenyuvideoSeetaGet(clt *core.SDKClient, req *wenyuvideo.YoukuWenyuvideoSeetaGetAPIRequest, resp *wenyuvideo.YoukuWenyuvideoSeetaGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YoukuWenyuvideoSeetaGet(ctx context.Context, clt *core.SDKClient, req *wenyuvideo.YoukuWenyuvideoSeetaGetAPIRequest, resp *wenyuvideo.YoukuWenyuvideoSeetaGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

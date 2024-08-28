@@ -1,6 +1,8 @@
 package mozi
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/mozi"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.mozi.vds.tenant.api.service.getadmin
 //
 // 获取员工租户管理员信息（查询员工是否为租户管理员）
-func AlibabaMoziVdsTenantApiServiceGetadmin(clt *core.SDKClient, req *mozi.AlibabaMoziVdsTenantApiServiceGetadminAPIRequest, resp *mozi.AlibabaMoziVdsTenantApiServiceGetadminAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMoziVdsTenantApiServiceGetadmin(ctx context.Context, clt *core.SDKClient, req *mozi.AlibabaMoziVdsTenantApiServiceGetadminAPIRequest, resp *mozi.AlibabaMoziVdsTenantApiServiceGetadminAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

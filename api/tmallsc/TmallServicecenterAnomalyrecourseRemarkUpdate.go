@@ -1,6 +1,8 @@
 package tmallsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.servicecenter.anomalyrecourse.remark.update
 //
 // 一键求助服务商可以回传备注
-func TmallServicecenterAnomalyrecourseRemarkUpdate(clt *core.SDKClient, req *tmallsc.TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest, resp *tmallsc.TmallServicecenterAnomalyrecourseRemarkUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallServicecenterAnomalyrecourseRemarkUpdate(ctx context.Context, clt *core.SDKClient, req *tmallsc.TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest, resp *tmallsc.TmallServicecenterAnomalyrecourseRemarkUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

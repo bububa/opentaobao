@@ -1,6 +1,8 @@
 package wlb
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wlb"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.wlb.tradeorder.get
 //
 // 根据交易类型和交易id查询物流宝订单详情
-func TaobaoWlbTradeorderGet(clt *core.SDKClient, req *wlb.TaobaoWlbTradeorderGetAPIRequest, resp *wlb.TaobaoWlbTradeorderGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWlbTradeorderGet(ctx context.Context, clt *core.SDKClient, req *wlb.TaobaoWlbTradeorderGetAPIRequest, resp *wlb.TaobaoWlbTradeorderGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

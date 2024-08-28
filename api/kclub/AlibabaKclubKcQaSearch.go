@@ -1,6 +1,8 @@
 package kclub
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/kclub"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.kclub.kc.qa.search
 //
 // 知识云-知识搜索服务
-func AlibabaKclubKcQaSearch(clt *core.SDKClient, req *kclub.AlibabaKclubKcQaSearchAPIRequest, resp *kclub.AlibabaKclubKcQaSearchAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaKclubKcQaSearch(ctx context.Context, clt *core.SDKClient, req *kclub.AlibabaKclubKcQaSearchAPIRequest, resp *kclub.AlibabaKclubKcQaSearchAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

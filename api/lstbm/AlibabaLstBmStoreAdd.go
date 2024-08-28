@@ -1,6 +1,8 @@
 package lstbm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/lstbm"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.lst.bm.store.add
 //
 // 导入品牌商自有门店
-func AlibabaLstBmStoreAdd(clt *core.SDKClient, req *lstbm.AlibabaLstBmStoreAddAPIRequest, resp *lstbm.AlibabaLstBmStoreAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLstBmStoreAdd(ctx context.Context, clt *core.SDKClient, req *lstbm.AlibabaLstBmStoreAddAPIRequest, resp *lstbm.AlibabaLstBmStoreAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

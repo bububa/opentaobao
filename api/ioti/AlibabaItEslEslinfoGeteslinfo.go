@@ -1,6 +1,8 @@
 package ioti
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ioti"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.it.esl.eslinfo.geteslinfo
 //
 // 工厂对生产出的电子价签进行全流程功能测试，查询价签当前上报的信息
-func AlibabaItEslEslinfoGeteslinfo(clt *core.SDKClient, req *ioti.AlibabaItEslEslinfoGeteslinfoAPIRequest, resp *ioti.AlibabaItEslEslinfoGeteslinfoAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaItEslEslinfoGeteslinfo(ctx context.Context, clt *core.SDKClient, req *ioti.AlibabaItEslEslinfoGeteslinfoAPIRequest, resp *ioti.AlibabaItEslEslinfoGeteslinfoAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

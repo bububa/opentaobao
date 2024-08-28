@@ -1,6 +1,8 @@
 package tbrefund
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbrefund"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.refund.messages.get
 //
 // 查询退款留言/凭证列表
-func TaobaoRefundMessagesGet(clt *core.SDKClient, req *tbrefund.TaobaoRefundMessagesGetAPIRequest, resp *tbrefund.TaobaoRefundMessagesGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoRefundMessagesGet(ctx context.Context, clt *core.SDKClient, req *tbrefund.TaobaoRefundMessagesGetAPIRequest, resp *tbrefund.TaobaoRefundMessagesGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

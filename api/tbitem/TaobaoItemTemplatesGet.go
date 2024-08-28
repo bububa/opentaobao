@@ -1,6 +1,8 @@
 package tbitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbitem"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.item.templates.get
 //
 // 查询当前登录用户的店铺的宝贝详情页的模板名称
-func TaobaoItemTemplatesGet(clt *core.SDKClient, req *tbitem.TaobaoItemTemplatesGetAPIRequest, resp *tbitem.TaobaoItemTemplatesGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoItemTemplatesGet(ctx context.Context, clt *core.SDKClient, req *tbitem.TaobaoItemTemplatesGetAPIRequest, resp *tbitem.TaobaoItemTemplatesGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

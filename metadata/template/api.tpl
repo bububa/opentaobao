@@ -1,6 +1,8 @@
 package {{ .Pkg }}
 
 import (
+    "context"
+
     "github.com/bububa/opentaobao/core"
     "github.com/bububa/opentaobao/model/{{ .Pkg }}"
 )
@@ -9,6 +11,6 @@ import (
 // {{ .ApiName }}
 //
 {{ html .Desc }}
-func {{ .Name }}(clt *core.SDKClient, req *{{ .Pkg }}.{{ .Name }}APIRequest, resp *{{ .Pkg }}.{{ .Name }}APIResponse, session string) error {
-    return clt.Post(req, resp, session)
+func {{ .Name }}(ctx context.Context, clt *core.SDKClient, req *{{ .Pkg }}.{{ .Name }}APIRequest, resp *{{ .Pkg }}.{{ .Name }}APIResponse, session string) error {
+    return clt.Post(ctx, req, resp, session)
 }

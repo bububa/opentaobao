@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.asr.dataservice.promotionrule.delete
 //
 // 删除优惠规则，例如星巴克删除优惠规则
-func AlibabaAsrDataservicePromotionruleDelete(clt *core.SDKClient, req *promotion.AlibabaAsrDataservicePromotionruleDeleteAPIRequest, resp *promotion.AlibabaAsrDataservicePromotionruleDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAsrDataservicePromotionruleDelete(ctx context.Context, clt *core.SDKClient, req *promotion.AlibabaAsrDataservicePromotionruleDeleteAPIRequest, resp *promotion.AlibabaAsrDataservicePromotionruleDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

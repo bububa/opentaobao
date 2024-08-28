@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drug.kyt.dr.drugrecal
 //
 // 生产企业发布的召回信息，按照批次进行召回，收货和发货环节的单据处理中调用接口进行查询；
-func AlibabaAlihealthDrugKytDrDrugrecal(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrDrugrecalAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytDrDrugrecalAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugKytDrDrugrecal(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrDrugrecalAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytDrDrugrecalAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

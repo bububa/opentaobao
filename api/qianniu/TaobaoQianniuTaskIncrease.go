@@ -1,6 +1,8 @@
 package qianniu
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qianniu"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qianniu.task.increase
 //
 // 根据任务元id增加任务接收人
-func TaobaoQianniuTaskIncrease(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskIncreaseAPIRequest, resp *qianniu.TaobaoQianniuTaskIncreaseAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQianniuTaskIncrease(ctx context.Context, clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskIncreaseAPIRequest, resp *qianniu.TaobaoQianniuTaskIncreaseAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

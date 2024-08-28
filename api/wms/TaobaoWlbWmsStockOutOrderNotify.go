@@ -1,6 +1,8 @@
 package wms
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wms"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.wlb.wms.stock.out.order.notify
 //
 // 出库单通知
-func TaobaoWlbWmsStockOutOrderNotify(clt *core.SDKClient, req *wms.TaobaoWlbWmsStockOutOrderNotifyAPIRequest, resp *wms.TaobaoWlbWmsStockOutOrderNotifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWlbWmsStockOutOrderNotify(ctx context.Context, clt *core.SDKClient, req *wms.TaobaoWlbWmsStockOutOrderNotifyAPIRequest, resp *wms.TaobaoWlbWmsStockOutOrderNotifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

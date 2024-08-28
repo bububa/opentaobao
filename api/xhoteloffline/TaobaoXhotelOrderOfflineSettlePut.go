@@ -1,6 +1,8 @@
 package xhoteloffline
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhoteloffline"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.xhotel.order.offline.settle.put
 //
 // 线下信用住结账专用接口
-func TaobaoXhotelOrderOfflineSettlePut(clt *core.SDKClient, req *xhoteloffline.TaobaoXhotelOrderOfflineSettlePutAPIRequest, resp *xhoteloffline.TaobaoXhotelOrderOfflineSettlePutAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelOrderOfflineSettlePut(ctx context.Context, clt *core.SDKClient, req *xhoteloffline.TaobaoXhotelOrderOfflineSettlePutAPIRequest, resp *xhoteloffline.TaobaoXhotelOrderOfflineSettlePutAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

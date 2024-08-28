@@ -1,6 +1,8 @@
 package rail
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/rail"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.rail.trade.issueticket
 //
 // 出票成功回调接口
-func AlitripRailTradeIssueticket(clt *core.SDKClient, req *rail.AlitripRailTradeIssueticketAPIRequest, resp *rail.AlitripRailTradeIssueticketAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripRailTradeIssueticket(ctx context.Context, clt *core.SDKClient, req *rail.AlitripRailTradeIssueticketAPIRequest, resp *rail.AlitripRailTradeIssueticketAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package alimember
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alimember"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.member.identity.rescindfinish
 //
 // 取消确认
-func AlibabaMemberIdentityRescindfinish(clt *core.SDKClient, req *alimember.AlibabaMemberIdentityRescindfinishAPIRequest, resp *alimember.AlibabaMemberIdentityRescindfinishAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMemberIdentityRescindfinish(ctx context.Context, clt *core.SDKClient, req *alimember.AlibabaMemberIdentityRescindfinishAPIRequest, resp *alimember.AlibabaMemberIdentityRescindfinishAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

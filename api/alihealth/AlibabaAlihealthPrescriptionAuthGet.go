@@ -1,6 +1,8 @@
 package alihealth
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihealth"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.prescription.auth.get
 //
 // 获取处方用户授权
-func AlibabaAlihealthPrescriptionAuthGet(clt *core.SDKClient, req *alihealth.AlibabaAlihealthPrescriptionAuthGetAPIRequest, resp *alihealth.AlibabaAlihealthPrescriptionAuthGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthPrescriptionAuthGet(ctx context.Context, clt *core.SDKClient, req *alihealth.AlibabaAlihealthPrescriptionAuthGetAPIRequest, resp *alihealth.AlibabaAlihealthPrescriptionAuthGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package aesolution
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/aesolution"
 )
@@ -9,6 +11,6 @@ import (
 // aliexpress.solution.product.post
 //
 // Product posting API for Oversea merchants, simplifying the complexity of integration that sellers and merchants face. For example, these sellers can use their own category and attributes instead of mapping those from AE.
-func AliexpressSolutionProductPost(clt *core.SDKClient, req *aesolution.AliexpressSolutionProductPostAPIRequest, resp *aesolution.AliexpressSolutionProductPostAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliexpressSolutionProductPost(ctx context.Context, clt *core.SDKClient, req *aesolution.AliexpressSolutionProductPostAPIRequest, resp *aesolution.AliexpressSolutionProductPostAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

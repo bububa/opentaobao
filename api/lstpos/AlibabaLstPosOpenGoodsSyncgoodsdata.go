@@ -1,6 +1,8 @@
 package lstpos
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/lstpos"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.lst.pos.open.goods.syncgoodsdata
 //
 // 门店商品批量同步接口(最多10条商品信息)
-func AlibabaLstPosOpenGoodsSyncgoodsdata(clt *core.SDKClient, req *lstpos.AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest, resp *lstpos.AlibabaLstPosOpenGoodsSyncgoodsdataAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLstPosOpenGoodsSyncgoodsdata(ctx context.Context, clt *core.SDKClient, req *lstpos.AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest, resp *lstpos.AlibabaLstPosOpenGoodsSyncgoodsdataAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

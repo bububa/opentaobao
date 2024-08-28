@@ -1,6 +1,8 @@
 package alink
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alink"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alink.message.config.set
 //
 // 阿里智能消息开关
-func AlibabaAlinkMessageConfigSet(clt *core.SDKClient, req *alink.AlibabaAlinkMessageConfigSetAPIRequest, resp *alink.AlibabaAlinkMessageConfigSetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlinkMessageConfigSet(ctx context.Context, clt *core.SDKClient, req *alink.AlibabaAlinkMessageConfigSetAPIRequest, resp *alink.AlibabaAlinkMessageConfigSetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

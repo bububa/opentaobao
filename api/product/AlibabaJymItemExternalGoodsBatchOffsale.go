@@ -1,6 +1,8 @@
 package product
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/product"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.jym.item.external.goods.batch.offsale
 //
 // 供外部B端商家接入，提交批量下架商品请求，返回批量下架任务结果
-func AlibabaJymItemExternalGoodsBatchOffsale(clt *core.SDKClient, req *product.AlibabaJymItemExternalGoodsBatchOffsaleAPIRequest, resp *product.AlibabaJymItemExternalGoodsBatchOffsaleAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaJymItemExternalGoodsBatchOffsale(ctx context.Context, clt *core.SDKClient, req *product.AlibabaJymItemExternalGoodsBatchOffsaleAPIRequest, resp *product.AlibabaJymItemExternalGoodsBatchOffsaleAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

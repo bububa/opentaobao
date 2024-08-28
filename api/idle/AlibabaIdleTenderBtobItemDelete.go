@@ -1,6 +1,8 @@
 package idle
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idle"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.tender.btob.item.delete
 //
 // 暗拍b2b商品下架/删除
-func AlibabaIdleTenderBtobItemDelete(clt *core.SDKClient, req *idle.AlibabaIdleTenderBtobItemDeleteAPIRequest, resp *idle.AlibabaIdleTenderBtobItemDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleTenderBtobItemDelete(ctx context.Context, clt *core.SDKClient, req *idle.AlibabaIdleTenderBtobItemDeleteAPIRequest, resp *idle.AlibabaIdleTenderBtobItemDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

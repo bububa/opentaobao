@@ -1,6 +1,8 @@
 package trade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/trade"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.trade.voucher.upload
 //
 // 定制化交易流程中，涉及到 买家自定义 图片、声音、视频 等多富媒体文件，且该商品或服务的附属sku，通过此接口上传作为交易凭证。
-func TaobaoTradeVoucherUpload(clt *core.SDKClient, req *trade.TaobaoTradeVoucherUploadAPIRequest, resp *trade.TaobaoTradeVoucherUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTradeVoucherUpload(ctx context.Context, clt *core.SDKClient, req *trade.TaobaoTradeVoucherUploadAPIRequest, resp *trade.TaobaoTradeVoucherUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

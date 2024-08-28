@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.promotionmisc.common.item.detail.delete
 //
 // 删除通用单品优惠详情。
-func TaobaoPromotionmiscCommonItemDetailDelete(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest, resp *promotion.TaobaoPromotionmiscCommonItemDetailDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoPromotionmiscCommonItemDetailDelete(ctx context.Context, clt *core.SDKClient, req *promotion.TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest, resp *promotion.TaobaoPromotionmiscCommonItemDetailDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

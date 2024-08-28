@@ -1,6 +1,8 @@
 package icburfq
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/icburfq"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.icbu.rfq.read
 //
 // 是否已读RFQ
-func AlibabaIcbuRfqRead(clt *core.SDKClient, req *icburfq.AlibabaIcbuRfqReadAPIRequest, resp *icburfq.AlibabaIcbuRfqReadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIcbuRfqRead(ctx context.Context, clt *core.SDKClient, req *icburfq.AlibabaIcbuRfqReadAPIRequest, resp *icburfq.AlibabaIcbuRfqReadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

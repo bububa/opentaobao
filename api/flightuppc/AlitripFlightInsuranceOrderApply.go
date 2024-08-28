@@ -1,6 +1,8 @@
 package flightuppc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/flightuppc"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.flight.insurance.order.apply
 //
 // 多险种批量投保
-func AlitripFlightInsuranceOrderApply(clt *core.SDKClient, req *flightuppc.AlitripFlightInsuranceOrderApplyAPIRequest, resp *flightuppc.AlitripFlightInsuranceOrderApplyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripFlightInsuranceOrderApply(ctx context.Context, clt *core.SDKClient, req *flightuppc.AlitripFlightInsuranceOrderApplyAPIRequest, resp *flightuppc.AlitripFlightInsuranceOrderApplyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package btrip
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/btrip"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.btrip.approval.modify
 //
 // 修改审批单
-func AlitripBtripApprovalModify(clt *core.SDKClient, req *btrip.AlitripBtripApprovalModifyAPIRequest, resp *btrip.AlitripBtripApprovalModifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripBtripApprovalModify(ctx context.Context, clt *core.SDKClient, req *btrip.AlitripBtripApprovalModifyAPIRequest, resp *btrip.AlitripBtripApprovalModifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

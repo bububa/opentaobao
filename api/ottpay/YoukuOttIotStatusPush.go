@@ -1,6 +1,8 @@
 package ottpay
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ottpay"
 )
@@ -9,6 +11,6 @@ import (
 // youku.ott.iot.status.push
 //
 // ott iot设备状态通知
-func YoukuOttIotStatusPush(clt *core.SDKClient, req *ottpay.YoukuOttIotStatusPushAPIRequest, resp *ottpay.YoukuOttIotStatusPushAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YoukuOttIotStatusPush(ctx context.Context, clt *core.SDKClient, req *ottpay.YoukuOttIotStatusPushAPIRequest, resp *ottpay.YoukuOttIotStatusPushAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.merchant.galaxy.activity.popup.control
 //
 // 星河=营销弹屏疲劳控制
-func AlitripMerchantGalaxyActivityPopupControl(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyActivityPopupControlAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyActivityPopupControlAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripMerchantGalaxyActivityPopupControl(ctx context.Context, clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyActivityPopupControlAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyActivityPopupControlAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

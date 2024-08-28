@@ -1,6 +1,8 @@
 package rail
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/rail"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.rail.ir.service.get
 //
 // 国际火车票标准仓位坐席查询
-func AlitripRailIrServiceGet(clt *core.SDKClient, req *rail.AlitripRailIrServiceGetAPIRequest, resp *rail.AlitripRailIrServiceGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripRailIrServiceGet(ctx context.Context, clt *core.SDKClient, req *rail.AlitripRailIrServiceGetAPIRequest, resp *rail.AlitripRailIrServiceGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

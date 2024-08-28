@@ -1,6 +1,8 @@
 package cloudgame
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/cloudgame"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.cloudgame.interactive.game.start
 //
 // 开始游戏
-func AlibabaCloudgameInteractiveGameStart(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGameStartAPIRequest, resp *cloudgame.AlibabaCloudgameInteractiveGameStartAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCloudgameInteractiveGameStart(ctx context.Context, clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGameStartAPIRequest, resp *cloudgame.AlibabaCloudgameInteractiveGameStartAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

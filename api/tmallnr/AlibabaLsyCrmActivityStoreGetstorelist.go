@@ -1,6 +1,8 @@
 package tmallnr
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallnr"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.lsy.crm.activity.store.getstorelist
 //
 // ISV查询门店
-func AlibabaLsyCrmActivityStoreGetstorelist(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmActivityStoreGetstorelistAPIRequest, resp *tmallnr.AlibabaLsyCrmActivityStoreGetstorelistAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLsyCrmActivityStoreGetstorelist(ctx context.Context, clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmActivityStoreGetstorelistAPIRequest, resp *tmallnr.AlibabaLsyCrmActivityStoreGetstorelistAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

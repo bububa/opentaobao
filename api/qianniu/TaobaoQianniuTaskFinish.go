@@ -1,6 +1,8 @@
 package qianniu
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qianniu"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qianniu.task.finish
 //
 // 由任务执行者调用
-func TaobaoQianniuTaskFinish(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskFinishAPIRequest, resp *qianniu.TaobaoQianniuTaskFinishAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQianniuTaskFinish(ctx context.Context, clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskFinishAPIRequest, resp *qianniu.TaobaoQianniuTaskFinishAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

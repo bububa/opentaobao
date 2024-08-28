@@ -1,6 +1,8 @@
 package film
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/film"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.film.lottery.sendcode
 //
 // 淘票票外部直发券
-func TaobaoFilmLotterySendcode(clt *core.SDKClient, req *film.TaobaoFilmLotterySendcodeAPIRequest, resp *film.TaobaoFilmLotterySendcodeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFilmLotterySendcode(ctx context.Context, clt *core.SDKClient, req *film.TaobaoFilmLotterySendcodeAPIRequest, resp *film.TaobaoFilmLotterySendcodeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

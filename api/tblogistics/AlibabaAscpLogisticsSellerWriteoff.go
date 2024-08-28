@@ -1,6 +1,8 @@
 package tblogistics
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tblogistics"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ascp.logistics.seller.writeoff
 //
 // 商家配送核销
-func AlibabaAscpLogisticsSellerWriteoff(clt *core.SDKClient, req *tblogistics.AlibabaAscpLogisticsSellerWriteoffAPIRequest, resp *tblogistics.AlibabaAscpLogisticsSellerWriteoffAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAscpLogisticsSellerWriteoff(ctx context.Context, clt *core.SDKClient, req *tblogistics.AlibabaAscpLogisticsSellerWriteoffAPIRequest, resp *tblogistics.AlibabaAscpLogisticsSellerWriteoffAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package omniorder
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/omniorder"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.omniorder.store.sdtstatus
 //
 // 提供给商家查询运力单的状态。
-func TaobaoOmniorderStoreSdtstatus(clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreSdtstatusAPIRequest, resp *omniorder.TaobaoOmniorderStoreSdtstatusAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOmniorderStoreSdtstatus(ctx context.Context, clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreSdtstatusAPIRequest, resp *omniorder.TaobaoOmniorderStoreSdtstatusAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

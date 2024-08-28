@@ -1,6 +1,8 @@
 package jym
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/jym"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.jym.steam.refund.audit
 //
 // 交易猫steam逆向单审核
-func AlibabaJymSteamRefundAudit(clt *core.SDKClient, req *jym.AlibabaJymSteamRefundAuditAPIRequest, resp *jym.AlibabaJymSteamRefundAuditAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaJymSteamRefundAudit(ctx context.Context, clt *core.SDKClient, req *jym.AlibabaJymSteamRefundAuditAPIRequest, resp *jym.AlibabaJymSteamRefundAuditAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

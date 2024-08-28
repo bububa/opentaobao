@@ -1,6 +1,8 @@
 package xhotelonlineorder
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhotelonlineorder"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.xhotel.intl.rate.update
 //
 // 商家主动推送不落库商品的酒店信息
-func TaobaoXhotelIntlRateUpdate(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelIntlRateUpdateAPIRequest, resp *xhotelonlineorder.TaobaoXhotelIntlRateUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelIntlRateUpdate(ctx context.Context, clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelIntlRateUpdateAPIRequest, resp *xhotelonlineorder.TaobaoXhotelIntlRateUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

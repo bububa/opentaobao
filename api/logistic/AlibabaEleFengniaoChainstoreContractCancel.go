@@ -1,6 +1,8 @@
 package logistic
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/logistic"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ele.fengniao.chainstore.contract.cancel
 //
 // 调用成功后，门店和蜂鸟解除物流合同，不能再使用此门店推单
-func AlibabaEleFengniaoChainstoreContractCancel(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoChainstoreContractCancelAPIRequest, resp *logistic.AlibabaEleFengniaoChainstoreContractCancelAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaEleFengniaoChainstoreContractCancel(ctx context.Context, clt *core.SDKClient, req *logistic.AlibabaEleFengniaoChainstoreContractCancelAPIRequest, resp *logistic.AlibabaEleFengniaoChainstoreContractCancelAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

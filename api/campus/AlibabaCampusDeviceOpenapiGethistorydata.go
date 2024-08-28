@@ -1,6 +1,8 @@
 package campus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/campus"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.campus.device.openapi.gethistorydata
 //
 // 查询历史数据的接口
-func AlibabaCampusDeviceOpenapiGethistorydata(clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiGethistorydataAPIRequest, resp *campus.AlibabaCampusDeviceOpenapiGethistorydataAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCampusDeviceOpenapiGethistorydata(ctx context.Context, clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiGethistorydataAPIRequest, resp *campus.AlibabaCampusDeviceOpenapiGethistorydataAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drug.kyt.codereplacelog
 //
 // 码替换记录查询
-func AlibabaAlihealthDrugKytCodereplacelog(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytCodereplacelogAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytCodereplacelogAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugKytCodereplacelog(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytCodereplacelogAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytCodereplacelogAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.argus.updateredrisk
 //
 // 商品健康中心新增红线价格规则
-func AlibabaArgusUpdateredrisk(clt *core.SDKClient, req *promotion.AlibabaArgusUpdateredriskAPIRequest, resp *promotion.AlibabaArgusUpdateredriskAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaArgusUpdateredrisk(ctx context.Context, clt *core.SDKClient, req *promotion.AlibabaArgusUpdateredriskAPIRequest, resp *promotion.AlibabaArgusUpdateredriskAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

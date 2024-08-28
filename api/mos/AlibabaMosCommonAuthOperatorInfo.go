@@ -1,6 +1,8 @@
 package mos
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/mos"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.mos.common.auth.operator.info
 //
 // 获取当前人员信息
-func AlibabaMosCommonAuthOperatorInfo(clt *core.SDKClient, req *mos.AlibabaMosCommonAuthOperatorInfoAPIRequest, resp *mos.AlibabaMosCommonAuthOperatorInfoAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMosCommonAuthOperatorInfo(ctx context.Context, clt *core.SDKClient, req *mos.AlibabaMosCommonAuthOperatorInfoAPIRequest, resp *mos.AlibabaMosCommonAuthOperatorInfoAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package aecreatives
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/aecreatives"
 )
@@ -9,6 +11,6 @@ import (
 // aliexpress.affiliate.category.get
 //
 // 获取AE流量推广类目的API
-func AliexpressAffiliateCategoryGet(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateCategoryGetAPIRequest, resp *aecreatives.AliexpressAffiliateCategoryGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliexpressAffiliateCategoryGet(ctx context.Context, clt *core.SDKClient, req *aecreatives.AliexpressAffiliateCategoryGetAPIRequest, resp *aecreatives.AliexpressAffiliateCategoryGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

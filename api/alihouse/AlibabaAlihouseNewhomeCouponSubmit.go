@@ -1,6 +1,8 @@
 package alihouse
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihouse"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihouse.newhome.coupon.submit
 //
 // 提交专车优惠券活动
-func AlibabaAlihouseNewhomeCouponSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeCouponSubmitAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeCouponSubmitAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihouseNewhomeCouponSubmit(ctx context.Context, clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeCouponSubmitAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeCouponSubmitAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

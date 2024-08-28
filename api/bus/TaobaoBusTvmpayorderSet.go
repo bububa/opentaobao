@@ -1,6 +1,8 @@
 package bus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/bus"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.bus.tvmpayorder.set
 //
 // 汽车票线下自助机条形码支付
-func TaobaoBusTvmpayorderSet(clt *core.SDKClient, req *bus.TaobaoBusTvmpayorderSetAPIRequest, resp *bus.TaobaoBusTvmpayorderSetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBusTvmpayorderSet(ctx context.Context, clt *core.SDKClient, req *bus.TaobaoBusTvmpayorderSetAPIRequest, resp *bus.TaobaoBusTvmpayorderSetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

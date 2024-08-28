@@ -1,6 +1,8 @@
 package qimen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qimen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qimen.combineitem.delete
 //
 // 组合货品删除
-func TaobaoQimenCombineitemDelete(clt *core.SDKClient, req *qimen.TaobaoQimenCombineitemDeleteAPIRequest, resp *qimen.TaobaoQimenCombineitemDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQimenCombineitemDelete(ctx context.Context, clt *core.SDKClient, req *qimen.TaobaoQimenCombineitemDeleteAPIRequest, resp *qimen.TaobaoQimenCombineitemDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

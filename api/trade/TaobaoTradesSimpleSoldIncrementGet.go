@@ -1,6 +1,8 @@
 package trade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/trade"
 )
@@ -13,6 +15,6 @@ import (
 // &lt;br/&gt;2. 返回的数据结果是以订单的修改时间倒序排列的，通过从后往前翻页的方式可以避免漏单问题。
 // &lt;br/&gt;3. 返回的数据结果只包含了订单的部分数据，可通过taobao.trade.simple.get获取订单详情。
 // &lt;br/&gt;&lt;strong&gt;&lt;a href=&#34;https://console.open.taobao.com/dingWeb.htm?from=tradeapi&#34; target=&#34;_blank&#34;&gt;点击查看更多交易API说明&lt;/a&gt;&lt;/strong&gt;
-func TaobaoTradesSimpleSoldIncrementGet(clt *core.SDKClient, req *trade.TaobaoTradesSimpleSoldIncrementGetAPIRequest, resp *trade.TaobaoTradesSimpleSoldIncrementGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTradesSimpleSoldIncrementGet(ctx context.Context, clt *core.SDKClient, req *trade.TaobaoTradesSimpleSoldIncrementGetAPIRequest, resp *trade.TaobaoTradesSimpleSoldIncrementGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

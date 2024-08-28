@@ -1,6 +1,8 @@
 package campus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/campus"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.campus.acl.new.checkuserpermission
 //
 // 校验用户是否有权限
-func AlibabaCampusAclNewCheckuserpermission(clt *core.SDKClient, req *campus.AlibabaCampusAclNewCheckuserpermissionAPIRequest, resp *campus.AlibabaCampusAclNewCheckuserpermissionAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCampusAclNewCheckuserpermission(ctx context.Context, clt *core.SDKClient, req *campus.AlibabaCampusAclNewCheckuserpermissionAPIRequest, resp *campus.AlibabaCampusAclNewCheckuserpermissionAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

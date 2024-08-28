@@ -1,6 +1,8 @@
 package alihouse
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihouse"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihouse.admin.theme.hot.update
 //
 // 云主题更新
-func AlibabaAlihouseAdminThemeHotUpdate(clt *core.SDKClient, req *alihouse.AlibabaAlihouseAdminThemeHotUpdateAPIRequest, resp *alihouse.AlibabaAlihouseAdminThemeHotUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihouseAdminThemeHotUpdate(ctx context.Context, clt *core.SDKClient, req *alihouse.AlibabaAlihouseAdminThemeHotUpdateAPIRequest, resp *alihouse.AlibabaAlihouseAdminThemeHotUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

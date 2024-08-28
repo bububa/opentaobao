@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drugtrace.top.yljg.query.getentinfo
 //
 // 根据企业名称查询ID
-func AlibabaAlihealthDrugtraceTopYljgQueryGetentinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest, resp *drugtrace.AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugtraceTopYljgQueryGetentinfo(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest, resp *drugtrace.AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

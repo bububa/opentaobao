@@ -1,6 +1,8 @@
 package wms
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wms"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.wlb.wms.item.combination.get
 //
 // 查询组合商品的组合关系
-func TaobaoWlbWmsItemCombinationGet(clt *core.SDKClient, req *wms.TaobaoWlbWmsItemCombinationGetAPIRequest, resp *wms.TaobaoWlbWmsItemCombinationGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWlbWmsItemCombinationGet(ctx context.Context, clt *core.SDKClient, req *wms.TaobaoWlbWmsItemCombinationGetAPIRequest, resp *wms.TaobaoWlbWmsItemCombinationGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

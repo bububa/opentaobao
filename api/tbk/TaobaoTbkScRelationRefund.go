@@ -1,6 +1,8 @@
 package tbk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbk"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.tbk.sc.relation.refund
 //
 // 淘宝客维权退款订单查询-渠道管理和会员运营管理专用
-func TaobaoTbkScRelationRefund(clt *core.SDKClient, req *tbk.TaobaoTbkScRelationRefundAPIRequest, resp *tbk.TaobaoTbkScRelationRefundAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTbkScRelationRefund(ctx context.Context, clt *core.SDKClient, req *tbk.TaobaoTbkScRelationRefundAPIRequest, resp *tbk.TaobaoTbkScRelationRefundAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

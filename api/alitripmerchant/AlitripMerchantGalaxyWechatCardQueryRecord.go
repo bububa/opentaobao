@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.merchant.galaxy.wechat.card.query.record
 //
 // 微信会员卡领取记录查询
-func AlitripMerchantGalaxyWechatCardQueryRecord(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatCardQueryRecordAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyWechatCardQueryRecordAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripMerchantGalaxyWechatCardQueryRecord(ctx context.Context, clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatCardQueryRecordAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyWechatCardQueryRecordAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

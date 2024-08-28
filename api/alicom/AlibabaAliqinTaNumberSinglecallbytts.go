@@ -1,6 +1,8 @@
 package alicom
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alicom"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.aliqin.ta.number.singlecallbytts
 //
 // 将语音验证码和语音通知发布至聚石塔渠道
-func AlibabaAliqinTaNumberSinglecallbytts(clt *core.SDKClient, req *alicom.AlibabaAliqinTaNumberSinglecallbyttsAPIRequest, resp *alicom.AlibabaAliqinTaNumberSinglecallbyttsAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAliqinTaNumberSinglecallbytts(ctx context.Context, clt *core.SDKClient, req *alicom.AlibabaAliqinTaNumberSinglecallbyttsAPIRequest, resp *alicom.AlibabaAliqinTaNumberSinglecallbyttsAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

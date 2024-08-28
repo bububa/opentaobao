@@ -1,6 +1,8 @@
 package ascp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ascp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.dchain.aoxiang.itemmapping.delete
 //
 // 删除商货品关联关系
-func AlibabaDchainAoxiangItemmappingDelete(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangItemmappingDeleteAPIRequest, resp *ascp.AlibabaDchainAoxiangItemmappingDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaDchainAoxiangItemmappingDelete(ctx context.Context, clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangItemmappingDeleteAPIRequest, resp *ascp.AlibabaDchainAoxiangItemmappingDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

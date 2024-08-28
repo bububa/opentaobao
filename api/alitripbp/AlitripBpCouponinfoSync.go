@@ -1,6 +1,8 @@
 package alitripbp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripbp"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.bp.couponinfo.sync
 //
 // 飞猪商业化券信息同步
-func AlitripBpCouponinfoSync(clt *core.SDKClient, req *alitripbp.AlitripBpCouponinfoSyncAPIRequest, resp *alitripbp.AlitripBpCouponinfoSyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripBpCouponinfoSync(ctx context.Context, clt *core.SDKClient, req *alitripbp.AlitripBpCouponinfoSyncAPIRequest, resp *alitripbp.AlitripBpCouponinfoSyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

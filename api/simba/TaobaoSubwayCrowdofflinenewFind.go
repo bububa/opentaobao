@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.subway.crowdofflinenew.find
 //
 // 获取人群离线报表
-func TaobaoSubwayCrowdofflinenewFind(clt *core.SDKClient, req *simba.TaobaoSubwayCrowdofflinenewFindAPIRequest, resp *simba.TaobaoSubwayCrowdofflinenewFindAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSubwayCrowdofflinenewFind(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSubwayCrowdofflinenewFindAPIRequest, resp *simba.TaobaoSubwayCrowdofflinenewFindAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

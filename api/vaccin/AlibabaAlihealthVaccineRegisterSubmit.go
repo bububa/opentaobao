@@ -1,6 +1,8 @@
 package vaccin
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/vaccin"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.vaccine.register.submit
 //
 // cdc回传疫苗登记信息
-func AlibabaAlihealthVaccineRegisterSubmit(clt *core.SDKClient, req *vaccin.AlibabaAlihealthVaccineRegisterSubmitAPIRequest, resp *vaccin.AlibabaAlihealthVaccineRegisterSubmitAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthVaccineRegisterSubmit(ctx context.Context, clt *core.SDKClient, req *vaccin.AlibabaAlihealthVaccineRegisterSubmitAPIRequest, resp *vaccin.AlibabaAlihealthVaccineRegisterSubmitAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

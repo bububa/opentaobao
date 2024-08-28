@@ -1,6 +1,8 @@
 package usergrowth2
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/usergrowth2"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.usergrowth.ad.material.update
 //
 // 素材更新
-func TaobaoUsergrowthAdMaterialUpdate(clt *core.SDKClient, req *usergrowth2.TaobaoUsergrowthAdMaterialUpdateAPIRequest, resp *usergrowth2.TaobaoUsergrowthAdMaterialUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoUsergrowthAdMaterialUpdate(ctx context.Context, clt *core.SDKClient, req *usergrowth2.TaobaoUsergrowthAdMaterialUpdateAPIRequest, resp *usergrowth2.TaobaoUsergrowthAdMaterialUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

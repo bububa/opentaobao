@@ -1,6 +1,8 @@
 package cainiaoecc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/cainiaoecc"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.ecc.exceptions.delay.get
 //
 // 菜鸟控制塔包裹滞留异常信息获取
-func CainiaoEccExceptionsDelayGet(clt *core.SDKClient, req *cainiaoecc.CainiaoEccExceptionsDelayGetAPIRequest, resp *cainiaoecc.CainiaoEccExceptionsDelayGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoEccExceptionsDelayGet(ctx context.Context, clt *core.SDKClient, req *cainiaoecc.CainiaoEccExceptionsDelayGetAPIRequest, resp *cainiaoecc.CainiaoEccExceptionsDelayGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

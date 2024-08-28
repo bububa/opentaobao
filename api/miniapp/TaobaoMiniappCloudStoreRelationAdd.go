@@ -1,6 +1,8 @@
 package miniapp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/miniapp"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.miniapp.cloud.store.relation.add
 //
 // 用于用户上传文件之后回写云存储的关联关系
-func TaobaoMiniappCloudStoreRelationAdd(clt *core.SDKClient, req *miniapp.TaobaoMiniappCloudStoreRelationAddAPIRequest, resp *miniapp.TaobaoMiniappCloudStoreRelationAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoMiniappCloudStoreRelationAdd(ctx context.Context, clt *core.SDKClient, req *miniapp.TaobaoMiniappCloudStoreRelationAddAPIRequest, resp *miniapp.TaobaoMiniappCloudStoreRelationAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

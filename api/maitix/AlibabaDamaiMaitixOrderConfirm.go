@@ -1,6 +1,8 @@
 package maitix
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/maitix"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.damai.maitix.order.confirm
 //
 // 出票
-func AlibabaDamaiMaitixOrderConfirm(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOrderConfirmAPIRequest, resp *maitix.AlibabaDamaiMaitixOrderConfirmAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaDamaiMaitixOrderConfirm(ctx context.Context, clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOrderConfirmAPIRequest, resp *maitix.AlibabaDamaiMaitixOrderConfirmAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

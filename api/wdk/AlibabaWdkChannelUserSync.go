@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.channel.user.sync
 //
 // 会员同步
-func AlibabaWdkChannelUserSync(clt *core.SDKClient, req *wdk.AlibabaWdkChannelUserSyncAPIRequest, resp *wdk.AlibabaWdkChannelUserSyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkChannelUserSync(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkChannelUserSyncAPIRequest, resp *wdk.AlibabaWdkChannelUserSyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

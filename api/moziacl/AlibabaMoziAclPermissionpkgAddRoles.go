@@ -1,6 +1,8 @@
 package moziacl
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/moziacl"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.mozi.acl.permissionpkg.add.roles
 //
 // 此接口是将应用下的一批角色添加到该应用的某个权限套餐中
-func AlibabaMoziAclPermissionpkgAddRoles(clt *core.SDKClient, req *moziacl.AlibabaMoziAclPermissionpkgAddRolesAPIRequest, resp *moziacl.AlibabaMoziAclPermissionpkgAddRolesAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMoziAclPermissionpkgAddRoles(ctx context.Context, clt *core.SDKClient, req *moziacl.AlibabaMoziAclPermissionpkgAddRolesAPIRequest, resp *moziacl.AlibabaMoziAclPermissionpkgAddRolesAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package wdkitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdkitem"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.item.merchantsku.create
 //
 // 商家商品信息新建
-func AlibabaWdkItemMerchantskuCreate(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemMerchantskuCreateAPIRequest, resp *wdkitem.AlibabaWdkItemMerchantskuCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkItemMerchantskuCreate(ctx context.Context, clt *core.SDKClient, req *wdkitem.AlibabaWdkItemMerchantskuCreateAPIRequest, resp *wdkitem.AlibabaWdkItemMerchantskuCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

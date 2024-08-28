@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.fuwu.purchase.order.pay
 //
 // 通过接口获取某一订单的付款页面链接
-func TaobaoFuwuPurchaseOrderPay(clt *core.SDKClient, req *servicecenter.TaobaoFuwuPurchaseOrderPayAPIRequest, resp *servicecenter.TaobaoFuwuPurchaseOrderPayAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFuwuPurchaseOrderPay(ctx context.Context, clt *core.SDKClient, req *servicecenter.TaobaoFuwuPurchaseOrderPayAPIRequest, resp *servicecenter.TaobaoFuwuPurchaseOrderPayAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

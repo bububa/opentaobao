@@ -1,6 +1,8 @@
 package campus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/campus"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.campus.topology.getall
 //
 // 获取所属园区的所有规则拓扑图
-func AlibabaCampusTopologyGetall(clt *core.SDKClient, req *campus.AlibabaCampusTopologyGetallAPIRequest, resp *campus.AlibabaCampusTopologyGetallAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCampusTopologyGetall(ctx context.Context, clt *core.SDKClient, req *campus.AlibabaCampusTopologyGetallAPIRequest, resp *campus.AlibabaCampusTopologyGetallAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

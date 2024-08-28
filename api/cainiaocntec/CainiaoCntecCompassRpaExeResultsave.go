@@ -1,6 +1,8 @@
 package cainiaocntec
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/cainiaocntec"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.cntec.compass.rpa.exe.resultsave
 //
 // rpa执行结果回传
-func CainiaoCntecCompassRpaExeResultsave(clt *core.SDKClient, req *cainiaocntec.CainiaoCntecCompassRpaExeResultsaveAPIRequest, resp *cainiaocntec.CainiaoCntecCompassRpaExeResultsaveAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoCntecCompassRpaExeResultsave(ctx context.Context, clt *core.SDKClient, req *cainiaocntec.CainiaoCntecCompassRpaExeResultsaveAPIRequest, resp *cainiaocntec.CainiaoCntecCompassRpaExeResultsaveAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

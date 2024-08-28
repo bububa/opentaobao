@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.supplier.order.list
 //
 // 五道口供应商维度正向订单拉取
-func AlibabaWdkSupplierOrderList(clt *core.SDKClient, req *wdk.AlibabaWdkSupplierOrderListAPIRequest, resp *wdk.AlibabaWdkSupplierOrderListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkSupplierOrderList(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkSupplierOrderListAPIRequest, resp *wdk.AlibabaWdkSupplierOrderListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

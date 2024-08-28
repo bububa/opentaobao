@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.merchant.galaxy.common.get.enumsbyname
 //
 // 通过枚举名称获取枚举类实例内容
-func AlitripMerchantGalaxyCommonGetEnumsbyname(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyCommonGetEnumsbynameAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripMerchantGalaxyCommonGetEnumsbyname(ctx context.Context, clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyCommonGetEnumsbynameAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyCommonGetEnumsbynameAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

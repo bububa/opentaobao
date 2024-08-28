@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.shop.query
 //
 // 根据门店code查询门店信息
-func AlibabaWdkShopQuery(clt *core.SDKClient, req *wdk.AlibabaWdkShopQueryAPIRequest, resp *wdk.AlibabaWdkShopQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkShopQuery(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkShopQueryAPIRequest, resp *wdk.AlibabaWdkShopQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package icbu
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/icbu"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.icbu.category.get
 //
 // 获取商品发布类目
-func AlibabaIcbuCategoryGet(clt *core.SDKClient, req *icbu.AlibabaIcbuCategoryGetAPIRequest, resp *icbu.AlibabaIcbuCategoryGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIcbuCategoryGet(ctx context.Context, clt *core.SDKClient, req *icbu.AlibabaIcbuCategoryGetAPIRequest, resp *icbu.AlibabaIcbuCategoryGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

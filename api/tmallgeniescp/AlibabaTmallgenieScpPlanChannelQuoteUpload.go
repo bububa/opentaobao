@@ -1,6 +1,8 @@
 package tmallgeniescp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallgeniescp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.tmallgenie.scp.plan.channel.quote.upload
 //
 // 同步渠道配额
-func AlibabaTmallgenieScpPlanChannelQuoteUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanChannelQuoteUploadAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaTmallgenieScpPlanChannelQuoteUpload(ctx context.Context, clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanChannelQuoteUploadAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

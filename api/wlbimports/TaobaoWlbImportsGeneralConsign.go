@@ -1,6 +1,8 @@
 package wlbimports
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wlbimports"
 )
@@ -12,6 +14,6 @@ import (
 // 业务规则：
 // 1）交易订单为待发货状态。
 // 2）单笔订单多个商品，交易金额不能大于1000人民币。
-func TaobaoWlbImportsGeneralConsign(clt *core.SDKClient, req *wlbimports.TaobaoWlbImportsGeneralConsignAPIRequest, resp *wlbimports.TaobaoWlbImportsGeneralConsignAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWlbImportsGeneralConsign(ctx context.Context, clt *core.SDKClient, req *wlbimports.TaobaoWlbImportsGeneralConsignAPIRequest, resp *wlbimports.TaobaoWlbImportsGeneralConsignAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

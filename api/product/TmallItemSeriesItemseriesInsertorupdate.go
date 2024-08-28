@@ -1,6 +1,8 @@
 package product
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/product"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.item.series.itemseries.insertorupdate
 //
 // 商品系列增删改接口
-func TmallItemSeriesItemseriesInsertorupdate(clt *core.SDKClient, req *product.TmallItemSeriesItemseriesInsertorupdateAPIRequest, resp *product.TmallItemSeriesItemseriesInsertorupdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallItemSeriesItemseriesInsertorupdate(ctx context.Context, clt *core.SDKClient, req *product.TmallItemSeriesItemseriesInsertorupdateAPIRequest, resp *product.TmallItemSeriesItemseriesInsertorupdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

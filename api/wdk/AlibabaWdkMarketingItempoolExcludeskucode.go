@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.marketing.itempool.excludeskucode
 //
 // 品类优惠新增排除池
-func AlibabaWdkMarketingItempoolExcludeskucode(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest, resp *wdk.AlibabaWdkMarketingItempoolExcludeskucodeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkMarketingItempoolExcludeskucode(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest, resp *wdk.AlibabaWdkMarketingItempoolExcludeskucodeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

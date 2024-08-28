@@ -1,6 +1,8 @@
 package media
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/media"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.tjb.picture.userstorage.query
 //
 // 淘特图片空间用户容量查询
-func AlibabaTjbPictureUserstorageQuery(clt *core.SDKClient, req *media.AlibabaTjbPictureUserstorageQueryAPIRequest, resp *media.AlibabaTjbPictureUserstorageQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaTjbPictureUserstorageQuery(ctx context.Context, clt *core.SDKClient, req *media.AlibabaTjbPictureUserstorageQueryAPIRequest, resp *media.AlibabaTjbPictureUserstorageQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

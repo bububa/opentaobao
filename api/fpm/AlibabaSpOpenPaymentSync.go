@@ -1,6 +1,8 @@
 package fpm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fpm"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.sp.open.payment.sync
 //
 // 新康众弹外同步付款数据
-func AlibabaSpOpenPaymentSync(clt *core.SDKClient, req *fpm.AlibabaSpOpenPaymentSyncAPIRequest, resp *fpm.AlibabaSpOpenPaymentSyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaSpOpenPaymentSync(ctx context.Context, clt *core.SDKClient, req *fpm.AlibabaSpOpenPaymentSyncAPIRequest, resp *fpm.AlibabaSpOpenPaymentSyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

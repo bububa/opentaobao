@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.car.lease.tailpaymentback
 //
 // 尾款处置方案回传
-func TmallCarLeaseTailpaymentback(clt *core.SDKClient, req *servicecenter.TmallCarLeaseTailpaymentbackAPIRequest, resp *servicecenter.TmallCarLeaseTailpaymentbackAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallCarLeaseTailpaymentback(ctx context.Context, clt *core.SDKClient, req *servicecenter.TmallCarLeaseTailpaymentbackAPIRequest, resp *servicecenter.TmallCarLeaseTailpaymentbackAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

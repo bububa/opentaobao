@@ -1,6 +1,8 @@
 package happytrip
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/happytrip"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.happytrip.taxi.driver.blacklist.remove
 //
 // 移除司机黑名单
-func AlibabaHappytripTaxiDriverBlacklistRemove(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest, resp *happytrip.AlibabaHappytripTaxiDriverBlacklistRemoveAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaHappytripTaxiDriverBlacklistRemove(ctx context.Context, clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest, resp *happytrip.AlibabaHappytripTaxiDriverBlacklistRemoveAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

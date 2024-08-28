@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.simba.adgroup.delete
 //
 // 删除一个推广组
-func TaobaoSimbaAdgroupDelete(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupDeleteAPIRequest, resp *simba.TaobaoSimbaAdgroupDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSimbaAdgroupDelete(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupDeleteAPIRequest, resp *simba.TaobaoSimbaAdgroupDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

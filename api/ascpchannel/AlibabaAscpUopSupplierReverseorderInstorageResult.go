@@ -1,6 +1,8 @@
 package ascpchannel
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ascpchannel"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ascp.uop.supplier.reverseorder.instorage.result
 //
 // ERP回告销退入库单到仓信息回告
-func AlibabaAscpUopSupplierReverseorderInstorageResult(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopSupplierReverseorderInstorageResultAPIRequest, resp *ascpchannel.AlibabaAscpUopSupplierReverseorderInstorageResultAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAscpUopSupplierReverseorderInstorageResult(ctx context.Context, clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopSupplierReverseorderInstorageResultAPIRequest, resp *ascpchannel.AlibabaAscpUopSupplierReverseorderInstorageResultAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

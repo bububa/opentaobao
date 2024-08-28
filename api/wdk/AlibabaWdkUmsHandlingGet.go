@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.ums.handling.get
 //
 // 加工单-回流单（新接口）
-func AlibabaWdkUmsHandlingGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsHandlingGetAPIRequest, resp *wdk.AlibabaWdkUmsHandlingGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkUmsHandlingGet(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkUmsHandlingGetAPIRequest, resp *wdk.AlibabaWdkUmsHandlingGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

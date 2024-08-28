@@ -1,6 +1,8 @@
 package xhotelofficial
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhotelofficial"
 )
@@ -13,6 +15,6 @@ import (
 // 接口使用场景
 //
 // 提交订单前的预定人信用住资格预先校验，卖家可决定是否在搜索，预订页，补全身份信息时进行调用，以便决定信用住是否提供给用户
-func TaobaoXhotelOrderOfficialPrecheck(clt *core.SDKClient, req *xhotelofficial.TaobaoXhotelOrderOfficialPrecheckAPIRequest, resp *xhotelofficial.TaobaoXhotelOrderOfficialPrecheckAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelOrderOfficialPrecheck(ctx context.Context, clt *core.SDKClient, req *xhotelofficial.TaobaoXhotelOrderOfficialPrecheckAPIRequest, resp *xhotelofficial.TaobaoXhotelOrderOfficialPrecheckAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

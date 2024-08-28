@@ -1,6 +1,8 @@
 package axindata
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/axindata"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.travel.fsc.route.api.project.add
 //
 // 新增团期
-func TaobaoAlitripTravelFscRouteApiProjectAdd(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiProjectAddAPIRequest, resp *axindata.TaobaoAlitripTravelFscRouteApiProjectAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripTravelFscRouteApiProjectAdd(ctx context.Context, clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiProjectAddAPIRequest, resp *axindata.TaobaoAlitripTravelFscRouteApiProjectAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/baichuan"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.baichuan.openaccount.login
 //
 // 百川用户名密码登录
-func TaobaoBaichuanOpenaccountLogin(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountLoginAPIRequest, resp *baichuan.TaobaoBaichuanOpenaccountLoginAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBaichuanOpenaccountLogin(ctx context.Context, clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountLoginAPIRequest, resp *baichuan.TaobaoBaichuanOpenaccountLoginAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package exchange
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/exchange"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.exchange.message.add
 //
 // 卖家创建换货留言
-func TmallExchangeMessageAdd(clt *core.SDKClient, req *exchange.TmallExchangeMessageAddAPIRequest, resp *exchange.TmallExchangeMessageAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallExchangeMessageAdd(ctx context.Context, clt *core.SDKClient, req *exchange.TmallExchangeMessageAddAPIRequest, resp *exchange.TmallExchangeMessageAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

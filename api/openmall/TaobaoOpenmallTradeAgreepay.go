@@ -1,6 +1,8 @@
 package openmall
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/openmall"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.openmall.trade.agreepay
 //
 // openmall订单支付
-func TaobaoOpenmallTradeAgreepay(clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeAgreepayAPIRequest, resp *openmall.TaobaoOpenmallTradeAgreepayAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOpenmallTradeAgreepay(ctx context.Context, clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeAgreepayAPIRequest, resp *openmall.TaobaoOpenmallTradeAgreepayAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

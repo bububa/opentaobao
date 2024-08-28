@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.marketing.fullrange.createactivity
 //
 // 创建全场活动
-func AlibabaWdkMarketingFullrangeCreateactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingFullrangeCreateactivityAPIRequest, resp *wdk.AlibabaWdkMarketingFullrangeCreateactivityAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkMarketingFullrangeCreateactivity(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkMarketingFullrangeCreateactivityAPIRequest, resp *wdk.AlibabaWdkMarketingFullrangeCreateactivityAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

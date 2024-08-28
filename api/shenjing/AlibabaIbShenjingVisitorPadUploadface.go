@@ -1,6 +1,8 @@
 package shenjing
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/shenjing"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ib.shenjing.visitor.pad.uploadface
 //
 // 访客PAD端上传人脸。
-func AlibabaIbShenjingVisitorPadUploadface(clt *core.SDKClient, req *shenjing.AlibabaIbShenjingVisitorPadUploadfaceAPIRequest, resp *shenjing.AlibabaIbShenjingVisitorPadUploadfaceAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIbShenjingVisitorPadUploadface(ctx context.Context, clt *core.SDKClient, req *shenjing.AlibabaIbShenjingVisitorPadUploadfaceAPIRequest, resp *shenjing.AlibabaIbShenjingVisitorPadUploadfaceAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

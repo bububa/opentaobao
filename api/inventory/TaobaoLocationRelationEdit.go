@@ -1,6 +1,8 @@
 package inventory
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/inventory"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.location.relation.edit
 //
 // 地点关联关系增量编辑
-func TaobaoLocationRelationEdit(clt *core.SDKClient, req *inventory.TaobaoLocationRelationEditAPIRequest, resp *inventory.TaobaoLocationRelationEditAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoLocationRelationEdit(ctx context.Context, clt *core.SDKClient, req *inventory.TaobaoLocationRelationEditAPIRequest, resp *inventory.TaobaoLocationRelationEditAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

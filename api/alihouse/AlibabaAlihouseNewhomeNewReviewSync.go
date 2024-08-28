@@ -1,6 +1,8 @@
 package alihouse
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihouse"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihouse.newhome.new.review.sync
 //
 // 新测评基础信息接口
-func AlibabaAlihouseNewhomeNewReviewSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeNewReviewSyncAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeNewReviewSyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihouseNewhomeNewReviewSync(ctx context.Context, clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeNewReviewSyncAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeNewReviewSyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

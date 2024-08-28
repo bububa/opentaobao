@@ -1,6 +1,8 @@
 package einvoice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/einvoice"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.einvoice.closereq
 //
 // 关闭失败开票请求，避免造成重复开票
-func AlibabaEinvoiceClosereq(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceClosereqAPIRequest, resp *einvoice.AlibabaEinvoiceClosereqAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaEinvoiceClosereq(ctx context.Context, clt *core.SDKClient, req *einvoice.AlibabaEinvoiceClosereqAPIRequest, resp *einvoice.AlibabaEinvoiceClosereqAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

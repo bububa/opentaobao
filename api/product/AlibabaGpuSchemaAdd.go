@@ -1,6 +1,8 @@
 package product
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/product"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.gpu.schema.add
 //
 // 使用Schema文件发布一个产品
-func AlibabaGpuSchemaAdd(clt *core.SDKClient, req *product.AlibabaGpuSchemaAddAPIRequest, resp *product.AlibabaGpuSchemaAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaGpuSchemaAdd(ctx context.Context, clt *core.SDKClient, req *product.AlibabaGpuSchemaAddAPIRequest, resp *product.AlibabaGpuSchemaAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

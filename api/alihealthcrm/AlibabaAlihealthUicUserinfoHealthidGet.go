@@ -1,6 +1,8 @@
 package alihealthcrm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihealthcrm"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.uic.userinfo.healthid.get
 //
 // 根据支付宝用户ID获取用户健康ID
-func AlibabaAlihealthUicUserinfoHealthidGet(clt *core.SDKClient, req *alihealthcrm.AlibabaAlihealthUicUserinfoHealthidGetAPIRequest, resp *alihealthcrm.AlibabaAlihealthUicUserinfoHealthidGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthUicUserinfoHealthidGet(ctx context.Context, clt *core.SDKClient, req *alihealthcrm.AlibabaAlihealthUicUserinfoHealthidGetAPIRequest, resp *alihealthcrm.AlibabaAlihealthUicUserinfoHealthidGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

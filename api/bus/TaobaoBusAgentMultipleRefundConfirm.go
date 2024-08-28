@@ -1,6 +1,8 @@
 package bus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/bus"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.bus.agent.multiple.refund.confirm
 //
 // 此接口支持多次按照单客进行多次退款操作，只进行退款操作。
-func TaobaoBusAgentMultipleRefundConfirm(clt *core.SDKClient, req *bus.TaobaoBusAgentMultipleRefundConfirmAPIRequest, resp *bus.TaobaoBusAgentMultipleRefundConfirmAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBusAgentMultipleRefundConfirm(ctx context.Context, clt *core.SDKClient, req *bus.TaobaoBusAgentMultipleRefundConfirmAPIRequest, resp *bus.TaobaoBusAgentMultipleRefundConfirmAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

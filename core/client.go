@@ -1,6 +1,7 @@
 package core
 
 import (
+	"context"
 	"crypto/hmac"
 	"crypto/md5"
 	"encoding/hex"
@@ -11,21 +12,44 @@ import (
 	"net/url"
 	"sort"
 	"strings"
+	"sync"
+	"time"
 
 	"github.com/bububa/opentaobao/core/internal/debug"
 	"github.com/bububa/opentaobao/metadata/util"
 	"github.com/bububa/opentaobao/model"
 )
 
+var (
+	onceInit   sync.Once
+	httpClient *http.Client
+)
+
+func defaultHttpClient() *http.Client {
+	onceInit.Do(func() {
+		transport := http.DefaultTransport.(*http.Transport).Clone()
+		transport.MaxIdleConns = 100
+		transport.MaxConnsPerHost = 100
+		transport.MaxIdleConnsPerHost = 100
+		httpClient = &http.Client{
+			Transport: transport,
+			Timeout:   time.Second * 60,
+		}
+	})
+	return httpClient
+}
+
 // SDKClient 结构体
 type SDKClient struct {
+	client     *http.Client
+	tracer     *Otel
 	appKey     string           // APP KEY
 	secret     string           // APP SECRET
+	gateway    string           // 自定义网关
 	apiFormat  model.APIFormat  // API 响应格式
 	signMethod model.SignMethod // API 签名方法
 	debug      bool             // debug
 	sandbox    bool             // 是否沙箱环境
-	gateway    string           // 自定义网关
 }
 
 // NewSDKClient 新建SDKClient
@@ -35,6 +59,7 @@ func NewSDKClient(appKey string, secret string) *SDKClient {
 		secret:     secret,
 		apiFormat:  model.DEFAULT_API_FORMAT,
 		signMethod: model.DEFAULT_SIGN_METHOD,
+		client:     defaultHttpClient(),
 	}
 }
 
@@ -78,8 +103,12 @@ func (c *SDKClient) SetGateway(gateway string) {
 	c.gateway = gateway
 }
 
+func (c *SDKClient) WithTracer(namespace string) {
+	c.tracer = NewOtel(namespace, c.appKey)
+}
+
 // Post 发起请求
-func (c *SDKClient) Post(req model.IRequest, resp model.IResponse, session string) error {
+func (c *SDKClient) Post(ctx context.Context, req model.IRequest, resp model.IResponse, session string) error {
 	// 新建API请求通用参数
 	commonReq := model.NewCommonRequest(req.GetApiMethodName(), c.appKey)
 	defer model.ReleaseCommonRequest(commonReq)
@@ -91,51 +120,34 @@ func (c *SDKClient) Post(req model.IRequest, resp model.IResponse, session strin
 
 	var err error
 	if req.NeedMultipart() {
-		err = c.postMultipart(params, req.GetRawParams(), resp)
+		err = c.postMultipart(ctx, req.GetApiMethodName(), params, req.GetRawParams(), resp)
 	} else {
-		err = c.post(params, resp)
+		err = c.post(ctx, req.GetApiMethodName(), params, resp)
 	}
 	util.PutUrlValues(params)
 	return err
 }
 
 // post application/xml-www-form-urlencode
-func (c *SDKClient) post(req url.Values, resp model.IResponse) error {
+func (c *SDKClient) post(ctx context.Context, methodName string, req url.Values, resp model.IResponse) error {
 	reqUrl := PRODUCT_GATEWAY
 	if c.gateway != "" {
 		reqUrl = c.gateway
 	} else if c.sandbox {
 		reqUrl = SANDBOX_GATEWAY
 	}
-	debug.PrintPostJSONRequest(reqUrl, req.Encode(), c.debug)
-	httpReq, err := http.NewRequest("POST", reqUrl, strings.NewReader(req.Encode()))
+	payload := req.Encode()
+	debug.PrintPostJSONRequest(reqUrl, payload, c.debug)
+	httpReq, err := http.NewRequestWithContext(ctx, http.MethodPost, reqUrl, strings.NewReader(payload))
 	httpReq.Header.Add("Content-Type", "application/x-www-form-urlencoded;charset=utf-8")
 	if err != nil {
 		return err
 	}
-
-	httpResp, err := http.DefaultClient.Do(httpReq)
-	if err != nil {
-		return err
-	}
-	defer httpResp.Body.Close()
-	switch c.apiFormat {
-	case model.JSON:
-		err = debug.DecodeJSONHttpResponse(httpResp.Body, resp, c.debug)
-	case model.XML:
-		err = debug.DecodeXMLHttpResponse(httpResp.Body, resp, c.debug)
-	default:
-		panic("unknown api format")
-	}
-	if err != nil {
-		debug.PrintError(err, c.debug)
-		return err
-	}
-	return resp.B043C16EB094F65A787F22E6AE0A10BCB7ABDE6D()
+	return c.WithSpan(ctx, methodName, httpReq, resp, []byte(payload), c.fetch)
 }
 
 // postMultipart post multipart/form
-func (c *SDKClient) postMultipart(req url.Values, params model.Params, resp model.IResponse) error {
+func (c *SDKClient) postMultipart(ctx context.Context, methodName string, req url.Values, params model.Params, resp model.IResponse) error {
 	buf := util.GetBufferPool()
 	defer util.PutBufferPool(buf)
 	mw := multipart.NewWriter(buf)
@@ -166,49 +178,36 @@ func (c *SDKClient) postMultipart(req url.Values, params model.Params, resp mode
 	if c.sandbox {
 		reqUrl = SANDBOX_GATEWAY
 	}
-	debug.PrintPostJSONRequest(reqUrl, req.Encode(), c.debug)
-	httpReq, err := http.NewRequest("POST", reqUrl, buf)
+	payload := req.Encode()
+	debug.PrintPostJSONRequest(reqUrl, payload, c.debug)
+	httpReq, err := http.NewRequestWithContext(ctx, http.MethodPost, reqUrl, buf)
 	httpReq.Header.Add("Content-Type", mw.FormDataContentType())
 	if err != nil {
 		return err
 	}
-
-	httpResp, err := http.DefaultClient.Do(httpReq)
-	if err != nil {
-		return err
-	}
-	defer httpResp.Body.Close()
-	switch c.apiFormat {
-	case model.JSON:
-		err = debug.DecodeJSONHttpResponse(httpResp.Body, resp, c.debug)
-	case model.XML:
-		err = debug.DecodeXMLHttpResponse(httpResp.Body, resp, c.debug)
-	default:
-		panic("unknown api format")
-	}
-	if err != nil {
-		debug.PrintError(err, c.debug)
-		return err
-	}
-	return resp.B043C16EB094F65A787F22E6AE0A10BCB7ABDE6D()
+	return c.WithSpan(ctx, methodName, httpReq, resp, []byte(payload), c.fetch)
 }
 
 // get (not used)
-func (c *SDKClient) get(req url.Values, resp model.IResponse) error {
+func (c *SDKClient) get(ctx context.Context, methodName string, req url.Values, resp model.IResponse) error {
 	reqUrl := PRODUCT_GATEWAY
 	if c.sandbox {
 		reqUrl = SANDBOX_GATEWAY
 	}
 	reqUrl = util.StringsJoin(reqUrl, "?", req.Encode())
 	debug.PrintGetRequest(reqUrl, c.debug)
-	httpReq, err := http.NewRequest("GET", reqUrl, nil)
+	httpReq, err := http.NewRequestWithContext(ctx, http.MethodGet, reqUrl, nil)
 	if err != nil {
 		return err
 	}
+	_, err = c.fetch(httpReq, resp)
+	return c.WithSpan(ctx, methodName, httpReq, resp, nil, c.fetch)
+}
 
-	httpResp, err := http.DefaultClient.Do(httpReq)
+func (c *SDKClient) fetch(httpReq *http.Request, resp model.IResponse) (*http.Response, error) {
+	httpResp, err := c.client.Do(httpReq)
 	if err != nil {
-		return err
+		return httpResp, err
 	}
 	defer httpResp.Body.Close()
 	switch c.apiFormat {
@@ -221,9 +220,9 @@ func (c *SDKClient) get(req url.Values, resp model.IResponse) error {
 	}
 	if err != nil {
 		debug.PrintError(err, c.debug)
-		return err
+		return httpResp, err
 	}
-	return resp.B043C16EB094F65A787F22E6AE0A10BCB7ABDE6D()
+	return httpResp, resp.B043C16EB094F65A787F22E6AE0A10BCB7ABDE6D()
 }
 
 // sign 生成签名
@@ -264,4 +263,12 @@ func (c *SDKClient) sign(ret url.Values, commonReq *model.CommonRequest, req mod
 	util.PutBufferPool(query)
 	sign := strings.ToUpper(hex.EncodeToString(h.Sum(nil)))
 	ret.Set("sign", sign)
+}
+
+func (c *SDKClient) WithSpan(ctx context.Context, methodName string, req *http.Request, resp model.IResponse, payload []byte, fn func(*http.Request, model.IResponse) (*http.Response, error)) error {
+	if c.tracer == nil {
+		_, err := fn(req, resp)
+		return err
+	}
+	return c.tracer.WithSpan(ctx, methodName, req, resp, payload, fn)
 }

@@ -1,6 +1,8 @@
 package product
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/product"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.aftersale.get
 //
 // 查询用户设置的售后服务模板，仅返回标题和id
-func TaobaoAftersaleGet(clt *core.SDKClient, req *product.TaobaoAftersaleGetAPIRequest, resp *product.TaobaoAftersaleGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAftersaleGet(ctx context.Context, clt *core.SDKClient, req *product.TaobaoAftersaleGetAPIRequest, resp *product.TaobaoAftersaleGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

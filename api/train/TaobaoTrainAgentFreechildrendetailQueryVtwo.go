@@ -1,6 +1,8 @@
 package train
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/train"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.train.agent.freechildrendetail.query.vtwo
 //
 // 免费儿童列表详情
-func TaobaoTrainAgentFreechildrendetailQueryVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest, resp *train.TaobaoTrainAgentFreechildrendetailQueryVtwoAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTrainAgentFreechildrendetailQueryVtwo(ctx context.Context, clt *core.SDKClient, req *train.TaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest, resp *train.TaobaoTrainAgentFreechildrendetailQueryVtwoAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

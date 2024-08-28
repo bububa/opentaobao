@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.simba.keywords.recommend.get
 //
 // 取得一个推广组的推荐关键词列表
-func TaobaoSimbaKeywordsRecommendGet(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordsRecommendGetAPIRequest, resp *simba.TaobaoSimbaKeywordsRecommendGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSimbaKeywordsRecommendGet(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSimbaKeywordsRecommendGetAPIRequest, resp *simba.TaobaoSimbaKeywordsRecommendGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

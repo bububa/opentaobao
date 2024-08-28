@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drug.upload.extinfo
 //
 // 中药饮片及器械对接
-func AlibabaAlihealthDrugUploadExtinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugUploadExtinfoAPIRequest, resp *drugtrace.AlibabaAlihealthDrugUploadExtinfoAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugUploadExtinfo(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugUploadExtinfoAPIRequest, resp *drugtrace.AlibabaAlihealthDrugUploadExtinfoAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

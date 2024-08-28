@@ -1,6 +1,8 @@
 package jipiao
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/jipiao"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.jipiao.agent.order.bdetail
 //
 // 根据淘宝系统订单号获取订单详情信息
-func TaobaoJipiaoAgentOrderBdetail(clt *core.SDKClient, req *jipiao.TaobaoJipiaoAgentOrderBdetailAPIRequest, resp *jipiao.TaobaoJipiaoAgentOrderBdetailAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoJipiaoAgentOrderBdetail(ctx context.Context, clt *core.SDKClient, req *jipiao.TaobaoJipiaoAgentOrderBdetailAPIRequest, resp *jipiao.TaobaoJipiaoAgentOrderBdetailAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

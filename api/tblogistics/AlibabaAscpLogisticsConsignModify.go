@@ -1,6 +1,8 @@
 package tblogistics
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tblogistics"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ascp.logistics.consign.modify
 //
 // 修改物流公司和运单号
-func AlibabaAscpLogisticsConsignModify(clt *core.SDKClient, req *tblogistics.AlibabaAscpLogisticsConsignModifyAPIRequest, resp *tblogistics.AlibabaAscpLogisticsConsignModifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAscpLogisticsConsignModify(ctx context.Context, clt *core.SDKClient, req *tblogistics.AlibabaAscpLogisticsConsignModifyAPIRequest, resp *tblogistics.AlibabaAscpLogisticsConsignModifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

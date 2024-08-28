@@ -1,6 +1,8 @@
 package ieagency
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ieagency"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.ie.agent.refund.refuse
 //
 // 卖家拒绝退票退票申请
-func TaobaoAlitripIeAgentRefundRefuse(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentRefundRefuseAPIRequest, resp *ieagency.TaobaoAlitripIeAgentRefundRefuseAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripIeAgentRefundRefuse(ctx context.Context, clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentRefundRefuseAPIRequest, resp *ieagency.TaobaoAlitripIeAgentRefundRefuseAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

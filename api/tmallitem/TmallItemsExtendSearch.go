@@ -1,6 +1,8 @@
 package tmallitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallitem"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.items.extend.search
 //
 // 提供天猫商品搜索结果，需要调用精选商品，请改为调用：tmall.selected.items.search
-func TmallItemsExtendSearch(clt *core.SDKClient, req *tmallitem.TmallItemsExtendSearchAPIRequest, resp *tmallitem.TmallItemsExtendSearchAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallItemsExtendSearch(ctx context.Context, clt *core.SDKClient, req *tmallitem.TmallItemsExtendSearchAPIRequest, resp *tmallitem.TmallItemsExtendSearchAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

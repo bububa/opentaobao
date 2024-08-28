@@ -1,6 +1,8 @@
 package xhotelitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.xhotel.multiplerate.get
 //
 // 查询复杂房价，支持通过入住人数，连住天数，商品信息，房价信息查询
-func TaobaoXhotelMultiplerateGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelMultiplerateGetAPIRequest, resp *xhotelitem.TaobaoXhotelMultiplerateGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelMultiplerateGet(ctx context.Context, clt *core.SDKClient, req *xhotelitem.TaobaoXhotelMultiplerateGetAPIRequest, resp *xhotelitem.TaobaoXhotelMultiplerateGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

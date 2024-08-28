@@ -1,6 +1,8 @@
 package store
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/store"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.place.store.relation.query
 //
 // 查询门店关系
-func TaobaoPlaceStoreRelationQuery(clt *core.SDKClient, req *store.TaobaoPlaceStoreRelationQueryAPIRequest, resp *store.TaobaoPlaceStoreRelationQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoPlaceStoreRelationQuery(ctx context.Context, clt *core.SDKClient, req *store.TaobaoPlaceStoreRelationQueryAPIRequest, resp *store.TaobaoPlaceStoreRelationQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

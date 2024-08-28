@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drugtrace.top.lsyd.listupout
 //
 // 查询货主/本企业上游企业出库单据信息
-func AlibabaAlihealthDrugtraceTopLsydListupout(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest, resp *drugtrace.AlibabaAlihealthDrugtraceTopLsydListupoutAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugtraceTopLsydListupout(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest, resp *drugtrace.AlibabaAlihealthDrugtraceTopLsydListupoutAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

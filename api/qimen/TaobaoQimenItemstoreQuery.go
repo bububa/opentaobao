@@ -1,6 +1,8 @@
 package qimen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qimen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qimen.itemstore.query
 //
 // 商家在ERP等系统中调用该接口，查询线上商品所关联的门店列表
-func TaobaoQimenItemstoreQuery(clt *core.SDKClient, req *qimen.TaobaoQimenItemstoreQueryAPIRequest, resp *qimen.TaobaoQimenItemstoreQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQimenItemstoreQuery(ctx context.Context, clt *core.SDKClient, req *qimen.TaobaoQimenItemstoreQueryAPIRequest, resp *qimen.TaobaoQimenItemstoreQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

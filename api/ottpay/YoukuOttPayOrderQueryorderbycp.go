@@ -1,6 +1,8 @@
 package ottpay
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ottpay"
 )
@@ -9,6 +11,6 @@ import (
 // youku.ott.pay.order.queryorderbycp
 //
 // 给商户服务端查询订单状态
-func YoukuOttPayOrderQueryorderbycp(clt *core.SDKClient, req *ottpay.YoukuOttPayOrderQueryorderbycpAPIRequest, resp *ottpay.YoukuOttPayOrderQueryorderbycpAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YoukuOttPayOrderQueryorderbycp(ctx context.Context, clt *core.SDKClient, req *ottpay.YoukuOttPayOrderQueryorderbycpAPIRequest, resp *ottpay.YoukuOttPayOrderQueryorderbycpAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

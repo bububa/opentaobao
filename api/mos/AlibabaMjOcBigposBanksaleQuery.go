@@ -1,6 +1,8 @@
 package mos
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/mos"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.mj.oc.bigpos.banksale.query
 //
 // 大pos银行卡查账接口，给收银员查询银行卡销售记录，便于调账
-func AlibabaMjOcBigposBanksaleQuery(clt *core.SDKClient, req *mos.AlibabaMjOcBigposBanksaleQueryAPIRequest, resp *mos.AlibabaMjOcBigposBanksaleQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMjOcBigposBanksaleQuery(ctx context.Context, clt *core.SDKClient, req *mos.AlibabaMjOcBigposBanksaleQueryAPIRequest, resp *mos.AlibabaMjOcBigposBanksaleQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

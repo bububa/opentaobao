@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.wdk.equipment.wcs.wcsinfo.upload
 //
 // 五道口仓库悬挂链信息上传
-func TaobaoWdkEquipmentWcsWcsinfoUpload(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest, resp *wdk.TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWdkEquipmentWcsWcsinfoUpload(ctx context.Context, clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentWcsWcsinfoUploadAPIRequest, resp *wdk.TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

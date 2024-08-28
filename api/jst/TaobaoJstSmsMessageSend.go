@@ -1,6 +1,8 @@
 package jst
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/jst"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.jst.sms.message.send
 //
 // 聚石塔短信PAAS场景中，ISV通过该API帮商家发送短信给用户。
-func TaobaoJstSmsMessageSend(clt *core.SDKClient, req *jst.TaobaoJstSmsMessageSendAPIRequest, resp *jst.TaobaoJstSmsMessageSendAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoJstSmsMessageSend(ctx context.Context, clt *core.SDKClient, req *jst.TaobaoJstSmsMessageSendAPIRequest, resp *jst.TaobaoJstSmsMessageSendAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

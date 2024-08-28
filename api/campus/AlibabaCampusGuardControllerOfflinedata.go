@@ -1,6 +1,8 @@
 package campus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/campus"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.campus.guard.controller.offlinedata
 //
 // 点位离线数据拉取
-func AlibabaCampusGuardControllerOfflinedata(clt *core.SDKClient, req *campus.AlibabaCampusGuardControllerOfflinedataAPIRequest, resp *campus.AlibabaCampusGuardControllerOfflinedataAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCampusGuardControllerOfflinedata(ctx context.Context, clt *core.SDKClient, req *campus.AlibabaCampusGuardControllerOfflinedataAPIRequest, resp *campus.AlibabaCampusGuardControllerOfflinedataAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

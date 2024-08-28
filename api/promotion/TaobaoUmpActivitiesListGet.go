@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.ump.activities.list.get
 //
 // 按照营销活动id的列表ids，查询对应的营销活动列表。
-func TaobaoUmpActivitiesListGet(clt *core.SDKClient, req *promotion.TaobaoUmpActivitiesListGetAPIRequest, resp *promotion.TaobaoUmpActivitiesListGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoUmpActivitiesListGet(ctx context.Context, clt *core.SDKClient, req *promotion.TaobaoUmpActivitiesListGetAPIRequest, resp *promotion.TaobaoUmpActivitiesListGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

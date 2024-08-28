@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.universalbp.shopcategory.findlist
 //
 // 查询店铺所属的类目信息
-func TaobaoUniversalbpShopcategoryFindlist(clt *core.SDKClient, req *simba.TaobaoUniversalbpShopcategoryFindlistAPIRequest, resp *simba.TaobaoUniversalbpShopcategoryFindlistAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoUniversalbpShopcategoryFindlist(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoUniversalbpShopcategoryFindlistAPIRequest, resp *simba.TaobaoUniversalbpShopcategoryFindlistAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package alidoc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alidoc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.alidoc.drug.store.add
 //
 // GSK上传药店信息
-func AlibabaAlihealthAlidocDrugStoreAdd(clt *core.SDKClient, req *alidoc.AlibabaAlihealthAlidocDrugStoreAddAPIRequest, resp *alidoc.AlibabaAlihealthAlidocDrugStoreAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthAlidocDrugStoreAdd(ctx context.Context, clt *core.SDKClient, req *alidoc.AlibabaAlihealthAlidocDrugStoreAddAPIRequest, resp *alidoc.AlibabaAlihealthAlidocDrugStoreAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

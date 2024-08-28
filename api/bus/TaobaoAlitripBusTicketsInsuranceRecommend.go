@@ -1,6 +1,8 @@
 package bus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/bus"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.bus.tickets.insurance.recommend
 //
 // 获取推荐保险内容
-func TaobaoAlitripBusTicketsInsuranceRecommend(clt *core.SDKClient, req *bus.TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest, resp *bus.TaobaoAlitripBusTicketsInsuranceRecommendAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripBusTicketsInsuranceRecommend(ctx context.Context, clt *core.SDKClient, req *bus.TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest, resp *bus.TaobaoAlitripBusTicketsInsuranceRecommendAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

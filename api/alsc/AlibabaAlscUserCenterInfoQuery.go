@@ -1,6 +1,8 @@
 package alsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alsc.user.center.info.query
 //
 // 获取授权的饿了么用户信息
-func AlibabaAlscUserCenterInfoQuery(clt *core.SDKClient, req *alsc.AlibabaAlscUserCenterInfoQueryAPIRequest, resp *alsc.AlibabaAlscUserCenterInfoQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlscUserCenterInfoQuery(ctx context.Context, clt *core.SDKClient, req *alsc.AlibabaAlscUserCenterInfoQueryAPIRequest, resp *alsc.AlibabaAlscUserCenterInfoQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

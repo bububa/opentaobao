@@ -1,6 +1,8 @@
 package flight
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/flight"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.agent.coordinate.processing
 //
 // 慧飞商家协同单处理完成接口
-func AlitripAgentCoordinateProcessing(clt *core.SDKClient, req *flight.AlitripAgentCoordinateProcessingAPIRequest, resp *flight.AlitripAgentCoordinateProcessingAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripAgentCoordinateProcessing(ctx context.Context, clt *core.SDKClient, req *flight.AlitripAgentCoordinateProcessingAPIRequest, resp *flight.AlitripAgentCoordinateProcessingAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

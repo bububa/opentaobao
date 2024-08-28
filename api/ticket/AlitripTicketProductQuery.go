@@ -1,6 +1,8 @@
 package ticket
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ticket"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.ticket.product.query
 //
 // 门票商品查询接口：返回商家上传的门票商品信息
-func AlitripTicketProductQuery(clt *core.SDKClient, req *ticket.AlitripTicketProductQueryAPIRequest, resp *ticket.AlitripTicketProductQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripTicketProductQuery(ctx context.Context, clt *core.SDKClient, req *ticket.AlitripTicketProductQueryAPIRequest, resp *ticket.AlitripTicketProductQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package damai
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/damai"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.damai.mev.open.invalidticket
 //
 // 开放接口 使票无效
-func AlibabaDamaiMevOpenInvalidticket(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenInvalidticketAPIRequest, resp *damai.AlibabaDamaiMevOpenInvalidticketAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaDamaiMevOpenInvalidticket(ctx context.Context, clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenInvalidticketAPIRequest, resp *damai.AlibabaDamaiMevOpenInvalidticketAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package product
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/product"
 )
@@ -17,6 +19,6 @@ import (
 //
 //	传入suite_items_str 按规格搜索套装产品。
 //	返回字段增加suite_items_str,is_suite_effecitve支持。
-func TaobaoProductsSearch(clt *core.SDKClient, req *product.TaobaoProductsSearchAPIRequest, resp *product.TaobaoProductsSearchAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoProductsSearch(ctx context.Context, clt *core.SDKClient, req *product.TaobaoProductsSearchAPIRequest, resp *product.TaobaoProductsSearchAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

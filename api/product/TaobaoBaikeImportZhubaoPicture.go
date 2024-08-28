@@ -1,6 +1,8 @@
 package product
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/product"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.baike.import.zhubao.picture
 //
 // 用于接入外部--图片--录入到商品百科中
-func TaobaoBaikeImportZhubaoPicture(clt *core.SDKClient, req *product.TaobaoBaikeImportZhubaoPictureAPIRequest, resp *product.TaobaoBaikeImportZhubaoPictureAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBaikeImportZhubaoPicture(ctx context.Context, clt *core.SDKClient, req *product.TaobaoBaikeImportZhubaoPictureAPIRequest, resp *product.TaobaoBaikeImportZhubaoPictureAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

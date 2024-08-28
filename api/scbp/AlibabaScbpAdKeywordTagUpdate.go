@@ -1,6 +1,8 @@
 package scbp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/scbp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.scbp.ad.keyword.tag.update
 //
 // 修改关键词所属分组
-func AlibabaScbpAdKeywordTagUpdate(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordTagUpdateAPIRequest, resp *scbp.AlibabaScbpAdKeywordTagUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaScbpAdKeywordTagUpdate(ctx context.Context, clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordTagUpdateAPIRequest, resp *scbp.AlibabaScbpAdKeywordTagUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

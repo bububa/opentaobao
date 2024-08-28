@@ -1,6 +1,8 @@
 package subuser
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/subuser"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.subusers.get
 //
 // 获取主账号下的子账号简易账号信息集合。（只能通过主账号登陆并且查询该属于主账号的子账号信息）
-func TaobaoSubusersGet(clt *core.SDKClient, req *subuser.TaobaoSubusersGetAPIRequest, resp *subuser.TaobaoSubusersGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSubusersGet(ctx context.Context, clt *core.SDKClient, req *subuser.TaobaoSubusersGetAPIRequest, resp *subuser.TaobaoSubusersGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

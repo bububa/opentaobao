@@ -1,6 +1,8 @@
 package nrt
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/nrt"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.nrt.scene.activity.query
 //
 // 喵零场景活动查询
-func TmallNrtSceneActivityQuery(clt *core.SDKClient, req *nrt.TmallNrtSceneActivityQueryAPIRequest, resp *nrt.TmallNrtSceneActivityQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallNrtSceneActivityQuery(ctx context.Context, clt *core.SDKClient, req *nrt.TmallNrtSceneActivityQueryAPIRequest, resp *nrt.TmallNrtSceneActivityQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

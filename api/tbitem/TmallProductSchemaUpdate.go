@@ -1,6 +1,8 @@
 package tbitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbitem"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.product.schema.update
 //
 // 产品更新接口
-func TmallProductSchemaUpdate(clt *core.SDKClient, req *tbitem.TmallProductSchemaUpdateAPIRequest, resp *tbitem.TmallProductSchemaUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallProductSchemaUpdate(ctx context.Context, clt *core.SDKClient, req *tbitem.TmallProductSchemaUpdateAPIRequest, resp *tbitem.TmallProductSchemaUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

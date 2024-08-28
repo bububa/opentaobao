@@ -1,6 +1,8 @@
 package tvupadmin
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.osupdate.versionstatus.update
 //
 // 更新应用升级状态
-func YunosOsupdateVersionstatusUpdate(clt *core.SDKClient, req *tvupadmin.YunosOsupdateVersionstatusUpdateAPIRequest, resp *tvupadmin.YunosOsupdateVersionstatusUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosOsupdateVersionstatusUpdate(ctx context.Context, clt *core.SDKClient, req *tvupadmin.YunosOsupdateVersionstatusUpdateAPIRequest, resp *tvupadmin.YunosOsupdateVersionstatusUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

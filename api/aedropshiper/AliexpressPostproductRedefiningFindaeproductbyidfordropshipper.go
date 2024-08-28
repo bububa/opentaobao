@@ -1,6 +1,8 @@
 package aedropshiper
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/aedropshiper"
 )
@@ -9,6 +11,6 @@ import (
 // aliexpress.postproduct.redefining.findaeproductbyidfordropshipper
 //
 // 提供给Dropshipper的通过商品ID查找商品信息的接口，只有特定买家可以使用
-func AliexpressPostproductRedefiningFindaeproductbyidfordropshipper(clt *core.SDKClient, req *aedropshiper.AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIRequest, resp *aedropshiper.AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliexpressPostproductRedefiningFindaeproductbyidfordropshipper(ctx context.Context, clt *core.SDKClient, req *aedropshiper.AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIRequest, resp *aedropshiper.AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

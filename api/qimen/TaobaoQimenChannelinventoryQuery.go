@@ -1,6 +1,8 @@
 package qimen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qimen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qimen.channelinventory.query
 //
 // 渠道库存查询
-func TaobaoQimenChannelinventoryQuery(clt *core.SDKClient, req *qimen.TaobaoQimenChannelinventoryQueryAPIRequest, resp *qimen.TaobaoQimenChannelinventoryQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQimenChannelinventoryQuery(ctx context.Context, clt *core.SDKClient, req *qimen.TaobaoQimenChannelinventoryQueryAPIRequest, resp *qimen.TaobaoQimenChannelinventoryQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package ascp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ascp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.dchain.aoxiang.orderprocess.report
 //
 // 回传仓内作业节点
-func AlibabaDchainAoxiangOrderprocessReport(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangOrderprocessReportAPIRequest, resp *ascp.AlibabaDchainAoxiangOrderprocessReportAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaDchainAoxiangOrderprocessReport(ctx context.Context, clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangOrderprocessReportAPIRequest, resp *ascp.AlibabaDchainAoxiangOrderprocessReportAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

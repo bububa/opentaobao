@@ -1,6 +1,8 @@
 package tvupadmin
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.tvpubadmin.diccontroltask.add
 //
 // 新增停开服任务
-func YunosTvpubadminDiccontroltaskAdd(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDiccontroltaskAddAPIRequest, resp *tvupadmin.YunosTvpubadminDiccontroltaskAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosTvpubadminDiccontroltaskAdd(ctx context.Context, clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDiccontroltaskAddAPIRequest, resp *tvupadmin.YunosTvpubadminDiccontroltaskAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

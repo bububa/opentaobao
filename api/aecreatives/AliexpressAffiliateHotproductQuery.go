@@ -1,6 +1,8 @@
 package aecreatives
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/aecreatives"
 )
@@ -9,6 +11,6 @@ import (
 // aliexpress.affiliate.hotproduct.query
 //
 // 查询联盟爆品API
-func AliexpressAffiliateHotproductQuery(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateHotproductQueryAPIRequest, resp *aecreatives.AliexpressAffiliateHotproductQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliexpressAffiliateHotproductQuery(ctx context.Context, clt *core.SDKClient, req *aecreatives.AliexpressAffiliateHotproductQueryAPIRequest, resp *aecreatives.AliexpressAffiliateHotproductQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

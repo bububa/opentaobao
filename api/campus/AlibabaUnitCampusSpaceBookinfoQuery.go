@@ -1,6 +1,8 @@
 package campus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/campus"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.unit.campus.space.bookinfo.query
 //
 // 环路资源信息查询单元环境
-func AlibabaUnitCampusSpaceBookinfoQuery(clt *core.SDKClient, req *campus.AlibabaUnitCampusSpaceBookinfoQueryAPIRequest, resp *campus.AlibabaUnitCampusSpaceBookinfoQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaUnitCampusSpaceBookinfoQuery(ctx context.Context, clt *core.SDKClient, req *campus.AlibabaUnitCampusSpaceBookinfoQueryAPIRequest, resp *campus.AlibabaUnitCampusSpaceBookinfoQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

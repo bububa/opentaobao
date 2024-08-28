@@ -1,6 +1,8 @@
 package qimen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qimen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qimen.stockout.confirm
 //
 // 货品出库后，WMS将状态回传给ERP
-func TaobaoQimenStockoutConfirm(clt *core.SDKClient, req *qimen.TaobaoQimenStockoutConfirmAPIRequest, resp *qimen.TaobaoQimenStockoutConfirmAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQimenStockoutConfirm(ctx context.Context, clt *core.SDKClient, req *qimen.TaobaoQimenStockoutConfirmAPIRequest, resp *qimen.TaobaoQimenStockoutConfirmAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.fenxiao.productcat.update
 //
 // 修改产品线
-func TaobaoFenxiaoProductcatUpdate(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductcatUpdateAPIRequest, resp *fenxiao.TaobaoFenxiaoProductcatUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFenxiaoProductcatUpdate(ctx context.Context, clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductcatUpdateAPIRequest, resp *fenxiao.TaobaoFenxiaoProductcatUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

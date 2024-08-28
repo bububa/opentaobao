@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.simba.rpt.targetingtag.get
 //
 // 获取搜搜人群实时报表
-func TaobaoSimbaRptTargetingtagGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptTargetingtagGetAPIRequest, resp *simba.TaobaoSimbaRptTargetingtagGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSimbaRptTargetingtagGet(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSimbaRptTargetingtagGetAPIRequest, resp *simba.TaobaoSimbaRptTargetingtagGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

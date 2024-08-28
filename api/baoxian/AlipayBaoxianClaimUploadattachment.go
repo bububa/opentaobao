@@ -1,6 +1,8 @@
 package baoxian
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/baoxian"
 )
@@ -9,6 +11,6 @@ import (
 // alipay.baoxian.claim.uploadattachment
 //
 // 给合作伙伴上传申请理赔材料
-func AlipayBaoxianClaimUploadattachment(clt *core.SDKClient, req *baoxian.AlipayBaoxianClaimUploadattachmentAPIRequest, resp *baoxian.AlipayBaoxianClaimUploadattachmentAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlipayBaoxianClaimUploadattachment(ctx context.Context, clt *core.SDKClient, req *baoxian.AlipayBaoxianClaimUploadattachmentAPIRequest, resp *baoxian.AlipayBaoxianClaimUploadattachmentAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

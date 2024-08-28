@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.merchant.galaxy.wechat.add.coupon.record
 //
 // 雅高小程序添加优惠券实例
-func AlitripMerchantGalaxyWechatAddCouponRecord(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatAddCouponRecordAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyWechatAddCouponRecordAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripMerchantGalaxyWechatAddCouponRecord(ctx context.Context, clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatAddCouponRecordAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyWechatAddCouponRecordAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

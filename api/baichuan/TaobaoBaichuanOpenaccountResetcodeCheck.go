@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/baichuan"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.baichuan.openaccount.resetcode.check
 //
 // 百川验证找回密码验证码
-func TaobaoBaichuanOpenaccountResetcodeCheck(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountResetcodeCheckAPIRequest, resp *baichuan.TaobaoBaichuanOpenaccountResetcodeCheckAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBaichuanOpenaccountResetcodeCheck(ctx context.Context, clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountResetcodeCheckAPIRequest, resp *baichuan.TaobaoBaichuanOpenaccountResetcodeCheckAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

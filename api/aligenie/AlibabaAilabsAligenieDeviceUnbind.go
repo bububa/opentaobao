@@ -1,6 +1,8 @@
 package aligenie
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/aligenie"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ailabs.aligenie.device.unbind
 //
 // 让开发者能根据设备ID进行解绑操作的接口
-func AlibabaAilabsAligenieDeviceUnbind(clt *core.SDKClient, req *aligenie.AlibabaAilabsAligenieDeviceUnbindAPIRequest, resp *aligenie.AlibabaAilabsAligenieDeviceUnbindAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAilabsAligenieDeviceUnbind(ctx context.Context, clt *core.SDKClient, req *aligenie.AlibabaAilabsAligenieDeviceUnbindAPIRequest, resp *aligenie.AlibabaAilabsAligenieDeviceUnbindAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

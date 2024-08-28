@@ -1,6 +1,8 @@
 package openim
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/openim"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.openim.tribe.join
 //
 // OPENIM群主动加入
-func TaobaoOpenimTribeJoin(clt *core.SDKClient, req *openim.TaobaoOpenimTribeJoinAPIRequest, resp *openim.TaobaoOpenimTribeJoinAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOpenimTribeJoin(ctx context.Context, clt *core.SDKClient, req *openim.TaobaoOpenimTribeJoinAPIRequest, resp *openim.TaobaoOpenimTribeJoinAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

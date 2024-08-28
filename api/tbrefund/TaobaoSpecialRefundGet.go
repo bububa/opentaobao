@@ -1,6 +1,8 @@
 package tbrefund
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbrefund"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.special.refund.get
 //
 // 获取单笔特殊部分退的纠纷单查询
-func TaobaoSpecialRefundGet(clt *core.SDKClient, req *tbrefund.TaobaoSpecialRefundGetAPIRequest, resp *tbrefund.TaobaoSpecialRefundGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSpecialRefundGet(ctx context.Context, clt *core.SDKClient, req *tbrefund.TaobaoSpecialRefundGetAPIRequest, resp *tbrefund.TaobaoSpecialRefundGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

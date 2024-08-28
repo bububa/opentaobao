@@ -1,6 +1,8 @@
 package xhotelofficial
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhotelofficial"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.xhotel.order.official.settle.put
 //
 // 用于酒店官网信用住商家结账调用
-func TaobaoXhotelOrderOfficialSettlePut(clt *core.SDKClient, req *xhotelofficial.TaobaoXhotelOrderOfficialSettlePutAPIRequest, resp *xhotelofficial.TaobaoXhotelOrderOfficialSettlePutAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelOrderOfficialSettlePut(ctx context.Context, clt *core.SDKClient, req *xhotelofficial.TaobaoXhotelOrderOfficialSettlePutAPIRequest, resp *xhotelofficial.TaobaoXhotelOrderOfficialSettlePutAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

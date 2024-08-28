@@ -1,6 +1,8 @@
 package feedflow
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/feedflow"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.feedflow.item.crowd.modify
 //
 // 覆盖单元下同类型定向人群
-func TaobaoFeedflowItemCrowdModify(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCrowdModifyAPIRequest, resp *feedflow.TaobaoFeedflowItemCrowdModifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFeedflowItemCrowdModify(ctx context.Context, clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCrowdModifyAPIRequest, resp *feedflow.TaobaoFeedflowItemCrowdModifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

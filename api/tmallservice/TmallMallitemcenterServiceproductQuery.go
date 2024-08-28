@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.mallitemcenter.serviceproduct.query
 //
 // 查询天猫服务的服务商发布的服务产品
-func TmallMallitemcenterServiceproductQuery(clt *core.SDKClient, req *tmallservice.TmallMallitemcenterServiceproductQueryAPIRequest, resp *tmallservice.TmallMallitemcenterServiceproductQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallMallitemcenterServiceproductQuery(ctx context.Context, clt *core.SDKClient, req *tmallservice.TmallMallitemcenterServiceproductQueryAPIRequest, resp *tmallservice.TmallMallitemcenterServiceproductQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package alsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alsc.crm.recharge.dedut.update
 //
 // 增加储值消费接口
-func AlibabaAlscCrmRechargeDedutUpdate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRechargeDedutUpdateAPIRequest, resp *alsc.AlibabaAlscCrmRechargeDedutUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlscCrmRechargeDedutUpdate(ctx context.Context, clt *core.SDKClient, req *alsc.AlibabaAlscCrmRechargeDedutUpdateAPIRequest, resp *alsc.AlibabaAlscCrmRechargeDedutUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

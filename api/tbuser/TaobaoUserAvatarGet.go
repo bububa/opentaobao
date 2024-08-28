@@ -1,6 +1,8 @@
 package tbuser
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbuser"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.user.avatar.get
 //
 // 根据混淆nick查询用户头像
-func TaobaoUserAvatarGet(clt *core.SDKClient, req *tbuser.TaobaoUserAvatarGetAPIRequest, resp *tbuser.TaobaoUserAvatarGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoUserAvatarGet(ctx context.Context, clt *core.SDKClient, req *tbuser.TaobaoUserAvatarGetAPIRequest, resp *tbuser.TaobaoUserAvatarGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

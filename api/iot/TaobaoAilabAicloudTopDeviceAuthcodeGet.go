@@ -1,6 +1,8 @@
 package iot
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/iot"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.ailab.aicloud.top.device.authcode.get
 //
 // 获取设备授权码
-func TaobaoAilabAicloudTopDeviceAuthcodeGet(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest, resp *iot.TaobaoAilabAicloudTopDeviceAuthcodeGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAilabAicloudTopDeviceAuthcodeGet(ctx context.Context, clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest, resp *iot.TaobaoAilabAicloudTopDeviceAuthcodeGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

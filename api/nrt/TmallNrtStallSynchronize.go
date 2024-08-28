@@ -1,6 +1,8 @@
 package nrt
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/nrt"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.nrt.stall.synchronize
 //
 // 摊位信息同步
-func TmallNrtStallSynchronize(clt *core.SDKClient, req *nrt.TmallNrtStallSynchronizeAPIRequest, resp *nrt.TmallNrtStallSynchronizeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallNrtStallSynchronize(ctx context.Context, clt *core.SDKClient, req *nrt.TmallNrtStallSynchronizeAPIRequest, resp *nrt.TmallNrtStallSynchronizeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package interact
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/interact"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.weitao.feed.synchronize
 //
 // 推广淘小铺isv 活动到微淘feed
-func TaobaoWeitaoFeedSynchronize(clt *core.SDKClient, req *interact.TaobaoWeitaoFeedSynchronizeAPIRequest, resp *interact.TaobaoWeitaoFeedSynchronizeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWeitaoFeedSynchronize(ctx context.Context, clt *core.SDKClient, req *interact.TaobaoWeitaoFeedSynchronizeAPIRequest, resp *interact.TaobaoWeitaoFeedSynchronizeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package product
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/product"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.jym.industry.information.callbak
 //
 // VMOS回调交易猫行业信息系统
-func AlibabaJymIndustryInformationCallbak(clt *core.SDKClient, req *product.AlibabaJymIndustryInformationCallbakAPIRequest, resp *product.AlibabaJymIndustryInformationCallbakAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaJymIndustryInformationCallbak(ctx context.Context, clt *core.SDKClient, req *product.AlibabaJymIndustryInformationCallbakAPIRequest, resp *product.AlibabaJymIndustryInformationCallbakAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

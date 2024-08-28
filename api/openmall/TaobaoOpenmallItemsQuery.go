@@ -1,6 +1,8 @@
 package openmall
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/openmall"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.openmall.items.query
 //
 // 批量获取对联盟开放的商品列表。
-func TaobaoOpenmallItemsQuery(clt *core.SDKClient, req *openmall.TaobaoOpenmallItemsQueryAPIRequest, resp *openmall.TaobaoOpenmallItemsQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOpenmallItemsQuery(ctx context.Context, clt *core.SDKClient, req *openmall.TaobaoOpenmallItemsQueryAPIRequest, resp *openmall.TaobaoOpenmallItemsQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }
