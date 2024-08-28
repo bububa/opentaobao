@@ -1,6 +1,8 @@
 package wlb
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wlb"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.wlb.inventorylog.query
 //
 // 通过商品ID等几个条件来分页查询库存变更记录
-func TaobaoWlbInventorylogQuery(clt *core.SDKClient, req *wlb.TaobaoWlbInventorylogQueryAPIRequest, resp *wlb.TaobaoWlbInventorylogQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWlbInventorylogQuery(ctx context.Context, clt *core.SDKClient, req *wlb.TaobaoWlbInventorylogQueryAPIRequest, resp *wlb.TaobaoWlbInventorylogQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

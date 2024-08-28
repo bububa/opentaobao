@@ -1,6 +1,8 @@
 package ju
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ju"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.jhs.community.activity.reservation
 //
 // 社群活动预约
-func AlibabaJhsCommunityActivityReservation(clt *core.SDKClient, req *ju.AlibabaJhsCommunityActivityReservationAPIRequest, resp *ju.AlibabaJhsCommunityActivityReservationAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaJhsCommunityActivityReservation(ctx context.Context, clt *core.SDKClient, req *ju.AlibabaJhsCommunityActivityReservationAPIRequest, resp *ju.AlibabaJhsCommunityActivityReservationAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

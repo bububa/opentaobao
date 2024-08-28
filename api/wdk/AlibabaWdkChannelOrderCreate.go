@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.channel.order.create
 //
 // 外部商家创建订单
-func AlibabaWdkChannelOrderCreate(clt *core.SDKClient, req *wdk.AlibabaWdkChannelOrderCreateAPIRequest, resp *wdk.AlibabaWdkChannelOrderCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkChannelOrderCreate(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkChannelOrderCreateAPIRequest, resp *wdk.AlibabaWdkChannelOrderCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

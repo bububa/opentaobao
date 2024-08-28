@@ -1,6 +1,8 @@
 package axindata
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/axindata"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.travel.fsc.route.api.product.offline
 //
 // 产品下线
-func TaobaoAlitripTravelFscRouteApiProductOffline(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiProductOfflineAPIRequest, resp *axindata.TaobaoAlitripTravelFscRouteApiProductOfflineAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripTravelFscRouteApiProductOffline(ctx context.Context, clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiProductOfflineAPIRequest, resp *axindata.TaobaoAlitripTravelFscRouteApiProductOfflineAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

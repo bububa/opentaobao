@@ -1,6 +1,8 @@
 package miniappopen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/miniappopen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.miniappp.template.instantiate
 //
 // 实例化saas化的小程序
-func TaobaoMiniapppTemplateInstantiate(clt *core.SDKClient, req *miniappopen.TaobaoMiniapppTemplateInstantiateAPIRequest, resp *miniappopen.TaobaoMiniapppTemplateInstantiateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoMiniapppTemplateInstantiate(ctx context.Context, clt *core.SDKClient, req *miniappopen.TaobaoMiniapppTemplateInstantiateAPIRequest, resp *miniappopen.TaobaoMiniapppTemplateInstantiateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

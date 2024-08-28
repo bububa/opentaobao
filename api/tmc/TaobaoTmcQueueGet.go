@@ -1,6 +1,8 @@
 package tmc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmc"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.tmc.queue.get
 //
 // 根据appkey和groupName获取消息队列积压情况
-func TaobaoTmcQueueGet(clt *core.SDKClient, req *tmc.TaobaoTmcQueueGetAPIRequest, resp *tmc.TaobaoTmcQueueGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTmcQueueGet(ctx context.Context, clt *core.SDKClient, req *tmc.TaobaoTmcQueueGetAPIRequest, resp *tmc.TaobaoTmcQueueGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

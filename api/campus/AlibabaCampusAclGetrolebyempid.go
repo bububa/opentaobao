@@ -1,6 +1,8 @@
 package campus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/campus"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.campus.acl.getrolebyempid
 //
 // 根据用户查询角色
-func AlibabaCampusAclGetrolebyempid(clt *core.SDKClient, req *campus.AlibabaCampusAclGetrolebyempidAPIRequest, resp *campus.AlibabaCampusAclGetrolebyempidAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCampusAclGetrolebyempid(ctx context.Context, clt *core.SDKClient, req *campus.AlibabaCampusAclGetrolebyempidAPIRequest, resp *campus.AlibabaCampusAclGetrolebyempidAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

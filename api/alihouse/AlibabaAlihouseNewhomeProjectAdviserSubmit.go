@@ -1,6 +1,8 @@
 package alihouse
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihouse"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihouse.newhome.project.adviser.submit
 //
 // 提交楼盘顾问
-func AlibabaAlihouseNewhomeProjectAdviserSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeProjectAdviserSubmitAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihouseNewhomeProjectAdviserSubmit(ctx context.Context, clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeProjectAdviserSubmitAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

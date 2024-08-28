@@ -1,6 +1,8 @@
 package campus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/campus"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.campus.core.app.getappusages
 //
 // 传入应用的id,  获得用户授权的园区
-func AlibabaCampusCoreAppGetappusages(clt *core.SDKClient, req *campus.AlibabaCampusCoreAppGetappusagesAPIRequest, resp *campus.AlibabaCampusCoreAppGetappusagesAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCampusCoreAppGetappusages(ctx context.Context, clt *core.SDKClient, req *campus.AlibabaCampusCoreAppGetappusagesAPIRequest, resp *campus.AlibabaCampusCoreAppGetappusagesAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

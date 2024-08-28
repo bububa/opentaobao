@@ -1,6 +1,8 @@
 package alisports
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alisports"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alisports.passport.parter.synccard
 //
 // 运享通修改卡号的时候，通知更新到阿里体育和支付宝卡包中
-func AlibabaAlisportsPassportParterSynccard(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportParterSynccardAPIRequest, resp *alisports.AlibabaAlisportsPassportParterSynccardAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlisportsPassportParterSynccard(ctx context.Context, clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportParterSynccardAPIRequest, resp *alisports.AlibabaAlisportsPassportParterSynccardAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

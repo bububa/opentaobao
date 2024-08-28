@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.subway.wordpackage.update
 //
 // 批量更新词包
-func TaobaoSubwayWordpackageUpdate(clt *core.SDKClient, req *simba.TaobaoSubwayWordpackageUpdateAPIRequest, resp *simba.TaobaoSubwayWordpackageUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSubwayWordpackageUpdate(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSubwayWordpackageUpdateAPIRequest, resp *simba.TaobaoSubwayWordpackageUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package ieagency
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ieagency"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.ie.agent.order.search
 //
 // 根据指定条件查询国际机票订单列表
-func TaobaoAlitripIeAgentOrderSearch(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentOrderSearchAPIRequest, resp *ieagency.TaobaoAlitripIeAgentOrderSearchAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripIeAgentOrderSearch(ctx context.Context, clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentOrderSearchAPIRequest, resp *ieagency.TaobaoAlitripIeAgentOrderSearchAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

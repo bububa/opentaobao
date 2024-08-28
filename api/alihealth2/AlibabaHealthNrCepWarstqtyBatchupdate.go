@@ -1,6 +1,8 @@
 package alihealth2
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihealth2"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.health.nr.cep.warstqty.batchupdate
 //
 // 青岛医保服务-ISV批量更新孔雀翎中库存数据
-func AlibabaHealthNrCepWarstqtyBatchupdate(clt *core.SDKClient, req *alihealth2.AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest, resp *alihealth2.AlibabaHealthNrCepWarstqtyBatchupdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaHealthNrCepWarstqtyBatchupdate(ctx context.Context, clt *core.SDKClient, req *alihealth2.AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest, resp *alihealth2.AlibabaHealthNrCepWarstqtyBatchupdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

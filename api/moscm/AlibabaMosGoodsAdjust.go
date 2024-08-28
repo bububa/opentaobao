@@ -1,6 +1,8 @@
 package moscm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/moscm"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.mos.goods.adjust
 //
 // 库存调整接口
-func AlibabaMosGoodsAdjust(clt *core.SDKClient, req *moscm.AlibabaMosGoodsAdjustAPIRequest, resp *moscm.AlibabaMosGoodsAdjustAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMosGoodsAdjust(ctx context.Context, clt *core.SDKClient, req *moscm.AlibabaMosGoodsAdjustAPIRequest, resp *moscm.AlibabaMosGoodsAdjustAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

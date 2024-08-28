@@ -1,6 +1,8 @@
 package vaccin
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/vaccin"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.vaccine.trade.order.channel.get
 //
 // 通过订单ID与卖家ID获取订单渠道
-func AlibabaAlihealthVaccineTradeOrderChannelGet(clt *core.SDKClient, req *vaccin.AlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest, resp *vaccin.AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthVaccineTradeOrderChannelGet(ctx context.Context, clt *core.SDKClient, req *vaccin.AlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest, resp *vaccin.AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

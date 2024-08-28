@@ -1,6 +1,8 @@
 package logistic
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/logistic"
 )
@@ -9,6 +11,6 @@ import (
 // aliexpress.local.logistics.report.shipped
 //
 // report as shipped
-func AliexpressLocalLogisticsReportShipped(clt *core.SDKClient, req *logistic.AliexpressLocalLogisticsReportShippedAPIRequest, resp *logistic.AliexpressLocalLogisticsReportShippedAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliexpressLocalLogisticsReportShipped(ctx context.Context, clt *core.SDKClient, req *logistic.AliexpressLocalLogisticsReportShippedAPIRequest, resp *logistic.AliexpressLocalLogisticsReportShippedAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

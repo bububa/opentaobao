@@ -1,6 +1,8 @@
 package tbk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbk"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.tbk.privilege.get
 //
 // 单品券高效转链API
-func TaobaoTbkPrivilegeGet(clt *core.SDKClient, req *tbk.TaobaoTbkPrivilegeGetAPIRequest, resp *tbk.TaobaoTbkPrivilegeGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTbkPrivilegeGet(ctx context.Context, clt *core.SDKClient, req *tbk.TaobaoTbkPrivilegeGetAPIRequest, resp *tbk.TaobaoTbkPrivilegeGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

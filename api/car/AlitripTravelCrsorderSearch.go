@@ -1,6 +1,8 @@
 package car
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/car"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.travel.crsorder.search
 //
 // 提供给CRS商家搜索订单列表，仅返回订单号列表
-func AlitripTravelCrsorderSearch(clt *core.SDKClient, req *car.AlitripTravelCrsorderSearchAPIRequest, resp *car.AlitripTravelCrsorderSearchAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripTravelCrsorderSearch(ctx context.Context, clt *core.SDKClient, req *car.AlitripTravelCrsorderSearchAPIRequest, resp *car.AlitripTravelCrsorderSearchAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

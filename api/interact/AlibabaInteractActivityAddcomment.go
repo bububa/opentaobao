@@ -1,6 +1,8 @@
 package interact
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/interact"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.interact.activity.addcomment
 //
 // 发表评论，并返回楼层
-func AlibabaInteractActivityAddcomment(clt *core.SDKClient, req *interact.AlibabaInteractActivityAddcommentAPIRequest, resp *interact.AlibabaInteractActivityAddcommentAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaInteractActivityAddcomment(ctx context.Context, clt *core.SDKClient, req *interact.AlibabaInteractActivityAddcommentAPIRequest, resp *interact.AlibabaInteractActivityAddcommentAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

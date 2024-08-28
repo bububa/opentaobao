@@ -1,6 +1,8 @@
 package util
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/util"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ais.assets.tag.get
 //
 // 提供浪潮，英业达等厂商供应阿里巴巴基础设施资产的标签QR code获取
-func AlibabaAisAssetsTagGet(clt *core.SDKClient, req *util.AlibabaAisAssetsTagGetAPIRequest, resp *util.AlibabaAisAssetsTagGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAisAssetsTagGet(ctx context.Context, clt *core.SDKClient, req *util.AlibabaAisAssetsTagGetAPIRequest, resp *util.AlibabaAisAssetsTagGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

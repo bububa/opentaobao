@@ -1,6 +1,8 @@
 package scbp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/scbp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.scbp.ad.target.tag.get.all.enable.tag.list
 //
 // 查询标签数据
-func AlibabaScbpAdTargetTagGetAllEnableTagList(clt *core.SDKClient, req *scbp.AlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest, resp *scbp.AlibabaScbpAdTargetTagGetAllEnableTagListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaScbpAdTargetTagGetAllEnableTagList(ctx context.Context, clt *core.SDKClient, req *scbp.AlibabaScbpAdTargetTagGetAllEnableTagListAPIRequest, resp *scbp.AlibabaScbpAdTargetTagGetAllEnableTagListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

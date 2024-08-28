@@ -1,6 +1,8 @@
 package tvupadmin
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.tvpubadmin.content.channel.offline
 //
 // 迎客松影视频道下线
-func YunosTvpubadminContentChannelOffline(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChannelOfflineAPIRequest, resp *tvupadmin.YunosTvpubadminContentChannelOfflineAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosTvpubadminContentChannelOffline(ctx context.Context, clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChannelOfflineAPIRequest, resp *tvupadmin.YunosTvpubadminContentChannelOfflineAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

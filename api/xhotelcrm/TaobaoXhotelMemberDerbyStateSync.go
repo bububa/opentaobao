@@ -1,6 +1,8 @@
 package xhotelcrm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhotelcrm"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.xhotel.member.derby.state.sync
 //
 // 德比侧同步卡、券状态接口
-func TaobaoXhotelMemberDerbyStateSync(clt *core.SDKClient, req *xhotelcrm.TaobaoXhotelMemberDerbyStateSyncAPIRequest, resp *xhotelcrm.TaobaoXhotelMemberDerbyStateSyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelMemberDerbyStateSync(ctx context.Context, clt *core.SDKClient, req *xhotelcrm.TaobaoXhotelMemberDerbyStateSyncAPIRequest, resp *xhotelcrm.TaobaoXhotelMemberDerbyStateSyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

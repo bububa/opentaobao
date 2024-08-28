@@ -1,6 +1,8 @@
 package icbu
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/icbu"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.icbu.photobank.upload
 //
 // 图片银行图片上传开放接口
-func AlibabaIcbuPhotobankUpload(clt *core.SDKClient, req *icbu.AlibabaIcbuPhotobankUploadAPIRequest, resp *icbu.AlibabaIcbuPhotobankUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIcbuPhotobankUpload(ctx context.Context, clt *core.SDKClient, req *icbu.AlibabaIcbuPhotobankUploadAPIRequest, resp *icbu.AlibabaIcbuPhotobankUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

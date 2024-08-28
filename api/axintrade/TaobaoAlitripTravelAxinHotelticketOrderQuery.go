@@ -1,6 +1,8 @@
 package axintrade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/axintrade"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.travel.axin.hotelticket.order.query
 //
 // 阿信度假交易订单查询接口
-func TaobaoAlitripTravelAxinHotelticketOrderQuery(clt *core.SDKClient, req *axintrade.TaobaoAlitripTravelAxinHotelticketOrderQueryAPIRequest, resp *axintrade.TaobaoAlitripTravelAxinHotelticketOrderQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripTravelAxinHotelticketOrderQuery(ctx context.Context, clt *core.SDKClient, req *axintrade.TaobaoAlitripTravelAxinHotelticketOrderQueryAPIRequest, resp *axintrade.TaobaoAlitripTravelAxinHotelticketOrderQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

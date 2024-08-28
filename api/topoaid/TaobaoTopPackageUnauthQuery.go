@@ -1,6 +1,8 @@
 package topoaid
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/topoaid"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.top.package.unauth.query
 //
 // 查询某手机号下的包裹
-func TaobaoTopPackageUnauthQuery(clt *core.SDKClient, req *topoaid.TaobaoTopPackageUnauthQueryAPIRequest, resp *topoaid.TaobaoTopPackageUnauthQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTopPackageUnauthQuery(ctx context.Context, clt *core.SDKClient, req *topoaid.TaobaoTopPackageUnauthQueryAPIRequest, resp *topoaid.TaobaoTopPackageUnauthQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

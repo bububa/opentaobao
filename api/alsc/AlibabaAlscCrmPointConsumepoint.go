@@ -1,6 +1,8 @@
 package alsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alsc.crm.point.consumepoint
 //
 // 积分抵现
-func AlibabaAlscCrmPointConsumepoint(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointConsumepointAPIRequest, resp *alsc.AlibabaAlscCrmPointConsumepointAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlscCrmPointConsumepoint(ctx context.Context, clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointConsumepointAPIRequest, resp *alsc.AlibabaAlscCrmPointConsumepointAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

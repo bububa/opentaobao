@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.tcls.aelophy.merchant.channel.order.updatestatus
 //
 // 订单状态变更
-func AlibabaTclsAelophyMerchantChannelOrderUpdatestatus(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest, resp *wdk.AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaTclsAelophyMerchantChannelOrderUpdatestatus(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest, resp *wdk.AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

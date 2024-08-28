@@ -1,6 +1,8 @@
 package dt
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/dt"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.cmedical.face.detection.callback
 //
 // 消费医疗魔镜项目，isv将异步测肤结果数据，回传给行业。
-func TaobaoCmedicalFaceDetectionCallback(clt *core.SDKClient, req *dt.TaobaoCmedicalFaceDetectionCallbackAPIRequest, resp *dt.TaobaoCmedicalFaceDetectionCallbackAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoCmedicalFaceDetectionCallback(ctx context.Context, clt *core.SDKClient, req *dt.TaobaoCmedicalFaceDetectionCallbackAPIRequest, resp *dt.TaobaoCmedicalFaceDetectionCallbackAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

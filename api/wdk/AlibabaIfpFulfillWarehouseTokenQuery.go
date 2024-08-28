@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ifp.fulfill.warehouse.token.query
 //
 // 用于仓内作业打印包裹信息
-func AlibabaIfpFulfillWarehouseTokenQuery(clt *core.SDKClient, req *wdk.AlibabaIfpFulfillWarehouseTokenQueryAPIRequest, resp *wdk.AlibabaIfpFulfillWarehouseTokenQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIfpFulfillWarehouseTokenQuery(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaIfpFulfillWarehouseTokenQueryAPIRequest, resp *wdk.AlibabaIfpFulfillWarehouseTokenQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

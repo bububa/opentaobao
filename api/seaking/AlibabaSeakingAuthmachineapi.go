@@ -1,6 +1,8 @@
 package seaking
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/seaking"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.seaking.authmachineapi
 //
 // 机翻Api授权
-func AlibabaSeakingAuthmachineapi(clt *core.SDKClient, req *seaking.AlibabaSeakingAuthmachineapiAPIRequest, resp *seaking.AlibabaSeakingAuthmachineapiAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaSeakingAuthmachineapi(ctx context.Context, clt *core.SDKClient, req *seaking.AlibabaSeakingAuthmachineapiAPIRequest, resp *seaking.AlibabaSeakingAuthmachineapiAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

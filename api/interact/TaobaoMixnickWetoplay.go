@@ -1,6 +1,8 @@
 package interact
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/interact"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.mixnick.wetoplay
 //
 // 微淘应用的混淆nick转为互动类型混淆nick
-func TaobaoMixnickWetoplay(clt *core.SDKClient, req *interact.TaobaoMixnickWetoplayAPIRequest, resp *interact.TaobaoMixnickWetoplayAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoMixnickWetoplay(ctx context.Context, clt *core.SDKClient, req *interact.TaobaoMixnickWetoplayAPIRequest, resp *interact.TaobaoMixnickWetoplayAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

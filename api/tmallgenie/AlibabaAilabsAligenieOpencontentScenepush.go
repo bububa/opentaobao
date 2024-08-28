@@ -1,6 +1,8 @@
 package tmallgenie
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallgenie"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ailabs.aligenie.opencontent.scenepush
 //
 // 天猫精灵音频挂靠场景接入
-func AlibabaAilabsAligenieOpencontentScenepush(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieOpencontentScenepushAPIRequest, resp *tmallgenie.AlibabaAilabsAligenieOpencontentScenepushAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAilabsAligenieOpencontentScenepush(ctx context.Context, clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieOpencontentScenepushAPIRequest, resp *tmallgenie.AlibabaAilabsAligenieOpencontentScenepushAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

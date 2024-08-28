@@ -1,6 +1,8 @@
 package degoperation
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/degoperation"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.degoperation.get.info.uuid
 //
 // 根据uuid用户抽奖次数限制
-func TaobaoDegoperationGetInfoUuid(clt *core.SDKClient, req *degoperation.TaobaoDegoperationGetInfoUuidAPIRequest, resp *degoperation.TaobaoDegoperationGetInfoUuidAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoDegoperationGetInfoUuid(ctx context.Context, clt *core.SDKClient, req *degoperation.TaobaoDegoperationGetInfoUuidAPIRequest, resp *degoperation.TaobaoDegoperationGetInfoUuidAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

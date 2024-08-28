@@ -1,6 +1,8 @@
 package alihealthalgo
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihealthalgo"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.algo.medication.safety.get
 //
 // 合理用药规则引擎服务
-func AlibabaAlihealthAlgoMedicationSafetyGet(clt *core.SDKClient, req *alihealthalgo.AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest, resp *alihealthalgo.AlibabaAlihealthAlgoMedicationSafetyGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthAlgoMedicationSafetyGet(ctx context.Context, clt *core.SDKClient, req *alihealthalgo.AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest, resp *alihealthalgo.AlibabaAlihealthAlgoMedicationSafetyGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

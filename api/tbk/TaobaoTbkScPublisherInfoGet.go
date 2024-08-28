@@ -1,6 +1,8 @@
 package tbk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbk"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.tbk.sc.publisher.info.get
 //
 // 查询已生成的渠道id或会员运营id的相关信息。
-func TaobaoTbkScPublisherInfoGet(clt *core.SDKClient, req *tbk.TaobaoTbkScPublisherInfoGetAPIRequest, resp *tbk.TaobaoTbkScPublisherInfoGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTbkScPublisherInfoGet(ctx context.Context, clt *core.SDKClient, req *tbk.TaobaoTbkScPublisherInfoGetAPIRequest, resp *tbk.TaobaoTbkScPublisherInfoGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

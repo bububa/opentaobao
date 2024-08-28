@@ -1,6 +1,8 @@
 package charity
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/charity"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.csr.donate.org.invoice.draw
 //
 // 机构开具商家票据信息
-func AlibabaCsrDonateOrgInvoiceDraw(clt *core.SDKClient, req *charity.AlibabaCsrDonateOrgInvoiceDrawAPIRequest, resp *charity.AlibabaCsrDonateOrgInvoiceDrawAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCsrDonateOrgInvoiceDraw(ctx context.Context, clt *core.SDKClient, req *charity.AlibabaCsrDonateOrgInvoiceDrawAPIRequest, resp *charity.AlibabaCsrDonateOrgInvoiceDrawAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

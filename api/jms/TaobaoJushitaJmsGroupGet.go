@@ -1,6 +1,8 @@
 package jms
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/jms"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.jushita.jms.group.get
 //
 // 查询当前appkey在ONS中已有的分组
-func TaobaoJushitaJmsGroupGet(clt *core.SDKClient, req *jms.TaobaoJushitaJmsGroupGetAPIRequest, resp *jms.TaobaoJushitaJmsGroupGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoJushitaJmsGroupGet(ctx context.Context, clt *core.SDKClient, req *jms.TaobaoJushitaJmsGroupGetAPIRequest, resp *jms.TaobaoJushitaJmsGroupGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

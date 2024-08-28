@@ -1,6 +1,8 @@
 package einvoice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/einvoice"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.einvoice.tax.opt.salaryrequest.acceptpayment
 //
 // 发薪受理接口
-func AlibabaEinvoiceTaxOptSalaryrequestAcceptpayment(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest, resp *einvoice.AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaEinvoiceTaxOptSalaryrequestAcceptpayment(ctx context.Context, clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest, resp *einvoice.AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.sku.channelsku.query
 //
 // 查询渠道商品
-func AlibabaWdkSkuChannelskuQuery(clt *core.SDKClient, req *wdk.AlibabaWdkSkuChannelskuQueryAPIRequest, resp *wdk.AlibabaWdkSkuChannelskuQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkSkuChannelskuQuery(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkSkuChannelskuQueryAPIRequest, resp *wdk.AlibabaWdkSkuChannelskuQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

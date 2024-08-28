@@ -1,6 +1,8 @@
 package idle
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idle"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.template.ques.online
 //
 // 获取SPU最新版本问卷
-func AlibabaIdleTemplateQuesOnline(clt *core.SDKClient, req *idle.AlibabaIdleTemplateQuesOnlineAPIRequest, resp *idle.AlibabaIdleTemplateQuesOnlineAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleTemplateQuesOnline(ctx context.Context, clt *core.SDKClient, req *idle.AlibabaIdleTemplateQuesOnlineAPIRequest, resp *idle.AlibabaIdleTemplateQuesOnlineAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

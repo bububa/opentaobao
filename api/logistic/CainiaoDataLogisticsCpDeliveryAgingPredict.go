@@ -1,6 +1,8 @@
 package logistic
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/logistic"
 )
@@ -15,6 +17,6 @@ import (
 // 方式1:
 // 输入：发货省、市、区、详细地址，收货省、市、区、街道、详细地址，快递公司ID
 // 输出：预估时效（小时数）
-func CainiaoDataLogisticsCpDeliveryAgingPredict(clt *core.SDKClient, req *logistic.CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest, resp *logistic.CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoDataLogisticsCpDeliveryAgingPredict(ctx context.Context, clt *core.SDKClient, req *logistic.CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest, resp *logistic.CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

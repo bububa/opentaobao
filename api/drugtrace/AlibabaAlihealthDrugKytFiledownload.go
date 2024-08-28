@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drug.kyt.filedownload
 //
 // 处理失败单据下载
-func AlibabaAlihealthDrugKytFiledownload(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytFiledownloadAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytFiledownloadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugKytFiledownload(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytFiledownloadAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytFiledownloadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package media
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/media"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.picture.update
 //
 // 修改指定图片的图片名
-func TaobaoPictureUpdate(clt *core.SDKClient, req *media.TaobaoPictureUpdateAPIRequest, resp *media.TaobaoPictureUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoPictureUpdate(ctx context.Context, clt *core.SDKClient, req *media.TaobaoPictureUpdateAPIRequest, resp *media.TaobaoPictureUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

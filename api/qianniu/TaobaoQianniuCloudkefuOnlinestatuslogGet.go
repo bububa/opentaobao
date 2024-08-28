@@ -1,6 +1,8 @@
 package qianniu
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qianniu"
 )
@@ -10,6 +12,6 @@ import (
 //
 // 按天查询客服账号的在线状态记录。如：登录，下线，挂起等
 // 有别于taobao.qianniu.cloudkefu.statuslog.get接口，这个接口可以查询30天内的流水，不需要分页查询
-func TaobaoQianniuCloudkefuOnlinestatuslogGet(clt *core.SDKClient, req *qianniu.TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest, resp *qianniu.TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQianniuCloudkefuOnlinestatuslogGet(ctx context.Context, clt *core.SDKClient, req *qianniu.TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest, resp *qianniu.TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

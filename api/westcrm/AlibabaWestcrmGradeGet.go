@@ -1,6 +1,8 @@
 package westcrm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/westcrm"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.westcrm.grade.get
 //
 // 获取会员卡等级列表
-func AlibabaWestcrmGradeGet(clt *core.SDKClient, req *westcrm.AlibabaWestcrmGradeGetAPIRequest, resp *westcrm.AlibabaWestcrmGradeGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWestcrmGradeGet(ctx context.Context, clt *core.SDKClient, req *westcrm.AlibabaWestcrmGradeGetAPIRequest, resp *westcrm.AlibabaWestcrmGradeGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

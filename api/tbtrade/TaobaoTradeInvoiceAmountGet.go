@@ -1,6 +1,8 @@
 package tbtrade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbtrade"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.trade.invoice.amount.get
 //
 // 订单应开票金额计算
-func TaobaoTradeInvoiceAmountGet(clt *core.SDKClient, req *tbtrade.TaobaoTradeInvoiceAmountGetAPIRequest, resp *tbtrade.TaobaoTradeInvoiceAmountGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTradeInvoiceAmountGet(ctx context.Context, clt *core.SDKClient, req *tbtrade.TaobaoTradeInvoiceAmountGetAPIRequest, resp *tbtrade.TaobaoTradeInvoiceAmountGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

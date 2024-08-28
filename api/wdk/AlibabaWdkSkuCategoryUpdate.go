@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.sku.category.update
 //
 // 商家类目修改接口
-func AlibabaWdkSkuCategoryUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkSkuCategoryUpdateAPIRequest, resp *wdk.AlibabaWdkSkuCategoryUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkSkuCategoryUpdate(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkSkuCategoryUpdateAPIRequest, resp *wdk.AlibabaWdkSkuCategoryUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

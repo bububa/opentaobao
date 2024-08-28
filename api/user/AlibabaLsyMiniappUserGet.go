@@ -1,6 +1,8 @@
 package user
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/user"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.lsy.miniapp.user.get
 //
 // 零售云小程序，通过授权码获取登录的卖家账号信息
-func AlibabaLsyMiniappUserGet(clt *core.SDKClient, req *user.AlibabaLsyMiniappUserGetAPIRequest, resp *user.AlibabaLsyMiniappUserGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLsyMiniappUserGet(ctx context.Context, clt *core.SDKClient, req *user.AlibabaLsyMiniappUserGetAPIRequest, resp *user.AlibabaLsyMiniappUserGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

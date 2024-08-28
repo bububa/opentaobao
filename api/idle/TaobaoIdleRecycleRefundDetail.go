@@ -1,6 +1,8 @@
 package idle
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idle"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.idle.recycle.refund.detail
 //
 // 回收订单退款详情，主要包括退款状态，超时时间，和同意退款的卖家退货地址信息
-func TaobaoIdleRecycleRefundDetail(clt *core.SDKClient, req *idle.TaobaoIdleRecycleRefundDetailAPIRequest, resp *idle.TaobaoIdleRecycleRefundDetailAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoIdleRecycleRefundDetail(ctx context.Context, clt *core.SDKClient, req *idle.TaobaoIdleRecycleRefundDetailAPIRequest, resp *idle.TaobaoIdleRecycleRefundDetailAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

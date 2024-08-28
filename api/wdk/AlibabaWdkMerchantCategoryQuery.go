@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.merchant.category.query
 //
 // 三江erp对接类目查询接口
-func AlibabaWdkMerchantCategoryQuery(clt *core.SDKClient, req *wdk.AlibabaWdkMerchantCategoryQueryAPIRequest, resp *wdk.AlibabaWdkMerchantCategoryQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkMerchantCategoryQuery(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkMerchantCategoryQueryAPIRequest, resp *wdk.AlibabaWdkMerchantCategoryQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

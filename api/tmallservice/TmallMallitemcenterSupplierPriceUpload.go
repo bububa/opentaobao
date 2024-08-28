@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.mallitemcenter.supplier.price.upload
 //
 // 天猫服务商上传服务价格
-func TmallMallitemcenterSupplierPriceUpload(clt *core.SDKClient, req *tmallservice.TmallMallitemcenterSupplierPriceUploadAPIRequest, resp *tmallservice.TmallMallitemcenterSupplierPriceUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallMallitemcenterSupplierPriceUpload(ctx context.Context, clt *core.SDKClient, req *tmallservice.TmallMallitemcenterSupplierPriceUploadAPIRequest, resp *tmallservice.TmallMallitemcenterSupplierPriceUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

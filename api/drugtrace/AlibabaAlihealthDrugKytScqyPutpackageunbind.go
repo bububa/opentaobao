@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drug.kyt.scqy.putpackageunbind
 //
 // 码拼箱解除父子关系接口
-func AlibabaAlihealthDrugKytScqyPutpackageunbind(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytScqyPutpackageunbindAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytScqyPutpackageunbindAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugKytScqyPutpackageunbind(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytScqyPutpackageunbindAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytScqyPutpackageunbindAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

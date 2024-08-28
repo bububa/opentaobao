@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.supplychain.channel.product.quantity.update
 //
 // 渠道无仓库存更新接口
-func TmallSupplychainChannelProductQuantityUpdate(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductQuantityUpdateAPIRequest, resp *fenxiao.TmallSupplychainChannelProductQuantityUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallSupplychainChannelProductQuantityUpdate(ctx context.Context, clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductQuantityUpdateAPIRequest, resp *fenxiao.TmallSupplychainChannelProductQuantityUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

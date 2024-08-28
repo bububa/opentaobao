@@ -1,6 +1,8 @@
 package idle
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idle"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.rent.order.checkstatus.upload
 //
 // 上传验收结果
-func AlibabaIdleRentOrderCheckstatusUpload(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderCheckstatusUploadAPIRequest, resp *idle.AlibabaIdleRentOrderCheckstatusUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleRentOrderCheckstatusUpload(ctx context.Context, clt *core.SDKClient, req *idle.AlibabaIdleRentOrderCheckstatusUploadAPIRequest, resp *idle.AlibabaIdleRentOrderCheckstatusUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

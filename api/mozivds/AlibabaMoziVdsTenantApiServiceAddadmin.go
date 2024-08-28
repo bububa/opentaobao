@@ -1,6 +1,8 @@
 package mozivds
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/mozivds"
 )
@@ -10,6 +12,6 @@ import (
 //
 // 新建租户管理员
 // alibaba.mozi.vds.tenant.api.service.addadmin
-func AlibabaMoziVdsTenantApiServiceAddadmin(clt *core.SDKClient, req *mozivds.AlibabaMoziVdsTenantApiServiceAddadminAPIRequest, resp *mozivds.AlibabaMoziVdsTenantApiServiceAddadminAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMoziVdsTenantApiServiceAddadmin(ctx context.Context, clt *core.SDKClient, req *mozivds.AlibabaMoziVdsTenantApiServiceAddadminAPIRequest, resp *mozivds.AlibabaMoziVdsTenantApiServiceAddadminAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

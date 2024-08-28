@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drug.kyt.dr.getbyrefentid
 //
 // 根据企业唯一标识查看企业详细信息
-func AlibabaAlihealthDrugKytDrGetbyrefentid(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrGetbyrefentidAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytDrGetbyrefentidAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugKytDrGetbyrefentid(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrGetbyrefentidAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytDrGetbyrefentidAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

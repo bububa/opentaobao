@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.promotion.coupon.apply
 //
 // 优惠券领取
-func TaobaoPromotionCouponApply(clt *core.SDKClient, req *promotion.TaobaoPromotionCouponApplyAPIRequest, resp *promotion.TaobaoPromotionCouponApplyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoPromotionCouponApply(ctx context.Context, clt *core.SDKClient, req *promotion.TaobaoPromotionCouponApplyAPIRequest, resp *promotion.TaobaoPromotionCouponApplyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

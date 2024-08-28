@@ -1,6 +1,8 @@
 package tuanhotel
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tuanhotel"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.xhotel.combo.offshelf
 //
 // 酒店套餐下架
-func TaobaoXhotelComboOffshelf(clt *core.SDKClient, req *tuanhotel.TaobaoXhotelComboOffshelfAPIRequest, resp *tuanhotel.TaobaoXhotelComboOffshelfAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelComboOffshelf(ctx context.Context, clt *core.SDKClient, req *tuanhotel.TaobaoXhotelComboOffshelfAPIRequest, resp *tuanhotel.TaobaoXhotelComboOffshelfAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

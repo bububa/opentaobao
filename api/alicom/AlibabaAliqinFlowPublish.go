@@ -1,6 +1,8 @@
 package alicom
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alicom"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.aliqin.flow.publish
 //
 // 阿里通信流量下发功能，允许用户补发
-func AlibabaAliqinFlowPublish(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowPublishAPIRequest, resp *alicom.AlibabaAliqinFlowPublishAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAliqinFlowPublish(ctx context.Context, clt *core.SDKClient, req *alicom.AlibabaAliqinFlowPublishAPIRequest, resp *alicom.AlibabaAliqinFlowPublishAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

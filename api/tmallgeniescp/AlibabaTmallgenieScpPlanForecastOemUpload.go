@@ -1,6 +1,8 @@
 package tmallgeniescp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallgeniescp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.tmallgenie.scp.plan.forecast.oem.upload
 //
 // 供应商预测（OEM-成品）回传接口
-func AlibabaTmallgenieScpPlanForecastOemUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanForecastOemUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaTmallgenieScpPlanForecastOemUpload(ctx context.Context, clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanForecastOemUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

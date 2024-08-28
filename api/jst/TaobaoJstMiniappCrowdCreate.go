@@ -1,6 +1,8 @@
 package jst
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/jst"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.jst.miniapp.crowd.create
 //
 // 小程序活动创建
-func TaobaoJstMiniappCrowdCreate(clt *core.SDKClient, req *jst.TaobaoJstMiniappCrowdCreateAPIRequest, resp *jst.TaobaoJstMiniappCrowdCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoJstMiniappCrowdCreate(ctx context.Context, clt *core.SDKClient, req *jst.TaobaoJstMiniappCrowdCreateAPIRequest, resp *jst.TaobaoJstMiniappCrowdCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

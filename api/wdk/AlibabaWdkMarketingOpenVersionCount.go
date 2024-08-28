@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.marketing.open.version.count
 //
 // 版本数量查询
-func AlibabaWdkMarketingOpenVersionCount(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingOpenVersionCountAPIRequest, resp *wdk.AlibabaWdkMarketingOpenVersionCountAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkMarketingOpenVersionCount(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkMarketingOpenVersionCountAPIRequest, resp *wdk.AlibabaWdkMarketingOpenVersionCountAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package xhotelcrm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhotelcrm"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.xhotel.member.alipay.query
 //
 // 希尔顿会员查询
-func TaobaoXhotelMemberAlipayQuery(clt *core.SDKClient, req *xhotelcrm.TaobaoXhotelMemberAlipayQueryAPIRequest, resp *xhotelcrm.TaobaoXhotelMemberAlipayQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelMemberAlipayQuery(ctx context.Context, clt *core.SDKClient, req *xhotelcrm.TaobaoXhotelMemberAlipayQueryAPIRequest, resp *xhotelcrm.TaobaoXhotelMemberAlipayQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

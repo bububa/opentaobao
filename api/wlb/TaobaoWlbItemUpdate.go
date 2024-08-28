@@ -1,6 +1,8 @@
 package wlb
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wlb"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.wlb.item.update
 //
 // 修改物流宝商品信息
-func TaobaoWlbItemUpdate(clt *core.SDKClient, req *wlb.TaobaoWlbItemUpdateAPIRequest, resp *wlb.TaobaoWlbItemUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWlbItemUpdate(ctx context.Context, clt *core.SDKClient, req *wlb.TaobaoWlbItemUpdateAPIRequest, resp *wlb.TaobaoWlbItemUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package idle
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idle"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.recycle.order.fulfillment
 //
 // 外部回收商针对自有回收订单的履行
-func AlibabaIdleRecycleOrderFulfillment(clt *core.SDKClient, req *idle.AlibabaIdleRecycleOrderFulfillmentAPIRequest, resp *idle.AlibabaIdleRecycleOrderFulfillmentAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleRecycleOrderFulfillment(ctx context.Context, clt *core.SDKClient, req *idle.AlibabaIdleRecycleOrderFulfillmentAPIRequest, resp *idle.AlibabaIdleRecycleOrderFulfillmentAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

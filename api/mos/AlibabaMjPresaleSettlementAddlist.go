@@ -1,6 +1,8 @@
 package mos
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/mos"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.mj.presale.settlement.addlist
 //
 // 用于预售活动结算数据的回传。
-func AlibabaMjPresaleSettlementAddlist(clt *core.SDKClient, req *mos.AlibabaMjPresaleSettlementAddlistAPIRequest, resp *mos.AlibabaMjPresaleSettlementAddlistAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMjPresaleSettlementAddlist(ctx context.Context, clt *core.SDKClient, req *mos.AlibabaMjPresaleSettlementAddlistAPIRequest, resp *mos.AlibabaMjPresaleSettlementAddlistAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

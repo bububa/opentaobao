@@ -1,6 +1,8 @@
 package perfect
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/perfect"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.perfect.performance.item.query
 //
 // 同城零售商品完美履约信息查询
-func AlibabaPerfectPerformanceItemQuery(clt *core.SDKClient, req *perfect.AlibabaPerfectPerformanceItemQueryAPIRequest, resp *perfect.AlibabaPerfectPerformanceItemQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaPerfectPerformanceItemQuery(ctx context.Context, clt *core.SDKClient, req *perfect.AlibabaPerfectPerformanceItemQueryAPIRequest, resp *perfect.AlibabaPerfectPerformanceItemQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

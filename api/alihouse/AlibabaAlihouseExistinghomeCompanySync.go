@@ -1,6 +1,8 @@
 package alihouse
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihouse"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihouse.existinghome.company.sync
 //
 // 二手房公司同步接口
-func AlibabaAlihouseExistinghomeCompanySync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeCompanySyncAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeCompanySyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihouseExistinghomeCompanySync(ctx context.Context, clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeCompanySyncAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeCompanySyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package game
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/game"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.apple.olduser.charge.notify
 //
 // 老用户激活并兑换通知接口
-func TaobaoAppleOlduserChargeNotify(clt *core.SDKClient, req *game.TaobaoAppleOlduserChargeNotifyAPIRequest, resp *game.TaobaoAppleOlduserChargeNotifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAppleOlduserChargeNotify(ctx context.Context, clt *core.SDKClient, req *game.TaobaoAppleOlduserChargeNotifyAPIRequest, resp *game.TaobaoAppleOlduserChargeNotifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

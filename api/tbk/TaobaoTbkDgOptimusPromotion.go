@@ -1,6 +1,8 @@
 package tbk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbk"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.tbk.dg.optimus.promotion
 //
 // 推广者使用。支持入参推广者对应的“推广位”和官方提供的“权益物料id”，获取指定权益物料。
-func TaobaoTbkDgOptimusPromotion(clt *core.SDKClient, req *tbk.TaobaoTbkDgOptimusPromotionAPIRequest, resp *tbk.TaobaoTbkDgOptimusPromotionAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTbkDgOptimusPromotion(ctx context.Context, clt *core.SDKClient, req *tbk.TaobaoTbkDgOptimusPromotionAPIRequest, resp *tbk.TaobaoTbkDgOptimusPromotionAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

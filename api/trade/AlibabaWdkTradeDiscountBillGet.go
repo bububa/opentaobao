@@ -1,6 +1,8 @@
 package trade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/trade"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.trade.discount.bill.get
 //
 // 商家查询订单优惠账单
-func AlibabaWdkTradeDiscountBillGet(clt *core.SDKClient, req *trade.AlibabaWdkTradeDiscountBillGetAPIRequest, resp *trade.AlibabaWdkTradeDiscountBillGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkTradeDiscountBillGet(ctx context.Context, clt *core.SDKClient, req *trade.AlibabaWdkTradeDiscountBillGetAPIRequest, resp *trade.AlibabaWdkTradeDiscountBillGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package dengta
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/dengta"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.pictures.dengta.ims.douyin.account.changed
 //
 // 接收发生变化的抖音帐号
-func AlibabaPicturesDengtaImsDouyinAccountChanged(clt *core.SDKClient, req *dengta.AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest, resp *dengta.AlibabaPicturesDengtaImsDouyinAccountChangedAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaPicturesDengtaImsDouyinAccountChanged(ctx context.Context, clt *core.SDKClient, req *dengta.AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest, resp *dengta.AlibabaPicturesDengtaImsDouyinAccountChangedAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

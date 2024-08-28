@@ -1,6 +1,8 @@
 package feedflow
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/feedflow"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.feedflow.item.adzone.rpthourlist
 //
 // 广告主资源包分时数据查询，支持广告主查询最近90天内某一天的资源包维度分时报表数据
-func TaobaoFeedflowItemAdzoneRpthourlist(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdzoneRpthourlistAPIRequest, resp *feedflow.TaobaoFeedflowItemAdzoneRpthourlistAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFeedflowItemAdzoneRpthourlist(ctx context.Context, clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdzoneRpthourlistAPIRequest, resp *feedflow.TaobaoFeedflowItemAdzoneRpthourlistAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

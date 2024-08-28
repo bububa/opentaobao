@@ -1,6 +1,8 @@
 package newretail
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/newretail"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.it.ap.address.set
 //
 // 该接口可为ISV系统提供 ap位置信息维护的功能
-func AlibabaItApAddressSet(clt *core.SDKClient, req *newretail.AlibabaItApAddressSetAPIRequest, resp *newretail.AlibabaItApAddressSetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaItApAddressSet(ctx context.Context, clt *core.SDKClient, req *newretail.AlibabaItApAddressSetAPIRequest, resp *newretail.AlibabaItApAddressSetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

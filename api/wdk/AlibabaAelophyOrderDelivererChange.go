@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.aelophy.order.deliverer.change
 //
 // 配送员信息变更接口
-func AlibabaAelophyOrderDelivererChange(clt *core.SDKClient, req *wdk.AlibabaAelophyOrderDelivererChangeAPIRequest, resp *wdk.AlibabaAelophyOrderDelivererChangeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAelophyOrderDelivererChange(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaAelophyOrderDelivererChangeAPIRequest, resp *wdk.AlibabaAelophyOrderDelivererChangeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

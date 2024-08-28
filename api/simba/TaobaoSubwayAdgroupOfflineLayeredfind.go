@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.subway.adgroup.offline.layeredfind
 //
 // 查询单元离线列表
-func TaobaoSubwayAdgroupOfflineLayeredfind(clt *core.SDKClient, req *simba.TaobaoSubwayAdgroupOfflineLayeredfindAPIRequest, resp *simba.TaobaoSubwayAdgroupOfflineLayeredfindAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSubwayAdgroupOfflineLayeredfind(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSubwayAdgroupOfflineLayeredfindAPIRequest, resp *simba.TaobaoSubwayAdgroupOfflineLayeredfindAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

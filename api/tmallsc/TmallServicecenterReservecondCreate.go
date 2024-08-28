@@ -1,6 +1,8 @@
 package tmallsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.servicecenter.reservecond.create
 //
 // 1、设置主动预约开通条件
-func TmallServicecenterReservecondCreate(clt *core.SDKClient, req *tmallsc.TmallServicecenterReservecondCreateAPIRequest, resp *tmallsc.TmallServicecenterReservecondCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallServicecenterReservecondCreate(ctx context.Context, clt *core.SDKClient, req *tmallsc.TmallServicecenterReservecondCreateAPIRequest, resp *tmallsc.TmallServicecenterReservecondCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

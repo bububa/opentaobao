@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.hm.marketing.itempool.deleteactivity
 //
 // 删除商品池活动
-func AlibabaHmMarketingItempoolDeleteactivity(clt *core.SDKClient, req *wdk.AlibabaHmMarketingItempoolDeleteactivityAPIRequest, resp *wdk.AlibabaHmMarketingItempoolDeleteactivityAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaHmMarketingItempoolDeleteactivity(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaHmMarketingItempoolDeleteactivityAPIRequest, resp *wdk.AlibabaHmMarketingItempoolDeleteactivityAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

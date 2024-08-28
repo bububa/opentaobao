@@ -1,6 +1,8 @@
 package wlb
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wlb"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.wlb.wms.inventory.lack.upload
 //
 // 缺货通知
-func TaobaoWlbWmsInventoryLackUpload(clt *core.SDKClient, req *wlb.TaobaoWlbWmsInventoryLackUploadAPIRequest, resp *wlb.TaobaoWlbWmsInventoryLackUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWlbWmsInventoryLackUpload(ctx context.Context, clt *core.SDKClient, req *wlb.TaobaoWlbWmsInventoryLackUploadAPIRequest, resp *wlb.TaobaoWlbWmsInventoryLackUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

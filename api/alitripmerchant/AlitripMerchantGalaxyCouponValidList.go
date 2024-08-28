@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.merchant.galaxy.coupon.valid.list
 //
 // 雅高小程序用户有效优惠券列表
-func AlitripMerchantGalaxyCouponValidList(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyCouponValidListAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyCouponValidListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripMerchantGalaxyCouponValidList(ctx context.Context, clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyCouponValidListAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyCouponValidListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

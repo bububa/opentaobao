@@ -1,6 +1,8 @@
 package nrt
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/nrt"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.nrt.sms.code.send
 //
 // 喵零发送短信
-func TmallNrtSmsCodeSend(clt *core.SDKClient, req *nrt.TmallNrtSmsCodeSendAPIRequest, resp *nrt.TmallNrtSmsCodeSendAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallNrtSmsCodeSend(ctx context.Context, clt *core.SDKClient, req *nrt.TmallNrtSmsCodeSendAPIRequest, resp *nrt.TmallNrtSmsCodeSendAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

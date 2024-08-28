@@ -1,6 +1,8 @@
 package itpolicy
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/itpolicy"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.it.fare.addrt
 //
 // 自有政策往返添加接口
-func TaobaoAlitripItFareAddrt(clt *core.SDKClient, req *itpolicy.TaobaoAlitripItFareAddrtAPIRequest, resp *itpolicy.TaobaoAlitripItFareAddrtAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripItFareAddrt(ctx context.Context, clt *core.SDKClient, req *itpolicy.TaobaoAlitripItFareAddrtAPIRequest, resp *itpolicy.TaobaoAlitripItFareAddrtAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

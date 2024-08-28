@@ -1,6 +1,8 @@
 package ascp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ascp"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.logistics.warehouse.operation.update
 //
 // 仓作业能力新建/更新
-func TaobaoLogisticsWarehouseOperationUpdate(clt *core.SDKClient, req *ascp.TaobaoLogisticsWarehouseOperationUpdateAPIRequest, resp *ascp.TaobaoLogisticsWarehouseOperationUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoLogisticsWarehouseOperationUpdate(ctx context.Context, clt *core.SDKClient, req *ascp.TaobaoLogisticsWarehouseOperationUpdateAPIRequest, resp *ascp.TaobaoLogisticsWarehouseOperationUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.simba.rpt.campaignbase.get
 //
 // 推广计划报表基础数据对象
-func TaobaoSimbaRptCampaignbaseGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptCampaignbaseGetAPIRequest, resp *simba.TaobaoSimbaRptCampaignbaseGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSimbaRptCampaignbaseGet(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSimbaRptCampaignbaseGetAPIRequest, resp *simba.TaobaoSimbaRptCampaignbaseGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

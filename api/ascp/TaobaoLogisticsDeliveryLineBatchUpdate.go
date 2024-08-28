@@ -1,6 +1,8 @@
 package ascp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ascp"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.logistics.delivery.line.batch.update
 //
 // 线路能力创建/更新
-func TaobaoLogisticsDeliveryLineBatchUpdate(clt *core.SDKClient, req *ascp.TaobaoLogisticsDeliveryLineBatchUpdateAPIRequest, resp *ascp.TaobaoLogisticsDeliveryLineBatchUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoLogisticsDeliveryLineBatchUpdate(ctx context.Context, clt *core.SDKClient, req *ascp.TaobaoLogisticsDeliveryLineBatchUpdateAPIRequest, resp *ascp.TaobaoLogisticsDeliveryLineBatchUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

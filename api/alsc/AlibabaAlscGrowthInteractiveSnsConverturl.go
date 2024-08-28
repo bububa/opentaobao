@@ -1,6 +1,8 @@
 package alsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alsc.growth.interactive.sns.converturl
 //
 // 防封接口
-func AlibabaAlscGrowthInteractiveSnsConverturl(clt *core.SDKClient, req *alsc.AlibabaAlscGrowthInteractiveSnsConverturlAPIRequest, resp *alsc.AlibabaAlscGrowthInteractiveSnsConverturlAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlscGrowthInteractiveSnsConverturl(ctx context.Context, clt *core.SDKClient, req *alsc.AlibabaAlscGrowthInteractiveSnsConverturlAPIRequest, resp *alsc.AlibabaAlscGrowthInteractiveSnsConverturlAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

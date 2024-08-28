@@ -1,6 +1,8 @@
 package alisports
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alisports"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alisports.passport.oauth.alipaygrant
 //
 // 开放给乐心运动使用的支付宝授权接口
-func AlibabaAlisportsPassportOauthAlipaygrant(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportOauthAlipaygrantAPIRequest, resp *alisports.AlibabaAlisportsPassportOauthAlipaygrantAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlisportsPassportOauthAlipaygrant(ctx context.Context, clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportOauthAlipaygrantAPIRequest, resp *alisports.AlibabaAlisportsPassportOauthAlipaygrantAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

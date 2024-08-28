@@ -1,6 +1,8 @@
 package aesolution
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/aesolution"
 )
@@ -9,6 +11,6 @@ import (
 // aliexpress.solution.order.info.get
 //
 // get order detail info
-func AliexpressSolutionOrderInfoGet(clt *core.SDKClient, req *aesolution.AliexpressSolutionOrderInfoGetAPIRequest, resp *aesolution.AliexpressSolutionOrderInfoGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliexpressSolutionOrderInfoGet(ctx context.Context, clt *core.SDKClient, req *aesolution.AliexpressSolutionOrderInfoGetAPIRequest, resp *aesolution.AliexpressSolutionOrderInfoGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

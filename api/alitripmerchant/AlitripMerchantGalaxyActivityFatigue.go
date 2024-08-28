@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.merchant.galaxy.activity.fatigue
 //
 // 星河产品-营销抽奖首页弹窗疲劳度控制服务
-func AlitripMerchantGalaxyActivityFatigue(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyActivityFatigueAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyActivityFatigueAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripMerchantGalaxyActivityFatigue(ctx context.Context, clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyActivityFatigueAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyActivityFatigueAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

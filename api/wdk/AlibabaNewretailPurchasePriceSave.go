@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.newretail.purchase.price.save
 //
 // 共享库存业务 供应商上传商品采购价
-func AlibabaNewretailPurchasePriceSave(clt *core.SDKClient, req *wdk.AlibabaNewretailPurchasePriceSaveAPIRequest, resp *wdk.AlibabaNewretailPurchasePriceSaveAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaNewretailPurchasePriceSave(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaNewretailPurchasePriceSaveAPIRequest, resp *wdk.AlibabaNewretailPurchasePriceSaveAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

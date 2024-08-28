@@ -1,6 +1,8 @@
 package openmall
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/openmall"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.openmall.trade.create
 //
 // 创建Openmall订单
-func TaobaoOpenmallTradeCreate(clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeCreateAPIRequest, resp *openmall.TaobaoOpenmallTradeCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOpenmallTradeCreate(ctx context.Context, clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeCreateAPIRequest, resp *openmall.TaobaoOpenmallTradeCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

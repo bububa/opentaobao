@@ -1,6 +1,8 @@
 package logistic
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/logistic"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.logistics.express.service.sync
 //
 // 服务信息回告接口
-func TaobaoLogisticsExpressServiceSync(clt *core.SDKClient, req *logistic.TaobaoLogisticsExpressServiceSyncAPIRequest, resp *logistic.TaobaoLogisticsExpressServiceSyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoLogisticsExpressServiceSync(ctx context.Context, clt *core.SDKClient, req *logistic.TaobaoLogisticsExpressServiceSyncAPIRequest, resp *logistic.TaobaoLogisticsExpressServiceSyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

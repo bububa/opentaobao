@@ -1,6 +1,8 @@
 package alsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alsc.crm.customer.updateppw
 //
 // 修改支付密码
-func AlibabaAlscCrmCustomerUpdateppw(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCustomerUpdateppwAPIRequest, resp *alsc.AlibabaAlscCrmCustomerUpdateppwAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlscCrmCustomerUpdateppw(ctx context.Context, clt *core.SDKClient, req *alsc.AlibabaAlscCrmCustomerUpdateppwAPIRequest, resp *alsc.AlibabaAlscCrmCustomerUpdateppwAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

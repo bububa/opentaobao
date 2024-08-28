@@ -1,6 +1,8 @@
 package guoguo
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/guoguo"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.guoguo.backup.graborder.takepackage
 //
 // 快递公司回传订单号和四位取件码给菜鸟裹裹
-func CainiaoGuoguoBackupGraborderTakepackage(clt *core.SDKClient, req *guoguo.CainiaoGuoguoBackupGraborderTakepackageAPIRequest, resp *guoguo.CainiaoGuoguoBackupGraborderTakepackageAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoGuoguoBackupGraborderTakepackage(ctx context.Context, clt *core.SDKClient, req *guoguo.CainiaoGuoguoBackupGraborderTakepackageAPIRequest, resp *guoguo.CainiaoGuoguoBackupGraborderTakepackageAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

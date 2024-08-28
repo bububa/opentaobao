@@ -1,6 +1,8 @@
 package icburfq
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/icburfq"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.icbu.rfq.search
 //
 // 用于查询RFQ的信息
-func AlibabaIcbuRfqSearch(clt *core.SDKClient, req *icburfq.AlibabaIcbuRfqSearchAPIRequest, resp *icburfq.AlibabaIcbuRfqSearchAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIcbuRfqSearch(ctx context.Context, clt *core.SDKClient, req *icburfq.AlibabaIcbuRfqSearchAPIRequest, resp *icburfq.AlibabaIcbuRfqSearchAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

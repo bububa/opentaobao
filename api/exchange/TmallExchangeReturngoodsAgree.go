@@ -1,6 +1,8 @@
 package exchange
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/exchange"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.exchange.returngoods.agree
 //
 // 卖家确认收货
-func TmallExchangeReturngoodsAgree(clt *core.SDKClient, req *exchange.TmallExchangeReturngoodsAgreeAPIRequest, resp *exchange.TmallExchangeReturngoodsAgreeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallExchangeReturngoodsAgree(ctx context.Context, clt *core.SDKClient, req *exchange.TmallExchangeReturngoodsAgreeAPIRequest, resp *exchange.TmallExchangeReturngoodsAgreeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

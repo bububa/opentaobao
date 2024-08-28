@@ -1,6 +1,8 @@
 package tmallchannel
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallchannel"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.channel.trade.prepay.offline.reduce
 //
 // 渠道分销供应商上传线下流水预存款（减少）
-func TaobaoChannelTradePrepayOfflineReduce(clt *core.SDKClient, req *tmallchannel.TaobaoChannelTradePrepayOfflineReduceAPIRequest, resp *tmallchannel.TaobaoChannelTradePrepayOfflineReduceAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoChannelTradePrepayOfflineReduce(ctx context.Context, clt *core.SDKClient, req *tmallchannel.TaobaoChannelTradePrepayOfflineReduceAPIRequest, resp *tmallchannel.TaobaoChannelTradePrepayOfflineReduceAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

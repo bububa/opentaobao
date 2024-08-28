@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.tcls.aelophy.merchant.channel.order.sliceget
 //
 // 获取履约时间片
-func AlibabaTclsAelophyMerchantChannelOrderSliceget(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest, resp *wdk.AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaTclsAelophyMerchantChannelOrderSliceget(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest, resp *wdk.AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

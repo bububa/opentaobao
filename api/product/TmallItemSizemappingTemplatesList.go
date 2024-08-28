@@ -1,6 +1,8 @@
 package product
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/product"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.item.sizemapping.templates.list
 //
 // 获取所有尺码表模板列表。
-func TmallItemSizemappingTemplatesList(clt *core.SDKClient, req *product.TmallItemSizemappingTemplatesListAPIRequest, resp *product.TmallItemSizemappingTemplatesListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallItemSizemappingTemplatesList(ctx context.Context, clt *core.SDKClient, req *product.TmallItemSizemappingTemplatesListAPIRequest, resp *product.TmallItemSizemappingTemplatesListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

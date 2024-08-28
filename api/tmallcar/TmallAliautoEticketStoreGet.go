@@ -1,6 +1,8 @@
 package tmallcar
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallcar"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.aliauto.eticket.store.get
 //
 // 查询电子凭证对应门店信息
-func TmallAliautoEticketStoreGet(clt *core.SDKClient, req *tmallcar.TmallAliautoEticketStoreGetAPIRequest, resp *tmallcar.TmallAliautoEticketStoreGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallAliautoEticketStoreGet(ctx context.Context, clt *core.SDKClient, req *tmallcar.TmallAliautoEticketStoreGetAPIRequest, resp *tmallcar.TmallAliautoEticketStoreGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

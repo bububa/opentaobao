@@ -1,6 +1,8 @@
 package idleisv
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idleisv"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.isv.order.ship
 //
 // 闲鱼开放平台服务商订单发货接口
-func AlibabaIdleIsvOrderShip(clt *core.SDKClient, req *idleisv.AlibabaIdleIsvOrderShipAPIRequest, resp *idleisv.AlibabaIdleIsvOrderShipAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleIsvOrderShip(ctx context.Context, clt *core.SDKClient, req *idleisv.AlibabaIdleIsvOrderShipAPIRequest, resp *idleisv.AlibabaIdleIsvOrderShipAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

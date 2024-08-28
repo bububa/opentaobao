@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.scitem.map.delete
 //
 // 根据后端商品Id，失效指定用户的商品与后端商品的映射关系
-func TaobaoScitemMapDelete(clt *core.SDKClient, req *fenxiao.TaobaoScitemMapDeleteAPIRequest, resp *fenxiao.TaobaoScitemMapDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoScitemMapDelete(ctx context.Context, clt *core.SDKClient, req *fenxiao.TaobaoScitemMapDeleteAPIRequest, resp *fenxiao.TaobaoScitemMapDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package lstvending
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/lstvending"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.lst.vending.cargospace.save
 //
 // 自动售卖机货道数据回流接口，ISV通过调用此接口上传售卖机货道信息。
-func AlibabaLstVendingCargospaceSave(clt *core.SDKClient, req *lstvending.AlibabaLstVendingCargospaceSaveAPIRequest, resp *lstvending.AlibabaLstVendingCargospaceSaveAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLstVendingCargospaceSave(ctx context.Context, clt *core.SDKClient, req *lstvending.AlibabaLstVendingCargospaceSaveAPIRequest, resp *lstvending.AlibabaLstVendingCargospaceSaveAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

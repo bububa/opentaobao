@@ -1,6 +1,8 @@
 package examination
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/examination"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.examination.reserve.cancel
 //
 // 体检机构对接_体检取消
-func AlibabaAlihealthExaminationReserveCancel(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReserveCancelAPIRequest, resp *examination.AlibabaAlihealthExaminationReserveCancelAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthExaminationReserveCancel(ctx context.Context, clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReserveCancelAPIRequest, resp *examination.AlibabaAlihealthExaminationReserveCancelAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

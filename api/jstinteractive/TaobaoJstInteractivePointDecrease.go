@@ -1,6 +1,8 @@
 package jstinteractive
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/jstinteractive"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.jst.interactive.point.decrease
 //
 // 扣减用户的互动积分
-func TaobaoJstInteractivePointDecrease(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractivePointDecreaseAPIRequest, resp *jstinteractive.TaobaoJstInteractivePointDecreaseAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoJstInteractivePointDecrease(ctx context.Context, clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractivePointDecreaseAPIRequest, resp *jstinteractive.TaobaoJstInteractivePointDecreaseAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

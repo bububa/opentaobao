@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.servicecenter.worker.create
 //
 // 服务商工人信息创建
-func TmallServicecenterWorkerCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerCreateAPIRequest, resp *tmallservice.TmallServicecenterWorkerCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallServicecenterWorkerCreate(ctx context.Context, clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerCreateAPIRequest, resp *tmallservice.TmallServicecenterWorkerCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package einvoice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/einvoice"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.einvoice.partner.upload
 //
 // 服务商发票上传接口（非授权）
-func AlibabaEinvoicePartnerUpload(clt *core.SDKClient, req *einvoice.AlibabaEinvoicePartnerUploadAPIRequest, resp *einvoice.AlibabaEinvoicePartnerUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaEinvoicePartnerUpload(ctx context.Context, clt *core.SDKClient, req *einvoice.AlibabaEinvoicePartnerUploadAPIRequest, resp *einvoice.AlibabaEinvoicePartnerUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

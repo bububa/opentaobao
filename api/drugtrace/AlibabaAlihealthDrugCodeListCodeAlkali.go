@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -15,6 +17,6 @@ import (
 // 若所传的监管码是非最小包装监管码，且存在药品混包的情况，则此接口不支持。这种
 // 情况下，需要分多次调用该接口。
 // 核查平台优先过滤非8开头的，长度非20位数字的码信息。
-func AlibabaAlihealthDrugCodeListCodeAlkali(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest, resp *drugtrace.AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugCodeListCodeAlkali(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeListCodeAlkaliAPIRequest, resp *drugtrace.AlibabaAlihealthDrugCodeListCodeAlkaliAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ssc.supplyplatform.servicedefinition.querysku
 //
 // 服务sku查询
-func AlibabaSscSupplyplatformServicedefinitionQuerysku(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest, resp *tmallservice.AlibabaSscSupplyplatformServicedefinitionQueryskuAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaSscSupplyplatformServicedefinitionQuerysku(ctx context.Context, clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest, resp *tmallservice.AlibabaSscSupplyplatformServicedefinitionQueryskuAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

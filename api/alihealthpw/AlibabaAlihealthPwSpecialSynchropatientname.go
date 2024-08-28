@@ -1,6 +1,8 @@
 package alihealthpw
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihealthpw"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.pw.special.synchropatientname
 //
 // 同步患者姓名至阿里健康
-func AlibabaAlihealthPwSpecialSynchropatientname(clt *core.SDKClient, req *alihealthpw.AlibabaAlihealthPwSpecialSynchropatientnameAPIRequest, resp *alihealthpw.AlibabaAlihealthPwSpecialSynchropatientnameAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthPwSpecialSynchropatientname(ctx context.Context, clt *core.SDKClient, req *alihealthpw.AlibabaAlihealthPwSpecialSynchropatientnameAPIRequest, resp *alihealthpw.AlibabaAlihealthPwSpecialSynchropatientnameAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

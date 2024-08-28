@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.servicecenter.workcard.complete
 //
 // 工单完结
-func TmallServicecenterWorkcardComplete(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardCompleteAPIRequest, resp *tmallservice.TmallServicecenterWorkcardCompleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallServicecenterWorkcardComplete(ctx context.Context, clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardCompleteAPIRequest, resp *tmallservice.TmallServicecenterWorkcardCompleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package ascpffo
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ascpffo"
 )
@@ -9,6 +11,6 @@ import (
 // aliexpress.ascp.warehouse.inventory.query
 //
 // AliExpress在仓库存查询查询API
-func AliexpressAscpWarehouseInventoryQuery(clt *core.SDKClient, req *ascpffo.AliexpressAscpWarehouseInventoryQueryAPIRequest, resp *ascpffo.AliexpressAscpWarehouseInventoryQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliexpressAscpWarehouseInventoryQuery(ctx context.Context, clt *core.SDKClient, req *ascpffo.AliexpressAscpWarehouseInventoryQueryAPIRequest, resp *ascpffo.AliexpressAscpWarehouseInventoryQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

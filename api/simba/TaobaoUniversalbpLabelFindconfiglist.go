@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.universalbp.label.findconfiglist
 //
 // 入参账号信息，出参可用标签id，用于下游接口入参
-func TaobaoUniversalbpLabelFindconfiglist(clt *core.SDKClient, req *simba.TaobaoUniversalbpLabelFindconfiglistAPIRequest, resp *simba.TaobaoUniversalbpLabelFindconfiglistAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoUniversalbpLabelFindconfiglist(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoUniversalbpLabelFindconfiglistAPIRequest, resp *simba.TaobaoUniversalbpLabelFindconfiglistAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package shop
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/shop"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.sellercats.list.get
 //
 // 此API获取当前卖家店铺在淘宝前端被展示的浏览导航类目（面向买家）
-func TaobaoSellercatsListGet(clt *core.SDKClient, req *shop.TaobaoSellercatsListGetAPIRequest, resp *shop.TaobaoSellercatsListGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSellercatsListGet(ctx context.Context, clt *core.SDKClient, req *shop.TaobaoSellercatsListGetAPIRequest, resp *shop.TaobaoSellercatsListGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package idle
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idle"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.rent.order.receiveitem
 //
 // 确认揽收/签收
-func AlibabaIdleRentOrderReceiveitem(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderReceiveitemAPIRequest, resp *idle.AlibabaIdleRentOrderReceiveitemAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleRentOrderReceiveitem(ctx context.Context, clt *core.SDKClient, req *idle.AlibabaIdleRentOrderReceiveitemAPIRequest, resp *idle.AlibabaIdleRentOrderReceiveitemAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.simba.adgroups.item.exist
 //
 // 判断在一个推广计划中是否已经推广了一个商品
-func TaobaoSimbaAdgroupsItemExist(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupsItemExistAPIRequest, resp *simba.TaobaoSimbaAdgroupsItemExistAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSimbaAdgroupsItemExist(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupsItemExistAPIRequest, resp *simba.TaobaoSimbaAdgroupsItemExistAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package youkuott
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/youkuott"
 )
@@ -9,6 +11,6 @@ import (
 // youku.tvoperator.media.page.query
 //
 // 分页获取渠道全量媒资
-func YoukuTvoperatorMediaPageQuery(clt *core.SDKClient, req *youkuott.YoukuTvoperatorMediaPageQueryAPIRequest, resp *youkuott.YoukuTvoperatorMediaPageQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YoukuTvoperatorMediaPageQuery(ctx context.Context, clt *core.SDKClient, req *youkuott.YoukuTvoperatorMediaPageQueryAPIRequest, resp *youkuott.YoukuTvoperatorMediaPageQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

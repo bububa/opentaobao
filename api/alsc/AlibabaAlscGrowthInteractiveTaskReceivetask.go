@@ -1,6 +1,8 @@
 package alsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alsc.growth.interactive.task.receivetask
 //
 // 领取任务
-func AlibabaAlscGrowthInteractiveTaskReceivetask(clt *core.SDKClient, req *alsc.AlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest, resp *alsc.AlibabaAlscGrowthInteractiveTaskReceivetaskAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlscGrowthInteractiveTaskReceivetask(ctx context.Context, clt *core.SDKClient, req *alsc.AlibabaAlscGrowthInteractiveTaskReceivetaskAPIRequest, resp *alsc.AlibabaAlscGrowthInteractiveTaskReceivetaskAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

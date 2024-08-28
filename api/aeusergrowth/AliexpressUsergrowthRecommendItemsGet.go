@@ -1,6 +1,8 @@
 package aeusergrowth
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/aeusergrowth"
 )
@@ -9,6 +11,6 @@ import (
 // aliexpress.usergrowth.recommend.items.get
 //
 // 第三方平台的推荐AE商品   场景：skin 、底部推荐等
-func AliexpressUsergrowthRecommendItemsGet(clt *core.SDKClient, req *aeusergrowth.AliexpressUsergrowthRecommendItemsGetAPIRequest, resp *aeusergrowth.AliexpressUsergrowthRecommendItemsGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliexpressUsergrowthRecommendItemsGet(ctx context.Context, clt *core.SDKClient, req *aeusergrowth.AliexpressUsergrowthRecommendItemsGetAPIRequest, resp *aeusergrowth.AliexpressUsergrowthRecommendItemsGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

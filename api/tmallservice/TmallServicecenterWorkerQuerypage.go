@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.servicecenter.worker.querypage
 //
 // 服务商查询工人列表
-func TmallServicecenterWorkerQuerypage(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerQuerypageAPIRequest, resp *tmallservice.TmallServicecenterWorkerQuerypageAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallServicecenterWorkerQuerypage(ctx context.Context, clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerQuerypageAPIRequest, resp *tmallservice.TmallServicecenterWorkerQuerypageAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

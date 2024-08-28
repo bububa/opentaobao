@@ -1,6 +1,8 @@
 package logistic
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/logistic"
 )
@@ -9,6 +11,6 @@ import (
 // wdk.logistic.network.warehouse.resource.relation.query.to.codes
 //
 // 盒马集市，网格仓查询中心仓
-func WdkLogisticNetworkWarehouseResourceRelationQueryToCodes(clt *core.SDKClient, req *logistic.WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIRequest, resp *logistic.WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func WdkLogisticNetworkWarehouseResourceRelationQueryToCodes(ctx context.Context, clt *core.SDKClient, req *logistic.WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIRequest, resp *logistic.WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.wdk.equipment.conveyor.conveyorinfo.get
 //
 // 获取五道口悬挂链信息
-func TaobaoWdkEquipmentConveyorConveyorinfoGet(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorConveyorinfoGetAPIRequest, resp *wdk.TaobaoWdkEquipmentConveyorConveyorinfoGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWdkEquipmentConveyorConveyorinfoGet(ctx context.Context, clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorConveyorinfoGetAPIRequest, resp *wdk.TaobaoWdkEquipmentConveyorConveyorinfoGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

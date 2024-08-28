@@ -1,6 +1,8 @@
 package fpm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fpm"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.cfo.incoming.invoice.register
 //
 // 发票登记接口
-func AlibabaCfoIncomingInvoiceRegister(clt *core.SDKClient, req *fpm.AlibabaCfoIncomingInvoiceRegisterAPIRequest, resp *fpm.AlibabaCfoIncomingInvoiceRegisterAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCfoIncomingInvoiceRegister(ctx context.Context, clt *core.SDKClient, req *fpm.AlibabaCfoIncomingInvoiceRegisterAPIRequest, resp *fpm.AlibabaCfoIncomingInvoiceRegisterAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

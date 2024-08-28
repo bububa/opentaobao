@@ -1,6 +1,8 @@
 package tmallnr
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallnr"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.nr.notice.goods.ready
 //
 // 接收商家的配送人员信息，和第三公司信息及提货码
-func TmallNrNoticeGoodsReady(clt *core.SDKClient, req *tmallnr.TmallNrNoticeGoodsReadyAPIRequest, resp *tmallnr.TmallNrNoticeGoodsReadyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallNrNoticeGoodsReady(ctx context.Context, clt *core.SDKClient, req *tmallnr.TmallNrNoticeGoodsReadyAPIRequest, resp *tmallnr.TmallNrNoticeGoodsReadyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

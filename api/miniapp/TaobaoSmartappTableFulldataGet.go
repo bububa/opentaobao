@@ -1,6 +1,8 @@
 package miniapp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/miniapp"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.smartapp.table.fulldata.get
 //
 // 智能应用工作表地址查询
-func TaobaoSmartappTableFulldataGet(clt *core.SDKClient, req *miniapp.TaobaoSmartappTableFulldataGetAPIRequest, resp *miniapp.TaobaoSmartappTableFulldataGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSmartappTableFulldataGet(ctx context.Context, clt *core.SDKClient, req *miniapp.TaobaoSmartappTableFulldataGetAPIRequest, resp *miniapp.TaobaoSmartappTableFulldataGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

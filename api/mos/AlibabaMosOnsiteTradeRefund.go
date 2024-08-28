@@ -1,6 +1,8 @@
 package mos
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/mos"
 )
@@ -12,6 +14,6 @@ import (
 //
 // 1. 交易超过可退款时间（签约时设置的可退款时间）的订单无法进行退款。
 // 2. 只支持全额退款。
-func AlibabaMosOnsiteTradeRefund(clt *core.SDKClient, req *mos.AlibabaMosOnsiteTradeRefundAPIRequest, resp *mos.AlibabaMosOnsiteTradeRefundAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMosOnsiteTradeRefund(ctx context.Context, clt *core.SDKClient, req *mos.AlibabaMosOnsiteTradeRefundAPIRequest, resp *mos.AlibabaMosOnsiteTradeRefundAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

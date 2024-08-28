@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drug.download.getentdailytaskdtolist
 //
 // 码上放心数据落地-获取每天日报
-func AlibabaAlihealthDrugDownloadGetentdailytaskdtolist(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest, resp *drugtrace.AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugDownloadGetentdailytaskdtolist(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIRequest, resp *drugtrace.AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

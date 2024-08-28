@@ -1,6 +1,8 @@
 package miniapp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/miniapp"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.miniapp.cloud.function.invoke
 //
 // 用户isv从外部触发聚石塔云函数的执行。
-func TaobaoMiniappCloudFunctionInvoke(clt *core.SDKClient, req *miniapp.TaobaoMiniappCloudFunctionInvokeAPIRequest, resp *miniapp.TaobaoMiniappCloudFunctionInvokeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoMiniappCloudFunctionInvoke(ctx context.Context, clt *core.SDKClient, req *miniapp.TaobaoMiniappCloudFunctionInvokeAPIRequest, resp *miniapp.TaobaoMiniappCloudFunctionInvokeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

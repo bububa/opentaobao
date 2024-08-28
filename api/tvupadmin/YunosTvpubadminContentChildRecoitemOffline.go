@@ -1,6 +1,8 @@
 package tvupadmin
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.tvpubadmin.content.child.recoitem.offline
 //
 // 下线少儿推荐内容接口
-func YunosTvpubadminContentChildRecoitemOffline(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChildRecoitemOfflineAPIRequest, resp *tvupadmin.YunosTvpubadminContentChildRecoitemOfflineAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosTvpubadminContentChildRecoitemOffline(ctx context.Context, clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChildRecoitemOfflineAPIRequest, resp *tvupadmin.YunosTvpubadminContentChildRecoitemOfflineAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.ump.tools.get
 //
 // 查询工具列表
-func TaobaoUmpToolsGet(clt *core.SDKClient, req *promotion.TaobaoUmpToolsGetAPIRequest, resp *promotion.TaobaoUmpToolsGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoUmpToolsGet(ctx context.Context, clt *core.SDKClient, req *promotion.TaobaoUmpToolsGetAPIRequest, resp *promotion.TaobaoUmpToolsGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

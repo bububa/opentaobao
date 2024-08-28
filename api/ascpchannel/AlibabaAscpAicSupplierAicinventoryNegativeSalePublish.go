@@ -1,6 +1,8 @@
 package ascpchannel
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ascpchannel"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ascp.aic.supplier.aicinventory.negative.sale.publish
 //
 // 新增负卖库存记录和变更负卖库存记录
-func AlibabaAscpAicSupplierAicinventoryNegativeSalePublish(clt *core.SDKClient, req *ascpchannel.AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIRequest, resp *ascpchannel.AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAscpAicSupplierAicinventoryNegativeSalePublish(ctx context.Context, clt *core.SDKClient, req *ascpchannel.AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIRequest, resp *ascpchannel.AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

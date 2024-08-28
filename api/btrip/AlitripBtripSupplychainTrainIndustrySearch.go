@@ -1,6 +1,8 @@
 package btrip
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/btrip"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.btrip.supplychain.train.industry.search
 //
 // 【商旅】火车票行业搜索接口
-func AlitripBtripSupplychainTrainIndustrySearch(clt *core.SDKClient, req *btrip.AlitripBtripSupplychainTrainIndustrySearchAPIRequest, resp *btrip.AlitripBtripSupplychainTrainIndustrySearchAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripBtripSupplychainTrainIndustrySearch(ctx context.Context, clt *core.SDKClient, req *btrip.AlitripBtripSupplychainTrainIndustrySearchAPIRequest, resp *btrip.AlitripBtripSupplychainTrainIndustrySearchAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package alicom
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alicom"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alicom.vt.distribute.sendcode
 //
 // 通信业务外放发送验证码
-func AlibabaAlicomVtDistributeSendcode(clt *core.SDKClient, req *alicom.AlibabaAlicomVtDistributeSendcodeAPIRequest, resp *alicom.AlibabaAlicomVtDistributeSendcodeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlicomVtDistributeSendcode(ctx context.Context, clt *core.SDKClient, req *alicom.AlibabaAlicomVtDistributeSendcodeAPIRequest, resp *alicom.AlibabaAlicomVtDistributeSendcodeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

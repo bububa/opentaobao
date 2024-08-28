@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.fenxiao.requisitions.get
 //
 // 合作申请查询
-func TaobaoFenxiaoRequisitionsGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoRequisitionsGetAPIRequest, resp *fenxiao.TaobaoFenxiaoRequisitionsGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFenxiaoRequisitionsGet(ctx context.Context, clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoRequisitionsGetAPIRequest, resp *fenxiao.TaobaoFenxiaoRequisitionsGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

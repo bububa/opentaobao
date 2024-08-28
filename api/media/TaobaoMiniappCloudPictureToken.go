@@ -1,6 +1,8 @@
 package media
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/media"
 )
@@ -18,6 +20,6 @@ import (
 //	&amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Submit &amp;quot;/&amp;gt;
 //
 // &amp;lt;/form&amp;gt;
-func TaobaoMiniappCloudPictureToken(clt *core.SDKClient, req *media.TaobaoMiniappCloudPictureTokenAPIRequest, resp *media.TaobaoMiniappCloudPictureTokenAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoMiniappCloudPictureToken(ctx context.Context, clt *core.SDKClient, req *media.TaobaoMiniappCloudPictureTokenAPIRequest, resp *media.TaobaoMiniappCloudPictureTokenAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

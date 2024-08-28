@@ -1,6 +1,8 @@
 package film
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/film"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.film.account.phone.query
 //
 // 根据手机号查询匹配的账号列表
-func TaobaoFilmAccountPhoneQuery(clt *core.SDKClient, req *film.TaobaoFilmAccountPhoneQueryAPIRequest, resp *film.TaobaoFilmAccountPhoneQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFilmAccountPhoneQuery(ctx context.Context, clt *core.SDKClient, req *film.TaobaoFilmAccountPhoneQueryAPIRequest, resp *film.TaobaoFilmAccountPhoneQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

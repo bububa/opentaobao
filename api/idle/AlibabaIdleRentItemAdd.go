@@ -1,6 +1,8 @@
 package idle
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idle"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.rent.item.add
 //
 // 发布闲鱼租赁商品
-func AlibabaIdleRentItemAdd(clt *core.SDKClient, req *idle.AlibabaIdleRentItemAddAPIRequest, resp *idle.AlibabaIdleRentItemAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleRentItemAdd(ctx context.Context, clt *core.SDKClient, req *idle.AlibabaIdleRentItemAddAPIRequest, resp *idle.AlibabaIdleRentItemAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

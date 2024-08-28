@@ -1,6 +1,8 @@
 package tmallgenie
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallgenie"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ailabs.tmallgenie.auth.device.getcode
 //
 // 获取绑定的authcode
-func AlibabaAilabsTmallgenieAuthDeviceGetcode(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIRequest, resp *tmallgenie.AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAilabsTmallgenieAuthDeviceGetcode(ctx context.Context, clt *core.SDKClient, req *tmallgenie.AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIRequest, resp *tmallgenie.AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

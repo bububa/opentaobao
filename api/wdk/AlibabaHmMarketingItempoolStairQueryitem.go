@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.hm.marketing.itempool.stair.queryitem
 //
 // 换购商品查询
-func AlibabaHmMarketingItempoolStairQueryitem(clt *core.SDKClient, req *wdk.AlibabaHmMarketingItempoolStairQueryitemAPIRequest, resp *wdk.AlibabaHmMarketingItempoolStairQueryitemAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaHmMarketingItempoolStairQueryitem(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaHmMarketingItempoolStairQueryitemAPIRequest, resp *wdk.AlibabaHmMarketingItempoolStairQueryitemAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

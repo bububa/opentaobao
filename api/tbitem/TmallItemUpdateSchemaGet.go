@@ -1,6 +1,8 @@
 package tbitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbitem"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.item.update.schema.get
 //
 // Schema方式编辑天猫商品时，编辑商品规则获取
-func TmallItemUpdateSchemaGet(clt *core.SDKClient, req *tbitem.TmallItemUpdateSchemaGetAPIRequest, resp *tbitem.TmallItemUpdateSchemaGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallItemUpdateSchemaGet(ctx context.Context, clt *core.SDKClient, req *tbitem.TmallItemUpdateSchemaGetAPIRequest, resp *tbitem.TmallItemUpdateSchemaGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

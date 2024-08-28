@@ -1,6 +1,8 @@
 package aedata
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/aedata"
 )
@@ -9,6 +11,6 @@ import (
 // aliexpress.affiliate.order.listbyindex
 //
 // AE联盟推广者订单按游标查询接口
-func AliexpressAffiliateOrderListbyindex(clt *core.SDKClient, req *aedata.AliexpressAffiliateOrderListbyindexAPIRequest, resp *aedata.AliexpressAffiliateOrderListbyindexAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliexpressAffiliateOrderListbyindex(ctx context.Context, clt *core.SDKClient, req *aedata.AliexpressAffiliateOrderListbyindexAPIRequest, resp *aedata.AliexpressAffiliateOrderListbyindexAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

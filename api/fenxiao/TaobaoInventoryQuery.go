@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
@@ -10,6 +12,6 @@ import (
 //
 // 建议使用新接口：tmall.inventory.query.forstore ，新ISV不推荐使用。
 // 商家查询商品总体库存信息
-func TaobaoInventoryQuery(clt *core.SDKClient, req *fenxiao.TaobaoInventoryQueryAPIRequest, resp *fenxiao.TaobaoInventoryQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoInventoryQuery(ctx context.Context, clt *core.SDKClient, req *fenxiao.TaobaoInventoryQueryAPIRequest, resp *fenxiao.TaobaoInventoryQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

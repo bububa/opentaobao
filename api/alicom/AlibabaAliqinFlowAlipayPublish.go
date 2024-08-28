@@ -1,6 +1,8 @@
 package alicom
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alicom"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.aliqin.flow.alipay.publish
 //
 // 用户淘宝流量钱包商家给支付宝用户发放流量
-func AlibabaAliqinFlowAlipayPublish(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowAlipayPublishAPIRequest, resp *alicom.AlibabaAliqinFlowAlipayPublishAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAliqinFlowAlipayPublish(ctx context.Context, clt *core.SDKClient, req *alicom.AlibabaAliqinFlowAlipayPublishAPIRequest, resp *alicom.AlibabaAliqinFlowAlipayPublishAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

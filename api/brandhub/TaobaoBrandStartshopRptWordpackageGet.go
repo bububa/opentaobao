@@ -1,6 +1,8 @@
 package brandhub
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/brandhub"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.brand.startshop.rpt.wordpackage.get
 //
 // 获取明星店铺广告词包分日报表数据，只能查询近90天内的数据，包括展现量，点击量等
-func TaobaoBrandStartshopRptWordpackageGet(clt *core.SDKClient, req *brandhub.TaobaoBrandStartshopRptWordpackageGetAPIRequest, resp *brandhub.TaobaoBrandStartshopRptWordpackageGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBrandStartshopRptWordpackageGet(ctx context.Context, clt *core.SDKClient, req *brandhub.TaobaoBrandStartshopRptWordpackageGetAPIRequest, resp *brandhub.TaobaoBrandStartshopRptWordpackageGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

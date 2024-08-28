@@ -1,6 +1,8 @@
 package traderate
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/traderate"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.fliggy.wrate.getmixratelist
 //
 // 飞猪评价通用接口
-func TaobaoFliggyWrateGetmixratelist(clt *core.SDKClient, req *traderate.TaobaoFliggyWrateGetmixratelistAPIRequest, resp *traderate.TaobaoFliggyWrateGetmixratelistAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFliggyWrateGetmixratelist(ctx context.Context, clt *core.SDKClient, req *traderate.TaobaoFliggyWrateGetmixratelistAPIRequest, resp *traderate.TaobaoFliggyWrateGetmixratelistAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

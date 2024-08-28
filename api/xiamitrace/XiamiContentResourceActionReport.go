@@ -1,6 +1,8 @@
 package xiamitrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xiamitrace"
 )
@@ -9,6 +11,6 @@ import (
 // xiami.content.resource.action.report
 //
 // 合作方对接入的曲库开放内容上报行为日志
-func XiamiContentResourceActionReport(clt *core.SDKClient, req *xiamitrace.XiamiContentResourceActionReportAPIRequest, resp *xiamitrace.XiamiContentResourceActionReportAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func XiamiContentResourceActionReport(ctx context.Context, clt *core.SDKClient, req *xiamitrace.XiamiContentResourceActionReportAPIRequest, resp *xiamitrace.XiamiContentResourceActionReportAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drugcode.nodename.get
 //
 // 根据码获取机构名称
-func AlibabaAlihealthDrugcodeNodenameGet(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcodeNodenameGetAPIRequest, resp *drugtrace.AlibabaAlihealthDrugcodeNodenameGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugcodeNodenameGet(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcodeNodenameGetAPIRequest, resp *drugtrace.AlibabaAlihealthDrugcodeNodenameGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

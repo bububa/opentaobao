@@ -1,6 +1,8 @@
 package icbushowcase
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/icbushowcase"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.scbp.showcase.status
 //
 // 查询橱窗状态，如总数、可用数量
-func AlibabaScbpShowcaseStatus(clt *core.SDKClient, req *icbushowcase.AlibabaScbpShowcaseStatusAPIRequest, resp *icbushowcase.AlibabaScbpShowcaseStatusAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaScbpShowcaseStatus(ctx context.Context, clt *core.SDKClient, req *icbushowcase.AlibabaScbpShowcaseStatusAPIRequest, resp *icbushowcase.AlibabaScbpShowcaseStatusAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

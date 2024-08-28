@@ -1,6 +1,8 @@
 package tbk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbk"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.tbk.dg.vegas.tlj.create
 //
 // 创建淘礼金
-func TaobaoTbkDgVegasTljCreate(clt *core.SDKClient, req *tbk.TaobaoTbkDgVegasTljCreateAPIRequest, resp *tbk.TaobaoTbkDgVegasTljCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTbkDgVegasTljCreate(ctx context.Context, clt *core.SDKClient, req *tbk.TaobaoTbkDgVegasTljCreateAPIRequest, resp *tbk.TaobaoTbkDgVegasTljCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

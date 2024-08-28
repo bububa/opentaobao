@@ -1,6 +1,8 @@
 package tbk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbk"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.tbk.sc.publisher.info.save
 //
 // 通过入参渠道管理或会员运营管理的邀请码，生成渠道id或会员运营id，完成渠道或会员的备案。
-func TaobaoTbkScPublisherInfoSave(clt *core.SDKClient, req *tbk.TaobaoTbkScPublisherInfoSaveAPIRequest, resp *tbk.TaobaoTbkScPublisherInfoSaveAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTbkScPublisherInfoSave(ctx context.Context, clt *core.SDKClient, req *tbk.TaobaoTbkScPublisherInfoSaveAPIRequest, resp *tbk.TaobaoTbkScPublisherInfoSaveAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

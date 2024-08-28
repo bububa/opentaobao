@@ -1,6 +1,8 @@
 package moscm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/moscm"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.mos.order.list.get
 //
 // 批量查询交易信息
-func AlibabaMosOrderListGet(clt *core.SDKClient, req *moscm.AlibabaMosOrderListGetAPIRequest, resp *moscm.AlibabaMosOrderListGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMosOrderListGet(ctx context.Context, clt *core.SDKClient, req *moscm.AlibabaMosOrderListGetAPIRequest, resp *moscm.AlibabaMosOrderListGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

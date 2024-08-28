@@ -1,6 +1,8 @@
 package maitix
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/maitix"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.damai.maitix.seat.info.query
 //
 // 分销查询座位文案信息
-func AlibabaDamaiMaitixSeatInfoQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixSeatInfoQueryAPIRequest, resp *maitix.AlibabaDamaiMaitixSeatInfoQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaDamaiMaitixSeatInfoQuery(ctx context.Context, clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixSeatInfoQueryAPIRequest, resp *maitix.AlibabaDamaiMaitixSeatInfoQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

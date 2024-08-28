@@ -1,6 +1,8 @@
 package omniorder
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/omniorder"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.omniorder.store.sdtquerystation
 //
 // 速店通查询站点信息
-func TaobaoOmniorderStoreSdtquerystation(clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreSdtquerystationAPIRequest, resp *omniorder.TaobaoOmniorderStoreSdtquerystationAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOmniorderStoreSdtquerystation(ctx context.Context, clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreSdtquerystationAPIRequest, resp *omniorder.TaobaoOmniorderStoreSdtquerystationAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

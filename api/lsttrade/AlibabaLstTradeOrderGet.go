@@ -1,6 +1,8 @@
 package lsttrade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/lsttrade"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.lst.trade.order.get
 //
 // 根据订单id查询零售通交易订单
-func AlibabaLstTradeOrderGet(clt *core.SDKClient, req *lsttrade.AlibabaLstTradeOrderGetAPIRequest, resp *lsttrade.AlibabaLstTradeOrderGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLstTradeOrderGet(ctx context.Context, clt *core.SDKClient, req *lsttrade.AlibabaLstTradeOrderGetAPIRequest, resp *lsttrade.AlibabaLstTradeOrderGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

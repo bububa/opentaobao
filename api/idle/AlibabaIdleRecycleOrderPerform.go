@@ -1,6 +1,8 @@
 package idle
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idle"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.recycle.order.perform
 //
 // 闲鱼回收业务中,外部服务商作为买家 需要驱动交易节点变化
-func AlibabaIdleRecycleOrderPerform(clt *core.SDKClient, req *idle.AlibabaIdleRecycleOrderPerformAPIRequest, resp *idle.AlibabaIdleRecycleOrderPerformAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleRecycleOrderPerform(ctx context.Context, clt *core.SDKClient, req *idle.AlibabaIdleRecycleOrderPerformAPIRequest, resp *idle.AlibabaIdleRecycleOrderPerformAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

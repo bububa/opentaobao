@@ -1,6 +1,8 @@
 package tmallhk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallhk"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.traceplatform.cts.info.upload
 //
 // cts上传溯源信息
-func TmallTraceplatformCtsInfoUpload(clt *core.SDKClient, req *tmallhk.TmallTraceplatformCtsInfoUploadAPIRequest, resp *tmallhk.TmallTraceplatformCtsInfoUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallTraceplatformCtsInfoUpload(ctx context.Context, clt *core.SDKClient, req *tmallhk.TmallTraceplatformCtsInfoUploadAPIRequest, resp *tmallhk.TmallTraceplatformCtsInfoUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

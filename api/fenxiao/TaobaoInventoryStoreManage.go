@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.inventory.store.manage
 //
 // 创建商家仓或者更新商家仓信息
-func TaobaoInventoryStoreManage(clt *core.SDKClient, req *fenxiao.TaobaoInventoryStoreManageAPIRequest, resp *fenxiao.TaobaoInventoryStoreManageAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoInventoryStoreManage(ctx context.Context, clt *core.SDKClient, req *fenxiao.TaobaoInventoryStoreManageAPIRequest, resp *fenxiao.TaobaoInventoryStoreManageAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

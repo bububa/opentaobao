@@ -1,6 +1,8 @@
 package logistic
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/logistic"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.wlb.import.threepl.resource.get
 //
 // 获取3pl直邮的发货可用资源
-func TaobaoWlbImportThreeplResourceGet(clt *core.SDKClient, req *logistic.TaobaoWlbImportThreeplResourceGetAPIRequest, resp *logistic.TaobaoWlbImportThreeplResourceGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWlbImportThreeplResourceGet(ctx context.Context, clt *core.SDKClient, req *logistic.TaobaoWlbImportThreeplResourceGetAPIRequest, resp *logistic.TaobaoWlbImportThreeplResourceGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

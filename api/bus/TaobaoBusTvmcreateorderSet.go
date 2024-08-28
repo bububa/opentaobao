@@ -1,6 +1,8 @@
 package bus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/bus"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.bus.tvmcreateorder.set
 //
 // 提供给汽车票线下自助机的创建订单使用
-func TaobaoBusTvmcreateorderSet(clt *core.SDKClient, req *bus.TaobaoBusTvmcreateorderSetAPIRequest, resp *bus.TaobaoBusTvmcreateorderSetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBusTvmcreateorderSet(ctx context.Context, clt *core.SDKClient, req *bus.TaobaoBusTvmcreateorderSetAPIRequest, resp *bus.TaobaoBusTvmcreateorderSetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

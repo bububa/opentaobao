@@ -1,6 +1,8 @@
 package alilabs
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alilabs"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.ailab.aicloud.top.hotwords.get
 //
 // 获取ASR热词
-func TaobaoAilabAicloudTopHotwordsGet(clt *core.SDKClient, req *alilabs.TaobaoAilabAicloudTopHotwordsGetAPIRequest, resp *alilabs.TaobaoAilabAicloudTopHotwordsGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAilabAicloudTopHotwordsGet(ctx context.Context, clt *core.SDKClient, req *alilabs.TaobaoAilabAicloudTopHotwordsGetAPIRequest, resp *alilabs.TaobaoAilabAicloudTopHotwordsGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

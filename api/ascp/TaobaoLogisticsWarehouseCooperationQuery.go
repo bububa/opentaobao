@@ -1,6 +1,8 @@
 package ascp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ascp"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.logistics.warehouse.cooperation.query
 //
 // 仓合作关系查询
-func TaobaoLogisticsWarehouseCooperationQuery(clt *core.SDKClient, req *ascp.TaobaoLogisticsWarehouseCooperationQueryAPIRequest, resp *ascp.TaobaoLogisticsWarehouseCooperationQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoLogisticsWarehouseCooperationQuery(ctx context.Context, clt *core.SDKClient, req *ascp.TaobaoLogisticsWarehouseCooperationQueryAPIRequest, resp *ascp.TaobaoLogisticsWarehouseCooperationQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

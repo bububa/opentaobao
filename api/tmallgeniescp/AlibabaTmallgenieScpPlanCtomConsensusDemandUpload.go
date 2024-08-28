@@ -1,6 +1,8 @@
 package tmallgeniescp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallgeniescp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.tmallgenie.scp.plan.ctom.consensus.demand.upload
 //
 // C2M 共识需求回传接口
-func AlibabaTmallgenieScpPlanCtomConsensusDemandUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaTmallgenieScpPlanCtomConsensusDemandUpload(ctx context.Context, clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

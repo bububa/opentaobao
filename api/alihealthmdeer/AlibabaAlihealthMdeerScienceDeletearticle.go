@@ -1,6 +1,8 @@
 package alihealthmdeer
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihealthmdeer"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.mdeer.science.deletearticle
 //
 // 三方同步文章删除
-func AlibabaAlihealthMdeerScienceDeletearticle(clt *core.SDKClient, req *alihealthmdeer.AlibabaAlihealthMdeerScienceDeletearticleAPIRequest, resp *alihealthmdeer.AlibabaAlihealthMdeerScienceDeletearticleAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthMdeerScienceDeletearticle(ctx context.Context, clt *core.SDKClient, req *alihealthmdeer.AlibabaAlihealthMdeerScienceDeletearticleAPIRequest, resp *alihealthmdeer.AlibabaAlihealthMdeerScienceDeletearticleAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

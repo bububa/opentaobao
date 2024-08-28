@@ -1,6 +1,8 @@
 package lstwarehouse
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/lstwarehouse"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.lst.trade.seller.warehouse.query
 //
 // 查询本地云仓商家的仓库
-func AlibabaLstTradeSellerWarehouseQuery(clt *core.SDKClient, req *lstwarehouse.AlibabaLstTradeSellerWarehouseQueryAPIRequest, resp *lstwarehouse.AlibabaLstTradeSellerWarehouseQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLstTradeSellerWarehouseQuery(ctx context.Context, clt *core.SDKClient, req *lstwarehouse.AlibabaLstTradeSellerWarehouseQueryAPIRequest, resp *lstwarehouse.AlibabaLstTradeSellerWarehouseQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.simba.keywordsbykeywordids.get
 //
 // 根据一个关键词Id列表取得一组关键词
-func TaobaoSimbaKeywordsbykeywordidsGet(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordsbykeywordidsGetAPIRequest, resp *simba.TaobaoSimbaKeywordsbykeywordidsGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSimbaKeywordsbykeywordidsGet(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSimbaKeywordsbykeywordidsGetAPIRequest, resp *simba.TaobaoSimbaKeywordsbykeywordidsGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

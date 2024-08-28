@@ -1,6 +1,8 @@
 package inventory
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/inventory"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.inventory.plan.query
 //
 // 计划库存查询
-func TaobaoInventoryPlanQuery(clt *core.SDKClient, req *inventory.TaobaoInventoryPlanQueryAPIRequest, resp *inventory.TaobaoInventoryPlanQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoInventoryPlanQuery(ctx context.Context, clt *core.SDKClient, req *inventory.TaobaoInventoryPlanQueryAPIRequest, resp *inventory.TaobaoInventoryPlanQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package charity
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/charity"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.charity.charitytime.user.cancelauth
 //
 // 取消用户授权
-func AlibabaCharityCharitytimeUserCancelauth(clt *core.SDKClient, req *charity.AlibabaCharityCharitytimeUserCancelauthAPIRequest, resp *charity.AlibabaCharityCharitytimeUserCancelauthAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCharityCharitytimeUserCancelauth(ctx context.Context, clt *core.SDKClient, req *charity.AlibabaCharityCharitytimeUserCancelauthAPIRequest, resp *charity.AlibabaCharityCharitytimeUserCancelauthAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

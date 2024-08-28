@@ -1,6 +1,8 @@
 package tmallgenie
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallgenie"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.ailab.aicloud.top.memo.alarm.list
 //
 // 查询天猫精灵用户设置的所有闹钟
-func TaobaoAilabAicloudTopMemoAlarmList(clt *core.SDKClient, req *tmallgenie.TaobaoAilabAicloudTopMemoAlarmListAPIRequest, resp *tmallgenie.TaobaoAilabAicloudTopMemoAlarmListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAilabAicloudTopMemoAlarmList(ctx context.Context, clt *core.SDKClient, req *tmallgenie.TaobaoAilabAicloudTopMemoAlarmListAPIRequest, resp *tmallgenie.TaobaoAilabAicloudTopMemoAlarmListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

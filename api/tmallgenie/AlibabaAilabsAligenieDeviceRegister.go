@@ -1,6 +1,8 @@
 package tmallgenie
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallgenie"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ailabs.aligenie.device.register
 //
 // 向天猫精灵inside平台注册设备mac地址，并获取设备的唯一密钥
-func AlibabaAilabsAligenieDeviceRegister(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieDeviceRegisterAPIRequest, resp *tmallgenie.AlibabaAilabsAligenieDeviceRegisterAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAilabsAligenieDeviceRegister(ctx context.Context, clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieDeviceRegisterAPIRequest, resp *tmallgenie.AlibabaAilabsAligenieDeviceRegisterAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

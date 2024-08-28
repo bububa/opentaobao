@@ -1,6 +1,8 @@
 package cainiaohandover
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/cainiaohandover"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.global.handover.content.subbag.add
 //
 // 预约单下追加大包
-func CainiaoGlobalHandoverContentSubbagAdd(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverContentSubbagAddAPIRequest, resp *cainiaohandover.CainiaoGlobalHandoverContentSubbagAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoGlobalHandoverContentSubbagAdd(ctx context.Context, clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverContentSubbagAddAPIRequest, resp *cainiaohandover.CainiaoGlobalHandoverContentSubbagAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

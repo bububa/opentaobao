@@ -1,6 +1,7 @@
 package tests
 
 import (
+	"context"
 	"os"
 	"testing"
 
@@ -21,8 +22,9 @@ func TestXMLFormatHmac(t *testing.T) {
 	req := tbkModel.NewTaobaoTbkItemInfoGetRequest()
 	req.SetNumIids(testNumIids)
 	req.SetPlatform(2)
-	resp, err := tbkApi.TaobaoTbkItemInfoGet(clt, req, "")
-	if err != nil {
+	resp := tbkModel.GetTaobaoTbkItemInfoGetAPIResponse()
+	defer tbkModel.ReleaseTaobaoTbkItemInfoGetAPIResponse(resp)
+	if err := tbkApi.TaobaoTbkItemInfoGet(context.Background(), clt, req, resp, ""); err != nil {
 		t.Error(err)
 		return
 	}
@@ -40,8 +42,9 @@ func TestXMLFormatMd5(t *testing.T) {
 	req := tbkModel.NewTaobaoTbkItemInfoGetRequest()
 	req.SetNumIids(testNumIids)
 	req.SetPlatform(2)
-	resp, err := tbkApi.TaobaoTbkItemInfoGet(clt, req, "")
-	if err != nil {
+	resp := tbkModel.GetTaobaoTbkItemInfoGetAPIResponse()
+	defer tbkModel.ReleaseTaobaoTbkItemInfoGetAPIResponse(resp)
+	if err := tbkApi.TaobaoTbkItemInfoGet(context.Background(), clt, req, resp, ""); err != nil {
 		t.Error(err)
 		return
 	}

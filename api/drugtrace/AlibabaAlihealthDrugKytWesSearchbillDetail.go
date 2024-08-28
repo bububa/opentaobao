@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drug.kyt.wes.searchbill.detail
 //
 // 根据单据号码查询码单据详情和码信息
-func AlibabaAlihealthDrugKytWesSearchbillDetail(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytWesSearchbillDetailAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytWesSearchbillDetailAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugKytWesSearchbillDetail(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytWesSearchbillDetailAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytWesSearchbillDetailAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

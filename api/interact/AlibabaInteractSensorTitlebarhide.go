@@ -1,6 +1,8 @@
 package interact
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/interact"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.interact.sensor.titlebarhide
 //
 // 隐藏titleBar
-func AlibabaInteractSensorTitlebarhide(clt *core.SDKClient, req *interact.AlibabaInteractSensorTitlebarhideAPIRequest, resp *interact.AlibabaInteractSensorTitlebarhideAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaInteractSensorTitlebarhide(ctx context.Context, clt *core.SDKClient, req *interact.AlibabaInteractSensorTitlebarhideAPIRequest, resp *interact.AlibabaInteractSensorTitlebarhideAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

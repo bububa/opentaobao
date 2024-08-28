@@ -1,6 +1,8 @@
 package trade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/trade"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.rail.trade.refund
 //
 // 退票接口
-func AlitripRailTradeRefund(clt *core.SDKClient, req *trade.AlitripRailTradeRefundAPIRequest, resp *trade.AlitripRailTradeRefundAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripRailTradeRefund(ctx context.Context, clt *core.SDKClient, req *trade.AlitripRailTradeRefundAPIRequest, resp *trade.AlitripRailTradeRefundAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

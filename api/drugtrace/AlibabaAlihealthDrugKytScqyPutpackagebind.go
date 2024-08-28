@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drug.kyt.scqy.putpackagebind
 //
 // 码拼箱建立父子关系接口
-func AlibabaAlihealthDrugKytScqyPutpackagebind(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytScqyPutpackagebindAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytScqyPutpackagebindAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugKytScqyPutpackagebind(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytScqyPutpackagebindAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytScqyPutpackagebindAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

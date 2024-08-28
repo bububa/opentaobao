@@ -1,6 +1,8 @@
 package iotticket
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/iotticket"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.iot.ticket.sp.maintain.vtwo.create
 //
 // 服务商制定维修费方案
-func CainiaoIotTicketSpMaintainVtwoCreate(clt *core.SDKClient, req *iotticket.CainiaoIotTicketSpMaintainVtwoCreateAPIRequest, resp *iotticket.CainiaoIotTicketSpMaintainVtwoCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoIotTicketSpMaintainVtwoCreate(ctx context.Context, clt *core.SDKClient, req *iotticket.CainiaoIotTicketSpMaintainVtwoCreateAPIRequest, resp *iotticket.CainiaoIotTicketSpMaintainVtwoCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

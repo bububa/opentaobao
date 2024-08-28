@@ -1,6 +1,8 @@
 package axintrade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/axintrade"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.axin.trans.pay.register.audit
 //
 // 阿信支付入驻审核通知
-func TaobaoAlitripAxinTransPayRegisterAudit(clt *core.SDKClient, req *axintrade.TaobaoAlitripAxinTransPayRegisterAuditAPIRequest, resp *axintrade.TaobaoAlitripAxinTransPayRegisterAuditAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripAxinTransPayRegisterAudit(ctx context.Context, clt *core.SDKClient, req *axintrade.TaobaoAlitripAxinTransPayRegisterAuditAPIRequest, resp *axintrade.TaobaoAlitripAxinTransPayRegisterAuditAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

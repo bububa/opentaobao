@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.stock.real.query
 //
 // 查询仓内实时库存信息
-func AlibabaWdkStockRealQuery(clt *core.SDKClient, req *wdk.AlibabaWdkStockRealQueryAPIRequest, resp *wdk.AlibabaWdkStockRealQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkStockRealQuery(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkStockRealQueryAPIRequest, resp *wdk.AlibabaWdkStockRealQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

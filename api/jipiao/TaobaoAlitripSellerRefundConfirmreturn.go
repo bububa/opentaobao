@@ -1,6 +1,8 @@
 package jipiao
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/jipiao"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.seller.refund.confirmreturn
 //
 // 确认退票
-func TaobaoAlitripSellerRefundConfirmreturn(clt *core.SDKClient, req *jipiao.TaobaoAlitripSellerRefundConfirmreturnAPIRequest, resp *jipiao.TaobaoAlitripSellerRefundConfirmreturnAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripSellerRefundConfirmreturn(ctx context.Context, clt *core.SDKClient, req *jipiao.TaobaoAlitripSellerRefundConfirmreturnAPIRequest, resp *jipiao.TaobaoAlitripSellerRefundConfirmreturnAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

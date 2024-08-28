@@ -1,6 +1,8 @@
 package alsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alsc.crm.customer.update
 //
 // 更新顾客信息
-func AlibabaAlscCrmCustomerUpdate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCustomerUpdateAPIRequest, resp *alsc.AlibabaAlscCrmCustomerUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlscCrmCustomerUpdate(ctx context.Context, clt *core.SDKClient, req *alsc.AlibabaAlscCrmCustomerUpdateAPIRequest, resp *alsc.AlibabaAlscCrmCustomerUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

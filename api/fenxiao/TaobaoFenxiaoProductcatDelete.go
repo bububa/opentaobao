@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.fenxiao.productcat.delete
 //
 // 删除产品线
-func TaobaoFenxiaoProductcatDelete(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductcatDeleteAPIRequest, resp *fenxiao.TaobaoFenxiaoProductcatDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFenxiaoProductcatDelete(ctx context.Context, clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductcatDeleteAPIRequest, resp *fenxiao.TaobaoFenxiaoProductcatDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

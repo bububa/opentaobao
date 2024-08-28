@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.marketing.coupon.sendma
 //
 // 根据优惠券活动id打印单个匿名码
-func AlibabaWdkMarketingCouponSendma(clt *core.SDKClient, req *promotion.AlibabaWdkMarketingCouponSendmaAPIRequest, resp *promotion.AlibabaWdkMarketingCouponSendmaAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkMarketingCouponSendma(ctx context.Context, clt *core.SDKClient, req *promotion.AlibabaWdkMarketingCouponSendmaAPIRequest, resp *promotion.AlibabaWdkMarketingCouponSendmaAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

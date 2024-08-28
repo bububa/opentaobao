@@ -1,6 +1,8 @@
 package einvoice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/einvoice"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.einvoice.create.result.get
 //
 // ERP开票结果获取
-func AlibabaEinvoiceCreateResultGet(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceCreateResultGetAPIRequest, resp *einvoice.AlibabaEinvoiceCreateResultGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaEinvoiceCreateResultGet(ctx context.Context, clt *core.SDKClient, req *einvoice.AlibabaEinvoiceCreateResultGetAPIRequest, resp *einvoice.AlibabaEinvoiceCreateResultGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

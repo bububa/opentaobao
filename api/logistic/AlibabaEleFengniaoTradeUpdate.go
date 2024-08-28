@@ -1,6 +1,8 @@
 package logistic
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/logistic"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ele.fengniao.trade.update
 //
 // 汇金扣费成功后，回调该接口更新扣费状态
-func AlibabaEleFengniaoTradeUpdate(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoTradeUpdateAPIRequest, resp *logistic.AlibabaEleFengniaoTradeUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaEleFengniaoTradeUpdate(ctx context.Context, clt *core.SDKClient, req *logistic.AlibabaEleFengniaoTradeUpdateAPIRequest, resp *logistic.AlibabaEleFengniaoTradeUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

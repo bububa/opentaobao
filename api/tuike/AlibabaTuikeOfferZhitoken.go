@@ -1,6 +1,8 @@
 package tuike
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tuike"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.tuike.offer.zhitoken
 //
 // 推荐链接生产吱口令
-func AlibabaTuikeOfferZhitoken(clt *core.SDKClient, req *tuike.AlibabaTuikeOfferZhitokenAPIRequest, resp *tuike.AlibabaTuikeOfferZhitokenAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaTuikeOfferZhitoken(ctx context.Context, clt *core.SDKClient, req *tuike.AlibabaTuikeOfferZhitokenAPIRequest, resp *tuike.AlibabaTuikeOfferZhitokenAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

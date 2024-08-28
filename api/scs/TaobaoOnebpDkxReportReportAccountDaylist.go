@@ -1,6 +1,8 @@
 package scs
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/scs"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.onebp.dkx.report.report.account.daylist
 //
 // 获取账户分日报表
-func TaobaoOnebpDkxReportReportAccountDaylist(clt *core.SDKClient, req *scs.TaobaoOnebpDkxReportReportAccountDaylistAPIRequest, resp *scs.TaobaoOnebpDkxReportReportAccountDaylistAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOnebpDkxReportReportAccountDaylist(ctx context.Context, clt *core.SDKClient, req *scs.TaobaoOnebpDkxReportReportAccountDaylistAPIRequest, resp *scs.TaobaoOnebpDkxReportReportAccountDaylistAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

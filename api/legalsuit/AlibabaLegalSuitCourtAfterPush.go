@@ -1,6 +1,8 @@
 package legalsuit
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/legalsuit"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.legal.suit.court.after.push
 //
 // 供外部ISV供应商 推送庭后信息给集团诉讼
-func AlibabaLegalSuitCourtAfterPush(clt *core.SDKClient, req *legalsuit.AlibabaLegalSuitCourtAfterPushAPIRequest, resp *legalsuit.AlibabaLegalSuitCourtAfterPushAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLegalSuitCourtAfterPush(ctx context.Context, clt *core.SDKClient, req *legalsuit.AlibabaLegalSuitCourtAfterPushAPIRequest, resp *legalsuit.AlibabaLegalSuitCourtAfterPushAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

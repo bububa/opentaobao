@@ -1,6 +1,8 @@
 package smartstore
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/smartstore"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.popupstore.activity.device.query
 //
 // 查询某一活动的deviceCode的部署情况
-func TmallPopupstoreActivityDeviceQuery(clt *core.SDKClient, req *smartstore.TmallPopupstoreActivityDeviceQueryAPIRequest, resp *smartstore.TmallPopupstoreActivityDeviceQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallPopupstoreActivityDeviceQuery(ctx context.Context, clt *core.SDKClient, req *smartstore.TmallPopupstoreActivityDeviceQueryAPIRequest, resp *smartstore.TmallPopupstoreActivityDeviceQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

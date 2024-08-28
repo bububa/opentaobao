@@ -1,6 +1,8 @@
 package tmallnr
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallnr"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.nr.fulfill.cancel.reason.query
 //
 // 新零售门店业务查询取消上门揽件的原因列表
-func TmallNrFulfillCancelReasonQuery(clt *core.SDKClient, req *tmallnr.TmallNrFulfillCancelReasonQueryAPIRequest, resp *tmallnr.TmallNrFulfillCancelReasonQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallNrFulfillCancelReasonQuery(ctx context.Context, clt *core.SDKClient, req *tmallnr.TmallNrFulfillCancelReasonQueryAPIRequest, resp *tmallnr.TmallNrFulfillCancelReasonQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

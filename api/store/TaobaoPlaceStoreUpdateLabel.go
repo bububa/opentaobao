@@ -1,6 +1,8 @@
 package store
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/store"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.place.store.update.label
 //
 // 更新商户门店标签（服务、权益、标签）接口
-func TaobaoPlaceStoreUpdateLabel(clt *core.SDKClient, req *store.TaobaoPlaceStoreUpdateLabelAPIRequest, resp *store.TaobaoPlaceStoreUpdateLabelAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoPlaceStoreUpdateLabel(ctx context.Context, clt *core.SDKClient, req *store.TaobaoPlaceStoreUpdateLabelAPIRequest, resp *store.TaobaoPlaceStoreUpdateLabelAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

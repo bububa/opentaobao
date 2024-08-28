@@ -1,6 +1,8 @@
 package product
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/product"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.item.store.schema.update
 //
 // 天猫门店商品编辑
-func TmallItemStoreSchemaUpdate(clt *core.SDKClient, req *product.TmallItemStoreSchemaUpdateAPIRequest, resp *product.TmallItemStoreSchemaUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallItemStoreSchemaUpdate(ctx context.Context, clt *core.SDKClient, req *product.TmallItemStoreSchemaUpdateAPIRequest, resp *product.TmallItemStoreSchemaUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

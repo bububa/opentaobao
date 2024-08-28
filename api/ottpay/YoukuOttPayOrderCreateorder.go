@@ -1,6 +1,8 @@
 package ottpay
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ottpay"
 )
@@ -9,6 +11,6 @@ import (
 // youku.ott.pay.order.createorder
 //
 // ottpay创建订单
-func YoukuOttPayOrderCreateorder(clt *core.SDKClient, req *ottpay.YoukuOttPayOrderCreateorderAPIRequest, resp *ottpay.YoukuOttPayOrderCreateorderAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YoukuOttPayOrderCreateorder(ctx context.Context, clt *core.SDKClient, req *ottpay.YoukuOttPayOrderCreateorderAPIRequest, resp *ottpay.YoukuOttPayOrderCreateorderAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

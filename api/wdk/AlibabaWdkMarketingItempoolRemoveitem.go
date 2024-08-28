@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.marketing.itempool.removeitem
 //
 // 移除商品池里面的商品
-func AlibabaWdkMarketingItempoolRemoveitem(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolRemoveitemAPIRequest, resp *wdk.AlibabaWdkMarketingItempoolRemoveitemAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkMarketingItempoolRemoveitem(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolRemoveitemAPIRequest, resp *wdk.AlibabaWdkMarketingItempoolRemoveitemAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

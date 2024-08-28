@@ -1,6 +1,8 @@
 package scbp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/scbp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.scbp.effect.keyword.single.get
 //
 // 单个关键词效果报表
-func AlibabaScbpEffectKeywordSingleGet(clt *core.SDKClient, req *scbp.AlibabaScbpEffectKeywordSingleGetAPIRequest, resp *scbp.AlibabaScbpEffectKeywordSingleGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaScbpEffectKeywordSingleGet(ctx context.Context, clt *core.SDKClient, req *scbp.AlibabaScbpEffectKeywordSingleGetAPIRequest, resp *scbp.AlibabaScbpEffectKeywordSingleGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

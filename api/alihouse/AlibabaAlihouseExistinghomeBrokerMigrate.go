@@ -1,6 +1,8 @@
 package alihouse
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihouse"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihouse.existinghome.broker.migrate
 //
 // 融合店经纪人迁移
-func AlibabaAlihouseExistinghomeBrokerMigrate(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeBrokerMigrateAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeBrokerMigrateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihouseExistinghomeBrokerMigrate(ctx context.Context, clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeBrokerMigrateAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeBrokerMigrateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

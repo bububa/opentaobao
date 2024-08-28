@@ -1,6 +1,8 @@
 package normalvisa
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/normalvisa"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.travel.normalvisa.getdetail
 //
 // 获取单笔签证的详细记录
-func TaobaoAlitripTravelNormalvisaGetdetail(clt *core.SDKClient, req *normalvisa.TaobaoAlitripTravelNormalvisaGetdetailAPIRequest, resp *normalvisa.TaobaoAlitripTravelNormalvisaGetdetailAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripTravelNormalvisaGetdetail(ctx context.Context, clt *core.SDKClient, req *normalvisa.TaobaoAlitripTravelNormalvisaGetdetailAPIRequest, resp *normalvisa.TaobaoAlitripTravelNormalvisaGetdetailAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

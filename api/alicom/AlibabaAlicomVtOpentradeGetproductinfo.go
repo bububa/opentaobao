@@ -1,6 +1,8 @@
 package alicom
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alicom"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alicom.vt.opentrade.getproductinfo
 //
 // 话费宝查询产品信息相关配置
-func AlibabaAlicomVtOpentradeGetproductinfo(clt *core.SDKClient, req *alicom.AlibabaAlicomVtOpentradeGetproductinfoAPIRequest, resp *alicom.AlibabaAlicomVtOpentradeGetproductinfoAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlicomVtOpentradeGetproductinfo(ctx context.Context, clt *core.SDKClient, req *alicom.AlibabaAlicomVtOpentradeGetproductinfoAPIRequest, resp *alicom.AlibabaAlicomVtOpentradeGetproductinfoAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package maitix
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/maitix"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.damai.maitix.opengateway.project.status.query
 //
 // queryProjectStatusByProjectId
-func AlibabaDamaiMaitixOpengatewayProjectStatusQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest, resp *maitix.AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaDamaiMaitixOpengatewayProjectStatusQuery(ctx context.Context, clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIRequest, resp *maitix.AlibabaDamaiMaitixOpengatewayProjectStatusQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

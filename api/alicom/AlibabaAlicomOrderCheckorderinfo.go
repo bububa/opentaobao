@@ -1,6 +1,8 @@
 package alicom
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alicom"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alicom.order.checkorderinfo
 //
 // 金融购机订单信息校验
-func AlibabaAlicomOrderCheckorderinfo(clt *core.SDKClient, req *alicom.AlibabaAlicomOrderCheckorderinfoAPIRequest, resp *alicom.AlibabaAlicomOrderCheckorderinfoAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlicomOrderCheckorderinfo(ctx context.Context, clt *core.SDKClient, req *alicom.AlibabaAlicomOrderCheckorderinfoAPIRequest, resp *alicom.AlibabaAlicomOrderCheckorderinfoAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

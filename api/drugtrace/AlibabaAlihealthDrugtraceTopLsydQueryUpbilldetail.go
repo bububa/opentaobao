@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drugtrace.top.lsyd.query.upbilldetail
 //
 // 根据单据号查询单据的详情信息【注意：这个接口查询的是本企业的单据，如果是查询上游的单据明细信息，使用xxxxxxx.listupout.detail接口】。
-func AlibabaAlihealthDrugtraceTopLsydQueryUpbilldetail(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopLsydQueryUpbilldetailAPIRequest, resp *drugtrace.AlibabaAlihealthDrugtraceTopLsydQueryUpbilldetailAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugtraceTopLsydQueryUpbilldetail(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopLsydQueryUpbilldetailAPIRequest, resp *drugtrace.AlibabaAlihealthDrugtraceTopLsydQueryUpbilldetailAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

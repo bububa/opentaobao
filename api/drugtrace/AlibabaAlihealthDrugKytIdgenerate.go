@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drug.kyt.idgenerate
 //
 // 终端(医疗机构|零售药店)ID生成接口
-func AlibabaAlihealthDrugKytIdgenerate(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytIdgenerateAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytIdgenerateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugKytIdgenerate(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytIdgenerateAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytIdgenerateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

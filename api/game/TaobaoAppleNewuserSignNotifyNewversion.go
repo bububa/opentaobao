@@ -1,6 +1,8 @@
 package game
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/game"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.apple.newuser.sign.notify.newversion
 //
 // 资和信主动通知签约结果
-func TaobaoAppleNewuserSignNotifyNewversion(clt *core.SDKClient, req *game.TaobaoAppleNewuserSignNotifyNewversionAPIRequest, resp *game.TaobaoAppleNewuserSignNotifyNewversionAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAppleNewuserSignNotifyNewversion(ctx context.Context, clt *core.SDKClient, req *game.TaobaoAppleNewuserSignNotifyNewversionAPIRequest, resp *game.TaobaoAppleNewuserSignNotifyNewversionAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

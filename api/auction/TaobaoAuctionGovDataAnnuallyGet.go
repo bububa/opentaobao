@@ -1,6 +1,8 @@
 package auction
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/auction"
 )
@@ -14,6 +16,6 @@ import (
 // 在线标的：在线标的件数、意向用户数、网拍围观人次
 //
 // 最长6年，年起始时间2017年
-func TaobaoAuctionGovDataAnnuallyGet(clt *core.SDKClient, req *auction.TaobaoAuctionGovDataAnnuallyGetAPIRequest, resp *auction.TaobaoAuctionGovDataAnnuallyGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAuctionGovDataAnnuallyGet(ctx context.Context, clt *core.SDKClient, req *auction.TaobaoAuctionGovDataAnnuallyGetAPIRequest, resp *auction.TaobaoAuctionGovDataAnnuallyGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

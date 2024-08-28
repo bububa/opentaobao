@@ -1,6 +1,8 @@
 package moziacl
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/moziacl"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.mozi.acl.role.remove.permissions
 //
 // 从角色中移除一批功能权限
-func AlibabaMoziAclRoleRemovePermissions(clt *core.SDKClient, req *moziacl.AlibabaMoziAclRoleRemovePermissionsAPIRequest, resp *moziacl.AlibabaMoziAclRoleRemovePermissionsAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMoziAclRoleRemovePermissions(ctx context.Context, clt *core.SDKClient, req *moziacl.AlibabaMoziAclRoleRemovePermissionsAPIRequest, resp *moziacl.AlibabaMoziAclRoleRemovePermissionsAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

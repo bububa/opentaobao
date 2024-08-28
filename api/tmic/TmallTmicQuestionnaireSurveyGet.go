@@ -1,6 +1,8 @@
 package tmic
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmic"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.tmic.questionnaire.survey.get
 //
 // 天猫新品创新中心问卷数据获取
-func TmallTmicQuestionnaireSurveyGet(clt *core.SDKClient, req *tmic.TmallTmicQuestionnaireSurveyGetAPIRequest, resp *tmic.TmallTmicQuestionnaireSurveyGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallTmicQuestionnaireSurveyGet(ctx context.Context, clt *core.SDKClient, req *tmic.TmallTmicQuestionnaireSurveyGetAPIRequest, resp *tmic.TmallTmicQuestionnaireSurveyGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

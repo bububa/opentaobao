@@ -1,6 +1,8 @@
 package vaccin
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/vaccin"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.health.vaccin.notice.user.create
 //
 // 支付宝医疗健康疫苗用户创建
-func AlibabaHealthVaccinNoticeUserCreate(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinNoticeUserCreateAPIRequest, resp *vaccin.AlibabaHealthVaccinNoticeUserCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaHealthVaccinNoticeUserCreate(ctx context.Context, clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinNoticeUserCreateAPIRequest, resp *vaccin.AlibabaHealthVaccinNoticeUserCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

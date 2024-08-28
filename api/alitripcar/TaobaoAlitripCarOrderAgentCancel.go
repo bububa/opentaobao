@@ -1,6 +1,8 @@
 package alitripcar
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripcar"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.car.order.agent.cancel
 //
 // 司机或客服取消订单后通知飞猪订单取消
-func TaobaoAlitripCarOrderAgentCancel(clt *core.SDKClient, req *alitripcar.TaobaoAlitripCarOrderAgentCancelAPIRequest, resp *alitripcar.TaobaoAlitripCarOrderAgentCancelAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripCarOrderAgentCancel(ctx context.Context, clt *core.SDKClient, req *alitripcar.TaobaoAlitripCarOrderAgentCancelAPIRequest, resp *alitripcar.TaobaoAlitripCarOrderAgentCancelAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

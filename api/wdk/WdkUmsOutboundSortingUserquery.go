@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // wdk.ums.outbound.sorting.userquery
 //
 // dps-查询分货作业人员信息
-func WdkUmsOutboundSortingUserquery(clt *core.SDKClient, req *wdk.WdkUmsOutboundSortingUserqueryAPIRequest, resp *wdk.WdkUmsOutboundSortingUserqueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func WdkUmsOutboundSortingUserquery(ctx context.Context, clt *core.SDKClient, req *wdk.WdkUmsOutboundSortingUserqueryAPIRequest, resp *wdk.WdkUmsOutboundSortingUserqueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package aliexpresssumaitong
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/aliexpresssumaitong"
 )
@@ -9,6 +11,6 @@ import (
 // aliexpress.taxation.calculate.open.query
 //
 // 关务所需的申报清关字段
-func AliexpressTaxationCalculateOpenQuery(clt *core.SDKClient, req *aliexpresssumaitong.AliexpressTaxationCalculateOpenQueryAPIRequest, resp *aliexpresssumaitong.AliexpressTaxationCalculateOpenQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliexpressTaxationCalculateOpenQuery(ctx context.Context, clt *core.SDKClient, req *aliexpresssumaitong.AliexpressTaxationCalculateOpenQueryAPIRequest, resp *aliexpresssumaitong.AliexpressTaxationCalculateOpenQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

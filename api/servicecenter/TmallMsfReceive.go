@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.msf.receive
 //
 // 签收接口
-func TmallMsfReceive(clt *core.SDKClient, req *servicecenter.TmallMsfReceiveAPIRequest, resp *servicecenter.TmallMsfReceiveAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallMsfReceive(ctx context.Context, clt *core.SDKClient, req *servicecenter.TmallMsfReceiveAPIRequest, resp *servicecenter.TmallMsfReceiveAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

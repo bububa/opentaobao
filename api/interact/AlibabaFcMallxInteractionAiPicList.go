@@ -1,6 +1,8 @@
 package interact
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/interact"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.fc.mallx.interaction.ai.pic.list
 //
 // 花园ai作画定制查询
-func AlibabaFcMallxInteractionAiPicList(clt *core.SDKClient, req *interact.AlibabaFcMallxInteractionAiPicListAPIRequest, resp *interact.AlibabaFcMallxInteractionAiPicListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaFcMallxInteractionAiPicList(ctx context.Context, clt *core.SDKClient, req *interact.AlibabaFcMallxInteractionAiPicListAPIRequest, resp *interact.AlibabaFcMallxInteractionAiPicListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

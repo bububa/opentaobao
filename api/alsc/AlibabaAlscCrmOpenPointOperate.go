@@ -1,6 +1,8 @@
 package alsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alsc.crm.open.point.operate
 //
 // 同步积分接口
-func AlibabaAlscCrmOpenPointOperate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenPointOperateAPIRequest, resp *alsc.AlibabaAlscCrmOpenPointOperateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlscCrmOpenPointOperate(ctx context.Context, clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenPointOperateAPIRequest, resp *alsc.AlibabaAlscCrmOpenPointOperateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

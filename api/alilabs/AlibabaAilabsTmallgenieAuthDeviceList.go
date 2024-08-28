@@ -1,6 +1,8 @@
 package alilabs
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alilabs"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ailabs.tmallgenie.auth.device.list
 //
 // 通过此接口获取用户绑定的设备信息列表
-func AlibabaAilabsTmallgenieAuthDeviceList(clt *core.SDKClient, req *alilabs.AlibabaAilabsTmallgenieAuthDeviceListAPIRequest, resp *alilabs.AlibabaAilabsTmallgenieAuthDeviceListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAilabsTmallgenieAuthDeviceList(ctx context.Context, clt *core.SDKClient, req *alilabs.AlibabaAilabsTmallgenieAuthDeviceListAPIRequest, resp *alilabs.AlibabaAilabsTmallgenieAuthDeviceListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package btrip
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/btrip"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.btrip.hotel.distribution.order.cancel
 //
 // 商旅酒店API分销取消订单
-func AlitripBtripHotelDistributionOrderCancel(clt *core.SDKClient, req *btrip.AlitripBtripHotelDistributionOrderCancelAPIRequest, resp *btrip.AlitripBtripHotelDistributionOrderCancelAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripBtripHotelDistributionOrderCancel(ctx context.Context, clt *core.SDKClient, req *btrip.AlitripBtripHotelDistributionOrderCancelAPIRequest, resp *btrip.AlitripBtripHotelDistributionOrderCancelAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

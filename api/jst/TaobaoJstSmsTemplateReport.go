@@ -1,6 +1,8 @@
 package jst
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/jst"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.jst.sms.template.report
 //
 // 用于上传目前已经在阿里通信申请到的且正在使用的模板信息，确保模板数据正确，否则会导致短信发送失败！！！
-func TaobaoJstSmsTemplateReport(clt *core.SDKClient, req *jst.TaobaoJstSmsTemplateReportAPIRequest, resp *jst.TaobaoJstSmsTemplateReportAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoJstSmsTemplateReport(ctx context.Context, clt *core.SDKClient, req *jst.TaobaoJstSmsTemplateReportAPIRequest, resp *jst.TaobaoJstSmsTemplateReportAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

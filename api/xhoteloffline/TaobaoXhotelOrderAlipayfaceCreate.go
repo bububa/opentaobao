@@ -1,6 +1,8 @@
 package xhoteloffline
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhoteloffline"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.xhotel.order.alipayface.create
 //
 // 用于创建一笔信用住支付，主要应用场景是线下信用住
-func TaobaoXhotelOrderAlipayfaceCreate(clt *core.SDKClient, req *xhoteloffline.TaobaoXhotelOrderAlipayfaceCreateAPIRequest, resp *xhoteloffline.TaobaoXhotelOrderAlipayfaceCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelOrderAlipayfaceCreate(ctx context.Context, clt *core.SDKClient, req *xhoteloffline.TaobaoXhotelOrderAlipayfaceCreateAPIRequest, resp *xhoteloffline.TaobaoXhotelOrderAlipayfaceCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

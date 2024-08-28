@@ -1,6 +1,8 @@
 package trade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/trade"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.trade.order.create
 //
 // 通过该接口可以再盒马创建交易订单，并处理相关业务流程。主要用于和外部商户的订单进行同步和融合业务流程处理
-func AlibabaWdkTradeOrderCreate(clt *core.SDKClient, req *trade.AlibabaWdkTradeOrderCreateAPIRequest, resp *trade.AlibabaWdkTradeOrderCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkTradeOrderCreate(ctx context.Context, clt *core.SDKClient, req *trade.AlibabaWdkTradeOrderCreateAPIRequest, resp *trade.AlibabaWdkTradeOrderCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

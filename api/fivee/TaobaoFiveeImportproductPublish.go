@@ -1,6 +1,8 @@
 package fivee
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fivee"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.fivee.importproduct.publish
 //
 // 直营业务商家入住发布商品时，上传商品及商家证照信息
-func TaobaoFiveeImportproductPublish(clt *core.SDKClient, req *fivee.TaobaoFiveeImportproductPublishAPIRequest, resp *fivee.TaobaoFiveeImportproductPublishAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFiveeImportproductPublish(ctx context.Context, clt *core.SDKClient, req *fivee.TaobaoFiveeImportproductPublishAPIRequest, resp *fivee.TaobaoFiveeImportproductPublishAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

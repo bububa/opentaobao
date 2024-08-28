@@ -1,6 +1,8 @@
 package ascp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ascp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.dchain.aoxiang.warehouse.status.update
 //
 // 启用/停用仓资源
-func AlibabaDchainAoxiangWarehouseStatusUpdate(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangWarehouseStatusUpdateAPIRequest, resp *ascp.AlibabaDchainAoxiangWarehouseStatusUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaDchainAoxiangWarehouseStatusUpdate(ctx context.Context, clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangWarehouseStatusUpdateAPIRequest, resp *ascp.AlibabaDchainAoxiangWarehouseStatusUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

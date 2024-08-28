@@ -1,6 +1,8 @@
 package feedflow
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/feedflow"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.feedflow.item.campaign.daybudget
 //
 // 获取当日投放日预算总额
-func TaobaoFeedflowItemCampaignDaybudget(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignDaybudgetAPIRequest, resp *feedflow.TaobaoFeedflowItemCampaignDaybudgetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFeedflowItemCampaignDaybudget(ctx context.Context, clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignDaybudgetAPIRequest, resp *feedflow.TaobaoFeedflowItemCampaignDaybudgetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

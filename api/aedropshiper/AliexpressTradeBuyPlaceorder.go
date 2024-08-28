@@ -1,6 +1,8 @@
 package aedropshiper
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/aedropshiper"
 )
@@ -9,6 +11,6 @@ import (
 // aliexpress.trade.buy.placeorder
 //
 // 150欧欧盟税改
-func AliexpressTradeBuyPlaceorder(clt *core.SDKClient, req *aedropshiper.AliexpressTradeBuyPlaceorderAPIRequest, resp *aedropshiper.AliexpressTradeBuyPlaceorderAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliexpressTradeBuyPlaceorder(ctx context.Context, clt *core.SDKClient, req *aedropshiper.AliexpressTradeBuyPlaceorderAPIRequest, resp *aedropshiper.AliexpressTradeBuyPlaceorderAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

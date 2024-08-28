@@ -1,6 +1,8 @@
 package perfect
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/perfect"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.perfect.performance.localitem.edit
 //
 // 同城购业务定制化发品接口，同城购业务线专用
-func AlibabaPerfectPerformanceLocalitemEdit(clt *core.SDKClient, req *perfect.AlibabaPerfectPerformanceLocalitemEditAPIRequest, resp *perfect.AlibabaPerfectPerformanceLocalitemEditAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaPerfectPerformanceLocalitemEdit(ctx context.Context, clt *core.SDKClient, req *perfect.AlibabaPerfectPerformanceLocalitemEditAPIRequest, resp *perfect.AlibabaPerfectPerformanceLocalitemEditAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

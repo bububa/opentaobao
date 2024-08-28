@@ -1,6 +1,8 @@
 package tmallgenie
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallgenie"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ailabs.aligenie.skill.entity.import
 //
 // 根据用户上传的实体信息，进行制定技能实体的动态变更
-func AlibabaAilabsAligenieSkillEntityImport(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieSkillEntityImportAPIRequest, resp *tmallgenie.AlibabaAilabsAligenieSkillEntityImportAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAilabsAligenieSkillEntityImport(ctx context.Context, clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieSkillEntityImportAPIRequest, resp *tmallgenie.AlibabaAilabsAligenieSkillEntityImportAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

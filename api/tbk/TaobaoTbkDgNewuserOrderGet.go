@@ -1,6 +1,8 @@
 package tbk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbk"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.tbk.dg.newuser.order.get
 //
 // 拉新API
-func TaobaoTbkDgNewuserOrderGet(clt *core.SDKClient, req *tbk.TaobaoTbkDgNewuserOrderGetAPIRequest, resp *tbk.TaobaoTbkDgNewuserOrderGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTbkDgNewuserOrderGet(ctx context.Context, clt *core.SDKClient, req *tbk.TaobaoTbkDgNewuserOrderGetAPIRequest, resp *tbk.TaobaoTbkDgNewuserOrderGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

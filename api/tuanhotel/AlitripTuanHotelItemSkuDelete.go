@@ -1,6 +1,8 @@
 package tuanhotel
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tuanhotel"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.tuan.hotel.item.sku.delete
 //
 // 商户对发布的宝贝套餐价格库存信息进行删除
-func AlitripTuanHotelItemSkuDelete(clt *core.SDKClient, req *tuanhotel.AlitripTuanHotelItemSkuDeleteAPIRequest, resp *tuanhotel.AlitripTuanHotelItemSkuDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripTuanHotelItemSkuDelete(ctx context.Context, clt *core.SDKClient, req *tuanhotel.AlitripTuanHotelItemSkuDeleteAPIRequest, resp *tuanhotel.AlitripTuanHotelItemSkuDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

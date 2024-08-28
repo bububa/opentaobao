@@ -1,6 +1,8 @@
 package alihealthmdeer
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihealthmdeer"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.mdeer.video.sync
 //
 // 合伙做伴内容同步接口，用来视频同步
-func AlibabaAlihealthMdeerVideoSync(clt *core.SDKClient, req *alihealthmdeer.AlibabaAlihealthMdeerVideoSyncAPIRequest, resp *alihealthmdeer.AlibabaAlihealthMdeerVideoSyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthMdeerVideoSync(ctx context.Context, clt *core.SDKClient, req *alihealthmdeer.AlibabaAlihealthMdeerVideoSyncAPIRequest, resp *alihealthmdeer.AlibabaAlihealthMdeerVideoSyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

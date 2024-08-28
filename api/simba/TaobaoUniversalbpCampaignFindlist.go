@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.universalbp.campaign.findlist
 //
 // 查询场景内的全量计划列表
-func TaobaoUniversalbpCampaignFindlist(clt *core.SDKClient, req *simba.TaobaoUniversalbpCampaignFindlistAPIRequest, resp *simba.TaobaoUniversalbpCampaignFindlistAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoUniversalbpCampaignFindlist(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoUniversalbpCampaignFindlistAPIRequest, resp *simba.TaobaoUniversalbpCampaignFindlistAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

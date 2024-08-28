@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.weike.eservice.schedule.get
 //
 // 客服排班信息查询接口
-func TaobaoWeikeEserviceScheduleGet(clt *core.SDKClient, req *servicecenter.TaobaoWeikeEserviceScheduleGetAPIRequest, resp *servicecenter.TaobaoWeikeEserviceScheduleGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWeikeEserviceScheduleGet(ctx context.Context, clt *core.SDKClient, req *servicecenter.TaobaoWeikeEserviceScheduleGetAPIRequest, resp *servicecenter.TaobaoWeikeEserviceScheduleGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

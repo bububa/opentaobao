@@ -1,6 +1,8 @@
 package tttm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tttm"
 )
@@ -9,6 +11,6 @@ import (
 // aliyun.industry.tttm.items.sync
 //
 // 天天特卖商品信息同步
-func AliyunIndustryTttmItemsSync(clt *core.SDKClient, req *tttm.AliyunIndustryTttmItemsSyncAPIRequest, resp *tttm.AliyunIndustryTttmItemsSyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliyunIndustryTttmItemsSync(ctx context.Context, clt *core.SDKClient, req *tttm.AliyunIndustryTttmItemsSyncAPIRequest, resp *tttm.AliyunIndustryTttmItemsSyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package caipiao
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/caipiao"
 )
@@ -19,6 +21,6 @@ import (
 // https://gw.alicdn.com/tfs/TB1tzpNSXXXXXacXVXXXXXXXXXX-790-280.png
 // https://gw.alicdn.com/tfs/TB1UXdxSXXXXXXsapXXXXXXXXXX-790-280.png
 // https://gw.alicdn.com/tfs/TB1_gV.SXXXXXbZXpXXXXXXXXXX-790-280.png
-func TaobaoCaipiaoMarketingPut(clt *core.SDKClient, req *caipiao.TaobaoCaipiaoMarketingPutAPIRequest, resp *caipiao.TaobaoCaipiaoMarketingPutAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoCaipiaoMarketingPut(ctx context.Context, clt *core.SDKClient, req *caipiao.TaobaoCaipiaoMarketingPutAPIRequest, resp *caipiao.TaobaoCaipiaoMarketingPutAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

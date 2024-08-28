@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.marketing.coupon.queryactivity
 //
 // 查询优惠券活动
-func AlibabaWdkMarketingCouponQueryactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingCouponQueryactivityAPIRequest, resp *wdk.AlibabaWdkMarketingCouponQueryactivityAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkMarketingCouponQueryactivity(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkMarketingCouponQueryactivityAPIRequest, resp *wdk.AlibabaWdkMarketingCouponQueryactivityAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

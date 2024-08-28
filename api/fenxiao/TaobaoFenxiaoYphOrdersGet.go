@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.fenxiao.yph.orders.get
 //
 // 一盘货商家批量查询采购单信息
-func TaobaoFenxiaoYphOrdersGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoYphOrdersGetAPIRequest, resp *fenxiao.TaobaoFenxiaoYphOrdersGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFenxiaoYphOrdersGet(ctx context.Context, clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoYphOrdersGetAPIRequest, resp *fenxiao.TaobaoFenxiaoYphOrdersGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

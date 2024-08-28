@@ -1,6 +1,8 @@
 package waybill
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/waybill"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.waybill.ii.get
 //
 // 菜鸟电子面单的云打印申请电子面单号的方法
-func CainiaoWaybillIiGet(clt *core.SDKClient, req *waybill.CainiaoWaybillIiGetAPIRequest, resp *waybill.CainiaoWaybillIiGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoWaybillIiGet(ctx context.Context, clt *core.SDKClient, req *waybill.CainiaoWaybillIiGetAPIRequest, resp *waybill.CainiaoWaybillIiGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

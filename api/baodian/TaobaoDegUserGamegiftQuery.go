@@ -1,6 +1,8 @@
 package baodian
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/baodian"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.deg.user.gamegift.query
 //
 // 查询用户数娱礼包列表
-func TaobaoDegUserGamegiftQuery(clt *core.SDKClient, req *baodian.TaobaoDegUserGamegiftQueryAPIRequest, resp *baodian.TaobaoDegUserGamegiftQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoDegUserGamegiftQuery(ctx context.Context, clt *core.SDKClient, req *baodian.TaobaoDegUserGamegiftQueryAPIRequest, resp *baodian.TaobaoDegUserGamegiftQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

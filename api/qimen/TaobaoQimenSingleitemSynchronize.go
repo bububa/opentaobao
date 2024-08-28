@@ -1,6 +1,8 @@
 package qimen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qimen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qimen.singleitem.synchronize
 //
 // taobao.qimen.singleitem.synchronize
-func TaobaoQimenSingleitemSynchronize(clt *core.SDKClient, req *qimen.TaobaoQimenSingleitemSynchronizeAPIRequest, resp *qimen.TaobaoQimenSingleitemSynchronizeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQimenSingleitemSynchronize(ctx context.Context, clt *core.SDKClient, req *qimen.TaobaoQimenSingleitemSynchronizeAPIRequest, resp *qimen.TaobaoQimenSingleitemSynchronizeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

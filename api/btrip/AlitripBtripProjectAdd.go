@@ -1,6 +1,8 @@
 package btrip
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/btrip"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.btrip.project.add
 //
 // 添加项目
-func AlitripBtripProjectAdd(clt *core.SDKClient, req *btrip.AlitripBtripProjectAddAPIRequest, resp *btrip.AlitripBtripProjectAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripBtripProjectAdd(ctx context.Context, clt *core.SDKClient, req *btrip.AlitripBtripProjectAddAPIRequest, resp *btrip.AlitripBtripProjectAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

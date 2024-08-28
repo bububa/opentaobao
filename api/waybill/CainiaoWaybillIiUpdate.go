@@ -1,6 +1,8 @@
 package waybill
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/waybill"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.waybill.ii.update
 //
 // 商家更新电子面单号对应的面单信息。
-func CainiaoWaybillIiUpdate(clt *core.SDKClient, req *waybill.CainiaoWaybillIiUpdateAPIRequest, resp *waybill.CainiaoWaybillIiUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoWaybillIiUpdate(ctx context.Context, clt *core.SDKClient, req *waybill.CainiaoWaybillIiUpdateAPIRequest, resp *waybill.CainiaoWaybillIiUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

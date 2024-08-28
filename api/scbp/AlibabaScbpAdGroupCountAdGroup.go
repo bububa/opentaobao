@@ -1,6 +1,8 @@
 package scbp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/scbp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.scbp.ad.group.count.ad.group
 //
 // 统计adgroup数量
-func AlibabaScbpAdGroupCountAdGroup(clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupCountAdGroupAPIRequest, resp *scbp.AlibabaScbpAdGroupCountAdGroupAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaScbpAdGroupCountAdGroup(ctx context.Context, clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupCountAdGroupAPIRequest, resp *scbp.AlibabaScbpAdGroupCountAdGroupAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

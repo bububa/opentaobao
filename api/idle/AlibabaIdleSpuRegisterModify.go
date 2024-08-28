@@ -1,6 +1,8 @@
 package idle
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idle"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.spu.register.modify
 //
 // 闲鱼服务商通过此接口进行spu挂载，指明自己支持对该spu的服务(回收、验货等)
-func AlibabaIdleSpuRegisterModify(clt *core.SDKClient, req *idle.AlibabaIdleSpuRegisterModifyAPIRequest, resp *idle.AlibabaIdleSpuRegisterModifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleSpuRegisterModify(ctx context.Context, clt *core.SDKClient, req *idle.AlibabaIdleSpuRegisterModifyAPIRequest, resp *idle.AlibabaIdleSpuRegisterModifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

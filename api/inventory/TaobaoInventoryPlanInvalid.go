@@ -1,6 +1,8 @@
 package inventory
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/inventory"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.inventory.plan.invalid
 //
 // 计划库存的失效服务
-func TaobaoInventoryPlanInvalid(clt *core.SDKClient, req *inventory.TaobaoInventoryPlanInvalidAPIRequest, resp *inventory.TaobaoInventoryPlanInvalidAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoInventoryPlanInvalid(ctx context.Context, clt *core.SDKClient, req *inventory.TaobaoInventoryPlanInvalidAPIRequest, resp *inventory.TaobaoInventoryPlanInvalidAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

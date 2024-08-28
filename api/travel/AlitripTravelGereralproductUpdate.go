@@ -1,6 +1,8 @@
 package travel
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/travel"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.travel.gereralproduct.update
 //
 // 提供给飞猪供销平台供应商发布编辑通用类目产品的API
-func AlitripTravelGereralproductUpdate(clt *core.SDKClient, req *travel.AlitripTravelGereralproductUpdateAPIRequest, resp *travel.AlitripTravelGereralproductUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripTravelGereralproductUpdate(ctx context.Context, clt *core.SDKClient, req *travel.AlitripTravelGereralproductUpdateAPIRequest, resp *travel.AlitripTravelGereralproductUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

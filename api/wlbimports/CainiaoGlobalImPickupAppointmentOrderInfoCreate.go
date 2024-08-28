@@ -1,6 +1,8 @@
 package wlbimports
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wlbimports"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.global.im.pickup.appointment.order.info.create
 //
 // 预约单创建
-func CainiaoGlobalImPickupAppointmentOrderInfoCreate(clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest, resp *wlbimports.CainiaoGlobalImPickupAppointmentOrderInfoCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoGlobalImPickupAppointmentOrderInfoCreate(ctx context.Context, clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupAppointmentOrderInfoCreateAPIRequest, resp *wlbimports.CainiaoGlobalImPickupAppointmentOrderInfoCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

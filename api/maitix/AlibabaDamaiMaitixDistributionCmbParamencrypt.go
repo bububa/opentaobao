@@ -1,6 +1,8 @@
 package maitix
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/maitix"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.damai.maitix.distribution.cmb.paramencrypt
 //
 // encryptParam4Cmb
-func AlibabaDamaiMaitixDistributionCmbParamencrypt(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest, resp *maitix.AlibabaDamaiMaitixDistributionCmbParamencryptAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaDamaiMaitixDistributionCmbParamencrypt(ctx context.Context, clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest, resp *maitix.AlibabaDamaiMaitixDistributionCmbParamencryptAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

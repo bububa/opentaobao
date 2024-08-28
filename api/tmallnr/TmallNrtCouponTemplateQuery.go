@@ -1,6 +1,8 @@
 package tmallnr
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallnr"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.nrt.coupon.template.query
 //
 // 查询券模版
-func TmallNrtCouponTemplateQuery(clt *core.SDKClient, req *tmallnr.TmallNrtCouponTemplateQueryAPIRequest, resp *tmallnr.TmallNrtCouponTemplateQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallNrtCouponTemplateQuery(ctx context.Context, clt *core.SDKClient, req *tmallnr.TmallNrtCouponTemplateQueryAPIRequest, resp *tmallnr.TmallNrtCouponTemplateQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

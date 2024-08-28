@@ -1,6 +1,8 @@
 package iotticket
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/iotticket"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.iot.ticket.sp.comment
 //
 // IoT售后服务商工单备注
-func CainiaoIotTicketSpComment(clt *core.SDKClient, req *iotticket.CainiaoIotTicketSpCommentAPIRequest, resp *iotticket.CainiaoIotTicketSpCommentAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoIotTicketSpComment(ctx context.Context, clt *core.SDKClient, req *iotticket.CainiaoIotTicketSpCommentAPIRequest, resp *iotticket.CainiaoIotTicketSpCommentAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

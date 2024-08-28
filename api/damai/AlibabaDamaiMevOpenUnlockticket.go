@@ -1,6 +1,8 @@
 package damai
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/damai"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.damai.mev.open.unlockticket
 //
 // 开放接口 解锁票单
-func AlibabaDamaiMevOpenUnlockticket(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenUnlockticketAPIRequest, resp *damai.AlibabaDamaiMevOpenUnlockticketAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaDamaiMevOpenUnlockticket(ctx context.Context, clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenUnlockticketAPIRequest, resp *damai.AlibabaDamaiMevOpenUnlockticketAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

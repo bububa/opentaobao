@@ -1,6 +1,8 @@
 package alsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alsc.crm.promotion.list
 //
 // 获取品牌的促销规则列表
-func AlibabaAlscCrmPromotionList(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPromotionListAPIRequest, resp *alsc.AlibabaAlscCrmPromotionListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlscCrmPromotionList(ctx context.Context, clt *core.SDKClient, req *alsc.AlibabaAlscCrmPromotionListAPIRequest, resp *alsc.AlibabaAlscCrmPromotionListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

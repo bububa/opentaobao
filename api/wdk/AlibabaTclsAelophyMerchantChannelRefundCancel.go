@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.tcls.aelophy.merchant.channel.refund.cancel
 //
 // 翱象小程序 用户逆向申请取消
-func AlibabaTclsAelophyMerchantChannelRefundCancel(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest, resp *wdk.AlibabaTclsAelophyMerchantChannelRefundCancelAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaTclsAelophyMerchantChannelRefundCancel(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest, resp *wdk.AlibabaTclsAelophyMerchantChannelRefundCancelAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

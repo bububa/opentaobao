@@ -1,6 +1,8 @@
 package campus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/campus"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.campus.device.openapi.operatedevice
 //
 // 根据uuid操作设备
-func AlibabaCampusDeviceOpenapiOperatedevice(clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest, resp *campus.AlibabaCampusDeviceOpenapiOperatedeviceAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCampusDeviceOpenapiOperatedevice(ctx context.Context, clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest, resp *campus.AlibabaCampusDeviceOpenapiOperatedeviceAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

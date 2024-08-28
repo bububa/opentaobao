@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -12,6 +14,6 @@ import (
 // 需要自己处理好幂等逻辑。
 // 要先查询当前库存值，并基于返回结果做编辑操作。
 // 参考alibaba.ssc.supplyplatform.service.inventory.query和alibaba.ssc.supplyplatform.servicecapacity.save
-func AlibabaSscSupplyplatformServiceInventoryEdit(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceInventoryEditAPIRequest, resp *tmallservice.AlibabaSscSupplyplatformServiceInventoryEditAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaSscSupplyplatformServiceInventoryEdit(ctx context.Context, clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceInventoryEditAPIRequest, resp *tmallservice.AlibabaSscSupplyplatformServiceInventoryEditAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

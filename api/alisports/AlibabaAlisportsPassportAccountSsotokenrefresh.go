@@ -1,6 +1,8 @@
 package alisports
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alisports"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alisports.passport.account.ssotokenrefresh
 //
 // sso_token刷新
-func AlibabaAlisportsPassportAccountSsotokenrefresh(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest, resp *alisports.AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlisportsPassportAccountSsotokenrefresh(ctx context.Context, clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest, resp *alisports.AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

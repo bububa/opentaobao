@@ -1,6 +1,8 @@
 package scbp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/scbp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.scbp.account.daycost.get
 //
 // 查询今日消耗
-func AlibabaScbpAccountDaycostGet(clt *core.SDKClient, req *scbp.AlibabaScbpAccountDaycostGetAPIRequest, resp *scbp.AlibabaScbpAccountDaycostGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaScbpAccountDaycostGet(ctx context.Context, clt *core.SDKClient, req *scbp.AlibabaScbpAccountDaycostGetAPIRequest, resp *scbp.AlibabaScbpAccountDaycostGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

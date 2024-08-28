@@ -1,6 +1,8 @@
 package alilabs
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alilabs"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ailab.tb.user.skill.oauth
 //
 // 定制机厂商，在用户配网完成后，厂商调用此接口，写入特定技能的 Oauth 信息
-func AlibabaAilabTbUserSkillOauth(clt *core.SDKClient, req *alilabs.AlibabaAilabTbUserSkillOauthAPIRequest, resp *alilabs.AlibabaAilabTbUserSkillOauthAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAilabTbUserSkillOauth(ctx context.Context, clt *core.SDKClient, req *alilabs.AlibabaAilabTbUserSkillOauthAPIRequest, resp *alilabs.AlibabaAilabTbUserSkillOauthAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -41,6 +41,7 @@ make tools
 package main
 
 import (
+    "context"
     "log"
 
     "github.com/bububa/opentaobao/core"
@@ -56,7 +57,7 @@ func main() {
     resp := userModel.GetTaobaoUserAvatarGetAPIResponse()
     defer userModel.PutTaobaoUserAvatarGetAPIResponse(resp)
     accessToken := ""
-    if err := userApi.TaobaoUserAvatarGet(clt, req, resp, accessToken); err != nil {
+    if err := userApi.TaobaoUserAvatarGet(context.Background(), clt, req, resp, accessToken); err != nil {
         log.Fatalln(err)
     }
     log.Printf("%+v\n", resp)

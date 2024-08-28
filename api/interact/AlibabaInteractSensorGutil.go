@@ -1,6 +1,8 @@
 package interact
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/interact"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.interact.sensor.gutil
 //
 // canvas工具包
-func AlibabaInteractSensorGutil(clt *core.SDKClient, req *interact.AlibabaInteractSensorGutilAPIRequest, resp *interact.AlibabaInteractSensorGutilAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaInteractSensorGutil(ctx context.Context, clt *core.SDKClient, req *interact.AlibabaInteractSensorGutilAPIRequest, resp *interact.AlibabaInteractSensorGutilAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

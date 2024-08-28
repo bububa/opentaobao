@@ -1,6 +1,8 @@
 package logistic
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/logistic"
 )
@@ -9,6 +11,6 @@ import (
 // aliexpress.local.logistics.label.print
 //
 // print label
-func AliexpressLocalLogisticsLabelPrint(clt *core.SDKClient, req *logistic.AliexpressLocalLogisticsLabelPrintAPIRequest, resp *logistic.AliexpressLocalLogisticsLabelPrintAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliexpressLocalLogisticsLabelPrint(ctx context.Context, clt *core.SDKClient, req *logistic.AliexpressLocalLogisticsLabelPrintAPIRequest, resp *logistic.AliexpressLocalLogisticsLabelPrintAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

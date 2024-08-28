@@ -1,6 +1,8 @@
 package charity
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/charity"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.value.coin.issue
 //
 // 爱豆发放
-func AlibabaValueCoinIssue(clt *core.SDKClient, req *charity.AlibabaValueCoinIssueAPIRequest, resp *charity.AlibabaValueCoinIssueAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaValueCoinIssue(ctx context.Context, clt *core.SDKClient, req *charity.AlibabaValueCoinIssueAPIRequest, resp *charity.AlibabaValueCoinIssueAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

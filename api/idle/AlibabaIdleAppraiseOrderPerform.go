@@ -1,6 +1,8 @@
 package idle
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idle"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.appraise.order.perform
 //
 // 闲鱼验货担保业务中,外部服务商作为鉴定方 需要驱动交易节点变化
-func AlibabaIdleAppraiseOrderPerform(clt *core.SDKClient, req *idle.AlibabaIdleAppraiseOrderPerformAPIRequest, resp *idle.AlibabaIdleAppraiseOrderPerformAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleAppraiseOrderPerform(ctx context.Context, clt *core.SDKClient, req *idle.AlibabaIdleAppraiseOrderPerformAPIRequest, resp *idle.AlibabaIdleAppraiseOrderPerformAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

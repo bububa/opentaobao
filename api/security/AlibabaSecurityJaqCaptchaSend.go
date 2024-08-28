@@ -1,6 +1,8 @@
 package security
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/security"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.security.jaq.captcha.send
 //
 // 聚安全安全验证发起
-func AlibabaSecurityJaqCaptchaSend(clt *core.SDKClient, req *security.AlibabaSecurityJaqCaptchaSendAPIRequest, resp *security.AlibabaSecurityJaqCaptchaSendAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaSecurityJaqCaptchaSend(ctx context.Context, clt *core.SDKClient, req *security.AlibabaSecurityJaqCaptchaSendAPIRequest, resp *security.AlibabaSecurityJaqCaptchaSendAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

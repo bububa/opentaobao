@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.merchant.galaxy.order.query
 //
 // 为用户提供酒店订单的详细信息查询能力
-func AlitripMerchantGalaxyOrderQuery(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyOrderQueryAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyOrderQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripMerchantGalaxyOrderQuery(ctx context.Context, clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyOrderQueryAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyOrderQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

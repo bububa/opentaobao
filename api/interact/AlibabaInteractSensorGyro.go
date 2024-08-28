@@ -1,6 +1,8 @@
 package interact
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/interact"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.interact.sensor.gyro
 //
 // 客户端陀螺仪
-func AlibabaInteractSensorGyro(clt *core.SDKClient, req *interact.AlibabaInteractSensorGyroAPIRequest, resp *interact.AlibabaInteractSensorGyroAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaInteractSensorGyro(ctx context.Context, clt *core.SDKClient, req *interact.AlibabaInteractSensorGyroAPIRequest, resp *interact.AlibabaInteractSensorGyroAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

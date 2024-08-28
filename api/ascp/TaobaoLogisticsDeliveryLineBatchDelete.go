@@ -1,6 +1,8 @@
 package ascp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ascp"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.logistics.delivery.line.batch.delete
 //
 // 线路能力删除
-func TaobaoLogisticsDeliveryLineBatchDelete(clt *core.SDKClient, req *ascp.TaobaoLogisticsDeliveryLineBatchDeleteAPIRequest, resp *ascp.TaobaoLogisticsDeliveryLineBatchDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoLogisticsDeliveryLineBatchDelete(ctx context.Context, clt *core.SDKClient, req *ascp.TaobaoLogisticsDeliveryLineBatchDeleteAPIRequest, resp *ascp.TaobaoLogisticsDeliveryLineBatchDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package yunos
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/yunos"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.cosmo.data.push
 //
 // YunOS提供外部数据源接入，并输出到多端设备上，该接口提供了PUSH模式的数据接入
-func YunosCosmoDataPush(clt *core.SDKClient, req *yunos.YunosCosmoDataPushAPIRequest, resp *yunos.YunosCosmoDataPushAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosCosmoDataPush(ctx context.Context, clt *core.SDKClient, req *yunos.YunosCosmoDataPushAPIRequest, resp *yunos.YunosCosmoDataPushAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

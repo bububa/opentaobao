@@ -1,6 +1,8 @@
 package trade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/trade"
 )
@@ -14,6 +16,6 @@ import (
 // &lt;br/&gt;3. 获取红包优惠金额可以使用字段 coupon_fee
 // &lt;br/&gt;4. 请按需获取字段，减少TOP系统的压力
 // &lt;br/&gt;&lt;strong&gt;&lt;a href=&#34;https://console.open.taobao.com/dingWeb.htm?from=tradeapi&#34; target=&#34;_blank&#34;&gt;点击查看更多交易API说明&lt;/a&gt;&lt;/strong&gt;
-func TaobaoTradeSimpleGet(clt *core.SDKClient, req *trade.TaobaoTradeSimpleGetAPIRequest, resp *trade.TaobaoTradeSimpleGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTradeSimpleGet(ctx context.Context, clt *core.SDKClient, req *trade.TaobaoTradeSimpleGetAPIRequest, resp *trade.TaobaoTradeSimpleGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

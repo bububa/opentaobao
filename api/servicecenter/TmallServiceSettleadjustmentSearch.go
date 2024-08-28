@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.service.settleadjustment.search
 //
 // 天猫服务平台，按修改时间，时间间隔在15中内（包含15分钟），获取调整单数据
-func TmallServiceSettleadjustmentSearch(clt *core.SDKClient, req *servicecenter.TmallServiceSettleadjustmentSearchAPIRequest, resp *servicecenter.TmallServiceSettleadjustmentSearchAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallServiceSettleadjustmentSearch(ctx context.Context, clt *core.SDKClient, req *servicecenter.TmallServiceSettleadjustmentSearchAPIRequest, resp *servicecenter.TmallServiceSettleadjustmentSearchAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

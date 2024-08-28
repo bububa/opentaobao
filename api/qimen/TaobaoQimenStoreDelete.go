@@ -1,6 +1,8 @@
 package qimen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qimen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qimen.store.delete
 //
 // 商家在ERP等系统中调用该接口，删除线下门店
-func TaobaoQimenStoreDelete(clt *core.SDKClient, req *qimen.TaobaoQimenStoreDeleteAPIRequest, resp *qimen.TaobaoQimenStoreDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQimenStoreDelete(ctx context.Context, clt *core.SDKClient, req *qimen.TaobaoQimenStoreDeleteAPIRequest, resp *qimen.TaobaoQimenStoreDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

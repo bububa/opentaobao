@@ -1,6 +1,8 @@
 package tmallfcbox
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallfcbox"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.fcbox.notify
 //
 // tmax接收丰巢快递通知
-func TmallFcboxNotify(clt *core.SDKClient, req *tmallfcbox.TmallFcboxNotifyAPIRequest, resp *tmallfcbox.TmallFcboxNotifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallFcboxNotify(ctx context.Context, clt *core.SDKClient, req *tmallfcbox.TmallFcboxNotifyAPIRequest, resp *tmallfcbox.TmallFcboxNotifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package car
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/car"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.car.order.query
 //
 // 提供给直连商家查询在飞猪平台上产生的订单
-func TaobaoAlitripCarOrderQuery(clt *core.SDKClient, req *car.TaobaoAlitripCarOrderQueryAPIRequest, resp *car.TaobaoAlitripCarOrderQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripCarOrderQuery(ctx context.Context, clt *core.SDKClient, req *car.TaobaoAlitripCarOrderQueryAPIRequest, resp *car.TaobaoAlitripCarOrderQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

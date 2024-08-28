@@ -1,6 +1,8 @@
 package media
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/media"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.picture.changecategory
 //
 // 把批量的图片移动到某个分类下
-func TaobaoPictureChangecategory(clt *core.SDKClient, req *media.TaobaoPictureChangecategoryAPIRequest, resp *media.TaobaoPictureChangecategoryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoPictureChangecategory(ctx context.Context, clt *core.SDKClient, req *media.TaobaoPictureChangecategoryAPIRequest, resp *media.TaobaoPictureChangecategoryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

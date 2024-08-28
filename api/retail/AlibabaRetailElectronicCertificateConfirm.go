@@ -1,6 +1,8 @@
 package retail
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/retail"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.retail.electronic.certificate.confirm
 //
 // 确认核销接口
-func AlibabaRetailElectronicCertificateConfirm(clt *core.SDKClient, req *retail.AlibabaRetailElectronicCertificateConfirmAPIRequest, resp *retail.AlibabaRetailElectronicCertificateConfirmAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaRetailElectronicCertificateConfirm(ctx context.Context, clt *core.SDKClient, req *retail.AlibabaRetailElectronicCertificateConfirmAPIRequest, resp *retail.AlibabaRetailElectronicCertificateConfirmAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

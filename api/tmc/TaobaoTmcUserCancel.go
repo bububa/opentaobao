@@ -1,6 +1,8 @@
 package tmc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmc"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.tmc.user.cancel
 //
 // 取消用户的消息服务
-func TaobaoTmcUserCancel(clt *core.SDKClient, req *tmc.TaobaoTmcUserCancelAPIRequest, resp *tmc.TaobaoTmcUserCancelAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTmcUserCancel(ctx context.Context, clt *core.SDKClient, req *tmc.TaobaoTmcUserCancelAPIRequest, resp *tmc.TaobaoTmcUserCancelAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

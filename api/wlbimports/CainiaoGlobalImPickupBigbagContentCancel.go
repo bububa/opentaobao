@@ -1,6 +1,8 @@
 package wlbimports
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wlbimports"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.global.im.pickup.bigbag.content.cancel
 //
 // 进口大包取消
-func CainiaoGlobalImPickupBigbagContentCancel(clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupBigbagContentCancelAPIRequest, resp *wlbimports.CainiaoGlobalImPickupBigbagContentCancelAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoGlobalImPickupBigbagContentCancel(ctx context.Context, clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupBigbagContentCancelAPIRequest, resp *wlbimports.CainiaoGlobalImPickupBigbagContentCancelAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

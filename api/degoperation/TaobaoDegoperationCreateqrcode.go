@@ -1,6 +1,8 @@
 package degoperation
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/degoperation"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.degoperation.createqrcode
 //
 // 用户中奖后，生成二维码图片链接
-func TaobaoDegoperationCreateqrcode(clt *core.SDKClient, req *degoperation.TaobaoDegoperationCreateqrcodeAPIRequest, resp *degoperation.TaobaoDegoperationCreateqrcodeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoDegoperationCreateqrcode(ctx context.Context, clt *core.SDKClient, req *degoperation.TaobaoDegoperationCreateqrcodeAPIRequest, resp *degoperation.TaobaoDegoperationCreateqrcodeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

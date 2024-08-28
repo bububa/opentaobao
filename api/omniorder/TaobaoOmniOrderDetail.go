@@ -1,6 +1,8 @@
 package omniorder
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/omniorder"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.omni.order.detail
 //
 // 全渠道订单详情
-func TaobaoOmniOrderDetail(clt *core.SDKClient, req *omniorder.TaobaoOmniOrderDetailAPIRequest, resp *omniorder.TaobaoOmniOrderDetailAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOmniOrderDetail(ctx context.Context, clt *core.SDKClient, req *omniorder.TaobaoOmniOrderDetailAPIRequest, resp *omniorder.TaobaoOmniOrderDetailAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

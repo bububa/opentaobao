@@ -1,6 +1,8 @@
 package alihouse
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihouse"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihouse.change.store.type
 //
 // 融合店迁移门店
-func AlibabaAlihouseChangeStoreType(clt *core.SDKClient, req *alihouse.AlibabaAlihouseChangeStoreTypeAPIRequest, resp *alihouse.AlibabaAlihouseChangeStoreTypeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihouseChangeStoreType(ctx context.Context, clt *core.SDKClient, req *alihouse.AlibabaAlihouseChangeStoreTypeAPIRequest, resp *alihouse.AlibabaAlihouseChangeStoreTypeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

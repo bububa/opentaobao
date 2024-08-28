@@ -1,6 +1,8 @@
 package alihealth2
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihealth2"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.dental.statement.query
 //
 // ISV查询对账单
-func AlibabaAlihealthDentalStatementQuery(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDentalStatementQueryAPIRequest, resp *alihealth2.AlibabaAlihealthDentalStatementQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDentalStatementQuery(ctx context.Context, clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDentalStatementQueryAPIRequest, resp *alihealth2.AlibabaAlihealthDentalStatementQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

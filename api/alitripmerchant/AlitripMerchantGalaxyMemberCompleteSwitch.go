@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.merchant.galaxy.member.complete.switch
 //
 // 小程序老用户调用德比接口进行会员切换
-func AlitripMerchantGalaxyMemberCompleteSwitch(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyMemberCompleteSwitchAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyMemberCompleteSwitchAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripMerchantGalaxyMemberCompleteSwitch(ctx context.Context, clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyMemberCompleteSwitchAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyMemberCompleteSwitchAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

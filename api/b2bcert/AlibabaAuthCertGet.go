@@ -1,6 +1,8 @@
 package b2bcert
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/b2bcert"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.auth.cert.get
 //
 // 获取证书数据
-func AlibabaAuthCertGet(clt *core.SDKClient, req *b2bcert.AlibabaAuthCertGetAPIRequest, resp *b2bcert.AlibabaAuthCertGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAuthCertGet(ctx context.Context, clt *core.SDKClient, req *b2bcert.AlibabaAuthCertGetAPIRequest, resp *b2bcert.AlibabaAuthCertGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.merchant.galaxy.activity.address.add
 //
 // 营销抽奖活动，奖品邮寄地址填写
-func AlitripMerchantGalaxyActivityAddressAdd(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyActivityAddressAddAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyActivityAddressAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripMerchantGalaxyActivityAddressAdd(ctx context.Context, clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyActivityAddressAddAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyActivityAddressAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

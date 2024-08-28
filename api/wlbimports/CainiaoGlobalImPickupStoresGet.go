@@ -1,6 +1,8 @@
 package wlbimports
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wlbimports"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.global.im.pickup.stores.get
 //
 // 首公里揽收-集货仓列表查询
-func CainiaoGlobalImPickupStoresGet(clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupStoresGetAPIRequest, resp *wlbimports.CainiaoGlobalImPickupStoresGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoGlobalImPickupStoresGet(ctx context.Context, clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupStoresGetAPIRequest, resp *wlbimports.CainiaoGlobalImPickupStoresGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

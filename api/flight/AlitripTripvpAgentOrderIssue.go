@@ -1,6 +1,8 @@
 package flight
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/flight"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.tripvp.agent.order.issue
 //
 // 廉航辅营正向订单出货接口
-func AlitripTripvpAgentOrderIssue(clt *core.SDKClient, req *flight.AlitripTripvpAgentOrderIssueAPIRequest, resp *flight.AlitripTripvpAgentOrderIssueAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripTripvpAgentOrderIssue(ctx context.Context, clt *core.SDKClient, req *flight.AlitripTripvpAgentOrderIssueAPIRequest, resp *flight.AlitripTripvpAgentOrderIssueAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

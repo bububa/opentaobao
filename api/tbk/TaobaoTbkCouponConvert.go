@@ -1,6 +1,8 @@
 package tbk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbk"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.tbk.coupon.convert
 //
 // 单品券高效转链API
-func TaobaoTbkCouponConvert(clt *core.SDKClient, req *tbk.TaobaoTbkCouponConvertAPIRequest, resp *tbk.TaobaoTbkCouponConvertAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTbkCouponConvert(ctx context.Context, clt *core.SDKClient, req *tbk.TaobaoTbkCouponConvertAPIRequest, resp *tbk.TaobaoTbkCouponConvertAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

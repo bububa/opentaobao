@@ -1,6 +1,8 @@
 package tmallnr
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallnr"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.lsy.crm.activity.sellerinfo
 //
 // 本地团商家信息推送
-func AlibabaLsyCrmActivitySellerinfo(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmActivitySellerinfoAPIRequest, resp *tmallnr.AlibabaLsyCrmActivitySellerinfoAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLsyCrmActivitySellerinfo(ctx context.Context, clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmActivitySellerinfoAPIRequest, resp *tmallnr.AlibabaLsyCrmActivitySellerinfoAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

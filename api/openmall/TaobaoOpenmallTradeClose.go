@@ -1,6 +1,8 @@
 package openmall
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/openmall"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.openmall.trade.close
 //
 // 关闭订单
-func TaobaoOpenmallTradeClose(clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeCloseAPIRequest, resp *openmall.TaobaoOpenmallTradeCloseAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOpenmallTradeClose(ctx context.Context, clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeCloseAPIRequest, resp *openmall.TaobaoOpenmallTradeCloseAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

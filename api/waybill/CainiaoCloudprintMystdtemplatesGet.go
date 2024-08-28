@@ -1,6 +1,8 @@
 package waybill
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/waybill"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.cloudprint.mystdtemplates.get
 //
 // 获取用户使用的菜鸟电子面单
-func CainiaoCloudprintMystdtemplatesGet(clt *core.SDKClient, req *waybill.CainiaoCloudprintMystdtemplatesGetAPIRequest, resp *waybill.CainiaoCloudprintMystdtemplatesGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoCloudprintMystdtemplatesGet(ctx context.Context, clt *core.SDKClient, req *waybill.CainiaoCloudprintMystdtemplatesGetAPIRequest, resp *waybill.CainiaoCloudprintMystdtemplatesGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

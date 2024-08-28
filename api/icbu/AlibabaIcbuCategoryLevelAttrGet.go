@@ -1,6 +1,8 @@
 package icbu
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/icbu"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.icbu.category.level.attr.get
 //
 // 用于获取层级属性（车型库）的子属性和属性值
-func AlibabaIcbuCategoryLevelAttrGet(clt *core.SDKClient, req *icbu.AlibabaIcbuCategoryLevelAttrGetAPIRequest, resp *icbu.AlibabaIcbuCategoryLevelAttrGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIcbuCategoryLevelAttrGet(ctx context.Context, clt *core.SDKClient, req *icbu.AlibabaIcbuCategoryLevelAttrGetAPIRequest, resp *icbu.AlibabaIcbuCategoryLevelAttrGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

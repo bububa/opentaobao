@@ -1,6 +1,8 @@
 package idleisv
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idleisv"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.isv.item.publish
 //
 // 服务商ISV闲鱼商品发布
-func AlibabaIdleIsvItemPublish(clt *core.SDKClient, req *idleisv.AlibabaIdleIsvItemPublishAPIRequest, resp *idleisv.AlibabaIdleIsvItemPublishAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleIsvItemPublish(ctx context.Context, clt *core.SDKClient, req *idleisv.AlibabaIdleIsvItemPublishAPIRequest, resp *idleisv.AlibabaIdleIsvItemPublishAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

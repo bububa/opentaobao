@@ -1,6 +1,8 @@
 package yunosminiapp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/yunosminiapp"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.miniapp.datatunnel.call
 //
 // 对客户提供的api进行统一封装调用。
-func YunosMiniappDatatunnelCall(clt *core.SDKClient, req *yunosminiapp.YunosMiniappDatatunnelCallAPIRequest, resp *yunosminiapp.YunosMiniappDatatunnelCallAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosMiniappDatatunnelCall(ctx context.Context, clt *core.SDKClient, req *yunosminiapp.YunosMiniappDatatunnelCallAPIRequest, resp *yunosminiapp.YunosMiniappDatatunnelCallAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

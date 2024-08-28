@@ -1,6 +1,8 @@
 package idleisv
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idleisv"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.isv.pv.list
 //
 // 根据闲鱼渠道类目查询对应的品牌和型号清单，供服务商进行选择
-func AlibabaIdleIsvPvList(clt *core.SDKClient, req *idleisv.AlibabaIdleIsvPvListAPIRequest, resp *idleisv.AlibabaIdleIsvPvListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleIsvPvList(ctx context.Context, clt *core.SDKClient, req *idleisv.AlibabaIdleIsvPvListAPIRequest, resp *idleisv.AlibabaIdleIsvPvListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

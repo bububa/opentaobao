@@ -1,6 +1,7 @@
 package tests
 
 import (
+	"context"
 	"os"
 	"testing"
 
@@ -21,8 +22,9 @@ func TestJSONFormatHmac(t *testing.T) {
 	req := tbkModel.NewTaobaoTbkTpwdCreateRequest()
 	req.SetUrl(testURL)
 	req.SetText("test tpwd create")
-	resp, err := tbkApi.TaobaoTbkTpwdCreate(clt, req, "")
-	if err != nil {
+	resp := tbkModel.GetTaobaoTbkTpwdCreateAPIResponse()
+	defer tbkModel.ReleaseTaobaoTbkTpwdCreateAPIResponse(resp)
+	if err := tbkApi.TaobaoTbkTpwdCreate(context.Background(), clt, req, resp, ""); err != nil {
 		t.Error(err)
 		return
 	}
@@ -40,8 +42,9 @@ func TestJSONFormatMd5(t *testing.T) {
 	req := tbkModel.NewTaobaoTbkTpwdCreateRequest()
 	req.SetUrl(testURL)
 	req.SetText("test tpwd create")
-	resp, err := tbkApi.TaobaoTbkTpwdCreate(clt, req, "")
-	if err != nil {
+	resp := tbkModel.GetTaobaoTbkTpwdCreateAPIResponse()
+	defer tbkModel.ReleaseTaobaoTbkTpwdCreateAPIResponse(resp)
+	if err := tbkApi.TaobaoTbkTpwdCreate(context.Background(), clt, req, resp, ""); err != nil {
 		t.Error(err)
 		return
 	}

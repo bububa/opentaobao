@@ -1,6 +1,8 @@
 package lstlogistics
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/lstlogistics"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.lst.logistics.sendinfo.query
 //
 // 查询主订单包含的物流单
-func AlibabaLstLogisticsSendinfoQuery(clt *core.SDKClient, req *lstlogistics.AlibabaLstLogisticsSendinfoQueryAPIRequest, resp *lstlogistics.AlibabaLstLogisticsSendinfoQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLstLogisticsSendinfoQuery(ctx context.Context, clt *core.SDKClient, req *lstlogistics.AlibabaLstLogisticsSendinfoQueryAPIRequest, resp *lstlogistics.AlibabaLstLogisticsSendinfoQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

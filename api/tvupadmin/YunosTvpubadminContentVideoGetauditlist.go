@@ -1,6 +1,8 @@
 package tvupadmin
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.tvpubadmin.content.video.getauditlist
 //
 // 迎客松视频审核记录查询
-func YunosTvpubadminContentVideoGetauditlist(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentVideoGetauditlistAPIRequest, resp *tvupadmin.YunosTvpubadminContentVideoGetauditlistAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosTvpubadminContentVideoGetauditlist(ctx context.Context, clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentVideoGetauditlistAPIRequest, resp *tvupadmin.YunosTvpubadminContentVideoGetauditlistAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

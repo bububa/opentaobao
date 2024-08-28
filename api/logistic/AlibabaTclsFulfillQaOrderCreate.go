@@ -1,6 +1,8 @@
 package logistic
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/logistic"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.tcls.fulfill.qa.order.create
 //
 // 根据历史测试履约单号，复制一个同样镜像的履约单号并下发给大润发仓（api实现已经限制了测试数据）
-func AlibabaTclsFulfillQaOrderCreate(clt *core.SDKClient, req *logistic.AlibabaTclsFulfillQaOrderCreateAPIRequest, resp *logistic.AlibabaTclsFulfillQaOrderCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaTclsFulfillQaOrderCreate(ctx context.Context, clt *core.SDKClient, req *logistic.AlibabaTclsFulfillQaOrderCreateAPIRequest, resp *logistic.AlibabaTclsFulfillQaOrderCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

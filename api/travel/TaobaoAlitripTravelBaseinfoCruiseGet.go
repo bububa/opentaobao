@@ -1,6 +1,8 @@
 package travel
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/travel"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.travel.baseinfo.cruise.get
 //
 // 旅行度假新商品发布时可用的扩展接口，用于获取邮轮类目相关扩展信息。
-func TaobaoAlitripTravelBaseinfoCruiseGet(clt *core.SDKClient, req *travel.TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest, resp *travel.TaobaoAlitripTravelBaseinfoCruiseGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripTravelBaseinfoCruiseGet(ctx context.Context, clt *core.SDKClient, req *travel.TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest, resp *travel.TaobaoAlitripTravelBaseinfoCruiseGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

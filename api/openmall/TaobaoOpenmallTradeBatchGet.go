@@ -1,6 +1,8 @@
 package openmall
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/openmall"
 )
@@ -10,6 +12,6 @@ import (
 //
 // 批量获取openmall订单
 // 注意：该接口数据存在延迟，实时数据请通过taobao.openmall.trade.get获取
-func TaobaoOpenmallTradeBatchGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeBatchGetAPIRequest, resp *openmall.TaobaoOpenmallTradeBatchGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOpenmallTradeBatchGet(ctx context.Context, clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeBatchGetAPIRequest, resp *openmall.TaobaoOpenmallTradeBatchGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

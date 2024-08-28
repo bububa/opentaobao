@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/baichuan"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.baichuan.openaccount.registercode.send
 //
 // 百川发送注册验证码
-func TaobaoBaichuanOpenaccountRegistercodeSend(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountRegistercodeSendAPIRequest, resp *baichuan.TaobaoBaichuanOpenaccountRegistercodeSendAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBaichuanOpenaccountRegistercodeSend(ctx context.Context, clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountRegistercodeSendAPIRequest, resp *baichuan.TaobaoBaichuanOpenaccountRegistercodeSendAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

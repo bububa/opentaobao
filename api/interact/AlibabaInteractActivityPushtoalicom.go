@@ -1,6 +1,8 @@
 package interact
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/interact"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.interact.activity.pushtoalicom
 //
 // 涉及到流量包的小铺isv，将活动推送到流量聚乐部
-func AlibabaInteractActivityPushtoalicom(clt *core.SDKClient, req *interact.AlibabaInteractActivityPushtoalicomAPIRequest, resp *interact.AlibabaInteractActivityPushtoalicomAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaInteractActivityPushtoalicom(ctx context.Context, clt *core.SDKClient, req *interact.AlibabaInteractActivityPushtoalicomAPIRequest, resp *interact.AlibabaInteractActivityPushtoalicomAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package maitix
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/maitix"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.damai.maitix.opengateway.ticketItem.status.query
 //
 // queryTicketItemStatusByTicketItemId
-func AlibabaDamaiMaitixOpengatewayTicketItemStatusQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest, resp *maitix.AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaDamaiMaitixOpengatewayTicketItemStatusQuery(ctx context.Context, clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest, resp *maitix.AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

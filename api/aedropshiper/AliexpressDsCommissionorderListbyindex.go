@@ -1,6 +1,8 @@
 package aedropshiper
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/aedropshiper"
 )
@@ -9,6 +11,6 @@ import (
 // aliexpress.ds.commissionorder.listbyindex
 //
 // 联盟订单分页查询
-func AliexpressDsCommissionorderListbyindex(clt *core.SDKClient, req *aedropshiper.AliexpressDsCommissionorderListbyindexAPIRequest, resp *aedropshiper.AliexpressDsCommissionorderListbyindexAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliexpressDsCommissionorderListbyindex(ctx context.Context, clt *core.SDKClient, req *aedropshiper.AliexpressDsCommissionorderListbyindexAPIRequest, resp *aedropshiper.AliexpressDsCommissionorderListbyindexAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

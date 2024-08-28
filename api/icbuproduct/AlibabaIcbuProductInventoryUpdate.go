@@ -1,6 +1,8 @@
 package icbuproduct
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/icbuproduct"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.icbu.product.inventory.update
 //
 // 更新库存信息
-func AlibabaIcbuProductInventoryUpdate(clt *core.SDKClient, req *icbuproduct.AlibabaIcbuProductInventoryUpdateAPIRequest, resp *icbuproduct.AlibabaIcbuProductInventoryUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIcbuProductInventoryUpdate(ctx context.Context, clt *core.SDKClient, req *icbuproduct.AlibabaIcbuProductInventoryUpdateAPIRequest, resp *icbuproduct.AlibabaIcbuProductInventoryUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

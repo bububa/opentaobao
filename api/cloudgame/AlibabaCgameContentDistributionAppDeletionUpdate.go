@@ -1,6 +1,8 @@
 package cloudgame
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/cloudgame"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.cgame.content.distribution.app.deletion.update
 //
 // 游戏删除回调
-func AlibabaCgameContentDistributionAppDeletionUpdate(clt *core.SDKClient, req *cloudgame.AlibabaCgameContentDistributionAppDeletionUpdateAPIRequest, resp *cloudgame.AlibabaCgameContentDistributionAppDeletionUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCgameContentDistributionAppDeletionUpdate(ctx context.Context, clt *core.SDKClient, req *cloudgame.AlibabaCgameContentDistributionAppDeletionUpdateAPIRequest, resp *cloudgame.AlibabaCgameContentDistributionAppDeletionUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

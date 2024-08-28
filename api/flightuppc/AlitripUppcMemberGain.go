@@ -1,6 +1,8 @@
 package flightuppc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/flightuppc"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.uppc.member.gain
 //
 // 航司权益数据回流
-func AlitripUppcMemberGain(clt *core.SDKClient, req *flightuppc.AlitripUppcMemberGainAPIRequest, resp *flightuppc.AlitripUppcMemberGainAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripUppcMemberGain(ctx context.Context, clt *core.SDKClient, req *flightuppc.AlitripUppcMemberGainAPIRequest, resp *flightuppc.AlitripUppcMemberGainAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

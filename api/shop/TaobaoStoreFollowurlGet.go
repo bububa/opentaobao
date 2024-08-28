@@ -1,6 +1,8 @@
 package shop
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/shop"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.store.followurl.get
 //
 // 获取关注店铺的URL
-func TaobaoStoreFollowurlGet(clt *core.SDKClient, req *shop.TaobaoStoreFollowurlGetAPIRequest, resp *shop.TaobaoStoreFollowurlGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoStoreFollowurlGet(ctx context.Context, clt *core.SDKClient, req *shop.TaobaoStoreFollowurlGetAPIRequest, resp *shop.TaobaoStoreFollowurlGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

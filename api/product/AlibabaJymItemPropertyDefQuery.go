@@ -1,6 +1,8 @@
 package product
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/product"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.jym.item.property.def.query
 //
 // 查询商品发布属性定义详情
-func AlibabaJymItemPropertyDefQuery(clt *core.SDKClient, req *product.AlibabaJymItemPropertyDefQueryAPIRequest, resp *product.AlibabaJymItemPropertyDefQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaJymItemPropertyDefQuery(ctx context.Context, clt *core.SDKClient, req *product.AlibabaJymItemPropertyDefQueryAPIRequest, resp *product.AlibabaJymItemPropertyDefQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

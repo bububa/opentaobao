@@ -1,6 +1,8 @@
 package icbuproduct
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/icbuproduct"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.icbu.product.id.encrypt
 //
 // ICBU国际站，对混淆的产品ID加密。
-func AlibabaIcbuProductIdEncrypt(clt *core.SDKClient, req *icbuproduct.AlibabaIcbuProductIdEncryptAPIRequest, resp *icbuproduct.AlibabaIcbuProductIdEncryptAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIcbuProductIdEncrypt(ctx context.Context, clt *core.SDKClient, req *icbuproduct.AlibabaIcbuProductIdEncryptAPIRequest, resp *icbuproduct.AlibabaIcbuProductIdEncryptAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package mozi
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/mozi"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.mozi.fusion.dimission.employee.account
 //
 // 人员离职并且回收账号
-func AlibabaMoziFusionDimissionEmployeeAccount(clt *core.SDKClient, req *mozi.AlibabaMoziFusionDimissionEmployeeAccountAPIRequest, resp *mozi.AlibabaMoziFusionDimissionEmployeeAccountAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMoziFusionDimissionEmployeeAccount(ctx context.Context, clt *core.SDKClient, req *mozi.AlibabaMoziFusionDimissionEmployeeAccountAPIRequest, resp *mozi.AlibabaMoziFusionDimissionEmployeeAccountAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

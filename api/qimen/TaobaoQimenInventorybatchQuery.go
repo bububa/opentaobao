@@ -1,6 +1,8 @@
 package qimen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qimen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qimen.inventorybatch.query
 //
 // ERP 通过该接口查询指定商品的单仓批次库存
-func TaobaoQimenInventorybatchQuery(clt *core.SDKClient, req *qimen.TaobaoQimenInventorybatchQueryAPIRequest, resp *qimen.TaobaoQimenInventorybatchQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQimenInventorybatchQuery(ctx context.Context, clt *core.SDKClient, req *qimen.TaobaoQimenInventorybatchQueryAPIRequest, resp *qimen.TaobaoQimenInventorybatchQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

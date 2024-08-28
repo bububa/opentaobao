@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.aelophy.order.desensitizephone.get
 //
 // 获取订单隐私号
-func AlibabaAelophyOrderDesensitizephoneGet(clt *core.SDKClient, req *wdk.AlibabaAelophyOrderDesensitizephoneGetAPIRequest, resp *wdk.AlibabaAelophyOrderDesensitizephoneGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAelophyOrderDesensitizephoneGet(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaAelophyOrderDesensitizephoneGetAPIRequest, resp *wdk.AlibabaAelophyOrderDesensitizephoneGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

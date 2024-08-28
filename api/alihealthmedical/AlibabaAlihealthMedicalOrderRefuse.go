@@ -1,6 +1,8 @@
 package alihealthmedical
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihealthmedical"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.medical.order.refuse
 //
 // 三方机构通知平台&#34;医生拒诊&#34;
-func AlibabaAlihealthMedicalOrderRefuse(clt *core.SDKClient, req *alihealthmedical.AlibabaAlihealthMedicalOrderRefuseAPIRequest, resp *alihealthmedical.AlibabaAlihealthMedicalOrderRefuseAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthMedicalOrderRefuse(ctx context.Context, clt *core.SDKClient, req *alihealthmedical.AlibabaAlihealthMedicalOrderRefuseAPIRequest, resp *alihealthmedical.AlibabaAlihealthMedicalOrderRefuseAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

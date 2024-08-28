@@ -1,6 +1,8 @@
 package tbk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbk"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.tbk.shop.get
 //
 // 淘宝客店铺查询
-func TaobaoTbkShopGet(clt *core.SDKClient, req *tbk.TaobaoTbkShopGetAPIRequest, resp *tbk.TaobaoTbkShopGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTbkShopGet(ctx context.Context, clt *core.SDKClient, req *tbk.TaobaoTbkShopGetAPIRequest, resp *tbk.TaobaoTbkShopGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

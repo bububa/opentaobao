@@ -1,6 +1,8 @@
 package tmic
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmic"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.tmic.questionnaire.answer.push
 //
 // 问卷单题回答的提交
-func TmallTmicQuestionnaireAnswerPush(clt *core.SDKClient, req *tmic.TmallTmicQuestionnaireAnswerPushAPIRequest, resp *tmic.TmallTmicQuestionnaireAnswerPushAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallTmicQuestionnaireAnswerPush(ctx context.Context, clt *core.SDKClient, req *tmic.TmallTmicQuestionnaireAnswerPushAPIRequest, resp *tmic.TmallTmicQuestionnaireAnswerPushAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

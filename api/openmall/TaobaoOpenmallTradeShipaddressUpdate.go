@@ -1,6 +1,8 @@
 package openmall
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/openmall"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.openmall.trade.shipaddress.update
 //
 // Openmall订单收货地址修改
-func TaobaoOpenmallTradeShipaddressUpdate(clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeShipaddressUpdateAPIRequest, resp *openmall.TaobaoOpenmallTradeShipaddressUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOpenmallTradeShipaddressUpdate(ctx context.Context, clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeShipaddressUpdateAPIRequest, resp *openmall.TaobaoOpenmallTradeShipaddressUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package tmallsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.servicecenter.workcard.logisticsinfo.create
 //
 // 创建服务履约物流单
-func TmallServicecenterWorkcardLogisticsinfoCreate(clt *core.SDKClient, req *tmallsc.TmallServicecenterWorkcardLogisticsinfoCreateAPIRequest, resp *tmallsc.TmallServicecenterWorkcardLogisticsinfoCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallServicecenterWorkcardLogisticsinfoCreate(ctx context.Context, clt *core.SDKClient, req *tmallsc.TmallServicecenterWorkcardLogisticsinfoCreateAPIRequest, resp *tmallsc.TmallServicecenterWorkcardLogisticsinfoCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

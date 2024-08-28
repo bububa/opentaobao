@@ -1,6 +1,8 @@
 package alicom
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alicom"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.aliqin.flow.wallet.grade
 //
 // 获取直充流量档位
-func AlibabaAliqinFlowWalletGrade(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowWalletGradeAPIRequest, resp *alicom.AlibabaAliqinFlowWalletGradeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAliqinFlowWalletGrade(ctx context.Context, clt *core.SDKClient, req *alicom.AlibabaAliqinFlowWalletGradeAPIRequest, resp *alicom.AlibabaAliqinFlowWalletGradeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

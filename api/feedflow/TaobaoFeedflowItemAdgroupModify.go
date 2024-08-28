@@ -1,6 +1,8 @@
 package feedflow
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/feedflow"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.feedflow.item.adgroup.modify
 //
 // 信息流单元修改
-func TaobaoFeedflowItemAdgroupModify(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupModifyAPIRequest, resp *feedflow.TaobaoFeedflowItemAdgroupModifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoFeedflowItemAdgroupModify(ctx context.Context, clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupModifyAPIRequest, resp *feedflow.TaobaoFeedflowItemAdgroupModifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

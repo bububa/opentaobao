@@ -1,6 +1,8 @@
 package trade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/trade"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.pos.trade.pay
 //
 // 轻pos场景，外部商家支付后调用开放平台把支付信息回传给五道口交易
-func AlibabaWdkPosTradePay(clt *core.SDKClient, req *trade.AlibabaWdkPosTradePayAPIRequest, resp *trade.AlibabaWdkPosTradePayAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkPosTradePay(ctx context.Context, clt *core.SDKClient, req *trade.AlibabaWdkPosTradePayAPIRequest, resp *trade.AlibabaWdkPosTradePayAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

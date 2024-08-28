@@ -1,6 +1,8 @@
 package nrt
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/nrt"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.nrt.store.relation.query
 //
 // 喵零门店关系查询
-func TmallNrtStoreRelationQuery(clt *core.SDKClient, req *nrt.TmallNrtStoreRelationQueryAPIRequest, resp *nrt.TmallNrtStoreRelationQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallNrtStoreRelationQuery(ctx context.Context, clt *core.SDKClient, req *nrt.TmallNrtStoreRelationQueryAPIRequest, resp *nrt.TmallNrtStoreRelationQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

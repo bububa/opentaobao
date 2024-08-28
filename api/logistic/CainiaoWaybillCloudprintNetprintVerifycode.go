@@ -1,6 +1,8 @@
 package logistic
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/logistic"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.waybill.cloudprint.netprint.verifycode
 //
 // 打印获取验证码
-func CainiaoWaybillCloudprintNetprintVerifycode(clt *core.SDKClient, req *logistic.CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest, resp *logistic.CainiaoWaybillCloudprintNetprintVerifycodeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoWaybillCloudprintNetprintVerifycode(ctx context.Context, clt *core.SDKClient, req *logistic.CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest, resp *logistic.CainiaoWaybillCloudprintNetprintVerifycodeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

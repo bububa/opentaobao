@@ -1,6 +1,8 @@
 package qt
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qt"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qt.report.delete
 //
 // 删除质检报告
-func TaobaoQtReportDelete(clt *core.SDKClient, req *qt.TaobaoQtReportDeleteAPIRequest, resp *qt.TaobaoQtReportDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQtReportDelete(ctx context.Context, clt *core.SDKClient, req *qt.TaobaoQtReportDeleteAPIRequest, resp *qt.TaobaoQtReportDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package larkiot
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/larkiot"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.lark.pos.basedata.getworkstation
 //
 // 获取单独工作站
-func TaobaoLarkPosBasedataGetworkstation(clt *core.SDKClient, req *larkiot.TaobaoLarkPosBasedataGetworkstationAPIRequest, resp *larkiot.TaobaoLarkPosBasedataGetworkstationAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoLarkPosBasedataGetworkstation(ctx context.Context, clt *core.SDKClient, req *larkiot.TaobaoLarkPosBasedataGetworkstationAPIRequest, resp *larkiot.TaobaoLarkPosBasedataGetworkstationAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

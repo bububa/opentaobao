@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdkorder.sharestock.insurance.getorder
 //
 // 共享库存订单投保消息获取
-func AlibabaWdkorderSharestockInsuranceGetorder(clt *core.SDKClient, req *wdk.AlibabaWdkorderSharestockInsuranceGetorderAPIRequest, resp *wdk.AlibabaWdkorderSharestockInsuranceGetorderAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkorderSharestockInsuranceGetorder(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkorderSharestockInsuranceGetorderAPIRequest, resp *wdk.AlibabaWdkorderSharestockInsuranceGetorderAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

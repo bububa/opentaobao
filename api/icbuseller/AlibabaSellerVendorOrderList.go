@@ -1,6 +1,8 @@
 package icbuseller
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/icbuseller"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.seller.vendor.order.list
 //
 // 返回服务商在服务市场的客户订单
-func AlibabaSellerVendorOrderList(clt *core.SDKClient, req *icbuseller.AlibabaSellerVendorOrderListAPIRequest, resp *icbuseller.AlibabaSellerVendorOrderListAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaSellerVendorOrderList(ctx context.Context, clt *core.SDKClient, req *icbuseller.AlibabaSellerVendorOrderListAPIRequest, resp *icbuseller.AlibabaSellerVendorOrderListAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

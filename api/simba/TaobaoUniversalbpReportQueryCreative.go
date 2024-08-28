@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.universalbp.report.query.creative
 //
 // 创意报表查询
-func TaobaoUniversalbpReportQueryCreative(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryCreativeAPIRequest, resp *simba.TaobaoUniversalbpReportQueryCreativeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoUniversalbpReportQueryCreative(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryCreativeAPIRequest, resp *simba.TaobaoUniversalbpReportQueryCreativeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

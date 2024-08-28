@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.universalbp.report.query.adgroup
 //
 // 单元报表查询
-func TaobaoUniversalbpReportQueryAdgroup(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryAdgroupAPIRequest, resp *simba.TaobaoUniversalbpReportQueryAdgroupAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoUniversalbpReportQueryAdgroup(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryAdgroupAPIRequest, resp *simba.TaobaoUniversalbpReportQueryAdgroupAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

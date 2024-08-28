@@ -1,6 +1,8 @@
 package mc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/mc"
 )
@@ -9,6 +11,6 @@ import (
 // aliyun.unimkt.task.charge.launch
 //
 // 云码线上流量投放链路，用于判断用户是否有匹配的投放计划
-func AliyunUnimktTaskChargeLaunch(clt *core.SDKClient, req *mc.AliyunUnimktTaskChargeLaunchAPIRequest, resp *mc.AliyunUnimktTaskChargeLaunchAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliyunUnimktTaskChargeLaunch(ctx context.Context, clt *core.SDKClient, req *mc.AliyunUnimktTaskChargeLaunchAPIRequest, resp *mc.AliyunUnimktTaskChargeLaunchAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drugtrace.top.yljg.uploadretail
 //
 // 医疗机构零售上传接口
-func AlibabaAlihealthDrugtraceTopYljgUploadretail(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest, resp *drugtrace.AlibabaAlihealthDrugtraceTopYljgUploadretailAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugtraceTopYljgUploadretail(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest, resp *drugtrace.AlibabaAlihealthDrugtraceTopYljgUploadretailAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

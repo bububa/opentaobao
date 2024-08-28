@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.vas.service.validate
 //
 // 增值服务订购服务验证
-func TaobaoVasServiceValidate(clt *core.SDKClient, req *servicecenter.TaobaoVasServiceValidateAPIRequest, resp *servicecenter.TaobaoVasServiceValidateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoVasServiceValidate(ctx context.Context, clt *core.SDKClient, req *servicecenter.TaobaoVasServiceValidateAPIRequest, resp *servicecenter.TaobaoVasServiceValidateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

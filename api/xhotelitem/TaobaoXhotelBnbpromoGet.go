@@ -1,6 +1,8 @@
 package xhotelitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.xhotel.bnbpromo.get
 //
 // 民宿查询营销活动
-func TaobaoXhotelBnbpromoGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbpromoGetAPIRequest, resp *xhotelitem.TaobaoXhotelBnbpromoGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelBnbpromoGet(ctx context.Context, clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbpromoGetAPIRequest, resp *xhotelitem.TaobaoXhotelBnbpromoGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

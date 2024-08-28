@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.ump.range.get
 //
 // 查询某个卖家所有参加或者不参加某项活动的物品
-func TaobaoUmpRangeGet(clt *core.SDKClient, req *promotion.TaobaoUmpRangeGetAPIRequest, resp *promotion.TaobaoUmpRangeGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoUmpRangeGet(ctx context.Context, clt *core.SDKClient, req *promotion.TaobaoUmpRangeGetAPIRequest, resp *promotion.TaobaoUmpRangeGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

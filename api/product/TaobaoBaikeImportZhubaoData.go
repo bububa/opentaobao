@@ -1,6 +1,8 @@
 package product
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/product"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.baike.import.zhubao.data
 //
 // 用于接入外部数据录入到商品百科中
-func TaobaoBaikeImportZhubaoData(clt *core.SDKClient, req *product.TaobaoBaikeImportZhubaoDataAPIRequest, resp *product.TaobaoBaikeImportZhubaoDataAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoBaikeImportZhubaoData(ctx context.Context, clt *core.SDKClient, req *product.TaobaoBaikeImportZhubaoDataAPIRequest, resp *product.TaobaoBaikeImportZhubaoDataAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package tmallcar
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallcar"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.aliauto.service.item.get
 //
 // 根据门店自定义门店编码查询门店【已上架】服务商品列表
-func TmallAliautoServiceItemGet(clt *core.SDKClient, req *tmallcar.TmallAliautoServiceItemGetAPIRequest, resp *tmallcar.TmallAliautoServiceItemGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallAliautoServiceItemGet(ctx context.Context, clt *core.SDKClient, req *tmallcar.TmallAliautoServiceItemGetAPIRequest, resp *tmallcar.TmallAliautoServiceItemGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

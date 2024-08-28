@@ -1,6 +1,8 @@
 package scbp
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/scbp"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.scbp.ad.keyword.update.keyword.price.batch
 //
 // 修改关键词价格
-func AlibabaScbpAdKeywordUpdateKeywordPriceBatch(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordUpdateKeywordPriceBatchAPIRequest, resp *scbp.AlibabaScbpAdKeywordUpdateKeywordPriceBatchAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaScbpAdKeywordUpdateKeywordPriceBatch(ctx context.Context, clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordUpdateKeywordPriceBatchAPIRequest, resp *scbp.AlibabaScbpAdKeywordUpdateKeywordPriceBatchAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

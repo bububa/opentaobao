@@ -1,6 +1,8 @@
 package jst
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/jst"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.jst.sms.task.create
 //
 // 聚石塔短信的任务创建接口，用于创建数字短信、公众号短信、权益短信的AB测试任务。
-func TaobaoJstSmsTaskCreate(clt *core.SDKClient, req *jst.TaobaoJstSmsTaskCreateAPIRequest, resp *jst.TaobaoJstSmsTaskCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoJstSmsTaskCreate(ctx context.Context, clt *core.SDKClient, req *jst.TaobaoJstSmsTaskCreateAPIRequest, resp *jst.TaobaoJstSmsTaskCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

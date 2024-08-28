@@ -1,6 +1,8 @@
 package icbu
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/icbu"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.icbu.product.schema.add.draft
 //
 // 提供发布ICBU商品草稿的入口
-func AlibabaIcbuProductSchemaAddDraft(clt *core.SDKClient, req *icbu.AlibabaIcbuProductSchemaAddDraftAPIRequest, resp *icbu.AlibabaIcbuProductSchemaAddDraftAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIcbuProductSchemaAddDraft(ctx context.Context, clt *core.SDKClient, req *icbu.AlibabaIcbuProductSchemaAddDraftAPIRequest, resp *icbu.AlibabaIcbuProductSchemaAddDraftAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

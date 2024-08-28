@@ -1,6 +1,8 @@
 package axindata
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/axindata"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.travel.axin.hotel.city.get
 //
 // 阿信城市列表信息查询
-func TaobaoAlitripTravelAxinHotelCityGet(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelAxinHotelCityGetAPIRequest, resp *axindata.TaobaoAlitripTravelAxinHotelCityGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripTravelAxinHotelCityGet(ctx context.Context, clt *core.SDKClient, req *axindata.TaobaoAlitripTravelAxinHotelCityGetAPIRequest, resp *axindata.TaobaoAlitripTravelAxinHotelCityGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

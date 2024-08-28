@@ -1,6 +1,8 @@
 package nazca
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/nazca"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.nazca.token.issuecertapply.get
 //
 // 根据token获取出证申请信息
-func AlibabaNazcaTokenIssuecertapplyGet(clt *core.SDKClient, req *nazca.AlibabaNazcaTokenIssuecertapplyGetAPIRequest, resp *nazca.AlibabaNazcaTokenIssuecertapplyGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaNazcaTokenIssuecertapplyGet(ctx context.Context, clt *core.SDKClient, req *nazca.AlibabaNazcaTokenIssuecertapplyGetAPIRequest, resp *nazca.AlibabaNazcaTokenIssuecertapplyGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

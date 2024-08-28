@@ -1,6 +1,8 @@
 package ieagency
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ieagency"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.ie.agent.refund.new.getlist
 //
 // 查询商家国际机票退票申请单列表
-func TaobaoAlitripIeAgentRefundNewGetlist(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentRefundNewGetlistAPIRequest, resp *ieagency.TaobaoAlitripIeAgentRefundNewGetlistAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripIeAgentRefundNewGetlist(ctx context.Context, clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentRefundNewGetlistAPIRequest, resp *ieagency.TaobaoAlitripIeAgentRefundNewGetlistAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

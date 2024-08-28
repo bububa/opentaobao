@@ -1,6 +1,8 @@
 package alimember
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alimember"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.member.exit
 //
 // 商家会员解绑
-func AlibabaMemberExit(clt *core.SDKClient, req *alimember.AlibabaMemberExitAPIRequest, resp *alimember.AlibabaMemberExitAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMemberExit(ctx context.Context, clt *core.SDKClient, req *alimember.AlibabaMemberExitAPIRequest, resp *alimember.AlibabaMemberExitAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

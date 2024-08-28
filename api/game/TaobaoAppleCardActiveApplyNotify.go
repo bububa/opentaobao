@@ -1,6 +1,8 @@
 package game
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/game"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.apple.card.active.apply.notify
 //
 // 苹果卡密申请激活回调接口
-func TaobaoAppleCardActiveApplyNotify(clt *core.SDKClient, req *game.TaobaoAppleCardActiveApplyNotifyAPIRequest, resp *game.TaobaoAppleCardActiveApplyNotifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAppleCardActiveApplyNotify(ctx context.Context, clt *core.SDKClient, req *game.TaobaoAppleCardActiveApplyNotifyAPIRequest, resp *game.TaobaoAppleCardActiveApplyNotifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

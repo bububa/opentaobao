@@ -1,6 +1,8 @@
 package moscm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/moscm"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.mos.order.refund.list.get
 //
 // 批量查询多个退货单的退货明细
-func AlibabaMosOrderRefundListGet(clt *core.SDKClient, req *moscm.AlibabaMosOrderRefundListGetAPIRequest, resp *moscm.AlibabaMosOrderRefundListGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMosOrderRefundListGet(ctx context.Context, clt *core.SDKClient, req *moscm.AlibabaMosOrderRefundListGetAPIRequest, resp *moscm.AlibabaMosOrderRefundListGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

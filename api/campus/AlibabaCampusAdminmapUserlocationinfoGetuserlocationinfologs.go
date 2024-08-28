@@ -1,6 +1,8 @@
 package campus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/campus"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.campus.adminmap.userlocationinfo.getuserlocationinfologs
 //
 // 分时间段获取用户历史位置信息
-func AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologs(clt *core.SDKClient, req *campus.AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest, resp *campus.AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologs(ctx context.Context, clt *core.SDKClient, req *campus.AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest, resp *campus.AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

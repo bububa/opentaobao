@@ -1,6 +1,8 @@
 package examination
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/examination"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.examination.reserve.state.notify
 //
 // 到了体检当天后，服务商主动通知体检预约状态
-func AlibabaAlihealthExaminationReserveStateNotify(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReserveStateNotifyAPIRequest, resp *examination.AlibabaAlihealthExaminationReserveStateNotifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthExaminationReserveStateNotify(ctx context.Context, clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReserveStateNotifyAPIRequest, resp *examination.AlibabaAlihealthExaminationReserveStateNotifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

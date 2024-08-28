@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.cityretail.fulfill.abnormal.center.abnormal.status.change
 //
 // 同城零售履约异常中心异常单处理结果回调接口
-func TmallCityretailFulfillAbnormalCenterAbnormalStatusChange(clt *core.SDKClient, req *wdk.TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest, resp *wdk.TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallCityretailFulfillAbnormalCenterAbnormalStatusChange(ctx context.Context, clt *core.SDKClient, req *wdk.TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest, resp *wdk.TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

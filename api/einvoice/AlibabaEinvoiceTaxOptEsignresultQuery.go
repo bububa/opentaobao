@@ -1,6 +1,8 @@
 package einvoice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/einvoice"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.einvoice.tax.opt.esignresult.query
 //
 // 查询用户是否已经签约
-func AlibabaEinvoiceTaxOptEsignresultQuery(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest, resp *einvoice.AlibabaEinvoiceTaxOptEsignresultQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaEinvoiceTaxOptEsignresultQuery(ctx context.Context, clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxOptEsignresultQueryAPIRequest, resp *einvoice.AlibabaEinvoiceTaxOptEsignresultQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

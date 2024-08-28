@@ -1,6 +1,8 @@
 package security
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/security"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.security.jaq.rp.getverifytoken
 //
 // 聚安全实人认证获取认证会话token
-func AlibabaSecurityJaqRpGetverifytoken(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpGetverifytokenAPIRequest, resp *security.AlibabaSecurityJaqRpGetverifytokenAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaSecurityJaqRpGetverifytoken(ctx context.Context, clt *core.SDKClient, req *security.AlibabaSecurityJaqRpGetverifytokenAPIRequest, resp *security.AlibabaSecurityJaqRpGetverifytokenAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

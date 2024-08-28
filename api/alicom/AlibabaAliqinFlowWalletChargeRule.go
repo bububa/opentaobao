@@ -1,6 +1,8 @@
 package alicom
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alicom"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.aliqin.flow.wallet.charge.rule
 //
 // 流量钱包直充（根据号码归属地省份路由）
-func AlibabaAliqinFlowWalletChargeRule(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowWalletChargeRuleAPIRequest, resp *alicom.AlibabaAliqinFlowWalletChargeRuleAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAliqinFlowWalletChargeRule(ctx context.Context, clt *core.SDKClient, req *alicom.AlibabaAliqinFlowWalletChargeRuleAPIRequest, resp *alicom.AlibabaAliqinFlowWalletChargeRuleAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

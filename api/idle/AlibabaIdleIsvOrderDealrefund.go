@@ -1,6 +1,8 @@
 package idle
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idle"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.isv.order.dealrefund
 //
 // 闲鱼无忧购业务入仓模式下，用户发起退款后，服务商使用此接口处理退款
-func AlibabaIdleIsvOrderDealrefund(clt *core.SDKClient, req *idle.AlibabaIdleIsvOrderDealrefundAPIRequest, resp *idle.AlibabaIdleIsvOrderDealrefundAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleIsvOrderDealrefund(ctx context.Context, clt *core.SDKClient, req *idle.AlibabaIdleIsvOrderDealrefundAPIRequest, resp *idle.AlibabaIdleIsvOrderDealrefundAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package traveltrade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/traveltrade"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.travel.hotelticket.order.refund
 //
 // 退款结果通知
-func AlitripTravelHotelticketOrderRefund(clt *core.SDKClient, req *traveltrade.AlitripTravelHotelticketOrderRefundAPIRequest, resp *traveltrade.AlitripTravelHotelticketOrderRefundAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripTravelHotelticketOrderRefund(ctx context.Context, clt *core.SDKClient, req *traveltrade.AlitripTravelHotelticketOrderRefundAPIRequest, resp *traveltrade.AlitripTravelHotelticketOrderRefundAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

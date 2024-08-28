@@ -1,6 +1,8 @@
 package einvoice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/einvoice"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.einvoice.serialno.generate
 //
 // erp调用开票请求时需要一个开票流水号，此接口就提供了统一的开票流水号，避免了不同系统的冲突
-func AlibabaEinvoiceSerialnoGenerate(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceSerialnoGenerateAPIRequest, resp *einvoice.AlibabaEinvoiceSerialnoGenerateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaEinvoiceSerialnoGenerate(ctx context.Context, clt *core.SDKClient, req *einvoice.AlibabaEinvoiceSerialnoGenerateAPIRequest, resp *einvoice.AlibabaEinvoiceSerialnoGenerateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

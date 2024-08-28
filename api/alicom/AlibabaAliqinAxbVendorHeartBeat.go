@@ -1,6 +1,8 @@
 package alicom
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alicom"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.aliqin.axb.vendor.heart.beat
 //
 // 供应商上报自己的心跳信息
-func AlibabaAliqinAxbVendorHeartBeat(clt *core.SDKClient, req *alicom.AlibabaAliqinAxbVendorHeartBeatAPIRequest, resp *alicom.AlibabaAliqinAxbVendorHeartBeatAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAliqinAxbVendorHeartBeat(ctx context.Context, clt *core.SDKClient, req *alicom.AlibabaAliqinAxbVendorHeartBeatAPIRequest, resp *alicom.AlibabaAliqinAxbVendorHeartBeatAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

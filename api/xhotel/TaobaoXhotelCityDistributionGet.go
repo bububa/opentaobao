@@ -1,6 +1,8 @@
 package xhotel
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhotel"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.xhotel.city.distribution.get
 //
 // 引流API，对外提供酒店城市数据
-func TaobaoXhotelCityDistributionGet(clt *core.SDKClient, req *xhotel.TaobaoXhotelCityDistributionGetAPIRequest, resp *xhotel.TaobaoXhotelCityDistributionGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelCityDistributionGet(ctx context.Context, clt *core.SDKClient, req *xhotel.TaobaoXhotelCityDistributionGetAPIRequest, resp *xhotel.TaobaoXhotelCityDistributionGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

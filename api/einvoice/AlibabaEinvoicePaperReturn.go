@@ -1,6 +1,8 @@
 package einvoice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/einvoice"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.einvoice.paper.return
 //
 // 纸质发票结果回传
-func AlibabaEinvoicePaperReturn(clt *core.SDKClient, req *einvoice.AlibabaEinvoicePaperReturnAPIRequest, resp *einvoice.AlibabaEinvoicePaperReturnAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaEinvoicePaperReturn(ctx context.Context, clt *core.SDKClient, req *einvoice.AlibabaEinvoicePaperReturnAPIRequest, resp *einvoice.AlibabaEinvoicePaperReturnAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

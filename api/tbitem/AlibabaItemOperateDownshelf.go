@@ -1,6 +1,8 @@
 package tbitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbitem"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.item.operate.downshelf
 //
 // 商品下架
-func AlibabaItemOperateDownshelf(clt *core.SDKClient, req *tbitem.AlibabaItemOperateDownshelfAPIRequest, resp *tbitem.AlibabaItemOperateDownshelfAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaItemOperateDownshelf(ctx context.Context, clt *core.SDKClient, req *tbitem.AlibabaItemOperateDownshelfAPIRequest, resp *tbitem.AlibabaItemOperateDownshelfAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

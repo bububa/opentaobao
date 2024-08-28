@@ -1,6 +1,8 @@
 package interact
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/interact"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.interact.sensor.blow
 //
 // 客户端吹气
-func AlibabaInteractSensorBlow(clt *core.SDKClient, req *interact.AlibabaInteractSensorBlowAPIRequest, resp *interact.AlibabaInteractSensorBlowAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaInteractSensorBlow(ctx context.Context, clt *core.SDKClient, req *interact.AlibabaInteractSensorBlowAPIRequest, resp *interact.AlibabaInteractSensorBlowAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

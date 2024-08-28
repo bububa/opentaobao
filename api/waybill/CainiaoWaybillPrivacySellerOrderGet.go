@@ -1,6 +1,8 @@
 package waybill
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/waybill"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.waybill.privacy.seller.order.get
 //
 // 商家查询最近100天隐私面单记录
-func CainiaoWaybillPrivacySellerOrderGet(clt *core.SDKClient, req *waybill.CainiaoWaybillPrivacySellerOrderGetAPIRequest, resp *waybill.CainiaoWaybillPrivacySellerOrderGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoWaybillPrivacySellerOrderGet(ctx context.Context, clt *core.SDKClient, req *waybill.CainiaoWaybillPrivacySellerOrderGetAPIRequest, resp *waybill.CainiaoWaybillPrivacySellerOrderGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

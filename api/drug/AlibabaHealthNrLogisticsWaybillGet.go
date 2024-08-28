@@ -1,6 +1,8 @@
 package drug
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drug"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.health.nr.logistics.waybill.get
 //
 // 商家登录后根据订单号查询物流单号及电子面单信息
-func AlibabaHealthNrLogisticsWaybillGet(clt *core.SDKClient, req *drug.AlibabaHealthNrLogisticsWaybillGetAPIRequest, resp *drug.AlibabaHealthNrLogisticsWaybillGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaHealthNrLogisticsWaybillGet(ctx context.Context, clt *core.SDKClient, req *drug.AlibabaHealthNrLogisticsWaybillGetAPIRequest, resp *drug.AlibabaHealthNrLogisticsWaybillGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

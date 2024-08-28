@@ -1,6 +1,8 @@
 package icbuseller
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/icbuseller"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.seller.vendor.trade.purchase
 //
 // 查看购买人的订单记录以及授权时间
-func AlibabaSellerVendorTradePurchase(clt *core.SDKClient, req *icbuseller.AlibabaSellerVendorTradePurchaseAPIRequest, resp *icbuseller.AlibabaSellerVendorTradePurchaseAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaSellerVendorTradePurchase(ctx context.Context, clt *core.SDKClient, req *icbuseller.AlibabaSellerVendorTradePurchaseAPIRequest, resp *icbuseller.AlibabaSellerVendorTradePurchaseAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

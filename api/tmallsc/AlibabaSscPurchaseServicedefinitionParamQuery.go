@@ -1,6 +1,8 @@
 package tmallsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ssc.purchase.servicedefinition.param.query
 //
 // 查询采购服务定义参数信息
-func AlibabaSscPurchaseServicedefinitionParamQuery(clt *core.SDKClient, req *tmallsc.AlibabaSscPurchaseServicedefinitionParamQueryAPIRequest, resp *tmallsc.AlibabaSscPurchaseServicedefinitionParamQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaSscPurchaseServicedefinitionParamQuery(ctx context.Context, clt *core.SDKClient, req *tmallsc.AlibabaSscPurchaseServicedefinitionParamQueryAPIRequest, resp *tmallsc.AlibabaSscPurchaseServicedefinitionParamQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

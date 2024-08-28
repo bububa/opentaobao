@@ -1,6 +1,8 @@
 package crm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/crm"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.crm.service.channel.shortlink.create
 //
 // 可生成店铺宝贝、店铺首页、活动链接、订单链接等4种可呼起手机淘宝APP至对应页面的淘短链。
-func TaobaoCrmServiceChannelShortlinkCreate(clt *core.SDKClient, req *crm.TaobaoCrmServiceChannelShortlinkCreateAPIRequest, resp *crm.TaobaoCrmServiceChannelShortlinkCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoCrmServiceChannelShortlinkCreate(ctx context.Context, clt *core.SDKClient, req *crm.TaobaoCrmServiceChannelShortlinkCreateAPIRequest, resp *crm.TaobaoCrmServiceChannelShortlinkCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package jst
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/jst"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.rds.db.get
 //
 // 查询rds实例下的数据库
-func TaobaoRdsDbGet(clt *core.SDKClient, req *jst.TaobaoRdsDbGetAPIRequest, resp *jst.TaobaoRdsDbGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoRdsDbGet(ctx context.Context, clt *core.SDKClient, req *jst.TaobaoRdsDbGetAPIRequest, resp *jst.TaobaoRdsDbGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

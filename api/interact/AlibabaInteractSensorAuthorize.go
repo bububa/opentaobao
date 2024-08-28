@@ -1,6 +1,8 @@
 package interact
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/interact"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.interact.sensor.authorize
 //
 // 客户端授权页
-func AlibabaInteractSensorAuthorize(clt *core.SDKClient, req *interact.AlibabaInteractSensorAuthorizeAPIRequest, resp *interact.AlibabaInteractSensorAuthorizeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaInteractSensorAuthorize(ctx context.Context, clt *core.SDKClient, req *interact.AlibabaInteractSensorAuthorizeAPIRequest, resp *interact.AlibabaInteractSensorAuthorizeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

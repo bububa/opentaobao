@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.latour.strategy.show
 //
 // 阿里巴巴权益平台权益投放接口
-func AlibabaLatourStrategyShow(clt *core.SDKClient, req *promotion.AlibabaLatourStrategyShowAPIRequest, resp *promotion.AlibabaLatourStrategyShowAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLatourStrategyShow(ctx context.Context, clt *core.SDKClient, req *promotion.AlibabaLatourStrategyShowAPIRequest, resp *promotion.AlibabaLatourStrategyShowAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

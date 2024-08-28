@@ -1,6 +1,8 @@
 package security
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/security"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.security.jaq.rp.cloud.event
 //
 // 事件上报接口
-func AlibabaSecurityJaqRpCloudEvent(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpCloudEventAPIRequest, resp *security.AlibabaSecurityJaqRpCloudEventAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaSecurityJaqRpCloudEvent(ctx context.Context, clt *core.SDKClient, req *security.AlibabaSecurityJaqRpCloudEventAPIRequest, resp *security.AlibabaSecurityJaqRpCloudEventAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package miniappopen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/miniappopen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.miniapp.distribution.material.get
 //
 // 读取已录入的投放入口素材信息。
-func TaobaoMiniappDistributionMaterialGet(clt *core.SDKClient, req *miniappopen.TaobaoMiniappDistributionMaterialGetAPIRequest, resp *miniappopen.TaobaoMiniappDistributionMaterialGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoMiniappDistributionMaterialGet(ctx context.Context, clt *core.SDKClient, req *miniappopen.TaobaoMiniappDistributionMaterialGetAPIRequest, resp *miniappopen.TaobaoMiniappDistributionMaterialGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

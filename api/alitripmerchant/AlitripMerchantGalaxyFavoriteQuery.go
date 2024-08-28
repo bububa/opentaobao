@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.merchant.galaxy.favorite.query
 //
 // 返回用户对单个酒店的收藏状态
-func AlitripMerchantGalaxyFavoriteQuery(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyFavoriteQueryAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyFavoriteQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripMerchantGalaxyFavoriteQuery(ctx context.Context, clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyFavoriteQueryAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyFavoriteQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

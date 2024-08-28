@@ -1,6 +1,8 @@
 package cloudgame
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/cloudgame"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.cloudgame.interactive.game.joincode.assign
 //
 // 分配joinCode
-func AlibabaCloudgameInteractiveGameJoincodeAssign(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGameJoincodeAssignAPIRequest, resp *cloudgame.AlibabaCloudgameInteractiveGameJoincodeAssignAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCloudgameInteractiveGameJoincodeAssign(ctx context.Context, clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGameJoincodeAssignAPIRequest, resp *cloudgame.AlibabaCloudgameInteractiveGameJoincodeAssignAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

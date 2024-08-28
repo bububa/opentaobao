@@ -1,6 +1,8 @@
 package crm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/crm"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.crm.group.add
 //
 // 卖家创建一个新的分组，接口返回一个创建成功的分组的id
-func TaobaoCrmGroupAdd(clt *core.SDKClient, req *crm.TaobaoCrmGroupAddAPIRequest, resp *crm.TaobaoCrmGroupAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoCrmGroupAdd(ctx context.Context, clt *core.SDKClient, req *crm.TaobaoCrmGroupAddAPIRequest, resp *crm.TaobaoCrmGroupAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

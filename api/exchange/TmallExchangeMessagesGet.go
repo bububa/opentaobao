@@ -1,6 +1,8 @@
 package exchange
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/exchange"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.exchange.messages.get
 //
 // 查询换货订单留言列表
-func TmallExchangeMessagesGet(clt *core.SDKClient, req *exchange.TmallExchangeMessagesGetAPIRequest, resp *exchange.TmallExchangeMessagesGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallExchangeMessagesGet(ctx context.Context, clt *core.SDKClient, req *exchange.TmallExchangeMessagesGetAPIRequest, resp *exchange.TmallExchangeMessagesGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

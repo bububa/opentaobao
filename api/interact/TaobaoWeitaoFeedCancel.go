@@ -1,6 +1,8 @@
 package interact
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/interact"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.weitao.feed.cancel
 //
 // 取消广播在timeline和广场中的展示。
-func TaobaoWeitaoFeedCancel(clt *core.SDKClient, req *interact.TaobaoWeitaoFeedCancelAPIRequest, resp *interact.TaobaoWeitaoFeedCancelAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWeitaoFeedCancel(ctx context.Context, clt *core.SDKClient, req *interact.TaobaoWeitaoFeedCancelAPIRequest, resp *interact.TaobaoWeitaoFeedCancelAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package alsc
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alsc"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alsc.crm.recharge.chargeprecheck.get
 //
 // 储值账户充值前校验接口
-func AlibabaAlscCrmRechargeChargeprecheckGet(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRechargeChargeprecheckGetAPIRequest, resp *alsc.AlibabaAlscCrmRechargeChargeprecheckGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlscCrmRechargeChargeprecheckGet(ctx context.Context, clt *core.SDKClient, req *alsc.AlibabaAlscCrmRechargeChargeprecheckGetAPIRequest, resp *alsc.AlibabaAlscCrmRechargeChargeprecheckGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

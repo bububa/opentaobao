@@ -1,6 +1,8 @@
 package wlbimports
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wlbimports"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.wlb.imports.order.get
 //
 // 一般进口物流订单获取
-func TaobaoWlbImportsOrderGet(clt *core.SDKClient, req *wlbimports.TaobaoWlbImportsOrderGetAPIRequest, resp *wlbimports.TaobaoWlbImportsOrderGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoWlbImportsOrderGet(ctx context.Context, clt *core.SDKClient, req *wlbimports.TaobaoWlbImportsOrderGetAPIRequest, resp *wlbimports.TaobaoWlbImportsOrderGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

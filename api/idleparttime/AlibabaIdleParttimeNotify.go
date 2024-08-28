@@ -1,6 +1,8 @@
 package idleparttime
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idleparttime"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.parttime.notify
 //
 // 服务商侧有岗位状态变更对我们进行通知(岗位关闭, 录取状态)
-func AlibabaIdleParttimeNotify(clt *core.SDKClient, req *idleparttime.AlibabaIdleParttimeNotifyAPIRequest, resp *idleparttime.AlibabaIdleParttimeNotifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleParttimeNotify(ctx context.Context, clt *core.SDKClient, req *idleparttime.AlibabaIdleParttimeNotifyAPIRequest, resp *idleparttime.AlibabaIdleParttimeNotifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

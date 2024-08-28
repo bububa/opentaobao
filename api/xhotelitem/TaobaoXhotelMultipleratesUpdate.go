@@ -1,6 +1,8 @@
 package xhotelitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
@@ -10,6 +12,6 @@ import (
 //
 // 批量更新复杂价格
 // 涵盖了taobao.xhotel.rates.update的功能
-func TaobaoXhotelMultipleratesUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelMultipleratesUpdateAPIRequest, resp *xhotelitem.TaobaoXhotelMultipleratesUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelMultipleratesUpdate(ctx context.Context, clt *core.SDKClient, req *xhotelitem.TaobaoXhotelMultipleratesUpdateAPIRequest, resp *xhotelitem.TaobaoXhotelMultipleratesUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

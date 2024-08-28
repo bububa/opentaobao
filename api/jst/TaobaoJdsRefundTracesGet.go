@@ -1,6 +1,8 @@
 package jst
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/jst"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.jds.refund.traces.get
 //
 // 获取聚石塔数据共享的交易全链路的退款信息
-func TaobaoJdsRefundTracesGet(clt *core.SDKClient, req *jst.TaobaoJdsRefundTracesGetAPIRequest, resp *jst.TaobaoJdsRefundTracesGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoJdsRefundTracesGet(ctx context.Context, clt *core.SDKClient, req *jst.TaobaoJdsRefundTracesGetAPIRequest, resp *jst.TaobaoJdsRefundTracesGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -22,6 +24,6 @@ import (
 // 10, 网点已存在
 // 11, 网点不存在
 // 12, 系统错误
-func TmallServicecenterServicestoreUpdateservicestore(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreUpdateservicestoreAPIRequest, resp *tmallservice.TmallServicecenterServicestoreUpdateservicestoreAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallServicecenterServicestoreUpdateservicestore(ctx context.Context, clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreUpdateservicestoreAPIRequest, resp *tmallservice.TmallServicecenterServicestoreUpdateservicestoreAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

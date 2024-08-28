@@ -1,6 +1,8 @@
 package car
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/car"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.rentcar.order.detail.query
 //
 // 租车订单详情查询
-func AlitripRentcarOrderDetailQuery(clt *core.SDKClient, req *car.AlitripRentcarOrderDetailQueryAPIRequest, resp *car.AlitripRentcarOrderDetailQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripRentcarOrderDetailQuery(ctx context.Context, clt *core.SDKClient, req *car.AlitripRentcarOrderDetailQueryAPIRequest, resp *car.AlitripRentcarOrderDetailQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

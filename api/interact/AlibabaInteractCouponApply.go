@@ -1,6 +1,8 @@
 package interact
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/interact"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.interact.coupon.apply
 //
 // 鉴权接口，为coupon.apply接口鉴权
-func AlibabaInteractCouponApply(clt *core.SDKClient, req *interact.AlibabaInteractCouponApplyAPIRequest, resp *interact.AlibabaInteractCouponApplyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaInteractCouponApply(ctx context.Context, clt *core.SDKClient, req *interact.AlibabaInteractCouponApplyAPIRequest, resp *interact.AlibabaInteractCouponApplyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

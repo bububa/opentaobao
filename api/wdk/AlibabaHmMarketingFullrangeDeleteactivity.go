@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.hm.marketing.fullrange.deleteactivity
 //
 // 全场活动删除活动
-func AlibabaHmMarketingFullrangeDeleteactivity(clt *core.SDKClient, req *wdk.AlibabaHmMarketingFullrangeDeleteactivityAPIRequest, resp *wdk.AlibabaHmMarketingFullrangeDeleteactivityAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaHmMarketingFullrangeDeleteactivity(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaHmMarketingFullrangeDeleteactivityAPIRequest, resp *wdk.AlibabaHmMarketingFullrangeDeleteactivityAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

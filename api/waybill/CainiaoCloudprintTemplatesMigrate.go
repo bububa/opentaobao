@@ -1,6 +1,8 @@
 package waybill
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/waybill"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.cloudprint.templates.migrate
 //
 // 云打印模板迁移接口
-func CainiaoCloudprintTemplatesMigrate(clt *core.SDKClient, req *waybill.CainiaoCloudprintTemplatesMigrateAPIRequest, resp *waybill.CainiaoCloudprintTemplatesMigrateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoCloudprintTemplatesMigrate(ctx context.Context, clt *core.SDKClient, req *waybill.CainiaoCloudprintTemplatesMigrateAPIRequest, resp *waybill.CainiaoCloudprintTemplatesMigrateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

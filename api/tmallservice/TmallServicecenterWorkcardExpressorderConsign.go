@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.servicecenter.workcard.expressorder.consign
 //
 // 天猫服务寄送类业务，服务商履约完成后进行寄回操作呼叫运力
-func TmallServicecenterWorkcardExpressorderConsign(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardExpressorderConsignAPIRequest, resp *tmallservice.TmallServicecenterWorkcardExpressorderConsignAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallServicecenterWorkcardExpressorderConsign(ctx context.Context, clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardExpressorderConsignAPIRequest, resp *tmallservice.TmallServicecenterWorkcardExpressorderConsignAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

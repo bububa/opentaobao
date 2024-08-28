@@ -1,6 +1,8 @@
 package xhoteloffline
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhoteloffline"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.xhotel.order.alipayface.check
 //
 // 接口用于校验买家是否具有使用酒店信用住的资格
-func TaobaoXhotelOrderAlipayfaceCheck(clt *core.SDKClient, req *xhoteloffline.TaobaoXhotelOrderAlipayfaceCheckAPIRequest, resp *xhoteloffline.TaobaoXhotelOrderAlipayfaceCheckAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelOrderAlipayfaceCheck(ctx context.Context, clt *core.SDKClient, req *xhoteloffline.TaobaoXhotelOrderAlipayfaceCheckAPIRequest, resp *xhoteloffline.TaobaoXhotelOrderAlipayfaceCheckAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

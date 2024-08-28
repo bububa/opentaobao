@@ -1,6 +1,8 @@
 package openmall
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/openmall"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.openmall.refund.image.upload
 //
 // OpenMall退款图片上传
-func TaobaoOpenmallRefundImageUpload(clt *core.SDKClient, req *openmall.TaobaoOpenmallRefundImageUploadAPIRequest, resp *openmall.TaobaoOpenmallRefundImageUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOpenmallRefundImageUpload(ctx context.Context, clt *core.SDKClient, req *openmall.TaobaoOpenmallRefundImageUploadAPIRequest, resp *openmall.TaobaoOpenmallRefundImageUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

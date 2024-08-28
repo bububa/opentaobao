@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.promotion.benefit.activity.update
 //
 // 修改卖家活动中关联的对应的权益。
-func TaobaoPromotionBenefitActivityUpdate(clt *core.SDKClient, req *promotion.TaobaoPromotionBenefitActivityUpdateAPIRequest, resp *promotion.TaobaoPromotionBenefitActivityUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoPromotionBenefitActivityUpdate(ctx context.Context, clt *core.SDKClient, req *promotion.TaobaoPromotionBenefitActivityUpdateAPIRequest, resp *promotion.TaobaoPromotionBenefitActivityUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

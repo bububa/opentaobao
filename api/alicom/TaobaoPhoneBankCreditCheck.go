@@ -1,6 +1,8 @@
 package alicom
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alicom"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.phone.bank.credit.check
 //
 // 虚拟话费任务银行信用卡办理检查
-func TaobaoPhoneBankCreditCheck(clt *core.SDKClient, req *alicom.TaobaoPhoneBankCreditCheckAPIRequest, resp *alicom.TaobaoPhoneBankCreditCheckAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoPhoneBankCreditCheck(ctx context.Context, clt *core.SDKClient, req *alicom.TaobaoPhoneBankCreditCheckAPIRequest, resp *alicom.TaobaoPhoneBankCreditCheckAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

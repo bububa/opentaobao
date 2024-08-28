@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drug.kyt.dr.billcheck
 //
 // 各级疾控在入库完成后，需要做追溯信息验证
-func AlibabaAlihealthDrugKytDrBillcheck(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrBillcheckAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytDrBillcheckAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugKytDrBillcheck(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrBillcheckAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytDrBillcheckAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

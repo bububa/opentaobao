@@ -1,6 +1,8 @@
 package tvupadmin
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.tvpubadmin.device.yks.skill.modify
 //
 // 修改技能
-func YunosTvpubadminDeviceYksSkillModify(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceYksSkillModifyAPIRequest, resp *tvupadmin.YunosTvpubadminDeviceYksSkillModifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosTvpubadminDeviceYksSkillModify(ctx context.Context, clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceYksSkillModifyAPIRequest, resp *tvupadmin.YunosTvpubadminDeviceYksSkillModifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

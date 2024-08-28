@@ -1,6 +1,8 @@
 package fundplatform
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fundplatform"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.fundplatform.cardorder.status.query
 //
 // 当通知制卡商进行制卡后，其制卡流程会比较长，若长时间未反馈当前制卡进展，则需要使用该接口来向制卡商发起进度查询。
-func AlibabaFundplatformCardorderStatusQuery(clt *core.SDKClient, req *fundplatform.AlibabaFundplatformCardorderStatusQueryAPIRequest, resp *fundplatform.AlibabaFundplatformCardorderStatusQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaFundplatformCardorderStatusQuery(ctx context.Context, clt *core.SDKClient, req *fundplatform.AlibabaFundplatformCardorderStatusQueryAPIRequest, resp *fundplatform.AlibabaFundplatformCardorderStatusQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

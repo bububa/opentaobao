@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.servicecenter.servicemonitormessage.update
 //
 // 服务商收到预警后，需要进行回复已读状态，并可填写备注
-func TmallServicecenterServicemonitormessageUpdate(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicemonitormessageUpdateAPIRequest, resp *tmallservice.TmallServicecenterServicemonitormessageUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallServicecenterServicemonitormessageUpdate(ctx context.Context, clt *core.SDKClient, req *tmallservice.TmallServicecenterServicemonitormessageUpdateAPIRequest, resp *tmallservice.TmallServicecenterServicemonitormessageUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.merchant.galaxy.wechat.login
 //
 // 星河产品=用户微信小程序登陆
-func AlitripMerchantGalaxyWechatLogin(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatLoginAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyWechatLoginAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripMerchantGalaxyWechatLogin(ctx context.Context, clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatLoginAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyWechatLoginAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

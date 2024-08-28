@@ -1,6 +1,8 @@
 package idleparttime
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/idleparttime"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.idle.parttime.jobsync
 //
 // 服务商同步岗位信息给闲鱼
-func AlibabaIdleParttimeJobsync(clt *core.SDKClient, req *idleparttime.AlibabaIdleParttimeJobsyncAPIRequest, resp *idleparttime.AlibabaIdleParttimeJobsyncAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaIdleParttimeJobsync(ctx context.Context, clt *core.SDKClient, req *idleparttime.AlibabaIdleParttimeJobsyncAPIRequest, resp *idleparttime.AlibabaIdleParttimeJobsyncAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

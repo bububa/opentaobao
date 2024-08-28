@@ -1,6 +1,8 @@
 package eticket
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/eticket"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.eticket.merchant.ma.reverse
 //
 // 电子凭证平台冲正接口
-func TaobaoEticketMerchantMaReverse(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaReverseAPIRequest, resp *eticket.TaobaoEticketMerchantMaReverseAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoEticketMerchantMaReverse(ctx context.Context, clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaReverseAPIRequest, resp *eticket.TaobaoEticketMerchantMaReverseAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

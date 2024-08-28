@@ -1,6 +1,8 @@
 package qt
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qt"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qt.report.add
 //
 // 上传质检报告
-func TaobaoQtReportAdd(clt *core.SDKClient, req *qt.TaobaoQtReportAddAPIRequest, resp *qt.TaobaoQtReportAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQtReportAdd(ctx context.Context, clt *core.SDKClient, req *qt.TaobaoQtReportAddAPIRequest, resp *qt.TaobaoQtReportAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

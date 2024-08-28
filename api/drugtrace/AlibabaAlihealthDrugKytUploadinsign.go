@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drug.kyt.uploadinsign
 //
 // 连锁总部仓库在采购入库或者销售出库环节，批量采集追溯码之后回传到码上放心平台。
-func AlibabaAlihealthDrugKytUploadinsign(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytUploadinsignAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytUploadinsignAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugKytUploadinsign(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytUploadinsignAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytUploadinsignAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

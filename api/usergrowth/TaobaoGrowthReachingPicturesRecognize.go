@@ -1,6 +1,8 @@
 package usergrowth
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/usergrowth"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.growth.reaching.pictures.recognize
 //
 // 图片识别
-func TaobaoGrowthReachingPicturesRecognize(clt *core.SDKClient, req *usergrowth.TaobaoGrowthReachingPicturesRecognizeAPIRequest, resp *usergrowth.TaobaoGrowthReachingPicturesRecognizeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoGrowthReachingPicturesRecognize(ctx context.Context, clt *core.SDKClient, req *usergrowth.TaobaoGrowthReachingPicturesRecognizeAPIRequest, resp *usergrowth.TaobaoGrowthReachingPicturesRecognizeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

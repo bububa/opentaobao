@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.retail.marketing.buygift.activity.sku.delete
 //
 // 删除单品买赠活动商品信息【同城零售】
-func AlibabaRetailMarketingBuygiftActivitySkuDelete(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIRequest, resp *wdk.AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaRetailMarketingBuygiftActivitySkuDelete(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIRequest, resp *wdk.AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

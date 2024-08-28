@@ -1,6 +1,8 @@
 package qimen
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/qimen"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.qimen.itemlack.report
 //
 // WMS调用奇门的接口,将商家在库某商品缺货的信息回传给ERP
-func TaobaoQimenItemlackReport(clt *core.SDKClient, req *qimen.TaobaoQimenItemlackReportAPIRequest, resp *qimen.TaobaoQimenItemlackReportAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoQimenItemlackReport(ctx context.Context, clt *core.SDKClient, req *qimen.TaobaoQimenItemlackReportAPIRequest, resp *qimen.TaobaoQimenItemlackReportAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

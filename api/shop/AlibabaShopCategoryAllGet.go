@@ -1,6 +1,8 @@
 package shop
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/shop"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.shop.category.all.get
 //
 // 按照卖家身份查询全部分类信息
-func AlibabaShopCategoryAllGet(clt *core.SDKClient, req *shop.AlibabaShopCategoryAllGetAPIRequest, resp *shop.AlibabaShopCategoryAllGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaShopCategoryAllGet(ctx context.Context, clt *core.SDKClient, req *shop.AlibabaShopCategoryAllGetAPIRequest, resp *shop.AlibabaShopCategoryAllGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

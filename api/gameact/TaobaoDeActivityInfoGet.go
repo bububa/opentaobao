@@ -1,6 +1,8 @@
 package gameact
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/gameact"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.de.activity.info.get
 //
 // 根据appKey和活动id获取活动
-func TaobaoDeActivityInfoGet(clt *core.SDKClient, req *gameact.TaobaoDeActivityInfoGetAPIRequest, resp *gameact.TaobaoDeActivityInfoGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoDeActivityInfoGet(ctx context.Context, clt *core.SDKClient, req *gameact.TaobaoDeActivityInfoGetAPIRequest, resp *gameact.TaobaoDeActivityInfoGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

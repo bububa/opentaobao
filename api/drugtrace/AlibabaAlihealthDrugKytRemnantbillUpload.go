@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.drug.kyt.remnantbill.upload
 //
 // 零头出入库单据上传
-func AlibabaAlihealthDrugKytRemnantbillUpload(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytRemnantbillUploadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthDrugKytRemnantbillUpload(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytRemnantbillUploadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package logistic
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/logistic"
 )
@@ -13,6 +15,6 @@ import (
 // 日常，展示具体的预测时效数值
 //
 // 大促期间，展示预测的时效区间
-func CainiaoDataLogisticsDeliveryAgingPredict(clt *core.SDKClient, req *logistic.CainiaoDataLogisticsDeliveryAgingPredictAPIRequest, resp *logistic.CainiaoDataLogisticsDeliveryAgingPredictAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoDataLogisticsDeliveryAgingPredict(ctx context.Context, clt *core.SDKClient, req *logistic.CainiaoDataLogisticsDeliveryAgingPredictAPIRequest, resp *logistic.CainiaoDataLogisticsDeliveryAgingPredictAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

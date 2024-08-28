@@ -1,6 +1,8 @@
 package mozi
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/mozi"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.mozi.fusion.reentry.employee.account
 //
 // 重新入职并且重新启用账号
-func AlibabaMoziFusionReentryEmployeeAccount(clt *core.SDKClient, req *mozi.AlibabaMoziFusionReentryEmployeeAccountAPIRequest, resp *mozi.AlibabaMoziFusionReentryEmployeeAccountAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMoziFusionReentryEmployeeAccount(ctx context.Context, clt *core.SDKClient, req *mozi.AlibabaMoziFusionReentryEmployeeAccountAPIRequest, resp *mozi.AlibabaMoziFusionReentryEmployeeAccountAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

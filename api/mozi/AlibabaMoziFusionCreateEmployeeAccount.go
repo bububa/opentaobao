@@ -1,6 +1,8 @@
 package mozi
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/mozi"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.mozi.fusion.create.employee.account
 //
 // 创建MOZI自建人员和账号
-func AlibabaMoziFusionCreateEmployeeAccount(clt *core.SDKClient, req *mozi.AlibabaMoziFusionCreateEmployeeAccountAPIRequest, resp *mozi.AlibabaMoziFusionCreateEmployeeAccountAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMoziFusionCreateEmployeeAccount(ctx context.Context, clt *core.SDKClient, req *mozi.AlibabaMoziFusionCreateEmployeeAccountAPIRequest, resp *mozi.AlibabaMoziFusionCreateEmployeeAccountAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

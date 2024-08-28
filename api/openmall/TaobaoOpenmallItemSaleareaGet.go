@@ -1,6 +1,8 @@
 package openmall
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/openmall"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.openmall.item.salearea.get
 //
 // 获取openmall商品的可售区域
-func TaobaoOpenmallItemSaleareaGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallItemSaleareaGetAPIRequest, resp *openmall.TaobaoOpenmallItemSaleareaGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOpenmallItemSaleareaGet(ctx context.Context, clt *core.SDKClient, req *openmall.TaobaoOpenmallItemSaleareaGetAPIRequest, resp *openmall.TaobaoOpenmallItemSaleareaGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

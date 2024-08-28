@@ -1,6 +1,8 @@
 package sungari
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/sungari"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.sungari.dispose.query
 //
 // 红盾云桥同政府合作，将线下寄函的商品商家处置转为线上处理
-func TaobaoSungariDisposeQuery(clt *core.SDKClient, req *sungari.TaobaoSungariDisposeQueryAPIRequest, resp *sungari.TaobaoSungariDisposeQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSungariDisposeQuery(ctx context.Context, clt *core.SDKClient, req *sungari.TaobaoSungariDisposeQueryAPIRequest, resp *sungari.TaobaoSungariDisposeQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

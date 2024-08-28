@@ -1,6 +1,8 @@
 package aliospay
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/aliospay"
 )
@@ -9,6 +11,6 @@ import (
 // aliyun.alios.pay.refund
 //
 // 商户用来发起退款的接口
-func AliyunAliosPayRefund(clt *core.SDKClient, req *aliospay.AliyunAliosPayRefundAPIRequest, resp *aliospay.AliyunAliosPayRefundAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliyunAliosPayRefund(ctx context.Context, clt *core.SDKClient, req *aliospay.AliyunAliosPayRefundAPIRequest, resp *aliospay.AliyunAliosPayRefundAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

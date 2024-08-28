@@ -1,6 +1,8 @@
 package alihealth2
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihealth2"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.trade.drug.refuseorder
 //
 // 阿里健康020拒单
-func TaobaoTradeDrugRefuseorder(clt *core.SDKClient, req *alihealth2.TaobaoTradeDrugRefuseorderAPIRequest, resp *alihealth2.TaobaoTradeDrugRefuseorderAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTradeDrugRefuseorder(ctx context.Context, clt *core.SDKClient, req *alihealth2.TaobaoTradeDrugRefuseorderAPIRequest, resp *alihealth2.TaobaoTradeDrugRefuseorderAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

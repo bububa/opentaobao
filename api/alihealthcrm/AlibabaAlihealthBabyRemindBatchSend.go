@@ -1,6 +1,8 @@
 package alihealthcrm
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihealthcrm"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.baby.remind.batch.send
 //
 // 批量发送母婴提醒
-func AlibabaAlihealthBabyRemindBatchSend(clt *core.SDKClient, req *alihealthcrm.AlibabaAlihealthBabyRemindBatchSendAPIRequest, resp *alihealthcrm.AlibabaAlihealthBabyRemindBatchSendAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthBabyRemindBatchSend(ctx context.Context, clt *core.SDKClient, req *alihealthcrm.AlibabaAlihealthBabyRemindBatchSendAPIRequest, resp *alihealthcrm.AlibabaAlihealthBabyRemindBatchSendAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

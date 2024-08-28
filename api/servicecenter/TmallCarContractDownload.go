@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
@@ -10,6 +12,6 @@ import (
 //
 // 目前天猫开新车会在线上签署一份合同，协议，需要一个个在已卖出打开，另存为pdf，人工一个个下载比较麻烦，期望通过接口直接读取pdf；
 // 因为比较耗时，建议一个个下载，假设并发下载，很可能限流，每天的调用量有限；
-func TmallCarContractDownload(clt *core.SDKClient, req *servicecenter.TmallCarContractDownloadAPIRequest, resp *servicecenter.TmallCarContractDownloadAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallCarContractDownload(ctx context.Context, clt *core.SDKClient, req *servicecenter.TmallCarContractDownloadAPIRequest, resp *servicecenter.TmallCarContractDownloadAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

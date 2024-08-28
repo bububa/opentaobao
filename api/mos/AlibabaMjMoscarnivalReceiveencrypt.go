@@ -1,6 +1,8 @@
 package mos
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/mos"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.mj.moscarnival.receiveencrypt
 //
 // 根据加密手机号领券
-func AlibabaMjMoscarnivalReceiveencrypt(clt *core.SDKClient, req *mos.AlibabaMjMoscarnivalReceiveencryptAPIRequest, resp *mos.AlibabaMjMoscarnivalReceiveencryptAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaMjMoscarnivalReceiveencrypt(ctx context.Context, clt *core.SDKClient, req *mos.AlibabaMjMoscarnivalReceiveencryptAPIRequest, resp *mos.AlibabaMjMoscarnivalReceiveencryptAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.ums.inventory.adjust.get
 //
 // 库调单-回流单
-func AlibabaWdkUmsInventoryAdjustGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsInventoryAdjustGetAPIRequest, resp *wdk.AlibabaWdkUmsInventoryAdjustGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkUmsInventoryAdjustGet(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkUmsInventoryAdjustGetAPIRequest, resp *wdk.AlibabaWdkUmsInventoryAdjustGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

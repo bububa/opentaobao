@@ -1,6 +1,8 @@
 package xhotelonlineorder
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhotelonlineorder"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.xhotel.order.alipayface.settle
 //
 // 用于离店付订单在客人离店后，发起结账以及扣款等后续动作
-func TaobaoXhotelOrderAlipayfaceSettle(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelOrderAlipayfaceSettleAPIRequest, resp *xhotelonlineorder.TaobaoXhotelOrderAlipayfaceSettleAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelOrderAlipayfaceSettle(ctx context.Context, clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelOrderAlipayfaceSettleAPIRequest, resp *xhotelonlineorder.TaobaoXhotelOrderAlipayfaceSettleAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

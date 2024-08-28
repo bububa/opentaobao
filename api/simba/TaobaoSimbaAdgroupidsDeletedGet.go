@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.simba.adgroupids.deleted.get
 //
 // 获取删除的推广组ID
-func TaobaoSimbaAdgroupidsDeletedGet(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupidsDeletedGetAPIRequest, resp *simba.TaobaoSimbaAdgroupidsDeletedGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoSimbaAdgroupidsDeletedGet(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupidsDeletedGetAPIRequest, resp *simba.TaobaoSimbaAdgroupidsDeletedGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

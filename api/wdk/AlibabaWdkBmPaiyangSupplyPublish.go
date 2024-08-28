@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.bm.paiyang.supply.publish
 //
 // 淘鲜达接入第三方进行派样，第三方同步大仓和门店的库存变更信息。
-func AlibabaWdkBmPaiyangSupplyPublish(clt *core.SDKClient, req *wdk.AlibabaWdkBmPaiyangSupplyPublishAPIRequest, resp *wdk.AlibabaWdkBmPaiyangSupplyPublishAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkBmPaiyangSupplyPublish(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkBmPaiyangSupplyPublishAPIRequest, resp *wdk.AlibabaWdkBmPaiyangSupplyPublishAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

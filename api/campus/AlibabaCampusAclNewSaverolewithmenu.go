@@ -1,6 +1,8 @@
 package campus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/campus"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.campus.acl.new.saverolewithmenu
 //
 // 保存角色级联保存角色和权限的关系
-func AlibabaCampusAclNewSaverolewithmenu(clt *core.SDKClient, req *campus.AlibabaCampusAclNewSaverolewithmenuAPIRequest, resp *campus.AlibabaCampusAclNewSaverolewithmenuAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCampusAclNewSaverolewithmenu(ctx context.Context, clt *core.SDKClient, req *campus.AlibabaCampusAclNewSaverolewithmenuAPIRequest, resp *campus.AlibabaCampusAclNewSaverolewithmenuAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

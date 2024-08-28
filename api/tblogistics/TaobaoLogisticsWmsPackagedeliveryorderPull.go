@@ -1,6 +1,8 @@
 package tblogistics
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tblogistics"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.logistics.wms.packagedeliveryorder.pull
 //
 // 包裹出库单拉单
-func TaobaoLogisticsWmsPackagedeliveryorderPull(clt *core.SDKClient, req *tblogistics.TaobaoLogisticsWmsPackagedeliveryorderPullAPIRequest, resp *tblogistics.TaobaoLogisticsWmsPackagedeliveryorderPullAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoLogisticsWmsPackagedeliveryorderPull(ctx context.Context, clt *core.SDKClient, req *tblogistics.TaobaoLogisticsWmsPackagedeliveryorderPullAPIRequest, resp *tblogistics.TaobaoLogisticsWmsPackagedeliveryorderPullAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

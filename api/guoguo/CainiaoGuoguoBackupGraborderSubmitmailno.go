@@ -1,6 +1,8 @@
 package guoguo
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/guoguo"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.guoguo.backup.graborder.submitmailno
 //
 // 快递公司回传订单号和运单号给菜鸟裹裹
-func CainiaoGuoguoBackupGraborderSubmitmailno(clt *core.SDKClient, req *guoguo.CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest, resp *guoguo.CainiaoGuoguoBackupGraborderSubmitmailnoAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoGuoguoBackupGraborderSubmitmailno(ctx context.Context, clt *core.SDKClient, req *guoguo.CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest, resp *guoguo.CainiaoGuoguoBackupGraborderSubmitmailnoAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

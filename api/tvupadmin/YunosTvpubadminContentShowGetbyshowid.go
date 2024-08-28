@@ -1,6 +1,8 @@
 package tvupadmin
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.tvpubadmin.content.show.getbyshowid
 //
 // 迎客松根据节目id获取节目元数据
-func YunosTvpubadminContentShowGetbyshowid(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentShowGetbyshowidAPIRequest, resp *tvupadmin.YunosTvpubadminContentShowGetbyshowidAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosTvpubadminContentShowGetbyshowid(ctx context.Context, clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentShowGetbyshowidAPIRequest, resp *tvupadmin.YunosTvpubadminContentShowGetbyshowidAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

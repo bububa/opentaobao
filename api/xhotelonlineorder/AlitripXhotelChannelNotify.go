@@ -1,6 +1,8 @@
 package xhotelonlineorder
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhotelonlineorder"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.xhotel.channel.notify
 //
 // 分销渠道支付通知
-func AlitripXhotelChannelNotify(clt *core.SDKClient, req *xhotelonlineorder.AlitripXhotelChannelNotifyAPIRequest, resp *xhotelonlineorder.AlitripXhotelChannelNotifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripXhotelChannelNotify(ctx context.Context, clt *core.SDKClient, req *xhotelonlineorder.AlitripXhotelChannelNotifyAPIRequest, resp *xhotelonlineorder.AlitripXhotelChannelNotifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

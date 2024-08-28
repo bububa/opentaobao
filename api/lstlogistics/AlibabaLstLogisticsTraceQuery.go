@@ -1,6 +1,8 @@
 package lstlogistics
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/lstlogistics"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.lst.logistics.trace.query
 //
 // 查询LP单物流追踪信息
-func AlibabaLstLogisticsTraceQuery(clt *core.SDKClient, req *lstlogistics.AlibabaLstLogisticsTraceQueryAPIRequest, resp *lstlogistics.AlibabaLstLogisticsTraceQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLstLogisticsTraceQuery(ctx context.Context, clt *core.SDKClient, req *lstlogistics.AlibabaLstLogisticsTraceQueryAPIRequest, resp *lstlogistics.AlibabaLstLogisticsTraceQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

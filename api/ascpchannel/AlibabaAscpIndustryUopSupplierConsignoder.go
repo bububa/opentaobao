@@ -1,6 +1,8 @@
 package ascpchannel
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/ascpchannel"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ascp.industry.uop.supplier.consignoder
 //
 // 商家推单
-func AlibabaAscpIndustryUopSupplierConsignoder(clt *core.SDKClient, req *ascpchannel.AlibabaAscpIndustryUopSupplierConsignoderAPIRequest, resp *ascpchannel.AlibabaAscpIndustryUopSupplierConsignoderAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAscpIndustryUopSupplierConsignoder(ctx context.Context, clt *core.SDKClient, req *ascpchannel.AlibabaAscpIndustryUopSupplierConsignoderAPIRequest, resp *ascpchannel.AlibabaAscpIndustryUopSupplierConsignoderAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

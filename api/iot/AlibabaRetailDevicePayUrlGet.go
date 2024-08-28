@@ -1,6 +1,8 @@
 package iot
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/iot"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.retail.device.payUrl.get
 //
 // 贩卖机支付二维链接获取
-func AlibabaRetailDevicePayUrlGet(clt *core.SDKClient, req *iot.AlibabaRetailDevicePayUrlGetAPIRequest, resp *iot.AlibabaRetailDevicePayUrlGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaRetailDevicePayUrlGet(ctx context.Context, clt *core.SDKClient, req *iot.AlibabaRetailDevicePayUrlGetAPIRequest, resp *iot.AlibabaRetailDevicePayUrlGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

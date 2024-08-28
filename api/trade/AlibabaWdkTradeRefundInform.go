@@ -1,6 +1,8 @@
 package trade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/trade"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.trade.refund.inform
 //
 // 该接口用于外部渠道退款成功后，通知淘鲜达底层履约完成退款流程。
-func AlibabaWdkTradeRefundInform(clt *core.SDKClient, req *trade.AlibabaWdkTradeRefundInformAPIRequest, resp *trade.AlibabaWdkTradeRefundInformAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkTradeRefundInform(ctx context.Context, clt *core.SDKClient, req *trade.AlibabaWdkTradeRefundInformAPIRequest, resp *trade.AlibabaWdkTradeRefundInformAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package seaking
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/seaking"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.seaking.imagetranslate.result
 //
 // 获取图片翻译任务结果
-func AlibabaSeakingImagetranslateResult(clt *core.SDKClient, req *seaking.AlibabaSeakingImagetranslateResultAPIRequest, resp *seaking.AlibabaSeakingImagetranslateResultAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaSeakingImagetranslateResult(ctx context.Context, clt *core.SDKClient, req *seaking.AlibabaSeakingImagetranslateResultAPIRequest, resp *seaking.AlibabaSeakingImagetranslateResultAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

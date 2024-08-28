@@ -1,6 +1,8 @@
 package tvupadmin
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
@@ -9,6 +11,6 @@ import (
 // yunos.tvpubadmin.device.appupgradequery
 //
 // 应用升级查询
-func YunosTvpubadminDeviceAppupgradequery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceAppupgradequeryAPIRequest, resp *tvupadmin.YunosTvpubadminDeviceAppupgradequeryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func YunosTvpubadminDeviceAppupgradequery(ctx context.Context, clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceAppupgradequeryAPIRequest, resp *tvupadmin.YunosTvpubadminDeviceAppupgradequeryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

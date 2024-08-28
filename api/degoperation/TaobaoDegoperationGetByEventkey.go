@@ -1,6 +1,8 @@
 package degoperation
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/degoperation"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.degoperation.get.by.eventkey
 //
 // 通用用户抽奖次数限制
-func TaobaoDegoperationGetByEventkey(clt *core.SDKClient, req *degoperation.TaobaoDegoperationGetByEventkeyAPIRequest, resp *degoperation.TaobaoDegoperationGetByEventkeyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoDegoperationGetByEventkey(ctx context.Context, clt *core.SDKClient, req *degoperation.TaobaoDegoperationGetByEventkeyAPIRequest, resp *degoperation.TaobaoDegoperationGetByEventkeyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

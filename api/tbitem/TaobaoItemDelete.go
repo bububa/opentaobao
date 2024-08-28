@@ -1,6 +1,8 @@
 package tbitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbitem"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.item.delete
 //
 // 删除单条商品
-func TaobaoItemDelete(clt *core.SDKClient, req *tbitem.TaobaoItemDeleteAPIRequest, resp *tbitem.TaobaoItemDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoItemDelete(ctx context.Context, clt *core.SDKClient, req *tbitem.TaobaoItemDeleteAPIRequest, resp *tbitem.TaobaoItemDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

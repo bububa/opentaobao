@@ -1,6 +1,8 @@
 package eticket
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/eticket"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.eticket.merchant.ma.available
 //
 // 商家验码之前的调用接口，用来判断是否可以进行核销操作
-func TaobaoEticketMerchantMaAvailable(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaAvailableAPIRequest, resp *eticket.TaobaoEticketMerchantMaAvailableAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoEticketMerchantMaAvailable(ctx context.Context, clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaAvailableAPIRequest, resp *eticket.TaobaoEticketMerchantMaAvailableAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

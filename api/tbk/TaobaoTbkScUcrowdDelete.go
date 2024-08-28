@@ -1,6 +1,8 @@
 package tbk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tbk"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.tbk.sc.ucrowd.delete
 //
 // 服务商使用。支持淘宝客删除人群标签id，被删除的人群标签id将失效，并不可重新生效。
-func TaobaoTbkScUcrowdDelete(clt *core.SDKClient, req *tbk.TaobaoTbkScUcrowdDeleteAPIRequest, resp *tbk.TaobaoTbkScUcrowdDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoTbkScUcrowdDelete(ctx context.Context, clt *core.SDKClient, req *tbk.TaobaoTbkScUcrowdDeleteAPIRequest, resp *tbk.TaobaoTbkScUcrowdDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

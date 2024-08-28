@@ -1,6 +1,8 @@
 package axindata
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/axindata"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.travel.fsc.route.api.business.area.get
 //
 // 获取业务区域
-func TaobaoAlitripTravelFscRouteApiBusinessAreaGet(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest, resp *axindata.TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripTravelFscRouteApiBusinessAreaGet(ctx context.Context, clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest, resp *axindata.TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

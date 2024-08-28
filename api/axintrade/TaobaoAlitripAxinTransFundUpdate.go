@@ -1,6 +1,8 @@
 package axintrade
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/axintrade"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.axin.trans.fund.update
 //
 // 阿信供销平台-修改资金单接口
-func TaobaoAlitripAxinTransFundUpdate(clt *core.SDKClient, req *axintrade.TaobaoAlitripAxinTransFundUpdateAPIRequest, resp *axintrade.TaobaoAlitripAxinTransFundUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripAxinTransFundUpdate(ctx context.Context, clt *core.SDKClient, req *axintrade.TaobaoAlitripAxinTransFundUpdateAPIRequest, resp *axintrade.TaobaoAlitripAxinTransFundUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

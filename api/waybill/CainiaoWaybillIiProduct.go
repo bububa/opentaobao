@@ -1,6 +1,8 @@
 package waybill
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/waybill"
 )
@@ -9,6 +11,6 @@ import (
 // cainiao.waybill.ii.product
 //
 // 商家可以查询物流商的产品类型和服务能力。
-func CainiaoWaybillIiProduct(clt *core.SDKClient, req *waybill.CainiaoWaybillIiProductAPIRequest, resp *waybill.CainiaoWaybillIiProductAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func CainiaoWaybillIiProduct(ctx context.Context, clt *core.SDKClient, req *waybill.CainiaoWaybillIiProductAPIRequest, resp *waybill.CainiaoWaybillIiProductAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

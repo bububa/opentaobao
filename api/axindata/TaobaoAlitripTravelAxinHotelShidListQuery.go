@@ -1,6 +1,8 @@
 package axindata
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/axindata"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.travel.axin.hotel.shid.list.query
 //
 // 标准酒店id列表查询
-func TaobaoAlitripTravelAxinHotelShidListQuery(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest, resp *axindata.TaobaoAlitripTravelAxinHotelShidListQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripTravelAxinHotelShidListQuery(ctx context.Context, clt *core.SDKClient, req *axindata.TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest, resp *axindata.TaobaoAlitripTravelAxinHotelShidListQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

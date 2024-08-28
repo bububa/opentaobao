@@ -1,6 +1,8 @@
 package car
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/car"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.car.driver.status.update
 //
 // 飞猪用车业务回调接口，用于服务商实时回传更新司机当前服务状态
-func TaobaoAlitripCarDriverStatusUpdate(clt *core.SDKClient, req *car.TaobaoAlitripCarDriverStatusUpdateAPIRequest, resp *car.TaobaoAlitripCarDriverStatusUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripCarDriverStatusUpdate(ctx context.Context, clt *core.SDKClient, req *car.TaobaoAlitripCarDriverStatusUpdateAPIRequest, resp *car.TaobaoAlitripCarDriverStatusUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

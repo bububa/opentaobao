@@ -1,6 +1,8 @@
 package eticket
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/eticket"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.vmarket.eticket.flow.resend
 //
 // 业务重新触发发码短信
-func TaobaoVmarketEticketFlowResend(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketFlowResendAPIRequest, resp *eticket.TaobaoVmarketEticketFlowResendAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoVmarketEticketFlowResend(ctx context.Context, clt *core.SDKClient, req *eticket.TaobaoVmarketEticketFlowResendAPIRequest, resp *eticket.TaobaoVmarketEticketFlowResendAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

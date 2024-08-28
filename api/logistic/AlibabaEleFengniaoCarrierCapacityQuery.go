@@ -1,6 +1,8 @@
 package logistic
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/logistic"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ele.fengniao.carrier.capacity.query
 //
 // 提供给大润发，用于按照站点纬度查询大润发每个配送站的实时上班骑手数、到店骑手数、活跃骑手数量
-func AlibabaEleFengniaoCarrierCapacityQuery(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoCarrierCapacityQueryAPIRequest, resp *logistic.AlibabaEleFengniaoCarrierCapacityQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaEleFengniaoCarrierCapacityQuery(ctx context.Context, clt *core.SDKClient, req *logistic.AlibabaEleFengniaoCarrierCapacityQueryAPIRequest, resp *logistic.AlibabaEleFengniaoCarrierCapacityQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

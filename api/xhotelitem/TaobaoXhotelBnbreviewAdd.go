@@ -1,6 +1,8 @@
 package xhotelitem
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.xhotel.bnbreview.add
 //
 // 对外开放评论接口
-func TaobaoXhotelBnbreviewAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbreviewAddAPIRequest, resp *xhotelitem.TaobaoXhotelBnbreviewAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoXhotelBnbreviewAdd(ctx context.Context, clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbreviewAddAPIRequest, resp *xhotelitem.TaobaoXhotelBnbreviewAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

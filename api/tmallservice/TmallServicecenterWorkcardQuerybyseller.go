@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.servicecenter.workcard.querybyseller
 //
 // 查询工单
-func TmallServicecenterWorkcardQuerybyseller(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardQuerybysellerAPIRequest, resp *tmallservice.TmallServicecenterWorkcardQuerybysellerAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallServicecenterWorkcardQuerybyseller(ctx context.Context, clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardQuerybysellerAPIRequest, resp *tmallservice.TmallServicecenterWorkcardQuerybysellerAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

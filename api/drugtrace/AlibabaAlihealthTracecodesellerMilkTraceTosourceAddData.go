@@ -1,6 +1,8 @@
 package drugtrace
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihealth.tracecodeseller.milk.trace.tosource.add.data
 //
 // 奶粉溯源-同步数据
-func AlibabaAlihealthTracecodesellerMilkTraceTosourceAddData(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest, resp *drugtrace.AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihealthTracecodesellerMilkTraceTosourceAddData(ctx context.Context, clt *core.SDKClient, req *drugtrace.AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest, resp *drugtrace.AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

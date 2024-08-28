@@ -1,6 +1,8 @@
 package maitix
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/maitix"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.damai.maitix.project.distribution.query
 //
 // 发布分销项目查询单个项目信息接口
-func AlibabaDamaiMaitixProjectDistributionQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixProjectDistributionQueryAPIRequest, resp *maitix.AlibabaDamaiMaitixProjectDistributionQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaDamaiMaitixProjectDistributionQuery(ctx context.Context, clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixProjectDistributionQueryAPIRequest, resp *maitix.AlibabaDamaiMaitixProjectDistributionQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

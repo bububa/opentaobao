@@ -1,6 +1,8 @@
 package logistic
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/logistic"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.ele.fengniao.cancel.merchant
 //
 // 商户取消配送
-func AlibabaEleFengniaoCancelMerchant(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoCancelMerchantAPIRequest, resp *logistic.AlibabaEleFengniaoCancelMerchantAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaEleFengniaoCancelMerchant(ctx context.Context, clt *core.SDKClient, req *logistic.AlibabaEleFengniaoCancelMerchantAPIRequest, resp *logistic.AlibabaEleFengniaoCancelMerchantAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package alihouse
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alihouse"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.alihouse.newhome.review.changestatus
 //
 // 楼盘测评草稿状态更新
-func AlibabaAlihouseNewhomeReviewChangestatus(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeReviewChangestatusAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeReviewChangestatusAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAlihouseNewhomeReviewChangestatus(ctx context.Context, clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeReviewChangestatusAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeReviewChangestatusAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package lstvending
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/lstvending"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.lst.vending.order.update
 //
 // 零售通与设备供应商进行订单对接，通过此接口回流订单物流信息。
-func AlibabaLstVendingOrderUpdate(clt *core.SDKClient, req *lstvending.AlibabaLstVendingOrderUpdateAPIRequest, resp *lstvending.AlibabaLstVendingOrderUpdateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaLstVendingOrderUpdate(ctx context.Context, clt *core.SDKClient, req *lstvending.AlibabaLstVendingOrderUpdateAPIRequest, resp *lstvending.AlibabaLstVendingOrderUpdateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

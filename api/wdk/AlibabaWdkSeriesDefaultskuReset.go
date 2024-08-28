@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.series.defaultsku.reset
 //
 // 系列品商品变更-重置默认商品
-func AlibabaWdkSeriesDefaultskuReset(clt *core.SDKClient, req *wdk.AlibabaWdkSeriesDefaultskuResetAPIRequest, resp *wdk.AlibabaWdkSeriesDefaultskuResetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkSeriesDefaultskuReset(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkSeriesDefaultskuResetAPIRequest, resp *wdk.AlibabaWdkSeriesDefaultskuResetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

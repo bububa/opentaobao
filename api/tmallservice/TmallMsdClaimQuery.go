@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.msd.claim.query
 //
 // 查询待理赔工单数据接口
-func TmallMsdClaimQuery(clt *core.SDKClient, req *tmallservice.TmallMsdClaimQueryAPIRequest, resp *tmallservice.TmallMsdClaimQueryAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallMsdClaimQuery(ctx context.Context, clt *core.SDKClient, req *tmallservice.TmallMsdClaimQueryAPIRequest, resp *tmallservice.TmallMsdClaimQueryAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package wdk
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/wdk"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.marketing.expire.promotion.delete
 //
 // 短保优惠删除
-func AlibabaWdkMarketingExpirePromotionDelete(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingExpirePromotionDeleteAPIRequest, resp *wdk.AlibabaWdkMarketingExpirePromotionDeleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkMarketingExpirePromotionDelete(ctx context.Context, clt *core.SDKClient, req *wdk.AlibabaWdkMarketingExpirePromotionDeleteAPIRequest, resp *wdk.AlibabaWdkMarketingExpirePromotionDeleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

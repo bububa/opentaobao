@@ -1,6 +1,8 @@
 package charity
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/charity"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.value.user.getid
 //
 // 获取用户userId
-func AlibabaValueUserGetid(clt *core.SDKClient, req *charity.AlibabaValueUserGetidAPIRequest, resp *charity.AlibabaValueUserGetidAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaValueUserGetid(ctx context.Context, clt *core.SDKClient, req *charity.AlibabaValueUserGetidAPIRequest, resp *charity.AlibabaValueUserGetidAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

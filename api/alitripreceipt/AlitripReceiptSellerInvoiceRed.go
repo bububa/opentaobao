@@ -1,6 +1,8 @@
 package alitripreceipt
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alitripreceipt"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.receipt.seller.invoice.red
 //
 // 飞猪发票创建
-func AlitripReceiptSellerInvoiceRed(clt *core.SDKClient, req *alitripreceipt.AlitripReceiptSellerInvoiceRedAPIRequest, resp *alitripreceipt.AlitripReceiptSellerInvoiceRedAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripReceiptSellerInvoiceRed(ctx context.Context, clt *core.SDKClient, req *alitripreceipt.AlitripReceiptSellerInvoiceRedAPIRequest, resp *alitripreceipt.AlitripReceiptSellerInvoiceRedAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

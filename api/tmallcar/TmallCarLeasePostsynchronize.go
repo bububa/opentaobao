@@ -1,6 +1,8 @@
 package tmallcar
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/tmallcar"
 )
@@ -9,6 +11,6 @@ import (
 // tmall.car.lease.postsynchronize
 //
 // 商家同步天猫开新车租后方案
-func TmallCarLeasePostsynchronize(clt *core.SDKClient, req *tmallcar.TmallCarLeasePostsynchronizeAPIRequest, resp *tmallcar.TmallCarLeasePostsynchronizeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TmallCarLeasePostsynchronize(ctx context.Context, clt *core.SDKClient, req *tmallcar.TmallCarLeasePostsynchronizeAPIRequest, resp *tmallcar.TmallCarLeasePostsynchronizeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

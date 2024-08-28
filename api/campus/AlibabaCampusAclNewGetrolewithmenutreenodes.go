@@ -1,6 +1,8 @@
 package campus
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/campus"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.campus.acl.new.getrolewithmenutreenodes
 //
 // 根据角色id查询权限
-func AlibabaCampusAclNewGetrolewithmenutreenodes(clt *core.SDKClient, req *campus.AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest, resp *campus.AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaCampusAclNewGetrolewithmenutreenodes(ctx context.Context, clt *core.SDKClient, req *campus.AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest, resp *campus.AlibabaCampusAclNewGetrolewithmenutreenodesAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

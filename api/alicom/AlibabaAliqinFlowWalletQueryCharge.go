@@ -1,6 +1,8 @@
 package alicom
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/alicom"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.aliqin.flow.wallet.query.charge
 //
 // 查询流量充值状态
-func AlibabaAliqinFlowWalletQueryCharge(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowWalletQueryChargeAPIRequest, resp *alicom.AlibabaAliqinFlowWalletQueryChargeAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaAliqinFlowWalletQueryCharge(ctx context.Context, clt *core.SDKClient, req *alicom.AlibabaAliqinFlowWalletQueryChargeAPIRequest, resp *alicom.AlibabaAliqinFlowWalletQueryChargeAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

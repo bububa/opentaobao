@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.wdk.coupon.template.create
 //
 // 开放给外部商家创建优惠券模版
-func AlibabaWdkCouponTemplateCreate(clt *core.SDKClient, req *promotion.AlibabaWdkCouponTemplateCreateAPIRequest, resp *promotion.AlibabaWdkCouponTemplateCreateAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaWdkCouponTemplateCreate(ctx context.Context, clt *core.SDKClient, req *promotion.AlibabaWdkCouponTemplateCreateAPIRequest, resp *promotion.AlibabaWdkCouponTemplateCreateAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package btrip
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/btrip"
 )
@@ -9,6 +11,6 @@ import (
 // alitrip.btrip.corpop.apply.get
 //
 // 【商旅】查询审批单
-func AlitripBtripCorpopApplyGet(clt *core.SDKClient, req *btrip.AlitripBtripCorpopApplyGetAPIRequest, resp *btrip.AlitripBtripCorpopApplyGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlitripBtripCorpopApplyGet(ctx context.Context, clt *core.SDKClient, req *btrip.AlitripBtripCorpopApplyGetAPIRequest, resp *btrip.AlitripBtripCorpopApplyGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

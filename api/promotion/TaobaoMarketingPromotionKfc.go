@@ -1,6 +1,8 @@
 package promotion
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/promotion"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.marketing.promotion.kfc
 //
 // 活动名称与描述违禁词检查
-func TaobaoMarketingPromotionKfc(clt *core.SDKClient, req *promotion.TaobaoMarketingPromotionKfcAPIRequest, resp *promotion.TaobaoMarketingPromotionKfcAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoMarketingPromotionKfc(ctx context.Context, clt *core.SDKClient, req *promotion.TaobaoMarketingPromotionKfcAPIRequest, resp *promotion.TaobaoMarketingPromotionKfcAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

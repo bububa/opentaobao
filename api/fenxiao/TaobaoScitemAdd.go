@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.scitem.add
 //
 // 发布后端商品
-func TaobaoScitemAdd(clt *core.SDKClient, req *fenxiao.TaobaoScitemAddAPIRequest, resp *fenxiao.TaobaoScitemAddAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoScitemAdd(ctx context.Context, clt *core.SDKClient, req *fenxiao.TaobaoScitemAddAPIRequest, resp *fenxiao.TaobaoScitemAddAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

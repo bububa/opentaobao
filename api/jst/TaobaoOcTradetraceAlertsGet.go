@@ -1,6 +1,8 @@
 package jst
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/jst"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.oc.tradetrace.alerts.get
 //
 // 提供订单预警模块的数据查询接口
-func TaobaoOcTradetraceAlertsGet(clt *core.SDKClient, req *jst.TaobaoOcTradetraceAlertsGetAPIRequest, resp *jst.TaobaoOcTradetraceAlertsGetAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoOcTradetraceAlertsGet(ctx context.Context, clt *core.SDKClient, req *jst.TaobaoOcTradetraceAlertsGetAPIRequest, resp *jst.TaobaoOcTradetraceAlertsGetAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

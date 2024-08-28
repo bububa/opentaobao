@@ -1,6 +1,8 @@
 package aetask
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/aetask"
 )
@@ -9,6 +11,6 @@ import (
 // aliexpress.interactive.task.complete
 //
 // 用户完成任务
-func AliexpressInteractiveTaskComplete(clt *core.SDKClient, req *aetask.AliexpressInteractiveTaskCompleteAPIRequest, resp *aetask.AliexpressInteractiveTaskCompleteAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AliexpressInteractiveTaskComplete(ctx context.Context, clt *core.SDKClient, req *aetask.AliexpressInteractiveTaskCompleteAPIRequest, resp *aetask.AliexpressInteractiveTaskCompleteAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

@@ -1,6 +1,8 @@
 package travel
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/travel"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.alitrip.travel.item.sku.price.modify
 //
 // 【API3.0】日期级别日历价格库存增量维护
-func TaobaoAlitripTravelItemSkuPriceModify(clt *core.SDKClient, req *travel.TaobaoAlitripTravelItemSkuPriceModifyAPIRequest, resp *travel.TaobaoAlitripTravelItemSkuPriceModifyAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAlitripTravelItemSkuPriceModify(ctx context.Context, clt *core.SDKClient, req *travel.TaobaoAlitripTravelItemSkuPriceModifyAPIRequest, resp *travel.TaobaoAlitripTravelItemSkuPriceModifyAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

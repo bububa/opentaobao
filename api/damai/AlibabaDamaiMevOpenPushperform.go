@@ -1,6 +1,8 @@
 package damai
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/damai"
 )
@@ -9,6 +11,6 @@ import (
 // alibaba.damai.mev.open.pushperform
 //
 // pushPerform
-func AlibabaDamaiMevOpenPushperform(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushperformAPIRequest, resp *damai.AlibabaDamaiMevOpenPushperformAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func AlibabaDamaiMevOpenPushperform(ctx context.Context, clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushperformAPIRequest, resp *damai.AlibabaDamaiMevOpenPushperformAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

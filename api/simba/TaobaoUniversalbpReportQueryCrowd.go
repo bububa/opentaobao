@@ -1,6 +1,8 @@
 package simba
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/simba"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.universalbp.report.query.crowd
 //
 // 人群报表查询
-func TaobaoUniversalbpReportQueryCrowd(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryCrowdAPIRequest, resp *simba.TaobaoUniversalbpReportQueryCrowdAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoUniversalbpReportQueryCrowd(ctx context.Context, clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryCrowdAPIRequest, resp *simba.TaobaoUniversalbpReportQueryCrowdAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }

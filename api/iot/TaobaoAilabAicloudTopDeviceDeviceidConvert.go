@@ -1,6 +1,8 @@
 package iot
 
 import (
+	"context"
+
 	"github.com/bububa/opentaobao/core"
 	"github.com/bububa/opentaobao/model/iot"
 )
@@ -9,6 +11,6 @@ import (
 // taobao.ailab.aicloud.top.device.deviceid.convert
 //
 // 将开放设备id转换为内部设备id
-func TaobaoAilabAicloudTopDeviceDeviceidConvert(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest, resp *iot.TaobaoAilabAicloudTopDeviceDeviceidConvertAPIResponse, session string) error {
-	return clt.Post(req, resp, session)
+func TaobaoAilabAicloudTopDeviceDeviceidConvert(ctx context.Context, clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest, resp *iot.TaobaoAilabAicloudTopDeviceDeviceidConvertAPIResponse, session string) error {
+	return clt.Post(ctx, req, resp, session)
 }
