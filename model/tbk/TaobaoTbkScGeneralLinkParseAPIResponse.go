@@ -1,0 +1,61 @@
+package tbk
+
+import (
+	"encoding/xml"
+	"sync"
+
+	"github.com/bububa/opentaobao/model"
+)
+
+// TaobaoTbkScGeneralLinkParseAPIResponse 淘宝客-服务商-万能解析 API返回值
+// taobao.tbk.sc.general.link.parse
+//
+// 淘宝客-推广者-万能转链
+type TaobaoTbkScGeneralLinkParseAPIResponse struct {
+	model.CommonResponse
+	TaobaoTbkScGeneralLinkParseAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkScGeneralLinkParseAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkScGeneralLinkParseAPIResponseModel).Reset()
+}
+
+// TaobaoTbkScGeneralLinkParseAPIResponseModel is 淘宝客-服务商-万能解析 成功返回结果
+type TaobaoTbkScGeneralLinkParseAPIResponseModel struct {
+	XMLName xml.Name `xml:"tbk_sc_general_link_parse_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 见错误码描述
+	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
+	// TbkLinkDTO
+	Data *TbkLinkDto `json:"data,omitempty" xml:"data,omitempty"`
+	// 见错误码描述
+	BizErrorDesc int64 `json:"biz_error_desc,omitempty" xml:"biz_error_desc,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkScGeneralLinkParseAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultMsg = ""
+	m.Data = nil
+	m.BizErrorDesc = 0
+}
+
+var poolTaobaoTbkScGeneralLinkParseAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkScGeneralLinkParseAPIResponse)
+	},
+}
+
+// GetTaobaoTbkScGeneralLinkParseAPIResponse 从 sync.Pool 获取 TaobaoTbkScGeneralLinkParseAPIResponse
+func GetTaobaoTbkScGeneralLinkParseAPIResponse() *TaobaoTbkScGeneralLinkParseAPIResponse {
+	return poolTaobaoTbkScGeneralLinkParseAPIResponse.Get().(*TaobaoTbkScGeneralLinkParseAPIResponse)
+}
+
+// ReleaseTaobaoTbkScGeneralLinkParseAPIResponse 将 TaobaoTbkScGeneralLinkParseAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkScGeneralLinkParseAPIResponse(v *TaobaoTbkScGeneralLinkParseAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkScGeneralLinkParseAPIResponse.Put(v)
+}
