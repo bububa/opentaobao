@@ -28,7 +28,7 @@ type AlibabaTaobaoUdSmartOrderCollectCartDetailPullAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 收藏加购明细数据
-	Result []OrderDetailCursorTopDto `json:"result,omitempty" xml:"result>order_detail_cursor_top_dto,omitempty"`
+	Result []OrderDetailCursorTopDTO2 `json:"result,omitempty" xml:"result>order_detail_cursor_top_dto2,omitempty"`
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

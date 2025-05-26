@@ -14,7 +14,7 @@ import (
 type AlibabaTaobaoUdSmartOrderCollectCartDetailPullAPIRequest struct {
 	model.Params
 	// 查询入参
-	_orderTopCursorQueryDto *OrderTopCursorQueryDto
+	_orderTopCursorQueryDto *OrderTopCursorQueryDTO2
 }
 
 // NewAlibabaTaobaoUdSmartOrderCollectCartDetailPullRequest 初始化AlibabaTaobaoUdSmartOrderCollectCartDetailPullAPIRequest对象
@@ -49,14 +49,14 @@ func (r AlibabaTaobaoUdSmartOrderCollectCartDetailPullAPIRequest) GetRawParams()
 
 // SetOrderTopCursorQueryDto is OrderTopCursorQueryDto Setter
 // 查询入参
-func (r *AlibabaTaobaoUdSmartOrderCollectCartDetailPullAPIRequest) SetOrderTopCursorQueryDto(_orderTopCursorQueryDto *OrderTopCursorQueryDto) error {
+func (r *AlibabaTaobaoUdSmartOrderCollectCartDetailPullAPIRequest) SetOrderTopCursorQueryDto(_orderTopCursorQueryDto *OrderTopCursorQueryDTO2) error {
 	r._orderTopCursorQueryDto = _orderTopCursorQueryDto
 	r.Set("order_top_cursor_query_dto", _orderTopCursorQueryDto)
 	return nil
 }
 
 // GetOrderTopCursorQueryDto OrderTopCursorQueryDto Getter
-func (r AlibabaTaobaoUdSmartOrderCollectCartDetailPullAPIRequest) GetOrderTopCursorQueryDto() *OrderTopCursorQueryDto {
+func (r AlibabaTaobaoUdSmartOrderCollectCartDetailPullAPIRequest) GetOrderTopCursorQueryDto() *OrderTopCursorQueryDTO2 {
 	return r._orderTopCursorQueryDto
 }
 
