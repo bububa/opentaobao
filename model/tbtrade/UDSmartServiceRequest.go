@@ -16,7 +16,7 @@ type UDSmartServiceRequest struct {
 	ProductId string `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// 子订单ID，必填
 	OrderId string `json:"order_id,omitempty" xml:"order_id,omitempty"`
-	// 12-支付，28-退货，必填
+	// 必填；12-支付，28-退货，25-落地页点击（仅微博）
 	EventType string `json:"event_type,omitempty" xml:"event_type,omitempty"`
 	// 直达唤端归因clickid_id，与点击监测归因click_id 二选一必填
 	CkClickId string `json:"ck_click_id,omitempty" xml:"ck_click_id,omitempty"`
@@ -34,7 +34,7 @@ type UDSmartServiceRequest struct {
 	ItemName string `json:"item_name,omitempty" xml:"item_name,omitempty"`
 	// 转化时间戳（秒），必填
 	EventTime string `json:"event_time,omitempty" xml:"event_time,omitempty"`
-	// 媒体渠道ID，对应查询接口返回的channel_id，必填。1-巨量2.0，104-腾讯3.0，105-快手，108-B站
+	// 媒体渠道ID，对应查询接口返回的channel_id，必填。1-巨量2.0，104-腾讯3.0，105-快手，108-B站，109-微博
 	ChannelId string `json:"channel_id,omitempty" xml:"channel_id,omitempty"`
 	// 默认值1，必填
 	CallbackType string `json:"callback_type,omitempty" xml:"callback_type,omitempty"`
