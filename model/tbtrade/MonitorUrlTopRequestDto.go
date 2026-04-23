@@ -16,10 +16,14 @@ type MonitorUrlTopRequestDto struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 落地页类型：1-商品详情页；2-自研页
 	PageType int64 `json:"page_type,omitempty" xml:"page_type,omitempty"`
-	// 渠道id：1-巨量2.0，104-腾讯3.0，105-快手，108-B站
+	// 渠道id：1-巨量2.0，104-腾讯3.0，105-快手，108-B站，109-微博，140-小红书（仅支持prod_type=2），102-百度
 	ChannelId int64 `json:"channel_id,omitempty" xml:"channel_id,omitempty"`
 	// 产品类型：1-udsmart 2-流量通Pro，不传默认为udsmart
 	ProdType int64 `json:"prod_type,omitempty" xml:"prod_type,omitempty"`
+	// 服务商或代理入驻后分配的memebrid
+	MemberId int64 `json:"member_id,omitempty" xml:"member_id,omitempty"`
+	// 归因规则： 1-唤端链接归因 3-最大化（唤端链接+点击监测链接归因），仅对非小红书媒体生效
+	AttributionType int64 `json:"attribution_type,omitempty" xml:"attribution_type,omitempty"`
 }
 
 var poolMonitorUrlTopRequestDto = sync.Pool{
@@ -42,5 +46,7 @@ func ReleaseMonitorUrlTopRequestDto(v *MonitorUrlTopRequestDto) {
 	v.PageType = 0
 	v.ChannelId = 0
 	v.ProdType = 0
+	v.MemberId = 0
+	v.AttributionType = 0
 	poolMonitorUrlTopRequestDto.Put(v)
 }

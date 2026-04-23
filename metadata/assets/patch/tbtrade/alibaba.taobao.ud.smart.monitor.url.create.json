@@ -4,10 +4,9 @@
   "apiErrDemoXml": "<error_response>\n    <code>50</code>\n    <msg>Remote service error</msg>\n    <sub_code>isv.invalid-parameter</sub_code>\n    <sub_msg>非法参数</sub_msg>\n</error_response>",
   "applyScopes": [],
   "changeDiff": {
-    "gmtModified": 1733836980000,
+    "gmtModified": 1776055859000,
     "inputDiff": [
-      "[+] monitor_url_top_request_dto->monitor_unique_id",
-      "[+] monitor_url_top_request_dto->prod_type"
+      "[*] monitor_url_top_request_dto->attribution_type"
     ],
     "outputDiff": []
   },
@@ -21,7 +20,7 @@
   ],
   "errorCodes": [],
   "faqs": [],
-  "gmtModified": 1733836980000,
+  "gmtModified": 1776055859000,
   "labels": [
     {
       "clickUrl": "https://open.taobao.com/v2/doc#/abilityToOpen?docType=1&docId=104559&treeId=775",
@@ -481,7 +480,7 @@
         {
           "defaultValue": "",
           "demoValue": "1",
-          "description": "渠道id：1-巨量2.0，104-腾讯3.0，105-快手，108-B站",
+          "description": "渠道id：1-巨量2.0，104-腾讯3.0，105-快手，108-B站，109-微博，140-小红书（仅支持prod_type=2），102-百度",
           "fieldsReadLevel": "",
           "fileExt": "",
           "maxLength": null,
@@ -531,6 +530,48 @@
           "maxValue": null,
           "minValue": null,
           "name": "prod_type",
+          "needShortAuthority": null,
+          "paramOrder": null,
+          "parentId": "",
+          "subParams": [],
+          "type": "Number",
+          "version": "",
+          "writeLevel": null,
+          "encryptTag": false,
+          "required": false
+        },
+        {
+          "defaultValue": "",
+          "demoValue": "333445",
+          "description": "服务商或代理入驻后分配的memebrid",
+          "fieldsReadLevel": "",
+          "fileExt": "",
+          "maxLength": null,
+          "maxListSize": null,
+          "maxValue": null,
+          "minValue": null,
+          "name": "member_id",
+          "needShortAuthority": null,
+          "paramOrder": null,
+          "parentId": "",
+          "subParams": [],
+          "type": "Number",
+          "version": "",
+          "writeLevel": null,
+          "encryptTag": false,
+          "required": false
+        },
+        {
+          "defaultValue": "",
+          "demoValue": "1",
+          "description": "归因规则： 1-唤端链接归因 3-最大化（唤端链接+点击监测链接归因），仅对非小红书媒体生效",
+          "fieldsReadLevel": "",
+          "fileExt": "",
+          "maxLength": null,
+          "maxListSize": null,
+          "maxValue": null,
+          "minValue": null,
+          "name": "attribution_type",
           "needShortAuthority": null,
           "paramOrder": null,
           "parentId": "",
@@ -704,22 +745,22 @@
   "rspSampleXml": "<alibaba_taobao_ud_smart_monitor_url_create_response>\n    <result>\n        <pv_monitor_url>https://</pv_monitor_url>\n        <click_monitor_url>https://</click_monitor_url>\n        <click_url>https://</click_url>\n        <deep_link>tbopen://</deep_link>\n        <universal_link>https://</universal_link>\n        <monitor_unique_id>xxxx</monitor_unique_id>\n    </result>\n</alibaba_taobao_ud_smart_monitor_url_create_response>",
   "sdkDemos": [
     {
-      "descprition": "TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);\nAlibabaTaobaoUdSmartMonitorUrlCreateRequest req = new AlibabaTaobaoUdSmartMonitorUrlCreateRequest();\nAlibabaTaobaoUdSmartMonitorUrlCreateRequest.MonitorUrlTopRequestDTO obj1 = new AlibabaTaobaoUdSmartMonitorUrlCreateRequest.MonitorUrlTopRequestDTO();\nobj1.setItemId(123L);\nobj1.setPageType(1L);\nobj1.setCusH5Url(\"https://\");\nobj1.setCusDeepLink(\"https://\");\nobj1.setChannelId(1L);\nobj1.setMonitorUniqueId(\"xxxx\");\nobj1.setProdType(1L);\nreq.setMonitorUrlTopRequestDto(obj1);\nAlibabaTaobaoUdSmartMonitorUrlCreateResponse rsp = client.execute(req);\nSystem.out.println(rsp.getBody());",
+      "descprition": "TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);\nAlibabaTaobaoUdSmartMonitorUrlCreateRequest req = new AlibabaTaobaoUdSmartMonitorUrlCreateRequest();\nAlibabaTaobaoUdSmartMonitorUrlCreateRequest.MonitorUrlTopRequestDTO obj1 = new AlibabaTaobaoUdSmartMonitorUrlCreateRequest.MonitorUrlTopRequestDTO();\nobj1.setItemId(123L);\nobj1.setPageType(1L);\nobj1.setCusH5Url(\"https://\");\nobj1.setCusDeepLink(\"https://\");\nobj1.setChannelId(1L);\nobj1.setMonitorUniqueId(\"xxxx\");\nobj1.setProdType(1L);\nobj1.setMemberId(333445L);\nobj1.setAttributionType(1L);\nreq.setMonitorUrlTopRequestDto(obj1);\nAlibabaTaobaoUdSmartMonitorUrlCreateResponse rsp = client.execute(req);\nSystem.out.println(rsp.getBody());",
       "name": "JAVA",
       "url": ""
     },
     {
-      "descprition": "$c = new TopClient;\n$c->appkey = $appkey;\n$c->secretKey = $secret;\n$req = new AlibabaTaobaoUdSmartMonitorUrlCreateRequest;\n$monitor_url_top_request_dto = new MonitorUrlTopRequestDTO;\n$monitor_url_top_request_dto->item_id=\"123\";\n$monitor_url_top_request_dto->page_type=\"1\";\n$monitor_url_top_request_dto->cus_h5_url=\"https://\";\n$monitor_url_top_request_dto->cus_deep_link=\"https://\";\n$monitor_url_top_request_dto->channel_id=\"1\";\n$monitor_url_top_request_dto->monitor_unique_id=\"xxxx\";\n$monitor_url_top_request_dto->prod_type=\"1\";\n$req->setMonitorUrlTopRequestDto(json_encode($monitor_url_top_request_dto));\n$resp = $c->execute($req);",
+      "descprition": "$c = new TopClient;\n$c->appkey = $appkey;\n$c->secretKey = $secret;\n$req = new AlibabaTaobaoUdSmartMonitorUrlCreateRequest;\n$monitor_url_top_request_dto = new MonitorUrlTopRequestDTO;\n$monitor_url_top_request_dto->item_id=\"123\";\n$monitor_url_top_request_dto->page_type=\"1\";\n$monitor_url_top_request_dto->cus_h5_url=\"https://\";\n$monitor_url_top_request_dto->cus_deep_link=\"https://\";\n$monitor_url_top_request_dto->channel_id=\"1\";\n$monitor_url_top_request_dto->monitor_unique_id=\"xxxx\";\n$monitor_url_top_request_dto->prod_type=\"1\";\n$monitor_url_top_request_dto->member_id=\"333445\";\n$monitor_url_top_request_dto->attribution_type=\"1\";\n$req->setMonitorUrlTopRequestDto(json_encode($monitor_url_top_request_dto));\n$resp = $c->execute($req);",
       "name": "PHP",
       "url": ""
     },
     {
-      "descprition": "ITopClient client = new DefaultTopClient(url, appkey, secret);\nAlibabaTaobaoUdSmartMonitorUrlCreateRequest req = new AlibabaTaobaoUdSmartMonitorUrlCreateRequest();\nAlibabaTaobaoUdSmartMonitorUrlCreateRequest.MonitorUrlTopRequestDTODomain obj1 = new AlibabaTaobaoUdSmartMonitorUrlCreateRequest.MonitorUrlTopRequestDTODomain();\nobj1.ItemId = 123L;\nobj1.PageType = 1L;\nobj1.CusH5Url = \"https://\";\nobj1.CusDeepLink = \"https://\";\nobj1.ChannelId = 1L;\nobj1.MonitorUniqueId = \"xxxx\";\nobj1.ProdType = 1L;\nreq.MonitorUrlTopRequestDto_ = obj1;\nAlibabaTaobaoUdSmartMonitorUrlCreateResponse rsp = client.Execute(req);\nConsole.WriteLine(rsp.Body);",
+      "descprition": "ITopClient client = new DefaultTopClient(url, appkey, secret);\nAlibabaTaobaoUdSmartMonitorUrlCreateRequest req = new AlibabaTaobaoUdSmartMonitorUrlCreateRequest();\nAlibabaTaobaoUdSmartMonitorUrlCreateRequest.MonitorUrlTopRequestDTODomain obj1 = new AlibabaTaobaoUdSmartMonitorUrlCreateRequest.MonitorUrlTopRequestDTODomain();\nobj1.ItemId = 123L;\nobj1.PageType = 1L;\nobj1.CusH5Url = \"https://\";\nobj1.CusDeepLink = \"https://\";\nobj1.ChannelId = 1L;\nobj1.MonitorUniqueId = \"xxxx\";\nobj1.ProdType = 1L;\nobj1.MemberId = 333445L;\nobj1.AttributionType = 1L;\nreq.MonitorUrlTopRequestDto_ = obj1;\nAlibabaTaobaoUdSmartMonitorUrlCreateResponse rsp = client.Execute(req);\nConsole.WriteLine(rsp.Body);",
       "name": ".NET",
       "url": ""
     },
     {
-      "descprition": "curl -X POST 'http://gw.api.taobao.com/router/rest' \\\n-H 'Content-Type:application/x-www-form-urlencoded;charset=utf-8' \\\n-d 'app_key=12129701' \\\n-d 'format=json' \\\n-d 'method=alibaba.taobao.ud.smart.monitor.url.create' \\\n-d 'partner_id=apidoc' \\\n-d 'sign=40456CA8C1D1C91C35D333E01C6DE8BF' \\\n-d 'sign_method=hmac' \\\n-d 'timestamp=2025-03-04+14%3A33%3A16' \\\n-d 'v=2.0' \\\n-d 'monitor_url_top_request_dto=null'",
+      "descprition": "curl -X POST 'http://gw.api.taobao.com/router/rest' \\\n-H 'Content-Type:application/x-www-form-urlencoded;charset=utf-8' \\\n-d 'app_key=12129701' \\\n-d 'format=json' \\\n-d 'method=alibaba.taobao.ud.smart.monitor.url.create' \\\n-d 'partner_id=apidoc' \\\n-d 'sign=0F386B3FB39D055FB0FCD26AE701AE3B' \\\n-d 'sign_method=hmac' \\\n-d 'timestamp=2026-04-23+11%3A33%3A49' \\\n-d 'v=2.0' \\\n-d 'monitor_url_top_request_dto=null'",
       "name": "CURL",
       "url": ""
     },
@@ -729,7 +770,7 @@
       "url": ""
     },
     {
-      "descprition": "TopClient = require('./topClient').TopClient;\nvar client = new TopClient({\n\t'appkey': 'appkey',\n\t'appsecret': 'secret',\n\t'REST_URL': 'http://gw.api.taobao.com/router/rest'\n});\n\nclient.execute('alibaba.taobao.ud.smart.monitor.url.create', {\n\t'monitor_url_top_request_dto':'数据结构JSON示例'\n}, function(error, response) {\n\tif (!error) console.log(response);\n\telse console.log(error);\n})\n",
+      "descprition": "TopClient = require('./topClient').TopClient;\nvar client = new TopClient({\n\t'appkey': 'appkey',\n\t'appsecret': 'secret',\n\t'url': 'http://gw.api.taobao.com/router/rest'\n});\n\nclient.execute('alibaba.taobao.ud.smart.monitor.url.create', {\n\t'monitor_url_top_request_dto':'数据结构JSON示例'\n}, function(error, response) {\n\tif (!error) console.log(response);\n\telse console.log(error);\n})\n",
       "name": "NodeJS",
       "url": ""
     },
@@ -739,27 +780,27 @@
       "url": ""
     },
     {
-      "descprition": "from datetime import datetime\nfrom topsdk.client import TopApiClient,TopException\nfrom topsdk.defaultability.defaultability import Defaultability\nfrom topsdk.defaultability.request.alibaba_taobao_ud_smart_monitor_url_create_request import *\n\nif __name__ == '__main__':\n    # create Client\n    client = TopApiClient(appkey='<your-appkey>', app_sercet='<your-appsecret>', top_gateway_url='<top-gateway-url>',verify_ssl=False)\n    ability = Defaultability(client=client)\n\n    # create domain\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO = AlibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO()\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.item_id = 123\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.page_type = 1\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.cus_h5_url = 'https://'\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.cus_deep_link = 'https://'\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.channel_id = 1\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.monitor_unique_id = 'xxxx'\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.prod_type = 1\n\n    # create request\n    request = AlibabaTaobaoUdSmartMonitorUrlCreateRequest()\n    request.monitor_url_top_request_dto = alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO\n    try:\n        response = ability.alibaba_taobao_ud_smart_monitor_url_create(request)\n        print(response)\n    except TopException as e:\n        print(e)\n",
+      "descprition": "from datetime import datetime\nfrom topsdk.client import TopApiClient,TopException\nfrom topsdk.defaultability.defaultability import Defaultability\nfrom topsdk.defaultability.request.alibaba_taobao_ud_smart_monitor_url_create_request import *\n\nif __name__ == '__main__':\n    # create Client\n    client = TopApiClient(appkey='<your-appkey>', app_sercet='<your-appsecret>', top_gateway_url='<top-gateway-url>',verify_ssl=False)\n    ability = Defaultability(client=client)\n\n    # create domain\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO = AlibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO()\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.item_id = 123\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.page_type = 1\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.cus_h5_url = 'https://'\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.cus_deep_link = 'https://'\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.channel_id = 1\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.monitor_unique_id = 'xxxx'\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.prod_type = 1\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.member_id = 333445\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.attribution_type = 1\n\n    # create request\n    request = AlibabaTaobaoUdSmartMonitorUrlCreateRequest()\n    request.monitor_url_top_request_dto = alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO\n    try:\n        response = ability.alibaba_taobao_ud_smart_monitor_url_create(request)\n        print(response)\n    except TopException as e:\n        print(e)\n",
       "name": "Python3",
       "url": ""
     },
     {
-      "descprition": "package main;\n\nimport (\n    \"fmt\"\n    \"topsdk\"\n    \"topsdk/defaultability\"\n    \"topsdk/defaultability/request\"\n    \"topsdk/defaultability/domain\"\n)\n\nfunc main() {\n    client := topsdk.NewDefaultTopClient(\"<your-appkey>\",\"<your-appsecret>\",\"<top-gateway-url>\",20000,20000)\n    ability := defaultability.NewDefaultability(&client)\n\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO := domain.AlibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO{}\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.SetItemId(123)\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.SetPageType(1)\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.SetCusH5Url(\"https://\")\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.SetCusDeepLink(\"https://\")\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.SetChannelId(1)\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.SetMonitorUniqueId(\"xxxx\")\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.SetProdType(1)\n\n    req := request.AlibabaTaobaoUdSmartMonitorUrlCreateRequest{}\n    req.SetMonitorUrlTopRequestDto(alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO)\n\n\n    resp, err := ability.AlibabaTaobaoUdSmartMonitorUrlCreate(&req)\n    if(err != nil) {\n        fmt.Println(err)\n    } else {\n        fmt.Println(resp.Body)\n    }\n}\n\n",
+      "descprition": "package main;\n\nimport (\n    \"fmt\"\n    \"topsdk\"\n    \"topsdk/defaultability\"\n    \"topsdk/defaultability/request\"\n    \"topsdk/defaultability/domain\"\n)\n\nfunc main() {\n    client := topsdk.NewDefaultTopClient(\"<your-appkey>\",\"<your-appsecret>\",\"<top-gateway-url>\",20000,20000)\n    ability := defaultability.NewDefaultability(&client)\n\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO := domain.AlibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO{}\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.SetItemId(123)\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.SetPageType(1)\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.SetCusH5Url(\"https://\")\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.SetCusDeepLink(\"https://\")\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.SetChannelId(1)\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.SetMonitorUniqueId(\"xxxx\")\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.SetProdType(1)\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.SetMemberId(333445)\n    alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.SetAttributionType(1)\n\n    req := request.AlibabaTaobaoUdSmartMonitorUrlCreateRequest{}\n    req.SetMonitorUrlTopRequestDto(alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO)\n\n\n    resp, err := ability.AlibabaTaobaoUdSmartMonitorUrlCreate(&req)\n    if(err != nil) {\n        fmt.Println(err)\n    } else {\n        fmt.Println(resp.Body)\n    }\n}\n\n",
       "name": "GO",
       "url": ""
     },
     {
-      "descprition": "<?php\nrequire \"../vendor/autoload.php\";\nuse Topsdk\\Topapi\\TopApiClient;\nuse Topsdk\\Topapi\\Defaultability\\Request\\AlibabaTaobaoUdSmartMonitorUrlCreateRequest;\nuse Topsdk\\Topapi\\Defaultability\\Defaultability;\nuse Topsdk\\Topapi\\Defaultability\\Domain\\AlibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO;\n\n\n// create Client\n$client = new TopApiClient(\"<your-appkey>\",\"<your-appsecret>\",\"<top-gateway-url>\");\n$ability = new Defaultability($client);\n\n// create domain\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO = new AlibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO();\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO->setItemId(123);\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO->setPageType(1);\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO->setCusH5Url(\"https://\");\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO->setCusDeepLink(\"https://\");\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO->setChannelId(1);\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO->setMonitorUniqueId(\"xxxx\");\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO->setProdType(1);\n\n// create request\n$request = new AlibabaTaobaoUdSmartMonitorUrlCreateRequest();\n$request->setMonitorUrlTopRequestDto(alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO);\n\n$response = $ability->alibabaTaobaoUdSmartMonitorUrlCreate($request);\nvar_dump($response);\n\n",
+      "descprition": "<?php\nrequire \"../vendor/autoload.php\";\nuse Topsdk\\Topapi\\TopApiClient;\nuse Topsdk\\Topapi\\Defaultability\\Request\\AlibabaTaobaoUdSmartMonitorUrlCreateRequest;\nuse Topsdk\\Topapi\\Defaultability\\Defaultability;\nuse Topsdk\\Topapi\\Defaultability\\Domain\\AlibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO;\n\n\n// create Client\n$client = new TopApiClient(\"<your-appkey>\",\"<your-appsecret>\",\"<top-gateway-url>\");\n$ability = new Defaultability($client);\n\n// create domain\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO = new AlibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO();\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO->setItemId(123);\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO->setPageType(1);\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO->setCusH5Url(\"https://\");\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO->setCusDeepLink(\"https://\");\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO->setChannelId(1);\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO->setMonitorUniqueId(\"xxxx\");\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO->setProdType(1);\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO->setMemberId(333445);\n$alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO->setAttributionType(1);\n\n// create request\n$request = new AlibabaTaobaoUdSmartMonitorUrlCreateRequest();\n$request->setMonitorUrlTopRequestDto(alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO);\n\n$response = $ability->alibabaTaobaoUdSmartMonitorUrlCreate($request);\nvar_dump($response);\n\n",
       "name": "PHP7",
       "url": ""
     },
     {
-      "descprition": "import com.alibaba.fastjson.JSON;\nimport java.io.File;\nimport java.util.ArrayList;\nimport java.util.Date;\nimport com.taobao.top.TopApiClient;\nimport com.taobao.top.DefaultTopApiClient;\nimport com.taobao.top.TopFileItem;\nimport com.taobao.top.defaultability.Defaultability;\nimport com.taobao.top.defaultability.request.AlibabaTaobaoUdSmartMonitorUrlCreateRequest;\nimport com.taobao.top.defaultability.response.AlibabaTaobaoUdSmartMonitorUrlCreateResponse;\nimport com.taobao.top.defaultability.domain.AlibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO;\n\npublic class Main {\n\n    public static void main(String[] args) throws Exception {\n        // create Client\n        TopApiClient client = new DefaultTopApiClient(\"<your-appkey>\",\"<your-appsecret>\",\"<top-gateway-url>\");\n        Defaultability apiPackage = new Defaultability(client);\n        // create domain\n        AlibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO = new AlibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO();\n        alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.setItemId(123);\n        alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.setPageType(1);\n        alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.setCusH5Url(\"https://\");\n        alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.setCusDeepLink(\"https://\");\n        alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.setChannelId(1);\n        alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.setMonitorUniqueId(\"xxxx\");\n        alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.setProdType(1);\n\n        // create request\n        AlibabaTaobaoUdSmartMonitorUrlCreateRequest request = new AlibabaTaobaoUdSmartMonitorUrlCreateRequest();\n        request.setMonitorUrlTopRequestDto(alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO);\n\n        AlibabaTaobaoUdSmartMonitorUrlCreateResponse response = apiPackage.alibabaTaobaoUdSmartMonitorUrlCreate(request);\n        if(!response.isSuccess()){\n            System.out.println(response.getSubMsg());\n        }\n        System.out.println(JSON.toJSONString(response));\n    }\n\n}",
+      "descprition": "import com.alibaba.fastjson.JSON;\nimport java.io.File;\nimport java.util.ArrayList;\nimport java.util.Date;\nimport com.taobao.top.TopApiClient;\nimport com.taobao.top.DefaultTopApiClient;\nimport com.taobao.top.TopFileItem;\nimport com.taobao.top.defaultability.Defaultability;\nimport com.taobao.top.defaultability.request.AlibabaTaobaoUdSmartMonitorUrlCreateRequest;\nimport com.taobao.top.defaultability.response.AlibabaTaobaoUdSmartMonitorUrlCreateResponse;\nimport com.taobao.top.defaultability.domain.AlibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO;\n\npublic class Main {\n\n    public static void main(String[] args) throws Exception {\n        // create Client\n        TopApiClient client = new DefaultTopApiClient(\"<your-appkey>\",\"<your-appsecret>\",\"<top-gateway-url>\");\n        Defaultability apiPackage = new Defaultability(client);\n        // create domain\n        AlibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO = new AlibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO();\n        alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.setItemId(123);\n        alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.setPageType(1);\n        alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.setCusH5Url(\"https://\");\n        alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.setCusDeepLink(\"https://\");\n        alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.setChannelId(1);\n        alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.setMonitorUniqueId(\"xxxx\");\n        alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.setProdType(1);\n        alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.setMemberId(333445);\n        alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.setAttributionType(1);\n\n        // create request\n        AlibabaTaobaoUdSmartMonitorUrlCreateRequest request = new AlibabaTaobaoUdSmartMonitorUrlCreateRequest();\n        request.setMonitorUrlTopRequestDto(alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO);\n\n        AlibabaTaobaoUdSmartMonitorUrlCreateResponse response = apiPackage.alibabaTaobaoUdSmartMonitorUrlCreate(request);\n        if(!response.isSuccess()){\n            System.out.println(response.getSubMsg());\n        }\n        System.out.println(JSON.toJSONString(response));\n    }\n\n}",
       "name": "JAVA8",
       "url": ""
     },
     {
-      "descprition": "using System;\nusing System.Collections.Generic;\nusing Topsdk.Top;\nusing Topsdk.Top.Defaultability;\nusing Topsdk.Top.Defaultability.Request;\nusing Topsdk.Util;\nusing Topsdk.Top.Defaultability.Domain;\n\n\nnamespace MyNamespace\n{\n    class MyClass\n    {\n        static void Main(string[] args)\n        {\n            // create Client\n            ITopApiClient client = new DefaultTopApiClient(\"<your-appkey>\",\"<your-appsecret>\",\"<top-gateway-url>\",10000,20000);\n            Defaultability apiPackage = new Defaultability(client);\n\n            var alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO = new AlibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO();\n            alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.ItemId = 123;\n            alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.PageType = 1;\n            alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.CusH5Url = \"https://\";\n            alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.CusDeepLink = \"https://\";\n            alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.ChannelId = 1;\n            alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.MonitorUniqueId = \"xxxx\";\n            alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.ProdType = 1;\n\n            // create request\n            var request = new AlibabaTaobaoUdSmartMonitorUrlCreateRequest();\n            request.MonitorUrlTopRequestDto = alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO;\n\n            var response = apiPackage.AlibabaTaobaoUdSmartMonitorUrlCreate(request);\n            if (response.isSuccess())\n            {\n                Console.WriteLine(response.Body);\n            }\n            else\n            {\n                Console.WriteLine(response.SubCode);\n            }\n\n        }\n    }\n}",
+      "descprition": "using System;\nusing System.Collections.Generic;\nusing Topsdk.Top;\nusing Topsdk.Top.Defaultability;\nusing Topsdk.Top.Defaultability.Request;\nusing Topsdk.Util;\nusing Topsdk.Top.Defaultability.Domain;\n\n\nnamespace MyNamespace\n{\n    class MyClass\n    {\n        static void Main(string[] args)\n        {\n            // create Client\n            ITopApiClient client = new DefaultTopApiClient(\"<your-appkey>\",\"<your-appsecret>\",\"<top-gateway-url>\",10000,20000);\n            Defaultability apiPackage = new Defaultability(client);\n\n            var alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO = new AlibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO();\n            alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.ItemId = 123;\n            alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.PageType = 1;\n            alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.CusH5Url = \"https://\";\n            alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.CusDeepLink = \"https://\";\n            alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.ChannelId = 1;\n            alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.MonitorUniqueId = \"xxxx\";\n            alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.ProdType = 1;\n            alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.MemberId = 333445;\n            alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO.AttributionType = 1;\n\n            // create request\n            var request = new AlibabaTaobaoUdSmartMonitorUrlCreateRequest();\n            request.MonitorUrlTopRequestDto = alibabaTaobaoUdSmartMonitorUrlCreateMonitorUrlTopRequestDTO;\n\n            var response = apiPackage.AlibabaTaobaoUdSmartMonitorUrlCreate(request);\n            if (response.isSuccess())\n            {\n                Console.WriteLine(response.Body);\n            }\n            else\n            {\n                Console.WriteLine(response.SubCode);\n            }\n\n        }\n    }\n}",
       "name": ".NET6",
       "url": ""
     }
